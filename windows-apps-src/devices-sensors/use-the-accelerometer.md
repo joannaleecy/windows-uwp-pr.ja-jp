@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 482092e43acd6999361640e598a44391ac3f11a5
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6271331"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206098"
 ---
 # <a name="use-the-accelerometer"></a><span data-ttu-id="7de89-104">加速度計の使用</span><span class="sxs-lookup"><span data-stu-id="7de89-104">Use the accelerometer</span></span>
 

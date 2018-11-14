@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190426"
+ms.locfileid: "6249484"
 ---
 # <a name="guidelines-for-cross-slide"></a><span data-ttu-id="cd139-103">クロススライドのガイドライン</span><span class="sxs-lookup"><span data-stu-id="cd139-103">Guidelines for cross-slide</span></span>
 

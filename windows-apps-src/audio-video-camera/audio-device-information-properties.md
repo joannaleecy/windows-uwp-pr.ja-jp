@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d612a259785c8ba29ab975ba910c4f3e7df61d6f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037538"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194886"
 ---
 # <a name="audio-device-information-properties"></a><span data-ttu-id="5d6eb-104">オーディオ デバイス情報のプロパティ</span><span class="sxs-lookup"><span data-stu-id="5d6eb-104">Audio device information properties</span></span>
 

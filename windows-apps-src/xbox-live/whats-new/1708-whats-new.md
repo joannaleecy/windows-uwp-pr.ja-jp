@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 新規事項, august 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 97d12d6a8f415144ff61e5df18757c6aa46397c7
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6154050"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191452"
 ---
 # <a name="whats-new-for-the-xbox-live-apis---august-2017"></a><span data-ttu-id="a7d26-104">Xbox Live API の新規事項 - August 2017</span><span class="sxs-lookup"><span data-stu-id="a7d26-104">What's new for the Xbox Live APIs - August 2017</span></span>
 

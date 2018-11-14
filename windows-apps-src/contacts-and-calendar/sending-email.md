@@ -9,25 +9,25 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046975"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251991"
 ---
-# <a name="send-email"></a><span data-ttu-id="01ceb-106">メールの送信</span><span class="sxs-lookup"><span data-stu-id="01ceb-106">Send email</span></span>
+# <a name="send-email"></a><span data-ttu-id="612be-106">メールの送信</span><span class="sxs-lookup"><span data-stu-id="612be-106">Send email</span></span>
 
-<span data-ttu-id="01ceb-107">メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="01ceb-107">Shows how to launch the compose email dialog to allow the user to send an email message.</span></span> <span data-ttu-id="01ceb-108">ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="01ceb-108">You can pre-populate the fields of the email with data before showing the dialog.</span></span> <span data-ttu-id="01ceb-109">メッセージは、ユーザーが送信ボタンをタップするまで送信されません。</span><span class="sxs-lookup"><span data-stu-id="01ceb-109">The message will not be sent until the user taps the send button.</span></span>
+<span data-ttu-id="612be-107">メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="612be-107">Shows how to launch the compose email dialog to allow the user to send an email message.</span></span> <span data-ttu-id="612be-108">ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="612be-108">You can pre-populate the fields of the email with data before showing the dialog.</span></span> <span data-ttu-id="612be-109">メッセージは、ユーザーが送信ボタンをタップするまで送信されません。</span><span class="sxs-lookup"><span data-stu-id="612be-109">The message will not be sent until the user taps the send button.</span></span>
 
-**<span data-ttu-id="01ceb-110">この記事の内容</span><span class="sxs-lookup"><span data-stu-id="01ceb-110">In this article</span></span>**
+**<span data-ttu-id="612be-110">この記事の内容</span><span class="sxs-lookup"><span data-stu-id="612be-110">In this article</span></span>**
 
--   [<span data-ttu-id="01ceb-111">メールの作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="01ceb-111">Launch the compose email dialog</span></span>](#launch-the-compose-email-dialog)
--   [<span data-ttu-id="01ceb-112">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="01ceb-112">Summary and next steps</span></span>](#summary-and-next-steps)
--   [<span data-ttu-id="01ceb-113">関連トピック</span><span class="sxs-lookup"><span data-stu-id="01ceb-113">Related topics</span></span>](#related-topics)
+-   [<span data-ttu-id="612be-111">メールの作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="612be-111">Launch the compose email dialog</span></span>](#launch-the-compose-email-dialog)
+-   [<span data-ttu-id="612be-112">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="612be-112">Summary and next steps</span></span>](#summary-and-next-steps)
+-   [<span data-ttu-id="612be-113">関連トピック</span><span class="sxs-lookup"><span data-stu-id="612be-113">Related topics</span></span>](#related-topics)
 
-## <a name="launch-the-compose-email-dialog"></a><span data-ttu-id="01ceb-114">メールの作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="01ceb-114">Launch the compose email dialog</span></span>
+## <a name="launch-the-compose-email-dialog"></a><span data-ttu-id="612be-114">メールの作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="612be-114">Launch the compose email dialog</span></span>
 
-<span data-ttu-id="01ceb-115">新しい [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。</span><span class="sxs-lookup"><span data-stu-id="01ceb-115">Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog.</span></span> <span data-ttu-id="01ceb-116">ダイアログを表示するには、[**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="01ceb-116">Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.</span></span>
+<span data-ttu-id="612be-115">新しい [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。</span><span class="sxs-lookup"><span data-stu-id="612be-115">Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog.</span></span> <span data-ttu-id="612be-116">ダイアログを表示するには、[**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="612be-116">Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.</span></span>
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -49,16 +49,16 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> <span data-ttu-id="01ceb-117">[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)クラスを使用して、メールに追加する添付ファイルは、メール アプリにのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="01ceb-117">Attachments that you add to an email by using the [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) class will appear only in the Mail app.</span></span> <span data-ttu-id="01ceb-118">ユーザーが、既定のプログラムとして構成されているその他のメール プログラムを使用している場合、添付することがなく作成ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="01ceb-118">If users have any other mail program configured as their default mail program, the compose window will appear without the attachment.</span></span> <span data-ttu-id="01ceb-119">これは、既知の問題です。</span><span class="sxs-lookup"><span data-stu-id="01ceb-119">This is a known issue.</span></span>
+> <span data-ttu-id="612be-117">[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)クラスを使用して、メールに追加するための添付ファイルは、メール アプリでのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="612be-117">Attachments that you add to an email by using the [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment) class will appear only in the Mail app.</span></span> <span data-ttu-id="612be-118">ユーザーがその既定のプログラムとして構成されているその他のメール プログラムを使用している場合、添付することがなく作成ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="612be-118">If users have any other mail program configured as their default mail program, the compose window will appear without the attachment.</span></span> <span data-ttu-id="612be-119">これは、既知の問題です。</span><span class="sxs-lookup"><span data-stu-id="612be-119">This is a known issue.</span></span>
 
-## <a name="summary-and-next-steps"></a><span data-ttu-id="01ceb-120">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="01ceb-120">Summary and next steps</span></span>
+## <a name="summary-and-next-steps"></a><span data-ttu-id="612be-120">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="612be-120">Summary and next steps</span></span>
 
-<span data-ttu-id="01ceb-121">このトピックでは、メールの作成ダイアログの起動方法を示しました。</span><span class="sxs-lookup"><span data-stu-id="01ceb-121">This topic has shown you how to launch the compose email dialog.</span></span> <span data-ttu-id="01ceb-122">メール メッセージの受信者として使う連絡先を選ぶ方法については、「[連絡先の選択](selecting-contacts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="01ceb-122">For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md).</span></span> <span data-ttu-id="01ceb-123">電子メールの添付ファイルとして使用するファイルの選択については、「[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="01ceb-123">See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.</span></span>
+<span data-ttu-id="612be-121">このトピックでは、メールの作成ダイアログの起動方法を示しました。</span><span class="sxs-lookup"><span data-stu-id="612be-121">This topic has shown you how to launch the compose email dialog.</span></span> <span data-ttu-id="612be-122">メール メッセージの受信者として使う連絡先を選ぶ方法については、「[連絡先の選択](selecting-contacts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="612be-122">For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md).</span></span> <span data-ttu-id="612be-123">電子メールの添付ファイルとして使用するファイルの選択については、「[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="612be-123">See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="01ceb-124">関連トピック</span><span class="sxs-lookup"><span data-stu-id="01ceb-124">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="612be-124">関連トピック</span><span class="sxs-lookup"><span data-stu-id="612be-124">Related topics</span></span>
 
-* [<span data-ttu-id="01ceb-125">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="01ceb-125">Selecting contacts</span></span>](selecting-contacts.md)
-* [<span data-ttu-id="01ceb-126">ファイル ピッカーの呼び出し後に Windows Phone アプリを続行する方法</span><span class="sxs-lookup"><span data-stu-id="01ceb-126">How to continue your Windows Phone app after calling a file picker</span></span>](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [<span data-ttu-id="612be-125">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="612be-125">Selecting contacts</span></span>](selecting-contacts.md)
+* [<span data-ttu-id="612be-126">ファイル ピッカーの呼び出し後に Windows Phone アプリを続行する方法</span><span class="sxs-lookup"><span data-stu-id="612be-126">How to continue your Windows Phone app after calling a file picker</span></span>](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

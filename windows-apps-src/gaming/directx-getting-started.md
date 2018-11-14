@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 66cbc3d281fef68937fd8af2e41a7f04d92d8977
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047068"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196717"
 ---
 # <a name="directx-getting-started"></a><span data-ttu-id="22b7c-104">DirectX: 概要</span><span class="sxs-lookup"><span data-stu-id="22b7c-104">DirectX: Getting started</span></span>
 

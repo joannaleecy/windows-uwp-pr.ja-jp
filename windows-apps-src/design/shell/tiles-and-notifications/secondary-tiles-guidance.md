@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ガイダンス、ガイドライン、ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad3f7fce761e0709c92f02e2cfa0d2fcd507de4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281531"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189655"
 ---
 # <a name="secondary-tile-guidance"></a><span data-ttu-id="62143-103">セカンダリ タイルのガイダンス</span><span class="sxs-lookup"><span data-stu-id="62143-103">Secondary tile guidance</span></span>
 

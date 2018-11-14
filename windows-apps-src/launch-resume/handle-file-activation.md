@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 9f1e41c3e09d9a711ce9174a5a658a55c7c44abd
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6158544"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197546"
 ---
 # <a name="handle-file-activation"></a><span data-ttu-id="23dbb-104">ファイルのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="23dbb-104">Handle file activation</span></span>
 

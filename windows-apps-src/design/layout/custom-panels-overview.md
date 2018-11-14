@@ -15,11 +15,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d9856d564ffd36226a841c38eba65df0b62ee306
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024380"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185661"
 ---
 # <a name="xaml-custom-panels-overview"></a><span data-ttu-id="523d2-103">XAML カスタム パネルの概要</span><span class="sxs-lookup"><span data-stu-id="523d2-103">XAML custom panels overview</span></span>
 

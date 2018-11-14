@@ -9,20 +9,20 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cfd9692620273952483ec7da65a69b643cb5bf4f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039589"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188562"
 ---
-# <a name="deploy-barcode-scanner-profiles-with-mdm"></a><span data-ttu-id="d935e-104">MDM によるバーコード スキャナー プロファイルの展開</span><span class="sxs-lookup"><span data-stu-id="d935e-104">Deploy barcode scanner profiles with MDM</span></span>
+# <a name="deploy-barcode-scanner-profiles-with-mdm"></a><span data-ttu-id="d0020-104">MDM によるバーコード スキャナー プロファイルの展開</span><span class="sxs-lookup"><span data-stu-id="d0020-104">Deploy barcode scanner profiles with MDM</span></span>
 
-<span data-ttu-id="d935e-105">**注:** この機能は、windows 10 Mobile を必要とまたはそれ以降。</span><span class="sxs-lookup"><span data-stu-id="d935e-105">**Note**This feature requires Windows10 Mobile or later.</span></span>
+<span data-ttu-id="d0020-105">**注:** この機能は、windows 10 Mobile を必要とまたはそれ以降。</span><span class="sxs-lookup"><span data-stu-id="d0020-105">**Note**This feature requires Windows10 Mobile or later.</span></span>
 
-<span data-ttu-id="d935e-106">バーコード スキャナー プロファイルは、MDM サーバーを使って展開できます。</span><span class="sxs-lookup"><span data-stu-id="d935e-106">Barcode scanner profiles can be deployed with an MDM server.</span></span> <span data-ttu-id="d935e-107">プロファイルを展開するには、[EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) の *OemProfile* を使用して、\\Data\\SharedData\\OEM\\Public\\Profile フォルダーにプロファイルを配置します。</span><span class="sxs-lookup"><span data-stu-id="d935e-107">To deploy the profiles, use *OemProfile* in the [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) to place them into the \\Data\\SharedData\\OEM\\Public\\Profile folder.</span></span> <span data-ttu-id="d935e-108">ドライバーの製造元では、これらのスキャナー プロファイルを使用して、API サーフェスを通じて公開されていない設定を構成できます。</span><span class="sxs-lookup"><span data-stu-id="d935e-108">These scanner profiles can then be used by driver manufacturers to configure settings that are not exposed through the API surface.</span></span>
+<span data-ttu-id="d0020-106">バーコード スキャナー プロファイルは、MDM サーバーを使って展開できます。</span><span class="sxs-lookup"><span data-stu-id="d0020-106">Barcode scanner profiles can be deployed with an MDM server.</span></span> <span data-ttu-id="d0020-107">プロファイルを展開するには、[EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) の *OemProfile* を使用して、\\Data\\SharedData\\OEM\\Public\\Profile フォルダーにプロファイルを配置します。</span><span class="sxs-lookup"><span data-stu-id="d0020-107">To deploy the profiles, use *OemProfile* in the [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) to place them into the \\Data\\SharedData\\OEM\\Public\\Profile folder.</span></span> <span data-ttu-id="d0020-108">ドライバーの製造元では、これらのスキャナー プロファイルを使用して、API サーフェスを通じて公開されていない設定を構成できます。</span><span class="sxs-lookup"><span data-stu-id="d0020-108">These scanner profiles can then be used by driver manufacturers to configure settings that are not exposed through the API surface.</span></span>
 
-<span data-ttu-id="d935e-109">Microsoft では、スキャナーのプロファイルやそれらを実装する方法の詳細を定義していません。</span><span class="sxs-lookup"><span data-stu-id="d935e-109">Microsoft does not define the specifics of a scanner profile or how to implement them.</span></span>
+<span data-ttu-id="d0020-109">Microsoft では、スキャナーのプロファイルやそれらを実装する方法の詳細を定義していません。</span><span class="sxs-lookup"><span data-stu-id="d0020-109">Microsoft does not define the specifics of a scanner profile or how to implement them.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="d935e-110">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d935e-110">Related topics</span></span>
-- [<span data-ttu-id="d935e-111">EnterpriseExtFileSystem CSP</span><span class="sxs-lookup"><span data-stu-id="d935e-111">EnterpriseExtFileSystem CSP</span></span>](https://msdn.microsoft.com/library/windows/hardware/mt157025)
-- [<span data-ttu-id="d935e-112">バーコード スキャナー デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="d935e-112">Barcode scanner device support</span></span>](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)
+## <a name="related-topics"></a><span data-ttu-id="d0020-110">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d0020-110">Related topics</span></span>
+- [<span data-ttu-id="d0020-111">EnterpriseExtFileSystem CSP</span><span class="sxs-lookup"><span data-stu-id="d0020-111">EnterpriseExtFileSystem CSP</span></span>](https://msdn.microsoft.com/library/windows/hardware/mt157025)
+- [<span data-ttu-id="d0020-112">バーコード スキャナーのデバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="d0020-112">Barcode scanner device support</span></span>](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

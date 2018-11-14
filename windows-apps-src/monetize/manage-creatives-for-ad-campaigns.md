@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 97a7ac89585cbcf7a4609aee16978d36be027a24
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030819"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191071"
 ---
 # <a name="manage-creatives"></a><span data-ttu-id="69e7b-104">クリエイティブの管理</span><span class="sxs-lookup"><span data-stu-id="69e7b-104">Manage creatives</span></span>
 
