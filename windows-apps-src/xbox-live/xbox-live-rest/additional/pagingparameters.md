@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 337093fe7c75efee1be1ff18f94249b6693cdf84
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022791"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185011"
 ---
 # <a name="paging-parameters"></a>ページング パラメーター
  
-一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページング パラメーターを指定することによって、を通じてページことができます。 ページング パラメーターの完全な一覧に従います。 ページング パラメーターを許可するすべての Uri は、このページの下部にリンクされます。
+一部の Xbox Live サービス Uri では、JavaScript Object Notation (JSON) オブジェクトのコレクションを返します。 これらのコレクションは、URI に接続されているクエリ文字列の一部としてページング パラメーターを指定することによって、を通じてページことができます。 ページング パラメーターの完全な一覧に依存します。 ページング パラメーターを許可するすべての Uri は、このページの下部にリンクされます。
  
 <a id="ID4E2"></a>
 
@@ -27,8 +27,8 @@ ms.locfileid: "6022791"
  
 | パラメーター| 必須かどうか| 種類| 説明| 
 | --- | --- | --- | --- | 
-| continuationToken| いいえ| string| 特定の継続トークンから始まる項目を返します。 | 
-| maxItems| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
+| continuationToken| いいえ| string| 特定の継続トークンから項目を返します。 | 
+| maxItems| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と範囲の項目を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
 | skipItems| いいえ| 32 ビット符号付き整数| 特定の項目数後以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
   
 <a id="ID4EDD"></a>

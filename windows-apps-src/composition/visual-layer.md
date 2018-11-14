@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037022"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160154"
 ---
 # <a name="visual-layer"></a>ビジュアル レイヤー
 
@@ -40,7 +40,7 @@ Windows UWP アプリは、いずれかの UI フレームワークを介して�
 
 ### <a name="content"></a>コンテンツ
 
-コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 Visual のサブクラスでは、子コンテンツの視覚効果とが含まれている[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)のツリーを作成できるようにする [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)を含めるし、カスタム描画コンテンツ、視覚効果、単色で塗りつぶすことができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
+コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 Visual のサブクラスでは、子コンテンツの視覚効果と[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)が含まれているツリーを作成できるようにする [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)を含めるし、カスタム描画コンテンツ、視覚効果、単色で塗りつぶすことができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
 
 詳しくは、[コンポジションのビジュアル](composition-visual-tree.md)の概要をご覧ください。
 

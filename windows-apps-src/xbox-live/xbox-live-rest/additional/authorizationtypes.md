@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0269b3e95e2c5b3e36c1c199e5af36527639a149
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030953"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159006"
 ---
 # <a name="authorization-types"></a>承認のタイプ
  
-Xbox Live サービスは、要求と承認のタイプの数値を使用します。 このトピックでは、標準の承認の種類について説明します。
+Xbox Live サービスは、要求と承認のタイプの数を使用します。 このトピックでは、標準的な認証の種類について説明します。
  
 | 種類| 説明| 
 | --- | --- | 

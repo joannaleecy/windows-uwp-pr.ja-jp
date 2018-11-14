@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042367"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257412"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -41,7 +41,7 @@ ms.locfileid: "6042367"
 | Honeywell     | Voyager 1200 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1202 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
-| Honeywell     | Voyager 145Xg                  | 1 D/2 D ¹   | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 145Xg                  | 1D/2 D ¹   | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1602 g                  | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Xenon 1900 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Xenon 1902 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
@@ -69,7 +69,7 @@ ms.locfileid: "6042367"
 
 
 Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
-² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
+² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
 
 
 <hr>

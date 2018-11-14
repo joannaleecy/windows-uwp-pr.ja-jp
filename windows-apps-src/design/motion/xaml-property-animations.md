@@ -10,24 +10,24 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: 9372ba818805446948a444632e809ec06691c5e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036382"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6262886"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>コンポジション アニメーションでの XAML 要素をアニメーション化
 
-この記事では、コンポジション アニメーションのパフォーマンスと XAML プロパティを設定するの簡単で XAML UIElement をアニメーション化できるようにする新しいプロパティが導入されています。
+この記事では、コンポジション アニメーションのパフォーマンスと XAML のプロパティを設定するの簡単で XAML UIElement をアニメーション化できるようにする新しいプロパティが導入されています。
 
-Windows 10 version 1809、前に、UWP アプリでのアニメーションを構築する 2 つの選択肢がありました。
+Windows 10 version 1809、以前には、UWP アプリでのアニメーションを構築する 2 つの選択肢がありました。
 
-- [Storyboarded アニメーション](storyboarded-animations.md)と同様に、XAML 構造を使用して、または _* themetransition という単語_と _* themeanimation という単語_ [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation)名前空間のクラスです。
+- [Storyboarded アニメーション](storyboarded-animations.md)のような XAML 構造を使用して、または _* themetransition という単語_と _* themeanimation という単語_ [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation)名前空間のクラスです。
 - [XAML とビジュアル レイヤーの使用](../../composition/using-the-visual-layer-with-xaml.md)で説明したように、コンポジションのアニメーションを使用します。
 
-ビジュアル レイヤーの使用、XAML を使って構築します。 より優れたパフォーマンスを提供します。 [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)を使用して、要素の基になるコンポジション、[ビジュアル](/uwp/api/windows.ui.composition.visual)オブジェクトを取得して、コンポジションのアニメーションでは、ビジュアルをアニメーション化し、使用するより複雑です。
+ビジュアル レイヤーの使用、作成、XAML を使ってより優れたパフォーマンスを提供します。 [ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)を使用して、要素の基になるコンポジション、[ビジュアル](/uwp/api/windows.ui.composition.visual)オブジェクトを取得して、コンポジションのアニメーションでは、ビジュアルをアニメーション化し、使用するより複雑です。
 
-Windows 10、バージョン 1809、以降では、基になるコンポジション Visual を取得する必要はありませんコンポジション アニメーションを使用して直接 UIElement のプロパティをアニメーション化できます。
+Windows 10、バージョン 1809、以降では、基になるコンポジション ビジュアルを取得する必要はありませんコンポジション アニメーションを使用して直接 UIElement のプロパティをアニメーション化できます。
 
 > [!NOTE]
 > UIElement でこれらのプロパティを使用するには、UWP プロジェクトのターゲット バージョン 1809 以降である必要があります。 プロジェクトのバージョンの構成について詳しくは、[バージョン アダプティブ アプリ](../../debug-test-perf/version-adaptive-apps.md)を参照してください。
@@ -39,14 +39,14 @@ Windows 10、バージョン 1809、以降では、基になるコンポジシ�
 | プロパティ | 型 | 説明 |
 | -- | -- | -- |
 | [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | オブジェクトの不透明度 |
-| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 要素の Z/X と Y 位置に変えていくこと |
-| [Transformmatrix などがあります。](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 要素に適用するための変換行列 |
-| [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 中心点を中心と、要素をスケーリングします。 |
-| [回転](/uwp/api/windows.ui.xaml.uielement.rotation) | Float | 要素、RotationAxis と中心点の周りを回転します。 |
+| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 要素の X、Y、/Z 位置に変えていくこと |
+| [Transformmatrix などがあります。](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 要素に適用する変換行列 |
+| [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 中心点を中心と、要素を拡大縮小します。 |
+| [回転](/uwp/api/windows.ui.xaml.uielement.rotation) | Float | RotationAxis と中心点の周囲の要素を回転させる |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 回転の軸 |
 | [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | スケール、回転の中心点 |
 
-Transformmatrix などがありますプロパティの値が次の順序でスケーリング、回転、および平行移動のプロパティと組み合わせることにより: transformmatrix などがあります、スケール、回転、平行移動します。
+次の順序で拡大縮小、回転、および Translation プロパティを持つ transformmatrix などがありますプロパティの値を組み合わせる: transformmatrix などがあります、スケール、回転、平行移動します。
 
 これらのプロパティは、要素のレイアウトに影響しないと、ためこれらのプロパティを変更すると、新しい[測定](/uwp/api/windows.ui.xaml.uielement.measure)が発生しない/[配置](/uwp/api/windows.ui.xaml.uielement.arrange)パス。
 
@@ -69,26 +69,26 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 ### <a name="mutual-exclusivity-between-new-and-old-properties"></a>新規および既存のプロパティの間の相互の排他状態
 
 > [!NOTE]
-> **不透明度**のプロパティは、このセクションで説明されている相互排他状態を強制しません。 XAML またはコンポジションのアニメーションを使用するかどうかは、同じの Opacity プロパティを使用します。
+> **不透明度**のプロパティでは、このセクションで説明されている相互排他状態は適用されません。 XAML またはコンポジション アニメーションを使用するかどうかは、同じの Opacity プロパティを使用します。
 
-Compositionanimation と関連付けてでアニメーション化できるプロパティには、いくつかの既存の UIElement プロパティ用の代替機能があります。
+Compositionanimation と関連付けてをアニメーション化できるプロパティには、いくつかの既存の UIElement プロパティ用の代替機能があります。
 
 - [RenderTransform](/uwp/api/windows.ui.xaml.uielement.rendertransform)
 - [RenderTransformOrigin](/uwp/api/windows.ui.xaml.uielement.rendertransformorigin)
 - [Projection](/uwp/api/windows.ui.xaml.uielement.projection)
 - [Transform3D](/uwp/api/windows.ui.xaml.uielement.transform3d)
 
-設定 (アニメーション化) のすべての新しいプロパティか、または以前のプロパティを使うことはできません。 逆に、ユーザー設定 (またはアニメーション化) のすべての古いプロパティ場合、は、新しいプロパティを使用できません。
+設定 (アニメーション化) のすべての新しいプロパティか、または以前のプロパティを使うことはできません。 逆に、ユーザー設定 (またはアニメーション化) 古いプロパティのいずれかを場合は、新しいプロパティを使用できません。
 
-使用することもできません新しいプロパティを取得し、ビジュアルを自分でこれらのメソッドを使用して管理 ElementCompositionPreview を使用する場合。
+使用することもできない新しいプロパティを取得し、ビジュアルを自分でこれらのメソッドを使用して管理 ElementCompositionPreview を使用する場合。
 
 - [ElementCompositionPreview.GetElementVisual](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)
 - [ElementCompositionPreview.SetIsTranslationEnabled](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setistranslationenabled)
 
 > [!IMPORTANT]
-> 2 セットのプロパティの使用を混在させるしようとすると、API 呼び出しは失敗し、エラー メッセージが表示が発生します。
+> しようとすると、2 つのプロパティの使用を混在させると、API の呼び出しが失敗して、エラー メッセージを生成します。
 
-わかりやすくするためにはお勧めしませんが、それらをオフにしてプロパティの 1 つのセットから切り替えを行うことができます。 DependencyProperty によって、プロパティがサポートされる場合 (たとえば、UIElement.Projection は、対応 UIElement.ProjectionProperty)、「未使用」の状態を復元する ClearValue を呼び出します。 (たとえば、Scale プロパティ)、それ以外の場合は、既定値にプロパティを設定します。
+わかりやすくするためにはお勧めしませんが、それらをオフにしてから 1 つの一連のプロパティの切り替えを行うことができます。 DependencyProperty によって、プロパティがサポートされる場合 (たとえば、UIElement.Projection は、対応 UIElement.ProjectionProperty)、「未使用」の状態を復元する ClearValue を呼び出します。 (たとえば、Scale プロパティ)、それ以外の場合は、既定値にプロパティを設定します。
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>CompositionAnimation UIElement プロパティをアニメーション化
 
@@ -111,9 +111,9 @@ animation.Target = "Scale";
 button.StartAnimation(animation);
 ```
 
-### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>例: expressionanimation を使用して Scale プロパティをアニメーション化
+### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>例: expressionanimation を使用して、Scale プロパティをアニメーション化
 
-ページには、2 つのボタンがあります。 2 番目のボタンを 2 回 (スケール) 経由で同じ大きさにアニメーション化の最初のボタンとしてします。
+ページには、2 つのボタンがあります。 2 番目のボタンを 2 回 (スケール) 経由で同じ大きさにアニメーション化の最初のボタンとして。
 
 ```xaml
 <Button x:Name="sourceButton" Content="Source"/>

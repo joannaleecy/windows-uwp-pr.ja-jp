@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023785"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261998"
 ---
 # <a name="planning-for-performance"></a>パフォーマンスの計画
 
@@ -173,7 +173,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   一貫性のある測定結果が得られるように、アプリを複数回実行して、テストのランダム要素を排除します。
 -   低電力での利用可能性をテストします。 ユーザーのデバイスは、開発用のコンピューターに比べ、大幅に低電力である可能性があります。 Windows は、モバイル デバイスなどの低電力デバイスでの動作を考慮して設計されています。 プラットフォームで動作するアプリが、これらのデバイスでも高いパフォーマンスを発揮できるようにする必要があります。 経験則として、低電力デバイスでの実行速度はデスクトップ コンピューターの約 1/4 であると考えられるため、これに応じて目標を設定します。
 -   アプリのパフォーマンスを測定するには、Microsoft Visual Studio や Windows Performance Analyzer のようなツールを組み合わせて使います。 Visual Studio は、ソース コードのリンク設定など、アプリに焦点を当てた分析を行うように設計されています。 Windows Performance Analyzer は、システム情報、タッチ操作イベントに関する情報、ディスクの入出力 (I/O) に関する情報、グラフィックス処理ユニット (GPU) のコストに関する情報の提供など、システムに焦点を当てた分析を行うように設計されています。 どちらのツールでも、トレースをキャプチャしてエクスポートし、共有トレースと事後検証トレースを再開することができます。
--   認定のため、ストアにアプリを提出する前に、 [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)の「パフォーマンス テスト」セクションで説明されて、パフォーマンスに関連するテスト_ケースをテスト プランに組み込むことを確認して、"パフォーマンスと[UWP アプリのテスト_ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の安定性"セクションです。
+-   認定のストアにアプリを提出する前に、 [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)の「パフォーマンス テスト」セクションで説明されて、パフォーマンスに関連するテスト_ケースをテスト プランに組み込むことを確認して、"パフォーマンスと[UWP アプリのテスト_ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の安定性」セクションです。
 
 詳しくは、次のリソースとプロファイリング ツールをご覧ください。
 

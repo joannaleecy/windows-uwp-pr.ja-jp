@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025109"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252978"
 ---
 # <a name="networking-page-dev-home"></a>[ネットワーク] ページ (Dev Home)
    
@@ -22,7 +22,7 @@ ms.locfileid: "6025109"
 Dev Home の [**ネットワーク**] ページでは、トラブルシューティングのためのさまざまなネットワーク条件をシミュレートします。 ネットワーク パケットのトレースを開始することもできます。   
  ![Dev Home のネットワーク ページ](images/devhome_networking.png)   
   
-**ネットワーク**ページには、次のウィンドウが含まれています。   
+**ネットワーク**のページには、次のウィンドウが含まれています。   
  
    *  [ネットワーク シミュレーション](#ID4EEB)  
    *  [XBTrace (netcap)](#ID4EOB)  

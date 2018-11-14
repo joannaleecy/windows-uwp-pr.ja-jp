@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: ARM、ARM、ARM64 の win32 アプリの構築、ARM64 ドライバーのビルドで Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042334"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252819"
 ---
 # <a name="windows-10-on-arm"></a>ARM 版 Windows 10
 Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 このページは、プラットフォームについて詳しくは、アプリの開発を開始するための情報を提供します。 また、ページの下部にあるリンクを使用して、フィードバックをお勧めします。
@@ -28,7 +28,7 @@ Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>開発者向けの ARM でビルド 2018 Windows 10</h3><p>については、Windows 10 on ARM デバイス、方法、魔法のような x86 エミュレーションのしくみと、最後に提出し、ARM での Windows 10 向けアプリを構築する方法。 デスクトップと UWP のアプリを ARM64 を構築する方法表示されます。</p>
+        <h3>開発者向けの ARM でビルド 2018 Windows 10</h3><p>については、Windows 10 on ARM デバイス、どの魔法のような x86 エミュレーションのしくみと、最後に提出し、ARM での Windows 10 のアプリを構築する方法。 デスクトップと UWP のアプリを ARM64 を構築する方法表示されます。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
@@ -125,7 +125,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="アプリを ARM64 のデバッグ" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="ARM64 アプリのデバッグ" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
@@ -164,7 +164,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
                 </a>
                 <div class="cardText">
                     <h3>x86 ARM でのアプリ</h3>
-                    <p class="x-hidden-focus">開発 x86 アプリが ARM での Windows 10 での最高を実行します。</p>
+                    <p class="x-hidden-focus">開発 x86 アプリが arm 版 Windows 10 での最高を実行します。</p>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>知らせフィードバックがあるかどうか
-継続的にして、既存のお客様からのフィードバックを活用することにより、製品を向上しますがします。 把握している、問題に保持されているか、単に適切ではどのように共有する場合、エクスペリエンスは、これらのリンクに役立ちます。
+継続的にして、既存のお客様からフィードバックを活用することによって、製品を向上しますがします。 把握している、問題に保持されているか、単にどの適切に共有する場合、エクスペリエンスは、これらのリンクを支援します。
 
 <ul class="cardsM cols cols3">
 <li>
@@ -200,7 +200,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
             <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>フィードバック hub を使用します。</h3>
-                <p>でしたられなかったものかどうか。 優れたアイデアはありますか。 フィードバック Hub で知らせします。</p>
+                <p>でしたられなかったものかどうか。 優れたアイデアがあるかどうか。 フィードバック Hub で知らせします。</p>
             </div>
         </a>
     </li>
@@ -218,7 +218,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>フィードバックのドキュメント</h3>
-                <p>ドキュメントで問題が見つかったかどうか。 ものより明確にしますか。 ドキュメントの GitHub リポジトリで懸案事項を作成します。</p>
+                <p>このドキュメントで問題が見つかったがあるかどうか。 何か明確にごしますか。 ドキュメントの GitHub リポジトリで懸案事項を作成します。</p>
             </div>
         </a>
     </li>

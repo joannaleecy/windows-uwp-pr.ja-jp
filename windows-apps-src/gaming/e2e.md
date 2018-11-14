@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
-ms.openlocfilehash: d29e647b2932e1d89247da5b91d8f836d11260d6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031561"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186583"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
@@ -104,28 +104,18 @@ Windows または Xbox で初めてゲームを開発する場合は、最初に
     </tr>        
 </table>
 
-### <a name="windows-dev-center"></a>Windows デベロッパー センター
+### <a name="partner-center"></a>パートナー センター
 
-Windows ゲームの公開に向けての最初の一歩は、Windows デベロッパー センターで開発者アカウントを登録することです。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Microsoft Store に提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理したり、詳細な分析を取得したり、世界中のプレイヤーに優れたエクスペリエンスを提供するサービスを実現することができます。 
+Windows ゲームの公開に向けての最初の手順は、[パートナー センターで開発者アカウントを登録](https://developer.microsoft.com/store/register)します。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Microsoft Store に提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理したり、詳細な分析を取得したり、世界中のプレイヤーに優れたエクスペリエンスを提供するサービスを実現することができます。 
 
-さらにマイクロソフトでは、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 デベロッパー センター アカウントに登録する前に、他に適切なプログラムがあるかどうかを確認することをお勧めします。 詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
+さらにマイクロソフトでは、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 いずれかにパートナー センター アカウントに登録する前に適切な場合は、表示されることをお勧めします。 詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
 
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>開発者アカウントの登録</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/bg124287">サインアップの準備はできましたか</a></td>
-    </tr> 
-</table>
 
 ### <a name="developer-programs"></a>開発者プログラム
 
-Microsoft では、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 Xbox One のゲームを開発し、Xbox Live の機能をゲームに統合する場合には、開発者プログラムへの参加を検討してください。 Microsoft Store でゲームを公開するには、さらに Windows デベロッパー センターで開発者アカウントを作成する必要があります。
+Microsoft では、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 Xbox One のゲームを開発し、Xbox Live の機能をゲームに統合する場合には、開発者プログラムへの参加を検討してください。 ゲームを公開するには、Microsoft Store で、[パートナー センター](https://partner.microsoft.com/dashboard)で開発者アカウントを作成するがも必要です。
 
-#### <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
+#### <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
 
 Xbox Live クリエーターズ プログラムでは、だれでも Xbox Live を自分のタイトルに統合して、Xbox One や Windows 10 に公開することができます。 認定プロセスが簡素化され、標準的な [Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)以外に概念の承認はありません。
 
@@ -146,7 +136,7 @@ Xbox Live の他の機能にアクセスしたり、マーケティングと開�
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox プログラムを利用すると、認定されたゲーム開発者は Windows や Xbox One 向けに自分でゲームを公開することができます。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を発揮し、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 Windows デベロッパー センターで開発者アカウントを登録する前に、まず ID@Xbox に申し込むことをお勧めします。
+ID@Xbox プログラムを利用すると、認定されたゲーム開発者は Windows や Xbox One 向けに自分でゲームを公開することができます。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を発揮し、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 適用することをお勧めしますID@Xboxパートナー センターで開発者アカウントに登録する前にまずします。
 
 <table>
     <colgroup>
@@ -1368,9 +1358,9 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
 </table>
  
 
-### <a name="enable-in-app-product-iap-purchases"></a>アプリ内製品 (IAP) 購入の有効化
+### <a name="enable-in-app-product-add-on-purchases"></a>アプリ内製品 (アドオン) の購入を有効にします。
 
-IAP (アプリ内製品) は、プレイヤーがゲーム内で購入できる補助アイテムです。 IAP には、新しいアドオン、ゲームのレベル、項目、その他のプレーヤーを楽しませるものが含まれます。 適切に使用すると、IAP はゲームのエクスペリエンスを向上させると共に、収益の増加につながります。 ゲームの IAP は Windows デベロッパー センター ダッシュボードで定義して公開します。また、ゲームのコードでアプリ内購入を有効にします。
+アドオン (アプリ内製品) は、プレイヤーがゲーム内を購入できる補助アイテムです。 アドオンは、ゲームのレベル、項目、または何プレーヤーを楽しませるできます。 適切に使用すると、アドオンはゲームのエクスペリエンスを向上させながら収益を提供できます。 パートナー センターを使用して、ゲームのアドオンを公開定義し、ゲームのコードでのアプリ内購入を有効にします。
 
 <table>
     <colgroup>
@@ -1378,20 +1368,20 @@ IAP (アプリ内製品) は、プレイヤーがゲーム内で購入できる�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>永続的なアプリ内製品</td>
+        <td>永続的なアドオン</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219684">アプリ内製品購入の有効化</a></td>
     </tr>
     <tr>
-        <td>コンシューマブルなアプリ内製品</td>
+        <td>コンシューマブルなアドオン</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219683">コンシューマブルなアプリ内製品購入の有効化</a></td>
     </tr>
     <tr>
-        <td>アプリ内製品の詳細と申請</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">IAP の申請</a></td>
+        <td>アドオンの詳細と申請</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">アドオンの申請</a></td>
     </tr>
     <tr>
-        <td>IAP 売り上げとゲームの人口統計の監視</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">IAP 取得レポート</a></td>
+        <td>アドオンの売り上げとゲームの人口統計を監視します。</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">[アドオン取得] レポート</a></td>
     </tr>
 </table>
  
@@ -1546,9 +1536,9 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
 
 次のガイドと情報は、公開と申請のプロセスをできるだけスムーズに進めるために役立ちます。
 
-### <a name="publishing"></a>公開
+### <a name="publishing"></a>Publishing
 
-新しい統合 Windows デベロッパー センター ダッシュボードを使って、すべてのゲーム パッケージを公開し管理することができます。
+公開し、ゲームのパッケージの管理を[パートナー センター](https://partner.microsoft.com/dashboard)を使用します。
 
 <table>
     <colgroup>
@@ -1556,15 +1546,15 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows デベロッパー センターでのアプリの公開</td>
+        <td>パートナー センターでアプリの公開</td>
         <td><a href="https://dev.windows.com/publish">Windows アプリの公開</a></td>
     </tr>
     <tr>
-        <td>Windows デベロッパー センターでの高度な公開 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Windows デベロッパー センター ダッシュボードでの高度な公開ガイド</a></td>
+        <td>パートナー センター advanced 公開 (GDN)</td>
+        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">パートナー センターに詳細な公開ガイド</a></td>
     </tr>
     <tr>
-        <td>Azure Active Directory (AAD) を使用して、ユーザーをデベロッパー センター アカウントに追加する</td>
+        <td>Azure Active Directory (AAD) を使用して、パートナー センター アカウントにユーザーを追加するには</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">アカウント ユーザーの管理</a></td>
     </tr>   
     <tr>
@@ -1664,7 +1654,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
 
 開発が終了し、ゲームを出荷しても、"ゲーム オーバー" というわけではありません。 バージョン 1 の開発は終了ですが、市場でのゲームの旅は始まったばかりです。 使用状況やエラー レポートの監視、ユーザーからのフィードバックへの対応、ゲームの更新プログラムの公開という作業が必要になります。
 
-### <a name="windows-dev-center-analytics-and-promotion"></a>Windows デベロッパー センターの分析と販売促進
+### <a name="partner-center-analytics-and-promotion"></a>パートナー センターの分析とプロモーション
 
 <table>
     <colgroup>
@@ -1673,10 +1663,10 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     </colgroup>
     <tr>
         <td>デベロッパー センター アプリ</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">公開済みアプリのパフォーマンスを表示するデベロッパー センター Windows 10 アプリ</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">公開済みアプリのパフォーマンスを表示するアプリを入手します。</a></td>
     </tr>  
     <tr>
-        <td>Windows デベロッパー センターの分析</td>
+        <td>パートナー センターの分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">アプリのパフォーマンスの分析</a></td>
     </tr>
     <tr>
