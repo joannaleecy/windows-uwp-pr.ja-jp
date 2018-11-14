@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025377"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6262690"
 ---
 # <a name="images-and-image-brushes"></a>画像とイメージ ブラシ
 
@@ -58,7 +58,7 @@ ms.locfileid: "6025377"
 
 ![画像要素の例](images/Image_Licorice.jpg)
 
-この例の [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 絶対 URL を指定することで、ソースを設定することができます (たとえば、http://contoso.com/myPicture.jpg)や、アプリのパッケージ化構造に対して相対的な URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
+この例の [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 絶対 URL を指定することで、ソースを設定することができます (たとえば、http://contoso.com/myPicture.jpg)またはアプリ パッケージの構造体への相対 URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
 
 ### <a name="imagebrush"></a>ImageBrush
 

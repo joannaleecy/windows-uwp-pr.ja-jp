@@ -10,22 +10,22 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031454"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197717"
 ---
 # <a name="settings-page-dev-home"></a>[設定] ページ (Dev Home)
    
   
-Dev Home の**設定**ページでは、開発機本体のさまざまな設定をへのアクセスを提供します。   
+Dev Home の**設定**] ページでは、開発機本体のさまざまな設定にアクセスを提供します。   
  ![Dev Home の設定] ページ](images/devhome_settings.png)   
   
 **[設定**] ページには、次のウィンドウが含まれています。   
  
    *  [本体の設定](#ID4EEB)  
-   *  [OS 回復設定の更新](#ID4EOB)  
+   *  [OS 回復 update の設定](#ID4EOB)  
    *  [Visual Studio](#ID4EYB)  
    *  [デバッグの設定](#ID4ECC)  
    *  [無人インストール スクリプトの構成](#ID4EMC)  
@@ -45,10 +45,10 @@ Dev Home の**設定**ページでは、開発機本体のさまざまな設定�
 
    
 
-## <a name="os-recovery-update-settings"></a>OS 回復設定の更新  
+## <a name="os-recovery-update-settings"></a>OS 回復 update の設定  
    
   
-**OS 回復設定を更新する**ウィンドウは、コンソールの設定の自動更新を構成します。 これらの設定を変更することに注意を有効にするには、最大 24 時間がかかることができます。   
+**OS 回復設定を更新する**ウィンドウは、本体の自動更新の設定を構成します。 これらの設定を変更することに注意を有効にするには、最大 24 時間がかかることができます。   
   
 <a id="ID4EYB"></a>
 
@@ -66,7 +66,7 @@ Dev Home の**設定**ページでは、開発機本体のさまざまな設定�
 ## <a name="debug-settings"></a>デバッグの設定  
    
   
-一般的なトグルを表示および**デバッグの設定**ウィンドウが使用される設定をデバッグします。   
+**デバッグの設定**ウィンドウを使用して一般的なトグルを表示および設定をデバッグします。   
   
 <a id="ID4EMC"></a>
 
@@ -75,7 +75,7 @@ Dev Home の**設定**ページでは、開発機本体のさまざまな設定�
 ## <a name="unattended-script-configuration"></a>無人インストール スクリプトの構成  
    
   
-**無人スクリプト設定**ウィンドウでは、Xbox One 本体のセットアップ スクリプトを管理します。   
+**無人設定のスクリプト**ウィンドウは、Xbox One 本体のセットアップ スクリプトを管理します。   
   
 <a id="ID4E3C"></a>
 

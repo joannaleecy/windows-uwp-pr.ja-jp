@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 対象のプラン, プラン, 販売, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f6e1f8119522cd0441157131362d860feff3410
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027782"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157720"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>対象のプランによるエンゲージメントとコンバージョンの最大化
 
@@ -34,7 +34,7 @@ ms.locfileid: "6027782"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>対象のプランを作成して送信するには
 
-1.  [パートナー センター](https://partner.microsoft.com/dashboard)で、左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**対象のプラン**を選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで、**利用率の引き上げ**を展開し、**対象のプラン**を選択します。
 2.  **[対象のプラン]** ページで、利用可能なプランを確認します。 実装するプランについて、**[新しいプランの作成]** を選びます。
 
     > [!NOTE]

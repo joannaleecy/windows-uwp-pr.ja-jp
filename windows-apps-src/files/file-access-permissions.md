@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8699ee06da545e3b34711f496a887fd7aa2c935
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046835"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209437"
 ---
 # <a name="file-access-permissions"></a>ファイル アクセス許可
 
@@ -24,7 +24,7 @@ ms.locfileid: "6046835"
 新しいアプリを作成すると、既定でファイル システムの次の場所にアクセスできます。
 
 ### <a name="application-install-directory"></a>アプリケーションのインストール ディレクトリ
-ユーザーのシステムで、アプリがインストールされているフォルダーです。
+アプリをインストールして、ユーザーのシステム上のフォルダーです。
 
 ファイルにアクセスする 2 つの主要な方法し、フォルダーで、アプリのインストール ディレクトリ。
 
@@ -161,7 +161,7 @@ URI の "ms-appdata:///local/" プレフィックスは、アプリのローカ�
 
 さらに、他の場所とは異なり、[UWP アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や Visual Studio の C/C++ 標準ライブラリ関数を使ってアプリ データの場所にあるファイルにアクセスすることもできます。
 
-ファイル ピッカーでローカル、移動、または一時フォルダーにアクセスすることはできません。
+ファイル ピッカーでは、ローカル、移動、または一時フォルダーにアクセスできません。
 
 ### <a name="removable-devices"></a>リムーバブル デバイス
 さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。

@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
-ms.openlocfilehash: d34b1fd2a40508d100e39b784d24b5604237d499
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bfe40908297922568bc9c63a5b3bf0e6254bf901
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048244"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251142"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>C++ API を使用したリアルタイム アクティビティ サービスのプログラミング
 
@@ -50,7 +50,7 @@ void Example_RealTimeActivity_ConnectAsync()
 
 ### <a name="creating-a-statistic"></a>統計の作成
 
-XDK デベロッパーである場合やクロスプレイ タイトルの開発を行う場合は、XDP で統計を作成します。  Windows 10 で実行される純粋な UWP を作成する場合は、デベロッパー センターで統計を作成します。
+XDK デベロッパーである場合やクロスプレイ タイトルの開発を行う場合は、XDP で統計を作成します。  Windows 10 で実行される純粋な UWP を作成している場合は、パートナー センターで統計を作成します。
 
 #### <a name="xdk-developers"></a>XDK の開発者
 
@@ -58,10 +58,10 @@ XDP で統計を作成する方法については、[XDP のドキュメント](
 
 #### <a name="uwp-developers"></a>UWP の開発者
 
-クロスプレイ タイトルではない Windows 10 上の UWP を開発している場合は、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で統計を定義します。 デベロッパー センターで統計を構成する方法については、[デベロッパー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
+クロスプレイ タイトルではない Windows 10 で UWP を開発している場合は、[パートナー センター](https://partner.microsoft.com/dashboard)で統計を定義します。 パートナー センターで統計を構成する方法については、[パートナー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
 
 > [!NOTE]
-> 統計 2013年の開発者は、[デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で[統計 2013年の構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)に関する情報について、担当の DAM に連絡する必要があります。
+> 統計 2013年の開発者は、[パートナー センター](https://partner.microsoft.com/dashboard)で[統計 2013年構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)については、担当の DAM に問い合わせてくださいする必要があります。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの切断
 
@@ -78,7 +78,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>リアルタイム アクティビティからの統計へのサブスクライブ
 
-アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで構成されている統計が変化したときに、更新プログラムを入手するをサブスクライブします。
+アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) またはパートナー センターで構成された統計情報を変更するときに、更新プログラムを入手するをサブスクライブします。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの統計へのサブスクライブ
 
@@ -97,7 +97,7 @@ void Example_RealTimeActivity_SubscribeToStatisticChangeAsync()
     // Call to subscribe to an individual statistic.  Once the subscription is complete, the handler will be called with the initial value of the statistic.
     auto statisticResults = xboxLiveContext->user_statistics_service().subscribe_to_statistic_change(
         User::Users->GetAt(0)->XboxUserId->Data(),
-        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Dev Center
+        L"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",    // Get SCID from "Product Details" page in XDP or the Xbox Live Setup page in Partner Center
          L"YourStat"
         );
 
@@ -131,6 +131,6 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 ```
 
 > [!IMPORTANT]
-> リアルタイム アクティビティ サービスは、2 つの時間の使用後切断は、コードはこれを検出し、まだ必要な場合は、リアルタイム アクティビティ サービスへの接続を再確立できる必要があります。 これは主に、有効期限が認証トークンを更新することです。
+> リアルタイム アクティビティ サービスは、2 つの時間の使用後切断は、コードはこれを検出し、まだ必要な場合は、リアルタイム アクティビティ サービスへの接続を再確立できる必要があります。 これは、主に認証トークンの有効期限が更新されることを確認します。
 > 
-> クライアントは、マルチプレイヤー セッションは、RTA を使用し、30 秒間の切断された、マルチプレイヤー セッション Directory(MPSD)、RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアントが接続が閉じられたときに検出し、再接続を開始 MPSD セッションを終了する前にサブスクライブすることです。
+> クライアント マルチプレイヤー セッションは、RTA を使用して、30 秒間の切断された場合は、マルチプレイヤー セッション Directory(MPSD)、RTA セッションが閉じられ、セッションからユーザーが開始を検出します。 RTA クライアント接続が閉じられたときに検出し、再接続を開始し、MPSD セッションを終了する前にサブスクライブすることです。

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e04f1711d83679ac0b41c74c1c391b26bc7969
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6039824"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149980"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
 ユーザーのプレゼンスでは、タイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -32,9 +32,9 @@ ms.locfileid: "6039824"
  
 ## <a name="remarks"></a>注釈
  
-この URI は、コンソール以外のプラットフォームですべてのタイトルを追加し、プレゼンス、リッチ プレゼンスは、タイトルのメディアのプレゼンス データを更新するために使用ことができます。
+この URI は、コンソール以外のプラットフォームでのすべてのタイトルを追加し、プレゼンス、リッチ プレゼンスは、タイトルのメディアのプレゼンス データを更新するために使用できます。
  
-**SandboxId**はできるようになりました、XToken で要求から取得し、適用します。 **SandboxId**が存在しない場合のエンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
   
 <a id="ID4EEB"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "6039824"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのです。| 
   
 <a id="ID4EPB"></a>
 
@@ -65,8 +65,8 @@ ms.locfileid: "6039824"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"します。| 
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
+| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの妥当性を確認した後。 値の例: 3, vnext します。| 
 | Content-Type| string| 値の例の要求の本文の mime タイプ: アプリケーション/json します。| 
 | Content-Length| string| 要求の本文の長さ。 値の例: 312 します。| 
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。| 
@@ -78,14 +78,14 @@ ms.locfileid: "6039824"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求はのみにルーティングすると、サービスの認証トークン内の要求ヘッダーの妥当性を確認した後。 既定値: 1 です。| 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、 [TitleRequest](../../json/json-titlerequest.md)です。 本体で実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではないが、上に存在するサーバーは変更されません。
+要求、 [TitleRequest](../../json/json-titlerequest.md)です。 本体で実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではないが、上に存在するサーバーは変更されません。
  
 <a id="ID4EAAAC"></a>
 

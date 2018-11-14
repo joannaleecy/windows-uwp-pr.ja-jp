@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b947bf1d9897416623472e078bc49e9ea9df164d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042897"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146968"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -37,7 +37,7 @@ ms.locfileid: "6042897"
  
 ## <a name="authorization"></a>Authorization
  
-プロファイルにアクセスするに通常の認証トークンと要求のみが必要です。
+アクセスしたり、プロファイルを通常の認証トークンと要求のみが必要です。
   
 <a id="ID4EOB"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "6042897"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビットの符号なし整数| コントラクト バージョンは、Xbox 360 の API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
+| x xbl コントラクト バージョン| 32 ビットの符号なし整数| コントラクト バージョンは、Xbox 360 API からこの呼び出しを区別するために 2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

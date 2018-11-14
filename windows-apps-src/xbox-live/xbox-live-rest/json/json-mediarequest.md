@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a01268ba88e50fd170924163cf4f4880825535c1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040600"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157457"
 ---
 # <a name="mediarequest-json"></a>MediaRequest (JSON)
  
@@ -23,7 +23,7 @@ ms.locfileid: "6040600"
  
 ## <a name="mediarequest"></a>MediaRequest
  
-MediaRequest オブジェクトには、次の仕様があります。
+MediaRequest オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

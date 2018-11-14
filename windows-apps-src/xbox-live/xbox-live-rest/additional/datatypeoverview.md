@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8129be6220dc6c9ae1d125087fee52ca17d33424
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029766"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194305"
 ---
 # <a name="data-type-overview"></a>データ型の概要
  
@@ -23,12 +23,12 @@ Xbox Live サービスは、さまざまな id と認証に関連するデータ
 | 種類| 説明| 
 | --- | --- | 
 | ゲーマータグ| ユーザーの人間が判読できる一意の画面の名前。| 
-| プレイヤー| ユーザーの XUID とゲーマータグと同じよう、プレイヤーのインデックス、セッション (または「シート」) で、プレイヤーがまだセッションとカスタム データの小さな blob に参加しているかどうかを含む JSON オブジェクト。| 
-| profile| ユーザー プロファイルの URI アドレスと HTTP メソッドでは、通常、ユーザーの UserSettings、を通じてアクセスが、ゲーマー カード、ゲーマータグ、XUID などの可能性もなどについて説明します。| 
+| プレイヤー| ユーザーの XUID とゲーマータグと同じようプレイヤーのインデックス、セッション (または「シート」) で、セッションおよびカスタム データの小さな blob で、プレイヤーがまだ参加しているかどうかを含む JSON オブジェクト。| 
+| profile| ユーザー プロファイルの URI アドレスと HTTP メソッドでは、通常、ユーザーの UserSettings、を通じてアクセスが、ゲーマー カード、ゲーマータグ、XUID などの可能性もなどに関する情報。| 
 | 設定| UserSettings オブジェクトでタイトルに固有の設定のいずれか。| 
 | UserClaims| ユーザーの XUID とゲーマータグを含むシンプルな JSON オブジェクト。| 
-| UserSettings| タイトルに固有の設定、または現在の認証されたユーザーの基本設定のコレクションを含む JSON オブジェクト。 UserSettings には、ゲーム内のアクティビティに関連する可能性があります、任意のデータを含めることができます。| 
-| XUID| ユーザーの Xbox ユーザー ID、一意の長い符号なし整数。 人間が判読できるものはありません。| 
+| UserSettings| タイトルに固有の設定や、現在の認証されたユーザーの基本設定のコレクションを含む JSON オブジェクト。 UserSettings には、ゲーム内のアクティビティに関連する可能性があります、任意のデータを含めることができます。| 
+| XUID| ユーザーの Xbox ユーザー ID、ユニークな署名されていない長の整数です。 人間が判読できるものはありません。| 
  
 <a id="ID4E6D"></a>
 

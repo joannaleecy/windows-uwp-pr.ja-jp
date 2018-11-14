@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0882125e1cf7f82be6273e5f456d22cdf79891e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030053"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195011"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -23,28 +23,28 @@ ms.locfileid: "6030053"
  
 ## <a name="gameclip"></a>GameClip
  
-GameClip オブジェクトには、次の仕様があります。
+GameClip オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| ゲーム クリップに割り当てられている ID。| 
-| <b>状態</b>| GameClipState| システムのゲーム クリップの状態。| 
-| <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) で、録画が開始された時刻。| 
-| <b>lastModified</b>| DateTime| 最後に修正されたゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時刻。| 
-| <b>userCaption</b>| string| ユーザーが入力した以外にローカライズされた文字列ゲーム クリップの。| 
-| <b>type</b>| GameClipTypes| クリップの種類です。 そうである場合をコンマで区切られたことが、複数の値ができます。| 
+| <b>状態</b>| GameClipState| システムでゲーム クリップの状態。| 
+| <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) での記録が開始された時刻。| 
+| <b>lastModified</b>| DateTime| 最後に修正されたゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時間。| 
+| <b>userCaption</b>| string| ユーザーが入力したローカライズ文字列ゲーム クリップ。| 
+| <b>type</b>| GameClipTypes| クリップの種類です。 複数の値に設定できますされ、そうである場合をコンマで区切られたになります。| 
 | <b>ソース</b>| GameClipSource| クリップが作成された方法です。| 
 | <b>visibility</b>| GameClipVisibility| システムでの公開後に、ゲーム クリップの可視性です。| 
-| <b>durationInSeconds</b>| 32 ビットの符号なし整数| 秒単位で、ゲーム クリップの期間です。| 
+| <b>durationInSeconds</b>| 32 ビットの符号なし整数| 秒単位でゲーム クリップの期間です。| 
 | <b>scid</b>| string| ゲームのクリップが関連付けられている SCID です。| 
-| <b>rating</b>| 倍精度浮動小数点数| ゲームのクリップ, 0.0 に 5.0 の範囲内に関連付けられている評価します。| 
+| <b>rating</b>| 倍精度浮動小数点数| ゲームのクリップ, 0.0 に 5.0 の範囲内に関連付けられている評価です。| 
 | <b>ratingCount</b>| 32 ビットの符号なし整数| このクリップが評価された回数。| 
-| <b>表示モード</b>| 32 ビットの符号なし整数| ゲーム クリップに関連付けられたビューの数。| 
+| <b>表示モード</b>| 32 ビットの符号なし整数| ゲーム クリップに関連付けられているビューの数。| 
 | <b>titleData</b>| string| タイトルに固有のプロパティ バッグです。| 
 | <b>titleData</b>| string| コンソールに固有のプロパティ バッグです。| 
 | <b>サムネイル</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
 | <b>gameClipUris</b>| GameClipUri の配列| GameClipUri オブジェクトの配列です。| 
-| <b>xuid</b>| string| 文字列としてマーシャ リング、ゲーム クリップの所有者の XUID です。| 
+| <b>xuid</b>| string| ゲーム クリップ, 文字列としてマーシャ リングの所有者の XUID です。| 
 | <b>clipName</b>| string| タイトルの管理システムから検索要求の入力のロケールに基づいて、クリップの名前のローカライズされたバージョンです。| 
   
 <a id="ID4ERH"></a>

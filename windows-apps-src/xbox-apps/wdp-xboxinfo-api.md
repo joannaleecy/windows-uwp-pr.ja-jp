@@ -1,6 +1,6 @@
 ---
 author: M-Stahl
-title: デバイス ポータル Xbox 情報 API リファレンス
+title: Device Portal の Xbox 情報 API リファレンス
 description: Xbox デバイス情報にアクセスする方法をについて説明します。
 ms.author: mstahl
 ms.date: 11/7/2017
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, xbox, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039297"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198858"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 情報 API リファレンス   
 この API を使用して Xbox One のデバイス情報にアクセスすることができます。
@@ -21,7 +21,7 @@ ms.locfileid: "6039297"
 
 **要求**
 
-Xbox One については、デバイスの情報を取得できます。
+Xbox One については、デバイス情報を取得できます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -44,12 +44,12 @@ GET | /ext/xbox/info
 
 * OsVersion - (文字列)、OS のバージョン。
 * OsEdition - (文字列)、OS のエディションなど「2017 年 3 月」または"2017 年 3 月 1 日"QFE します。
-* ConsoleId - (文字列) 本体の id。
-* DeviceId - (文字列) 本体の Xbox Live デバイス id。
-* SerialNumber - (文字列) 本体のシリアル番号。
-* DevMode -"None"などの (文字列) 本体の現在の開発者モードまたは「市販」します。
-* ConsoleType - (文字列) 本体の種類、"Xbox One"または"Xbox One S"などです。
-* DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の期限が切れるします。
+* ConsoleId - (String) 本体の id。
+* DeviceId - (String) 本体の Xbox Live デバイス id。
+* SerialNumber - (String) 本体のシリアル番号。
+* DevMode - (String) 本体の現在の開発者モード、"None"など、または「市販」。
+* ConsoleType - (String) 本体の種類、"Xbox One"または"Xbox One S"など。
+* DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の有効期限が切れます。
 
 **状態コード**
 

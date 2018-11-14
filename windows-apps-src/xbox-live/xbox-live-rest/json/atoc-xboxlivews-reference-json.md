@@ -10,17 +10,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 039cc9cf1d7d1d77330ff280d7cff5619971b075
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050462"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204912"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript Object Notation (JSON) オブジェクト リファレンス
  
 JavaScript Object Notation (JSON) では、web 上のデータをカプセル化するための軽量な標準ベース、オブジェクト指向の表記です。
  
-Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 このセクションでは、各 JSON オブジェクトを Xbox Live サービスと使用に関するリファレンス情報を提供します。
+Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 このセクションでは、Xbox Live サービスで使用される各 JSON オブジェクトについての参照を説明します。
  
 <a id="ID4EHB"></a>
 
@@ -61,11 +61,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [GameClipsServiceErrorResponse (JSON)](json-gameclipsserviceerrorresponse.md)
 
-&nbsp;&nbsp;/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答の省略可能な部分/uri 形式/{gameClipUriType} API です。
+&nbsp;&nbsp;/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答のオプションの一部/uri 形式/{gameClipUriType} API です。
 
 [GameClipThumbnail (JSON)](json-gameclipthumbnail.md)
 
-&nbsp;&nbsp;個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。
+&nbsp;&nbsp;個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができますされ、表示用の適切なものを選択するクライアントまでなります。
 
 [GameClipUri (JSON)](json-gameclipuri.md)
 
@@ -101,11 +101,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [inventoryItem (JSON)](json-inventoryitem.md)
 
-&nbsp;&nbsp;コアのインベントリ項目の権利を付与できる標準の項目を表します。
+&nbsp;&nbsp;コア インベントリ項目の権利を付与できる標準の項目を表します。
 
 [LastSeenRecord (JSON)](json-lastseenrecord.md)
 
-&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。
+&nbsp;&nbsp;利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後、システムに表示されていた場合について説明します。
 
 [MatchTicket (JSON)](json-matchticket.md)
 
@@ -153,15 +153,15 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [PermissionCheckBatchUserResponse (JSON)](json-permissioncheckbatchuserresponse.md)
 
-&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。
+&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つの対象ユーザーのアクセス許可の値の一覧を確認します。
 
 [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)
 
-&nbsp;&nbsp;1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
 
 [PermissionCheckResult (JSON)](json-permissioncheckresult.md)
 
-&nbsp;&nbsp;1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。
+&nbsp;&nbsp;1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。
 
 [Person (JSON)](json-person.md)
 
@@ -181,7 +181,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Profile (JSON)](json-profile.md)
 
-&nbsp;&nbsp;ユーザーの個人用プロファイル設定します。
+&nbsp;&nbsp;ユーザーの個人用プロファイルの設定。
 
 [Progression (JSON)](json-progression.md)
 
@@ -201,7 +201,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Requirement (JSON)](json-requirement.md)
 
-&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。
+&nbsp;&nbsp;実績とそれらに対応するため、どのくらいユーザーがロック解除の条件。
 
 [ResetReputation (JSON)](json-resetreputation.md)
 
@@ -209,7 +209,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Reward (JSON)](json-reward.md)
 
-&nbsp;&nbsp;実績に関連付けられたリワードです。
+&nbsp;&nbsp;実績に関連付けられているリワードです。
 
 [RichPresenceRequest (JSON)](json-richpresencerequest.md)
 
@@ -221,7 +221,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [ServiceErrorResponse (JSON)](json-serviceerrorresponse.md)
 
-&nbsp;&nbsp;サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。 運用環境での低いデータを含めることができます。
+&nbsp;&nbsp;サービスのエラーが発生した場合は、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下に定義されています。 運用環境での低いデータを含めることができます。
 
 [SessionEntry (JSON)](json-sessionentry.md)
 
@@ -233,7 +233,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [TitleBlob (JSON)](json-titleblob.md)
 
-&nbsp;&nbsp;記憶域のタイトルに関する情報が含まれています。
+&nbsp;&nbsp;記憶域からタイトルに関する情報が含まれています。
 
 [TitleRecord (JSON)](json-titlerecord.md)
 
@@ -245,7 +245,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [UpdateMetadataRequest (JSON)](json-updatemetadatarequest.md)
 
-&nbsp;&nbsp;このメタデータは、クリップを更新する必要があります。
+&nbsp;&nbsp;このメタデータ クリップを更新する必要があります。
 
 [User (JSON)](json-user.md)
 
@@ -265,7 +265,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [UserTitle (JSON)](json-usertitlev2.md)
 
-&nbsp;&nbsp;ユーザーのタイトル データが含まれています。
+&nbsp;&nbsp;タイトルのユーザー データが含まれています。
 
 [VerifyStringResult (JSON)](json-verifystringresult.md)
 
@@ -291,6 +291,6 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 <a id="ID4EZH"></a>
 
  
-##### <a name="external-links-ecma-international-standard-262-ecmascript-language-specificationhttpwwwecma-internationalorgpublicationsfilesecma-stecma-262pdf"></a>外部リンク[ECMA 国際標準 262: ECMAScript 言語 Specification](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
+##### <a name="external-links-ecma-international-standard-262-ecmascript-language-specificationhttpwwwecma-internationalorgpublicationsfilesecma-stecma-262pdf"></a>外部リンク[ECMA 国際標準 262: ECMAScript 言語仕様](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
 
    

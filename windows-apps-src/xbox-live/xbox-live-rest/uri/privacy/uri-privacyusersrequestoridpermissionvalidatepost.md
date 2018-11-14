@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0848aaa74fcecec599c701d944c54defae1fa011
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041849"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154797"
 ---
 # <a name="post-usersrequestoridpermissionvalidate"></a>POST (/users/{requestorId}/permission/validate)
 一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no に対する回答を取得します。
@@ -35,7 +35,7 @@ ms.locfileid: "6041849"
 
 要求本文には、ユーザーの一覧と、設定の一覧と、各ユーザーの設定/ペアの許可/ブロックの結果になります。
 
-シナリオではクロス ネットワーク マルチプレイヤー (場所プライバシー通信チェックを Xbox ユーザー ID (XUID) を持つユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります)、ユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
+シナリオではクロス ネットワーク マルチプレイヤー (場所プライバシー通信チェックを Xbox ユーザー ID (XUID) のユーザーとそうでないネットワークに接続してユーザーの間で実行する必要があります)、ユーザーの種類の[PermissionCheckBatchRequest (JSON)](../../json/json-permissioncheckbatchrequest.md)を参照してください。
 
 <a id="ID4ECB"></a>
 
@@ -44,7 +44,7 @@ ms.locfileid: "6041849"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
+| requestorId| string| 必須。 アクションを実行しているユーザーの id。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。|
 
 <a id="ID4ENB"></a>
 
@@ -63,7 +63,7 @@ ms.locfileid: "6041849"
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <code>XBL3.0 x=&lt;userhash>;&lt;token></code>|
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。値の例: 1 です。|
 
 <a id="ID4E4D"></a>
 
@@ -100,7 +100,7 @@ ms.locfileid: "6041849"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ ms.locfileid: "6041849"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
+| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4E5H"></a>
 

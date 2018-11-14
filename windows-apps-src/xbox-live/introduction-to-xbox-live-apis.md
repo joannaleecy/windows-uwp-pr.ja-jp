@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 5751ad77607f989963b94d8b0ea2dee574098fe0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029848"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196287"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
@@ -55,7 +55,7 @@ Api を比較します。
     - C++/CX はマイクロソフトの C++ 拡張であり、^ を WinRT ポインターとして使用するなど、WinRT プログラミングを容易にします。
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - C++/CX を含むすべての言語で、エラーは例外を使用して処理されます。
-- C++/WinRT もサポートされます。  詳細については、C++/WinRT で入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  について、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT を使用する XSAPI WinRT API の呼び出しの例を次に示します。
 
@@ -89,7 +89,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 #include "xsapi\services.h"
 ```
 
-- C++/WinRT もサポートされます。  詳細については、C++/WinRT で入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  について、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT と XSAPI C++ API を使うには、XSAPI ヘッダーをインクルードする前に XSAPI_CPPWINRT を定義します。  次に、例を示します。
 

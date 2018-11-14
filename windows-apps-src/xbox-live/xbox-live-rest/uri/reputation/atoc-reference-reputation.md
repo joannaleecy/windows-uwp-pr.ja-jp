@@ -10,17 +10,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 56c7627a3b0761419537d10e595afc38943e7354
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040106"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199002"
 ---
 # <a name="reputation-uris"></a>評判 URI
  
-このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。 評判 Uri ドメインは、reputation.xboxlive.com です。 一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
+このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 評判 Uri ドメインは、reputation.xboxlive.com です。 一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
  
-評判サービスで使用して、フィードバック[Feedback (JSON)](../../json/json-feedback.md)、評判スコアを計算します。 このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。 ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。 
+評判サービスで使用してフィードバックを[フィードバック (JSON)](../../json/json-feedback.md)、評判スコアを計算します。 このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。 ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。 
  
 すべてのプラットフォームでのゲームでは、評判サービスを使用できます。
  

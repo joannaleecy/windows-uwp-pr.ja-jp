@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ライセンス, アプリ, アドオン, アプリ内購入, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 545e052794a8649daa62872cf74b0986cb7bf4b9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043295"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209983"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>アプリとアドオンのライセンス情報の取得
 
@@ -26,7 +26,7 @@ ms.locfileid: "6043295"
 
 この例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* パートナー センター内にある[アプリの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリがストアに公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* パートナー センター内にある[アプリの申請を作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリは、ストアで公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
 * アプリのアドオンのライセンス情報を取得する場合は、する必要もあります[パートナー センターでのアドオンを作成](../publish/add-on-submissions.md)します。
 
 この例のコードは、次の点を前提としています。

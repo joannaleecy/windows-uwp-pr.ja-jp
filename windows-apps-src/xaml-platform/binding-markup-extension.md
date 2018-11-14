@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039112"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159289"
 ---
 # <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
 
-**注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインド メカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
+**注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインディングのメカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
 **注:** データの使用についての一般的な情報は、バインディングの**バインディング**では {} (、全体的な比較 **{X:bind}** と **{Binding}**)、アプリは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
@@ -81,7 +81,7 @@ ms.locfileid: "6039112"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | バインド ソースの更新のタイミングを指定します。 指定されていない場合は、既定値は **Default** です。 |
 
-**注:** の相違点が既定の**モード**のプロパティの値から **{X:bind}** **{Binding}** マークアップを変換する場合は注意してください。
+**注:** の相違点が既定の**モード**プロパティの値から **{X:bind}** **{Binding}** マークアップを変換する場合は注意してください。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 

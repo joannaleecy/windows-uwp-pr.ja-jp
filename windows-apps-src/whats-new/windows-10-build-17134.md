@@ -8,11 +8,11 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b25df0a8445322ceb422fd6485f7d08c1c49a25
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030008"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200037"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Windows 10 ビルド 17134 の開発者向け新着情報
 
@@ -71,7 +71,7 @@ PlayReady | Microsoft PlayReady は、デジタル コンテンツを保護し�
 システム トリガー | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) を使用すると、必要なシステム トリガーが OS から提供されない場合に、システム トリガーを定義できます。 ハードウェア ドライバーと UWP アプリの両方がサード パーティ製であり、ハードウェア ドライバーでカスタム イベントを生成し、アプリで処理する必要がある場合などに必要になります。 例として、オーディオ ジャックが接続されたときに、オーディオ カードからユーザーに通知する場合などが該当します。
 ユーザー アクティビティ | 新しい [UserActivity に関するドキュメント](../launch-resume/useractivities.md)では、前回ユーザーがアプリで実行していた状態から再開できるようにする方法 (複数のデバイス間で再開する場合にも対応) について説明します。</br>**UserActivitySessionHistoryItem** クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) およびそのオーバーロードの説明をご覧ください。
 Windows Mixed Reality API | 拡張中の Windows Mixed Reality プラットフォームをサポートするために、[Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 名前空間と [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 名前空間に新しい API が追加されました。
-Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスは[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じよう UWP のドキュメントを今すぐフィードバックを GitHub の問題したり、プル要求を介して、独自の投稿を提出できます。
+Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスが[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じようにこれらの UWP のドキュメントでできるようになりましたフィードバックを GitHub の問題したり、プル要求を介して、独自の投稿を提出できます。
 
 ## <a name="publish--monetize-windows-apps"></a>Windows アプリを公開および収益化する
 

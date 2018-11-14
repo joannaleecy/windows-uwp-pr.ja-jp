@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 11, デバイス喪失
 ms.localizationpriority: medium
 ms.openlocfilehash: 888b3ec7ab667a8a92ae638a9d5c456c3180df0d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048994"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208174"
 ---
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>Direct3D 11 でのデバイス削除シナリオの処理
 
@@ -28,7 +28,7 @@ DirectX 9 では、D3D デバイスが非動作状態になったときに、ア
 -   グラフィックス デバイスが応答を停止してリセットされた場合。
 -   グラフィックス アダプターが物理的に接続された場合、または取り外された場合。
 
-このような状況になると、DXGI はエラー コードを返して、Direct3D デバイスの再起動とデバイス リソースの再作成が必要であることを知らせます。 このチュートリアルでは、グラフィックス アダプターのリセット、削除、変更という事態が生じた場合に、Direct3D 11 アプリとゲームがそれを検出して対応できるようにする方法について説明します。 コード例は、Microsoft Visual Studio2015 に付属する DirectX 11 アプリ (ユニバーサル Windows) テンプレートから採用されます。
+このような状況になると、DXGI はエラー コードを返して、Direct3D デバイスの再起動とデバイス リソースの再作成が必要であることを知らせます。 このチュートリアルでは、グラフィックス アダプターのリセット、削除、変更という事態が生じた場合に、Direct3D 11 アプリとゲームがそれを検出して対応できるようにする方法について説明します。 コード例は、Microsoft Visual Studio2015 付属の DirectX 11 アプリ (ユニバーサル Windows) テンプレートから採用されます。
 
 ## <a name="instructions"></a>手順
 

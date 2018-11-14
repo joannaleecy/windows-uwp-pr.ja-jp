@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Windows 10, UWP, ファイル, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035348"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207964"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>UWP でファイルのプロパティにすばやくアクセスする 
 
 ライブラリからファイルとそのプロパティの一覧をすばやく収集し、アプリでそれらのプロパティを使用する方法について説明します。  
 
 前提条件 
-- **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミング** c# または Visual Basic での非同期アプリの作成を[c# または Visual Basic での非同期 Api の呼び出し](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)を確認方法を学びます。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
-- **ライブラリへのアクセス許可**これらの例のコードで、 **picturesLibrary**機能が必要ですが、ファイルの場所がまったく必要としない別の機能では、機能がないです。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
+- **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミング** c# または Visual Basic での非同期アプリの作成、 [c# または Visual Basic での非同期 Api の呼び出し](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)を表示する方法について説明することができます。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
+- **ライブラリへのアクセス許可**これらの例のコードには、 **picturesLibrary**機能が必要ですが、ファイルの場所がまったく必要としない別の機能や機能がないです。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
 - **単純なファイルの列挙**この例では、 [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)を使用して、いくつかの高度な列挙プロパティを設定します。 小さいディレクトリを対象としてファイルの簡単な一覧を取得する方法について詳しくは、「[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)」をご覧ください。 
 
 ## <a name="usage"></a>使用方法  

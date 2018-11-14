@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6047969"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199874"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 
@@ -131,7 +131,7 @@ UI に関する考慮事項
 
 すべてのコンピューティング デバイスの中で最も広く使われている電話では、限られた画面領域と基本的な入力方法を使って、さまざまな操作を行うことができます。 電話にはさまざまなサイズがあり、大きい電話はファブレットと呼ばれます。 ファブレットでのアプリのエクスペリエンスは、電話でのエクスペリエンスと似ていますが、画面領域が大きくなることで、コンテンツ操作時に重要な変更が可能になります。
 
-互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスで電話用 Continuum は、ユーザーは電話をモニターに接続し、でも、マウスやキーボードを使用してラップトップように使う。 詳しくは、「[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)」をご覧ください。
+互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスである電話用 Continuum をユーザーが電話をモニターに接続し、でも、マウスやキーボードを使用してラップトップように使う。 詳しくは、「[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)」をご覧ください。
 
 画面サイズ
 -   電話の場合、4" ～ 5"

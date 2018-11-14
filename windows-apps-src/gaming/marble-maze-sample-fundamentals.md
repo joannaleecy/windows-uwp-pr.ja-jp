@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
 title: Marble Maze サンプルの基礎
-description: このドキュメントには、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C が使用する方法を作成する方法と、構造化、組み込まれている方法です。
+description: このドキュメントには、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C を使用する方法を作成する方法と、構造化し、組み込まれている方法です。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ms.author: elcowle
 ms.date: 08/22/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎
 ms.localizationpriority: medium
 ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035179"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200708"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 
@@ -31,22 +31,22 @@ ms.locfileid: "6035179"
 -   より新しい、オブジェクト指向に沿った方法で UWP アプリを開発できるようなクラスとインターフェイスが、Windows ランタイムには用意されています。
 -   Windows ランタイム変数の有効期間を管理するにはハット (^) 記号を付けたオブジェクト参照、COM オブジェクトの有効期間を管理するには [Microsoft::WRL::ComPtr](https://docs.microsoft.com/cpp/windows/comptr-class)、その他のすべてのヒープ割り当て C++ オブジェクトの有効期間を管理するには [std::shared\_ptr](https://docs.microsoft.com/cpp/standard-library/shared-ptr-class) または [std::unique\_ptr](https://docs.microsoft.com/cpp/standard-library/unique-ptr-class) を使います。
 -   ほとんどの場合、予期しないエラーを処理するには、結果コードではなく例外処理を使います。
--   コード分析ツールと共に[SAL 注釈](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)を使用するには、アプリのエラーを検出しやすくなります。
+-   コード分析ツールと共に[SAL 注釈](https://docs.microsoft.com/visualstudio/code-quality/using-sal-annotations-to-reduce-c-cpp-code-defects)を使用して、アプリのエラーを検出できるようにします。
 
 ## <a name="creating-the-visual-studio-project"></a>Visual Studio プロジェクトの作成
 
 
-ダウンロードしたサンプルを抽出して場合、 **MarbleMaze_VS2017.sln**フォルダーにファイル ( **C++** ) を Visual Studio で開くことができ、コードがあります。
+ダウンロードし、サンプルを抽出した場合、 **MarbleMaze_VS2017.sln**フォルダーにファイル ( **C++** ) は、Visual Studio で開くことができ、コードがあります。
 
 Marble Maze の Visual Studio プロジェクトを作ったときには、既にあるプロジェクトを利用しました。 しかし、DirectX UWP ゲームで必要となる基本的な機能を持つプロジェクトがまだない場合は、Visual Studio **DirectX 11 アプリ (ユニバーサル Windows)** テンプレートに基づくプロジェクトを作ることをお勧めします。このテンプレートには、基本的な機能を備えた 3D アプリケーションが用意されているためです。 これを行うには、次の手順に従います。
 
 1. Visual Studio 2017 で選択**ファイル > 新規 > プロジェクト]**
 
-2. 左のサイドバーに、**新しいプロジェクト**] ウィンドウで、選択**インストール済み > テンプレート > Visual C**します。
+2. **新しいプロジェクト**] ウィンドウの左側のサイドバーで選択**インストール済み > テンプレート > Visual C**します。
 
-3. 中央のリストでは、 **DirectX 11 アプリ (ユニバーサル Windows)** を選択します。 インストールされている必要なコンポーネントがない場合、このオプションが表示されない、&mdash;その他のコンポーネントをインストールする方法についての情報の[追加または削除のワークロードとコンポーネントの Visual Studio 2017 の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を参照してください。
+3. 中央のリストでは、 **DirectX 11 アプリ (ユニバーサル Windows)** を選択します。 必要なコンポーネントをインストールする必要がありますしない場合、このオプションが表示されない、&mdash;その他のコンポーネントをインストールする方法についての情報の[追加または削除のワークロードとコンポーネントの Visual Studio 2017 の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を参照してください。
 
-4. **名前**、保存するファイルの**場所**および**ソリューション名**では、プロジェクトを提供し、 **[ok]** をクリックします。
+4. **名前**、格納するファイルの**場所**および**ソリューション名**では、プロジェクトを提供し、 **[ok]** をクリックします。
 
 ![新しいプロジェクト](images/marble-maze-sample-fundamentals-1.png)
 
@@ -74,7 +74,7 @@ Visual Studio の上部の、緑色の再生ボタンの左のドロップダウ
 -   タッチ、A またはスタート画面を使用して、コント ローラーまたはマウスを高などのメニューを閉じるボタン スコア表。
 -   一時停止または再開ゲーム コント ローラーまたはキーボードの P キーで、[スタート] ボタンを使用します。
 -   ゲームを再開始するには、コントローラーの [戻る] ボタンやキーボードの Home キーを使います。
--   ハイ スコア表が表示されているときは、すべてのスコアをクリアするのに、コント ローラーまたはキーボードの Home キーで、戻るボタンを使用します。
+-   ハイ スコア表が表示されている場合は、すべてのスコアをクリアする、コント ローラーまたはキーボードの Home キーで、戻るボタンを使用します。
 
 ##  <a name="code-conventions"></a>コードの規則
 
@@ -86,7 +86,7 @@ Windows ランタイム API を JavaScript や .NET から呼び出すには、�
 > [!IMPORTANT]
 > **^** と **ref new** は、Windows ランタイム オブジェクトを作成するときと Windows ランタイム コンポーネントを作成するとき以外は使わないでください。 Windows ランタイムを使わないコア アプリケーション コードを作成する際は、標準の C++ 構文を使うことができます。
 
-Marble Maze は、ヒープに割り当てられたオブジェクトを **^** と **Microsoft::WRL::ComPtr** を使って管理し、メモリ リークを最小限に抑えます。 使用することをお勧めします ^ 有効期間を管理、Windows ランタイム変数の**ComPtr** (など、使用する場合 DirectX)、COM 変数および**std::shared\_ptr**または他のすべての有効期間を管理する**std::unique\_ptr**の有効期間を管理するにはヒープ割り当て C++ オブジェクト。
+Marble Maze は、ヒープに割り当てられたオブジェクトを **^** と **Microsoft::WRL::ComPtr** を使って管理し、メモリ リークを最小限に抑えます。 使用することをお勧めします ^ 有効期間を管理、Windows ランタイム変数の**ComPtr** (など、使用する場合 DirectX)、COM 変数と**std::shared\_ptr**または他のすべての有効期間を管理する**std::unique\_ptr**の有効期間を管理するにはヒープ割り当て C++ オブジェクト。
 
  
 
@@ -121,7 +121,7 @@ Marble Maze では、予期しないエラーに対応する主な方法とし�
 
 Microsoft Source-code Annotation Language (SAL) を使うと、関数がパラメーターをどのように使うかを説明する注を付けることができます。 SAL 注釈は、戻り値についても説明します。 SAL 注釈を C/C++ コード分析ツールと共に使うと、C や C++ ソース コードの潜在的な不具合を検出できます。 ツールによって報告される一般的なコーディング エラーは、バッファー オーバーラン、初期化されていないメモリ、null ポインターの逆参照、メモリとリソースのリークなどです。
 
-[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)で宣言されている**basicloader::loadmesh**メソッドを検討してください。 以下のメソッドを使用して`_In_`*ファイル名*には、入力パラメーターを指定する (およびそのためからのみ読み取られます)、 `_Out_` *筆者*と*indexBuffer*が出力パラメーターを指定する (とそのためだけに書き込まれます)`_Out_opt_` *vertexCount*と*indexCount*は省略可能なことを指定する出力パラメーター (およびに書き込まれる可能性があります)。 *vertexCount* と *indexCount* は省略可能な出力パラメーターであるため、**nullptr** にすることができます。 C/C++ コード分析ツールは、このメソッドの呼び出しを調べて、渡されるパラメーターが条件を満たしていることを確認します。
+[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)で宣言されている**basicloader::loadmesh**メソッドを検討してください。 このメソッドを使用して`_In_`*ファイル名*には、入力パラメーターを指定する (とそのためからのみ読み取られます)、 `_Out_` *筆者*と*indexBuffer*が出力パラメーターを指定する (とそのためのみに書き込まれます)`_Out_opt_` *vertexCount*と*indexCount*は省略可能なことを指定する出力パラメーター (とに書き込まれる可能性があります)。 *vertexCount* と *indexCount* は省略可能な出力パラメーターであるため、**nullptr** にすることができます。 C/C++ コード分析ツールは、このメソッドの呼び出しを調べて、渡されるパラメーターが条件を満たしていることを確認します。
 
 ```cpp
 void LoadMesh(

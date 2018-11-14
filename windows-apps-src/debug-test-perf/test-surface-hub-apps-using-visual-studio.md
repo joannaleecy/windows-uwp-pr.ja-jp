@@ -9,14 +9,14 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 63214ce47bffc5a0b13f421e5185d06cd810ea34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023075"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154088"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Visual Studio を使った Surface Hub アプリのテスト
-Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターは、Surface Hub と同じユーザー インターフェイスを使用できませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。
+Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターが Surface Hub と同じユーザー インターフェイスを使用していませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。
 
 シミュレーター ツールについて詳しくは一般に、 [UWP アプリの実行、シミュレーターで](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)を参照してください。
 
@@ -80,7 +80,7 @@ Surface Hub にアプリを手動で展開は、単純なプロセスです。
 既定では、Surface Hub はアプリを Microsoft Store からのみインストールします。 他のソースによって署名されたアプリをインストールするには、開発者モードを有効にする必要があります。
 
 > [!NOTE]
-> 開発者モードを有効になっている、再度に無効にする場合に、Surface Hub をリセットする必要があります。 デバイスをリセットすると、すべてのローカル ユーザーのファイルと構成が削除され、Windows が再インストールされます。
+> 開発者モードが有効にすると、もう一度これを無効にする場合に、Surface Hub をリセットする必要があります。 デバイスをリセットすると、すべてのローカル ユーザーのファイルと構成が削除され、Windows が再インストールされます。
 
 1. Surface Hub の**スタート** メニューから設定アプリを開きます。
 
@@ -92,10 +92,10 @@ Surface Hub にアプリを手動で展開は、単純なプロセスです。
 3. **[開発者モード]** を選択し、警告メッセージに同意します。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>Visual Studio からアプリを展開する
-展開プロセスについて詳しくは一般に、参照してください[の展開と UWP アプリをデバッグ](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)します。
+展開プロセスの詳細については一般を参照してください[の展開と UWP アプリをデバッグ](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)します。
 
    > [!NOTE]
-   > この機能では、最新の最新バージョンの Visual Studio を使用することをお勧めしますが、Visual Studio 2015 Update 1 日以降が必要です。 最新の Visual Studio インスタンスには、するすべての最新の開発とセキュリティ更新プログラムが gibe されます。
+   > この機能では、最新の最新バージョンの Visual Studio を使用することをお勧めしますが、Visual Studio 2015 Update 1 日以降が必要です。 最新の Visual Studio のインスタンスは、セキュリティ更新プログラムとするすべての最新の開発 gibe されます。
 
 1. **[デバッグの開始]** ボタンの横にあるデバッグ ターゲットのドロップダウンに移動し、**[リモート コンピューター]** を選択します。
 
@@ -111,4 +111,4 @@ Surface Hub にアプリを手動で展開は、単純なプロセスです。
 3. **デバッグの開始 (F5)** を展開して、Surface Hub にアプリをデバッグする] を選択または Ctrl + f5 キーを押してだけアプリを展開します。
 
    > [!TIP]
-   > Surface Hub がようこそ画面を表示している場合は、いずれかのボタンを選択して簡易非表示します。
+   > Surface Hub がようこそ画面を表示している場合は、いずれかのボタンを選択して閉じます。

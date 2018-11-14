@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 717c819aaa732cf8d29e0a701a1fec81485f48ac
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051463"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202464"
 ---
 # <a name="handle-app-resume"></a>アプリの再開の処理
 
@@ -118,7 +118,7 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> UI スレッドから、 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)イベントが発生しないため、ディスパッチャーを UI への呼び出しをディスパッチするハンドラーで使う必要があります。
+> [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)イベントがないに発生するため、UI スレッドからディスパッチャーを UI への呼び出しをディスパッチするハンドラーで使用する必要があります。
 
 ## <a name="remarks"></a>注釈
 

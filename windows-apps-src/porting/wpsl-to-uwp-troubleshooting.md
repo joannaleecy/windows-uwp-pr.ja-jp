@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5d3ab7b50721b969859006831b33e9b00e300f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039662"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155808"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>移植 WindowsPhone Silverlight UWP からのトラブルシューティング
 
@@ -26,13 +26,13 @@ ms.locfileid: "6039662"
 
 XAML 解析例外は診断が難しい場合があります。特に、わかりやすいエラー メッセージが例外に含まれていない場合は、診断が難しくなります。 デバッガーが初回例外をキャッチするように構成されていることを確してください (早い段階で解析例外のキャッチを試行するため)。 デバッガーで例外変数を調べて、HRESULT やメッセージ内に役立つ情報が含まれているかどうかを確認できます。 また、XAML パーサーを使って、Visual Studio の出力ウィンドウを調べ、エラー メッセージの出力を確認することもできます。
 
-アプリが終了した場合は、すべてがわかっている XAML マークアップの解析中にハンドルされない例外がスローされたこと、ある可能性があります (つまり、リソース WindowsPhone Silverlight アプリが windows 10 ではなく、キーが存在する不足しているリソースへの参照の結果アプリ、一部のシステム**TextBlock**スタイル キーなど)。 または、**UserControl**、カスタム コントロール、カスタム レイアウト パネルの内部で例外がスローされたことも考えられます。
+アプリが終了した場合は、すべてがわかっている XAML マークアップの解析中にハンドルされない例外がスローされたこと、ある可能性があります、不足しているリソース (つまり、WindowsPhone Silverlight アプリが windows 10 ではなく、キーが存在するへの参照の結果アプリ、一部のシステム**TextBlock**スタイル キーなど)。 または、**UserControl**、カスタム コントロール、カスタム レイアウト パネルの内部で例外がスローされたことも考えられます。
 
 最終手段として、バイナリ分割を使うことができます。 ページからマークアップのおよそ半分を削除し、アプリを再実行します。 これによって、エラーが削除した半分で発生しているか (いずれの場合でも、削除した部分はここで元に戻す必要があります)、または削除*しなかった*半分で発生しているかがわかります。 問題が特定されるまで、エラーを含む半分をさらに分割するプロセスを繰り返します。
 
 ## <a name="targetplatformversion"></a>TargetPlatformVersion
 
-このセクションで説明を Visual Studio で windows 10 プロジェクトを開いたときに、メッセージが表示する場合は、"Visual Studio 更新プログラムが必要です。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示されます。
+このセクションで説明を Visual Studio で windows 10 プロジェクトを開いたときにメッセージが表示される場合は、"Visual Studio 更新プログラムが必要です。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示されます。
 
 -   まず、インストールされている windows 10 の SDK のバージョン番号を決定します。 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** に移動し、*&lt;versionfoldername&gt;* をメモしてください。これは、4 つの部分 "Major.Minor.Build.Revision" から成るバージョン文字列です。
 -   編集用のプロジェクト ファイルを開き、`TargetPlatformVersion` 要素と `TargetPlatformMinVersion` 要素を探します。 これらの要素を次のように編集します。*&lt;versionfoldername&gt;* は、ディスク上で見つけた 4 つの部分から成るバージョン番号に置き換えてください。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038522"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158584"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -23,7 +23,7 @@ ms.locfileid: "6038522"
 
 依存関係プロパティとは、特殊な種類のプロパティです。 具体的には、Windows ランタイムの一部である専用のプロパティ システムによってプロパティの値が追跡され影響を受けるプロパティです。
 
-依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義に使用する**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
+依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義の使用**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
 
 依存関係プロパティの目的は、他の入力 (その他のプロパティや、アプリの実行時にアプリ内で発生するイベントと状態) に基づいてプロパティの値を計算する方法を提供することです。 たとえば、他の入力には次のようなものがあります。
 
@@ -76,7 +76,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてはありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
+> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてのものではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
 ## <a name="dependency-property-value-precedence"></a>依存関係プロパティ値の優先順位
 
@@ -151,7 +151,7 @@ XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com
 XAML ではなく、コードを使ってバインドを確立することもできます。 「[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)」をご覧ください。
 
 > [!NOTE]
-> このようなバインドは、依存関係プロパティ値の優先順位の目的上のローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。 {x:Bind} バインドは生成されたコードを使用して実装され、プロパティにローカル値を設定します。 {x:Bind} を使用しているプロパティにローカル値が設定されると、次にバインディングが評価されるときに、その値は置き換えられます。たとえば、ソース オブジェクトのプロパティが変更されるときなどです。
+> このようなバインドは、依存関係プロパティの値の優先順位の目的上のローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。 {x:Bind} バインドは生成されたコードを使用して実装され、プロパティにローカル値を設定します。 {x:Bind} を使用しているプロパティにローカル値が設定されると、次にバインディングが評価されるときに、その値は置き換えられます。たとえば、ソース オブジェクトのプロパティが変更されるときなどです。
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>バインディング ソース、バインディング ターゲット、FrameworkElement の役割
 

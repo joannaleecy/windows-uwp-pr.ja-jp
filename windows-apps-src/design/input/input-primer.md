@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032956"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250058"
 ---
 # <a name="interaction-primer"></a>操作の基本情報
 
@@ -66,7 +66,7 @@ UWP では "スマート" な状況依存の対話式操作システムが採用
 
 ## <a name="cortana"></a>Cortana
 
-Windows 10 では、 **Cortana**拡張機能は、ユーザーの音声コマンドを処理し、1 つのアクションを実行するアプリケーションを起動することができます。
+Windows 10 での**Cortana**拡張機能に、ユーザーの音声コマンドを処理し、1 つのアクションを実行するアプリケーションを起動することができます。
 
 ### <a name="device-support"></a>デバイスのサポート
 
@@ -236,7 +236,7 @@ Surface Hub デバイスは、100 か所の独自の同時タッチ接触を認�
 
 キーボードはテキスト用の主要な入力デバイスであり、多くの場合、特定の障碍のあるユーザーや、キーボードを使った方がアプリをすばやく効率よく操作できると考えるユーザーにとって欠かせません。
 
-[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)、互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスでユーザーは、マウスとキーボードにラップトップように使うをその電話を接続できます。
+[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)、互換性のある windows 10 モバイル デバイスの新しいエクスペリエンスでユーザーがマウスやキーボードに電話ラップトップのように電話を接続できます。
 
 ### <a name="device-support"></a>デバイスのサポート
 
@@ -258,7 +258,7 @@ OSK は、物理的なキーボードの代わりに使うことができる視�
 
 タッチ キーボードは、タッチ入力でのテキスト入力に使われる、視覚的なソフトウェア キーボードです。 タッチ キーボードはテキスト入力専用であり (ハードウェア キーボードをエミュレートしません)、テキスト フィールドや編集可能なテキスト コントロールにフォーカスがあるときにだけ表示されるので、OSK の代わりになるものではありません。 タッチ キーボードは、アプリ コマンドやシステム コマンドをサポートしていません。
 
-**注:** OSK の方が、OSK が存在するかどうかは表示されませんが、タッチ キーボード経由で優先順位。
+**注:** OSK の方が、タッチ キーボード、OSK が存在するかどうかは表示されません経由で優先順位。
 
 一般的にキーボードには、次のような特徴があります。
 

@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
 ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031084"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206639"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
@@ -279,9 +279,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>追加/無視される通知のフォアグラウンド イベント
 
 > [!IMPORTANT] 
-> 既知の問題: フォア グラウンド イベントで最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを修正しますします。
+> 既知の問題: フォア グラウンド イベント最近のバージョンの Windows での CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを解決しますされます。
 
-フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に、両方の変更イベント通知を受け取るもできます。
+フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に両方の変更イベント通知を受け取るもできます。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクでの文書 fixdelays
 
-アプリをテストするとき、バックグラウンド タスクが遅延し、数分間トリガーされない場合があります。 これを解決するたいトーゴ システム設定]-> [ユーザーに求めるシステム バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[常にバック グラウンドで許可"になるように変更します。その後にするバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
+アプリをテストするとき、バックグラウンド タスクが遅延し、数分間トリガーされない場合があります。 これを修正するには、たいトーゴ システム設定]-> [ユーザーに求めるシステム バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[常にバック グラウンドで許可されている"になるように変更します。その後にするバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。

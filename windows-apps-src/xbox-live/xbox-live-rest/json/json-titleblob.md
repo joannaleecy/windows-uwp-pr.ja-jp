@@ -10,29 +10,29 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ed09f078be5c7063d00d35d3bc3749f791d042
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030363"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196818"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
-記憶域のタイトルに関する情報が含まれています。 
+記憶域からタイトルに関する情報が含まれています。 
 <a id="ID4EP"></a>
 
  
 ## <a name="titleblob"></a>TitleBlob
  
-TitleBlob オブジェクトには、次の仕様があります。
+TitleBlob オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | clientFileTime| DateTime| [オプション]ファイルの最後のアップロードの日時。| 
-| displayName| string| [オプション]ユーザーに表示されているファイルの名前。| 
-| etag| string| タグで使用するファイルをダウンロードし、要求をアップロードします。| 
-| fileName| string| ファイルの名前です。| 
+| displayName| string| [オプション]ユーザーに表示されているファイルの名前です。| 
+| etag| string| タグで使用されるファイルをダウンロードし、要求をアップロードします。| 
+| fileName| string| ファイルの名前。| 
 | size| 64 ビットの符号付き整数| ファイルのバイトのサイズ。| 
-| smartBlobType| string| [オプション]データの種類です。 使用可能な値: config、json、バイナリします。| 
+| smartBlobType| string| [オプション]データの種類です。 使用可能な値: config、json、バイナリ。| 
   
 <a id="ID4E6C"></a>
 

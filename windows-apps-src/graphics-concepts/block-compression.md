@@ -4,20 +4,19 @@ description: ブロック圧縮は、テクスチャ サイズとメモリ フ�
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - ブロック圧縮
-author: michaelfromredmond
-ms.author: mithom
+author: hickeys
+ms.author: hickeys
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c959ced5ada9145ca494dd023c9aa802d7dccc2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 8ff4c88a46c1e89df96b48d82da333432790e461
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024330"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205873"
 ---
 # <a name="block-compression"></a>ブロック圧縮
-
 
 ブロック圧縮は、テクスチャ サイズとメモリ フットプリントを減らしてパフォーマンスを向上させる、不可逆のテクスチャ圧縮技術です。 ブロック圧縮テクスチャは、1 色あたり 32 ビットのテクスチャより小さくすることができます。
 
@@ -29,13 +28,12 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>ブロック圧縮のしくみ
 
-
 ブロック圧縮は、カラー データの保存に必要なメモリの量を減少させるための方法です。 ある色を元のサイズで保存し、他の色をエンコード スキームを使用して保存することにより、その画像の保存に必要なメモリの量を大幅に減少させることができます。 圧縮されたデータはハードウェアが自動的にデコードするので、圧縮されたテクスチャを使用しても、パフォーマンスの損失は発生しません。
 
 圧縮がどのように行われるかについては、以下の 2 つの例を参照してください。 最初の例では、圧縮されないデータを保存する際に使用されるメモリの量について説明します。2 番目の例では、圧縮されたデータを保存する際に使用されるメモリの量について説明します。
 
--   [圧縮されないデータの保存](#storing-uncompressed-data)
--   [圧縮されたデータの保存](#storing-compressed-data)
+- [圧縮されないデータの保存](#storing-uncompressed-data)
+- [圧縮されたデータの保存](#storing-compressed-data)
 
 ### <a name="span-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>圧縮されないデータの保存
 
@@ -61,14 +59,13 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idusingblockcompressionspanspan-idusingblockcompressionspanspan-idusingblockcompressionspanusing-block-compression"></a><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>ブロック圧縮の使用
 
-
 ブロック圧縮形式を指定すること以外は、圧縮されないテクスチャと同様に、ブロック圧縮テクスチャを作成します。
 
 次に、ビューを作成して、テクスチャをパイプラインにバインドします。ブロック圧縮されたテクスチャはシェーダー ステージへの入力としてのみ使用できるので、シェーダー リソース ビューを作成します。
 
 ブロック圧縮されたテクスチャを、圧縮されていないテクスチャを使用する場合と同様に使用します。 アプリケーションがブロック圧縮データへのメモリ ポインターを取得する場合は、ミップマップのメモリ パディングを考慮する必要があります。このメモリ パディングは、宣言されたサイズが実際のサイズと異なる原因となります。
 
--   [仮想サイズ対物理サイズ](#virtual-size-versus-physical-size)
+- [仮想サイズ対物理サイズ](#virtual-size-versus-physical-size)
 
 ### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>仮想サイズ対物理サイズ
 
@@ -86,7 +83,6 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idcompressionalgorithmsspanspan-idcompressionalgorithmsspanspan-idcompressionalgorithmsspancompression-algorithms"></a><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>圧縮アルゴリズム
 
-
 Direct3D のブロック圧縮方法では、圧縮されていないテクスチャ データを 4 x 4 のブロックに分割し、各ブロックを圧縮してから、そのデータを保存します。 このため、圧縮されるテクスチャは、テクスチャの次元が 4 の倍数である必要があります。
 
 ![ブロック圧縮](images/d3d10-compression-1.png)
@@ -103,13 +99,11 @@ Direct3D は圧縮スキームをいくつか実装しています。それぞ�
 | 成分が 1 つの色             | 1 つの成分 (8)                     | [BC4](#bc4)                    |
 | 成分が 2 つの色             | 2 つの成分 (8:8)                  | [BC5](#bc5)                    |
 
- 
-
--   [BC1](#bc1)
--   [BC2](#bc2)
--   [BC3](#bc3)
--   [BC4](#bc4)
--   [BC5](#bc5)
+- [BC1](#bc1)
+- [BC2](#bc2)
+- [BC3](#bc3)
+- [BC4](#bc4)
+- [BC5](#bc5)
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
 
@@ -121,14 +115,14 @@ Direct3D は圧縮スキームをいくつか実装しています。それぞ�
 
 カラー インデックス (a ～ p) は、カラー テーブルから元の色を検索するために使用します。 カラー テーブルには 4 つの色が含まれます。 最初の 2 色、color\_0 および color\_1 は、最小および最大の色です。 その他の 2 色、color\_2 および color\_3 は、線形補間で計算された中間色です。
 
-```
+```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
 color_3 = 1/3*color_0 + 2/3*color_1
 ```
 
 4 つの色は、a ～ p のブロックに保存される 2 ビットのインデックス値を割り当てられます。
 
-```
+```cpp
 color_0 = 00
 color_1 = 01
 color_2 = 10
@@ -139,7 +133,7 @@ color_3 = 11
 
 このアルゴリズムは、1 ビットのアルファが含まれているデータにも適しています。 違いは、color\_3 が 0 (透明色を表します) に設定されることと、color\_2 が color\_0 と color\_1 の線形ブレンドであることのみです。
 
-```
+```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
 color_3 = 0;
 ```
@@ -166,7 +160,7 @@ BC3 形式では、アルファ インデックス (a ～ p) を使用して、8
 
 このアルゴリズムでは、2 つの参照アルファ値を調べることで、補間アルファ値の数を決定します。 alpha\_0 が alpha\_1 より大きい場合、BC3 では 6 つのアルファ値を補間します。それ以外の場合は、4 つの値を補間します。 BC3 でアルファ値を 4 つのみ補間するときは、追加のアルファ値 (0 は完全に透明、255 は完全に不透明) を 2 つ設定します。 BC3 では、指定されたテクセルの元のアルファに最も近い補間アルファ値に対応するビット コードを保存することにより、4 x 4 のテクセル領域にアルファ値を圧縮します。
 
-```
+```cpp
 if( alpha_0 > alpha_1 )
 {
   // 6 interpolated alpha values.
@@ -201,14 +195,14 @@ else
 
 このアルゴリズムでは、2 つの参照値を調べることで、補間されるカラー値の数を決定します。 red\_0 が red\_1 より大きい場合、BC4 では 6 つのカラー値を補間します。それ以外の場合は、4 つの値を補間します。 BC4 でカラー値を 4 つのみ補間するときは、追加のカラー値 (0.0f は完全に透明、1.0f は完全に不透明) を 2 つ設定します。 BC4 では、指定されたテクセルの元のアルファに最も近い補間アルファ値に対応するビット コードを保存することにより、4 x 4 のテクセル領域にアルファ値を圧縮します。
 
--   [BC4\_UNORM](#bc4-unorm)
--   [BC4\_SNORM](#bc4-snorm)
+- [BC4\_UNORM](#bc4-unorm)
+- [BC4\_SNORM](#bc4-snorm)
 
 ### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
 
 単一成分データの補間は、以下のコード サンプルのように行われます。
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -239,7 +233,7 @@ else
 
 DXGI\_FORMAT\_BC4\_SNORM は、SNORM 範囲でデータがエンコードされることと、4 つのカラー値が補間される場合を除いて、まったく同じです。 単一成分データの補間は、以下のコード サンプルのように行われます。
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -259,8 +253,8 @@ else
   red_3 = (3*red_0 + 2*red_1)/5.0f; // bit code 011
   red_4 = (2*red_0 + 3*red_1)/5.0f; // bit code 100
   red_5 = (1*red_0 + 4*red_1)/5.0f; // bit code 101
-  red_6 = -1.0f;                     // bit code 110
-  red_7 =  1.0f;                     // bit code 111
+  red_6 = -1.0f;                    // bit code 110
+  red_7 =  1.0f;                    // bit code 111
 }
 ```
 
@@ -270,8 +264,8 @@ else
 
 成分が 2 つのカラー データを、各色に 8 ビット使用して保存するには、BC5 形式を使用します。 精度が向上する結果 ([BC1](#bc1) との比較)、BC5 は、[0 ～ 1] の範囲では DXGI\_FORMAT\_BC5\_UNORM 形式を使用し、[-1 ～ +1] の範囲では DXGI\_FORMAT\_BC5\_SNORM 形式を使用して、浮動小数点データを保存するのに最適です。 4 x 4 のテクスチャが、可能な限り最も大きなデータ形式を使用すると想定すると、この圧縮方法では必要なメモリが 32 バイト (16 色 x 2 成分/色 x 1 バイト/成分) から 16 バイトに減少します。
 
--   [BC5\_UNORM](#bc5-unorm)
--   [BC5\_SNORM](#bc5-snorm)
+- [BC5\_UNORM](#bc5-unorm)
+- [BC5\_SNORM](#bc5-snorm)
 
 このアルゴリズムは、4 x 4 ブロックのテクセルで機能します。 2 つの成分でそれぞれ 16 色を保存する代わりに、このアルゴリズムでは各成分で 2 つの参照カラー (red\_0、red\_1、green\_0、および green\_1) と、各成分で 16 個の 3 ビット カラー インデックス (red a ～ red p および green a ～ green p) を保存します。
 
@@ -285,7 +279,7 @@ else
 
 単一成分データの補間は、以下のコード サンプルのように行われます。 green の成分の計算も同様です。
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -316,7 +310,7 @@ else
 
 DXGI\_FORMAT\_BC5\_SNORM は、SNORM 範囲でデータがエンコードされることと、4 つのデータ値が補間され、-1.0f と 1.0f の 2 つの値が追加される場合を除いて、まったく同じです。 単一成分データの補間は、以下のコード サンプルのように行われます。 green の成分の計算も同様です。
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -345,19 +339,18 @@ else
 
 ## <a name="span-iddifferencesspanspan-iddifferencesspanspan-iddifferencesspanformat-conversion"></a><span id="Differences"></span><span id="differences"></span><span id="DIFFERENCES"></span>形式の変換
 
-
 Direct3D を使用すると、ビット幅が同じであれば、事前に構造化されたタイプのテクスチャとブロック圧縮されたテクスチャとの間のコピーが可能になります。
 
 いくつかの種類の形式間でリソースをコピーできます。 このようなコピー操作では、そのリソース データを異なる形式として再解釈する、一種の形式変換を実行します。 より一般的な変換の動作と、データの再解釈との違いを示す、この例をご覧ください。
 
-```
+```cpp
 FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
 'f' を 'u' のタイプとして再解釈するため、[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) を使います。
 
-```
+```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
@@ -365,7 +358,7 @@ memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 
 より一般的な変換を実行するには、割り当てを使用します。
 
-```
+```cpp
 u = f; // 'u' becomes 1.
 ```
 
@@ -415,9 +408,6 @@ u = f; // 'u' becomes 1.
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
-
 
 [圧縮テクスチャ リソース](compressed-texture-resources.md)

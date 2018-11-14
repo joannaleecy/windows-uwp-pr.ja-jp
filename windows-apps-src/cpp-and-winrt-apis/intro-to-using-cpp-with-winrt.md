@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032134"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148897"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -41,11 +41,11 @@ Visual Studio の C++/WinRT プロジェクト テンプレート、および C+
 プロパティとターゲットでは、[Visual Studio Marketplace](https://marketplace.visualstudio.com/) から [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) をダウンロードし、インストールします。
 
 > [!NOTE]
-> 1.0.181002.2 のバージョンで (またはそれ以降) 新しい C + を作成するインストールされると、VSIX の/WinRT プロジェクトは、そのプロジェクトの[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)を自動的にインストールします。 Microsoft.Windows.CppWinRT NuGet パッケージを提供強化 C + + WinRT プロジェクト ビルドのサポート、開発マシンと (のみ、NuGet パッケージと、VSIX ではないがインストールされている)、ビルド エージェントの間で移植プロジェクトを作成します。
+> バージョン 1.0.181002.2 (またはそれ以降) 新しい: C++ の作成にインストールされると、VSIX の/WinRT プロジェクトは、そのプロジェクトの[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)を自動的にインストールします。 Microsoft.Windows.CppWinRT NuGet パッケージを提供強化 C + + WinRT プロジェクト ビルドのサポート、開発コンピューターと (NuGet パッケージと、VSIX ではないがインストールされている)、ビルド エージェントの間で移植プロジェクトを作成します。
 >
-> 既存のプロジェクトの&mdash;1.0.181002.2 のバージョンをインストールした後 (またはそれ以降) VSIX の&mdash;Visual Studio でプロジェクトを開く場合は、**プロジェクト**をクリックすることをお勧めします \> **NuGet パッケージの管理]** \> **参照**、入力または**Microsoft.Windows.CppWinRT**を検索ボックスに貼り付ける、検索結果、項目を選択して**インストール**をそのプロジェクトのパッケージをインストールする] をクリックします。
+> 既存のプロジェクトの&mdash;1.0.181002.2 のバージョンをインストールした後 (またはそれ以降) の VSIX&mdash;Visual Studio でプロジェクトを開く場合は、**プロジェクト**をクリックすることをお勧めします \> **NuGet パッケージを管理する.** \> **参照**、入力または**Microsoft.Windows.CppWinRT**を検索ボックスに貼り付ける、検索結果、項目を選択して**インストール**をそのプロジェクトのパッケージをインストールする] をクリックします。
 
-Visual Studio 2017 が必要があります (少なくとも必要がありますがバージョン 15.6、15.7 以上をお勧め)、および Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803)。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
+Visual Studio 2017 が必要があります (少なくとも必要がありますバージョン 15.6、お勧めします 15.7 以上)、および Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803)。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
 
 そのことができますを作成し、ビルド、または開くには、c++/WinRT Visual Studio でプロジェクトを作成し展開します。 追加することで、既存のプロジェクトを変換する代わりに、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティをその`.vcxproj`ファイル。
 
@@ -89,7 +89,7 @@ IDL ファイルでは、コンポーネント、それらの既定インター�
 ビルドした Windows ランタイム コンポーネントのバイナリとその `.winmd` を、それらを使用する UWP アプリとバンドルします。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT プロジェクションにおけるカスタム型
-C++//winrt プログラミングでは、標準 C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。
+C++//winrt プログラミングでは、標準的な C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) は、あるポイントで使用する可能性が高い別の型です。 ただし、[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) などの型を直接使用する可能性は低いです。 または、対応する型が C++ 標準ライブラリに現れた場合に変更すべきコードがないように、使用しないことを選択する場合もあります。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6026882"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209072"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -34,7 +34,7 @@ ms.locfileid: "6026882"
  
 削除操作では、等です。
  
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
   
 <a id="ID4ECB"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "6026882"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 | 
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
   
 <a id="ID4EPB"></a>
@@ -65,7 +65,7 @@ ms.locfileid: "6026882"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
@@ -79,12 +79,12 @@ ms.locfileid: "6026882"
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-エラーの場合、サービスは、サービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
+エラーの場合、サービスはサービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
  
 | プロパティ| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | errorSource| string| エラーが発生した場所を指定します。| 
-| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。| 
+| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。| 
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。| 
   
 <a id="ID4EYF"></a>
@@ -92,7 +92,7 @@ ms.locfileid: "6026882"
  
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果 
  
-のみ、独自のユーザーのメッセージを削除することができます。 
+のみユーザー メッセージを削除することができます。 
   
 <a id="ID4EDG"></a>
 

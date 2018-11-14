@@ -8,18 +8,18 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ba9339ac9e383c9f4ac8107b79caa947cb09615
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 6e9809a8abea46d8aade53f26a0b8fd63d803021
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6139318"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184332"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 
 ## <a name="requirements"></a>要件
 
-1. **[デベロッパー センターの開発者プログラム](https://developer.microsoft.com/store/register)** に登録します。
+1. **[パートナー センターの開発者プログラム](https://developer.microsoft.com/store/register)** に登録します。
 2. **[Windows 10](https://microsoft.com/windows)**。
 3. **[Visual Studio](https://www.visualstudio.com/)** の**ユニバーサル Windows アプリ開発ツール**を使用します。 UWP アプリのバージョンは、Visual Studio 2015 Update 3 を最低限に必要です。 開発者とセキュリティ更新プログラムの最新リリースの Visual Studio を使用することをお勧めします。 
 4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。
@@ -27,9 +27,9 @@ ms.locfileid: "6139318"
 > [!IMPORTANT]
 > Windows 10 SDK バージョン 10.0.15063.0 (Creators Update とも呼ばれます) 以降を使っている場合は、Visual Studio 2017 が必要です。
 
-## <a name="create-a-new-product-on-microsoft-dev-center"></a>Microsoft デベロッパー センターで新しい製品を作成する
+## <a name="create-a-new-product-in-partner-center"></a>パートナー センターで新しい製品を作成します。
 
-すべての Xbox Live タイトルには、[Microsoft デベロッパー センター](https://developer.microsoft.com/store)で作成された製品が必要です。これにより、サインインして Xbox Live サービスを呼び出すことができるようになります。 詳しくは、[UDC でのタイトルの作成に関するページ](create-a-new-title.md)をご覧ください。
+すべての Xbox Live タイトルにサインインし、Xbox Live サービスを呼び出すことができます前に、[パートナー センター](https://partner.microsoft.com/dashboard)で作成された製品が必要です。 詳しくは、[UDC でのタイトルの作成に関するページ](create-a-new-title.md)をご覧ください。
 
 ## <a name="configuring-your-development-device"></a>開発用デバイスの構成
 
@@ -115,7 +115,7 @@ Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio
 
 ### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4. Visual Studio のプロジェクトと UWP アプリを関連付ける
 
-ゲームがサインインするには、Microsoft デベロッパー センターで既に作成した製品に関連付けられる必要があります。 ゲームは、Visual Studio で Microsoft Store 関連付けウィザードを使って関連付けることができます。 Visual Studio で、次のようにします。
+できるゲームのサインイン、パートナー センターで作成した製品に関連付けられている場合があります。 ゲームは、Visual Studio で Microsoft Store 関連付けウィザードを使って関連付けることができます。 Visual Studio で、次のようにします。
 
 1.  プライマリー プロジェクト (スタートアップ プロジェクト) を右クリックし、**[Microsoft Store]** > **[アプリケーションを Microsoft Store と関連付ける...]** の順にクリックします
 2.  要求されたら、アプリの作成に使用した **Windows デベロッパー アカウント**でサインインし、画面の指示に従います。
@@ -140,7 +140,7 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
 3. ファイルを右クリックして **[プロパティ]** を選び、以下の点を確認します。
     1. **[ビルド アクション]** が **[コンテンツ]** に設定されている。  
     2. **[出力ディレクトリにコピー]** が **[常にコピーする]** に設定されている。
-5.  次のテンプレートを使用して構成ファイルを編集し、**TitleId** と **PrimaryServiceConfigId** をタイトルに適用される値に置き換えます。 Microsoft デベロッパー センターでのルート Xbox Live ページから適切な値を取得できます。 **PrimaryServiceConfigId** は、Microsoft デベロッパー センターでは **SCID** として表示されます。
+5.  次のテンプレートを使用して構成ファイルを編集し、**TitleId** と **PrimaryServiceConfigId** をタイトルに適用される値に置き換えます。 パートナー センターで、ルートの Xbox Live ページから適切な値を取得できます。 **PrimaryServiceConfigId**は、パートナー センターで**SCID**として表示されます。
 
 ```json
     {
@@ -149,7 +149,7 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
     }
 ```
 
-次に、例を示します。
+以下に例を示します。
 
 ```json
     {

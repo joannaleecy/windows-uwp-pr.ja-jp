@@ -9,18 +9,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038676"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199696"
 ---
 # <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
 
 [パートナー センター](https://partner.microsoft.com/dashboard)で**の広告パフォーマンス レポート**では、コミュニティ広告など、[広告ユニット](in-app-ads.md)の実施状況を表示します。 このレポートには、[広告仲介](in-app-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。
 
-このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。 パートナー センターで、このデータを表示したり、ページの矢印アイコンをクリックしてオフラインで表示するレポートのデータをダウンロードできます。 このデータは、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。
+このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。 パートナー センターで、このデータを表示したり、ページの矢印アイコンをクリックしてオフラインで表示するレポート データをダウンロードできます。 このデータは、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。
 
 [広告パフォーマンス] レポートのデータを見るときは、さまざまなソースから新しいデータを受け取って処理するため、過去 3 日間のレポートのデータは変化する可能性があることにご注意ください。 また、最大で過去 90 日間のデータが再構成される可能性があります。
 

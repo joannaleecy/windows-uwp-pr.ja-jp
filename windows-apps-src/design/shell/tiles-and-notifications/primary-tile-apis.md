@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP, StartScreenManager, プライマリ タイルをピン留めする, プライマリ タイル API, タイルのピン留めの確認, ライブ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d5c65881552199fce6f90bbf15e4bb2bac950ce
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033677"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6156925"
 ---
 # <a name="primary-tile-apis"></a>プライマリ タイル API
  
@@ -86,7 +86,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 プライマリ タイルが現在ピン留めされていなくて、タイルがスタート画面でサポートされている場合、プライマリ タイルをピン留めできることを伝えるヒントをユーザーに表示できます。
 
 > [!NOTE]
-> ながら、アプリがフォア グラウンドにし、ユーザーが意図的にプライマリ タイル bepinned を要求した (たとえばの後、ユーザーは、タイルのピン留めについてのヒントに [はい] をクリックして) この APIafterthe をのみ呼び出す必要があります、UI スレッドからこの API を呼び出す必要があります。
+> ながら、アプリがフォア グラウンドにし、ユーザーが意図的が要求されたプライマリ タイル bepinned (たとえば、タイルのピン留めについてのヒントに [はい] をクリックしたユーザー) この APIafterthe のみを呼び出す必要があります、UI スレッドからこの API を呼び出す必要があります。
 
 ユーザーがプライマリ タイルをピン留めするボタンをクリックしたら、[RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) メソッドを呼び出して、タイルがスタート画面にピン留めされるよう要求します。 これにより、タイルをスタート画面にピン留めするかどうかの確認を求めるダイアログがユーザーに表示されます。
 

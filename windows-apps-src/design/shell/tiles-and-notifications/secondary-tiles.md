@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP, セカンダリ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: e27786701fa2ae9ac00a7eab57e840ec9a0dc811
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047823"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249507"
 ---
 # <a name="secondary-tiles"></a>セカンダリ タイル
 

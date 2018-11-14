@@ -10,17 +10,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: da73760969e7a4a9e268644555d0790980b16123
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042070"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204431"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 ハンドル ID で指定されたハンドルを削除します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EAB)
@@ -40,7 +40,7 @@ ms.locfileid: "6042070"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッションのハンドルを一意の ID。|
+| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
 
 <a id="ID4ELB"></a>
 

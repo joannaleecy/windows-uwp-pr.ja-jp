@@ -10,18 +10,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e585f4a16ec54ad23fe1a458294d6c0cd13eb6ed
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030450"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195636"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
 指定したマッチ チケットを作成します。
 
 > [!IMPORTANT]
-> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
@@ -44,7 +44,7 @@ ms.locfileid: "6030450"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
 | scid| GUID| セッションのサービス構成 id (SCID)。|
-| hoppername | string | ホッパーの名前。 |
+| hoppername | string | ホッパーの名前です。 |
 
 <a id="ID4EJB"></a>
 
@@ -53,8 +53,8 @@ ms.locfileid: "6030450"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
-| デバイスの種類| 必須| とき、ユーザーの deviceType が省略されてか以外のコンソールに一致するタイトルに設定する必要がありますないコンソール専用のタイトル。 | 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張でマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
+| デバイスの種類| 必須| とき、ユーザーの deviceType が省略されてかコンソール以外に一致するタイトルに設定する必要がありますないコンソール専用のタイトル。 | 403|
 | タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
@@ -77,8 +77,8 @@ ms.locfileid: "6030450"
 | serviceConfig| GUID| セッションの SCID です。|
 | hopperName| string| ホッパーの名前です。|
 | giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒の整数)。|
-| preserveSession| 列挙型| かどうかには、セッションに一致するセッションとして再利用を示す値。 値は、「ことはありません」と"always"します。 |
-| ticketSessionRef| MultiplayerSessionReference| プレイヤーまたはグループは、現在再生中のセッションの MultiplayerSessionReference オブジェクト。 |
+| preserveSession| 列挙型| かどうかには、セッションと一致するセッションとして再利用を示す値。 可能な値は、「しない」と「常に」です。 |
+| ticketSessionRef| MultiplayerSessionReference| いるプレイヤーまたはグループは、現在再生中のセッションの MultiplayerSessionReference オブジェクト。 |
 | ticketAttributes| オブジェクトのコレクション| 属性とプレイヤーのグループのユーザーが指定した値です。|
 
 <a id="ID4EXF"></a>
@@ -86,14 +86,14 @@ ms.locfileid: "6030450"
 
 ### <a name="prohibited-members"></a>禁止されているメンバー
 
-要求では、その他のすべてのメンバーが禁止されています。
+要求では、他のすべてのメンバーが禁止されています。
 
 <a id="ID4ECG"></a>
 
 
 ### <a name="sample-request"></a>要求の例
 
-マッチ チケットを作成して、セッションは、プレイヤーに固有の属性と共に、一致するプレイヤーを含める必要があります前に、 **ticketSessionRef**オブジェクトによって参照されるセッションを作成する必要があります。 各プレイヤーは、作成またはセッションにマッチが関連付けられている属性の追加、MPSD からセッションに参加する必要があります。 マッチの属性は、プレイヤーごとに matchAttrs と呼ばれるカスタム プロパティのフィールドに配置されます。
+マッチ チケットを作成して、セッションは、プレイヤーに固有の属性と共に、一致するプレイヤーを含める必要があります前に、 **ticketSessionRef**オブジェクトによって参照されるセッションを作成する必要があります。 各プレイヤーは、作成またはに対して、セッションにマッチが関連付けられている属性の追加、MPSD セッションに参加する必要があります。 マッチの属性は、プレイヤーごとに matchAttrs と呼ばれるカスタム プロパティのフィールドに配置されます。
 
 作成または参加要求を提出する**http://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** し、次のようになります。
 
@@ -126,7 +126,7 @@ ms.locfileid: "6030450"
 
 
 > [!NOTE] 
-> タイトルでは、この呼び出しを再試行するユーザーを有効にすることができますが、再試行しないでください。 が自動的にデータが失敗した場合。  
+> タイトルでは、この呼び出しを再試行するユーザーを有効にすることができますが、再試行しないでください。 それに自動的にデータが失敗した場合。  
 
 
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, 位置情報機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050989"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249340"
 ---
 # <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
@@ -58,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使って、ユーザーに位置情報へのアクセス許可を求めます。 ユーザーに対するこの要求はアプリごとに 1 回だけ行われます。 アクセス許可の付与または拒否を行った後、このメソッドはユーザーにアクセス許可を求めなくなります。 ユーザーが位置情報へのアクセス許可を求められた後にそのアクセス許可を変更できるように、位置情報の設定へのリンクを用意することをお勧めします。これについては、このトピックの後半で紹介します。
 
->注: 粗い位置情報機能では、ユーザーの明示的なアクセス許可 (システム全体の位置情報スイッチする必要があります**で**、ただし) を取得することがなく、意図的に暗号化されている (不正確な) 位置情報を取得するアプリができます。 アプリの粗い場所を利用する方法については、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)クラスの[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)メソッドを参照してください。
+>注: 粗い位置情報機能では、ユーザーの明示的なアクセス許可 (システム全体の位置情報スイッチする必要があります**で**、ただし) を取得することがなく、意図的に暗号化されている (不正確な) 位置情報を取得するアプリをできます。 アプリの粗い場所を利用する方法については、 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)クラスで[**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)メソッドを参照してください。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>手順 2. ユーザーの位置情報を取得し、位置情報のアクセス許可の変更を登録する
 

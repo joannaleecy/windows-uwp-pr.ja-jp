@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b1711c29486b0a8d50c2dbed4c0240886febc084
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044311"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259590"
 ---
 # <a name="guidelines-for-panning"></a>パンのガイドライン
 
@@ -78,7 +78,7 @@ ms.locfileid: "6044311"
 
 ## <a name="additional-usage-guidance"></a>その他の使い方のガイダンス
 
-タッチでのパン (1 本または複数の指でのスワイプまたはスライド ジェスチャ) は、マウスでのスクロールと似ています。 パンはスクロール バーのクリックよりも、マウス ホイールの回転やスクロール ボックスのスライドに最も近い操作です。 場合を除き、区別 API でいくつかのデバイスに固有の電源で必要とされる、単に両方の操作のパンと呼びます。
+タッチでのパン (1 本または複数の指でのスワイプまたはスライド ジェスチャ) は、マウスでのスクロールと似ています。 パンはスクロール バーのクリックよりも、マウス ホイールの回転やスクロール ボックスのスライドに最も近い操作です。 区別が API でか、いくつかのデバイスに固有の電源で必要とされる、限り、単両方の操作のパンと呼びます。
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - 動作の変更</strong>

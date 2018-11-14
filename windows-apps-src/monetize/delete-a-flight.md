@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの削除
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040990"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198705"
 ---
 # <a name="delete-a-package-flight"></a>パッケージ フライトの削除
 
@@ -48,7 +48,7 @@ ms.locfileid: "6040990"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 削除するパッケージ フライトが含まれるアプリのストア ID。 アプリのストア ID は、パートナー センターで利用できます。  |
-| flightId | string | 必須。 削除するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なも。  |
+| flightId | string | 必須。 削除するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定されたパッケージ フライトは見つかりませんでした。  |
-| 409  | 指定されたパッケージ フライトは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アプリは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | 指定されたパッケージ フライトは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アプリが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

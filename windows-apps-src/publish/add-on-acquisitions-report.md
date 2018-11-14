@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
 ms.localizationpriority: medium
 ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026867"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198096"
 ---
 # <a name="add-on-acquisitions-report"></a>[アドオン取得] レポート
 
 
-[パートナー センター](https://partner.microsoft.com/dashboard)での**アドオンの取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
+[パートナー センター](https://partner.microsoft.com/dashboard)での**アドオン取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細については、および windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
 
-パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインでは、このデータを表示できます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
+このデータは、パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示できます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入 (または、無料で提供している場合は、支払いなしでアドオンを獲得) したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 
@@ -30,7 +30,7 @@ ms.locfileid: "6026867"
 
 ## <a name="apply-filters"></a>フィルターを適用
 
-ページの上部で、データを表示する期間を選択できます。 既定では **[30 日間]** が選択されていますが、3、6、12 か月間のデータや、指定した任意の期間のデータを表示することもできます。 70-2 時間、または 1 時間のいずれかをほぼリアルタイムでの入手データを表示するには、 **1 H**または**72 H**を選択することもできます。これらの期間は、**アドオンの入手数**グラフの**アドオンを毎日**] タブと**市場**グラフの**取得**] タブにのみ適用されます。 
+ページの上部で、データを表示する期間を選択できます。 既定では **[30 日間]** が選択されていますが、3、6、12 か月間のデータや、指定した任意の期間のデータを表示することもできます。 1 時間、または 70 2 時間をほぼリアルタイムで入手データを表示するには、 **1 H**または**72 H**を選択することもできます。これらの期間は、**アドオンの入手数**グラフの**アドオンを毎日**タブと**市場**グラフの**取得**] タブにのみ適用されます。 
 
 このページにある **[フィルター]** を展開して、このページのすべてのデータを特定のアドオン、および市場やデバイスの種類を基にフィルター処理できます。
 

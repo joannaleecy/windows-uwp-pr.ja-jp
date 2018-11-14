@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024320"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200649"
 ---
 # <a name="launch-an-app-for-results"></a>結果を取得するためのアプリの起動
 
@@ -27,7 +27,7 @@ ms.locfileid: "6024320"
 
 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"*結果を取得するためのアプリの起動*" と呼ばれます。 この例では、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) を使って、結果を取得するためのアプリの起動方法を示しています。
 
-新しいアプリ間の通信 windows 10 での Api を使うと Windows アプリ (および Windows Web アプリ) をアプリと exchange のデータとファイルを起動できます。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
+新しいアプリ間通信 windows 10 での Api を使うと Windows アプリ (および Windows Web アプリ) をアプリと exchange のデータとファイルを起動できます。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
 
 結果を得るために起動するアプリは、起動されたアプリと呼ばれます。 アプリを起動するアプリは、呼び出し元アプリと呼ばれます。 この例では、呼び出し元アプリと、起動されたアプリの両方を記述します。
 

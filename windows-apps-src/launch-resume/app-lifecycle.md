@@ -9,11 +9,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035644"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198685"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル
 
@@ -183,9 +183,9 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 一般に、アプリを閉じる処理はユーザーが行う必要はなく、Windows で管理されます。 ただし、ユーザーはジェスチャを使うか、Alt + F4 キーを押すか、Windows Phone でタスク スイッチャーを使って、アプリを閉じることができます。
 
-ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows8.1 以降では、アプリは、ユーザーによって閉じられると、アプリが画面から削除されると切り替えリストが明示的に終了します。
+ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows8.1 以降では、アプリがユーザーによって閉じられると、アプリが画面から削除されると切り替えリストが明示的に終了します。
 
-**ユーザーによって閉じられた動作:** アプリは、Windows によって閉じられたよりも、ユーザーが閉じたときに、異なる処理を実行する必要がある場合、アプリのユーザーによって、または Windows によって終了されたかどうかを判断する、アクティブ化イベント ハンドラーを使用することができます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
+**ユーザーによって閉じられた動作:** アプリは、それが Windows によって閉じられたよりもユーザーによって閉じられたときに、異なる処理を実行する必要がある場合、アプリのユーザーによって、または Windows によって終了されたかどうかを判断するアクティブ化イベント ハンドラーを使用することができます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
 
 必要でない限り、アプリをプログラムで閉じないことをお勧めします。 たとえば、メモリ リークが検出された場合などは、ユーザーの個人データのセキュリティを確保するためにアプリ自体で閉じてもかまいません。
 

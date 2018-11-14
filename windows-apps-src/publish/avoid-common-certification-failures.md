@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047347"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252347"
 ---
 # <a name="avoid-common-certification-failures"></a>一般的な認定エラーの回避
 
@@ -33,7 +33,7 @@ ms.locfileid: "6047347"
 
 -   テスト アカウントのユーザー名とパスワード (ユーザーがサービスにログインする必要のあるアプリの場合) や、非表示の機能やロックされている機能へのアクセスに必要な手順など、アプリを使うために [必要な情報を提供](notes-for-certification.md) してください。
 
--   [プライバシー ポリシーの URL](enter-app-properties.md#privacy-policy-url)を含める場合は、アプリが必要です。たとえば、アプリがあらゆる種類の方法で個人情報にアクセスする、またはそれ以外の場合は、法律で義務付けられています。 プライバシー ポリシーが、アプリに必要なかどうかを判断するためには、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)と[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)を確認します。
+-   [プライバシー ポリシーの URL](enter-app-properties.md#privacy-policy-url)を含める場合は、アプリが必要です。たとえば、アプリは、あらゆる種類の方法で個人情報にアクセスしたり、それ以外の場合は、場合法律で義務付けられています。 プライバシー ポリシーが、アプリに必要なかどうかを判断するためには、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)と[Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies)を確認します。
 
 -   アプリの内容を明確に表せるように、アプリの説明はできるだけ詳しく記載します。 ヘルプが必要な場合は、[アプリに関する優れた説明を記載する](write-a-great-app-description.md) ためのガイダンスをご覧ください。
 

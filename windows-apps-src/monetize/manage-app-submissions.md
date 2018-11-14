@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026737"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6152152"
 ---
 # <a name="manage-app-submissions"></a>アプリの申請の管理
 
@@ -127,7 +127,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、[アプリの申請をコミット](commit-an-app-submission.md)します。 これでパートナー センターに通知は、申請が完了して、更新がアカウントに適用できるようになりましたする必要があります。
+5. 次のメソッドを実行して、[アプリの申請をコミット](commit-an-app-submission.md)します。 これは、申請を完了したことと、更新がアカウントに適用できるようになりましたする必要がありますにパートナー センターに通知されます。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -141,7 +141,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 または、以前のメソッドを使用して、パートナー センターにアクセスして申請の進行状況を監視する続行することができます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 またはパートナー センターにアクセスして、以前のメソッドを使用して、申請の進行状況を監視する続行することができます。
 
 <span id="manage-gradual-package-rollout">
 
@@ -339,7 +339,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値      | 型   | 説明      |
 |------------|--------|-------------------|
-| id            | string  | 申請 ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求、[すべてのアプリの取得](get-all-apps.md)要求、[アプリの取得](get-an-app.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なも。  |
+| id            | string  | 申請 ID。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求、[すべてのアプリの取得](get-all-apps.md)要求、[アプリの取得](get-an-app.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 | applicationCategory           | string  |   アプリの[カテゴリとサブカテゴリ](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)を指定する文字列です。 カテゴリとサブカテゴリは、アンダースコア "_" で 1 つの文字列に連結します (例: **BooksAndReference_EReader**)。      |  
 | pricing           |  object  | アプリの価格設定情報が保持される[価格リソース](#pricing-object)です。        |   
 | visibility           |  string  |  アプリの表示です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -390,7 +390,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 > [!IMPORTANT]
 > **セール** リソースはサポートを終了しました。現在、Microsoft Store 申請 API を使ってアプリの申請の販売データを取得または変更することはできません。 将来的には、Microsoft Store 申請 API を更新して、アプリの申請のセール情報にプログラムでアクセスする新しい方法を導入する予定です。
 >    * [アプリの申請を取得する GET メソッド](get-an-app-submission.md)を呼び出すと、*セール* リソースは空になります。 パートナー センターを使って、アプリの申請のセール データを取得する続行することができます。
->    * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 パートナー センターを使って、アプリの申請のセール データを変更する続行することができます。
+>    * [アプリの申請を更新する PUT メソッド](update-an-app-submission.md)を呼び出すとき、*セール*の値に含まれた情報は無視されます。 パートナー センターを使用して、アプリの申請のセール データを変更する続行することができます。
 
 このリソースには、次の値があります。
 
@@ -427,7 +427,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  licenseTerms                |    string     | アプリの[ライセンス条項](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) (省略可能) です。     |
 |  privacyPolicy                |   string      |   この値は使われなくなりました。 設定したり、アプリのプライバシー ポリシーの URL を変更したりはパートナー センターでの[プロパティ](../publish/enter-app-properties.md#privacy-policy-url)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。       |
 |  supportContact                |   string      |  この値は使われなくなりました。 設定したり、アプリのサポートの連絡先の URL やメールのアドレスを変更したりはパートナー センターでの[プロパティ](../publish/enter-app-properties.md#support-contact-info)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。        |
-|  websiteUrl                |   string      |  この値は使われなくなりました。 設定またはアプリの web ページの URL を変更はパートナー センターでの[プロパティ](../publish/enter-app-properties.md#website)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。      |    
+|  websiteUrl                |   string      |  この値は使われなくなりました。 設定したり、アプリの web ページの URL を変更したりはパートナー センターでの[プロパティ](../publish/enter-app-properties.md#website)ページでこれを行う必要があります。 この値は、申請 API の呼び出しから省略することができます。 この値を設定しても無視されます。      |    
 |  description               |    string     |   アプリの登録情報の[説明](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)です。   |     
 |  features               |    array     |  アプリの[機能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)を示す最大 20 個の文字列の配列です。     |
 |  releaseNotes               |  string       |  アプリの[リリース ノート](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes)です。    |
@@ -460,7 +460,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 ### <a name="gaming-options-resource"></a>ゲーム オプション リソース
 
-このリソースにはアプリのゲーム関連の設定が保持されます。 このリソースの値は、パートナー センターでの申請の[ゲームの設定](../publish/enter-app-properties.md#game-settings)に対応します。
+このリソースにはアプリのゲーム関連の設定が保持されます。 このリソースの値は、パートナー センターでの申請に対する[ゲームの設定](../publish/enter-app-properties.md#game-settings)に対応します。
 
 ```json
 {
@@ -639,7 +639,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*と*fallbackSubmissionId*値は、パートナー センターで割り当てられているし、開発者が設定するものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
+> *PackageRolloutStatus*と*fallbackSubmissionId*の値は、パートナー センターで割り当てられているし、開発者が設定されるものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
 
 <span id="trailer-object" />
 
@@ -726,7 +726,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  Base               |   価格帯が設定されていない場合、アプリの基本価格が使用されます。      |     
 |  NotAvailable              |   アプリは指定された地域で提供されていません。    |     
 |  Free              |   アプリは無償です。    |    
-|  Tier*xxx*               |   アプリの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられている市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは、**価格**のセクションで)。    |
+|  Tier*xxx*               |   アプリの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられた市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは**価格**のセクションで)。    |
 
 
 <span id="enterprise-licensing" />

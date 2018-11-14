@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c7c00e9322881aedafeddddcd5129ae0248e718
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050338"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151635"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
 パブリック クリップを一覧表示します。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
@@ -30,9 +30,9 @@ ms.locfileid: "6050338"
  
 この API は、さまざまな方法は、パブリック一覧クリップにできます。 クリップの一覧に基づいて返されたプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。
  
-クエリは、サービス構成 id (SCID) ごとに最適化されます。 さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。 これは、ビデオのセットの大規模なより明確です。 クエリは昇順の並べ替え順序を指定できません。
+クエリは、サービス構成 id (SCID) ごとに最適化されます。 さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。 これは、ビデオのセットの大規模なより明確です。 クエリでは、昇順の並べ替え順序を指定できません。
  
-修飾子は、公開クリップを特定のコレクションを取得する必要があります。 要求元のユーザーには、要求された SCID へのアクセスが必要、そうしないと http/403 が返されます。
+修飾子は、公開のクリップを特定のコレクションを取得する必要があります。 要求元のユーザーには、要求された SCID へのアクセスが必要、そうしないと http/403 が返されます。
   
 <a id="ID4ECB"></a>
 
@@ -51,9 +51,9 @@ ms.locfileid: "6050338"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| <b>かどうか achievementId = {achievementId}。</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>かどうか greatestMomentId = {greatestMomentId}。</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>かどうか修飾子 = 作成。 </b>| Most Recent| 必須。| 
+| <b>? achievementId = {achievementId}</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>? greatestMomentId = {greatestMomentId}</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
+| <b>? 修飾子 = 作成 </b>| Most Recent| 必須。| 
   
 <a id="ID4EDD"></a>
 

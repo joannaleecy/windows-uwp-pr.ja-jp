@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e4aa010915ba681869b4ae27ba63e081a31ef78
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035458"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196856"
 ---
 # <a name="storyboarded-animations"></a>ストーリーボードに設定されたアニメーション
 
@@ -151,7 +151,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By では null が許容される
 
-**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX) [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用するため、 **null 値**の種類はありません。
+**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX) **Nullable**の種類、ない[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用します。
 
 ### <a name="other-properties-of-an-animation"></a>アニメーションのその他のプロパティ
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox One ゲームの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035149"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155084"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Xbox One ゲームの入手数の取得
 

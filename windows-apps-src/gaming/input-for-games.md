@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041801"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249451"
 ---
 # <a name="input-for-games"></a>ゲームの入力
 
@@ -53,7 +53,7 @@ UWP ゲームでフライト スティックの使用方法の詳細について
 
 未加工のゲーム コントローラーは、さまざまな種類の一般的なゲーム コントローラーの入力を備えた、ゲーム コントローラーの汎用的な表現です。 これらの入力は、名前のないボタン、スイッチ、軸の単純な配列として公開されます。 未加工のゲーム コントローラーを使用すると、ユーザーが使っているコントローラーの種類に関係なく、カスタム入力マッピングを作成することができます。
 
-UWP ゲームで未加工のゲーム コント ローラーを使用する方法について詳しくは、[未加工のゲーム コント ローラー](raw-game-controller.md)を参照してください。
+UWP ゲームで未加工のゲーム コント ローラーを使用する方法の詳細については、[未加工のゲーム コント ローラー](raw-game-controller.md)を参照してください。
 
 ### <a name="ui-navigation-controllers"></a>UI ナビゲーション コント ローラー
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9450a5980ee83c41c60e630c616ba620e0ac4930
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032374"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203857"
 ---
 # <a name="point-of-service"></a>POS (店舗販売時点管理)
 このセクションには、[Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) を使用して、ユニバーサル Windows アプリケーションから、小売業やホスピタリティ環境で使用される周辺機器を操作する方法に関する記事が含まれています。
@@ -20,7 +20,7 @@ ms.locfileid: "6032374"
 | トピック | 説明 |
 |------|------------|
 | [基本](pos-basics.md) | この記事では、POS (店舗販売時点管理) UWP API を使い始めるために役立つ情報を示します。 |
-| [ハードウェア サポート](pos-device-support.md) | [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) UWP Api と互換性がある既知のデバイスの一覧です。 |
+| [ハードウェア サポート](pos-device-support.md) | [Windows.Devices.PointOfService](https://aka.ms/pointofservice-api) UWP Api と互換性のある既知のデバイスの一覧です。 |
 | [バーコード スキャナー](pos-barcodescanner.md) | バーコード スキャナーに関する記事のインデックス。 |
 | [磁気ストライプ リーダー](pos-magnetic-stripe-reader.md) | 磁気ストライプ リーダーに関する記事のインデックス。
 | [POS プリンター](pos-printer.md) | Pos プリンターに関する記事のインデックス。 |

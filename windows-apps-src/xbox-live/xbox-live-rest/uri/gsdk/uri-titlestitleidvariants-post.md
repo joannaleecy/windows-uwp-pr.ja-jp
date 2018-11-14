@@ -10,14 +10,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc67b61d9130838802774460cd38ec08e2e349b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024559"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158177"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
-指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EIB)
@@ -57,7 +57,7 @@ gameserverds.xboxlive.com
 | Host| gameserverds.xboxlive.com|  | 
 | Content-Length|  | 要求のオブジェクトの長さ。| 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークン。| 
   
 <a id="ID4EED"></a>
 
@@ -75,7 +75,7 @@ gameserverds.xboxlive.com
  
 ## <a name="authorization"></a>Authorization
 
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
  
 <a id="ID4EEE"></a>
 
@@ -86,8 +86,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| 返すバリエーションのローカルです。| 
-| maxVariants| 返すバリエーションの最大数。| 
+| locale| ローカルのバリアントを返します。| 
+| maxVariants| 返されるバリアントの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
@@ -113,7 +113,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すようにヘッダーが含まれます。
+応答は常に、次の表に示すようにヘッダーを含めます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -136,13 +136,13 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | バリエーション| バリアントの配列です。| 
 | バリエーション| バリアントの Id です。| 
-| name| バリアントの名前。| 
+| name| バリアントの名前です。| 
 | isPublisher|  | 
 | ランク|  | 
 | gameVariantSchemaId|  | 
@@ -151,10 +151,10 @@ gameserverds.xboxlive.com
 | schemaContent| スキーマの内容| 
 | name| スキーマの名前| 
 | gsiSets| GSI セットの配列です。| 
-| minRequiredPlayers| バリアントのプレイヤーの最小数。| 
+| minRequiredPlayers| バリアントのプレイヤーの最小数です。| 
 | maxAllowedPlayers| バリアントのプレイヤーの最大数。| 
 | は| GSI セットの Id です。| 
-| gsiSetName| GSI セットの名前。| 
+| gsiSetName| GSI セットの名前です。| 
 | selectionOrder|  | 
 | variantSchemaId| セット、GSI で使われる varaint スキーマの id です。| 
  

@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 申請 API, コード例
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b9c2acbdd6c45c00ba96bdc11a8273a66a67116
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034771"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200509"
 ---
 # <a name="code-examples-for-the-submission-api"></a>申請 API 用のコード例
 
-このセクションでは、さまざまなプログラミング言語で、 [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md)を使用するためのコード例を示します。
+このセクションでは、さまざまなプログラミング言語で、 [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md)を使用するためのコード例を提供します。
 
 > [!NOTE]
 > 以下に示したコード例、だけでなく、Microsoft Store 申請 API の上にコマンド ライン インターフェイスを実装するオープン ソースの PowerShell モジュールも提供します。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Microsoft Store 申請 API を直接呼び出さずに、コマンド ラインからアプリ、フライト、アドオンの申請を管理できます。また、ソースを参照して、この API を呼び出す方法の例を確認することもできます。 StoreBroker モジュールは、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として Microsoft 内で積極的に使っています。 詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。

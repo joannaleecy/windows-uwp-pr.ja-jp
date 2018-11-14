@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e0cc89d7411f513c23e74caf2c7cd151bcbf7df3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048177"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157460"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
 別のユーザーまたはクライアントの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -28,7 +28,7 @@ ms.locfileid: "6048177"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのです。| 
   
 <a id="ID4EUB"></a>
 

@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト アカウント
 ms.localizationpriority: medium
-ms.openlocfilehash: 2316a40e9524240b20645419ca8952d27374ca04
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 20aea3164ab438251181c146ea351ede7ebc9960
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022927"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199917"
 ---
 # <a name="xbox-live-test-accounts"></a>Xbox Live テスト アカウント
 
@@ -41,8 +41,8 @@ Xbox Live クリエーターズ プログラムでタイトルを開発してい
 
 ID@Xbox 開発者である場合、開発サンドボックス専用のテスト アカウントを作成することもできます。  一度に複数のテスト アカウントを作成することもできます。
 
-デベロッパー センターのテスト アカウント管理ページに移動するには
-1. デベロッパー センター ダッシュボードに移動します。
+パートナー センターでテスト アカウント管理ページに移動します。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)に移動します
 2. 右上隅のギア アイコンをクリックして、アカウント設定に進みます。
 3. [テスト アカウント] をクリックします。
 

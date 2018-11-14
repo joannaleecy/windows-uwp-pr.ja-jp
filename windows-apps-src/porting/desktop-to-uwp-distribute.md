@@ -10,18 +10,18 @@ keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036090"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210193"
 ---
-# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージの配布します。
+# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージを配布します。
 
 Windows ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
 
 > [!NOTE]
-> パッケージ化されたアプリケーションにユーザーを移行する方法の計画はありますか。 アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
+> パッケージ アプリにユーザーを移行する方法を計画していますか。 アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
 
 ## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Microsoft Store に公開してアプリを配布します。
 
@@ -34,13 +34,13 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 ストアに提出する前に、アプリケーションに署名する必要はありません。
 
 >[!IMPORTANT]
-> Microsoft Store にアプリを公開する場合は、Windows 10 秒を実行しているデバイスで、アプリケーションが正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
+> Microsoft Store にアプリを公開する場合は、アプリが Windows 10 秒を実行しているデバイスで正しく動作することを確認します。これは、ストア要件です。 「[Windows アプリの Windows 10 S 対応をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずに、アプリケーションを配布します。
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずにアプリを配布します。
 
-配布するアプリケーション ストアを使用することがなく場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
+配布するアプリのストアを使用せず場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
@@ -48,7 +48,7 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 
 [証明書を作成](../packaging/create-certificate-package-signing.md)することも、[Verisign](https://www.verisign.com/) などのポピュラーなベンダーから取得することもできます。
 
-Windows 10 S を実行しているデバイスにアプリを配布する場合は、それらのデバイスにアプリを配布する前に、ストア申請プロセスを通過する必要があるため、Microsoft Store に署名するアプリケーションを持ちます。
+Windows 10 S を実行しているデバイスにアプリを配布する場合は、それらのデバイスにアプリを配布する前に、ストアの申請プロセスを通過する必要があるため、Microsoft Store に署名するアプリケーションを持ちます。
 
 証明書を作成する場合は、アプリを実行する各デバイスの証明書ストア ("**信頼されたルート**" または "**信頼されたユーザー**") にインストールする必要があります。 ポピュラーなベンダーから証明書を取得する場合、システムにはアプリの他に何もインストールする必要はありません。  
 
@@ -57,7 +57,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 
 証明書を使って、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
 
-サイドローディングは、他のデバイスに、アプリケーションには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
+サイドローディングは、他のデバイスに、アプリケーションは、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)をご覧ください。
 
 **ビデオ**
 
@@ -125,7 +125,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>アプリのデスクトップ バージョンをアンインストールする
 
-最初にアクセス許可を求めることがなく、ユーザーのデスクトップ アプリケーションをアンインストールしないことをお勧めします。 ユーザーに許可を求めるには、そのためのダイアログ ボックスを表示します。 ユーザーによって、アプリのデスクトップ バージョンをアンインストールしないように指定されることも考えられます。 その場合は、デスクトップ アプリケーションの使用をブロックまたは両方のアプリのサイド バイ サイド使用をサポートするかどうかを決定する必要があります。
+最初にアクセス許可を求めることがなく、ユーザーのデスクトップ アプリケーションをアンインストールしないことをお勧めします。 ユーザーに許可を求めるには、そのためのダイアログ ボックスを表示します。 ユーザーによって、アプリのデスクトップ バージョンをアンインストールしないように指定されることも考えられます。 発生した場合は、デスクトップ アプリケーションの使用をブロックまたは両方のアプリのサイド バイ サイド使用をサポートするかどうかを決定する必要があります。
 
 例として、.NET ベースのパッケージ アプリでの方法を次に示します。
 
