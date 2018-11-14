@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c54218582b3ef31df07a5969ad5e83be7af2952
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209943"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6645885"
 ---
 # <a name="pointer-click-animations"></a><span data-ttu-id="5799a-103">ポインター クリックのアニメーション</span><span class="sxs-lookup"><span data-stu-id="5799a-103">Pointer click animations</span></span>
 

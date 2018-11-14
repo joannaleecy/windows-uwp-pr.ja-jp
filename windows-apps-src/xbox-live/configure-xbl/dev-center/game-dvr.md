@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, ゲーム, uwp, windows 10, Xbox one, ゲーム DVR, パートナー センター
 ms.openlocfilehash: 1c1e9f46b33ce6c5c5e1c5ba72128e0b1a217c9b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6181041"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261129"
 ---
 # <a name="configuring-game-dvr-in-partner-center"></a><span data-ttu-id="0e24f-104">パートナー センターでのゲーム DVR の構成</span><span class="sxs-lookup"><span data-stu-id="0e24f-104">Configuring Game DVR in Partner Center</span></span>
 

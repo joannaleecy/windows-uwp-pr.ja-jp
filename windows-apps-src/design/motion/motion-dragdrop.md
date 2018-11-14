@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d271d0b9c8e7ce73835457789aca3fa2cb5eda97
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183903"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668355"
 ---
 # <a name="drag-animations"></a><span data-ttu-id="a17a6-103">ドラッグ アニメーション</span><span class="sxs-lookup"><span data-stu-id="a17a6-103">Drag animations</span></span>
 

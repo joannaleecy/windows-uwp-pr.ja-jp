@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ベータ テスト, 限定配布, ベータ, ベータ版, テスト, テスター
 ms.localizationpriority: medium
 ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452327"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6662342"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a><span data-ttu-id="dd944-103">ベータ テストとターゲット配布</span><span class="sxs-lookup"><span data-stu-id="dd944-103">Beta testing and targeted distribution</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6465691"
+ms.locfileid: "6647036"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a><span data-ttu-id="68ea6-104">シェーダーの作成とプリミティブの描画</span><span class="sxs-lookup"><span data-stu-id="68ea6-104">Create shaders and drawing primitives</span></span>
 

@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 61803e3a4a18dee260b78468c7970a875d8aff73
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6255269"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6465551"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a><span data-ttu-id="def55-103">パッケージ デスクトップ アプリケーションに関する既知の問題</span><span class="sxs-lookup"><span data-stu-id="def55-103">Known Issues with packaged desktop applications</span></span>
 
