@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, オプション パッケージ、関連セット, パッケージの拡張機能, visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192203"
+ms.locfileid: "6259124"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>オプション パッケージと関連セットの作成
 オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 これらは、ダウンロード可能なコンテンツ (DLC)、サイズの制約の大規模なアプリを分割するのに便利ですか、元のアプリから分離して追加コンテンツを出荷します。
@@ -29,7 +29,7 @@ ms.locfileid: "6192203"
 すべての最新の開発ツールを取得するのには、[ダウンロードと Windows 10 向けのツール](https://developer.microsoft.com/windows/downloads)を参照してください。
 
 > [!NOTE]
-> オプション パッケージや関連セットを使用して、Microsoft Store アプリを提出するには、アクセス許可が必要です。 Microsoft Store に提出しない場合は、デベロッパー センターから許可を受けずにオプション パッケージや関連セットを基幹業務 (LOB) アプリやエンタープライズ アプリに使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
+> オプション パッケージや関連セットを使用して、Microsoft Store アプリを提出するには、アクセス許可が必要です。 オプション パッケージや関連セットは、ストアに提出しない場合に、パートナー センターのアクセス許可のない基幹業務 (LOB) や企業のアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
 
 ### <a name="code-sample"></a>コード サンプル
 この記事を表示しているときに、実践的な理解するにはどのオプション パッケージの GitHub で次の[オプション パッケージのコード サンプル](https://github.com/AppInstaller/OptionalPackageSample)と共にして関連の Visual Studio 内で作業を設定することをお勧めします。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 広告, 広告, 広告仲介
 ms.localizationpriority: medium
 ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046187"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202090"
 ---
 # <a name="microsoft-ad-mediation-service"></a>マイクロソフトの広告仲介サービス
 
@@ -49,7 +49,7 @@ ms.locfileid: "6046187"
 
 新しい広告ネットワークは自動的に含まれ、学習予算を通じてパフォーマンスが評価されます。 短時間に、広告ネットワークは大量のイベント内で自分の場所を見つけます。 これにより、広告ネットワークの競争力が強化され、開発者は、アプリの収益化を最大限に活用できます。
 
-[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただしより広告と、順序を提供する広告ネットワーク細かく制御するパートナー センターで、独自の仲介設定を選択することもあります。
+[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただし、広告や、順序を提供する広告ネットワークをより細かく制御するパートナー センターで、独自の仲介設定を選択することもあります。
 
 ## <a name="rich-data-and-signals"></a>豊富なデータと信号
 

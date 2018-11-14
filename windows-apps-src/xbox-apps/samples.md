@@ -9,15 +9,15 @@ keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be6cfbc40fc645bfb66ef2f0fb9b8b5f2976da8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023216"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6265797"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Xbox One サンプルの UWP
 
-そのプラットフォームで実行されているとき、Xbox One に最適化されたいくつかのクロス プラットフォーム UWP サンプルがあります。 GitHub でコードを参照し、readme ファイルのと wiki の読みのコンピューターに、プロジェクトを複製できます。
+そのプラットフォームで実行されているとき、Xbox One に最適化されたいくつかのクロス プラットフォーム UWP サンプルがあります。 GitHub でコードを参照し、readme ファイルのと wiki の読みをコンピューターに、プロジェクトを複製できます。
 
 ## <a name="tvhelpers"></a>TVHelpers
 
@@ -29,7 +29,7 @@ TVJS には、自動コントローラー ナビゲーション、リッチ メ�
 
 ## <a name="the-news-experience"></a>ニュース エクスペリエンス
 
-デスクトップ、電話、および Xbox One の間で機能し、各デバイスのメリットを活用する premium エクスペリエンスを提供するサンプル ニュース アプリは、 [「ニュース エクスペリエンス](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)、4 番目のコーヒーします。 Xbox では、ゲームパッド用に最適化されている UI は、10 フィート エクスペリエンスに合わせて、コンテンツ間での他の最適化、テレビのセーフ エリアに保存します。 詳細については[、ブログの投稿](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)を参照してください。
+[[ニュース エクスペリエンス](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)、4 番目のコーヒーとは、デスクトップ、電話、および Xbox One の間で機能し、各デバイスのメリットを活用する premium エクスペリエンスを提供するサンプル ニュース アプリです。 Xbox では、ゲームパッド用に最適化されている UI は、10 フィート エクスペリエンスに合わせて、コンテンツ間での他の最適化、テレビのセーフ エリアに保存します。 詳細については[、ブログの投稿](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)を参照してください。
 
 ![ニュース エクスペリエンス](images/samples-1.png)
 
@@ -37,7 +37,7 @@ TVJS には、自動コントローラー ナビゲーション、リッチ メ�
 
 [ゲームパッド スタイルのナビゲーション (XAML) のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation)は、アプリでのナビゲーションの方向を改善する方法を示す UWP サンプルです。 これも、デスクトップ アプリケーションに適用可能な顧客にキーボードを使用して、アプリ内を移動できるようにする必要のあるが特に Xbox アプリケーション、入力の主な方法はゲームパッドやリモコンに関連します。
 
-![ユニバーサル Windows プラットフォームのサンプル: アプリ ビューのサイズを変更します。](images/samples-2.png)
+![ユニバーサル Windows プラットフォームのサンプル: アプリのビューのサイズを変更します。](images/samples-2.png)
 
 ## <a name="see-also"></a>関連項目
 

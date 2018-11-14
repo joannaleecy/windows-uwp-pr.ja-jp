@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 91a1ca0ee99833280aaa41ca4d9c94d043a78e0a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034711"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271028"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
@@ -89,7 +89,7 @@ Page1.xaml に次のコンテンツを追加します。
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素とその後、ルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素をルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の前後の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -126,7 +126,7 @@ Page2.xaml に次のコンテンツを追加します。
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素とその後、ルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素をルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の前後の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -298,7 +298,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> このコードは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合、アプリの例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
+> このコードは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合にアプリの例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 

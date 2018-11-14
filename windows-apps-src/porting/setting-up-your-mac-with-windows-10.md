@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041788"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203847"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Windows 10 を使用するための Mac のセットアップ
 
@@ -26,7 +26,7 @@ ms.locfileid: "6041788"
 
 **注:** ディスクまたは USB フラッシュ ドライブ上の windows 10 のブート イメージが必要になります。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 サブスクライバーでない場合は、 [Microsoft Store](http://apps.microsoft.com/windows/app)からインストーラーを購入できます。 [この場所](http://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
 
-Windows を実行しているしたら、 [windows 10 用のダウンロードとツール](https://developer.microsoft.com/en-us/windows/downloads)から Visual Studio の最新リリースをインストールし、アプリの作成を開始!
+Windows を実行したら、 [windows 10 用のダウンロードとツール](https://developer.microsoft.com/en-us/windows/downloads)から Visual Studio の最新リリースをインストールし、アプリの作成を開始!
 
 **注:** Visual Studio のデバイスのエミュレーターを使用する場合は、64 ビット (x64) バージョンの windows 10 Pro 以上をインストール**する必要があります**。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](http://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
 

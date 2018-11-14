@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 343cca5b89dbe5fd7e1309b9487e8939218203d0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029384"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264614"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -92,7 +92,7 @@ ms.locfileid: "6029384"
 
 2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **注:** 必ずトリガーの種類の各リストを使用している、または、宣言されていない種類のトリガー ([**登録**](https://msdn.microsoft.com/library/windows/apps/br224772)メソッドが失敗し、例外がスロー) と、バック グラウンド タスクは登録されません。
+    **注:** トリガーの種類の各リストを使用している、または宣言されていないトリガーの種類 ([**登録**](https://msdn.microsoft.com/library/windows/apps/br224772)メソッドが失敗し、例外がスロー) と、バック グラウンド タスクは登録されないかどうかを確認します。
 
     次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 
@@ -211,7 +211,7 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>SupportsMultipleInstances 属性を使用して、トリガーが発生するたびに新しいプロセスで実行
 
-この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するためには、SDK バージョン '10.0.15063' (Windows 10 Creators Update) をターゲットする必要があります以上。
+この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するためにはターゲット SDK バージョン '10.0.15063' (Windows 10 Creators Update) 以上。
 
 ```xml
 <Package

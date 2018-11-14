@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, XAML の相互運用機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042797"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249696"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX と XAML の相互運用機能
 
@@ -23,7 +23,7 @@ ms.locfileid: "6042797"
 
 アプリが主に 2D レンダリングに重点を置いているときは、[Win2D](https://github.com/microsoft/win2d) Windows ランタイム ライブラリの使用が必要になる場合があります。 このライブラリは Microsoft によって管理されており、コア Direct2D のテクノロジを基盤として構築されています。 2D グラフィックスを実装する使用パターンを大幅に簡略化し、このドキュメントで説明する手法の一部の便利な抽象化が含まれています。 詳しくは、プロジェクトのページをご覧ください。 このドキュメントでは、Win2D を使用*しない*ことを選択したアプリ開発者向けのガイダンスを示します。
 
-> **注:** DirectX Api として定義されていない Windows ランタイム型では、通常では VisualC コンポーネント拡張機能を使用するため (、C++/cli CX) を DirectX と相互運用する XAML UWP コンポーネントを開発します。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
+> **注:** DirectX Api として定義されていない Windows ランタイム型では、通常では VisualC コンポーネント拡張機能を使用するため (、C++/cli CX) と DirectX の相互運用する XAML UWP コンポーネントを開発します。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
 
  
 

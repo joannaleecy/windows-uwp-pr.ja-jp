@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 287770b04d58a1109a2bf64513b1ce12a647dbf1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 21f14d6e50983954bfda07d1e713c2543e344436
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040565"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6280241"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
@@ -78,7 +78,7 @@ API のシグネチャは次のとおりです。
     /// <param name="xboxUserId">The Xbox User ID of the player.</param>
     /// <param name="titleId">The title ID.</param>
     /// <param name="serviceConfigurationId">The service configuration ID (SCID) for the title.</param>
-    /// <param name="achievementId">The achievement ID as defined by XDP or Dev Center.</param>
+    /// <param name="achievementId">The achievement ID as defined by XDP or Partner Center.</param>
     /// <param name="percentComplete">The completion percentage of the achievement to indicate progress.
     /// Valid values are from 1 to 100. Set to 100 to unlock the achievement.  
     /// Progress will be set by the server to the highest value sent</param>

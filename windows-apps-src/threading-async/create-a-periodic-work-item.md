@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、定期的な作業項目、スレッド、タイマー
 ms.localizationpriority: medium
 ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052237"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6448165"
 ---
 # <a name="create-a-periodic-work-item"></a>定期的な作業項目の作成
 
@@ -31,7 +31,7 @@ ms.locfileid: "6052237"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
 
-> **注:** 回避 0 の値を指定する (または 1 ミリ秒未満の値) の間隔をします。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
+> **注:** 0 の値を指定することを避けるため (または 1 ミリ秒未満の値) の間隔をします。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
 
 > **注:** を UI にアクセスし、作業項目の進捗状況を表示する[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用することができます。
 

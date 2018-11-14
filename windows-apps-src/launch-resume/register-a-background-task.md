@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040937"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202494"
 ---
 # <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
@@ -76,7 +76,7 @@ ms.locfileid: "6040937"
 
 同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。
 
-> **注:** アプリに固有のものであるバック グラウンド タスクの名前を使用します。 各バックグラウンド タスクには一意の名前が付いている必要があります。
+> **注:** アプリに固有のものであるバック グラウンド タスク名を使用します。 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
 次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 

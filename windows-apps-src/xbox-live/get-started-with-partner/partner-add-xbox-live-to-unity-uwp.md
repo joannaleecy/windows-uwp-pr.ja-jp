@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
-ms.openlocfilehash: d34ded59574566252d3ff5a7e3f408ab74d51371
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ba2460e64d63892aa1ff02d2178f2632109b3655
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6034624"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201679"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、.NET スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 
@@ -156,7 +156,7 @@ xboxservices.config テキスト ファイルをプロジェクトに追加し�
 
 a) コンピューターがデベロッパー サンドボックスに設定されていること。  これを行うには、Xbox Live SDK の \Tools フォルダーにある SwitchSandbox.cmd スクリプトを使用します。
 
-b) デベロッパー サンドボックスにアクセスできる Xbox Live アカウントでサインインしていること。  通常のリテール Xbox Live アカウントにはそのようなアクセス権がありません。  XDP またはデベロッパー センターを使用して、テスト アカウントを作成することができます。
+b) デベロッパー サンドボックスにアクセスできる Xbox Live アカウントでサインインしていること。  通常のリテール Xbox Live アカウントにはそのようなアクセス権がありません。  XDP またはパートナー センターを使用して、テスト アカウントを作成することができます。
 
 c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これは手動で編集できますが、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択するのが最も簡単な修正方法です。
 

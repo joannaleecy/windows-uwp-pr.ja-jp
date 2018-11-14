@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051423"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6446983"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -25,7 +25,7 @@ ms.locfileid: "6051423"
 > [!NOTE]
 > アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)は、Microsoft Store にアプリを提出するために[パートナー センター](https://partner.microsoft.com/dashboard)でが必要です。
 
-アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横にある**更新**をクリックします。 こともできます[ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度たい場合)。
+アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横に**更新**をクリックします。 こともできます[、ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度する場合)。
 
 > [!NOTE]
 > ドキュメントのこのセクションでは、パートナー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
@@ -37,7 +37,7 @@ ms.locfileid: "6051423"
 
 ここで示しているのは、アプリの申請を作成するときに提供できる詳細情報と、詳細情報のリンクです。
 
-提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここに記載されての順序でこれらのセクションで動作する必要はありません。
+提供または指定する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。 ここに記載されて順序でこれらのセクションで動作する必要はありません。
 
 ### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |

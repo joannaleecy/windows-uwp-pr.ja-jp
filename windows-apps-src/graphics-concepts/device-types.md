@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cbf7d984226984391da340c74791dad4a6c0d8fb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193768"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459024"
 ---
 # <a name="device-types"></a>デバイスの種類
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d1bee897396236e0bb4423517371ebc2d25482c3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6026843"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201293"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 セッション オブジェクトを取得します。
@@ -33,7 +33,7 @@ ms.locfileid: "6026843"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、指定した名前のセッション ドキュメントを読み取り、セッションを取得します。 成功した場合、そのすべての属性を使用して、セッション オブジェクトがサーバーから取得を返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 直接、GET メソッドのパラメーターでは指定されている**MultiplayerSessionReference**オブジェクトで、セッションでは、 **GetCurrentSessionAsync**の*sessionReference*パラメーターで渡されたは似ています。
+この HTTP/REST メソッドは、指定した名前のセッション ドキュメントを読み取るし、セッションを取得します。 成功した場合、サーバーから取得したすべての属性をセッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 GET メソッドのパラメーターを使用して、指定されている**MultiplayerSessionReference**オブジェクトで、セッションの**GetCurrentSessionAsync**の*sessionReference*パラメーターで渡される直接平行します。
 
 GET メソッドのワイヤ形式は、次に示します。
 
@@ -52,7 +52,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
+| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 | セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
 
@@ -72,7 +72,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)の応答構造を参照してください。  
+[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
 <a id="ID4ETC"></a>
 
 

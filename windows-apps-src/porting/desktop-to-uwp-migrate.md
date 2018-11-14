@@ -2,20 +2,20 @@
 author: normesta
 Description: Share code between a desktop application and a UWP app
 Search.Product: eADQiWindows 10XVcnh
-title: デスクトップ アプリケーションと UWP アプリでコードを共有します。
+title: デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
 ms.author: normesta
 ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a4eda15a18a441da2e06db17aaf7bea3d1842d1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027878"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6254474"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションと UWP アプリでコードを共有します。
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
 
 お持ちのコードを .NET Standard ライブラリに移行し、ユニバーサル Windows プラットフォーム (UWP) アプリを作成すると、すべての Windows 10 デバイスをターゲットにすることができます。 デスクトップ アプリケーションを UWP アプリに変換できるツールはありませんが、多くの既存コードを再利用できるため、UWP アプリの作成コストを削減できます。 このガイドでは、その方法を示しています。
 

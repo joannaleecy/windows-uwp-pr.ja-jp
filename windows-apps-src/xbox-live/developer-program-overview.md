@@ -8,12 +8,12 @@ ms.date: 5/30/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb9c9aa4267e7485b8e1583ff011b6d1cd6070e
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: faf010e2a61199d56a1ae5b9ed08fd373f89cd80
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6157198"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6252303"
 ---
 # <a name="developer-program-overview"></a>開発者プログラムの概要
 
@@ -28,7 +28,7 @@ Xbox Live クリエーターズ プログラムは、[ユニバーサル Windows
 Xbox One では、ゲーマーに選りすぐりのストア エクスペリエンスが提供されます。Xbox Live クリエーターズ プログラムを通じて公開されたゲームは、Xbox の Microsoft Store の新しい [作成者のコレクション] セクションで販売されます。 これにより、だれでもゲームを開発し出荷できるオープンなプラットフォームの確保と、コンソール ゲーマーが知っていて期待する選りすぐりのストア エクスペリエンスとが両立します。 Windows 10 では、タイトルは Microsoft Store で他のすべての Xbox Live ゲームと一緒に公開されます。
 
 ### <a name="publishing-and-certification"></a>公開と認定
-Xbox Live クリエーターズ プログラムの一部としてゲームをリリースするには、[デベロッパー センターの開発者プログラム](https://developer.microsoft.com/store/register)に登録されている必要があります。 ゲームが従う必要がある要件が 2 つあります。
+Xbox Live クリエーターズ プログラムの一部としてゲームをリリースする[パートナー センターの開発者プログラム](https://developer.microsoft.com/store/register)に登録されている必要があります。 ゲームが従う必要がある要件が 2 つあります。
 
 1. Xbox Live のサインインを統合し、ユーザー ID (ゲーマータグ、ゲーマー アイコンなど) を表示します。 他のすべての Xbox Live サービスはオプションです。
 2. 標準の [Microsoft Store ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)に従います。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 64da4418e25f77f49854c054d9cb468f0d89f16c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046512"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6283135"
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 
@@ -40,7 +40,7 @@ ms.locfileid: "6046512"
 * [C# と MonoGame で記述された Microsoft Store 向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC ではコンポーネント拡張機能 (、C++/cli CX) + + と XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC ではコンポーネント拡張機能 (、C++/cli CX) と XAML
 
 VisualC ではコンポーネント拡張機能を使用してアプリをビルドする C++ プログラミングの専門知識を活用 (、C++/cli CX) XAML を使用します。
 

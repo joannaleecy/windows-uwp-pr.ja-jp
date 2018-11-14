@@ -7,12 +7,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f454c7e7386ba829cf6c99edc0b5b8f2d831f00
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025192"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268837"
 ---
 # <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
  
@@ -26,7 +26,7 @@ ms.locfileid: "6025192"
 最新の開発ツールを取得する方法については、「[Windows 10 用のダウンロードとツール](https://developer.microsoft.com/windows/downloads)」を参照してください。 
 
 > [!NOTE]
-> オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 Microsoft Store に提出しない場合は、デベロッパー センターから許可を受けずにオプション パッケージや関連セットを基幹業務 (LOB) アプリやエンタープライズ アプリに使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
+> オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 オプション パッケージや関連セットは、ストアに提出しない場合に、パートナー センターのアクセス許可のない基幹業務 (LOB) や企業のアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
 
 ## <a name="c-optional-packages-with-executable-code"></a>実行可能コードを使用した C++ オプション パッケージ
 

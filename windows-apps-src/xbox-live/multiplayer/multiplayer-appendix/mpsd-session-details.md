@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, セッション テンプレート, MPSD
 ms.localizationpriority: medium
-ms.openlocfilehash: ad551d07d94f90d89f8abda0b188ea281b4930c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: e3678d983cc75a2b6c7855279a1b96fb526440d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6034792"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6272876"
 ---
 # <a name="mpsd-session-details"></a>MPSD セッションの詳細
 
@@ -31,7 +31,7 @@ ms.locfileid: "6034792"
 
 ## <a name="session-overview"></a>セッションの概要
 
-マルチプレイヤー セッション ディレクトリ (MPSD) セッションはセッションの名前を持つし、は、セッションの既定の設定を提供する JSON ドキュメントは、セッション テンプレートのインスタンスとして識別されます。 テンプレートは、サービス構成 id (SCID) でサービス構成の一部は GUID です。 このテンプレートにある [ [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)と、 [Windows デベロッパー センター](https://partner.microsoft.com/dashboard/windows/overview)サービス構成は、開発者向けリソースの取り込み、管理、およびセキュリティ ポリシーを使用します。 セッションを MPSD を介してアクセスすると、XDP または Windows デベロッパー センターを通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対してプリンシパルの承認が実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
+マルチプレイヤー セッション ディレクトリ (MPSD) セッションはセッション名を持ちが、セッションの既定の設定を提供する JSON ドキュメントであるセッション テンプレートのインスタンスとして識別されます。 テンプレートは、サービス構成 id (SCID) でサービス構成の一部は GUID です。 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)と[パートナー センター](https://partner.microsoft.com/dashboard)では、このテンプレートを調べることができます。 サービス構成は、同様の取り込み、管理、およびセキュリティ ポリシーに使用する開発者向けリソースです。 セッションを MPSD を介してアクセスすると、XDP またはパートナー センターを通じてデベロッパーが設定したアクセス ポリシーに従って、サービス構成に対してプリンシパルの承認が実行されます。 サービス構成へのアクセスが承認された後にセッションが読み込まれると、セッションのメンバーシップ検証などのセカンダリー アクセス チェックがセッション レベルで実行されます。
 
 ここでは、テンプレートでコントラクト バージョン 107 を使用していると仮定します。このコントラクト バージョンは、Xbox One の現在の MPSD で使用されているバージョンです。 コントラクト バージョン 105 (104 と同じ) に基づいてテンプレートを定義した場合は、バージョン 107 をサポートするためにこれらを変更してください。 手順については、「[マルチプレイヤー 2015 での移行における一般的な問題](common-issues-when-adapting-multiplayer.md)」を参照してください。
 
@@ -175,7 +175,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 セッションの構成を制御するには、次の 2 つの方法があります。
 
--   XDP または Windows デベロッパー センターを通じて取り込まれたセッション テンプレートを使用します。
+-   XDP またはパートナー センターを通じて取り込まれたセッション テンプレートを使用します。
 -   Multiplayer および Matchmaking WinRT API または REST API への呼び出しを使用します。 この場合もテンプレートを使用する必要がありますが、構成する値がテンプレートに含まれている必要はありません。 タイトルは、テンプレートで既に設定されている定数をオーバーライドできないことに注意してください。
 
 セッション自体を定義するために別の JSON ドキュメントが提供されます。 さらに、デベロッパーは、特定のタイトルに必要な WinRT ラッパー機能を実装する必要があります。 JSON ドキュメントとすべての WinRT ラッパー コードの内容は、お互いを正確に反映する必要があり、最新のテンプレート コントラクト バージョンを反映する必要があります。
@@ -193,7 +193,7 @@ https://{authority}/serviceconfigs/{service-config-id}/sessiontemplates/{session
 
 ## <a name="session-capabilities"></a>セッション機能
 
-機能は、MPSD がそのセッションに適用する動作を構成する、MPSD セッション内の定数です。 最もよく使用される XDP と Windows デベロッパー センターの機能、セッション テンプレートで設定します。 /constants/system/capabilities オブジェクトに設定されます。 機能が必要ない場合は、空の capabilities オブジェクトを使用します。
+機能は、MPSD がそのセッションに適用する動作を構成する、MPSD セッション内の定数です。 最もよく使用される XDP とパートナー センター機能は、セッション テンプレートで設定します。 /constants/system/capabilities オブジェクトに設定されます。 機能が必要ない場合は、空の capabilities オブジェクトを使用します。
 
 | 注意                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------|
