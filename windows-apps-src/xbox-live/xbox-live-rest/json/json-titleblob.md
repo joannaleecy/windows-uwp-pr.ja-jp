@@ -10,34 +10,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ed09f078be5c7063d00d35d3bc3749f791d042
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030363"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196818"
 ---
-# <a name="titleblob-json"></a><span data-ttu-id="f57c9-104">TitleBlob (JSON)</span><span class="sxs-lookup"><span data-stu-id="f57c9-104">TitleBlob (JSON)</span></span>
-<span data-ttu-id="f57c9-105">記憶域のタイトルに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="f57c9-105">Contains information about a title from storage.</span></span> 
+# <a name="titleblob-json"></a><span data-ttu-id="1e434-104">TitleBlob (JSON)</span><span class="sxs-lookup"><span data-stu-id="1e434-104">TitleBlob (JSON)</span></span>
+<span data-ttu-id="1e434-105">記憶域からタイトルに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1e434-105">Contains information about a title from storage.</span></span> 
 <a id="ID4EP"></a>
 
  
-## <a name="titleblob"></a><span data-ttu-id="f57c9-106">TitleBlob</span><span class="sxs-lookup"><span data-stu-id="f57c9-106">TitleBlob</span></span>
+## <a name="titleblob"></a><span data-ttu-id="1e434-106">TitleBlob</span><span class="sxs-lookup"><span data-stu-id="1e434-106">TitleBlob</span></span>
  
-<span data-ttu-id="f57c9-107">TitleBlob オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="f57c9-107">The TitleBlob object has the following specification.</span></span>
+<span data-ttu-id="1e434-107">TitleBlob オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="1e434-107">The TitleBlob object has the following specification.</span></span>
  
-| <span data-ttu-id="f57c9-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="f57c9-108">Member</span></span>| <span data-ttu-id="f57c9-109">種類</span><span class="sxs-lookup"><span data-stu-id="f57c9-109">Type</span></span>| <span data-ttu-id="f57c9-110">説明</span><span class="sxs-lookup"><span data-stu-id="f57c9-110">Description</span></span>| 
+| <span data-ttu-id="1e434-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="1e434-108">Member</span></span>| <span data-ttu-id="1e434-109">種類</span><span class="sxs-lookup"><span data-stu-id="1e434-109">Type</span></span>| <span data-ttu-id="1e434-110">説明</span><span class="sxs-lookup"><span data-stu-id="1e434-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="f57c9-111">clientFileTime</span><span class="sxs-lookup"><span data-stu-id="f57c9-111">clientFileTime</span></span>| <span data-ttu-id="f57c9-112">DateTime</span><span class="sxs-lookup"><span data-stu-id="f57c9-112">DateTime</span></span>| <span data-ttu-id="f57c9-113">[オプション]ファイルの最後のアップロードの日時。</span><span class="sxs-lookup"><span data-stu-id="f57c9-113">[optional] Date and time of the last upload of the file.</span></span>| 
-| <span data-ttu-id="f57c9-114">displayName</span><span class="sxs-lookup"><span data-stu-id="f57c9-114">displayName</span></span>| <span data-ttu-id="f57c9-115">string</span><span class="sxs-lookup"><span data-stu-id="f57c9-115">string</span></span>| <span data-ttu-id="f57c9-116">[オプション]ユーザーに表示されているファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="f57c9-116">[optional] Name of the file that is shown to the user.</span></span>| 
-| <span data-ttu-id="f57c9-117">etag</span><span class="sxs-lookup"><span data-stu-id="f57c9-117">etag</span></span>| <span data-ttu-id="f57c9-118">string</span><span class="sxs-lookup"><span data-stu-id="f57c9-118">string</span></span>| <span data-ttu-id="f57c9-119">タグで使用するファイルをダウンロードし、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="f57c9-119">Tag for the file used in download and upload requests.</span></span>| 
-| <span data-ttu-id="f57c9-120">fileName</span><span class="sxs-lookup"><span data-stu-id="f57c9-120">fileName</span></span>| <span data-ttu-id="f57c9-121">string</span><span class="sxs-lookup"><span data-stu-id="f57c9-121">string</span></span>| <span data-ttu-id="f57c9-122">ファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="f57c9-122">Name of the file.</span></span>| 
-| <span data-ttu-id="f57c9-123">size</span><span class="sxs-lookup"><span data-stu-id="f57c9-123">size</span></span>| <span data-ttu-id="f57c9-124">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="f57c9-124">64-bit signed integer</span></span>| <span data-ttu-id="f57c9-125">ファイルのバイトのサイズ。</span><span class="sxs-lookup"><span data-stu-id="f57c9-125">Size of the file in bytes.</span></span>| 
-| <span data-ttu-id="f57c9-126">smartBlobType</span><span class="sxs-lookup"><span data-stu-id="f57c9-126">smartBlobType</span></span>| <span data-ttu-id="f57c9-127">string</span><span class="sxs-lookup"><span data-stu-id="f57c9-127">string</span></span>| <span data-ttu-id="f57c9-128">[オプション]データの種類です。</span><span class="sxs-lookup"><span data-stu-id="f57c9-128">[optional] Type of data.</span></span> <span data-ttu-id="f57c9-129">使用可能な値: config、json、バイナリします。</span><span class="sxs-lookup"><span data-stu-id="f57c9-129">Possible values are: config, json, binary.</span></span>| 
+| <span data-ttu-id="1e434-111">clientFileTime</span><span class="sxs-lookup"><span data-stu-id="1e434-111">clientFileTime</span></span>| <span data-ttu-id="1e434-112">DateTime</span><span class="sxs-lookup"><span data-stu-id="1e434-112">DateTime</span></span>| <span data-ttu-id="1e434-113">[オプション]ファイルの最後のアップロードの日時。</span><span class="sxs-lookup"><span data-stu-id="1e434-113">[optional] Date and time of the last upload of the file.</span></span>| 
+| <span data-ttu-id="1e434-114">displayName</span><span class="sxs-lookup"><span data-stu-id="1e434-114">displayName</span></span>| <span data-ttu-id="1e434-115">string</span><span class="sxs-lookup"><span data-stu-id="1e434-115">string</span></span>| <span data-ttu-id="1e434-116">[オプション]ユーザーに表示されているファイルの名前です。</span><span class="sxs-lookup"><span data-stu-id="1e434-116">[optional] Name of the file that is shown to the user.</span></span>| 
+| <span data-ttu-id="1e434-117">etag</span><span class="sxs-lookup"><span data-stu-id="1e434-117">etag</span></span>| <span data-ttu-id="1e434-118">string</span><span class="sxs-lookup"><span data-stu-id="1e434-118">string</span></span>| <span data-ttu-id="1e434-119">タグで使用されるファイルをダウンロードし、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="1e434-119">Tag for the file used in download and upload requests.</span></span>| 
+| <span data-ttu-id="1e434-120">fileName</span><span class="sxs-lookup"><span data-stu-id="1e434-120">fileName</span></span>| <span data-ttu-id="1e434-121">string</span><span class="sxs-lookup"><span data-stu-id="1e434-121">string</span></span>| <span data-ttu-id="1e434-122">ファイルの名前。</span><span class="sxs-lookup"><span data-stu-id="1e434-122">Name of the file.</span></span>| 
+| <span data-ttu-id="1e434-123">size</span><span class="sxs-lookup"><span data-stu-id="1e434-123">size</span></span>| <span data-ttu-id="1e434-124">64 ビットの符号付き整数</span><span class="sxs-lookup"><span data-stu-id="1e434-124">64-bit signed integer</span></span>| <span data-ttu-id="1e434-125">ファイルのバイトのサイズ。</span><span class="sxs-lookup"><span data-stu-id="1e434-125">Size of the file in bytes.</span></span>| 
+| <span data-ttu-id="1e434-126">smartBlobType</span><span class="sxs-lookup"><span data-stu-id="1e434-126">smartBlobType</span></span>| <span data-ttu-id="1e434-127">string</span><span class="sxs-lookup"><span data-stu-id="1e434-127">string</span></span>| <span data-ttu-id="1e434-128">[オプション]データの種類です。</span><span class="sxs-lookup"><span data-stu-id="1e434-128">[optional] Type of data.</span></span> <span data-ttu-id="1e434-129">使用可能な値: config、json、バイナリ。</span><span class="sxs-lookup"><span data-stu-id="1e434-129">Possible values are: config, json, binary.</span></span>| 
   
 <a id="ID4E6C"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="f57c9-130">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="f57c9-130">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="1e434-130">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="1e434-130">Sample JSON syntax</span></span>
  
 
 ```json
@@ -56,13 +56,13 @@ ms.locfileid: "6030363"
 <a id="ID4EID"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="f57c9-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="f57c9-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1e434-131">関連項目</span><span class="sxs-lookup"><span data-stu-id="1e434-131">See also</span></span>
  
 <a id="ID4EKD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="f57c9-132">Parent</span><span class="sxs-lookup"><span data-stu-id="f57c9-132">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="1e434-132">Parent</span><span class="sxs-lookup"><span data-stu-id="1e434-132">Parent</span></span> 
 
-[<span data-ttu-id="f57c9-133">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="f57c9-133">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="1e434-133">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="1e434-133">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

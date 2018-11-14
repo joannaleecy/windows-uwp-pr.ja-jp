@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 91e09fd881ea5ce2b5ae6482148cdbb730c7ef17
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6159874"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182503"
 ---
 # <a name="working-with-symbologies"></a><span data-ttu-id="e4f3b-104">シンボル体系の操作</span><span class="sxs-lookup"><span data-stu-id="e4f3b-104">Working with symbologies</span></span>
 <span data-ttu-id="e4f3b-105">[バーコード シンボル体系](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)は、データと特定のバーコード形式のマッピングです。</span><span class="sxs-lookup"><span data-stu-id="e4f3b-105">A [barcode symbology](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies) is the mapping of data to a specific barcode format.</span></span> <span data-ttu-id="e4f3b-106">一般的なシンボル体系には、UPC、Code 128、QR コード、およびなどが含まれます。</span><span class="sxs-lookup"><span data-stu-id="e4f3b-106">Some common symbologies include UPC, Code 128, QR Code, and so on.</span></span>  <span data-ttu-id="e4f3b-107">ユニバーサル Windows プラットフォームのバーコード スキャナー Api は、スキャナーを手動で構成しなくても、スキャナーがこれらのシンボル体系を処理する方法を制御するアプリケーションを許可します。</span><span class="sxs-lookup"><span data-stu-id="e4f3b-107">The Universal Windows Platform barcode scanner APIs allow an application to control how the scanner processes these symbologies without manually configuring the scanner.</span></span> 

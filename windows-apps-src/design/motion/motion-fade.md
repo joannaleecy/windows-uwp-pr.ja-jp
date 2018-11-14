@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d2a9745e35f19066b094b2be187620858166dbd5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035697"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203907"
 ---
 # <a name="fade-animations"></a><span data-ttu-id="d780d-103">フェード アニメーション</span><span class="sxs-lookup"><span data-stu-id="d780d-103">Fade animations</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6150604"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191015"
 ---
 # <a name="depth-buffers"></a><span data-ttu-id="10c43-104">深度バッファー</span><span class="sxs-lookup"><span data-stu-id="10c43-104">Depth buffers</span></span>
 

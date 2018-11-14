@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6146671"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201367"
 ---
 # <a name="create-write-and-read-a-file"></a><span data-ttu-id="50187-104">ファイルの作成、書き込み、および読み取り</span><span class="sxs-lookup"><span data-stu-id="50187-104">Create, write, and read a file</span></span>
 

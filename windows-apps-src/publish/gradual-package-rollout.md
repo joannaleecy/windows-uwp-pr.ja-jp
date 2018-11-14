@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: ab2db3d34ed223b318d65ec497cc0feb7cb16342
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039698"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6153457"
 ---
 # <a name="gradual-package-rollout"></a><span data-ttu-id="89383-103">段階的なパッケージのロールアウト</span><span class="sxs-lookup"><span data-stu-id="89383-103">Gradual package rollout</span></span>
 

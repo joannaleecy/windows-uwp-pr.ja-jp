@@ -4,20 +4,19 @@ description: ブロック圧縮は、テクスチャ サイズとメモリ フ�
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - ブロック圧縮
-author: michaelfromredmond
-ms.author: mithom
+author: hickeys
+ms.author: hickeys
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c959ced5ada9145ca494dd023c9aa802d7dccc2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 8ff4c88a46c1e89df96b48d82da333432790e461
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024330"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205873"
 ---
 # <a name="block-compression"></a><span data-ttu-id="c3ce8-105">ブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="c3ce8-105">Block compression</span></span>
-
 
 <span data-ttu-id="c3ce8-106">ブロック圧縮は、テクスチャ サイズとメモリ フットプリントを減らしてパフォーマンスを向上させる、不可逆のテクスチャ圧縮技術です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-106">Block compression is a lossy texture-compression technique for reducing texture size and memory footprint, giving a performance increase.</span></span> <span data-ttu-id="c3ce8-107">ブロック圧縮テクスチャは、1 色あたり 32 ビットのテクスチャより小さくすることができます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-107">A block-compressed texture can be smaller than a texture with 32-bits per color.</span></span>
 
@@ -29,13 +28,12 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span data-ttu-id="c3ce8-114"><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>ブロック圧縮のしくみ</span><span class="sxs-lookup"><span data-stu-id="c3ce8-114"><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>How block compression works</span></span>
 
-
 <span data-ttu-id="c3ce8-115">ブロック圧縮は、カラー データの保存に必要なメモリの量を減少させるための方法です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-115">Block compression is a technique for reducing the amount of memory required to store color data.</span></span> <span data-ttu-id="c3ce8-116">ある色を元のサイズで保存し、他の色をエンコード スキームを使用して保存することにより、その画像の保存に必要なメモリの量を大幅に減少させることができます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-116">By storing some colors in their original size, and other colors using an encoding scheme, you can dramatically reduce the amount of memory required to store the image.</span></span> <span data-ttu-id="c3ce8-117">圧縮されたデータはハードウェアが自動的にデコードするので、圧縮されたテクスチャを使用しても、パフォーマンスの損失は発生しません。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-117">Since the hardware automatically decodes compressed data, there is no performance penalty for using compressed textures.</span></span>
 
 <span data-ttu-id="c3ce8-118">圧縮がどのように行われるかについては、以下の 2 つの例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-118">To see how compression works, look at the following two examples.</span></span> <span data-ttu-id="c3ce8-119">最初の例では、圧縮されないデータを保存する際に使用されるメモリの量について説明します。2 番目の例では、圧縮されたデータを保存する際に使用されるメモリの量について説明します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-119">The first example describes the amount of memory used when storing uncompressed data; the second example describes the amount of memory used when storing compressed data.</span></span>
 
--   [<span data-ttu-id="c3ce8-120">圧縮されないデータの保存</span><span class="sxs-lookup"><span data-stu-id="c3ce8-120">Storing uncompressed data</span></span>](#storing-uncompressed-data)
--   [<span data-ttu-id="c3ce8-121">圧縮されたデータの保存</span><span class="sxs-lookup"><span data-stu-id="c3ce8-121">Storing compressed data</span></span>](#storing-compressed-data)
+- [<span data-ttu-id="c3ce8-120">圧縮されないデータの保存</span><span class="sxs-lookup"><span data-stu-id="c3ce8-120">Storing uncompressed data</span></span>](#storing-uncompressed-data)
+- [<span data-ttu-id="c3ce8-121">圧縮されたデータの保存</span><span class="sxs-lookup"><span data-stu-id="c3ce8-121">Storing compressed data</span></span>](#storing-compressed-data)
 
 ### <a name="span-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span data-ttu-id="c3ce8-122"><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>圧縮されないデータの保存</span><span class="sxs-lookup"><span data-stu-id="c3ce8-122"><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>Storing uncompressed data</span></span>
 
@@ -61,14 +59,13 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idusingblockcompressionspanspan-idusingblockcompressionspanspan-idusingblockcompressionspanusing-block-compression"></a><span data-ttu-id="c3ce8-137"><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>ブロック圧縮の使用</span><span class="sxs-lookup"><span data-stu-id="c3ce8-137"><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>Using block compression</span></span>
 
-
 <span data-ttu-id="c3ce8-138">ブロック圧縮形式を指定すること以外は、圧縮されないテクスチャと同様に、ブロック圧縮テクスチャを作成します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-138">Create a block-compressed texture just like an uncompressed texture except that you specify a block-compressed format.</span></span>
 
 <span data-ttu-id="c3ce8-139">次に、ビューを作成して、テクスチャをパイプラインにバインドします。ブロック圧縮されたテクスチャはシェーダー ステージへの入力としてのみ使用できるので、シェーダー リソース ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-139">Next, create a view to bind the texture to the pipeline Since a block-compressed texture can be used only as an input to a shader-stage, you want to create a shader-resource view.</span></span>
 
 <span data-ttu-id="c3ce8-140">ブロック圧縮されたテクスチャを、圧縮されていないテクスチャを使用する場合と同様に使用します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-140">Use a block compressed texture the same way you would use an uncompressed texture.</span></span> <span data-ttu-id="c3ce8-141">アプリケーションがブロック圧縮データへのメモリ ポインターを取得する場合は、ミップマップのメモリ パディングを考慮する必要があります。このメモリ パディングは、宣言されたサイズが実際のサイズと異なる原因となります。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-141">If your application will get a memory pointer to block-compressed data, you need to account for the memory padding in a mipmap that causes the declared size to differ from the actual size.</span></span>
 
--   [<span data-ttu-id="c3ce8-142">仮想サイズ対物理サイズ</span><span class="sxs-lookup"><span data-stu-id="c3ce8-142">Virtual size versus physical size</span></span>](#virtual-size-versus-physical-size)
+- [<span data-ttu-id="c3ce8-142">仮想サイズ対物理サイズ</span><span class="sxs-lookup"><span data-stu-id="c3ce8-142">Virtual size versus physical size</span></span>](#virtual-size-versus-physical-size)
 
 ### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span data-ttu-id="c3ce8-143"><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>仮想サイズ対物理サイズ</span><span class="sxs-lookup"><span data-stu-id="c3ce8-143"><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>Virtual size versus physical size</span></span>
 
@@ -86,7 +83,6 @@ ms.locfileid: "6024330"
 
 ## <a name="span-idcompressionalgorithmsspanspan-idcompressionalgorithmsspanspan-idcompressionalgorithmsspancompression-algorithms"></a><span data-ttu-id="c3ce8-161"><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>圧縮アルゴリズム</span><span class="sxs-lookup"><span data-stu-id="c3ce8-161"><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>Compression algorithms</span></span>
 
-
 <span data-ttu-id="c3ce8-162">Direct3D のブロック圧縮方法では、圧縮されていないテクスチャ データを 4 x 4 のブロックに分割し、各ブロックを圧縮してから、そのデータを保存します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-162">Block compression techniques in Direct3D break up uncompressed texture data into 4×4 blocks, compress each block, and then store the data.</span></span> <span data-ttu-id="c3ce8-163">このため、圧縮されるテクスチャは、テクスチャの次元が 4 の倍数である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-163">For this reason, textures are expected to be compressed must have texture dimensions that are multiples of 4.</span></span>
 
 ![ブロック圧縮](images/d3d10-compression-1.png)
@@ -103,13 +99,11 @@ ms.locfileid: "6024330"
 | <span data-ttu-id="c3ce8-181">成分が 1 つの色</span><span class="sxs-lookup"><span data-stu-id="c3ce8-181">One-component color</span></span>             | <span data-ttu-id="c3ce8-182">1 つの成分 (8)</span><span class="sxs-lookup"><span data-stu-id="c3ce8-182">One component (8)</span></span>                     | [<span data-ttu-id="c3ce8-183">BC4</span><span class="sxs-lookup"><span data-stu-id="c3ce8-183">BC4</span></span>](#bc4)                    |
 | <span data-ttu-id="c3ce8-184">成分が 2 つの色</span><span class="sxs-lookup"><span data-stu-id="c3ce8-184">Two-component color</span></span>             | <span data-ttu-id="c3ce8-185">2 つの成分 (8:8)</span><span class="sxs-lookup"><span data-stu-id="c3ce8-185">Two components (8:8)</span></span>                  | [<span data-ttu-id="c3ce8-186">BC5</span><span class="sxs-lookup"><span data-stu-id="c3ce8-186">BC5</span></span>](#bc5)                    |
 
- 
-
--   [<span data-ttu-id="c3ce8-187">BC1</span><span class="sxs-lookup"><span data-stu-id="c3ce8-187">BC1</span></span>](#bc1)
--   [<span data-ttu-id="c3ce8-188">BC2</span><span class="sxs-lookup"><span data-stu-id="c3ce8-188">BC2</span></span>](#bc2)
--   [<span data-ttu-id="c3ce8-189">BC3</span><span class="sxs-lookup"><span data-stu-id="c3ce8-189">BC3</span></span>](#bc3)
--   [<span data-ttu-id="c3ce8-190">BC4</span><span class="sxs-lookup"><span data-stu-id="c3ce8-190">BC4</span></span>](#bc4)
--   [<span data-ttu-id="c3ce8-191">BC5</span><span class="sxs-lookup"><span data-stu-id="c3ce8-191">BC5</span></span>](#bc5)
+- [<span data-ttu-id="c3ce8-187">BC1</span><span class="sxs-lookup"><span data-stu-id="c3ce8-187">BC1</span></span>](#bc1)
+- [<span data-ttu-id="c3ce8-188">BC2</span><span class="sxs-lookup"><span data-stu-id="c3ce8-188">BC2</span></span>](#bc2)
+- [<span data-ttu-id="c3ce8-189">BC3</span><span class="sxs-lookup"><span data-stu-id="c3ce8-189">BC3</span></span>](#bc3)
+- [<span data-ttu-id="c3ce8-190">BC4</span><span class="sxs-lookup"><span data-stu-id="c3ce8-190">BC4</span></span>](#bc4)
+- [<span data-ttu-id="c3ce8-191">BC5</span><span class="sxs-lookup"><span data-stu-id="c3ce8-191">BC5</span></span>](#bc5)
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span data-ttu-id="c3ce8-192"><span id="BC1"></span><span id="bc1"></span>BC1</span><span class="sxs-lookup"><span data-stu-id="c3ce8-192"><span id="BC1"></span><span id="bc1"></span>BC1</span></span>
 
@@ -121,14 +115,14 @@ ms.locfileid: "6024330"
 
 <span data-ttu-id="c3ce8-199">カラー インデックス (a ～ p) は、カラー テーブルから元の色を検索するために使用します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-199">The color indices (a–p) are used to look up the original colors from a color table.</span></span> <span data-ttu-id="c3ce8-200">カラー テーブルには 4 つの色が含まれます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-200">The color table contains 4 colors.</span></span> <span data-ttu-id="c3ce8-201">最初の 2 色、color\_0 および color\_1 は、最小および最大の色です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-201">The first two colors—color\_0 and color\_1—are the minimum and maximum colors.</span></span> <span data-ttu-id="c3ce8-202">その他の 2 色、color\_2 および color\_3 は、線形補間で計算された中間色です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-202">The other two colors, color\_2 and color\_3, are intermediate colors calculated with linear interpolation.</span></span>
 
-```
+```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
 color_3 = 1/3*color_0 + 2/3*color_1
 ```
 
 <span data-ttu-id="c3ce8-203">4 つの色は、a ～ p のブロックに保存される 2 ビットのインデックス値を割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-203">The four colors are assigned 2-bit index values that will be saved in blocks a–p.</span></span>
 
-```
+```cpp
 color_0 = 00
 color_1 = 01
 color_2 = 10
@@ -139,7 +133,7 @@ color_3 = 11
 
 <span data-ttu-id="c3ce8-205">このアルゴリズムは、1 ビットのアルファが含まれているデータにも適しています。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-205">This algorithm lends itself to data that contains 1-bit alpha also.</span></span> <span data-ttu-id="c3ce8-206">違いは、color\_3 が 0 (透明色を表します) に設定されることと、color\_2 が color\_0 と color\_1 の線形ブレンドであることのみです。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-206">The only difference is that color\_3 is set to 0 (which represents a transparent color) and color\_2 is a linear blend of color\_0 and color\_1.</span></span>
 
-```
+```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
 color_3 = 0;
 ```
@@ -166,7 +160,7 @@ color_3 = 0;
 
 <span data-ttu-id="c3ce8-224">このアルゴリズムでは、2 つの参照アルファ値を調べることで、補間アルファ値の数を決定します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-224">The algorithm determines the number of interpolated alpha values by examining the two reference alpha values.</span></span> <span data-ttu-id="c3ce8-225">alpha\_0 が alpha\_1 より大きい場合、BC3 では 6 つのアルファ値を補間します。それ以外の場合は、4 つの値を補間します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-225">If alpha\_0 is greater than alpha\_1, then BC3 interpolates 6 alpha values; otherwise, it interpolates 4.</span></span> <span data-ttu-id="c3ce8-226">BC3 でアルファ値を 4 つのみ補間するときは、追加のアルファ値 (0 は完全に透明、255 は完全に不透明) を 2 つ設定します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-226">When BC3 interpolates only 4 alpha values, it sets two additional alpha values (0 for fully transparent and 255 for fully opaque).</span></span> <span data-ttu-id="c3ce8-227">BC3 では、指定されたテクセルの元のアルファに最も近い補間アルファ値に対応するビット コードを保存することにより、4 x 4 のテクセル領域にアルファ値を圧縮します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-227">BC3 compresses the alpha values in the 4×4 texel area by storing the bit code corresponding to the interpolated alpha values which most closely matches the original alpha for a given texel.</span></span>
 
-```
+```cpp
 if( alpha_0 > alpha_1 )
 {
   // 6 interpolated alpha values.
@@ -201,14 +195,14 @@ else
 
 <span data-ttu-id="c3ce8-238">このアルゴリズムでは、2 つの参照値を調べることで、補間されるカラー値の数を決定します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-238">The algorithm determines the number of interpolated color values by examining the two reference values.</span></span> <span data-ttu-id="c3ce8-239">red\_0 が red\_1 より大きい場合、BC4 では 6 つのカラー値を補間します。それ以外の場合は、4 つの値を補間します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-239">If red\_0 is greater than red\_1, then BC4 interpolates 6 color values; otherwise, it interpolates 4.</span></span> <span data-ttu-id="c3ce8-240">BC4 でカラー値を 4 つのみ補間するときは、追加のカラー値 (0.0f は完全に透明、1.0f は完全に不透明) を 2 つ設定します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-240">When BC4 interpolates only 4 color values, it sets two additional color values (0.0f for fully transparent and 1.0f for fully opaque).</span></span> <span data-ttu-id="c3ce8-241">BC4 では、指定されたテクセルの元のアルファに最も近い補間アルファ値に対応するビット コードを保存することにより、4 x 4 のテクセル領域にアルファ値を圧縮します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-241">BC4 compresses the alpha values in the 4×4 texel area by storing the bit code corresponding to the interpolated alpha values that most closely matches the original alpha for a given texel.</span></span>
 
--   [<span data-ttu-id="c3ce8-242">BC4\_UNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-242">BC4\_UNORM</span></span>](#bc4-unorm)
--   [<span data-ttu-id="c3ce8-243">BC4\_SNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-243">BC4\_SNORM</span></span>](#bc4-snorm)
+- [<span data-ttu-id="c3ce8-242">BC4\_UNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-242">BC4\_UNORM</span></span>](#bc4-unorm)
+- [<span data-ttu-id="c3ce8-243">BC4\_SNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-243">BC4\_SNORM</span></span>](#bc4-snorm)
 
 ### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span data-ttu-id="c3ce8-244"><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-244"><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM</span></span>
 
 <span data-ttu-id="c3ce8-245">単一成分データの補間は、以下のコード サンプルのように行われます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-245">The interpolation of the single-component data is done as in the following code sample.</span></span>
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -239,7 +233,7 @@ else
 
 <span data-ttu-id="c3ce8-248">DXGI\_FORMAT\_BC4\_SNORM は、SNORM 範囲でデータがエンコードされることと、4 つのカラー値が補間される場合を除いて、まったく同じです。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-248">The DXGI\_FORMAT\_BC4\_SNORM is exactly the same, except that the data is encoded in SNORM range and when 4 color values are interpolated.</span></span> <span data-ttu-id="c3ce8-249">単一成分データの補間は、以下のコード サンプルのように行われます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-249">The interpolation of the single-component data is done as in the following code sample.</span></span>
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -259,8 +253,8 @@ else
   red_3 = (3*red_0 + 2*red_1)/5.0f; // bit code 011
   red_4 = (2*red_0 + 3*red_1)/5.0f; // bit code 100
   red_5 = (1*red_0 + 4*red_1)/5.0f; // bit code 101
-  red_6 = -1.0f;                     // bit code 110
-  red_7 =  1.0f;                     // bit code 111
+  red_6 = -1.0f;                    // bit code 110
+  red_7 =  1.0f;                    // bit code 111
 }
 ```
 
@@ -270,8 +264,8 @@ else
 
 <span data-ttu-id="c3ce8-252">成分が 2 つのカラー データを、各色に 8 ビット使用して保存するには、BC5 形式を使用します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-252">Use the BC5 format to store two-component color data using 8 bits for each color.</span></span> <span data-ttu-id="c3ce8-253">精度が向上する結果 ([BC1](#bc1) との比較)、BC5 は、[0 ～ 1] の範囲では DXGI\_FORMAT\_BC5\_UNORM 形式を使用し、[-1 ～ +1] の範囲では DXGI\_FORMAT\_BC5\_SNORM 形式を使用して、浮動小数点データを保存するのに最適です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-253">As a result of the increased accuracy (compared to [BC1](#bc1)), BC5 is ideal for storing floating-point data in the range of \[0 to 1\] using the DXGI\_FORMAT\_BC5\_UNORM format and \[-1 to +1\] using the DXGI\_FORMAT\_BC5\_SNORM format.</span></span> <span data-ttu-id="c3ce8-254">4 x 4 のテクスチャが、可能な限り最も大きなデータ形式を使用すると想定すると、この圧縮方法では必要なメモリが 32 バイト (16 色 x 2 成分/色 x 1 バイト/成分) から 16 バイトに減少します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-254">Assuming a 4×4 texture using the largest data format possible, this compression technique reduces the memory required from 32 bytes (16 colors × 2 components/color × 1 byte/component) to 16 bytes.</span></span>
 
--   [<span data-ttu-id="c3ce8-255">BC5\_UNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-255">BC5\_UNORM</span></span>](#bc5-unorm)
--   [<span data-ttu-id="c3ce8-256">BC5\_SNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-256">BC5\_SNORM</span></span>](#bc5-snorm)
+- [<span data-ttu-id="c3ce8-255">BC5\_UNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-255">BC5\_UNORM</span></span>](#bc5-unorm)
+- [<span data-ttu-id="c3ce8-256">BC5\_SNORM</span><span class="sxs-lookup"><span data-stu-id="c3ce8-256">BC5\_SNORM</span></span>](#bc5-snorm)
 
 <span data-ttu-id="c3ce8-257">このアルゴリズムは、4 x 4 ブロックのテクセルで機能します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-257">The algorithm works on 4×4 blocks of texels.</span></span> <span data-ttu-id="c3ce8-258">2 つの成分でそれぞれ 16 色を保存する代わりに、このアルゴリズムでは各成分で 2 つの参照カラー (red\_0、red\_1、green\_0、および green\_1) と、各成分で 16 個の 3 ビット カラー インデックス (red a ～ red p および green a ～ green p) を保存します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-258">Instead of storing 16 colors for both components, the algorithm stores 2 reference colors for each component (red\_0, red\_1, green\_0, and green\_1) and 16 3-bit color indices for each component (red a through red p and green a through green p), as shown in the following diagram.</span></span>
 
@@ -285,7 +279,7 @@ else
 
 <span data-ttu-id="c3ce8-267">単一成分データの補間は、以下のコード サンプルのように行われます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-267">The interpolation of the single-component data is done as in the following code sample.</span></span> <span data-ttu-id="c3ce8-268">green の成分の計算も同様です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-268">The calculations for the green components are similar.</span></span>
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -316,7 +310,7 @@ else
 
 <span data-ttu-id="c3ce8-271">DXGI\_FORMAT\_BC5\_SNORM は、SNORM 範囲でデータがエンコードされることと、4 つのデータ値が補間され、-1.0f と 1.0f の 2 つの値が追加される場合を除いて、まったく同じです。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-271">The DXGI\_FORMAT\_BC5\_SNORM is exactly the same, except that the data is encoded in SNORM range and when 4 data values are interpolated, the two additional values are -1.0f and 1.0f.</span></span> <span data-ttu-id="c3ce8-272">単一成分データの補間は、以下のコード サンプルのように行われます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-272">The interpolation of the single-component data is done as in the following code sample.</span></span> <span data-ttu-id="c3ce8-273">green の成分の計算も同様です。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-273">The calculations for the green components are similar.</span></span>
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -345,19 +339,18 @@ else
 
 ## <a name="span-iddifferencesspanspan-iddifferencesspanspan-iddifferencesspanformat-conversion"></a><span data-ttu-id="c3ce8-275"><span id="Differences"></span><span id="differences"></span><span id="DIFFERENCES"></span>形式の変換</span><span class="sxs-lookup"><span data-stu-id="c3ce8-275"><span id="Differences"></span><span id="differences"></span><span id="DIFFERENCES"></span>Format conversion</span></span>
 
-
 <span data-ttu-id="c3ce8-276">Direct3D を使用すると、ビット幅が同じであれば、事前に構造化されたタイプのテクスチャとブロック圧縮されたテクスチャとの間のコピーが可能になります。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-276">Direct3D enables copies between prestructured-typed textures and block-compressed textures of the same bit widths.</span></span>
 
 <span data-ttu-id="c3ce8-277">いくつかの種類の形式間でリソースをコピーできます。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-277">You can copy resources between a few format types.</span></span> <span data-ttu-id="c3ce8-278">このようなコピー操作では、そのリソース データを異なる形式として再解釈する、一種の形式変換を実行します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-278">This type of copy operation performs a type of format conversion that reinterprets resource data as a different format type.</span></span> <span data-ttu-id="c3ce8-279">より一般的な変換の動作と、データの再解釈との違いを示す、この例をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-279">Consider this example that shows the difference between reinterpreting data with the way a more typical type of conversion behaves:</span></span>
 
-```
+```cpp
 FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
 <span data-ttu-id="c3ce8-280">'f' を 'u' のタイプとして再解釈するため、[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) を使います。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-280">To reinterpret 'f' as the type of 'u', use [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx):</span></span>
 
-```
+```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
@@ -365,7 +358,7 @@ memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 
 <span data-ttu-id="c3ce8-282">より一般的な変換を実行するには、割り当てを使用します。</span><span class="sxs-lookup"><span data-stu-id="c3ce8-282">To perform the more typical type of conversion, use assignment:</span></span>
 
-```
+```cpp
 u = f; // 'u' becomes 1.
 ```
 
@@ -415,9 +408,6 @@ u = f; // 'u' becomes 1.
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="c3ce8-308"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="c3ce8-308"><span id="related-topics"></span>Related topics</span></span>
-
 
 [<span data-ttu-id="c3ce8-309">圧縮テクスチャ リソース</span><span class="sxs-lookup"><span data-stu-id="c3ce8-309">Compressed texture resources</span></span>](compressed-texture-resources.md)

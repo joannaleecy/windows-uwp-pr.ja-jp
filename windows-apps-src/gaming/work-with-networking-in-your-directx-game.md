@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ネットワーク, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030935"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6258368"
 ---
 # <a name="networking-for-games"></a><span data-ttu-id="60634-104">ゲームのネットワーク</span><span class="sxs-lookup"><span data-stu-id="60634-104">Networking for games</span></span>
 
