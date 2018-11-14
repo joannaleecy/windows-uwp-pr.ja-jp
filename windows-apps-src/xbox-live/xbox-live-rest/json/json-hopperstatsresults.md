@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b6f1322d2c22e65c33667ea409b10d9209628d3b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048193"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149318"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 
@@ -22,13 +22,13 @@ ms.locfileid: "6048193"
 
   
  
-HopperStatsResults JSON オブジェクトには、次の仕様があります。
+HopperStatsResults JSON オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| hopperName| string| 選択したホッパーの名前。| 
+| hopperName| string| 選択したホッパーの名前です。| 
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
-| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。| 
+| カタログの作成| 32 ビット符号付き整数| ホッパーでマッチを待っているユーザーの数。| 
   
 <a id="ID4EW"></a>
 

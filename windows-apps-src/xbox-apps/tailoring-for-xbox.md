@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048159"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155230"
 ---
 # <a name="xbox-best-practices"></a>Xbox ベスト プラクティス
 
@@ -67,7 +67,7 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 
 ## <a name="app-dev-on-xbox"></a>App Dev on Xbox
 
-**App Dev on Xbox**イベントは、Xbox アプリの構築に新しい開発者向けの適切な開始点です。
+**App Dev on Xbox**イベントは、Xbox でアプリを構築する新しい開発者向けの適切な開始点です。
 
 * [記録されたセッションを視聴します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [ブログの投稿を読み取る](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)

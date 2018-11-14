@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037082"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146466"
 ---
 # <a name="performance-page-dev-home"></a>パフォーマンス ページ (Dev Home)
    
@@ -35,7 +35,7 @@ Dev Home の**パフォーマンス**のページでは、さまざまなディ�
 ## <a name="disk-simulation"></a>ディスクのシミュレーション  
    
   
-**ディスクのシミュレーション**ウィンドウは、システムや他のアプリからディスクの動作をシミュレートします。   
+**ディスクのシミュレーション**ウィンドウは、システムや他のアプリからディスク アクティビティをシミュレートします。   
   
 <a id="ID4EOB"></a>
 
@@ -44,7 +44,7 @@ Dev Home の**パフォーマンス**のページでは、さまざまなディ�
 ## <a name="cpu-simulation"></a>CPU のシミュレーション  
    
   
-**CPU のシミュレーション**ウィンドウ CPU6 でアクティビティをシミュレートする (共有のコア)。   
+**CPU のシミュレーション**ウィンドウ CPU6 でアクティビティをシミュレートする (共有 core)。   
   
 <a id="ID4EYB"></a>
 

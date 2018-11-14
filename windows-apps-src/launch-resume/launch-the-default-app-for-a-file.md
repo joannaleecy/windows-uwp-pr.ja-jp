@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 736018fbf966b547c3dd41e245149d498c1231e3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028658"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188339"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>ファイルに応じた既定のアプリの起動
 
@@ -440,7 +440,7 @@ void MainPage::DefaultLaunch()
               この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わってもよいことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
 
 > [!NOTE]
-> Windows では、複数の異なる要素など、ソース アプリの最終的なウィンドウ サイズを決定する場合、ソース アプリの基本設定、画面、画面の向き、上のアプリの数が考慮されます。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
+> Windows では、たとえば、ソース アプリの最終的なウィンドウのサイズを決定する場合、複数の異なる要素、ソース アプリの基本設定、画面、画面の向き、上のアプリの数が考慮されます。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
 
 **モバイル デバイス ファミリ:**[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)は、モバイル デバイス ファミリでサポートされていません。
 

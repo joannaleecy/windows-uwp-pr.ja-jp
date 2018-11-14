@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031464"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6137856"
 ---
 # <a name="customize-the-print-preview-ui"></a>印刷プレビュー UI のカスタマイズ
 
@@ -27,7 +27,7 @@ ms.locfileid: "6031464"
 
 このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 印刷機能の詳細については、「[アプリからの印刷](print-from-your-app.md)」を参照してください。
 
-**ヒント:** 例では、このトピックでは、のほとんどは、印刷サンプルに基づいています。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
+**ヒント:** このトピックの例のほとんどは、サンプルに基づいて印刷します。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
 
  
 
@@ -50,7 +50,7 @@ ms.locfileid: "6031464"
 
 ただし、この方法を使って加えた変更は、印刷プレビュー UI にのみ影響します。 ユーザーは印刷プレビュー UI で **[その他の設定]** をタップすることで、プリンターでサポートされているすべてのオプションにいつでもアクセスできます。
 
-**注:** アプリは、表示されるすべての印刷オプションを指定しますが、選んだプリンターでサポートされているようにのみが印刷プレビュー UI にします。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
+**注:** アプリは、表示される任意の印刷オプションを指定しますが、選んだプリンターでサポートされているようにのみが印刷プレビュー UI にします。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
 
  
 
@@ -98,7 +98,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要な**、印刷プレビュー UI に**他の設定**のリンクを含むからすべての印刷オプションを削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
+**重要な**、印刷プレビュー UI に**複数の設定**のリンクを含むからすべての印刷オプションを削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
 
 ### <a name="specify-default-options"></a>既定のオプションの指定
 

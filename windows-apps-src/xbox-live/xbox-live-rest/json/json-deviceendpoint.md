@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dafe60c0d26846d10113a641986842cc52e0334
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024036"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192472"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -23,16 +23,16 @@ ms.locfileid: "6024036"
  
 ## <a name="deviceendpoint"></a>DeviceEndpoint
  
-DeviceEndpoint オブジェクトには、次の仕様があります。
+DeviceEndpoint オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| deviceName| string| 省略可能。 該当する場合は、デバイスのフレンドリ名。 現在、この値は使用しません。| 
+| deviceName| string| 省略可能。 該当する場合は、デバイスのフレンドリ名。 現在、この値は使われません。| 
 | endpointUri| string| 必須。 この URL は、クライアント プラットフォーム (Windows または Windows Phone) が、プッシュ通知サービス (WNS または MPNS) から入手したです。| 
-| locale| string| 必須。 このエンドポイントに送信される通知の目的の言語です。 優先順位の値をコンマ区切りのリストであることができます。 例:「DE-DE, EN-US, en」します。| 
+| locale| string| 必須。 このエンドポイントに送信される通知の目的の言語です。 優先順位の値をコンマ区切りのリストであることができます。 例:「DE-DE, EN-US, en」。| 
 | プラットフォーム| string| 省略可能。 現在サポートされている値は、"WindowsPhone"および"Windows"です。 指定しない場合は、デバイス トークンから導出されます。| 
-| platformVersion| string| 省略可能。 この文字列の形式は、各プラットフォームを特定します。 現在、この値は使用しません。| 
-| systemId| GUID| 必須。 「アプリ インスタンス」の一意の識別子 (デバイス/ユーザーの組み合わせ)。 ベスト プラクティスの実装では、インストール/最初の実行時にランダムな GUID を生成するアプリはあり、引き続き、アプリの後続の実行でその値を使用します。| 
+| platformVersion| string| 省略可能。 この文字列の形式は、それぞれのプラットフォームに特定します。 現在、この値は使われません。| 
+| systemId| GUID| 必須。 「アプリ インスタンス」の一意の識別子 (デバイス/ユーザーの組み合わせ)。 ベスト プラクティスの実装では、アプリのインストール/最初の実行時にランダムな GUID を生成するのには、し、アプリの以降の実行時にその値を使用してに進みます。| 
 | titleId| 32 ビットの符号なし整数| 必須。 サービスに呼び出しを発行するゲームのタイトル ID です。| 
   
 <a id="ID4EGD"></a>

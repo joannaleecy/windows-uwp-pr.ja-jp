@@ -8,12 +8,12 @@ ms.date: 12/13/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e037101ac5f75107770db6be93cb0c6687edfbd9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: e36999f9fcd2bb0ca289c7866fa8b6ebe8209e63
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6033669"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194982"
 ---
 # <a name="get-started-with-the-xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラムの概要
  
@@ -21,21 +21,21 @@ Xbox Live クリエーターズ プログラムを利用すると、概念の承
 
 Xbox Live クリエーターズ プログラムのゲームは、ユニバーサル Windows プラットフォーム (UWP) アプリケーションでなければなりません。 Xbox One については、「[Xbox One の UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)」と、特に「[Xbox One 上の UWP アプリとゲームのシステム リソース](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)」をご覧ください。 Xbox Live クリエーターズ プログラムを通じて公開したゲームは、実績サービスやオンライン マルチプレイヤー サービスにアクセスできません。 サポートされるサービスの一覧については、「開発者プログラムの概要」の「[機能表](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/developer-program-overview#feature-table)」をご覧ください。
 
-## <a name="1-ensure-you-have-a-title-created-on-dev-center"></a>1. デベロッパー センターでタイトルが作成されていることを確認する
-すべての Xbox Live タイトルは、サインインして Xbox Live サービスを呼び出すことができるようにするために、デベロッパー センターで定義されている必要があります。  これを行う方法は、「[新しいクリエーターズ タイトルの作成](create-and-test-a-new-creators-title.md)」で説明します。
+## <a name="1-ensure-you-have-a-title-created-in-partner-center"></a>1. パートナー センターで作成されたタイトルがあることを確認します。
+すべての Xbox Live タイトルは、サインインし、Xbox Live サービスを呼び出すことができます前に、[パートナー センター](https://partner.microsoft.com/dashboard)で定義する必要があります。  これを行う方法は、「[新しいクリエーターズ タイトルの作成](create-and-test-a-new-creators-title.md)」で説明します。
 
 ## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 適切なガイドに従って IDE やゲーム エンジンをセットアップする
 プラットフォームやエンジンに応じた適切な "ファースト ステップ ガイド" に従い、それに沿って学習することで、Xbox Live の基本を習得することができます。
 
-* 「[Visual Studio を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-visual-studio.md)」では、デベロッパー センターで Visual Studio プロジェクトを Xbox Live 構成にリンクする方法について説明します。
+* [Visual Studio を使用してクリエーターズ タイトルの開発](develop-creators-title-with-visual-studio.md)では、Visual Studio プロジェクト パートナー センターで Xbox Live 構成をリンクする方法を示します。
 * 「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」では、Xbox Live 対応の新しい Unity ゲームを作成する方法、単一ユーザーとマルチユーザーのサインインを処理する方法、ランキングや統計などの機能を追加する方法、ネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 
-[(2 & 3) を構築](https://www.scirra.com/construct2)および[Game Maker Studio](https://www.yoyogames.com/gamemaker)ゲーム エンジンにも Construct または Game Maker Studio ゲームに Xbox Live を統合するためのドキュメントがある Unity には、ドキュメントが提供する唯一のサード パーティ製ゲーム エンジンが、それぞれします。
+Unity のドキュメントが提供する唯一のサード パーティ製ゲーム エンジンをゲーム エンジン[(2 & 3) を構築](https://www.scirra.com/construct2)および[Game Maker Studio](https://www.yoyogames.com/gamemaker)もにある Construct または Game Maker Studio ゲームに Xbox Live を統合するためのドキュメントそれぞれします。
 
 * [ゲーム Maker Studio 2 UWP ここでは、Xbox Live クリエーターズ プログラムをサポートしている](https://www.yoyogames.com/gamemaker/xblc)は方法を説明を Xbox One と Windows 10 PC でプレイする Game Maker Studio プロジェクトをエクスポートします。
 * [UWP アプリ: で Xbox Live を使用して構築](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)は方法を説明する Construct 2 と 3 つのゲームで Xbox Live を使用します。
 
-Xbox Live の統合を文書化することがなく他のゲーム開発エン引き続き Xbox Live をタイトルに追加するのに、Xbox Live Api を使用することができます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
+Xbox Live の統合を文書化することがなく他のゲーム開発エンをタイトルに Xbox Live を追加するのに Xbox Live Api を使用することもできます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
 
 Unity ではないサード パーティ製のゲーム エンジンで Xbox Live サービスを使用して、サポート、質問に回答する適切なゲーム エンジン スタッフと連携します。
 

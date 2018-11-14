@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033886"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148441"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>Windows ランタイム コンポーネントでのエラー状態の診断
 
@@ -54,13 +54,13 @@ ms.locfileid: "6033886"
 
 マネージ コードで記述された Windows ランタイム コンポーネントでは、パブリック型のオーバーロードされた演算子を公開することはできません。
 
-> **注:**、エラー メッセージでは、演算子は op\_Addition、op \_multiply、op\_ExclusiveOr、op \_implicit (暗黙の変換) など、そのメタデータ名によって識別されます。
+> **注:**、エラー メッセージでは、演算子は op\_Addition、op \_multiply、op\_ExclusiveOr、op \_implicit (暗黙の変換) などのメタデータ名によって識別されます。
 
  
 
 | エラー番号 | メッセージ テキスト                                                                                          |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| WME1087      | '{0}' は演算子オーバー ロードです。 マネージ型は、Windows ランタイムで演算子オーバーロードを公開できません。 |
+| WME1087      | '{0}' は演算子オーバー ロードされます。 マネージ型は、Windows ランタイムで演算子オーバーロードを公開できません。 |
 
  
 
@@ -71,7 +71,7 @@ UWP のクラスは、指定された数のパラメーターを持つコンス�
 
 | エラー番号 | メッセージ テキスト                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1099      | 型 '{0}'の複数のコンス トラクターを持って'{1}' 個です。 Windows ランタイム型には、同じ数の引数を持つ複数のコンストラクターがありません。 |
+| WME1099      | 型 '{0}'で複数のコンス トラクターを持って'{1}' 個です。 Windows ランタイム型には、同じ数の引数を持つ複数のコンストラクターがありません。 |
 
  
 
@@ -83,7 +83,7 @@ UWP では、オーバーロードされたメソッドの 1 つが既定のオ�
 | エラー番号 | メッセージ テキスト                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | WME1059      | 複数{0}-のオーバー ロード パラメーター '{1}します。{2}' Windows.Foundation.Metadata.DefaultOverloadAttribute で修飾されます。                                                            |
-| WME1085      | {0}-パラメーターがのオーバー ロード{1}します。{2} Windows.Foundation.Metadata.DefaultOverloadAttribute で修飾することによって、既定のオーバー ロードとして指定されている 1 つの方法が必要です。 |
+| WME1085      | {0}-パラメーターがのオーバー ロード{1}します。{2} Windows.Foundation.Metadata.DefaultOverloadAttribute で修飾することによって、既定のオーバー ロードとして指定されている 1 つのメソッドがあります。 |
 
  
 
@@ -92,7 +92,7 @@ UWP では、オーバーロードされたメソッドの 1 つが既定のオ�
 
 ユニバーサル Windows プラットフォームでは、Windows メタデータ (.winmd) ファイルに含まれるすべてのパブリック型は、.winmd ファイルの名前を共有する名前空間、またはそのファイル名のサブ名前空間に含まれている必要があります。 たとえば、Visual Studio プロジェクトの名前が A.B (つまり、Windows ランタイム コンポーネントが A.B.winmd) の場合、パブリック クラス A.B.Class1 と A.B.C.Class2 を含めることができますが、A.Class3 (WME0006) または D.Class4 (WME1044) を含めることはできません。
 
-> **注:** これらの制限は、実装で使われるプライベート型がパブリック型だけを適用します。
+> **注:** これらの制限は、実装で使われるプライベート型には、パブリック型だけを適用します。
 
  
 
@@ -112,11 +112,11 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
 | エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                                                                                                             |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME0006      | '{0}' このアセンブリの有効な winmd ファイル名ではありません。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。 このようなサブ名前空間に存在しない型は、ランタイムに見つかりません。 このアセンブリでは、ファイル名として使用される最小の一般的な名前空間は '{1}' です。 |
+| WME0006      | '{0}' このアセンブリの有効な winmd ファイル名ではありません。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。 このようなサブ名前空間に存在しない型は、ランタイムに見つかりません。 このアセンブリで、ファイル名として使用する最小の一般的な名前空間は '{1}' です。 |
 | WME1042      | 入力モジュールには、名前空間内にある少なくとも 1 つのパブリック型を含める必要があります。                                                                                                                                                                                                                                                                   |
 | WME1043      | 入力モジュールには、名前空間内にある少なくとも 1 つのパブリック型を含める必要があります。 名前空間内で検出された型はプライベートのみです。                                                                                                                                                                                                               |
-| WME1044      | パブリック型には、名前空間 ('{1}') をプレフィックスを共有しません一般的なその他の名前空間を持つ ('{0}')。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。                                                                                                                              |
-| WME1067      | ケースのみを Namespace の名前が異なることはできません。 '{0}'、'{1}' です。                                                                                                                                                                                                                                                                                                |
+| WME1044      | パブリック型には、名前空間 ('{1}') をプレフィックスを共有しません一般的なその他の名前空間を ('{0}')。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。                                                                                                                              |
+| WME1067      | ケースでのみ Namespace 名は区別できません: '{0}'、'{1}' です。                                                                                                                                                                                                                                                                                                |
 | WME1068      | 型 '{0}'名前空間と同じ名前を持つことはできません'{1}' です。                                                                                                                                                                                                                                                                                                 |
 
  
@@ -132,7 +132,7 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
 > **重要な**JavaScript は、マネージ型が実装されるインターフェイスの一覧で最初に表示されるインターフェイスを使用します。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
-> **注意:** コンポーネントが JavaScript によって使用する場合は、非ジェネリック[IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx)および[IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx)インターフェイスを使用してください。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
+> **注意:** コンポーネントが JavaScript によって使用する場合は、非ジェネリック[IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx)および[IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx)インターフェイスを使用しないようにします。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
 
  
 
@@ -150,21 +150,21 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 <tbody>
 <tr class="odd">
 <td align="left">WME1033</td>
-<td align="left">メソッド '{0}'のパラメーターが'{1}型' の'{2}' です。 '{2}' は有効な Windows ランタイム パラメーター型はありません。</td>
+<td align="left">メソッド '{0}'のパラメーターを持つ'{1}型' の'{2}' です。 '{2}' は有効な Windows ランタイム パラメーター型ではありません。</td>
 </tr>
 <tr class="even">
 <td align="left">WME1038</td>
-<td align="left">メソッド '{0}'型のパラメーターが'{1}' そのシグネチャにします。 この型は有効な Windows ランタイム型ではありませんが、有効な Windows ランタイム型であるインターフェイスを実装しています。 代わりに、次の種類のいずれかを使用するメソッド シグネチャを変更することを検討してください: '{2}' です。</td>
+<td align="left">メソッド '{0}'型のパラメーターを持つ'{1}' そのシグネチャにします。 この型は有効な Windows ランタイム型ではありませんが、有効な Windows ランタイム型であるインターフェイスを実装しています。 代わりに、次の種類のいずれかを使用するメソッド シグネチャを変更することを検討してください: '{2}' です。</td>
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>メソッド '{0}'型のパラメーターが'{1}' そのシグネチャにします。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
-> **注:** の{2}、Winmdexp.exe によって代替の一覧が次のように"の種類の変更の考慮事項 ''system.collections.generic.list&lt;T&gt;' 代わりに、次のいずれかのメソッド シグネチャで型: '&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'."
+<td align="left"><p>メソッド '{0}'型のパラメーターを持つ'{1}' そのシグネチャにします。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
+> **注:** の{2}、Winmdexp.exe は次のように、候補の一覧を追加"の種類の変更を検討する ''system.collections.generic.list&lt;T&gt;' 代わりに、次のいずれかのメソッド シグネチャで型: '&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'."
 </td>
 </tr>
 <tr class="even">
 <td align="left">WME1040</td>
-<td align="left">メソッド '{0}'型のパラメーターが'{1}' そのシグネチャにします。 管理されているタスク型を使用するのではなく、Windows.Foundation.IAsyncAction、Windows.Foundation.IAsyncOperation、またはその他の Windows ランタイムの非同期インターフェイスのいずれかを使用してください。 標準の .NET await パターンもこれらのインターフェイスに適用されます。 管理されているタスク オブジェクトを Windows ランタイムの非同期インターフェイスに変換する方法の詳細については、System.Runtime.InteropServices.WindowsRuntime.AsyncInfo を参照してください。</td>
+<td align="left">メソッド '{0}'型のパラメーターを持つ'{1}' そのシグネチャにします。 管理されているタスク型を使用するのではなく、Windows.Foundation.IAsyncAction、Windows.Foundation.IAsyncOperation、またはその他の Windows ランタイムの非同期インターフェイスのいずれかを使用してください。 標準の .NET await パターンもこれらのインターフェイスに適用されます。 管理されているタスク オブジェクトを Windows ランタイムの非同期インターフェイスに変換する方法の詳細については、System.Runtime.InteropServices.WindowsRuntime.AsyncInfo を参照してください。</td>
 </tr>
 </tbody>
 </table>
@@ -178,7 +178,7 @@ UWP では、構造体にはフィールドのみを含めることができ、�
 
 | エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1060      | 構造体 '{0}"フィールドが"{1}型' の'{2}' です。 '{2}' は有効な Windows ランタイム フィールド型はありません。 Windows ランタイムの構造体に含まれる各フィールドに指定できるのは、UInt8、Int16、UInt16、Int32、UInt32、Int64、UInt64、Single、Double、Boolean、String、Enum、または構造体自体のみです。 |
+| WME1060      | 構造体 '{0}"フィールドが"{1}型' の'{2}' です。 '{2}' は有効な Windows ランタイム フィールド型ではありません。 Windows ランタイムの構造体に含まれる各フィールドに指定できるのは、UInt8、Int16、UInt16、Int32、UInt32、Int64、UInt64、Single、Double、Boolean、String、Enum、または構造体自体のみです。 |
 
  
 
@@ -206,12 +206,12 @@ UWP では、パラメーターは読み取り専用または書き込み専用�
 
 | エラー番号 | メッセージ テキスト         |
 |--------------|----------------------|
-| WME1101      | メソッド '{0}'のパラメーターが'{1}' は配列、および両方を含み{2}と{3}します。 Windows ランタイムでは、配列パラメーターの内容は、読み取り可能または書き込み可能である必要があります。 属性の 1 つを削除してください"{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| WME1102      | メソッド '{0}'が出力パラメーター'{1}' は配列では、ですが{2}します。 Windows ランタイムでは、出力配列の内容は書き込み可能です。 属性を削除してください"{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | メソッド '{0}'のパラメーターが'{1}' は配列、および、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute のいずれかがあります。 ランタイムでは、Windows、配列パラメーターが必要か{2}または{3}します。 これらの属性を削除するか、必要に応じて、適切な Windows ランタイム属性と置き換えてください。                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | メソッド '{0}'のパラメーターが'{1}' は配列ではなく、いずれかが、{2}または{3}します。 Windows ランタイムは非配列パラメーターにマークすることをサポートしていません{2}または{3}します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| WME1105      | メソッド '{0}'のパラメーターが'{1}'、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute します。 Windows ランタイムでは、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute でパラメーターをマークすることはサポートされていません。 System.Runtime.InteropServices.InAttribute を削除して、System.Runtime.InteropServices.OutAttribute を 'out' 修飾子と置き換えることを検討してください。 メソッド '{0}'のパラメーターが'{1}'、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute します。 Windows ランタイムでは、System.Runtime.InteropServices.OutAttribute で ByRef パラメーターをマークすることのみサポートされており、これらの属性の他の使用方法はサポートされていません。 |
-| WME1106      | メソッド '{0}'のパラメーターが'{1}' は配列です。 Windows ランタイムでは、配列パラメーターの内容が読み取り可能または書き込み可能である必要があります。 いずれかにご登録ください{2}または{3}に '{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1101      | メソッド '{0}'のパラメーターを持つ'{1}' は配列、および両方を含み{2}と{3}します。 Windows ランタイムでは、配列パラメーターの内容は、読み取り可能または書き込み可能である必要があります。 属性の 1 つを削除してください"{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| WME1102      | メソッド '{0}'が出力パラメーター'{1}' は配列があり{2}します。 Windows ランタイムでは、出力配列の内容は書き込み可能です。 属性を削除してください"{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| WME1103      | メソッド '{0}'のパラメーターを持つ'{1}' は配列、および、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute のいずれかがあります。 ランタイムでは、Windows、配列パラメーターが必要か{2}または{3}します。 これらの属性を削除するか、必要に応じて、適切な Windows ランタイム属性と置き換えてください。                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | メソッド '{0}'のパラメーターを持つ'{1}' は配列ではなく、いずれかが、{2}または{3}します。 Windows ランタイムは非配列パラメーターにマークすることをサポートしていません{2}または{3}します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1105      | メソッド '{0}'のパラメーターを持つ'{1}' System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute でします。 Windows ランタイムでは、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute でパラメーターをマークすることはサポートされていません。 System.Runtime.InteropServices.InAttribute を削除して、System.Runtime.InteropServices.OutAttribute を 'out' 修飾子と置き換えることを検討してください。 メソッド '{0}'のパラメーターを持つ'{1}' System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute でします。 Windows ランタイムでは、System.Runtime.InteropServices.OutAttribute で ByRef パラメーターをマークすることのみサポートされており、これらの属性の他の使用方法はサポートされていません。 |
+| WME1106      | メソッド '{0}'のパラメーターを持つ'{1}' は配列です。 Windows ランタイムでは、配列パラメーターの内容が読み取り可能または書き込み可能である必要があります。 いずれかにご登録ください{2}または{3}を '{1}' です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
 ## <a name="member-with-a-parameter-named-value"></a>"value" という名前のパラメーターを持つメンバー
@@ -238,14 +238,14 @@ UWP では、戻り値は出力パラメーターであると見なされ、パ�
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注:** 場合は、戻り値の名前を変更して、新しい名前が別のパラメーターの名前が、エラー WME1091 が発生します。
+> **注:** 場合は、戻り値の名前を変更して、新しい名前が別のパラメーターの名前が、エラー WME1091 が表示されます。
 
 JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。
 
 | エラー番号 | メッセージ テキスト |
 |--------------|--------------|
-| WME1091 | メソッド '\{0}' という名前の戻り値が '\{1}' は、パラメーター名と同じです。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
-| WME1092 | メソッド '\{0}' という名前のパラメーターには '\{1}' は、既定値と同じの戻り値の名前。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。 |
+| WME1091 | メソッド '\{0}' という名前の戻り値を持つ '\{1}' は、パラメーター名と同じです。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
+| WME1092 | メソッド '\{0}' という名前のパラメーターを持つ '\{1}' は、既定値と同じ戻り値の名前。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。 |
 
 **注:** 既定の名前は、他のすべてのメソッドには、"value"と"returnValue"プロパティのアクセサーに対してします。
 

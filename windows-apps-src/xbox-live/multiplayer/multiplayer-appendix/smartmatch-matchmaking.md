@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
 ms.localizationpriority: medium
-ms.openlocfilehash: f5a26e0a111d9df5e13127b9ece79678b9399ddc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 68997bc3a7ff6a7b1dfa67862ece49020539dba3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6038030"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181427"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch マッチメイキング
 
@@ -28,7 +28,7 @@ ms.locfileid: "6038030"
 
 XSAPI は、[Multiplayer Manager API](../multiplayer-manager/multiplayer-manager-api-overview.md) によってラップされている、SmartMatch と呼ばれるマッチメイキング サービスを提供します。  API の高度な使用方法については「**MatchmakingService クラス**」で解説していますが、Multiplayer Manager を使用して実装できないマッチメイキングのシナリオがある場合は、担当 DAM を介してフィードバックをご提供ください。  どちらの API を使用するかにかかわらず、この記事の概念情報が適用されます。
 
-SmartMatch マッチメイキングは、プレイヤーをユーザー情報および一緒にプレイしたいユーザーのマッチメイキング要求に基づいてグループ化します。 マッチメイキングはサーバー ベースであり、ユーザーはサービスに要求を送信し、後からマッチが見つかったときに通知を受けます。 Xbox One 用のタイトルをビルドするとき、「[SmartMatch マッチメイキングの使用](using-smartmatch-matchmaking.md)」に説明されているように、SmartMatch を使用できます。 または、「[独自のマッチメイキング サービスの使用](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)」に説明されているように、独自のマッチメイキング サービスを使用できます。 このリンクにアクセスするには、Xbox Live 開発に対して有効にされている Microsoft デベロッパー センター アカウントが必要なことに注意してください。
+SmartMatch マッチメイキングは、プレイヤーをユーザー情報および一緒にプレイしたいユーザーのマッチメイキング要求に基づいてグループ化します。 マッチメイキングはサーバー ベースであり、ユーザーはサービスに要求を送信し、後からマッチが見つかったときに通知を受けます。 Xbox One 用のタイトルをビルドするとき、「[SmartMatch マッチメイキングの使用](using-smartmatch-matchmaking.md)」に説明されているように、SmartMatch を使用できます。 または、「[独自のマッチメイキング サービスの使用](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/multiplayer-and-networking/using-your-own-matchmaking-service)」に説明されているように、独自のマッチメイキング サービスを使用できます。 このリンクにアクセスが必要である Xbox Live 開発に対して有効になっている[パートナー センター](https://partner.microsoft.com/dashboard)アカウントがあることに注意してください。
 
 ### <a name="about-smartmatch"></a>SmartMatch について
 
@@ -105,7 +105,7 @@ SmartMatch マッチメイキングは、プレイヤーをユーザー情報お
 
 タイトルは、マッチ チケット セッション内の各メンバーでメンバーごとの属性を指定します。 これらは、MultiplayerSession.SetCurrentUserMemberCustomPropertyJson メソッドを呼び出し、プロパティ名 "matchAttrs" を使用して設定されます。 この呼び出しは、属性をチケット セッション内の各プレイヤーの /members/{index}/properties/custom/matchAttrs フィールドに配置します。
 
-マッチメイ キング プロセス均一メンバーごとの各ホッパーの Xbox Live 構成 UI でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベル属性です。 これは、 [XDP](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で構成できます。
+マッチメイ キング プロセス均一メンバーごとの各ホッパーの Xbox Live 構成 UI でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベル属性です。 これは、 [XDP](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)で構成できます。
 
 
 ### <a name="making-the-match"></a>マッチの実行
@@ -175,7 +175,7 @@ SmartMatch マッチメイキングは、プレイヤーをユーザー情報お
 
 ### <a name="configuration-of-smartmatch-matchmaking-runtime-operations"></a>SmartMatch マッチメイキング ランタイム操作の構成
 
-SmartMatch マッチメイ キングのすべての構成は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を通じて行われます。 構成にはタイトルの [ServiceConfiguration] -&gt; [Multiplayer & Matchmaking] セクションを使用します。
+SmartMatch マッチメイ キングのすべての構成は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)を通じて行われます。 構成にはタイトルの [ServiceConfiguration] -&gt; [Multiplayer & Matchmaking] セクションを使用します。
 
 
 #### <a name="matchmaking-session-template-configuration"></a>マッチメイキング セッション テンプレートの構成
@@ -190,7 +190,7 @@ SmartMatch マッチメイ キングのすべての構成は、 [Xbox デベロ�
 
 ターゲット セッションでは、マッチメイキングされるゲーム プレイ向けのテンプレートを使用する必要があります。 ゲーム プレイの開始前にピア間の QoS チェックを有効にする設定が含まれている必要があり、"ゲームプレイ" 機能でマークされている必要があります。
 
-XDP またはデベロッパー センターの UI の構成と各セッションを 1 つまたは複数のホッパーを各どのセッション一緒にマッチされたそのホッパー内を決定するルールが含まれますにマップすることができます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
+XDP またはパートナー センターの UI の構成と各セッションを 1 つまたは複数のホッパーを各どのセッション一緒にマッチされたそのホッパー内を決定するルールが含まれますにマップすることができます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>マッチメイキングの基本的なホッパー構成
@@ -426,7 +426,7 @@ Collection Role Preferences データ型のみ。 すべての利用可能な役
 
 ### <a name="configuring-team-rules"></a>チーム ルールの構成
 
-チーム ルールをセットアップするには、(XDP またはデベロッパー センター) は、選んだ構成プラットフォーム上に 1 つの作成を開始します。 ゲームがこのホッパーでマッチングされたチケットから作成するチーム サイズを入力します。 たとえば、4 対 4 を想定しているゲームでは、それぞれの最大サイズが 4 で、名前が異なる 2 つのエントリを作成する必要があります。 最小チーム サイズもあります。これは、チームのプレイヤー数が最大数より少なくてもゲームをプレイできるようにする場合に使用します。 それ以外の場合は、最大サイズと最小サイズを同じ値にします。
+チーム ルールを設定するには、1 つで、選んだ構成のプラットフォーム (XDP またはパートナー センター) を作成して開始します。 ゲームがこのホッパーでマッチングされたチケットから作成するチーム サイズを入力します。 たとえば、4 対 4 を想定しているゲームでは、それぞれの最大サイズが 4 で、名前が異なる 2 つのエントリを作成する必要があります。 最小チーム サイズもあります。これは、チームのプレイヤー数が最大数より少なくてもゲームをプレイできるようにする場合に使用します。 それ以外の場合は、最大サイズと最小サイズを同じ値にします。
 
 
 #### <a name="using-team-rules"></a>チーム ルールの使用

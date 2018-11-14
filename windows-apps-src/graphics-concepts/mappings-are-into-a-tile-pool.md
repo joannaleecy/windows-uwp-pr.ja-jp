@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025023"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6151256"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>タイル プールにマッピングされます
 
@@ -33,7 +33,7 @@ ms.locfileid: "6025023"
 
 各ページ テーブルのエントリが 64 ビットであるとします。
 
-における最悪のケースのページ テーブル サイズ ヒットの 1 つのサーフェス、ストリーミング リソースが作成されると仮定 (たとえば、RGBA の浮動小数点)、128 ビット/要素の形式で、64 KB のタイル、Direct3D11 のリソース制限を指定した場合にのみ 4096 ピクセルが含まれています。 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) のサポートされる最大サイズ 16384\*16384\*2048 (ただし、単一のミットマップのみ使用) に必要なストレージは、64 ビットのテーブル エントリを使って完全に書き込まれた場合 (ミップマップは含まない) は約 1 GB です。 ミップマップを追加すると、完全にマッピングされた (最悪のケース) ページ テーブル ストレージが約 3 分の 1 増加し、約 1.3 GB になります。
+における最悪のケースのページ テーブル サイズ ヒットの 1 つのサーフェス、ストリーミング リソースが作成されると仮定 128 ビット/要素の形式 (たとえば、RGBA の浮動小数点) を使って、64 KB のタイルは、Direct3D11 でのリソース制限を指定した場合にのみ 4096 ピクセルが含まれています。 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) のサポートされる最大サイズ 16384\*16384\*2048 (ただし、単一のミットマップのみ使用) に必要なストレージは、64 ビットのテーブル エントリを使って完全に書き込まれた場合 (ミップマップは含まない) は約 1 GB です。 ミップマップを追加すると、完全にマッピングされた (最悪のケース) ページ テーブル ストレージが約 3 分の 1 増加し、約 1.3 GB になります。
 
 このケースでは、約 10.6 TB のアドレス可能メモリにアクセスできます。 ただし、アドレス可能メモリの量に制限が存在することがあり、その場合これらの量は 1 TB 前後の範囲に減少する可能性があります。
 
@@ -62,7 +62,7 @@ ms.locfileid: "6025023"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tile-pool-creation.md">タイル プールの作成</a></p></td>
-<td align="left"><p>アプリケーションは、Direct3D デバイスごとに 1 つ以上のタイル プールを作成できます。 各タイル プールの合計サイズは、Direct3D11 のリソースのサイズ制限がほぼ GPU RAM の 1/4 に制限されます。</p></td>
+<td align="left"><p>アプリケーションは、Direct3D デバイスごとに 1 つ以上のタイル プールを作成できます。 各タイル プールの合計サイズは、GPU RAM の 1/4 ではほぼ Direct3D11 のリソース サイズ制限に制限されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">タイル プールのサイズ変更</a></p></td>

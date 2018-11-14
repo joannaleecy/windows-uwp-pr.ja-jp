@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036892"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6157608"
 ---
 # <a name="identify-input-devices"></a>入力デバイスの識別
 
@@ -29,7 +29,7 @@ ms.locfileid: "6036892"
 
 接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。 新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが少なくとも 1 つのマウスが特定の機能がサポートする数値プロパティは、いずれかによって公開されている最大値を返す場合、0 以外を返す。マウスします。
+**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのマウスが特定の機能をサポートし、数値プロパティは、いずれかによって公開されている最大値を返します。マウスします。
 
  
 
@@ -67,7 +67,7 @@ private void GetKeyboardProperties()
 
 タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートし、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
+**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートしていると、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
 
  
 
@@ -87,7 +87,7 @@ private void GetTouchProperties()
 
 検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートし、数値プロパティは、公開されている最大値を返します。によって任意の 1 つのポインター デバイス。
+**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートし、数値プロパティが公開されている最大値を返します。によって任意の 1 つのポインター デバイス。
 
 次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。
 

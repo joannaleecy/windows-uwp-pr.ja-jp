@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d37f2507f3e4c96c3462fd075dbe945117dd82
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050085"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163582"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2
 
 
-このケース スタディは、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。 ビュー モデルでは、**Author** クラスの各インスタンスが該当する著者によって書かれた書籍のグループを表します。**SemanticZoom** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリを移植する手順について説明します。
+このケース スタディは、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。 ビュー モデルでは、**Author** クラスの各インスタンスが該当する著者によって書かれた書籍のグループを表します。**SemanticZoom** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 Windows10Universal Windows プラットフォーム (UWP) アプリにアプリを移植する手順について説明します。
 
 **注:** と Visual Studio で bookstore2universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージを表示し、手順に従います[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)します。
 
@@ -53,7 +53,7 @@ ms.locfileid: "6050085"
 
 Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プロジェクトです。 Bookstore2\_81.Windows プロジェクトが Windows8.1、用アプリ パッケージを構築し、bookstore2 \_81.windowsphone プロジェクトでは、Windows Phone 8.1 用アプリ パッケージを構築します。 Bookstore2\_81.Shared は、他の 2 つのプロジェクトの両方で使われるソース コード、マークアップ ファイル、および他のアセットやリソースを含むプロジェクトです。
 
-オプションみましょう ([ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)で説明したもの) は前のケース スタディでは、ポートと同様、プロジェクトの内容、共有、windows 10 をターゲット ユニバーサル デバイス ファミリ。
+使用すると前のケース スタディ ([ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)で説明したもの) のオプションを詳しく説明がポートと同様、プロジェクトの内容、共有、windows 10 をターゲット ユニバーサル デバイス ファミリ。
 
 最初に、"新しいアプリケーション (Windows ユニバーサル)" プロジェクトを新規作成します。 そして、"Bookstore2Universal\_10" という名前を付けます。 Bookstore2\_81 から Bookstore2Universal\_10 にコピーするファイルを、以下に示します。
 
@@ -65,26 +65,26 @@ Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 
 **Windows プロジェクトから**
 
--   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として、この 1 つ使用しますいくつかのと同じ WindowsPhone ファイル内にあるのではありません。
+-   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、出発点として 1 つ使用します同等の WindowsPhone ファイル内にある一部のではありません。
 -   SeZoUC.xaml と SeZoUC.xaml.cs をコピーします。 このビューの Windows バージョンで作業を始めます。このビューは、幅が広いウィンドウに適していますが、最終的には小型のデバイスで使うことができるように、より幅が狭いウィンドウに合わせて調整します。
 
 コピーしたソース コードとマークアップ ファイルを編集し、Bookstore2\_81 名前空間への参照をすべて、Bookstore2Universal\_10 に変更します。 これをすばやく行うには、**[フォルダーを指定して置換]** 機能を使います。 ビュー モデルでも、その他の命令型コードでも、コードを変更する必要はありません。 ただし、どのバージョンのアプリが実行されているかをわかりやすくするために、**Bookstore2Universal\_10.BookstoreViewModel.AppName** プロパティによって返される値を、"Bookstore2\_81" から "BOOKSTORE2UNIVERSAL\_10" に変更します。
 
-これで、ビルドして実行することができます。 作業を windows 10 へ移植するまだ行っていませんが、新しい UWP アプリの外観を示します。
+これで、ビルドして実行することができます。 作業を windows 10 へ移植するまだ行っていませんが、新しい UWP アプリの外観を次に示します。
 
 ![デスクトップ デバイスで動作中の、最初のソース コードの変更を加えた Windows 10 アプリ (拡大表示)](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
 
-デスクトップ デバイスでは、拡大表示ビューを実行している変更を加えた最初のソース コードの windows 10 アプリ
+デスクトップ デバイスでは、拡大表示ビューを実行している初期のソース コードの変更を使った windows 10 アプリ
 
 ![デスクトップ デバイスで動作中の、最初のソース コードの変更を加えた Windows 10 アプリ (縮小表示)](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
 
-デスクトップ デバイス、縮小表示で実行されている最初のソース コードの変更を使った windows 10 アプリ
+デスクトップ デバイスでは、縮小表示ビューを実行している初期のソース コードの変更を使った windows 10 アプリ
 
-ビュー モデル、拡大表示、縮小表示は適切に連携しますが、確認するのが難しいという問題があります。 第 1 の問題は、[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) がスクロールしないことです。 これは、ため、windows 10 で[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の既定のスタイルでは、縦方向にレイアウト (とするために使いますでそのようにし、移植されたアプリで新しい windows 10 の設計ガイドラインをお勧め) です。 ただし、水平スクロール設定、bookstore2 \_81 プロジェクトからコピーしたカスタム項目パネル テンプレート (、8.1 用に設計されていますアプリ)、結果として適用されている windows 10 の既定のスタイルで垂直スクロール設定と矛盾しています。私たちの windows 10 アプリに移植します。 第 2 の問題は、アプリでは、さまざまなサイズのウィンドウや小型のデバイスで最適なエクスペリエンスを実現するようにユーザー インターフェイスがまだ対応していないことです。 第 3 の問題は、適切なスタイルとブラシがまだ使われていないことです。このため、ほとんどのテキストが表示されていません (縮小表示のためにクリックできるグループ ヘッダーを含む)。 次の 3 つのセクション (「[SemanticZoom と GridView の設計変更](#semanticzoom-and-gridview-design-changes)」、「[アダプティブ UI](#adaptive-ui)」、「[ユニバーサル スタイル設定](#universal-styling)」) では、これら 3 つの問題に対処します。
+ビュー モデル、拡大表示、縮小表示は適切に連携しますが、確認するのが難しいという問題があります。 第 1 の問題は、[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) がスクロールしないことです。 これは、ため、windows 10 で[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の既定のスタイルでは、縦方向にレイアウト (とするために使いますでは、これにより、新しいや移植されたアプリで windows 10 の設計ガイドラインをお勧め) です。 ただし、水平スクロール設定、bookstore2 \_81 プロジェクトからコピーしたカスタム項目パネル テンプレート (、8.1 用に設計されていますアプリ)、結果として適用されている windows 10 の既定のスタイルで垂直スクロール設定と矛盾しています。私たちの windows 10 アプリに移植します。 第 2 の問題は、アプリでは、さまざまなサイズのウィンドウや小型のデバイスで最適なエクスペリエンスを実現するようにユーザー インターフェイスがまだ対応していないことです。 第 3 の問題は、適切なスタイルとブラシがまだ使われていないことです。このため、ほとんどのテキストが表示されていません (縮小表示のためにクリックできるグループ ヘッダーを含む)。 次の 3 つのセクション (「[SemanticZoom と GridView の設計変更](#semanticzoom-and-gridview-design-changes)」、「[アダプティブ UI](#adaptive-ui)」、「[ユニバーサル スタイル設定](#universal-styling)」) では、これら 3 つの問題に対処します。
 
 ## <a name="semanticzoom-and-gridview-design-changes"></a>SemanticZoom と GridView の設計変更
 
-[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)コントロールに windows 10 の仕様変更については、 [semanticzoom に関する変更](w8x-to-uwp-porting-xaml-and-ui.md)のセクションで説明します。 これらの変更に対応するための作業は、このセクションでは行いません。
+[**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)コントロールに windows 10 での設計変更については、 [semanticzoom に関する変更](w8x-to-uwp-porting-xaml-and-ui.md)のセクションで説明します。 これらの変更に対応するための作業は、このセクションでは行いません。
 
 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) に対する変更については、「[GridView/ListView に関する変更](w8x-to-uwp-porting-xaml-and-ui.md)」のセクションをご覧ください。 これらの変更に対応するために、次に示す調整を行います。
 
@@ -103,7 +103,7 @@ Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 
 これら 2 つの異なるレイアウトを実現するためには、どのプロパティを設定 (および変更) する必要があるでしょうか。 そのためには 2 つの方法があり、それぞれの方法で異なるアプローチが必要です。
 
-1.  2 つの [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールをマークアップ内に配置できます。 既定では折りたたまれてし、(その内部[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)コントロールを使用)、Windows ランタイム 8.x アプリで使っていたマークアップのコピーはいずれかになります。 もう 1 つは Windows Phone ストア アプリで使っていたマークアップのコピー (マークアップ内の [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールを使っていました) であり、既定では表示されます。 表示状態によって、2 つの **SemanticZoom** コントロールが持つ表示に関するプロパティが切り替えられます。 この方法では、わずかな作業で 2 つのレイアウトを実現できますが、一般的には、高いパフォーマンスを得ることができる手法ではありません。 そのため、この方法を使う場合は、アプリをプロファイリングし、お客様のパフォーマンスの目標を達成できるかどうかを確認する必要があります。
+1.  2 つの [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールをマークアップ内に配置できます。 (その内部[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)コントロールを使用)、Windows ランタイム 8.x アプリで使っていたし、既定では折りたたまれているマークアップのコピーはいずれかになります。 もう 1 つは Windows Phone ストア アプリで使っていたマークアップのコピー (マークアップ内の [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールを使っていました) であり、既定では表示されます。 表示状態によって、2 つの **SemanticZoom** コントロールが持つ表示に関するプロパティが切り替えられます。 この方法では、わずかな作業で 2 つのレイアウトを実現できますが、一般的には、高いパフォーマンスを得ることができる手法ではありません。 そのため、この方法を使う場合は、アプリをプロファイリングし、お客様のパフォーマンスの目標を達成できるかどうかを確認する必要があります。
 2.  複数の [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールを含んでいる 1 つの [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) を使うことができます。 2 つのレイアウトを実現するために、幅の広い表示状態について、**ListView** コントロールのプロパティ (コントロールに適用されるテンプレートなど) を変更します。このとき、[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) と同じ方法でこのコントロールがレイアウトされるようにプロパティを変更します。 この方法では、より優れたパフォーマンスを得ることができる場合がありますが、**GridView** と **ListView** のさまざまなスタイルやテンプレートの間、およびこれらのコントロールにおけるさまざまな項目の種類の間に、細かな相違点が多数あります。このため、2 つのレイアウトを実現するには難しい解決策でもあります。 またこの解決策は、既定のスタイルとテンプレートに関する現時点での設計方法と緊密に関連しており、既定の設定に対して今後加えられる変更の影響を受けやすい、安定性に欠ける解決策でもあります。
 
 このケース スタディでは、最初の方法を採用します。 2 番目の方法を試したい場合は、その方法が適切であるかどうかを確認してください。 最初の方法を実装するための手順を次に示します。
@@ -169,7 +169,7 @@ Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 
 ![モバイル デバイスで動作中の、移植された Windows 10 アプリ (縮小表示)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-モバイル デバイス、縮小表示で実行されている、移植された windows 10 アプリ
+縮小表示のモバイル デバイスで実行されている、移植された windows 10 アプリ
 
 ## <a name="conclusion"></a>まとめ
 

@@ -8,12 +8,12 @@ ms.date: 10/19/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, クリエーター
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e7a89f694c174a0c93fb45eb7642d70456c895
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ce81cd20b817efed09e341b04dc667e39567ebed
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6035722"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182840"
 ---
 # <a name="add-player-stats-and-leaderboards-to-your-unity-project"></a>Unity プロジェクトにプレイヤーの統計とランキングを追加する
 
@@ -50,7 +50,7 @@ Xbox Live Unity プラグインには、プレイヤーの統計に関連して�
 
 プレイヤーの統計を追加するには、統計のデータ型に一致するプレハブをシーンにドラッグするだけです。 統計の Unity インスペクターでは、3 つの値を指定できます。
 
-* 統計の ID です。これは、Windows デベロッパー センターで構成されている ID に一致する必要があり、大文字と小文字が区別されます。
+* 統計の ID です。これにより、パートナー センターで構成されている ID に一致する必要がありますされ、大文字と小文字が区別されます。
 * 統計の表示名 (この名前は StatPanel プレハブ UI に表示されます)。
 * シーンが開始したときの統計の初期値。
 

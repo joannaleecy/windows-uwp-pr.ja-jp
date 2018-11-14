@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048745"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183008"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store のアプリのガイドラインをマーケティング
 
@@ -21,7 +21,7 @@ ms.locfileid: "6048745"
 
 ## <a name="store-badges"></a>ストア バッジ
 
-Microsoft Store でアプリの登録情報へのより多くのユーザーを集客するのに役立つに特別なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
+Microsoft Store でアプリの登録情報をより多くのユーザーを集客するのに役立つに特別なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
 [![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769)**Microsoft Store バッジのガイドライン (PDF、英語)**
 
@@ -49,9 +49,9 @@ Microsoft Store でアプリの登録情報へのより多くのユーザーを�
 
 -   パートナー センターで、アプリ開発者として登録している場合は、アプリ開発者契約の[「ライセンスを Microsoft マーク」](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)セクションに準拠します。
 
--   パートナー センターで、アプリ開発者として登録されていない場合は、Microsoft にバッジを使うには、Microsoft ストア バッジのガイドラインに記載されて、世界中である、独占的、譲渡、無償のライセンスが付与します。 Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。 Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。
+-   パートナー センターで、アプリ開発者として登録されていない場合は、Microsoft にバッジを使う、Microsoft ストア バッジのガイドライン」の説明に従って、世界中である、独占的、譲渡、無償のライセンスが付与します。 Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。 Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。
 
--   [Microsoft ストア バッジのガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)に記載されているロゴ使用量の仕様に従ってください。
+-   [Microsoft ストア バッジのガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)に記載されているロゴの使用状況の仕様に従ってください。
 
 Microsoft は、Microsoft マークおよび関連する営業権の唯一の所有者であり、お客様による Microsoft マークの使用に関する営業権の唯一の受益者です。 Microsoft は、その独自の裁量により、このライセンスをいつでも取り消すことができます。
 

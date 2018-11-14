@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043801"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147993"
 ---
 # <a name="xname-attribute"></a>x:Name 属性
 
@@ -67,7 +67,7 @@ UWP XAML で使われる一部の型にも、**Name** という名前のプロ�
 
 要素で設定可能なプロパティとして **Name** が使用できる場合、XAML では **Name** と **x:Name** のどちらも使うことができますが、両方の属性を同じ要素で指定するとエラーが発生します。 また、**Name** プロパティがあるものの、読み取り専用であるという場合もあります ([**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) など)。 そのような場合には、XAML 内の要素に名前を付けるときには常に **x:Name** を使います。読み取り専用の **Name** は、それほど一般的ではないコードのシナリオのために存在します。
 
-**注:**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)は一般には、一般的な規則の例外となるいくつかのシナリオがありますが、 **x: Name**で設定された値を変更する方法として使用できません。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
+**注:**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)は一般には、一般的な規則の例外となるいくつかのシナリオがありますが、 **x: Name**で設定された値を変更する方法として使用されません。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
 
 ### <a name="xname-and-xkey"></a>x:Name と x:Key
 

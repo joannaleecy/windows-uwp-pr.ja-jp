@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) の相当する WindowsPhone Silverlight Api の包括的なマッピングを提供します。
-title: UWP の名前空間とクラス マッピングに WindowsPhone Silverlight
+title: UWP の名前空間とクラス マッピングを WindowsPhone Silverlight
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036942"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154324"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight UWP API へのマッピングから
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f223b858861cf0f965c5b7ea8778426a8340af
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6038290"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185887"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
@@ -108,11 +108,11 @@ ms.locfileid: "6038290"
 ![Fluent のテーマの XAML エディター イメージ](images/XamlThemeEditor_screenshot.png)
 **Fluent XAML テーマのエディター**<br>
 Fluent の XAML テーマ エディターは、Fluent Design System の柔軟性を示すことで、ほか、ユニバーサル Windows プラットフォーム アプリケーションで使用される、ResourceDictionary フレームワークの XAML マークアップを生成することによって、アプリの開発プロセスをサポートしています(低くなります)。
-<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">サンプルをダウンロードするツール</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">GitHub にあるツールをしてください。</a>
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">サンプルをダウンロードするツール</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">チェック アウト github ツール</a>
 
 ![VanArsdel イメージ](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の波して構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>として ux フレームワークとコンポジションの強力な基になる機能で強化された密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
+Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の基準を広く告知を構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>と ux のフレームワークとコンポジションの強力な基になる機能強化の密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">サンプルをダウンロードする VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
 
 ![キャスト イメージを構築する](images/buildcast.png)

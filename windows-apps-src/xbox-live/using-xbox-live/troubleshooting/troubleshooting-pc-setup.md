@@ -8,16 +8,16 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 186300b160c611eae58566d51ef50bc6920e2ad0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9484a324b060bbbf3e31dab0ace915bd4c551ebb
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041900"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192403"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows PC での Xbox Live セットアップのトラブルシューティング
 
-Windows 10 の PC で、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
+Windows 10 PC で、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
 
 1. コンピューターにサンプルを実行するもので、XDKS.1 サンド ボックスを変更します。  それには次のスクリプトを実行します。
 
@@ -31,6 +31,6 @@ Windows 10 の PC で、コンピューターは、次の手順を使用して�
 1. ビルド対象のプラットフォームを、"Win32" または "x64" に変更します。
 1. ソリューションを右クリックして、すべてのものを再ビルドします。
 1. デバッガーでアプリを起動します。
-1. サインイン[Xbox デベロッパー ポータル](https://xdp.xboxlive.com)で、作成した開発アカウントまたは[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で承認小売開発者アカウントを使用します。
+1. サインイン[Xbox デベロッパー ポータル](https://xdp.xboxlive.com)で、作成した開発アカウントまたは[パートナー センター](https://partner.microsoft.com/dashboard)で承認されて製品版の開発者アカウントを使用します。
 1. Xbox Live の情報にアクセスする権限をアプリに付与します。
 1. アプリが情報を取得できること、およびゲーマータグが表示されることを確認します。

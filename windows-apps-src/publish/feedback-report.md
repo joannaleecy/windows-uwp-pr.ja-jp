@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026045"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147767"
 ---
 # <a name="feedback-report"></a>フィードバック レポート
 
@@ -24,9 +24,9 @@ ms.locfileid: "6026045"
 
 アプリについてのフィードバックをユーザーに送信してもらうように促すのは、ユーザーにとって重要な問題や機能について知ることができる、よい方法です。 ユーザーは、アプリの作成者に直接フィードバックを送ることができるとわかると、否定的なレビューをフィードバックとしてストアに残す可能性が低くなることが考えられます。
 
-[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。 このため、特に促していないからのフィードバックのアプリ内で場合でも、このレポートでユーザーのフィードバックを表示する場合があります。
+[Microsoft Store Services SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。 このため、特に促していないからのフィードバックのアプリ内で場合でも、このレポートでユーザーのフィードバックを表示する可能性があります。
 
-フィードバックも役に立ちます**フィードバック**] レポートには、フィードバックを行ったとき、各顧客がデバイスにインストールしていた特定のパッケージが表示されるため、[パッケージ フライト](package-flights.md)を使用する場合。
+フィードバックも役に立ちます**フィードバック**] レポートにはフィードバックを行ったとき、各ユーザーがデバイスにインストールしていた特定のパッケージが表示されるため、[パッケージ フライト](package-flights.md)を使用する場合。
 
 > [!TIP]
 > 過去 30 日以内にレビュー、評価、およびすべてのアプリの間でユーザーからのフィードバックの概要を確認、左側のナビゲーション メニューでの**利用率の引き上げ**を展開し、選択**レビューとフィードバック**。 

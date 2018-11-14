@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの作成, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035521"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144388"
 ---
 # <a name="create-an-add-on"></a>アドオンの作成
 
-パートナー センター アカウントに登録されているアプリのアドオン (別名アプリ内製品または IAP) を作成するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
+Microsoft Store 申請 API で以下のメソッドを使用すると、パートナー センター アカウントに登録されているアプリのアドオン (別名アプリ内製品または IAP) を作成できます。
 
 > [!NOTE]
 > このメソッドは、申請なしでアドオンを作成します。 アドオンの申請を作成する方法については、「[アドオンの申請の管理](manage-add-on-submissions.md)」のメソッドをご覧ください。
@@ -99,7 +99,7 @@ Content-Type: application/json
 | エラー コード |  説明                                                                                                                                                                           |
 |--------|------------------|
 | 400  | 要求が無効です。 |
-| 409  | 現在の状態が原因アドオンを作成できませんでしたまたはアドオンが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | 現在の状態が原因、アドオンを作成できませんでしたまたはアドオンが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ベータ テスト, 限定配布, ベータ, ベータ版, テスト, テスター
 ms.localizationpriority: medium
 ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045422"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145159"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>ベータ テストとターゲット配布
 
@@ -33,7 +33,7 @@ ms.locfileid: "6045422"
 
 一般ユーザーより前にテスターがアプリを使えるようにし、他のユーザーには登録情報が表示されないようにする場合、[[表示]](choose-visibility-options.md) (申請の **[価格と使用可能状況]** ページ) で **[Private audience]** (プライベート対象ユーザー) を使います。 アプリをテスターに配布すると同時に、他のユーザーが直接リンクを入力しても Store 登録情報をまったく参照できないようにするには、この方法しかありません。 
 
-**プライベート対象ユーザー**オプションは、いない既に公開したアプリ パブリック対象ユーザーに場合にのみ使用できます。 任意の OS バージョンをターゲットとするアプリは、このオプションを使用することができますが、テスターは、Windows 10 バージョン 1607 以上 (Xbox One を含む) を実行する必要があり、入力したメール アドレスに関連付けられている Microsoft アカウントを使ってサインインする必要があります。
+**プライベート対象ユーザー**オプションは、ことが既に公開されていないアプリ パブリック対象ユーザーに場合にのみ使用できます。 任意の OS バージョンをターゲットとするアプリは、このオプションを使用することができますが、テスターは、Windows 10 バージョン 1607 以上 (Xbox One を含む) を実行する必要があり、入力したメール アドレスに関連付けられている Microsoft アカウントを使ってサインインする必要があります。
 
 詳しくは、「[プライベート対象ユーザー](choose-visibility-options.md#audience)」をご覧ください。
 

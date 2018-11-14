@@ -9,18 +9,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037799"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184360"
 ---
 # <a name="improve-garbage-collection-performance"></a>ガベージ コレクションのパフォーマンスの向上
 
 
 C# と Visual Basic で記述されたユニバーサル Windows プラットフォーム (UWP) アプリは、.NET ガベージ コレクターによって、自動的にメモリ管理が行われます。 このセクションでは、UWP アプリでの .NET ガーベジ コレクターの動作とパフォーマンスに関するベスト プラクティスについて説明します。 .NET ガーベジ コレクターのしくみと、ガーベジ コレクターのパフォーマンスをデバッグおよび分析するためのツールについて詳しくは、「[ガベージ コレクション](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx)」をご覧ください。
 
-**注:** がある一般的なメモリの問題、アプリのことを強く示唆ガベージ コレクターの既定の動作に介入する必要があります。 詳しくは、「[Memory Usage Tool while debugging in Visual Studio 2015 (Visual Studio でのユーザー モード デバッグの設定)](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)」をご覧ください。 このトピックは、C# と Visual Basic にのみ適用されます。
+**注:** アプリのメモリの一般的な問題のことを強く示唆はガベージ コレクターの既定の動作に介入する必要があります。 詳しくは、「[Memory Usage Tool while debugging in Visual Studio 2015 (Visual Studio でのユーザー モード デバッグの設定)](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)」をご覧ください。 このトピックは、C# と Visual Basic にのみ適用されます。
 
  
 
@@ -44,7 +44,7 @@ C# と Visual Basic で記述されたユニバーサル Windows プラットフ
 
 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) を呼び出すと、ジェネレーション別にガベージ コレクションを実行できます。n には、コレクションを実行するジェネレーション (0、1、または 2) を指定します。
 
-**注:** ことをしないために、強制的にガベージ コレクション アプリでガベージ コレクターでは、さまざまなヒューリスティックを使用して、コレクションを実行する最適なタイミングを判断し、コレクションを強制する CPU 活用が不要な多くの場合はお勧めします。 ただし、アプリ内のたくさんのオブジェクトが使われなくなることがわかっており、そのメモリをシステムに返す必要がある場合は、ガベージ コレクションを強制的に実行してもかまいません。 たとえば、ゲームの読み込みシーケンスの最後にコレクションを実行すると、ゲームプレイが始まる前にメモリを解放できます。
+**注:** ことをしないために、強制的にガベージ コレクション、アプリでガベージ コレクターでは、さまざまなヒューリスティックを使用して、コレクションを実行する最適なタイミングを判断し、CPU の不要な使用は多くの場合、コレクションを強制的をお勧めします。 ただし、アプリ内のたくさんのオブジェクトが使われなくなることがわかっており、そのメモリをシステムに返す必要がある場合は、ガベージ コレクションを強制的に実行してもかまいません。 たとえば、ゲームの読み込みシーケンスの最後にコレクションを実行すると、ゲームプレイが始まる前にメモリを解放できます。
  
 ガベージ コレクションが誤って何度も実行されないようにするには、[**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) を **Optimized** に設定します。 これにより、コレクションが妥当で生産的であると判断した場合にのみ、ガベージ コレクターがコレクションを開始するようになります。
 

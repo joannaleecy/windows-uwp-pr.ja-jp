@@ -1,18 +1,18 @@
 ---
 title: Xbox Live C Api
 author: KevinAsgari
-description: Xbox Live サービスとのやり取りに使用できる、フラット C API モデルについて説明します。
+description: Xbox Live サービスとのやり取りに使用できるフラット C API モデルについて説明します。
 ms.author: kevinasg
 ms.date: 06/05/2018
 ms.topic: article
-keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
+keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one, c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: b8d48fbaa35ddfb81b8aba77e4129c19e2a55af7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022998"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6147116"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live C Api の概要
 
@@ -33,13 +33,13 @@ C++ API は、XSAPI のすべての機能をまだ対応していませんが、
 - ソーシャル
 - Social Manager
 
-## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API のメリット
+## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API の利点
 
 - タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
 - により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 
-と共に C++ XSAPI C Api を使用することができますが、C++ Api を使った上記のメリットを得ることするができません。
+と共に C++ XSAPI C Api を使用することができますが、C++ Api を使った上記の特典を取得はしません。
 
 ### <a name="managing-memory-allocations"></a>メモリ割り当てを管理します。
 
@@ -58,13 +58,13 @@ C++ API は、XSAPI のすべての機能をまだ対応していませんが、
 
 ### <a name="managing-asynchronous-threads"></a>非同期のスレッドを管理します。
 
-C++ API には、新しい非同期スレッドにより、開発者はスレッド モデルの完全な制御パターンを呼び出すことが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
+C++ API には、呼び出しパターンにより、開発者はスレッド モデルの完全な制御を新しい非同期スレッドが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
 
 ## <a name="migrating-code-to-use-c-xsapi"></a>C++ XSAPI を使用するコードの移行
 
 XSAPI C Api は、一度に 1 つの機能を移行することをお勧めしますプロジェクトでは、XSAPI の C++ Api と共に使用できます。
 
-C++ Api と C++ Api シン実際には、別のエントリ ポイントと同様に、コア ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。
+C++ Api と C++ Api 同様に、さまざまなエントリ ポイントの一般的なコアの単なるシン ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用カスタム メモリとスレッドの管理機能ができます。
 
 > [!IMPORTANT]
 > C++ Api と XSAPI WinRT Api を混在させることはできません。

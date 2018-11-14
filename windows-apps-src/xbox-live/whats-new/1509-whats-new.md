@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: cf5908dface210a1baffc18876fb349441618745
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6034316"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187091"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---september-2015"></a>Xbox Live SDK の新規事項 - September 2015
 
@@ -41,7 +41,7 @@ Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual St
 
 ## <a name="logging"></a>ログ記録
 * service_call_logging_config in xbox::services::experimental
-* 起動し、本体で xbTrace.exe を通じてトレースを停止して、theservice_call_logging_config クラスで register_for_protocol_activation を呼び出すがあります。  この呼び出しは、ゲームの初期化中に 1 回行います。
+* 起動して、本体で xbTrace.exe を通じてトレースを停止して、theservice_call_logging_config クラスで register_for_protocol_activation を呼び出すがあります。  この呼び出しは、ゲームの初期化中に 1 回行います。
 
 ## <a name="resync-for-rta"></a>RTA の再同期
 * ユーザー情報が古い可能性があると RTA サービスが判断した場合、再同期が行われることがあります。

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6030444"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6148107"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
 、その種類とそれに対するアクティブなタイトルなど、デバイスに関する情報。 
@@ -23,7 +23,7 @@ ms.locfileid: "6030444"
  
 ## <a name="devicerecord"></a>DeviceRecord
  
-DeviceRecord オブジェクトには、次の仕様があります。
+DeviceRecord オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 76af980aeb759905259a043fdb9b4b828a90d819
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043983"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161622"
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
  
@@ -48,7 +48,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>タイル通知のコンテンツを作成する
 
 
-Windows 10 では、タイルのペイロードを定義できるように、通知にカスタムの視覚的なレイアウトを作成する、アダプティブ タイル テンプレートを使用します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
+Windows 10、タイルのペイロードは、通知にカスタムの視覚的なレイアウトを作成するため、アダプティブ タイル テンプレートを使用して定義します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 

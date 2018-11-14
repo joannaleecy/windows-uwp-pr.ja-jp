@@ -9,21 +9,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041116"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181867"
 ---
 # <a name="product-declarations"></a>製品の宣言
 
-[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**セクションは、アプリが適切に表示され、顧客、およびアプリを使用する方法をわかりやすくの適切なセットに提供されるかどうかを確認に役立ちます。
+[申請プロセス](app-submissions.md)の [[プロパティ](enter-app-properties.md)] ページの**製品の宣言**」セクションでは、アプリが適切に表示され、顧客、およびアプリの使用方法をわかりやすくの適切なセットに提供されることを確認するのに役立ちます。
 
-次のセクションでは、いくつかの宣言と、各宣言をアプリに適用するかどうかを決定するときに考慮する必要があるについて説明します。 これらの宣言の 2 つが選ばれて既定 (以下のとおりです。) に注意してください。によって、製品のカテゴリでは、その他の宣言を確認することも可能性があります。 必ずすべての宣言を確認し、申請が正確に反映されることを確認してください。
+以下のセクションでは、いくつかの宣言と各宣言がアプリに適用するかどうかを決定するときに考慮する必要があるについて説明します。 これらの宣言の 2 つが選ばれて既定 (以下のとおりです。) に注意してください。製品のカテゴリ、に応じて追加の宣言を確認することも可能性があります。 必ずすべての宣言を確認し、申請が正確に反映されることを確認してください。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>このアプリは、購入を行うことができますが、Microsoft Store コマース システムを使用できません。
 
-ほぼすべての申請に関するこのチェック ボックスをオフのままにする必要があります、アプリを購入する機会を提供するためはまたは消費またはアプリ内で使用できる項目は、作成し、アドオンを提出する Microsoft Store アプリ内購入 API を使用する必要があります。 購入機能は、[に準拠している限り、Microsoft のコマース エンジンを使用せず、アプリ内購入機能を提供する続けることが作成され、2015 年 6 月 29 日より前に提出されたアプリごと、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)します。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
+ほぼすべての申請では、このチェック ボックスをオフのままにする必要があります、アプリを購入する機会を提供するためはまたは消費またはアプリ内で使用できる項目は、アドオンの申請を作成して Microsoft Store アプリ内購入 API を使う必要があります。 購入機能、[に準拠している限り、Microsoft のコマース エンジンを使用せず、アプリ内購入機能を提供する続けることが作成され、2015 年 6 月 29 日より前に提出されたアプリごと、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)します。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>このアプリは、アクセシビリティ ガイドラインを満していることがテストされました。
 
@@ -46,9 +46,9 @@ ms.locfileid: "6041116"
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
-このチェック ボックスはユーザーを外部ドライブなどのメディアが SD カードなど、または非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、既定でオンです。
+既定では、ユーザーを外部ドライブなどのメディアや、SD カードなど、非システム ボリュームにドライブまたは外部のリムーバブル ストレージにアプリをインストールできるように、このチェック ボックスがオンです。
 
-アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐのみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。 (注アプリ*だけ*が参照できるように、インストールを制限するオプションがないことはリムーバブル記憶域メディアにインストールする)。
+アプリが代替ドライブやリムーバブル記憶域にインストールされていることを防ぐのみがデバイスに内部ハード ドライブへのインストールを許可する場合は、このチェック ボックスをオフにします。 (注アプリ*だけ*が参照できるように、インストールを制限するオプションがないことは、リムーバブル記憶域メディアにインストールする)。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。

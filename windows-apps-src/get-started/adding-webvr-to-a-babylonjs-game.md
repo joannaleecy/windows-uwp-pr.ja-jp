@@ -8,11 +8,11 @@ ms.topic: article
 keywords: WebVR、Edge、Web 開発、Babylon、Babylonjs、Babylon.js、JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 72681c3f91fc2dcbfcc4e4531359d6d668e18b80
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029794"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195515"
 ---
 # <a name="adding-webvr-support-to-a-3d-babylonjs-game"></a>3D Babylon.js ゲームに WebVR サポートを追加
 
@@ -75,15 +75,15 @@ Windows Mixed Reality をまだお使いでなく、Windows 10 Creators Update �
 ## <a name="2d-ui-in-a-virtual-world"></a>仮想世界の 2D UI
 
 >[!NOTE]
-> スターター サンプルを取得[**する前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)フォルダーを取得します。
+> スターター サンプルを取得する[**前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)フォルダーを取得します。
 
-[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) VR フレンドリーなライブラリは、対話ユーザー インターフェイスの VR 適切に動作する単純なを作成して VR 非表示を有効にします。
+[Babylon.GUI](https://doc.babylonjs.com/how_to/gui) VR フレンドリーなライブラリは、対話ユーザー インターフェイスの VR 適切に動作する単純なを作成して、VR で非表示を有効にします。
 Babylon.js、拡張機能を`GUI`ライブラリは throuhout 2D 要素を作成するサンプルを使用します。
 
 
 2D テキスト`GUI`要素を調整する属性の数に応じて、いくつかの行で作成できます。
 次のコード スニペットは、既にサンプルでは、[**前に**](https://github.com/Microsoft/Windows-tutorials-web/tree/master/BabylonJS-game-with-WebVR/before)、みましょうが何が起こってチュートリアルです。
-最初に行い、[`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture)取り上げる GUI を確立するオブジェクトです。 サンプルでは、これを設定`CreateFullScreenUI()`、画面全体を取り上げます UI を意味します。 `AdvancedDynamicTexture`を作成し、行いを使用してゲームの開始時に表示される 2D のテキスト ボックス`GUI.Rectanlge()`と`GUI.TextBlock()`します。
+最初に行い、[`AdvancedDynamicTexture`](https://doc.babylonjs.com/how_to/gui#advanceddynamictexture)取り上げる GUI を確立するオブジェクト。 サンプルでは、これを設定`CreateFullScreenUI()`、画面全体を取り上げます UI を意味します。 `AdvancedDynamicTexture`を作成し、行いを使用してゲームの開始時に表示される 2D のテキスト ボックス`GUI.Rectanlge()`と`GUI.TextBlock()`します。
 
 
 このコードは[**main.js**](https://github.com/Microsoft/Windows-tutorials-web/blob/master/BabylonJS-game-with-WebVR/before/js/main.js#L157-L168)内で追加されます。
@@ -115,7 +115,7 @@ startUI.isVisible = false;
 
 ## <a name="detecting-headsets"></a>ヘッドセットを検出する
 
-VR アプリケーションの 2 種類のカメラを備えて、複数のシナリオをサポートできることをお勧めします。 このゲームでは、ヘッドセットの接続を必要とする 1 つのカメラと、ヘッドセットを使用しないもう 1 つのカメラをサポートします。 ゲームでどちらを使用するかを判断するため、最初にヘッドセットが検出されたかどうかをチェックする必要があります。 そのために使用します[`navigator.getVRDisplays()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays)します。
+VR アプリケーションの 2 種類のカメラを備えて、複数のシナリオをサポートすることをお勧めします。 このゲームでは、ヘッドセットの接続を必要とする 1 つのカメラと、ヘッドセットを使用しないもう 1 つのカメラをサポートします。 ゲームでどちらを使用するかを判断するため、最初にヘッドセットが検出されたかどうかをチェックする必要があります。 そのために使用します[`navigator.getVRDisplays()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays)します。
 
 
 上記の次のコードを追加`window.addEventListener('DOMContentLoaded')` **main.js**でします。
@@ -141,7 +141,7 @@ Babylon.js を使って WebVR すぐに追加できるを使用して、[`WebVRF
 
 フォールバック カメラを使用します、[`UniversalCamera`](https://doc.babylonjs.com/classes/3.1/universalcamera)元のゲームで現在使用されています。
 
-確認、`headset`変数を使っているかどうかを判断する、`WebVRFreeCamera`カメラ。
+確認、`headset`変数を使用しているかどうかを判断する、`WebVRFreeCamera`カメラ。
 
 次のコードで `camera = new BABYLON.UniversalCamera("Camera", new BABYLON.Vector3(0, 18, -45), scene);` を置き換えます。
 ```javascript
@@ -169,7 +169,7 @@ Babylon.js を使って WebVR すぐに追加できるを使用して、[`WebVRF
         }
 ```
 
-ゲームでクリック、次のようなプロンプト以降を表示しますゲーム ヘッドセットですぐ、ユーザーがこのプロンプトを受け入れた場合。
+ゲームでクリック、次のようなプロンプト以降を表示します、ゲーム、ヘッドセットですぐ、ユーザーがこのプロンプトを受け入れた場合。
 
 ![イマーシブのプロンプト](images/immersiveview.png)
 
@@ -189,7 +189,7 @@ Babylon.js を使って WebVR すぐに追加できるを使用して、[`WebVRF
 
 ### <a name="step-3-adding-gamepad-support"></a>手順 3: ゲームパッドのサポートを追加する
 
-`WebVRFreeCamera` 、ゲームパッドをサポートしていない最初に、ゲームパッドのボタンをキーボードの方向キーにマッピングします。 これを行いますはあります、 `inputs` 、カメラのプロパティです。 左のアナログ スティックの上、下、左、右を方向キーに対応させるコードを追加します。これでゲームパッドを使えるようになります。
+`WebVRFreeCamera`最初に、ゲームパッドをサポートしていない、ゲームパッドのボタンをキーボードの方向キーにマッピングします。 それではを行います、 `inputs` 、カメラのプロパティです。 左のアナログ スティックの上、下、左、右を方向キーに対応させるコードを追加します。これでゲームパッドを使えるようになります。
 
 
 次のコードを追加、`scene.onPointerDown = function() {...}`呼び出します。

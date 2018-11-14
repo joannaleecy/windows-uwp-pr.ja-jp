@@ -9,17 +9,17 @@ keywords: windows 10, uwp, ユーザー グループ, セグメント, フライ
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 381953c51bfeb04625b452bd278ea09a4c9a8368
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028390"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191621"
 ---
 # <a name="create-customer-groups"></a>ユーザー グループを作成する
 
-アプリのユーザーのサブセットが含まれている*ユーザー グループ*を作成できます。 これらのグループは、プロモーション、テスト、およびその他の目的のターゲットのユーザーに使用できます。
+アプリのユーザーのサブセットが含まれている*ユーザー グループ*を作成することができます。 これらのグループは、プロモーション、テスト、およびその他の目的のターゲットのユーザーに使用できます。
 
-表示し、ユーザー グループを作成、[パートナー センター](https://partner.microsoft.com/dashboard)の左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。
+を表示およびユーザー グループを作成するには、[パートナー センター](https://partner.microsoft.com/dashboard)の左側のナビゲーション メニューで**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。
 
 現在、2 種類のユーザー グループがサポートされています。
 

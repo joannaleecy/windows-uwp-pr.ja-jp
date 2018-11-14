@@ -1,21 +1,21 @@
 ---
-title: デベロッパー センターでのシングル サインオンの構成
+title: パートナー センターでシングル サインオンを構成します。
 author: KevinAsgari
-description: タイトルがユーザーの Xbox Live ID を使ってユーザーをサービスにサインインさせることができるように、デベロッパー センターでシングル サインオンを構成する方法について説明します。
+description: タイトルでの Xbox Live ID を使用して、ユーザーをサービスにサインインできるようにするパートナー センターでシングル サインオンを構成する方法について説明します。
 ms.assetid: ''
 ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター, シングル サインオン
-ms.openlocfilehash: 42f3e77e8f1f622d8c275769b6f77fdd85a1bff0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 01714289ff12d096a17c5474f6a7619680481aa3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042051"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182866"
 ---
-# <a name="configure-single-sign-on-in-dev-center"></a>デベロッパー センターでのシングル サインオンの構成
+# <a name="configure-single-sign-on-in-partner-center"></a>パートナー センターでシングル サインオンを構成します。
 
 シングル サインオンを使うと、タイトルを利用するプレイヤーが自分の Xbox Live サインインを使ってサービスにサインインできます。 これにより、Xbox Live にサインインしているプレイヤーが、サービスに固有の異なるアカウント資格情報を使ってもう一度ログインしなくても、サービスのアプリやゲームを実行できるようになります。
 
@@ -32,7 +32,7 @@ Xbox Live とは別のアカウントを作成することをサービスがユ�
 
 次の手順に従って、構成を追加します。
 
-1. [デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択したら、**[サービス]** > **[Xbox Live]** に移動します。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択すると、**サービス**に移動します。 > **Xbox Live**します。
 
 2. **Xbox Live シングル サインオン**へのリンクをクリックします。
 

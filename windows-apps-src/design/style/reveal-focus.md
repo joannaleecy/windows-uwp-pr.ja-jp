@@ -1,6 +1,6 @@
 ---
 author: cphilippona
-description: 表示フォーカスにユーザーがゲームパッドやキーボードのフォーカスを移動すると、フォーカス可能な要素の境界線をアニメーション化する発光効果。
+description: 表示フォーカスは、ユーザーにゲームパッドやキーボードのフォーカスを移動するときにフォーカス可能な要素の境界線をアニメーション化する発光効果。
 title: 表示フォーカス
 template: detail.hbs
 ms.author: mijacobs
@@ -12,11 +12,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: b7c80ed7521d797602cde15607f966a1fc3665cd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045711"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6158160"
 ---
 # <a name="reveal-focus"></a>表示フォーカス
 
@@ -30,7 +30,7 @@ ms.locfileid: "6045711"
 > **重要な API**: [Application.FocusVisualKind プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 列挙](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals プロパティ](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>動作の仕組み
-フォーカスが置かれた要素にフォーカス注意を表示するには、要素の境界線をアニメーション化されたグローを追加します。
+フォーカスが置かれた要素にフォーカス注意を表示するには、要素の境界線の周囲のアニメーション化されたグロー部分を追加します。
 
 ![表示のビジュアル効果](images/traveling-focus-fullscreen-light-rf.gif)
 
@@ -43,7 +43,7 @@ ms.locfileid: "6045711"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、アプリを<a href="xamlcontrolsgallery:/item/RevealFocus">開き、表示効果のフォーカスの動作を参照してください。</a>ここをクリックします。</p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、アプリを<a href="xamlcontrolsgallery:/item/RevealFocus">開き、表示効果のフォーカスの動作をご覧ください。</a>ここをクリックします。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -65,10 +65,10 @@ ms.locfileid: "6045711"
     }
 ```
 
-**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティ設定されている**場合は True** (ほとんどのコントロールの既定値) にすべてのコントロールに適用されます。 
+**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティが**True** (ほとんどのコントロールの既定値) に設定されてすべてのコントロールに適用されます。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>既定で表示フォーカスをできない理由かどうか。 
-ご覧のように、Xbox で実行されているアプリを検出したときに、表示フォーカスを有効にするのに非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズするされます。
+ご覧のように、Xbox で実行されているアプリを検出した場合、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトで問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズするされます。
 
 ## <a name="customizing-reveal-focus"></a>表示フォーカスのカスタマイズ
 
@@ -76,9 +76,9 @@ ms.locfileid: "6045711"
 
 カスタマイズを開始する前に、それが明らかにフォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
 
-既定の表示フォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分、プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
+既定の表示フォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分には、プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
 
-、静的な要素に加えて表示フォーカスの視覚効果機能は、アニメーション化された光を置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動します。
+だけでなく、静的な要素は、表示フォーカスの視覚効果は、置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動するためのアニメーション化された光を備えています。
 
 ![表示フォーカス レイヤー](images/reveal-breakdown.svg)
 

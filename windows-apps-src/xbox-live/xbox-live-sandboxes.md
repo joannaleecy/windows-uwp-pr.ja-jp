@@ -8,18 +8,18 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 35d2e102e80e7d415562e2917d626152331f3fff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 60452c65a00aca134cfa33aa6378da06b94ac865
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049435"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195298"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live のサンドボックスの概要
 
-「[Xbox Live サービス構成](xbox-live-service-configuration.md)」では、タイトルに関する情報をオンライン、通常は [Windows デベロッパー センター](http://dev.windows.com)で構成する必要があることを説明しました。  この情報には、タイトルで表示するランキングなどの項目、プレイヤーが解除できる実績、マッチメイキング構成などが含まれます。
+[Xbox Live サービス構成](xbox-live-service-configuration.md)では、された必要がありますで構成することはオンラインで、タイトルに関する通常[パートナー センター](https://partner.microsoft.com/dashboard)について説明します。  この情報には、タイトルで表示するランキングなどの項目、プレイヤーが解除できる実績、マッチメイキング構成などが含まれます。
 
-サービス構成に変更を加える場合、それらの変更が Xbox Live の残りの部分によって取得されてタイトルで表示されるようにするには、デベロッパー センターから変更を公開する必要があります。
+サービス構成を変更するときは、変更が Xbox Live の残りの部分によって取得されてタイトルで表示されるようにするにはパートナー センターから公開これら必要があります。
 
 この公開先は、開発サンドボックスと呼ばれています。  これらにより、分離された環境でタイトルに対して変更作業を行うことができます。  これには、以下のセクションで説明するようにいくつかの利点があります。
 
@@ -43,7 +43,7 @@ ms.locfileid: "6049435"
 
 開発者の大部分は、サンドボックスを 1 つだけ必要とします。  幸いなことに、タイトルを作成するときにサンドボックスが作成されます。
 
-1. サンドボックスについて調べるには、ここにあるデベロッパー センター ダッシュボードに移動します。
+1. 次に、パートナー センターに移動して、サンド ボックスについて調べること。
 ![](images/getting_started/first_xbltitle_dashboard.png)
 
 1. 次に、タイトルをクリックします。
@@ -93,7 +93,7 @@ RETAIL に戻るには、ここで「RETAIL」と入力します。
     2. 次のコマンドを実行して使用を開始します。 `Import-Module XboxlivePSModule`
     3. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
-* ある zip ファイルから使用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
+* 時 zip ファイルから使用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
     1. 実行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
     2. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 

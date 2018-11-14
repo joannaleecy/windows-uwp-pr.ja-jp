@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d8f04950b5aff14bf943f9827f0a2af52ddbcb9c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6037438"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194191"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
 ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -30,7 +30,7 @@ ms.locfileid: "6037438"
  
 ## <a name="remarks"></a>注釈
  
-**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に有用な場所のシナリオで将来の配列です。 **ユーザー Id**が Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数のシリアル化に悪いです。 最後に、Xbox One での設定の名前は、通常の人間が判読できる名ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
+**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One の設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
   
 <a id="ID4EKB"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "6037438"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ユーザー Id| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
+| userId| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
 | userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧を示します。| 
   
 <a id="ID4EVB"></a>
@@ -86,7 +86,7 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
  
 ##### <a name="response-body"></a>応答本文 
-応答は、 **ReadMultiSettingsResponseV2**オブジェクトです。 呼び出し元のユーザーと想定すると、1 つだけのフレンドがあります。
+応答は、 **ReadMultiSettingsResponseV2**オブジェクトです。 呼び出し元のユーザーと仮定すると、1 つだけのフレンドがあります。
   
 
 ```cpp

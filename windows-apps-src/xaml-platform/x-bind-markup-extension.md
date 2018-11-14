@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
+description: XBind マークアップ拡張では、高パフォーマンスの代わりのバインディングにです。 xBind - Windows 10 での新しい短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -9,17 +9,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9674aeed846fab53de3ecb057ebcc46dbda560c3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034609"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191802"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}**、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
-**{X:bind}** マークアップ拡張機能: windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
+**{X:bind}** マークアップ拡張-windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -87,7 +87,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 
 C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプライベート フィールドおよびプロパティにバインドできません。バインドできるようにするには、パブリック プロパティが必要です。 バインディング用のサーフェス領域を CX クラス/インターフェイスとして公開し、関連するメタデータを取得できるようにする必要があります。 **\[Bindable\]** 属性は必要ありません。
 
-**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付きの要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
+**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付き要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
 
 
 ### <a name="collections"></a>コレクション
@@ -113,7 +113,7 @@ _注: C# スタイルのキャスト構文は添付プロパティ構文より�
 
 ## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、マークアップでいくつかのシナリオを可能にするデータをバインドするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数バインディング](../data-binding/function-bindings.md)を参照してください。
 
 ## <a name="event-binding"></a>イベント バインディング
 

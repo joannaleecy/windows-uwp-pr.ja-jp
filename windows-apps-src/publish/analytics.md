@@ -6,14 +6,14 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
+keywords: windows 10、uwp、分析, レポート, ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
 ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042719"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6163813"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -47,9 +47,9 @@ ms.locfileid: "6042719"
 
 <span id="outside"/>
 
-## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部にも分析データにアクセス
+## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部分析データにアクセス
 
-パートナー センターでレポートを表示する、だけでなくさまざまな方法でアプリ分析にアクセスすることができます。
+に加えて、レポートを表示する、パートナー センターで、さまざまな方法でアプリ分析にアクセスすることができます。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -66,7 +66,7 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリから資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
 
 ### <a name="dev-center-app"></a>Dev Center アプリ
 

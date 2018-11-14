@@ -9,11 +9,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048040"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145222"
 ---
 # <a name="support-your-app-with-background-tasks"></a>バックグラウンド タスクによるアプリのサポート
 
@@ -26,7 +26,7 @@ Windows 10 バージョン 1607 以降では、バックグラウンドでのオ
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>インプロセスとアウトプロセスのバックグラウンド タスク
 
-これにはバック グラウンド タスクを実装する 2 つの方法があります。
+バック グラウンド タスクを実装する 2 つの方法があります。
 
 * : プロセス内で、アプリとそのバック グラウンド プロセス、同じプロセスで実行します。
 * アウト プロセス: アプリとバック グラウンド プロセスは、個別のプロセスで実行されます。
@@ -75,7 +75,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 バックグラウンド タスク [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) に **InternetAvailable** 条件を追加して、ネットワーク スタックが実行されるまで、バックグラウンド タスクのトリガーを遅らせます。 この条件は、ネットワークが利用可能になるまで、バック グラウンド タスクが実行されないために、電力を節約します。 この条件では、リアルタイムのアクティブ化は行われません。
 
-バック グラウンド タスクは、ネットワーク接続を必要とする場合は、ネットワークは、バック グラウンド タスクの実行中の応答保つ[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクが**IsNetworkRequested**を設定していない場合、バック グラウンド タスクはできません (たとえば、電話の画面がになっているとき。) コネクト スタンバイ モードのときにネットワークにアクセスするには
+バック グラウンド タスクは、ネットワーク接続を必要とする場合は、ネットワークは、バック グラウンド タスクの実行中の応答保つ[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)を設定します。 これによって、デバイスがコネクト スタンバイ モードに入っている場合でも、タスクの実行中はネットワークを稼働状態に保つようにバックグラウンド タスク インフラストラクチャに指示されます。 バック グラウンド タスクが**IsNetworkRequested**を設定していない場合、バック グラウンド タスクはできません (たとえば、電話の画面がになっているとします。) コネクト スタンバイ モードのときにネットワークにアクセスするには
  
 バック グラウンド タスクの条件について詳しくは、[バック グラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)を参照してください。
 
@@ -141,7 +141,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 バッテリー節約機能が有効であってもバックグラウンド タスクを実行しプッシュ通知を受信するようにアプリを設定していない限り、デバイスが外部電源に接続されていない状態でバッテリー残量が指定量を下回ると、バッテリー節約機能 (有効な場合) によりバックグラウンド タスクが実行されなくなります。 これによりバックグラウンド タスクを登録できなくなることはありません。
 
-ただし、エンタープライズ アプリ, と、Microsoft Store で公開されていないのアプリでは、「を[無期限にバック グラウンドで実行](run-in-the-background-indefinetly.md)する機能を使用して、バック グラウンドで無期限にバック グラウンド タスクまたは延長実行セッションを実行する方法について説明します。
+ただし、エンタープライズ アプリ, と Microsoft Store で公開されていないのアプリでは、「を[無期限にバック グラウンドで実行](run-in-the-background-indefinetly.md)する機能を使用して、バック グラウンドで無期限にバック グラウンド タスクまたは延長実行セッションを実行する方法について説明します。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>リアルタイム通信に対するバックグラウンド タスク リソース保証
 
@@ -169,7 +169,7 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)  
 [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 
-アプリの起動中に、バック グラウンド タスクの登録を確認してください。 BackgroundTaskBuilder.AllTasks に、アプリのグループ化されていないバック グラウンド タスクが指定されていることを確認します。 存在しないものを再登録します。 不要になったをすべてのタスクの登録を解除します。 これにより、アプリが起動されるたびにすべてのバック グラウンド タスクの登録は最新であります。
+アプリの起動中にバック グラウンド タスクの登録を確認してください。 BackgroundTaskBuilder.AllTasks に、アプリのグループ化されていないバック グラウンド タスクが指定されていることを確認します。 存在しないものを再登録します。 不要になったをすべてのタスクの登録を解除します。 これにより、アプリが起動されるたびにすべてのバック グラウンド タスクの登録は最新であります。
 
 ## <a name="related-topics"></a>関連トピック
 

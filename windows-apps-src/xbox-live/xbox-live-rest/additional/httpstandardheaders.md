@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d86a870e32457b903053c7a8c3b1d722c9c559
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6027465"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185266"
 ---
 # <a name="standard-http-request-and-response-headers"></a>標準の HTTP 要求および応答ヘッダー
  
@@ -23,13 +23,13 @@ ms.locfileid: "6027465"
  
 ## <a name="request-headers"></a>要求ヘッダー
  
-次の表では、Xbox Live サービス要求を作成するときに使用される標準の HTTP ヘッダーを示します。
+次の表では、Xbox Live サービス要求を行うときに使用する標準的な HTTP ヘッダーを示します。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。 すべての Xbox Live サービス要求に必要です。| 
-| Authorization| STSTokenString| STS 認証トークンです。 このヘッダーの値は、 <b>GetTokenAndSignatureResult.Token</b>プロパティから取得されます。 | 
-| Content-Type| アプリケーション/xml、アプリケーション/json、マルチパート/フォーム データまたはアプリケーション/x-。-form-urlencoded| 要求で送信されるコンテンツの種類を指定します。| 
+| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。 Xbox Live サービスのすべての要求に必要です。| 
+| Authorization| STSTokenString| STS 認証トークン。 このヘッダーの値は、 <b>GetTokenAndSignatureResult.Token</b>プロパティから取得されます。 | 
+| Content-Type| アプリケーション/xml、アプリケーション/json、マルチパート/フォーム データまたはアプリケーション/x-。-form-urlencoded| 要求が送信されているコンテンツの種類を指定します。| 
 | Content-Length| 整数値| POST 要求で送信されたデータの長さを指定します。| 
 | 同意言語 | String| 返される任意の文字列をローカライズする方法を指定します。 有効な言語/ロケールの組み合わせの一覧については、<a href="http://msdn.microsoft.com/en-us/library/bb975829.aspx">高度な Xbox 360 のプログラミング</a>を参照してください。| 
   
@@ -42,7 +42,7 @@ ms.locfileid: "6027465"
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Content-Type| アプリケーション/xml、アプリケーション/json| 返されるコンテンツの種類を指定します。| 
+| Content-Type| アプリケーション xml/アプリケーション/json| 返されるコンテンツの種類を指定します。| 
 | Content-Length| 整数値| 返されるデータの長さを指定します。| 
   
 <a id="ID4EEE"></a>

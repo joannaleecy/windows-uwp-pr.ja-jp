@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024836"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183579"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -70,8 +70,8 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 これらの例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* パートナー センター内にある[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリがストアに公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
-* パートナー センターで[、アプリのサブスクリプション アドオンを作成した](../publish/add-on-submissions.md)あります。
+* パートナー センター内にある[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリは、ストアで公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* パートナー センターで[、アプリのサブスクリプション アドオンを作成](../publish/add-on-submissions.md)あります。
 
 これらの例のコードは、次の点を前提としています。
 * コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。
@@ -126,7 +126,7 @@ REST API を使用して、ユーザーの代わりにサブスクリプショ�
 次のシナリオは、サブスクリプション アドオンで現在サポートされていません。
 
 * 現時点では、ストアを通じたユーザーへのサブスクリプションの直接販売はサポートされていません。 サブスクリプションはデジタル製品のアプリ内購入でのみ利用可能です。
-* ユーザーが Microsoft アカウントの [http://account.microsoft.com/services](http://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 異なるサブスクリプション期間に切り替えるには、ユーザーは現在のサブスクリプションを取り消して、アプリで別のサブスクリプション期間のサブスクリプションを購入する必要があります。
+* ユーザーが Microsoft アカウントの [http://account.microsoft.com/services](http://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 切り替える別のサブスクリプション期間中に、顧客が現在サブスクリプションを取り消すし、アプリから別のサブスクリプション期間のサブスクリプションを購入する必要があります。
 * サブスクリプション アドオンでは現在、サブスクリプション レベルの切り替えはサポートされていません (たとえば、ユーザーをベーシック サブスクリプションから機能の多いプレミアム サブスクリプションに切り替えるなど)。
 * サブスクリプション アドオンでは現在、[セール](../publish/put-apps-and-add-ons-on-sale.md)と[プロモーション コード](../publish/generate-promotional-codes.md)はサポートされていません。
 

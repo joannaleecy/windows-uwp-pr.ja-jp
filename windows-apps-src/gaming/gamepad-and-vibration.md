@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ゲームパッド, 振動
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea8afb0a9e66ccb4ea603bd78dc5030ca18babe
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033624"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182608"
 ---
 # <a name="gamepad-and-vibration"></a>ゲームパッドと振動
 
@@ -31,13 +31,13 @@ ms.locfileid: "6033624"
 
 Xbox ワイヤレス コントローラーや Xbox ワイヤレス コントローラー S などのゲームパッドは、汎用のゲーム入力デバイスです。 ゲームパッドは Xbox One の標準入力デバイスです。一般的に、キーボードやマウスを好まない Windows のゲーマーが選びます。 ゲームパッドは、Windows 10 および Xbox UWP アプリで [Windows.Gaming.Input][] 名前空間によってサポートされています。
 
-Xbox One ゲームパッドが装備されて、方向パッド (または方向パッド)。**A**、 **B**、 **X**、 **Y**、**ビュー**、および**メニュー**ボタン左と右のサムスティック、バンパー、およびトリガーします。合計 4 つ振動モーターがあります。 どちらのサムスティックも、X 軸と Y 軸のデュアル アナログの読み取り値を提供し、内側に押すとボタンとしても機能します。 各トリガーは、どの程度はプル戻るを表すアナログの読み取り値を提供します。
+Xbox One ゲームパッドが装備されて、方向パッド (または方向パッド)。**A**、 **B**、 **X**、 **Y**、**ビュー**、および**メニュー**ボタン左と右のサムスティック、バンパー、およびトリガーします。合計 4 つの振動モーターがあります。 どちらのサムスティックも、X 軸と Y 軸のデュアル アナログの読み取り値を提供し、内側に押すとボタンとしても機能します。 各トリガーは、どの程度はプル戻るを表すアナログの読み取り値を提供します。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **Paddle** buttons on its underside. These can be used to provide redundant access to game commands that are difficult to use together (such as the right thumbstick together with any of the **A**, **B**, **X**, or **Y** buttons) or to provide dedicated access to additional commands. -->
 
 > [!NOTE]
-> `Windows.Gaming.Input.Gamepad` 同じコントロール レイアウトは、標準の Xbox One ゲームパッドは、Xbox 360 ゲームパッドをサポートします。
+> `Windows.Gaming.Input.Gamepad` Xbox 360 ゲームパッドは、同じコントロール レイアウトは、標準の Xbox One ゲームパッドもサポートしています。
 
 ### <a name="vibration-and-impulse-triggers"></a>振動とリアル トリガー
 
@@ -50,7 +50,7 @@ Xbox One ゲームパッドには、強弱のゲームパッドの振動を生�
 
 ### <a name="thumbstick-deadzones"></a>サムスティックのデッドゾーン
 
-中央の位置で待機中のサムスティックは、常に安定してニュートラルな X 軸と Y 軸の読み取り値を生成することが理想的ですが、 機械的な力とサムスティックの感度のために、中央の位置での実際の読み取り値は、理想的なニュートラルの値の近似値でしかなく、読み取りごとに異なる可能性があります。 このため、小さな_デッドゾーン_を常に使用する必要があります&mdash;無視される位置付近の理想の中央値の範囲&mdash;製造、機械的な磨耗、またはその他のゲームパッドの問題を補正するためです。
+中央の位置で待機中のサムスティックは、常に安定してニュートラルな X 軸と Y 軸の読み取り値を生成することが理想的ですが、 機械的な力とサムスティックの感度のために、中央の位置での実際の読み取り値は、理想的なニュートラルの値の近似値でしかなく、読み取りごとに異なる可能性があります。 このため、小さな_デッドゾーン_を常に使う必要があります&mdash;無視される位置付近の理想の中央値の範囲&mdash;製造、機械的な磨耗、またはその他のゲームパッドの問題を補正します。
 
 デッドゾーンを大きくすることは、意図する入力と意図しない入力とを分ける簡単な方法です。
 
@@ -60,7 +60,7 @@ Xbox One ゲームパッドには、強弱のゲームパッドの振動を生�
 
 ユーザー インターフェイスの操作に異なる入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理__ 入力デバイスは、[UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理__ 入力デバイスとして同時に機能します。 UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。
 
-UI ナビゲーション コント ローラー、としては、ゲームパッドは、ナビゲーション コマンドの[必要なセット](ui-navigation-controller.md#required-set)を左のサムスティック、方向パッド、**ビュー**、**メニュー**の**A**、および**B**ボタンにマップされます。
+UI ナビゲーション コント ローラーとしては、ゲームパッドは、ナビゲーション コマンドの[必須セット](ui-navigation-controller.md#required-set)を左のサムスティック、方向パッド、**ビュー**、**メニュー**の**A**、および**B**ボタンにマップされます。
 
 | ナビゲーション コマンド | ゲームパッド入力                       |
 | ------------------:| ----------------------------------- |
@@ -181,7 +181,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-次の例では、削除されているゲームパッドの追跡を停止します。 また、削除したときに追跡しているゲームパッドに何が起きるを処理する必要があります。たとえば、このコードはのみ 1 つのゲームパッドからの入力を追跡し、単に設定`nullptr`は削除されます。 すべてのフレーム、ゲームパッドがアクティブになっている場合とどのゲームパッド コント ローラーを接続および切断されたときからの入力を収集している更新プログラムを確認する必要があります。
+次の例では、削除されているゲームパッドの追跡を停止します。 削除しているときに追跡しているゲームパッドに何が起きるを処理する必要があります。たとえば、このコードはのみ 1 つのゲームパッドからの入力を追跡し、単に設定`nullptr`は削除されます。 すべてのフレーム、ゲームパッドがアクティブになっている場合とどのゲームパッド コント ローラーを接続および切断されたときからの入力を収集している更新プログラムを確認する必要があります。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -333,7 +333,7 @@ double rightTrigger = reading.RightTrigger; // returns a value between 0.0 and 1
 
 ### <a name="reading-the-buttons"></a>ボタンの読み取り
 
-ゲームパッドのボタンの各&mdash;方向パッド、左右のバンパー、左と右スティックを押す、 **A**、 **B**、 **X**、 **Y**、**ビュー**、および**メニュー**の 4 方向&mdash;デジタルの読み取りを提供しますかどうかが押さ (ダウン) か、離さ (アップ) を示します。 効率は、ボタンの読み取り値は個別のブール値として表現します。代わりに、すべて豊富な[GamepadButtons][]列挙型で表される単一のビット フィールドにします。
+ゲームパッドのボタンの各&mdash;、4 つの方向パッド、左右のバンパー、左と右スティックを押す、 **A**、 **B**、 **X**、 **Y**、**ビュー**、および**メニュー**&mdash;読み取りをデジタルを提供します。かどうかが押さ (ダウン) か、離さ (アップ) を示します。 効率、ボタンの読み取り値がない個別のブール値として表されます。代わりに、すべて豊富な[GamepadButtons][]列挙型で表される単一のビット フィールドにします。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **paddle** buttons on its underside. These buttons are also represented in the `GamepadButtons` enumeration and their values are read in the same way as the standard gamepad buttons. -->
@@ -372,7 +372,7 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-たいことがありますから、ボタンが切り替えられたときを判断する押さにリリースされたか、離さ、複数のボタンが押されたか離されたかどうか、または一連のボタンが特定の方法で配置されている場合&mdash;一部押されると、いません。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
+たいことがありますから、ボタンが切り替えられたときを判断するリリースに押されたか離さ、複数のボタンが押されたか、離されたかどうか、または一連のボタンが特定の方法で配置されている場合&mdash;一部押されると、いません。 これらの各状態を検出する方法について詳しくは、「[ボタンの状態遷移の検出](input-practices-for-games.md#detecting-button-transitions)」および「[ボタンの複雑な配置の検出](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
 
 ## <a name="run-the-gamepad-input-sample"></a>ゲームパッド入力のサンプルの実行
 
@@ -388,7 +388,7 @@ Xbox One ゲームパッドには、独立した振動モーターが合計 4 �
 
 ゲームパッドの振動は、[Gamepad][] クラスの [Vibration][] プロパティによって制御されます。 `Vibration` は、[GamepadVibration][] 構造のインスタンスで、4 つの浮動小数点値で構成されます。各値は、それぞれのモーターの強さを表します。
 
-ただしのメンバー、`Gamepad.Vibration`プロパティを直接変更できる、個別に初期化することをお勧め`GamepadVibration`インスタンスしにコピーし、値を`Gamepad.Vibration`プロパティを実際のモーターの強さを一度に変更します。
+メンバー、`Gamepad.Vibration`プロパティを直接変更して、個別を初期化することをお勧め`GamepadVibration`インスタンスしにコピーし、値を`Gamepad.Vibration`プロパティを実際のモーターの強さを一度に変更します。
 
 次の例は、モーターの強さを一度に変更する方法を示しています。
 
@@ -438,7 +438,7 @@ vibration.RightMotor = 0.25; // sets the intensity of the right motor to 25%
 mainGamepad.Vibration = vibration;
 ```
 
-この 2 つのモーターは同じではないため、これらのプロパティを同じ値に設定しても、一方のモーターともう一方のモーターの振動は同じになりません。 任意の値の左のモーターは、右のモーターがよりも強い振動低い周波数を生成&mdash;は同じ値に対して&mdash;より高い周波数でより穏やか振動が生成されます。 最大値でも、左のモーターでは右のモーターと同じ高い周波数を生成することはできず、右のモーターは左のモーターほど強い力を生み出すことはできません。 ただし、これらのモーターはゲームパッドの本体によってしっかりと連結しているため、各モーターの特徴は異なり、振動の強度が異なる場合でも、プレイヤーがそれぞれの振動を完全に分けて感じることはありません。 このアレンジによって、モーターがまったく同じ場合よりも、より幅広く表現豊かに触感を生み出すことができます。
+この 2 つのモーターは同じではないため、これらのプロパティを同じ値に設定しても、一方のモーターともう一方のモーターの振動は同じになりません。 任意の値の左のモーターは、右のモーターがよりも強い振動低い周波数を生成&mdash;は同じ値に対して&mdash;より高い頻度でより穏やかな振動が生成されます。 最大値でも、左のモーターでは右のモーターと同じ高い周波数を生成することはできず、右のモーターは左のモーターほど強い力を生み出すことはできません。 ただし、これらのモーターはゲームパッドの本体によってしっかりと連結しているため、各モーターの特徴は異なり、振動の強度が異なる場合でも、プレイヤーがそれぞれの振動を完全に分けて感じることはありません。 このアレンジによって、モーターがまったく同じ場合よりも、より幅広く表現豊かに触感を生み出すことができます。
 
 ### <a name="using-the-impulse-triggers"></a>リアル トリガーの使用
 

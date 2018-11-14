@@ -8,15 +8,15 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032660"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188196"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 9 月
 
-Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオはされたものの 9 月で利用できます。
+Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオが公開されたものでの 9 月。
 
 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
@@ -42,9 +42,9 @@ Windows UI のライブラリについて詳しくは、次を参照してくだ
 
 ### <a name="how-blur-effects-work"></a>効果の作業をどのようにぼかし
 
-一連の中でアプリとゲームの設計に写真をビジョンからのぼかしについての記事、作成者、esteemed マイク Jacobs のいずれかが開始します。 この一般的な視覚効果に関する詳細情報に興味があるならをチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
+一連の中アプリとゲームの設計に写真をビジョンからのぼかしについての記事、作成者、esteemed マイク Jacobs のいずれかが開始します。 この一般的な視覚効果に関する詳細情報に興味がある場合をチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
 
-![ぼかしの動作を確認](images/blur-example.jpg)
+![ぼかしの動作](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>ガイダンスの貢献に関するページ
 
