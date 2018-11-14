@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fdbf983413ef68bb3afa0ca6f23fc182a6fece5e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6027129"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204386"
 ---
 # <a name="userlist-json"></a>UserList (JSON)
 [ユーザー](json-user.md)オブジェクトのコレクションです。 
@@ -23,11 +23,11 @@ ms.locfileid: "6027129"
  
 ## <a name="userlist"></a>UserList
  
-UserList オブジェクトには、次の仕様があります。
+UserList オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| ユーザー| [User (JSON)](json-user.md)の配列| 次の JSON 例を参照してください。| 
+| ユーザー| [ユーザー (JSON)](json-user.md)の配列| 次の JSON 例を参照してください。| 
   
 <a id="ID4EPB"></a>
 

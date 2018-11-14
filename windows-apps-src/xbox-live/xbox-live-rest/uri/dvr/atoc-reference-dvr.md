@@ -10,17 +10,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b4da88a85535d6be97607663c96e416e226efb31
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6047878"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208629"
 ---
 # <a name="game-dvr-uris"></a>ゲーム DVR URI
  
-このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
+このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
+本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスがクリップを表示できます。
  
 によっては、対象の URI の関数にはこれらの Uri のドメインです。
  

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7884c7187bf127e15aaaed38a55e5f9827a3990d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024187"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252610"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>UI スレッドの応答性の確保
 
@@ -24,7 +24,7 @@ ms.locfileid: "6024187"
 
 UI スレッドを使って、UI スレッドへのほぼすべての変更を行う必要があります。これには、UI の種類の作成、そのメンバーへのアクセスも含まれます。 UI はバックグラウンド スレッドから更新できませんが、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使ってこのスレッドにメッセージを投稿し、コードをそこで実行することができます。
 
-> **注:** 1 つの例外は、入力の処理方法に影響を与える UI の変更を適用できる別のレンダリング スレッドまたは基本的なレイアウトがあることです。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
+> **注:** 1 つの例外は、入力の処理方法に影響を与える UI の変更を適用できる別のレンダリング スレッドまたは基本的なレイアウト。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
 
 ## <a name="delay-element-instantiation"></a>要素のインスタンス化の遅延
 

@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: このセクションでは、既存のお客様がすべての種類のデバイスにインストールできる 1 つの windows 10 アプリ パッケージを作成することがユニバーサル Windows プラットフォーム (UWP) にアプリを移植する方法について説明します。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
+description: このセクションでは、既存のすべての種類のデバイスにインストールできる 1 つの windows 10 アプリ パッケージを作成するユニバーサル Windows プラットフォーム (UWP) にアプリを移植する方法について説明します。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
 title: Windows 10 にアプリを移植
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045937"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209641"
 ---
 # <a name="porting-apps-to-windows10"></a>Windows 10 にアプリを移植
 
 
-このセクションでは、既存のお客様がすべての種類のデバイスにインストールできる 1 つの windows 10 アプリ パッケージを作成することがユニバーサル Windows プラットフォーム (UWP) にアプリを移植する方法について説明します。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
+このセクションでは、既存のすべての種類のデバイスにインストールできる 1 つの windows 10 アプリ パッケージを作成するユニバーサル Windows プラットフォーム (UWP) にアプリを移植する方法について説明します。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
 
 Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフォーム (UWP) アプリを構築できるテクノロジです。 WinRT および UWP アプリの背景知識について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767)」をご覧ください。
 

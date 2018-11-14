@@ -8,16 +8,16 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: Windows 10, UWP, ユニバーサル
 ms.localizationpriority: medium
-ms.openlocfilehash: a506eec99aabaddac6251eb6548a671ecd283d0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: a687aa7ed1115692f765e516dc8c8b15504b709e
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281119"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6648204"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
-![ユニバーサル Windows プラットフォーム アプリは、さまざまなデバイスで実行でき、アダプティブ ユーザー インターフェイス、自然なユーザー入力、1 つのストア、1 つのデベロッパー センター、およびクラウド サービスをサポートしています。](images/universalapps-overview.png)
+![ユニバーサル Windows プラットフォーム アプリのさまざまなデバイスで実行、アダプティブ ユーザー インターフェイス、自然なユーザー入力、1 つのストア、パートナー センターのサポートし、クラウド サービス](images/universalapps-overview.png)
 
 UWP アプリには次のような特長があります。
 
@@ -132,9 +132,9 @@ Microsoft デザイン システムは Fluent と呼ばれます。 Fluent Desig
 - アプリで音声コマンドに応答できるようにするために、[アプリに Cortana を追加する](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382)方法について説明します。
 - [プッシュ通知](https://msdn.microsoft.com/library/windows/apps/mt187203)と[アプリ内購入](https://msdn.microsoft.com/library/windows/apps/mt219684)を計画に盛り込みます。 これらの機能はさまざまなデバイスで動作する必要があります。
 
-### <a name="submit-your-app-to-the-store"></a>アプリをストアに提出する
+### <a name="submit-your-app-to-the-store"></a>ストアにアプリを提出します。
 
-新しい統合 Windows デベロッパー センター ダッシュボードにより、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。 Microsoft Store にアプリ公開の申請をする方法については、「[統合 Windows デベロッパー センター ダッシュボードの使用](../publish/using-the-windows-dev-center-dashboard.md)」をご覧ください。
+[パートナー センター](https://partner.microsoft.com/dashboard)では、すべて 1 か所での Windows デバイス向けにアプリの管理し、申請することができます。 [Windows アプリを公開しゲーム](../publish/index.md)アプリ、Microsoft Store で公開を提出する方法について参照してください。
 
 新しい機能が追加されたことで、より高度な管理が可能になった一方、プロセスは簡単になりました。 また、詳しい[分析レポート](https://msdn.microsoft.com/library/windows/apps/mt148522)に加えて、[支払いの詳細](https://msdn.microsoft.com/library/windows/apps/dn986925)も得られるようになりました。いずれも[アプリの宣伝と顧客エンゲージメントの獲得](https://msdn.microsoft.com/library/windows/apps/mt148526)に役立ちます。
 

@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 67be6cacee3b0062118d51105eec9037dd29135b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043870"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6256449"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>UWP アプリでの Cortana の操作
 

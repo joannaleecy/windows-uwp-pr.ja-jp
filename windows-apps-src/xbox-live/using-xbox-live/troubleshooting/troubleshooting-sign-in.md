@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: ca291312345646bb48691615854503f5121c8888
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 49806ea48b8af691d5b161e21426c73d65712408
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6153176"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193232"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live サインインのトラブルシューティング
 
@@ -31,7 +31,7 @@ ms.locfileid: "6153176"
 
 #### <a name="developer-account-doesnt-have-access-to-the-right-sandbox-for-run-time-access"></a>開発者アカウントでは実行時アクセス用の正しいサンドボックスにアクセスできない
 
-* テスト アカウント (開発アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしているか、他のテスト アカウントが XDP で作成されたことを確認[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 Windows デベロッパー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
+* テスト アカウント (開発アカウントとも呼ばれます) または承認された開発者アカウントは、開発中のタイトルにサインインに使用する必要があります。  1 つを使用してサインインしようとしているか、他のテスト アカウントが XDP で作成されたことを確認[https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)します。 パートナー センターでの xbox live の関連付けられている開発者アカウントを承認します。[https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator](https://partner.microsoft.com/en-us/xboxconfig/TestAccounts/Creator)
 * アカウントには、タイトルが公開サンド ボックスへのアクセスを持っていることを確認します。  XDP で作成したテスト アカウントは、それを作成した XDP アカウントのアクセス許可を継承します。
 
 #### <a name="your-device-is-not-on-the-correct-sandbox"></a>デバイスが正しいサンドボックス上にない
@@ -40,7 +40,7 @@ ms.locfileid: "6153176"
 
 #### <a name="your-titles-service-configuration-is-not-published-to-the-correct-development-sandbox"></a>タイトルのサービス構成が正しい開発サンドボックスに発行されていない
 
-タイトルのサービス構成が開発サンドボックスに発行されていることを確認します。  タイトルが同じサンドボックスに発行されていない場合、タイトルの特定の開発サンドボックスの Xbox Live にサインインできません。  詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。 Windows デベロッパー センター構成を公開する方法については[デベロッパー センターのドキュメント](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)を読み取ることができます。
+タイトルのサービス構成が開発サンドボックスに発行されていることを確認します。  タイトルが同じサンドボックスに発行されていない場合、タイトルの特定の開発サンドボックスの Xbox Live にサインインできません。  詳細な方法については、[XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)を参照してください。 パートナー センター構成を公開する方法については[パートナー センターのドキュメント](../../get-started-with-creators/xbox-live-service-configuration-creators.md#publish-your-xbox-live-service-configuration)を読み取ることができます。
 
 ### <a name="ids-configured-incorrectly"></a>ID が正しく構成されていない
 
@@ -48,10 +48,10 @@ ms.locfileid: "6153176"
 
 いくつか注意すべきことがあります。
 
-* アプリの ID が XDP またはデベロッパー センターに正しく入力ことを確認します。
-* PFN が XDP またはデベロッパー センターに正しく入力ことを確認します。
+* アプリの ID が XDP またはパートナー センターに正しく入力ことを確認します。
+* PFN が XDP またはパートナー センターに正しく入力ことを確認します。
 * 「[新規または既存の UWP プロジェクトに Xbox Live を追加する](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」ガイドで説明されているように、Visual Studio プロジェクトと同じディレクトリに xboxservices.config を 作成してあることを再確認します。
-* appxmanifest で "Package Identity" が正しいことを確認します。  これは Windows デベロッパー センターの [App Identity] セクションで "Package/Identity/Name" として示されます。
+* appxmanifest で "Package Identity" が正しいことを確認します。  これは、パートナー センターで「パッケージ/Id/名」App Identity] セクションでとして示されます。
 
 ### <a name="title-id-or-scid-not-configured-correctly"></a>タイトル ID または SCID が正しく構成されていない
 
@@ -82,9 +82,9 @@ UWP アプリケーションを開発している場合、Xbox アプリを使�
 
 ![ソリューション エクスプローラーに表示された pfx ファイル](../../images/troubleshooting/pfx_file.png)
 
-Windows デベロッパー センターでアプリをプロビジョニングするために使用した Microsoft アカウントで Visual Studio にサインインしなかった場合、Visual Studio はユーザー個人の Microsoft アカウントまたはドメイン アカウントに基づいて署名 pfx ファイルを自動的に生成します。 appx パッケージをビルドするとき、Visual Studio はその自動生成 pfx を使用してパッケージに署名し、package.appxmanifest でパッケージ ID の "publisher" 部分を変更します。 その結果、生成されるビット (具体的には appxmanifest.xml) のパッケージ ID は意図したものと異なります。 
+Visual Studio は自動的になっている場合、サインインしなかったパートナー センターでアプリのプロビジョニングに使用した Microsoft アカウントで Visual Studio に、個人の Microsoft アカウントまたはドメイン アカウントに基づいて署名 pfx ファイルを生成します。 appx パッケージをビルドするとき、Visual Studio はその自動生成 pfx を使用してパッケージに署名し、package.appxmanifest でパッケージ ID の "publisher" 部分を変更します。 その結果、生成されるビット (具体的には appxmanifest.xml) のパッケージ ID は意図したものと異なります。 
 
-2. package.appxmanifest がデベロッパー センターのタイトルと同じアプリケーション ID に設定されていることを再確認します。 次のスクリーンショットで示すように、プロジェクトを右クリックして [ストア]、[アプリケーションをストアと関連付ける...] の順に選択します。 または、package.appxmanifest を手動で編集します。 「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」をご覧ください。
+2. パートナー センターで、package.appxmanifest がタイトルと同じアプリケーション id に設定されていることを再確認してください。 次のスクリーンショットで示すように、プロジェクトを右クリックして [ストア]、[アプリケーションをストアと関連付ける...] の順に選択します。 または、package.appxmanifest を手動で編集します。 「[UWP ゲーム用 Visual Studio の概要](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」をご覧ください。
 
 ![Microsoft Store に関連付ける](../../images/troubleshooting/appxmanifest_binding.png)
 
@@ -92,11 +92,11 @@ Windows デベロッパー センターでアプリをプロビジョニング�
 
 このエラーは、デバイスまたはユーザーに指定されたタイトルへのアクセス権がないことを意味します。
 
-1. テスト アカウントを使用してサインインしていない、またはサインインに使用したサンドボックスへのアクセス権がテスト アカウントにない可能性があります。 Please [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)でテスト アカウントを作成する方法を再確認し、[デベロッパー センターのドキュメント](../../xbox-live-test-accounts.md)。 必要な場合は、適切なサンド ボックスへのアクセス権を持つ新しいテスト アカウントを作成します。
+1. テスト アカウントを使用してサインインしていない、またはサインインに使用したサンドボックスへのアクセス権がテスト アカウントにない可能性があります。 Please [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/creating_development_accounts_03_31_16.aspx)でテスト アカウントを作成する方法を再確認し、[パートナー センターのドキュメント](../../xbox-live-test-accounts.md)。 必要な場合は、適切なサンド ボックスへのアクセス権を持つ新しいテスト アカウントを作成します。
 
 Windows 10 から古いアカウントを削除することが必要な場合があります。[スタート] メニューから [設定]、[アカウント] の順に選択して削除できます。
 
-2. 使おうとしているサンドボックスに対してタイトルが発行されていることを再確認します。 これを行う方法については、 [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)または[デベロッパー センターのドキュメント](../../xbox-live-service-configuration.md#sandbox-ids)を参照してください。
+2. 使おうとしているサンドボックスに対してタイトルが発行されていることを再確認します。 これを行う方法については、 [XDP のドキュメント](https://developer.xboxlive.com/en-us/xdphelp/development/xdpdocs/Pages/setting_up_service_configuration_03_31_16.aspx#PublishServiceConfig)や[パートナー センターのドキュメント](../../xbox-live-service-configuration.md#sandbox-ids)を参照してください。
 
 ### <a name="0x87dd0005-unexpected-or-unknown-title"></a>0x87DD0005 予期しないタイトルまたは不明なタイトル
 

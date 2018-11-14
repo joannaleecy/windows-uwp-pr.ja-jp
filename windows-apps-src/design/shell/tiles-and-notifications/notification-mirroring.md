@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, クラウド環境にあるアクション センター, 通知のミラーリング, 通知, クロス デバイス
 ms.localizationpriority: medium
 ms.openlocfilehash: c36b5ffcbb016e5b89fa1c960a7493767192296c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046322"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209844"
 ---
 # <a name="notification-mirroring"></a>通知のミラーリング
 
@@ -27,7 +27,7 @@ ms.locfileid: "6046322"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-開発者は、通知のミラーリングから 2 つの主な利点を取得する: ミラー化された通知が発生すると、サービスでは、複数のユーザー エンゲージメントと、ユーザーが、Microsoft Store のデスクトップ アプリを検出も役立ちます。 開発者が Windows 10 デスクトップ向けの優れた UWP アプリを提供していても、それがユーザーに認知されていないことがあります。 ユーザーが自分の電話からミラー化された通知を受信するとき、ユーザーはいる UWP デスクトップ アプリをインストールできる、Microsoft ストアには注意するトースト通知をクリックことができます。
+開発者は、通知のミラーリングから 2 つの主な利点を取得する: ミラー化された通知が発生すると、サービスでは、複数のユーザー エンゲージメントと、ユーザーが、Microsoft Store のデスクトップ アプリを検出も役立ちます。 開発者が Windows 10 デスクトップ向けの優れた UWP アプリを提供していても、それがユーザーに認知されていないことがあります。 ユーザーが自分の電話からミラー化された通知を受信するとき、ユーザーは UWP デスクトップ アプリをインストールする、Microsoft Store にトースト通知をクリックことができます。
 
 ミラーリングは、Windows Phone と Android の両方で動作します。 通知のミラーリングを使用するには、ユーザーが電話とデスクトップの両方で Cortana にログインする必要があります。
 

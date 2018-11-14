@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a6651c6d1117648522f95c7e7c85aad11ceed42f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040329"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249930"
 ---
 # <a name="debugging-testing-and-performance"></a>デバッグ、テスト、パフォーマンス
 
 
-このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (デバイスの監視と構成の) 用 Windows Device Portal や、Windows アプリ認定キット (アプリを準備する、Microsoft Store 向け) などのツールも含まれています。
+このセクションでは、Microsoft Visual Studio を使用して、デバッグ、テスト、およびアプリを最適化する方法を示します。 (デバイスの監視と構成) 用 Windows Device Portal と Windows アプリ認定キット (Microsoft ストアのアプリを準備) などのツールも含まれています。
 
 | トピック | 説明 |
 |-------|-------------|

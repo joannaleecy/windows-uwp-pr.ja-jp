@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
-ms.openlocfilehash: d8728094292f1de81eb90752ee496090df4cb6e0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183494"
+ms.locfileid: "6250790"
 ---
 # <a name="packaging-apps"></a>アプリのパッケージ化
 
@@ -34,4 +34,4 @@ ms.locfileid: "6183494"
 | [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 Mobile デバイスを windows 10 コンピューターからの UWP アプリを展開に使用できるコマンド ライン ツールです。 このツールを使用すると、デバイスが、windows 10 Mobile USB で接続されているか同じサブネット上に利用可能なそのアプリの Microsoft Visual Studio や、ソリューションがなくても、アプリ パッケージを展開します。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
 | [UWP アプリの自動ビルドを設定する](auto-build-package-uwp-apps.md) | このトピックでは、自動ビルド プロセスの一環としてアプリをパッケージ化する場合に、Visual Studio Team Services (VSTS) を使用して実行する方法を説明します。 |
 | [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
-| [パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする](self-install-package-updates.md) | UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。 またｈ、Windows デベロッパー センター ダッシュボードで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にすることもできます。  |
+| [パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする](self-install-package-updates.md) | UWP アプリでは、プログラムによてパッケージの更新を確認して、インストールできます。 アプリもパートナー センターで必須としてマークされているパッケージを照会し、必須の更新がインストールされるまで機能を無効にできます。  |

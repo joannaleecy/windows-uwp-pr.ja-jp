@@ -8,17 +8,17 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5923176f5f9fff1a6e4f30a7ba2419e99c074b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041050"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206780"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
 
-このトピックでは、作成する方法を説明します、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または、C++/cli CX ユニバーサル Windows プラットフォーム (UWP) コンソール アプリ。
+作成する方法について説明、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)または、C++/cli CX ユニバーサル Windows プラットフォーム (UWP) コンソール アプリです。
 
-Windows 10、バージョン 1803 以降では次のことに書き込み C + + WinRT または C + +/CX の UWP コンソール アプリ コンソール ウィンドウ DOS や PowerShell などのコンソール ウィンドウで実行できます。 コンソール アプリでは、入力と出力、コンソール ウィンドウを使用して、 **printf**と**getchar**などの[ユニバーサル C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)の機能を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP コンソール アプリは、コマンドラインから起動するは通常、スタート メニューから起動できます。
+Windows 10、バージョン 1803 以降では次のことに書き込み、C++/WinRT または C + +/CX の UWP コンソール アプリ DOS や PowerShell コンソール ウィンドウなどのコンソール ウィンドウで実行できます。 コンソール アプリは、入力と出力、コンソール ウィンドウを使用し、 **printf**と**getchar**などの[ユニバーサル C ランタイム](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)の機能を使用できます。 Microsoft Store には、UWP コンソール アプリを公開することができます。 それらのアプリは、アプリのリストにエントリがあり、スタート メニューに固定することができるプライマリ タイルがあります。 UWP コンソール アプリは、コマンドラインから起動するは通常、スタート メニューから起動できます。
 
 いずれかの動作を確認するには、UWP コンソール アプリの作成に関するビデオを次に示します。
 
@@ -101,9 +101,9 @@ UWP コンソール アプリは、実行されているディレクトリ、お
 
 ## <a name="additional-considerations-for-uwp-console-apps"></a>UWP コンソール アプリに関するその他の考慮事項
 
-- のみ、C++/cli/winrt と C++/cli/CX の UWP アプリがコンソール アプリです。
+- のみ、C++/WinRT および C + +/CX の UWP アプリがコンソール アプリ。
 - UWP コンソール アプリはデスクトップまたは IoT プロジェクト タイプをターゲットにする必要があります。
-- UWP コンソール アプリは、ウィンドウを作成しない可能性があります。 ユーザーの同意プロンプトなど、MessageBox() または Location()、何らかの理由で、ウィンドウが作成できるその他のいずれかの API は使用できません。
+- UWP コンソール アプリは、ウィンドウを作成しない場合があります。 ユーザーの同意プロンプトなど、MessageBox() または Location()、何らかの理由で、ウィンドウが作成できるその他の API は使用できません。
 - UWP コンソール アプリは、バックグラウンド タスクを消費したり、バックグラウンド タスクとして機能したりしない場合があります。
 - [コマンド ラインのアクティブ化](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97) を除き、UWP コンソール アプリは、ファイルの関連付け、プロトコルの関連付けなどのアクティブ化をサポートしていません。
 - UWP コンソール アプリは複数インスタンスをサポートしていますが、[複数インスタンスのリダイレクト](multi-instance-uwp.md) はサポートしていません

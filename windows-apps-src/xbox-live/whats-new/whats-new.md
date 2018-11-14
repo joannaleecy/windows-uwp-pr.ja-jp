@@ -7,12 +7,12 @@ ms.date: 10/23/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c70f0dee1226057a69cb876dac4f4512b378b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bf536298f075535bf9f5e5198573a87db33dd2a4
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6023522"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198276"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
@@ -34,7 +34,7 @@ ms.locfileid: "6023522"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API レイヤー
 
-一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリ管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
+一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリの管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
 
 詳細については、 [Xbox Live C Api](../xsapi-flat-c.md)を参照してください。
 
@@ -121,7 +121,7 @@ Xbox Live API は、ユニバーサル Windows プラットフォーム (UWP) �
 
 #### <a name="data-platform-2017"></a>データ プラットフォーム 2017
 
-簡略化された統計 API が導入されました。  これまでは XDP またはデベロッパー センターで定義された統計の規則に対応したイベントを送信する必要があり、これらによってクラウドの統計値を更新していました。  このモデルを統計 2013 といいます。
+簡略化された統計 API が導入されました。  従来 XDP またはパートナー センターで定義された統計の規則に対応するイベントを送信する必要があるし、これらによってクラウドの統計の値を更新します。  このモデルを統計 2013 といいます。
 
 統計 2017 では、タイトルが統計値を制御します。  最新の統計値のある API を呼び出すだけで、統計値がイベントを必要とせずに直接サービスに送信されます。  これは、新しい `StatsManager` API を使用するもので、詳細は「[プレイヤー統計](../leaderboards-and-stats-2017/player-stats.md)」に記載されています。
 
@@ -144,7 +144,7 @@ Xbox Live クリエーターズ プログラムは、幅広い対象デベロッ
 |[Xbox Live サービス構成](../xbox-live-service-configuration.md) | Xbox Live タイトル用のサービス構成の実行に関する最新情報
 | [Unity で Xbox Live を構成する](../get-started-with-creators/configure-xbox-live-in-unity.md) | Xbox Live クリエーターズ プログラムのデベロッパー向けの Unity セットアップに関する新しい情報 |
 | [Xbox Live のサンドボックス](../xbox-live-sandboxes.md) | Xbox Live サンド ボックスとコンテンツの分離の簡易ガイド |
-| [Xbox Live テスト アカウント](../xbox-live-test-accounts.md) | テスト アカウントの機能と Windows デベロッパー センターでのそれらの作成方法に関する情報 |
+| [Xbox Live テスト アカウント](../xbox-live-test-accounts.md) | アカウントの機能とパートナー センターでそれらを作成する方法をテストする方法に関する情報 |
 
 ## <a name="archived"></a>アーカイブされた記事
 

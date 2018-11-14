@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d43094ba679ebe5439996373626522590e3fcc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042133"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209539"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -33,7 +33,7 @@ MonoGame は、軽量のゲーム開発フレームワークです。 このチ�
 +   オプションとして、クラス、メソッド、変数など、基本的なコンピューター サイエンスの概念に関する知識。
 
 ## <a name="why-monogame"></a>MonoGame を使用する理由
-ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 MonoGame のアプリは純粋な c# で記述してに配布できる迅速に、Microsoft Store やその他の同様の配布プラットフォームを通じて、すべての最適なします。
+ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 大切な MonoGame のアプリは純粋な c# で記述され、Microsoft Store やその他の同様の配布プラットフォームを通じて迅速に配布するそれらことができます。
 
 ## <a name="get-the-code"></a>コードを入手する
 段階を追ってチュートリアルを進めるのではなく、MonoGame の動作を確認するには、[こちらをクリックして完成したアプリを入手してください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
@@ -68,7 +68,7 @@ Visual Studio 2017 で、プロジェクトを開き、サンプルを実行す�
 
 **protected override void UnloadContent()** このメソッドは、非コンテンツ マネージャーのコンテンツをアンロードするために使用されます。 ここでは使用しません。
 
-**保護されたオーバーライド (GameTime gameTime) の更新を無効にします。** このメソッドは、ゲーム ループのすべてのサイクルに 1 回呼び出されます。 ここでは、ゲームで使用するあらゆるオブジェクトや変数の状態を更新します。 これには、オブジェクトの位置、速度、色などが含まれます。 これは、ユーザー入力が処理されます。 つまりこのメソッドでは、画面へのオブジェクトの描画を除いて、ゲーム ロジックのすべての部分が処理されます。
+**保護されている上書き (GameTime gameTime) の更新を無効にします。** このメソッドは、ゲーム ループのすべてのサイクルに 1 回呼び出されます。 ここでは、ゲームで使用するあらゆるオブジェクトや変数の状態を更新します。 これには、オブジェクトの位置、速度、色などが含まれます。 これは、ユーザー入力が処理されます。 つまりこのメソッドでは、画面へのオブジェクトの描画を除いて、ゲーム ロジックのすべての部分が処理されます。
 **protected override void Draw(GameTime gameTime)** ここでは、Update メソッドで指定された位置を使用して、オブジェクトが画面に描画されます。
 
 ## <a name="draw-a-sprite"></a>スプライトの描画
@@ -381,7 +381,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7. キーボード入力を処理します。
-次に、キーボード経由でのユーザー入力を処理する新しいメソッド必要があります。 **Game1.cs**には、以下のメソッドを追加します。
+次に、キーボード経由でのユーザー入力を処理する新しいメソッドが必要です。 **Game1.cs**には、以下のメソッドを追加します。
 
 ```CSharp
 void KeyboardHandler()
@@ -484,7 +484,7 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、dino スプライトとブロッコリの両方が、決して非表示にする背後にあるの位置に関係なくために、既存の grass スプライト経由で描画されます。
+MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、broccoli と dino スプライトの両方がようにすることはありません非表示にできます背後にある自分の位置に関係なく、既存の grass スプライト経由で描画されます。
 
 ここでゲームを実行し、方向キーと Space キーを使用して、恐竜を動かしてみてください。 上記の手順を実行している場合は、アバター ゲームのウィンドウ内を移動できる必要があり、ブロッコリが増え速度で起動する必要があります。
 
@@ -650,7 +650,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 これにより、**SpriteClass** で作成した **RectangleCollision** メソッドが呼び出され、true が返された場合は、ゲーム オーバーのフラグが設定されます。
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. ゲームをリセットするためのユーザー入力を追加する
-このコードをユーザーが Enter キーを押している場合は、ゲームをリセットできるようにする、 **KeyboardHandler**メソッドに追加します。
+ユーザーが Enter を押した場合、ゲームをリセットできるように**KeyboardHandler**メソッドには、このコードを追加します。
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

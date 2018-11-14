@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: de1d7dedbd2bd3d51bd2e1c1a9652d18f2b78ef0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050913"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207522"
 ---
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
@@ -32,7 +32,7 @@ XAML コンパイルの動作を変更して、名前付きオブジェクトの
 
 ## <a name="remarks"></a>注釈
 
-**x:FieldModifier** 属性の値はプログラミング言語によって異なります。 有効な値は、**private**、**public**、**protected**、**internal**、**friend** です。 C#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能 (、C++/cli CX)、文字列を提供する値"public"または"Public"パーサーには、この属性の値の大文字を区別しません。
+**x:FieldModifier** 属性の値はプログラミング言語によって異なります。 有効な値は、**private**、**public**、**protected**、**internal**、**friend** です。 C#、Microsoft Visual Basic、または VisualC ではコンポーネント拡張機能 (、C++/cli CX)、文字列を提供する値"public"または"Public"パーサーには、この属性の値の大文字を区別しません。
 
 既定値は **Private** アクセスです。
 

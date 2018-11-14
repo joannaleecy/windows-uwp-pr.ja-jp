@@ -10,25 +10,25 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: da918cbbf76a757e16aea10cf4fbc6b2646de9fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6037998"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209735"
 ---
 # <a name="permissioncheckbatchuserresponse-json"></a>PermissionCheckBatchUserResponse (JSON)
-バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。 
+バッチのアクセス許可の理由は、1 つの対象ユーザーのアクセス許可の値の一覧を確認します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="permissioncheckbatchuserresponse"></a>PermissionCheckBatchUserResponse
  
-PermissionCheckBatchUserResponse オブジェクトには、次の仕様があります。
+PermissionCheckBatchUserResponse オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | ユーザー| string| 必須。 このメンバーは、ターゲット ユーザーと要求された操作を実行する要求元のユーザーが許可されている場合<b>は true</b> 。| 
-| アクセス許可| [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)の配列| 必須。 各要求と同じ順序で、元の要求に要求されたアクセス許可に対して[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。| 
+| アクセス許可| [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)の配列| 必須。 各アクセス許可の要求と同じ順序で、元の要求で要求されている[PermissionCheckResponse (JSON)](json-permissioncheckresponse.md) 。| 
   
 <a id="ID4E4B"></a>
 

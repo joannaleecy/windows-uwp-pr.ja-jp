@@ -10,44 +10,44 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 444f765101c1067b6a13125099040c64197848e4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6043862"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6204250"
 ---
 # <a name="profile-json"></a>Profile (JSON)
-ユーザーの個人用プロファイル設定します。 
+ユーザーの個人用プロファイルの設定。 
 <a id="ID4EN"></a>
 
  
 ## <a name="profile"></a>プロファイル
  
-プロファイル オブジェクトには、次の仕様があります。
+プロファイル オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
-| GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームに表示するために使用するユーザーの id 文字列を表します。| 
+| AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実名」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
+| GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実名」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。| 
 | Gamertag| string| ユーザーのゲーマータグです。| 
 | AppDisplayPicRaw| string| アプリを直接表示 pic URL (下記参照)。| 
 | GameDisplayPicRaw| string| 未加工のゲーム表示 pic URL (下記参照)。| 
 | AccountTier| string| ユーザーには、アカウントの種類はありますか。 ゴールド、シルバー、または FamilyGold かどうか。| 
-| TenureLevel| 32 ビットの符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
+| TenureLevel| 32 ビットの符号なし整数| 数年間、ユーザーされた Xbox Live を使用しますか。| 
 | ゲーマースコア| 32 ビットの符号なし整数| ユーザーのゲーマー スコア。| 
   
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
+> 画像は、ユーザーの '実際の図' またはその XboxOne ゲーマー アイコン、プライバシーに応じてであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
 
 
  
 生の URL は、サイズ変更できる URL です。 サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:
  
-形式: ピクセルの .png ファイル
+形式: png
  
-サイズ: 64 x 64、208 x 208、424 x 424
+サイズ: 64 x 64, 208 x 208, 424 x 424
  
 <a id="ID4E2D"></a>
 

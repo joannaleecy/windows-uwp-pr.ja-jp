@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026773"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206665"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 名前空間と名前空間マッピング
 
@@ -63,7 +63,7 @@ XAML 言語では、特定の言語要素を指定します。これらの各要
 
 -   **d:DesignHeight 属性と d:DesignWidth 属性:** この 2 つの属性は、Visual Studio または別の XAML デザイナー サーフェイスが作成する XAML ファイルのルートに適用されることがあります。 この 2 つの属性は、たとえば、アプリ プロジェクトに新しく [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) を追加した場合に、作成される XAML の **UserControl** ルートに設定されます。 この属性はいずれも、XAML コンテンツの構成を設計しやすくするものであり、XAML コンテンツがコントロール インスタンスや、それより大きな UI ページの一部に使われた場合に生じるレイアウト面の制約がある程度予測できるようになります。
 
-   **注:** Microsoft Silverlight から XAML を移行する場合は、UI のページ全体を代表するルート要素にこれらの属性を持つ可能性があります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
+   **注:** Microsoft Silverlight から XAML を移行している場合は、UI のページ全体を代表するルート要素にこれらの属性を持つ可能性があります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
 
 -   **d:DataContext 属性:** ページ ルートまたはコントロールでこの属性を設定すると、そうでない場合にはオブジェクトに含まれる明示的または継承された [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を上書きします。
 -   **d:DesignSource 属性:** 設計時の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) のデータ ソースを指定して、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209835) を上書きします。

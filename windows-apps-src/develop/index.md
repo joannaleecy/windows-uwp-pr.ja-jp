@@ -9,11 +9,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049513"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654416"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>
@@ -227,7 +227,7 @@ ms.locfileid: "6049513"
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概要</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight UWP から</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight から UWP へ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows ランタイム 8.x から UWP へ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">デスクトップ ブリッジ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップと UWP でコードを共有する</a></p>

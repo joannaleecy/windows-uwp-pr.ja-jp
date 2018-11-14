@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035129"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6647609"
 ---
 # <a name="streaming-resource-creation-parameters"></a>ストリーミング リソースの作成パラメーター
 
@@ -39,7 +39,7 @@ Texture2D\[配列\] (Texture2D\[配列\] のバリアントである TextureCube
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**サポートされるバインド フラグ**  
 シェーダー リソース、レンダー ターゲット、深度ステンシル、または順序指定なしアクセスとしてバインド。
 
-**サポートされていません:** 定数バッファー、頂点バッファー (タイル化されたバッファーとしてのバインド、SRV/UAV/RTV がサポートされている)、インデックスとしてバインド バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーが開始します。
+**サポートされていません:** 定数バッファー、頂点バッファー (タイル化されたバッファーとしてのバインドする SRV/UAV/RTV がサポートされている)、インデックスとしてバインド バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーが開始します。
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**サポートされる形式**  
 タイル化されるかどうかに関わらず、特定の構成に利用できるすべての形式に、何らかの例外があります。
