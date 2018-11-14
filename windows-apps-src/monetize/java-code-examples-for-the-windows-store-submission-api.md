@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Java
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6039086"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199759"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java のコード例: アプリ、アドオン、およびフライトの申請
 
@@ -106,7 +106,7 @@ ms.locfileid: "6039086"
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。
 3. その後、[パッケージ フライトの新しい申請を作成](create-a-flight-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、その[更新プログラム](update-a-flight-submission.md)とし、PartnerCenter に新しい申請を[コミット](commit-a-flight-submission.md)します。
+5. 次に、その[更新プログラム](update-a-flight-submission.md)とその PartnerCenter に新しい申請を[コミット](commit-a-flight-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-a-flight-submission.md)します。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

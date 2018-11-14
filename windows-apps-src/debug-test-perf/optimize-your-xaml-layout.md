@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044102"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6249729"
 ---
 # <a name="optimize-your-xaml-layout"></a>XAML レイアウトの最適化
 
@@ -136,7 +136,7 @@ ms.locfileid: "6044102"
 
 一般的な UI 要件として、要素が互いに重なり合ったレイアウトがあります。 通常、この方法で要素を配置するために、パディング、余白、整列、変換が使用されます。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) コントロールは、重なり合った要素のレイアウトのパフォーマンスを向上させるために最適化されています。
 
-**重要な**向上を確認する、単一セルの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/BR242704)を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
+**重要な**改善を確認するには、単一セルの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/BR242704)を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
 
 ### <a name="examples"></a>例
 

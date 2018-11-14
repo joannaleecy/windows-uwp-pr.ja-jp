@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 40389232f5a1f6ab606720068fe8c9ac80fd5093
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 91a30a81123902d7b4b2f8311ae1f24bd23b3e43
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6142415"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209570"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植
 
@@ -27,17 +27,17 @@ ms.locfileid: "6142415"
 
 <a name="_Setting_up_and"></a>
 
-## <a name="setting-up-and-configuring-your-project-in-dev-center-and-xdp"></a>デベロッパー センターおよび XDP でのプロジェクトの設定と構成
+## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>設定して、パートナー センターおよび XDP でプロジェクトを構成します。
 
-Xbox Live サービスを使用する UWP タイトルは、 [Windows デベロッパー センター](https://dev.windows.com/en-us)または[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
+Xbox Live サービスを使用する UWP タイトルは、[パートナー センター](https://partner.microsoft.com/dashboard)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
 
 そのページのトピックには、タイトルで Xbox Live サービスを使用するための、以下の手順が含まれています。
 
--   Windows デベロッパー センターで UWP アプリ プロジェクトを作成する。
+-   パートナー センターで UWP アプリ プロジェクトを作成します。
 
 -   XDP を使用して、Xbox Live を使用するためにプロジェクトをセットアップする。
 
--   デベロッパー センターのプロダクトを XDP のプロダクトにリンクする。
+-   パートナー センター製品を XDP のプロダクトにリンクします。
 
 -   XDP でデベロッパー アカウントを作成する (サンドボックスでの Xbox Live タイトルの実行時に必要)。
 
@@ -77,7 +77,7 @@ XDP でクロス プレイとその構成要件をサポートにすることに
 
 Xbox バージョンの appxmanifest.xml ファイルと、UWP バージョンの appxmanifest.xml ファイルの最も一般的な変更点は次のとおりです。
 
-1. UWP では、開発中であっても Package Identity が問題となります。 Identity の Name と Publisher が、デベロッパー センターで UWP アプリのために定義されたものと一致している*必要があります*。
+1. UWP では、開発中であっても Package Identity が問題となります。 Id 名と発行元の両方*と一致する必要があります*UWP アプリのパートナー センターで定義されたものです。
 
 1. Package Dependency セクションが必要です。 次に、例を示します。
 
@@ -382,7 +382,7 @@ Xbox Live SDK で、**CheckPrivilegeAsync()** と同等のものはまだ利用�
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>Xbox One および PC UWP の間のマルチプレイヤー クロスプレイのサポート
 
-XDP での新しいセッション テンプレートの要件 (「[デベロッパー センターおよび XDP でのプロジェクトの設定と構成](#_Setting_up_and)」を参照) に加えて、クロス プレイによってセッションへの参加機能に新しい制限が加わっています。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
+XDP で新しいセッション テンプレートの要件に加えて ([を設定しパートナー センターおよび XDP でプロジェクトを構成する](#_Setting_up_and)を参照)、クロス プレイのセッションへの参加機能に新しい制限が付属します。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
 
 また、Windows 10 でのマルチプレイヤーに必要な **userAuthorizationStyle** 機能のために、参加と読み取りの制限は既定で "Local" になります。
 

@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライトのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
 title: パッケージ フライトの取得
 ms.author: mhopkins
 ms.date: 04/17/2018
@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
 ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040441"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209993"
 ---
 # <a name="get-a-package-flight"></a>パッケージ フライトの取得
 
-パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
+パートナー センター アカウントに登録されているアプリのパッケージ フライトのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -47,7 +47,7 @@ ms.locfileid: "6040441"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 取得するパッケージ フライトが含まれるアプリのストア ID。 アプリのストア ID は、パートナー センターで利用できます。  |
-| flightId | string | 必須。 取得するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なも。  |
+| flightId | string | 必須。 取得するパッケージ フライトの ID。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文

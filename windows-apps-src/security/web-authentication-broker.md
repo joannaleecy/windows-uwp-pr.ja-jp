@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 88210182f46fa8149e4b2d0278d7df89033e62b6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031164"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210263"
 ---
 # <a name="web-authentication-broker"></a>Web 認証ブローカー
 
@@ -89,7 +89,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 のみ、Windows Phone 8.1 をターゲットとするアプリは設計されており、windows 10 以降は推奨されなくなりました。
+>[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 Windows Phone 8.1 のみをターゲットとするアプリのように設計され、windows 10 以降は推奨されなくなりました。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>シングル サインオン (SSO) を使った接続
 
@@ -161,7 +161,7 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-    このレジストリ キーを用意していない場合は、管理者特権でコマンド プロンプトで作成することができます。
+    このレジストリ キーを用意していない場合は、管理者特権でコマンド プロンプトで作成できます。
 
     ```cmd 
     REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f
