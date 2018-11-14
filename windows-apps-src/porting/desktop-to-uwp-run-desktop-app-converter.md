@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 7fc8c8e68e4b20498f84b4d20d84eca0dbfa7237
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469795"
+ms.locfileid: "6650900"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -122,7 +122,7 @@ Desktop App Converter (DAC) は、配布を含む、Microsoft Store 経由でサ
 パラメーターを使用して、アプリケーションのパッケージ名、発行元、バージョン番号を指定します。
 
 > [!NOTE]
-> Windows ストアでアプリ名を予約済みの場合は、Windows デベロッパー センターのダッシュ ボードを使用して、パッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
+> Microsoft Store でアプリ名を予約済み場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、パッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
 
 ### <a name="a-quick-look-at-command-parameters"></a>コマンド パラメーターの確認
 
@@ -145,7 +145,7 @@ DesktopAppConverter.exe
 * [インストーラー (.msi) ファイルを持つアプリケーションをパッケージ化します。](#installer-conversion)
 * [セットアップの実行可能ファイルを持つアプリケーションをパッケージ化します。](#setup-conversion)
 * [インストーラーがないアプリケーションをパッケージ化します。](#no-installer-conversion)
-* [アプリをパッケージ化し、アプリに署名して、ストアへの提出に備える](#optional-parameters)
+* [アプリのパッケージ化と、アプリの署名、ストア申請用の準備](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -158,7 +158,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 2 つ目に、デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。  
+> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 次に、パートナー センターをパッケージに数値で始まる id を割り当てる場合、こと確認するも<i>の AppId</i>パラメーターに渡す (ピリオドの区切り記号) の後の文字列サフィックスのみを使用して、そのパラメーターの値として。  
 
 **ビデオ**
 
@@ -176,7 +176,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも、 <i>-appid</i>パラメーターを渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 ``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
 
@@ -197,7 +197,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも、 <i>-appid</i>パラメーターを渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 **ビデオ**
 
@@ -213,7 +213,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも、 <i>-appid</i>パラメーターを渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 ``Sign``パラメーターが証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
 
@@ -271,13 +271,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合、出力 MSIX パッケージとしてパッケージ化するには、このスクリプトに指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージ ID パラメーター</strong>||
-|-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。 |
+|-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 パートナー センターが数値で始まる場合、パッケージに id を割り当てるも、 <i>-appid</i>パラメーターを渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。 |
 |-Publisher &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの発行元 |
 |-Version &lt;Version&gt; |必須 |ユニバーサル Windows アプリ パッケージのバージョン番号 |
 |<a id="manifest-params" /><strong>パッケージ マニフェスト パラメーター</strong>||
 |-AppExecutable &lt;String&gt; |省略可能 |アプリケーションのメインの実行可能ファイルの名前 (例:"MyApp.exe")。 インストーラーを使用しない変換では、このパラメーターは必須です。 |
 |-AppFileTypes &lt;String&gt;|省略可能 |アプリケーションに関連付ける、ファイルの種類のコンマ区切りの一覧。 使用例: -AppFileTypes "'.md', '.markdown'"。|
-|-AppId &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーション ID を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 多くの場合、*PackageName* を使って問題ありません。 ただし、デベロッパー センターが数値で始まる ID をパッケージに割り当てる場合、必ず <i>-AppId</i> パラメーターも渡し、そのパラメーターの値として文字列サフィックスのみを使ってください (ピリオドの区切り記号の後)。 |
+|-AppId &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーション ID を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 多くの場合、*PackageName* を使って問題ありません。 ただし、パートナー センターをパッケージに数値で始まる id を割り当てる場合、とことを確認も<i>-appid</i>パラメーターに渡すパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用してください。 |
 |-AppDisplayName &lt;String&gt;  |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーションの表示名を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 |
 |-AppDescription &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーションの説明を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。|
 |-PackageDisplayName &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでパッケージの表示名を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 |

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d8e90f98dd79150cf19727fe31e51278a88a198
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6263520"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663911"
 ---
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP ライブ ストリーミング (HLS) タグのサポート
 次の表では、UWP アプリでサポートされている HLS タグを示します。

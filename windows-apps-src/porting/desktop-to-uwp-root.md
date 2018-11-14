@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 184cd246019bacc6419580cd47d2904374606031
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b5ebbb628add9474412441ff507e7429f3bfd3ab
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451696"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661179"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)
 
@@ -90,7 +90,7 @@ Visual Studio を使うと、パッケージをかなり簡単に作成できま
 
 :heavy_check_mark: ウィザードを使ってパッケージを生成する。
 
-::heavy_check_mark: Windows デベロッパー センター ダッシュ ボードで既に予約した名前からアプリに id を簡単に割り当てます。
+::heavy_check_mark:[パートナー センター](https://partner.microsoft.com/dashboard)で既に予約した名前からアプリに id を簡単に割り当てます。
 
 [Visual Studio を使ってデスクトップ アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
 
