@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce3b1ebfc2f18a06ff4fa960c91749f61f5011d9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041612"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6258701"
 ---
 # <a name="coordinate-systems-and-geometry"></a><span data-ttu-id="84947-105">座標系とジオメトリ</span><span class="sxs-lookup"><span data-stu-id="84947-105">Coordinate systems and geometry</span></span>
 

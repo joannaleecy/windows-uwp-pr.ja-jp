@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6455170"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210083"
 ---
 # <a name="media-casting"></a><span data-ttu-id="2ec16-104">メディアのキャスト</span><span class="sxs-lookup"><span data-stu-id="2ec16-104">Media casting</span></span>
 
