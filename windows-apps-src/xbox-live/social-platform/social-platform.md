@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c02fc7510f3856b7e31aad4d47fcf07d935dd126
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203716"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253963"
 ---
 # <a name="xbox-live-social-platform---for-games-and-gamers"></a><span data-ttu-id="44132-104">Xbox Live ソーシャル プラットフォーム - ゲームおよびゲーマー向け</span><span class="sxs-lookup"><span data-stu-id="44132-104">Xbox Live social platform - For games and gamers</span></span>
 

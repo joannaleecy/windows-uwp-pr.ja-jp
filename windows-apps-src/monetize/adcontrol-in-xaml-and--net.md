@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, 広告コントロール, XAML, .NET, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: b2346fceaae3996de8aa54640c206b5fcd8c4a87
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6255892"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6461335"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a><span data-ttu-id="391f4-104">XAML および .NET の AdControl</span><span class="sxs-lookup"><span data-stu-id="391f4-104">AdControl in XAML and .NET</span></span>
 

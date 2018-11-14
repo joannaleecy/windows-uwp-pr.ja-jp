@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6270274"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6460453"
 ---
 # <a name="camera-independent-flashlight"></a><span data-ttu-id="973b2-105">カメラに依存しない懐中電灯</span><span class="sxs-lookup"><span data-stu-id="973b2-105">Camera-independent Flashlight</span></span>
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030071"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6259104"
 ---
 # <a name="viewports-and-clipping"></a><span data-ttu-id="bd8f7-104">ビューポートとクリッピング</span><span class="sxs-lookup"><span data-stu-id="bd8f7-104">Viewports and clipping</span></span>
 

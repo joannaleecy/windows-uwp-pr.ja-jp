@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 37f75686c51e876cd4e6b608d0f527d3e32e4e24
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034456"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198241"
 ---
 # <a name="custom-automation-peers"></a><span data-ttu-id="8087c-103">カスタム オートメーション ピア</span><span class="sxs-lookup"><span data-stu-id="8087c-103">Custom automation peers</span></span>  
 

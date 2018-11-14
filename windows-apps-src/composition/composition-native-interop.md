@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5ba97e8e4a3f875e3afbc5a9067ab19b34a35d
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199588"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6470970"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a><span data-ttu-id="f9091-104">コンポジションでの DirectX と Direct2D のネイティブ相互運用</span><span class="sxs-lookup"><span data-stu-id="f9091-104">Composition native interoperation with DirectX and Direct2D</span></span>
 

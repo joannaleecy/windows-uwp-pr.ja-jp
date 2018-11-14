@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
 ms.localizationpriority: medium
 ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203719"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267443"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a><span data-ttu-id="886bf-104">XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン</span><span class="sxs-lookup"><span data-stu-id="886bf-104">Calling pattern for XSAPI flat C layer async calls</span></span>
 

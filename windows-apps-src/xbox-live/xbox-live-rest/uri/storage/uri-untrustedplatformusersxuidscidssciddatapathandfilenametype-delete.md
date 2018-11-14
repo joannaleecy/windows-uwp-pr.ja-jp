@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ee9f657722efd8a89508b1f841b759560b5c4c
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197316"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250335"
 ---
 # <a name="delete-untrustedplatformusersxuidxuidscidssciddatapathandfilenametype"></a><span data-ttu-id="deceb-104">DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="deceb-104">DELETE (/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="deceb-105">ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="deceb-105">Deletes a file.</span></span> <span data-ttu-id="deceb-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="deceb-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

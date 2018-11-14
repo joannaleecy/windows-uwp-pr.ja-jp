@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6187291"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6649900"
 ---
 # <a name="variable-photo-sequence"></a><span data-ttu-id="c0e77-104">可変の写真シーケンス</span><span class="sxs-lookup"><span data-stu-id="c0e77-104">Variable photo sequence</span></span>
 

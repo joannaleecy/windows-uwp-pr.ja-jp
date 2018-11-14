@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5540339d61c81b08b9843f7352ac816d93fcf12e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6204978"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253739"
 ---
 # <a name="standard-http-status-codes"></a><span data-ttu-id="e4420-104">標準の HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="e4420-104">Standard HTTP status codes</span></span>
  

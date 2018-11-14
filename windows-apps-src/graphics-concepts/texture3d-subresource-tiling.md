@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 17970d509fa2bf6b80431e1c07b5d135c7dcb112
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044003"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193413"
 ---
 # <a name="texture3d-subresource-tiling"></a><span data-ttu-id="ba70a-104">Texture3D サブリソースのタイル表示</span><span class="sxs-lookup"><span data-stu-id="ba70a-104">Texture3D subresource tiling</span></span>
 

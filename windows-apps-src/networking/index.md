@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e01ac3a0dcab0bc82835b97d70477bf585ab4570
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209196"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6466864"
 ---
 # <a name="networking-and-web-services"></a><span data-ttu-id="04f68-104">ネットワークと Web サービス</span><span class="sxs-lookup"><span data-stu-id="04f68-104">Networking and web services</span></span>
 

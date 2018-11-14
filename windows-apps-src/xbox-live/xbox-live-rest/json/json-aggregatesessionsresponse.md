@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 590acdd89d83fa21a401b5573053ba341f7f05c7
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206264"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267241"
 ---
 # <a name="aggregatesessionsresponse-json"></a><span data-ttu-id="debf2-104">AggregateSessionsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="debf2-104">AggregateSessionsResponse (JSON)</span></span>
 <span data-ttu-id="debf2-105">ユーザーの適合性のセッションは、集計されたデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="debf2-105">Contains aggregated data for a user's fitness sessions.</span></span> 

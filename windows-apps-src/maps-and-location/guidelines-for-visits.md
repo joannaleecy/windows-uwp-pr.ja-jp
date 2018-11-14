@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, マップ, 位置情報, geovisit, ジオビジット
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6258155"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6467456"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a><span data-ttu-id="e98c8-103">ビジット追跡の使用ガイドライン</span><span class="sxs-lookup"><span data-stu-id="e98c8-103">Guidelines for using Visits tracking</span></span>
 
