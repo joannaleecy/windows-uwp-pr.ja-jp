@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e497eb404129a7d8cc8ce9784c2e28a9c9456fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bf9bbc2962bc0d11f9969bf41840be515c9c0881
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052207"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279516"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 
@@ -42,9 +42,9 @@ Xbox One には、*リテール* モード (**1**) と*開発者*モード (**2*
     
 5.  [Partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate)に移動します。
 
-6.  デベロッパー センター アカウントを使ってデベロッパー センターにサインインします。
+6.  アカウントの資格情報を[パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。
 
-7.  開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。 アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードがアクティブになると、アカウントに関連付けられているアクティブ化の 1 つが使われたことを示す通知がデベロッパー センターに表示されます。
+7.  開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。 アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードをアクティブ化後、パートナー センターは、アカウントに関連付けられているライセンス認証のいずれかを使用したを示します。
 
     ![アクティブ化手順 8](images/activation-step-8-rs2.png)    
     

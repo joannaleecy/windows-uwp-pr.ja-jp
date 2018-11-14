@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6464373"
+ms.locfileid: "6650552"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 
@@ -114,11 +114,11 @@ Sets 機能では、Windows Insider preview ビルドで利用できます。 Se
 
 ### <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
-デベロッパー センター ダッシュ ボードで[の広告パフォーマンス レポート](../publish/advertising-performance-report.md)視認性のメトリックが追加されました。 また、広告の視認性の最適化に関する推奨事項を提供する[広告ユニットの視認性の最適化](../monetize/optimize-ad-unit-viewability.md)」の記事を追加しました。
+パートナー センターで[の広告パフォーマンス レポート](../publish/advertising-performance-report.md)視認性のメトリックが追加されました。 また、広告の視認性の最適化に関する推奨事項を提供する[広告ユニットの視認性の最適化](../monetize/optimize-ad-unit-viewability.md)」の記事を追加しました。
 
 ### <a name="targeted-push-notifications"></a>ターゲット プッシュ通知
 
-デベロッパー センター ダッシュ ボードの [[通知](../publish/send-push-notifications-to-your-apps-customers.md)] ページは、今すぐグラフと世界地図ビューで、すべての通知の他の分析データを提供します。
+パートナー センターで[通知](../publish/send-push-notifications-to-your-apps-customers.md)ページは、今すぐグラフと世界地図ビューで、すべての通知の他の分析データを提供します。
 
 ## <a name="videos"></a>ビデオ
 

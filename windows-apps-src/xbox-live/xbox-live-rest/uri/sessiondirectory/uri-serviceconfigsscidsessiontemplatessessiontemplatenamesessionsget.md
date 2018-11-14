@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 861228c4b00cba6ee011b96f1f2d0493b7eafbfe
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6032888"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250273"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessions"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
 セッション テンプレートのドキュメントを取得します。
@@ -33,7 +33,7 @@ ms.locfileid: "6032888"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、指定されたフィルターのセッション テンプレートの情報を取得します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**でラップすることができます。
+この HTTP/REST メソッドは、指定されたフィルターのセッション テンプレートの情報を取得します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**でラップすることができます。
 
 
 > [!NOTE] 
@@ -42,7 +42,7 @@ ms.locfileid: "6032888"
 
 
 > [!NOTE] 
-> このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID のフィルター、またはその両方を含める必要があります。 呼び出し元が、<i>プライベート</i>と<i>予約</i>のパラメーターの適切なアクセス許可を持たない場合、メソッドは、そのようなセッションが実際に存在するかどうか 403 Forbidden のエラー コードを返します。  
+> このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID フィルター処理、またはその両方を含める必要があります。 呼び出し元が、<i>プライベート</i>と<i>予約</i>のパラメーターの適切なアクセス許可を持たない場合、メソッドは、そのようなセッションが実際に存在するかどうか 403 Forbidden のエラー コードを返します。  
 
 
 <a id="ID4EKB"></a>
@@ -56,11 +56,11 @@ ms.locfileid: "6032888"
 | キーワード| string| キーワードで文字列を識別するだけでセッションに結果をフィルター処理するために使用します。|
 | xuid| GUID| セッションを取得する対象のユーザーの Xbox ユーザー Id。 ユーザーは、セッション内でアクティブである必要があります。 |
 | 予約| string| 示す値をユーザーが持っていないセッションのリストが含まれている場合は受け入れ。 このパラメーターを設定することのみを true に設定します。 この設定は、呼び出し元が、セッションにサーバー レベルのアクセスを必要と、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
-| 非アクティブです| string| セッションのリストが含まれますをユーザーが受け入れられますがアクティブにプレイしていないかどうかを示す値。 このパラメーターを設定することのみを true に設定します。 |
-| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することのみを true に設定します。 自分のセッションをクエリするときにのみ、またはサーバーからサーバーを照会すると、無効です。 セッションへのサーバー レベルのアクセスが呼び出し元を true にこのパラメーターを設定する必要があります、または Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
+| 非アクティブです| string| セッションのリストが、ユーザーが受け入れたがアクティブにプレイしていないものを含むかどうかを示す値。 このパラメーターを設定することのみを true に設定します。 |
+| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することのみを true に設定します。 独自のセッションをクエリするときにのみ、またはサーバー間を照会すると、無効です。 このパラメーターを true に設定、呼び出し元が、セッションにサーバー レベルのアクセスを必要とまたは Xbox ユーザー ID フィルターに一致するように、呼び出し元の XUID を要求します。 |
 | visibility| string| 結果のフィルタ リングで使われる表示状態を示す列挙値。 現在このパラメーターのみに設定できます開くを開いているセッションを含めます。 <b>MultiplayerSessionVisibility</b>を参照してください。 |
-| version| string| 正の整数を示すセッションのメジャー バージョンまたはセッションの下に含めます。 値は 100 モジュロ要求のコントラクト バージョン以内である必要があります。 |
-| アプリ| string| 正の整数セッションの最大数を示すを取得します。|
+| version| string| 正の整数を示すセッションのメジャー バージョンまたはセッションの下に含めます。 値は 100 モジュロ要求のコントラクト バージョン以下である必要があります。 |
+| アプリでは| string| 正の整数セッションの最大数を示すを取得します。|
 
 <a id="ID4EXB"></a>
 
@@ -79,7 +79,7 @@ ms.locfileid: "6032888"
 
 ## <a name="response-body"></a>応答本文
 
-このメソッドからの戻り値は、いくつかのセッション データが含まれているインラインで、セッション参照の JSON 配列です。
+このメソッドからの戻り値は、いくつかのセッション データが含まれているインラインでのセッション参照の JSON 配列です。
 
 
 ```cpp

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d37054d03f6ebe8299db78673dc631c9b4b4bc16
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049107"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6277646"
 ---
 # <a name="property-json"></a>Property (JSON)
 マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。
@@ -23,7 +23,7 @@ ms.locfileid: "6049107"
 
 ## <a name="property"></a>プロパティ
 
-プロパティ オブジェクトには、次の仕様があります。
+プロパティのオブジェクトでは、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |

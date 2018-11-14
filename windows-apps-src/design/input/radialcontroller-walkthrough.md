@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df0f37fda62a7b673e28a6198758365886b6783
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035634"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6658821"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>チュートリアル: UWP アプリで Surface Dial (およびその他のホイール デバイス) をサポートする
 
@@ -60,7 +60,7 @@ Dial は、次の 3 つの基本的なジェスチャをサポートしていま
 6. Windows デバイスに戻り、[**Bluetooth またはその他のデバイスを追加する**] を選びます。
 7. [**デバイスの追加**] ダイアログ ボックスで、[**Bluetooth**] > [**Surface Dial**] の順に選びます。 Surface Dial が接続されて、[**Bluetooth とその他のデバイス**] 設定ページの [**マウス、キーボード、ペン**] の下のデバイスの一覧に追加されます。
 8. Dial を数秒ほど長押しして、組み込みのメニューが表示されるかどうかテストします。
-9. (Dial ダイヤルはバイブレーションします)、画面にメニューが表示されない場合は、Bluetooth の設定に戻すには、デバイスを削除し、もう一度デバイスを接続してみてくださいに移動します。
+9. (Dial ダイヤルはバイブレーションします)、画面にメニューが表示されない場合は、Bluetooth の設定に戻すには、デバイスを削除し、デバイスを接続し直してを移動します。
 
 > [!NOTE]
 > ホイール デバイスは [**ホイール**] 設定から構成できます。

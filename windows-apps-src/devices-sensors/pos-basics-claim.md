@@ -1,6 +1,6 @@
 ---
 author: TerryWarwick
-title: PointOfService デバイスを要求し、モデルを有効にします。
+title: PointOfService デバイスの要求し、モデルを有効にします。
 description: PointOfService 要求について学習し、モデルを有効にします。
 ms.author: jken
 ms.date: 06/19/2018
@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026005"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271094"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>Point of Service デバイス要求およびモデルを有効にします。
 
-## <a name="claiming-for-exclusive-use"></a>排他的使用のための要求
+## <a name="claiming-for-exclusive-use"></a>排他的使用の要求
 
 PointOfService デバイス オブジェクトを正常に作成したら、入出力にデバイスを使用する前に、デバイスの種類に適切な要求方法を使用して要求する必要があります。  要求により、多くのデバイスの機能に対する排他的アクセスがアプリケーションに付与され、あるアプリケーションが別のアプリケーションによるデバイスの使用を妨げないようにします。  排他的使用のために一度に PointOfService デバイスを要求できるアプリケーションは 1 つだけです。 
 
@@ -36,7 +36,7 @@ PointOfService デバイス オブジェクトを正常に作成したら、入�
 
 ## <a name="enable-device-for-io-operations"></a>I/O 操作用のデバイスを有効にします。
 
-要求アクションは単に、デバイスを排他的の権利を確立していますが、操作の状態には配置されません。  イベントを受信または出力の操作を実行するのには、 **EnableAsync**を使用してデバイスを有効にする必要があります。  逆に、デバイスまたは実行中の出力からイベントをリッスンしてを停止する**DisableAsync**を呼び出すことができます。  デバイスの状態を判断**IsEnabled**を使用することもできます。
+要求アクションは単に、デバイスへの排他的な権利を確立していますが、操作の状態には配置されません。  イベントを受信または出力操作を実行するのには、 **EnableAsync**を使用してデバイスを有効にする必要があります。  逆に、デバイスまたは実行中の出力からイベントをリッスンしてを停止する**DisableAsync**を呼び出すことができます。  お使いのデバイスの状態を判断**IsEnabled**を使用することもできます。
 
 ### <a name="apis-used-enable--disable"></a>使用されている Api を有効にする/無効にします。
 

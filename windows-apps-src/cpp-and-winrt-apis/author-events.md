@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 作成者, イベント
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4d36fa22953bc4745b631303aae62985a5aa05
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444599"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671616"
 ---
 # <a name="author-events-in-cwinrt"></a>C++/WinRT でのイベントの作成
 
@@ -148,7 +148,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>パラメーターのデリゲートと ABI 間での単純な信号
 
-イベントをアプリケーション バイナリ インターフェイス (ABI) の間でアクセスできる必要があるかどうか&mdash;コンポーネントとその使用中のアプリケーション間など&mdash;、イベントは、Windows ランタイムのデリゲート型を使用する必要があります。 上記の例では、Windows ランタイムの[**Windows::Foundation::EventHandler\ < t \ >**](/uwp/api/windows.foundation.eventhandler)のデリゲート型を使用します。 [**TypedEventHandler\ < TSender, TResult\ >**](/uwp/api/windows.foundation.eventhandler)は、Windows ランタイムのデリゲート型の別の例を示します。
+イベントをアプリケーション バイナリ インターフェイス (ABI) の間でアクセスできる必要があるかどうか&mdash;コンポーネントとその使用中のアプリケーション間など&mdash;、イベントは、Windows ランタイムのデリゲート型を使用する必要があります。 使用上の例、 [**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) Windows ランタイムのデリゲート型です。 [**TypedEventHandler\<TSender、TResult\ >**](/uwp/api/windows.foundation.eventhandler)の Windows ランタイムのデリゲート型の別の例を示します。
 
 これら 2 つのデリゲート型の型のパラメーターは、型のパラメーター Windows ランタイム型でなければすぎるため、ABI を通過する必要があります。 数字と文字列などのプリミティブ型と同様に、ファーストおよびサード パーティ製のランタイム クラスが含まれています。 コンパイラは、"*WinRT 型である必要がある*"エラーに制約を忘れた場合するように役立ちます。
 

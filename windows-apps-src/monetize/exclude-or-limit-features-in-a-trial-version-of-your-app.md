@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 48fb632d0491d333f8c4a7c5e775041ec31aeee3
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6465275"
+ms.locfileid: "6659293"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>試用版での機能の除外または制限
 

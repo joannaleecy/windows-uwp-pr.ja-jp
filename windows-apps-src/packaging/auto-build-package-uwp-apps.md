@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 78cb7240fd11cee77556078f10500ca1a2087f0e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194846"
+ms.locfileid: "6258185"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -292,7 +292,7 @@ HockeyApp タスクには、シンボル ファイルへのパスを指定する
 
 このウィザードでは、Microsoft Store の関連付けの情報が含まれる Package.StoreAssociation.xml という名前のファイルが生成されます。 GitHub などのパブリック リポジトリでソース コードを保存する場合、このファイルには、そのアカウントのすべてのアプリの予約名が含まれます。 公開する前に、このファイルを除外または削除することができます。
 
-アプリを公開するために使用したデベロッパー センター アカウントへのアクセス権がない場合は、[サード パーティ向けのアプリをビルドする場合に、Microsoft Store アプリをパッケージ化する方法に関するページ](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)で説明されている手順に従ってください。
+このドキュメントの手順では、アプリを公開するために使用したパートナー センター アカウントへのアクセスをお持ちでない場合:[サード パーティのアプリを構築するかどうか。ストア アプリをパッケージ化する方法](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)します。
 
 次に、ビルド ステップに次のパラメーターが含まれていることを確認する必要があります。
 
@@ -306,11 +306,11 @@ HockeyApp タスクには、シンボル ファイルへのパスを指定する
 
 Visual Studio Team Services の Microsoft Store 用の拡張機能を使用して Microsoft Store API と統合し、アプリ パッケージを Microsoft Store に送信します。
 
-Azure Active Directory (AD) を使用してデベロッパー センター アカウントを接続し、AD で要求を認証するアプリを作成する必要があります。 これを実行するには、拡張機能のページのガイダンスに従います。
+Azure Active Directory (AD)、パートナー センターのアカウントを接続し、要求を認証する広告にアプリを作成する必要があります。 これを実行するには、拡張機能のページのガイダンスに従います。
 
 拡張機能を構成した後は、ビルド タスクを追加し、アプリの ID と、アップロード ファイルの場所を使用して構成します。
 
-![デベロッパー センターを構成する](images/building-screen17.png)
+![パートナー センターを構成します。](images/building-screen17.png)
 
 `Package File` パラメーターの値は次のようになります。
 

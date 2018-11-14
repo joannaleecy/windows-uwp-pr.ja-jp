@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d95d3f0f171fa0e529d57ab5deca8160ddc3c43
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6041979"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267773"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 一覧内の項目を移動します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
@@ -29,8 +29,8 @@ ms.locfileid: "6041979"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | XUID| string| ユーザーの XUID です。| 
-| リスト| string| 操作するリストの名前。| 
-| インデックス| string| 移動する項目の現在のインデックスを指定します。 インデックス値が 0 または正の整数の場合は、これは、項目の現在のインデックスを参照し、呼び出しの要求本文は空にする必要があります。 ただし、インデックス値が「-1」の場合は、ItemId または呼び出しの要求本文には、プロバイダー/ProviderID によって移動する項目を指定してください。 | 
+| リスト| string| 操作をするリストの名前。| 
+| インデックス| string| 移動する項目の現在のインデックスを指定します。 インデックス値が 0 または正の整数の場合は、これは、項目の現在のインデックスを参照し、呼び出しの要求本文は空にする必要があります。 ただし、インデックス値が「-1」の場合、ItemId または呼び出しの要求本文には、プロバイダー/ProviderID によって移動する項目を指定してください。 | 
   
 <a id="ID4EHC"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "6041979"
 
 [POST](uri-usersxuidlistspinslistnameindexpost.md)
 
-&nbsp;&nbsp;リスト項目をリスト内の異なる位置に移動します。
+&nbsp;&nbsp;リスト内の項目をリスト内の異なる位置に移動します。
  
 <a id="ID4ERC"></a>
 

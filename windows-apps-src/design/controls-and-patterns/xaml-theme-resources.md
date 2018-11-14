@@ -14,11 +14,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030799"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276962"
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
@@ -377,7 +377,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-**注**: **RichTextBlock**のブロック ベースのドキュメント オブジェクト モデルでは、簡単に個々 のテキストの属性を設定するために主に、 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)スタイルは[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、すべてのテキスト見本スタイルがないです。要素です。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+**注**: **RichTextBlock**のブロック ベースのドキュメント オブジェクト モデルでは、簡単に個々 のテキストで属性を設定するために主に、 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)スタイルは[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、すべてのテキスト見本スタイルがないです。要素です。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## <a name="miscellaneous-named-styles"></a>その他の名前付きスタイル
 

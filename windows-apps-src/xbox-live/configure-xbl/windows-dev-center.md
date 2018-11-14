@@ -1,32 +1,32 @@
 ---
-title: デベロッパー センターのサービス構成
+title: パートナー センター サービスの構成
 author: KevinAsgari
-description: Windows デベロッパー センターで Xbox Live サービスを構成する方法について説明するトピックへのリンクを示します。
+description: パートナー センターで Xbox Live サービスを構成する方法について詳しく説明するトピックへのリンクを示します。
 ms.author: kevinasg
 ms.date: 7/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: e43d62610774552cce4153c7b8eca9be5406281b
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6032107"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6259758"
 ---
-# <a name="windows-dev-center-service-configuration"></a>Windows デベロッパー センターのサービス構成
+# <a name="partner-center-service-configuration"></a>パートナー センター サービスの構成
 
-[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、パートナー センターでの Xbox Live サービスを構成できます。
 
 > [!IMPORTANT]
 > これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
-ゲームは、設定ページにアクセスするために Xbox Live のフル アクセスを有効にする必要があります。
+ゲームは、設定ページにアクセスするために、Xbox Live のフル アクセスに対して有効にする必要があります。
 
-Xbox Live 構成にアクセスするページ、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。
+Xbox Live 構成にアクセスするページでは、[パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。
 
 
-次のトピックでは、Windows デベロッパー センターを使用して Xbox Live を構成する方法について説明します。
+次のトピックでは、パートナー センターを使用して Xbox Live を構成する方法について説明します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

@@ -14,11 +14,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: daea428d6fad34116dac743655162c2f32315bea
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161983"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668797"
 ---
 # <a name="swipe"></a>スワイプ
 

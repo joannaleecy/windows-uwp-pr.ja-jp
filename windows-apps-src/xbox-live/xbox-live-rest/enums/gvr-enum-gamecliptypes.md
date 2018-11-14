@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 43579570ea86c79146d99e7c6b46570b67d68d2b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024503"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6255172"
 ---
 # <a name="gamecliptype-enumeration"></a>GameClipType 列挙型
 GameClipTypes 列挙をについて説明します。 
@@ -23,11 +23,11 @@ GameClipTypes 列挙をについて説明します。
  
 ## <a name="gamecliptypes"></a>GameClipTypes
  
-これは、複数の値は、考えられるため、フラグ列挙体です。
+これは、複数の値は、考えられるため、フラグの列挙体です。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| ゲーム クリップの種類は、不明なまたは設定されていないです。 (アップロードは無効)| 
+| None| ゲーム クリップの種類は、不明な設定されていません。 (アップロードでは無効です)| 
 | MetadataOnly| ゲーム クリップには、アセット データ – メタデータのみ含まれません。 (の将来の使用)| 
 | DeveloperInitiated| ゲーム クリップは、開発者/タイトルによって開始されます。| 
   

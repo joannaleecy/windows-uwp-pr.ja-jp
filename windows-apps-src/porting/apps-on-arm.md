@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, ARM, ARM64, x86 エミュレーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466421"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671545"
 ---
 # <a name="windows-10-on-arm"></a>ARM 版 Windows 10
 もともと、Windows 10 (Windows 10 Mobile とは区別されます) は、x86 および x64 プロセッサを搭載した PC でのみ実行できました。 現在では、Fall Creators Update により、ARM64 プロセッサ搭載のコンピューターでも Windows 10 Desktop (Pro エディションおよび S エディション) を実行できるようになりました。 ARM CPU アーキテクチャが持つ省電力の性質により、これらの PC のバッテリーが終日持つようになり、モバイル データ ネットワークがサポートされるようになります。 これらの PC にはアプリケーションの互換性が十分に備わっており、既存の x86 win32 アプリケーションを変更せずに実行できます。 例: Adobe Reader。 詳細またはデモについては、[Always Connected PC に関する Channel 9 ビデオ](https://channel9.msdn.com/Events/Build/2017/P4171)をご覧ください。 

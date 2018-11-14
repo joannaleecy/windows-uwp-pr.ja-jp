@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d5cc0d73975b591d7584b1ac606aa3323cd6da3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 86472e4b3f9c7390eb7e6236de088ba2649901d1
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206927"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268460"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 
@@ -23,7 +23,7 @@ ms.locfileid: "6206927"
 > [!IMPORTANT] 
 > Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)」をご覧ください。
 
-**MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .Appxupload ファイルは、Visual Studio のパッケージ化プロセスの一部として作成され、その他の 2 つのファイルが含まれています: .msix または .appx と .appxsym します。 .appxsym ファイルは、アプリのパブリック シンボルが格納された圧縮 .pdb ファイルです。これらのパブリック シンボルは、Windows デベロッパー センターでの[クラッシュ分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)に使われます。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)」をご覧ください。 
+**MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .Appxupload ファイルは、Visual Studio のパッケージ化プロセスの一部として作成され、その他の 2 つのファイルが含まれています: .msix または .appx と .appxsym します。 .Appxsym ファイルは、パートナー センターで[クラッシュ分析](../publish/health-report.md)のために使用されるアプリのパブリック シンボルを含んでいる圧縮 .pdb ファイルです。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](../publish/upload-app-packages.md)」をご覧ください。 
 
  最新バージョンの Windows 10 では、このツールの更新プログラムでは、.appx パッケージの使用量は影響しません。 引き続き .appx パッケージでは、このツールを使用したり、以下のように .msix パッケージのサポート ツールを使用できます。
 

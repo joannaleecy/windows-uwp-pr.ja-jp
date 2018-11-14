@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c414b7e95a81d1ac6307229c49b87072059d3a15
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 61447108b6abf2f6e6a68c12bb0aaf2b8ababd34
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044890"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207052"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高度な Xbox Live のサンドボックス
 
@@ -43,7 +43,7 @@ CERT と RETAIL の 2 つのシステム サンドボックスは Microsoft の�
 
 ## <a name="initial-setup-for-a-title"></a>タイトル用の初期セットアップ
 
-タイトルは Xbox デベロッパー ポータル (XDP) または Windows デベロッパー センターで作成されます。 タイトルには、タイトル ID、製品 ID、サービス構成 ID (SCID) が割り当てられます。
+タイトルは Xbox デベロッパー ポータル (XDP) またはパートナー センターで作成されます。 タイトルには、タイトル ID、製品 ID、サービス構成 ID (SCID) が割り当てられます。
 
 タイトルを新たに作成しても、タイトルや製品だけでは Xbox Live にとって何の意味もありません。 1 つのタイトルを、製品版や開発用に同時に使用できるようにする必要があります。そのため、タイトルの*インスタンス化*をサポートして、タイトルを必要に応じて区別し、これを維持する必要があります。 タイトルのインスタンスはサンドボックスに存在します。これがサンドボックスの役割です。
 
@@ -119,11 +119,11 @@ Xbox One でのコンテンツへのアクセスには、以下の 2 種類が�
 
 Xbox One の開発者アカウントは、特別なルールが適用された標準の Microsoft アカウント (MSA) であり、 開発のために Xbox Live で使用されます。 開発者アカウントについて次に説明します。
 
--   XDP または Windows デベロッパー センターで作成される必要があります。
+-   XDP またはパートナー センターから作成する必要があります。
 
 -   公開元によって作成されるときに、外部開発者のロールが割り当てられます。
 
--   開発者アカウントを作成した XDP アカウントや Windows デベロッパー センター アカウントと関連付けられます。
+-   XDP アカウントやデベロッパー アカウントを作成したパートナー センター アカウントに関連付けられます。
 
 -   開発キットのみにログインできます。 製品デバイス上では開発者アカウントへのログインは拒否されます。
 

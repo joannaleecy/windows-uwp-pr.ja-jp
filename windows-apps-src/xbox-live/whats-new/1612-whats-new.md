@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af884a873b83abb4a560fad504b45961267956c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6031691"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6249787"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---december-2016"></a>Xbox Live SDK の新規事項 - December 2016
 
@@ -34,4 +34,4 @@ November 2016 リリースで追加された内容については、「[新規�
 * GameChat 用のドキュメントが追加されました
 
 > [!IMPORTANT]
-> GameChat は、GameChat 2 に置き換えられました。 GameChat 1 はサポートされなくなったと[GameChat 2 のドキュメント](../multiplayer/chat/game-chat-2-overview.md)を参照してください。
+> GameChat は GameChat 2 に置き換えられました。 GameChat 1 はサポートされなくなったと[GameChat 2 のドキュメント](../multiplayer/chat/game-chat-2-overview.md)を参照してください。

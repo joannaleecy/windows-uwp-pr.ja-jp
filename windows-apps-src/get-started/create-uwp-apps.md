@@ -7,18 +7,18 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: dde635624101fdcf0803770bc69e7922f56f704e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4bc64b0a6919180b6041bdbf4f81463019d274eb
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031581"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261580"
 ---
 # <a name="start-coding"></a>コーディングの開始
 
 ![アプリの構築](images/build-your-app.png)
 
-[UWP プラットフォーム](universal-application-platform-guide.md)へようこそ。 このページでは、作成する Windows 10 アプリのコーディングを始めるために必要な適切な情報を提供します。
+[UWP プラットフォーム](universal-application-platform-guide.md)へようこそ。 このページで、適切な情報を作成する Windows 10 アプリのコーディングを開始する必要があるポイントしますがあります。
 
 開発を始める前に、必ず[セットアップする](get-set-up.md)必要があります。
 

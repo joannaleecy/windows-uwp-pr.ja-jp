@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042252"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250238"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル: UWP アプリでインクをサポートする
 
@@ -40,7 +40,7 @@ Windows Ink を使うと、ユーザーに、ペンと紙の体験とほぼ同�
 * 現在のバージョンの Windows 10 を実行するコンピューター (または仮想マシン)。
 * [Visual Studio 2017 および RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* 構成によっては、 [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) NuGet パッケージをインストールして、システムの設定で**開発者モード**を有効にする必要があります (設定の更新]-> [&、セキュリティでは、開発者向け]-> [の]-> [開発者向け機能を使用)。
+* 構成によっては、 [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform/6.1.9) NuGet パッケージをインストールし、システムの設定で**開発者モード**を有効にする必要があります (設定の更新]-> [&、セキュリティでは、開発者向け]-> [の]-> [開発者向け機能を使用)。
 * Visual Studio を使ってユニバーサル Windows プラットフォーム (UWP) アプリの開発を初めて行う場合は、このチュートリアルを開始する前に、次のトピックをご覧ください。  
     * [準備](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * ["Hello, world" アプリを作成する (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)

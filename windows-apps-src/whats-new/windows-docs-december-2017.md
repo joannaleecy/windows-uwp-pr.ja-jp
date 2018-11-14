@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 112e9f60e38bc5a665d9011f35b9e92189f15f80
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460905"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671968"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 12 月
 
@@ -48,7 +48,7 @@ Mixed Reality の世界に入ろうとしている技術者を対象とした[�
 
 Microsoft Collaborate ポータルには、エンジニアリング システムの作業項目 (バグ、機能に関するご要望など) の共有とコンテンツ (ビルド、ドキュメント、仕様) の配布を可能にすることで、Microsoft エコシステム内でのエンジニアリング コラボレーションを簡素化するツールとサービスが用意されています。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/en-us/collaborate)。
 
-![デベロッパー センター ダッシュボードの Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
+![パートナー センターで Microsoft の共同作業します。](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>UWP プロジェクトを使ってデスクトップ アプリケーションをパッケージ化する
 

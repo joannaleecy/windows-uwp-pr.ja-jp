@@ -10,14 +10,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ba9221b7b213cfd6c92a9a6cfcd5c6dec5c051fb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6040759"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6265704"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10433`します。
+指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインとポート番号は`reputation.xboxlive.com:10433`します。
  
   * [URI パラメーター](#ID4EV)
  

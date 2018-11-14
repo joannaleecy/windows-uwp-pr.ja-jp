@@ -9,11 +9,11 @@ keywords: Windows 10、UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6188628"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279658"
 ---
 # <a name="respond-to-customer-feedback"></a>顧客のフィードバックに返信する
 
