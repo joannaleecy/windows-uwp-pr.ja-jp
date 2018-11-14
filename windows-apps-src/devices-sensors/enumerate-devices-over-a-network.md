@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 00f8d4314d67828fa30007d3b8af4c4e1d06c154
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6282769"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6449147"
 ---
 # <a name="enumerate-devices-over-a-network"></a><span data-ttu-id="8aec5-104">ネットワーク経由でデバイスを列挙する</span><span class="sxs-lookup"><span data-stu-id="8aec5-104">Enumerate devices over a network</span></span>
 

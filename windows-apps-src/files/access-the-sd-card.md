@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, SD カード, ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469034"
+ms.locfileid: "6648618"
 ---
 # <a name="access-the-sd-card"></a><span data-ttu-id="8e5b0-104">SD カードへのアクセス</span><span class="sxs-lookup"><span data-stu-id="8e5b0-104">Access the SD card</span></span>
 

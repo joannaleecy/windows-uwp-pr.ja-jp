@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6259933"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6647850"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a><span data-ttu-id="b03eb-104">アプリとアドオンの製品情報の取得</span><span class="sxs-lookup"><span data-stu-id="b03eb-104">Get product info for apps and add-ons</span></span>
 
