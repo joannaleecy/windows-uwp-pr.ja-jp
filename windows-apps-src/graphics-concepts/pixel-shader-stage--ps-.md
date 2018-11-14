@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84178a4e5cf993574e7553da44beecf13622bd65
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193665"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6648651"
 ---
 # <a name="pixel-shader-ps-stage"></a><span data-ttu-id="1d29b-104">ピクセル シェーダー (PS) ステージ</span><span class="sxs-lookup"><span data-stu-id="1d29b-104">Pixel Shader (PS) stage</span></span>
 

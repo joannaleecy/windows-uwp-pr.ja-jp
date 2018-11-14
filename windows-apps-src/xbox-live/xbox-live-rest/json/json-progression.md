@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6187775"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267186"
 ---
 # <a name="progression-json"></a><span data-ttu-id="1a284-104">Progression (JSON)</span><span class="sxs-lookup"><span data-stu-id="1a284-104">Progression (JSON)</span></span>
 <span data-ttu-id="1a284-105">実績をロック解除に向けたユーザーの進行します。</span><span class="sxs-lookup"><span data-stu-id="1a284-105">The user's progression toward unlocking the achievement.</span></span> 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ユーザー インターフェイス, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 9962cc9043bd650390721715ca73b2e85a219c25
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183913"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6453155"
 ---
 # <a name="add-a-user-interface"></a><span data-ttu-id="c7288-104">ユーザー インターフェイスの追加</span><span class="sxs-lookup"><span data-stu-id="c7288-104">Add a user interface</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, オーディオ, ゲーム, サンプル
 ms.localizationpriority: medium
 ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6253511"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6471545"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a><span data-ttu-id="c856e-104">Marble Maze のサンプルへのオーディオの追加</span><span class="sxs-lookup"><span data-stu-id="c856e-104">Adding audio to the Marble Maze sample</span></span>
 

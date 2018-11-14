@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278849"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6454064"
 ---
 # <a name="streaming-resources-features-tiers"></a><span data-ttu-id="29aec-104">ストリーミング リソース機能の階層</span><span class="sxs-lookup"><span data-stu-id="29aec-104">Streaming resources features tiers</span></span>
 

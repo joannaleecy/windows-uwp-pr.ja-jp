@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, タイマー, スレッド
 ms.localizationpriority: medium
 ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278218"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6455302"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a><span data-ttu-id="d6b34-104">タイマーを使った作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="d6b34-104">Use a timer to submit a work item</span></span>
 

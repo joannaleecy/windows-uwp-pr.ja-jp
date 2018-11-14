@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203538"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266197"
 ---
 # <a name="get-file-properties"></a><span data-ttu-id="25e05-104">ファイルのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="25e05-104">Get file properties</span></span>
 
