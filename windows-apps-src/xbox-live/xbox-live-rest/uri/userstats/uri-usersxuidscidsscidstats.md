@@ -10,14 +10,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dd3298c5191f5cfc2e470203567722251371ecb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6048578"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182043"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
-スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
+スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -28,7 +28,7 @@ ms.locfileid: "6048578"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのします。| 
+| xuid| GUID| Xbox ユーザー ID (XUID) サービス構成にアクセスする対象ユーザーのです。| 
 | scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。| 
   
 <a id="ID4E4B"></a>
@@ -38,11 +38,11 @@ ms.locfileid: "6048578"
 
 [GET](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストで、サービス構成を取得します。
+&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成を取得します。
 
 [値のメタデータを取得します。](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-&nbsp;&nbsp;指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
+&nbsp;&nbsp;指定されたサービス構成内のユーザーの統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
  
 <a id="ID4EKC"></a>
 

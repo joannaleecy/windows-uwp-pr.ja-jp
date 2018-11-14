@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 495bf2e58fafd9e321937bd6fdb3be8c8dea68e2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026325"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267961"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C# のコード例 : アプリ、アドオン、およびフライトの申請
 
@@ -56,7 +56,7 @@ ms.locfileid: "6026325"
 
 ## <a name="create-an-app-submission"></a>アプリの申請の作成
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってアプリの申請を更新するクラスを実装します。 ```RunAppSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunAppSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってアプリの申請を更新するクラスを実装します。 ```RunAppSubmissionUpdateSample```クラスのメソッドは、最後に公開された申請の複製として新しい申請を作成および更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunAppSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアプリのデータを取得](get-an-app.md)します。
 2. 次に、[アプリの保留中の申請を削除](delete-an-app-submission.md)します (存在する場合)。
@@ -87,7 +87,7 @@ ms.locfileid: "6026325"
 
 ## <a name="update-an-add-on-submission"></a>アドオンの申請の更新
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使って既存のアドオンの申請を更新するクラスを実装します。 ```RunInAppProductSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunInAppProductSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使って既存のアドオンの申請を更新するクラスを実装します。 ```RunInAppProductSubmissionUpdateSample```クラスのメソッドは、最後に公開された申請の複製として新しい申請を作成および更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunInAppProductSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
@@ -102,7 +102,7 @@ ms.locfileid: "6026325"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってパッケージ フライトの申請を更新するクラスを実装します。 ```RunFlightSubmissionUpdateSample```クラスのメソッドの最後に公開された申請の複製として新しい申請を作成して、次を更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunFlightSubmissionUpdateSample``` メソッドは次のタスクを実行します。
+次の例では、Microsoft Store 申請 API のいくつかのメソッドを使ってパッケージ フライトの申請を更新するクラスを実装します。 ```RunFlightSubmissionUpdateSample```クラスのメソッドは、最後に公開された申請の複製として新しい申請を作成および更新し、パートナー センターに複製された申請をコミットします。 具体的には、```RunFlightSubmissionUpdateSample``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。

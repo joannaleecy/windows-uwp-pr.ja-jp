@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、マップ認証キー、マップ コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046782"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203249"
 ---
 # <a name="request-a-maps-authentication-key"></a>マップ認証キーの要求
 
@@ -33,7 +33,7 @@ ms.locfileid: "6046782"
 
 新しいキーを作成するには
 
-1.  ブラウザーで、Bing Maps Developer Center に移動します ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  ブラウザーで Bing Maps Developer Center に移動します ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
 2.  サインインを求められた場合は、Microsoft アカウントを入力して、**[Sign in] (サインイン)** をクリックします。
 

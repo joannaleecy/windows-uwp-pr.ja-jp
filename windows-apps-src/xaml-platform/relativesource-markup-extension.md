@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023530"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183216"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} マークアップ拡張
 
@@ -62,7 +62,7 @@ ms.locfileid: "6023530"
 
 オブジェクトの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を自分自身に設定する方法として `RelativeSource={RelativeSource Self}` を使うこともできます。  たとえば、独自のデータ バインドのために準備の完了したビュー モデルを既に提供しているカスタム プロパティによって [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスが拡張されている SDK のサンプルで、この技法を確認できます。 `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注:** **RelativeSource**の XAML の使用量が意図されている使用法のみを示しています。 バインド式の一部として XAML で[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)の値を設定します。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
+**注:** **RelativeSource**用の XAML の使用方法は対象となる使用方法のみを示しています。 バインド式の一部として XAML で[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)の値を設定します。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
 
 ## <a name="related-topics"></a>関連トピック
 

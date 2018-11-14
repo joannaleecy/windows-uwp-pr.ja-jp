@@ -9,22 +9,22 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043485"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6160684"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。 このトピックでは、コマンド ライン オプションの使用について説明します。
 
 > [!NOTE]
-> MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダー)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
+> MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
-## <a name="getting-help-from-the-command-line"></a>コマンドラインからのヘルプの取得
+## <a name="getting-help-from-the-command-line"></a>コマンドラインからヘルプを取得します。
 
-実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することも`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
+実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することもできます`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
 
 ## <a name="makepri-commands"></a>MakePri のコマンド
 
@@ -420,7 +420,7 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 
 ## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) オプション
 
-インデックスのオプションを使用する (/io) と`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。 既定では、インデックスのオプションが無効になります。
+インデックスのオプションを使用する (/io) で`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。 既定では、インデックスのオプションが無効になります。
 
 ```console
 /IndexOptions(io) <OPTIONS>
@@ -428,7 +428,7 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 
 **オプション**では、次のオプションの構成、コンマ区切りの一覧を示します。
 
-- HiddenFiles(hf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーを非表示します。
+- HiddenFiles(hf) +/。 インデックス (+) または (-) を無視するファイルとフォルダーの非表示になります。
 - LinkedFiles(lf) +/。 インデックス (+) または (-) を無視するファイルやフォルダーをリンクします。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) オプション

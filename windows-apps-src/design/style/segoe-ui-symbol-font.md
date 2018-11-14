@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d24f40c32cfcf3d0efe8597c4d955ae4146cf9e8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035780"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183648"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 
@@ -65,7 +65,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
 
 ## <a name="how-do-i-get-this-font"></a>このフォントの入手方法
 * Windows 10: を行うには必要ありませんが、フォントが Windows に付属します。
-* Mac では、ダウンロードとフォントをインストールする必要があります: <a href="https://aka.ms/SegoeFonts">Segoe UI と MDL2 アイコン フォントを取得します。</a>
+* Mac では、ダウンロードして、フォントをインストールする必要があります: <a href="https://aka.ms/SegoeFonts">Segoe UI と MDL2 アイコン フォントを取得します。</a>
 
 ## <a name="icon-list"></a>アイコン一覧
 **Segoe MDL2 アセット** フォントには、以下に示すアイコンもあります。 ここで紹介するアイコンの多くは、特殊な目的のために使用されるもので、それ以外の場合は通常使用しません。

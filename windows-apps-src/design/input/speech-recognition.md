@@ -11,11 +11,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b9148b2d57c55bdff09be9a9d6bb8a6b65d93f12
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027712"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161311"
 ---
 # <a name="speech-recognition"></a>音声認識
 
@@ -28,13 +28,13 @@ ms.locfileid: "6027712"
 
 ## <a name="configure-speech-recognition"></a>音声認識を構成します。
 
-ユーザーが接続する必要があります、アプリで音声認識をサポートするには、デバイスでマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
+ユーザーが接続する必要がありますアプリで音声認識をサポートするがデバイスにマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
 
-自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード ([音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)を次にからなど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
+自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード (から[音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)を次になど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
 
 ![マイク アクセス用のプライバシー ポリシー](images/speech/privacy.png)
 
-ユーザー設定の承認済みアプリケーションの一覧にアプリが追加されたマイク、アクセスを許可するには、[はい] をクリックした場合は、[プライバシー]-> [マイク] ページ]-> [します。 ただし、として、いつでもでもこの設定をオフにするには、ユーザーが選択できる、アプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
+ユーザー設定の承認済みアプリケーションの一覧にアプリを追加、マイクへのアクセスを付与するには、[はい] をクリックした場合は、[プライバシー]-> [マイク] ページ]-> [します。 ただし、いつでもでもこの設定をオフにするには、ユーザーが選択できる、としてアプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
 
 ディクテーション、Cortana をサポートする、またはその他の音声認識サービスの (など、[定義済みの文法](#predefined-grammars)で定義されたトピック制約)、またことを確認して**Online の音声認識**(設定のプライバシー]-> [音声認識]-> [) は、有効になります。
 

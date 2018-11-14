@@ -1,30 +1,30 @@
 ---
 title: ローカライズされた文字列
 author: shrutimundra
-description: Windows デベロッパー センターで文字列をローカライズする方法について説明します。
+description: パートナー センターで文字列をローカライズする方法について説明します
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 11/17/2017
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ローカライズされた文字列, Windows デベロッパー センター
-ms.openlocfilehash: da81c21c858aaa62cc6bbe385f08dd6ab613c979
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, ローカライズされた文字列, パートナー センター
+ms.openlocfilehash: b7d8f53656f60932c0f27f492f3769ddae8434ba
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024095"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182156"
 ---
-# <a name="configuring-localized-strings-on-windows-dev-center"></a>Windows デベロッパー センターでのローカライズされた文字列の構成
+# <a name="configuring-localized-strings-in-partner-center"></a>パートナー センターのローカライズされた文字列を構成します。
 
 このページを使うと、すべての Xbox Live 構成をゲームでサポートされているすべての言語にローカライズすることができます。 後続の Xbox Live ページで作成したサービス構成はすべて、ダウンロードしたファイルに追加されます。
 
-[Windows デベロッパー センター](https://developer.microsoft.com/dashboard)を使い、ゲームに関連付けられているすべての言語のローカライズされた文字列を構成できます。 次の手順に従って、構成を追加します。
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、ゲームに関連付けられているすべての言語でローカライズされた文字列を構成することができます。 次の手順に従って、構成を追加します。
 
 1. **[サービス]** > **[Xbox Live]** > **[Localized strings]** (ローカライズされた文字列) の順に選択して、**[Localized strings]** (ローカライズされた文字列) セクションに移動します。
 2. **[ダウンロード]** をクリックすると、localization.xml ファイルがローカル コンピューターにダウンロードされます。
 
-![デベロッパー センターのローカライズされた文字列構成ページのスクリーンショット](../../images/dev-center/localized-strings/localized-strings-1.png)
+![パートナー センターのローカライズされた文字列構成ページのスクリーン ショット](../../images/dev-center/localized-strings/localized-strings-1.png)
 
 3. ローカライズされた文字列を追加するには複製することにより、 <Value locale="en-US">迷路の再生</Value> タグとロケールの値を好みの言語とローカライズされた文字列の値に変更します。 エラーを回避するには、開発者表示ロケール内に少なくとも 1 つの値タグが必要です。
 

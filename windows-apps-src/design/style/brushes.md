@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e96604daa9f8736601f52c917b556369ec620e96
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046489"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182294"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>ブラシを使用して背景、前景、輪郭を描画する
 
@@ -39,7 +39,7 @@ ms.locfileid: "6046489"
 
 ### <a name="predefined-color-names"></a>定義済みの色の名前
 
-[**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 名前付きの色は、カスケード スタイル シート レベル 3 から*X11*色の名前、基づいているため、既に名前付きの色の一覧を使い慣れて web 開発やデザインの経験がある場合は、(CSS3) 仕様です。
+[**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 名前付きの色は、カスケード スタイル シート レベル 3 から*X11*色の名前に基づく (CSS3) 仕様、既にが発生する名前付きの色の一覧を使い慣れて web 開発や web デザインの経験があるようにします。
 
 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティを定義済みの色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) に設定する例を次に示します。
 
