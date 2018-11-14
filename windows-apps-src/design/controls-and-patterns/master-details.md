@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b30835e31e86c0c98d0c134ed28adca4413650c9
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202839"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6277988"
 ---
 # <a name="masterdetails-pattern"></a><span data-ttu-id="d34a0-103">マスター/詳細パターン</span><span class="sxs-lookup"><span data-stu-id="d34a0-103">Master/details pattern</span></span>
 

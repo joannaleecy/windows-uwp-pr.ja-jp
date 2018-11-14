@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 公開, 前処理, 認定, リリース, 保留, 申請, 公開, ステータス、時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6255644"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6454928"
 ---
 # <a name="the-app-certification-process"></a><span data-ttu-id="8d845-103">アプリの認定プロセス</span><span class="sxs-lookup"><span data-stu-id="8d845-103">The app certification process</span></span>
 

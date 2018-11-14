@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9947180764d196579569536ec979fc31f3570d
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197897"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263323"
 ---
 # <a name="c-api-error-handling"></a><span data-ttu-id="d430f-104">C++ API のエラー処理</span><span class="sxs-lookup"><span data-stu-id="d430f-104">C++ API error handling</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 13468ce3b74992c026d94223b5e67aea99d79991
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6152072"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6282789"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a><span data-ttu-id="cc564-104">WinAppDeployCmd.exe ツールを使ったアプリのインストール</span><span class="sxs-lookup"><span data-stu-id="cc564-104">Install apps with the WinAppDeployCmd.exe tool</span></span>
 

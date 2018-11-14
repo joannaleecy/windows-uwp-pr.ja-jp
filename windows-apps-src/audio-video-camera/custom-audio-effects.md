@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
 ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040339"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6253073"
 ---
 # <a name="custom-audio-effects"></a><span data-ttu-id="82321-103">カスタムのオーディオ特殊効果</span><span class="sxs-lookup"><span data-stu-id="82321-103">Custom audio effects</span></span>
 

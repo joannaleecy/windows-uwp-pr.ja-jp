@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 525249475a9fc8a22d976398cf277620de6655e1
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6187468"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253966"
 ---
 # <a name="configure-access-policies-in-partner-center"></a><span data-ttu-id="d14d7-104">パートナー センターへのアクセス ポリシーを構成します。</span><span class="sxs-lookup"><span data-stu-id="d14d7-104">Configure access policies in Partner Center</span></span>
 

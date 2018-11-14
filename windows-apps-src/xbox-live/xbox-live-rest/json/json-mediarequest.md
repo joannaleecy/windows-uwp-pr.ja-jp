@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a01268ba88e50fd170924163cf4f4880825535c1
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207338"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6263463"
 ---
 # <a name="mediarequest-json"></a><span data-ttu-id="4adfd-104">MediaRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="4adfd-104">MediaRequest (JSON)</span></span>
  

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 統計, 実績, ランキング, 設計
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bcf2c0697f932e8ad121fe0e3cc52c221b7ed5f
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6182195"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6262532"
 ---
 # <a name="designing-xbox-live-experiences"></a><span data-ttu-id="86949-104">Xbox Live エクスペリエンスの設計</span><span class="sxs-lookup"><span data-stu-id="86949-104">Designing Xbox Live Experiences</span></span>
 

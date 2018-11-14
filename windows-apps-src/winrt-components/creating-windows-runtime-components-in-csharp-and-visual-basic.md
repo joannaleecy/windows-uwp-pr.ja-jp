@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6191509"
+ms.locfileid: "6259325"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a><span data-ttu-id="f67cd-104">C# および Visual Basic での Windows ランタイム コンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="f67cd-104">Creating Windows Runtime Components in C# and Visual Basic</span></span>
 <span data-ttu-id="f67cd-105">.NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。</span><span class="sxs-lookup"><span data-stu-id="f67cd-105">Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component.</span></span> <span data-ttu-id="f67cd-106">また、C++、JavaScript、Visual Basic、C# を利用することで、ユニバーサル Windows プラットフォーム (UWP) アプリでコンポーネントを使うことができます。</span><span class="sxs-lookup"><span data-stu-id="f67cd-106">You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#.</span></span> <span data-ttu-id="f67cd-107">このトピックでは、コンポーネントを作成するための規則について説明し、Windows ランタイムの .NET Framework のサポートの一部の側面を説明します。</span><span class="sxs-lookup"><span data-stu-id="f67cd-107">This topic outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime.</span></span> <span data-ttu-id="f67cd-108">このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="f67cd-108">In general, that support is designed to be transparent to the .NET Framework programmer.</span></span> <span data-ttu-id="f67cd-109">ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f67cd-109">However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.</span></span>

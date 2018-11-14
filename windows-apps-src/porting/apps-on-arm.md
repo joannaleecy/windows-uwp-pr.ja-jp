@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, ARM, ARM64, x86 エミュレーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046802"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6257739"
 ---
 # <a name="windows-10-on-arm"></a><span data-ttu-id="163d4-104">ARM 版 Windows 10</span><span class="sxs-lookup"><span data-stu-id="163d4-104">Windows 10 on ARM</span></span>
 <span data-ttu-id="163d4-105">もともと、Windows 10 (Windows 10 Mobile とは区別されます) は、x86 および x64 プロセッサを搭載した PC でのみ実行できました。</span><span class="sxs-lookup"><span data-stu-id="163d4-105">Originally Windows 10 (as distinguished from Windows 10 Mobile) could run only on PCs that were powered by x86 and x64 processors.</span></span> <span data-ttu-id="163d4-106">現在では、Fall Creators Update により、ARM64 プロセッサ搭載のコンピューターでも Windows 10 Desktop (Pro エディションおよび S エディション) を実行できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="163d4-106">Now, Windows 10 desktop (Pro and S editions) can run on machines that are powered by ARM64 processors with the Fall Creators Update.</span></span> <span data-ttu-id="163d4-107">ARM CPU アーキテクチャが持つ省電力の性質により、これらの PC のバッテリーが終日持つようになり、モバイル データ ネットワークがサポートされるようになります。</span><span class="sxs-lookup"><span data-stu-id="163d4-107">The power-saving nature of the ARM CPU architecture allows these PCs to have all-day battery life and support for mobile data networks.</span></span> <span data-ttu-id="163d4-108">これらの PC にはアプリケーションの互換性が十分に備わっており、既存の x86 win32 アプリケーションを変更せずに実行できます。</span><span class="sxs-lookup"><span data-stu-id="163d4-108">These PCs will provide great application compatibility and allow you to run your existing x86 win32 applications unmodified.</span></span> <span data-ttu-id="163d4-109">例:</span><span class="sxs-lookup"><span data-stu-id="163d4-109">E.g.</span></span> <span data-ttu-id="163d4-110">Adobe Reader。</span><span class="sxs-lookup"><span data-stu-id="163d4-110">Adobe reader.</span></span> <span data-ttu-id="163d4-111">詳細またはデモについては、[Always Connected PC に関する Channel 9 ビデオ](https://channel9.msdn.com/Events/Build/2017/P4171)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="163d4-111">For more information or demo, look at the [Channel 9 video for the Always Connected PC](https://channel9.msdn.com/Events/Build/2017/P4171).</span></span> 

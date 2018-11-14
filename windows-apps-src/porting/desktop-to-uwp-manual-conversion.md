@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6198155"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6445181"
 ---
 # <a name="package-a-desktop-application-manually"></a><span data-ttu-id="d584c-103">デスクトップ アプリケーションを手動でパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="d584c-103">Package a desktop application manually</span></span>
 

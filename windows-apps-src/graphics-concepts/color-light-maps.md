@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 757fbf93aa364e4143af0b5d5f2fc3f63a2f9c0c
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6150535"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203747"
 ---
 # <a name="color-light-maps"></a><span data-ttu-id="a8721-105">色のライト マップ</span><span class="sxs-lookup"><span data-stu-id="a8721-105">Color light maps</span></span>
 

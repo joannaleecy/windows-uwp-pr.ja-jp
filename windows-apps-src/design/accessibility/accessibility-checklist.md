@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bf9c3c4d803c4e5c2bc369449b83cf711bda6f99
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189269"
+ms.locfileid: "6255872"
 ---
 # <a name="accessibility-checklist"></a><span data-ttu-id="efdd7-103">アクセシビリティのチェック リスト</span><span class="sxs-lookup"><span data-stu-id="efdd7-103">Accessibility checklist</span></span>
 

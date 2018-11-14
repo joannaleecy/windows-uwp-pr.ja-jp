@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 92dc9437dc2417b8f3da99df7cd6d6eb0c8edd1b
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6163636"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267282"
 ---
 # <a name="lost-devices"></a><span data-ttu-id="74f49-104">喪失デバイス</span><span class="sxs-lookup"><span data-stu-id="74f49-104">Lost devices</span></span>
 
