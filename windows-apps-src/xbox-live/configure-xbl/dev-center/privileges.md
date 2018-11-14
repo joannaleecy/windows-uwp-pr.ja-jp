@@ -1,20 +1,20 @@
 ---
-title: デベロッパー センターでの特権の構成
+title: パートナー センターでの特権の構成
 author: aablackm
-description: Windows デベロッパー センターで特権を構成する方法について説明します。
+description: パートナー センターで特権を構成する方法を説明します。
 ms.author: aablackm
 ms.date: 04/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 特権, Windows デベロッパー センター
-ms.openlocfilehash: be502aadbd5900838f143132171838cdf235c01c
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10, Xbox one, 特権, パートナー センター
+ms.openlocfilehash: f51fd7f9da1758d28301031ecd10d3d7650c1121
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6161405"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6207926"
 ---
-# <a name="configure-privileges-on-windows-dev-center"></a>Windows デベロッパー センターでの特権を構成します。
+# <a name="configure-privileges-in-partner-center"></a>パートナー センターでの特権を構成します。
 
 特権の構成ページには、[Mixer](https://mixer.com/) などのストリーミング サービスへのタイトルのストリーミングがゲーマーに制限されるかどうかが示されます。 既定では、どのストリーミング プラットフォームでもブロードキャストが制限されません。このページは、ブロードキャストを制限する場合のみ変更してください。 ブロードキャストは、2 つの方法で制限できます。 **[Default]** (既定値) セクションのチェック ボックスをオンにすることであらゆるプラットフォームでブロードキャストを無効にするか、**[Sandbox overrides]** (サンドボックス オーバーライド) セクションでサンドボックスを追加することでサンドボックスによるブロードキャストを制限できます。
 

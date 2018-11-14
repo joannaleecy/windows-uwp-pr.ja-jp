@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
 ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050128"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198023"
 ---
 # <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
@@ -118,12 +118,12 @@ Authorization: Bearer <your access token>
 | applicationId       | string | 広告のパフォーマンス データを取得するアプリのストア ID です。     |
 | applicationName     | string | アプリの表示名です。                         |
 | adUnitId           | string | 広告ユニットの ID です。        |
-| adUnitName           | string | パートナー センターで開発者によって指定されている広告ユニットの名前。              |
+| adUnitName           | string | パートナー センターで開発者によって指定されている、広告ユニットの名前です。              |
 | adProvider           |  string  |  広告プロバイダーの名前です。   |
 | deviceType          | string | 広告が提供されたデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                              |
 | market              | string | 広告が提供された市場の ISO 3166 国コードです。             |
 | accountCurrencyCode     | string | アカウントの通貨コードです。        |
-| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている、pubCenter アプリの名前。   |
+| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている、pubCenter アプリの名前です。   |
 | adProviderRequests        | int | 指定した広告プロバイダーに対する広告要求の数です。                 |
 | impressions           | int | 広告インプレッションの数です。        |
 | clicks            | int | クリックの数です。       |

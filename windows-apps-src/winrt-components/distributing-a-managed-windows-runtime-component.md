@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047939"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183840"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>マネージ Windows ランタイム コンポーネントの配布
 
@@ -41,7 +41,7 @@ For example: Microsoft.Cpp.Build.dll
 
 拡張 SDK は上記の 1 つ以上の条件に当てはまる場合に特に便利です。
 
-> **注:** NuGet パッケージの管理システムは複雑なコンポーネントは、オープン ソースの代わりに拡張 Sdk を提供します。 NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。 NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。
+> **注:** NuGet パッケージ管理システムは複雑なコンポーネントは、オープン ソースの代わりに拡張 Sdk を提供します。 NuGet を使用すると、拡張 SDK と同様にパッケージを作成できるため、複雑なコンポーネントのインストールが簡単にできます。 NuGet パッケージと Visual Studio 拡張 SDK を比較するには、MSDN ライブラリの[NuGet と拡張 SDK を使用して参照を追加する方法に関するページ](https://msdn.microsoft.com/library/jj161096.aspx)をご覧ください。
 
 ## <a name="distribution-by-file-copy"></a>ファイルのコピーによる配布
 

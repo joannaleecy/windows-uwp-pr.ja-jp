@@ -9,25 +9,25 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0628dcfc5ece046ca728763876e8e00c9a2d5904
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037112"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189775"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 
 
 100 個以上の言語で Microsoft ストアにアプリを提出することができます。
 
-アプリでの言語の構成について詳しくは、[についてユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
+アプリでの言語の構成について詳しくは、[理解ユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
 
 ## <a name="supported-languages"></a>サポートされている言語
 
 
-これらは、Microsoft ストアでサポートされている言語です。 アプリは、これらの言語の 1 つ以上をサポートする必要があります。 
+これらは、Microsoft ストアでサポートされている言語です。 アプリは、少なくとも 1 つの言語をサポートする必要があります。 
 
-ここでは含まれていません言語コードでは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、ユーザーには配布されないと、認定の遅延またはエラーが発生する可能性があります。
+ここでは含まれていません言語コードは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、ユーザーには配布されないと、認定の遅延またはエラーが発生する可能性があります。
 
 | 言語名         | サポートされる言語コード                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

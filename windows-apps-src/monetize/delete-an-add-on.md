@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: パートナー センター アカウントに登録されているアプリのアドオンを削除するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
+description: パートナー センター アカウントに登録されているアプリのアドオンを削除する、Microsoft Store 申請 API で以下のメソッドを使います。
 title: アドオンの削除
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043505"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183329"
 ---
 # <a name="delete-an-add-on"></a>アドオンの削除
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求が無効です。 |
 | 404  | 指定したアドオンは見つかりませんでした。  |
-| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかった可能性がありますかは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)パートナー センター機能、アドオンで使用します。 |   
+| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

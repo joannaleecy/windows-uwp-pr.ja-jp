@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036972"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185396"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
@@ -36,7 +36,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 -   永続的でないライセンスの事前の取得を提供します。
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    複数のキー識別子 (Keyid)、Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
+    複数のキー識別子 (Keyid) Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
 
     > [!NOTE]
     > 下で windows 10 では、複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
@@ -268,7 +268,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
 
-このセクションでは、windows 10 の PlayReady が有効な web アプリを作成するときに考慮プログラミングの考慮事項を示します。
+このセクションでは、windows 10 用 PlayReady 対応の web アプリを作成するときに考慮プログラミングの考慮事項を示します。
 
 アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
 

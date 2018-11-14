@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dbcd2a4f9cec02882c62c7d6493746931b7919a8
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6150937"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193250"
 ---
 # <a name="media-playback"></a>メディア再生
 

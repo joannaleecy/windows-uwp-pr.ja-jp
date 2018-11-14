@@ -8,12 +8,12 @@ ms.date: 09/28/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 25b0b16963147328a7ababf58634bcd9c134637a
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 69fd69f596204b07f3b8c2d78f27a26a7be9fe94
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6160653"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6249790"
 ---
 # <a name="leaderboards"></a>ランキング
 
@@ -368,7 +368,7 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます、 [Windows デベロッパー センター ダッシュ ボード](https://developer.microsoft.com/en-us/dashboard/windows/overview)でタイトル用に構成された統計の名前と同じである必要があります。
+> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます[パートナー センター](https://partner.microsoft.com/dashboard)でタイトル用に構成された統計の名前と同じである必要があります。
 
 ### <a name="4-read-the-leaderboard-data"></a>4. ランキング データを読み取る
 
@@ -538,7 +538,7 @@ statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます、 [Windows デベロッパー センター ダッシュ ボード](https://developer.microsoft.com/en-us/dashboard/windows/overview)でタイトル用に構成された統計の名前と同じである必要があります。
+> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます[パートナー センター](https://partner.microsoft.com/dashboard)でタイトル用に構成された統計の名前と同じである必要があります。
 
 ### <a name="4-read-leaderboard-data"></a>4. 読み取りランキング データ
 

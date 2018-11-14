@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, コンテキスト検索, 配信, ゲーム クリップ
 ms.localizationpriority: medium
-ms.openlocfilehash: dba22050f53ece134cb805bad60746e55f952476
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 17d24b31087db9c73f6b286a140c6dcf3a7e1eb4
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022905"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192459"
 ---
 # <a name="contextual-search"></a>コンテキスト検索
 
@@ -27,4 +27,4 @@ ms.locfileid: "6022905"
 * 新しい DLC の内容の確認
 * 作成者のコメントをコンテキストに応じて配信
 
-XDP または Window デベロッパー センターで構成するだけで、タイトルのコンテキスト検索は自動的に利用可能になり、アプリケーションをすばやく配信できます。Xbox シェルと Cortana も後日利用できるようになる予定です。  さらに、ゲーム内で検索 API を直接利用すれば、ゲームから離れることなく、今までにないエクスペリエンスをユーザーに提供できます。  統合のレベルに関係なく、タイトルの価値や知名度を大きく高めることができます。
+単に XDP またはパートナー センターで構成すると、タイトルのコンテキスト検索は自動的に点灯しませんブロードキャスト アプリケーションをすぐに、Xbox のシェルと Cortana で後日。  さらに、ゲーム内で検索 API を直接利用すれば、ゲームから離れることなく、今までにないエクスペリエンスをユーザーに提供できます。  統合のレベルに関係なく、タイトルの価値や知名度を大きく高めることができます。

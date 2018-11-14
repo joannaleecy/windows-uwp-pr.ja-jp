@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディ、Bookstore で情報に基づいて、グループ化された、LongListSelector 内のデータを表示する、WindowsPhone Silverlight アプリから始まります。
+description: このケース スタディ、Bookstore で情報に基づいて、グループ化されたデータを LongListSelector を表示する WindowsPhone Silverlight アプリから始まります。
 title: WindowsPhone Silverlight から UWP ケース スタディ-Bookstore2
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040191"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199535"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight から UWP へのケース スタディ: Bookstore2
 
 
-このケース スタディ- [bookstore1](wpsl-to-uwp-case-study-bookstore1.md)情報に基づいて、グループ化された**LongListSelector**内のデータを表示する、WindowsPhone Silverlight アプリから始まります。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリを移植する手順について説明します。
+このケース スタディ- [bookstore1](wpsl-to-uwp-case-study-bookstore1.md)情報に基づいて、グループ化された**LongListSelector**内のデータを表示する WindowsPhone Silverlight アプリから始まります。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 Windows10Universal Windows プラットフォーム (UWP) アプリにアプリを移植する手順について説明します。
 
 **注:** と Visual Studio で bookstore2universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージを表示し、手順[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)でターゲット プラットフォームのバージョンを設定するためです。
 
@@ -266,11 +266,11 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 ![モバイル デバイスで動作中の、移植された Windows 10 アプリ (縮小表示)](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-モバイル デバイス、縮小表示で実行されている、移植された windows 10 アプリ
+縮小表示のモバイル デバイスで実行されている、移植された windows 10 アプリ
 
 ## <a name="making-the-view-model-more-flexible"></a>ビュー モデルの柔軟性の向上
 
-このセクションでは、UWP を使うようにアプリを移行することによって利用可能になる機能の例を紹介します。 ここでは、**CollectionViewSource** を使ってアクセスするときにビュー モデルの柔軟性を向上させるために実行できるオプションの手順について説明します。 ビュー モデル (ソース ファイルは ViewModel\\BookstoreViewModel.cs) WindowsPhone Silverlight アプリ Bookstore2WPSL8 から移植することから派生した、Author という名前のクラスが含まれています**一覧&lt;T&gt;**、 **T**は BookSku します。 これは、Author クラスが BookSku の*グループである*ことを意味します。
+このセクションでは、UWP を使うようにアプリを移行することによって利用可能になる機能の例を紹介します。 ここでは、**CollectionViewSource** を使ってアクセスするときにビュー モデルの柔軟性を向上させるために実行できるオプションの手順について説明します。 ビュー モデル (ソース ファイルは ViewModel\\BookstoreViewModel.cs) から派生した Author という名前のクラスを含む WindowsPhone Silverlight アプリ Bookstore2WPSL8 からに移植します**一覧&lt;T&gt;**、 **T**は BookSku します。 これは、Author クラスが BookSku の*グループである*ことを意味します。
 
 **CollectionViewSource.Source** を Authors にバインドするとき、Authors 内の各 Author が*何か*のグループであるということを伝える必要があります。 このケース スタディでは、**CollectionViewSource** に依存して、Author が BookSku のグループであることを特定しています。 この設定でも機能しますが、柔軟性はありません。 Author が BookSku のグループ*および*著者の住所のグループの*両方*を表す必要がある場合は、どうしたらよいでしょうか。 Author を、これらの両方のグループにすることは*できません*。 ただし、Author に任意の数のグループを*保持させる*ことはできます。 これが解決策となります。つまり、現在使っている "*グループである*" というパターンの代わりに、またはこのパターンに加えて、"*グループを保持する*" というパターンを使います。 以下にその方法を示します。
 

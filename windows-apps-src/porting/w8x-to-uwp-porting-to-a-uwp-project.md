@@ -9,21 +9,21 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a4e0ff78f2872e572c370411a1aad38ccbd7fb6a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044845"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199237"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植
 
 
 
-移植プロセスを開始するとき、2 つの方法から選ぶことができます。 1 つは、既にあるプロジェクト ファイル (アプリ パッケージ マニフェストなど) のコピーを編集する方法です。この方法については、[アプリをユニバーサル Windows プラットフォーム (UWP) へ移行する](https://msdn.microsoft.com/library/mt148501.aspx)に記載されているプロジェクト ファイルの更新に関する説明をご覧ください。 その他のオプションでは、Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーします。 このトピックの最初のセクションでは、2 番目の方法について説明しますが、トピックの他の部分では、両方の方法に適用できる追加情報について説明します。 既にあるプロジェクトと同じソリューションに新しい windows 10 プロジェクトの状態を維持し、共有プロジェクトを使ってソース コード ファイルを共有することもできます。 また、新しいプロジェクトを独自のソリューションに保持しておき、Visual Studio のリンク ファイル機能を使ってソース コード ファイルを共有することもできます。
+移植プロセスを開始するとき、2 つの方法から選ぶことができます。 1 つは、既にあるプロジェクト ファイル (アプリ パッケージ マニフェストなど) のコピーを編集する方法です。この方法については、[アプリをユニバーサル Windows プラットフォーム (UWP) へ移行する](https://msdn.microsoft.com/library/mt148501.aspx)に記載されているプロジェクト ファイルの更新に関する説明をご覧ください。 その他のオプションでは、Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーします。 このトピックの最初のセクションでは、2 番目の方法について説明しますが、トピックの他の部分では、両方の方法に適用できる追加情報について説明します。 既存のプロジェクトと同じソリューションに新しい windows 10 プロジェクトの状態を維持し、共有プロジェクトを使ってソース コード ファイルを共有することもできます。 また、新しいプロジェクトを独自のソリューションに保持しておき、Visual Studio のリンク ファイル機能を使ってソース コード ファイルを共有することもできます。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>プロジェクトを作成し、ファイルをコピーする
 
-次の手順に焦点を Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーします。 作成するプロジェクトの数およびコピーするファイルに関する一部の仕様は、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」や、それに続くセクションで説明されている要因と決定事項によって異なります。 次の手順では、最もシンプルなケースを前提としています。
+次の手順に重点を Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーするオプションです。 作成するプロジェクトの数およびコピーするファイルに関する一部の仕様は、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」や、それに続くセクションで説明されている要因と決定事項によって異なります。 次の手順では、最もシンプルなケースを前提としています。
 
 1.  Microsoft Visual Studio2015 を起動し、新しい空のアプリケーション (Windows ユニバーサル) プロジェクトを作成します。 詳しくは、 [Windows ランタイム 8.x アプリ着手テンプレート (c#、C++、Visual Basic) を使用して](https://msdn.microsoft.com/library/windows/apps/hh768232)を参照してください。 新しいプロジェクトによって、すべてのデバイス ファミリで実行される 1 つのアプリ パッケージ (appx ファイル) が構築されます。
 2.  ユニバーサル 8.1 アプリ プロジェクトで、再利用するすべてのソース コード ファイルとビジュアル アセット ファイルを確認します。 エクスプローラーを使って、データ モデル、ビュー モデル、ビジュアル アセット、リソース ディクショナリ、フォルダー構造、および再利用するその他すべての要素を、新しいプロジェクトにコピーします。 必要に応じて、ディスクにサブフォルダーをコピーするか、作成します。
@@ -40,7 +40,7 @@ ms.locfileid: "6044845"
 -   プラットフォームを検出するための代替方法がない場合に役立つと考えられる同様の手法として、マークアップ ファイルや **ResourceDictionary** ファイル (またはこのファイルが保存されているフォルダー) に対して特殊な名前を設定する方法があります。この特殊な名前によって、アプリが特定のデバイス ファミリで実行される場合にのみ、これらのファイルが実行時に自動的に読み込まれるようになります。 この手法については、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」のケース スタディをご覧ください。
 -   Windows 10 をサポートするためにのみ必要がある場合、ユニバーサル 8.1 アプリのソース コードで条件付きコンパイル ディレクティブの多くを削除できる必要があります。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」をご覧ください。
 -   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」に記載されている 3 番目の例をご覧ください。
--   Windows 8.1、Windows Phone 8.1、windows 10 をサポートする場合は、できる次の 3 つのプロジェクトと同じソリューション内に保持し、共有プロジェクトとコードを共有します。 または、プロジェクト間でソース コード ファイルを共有することができます。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。 また、ソース コントロールに追加することを忘れないでください。
+-   Windows 8.1、Windows Phone 8.1、および windows 10 をサポートする場合は、できる 3 つのプロジェクトと同じソリューション内に保持し、共有プロジェクトとコードを共有します。 または、プロジェクト間でソース コード ファイルを共有することができます。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。 また、ソース コントロールに追加することを忘れないでください。
 -   ソース コード レベルではなくバイナリ レベルでの再利用については、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)」をご覧ください。 Windows 8.1、Windows Phone 8.1、および windows 10 アプリ (.NET Core) 用の .NET Framework と .NET Framework で利用できる .NET Api のサブセットをサポートするポータブル クラス ライブラリも。 ポータブル クラス ライブラリ アセンブリは、これらのプラットフォームすべてとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
 
 ## <a name="extension-sdks"></a>拡張 SDK
@@ -71,9 +71,9 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>条件付きコンパイルとアダプティブ コード
 
-コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように条件付きコンパイル (c# プリプロセッサ ディレクティブ) によるを使用している場合は、windows 10 で行われた集約作業を踏まえてその条件付きコンパイルできるようになりました確認できます。 この集約作業は、windows 10 アプリでいくつかの条件を完全に削除することを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
+コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように条件付きコンパイル (c# プリプロセッサ ディレクティブ) によるを使用している場合は、windows 10 で行われた集約作業を踏まえて、条件付きコンパイルできるようになりました確認できます。 この集約作業は、windows 10 アプリでいくつかの条件を完全に削除することを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
 
-**注:**  、1 つのコード ファイルで、Windows 8.1、Windows Phone 8.1、および windows 10 をサポートする場合も実行できます。 プロジェクトのプロパティ ページで、windows 10 プロジェクトで参照する場合、プロジェクトは、条件付きコンパイル シンボルとして \_uap が定義することが表示されます。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 これらの例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除の windows 10 アプリの同等のコードを置き換えるシンプルなケースを表示します。
+**注:**  、1 つのコード ファイルで、Windows 8.1、Windows Phone 8.1、および windows 10 をサポートする場合も実行できます。 プロジェクトのプロパティ ページで、windows 10 プロジェクトで参照する場合、プロジェクトは、条件付きコンパイル シンボルとして \_uap が定義することが表示されます。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 これらの例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除の同等の windows 10 アプリ用のコードを置き換えるシンプルなケースを表示します。
 
 最初の例では、**PickSingleFileAsync** API (Windows 8.1 にのみ適用) と **PickSingleFileAndContinue** API (Windows Phone 8.1 にのみ適用) の使用パターンを示しています。
 
@@ -85,7 +85,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 #endif // WINDOWS_APP
 ```
 
-Windows 10 は、次のように、コードが簡略化するため[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API に集約され。
+Windows 10 は、これをコードが簡略化するため、 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API で収束します。
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -108,7 +108,7 @@ Windows 10 は、次のように、コードが簡略化するため[**PickSingl
 #endif // WINDOWS_PHONE_APP
 ```
 
-Windows 10 での"戻る"ボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
+Windows 10 での戻るボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -164,7 +164,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>アプリ パッケージ マニフェスト
 
-[Windows 10 で変更された内容](https://msdn.microsoft.com/library/windows/apps/dn705793)のトピックでは、追加、削除、および変更された要素を含め、windows 10 のパッケージ マニフェスト スキーマ リファレンスに対する変更を一覧表示されます。 このスキーマのすべての要素、属性、型に関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合、または Windows Phone ストアのアプリに対する更新となるアプリを作成する場合は、**pm:PhoneIdentity** 要素が、以前のアプリのアプリ マニフェストの値と一致していることを確認してください (ストアからアプリに割り当てられたものと同じ GUID を使用してください)。 これにより、アプリのユーザーが Windows 10 にアップグレードした場合に、新しいアプリが確実に更新プログラムとして配布され、アプリの重複を避けることができます。 詳しくは、[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) のリファレンス トピックをご覧ください。
+[Windows 10 ではどのような](https://msdn.microsoft.com/library/windows/apps/dn705793)トピックでは、追加、削除、および変更された要素を含め、windows 10 用のパッケージ マニフェスト スキーマ リファレンスに対する変更を示します。 このスキーマのすべての要素、属性、型に関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合、または Windows Phone ストアのアプリに対する更新となるアプリを作成する場合は、**pm:PhoneIdentity** 要素が、以前のアプリのアプリ マニフェストの値と一致していることを確認してください (ストアからアプリに割り当てられたものと同じ GUID を使用してください)。 これにより、アプリのユーザーが Windows 10 にアップグレードした場合に、新しいアプリが確実に更新プログラムとして配布され、アプリの重複を避けることができます。 詳しくは、[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) のリファレンス トピックをご覧ください。
 
 アプリが呼び出すことのできる API サーフェス領域は、プロジェクトの設定 (拡張 SDK の参照を含む) によって決定されます。 ただし、ユーザーがアプリをストアからインストールできる実際のデバイスのセットを決定するのは、アプリ パッケージ マニフェストです。 詳しくは、「[**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)」の例をご覧ください。
 

@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 13941c957ccf86255ce4261157fab03c608420e8
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 7bc55367100cb05c2cce1e85d3629fa9c7c8173f
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6154116"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184309"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---march-2017"></a>Xbox Live SDK の新規事項 - March 2017
 
@@ -23,7 +23,7 @@ December 2016 リリースで追加された内容については、「[新規�
 
 ### <a name="data-platform-2017"></a>データ プラットフォーム 2017
 
-簡略化された統計 API が導入されました。  これまでは XDP またはデベロッパー センターで定義された統計の規則に対応したイベントを送信する必要があり、これらによってクラウドの統計値を更新していました。  このモデルを統計 2013 といいます。
+簡略化された統計 API が導入されました。  従来 XDP またはパートナー センターで定義された統計の規則に対応するイベントを送信する必要があるし、これらによってクラウドの統計の値を更新します。  このモデルを統計 2013 といいます。
 
 統計 2017 では、タイトルが統計値を制御します。  最新の統計値のある API を呼び出すだけで、統計値がイベントを必要とせずに直接サービスに送信されます。  これは、新しい `StatsManager` API を使用するもので、詳細は「[プレイヤー統計](../leaderboards-and-stats-2017/player-stats.md)」に記載されています。
 
@@ -46,4 +46,4 @@ Xbox Live クリエーターズ プログラムは、幅広い対象デベロッ
 |[Xbox Live サービス構成](../xbox-live-service-configuration.md) | Xbox Live タイトル用のサービス構成の実行に関する最新情報
 | [Unity で Xbox Live を構成する](../get-started-with-creators/configure-xbox-live-in-unity.md) | Xbox Live クリエーターズ プログラムのデベロッパー向けの Unity セットアップに関する新しい情報 |
 | [Xbox Live のサンドボックス](../xbox-live-sandboxes.md) | Xbox Live サンド ボックスとコンテンツの分離の簡易ガイド |
-| [Xbox Live テスト アカウント](../xbox-live-test-accounts.md) | テスト アカウントの機能と Windows デベロッパー センターでのそれらの作成方法に関する情報 |
+| [Xbox Live テスト アカウント](../xbox-live-test-accounts.md) | アカウントの機能とパートナー センターでそれらを作成する方法をテストする方法に関する情報 |

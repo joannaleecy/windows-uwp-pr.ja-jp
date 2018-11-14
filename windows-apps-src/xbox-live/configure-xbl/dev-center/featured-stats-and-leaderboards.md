@@ -1,29 +1,29 @@
 ---
 title: 注目の統計とランキング 2017
 author: shrutimundra
-description: Windows デベロッパー センターで Xbox Live の注目の統計とランキング 2017 を構成する方法について説明します。
+description: パートナー センターで Xbox Live の注目の統計とランキング 2017年を構成する方法を説明します。
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, 注目の統計とランキング, ランキング, 統計 2017, Windows デベロッパー センター
-ms.openlocfilehash: 7db8efe28c6dc85c129823ec8f6b0ddac69b49f4
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10、Xbox one, 注目の統計とランキング, ランキング, 統計 2017, パートナー センター
+ms.openlocfilehash: eebf1e96601f7bb576088f71239196f0bb5a124c
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6159710"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188158"
 ---
-# <a name="configuring-featured-stats-and-leaderboards-2017-on-windows-dev-center"></a>Windows デベロッパー センターで注目の統計とランキング 2017 を構成する
+# <a name="configuring-featured-stats-and-leaderboards-2017-in-partner-center"></a>パートナー センターで注目の統計とランキング 2017年を構成します。
 
-ゲームで統計サービスを操作するには、[Windows デベロッパー センター](https://developer.microsoft.com/dashboard)で統計を定義する必要があります。 注目の統計はすべてゲーム ハブに表示され、自動的にランキングとして機能します。 生の値が保存されますが、ゲームには新しい値が生成する必要があるかどうかを判断するロジックが追加されます。
+統計サービスと対話するゲームの場合は、統計を[パートナー センター](https://partner.microsoft.com/dashboard)で定義されている必要があります。 注目の統計はすべてゲーム ハブに表示され、自動的にランキングとして機能します。 生の値が保存されますが、ゲームには新しい値が生成する必要があるかどうかを判断するロジックが追加されます。
 
 ![ゲーム ハブの実績ページのスクリーンショット](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png) 上の図は、タイトルのゲーム ハブに、注目の統計がどのように表示されるかを示しています。 注目の統計は赤のボックス内に表示されています。
 
 データ プラットフォーム 2017 のみにプレイヤーのゲーム ハブ ページで注目されるソーシャル ランキングで使用される統計を構成する必要があります。
 
-Windows デベロッパー センターを使うと、ゲームに関連付けられている注目の統計とランキングを構成することができます。 次の手順に従って、構成を追加します。
+パートナー センターを使用して、注目の統計とランキングをゲームに関連付けられているを構成することができます。 次の手順に従って、構成を追加します。
 
 1. **[サービス]** > **[Xbox Live]** > **[Featured stats and leaderboards]** (注目の統計とランキング) にある、タイトルの **[Featured stats and leaderboards]** (注目の統計とランキング) セクションに移動します。
 2. **[新規作成]** ボタンをクリックすると、モーダル フォームで開きます。 入力したら、**[保存]** をクリックします。

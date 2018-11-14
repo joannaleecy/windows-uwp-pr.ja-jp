@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043771"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194647"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT におけるアジャイル オブジェクト
 
-ほとんどの場合では、Windows ランタイム クラスのインスタンスを (最も標準的な C++ オブジェクトことができます) と同様、任意のスレッドからアクセスできます。 このような Windows ランタイム クラスは*アジャイルです*。 Windows に付属する Windows ランタイム クラスの少数はアジャイル以外が、それらを使用する場合は、スレッド モデルおよびマーシャ リング動作を考慮する必要があります (マーシャ リング データが渡されるアパートメントの境界を越えて)。 アジャイルであるすべての Windows ランタイム オブジェクトの値として適切なため、独自[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の種類は既定でアジャイルです。
+ほとんどの場合に、Windows ランタイム クラスのインスタンスを (最も標準的な C++ オブジェクトことができます) と同様、任意のスレッドからアクセスできます。 このような Windows ランタイム クラスは*アジャイルです*。 Windows に付属する Windows ランタイム クラスの少数はアジャイル以外が、それらを使用する場合は、スレッド モデルおよびマーシャ リング動作を考慮する必要があります (マーシャ リング データが渡されるアパートメント境界を越えて)。 アジャイルであるすべての Windows ランタイム オブジェクトの適切な既定値はように独自[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)型は既定でアジャイルです。
 
 ただしオプトアウトすることができます。たとえば、特定のシングルスレッド アパートメントなど、特別な理由で特定の型のオブジェクトを存在させることが必要な場合があります。 これは通常、再入の要件で行う必要があります。 それでもますます、ユーザー インターフェイス (UI) API ではアジャイル オブジェクトを提供するようになっています。 一般に、アジリティは最も単純で最もパフォーマンスの高いオプションです。 また、アクティベーション ファクトリを実装する際は、対応するランタイム クラスがアジャイルではない場合でもアジャイルにする必要があります。
 

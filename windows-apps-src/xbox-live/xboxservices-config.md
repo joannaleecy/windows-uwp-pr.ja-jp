@@ -7,16 +7,16 @@ ms.date: 03/29/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, xboxservices.config
 ms.localizationpriority: medium
-ms.openlocfilehash: d25aecb92fc668e4d75901a2d4857ac0a56d1999
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9055f51af5a598f57d2872898f7c0f0a7ce5fea4
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6038383"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250299"
 ---
 # <a name="xboxservicesconfig-file-description"></a>XboxServices.config ファイルの説明
 
-Xbox Live 対応の UWP ゲームを開発する場合、プロジェクトに XboxServices.config ファイルを含める必要があります。  このファイルは、Xbox Live SDK がゲームとデベロッパー センター アプリおよび Xbox Live サービス構成を関連付けることができるようにします。 このファイルには、サービス構成 ID、タイトル ID など情報が詳細に記述された JSON オブジェクトが含まれています。
+Xbox Live 対応の UWP ゲームを開発する場合、プロジェクトに XboxServices.config ファイルを含める必要があります。  このファイルは、パートナー センター アプリおよび Xbox Live サービス構成をゲームに関連付けるに Xbox Live SDK を使用できます。 このファイルには、サービス構成 ID、タイトル ID など情報が詳細に記述された JSON オブジェクトが含まれています。
 
 Xbox Live プラグインを使うことで、Unity を使って Xbox Live クリエーターズ プログラムを設計する場合、このファイルは Xbox Live の関連付けウィザードによって自動的に作成されます。
 
@@ -29,8 +29,8 @@ Xbox Live プラグインを使うことで、Unity を使って Xbox Live ク�
 
 フィールド | 説明
 --- | ---
-PrimaryServiceConfigId  |  Xbox Live サービス構成 ID (SCID)。 [デベロッパー センター ダッシュボード](https://developer.microsoft.com/en-us/dashboard)では、アプリの **[サービス]** セクションにある **[Xbox Live]** ページ (クリエーターズ プログラムの場合) または **[Xbox Live Setup]** (Xbox Live のセットアップ) ページ (フル Xbox Live ゲームの場合) でこの値を確認できます。
-TitleId  |  アプリの 10 進数のタイトル ID。 [デベロッパー センター ダッシュボード](https://developer.microsoft.com/en-us/dashboard)では、アプリの **[サービス]** セクションにある **[Xbox Live]** ページ (クリエーターズ プログラムの場合) または **[Xbox Live Setup]** (Xbox Live のセットアップ) ページ (フル Xbox Live ゲームの場合) でこの値を確認できます。
+PrimaryServiceConfigId  |  Xbox Live サービス構成 ID (SCID)。 [パートナー センター](https://partner.microsoft.com/dashboard)では、アプリの [**サービス**] セクションの下で、 **Xbox Live**ページ (クリエーターズ プログラム) または**Xbox Live のセットアップ**] ページ (フル Xbox Live ゲームの場合) には、この値を確認できます。
+TitleId  |  アプリの 10 進数のタイトル ID。 [パートナー センター](https://partner.microsoft.com/dashboard)では、アプリの [**サービス**] セクションの下で、 **Xbox Live**ページ (クリエーターズ プログラム) または**Xbox Live のセットアップ**] ページ (フル Xbox Live ゲームの場合) には、この値を確認できます。
 XboxLiveCreatorsTitle  |  "true" の場合、アプリが Xbox Live クリエーターズ プログラム アプリであることを示します。 それ以外の場合は "false" です。
 Scope  |  **(省略可能)** アプリによって使用される機能のスコープを定義します。 詳細については、以下をご覧ください。
 

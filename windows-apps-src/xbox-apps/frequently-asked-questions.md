@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b2ea47f819d3a187621615ee3a85be5af895d3b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049387"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184825"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -61,15 +61,15 @@ Xbox では、x86 アプリの開発または x86 アプリのストアへの申
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>Xbox One を開発者モードにしたままで売却した場合に、 開発者モードを非アクティブ化する方法
 
-Xbox One にアクセスできない場合には、Windows デベロッパー センターで非アクティブ化できます。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center)」の「**Windows デベロッパー センターを使用したコンソールの非アクティブ化**」のセクションをご覧ください。 
+Xbox One にアクセスをしなくなったがある場合は、Windows のパートナー センターで無効にできます。 詳細については、 [Xbox One 開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-using-partner-center)のトピックで、**パートナー センターを使用して、本体を非アクティブ化**のセクションを参照してください。 
 
-### <a name="i-left-the-developer-program-using-windows-dev-center-but-im-in-still-developer-mode-what-do-i-do"></a>Windows デベロッパー センターを使用して開発者プログラムを停止しましたが、まだ開発者モードのままです。 どうすればよいでしょうか。
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>まだ開発者モードで停止するが、パートナー センターを使用して開発者プログラムをまま教えてください。 どうすればよいでしょうか。
 
 Dev Home を開始し、**[Leave developer mode]** ボタンを選択します。 コンソールがリテール モードで再起動します。 
 
 ### <a name="can-i-publish-my-app"></a>自分のアプリを公開できますか
 
-[開発者アカウント](https://developer.microsoft.com/store/register)がある場合には、デベロッパー センターを使用して[アプリを公開](../publish/index.md)できます。 市販の Xbox One コンソールで作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
+[開発者アカウント](https://developer.microsoft.com/store/register)を持っている場合はパートナー センターを使用して[アプリを公開](../publish/index.md)できます。 市販の Xbox One コンソールで作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
 
 ### <a name="can-i-publish-my-game"></a>自分のゲームを公開できますか
 

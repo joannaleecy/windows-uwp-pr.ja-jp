@@ -8,15 +8,15 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェクション、実装、ランタイム クラス、ライセンス認証
 ms.localizationpriority: medium
 ms.openlocfilehash: cffda0c15e8234f57486995308c335842ce058c8
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052277"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196578"
 ---
 # <a name="consume-apis-with-cwinrt"></a>C++/WinRT での API の使用
 
-このトピックでは、使用する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api、Windows の一部になっているかどうか、サード パーティ コンポーネント ベンダーで実装された、またはユーザー自身が実装します。
+このトピックでは、使用する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api、Windows の一部になっているかどうか、サード パーティ コンポーネント ベンダーで実装されたまたはユーザー自身が実装されます。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>API が Windows 名前空間に含まれる場合
 これは Windows ランタイム API を使用する際に最も一般的なケースです。 メタデータで定義される Windows 名前空間のすべての型について、C++/WinRT は C++ 対応の同等の型を定義します (*投影された型*と呼ばれます)。 投影された型には Windows の型と同じ完全修飾名がありますが、C++ の構文を使用して **winrt** 名前空間に配置されます。 たとえば、[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) は **winrt::Windows::Foundation::Uri** として C++/WinRT に投影されます。
@@ -178,7 +178,7 @@ MainPage::MainPage()
 詳細、コード、および使用中のプロジェクトに実装するランタイム クラスの使用に関するチュートリアルについては、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」をご覧ください。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>投影された型とインターフェイスをインスタンス化して返す
-次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、この例では)、投影された型ツールで生成されたは、作成することは自分で何かを注意してください。
+次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、この例では)、投影された型ツールで生成されたは、作成することは自分で何かに注意してください。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,

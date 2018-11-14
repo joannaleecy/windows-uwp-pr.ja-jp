@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b1cb2adaafba2370e27eb98a10a5143166f0ce
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6025527"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250276"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。 
@@ -23,19 +23,19 @@ ms.locfileid: "6025527"
  
 ## <a name="personsummary"></a>PersonSummary
  
-PersonSummary オブジェクトには、次の仕様があります。
+PersonSummary オブジェクトでは、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | hasCallerMarkedTargetAsFavorite| ブール値| かどうか、呼び出し元は、お気に入りとしてターゲットをマークします。 値の例: true| 
-| hasCallerMarkedTargetAsKnown| ブール値| かどうか、呼び出し元がターゲット済みとしてマーク呼ばれます。 値の例: true| 
+| hasCallerMarkedTargetAsKnown| ブール値| かどうか、呼び出し元が、ターゲット済みとしてマーク呼ばれます。 値の例: true| 
 | isCallerFollowingTarget| ブール値| かどうか、呼び出し元が、ターゲットをフォローします。 値の例: true| 
 | isTargetFollowingCaller| ブール値| かどうか、ターゲットでは、呼び出し元がフォローします。 値の例: true| 
 | legacyFriendStatus| string| 従来のフレンドのように、呼び出し元のターゲット状態です。 "None"、"MutuallyAccepted"、"OutgoingRequest"または"IncomingRequest"をすることができます。 値の例:"MutuallyAccepted"| 
-| recentChangeCount| 32 ビットの符号なし整数| 省略可能。 ターゲットのソーシャル グラフの最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
+| recentChangeCount| 32 ビットの符号なし整数| 省略可能。 ターゲットのソーシャル グラフ内の最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
 | targetFollowerCount| > 32 ビットの符号なし整数| 次のターゲットはユーザーの数です。 値の例: 1308| 
-| targetFollowingCount| 32 ビットの符号なし整数| ターゲットは、次のユーザーの数です。 値の例: 112| 
-| 透かし| string| 省略可能。 ターゲットの最新の変更透かしします。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
+| targetFollowingCount| 32 ビットの符号なし整数| ターゲットが次のユーザーの数です。 値の例: 112| 
+| 透かし| string| 省略可能。 ターゲットの最新の変更透かし この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
   
 <a id="ID4E4D"></a>
 

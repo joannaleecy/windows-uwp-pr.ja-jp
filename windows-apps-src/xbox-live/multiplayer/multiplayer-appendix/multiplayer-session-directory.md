@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPSD, マルチプレイヤー セッション ディレクトリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e42fcce988f7b3ac880082cd1300b6f4b9294f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6d39435f7f6669a0bdb953e0501f69fc80c4d179
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050948"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205855"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>マルチプレイヤー セッション ディレクトリ (MPSD)
 
@@ -213,7 +213,7 @@ MPSD を呼び出すための推奨方法は、Multiplayer WinRT API および M
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>Multiplayer REST API を使用した MPSD との対話
 
-タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、要求本文は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)に保存されているセッション テンプレートと共に新しいセッションの作成に使用されます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}有効な PUT 要求のゼロの差分を示します。
+タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)に保存されているセッション テンプレートと共に、新しいセッションを作成する要求の本文が使われます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}有効な PUT 要求のゼロの差分を示します。
 
 サーバーのセッションの公式コピーに影響を与えずにマージの結果を返す仮定の PUT 要求を実行するには、クエリ文字列 "?nocommit=true" を PUT 要求に追加できます。
 
@@ -277,7 +277,7 @@ SCID のセッション テンプレートの一覧および特定のセッシ�
 #### <a name="display-available-sessions-and-templates"></a>利用可能なセッションとテンプレートの表示
 
 1.  ツールで SCID をクリックすると、その SCID に含まれていて、サインインしたユーザーがメンバーになっているセッションの一覧が表示されます。
-2.  この同じページで SCID をクリックすると、SCID のサービス構成内にあるセッション テンプレートとローカライズ文字列を表示できます。 これらの項目は[XDP](https://xdp.xboxlive.com)または[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を通じて取り込まれます。
+2.  この同じページで SCID をクリックすると、SCID のサービス構成内にあるセッション テンプレートとローカライズ文字列を表示できます。 これらの項目は[XDP](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)を通じて取り込まれます。
 
 
 #### <a name="display-the-full-contents-of-a-session"></a>セッションのすべての内容の表示

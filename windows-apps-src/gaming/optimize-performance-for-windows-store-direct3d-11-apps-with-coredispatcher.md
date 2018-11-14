@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力待ち時間
 ms.localizationpriority: medium
 ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047833"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195482"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
 
@@ -235,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio2015 で**DirectX 11 および XAML アプリ (ユニバーサル Windows)** テンプレートは、ゲーム ループを同様の方法で複数のスレッドに分割します。 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
+Microsoft Visual Studio2015 で**DirectX 11 および XAML アプリ (ユニバーサル Windows)** テンプレートでは、ゲーム ループを同様の方法で複数のスレッドに分割します。 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>入力待ち時間を短縮する他の方法
 
@@ -248,7 +248,7 @@ DirectX ゲームは、画面上に見える内容を更新することでユー
 
 ![図 1 Directx における入力待ち時間 ](images/input-latency1.png)
 
-Windows8.1、DXGI にスワップ チェーンのアプリを簡単にキュー空のままにするためにヒューリスティックを実装することがなくこの待機時間を減らすことができますが、 **dxgi \_swap\_chain\_flag\_frame\_latency\_waitable\_object**フラグが導入されました。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
+Windows8.1、DXGI にスワップ チェーンのアプリを簡単にキューを空に維持するためにヒューリスティックを実装することがなくこの待機時間を減らすことができますが、 **dxgi \_swap\_chain\_flag\_frame\_latency\_waitable\_object**フラグが導入されました。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
 
 図 2
 

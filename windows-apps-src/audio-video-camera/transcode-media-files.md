@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034238"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193141"
 ---
 # <a name="transcode-media-files"></a>メディア ファイルのトランスコード
 
@@ -84,9 +84,9 @@ ms.locfileid: "6034238"
 
 
 ## <a name="encode-a-metadata-stream"></a>メタデータ ストリームをエンコードする
-Windows 10、バージョン 1803 以降でタイミングが設定されたメタデータを含めることができますとメディア ファイルのコード変換します。 上記のビデオ トランス コード例とは異なり組み込みのメディア エンコード プロファイルの作成方法、 [**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)などを使用する必要があります手動で作成するメタデータのエンコード プロファイルをエンコードするメタデータの種類をサポートするには.
+Windows 10、バージョン 1803 以降でタイミングが設定されたメタデータを含めることができますとメディア ファイルのコード変換します。 上記のビデオ トランス コード例とは異なり[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)などのプロファイルの作成方法をエンコードする組み込みのメディアを使用する必要があります手動で作成するメタデータのエンコード プロファイルをエンコードするメタデータの種類をサポートするには.
 
-このメタデータ incoding プロファイルを作成するのには、まずトランス コードするメタデータのエンコード方法を説明する [**TimedMetadataEncodingProperties**] のオブジェクトを作成します。 サブタイプのプロパティは、メタデータの種類を指定する GUID です。 各メタデータの種類のエンコードの詳細は、専用が Windows によって指定されていません。 この例では、GoPro メタデータ (gprs) の GUID が使用されます。 次に、 [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)は、メタデータの形式に固有のストリーム形式を記述するデータのバイナリ blob を設定すると呼ばれます。 次に、 **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)エンコードのプロパティから作成される、トラックのラベルと名前が、アプリケーション、メタデータ ストリームを識別し、必要に応じて UI にストリーム名を表示する endcoded ストリームの読み取りできるようにします。 
+このメタデータ incoding プロファイルを作成するのには、まずトランス コードするメタデータのエンコード方法を説明する [**TimedMetadataEncodingProperties**] オブジェクトを作成します。 サブタイプのプロパティは、メタデータの種類を指定する GUID です。 各メタデータの種類のエンコードの詳細は、専用が Windows によって指定されていません。 この例では、GoPro メタデータ (gprs) の GUID が使用されます。 次に、 [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)が呼び出されて、メタデータの形式に固有のストリーム形式を記述するデータのバイナリ blob を設定します。 次に、 **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)エンコードのプロパティから作成された、トラックのラベルと名前が、メタデータ ストリームを識別し、必要に応じて UI のストリームの名前を表示するには、endcoded ストリームの読み取り、アプリケーションを許可します。 
  
 [!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 

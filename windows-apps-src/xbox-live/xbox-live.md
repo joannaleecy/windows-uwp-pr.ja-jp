@@ -7,18 +7,18 @@ ms.date: 05/30/2017
 ms.topic: article
 keywords: windows 10, uwp, ゲーム, xbox, xbox live
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad2ce09d5a1100c64f9d12c604340456999fe70
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 5388e0e667a342bc6dc6a666796c0e8be3ae86e3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022879"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197267"
 ---
 # <a name="xbox-live"></a>Xbox Live
 
 Xbox Live は、世界中の何百万ものゲーマーを結びつける最高のゲーミング ネットワークです。 Xbox Live を Windows 10 または Xbox One のゲームに追加すれば、Xbox Live の機能とサービスを活用することができます。
 
-Xbox Live クリエーターズ プログラムを利用すると、Windows デベロッパー センター アカウントを持つユーザーが、Windows 10 PC と Xbox One 本体で実行できる Xbox Live 対応のユニバーサル Windows プラットフォーム (UWP) ゲームを構築できます。
+Xbox Live クリエーターズ プログラム パートナー センター アカウントを持つユーザーの Windows 10 Pc と Xbox One 本体で実行できる Xbox Live 対応のユニバーサル Windows プラットフォーム (UWP) ゲームを構築できます。
 
 マルチプレイヤー、実績、Xbox 本体のネイティブ開発など、完全な Xbox Live エクスペリエンスを利用するゲーム開発者向けに、追加の開発者プログラムがあります。詳しくは、「[開発者プログラムの概要](developer-program-overview.md)」をご覧ください。
 

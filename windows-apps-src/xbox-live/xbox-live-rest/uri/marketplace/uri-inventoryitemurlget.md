@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aaef11864a513b42cb5a1c036e7699477884b4a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6036170"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6206759"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
 特定のインベントリ項目の詳細の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
@@ -28,7 +28,7 @@ ms.locfileid: "6036170"
  
 ## <a name="remarks"></a>注釈
  
-ポリシー チェックを行わない、実施、またはこの呼び出しの一部としてフィルタ リングが発生します。
+ポリシー チェックなし、実施、またはフィルタ リングがこの呼び出しの一部として行われます。
   
 <a id="ID4EAB"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "6036170"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID| 
+| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID| 
   
 <a id="ID4ELB"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "6036170"
  
 ### <a name="sample-response"></a>応答の例
  
-認証に合格して、適切な承認コンテキストが割り当てられていると想定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
+認証の渡し、適切な承認のコンテキストが割り当てられていると仮定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
  
 
 ```cpp

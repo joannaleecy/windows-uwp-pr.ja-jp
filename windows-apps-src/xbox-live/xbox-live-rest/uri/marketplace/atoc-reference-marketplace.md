@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 96055bd7a2d4169c15e37b55aa70a94fab128a59
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044600"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6253839"
 ---
 # <a name="marketplace-uris"></a>マーケットプレース URI
 
-このセクションでは、*市場*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
+このセクションでは、 *marketplace*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
 
@@ -43,7 +43,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/crossMediaGroupSearch](uri-localecrossmediagroupsearch.md)
 
-&nbsp;&nbsp;いくつかの異なるメディア グループからの項目にアクセスします。
+&nbsp;&nbsp;いくつかの異なるメディア グループからの項目をアクセスします。
 
 [/media/{marketplaceId}/browse](uri-medialocalebrowse.md)
 
@@ -55,7 +55,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/details](uri-medialocaledetails.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。
+&nbsp;&nbsp;返しますプランの詳細とメタデータについての 1 つまたは複数の項目。
 
 [/media/{marketplaceId}/fields](uri-medialocalefields.md)
 
@@ -71,11 +71,11 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields](uri-medialocalemetadatamediaitemtypefields.md)
 
-&nbsp;&nbsp;指定された mediaitemtype と EDS の特定のバージョンのデータを想定いずれかからアクセス フィールド。
+&nbsp;&nbsp;特定の mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
-&nbsp;&nbsp;指定したメディア項目の種類のクエリの絞り込み条件にアクセスします。
+&nbsp;&nbsp;特定のメディア項目の種類のクエリの絞り込み条件にアクセスします。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 

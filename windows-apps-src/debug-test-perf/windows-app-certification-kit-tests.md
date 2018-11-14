@@ -9,16 +9,16 @@ ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 65afbaa4440a5bce43ca6d48126e6cc2b8316466
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023670"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194492"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 
-[Windows アプリ認定キット](windows-app-certification-kit.md)には、さまざまな Microsoft Store に公開する準備ができたらを保証するためのテストが含まれています。 テストは、条件では、詳細については、次の一覧し、アクションが失敗した場合の推奨します。
+[Windows アプリ認定キット](windows-app-certification-kit.md)には、確実にアプリが Microsoft Store に公開する準備ができているテストの数が含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
 
 ## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
 
@@ -247,7 +247,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
 
-マネージ実行可能ファイルには、テストが失敗した場合、UWP アプリの構築に最新のコンパイラとリンカー、Microsoft Visual Studio などを使用したことを確認します。
+マネージ実行可能ファイルには、テストが失敗した場合、最新のコンパイラとリンカー、Microsoft Visual Studio などを使用した UWP アプリをビルドすることを確認します。
 
 **注釈**
 
@@ -318,11 +318,11 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **注:** デバッグ用ビルドのアプリは、アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でもこのテストに合格しません。
+> **注:** デバッグ用ビルドのアプリは、アプリが[UWP アプリ用 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でもこのテストに合格しません。
 
-[UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)でないアプリを使用して、API を識別するエラー メッセージを確認します。
+[UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリを使用して、API を識別するエラー メッセージを確認します。
 
-> **注:**、デバッグ構成で構築された C++ アプリは、構成が UWP アプリのみ Windows SDK の Api を使っている場合でもこのテストに合格しません。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
+> **注:** デバッグ構成で構築された C++ アプリは、構成が UWP アプリのみ Windows SDK の Api を使っている場合でもこのテストに合格しません。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -432,7 +432,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store で配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布するアプリをお勧めしません。 Microsoft Store で配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -484,7 +484,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 
 ### <a name="branding-validation"></a>ブランドの検証
 
-UWP アプリは、完成していて完全に機能するされる予定です。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
+UWP アプリ完成していて完全に機能することが期待されます。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -500,7 +500,7 @@ UWP アプリは、完成していて完全に機能するされる予定です�
 
 ### <a name="background"></a>背景
 
-Microsoft Store の認定を受けるアプリにコンパイルせずデバッグ用とデバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+、Microsoft Store の認定を受けるにアプリにコンパイルせずデバッグ用とデバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -536,7 +536,7 @@ Microsoft Direct3D アプリをテストして、以前のグラフィックス 
 
 ### <a name="background"></a>背景
 
-Microsoft Store では、Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗するすべてのアプリケーションが必要です。
+Microsoft Store では、すべてのアプリケーションが Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗する必要があります。
 
 アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036932"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210153"
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 
@@ -33,7 +33,7 @@ ms.locfileid: "6036932"
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトには、[**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) や [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) などの基本的なプロパティがいくつか用意されていますが、ほとんどのプロパティは、[**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) の下にあるプロパティ バッグに格納されています。 このため、プロパティ バッグには、プロパティ バッグからプロパティを提供するのに使われるプロパティが含まれています。 たとえば、[System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) を使うと、[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) プロパティを提供できます。 これは、わかりやすい名前を持つ一般的な既知のプロパティの一例です。 このように、Windows はわかりやすい名前を付け、プロパティの照会を簡単にしています。
 
-要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 例:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"します。 
+要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 例:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"。 
 
 > [!Note]
 > デバイス ドライバーのデバイス プロパティ キー ヘッダー ファイルのプロパティの Guid の一覧を確認できます。

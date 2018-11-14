@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
 ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049367"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190469"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -53,9 +53,9 @@ Windows 10 IoT Core の UWP アプリを申請する場合、パッケージを�
 **Windows 8 または 8.1**で実行できるパッケージが以前に公開したアプリの申請に含まれるかどうかと**Windows Phone 8.x 以前**、それらのパッケージが利用できるこれらの OS バージョンのユーザーにします。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
 
 > [!IMPORTANT]
-> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、サポートするデバイス ファミリのみを対象に、マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素を更新します (つまり、Windows.Mobile または Windows.Desktop) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) としてするよりも Microsoft Visual Studio が既定では、マニフェストに含まれます。
+> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新をサポートするデバイス ファミリのみを対象に、マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素 (つまり、Windows.Mobile または Windows.Desktop) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) としてするよりも Microsoft Visual Studio が既定では、マニフェストで含まれます。
 
-**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージでは、公開されたアプリがある Windows.Universal デバイス ファミリをターゲットと Windows 10 (UWP) パッケージを追加する場合は、Windows 10 モバイル ユーザー、Windows Phone 8.1 パッケージを受け取ってが提供される更新プログラムをこの Windows10 (UWP) パッケージをしている場合でもオフ、 **Windows 10 Mobile**のボックス。
+**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージでは、公開されたアプリがあり、Windows.Universal デバイス ファミリをターゲットとする Windows 10 (UWP) パッケージを追加する場合、Windows Phone 8.1 パッケージを受け取って、Windows 10 モバイル ユーザー更新が提供される、この windows10 (UWP) パッケージをしている場合でもオフ、 **Windows 10 Mobile**のボックス。
 
 デバイス ファミリについて詳しくは、[**デバイス ファミリの概要に関する記事**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
 
@@ -64,7 +64,7 @@ Windows 10 IoT Core の UWP アプリを申請する場合、パッケージを�
 
 **デバイス ファミリの利用可否**] セクションでは示さだけでなく Windows 10 デバイス ファミリは、申請をダウンロードできることを示すためが利用できるさまざまなデバイス ファミリに特定のパッケージを示しています。 特定のデバイス ファミリで実行できるパッケージが複数ある場合は、パッケージのバージョン番号に基づくパッケージの提供順序がテーブルに示されます。 ストアがバージョン番号を基にしてパッケージをランク付けする方法について詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。 
 
-たとえば、2 つのパッケージ Package_A.appxupload と Package_B.appxupload があるものとします。 特定のデバイス ファミリについて、Package_A.appxupload のランクが 1、Package_B.appxupload のランクが 2 であるとすると、そのデバイスの種類を使用するユーザーがアプリを入手するとき、ストアでは最初に Package_A.appxupload が提供されます。 ユーザーのデバイスが Package_A.appxupload を実行できない場合、ストアは Package_B.appxupload を提供します。 ユーザーのデバイスは、そのデバイス ファミリ用のパッケージのいずれかを実行できない場合 (たとえば、 **MinVersion**アプリがサポートされている場合は、ユーザーのデバイス上のバージョンよりも高い) し、顧客がそのデバイスにアプリをダウンロードできません。
+たとえば、2 つのパッケージ Package_A.appxupload と Package_B.appxupload があるものとします。 特定のデバイス ファミリについて、Package_A.appxupload のランクが 1、Package_B.appxupload のランクが 2 であるとすると、そのデバイスの種類を使用するユーザーがアプリを入手するとき、ストアでは最初に Package_A.appxupload が提供されます。 ユーザーのデバイスが Package_A.appxupload を実行できない場合、ストアは Package_B.appxupload を提供します。 ユーザーのデバイスは、そのデバイス ファミリ用のパッケージのいずれかを実行できない場合 (たとえば、 **MinVersion**アプリがサポートされている場合は、顧客のデバイス上のバージョンよりも高い) し、顧客がそのデバイスにアプリをダウンロードできません。
 
 > [!NOTE]
 > (以前に公開したアプリ用) の .xap パッケージのバージョン番号は、特定の顧客に提供するには、どのパッケージを決定する場合とは見なされません。 このため、同じランクの .xap パッケージが複数ある場合、番号ではなくアスタリスクが表示され、ユーザーはどちらのパッケージでも受け取ることができます。 ユーザーの .xap パッケージを新しいパッケージに更新する場合、新しい申請では必ず以前の .xap を削除してください。

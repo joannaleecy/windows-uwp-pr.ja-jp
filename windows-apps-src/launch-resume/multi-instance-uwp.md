@@ -8,20 +8,20 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041070"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6201078"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
 このトピックでは、マルチインスタンスのユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
 
-Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
+Windows 10 バージョン 1803 (10.0; からビルド 17134) 以降、UWP アプリできますオプトインする複数のインスタンスをサポートします。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
 
 > [!IMPORTANT]
-> マルチ インスタンスが JavaScript アプリケーションでサポートされているが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないために、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
+> JavaScript のアプリケーションでは、マルチ インスタンスがサポートされていますが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないために、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作にオプトインします。
 
@@ -29,7 +29,7 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
 2 つのテンプレートがインストールされます。**Multi-Instance UWP app** は、マルチインスタンス アプリを作成するためのテンプレートを提供します。**Multi-Instance Redirection UWP app** は、新しいインスタンスを起動するか、すでに起動されているインスタンスを選択的にアクティブ化するために構築する追加ロジックを提供します。 たとえば、一度に 1 つのインスタンスのみを同じドキュメントを編集する場合は、新しいインスタンスを起動するのではなく、そのファイルを開いているインスタンスをフォアグラウンドにします。
 
-どちらのテンプレートの追加`SupportsMultipleInstances`を`package.appxmanifest`ファイル。 名前空間のプレフィックスに注意してください`desktop4`と`iot2`: デスクトップをターゲットとする唯一のプロジェクトまたはモ ノのインターネット (IoT) プロジェクトでは、マルチ インスタンスをサポートします。
+どちらのテンプレートの追加`SupportsMultipleInstances`を`package.appxmanifest`ファイル。 名前空間のプレフィックスに注意してください`desktop4`と`iot2`: デスクトップをターゲットとする唯一のプロジェクトまたはモ ノのインターネット (IoT) プロジェクトの場合は、マルチ インスタンスをサポートします。
 
 ```xml
 <Package
@@ -54,13 +54,13 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
  UWP アプリのマルチインスタンス化のサポートは、単に複数のアプリ インスタンスを起動することを可能にするだけではありません。 アプリの新しいインスタンスを起動するか、すでに実行しているインスタンスをアクティブにするかを選択する場合に、カスタマイズできます。 たとえば、既に別のインスタンスで編集中のファイルを編集するためにアプリが起動されている場合、そのファイルを編集している別のインスタンスを開くのではなく、そのインスタンスにアクティブ化をリダイレクトすることができます。
 
-アクションで表示するには、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
+操作で表示するには、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**のテンプレートは、次に示します。
+**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティが存在する場合、このライセンス認証要求のシェルが提供優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合は、し、そのインスタンスにアクティブ化をリダイレクトすることができます。 または選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティは、いずれかを使用する必要がある場合にこのライセンス認証要求のシェルに搭載されている優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合、そのインスタンスをアクティブ化をリダイレクトまたは選択した場合に無視することができます。
 
 ``` csharp
 public static class Program
