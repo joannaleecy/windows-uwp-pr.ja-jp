@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, オフライン
 ms.localizationpriority: medium
 ms.openlocfilehash: a552f275a69fde67f22d25a79b5b8c318c4f8dc3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6043008"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6255198"
 ---
 # <a name="best-practices-for-offline"></a><span data-ttu-id="de3d5-104">オフラインのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="de3d5-104">Best practices for offline</span></span>
 

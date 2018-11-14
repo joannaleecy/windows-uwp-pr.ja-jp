@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042651"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6265138"
 ---
 # <a name="adaptive-streaming"></a><span data-ttu-id="9728e-105">アダプティブ ストリーミング</span><span class="sxs-lookup"><span data-stu-id="9728e-105">Adaptive streaming</span></span>
 

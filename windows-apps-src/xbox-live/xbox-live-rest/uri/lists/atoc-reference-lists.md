@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6146768"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6257833"
 ---
 # <a name="lists-uris"></a><span data-ttu-id="45fe3-104">リスト URI</span><span class="sxs-lookup"><span data-stu-id="45fe3-104">Lists URIs</span></span>
  
