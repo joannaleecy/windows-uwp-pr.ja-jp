@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c8cd21fdd3b11aa7307465782bcc10e27488aedb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207887"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250195"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a><span data-ttu-id="9c760-104">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="9c760-104">/scids/{scid}/leaderboards/{leaderboardname}</span></span>
 <span data-ttu-id="9c760-105">定義済みグローバル ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9c760-105">Accesses a predefined global leaderboard.</span></span> <span data-ttu-id="9c760-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9c760-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>

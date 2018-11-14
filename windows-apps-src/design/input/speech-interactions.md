@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4006cdedffdbc601b498ce64caddfdefcbf4877a
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6200599"
+ms.locfileid: "6255088"
 ---
 # <a name="speech-interactions"></a><span data-ttu-id="a1819-103">音声操作</span><span class="sxs-lookup"><span data-stu-id="a1819-103">Speech interactions</span></span>
 

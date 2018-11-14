@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 年齢区分, ゲームの評価, iarc, 評価, アンケート, レーティング機関, コンテンツ区分
 ms.localizationpriority: medium
 ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6195736"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661398"
 ---
 # <a name="age-ratings"></a><span data-ttu-id="b31cd-103">年齢区分</span><span class="sxs-lookup"><span data-stu-id="b31cd-103">Age ratings</span></span>
 

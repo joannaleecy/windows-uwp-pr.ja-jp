@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, ローカライズされた文字列, パートナー センター
 ms.openlocfilehash: b7d8f53656f60932c0f27f492f3769ddae8434ba
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6182156"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251459"
 ---
 # <a name="configuring-localized-strings-in-partner-center"></a><span data-ttu-id="cb669-104">パートナー センターのローカライズされた文字列を構成します。</span><span class="sxs-lookup"><span data-stu-id="cb669-104">Configuring Localized strings in Partner Center</span></span>
 

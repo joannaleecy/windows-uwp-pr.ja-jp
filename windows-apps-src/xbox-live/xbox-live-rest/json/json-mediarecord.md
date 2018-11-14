@@ -10,41 +10,41 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 63df58119aedb0a8b73c2d427f5bab3a3131ec81
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029308"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6200995"
 ---
-# <a name="mediarecord-json"></a><span data-ttu-id="bb02f-104">MediaRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="bb02f-104">MediaRecord (JSON)</span></span>
+# <a name="mediarecord-json"></a><span data-ttu-id="e9536-104">MediaRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="e9536-104">MediaRecord (JSON)</span></span>
  
 <a id="ID4EO"></a>
 
  
-## <a name="mediarecord"></a><span data-ttu-id="bb02f-105">MediaRecord</span><span class="sxs-lookup"><span data-stu-id="bb02f-105">MediaRecord</span></span>
+## <a name="mediarecord"></a><span data-ttu-id="e9536-105">MediaRecord</span><span class="sxs-lookup"><span data-stu-id="e9536-105">MediaRecord</span></span>
  
-<span data-ttu-id="bb02f-106">MediaRecord オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="bb02f-106">The MediaRecord object has the following specification.</span></span>
+<span data-ttu-id="e9536-106">MediaRecord オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="e9536-106">The MediaRecord object has the following specification.</span></span>
  
-| <span data-ttu-id="bb02f-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="bb02f-107">Member</span></span>| <span data-ttu-id="bb02f-108">種類</span><span class="sxs-lookup"><span data-stu-id="bb02f-108">Type</span></span>| <span data-ttu-id="bb02f-109">説明</span><span class="sxs-lookup"><span data-stu-id="bb02f-109">Description</span></span>| 
+| <span data-ttu-id="e9536-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="e9536-107">Member</span></span>| <span data-ttu-id="e9536-108">種類</span><span class="sxs-lookup"><span data-stu-id="e9536-108">Type</span></span>| <span data-ttu-id="e9536-109">説明</span><span class="sxs-lookup"><span data-stu-id="e9536-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="bb02f-110">id</span><span class="sxs-lookup"><span data-stu-id="bb02f-110">id</span></span>| <span data-ttu-id="bb02f-111">string</span><span class="sxs-lookup"><span data-stu-id="bb02f-111">string</span></span>| <span data-ttu-id="bb02f-112">Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。</span><span class="sxs-lookup"><span data-stu-id="bb02f-112">Identifier of the media used by the Bing catalog or provider catalog.</span></span>| 
-| <span data-ttu-id="bb02f-113">idType</span><span class="sxs-lookup"><span data-stu-id="bb02f-113">idType</span></span>| <span data-ttu-id="bb02f-114">string</span><span class="sxs-lookup"><span data-stu-id="bb02f-114">string</span></span>| <span data-ttu-id="bb02f-115">メディアの識別子を解釈する方法。</span><span class="sxs-lookup"><span data-stu-id="bb02f-115">How to interpret the media identifier.</span></span> <span data-ttu-id="bb02f-116">設定可能な値には、"bing"および「プロバイダー」が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bb02f-116">Possible values include "bing" and "provider".</span></span>| 
-| <span data-ttu-id="bb02f-117">name</span><span class="sxs-lookup"><span data-stu-id="bb02f-117">name</span></span>| <span data-ttu-id="bb02f-118">string</span><span class="sxs-lookup"><span data-stu-id="bb02f-118">string</span></span>| <span data-ttu-id="bb02f-119">ローカライズされたメディア コンテンツの名前。</span><span class="sxs-lookup"><span data-stu-id="bb02f-119">Localized name of the media content.</span></span>| 
+| <span data-ttu-id="e9536-110">id</span><span class="sxs-lookup"><span data-stu-id="e9536-110">id</span></span>| <span data-ttu-id="e9536-111">string</span><span class="sxs-lookup"><span data-stu-id="e9536-111">string</span></span>| <span data-ttu-id="e9536-112">Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。</span><span class="sxs-lookup"><span data-stu-id="e9536-112">Identifier of the media used by the Bing catalog or provider catalog.</span></span>| 
+| <span data-ttu-id="e9536-113">idType</span><span class="sxs-lookup"><span data-stu-id="e9536-113">idType</span></span>| <span data-ttu-id="e9536-114">string</span><span class="sxs-lookup"><span data-stu-id="e9536-114">string</span></span>| <span data-ttu-id="e9536-115">メディアの識別子を解釈する方法。</span><span class="sxs-lookup"><span data-stu-id="e9536-115">How to interpret the media identifier.</span></span> <span data-ttu-id="e9536-116">設定可能な値には、"bing"および「プロバイダー」が含まれます。</span><span class="sxs-lookup"><span data-stu-id="e9536-116">Possible values include "bing" and "provider".</span></span>| 
+| <span data-ttu-id="e9536-117">name</span><span class="sxs-lookup"><span data-stu-id="e9536-117">name</span></span>| <span data-ttu-id="e9536-118">string</span><span class="sxs-lookup"><span data-stu-id="e9536-118">string</span></span>| <span data-ttu-id="e9536-119">ローカライズされたメディア コンテンツの名前。</span><span class="sxs-lookup"><span data-stu-id="e9536-119">Localized name of the media content.</span></span>| 
   
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="bb02f-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="bb02f-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e9536-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="e9536-120">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="bb02f-121">Parent</span><span class="sxs-lookup"><span data-stu-id="bb02f-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="e9536-121">Parent</span><span class="sxs-lookup"><span data-stu-id="e9536-121">Parent</span></span> 
 
-[<span data-ttu-id="bb02f-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="bb02f-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="e9536-122">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="e9536-122">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EQC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="bb02f-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="bb02f-123">Reference</span></span>   
+##### <a name="reference"></a><span data-ttu-id="e9536-123">リファレンス</span><span class="sxs-lookup"><span data-stu-id="e9536-123">Reference</span></span>   

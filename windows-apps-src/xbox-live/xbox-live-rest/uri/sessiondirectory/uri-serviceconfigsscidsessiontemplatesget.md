@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f9b20801b9c687d64fdf5d02e22a7cac60535d7
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6201158"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6258419"
 ---
 # <a name="get-serviceconfigsscidsessiontemplates"></a><span data-ttu-id="6d54c-104">GET (/serviceconfigs/{scid}/sessiontemplates)</span><span class="sxs-lookup"><span data-stu-id="6d54c-104">GET (/serviceconfigs/{scid}/sessiontemplates)</span></span>
 <span data-ttu-id="6d54c-105">MPSD セッション テンプレートのセットを取得します。</span><span class="sxs-lookup"><span data-stu-id="6d54c-105">Retrieves a set of MPSD session templates.</span></span>

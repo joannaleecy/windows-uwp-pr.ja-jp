@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 422a6b40c86a84367054a20cabe1a0b0a32cb89d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6447856"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6659545"
 ---
 # <a name="introduction-to-uwp-app-design"></a><span data-ttu-id="48077-103">UWP アプリ設計の概要</span><span class="sxs-lookup"><span data-stu-id="48077-103">Introduction to UWP app design</span></span>
 

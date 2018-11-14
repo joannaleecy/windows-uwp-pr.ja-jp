@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: fa677b6bdc9d8649fac2cc9f13a5d0843062bb83
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197794"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6251033"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a><span data-ttu-id="c2cd0-104">マルチプレイヤー システムの概要</span><span class="sxs-lookup"><span data-stu-id="c2cd0-104">Introduction to the Multiplayer system</span></span>
 

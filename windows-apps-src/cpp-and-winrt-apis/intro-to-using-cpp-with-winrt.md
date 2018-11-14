@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6208562"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6272690"
 ---
 # <a name="introduction-to-cwinrt"></a><span data-ttu-id="82730-104">C++/WinRT の概要</span><span class="sxs-lookup"><span data-stu-id="82730-104">Introduction to C++/WinRT</span></span>
 &nbsp;

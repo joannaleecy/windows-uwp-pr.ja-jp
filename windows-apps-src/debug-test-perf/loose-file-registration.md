@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル、アプリ マネージャー, 展開, sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6157387"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208453"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a><span data-ttu-id="b697d-104">ルーズ ファイルの登録によるアプリの展開</span><span class="sxs-lookup"><span data-stu-id="b697d-104">Deploy an app through loose file registration</span></span> 
 

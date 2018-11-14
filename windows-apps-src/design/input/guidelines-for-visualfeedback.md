@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3440a0c64c0546b12c7f2c1bf1ea30168886d1db
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183236"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6270882"
 ---
 # <a name="guidelines-for-visual-feedback"></a><span data-ttu-id="23d1f-103">視覚的なフィードバックのガイドライン</span><span class="sxs-lookup"><span data-stu-id="23d1f-103">Guidelines for visual feedback</span></span>
 

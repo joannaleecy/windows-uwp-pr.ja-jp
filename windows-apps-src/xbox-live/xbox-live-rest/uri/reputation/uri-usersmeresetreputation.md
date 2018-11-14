@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e3e0eef31daae4bf1fe7d8b6f4f1fba0e1ff92
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6182179"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6252497"
 ---
 # <a name="usersmeresetreputation"></a><span data-ttu-id="9a3ff-104">/users/me/resetreputation</span><span class="sxs-lookup"><span data-stu-id="9a3ff-104">/users/me/resetreputation</span></span>
 <span data-ttu-id="9a3ff-105">現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9a3ff-105">Enables the Enforcement team to access the current user's Reputation scores.</span></span> <span data-ttu-id="9a3ff-106">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9a3ff-106">The domain for these URIs is `reputation.xboxlive.com`.</span></span>

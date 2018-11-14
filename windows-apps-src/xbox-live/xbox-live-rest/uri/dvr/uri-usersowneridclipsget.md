@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 586f4ea2ac8e7fceffd347bd53f40ac531bbb114
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6184303"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6250922"
 ---
 # <a name="get-usersowneridclips"></a><span data-ttu-id="e9835-104">GET (/users/{ownerId}/clips)</span><span class="sxs-lookup"><span data-stu-id="e9835-104">GET (/users/{ownerId}/clips)</span></span>
 <span data-ttu-id="e9835-105">ユーザーのクリップの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="e9835-105">Retrieve list of user's clips.</span></span>

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, コンテキスト検索, ゲーム クリップ, 配信
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e310eb0a38f64796d773075bdc9ca9034e7e536
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6198345"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264890"
 ---
 # <a name="configuring-contextual-search"></a><span data-ttu-id="eac58-104">コンテキスト検索の構成</span><span class="sxs-lookup"><span data-stu-id="eac58-104">Configuring Contextual Search</span></span>
 

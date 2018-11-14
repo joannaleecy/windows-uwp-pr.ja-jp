@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ストア サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d13c5c9428a38dd212e59688d2b4b5eae187ea4
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6203917"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266805"
 ---
 # <a name="microsoft-store-services"></a><span data-ttu-id="dcd2e-104">Microsoft Store サービス</span><span class="sxs-lookup"><span data-stu-id="dcd2e-104">Microsoft Store services</span></span>
 

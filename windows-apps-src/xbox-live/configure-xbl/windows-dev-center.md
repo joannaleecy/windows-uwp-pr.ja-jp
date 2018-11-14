@@ -1,55 +1,55 @@
 ---
-title: デベロッパー センターのサービス構成
+title: パートナー センター サービスの構成
 author: KevinAsgari
-description: Windows デベロッパー センターで Xbox Live サービスを構成する方法について説明するトピックへのリンクを示します。
+description: パートナー センターで Xbox Live サービスを構成する方法について詳しく説明するトピックへのリンクを示します。
 ms.author: kevinasg
 ms.date: 7/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: ec865b56254b624655e29df43a42ebedd58e4cf0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: e43d62610774552cce4153c7b8eca9be5406281b
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6032107"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6259758"
 ---
-# <a name="windows-dev-center-service-configuration"></a><span data-ttu-id="45d8e-104">Windows デベロッパー センターのサービス構成</span><span class="sxs-lookup"><span data-stu-id="45d8e-104">Windows Dev Center service configuration</span></span>
+# <a name="partner-center-service-configuration"></a><span data-ttu-id="05c8b-104">パートナー センター サービスの構成</span><span class="sxs-lookup"><span data-stu-id="05c8b-104">Partner Center service configuration</span></span>
 
-<span data-ttu-id="45d8e-105">[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、デベロッパー センターで、Xbox Live サービスを構成できます。</span><span class="sxs-lookup"><span data-stu-id="45d8e-105">Games that are published in the [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview) and use the full set of Xbox Live features can configure their Xbox Live services in the Dev Center.</span></span>
+<span data-ttu-id="05c8b-105">[パートナー センター](https://partner.microsoft.com/dashboard)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、パートナー センターでの Xbox Live サービスを構成できます。</span><span class="sxs-lookup"><span data-stu-id="05c8b-105">Games that are published in [Partner Center](https://partner.microsoft.com/dashboard) and use the full set of Xbox Live features can configure their Xbox Live services in Partner Center.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="45d8e-106">これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。</span><span class="sxs-lookup"><span data-stu-id="45d8e-106">These topics do not apply to titles in the Xbox Live Creators Program.</span></span>
+> <span data-ttu-id="05c8b-106">これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。</span><span class="sxs-lookup"><span data-stu-id="05c8b-106">These topics do not apply to titles in the Xbox Live Creators Program.</span></span>
 
-<span data-ttu-id="45d8e-107">ゲームは、設定ページにアクセスするために Xbox Live のフル アクセスを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="45d8e-107">Your game must be enabled for full Xbox Live access in order to access the configuration pages.</span></span>
+<span data-ttu-id="05c8b-107">ゲームは、設定ページにアクセスするために、Xbox Live のフル アクセスに対して有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="05c8b-107">Your game must be enabled for full Xbox Live access in order to access the configuration pages.</span></span>
 
-<span data-ttu-id="45d8e-108">Xbox Live 構成にアクセスするページ、 [Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。</span><span class="sxs-lookup"><span data-stu-id="45d8e-108">To access the Xbox Live configuration pages, after selecting your title in [Windows Dev Center](https://developer.microsoft.com/dashboard/windows/overview), navigate to **Services** > **Xbox Live**.</span></span>
+<span data-ttu-id="05c8b-108">Xbox Live 構成にアクセスするページでは、[パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。</span><span class="sxs-lookup"><span data-stu-id="05c8b-108">To access the Xbox Live configuration pages, after selecting your title in [Partner Center](https://partner.microsoft.com/dashboard), navigate to **Services** > **Xbox Live**.</span></span>
 
 
-<span data-ttu-id="45d8e-109">次のトピックでは、Windows デベロッパー センターを使用して Xbox Live を構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="45d8e-109">The following topics describe how to configure Xbox Live by using the Windows Dev Center.</span></span>
+<span data-ttu-id="05c8b-109">次のトピックでは、パートナー センターを使用して Xbox Live を構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="05c8b-109">The following topics describe how to configure Xbox Live by using Partner Center.</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="45d8e-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="45d8e-110">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="05c8b-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="05c8b-110">In this section</span></span>
 
-* [<span data-ttu-id="45d8e-111">まとめ</span><span class="sxs-lookup"><span data-stu-id="45d8e-111">Summary</span></span>](dev-center/summary.md)
+* [<span data-ttu-id="05c8b-111">まとめ</span><span class="sxs-lookup"><span data-stu-id="05c8b-111">Summary</span></span>](dev-center/summary.md)
 
-* [<span data-ttu-id="45d8e-112">Xbox Live のセットアップ</span><span class="sxs-lookup"><span data-stu-id="45d8e-112">Xbox Live Setup</span></span>](dev-center/xbox-live-setup.md)
+* [<span data-ttu-id="05c8b-112">Xbox Live のセットアップ</span><span class="sxs-lookup"><span data-stu-id="05c8b-112">Xbox Live Setup</span></span>](dev-center/xbox-live-setup.md)
 
-* [<span data-ttu-id="45d8e-113">Achievements 2017</span><span class="sxs-lookup"><span data-stu-id="45d8e-113">Achievements 2017</span></span>](dev-center/achievements-in-udc.md)
+* [<span data-ttu-id="05c8b-113">Achievements 2017</span><span class="sxs-lookup"><span data-stu-id="05c8b-113">Achievements 2017</span></span>](dev-center/achievements-in-udc.md)
 
-* [<span data-ttu-id="45d8e-114">注目の統計とランキング 2017</span><span class="sxs-lookup"><span data-stu-id="45d8e-114">Featured Stats and Leaderboards 2017</span></span>](dev-center/featured-stats-and-leaderboards.md)
+* [<span data-ttu-id="05c8b-114">注目の統計とランキング 2017</span><span class="sxs-lookup"><span data-stu-id="05c8b-114">Featured Stats and Leaderboards 2017</span></span>](dev-center/featured-stats-and-leaderboards.md)
 
-* [<span data-ttu-id="45d8e-115">ゲーム DVR</span><span class="sxs-lookup"><span data-stu-id="45d8e-115">Game DVR</span></span>](dev-center/game-dvr.md)
+* [<span data-ttu-id="05c8b-115">ゲーム DVR</span><span class="sxs-lookup"><span data-stu-id="05c8b-115">Game DVR</span></span>](dev-center/game-dvr.md)
 
-* [<span data-ttu-id="45d8e-116">ローカライズされた文字列</span><span class="sxs-lookup"><span data-stu-id="45d8e-116">Localized strings</span></span>](dev-center/localized-strings.md)
+* [<span data-ttu-id="05c8b-116">ローカライズされた文字列</span><span class="sxs-lookup"><span data-stu-id="05c8b-116">Localized strings</span></span>](dev-center/localized-strings.md)
 
-* [<span data-ttu-id="45d8e-117">権限</span><span class="sxs-lookup"><span data-stu-id="45d8e-117">Privileges</span></span>](dev-center/privileges.md)
+* [<span data-ttu-id="05c8b-117">権限</span><span class="sxs-lookup"><span data-stu-id="05c8b-117">Privileges</span></span>](dev-center/privileges.md)
 
-* [<span data-ttu-id="45d8e-118">リッチ プレゼンス文字列</span><span class="sxs-lookup"><span data-stu-id="45d8e-118">Rich Presence strings</span></span>](dev-center/rich-presence-configuration.md)
+* [<span data-ttu-id="05c8b-118">リッチ プレゼンス文字列</span><span class="sxs-lookup"><span data-stu-id="05c8b-118">Rich Presence strings</span></span>](dev-center/rich-presence-configuration.md)
 
-* [<span data-ttu-id="45d8e-119">タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="45d8e-119">Title Storage</span></span>](dev-center/title-storage.md)
+* [<span data-ttu-id="05c8b-119">タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="05c8b-119">Title Storage</span></span>](dev-center/title-storage.md)
 
-* [<span data-ttu-id="45d8e-120">アクセス ポリシー</span><span class="sxs-lookup"><span data-stu-id="45d8e-120">Access Policies</span></span>](dev-center/access-policies-udc.md)
+* [<span data-ttu-id="05c8b-120">アクセス ポリシー</span><span class="sxs-lookup"><span data-stu-id="05c8b-120">Access Policies</span></span>](dev-center/access-policies-udc.md)
 
-* [<span data-ttu-id="45d8e-121">シングル サインオン</span><span class="sxs-lookup"><span data-stu-id="45d8e-121">Single sign-on</span></span>](dev-center/single-sign-on.md)
+* [<span data-ttu-id="05c8b-121">シングル サインオン</span><span class="sxs-lookup"><span data-stu-id="05c8b-121">Single sign-on</span></span>](dev-center/single-sign-on.md)
 
-* [<span data-ttu-id="45d8e-122">XboxServices.config</span><span class="sxs-lookup"><span data-stu-id="45d8e-122">XboxServices.config</span></span>](../xboxservices-config.md)
+* [<span data-ttu-id="05c8b-122">XboxServices.config</span><span class="sxs-lookup"><span data-stu-id="05c8b-122">XboxServices.config</span></span>](../xboxservices-config.md)
