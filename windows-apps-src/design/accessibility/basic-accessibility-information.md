@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b9d76dd20c4537fadf8c0701c200740c31b784
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469785"
+ms.locfileid: "6662432"
 ---
 # <a name="expose-basic-accessibility-information"></a><span data-ttu-id="52947-103">基本的なアクセシビリティ情報の開示</span><span class="sxs-lookup"><span data-stu-id="52947-103">Expose basic accessibility information</span></span>  
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 99abbc0e06f84fea87c4bbc96cb912424f9a2272
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6448089"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6669710"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a><span data-ttu-id="3058e-104">Windows 10 ビルド 10586 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="3058e-104">What's new in Windows 10 for developers, build 10586</span></span>
 

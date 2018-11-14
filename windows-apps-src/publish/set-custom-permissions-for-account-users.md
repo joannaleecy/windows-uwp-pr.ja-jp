@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272077"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6453141"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a><span data-ttu-id="79df9-103">アカウント ユーザーのロールまたはカスタムのアクセス許可の設定</span><span class="sxs-lookup"><span data-stu-id="79df9-103">Set roles or custom permissions for account users</span></span>
 

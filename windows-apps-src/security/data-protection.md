@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: edcce656f5be681a11e79b4714e96c2dcde621d5
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6271858"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651946"
 ---
 # <a name="data-protection"></a><span data-ttu-id="e03f9-104">データ保護</span><span class="sxs-lookup"><span data-stu-id="e03f9-104">Data protection</span></span>
 

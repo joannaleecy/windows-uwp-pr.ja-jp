@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 予定, カレンダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207188"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6650002"
 ---
 # <a name="manage-appointments"></a><span data-ttu-id="b9c5e-104">予定の管理</span><span class="sxs-lookup"><span data-stu-id="b9c5e-104">Manage appointments</span></span>
 

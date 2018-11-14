@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, シェーダー パイプライン
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6448495"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6659005"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a><span data-ttu-id="df236-104">OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較</span><span class="sxs-lookup"><span data-stu-id="df236-104">Compare the OpenGL ES 2.0 shader pipeline to Direct3D</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 35666f64c88ad56b8f5bd3052ebbee069ccaecfc
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6264865"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6455098"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a><span data-ttu-id="859ec-104">Windows に付属するソフトウェア デコーダーを有効または無効にします。</span><span class="sxs-lookup"><span data-stu-id="859ec-104">Enable or disable the software decoder that ships with Windows</span></span>
 <span data-ttu-id="859ec-105">Windows 10 バージョン 1803 では、ソフトウェア デコーダーがインストールされ、既定で有効になっています。</span><span class="sxs-lookup"><span data-stu-id="859ec-105">In Windows 10, version 1803, the software decoder is installed and enabled by default.</span></span>  <span data-ttu-id="859ec-106">カメラ バーコード スキャナーを使用しない場合、Windows.Devices.PointOfService.BarcodeScanner API で動作するサード パーティ製のデコーダーを入手した場合、およびそのどちらも使用しない場合は、ソフトウェア デコーダーを無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="859ec-106">You can disable the software decoder that ships with Windows if you do not want to use Camera Barcode Scanner or if you have acquired a 3rd party decoder that works with Windows.Devices.PointOfService.BarcodeScanner APIs and do not want to use both.</span></span>

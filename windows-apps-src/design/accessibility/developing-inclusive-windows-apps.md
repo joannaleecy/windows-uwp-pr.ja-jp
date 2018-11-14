@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2adb3c67c4c7c1d024cd969af15cc12baa424511
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183893"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6659015"
 ---
 # <a name="developing-inclusive-windows-apps"></a><span data-ttu-id="23bdb-103">包括性を備えた Windows アプリの開発</span><span class="sxs-lookup"><span data-stu-id="23bdb-103">Developing inclusive Windows apps</span></span>  
 

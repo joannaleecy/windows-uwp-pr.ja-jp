@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 7182f67a7bffc303b9c3067d8b746f1b4f27b809
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6276856"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6657334"
 ---
 # <a name="device-portal-for-xbox"></a><span data-ttu-id="ff1d1-104">Xbox 用 Device Portal</span><span class="sxs-lookup"><span data-stu-id="ff1d1-104">Device Portal for Xbox</span></span>
 
