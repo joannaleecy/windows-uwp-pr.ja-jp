@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d1224c1707d3e86c9ddd309ecf06bd0c0767fb83
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028731"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6443239"
 ---
 # <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>UWP プロジェクトに WindowsPhone Silverlight プロジェクトを移植します。
 
@@ -65,7 +65,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 -   プラットフォームを検出するための代替方法がない場合に役立つと考えられる同様の手法として、マークアップ ファイルや **ResourceDictionary** ファイル (またはこのファイルが保存されているフォルダー) に対して特殊な名前を設定する方法があります。この特殊な名前によって、アプリを特定のデバイス ファミリで実行する場合、実行時に自動的に読み込まれるようになります。 この手法については、「[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)」のケース スタディをご覧ください。
 -   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」に記載されている 3 番目の例をご覧ください。
 -   WindowsPhone Silverlight と windows 10 の両方をサポートする場合は、そのことができますプロジェクト間でソース コード ファイルを共有します。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。また、ソース コントロールに追加することを忘れないでください。 すべてではないにしても、大半のファイルが両プラットフォームで機能するように命令型ソース コードをファクタリングできる場合は、ファイルのコピーを 2 つ持つ必要はありません。 可能な場合は条件付きコンパイル ディレクティブ内、または必要であれば実行時条件付きで、ファイル内の任意のプラットフォーム固有ロジックを含めることができます。 次のセクションおよび「[C# プリプロセッサ ディレクティブ](http://msdn.microsoft.com/library/ed8yd1ha.aspx)」をご覧ください。
--   ソース コード レベルではなくバイナリ レベルで再利用、については、windows 10 アプリ (.NET Core) 用 WindowsPhone Silverlight で利用できる .NET Api のサブセットおよびサブセットをサポートするポータブル クラス ライブラリがあります。 ポータブル クラス ライブラリ アセンブリは、これらの .NET プラットフォームおよびその他のプラットフォームとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
+-   ソース コード レベルではなく、バイナリ レベルでの再利用については、windows 10 アプリ (.NET Core) 用 WindowsPhone Silverlight で利用できる .NET Api のサブセットだけでなく、サブセットをサポートするポータブル クラス ライブラリがあります。 ポータブル クラス ライブラリ アセンブリは、これらの .NET プラットフォームおよびその他のプラットフォームとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>条件付きコンパイルとアダプティブ コード
 
@@ -89,7 +89,7 @@ WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間�
 #endif // NETFX_CORE
 ```
 
-その場合、さらに windows 10 をサポートするようになりましたし、行うことができますが、すぎるします。
+その場合、さらに windows 10 をサポートするようになりましたし、行うことができますが、すぎます。
 
 ```csharp
 #if WINDOWS_UAP
@@ -103,7 +103,7 @@ WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間�
 #endif // WINDOWS_UAP
 ```
 
-ハードウェアの "戻る" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 Windows 10 での"戻る"ボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
+ハードウェアの "戻る" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 Windows 10 での戻るボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
 
 ```csharp
        Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
 ms.localizationpriority: medium
 ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049349"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6203719"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン
 
@@ -65,7 +65,7 @@ typedef struct AsyncBlock
 * *context* - データをコールバック関数に渡すことができるようにします。
 * *queue* - **AsyncQueue** を指定するハンドルである async_queue_handle_t。 これが設定されていない場合、既定のキューが使用されます。
 
-各非同期 API を呼び出すのヒープで新しい AsyncBlock を作成する必要があります。  まで、AsyncBlock の完了コールバックが呼び出され、削除し、AsyncBlock はライブする必要があります。
+各非同期 API を呼び出すのヒープでは、新しい AsyncBlock を作成する必要があります。  AsyncBlock の完了コールバックが呼び出され、削除し、まで、AsyncBlock はライブする必要があります。
 
 > [!IMPORTANT]
 > **AsyncBlock** は、**非同期タスク**が完了するまでメモリ内に存在している必要があります。 動的に割り当てられる場合、AsyncBlock の**完了コールバック**内で削除できます。
@@ -78,7 +78,7 @@ typedef struct AsyncBlock
 * **GetAsyncStatus** を呼び出して、true の場合は非同期タスクが完了するまで待機する。
 * **AsyncBlock** で waitEvent を設定し、このイベントが通知されるまで待機する。
 
-**GetAsyncStatus**と waitEvent では、**非同期タスク**と見なされます完了後、AsyncBlock の**完了コールバック**の実行ただし、AsyncBlock の**完了コールバック**は省略可能です。
+**GetAsyncStatus**と waitEvent では、**非同期タスク**と見なされます完了したら、AsyncBlock の**完了コールバック**を実行した後ただし、AsyncBlock の**完了コールバック**は省略可能です。
 
 **非同期タスク**が完了したら、結果を取得できます。
 

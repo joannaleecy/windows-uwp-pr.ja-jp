@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050055"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195366"
 ---
 # <a name="xbox-live-page-dev-home"></a>Xbox Live ページ (Dev Home)
    
@@ -35,7 +35,7 @@ Dev Home の**Xbox Live**ページでは、マルチプレイヤーの情報を�
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-**XBTrace (advancedmp)** ページを開始またはマルチプレイヤー トレースのキャプチャを停止します。 マルチプレイヤーの現在の状態のスナップショットをキャプチャすることもできます。   
+**XBTrace (advancedmp)** ページを開始またはマルチプレイヤー トレースのキャプチャを停止します。 現在のマルチプレイヤーの状態のスナップショットをキャプチャすることもできます。   
   
 <a id="ID4E3B"></a>
 

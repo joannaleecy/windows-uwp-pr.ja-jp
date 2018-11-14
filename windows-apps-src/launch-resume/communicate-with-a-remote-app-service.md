@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 044197ebae111e9300f06783f02de7f0636d4a11
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030292"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6265234"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
@@ -34,7 +34,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-**AppService**要素の横にある**SupportsRemoteSystems**属性を追加します。
+**AppService**の要素の横にある**SupportsRemoteSystems**属性を追加します。
 
 ``` xml
 ...
@@ -42,7 +42,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-この**uap3**名前空間の要素を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
+要素をこの**uap3**名前空間を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

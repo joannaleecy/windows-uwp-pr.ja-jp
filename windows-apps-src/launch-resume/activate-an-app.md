@@ -14,15 +14,15 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028973"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187934"
 ---
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
-[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドして、アプリのアクティブ化を処理する方法について説明します。
+[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドすることによってアプリのアクティブ化を処理する方法について説明します。
 
 ## <a name="override-the-launch-handler"></a>起動ハンドラーを上書きする
 
@@ -266,7 +266,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ## <a name="remarks"></a>解説
 
 > [!NOTE]
-> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを判断し、新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうか、その情報に基づいて決定[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。
+> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを特定し、その情報に基づいて新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうかを決定する[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。
 
 ## <a name="important-apis"></a>重要な API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)

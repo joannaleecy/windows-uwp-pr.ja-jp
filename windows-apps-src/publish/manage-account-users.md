@@ -9,22 +9,22 @@ ms.topic: article
 keywords: windows 10, uwp, アカウント ユーザー, ユーザー、azure ad, マルチ ユーザー、複数のユーザーを管理します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 01517ebd2cc4b86fa1ac440446a5cc59172014b3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024810"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190512"
 ---
 # <a name="manage-account-users"></a>アカウント ユーザーの管理
 
-Azure Active Directory を使用して、追加して、[パートナー センター](https://partner.microsoft.com/dashboard)アカウントに追加のユーザーを管理することができます。 各ユーザーに必要なロールまたはカスタムのアクセス許可を定義できます。 ユーザーのグループや Azure AD アプリケーションに役割を割り当てることもできます。
+Azure Active Directory を使用して、追加して、[パートナー センター](https://partner.microsoft.com/dashboard)アカウントでその他のユーザーを管理することができます。 各ユーザーに必要なロールまたはカスタムのアクセス許可を定義できます。 ユーザーのグループや Azure AD アプリケーションに役割を割り当てることもできます。
 
-追加して、アカウントのユーザーの管理、組織の Azure Active Directory と最初に、パートナー センター アカウントを関連付ける必要があります。 
+追加し、アカウント ユーザーを管理するために、組織の Azure Active Directory と最初に、パートナー センター アカウントを関連付ける必要があります。 
 
 このセクションでは、次の操作手順について説明します。
 
--   [パートナー センター アカウントに Azure Active Directory を関連付ける](associate-azure-ad-with-dev-center.md)
--   [ユーザー、グループ、およびパートナー センター アカウントに Azure AD アプリケーションを追加します。](add-users-groups-and-azure-ad-applications.md)
+-   [パートナー センターのアカウントを Azure Active Directory を関連付ける](associate-azure-ad-with-dev-center.md)
+-   [ユーザー、グループ、および Azure AD アプリケーションをパートナー センター アカウントを追加します。](add-users-groups-and-azure-ad-applications.md)
 -   [アカウント ユーザーのロールとカスタムのアクセス許可の設定](set-custom-permissions-for-account-users.md)
 
 > [!TIP]

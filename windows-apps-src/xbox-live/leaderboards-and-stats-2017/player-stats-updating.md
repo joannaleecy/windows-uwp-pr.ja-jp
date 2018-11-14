@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f61858347955bde007d97420cfb33d8e0298fd2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6027221"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187861"
 ---
 # <a name="updating-stats-2017"></a>統計の更新 2017
 
@@ -22,7 +22,7 @@ ms.locfileid: "6027221"
 プレイヤーの統計を追跡するかどうかは、タイトルに応じて決めることができます。また、統計を必要に応じて更新するには `StatsManager` を呼び出します。  `StatsManager` は、あらゆる変更をバッファリングして、定期的にサービスにフラッシュします。  タイトルでは、手動でフラッシュすることもできます。
 
 > [!NOTE]
-> 統計を頻繁にフラッシュ避けてください。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
+> 多くの統計をフラッシュされません。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
 
 ### <a name="multiple-devices"></a>複数のデバイス
 

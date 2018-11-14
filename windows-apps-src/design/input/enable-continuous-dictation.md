@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023700"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187258"
 ---
 # <a name="continuous-dictation"></a>継続的なディクテーション
 
@@ -28,7 +28,7 @@ ms.locfileid: "6023700"
 ディクテーションまたはメールなど、より長い継続的な音声認識セッションの場合は、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
 
 > [!NOTE]
-> 音声入力言語のサポートは、アプリが実行されている[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)に依存します。 Pc とノート pc、EN-US のみ認識されると、音声認識でサポートされているすべての言語を認識できる Xbox と電話間します。 詳しくは、[音声認識の言語を指定する](specify-the-speech-recognizer-language.md)を参照してください。
+> 音声入力言語のサポートは、アプリが実行されている[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)に依存します。 Pc とノート pc、EN-US のみ認識されると、音声認識でサポートされているすべての言語を認識できる Xbox と電話間です。 詳しくは、[音声認識エンジンの言語を指定する](specify-the-speech-recognizer-language.md)を参照してください。
 
 ## <a name="set-up"></a>設定
 

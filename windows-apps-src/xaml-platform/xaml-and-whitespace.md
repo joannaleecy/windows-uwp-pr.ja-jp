@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6028327"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6188020"
 ---
 # <a name="xaml-and-whitespace"></a>XAML と空白
 
@@ -22,7 +22,7 @@ XAML で使われる空白処理規則について説明します。
 
 ## <a name="whitespace-processing"></a>空白処理
 
-XML で一貫性のある、XAML での空白文字領域とは、改行、タブです。これらはそれぞれ Unicode 値 0020、000 a、0009 になります。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
+XML、XAML での空白文字はスペース、改行、タブです。これらはそれぞれ Unicode 値 0020、000 a、0009 になります。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
 
 -   東アジアの文字間の改行文字は削除されます。
 -   すべての空白文字 (スペース、改行、タブ) はスペースに変換されます。

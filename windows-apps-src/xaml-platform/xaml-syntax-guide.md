@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035338"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164465"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 構文のガイド
 
@@ -240,7 +240,7 @@ XML や HTML などのマークアップ言語でプロパティ値を設定す�
 
 XAML のもう 1 つの規則は、要素の属性がどのような順序でも設定できる必要があるというものです。 たとえば、`<Rectangle Height="50" Width="100" />` と `<Rectangle Width="100"  Height="50" />` の間には違いがありません。 順序をどちらにするかは、スタイルの問題です。
 
-**注:** XAML デザイナー多くの場合の宣伝順序指定の規則、XML エディター以外のデザイン サーフェイスを使用するが、属性を並べ替えたり、新たに導入に後で、その XAML を自由に編集することができます。
+**注:** XAML デザイナー多くの場合の宣伝順序指定の規則、XML エディター以外のデザイン サーフェイスを使用するが、属性を並べ替えたり、新たに導入を後で、その XAML を自由に編集することができます。
 
 ## <a name="attached-properties"></a>添付プロパティ
 
@@ -278,7 +278,7 @@ Windows ランタイム API の多くのプロパティでは、値として列�
 -   修飾された形式は機能しないので、使わないでください。 たとえば、`<Button Visibility="Visibility.Visible"/>` のような XAML は無効です。
 -   定数の値を使わないでください。 要するに、列挙体の整数値に依存しないようにしてください。この整数値は、明示的または暗黙的な列挙体の定義方法に応じて変わります。 一見、機能しているように見えても、永続的でない実装の詳細となるものに依存しているため、XAML でもコードでも好ましくない方法です。 たとえば、`<Button Visibility="1"/>` のように記述しないでください。
 
-**注:** で XAML を使用して、列挙体を使用する Api のリファレンス トピック、**構文**の**プロパティの値**のセクションで列挙型へのリンクをクリックします。 列挙体のページに移動するので、その列挙体の名前付き定数を確認できます。
+**注:** で XAML を使用して、列挙型を使用する Api のリファレンス トピック、**構文**の**プロパティの値**のセクションで列挙型へのリンクをクリックします。 列挙体のページに移動するので、その列挙体の名前付き定数を確認できます。
 
 列挙体は、フラグのように機能します。つまり、**FlagsAttribute** で属性が設定されます。 フラグのように機能する列挙体の値の組み合わせを XAML 属性値として指定する必要がある場合は、各列挙体定数の名前を使います。各名前はコンマ (,) で区切り、空白文字は含めません。 フラグのような属性は、Windows ランタイム XAML ボキャブラリでは一般的ではありませんが、それが利用できる例の 1 つが [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) で、XAML でフラグのように機能する列挙値の設定がサポートされています。
 

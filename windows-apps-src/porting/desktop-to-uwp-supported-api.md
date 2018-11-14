@@ -10,13 +10,13 @@ keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: 086025e46e0e5293e44dda61896fa3fd4ae6115b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027526"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273719"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>パッケージ デスクトップ アプリを利用可能な UWP Api
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>パッケージ デスクトップ アプリで使用可能な UWP Api
 
 パッケージ デスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、パッケージ アプリが使うことができるクラスについて説明します。
 
@@ -28,7 +28,7 @@ ms.locfileid: "6027526"
 <tr><td>バックグラウンド タスク</td><td>パッケージ アプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク<i>として</i>実行できます。 詳しくは、<a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub のバックグラウンド タスク サンプル</a>をご覧ください。</td></tr>
 <tr><td>Bluetooth</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>チャットと電話</td><td>パッケージ アプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
-<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化できます。</td></tr>
+<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化ことができます。</td></tr>
 <tr><td>暗号化</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>位置情報</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>ファイルおよびフォルダー ピッカー</td><td>パッケージ アプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>

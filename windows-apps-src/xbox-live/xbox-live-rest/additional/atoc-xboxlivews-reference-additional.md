@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 106fe8e79752125a8c30670e226aebd689c3d240
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049158"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185555"
 ---
 # <a name="additional-reference"></a>その他の参照情報
 
-このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足リファレンス情報を提供します。
+このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足のリファレンス情報を提供します。
 
 <a id="ID4EZ"></a>
 
@@ -27,7 +27,7 @@ ms.locfileid: "6049158"
 
 [承認のタイプ](authorizationtypes.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使用される標準の承認の種類について説明します。
+&nbsp;&nbsp;Xbox Live サービスで使用される標準的な認証の種類について説明します。
 
 [データ型の概要](datatypeoverview.md)
 
@@ -35,7 +35,7 @@ ms.locfileid: "6049158"
 
 [EDS の補助 API](eds-apis.md)
 
-&nbsp;&nbsp;EDS の補助 Api について説明します。
+&nbsp;&nbsp;EDS の補助の Api について説明します。
 
 [EDS 承認](edsauthorization.md)
 
@@ -65,7 +65,7 @@ ms.locfileid: "6049158"
 
 [標準の HTTP 要求および応答ヘッダー](httpstandardheaders.md)
 
-&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用される標準の HTTP ヘッダーをについて説明します。
+&nbsp;&nbsp;Xbox Live サービス要求を行うときに使用する標準的な HTTP ヘッダーを説明します。
 
 [標準の HTTP 状態コード](httpstatuscodes.md)
 

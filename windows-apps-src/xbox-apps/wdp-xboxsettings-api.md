@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035717"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6455341"
 ---
 # <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
@@ -54,7 +54,7 @@ GET | /ext/settings
 * Min - (数値) このフィールドは、設定の最小限の数値を示します。
 * Max - (数値) このフィールドは、設定の最大の数値を示します。
 
-設定の場合は選択します。
+設定を選択します。
 * OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 
@@ -105,7 +105,7 @@ GET | /ext/settings/\<設定名\>
 * Min - (数値) このフィールドは、設定の最小限の数値を示します。
 * Max - (数値) このフィールドは、設定の最大の数値を示します。
 
-設定の場合は選択します。
+設定を選択します。
 * OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 

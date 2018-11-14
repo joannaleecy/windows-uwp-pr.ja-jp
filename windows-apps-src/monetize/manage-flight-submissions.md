@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049282"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191690"
 ---
 # <a name="manage-package-flight-submissions"></a>パッケージ フライトの申請の管理
 
@@ -81,7 +81,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
 パッケージ フライトの申請を作成するには、次のプロセスに従います。
 
-1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)など、Azure AD アプリケーションをパートナー センター アカウントに関連付けると、クライアントの ID とキーを取得します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
+1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)Azure AD アプリケーションをパートナー センター アカウントに関連付けると、ID とキー、クライアントの取得を含め、します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
 
 2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Microsoft Store 申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
@@ -121,7 +121,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これでパートナー センターに通知は、申請が完了して、更新がアカウントに適用できるようになりましたする必要があります。
+5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これは、申請を完了したことと、更新がアカウントに適用できるようになりましたする必要がありますにパートナー センターに通知されます。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 または、以前のメソッドを使用して、パートナー センターにアクセスして申請の進行状況を監視する続行することができます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 またはパートナー センターにアクセスして、以前のメソッドを使用して、申請の進行状況を監視する続行することができます。
 
 <span/>
 
@@ -391,7 +391,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*と*fallbackSubmissionId*値は、パートナー センターで割り当てられているし、開発者が設定するものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
+> *PackageRolloutStatus*と*fallbackSubmissionId*の値は、パートナー センターで割り当てられているし、開発者が設定されるものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
 
 <span/>
 

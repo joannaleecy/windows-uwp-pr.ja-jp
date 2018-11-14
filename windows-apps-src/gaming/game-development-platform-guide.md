@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テクノロジ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034641"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6181568"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>UWP アプリのゲーム テクノロジ
 
@@ -24,7 +24,7 @@ ms.locfileid: "6034641"
 ##  <a name="benefits-of-windows10-for-game-development"></a>ゲーム開発向けの windows 10 のメリット
 
 
-Windows 10 で UWP の導入により、windows 10 のタイトルはすべての Microsoft プラットフォームに対応することになります。 以前のバージョンの Windows から無料で移行は、windows 10 クライアント数が徐々 に増加します。 これら 2 つの組み合わせは、windows 10 のタイトルが膨大な数の Microsoft Store 経由でお客様に到達できることを意味します。
+Windows 10 で UWP の導入により、windows 10 のタイトルはすべての Microsoft プラットフォームに対応することになります。 以前のバージョンの Windows から無料で移行は、windows 10 クライアント数が徐々 に増加します。 これら 2 つの組み合わせは、windows 10 のタイトルが膨大な数の Microsoft Store を通じて顧客に到達できることを意味します。
 
 さらに、windows 10 には、ゲームに特に便利な多くの新しい機能が用意されています。
 
@@ -39,7 +39,7 @@ Windows 10 で UWP の導入により、windows 10 のタイトルはすべて�
 ## <a name="development-environment"></a>開発環境
 
 
-Uwp ゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境をセットアップする必要があります。 お勧めします、Visual Studio の最新バージョンをインストールする最新の開発とセキュリティ更新プログラムにアクセスを提供します。 Visual Studio では、UWP アプリを作成することができ、ゲームの開発ツールを提供します。
+Uwp ゲームを作成するには、Visual Studio 2015 以降をインストールすることによって、開発環境をセットアップする必要があります。 お勧めします、Visual Studio の最新バージョンをインストールすることを最新の開発とセキュリティ更新プログラム。 Visual Studio では、UWP アプリを作成することができ、ゲームの開発ツールを提供します。
 
 -   Visual Studio の DX ゲームのプログラミング用ツール: Visual Studio には、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするためのツールが用意されています。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。 詳しくは、「[ゲーム プログラミング用の Visual Studio ツールの使用](set-up-visual-studio-for-game-development.md)」をご覧ください。
 -   Visual Studio グラフィックス診断機能: オプション機能として、グラフィックス診断ツールを Windows 内から利用できるようになりました。 診断ツールを使って、グラフィックス デバッグやグラフィックス フレーム分析を実行し、リアルタイムで GPU 使用率を監視できます。 詳しくは、「[DirectX ランタイムと Visual Studio グラフィックス診断機能の使用](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)」をご覧ください。

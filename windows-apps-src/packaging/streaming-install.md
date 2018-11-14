@@ -6,21 +6,21 @@ description: ユニバーサル Windows プラットフォーム (UWP) アプリ
 ms.author: lahugh
 ms.date: 04/05/2017
 ms.topic: article
-keywords: windows 10, uwp, ストリーミング インストールでは、uwp アプリのストリーミング インストールします。
+keywords: windows 10, uwp, ストリーミング インストールをストリーミングする uwp アプリのインストールします。
 ms.localizationpriority: medium
 ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052137"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185730"
 ---
 # <a name="uwp-app-streaming-install"></a>UWP アプリ ストリーミング インストール
 ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Microsoft Store からアプリのどの部分を最初にダウンロードするかを指定できます。 アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。 
 
-UWP アプリ ストリーミング インストールを使用するには、セクションでは、アプリのファイルに分割する必要があります。 これを行うにはダウンロードの優先順位のセットを注文できるが、アプリをパッケージ化されている XML ファイルで、コンテンツ グループ マップ作成します。 詳細については下のリンクのトピックを参照してください。
+UWP アプリ ストリーミング インストールを使用するには、セクションでは、アプリのファイルに分割する必要があります。 これを行うにはダウンロードの優先順位のセットを注文できるアプリをパッケージ化されている XML ファイルには、コンテンツ グループ マップ作成します。 詳細については以下のリンクのトピックを参照してください。
 
-UWP アプリに UWP アプリ ストリーミング インストールを追加する完全なガイドについて、この[ブログ シリーズ](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)ご覧ください。
+UWP アプリに UWP アプリ ストリーミング インストールを追加する完全なについては、この[ブログ シリーズ](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)ご覧ください。
 
 | トピック | 説明 | 
 |-------|-------------|

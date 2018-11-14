@@ -1,7 +1,7 @@
 ---
 author: Xansky
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
-description: プログラムで作成およびパートナー センター アカウントに登録されているアプリの申請を管理するには、Microsoft Store 申請 API を使用します。
+description: プログラムで作成し、パートナー センター アカウントに登録されているアプリの申請を管理するには、Microsoft Store 申請 API を使用します。
 title: 申請の作成と管理
 ms.author: mhopkins
 ms.date: 06/04/2018
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API
 ms.localizationpriority: medium
 ms.openlocfilehash: c91c7b42642df9a03aab1324f074799b63157e62
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041990"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197697"
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 
@@ -29,7 +29,7 @@ ms.locfileid: "6041990"
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> この API を使用して、アプリ、パッケージ フライトやアドオンの申請を作成する場合は、パートナー センターではなく、API を使用してのみ、申請にさらを変更することを確認します。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
+> この API を使用して、アプリ、パッケージ フライトやアドオンの申請を作成する場合は、パートナー センターではなく、API を使用してのみ、申請にさらに変更を加えるに必ず。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
 
 > [!IMPORTANT]
 > この API を使って、[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開したり、[LOB アプリ](../publish/distribute-lob-apps-to-enterprises.md)の申請を直接企業に発行したりすることはできません。 使用する必要がありますの両方のシナリオには、パートナー センターで、申請を公開します。
@@ -45,7 +45,7 @@ Microsoft Store 申請 API を呼び出すコードの作成を開始する前�
 
 * ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
-* [Azure AD アプリケーションをパートナー センター アカウントに関連付ける](#associate-an-azure-ad-application-with-your-windows-dev-center-account)必要があり、ID、クライアント ID、キー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
+* [Azure AD アプリケーションをパートナー センター アカウントに関連付ける](#associate-an-azure-ad-application-with-your-windows-dev-center-account)必要があり、ID、クライアント ID およびキー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
 
 * Microsoft Store 申請 API で使うアプリを準備します。
 
@@ -63,14 +63,14 @@ Microsoft Store 申請 API を呼び出すコードの作成を開始する前�
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Azure AD アプリケーションをパートナー センター アカウントに関連付ける方法
 
-Microsoft Store 申請 API を使用する前に、Azure AD アプリケーションをパートナー センター アカウントに関連付けしてテナント ID とアプリケーションのクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Microsoft Store 申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+Microsoft Store 申請 API を使用する前に、Azure AD アプリケーションをパートナー センター アカウントに関連付けるしてテナント ID とアプリケーションのクライアント ID を取得してキーを生成する必要があります。 Azure AD アプリケーションは、Microsoft Store 申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
 > [!NOTE]
 > この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
 1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  次に、パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センター アカウントの申請へのアクセスに使用する**アカウント設定**] セクションで、**ユーザー**ページから。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[を新規作成パートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。  
+2.  パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センターのアカウントの申請へのアクセスを使用する**アカウント設定**] セクションの [**ユーザー** ] ページから次に、 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。  
 
 3.  **[ユーザー]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
@@ -95,7 +95,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI と*client \_id*と*client \_secret*パラメーターで、 *tenant\_id*値のテナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+POST URI と*client \_id*と*client \_secret*パラメーターで*tenant\_id*値、テナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
@@ -146,7 +146,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 Microsoft Store 申請 API について質問がある場合や、この API を使った申請の管理に関してサポートが必要な場合は、次のリソースを使ってください。
 
 * Microsoft の[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)で質問します。
-* 当社の[サポート ページ](https://developer.microsoft.com/windows/support)を参照してください。 し、パートナー センターのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
+* マイクロソフトの[サポート ページ](https://developer.microsoft.com/windows/support)を参照してください。 し、パートナー センターのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
 
 ## <a name="related-topics"></a>関連トピック
 

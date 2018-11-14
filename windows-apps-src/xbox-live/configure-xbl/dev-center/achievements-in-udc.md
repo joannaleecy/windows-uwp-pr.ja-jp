@@ -1,36 +1,36 @@
 ---
 title: Achievements 2017
 author: PhillipLucas
-description: Microsoft デベロッパー センターで実績を構成してリワードを提供する方法について説明します。
+description: リワードを提供するパートナー センターで実績を構成する方法について説明します。
 ms.assetid: ''
 ms.author: kevinasg
 ms.date: 11/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: b39c4ef33db0792856f06aaf282b7804012984a5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: d5e84e2e124a8ca6cac814dfb05120a8e6137ac3
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6044936"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6280432"
 ---
-# <a name="configure-achievements-2017-on-dev-center"></a>デベロッパー センターでの Achievements 2017 の構成
+# <a name="configure-achievements-2017-in-partner-center"></a>パートナー センターでの Achievements 2017 を構成します。
 
 > [!IMPORTANT]
 > 実績は、ID@Xbox または対象パートナーにのみ適用されます。 Xbox Live クリエーターズ プログラムに参加しているゲームはサポートされません。
 
-[Microsoft デベロッパー センター](https://developer.microsoft.com/dashboard)を使用して、ゲームに関連付けられている [Achievements 2017](../../achievements-2017/simplified-achievements.md) を構成することができます。 次の手順に従って新しい実績を追加します。
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用すると、ゲームに関連付けられている[Achievements 2017](../../achievements-2017/simplified-achievements.md)を構成します。 次の手順に従って新しい実績を追加します。
 
 1. **[Services]** > **Xbox Live** > **[Achievements]** の順に選択して、タイトルの実績セクションに移動します。
 2. **[New Achievement]** ボタンをクリックし、フォームに記入します。  完了したら、**[Save]** をクリックします。
 
-![Microsoft デベロッパー センターで新しい実績を作成するスクリーンショット](../../images/dev-center/achievement-table.png)
+![パートナー センターで新しい実績を作成するスクリーン ショット](../../images/dev-center/achievement-table.png)
 
 ## <a name="description"></a>説明
-説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 [Microsoft デベロッパー センター](https://developer.microsoft.com/dashboard) で **[Localized strings]** サービス構成セクションにアクセスして、実績にローカライゼーション サポートを追加することができます。
+説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 実績にローカライゼーション サポートを追加するには、[パートナー センター](https://partner.microsoft.com/dashboard)では、**ローカライズされた文字列**サービス構成セクションにアクセスします。
 
-![Microsoft デベロッパー センターで新しい実績を構成する場合の説明フィールドのスクリーンショット](../../images/dev-center/achievements-2.png)
+![パートナー センターで新しい実績を構成する際の説明フィールドのスクリーン ショット](../../images/dev-center/achievements-2.png)
 
 **[Achievement Name]** フィールドには、実績の一般向けの名前を入力します。
 
@@ -41,7 +41,7 @@ ms.locfileid: "6044936"
 ## <a name="details"></a>Details (詳細)
 詳細セクションは、イメージ、実績の種類、ゲーマー スコア リワード (ある場合)、ロックを解除するまで実績を非表示にするかどうかなどの重要な情報を関連付けるために使用します。
 
-![Microsoft デベロッパー センターで新しい実績を構成する場合の詳細フィールドのスクリーンショット](../../images/dev-center/achievements-3.png)
+![パートナー センターで新しい実績を構成する際の詳細フィールドのスクリーン ショット](../../images/dev-center/achievements-3.png)
 
 **[Image Icon]** フィールドでは、実績と一緒に表示されるイメージを指定します。 これは、1920 x 1080 ピクセルの .png ファイルである必要があります。
 
@@ -54,19 +54,19 @@ ms.locfileid: "6044936"
 **[Achievement deep link]** は、実績から戻るパラメーターを取得するための方法です。これによって、実績を獲得できるゲーム内のスポットにリンクすることができます。 ディープ リンクは GET API の応答で返されます。 指定する URL には、`ms-xbl-{titleID}://` プレフィックスを含める必要があります。
 
 > [!TIP]
-> 実績のディープ リンクには、ゲームの 16 進の TitleId が必要です。 これは、[Microsoft デベロッパー センター](https://developer.microsoft.com/dashboard)の [[Xbox Live Setup]](xbox-live-setup.md) (Xbox Live のセットアップ) 画面にあります。
+> 実績のディープ リンクには、ゲームの 16 進の TitleId が必要です。 [Xbox Live のセットアップ](xbox-live-setup.md)画面に[パートナー センター](https://developer.microsoft.com/dashboard)で検索することができます。
 
 ## <a name="additional-rewards"></a>Additional Rewards (追加リワード)
 場合によっては、プレイヤーが実績のロックを解除したときに、ゲーム内リワードやアートワークを提供することもできます。 **[Additional Rewards]** セクションで、実績に関連付けられたリワード (ある場合) を定義できます。 実績には 2 つの追加リワードを含めることができます (リワードの種類ごとに 1 つ)。 詳しくは、「[実績のリワード](../../achievements-2017/achievement-rewards.md)」の記事をご覧ください。
 
 新しいリワードを作成するには、**[Additional Rewards]** セクションの **[Add Reward]** ボタンをクリックし、フォームに記入します。
 
-![Microsoft デベロッパー センターで実績にリワードを追加するスクリーンショット](../../images/dev-center/achievement-reward.png)
+![パートナー センターで実績にリワードを追加するスクリーン ショット](../../images/dev-center/achievement-reward.png)
 
 ### <a name="reward-details"></a>Reward Details (リワードの詳細)
 [Reward Details] に記入して、新しいリワードを関連付けます。 完了したら、**[Add]** をクリックします。
 
-![Microsoft デベロッパー センターで実績のリワードの詳細を構成する場合のスクリーンショット](../../images/dev-center/achievements-5.png)
+![パートナー センターで実績の特典の詳細の構成のスクリーン ショット](../../images/dev-center/achievements-5.png)
 
 作成できる実績のリワードには 2 つの種類があります。 以下のとおりです。
 

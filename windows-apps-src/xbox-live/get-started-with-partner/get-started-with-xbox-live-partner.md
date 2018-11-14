@@ -8,12 +8,12 @@ ms.date: 06/07/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, パートナー, ID@Xbox
 ms.localizationpriority: medium
-ms.openlocfilehash: fc9f6831f3c759c9d49ea936a458c84cbf4c0edf
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 74b343ce248201b997f5bcd357095154e221092f
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6152612"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190111"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a>対象パートナーまたは ID@Xbox 開発者として Xbox Live の利用を開始する
 
@@ -21,7 +21,7 @@ ms.locfileid: "6152612"
 
 対象パートナーおよび ID@Xbox 開発者は、ユニバーサル Windows プラットフォーム (UWP) や Xbox 開発キット (XDK) プラットフォームに対応した Xbox Live タイトルを開発できます。
 
-ここで紹介するコンテンツ以外にも、承認されているデベロッパー センター アカウントを持っているパートナーが利用できるその他のドキュメントが用意されています。 そのようなコンテンツには、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)でアクセスできます。
+利用可能なコンテンツだけでなくここも含まれますが、承認されたパートナー センター アカウントを持つパートナーが利用できるその他のドキュメント。 そのようなコンテンツには、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)でアクセスできます。
 
 ## <a name="why-should-you-use-xbox-live"></a>Xbox Live を使用する理由
 
@@ -41,13 +41,13 @@ Xbox 開発キット (XDK)、ユニバーサル Windows プラットフォーム
   - Xbox One については、「[Xbox One の UWP](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index)」をご覧ください。また、「[Xbox One 上の UWP アプリとゲームのシステム リソース](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation)」をご覧になることもお勧めします。
 - クロスプレイ ゲームは、通常、XDK と UWP の両方のパスを使用する Xbox One と Windows PC を対象とするゲームです。
 
-## <a name="2-ensure-that-you-have-a-title-created-on-dev-center-or-xdp"></a>2. デベロッパー センターまたは XDP でタイトルが作成されていることを確認する
-すべての Xbox Live タイトルは、サインインして Xbox Live サービスを呼び出すことができるようになるには、デベロッパー センターまたは Xbox デベロッパー ポータル (XDP) で定義されている必要があります。  これを行う方法は、「[新しいタイトルの作成](create-a-new-title.md)」で説明します。
+## <a name="2-ensure-that-you-have-a-title-created-in-partner-center-or-xdp"></a>2。 パートナー センターまたは XDP で作成されたタイトルがあることを確認します
+すべての Xbox Live タイトルは、サインインし、Xbox Live サービスを呼び出すことができます前に、パートナー センターまたは Xbox デベロッパー ポータル (XDP) で定義する必要があります。  これを行う方法は、「[新しいタイトルの作成](create-a-new-title.md)」で説明します。
 
 ## <a name="3-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>3. 適切なガイドに従って IDE やゲーム エンジンをセットアップする
 プラットフォームやエンジンに関する適切なファースト ステップ ガイドに従い、それに沿って学習することで、Xbox Live の基本を習得することができます。
 
-* 「[UWP ゲーム用 Visual Studio の使用に関する概要](get-started-with-visual-studio-and-uwp.md)」では、デベロッパー センターで Xbox Live 構成を使用して Visual Studio プロジェクトをリンクする方法について説明します。
+* [UWP ゲーム用 Visual Studio を使って概要](get-started-with-visual-studio-and-uwp.md)は方法を説明にパートナー センターで Xbox Live 構成を Visual Studio プロジェクトをリンクします。
 * 「[UWP ゲーム用 Unity の使用に関する概要](partner-add-xbox-live-to-unity-uwp.md)」では、Xbox Live 対応の新しい Unity タイトルを作成する方法、ランキングなどの機能をタイトルに追加する方法、およびネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 * 「[XDK ベースのゲームで Visual Studio を使用する際の概要](xdk-developers.md)」では、XDK を使用して Xbox One タイトルを作成する場合に Visual Studio プロジェクトをセットアップする方法について説明します。
 * 「[クロスプレイ ゲームの作成に関する概要](get-started-with-cross-play-games.md)」では、Xbox One 向けの XDK ベースのゲームと Windows 10 PC 向けの UWP ベースのゲームを作成する方法について説明します。

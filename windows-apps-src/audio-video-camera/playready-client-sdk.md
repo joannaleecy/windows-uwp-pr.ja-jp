@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023795"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6450990"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -400,7 +400,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
 PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
 
 -   Windows 10。
--   UWP アプリの PlayReady DRM の任意のサンプルをコンパイルするが場合、は、Microsoft Visual Studio2015 を使用する必要がありますか、後で、サンプルをコンパイルします。 任意の Windows8.1 ストア アプリ用の PlayReady DRM のサンプルをコンパイルするのに Microsoft Visual Studio2013 を引き続き使用できます。
+-   UWP アプリの PlayReady DRM の任意のサンプルをコンパイルするが場合、は、Microsoft Visual Studio2015 を使用する必要がありますか、後で、サンプルをコンパイルします。 Windows8.1 ストア アプリ用の PlayReady DRM のサンプルのいずれかをコンパイルするのに Microsoft Visual Studio2013 を引き続き使用できます。
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->

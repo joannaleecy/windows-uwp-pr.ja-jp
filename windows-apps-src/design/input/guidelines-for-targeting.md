@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bad800f3858cdfdf3def3a9a04854f078b3af399
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6154078"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6271061"
 ---
 # <a name="guidelines-for-targeting"></a>ターゲット設定のガイドライン
 

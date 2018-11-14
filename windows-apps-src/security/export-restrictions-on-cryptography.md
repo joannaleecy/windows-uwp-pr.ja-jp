@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: a29c4aeb5a5928e04e0018d68884fdb4a4876332
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052047"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266080"
 ---
 # <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 
@@ -35,7 +35,7 @@ ms.locfileid: "6052047"
 
 まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。 この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。
 
-> **重要な**、アプリもすべてのソフトウェア ライブラリ、ユーティリティ、およびオペレーティング システム コンポーネント、アプリが含まれていますかへのリンクを記述したコードだけでなくを検討してください。
+> **重要な**、アプリもすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネント、アプリが含まれていますかへのリンクを記述したコードだけでなくを検討してください。
 
 -   認証、整合性チェックなどの、デジタル署名の使用
 -   アプリが使ったりアクセスしたりするデータまたはファイルの暗号化

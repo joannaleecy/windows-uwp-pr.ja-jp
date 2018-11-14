@@ -1,20 +1,20 @@
 ---
-title: デベロッパー センターでのリッチ プレゼンスの構成
+title: パートナー センターでのリッチ プレゼンスの構成
 author: aablackm
-description: Windows デベロッパー センターでリッチ プレゼンス文字列を構成する方法について説明します。
+description: パートナー センターでリッチ プレゼンス文字列を構成する方法を説明します。
 ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, リッチ プレゼンス文字列, Windows デベロッパー センター
-ms.openlocfilehash: 8b5a538cc92da7011519af000e1fa899916d6eab
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+keywords: Xbox Live, Xbox, ゲーム, uwp、windows 10, Xbox one, リッチ プレゼンス文字列, パートナー センター
+ms.openlocfilehash: cb16b7e8c3776f2509207f15a6c26341f9028fe5
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6035649"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264405"
 ---
-# <a name="configure-rich-presence-on-windows-dev-center"></a>Windows デベロッパー センターでのリッチ プレゼンスの構成
+# <a name="configure-rich-presence-in-partner-center"></a>パートナー センターでのリッチ プレゼンスを構成します。
 
 リッチ プレゼンス文字列には、ユーザーのゲーム内のアクティビティが表示されます。 **[フレンドとクラブ]** リストにあるプレイヤーのゲーマータグの下に、Xbox Live ユーザー プロフィールと共に表示されます。 構成済みのリッチ プレゼンス文字列が、プレイしているゲームの名前に付加されます。 BubblePop というゲームを作成し、リッチ プレゼンス文字列 "友だちと一緒にバブルをはじこう" を構成した場合、構成された文字列により状態 "BubblePop - 友だちと一緒にバブルをはじこう" が生成されます。 リッチ プレゼンス文字列が実際にどのように表示されるかを以下で確認できます。
 
@@ -35,17 +35,17 @@ ms.locfileid: "6035649"
 
 - Windows 開発アカウントを持っている。
 - 開発アカウントが ID@Xboxプログラムに登録されているか、対象パートナーの開発者アカウントとして登録されている。
-- タイトルがデベロッパー センターに登録されていて、Xbox Live が有効になっている。
+- タイトルでは、パートナー センターに登録する必要があり、Xbox live が有効にします。
 
-リッチ プレゼンス文字列を使う前に、デベロッパー センター ダッシュボードで構成する必要があります。
+リッチ プレゼンス文字列を使用する前に、パートナー センターで構成する必要があります。
 
 ## <a name="rich-presence-configuration-page"></a>リッチ プレゼンスの構成ページ
 
-リッチ プレゼンス文字列は、[developer.microsoft.com](https://developer.microsoft.com/windows) からアクセスできるデベロッパー センター ダッシュボードでタイトルの Xbox Live サービスの一部として構成されます。
+リッチ プレゼンス文字列は、[パートナー センター](https://partner.microsoft.com/dashboard)でタイトルの Xbox Live サービスの一部として構成されます。
 
 次の手順に従って、リッチ プレゼンスの構成ページに移動します。
 
-1. developer.microsoft.com で[デベロッパー センター ダッシュボード](https://developer.microsoft.com/windows)に移動します。
+1. Developer.microsoft.com では、[パートナー センター](https://partner.microsoft.com/dashboard)に移動します。
 2. サインインが要求された場合は、登録されている Windows 開発者アカウントでサインインします。
 3. **[概要]** ページで Xbox Live 対応のタイトルまたはアプリを選択します。 リッチ プレゼンス文字列の構成が有効にならないため、クリエイター プログラムのタイトルは選択しないでください。
 4. **[サービス]** ドロップダウン リストをクリックして [Xbox Live] を選択します。

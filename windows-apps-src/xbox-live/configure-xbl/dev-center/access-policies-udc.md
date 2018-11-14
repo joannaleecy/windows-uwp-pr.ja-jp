@@ -1,32 +1,32 @@
 ---
-title: デベロッパー センターでのアクセス ポリシーを構成します。
+title: パートナー センターへのアクセス ポリシーを構成します。
 author: KevinAsgari
-description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定にアクセスできるようにするデベロッパー センターでアクセス ポリシーを構成する方法について説明します。
+description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定へのアクセスを許可するには、パートナー センターでアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
 ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 3975d3252c1891d8d36303b038cce8df93c89d08
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 525249475a9fc8a22d976398cf277620de6655e1
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6042656"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187468"
 ---
-# <a name="configure-access-policies-on-dev-center"></a>デベロッパー センターでのアクセス ポリシーを構成します。
+# <a name="configure-access-policies-in-partner-center"></a>パートナー センターへのアクセス ポリシーを構成します。
 
-[Windows デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)を使うと、他のサービス、ゲーム、アプリがタイトルの Xbox Live 設定とデータにアクセスすることを許可できます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、他のサービス、ゲーム、およびアプリ タイトルの Xbox Live 設定とデータにアクセスできるようにすることができます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
 
-既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。 デベロッパー センターでアクセス ポリシーを構成することによって、これを変更することができます。
+既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。 パートナー センターでアクセス ポリシーを構成することによって、これを変更することができます。
 
 > [!NOTE]
 > このトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
 次の手順に従って、構成を追加します。
 
-1. [デベロッパー センター](https://developer.microsoft.com/dashboard/windows/overview)でタイトルを選択したら、**[サービス]** > **[Xbox Live]** に移動します。
+1. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択すると、**サービス**に移動します。 > **Xbox Live**します。
 
 2. **アクセス ポリシー**へのリンクをクリックします。
 

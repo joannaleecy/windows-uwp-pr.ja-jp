@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f7c1ad1a396464532a1c63c925bf9e19600f1b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036582"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266227"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>OEM 向けのプレインストール パッケージの生成
 
@@ -22,7 +22,7 @@ ms.locfileid: "6036582"
 
 ## <a name="important-preinstall-policy--limitations"></a>重要なプレインストールに関するポリシーと制限事項
 
-プレインストール アプリをストアに接続し、アプリの更新プログラムを受信することができるように、最新のストア ライセンスがあるために[パートナー センター](https://partner.microsoft.com/dashboard)を通じて認定を受ける必要があります。
+プレインストール アプリをストアに接続し、アプリの更新プログラムを受信することができるように、最新のストア ライセンスが[パートナー センター](https://partner.microsoft.com/dashboard)を通じて認定を受ける必要があります。
 
 プレインストールされているアプリは、すべての市場で、現在も将来も無料である必要があります。
 

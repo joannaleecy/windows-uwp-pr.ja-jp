@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041192"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161804"
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 
@@ -64,7 +64,7 @@ ms.locfileid: "6041192"
 
 > **ヒント:** **cop \_notequal**または**COP\_NOTEQUAL** **NULL**を指定することができます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
 
-> **重要な**文字列と文字列の配列で異なる動作、 **cop \_value\_contains** **\_value\_notcontains**演算子を使用する場合。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
+> **重要な**文字列と文字列の配列で異なる動作を**cop \_value\_contains**と**\_value\_notcontains**演算子を使用する場合。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
 
 1 つの AQS フィルター文字列により結果を適切に絞り込むことができない場合は、受け取った結果をさらにフィルター処理できます。 ただしその場合は、最初の AQS フィルター文字列によりできる限り結果を絞り込んでから、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API に渡すことをお勧めします。 これにより、アプリのパフォーマンスを向上させることができます。
 

@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 953fd4b76224eed0950d7f8efc6322272a7c8b38
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6046412"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185869"
 ---
 # <a name="privacy-uris"></a>プライバシー URI
  
-このセクションでは、*プライバシー*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドに関する詳細を提供します。
+このセクションでは、*プライバシー*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
 のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
@@ -31,7 +31,7 @@ ms.locfileid: "6046412"
 
 [/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)
 
-&nbsp;&nbsp;ユーザーのミュート リストにアクセスします。
+&nbsp;&nbsp;ユーザーのミュート一覧にアクセスします。
 
 [/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
