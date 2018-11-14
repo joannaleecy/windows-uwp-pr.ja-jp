@@ -14,11 +14,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 16ebc375a72984af8bbc40823121d2d94689fcf2
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6261157"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6465448"
 ---
 # <a name="rich-text-block"></a>リッチ テキスト ブロック
 

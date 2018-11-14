@@ -10,18 +10,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c55f371e97daba5f81945812f8179eb708bbadd6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027513"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268123"
 ---
 # <a name="multipass-texture-blending"></a>マルチパス テクスチャ ブレンド
 
 
 Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。 これを表す一般的な用語が*マルチパス テクスチャ ブレンド*です。 通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。 このような適用は*ライト マッピング*と呼ばれます。 「[テクスチャでのライト マッピング](light-mapping-with-textures.md)」をご覧ください。
 
-**注:** デバイスによっては複数の 1 つのパスでプリミティブにテクスチャを適用できます。 「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。
+**注:** デバイスによっては複数のテクスチャを 1 つのパスでプリミティブに適用できます。 「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。
 
  
 

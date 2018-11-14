@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 168c02be356d140abdbca20c5fc4301009da7944
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466818"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267220"
 ---
 # <a name="render-target-view-rtv"></a>レンダー ターゲット ビュー (RTV)
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f6756cb057de1d5ad2e3e3f5039f55f4e52c12da
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6206323"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6264043"
 ---
 # <a name="usersbatchfeedback"></a>/users/batchfeedback
  
