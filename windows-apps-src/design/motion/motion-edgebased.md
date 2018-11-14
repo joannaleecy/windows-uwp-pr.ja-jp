@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a1cb6cee78d7c7d1e59e64dd151539ce6b3e5d7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047690"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6187580"
 ---
 # <a name="edge-based-ui-animations"></a><span data-ttu-id="c02f3-103">エッジに基づく UI アニメーション</span><span class="sxs-lookup"><span data-stu-id="c02f3-103">Edge-based UI animations</span></span>
 

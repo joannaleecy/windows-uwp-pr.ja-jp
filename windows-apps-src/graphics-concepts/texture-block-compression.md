@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046213"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191848"
 ---
 # <a name="texture-block-compression"></a><span data-ttu-id="a1e92-104">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="a1e92-104">Texture block compression</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, OpenCV, SoftwareBitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: b9f1f2050590267d0a98779eba11bbe0b363da0c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040421"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190691"
 ---
 # <a name="process-bitmaps-with-opencv"></a><span data-ttu-id="2820b-104">OpenCV でのビットマップの処理</span><span class="sxs-lookup"><span data-stu-id="2820b-104">Process bitmaps with OpenCV</span></span>
 

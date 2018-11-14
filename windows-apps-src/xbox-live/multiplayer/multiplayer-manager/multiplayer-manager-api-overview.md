@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager
 ms.localizationpriority: medium
 ms.openlocfilehash: 142a09bca9c33aa53a4e034c08bb405ac7b75fce
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6024385"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184982"
 ---
 # <a name="multiplayer-manager-api-overview"></a><span data-ttu-id="c1be6-104">Multiplayer Manager API の概要</span><span class="sxs-lookup"><span data-stu-id="c1be6-104">Multiplayer Manager API overview</span></span>
 

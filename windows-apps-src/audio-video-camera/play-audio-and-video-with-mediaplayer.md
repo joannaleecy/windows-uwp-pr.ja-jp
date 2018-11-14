@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b83be1dee4e23fa6974e39fbfb0f9ce26529274
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023775"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144277"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a><span data-ttu-id="21a33-104">MediaPlayer を使ったオーディオとビデオの再生</span><span class="sxs-lookup"><span data-stu-id="21a33-104">Play audio and video with MediaPlayer</span></span>
 

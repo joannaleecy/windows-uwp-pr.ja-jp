@@ -9,21 +9,21 @@ ms.topic: article
 keywords: Windows 10, UWP, データ, データベース, リレーショナル, テーブル, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6048220"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6146681"
 ---
-# <a name="data-access"></a><span data-ttu-id="d7683-104">データ アクセス</span><span class="sxs-lookup"><span data-stu-id="d7683-104">Data access</span></span>
+# <a name="data-access"></a><span data-ttu-id="812a1-104">データ アクセス</span><span class="sxs-lookup"><span data-stu-id="812a1-104">Data access</span></span>
 
-<span data-ttu-id="d7683-105">SQLite データベースを使用して、ユーザーのデバイスでデータを格納することができます。</span><span class="sxs-lookup"><span data-stu-id="d7683-105">You can store data on the user's device by using a SQLite database.</span></span> <span data-ttu-id="d7683-106">あらゆる種類のサービスのレイヤーを使用することがなく、アプリを SQL Server データベースに直接接続することもことができます。</span><span class="sxs-lookup"><span data-stu-id="d7683-106">You can also connect your app directly to a SQL Server database without having to use any sort of service layer.</span></span>
+<span data-ttu-id="812a1-105">SQLite データベースを使用してユーザーのデバイスでデータを格納することができます。</span><span class="sxs-lookup"><span data-stu-id="812a1-105">You can store data on the user's device by using a SQLite database.</span></span> <span data-ttu-id="812a1-106">あらゆる種類のサービスのレイヤーを使用することがなく SQL Server データベースに直接アプリを接続することもできます。</span><span class="sxs-lookup"><span data-stu-id="812a1-106">You can also connect your app directly to a SQL Server database without having to use any sort of service layer.</span></span>
 
-| <span data-ttu-id="d7683-107">トピック</span><span class="sxs-lookup"><span data-stu-id="d7683-107">Topic</span></span> | <span data-ttu-id="d7683-108">説明</span><span class="sxs-lookup"><span data-stu-id="d7683-108">Description</span></span>|
+| <span data-ttu-id="812a1-107">トピック</span><span class="sxs-lookup"><span data-stu-id="812a1-107">Topic</span></span> | <span data-ttu-id="812a1-108">説明</span><span class="sxs-lookup"><span data-stu-id="812a1-108">Description</span></span>|
 |-------|------------|
-| [<span data-ttu-id="d7683-109">UWP アプリでの SQLite データベースの使用</span><span class="sxs-lookup"><span data-stu-id="d7683-109">Use a SQLite database in a UWP app</span></span>](sqlite-databases.md) | <span data-ttu-id="d7683-110">SQLite を使用して格納し、ユーザー デバイス上の軽量なデータベースにデータを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d7683-110">Shows you how to use SQLite to store and retrieve data in a light-weight database on the users device.</span></span> <span data-ttu-id="d7683-111">SQLite は、サーバーを使わない埋め込みデータベース エンジンです。</span><span class="sxs-lookup"><span data-stu-id="d7683-111">SQLite is a server-less, embedded database engine.</span></span> |
-| [<span data-ttu-id="d7683-112">UWP アプリでの SQL server データベースを使用します。</span><span class="sxs-lookup"><span data-stu-id="d7683-112">Use a SQL server database in a UWP app</span></span>](sql-server-databases.md) | <span data-ttu-id="d7683-113">SQL Server データベースに直接接続し、保存し、および[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)名前空間のクラスを使用してデータを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d7683-113">Shows you how to connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace.</span></span> <span data-ttu-id="d7683-114">必要なサービス レイヤーはありません。</span><span class="sxs-lookup"><span data-stu-id="d7683-114">No service layer required.</span></span> |
+| [<span data-ttu-id="812a1-109">UWP アプリでの SQLite データベースの使用</span><span class="sxs-lookup"><span data-stu-id="812a1-109">Use a SQLite database in a UWP app</span></span>](sqlite-databases.md) | <span data-ttu-id="812a1-110">SQLite を使用して格納し、ユーザー デバイス上の軽量なデータベースにデータを取得する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="812a1-110">Shows you how to use SQLite to store and retrieve data in a light-weight database on the users device.</span></span> <span data-ttu-id="812a1-111">SQLite は、サーバーを使わない埋め込みデータベース エンジンです。</span><span class="sxs-lookup"><span data-stu-id="812a1-111">SQLite is a server-less, embedded database engine.</span></span> |
+| [<span data-ttu-id="812a1-112">UWP アプリで、SQL server データベースを使用します。</span><span class="sxs-lookup"><span data-stu-id="812a1-112">Use a SQL server database in a UWP app</span></span>](sql-server-databases.md) | <span data-ttu-id="812a1-113">SQL Server データベースに直接接続し、保存し、および[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx)名前空間のクラスを使用してデータを取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="812a1-113">Shows you how to connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace.</span></span> <span data-ttu-id="812a1-114">必要なサービス レイヤーはありません。</span><span class="sxs-lookup"><span data-stu-id="812a1-114">No service layer required.</span></span> |
 
-## <a name="related-topics"></a><span data-ttu-id="d7683-115">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d7683-115">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="812a1-115">関連トピック</span><span class="sxs-lookup"><span data-stu-id="812a1-115">Related topics</span></span>
 
-* [<span data-ttu-id="d7683-116">顧客注文データベースのサンプル</span><span class="sxs-lookup"><span data-stu-id="d7683-116">Customer Orders Database sample</span></span>](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
+* [<span data-ttu-id="812a1-116">顧客注文データベースのサンプル</span><span class="sxs-lookup"><span data-stu-id="812a1-116">Customer Orders Database sample</span></span>](https://github.com/Microsoft/Windows-appsample-customers-orders-database)

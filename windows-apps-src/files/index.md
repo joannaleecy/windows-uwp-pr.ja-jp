@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c6292c12568d7f1017ca67707689ce9539c804
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040777"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154624"
 ---
  # <a name="files-folders-and-libraries"></a><span data-ttu-id="ca635-104">ファイル、フォルダー、およびライブラリ</span><span class="sxs-lookup"><span data-stu-id="ca635-104">Files, folders, and libraries</span></span>
 

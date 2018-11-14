@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, キャプチャ, ビデオ
 ms.localizationpriority: medium
 ms.openlocfilehash: ae52026d5fb1ab3c140edfdcd1f92f7d3d0fd143
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049765"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195257"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a><span data-ttu-id="3cf1c-104">MediaFrameSourceGroup を使用して複数のソースからキャプチャする</span><span class="sxs-lookup"><span data-stu-id="3cf1c-104">Capture from multiple sources using MediaFrameSourceGroup</span></span>
 

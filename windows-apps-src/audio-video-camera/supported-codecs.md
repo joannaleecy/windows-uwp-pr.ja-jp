@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024350"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182418"
 ---
 # <a name="supported-codecs"></a><span data-ttu-id="0a5dc-104">サポートされているコーデック</span><span class="sxs-lookup"><span data-stu-id="0a5dc-104">Supported codecs</span></span>
 

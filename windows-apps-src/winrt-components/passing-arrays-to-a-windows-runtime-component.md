@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026747"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6192611"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a><span data-ttu-id="d0fb4-105">Windows ランタイム コンポーネントに配列を渡す</span><span class="sxs-lookup"><span data-stu-id="d0fb4-105">Passing arrays to a Windows Runtime Component</span></span>
 

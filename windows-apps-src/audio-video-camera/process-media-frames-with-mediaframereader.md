@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043465"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6190734"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a><span data-ttu-id="a08a7-104">MediaFrameReader を使ったメディア フレームの処理</span><span class="sxs-lookup"><span data-stu-id="a08a7-104">Process media frames with MediaFrameReader</span></span>
 
