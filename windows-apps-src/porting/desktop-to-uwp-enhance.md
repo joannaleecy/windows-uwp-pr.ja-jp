@@ -9,15 +9,15 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e76d3d517be73417777eb31dfc3994f92186522
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6044669"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6274655"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 
-Windows ランタイム Api を使用して、Windows 10 ユーザーの利便最新のエクスペリエンスを追加することができます。
+Windows ランタイム Api を使用して、Windows 10 ユーザーの利便の最新のエクスペリエンスを追加することができます。
 
 最初に、プロジェクトをセットアップします。 次に、Windows 10 エクスペリエンスを追加します。 Windows 10 ユーザー向けに個別にビルドすることも、実行する Windows のバージョンに関係なくすべてのユーザー向けにまったく同じバイナリを配布することもできます。
 
@@ -58,11 +58,11 @@ C++ プロジェクトを構成する/WinRT、」をご覧ください[を追加
 
 :white_check_mark: **追加するエクスペリエンスを最初に決定する**
 
-選択肢はたくさんあります。 たとえば、別のユーザーが投稿した新しい写真など共有に関心のあるものがある場合は、収益化 Api をまたはアプリケーションに注目を使用して、発注フローを簡略化できます。
+選択肢はたくさんあります。 たとえば、またはを使用して収益化 Api をアプリに注目を別のユーザーが投稿した新しい写真など共有に興味深いコンテンツがある場合、発注フローを簡略化できます。
 
 ![トースト](images/desktop-to-uwp/toast.png)
 
-ユーザーがメッセージを無視したり、非表示にした場合でも、ユーザーはアクション センターで再度メッセージを表示し、クリックすることで、アプリを開くことができます。 これにより、アプリケーションとのエンゲージメントを向上し、オペレーティング システムと密接に統合表示されるアプリケーションの特典が。 このエクスペリエンスのコードについては、少し後で紹介します。
+ユーザーがメッセージを無視したり、非表示にした場合でも、ユーザーはアクション センターで再度メッセージを表示し、クリックすることで、アプリを開くことができます。 これにより、アプリケーションとのエンゲージメントを向上し、オペレーティング システムと密接に統合表示されるアプリケーションの特典には。 このエクスペリエンスのコードについては、少し後で紹介します。
 
 さまざまなアイデアを[デベロッパー センター](https://developer.microsoft.com/windows)で参照してください。
 
@@ -153,7 +153,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>Windows XP、Windows Vista、および Windows 7/8 インストール ベースのサポート
 
-新しいブランチを作成し、個別のコード ベースを保守しなくても、Windows 10 向けアプリを現代化できます。
+新しいブランチを作成し、個別のコード ベースを保守しなくても、Windows 10 向けのアプリを現代化できます。
 
 Windows 10 ユーザー向けに個別のバイナリをビルドする場合は、条件付きコンパイルを使用します。 すべての Windows ユーザーに対して 1 組のバイナリをビルドして展開する場合は、ランタイム チェックを使用します。
 
@@ -204,9 +204,9 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>ランタイム チェック
 
-ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーション Windows ランタイム Api を呼び出す、ユーザーが実行される場合にのみ、アプリケーションをパッケージ化されたアプリケーションとして Windows 10 でします。
+ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーション Windows ランタイム Api を呼び出す、ユーザーが実行される場合にのみ、アプリケーションをパッケージ化されたアプリケーションとして Windows 10。
 
-ランタイム チェック コードを追加する最も簡単な方法は、この Nuget パッケージをインストールする: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/)し、使用して、``IsRunningAsUWP()``メソッドが通過しなければならない関門を Windows ランタイム Api を呼び出すコードをすべて無効にします。 詳細については、[デスクトップ ブリッジを使用したアプリケーションのコンテキストの特定](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)に関するブログ記事を参照してください。
+ランタイム チェックをコードを追加する最も簡単な方法は、この Nuget パッケージのインストール: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/)し、使用して、``IsRunningAsUWP()``メソッドが通過しなければならない関門を Windows ランタイム Api を呼び出すコードをすべて無効にします。 詳細については、[デスクトップ ブリッジを使用したアプリケーションのコンテキストの特定](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)に関するブログ記事を参照してください。
 
 ## <a name="related-video"></a>関連ビデオ
 

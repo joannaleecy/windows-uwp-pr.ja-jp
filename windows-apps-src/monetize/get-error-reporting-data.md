@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: fd463bf98fb751efa011ba5fc3e1e7b9eb7b41eb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040897"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6446462"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>アプリのエラー報告データの取得
 
-日付範囲やその他のオプション フィルターを指定して、アプリの集計エラー報告データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、過去 30 日以内に発生したエラーをのみ取得できます。 この情報も利用可能な[正常性レポート](../publish/health-report.md)では、パートナー センターの [**エラー** ] セクションでできます。
+日付範囲やその他のオプション フィルターを指定して、アプリの集計エラー報告データを JSON 形式で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでは、過去 30 日以内に発生したエラーのみ取得できます。 この情報は、[正常性レポート](../publish/health-report.md)では、パートナー センターの [**エラー** ] セクションでは利用可能なも。
 
 [エラーの詳細を取得する](get-details-for-an-error-in-your-app.md)、[スタック トレースを取得する](get-the-stack-trace-for-an-error-in-your-app.md)、および [CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-app.md)メソッドを利用すれば、追加のエラー情報を取得することもできます。
 

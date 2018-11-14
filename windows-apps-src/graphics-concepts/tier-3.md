@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 02eb9179cbc4a5fed5d1f6dc37622491859a7552
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199955"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6471116"
 ---
 # <a name="tier-3"></a>階層 3
 

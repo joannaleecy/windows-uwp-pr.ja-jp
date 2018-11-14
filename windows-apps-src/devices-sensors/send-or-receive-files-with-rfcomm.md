@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: c1159f1e30c6956bf2ae029de8d1e283085517c8
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209057"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6443364"
 ---
 # <a name="bluetooth-rfcomm"></a>Bluetooth RFCOMM
 

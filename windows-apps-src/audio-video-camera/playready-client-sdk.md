@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190754"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660479"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -513,10 +513,10 @@ Windows 10 Version 1703 以降では、デコード コーデック、解像度�
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Xbox One での PlayReady DRM の使用
 
-Xbox One において UWP アプリで PlayReady DRM を使用するには、まず、アプリの公開に使用するデベロッパー センター アカウントを登録して、PlayReady の使用許可を得る必要があります。 これは次の 2 つのいずれかの方法で行うことができます。
+Xbox one の UWP アプリで PlayReady DRM を使用するには、はする最初に、PlayReady を使用するための承認のためにアプリを公開することを使用している[パートナー センター](https://partner.microsoft.com/dashboard)のアカウントを登録する必要があります。 これは次の 2 つのいずれかの方法で行うことができます。
 
 * Microsoft の連絡担当者を通じて許可を申請します。
-* デベロッパー センター アカウントと会社名を [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com) に送信して許可を申請します。
+* パートナー センター アカウントと会社名を送信することにより、承認用適用[pronxbox@microsoft.com](mailto:pronxbox@microsoft.com)します。
 
 許可を受信したら、追加の `<DeviceCapability>` をアプリ マニフェストに追加する必要があります。 アプリケーション マニフェスト デザイナーには現在利用できる設定がないため、これは手動で追加する必要があります。 構成するには、次の手順を実行します。
 

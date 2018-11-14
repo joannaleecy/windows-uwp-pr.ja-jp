@@ -9,15 +9,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029919"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6659359"
 ---
 # <a name="create-add-on-store-listings"></a>アドオンのストア登録情報の作成
 
-[パートナー センター](https://partner.microsoft.com/dashboard)でアドオンを申請アドオンを入手するオプションを表示したとき、入力した情報が、**ストア登録情報**の手順ではユーザーに表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
+[パートナー センター](https://partner.microsoft.com/dashboard)でアドオンを申請、アドオンを入手するオプションを表示したとき**のストア登録情報**の手順で入力した情報はユーザーに表示されます。 ストア登録情報は、ユーザーを最も引きつける方法でアドオンを正確に表すように慎重に検討してください。 また、このストア登録情報は、さまざまな言語でカスタマイズすることができます。
 
 > [!TIP]
 > こともできます[をインポートおよびエクスポートのストア登録情報](import-and-export-store-listings.md)、アドオンの登録情報をオフラインを直接パートナー センターでは、この情報を提供するのではなく、.csv ファイルを入力したい場合。 これは、多数の言語の登録情報を作成するときに、特に便利な場合があります。 ただし、インポート/エクスポート機能を使用するのではなく、[パートナー センター](https://partner.microsoft.com/dashboard)で直接常に、情報を入力することができます。

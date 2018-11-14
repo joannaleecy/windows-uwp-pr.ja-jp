@@ -12,11 +12,11 @@ ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
 ms.openlocfilehash: a69ebdb983fe8c023f2940a38ea6152d569f987c
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6671958"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6448208"
 ---
 # <a name="input-and-interactions"></a>入力と操作
 

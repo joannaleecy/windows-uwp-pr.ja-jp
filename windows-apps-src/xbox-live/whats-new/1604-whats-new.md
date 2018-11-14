@@ -8,12 +8,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5971a586269a53c973653fcfc45409c7b5057dfe
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.openlocfilehash: 0efeb16866628a4d318964f9b1a7a293c7679be8
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6164126"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6442539"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---april-2016"></a>Xbox Live SDK の新規事項 - April 2016
 
@@ -29,7 +29,7 @@ Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual St
 
 ## <a name="documentation"></a>ドキュメント
 - 「[サインインのトラブルシューティング](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md)」に、サインインの失敗をデバッグするための一般的な方法と、エラー コード別の手順が示されています。
-- Xbox One デベロッパー向けの[マーケットプレース](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)に関するドキュメントは、プログラミング ガイドだけで提供されるようになりました。  UWP デベロッパーは、引き続き Windows デベロッパー センターでストアについてのドキュメントを参照してください。
+- Xbox One デベロッパー向けの[マーケットプレース](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)に関するドキュメントは、プログラミング ガイドだけで提供されるようになりました。  UWP 開発者は、引きドキュメントについては、ストアでパートナー センターを参照してください。
 - Xbox One タイトルをユニバーサル Windows プラットフォームに移行する方法については、「[XDK から UWP への Xbox Live コードの移植](../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)」を参照してください。
 - さまざまな Xbox Live サービス エンドポイントとシナリオへのレート制限の適用についての説明、および制限に関する情報については、「[きめ細かなレート制限](../using-xbox-live/best-practices/fine-grained-rate-limiting.md)」を参照してください。
 
