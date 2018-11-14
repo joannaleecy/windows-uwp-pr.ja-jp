@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a360bf936843450f5646c0e4e03ad9c3bac34d2
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6283125"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6459222"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial の操作
 
