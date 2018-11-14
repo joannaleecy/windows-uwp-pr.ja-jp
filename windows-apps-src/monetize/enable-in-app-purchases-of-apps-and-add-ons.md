@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: beb7165586c62770fd6b18fff8c7ad0095bc78ba
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6446432"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6647348"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a><span data-ttu-id="d970c-104">アプリとアドオンのアプリ内購入の有効化</span><span class="sxs-lookup"><span data-stu-id="d970c-104">Enable in-app purchases of apps and add-ons</span></span>
 

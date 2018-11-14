@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657058"
+ms.locfileid: "6458004"
 ---
 # <a name="selecting-text-and-images"></a><span data-ttu-id="4e669-103">テキストと画像の選択</span><span class="sxs-lookup"><span data-stu-id="4e669-103">Selecting text and images</span></span>
 

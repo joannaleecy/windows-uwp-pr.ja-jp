@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6193283"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6451003"
 ---
 # <a name="process-media-files-in-the-background"></a><span data-ttu-id="18b8d-104">バックグラウンドでのメディア ファイルの処理</span><span class="sxs-lookup"><span data-stu-id="18b8d-104">Process media files in the background</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 同時使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 4506176dcd62a4699c57343c50dfc1b0e7a40b14
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209216"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654861"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a><span data-ttu-id="a589a-104">Xbox Live の同時使用状況データの取得</span><span class="sxs-lookup"><span data-stu-id="a589a-104">Get Xbox Live concurrent usage data</span></span>
 

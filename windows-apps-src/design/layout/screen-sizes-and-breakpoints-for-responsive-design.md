@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: af172b67a3981b61f4f86078710d87f760f9be3b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651370"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6452751"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a><span data-ttu-id="e53ae-104">画面のサイズとブレークポイント</span><span class="sxs-lookup"><span data-stu-id="e53ae-104">Screen sizes and breakpoints</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、テクスチャ、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663245"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6454958"
 ---
 # <a name="apply-textures-to-primitives"></a><span data-ttu-id="8cc0c-104">プリミティブへのテクスチャの適用</span><span class="sxs-lookup"><span data-stu-id="8cc0c-104">Apply textures to primitives</span></span>
 

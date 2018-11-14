@@ -14,11 +14,11 @@ dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: eadc0763e7f99930bee3d2a388a881c52e89f609
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469386"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6273480"
 ---
 # <a name="person-picture-control"></a><span data-ttu-id="24f17-104">ユーザー画像コントロール</span><span class="sxs-lookup"><span data-stu-id="24f17-104">Person picture control</span></span>
 

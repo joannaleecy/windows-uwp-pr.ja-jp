@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, サイズ, バナー
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6464769"
+ms.locfileid: "6646702"
 ---
 # <a name="supported-banner-ad-sizes"></a><span data-ttu-id="bc463-104">サポートされているバナー広告のサイズ</span><span class="sxs-lookup"><span data-stu-id="bc463-104">Supported banner ad sizes</span></span>
 

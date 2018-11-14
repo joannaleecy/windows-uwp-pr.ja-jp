@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6207997"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6446580"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a><span data-ttu-id="2ed1a-104">はじめに: プログラミング言語の選択</span><span class="sxs-lookup"><span data-stu-id="2ed1a-104">Getting started: Choosing a programming language</span></span>
 

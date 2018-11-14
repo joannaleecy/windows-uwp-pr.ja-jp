@@ -9,92 +9,92 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6667297"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6450463"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a><span data-ttu-id="0c8b4-103">Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-103">Package a desktop application by using Visual Studio</span></span>
+# <a name="package-a-desktop-application-by-using-visual-studio"></a><span data-ttu-id="c9d48-103">Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-103">Package a desktop application by using Visual Studio</span></span>
 
-<span data-ttu-id="0c8b4-104">Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-104">You can use Visual Studio to generate a package for your desktop app.</span></span> <span data-ttu-id="0c8b4-105">次に、その 1 つまたは複数の Pc に Microsoft ストアまたはサイドローディングするパッケージを公開することができます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-105">Then, you can publish that package to the Microsoft Store or sideload it onto one or more PCs.</span></span>
+<span data-ttu-id="c9d48-104">Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-104">You can use Visual Studio to generate a package for your desktop app.</span></span> <span data-ttu-id="c9d48-105">その後、そのパッケージを Microsoft Store に公開したり、1 台以上の PC にサイドローディングしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-105">Then, you can publish that package to the Windows store or sideload it onto one or more PCs.</span></span>
 
-<span data-ttu-id="0c8b4-106">最新バージョンの Visual Studio には、アプリのパッケージ化に必要であった手動ステップをすべてなくす新しいバージョンのパッケージ プロジェクトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-106">The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app.</span></span> <span data-ttu-id="0c8b4-107">パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-107">Just add a packaging project, reference your desktop project, and then press F5 to debug your app.</span></span> <span data-ttu-id="0c8b4-108">手動で調整する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-108">No manual tweaks necessary.</span></span> <span data-ttu-id="0c8b4-109">この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-109">This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.</span></span>
+<span data-ttu-id="c9d48-106">最新バージョンの Visual Studio には、アプリのパッケージ化に必要であった手動ステップをすべてなくす新しいバージョンのパッケージ プロジェクトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="c9d48-106">The latest version of Visual Studio provides a new version of the packaging project that eliminates all of the manual steps that used to be necessary to package your app.</span></span> <span data-ttu-id="c9d48-107">パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。</span><span class="sxs-lookup"><span data-stu-id="c9d48-107">Just add a packaging project, reference your desktop project, and then press F5 to debug your app.</span></span> <span data-ttu-id="c9d48-108">手動で調整する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c9d48-108">No manual tweaks necessary.</span></span> <span data-ttu-id="c9d48-109">この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。</span><span class="sxs-lookup"><span data-stu-id="c9d48-109">This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.</span></span>
 
 >[!IMPORTANT]
-><span data-ttu-id="0c8b4-110">(そうでない場合は、デスクトップ ブリッジと呼ばれます)、デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能は Windows 10 バージョン 1607 で導入され、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できます。ビルド 14393) 以降の Visual Studio でリリースされます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-110">The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.</span></span>
+><span data-ttu-id="c9d48-110">(そうでない場合は、デスクトップ ブリッジと呼ばれます)、デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能は Windows 10 バージョン 1607 で導入され、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できます。ビルド 14393) 以降の Visual Studio でリリースされます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-110">The ability to create a Windows app package for your desktop application (otherwise known as the Desktop Bridge) was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.</span></span>
 
-## <a name="first-prepare-your-application"></a><span data-ttu-id="0c8b4-111">まず、アプリケーションを準備します</span><span class="sxs-lookup"><span data-stu-id="0c8b4-111">First, prepare your application</span></span>
+## <a name="first-prepare-your-application"></a><span data-ttu-id="c9d48-111">まず、アプリケーションを準備します</span><span class="sxs-lookup"><span data-stu-id="c9d48-111">First, prepare your application</span></span>
 
-<span data-ttu-id="0c8b4-112">アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-112">Review this guide before you begin creating a package for your application: [Prepare to package a desktop application](desktop-to-uwp-prepare.md).</span></span>
+<span data-ttu-id="c9d48-112">アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-112">Review this guide before you begin creating a package for your application: [Prepare to package a desktop application](desktop-to-uwp-prepare.md).</span></span>
 
 <a id="new-packaging-project"/>
 
-## <a name="create-a-package"></a><span data-ttu-id="0c8b4-113">パッケージを作成する</span><span class="sxs-lookup"><span data-stu-id="0c8b4-113">Create a package</span></span>
+## <a name="create-a-package"></a><span data-ttu-id="c9d48-113">パッケージを作成する</span><span class="sxs-lookup"><span data-stu-id="c9d48-113">Create a package</span></span>
 
-1. <span data-ttu-id="0c8b4-114">Visual Studio で、デスクトップ アプリケーション プロジェクトが含まれたソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-114">In Visual Studio, open the solution that contains your desktop application project.</span></span>
+1. <span data-ttu-id="c9d48-114">Visual Studio で、デスクトップ アプリケーション プロジェクトが含まれたソリューションを開きます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-114">In Visual Studio, open the solution that contains your desktop application project.</span></span>
 
-2. <span data-ttu-id="0c8b4-115">ソリューションに **Windows アプリケーション パッケージ プロジェクト** プロジェクトを追加します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-115">Add a **Windows Application Packaging Project** project to your solution.</span></span>
+2. <span data-ttu-id="c9d48-115">ソリューションに **Windows アプリケーション パッケージ プロジェクト** プロジェクトを追加します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-115">Add a **Windows Application Packaging Project** project to your solution.</span></span>
 
-   <span data-ttu-id="0c8b4-116">コードを追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-116">You won't have to add any code to it.</span></span> <span data-ttu-id="0c8b4-117">プロジェクトを追加したのは単にパッケージを生成するためです。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-117">It's just there to generate a package for you.</span></span> <span data-ttu-id="0c8b4-118">このプロジェクトを "パッケージ プロジェクト" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-118">We'll refer to this project as the "packaging project".</span></span>
+   <span data-ttu-id="c9d48-116">コードを追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c9d48-116">You won't have to add any code to it.</span></span> <span data-ttu-id="c9d48-117">プロジェクトを追加したのは単にパッケージを生成するためです。</span><span class="sxs-lookup"><span data-stu-id="c9d48-117">It's just there to generate a package for you.</span></span> <span data-ttu-id="c9d48-118">このプロジェクトを "パッケージ プロジェクト" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-118">We'll refer to this project as the "packaging project".</span></span>
 
    ![パッケージ プロジェクト](images/desktop-to-uwp/packaging-project.png)
 
    >[!NOTE]
-   ><span data-ttu-id="0c8b4-120">このプロジェクトは、Visual Studio 2017 バージョン 15.5 以降でのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-120">This project appears only in Visual Studio 2017 version 15.5 or higher.</span></span>
+   ><span data-ttu-id="c9d48-120">このプロジェクトは、Visual Studio 2017 バージョン 15.5 以降でのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-120">This project appears only in Visual Studio 2017 version 15.5 or higher.</span></span>
 
-3. <span data-ttu-id="0c8b4-121">このプロジェクトの **[ターゲット バージョン]** を目的のバージョンに設定しますが、**[最小バージョン]** は必ず **[Windows 10 Anniversary Update]** に設定してください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-121">Set the **Target Version** of this project to any version that you want, but make sure to set the **Minimum Version** to **Windows 10 Anniversary Update**.</span></span>
+3. <span data-ttu-id="c9d48-121">このプロジェクトの **[ターゲット バージョン]** を目的のバージョンに設定しますが、**[最小バージョン]** は必ず **[Windows 10 Anniversary Update]** に設定してください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-121">Set the **Target Version** of this project to any version that you want, but make sure to set the **Minimum Version** to **Windows 10 Anniversary Update**.</span></span>
 
    ![パッケージ バージョンの選択ダイアログ ボックス](images/desktop-to-uwp/packaging-version.png)
 
-4. <span data-ttu-id="0c8b4-123">パッケージ プロジェクトで、**[アプリケーション]** フォルダーを右クリックして **[参照の追加]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-123">In the packaging project, right-click the **Applications** folder, and then choose **Add Reference**.</span></span>
+4. <span data-ttu-id="c9d48-123">パッケージ プロジェクトで、**[アプリケーション]** フォルダーを右クリックして **[参照の追加]** を選びます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-123">In the packaging project, right-click the **Applications** folder, and then choose **Add Reference**.</span></span>
 
    ![プロジェクト参照の追加](images/desktop-to-uwp/add-project-reference.png)
 
-5. <span data-ttu-id="0c8b4-125">デスクトップ アプリケーション プロジェクトを選択し、**[OK]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-125">Choose your desktop application project, and then choose the **OK** button.</span></span>
+5. <span data-ttu-id="c9d48-125">デスクトップ アプリケーション プロジェクトを選択し、**[OK]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="c9d48-125">Choose your desktop application project, and then choose the **OK** button.</span></span>
 
    ![デスクトップ プロジェクト](images/desktop-to-uwp/reference-project.png)
 
-   <span data-ttu-id="0c8b4-127">パッケージには複数のデスクトップ アプリケーションを含めることができますが、ユーザーがアプリ タイルを選択したときに起動できるのは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-127">You can include multiple desktop applications in your package, but only one of them can start when users choose your app tile.</span></span> <span data-ttu-id="0c8b4-128">**[アプリケーション]** ノードで、ユーザーがアプリのタイルを選択したときに起動するアプリケーションを右クリックし、**[Set as Entry Point]** (エントリ ポイントとして設定) を選びます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-128">In the **Applications** node, right-click the application that you want users to start when they choose the app's tile, and then choose **Set as Entry Point**.</span></span>
+   <span data-ttu-id="c9d48-127">パッケージには複数のデスクトップ アプリケーションを含めることができますが、ユーザーがアプリ タイルを選択したときに起動できるのは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="c9d48-127">You can include multiple desktop applications in your package, but only one of them can start when users choose your app tile.</span></span> <span data-ttu-id="c9d48-128">**[アプリケーション]** ノードで、ユーザーがアプリのタイルを選択したときに起動するアプリケーションを右クリックし、**[Set as Entry Point]** (エントリ ポイントとして設定) を選びます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-128">In the **Applications** node, right-click the application that you want users to start when they choose the app's tile, and then choose **Set as Entry Point**.</span></span>
 
    ![エントリ ポイントの設定](images/desktop-to-uwp/entry-point-set.png)
 
-6. <span data-ttu-id="0c8b4-130">パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-130">Build the packaging project to ensure that no errors appear.</span></span>  <span data-ttu-id="0c8b4-131">エラーが発生した場合は、 **Configuration Manager**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-131">If you receive errors, open **Configuration Manager** and ensure that your projects target the same platform.</span></span>
+6. <span data-ttu-id="c9d48-130">パッケージ プロジェクトをビルドし、エラーが表示されないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-130">Build the packaging project to ensure that no errors appear.</span></span>  <span data-ttu-id="c9d48-131">エラーが発生した場合は、 **Configuration Manager**を開き、プロジェクトが同じプラットフォームを対象とすることを確認します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-131">If you receive errors, open **Configuration Manager** and ensure that your projects target the same platform.</span></span>
 
    ![構成マネージャー](images/desktop-to-uwp/config-manager.png)
 
-7. <span data-ttu-id="0c8b4-133">[アプリ パッケージの作成](../packaging/packaging-uwp-apps.md)ウィザードを使って、appxupload ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-133">Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.</span></span>
+7. <span data-ttu-id="c9d48-133">[アプリ パッケージの作成](../packaging/packaging-uwp-apps.md)ウィザードを使って、appxupload ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-133">Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.</span></span>
 
-   <span data-ttu-id="0c8b4-134">ストアに直接、そのファイルをアップロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-134">You can upload that file directly to the Store.</span></span>
+   <span data-ttu-id="c9d48-134">そのファイルを Microsoft Store に直接アップロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-134">You can upload that file directly to the store.</span></span>
 
-**<span data-ttu-id="0c8b4-135">ビデオ</span><span class="sxs-lookup"><span data-stu-id="0c8b4-135">Video</span></span>**
+**<span data-ttu-id="c9d48-135">ビデオ</span><span class="sxs-lookup"><span data-stu-id="c9d48-135">Video</span></span>**
 
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
-## <a name="next-steps"></a><span data-ttu-id="0c8b4-136">次のステップ</span><span class="sxs-lookup"><span data-stu-id="0c8b4-136">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="c9d48-136">次のステップ</span><span class="sxs-lookup"><span data-stu-id="c9d48-136">Next steps</span></span>
 
-**<span data-ttu-id="0c8b4-137">質問に対する回答を見つける</span><span class="sxs-lookup"><span data-stu-id="0c8b4-137">Find answers to your questions</span></span>**
+**<span data-ttu-id="c9d48-137">質問に対する回答を見つける</span><span class="sxs-lookup"><span data-stu-id="c9d48-137">Find answers to your questions</span></span>**
 
-<span data-ttu-id="0c8b4-138">ご質問がある場合は、</span><span class="sxs-lookup"><span data-stu-id="0c8b4-138">Have questions?</span></span> <span data-ttu-id="0c8b4-139">Stack Overflow でお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-139">Ask us on Stack Overflow.</span></span> <span data-ttu-id="0c8b4-140">Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-140">Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).</span></span> <span data-ttu-id="0c8b4-141">[こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-141">You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).</span></span>
+<span data-ttu-id="c9d48-138">ご質問がある場合は、</span><span class="sxs-lookup"><span data-stu-id="c9d48-138">Have questions?</span></span> <span data-ttu-id="c9d48-139">Stack Overflow でお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-139">Ask us on Stack Overflow.</span></span> <span data-ttu-id="c9d48-140">Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。</span><span class="sxs-lookup"><span data-stu-id="c9d48-140">Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).</span></span> <span data-ttu-id="c9d48-141">[こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。</span><span class="sxs-lookup"><span data-stu-id="c9d48-141">You can also ask us [here](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D).</span></span>
 
-**<span data-ttu-id="0c8b4-142">フィードバックの提供または機能の提案を行う</span><span class="sxs-lookup"><span data-stu-id="0c8b4-142">Give feedback or make feature suggestions</span></span>**
+**<span data-ttu-id="c9d48-142">フィードバックの提供または機能の提案を行う</span><span class="sxs-lookup"><span data-stu-id="c9d48-142">Give feedback or make feature suggestions</span></span>**
 
-<span data-ttu-id="0c8b4-143">[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-143">See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).</span></span>
+<span data-ttu-id="c9d48-143">[UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-143">See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).</span></span>
 
-**<span data-ttu-id="0c8b4-144">実行、デバッグ、テスト、デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="0c8b4-144">Run, debug or test your desktop application</span></span>**
+**<span data-ttu-id="c9d48-144">実行、デバッグ、テスト、デスクトップ アプリケーション</span><span class="sxs-lookup"><span data-stu-id="c9d48-144">Run, debug or test your desktop application</span></span>**
 
-<span data-ttu-id="0c8b4-145">[実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-145">See [Run, debug, and test a packaged desktop application](desktop-to-uwp-debug.md)</span></span>
+<span data-ttu-id="c9d48-145">[実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-145">See [Run, debug, and test a packaged desktop application](desktop-to-uwp-debug.md)</span></span>
 
-**<span data-ttu-id="0c8b4-146">UWP Api を追加してデスクトップ アプリケーションを拡張します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-146">Enhance your desktop application by adding UWP APIs</span></span>**
+**<span data-ttu-id="c9d48-146">UWP Api を追加してデスクトップ アプリケーションを拡張します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-146">Enhance your desktop application by adding UWP APIs</span></span>**
 
-<span data-ttu-id="0c8b4-147">「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-147">See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)</span></span>
+<span data-ttu-id="c9d48-147">「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-147">See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)</span></span>
 
-**<span data-ttu-id="0c8b4-148">UWP プロジェクトと Windows ランタイム コンポーネントを追加してデスクトップ アプリケーションを拡張します。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-148">Extend your desktop application by adding UWP projects and Windows Runtime Components</span></span>**
+**<span data-ttu-id="c9d48-148">UWP プロジェクトと Windows ランタイム コンポーネントを追加してデスクトップ アプリケーションを拡張します。</span><span class="sxs-lookup"><span data-stu-id="c9d48-148">Extend your desktop application by adding UWP projects and Windows Runtime Components</span></span>**
 
-<span data-ttu-id="0c8b4-149">「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-149">See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).</span></span>
+<span data-ttu-id="c9d48-149">「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-149">See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).</span></span>
 
-**<span data-ttu-id="0c8b4-150">アプリを配布する</span><span class="sxs-lookup"><span data-stu-id="0c8b4-150">Distribute your app</span></span>**
+**<span data-ttu-id="c9d48-150">アプリを配布する</span><span class="sxs-lookup"><span data-stu-id="c9d48-150">Distribute your app</span></span>**
 
-<span data-ttu-id="0c8b4-151">[デスクトップ アプリケーションのパッケージの配布](desktop-to-uwp-distribute.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0c8b4-151">See [Distribute a packaged desktop application](desktop-to-uwp-distribute.md)</span></span>
+<span data-ttu-id="c9d48-151">[デスクトップ アプリケーションのパッケージの配布](desktop-to-uwp-distribute.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c9d48-151">See [Distribute a packaged desktop application](desktop-to-uwp-distribute.md)</span></span>
