@@ -10,50 +10,50 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 298aaa1ae410badd24aa413cc4ada499b3521c74
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6022743"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6182211"
 ---
-# <a name="handles"></a><span data-ttu-id="ab6c8-104">/handles</span><span class="sxs-lookup"><span data-stu-id="ab6c8-104">/handles</span></span>
-<span data-ttu-id="ab6c8-105">Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示するために必要な場合は、セッション メンバーを招待して、ユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="ab6c8-105">Supports a POST operation to set the session for the user's current activity to be displayed in Xbox One dashboard user experience, and to invite session members if required.</span></span> 
+# <a name="handles"></a><span data-ttu-id="44c49-104">/handles</span><span class="sxs-lookup"><span data-stu-id="44c49-104">/handles</span></span>
+<span data-ttu-id="44c49-105">Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="44c49-105">Supports a POST operation to set the session for the user's current activity to be displayed in Xbox One dashboard user experience, and to invite session members if required.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="ab6c8-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="ab6c8-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="ab6c8-107">テンプレート コントラクト 104/105 以降で使用する概念があることです。</span><span class="sxs-lookup"><span data-stu-id="ab6c8-107">It is intended for use with template contract 104/105 or later.</span></span>  
+> <span data-ttu-id="44c49-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="44c49-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="44c49-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="44c49-107">It is intended for use with template contract 104/105 or later.</span></span>  
 
  
 <a id="ID4EQ"></a>
 
  
-## <a name="domain"></a><span data-ttu-id="ab6c8-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="ab6c8-108">Domain</span></span>
-<span data-ttu-id="ab6c8-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="ab6c8-109">sessiondirectory.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="44c49-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="44c49-108">Domain</span></span>
+<span data-ttu-id="44c49-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="44c49-109">sessiondirectory.xboxlive.com</span></span>  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="ab6c8-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ab6c8-110">URI parameters</span></span> 
+## <a name="uri-parameters"></a><span data-ttu-id="44c49-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="44c49-110">URI parameters</span></span> 
  
-<span data-ttu-id="ab6c8-111">なし</span><span class="sxs-lookup"><span data-stu-id="ab6c8-111">None</span></span>
+<span data-ttu-id="44c49-111">なし</span><span class="sxs-lookup"><span data-stu-id="44c49-111">None</span></span>
   
 <a id="ID4EAB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="ab6c8-112">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ab6c8-112">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="44c49-112">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="44c49-112">Valid methods</span></span>
 
-[<span data-ttu-id="ab6c8-113">POST (/handles)</span><span class="sxs-lookup"><span data-stu-id="ab6c8-113">POST (/handles)</span></span>](uri-handlespost.md)
+[<span data-ttu-id="44c49-113">POST (/handles)</span><span class="sxs-lookup"><span data-stu-id="44c49-113">POST (/handles)</span></span>](uri-handlespost.md)
 
-<span data-ttu-id="ab6c8-114">&nbsp;&nbsp;ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。</span><span class="sxs-lookup"><span data-stu-id="ab6c8-114">&nbsp;&nbsp;Sets the multiplayer session for the user's current activity, and invites session members if required.</span></span>
+<span data-ttu-id="44c49-114">&nbsp;&nbsp;ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。</span><span class="sxs-lookup"><span data-stu-id="44c49-114">&nbsp;&nbsp;Sets the multiplayer session for the user's current activity, and invites session members if required.</span></span>
  
 <a id="ID4EKB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ab6c8-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="ab6c8-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44c49-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="44c49-115">See also</span></span>
  
 <a id="ID4EMB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ab6c8-116">Parent</span><span class="sxs-lookup"><span data-stu-id="ab6c8-116">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="44c49-116">Parent</span><span class="sxs-lookup"><span data-stu-id="44c49-116">Parent</span></span> 
 
-[<span data-ttu-id="ab6c8-117">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="ab6c8-117">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
+[<span data-ttu-id="44c49-117">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="44c49-117">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
 
    

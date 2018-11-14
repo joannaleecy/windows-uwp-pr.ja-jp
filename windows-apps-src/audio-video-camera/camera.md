@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d330a762844e4889d0da9ae5457acc8d9f0c2b91
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042473"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6161331"
 ---
 # <a name="camera"></a><span data-ttu-id="c882b-104">カメラ</span><span class="sxs-lookup"><span data-stu-id="c882b-104">Camera</span></span>
 

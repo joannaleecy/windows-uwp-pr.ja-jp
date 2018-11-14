@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f06d7015fcb208b55fe0cb57b96eaecbc99317cc
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6160664"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184177"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a><span data-ttu-id="2b3fa-104">コレクションとリストのコンテキスト コマンドの実行</span><span class="sxs-lookup"><span data-stu-id="2b3fa-104">Contextual commanding for collections and lists</span></span>
 
