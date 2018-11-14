@@ -10,41 +10,41 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a23b4f984bc7edef77af7e020b62fcc7d8fcbf9f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6029311"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267893"
 ---
-# <a name="multiplayeractivitydetails-json"></a><span data-ttu-id="954c9-104">MultiplayerActivityDetails (JSON)</span><span class="sxs-lookup"><span data-stu-id="954c9-104">MultiplayerActivityDetails (JSON)</span></span>
-<span data-ttu-id="954c9-105">**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="954c9-105">A JSON object representing the **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**.</span></span> 
+# <a name="multiplayeractivitydetails-json"></a><span data-ttu-id="c313e-104">MultiplayerActivityDetails (JSON)</span><span class="sxs-lookup"><span data-stu-id="c313e-104">MultiplayerActivityDetails (JSON)</span></span>
+<span data-ttu-id="c313e-105">**Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c313e-105">A JSON object representing the **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="954c9-106">このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="954c9-106">This object is implemented by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="954c9-107">テンプレート コントラクト 104/105 以降で使用する概念があることです。</span><span class="sxs-lookup"><span data-stu-id="954c9-107">It is intended for use with template contract 104/105 or later.</span></span>  
+> <span data-ttu-id="c313e-106">このオブジェクトは、2015年マルチプレイヤーで実装され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="c313e-106">This object is implemented by the 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="c313e-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="c313e-107">It is intended for use with template contract 104/105 or later.</span></span>  
 
  
 <a id="ID4ES"></a>
 
   
  
-<span data-ttu-id="954c9-108">MultiplayerActivityDetails JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="954c9-108">The MultiplayerActivityDetails JSON object has the following specification.</span></span>
+<span data-ttu-id="c313e-108">MultiplayerActivityDetails JSON オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="c313e-108">The MultiplayerActivityDetails JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="954c9-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="954c9-109">Member</span></span>| <span data-ttu-id="954c9-110">種類</span><span class="sxs-lookup"><span data-stu-id="954c9-110">Type</span></span>| <span data-ttu-id="954c9-111">説明</span><span class="sxs-lookup"><span data-stu-id="954c9-111">Description</span></span>| 
+| <span data-ttu-id="c313e-109">メンバー</span><span class="sxs-lookup"><span data-stu-id="c313e-109">Member</span></span>| <span data-ttu-id="c313e-110">種類</span><span class="sxs-lookup"><span data-stu-id="c313e-110">Type</span></span>| <span data-ttu-id="c313e-111">説明</span><span class="sxs-lookup"><span data-stu-id="c313e-111">Description</span></span>| 
 | --- | --- | --- | --- | 
-| <span data-ttu-id="954c9-112">SessionReference</span><span class="sxs-lookup"><span data-stu-id="954c9-112">SessionReference</span></span>| <span data-ttu-id="954c9-113">MultiplayerSessionReference</span><span class="sxs-lookup"><span data-stu-id="954c9-113">MultiplayerSessionReference</span></span>| <span data-ttu-id="954c9-114">セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="954c9-114">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b> object representing identifying information for the session.</span></span>| 
-| <span data-ttu-id="954c9-115">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="954c9-115">HandleId</span></span>| <span data-ttu-id="954c9-116">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="954c9-116">64-bit unsigned integer</span></span>| <span data-ttu-id="954c9-117">アクティビティに対応するハンドル ID です。</span><span class="sxs-lookup"><span data-stu-id="954c9-117">The handle ID corresponding to the activity.</span></span>| 
-| <span data-ttu-id="954c9-118">TitleId</span><span class="sxs-lookup"><span data-stu-id="954c9-118">TitleId</span></span>| <span data-ttu-id="954c9-119">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="954c9-119">32-bit unsigned integer</span></span>| <span data-ttu-id="954c9-120">タイトル ID は、アクティビティに参加するために起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="954c9-120">The title ID that should be launched in order to join the activity.</span></span>| 
-| <span data-ttu-id="954c9-121">表示</span><span class="sxs-lookup"><span data-stu-id="954c9-121">Visibility</span></span>| <span data-ttu-id="954c9-122">MultiplayerSessionVisibility</span><span class="sxs-lookup"><span data-stu-id="954c9-122">MultiplayerSessionVisibility</span></span>| <span data-ttu-id="954c9-123">セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。</span><span class="sxs-lookup"><span data-stu-id="954c9-123">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b> value indicating the visibility state of the session.</span></span>| 
-| <span data-ttu-id="954c9-124">による</span><span class="sxs-lookup"><span data-stu-id="954c9-124">JoinRestriction</span></span>| <span data-ttu-id="954c9-125">MultiplayerSessionJoinRestriction</span><span class="sxs-lookup"><span data-stu-id="954c9-125">MultiplayerSessionJoinRestriction</span></span>| <span data-ttu-id="954c9-126">セッションへの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。</span><span class="sxs-lookup"><span data-stu-id="954c9-126">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b> value indicating the join restriction for the session.</span></span> <span data-ttu-id="954c9-127">表示のフィールドが「開く」に設定されている場合、この制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="954c9-127">This restriction applies if the visiblity field is set to "open".</span></span>| 
-| <span data-ttu-id="954c9-128">終了</span><span class="sxs-lookup"><span data-stu-id="954c9-128">Closed</span></span>| <span data-ttu-id="954c9-129">ブール値</span><span class="sxs-lookup"><span data-stu-id="954c9-129">Boolean value</span></span>| <span data-ttu-id="954c9-130">セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。</span><span class="sxs-lookup"><span data-stu-id="954c9-130">True if the session is temporarily closed for joining, and false otherwise.</span></span>| 
-| <span data-ttu-id="954c9-131">OwnerXboxUserId</span><span class="sxs-lookup"><span data-stu-id="954c9-131">OwnerXboxUserId</span></span>| <span data-ttu-id="954c9-132">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="954c9-132">64-bit unsigned integer</span></span>| <span data-ttu-id="954c9-133">アクティビティを所有しているメンバーの Xbox ユーザー ID。</span><span class="sxs-lookup"><span data-stu-id="954c9-133">Xbox user ID of the member who owns the activity.</span></span>| 
-| <span data-ttu-id="954c9-134">MaxMembersCount</span><span class="sxs-lookup"><span data-stu-id="954c9-134">MaxMembersCount</span></span>| <span data-ttu-id="954c9-135">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="954c9-135">32-bit unsigned integer</span></span>| <span data-ttu-id="954c9-136">スロットの合計数。</span><span class="sxs-lookup"><span data-stu-id="954c9-136">Number of total slots.</span></span>| 
-| <span data-ttu-id="954c9-137">MembersCount</span><span class="sxs-lookup"><span data-stu-id="954c9-137">MembersCount</span></span>| <span data-ttu-id="954c9-138">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="954c9-138">32-bit unsigned integer</span></span>| <span data-ttu-id="954c9-139">スロットを占有の数。</span><span class="sxs-lookup"><span data-stu-id="954c9-139">Number of slots occupied.</span></span>| 
+| <span data-ttu-id="c313e-112">SessionReference</span><span class="sxs-lookup"><span data-stu-id="c313e-112">SessionReference</span></span>| <span data-ttu-id="c313e-113">MultiplayerSessionReference</span><span class="sxs-lookup"><span data-stu-id="c313e-113">MultiplayerSessionReference</span></span>| <span data-ttu-id="c313e-114">セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="c313e-114">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b> object representing identifying information for the session.</span></span>| 
+| <span data-ttu-id="c313e-115">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="c313e-115">HandleId</span></span>| <span data-ttu-id="c313e-116">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="c313e-116">64-bit unsigned integer</span></span>| <span data-ttu-id="c313e-117">アクティビティに対応するハンドル ID。</span><span class="sxs-lookup"><span data-stu-id="c313e-117">The handle ID corresponding to the activity.</span></span>| 
+| <span data-ttu-id="c313e-118">TitleId</span><span class="sxs-lookup"><span data-stu-id="c313e-118">TitleId</span></span>| <span data-ttu-id="c313e-119">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="c313e-119">32-bit unsigned integer</span></span>| <span data-ttu-id="c313e-120">タイトル ID は、アクティビティに参加するために起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c313e-120">The title ID that should be launched in order to join the activity.</span></span>| 
+| <span data-ttu-id="c313e-121">表示</span><span class="sxs-lookup"><span data-stu-id="c313e-121">Visibility</span></span>| <span data-ttu-id="c313e-122">MultiplayerSessionVisibility</span><span class="sxs-lookup"><span data-stu-id="c313e-122">MultiplayerSessionVisibility</span></span>| <span data-ttu-id="c313e-123">セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。</span><span class="sxs-lookup"><span data-stu-id="c313e-123">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b> value indicating the visibility state of the session.</span></span>| 
+| <span data-ttu-id="c313e-124">による</span><span class="sxs-lookup"><span data-stu-id="c313e-124">JoinRestriction</span></span>| <span data-ttu-id="c313e-125">MultiplayerSessionJoinRestriction</span><span class="sxs-lookup"><span data-stu-id="c313e-125">MultiplayerSessionJoinRestriction</span></span>| <span data-ttu-id="c313e-126">セッションの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。</span><span class="sxs-lookup"><span data-stu-id="c313e-126">A <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b> value indicating the join restriction for the session.</span></span> <span data-ttu-id="c313e-127">表示のフィールドが「開く」に設定されている場合、この制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c313e-127">This restriction applies if the visiblity field is set to "open".</span></span>| 
+| <span data-ttu-id="c313e-128">クローズ済み</span><span class="sxs-lookup"><span data-stu-id="c313e-128">Closed</span></span>| <span data-ttu-id="c313e-129">ブール値</span><span class="sxs-lookup"><span data-stu-id="c313e-129">Boolean value</span></span>| <span data-ttu-id="c313e-130">セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。</span><span class="sxs-lookup"><span data-stu-id="c313e-130">True if the session is temporarily closed for joining, and false otherwise.</span></span>| 
+| <span data-ttu-id="c313e-131">OwnerXboxUserId</span><span class="sxs-lookup"><span data-stu-id="c313e-131">OwnerXboxUserId</span></span>| <span data-ttu-id="c313e-132">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="c313e-132">64-bit unsigned integer</span></span>| <span data-ttu-id="c313e-133">アクティビティを所有しているメンバーの Xbox ユーザー ID。</span><span class="sxs-lookup"><span data-stu-id="c313e-133">Xbox user ID of the member who owns the activity.</span></span>| 
+| <span data-ttu-id="c313e-134">MaxMembersCount</span><span class="sxs-lookup"><span data-stu-id="c313e-134">MaxMembersCount</span></span>| <span data-ttu-id="c313e-135">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="c313e-135">32-bit unsigned integer</span></span>| <span data-ttu-id="c313e-136">スロットの合計数。</span><span class="sxs-lookup"><span data-stu-id="c313e-136">Number of total slots.</span></span>| 
+| <span data-ttu-id="c313e-137">MembersCount</span><span class="sxs-lookup"><span data-stu-id="c313e-137">MembersCount</span></span>| <span data-ttu-id="c313e-138">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="c313e-138">32-bit unsigned integer</span></span>| <span data-ttu-id="c313e-139">スロットを占有の数。</span><span class="sxs-lookup"><span data-stu-id="c313e-139">Number of slots occupied.</span></span>| 
   
 <a id="ID4E3D"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="954c9-140">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="954c9-140">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="c313e-140">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="c313e-140">Sample JSON syntax</span></span>
  
 
 ```json
@@ -99,13 +99,13 @@ ms.locfileid: "6029311"
 <a id="ID4EFE"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="954c9-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="954c9-141">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c313e-141">関連項目</span><span class="sxs-lookup"><span data-stu-id="c313e-141">See also</span></span>
  
 <a id="ID4EHE"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="954c9-142">Parent</span><span class="sxs-lookup"><span data-stu-id="954c9-142">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="c313e-142">Parent</span><span class="sxs-lookup"><span data-stu-id="c313e-142">Parent</span></span> 
 
-[<span data-ttu-id="954c9-143">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="954c9-143">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="c313e-143">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="c313e-143">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

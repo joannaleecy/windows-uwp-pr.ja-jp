@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0066d38aaa3f5802ff5b1d380d405e60d90cad49
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6148848"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6267425"
 ---
 # <a name="streaming-resources-texture-sampling-features"></a><span data-ttu-id="4efaf-104">ストリーミング リソース テクスチャ サンプリング機能</span><span class="sxs-lookup"><span data-stu-id="4efaf-104">Streaming resources texture sampling features</span></span>
 

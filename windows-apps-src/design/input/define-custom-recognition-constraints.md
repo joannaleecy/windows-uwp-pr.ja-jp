@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189452"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6274675"
 ---
 # <a name="define-custom-recognition-constraints"></a><span data-ttu-id="97540-103">カスタム認識の制約の定義</span><span class="sxs-lookup"><span data-stu-id="97540-103">Define custom recognition constraints</span></span>
 

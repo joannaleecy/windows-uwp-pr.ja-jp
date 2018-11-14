@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194225"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6456252"
 ---
 # <a name="enable-device-capabilities"></a><span data-ttu-id="8ee34-105">デバイス機能を有効にする</span><span class="sxs-lookup"><span data-stu-id="8ee34-105">Enable device capabilities</span></span>
 

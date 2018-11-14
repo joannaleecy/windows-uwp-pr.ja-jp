@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 39979ed3fa2fcd85cbf1f1b73d7c37b2dce38f20
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6153404"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186781"
 ---
 # <a name="accessible-text-requirements"></a><span data-ttu-id="7d889-103">アクセシビリティに対応したテキストの要件</span><span class="sxs-lookup"><span data-stu-id="7d889-103">Accessible text requirements</span></span>  
 

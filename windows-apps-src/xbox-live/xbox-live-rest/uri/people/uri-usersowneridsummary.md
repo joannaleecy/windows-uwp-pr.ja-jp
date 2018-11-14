@@ -10,43 +10,43 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ce4bd9d444069af95c4f3c875cc12e4ff950cc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6025734"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194010"
 ---
-# <a name="usersowneridsummary"></a><span data-ttu-id="ed556-104">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="ed556-104">/users/{ownerId}/summary</span></span>
-<span data-ttu-id="ed556-105">呼び出し元の観点から所有者に関する集計データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ed556-105">Accesses summary data about the owner from the caller's perspective.</span></span>
+# <a name="usersowneridsummary"></a><span data-ttu-id="2fd30-104">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="2fd30-104">/users/{ownerId}/summary</span></span>
+<span data-ttu-id="2fd30-105">呼び出し元の観点から所有者に関する集計データにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="2fd30-105">Accesses summary data about the owner from the caller's perspective.</span></span>
 
-  * [<span data-ttu-id="ed556-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ed556-106">URI parameters</span></span>](#ID4EQ)
+  * [<span data-ttu-id="2fd30-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="2fd30-106">URI parameters</span></span>](#ID4EQ)
 
 <a id="ID4EQ"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="ed556-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="ed556-107">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="2fd30-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="2fd30-107">URI parameters</span></span>
 
-| <span data-ttu-id="ed556-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ed556-108">Parameter</span></span>| <span data-ttu-id="ed556-109">型</span><span class="sxs-lookup"><span data-stu-id="ed556-109">Type</span></span>| <span data-ttu-id="ed556-110">説明</span><span class="sxs-lookup"><span data-stu-id="ed556-110">Description</span></span>|
+| <span data-ttu-id="2fd30-108">パラメーター</span><span class="sxs-lookup"><span data-stu-id="2fd30-108">Parameter</span></span>| <span data-ttu-id="2fd30-109">型</span><span class="sxs-lookup"><span data-stu-id="2fd30-109">Type</span></span>| <span data-ttu-id="2fd30-110">説明</span><span class="sxs-lookup"><span data-stu-id="2fd30-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="ed556-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="ed556-111">ownerId</span></span>| <span data-ttu-id="ed556-112">string</span><span class="sxs-lookup"><span data-stu-id="ed556-112">string</span></span>| <span data-ttu-id="ed556-113">そのリソースにアクセスしているユーザーの識別子です。</span><span class="sxs-lookup"><span data-stu-id="ed556-113">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="ed556-114">可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。</span><span class="sxs-lookup"><span data-stu-id="ed556-114">The possible values are "me", xuid({xuid}), or gt({gamertag}).</span></span> <span data-ttu-id="ed556-115">値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、</span><span class="sxs-lookup"><span data-stu-id="ed556-115">Example values: <code>me</code>, <code>xuid(2603643534573581)</code>,</span></span> <code>gt(SomeGamertag)</code>|
+| <span data-ttu-id="2fd30-111">ownerId</span><span class="sxs-lookup"><span data-stu-id="2fd30-111">ownerId</span></span>| <span data-ttu-id="2fd30-112">string</span><span class="sxs-lookup"><span data-stu-id="2fd30-112">string</span></span>| <span data-ttu-id="2fd30-113">そのリソースにアクセスしているユーザーの id。</span><span class="sxs-lookup"><span data-stu-id="2fd30-113">Identifier of the user whose resource is being accessed.</span></span> <span data-ttu-id="2fd30-114">可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。</span><span class="sxs-lookup"><span data-stu-id="2fd30-114">The possible values are "me", xuid({xuid}), or gt({gamertag}).</span></span> <span data-ttu-id="2fd30-115">値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、</span><span class="sxs-lookup"><span data-stu-id="2fd30-115">Example values: <code>me</code>, <code>xuid(2603643534573581)</code>,</span></span> <code>gt(SomeGamertag)</code>|
 
 <a id="ID4ESB"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="ed556-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ed556-116">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="2fd30-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="2fd30-116">Valid methods</span></span>
 
-[<span data-ttu-id="ed556-117">GET (/users/{ownerId}/summary)</span><span class="sxs-lookup"><span data-stu-id="ed556-117">GET (/users/{ownerId}/summary)</span></span>](uri-usersowneridsummaryget.md)
+[<span data-ttu-id="2fd30-117">GET (/users/{ownerId}/summary)</span><span class="sxs-lookup"><span data-stu-id="2fd30-117">GET (/users/{ownerId}/summary)</span></span>](uri-usersowneridsummaryget.md)
 
-<span data-ttu-id="ed556-118">&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データを取得します。</span><span class="sxs-lookup"><span data-stu-id="ed556-118">&nbsp;&nbsp;Gets summary data about the owner from the caller's perspective.</span></span>
+<span data-ttu-id="2fd30-118">&nbsp;&nbsp;呼び出し元の観点から、所有者に関する集計データを取得します。</span><span class="sxs-lookup"><span data-stu-id="2fd30-118">&nbsp;&nbsp;Gets summary data about the owner from the caller's perspective.</span></span>
 
 <a id="ID4E3B"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="ed556-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed556-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2fd30-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="2fd30-119">See also</span></span>
 
 <a id="ID4E5B"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="ed556-120">Parent</span><span class="sxs-lookup"><span data-stu-id="ed556-120">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="2fd30-120">Parent</span><span class="sxs-lookup"><span data-stu-id="2fd30-120">Parent</span></span>
 
-[<span data-ttu-id="ed556-121">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="ed556-121">/users/{ownerId}/summary</span></span>]()
+[<span data-ttu-id="2fd30-121">/users/{ownerId}/summary</span><span class="sxs-lookup"><span data-stu-id="2fd30-121">/users/{ownerId}/summary</span></span>]()

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e842a6720725552885f83e1b019eebb5c33ba407
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025499"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6444612"
 ---
 # <a name="compute-shader-cs-stage"></a><span data-ttu-id="b88a3-104">計算シェーダー (CS) ステージ</span><span class="sxs-lookup"><span data-stu-id="b88a3-104">Compute Shader (CS) stage</span></span>
 
