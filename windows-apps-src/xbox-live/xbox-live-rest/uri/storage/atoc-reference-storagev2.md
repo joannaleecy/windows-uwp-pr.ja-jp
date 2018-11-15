@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e17bb64fd31c8a3cf86b57453e709e15b0cf7e6f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6248979"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6860891"
 ---
 # <a name="title-storage-uris"></a><span data-ttu-id="536cb-104">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="536cb-104">Title Storage URIs</span></span>
  
