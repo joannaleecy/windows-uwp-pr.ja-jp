@@ -14,11 +14,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648896"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6860942"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a><span data-ttu-id="3178c-103">ResourceDictionary と XAML リソースの参照</span><span class="sxs-lookup"><span data-stu-id="3178c-103">ResourceDictionary and XAML resource references</span></span>
 

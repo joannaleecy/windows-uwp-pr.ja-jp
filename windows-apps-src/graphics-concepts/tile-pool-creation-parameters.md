@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e0a29f66d8d153bc7c558acb804c96fe200864e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6448036"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6669107"
 ---
 # <a name="tile-pool-creation-parameters"></a><span data-ttu-id="f62db-104">タイル プールの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="f62db-104">Tile pool creation parameters</span></span>
 

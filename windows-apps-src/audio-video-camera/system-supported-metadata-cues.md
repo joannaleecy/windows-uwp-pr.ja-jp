@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, メタデータ, キュー, 音声, チャプター
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6470730"
+ms.locfileid: "6663977"
 ---
 # <a name="system-supported-timed-metadata-cues"></a><span data-ttu-id="3677f-104">システムでサポートされているタイミングが設定されたメタデータのキュー</span><span class="sxs-lookup"><span data-stu-id="3677f-104">System-supported timed metadata cues</span></span>
 <span data-ttu-id="3677f-105">この記事では、メディア ファイルやストリームに埋め込まれる可能性がある、タイミングが設定されたメタデータのいくつかの形式を活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3677f-105">This article describes how to take advantage of several formats of timed metadata that may be embedded in media files or streams.</span></span> <span data-ttu-id="3677f-106">UWP アプリは、これらのメタデータ キューが発生したときに、メディア パイプラインで再生中に発生したイベントについて登録できます。</span><span class="sxs-lookup"><span data-stu-id="3677f-106">UWP apps can register for events that are raised by the media pipeline during playback whenever these metadata cues are encountered.</span></span> <span data-ttu-id="3677f-107">アプリでは、[**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) クラスを使って独自のカスタム メタデータ キューを実装できますが、この記事ではメディア パイプラインで自動的に検出される、次のようなメタデータ標準に重点を置いて説明します。</span><span class="sxs-lookup"><span data-stu-id="3677f-107">Using the [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) class, apps can implement their own custom metadata cues, but this article focuses on several metadata standards that are automatically detected by the media pipeline, including:</span></span>
