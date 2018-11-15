@@ -13,11 +13,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: a0950bfc9d90ba893be8ca52cc295b38b142798e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6447064"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668578"
 ---
 # <a name="attached-properties-overview"></a>添付プロパティの概要
 

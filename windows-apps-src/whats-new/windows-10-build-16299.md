@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be084091f041d574445080cd7976318a35fedcea
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 458a5999c1f56a3bc9f445f260d1d294c395b850
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6269511"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6674373"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 
@@ -80,7 +80,7 @@ POS (店舗販売時点管理) | [POS (店舗販売時点管理) サービス](.
 
 機能 | 説明
  :------ | :------
-アカウント管理 | [Azure AD テナントとデベロッパー センター アカウントに関連付け](../publish/associate-azure-ad-with-dev-center.md)て複数のアカウント ユーザーを追加するときの柔軟性が向上しました。 複数の Azure AD テナントを 1 つのデベロッパー センターに関連付ける、または、1 つの Azure AD テナントを複数のデベロッパー センター アカウントに関連付けることができます。
+アカウント管理 | 柔軟性を提供しますと[Azure AD テナントとパートナー センター アカウントに関連付ける](../publish/associate-azure-ad-with-dev-center.md)に複数のアカウント ユーザーを追加します。 複数の Azure AD テナントを 1 つのパートナー センター アカウントに関連付けるか、1 つを関連付ける Azure AD テナントは、複数のパートナー センター アカウントを使用します。
 広告 | Microsoft Advertising SDK で、アプリ内に[ネイティブ広告](../monetize/native-ads.md)を表示できるようになりました。 ネイティブ広告は、コンポーネント ベースの広告形式で、各広告クリエイティブ (タイトル、画像、説明、行動喚起テキストなど) が個々の要素としてアプリに配信されます。 ネイティブ広告は、現在はパイロット プログラムに参加している開発者にのみ提供されますが、まもなくすべての開発者がこの機能を利用できるようになる予定です。
 価格と使用可能状況 |  新しい価格と利用可能状況のオプションでは、[価格変更のスケジュール](../publish/set-and-schedule-app-pricing.md)や[正確なリリース日の設定](../publish/configure-precise-release-scheduling.md)を行うことができます。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) に、[アプリのエラーの CAB ファイルをダウンロード](../monetize/download-the-cab-file-for-an-error-in-your-app.md)するために使用できるメソッドが追加されました。

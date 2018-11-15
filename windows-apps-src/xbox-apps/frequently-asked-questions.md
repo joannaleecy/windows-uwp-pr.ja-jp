@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6658418"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6860995"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 

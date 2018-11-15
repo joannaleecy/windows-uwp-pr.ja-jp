@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション, グループ、ux, ux ガイダンスについては、ガイダンス、アクション、トースト、アクション センター、noninterruptive、効果的な通知、侵入通知、実践的な管理、整理
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 849c8ffc66661546a088a3d89747e6690a763e71
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6463482"
+ms.locfileid: "6666585"
 ---
 # <a name="toast-notification-ux-guidance"></a>トースト通知の UX ガイダンス
 通知は、最新の寿命に必要な部分ユーザーの生産性とアプリと web サイト、任意の更新プログラムが現在のままに猶予期間に役立ちます。 ただし、通知場合にすばやく、overbearing に便利で、ユーザーを中心とした方法でない設計されている場合は、侵入から有効にすることができます。 通知は 1 つを右クリックしてから、無効にされている可能性はほとんどありませんオフにすると、それらが再びオンになります。  開いているこのエンゲージメント チャネルを維持することができますが、通知、ユーザーの画面領域と時刻を尊重を確認しておきます。
@@ -59,7 +59,7 @@ ctionable 通知は、生産性の高いと思われる、タスクの実行し�
 ## <a name="other-resources"></a>その他のリソース
 これら 4 つのポイント上記とは、わかりました効果的な利用統計情報、当社の分析とファーストおよびサード パーティ製の実験を通じてガイダンスです。 留意、ただしを次のガイドラインがその: ガイドライン。  これらの規則のエンゲージメントと、通知の生産性を向上させるのに役立ちますが、何もユーザーを中心としたと独自のデータから学習を置き換えることが確実にしています。  
 
-現在、UWP アプリに通知を送信する場合は、[デベロッパー センター](https://developer.microsoft.com/en-us/windows)で、通知で発生した問題を分析を表示する! このデータは、無料[Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)または[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)を使用します。 これらの測定値により、windows プラットフォームで、通知に何が起きる洞察もユーザーが通知と対話する方法とします。 このダッシュ ボードの左側にある利用率の引き上げ] メニューに移動してへのアクセス > の通知ページ内で「分析」タブをクリックし、通知します。  これは、デベロッパー センター ポータルからの通知の送信に移動しますが、同じ場所にあります。
+現在、UWP アプリに通知を送信する場合は、[パートナー センター](https://partner.microsoft.com/dashboard)で、通知で発生した問題を分析を表示する! このデータは、無料[Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)または[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)を使用します。 これらの測定値により、windows プラットフォームで、通知に何が起きる洞察もユーザーが通知と対話する方法とします。 このデータにアクセスで画面左側にある利用率の引き上げ] メニューに移動して > の通知ページ内で「分析」タブをクリックし、通知します。  これは、パートナー センターからの通知の送信に移動しますが、同じ場所にあります。
 
 ## <a name="related-topics"></a>関連トピック
 
