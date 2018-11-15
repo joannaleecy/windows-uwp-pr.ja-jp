@@ -8,19 +8,19 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, ネイティブ コンパイラを画像します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 231d5aa895cb4cf63ade01660df61e32424e67c7
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444726"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656790"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。
 
 > [!NOTE]
 > 一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 
-事前、バイナリをコンパイルすることによって、.NET Framework アプリケーションの起動時間を向上できます。 パッケージ化して、Windows ストアを通じて配布大規模なアプリケーションでは、このテクノロジを使用できます。 場合によっては、20% のパフォーマンスの向上を観察しますしました。 [技術概要](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)では、このテクノロジについて詳しく知るすることができます。
+事前、バイナリをコンパイルすることによって、.NET Framework アプリケーションの起動時間を向上できます。 大規模なアプリケーションをパッケージ化して、Microsoft Store を通じて配布することで、このテクノロジを使用できます。 場合によっては、20% のパフォーマンスの向上を観察しますしました。 [技術概要](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)では、このテクノロジについて詳しく知るすることができます。
 
 ネイティブ イメージ コンパイラのプレビュー版の[NuGet パッケージ](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)としてリリースされてきましたしました。 このパッケージを適用するには、.NET Framework バージョン 4.6.2 をターゲットとする .NET Framework アプリケーションにまたはそれ以降。 このパッケージは、アプリケーションで使用されるすべてのバイナリへのネイティブのペイロードが含まれている post ビルド ステップを追加します。 この最適化されたペイロードは、アプリケーションが実行される .NET 4.7.2 で以降の以前のバージョンの MSIL コードがまだ読み込み中に読み込まれます。
 
@@ -59,7 +59,7 @@ ms.locfileid: "6444726"
 
 1. ソリューションを右クリックし、 **Configuration Manager**を選択します。
 
-2. 選択 **< 新規.>** **プラットフォーム**ドロップダウン メニューで、実行可能ファイルを生成するプロジェクトの名前の横にあります。
+2. **_LT_New を選択します。>** **プラットフォーム**ドロップダウン メニューで、実行可能ファイルを生成するプロジェクトの名前の横にあります。
 
 3. **新しいプロジェクトのプラットフォーム**] ダイアログ ボックスで、**設定のコピー元**のドロップダウン リストを**任意の CPU**に設定されていることを確認します。
 

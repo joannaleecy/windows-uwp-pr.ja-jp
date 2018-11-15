@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 42dfecd7d1bc2c298a70fec2bdebfc4c4f9dd66c
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: ecb99c16d413e5e9869215f2d048ad6d9d52206f
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6454117"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668477"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Microsoft Store アプリの起動
 
@@ -43,7 +43,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">製品の詳細ページ (PDP) を起動します。 <p>ストア ID を使う方法は Windows 10 のユーザー向けに推奨される一方ですべての OS バージョンで動作しますが、以前の方法 (PFN など) も使うことができます。</p>
-<p>Windows デベロッパー センター ダッシュボードにある各アプリの [アプリ管理] セクションの <a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">[アプリ ID]</a> ページでこれらの値を表示できます。</p>
+<p>これらの値は、[パートナー センター](https://partner.microsoft.com/dashboard)で各アプリのアプリ管理] セクションで [<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">アプリ id</a> ] ページで確認できます。</p>
 </td>
 <td>
 ストア ID <p>(推奨)</p>

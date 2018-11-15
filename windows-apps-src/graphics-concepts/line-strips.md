@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a5fbf4d7fd4f82e6bc44795d64e6b98b6c732f49
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6463198"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832715"
 ---
 # <a name="line-strips"></a>ライン ストリップ
 

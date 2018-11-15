@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6455354"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654052"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>まとめ
 
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API を使用して、アプリをタイムラインと Cortana に表示させることができます。
-* 詳しくは、[Windows デベロッパー センター](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) で **UserActivity** API についてご覧ください。
+* [ **UserActivity** API について詳しく知る](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 「[sample code](https://github.com/Microsoft/project-rome)」をご覧ください。
 * 「[more sophisticated Adaptive Cards](http://adaptivecards.io/)」を参照してください。
 * [Microsoft Graph](https://developer.microsoft.com/graph/) を介して、iOS、Android、または Web サービスから **UserActivity** を公開します。
