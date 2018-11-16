@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6655928"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834895"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a><span data-ttu-id="b8ac5-104">アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。</span><span class="sxs-lookup"><span data-stu-id="b8ac5-104">Enable apps for websites using app URI handlers</span></span>
 

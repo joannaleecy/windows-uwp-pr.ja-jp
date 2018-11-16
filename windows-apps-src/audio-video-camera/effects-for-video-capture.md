@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d427a532e9821b81b6f23d08babecd692c8c95e1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6657952"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837815"
 ---
 # <a name="effects-for-video-capture"></a><span data-ttu-id="12d10-104">ビデオ キャプチャの効果</span><span class="sxs-lookup"><span data-stu-id="12d10-104">Effects for video capture</span></span>
 

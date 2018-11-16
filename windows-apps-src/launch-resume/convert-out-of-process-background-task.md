@@ -9,11 +9,11 @@ keywords: windows 10、uwp、バック グラウンド タスク、アプリ サ
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 47008fd7ba0b7724aa8fbdc2dd6cbd55288faea0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650940"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833497"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a><span data-ttu-id="4df77-104">アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する</span><span class="sxs-lookup"><span data-stu-id="4df77-104">Port an out-of-process background task to an in-process background task</span></span>
 

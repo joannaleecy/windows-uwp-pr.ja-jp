@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力待ち時間
 ms.localizationpriority: medium
 ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6646063"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844538"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a><span data-ttu-id="fc071-104">ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化</span><span class="sxs-lookup"><span data-stu-id="fc071-104">Optimize input latency for Universal Windows Platform (UWP) DirectX games</span></span>
 

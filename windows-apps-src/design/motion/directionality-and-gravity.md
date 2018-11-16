@@ -13,11 +13,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 09bccec40c25e5eba06ba7a7c428b7b771f84271
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670618"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838634"
 ---
 # <a name="directionality-and-gravity"></a><span data-ttu-id="83cd0-103">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="83cd0-103">Directionality and gravity</span></span>
 

@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6455315"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6666172"
 ---
 # <a name="icons-for-uwp-apps"></a><span data-ttu-id="41f1b-103">UWP アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="41f1b-103">Icons for UWP apps</span></span>
 

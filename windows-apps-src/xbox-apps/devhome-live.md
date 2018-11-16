@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6468719"
+ms.locfileid: "6666655"
 ---
 # <a name="xbox-live-page-dev-home"></a><span data-ttu-id="ed749-104">Xbox Live ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="ed749-104">Xbox Live Page (Dev Home)</span></span>
    

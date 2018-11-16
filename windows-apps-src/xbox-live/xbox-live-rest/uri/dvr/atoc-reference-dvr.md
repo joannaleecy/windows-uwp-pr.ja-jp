@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b4da88a85535d6be97607663c96e416e226efb31
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6263995"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834074"
 ---
 # <a name="game-dvr-uris"></a><span data-ttu-id="1f042-104">ゲーム DVR URI</span><span class="sxs-lookup"><span data-stu-id="1f042-104">Game DVR URIs</span></span>
  
