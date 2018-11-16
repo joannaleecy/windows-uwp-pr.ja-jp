@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 63214ce47bffc5a0b13f421e5185d06cd810ea34
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6654386"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6836734"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Visual Studio を使った Surface Hub アプリのテスト
 Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターが Surface Hub と同じユーザー インターフェイスを使用していませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。

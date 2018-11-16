@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0c34dda3039a9b6a66428266e37f81b41695fbc0
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647514"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849514"
 ---
 # <a name="combo-box"></a>コンボ ボックス
 
@@ -224,7 +224,7 @@ TextSubmitted イベントは、ユーザーがテキストを入力し、一覧
 
 ### <a name="sample---validate-input-and-use-locally"></a>サンプル - 入力を検証し、ローカルで使う
 
-この examle では、フォント サイズの選択には、フォント サイズの見本に対応する値のセットが含まれていますが、ユーザーは、一覧にないフォント サイズを入力します。
+この例では、フォント サイズの選択には、フォント サイズの見本に対応する値のセットが含まれていますが、ユーザーは、一覧にないフォント サイズを入力します。
 
 フォント サイズの一覧には、ユーザーがリスト、フォント サイズ、更新プログラムは、値に含まれていない値を追加する場合は追加されません。
 

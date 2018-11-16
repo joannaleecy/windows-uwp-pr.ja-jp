@@ -10,18 +10,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 933ca3f6d683d5a58e10f87059527038e7b696d1
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665713"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833760"
 ---
 # <a name="controls-by-function"></a>機能別コントロール
 
 Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。 これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。 
 
-[XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。
+[XAML UI の基本のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619992)をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。
 
 <table>
 <th align="left">XAML コントロール ギャラリー<th>
@@ -56,21 +56,21 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md) 
 
-サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>アプリ バーの区分線
 コマンド バーのコマンドのグループを視覚的に区切ります。
 
 リファレンス: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>アプリ バーのトグル ボタン
 コマンド バーでコマンドを切り替えるボタン。
 
 リファレンス: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>コマンド バー
 アプリ バーのボタン要素のサイズ変更を処理する専用のアプリ バー。
@@ -88,7 +88,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)
 
-サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>ボタン
 
@@ -116,7 +116,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 リファレンス: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -168,7 +168,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [リスト](lists.md) 
 
-サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+サンプル コード: [ListView のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>項目コントロール
 データ テンプレートで指定された UI にある項目のコレクションを表示するコントロール。 
@@ -193,7 +193,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [リスト](lists.md) 
 
-サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+サンプル コード: [ListView のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>日付と時刻コントロール
 
@@ -290,7 +290,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方:[メニューとコンテキスト メニュー](menus.md) 
 
-サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+サンプル コード: [XAML ショートカット メニューのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>ポップアップ メニュー
 指定したコマンドを表示するためのカスタム メニュー。
@@ -326,7 +326,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [Image と ImageBrush](images-imagebrushes.md) 
 
-サンプル コード: [XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226867)
+サンプル コード: [XAML 画像のサンプル](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>グラフィックスとインク
 
@@ -355,7 +355,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 操作方法: [図形の描画](../../graphics/drawing-shapes.md) 
 
-サンプル コード: [XAML ベクターベース描画のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226866)
+サンプル コード: [XAML ベクターベース描画のサンプル](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>レイアウト コントロール
 
@@ -455,7 +455,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 デザインと使い方: [スクロールとパンのコントロールのガイド](scroll-controls.md) 
 
-サンプル コード: [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238577)
+サンプル コード: [XAML のスクロール、パン、ズームのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>スタック パネル
 子要素を水平方向または垂直方向の単一行に配置するレイアウト パネル。
@@ -544,7 +544,7 @@ MediaElement の再生コントロールを提供するコントロール。
 
 デザインと使い方: [メディア要素コントロールのガイド](media-playback.md) 
 
-サンプル コード: [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+サンプル コード: [メディア トランスポート コントロールのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>ビデオ
 「メディア要素」をご覧ください。
@@ -585,7 +585,7 @@ MediaElement の再生コントロールを提供するコントロール。
 Web コンテンツをホストするコンテナー コントロール。
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -593,7 +593,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: Web ビューのガイドライン 
 
-サンプル コード: [XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238582)
+サンプル コード: [XAML WebView コントロールのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>セマンティック ズーム
 
@@ -614,7 +614,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md)
 
-サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)
+サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>プログレス コントロール
 
@@ -665,7 +665,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [テキスト コントロール](text-controls.md)、[自動提案ボックス コントロールのガイド](auto-suggest-box.md)
 
-サンプル コード: [AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+サンプル コード: [AutoSuggestBox の移行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>複数行テキスト ボックス
 「テキスト ボックス」をご覧ください。
@@ -684,7 +684,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [テキスト コントロール](text-controls.md)、[パスワード ボックス コントロールのガイド](password-box.md) 
 
-サンプル コード: [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML テキスト編集のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251417)
+サンプル コード: [XAML テキスト表示のサンプル](https://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML テキスト編集のサンプル](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>リッチ エディット ボックス
 書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントを編集できるコントロール。
@@ -697,7 +697,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [テキスト コントロール](text-controls.md)、[リッチ エディット ボックス コントロールのガイド](rich-edit-box.md)
 
-サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>検索ボックス
 「自動提案ボックス」をご覧ください。
@@ -721,7 +721,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ブロック コントロールのガイド](text-block.md)、[リッチ テキスト ブロック コントロールのガイド](rich-text-block.md)
 
-サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>テキスト ボックス
 1 行または複数行のプレーンテキスト フィールド。
@@ -737,7 +737,7 @@ Web コンテンツをホストするコンテナー コントロール。
 
 デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ボックス コントロールのガイド](text-box.md) 
 
-サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>選択コントロール
 

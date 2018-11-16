@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: febf5e377c73572e4e231f830d737b4e704d262e
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6276413"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6832044"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
 1 人のユーザーのオンライン プレゼンスに関するデータ。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア, プライバシー ポリシー, サポートの問い合わせ先情報, アプリ Web サイト, サポート情報
 ms.localizationpriority: medium
 ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648214"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6843804"
 ---
 # <a name="enter-app-properties"></a>アプリのプロパティの入力
 

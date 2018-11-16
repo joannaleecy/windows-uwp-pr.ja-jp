@@ -170,7 +170,6 @@
 ### [言語、スケール、コントラストに合わせたタイルとトースト通知のサポート](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [アプリをタスク バーにピン留めする](shell/pin-to-taskbar.md)
 ## [タイトル バーのカスタマイズ](shell/title-bar.md)
-## [Sets の設計](shell/design-for-sets.md)
 
 ## 通知
 ### トースト通知

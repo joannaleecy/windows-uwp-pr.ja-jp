@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664926"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834728"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom フィード
 

@@ -7,12 +7,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント
 ms.localizationpriority: medium
-ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 9f44d5bc0e07ab40a396c103d2a8ba6db5427ae8
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648267"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853637"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>パートナー センターのアカウントを Azure Active Directory を関連付ける
 
@@ -47,7 +47,7 @@ ms.locfileid: "6648267"
 
 パートナー センター アカウントをリンクする新しい Azure AD を設定する必要がある場合は次の手順に従います。
 
-1.  [パートナー センター](https://partner.microsoft.com/dashboard)から (右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**開発者の設定**を選択します。 **Settings** ] メニューでは、**テナント**を選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、(右上隅のダッシュ ボードの) 近くにある歯車アイコンを選択し、**開発者の設定**を選択します。 **Settings** ] メニューでは、**テナント**を選択します。
 2.  **[新しい Azure AD の作成]** を選びます。
 3.  新しい Azure AD のディレクトリ情報を入力します。
     - **[ドメイン名]**: ".onmicrosoft.com" との組み合わせで Azure AD ドメインを示す一意の名前。 たとえば、「example」と入力した場合、Azure AD ドメインは "example.onmicrosoft.com" になります。

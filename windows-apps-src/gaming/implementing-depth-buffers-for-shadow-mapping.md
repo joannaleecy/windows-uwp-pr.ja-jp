@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, シャドウ ボリューム, 深度バッファー, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6672547"
+ms.locfileid: "6834692"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
 

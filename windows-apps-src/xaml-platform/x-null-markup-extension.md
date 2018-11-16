@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b6033a01ee811977b3a37f820217005fdbd80616
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6442939"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668631"
 ---
 # <a name="xnull-markup-extension"></a>{x:Null} マークアップ拡張
 

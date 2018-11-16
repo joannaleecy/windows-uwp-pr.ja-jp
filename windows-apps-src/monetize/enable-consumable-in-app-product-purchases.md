@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c41801362a03bb8d1d5e06b3ada876014237b1f7
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6666182"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852070"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>コンシューマブルなアプリ内製品購入の有効化
 

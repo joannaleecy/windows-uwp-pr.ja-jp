@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
 ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652245"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6854495"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 

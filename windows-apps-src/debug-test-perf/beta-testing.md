@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 55d90ffb50d6db71e135cbecf56487b96ba3377c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451583"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6841113"
 ---
 # <a name="beta-testing"></a>ベータ テスト
 
@@ -42,9 +42,9 @@ ms.locfileid: "6451583"
 
 ## <a name="next-steps"></a>次の手順
 
-アプリがどのオペレーティング システムを対象とするかにかかわらず、Windows デベロッパー センター統合ダッシュボードで、アプリをテスターのみに限定して配布できます。 別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。自身でテストを行い、アプリを公開する準備が整ったら新しい提出を作成することもできます。 (もちろん、必要であれば、テスト用に別のアプリを作ることもできます。 作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)
+[パートナー センター](https://partner.microsoft.com/dashboard)では、限定して配布できます、アプリのどのオペレーティング システムに関係なくをテスターのみにアプリが対象とします。 別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。自身でテストを行い、アプリを公開する準備が整ったら新しい提出を作成することもできます。 (もちろん、必要であれば、テスト用に別のアプリを作ることもできます。 作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)
 
-ベータ テスト用にアプリをストアに提出する方法については、「[ベータ テストとターゲット配布](https://msdn.microsoft.com/library/windows/apps/Mt185377)」を参照してください。
+ベータ テスト用にアプリをストアに提出する方法については、「[ベータ テストとターゲット配布](../publish/beta-testing-and-targeted-distribution.md)」を参照してください。
 
  
 

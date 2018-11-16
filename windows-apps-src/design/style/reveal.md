@@ -13,11 +13,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669690"
+ms.locfileid: "6832321"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 

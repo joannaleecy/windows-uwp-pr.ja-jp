@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471730"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855769"
 ---
 # <a name="networking-basics"></a>ネットワークの基本
 ネットワーク対応アプリで実行する必要がある事柄について説明します。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
 ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6650851"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6836926"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
 

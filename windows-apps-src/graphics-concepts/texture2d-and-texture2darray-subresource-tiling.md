@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466725"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6673801"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D と Texture2DArray のサブリソースのタイル表示
 
