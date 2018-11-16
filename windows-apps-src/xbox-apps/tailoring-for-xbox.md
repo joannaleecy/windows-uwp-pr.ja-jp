@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6850248"
+ms.locfileid: "6983321"
 ---
 # <a name="xbox-best-practices"></a><span data-ttu-id="c29c9-104">Xbox ベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="c29c9-104">Xbox best practices</span></span>
 

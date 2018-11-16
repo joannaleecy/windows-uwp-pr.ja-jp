@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、広告、キャンペーン、プロモーション
 ms.localizationpriority: medium
 ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6851759"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6989597"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a><span data-ttu-id="540de-103">アプリの広告キャンペーンの作成</span><span class="sxs-lookup"><span data-stu-id="540de-103">Create an ad campaign for your app</span></span>
 

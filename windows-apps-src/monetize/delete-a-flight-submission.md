@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 削除, パッケージ フライト
 ms.localizationpriority: medium
 ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6833793"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992862"
 ---
 # <a name="delete-a-package-flight-submission"></a><span data-ttu-id="e7828-104">パッケージ フライトの申請の削除</span><span class="sxs-lookup"><span data-stu-id="e7828-104">Delete a package flight submission</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 0606c3b1b0b36dadb888166310f8b347d40a480a
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662538"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853351"
 ---
 # <a name="connect-devices-through-remote-sessions"></a><span data-ttu-id="3eb03-104">リモート セッションでデバイスを接続する</span><span class="sxs-lookup"><span data-stu-id="3eb03-104">Connect devices through remote sessions</span></span>
 

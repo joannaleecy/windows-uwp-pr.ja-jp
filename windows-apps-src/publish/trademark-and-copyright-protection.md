@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 68ef1a9372523ea489677620acc039642bfc64ae
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6846217"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6994613"
 ---
 # <a name="trademark-and-copyright-protection"></a><span data-ttu-id="b7513-103">商標と著作権の保護</span><span class="sxs-lookup"><span data-stu-id="b7513-103">Trademark and copyright protection</span></span>
 
