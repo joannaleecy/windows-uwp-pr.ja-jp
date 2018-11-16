@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, 予告編, ビデオ, スクリーン ショット, 画像, アイコン, Store 登録情報, Store 登録情報の画像
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bd5a92f1e8dfe762ac3433bf64f9fe705644a9f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 4899e117096cf6d03c497fec79038e6d96aca3fd
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669077"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840959"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>アプリのスクリーンショット、画像、トレーラー
 
@@ -65,7 +65,7 @@ Microsoft Store ロゴをアップロードし、Microsoft Store の表示をさ
 
 ### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>9:16 ポスター アート (720 x 1080 または 1440 x 2160 ピクセル)
 
-Windows 10 デバイスと Xbox デバイスのユーザー向けのメイン ロゴ画像として使われます。適切に表示されるようにするため、この画像を用意することを**強くお勧め**します。 この画像を含めないと登録情報が適切に表示されない可能性があります。また、Microsoft Store を参照しているときにユーザーに表示される他の登録情報と一貫性がなくなります。 この画像は、検索結果や自動編集コレクションでも使うことができます。
+Windows 10 デバイスと Xbox デバイスのユーザー向けのメイン ロゴ画像として使われます。適切に表示されるようにするため、この画像を用意することを**強くお勧め**します。 登録情報が適切に表示されない含めないして、ストアを閲覧中にユーザーに表示されるその他の登録情報と一貫性がなくなります。 この画像は、検索結果や自動編集コレクションでも使うことができます。
 
 この画像にはアプリ名を含める必要があり、画像内のテキストは、読みやすさに関するアクセシビリティ要件 (4.5:1 のコントラスト比) を満たす必要があります。 この画像の下部 4 分の 1 にテキスト オーバーレイが表示されることがあるため、テキストやキーの画像を含めないようにしてください。
 
