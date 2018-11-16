@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1c4ea1923ff81754b9c8ed8328ba6ec670a3f1
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6838070"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6972260"
 ---
 # <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 
@@ -272,7 +272,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ### <a name="apps-that-use-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使うアプリ
 
-アプリでは、 **Windows.ApplicationModel.Store**名前空間を使用する場合は、ほとんどの操作には、パートナー センターでアドオンに割り当てた製品 ID を使用する必要があります。 以下に例を示します。
+アプリでは、 **Windows.ApplicationModel.Store**名前空間を使用する場合は、ほとんどの操作には、パートナー センターでアドオンに割り当てた製品 ID を使用する必要があります。 例:
 
 * アドオンを表す [ProductListing](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting) や、アドオンのライセンスを表す [ProductLicense](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense) を識別するには、製品 ID を使用します。 製品 ID は、[ProductListing.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.ProductId) プロパティおよび [ProductLicense.ProductId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlicense.ProductId) プロパティにより公開されます。
 

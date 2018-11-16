@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6856593"
+ms.locfileid: "6978971"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Microsoft Store Services SDK を使ってユーザーとの関係を深める
 
@@ -144,4 +144,4 @@ Microsoft Store Services SDK の Microsoft.Services.Store.Engagement.dll ライ�
 * [A/B テストによる実験の実行](run-app-experiments-with-a-b-testing.md)
 * [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
 * [パートナー センターのプッシュ通知を受信するアプリを構成します。](configure-your-app-to-receive-dev-center-notifications.md)
-* [パートナー センターのカスタム イベントをログに記録します。](log-custom-events-for-dev-center.md)
+* [パートナー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)

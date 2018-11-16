@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6841973"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6989055"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -118,7 +118,7 @@ MSIX 安全性と信頼性の高い、セキュリティで保護されたに組
 
 <a id="distribution" />
 
-## <a name="security"></a>セキュリティ
+## <a name="security"></a>Security
 
 Windows 10 では、一連のアプリ開発者の id、ユーザー、企業のネットワークのセキュリティやデバイスに保存されている任意のビジネス データを保護するためのセキュリティ機能を提供します。 新しい windows 10 は Microsoft Passport、PIN を使用して、アクセス可能な 2 要素のパスワードの導入が容易な代替または Windows こんにちは、エンタープライズ レベルのセキュリティを提供し、指紋、顔をサポートする、ベース虹彩認識です。
 
@@ -126,7 +126,7 @@ Windows 10 では、一連のアプリ開発者の id、ユーザー、企業の
 |-------|-------------|
 | [安全な Windows アプリの開発について](https://msdn.microsoft.com/library/windows/apps/mt622741) | この概要記事では、認証、フライトのデータ、およびデータの保存の各ステージ間でさまざまな Windows のセキュリティ機能について説明します。 これらの段階をアプリに統合する方法も説明します。 大規模なトピックで説明し、目的はアプリの設計者が迅速かつ簡単にユニバーサル Windows プラットフォーム アプリの作成を行う Windows の機能を理解の支援、主にします。 |
 | [認証とユーザー ID](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP アプリには、この記事に記載されているユーザー認証のためのいくつかのオプションがあります。 企業の Microsoft Passport の新機能は強くお勧めします。 Microsoft Passport は、パスワードを強力な 2 要素認証 (2 fa) に既存の資格情報を確認することで置き換え、デバイス固有の資格情報を作成して、生体認証または PIN ベースのユーザーのジェスチャ保護、その結果、どちらも便利なと高度安全なエクスペリエンスです。 |
-| [暗号化](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 入門チュートリアルを簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックへの高度なビジネス上の機密データを暗号化する方法に関する記事の範囲です。 |
+| [Cryptography](https://msdn.microsoft.com/library/windows/apps/mt270191) | 暗号化」セクションでは、UWP アプリで利用できる暗号化機能の概要を示します。 入門チュートリアルを簡単に暗号化キーを操作して、Mac、ハッシュ、署名操作などの高度なトピックへの高度なビジネス上の機密データを暗号化する方法に関する記事の範囲です。 |
 | [Windows 情報保護 (WIP)](wip-hub.md) | ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。 |
 
 ## <a name="data-binding-and-databases"></a>データ バインディングとデータベース

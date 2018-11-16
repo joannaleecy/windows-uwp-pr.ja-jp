@@ -2,23 +2,23 @@
 author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: Windows ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。
+title: Microsoft ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: f79e641b377f0e34ece8f0be434fae11cba621a6
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452741"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6988003"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージを配布します。
 
-Windows ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
+Microsoft ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
 
 > [!NOTE]
 > パッケージ アプリにユーザーを移行する方法を計画していますか。 アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
@@ -27,7 +27,7 @@ Windows ストアまたはサイドローディングをパッケージ化され
 
 [Microsoft Store](https://www.microsoft.com/store/apps) は、お客様がアプリを取得する場合に最も便利な方法です。
 
-幅広いお客様を対象にそのストアにアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリを入手できます。
+幅広いお客様を対象に、Microsoft Store にアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリを入手できます。
 
 Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)」を参照してください。
 
@@ -44,7 +44,7 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
-ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイスにアプリを使用してその証明書、サイドローディングによって、アプリケーションの署名する必要があります。
+ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイスにアプリを使用してその証明書、サイドローディングによって、アプリケーションに署名する必要があります。
 
 [証明書を作成](../packaging/create-certificate-package-signing.md)することも、[Verisign](https://www.verisign.com/) などのポピュラーなベンダーから取得することもできます。
 

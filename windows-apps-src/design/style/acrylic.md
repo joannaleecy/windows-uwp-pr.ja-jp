@@ -12,12 +12,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.openlocfilehash: c116a6131889e1d87642165f4e1d9883d78add33
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854942"
+ms.locfileid: "6981158"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
@@ -85,7 +85,6 @@ ms.locfileid: "6854942"
 
 NavigationView を利用できるように、アプリは、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的透明なアクリルの使用をお勧めします。
  - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
- - ウィンドウがメイン アプリ コンテンツと並んで開かれるときは、[60% の背景アクリル](#acrylic-theme-resources)にする必要があります
 
 ![アプリ内の水平方向のによるコマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
 
@@ -93,7 +92,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 
 ### <a name="vertical-panes"></a>垂直方向のウィンドウ
 
-垂直方向のウィンドウまたはサーフェスに役立つ、アプリのコンテンツをオフのセクションでは、不透明な背景アクリル代わりに使うことをお勧めします。 コンテンツの上を垂直方向のウィンドウを開く場合と同様に NavigationView の**Collapsed**または**最小限**のモードでお勧めします、ユーザーがあるこのウィンドウを開いているときに、ページのコンテキストを維持するためにアプリ内アクリルを使用します。
+垂直方向のウィンドウまたはサーフェスに役立つ、アプリのコンテンツをオフのセクションでは、不透明な背景アクリル代わりに使うことをお勧めします。 コンテンツの上を垂直方向のウィンドウを開く場合と同様に NavigationView の**コンパクト**または**最小限に抑えながら**モードで、お勧めします、ユーザーがあるこのウィンドウを開いているときに、ページのコンテキストを維持するためにアプリ内アクリルを使用します。
 
 ### <a name="transient-surfaces"></a>一時的なサーフェス
 

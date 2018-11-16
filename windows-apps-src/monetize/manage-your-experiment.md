@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
-title: パートナー センターで実験を管理します。
+title: パートナー センターで実験を管理する
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6838787"
+ms.locfileid: "6988221"
 ---
-# <a name="manage-your-experiment-in-partner-center"></a>パートナー センターで実験を管理します。
+# <a name="manage-your-experiment-in-partner-center"></a>パートナー センターで実験を管理する
 
 [パートナー センターで実験を定義](define-your-experiment-in-the-dev-center-dashboard.md)すると、[実験用のアプリのコード](code-your-experiment-in-your-app.md)実験をアクティブ化し、パートナー センターを使用して、実験の結果を確認する準備ができたらします。 必要なすべてのデータを取得したら、実験を終了し、すべてのアプリでコントロールのバリエーションの変数値を使用し続けるか、他のバリエーションの変数値を使用することに切り替えるかを選択できます。
 
@@ -63,6 +63,6 @@ ms.locfileid: "6838787"
 
 * [プロジェクトを作成し、パートナー センターでリモート変数を定義します。](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [パートナー センターで実験を定義します。](define-your-experiment-in-the-dev-center-dashboard.md)
+* [パートナー センターで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [A/B テストを使用してアプリの実験を実行する](run-app-experiments-with-a-b-testing.md)
