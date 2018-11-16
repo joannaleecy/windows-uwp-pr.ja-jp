@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、uri、切り取り、スケッチ
 ms.localizationpriority: medium
 ms.openlocfilehash: 64df8d9768fa20a6d6819e93fe06904feede6223
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6844145"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6996545"
 ---
 # <a name="launch-screen-snipping"></a><span data-ttu-id="913b5-105">画面切り取りの起動</span><span class="sxs-lookup"><span data-stu-id="913b5-105">Launch screen snipping</span></span>
 

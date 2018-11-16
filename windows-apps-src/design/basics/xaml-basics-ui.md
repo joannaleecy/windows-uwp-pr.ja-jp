@@ -8,11 +8,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d54df07cd5f2ccc32098b17fd7c656900cba978
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6849815"
+ms.locfileid: "6978770"
 ---
 # <a name="tutorial-create-a-user-interface"></a><span data-ttu-id="32084-104">チュートリアル: ユーザー インターフェイスの作成</span><span class="sxs-lookup"><span data-stu-id="32084-104">Tutorial: Create a user interface</span></span>
 

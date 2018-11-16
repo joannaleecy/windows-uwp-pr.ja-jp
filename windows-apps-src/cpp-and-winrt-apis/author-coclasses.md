@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、作成者、COM、コンポーネント
 ms.localizationpriority: medium
 ms.openlocfilehash: 82ff87e4621d7dda3c3fd37d95d3d8d7812024e6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6859537"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6996199"
 ---
 # <a name="author-com-components-with-cwinrt"></a><span data-ttu-id="2fdd5-104">C++/WinRT での COM コンポーネントの作成</span><span class="sxs-lookup"><span data-stu-id="2fdd5-104">Author COM components with C++/WinRT</span></span>
 

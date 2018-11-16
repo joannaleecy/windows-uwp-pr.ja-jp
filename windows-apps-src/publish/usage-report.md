@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 使用状況, カスタム イベント, レポート, 利用統計情報, ユーザー セッション
 ms.localizationpriority: medium
 ms.openlocfilehash: c6f22d9aafada5bab8deaef246f64a7447569c82
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6838130"
+ms.locfileid: "6976723"
 ---
 # <a name="usage-report"></a><span data-ttu-id="ccd1e-103">[使用状況] レポート</span><span class="sxs-lookup"><span data-stu-id="ccd1e-103">Usage report</span></span>
 

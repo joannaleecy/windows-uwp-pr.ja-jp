@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656483"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992512"
 ---
 # <a name="interaction-primer"></a><span data-ttu-id="d3026-103">操作の基本情報</span><span class="sxs-lookup"><span data-stu-id="d3026-103">Interaction primer</span></span>
 
