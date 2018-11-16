@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647315"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845117"
 ---
 # <a name="writing-style"></a>記述スタイル
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e8cd15ec205c9a3a102a94e8a2fae5428ba3ea
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6255169"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6848793"
 ---
 # <a name="eds-parameters"></a>EDS パラメーター
 

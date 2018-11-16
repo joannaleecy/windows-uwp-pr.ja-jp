@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471753"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6860229"
 ---
 # <a name="primitive-topologies"></a>プリミティブ トポロジ
 

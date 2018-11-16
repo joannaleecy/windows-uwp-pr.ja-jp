@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6456488"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6857387"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 の移植に関する FAQ
 

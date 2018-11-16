@@ -9,17 +9,17 @@ keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6838230"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6979315"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>サイド ローディングされた UWP アプリのための Windows ランタイム コンポーネント ブローカー
 
 この記事では、タッチ対応の .NET アプリの主要なビジネス クリティカルな操作を担当する既存のコードを使用できる windows 10 でサポートされているエンタープライズ対象の機能について説明します。
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 
 >**注:**[Visual Studio 2015 および 2017](https://aka.ms/brokeredsample)のこのホワイト ペーパーで取り上げるサンプル コードをダウンロードすることができます。 Windows ランタイム コンポーネント ブローカーをビルドするための Microsoft Visual Studio テンプレートは、「[Visual Studio 2015 template targeting Universal Windows Apps for Windows 10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)」(Windows 10 用のユニバーサル Windows アプリをターゲットとする Visual Studio 2015 テンプレート) でダウンロードできます。
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c733fe0f4e8ee955c68ff4ec30bd9f9f2675899d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6649776"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851576"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
@@ -50,7 +50,7 @@ ms.locfileid: "6649776"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) と [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) から返される値を使って [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) を作成して、外付けカメラが接続されたときなど、デバイス上の利用可能なフレーム ソース グループが変更されたときに通知を受け取ることもできます。 詳しくは、「[**デバイスの列挙**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)」をご覧ください。
+[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)と[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)から返される値を使用して、通知を受信すると、デバイス上の利用可能なフレーム ソース グループを作成することもできます。外付けのカメラが接続されたときなどに変更します。 詳しくは、「[**デバイスの列挙**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)」をご覧ください。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) には、グループに含まれるフレーム ソースを記述する [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) オブジェクトのコレクションがあります。 デバイスで利用可能なフレーム ソース グループを取得した後、目的のフレーム ソースを公開するグループを選択できます。
 

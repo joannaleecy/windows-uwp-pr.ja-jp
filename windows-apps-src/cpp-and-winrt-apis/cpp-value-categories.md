@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、移動、転送、値のカテゴリ、移動セマンティクス、完全転送、左辺、右辺値、glvalue、prvalue、xvalue フラグ
 ms.localizationpriority: medium
 ms.openlocfilehash: b600c09c3629ce52590daa42b9046fab3784a78f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6663990"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6859359"
 ---
 # <a name="value-categories-and-references-to-them"></a>値のカテゴリとへの参照
 このトピックでは、C++ で存在するさまざまなカテゴリの値 (および値への参照) について説明します。 間違いご存知の*左辺値*と*rvalue*が、このトピックでは条件でそれらのない考え。 すぎるは、値の他の種類があります。
