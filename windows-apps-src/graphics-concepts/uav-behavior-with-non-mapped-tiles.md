@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a5418de3646f70a815f5c482f9063ea3e48ddfa1
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6651906"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845339"
 ---
 # <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span data-ttu-id="d91c7-104"><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>マップされていないタイルでの UAV 動作</span><span class="sxs-lookup"><span data-stu-id="d91c7-104"><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>UAV behavior with non-mapped tiles</span></span>
 
