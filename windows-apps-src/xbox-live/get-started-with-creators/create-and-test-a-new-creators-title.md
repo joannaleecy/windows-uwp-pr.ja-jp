@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター, テスト
 ms.localizationpriority: medium
 ms.openlocfilehash: 822ce0a3c4e0e0475b4dd01e405ccc9b90799654
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6248622"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7119268"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>新しい Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト環境に公開する
 

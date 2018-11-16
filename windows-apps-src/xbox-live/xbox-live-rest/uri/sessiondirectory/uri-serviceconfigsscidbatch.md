@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f32b4d3198d073a13d48ef5ec0cbb817a2a29d6e
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281275"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7128552"
 ---
 # <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 評価
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6996995"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7101877"
 ---
 # <a name="get-app-ratings"></a>アプリの評価の取得
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 537e722917f00d590428dd2b5ee2d24e023e52b6
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6993453"
+ms.locfileid: "7129072"
 ---
 # <a name="natural-motion-animations"></a>自然な動作のアニメーション
 

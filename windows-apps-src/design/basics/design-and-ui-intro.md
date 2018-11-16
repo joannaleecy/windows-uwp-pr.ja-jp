@@ -8,12 +8,13 @@ ms.date: 05/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 422a6b40c86a84367054a20cabe1a0b0a32cb89d
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 0168ae8d5058b6dde7cd137e95560008d2a4973d
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6984007"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7128992"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 

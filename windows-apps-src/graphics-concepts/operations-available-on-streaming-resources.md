@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1289b01e7ffb780c7e3faa52585eb5f002cf519c
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6992389"
+ms.locfileid: "7119362"
 ---
 # <a name="operations-available-on-streaming-resources"></a>ストリーミング リソースで利用可能な操作
 

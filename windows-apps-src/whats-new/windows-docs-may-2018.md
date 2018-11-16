@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6981639"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7100073"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 

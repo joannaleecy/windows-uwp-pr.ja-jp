@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
 ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6979607"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7111668"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 

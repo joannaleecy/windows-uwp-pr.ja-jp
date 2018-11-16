@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 070cb8929ac7a3b0f5041abc0383afb71182223d
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6980844"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7099959"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>ゲームの Xbox One に関するエラー報告データを取得します。
 
-Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析デベロッパー センター ダッシュ ボードで利用するゲームの Xbox One に関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。
+Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するゲームの Xbox One に関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。
 
 [ゲームの Xbox One でのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)、[ゲーム、Xbox One でのエラーに関するスタック トレースを取得する](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)には、および[Xbox One ゲームのエラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)方法を使用して、追加のエラー情報を取得できます。
 
@@ -49,7 +49,7 @@ Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | エラー報告データを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、正常性データを Windows デベロッパー センターの分析レポートからダウンロードした場合、製品 ID は、.tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | エラー報告データを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | startDate | date | 取得するエラー報告データの日付範囲の開始日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。 |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |

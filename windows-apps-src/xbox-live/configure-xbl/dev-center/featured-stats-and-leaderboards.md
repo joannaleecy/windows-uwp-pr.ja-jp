@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10、Xbox one, 注目の統計とランキング, ランキング, 統計 2017, パートナー センター
 ms.openlocfilehash: eebf1e96601f7bb576088f71239196f0bb5a124c
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6272562"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7128681"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-in-partner-center"></a>パートナー センターで注目の統計とランキング 2017年を構成します。
 
