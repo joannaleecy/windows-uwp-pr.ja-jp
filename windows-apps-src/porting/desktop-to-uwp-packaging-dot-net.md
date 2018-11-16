@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450463"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855205"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 
-Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。 その後、そのパッケージを Microsoft Store に公開したり、1 台以上の PC にサイドローディングしたりすることができます。
+Visual Studio を使用して、デスクトップ アプリのパッケージを生成できます。 次に、その 1 つまたは複数の Pc に Microsoft ストアまたはサイドローディングするパッケージを公開することができます。
 
 最新バージョンの Visual Studio には、アプリのパッケージ化に必要であった手動ステップをすべてなくす新しいバージョンのパッケージ プロジェクトが用意されています。 パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。 手動で調整する必要はありません。 この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。
 
@@ -66,7 +66,7 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
 7. [アプリ パッケージの作成](../packaging/packaging-uwp-apps.md)ウィザードを使って、appxupload ファイルを生成します。
 
-   そのファイルを Microsoft Store に直接アップロードすることができます。
+   ストアに直接、そのファイルをアップロードすることができます。
 
 **ビデオ**
 

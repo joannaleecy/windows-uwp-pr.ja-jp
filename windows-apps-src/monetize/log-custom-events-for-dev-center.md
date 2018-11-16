@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
-title: パートナー センターのカスタム イベントをログに記録します。
+title: パートナー センターのカスタム イベントをログに記録する
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
@@ -9,13 +9,13 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, イベントをログ�
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861135"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6978371"
 ---
-# <a name="log-custom-events-for-partner-center"></a>パートナー センターのカスタム イベントをログに記録します。
+# <a name="log-custom-events-for-partner-center"></a>パートナー センターのカスタム イベントをログに記録する
 
 パートナー センターでの[使用状況] レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)では、ユニバーサル Windows プラットフォーム (UWP) アプリで定義したカスタム イベントに関する情報を取得できます。 カスタムイベントは、アプリ内のイベントやアクティビティを表す任意の文字列です。 たとえば、ゲームで *firstLevelPassed*、*secondLevelPassed* という名前のカスタム イベントを定義して、ユーザーがゲームの各レベルをクリアしたときに記録されるようにできます。
 

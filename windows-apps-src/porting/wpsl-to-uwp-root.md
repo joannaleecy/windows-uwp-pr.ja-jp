@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 場合は、windows 10 に移行で、スキル セットとソース コードの優れた使用を行うことができますし、WindowsPhone Silverlight アプリでは、開発者ができました。
-title: WindowsPhone Silverlight から UWP への移行します。
+title: WindowsPhone Silverlight から UWP への移行
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.author: stwhi
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eb2617fc3fbd14d17635435c8bfd6d58817a7a1b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6836535"
+ms.locfileid: "6980649"
 ---
-#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>WindowsPhone Silverlight から UWP への移行します。
+#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>WindowsPhone Silverlight から UWP への移行
 
 
 場合は、windows 10 に移行で、スキル セットとソース コードの優れた使用を行うことができますし、WindowsPhone Silverlight アプリでは、開発者ができました。 Windows 10 では、お客様がすべての種類のデバイスにインストールできる単一のアプリ パッケージはユニバーサル Windows プラットフォーム (UWP) アプリを作成できます。 Windows 10 の詳細については、UWP アプリ、およびアダプティブ コードとアダプティブ UI でこの移植ガイドでは、およびこの概念には、[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)が参照してください。

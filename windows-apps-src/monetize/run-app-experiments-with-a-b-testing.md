@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 6697d522ee14a00bb8cb9c0c2c367f01d6e50ef4
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854740"
+ms.locfileid: "6980489"
 ---
 # <a name="run-app-experiments-with-ab-testing"></a>A/B テストを使用してアプリの実験を実行する
 
@@ -66,6 +66,6 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 
 * [プロジェクトを作成し、パートナー センターでリモート変数を定義します。](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
 * [アプリの実験用のコードを記述する](code-your-experiment-in-your-app.md)
-* [パートナー センターで実験を定義します。](define-your-experiment-in-the-dev-center-dashboard.md)
-* [パートナー センターで実験を管理します。](manage-your-experiment.md)
+* [パートナー センターで実験を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
+* [パートナー センターで実験を管理する](manage-your-experiment.md)
 * [A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)

@@ -8,16 +8,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, デベロッパー センター, アカウント設定, プロファイル, アカウント プロファイル, 開発者アカウント, 開発者アカウントの設定
 ms.localizationpriority: medium
-ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670648"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6974637"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
-表示でき、開発者アカウントの設定や、[パートナー センター](https://partner.microsoft.com/dashboard)の**アカウント設定**] セクションにプロファイル情報を更新します。 
+表示でき、開発者アカウントの設定や[パートナー センター](https://partner.microsoft.com/dashboard)の**アカウント設定**] セクションにプロファイル情報を更新します。 
 
 > [!NOTE]
 > (これは、パートナー センターの上部付近のメッセージ アイコンを選択してアクセスすることができます)**メッセージ センター**では、通知の基本設定 (受け取る通知の種類や受け取る方法) などを管理できます。
