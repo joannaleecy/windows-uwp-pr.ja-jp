@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, ネイティブ コンパイラを画像します。
 ms.localizationpriority: medium
 ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656790"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849054"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a><span data-ttu-id="16d4a-103">ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。</span><span class="sxs-lookup"><span data-stu-id="16d4a-103">Optimize your .NET Desktop apps with native images</span></span>
 

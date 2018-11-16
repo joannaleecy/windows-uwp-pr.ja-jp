@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c27e35e7e9cc3763a4d1d86348da14f3a18910
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6837825"
+ms.locfileid: "6984550"
 ---
 # <a name="use-the-gyrometer"></a><span data-ttu-id="8f58a-104">ジャイロメーターの使用</span><span class="sxs-lookup"><span data-stu-id="8f58a-104">Use the gyrometer</span></span>
 

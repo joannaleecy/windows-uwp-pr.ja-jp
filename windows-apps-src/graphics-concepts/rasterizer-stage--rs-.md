@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d58a05a57fa833003b7c229db91473f6cde3d4
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6833806"
+ms.locfileid: "6977761"
 ---
 # <a name="rasterizer-rs-stage"></a><span data-ttu-id="df309-104">ラスタライザー (RS) ステージ</span><span class="sxs-lookup"><span data-stu-id="df309-104">Rasterizer (RS) stage</span></span>
 

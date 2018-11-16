@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c77e7a220618273e0fb8fb75cf3de2247534f5b
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647305"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855231"
 ---
 # <a name="touchpad-design-guidelines"></a><span data-ttu-id="50a31-103">タッチパッドの設計ガイドライン</span><span class="sxs-lookup"><span data-stu-id="50a31-103">Touchpad design guidelines</span></span>
 

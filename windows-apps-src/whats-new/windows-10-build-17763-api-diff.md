@@ -8,11 +8,11 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e51a7fb64dae42307960aa90f85463d11aecadc
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6661520"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6971795"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a><span data-ttu-id="20134-104">新しい Windows 10 ビルド Api 17763</span><span class="sxs-lookup"><span data-stu-id="20134-104">New APIs in Windows 10 build 17763</span></span>
 

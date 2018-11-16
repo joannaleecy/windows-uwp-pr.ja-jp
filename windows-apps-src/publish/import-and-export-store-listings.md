@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Store 登録情報のインポート, Store 登録情報のエクスポート, インポートとエクスポート, Store 登録情報 csv
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df66baa1b5771055894b2e3accc0c8a9dff8a60
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6850650"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6996502"
 ---
 # <a name="import-and-export-store-listings"></a><span data-ttu-id="19aa9-103">ストア登録情報のインポートとエクスポート</span><span class="sxs-lookup"><span data-stu-id="19aa9-103">Import and export Store listings</span></span>
 
