@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6271258"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6970947"
 ---
 # <a name="account-types-locations-and-fees"></a><span data-ttu-id="e1dbd-104">アカウントの種類、場所、料金</span><span class="sxs-lookup"><span data-stu-id="e1dbd-104">Account types, locations, and fees</span></span>
 

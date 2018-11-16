@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, パッケージ化, アーキテクチャ, パッケージの構成
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6662735"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858024"
 ---
 # <a name="app-package-architectures"></a><span data-ttu-id="d8dc6-104">アプリ パッケージのアーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="d8dc6-104">App package architectures</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, ゲーム ループ, Direct3D 9, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452343"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837065"
 ---
 # <a name="port-the-game-loop"></a><span data-ttu-id="0a917-104">ゲーム ループの移植</span><span class="sxs-lookup"><span data-stu-id="0a917-104">Port the game loop</span></span>
 

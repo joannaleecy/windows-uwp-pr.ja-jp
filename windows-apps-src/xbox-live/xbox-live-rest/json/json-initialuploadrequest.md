@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b6a0856c23ebaf06eab7ef7fc1688e06cc445b4b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6249862"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834241"
 ---
 # <a name="initialuploadrequest-json"></a><span data-ttu-id="a23bc-104">InitialUploadRequest (JSON)</span><span class="sxs-lookup"><span data-stu-id="a23bc-104">InitialUploadRequest (JSON)</span></span>
 <span data-ttu-id="a23bc-105">POST GameClip の本文は、要求をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="a23bc-105">The body of a POST GameClip upload request.</span></span> 

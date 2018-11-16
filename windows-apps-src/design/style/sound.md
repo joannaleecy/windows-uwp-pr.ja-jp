@@ -15,11 +15,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b3ac54ed60debed0462d31543d05712922068ca0
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6653531"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840985"
 ---
 # <a name="sound"></a><span data-ttu-id="57652-103">サウンド</span><span class="sxs-lookup"><span data-stu-id="57652-103">Sound</span></span>
 

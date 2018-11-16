@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: f3da1f4f393eea1362b6e59d2ad7e9a2a97bc33b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6281970"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6838518"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a><span data-ttu-id="c534e-104">アプリ インストーラーで UWP アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="c534e-104">Install UWP apps with App Installer</span></span>
 

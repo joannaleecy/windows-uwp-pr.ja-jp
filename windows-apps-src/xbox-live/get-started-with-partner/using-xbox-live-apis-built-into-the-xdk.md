@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e127dd2adb53e8fdf5fb0469ce9deae5759eb899
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6271230"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833257"
 ---
 # <a name="using-xbox-live-apis-built-into-the-xdk"></a><span data-ttu-id="d9455-104">XDK に組み込まれている Xbox Live API を使用する</span><span class="sxs-lookup"><span data-stu-id="d9455-104">Using Xbox Live APIs built into the XDK</span></span>
 

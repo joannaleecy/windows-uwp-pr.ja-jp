@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8f71f126aa536f4e235c58f9f5c5ddf13654df
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665693"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6838359"
 ---
 # <a name="tile-access-limitations-with-duplicate-mappings"></a><span data-ttu-id="03c85-104">重複するマッピングを含むタイルのアクセス制限</span><span class="sxs-lookup"><span data-stu-id="03c85-104">Tile access limitations with duplicate mappings</span></span>
 

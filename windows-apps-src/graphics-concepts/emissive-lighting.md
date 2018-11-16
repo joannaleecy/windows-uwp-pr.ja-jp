@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce2082479261cd96fb1c5bafd5f2df06bf6f239
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6459517"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6971309"
 ---
 # <a name="emissive-lighting"></a><span data-ttu-id="90a96-104">放射光</span><span class="sxs-lookup"><span data-stu-id="90a96-104">Emissive lighting</span></span>
 

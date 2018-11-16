@@ -11,11 +11,11 @@ pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 97df5037d2cdc07361cbc7f80830ba951a0a3caa
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6670761"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6834128"
 ---
 # <a name="windows-template-studio"></a><span data-ttu-id="7001a-104">Windows Template Studio</span><span class="sxs-lookup"><span data-stu-id="7001a-104">Windows Template Studio</span></span>
 

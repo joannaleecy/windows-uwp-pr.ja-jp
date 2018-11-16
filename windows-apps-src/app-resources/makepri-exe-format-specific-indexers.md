@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 439a69da400caaa9ae509a121f2aa7336853d2ca
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6659864"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6859418"
 ---
 # <a name="makepriexe-format-specific-indexers"></a><span data-ttu-id="a19a6-103">MakePri.exe の形式に固有のインデクサー</span><span class="sxs-lookup"><span data-stu-id="a19a6-103">MakePri.exe format-specific indexers</span></span>
 

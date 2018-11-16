@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b0c97e2b5b4f9561385f7854ea2ee13292278fc8
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6275796"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6834077"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a><span data-ttu-id="62f81-104">Xbox One マルチプレイヤー セッション ディレクトリ</span><span class="sxs-lookup"><span data-stu-id="62f81-104">Xbox One Multiplayer Session Directory</span></span>
 

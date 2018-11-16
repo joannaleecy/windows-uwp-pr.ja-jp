@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d4a362a3a7be06e48c64ce3e4d43ff917b9b24c5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6666220"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6838382"
 ---
 # <a name="graphics-pipeline"></a><span data-ttu-id="3775a-106">グラフィックス パイプライン</span><span class="sxs-lookup"><span data-stu-id="3775a-106">Graphics pipeline</span></span>
 
