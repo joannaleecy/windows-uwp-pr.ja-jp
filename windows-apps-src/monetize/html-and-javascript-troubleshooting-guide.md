@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, トラブルシューティング, HTML, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 38f0b36769d13d119965e7d15c5812b9ba1d6ecd
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6645783"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850338"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a><span data-ttu-id="4985d-104">HTML と JavaScript のトラブルシューティング ガイド</span><span class="sxs-lookup"><span data-stu-id="4985d-104">HTML and JavaScript troubleshooting guide</span></span>
 

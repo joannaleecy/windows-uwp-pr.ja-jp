@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5105b8eb5c23aac5b71c6cadec35e62c7dced927
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/14/2018
-ms.locfileid: "6651378"
+ms.locfileid: "6860865"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypesmediaitemtypequeryrefinersqueryrefinername"></a><span data-ttu-id="227f8-104">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span><span class="sxs-lookup"><span data-stu-id="227f8-104">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span></span>
 <span data-ttu-id="227f8-105">指定されたクエリの絞り込み条件名と、特定のメディア項目の種類に利用可能な値にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="227f8-105">Accesses the acceptable values for the given query refiner name and given media item type.</span></span> <span data-ttu-id="227f8-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="227f8-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
