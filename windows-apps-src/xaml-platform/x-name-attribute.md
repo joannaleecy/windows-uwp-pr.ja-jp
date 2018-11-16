@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443931"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6850318"
 ---
 # <a name="xname-attribute"></a><span data-ttu-id="228e7-104">x:Name 属性</span><span class="sxs-lookup"><span data-stu-id="228e7-104">x:Name attribute</span></span>
 

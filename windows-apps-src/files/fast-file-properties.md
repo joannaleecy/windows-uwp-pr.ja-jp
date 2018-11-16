@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ファイル, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6664568"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858144"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a><span data-ttu-id="cfee0-104">UWP でファイルのプロパティにすばやくアクセスする</span><span class="sxs-lookup"><span data-stu-id="cfee0-104">Fast access to file properties in UWP</span></span> 
 

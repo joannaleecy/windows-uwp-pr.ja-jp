@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ms.openlocfilehash: 92d03ce30443f6efe8b19f4938b35d4040d7ea70
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460420"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6856325"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a><span data-ttu-id="02b94-104">プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール</span><span class="sxs-lookup"><span data-stu-id="02b94-104">Testing and debugging tools for Process Lifetime Management (PLM)</span></span>
 

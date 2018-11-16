@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、Direct3D、深度バッファー
 ms.localizationpriority: medium
 ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652696"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6851037"
 ---
 # <a name="create-depth-buffer-device-resources"></a><span data-ttu-id="a8c8b-104">深度バッファーのデバイス リソースの作成</span><span class="sxs-lookup"><span data-stu-id="a8c8b-104">Create depth buffer device resources</span></span>
 

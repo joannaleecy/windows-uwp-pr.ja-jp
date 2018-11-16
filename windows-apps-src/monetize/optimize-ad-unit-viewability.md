@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 広告, 宣伝, ガイドライン, 視認性
 ms.localizationpriority: medium
 ms.openlocfilehash: ef815dab027f86e5d73f24ae0355f7f41612fae5
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665002"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6844809"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a><span data-ttu-id="5cb72-104">広告ユニットの視認性の最適化</span><span class="sxs-lookup"><span data-stu-id="5cb72-104">Optimize the viewability of your ad units</span></span>
 

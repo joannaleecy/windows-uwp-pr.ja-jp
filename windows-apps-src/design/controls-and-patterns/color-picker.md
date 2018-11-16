@@ -14,11 +14,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f2b6270fcd7bc3dcf45d6e80dd547ee783d8e9ae
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6669966"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6858755"
 ---
 # <a name="color-picker"></a><span data-ttu-id="fec2c-103">カラー ピッカー</span><span class="sxs-lookup"><span data-stu-id="fec2c-103">Color picker</span></span>
 
