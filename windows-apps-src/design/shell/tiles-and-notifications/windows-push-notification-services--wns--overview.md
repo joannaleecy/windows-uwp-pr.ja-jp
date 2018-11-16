@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458547"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842288"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows プッシュ通知サービス (WNS) の概要
  
@@ -38,7 +38,7 @@ Windows プッシュ通知サービス (WNS) を利用することで、サー�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>アプリの登録とクラウド サービスの資格情報の取得
 
 
-WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を行うには、[Windows デベロッパー センター](http://go.microsoft.com/fwlink/p/?linkid=511146)にアクセスし、**ダッシュボード**をクリックします。 アプリの作成後、**[アプリの管理 - WNS/MPNS]** のページの手順に従って、認証情報を取得できます。 Live サービス ソリューションを使用する場合は、このページの **Live サービス サイト**のリンクにアクセスします。
+WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を実行するには、[パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。 アプリの作成後、**[アプリの管理 - WNS/MPNS]** のページの手順に従って、認証情報を取得できます。 Live サービス ソリューションを使用する場合は、このページの **Live サービス サイト**のリンクにアクセスします。
 
 アプリにはそれぞれ、クラウド サービスの独自の資格情報が割り当てられます。 これらの資格情報を使って他のアプリに通知を送ることはできません。
 
