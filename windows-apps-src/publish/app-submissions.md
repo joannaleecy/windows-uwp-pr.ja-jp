@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6983281"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152833"
 ---
 # <a name="app-submissions"></a>アプリの申請
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 65952caabfdacd9419f7633ef0b7bcb9ca813629
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6259800"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7144075"
 ---
 # <a name="xbox-live-multiplayer-concepts"></a>Xbox Live マルチプレイヤーの概念
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、bluetooth、bluetooth LE、低エネルギー、gatt、ギャップ、中央、周辺機器、クライアント、サーバー、ウォッチャー、発行元
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5bef16c76ee14c2abb7a5a41ab02d150a97333
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6973290"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7144482"
 ---
 # <a name="bluetooth-low-energy"></a>Bluetooth 低エネルギー
 Bluetooth 低エネルギー (LE) は、検出と電源効率の高いデバイス間で通信プロトコルを定義する仕様です。 デバイスの検出は、汎用的なアクセス プロファイル (ギャップ) プロトコルを通じて実行されます。 後の検出、デバイスの通信は Generic Attribute (GATT) プロトコルを使って行われます。 このトピックでは、UWP アプリで Bluetooth LE の簡単な概要を説明します。 Bluetooth LE の詳細を参照してください[Bluetooth Core 仕様](https://www.bluetooth.com/specifications/bluetooth-core-specification)のバージョン 4.0 では、Bluetooth LE が導入されました。 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6974302"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7153635"
 ---
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 

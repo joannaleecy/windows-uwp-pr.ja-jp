@@ -12,12 +12,13 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 36081c14cfb75a1cedb103ba17eff4a05f5e4e83
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 889abda830d0721392d9a1b0dac17ea10c3e8604
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6988321"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7146684"
 ---
 # <a name="bringing-it-together"></a>まとめる
 

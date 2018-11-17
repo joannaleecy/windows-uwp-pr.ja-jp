@@ -7,17 +7,19 @@ ms.date: 09/21/2018
 ms.topic: article
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 69eb9f72d6b4cf01185f7e4886a7ed5c30a669df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6972430"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145342"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML を使う
 
 > [!NOTE]
-> API をホストしている UWP XAML は、開発者プレビューとして現在利用できます。 プロトタイプのコードでは、この API を今すぐ試すことをお勧めしますがない使用することが運用コードでこの時点でお勧めしますしないでください。 この API は引き続き成熟して、今後の Windows リリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
+> UWP XAML ホスティング API と XAML 諸島現在利用可能な開発者プレビューとして。 それらプロトタイプ コードで今すぐ試すことをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの機能は引き続き成熟して、今後の Windows リリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
+>
+> API と XAML の諸島をホストしている XAML に関するフィードバックを使用する場合へのフィードバックを送信XamlIslandsFeedback@microsoft.comします。 Insights、およびシナリオはにとって非常に重要です。
 
 Windows 10 Insider Preview SDK ビルド 17709、UWP 以外のデスクトップ アプリケーション (WPF、Windows フォーム、および C++ Win32 アプリケーションを含む) は、ウィンドウのハンドル (に関連付けられている任意の UI 要素で UWP コントロールをホストする*API をホストしている UWP XAML*を使用することができます。HWND)。 この API では、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールを使用するデスクトップ アプリケーションを UWP 以外でできます。 たとえば、UWP 以外のデスクトップ アプリケーションは、 [Fluent Design System](../design/fluent-design-system/index.md)を使用して、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)をサポートする UWP コントロールをホストするには、この API を使用することができます。
 

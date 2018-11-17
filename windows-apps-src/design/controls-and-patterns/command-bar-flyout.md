@@ -13,12 +13,13 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 95d99c41ff2679e3ef3e0471dd583fe78458922c
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 4b92b74ba65a683143e273961ed25ce478a6e81f
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968838"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145539"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
 

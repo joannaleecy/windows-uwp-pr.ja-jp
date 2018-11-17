@@ -12,12 +12,13 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 09bccec40c25e5eba06ba7a7c428b7b771f84271
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: acb2984b38d51ca3a8564ac3a06b3cb98e5071b3
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6987372"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147261"
 ---
 # <a name="directionality-and-gravity"></a>方向性と重力
 

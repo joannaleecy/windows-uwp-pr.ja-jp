@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fab527d1198914d707f8c3b4545cb882974bd3d
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6835854"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7155123"
 ---
 # <a name="flowchart---shut-down-after-a-multiplayer-game-is-complete"></a>フローチャート - マルチプレイヤー ゲームが完了した後でシャットダウンする
 

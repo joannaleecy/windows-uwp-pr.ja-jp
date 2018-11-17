@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c32a02532ab544e7697d59fa4f1ca93231183d3
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6974617"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150596"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>HTML ゲームの Xbox での UWP への移行
 Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。 HTML 5 ゲームは、[Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) ブラウザー エンジンで実行されます。 Microsoft Edge は高速で、WebGL やキャンバスなど、HTML 5 と CSS 3 の機能を完全にサポートしています。

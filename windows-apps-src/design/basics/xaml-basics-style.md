@@ -8,11 +8,11 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6978459"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145619"
 ---
 # <a name="tutorial-create-custom-styles"></a>チュートリアル: カスタム スタイルを作成する
 

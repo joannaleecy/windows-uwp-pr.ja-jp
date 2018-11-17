@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 757fbf93aa364e4143af0b5d5f2fc3f63a2f9c0c
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982733"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151054"
 ---
 # <a name="color-light-maps"></a>色のライト マップ
 

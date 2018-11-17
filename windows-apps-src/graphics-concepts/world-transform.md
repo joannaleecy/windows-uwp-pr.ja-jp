@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c6ada4bd964a9430d6ef47bd46f954ca76c404a
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6985243"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7107198"
 ---
 # <a name="world-transform"></a>ワールド変換
 

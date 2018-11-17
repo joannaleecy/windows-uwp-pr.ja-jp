@@ -14,12 +14,13 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2b58ef505c4b6d045197dee525c5264a7dd518
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: b03a1a7f8670029a12cf2a9537516d4f23a3c64f
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6969779"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152301"
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 

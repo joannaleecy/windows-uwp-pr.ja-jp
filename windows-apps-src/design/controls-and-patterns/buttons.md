@@ -14,12 +14,13 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 922dccc61954e2022cbe76f2ca5d5b1f9e548733
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 8b793af0b3252243d9482ed6228e10d489a14ed3
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6986747"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150978"
 ---
 # <a name="buttons"></a>ボタン
 

@@ -9,12 +9,13 @@ ms.author: kbridge
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3ec15a45f812162c7aab0cb9683183d7196ae3
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 3110615e43ffa4839d9be6ebf5113fc9d8b7c05f
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6989465"
+ms.locfileid: "7105264"
 ---
 # <a name="text-scaling"></a>テキストの拡大縮小
 

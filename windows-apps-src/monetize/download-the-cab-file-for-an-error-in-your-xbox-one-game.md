@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 517a1cbb8ec2cafe49ded53bce34e17537bc5efc
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: ad1e3339fe50087c3a3d8cdcf3a99f27c1c868df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968216"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147016"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>Xbox One ゲームのエラーに関する CAB ファイルをダウンロードします。
 
-Xbox デベロッパー ポータル (XDP) を通じてが取り込まれる、Xbox One ゲームの特定のエラーに関連付けられていると、XDP 分析デベロッパー センター ダッシュ ボードで利用可能な CAB ファイルをダウンロードするのに、Microsoft Store 分析 API の以下のメソッドを使用します。 このメソッドは、過去 30 日以内に発生したエラーの CAB ファイルのみをダウンロードできます。
+Xbox デベロッパー ポータル (XDP) を通じてが取り込まれる、Xbox One ゲームの特定のエラーに関連付けられていると、XDP 分析のパートナー センター ダッシュ ボードで利用可能な CAB ファイルをダウンロードするのに、Microsoft Store 分析 API の以下のメソッドを使用します。 このメソッドは、過去 30 日以内に発生したエラーの CAB ファイルのみをダウンロードできます。
 
 以下のメソッドを使用する前に、まずは、ダウンロードする CAB ファイルの ID を取得するのにことで、 [Xbox One ゲームのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用する必要があります。
 
@@ -50,7 +50,7 @@ Xbox デベロッパー ポータル (XDP) を通じてが取り込まれる、X
 
 | パラメーター        | 型   |  説明      |  必須かどうか  |
 |---------------|--------|---------------|------|
-| applicationId | string | CAB ファイルをダウンロードする Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、正常性データを Windows デベロッパー センターの分析レポートからダウンロードした場合、製品 ID は、.tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | CAB ファイルをダウンロードする Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | cabId | string | ダウンロードする CAB ファイルの一意の ID です。 この ID を取得するには、[ゲームの Xbox One でのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用して、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で**cabId**値を使用します。 |  はい  |
 
  

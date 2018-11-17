@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6996955"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154004"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>プリミティブに対する深度と各種効果の使用
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7103753"
+ms.locfileid: "7145629"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>アプリケーションにマイ連絡先のサポートを追加する
 
