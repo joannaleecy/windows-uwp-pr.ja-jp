@@ -30,7 +30,6 @@
 ## 変換
 ### [概要](layout/transforms.md)
 ### [3-D 遠近効果](layout/3-d-perspective-effects.md)
-## [Z 深度とシャドウ](layout/depth-shadow.md)
 
 # コントロール
 ## [概要](controls-and-patterns/index.md)
