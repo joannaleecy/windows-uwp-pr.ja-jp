@@ -13,12 +13,13 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: def37c31ef0a64a9b1017d40d281457513fba0db
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 7175d456fb4bed912d5a05494bb2682ecc3801fd
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6984380"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156177"
 ---
 # <a name="motion-for-uwp-apps"></a>UWP アプリのモーション
 

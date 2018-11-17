@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 40f9312b4b85e9f6e54a8bf02c6d07df35b8b626
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7100386"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152843"
 ---
 # <a name="view-transform"></a>ビュー変換
 

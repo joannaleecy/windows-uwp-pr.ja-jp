@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7104392"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156998"
 ---
 # <a name="network-communications-in-the-background"></a>バックグラウンドでのネットワーク通信
 フォア グラウンドでないときにネットワーク通信を続行するには、アプリはバック グラウンド タスクとこれら 2 つのオプションのいずれかを使用できます。
@@ -432,7 +432,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger と HttpClient
 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う場合は、特別な注意事項がいくつかあります。 **ControlChannelTrigger** で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う際には、トランスポート固有の使用パターンとベスト プラクティスに従う必要があります。 また、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) でパケットを受信する要求の処理方法にも、これらの注意事項が関係します。
 
-**メモ**SSL を使用して[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)では、ネットワーク トリガー機能と[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)を使ってを現在はサポートされていません。
+**注:** SSL を使用して[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)では、ネットワーク トリガー機能と[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)を使ってを現在はサポートされていません。
  
 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う際に従う必要のある使用パターンとベスト プラクティスを次に示します。
 

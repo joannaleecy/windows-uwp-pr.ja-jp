@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: df3af90bda9d972a891dce67730f8f320b7607c1
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6976823"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7173545"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>ゲームに Xbox One でのエラーに関するスタック トレースを取得します。
 
-Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するスタック トレースを取得する Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析デベロッパー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。
+Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するスタック トレースを取得する Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。
 
 以下のメソッドを使用する前に、まずは、スタック トレースを取得するエラーに関連付けられている CAB ファイルの ID を取得するのにことで、 [Xbox One ゲームのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用する必要があります。
 
@@ -50,7 +50,7 @@ Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するス�
 
 | パラメーター        | 型   |  説明      |  必須かどうか  |
 |---------------|--------|---------------|------|
-| applicationId | string | スタック トレースを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、正常性データを Windows デベロッパー センターの分析レポートからダウンロードした場合、製品 ID は、.tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | スタック トレースを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | cabId | string | スタック トレースを取得するエラーに関連付けられた CAB ファイルの一意の ID を取得します。 この ID を取得するには、[ゲームの Xbox One でのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用して、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で**cabId**値を使用します。 |  はい  |
 
  

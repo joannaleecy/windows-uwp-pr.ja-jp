@@ -14,12 +14,13 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 73f6d8f9c42a632383d52194c83a4fe68261f9a7
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 1a7dfa2605607c3b2440a9ebc46a0b3eb6010287
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6987299"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156638"
 ---
 # <a name="treeview"></a>TreeView
 

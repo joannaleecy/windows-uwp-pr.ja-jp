@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
 ms.openlocfilehash: 96845e81b093b7cddb6d334286e9cfa468a43b28
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "6994758"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156257"
 ---
 # <a name="getting-paid"></a>支払いの受け取り
 次に、アプリ、アドオン、および advertising による収益の支払いの受け取りについての重要な情報を示します。

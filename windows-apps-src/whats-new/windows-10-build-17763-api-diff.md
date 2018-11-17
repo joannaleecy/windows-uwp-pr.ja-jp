@@ -7,12 +7,13 @@ ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e51a7fb64dae42307960aa90f85463d11aecadc
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: bce94f47f91237c8a9e8222e5862ffdbffaec91f
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6971795"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156429"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>新しい Windows 10 ビルド Api 17763
 

@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: 33733af7f323817bc82d49800c2dc17c5f7b9887
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 6f665b99b7f64e41597a5767d58b86ac8e85c6bd
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6978351"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155538"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>ゲームの Xbox One のエラーに関する詳細を取得します。
 
-Microsoft Store 分析 API に関する詳細データを取得する特定のエラー、Xbox One のゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析デベロッパー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。
+Microsoft Store 分析 API に関する詳細データを取得する特定のエラー、Xbox One のゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。
 
 以下のメソッドを使用する前に、まずは、詳細情報を取得するエラーの ID を取得するのにことで、 [Xbox One ゲームに関するエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用する必要があります。
 
@@ -50,7 +50,7 @@ Microsoft Store 分析 API に関する詳細データを取得する特定の�
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | エラーの詳細を取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、正常性データを Windows デベロッパー センターの分析レポートからダウンロードした場合、製品 ID は、.tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | エラーの詳細を取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | failureHash | string | 取得する詳細情報の対象となるエラーの一意の ID です。 興味のあるエラーにこの値を取得するには、[ゲーム、Xbox One のエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用し、そのメソッドの応答本文で**failureHash**値を使用します。 |  必須  |
 | startDate | date | 取得する詳細なエラー データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  必須ではない  |
 | endDate | date | 取得する詳細なエラー データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |

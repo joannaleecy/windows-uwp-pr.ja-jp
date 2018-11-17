@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, オプション パッケージ、関連セット, パッケージの拡張機能, visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102804"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7158924"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>オプション パッケージと関連セットの作成
 オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 これらは、ダウンロード可能なコンテンツ (DLC)、サイズの制約の大規模なアプリを分割するのに便利ですか、元のアプリから分離して追加コンテンツを出荷します。
