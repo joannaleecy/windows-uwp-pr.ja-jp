@@ -12,12 +12,13 @@ keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 52ec77bd6199e0388d9ee9911c7a01e9fbe77fad
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "6995395"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162464"
 ---
 # <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
 
