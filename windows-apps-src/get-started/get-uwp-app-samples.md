@@ -9,11 +9,11 @@ keywords: Windows 10、UWP、サンプル コード、コード サンプル
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: ef8f99ade3fa5e4d9f12b8670bf22242e7c4e585
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7128712"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7171272"
 ---
 # <a name="get-uwp-app-samples"></a><span data-ttu-id="fd504-104">UWP アプリのサンプルを取得する</span><span class="sxs-lookup"><span data-stu-id="fd504-104">Get UWP app samples</span></span>
 

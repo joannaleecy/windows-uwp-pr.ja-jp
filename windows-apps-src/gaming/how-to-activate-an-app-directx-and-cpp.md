@@ -9,24 +9,24 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, アクティブ化
 ms.localizationpriority: medium
 ms.openlocfilehash: b7f700ab97566ad9ec03d0595c55721dd9a9be98
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6973842"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7171360"
 ---
-# <a name="how-to-activate-an-app-directx-and-c"></a><span data-ttu-id="e78fa-104">アプリをアクティブ化する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="e78fa-104">How to activate an app (DirectX and C++)</span></span>
+# <a name="how-to-activate-an-app-directx-and-c"></a><span data-ttu-id="8295b-104">アプリをアクティブ化する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="8295b-104">How to activate an app (DirectX and C++)</span></span>
 
 
 
-<span data-ttu-id="e78fa-105">ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-105">This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.</span></span>
+<span data-ttu-id="8295b-105">ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8295b-105">This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.</span></span>
 
-## <a name="register-the-app-activation-event-handler"></a><span data-ttu-id="e78fa-106">アプリのアクティブ化イベント ハンドラーを登録する</span><span class="sxs-lookup"><span data-stu-id="e78fa-106">Register the app activation event handler</span></span>
+## <a name="register-the-app-activation-event-handler"></a><span data-ttu-id="8295b-106">アプリのアクティブ化イベント ハンドラーを登録する</span><span class="sxs-lookup"><span data-stu-id="8295b-106">Register the app activation event handler</span></span>
 
 
-<span data-ttu-id="e78fa-107">まず、[**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを処理するための登録を行います。このイベントは、アプリが開始され、オペレーティング システムによって初期化されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-107">First, register to handle the [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, which is raised when your app is started and initialized by the operating system.</span></span>
+<span data-ttu-id="8295b-107">まず、[**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを処理するための登録を行います。このイベントは、アプリが開始され、オペレーティング システムによって初期化されるときに発生します。</span><span class="sxs-lookup"><span data-stu-id="8295b-107">First, register to handle the [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, which is raised when your app is started and initialized by the operating system.</span></span>
 
-<span data-ttu-id="e78fa-108">次のコードをビュー プロバイダー (この例では **MyViewProvider** という名前) の [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-108">Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider (named **MyViewProvider** in the example):</span></span>
+<span data-ttu-id="8295b-108">次のコードをビュー プロバイダー (この例では **MyViewProvider** という名前) の [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。</span><span class="sxs-lookup"><span data-stu-id="8295b-108">Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider (named **MyViewProvider** in the example):</span></span>
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -41,10 +41,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## <a name="activate-the-corewindow-instance-for-the-app"></a><span data-ttu-id="e78fa-109">アプリの CoreWindow インスタンスをアクティブ化する</span><span class="sxs-lookup"><span data-stu-id="e78fa-109">Activate the CoreWindow instance for the app</span></span>
+## <a name="activate-the-corewindow-instance-for-the-app"></a><span data-ttu-id="8295b-109">アプリの CoreWindow インスタンスをアクティブ化する</span><span class="sxs-lookup"><span data-stu-id="8295b-109">Activate the CoreWindow instance for the app</span></span>
 
 
-<span data-ttu-id="e78fa-110">アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e78fa-110">When your app starts, you must obtain a reference to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for your app.</span></span> <span data-ttu-id="e78fa-111">**CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e78fa-111">**CoreWindow** contains the window event message dispatcher that your app uses to process window events.</span></span> <span data-ttu-id="e78fa-112">アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-112">Obtain this reference in your callback for the app activation event by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589).</span></span> <span data-ttu-id="e78fa-113">この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-113">Once you have obtained this reference, activate the main app window by calling [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).</span></span>
+<span data-ttu-id="8295b-110">アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8295b-110">When your app starts, you must obtain a reference to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for your app.</span></span> <span data-ttu-id="8295b-111">**CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8295b-111">**CoreWindow** contains the window event message dispatcher that your app uses to process window events.</span></span> <span data-ttu-id="8295b-112">アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。</span><span class="sxs-lookup"><span data-stu-id="8295b-112">Obtain this reference in your callback for the app activation event by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589).</span></span> <span data-ttu-id="8295b-113">この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。</span><span class="sxs-lookup"><span data-stu-id="8295b-113">Once you have obtained this reference, activate the main app window by calling [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).</span></span>
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -54,10 +54,10 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## <a name="start-processing-event-message-for-the-main-app-window"></a><span data-ttu-id="e78fa-114">メイン アプリ ウィンドウのイベント メッセージの処理の開始</span><span class="sxs-lookup"><span data-stu-id="e78fa-114">Start processing event message for the main app window</span></span>
+## <a name="start-processing-event-message-for-the-main-app-window"></a><span data-ttu-id="8295b-114">メイン アプリ ウィンドウのイベント メッセージの処理の開始</span><span class="sxs-lookup"><span data-stu-id="8295b-114">Start processing event message for the main app window</span></span>
 
 
-<span data-ttu-id="e78fa-115">作成したコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。</span><span class="sxs-lookup"><span data-stu-id="e78fa-115">Your callbacks occur as event messages are processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).</span></span> <span data-ttu-id="e78fa-116">このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="e78fa-116">This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).</span></span>
+<span data-ttu-id="8295b-115">作成したコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。</span><span class="sxs-lookup"><span data-stu-id="8295b-115">Your callbacks occur as event messages are processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225).</span></span> <span data-ttu-id="8295b-116">このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。</span><span class="sxs-lookup"><span data-stu-id="8295b-116">This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).</span></span>
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -84,11 +84,11 @@ void App::Run()
 }
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="e78fa-117">関連トピック</span><span class="sxs-lookup"><span data-stu-id="e78fa-117">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="8295b-117">関連トピック</span><span class="sxs-lookup"><span data-stu-id="8295b-117">Related topics</span></span>
 
 
-* [<span data-ttu-id="e78fa-118">アプリを一時停止する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="e78fa-118">How to suspend an app (DirectX and C++)</span></span>](how-to-suspend-an-app-directx-and-cpp.md)
-* [<span data-ttu-id="e78fa-119">アプリを再開する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="e78fa-119">How to resume an app (DirectX and C++)</span></span>](how-to-resume-an-app-directx-and-cpp.md)
+* [<span data-ttu-id="8295b-118">アプリを一時停止する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="8295b-118">How to suspend an app (DirectX and C++)</span></span>](how-to-suspend-an-app-directx-and-cpp.md)
+* [<span data-ttu-id="8295b-119">アプリを再開する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="8295b-119">How to resume an app (DirectX and C++)</span></span>](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

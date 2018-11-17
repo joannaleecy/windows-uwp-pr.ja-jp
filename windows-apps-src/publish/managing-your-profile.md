@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, デベロッパー センター, アカウント設定, プロファイル, アカウント プロファイル, 開発者アカウント, 開発者アカウントの設定
 ms.localizationpriority: medium
 ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7107208"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7171575"
 ---
 # <a name="manage-account-settings-and-profile-info"></a><span data-ttu-id="253ca-104">アカウントの設定とプロファイル情報の管理</span><span class="sxs-lookup"><span data-stu-id="253ca-104">Manage account settings and profile info</span></span>
 

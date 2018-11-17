@@ -9,19 +9,19 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、OpenGL、Direct3D 11, 移植, グラフィックス
 ms.localizationpriority: medium
 ms.openlocfilehash: 6421f5a5a71828d5234a11bab9e442a5accecda5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "6989389"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7170679"
 ---
-# <a name="port-from-opengl-es-20-to-direct3d-11"></a><span data-ttu-id="a8b1b-104">OpenGL ES 2.0 から Direct3D 11 への移植</span><span class="sxs-lookup"><span data-stu-id="a8b1b-104">Port from OpenGL ES 2.0 to Direct3D 11</span></span>
+# <a name="port-from-opengl-es-20-to-direct3d-11"></a><span data-ttu-id="aa793-104">OpenGL ES 2.0 から Direct3D 11 への移植</span><span class="sxs-lookup"><span data-stu-id="aa793-104">Port from OpenGL ES 2.0 to Direct3D 11</span></span>
 
 
 
-<span data-ttu-id="a8b1b-105">OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-105">Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.</span></span>
+<span data-ttu-id="aa793-105">OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="aa793-105">Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.</span></span>
 
-> <span data-ttu-id="a8b1b-106">**注:**  OpenGL ES 2.0 プロジェクトを移植する中間の手順は、Microsoft Store の角度を使用します。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-106">**Note** An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Microsoft Store.</span></span> <span data-ttu-id="a8b1b-107">ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-107">ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.</span></span> <span data-ttu-id="a8b1b-108">ANGLE について詳しくは、[Microsoft Store 用の ANGLE に関する Wiki ページ](http://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-108">For more information about ANGLE, go to the [ANGLE for Microsoft Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).</span></span>
+> <span data-ttu-id="aa793-106">**注:**  OpenGL ES 2.0 プロジェクトを移植する中間の手順は、Microsoft Store の角度を使用します。</span><span class="sxs-lookup"><span data-stu-id="aa793-106">**Note** An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Microsoft Store.</span></span> <span data-ttu-id="aa793-107">ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。</span><span class="sxs-lookup"><span data-stu-id="aa793-107">ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.</span></span> <span data-ttu-id="aa793-108">ANGLE について詳しくは、[Microsoft Store 用の ANGLE に関する Wiki ページ](http://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="aa793-108">For more information about ANGLE, go to the [ANGLE for Microsoft Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).</span></span>
 
  
 
@@ -32,22 +32,22 @@ ms.locfileid: "6989389"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="a8b1b-109">トピック</span><span class="sxs-lookup"><span data-stu-id="a8b1b-109">Topic</span></span></th>
-<th align="left"><span data-ttu-id="a8b1b-110">説明</span><span class="sxs-lookup"><span data-stu-id="a8b1b-110">Description</span></span></th>
+<th align="left"><span data-ttu-id="aa793-109">トピック</span><span class="sxs-lookup"><span data-stu-id="aa793-109">Topic</span></span></th>
+<th align="left"><span data-ttu-id="aa793-110">説明</span><span class="sxs-lookup"><span data-stu-id="aa793-110">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="map-concepts-and-infrastructure.md"><span data-ttu-id="a8b1b-111">Direct3D 11.1 への OpenGL ES 2.0 のマッピング</span><span class="sxs-lookup"><span data-stu-id="a8b1b-111">Map OpenGL ES 2.0 to Direct3D 11.1</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="a8b1b-112">OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-112">When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs.</span></span> <span data-ttu-id="a8b1b-113">このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-113">The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.</span></span></p></td>
+<td align="left"><p><a href="map-concepts-and-infrastructure.md"><span data-ttu-id="aa793-111">Direct3D 11.1 への OpenGL ES 2.0 のマッピング</span><span class="sxs-lookup"><span data-stu-id="aa793-111">Map OpenGL ES 2.0 to Direct3D 11.1</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="aa793-112">OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。</span><span class="sxs-lookup"><span data-stu-id="aa793-112">When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs.</span></span> <span data-ttu-id="aa793-113">このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="aa793-113">The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"><span data-ttu-id="a8b1b-114">簡単な OpenGL ES 2.0 レンダラーを Direct3D 11.1 に移植する方法</span><span class="sxs-lookup"><span data-stu-id="a8b1b-114">How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="a8b1b-115">この移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-115">For this porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</span></span></p></td>
+<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"><span data-ttu-id="aa793-114">簡単な OpenGL ES 2.0 レンダラーを Direct3D 11.1 に移植する方法</span><span class="sxs-lookup"><span data-stu-id="aa793-114">How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="aa793-115">この移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。</span><span class="sxs-lookup"><span data-stu-id="aa793-115">For this porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="opengl-es-2-0-to-directx-11-1-reference.md"><span data-ttu-id="a8b1b-116">OpenGL ES 2.0 から Direct3D 11.1 への移行のためのリファレンス</span><span class="sxs-lookup"><span data-stu-id="a8b1b-116">OpenGL ES 2.0 to Direct3D 11.1 reference</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="a8b1b-117">OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a8b1b-117">Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</span></span></p></td>
+<td align="left"><p><a href="opengl-es-2-0-to-directx-11-1-reference.md"><span data-ttu-id="aa793-116">OpenGL ES 2.0 から Direct3D 11.1 への移行のためのリファレンス</span><span class="sxs-lookup"><span data-stu-id="aa793-116">OpenGL ES 2.0 to Direct3D 11.1 reference</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="aa793-117">OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="aa793-117">Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</span></span></p></td>
 </tr>
 </tbody>
 </table>

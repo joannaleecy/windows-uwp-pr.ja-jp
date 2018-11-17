@@ -8,11 +8,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8000d9105481bc177eb2fc64646aec009fd80d36
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102735"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166354"
 ---
 # <a name="create-data-bindings"></a><span data-ttu-id="3b6e0-104">データ バインディングを作成する</span><span class="sxs-lookup"><span data-stu-id="3b6e0-104">Create data bindings</span></span>
 
