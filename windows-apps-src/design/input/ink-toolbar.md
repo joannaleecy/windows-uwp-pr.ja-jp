@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ms.openlocfilehash: b6896a4c149084dd5609f2ac6737c803a18d14ac
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7103230"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7160860"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a><span data-ttu-id="aac48-103">InkToolbar をユニバーサル Windows プラットフォーム (UWP) アプリに追加する</span><span class="sxs-lookup"><span data-stu-id="aac48-103">Add an InkToolbar to a Universal Windows Platform (UWP) app</span></span>
 

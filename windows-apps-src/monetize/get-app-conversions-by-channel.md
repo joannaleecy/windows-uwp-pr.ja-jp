@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリのコンバージョン, チャネル
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7105071"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7159089"
 ---
 # <a name="get-app-conversions-by-channel"></a><span data-ttu-id="d6b8e-104">チャネルごとのアプリのコンバージョンの取得</span><span class="sxs-lookup"><span data-stu-id="d6b8e-104">Get app conversions by channel</span></span>
 
