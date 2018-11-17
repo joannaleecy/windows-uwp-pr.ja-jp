@@ -10,26 +10,26 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6970310"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152610"
 ---
-# <a name="creating-streaming-resources"></a><span data-ttu-id="72d0d-104">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="72d0d-104">Creating streaming resources</span></span>
+# <a name="creating-streaming-resources"></a><span data-ttu-id="36a13-104">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="36a13-104">Creating streaming resources</span></span>
 
 
-<span data-ttu-id="72d0d-105">ストリーミング リソースは、リソースを作成するときにフラグを指定することによって作成され、リソースがストリーミング リソースであることを示します。</span><span class="sxs-lookup"><span data-stu-id="72d0d-105">Streaming resources are created by specifying a flag when you create a resource, indicating that the resource is a streaming resource.</span></span>
+<span data-ttu-id="36a13-105">ストリーミング リソースは、リソースを作成するときにフラグを指定することによって作成され、リソースがストリーミング リソースであることを示します。</span><span class="sxs-lookup"><span data-stu-id="36a13-105">Streaming resources are created by specifying a flag when you create a resource, indicating that the resource is a streaming resource.</span></span>
 
-<span data-ttu-id="72d0d-106">リソースをストリーミング リソースとして作成できる場合の制限については、「[ストリーミング リソース作成のパラメーター](streaming-resource-creation-parameters.md)」で説明されています。</span><span class="sxs-lookup"><span data-stu-id="72d0d-106">Restrictions on when you can create a resource as a streaming resource are described in [Streaming resource creation parameters](streaming-resource-creation-parameters.md).</span></span>
+<span data-ttu-id="36a13-106">リソースをストリーミング リソースとして作成できる場合の制限については、「[ストリーミング リソース作成のパラメーター](streaming-resource-creation-parameters.md)」で説明されています。</span><span class="sxs-lookup"><span data-stu-id="36a13-106">Restrictions on when you can create a resource as a streaming resource are described in [Streaming resource creation parameters](streaming-resource-creation-parameters.md).</span></span>
 
-<span data-ttu-id="72d0d-107">2D テクスチャの配列の割り当てなど、非ストリーミング リソースのストレージは、リソースの作成時にグラフィック システムに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="72d0d-107">A non-streaming resource's storage is allocated in the graphics system when the resource is created, such as allocation for an array of 2D textures.</span></span>
+<span data-ttu-id="36a13-107">2D テクスチャの配列の割り当てなど、非ストリーミング リソースのストレージは、リソースの作成時にグラフィック システムに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="36a13-107">A non-streaming resource's storage is allocated in the graphics system when the resource is created, such as allocation for an array of 2D textures.</span></span>
 
-<span data-ttu-id="72d0d-108">ストリーミング リソースが作成される場合、グラフィック システムはリソース コンテンツにはストレージを割り当てません。</span><span class="sxs-lookup"><span data-stu-id="72d0d-108">When a streaming resource is created, the graphics system doesn't allocate the storage for the resource contents.</span></span> <span data-ttu-id="72d0d-109">代わりに、アプリケーションがストリーミング リソースを作成する場合には、グラフィック システムはタイル サーフェスの領域のみのアドレス空間予約を行い、タイルのマッピングをアプリケーションが制御できるようにします。</span><span class="sxs-lookup"><span data-stu-id="72d0d-109">Instead, when an application creates a streaming resource, the graphics system makes an address space reservation for the tiled surface's area only, and then allows the mapping of the tiles to be controlled by the application.</span></span> <span data-ttu-id="72d0d-110">タイルの「マッピング」とは、リソース内の論理タイルがポイントするメモリ内の物理的な位置 (またはマップされていないタイルの場合は**NULL**) です。</span><span class="sxs-lookup"><span data-stu-id="72d0d-110">The "mapping" of a tile is simply the physical location in memory that a logical tile in a resource points to (or **NULL** for an unmapped tile).</span></span>
+<span data-ttu-id="36a13-108">ストリーミング リソースが作成される場合、グラフィック システムはリソース コンテンツにはストレージを割り当てません。</span><span class="sxs-lookup"><span data-stu-id="36a13-108">When a streaming resource is created, the graphics system doesn't allocate the storage for the resource contents.</span></span> <span data-ttu-id="36a13-109">代わりに、アプリケーションがストリーミング リソースを作成する場合には、グラフィック システムはタイル サーフェスの領域のみのアドレス空間予約を行い、タイルのマッピングをアプリケーションが制御できるようにします。</span><span class="sxs-lookup"><span data-stu-id="36a13-109">Instead, when an application creates a streaming resource, the graphics system makes an address space reservation for the tiled surface's area only, and then allows the mapping of the tiles to be controlled by the application.</span></span> <span data-ttu-id="36a13-110">タイルの「マッピング」とは、リソース内の論理タイルがポイントするメモリ内の物理的な位置 (またはマップされていないタイルの場合は**NULL**) です。</span><span class="sxs-lookup"><span data-stu-id="36a13-110">The "mapping" of a tile is simply the physical location in memory that a logical tile in a resource points to (or **NULL** for an unmapped tile).</span></span>
 
-<span data-ttu-id="72d0d-111">この概念を、Direct3D リソースを CPU アクセス用にマッピングするという概念と混同しないでください。これは同じ名前を使用していますが、全く別のものです。</span><span class="sxs-lookup"><span data-stu-id="72d0d-111">Don't confuse this concept with the notion of mapping a Direct3D resource for CPU access, which despite using the same name is completely independent.</span></span> <span data-ttu-id="72d0d-112">必要に応じて、個々のタイルのマッピングを個別に定義して変更することができます。サーフェスのすべてのタイルを一度にマップする必要がないため、使用可能なメモリ量を有効に活用できます。</span><span class="sxs-lookup"><span data-stu-id="72d0d-112">You will be able to define and change the mapping of each tile individually as needed, knowing that all tiles for a surface don't need to be mapped at a time, thereby making effective use of the amount of memory available.</span></span>
+<span data-ttu-id="36a13-111">この概念を、Direct3D リソースを CPU アクセス用にマッピングするという概念と混同しないでください。これは同じ名前を使用していますが、全く別のものです。</span><span class="sxs-lookup"><span data-stu-id="36a13-111">Don't confuse this concept with the notion of mapping a Direct3D resource for CPU access, which despite using the same name is completely independent.</span></span> <span data-ttu-id="36a13-112">必要に応じて、個々のタイルのマッピングを個別に定義して変更することができます。サーフェスのすべてのタイルを一度にマップする必要がないため、使用可能なメモリ量を有効に活用できます。</span><span class="sxs-lookup"><span data-stu-id="36a13-112">You will be able to define and change the mapping of each tile individually as needed, knowing that all tiles for a surface don't need to be mapped at a time, thereby making effective use of the amount of memory available.</span></span>
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="72d0d-113"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="72d0d-113"><span id="in-this-section"></span>In this section</span></span>
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="36a13-113"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="36a13-113"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -39,48 +39,48 @@ ms.locfileid: "6970310"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="72d0d-114">トピック</span><span class="sxs-lookup"><span data-stu-id="72d0d-114">Topic</span></span></th>
-<th align="left"><span data-ttu-id="72d0d-115">説明</span><span class="sxs-lookup"><span data-stu-id="72d0d-115">Description</span></span></th>
+<th align="left"><span data-ttu-id="36a13-114">トピック</span><span class="sxs-lookup"><span data-stu-id="36a13-114">Topic</span></span></th>
+<th align="left"><span data-ttu-id="36a13-115">説明</span><span class="sxs-lookup"><span data-stu-id="36a13-115">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="mappings-are-into-a-tile-pool.md"><span data-ttu-id="72d0d-116">タイル プールにマッピングされます</span><span class="sxs-lookup"><span data-stu-id="72d0d-116">Mappings are into a tile pool</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-117">リソースがストリーミング リソースとして作成される場合、リソースを構成するタイルは、タイル プール内の場所をポイントすることに基づきます。</span><span class="sxs-lookup"><span data-stu-id="72d0d-117">When a resource is created as a streaming resource, the tiles that make up the resource come from pointing at locations in a tile pool.</span></span> <span data-ttu-id="72d0d-118">タイル プールは、メモリのプールです (背後にある 1 つ以上の割り当てによってサポートされていますが、アプリケーションには見えません)。</span><span class="sxs-lookup"><span data-stu-id="72d0d-118">A tile pool is a pool of memory (backed by one or more allocations behind the scenes - unseen by the application).</span></span></p></td>
+<td align="left"><p><a href="mappings-are-into-a-tile-pool.md"><span data-ttu-id="36a13-116">タイル プールにマッピングされます</span><span class="sxs-lookup"><span data-stu-id="36a13-116">Mappings are into a tile pool</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-117">リソースがストリーミング リソースとして作成される場合、リソースを構成するタイルは、タイル プール内の場所をポイントすることに基づきます。</span><span class="sxs-lookup"><span data-stu-id="36a13-117">When a resource is created as a streaming resource, the tiles that make up the resource come from pointing at locations in a tile pool.</span></span> <span data-ttu-id="36a13-118">タイル プールは、メモリのプールです (背後にある 1 つ以上の割り当てによってサポートされていますが、アプリケーションには見えません)。</span><span class="sxs-lookup"><span data-stu-id="36a13-118">A tile pool is a pool of memory (backed by one or more allocations behind the scenes - unseen by the application).</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-creation-parameters.md"><span data-ttu-id="72d0d-119">ストリーミング リソースの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="72d0d-119">Streaming resource creation parameters</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-120">ストリーミング リソースとして作成できる Direct3D リソースの種類には、いくつかの制約があります。</span><span class="sxs-lookup"><span data-stu-id="72d0d-120">There are some constraints on the type of Direct3D resources that you can create as a streaming resource.</span></span></p></td>
+<td align="left"><p><a href="streaming-resource-creation-parameters.md"><span data-ttu-id="36a13-119">ストリーミング リソースの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="36a13-119">Streaming resource creation parameters</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-120">ストリーミング リソースとして作成できる Direct3D リソースの種類には、いくつかの制約があります。</span><span class="sxs-lookup"><span data-stu-id="36a13-120">There are some constraints on the type of Direct3D resources that you can create as a streaming resource.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tile-pool-creation-parameters.md"><span data-ttu-id="72d0d-121">タイル プールの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="72d0d-121">Tile pool creation parameters</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-122">このセクションのパラメーターを使用して、バッファーを作成するときにタイル プールを定義します。</span><span class="sxs-lookup"><span data-stu-id="72d0d-122">Use the parameters in this section to define tile pools when creating a buffer.</span></span></p></td>
+<td align="left"><p><a href="tile-pool-creation-parameters.md"><span data-ttu-id="36a13-121">タイル プールの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="36a13-121">Tile pool creation parameters</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-122">このセクションのパラメーターを使用して、バッファーを作成するときにタイル プールを定義します。</span><span class="sxs-lookup"><span data-stu-id="36a13-122">Use the parameters in this section to define tile pools when creating a buffer.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md"><span data-ttu-id="72d0d-123">ストリーミング リソースのプロセスとデバイス間での共有</span><span class="sxs-lookup"><span data-stu-id="72d0d-123">Streaming resource cross-process and device sharing</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-124">タイル プールは、従来のリソースと同様に、他のプロセスと共有することができます。</span><span class="sxs-lookup"><span data-stu-id="72d0d-124">Tile pools can be shared with other processes just like traditional resources.</span></span> <span data-ttu-id="72d0d-125">タイル プールを参照するストリーミング リソースは、デバイスやプロセス間で共有できません。</span><span class="sxs-lookup"><span data-stu-id="72d0d-125">Streaming resources that reference tile pools can't be shared across devices and processes.</span></span></p></td>
+<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md"><span data-ttu-id="36a13-123">ストリーミング リソースのプロセスとデバイス間での共有</span><span class="sxs-lookup"><span data-stu-id="36a13-123">Streaming resource cross-process and device sharing</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-124">タイル プールは、従来のリソースと同様に、他のプロセスと共有することができます。</span><span class="sxs-lookup"><span data-stu-id="36a13-124">Tile pools can be shared with other processes just like traditional resources.</span></span> <span data-ttu-id="36a13-125">タイル プールを参照するストリーミング リソースは、デバイスやプロセス間で共有できません。</span><span class="sxs-lookup"><span data-stu-id="36a13-125">Streaming resources that reference tile pools can't be shared across devices and processes.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="operations-available-on-streaming-resources.md"><span data-ttu-id="72d0d-126">ストリーミング リソースで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="72d0d-126">Operations available on streaming resources</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-127">このセクションでは、ストリーミング リソースで実行できる操作を示します。</span><span class="sxs-lookup"><span data-stu-id="72d0d-127">This section lists operations that you can perform on streaming resources.</span></span></p></td>
+<td align="left"><p><a href="operations-available-on-streaming-resources.md"><span data-ttu-id="36a13-126">ストリーミング リソースで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="36a13-126">Operations available on streaming resources</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-127">このセクションでは、ストリーミング リソースで実行できる操作を示します。</span><span class="sxs-lookup"><span data-stu-id="36a13-127">This section lists operations that you can perform on streaming resources.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="operations-available-on-tile-pools.md"><span data-ttu-id="72d0d-128">タイル プールで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="72d0d-128">Operations available on tile pools</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-129">タイル プールの操作には、タイル プールのサイズ変更、リソースの提供 (タイル プール全体のためシステムに一時的にメモリを与えます)、およびリソースの再利用が含まれます。</span><span class="sxs-lookup"><span data-stu-id="72d0d-129">Operations on tile pools include resizing a tile pool, offering resources (yielding memory temporarily to the system for the entire tile pool), and reclaiming resources.</span></span></p></td>
+<td align="left"><p><a href="operations-available-on-tile-pools.md"><span data-ttu-id="36a13-128">タイル プールで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="36a13-128">Operations available on tile pools</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-129">タイル プールの操作には、タイル プールのサイズ変更、リソースの提供 (タイル プール全体のためシステムに一時的にメモリを与えます)、およびリソースの再利用が含まれます。</span><span class="sxs-lookup"><span data-stu-id="36a13-129">Operations on tile pools include resizing a tile pool, offering resources (yielding memory temporarily to the system for the entire tile pool), and reclaiming resources.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md"><span data-ttu-id="72d0d-130">ストリーミング リソースの領域をタイル表示する方法</span><span class="sxs-lookup"><span data-stu-id="72d0d-130">How a streaming resource's area is tiled</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="72d0d-131">ストリーミング リソースを作成するときは、次元、フォーマット要素のサイズ、およびミップマップや配列スライスの数 (該当する場合) によって、サーフェス領域全体をサポートするために必要なタイルの数が決まります。</span><span class="sxs-lookup"><span data-stu-id="72d0d-131">When you create a streaming resource, the dimensions, format element size, and number of mipmaps and/or array slices (if applicable) determine the number of tiles that are required to back the entire surface area.</span></span></p></td>
+<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md"><span data-ttu-id="36a13-130">ストリーミング リソースの領域をタイル表示する方法</span><span class="sxs-lookup"><span data-stu-id="36a13-130">How a streaming resource's area is tiled</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="36a13-131">ストリーミング リソースを作成するときは、次元、フォーマット要素のサイズ、およびミップマップや配列スライスの数 (該当する場合) によって、サーフェス領域全体をサポートするために必要なタイルの数が決まります。</span><span class="sxs-lookup"><span data-stu-id="36a13-131">When you create a streaming resource, the dimensions, format element size, and number of mipmaps and/or array slices (if applicable) determine the number of tiles that are required to back the entire surface area.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="72d0d-132"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="72d0d-132"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="36a13-132"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="36a13-132"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="72d0d-133">ストリーミング リソース</span><span class="sxs-lookup"><span data-stu-id="72d0d-133">Streaming resources</span></span>](streaming-resources.md)
+[<span data-ttu-id="36a13-133">ストリーミング リソース</span><span class="sxs-lookup"><span data-stu-id="36a13-133">Streaming resources</span></span>](streaming-resources.md)
 
  
 

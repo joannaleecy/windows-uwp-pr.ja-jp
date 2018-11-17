@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e4cb60526fda9495249cd310ad434878941a97d
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7103443"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149892"
 ---
 # <a name="guidelines-for-app-help"></a><span data-ttu-id="a922f-103">アプリのヘルプのガイドライン</span><span class="sxs-lookup"><span data-stu-id="a922f-103">Guidelines for App Help</span></span>
 

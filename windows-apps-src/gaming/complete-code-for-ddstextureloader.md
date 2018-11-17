@@ -9,47 +9,47 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DDSTextureLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ba0de548cb1c4222783ae4245e1aacba4ab09e2
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "6993213"
+ms.locfileid: "7171841"
 ---
-# <a name="complete-code-for-ddstextureloader"></a><span data-ttu-id="1d3cc-104">DDSTextureLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="1d3cc-104">Complete code for DDSTextureLoader</span></span>
+# <a name="complete-code-for-ddstextureloader"></a><span data-ttu-id="96811-104">DDSTextureLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="96811-104">Complete code for DDSTextureLoader</span></span>
 
 
 
-<span data-ttu-id="1d3cc-105">メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="1d3cc-105">Complete code for a class and method that loads a DDS texture from memory.</span></span>
-<span data-ttu-id="1d3cc-106">テクスチャについて、およびこの例の使用方法については、「[DirectX ゲームでのリソースの読み込み](load-a-game-asset.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1d3cc-106">See [Load resources in your DirectX game](load-a-game-asset.md) for a discussion about textures and using this example.</span></span>
+<span data-ttu-id="96811-105">メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="96811-105">Complete code for a class and method that loads a DDS texture from memory.</span></span>
+<span data-ttu-id="96811-106">テクスチャについて、およびこの例の使用方法については、「[DirectX ゲームでのリソースの読み込み](load-a-game-asset.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="96811-106">See [Load resources in your DirectX game](load-a-game-asset.md) for a discussion about textures and using this example.</span></span>
 
-<span data-ttu-id="1d3cc-107">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="1d3cc-107">This topic contains these sections:</span></span>
+<span data-ttu-id="96811-107">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="96811-107">This topic contains these sections:</span></span>
 
--   [<span data-ttu-id="1d3cc-108">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="1d3cc-108">Technologies</span></span>](#technologies)
--   [<span data-ttu-id="1d3cc-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="1d3cc-109">Requirements</span></span>](#requirements)
--   [<span data-ttu-id="1d3cc-110">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="1d3cc-110">View the code (C++)</span></span>](#view-the-code-c)
-
-
-## <a name="download-location"></a><span data-ttu-id="1d3cc-111">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="1d3cc-111">Download location</span></span>
+-   [<span data-ttu-id="96811-108">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="96811-108">Technologies</span></span>](#technologies)
+-   [<span data-ttu-id="96811-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="96811-109">Requirements</span></span>](#requirements)
+-   [<span data-ttu-id="96811-110">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="96811-110">View the code (C++)</span></span>](#view-the-code-c)
 
 
-<span data-ttu-id="1d3cc-112">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="1d3cc-112">This sample is not available for download.</span></span>
-
-## <a name="technologies"></a><span data-ttu-id="1d3cc-113">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="1d3cc-113">Technologies</span></span>
-
-<span data-ttu-id="1d3cc-114">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="1d3cc-114">**Programming languages** - C++</span></span>    
-<span data-ttu-id="1d3cc-115">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="1d3cc-115">**Programming models** - Windows Runtime</span></span>
-
-## <a name="requirements"></a><span data-ttu-id="1d3cc-116">要件</span><span class="sxs-lookup"><span data-stu-id="1d3cc-116">Requirements</span></span>
-
-<span data-ttu-id="1d3cc-117">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="1d3cc-117">**Minimum supported client** - Windows 10</span></span>                               
-<span data-ttu-id="1d3cc-118">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="1d3cc-118">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span>
+## <a name="download-location"></a><span data-ttu-id="96811-111">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="96811-111">Download location</span></span>
 
 
+<span data-ttu-id="96811-112">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="96811-112">This sample is not available for download.</span></span>
 
-## <a name="view-the-code-c"></a><span data-ttu-id="1d3cc-119">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="1d3cc-119">View the code (C++)</span></span>
+## <a name="technologies"></a><span data-ttu-id="96811-113">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="96811-113">Technologies</span></span>
+
+<span data-ttu-id="96811-114">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="96811-114">**Programming languages** - C++</span></span>    
+<span data-ttu-id="96811-115">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="96811-115">**Programming models** - Windows Runtime</span></span>
+
+## <a name="requirements"></a><span data-ttu-id="96811-116">要件</span><span class="sxs-lookup"><span data-stu-id="96811-116">Requirements</span></span>
+
+<span data-ttu-id="96811-117">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="96811-117">**Minimum supported client** - Windows 10</span></span>                               
+<span data-ttu-id="96811-118">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="96811-118">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span>
 
 
-## <a name="ddstextureloaderh"></a><span data-ttu-id="1d3cc-120">DDSTextureLoader.h</span><span class="sxs-lookup"><span data-stu-id="1d3cc-120">DDSTextureLoader.h</span></span>
+
+## <a name="view-the-code-c"></a><span data-ttu-id="96811-119">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="96811-119">View the code (C++)</span></span>
+
+
+## <a name="ddstextureloaderh"></a><span data-ttu-id="96811-120">DDSTextureLoader.h</span><span class="sxs-lookup"><span data-stu-id="96811-120">DDSTextureLoader.h</span></span>
 
 
 ```cpp
@@ -82,7 +82,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## <a name="ddstextureloadercpp"></a><span data-ttu-id="1d3cc-121">DDSTextureLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="1d3cc-121">DDSTextureLoader.cpp</span></span>
+## <a name="ddstextureloadercpp"></a><span data-ttu-id="96811-121">DDSTextureLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="96811-121">DDSTextureLoader.cpp</span></span>
 
 
 ```cpp

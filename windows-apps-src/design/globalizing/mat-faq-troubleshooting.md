@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 320445022fa836e05d04e93b85d333ef1ad40a53
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7099886"
+ms.locfileid: "7145463"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a><span data-ttu-id="be908-103">多言語アプリ ツールキット 4.0 に関する FAQ とトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="be908-103">Multilingual App Toolkit 4.0 FAQ & troubleshooting</span></span>
 

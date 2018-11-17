@@ -10,21 +10,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 757fbf93aa364e4143af0b5d5f2fc3f63a2f9c0c
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982733"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151054"
 ---
-# <a name="color-light-maps"></a><span data-ttu-id="a8721-105">色のライト マップ</span><span class="sxs-lookup"><span data-stu-id="a8721-105">Color light maps</span></span>
+# <a name="color-light-maps"></a><span data-ttu-id="68f55-105">色のライト マップ</span><span class="sxs-lookup"><span data-stu-id="68f55-105">Color light maps</span></span>
 
 
-<span data-ttu-id="a8721-106">色の付いたライト マップは、そのライト情報にライト マップの RGB データを使用します。</span><span class="sxs-lookup"><span data-stu-id="a8721-106">A colored light map uses the RGB data in the light map for its lighting information.</span></span> <span data-ttu-id="a8721-107">アプリケーションは通常、色の付いたライト マップを使用すると、3D シーンをよりリアルにレンダリングできます。</span><span class="sxs-lookup"><span data-stu-id="a8721-107">An application usually renders 3D scenes more realistically if it uses colored light maps.</span></span>
+<span data-ttu-id="68f55-106">色の付いたライト マップは、そのライト情報にライト マップの RGB データを使用します。</span><span class="sxs-lookup"><span data-stu-id="68f55-106">A colored light map uses the RGB data in the light map for its lighting information.</span></span> <span data-ttu-id="68f55-107">アプリケーションは通常、色の付いたライト マップを使用すると、3D シーンをよりリアルにレンダリングできます。</span><span class="sxs-lookup"><span data-stu-id="68f55-107">An application usually renders 3D scenes more realistically if it uses colored light maps.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="a8721-108"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="a8721-108"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="68f55-108"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="68f55-108"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="a8721-109">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="a8721-109">Light mapping with textures</span></span>](light-mapping-with-textures.md)
+[<span data-ttu-id="68f55-109">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="68f55-109">Light mapping with textures</span></span>](light-mapping-with-textures.md)
 
  
 

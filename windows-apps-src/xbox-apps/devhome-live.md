@@ -10,47 +10,47 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6973891"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7146209"
 ---
-# <a name="xbox-live-page-dev-home"></a><span data-ttu-id="ed749-104">Xbox Live ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="ed749-104">Xbox Live Page (Dev Home)</span></span>
+# <a name="xbox-live-page-dev-home"></a><span data-ttu-id="a364f-104">Xbox Live ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="a364f-104">Xbox Live Page (Dev Home)</span></span>
    
   
-<span data-ttu-id="ed749-105">Dev Home の**Xbox Live**ページでは、マルチプレイヤーの情報をキャプチャーし、Xbox Live サービスの現在の状態が表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed749-105">The **Xbox Live** page of Dev Home captures multiplayer information and displays the current status of the Xbox Live service.</span></span>   
+<span data-ttu-id="a364f-105">Dev Home の**Xbox Live**ページでは、マルチプレイヤーの情報をキャプチャーし、Xbox Live サービスの現在の状態が表示されます。</span><span class="sxs-lookup"><span data-stu-id="a364f-105">The **Xbox Live** page of Dev Home captures multiplayer information and displays the current status of the Xbox Live service.</span></span>   
  ![Dev Home の Xbox Live ページ](images/devhome_live.png)   
   
-<span data-ttu-id="ed749-107">**Xbox Live**のページには、次のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ed749-107">The **Xbox Live** page contains the following panes:</span></span>   
+<span data-ttu-id="a364f-107">**Xbox Live**のページには、次のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a364f-107">The **Xbox Live** page contains the following panes:</span></span>   
  
-   *  [<span data-ttu-id="ed749-108">XBTrace (advancedmp)</span><span class="sxs-lookup"><span data-stu-id="ed749-108">XBTrace (advancedmp)</span></span>](#ID4EPB)  
-   *  [<span data-ttu-id="ed749-109">Xbox Live の状態</span><span class="sxs-lookup"><span data-stu-id="ed749-109">Xbox Live status</span></span>](#ID4E3B)  
+   *  [<span data-ttu-id="a364f-108">XBTrace (advancedmp)</span><span class="sxs-lookup"><span data-stu-id="a364f-108">XBTrace (advancedmp)</span></span>](#ID4EPB)  
+   *  [<span data-ttu-id="a364f-109">Xbox Live の状態</span><span class="sxs-lookup"><span data-stu-id="a364f-109">Xbox Live status</span></span>](#ID4E3B)  
 
  
 <a id="ID4EPB"></a>
 
    
 
-## <a name="xbtrace-advancedmp"></a><span data-ttu-id="ed749-110">XBTrace (advancedmp)</span><span class="sxs-lookup"><span data-stu-id="ed749-110">XBTrace (advancedmp)</span></span>  
+## <a name="xbtrace-advancedmp"></a><span data-ttu-id="a364f-110">XBTrace (advancedmp)</span><span class="sxs-lookup"><span data-stu-id="a364f-110">XBTrace (advancedmp)</span></span>  
    
   
-<span data-ttu-id="ed749-111">**XBTrace (advancedmp)** ページを開始またはマルチプレイヤー トレースのキャプチャを停止します。</span><span class="sxs-lookup"><span data-stu-id="ed749-111">The **XBTrace (advancedmp)** page starts or stops capture of a multiplayer trace.</span></span> <span data-ttu-id="ed749-112">現在のマルチプレイヤーの状態のスナップショットをキャプチャすることもできます。</span><span class="sxs-lookup"><span data-stu-id="ed749-112">It can also capture a snapshot of the current multiplayer state.</span></span>   
+<span data-ttu-id="a364f-111">**XBTrace (advancedmp)** ページを開始またはマルチプレイヤー トレースのキャプチャを停止します。</span><span class="sxs-lookup"><span data-stu-id="a364f-111">The **XBTrace (advancedmp)** page starts or stops capture of a multiplayer trace.</span></span> <span data-ttu-id="a364f-112">現在のマルチプレイヤーの状態のスナップショットをキャプチャすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a364f-112">It can also capture a snapshot of the current multiplayer state.</span></span>   
   
 <a id="ID4E3B"></a>
 
    
 
-## <a name="xbox-live-status"></a><span data-ttu-id="ed749-113">Xbox Live の状態</span><span class="sxs-lookup"><span data-stu-id="ed749-113">Xbox Live status</span></span>  
+## <a name="xbox-live-status"></a><span data-ttu-id="a364f-113">Xbox Live の状態</span><span class="sxs-lookup"><span data-stu-id="a364f-113">Xbox Live status</span></span>  
    
   
-<span data-ttu-id="ed749-114">**Xbox Live の状態**のウィンドウには、サービスの問題や停止について、Xbox Live からフィード ステータスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed749-114">The **Xbox Live status** pane displays a status feed from Xbox Live about service issues or outages.</span></span>   
+<span data-ttu-id="a364f-114">**Xbox Live の状態**のウィンドウには、サービスの問題や停止について、Xbox Live からフィード ステータスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a364f-114">The **Xbox Live status** pane displays a status feed from Xbox Live about service issues or outages.</span></span>   
   
 <a id="ID4EPC"></a>
 
    
 
-## <a name="see-also"></a><span data-ttu-id="ed749-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="ed749-115">See also</span></span>  
- [<span data-ttu-id="ed749-116">コンソール (Dev Home) における開発者ホーム</span><span class="sxs-lookup"><span data-stu-id="ed749-116">Developer Home on the Console (Dev Home)</span></span>](dev-home.md)
+## <a name="see-also"></a><span data-ttu-id="a364f-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="a364f-115">See also</span></span>  
+ [<span data-ttu-id="a364f-116">コンソール (Dev Home) における開発者ホーム</span><span class="sxs-lookup"><span data-stu-id="a364f-116">Developer Home on the Console (Dev Home)</span></span>](dev-home.md)
 
   

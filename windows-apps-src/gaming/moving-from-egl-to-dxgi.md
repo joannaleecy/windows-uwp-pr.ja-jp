@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, EGL, DXGI, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7102302"
+ms.locfileid: "7145688"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a><span data-ttu-id="8b033-105">EGL コードと DXGI および Direct3D の比較</span><span class="sxs-lookup"><span data-stu-id="8b033-105">Compare EGL code to DXGI and Direct3D</span></span>
 

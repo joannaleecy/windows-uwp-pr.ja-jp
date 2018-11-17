@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 9513ed03f70a0b5efca0472bb4b0598a33a05fc2
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7111905"
+ms.locfileid: "7147567"
 ---
 # <a name="international-fonts"></a><span data-ttu-id="9857c-103">国際フォント</span><span class="sxs-lookup"><span data-stu-id="9857c-103">International fonts</span></span>
 

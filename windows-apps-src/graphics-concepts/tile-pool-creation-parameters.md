@@ -10,30 +10,30 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e0a29f66d8d153bc7c558acb804c96fe200864e
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6972054"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7154014"
 ---
-# <a name="tile-pool-creation-parameters"></a><span data-ttu-id="f62db-104">タイル プールの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="f62db-104">Tile pool creation parameters</span></span>
+# <a name="tile-pool-creation-parameters"></a><span data-ttu-id="22b60-104">タイル プールの作成パラメーター</span><span class="sxs-lookup"><span data-stu-id="22b60-104">Tile pool creation parameters</span></span>
 
 
-<span data-ttu-id="f62db-105">このセクションのパラメーターを使用して、バッファーを作成するときにタイル プールを定義します。</span><span class="sxs-lookup"><span data-stu-id="f62db-105">Use the parameters in this section to define tile pools when creating a buffer.</span></span>
+<span data-ttu-id="22b60-105">このセクションのパラメーターを使用して、バッファーを作成するときにタイル プールを定義します。</span><span class="sxs-lookup"><span data-stu-id="22b60-105">Use the parameters in this section to define tile pools when creating a buffer.</span></span>
 
-<span data-ttu-id="f62db-106"><span id="Size"></span><span id="size"></span><span id="SIZE"></span>**サイズ**</span><span class="sxs-lookup"><span data-stu-id="f62db-106"><span id="Size"></span><span id="size"></span><span id="SIZE"></span>**Size**</span></span>  
-<span data-ttu-id="f62db-107">割り当てサイズを 64 KB の倍数として指定します。</span><span class="sxs-lookup"><span data-stu-id="f62db-107">Allocation size, as a multiple of 64KB.</span></span> <span data-ttu-id="f62db-108">後でタイル プールのサイズを変更できるため、0 は有効です。</span><span class="sxs-lookup"><span data-stu-id="f62db-108">0 is valid because you can later resize the tile pool.</span></span>
+<span data-ttu-id="22b60-106"><span id="Size"></span><span id="size"></span><span id="SIZE"></span>**サイズ**</span><span class="sxs-lookup"><span data-stu-id="22b60-106"><span id="Size"></span><span id="size"></span><span id="SIZE"></span>**Size**</span></span>  
+<span data-ttu-id="22b60-107">割り当てサイズを 64 KB の倍数として指定します。</span><span class="sxs-lookup"><span data-stu-id="22b60-107">Allocation size, as a multiple of 64KB.</span></span> <span data-ttu-id="22b60-108">後でタイル プールのサイズを変更できるため、0 は有効です。</span><span class="sxs-lookup"><span data-stu-id="22b60-108">0 is valid because you can later resize the tile pool.</span></span>
 
-<span data-ttu-id="f62db-109"><span id="Supported_Resource_Misc_Flags"></span><span id="supported_resource_misc_flags"></span><span id="SUPPORTED_RESOURCE_MISC_FLAGS"></span>**サポートされるリソースのその他のフラグ**</span><span class="sxs-lookup"><span data-stu-id="f62db-109"><span id="Supported_Resource_Misc_Flags"></span><span id="supported_resource_misc_flags"></span><span id="SUPPORTED_RESOURCE_MISC_FLAGS"></span>**Supported Resource Misc Flags**</span></span>  
-<span data-ttu-id="f62db-110">タイル プール (タイル プールとしてリソースを識別)、種々の共有リソース、共有キー付きミュー テックス、または共有 NT ハンドル。</span><span class="sxs-lookup"><span data-stu-id="f62db-110">Tile pool (identifies the resource as a tile pool), miscellaneous shared resource, shared keyed mutex, or shared NT handle.</span></span>
+<span data-ttu-id="22b60-109"><span id="Supported_Resource_Misc_Flags"></span><span id="supported_resource_misc_flags"></span><span id="SUPPORTED_RESOURCE_MISC_FLAGS"></span>**サポートされるリソースのその他のフラグ**</span><span class="sxs-lookup"><span data-stu-id="22b60-109"><span id="Supported_Resource_Misc_Flags"></span><span id="supported_resource_misc_flags"></span><span id="SUPPORTED_RESOURCE_MISC_FLAGS"></span>**Supported Resource Misc Flags**</span></span>  
+<span data-ttu-id="22b60-110">タイル プール (タイル プールとしてリソースを識別)、種々の共有リソース、共有キー付きミュー テックス、または共有 NT ハンドル。</span><span class="sxs-lookup"><span data-stu-id="22b60-110">Tile pool (identifies the resource as a tile pool), miscellaneous shared resource, shared keyed mutex, or shared NT handle.</span></span>
 
-<span data-ttu-id="f62db-111"><span id="Supported_Resource_Usage"></span><span id="supported_resource_usage"></span><span id="SUPPORTED_RESOURCE_USAGE"></span>**サポートされるリソースの使用法**</span><span class="sxs-lookup"><span data-stu-id="f62db-111"><span id="Supported_Resource_Usage"></span><span id="supported_resource_usage"></span><span id="SUPPORTED_RESOURCE_USAGE"></span>**Supported Resource Usage**</span></span>  
-<span data-ttu-id="f62db-112">既定の使用法のみ。</span><span class="sxs-lookup"><span data-stu-id="f62db-112">Default usage, only.</span></span>
+<span data-ttu-id="22b60-111"><span id="Supported_Resource_Usage"></span><span id="supported_resource_usage"></span><span id="SUPPORTED_RESOURCE_USAGE"></span>**サポートされるリソースの使用法**</span><span class="sxs-lookup"><span data-stu-id="22b60-111"><span id="Supported_Resource_Usage"></span><span id="supported_resource_usage"></span><span id="SUPPORTED_RESOURCE_USAGE"></span>**Supported Resource Usage**</span></span>  
+<span data-ttu-id="22b60-112">既定の使用法のみ。</span><span class="sxs-lookup"><span data-stu-id="22b60-112">Default usage, only.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="f62db-113"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="f62db-113"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="22b60-113"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="22b60-113"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="f62db-114">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="f62db-114">Creating streaming resources</span></span>](creating-streaming-resources.md)
+[<span data-ttu-id="22b60-114">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="22b60-114">Creating streaming resources</span></span>](creating-streaming-resources.md)
 
  
 

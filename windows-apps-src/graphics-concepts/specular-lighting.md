@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 283ea63d118f9a61fe745dd3eb60b68594c32279
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7129002"
+ms.locfileid: "7144156"
 ---
 # <a name="specular-lighting"></a><span data-ttu-id="a87b5-104">反射光</span><span class="sxs-lookup"><span data-stu-id="a87b5-104">Specular lighting</span></span>
 

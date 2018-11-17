@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, 更新の保留, pendingupdate, 複数ステップの対話, 複数ステップの対話機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d21c96676eec1b8b1a1f4397880af937dd8f4b6
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119482"
+ms.locfileid: "7147132"
 ---
 # <a name="toast-with-pending-update-activation"></a><span data-ttu-id="f9e5f-103">更新の保留アクティブ化機能を備えたトースト</span><span class="sxs-lookup"><span data-stu-id="f9e5f-103">Toast with pending update activation</span></span>
 
