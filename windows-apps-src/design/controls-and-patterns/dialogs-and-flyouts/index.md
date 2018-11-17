@@ -14,19 +14,19 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ff66e988634cf1ba48809688ea6535e6e95b03
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6983967"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7173393"
 ---
-# <a name="dialogs-and-flyouts"></a><span data-ttu-id="6e00a-103">ダイアログとポップアップ</span><span class="sxs-lookup"><span data-stu-id="6e00a-103">Dialogs and flyouts</span></span>
+# <a name="dialogs-and-flyouts"></a><span data-ttu-id="5314b-103">ダイアログとポップアップ</span><span class="sxs-lookup"><span data-stu-id="5314b-103">Dialogs and flyouts</span></span>
 
 
 
-<span data-ttu-id="6e00a-104">ダイアログ ボックスとポップアップは、通知、許可、またはユーザーからの追加の情報を必要とする状況が発生したときに表示される一時的な UI 要素です。</span><span class="sxs-lookup"><span data-stu-id="6e00a-104">Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.</span></span>
+<span data-ttu-id="5314b-104">ダイアログ ボックスとポップアップは、通知、許可、またはユーザーからの追加の情報を必要とする状況が発生したときに表示される一時的な UI 要素です。</span><span class="sxs-lookup"><span data-stu-id="5314b-104">Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.</span></span>
 
-> <span data-ttu-id="6e00a-105">**重要な API**: [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)</span><span class="sxs-lookup"><span data-stu-id="6e00a-105">**Important APIs**: [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)</span></span>
+> <span data-ttu-id="5314b-105">**重要な API**: [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)</span><span class="sxs-lookup"><span data-stu-id="5314b-105">**Important APIs**: [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](/uwp/api/Windows.UI.Xaml.Controls.Flyout)</span></span>
 
 
 :::row:::
@@ -49,68 +49,68 @@ ms.locfileid: "6983967"
 :::row-end:::
 
 
-## <a name="is-this-the-right-control"></a><span data-ttu-id="6e00a-106">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="6e00a-106">Is this the right control?</span></span>
+## <a name="is-this-the-right-control"></a><span data-ttu-id="5314b-106">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="5314b-106">Is this the right control?</span></span>
 
-<span data-ttu-id="6e00a-107">ダイアログとポップアップにより、ユーザーが重要な情報を認識していることを確認できますが、ユーザー エクスペリエンスは中断されます。</span><span class="sxs-lookup"><span data-stu-id="6e00a-107">Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience.</span></span> <span data-ttu-id="6e00a-108">ダイアログはモーダル (ブロック) であるため、ユーザーは中断され、ダイアログの操作を行うまで他の操作を行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="6e00a-108">Because dialogs are modal (blocking), they interrupt users, preventing them from doing anything else until they interact with the dialog.</span></span> <span data-ttu-id="6e00a-109">ポップアップの煩わしさはダイアログより低くなりますが、多用すると、煩わしくなります。</span><span class="sxs-lookup"><span data-stu-id="6e00a-109">Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting.</span></span>
+<span data-ttu-id="5314b-107">ダイアログとポップアップにより、ユーザーが重要な情報を認識していることを確認できますが、ユーザー エクスペリエンスは中断されます。</span><span class="sxs-lookup"><span data-stu-id="5314b-107">Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience.</span></span> <span data-ttu-id="5314b-108">ダイアログはモーダル (ブロック) であるため、ユーザーは中断され、ダイアログの操作を行うまで他の操作を行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="5314b-108">Because dialogs are modal (blocking), they interrupt users, preventing them from doing anything else until they interact with the dialog.</span></span> <span data-ttu-id="5314b-109">ポップアップの煩わしさはダイアログより低くなりますが、多用すると、煩わしくなります。</span><span class="sxs-lookup"><span data-stu-id="5314b-109">Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting.</span></span>
 
-<span data-ttu-id="6e00a-110">ダイアログかポップアップを使用すると決めた場合には、どちらを選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e00a-110">Once you've determined that you want to use a dialog or flyout, you need to choose which one to use.</span></span>
+<span data-ttu-id="5314b-110">ダイアログかポップアップを使用すると決めた場合には、どちらを選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5314b-110">Once you've determined that you want to use a dialog or flyout, you need to choose which one to use.</span></span>
 
-<span data-ttu-id="6e00a-111">ダイアログは操作をブロックし、ポップアップはブロックしないため、ダイアログの使用は、ユーザーが他のすべてを中断して情報や回答の提供に集中する必要がある状況に限定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e00a-111">Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question.</span></span> <span data-ttu-id="6e00a-112">一方ポップアップは、ユーザーに情報を知らせるが、ユーザーがそれを無視してもよい場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="6e00a-112">Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.</span></span>
+<span data-ttu-id="5314b-111">ダイアログは操作をブロックし、ポップアップはブロックしないため、ダイアログの使用は、ユーザーが他のすべてを中断して情報や回答の提供に集中する必要がある状況に限定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5314b-111">Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question.</span></span> <span data-ttu-id="5314b-112">一方ポップアップは、ユーザーに情報を知らせるが、ユーザーがそれを無視してもよい場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="5314b-112">Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.</span></span>
 
 :::row:::
     :::column:::
-   <p><b><span data-ttu-id="6e00a-113">ダイアログの用途:</span><span class="sxs-lookup"><span data-stu-id="6e00a-113">Use a dialog for...</span></span></b> <br/>
+   <p><b><span data-ttu-id="5314b-113">ダイアログの用途:</span><span class="sxs-lookup"><span data-stu-id="5314b-113">Use a dialog for...</span></span></b> <br/>
 <ul>
-<li><span data-ttu-id="6e00a-114">続行前にユーザーが読んだり確認したりする<b>必要のある重要な</b>情報を表示する場合。</span><span class="sxs-lookup"><span data-stu-id="6e00a-114">Expressing important information that the user <b>must</b> read and acknowledge before proceeding.</span></span> <span data-ttu-id="6e00a-115">次のようなシナリオが考えられます。</span><span class="sxs-lookup"><span data-stu-id="6e00a-115">Examples include:</span></span>
+<li><span data-ttu-id="5314b-114">続行前にユーザーが読んだり確認したりする<b>必要のある重要な</b>情報を表示する場合。</span><span class="sxs-lookup"><span data-stu-id="5314b-114">Expressing important information that the user <b>must</b> read and acknowledge before proceeding.</span></span> <span data-ttu-id="5314b-115">次のようなシナリオが考えられます。</span><span class="sxs-lookup"><span data-stu-id="5314b-115">Examples include:</span></span>
 <ul>
-  <li><span data-ttu-id="6e00a-116">ユーザーのセキュリティが侵害される可能性がある場合</span><span class="sxs-lookup"><span data-stu-id="6e00a-116">When the user's security might be compromised</span></span></li>
-  <li><span data-ttu-id="6e00a-117">ユーザーが重要な資産に永続的な変更を加えようとしている場合</span><span class="sxs-lookup"><span data-stu-id="6e00a-117">When the user is about to permanently alter a valuable asset</span></span></li>
-  <li><span data-ttu-id="6e00a-118">ユーザーが重要な資産を削除しようとしている場合</span><span class="sxs-lookup"><span data-stu-id="6e00a-118">When the user is about to delete a valuable asset</span></span></li>
-  <li><span data-ttu-id="6e00a-119">アプリ内購入を確認する場合</span><span class="sxs-lookup"><span data-stu-id="6e00a-119">To confirm an in-app purchase</span></span></li>
+  <li><span data-ttu-id="5314b-116">ユーザーのセキュリティが侵害される可能性がある場合</span><span class="sxs-lookup"><span data-stu-id="5314b-116">When the user's security might be compromised</span></span></li>
+  <li><span data-ttu-id="5314b-117">ユーザーが重要な資産に永続的な変更を加えようとしている場合</span><span class="sxs-lookup"><span data-stu-id="5314b-117">When the user is about to permanently alter a valuable asset</span></span></li>
+  <li><span data-ttu-id="5314b-118">ユーザーが重要な資産を削除しようとしている場合</span><span class="sxs-lookup"><span data-stu-id="5314b-118">When the user is about to delete a valuable asset</span></span></li>
+  <li><span data-ttu-id="5314b-119">アプリ内購入を確認する場合</span><span class="sxs-lookup"><span data-stu-id="5314b-119">To confirm an in-app purchase</span></span></li>
 </ul>
 
 </li>
-<li><span data-ttu-id="6e00a-120">接続エラーなど、アプリ全体の状況に適用されるエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="6e00a-120">Error messages that apply to the overall app context, such as a connectivity error.</span></span></li>
-<li><span data-ttu-id="6e00a-121">アプリからユーザーにブロック質問を表示する必要がある場合 (アプリで自動的に選ぶことができない場合など)</span><span class="sxs-lookup"><span data-stu-id="6e00a-121">Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf.</span></span> <span data-ttu-id="6e00a-122">ブロック質問とは、無視したり先送りにしたりできない質問です。この質問では、ユーザーに明確な選択肢を提示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e00a-122">A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</span></span></li>
+<li><span data-ttu-id="5314b-120">接続エラーなど、アプリ全体の状況に適用されるエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="5314b-120">Error messages that apply to the overall app context, such as a connectivity error.</span></span></li>
+<li><span data-ttu-id="5314b-121">アプリからユーザーにブロック質問を表示する必要がある場合 (アプリで自動的に選ぶことができない場合など)</span><span class="sxs-lookup"><span data-stu-id="5314b-121">Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf.</span></span> <span data-ttu-id="5314b-122">ブロック質問とは、無視したり先送りにしたりできない質問です。この質問では、ユーザーに明確な選択肢を提示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5314b-122">A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</span></span></li>
 </ul>
 </p>
     :::column-end:::
     :::column:::
-   <p><b><span data-ttu-id="6e00a-123">ポップアップの用途:</span><span class="sxs-lookup"><span data-stu-id="6e00a-123">Use a flyout for...</span></span></b> <br/>
+   <p><b><span data-ttu-id="5314b-123">ポップアップの用途:</span><span class="sxs-lookup"><span data-stu-id="5314b-123">Use a flyout for...</span></span></b> <br/>
 <ul>
-<li><span data-ttu-id="6e00a-124">操作を完了する前に、必要な追加情報を収集する場合。</span><span class="sxs-lookup"><span data-stu-id="6e00a-124">Collecting additional information needed before an action can be completed.</span></span></li>
-<li><span data-ttu-id="6e00a-125">一部の場合のみに意味がある情報を表示する場合。</span><span class="sxs-lookup"><span data-stu-id="6e00a-125">Displaying info that's only relevant some of the time.</span></span> <span data-ttu-id="6e00a-126">たとえばフォト ギャラリー アプリで、ユーザーが画像のサムネイルをクリックした場合に、大きな画像を表示するためにポップアップを使用できます。</span><span class="sxs-lookup"><span data-stu-id="6e00a-126">For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</span></span></li>
-<li><span data-ttu-id="6e00a-127">詳細やページ上の項目の長い説明などの詳しい情報の表示。</span><span class="sxs-lookup"><span data-stu-id="6e00a-127">Displaying more information, such as details or longer descriptions of an item on the page.</span></span></li>
+<li><span data-ttu-id="5314b-124">操作を完了する前に、必要な追加情報を収集する場合。</span><span class="sxs-lookup"><span data-stu-id="5314b-124">Collecting additional information needed before an action can be completed.</span></span></li>
+<li><span data-ttu-id="5314b-125">一部の場合のみに意味がある情報を表示する場合。</span><span class="sxs-lookup"><span data-stu-id="5314b-125">Displaying info that's only relevant some of the time.</span></span> <span data-ttu-id="5314b-126">たとえばフォト ギャラリー アプリで、ユーザーが画像のサムネイルをクリックした場合に、大きな画像を表示するためにポップアップを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5314b-126">For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</span></span></li>
+<li><span data-ttu-id="5314b-127">詳細やページ上の項目の長い説明などの詳しい情報の表示。</span><span class="sxs-lookup"><span data-stu-id="5314b-127">Displaying more information, such as details or longer descriptions of an item on the page.</span></span></li>
 </ul></p>
     :::column-end:::
 :::row-end:::
 
 
-## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a><span data-ttu-id="6e00a-128">ダイアログとポップアップを使用しないようにする方法</span><span class="sxs-lookup"><span data-stu-id="6e00a-128">Ways to avoid using dialogs and flyouts</span></span>
+## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a><span data-ttu-id="5314b-128">ダイアログとポップアップを使用しないようにする方法</span><span class="sxs-lookup"><span data-stu-id="5314b-128">Ways to avoid using dialogs and flyouts</span></span>
 
-<span data-ttu-id="6e00a-129">伝える情報の重要度が、ユーザーを中断させる必要があるものかどうかを、よく検討する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6e00a-129">Consider the importance of the information you want to share: is it important enough to interrupt the user?</span></span> <span data-ttu-id="6e00a-130">また、情報の表示頻度を検討し、数分ごとにダイアログや通知を表示している場合には、代わりにプライマリ UI でこの情報用の領域を割り当てることを検討します。</span><span class="sxs-lookup"><span data-stu-id="6e00a-130">Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead.</span></span> <span data-ttu-id="6e00a-131">たとえばチャット クライアントで、友人がログインするたびにポップアップを表示させるよりも、その時点でオンラインである友人の一覧を表示し、ログインが行われたときには強調表示させるなどの方法を検討します。</span><span class="sxs-lookup"><span data-stu-id="6e00a-131">For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on.</span></span>
+<span data-ttu-id="5314b-129">伝える情報の重要度が、ユーザーを中断させる必要があるものかどうかを、よく検討する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5314b-129">Consider the importance of the information you want to share: is it important enough to interrupt the user?</span></span> <span data-ttu-id="5314b-130">また、情報の表示頻度を検討し、数分ごとにダイアログや通知を表示している場合には、代わりにプライマリ UI でこの情報用の領域を割り当てることを検討します。</span><span class="sxs-lookup"><span data-stu-id="5314b-130">Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead.</span></span> <span data-ttu-id="5314b-131">たとえばチャット クライアントで、友人がログインするたびにポップアップを表示させるよりも、その時点でオンラインである友人の一覧を表示し、ログインが行われたときには強調表示させるなどの方法を検討します。</span><span class="sxs-lookup"><span data-stu-id="5314b-131">For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on.</span></span>
 
-<span data-ttu-id="6e00a-132">ダイアログは、アクション (ファイルの削除など) を実行する前に確認するために、よく使用されます。</span><span class="sxs-lookup"><span data-stu-id="6e00a-132">Dialogs are frequently used to confirm an action (such as deleting a file) before executing it.</span></span> <span data-ttu-id="6e00a-133">ユーザーが特定の操作を頻繁に実行することが想定される場合には、ユーザーがアクションを毎回確認する必要があるようにするよりも、誤って操作した場合に、ユーザーが元に戻せる方法を提供することを検討します。</span><span class="sxs-lookup"><span data-stu-id="6e00a-133">If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time.</span></span>
+<span data-ttu-id="5314b-132">ダイアログは、アクション (ファイルの削除など) を実行する前に確認するために、よく使用されます。</span><span class="sxs-lookup"><span data-stu-id="5314b-132">Dialogs are frequently used to confirm an action (such as deleting a file) before executing it.</span></span> <span data-ttu-id="5314b-133">ユーザーが特定の操作を頻繁に実行することが想定される場合には、ユーザーがアクションを毎回確認する必要があるようにするよりも、誤って操作した場合に、ユーザーが元に戻せる方法を提供することを検討します。</span><span class="sxs-lookup"><span data-stu-id="5314b-133">If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time.</span></span>
 
-## <a name="how-to-create-a-dialog"></a><span data-ttu-id="6e00a-134">ダイアログを作成する方法</span><span class="sxs-lookup"><span data-stu-id="6e00a-134">How to create a dialog</span></span>
+## <a name="how-to-create-a-dialog"></a><span data-ttu-id="5314b-134">ダイアログを作成する方法</span><span class="sxs-lookup"><span data-stu-id="5314b-134">How to create a dialog</span></span>
 
-<span data-ttu-id="6e00a-135">[ダイアログ ボックスの記事](dialogs.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6e00a-135">See the [Dialogs article](dialogs.md).</span></span> 
+<span data-ttu-id="5314b-135">[ダイアログ ボックスの記事](dialogs.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5314b-135">See the [Dialogs article](dialogs.md).</span></span> 
 
-## <a name="how-to-create-a-flyout"></a><span data-ttu-id="6e00a-136">ポップアップを作成する方法</span><span class="sxs-lookup"><span data-stu-id="6e00a-136">How to create a flyout</span></span>
+## <a name="how-to-create-a-flyout"></a><span data-ttu-id="5314b-136">ポップアップを作成する方法</span><span class="sxs-lookup"><span data-stu-id="5314b-136">How to create a flyout</span></span>
 
-<span data-ttu-id="6e00a-137">[ポップアップの記事](flyouts.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6e00a-137">See the [Flyout article](flyouts.md).</span></span> 
+<span data-ttu-id="5314b-137">[ポップアップの記事](flyouts.md)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="5314b-137">See the [Flyout article](flyouts.md).</span></span> 
 
-## <a name="examples"></a><span data-ttu-id="6e00a-138">例</span><span class="sxs-lookup"><span data-stu-id="6e00a-138">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="5314b-138">例</span><span class="sxs-lookup"><span data-stu-id="5314b-138">Examples</span></span>
 
 <table>
-<th align="left"><span data-ttu-id="6e00a-139">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="6e00a-139">XAML Controls Gallery</span></span><th>
+<th align="left"><span data-ttu-id="5314b-139">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="5314b-139">XAML Controls Gallery</span></span><th>
 <tr>
 <td><img src="../images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><span data-ttu-id="6e00a-140"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</span><span class="sxs-lookup"><span data-stu-id="6e00a-140">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</span></span></p>
+    <p><span data-ttu-id="5314b-140"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</span><span class="sxs-lookup"><span data-stu-id="5314b-140">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to open the app and see the <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> or <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> in action.</span></span></p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="6e00a-141">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="6e00a-141">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="6e00a-142">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="6e00a-142">Get the source code (GitHub)</span></span></a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="5314b-141">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="5314b-141">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="5314b-142">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="5314b-142">Get the source code (GitHub)</span></span></a></li>
     </ul>
 </td>
 </tr>
