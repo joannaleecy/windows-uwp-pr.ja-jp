@@ -12,12 +12,13 @@ design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eef1616625ca30b1887e7f317c59f7a75abfeea
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: d8164571644c4e8ef84cae896fb7dce2265219e5
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6985273"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7165352"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 
