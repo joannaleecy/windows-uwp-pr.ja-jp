@@ -10,15 +10,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3d7ac0204f9a87f60e6437738aae66f4a6d67b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6835664"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7161957"
 ---
 # <a name="eds-authorization"></a>EDS 承認
  
-  * [概要](#ID4EN)
+  * [はじめに](#ID4EN)
   * [承認プロセス](#ID4EFB)
   * [3.0 トークン: マルチ ユーザーと単一のユーザー](#ID4EEC)
   * [EDS は複数のユーザーをサポートしますか。](#ID4EYC)
@@ -26,7 +26,7 @@ ms.locfileid: "6835664"
 <a id="ID4EN"></a>
 
  
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
  
 エンターテイメント探索サービス (EDS) 3.1 は、匿名トラフィックをサポートしていません。 認証は、すべての要求を EDS 必要があります。 EDS には、呼び出し元がクライアントで正しく認証から、XToken が必要です。 これらのトークンは、XSTS によって生成し、さまざまな Xbox 認証サービス (XAS) を通じて取得できます。 デバイス、ユーザーとタイトルはすべて、トークンの id を定義する別の認証サービスがあります。
  

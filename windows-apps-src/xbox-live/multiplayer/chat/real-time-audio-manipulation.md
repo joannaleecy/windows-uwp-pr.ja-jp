@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信, バッファー操作, オーディオ操作
 ms.localizationpriority: medium
 ms.openlocfilehash: cd0a88c5d3ae50cb7dd86585507c951cc061503d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6279869"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7165593"
 ---
 # <a name="real-time-audio-manipulation"></a>リアルタイム オーディオ操作
 
@@ -38,7 +38,7 @@ ms.locfileid: "6279869"
 
 ## <a name="processing-audio-stream-state-changes"></a>オーディオ ストリームの状態の変化の処理
 
-ゲーム チャット 2 を通じてオーディオ ストリームの状態に更新プログラムを提供する`game_chat_stream_state_change`構造体。 これらの更新には、更新されたストリームとその更新内容に関する情報が格納されています。 `chat_manager::start_processing_stream_state_changes()` および `chat_manager::finish_processing_stream_state_changes()` のメソッド ペアを呼び出すことにより、これらの更新をポーリングできます。 このメソッド ペアは、キューに入れられた最新のオーディオ ストリームの状態の更新すべてを `game_chat_stream_state_change` 構造体ポインターの配列として提供します。 アプリは、配列を反復処理し、各更新を適切に処理する必要があります。 1 回使用可能なすべて`game_chat_stream_state_change`更新プログラムが処理された、を通じてゲーム チャット 2 をもう一度その配列を渡す必要があります`chat_manager::finish_processing_stream_state_changes()`します。 以下に例を示します。
+ゲーム チャット 2 を通じてオーディオ ストリームの状態に更新プログラムを提供する`game_chat_stream_state_change`構造体。 これらの更新には、更新されたストリームとその更新内容に関する情報が格納されています。 `chat_manager::start_processing_stream_state_changes()` および `chat_manager::finish_processing_stream_state_changes()` のメソッド ペアを呼び出すことにより、これらの更新をポーリングできます。 このメソッド ペアは、キューに入れられた最新のオーディオ ストリームの状態の更新すべてを `game_chat_stream_state_change` 構造体ポインターの配列として提供します。 アプリは、配列を反復処理し、各更新を適切に処理する必要があります。 1 回使用可能なすべて`game_chat_stream_state_change`更新プログラムが処理された、を通じてゲーム チャット 2 をもう一度その配列を渡す必要があります`chat_manager::finish_processing_stream_state_changes()`します。 例:
 
 ```cpp
 uint32_t streamStateChangeCount;

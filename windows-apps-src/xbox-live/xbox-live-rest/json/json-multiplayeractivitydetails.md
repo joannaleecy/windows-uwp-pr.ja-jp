@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a23b4f984bc7edef77af7e020b62fcc7d8fcbf9f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267893"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7169564"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。 
@@ -36,7 +36,7 @@ MultiplayerActivityDetails JSON オブジェクトでは、次の仕様があり
 | TitleId| 32 ビットの符号なし整数| タイトル ID は、アクティビティに参加するために起動する必要があります。| 
 | 表示| MultiplayerSessionVisibility| セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。| 
 | による| MultiplayerSessionJoinRestriction| セッションの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。 表示のフィールドが「開く」に設定されている場合、この制限が適用されます。| 
-| クローズ済み| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
+| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
 | OwnerXboxUserId| 64 ビットの符号なし整数| アクティビティを所有しているメンバーの Xbox ユーザー ID。| 
 | MaxMembersCount| 32 ビットの符号なし整数| スロットの合計数。| 
 | MembersCount| 32 ビットの符号なし整数| スロットを占有の数。| 

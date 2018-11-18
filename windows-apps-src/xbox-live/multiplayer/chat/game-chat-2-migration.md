@@ -7,12 +7,12 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 467e4ca69550e6cebdd0b20711dd0e7a6abd305d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 2c00ade176d4ee9ec405b5554ddd311bf81abed7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6262715"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7147771"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
@@ -411,7 +411,7 @@ switch (chatUser->chat_indicator())
 
 ### <a name="game-chat"></a>ゲーム チャット
 
-ゲーム チャットは、`RestrictionMode` プロパティを通じて、権限とプライバシーの情報を公開していました。 これは、`GameChatUser::RestrictionMode` を調べることによって取得できます。
+ゲーム チャットにを通じて、権限とプライバシーの情報が公開されている、`RestrictionMode`プロパティ。 これは、`GameChatUser::RestrictionMode` を調べることによって取得できます。
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 

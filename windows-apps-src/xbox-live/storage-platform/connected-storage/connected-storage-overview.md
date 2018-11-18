@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: e397f2f07bc62082cd542387fc1603e17be38694
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267760"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7148895"
 ---
 # <a name="connected-storage"></a>接続ストレージ
 接続ストレージは、複数のデバイス間でローミングされる必要があるゲームプレイ データや他の関連するアプリの状態データをタイトルが保存できるように設計されています。 接続ストレージ API を使うと、Xbox One とユニバーサル Windows プラットフォーム (UWP) のタイトルが、ローカルに保存されているタイトル データを保存、読み込み、削除できるようになるだけでなく、Xbox One または UWP タイトルがインターネットに接続されている場合は常にクラウドと同期されます。 保存されたデータは、同期されるとタイトルを実行する他のデバイスで利用できるようになります。 外出中でも最良の形でゲームをプレイできるように、開発者にはタイトルの状態をできる限り正確に保存することをお勧めします。 接続ストレージを利用すると、自宅でゲームのプレイを進めた後、同じゲームをサポートする他のデバイスで、ちょうどゲームを中断した場所から再開できるようになります。
