@@ -10,24 +10,24 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d757c2d5fc985e4944f11aaaaccf53fabb0401
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6208153"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155666"
 ---
-# <a name="gameclipuritype-enumeration"></a><span data-ttu-id="876a8-104">GameClipUriType 列挙型</span><span class="sxs-lookup"><span data-stu-id="876a8-104">GameClipUriType Enumeration</span></span>
-<span data-ttu-id="876a8-105">GameClipUriType 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="876a8-105">Details the GameClipUriType enumeration.</span></span> 
+# <a name="gameclipuritype-enumeration"></a><span data-ttu-id="90566-104">GameClipUriType 列挙型</span><span class="sxs-lookup"><span data-stu-id="90566-104">GameClipUriType Enumeration</span></span>
+<span data-ttu-id="90566-105">GameClipUriType 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="90566-105">Details the GameClipUriType enumeration.</span></span> 
 <a id="ID4ET"></a>
 
  
-## <a name="gameclipuritype"></a><span data-ttu-id="876a8-106">GameClipUriType</span><span class="sxs-lookup"><span data-stu-id="876a8-106">GameClipUriType</span></span>
+## <a name="gameclipuritype"></a><span data-ttu-id="90566-106">GameClipUriType</span><span class="sxs-lookup"><span data-stu-id="90566-106">GameClipUriType</span></span>
  
-| <b><span data-ttu-id="876a8-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="876a8-107">Enumerator</span></span></b>| <b><span data-ttu-id="876a8-108">説明</span><span class="sxs-lookup"><span data-stu-id="876a8-108">Description</span></span></b>| 
+| <b><span data-ttu-id="90566-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="90566-107">Enumerator</span></span></b>| <b><span data-ttu-id="90566-108">説明</span><span class="sxs-lookup"><span data-stu-id="90566-108">Description</span></span></b>| 
 | --- | --- | 
-| <span data-ttu-id="876a8-109">None</span><span class="sxs-lookup"><span data-stu-id="876a8-109">None</span></span>| <span data-ttu-id="876a8-110">ゲーム クリップ URI の種類が不明または設定されていません。</span><span class="sxs-lookup"><span data-stu-id="876a8-110">Game clip URI type is not known or not set.</span></span>| 
-| <span data-ttu-id="876a8-111">翻訳元</span><span class="sxs-lookup"><span data-stu-id="876a8-111">Original</span></span>| <span data-ttu-id="876a8-112">ゲーム クリップ URI は、未処理の形式での元のゲーム クリップの場所です。</span><span class="sxs-lookup"><span data-stu-id="876a8-112">Game clip URI is the location of the original game clip in unprocessed form.</span></span>| 
-| <span data-ttu-id="876a8-113">ダウンロード</span><span class="sxs-lookup"><span data-stu-id="876a8-113">Download</span></span>| <span data-ttu-id="876a8-114">ゲーム クリップ URI は、ダウンロード可能なクリップの場所です。</span><span class="sxs-lookup"><span data-stu-id="876a8-114">Game clip URI is the location of the clip available for download.</span></span>| 
-| <span data-ttu-id="876a8-115">SmoothStreaming</span><span class="sxs-lookup"><span data-stu-id="876a8-115">SmoothStreaming</span></span>| <span data-ttu-id="876a8-116">ゲーム クリップ URI は、IIS スムーズ ストリーミング URL (マニフェスト ポインター) です。</span><span class="sxs-lookup"><span data-stu-id="876a8-116">Game clip URI is the IIS Smooth Streaming URL (manifest pointer).</span></span>| 
-| <span data-ttu-id="876a8-117">Ahls</span><span class="sxs-lookup"><span data-stu-id="876a8-117">Ahls</span></span>| <span data-ttu-id="876a8-118">ゲーム クリップの URL は、Apple の Http ライブ ストリーミング URL です。</span><span class="sxs-lookup"><span data-stu-id="876a8-118">Game clip URL is the Apple Http Live Streaming URL.</span></span>| 
+| <span data-ttu-id="90566-109">None</span><span class="sxs-lookup"><span data-stu-id="90566-109">None</span></span>| <span data-ttu-id="90566-110">ゲーム クリップ URI の種類が不明または設定されていません。</span><span class="sxs-lookup"><span data-stu-id="90566-110">Game clip URI type is not known or not set.</span></span>| 
+| <span data-ttu-id="90566-111">翻訳元</span><span class="sxs-lookup"><span data-stu-id="90566-111">Original</span></span>| <span data-ttu-id="90566-112">ゲーム クリップ URI は、未処理の形式での元のゲーム クリップの場所です。</span><span class="sxs-lookup"><span data-stu-id="90566-112">Game clip URI is the location of the original game clip in unprocessed form.</span></span>| 
+| <span data-ttu-id="90566-113">ダウンロード</span><span class="sxs-lookup"><span data-stu-id="90566-113">Download</span></span>| <span data-ttu-id="90566-114">ゲーム クリップ URI は、ダウンロード可能なクリップの場所です。</span><span class="sxs-lookup"><span data-stu-id="90566-114">Game clip URI is the location of the clip available for download.</span></span>| 
+| <span data-ttu-id="90566-115">SmoothStreaming</span><span class="sxs-lookup"><span data-stu-id="90566-115">SmoothStreaming</span></span>| <span data-ttu-id="90566-116">ゲーム クリップ URI は、IIS スムーズ ストリーミング URL (マニフェスト ポインター) です。</span><span class="sxs-lookup"><span data-stu-id="90566-116">Game clip URI is the IIS Smooth Streaming URL (manifest pointer).</span></span>| 
+| <span data-ttu-id="90566-117">Ahls</span><span class="sxs-lookup"><span data-stu-id="90566-117">Ahls</span></span>| <span data-ttu-id="90566-118">ゲーム クリップの URL は、Apple の Http ライブ ストリーミング URL です。</span><span class="sxs-lookup"><span data-stu-id="90566-118">Game clip URL is the Apple Http Live Streaming URL.</span></span>| 
   

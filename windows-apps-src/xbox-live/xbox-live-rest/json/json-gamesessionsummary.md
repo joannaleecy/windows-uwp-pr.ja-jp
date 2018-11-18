@@ -10,34 +10,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e7f91062ca9bbc19bd56cfc2773aece95e7fc30
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6253921"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163628"
 ---
-# <a name="gamesessionsummary-json"></a><span data-ttu-id="38321-104">GameSessionSummary (JSON)</span><span class="sxs-lookup"><span data-stu-id="38321-104">GameSessionSummary (JSON)</span></span>
-<span data-ttu-id="38321-105">ゲーム セッションの集計データを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="38321-105">A JSON object representing summary data for a game session.</span></span> 
+# <a name="gamesessionsummary-json"></a><span data-ttu-id="55f76-104">GameSessionSummary (JSON)</span><span class="sxs-lookup"><span data-stu-id="55f76-104">GameSessionSummary (JSON)</span></span>
+<span data-ttu-id="55f76-105">ゲーム セッションの集計データを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="55f76-105">A JSON object representing summary data for a game session.</span></span> 
 <a id="ID4EN"></a>
 
   
  
-<span data-ttu-id="38321-106">GameSessionSummary JSON オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="38321-106">The GameSessionSummary JSON object has the following specification.</span></span>
+<span data-ttu-id="55f76-106">GameSessionSummary JSON オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="55f76-106">The GameSessionSummary JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="38321-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="38321-107">Member</span></span>| <span data-ttu-id="38321-108">種類</span><span class="sxs-lookup"><span data-stu-id="38321-108">Type</span></span>| <span data-ttu-id="38321-109">説明</span><span class="sxs-lookup"><span data-stu-id="38321-109">Description</span></span>| 
+| <span data-ttu-id="55f76-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="55f76-107">Member</span></span>| <span data-ttu-id="55f76-108">種類</span><span class="sxs-lookup"><span data-stu-id="55f76-108">Type</span></span>| <span data-ttu-id="55f76-109">説明</span><span class="sxs-lookup"><span data-stu-id="55f76-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="38321-110">creationTime</span><span class="sxs-lookup"><span data-stu-id="38321-110">creationTime</span></span>| <span data-ttu-id="38321-111">DateTime</span><span class="sxs-lookup"><span data-stu-id="38321-111">DateTime</span></span>| <span data-ttu-id="38321-112">日付と時刻とき、セッションが作成された、UTC でします。</span><span class="sxs-lookup"><span data-stu-id="38321-112">The date and time when the session was created, in UTC.</span></span> | 
-| <span data-ttu-id="38321-113">customData</span><span class="sxs-lookup"><span data-stu-id="38321-113">customData</span></span>| <span data-ttu-id="38321-114">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="38321-114">array of 8-bit unsigned integers</span></span>| <span data-ttu-id="38321-115">ゲーム固有のセッション データの 1024 バイトです。</span><span class="sxs-lookup"><span data-stu-id="38321-115">1024 bytes of game-specific session data.</span></span> <span data-ttu-id="38321-116">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="38321-116">This value is opaque to the server.</span></span> | 
-| <span data-ttu-id="38321-117">displayName</span><span class="sxs-lookup"><span data-stu-id="38321-117">displayName</span></span>| <span data-ttu-id="38321-118">string</span><span class="sxs-lookup"><span data-stu-id="38321-118">string</span></span>| <span data-ttu-id="38321-119">表示名ゲームのセッション 128 文字の最大長を持つ。</span><span class="sxs-lookup"><span data-stu-id="38321-119">The display name of the game session, with a maximum length of 128 characters.</span></span> <span data-ttu-id="38321-120">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="38321-120">This value is opaque to the server.</span></span> | 
-| <span data-ttu-id="38321-121">hasEnded</span><span class="sxs-lookup"><span data-stu-id="38321-121">hasEnded</span></span>| <span data-ttu-id="38321-122">ブール値</span><span class="sxs-lookup"><span data-stu-id="38321-122">Boolean value</span></span>| <span data-ttu-id="38321-123">セッションが終了した場合は true、それ以外の場合。</span><span class="sxs-lookup"><span data-stu-id="38321-123">True if the session has ended, and false otherwise.</span></span> <span data-ttu-id="38321-124">セッションへの提出からさらにデータを妨げて true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。</span><span class="sxs-lookup"><span data-stu-id="38321-124">Setting this field to true marks the game session as read-only, preventing further data from being submitted to the session.</span></span> | 
-| <span data-ttu-id="38321-125">sessionId</span><span class="sxs-lookup"><span data-stu-id="38321-125">sessionId</span></span>| <span data-ttu-id="38321-126">文字列セッション id。</span><span class="sxs-lookup"><span data-stu-id="38321-126">string The session ID.</span></span> | 
-| <span data-ttu-id="38321-127">titleId</span><span class="sxs-lookup"><span data-stu-id="38321-127">titleId</span></span>| <span data-ttu-id="38321-128">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="38321-128">32-bit unsigned integer</span></span>| <span data-ttu-id="38321-129">ゲーム セッションの作成、タイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="38321-129">The ID of the title creating the game session.</span></span>| 
-| <span data-ttu-id="38321-130">variant</span><span class="sxs-lookup"><span data-stu-id="38321-130">variant</span></span>| <span data-ttu-id="38321-131">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="38321-131">32-bit signed integer</span></span>| <span data-ttu-id="38321-132">ゲームのバリアントです。</span><span class="sxs-lookup"><span data-stu-id="38321-132">The game variant.</span></span> <span data-ttu-id="38321-133">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="38321-133">This value is opaque to the server.</span></span>| 
+| <span data-ttu-id="55f76-110">creationTime</span><span class="sxs-lookup"><span data-stu-id="55f76-110">creationTime</span></span>| <span data-ttu-id="55f76-111">DateTime</span><span class="sxs-lookup"><span data-stu-id="55f76-111">DateTime</span></span>| <span data-ttu-id="55f76-112">日付と時刻とき、セッションが作成された、UTC でします。</span><span class="sxs-lookup"><span data-stu-id="55f76-112">The date and time when the session was created, in UTC.</span></span> | 
+| <span data-ttu-id="55f76-113">customData</span><span class="sxs-lookup"><span data-stu-id="55f76-113">customData</span></span>| <span data-ttu-id="55f76-114">8 ビットの符号なし整数の配列</span><span class="sxs-lookup"><span data-stu-id="55f76-114">array of 8-bit unsigned integers</span></span>| <span data-ttu-id="55f76-115">ゲーム固有のセッション データの 1024 バイトです。</span><span class="sxs-lookup"><span data-stu-id="55f76-115">1024 bytes of game-specific session data.</span></span> <span data-ttu-id="55f76-116">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="55f76-116">This value is opaque to the server.</span></span> | 
+| <span data-ttu-id="55f76-117">displayName</span><span class="sxs-lookup"><span data-stu-id="55f76-117">displayName</span></span>| <span data-ttu-id="55f76-118">string</span><span class="sxs-lookup"><span data-stu-id="55f76-118">string</span></span>| <span data-ttu-id="55f76-119">表示名ゲームのセッション 128 文字の最大長を持つ。</span><span class="sxs-lookup"><span data-stu-id="55f76-119">The display name of the game session, with a maximum length of 128 characters.</span></span> <span data-ttu-id="55f76-120">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="55f76-120">This value is opaque to the server.</span></span> | 
+| <span data-ttu-id="55f76-121">hasEnded</span><span class="sxs-lookup"><span data-stu-id="55f76-121">hasEnded</span></span>| <span data-ttu-id="55f76-122">ブール値</span><span class="sxs-lookup"><span data-stu-id="55f76-122">Boolean value</span></span>| <span data-ttu-id="55f76-123">セッションが終了した場合は true、それ以外の場合。</span><span class="sxs-lookup"><span data-stu-id="55f76-123">True if the session has ended, and false otherwise.</span></span> <span data-ttu-id="55f76-124">セッションへの提出からさらにデータを妨げて true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。</span><span class="sxs-lookup"><span data-stu-id="55f76-124">Setting this field to true marks the game session as read-only, preventing further data from being submitted to the session.</span></span> | 
+| <span data-ttu-id="55f76-125">sessionId</span><span class="sxs-lookup"><span data-stu-id="55f76-125">sessionId</span></span>| <span data-ttu-id="55f76-126">文字列セッション id。</span><span class="sxs-lookup"><span data-stu-id="55f76-126">string The session ID.</span></span> | 
+| <span data-ttu-id="55f76-127">titleId</span><span class="sxs-lookup"><span data-stu-id="55f76-127">titleId</span></span>| <span data-ttu-id="55f76-128">32 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="55f76-128">32-bit unsigned integer</span></span>| <span data-ttu-id="55f76-129">ゲーム セッションの作成、タイトルの ID です。</span><span class="sxs-lookup"><span data-stu-id="55f76-129">The ID of the title creating the game session.</span></span>| 
+| <span data-ttu-id="55f76-130">variant</span><span class="sxs-lookup"><span data-stu-id="55f76-130">variant</span></span>| <span data-ttu-id="55f76-131">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="55f76-131">32-bit signed integer</span></span>| <span data-ttu-id="55f76-132">ゲームのバリアントです。</span><span class="sxs-lookup"><span data-stu-id="55f76-132">The game variant.</span></span> <span data-ttu-id="55f76-133">この値は、サーバーに不透明です。</span><span class="sxs-lookup"><span data-stu-id="55f76-133">This value is opaque to the server.</span></span>| 
   
 <a id="ID4EID"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="38321-134">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="38321-134">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="55f76-134">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="55f76-134">Sample JSON syntax</span></span>
  
 
 ```json
@@ -57,21 +57,21 @@ ms.locfileid: "6253921"
 <a id="ID4ERD"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="38321-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="38321-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="55f76-135">関連項目</span><span class="sxs-lookup"><span data-stu-id="55f76-135">See also</span></span>
  
 <a id="ID4ETD"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="38321-136">Parent</span><span class="sxs-lookup"><span data-stu-id="38321-136">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="55f76-136">Parent</span><span class="sxs-lookup"><span data-stu-id="55f76-136">Parent</span></span> 
 
-[<span data-ttu-id="38321-137">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="38321-137">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="55f76-137">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="55f76-137">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="38321-138">リファレンス</span><span class="sxs-lookup"><span data-stu-id="38321-138">Reference</span></span> 
+##### <a name="reference"></a><span data-ttu-id="55f76-138">リファレンス</span><span class="sxs-lookup"><span data-stu-id="55f76-138">Reference</span></span> 
 
-[<span data-ttu-id="38321-139">GameSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="38321-139">GameSession (JSON)</span></span>](json-gamesession.md)
+[<span data-ttu-id="55f76-139">GameSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="55f76-139">GameSession (JSON)</span></span>](json-gamesession.md)
 
    

@@ -9,74 +9,74 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e659a9f41b43781ff40ac5449155fdf179b93f
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192735"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7149042"
 ---
-# <a name="xbox-live-title-storage"></a><span data-ttu-id="667ad-104">Xbox Live タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="667ad-104">Xbox Live Title Storage</span></span>
+# <a name="xbox-live-title-storage"></a><span data-ttu-id="64d1a-104">Xbox Live タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="64d1a-104">Xbox Live Title Storage</span></span>
 
-<span data-ttu-id="667ad-105">Xbox Live タイトル ストレージ サービスでは、タイトルのゲーム情報をクラウドに格納できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-105">The Xbox Live title storage service provides a way to store game information for a title in the cloud.</span></span> <span data-ttu-id="667ad-106">どのプラットフォームで実行されるゲームでも、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-106">Games running on all platforms can use this service.</span></span>
+<span data-ttu-id="64d1a-105">Xbox Live タイトル ストレージ サービスでは、タイトルのゲーム情報をクラウドに格納できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-105">The Xbox Live title storage service provides a way to store game information for a title in the cloud.</span></span> <span data-ttu-id="64d1a-106">どのプラットフォームで実行されるゲームでも、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-106">Games running on all platforms can use this service.</span></span>
 
 <a name="ID4EW"></a>
 
-## <a name="features-of-xbox-live-title-storage"></a><span data-ttu-id="667ad-107">Xbox Live タイトル ストレージの機能</span><span class="sxs-lookup"><span data-stu-id="667ad-107">Features of Xbox Live title storage</span></span>
+## <a name="features-of-xbox-live-title-storage"></a><span data-ttu-id="64d1a-107">Xbox Live タイトル ストレージの機能</span><span class="sxs-lookup"><span data-stu-id="64d1a-107">Features of Xbox Live title storage</span></span>
 
-<span data-ttu-id="667ad-108">Xbox Live タイトル ストレージの高レベルの機能としては、次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="667ad-108">Some of the high-level features of Xbox Live title storage include, but are not limited to:</span></span>
+<span data-ttu-id="64d1a-108">Xbox Live タイトル ストレージの高レベルの機能としては、次のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-108">Some of the high-level features of Xbox Live title storage include, but are not limited to:</span></span>
 
--   <span data-ttu-id="667ad-109">ユーザー間、タイトル間、およびさまざまなプラットフォーム間で共有できます</span><span class="sxs-lookup"><span data-stu-id="667ad-109">Can be shared across users, titles, and various platforms</span></span>
--   <span data-ttu-id="667ad-110">JSON、バイナリ、および構成ファイルをサポートします</span><span class="sxs-lookup"><span data-stu-id="667ad-110">Supports JSON, binary, and configuration files</span></span>
+-   <span data-ttu-id="64d1a-109">ユーザー間、タイトル間、およびさまざまなプラットフォーム間で共有できます</span><span class="sxs-lookup"><span data-stu-id="64d1a-109">Can be shared across users, titles, and various platforms</span></span>
+-   <span data-ttu-id="64d1a-110">JSON、バイナリ、および構成ファイルをサポートします</span><span class="sxs-lookup"><span data-stu-id="64d1a-110">Supports JSON, binary, and configuration files</span></span>
 
-<span data-ttu-id="667ad-111">以下のセクションでは、Xbox Live タイトル ストレージの主要な機能について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="667ad-111">The main features of Xbox Live title storage are explained in more detail in the following sections:</span></span>
+<span data-ttu-id="64d1a-111">以下のセクションでは、Xbox Live タイトル ストレージの主要な機能について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-111">The main features of Xbox Live title storage are explained in more detail in the following sections:</span></span>
 
--   [<span data-ttu-id="667ad-112">ストレージ タイプ</span><span class="sxs-lookup"><span data-stu-id="667ad-112">Types of storage</span></span>](#ID4ETB)
--   [<span data-ttu-id="667ad-113">データの種類</span><span class="sxs-lookup"><span data-stu-id="667ad-113">Types of data</span></span>](#ID4ECF)
--   [<span data-ttu-id="667ad-114">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="667ad-114">Title storage URIs</span></span>](#ID4EBEAC)
--   [<span data-ttu-id="667ad-115">調整の制限</span><span class="sxs-lookup"><span data-stu-id="667ad-115">Throttle Limit</span></span>](#ID4ETEAC)
+-   [<span data-ttu-id="64d1a-112">ストレージ タイプ</span><span class="sxs-lookup"><span data-stu-id="64d1a-112">Types of storage</span></span>](#ID4ETB)
+-   [<span data-ttu-id="64d1a-113">データの種類</span><span class="sxs-lookup"><span data-stu-id="64d1a-113">Types of data</span></span>](#ID4ECF)
+-   [<span data-ttu-id="64d1a-114">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="64d1a-114">Title storage URIs</span></span>](#ID4EBEAC)
+-   [<span data-ttu-id="64d1a-115">調整の制限</span><span class="sxs-lookup"><span data-stu-id="64d1a-115">Throttle Limit</span></span>](#ID4ETEAC)
 
 <a name="ID4ETB"></a>
 
-<span data-ttu-id="667ad-116">対象パートナーおよび ID@Xbox メンバー向け:</span><span class="sxs-lookup"><span data-stu-id="667ad-116">For managed partners and ID@Xbox members:</span></span>
+<span data-ttu-id="64d1a-116">対象パートナーおよび ID@Xbox メンバー向け:</span><span class="sxs-lookup"><span data-stu-id="64d1a-116">For managed partners and ID@Xbox members:</span></span>
 
-| <span data-ttu-id="667ad-117">記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="667ad-117">Storage Type</span></span>       | <span data-ttu-id="667ad-118">クォータ (管理対象 Partners/ID@Xbox)</span><span class="sxs-lookup"><span data-stu-id="667ad-118">Quota (Managed Partners/ID@Xbox)</span></span> | <span data-ttu-id="667ad-119">クォータ (Xbox Live クリエーターズ プログラム)</span><span class="sxs-lookup"><span data-stu-id="667ad-119">Quota (Xbox Live Creators Program)</span></span> |  <span data-ttu-id="667ad-120">目的</span><span class="sxs-lookup"><span data-stu-id="667ad-120">Purpose</span></span>                                                                                                                                                      | <span data-ttu-id="667ad-121">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="667ad-121">Platforms</span></span>                                                                                           | <span data-ttu-id="667ad-122">ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-122">Users</span></span>                                       |
+| <span data-ttu-id="64d1a-117">記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="64d1a-117">Storage Type</span></span>       | <span data-ttu-id="64d1a-118">クォータ (管理対象 Partners/ID@Xbox)</span><span class="sxs-lookup"><span data-stu-id="64d1a-118">Quota (Managed Partners/ID@Xbox)</span></span> | <span data-ttu-id="64d1a-119">クォータ (Xbox Live クリエーターズ プログラム)</span><span class="sxs-lookup"><span data-stu-id="64d1a-119">Quota (Xbox Live Creators Program)</span></span> |  <span data-ttu-id="64d1a-120">目的</span><span class="sxs-lookup"><span data-stu-id="64d1a-120">Purpose</span></span>                                                                                                                                                      | <span data-ttu-id="64d1a-121">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="64d1a-121">Platforms</span></span>                                                                                           | <span data-ttu-id="64d1a-122">ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-122">Users</span></span>                                       |
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
-| <span data-ttu-id="667ad-123">信頼されたプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="667ad-123">Trusted Platform</span></span>   | <span data-ttu-id="667ad-124">256 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-124">256 MB per user</span></span> | <span data-ttu-id="667ad-125">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-125">64 MB per user</span></span>    | <span data-ttu-id="667ad-126">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-126">Per-user data such as saved games or game state for play/pause/resume.</span></span> <span data-ttu-id="667ad-127">セキュリティは高くなりますが、プラットフォームの制限があります。</span><span class="sxs-lookup"><span data-stu-id="667ad-127">More secure, but with platform restrictions.</span></span> | <span data-ttu-id="667ad-128">読み取りはすべてのプラットフォームで可能ですが、書き込みは Xbox One、Xbox 360、または Windows Phone だけが可能です。</span><span class="sxs-lookup"><span data-stu-id="667ad-128">Any platform may read, but only Xbox One, Xbox 360, or Windows Phone may write.</span></span>  | <span data-ttu-id="667ad-129">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-129">Configurable to public or owner only.</span></span>       |
-| <span data-ttu-id="667ad-130">ユニバーサル プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="667ad-130">Universal Platform</span></span> | <span data-ttu-id="667ad-131">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-131">64 MB per user</span></span> | <span data-ttu-id="667ad-132">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-132">64 MB per user</span></span>    | <span data-ttu-id="667ad-133">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-133">Per-user data such as saved games or game state for play/pause/resume.</span></span> | <span data-ttu-id="667ad-134">書き込みはすべてのプラットフォームで可能ですが、読み取りは Xbox One、Xbox 360、または Windows Phone 以外のプラットフォームだけが可能です。</span><span class="sxs-lookup"><span data-stu-id="667ad-134">Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read.</span></span> | <span data-ttu-id="667ad-135">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-135">Configurable to public or owner only.</span></span>       |
-| <span data-ttu-id="667ad-136">グローバル</span><span class="sxs-lookup"><span data-stu-id="667ad-136">Global</span></span>             | <span data-ttu-id="667ad-137">256 MB</span><span class="sxs-lookup"><span data-stu-id="667ad-137">256 MB</span></span> | <span data-ttu-id="667ad-138">256 MB</span><span class="sxs-lookup"><span data-stu-id="667ad-138">256 MB</span></span>            | <span data-ttu-id="667ad-139">ロスター、マップ、チャレンジ、アート リソースなど、だれでも読み取ることができるデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-139">Data that everyone can read, such as rosters, maps, challenges, or art resources.</span></span> | <span data-ttu-id="667ad-140">書き込みのみ Xbox デベロッパー ポータルまたはパートナー センター経由で、すべてのプラットフォームが読み取りします。</span><span class="sxs-lookup"><span data-stu-id="667ad-140">Only writeable via the Xbox Developer Portal or Partner Center, any platform may read.</span></span>                                | <span data-ttu-id="667ad-141">すべてのユーザーが読み取れます。</span><span class="sxs-lookup"><span data-stu-id="667ad-141">All users may read.</span></span>
+| <span data-ttu-id="64d1a-123">信頼されたプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="64d1a-123">Trusted Platform</span></span>   | <span data-ttu-id="64d1a-124">256 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-124">256 MB per user</span></span> | <span data-ttu-id="64d1a-125">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-125">64 MB per user</span></span>    | <span data-ttu-id="64d1a-126">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-126">Per-user data such as saved games or game state for play/pause/resume.</span></span> <span data-ttu-id="64d1a-127">セキュリティは高くなりますが、プラットフォームの制限があります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-127">More secure, but with platform restrictions.</span></span> | <span data-ttu-id="64d1a-128">読み取りはすべてのプラットフォームで可能ですが、書き込みは Xbox One、Xbox 360、または Windows Phone だけが可能です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-128">Any platform may read, but only Xbox One, Xbox 360, or Windows Phone may write.</span></span>  | <span data-ttu-id="64d1a-129">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-129">Configurable to public or owner only.</span></span>       |
+| <span data-ttu-id="64d1a-130">ユニバーサル プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="64d1a-130">Universal Platform</span></span> | <span data-ttu-id="64d1a-131">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-131">64 MB per user</span></span> | <span data-ttu-id="64d1a-132">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-132">64 MB per user</span></span>    | <span data-ttu-id="64d1a-133">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-133">Per-user data such as saved games or game state for play/pause/resume.</span></span> | <span data-ttu-id="64d1a-134">書き込みはすべてのプラットフォームで可能ですが、読み取りは Xbox One、Xbox 360、または Windows Phone 以外のプラットフォームだけが可能です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-134">Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read.</span></span> | <span data-ttu-id="64d1a-135">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-135">Configurable to public or owner only.</span></span>       |
+| <span data-ttu-id="64d1a-136">グローバル</span><span class="sxs-lookup"><span data-stu-id="64d1a-136">Global</span></span>             | <span data-ttu-id="64d1a-137">256 MB</span><span class="sxs-lookup"><span data-stu-id="64d1a-137">256 MB</span></span> | <span data-ttu-id="64d1a-138">256 MB</span><span class="sxs-lookup"><span data-stu-id="64d1a-138">256 MB</span></span>            | <span data-ttu-id="64d1a-139">ロスター、マップ、チャレンジ、アート リソースなど、だれでも読み取ることができるデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-139">Data that everyone can read, such as rosters, maps, challenges, or art resources.</span></span> | <span data-ttu-id="64d1a-140">書き込みのみ Xbox デベロッパー ポータルまたはパートナー センター経由で、すべてのプラットフォームが読み取りします。</span><span class="sxs-lookup"><span data-stu-id="64d1a-140">Only writeable via the Xbox Developer Portal or Partner Center, any platform may read.</span></span>                                | <span data-ttu-id="64d1a-141">すべてのユーザーが読み取れます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-141">All users may read.</span></span>
 
-### <a name="deprecated-storage-types"></a><span data-ttu-id="667ad-142">推奨されなくなった記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="667ad-142">Deprecated storage Types</span></span>
+### <a name="deprecated-storage-types"></a><span data-ttu-id="64d1a-142">推奨されなくなった記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="64d1a-142">Deprecated storage Types</span></span>
 
-<span data-ttu-id="667ad-143">次の記憶域の種類は推奨されなくなりました。</span><span class="sxs-lookup"><span data-stu-id="667ad-143">The following storage types are deprecated.</span></span> <span data-ttu-id="667ad-144">現在使用しているタイトルでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="667ad-144">They are supported only for titles that are currently using them.</span></span> <span data-ttu-id="667ad-145">新規タイトルには使用できません。</span><span class="sxs-lookup"><span data-stu-id="667ad-145">They are not available for new titles.</span></span>
+<span data-ttu-id="64d1a-143">次の記憶域の種類は推奨されなくなりました。</span><span class="sxs-lookup"><span data-stu-id="64d1a-143">The following storage types are deprecated.</span></span> <span data-ttu-id="64d1a-144">現在使用しているタイトルでのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-144">They are supported only for titles that are currently using them.</span></span> <span data-ttu-id="64d1a-145">新規タイトルには使用できません。</span><span class="sxs-lookup"><span data-stu-id="64d1a-145">They are not available for new titles.</span></span>
 
-| <span data-ttu-id="667ad-146">記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="667ad-146">Storage Type</span></span>       | <span data-ttu-id="667ad-147">クォータ</span><span class="sxs-lookup"><span data-stu-id="667ad-147">Quota</span></span>  |   <span data-ttu-id="667ad-148">目的</span><span class="sxs-lookup"><span data-stu-id="667ad-148">Purpose</span></span>                                                                                                                                                      | <span data-ttu-id="667ad-149">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="667ad-149">Platforms</span></span>                                                                                           | <span data-ttu-id="667ad-150">ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-150">Users</span></span>                                       |
+| <span data-ttu-id="64d1a-146">記憶域の種類</span><span class="sxs-lookup"><span data-stu-id="64d1a-146">Storage Type</span></span>       | <span data-ttu-id="64d1a-147">クォータ</span><span class="sxs-lookup"><span data-stu-id="64d1a-147">Quota</span></span>  |   <span data-ttu-id="64d1a-148">目的</span><span class="sxs-lookup"><span data-stu-id="64d1a-148">Purpose</span></span>                                                                                                                                                      | <span data-ttu-id="64d1a-149">プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="64d1a-149">Platforms</span></span>                                                                                           | <span data-ttu-id="64d1a-150">ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-150">Users</span></span>                                       |
 |--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
-| <span data-ttu-id="667ad-151">JSON</span><span class="sxs-lookup"><span data-stu-id="667ad-151">JSON</span></span>               | <span data-ttu-id="667ad-152">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="667ad-152">64 MB per user</span></span>     | <span data-ttu-id="667ad-153">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-153">Per-user data such as saved games or game state for play/pause/resume.</span></span> <span data-ttu-id="667ad-154">セキュリティは高く、プラットフォームの制限はありませんが、データ形式に制限があります (JSON のみ)。</span><span class="sxs-lookup"><span data-stu-id="667ad-154">More secure, no platform restrictions, but with data format restrictions (JSON only).</span></span> | <span data-ttu-id="667ad-155">すべてのプラットフォームで読み取り/書き込みが可能です。</span><span class="sxs-lookup"><span data-stu-id="667ad-155">Any platform may read or write.</span></span>                                                                     | <span data-ttu-id="667ad-156">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-156">Configurable to public or owner only.</span></span>       |
-| <span data-ttu-id="667ad-157">デバイス</span><span class="sxs-lookup"><span data-stu-id="667ad-157">Device</span></span>             | <span data-ttu-id="667ad-158">64 MB/デバイス</span><span class="sxs-lookup"><span data-stu-id="667ad-158">64 MB per device</span></span>   | <span data-ttu-id="667ad-159">設定やデバイスの優先設定など、デバイスに固有のデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-159">Data specific to a device such as settings or device preferences.</span></span>                                                                                            | <span data-ttu-id="667ad-160">書き込みは、Xbox One、Xbox 360、または Windows Phone だけが可能です。</span><span class="sxs-lookup"><span data-stu-id="667ad-160">Only Xbox One, Xbox 360, or Windows Phone may write.</span></span> <span data-ttu-id="667ad-161">読み取りは、データを書き込んだデバイスだけが可能です。</span><span class="sxs-lookup"><span data-stu-id="667ad-161">Only the device that wrote the data may read.</span></span>  | <span data-ttu-id="667ad-162">すべてのユーザーが読み取れます。</span><span class="sxs-lookup"><span data-stu-id="667ad-162">All users may read.</span></span>                         |
-| <span data-ttu-id="667ad-163">セッション ストレージ</span><span class="sxs-lookup"><span data-stu-id="667ad-163">Session Storage</span></span>    | <span data-ttu-id="667ad-164">256 MB/セッション</span><span class="sxs-lookup"><span data-stu-id="667ad-164">256 MB per session</span></span> | <span data-ttu-id="667ad-165">特定のマルチプレイヤー ゲーム セッションに参加しているユーザーのデータ。</span><span class="sxs-lookup"><span data-stu-id="667ad-165">Data for anyone joined to a particular multiplayer game session.</span></span>                                                                                             | <span data-ttu-id="667ad-166">セッションに参加できるプラットフォーム。</span><span class="sxs-lookup"><span data-stu-id="667ad-166">Any platform that may join the session.</span></span>                                                             | <span data-ttu-id="667ad-167">セッションのすべてのユーザーが読み取りまたは書き込みできます。</span><span class="sxs-lookup"><span data-stu-id="667ad-167">All users in the session may read or write.</span></span> |
+| <span data-ttu-id="64d1a-151">JSON</span><span class="sxs-lookup"><span data-stu-id="64d1a-151">JSON</span></span>               | <span data-ttu-id="64d1a-152">64 MB/ユーザー</span><span class="sxs-lookup"><span data-stu-id="64d1a-152">64 MB per user</span></span>     | <span data-ttu-id="64d1a-153">セーブ データやゲーム状態 (再生/一時停止/再開) などのユーザー単位のデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-153">Per-user data such as saved games or game state for play/pause/resume.</span></span> <span data-ttu-id="64d1a-154">セキュリティは高く、プラットフォームの制限はありませんが、データ形式に制限があります (JSON のみ)。</span><span class="sxs-lookup"><span data-stu-id="64d1a-154">More secure, no platform restrictions, but with data format restrictions (JSON only).</span></span> | <span data-ttu-id="64d1a-155">すべてのプラットフォームで読み取り/書き込みが可能です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-155">Any platform may read or write.</span></span>                                                                     | <span data-ttu-id="64d1a-156">パブリックまたは所有者のみに構成できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-156">Configurable to public or owner only.</span></span>       |
+| <span data-ttu-id="64d1a-157">デバイス</span><span class="sxs-lookup"><span data-stu-id="64d1a-157">Device</span></span>             | <span data-ttu-id="64d1a-158">64 MB/デバイス</span><span class="sxs-lookup"><span data-stu-id="64d1a-158">64 MB per device</span></span>   | <span data-ttu-id="64d1a-159">設定やデバイスの優先設定など、デバイスに固有のデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-159">Data specific to a device such as settings or device preferences.</span></span>                                                                                            | <span data-ttu-id="64d1a-160">書き込みは、Xbox One、Xbox 360、または Windows Phone だけが可能です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-160">Only Xbox One, Xbox 360, or Windows Phone may write.</span></span> <span data-ttu-id="64d1a-161">読み取りは、データを書き込んだデバイスだけが可能です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-161">Only the device that wrote the data may read.</span></span>  | <span data-ttu-id="64d1a-162">すべてのユーザーが読み取れます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-162">All users may read.</span></span>                         |
+| <span data-ttu-id="64d1a-163">セッション ストレージ</span><span class="sxs-lookup"><span data-stu-id="64d1a-163">Session Storage</span></span>    | <span data-ttu-id="64d1a-164">256 MB/セッション</span><span class="sxs-lookup"><span data-stu-id="64d1a-164">256 MB per session</span></span> | <span data-ttu-id="64d1a-165">特定のマルチプレイヤー ゲーム セッションに参加しているユーザーのデータ。</span><span class="sxs-lookup"><span data-stu-id="64d1a-165">Data for anyone joined to a particular multiplayer game session.</span></span>                                                                                             | <span data-ttu-id="64d1a-166">セッションに参加できるプラットフォーム。</span><span class="sxs-lookup"><span data-stu-id="64d1a-166">Any platform that may join the session.</span></span>                                                             | <span data-ttu-id="64d1a-167">セッションのすべてのユーザーが読み取りまたは書き込みできます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-167">All users in the session may read or write.</span></span> |
 
 
 <a name="ID4ECF"></a>
 
-## <a name="types-of-data"></a><span data-ttu-id="667ad-168">データの種類</span><span class="sxs-lookup"><span data-stu-id="667ad-168">Types of data</span></span>
+## <a name="types-of-data"></a><span data-ttu-id="64d1a-168">データの種類</span><span class="sxs-lookup"><span data-stu-id="64d1a-168">Types of data</span></span>
 
-<span data-ttu-id="667ad-169">ゲームでは、GET または PUT メソッドの **{type}** パラメーターで、使用するデータの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="667ad-169">Games specify the type of data to use in the **{type}** parameter of a GET or PUT method.</span></span> <span data-ttu-id="667ad-170">サポートされている 3 つの種類について以下に説明します。</span><span class="sxs-lookup"><span data-stu-id="667ad-170">The following section describes the three supported types:</span></span>
+<span data-ttu-id="64d1a-169">ゲームでは、GET または PUT メソッドの **{type}** パラメーターで、使用するデータの種類を指定します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-169">Games specify the type of data to use in the **{type}** parameter of a GET or PUT method.</span></span> <span data-ttu-id="64d1a-170">サポートされている 3 つの種類について以下に説明します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-170">The following section describes the three supported types:</span></span>
 
--   [<span data-ttu-id="667ad-171">バイナリ情報</span><span class="sxs-lookup"><span data-stu-id="667ad-171">Binary Information</span></span>](#ID4ENF)
--   [<span data-ttu-id="667ad-172">JSON 情報</span><span class="sxs-lookup"><span data-stu-id="667ad-172">JSON Information</span></span>](#ID4EUF)
--   [<span data-ttu-id="667ad-173">構成情報</span><span class="sxs-lookup"><span data-stu-id="667ad-173">Configuration information</span></span>](#ID4ECAAC)
+-   [<span data-ttu-id="64d1a-171">バイナリ情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-171">Binary Information</span></span>](#ID4ENF)
+-   [<span data-ttu-id="64d1a-172">JSON 情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-172">JSON Information</span></span>](#ID4EUF)
+-   [<span data-ttu-id="64d1a-173">構成情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-173">Configuration information</span></span>](#ID4ECAAC)
 
 <a name="ID4ENF"></a>
 
-#### <a name="binary-information"></a><span data-ttu-id="667ad-174">バイナリ情報</span><span class="sxs-lookup"><span data-stu-id="667ad-174">Binary Information</span></span>
+#### <a name="binary-information"></a><span data-ttu-id="64d1a-174">バイナリ情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-174">Binary Information</span></span>
 
-<span data-ttu-id="667ad-175">イメージ、サウンド、およびカスタム データにはバイナリ型を使用します。</span><span class="sxs-lookup"><span data-stu-id="667ad-175">Images, sounds, and custom data use the binary type.</span></span> <span data-ttu-id="667ad-176">HTTP 経由でバイナリ データを転送する必要があるので、バイナリ データを HTTP で許可される文字にエンコードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="667ad-176">Because the data must be transmitted over HTTP, binary data must be encoded into characters that HTTP accepts.</span></span> <span data-ttu-id="667ad-177">たとえば、データを 16 進数の文字列に変換するか、または base64 エンコードを使用できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-177">For example, you can convert the data to hexadecimal strings or use base64 encoding.</span></span> <span data-ttu-id="667ad-178">タイトル ストレージ システムはエンコードされたデータを処理しないため、ゲームでは、タイトル ストレージの読み取り時と書き込み時のデータのエンコードとデコードに、同じ方式を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="667ad-178">The title storage system does not process the encoded data, so your game must use the same scheme for encoding and decoding data when reading from and writing to title storage.</span></span>
+<span data-ttu-id="64d1a-175">イメージ、サウンド、およびカスタム データにはバイナリ型を使用します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-175">Images, sounds, and custom data use the binary type.</span></span> <span data-ttu-id="64d1a-176">HTTP 経由でバイナリ データを転送する必要があるので、バイナリ データを HTTP で許可される文字にエンコードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-176">Because the data must be transmitted over HTTP, binary data must be encoded into characters that HTTP accepts.</span></span> <span data-ttu-id="64d1a-177">たとえば、データを 16 進数の文字列に変換するか、または base64 エンコードを使用できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-177">For example, you can convert the data to hexadecimal strings or use base64 encoding.</span></span> <span data-ttu-id="64d1a-178">タイトル ストレージ システムはエンコードされたデータを処理しないため、ゲームでは、タイトル ストレージの読み取り時と書き込み時のデータのエンコードとデコードに、同じ方式を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-178">The title storage system does not process the encoded data, so your game must use the same scheme for encoding and decoding data when reading from and writing to title storage.</span></span>
 
 <a name="ID4EUF"></a>
 
-#### <a name="json-information"></a><span data-ttu-id="667ad-179">JSON 情報</span><span class="sxs-lookup"><span data-stu-id="667ad-179">JSON Information</span></span>
+#### <a name="json-information"></a><span data-ttu-id="64d1a-179">JSON 情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-179">JSON Information</span></span>
 
-<span data-ttu-id="667ad-180">構造化されたデータには JSON 型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-180">Structured data can use the JSON type.</span></span> <span data-ttu-id="667ad-181">JSON オブジェクトをサポートする JavaScript などの言語では、JSON オブジェクトを直接使用できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-181">JSON objects can be directly used in languages, like JavaScript, that support them.</span></span> <span data-ttu-id="667ad-182">JSON ファイルからデータを取得するときに、ゲームは *select* パラメーターを提供して、構造内の特定の項目を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="667ad-182">When retrieving data from JSON files, the game can supply a *select* parameter to return specific items within the structure.</span></span> <span data-ttu-id="667ad-183">たとえば、次の情報を含む JSON 形式のファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="667ad-183">For example, use a JSON formatted file that contains the following information:</span></span>
+<span data-ttu-id="64d1a-180">構造化されたデータには JSON 型を使用できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-180">Structured data can use the JSON type.</span></span> <span data-ttu-id="64d1a-181">JSON オブジェクトをサポートする JavaScript などの言語では、JSON オブジェクトを直接使用できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-181">JSON objects can be directly used in languages, like JavaScript, that support them.</span></span> <span data-ttu-id="64d1a-182">JSON ファイルからデータを取得するときに、ゲームは *select* パラメーターを提供して、構造内の特定の項目を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-182">When retrieving data from JSON files, the game can supply a *select* parameter to return specific items within the structure.</span></span> <span data-ttu-id="64d1a-183">たとえば、次の情報を含む JSON 形式のファイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-183">For example, use a JSON formatted file that contains the following information:</span></span>
 
     {
     "difficulty" : 1,
@@ -95,11 +95,11 @@ ms.locfileid: "6192735"
     }
 
 
-| <span data-ttu-id="667ad-184">注</span><span class="sxs-lookup"><span data-stu-id="667ad-184">Note</span></span>                                                                                                                                              |
+| <span data-ttu-id="64d1a-184">注</span><span class="sxs-lookup"><span data-stu-id="64d1a-184">Note</span></span>                                                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <span data-ttu-id="667ad-185">セキュリティ上の理由から、JSON データの最初の要素を配列にしないでください。</span><span class="sxs-lookup"><span data-stu-id="667ad-185">For security purposes, the first element of the JSON data must not be an array.</span></span> <span data-ttu-id="667ad-186">ルートの配列で送信される JSON データは、サービスによって拒否されます。</span><span class="sxs-lookup"><span data-stu-id="667ad-186">JSON data submitted with an array at the root will be rejected by the service.</span></span> |
+| <span data-ttu-id="64d1a-185">セキュリティ上の理由から、JSON データの最初の要素を配列にしないでください。</span><span class="sxs-lookup"><span data-stu-id="64d1a-185">For security purposes, the first element of the JSON data must not be an array.</span></span> <span data-ttu-id="64d1a-186">ルートの配列で送信される JSON データは、サービスによって拒否されます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-186">JSON data submitted with an array at the root will be rejected by the service.</span></span> |
 
-<span data-ttu-id="667ad-187">ゲームは、次のようなクエリによって、この構造の各部分を選択できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-187">Games can select portions of this structure with a query like this:</span></span>
+<span data-ttu-id="64d1a-187">ゲームは、次のようなクエリによって、この構造の各部分を選択できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-187">Games can select portions of this structure with a query like this:</span></span>
 
              GET https://titlestorage.xboxlive.com/users/xuid(1234)/storage/titlestorage/titlegroups/
              faa29d21-2b49-4908-96bf-b953157ac4fe/data/save1.dat,json?select=weapon.name
@@ -108,13 +108,13 @@ ms.locfileid: "6192735"
              Authorization: XBL3.0 x=<userHash>;<STSTokenString>
              Connection: Keep-Alive
 
-<span data-ttu-id="667ad-188">このクエリに対する応答の本文は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="667ad-188">The response body for this query is:</span></span>
+<span data-ttu-id="64d1a-188">このクエリに対する応答の本文は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-188">The response body for this query is:</span></span>
 
     {
         "name" : "poison"
     }
 
-<span data-ttu-id="667ad-189">配列にアクセスするには、次のようなクエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="667ad-189">The array can be accessed with a query like this:</span></span>
+<span data-ttu-id="64d1a-189">配列にアクセスするには、次のようなクエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-189">The array can be accessed with a query like this:</span></span>
 
       GET https://titlestorage.xboxlive.com//users/xuid(1234)/storage/titlestorage/titlegroups/
       faa29d21-2b49-4908-96bf-b953157ac4fe/data/save1.dat,json?select=levels[3].quest
@@ -123,28 +123,28 @@ ms.locfileid: "6192735"
       Authorization: XBL3.0 x=<userHash>;<STSTokenString>
       Connection: Keep-Alive
 
-<span data-ttu-id="667ad-190">このクエリに対する応答の本文は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="667ad-190">The response body for this query is:</span></span>
+<span data-ttu-id="64d1a-190">このクエリに対する応答の本文は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-190">The response body for this query is:</span></span>
 
     {
         "quest" : "queen"
     }
 
-<span data-ttu-id="667ad-191">JSON データには次の長さ制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="667ad-191">The following length restrictions are enforced for JSON data:</span></span>
+<span data-ttu-id="64d1a-191">JSON データには次の長さ制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-191">The following length restrictions are enforced for JSON data:</span></span>
 
--   <span data-ttu-id="667ad-192">数値、最大長 = 32</span><span class="sxs-lookup"><span data-stu-id="667ad-192">Numeric value, maximum length = 32</span></span>
--   <span data-ttu-id="667ad-193">文字列値、最大長 = 1024</span><span class="sxs-lookup"><span data-stu-id="667ad-193">String value, maximum length = 1024</span></span>
--   <span data-ttu-id="667ad-194">プロパティ名、最大長 = 64</span><span class="sxs-lookup"><span data-stu-id="667ad-194">Property name, maximum length = 64</span></span>
--   <span data-ttu-id="667ad-195">階層、最大深度 = 16</span><span class="sxs-lookup"><span data-stu-id="667ad-195">Hierarchy, maximum depth = 16</span></span>
--   <span data-ttu-id="667ad-196">配列、最大サイズ = 1024</span><span class="sxs-lookup"><span data-stu-id="667ad-196">Array, maximum size = 1024</span></span>
--   <span data-ttu-id="667ad-197">子プロパティ、オブジェクト内の最大数 = 1024</span><span class="sxs-lookup"><span data-stu-id="667ad-197">Child properties, maximum in an object = 1024</span></span>
+-   <span data-ttu-id="64d1a-192">数値、最大長 = 32</span><span class="sxs-lookup"><span data-stu-id="64d1a-192">Numeric value, maximum length = 32</span></span>
+-   <span data-ttu-id="64d1a-193">文字列値、最大長 = 1024</span><span class="sxs-lookup"><span data-stu-id="64d1a-193">String value, maximum length = 1024</span></span>
+-   <span data-ttu-id="64d1a-194">プロパティ名、最大長 = 64</span><span class="sxs-lookup"><span data-stu-id="64d1a-194">Property name, maximum length = 64</span></span>
+-   <span data-ttu-id="64d1a-195">階層、最大深度 = 16</span><span class="sxs-lookup"><span data-stu-id="64d1a-195">Hierarchy, maximum depth = 16</span></span>
+-   <span data-ttu-id="64d1a-196">配列、最大サイズ = 1024</span><span class="sxs-lookup"><span data-stu-id="64d1a-196">Array, maximum size = 1024</span></span>
+-   <span data-ttu-id="64d1a-197">子プロパティ、オブジェクト内の最大数 = 1024</span><span class="sxs-lookup"><span data-stu-id="64d1a-197">Child properties, maximum in an object = 1024</span></span>
 
 <a name="ID4ECAAC"></a>
 
-#### <a name="configuration-information"></a><span data-ttu-id="667ad-198">構成情報</span><span class="sxs-lookup"><span data-stu-id="667ad-198">Configuration information</span></span>
+#### <a name="configuration-information"></a><span data-ttu-id="64d1a-198">構成情報</span><span class="sxs-lookup"><span data-stu-id="64d1a-198">Configuration information</span></span>
 
-<span data-ttu-id="667ad-199">**{type}** を **config** にすると、データが構成 BLOB であることを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="667ad-199">The **{type}** can be **config** to indicate that the data is a configuration blob.</span></span> <span data-ttu-id="667ad-200">構成 BLOB は、グローバル タイトル ストレージに格納されるデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="667ad-200">Configuration blobs are data structures that are stored in global title storage.</span></span> <span data-ttu-id="667ad-201">BLOB の形式は JSON オブジェクトに似ています。</span><span class="sxs-lookup"><span data-stu-id="667ad-201">The format of the blob is similar to a JSON object.</span></span>
+<span data-ttu-id="64d1a-199">**{type}** を **config** にすると、データが構成 BLOB であることを示すことができます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-199">The **{type}** can be **config** to indicate that the data is a configuration blob.</span></span> <span data-ttu-id="64d1a-200">構成 BLOB は、グローバル タイトル ストレージに格納されるデータ構造です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-200">Configuration blobs are data structures that are stored in global title storage.</span></span> <span data-ttu-id="64d1a-201">BLOB の形式は JSON オブジェクトに似ています。</span><span class="sxs-lookup"><span data-stu-id="64d1a-201">The format of the blob is similar to a JSON object.</span></span>
 
-<span data-ttu-id="667ad-202">構成 BLOB には、候補リストからの設定を返す仮想ノードを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="667ad-202">Configuration blobs can include virtual nodes that return a setting from a list of possibilities.</span></span> <span data-ttu-id="667ad-203">仮想ノードは、タイトルやロケールなどの特定の状況に応じた設定を提供する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="667ad-203">Virtual nodes are useful for providing settings for specific situations, such as for a title or locale.</span></span> <span data-ttu-id="667ad-204">仮想ノードには、いくつかの使用可能な設定値と、それらの値から選択するための条件が含まれます。</span><span class="sxs-lookup"><span data-stu-id="667ad-204">The virtual node includes several possible settings along with values and conditions for selecting from the values.</span></span> <span data-ttu-id="667ad-205">次の例では、**defaultCardDesign** 設定を、仮想ノード内のいずれかの値にすることができます。</span><span class="sxs-lookup"><span data-stu-id="667ad-205">In the following example, the **defaultCardDesign** setting can have one of the values in the virtual node.</span></span>
+<span data-ttu-id="64d1a-202">構成 BLOB には、候補リストからの設定を返す仮想ノードを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-202">Configuration blobs can include virtual nodes that return a setting from a list of possibilities.</span></span> <span data-ttu-id="64d1a-203">仮想ノードは、タイトルやロケールなどの特定の状況に応じた設定を提供する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-203">Virtual nodes are useful for providing settings for specific situations, such as for a title or locale.</span></span> <span data-ttu-id="64d1a-204">仮想ノードには、いくつかの使用可能な設定値と、それらの値から選択するための条件が含まれます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-204">The virtual node includes several possible settings along with values and conditions for selecting from the values.</span></span> <span data-ttu-id="64d1a-205">次の例では、**defaultCardDesign** 設定を、仮想ノード内のいずれかの値にすることができます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-205">In the following example, the **defaultCardDesign** setting can have one of the values in the virtual node.</span></span>
 
     {
       "defaultCardDesign":
@@ -161,21 +161,21 @@ ms.locfileid: "6192735"
       },
     }
 
-<span data-ttu-id="667ad-206">ゲームがこのファイルを読み取ると、システムは **\_sourceNodes** 配列の値の 1 つを選択します。</span><span class="sxs-lookup"><span data-stu-id="667ad-206">When a game reads this file, the system selects one of the values from the **\_sourceNodes** array.</span></span> <span data-ttu-id="667ad-207">この場合は、ゲームのタイトル ID に基づいて項目が選択されます。</span><span class="sxs-lookup"><span data-stu-id="667ad-207">In this case, the item is selected based on the title ID of the game.</span></span> <span data-ttu-id="667ad-208">ゲーム **12456799** をプレイしているユーザーの場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="667ad-208">Users playing the game **12456799** see:</span></span>
+<span data-ttu-id="64d1a-206">ゲームがこのファイルを読み取ると、システムは **\_sourceNodes** 配列の値の 1 つを選択します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-206">When a game reads this file, the system selects one of the values from the **\_sourceNodes** array.</span></span> <span data-ttu-id="64d1a-207">この場合は、ゲームのタイトル ID に基づいて項目が選択されます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-207">In this case, the item is selected based on the title ID of the game.</span></span> <span data-ttu-id="64d1a-208">ゲーム **12456799** をプレイしているユーザーの場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-208">Users playing the game **12456799** see:</span></span>
 
     {
       "defaultCardDesign":"RobotUnicornCard.png,binary",
       "_sourceNodes":["defaultCardDesign:titleID:1234567899"]
     }
 
-<span data-ttu-id="667ad-209">それ以外のユーザーの場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="667ad-209">The rest of the users see:</span></span>
+<span data-ttu-id="64d1a-209">それ以外のユーザーの場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-209">The rest of the users see:</span></span>
 
     {
       "defaultCardDesign":"StandardCard.png,binary",
       "_sourceNodes":["defaultCardDesign:titleID:default"]
     }
 
-<span data-ttu-id="667ad-210">ゲームでは、要求内のパラメーターと一致するカスタム セレクターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="667ad-210">Games can define custom selectors that match a parameter in the request.</span></span> <span data-ttu-id="667ad-211">たとえば、次の構成 BLOB をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="667ad-211">For example, in this config blob:</span></span>
+<span data-ttu-id="64d1a-210">ゲームでは、要求内のパラメーターと一致するカスタム セレクターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-210">Games can define custom selectors that match a parameter in the request.</span></span> <span data-ttu-id="64d1a-211">たとえば、次の構成 BLOB をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="64d1a-211">For example, in this config blob:</span></span>
 
     {
         "defaultCardDesign":
@@ -195,7 +195,7 @@ ms.locfileid: "6192735"
         "dealerHitsOnSoft17":true
     }
 
-<span data-ttu-id="667ad-212">ゲームは **customSelector** パラメーターで文字列を渡して、返す項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="667ad-212">Games pass a string the **customSelector** parameter to select which item to return.</span></span> <span data-ttu-id="667ad-213">たとえば、2 つ目のオプションを取得する場合、ゲームは次のように要求します。</span><span class="sxs-lookup"><span data-stu-id="667ad-213">For example, to get the second option, a game requests:</span></span>
+<span data-ttu-id="64d1a-212">ゲームは **customSelector** パラメーターで文字列を渡して、返す項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-212">Games pass a string the **customSelector** parameter to select which item to return.</span></span> <span data-ttu-id="64d1a-213">たとえば、2 つ目のオプションを取得する場合、ゲームは次のように要求します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-213">For example, to get the second option, a game requests:</span></span>
 
       GET https://titlestorage.xboxlive.com/media/titlegroups/faa29d21-2b49-4908-96bf-b953157ac4fe
       /storage/data/config.json,config?customSelector=gameMode.serious
@@ -204,76 +204,76 @@ ms.locfileid: "6192735"
       Authorization: XBL3.0 x=<userHash>;<STSTokenString>
       Connection: Keep-Alive
 
-<span data-ttu-id="667ad-214">**\_selectBy** 値は実行する選択の種類を示し、**\_selector** 値は選択で使用するデータを示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-214">The **\_selectBy** value indicates what type of selection to do and the **\_selector** value indicates the data to use in the selection.</span></span> <span data-ttu-id="667ad-215">設定できる値は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="667ad-215">The possible values are:</span></span>
+<span data-ttu-id="64d1a-214">**\_selectBy** 値は実行する選択の種類を示し、**\_selector** 値は選択で使用するデータを示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-214">The **\_selectBy** value indicates what type of selection to do and the **\_selector** value indicates the data to use in the selection.</span></span> <span data-ttu-id="64d1a-215">設定できる値は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="64d1a-215">The possible values are:</span></span>
 
 <table>
 <thead>
 <tr>
-<th><span data-ttu-id="667ad-216">_selectBy</span><span class="sxs-lookup"><span data-stu-id="667ad-216">_selectBy</span></span></th>
-<th><span data-ttu-id="667ad-217">説明</span><span class="sxs-lookup"><span data-stu-id="667ad-217">Description</span></span></th>
+<th><span data-ttu-id="64d1a-216">_selectBy</span><span class="sxs-lookup"><span data-stu-id="64d1a-216">_selectBy</span></span></th>
+<th><span data-ttu-id="64d1a-217">説明</span><span class="sxs-lookup"><span data-stu-id="64d1a-217">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td ><span data-ttu-id="667ad-218">titleId</span><span class="sxs-lookup"><span data-stu-id="667ad-218">titleId</span></span></td>
-<td ><p><span data-ttu-id="667ad-219"><strong>_selector</strong> は、提供されたクレームのタイトル ID と一致します。</span><span class="sxs-lookup"><span data-stu-id="667ad-219">The <strong>_selector</strong> matches the title ID in the provided claim.</span></span></p></td>
+<td ><span data-ttu-id="64d1a-218">titleId</span><span class="sxs-lookup"><span data-stu-id="64d1a-218">titleId</span></span></td>
+<td ><p><span data-ttu-id="64d1a-219"><strong>_selector</strong> は、提供されたクレームのタイトル ID と一致します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-219">The <strong>_selector</strong> matches the title ID in the provided claim.</span></span></p></td>
 </tr>
 <tr>
-<td ><span data-ttu-id="667ad-220">locale</span><span class="sxs-lookup"><span data-stu-id="667ad-220">locale</span></span></td>
-<td ><p><span data-ttu-id="667ad-221"><strong>_selector</strong> は、Accept-Language ヘッダーのロケール文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="667ad-221">The <strong>_selector</strong> matches the locale string from the Accept-Language header.</span></span></p></td>
+<td ><span data-ttu-id="64d1a-220">locale</span><span class="sxs-lookup"><span data-stu-id="64d1a-220">locale</span></span></td>
+<td ><p><span data-ttu-id="64d1a-221"><strong>_selector</strong> は、Accept-Language ヘッダーのロケール文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-221">The <strong>_selector</strong> matches the locale string from the Accept-Language header.</span></span></p></td>
 </tr>
 <tr>
-<td ><span data-ttu-id="667ad-222">custom</span><span class="sxs-lookup"><span data-stu-id="667ad-222">custom</span></span></td>
-<td ><p><span data-ttu-id="667ad-223"><strong>_selector</strong> は、<strong>customSelector</strong> クエリ パラメーターで渡されるカスタム文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="667ad-223">The <strong>_selector</strong> matches a custom string passed in the <strong>customSelector</strong> query parameter.</span></span> <span data-ttu-id="667ad-224"><strong>customSelector</strong> には、コンマで区切られた 1 つ以上のクエリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="667ad-224">The <strong>customSelector</strong> contains one or more queries separated by commas.</span></span> <span data-ttu-id="667ad-225">各クエリは、<strong>selectBy</strong> 要素からの名前と <strong>_selector</strong> 要素からの値です。</span><span class="sxs-lookup"><span data-stu-id="667ad-225">Each query is the name from the <strong>selectBy</strong> element and the value from the <strong>_selector</strong> element.</span></span></p></td>
+<td ><span data-ttu-id="64d1a-222">custom</span><span class="sxs-lookup"><span data-stu-id="64d1a-222">custom</span></span></td>
+<td ><p><span data-ttu-id="64d1a-223"><strong>_selector</strong> は、<strong>customSelector</strong> クエリ パラメーターで渡されるカスタム文字列と一致します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-223">The <strong>_selector</strong> matches a custom string passed in the <strong>customSelector</strong> query parameter.</span></span> <span data-ttu-id="64d1a-224"><strong>customSelector</strong> には、コンマで区切られた 1 つ以上のクエリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="64d1a-224">The <strong>customSelector</strong> contains one or more queries separated by commas.</span></span> <span data-ttu-id="64d1a-225">各クエリは、<strong>selectBy</strong> 要素からの名前と <strong>_selector</strong> 要素からの値です。</span><span class="sxs-lookup"><span data-stu-id="64d1a-225">Each query is the name from the <strong>selectBy</strong> element and the value from the <strong>_selector</strong> element.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
 <a name="ID4EBEAC"></a>
 
-## <a name="title-storage-uris"></a><span data-ttu-id="667ad-226">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="667ad-226">Title storage URIs</span></span>
+## <a name="title-storage-uris"></a><span data-ttu-id="64d1a-226">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="64d1a-226">Title storage URIs</span></span>
 
-<span data-ttu-id="667ad-227">タイトル ストレージ URI の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="667ad-227">Title storage URIs are formatted as follows:</span></span>
+<span data-ttu-id="64d1a-227">タイトル ストレージ URI の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="64d1a-227">Title storage URIs are formatted as follows:</span></span>
 
     https://titlestorage.xboxlive.com/{path}
 
-<span data-ttu-id="667ad-228">URI の **{path}** 部分は、作成する要求の種類を指定し、245 文字以内にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="667ad-228">The **{path}** portion of the URI is the type of request being made and must be 245 characters or fewer.</span></span>
+<span data-ttu-id="64d1a-228">URI の **{path}** 部分は、作成する要求の種類を指定し、245 文字以内にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-228">The **{path}** portion of the URI is the type of request being made and must be 245 characters or fewer.</span></span>
 
 <a name="ID4ETEAC"></a>
 
-## <a name="throttle-limit"></a><span data-ttu-id="667ad-229">調整の制限</span><span class="sxs-lookup"><span data-stu-id="667ad-229">Throttle Limit</span></span>
+## <a name="throttle-limit"></a><span data-ttu-id="64d1a-229">調整の制限</span><span class="sxs-lookup"><span data-stu-id="64d1a-229">Throttle Limit</span></span>
 
-<span data-ttu-id="667ad-230">タイトルが 1 分間に実行できる読み取りまたは書き込みの回数に決まった制限はありませんが、一般に、1 時間のセッションで 1 分あたり平均 1 回を超えることはできません。</span><span class="sxs-lookup"><span data-stu-id="667ad-230">There are no fixed limits on how many reads or writes a title can make per minute, but it generally cannot make more than one per minute on average in a one-hour session.</span></span> <span data-ttu-id="667ad-231">たとえば、タイトルがセッションの冒頭に 60 回の読み取りまたは書き込みを行うと、その 1 時間の残りの期間はそれ以上の読み取りまたは書き込みを行えません。</span><span class="sxs-lookup"><span data-stu-id="667ad-231">For example, a title can make 60 reads or writes at the beginning of a session but no more for the remainder of the hour.</span></span> <span data-ttu-id="667ad-232">Xbox LIVE サービスが要求の調整を必要とする場合は、後の方で多くの呼び出しを行えるようにタイトルを強化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="667ad-232">Titles should be hardened against more calls later, in case Xbox LIVE Services needs to throttle the requests.</span></span>
+<span data-ttu-id="64d1a-230">タイトルが 1 分間に実行できる読み取りまたは書き込みの回数に決まった制限はありませんが、一般に、1 時間のセッションで 1 分あたり平均 1 回を超えることはできません。</span><span class="sxs-lookup"><span data-stu-id="64d1a-230">There are no fixed limits on how many reads or writes a title can make per minute, but it generally cannot make more than one per minute on average in a one-hour session.</span></span> <span data-ttu-id="64d1a-231">たとえば、タイトルがセッションの冒頭に 60 回の読み取りまたは書き込みを行うと、その 1 時間の残りの期間はそれ以上の読み取りまたは書き込みを行えません。</span><span class="sxs-lookup"><span data-stu-id="64d1a-231">For example, a title can make 60 reads or writes at the beginning of a session but no more for the remainder of the hour.</span></span> <span data-ttu-id="64d1a-232">Xbox LIVE サービスが要求の調整を必要とする場合は、後の方で多くの呼び出しを行えるようにタイトルを強化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-232">Titles should be hardened against more calls later, in case Xbox LIVE Services needs to throttle the requests.</span></span>
 
-<span data-ttu-id="667ad-233">タイトルに、追加の読み取りや書き込みなどの特殊なパーティション要件がある場合は、マイクロソフトにお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="667ad-233">If your title has special partitioning requirements, such as extra reads or writes, contact Microsoft.</span></span>
+<span data-ttu-id="64d1a-233">タイトルに、追加の読み取りや書き込みなどの特殊なパーティション要件がある場合は、マイクロソフトにお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="64d1a-233">If your title has special partitioning requirements, such as extra reads or writes, contact Microsoft.</span></span>
 
 <a name="ID4E5EAC"></a>
 
-## <a name="using-title-storage"></a><span data-ttu-id="667ad-234">タイトル ストレージの使用方法</span><span class="sxs-lookup"><span data-stu-id="667ad-234">Using title storage</span></span>
+## <a name="using-title-storage"></a><span data-ttu-id="64d1a-234">タイトル ストレージの使用方法</span><span class="sxs-lookup"><span data-stu-id="64d1a-234">Using title storage</span></span>
 
-<span data-ttu-id="667ad-235">タイトル ストレージを利用する場合は、最初に、格納するデータの種類を決定します。</span><span class="sxs-lookup"><span data-stu-id="667ad-235">To get started with title storage, first determine what kind of data you want to store.</span></span> <span data-ttu-id="667ad-236">セーブ データ、ゲーム状態、デイリー チャレンジ、ゲーム マップ、アート リソースなどがあります。</span><span class="sxs-lookup"><span data-stu-id="667ad-236">Some examples include saved games, game state, daily challenges, game maps, and art resources.</span></span>
+<span data-ttu-id="64d1a-235">タイトル ストレージを利用する場合は、最初に、格納するデータの種類を決定します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-235">To get started with title storage, first determine what kind of data you want to store.</span></span> <span data-ttu-id="64d1a-236">セーブ データ、ゲーム状態、デイリー チャレンジ、ゲーム マップ、アート リソースなどがあります。</span><span class="sxs-lookup"><span data-stu-id="64d1a-236">Some examples include saved games, game state, daily challenges, game maps, and art resources.</span></span>
 
-<span data-ttu-id="667ad-237">次に、データにアクセスする必要があるタイトルとプラットフォームを決定します。</span><span class="sxs-lookup"><span data-stu-id="667ad-237">Next determine what titles and platforms will need to access the data.</span></span> <span data-ttu-id="667ad-238">タイトル ストレージは、単一プラットフォーム上の単一タイトルから、および複数プラットフォーム上の複数タイトルからのクラウド データ アクセスをサポートします。</span><span class="sxs-lookup"><span data-stu-id="667ad-238">Title storage supports cloud data access from a single title on a single platform, and from multiple titles on multiple platforms.</span></span>
+<span data-ttu-id="64d1a-237">次に、データにアクセスする必要があるタイトルとプラットフォームを決定します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-237">Next determine what titles and platforms will need to access the data.</span></span> <span data-ttu-id="64d1a-238">タイトル ストレージは、単一プラットフォーム上の単一タイトルから、および複数プラットフォーム上の複数タイトルからのクラウド データ アクセスをサポートします。</span><span class="sxs-lookup"><span data-stu-id="64d1a-238">Title storage supports cloud data access from a single title on a single platform, and from multiple titles on multiple platforms.</span></span>
 
-<span data-ttu-id="667ad-239">最後に、このセクションのトピックを使用して、ストレージを構成し、データをアップロードし、選択した内容に基づいて適切にアクセス許可を設定します。</span><span class="sxs-lookup"><span data-stu-id="667ad-239">Finally, use the topics in this section to configure your storage, upload your data, and set access permissions appropriately based on your choices.</span></span>
+<span data-ttu-id="64d1a-239">最後に、このセクションのトピックを使用して、ストレージを構成し、データをアップロードし、選択した内容に基づいて適切にアクセス許可を設定します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-239">Finally, use the topics in this section to configure your storage, upload your data, and set access permissions appropriately based on your choices.</span></span>
 
 <a name="ID4EJFAC"></a>
 
-## <a name="in-this-section"></a><span data-ttu-id="667ad-240">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="667ad-240">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="64d1a-240">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="64d1a-240">In this section</span></span>
 
-[<span data-ttu-id="667ad-241">Xbox Live タイトル ストレージ内の構成 BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="667ad-241">Reading a Configuration Blob in Xbox Live Title Storage</span></span>](reading-configuration-blobs.md)  
-<span data-ttu-id="667ad-242">Xbox Live タイトル ストレージから構成 BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-242">Demonstrates reading configuration blobs from Xbox Live title storage.</span></span>
+[<span data-ttu-id="64d1a-241">Xbox Live タイトル ストレージ内の構成 BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="64d1a-241">Reading a Configuration Blob in Xbox Live Title Storage</span></span>](reading-configuration-blobs.md)  
+<span data-ttu-id="64d1a-242">Xbox Live タイトル ストレージから構成 BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-242">Demonstrates reading configuration blobs from Xbox Live title storage.</span></span>
 
-[<span data-ttu-id="667ad-243">Xbox Live タイトル ストレージへのバイナリ BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="667ad-243">Storing a Binary Blob in Xbox Live Title Storage</span></span>](storing-binary-blobs.md)  
-<span data-ttu-id="667ad-244">Xbox Live タイトル ストレージにバイナリ BLOB を保存する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-244">Demonstrates storing binary blobs in Xbox Live title storage.</span></span>
+[<span data-ttu-id="64d1a-243">Xbox Live タイトル ストレージへのバイナリ BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="64d1a-243">Storing a Binary Blob in Xbox Live Title Storage</span></span>](storing-binary-blobs.md)  
+<span data-ttu-id="64d1a-244">Xbox Live タイトル ストレージにバイナリ BLOB を保存する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-244">Demonstrates storing binary blobs in Xbox Live title storage.</span></span>
 
-[<span data-ttu-id="667ad-245">Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="667ad-245">Reading a Binary Blob in Xbox Live Title Storage</span></span>](reading-binary-blobs.md)  
-<span data-ttu-id="667ad-246">Xbox Live タイトル ストレージからバイナリ BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-246">Demonstrates reading binary blobs from Xbox Live title storage.</span></span>
+[<span data-ttu-id="64d1a-245">Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="64d1a-245">Reading a Binary Blob in Xbox Live Title Storage</span></span>](reading-binary-blobs.md)  
+<span data-ttu-id="64d1a-246">Xbox Live タイトル ストレージからバイナリ BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-246">Demonstrates reading binary blobs from Xbox Live title storage.</span></span>
 
-[<span data-ttu-id="667ad-247">Xbox Live タイトル ストレージへの JSON BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="667ad-247">Storing a JSON Blob in Xbox Live Title Storage</span></span>](storing-jsonblobs.md)  
-<span data-ttu-id="667ad-248">Xbox Live タイトル ストレージに JSON BLOB を保存する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-248">Demonstrates storing JSON blobs in Xbox Live title storage.</span></span>
+[<span data-ttu-id="64d1a-247">Xbox Live タイトル ストレージへの JSON BLOB の保存</span><span class="sxs-lookup"><span data-stu-id="64d1a-247">Storing a JSON Blob in Xbox Live Title Storage</span></span>](storing-jsonblobs.md)  
+<span data-ttu-id="64d1a-248">Xbox Live タイトル ストレージに JSON BLOB を保存する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-248">Demonstrates storing JSON blobs in Xbox Live title storage.</span></span>
 
-[<span data-ttu-id="667ad-249">Xbox Live タイトル ストレージ内の JSON BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="667ad-249">Reading a JSON Blob in Xbox Live Title Storage</span></span>](reading-jsonblobs.md)  
-<span data-ttu-id="667ad-250">Xbox Live タイトル ストレージから JSON BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="667ad-250">Demonstrates reading JSON blobs from Xbox Live title storage.</span></span>
+[<span data-ttu-id="64d1a-249">Xbox Live タイトル ストレージ内の JSON BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="64d1a-249">Reading a JSON Blob in Xbox Live Title Storage</span></span>](reading-jsonblobs.md)  
+<span data-ttu-id="64d1a-250">Xbox Live タイトル ストレージから JSON BLOB を読み取る方法を示します。</span><span class="sxs-lookup"><span data-stu-id="64d1a-250">Demonstrates reading JSON blobs from Xbox Live title storage.</span></span>
 
 <a name="ID4E4FAC"></a>

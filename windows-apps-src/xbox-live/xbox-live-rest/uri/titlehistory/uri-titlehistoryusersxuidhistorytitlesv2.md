@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b404b6b48139236397e765f885caef953acd87ff
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119334"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7169347"
 ---
 # <a name="usersxuidxuidhistorytitles"></a><span data-ttu-id="90f0c-104">/users/xuid({xuid})/history/titles</span><span class="sxs-lookup"><span data-stu-id="90f0c-104">/users/xuid({xuid})/history/titles</span></span>
  

@@ -10,44 +10,44 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: defd8161211065318242077dde02d8a6f777ac0b
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6256784"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151758"
 ---
-# <a name="usersxuidxuidfeedback"></a><span data-ttu-id="1f7d1-104">/users/xuid({xuid})/feedback</span><span class="sxs-lookup"><span data-stu-id="1f7d1-104">/users/xuid({xuid})/feedback</span></span>
+# <a name="usersxuidxuidfeedback"></a><span data-ttu-id="b1bdb-104">/users/xuid({xuid})/feedback</span><span class="sxs-lookup"><span data-stu-id="b1bdb-104">/users/xuid({xuid})/feedback</span></span>
  
-<span data-ttu-id="1f7d1-105">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="1f7d1-105">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
+<span data-ttu-id="b1bdb-105">これらの Uri のドメインが`reputation.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b1bdb-105">The domain for these URIs is `reputation.xboxlive.com`.</span></span>
  
 <a id="ID4EW"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="1f7d1-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="1f7d1-106">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="b1bdb-106">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b1bdb-106">URI parameters</span></span>
  
-| <span data-ttu-id="1f7d1-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="1f7d1-107">Parameter</span></span>| <span data-ttu-id="1f7d1-108">型</span><span class="sxs-lookup"><span data-stu-id="1f7d1-108">Type</span></span>| <span data-ttu-id="1f7d1-109">説明</span><span class="sxs-lookup"><span data-stu-id="1f7d1-109">Description</span></span>| 
+| <span data-ttu-id="b1bdb-107">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b1bdb-107">Parameter</span></span>| <span data-ttu-id="b1bdb-108">型</span><span class="sxs-lookup"><span data-stu-id="b1bdb-108">Type</span></span>| <span data-ttu-id="b1bdb-109">説明</span><span class="sxs-lookup"><span data-stu-id="b1bdb-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="1f7d1-110">xuid</span><span class="sxs-lookup"><span data-stu-id="1f7d1-110">xuid</span></span>| <span data-ttu-id="1f7d1-111">ulong</span><span class="sxs-lookup"><span data-stu-id="1f7d1-111">ulong</span></span>| <span data-ttu-id="1f7d1-112">Xbox ユーザー ID (XUID) のユーザーを報告します。</span><span class="sxs-lookup"><span data-stu-id="1f7d1-112">Xbox User ID (XUID) of the user being reported.</span></span>| 
+| <span data-ttu-id="b1bdb-110">xuid</span><span class="sxs-lookup"><span data-stu-id="b1bdb-110">xuid</span></span>| <span data-ttu-id="b1bdb-111">ulong</span><span class="sxs-lookup"><span data-stu-id="b1bdb-111">ulong</span></span>| <span data-ttu-id="b1bdb-112">Xbox ユーザー ID (XUID) のユーザーを報告します。</span><span class="sxs-lookup"><span data-stu-id="b1bdb-112">Xbox User ID (XUID) of the user being reported.</span></span>| 
   
 <a id="ID4EZB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="1f7d1-113">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="1f7d1-113">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="b1bdb-113">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b1bdb-113">Valid methods</span></span>
 
-[<span data-ttu-id="1f7d1-114">POST</span><span class="sxs-lookup"><span data-stu-id="1f7d1-114">POST</span></span>](uri-reputationusersxuidfeedbackpost.md)
+[<span data-ttu-id="b1bdb-114">POST</span><span class="sxs-lookup"><span data-stu-id="b1bdb-114">POST</span></span>](uri-reputationusersxuidfeedbackpost.md)
 
-<span data-ttu-id="1f7d1-115">&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="1f7d1-115">&nbsp;&nbsp;Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span>
+<span data-ttu-id="b1bdb-115">&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。</span><span class="sxs-lookup"><span data-stu-id="b1bdb-115">&nbsp;&nbsp;Used from your title if you desire to add a feedback option in your game, as opposed to using the shell.</span></span>
  
 <a id="ID4EDC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1f7d1-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="1f7d1-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b1bdb-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="b1bdb-116">See also</span></span>
  
 <a id="ID4EFC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1f7d1-117">Parent</span><span class="sxs-lookup"><span data-stu-id="1f7d1-117">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b1bdb-117">Parent</span><span class="sxs-lookup"><span data-stu-id="b1bdb-117">Parent</span></span> 
 
-[<span data-ttu-id="1f7d1-118">評判 URI</span><span class="sxs-lookup"><span data-stu-id="1f7d1-118">Reputation URIs</span></span>](atoc-reference-reputation.md)
+[<span data-ttu-id="b1bdb-118">評判 URI</span><span class="sxs-lookup"><span data-stu-id="b1bdb-118">Reputation URIs</span></span>](atoc-reference-reputation.md)
 
    

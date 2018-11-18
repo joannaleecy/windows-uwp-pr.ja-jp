@@ -10,39 +10,39 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d03f9139bcd8067c5d0b945c92bf09728a28366
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6279403"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7152085"
 ---
-# <a name="requirement-json"></a><span data-ttu-id="cc4f7-104">Requirement (JSON)</span><span class="sxs-lookup"><span data-stu-id="cc4f7-104">Requirement (JSON)</span></span>
-<span data-ttu-id="cc4f7-105">実績とそれらに対応するため、どのくらいユーザーがロック解除の条件。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-105">The unlock criteria for the Achievement and how far the user is toward meeting them.</span></span> 
+# <a name="requirement-json"></a><span data-ttu-id="26382-104">Requirement (JSON)</span><span class="sxs-lookup"><span data-stu-id="26382-104">Requirement (JSON)</span></span>
+<span data-ttu-id="26382-105">実績とそれらに対応するため、どのくらいユーザーがロック解除の条件。</span><span class="sxs-lookup"><span data-stu-id="26382-105">The unlock criteria for the Achievement and how far the user is toward meeting them.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="requirement"></a><span data-ttu-id="cc4f7-106">要件</span><span class="sxs-lookup"><span data-stu-id="cc4f7-106">Requirement</span></span>
+## <a name="requirement"></a><span data-ttu-id="26382-106">要件</span><span class="sxs-lookup"><span data-stu-id="26382-106">Requirement</span></span>
  
-<span data-ttu-id="cc4f7-107">要件のオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-107">The Requirement object has the following specification.</span></span>
+<span data-ttu-id="26382-107">要件のオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="26382-107">The Requirement object has the following specification.</span></span>
  
-| <span data-ttu-id="cc4f7-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="cc4f7-108">Member</span></span>| <span data-ttu-id="cc4f7-109">種類</span><span class="sxs-lookup"><span data-stu-id="cc4f7-109">Type</span></span>| <span data-ttu-id="cc4f7-110">説明</span><span class="sxs-lookup"><span data-stu-id="cc4f7-110">Description</span></span>| 
+| <span data-ttu-id="26382-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="26382-108">Member</span></span>| <span data-ttu-id="26382-109">種類</span><span class="sxs-lookup"><span data-stu-id="26382-109">Type</span></span>| <span data-ttu-id="26382-110">説明</span><span class="sxs-lookup"><span data-stu-id="26382-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="cc4f7-111">id</span><span class="sxs-lookup"><span data-stu-id="cc4f7-111">id</span></span>| <span data-ttu-id="cc4f7-112">string</span><span class="sxs-lookup"><span data-stu-id="cc4f7-112">string</span></span>| <span data-ttu-id="cc4f7-113">要件の ID です。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-113">The ID of the requirement.</span></span>| 
-| <span data-ttu-id="cc4f7-114">現在の</span><span class="sxs-lookup"><span data-stu-id="cc4f7-114">current</span></span>| <span data-ttu-id="cc4f7-115">string</span><span class="sxs-lookup"><span data-stu-id="cc4f7-115">string</span></span>| <span data-ttu-id="cc4f7-116">要件に向けた進行状況の現在の値。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-116">The current value of progression toward the requirement.</span></span>| 
-| <span data-ttu-id="cc4f7-117">ターゲット</span><span class="sxs-lookup"><span data-stu-id="cc4f7-117">target</span></span>| <span data-ttu-id="cc4f7-118">string</span><span class="sxs-lookup"><span data-stu-id="cc4f7-118">string</span></span>| <span data-ttu-id="cc4f7-119">要件のターゲットの値。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-119">The target value of the requirement.</span></span>| 
-| <span data-ttu-id="cc4f7-120">入力</span><span class="sxs-lookup"><span data-stu-id="cc4f7-120">operationType</span></span>| <span data-ttu-id="cc4f7-121">string</span><span class="sxs-lookup"><span data-stu-id="cc4f7-121">string</span></span>| <span data-ttu-id="cc4f7-122">要件の操作の種類。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-122">The operation type of the requirement.</span></span> <span data-ttu-id="cc4f7-123">有効な値が合計、最小、最大値です。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-123">Valid values are Sum, Minimum, Maximum.</span></span>| 
-| <span data-ttu-id="cc4f7-124">ruleParticipationType</span><span class="sxs-lookup"><span data-stu-id="cc4f7-124">ruleParticipationType</span></span>| <span data-ttu-id="cc4f7-125">string</span><span class="sxs-lookup"><span data-stu-id="cc4f7-125">string</span></span>| <span data-ttu-id="cc4f7-126">要件の参加の種類。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-126">The participation type of the requirement.</span></span> <span data-ttu-id="cc4f7-127">有効な値は、個人, グループです。</span><span class="sxs-lookup"><span data-stu-id="cc4f7-127">Valid values are Individual, Group.</span></span>| 
+| <span data-ttu-id="26382-111">id</span><span class="sxs-lookup"><span data-stu-id="26382-111">id</span></span>| <span data-ttu-id="26382-112">string</span><span class="sxs-lookup"><span data-stu-id="26382-112">string</span></span>| <span data-ttu-id="26382-113">要件の ID です。</span><span class="sxs-lookup"><span data-stu-id="26382-113">The ID of the requirement.</span></span>| 
+| <span data-ttu-id="26382-114">現在の</span><span class="sxs-lookup"><span data-stu-id="26382-114">current</span></span>| <span data-ttu-id="26382-115">string</span><span class="sxs-lookup"><span data-stu-id="26382-115">string</span></span>| <span data-ttu-id="26382-116">要件に向けた進行状況の現在の値。</span><span class="sxs-lookup"><span data-stu-id="26382-116">The current value of progression toward the requirement.</span></span>| 
+| <span data-ttu-id="26382-117">ターゲット</span><span class="sxs-lookup"><span data-stu-id="26382-117">target</span></span>| <span data-ttu-id="26382-118">string</span><span class="sxs-lookup"><span data-stu-id="26382-118">string</span></span>| <span data-ttu-id="26382-119">要件のターゲットの値。</span><span class="sxs-lookup"><span data-stu-id="26382-119">The target value of the requirement.</span></span>| 
+| <span data-ttu-id="26382-120">入力</span><span class="sxs-lookup"><span data-stu-id="26382-120">operationType</span></span>| <span data-ttu-id="26382-121">string</span><span class="sxs-lookup"><span data-stu-id="26382-121">string</span></span>| <span data-ttu-id="26382-122">要件の操作の種類。</span><span class="sxs-lookup"><span data-stu-id="26382-122">The operation type of the requirement.</span></span> <span data-ttu-id="26382-123">有効な値が合計、最小、最大値です。</span><span class="sxs-lookup"><span data-stu-id="26382-123">Valid values are Sum, Minimum, Maximum.</span></span>| 
+| <span data-ttu-id="26382-124">ruleParticipationType</span><span class="sxs-lookup"><span data-stu-id="26382-124">ruleParticipationType</span></span>| <span data-ttu-id="26382-125">string</span><span class="sxs-lookup"><span data-stu-id="26382-125">string</span></span>| <span data-ttu-id="26382-126">要件の参加の種類。</span><span class="sxs-lookup"><span data-stu-id="26382-126">The participation type of the requirement.</span></span> <span data-ttu-id="26382-127">有効な値は、個人, グループです。</span><span class="sxs-lookup"><span data-stu-id="26382-127">Valid values are Individual, Group.</span></span>| 
   
 <a id="ID4ETC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="cc4f7-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="cc4f7-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26382-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="26382-128">See also</span></span>
  
 <a id="ID4EVC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="cc4f7-129">Parent</span><span class="sxs-lookup"><span data-stu-id="cc4f7-129">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="26382-129">Parent</span><span class="sxs-lookup"><span data-stu-id="26382-129">Parent</span></span> 
 
-[<span data-ttu-id="cc4f7-130">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="cc4f7-130">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="26382-130">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="26382-130">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b076aa0816600be65b92e2d59a76f07485b7d4ff
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119329"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7157773"
 ---
 # <a name="using-xbox-live"></a><span data-ttu-id="9e58a-104">Xbox Live を使用する</span><span class="sxs-lookup"><span data-stu-id="9e58a-104">Using Xbox Live</span></span>
 

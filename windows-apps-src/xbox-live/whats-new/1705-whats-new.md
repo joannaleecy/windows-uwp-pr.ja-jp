@@ -9,24 +9,24 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 新規事項, may 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 91a82cf53a92af15d09d8291d1d3e7448144bb52
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6834065"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166714"
 ---
-# <a name="whats-new-for-the-xbox-live-apis---may-2017"></a><span data-ttu-id="0677e-104">Xbox Live API の新規事項 - May 2017</span><span class="sxs-lookup"><span data-stu-id="0677e-104">What's new for the Xbox Live APIs - May 2017</span></span>
+# <a name="whats-new-for-the-xbox-live-apis---may-2017"></a><span data-ttu-id="26692-104">Xbox Live API の新規事項 - May 2017</span><span class="sxs-lookup"><span data-stu-id="26692-104">What's new for the Xbox Live APIs - May 2017</span></span>
 
-<span data-ttu-id="0677e-105">April 2017 リリースで追加された内容については、「[新規事項 - April 2017](1704-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0677e-105">Please see the [What's New - April 2017](1704-whats-new.md) article for what was added in the April 2017 release.</span></span>
+<span data-ttu-id="26692-105">April 2017 リリースで追加された内容については、「[新規事項 - April 2017](1704-whats-new.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="26692-105">Please see the [What's New - April 2017](1704-whats-new.md) article for what was added in the April 2017 release.</span></span>
 
-<span data-ttu-id="0677e-106">[GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="0677e-106">You can also check the [GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.</span></span>
+<span data-ttu-id="26692-106">[GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="26692-106">You can also check the [GitHub commit history](https://github.com/Microsoft/xbox-live-api/commits/master) to see all of the recent code changes to the Xbox Live APIs.</span></span>
 
-## <a name="xbox-services-apis"></a><span data-ttu-id="0677e-107">Xbox サービス API</span><span class="sxs-lookup"><span data-stu-id="0677e-107">Xbox Services APIs</span></span>
+## <a name="xbox-services-apis"></a><span data-ttu-id="26692-107">Xbox サービス API</span><span class="sxs-lookup"><span data-stu-id="26692-107">Xbox Services APIs</span></span>
 
-### <a name="multiplayer"></a><span data-ttu-id="0677e-108">マルチプレイヤー</span><span class="sxs-lookup"><span data-stu-id="0677e-108">Multiplayer</span></span>
+### <a name="multiplayer"></a><span data-ttu-id="26692-108">マルチプレイヤー</span><span class="sxs-lookup"><span data-stu-id="26692-108">Multiplayer</span></span>
 
-* <span data-ttu-id="0677e-109">アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="0677e-109">Querying activity handles and search handles now includes the custom session properties in the response.</span></span>
+* <span data-ttu-id="26692-109">アクティビティ ハンドルと検索ハンドルの照会の応答にカスタム セッション プロパティが含まれるようになりました。</span><span class="sxs-lookup"><span data-stu-id="26692-109">Querying activity handles and search handles now includes the custom session properties in the response.</span></span>
 
-### <a name="bug-fixes"></a><span data-ttu-id="0677e-110">バグ修正</span><span class="sxs-lookup"><span data-stu-id="0677e-110">Bug fixes</span></span>
+### <a name="bug-fixes"></a><span data-ttu-id="26692-110">バグ修正</span><span class="sxs-lookup"><span data-stu-id="26692-110">Bug fixes</span></span>
 
-* <span data-ttu-id="0677e-111">有効な HTTP エラー コードではなく "bad json" が返されるバグを修正しました。</span><span class="sxs-lookup"><span data-stu-id="0677e-111">Fixed "bad json" being returned instead of a valid HTTP error code.</span></span>
+* <span data-ttu-id="26692-111">有効な HTTP エラー コードではなく "bad json" が返されるバグを修正しました。</span><span class="sxs-lookup"><span data-stu-id="26692-111">Fixed "bad json" being returned instead of a valid HTTP error code.</span></span>

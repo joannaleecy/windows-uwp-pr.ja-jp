@@ -10,30 +10,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: aea8a1914a9466b7e24fd0214059a0dac5a6c3a7
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6833798"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7170065"
 ---
-# <a name="queryclipsresponse-json"></a><span data-ttu-id="a32a5-104">QueryClipsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="a32a5-104">QueryClipsResponse (JSON)</span></span>
-<span data-ttu-id="a32a5-105">一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。</span><span class="sxs-lookup"><span data-stu-id="a32a5-105">Wraps the list of return game clips along with paging information for the list.</span></span> 
+# <a name="queryclipsresponse-json"></a><span data-ttu-id="e809a-104">QueryClipsResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="e809a-104">QueryClipsResponse (JSON)</span></span>
+<span data-ttu-id="e809a-105">一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。</span><span class="sxs-lookup"><span data-stu-id="e809a-105">Wraps the list of return game clips along with paging information for the list.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="queryclipsresponse"></a><span data-ttu-id="a32a5-106">QueryClipsResponse</span><span class="sxs-lookup"><span data-stu-id="a32a5-106">QueryClipsResponse</span></span>
+## <a name="queryclipsresponse"></a><span data-ttu-id="e809a-106">QueryClipsResponse</span><span class="sxs-lookup"><span data-stu-id="e809a-106">QueryClipsResponse</span></span>
  
-<span data-ttu-id="a32a5-107">QueryClipsResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a32a5-107">The QueryClipsResponse object has the following specification.</span></span>
+<span data-ttu-id="e809a-107">QueryClipsResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="e809a-107">The QueryClipsResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="a32a5-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="a32a5-108">Member</span></span>| <span data-ttu-id="a32a5-109">種類</span><span class="sxs-lookup"><span data-stu-id="a32a5-109">Type</span></span>| <span data-ttu-id="a32a5-110">説明</span><span class="sxs-lookup"><span data-stu-id="a32a5-110">Description</span></span>| 
+| <span data-ttu-id="e809a-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="e809a-108">Member</span></span>| <span data-ttu-id="e809a-109">種類</span><span class="sxs-lookup"><span data-stu-id="e809a-109">Type</span></span>| <span data-ttu-id="e809a-110">説明</span><span class="sxs-lookup"><span data-stu-id="e809a-110">Description</span></span>| 
 | --- | --- | --- | 
-| <b><span data-ttu-id="a32a5-111">gameClips</span><span class="sxs-lookup"><span data-stu-id="a32a5-111">gameClips</span></span></b>| <span data-ttu-id="a32a5-112">GameClip の配列</span><span class="sxs-lookup"><span data-stu-id="a32a5-112">array of GameClip</span></span>| <span data-ttu-id="a32a5-113">要求の制限 (<b>maxItems</b>) までクエリが満たされるゲーム クリップの配列です。</span><span class="sxs-lookup"><span data-stu-id="a32a5-113">An array of game clips that satisfied the query up to the request limit (<b>maxItems</b>).</span></span>| 
-| <b><span data-ttu-id="a32a5-114">pagingInfo</span><span class="sxs-lookup"><span data-stu-id="a32a5-114">pagingInfo</span></span></b>| <span data-ttu-id="a32a5-115">PagingInfo</span><span class="sxs-lookup"><span data-stu-id="a32a5-115">PagingInfo</span></span>| <span data-ttu-id="a32a5-116">必要な継続とリストの後続の呼び出しのページングする要求の制限を超える (<b>maxItems</b>) の情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="a32a5-116">Contains the information needed for continuation and paging for subsequent calls for lists that exceed the request limit (<b>maxItems</b>).</span></span>| 
+| <b><span data-ttu-id="e809a-111">gameClips</span><span class="sxs-lookup"><span data-stu-id="e809a-111">gameClips</span></span></b>| <span data-ttu-id="e809a-112">GameClip の配列</span><span class="sxs-lookup"><span data-stu-id="e809a-112">array of GameClip</span></span>| <span data-ttu-id="e809a-113">要求の制限 (<b>maxItems</b>) までクエリが満たされるゲーム クリップの配列です。</span><span class="sxs-lookup"><span data-stu-id="e809a-113">An array of game clips that satisfied the query up to the request limit (<b>maxItems</b>).</span></span>| 
+| <b><span data-ttu-id="e809a-114">pagingInfo</span><span class="sxs-lookup"><span data-stu-id="e809a-114">pagingInfo</span></span></b>| <span data-ttu-id="e809a-115">PagingInfo</span><span class="sxs-lookup"><span data-stu-id="e809a-115">PagingInfo</span></span>| <span data-ttu-id="e809a-116">必要な継続とリストの後続の呼び出しのページングする要求の制限を超える (<b>maxItems</b>) の情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e809a-116">Contains the information needed for continuation and paging for subsequent calls for lists that exceed the request limit (<b>maxItems</b>).</span></span>| 
   
 <a id="ID4E2B"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="a32a5-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a32a5-117">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="e809a-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="e809a-117">Sample JSON syntax</span></span>
  
 
 ```json
@@ -126,17 +126,17 @@ ms.locfileid: "6833798"
 <a id="ID4EEC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="a32a5-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="a32a5-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e809a-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="e809a-118">See also</span></span>
  
 <a id="ID4EGC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="a32a5-119">Parent</span><span class="sxs-lookup"><span data-stu-id="a32a5-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="e809a-119">Parent</span><span class="sxs-lookup"><span data-stu-id="e809a-119">Parent</span></span> 
 
-[<span data-ttu-id="a32a5-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a32a5-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="e809a-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="e809a-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ESC"></a>
 
  
-##### <a name="reference"></a><span data-ttu-id="a32a5-121">リファレンス</span><span class="sxs-lookup"><span data-stu-id="a32a5-121">Reference</span></span>   
+##### <a name="reference"></a><span data-ttu-id="e809a-121">リファレンス</span><span class="sxs-lookup"><span data-stu-id="e809a-121">Reference</span></span>   

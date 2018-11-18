@@ -10,45 +10,45 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ea4103ee7e4a1ae6ce6906dfa93a6cba9fe492b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197735"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163878"
 ---
-# <a name="globalscidsscid"></a><span data-ttu-id="9f57d-104">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="9f57d-104">/global/scids/{scid}</span></span>
-<span data-ttu-id="9f57d-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9f57d-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="9f57d-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="9f57d-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="globalscidsscid"></a><span data-ttu-id="f968e-104">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="f968e-104">/global/scids/{scid}</span></span>
+<span data-ttu-id="f968e-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="f968e-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="f968e-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="f968e-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="9f57d-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9f57d-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="f968e-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f968e-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="9f57d-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9f57d-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="f968e-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="f968e-108">URI parameters</span></span>
  
-| <span data-ttu-id="9f57d-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="9f57d-109">Parameter</span></span>| <span data-ttu-id="9f57d-110">型</span><span class="sxs-lookup"><span data-stu-id="9f57d-110">Type</span></span>| <span data-ttu-id="9f57d-111">説明</span><span class="sxs-lookup"><span data-stu-id="9f57d-111">Description</span></span>| 
+| <span data-ttu-id="f968e-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="f968e-109">Parameter</span></span>| <span data-ttu-id="f968e-110">型</span><span class="sxs-lookup"><span data-stu-id="f968e-110">Type</span></span>| <span data-ttu-id="f968e-111">説明</span><span class="sxs-lookup"><span data-stu-id="f968e-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="9f57d-112">scid</span><span class="sxs-lookup"><span data-stu-id="9f57d-112">scid</span></span>| <span data-ttu-id="9f57d-113">guid</span><span class="sxs-lookup"><span data-stu-id="9f57d-113">guid</span></span>| <span data-ttu-id="9f57d-114">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="9f57d-114">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="f968e-112">scid</span><span class="sxs-lookup"><span data-stu-id="f968e-112">scid</span></span>| <span data-ttu-id="f968e-113">guid</span><span class="sxs-lookup"><span data-stu-id="f968e-113">guid</span></span>| <span data-ttu-id="f968e-114">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="f968e-114">the ID of the service config to look up.</span></span>| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="9f57d-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9f57d-115">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="f968e-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="f968e-115">Valid methods</span></span>
 
-[<span data-ttu-id="9f57d-116">GET</span><span class="sxs-lookup"><span data-stu-id="9f57d-116">GET</span></span>](uri-globalscidsscid-get.md)
+[<span data-ttu-id="f968e-116">GET</span><span class="sxs-lookup"><span data-stu-id="f968e-116">GET</span></span>](uri-globalscidsscid-get.md)
 
-<span data-ttu-id="9f57d-117">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="9f57d-117">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span> 
+<span data-ttu-id="f968e-117">&nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="f968e-117">&nbsp;&nbsp;Retrieves quota information for this storage type.</span></span> 
  
 <a id="ID4E4B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9f57d-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="9f57d-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f968e-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="f968e-118">See also</span></span>
  
 <a id="ID4E6B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9f57d-119">Parent</span><span class="sxs-lookup"><span data-stu-id="9f57d-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="f968e-119">Parent</span><span class="sxs-lookup"><span data-stu-id="f968e-119">Parent</span></span> 
 
-[<span data-ttu-id="9f57d-120">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="9f57d-120">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="f968e-120">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="f968e-120">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    

@@ -9,18 +9,18 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c07853ee80be1b19a024aef75dfdb3b23018b81b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6842099"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166699"
 ---
-# <a name="whats-new-for-the-xbox-live-sdk---march-2016"></a><span data-ttu-id="2a3a3-104">Xbox Live SDK の新規事項 - March 2016</span><span class="sxs-lookup"><span data-stu-id="2a3a3-104">What's new for the Xbox Live SDK - March 2016</span></span>
+# <a name="whats-new-for-the-xbox-live-sdk---march-2016"></a><span data-ttu-id="c25d8-104">Xbox Live SDK の新規事項 - March 2016</span><span class="sxs-lookup"><span data-stu-id="c25d8-104">What's new for the Xbox Live SDK - March 2016</span></span>
 
-<span data-ttu-id="2a3a3-105">1602 で追加された内容については、「[新規事項 - February 2016](1602-whats-new.md)」の記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2a3a3-105">Please see the [What's New - February 2016](1602-whats-new.md) article for what was added in 1602</span></span>
+<span data-ttu-id="c25d8-105">1602 で追加された内容については、「[新規事項 - February 2016](1602-whats-new.md)」の記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c25d8-105">Please see the [What's New - February 2016](1602-whats-new.md) article for what was added in 1602</span></span>
 
-## <a name="os-and-tool-support"></a><span data-ttu-id="2a3a3-106">OS とツールのサポート</span><span class="sxs-lookup"><span data-stu-id="2a3a3-106">OS and tool support</span></span>
-<span data-ttu-id="2a3a3-107">Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual Studio 2015 RTM [バージョン 14.0.23107.0] がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="2a3a3-107">The Xbox Live SDK supports Windows 10 RTM [Version 10.0.10240] and Visual Studio 2015 RTM [Version 14.0.23107.0].</span></span>
+## <a name="os-and-tool-support"></a><span data-ttu-id="c25d8-106">OS とツールのサポート</span><span class="sxs-lookup"><span data-stu-id="c25d8-106">OS and tool support</span></span>
+<span data-ttu-id="c25d8-107">Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual Studio 2015 RTM [バージョン 14.0.23107.0] がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="c25d8-107">The Xbox Live SDK supports Windows 10 RTM [Version 10.0.10240] and Visual Studio 2015 RTM [Version 14.0.23107.0].</span></span>
 
-## <a name="tournaments"></a><span data-ttu-id="2a3a3-108">トーナメント</span><span class="sxs-lookup"><span data-stu-id="2a3a3-108">Tournaments</span></span>
-<span data-ttu-id="2a3a3-109">トーナメント API を使用できるようになりました。詳細については、API リファレンスの xbox::services::experimental::tournaments 名前空間を参照してください。</span><span class="sxs-lookup"><span data-stu-id="2a3a3-109">Tournament APIs are now available, please see the xbox::services::experimental::tournaments namespace in the API reference for more information</span></span>
+## <a name="tournaments"></a><span data-ttu-id="c25d8-108">トーナメント</span><span class="sxs-lookup"><span data-stu-id="c25d8-108">Tournaments</span></span>
+<span data-ttu-id="c25d8-109">トーナメント API を使用できるようになりました。詳細については、API リファレンスの xbox::services::experimental::tournaments 名前空間を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c25d8-109">Tournament APIs are now available, please see the xbox::services::experimental::tournaments namespace in the API reference for more information</span></span>

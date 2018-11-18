@@ -10,30 +10,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6833696"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7145248"
 ---
-# <a name="progression-json"></a><span data-ttu-id="1a284-104">Progression (JSON)</span><span class="sxs-lookup"><span data-stu-id="1a284-104">Progression (JSON)</span></span>
-<span data-ttu-id="1a284-105">実績をロック解除に向けたユーザーの進行します。</span><span class="sxs-lookup"><span data-stu-id="1a284-105">The user's progression toward unlocking the achievement.</span></span> 
+# <a name="progression-json"></a><span data-ttu-id="44054-104">Progression (JSON)</span><span class="sxs-lookup"><span data-stu-id="44054-104">Progression (JSON)</span></span>
+<span data-ttu-id="44054-105">実績をロック解除に向けたユーザーの進行します。</span><span class="sxs-lookup"><span data-stu-id="44054-105">The user's progression toward unlocking the achievement.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="progression"></a><span data-ttu-id="1a284-106">進行状況</span><span class="sxs-lookup"><span data-stu-id="1a284-106">Progression</span></span>
+## <a name="progression"></a><span data-ttu-id="44054-106">進行状況</span><span class="sxs-lookup"><span data-stu-id="44054-106">Progression</span></span>
  
-<span data-ttu-id="1a284-107">進行状況のオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="1a284-107">The Progression object has the following specification.</span></span>
+<span data-ttu-id="44054-107">進行状況のオブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="44054-107">The Progression object has the following specification.</span></span>
  
-| <span data-ttu-id="1a284-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="1a284-108">Member</span></span>| <span data-ttu-id="1a284-109">種類</span><span class="sxs-lookup"><span data-stu-id="1a284-109">Type</span></span>| <span data-ttu-id="1a284-110">説明</span><span class="sxs-lookup"><span data-stu-id="1a284-110">Description</span></span>| 
+| <span data-ttu-id="44054-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="44054-108">Member</span></span>| <span data-ttu-id="44054-109">種類</span><span class="sxs-lookup"><span data-stu-id="44054-109">Type</span></span>| <span data-ttu-id="44054-110">説明</span><span class="sxs-lookup"><span data-stu-id="44054-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="1a284-111">要件</span><span class="sxs-lookup"><span data-stu-id="1a284-111">requirements</span></span>| <span data-ttu-id="1a284-112">要件の配列</span><span class="sxs-lookup"><span data-stu-id="1a284-112">array of Requirement</span></span>| <span data-ttu-id="1a284-113">実績を獲得するための要件と、ユーザーの関与がロック解除に向けたです。</span><span class="sxs-lookup"><span data-stu-id="1a284-113">The requirements to earn the achievement and how far along the user is toward unlocking it.</span></span>| 
-| <span data-ttu-id="1a284-114">timeUnlocked</span><span class="sxs-lookup"><span data-stu-id="1a284-114">timeUnlocked</span></span>| <span data-ttu-id="1a284-115">DateTime</span><span class="sxs-lookup"><span data-stu-id="1a284-115">DateTime</span></span>| <span data-ttu-id="1a284-116">実績ロックが解除された最初の時刻。</span><span class="sxs-lookup"><span data-stu-id="1a284-116">The time the achievement was first unlocked.</span></span>| 
+| <span data-ttu-id="44054-111">要件</span><span class="sxs-lookup"><span data-stu-id="44054-111">requirements</span></span>| <span data-ttu-id="44054-112">要件の配列</span><span class="sxs-lookup"><span data-stu-id="44054-112">array of Requirement</span></span>| <span data-ttu-id="44054-113">実績を獲得するための要件と、ユーザーの関与がロック解除に向けたです。</span><span class="sxs-lookup"><span data-stu-id="44054-113">The requirements to earn the achievement and how far along the user is toward unlocking it.</span></span>| 
+| <span data-ttu-id="44054-114">timeUnlocked</span><span class="sxs-lookup"><span data-stu-id="44054-114">timeUnlocked</span></span>| <span data-ttu-id="44054-115">DateTime</span><span class="sxs-lookup"><span data-stu-id="44054-115">DateTime</span></span>| <span data-ttu-id="44054-116">実績ロックが解除された最初の時刻。</span><span class="sxs-lookup"><span data-stu-id="44054-116">The time the achievement was first unlocked.</span></span>| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="1a284-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="1a284-117">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="44054-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="44054-117">Sample JSON syntax</span></span>
  
 
 ```json
@@ -53,13 +53,13 @@ ms.locfileid: "6833696"
 <a id="ID4E3B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="1a284-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="1a284-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44054-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="44054-118">See also</span></span>
  
 <a id="ID4E5B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="1a284-119">Parent</span><span class="sxs-lookup"><span data-stu-id="1a284-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="44054-119">Parent</span><span class="sxs-lookup"><span data-stu-id="44054-119">Parent</span></span> 
 
-[<span data-ttu-id="1a284-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="1a284-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="44054-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="44054-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

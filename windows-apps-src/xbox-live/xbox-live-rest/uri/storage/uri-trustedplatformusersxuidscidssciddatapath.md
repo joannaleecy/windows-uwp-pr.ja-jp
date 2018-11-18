@@ -10,47 +10,47 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 39e28a246693299c4a733f698ca27c3dc89d3f96
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6836255"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151679"
 ---
-# <a name="trustedplatformusersxuidxuidscidssciddatapath"></a><span data-ttu-id="27697-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="27697-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>
-<span data-ttu-id="27697-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="27697-105">Lists file information at a specified path.</span></span> <span data-ttu-id="27697-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="27697-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
+# <a name="trustedplatformusersxuidxuidscidssciddatapath"></a><span data-ttu-id="7b10f-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span><span class="sxs-lookup"><span data-stu-id="7b10f-104">/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}</span></span>
+<span data-ttu-id="7b10f-105">指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="7b10f-105">Lists file information at a specified path.</span></span> <span data-ttu-id="7b10f-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7b10f-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="27697-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="27697-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="7b10f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="7b10f-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="27697-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="27697-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="7b10f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="7b10f-108">URI parameters</span></span>
  
-| <span data-ttu-id="27697-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="27697-109">Parameter</span></span>| <span data-ttu-id="27697-110">型</span><span class="sxs-lookup"><span data-stu-id="27697-110">Type</span></span>| <span data-ttu-id="27697-111">説明</span><span class="sxs-lookup"><span data-stu-id="27697-111">Description</span></span>| 
+| <span data-ttu-id="7b10f-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="7b10f-109">Parameter</span></span>| <span data-ttu-id="7b10f-110">型</span><span class="sxs-lookup"><span data-stu-id="7b10f-110">Type</span></span>| <span data-ttu-id="7b10f-111">説明</span><span class="sxs-lookup"><span data-stu-id="7b10f-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="27697-112">xuid</span><span class="sxs-lookup"><span data-stu-id="27697-112">xuid</span></span>| <span data-ttu-id="27697-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="27697-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="27697-114">Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="27697-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
-| <span data-ttu-id="27697-115">scid</span><span class="sxs-lookup"><span data-stu-id="27697-115">scid</span></span>| <span data-ttu-id="27697-116">guid</span><span class="sxs-lookup"><span data-stu-id="27697-116">guid</span></span>| <span data-ttu-id="27697-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="27697-117">the ID of the service config to look up.</span></span>| 
-| <span data-ttu-id="27697-118">path</span><span class="sxs-lookup"><span data-stu-id="27697-118">path</span></span>| <span data-ttu-id="27697-119">string</span><span class="sxs-lookup"><span data-stu-id="27697-119">string</span></span>| <span data-ttu-id="27697-120">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="27697-120">The path to the data items to return.</span></span> <span data-ttu-id="27697-121">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="27697-121">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="27697-122">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="27697-122">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="27697-123">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="27697-123">May be empty.</span></span> <span data-ttu-id="27697-124">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="27697-124">Max length of 256.</span></span>| 
+| <span data-ttu-id="7b10f-112">xuid</span><span class="sxs-lookup"><span data-stu-id="7b10f-112">xuid</span></span>| <span data-ttu-id="7b10f-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="7b10f-113">unsigned 64-bit integer</span></span>| <span data-ttu-id="7b10f-114">Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。</span><span class="sxs-lookup"><span data-stu-id="7b10f-114">The Xbox User ID (XUID) of the player who making the request.</span></span>| 
+| <span data-ttu-id="7b10f-115">scid</span><span class="sxs-lookup"><span data-stu-id="7b10f-115">scid</span></span>| <span data-ttu-id="7b10f-116">guid</span><span class="sxs-lookup"><span data-stu-id="7b10f-116">guid</span></span>| <span data-ttu-id="7b10f-117">ルックアップ サービス構成の ID です。</span><span class="sxs-lookup"><span data-stu-id="7b10f-117">the ID of the service config to look up.</span></span>| 
+| <span data-ttu-id="7b10f-118">path</span><span class="sxs-lookup"><span data-stu-id="7b10f-118">path</span></span>| <span data-ttu-id="7b10f-119">string</span><span class="sxs-lookup"><span data-stu-id="7b10f-119">string</span></span>| <span data-ttu-id="7b10f-120">返されるデータ項目へのパス。</span><span class="sxs-lookup"><span data-stu-id="7b10f-120">The path to the data items to return.</span></span> <span data-ttu-id="7b10f-121">一致するすべてのディレクトリとサブディレクトリを取得する返されます。</span><span class="sxs-lookup"><span data-stu-id="7b10f-121">All matching directories and subdirectories get returned.</span></span> <span data-ttu-id="7b10f-122">有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="7b10f-122">Valid characters include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), underscore (_), and forward slash (/).</span></span> <span data-ttu-id="7b10f-123">空にすることがあります。</span><span class="sxs-lookup"><span data-stu-id="7b10f-123">May be empty.</span></span> <span data-ttu-id="7b10f-124">256 の最大の長さ。</span><span class="sxs-lookup"><span data-stu-id="7b10f-124">Max length of 256.</span></span>| 
   
 <a id="ID4EFC"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="27697-125">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="27697-125">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="7b10f-125">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="7b10f-125">Valid methods</span></span>
 
-[<span data-ttu-id="27697-126">GET</span><span class="sxs-lookup"><span data-stu-id="27697-126">GET</span></span>](uri-trustedplatformusersxuidscidssciddatapath-get.md)
+[<span data-ttu-id="7b10f-126">GET</span><span class="sxs-lookup"><span data-stu-id="7b10f-126">GET</span></span>](uri-trustedplatformusersxuidscidssciddatapath-get.md)
 
-<span data-ttu-id="27697-127">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="27697-127">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
+<span data-ttu-id="7b10f-127">&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="7b10f-127">&nbsp;&nbsp;Lists file information at a specified path.</span></span>
  
 <a id="ID4EPC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="27697-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="27697-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7b10f-128">関連項目</span><span class="sxs-lookup"><span data-stu-id="7b10f-128">See also</span></span>
  
 <a id="ID4ERC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="27697-129">Parent</span><span class="sxs-lookup"><span data-stu-id="27697-129">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="7b10f-129">Parent</span><span class="sxs-lookup"><span data-stu-id="7b10f-129">Parent</span></span> 
 
-[<span data-ttu-id="27697-130">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="27697-130">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
+[<span data-ttu-id="7b10f-130">タイトル ストレージ URI</span><span class="sxs-lookup"><span data-stu-id="7b10f-130">Title Storage URIs</span></span>](atoc-reference-storagev2.md)
 
    
