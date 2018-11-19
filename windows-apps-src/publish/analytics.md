@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、分析, レポート, ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 8d7998366d484c95b90b765eb9227a7c3df41b6f
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167318"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7289866"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -49,7 +49,7 @@ ms.locfileid: "7167318"
 
 ## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部分析データにアクセス
 
-に加えて、レポートを表示する、パートナー センターで、さまざまな方法でアプリ分析にアクセスすることができます。
+パートナー センターでレポートを表示する、だけでなく他の方法でアプリ分析にアクセスできます。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -67,8 +67,3 @@ Power BI を使って分析データにアクセスするには、まず、次�
 
 > [!NOTE]
 > Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリから資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
-
-### <a name="dev-center-app"></a>Dev Center アプリ
-
-[Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) アプリをインストールすると、すべての Windows 10 デバイスでアプリの正常性とパフォーマンスに関する詳細情報をすばやく確認できます。
-

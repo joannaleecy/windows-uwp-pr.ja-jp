@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b472a7209ddb9e67f7bb7c00e967295892568a29
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7153723"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282626"
 ---
 # <a name="macs-hashes-and-signatures"></a>MAC、ハッシュ、および署名
 

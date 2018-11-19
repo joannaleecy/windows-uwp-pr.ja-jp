@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170314"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280040"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>サイド ローディングされた UWP アプリのための Windows ランタイム コンポーネント ブローカー
 
@@ -185,7 +185,7 @@ namespace Fabrikam
 
 「コントラクトの定義」で説明したように、プロジェクトの参照先は、デスクトップ コンポーネントの参照用の winmd にする必要があります。 Visual Studio のプロジェクト システムでは、通常、同じ名前で 2 レベルのディレクトリ構造が作成されます。 このサンプルでは、EnterpriseIPCApplication\\EnterpriseIPCApplication になります。 参照**用の winmd**は、この第 2 レベルのディレクトリとし、ダイアログ ボックスを使用するプロジェクトの参照を手動でコピーされます (クリックして、**参照.** ボタン) を見つけてこの**winmd**を参照します。 完了すると、デスクトップ コンポーネントの最上位の名前空間 (たとえば Fabrikam) が、プロジェクトの [参照] 部分の最上位ノードとして表示されます。
 
->**メモ****参照用の winmd**を使用する非常に重要サイドロード アプリケーションでします。 **実装用の winmd**経由で実行かどうか誤ってアプリのサイド ローディング ディレクトリを参照して、発生する可能性が「IStringable が見つからない」に関連するエラー。 これは 1 つことを確認する署名間違った**winmd**が参照されています。 IPC サーバー アプリ (次のセクションで詳しく説明) 慎重にビルド後の規則は、これら 2 つの**winmd**を分離別々 のディレクトリにします。
+>**注:****参照用の winmd**を使用する非常に重要サイドロード アプリケーションでします。 **実装用の winmd**経由で実行かどうか誤ってアプリのサイド ローディング ディレクトリを参照して、発生する可能性が「IStringable が見つからない」に関連するエラー。 これは 1 つことを確認する署名間違った**winmd**が参照されています。 IPC サーバー アプリ (次のセクションで詳しく説明) 慎重にビルド後の規則は、これら 2 つの**winmd**を分離別々 のディレクトリにします。
 
 <ActivatableClassAttribute Value="path"> では、環境変数 (特に %ProgramFiles%) を使うことができます。既に説明したように、アプリ ブローカーがサポートするのは 32 ビットだけであるため、アプリケーションが 64 ビット OS で実行されている場合、%ProgramFiles% は C:\\Program Files (x86) に解決されます。
 

@@ -9,11 +9,11 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7148118"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7284719"
 ---
 # <a name="send-email"></a>メールの送信
 

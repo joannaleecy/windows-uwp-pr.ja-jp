@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b39211c4b21a68fc0e563f73805805dcf1f4641
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145935"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282144"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>プッシュ通知ウィザードにより生成されるコード
  

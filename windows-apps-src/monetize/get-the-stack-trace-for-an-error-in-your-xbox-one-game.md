@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173545"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285757"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>ゲームに Xbox One でのエラーに関するスタック トレースを取得します。
 

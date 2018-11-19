@@ -10,11 +10,11 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 851c566c046a07d2368937cfe9e8b67945f615a9
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7154637"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285062"
 ---
 # <a name="style-for-uwp-apps"></a>UWP アプリのスタイル
 

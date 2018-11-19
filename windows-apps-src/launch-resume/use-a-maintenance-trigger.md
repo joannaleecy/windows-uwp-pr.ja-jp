@@ -12,12 +12,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160180"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280630"
 ---
 # <a name="use-a-maintenance-trigger"></a>メンテナンス トリガーの使用
 
@@ -35,7 +35,7 @@ ms.locfileid: "7160180"
 
 バックグラウンド タスク クラスの作成について詳しくは、「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」または「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
 
-新しい [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) オブジェクトを作成します。 2 つ目のパラメーター (*OneShot*) では、メンテナンス タスクを一度だけ実行するか、定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* でバックグラウンド タスクを実行する間隔を指定します。
+新しい [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) オブジェクトを作成します。 2 つ目のパラメーター (*OneShot*) では、メンテナンス タスクを一度だけ実行するか、定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* でバックグラウンド タスクを実行する間隔を指定します。
 
 > [!NOTE]
 > *FreshnessTime*は 15 分未満に設定されている場合は、バック グラウンド タスクを登録しようとすると、例外がスローされます。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144888"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280946"
 ---
 # <a name="porting-apps-to-windows10"></a>Windows 10 にアプリを移植
 

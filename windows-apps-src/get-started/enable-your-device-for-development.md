@@ -9,11 +9,11 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0355b5e29a450b909bf6dcacf1c1b88c80ff1335
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160590"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7279182"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 

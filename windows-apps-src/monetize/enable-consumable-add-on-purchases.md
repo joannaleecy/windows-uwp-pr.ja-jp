@@ -9,11 +9,11 @@ ms.date: 05/09/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e4687833b55f1456d298b552f5cce897f8b4eaa1
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7173284"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285803"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>コンシューマブルなアドオン購入の有効化
 

@@ -8,12 +8,12 @@ ms.date: 08/16/2018
 ms.topic: article
 keywords: windows 10、uwp、レビュー、コメント、レビュー担当者
 ms.localizationpriority: medium
-ms.openlocfilehash: 777decb9b060cc411d6150f199cd7a02f9ffc6cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: e5deef6d5e67c1236fb88f93269fcf91bb50243c
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158253"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281784"
 ---
 # <a name="reviews-report"></a>レビュー レポート
 
@@ -22,7 +22,7 @@ ms.locfileid: "7158253"
 
 このデータは、パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示できます。 または、[アプリのレビューを取得する](../monetize/get-app-reviews.md)メソッドを[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)を使用してこのデータをプログラムで取得できます。
 
-顧客のレビュー[このページから直接](respond-to-customer-reviews.md)、プログラムによって[Microsoft Store レビュー API 経由で](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用しても応答できます。
+顧客のレビュー[このページから直接](respond-to-customer-reviews.md)またはプログラム[によって Microsoft Store レビュー API](../monetize/submit-responses-to-app-reviews.md)に応答することもできます。
 
 > [!TIP]
 > 左側のナビゲーション メニューで **[Engage] (関心を引く)** を展開して **[レビューとフィードバック]** を選ぶと、自分のすべてのアプリの過去 30 日間のレビュー、評価、ユーザー フィードバックの概要を確認できます。 
@@ -114,7 +114,7 @@ ms.locfileid: "7158253"
 
 ## <a name="responding-to-customer-reviews"></a>顧客のレビューへの返信
 
-[パートナー センター](https://partner.microsoft.com/dashboard)、 [Microsoft Store レビュー API](../monetize/submit-responses-to-app-reviews.md)、または[デベロッパー センター アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)を使用するには、多くの顧客のレビューに返信を送信します。 詳しくは、「[顧客のレビューに返信する](respond-to-customer-reviews.md)」をご覧ください。
+[パートナー センター](https://partner.microsoft.com/dashboard)や[Microsoft Store レビュー API](../monetize/submit-responses-to-app-reviews.md)を使用するには、多くの顧客のレビューに返信を送信します。 詳しくは、「[顧客のレビューに返信する](respond-to-customer-reviews.md)」をご覧ください。
 
 アプリについて確認した評価とレビューに基づいて検討できるその他の対応を以下に示します。
 

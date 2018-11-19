@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 画面の向き, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155528"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7278687"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>画面の向きのサポート (DirectX と C++)
 

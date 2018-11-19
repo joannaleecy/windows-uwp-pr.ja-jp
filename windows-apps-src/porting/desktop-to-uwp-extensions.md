@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 6761ec38b470b798740cbabc72a648f51557edbc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 31e9485559da5d58311b0a4f93b2caf0ccc2274d
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145559"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282686"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 
@@ -1274,7 +1274,7 @@ Win32 アプリの Windows アプリ パッケージの作成だけです。 そ
 
 **質問に対する回答を見つける**
 
-ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
+ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
 **フィードバックの提供または機能の提案を行う**
 

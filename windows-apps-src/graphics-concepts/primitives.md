@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 349d4aa4fbf35bd7dccbd48b0251f5bb9e90a779
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165944"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7287362"
 ---
 # <a name="primitives"></a>プリミティブ
 

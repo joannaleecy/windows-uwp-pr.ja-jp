@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165644"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280380"
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 
