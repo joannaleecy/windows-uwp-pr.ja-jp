@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7295755"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421444"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a><span data-ttu-id="0de02-104">バックグラウンド タスクを実行するための条件の設定</span><span class="sxs-lookup"><span data-stu-id="0de02-104">Set conditions for running a background task</span></span>
 

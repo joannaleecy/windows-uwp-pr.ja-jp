@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7286822"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7417479"
 ---
 # <a name="getting-started-animation"></a><span data-ttu-id="7e04b-104">はじめに: アニメーション</span><span class="sxs-lookup"><span data-stu-id="7e04b-104">Getting started: Animation</span></span>
 

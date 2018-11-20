@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請のコミット
 ms.localizationpriority: medium
 ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7304611"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441711"
 ---
 # <a name="commit-a-package-flight-submission"></a><span data-ttu-id="2508e-104">パッケージ フライトの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="2508e-104">Commit a package flight submission</span></span>
 

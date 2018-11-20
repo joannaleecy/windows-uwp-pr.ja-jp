@@ -10,11 +10,11 @@ keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: aaf1675d102a714b32d2e59483f6c10ad704284f
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7287040"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421421"
 ---
 # <a name="access-analytics-data-using-store-services"></a><span data-ttu-id="627c1-104">ストア サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="627c1-104">Access analytics data using Store services</span></span>
 

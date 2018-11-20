@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5827bf0c9ddb7f5ebbab3f34e40e08d1620b6e0c
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7293882"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7420484"
 ---
 # <a name="accessibility"></a><span data-ttu-id="53b5a-103">ユーザー補助</span><span class="sxs-lookup"><span data-stu-id="53b5a-103">Accessibility</span></span>  
 

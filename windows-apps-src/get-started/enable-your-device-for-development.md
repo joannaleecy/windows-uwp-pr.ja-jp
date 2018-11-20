@@ -9,11 +9,11 @@ ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0355b5e29a450b909bf6dcacf1c1b88c80ff1335
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7279182"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421848"
 ---
 # <a name="enable-your-device-for-development"></a><span data-ttu-id="64902-104">デバイスを開発用に有効にする</span><span class="sxs-lookup"><span data-stu-id="64902-104">Enable your device for development</span></span>
 

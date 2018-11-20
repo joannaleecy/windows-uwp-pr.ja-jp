@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7290784"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421365"
 ---
 # <a name="optimize-animations-media-and-images"></a><span data-ttu-id="29ad3-104">アニメーション、メディア、画像の最適化</span><span class="sxs-lookup"><span data-stu-id="29ad3-104">Optimize animations, media, and images</span></span>
 

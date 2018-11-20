@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7284679"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7424769"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a><span data-ttu-id="5762c-104">開発ディレクトリにフォルダーをアップロードする</span><span class="sxs-lookup"><span data-stu-id="5762c-104">Upload a folder to the development directory</span></span>
 

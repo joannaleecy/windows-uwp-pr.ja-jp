@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dbbc7baf12daea485dec22389846e5e4acec16c1
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167419"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7442003"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a><span data-ttu-id="b22de-104">POST (/titles/{Title Id}/sessionhosts)</span><span class="sxs-lookup"><span data-stu-id="b22de-104">POST (/titles/{Title Id}/sessionhosts)</span></span>
 <span data-ttu-id="b22de-105">新しいクラスターの要求を作成します。</span><span class="sxs-lookup"><span data-stu-id="b22de-105">Create new cluster request.</span></span> <span data-ttu-id="b22de-106">これらの Uri のドメインが`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b22de-106">The domain for these URIs is `gameserverms.xboxlive.com`.</span></span>

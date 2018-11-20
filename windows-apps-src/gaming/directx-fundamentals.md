@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 読み込み, ラスタライズ, メッシュ, ビットマップ, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947f1e0684bc76c95fe8099f5ef123f2a32566e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7301262"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7445801"
 ---
 # <a name="fundamentals-of-directx-programming"></a><span data-ttu-id="3de0f-104">DirectX プログラミングの基本</span><span class="sxs-lookup"><span data-stu-id="3de0f-104">Fundamentals of DirectX programming</span></span>
 

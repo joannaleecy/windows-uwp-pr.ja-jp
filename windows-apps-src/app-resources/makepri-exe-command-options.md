@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7302074"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7422027"
 ---
 # <a name="makepriexe-command-line-options"></a><span data-ttu-id="5ec5d-103">MakePri.exe のコマンド ライン オプション</span><span class="sxs-lookup"><span data-stu-id="5ec5d-103">MakePri.exe command-line options</span></span>
 

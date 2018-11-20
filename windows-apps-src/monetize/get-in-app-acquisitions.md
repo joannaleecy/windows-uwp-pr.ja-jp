@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7303957"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7419846"
 ---
 # <a name="get-add-on-acquisitions"></a><span data-ttu-id="fad98-104">アドオンの入手数の取得</span><span class="sxs-lookup"><span data-stu-id="fad98-104">Get add-on acquisitions</span></span>
 

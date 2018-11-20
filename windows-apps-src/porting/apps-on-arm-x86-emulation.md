@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, ARM での x86 エミュレーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b596ab9abd31fa10d0ca07dec973082b495262e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7302254"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7446091"
 ---
 # <a name="how-x86-emulation-works-on-arm"></a><span data-ttu-id="189bc-104">ARM での x86 エミュレーション</span><span class="sxs-lookup"><span data-stu-id="189bc-104">How x86 emulation works on ARM</span></span>
 <span data-ttu-id="189bc-105">x86 アプリのエミュレーションにより、Win32 アプリのリッチなエコシステムが ARM で利用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="189bc-105">Emulation for x86 apps makes the rich ecosystem of Win32 apps available on ARM.</span></span> <span data-ttu-id="189bc-106">これにより、アプリに変更を加えなくても、ユーザーが既存の x86 win32 アプリを問題なく実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="189bc-106">This provides the user the magical experience of running an existing x86 win32 app without any modifications to the app.</span></span> <span data-ttu-id="189bc-107">アプリは、固有の API ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx)) を呼び出すことを除いて、ARM PC の Windows で実行されていることを認識することもありません。</span><span class="sxs-lookup"><span data-stu-id="189bc-107">The app doesn’t even know that it is running on a Windows on ARM PC, unless it calls specific APIs ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx)).</span></span>

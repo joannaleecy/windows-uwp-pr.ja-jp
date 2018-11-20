@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e02b11a12c77c3be3d1ae2951d6c174c0ac6283
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7156464"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7442006"
 ---
 # <a name="display-people-from-the-people-system"></a><span data-ttu-id="325b5-104">People システムからの人物の表示</span><span class="sxs-lookup"><span data-stu-id="325b5-104">Display People from the People System</span></span>
 
