@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
-ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155400"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291636"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
@@ -247,8 +247,8 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows アプリ開発者フォーラム</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Windows ストアとアプリ フォーラム</a></td>
+        <td>発行のアプリとゲーム開発者フォーラム</td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">公開とアプリ内広告</a></td>
     </tr>
     <tr>
         <td>UWP アプリ開発者フォーラム</td>
@@ -1661,10 +1661,6 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     <col width="50%" />
     <col width="50%" />
     </colgroup>
-    <tr>
-        <td>デベロッパー センター アプリ</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">公開済みアプリのパフォーマンスを表示するアプリを入手します。</a></td>
-    </tr>  
     <tr>
         <td>パートナー センターの分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">アプリのパフォーマンスの分析</a></td>
