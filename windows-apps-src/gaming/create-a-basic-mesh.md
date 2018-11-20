@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、メッシュ、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145443"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7290688"
 ---
 # <a name="create-and-display-a-basic-mesh"></a><span data-ttu-id="3cdee-104">基本的なメッシュの作成と表示</span><span class="sxs-lookup"><span data-stu-id="3cdee-104">Create and display a basic mesh</span></span>
 

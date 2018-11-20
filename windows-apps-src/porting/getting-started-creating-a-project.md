@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b10d615146c8989231c4fe36ad9588716c59c34
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7146631"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286343"
 ---
 # <a name="getting-started-creating-a-project"></a><span data-ttu-id="e1e8e-105">はじめに: プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="e1e8e-105">Getting started: Creating a project</span></span>
 

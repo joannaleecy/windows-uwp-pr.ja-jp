@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a053047324fcb795a30951d70c5e0e78fbb5547
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158983"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7290157"
 ---
 # <a name="save-a-file-with-a-picker"></a><span data-ttu-id="6f7e3-104">ピッカーによるファイルの保存</span><span class="sxs-lookup"><span data-stu-id="6f7e3-104">Save a file with a picker</span></span>
 
