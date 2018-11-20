@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7302214"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441307"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>リソース管理システムでのリソースの照合と選択の仕組み
 リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。 リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。 これはすべての修飾子を考慮して、すべての候補をランク付けすることで実行されます。

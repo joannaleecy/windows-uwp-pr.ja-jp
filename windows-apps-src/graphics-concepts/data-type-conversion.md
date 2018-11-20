@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7298571"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7417925"
 ---
 # <a name="data-type-conversion"></a>データ型の変換
 

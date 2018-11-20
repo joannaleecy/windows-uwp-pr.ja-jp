@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ストリーミング インストールをストリーミングする uwp アプリのインストールします。
 ms.localizationpriority: medium
 ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7283423"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7417314"
 ---
 # <a name="uwp-app-streaming-install"></a>UWP アプリ ストリーミング インストール
 ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Microsoft Store からアプリのどの部分を最初にダウンロードするかを指定できます。 アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。 

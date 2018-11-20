@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, ゲーム オプション, トレーラー, 詳細な登録情報, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7292643"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7421710"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請
 

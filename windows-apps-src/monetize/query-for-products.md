@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7306775"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441681"
 ---
 # <a name="query-for-products"></a>製品の照会
 
@@ -61,7 +61,7 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 | modifiedAfter     | datetime     | 指定した場合、この日付以降に変更された製品だけがサービスから返されます。        | 省略可能       |
 | parentProductId   | string       | 指定した場合、指定されたアプリに対応するアドオンだけがサービスから返されます。      | 省略可能       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | 指定した場合、指定された製品/SKU のペアに該当する製品だけがサービスから返されます。 詳細については、次の表をご覧ください。      | 省略可能       |
-| productTypes      | string       | 指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | 省略可能       |
+| productTypes      | 一覧&lt;文字列&gt;       | クエリの結果で返される製品の種類を指定します。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。     | はい       |
 | validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | 省略可能       |
 
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード, デスクトップ アプリケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: f9dcd76767662b5e40f587d7ac32ffd7d94a6053
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305455"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7419836"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする
 
