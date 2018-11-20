@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7156998"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7299440"
 ---
 # <a name="network-communications-in-the-background"></a><span data-ttu-id="a1eda-104">バックグラウンドでのネットワーク通信</span><span class="sxs-lookup"><span data-stu-id="a1eda-104">Network communications in the background</span></span>
 <span data-ttu-id="a1eda-105">フォア グラウンドでないときにネットワーク通信を続行するには、アプリはバック グラウンド タスクとこれら 2 つのオプションのいずれかを使用できます。</span><span class="sxs-lookup"><span data-stu-id="a1eda-105">To continue network communication while it's not in the foreground, your app can use background tasks and one of these two options.</span></span>

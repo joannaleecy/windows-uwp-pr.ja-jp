@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3763581c06ef9dc416fde41599e8b041b3c32096
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157018"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7297023"
 ---
 # <a name="typography"></a><span data-ttu-id="7ed1d-104">文字体裁</span><span class="sxs-lookup"><span data-stu-id="7ed1d-104">Typography</span></span>
 

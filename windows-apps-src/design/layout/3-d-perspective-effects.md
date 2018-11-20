@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f0b50ca4cb3f74c7c8e8bccb4fceb58e0151bcf2
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7147351"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296724"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a><span data-ttu-id="08650-105">XAML UI 用の 3-D 遠近効果</span><span class="sxs-lookup"><span data-stu-id="08650-105">3-D perspective effects for XAML UI</span></span>
 

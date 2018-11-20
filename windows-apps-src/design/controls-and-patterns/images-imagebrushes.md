@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157218"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294092"
 ---
 # <a name="images-and-image-brushes"></a><span data-ttu-id="5bae2-103">画像とイメージ ブラシ</span><span class="sxs-lookup"><span data-stu-id="5bae2-103">Images and image brushes</span></span>
 

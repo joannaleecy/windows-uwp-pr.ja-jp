@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7151286"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296695"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a><span data-ttu-id="69492-103">Windows プッシュ通知サービス (WNS) の概要</span><span class="sxs-lookup"><span data-stu-id="69492-103">Windows Push Notification Services (WNS) overview</span></span>
  

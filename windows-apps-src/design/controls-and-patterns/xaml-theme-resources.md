@@ -14,11 +14,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7164026"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294432"
 ---
 # <a name="xaml-theme-resources"></a><span data-ttu-id="b3dc1-103">XAML テーマ リソース</span><span class="sxs-lookup"><span data-stu-id="b3dc1-103">XAML theme resources</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 収益化
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160735"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295190"
 ---
 #  <a name="monetization-for-games"></a><span data-ttu-id="e2294-104">ゲームの収益化</span><span class="sxs-lookup"><span data-stu-id="e2294-104">Monetization for games</span></span>
 

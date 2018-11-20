@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a13ec942080d7fe517a10b837bea9ae8fae27750
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7153582"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7293725"
 ---
 # <a name="handle-app-prelaunch"></a><span data-ttu-id="aedd4-104">アプリの事前起動の処理</span><span class="sxs-lookup"><span data-stu-id="aedd4-104">Handle app prelaunch</span></span>
 

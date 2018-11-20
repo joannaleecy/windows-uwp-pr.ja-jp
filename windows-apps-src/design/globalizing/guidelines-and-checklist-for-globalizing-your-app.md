@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 177332515db26eca7cef7a7be75c5752a239a8f1
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167897"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7297654"
 ---
 # <a name="guidelines-for-globalization"></a><span data-ttu-id="8a7ee-103">グローバリゼーションのガイドライン</span><span class="sxs-lookup"><span data-stu-id="8a7ee-103">Guidelines for globalization</span></span>
 

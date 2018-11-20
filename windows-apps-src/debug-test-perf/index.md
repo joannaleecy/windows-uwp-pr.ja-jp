@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a6651c6d1117648522f95c7e7c85aad11ceed42f
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161667"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294422"
 ---
 # <a name="debugging-testing-and-performance"></a><span data-ttu-id="5f772-104">デバッグ、テスト、パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="5f772-104">Debugging, testing, and performance</span></span>
 

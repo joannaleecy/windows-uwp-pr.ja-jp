@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, カスタム オーディオ, 通知, オーディオ, サウンド
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ef27dfed400715256d1d9cfa51f383a9b72c90d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169854"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7295054"
 ---
 # <a name="custom-audio-on-toasts"></a><span data-ttu-id="e1b01-103">トーストでのカスタム オーディオの使用</span><span class="sxs-lookup"><span data-stu-id="e1b01-103">Custom audio on toasts</span></span>
 

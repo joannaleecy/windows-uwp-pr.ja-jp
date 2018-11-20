@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, バック グラウンド タスクでは、アプリのサービスに接続されているデバイス、リモート システム
 ms.localizationpriority: medium
 ms.openlocfilehash: bb036f0150095e6f02857d227e73b1c7f29b23df
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7156310"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7298516"
 ---
 # <a name="launching-resuming-and-background-tasks"></a><span data-ttu-id="948e4-104">起動、再開、およびバックグラウンド タスク</span><span class="sxs-lookup"><span data-stu-id="948e4-104">Launching, resuming, and background tasks</span></span>
 

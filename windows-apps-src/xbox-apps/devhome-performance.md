@@ -10,11 +10,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 6035463473eb6ddb1a3ec7fa554f9a12b8f764fc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145289"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7300041"
 ---
 # <a name="performance-page-dev-home"></a><span data-ttu-id="41dfe-104">パフォーマンス ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="41dfe-104">Performance Page (Dev Home)</span></span>
    

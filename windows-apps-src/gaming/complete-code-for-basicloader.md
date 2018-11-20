@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、BasicLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: cde8d7b368fb3ee660bd5696f983070738397b6f
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169062"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7298244"
 ---
 # <a name="complete-code-for-basicloader"></a><span data-ttu-id="628a5-104">BasicLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="628a5-104">Complete code for BasicLoader</span></span>
 
