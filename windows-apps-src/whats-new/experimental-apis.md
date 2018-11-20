@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 試験的, api
 ms.localizationpriority: medium
 ms.openlocfilehash: fe5fa437c5a1e564be07b7277de0f190d6eab862
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7172045"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306073"
 ---
 # <a name="experimental-apis"></a>試験的な API
 

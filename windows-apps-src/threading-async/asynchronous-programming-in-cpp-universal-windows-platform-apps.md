@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、スレッド、非同期、C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152404"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306583"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX での非同期プログラミング
 > [!NOTE]

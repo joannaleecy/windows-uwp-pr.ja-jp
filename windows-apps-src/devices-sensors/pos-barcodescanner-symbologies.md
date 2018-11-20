@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 91e09fd881ea5ce2b5ae6482148cdbb730c7ef17
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166238"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7304331"
 ---
 # <a name="working-with-symbologies"></a>シンボル体系の操作
 [バーコード シンボル体系](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)は、データと特定のバーコード形式のマッピングです。 一般的なシンボル体系には、UPC、Code 128、QR コード、およびなどが含まれます。  ユニバーサル Windows プラットフォームのバーコード スキャナー Api は、スキャナーを手動で構成しなくても、スキャナーがこれらのシンボル体系を処理する方法を制御するアプリケーションを許可します。 

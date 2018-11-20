@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: db2cf1c732669a2ae45b8a5eb427e8864446c800
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161607"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301611"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>適切なプッシュ通知チャネルの種類を選択する
 

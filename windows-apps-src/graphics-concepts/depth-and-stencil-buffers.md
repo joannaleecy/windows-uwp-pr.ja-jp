@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e292e0c992edb26da2a92885e1f949d254d75da6
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160890"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301168"
 ---
 # <a name="depth-and-stencil-buffers"></a>深度バッファーとステンシル バッファー
 

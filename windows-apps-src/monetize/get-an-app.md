@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166992"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306511"
 ---
 # <a name="get-an-app"></a>アプリの入手
 

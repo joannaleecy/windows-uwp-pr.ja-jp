@@ -14,11 +14,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7147868"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7306918"
 ---
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 

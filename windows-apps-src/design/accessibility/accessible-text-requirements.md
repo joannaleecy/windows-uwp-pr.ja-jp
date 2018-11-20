@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 39979ed3fa2fcd85cbf1f1b73d7c37b2dce38f20
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165418"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302729"
 ---
 # <a name="accessible-text-requirements"></a>アクセシビリティに対応したテキストの要件  
 

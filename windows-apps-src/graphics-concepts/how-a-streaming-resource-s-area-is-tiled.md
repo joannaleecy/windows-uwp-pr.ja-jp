@@ -12,11 +12,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ad096389c27fb65970424569c7c1d2ea0cb097
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7147630"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306835"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>ストリーミング リソースの領域をタイル表示する方法
 

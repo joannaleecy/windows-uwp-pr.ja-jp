@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、マップ認証キー、マップ コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7150754"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302883"
 ---
 # <a name="request-a-maps-authentication-key"></a>マップ認証キーの要求
 
