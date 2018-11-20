@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 82311d96296b3b7c7db0a3485348b7d1bf4a734c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161735"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302703"
 ---
 # <a name="update-an-app-submission"></a><span data-ttu-id="eff66-104">アプリの申請の更新</span><span class="sxs-lookup"><span data-stu-id="eff66-104">Update an app submission</span></span>
 

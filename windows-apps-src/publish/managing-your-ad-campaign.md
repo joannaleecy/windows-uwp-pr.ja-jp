@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7159016"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302801"
 ---
 # <a name="manage-your-ad-campaign"></a><span data-ttu-id="8ede5-103">広告キャンペーンの管理</span><span class="sxs-lookup"><span data-stu-id="8ede5-103">Manage your ad campaign</span></span>
 

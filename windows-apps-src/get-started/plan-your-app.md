@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ce5e0d272e14b9c69f660c8c7de6a838fa7956ac
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7154657"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302297"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a><span data-ttu-id="f0eff-105">複雑なユニバーサル Windows プラットフォーム (UWP) アプリの構築</span><span class="sxs-lookup"><span data-stu-id="f0eff-105">Building a complex Universal Windows Platform (UWP) app</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155929"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7306775"
 ---
 # <a name="query-for-products"></a><span data-ttu-id="208f8-105">製品の照会</span><span class="sxs-lookup"><span data-stu-id="208f8-105">Query for products</span></span>
 

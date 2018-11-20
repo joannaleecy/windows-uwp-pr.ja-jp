@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dfe7495e08bfcecac839b0ae15d2d65b00311298
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7150194"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7303063"
 ---
 # <a name="web-view"></a><span data-ttu-id="e92df-103">Web ビュー</span><span class="sxs-lookup"><span data-stu-id="e92df-103">Web view</span></span>
  

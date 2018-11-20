@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 62310191b17910d0ff980d6f4cc54170de7077b2
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169940"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7301354"
 ---
 # <a name="app-settings-and-data"></a><span data-ttu-id="5be70-103">アプリの設定とデータ</span><span class="sxs-lookup"><span data-stu-id="5be70-103">App settings and data</span></span>
 

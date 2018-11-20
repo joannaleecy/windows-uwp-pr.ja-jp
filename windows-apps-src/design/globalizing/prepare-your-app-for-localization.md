@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170215"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305409"
 ---
 # <a name="make-your-app-localizable"></a><span data-ttu-id="54aec-103">アプリをローカライズ可能にする</span><span class="sxs-lookup"><span data-stu-id="54aec-103">Make your app localizable</span></span>
 

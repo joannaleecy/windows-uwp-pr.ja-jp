@@ -14,11 +14,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: d8164571644c4e8ef84cae896fb7dce2265219e5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165352"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7303605"
 ---
 # <a name="navigation-view"></a><span data-ttu-id="86dee-103">ナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="86dee-103">Navigation view</span></span>
 

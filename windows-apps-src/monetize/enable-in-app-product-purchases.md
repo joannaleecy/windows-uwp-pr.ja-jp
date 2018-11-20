@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7151341"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7304684"
 ---
 # <a name="enable-in-app-product-purchases"></a><span data-ttu-id="722ff-103">アプリ内製品購入の有効化</span><span class="sxs-lookup"><span data-stu-id="722ff-103">Enable in-app product purchases</span></span>
 
