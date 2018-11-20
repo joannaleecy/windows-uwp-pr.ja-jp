@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 7555f4a61f7798fa32d137928cde8c042a7fcdfc
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7148478"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285407"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a><span data-ttu-id="5bb21-103">シナリオ 1: 文字列リソースとアセット ファイルから PRI ファイルを生成する</span><span class="sxs-lookup"><span data-stu-id="5bb21-103">Scenario 1: Generate a PRI file from string resources and asset files</span></span>
 <span data-ttu-id="5bb21-104">このシナリオでは、[パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用してカスタム ビルド システムを表す新しいアプリを作成します。</span><span class="sxs-lookup"><span data-stu-id="5bb21-104">In this scenario, we'll use the [package resource indexing (PRI) APIs](https://msdn.microsoft.com/library/windows/desktop/mt845690) to make a new app to represent our custom build system.</span></span> <span data-ttu-id="5bb21-105">このカスタム ビルド システムの目的は、対象の UWP アプリの PRI ファイルを作成することです。</span><span class="sxs-lookup"><span data-stu-id="5bb21-105">The purpose of this custom build system, remember, is to create PRI files for a target UWP app.</span></span> <span data-ttu-id="5bb21-106">そのため、このチュートリアルの一部として、その対象とする UWP アプリのリソースを表す、(文字列、およびその他の種類のリソースを含む) サンプルのリソース ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="5bb21-106">So, as part of this walkthrough, we'll create some sample resource files (containing strings, and other kinds of resources) to represent that target UWP app's resources.</span></span>

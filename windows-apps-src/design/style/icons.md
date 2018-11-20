@@ -14,11 +14,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 52ec77bd6199e0388d9ee9911c7a01e9fbe77fad
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162464"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7278703"
 ---
 # <a name="icons-for-uwp-apps"></a><span data-ttu-id="d4673-103">UWP アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="d4673-103">Icons for UWP apps</span></span>
 

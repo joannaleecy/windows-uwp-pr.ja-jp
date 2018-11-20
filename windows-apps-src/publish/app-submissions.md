@@ -9,11 +9,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152833"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7281325"
 ---
 # <a name="app-submissions"></a><span data-ttu-id="d7815-103">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="d7815-103">App submissions</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ms.openlocfilehash: 58c6ea939e96a2172c9f008d2238d5a84c228afe
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7168218"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7284055"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a><span data-ttu-id="2e184-104">Windows 10 ビルド 14393 の新しい API</span><span class="sxs-lookup"><span data-stu-id="2e184-104">New APIs in Windows 10 build 14393</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: c3861d5a135e0ee7a688a93a57cce801a05cf9a5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7153312"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7288075"
 ---
 # <a name="manage-add-ons"></a><span data-ttu-id="640da-104">アドオンの管理</span><span class="sxs-lookup"><span data-stu-id="640da-104">Manage add-ons</span></span>
 

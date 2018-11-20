@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171262"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7289482"
 ---
 # <a name="controller-api-reference"></a><span data-ttu-id="44310-104">コントローラー API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="44310-104">Controller API reference</span></span>   
 <span data-ttu-id="44310-105">接続された物理コントローラーの数を取得し、REST API を使用してオフにすることができます。</span><span class="sxs-lookup"><span data-stu-id="44310-105">You can get the number of attached physical controllers and turn them off using this REST API.</span></span>

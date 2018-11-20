@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの作成
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7148028"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7284085"
 ---
 # <a name="create-a-package-flight"></a><span data-ttu-id="aa3b1-104">パッケージ フライトの作成</span><span class="sxs-lookup"><span data-stu-id="aa3b1-104">Create a package flight</span></span>
 

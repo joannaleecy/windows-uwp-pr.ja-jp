@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a410e0e2759dcdfd6adff9c25238447fe4138b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7150378"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282606"
 ---
 # <a name="projection-transform"></a><span data-ttu-id="c8d36-105">射影トランスフォーム</span><span class="sxs-lookup"><span data-stu-id="c8d36-105">Projection transform</span></span>
 

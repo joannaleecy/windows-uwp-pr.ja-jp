@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: be2cfb94c68ed3431199428c87aef4bf038ccbb9
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157946"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7285394"
 ---
 # <a name="detect-faces-in-images-or-videos"></a><span data-ttu-id="31982-105">画像やビデオでの顔の検出</span><span class="sxs-lookup"><span data-stu-id="31982-105">Detect faces in images or videos</span></span>
 

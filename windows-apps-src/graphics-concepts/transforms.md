@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9eb129609b2fa8564b04d128c3cb06251b044360
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7168507"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7288088"
 ---
 # <a name="transforms"></a><span data-ttu-id="54f70-104">変換</span><span class="sxs-lookup"><span data-stu-id="54f70-104">Transforms</span></span>
 

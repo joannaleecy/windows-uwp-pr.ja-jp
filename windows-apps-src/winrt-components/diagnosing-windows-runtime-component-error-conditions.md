@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167391"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7286769"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a><span data-ttu-id="6f274-104">Windows ランタイム コンポーネントでのエラー状態の診断</span><span class="sxs-lookup"><span data-stu-id="6f274-104">Diagnosing Windows Runtime Component error conditions</span></span>
 

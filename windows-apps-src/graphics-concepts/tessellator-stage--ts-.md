@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7154034"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282258"
 ---
 # <a name="tessellator-ts-stage"></a><span data-ttu-id="31a6b-104">テッセレータ (TS) ステージ</span><span class="sxs-lookup"><span data-stu-id="31a6b-104">Tessellator (TS) stage</span></span>
 
