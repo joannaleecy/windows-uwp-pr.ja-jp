@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, スポット, C#, サンプルコード
 ms.localizationpriority: medium
 ms.openlocfilehash: 07f0927d741bbadc31aaf26f5188af245ec44790
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7155254"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296944"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C\# を使ったスポット広告のサンプル コード #  
 

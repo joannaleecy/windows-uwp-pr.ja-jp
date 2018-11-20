@@ -8,11 +8,11 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161258"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7298450"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 12 月
 

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b0333d77e635961d51d3d5bb45cdf2def646fb8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165098"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7300400"
 ---
 # <a name="state-objects"></a>状態オブジェクト
 

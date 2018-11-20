@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b9d76dd20c4537fadf8c0701c200740c31b784
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165059"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296780"
 ---
 # <a name="expose-basic-accessibility-information"></a>基本的なアクセシビリティ情報の開示  
 

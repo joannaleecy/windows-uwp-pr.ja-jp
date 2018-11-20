@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b0b1a45bc967dd69d38f2e85609a5e13ffd61b8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171036"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294710"
 ---
 # <a name="optimize-file-access"></a>ファイル アクセスの最適化
 

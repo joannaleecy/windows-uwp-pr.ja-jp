@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171470"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294944"
 ---
 # <a name="my-people-sharing"></a>マイ連絡先の共有
 

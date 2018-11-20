@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: bb692aaada7296f230e1243a3ce515b471f1ba98
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152680"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296967"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -208,7 +208,7 @@ ms.locfileid: "7152680"
 | **システム ファームウェアおよび BIOS** | **smbios** 機能を使うと、アプリは BIOS データとシステム ファームウェア データにアクセスできます。 |
 | **完全な信頼のアクセス許可レベル** | **RunFullTrust**制限された機能は、ユーザーのコンピューターで、完全信頼のアクセス許可レベルで動作するアプリを使うとします。 [FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API を使用するには、この機能が必要です。<br /><br />この機能は、デスクトップ アプリケーションは、appx や msix パッケージとして提供する必要も ([デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)と同様)、Desktop App Converter (DAC) を使用してこれらのアプリをパッケージ化するとき、マニフェストに表示される自動的に、またはVisual Studio。 |
 | **昇格** | **AllowElevation**制限付き機能には、起動、またはアプリの有効期間中に自動昇格を必要とする既存のデスクトップ機能を維持するには、Microsoft パートナーや企業によって作成されたアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 企業がビジネス向け Microsoft ストアでプライベート ストアをによって展開されている基幹業務アプリののみ承認されます。  |
-| **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredentials**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
+| **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredential**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
 | **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでのアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
 | **カメラの処理の拡張機能** | **CameraProcessingExtension**制限付き機能には、直接カメラの制御なし、カメラからキャプチャしたイメージを処理するアプリができます。<br /><br />[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)名前空間で Api を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
 | **データ使用量の管理*** | **NetworkDataUsageManagement**制限付き機能には、ネットワーク データの使用状況に関する情報を収集するアプリができます。<br /><br />[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |

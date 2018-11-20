@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 726dc4aaa34b9b68aa198e236abcef57b78b21f4
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7161205"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296632"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWPコンポーネントと相互運用性の最適化
 

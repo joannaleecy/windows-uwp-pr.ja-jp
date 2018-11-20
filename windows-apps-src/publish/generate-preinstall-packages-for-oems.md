@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02f7c1ad1a396464532a1c63c925bf9e19600f1b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157788"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296592"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>OEM 向けのプレインストール パッケージの生成
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7146881"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294512"
 ---
 # <a name="set-up-a-geofence"></a>ジオフェンスのセットアップ
 
