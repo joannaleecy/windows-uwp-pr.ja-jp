@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 516a15c17546d9f9b5e7cb7f8c0651f1372275ae
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155377"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7293117"
 ---
 # <a name="textures"></a>テクスチャ
 

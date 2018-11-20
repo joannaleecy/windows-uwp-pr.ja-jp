@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f730d01ba019a220658bc94be5f0a18da6b217f5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157890"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291872"
 ---
 # <a name="copy-and-paste"></a>コピーと貼り付け
 
