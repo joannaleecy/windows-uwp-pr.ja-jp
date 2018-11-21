@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7286249"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443692"
 ---
 # <a name="bitmapencoder-options-reference"></a><span data-ttu-id="08572-104">BitmapEncoder オプションのリファレンス</span><span class="sxs-lookup"><span data-stu-id="08572-104">BitmapEncoder options reference</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7299360"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7442551"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a><span data-ttu-id="12f99-104">WindowsPhone Silverlight UWP API へのマッピングから</span><span class="sxs-lookup"><span data-stu-id="12f99-104">WindowsPhone Silverlight to UWP API mappings</span></span>
 

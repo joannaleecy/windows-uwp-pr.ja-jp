@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, Xbox One のアドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305981"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443967"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a><span data-ttu-id="18a32-104">Xbox One アドオンの入手数の取得</span><span class="sxs-lookup"><span data-stu-id="18a32-104">Get Xbox One add-on acquisitions</span></span>
 

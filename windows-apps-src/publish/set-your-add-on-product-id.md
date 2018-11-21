@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン, iap, 永続的, コンシューマブル, サブスクリプション, 製品の種類, 製品 id, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7296144"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7443742"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a><span data-ttu-id="e10de-103">アドオンの製品の種類と製品 ID を設定する</span><span class="sxs-lookup"><span data-stu-id="e10de-103">Set your add-on product type and product ID</span></span>
 
