@@ -16,11 +16,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 8b793af0b3252243d9482ed6228e10d489a14ed3
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7294002"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7429166"
 ---
 # <a name="buttons"></a><span data-ttu-id="939b4-103">ボタン</span><span class="sxs-lookup"><span data-stu-id="939b4-103">Buttons</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7296257"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7427537"
 ---
 # <a name="set-up-the-game-project"></a><span data-ttu-id="0f0e6-104">ゲーム プロジェクトのセットアップ</span><span class="sxs-lookup"><span data-stu-id="0f0e6-104">Set up the game project</span></span>
 
