@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
 ms.openlocfilehash: 7534b6764bc98c415b557d100d869df186453626
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7278516"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7424289"
 ---
 # <a name="introduction-to-multi-user-applications"></a><span data-ttu-id="4a5c5-104">マルチ ユーザー アプリケーションの概要</span><span class="sxs-lookup"><span data-stu-id="4a5c5-104">Introduction to multi-user applications</span></span>
 

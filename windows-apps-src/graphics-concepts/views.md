@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 77ac16c55bb4292ea7c5362d007ff9569812954f
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7298430"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7428558"
 ---
 # <a name="views"></a><span data-ttu-id="d6f29-106">ビュー</span><span class="sxs-lookup"><span data-stu-id="d6f29-106">Views</span></span>
 

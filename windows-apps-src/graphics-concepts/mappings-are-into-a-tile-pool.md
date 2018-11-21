@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7280505"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7427138"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a><span data-ttu-id="97131-105">タイル プールにマッピングされます</span><span class="sxs-lookup"><span data-stu-id="97131-105">Mappings are into a tile pool</span></span>
 
