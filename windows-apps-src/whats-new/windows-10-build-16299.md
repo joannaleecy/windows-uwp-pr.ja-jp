@@ -8,11 +8,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 458a5999c1f56a3bc9f445f260d1d294c395b850
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7307392"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7434800"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a><span data-ttu-id="2e9b5-104">Windows 10 ビルド 16299 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="2e9b5-104">What's New in Windows 10 for developers, build 16299</span></span>
 

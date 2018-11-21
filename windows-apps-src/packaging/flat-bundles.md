@@ -7,12 +7,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, パッケージ化, パッケージ構成, フラット バンドル
 ms.localizationpriority: medium
-ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 8d95591f12b61054a654b9b1284bdd90d74a937b
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7293902"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436801"
 ---
 # <a name="flat-bundle-app-packages"></a><span data-ttu-id="7dce7-104">フラット バンドル アプリ パッケージ</span><span class="sxs-lookup"><span data-stu-id="7dce7-104">Flat bundle app packages</span></span> 
 
@@ -36,7 +36,7 @@ ms.locfileid: "7293902"
 <span data-ttu-id="7dce7-120">コマンド構文の例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="7dce7-120">Here's an example of the command syntax:</span></span>
 
 ```syntax
-MakeAppx bundle [options] /d <content directory> /fb <output flat bundle name>
+MakeAppx bundle [options] /d <content directory> /fb /p <output flat bundle name>
 ```
 
 <span data-ttu-id="7dce7-121">MakeAppx.exe について詳しくは、「[MakeAppx.exe ツールを使ったアプリ パッケージの作成](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7dce7-121">For more information on using MakeAppx.exe, see [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool).</span></span>

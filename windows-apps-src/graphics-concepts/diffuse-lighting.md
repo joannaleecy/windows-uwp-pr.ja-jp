@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7306341"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7440004"
 ---
 # <a name="diffuse-lighting"></a><span data-ttu-id="a1254-104">拡散光</span><span class="sxs-lookup"><span data-stu-id="a1254-104">Diffuse lighting</span></span>
 

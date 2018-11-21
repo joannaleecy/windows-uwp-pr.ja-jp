@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: bf6d3f16c7b240ca370c01a787fef09862f35863
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7301985"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7435147"
 ---
 # <a name="time-based-animations"></a><span data-ttu-id="323bf-104">時間ベース アニメーション</span><span class="sxs-lookup"><span data-stu-id="323bf-104">Time based animations</span></span>
 

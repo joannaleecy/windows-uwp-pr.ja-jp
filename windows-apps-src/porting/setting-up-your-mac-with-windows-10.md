@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7302346"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436791"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a><span data-ttu-id="02847-104">Windows 10 を使用するための Mac のセットアップ</span><span class="sxs-lookup"><span data-stu-id="02847-104">Setting up your Mac with Windows 10</span></span>
 

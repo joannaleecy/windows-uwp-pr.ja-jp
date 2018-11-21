@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7304984"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437702"
 ---
 # <a name="draw-shapes"></a><span data-ttu-id="ef7ad-105">図形の描画</span><span class="sxs-lookup"><span data-stu-id="ef7ad-105">Draw shapes</span></span>
 

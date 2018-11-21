@@ -15,11 +15,11 @@ dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3594697292d6dfe9435036b838a0ba4bd2dbfc05
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7296672"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437538"
 ---
 # <a name="lists"></a><span data-ttu-id="eaadf-103">リスト</span><span class="sxs-lookup"><span data-stu-id="eaadf-103">Lists</span></span>
 

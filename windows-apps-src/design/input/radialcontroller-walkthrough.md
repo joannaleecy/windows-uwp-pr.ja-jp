@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df0f37fda62a7b673e28a6198758365886b6783
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7283902"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7439325"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a><span data-ttu-id="7d241-104">チュートリアル: UWP アプリで Surface Dial (およびその他のホイール デバイス) をサポートする</span><span class="sxs-lookup"><span data-stu-id="7d241-104">Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app</span></span>
 
