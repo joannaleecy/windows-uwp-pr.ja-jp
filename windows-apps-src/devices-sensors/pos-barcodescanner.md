@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3a58062ba3908287f9009288136814e7e26d3127
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7300420"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7433619"
 ---
 # <a name="barcode-scanner"></a><span data-ttu-id="4f997-104">バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="4f997-104">Barcode scanner</span></span>
 

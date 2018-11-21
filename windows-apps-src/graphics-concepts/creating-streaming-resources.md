@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7292604"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7433113"
 ---
 # <a name="creating-streaming-resources"></a><span data-ttu-id="36a13-104">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="36a13-104">Creating streaming resources</span></span>
 

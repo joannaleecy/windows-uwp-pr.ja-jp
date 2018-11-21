@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f1869038ad98b8b4103b9706534a2d456f17e734
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7280988"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7432747"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a><span data-ttu-id="7226c-104">.NET Framework での Windows ランタイム型の対応付け</span><span class="sxs-lookup"><span data-stu-id="7226c-104">.NET Framework mappings of Windows Runtime types</span></span>
 
