@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 04eabb4c70143a08f5b850e6444f7f3d21a9dd4a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7289602"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7427629"
 ---
 # <a name="input-driven-animations"></a>入力駆動型アニメーション
 
