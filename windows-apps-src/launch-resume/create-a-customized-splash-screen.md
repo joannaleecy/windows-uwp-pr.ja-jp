@@ -1,24 +1,21 @@
 ---
-author: TylerMSFT
+author: mcleanbyron
 title: スプラッシュ画面の表示時間の延長
 description: アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.author: twhitney
-ms.date: 02/08/2017
+ms.author: mcleans
+ms.date: 11/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 80242b95e64f0d642df0284c94455d60825f6daf
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 8886b1e8ea8b897d5c5e867b937e3592509cdbef
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7283526"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437953"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
-
-
-
 
 **重要な API**
 
@@ -28,9 +25,8 @@ ms.locfileid: "7283526"
 
 アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
-> **注:** 語句「追加スプラッシュ画面」、このトピックでは、表示されるスプラッシュ画面、画面上の一定の時間を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
-
- 
+> [!NOTE]
+> 語句「追加スプラッシュ画面」、このトピックでは、表示されるスプラッシュ画面、画面上の一定の時間を表します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
 
 追加スプラッシュ画面の外観は、次の推奨事項に従って、既定のスプラッシュ画面に厳密に似せるようにしてください。
 
@@ -46,7 +42,7 @@ ms.locfileid: "7283526"
 
 また、このトピックでは、C#、Visual Basic、C++ を使って、既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクト用の追加スプラッシュ画面を作成することを想定しています。
 
--   Visual Studio2015 でアプリを開きます。
+-   Visual Studio でアプリを開きます。
 -   メニュー バーから **[プロジェクト]** を開き、**[新しい項目の追加]** をクリックします。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。
 -   このダイアログ ボックスから新しい**空白のページ**をアプリに追加します。 このトピックでは、追加スプラッシュ画面ページの名前を "ExtendedSplash" とします。
 
@@ -64,9 +60,9 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 -   [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素を [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) に追加します。 既定のスプラッシュ画面用に選んだ同じ 600 × 320 ピクセルの画像を追加スプラッシュ画面に使います。
 -   (省略可能) アプリが読み込み中であることをユーザーに示すにはプログレス コントロールを追加します。 このトピックでは、確定または不定の [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529) ではなく、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加します。
 
-次のコードを追加して、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素、[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロールを ExtendedSplash.xaml に定義します。
+次の例は、これらの追加や変更を持つ[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)を示しています。
 
-```xml
+```xaml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -75,9 +71,8 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     </Grid>
 ```
 
-**注:** このコードでは、 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)の幅を 20 ピクセルに設定します。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
-
- 
+> [!NOTE]
+> この例では、 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538)の幅を 20 ピクセルに設定します。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>追加スプラッシュ画面クラスの基本的なコード
 
@@ -219,16 +214,17 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    **注:** を取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、有効な[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクトが含まれています。
+    > [!NOTE]
+    > 取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、有効な[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクトが含まれています。
 
      
 
 8.  **(省略可能) クラス メソッドを追加して保存済みのセッション状態を復元する**
 
-    手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」で [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドに追加したコードにより、アプリでは起動時に追加スプラッシュ画面が表示されます。 追加スプラッシュ画面クラスにアプリの起動に関連するすべてのメソッドを統合するには、ExtendedSplash.xaml.cs ファイルに、アプリの状態を復元する非同期メソッドを追加することを検討します。
+    手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」で [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドに追加したコードにより、アプリでは起動時に追加スプラッシュ画面が表示されます。 追加スプラッシュ画面クラスにアプリの起動に関連するすべてのメソッドを統合するには、ExtendedSplash.xaml.cs ファイルに、アプリの状態を復元する方法を追加することを検討する可能性があります。
 
     ```cs
-    async void RestoreStateAsync(bool loadState)
+    void RestoreState(bool loadState)
     {
         if (loadState)
         {
@@ -237,7 +233,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    App.xaml.cs ファイルで起動アクティブ化ハンドラーを変更するときは、アプリの以前の [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) が **Terminated** だった場合にも `loadstate` を true に設定します。 その場合、`RestoreStateAsync` メソッドは、アプリを前の状態に復元します。 アプリの起動、中断、終了の概要については、「[アプリのライフサイクル](app-lifecycle.md)」をご覧ください。
+    App.xaml.cs ファイルで起動アクティブ化ハンドラーを変更するときは、アプリの以前の [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) が **Terminated** だった場合にも `loadstate` を true に設定します。 その場合、`RestoreState` メソッドは、アプリを前の状態に復元します。 アプリの起動、中断、終了の概要については、「[アプリのライフサイクル](app-lifecycle.md)」をご覧ください。
 
 ## <a name="modify-the-launch-activation-handler"></a>起動アクティブ化ハンドラーの変更
 
@@ -264,12 +260,13 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="complete-code"></a>コードを完成させる
 
-
-> **注:** 次のコードは少し異なります前の手順に示したスニペットします。
+次のコードは、前の手順に示したスニペットと若干異なります。
 -   ExtendedSplash.xaml には `DismissSplash` ボタンが含まれています。 このボタンがクリックされると、イベント ハンドラーである `DismissSplashButton_Click` が `DismissExtendedSplash` メソッドを呼び出します。 アプリで、リソースの読み込みまたは UI の初期化の完了時に `DismissExtendedSplash` を呼び出します。
 -   このアプリは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使う、UWP アプリのプロジェクト テンプレートも使います。 その結果、App.xaml.cs ファイルで、起動アクティブ化ハンドラー ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) は `rootFrame` を定義し、それを使ってアプリのウィンドウのコンテンツを設定します。
 
-ExtendedSplash.xaml: この例には `DismissSplash` ボタンが含まれています。読み込むアプリのリソースがないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
+### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
+
+この例に含まれる、`DismissSplash`ボタンをアプリのリソースを読み込むことがあるないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
 
 ```xml
 <Page
@@ -293,7 +290,9 @@ ExtendedSplash.xaml: この例には `DismissSplash` ボタンが含まれてい
 </Page>
 ```
 
-ExtendedSplash.xaml.cs: `DismissExtendedSplash` メソッドが `DismissSplash` ボタンのクリック イベント ハンドラーから呼び出されることに注意してください。 アプリでは、`DismissSplash` ボタンは不要です。 その代わりに、アプリがリソースの読み込みの完了時に `DismissExtendedSplash` を呼び出し、そのメイン ページに移動します。
+### <a name="extendedsplashxamlcs"></a>ExtendedSplash.xaml.cs
+
+なお、`DismissExtendedSplash`のクリック イベント ハンドラーからメソッドが呼び出されます、`DismissSplash`ボタン。 アプリでは、`DismissSplash` ボタンは不要です。 その代わりに、アプリがリソースの読み込みの完了時に `DismissExtendedSplash` を呼び出し、そのメイン ページに移動します。
 
 ```cs
 using System;
@@ -356,10 +355,10 @@ namespace SplashScreenExample
             rootFrame = new Frame();
 
             // Restore the saved session state if necessary
-            await RestoreStateAsync(loadState);
+            RestoreState(loadState);
         }
 
-        async void RestoreStateAsync(bool loadState)
+        void RestoreState(bool loadState)
         {
             if (loadState)
             {
@@ -419,7 +418,9 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs: このプロジェクト作成された Visual Studio2015 で UWP アプリの**空白のアプリ (XAML)** のプロジェクト テンプレートを使用します。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
+### <a name="appxamlcs"></a>App.xaml.cs
+
+このプロジェクトは、Visual Studio で UWP アプリの**空白のアプリ (XAML)** のプロジェクト テンプレートを使用して作成されました。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
 
 アプリにプロジェクト テンプレートを使わなかった場合、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使用しないように変更した `OnLaunched` の例については、手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」をご覧ください。
 

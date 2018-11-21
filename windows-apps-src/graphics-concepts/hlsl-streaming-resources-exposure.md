@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a8523f4895c541ffb3b92ee00d5b62c57343ae00
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7306855"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436678"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL ストリーミング リソースの露出
 
