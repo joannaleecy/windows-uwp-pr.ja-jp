@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7442531"
+ms.locfileid: "7560305"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a><span data-ttu-id="5a01e-104">開発者は、ビルド 17763 新機能では、Windows 10 の新規作成</span><span class="sxs-lookup"><span data-stu-id="5a01e-104">What's New in Windows 10 for developers, build 17763</span></span>
 
