@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 581c2bc4204a7eab002ef2680e335a4109716d74
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7428332"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7558899"
 ---
 # <a name="data-binding-overview"></a><span data-ttu-id="08e57-104">データ バインディングの概要</span><span class="sxs-lookup"><span data-stu-id="08e57-104">Data binding overview</span></span>
 

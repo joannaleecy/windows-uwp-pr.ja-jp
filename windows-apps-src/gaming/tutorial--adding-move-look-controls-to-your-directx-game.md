@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ムーブ/ルック, コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 219d014eb03803ace440dc1c1773043a9ecbc99f
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7440781"
+ms.locfileid: "7567922"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span data-ttu-id="1e1a4-104"><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール</span><span class="sxs-lookup"><span data-stu-id="1e1a4-104"><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-look controls for games</span></span>
 

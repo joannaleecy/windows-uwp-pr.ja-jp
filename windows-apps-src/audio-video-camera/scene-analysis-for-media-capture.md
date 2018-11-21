@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d948dee234ad6c49da847324422737b1bae27e30
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433133"
+ms.locfileid: "7555047"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a><span data-ttu-id="35593-104">カメラ フレームの分析の効果</span><span class="sxs-lookup"><span data-stu-id="35593-104">Effects for analyzing camera frames</span></span>
 

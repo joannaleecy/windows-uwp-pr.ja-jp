@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 965660f51efc914f7ca21a5bf747fe809319eff9
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443987"
+ms.locfileid: "7582372"
 ---
 # <a name="span-iddirect3dconceptsnearest-pointsamplingspannearest-point-sampling"></a><span data-ttu-id="cfbb7-104"><span id="direct3dconcepts.nearest-point_sampling"></span>最近点サンプリング</span><span class="sxs-lookup"><span data-stu-id="cfbb7-104"><span id="direct3dconcepts.nearest-point_sampling"></span>Nearest-point sampling</span></span>
 

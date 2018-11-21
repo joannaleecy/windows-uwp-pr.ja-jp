@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5236767d4c02d873106c7b1799c8428d84cccd53
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7443977"
+ms.locfileid: "7553446"
 ---
 # <a name="enterprise-shared-storage"></a><span data-ttu-id="17158-104">エンタープライズ共有記憶域</span><span class="sxs-lookup"><span data-stu-id="17158-104">Enterprise Shared Storage</span></span>
 

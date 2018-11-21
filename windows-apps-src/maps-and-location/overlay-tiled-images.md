@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、地図、位置情報、画像、オーバーレイ
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e01b115d3e2b2a305468357440acff50a06f3fd
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439272"
+ms.locfileid: "7557014"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a><span data-ttu-id="33037-105">地図へのタイル画像のオーバーレイ</span><span class="sxs-lookup"><span data-stu-id="33037-105">Overlay tiled images on a map</span></span>
 

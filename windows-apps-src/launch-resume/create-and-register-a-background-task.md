@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 8d32b4559e91cc898944f3767d4b082935359d49
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7442034"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7553599"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a><span data-ttu-id="cbc0c-104">アウトプロセス バックグラウンド タスクの作成と登録</span><span class="sxs-lookup"><span data-stu-id="cbc0c-104">Create and register an out-of-process background task</span></span>
 

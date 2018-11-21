@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439745"
+ms.locfileid: "7567584"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a><span data-ttu-id="461d0-105">レンダリング フレームワーク I: レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="461d0-105">Rendering framework I: Intro to rendering</span></span>
 

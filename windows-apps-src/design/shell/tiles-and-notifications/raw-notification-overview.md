@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7440119"
+ms.locfileid: "7560736"
 ---
 # <a name="raw-notification-overview"></a><span data-ttu-id="b9af9-103">直接通知の概要</span><span class="sxs-lookup"><span data-stu-id="b9af9-103">Raw notification overview</span></span>
 

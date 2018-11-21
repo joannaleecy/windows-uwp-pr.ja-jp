@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 99e215f382bbfe409ac72d021540a471294634ca
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7424785"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7559370"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a><span data-ttu-id="e69a3-104">Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー</span><span class="sxs-lookup"><span data-stu-id="e69a3-104">Custom events and event accessors in Windows Runtime Components</span></span>
 

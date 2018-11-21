@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
 ms.localizationpriority: medium
 ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427198"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7557295"
 ---
 # <a name="add-on-acquisitions-report"></a><span data-ttu-id="b0c76-103">[アドオン取得] レポート</span><span class="sxs-lookup"><span data-stu-id="b0c76-103">Add-on acquisitions report</span></span>
 

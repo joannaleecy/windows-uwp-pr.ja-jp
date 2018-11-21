@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 正常性, クラッシュ, 応答停止イベント, アプリの正常性, 正常性データ, スタック トレース, cab ファイル, 失敗, エラー, pdb, シンボル
 ms.localizationpriority: medium
 ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427168"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7554786"
 ---
 # <a name="health-report"></a><span data-ttu-id="12d2a-103">状態レポート</span><span class="sxs-lookup"><span data-stu-id="12d2a-103">Health report</span></span>
 

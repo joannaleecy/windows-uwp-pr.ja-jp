@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7432576"
+ms.locfileid: "7554070"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a><span data-ttu-id="c0fa6-104">Xbox の開発環境に UWP を設定する</span><span class="sxs-lookup"><span data-stu-id="c0fa6-104">Set up your UWP on Xbox development environment</span></span>
 

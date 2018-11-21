@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439964"
+ms.locfileid: "7567286"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a><span data-ttu-id="703b6-105">レンダリング フレームワーク II: ゲームのレンダリング</span><span class="sxs-lookup"><span data-stu-id="703b6-105">Rendering framework II: Game rendering</span></span>
 

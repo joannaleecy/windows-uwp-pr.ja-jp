@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475910adffd24e4484b539f65633dfb8fc054a8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423994"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7560693"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a><span data-ttu-id="e0aa7-104">写真とビデオのキャプチャのための手動カメラ制御</span><span class="sxs-lookup"><span data-stu-id="e0aa7-104">Manual camera controls for photo and video capture</span></span>
 

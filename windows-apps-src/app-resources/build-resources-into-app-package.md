@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 61b526cd7aa2da8733457b16dd0487ef4ead9cca
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7431346"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7554525"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a><span data-ttu-id="096c3-103">リソースをリソース パックではなくアプリ パッケージに組み込む</span><span class="sxs-lookup"><span data-stu-id="096c3-103">Build resources into your app package, instead of into a resource pack</span></span>
 

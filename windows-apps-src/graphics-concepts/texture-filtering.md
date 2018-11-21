@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce80bc0f64e1aba8328880203f22ea3909fdb3e3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427577"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7567296"
 ---
 # <a name="texture-filtering"></a><span data-ttu-id="63427-104">テクスチャ フィルタリング</span><span class="sxs-lookup"><span data-stu-id="63427-104">Texture filtering</span></span>
 

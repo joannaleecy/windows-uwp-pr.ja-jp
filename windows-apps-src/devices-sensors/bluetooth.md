@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438795"
+ms.locfileid: "7553403"
 ---
 # <a name="bluetooth"></a><span data-ttu-id="85bc3-104">Bluetooth</span><span class="sxs-lookup"><span data-stu-id="85bc3-104">Bluetooth</span></span>
 <span data-ttu-id="85bc3-105">このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事が含まれています。</span><span class="sxs-lookup"><span data-stu-id="85bc3-105">This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps.</span></span> <span data-ttu-id="85bc3-106">アプリに実装することもできます 2 つの異なる bluetooth テクノロジがあります。</span><span class="sxs-lookup"><span data-stu-id="85bc3-106">There are two different bluetooth technologies that you can choose to implement in your app.</span></span>

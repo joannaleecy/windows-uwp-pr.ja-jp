@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: 8daec4928867c92734fc3f6322836eb923aeda21
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422758"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7567889"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a><span data-ttu-id="70921-104">ユーザーのサブスクリプションに関する請求の状態を変更する</span><span class="sxs-lookup"><span data-stu-id="70921-104">Change the billing state of a subscription for a user</span></span>
 

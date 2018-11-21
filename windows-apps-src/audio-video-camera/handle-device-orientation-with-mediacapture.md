@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1367c880bd6dde573ab4fc30733ed9d1fefa6b0b
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7425817"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7560786"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a><span data-ttu-id="e92a6-104">MediaCapture を使ってデバイスの向きを処理する</span><span class="sxs-lookup"><span data-stu-id="e92a6-104">Handle device orientation with MediaCapture</span></span>
 <span data-ttu-id="e92a6-105">アプリ外での表示を目的とする写真やビデオ (ユーザーのデバイスにファイルを保存する場合や、オンラインで共有する場合など) をアプリでキャプチャする際は、別のアプリやデバイスで画像を表示するときに正しい向きで表示されるよう、適切な向きのメタデータを使って画像をエンコーディングすることが重要です。</span><span class="sxs-lookup"><span data-stu-id="e92a6-105">When your app captures a photo or video that is intended to be viewed outside of your app, such as saving to a file on the user's device or sharing online, it's important that you encode the image with the proper orientation metadata so that when another app or device displays the image, it is oriented correctly.</span></span> <span data-ttu-id="e92a6-106">メディア ファイルにどの向きのデータを含めれば良いか特定するのは複雑な作業です。これは、デバイス シャーシの向き、ディスプレイの向き、シャーシ上のカメラの位置 (全面カメラか背面カメラか) など、考慮すべき変数が複数あるためです。</span><span class="sxs-lookup"><span data-stu-id="e92a6-106">Determining the correct orientation data to include in a media file can be a complex task because there are several variables to consider, including the orientation of the device chassis, the orientation of the display, and the placement of the camera on the chassis (whether it is a front or back-facing camera).</span></span> 
