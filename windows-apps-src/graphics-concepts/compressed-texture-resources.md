@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e808bf0fe1f521a60aa347efd148ede96be95964
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7428718"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7581267"
 ---
 # <a name="compressed-texture-resources"></a>圧縮テクスチャ リソース
 

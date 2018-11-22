@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 非同期, スレッド, スレッド化
 ms.localizationpriority: medium
 ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7446061"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576456"
 ---
 # <a name="threading-and-async-programming"></a>スレッド化と非同期プログラミング
 スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
