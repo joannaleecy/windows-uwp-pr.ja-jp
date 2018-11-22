@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 346e6790c6578bf861ba1dda937eae6d4d50f00f
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7429391"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7570930"
 ---
 # <a name="app-analysis-overview"></a>アプリの分析の概要
 

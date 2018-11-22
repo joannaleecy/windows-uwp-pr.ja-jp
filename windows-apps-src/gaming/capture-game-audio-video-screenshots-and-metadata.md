@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1641cb4c50b86d7f678bf18fa85ad0215b4b15
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 906422e8bcca90c35821ecac95c02279c65fa400
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423028"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7569868"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
 この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。 
@@ -59,7 +59,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>アプリが現在記録できるかどうかを確認する
-現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 **CanRecord** が **false** を返し、アプリが現在記録できないことを意味している場合、**[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** プロパティを確認して、理由を特定できます。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
+現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 **CanRecord**が**false**アプリが現在記録できないことを意味を返す場合は、理由を特定する**[詳細](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** プロパティを確認できます。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
 
 
 
@@ -145,7 +145,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>メタデータ キャッシュの記憶域の制限を管理する
-**AppCaptureMetadataWriter** を使用して書き込むメタデータは、関連付けられているメディア ストリームに書き込まれるまで、システムによってキャッシュされます。 システムでは、各アプリのメタデータ キャッシュのサイズ制限を定義しています。 キャッシュのサイズ制限に達すると、システムはキャッシュされたメタデータの削除を開始します。 システムは、**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** の優先順位が設定されているメタデータを削除する前に、**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** の優先順位の値を指定して書き込まれたメタデータを削除します。
+**AppCaptureMetadataWriter** を使用して書き込むメタデータは、関連付けられているメディア ストリームに書き込まれるまで、システムによってキャッシュされます。 システムでは、各アプリのメタデータ キャッシュのサイズ制限を定義しています。 キャッシュのサイズ制限に達すると、システムはキャッシュされたメタデータの削除を開始します。 システムが**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先度の値の優先順位の**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** メタデータを削除する前に書き込まれたメタデータが削除されます。
 
 いつでも、**[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** を呼び出すことによって、アプリのメタデータ キャッシュで利用可能なバイト数を確認できます。 独自のアプリで定義されたしきい値を設定することを選択し、その後でキャッシュに書き込むメタデータの量を減らすことを選択できます。 次の例は、このパターンの簡単な実装を示しています。
 
