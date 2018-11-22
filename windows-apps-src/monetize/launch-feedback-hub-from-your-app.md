@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, フィードバック Hub, 起動
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a92f839d122f6dbdf45693c99f984317421961d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7426005"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576366"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a><span data-ttu-id="f5161-103">アプリからのフィードバック Hub の起動</span><span class="sxs-lookup"><span data-stu-id="f5161-103">Launch Feedback Hub from your app</span></span>
 

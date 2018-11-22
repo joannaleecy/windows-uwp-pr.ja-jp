@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445991"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576811"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a><span data-ttu-id="f88bd-106">レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する</span><span class="sxs-lookup"><span data-stu-id="f88bd-106">Use the Windows 10 Resource Management System in a legacy app or game</span></span>
 

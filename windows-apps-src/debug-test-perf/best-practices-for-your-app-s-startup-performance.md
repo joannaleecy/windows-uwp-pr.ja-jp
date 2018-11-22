@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7423279"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7575940"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a><span data-ttu-id="0f7fa-104">アプリ起動時のパフォーマンスのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="0f7fa-104">Best practices for your app's startup performance</span></span>
 

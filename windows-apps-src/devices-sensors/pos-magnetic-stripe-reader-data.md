@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 店舗販売時点サービス、pos、磁気ストライプ リーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: a130243fb5a77277e4e8a326316cd30bab2cd96e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7440902"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578255"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a><span data-ttu-id="e289c-104">磁気ストライプ データの取得と理解</span><span class="sxs-lookup"><span data-stu-id="e289c-104">Obtain and understand magnetic stripe data</span></span>
 

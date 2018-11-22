@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430387"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7576000"
 ---
 # <a name="create-a-hello-world-app-js"></a><span data-ttu-id="1204b-104">Hello, world アプリを作成する (JS)</span><span class="sxs-lookup"><span data-stu-id="1204b-104">Create a "Hello, world" app (JS)</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, 未加工のゲーム コントローラー
 ms.localizationpriority: medium
 ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7432615"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7577898"
 ---
 # <a name="raw-game-controller"></a><span data-ttu-id="abcaf-104">未加工のゲーム コントローラー</span><span class="sxs-lookup"><span data-stu-id="abcaf-104">Raw game controller</span></span>
 

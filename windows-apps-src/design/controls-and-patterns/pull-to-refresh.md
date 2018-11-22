@@ -15,11 +15,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b1dd6bd1bc165a79ba123c94e63e1dcfa58ec21
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430417"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578893"
 ---
 # <a name="pull-to-refresh"></a><span data-ttu-id="141de-103">引っ張って更新</span><span class="sxs-lookup"><span data-stu-id="141de-103">Pull to refresh</span></span>
 

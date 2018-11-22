@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7424455"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7578903"
 ---
 # <a name="sensors"></a><span data-ttu-id="7d359-105">センサー</span><span class="sxs-lookup"><span data-stu-id="7d359-105">Sensors</span></span>
 
