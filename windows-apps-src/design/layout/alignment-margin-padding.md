@@ -9,11 +9,11 @@ keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ea8a02835a90235bc17efe60ee6e4fd214ffffa7
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430588"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574425"
 ---
 # <a name="alignment-margin-padding"></a><span data-ttu-id="01b05-103">配置、余白、パディング</span><span class="sxs-lookup"><span data-stu-id="01b05-103">Alignment, margin, padding</span></span>
 

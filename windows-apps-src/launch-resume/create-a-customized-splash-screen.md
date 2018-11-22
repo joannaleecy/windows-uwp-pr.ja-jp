@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8886b1e8ea8b897d5c5e867b937e3592509cdbef
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7437953"
+ms.locfileid: "7572074"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a><span data-ttu-id="4afdf-105">スプラッシュ スクリーンの表示時間の延長</span><span class="sxs-lookup"><span data-stu-id="4afdf-105">Display a splash screen for more time</span></span>
 

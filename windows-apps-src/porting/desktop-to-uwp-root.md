@@ -11,11 +11,11 @@ ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1e365818b54cc8c6e039a56f2b3bdb3ae723019a
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422918"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7570548"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a><span data-ttu-id="7c60b-103">デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="7c60b-103">Package desktop applications (Desktop Bridge)</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b853a4ac5afa03759094327c2b80d266751b8ec
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7431847"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7573967"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a><span data-ttu-id="38cc7-104">Windows 10 ビルド 15063 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="38cc7-104">What's New in Windows 10 for developers, build 15063</span></span>
 

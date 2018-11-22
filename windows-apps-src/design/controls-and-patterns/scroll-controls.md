@@ -15,11 +15,11 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 983f80c705aba44fe096f9dfa05b71b0cf28f294
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7436462"
+ms.locfileid: "7573770"
 ---
 # <a name="scroll-viewer-controls"></a><span data-ttu-id="3b9fe-103">スクロール ビューアー コントロール</span><span class="sxs-lookup"><span data-stu-id="3b9fe-103">Scroll viewer controls</span></span>
 

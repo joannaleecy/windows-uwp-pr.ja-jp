@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7441655"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574518"
 ---
 # <a name="primitive-topologies"></a><span data-ttu-id="6f900-104">プリミティブ トポロジ</span><span class="sxs-lookup"><span data-stu-id="6f900-104">Primitive topologies</span></span>
 

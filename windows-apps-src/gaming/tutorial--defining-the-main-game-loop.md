@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, メイン オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: b94d7139f35b3a18edd66af9959a0958d0bdcbc1
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433522"
+ms.locfileid: "7573810"
 ---
 # <a name="define-the-main-game-object"></a><span data-ttu-id="de033-104">メイン ゲーム オブジェクトの定義</span><span class="sxs-lookup"><span data-stu-id="de033-104">Define the main game object</span></span>
 

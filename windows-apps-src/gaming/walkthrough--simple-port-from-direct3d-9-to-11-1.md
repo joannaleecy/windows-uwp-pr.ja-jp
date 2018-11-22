@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 移植, Direct3D 9, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439104"
+ms.locfileid: "7572584"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a><span data-ttu-id="9c14e-104">チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植</span><span class="sxs-lookup"><span data-stu-id="9c14e-104">Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)</span></span>
 

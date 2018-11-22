@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 19734964c9b4ab087f7d5fd6ea749b57cccce26c
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7432028"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574812"
 ---
 # <a name="mathematics-of-lighting"></a><span data-ttu-id="cf8be-106">光源の計算</span><span class="sxs-lookup"><span data-stu-id="cf8be-106">Mathematics of lighting</span></span>
 

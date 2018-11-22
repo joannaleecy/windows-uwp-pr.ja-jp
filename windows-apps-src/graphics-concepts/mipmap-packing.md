@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ec3d091d7cc5aca82aeef9a3e7f29a8d363705a3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427700"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7571824"
 ---
 # <a name="mipmap-packing"></a><span data-ttu-id="6ea2c-104">ミップマップのパッキング</span><span class="sxs-lookup"><span data-stu-id="6ea2c-104">Mipmap packing</span></span>
 

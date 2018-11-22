@@ -13,11 +13,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7441434"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7573352"
 ---
 # <a name="use-a-maintenance-trigger"></a><span data-ttu-id="26599-104">メンテナンス トリガーの使用</span><span class="sxs-lookup"><span data-stu-id="26599-104">Use a maintenance trigger</span></span>
 

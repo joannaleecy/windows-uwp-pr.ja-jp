@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa83e202078336884ff2e1924ebc223bbe13dcdd
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417751"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7572654"
 ---
 # <a name="simulate-user-input-through-input-injection"></a><span data-ttu-id="4c09f-103">入力の挿入によるユーザー入力のシミュレート</span><span class="sxs-lookup"><span data-stu-id="4c09f-103">Simulate user input through input injection</span></span>
 

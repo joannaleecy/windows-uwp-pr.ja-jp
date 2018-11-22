@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b73464ea10aa835b82df17605e983ebdfb9cd890
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 35f76b933807ce2dcf582ccbc2d3ac432195211c
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7441339"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574578"
 ---
 # <a name="playready-encrypted-media-extension"></a><span data-ttu-id="f6cb0-104">PlayReady の Encrypted Media Extension</span><span class="sxs-lookup"><span data-stu-id="f6cb0-104">PlayReady Encrypted Media Extension</span></span>
 
@@ -207,7 +207,7 @@ function addPlayreadyKeyEventHandler()
                 
         // TODO: send the secure stop challenge to a server that handles the secure stop challenge
 
-        // TODO: Recevie and response and call event.target.Update() to proecess the response
+        // TODO: Receive and response and call event.target.Update() to proecess the response
     });
     
     // add 'keyerror' eventhandler
