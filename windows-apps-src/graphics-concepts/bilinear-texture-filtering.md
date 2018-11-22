@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 48e16162a76b1a599c1a43e763243be4348810af
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7430259"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568593"
 ---
 # <a name="bilinear-texture-filtering"></a>バイリニア テクスチャ フィルタリング
 

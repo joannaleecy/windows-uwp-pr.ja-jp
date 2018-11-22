@@ -15,11 +15,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 352a4ce0bc37297fb4d53cb5246d18af88f749b7
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7425357"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7562651"
 ---
 # <a name="progress-controls"></a>プログレス コントロール
 

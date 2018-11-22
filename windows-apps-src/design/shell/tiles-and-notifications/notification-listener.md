@@ -10,12 +10,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
-ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: c67f3531d248ef46a162b992850d0240c37ba21a
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7416828"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568095"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
@@ -259,7 +259,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクでの文書 fixdelays
 
-アプリをテストするとき、バックグラウンド タスクが遅延し、数分間トリガーされない場合があります。 これを修正するには、たいトーゴ システム設定]-> [ユーザーに求めるシステム バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[常にバック グラウンドで許可されている"になるように変更します。その後にするバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
+アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 プロンプトがシステム設定をユーザー トーゴ遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定その後にするバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
