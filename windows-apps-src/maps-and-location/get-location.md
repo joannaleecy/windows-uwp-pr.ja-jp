@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, 位置情報機能
 ms.localizationpriority: medium
 ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445921"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7564329"
 ---
 # <a name="get-the-users-location"></a><span data-ttu-id="bd9e2-106">ユーザーの位置情報の取得</span><span class="sxs-lookup"><span data-stu-id="bd9e2-106">Get the user's location</span></span>
 

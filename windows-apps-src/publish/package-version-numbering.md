@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bd34c285a74c0fbe7e51f1f3fa53cdde33733dd
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7433919"
+ms.locfileid: "7564425"
 ---
 # <a name="package-version-numbering"></a><span data-ttu-id="59052-103">パッケージ バージョンの番号付け</span><span class="sxs-lookup"><span data-stu-id="59052-103">Package version numbering</span></span>
 

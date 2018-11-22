@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 70380dd0bd07cfe0c81e8339f8606029663b47d4
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7428246"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7563105"
 ---
 # <a name="bc7-format"></a><span data-ttu-id="1f2f4-104">BC7 形式</span><span class="sxs-lookup"><span data-stu-id="1f2f4-104">BC7 format</span></span>
 

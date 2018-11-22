@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438150"
+ms.locfileid: "7562147"
 ---
 # <a name="direct3d-graphics-glossary"></a><span data-ttu-id="fa8a5-104">Direct3D グラフィックスの用語集</span><span class="sxs-lookup"><span data-stu-id="fa8a5-104">Direct3D graphics glossary</span></span>
 

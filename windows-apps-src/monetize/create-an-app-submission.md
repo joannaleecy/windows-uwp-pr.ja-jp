@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
 ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7432381"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7562451"
 ---
 # <a name="create-an-app-submission"></a><span data-ttu-id="2c535-104">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="2c535-104">Create an app submission</span></span>
 

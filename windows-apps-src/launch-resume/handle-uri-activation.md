@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 808242fd7e179c225b3119dad146e7f05d72ffd4
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7442255"
+ms.locfileid: "7566503"
 ---
 # <a name="handle-uri-activation"></a><span data-ttu-id="bff5e-104">URI のアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="bff5e-104">Handle URI activation</span></span>
 

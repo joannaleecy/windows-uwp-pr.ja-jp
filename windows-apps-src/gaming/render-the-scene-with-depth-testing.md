@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、レンダリング、シーン、深度のテスト、Direct3D、シャドウ
 ms.localizationpriority: medium
 ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7418557"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568340"
 ---
 # <a name="render-the-scene-with-depth-testing"></a><span data-ttu-id="3064f-104">深度のテストを使ったシーンのレンダリング</span><span class="sxs-lookup"><span data-stu-id="3064f-104">Render the scene with depth testing</span></span>
 

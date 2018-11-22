@@ -14,11 +14,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: acb2984b38d51ca3a8564ac3a06b3cb98e5071b3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7419478"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7563483"
 ---
 # <a name="directionality-and-gravity"></a><span data-ttu-id="c5744-103">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="c5744-103">Directionality and gravity</span></span>
 

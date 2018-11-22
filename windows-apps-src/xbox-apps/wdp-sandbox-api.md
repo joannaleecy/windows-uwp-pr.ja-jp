@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7427965"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7564273"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a><span data-ttu-id="ae01c-104">Xbox Live サンド ボックス API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="ae01c-104">Xbox Live Sandbox API reference</span></span>   
 <span data-ttu-id="ae01c-105">この REST API を使用して、Xbox Live サンド ボックスを取得および設定できます。</span><span class="sxs-lookup"><span data-stu-id="ae01c-105">You can get and set your Xbox Live sandbox using this REST API.</span></span>
