@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f7e6e4e9579059f690baffd29e1fa855b4b67d9b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163656"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7577771"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 **MultiplayerSessionReference**を表す JSON オブジェクト。 
