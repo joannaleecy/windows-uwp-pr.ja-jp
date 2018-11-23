@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10, Xbox one, 特権, パートナー センター
 ms.openlocfilehash: f51fd7f9da1758d28301031ecd10d3d7650c1121
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7153857"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7567400"
 ---
 # <a name="configure-privileges-in-partner-center"></a><span data-ttu-id="0dca7-104">パートナー センターでの特権を構成します。</span><span class="sxs-lookup"><span data-stu-id="0dca7-104">Configure Privileges in Partner Center</span></span>
 
