@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163098"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554195"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a><span data-ttu-id="6e038-104">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="6e038-104">Universal Resource Identifier (URI) Reference</span></span>
 

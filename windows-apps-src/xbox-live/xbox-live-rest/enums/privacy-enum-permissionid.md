@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c0f1d0b27e0d9448240f20addb96188a03581f9c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7155064"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7564157"
 ---
 # <a name="permissionid-enumeration"></a><span data-ttu-id="2d5a3-104">PermissionId 列挙型</span><span class="sxs-lookup"><span data-stu-id="2d5a3-104">PermissionId Enumeration</span></span>
 <span data-ttu-id="2d5a3-105">PermissionId 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2d5a3-105">Details the PermissionId enumeration.</span></span>

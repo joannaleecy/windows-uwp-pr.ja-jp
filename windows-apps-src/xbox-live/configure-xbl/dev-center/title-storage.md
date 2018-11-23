@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, タイトル ストレージ, パートナー センター
 ms.openlocfilehash: 38abe0188dff74bdf0584bcb6664c5f6453e7e42
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162887"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554365"
 ---
 # <a name="configure-storage-for-you-title-in-partner-center"></a><span data-ttu-id="eb1b3-104">パートナー センターでのタイトルのストレージを構成します。</span><span class="sxs-lookup"><span data-stu-id="eb1b3-104">Configure storage for you title in Partner Center</span></span>
 

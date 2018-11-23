@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b1d86a870e32457b903053c7a8c3b1d722c9c559
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166071"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7566804"
 ---
 # <a name="standard-http-request-and-response-headers"></a><span data-ttu-id="0e21c-104">標準の HTTP 要求および応答ヘッダー</span><span class="sxs-lookup"><span data-stu-id="0e21c-104">Standard HTTP Request and Response Headers</span></span>
  

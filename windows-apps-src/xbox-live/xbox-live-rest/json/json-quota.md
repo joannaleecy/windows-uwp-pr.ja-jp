@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb2283f5214d1d25e1aa0e8bcba17f4c51019fd
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7150051"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7558335"
 ---
 # <a name="quotainfo-json"></a><span data-ttu-id="5fe13-104">quotaInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="5fe13-104">quotaInfo (JSON)</span></span>
 <span data-ttu-id="5fe13-105">クォータ タイトル グループについてを説明します。</span><span class="sxs-lookup"><span data-stu-id="5fe13-105">Contains quota information about a title group.</span></span> 

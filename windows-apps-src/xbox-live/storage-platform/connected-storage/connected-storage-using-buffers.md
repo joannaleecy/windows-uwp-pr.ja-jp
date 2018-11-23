@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 95a265644897ce9469914782484796a622dcf971
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7147723"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7563998"
 ---
 # <a name="working-with-connected-storage-buffers"></a><span data-ttu-id="e04c3-104">接続ストレージのバッファーの操作</span><span class="sxs-lookup"><span data-stu-id="e04c3-104">Working with Connected Storage buffers</span></span>
 

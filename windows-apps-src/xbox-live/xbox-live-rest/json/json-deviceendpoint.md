@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dafe60c0d26846d10113a641986842cc52e0334
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163566"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7575019"
 ---
 # <a name="deviceendpoint-json"></a><span data-ttu-id="4b2bc-104">DeviceEndpoint (JSON)</span><span class="sxs-lookup"><span data-stu-id="4b2bc-104">DeviceEndpoint (JSON)</span></span>
  

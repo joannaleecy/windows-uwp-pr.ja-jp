@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 790d267b77ad7bb31d23111a8ee2a5bc57b6c91b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165933"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7552814"
 ---
 # <a name="globalscidssciddatapathandfilenametype"></a><span data-ttu-id="4ffad-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span><span class="sxs-lookup"><span data-stu-id="4ffad-104">/global/scids/{scid}/data/{pathAndFileName},{type}</span></span>
 <span data-ttu-id="4ffad-105">ファイルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="4ffad-105">Downloads a file.</span></span> <span data-ttu-id="4ffad-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="4ffad-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

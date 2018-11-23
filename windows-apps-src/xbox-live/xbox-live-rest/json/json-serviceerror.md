@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f00618c3ecb51a0934b1b3f73a51553b49f153b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7172339"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7563875"
 ---
 # <a name="serviceerror-json"></a><span data-ttu-id="5fcc6-104">ServiceError (JSON)</span><span class="sxs-lookup"><span data-stu-id="5fcc6-104">ServiceError (JSON)</span></span>
 <span data-ttu-id="5fcc6-105">サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="5fcc6-105">Contains information about an error returned when a call to the service failed.</span></span> 

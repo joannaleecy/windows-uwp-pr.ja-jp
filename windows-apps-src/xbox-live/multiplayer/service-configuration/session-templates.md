@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, セッション テンプレート
 ms.localizationpriority: medium
 ms.openlocfilehash: 0296aaa21d9e3d873b7edff3026ea22f9b5b2b67
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163790"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7572016"
 ---
 # <a name="multiplayer-session-templates"></a><span data-ttu-id="08dd1-104">マルチプレイヤー セッション テンプレート</span><span class="sxs-lookup"><span data-stu-id="08dd1-104">Multiplayer session templates</span></span>
 

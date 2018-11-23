@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d95d3f0f171fa0e529d57ab5deca8160ddc3c43
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163470"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7572678"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a><span data-ttu-id="501ea-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span><span class="sxs-lookup"><span data-stu-id="501ea-104">/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}</span></span>
 <span data-ttu-id="501ea-105">一覧内の項目を移動します。</span><span class="sxs-lookup"><span data-stu-id="501ea-105">Moves an item within a list.</span></span> <span data-ttu-id="501ea-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="501ea-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>

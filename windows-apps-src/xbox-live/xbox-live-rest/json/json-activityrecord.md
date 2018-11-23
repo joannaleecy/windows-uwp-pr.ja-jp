@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: bb78941f2ab9cab4395dbb1ba5eb8fb3b09dee08
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7442049"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7575546"
 ---
 # <a name="activityrecord-json"></a><span data-ttu-id="363fd-104">ActivityRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="363fd-104">ActivityRecord (JSON)</span></span>
 <span data-ttu-id="363fd-105">1 つまたは複数のユーザーのリッチ プレゼンスの形式とローカライズされた文字列です。</span><span class="sxs-lookup"><span data-stu-id="363fd-105">A formatted and localized string about one or more users' rich presence.</span></span> 

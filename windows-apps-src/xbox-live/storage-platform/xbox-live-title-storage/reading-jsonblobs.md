@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1115f1faf22438ddac07fe2b38c27e9ddeb7ae
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165669"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7558266"
 ---
 # <a name="reading-a-json-blob-in-xbox-live-title-storage"></a><span data-ttu-id="a2506-104">Xbox Live タイトル ストレージ内の JSON BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="a2506-104">Reading a JSON blob in Xbox Live Title Storage</span></span>
 

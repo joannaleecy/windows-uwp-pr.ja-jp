@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d9346303e82dea2dbbd60b542c4ee207dd40901
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160437"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554163"
 ---
 # <a name="put-usersmegamerpic"></a><span data-ttu-id="1414c-104">PUT (/users/me/gamerpic)</span><span class="sxs-lookup"><span data-stu-id="1414c-104">PUT (/users/me/gamerpic)</span></span>
 <span data-ttu-id="1414c-105">1080 x 1080 ゲーマー アイコンをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="1414c-105">Uploads a 1080x1080 gamerpic.</span></span> 

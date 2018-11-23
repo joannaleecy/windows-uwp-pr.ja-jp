@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
 ms.openlocfilehash: c039a2c78824de64c503786d911bb3427e53cf64
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7164159"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554758"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a><span data-ttu-id="4bca9-104">ゲーム セッションおよびゲーム パーティーの可視性と参加可能性</span><span class="sxs-lookup"><span data-stu-id="4bca9-104">Game session and game party visibility and joinability</span></span>
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cdadf2533ee12c92f2b486408b9305d2919acb66
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163936"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7570104"
 ---
 # <a name="put-jsonusersxuidxuidscidssciddatapathandfilenamejson"></a><span data-ttu-id="8a571-104">PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span><span class="sxs-lookup"><span data-stu-id="8a571-104">PUT (/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json)</span></span>
 <span data-ttu-id="8a571-105">ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="8a571-105">Uploads a file.</span></span> <span data-ttu-id="8a571-106">Json の種類のデータの複数のブロックのアップロードがサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="8a571-106">Multi-block upload is not supported for data of type json.</span></span> <span data-ttu-id="8a571-107">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8a571-107">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

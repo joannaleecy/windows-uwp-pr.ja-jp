@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d82447801d499c6339775882b9363883430726fa
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163949"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7560218"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a><span data-ttu-id="7c6f9-104">Xbox Live のサンドボックスの概要</span><span class="sxs-lookup"><span data-stu-id="7c6f9-104">Xbox Live sandboxes introduction</span></span>
 

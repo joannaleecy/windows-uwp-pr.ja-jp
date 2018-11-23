@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a61230d3ef857698fbe54fa528808d6166b2a3b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163554"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7558115"
 ---
 # <a name="roles"></a><span data-ttu-id="da3eb-104">ロール</span><span class="sxs-lookup"><span data-stu-id="da3eb-104">Roles</span></span>
 

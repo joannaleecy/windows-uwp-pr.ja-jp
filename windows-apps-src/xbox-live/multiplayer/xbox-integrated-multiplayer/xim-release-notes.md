@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f2416eec418fade2c7851c90af9e492ba8df537
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7154672"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7559212"
 ---
 # <a name="xbox-integrated-multiplayer-release-notes"></a><span data-ttu-id="8162b-104">Xbox Integrated Multiplayer リリース ノート</span><span class="sxs-lookup"><span data-stu-id="8162b-104">Xbox Integrated Multiplayer Release Notes</span></span>
 

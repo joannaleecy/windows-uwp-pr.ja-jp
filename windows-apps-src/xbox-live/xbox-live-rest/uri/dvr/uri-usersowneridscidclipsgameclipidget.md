@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9599d6fa427184937928da9eaaebd136a24b8cde
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166296"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7570847"
 ---
 # <a name="get-usersowneridscidsscidclipsgameclipid"></a><span data-ttu-id="3dd37-104">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span><span class="sxs-lookup"><span data-stu-id="3dd37-104">GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})</span></span>
 <span data-ttu-id="3dd37-105">すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。</span><span class="sxs-lookup"><span data-stu-id="3dd37-105">Get a single game clip from the system if all the IDs to locate it are known.</span></span> <span data-ttu-id="3dd37-106">これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="3dd37-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

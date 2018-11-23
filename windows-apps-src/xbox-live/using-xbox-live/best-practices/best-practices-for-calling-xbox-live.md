@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a28595b74fc316950d6d5b93b234ffa7a26e550
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7146381"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7559342"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a><span data-ttu-id="16909-104">Xbox Live の呼び出しのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="16909-104">Best practices for calling Xbox Live</span></span>
 

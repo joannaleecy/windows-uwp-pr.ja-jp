@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ba5336ed0bf734eff60a4bbffca3397fd1ea3eb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166893"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554236"
 ---
 # <a name="verifystringresult-json"></a><span data-ttu-id="cbc98-104">VerifyStringResult (JSON)</span><span class="sxs-lookup"><span data-stu-id="cbc98-104">VerifyStringResult (JSON)</span></span>
 <span data-ttu-id="cbc98-105">[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。</span><span class="sxs-lookup"><span data-stu-id="cbc98-105">Result codes corresponding to each string submitted to [/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md).</span></span>

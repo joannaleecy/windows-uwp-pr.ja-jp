@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 131a1eb67d4a33c3fbd2f5f818499ffeea851f3d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157161"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7566276"
 ---
 # <a name="publicscidsscidclips"></a><span data-ttu-id="c2b38-104">/public/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="c2b38-104">/public/scids/{scid}/clips</span></span>
 <span data-ttu-id="c2b38-105">クリップをパブリックにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="c2b38-105">Access public clips.</span></span> <span data-ttu-id="c2b38-106">この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。</span><span class="sxs-lookup"><span data-stu-id="c2b38-106">This URI actually can be specified in two forms, `/public/scids/{scid}/clips` and `/public/titles/{titleId}/clips`.</span></span> <span data-ttu-id="c2b38-107">詳しくは、後のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c2b38-107">See below for more details.</span></span> <span data-ttu-id="c2b38-108">この URI のドメインが`gameclipsmetadata.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="c2b38-108">The domain for this URI is `gameclipsmetadata.xboxlive.com`.</span></span>

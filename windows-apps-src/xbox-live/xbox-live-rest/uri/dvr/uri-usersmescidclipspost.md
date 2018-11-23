@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd074b6ffc7b5367992c984e7e3c24b036f0f11d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7169688"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7557768"
 ---
 # <a name="post-usersmescidsscidclips"></a><span data-ttu-id="b0075-104">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="b0075-104">POST (/users/me/scids/{scid}/clips)</span></span>
 <span data-ttu-id="b0075-105">初期のアップロード要求を実行します。</span><span class="sxs-lookup"><span data-stu-id="b0075-105">Make an initial upload request.</span></span> <span data-ttu-id="b0075-106">これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="b0075-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

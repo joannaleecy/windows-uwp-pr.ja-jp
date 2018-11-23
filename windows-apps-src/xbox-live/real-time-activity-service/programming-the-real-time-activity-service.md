@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: bfe40908297922568bc9c63a5b3bf0e6254bf901
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7154180"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7566133"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a><span data-ttu-id="7019a-104">C++ API を使用したリアルタイム アクティビティ サービスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="7019a-104">Programming the Real-Time Activity Service using C++ APIs</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: f3240007d5501941ea3579dab2942d67d4e69809
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162083"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554517"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a><span data-ttu-id="1b724-104">アリーナ UI を使ってトーナメントに参加する</span><span class="sxs-lookup"><span data-stu-id="1b724-104">Join a tournament by using the Arena UI</span></span>
 

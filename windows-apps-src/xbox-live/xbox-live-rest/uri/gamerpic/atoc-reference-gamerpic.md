@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b45f4556628b64726b96b47b373b3408cf6ddf3
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7155077"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7572208"
 ---
 # <a name="gamerpic-uris"></a><span data-ttu-id="0619f-104">ゲーマーアイコン URI</span><span class="sxs-lookup"><span data-stu-id="0619f-104">Gamerpic URIs</span></span>
  

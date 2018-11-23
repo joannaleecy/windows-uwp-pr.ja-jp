@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 743573b5fec1aa0f90f8d015d65ce49d02b34db0
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166690"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7559968"
 ---
 # <a name="post-usersxuidxuidlistspinslistname"></a><span data-ttu-id="5c1c8-104">POST (/users/xuid(xuid)/lists/PINS/{listname})</span><span class="sxs-lookup"><span data-stu-id="5c1c8-104">POST (/users/xuid(xuid)/lists/PINS/{listname})</span></span>
 <span data-ttu-id="5c1c8-105">クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。</span><span class="sxs-lookup"><span data-stu-id="5c1c8-105">Inserts items into the list at the index based on the query string parameter **insertIndex**.</span></span> <span data-ttu-id="5c1c8-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="5c1c8-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>

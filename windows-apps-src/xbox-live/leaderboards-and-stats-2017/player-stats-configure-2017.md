@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: caea254143561d3e38b6583db90945118671e435
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160978"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7567061"
 ---
 # <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a><span data-ttu-id="100bb-104">データ プラットフォーム 2017 をパートナー センターでの注目の統計やランキングの構成</span><span class="sxs-lookup"><span data-stu-id="100bb-104">Configuring Featured Stats or Leaderboards in Partner Center with Data Platform 2017</span></span>
 

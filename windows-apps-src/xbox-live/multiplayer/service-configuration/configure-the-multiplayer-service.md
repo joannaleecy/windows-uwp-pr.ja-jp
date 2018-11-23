@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, サービスの構成, セッション テンプレート, カスタム招待文字列, SmartMatch ホッパー
 ms.localizationpriority: medium
 ms.openlocfilehash: 44cf15cf63ce1ebbb7d205af44b07149e1ee3a4a
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170263"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7555136"
 ---
 # <a name="multiplayer-service-configuration"></a><span data-ttu-id="74305-104">マルチプレイヤー サービスの構成</span><span class="sxs-lookup"><span data-stu-id="74305-104">Multiplayer Service Configuration</span></span>
 <span data-ttu-id="74305-105">Xbox Live が提供するサービスをタイトルで利用するには、最初にサービス構成を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="74305-105">In order for your title to take advantage of the services that Xbox Live provides, you must first define your service configuration.</span></span> <span data-ttu-id="74305-106">このサービス構成は Xbox Live クラウド サービスに存在し、タイトル/ゲームを実行しているデバイスと Xbox Live サービスが対話する方法が定義されています。</span><span class="sxs-lookup"><span data-stu-id="74305-106">This service configuration exists in the Xbox Live cloud service, and defines how the Xbox Live service interacts with any devices that are running your title/game.</span></span>

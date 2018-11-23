@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c877988111eb1ee19ee91bf01d4a6077ce4600
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7164290"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7577074"
 ---
 # <a name="mediamarketplaceidbrowse"></a><span data-ttu-id="84591-104">/media/{marketplaceId}/browse</span><span class="sxs-lookup"><span data-stu-id="84591-104">/media/{marketplaceId}/browse</span></span>
 <span data-ttu-id="84591-105">1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="84591-105">Allows browsing for items within a single media group.</span></span> <span data-ttu-id="84591-106">参照 API は、クライアントから 1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="84591-106">The browse API allows clients to browse for items from within a single media group.</span></span> <span data-ttu-id="84591-107">非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してデータのページにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="84591-107">Pages of data can be accessed non-sequentially using the skipItems parameter instead of using the continuation token.</span></span>
