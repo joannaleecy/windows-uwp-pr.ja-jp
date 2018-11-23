@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7146355"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7566902"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。

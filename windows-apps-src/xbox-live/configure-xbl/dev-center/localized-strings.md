@@ -8,12 +8,12 @@ ms.date: 11/17/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, ローカライズされた文字列, パートナー センター
-ms.openlocfilehash: b7d8f53656f60932c0f27f492f3769ddae8434ba
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: af7583985e06de4e8a7a9c8e9905eb232f4677bf
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7171740"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7554642"
 ---
 # <a name="configuring-localized-strings-in-partner-center"></a>パートナー センターのローカライズされた文字列を構成します。
 
@@ -26,7 +26,7 @@ ms.locfileid: "7171740"
 
 ![パートナー センターのローカライズされた文字列構成ページのスクリーン ショット](../../images/dev-center/localized-strings/localized-strings-1.png)
 
-3. ローカライズされた文字列を追加するには複製することにより、 <Value locale="en-US">迷路の再生</Value> タグとロケールの値を好みの言語とローカライズされた文字列の値に変更します。 エラーを回避するには、開発者表示ロケール内に少なくとも 1 つの値タグが必要です。
+3. ローカライズされた文字列を追加するには複製することにより、 <Value locale="en-US">迷路の再生</Value> タグとロケールの値を好みの言語とローカライズされた文字列の値に変更します。 エラーを回避する開発者表示ロケール内では、少なくとも 1 つの値タグが必要です。
 
 ![ローカライズされた文字列の編集](../../images/dev-center/localized-strings/localized-strings.gif)
 

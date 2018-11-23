@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: d5e84e2e124a8ca6cac814dfb05120a8e6137ac3
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7155166"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7564414"
 ---
 # <a name="configure-achievements-2017-in-partner-center"></a>パートナー センターでの Achievements 2017 を構成します。
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cf6db0ec47e92023fb43c7599fac3dcc9cdd9f0a
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7157793"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7577038"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。 

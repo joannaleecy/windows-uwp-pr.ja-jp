@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b752b23c5fdbfe8fa26bd49d0dfaf7472559441c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7163494"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7572795"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypes"></a>/media/{marketplaceId}/metadata/mediaItemTypes
 EDS の特定のバージョンのサポートされているすべての mediaItemTypes にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。

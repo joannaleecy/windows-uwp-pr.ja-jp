@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 52cbb5240c686d79d2b0532e46d7bf2f6dd85066
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7150930"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7559415"
 ---
 # <a name="eds-query-refiners"></a>EDS クエリの絞り込み条件
  

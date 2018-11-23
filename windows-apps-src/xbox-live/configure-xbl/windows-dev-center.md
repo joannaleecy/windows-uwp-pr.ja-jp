@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: e43d62610774552cce4153c7b8eca9be5406281b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7149871"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7573547"
 ---
 # <a name="partner-center-service-configuration"></a>パートナー センター サービスの構成
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 33b1cb2adaafba2370e27eb98a10a5143166f0ce
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7145261"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7561098"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
 [ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。 

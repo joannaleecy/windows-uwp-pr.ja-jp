@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c00ade176d4ee9ec405b5554ddd311bf81abed7
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7147771"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7560883"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 718c5847a1588e492c5d290d042dd4d5a9ca4283
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162403"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7581581"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
 現在の認証されたユーザーに関する情報を返します。 

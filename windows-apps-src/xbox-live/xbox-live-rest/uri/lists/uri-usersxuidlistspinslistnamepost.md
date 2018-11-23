@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 743573b5fec1aa0f90f8d015d65ce49d02b34db0
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7166690"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7559968"
 ---
 # <a name="post-usersxuidxuidlistspinslistname"></a>POST (/users/xuid(xuid)/lists/PINS/{listname})
 クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。 これらの Uri のドメインが`eplists.xboxlive.com`します。

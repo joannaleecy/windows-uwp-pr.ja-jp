@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信, バッファー操作, オーディオ操作
 ms.localizationpriority: medium
 ms.openlocfilehash: cd0a88c5d3ae50cb7dd86585507c951cc061503d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7165593"
+ms.lasthandoff: 11/23/2018
+ms.locfileid: "7577485"
 ---
 # <a name="real-time-audio-manipulation"></a>リアルタイム オーディオ操作
 
