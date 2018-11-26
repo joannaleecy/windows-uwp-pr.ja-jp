@@ -2,18 +2,16 @@
 title: 資格情報保管ボックス
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: f0fed79f57b383640a087a5f22f0b7565bb66a34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580957"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693727"
 ---
 # <a name="credential-locker"></a><span data-ttu-id="7cdd4-104">資格情報保管ボックス</span><span class="sxs-lookup"><span data-stu-id="7cdd4-104">Credential locker</span></span>
 

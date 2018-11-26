@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: MVVM と言語のパフォーマンスに関するヒント
 description: このトピックでは、ソフトウェアの設計パターンとプログラミング言語の選択に関連するいくつかのパフォーマンスの考慮事項について説明します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b39f68d6f5f00f8e33a080b77614b9ba11627989
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9027362eccfb8130b181bee26a57f13ce1e1af66
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573820"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720288"
 ---
 # <a name="mvvm-and-language-performance-tips"></a><span data-ttu-id="26e68-104">MVVM と言語のパフォーマンスに関するヒント</span><span class="sxs-lookup"><span data-stu-id="26e68-104">MVVM and language performance tips</span></span>
 

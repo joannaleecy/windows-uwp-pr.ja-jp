@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: df4d227c-21f9-4f99-9e95-3305b149d9c5
 title: UWP アプリ ストリーミング インストール
 description: ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Microsoft Store からアプリのどの部分を最初にダウンロードするかを指定できます。 アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。
-ms.author: lahugh
 ms.date: 04/05/2017
 ms.topic: article
 keywords: windows 10, uwp, ストリーミング インストールをストリーミングする uwp アプリのインストールします。
 ms.localizationpriority: medium
-ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3fa33410be31b1732a04c51d14dbbd114e1f5e0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576556"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694961"
 ---
 # <a name="uwp-app-streaming-install"></a><span data-ttu-id="c8577-105">UWP アプリ ストリーミング インストール</span><span class="sxs-lookup"><span data-stu-id="c8577-105">UWP App Streaming Install</span></span>
 <span data-ttu-id="c8577-106">ユニバーサル Windows プラットフォーム (UWP) アプリ ストリーミング インストールでは、Microsoft Store からアプリのどの部分を最初にダウンロードするかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c8577-106">Universal Windows Platform (UWP) App Streaming Install enables you to specify which parts of your app you would like the Microsoft Store to download first.</span></span> <span data-ttu-id="c8577-107">アプリの基本的なファイルを先にダウンロードすると、残りの部分のダウンロードをバックグラウンドで完了している間に、ユーザーはアプリを起動して操作できます。</span><span class="sxs-lookup"><span data-stu-id="c8577-107">When the essential files of the app are downloaded first, the user can launch and interact with the app while the rest of it finishes downloading in the background.</span></span> 

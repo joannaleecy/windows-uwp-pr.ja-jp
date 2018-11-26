@@ -1,19 +1,17 @@
 ---
-author: hickeys
 Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Windows UI とコンポーネントによるデスクトップ アプリケーションの拡張
-ms.author: hickeys
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d76d93f496f86e63027cff9e7adb64251074ba57
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567879"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707081"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a><span data-ttu-id="0e383-103">最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張</span><span class="sxs-lookup"><span data-stu-id="0e383-103">Extend your desktop application with modern UWP components</span></span>
 

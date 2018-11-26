@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 学習トラック - 一覧での顧客の表示
 description: 一覧で Customer オブジェクトのコレクションを表示するために行う必要があることについて説明します。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, データ バインディング, 一覧
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6f9710e613a1fa7abc1793e016c7bbebdbd2cda3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581092"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712148"
 ---
 # <a name="display-customers-in-a-list"></a><span data-ttu-id="c57af-104">一覧での顧客の表示</span><span class="sxs-lookup"><span data-stu-id="c57af-104">Display customers in a list</span></span>
 

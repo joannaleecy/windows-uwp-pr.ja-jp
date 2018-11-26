@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
 title: 人の心をつかむアプリの説明を書く
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 説明, 説明する, Store 登録情報, マーケティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 382bfe760165b4dee3fbdbb63166648c2e475325
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a6cea0103d484cc84f9c253a08f07ed3d69b67f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574949"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694543"
 ---
 # <a name="write-a-great-app-description"></a><span data-ttu-id="3f4d3-103">人の心をつかむアプリの説明を書く</span><span class="sxs-lookup"><span data-stu-id="3f4d3-103">Write a great app description</span></span>
 

@@ -1,20 +1,18 @@
 ---
-author: normesta
 Description: This article lists things you need to know before packaging your desktop application. You may not need to do much to get your app ready for the packaging process.
 Search.Product: eADQiWindows 10XVcnh
 title: デスクトップ アプリケーション (デスクトップ ブリッジ) のパッケージを準備します。
-ms.author: normesta
 ms.date: 05/18/20188
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: ba89ab06062f5ba40bb96f4d558bd89a16e591d1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b58ba8122d5db6cb898c5e6258794960cdc1c1f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582031"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719394"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a><span data-ttu-id="e2e30-103">デスクトップ アプリケーションのパッケージを準備します。</span><span class="sxs-lookup"><span data-stu-id="e2e30-103">Prepare to package a desktop application</span></span>
 

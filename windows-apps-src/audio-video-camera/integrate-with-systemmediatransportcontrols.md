@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: eb690f2b-3bf8-4a65-99a4-2a3a8c7760b7
 description: この記事では、システム メディア トランスポート コントロールを操作する方法について説明します。
 title: システム メディア トランスポート コントロールとの統合
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d7e3b3e822081a751aa791a76e674b07af8d9d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573306"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706699"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a><span data-ttu-id="0c393-104">システム メディア トランスポート コントロールとの統合</span><span class="sxs-lookup"><span data-stu-id="0c393-104">Integrate with the System Media Transport Controls</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: サポートとフィードバック
 description: サポートとフィードバックは、ファイルを含める
-ms.author: jken
 ms.date: 06/12/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 6decdd4325a1c3cf854e340799b9d2f4a3272e6c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7583958"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7721848"
 ---
 ## <a name="support-and-feedback"></a><span data-ttu-id="f4ad9-104">サポートとフィードバック</span><span class="sxs-lookup"><span data-stu-id="f4ad9-104">Support and feedback</span></span>
 

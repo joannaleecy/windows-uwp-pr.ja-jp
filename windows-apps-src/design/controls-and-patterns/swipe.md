@@ -1,5 +1,4 @@
 ---
-author: jwmsft
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
@@ -8,17 +7,16 @@ Description: Swipe commanding is a touch accelerator for context menus.
 title: スワイプ
 label: Swipe
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: daea428d6fad34116dac743655162c2f32315bea
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75723177e697d3fe4cdae270aba29eabcabf470
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575728"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719417"
 ---
 # <a name="swipe"></a><span data-ttu-id="33355-103">スワイプ</span><span class="sxs-lookup"><span data-stu-id="33355-103">Swipe</span></span>
 

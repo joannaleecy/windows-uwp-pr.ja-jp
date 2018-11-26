@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: Windows ランタイムの XAML について、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語での特定のデータ型に対する言語レベルのサポートの一覧を示します。
 title: XAML 固有のデータ型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556901"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694228"
 ---
 # <a name="xaml-intrinsic-data-types"></a><span data-ttu-id="8c26e-104">XAML 固有のデータ型</span><span class="sxs-lookup"><span data-stu-id="8c26e-104">XAML intrinsic data types</span></span>
 

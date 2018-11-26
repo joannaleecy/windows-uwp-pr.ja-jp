@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
 description: この記事では、SceneAnalysisEffect と FaceDetectionEffect を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。
 title: カメラ フレームの分析の効果
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d948dee234ad6c49da847324422737b1bae27e30
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9714488473bf4bdc118fd56129ea67e00019dcb1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555047"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695922"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a><span data-ttu-id="35593-104">カメラ フレームの分析の効果</span><span class="sxs-lookup"><span data-stu-id="35593-104">Effects for analyzing camera frames</span></span>
 

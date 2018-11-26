@@ -4,17 +4,15 @@ description: メッシュ内の各面には、垂直な単位法線ベクトル�
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
 - 面と頂点の法線ベクトル
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2081e8c09a6f6fd75f460af3f339902bcb80bac6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560984"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718903"
 ---
 # <a name="face-and-vertex-normal-vectors"></a><span data-ttu-id="40475-105">面と頂点の法線ベクトル</span><span class="sxs-lookup"><span data-stu-id="40475-105">Face and vertex normal vectors</span></span>
 

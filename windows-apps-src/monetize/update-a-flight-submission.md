@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: 既存のパッケージ フライトの申請を更新するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの申請の更新
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 670522e9842ca5e048777a1168caa1efbca6ce94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fe1e88383d6562526d77aea8c75891216cd75ade
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560868"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712702"
 ---
 # <a name="update-a-package-flight-submission"></a><span data-ttu-id="7c1b9-104">パッケージ フライトの申請の更新</span><span class="sxs-lookup"><span data-stu-id="7c1b9-104">Update a package flight submission</span></span>
 

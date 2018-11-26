@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Xbox One サンプルの UWP
 description: Xbox One とテレビの優れたエクスペリエンスの構築をサポートするサンプルとライブラリです。
-ms.author: scotmi
 ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be6cfbc40fc645bfb66ef2f0fb9b8b5f2976da8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555255"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706974"
 ---
 # <a name="uwp-on-xbox-one-samples"></a><span data-ttu-id="53f58-104">Xbox One サンプルの UWP</span><span class="sxs-lookup"><span data-stu-id="53f58-104">UWP on Xbox One samples</span></span>
 

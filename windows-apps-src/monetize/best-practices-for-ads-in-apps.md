@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: UX ガイドラインとエラー処理を含め、アプリ内の広告に関するベスト プラクティスについて説明します。
 title: アプリ内の広告のベスト プラクティス
-ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
-ms.openlocfilehash: 55d6c7c0cbc1999c0b4afc33cb84479294d2b18f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3084c72d32967d691054b452f5f5f2e903bedd5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559109"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720258"
 ---
 # <a name="best-practices-for-ads-in-apps"></a><span data-ttu-id="01cf6-104">アプリ内の広告のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="01cf6-104">Best practices for ads in apps</span></span>
 

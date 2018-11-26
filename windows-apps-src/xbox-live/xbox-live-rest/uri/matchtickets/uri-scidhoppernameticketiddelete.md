@@ -2,19 +2,17 @@
 title: DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 assetID: d9ff3f21-aa70-af41-afa1-9a9244fcdb95
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketiddelete.html
-author: KevinAsgari
 description: " DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7808b8dc9a8b83553ae6b09e7008fab238409958
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fdd28cb94b31102d9af98aa95afde45424dadce9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571173"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719999"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a><span data-ttu-id="60fa7-104">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span><span class="sxs-lookup"><span data-stu-id="60fa7-104">DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})</span></span>
 

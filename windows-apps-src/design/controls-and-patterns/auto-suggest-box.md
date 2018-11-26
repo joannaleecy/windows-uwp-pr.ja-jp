@@ -1,12 +1,10 @@
 ---
-author: Jwmsft
 Description: A text entry box that provides suggestions as the user types.
 title: 自動提案ボックスのガイドライン
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: efb6c8a9324419ea099041f34c341152351575f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b68b3480ac81a445551a070eaf0a1454ff22a9e7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560021"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695266"
 ---
 # <a name="auto-suggest-box"></a><span data-ttu-id="691ff-103">自動提案ボックス</span><span class="sxs-lookup"><span data-stu-id="691ff-103">Auto-suggest box</span></span>
 

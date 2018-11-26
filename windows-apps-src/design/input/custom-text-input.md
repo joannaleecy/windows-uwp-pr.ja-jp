@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
 title: カスタム テキスト入力の概要
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: キーボード, テキスト, 基本的なテキスト, カスタム テキスト, テキスト サービス フレームワーク, 入力, ユーザー操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 161278dc5fe0bb8c7d4c790def6a9f7ba88b83d2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558819"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694387"
 ---
 # <a name="custom-text-input"></a><span data-ttu-id="d692f-103">カスタム テキスト入力</span><span class="sxs-lookup"><span data-stu-id="d692f-103">Custom text input</span></span>
 

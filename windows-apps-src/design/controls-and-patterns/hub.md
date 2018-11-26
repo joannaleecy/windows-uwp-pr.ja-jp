@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: The hub control uses a hierarchical navigation pattern to support apps with a relational information architecture.
 title: ハブ コントロール
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: yulikl
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d73ff59b03f288227b1435b0b931d11860259ec
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 779c9a875753ed54b61d73df8ba3a9401bc67cbf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580662"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694152"
 ---
 # <a name="hub-controlpattern"></a><span data-ttu-id="6e3bd-103">ハブ コントロール/パターン</span><span class="sxs-lookup"><span data-stu-id="6e3bd-103">Hub control/pattern</span></span>
 

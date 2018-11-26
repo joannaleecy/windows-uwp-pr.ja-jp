@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: ユニバーサル 8.1 アプリと \#8212;whether がある場合がターゲットとして Windows8.1、Windows Phone 8.1、または両方 & \#8212;then こと、ソース コードとスキルがスムーズに移植 windows 10 が生じることがわかります。
 title: Windows ランタイム 8.x から UWP への移行'
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573096"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693750"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a><span data-ttu-id="b74c3-104">Windows ランタイム 8.x から UWP への移行</span><span class="sxs-lookup"><span data-stu-id="b74c3-104">Move from Windows Runtime 8.x to UWP</span></span>
 

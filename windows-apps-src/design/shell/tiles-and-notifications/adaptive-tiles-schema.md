@@ -1,21 +1,19 @@
 ---
-author: andrewleader
 Description: Here are the elements and attributes you use to create adaptive tiles.
 title: アダプティブ タイル スキーマとテンプレート
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ed938ec247f308559566ad299bec8eb8ea75674
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576486"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719084"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a><span data-ttu-id="1c320-103">アダプティブ タイル テンプレート: スキーマとガイダンス</span><span class="sxs-lookup"><span data-stu-id="1c320-103">Adaptive tile templates: schema and guidance</span></span>
 

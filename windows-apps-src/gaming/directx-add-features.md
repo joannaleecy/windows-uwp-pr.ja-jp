@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: DirectX ゲームへの機能の追加
 description: DirectX ゲームに機能を追加します。
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, XAML, 画面の向き, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: be3f8e57a592512335a826c142876d1ff3c53e5b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 432e7716363f6a51254e1476dac38f713c94fb69
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557222"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712218"
 ---
 # <a name="add-features-to-directx-games"></a><span data-ttu-id="72afb-104">DirectX ゲームへの機能の追加</span><span class="sxs-lookup"><span data-stu-id="72afb-104">Add features to DirectX games</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: C++/WinRT の紹介 &mdash; Windows ランタイム API 用の標準的な C++ 言語プロジェクション。
 title: C++/WinRT の概要
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b92d0def08267c36497f0afd24d23308bc4a2e85
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554607"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695134"
 ---
 # <a name="introduction-to-cwinrt"></a><span data-ttu-id="92c1b-104">C++/WinRT の概要</span><span class="sxs-lookup"><span data-stu-id="92c1b-104">Introduction to C++/WinRT</span></span>
 &nbsp;

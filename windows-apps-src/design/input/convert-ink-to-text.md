@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
 title: Windows Ink のストロークをテキストおよび図形として認識する
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keywords: Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, 手書き認識, ユーザー操作, 入力
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 83142b0a3b24e25f8e7a922d800262f505cd8cc2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b25a37fb06688e7841490e00d1c83640d3155d50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569132"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692883"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a><span data-ttu-id="11585-103">Windows Ink のストロークをテキストおよび図形として認識する</span><span class="sxs-lookup"><span data-stu-id="11585-103">Recognize Windows Ink strokes as text and shapes</span></span>
 
@@ -274,7 +272,6 @@ private void DrawText(string recognizedText, Rect boundingRect)
 | ![分析前](images/ink/ink-analysis-raw2-small.png) | ![分析後](images/ink/ink-analysis-analyzed2-small.png) |
 
 ---
-
 ## <a name="constrained-handwriting-recognition"></a><span data-ttu-id="11585-142">制約付き手書き認識</span><span class="sxs-lookup"><span data-stu-id="11585-142">Constrained handwriting recognition</span></span>
 
 <span data-ttu-id="11585-143">前のセクション ([インクの分析による自由形式の認識](#free-form-recognition-with-ink-analysis)) では、[インクの分析 API](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) を使用して分析を行い、InkCanvas 領域内の任意のインク ストロークを認識する方法を説明しました。</span><span class="sxs-lookup"><span data-stu-id="11585-143">In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.</span></span>

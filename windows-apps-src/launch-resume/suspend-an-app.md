@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: アプリの中断の処理
 description: システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561699"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695101"
 ---
 # <a name="handle-app-suspend"></a><span data-ttu-id="7616f-104">アプリの中断の処理</span><span class="sxs-lookup"><span data-stu-id="7616f-104">Handle app suspend</span></span>
 

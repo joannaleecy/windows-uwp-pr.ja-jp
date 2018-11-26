@@ -2,19 +2,17 @@
 title: /scids/{scid}/leaderboards/{leaderboardname}
 assetID: 16345a17-6025-5453-5694-eaf97f0e83e9
 permalink: en-us/docs/xboxlive/rest/uri-scidsscidleaderboardsleaderboardname.html
-author: KevinAsgari
 description: " /scids/{scid}/leaderboards/{leaderboardname}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c8cd21fdd3b11aa7307465782bcc10e27488aedb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b73ffc2d6d6b80159651a90aabbf5595b146560d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581275"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707207"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a><span data-ttu-id="6632c-104">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="6632c-104">/scids/{scid}/leaderboards/{leaderboardname}</span></span>
 <span data-ttu-id="6632c-105">定義済みグローバル ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="6632c-105">Accesses a predefined global leaderboard.</span></span> <span data-ttu-id="6632c-106">これらの Uri のドメインが`leaderboards.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6632c-106">The domain for these URIs is `leaderboards.xboxlive.com`.</span></span>

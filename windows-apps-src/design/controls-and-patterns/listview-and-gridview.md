@@ -1,10 +1,8 @@
 ---
-author: muhsinking
 Description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 title: リスト ビューとグリッド ビュー
 label: List view and grid view
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/20/2017
 ms.topic: article
 keywords: windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ee00a9af23be945ad27ab4b39eec127ec397894
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c748efaa242fb6fc59c6346aa9c893bc35fde5c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559625"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719779"
 ---
 # <a name="list-view-and-grid-view"></a><span data-ttu-id="60d48-103">リスト ビューとグリッド ビュー</span><span class="sxs-lookup"><span data-stu-id="60d48-103">List view and grid view</span></span>
 

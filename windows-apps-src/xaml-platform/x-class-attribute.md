@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
 title: xClass 属性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573750"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694791"
 ---
 # <a name="xclass-attribute"></a><span data-ttu-id="693d3-105">x:Class 属性</span><span class="sxs-lookup"><span data-stu-id="693d3-105">x:Class attribute</span></span>
 

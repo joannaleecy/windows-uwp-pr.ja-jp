@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows アプリ認定キットのテスト
 description: Windows アプリ認定キットには、多くアプリが Microsoft Store に公開する準備ができていることを確認できるテストにはが含まれています。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: 65afbaa4440a5bce43ca6d48126e6cc2b8316466
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577185"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720218"
 ---
 # <a name="windows-app-certification-kit-tests"></a><span data-ttu-id="60bf1-104">Windows アプリ認定キットのテスト</span><span class="sxs-lookup"><span data-stu-id="60bf1-104">Windows App Certification Kit tests</span></span>
 

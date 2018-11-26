@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージの技術的な概要
-author: aablackm
 description: 接続ストレージ内部の動作について詳しく説明します。
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8740d9287ff63ba113266d6c7cf39f2a21823d4b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6eddd11a370b8dcadc5108fe00539c2c6d1d9d1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563791"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692415"
 ---
 # <a name="connected-storage"></a><span data-ttu-id="57e0e-104">接続ストレージ</span><span class="sxs-lookup"><span data-stu-id="57e0e-104">Connected Storage</span></span>
 
@@ -76,7 +74,6 @@ ms.locfileid: "7563791"
 
 <a name="connected-storage"></a><span data-ttu-id="57e0e-161">接続ストレージ</span><span class="sxs-lookup"><span data-stu-id="57e0e-161">Connected storage</span></span>
 -----------------
-
 <span data-ttu-id="57e0e-162">接続ストレージは、複数の本体間でローミングされる必要がある Xbox One のゲームプレイ データや他の関連するアプリの状態データを保存できるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="57e0e-162">Connected storage is designed to help apps save Xbox One gameplay data and other relevant app states-data that should roam between consoles.</span></span> <span data-ttu-id="57e0e-163">接続ストレージ API は Xbox One に固有であり、そのデータの保存およびアップロードを支援します。</span><span class="sxs-lookup"><span data-stu-id="57e0e-163">The Connected Storage API, specific to Xbox One, assists with saving and uploading that data.</span></span> <span data-ttu-id="57e0e-164">API は Xbox One アプリケーション モデルとの組み合わせで機能します。</span><span class="sxs-lookup"><span data-stu-id="57e0e-164">The API works in combination with the Xbox One application model.</span></span>
 
 <span data-ttu-id="57e0e-165">接続ストレージ API は、次の機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="57e0e-165">The Connected Storage API provides the following features:</span></span>
@@ -96,7 +93,6 @@ ms.locfileid: "7563791"
 
 <a name="xbox-live-title-storage"></a><span data-ttu-id="57e0e-176">Xbox Live タイトル ストレージ</span><span class="sxs-lookup"><span data-stu-id="57e0e-176">Xbox Live Title Storage</span></span>
 -----------------------
-
 <span data-ttu-id="57e0e-177">タイトル ストレージ サービスでは、以下の機能を持つデータ ストレージ用のクロスプラットフォーム REST API が提供されます。</span><span class="sxs-lookup"><span data-stu-id="57e0e-177">The Title Storage service offers a cross-platform REST API for data storage with the following capabilities:</span></span>
 
 -   <span data-ttu-id="57e0e-178">ユーザー間、アプリ間、およびさまざまなプラットフォーム間でのデータ共有を提供します</span><span class="sxs-lookup"><span data-stu-id="57e0e-178">Provides data sharing across users, apps, and various platforms</span></span>
@@ -118,7 +114,6 @@ ms.locfileid: "7563791"
 
 <a name="local-temporary-storage"></a><span data-ttu-id="57e0e-190">ローカル一時ストレージ</span><span class="sxs-lookup"><span data-stu-id="57e0e-190">Local temporary storage</span></span>
 -----------------------
-
 <span data-ttu-id="57e0e-191">本体上で、アプリは、以下の特性を持つローカル一時ストレージにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="57e0e-191">On the console, an app has access to local temporary storage with the following characteristics:</span></span>
 
 -   <span data-ttu-id="57e0e-192">パス T:\\ によってアクセス可能な 2 GB の専用ハード ドライブ ストレージ。</span><span class="sxs-lookup"><span data-stu-id="57e0e-192">2 GB of dedicated hard drive storage, accessible by the path T:\\.</span></span>
@@ -129,7 +124,6 @@ ms.locfileid: "7563791"
 
 <a name="configuring-your-app-for-connected-storage"></a><span data-ttu-id="57e0e-195">接続ストレージのためのアプリの構成</span><span class="sxs-lookup"><span data-stu-id="57e0e-195">Configuring your app for connected storage</span></span>
 ------------------------------------------
-
 <span data-ttu-id="57e0e-196">接続ストレージ API を使用する場合、すべての読み取りおよび書き込み操作は Xbox Live プライマリー サービス構成 ID (SCID) と関連付けられます。SCID はアプリのマニフェスト ファイル AppXManifest.xml で次のように定義されます。</span><span class="sxs-lookup"><span data-stu-id="57e0e-196">When you use the Connected Storage API, all read and write operations are associated with an Xbox Live Primary Service Configuration ID (SCID), defined in your app's manifest file, AppXManifest.xml:</span></span>
 
 ```xml

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: このトピックでは、カメラのプレビューおよび録画中のビデオ ストリームに効果を適用する方法と、ビデオ手ブレ補正効果を使用する方法について説明します。
 title: ビデオ キャプチャの効果
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d427a532e9821b81b6f23d08babecd692c8c95e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557073"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695985"
 ---
 # <a name="effects-for-video-capture"></a><span data-ttu-id="b4a60-104">ビデオ キャプチャの効果</span><span class="sxs-lookup"><span data-stu-id="b4a60-104">Effects for video capture</span></span>
 

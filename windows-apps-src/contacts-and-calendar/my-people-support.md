@@ -1,18 +1,16 @@
 ---
 title: アプリケーションにマイ連絡先のサポートを追加する
 description: アプリケーションにマイ連絡先のサポートを追加する方法と、連絡先をピン留めする方法およびピン留めを外す方法について説明します。
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a486f27d390a651cec0dcad82246a858bab2f33
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574727"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720248"
 ---
 # <a name="adding-my-people-support-to-an-application"></a><span data-ttu-id="d9adb-104">アプリケーションにマイ連絡先のサポートを追加する</span><span class="sxs-lookup"><span data-stu-id="d9adb-104">Adding My People support to an application</span></span>
 

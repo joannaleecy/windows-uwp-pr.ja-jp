@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
 description: メディアの再生中にシステムでサポートされているメタデータ キューを処理します
 title: システムでサポートされているタイミングが設定されたメタデータのキュー
-ms.author: drewbat
 ms.date: 04/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, メタデータ, キュー, 音声, チャプター
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f461bb70c1319352c66b8d12775dc7fa1db0edf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560842"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706584"
 ---
 # <a name="system-supported-timed-metadata-cues"></a><span data-ttu-id="e88ff-104">システムでサポートされているタイミングが設定されたメタデータのキュー</span><span class="sxs-lookup"><span data-stu-id="e88ff-104">System-supported timed metadata cues</span></span>
 <span data-ttu-id="e88ff-105">この記事では、メディア ファイルやストリームに埋め込まれる可能性がある、タイミングが設定されたメタデータのいくつかの形式を活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e88ff-105">This article describes how to take advantage of several formats of timed metadata that may be embedded in media files or streams.</span></span> <span data-ttu-id="e88ff-106">UWP アプリは、これらのメタデータ キューが発生したときに、メディア パイプラインで再生中に発生したイベントについて登録できます。</span><span class="sxs-lookup"><span data-stu-id="e88ff-106">UWP apps can register for events that are raised by the media pipeline during playback whenever these metadata cues are encountered.</span></span> <span data-ttu-id="e88ff-107">アプリでは、[**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) クラスを使って独自のカスタム メタデータ キューを実装できますが、この記事ではメディア パイプラインで自動的に検出される、次のようなメタデータ標準に重点を置いて説明します。</span><span class="sxs-lookup"><span data-stu-id="e88ff-107">Using the [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) class, apps can implement their own custom metadata cues, but this article focuses on several metadata standards that are automatically detected by the media pipeline, including:</span></span>

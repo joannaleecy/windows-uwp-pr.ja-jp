@@ -1,23 +1,21 @@
 ---
-author: Jwmsft
 Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
 title: UWP アプリのナビゲーションの基本
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
 ms.date: 7/16/2018
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 04e5ff8025850c3ee69a0b04691af3c6e8c4e24b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572544"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719609"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a><span data-ttu-id="f9867-103">UWP アプリのナビゲーション デザインの基本</span><span class="sxs-lookup"><span data-stu-id="f9867-103">Navigation design basics for UWP apps</span></span>
 

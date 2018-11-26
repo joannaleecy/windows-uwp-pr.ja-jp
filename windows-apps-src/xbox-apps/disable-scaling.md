@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: スケーリングを無効にする方法
 description: 既定の倍率を無効にする方法を説明します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
-ms.openlocfilehash: 82b42b25d3894a82e92af9a520ee5f951a5ba344
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 44688ff40792ba2ee72cbd1d96bae1ac59834efa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566680"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694264"
 ---
 # <a name="how-to-turn-off-scaling"></a><span data-ttu-id="b0781-104">スケーリングを無効にする方法</span><span class="sxs-lookup"><span data-stu-id="b0781-104">How to turn off scaling</span></span>   
 <span data-ttu-id="b0781-105">アプリケーションは既定で、XAML アプリの場合は 200% に、HTML アプリの場合は 150% に拡大されます。</span><span class="sxs-lookup"><span data-stu-id="b0781-105">By default, applications are scaled to 200% for XAML and 150% for HTML apps.</span></span> <span data-ttu-id="b0781-106">また、既定の倍率を無効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b0781-106">It is possible to turn off the default scale factor.</span></span> <span data-ttu-id="b0781-107">これにより、アプリケーションをデバイスの実際のピクセル サイズ (1910 x 1080 ピクセル) で使うことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="b0781-107">This will cause your application to use the actual pixel dimensions of the device (1910 x 1080 pixels).</span></span>   

@@ -1,22 +1,20 @@
 ---
-author: stevewhims
 Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
 Search.SourceType: Video
 title: グローバリゼーションとローカライズ
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: b437055704c307dc3e3fa506a9885ff892585503
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564764"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720068"
 ---
 # <a name="globalization-and-localization"></a><span data-ttu-id="8d0ea-103">グローバリゼーションとローカライズ</span><span class="sxs-lookup"><span data-stu-id="8d0ea-103">Globalization and localization</span></span>
 

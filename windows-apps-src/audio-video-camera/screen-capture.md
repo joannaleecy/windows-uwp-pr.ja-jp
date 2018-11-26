@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 画面キャプチャ
 description: Windows.Graphics.Capture 名前空間 には、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、コラボレーティブでインタラクティブなエクスペリエンスを構築できます。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.author: elcowle
 ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: d28ed1fce79a815155180ab8a3c708e2c8bf8916
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555499"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698311"
 ---
 # <a name="screen-capture"></a><span data-ttu-id="363ee-104">画面キャプチャ</span><span class="sxs-lookup"><span data-stu-id="363ee-104">Screen capture</span></span>
 

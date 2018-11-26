@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: xDeferLoadStrategy 属性
 description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565427"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719384"
 ---
 # <a name="xdeferloadstrategy-attribute"></a><span data-ttu-id="00861-105">x:DeferLoadStrategy 属性</span><span class="sxs-lookup"><span data-stu-id="00861-105">x:DeferLoadStrategy attribute</span></span>
 

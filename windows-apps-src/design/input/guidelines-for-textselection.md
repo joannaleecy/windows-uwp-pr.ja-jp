@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
 title: テキストと画像の選択
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
 keywords: キーボード, テキスト, 入力, ユーザーの操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 32d8e7d858ff28a6ef6a9af517e0a584c6106cd5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578478"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720368"
 ---
 # <a name="selecting-text-and-images"></a><span data-ttu-id="e0438-103">テキストと画像の選択</span><span class="sxs-lookup"><span data-stu-id="e0438-103">Selecting text and images</span></span>
 

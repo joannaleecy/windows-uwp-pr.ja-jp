@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
 title: タッチ操作
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: タッチ, ポインター, 入力, ユーザーの操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fbb2b6e5edee47d75d7115a38f95abf5ae71529a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567498"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698271"
 ---
 # <a name="touch-interactions"></a><span data-ttu-id="5bc8a-103">タッチ操作</span><span class="sxs-lookup"><span data-stu-id="5bc8a-103">Touch interactions</span></span>
 

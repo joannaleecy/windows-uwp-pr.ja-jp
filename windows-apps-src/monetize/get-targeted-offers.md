@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: 現在のアプリのコンテキストで現在のユーザーが利用できるターゲット オファーを取得するには、Microsoft Store ターゲット オファー API の以下のメソッドを使います。
 title: ターゲット オファーを取得する
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファーの取得
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71cd6ce3b9736b812f8ccdf4d21d35357928c63c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557242"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695240"
 ---
 # <a name="get-targeted-offers"></a><span data-ttu-id="d0f1b-104">ターゲット オファーを取得する</span><span class="sxs-lookup"><span data-stu-id="d0f1b-104">Get targeted offers</span></span>
 

@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/metadata/mediaGroups
 assetID: 8d8491f1-3577-b247-63b3-b8f1431195db
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediagroups.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaGroups"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b187435c81c2cd9a185c3378b787eda41806d88
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e508809c056cfb40c5a3c1e2e93e4620bc3a6b7e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559052"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707326"
 ---
 # <a name="mediamarketplaceidmetadatamediagroups"></a><span data-ttu-id="6f120-104">/media/{marketplaceId}/metadata/mediaGroups</span><span class="sxs-lookup"><span data-stu-id="6f120-104">/media/{marketplaceId}/metadata/mediaGroups</span></span>
 <span data-ttu-id="6f120-105">EDS の特定のバージョンのサポートされているすべての mediaGroups の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="6f120-105">Lists all supported mediaGroups for the given EDS version.</span></span> <span data-ttu-id="6f120-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6f120-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: dd2a1e01-c284-4d62-963e-f59f58dca61a
 description: この記事では、利用可能なメディア ソースの検索、写真やサイドカー ファイルなどのファイルのインポート、ソース デバイスからインポートしたファイルの削除など、デバイスからメディアをインポートする方法について説明します。
 title: メディアのインポート
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f8956e2ca167d98bb8e6ecf35ce3d131d7b032
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557399"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696055"
 ---
 # <a name="import-media-from-a-device"></a><span data-ttu-id="338d2-104">デバイスからのメディアのインポート</span><span class="sxs-lookup"><span data-stu-id="338d2-104">Import media from a device</span></span>
 

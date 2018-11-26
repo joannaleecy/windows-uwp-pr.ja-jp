@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: コンポジションの照明
 description: アプリに 3D の動的な照明を追加する、コンポジションの照明 Api を使用できます。
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c7bfcb06eb673b0516cef7882685ebd19ddb97
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d8c33504fcc785aa2f1fc94796e47fe097fbea96
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573076"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706722"
 ---
 # <a name="using-lights-in-windows-ui"></a><span data-ttu-id="d5f01-104">Windows UI でのライトの使用</span><span class="sxs-lookup"><span data-stu-id="d5f01-104">Using lights in Windows UI</span></span>
 

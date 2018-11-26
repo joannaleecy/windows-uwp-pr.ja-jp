@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
 description: この記事では、MediaCapture クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。
 title: MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7204c01cc80c50dacb2009b2138a7c046974dc62
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0aa227a47fc3940f3fa5c3010eed70f37067935
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574773"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696105"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a><span data-ttu-id="1d75d-104">MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ</span><span class="sxs-lookup"><span data-stu-id="1d75d-104">Basic photo, video, and audio capture with MediaCapture</span></span>
 

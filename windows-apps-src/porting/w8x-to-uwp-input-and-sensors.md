@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
 title: 入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574435"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694099"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a><span data-ttu-id="0bacf-104">入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植</span><span class="sxs-lookup"><span data-stu-id="0bacf-104">Porting Windows Runtime 8.x to UWP for I/O, device, and app model</span></span>
 

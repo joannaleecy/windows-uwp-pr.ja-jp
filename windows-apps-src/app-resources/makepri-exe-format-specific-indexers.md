@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
 title: MakePri.exe の形式に固有のインデクサー
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 439a69da400caaa9ae509a121f2aa7336853d2ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563204"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720488"
 ---
 # <a name="makepriexe-format-specific-indexers"></a><span data-ttu-id="c76fc-103">MakePri.exe の形式に固有のインデクサー</span><span class="sxs-lookup"><span data-stu-id="c76fc-103">MakePri.exe format-specific indexers</span></span>
 

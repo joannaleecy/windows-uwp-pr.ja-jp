@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: このケース スタディは、Bookstore1 で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを SemanticZoom コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。
 title: Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d37f2507f3e4c96c3462fd075dbe945117dd82
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564072"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693688"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a><span data-ttu-id="0aaa3-104">Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2</span><span class="sxs-lookup"><span data-stu-id="0aaa3-104">Windows Runtime 8.x to UWP case study: Bookstore2</span></span>
 

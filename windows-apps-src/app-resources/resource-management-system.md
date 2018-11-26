@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings.
 title: リソース管理システム
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563692"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695720"
 ---
 # <a name="resource-management-system"></a><span data-ttu-id="2a739-103">リソース管理システム</span><span class="sxs-lookup"><span data-stu-id="2a739-103">Resource Management System</span></span>
 <span data-ttu-id="2a739-104">リソース管理システムには、ビルド時と実行時の両方の機能があります。</span><span class="sxs-lookup"><span data-stu-id="2a739-104">The Resource Management System has both build-time and run-time features.</span></span> <span data-ttu-id="2a739-105">ビルド時に、システムは、アプリとしてパッケージ化されているリソースのさまざまなバリエーションすべてのインデックスを作成します。</span><span class="sxs-lookup"><span data-stu-id="2a739-105">At build time, the system creates an index of all the different variants of the resources that are packaged up with your app.</span></span> <span data-ttu-id="2a739-106">このインデックスがパッケージ リソース インデックス (PRI) であり、アプリのパッケージにも含まれています。</span><span class="sxs-lookup"><span data-stu-id="2a739-106">This index is the Package Resource Index, or PRI, and it's also included in your app's package.</span></span> <span data-ttu-id="2a739-107">実行時に、システムは、有効になっているユーザーやコンピューターの設定を検出し、PRI でその情報を参照して、それらの設定に最適なリソースを自動的に読み込みます。</span><span class="sxs-lookup"><span data-stu-id="2a739-107">At run-time, the system detects the user and machine settings that are in effect, consults the information in the PRI, and automatically loads the resources that are the best match for those settings.</span></span>

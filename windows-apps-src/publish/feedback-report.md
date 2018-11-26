@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: フィードバック レポート
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9d40e921f999381421a5a6ce422e019e7db58bbd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564930"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719557"
 ---
 # <a name="feedback-report"></a><span data-ttu-id="3847a-103">フィードバック レポート</span><span class="sxs-lookup"><span data-stu-id="3847a-103">Feedback report</span></span>
 

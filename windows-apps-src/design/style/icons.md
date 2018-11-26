@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
 title: アイコン
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 52ec77bd6199e0388d9ee9911c7a01e9fbe77fad
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568553"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719143"
 ---
 # <a name="icons-for-uwp-apps"></a><span data-ttu-id="d4673-103">UWP アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="d4673-103">Icons for UWP apps</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: この記事では、可変の写真シーケンスをキャプチャする方法について説明します。これによって、画像を複数のフレームとして次々とキャプチャし、各フレームに別々のフォーカス、フラッシュ、ISO、露出、露出補正の設定を適用することができます。
 title: 可変の写真シーケンス
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561666"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695776"
 ---
 # <a name="variable-photo-sequence"></a><span data-ttu-id="eea73-104">可変の写真シーケンス</span><span class="sxs-lookup"><span data-stu-id="eea73-104">Variable photo sequence</span></span>
 

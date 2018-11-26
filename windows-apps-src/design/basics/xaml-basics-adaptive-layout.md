@@ -1,18 +1,16 @@
 ---
-author: muhsinking
 title: アダプティブ レイアウトの作成のチュートリアル
 description: この記事では、XAML のアダプティブ レイアウトの基本について説明します。
 keywords: XAML、UWP、概要
-ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556781"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695091"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a><span data-ttu-id="dc4ce-104">チュートリアル: アダプティブ レイアウトの作成</span><span class="sxs-lookup"><span data-stu-id="dc4ce-104">Tutorial: Create adaptive layouts</span></span>
 

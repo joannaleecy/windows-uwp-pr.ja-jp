@@ -1,21 +1,19 @@
 ---
-author: lex
 Description: The following article describes all of the properties and elements within the toast content XML payload.
 title: トースト通知のコンテンツの XML スキーマ
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bcfc56264ab3063995fd9f2b06bd93e9406cd37e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571314"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698571"
 ---
 # <a name="toast-content-xml-schema"></a><span data-ttu-id="f9bf6-103">トースト通知のコンテンツの XML スキーマ</span><span class="sxs-lookup"><span data-stu-id="f9bf6-103">Toast content XML schema</span></span>
 

@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
 title: FlipView コントロールのガイドライン
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f5fccf10a28e1c2dd7f0f6001d2c64ca2354f76
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a7fa4b824e0472971fab61935857670fa5b49ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555614"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695081"
 ---
 # <a name="flip-view"></a><span data-ttu-id="fc488-103">フリップ ビュー</span><span class="sxs-lookup"><span data-stu-id="fc488-103">Flip view</span></span>
 

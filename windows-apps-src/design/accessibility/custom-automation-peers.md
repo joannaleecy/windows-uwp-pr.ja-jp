@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: カスタム オートメーション ピア
 label: Custom automation peers
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 37f75686c51e876cd4e6b608d0f527d3e32e4e24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 18d3affe5f142c56314d132ba488d87c6f285723
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578275"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695839"
 ---
 # <a name="custom-automation-peers"></a><span data-ttu-id="a9603-103">カスタム オートメーション ピア</span><span class="sxs-lookup"><span data-stu-id="a9603-103">Custom automation peers</span></span>  
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: デバイス機能を有効にする
 description: このチュートリアルでは、Microsoft Visual Studio のデバイス機能の宣言方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e1a2884cd3db458685ebdd393c31aed88ee36a35
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553549"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693093"
 ---
 # <a name="enable-device-capabilities"></a><span data-ttu-id="11b55-105">デバイス機能を有効にする</span><span class="sxs-lookup"><span data-stu-id="11b55-105">Enable device capabilities</span></span>
 

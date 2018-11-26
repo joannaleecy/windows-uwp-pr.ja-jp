@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 description: XAML マークアップで、x:Bind の既定のモードを指定します。
 title: xDefaultBindMode 属性
-ms.author: jimwalk
 ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2696cb46591757421795b15083ea7fdab54943c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8917b09f04206a5466797f48414defeb35baf5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578777"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719269"
 ---
 # <a name="xdefaultbindmode-attribute"></a><span data-ttu-id="3104e-104">x:DefaultBindMode 属性</span><span class="sxs-lookup"><span data-stu-id="3104e-104">x:DefaultBindMode attribute</span></span>
 

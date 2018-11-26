@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: パートナー センター アカウントに登録されているアプリに関するデータを取得、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アプリ データの取得
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
-ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571354"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720228"
 ---
 # <a name="get-app-data"></a><span data-ttu-id="8c037-104">アプリ データの取得</span><span class="sxs-lookup"><span data-stu-id="8c037-104">Get app data</span></span>
 

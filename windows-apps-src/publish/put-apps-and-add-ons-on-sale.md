@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: アプリとアドオンの販売
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572282"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707311"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a><span data-ttu-id="51de1-103">アプリとアドオンの販売</span><span class="sxs-lookup"><span data-stu-id="51de1-103">Put apps and add-ons on sale</span></span>
 

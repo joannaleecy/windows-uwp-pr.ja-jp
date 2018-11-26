@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: Use the reposition animation to move an element or elements into a new position.
 title: UWP アプリでの位置変更アニメーション
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec7d57e75d00f3418d4ff176c1ae4256eeab6983
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e2a96169f44802c62f341029b9bc1c5eb7e31de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578338"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698441"
 ---
 # <a name="reposition-animations"></a><span data-ttu-id="5034c-103">位置変更アニメーション</span><span class="sxs-lookup"><span data-stu-id="5034c-103">Reposition animations</span></span>
 

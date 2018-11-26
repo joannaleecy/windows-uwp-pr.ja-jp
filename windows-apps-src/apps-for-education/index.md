@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 教育機関向けのアプリを開発します。
 description: このセクションでは、ウィンドウのユニバーサル アプリなリソースを利用できるように、Windows 10 プラットフォームの教育機関向けのアプリの作成について説明します。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: d55aaab22ff51112ca69d1ead72e31468d7fb1ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569608"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694325"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a><span data-ttu-id="61da9-104">教育機関向けのユニバーサル Windows アプリを開発します。</span><span class="sxs-lookup"><span data-stu-id="61da9-104">Develop Universal Windows apps for education</span></span>
 ![テスト アプリのスクリーン ショット](images/take-a-test-screen-small.png)

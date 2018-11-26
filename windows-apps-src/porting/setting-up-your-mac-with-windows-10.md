@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。
 title: Windows 10 を使用するための Mac のセットアップ
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 61918f8f81137dad4db9bf627b7c87e0c05ace8d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570871"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719534"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a><span data-ttu-id="02847-104">Windows 10 を使用するための Mac のセットアップ</span><span class="sxs-lookup"><span data-stu-id="02847-104">Setting up your Mac with Windows 10</span></span>
 

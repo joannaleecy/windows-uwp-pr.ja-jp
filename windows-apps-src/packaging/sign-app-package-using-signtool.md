@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: SignTool を使ってアプリ パッケージに署名する
 description: SignTool を使って手動でアプリ パッケージに証明書による署名を行います。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: adb94257f6a978ba0b5ea56facf3894e2cfae32b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565815"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706990"
 ---
 # <a name="sign-an-app-package-using-signtool"></a><span data-ttu-id="10da2-104">SignTool を使ってアプリ パッケージに署名する</span><span class="sxs-lookup"><span data-stu-id="10da2-104">Sign an app package using SignTool</span></span>
 

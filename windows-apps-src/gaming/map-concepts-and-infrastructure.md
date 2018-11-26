@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Direct3D 11 への OpenGL ES 2.0 のマッピング
 description: OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 532c2a0a9779ae3eaedb2217175dc0805514f792
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e09dcb1830e62d17983f564771b4808d132179a0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581632"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712281"
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a><span data-ttu-id="6cbed-104">Direct3D 11 への OpenGL ES 2.0 のマッピング</span><span class="sxs-lookup"><span data-stu-id="6cbed-104">Map OpenGL ES 2.0 to Direct3D 11</span></span>
 

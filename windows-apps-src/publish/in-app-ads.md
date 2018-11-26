@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of Partner Center to manage your use of ads.
 title: アプリ内広告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ccff2dce0a57e5f3219f306fa029f84162bf4974
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 6e212e16039d49e3ffd08aa5886d48c61ee24e9e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7418285"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719599"
 ---
 # <a name="in-app-ads"></a><span data-ttu-id="50620-103">アプリ内広告</span><span class="sxs-lookup"><span data-stu-id="50620-103">In-app ads</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: 加速度計の使用
 description: 加速度計を使ってユーザーの動きに応答する方法を説明します。
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 482092e43acd6999361640e598a44391ac3f11a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 77ee3191bc41fca672a055a708523578390860b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579381"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718999"
 ---
 # <a name="use-the-accelerometer"></a><span data-ttu-id="49091-104">加速度計の使用</span><span class="sxs-lookup"><span data-stu-id="49091-104">Use the accelerometer</span></span>
 

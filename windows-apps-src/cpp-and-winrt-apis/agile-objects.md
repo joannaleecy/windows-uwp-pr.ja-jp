@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: アジャイル オブジェクトは、いずれかのスレッドからアクセスできます。 お使いの C++/WinRT 型は既定ではアジャイルですが、オプトアウトできます。
 title: C++/WinRT でのアジャイル オブジェクト
-ms.author: stwhi
 ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574252"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720448"
 ---
 # <a name="agile-objects-in-cwinrt"></a><span data-ttu-id="f2177-105">C++/WinRT におけるアジャイル オブジェクト</span><span class="sxs-lookup"><span data-stu-id="f2177-105">Agile objects in C++/WinRT</span></span>
 

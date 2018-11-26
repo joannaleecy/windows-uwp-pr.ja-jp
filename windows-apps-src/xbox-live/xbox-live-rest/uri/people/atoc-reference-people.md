@@ -2,19 +2,17 @@
 title: People URI
 assetID: e4e6e3c9-7051-a90b-be1c-931816a22b36
 permalink: en-us/docs/xboxlive/rest/atoc-reference-people.html
-author: KevinAsgari
 description: " People URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f2108f0384a77de1c4cb9de94f3cc620957ca83a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b52d0db46fe53d46dc831769c73c948d18d9c2c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559940"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720012"
 ---
 # <a name="people-uris"></a><span data-ttu-id="342ff-104">People URI</span><span class="sxs-lookup"><span data-stu-id="342ff-104">People URIs</span></span>
  

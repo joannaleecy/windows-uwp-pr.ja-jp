@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: アプリの分析
 description: アプリを分析してパフォーマンスの問題を調べます。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 346e6790c6578bf861ba1dda937eae6d4d50f00f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f1d37446cb5f540cd77928cb8167d8d4319977d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570930"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720128"
 ---
 # <a name="app-analysis-overview"></a><span data-ttu-id="b63d6-104">アプリの分析の概要</span><span class="sxs-lookup"><span data-stu-id="b63d6-104">App Analysis overview</span></span>
 

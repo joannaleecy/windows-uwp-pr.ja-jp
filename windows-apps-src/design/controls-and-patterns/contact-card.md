@@ -1,8 +1,6 @@
 ---
-author: mijacobs
 Description: A button gives the user a way to trigger an immediate action.
 title: 連絡先カード
-ms.author: mijacobs
 ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, UWP
@@ -11,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b20ac0692aef0e4809bb879747551e049a26df7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b04a8f616e9f6c7726a222f4a7264b9580ddee3a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560444"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719061"
 ---
 # <a name="contact-card"></a><span data-ttu-id="fbccf-103">連絡先カード</span><span class="sxs-lookup"><span data-stu-id="fbccf-103">Contact card</span></span>
 

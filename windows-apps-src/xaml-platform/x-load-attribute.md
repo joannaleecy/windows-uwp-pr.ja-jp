@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: xLoad 属性
-description: xLoad は、要素とその子は、起動時間とメモリ使用量を減らすの動的な作成と破棄を使用できます。 
-ms.author: jimwalk
+description: xLoad は、要素とその子は、起動時間とメモリ使用量を減らすの動的な作成と破棄を使用できます。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9659d183c020c579aa0a21fe179a69c1d9997c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577825"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693163"
 ---
 # <a name="xload-attribute"></a><span data-ttu-id="6a776-104">x:Load 属性</span><span class="sxs-lookup"><span data-stu-id="6a776-104">x:Load attribute</span></span>
 

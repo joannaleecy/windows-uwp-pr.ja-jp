@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: PointOfService デバイス オブジェクト
 description: PointOfService デバイス オブジェクトの作成の詳細
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 31af943ab4a9231f58fb2e3d5489e9ae80d8d565
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561646"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698581"
 ---
 # <a name="pointofservice-device-objects"></a><span data-ttu-id="b233f-104">PointOfService デバイス オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b233f-104">PointOfService device objects</span></span>
 

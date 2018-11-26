@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法について説明します。
 title: カメラ プレビューの表示
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559148"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720388"
 ---
 # <a name="display-the-camera-preview"></a><span data-ttu-id="5668f-104">カメラ プレビューの表示</span><span class="sxs-lookup"><span data-stu-id="5668f-104">Display the camera preview</span></span>
 

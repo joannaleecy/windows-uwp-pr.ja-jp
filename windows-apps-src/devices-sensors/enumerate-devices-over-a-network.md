@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: ネットワーク経由でデバイスを列挙する
 description: Windows.Devices.Enumeration API を使うと、ローカル接続されたデバイスの検出だけでなく、ワイヤレス プロトコルおよびネットワーク プロトコル経由でデバイスを列挙できます。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f8d4314d67828fa30007d3b8af4c4e1d06c154
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567538"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698331"
 ---
 # <a name="enumerate-devices-over-a-network"></a><span data-ttu-id="4e8bd-104">ネットワーク経由でデバイスを列挙する</span><span class="sxs-lookup"><span data-stu-id="4e8bd-104">Enumerate devices over a network</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: 階層データをバインドしてマスター/詳細ビューを作る方法
 description: チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすると、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。
-ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 194bbeefbd3ca5f8237bb3449ec935211056aea3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560464"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720088"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a><span data-ttu-id="bcc90-104">階層データをバインドしてマスター/詳細ビューを作る方法</span><span class="sxs-lookup"><span data-stu-id="bcc90-104">Bind hierarchical data and create a master/details view</span></span>
 

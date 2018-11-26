@@ -1,18 +1,16 @@
 ---
-author: WilliamsJason
 title: デバイス ポータル コントローラー API リファレンス
 description: 接続された物理コントローラーの数を取得し、プログラムでオフにする方法について説明します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561966"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707049"
 ---
 # <a name="controller-api-reference"></a><span data-ttu-id="44310-104">コントローラー API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="44310-104">Controller API reference</span></span>   
 <span data-ttu-id="44310-105">接続された物理コントローラーの数を取得し、REST API を使用してオフにすることができます。</span><span class="sxs-lookup"><span data-stu-id="44310-105">You can get the number of attached physical controllers and turn them off using this REST API.</span></span>

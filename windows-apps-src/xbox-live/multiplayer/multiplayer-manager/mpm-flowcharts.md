@@ -1,19 +1,17 @@
 ---
 title: Multiplayer Manager のフローチャート
-author: KevinAsgari
 description: Xbox Live Multiplayer Manager のフローチャートへのリンクを提供します。
 ms.assetid: 0e81ab13-9285-4b72-a6ce-f15add559128
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: 203a08e2fddfd2c650738a8b37e4a0ae5b52b3d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 397c8a0fa95299326c56b2633db5532a70aca0ba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563462"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720038"
 ---
 # <a name="multiplayer-manager-flowcharts"></a><span data-ttu-id="133f1-104">Multiplayer Manager のフローチャート</span><span class="sxs-lookup"><span data-stu-id="133f1-104">Multiplayer manager flowcharts</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ゲーム プログラミング用の Visual Studio ツール
 description: Visual Studio で利用できる DirectX 固有のツールの概要。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP, ゲーム, Visual Studio, ツール, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: eec406fd317abbd0034ba573cc0e791f9e32ba98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576010"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719926"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a><span data-ttu-id="a6377-104">ゲーム プログラミング用の Visual Studio ツール</span><span class="sxs-lookup"><span data-stu-id="a6377-104">Visual Studio tools for game programming</span></span>
 

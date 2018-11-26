@@ -1,21 +1,19 @@
 ---
-author: Jwmsft
 Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
 title: コントロールとパターンの概要
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 290c06a7bac75217c8249821821f081da619c7f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7ff3f89887235fc9c8d9d7afbbdea3d79bace810
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578408"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695541"
 ---
 # <a name="intro-to-controls-and-patterns"></a><span data-ttu-id="0f950-103">コントロールとパターンの概要</span><span class="sxs-lookup"><span data-stu-id="0f950-103">Intro to controls and patterns</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: Microsoft OneDrive ファイルが利用可能かどうかの確認
 description: StorageFile.IsAvailable プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e431694f3f0effb6fd5e7688b146109dfc1f5dc7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562137"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698611"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a><span data-ttu-id="3251c-104">Microsoft OneDrive ファイルが利用可能かどうかの確認</span><span class="sxs-lookup"><span data-stu-id="3251c-104">Determining availability of Microsoft OneDrive files</span></span>
 

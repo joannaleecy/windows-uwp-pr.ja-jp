@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: プロモーション コードを生成する
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, プロモーション コード, promo code, トークン, token
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555667"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719580"
 ---
 # <a name="generate-promotional-codes"></a><span data-ttu-id="84d85-103">プロモーション コードを生成する</span><span class="sxs-lookup"><span data-stu-id="84d85-103">Generate promotional codes</span></span>
 

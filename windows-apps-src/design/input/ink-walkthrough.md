@@ -1,19 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: ''
 title: UWP アプリでインクをサポートする
 description: 作成した UWP アプリにインクのサポートを追加するための、ステップ バイ ステップ チュートリアルです。
 keywords: インク, 手描き入力, チュートリアル
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc650c1f81fbcac5b62b090a6dc58b5f8709cd7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579110"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720408"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a><span data-ttu-id="87487-104">チュートリアル: UWP アプリでインクをサポートする</span><span class="sxs-lookup"><span data-stu-id="87487-104">Tutorial: Support ink in your UWP app</span></span>
 

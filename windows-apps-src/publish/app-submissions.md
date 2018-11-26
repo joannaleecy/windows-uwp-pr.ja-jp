@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: アプリの申請
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: チェックリスト, windows, uwp, 申請, 提出, ゲーム, アプリ, 送信
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582222"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694218"
 ---
 # <a name="app-submissions"></a><span data-ttu-id="d7815-103">アプリの申請</span><span class="sxs-lookup"><span data-stu-id="d7815-103">App submissions</span></span>
 

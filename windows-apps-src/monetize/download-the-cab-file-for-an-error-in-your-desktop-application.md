@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードするには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする
-ms.author: mhopkins
 ms.date: 03/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: f9dcd76767662b5e40f587d7ac32ffd7d94a6053
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e3535f18b8127ea18bca234cdcc9b695e89ebfd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582352"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712526"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a><span data-ttu-id="ddd38-104">デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする</span><span class="sxs-lookup"><span data-stu-id="ddd38-104">Download the CAB file for an error in your desktop application</span></span>
 

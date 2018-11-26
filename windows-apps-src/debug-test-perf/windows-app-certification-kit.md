@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows アプリ認定キット
 description: アプリに、Microsoft Store で公開されているの最適な機会を提供したり、Windows が認定の検証し認定のために提出する前にローカルでテストします。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: f228cb4783c33bc0ea2acecba79893939cadd91e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 614f59fe06528d7b5bac36290eae14f0d7d49653
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559963"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696045"
 ---
 # <a name="windows-app-certification-kit"></a><span data-ttu-id="7cc72-105">Windows アプリ認定キット</span><span class="sxs-lookup"><span data-stu-id="7cc72-105">Windows App Certification Kit</span></span>
 

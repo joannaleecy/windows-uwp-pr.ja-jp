@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: アドオンの Store 登録情報の作成
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a8b32abae4938081610db2cfc2ded25adadab95d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561429"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694009"
 ---
 # <a name="create-add-on-store-listings"></a><span data-ttu-id="56061-103">アドオンのストア登録情報の作成</span><span class="sxs-lookup"><span data-stu-id="56061-103">Create add-on Store listings</span></span>
 

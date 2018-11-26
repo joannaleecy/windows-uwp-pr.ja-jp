@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
 description: Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, マルチサンプリング, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558789"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712907"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span data-ttu-id="65cb4-104"><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング</span><span class="sxs-lookup"><span data-stu-id="65cb4-104"><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps</span></span>
 

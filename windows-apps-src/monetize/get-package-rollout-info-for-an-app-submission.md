@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: アプリの申請に関するパッケージのロールアウトの情報を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリの申請に関するロールアウト情報の取得
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, アプリの申請
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 247c4e58740450bb9846c543e883ac62a8009429
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 301973fd231570f0fe63b8838971906c25e2d55c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565447"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692115"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a><span data-ttu-id="8d70a-104">アプリの申請に関するロールアウト情報の取得</span><span class="sxs-lookup"><span data-stu-id="8d70a-104">Get rollout info for an app submission</span></span>
 

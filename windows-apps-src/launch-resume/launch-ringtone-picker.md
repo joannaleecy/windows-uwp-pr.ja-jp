@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: ms-tonepicker スキーム
 description: このトピックでは、ms-tonepicker URI スキームと、このスキームを使ってトーンの選択コントロールを表示し、トーンの選択、トーンの保存、トーンのフレンドリ名を取得する方法について説明します。
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
-ms.openlocfilehash: 61967f0aa81c49cb4e81b11bedac84c318be1840
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568833"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696275"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a><span data-ttu-id="6365a-104">ms-tonepicker URI スキームを使ったトーンの選択と保存</span><span class="sxs-lookup"><span data-stu-id="6365a-104">Choose and save tones using the ms-tonepicker URI scheme</span></span>
 

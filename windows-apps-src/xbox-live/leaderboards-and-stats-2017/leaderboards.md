@@ -1,19 +1,17 @@
 ---
 title: ランキング
-author: aablackm
 description: Xbox Live のランキングを使用してプレイヤーを比較する方法について説明します。
 ms.assetid: 132604f9-6107-4479-9246-f8f497978db7
-ms.author: aablackm
 ms.date: 09/28/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 69fd69f596204b07f3b8c2d78f27a26a7be9fe94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fd7e30b99418fda614a888d9269548cdc57a88a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565376"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719986"
 ---
 # <a name="leaderboards"></a><span data-ttu-id="73b77-104">ランキング</span><span class="sxs-lookup"><span data-stu-id="73b77-104">Leaderboards</span></span>
 

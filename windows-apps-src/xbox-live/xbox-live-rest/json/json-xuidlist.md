@@ -2,19 +2,17 @@
 title: XuidList (JSON)
 assetID: 06938a52-e582-a15b-ec7f-4b053dfc28ad
 permalink: en-us/docs/xboxlive/rest/json-xuidlist.html
-author: KevinAsgari
 description: " XuidList (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 990357eef8ef0ea8ec43822090a5133a10f8ec6c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d8172063d40f8df77827ab845c4dfd0c0799811
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564643"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707158"
 ---
 # <a name="xuidlist-json"></a><span data-ttu-id="1138b-104">XuidList (JSON)</span><span class="sxs-lookup"><span data-stu-id="1138b-104">XuidList (JSON)</span></span>
 <span data-ttu-id="1138b-105">操作を実行するに Xuid のリスト。</span><span class="sxs-lookup"><span data-stu-id="1138b-105">List of XUIDs on which to perform an operation.</span></span> 

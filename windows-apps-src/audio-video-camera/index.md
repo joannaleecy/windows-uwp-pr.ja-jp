@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows プラットフォーム (UWP) アプリの作成について説明します。
 title: オーディオ、ビデオ、カメラ
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ed222b9ebefd0035064717f78fb91518d3164d13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573276"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706650"
 ---
 # <a name="audio-video-and-camera"></a><span data-ttu-id="3af16-104">オーディオ、ビデオ、カメラ</span><span class="sxs-lookup"><span data-stu-id="3af16-104">Audio, video, and camera</span></span>
 

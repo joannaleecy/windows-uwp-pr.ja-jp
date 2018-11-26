@@ -4,17 +4,15 @@ description: バッファー リソースは完全に型指定されたデータ
 ms.assetid: 494FDF57-0FBE-434C-B568-06F977B40263
 keywords:
 - バッファーの概要
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14e78aec9afa361b2627d62d92f0ee7d7ab0565b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566493"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719945"
 ---
 # <a name="introduction-to-buffers"></a><span data-ttu-id="6f2dd-104">バッファーの概要</span><span class="sxs-lookup"><span data-stu-id="6f2dd-104">Introduction to buffers</span></span>
 

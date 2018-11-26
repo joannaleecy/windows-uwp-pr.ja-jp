@@ -1,12 +1,10 @@
 ---
-author: muhsinking
 Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 title: 日付の選択
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -15,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f258ff63d2cf9badfc1066f46c97ecc14b90f5f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 42b061c3c3836e69739c571f6ef47e05c286ea8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555473"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693133"
 ---
 # <a name="date-picker"></a><span data-ttu-id="ef47f-103">日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="ef47f-103">Date picker</span></span>
 

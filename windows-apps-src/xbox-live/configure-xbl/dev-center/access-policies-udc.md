@@ -1,19 +1,17 @@
 ---
 title: パートナー センターへのアクセス ポリシーを構成します。
-author: KevinAsgari
 description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定へのアクセスを許可するには、パートナー センターでアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: 525249475a9fc8a22d976398cf277620de6655e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae26c18abdac30ff988e90ee5c56f178bf14b74a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575902"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712912"
 ---
 # <a name="configure-access-policies-in-partner-center"></a><span data-ttu-id="6fa39-104">パートナー センターへのアクセス ポリシーを構成します。</span><span class="sxs-lookup"><span data-stu-id="6fa39-104">Configure access policies in Partner Center</span></span>
 

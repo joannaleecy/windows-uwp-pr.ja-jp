@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 title: Windows Ink ストローク データの保存と取得
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, ユーザー操作, 入力
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 946e8421cf21c37c929e7a9f9687117c3d7aca92
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1196b5dd11f006e42d43e15efd56b2be92f35c4b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566108"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719193"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a><span data-ttu-id="c8d55-103">Windows Ink ストローク データの保存と取得</span><span class="sxs-lookup"><span data-stu-id="c8d55-103">Store and retrieve Windows Ink stroke data</span></span>
 

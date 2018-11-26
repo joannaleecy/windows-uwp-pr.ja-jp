@@ -4,17 +4,15 @@ description: このセクションでは、ストリーミング リソースで
 ms.assetid: 700D8C54-0E20-4B2B-BEA3-20F6F72B8E24
 keywords:
 - ストリーミング リソースで利用可能な操作
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1289b01e7ffb780c7e3faa52585eb5f002cf519c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561017"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693313"
 ---
 # <a name="operations-available-on-streaming-resources"></a><span data-ttu-id="8cc5c-104">ストリーミング リソースで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="8cc5c-104">Operations available on streaming resources</span></span>
 

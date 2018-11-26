@@ -1,5 +1,4 @@
 ---
-author: eliotcowley
 Description: Design your app so that it looks good and functions well on your television.
 title: Xbox およびテレビ向け設計
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
@@ -7,7 +6,6 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, テレビ, 10 フィート エクスペリエンス, ゲームパッド, リモコン, 入力, 操作
-ms.author: elcowle
 ms.date: 11/13/2018
 ms.topic: article
 pm-contact: chigy
@@ -15,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d9598b53b257d5d45c96b472c5c2110c9fe4478
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581105"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720438"
 ---
 # <a name="designing-for-xbox-and-tv"></a><span data-ttu-id="96e8c-103">Xbox およびテレビ向け設計</span><span class="sxs-lookup"><span data-stu-id="96e8c-103">Designing for Xbox and TV</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 title: アプリの販売促進を容易にする
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 販売促進, プロモーション, おすすめ, ショーケース, Microsoft Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 43970ce024408032f0e2e9891eaae34efa68e014
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ea7c7d8a132d1c2996d023f1413523f806d0b5bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580456"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712248"
 ---
 # <a name="make-your-app-easier-to-promote"></a><span data-ttu-id="565d4-103">アプリの販売促進を容易にする</span><span class="sxs-lookup"><span data-stu-id="565d4-103">Make your app easier to promote</span></span>
 

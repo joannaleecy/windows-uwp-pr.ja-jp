@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 title: メールの送信
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: 連絡先, メール, 送信
-ms.author: normesta
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565573"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695279"
 ---
 # <a name="send-email"></a><span data-ttu-id="3b56d-106">メールの送信</span><span class="sxs-lookup"><span data-stu-id="3b56d-106">Send email</span></span>
 
