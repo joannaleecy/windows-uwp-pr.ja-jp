@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
 title: アプリの管理とサービス
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578116"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691050"
 ---
 # <a name="app-management-and-services"></a><span data-ttu-id="58f10-103">アプリの管理とサービス</span><span class="sxs-lookup"><span data-stu-id="58f10-103">App management and services</span></span>
 

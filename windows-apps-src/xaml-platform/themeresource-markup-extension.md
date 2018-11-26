@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。
 title: ThemeResource マークアップ拡張
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568440"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691290"
 ---
 # <a name="themeresource-markup-extension"></a><span data-ttu-id="4f76c-104">{ThemeResource} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="4f76c-104">{ThemeResource} markup extension</span></span>
 

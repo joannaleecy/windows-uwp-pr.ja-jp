@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ゲーム プログラミング リソース
 description: Windows でのゲーム プログラミングについて詳しくは、次のリソースをご覧ください。
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、プログラミング
 ms.localizationpriority: medium
-ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557172"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692963"
 ---
 # <a name="game-programming-resources"></a><span data-ttu-id="2f5ac-104">ゲーム プログラミング リソース</span><span class="sxs-lookup"><span data-stu-id="2f5ac-104">Game programming resources</span></span>
 

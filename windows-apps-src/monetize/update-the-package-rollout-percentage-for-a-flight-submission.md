@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: パッケージ フライトの申請に関するパッケージ ロールアウト率を更新するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: フライトの申請に関するロールアウト率の更新
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, フライトの申請, 更新, 割合
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b65f4071fb9a05754ef68d98b8e2da1435c0153
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 025db5cb0beb36a5b4a3ca1b765b5da3434c9d7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559301"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692463"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a><span data-ttu-id="19d1b-104">フライトの申請に関するロールアウト率の更新</span><span class="sxs-lookup"><span data-stu-id="19d1b-104">Update the rollout percentage for a flight submission</span></span>
 

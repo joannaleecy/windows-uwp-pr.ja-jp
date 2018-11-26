@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: パートナー センター アカウントに登録されているアプリのアドオンに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
 title: アドオンの入手
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9620b0b7cf4d1ecb583215b2ab0fafe0e82712bf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577980"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691543"
 ---
 # <a name="get-an-add-on"></a><span data-ttu-id="a70fe-104">アドオンの入手</span><span class="sxs-lookup"><span data-stu-id="a70fe-104">Get an add-on</span></span>
 

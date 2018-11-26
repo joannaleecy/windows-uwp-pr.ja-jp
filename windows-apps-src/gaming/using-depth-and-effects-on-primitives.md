@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: プリミティブに対する深度と各種効果の使用
 description: ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 深度, 効果, プリミティブ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558321"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691503"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a><span data-ttu-id="24205-104">プリミティブに対する深度と各種効果の使用</span><span class="sxs-lookup"><span data-stu-id="24205-104">Use depth and effects on primitives</span></span>
 
@@ -34,7 +32,6 @@ ms.locfileid: "7558321"
 
 <a name="instructions"></a><span data-ttu-id="24205-112">手順</span><span class="sxs-lookup"><span data-stu-id="24205-112">Instructions</span></span>
 ------------
-
 ### <a name="1-defining-cube-variables"></a><span data-ttu-id="24205-113">1. 立方体変数の定義</span><span class="sxs-lookup"><span data-stu-id="24205-113">1. Defining cube variables</span></span>
 
 <span data-ttu-id="24205-114">まず、立方体の **SimpleCubeVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="24205-114">First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube.</span></span> <span data-ttu-id="24205-115">立方体の頂点の位置と色に加え、その見え方が、これらの構造体によって指定されます。</span><span class="sxs-lookup"><span data-stu-id="24205-115">These structures specify the vertex positions and colors for the cube and how the cube will be viewed.</span></span> <span data-ttu-id="24205-116">[**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) と [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) を [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) で宣言し、**ConstantBuffer** のインスタンスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="24205-116">We declare [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) and [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) with [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) and declare an instance of **ConstantBuffer**.</span></span>

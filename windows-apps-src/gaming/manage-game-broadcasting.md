@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: UWP アプリのゲームのブロードキャストを管理する方法を示します。
 title: ゲームのブロードキャストを管理する
-ms.author: drewbat
 ms.date: 09/27/2017
 ms.topic: article
 keywords: Windows 10, ゲーム, ブロードキャスト
 ms.localizationpriority: medium
-ms.openlocfilehash: ae70c29927925abcf948435ed768871ba2427fd9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575204"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691263"
 ---
 # <a name="manage-game-broadcasting"></a><span data-ttu-id="4ed9c-104">ゲームのブロードキャストを管理する</span><span class="sxs-lookup"><span data-stu-id="4ed9c-104">Manage game broadcasting</span></span>
 <span data-ttu-id="4ed9c-105">この記事では、UWP アプリのゲームのブロードキャストを管理する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4ed9c-105">This article shows you how to manage game broadcasting for a UWP app.</span></span> <span data-ttu-id="4ed9c-106">ユーザーは、Windows に組み込まれているシステム UI を使用してゲームのブロードキャストを開始する必要がありますが、Windows 10 バージョン 1709 以降、アプリでシステムのブロードキャスト UI を起動でき、ブロードキャストが開始および停止されたときには通知を受信できます。</span><span class="sxs-lookup"><span data-stu-id="4ed9c-106">Users must initiate broadcasting by using the system UI that is built into Windows, but starting with Windows 10, version 1709, apps can launch the system broadcasting UI and can receive notifications when broadcasting starts and stops.</span></span>

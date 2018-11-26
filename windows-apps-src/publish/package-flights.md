@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can use package flights to distribute packages that are only given to a limited test group.
 title: パッケージ フライト
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, フライティング
 ms.localizationpriority: medium
-ms.openlocfilehash: a873b6f6c0d1a35667b47109f5cc2205e5a02158
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580466"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691603"
 ---
 # <a name="package-flights"></a><span data-ttu-id="fad56-103">パッケージ フライト</span><span class="sxs-lookup"><span data-stu-id="fad56-103">Package flights</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: C# を使ってスポット広告を起動する方法について説明します。
 title: C# を使ったスポット広告のサンプル コード
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, スポット, C#, サンプルコード
 ms.localizationpriority: medium
-ms.openlocfilehash: 07f0927d741bbadc31aaf26f5188af245ec44790
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573402"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691623"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a><span data-ttu-id="99396-104">C\# を使ったスポット広告のサンプル コード</span><span class="sxs-lookup"><span data-stu-id="99396-104">Interstitial ad sample code in C\#</span></span> #  
 

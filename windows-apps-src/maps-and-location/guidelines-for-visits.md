@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
 title: ビジット追跡の使用ガイドライン
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.author: pafarley
 ms.date: 05/18/2017
 ms.topic: article
 keywords: windows 10, uwp, マップ, 位置情報, geovisit, ジオビジット
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575492"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691483"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a><span data-ttu-id="4a724-103">ビジット追跡の使用ガイドライン</span><span class="sxs-lookup"><span data-stu-id="4a724-103">Guidelines for using Visits tracking</span></span>
 

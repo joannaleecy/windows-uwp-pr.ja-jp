@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: パッケージ署名用の証明書を作成する
 description: PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートします。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
-ms.openlocfilehash: 419fa90dfd21c42d256aeea8848862b8c5eb3628
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580712"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692623"
 ---
 # <a name="create-a-certificate-for-package-signing"></a><span data-ttu-id="21706-104">パッケージ署名用の証明書を作成する</span><span class="sxs-lookup"><span data-stu-id="21706-104">Create a certificate for package signing</span></span>
 

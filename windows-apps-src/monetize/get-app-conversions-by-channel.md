@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 日付範囲やその他のオプション フィルターを指定して、アプリケーションに関するチャネルごとの集計コンバージョン データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: チャネルごとのアプリのコンバージョンの取得
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリのコンバージョン, チャネル
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d196ffeebcda7653e7464358b772def48c17cefb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568158"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692036"
 ---
 # <a name="get-app-conversions-by-channel"></a><span data-ttu-id="d6b8e-104">チャネルごとのアプリのコンバージョンの取得</span><span class="sxs-lookup"><span data-stu-id="d6b8e-104">Get app conversions by channel</span></span>
 

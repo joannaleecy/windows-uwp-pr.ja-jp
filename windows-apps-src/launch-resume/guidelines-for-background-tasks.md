@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: バックグラウンド タスクのガイドライン
 description: アプリがバックグラウンド タスクを実行するための要件を満たしていることを確認します。
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd851b6deab0f7a2772720fac83bb2bfa3175071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576316"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691643"
 ---
 # <a name="guidelines-for-background-tasks"></a><span data-ttu-id="4b570-104">バックグラウンド タスクのガイドライン</span><span class="sxs-lookup"><span data-stu-id="4b570-104">Guidelines for background tasks</span></span>
 

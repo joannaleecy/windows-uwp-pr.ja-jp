@@ -4,17 +4,15 @@ description: スワップ チェーンは、ユーザーにフレームを表示
 ms.assetid: A38E8BB7-1E77-4D93-B321-D3572A80D5DD
 keywords:
 - スワップ チェーン
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b38dc50f38276fb367402b230e6199fbabdcef80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 486eb4adc1151bac1bf6a04a8f54b67530b426a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560101"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692863"
 ---
 # <a name="swap-chains"></a><span data-ttu-id="e2d10-104">スワップ チェーン</span><span class="sxs-lookup"><span data-stu-id="e2d10-104">Swap chains</span></span>
 

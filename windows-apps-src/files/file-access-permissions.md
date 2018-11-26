@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: ファイル アクセス許可
 description: アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。
-ms.author: lahugh
 ms.date: 06/28/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8699ee06da545e3b34711f496a887fd7aa2c935
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571534"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691936"
 ---
 # <a name="file-access-permissions"></a><span data-ttu-id="d7b2d-105">ファイル アクセス許可</span><span class="sxs-lookup"><span data-stu-id="d7b2d-105">File access permissions</span></span>
 

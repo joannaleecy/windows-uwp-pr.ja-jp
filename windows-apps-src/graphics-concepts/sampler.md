@@ -4,17 +4,15 @@ description: テクスチャまたはその他のリソースから入力値を�
 ms.assetid: 7ECE13BB-9FC5-44A3-B1B2-2FE163F1D627
 keywords:
 - サンプラー
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ae15e41ec1d6493f33a776c11d74e28b2c95dc34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e80e160e1225e510ab95f52cbd9f21049c890457
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569439"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691094"
 ---
 # <a name="sampler"></a><span data-ttu-id="8064d-105">サンプラー</span><span class="sxs-lookup"><span data-stu-id="8064d-105">Sampler</span></span>
 

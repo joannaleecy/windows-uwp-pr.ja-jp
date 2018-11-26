@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: Windows.Services.Store 名前空間を使って、アプリの試用版の実装する方法について説明します。
 title: アプリの試用版の実装
 keywords: Windows 10, UWP, 試用版, アプリ内購入, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d428128430a6d7743ebdf94fb8d9aff8286d8d77
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575056"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692016"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a><span data-ttu-id="56b14-104">アプリの試用版の実装</span><span class="sxs-lookup"><span data-stu-id="56b14-104">Implement a trial version of your app</span></span>
 

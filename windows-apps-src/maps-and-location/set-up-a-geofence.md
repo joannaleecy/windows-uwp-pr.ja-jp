@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: ジオフェンスのセットアップ
 description: アプリでジオフェンスをセットアップし、フォアグラウンドとバックグラウンドで通知を処理する方法について説明します。
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556004"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691321"
 ---
 # <a name="set-up-a-geofence"></a><span data-ttu-id="a9b04-104">ジオフェンスのセットアップ</span><span class="sxs-lookup"><span data-stu-id="a9b04-104">Set up a geofence</span></span>
 
