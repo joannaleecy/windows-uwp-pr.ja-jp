@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
 title: 3D 印刷
 description: このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。
-ms.author: pafarley
 ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp, 3dprinting、3 d 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: d09ed242b2c5f0186b05279706943c9a65ee7c8a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569066"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693003"
 ---
 # <a name="3d-printing"></a>3D 印刷
 

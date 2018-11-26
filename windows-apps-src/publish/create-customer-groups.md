@@ -1,19 +1,17 @@
 ---
-author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: ユーザー グループを作成する
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, ユーザー グループ, セグメント, フライト グループ, 既知のユーザー グループ
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
-ms.openlocfilehash: 381953c51bfeb04625b452bd278ea09a4c9a8368
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b757c304398c60bd539eb3c023892b68138880db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565281"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693802"
 ---
 # <a name="create-customer-groups"></a>ユーザー グループを作成する
 

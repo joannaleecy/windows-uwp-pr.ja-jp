@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 画面の向きのサポート (DirectX と C++)
 description: ここでは、windows 10 デバイスのグラフィックス ハードウェアが効率的かつ効果的に使用されるように、UWP DirectX アプリで画面の向きを処理するためのベスト プラクティスをについて説明します。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 画面の向き, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574017"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712546"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>画面の向きのサポート (DirectX と C++)
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 基本的なメッシュの作成と表示
 description: 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、メッシュ、DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555324"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693612"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 

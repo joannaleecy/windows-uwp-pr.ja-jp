@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
 title: マウス操作
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554413"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720188"
 ---
 # <a name="mouse-interactions"></a>マウス操作
 

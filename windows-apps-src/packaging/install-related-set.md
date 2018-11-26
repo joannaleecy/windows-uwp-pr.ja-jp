@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: アプリ インストーラー ファイルを使用して関連セットをインストールする
 description: このセクションでは、アプリ インストーラーによる関連セットのインストールを許可するために必要な手順を確認します。 また、関連セットを定義する *.appinstaller ファイルの作成手順も確認します。
-ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 4caf4333bb3d442779aedac2028b0996cbd17645
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576466"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692593"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>アプリ インストーラー ファイルを使用して関連セットをインストールする
 

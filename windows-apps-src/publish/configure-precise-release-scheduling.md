@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: 正確なリリース スケジュールの構成
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, スケジュール, リリース日, 日付, 公開
 ms.localizationpriority: medium
-ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569654"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693760"
 ---
 # <a name="configure-precise-release-scheduling"></a>正確なリリース スケジュールの構成
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: この記事では、アプリとアプリ内購入、ライセンス、自己インストールのアプリの更新プログラムなどのアドオンのストアの操作の一般的なエラー コードについて説明します。
 title: Microsoft Store の操作のエラー コード
-ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリ内購入, Iap, アドオン, エラー コード
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582192"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720308"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store の操作のエラー コード
 

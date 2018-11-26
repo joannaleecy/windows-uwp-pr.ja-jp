@@ -2,18 +2,16 @@
 title: 変換の概要
 description: 3D グラフィックスの多くの低レベル数学演算は、行列変換によって処理されます。
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573717"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693033"
 ---
 # <a name="transform-overview"></a>変換の概要
 

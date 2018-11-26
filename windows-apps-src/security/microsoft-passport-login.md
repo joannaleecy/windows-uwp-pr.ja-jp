@@ -2,18 +2,16 @@
 title: Windows Hello ログイン アプリの作成
 description: これは、従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリを作成する方法に関する詳しいチュートリアルのパート 1 です。
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: caa0063c0aa919e094abedd96b6205e83467e0e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565030"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694069"
 ---
 # <a name="create-a-windows-hello-login-app"></a>Windows Hello ログイン アプリの作成
 

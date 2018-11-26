@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Windows ランタイム コンポーネントでイベントを生成する
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: JavaScript は、イベントを受信することができるように、バック グラウンド スレッドでユーザー定義のデリゲート型のイベントを発生させる方法。
-ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dddd170f5f056de18c4729b6b6b5b4b6cbcea7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570182"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692823"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>Windows ランタイム コンポーネントでイベントを生成する
 > [!NOTE]

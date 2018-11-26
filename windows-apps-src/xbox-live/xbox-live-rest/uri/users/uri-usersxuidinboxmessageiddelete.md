@@ -2,19 +2,17 @@
 title: DELETE (/users/xuid({xuid})/inbox/{messageId})
 assetID: c54eede3-3e3b-2cbe-1be9-8bf3a48171bc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageiddelete.html
-author: KevinAsgari
 description: " DELETE (/users/xuid({xuid})/inbox/{messageId})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d550147fe18a0233fd4f0a62ccb2826ef2a5c03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 80ec2a462648177cc6bfc846b9c84278821b0e5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566902"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712859"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
 ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。

@@ -4,17 +4,15 @@ description: ストリーム出力ビューを使用すると、頂点、テッ�
 ms.assetid: F528A920-0EAD-4634-BA5F-CB34A8FAEFFA
 keywords:
 - ストリーム出力ビュー (SOV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f7d99aadb9f83d2820cd81fa3a4433c6fab8ee82
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b0fbd684787062d9416b4e6e4ac90b82e07e186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576863"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720468"
 ---
 # <a name="stream-output-view-sov"></a>ストリーム出力ビュー (SOV)
 

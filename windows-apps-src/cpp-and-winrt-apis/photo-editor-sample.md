@@ -1,18 +1,16 @@
 ---
-author: JoshuaPartlow
 description: フォト エディターは、C++/WinRT 言語プロジェクションでの開発を紹介する UWP のサンプル アプリケーションです。 サンプル アプリケーションを使用すると、画像ライブラリから写真を取得し、関連する写真効果で選択したイメージを編集できます。
 title: フォト エディター C++/WinRT サンプル アプリケーション
-ms.author: wdg-dev-content
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, サンプル, アプリケーション, フォト, エディター
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bfcd79ed2d659aff8d435bd397df05eb45af72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578843"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694911"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>フォト エディター C++/WinRT サンプル アプリケーション
 [フォト エディター C++/WinRT サンプル アプリケーション](https://github.com/Microsoft/Windows-appsample-photo-editor)の GitHub リポジトリからサンプル アプリケーションを複製またはダウンロードできます。

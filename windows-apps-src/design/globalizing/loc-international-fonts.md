@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
 title: 国際フォント
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 9513ed03f70a0b5efca0472bb4b0598a33a05fc2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2c525c79287a81421c68fca5bed3393b4d230d8a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575781"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720055"
 ---
 # <a name="international-fonts"></a>国際フォント
 

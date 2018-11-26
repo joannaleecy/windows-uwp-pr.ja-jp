@@ -1,21 +1,19 @@
 ---
-author: QuinnRadich
 Description: Design an instructional user interface (UI) that teaches users how to work with your UWP app.
 title: 説明 UI を設計するためのガイドライン
 label: Instructional UI
 template: detail.hbs
-ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c97b6b5eca82d309a4b65a914041adeb1e782db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b39507fb1333fdb642601c6b4828c3d160c6ceb5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581017"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720158"
 ---
 # <a name="instructional-ui-guidelines"></a>説明 UI のガイドライン
 

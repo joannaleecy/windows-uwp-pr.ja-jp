@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Describes the requirements for declaring your Universal Windows Platform (UWP) app as accessible in the Microsoft Store.
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: Microsoft Store 内のアクセシビリティ
 label: Accessibility in the Store
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 990af773c600c2c87cfe6bc477ed1d6799379fb2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6a9991cd4a0a3fce630b1c7be64650c79daf74e6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573800"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706630"
 ---
 # <a name="accessibility-in-the-store"></a>Microsoft Store 内のアクセシビリティ  
 

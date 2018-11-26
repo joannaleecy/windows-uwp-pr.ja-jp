@@ -4,17 +4,15 @@ description: シェーダー モデル 5 のストリーミング リソース�
 ms.assetid: 00A40D82-0565-43DC-82AB-0675B7E772E3
 keywords:
 - HLSL ストリーミング リソースの露出
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8523f4895c541ffb3b92ee00d5b62c57343ae00
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572134"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693593"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL ストリーミング リソースの露出
 

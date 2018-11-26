@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: マークアップ要素の一意の識別子を提供します。 ユニバーサル Windows プラットフォーム (UWP) XAML では、.resw リソース ファイルのリソースを使うときなど、XAML のローカライズのプロセスとツールでこの一意の識別子が使われます。
 title: xUid ディレクティブ
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bec4bd5d35fc2bb3013b37c1386520a769ddeb6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577348"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694277"
 ---
 # <a name="xuid-directive"></a>x:Uid ディレクティブ
 

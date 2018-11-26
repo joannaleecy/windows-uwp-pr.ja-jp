@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: People アプリの起動
 description: ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b87a49f24035215d44dbabcf9e401ddfefdff47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569112"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706940"
 ---
 # <a name="launch-the-people-app"></a>People アプリの起動
 

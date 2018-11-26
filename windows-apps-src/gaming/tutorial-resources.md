@@ -1,18 +1,16 @@
 ---
-author: joannaleecy
 title: ゲーム サンプルの紹介
 description: UWP DirectX ゲームの XAML オーバーレイを実装する方法について説明します。
 keywords: DirectX, XAML
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565129"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696231"
 ---
 # <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 

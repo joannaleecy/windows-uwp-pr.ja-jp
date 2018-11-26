@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティ システムについて説明します。
 title: 依存関係プロパティの概要
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566261"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712188"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 

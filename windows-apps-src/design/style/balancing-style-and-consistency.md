@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 description: 一貫性があって使いやすく、独創性と創造性を発揮できるアプリを作成するためのヒントを示します。
 title: スタイルと一貫性のバランスをとる (UWP アプリの設計)
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c6344f6737e9628961393eb1e3080daf31740537
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577653"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707062"
 ---
 # <a name="balancing-style-and-consistency"></a>スタイルと一貫性のバランスをとる
 

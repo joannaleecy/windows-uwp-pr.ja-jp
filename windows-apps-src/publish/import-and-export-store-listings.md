@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: You can create Store listings for your apps without using Partner Center by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
 title: Store 登録情報のインポートとエクスポート
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, Store 登録情報のインポート, Store 登録情報のエクスポート, インポートとエクスポート, Store 登録情報 csv
 ms.localizationpriority: medium
-ms.openlocfilehash: 9df66baa1b5771055894b2e3accc0c8a9dff8a60
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5630a9019aa11b87f06744e03ae74ec38c792d41
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571653"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719457"
 ---
 # <a name="import-and-export-store-listings"></a>ストア登録情報のインポートとエクスポート
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
 title: メディアのキャスト
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562744"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698521"
 ---
 # <a name="media-casting"></a>メディアのキャスト
 

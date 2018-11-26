@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 非同期プログラミング (DirectX と C++)
 description: このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、非同期プログラミング、DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8551a49512d4b17ab1bab704596d9e5389de3eb6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560974"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712930"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>非同期プログラミング (DirectX と C++)
 

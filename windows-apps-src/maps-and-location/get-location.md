@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: ユーザーの位置情報の取得
 description: ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.author: pafarley
 ms.date: 11/28/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, 位置情報機能
 ms.localizationpriority: medium
-ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564329"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706859"
 ---
 # <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 

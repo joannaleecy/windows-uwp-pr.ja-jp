@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 作成、Hello World アプリでは、C++/CX (windows 10)
 description: Microsoft Visual Studio2017 を使ってできます C + + CX windows 10 を実行するスマート フォンなど、windows 10 で実行されるアプリを開発します。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
-ms.author: jken
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574302"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712387"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>"Hello world"アプリで作成する、C++/cli CX
 

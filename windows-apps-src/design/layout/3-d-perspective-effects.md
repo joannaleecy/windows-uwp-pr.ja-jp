@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: XAML UI 用の 3-D 遠近効果
 description: 視点の変換を使って、3D 効果を Windows ランタイム アプリのコンテンツに適用することができます。 たとえば、次に示すように、オブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b50ca4cb3f74c7c8e8bccb4fceb58e0151bcf2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c1858938d04a024799224daf74ade4df3629a854
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556144"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719163"
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 用の 3-D 遠近効果
 

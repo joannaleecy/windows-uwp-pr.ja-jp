@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: UWP ゲーム用のクラウド サービスの使用
 description: UWP ゲーム用のバックエンドとしてクラウドを実装することについて説明します。
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
-ms.author: joanlee
 ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、クラウド サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7422482"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692181"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 

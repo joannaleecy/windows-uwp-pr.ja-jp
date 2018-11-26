@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。
 title: カメラに依存しない懐中電灯
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5fd69900995a51af806c99b25aae43149d6e30a7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554898"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696141"
 ---
 # <a name="camera-independent-flashlight"></a>カメラに依存しない懐中電灯
 

@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to define and use custom constraints for speech recognition.
 title: カスタム認識の制約の定義
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
 keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577516"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694587"
 ---
 # <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
 

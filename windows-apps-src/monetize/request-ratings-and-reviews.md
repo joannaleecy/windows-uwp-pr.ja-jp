@@ -1,18 +1,16 @@
 ---
-author: Xansky
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: アプリの評価とレビューを求める
-ms.author: mhopkins
 ms.date: 06/15/2018
 ms.topic: article
 keywords: Windows 10, UWP, 評価, レビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 377b71dba2fb62dfc562b56d40e65e43b0bd49c9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559080"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692453"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>アプリの評価とレビューを求める
 

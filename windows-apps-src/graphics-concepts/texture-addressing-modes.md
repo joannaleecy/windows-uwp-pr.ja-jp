@@ -8,17 +8,15 @@ keywords:
 - ミラー テクスチャ アドレス モード
 - クランプ テクスチャ アドレス モード
 - 境界線の色テクスチャ アドレス モード
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564596"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696760"
 ---
 # <a name="texture-addressing-modes"></a>テクスチャのアドレス指定モード
 

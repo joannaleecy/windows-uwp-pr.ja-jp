@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows 10 の開発者向け新着情報、ツール、機能
 description: Windows 10 ビルド 16299 と新しい開発者ツールでは、ユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1709, 10 月, 最新, 開発者, 16299, Fall Creators
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 458a5999c1f56a3bc9f445f260d1d294c395b850
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562986"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693493"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 

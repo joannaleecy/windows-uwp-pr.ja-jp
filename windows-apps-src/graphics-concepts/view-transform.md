@@ -4,17 +4,15 @@ description: ビュー変換は、ビューアーをワールド空間に配置�
 ms.assetid: DA4C2051-4C28-4ABF-8C06-241C8CB87F2F
 keywords:
 - ビュー変換
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 40f9312b4b85e9f6e54a8bf02c6d07df35b8b626
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 63660883f327547a82eac4a3accec475995a651a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562325"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720418"
 ---
 # <a name="view-transform"></a>ビュー変換
 

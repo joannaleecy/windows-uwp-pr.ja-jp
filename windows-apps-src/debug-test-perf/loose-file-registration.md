@@ -1,18 +1,16 @@
 ---
-author: c-don
 title: ルーズ ファイルの登録によるアプリの展開
 description: このガイドでは、ルーズ ファイルのレイアウトの検証し、Windows 10 アプリをパッケージ化することがなく共有を使用する方法を示します。
-ms.author: cdon
 ms.date: 6/1/2018
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル、アプリ マネージャー, 展開, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574362"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694831"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>ルーズ ファイルの登録によるアプリの展開 
 

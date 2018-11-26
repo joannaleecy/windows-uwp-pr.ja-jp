@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: アプリをストアに提出する前に、パートナー センターからアプリケーション ID と広告ユニット ID の値をアプリを追加する方法について説明します。
 title: アプリの広告ユニットをセットアップする
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 広告ユニット, テスト
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575254"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692433"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>アプリの広告ユニットをセットアップする
 

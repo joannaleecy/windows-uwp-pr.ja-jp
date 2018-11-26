@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Xbox 開発者モード コンパニオン
 description: Xbox 開発者モード コンパニオン アプリに関する情報を提供します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
-ms.openlocfilehash: 0054b71276eec33f87ff1ae51dff0d58c0efcfce
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569308"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696579"
 ---
 # <a name="xbox-dev-mode-companion"></a>Xbox 開発者モード コンパニオン
 

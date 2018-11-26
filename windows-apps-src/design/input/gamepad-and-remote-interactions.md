@@ -1,22 +1,20 @@
 ---
-author: mijacobs
 Description: TODO
 title: ゲームパッドとリモコンの操作
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e87fea7dfce66b16ccdf04ef13950c092660c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: daf0452a30d494b3835ea043eee7d596921b0a75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555677"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719721"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>ゲームパッドとリモコンの操作
 

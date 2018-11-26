@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
 title: ターゲット設定
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bad800f3858cdfdf3def3a9a04854f078b3af399
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e8425232512650d5c80bf6fee9745b261aee8d9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569016"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720458"
 ---
 # <a name="guidelines-for-targeting"></a>ターゲット設定のガイドライン
 

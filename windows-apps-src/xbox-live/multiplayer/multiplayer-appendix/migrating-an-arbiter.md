@@ -1,19 +1,17 @@
 ---
 title: アービターの移行
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー 2015 でアービターを移行する方法を説明します。
 ms.assetid: 9fb5d2c0-d548-4a22-b64e-6b215f78d22e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アービター, マルチプレイヤー 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d4d203b3203b7a1b58bb42062370b45591c135
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7e250841fb0731a903c0e9c5bdeeecd42f07ac84
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577521"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720044"
 ---
 # <a name="migrating-an-arbiter"></a>アービターの移行
 

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: カメラ バーコード スキャナーのプレビューのホスト
 description: アプリケーションでカメラ バーコード スキャナーのプレビューをホストする方法を説明します。
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 9684db2495e974c23d81b21e9a4a2e764d390255
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0eb7b1b620fcfa16576d84eaa2564408394d59de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553199"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698711"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>アプリケーションでのカメラ バーコード スキャナーのプレビューのホスト
 ## <a name="step-1-setup-your-camera-preview"></a>手順 1: カメラ プレビューをセットアップする

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 title: カテゴリとサブカテゴリの一覧
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575171"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693632"
 ---
 # <a name="category-and-subcategory-table"></a>カテゴリとサブカテゴリの一覧
 

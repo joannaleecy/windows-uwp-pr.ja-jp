@@ -4,17 +4,15 @@ description: 拡散光は、ライトの方向とオブジェクトのサーフ�
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
 keywords:
 - 拡散光
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581642"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706826"
 ---
 # <a name="diffuse-lighting"></a>拡散光
 
@@ -31,7 +29,7 @@ ms.locfileid: "7581642"
 
 | パラメーター       | 既定値 | 種類          | 説明                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| sum             | 該当なし           | なし           | 各ライトの拡散コンポーネントの総和。                                                     |
+| sum             | なし           | なし           | 各ライトの拡散コンポーネントの総和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 拡散色。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 明るい拡散色。                                                                             |
 | N               | なし           | D3DVECTOR     | 頂点法線                                                                                    |

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: このケース スタディ、Bookstore で情報に基づいて、グループ化されたデータを LongListSelector を表示する WindowsPhone Silverlight アプリから始まります。
 title: WindowsPhone Silverlight から UWP ケース スタディ-Bookstore2
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577493"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719544"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight から UWP へのケース スタディ: Bookstore2
 
@@ -275,8 +273,8 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 **CollectionViewSource.Source** を Authors にバインドするとき、Authors 内の各 Author が*何か*のグループであるということを伝える必要があります。 このケース スタディでは、**CollectionViewSource** に依存して、Author が BookSku のグループであることを特定しています。 この設定でも機能しますが、柔軟性はありません。 Author が BookSku のグループ*および*著者の住所のグループの*両方*を表す必要がある場合は、どうしたらよいでしょうか。 Author を、これらの両方のグループにすることは*できません*。 ただし、Author に任意の数のグループを*保持させる*ことはできます。 これが解決策となります。つまり、現在使っている "*グループである*" というパターンの代わりに、またはこのパターンに加えて、"*グループを保持する*" というパターンを使います。 以下にその方法を示します。
 
 -   Author が **List&lt;T&gt;** から派生しないように変更します。
--   次のフィールドを Author に追加します: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
--   次のプロパティを Author に追加します: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
+-   このフィールドを追加します。 
+-   このプロパティを追加します。 
 -   当然ですが、上の 2 つの手順を繰り返して、必要な数のグループを Author に追加できます。
 -   AddBookSku メソッドの実装を `this.BookSkus.Add(bookSku);` に変更します。
 -   これで、Author は少なくとも 1 つのグループを*保持する*ようになりました。また、**CollectionViewSource** に対して、どのグループを使うかを伝える必要があります。 そのためには、**CollectionViewSource** に次のプロパティを追加します。 `ItemsPath="BookSkus"`

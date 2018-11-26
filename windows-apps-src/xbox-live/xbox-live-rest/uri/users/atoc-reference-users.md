@@ -2,19 +2,17 @@
 title: ユーザー URI
 assetID: 46faeb85-4256-b892-674b-e0d523b3926c
 permalink: en-us/docs/xboxlive/rest/atoc-reference-users.html
-author: KevinAsgari
 description: " ユーザー URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f06174faa01ceebcd997141c7c2cc943b66797e4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c5a4fc825555cb3ae7e6359178977914d6f65e3a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552675"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712826"
 ---
 # <a name="users-uris"></a>ユーザー URI
  

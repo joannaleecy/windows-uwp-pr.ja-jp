@@ -5,17 +5,15 @@ ms.assetid: C9519AD0-5425-48BD-9FF4-AED8959CA4AD
 keywords:
 - グラフィックス パイプライン
 - パイプラインのステージ
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d4a362a3a7be06e48c64ce3e4d43ff917b9b24c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 55621cec768e0aac680c3a84fd803e591459a97d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580413"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693373"
 ---
 # <a name="graphics-pipeline"></a>グラフィックス パイプライン
 

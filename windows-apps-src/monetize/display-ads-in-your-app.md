@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK は、アプリに広告を表示して収益を得るためのいくつかの方法を提供します。
 title: Microsoft Advertising SDK を使用したアプリでの広告の表示
-ms.author: mhopkins
 ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 7acf2424a7d2fee322ba799ec670f0576b33a208
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582015"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695041"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 

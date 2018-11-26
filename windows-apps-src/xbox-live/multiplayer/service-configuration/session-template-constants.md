@@ -1,19 +1,17 @@
 ---
 title: セッション テンプレートの定数
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー セッション テンプレートで定義されているシステム定数について説明します。
 ms.assetid: d51b2f12-1c56-4261-8692-8f73459dc462
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, セッション テンプレート
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c7fa48ee637dbca20b67872113a8d43e04da84
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5bb4c6f39bab8779b5675a7b9c81b883965676c2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557531"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719953"
 ---
 # <a name="session-template-constants"></a>セッション テンプレートの定数
 

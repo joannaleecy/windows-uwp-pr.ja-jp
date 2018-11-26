@@ -1,21 +1,19 @@
 ---
-author: QuinnRadich
 Description: These guidelines describe how to design effective Help content for your app.
 title: アプリのヘルプのガイドライン
 label: Guidelines for app help
 template: detail.hbs
-ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e4cb60526fda9495249cd310ad434878941a97d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd2174c6bbfb84a3ea6c6956e1d0b02ed5c9be33
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562874"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720030"
 ---
 # <a name="guidelines-for-app-help"></a>アプリのヘルプのガイドライン
 

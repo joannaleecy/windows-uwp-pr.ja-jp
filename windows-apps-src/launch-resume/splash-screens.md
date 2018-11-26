@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: スプラッシュ画面
 description: このセクションでは、アプリのスプラッシュ画面を設定および構成する方法について説明します。
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 45609a0feb244f746fb8dfbf3dee0dacbe541fc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559525"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720198"
 ---
 # <a name="splash-screens"></a>スプラッシュ画面
 

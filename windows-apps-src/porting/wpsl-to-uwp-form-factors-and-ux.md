@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。
 title: WindowsPhone Silverlight から UWP へのフォーム ファクターと UX の移植
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555344"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706879"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>WindowsPhone Silverlight から UWP へのフォーム ファクターと UX の移植
 

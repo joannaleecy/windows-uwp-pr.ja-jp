@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: ジオコーディングと逆ジオコーディングの実行
 description: このガイドでは、住所を地理的な場所 (ジオコーディング) に変換し、Windows.Services.Maps 名前空間の MapLocationFinder クラスのメソッドを呼び出すことによって (逆ジオコーディング) の住所を地理的な位置を変換する方法を示します。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
-ms.author: pafarley
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, ジオコーディング, 地図, 位置情報
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd956dece4435ceb8e14121ec2b545095af3a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578235"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706899"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>ジオコーディングと逆ジオコーディングの実行
 

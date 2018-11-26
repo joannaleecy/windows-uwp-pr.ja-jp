@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
 title: アプリの Microsoft Store 登録情報の作成
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 登録情報, 説明, Microsoft Store ページ, リリース ノート, タイトル
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1867e747f3458e3a9cffabe9a45535d4c27489
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570122"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694358"
 ---
 # <a name="create-app-store-listings"></a>アプリの Microsoft Store 登録情報の作成
 

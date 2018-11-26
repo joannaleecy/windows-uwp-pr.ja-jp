@@ -4,17 +4,15 @@ description: ここでは、深度/ステンシル バッファーと、出力�
 ms.assetid: B3F6CDAA-93ED-4DC1-8E69-972C557C7920
 keywords:
 - 深度/ステンシル機能の構成
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c15ff6aa43540b61b410525e6bb20a0de3da821
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562035"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694971"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>深度/ステンシル機能の構成
 

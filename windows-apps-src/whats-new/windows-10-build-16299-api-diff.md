@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows 10 Fall Creators Update API の変更点
 description: 開発者は、次の一覧を使用して、Windows 10 ビルド 16299 での新しい名前空間や変更された名前空間を確認できます。
 keywords: 新着情報, 新機能, 更新プログラム, Windows 10, 1709, fall, creators, api, 16299
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f7b7adb351db840647cc3f4a69ad7f43663a03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 25707dfbf6753c51b4cf47bcbe95dc66802ee781
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581214"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712294"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a>Windows 10 ビルド 16299 の新しい API
 

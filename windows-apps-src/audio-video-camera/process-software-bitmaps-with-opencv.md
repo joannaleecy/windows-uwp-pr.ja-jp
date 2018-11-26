@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ''
 description: この記事では、Open Source Computer Vision Library (OpenCV) で、SoftwareBitmap クラスを使用する方法について説明します。
 title: OpenCV でのビットマップの処理
-ms.author: lahugh
 ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, OpenCV, SoftwareBitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f1f2050590267d0a98779eba11bbe0b363da0c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 45f76744070a7557939d1d7f2307113852737072
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560776"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706735"
 ---
 # <a name="process-bitmaps-with-opencv"></a>OpenCV でのビットマップの処理
 

@@ -2,18 +2,16 @@
 title: スマート カード
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの PIN のリセット方法、スマート カードを削除または切断する方法などについて説明します。
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5c416fff63ba5a14480f804b9382c27f7e53a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555727"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696095"
 ---
 # <a name="smart-cards"></a>スマート カード
 

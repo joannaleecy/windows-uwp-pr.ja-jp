@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: このトピックにある現象のトラブルシューティングおよび対処法に関する表は、新しいコードを作成しているか既存のアプリを移植しているかにはかかわらず役立つ可能性があります。
 title: C++/WinRT に関する問題のトラブルシューティング
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、トラブルシューティング、HRESULT、エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a25b606def215defb8be0e0a38c628349f2440
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 120d5c8014ce9ac3cab9b2dfb1d778173f2434c4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569377"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695011"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>C++/WinRT に関する問題のトラブルシューティング
 

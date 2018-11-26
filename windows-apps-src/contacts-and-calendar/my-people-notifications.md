@@ -1,18 +1,16 @@
 ---
 title: マイ連絡先の通知
 description: 新しい種類のトーストである、マイ連絡先の通知を作成して使用する方法について説明します。
-author: muhsinking
-ms.author: mukin
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 943d236699ccab6d61e5394426077a32d7249592
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: db25954b7fc6541ac5f5900236e61cb8da488be6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554329"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695314"
 ---
 # <a name="my-people-notifications"></a>マイ連絡先の通知
 

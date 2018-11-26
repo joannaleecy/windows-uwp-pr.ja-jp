@@ -2,18 +2,16 @@
 title: Web 認証ブローカー
 description: この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 88210182f46fa8149e4b2d0278d7df89033e62b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557828"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707364"
 ---
 # <a name="web-authentication-broker"></a>Web 認証ブローカー
 

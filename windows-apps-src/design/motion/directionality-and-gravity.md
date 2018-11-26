@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion uses directionality and gravity.
 title: 方向性と重力 - UWP アプリでのアニメーション
 label: Directionality and gravity
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: acb2984b38d51ca3a8564ac3a06b3cb98e5071b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4bb6f0ba60e89720a6daa37604cbe93696fb2bb7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563483"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694303"
 ---
 # <a name="directionality-and-gravity"></a>方向性と重力
 

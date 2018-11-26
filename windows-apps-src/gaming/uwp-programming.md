@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: UWP プログラミング
 description: UWP ゲームのプログラミングについて説明します。
 ms.assetid: af7a642e-d448-4a7d-8e90-7065b23e24fb
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, オーディオ, 入力, ネットワーク
 ms.localizationpriority: medium
-ms.openlocfilehash: 190f8a67dc8dc86bdddc1be2e073da9e5969255b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c3e2a03b1302fcf5690e653cbf07efad8ef14fe8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555558"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712228"
 ---
 # <a name="uwp-programming"></a>UWP プログラミング
 

@@ -1,19 +1,17 @@
 ---
-author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 description: パートナー センターでのパッケージを必須としてマークし、アプリをダウンロードしてインストール パッケージの更新プログラムでコードを記述する方法について説明します。
-ms.author: mcleans
 ms.date: 04/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a2bc0cfbdd722a4842758be0f3b794aafe808bc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571805"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720178"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 

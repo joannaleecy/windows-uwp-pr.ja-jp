@@ -1,19 +1,17 @@
 ---
 title: Xbox Live マルチプレイヤーの概念
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー システムで使用される一般的なマルチプレイヤーの概念について説明します。
 ms.assetid: 1e765f19-1530-4464-b5cf-b00259807fd3
-ms.author: kevinasg
 ms.date: 08/25/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
-ms.openlocfilehash: 65952caabfdacd9419f7633ef0b7bcb9ca813629
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0e2ba32b2eaff757cfa6401952567f6b0163f632
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558007"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720060"
 ---
 # <a name="xbox-live-multiplayer-concepts"></a>Xbox Live マルチプレイヤーの概念
 

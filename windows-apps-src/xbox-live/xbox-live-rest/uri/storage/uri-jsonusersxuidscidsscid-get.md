@@ -2,19 +2,17 @@
 title: GET (/json/users/xuid({xuid})/scids/{scid})
 assetID: a015fb75-f072-ee9b-000b-e6e93beed903
 permalink: en-us/docs/xboxlive/rest/uri-jsonusersxuidscidsscid-get.html
-author: KevinAsgari
 description: " GET (/json/users/xuid({xuid})/scids/{scid})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ec590aa22442c65f8eb0606545b07da05c4926cc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 77cb9089eda1cc5efd6fac321ad2162250dcb824
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561164"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720047"
 ---
 # <a name="get-jsonusersxuidxuidscidsscid"></a>GET (/json/users/xuid({xuid})/scids/{scid})
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージの技術的な概要
-author: aablackm
 description: 接続ストレージ内部の動作について詳しく説明します。
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8740d9287ff63ba113266d6c7cf39f2a21823d4b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6eddd11a370b8dcadc5108fe00539c2c6d1d9d1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563791"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692415"
 ---
 # <a name="connected-storage"></a>接続ストレージ
 
@@ -76,7 +74,6 @@ Xbox One ではいくつかのストレージ オプションが用意されて�
 
 <a name="connected-storage"></a>接続ストレージ
 -----------------
-
 接続ストレージは、複数の本体間でローミングされる必要がある Xbox One のゲームプレイ データや他の関連するアプリの状態データを保存できるように設計されています。 接続ストレージ API は Xbox One に固有であり、そのデータの保存およびアップロードを支援します。 API は Xbox One アプリケーション モデルとの組み合わせで機能します。
 
 接続ストレージ API は、次の機能を提供します。
@@ -96,7 +93,6 @@ Xbox One ではいくつかのストレージ オプションが用意されて�
 
 <a name="xbox-live-title-storage"></a>Xbox Live タイトル ストレージ
 -----------------------
-
 タイトル ストレージ サービスでは、以下の機能を持つデータ ストレージ用のクロスプラットフォーム REST API が提供されます。
 
 -   ユーザー間、アプリ間、およびさまざまなプラットフォーム間でのデータ共有を提供します
@@ -118,7 +114,6 @@ Xbox One ではいくつかのストレージ オプションが用意されて�
 
 <a name="local-temporary-storage"></a>ローカル一時ストレージ
 -----------------------
-
 本体上で、アプリは、以下の特性を持つローカル一時ストレージにアクセスできます。
 
 -   パス T:\\ によってアクセス可能な 2 GB の専用ハード ドライブ ストレージ。
@@ -129,7 +124,6 @@ Xbox One ではいくつかのストレージ オプションが用意されて�
 
 <a name="configuring-your-app-for-connected-storage"></a>接続ストレージのためのアプリの構成
 ------------------------------------------
-
 接続ストレージ API を使用する場合、すべての読み取りおよび書き込み操作は Xbox Live プライマリー サービス構成 ID (SCID) と関連付けられます。SCID はアプリのマニフェスト ファイル AppXManifest.xml で次のように定義されます。
 
 ```xml

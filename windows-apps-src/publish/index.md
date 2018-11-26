@@ -1,20 +1,18 @@
 ---
-author: jnHs
 layout: LandingPage
 Description: See how to publish your Windows apps to the Microsoft Store.
 title: Windows アプリを公開する
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 229e1eab05e392a4091c9eee5bc9af948c678d96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f18c7f20673b7875c60c8797bb1e92410cda8fe
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563451"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719916"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  

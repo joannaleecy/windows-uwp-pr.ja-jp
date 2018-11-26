@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: UWP アプリが更新された際のバックグラウンド タスクの実行
 description: ユニバーサル Windows プラットフォーム (UWP) アプリが更新された際に実行されるバックグラウンド タスクの作成方法を説明します。
-ms.author: twhitney
 ms.date: 04/21/2017
 ms.topic: article
 keywords: windows 10, uwp, 更新, バック グラウンド タスク、updatetask, バック グラウンド タスク
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef6351bcf2ef57a1900c429ddcb65e5a2a4e67b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582412"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696443"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>UWP アプリが更新された際のバックグラウンド タスクの実行
 

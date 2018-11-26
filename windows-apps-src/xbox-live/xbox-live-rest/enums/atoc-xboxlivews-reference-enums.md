@@ -2,19 +2,17 @@
 title: JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
 assetID: 8aa53782-05fa-9980-87cd-0cac8346756e
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-enums.html
-author: KevinAsgari
 description: " JavaScript Object Notation (JSON) オブジェクトで使用される列挙型"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: fa0a405d811f2ad6497149d62e08b974dc873575
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0deb009ec40eaeda09687e5ed9dbb69066ca317
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555224"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707102"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
  

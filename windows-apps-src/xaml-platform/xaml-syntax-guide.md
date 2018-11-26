@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: ここでは、XAML 構文の規則と、XAML 構文に存在する制限や選択肢を説明する用語について説明します。
 title: XAML 構文のガイド
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579812"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693353"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 構文のガイド
 

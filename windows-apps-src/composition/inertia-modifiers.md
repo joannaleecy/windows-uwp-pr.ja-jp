@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 慣性修飾子を使用したスナップ位置の作成
 description: InteractionTracker の InertiaModifier 機能を使用して、指定した位置にスナップされるモーション エクスペリエンスを作成する方法について説明します。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c10b1cc621da834a8a7c411e75eb92b1944b5a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562411"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712347"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>慣性修飾子を使用したスナップ位置の作成
 

@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 関心のあるポイント (POI) の地図への表示
 description: プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.author: normesta
 ms.date: 08/11/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, プッシュピン
 ms.localizationpriority: medium
-ms.openlocfilehash: 13c0ea463cbab97e03c87c4e558bba0eff92300c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f67c93a6f56fd466d981bce10eb41c16ff8da1f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554116"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720338"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>関心のあるポイントの地図への表示
 

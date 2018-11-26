@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Use visual feedback to show users when their interactions with a UWP app are detected, interpreted, and handled.
 title: 視覚的なフィードバック
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: 視覚的なフィードバック, フォーカス フィードバック, タッチ フィードバック, 接触の視覚エフェクト, 入力, 操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3440a0c64c0546b12c7f2c1bf1ea30168886d1db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b043ec71eb7d5883a1b22c4f0d8f43824034d454
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566241"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719798"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覚的なフィードバックのガイドライン
 

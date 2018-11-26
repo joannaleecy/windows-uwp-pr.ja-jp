@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: ゲーム プロジェクトのセットアップ
 description: ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560832"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696466"
 ---
 # <a name="set-up-the-game-project"></a>ゲーム プロジェクトのセットアップ
 

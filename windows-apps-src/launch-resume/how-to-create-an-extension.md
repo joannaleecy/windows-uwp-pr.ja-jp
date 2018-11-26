@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: アプリ拡張機能の作成と利用
 description: ユニバーサル Windows プラットフォーム (UWP) アプリの拡張機能を作成してホストすると、Microsoft Store からユーザーがインストールできるパッケージを介してアプリを拡張できます。
 keywords: アプリの拡張機能, アプリ サービス, バック グラウンド
-ms.author: twhitney
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c4c326dbafa719273c4535a42d58184c7ce360fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 99ba3ee5f62ed9455e95d9e760abdba6009e5027
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569390"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712367"
 ---
 # <a name="create-and-host-an-app-extension"></a>アプリ拡張機能の作成とホスト
 

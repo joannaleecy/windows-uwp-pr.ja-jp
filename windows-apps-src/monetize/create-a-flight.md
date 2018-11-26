@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: パートナー センター アカウントに登録されているアプリのパッケージ フライトを作成する、Microsoft Store 申請 API でこのメソッドを使います。
 title: パッケージ フライトの作成
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの作成
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580476"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712566"
 ---
 # <a name="create-a-package-flight"></a>パッケージ フライトの作成
 

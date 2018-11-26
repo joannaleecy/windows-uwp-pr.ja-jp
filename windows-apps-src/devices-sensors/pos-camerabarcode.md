@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: カメラ バーコード スキャナー
 description: この記事では、UWP アプリで使用可能なカメラ バーコード スキャナー機能と、その使用方法を示すハウツー記事へのリンクを示します。
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c946d9f72107dd787efec34b12272402fc660cbf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556542"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694509"
 ---
 # <a name="camera-barcode-scanner"></a>カメラ バーコード スキャナー
 カメラ バーコード スキャナーは、Windows によって、コンピューターに接続されているカメラとソフトウェア デコーダーがペアリングされたときに動的に作成されます。  カメラとデコーダーのペアはそれぞれ完全な機能を持つバーコード スキャナーです。   

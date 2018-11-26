@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: アクセシビリティの概要
 label: Accessibility overview
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e627cc4ad9918afeabfc61544872169425bd98a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 50e6c68841440120b783713ef0a591e39a7c7eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556711"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720378"
 ---
 # <a name="accessibility-overview"></a>アクセシビリティの概要  
 

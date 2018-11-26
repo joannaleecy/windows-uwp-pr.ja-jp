@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 日付範囲やその他のオプション フィルターを指定して、アプリケーションの入手に関するファネル データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリの入手に関するファネル データの取得
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 入手, ファネル
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9ccbb081ef6f39ad795105ee2449de4d8442ab3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569525"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692280"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>アプリの入手に関するファネル データの取得
 
