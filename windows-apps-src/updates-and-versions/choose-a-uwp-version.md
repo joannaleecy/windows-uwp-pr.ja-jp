@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: UWP バージョンの選択
 description: Microsoft Visual Studio で UWP アプリを作成するときは、ターゲットのバージョンを選択できます。 ここでは、UWP バージョンによる違いと、新しいプロジェクトや既存のプロジェクトで選択したバージョンを構成する方法について説明します。
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, バージョン, 作成, バージョン, windows, 選択, 更新, 更新プログラム
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582232"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691896"
 ---
 # <a name="choose-a-uwp-version"></a>UWP バージョンの選択
 

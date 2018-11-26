@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: 支払いの概要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6369247f0e287ec2698213b7f0b7be7e1f21d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555364"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691906"
 ---
 # <a name="payout-summary"></a>入金状況
 

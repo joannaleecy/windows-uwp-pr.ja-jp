@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Xbox One の UWP
 description: Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。
-ms.author: mstahl
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: e7c14c51c0b5b09b96859a8aba97172485a14c85
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 776eae9bbfa31d840964ca4622258eff0a2acfdc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569056"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691112"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: ネットワークと Web サービスにアクセスするためのテクノロジ。
 title: ネットワークと Web サービス
-ms.author: stwhi
 ms.date: 11/26/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e01ac3a0dcab0bc82835b97d70477bf585ab4570
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26324637fdf54b48fa441d28065bf437fbf74b26
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573432"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692843"
 ---
 # <a name="networking-and-web-services"></a>ネットワークと Web サービス
 

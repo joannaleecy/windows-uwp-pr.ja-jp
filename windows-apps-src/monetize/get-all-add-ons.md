@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: パートナー センター アカウントに登録されているすべてのアプリのすべてのアドオン データを取得する、Microsoft Store 申請 API でこのメソッドを使います。
 title: すべてのアドオンの入手
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d58b29a959ed791665af52018062d0cf0a3a969
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578631"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692380"
 ---
 # <a name="get-all-add-ons"></a>すべてのアドオンの入手
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
 title: VAT 情報
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 872d3967e48a9c8122e3cc3043a1440950f70e9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 90447f63cf28660eaffc0dff4e28524f8ef4372a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557382"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691170"
 ---
 # <a name="vat-info"></a>VAT 情報
 

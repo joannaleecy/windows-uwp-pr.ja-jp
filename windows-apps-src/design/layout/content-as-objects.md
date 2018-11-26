@@ -1,15 +1,14 @@
 ---
-author: mijacobs
 description: ''
 title: オブジェクトとしてのコンテンツ
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b69eb48bc52784b52c069af4f091808d706ae16
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1392851"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691403"
 ---
 # <a name="content-as-objects"></a>オブジェクトとしてのコンテンツ
 

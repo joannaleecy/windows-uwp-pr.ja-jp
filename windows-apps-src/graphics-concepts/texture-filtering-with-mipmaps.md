@@ -4,17 +4,15 @@ description: ミップマップは連続したテクスチャで、各テクス�
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
 keywords:
 - ミップマップでのテクスチャ フィルタリング
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d32d5a77fe9bc840ea676c7156c1b59e498d07e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 474f97f32439c389be8283bb10e0c0ed716b3f69
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558359"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691683"
 ---
 # <a name="texture-filtering-with-mipmaps"></a>ミップマップでのテクスチャ フィルタリング
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
 title: センサーの調整
 description: デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。
-ms.author: jken
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd4e1b6d807437adbdd7428ae35d26915c48713
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a93d59a00630c240e74049a9fd98d50f285b0dd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557063"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692533"
 ---
 # <a name="calibrate-sensors"></a>センサーの調整
 

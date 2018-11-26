@@ -4,17 +4,15 @@ description: 次の表に、Texture3D サブリソースがどのようにタイ
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
 keywords:
 - Texture3D サブリソースのタイル表示
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17970d509fa2bf6b80431e1c07b5d135c7dcb112
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578883"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692913"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D サブリソースのタイル表示
 

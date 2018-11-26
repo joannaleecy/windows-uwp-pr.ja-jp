@@ -1,15 +1,14 @@
 ---
-author: mtoepke
 title: OpenGL ES 2.0 からのチュートリアル サンプルの移植
 description: この一連のトピックでは、複雑さの異なるさまざまな OpenGL ES 2.0 グラフィックス パイプラインの移植シナリオについて説明します。
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a4416150a0d536dfa1c4f572d79c26990d3f6e7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652281"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691105"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>OpenGL ES 2.0 からのチュートリアル サンプルの移植
 
@@ -39,11 +38,11 @@ ms.locfileid: "1652281"
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

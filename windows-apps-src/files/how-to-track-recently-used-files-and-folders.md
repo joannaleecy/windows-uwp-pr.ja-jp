@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 最近使ったファイルやフォルダーの追跡
 description: ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b8a6462f6cc39ba85cddfaa7a92212955a79f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a810c097b4f162395106e74b68d5e9cdb2f8538
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559658"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691773"
 ---
 # <a name="track-recently-used-files-and-folders"></a>最近使ったファイルやフォルダーの追跡
 

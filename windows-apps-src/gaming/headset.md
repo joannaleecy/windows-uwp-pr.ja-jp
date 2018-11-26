@@ -1,19 +1,17 @@
 ---
-author: mithom
 title: ヘッドセット
 description: Windows.Gaming.Input ヘッドセット API を使用して、ヘッドセットの検出、プレイヤーの音声のキャプチャ、オーディオの再生を行います。
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ヘッドセット
 ms.localizationpriority: medium
-ms.openlocfilehash: f5097af13d0714f30eefd7771f798036d069cdea
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557652"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691916"
 ---
 # <a name="headset"></a>ヘッドセット
 

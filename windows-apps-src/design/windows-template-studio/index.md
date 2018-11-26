@@ -1,21 +1,19 @@
 ---
-author: jken
 description: Windows Template Studio は、UWP アプリをすばやく作成するための Visual Studio 拡張機能です。
 title: Windows Template Studio
 template: detail.hbs
-ms.author: jken
 ms.date: 05/10/2018
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 97df5037d2cdc07361cbc7f80830ba951a0a3caa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566953"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693063"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 
