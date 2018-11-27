@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.
 title: ハイパーリンク
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e6679f789f2530a34a2bf527556c144e7a8e03c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6d2a4ae2449fcfcccee792f70bb4d90f7b745047
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580124"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708901"
 ---
 # <a name="hyperlinks"></a>ハイパーリンク
 

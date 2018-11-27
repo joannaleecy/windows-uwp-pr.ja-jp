@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: リモート アプリ サービスとの通信
 description: "\"Rome\" プロジェクトを使って、リモート デバイスで実行されているアプリ サービスとメッセージをやり取りします。"
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 044197ebae111e9300f06783f02de7f0636d4a11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568613"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709064"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
@@ -34,7 +32,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-**AppService**の要素の横にある**SupportsRemoteSystems**属性を追加します。
+**AppService**要素の横にある**SupportsRemoteSystems**属性を追加します。
 
 ``` xml
 ...
@@ -42,7 +40,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-要素をこの**uap3**名前空間を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
+この**uap3**名前空間の要素を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

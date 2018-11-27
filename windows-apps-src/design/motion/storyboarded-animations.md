@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: ストーリーボードに設定されたアニメーション
 description: ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。
-ms.author: jimwalk
 ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e4aa010915ba681869b4ae27ba63e081a31ef78
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558949"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708869"
 ---
 # <a name="storyboarded-animations"></a>ストーリーボードに設定されたアニメーション
 
@@ -151,7 +149,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By では null が許容される
 
-**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX) **Nullable**の種類、ない[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用します。
+**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX)、 **Nullable**型ない[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用します。
 
 ### <a name="other-properties-of-an-animation"></a>アニメーションのその他のプロパティ
 

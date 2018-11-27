@@ -1,18 +1,16 @@
 ---
-author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: 既知のユーザー グループを作成する
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 対象グループ, ユーザー, フライト グループ, ユーザー グループ, 既知のユーザー
 ms.localizationpriority: medium
-ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574113"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709550"
 ---
 # <a name="create-known-user-groups"></a>既知のユーザー グループを作成する
 
@@ -22,7 +20,7 @@ ms.locfileid: "7574113"
 
 ## <a name="to-create-a-known-user-group"></a>既知のユーザー グループを作成するには
 
-1. [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。 
+1. [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。 
 2. **[自分のユーザー グループ]** セクションで、**[新しいグループの作成]** を選びます。
 3. 次のページで、**[グループ名]** にグループの名前を入力します。
 4. **[既知のユーザー グループ]** ラジオ ボタンがオンになっていることを確認します。

@@ -1,5 +1,4 @@
 ---
-author: muhsinking
 Description: You can define custom panels for XAML layout by deriving a custom class from the Panel class.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
 MSHAttr: PreferredLib:/library/windows/apps
@@ -9,17 +8,16 @@ ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview (Windows apps)
 template: detail.hbs
 op-migration-status: ready
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9856d564ffd36226a841c38eba65df0b62ee306
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9999ebb121916a7804546784ea98ac4e0f4222e5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572378"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708973"
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML カスタム パネルの概要
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: Windows.Services.Store 名前空間を使って、現在のアプリとそのアドオン ライセンス情報を取得する方法について説明します。
 title: アプリとアドオンのライセンス情報の取得
-ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, ライセンス, アプリ, アドオン, アプリ内購入, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 545e052794a8649daa62872cf74b0986cb7bf4b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576906"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705382"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>アプリとアドオンのライセンス情報の取得
 

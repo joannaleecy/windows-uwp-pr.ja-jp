@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
 title: 回転
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cc2e48239fd2f0e3d9299417a0d96d33acdc122
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578701"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711022"
 ---
 # <a name="rotation"></a>回転
 
@@ -90,7 +88,7 @@ Windows8 は 3 種類の回転をサポートしています: 自由、制約付
 <td align="left">複合回転</td>
 <td align="left"><p>複合回転は自由回転をサポートしますが、(<a href="guidelines-for-panning.md">パン</a>におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>注:</strong>ユーザー インターフェイスのレールは、ターゲットの周辺の領域のに向けて特定の値または場所の選択に影響を与える動き機能します。
+<strong>注:</strong>ユーザー インターフェイスのレールはターゲットの周辺の領域がに向けてする特定の値または場所の選択に影響を与える動き機能します。
 </div>
 <div>
  

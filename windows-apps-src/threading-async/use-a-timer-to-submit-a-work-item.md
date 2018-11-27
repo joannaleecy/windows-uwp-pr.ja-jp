@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: タイマーを使った作業項目の送信
 description: タイマーが終了した後に実行される作業項目の作成方法を説明します。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, タイマー, スレッド
 ms.localizationpriority: medium
-ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2537bad82fc4a17b964f5871ab6ae1434c417f66
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563574"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711883"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>タイマーを使った作業項目の送信
 
@@ -223,7 +221,7 @@ ms.locfileid: "7563574"
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは UI スレッドをブロックできるため、**Thread.Sleep** を使うことができません。 代わりに、[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) を使って作業項目を作ります。これによって、UI スレッドをブロックすることなく、作業項目によって実行されたタスクを遅延します。
 
-作業項目、タイマー作業項目、定期的な作業項目の使い方を示すコード サンプル全体については、[スレッド プールのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=255387)をご覧ください。 Windows8.1 用コード サンプルが最初に作成されたが、コードは、windows 10 で再利用できます。
+作業項目、タイマー作業項目、定期的な作業項目の使い方を示すコード サンプル全体については、[スレッド プールのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=255387)をご覧ください。 コード サンプルが Windows8.1 用に作成されたが、コードは、windows 10 で再利用できます。
 
 繰り返しタイマーについて詳しくは、「[定期的な作業項目の作成](create-a-periodic-work-item.md)」をご覧ください。
 

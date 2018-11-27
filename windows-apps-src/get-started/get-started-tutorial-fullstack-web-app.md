@@ -1,18 +1,16 @@
 ---
-author: libbymc
 title: REST API のバックエンドを使った単一ページの Web アプリを作成する
 description: よく使われる Web テクノロジを使用して、Microsoft Store 用のホストされた Web アプリを構築する
 keywords: ホストされた Web アプリ、HWA、REST API、単一ページ アプリ、SPA
-ms.author: libbymc
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 140f28949bea6b4f67730bd7f6afaed4bcfb9935
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571882"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708252"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 

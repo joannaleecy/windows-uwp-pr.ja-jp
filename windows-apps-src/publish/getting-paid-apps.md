@@ -1,25 +1,23 @@
 ---
-author: jnHs
 Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
 title: 支払いの受け取り
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
-ms.openlocfilehash: 96845e81b093b7cddb6d334286e9cfa468a43b28
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581688"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709653"
 ---
 # <a name="getting-paid"></a>支払いの受け取り
-次に、アプリ、アドオン、および advertising による収益の支払いの受け取りについての重要な情報を示します。
+次に、アプリ、アドオン、および advertising による収益の支払の受け取りについての重要な情報を示します。
 
 > [!IMPORTANT]
-> Microsoft Store でアプリの売上から収益を受け取ることができます[受取りアカウントの設定し、税関連の](setting-up-your-payout-account-and-tax-forms.md)する必要があります。
+> Microsoft Store でアプリの売上から収益を受け取ることができます、[受取りアカウントの設定し、税関連の](setting-up-your-payout-account-and-tax-forms.md)する必要があります。
 
 ## <a name="store-fee"></a>Windows ストアの手数料
 
@@ -48,7 +46,7 @@ Microsoft Store の手数料は、アドオンも含めて、Microsoft Store で
 
 ## <a name="payout-reporting"></a>支払いレポート
 
-支払い情報に関する詳細情報にアクセスし、[パートナー センター](https://partner.microsoft.com/dashboard)の**入金状況**でレポートをダウンロードできます。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+[パートナー センター](https://partner.microsoft.com/dashboard)の**入金状況**でレポートをダウンロードし、支払い情報に関する詳細情報にアクセスできます。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
 
 
 ## <a name="payout-timeframe"></a>支払いの時期
@@ -65,7 +63,7 @@ Microsoft Store の手数料は、アドオンも含めて、Microsoft Store で
 支払い保留状態を**オン**に設定すると、スライダーを**オフ**に戻すまで、すべての支払いは保留されます。 スライダーをオフに戻すと、次の月の支払いサイクルに含まれます (支払いのしきい値に達している場合)。 たとえば、支払いを保留にしたが、6 月に支払いを受けたい場合には、5 月末以前に支払い保留状態を**オフ**に戻すようにします。
 
 > [!NOTE]
-> **支払い保留状態**の選択は、パートナー センター (Microsoft Store、広告、Azure Marketplace などです。) で、Windows 開発者プログラムを通じて支払われる**すべて**の収益源に適用されます。 収益源ごとに異なる保留状態を選択することはできません。
+> **支払い保留状態**の選択内容は、パートナー センター (Microsoft Store、広告、Azure Marketplace などです。) で、Windows 開発者プログラムを通じて支払われる**すべて**の収益源に適用されます。 収益源ごとに異なる保留状態を選択することはできません。
 
 
  

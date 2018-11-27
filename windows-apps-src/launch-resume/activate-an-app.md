@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: アプリのアクティブ化の処理
 description: OnLaunched メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,16 +11,16 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559774"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705295"
 ---
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
-[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドすることによってアプリのアクティブ化を処理する方法について説明します。
+[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドして、アプリのアクティブ化を処理する方法について説明します。
 
 ## <a name="override-the-launch-handler"></a>起動ハンドラーを上書きする
 
@@ -42,7 +40,7 @@ ms.locfileid: "7559774"
 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
 
 > [!NOTE]
-> Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動します。 このメソッドを呼び出すしません。
+> Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動する以下のメソッドを呼び出すしません。
 
 ```csharp
 using System;

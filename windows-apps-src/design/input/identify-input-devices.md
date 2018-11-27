@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
 title: 入力デバイスの識別
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: デバイス, デジタイザー, 入力, 操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568380"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711202"
 ---
 # <a name="identify-input-devices"></a>入力デバイスの識別
 
@@ -67,7 +65,7 @@ private void GetKeyboardProperties()
 
 タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートしていると、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
+**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートし、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
 
  
 

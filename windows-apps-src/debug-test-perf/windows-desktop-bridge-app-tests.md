@@ -1,23 +1,21 @@
 ---
-author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows デスクトップ ブリッジ アプリのテスト
 description: UWP アプリにその変換するために、デスクトップ アプリを最適化することを確認するのにには、デスクトップ ブリッジの組み込みのテストを使用します。
-ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: 8363bc3085e9d6ec4e1a86751b691266b12b365c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557182"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710161"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows デスクトップ ブリッジ アプリのテスト
 
-[デスクトップ ブリッジ アプリ](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)は、Windows デスクトップ アプリケーションの[デスクトップ ブリッジ](https://developer.microsoft.com/en-us/windows/bridges/desktop)を使ってユニバーサル Windows プラットフォーム (UWP) アプリに変換されます。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
+[デスクトップ ブリッジ アプリ](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)は、Windows デスクトップ アプリケーションの[デスクトップ ブリッジ](https://developer.microsoft.com/en-us/windows/bridges/desktop)を使用してユニバーサル Windows プラットフォーム (UWP) アプリに変換されます。 Windows デスクトップ アプリケーションは、変換後、Windows 10 デスクトップをターゲットとする UWP アプリ パッケージ (.appx または .appxbundle) の形式でパッケージ化され、処理と展開が行われます。
 
 ## <a name="required-versus-optional-tests"></a>必須のテストとオプションのテスト
 Windows デスクトップ ブリッジ アプリのオプションのテストは、情報提供のみと Microsoft ストアのオンボード処理中にアプリの評価には使用されません。 調査をお勧めします。 これらのテストの結果をアプリの品質を向上します。 ストアの配布準備の全体的な合格/不合格の基準は、これらのオプションのテストではなく、必須のテストで決定されます。
@@ -48,13 +46,13 @@ Windows デスクトップ ブリッジ アプリのオプションのテスト�
 このテストでは、appx がデバッグ ビルドではないことを確認します。
  
 **Background**  
-、Microsoft Store の認定を受けるにアプリにコンパイルせずデバッグ用とデバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
  
 **テストの詳細**  
 アプリをテストして、デバッグ用のビルドでないことと、どのデバッグ用のフレームワークにもリンクされていないことを確認します。
  
 **問題への対応**  
-* Microsoft Store に提出する前に、リリース用ビルドとしてアプリをビルドします。
+* Microsoft Store に提出する前に、リリース用ビルドとして、アプリをビルドします。
 * 適切なバージョンの .NET フレームワークがインストールされていることを確認します。
 * アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
 
@@ -219,7 +217,7 @@ The {filename} file must not contain a reverse map section. ({filename} ファ�
 この問題を修正するには、アプリが、デバッグ用ビルドとしてではなく、リリース用ビルドとしてコンパイルされていることを確認します。 
 
 > [!NOTE]
-> アプリが[UWP アプリ用 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、デバッグ用ビルドのアプリにはこのテストは失敗します。 UWP アプリ用の許可されている API ではない API の存在を識別するエラー メッセージを確認します。 
+> アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でも、デバッグ用ビルドのアプリにはこのテストは失敗します。 UWP アプリの許可されている API ではない API の存在を識別するエラー メッセージを確認します。 
 
 > [!NOTE]
 > 構成が UWP アプリのみ Windows SDK の Api を使っている場合でも、デバッグ構成で構築された C++ アプリにはこのテストは失敗します。 詳細については、 [UWP アプリでの Windows api の代替手段](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)を参照してください。
@@ -230,7 +228,7 @@ The {filename} file must not contain a reverse map section. ({filename} ファ�
 アプリが実行時のユーザー アカウント制御を要求しないことを確認します。
 
 **テストの詳細**  
-アプリでは、Microsoft Store ポリシーに従って管理者の昇格や UIAccess を要求できません。 管理者特権のセキュリティ アクセス許可はサポートされていません。 
+アプリごとの Microsoft Store ポリシー管理者の昇格や UIAccess を要求することはできません。 管理者特権のセキュリティ アクセス許可はサポートされていません。 
 
 **問題への対応**  
 アプリは、対話ユーザーとして実行する必要があります。 詳しくは、「[UI オートメーション セキュリティの概要](https://go.microsoft.com/fwlink/?linkid=839440)」をご覧ください。

@@ -1,33 +1,31 @@
 ---
-author: msatranjr
 title: C# および Visual Basic での Windows ランタイム コンポーネントの作成
 description: .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3b9ed2d256fb9ea8d38690a703baf7fbd3e7f0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 52745a4fcd6b5a6b33982595f8c7c65c0bee3c32
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569043"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7709755"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>C# および Visual Basic での Windows ランタイム コンポーネントの作成
 .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。 また、C++、JavaScript、Visual Basic、C# を利用することで、ユニバーサル Windows プラットフォーム (UWP) アプリでコンポーネントを使うことができます。 このトピックでは、コンポーネントを作成するための規則について説明し、Windows ランタイムの .NET Framework のサポートの一部の側面を説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
 
 Visual Basic または C# を利用して UWP アプリでのみ使うコンポーネントを作成し、そのコンポーネントには UWP コントロールを含めない場合は、**Windows ランタイム コンポーネント** テンプレートではなく、**クラス ライブラリ**  テンプレートを使うことを検討してください。 単純なクラス ライブラリでは、制限は少なくなります。
 
-このトピックでは、次のセクションでは、含まれています。
+このトピックには、次のセクションが含まれています。
 
 ## <a name="declaring-types-in-windows-runtime-components"></a>Windows ランタイム コンポーネントでの型の宣言
 内部的には、コンポーネントの Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使うことができます  (詳しくは、「[UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)」の概要をご覧ください。外部的には、型のメンバーはパラメーターと戻り値の Windows ランタイム型だけを公開できます。 Windows ランタイム コンポーネントから公開される .NET Framework 型の制限事項を次に示します。
 
 -   コンポーネント内にあるすべてのパブリック型とメンバーのフィールド、パラメーター、戻り値は、Windows ランタイム型である必要があります。
 
-    この制限は、作成した Windows ランタイム型、および Windows ランタイム自体で提供される型を対象としています。 また、さまざまな .NET Framework 型も対象となります。 これらの型の追加は、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。コードでは、基になる Windows ランタイム型ではなく、よく利用する .NET Framework 型が使われているように表示されます。 たとえば、Int32 や Double などの .NET Framework のプリミティブ型、DateTimeOffset や Uri などの特定の基本型、および IEnumerable&lt;T&gt; (Visual Basic では IEnumerable(Of T)) や IDictionary&lt;TKey,TValue&gt; などの一般的に利用されるジェネリック インターフェイス型を使うことができます  (注: これらのジェネリック型の型引数は Windows ランタイム型である必要があります。)これについては Windows ランタイム型の引き渡しマネージ コードへのセクションで説明して、マネージの引き渡しには、このトピックの後半で、Windows ランタイム型です。
+    この制限は、作成した Windows ランタイム型、および Windows ランタイム自体で提供される型を対象としています。 また、さまざまな .NET Framework 型も対象となります。 これらの型の追加は、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。コードでは、基になる Windows ランタイム型ではなく、よく利用する .NET Framework 型が使われているように表示されます。 たとえば、Int32 や Double などの .NET Framework のプリミティブ型、DateTimeOffset や Uri などの特定の基本型、および IEnumerable&lt;T&gt; (Visual Basic では IEnumerable(Of T)) や IDictionary&lt;TKey,TValue&gt; などの一般的に利用されるジェネリック インターフェイス型を使うことができます  (注: これらのジェネリック型の型引数は Windows ランタイム型である必要があります。)これについては説明のセクションでは、Windows ランタイム型の引き渡しをマネージ コードとマネージの引き渡しこのトピックで後で、Windows ランタイムへの種類。
 
 -   パブリック クラスとインターフェイスには、メソッド、プロパティ、イベントを含めることができます。 イベントのデリゲートを宣言したり、EventHandler&lt;T&gt; デリゲートを使ったりすることができます。 パブリック クラスやインターフェイスでは、次のことが許可されていません。
 
@@ -92,7 +90,7 @@ C# や Visual Basic で、これらの型に対して言語キーワードが指
 
 型によって複数のインターフェイスが実装される場合、メンバーのパラメーターの型または戻り値の型として実装されるインターフェイスをすべて使うことができます。 たとえば、合格またはディクショナリを返す&lt;int, string&gt; (Dictionary (Of Integer, String) Visual basic) IDictionary として&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt;、または IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;します。
 
-**重要な**JavaScript は、マネージ型が実装されるインターフェイスの一覧で最初に表示されるインターフェイスを使用します。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
+**重要な**JavaScript は、マネージ型が実装されるインターフェイスの一覧で、最初に表示されるインターフェイスを使用します。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
 Windows ランタイムでは、IMap&lt;K, V&gt; と IMapView&lt;K, V&gt; は IKeyValuePair を使って反復処理されます。 これらをマネージ コードに渡すと、IDictionary&lt;TKey, TValue&gt; および IReadOnlyDictionary&lt;TKey, TValue&gt; として表示されるため、これらを列挙するには必然的に System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; を使います。
 
@@ -126,7 +124,7 @@ Windows ランタイムでは、メソッドはオーバーロードできます
 > End Function
 > ```
 
- **注意:** JavaScript と任意の値を OverloadExample に渡す、できますが、値をパラメーターで必要な型に変換します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。 前の例の既定のオーバーロードは、0、42、および 42 をそれぞれ返します。
+ **注意:** JavaScript 任意の値を OverloadExample に渡すことができるし、値は、パラメーターを必要とする型を強制します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。 前の例の既定のオーバーロードは、0、42、および 42 をそれぞれ返します。
 
 コンストラクターに DefaultOverloadAttribute 属性を適用することはできません。 クラスのすべてのコンストラクターは、異なる数のパラメーターを持つ必要があります。
 
@@ -210,7 +208,7 @@ function asyncExample(id) {
 
 取り消しや進行状況の報告をサポートする非同期アクションと非同期操作では、開始されたタスクを生成して、適切な Windows ランタイム インターフェイスの取り消し機能と進行状況の報告機能を持つタスクの取り消し機能と進行状況の報告機能をフックするために、[AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) クラスを使います。 取り消しおよび進行状況の報告の両方をサポートする例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」をご覧ください。
 
-非同期メソッドが取り消しや進行状況の報告をサポートしていない場合でも、AsyncInfo クラスのメソッドを使うことはできます。 Visual Basic のラムダ関数または C# の匿名メソッドを使う場合は、トークンと [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) インターフェイスのパラメーターを指定しないでください。 C# のラムダ関数を使う場合は、トークンのパラメーターを指定しますが、無視されます。 前の例は使用 AsAsyncOperation&lt;TResult&gt;メソッドでは、次のような使用すると、 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) メソッド代わりにオーバー ロードします。
+非同期メソッドが取り消しや進行状況の報告をサポートしていない場合でも、AsyncInfo クラスのメソッドを使うことはできます。 Visual Basic のラムダ関数または C# の匿名メソッドを使う場合は、トークンと [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) インターフェイスのパラメーターを指定しないでください。 C# のラムダ関数を使う場合は、トークンのパラメーターを指定しますが、無視されます。 前の例は、使用 AsAsyncOperation&lt;TResult&gt;メソッドでは、次のようなを使用する場合、 [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) メソッド代わりに、オーバー ロードします。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -244,7 +242,7 @@ Windows アプリ用 .NET に含まれている例外の型は、どれでもス
 
 -   JavaScript では、例外はオブジェクトとして表示され、例外メッセージがスタック トレースで置き換えられています。 Visual Studio でアプリをデバッグするとき、デバッガーの例外ダイアログ ボックスに、"WinRT 情報" として元のメッセージ テキストが表示されます。 JavaScript コードから元のメッセージ テキストにアクセスすることはできません。
 
-    > **ヒント:** 現時点では、スタック トレースには、マネージ例外の型が含まれていますが、例外の種類を識別するトレースを解析お勧めしません。 このセクションの後半で説明するように、代わりに HRESULT 値を使ってください。
+    > **ヒント:** 現時点では、スタック トレースにはマネージ例外の型が含まれていますが、例外の種類を識別するトレースを解析はお勧めしません。 このセクションの後半で説明するように、代わりに HRESULT 値を使ってください。
 
 -   C++ では、例外はプラットフォーム例外として表示されます。 マネージ例外の HResult プロパティを特定のプラットフォーム例外の HRESULT にマップできる場合は、そのプラットフォーム例外が使われます。それ以外の場合は、[Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外がスローされます。 マネージ例外のメッセージ テキストは、C++ コードでは利用できません。 特定のプラットフォーム例外がスローされた場合、その例外の型に関する既定のメッセージ テキストが表示されます。それ以外の場合は、メッセージ テキストは表示されません。 「[例外 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)」をご覧ください。
 -   C# または Visual Basic では、例外は通常のマネージ例外です。

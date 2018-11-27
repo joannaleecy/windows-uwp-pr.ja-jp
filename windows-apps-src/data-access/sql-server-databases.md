@@ -1,18 +1,16 @@
 ---
-author: normesta
 title: UWP アプリでの SQL Server データベースの使用
 description: UWP アプリでの SQL Server データベースの使用。
-ms.author: normesta
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, UWP, SQL Server, データベース
 ms.localizationpriority: medium
-ms.openlocfilehash: 8396fb7685a774568b6cd63acb11f78133584f46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5cb4b16cea3368660ffcb1bc4b252391a73ab13e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573156"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710090"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>UWP アプリでの SQL Server データベースの使用
 アプリで [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間のクラスを使用して、SQL Server データベースに直接接続し、データを保存および取得することができます。

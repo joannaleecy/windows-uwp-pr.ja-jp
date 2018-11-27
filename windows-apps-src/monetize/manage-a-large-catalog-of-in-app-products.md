@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。
 title: アプリ内製品の大規模なカタログの管理
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, カタログ, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f57adf62939c28794e3ecdf6e59f2c4763de9c21
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581027"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710300"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>アプリ内製品の大規模なカタログの管理
 

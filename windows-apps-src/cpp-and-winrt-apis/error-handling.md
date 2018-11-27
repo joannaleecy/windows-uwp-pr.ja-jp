@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: このトピックでは、C++/WinRT でのプログラミング時にエラーを処理するための方法について説明します。
 title: C++/WinRT でのエラー処理
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, エラー, 処理, 例外
 ms.localizationpriority: medium
-ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6f7135e85ab63ddfe92bd0de8c656b58fb1a020
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570730"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710844"
 ---
 # <a name="error-handling-with-cwinrt"></a>C++/WinRT でのエラー処理
 
@@ -77,7 +75,7 @@ winrt::check_bool(::SetEvent(h.get()));
 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) に渡す値が false である場合、次の一連の処理が実行されます。
 
 - **winrt::check_bool** が [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 関数を呼び出す。
-- **winrt::throw_last_error**では、呼び出しスレッドの最終エラー コードの値を取得する[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)を呼び出し、 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)関数を呼び出します。
+- **winrt::throw_last_error**は、呼び出しスレッドの最終エラー コードの値を取得する[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)を呼び出し、 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)関数を呼び出します。
 - **winrt::throw_hresult** が、エラー コードを表す [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) オブジェクト (または標準のオブジェクト) を使用して例外をスローする。
 
 Windows API では、さまざまな戻り値の型を使用して実行時エラーをレポートするため、**winrt::check_bool** 以外にも、値をチェックして例外をスローするためのその他の便利なヘルパー関数がいくつかあります。

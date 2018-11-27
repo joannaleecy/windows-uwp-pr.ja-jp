@@ -4,17 +4,15 @@ description: 環境光は、シーンに一定のライティングを付加し�
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - 環境光
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579739"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707397"
 ---
 # <a name="ambient-lighting"></a>環境光
 
@@ -35,7 +33,7 @@ Ambient Lighting = Cₐ\*\[Gₐ + sum(Atten<sub>i</sub>\*Spot<sub>i</sub>\*L<sub
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | グローバル アンビエント色                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | i 番目のライトの減衰。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。 |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | i 番目のライトのスポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」をご覧ください。  |
-| sum               | 該当なし           | なし           | 環境光の合計                                                                                          |
+| sum               | なし           | なし           | 環境光の合計                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | i 番目のライトのアンビエント色                                                                              |
 
  
@@ -46,7 +44,7 @@ Cₐ の値は、次のいずれかになります。
 -   AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 で、2 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 2。
 -   マテリアルのアンビエント色。
 
-**注:**  AMBIENTMATERIALSOURCE オプションは、使用とし、頂点の色が指定されていないからマテリアルのアンビエント色を使用します。
+**注:** どちら AMBIENTMATERIALSOURCE オプションを使用するとし、頂点の色が指定されていないからマテリアルのアンビエント色を使用します。
 
  
 

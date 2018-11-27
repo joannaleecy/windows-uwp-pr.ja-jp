@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
-description: 特定の日付範囲やその他のオプション フィルターを月次請求のアプリの使用状況データを取得する、Microsoft Store 分析 API でこのメソッドを使います。
+description: 月次請求のアプリの使用状況データを取得する特定の日付範囲やその他のオプション フィルターを Microsoft Store 分析 API の以下のメソッドを使用します。
 title: アプリの使用状況 (月単位) の取得
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
-ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567187"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710701"
 ---
 # <a name="get-monthly-app-usage"></a>アプリの使用状況 (月単位) の取得
 
@@ -91,10 +89,10 @@ Authorization: Bearer <your access token>
 | deviceType                | string  | 次の文字列のいずれかを指定する使用状況が発生したデバイスの種類。<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**Tablet**</li><li>**IoT**</li><li>**Server**</li><li>**Holographic**</li><li>**Unknown**</li></ul>                                                                                                                           |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                                              |
 | monthlySessionCount       | long    | その月の間のユーザー セッションの数です。                                              |
-| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分。                               |
+| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了場所分。                               |
 | monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                                           |
 | monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了するデバイスの数。                                                        |
-| monthlyNewUsers           | long    | その月の初めてのアプリを使用したユーザーの数。                    |
+| monthlyNewUsers           | long    | 最初にその月のアプリを使用したユーザーの数。                    |
 | averageDailyActiveUsers   | double  | 毎日のように、アプリを使っているユーザーの平均数です。                             |
 | averageDailyActiveDevices | double  | 日常的にすべてのユーザーがアプリを操作するために使用するデバイスの平均数です。 |
 

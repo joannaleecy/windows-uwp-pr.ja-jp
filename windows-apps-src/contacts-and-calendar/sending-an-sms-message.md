@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 title: SMS メッセージの送信
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: 連絡先, SMS, 送信
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 06d84646685c6944ab0e816b42cf6fb2125f8a57
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 427eb1b895269727d82e42d5abc3ae1f1da1a35d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578215"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706088"
 ---
 # <a name="send-an-sms-message"></a>SMS メッセージの送信
 

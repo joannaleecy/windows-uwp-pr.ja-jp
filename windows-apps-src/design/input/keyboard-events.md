@@ -1,12 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: キーボード イベント
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: キーボード, ゲームパッド, リモート, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作, キーのリリース, キーの押下
-ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
 pm-contact: chigy
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9abc16a4992dedead598f96061811c82c5a5c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563561"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710077"
 ---
 # <a name="keyboard-events"></a>キーボード イベント
 
@@ -327,7 +325,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 特定のコントロールのキー イベント (たとえば [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView) など) をオーバーライドして、キーボードとゲームパッドを含むさまざまな入力デバイスに一貫したフォーカス ナビゲーションを提供できます。
 
-次の例では GridView にフォーカスを移動 KeyDown 動作をオーバーライドし、コントロールをサブクラス化コンテンツのいずれかの方向キーが押されたとき。
+次の例では、お任意の方向キーが押されたときにコンテンツ コントロールをサブクラス化し、GridView にフォーカスを移動 KeyDown 動作をオーバーライドします。
 
 ```csharp
 public class CustomGridView : GridView

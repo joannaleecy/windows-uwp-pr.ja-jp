@@ -4,17 +4,15 @@ description: 次のセクションでは、Direct3D がデータ型の間の変�
 ms.assetid: B50AB8DE-CAED-465B-B18C-81F3A984B8AC
 keywords:
 - データ型の変換
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 08c6dda8759a6e1452daf7cf0a3cd3e5db9ea1e6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555591"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710181"
 ---
 # <a name="data-type-conversion"></a>データ型の変換
 
@@ -236,7 +234,7 @@ Direct3D では、次の 2 つの状況で固定小数点整数表現を使用�
 <td align="left">固定小数点整数</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>浮動小数点型に変換する固定小数点表現があり、その合計ビット数は 24 ビット以下で、うち小数部は 23 ビット以下であるとします。 特定の固定小数点数 fxp を i.f の形式とします (i ビットの整数、f ビットの小数)。 浮動小数点型への変換は次に示す疑似コードのようになります。</p>
-<p>float result = (float) (fxp &gt; &gt; f) +///整数を抽出します。</p>
+<p>float result = (float) (fxp &gt; &gt; f) +///整数を抽出</p>
 ((float) (fxp &amp; (2<sup>f</sup> - 1))/(2<sup>f</sup>));小数を抽出します。</td>
 </tr>
 </tbody>

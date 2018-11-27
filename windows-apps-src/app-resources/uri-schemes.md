@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
 title: URI スキーム
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563672"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711252"
 ---
 # <a name="uri-schemes"></a>URI スキーム
 
@@ -253,7 +251,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 例と詳しい情報については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)」と「[言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)」をご覧ください。
 
-パス コンポーネント `ms-resource` では、一般的な URI と同様、大文字と小文字が区別されます。 ただし、基になる取得が[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) *ignoreCase*に設定を`true`します。
+パス コンポーネント `ms-resource` では、一般的な URI と同様、大文字と小文字が区別されます。 ただし、 [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)に*ignoreCase*に設定では、基になる取得`true`します。
 
 正規化された URI 形式では大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコードされます ("%" 記号の後に 2 桁の 16 進数表現)。 "?"、"#"、"/"、"*"、'”' (二重引用符) の各文字は、ファイル名やフォルダー名などのデータを示すパス内でパーセントエンコードする必要があります。 パーセントエンコードされたすべての文字は、取得前にデコードされます。 したがって、という名前のリソース ファイルから文字列リソースを取得する`Hello#World.resw`、この URI を使用します。
 

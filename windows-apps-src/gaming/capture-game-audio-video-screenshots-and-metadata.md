@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: ''
 description: UWP アプリでゲームのオーディオ、ビデオ、メタデータを記録する方法を示します。
 title: ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
-ms.openlocfilehash: 906422e8bcca90c35821ecac95c02279c65fa400
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569868"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708172"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
 この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。 

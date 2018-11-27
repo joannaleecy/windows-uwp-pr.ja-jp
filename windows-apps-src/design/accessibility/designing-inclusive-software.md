@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Windows 10 の包括性を備えたソフトウェアの設計
 label: Designing inclusive software
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f2a28d2a401ae132772c3948b3c4299184d4f858
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559889"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709702"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Windows 10 用の包括性を備えたソフトウェアの設計  
 

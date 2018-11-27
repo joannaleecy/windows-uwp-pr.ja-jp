@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: アプリからの 3D 印刷
 description: ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 3dprinting、3 d 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574405"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708512"
 ---
 # <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 

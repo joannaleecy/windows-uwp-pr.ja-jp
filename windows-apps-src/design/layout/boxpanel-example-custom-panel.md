@@ -1,5 +1,4 @@
 ---
-author: muhsinking
 Description: Learn to write code for a custom Panel class, implementing ArrangeOverride and MeasureOverride methods, and using the Children property.
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
@@ -9,17 +8,16 @@ ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d29b85c7ec3ec9ec0114a3a49dff834f859511e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 42b62e46c8adea771a1b7719d24e99f77f765039
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566098"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708765"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel、カスタム パネルの例
 

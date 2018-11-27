@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 title: クロススライドのガイドライン
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
-ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6a37af19c9e3e9beaebbadfcc71f3ad01e3087c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570089"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711062"
 ---
 # <a name="guidelines-for-cross-slide"></a>クロススライドのガイドライン
 
@@ -58,7 +56,7 @@ ms.locfileid: "7570089"
 
 クロススライドは、単一の方向にスクロールするリストやコレクションに使います。 詳しくは、「[ListView コントロールの追加](https://msdn.microsoft.com/library/windows/apps/hh465382)」をご覧ください。
 
-**注:** 画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すため、コンテンツ領域を web ブラウザーや電子ブック リーダーなどの 2 つの方向にパンする場合と長押時間制限のある対話式操作に使用する必要があります。
+**注:** 画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すため、コンテンツ領域を web ブラウザーや電子ブック リーダーなどの 2 つの方向にパンする場合と長時間制限のある対話式操作に使用する必要があります。
 
  
 

@@ -4,17 +4,15 @@ description: Microsoft Direct3D で使用されるグラフィックス用語を
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D グラフィックスの用語集
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e325494cefeab4cf3ed40939f5b24de5e921b68
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562147"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705905"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D グラフィックスの用語集
 

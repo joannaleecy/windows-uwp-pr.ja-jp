@@ -1,23 +1,21 @@
 ---
-author: Xansky
 description: デスクトップ アプリケーションのインサイト データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: デスクトップ アプリケーションのインサイト データの取得
-ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, インサイト
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bf3407e94270b8c067d6e4ab088d33990ae22abb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563955"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707976"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>デスクトップ アプリケーションのインサイト データの取得
 
-[Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)に追加したデスクトップ アプリケーションの正常性のメトリックに関連するデータについての洞察を Microsoft Store 分析 API でこのメソッドを使います。 このデータは、パートナー センターでのデスクトップ アプリケーションの[正常性レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)で利用可能なもできます。
+[Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)に追加したデスクトップ アプリケーションの正常性のメトリックに関連するデータについての洞察を Microsoft Store 分析 API でこのメソッドを使います。 このデータは、パートナー センターでデスクトップ アプリケーションの[正常性レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)で利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -77,9 +75,9 @@ Authorization: Bearer <your access token>
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | string | インサイト データを取得するデスクトップ アプリケーションの製品 ID です。     |
-| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
-| データ型     | string | この情報は、通知の一般的な分析領域を指定する文字列。 現時点では、このメソッドでは、**正常性**をのみがサポートされます。    |
+| applicationId       | string | インサイト データを取得したデスクトップ アプリケーションの製品 ID です。     |
+| insightDate                | string | 特定のメトリックの変更わかりました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
+| データ型     | string | この情報に通知する一般的な分析領域を指定する文字列。 現時点では、このメソッドでは、**正常性**をのみがサポートされます。    |
 | insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細情報。    |
 
 
@@ -87,14 +85,14 @@ Authorization: Bearer <your access token>
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | 現在の洞察または現在のディメンションを説明するメトリックを示す文字列です。 現時点では、このメソッドは、**ヒット数**の値のみをサポートします。  |
+| FactName           | string | 現在の洞察または現在のディメンションを説明するメトリックを示す文字列です。 現時点では、このメソッドでは、**ヒット数**の値のみがサポートされます。  |
 | SubDimensions         | array |  情報を得ることの 1 つのメトリックを記述する 1 つまたは複数のオブジェクトです。   |
 | PercentChange            | string |  メトリックは、全体の顧客ベースの間で変更された割合。  |
-| DimensionName           | string |  現在のディメンションで説明されているメトリックの名前です。 例には、**イベントの種類**、**市場**、 **DeviceType**、および**PackageVersion**が含まれます。   |
-| DimensionValue              | string | 現在の次元に記載されているメトリックの値。 たとえば、 **DimensionName**が**イベントの種類**である場合は、**クラッシュ**や**ハング**が**DimensionValue**することがあります。   |
+| DimensionName           | string |  現在のディメンションで説明されているメトリックの名前です。 例についてには、**イベントの種類**、**市場**、 **DeviceType**、および**PackageVersion**が含まれます。   |
+| DimensionValue              | string | 現在のディメンションに記載されているメトリックの値。 たとえば、 **DimensionName**が**イベントの種類**である場合は、**クラッシュ**や**ハング**が**DimensionValue**することがあります。   |
 | FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値。  |
 | Direction | string |  (**正**または**負**) の変更の方向です。   |
-| Date              | string |  現在の洞察または現在の次元に関連する変更を特定しました日です。   |
+| Date              | string |  現在の分析情報と現在のディメンションに関連する変更わかりました日です。   |
 
 ### <a name="response-example"></a>応答の例
 

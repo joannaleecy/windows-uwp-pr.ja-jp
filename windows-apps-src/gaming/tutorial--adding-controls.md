@@ -1,26 +1,24 @@
 ---
-author: abbycar
 title: コントロールの追加
 description: 次は、ゲーム サンプルで 3-D ゲームにムーブ/ルック コントロールを実装する方法と、タッチ コントローラー用、マウス コントローラー用、ゲーム コントローラー用の基本的なコントロールを開発する方法について説明します。
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
-ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, コントロール, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5873486bdd9c4adf4ea74b10a240617143ad23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553689"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711903"
 ---
 # <a name="add-controls"></a>コントロールの追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが windows 10 を持っている物理的なボタンのない、接続されている場合、Xbox コント ローラーでの PC とタブレット搭載または高性能マウス/ゲーム キーボード付属最新のデスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
+優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが windows 10 を搭載で物理的なボタンのない、PC、Xbox コント ローラーが接続されている、タブレット必要があります、または高性能マウス/ゲーム キーボード付属の最新デスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
 
 > [!NOTE]
 > コントロールの詳細ついては、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」と「[ゲームのタッチ コントロール](tutorial--adding-touch-controls-to-your-directx-game.md)」を参照してください。

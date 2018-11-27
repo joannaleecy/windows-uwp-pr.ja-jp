@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: UI スレッドの応答性の確保
 description: ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7884c7187bf127e15aaaed38a55e5f9827a3990d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8cd5df1d22189698f6544af4ab72c09425531602
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578797"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710017"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>UI スレッドの応答性の確保
 
@@ -24,7 +22,7 @@ ms.locfileid: "7578797"
 
 UI スレッドを使って、UI スレッドへのほぼすべての変更を行う必要があります。これには、UI の種類の作成、そのメンバーへのアクセスも含まれます。 UI はバックグラウンド スレッドから更新できませんが、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使ってこのスレッドにメッセージを投稿し、コードをそこで実行することができます。
 
-> **注:** 1 つの例外は、入力の処理方法に影響を与える UI の変更を適用できる別のレンダリング スレッドまたは基本的なレイアウト。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
+> **注:** 1 つの例外は、入力の処理方法に影響を与える UI の変更を適用できる別のレンダリング スレッドまたは基本的なレイアウトがあることです。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
 
 ## <a name="delay-element-instantiation"></a>要素のインスタンス化の遅延
 

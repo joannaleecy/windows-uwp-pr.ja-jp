@@ -4,17 +4,15 @@ description: ストリーミング リソースとして作成できる Direct3D
 ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
 keywords:
 - ストリーミング リソースの作成パラメーター
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ddb150e570e25af7162a50309b9b0fc30cedf60
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576286"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711182"
 ---
 # <a name="streaming-resource-creation-parameters"></a>ストリーミング リソースの作成パラメーター
 
@@ -39,7 +37,7 @@ Texture2D\[配列\] (Texture2D\[配列\] のバリアントである TextureCube
 <span id="Supported-Bind-Flags"></span><span id="supported-bind-flags"></span><span id="SUPPORTED-BIND-FLAGS"></span>**サポートされるバインド フラグ**  
 シェーダー リソース、レンダー ターゲット、深度ステンシル、または順序指定なしアクセスとしてバインド。
 
-**サポートされていません:** 定数バッファー、頂点バッファー (タイル化されたバッファーとしてのバインドする SRV/UAV/RTV がサポートされている)、インデックスとしてバインド バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーが開始します。
+**サポートされていません:** バインド定数バッファー、頂点バッファー (、SRV/UAV/RTV がサポートされているタイル化されたバッファーのバインド)、インデックス バッファー、ストリーム出力、デコーダー、またはビデオ エンコーダーが開始します。
 
 <span id="Supported-Formats"></span><span id="supported-formats"></span><span id="SUPPORTED-FORMATS"></span>**サポートされる形式**  
 タイル化されるかどうかに関わらず、特定の構成に利用できるすべての形式に、何らかの例外があります。

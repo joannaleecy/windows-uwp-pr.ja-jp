@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
 title: ラベル
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c17b2a539a01572bed984b86f72f5439896fac87
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576716"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710943"
 ---
 # <a name="labels"></a>ラベル
 

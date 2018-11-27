@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 description: どのような種類の入力でも、最善のエクスペリエンスが得られるように、そのような操作をコンテキスト コマンドを使って実装する方法。
 title: コンテキスト コマンドの実行
 ms.assetid: ''
 label: Contextual commanding in collections
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f06d7015fcb208b55fe0cb57b96eaecbc99317cc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568813"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711162"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>コレクションとリストのコンテキスト コマンドの実行
 

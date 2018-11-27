@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: コンポジションのビジュアル
 description: コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e43d5697a8fe4536e3574d93bda5836133ec8a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573737"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711242"
 ---
 # <a name="composition-visual"></a>コンポジションのビジュアル
 

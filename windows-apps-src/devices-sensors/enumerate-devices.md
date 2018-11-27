@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: デバイスの列挙
 description: 列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553436"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708712"
 ---
 # <a name="enumerate-devices"></a>デバイスの列挙
 
@@ -125,7 +123,7 @@ async void enumerateSnapshot(){
 
 バックグラウンド タスクによるデバイスの監視は、上で説明した [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成する方法によく似ています。 実際、最初に前のセクションの説明に従って通常の **DeviceWatcher** オブジェクトを作成する必要があります。 オブジェクトを作成したら、[**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start) の代わりに [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) を使います。 **GetBackgroundTrigger** を呼び出すときに目的の通知 (追加、削除、更新) を指定する必要があります。 更新または削除を要求する際には追加も要求する必要があります。 トリガーを登録すると、すぐにバックグラウンドで **DeviceWatcher** の実行が開始されます。 それ以降、条件に一致する新しい通知を受け取るたびに、バックグラウンド タスクがアプリケーションをトリガーして、前回のトリガー以降の最新の変更が提供されます。
 
-**重要な**初めて[**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)がアプリケーションをトリガーは、ウォッチャーが**EnumerationCompleted**状態に達したときになります。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
+**重要な**初めて[**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)に、アプリケーションがトリガーされるが、ウォッチャー **EnumerationCompleted**状態になったときになります。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
 
  
 

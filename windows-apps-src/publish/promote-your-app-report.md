@@ -1,19 +1,17 @@
 ---
-author: JnHs
 title: 広告キャンペーン レポート
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: パートナー センターでの広告キャンペーン] レポートでは、アプリ プロモーション広告キャンペーンの実施状況を確認できます。
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99c9af9fd3f8c9a94b79b3324fea6ebbd710c5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573661"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711462"
 ---
 # <a name="ad-campaign-report"></a>広告キャンペーン レポート
 
@@ -69,7 +67,7 @@ ms.locfileid: "7573661"
 2.  ユーザーは Microsoft アカウントにログインしている。
 3.  ユーザーは [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。
 
-この結果、アプリのインストールの追跡で、広告キャンペーンによって生じた実際のインストール数より少なく報告される可能性があります。 アプリのインストールの合計数を表示することに注意してください (キャンペーンによってし、それ以外の場合) パートナー センターでの[取得]](acquisitions-report.md)レポートでします。
+この結果、アプリのインストールの追跡で、広告キャンペーンによって生じた実際のインストール数より少なく報告される可能性があります。 アプリのインストールの合計数を表示することに注意してください (キャンペーンによってし、それ以外の場合) パートナー センターでの[取得]](acquisitions-report.md)レポートにします。
 
 
 ## <a name="account-billing-history"></a>アカウントの支払い履歴

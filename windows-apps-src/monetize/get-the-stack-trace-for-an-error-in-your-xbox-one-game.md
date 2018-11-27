@@ -1,22 +1,20 @@
 ---
-author: Xansky
 description: ゲーム、Xbox One でのエラーに関するスタック トレースを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: ゲームに Xbox One でのエラーに関するスタック トレースを取得します。
-ms.author: mhopkins
 ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd43305c54245c3281a0e840d3df4c5c87ff7ad8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557973"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705331"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>ゲームに Xbox One でのエラーに関するスタック トレースを取得します。
 
-Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するスタック トレースを取得する Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。
+Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するスタック トレースを取得する Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析パートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。
 
 以下のメソッドを使用する前に、まずは、スタック トレースを取得するエラーに関連付けられている CAB ファイルの ID を取得するのにことで、 [Xbox One ゲームのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用する必要があります。
 
@@ -50,13 +48,13 @@ Microsoft Store 分析 API ゲーム、Xbox One でのエラーに関するス�
 
 | パラメーター        | 型   |  説明      |  必須かどうか  |
 |---------------|--------|---------------|------|
-| applicationId | string | スタック トレースを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | スタック トレースを取得して、Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | cabId | string | スタック トレースを取得するエラーに関連付けられた CAB ファイルの一意の ID を取得します。 この ID を取得するには、[ゲームの Xbox One でのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)メソッドを使用して、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で**cabId**値を使用します。 |  はい  |
 
  
 ### <a name="request-example"></a>要求の例
 
-次の例では、以下のメソッドを使用してゲームの Xbox One のスタック トレースを取得する方法を示します。 *ApplicationId*値をゲームの製品 ID に置き換えます。
+次の例は、以下のメソッドを使用してゲームの Xbox One のスタック トレースを取得する方法を示しています。 *ApplicationId*値をゲームの製品 ID に置き換えます。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/stacktrace?applicationId=BRRT4NJ9B3D1&cabId=1336373323853 HTTP/1.1

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 移植プロセスを始めるには、Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーします。
 title: UWP プロジェクトに WindowsPhone Silverlight プロジェクトを移植します。
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d1224c1707d3e86c9ddd309ecf06bd0c0767fb83
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 55c4347b85d94d183d44599f7d34bc750d34d181
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575748"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711830"
 ---
 # <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>UWP プロジェクトに WindowsPhone Silverlight プロジェクトを移植します。
 
@@ -65,7 +63,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 -   プラットフォームを検出するための代替方法がない場合に役立つと考えられる同様の手法として、マークアップ ファイルや **ResourceDictionary** ファイル (またはこのファイルが保存されているフォルダー) に対して特殊な名前を設定する方法があります。この特殊な名前によって、アプリを特定のデバイス ファミリで実行する場合、実行時に自動的に読み込まれるようになります。 この手法については、「[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)」のケース スタディをご覧ください。
 -   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」に記載されている 3 番目の例をご覧ください。
 -   WindowsPhone Silverlight と windows 10 の両方をサポートする場合は、そのことができますプロジェクト間でソース コード ファイルを共有します。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。また、ソース コントロールに追加することを忘れないでください。 すべてではないにしても、大半のファイルが両プラットフォームで機能するように命令型ソース コードをファクタリングできる場合は、ファイルのコピーを 2 つ持つ必要はありません。 可能な場合は条件付きコンパイル ディレクティブ内、または必要であれば実行時条件付きで、ファイル内の任意のプラットフォーム固有ロジックを含めることができます。 次のセクションおよび「[C# プリプロセッサ ディレクティブ](http://msdn.microsoft.com/library/ed8yd1ha.aspx)」をご覧ください。
--   ソース コード レベルではなく、バイナリ レベルでの再利用については、windows 10 アプリ (.NET Core) 用 WindowsPhone Silverlight で利用できる .NET Api のサブセットだけでなく、サブセットをサポートするポータブル クラス ライブラリがあります。 ポータブル クラス ライブラリ アセンブリは、これらの .NET プラットフォームおよびその他のプラットフォームとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
+-   ソース コード レベルではなく、バイナリ レベルでの再利用については、windows 10 アプリ (.NET Core) 用 WindowsPhone Silverlight で利用できる .NET Api のサブセットおよびサブセットをサポートするポータブル クラス ライブラリがあります。 ポータブル クラス ライブラリ アセンブリは、これらの .NET プラットフォームおよびその他のプラットフォームとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>条件付きコンパイルとアダプティブ コード
 
@@ -79,7 +77,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 #endif // WINDOWS_UAP
 ```
 
-WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間で共有コードがあれば、このようなロジックを使ってソース コード既にがあります。
+WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間で共有コードがあれば、このようなロジックをソース コード既にがあります。
 
 ```csharp
 #if NETFX_CORE
@@ -89,7 +87,7 @@ WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間�
 #endif // NETFX_CORE
 ```
 
-その場合、さらに windows 10 をサポートするようになりましたし、行うことができますが、すぎます。
+その場合は、さらに windows 10 をサポートするようになりましたし、行うことができますが、すぎます。
 
 ```csharp
 #if WINDOWS_UAP
@@ -103,7 +101,7 @@ WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間�
 #endif // WINDOWS_UAP
 ```
 
-ハードウェアの "戻る" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 Windows 10 での戻るボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
+ハードウェアの "戻る" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 Windows 10 での [戻る] ボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
 
 ```csharp
        Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -118,7 +116,7 @@ WindowsPhone Silverlight アプリと Windows ランタイム 8.x アプリ間�
 
 ```
 
-ハードウェアの "カメラ" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 、Windows 10 では、ハードウェアの"カメラ"ボタンは、モバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 次のコードでは存在する機能のみを使うように注意しています。ただし、条件付きコンパイルとは別の方法でこれを実現しています。
+ハードウェアの "カメラ" ボタンの処理を Windows Phone に制限するために、条件付きコンパイルを使っている場合がありました。 、Windows 10 では、ハードウェア カメラ ボタンは、モバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 次のコードでは存在する機能のみを使うように注意しています。ただし、条件付きコンパイルとは別の方法でこれを実現しています。
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.

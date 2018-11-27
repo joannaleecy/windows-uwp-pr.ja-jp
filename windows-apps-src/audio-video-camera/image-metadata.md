@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、GeotagHelper ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。
 title: 画像のメタデータ
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a3e2f10174412b49ce60f3da6a4bb73b2efc4411
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560822"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711272"
 ---
 # <a name="image-metadata"></a>画像のメタデータ
 

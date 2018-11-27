@@ -4,17 +4,15 @@ description: カメラ空間の頂点は、オブジェクトの頂点をワー�
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
 keywords:
 - カメラの空間変換
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567171"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710386"
 ---
 # <a name="camera-space-transformations"></a>カメラの空間変換
 
@@ -47,10 +45,10 @@ L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の�
 
 | パラメーター       | 既定値 | 種類                                          | 説明                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
-| L<sub>dir</sub> | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
+| L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
 | V               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間での頂点の位置                           |
 | wvMatrix        | ID      | 浮動小数点値の 4 x 4 マトリックス           | ワールドとビューの変換を含む合成行列 |
-| N               | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
+| N               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
 | Lₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間でのライトの位置                            |
 | vMatrix         | ID      | 浮動小数点値の 4 x 4 マトリックス           | ビュー変換を含む行列                      |
 

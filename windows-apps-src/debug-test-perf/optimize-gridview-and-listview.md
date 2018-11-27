@@ -1,24 +1,22 @@
 ---
-author: jwmsft
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: ListView と GridView の UI の最適化
 description: ListView と GridView のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563425"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705678"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView と GridView の UI の最適化
 
 
-**注:** の詳細は、//build/ セッション[大幅に向上させるパフォーマンス大規模な大量のデータを GridView と ListView でユーザーが操作するとき](https://channel9.msdn.com/events/build/2013/3-158)を参照してください。
+**注:** についての詳細は、//build/ セッション[大幅に向上させるときのパフォーマンスをユーザーが GridView と ListView でデータの大規模な金額を操作](https://channel9.msdn.com/events/build/2013/3-158)します。
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。 データ仮想化の手法については、[ListView と GridView のデータ仮想化](listview-and-gridview-data-optimization.md)」をご覧ください。
 

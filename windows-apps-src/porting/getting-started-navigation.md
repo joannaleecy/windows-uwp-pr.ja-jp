@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: ナビゲーションの概要
 description: ナビゲーションの概要
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567796"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711212"
 ---
 # <a name="getting-started-navigation"></a>はじめに: ナビゲーション
 
@@ -66,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 それでは、プログラムを実行してみましょう。 [Go To Page] ボタンをタップすると、他のページに進みます。矢印スタイルの戻るボタンをタップすると、前のページに戻ります。
 
-ページのナビゲーションは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスによって管理されます。 IOS で**UINavigationController**クラスは、 **pushViewController**および**popViewController**メソッドを使用すると、UWP アプリの**フレーム**クラスは、[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)と[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)方法を提供します。 **Frame** クラスには、名前から推測されるとおりに動作する [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) というメソッドもあります。
+ページのナビゲーションは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスによって管理されます。 IOS で**UINavigationController**クラスは、 **pushViewController**および**popViewController**メソッドを使用するいると、UWP アプリの**フレーム**クラスは、[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)と[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)方法を提供します。 **Frame** クラスには、名前から推測されるとおりに動作する [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) というメソッドもあります。
 
 このチュートリアルでは、ナビゲーションを行うたびに BlankPage の新しいインスタンスが作成されます。 (前のインスタンスは自動的に*解放*されます)。 毎回新しいインスタンスが作成されることがないようにするには、BlankPage.xaml.cs ファイル内の BlankPage クラスのコンストラクターに以下のコードを追加します。 これにより、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 動作が有効になります。
 

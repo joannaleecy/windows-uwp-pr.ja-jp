@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Windows.Services.Store 名前空間を使って、現在のアプリまたはそのアドオンのストアに関連する製品情報を取得する方法について説明します。
 title: アプリとアドオンの製品情報の取得
-ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561607"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705395"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>アプリとアドオンの製品情報の取得
 
