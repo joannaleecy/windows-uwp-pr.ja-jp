@@ -1,21 +1,19 @@
 ---
-author: Jwmsft
 Description: The media player has customizable XAML transport controls to manage control of audio and video content.
 title: カスタム メディア トランスポート コントロールを作成する
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0486fbab829b7c4ce501f9ac20dac97e6abef595
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4960f6eb18fe4cffe34b8167a328521e9038c684
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570717"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716176"
 ---
 # <a name="create-custom-transport-controls"></a><span data-ttu-id="e61c9-103">カスタム トランスポート コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="e61c9-103">Create custom transport controls</span></span>
 

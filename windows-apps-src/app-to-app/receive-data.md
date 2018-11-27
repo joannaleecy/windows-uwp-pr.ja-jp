@@ -2,18 +2,16 @@
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。
 title: データの受信
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d64e4a2d4251aca6bbce39b5f24e3e5f35295b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563273"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716750"
 ---
 # <a name="receive-data"></a><span data-ttu-id="13f86-105">データの受信</span><span class="sxs-lookup"><span data-stu-id="13f86-105">Receive data</span></span>
 

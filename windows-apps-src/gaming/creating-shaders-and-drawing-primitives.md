@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: シェーダーの作成とプリミティブの描画
 description: ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、シェーダー、プリミティブ、DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558430"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717685"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a><span data-ttu-id="12105-104">シェーダーの作成とプリミティブの描画</span><span class="sxs-lookup"><span data-stu-id="12105-104">Create shaders and drawing primitives</span></span>
 

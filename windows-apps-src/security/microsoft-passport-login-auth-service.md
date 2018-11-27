@@ -2,18 +2,16 @@
 title: Windows Hello ログイン サービスの作成
 description: これは、Windows 10 UWP (ユニバーサル Windows プラットフォーム) アプリで従来のユーザー名とパスワードの認証システムの代わりに Windows Hello を使う方法に関する詳しいチュートリアルのパート 2 です。
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 839d44c992977fdad8863203b84116b2faeba76d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556396"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717091"
 ---
 # <a name="create-a-windows-hello-login-service"></a><span data-ttu-id="be358-104">Windows Hello ログイン サービスの作成</span><span class="sxs-lookup"><span data-stu-id="be358-104">Create a Windows Hello login service</span></span>
 

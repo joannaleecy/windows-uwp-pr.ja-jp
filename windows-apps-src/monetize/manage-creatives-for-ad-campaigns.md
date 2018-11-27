@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: プロモーション用の広告キャンペーンのクリエイティブを管理するには、Microsoft Store プロモーション API の以下のメソッドを使います。
 title: クリエイティブの管理
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: 97a7ac89585cbcf7a4609aee16978d36be027a24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572951"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718052"
 ---
 # <a name="manage-creatives"></a><span data-ttu-id="1f868-104">クリエイティブの管理</span><span class="sxs-lookup"><span data-stu-id="1f868-104">Manage creatives</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: Microsoft Store 申請 API で、パートナー センターに登録されているアプリのアプリ内購入に関する情報を取得するのに以下のメソッドを使用します。
 title: アプリのアドオンの入手
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567092"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718473"
 ---
 # <a name="get-add-ons-for-an-app"></a><span data-ttu-id="c9016-104">アプリのアドオンの入手</span><span class="sxs-lookup"><span data-stu-id="c9016-104">Get add-ons for an app</span></span>
 

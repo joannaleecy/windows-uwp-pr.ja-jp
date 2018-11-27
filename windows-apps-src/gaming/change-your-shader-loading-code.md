@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較
 description: 概念的には、Direct3D 11 のシェーダー パイプラインは OpenGL ES 2.0 のそれとよく似ています。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D, シェーダー パイプライン
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572338"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717910"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a><span data-ttu-id="7ed31-104">OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較</span><span class="sxs-lookup"><span data-stu-id="7ed31-104">Compare the OpenGL ES 2.0 shader pipeline to Direct3D</span></span>
 

@@ -4,17 +4,15 @@ description: Direct3D 11 では、テクスチャのブロック圧縮 (BC) サ�
 ms.assetid: 63506C46-BF14-464B-B20C-8B8F359E7AFE
 keywords:
 - テクスチャのブロック圧縮
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dec33768eff90b9bd35a3ea60f3158fce663345e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575224"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716277"
 ---
 # <a name="texture-block-compression"></a><span data-ttu-id="59375-104">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="59375-104">Texture block compression</span></span>
 

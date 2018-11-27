@@ -1,92 +1,90 @@
 ---
-author: laurenhughes
 title: IIS サーバーから UWP アプリをインストールする
-description: このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリのパッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。
-ms.author: cdon
+description: このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリ パッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング、関連セット, オプション パッケージ、IIS サーバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 2898a3450f75379492bae1ade5c85581cc8e5a4e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575636"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716952"
 ---
-# <a name="install-a-uwp-app-from-an-iis-server"></a><span data-ttu-id="41207-104">IIS サーバーから UWP アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="41207-104">Install a UWP app from an IIS server</span></span>
+# <a name="install-a-uwp-app-from-an-iis-server"></a><span data-ttu-id="f261c-104">IIS サーバーから UWP アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="f261c-104">Install a UWP app from an IIS server</span></span>
 
-<span data-ttu-id="41207-105">このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリのパッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="41207-105">This tutorial demonstrates how to set up an IIS server, verify that your web app can host app packages, and invoke and use App Installer effectively.</span></span>
+<span data-ttu-id="f261c-105">このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリ パッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="f261c-105">This tutorial demonstrates how to set up an IIS server, verify that your web app can host app packages, and invoke and use App Installer effectively.</span></span>
 
-<span data-ttu-id="41207-106">アプリ インストーラー アプリは、開発者と IT 担当者が、Windows 10 アプリを独自の Content Delivery Network (CDN) でホストすることで配布できるようにします。</span><span class="sxs-lookup"><span data-stu-id="41207-106">The App Installer app allows developers and IT Pros to distribute Windows 10 apps by hosting them on their own Content Delivery Network (CDN).</span></span> <span data-ttu-id="41207-107">これは Microsoft Store にアプリを公開しない、または公開する必要がないが、Windows 10 のパッケージおよび展開のプラットフォームを利用したい企業に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="41207-107">This is useful for enterprises that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.</span></span> 
+<span data-ttu-id="f261c-106">アプリ インストーラー アプリは、開発者と IT 担当者が、Windows 10 アプリを独自の Content Delivery Network (CDN) でホストすることで配布できるようにします。</span><span class="sxs-lookup"><span data-stu-id="f261c-106">The App Installer app allows developers and IT Pros to distribute Windows 10 apps by hosting them on their own Content Delivery Network (CDN).</span></span> <span data-ttu-id="f261c-107">これは Microsoft Store にアプリを公開しない、または公開する必要がないが、Windows 10 のパッケージおよび展開のプラットフォームを利用したい企業に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="f261c-107">This is useful for enterprises that don't want or need to publish their apps to the Microsoft Store, but still want to take advantage of the Windows 10 packaging and deployment platform.</span></span> 
 
-## <a name="setup"></a><span data-ttu-id="41207-108">セットアップ</span><span class="sxs-lookup"><span data-stu-id="41207-108">Setup</span></span>
+## <a name="setup"></a><span data-ttu-id="f261c-108">セットアップ</span><span class="sxs-lookup"><span data-stu-id="f261c-108">Setup</span></span>
 
-<span data-ttu-id="41207-109">正常に実行するこのチュートリアルで、以下が必要は。</span><span class="sxs-lookup"><span data-stu-id="41207-109">To successfully go through with this tutorial, you will need the following:</span></span>
+<span data-ttu-id="f261c-109">正常に実行するこのチュートリアルで、以下が必要は。</span><span class="sxs-lookup"><span data-stu-id="f261c-109">To successfully go through with this tutorial, you will need the following:</span></span>
 
-1. <span data-ttu-id="41207-110">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="41207-110">Visual Studio 2017</span></span>  
-2. <span data-ttu-id="41207-111">Web 開発ツールと IIS</span><span class="sxs-lookup"><span data-stu-id="41207-111">Web development tools and IIS</span></span> 
-3. <span data-ttu-id="41207-112">UWP アプリ パッケージ - 配布するアプリ パッケージ</span><span class="sxs-lookup"><span data-stu-id="41207-112">UWP app package - The app package that you will distribute</span></span>
+1. <span data-ttu-id="f261c-110">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="f261c-110">Visual Studio 2017</span></span>  
+2. <span data-ttu-id="f261c-111">Web 開発ツールと IIS</span><span class="sxs-lookup"><span data-stu-id="f261c-111">Web development tools and IIS</span></span> 
+3. <span data-ttu-id="f261c-112">UWP アプリ パッケージ - 配布するアプリ パッケージ</span><span class="sxs-lookup"><span data-stu-id="f261c-112">UWP app package - The app package that you will distribute</span></span>
 
-<span data-ttu-id="41207-113">オプション: GitHub での[スターター プロジェクト](https://github.com/AppInstaller/MySampleWebApp)</span><span class="sxs-lookup"><span data-stu-id="41207-113">Optional: [Starter Project](https://github.com/AppInstaller/MySampleWebApp) on GitHub.</span></span> <span data-ttu-id="41207-114">これは、アプリ パッケージと併用する必要はありませんをこの機能を使用する方法について説明したい場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="41207-114">This is helpful if you don't have app packages to work with, but would still like to learn how to use this feature.</span></span>
+<span data-ttu-id="f261c-113">オプション: GitHub での[スターター プロジェクト](https://github.com/AppInstaller/MySampleWebApp)</span><span class="sxs-lookup"><span data-stu-id="f261c-113">Optional: [Starter Project](https://github.com/AppInstaller/MySampleWebApp) on GitHub.</span></span> <span data-ttu-id="f261c-114">これは、アプリ パッケージと併用する必要はありませんをこの機能を使用する方法について説明したい場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="f261c-114">This is helpful if you don't have app packages to work with, but would still like to learn how to use this feature.</span></span>
 
-## <a name="step-1---install-iis-and-aspnet"></a><span data-ttu-id="41207-115">手順 1 - IIS と ASP.NET をインストールします。</span><span class="sxs-lookup"><span data-stu-id="41207-115">Step 1 - Install IIS and ASP.NET</span></span> 
+## <a name="step-1---install-iis-and-aspnet"></a><span data-ttu-id="f261c-115">手順 1 - IIS と ASP.NET をインストールします。</span><span class="sxs-lookup"><span data-stu-id="f261c-115">Step 1 - Install IIS and ASP.NET</span></span> 
 
-<span data-ttu-id="41207-116">[インターネット インフォメーション サービス](https://www.iis.net/)は、スタート メニューの [経由でインストールできる Windows 機能です。</span><span class="sxs-lookup"><span data-stu-id="41207-116">[Internet Information Services](https://www.iis.net/) is a Windows feature that can be installed via the Start menu.</span></span> <span data-ttu-id="41207-117">**[スタート] メニュー**検索の対象に**Windows の機能のオンまたはオフに**します。</span><span class="sxs-lookup"><span data-stu-id="41207-117">In **Start menu** search for **Turn Windows features on or off**.</span></span>
+<span data-ttu-id="f261c-116">[インターネット インフォメーション サービス](https://www.iis.net/)は、スタート メニューの [経由でインストールできる Windows 機能です。</span><span class="sxs-lookup"><span data-stu-id="f261c-116">[Internet Information Services](https://www.iis.net/) is a Windows feature that can be installed via the Start menu.</span></span> <span data-ttu-id="f261c-117">**[スタート] メニュー**検索の対象に**Windows の機能のオンまたはオフに**します。</span><span class="sxs-lookup"><span data-stu-id="f261c-117">In **Start menu** search for **Turn Windows features on or off**.</span></span>
 
-<span data-ttu-id="41207-118">検索し、**インターネット インフォメーション サービス**を IIS のインストールを選択します。</span><span class="sxs-lookup"><span data-stu-id="41207-118">Find and select **Internet Information Services** to install IIS.</span></span>
+<span data-ttu-id="f261c-118">検索し、**インターネット インフォメーション サービス**を IIS のインストールを選択します。</span><span class="sxs-lookup"><span data-stu-id="f261c-118">Find and select **Internet Information Services** to install IIS.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="41207-119">[インターネット インフォメーション サービスのすべてのチェック ボックスをオンにする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="41207-119">You don't need to select all the check boxes under Internet Information Services.</span></span> <span data-ttu-id="41207-120">**インターネット インフォメーション サービス**を確認するときに選択されたものだけで十分です。</span><span class="sxs-lookup"><span data-stu-id="41207-120">Only the ones selected when you check **Internet Information Services** are sufficient.</span></span>
+> <span data-ttu-id="f261c-119">[インターネット インフォメーション サービスのすべてのチェック ボックスをオンにする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="f261c-119">You don't need to select all the check boxes under Internet Information Services.</span></span> <span data-ttu-id="f261c-120">**インターネット インフォメーション サービス**をチェックすると、選択されているだけで十分です。</span><span class="sxs-lookup"><span data-stu-id="f261c-120">Only the ones selected when you check **Internet Information Services** are sufficient.</span></span>
 
-<span data-ttu-id="41207-121">また、ASP.NET 4.5 以上をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="41207-121">You will also need to install ASP.NET 4.5 or greater.</span></span> <span data-ttu-id="41207-122">インストールするには、検索**インターネット インフォメーション サービス] の [World Wide Web サービス アプリケーション開発機能]-> [** します。</span><span class="sxs-lookup"><span data-stu-id="41207-122">To install it, locate **Internet Information Services -> World Wide Web Services -> Application Development Features**.</span></span> <span data-ttu-id="41207-123">ASP.NET 4.5 以上 ASP.NET のバージョンを選択します。</span><span class="sxs-lookup"><span data-stu-id="41207-123">Select a version of ASP.NET that is greater than or equal to ASP.NET 4.5.</span></span>
+<span data-ttu-id="f261c-121">また、ASP.NET 4.5 以上をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f261c-121">You will also need to install ASP.NET 4.5 or greater.</span></span> <span data-ttu-id="f261c-122">インストールするには、検索**インターネット インフォメーション サービス] の [World Wide Web サービス アプリケーション開発機能]-> [** します。</span><span class="sxs-lookup"><span data-stu-id="f261c-122">To install it, locate **Internet Information Services -> World Wide Web Services -> Application Development Features**.</span></span> <span data-ttu-id="f261c-123">ASP.NET 4.5 以上 ASP.NET のバージョンを選択します。</span><span class="sxs-lookup"><span data-stu-id="f261c-123">Select a version of ASP.NET that is greater than or equal to ASP.NET 4.5.</span></span>
 
 ![ASP.NET をインストールします。](images/install-asp.png)
 
-## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a><span data-ttu-id="41207-125">手順 2 - Visual Studio 2017 をインストールし、Web 開発ツール</span><span class="sxs-lookup"><span data-stu-id="41207-125">Step 2 - Install Visual Studio 2017 and Web Development tools</span></span> 
+## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a><span data-ttu-id="f261c-125">手順 2 - Visual Studio 2017 をインストールし、Web 開発ツール</span><span class="sxs-lookup"><span data-stu-id="f261c-125">Step 2 - Install Visual Studio 2017 and Web Development tools</span></span> 
 
-<span data-ttu-id="41207-126">[Visual Studio 2017 のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を既にインストールしていない場合。</span><span class="sxs-lookup"><span data-stu-id="41207-126">[Install Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) if you have not already installed it.</span></span> <span data-ttu-id="41207-127">Visual Studio 2017 を既にある場合は、以下のワークロードがインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="41207-127">If you already have Visual Studio 2017, ensure that the following workloads are installed.</span></span> <span data-ttu-id="41207-128">ワークロードがない場合、インストールに存在する、([スタート] メニューからが見つかりません) Visual Studio インストーラーを使ってに従ってください。</span><span class="sxs-lookup"><span data-stu-id="41207-128">If the workloads are not present on your installation, follow along using the Visual Studio Installer (found from the Start menu).</span></span>  
+<span data-ttu-id="f261c-126">[Visual Studio 2017 のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を既にインストールしていない場合。</span><span class="sxs-lookup"><span data-stu-id="f261c-126">[Install Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio) if you have not already installed it.</span></span> <span data-ttu-id="f261c-127">Visual Studio 2017 を既にある場合は、以下のワークロードがインストールされていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="f261c-127">If you already have Visual Studio 2017, ensure that the following workloads are installed.</span></span> <span data-ttu-id="f261c-128">ワークロードがない場合に、インストールに存在する、([スタート] メニューからが見つかりません) Visual Studio インストーラーを使用してに従ってください。</span><span class="sxs-lookup"><span data-stu-id="f261c-128">If the workloads are not present on your installation, follow along using the Visual Studio Installer (found from the Start menu).</span></span>  
 
-<span data-ttu-id="41207-129">インストール中には、 **ASP.NET と Web 開発**と興味のあるその他のワークロードを選択します。</span><span class="sxs-lookup"><span data-stu-id="41207-129">During installation, select **ASP.NET and Web development** and any other workloads that you are interested in.</span></span> 
+<span data-ttu-id="f261c-129">インストール時に、 **ASP.NET と Web 開発**や興味のあるその他の任意のワークロードを選択します。</span><span class="sxs-lookup"><span data-stu-id="f261c-129">During installation, select **ASP.NET and Web development** and any other workloads that you are interested in.</span></span> 
 
-<span data-ttu-id="41207-130">インストールが完了したら、Visual Studio を起動し、新しいプロジェクトの作成 (**ファイル** -> **新しいプロジェクト**)。</span><span class="sxs-lookup"><span data-stu-id="41207-130">Once installation is complete, launch Visual Studio and create a new project (**File** -> **New Project**).</span></span>
+<span data-ttu-id="f261c-130">インストールが完了したら、Visual Studio を起動し、新しいプロジェクトの作成 (**ファイル** -> **新しいプロジェクト**)。</span><span class="sxs-lookup"><span data-stu-id="f261c-130">Once installation is complete, launch Visual Studio and create a new project (**File** -> **New Project**).</span></span>
 
-## <a name="step-3---build-a-web-app"></a><span data-ttu-id="41207-131">手順 3 - Web アプリを構築</span><span class="sxs-lookup"><span data-stu-id="41207-131">Step 3 - Build a Web App</span></span>
+## <a name="step-3---build-a-web-app"></a><span data-ttu-id="f261c-131">手順 3 - Web アプリを構築</span><span class="sxs-lookup"><span data-stu-id="f261c-131">Step 3 - Build a Web App</span></span>
 
-<span data-ttu-id="41207-132">**管理者**として Visual Studio 2017 を起動し、**空**のプロジェクト テンプレートを使って新しい**Visual c# Web アプリケーション**プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="41207-132">Launch Visual Studio 2017 as **Administrator** and create a new **Visual C# Web Application** project with an **empty** project template.</span></span> 
+<span data-ttu-id="f261c-132">**管理者**として Visual Studio 2017 を起動し、**空**のプロジェクト テンプレートを使って新しい**Visual c# Web アプリケーション**プロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="f261c-132">Launch Visual Studio 2017 as **Administrator** and create a new **Visual C# Web Application** project with an **empty** project template.</span></span> 
 
 ![新しいプロジェクト](images/sample-web-app.png)
 
-## <a name="step-4---configure-iis-with-our-web-app"></a><span data-ttu-id="41207-134">手順 4 -、Web アプリでの IIS の構成</span><span class="sxs-lookup"><span data-stu-id="41207-134">Step 4 - Configure IIS with our Web App</span></span> 
+## <a name="step-4---configure-iis-with-our-web-app"></a><span data-ttu-id="f261c-134">手順 4 -、Web アプリでの IIS の構成</span><span class="sxs-lookup"><span data-stu-id="f261c-134">Step 4 - Configure IIS with our Web App</span></span> 
 
-<span data-ttu-id="41207-135">ソリューション エクスプ ローラーからルート プロジェクトを右クリックし、**プロパティ**を選択します。</span><span class="sxs-lookup"><span data-stu-id="41207-135">From the Solution Explorer, right click on the root project and select **Properties**.</span></span>
+<span data-ttu-id="f261c-135">ソリューション エクスプ ローラーで、ルート プロジェクトを右クリックし、**プロパティ**を選択します。</span><span class="sxs-lookup"><span data-stu-id="f261c-135">From the Solution Explorer, right click on the root project and select **Properties**.</span></span>
 
-<span data-ttu-id="41207-136">Web アプリのプロパティでは、 **Web** ] タブを選択します。**サーバー**のセクションでは、ドロップダウン メニューから**ローカル IIS**を選択し、**仮想ディレクトリの作成**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="41207-136">In the web app properties, select the **Web** tab. In the **Servers** section, choose **Local IIS** from the drop down menu and click **Create Virtual Directory**.</span></span> 
+<span data-ttu-id="f261c-136">Web アプリのプロパティでは、 **Web** ] タブを選択します。**サーバー**のセクションでは、ドロップダウン メニューから**ローカル IIS**を選択し、**仮想ディレクトリの作成**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="f261c-136">In the web app properties, select the **Web** tab. In the **Servers** section, choose **Local IIS** from the drop down menu and click **Create Virtual Directory**.</span></span> 
 
 ![[web] タブ](images/web-tab.png)
 
-## <a name="step-5---add-an-app-package-to-a-web-application"></a><span data-ttu-id="41207-138">手順 5: web アプリケーションへのアプリ パッケージの追加</span><span class="sxs-lookup"><span data-stu-id="41207-138">Step 5 - Add an app package to a web application</span></span> 
+## <a name="step-5---add-an-app-package-to-a-web-application"></a><span data-ttu-id="f261c-138">手順 5: web アプリケーションに、アプリ パッケージを追加します。</span><span class="sxs-lookup"><span data-stu-id="f261c-138">Step 5 - Add an app package to a web application</span></span> 
 
-<span data-ttu-id="41207-139">Web アプリケーションに配布する予定のアプリ パッケージを追加します。</span><span class="sxs-lookup"><span data-stu-id="41207-139">Add the app package that you are going to distribute into the web application.</span></span> <span data-ttu-id="41207-140">利用可能なアプリ パッケージがない場合は、GitHub で提供されている[スターター プロジェクトのパッケージ](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)の一部をアプリ パッケージを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="41207-140">You can use the app package that is part of the provided [starter project packages](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) on GitHub if you don't have an app package available.</span></span> <span data-ttu-id="41207-141">パッケージの署名に使用された証明書 (MySampleApp.cer) も GitHub のサンプルに含まれています。</span><span class="sxs-lookup"><span data-stu-id="41207-141">The certificate (MySampleApp.cer) that the package was signed with is also with the sample on GitHub.</span></span> <span data-ttu-id="41207-142">アプリ (手順 9) をインストールする前に、デバイスにインストールされている証明書が必要です。</span><span class="sxs-lookup"><span data-stu-id="41207-142">You must have the certificate installed to your device prior to installing the app (Step 9).</span></span>
+<span data-ttu-id="f261c-139">Web アプリケーションに配布する予定のアプリ パッケージを追加します。</span><span class="sxs-lookup"><span data-stu-id="f261c-139">Add the app package that you are going to distribute into the web application.</span></span> <span data-ttu-id="f261c-140">利用可能なアプリ パッケージがあるない場合は、GitHub で提供されている[スターター プロジェクトのパッケージ](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)の一部であるアプリのパッケージを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="f261c-140">You can use the app package that is part of the provided [starter project packages](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages) on GitHub if you don't have an app package available.</span></span> <span data-ttu-id="f261c-141">パッケージの署名に使用された証明書 (MySampleApp.cer) も GitHub のサンプルに含まれています。</span><span class="sxs-lookup"><span data-stu-id="f261c-141">The certificate (MySampleApp.cer) that the package was signed with is also with the sample on GitHub.</span></span> <span data-ttu-id="f261c-142">アプリ (手順 9) をインストールする前に、デバイスにインストールされている証明書が必要です。</span><span class="sxs-lookup"><span data-stu-id="f261c-142">You must have the certificate installed to your device prior to installing the app (Step 9).</span></span>
 
-<span data-ttu-id="41207-143">スターター プロジェクトの web アプリケーションに新しいフォルダーと呼ばれる web アプリに追加された`packages`配布するアプリ パッケージが含まれています。</span><span class="sxs-lookup"><span data-stu-id="41207-143">In the starter project web application, a new folder was added to the web app called `packages` that contains the app packages to be distributed.</span></span> <span data-ttu-id="41207-144">Visual Studio で、フォルダーを作成するには、ソリューション エクスプ ローラーのルート右クリックし、**追加**] を選択 -> **新しいフォルダー**と名前を付けます`packages`します。</span><span class="sxs-lookup"><span data-stu-id="41207-144">To create the folder in Visual Studio, right click on the root of the Solution Explorer, select **Add** -> **New Folder** and name it `packages`.</span></span> <span data-ttu-id="41207-145">アプリ パッケージをフォルダーに追加するを右クリックして、`packages`フォルダーと [ **Add** -> 、アプリを参照し、**既存の項目**の場所をパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="41207-145">To add app packages to the folder, right click on the `packages` folder and select **Add** -> **Existing Item...** and browse to the app package location.</span></span> 
+<span data-ttu-id="f261c-143">スターター プロジェクトの web アプリケーションに新しいフォルダーと呼ばれる web アプリに追加された`packages`配布するアプリ パッケージが含まれています。</span><span class="sxs-lookup"><span data-stu-id="f261c-143">In the starter project web application, a new folder was added to the web app called `packages` that contains the app packages to be distributed.</span></span> <span data-ttu-id="f261c-144">Visual Studio で、フォルダーを作成するには、ソリューション エクスプ ローラーのルート右クリックし、**追加**] を選択 -> **新しいフォルダー**と名前を付けます`packages`します。</span><span class="sxs-lookup"><span data-stu-id="f261c-144">To create the folder in Visual Studio, right click on the root of the Solution Explorer, select **Add** -> **New Folder** and name it `packages`.</span></span> <span data-ttu-id="f261c-145">アプリ パッケージをフォルダーに追加するを右クリックして、`packages`フォルダーと [ **Add** -> 、アプリを参照し、**既存の項目**の場所をパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="f261c-145">To add app packages to the folder, right click on the `packages` folder and select **Add** -> **Existing Item...** and browse to the app package location.</span></span> 
 
 ![パッケージに追加します。](images/add-package.png)
 
-## <a name="step-6---create-a-web-page"></a><span data-ttu-id="41207-147">手順 6 - Web ページを作成します。</span><span class="sxs-lookup"><span data-stu-id="41207-147">Step 6 - Create a Web Page</span></span>
+## <a name="step-6---create-a-web-page"></a><span data-ttu-id="f261c-147">手順 6 - Web ページを作成します。</span><span class="sxs-lookup"><span data-stu-id="f261c-147">Step 6 - Create a Web Page</span></span>
 
-<span data-ttu-id="41207-148">このサンプルの web アプリでは、単純な HTML を使用します。</span><span class="sxs-lookup"><span data-stu-id="41207-148">This sample web app uses simple HTML.</span></span> <span data-ttu-id="41207-149">自由としてニーズごとに必要な web アプリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="41207-149">You are free to build your web app as required per your needs.</span></span> 
+<span data-ttu-id="f261c-148">このサンプルの web アプリでは、単純な HTML を使用します。</span><span class="sxs-lookup"><span data-stu-id="f261c-148">This sample web app uses simple HTML.</span></span> <span data-ttu-id="f261c-149">自由としてニーズごとに必要な web アプリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="f261c-149">You are free to build your web app as required per your needs.</span></span> 
 
-<span data-ttu-id="41207-150">ソリューション エクスプ ローラーのルート プロジェクトを右クリックしてで、**追加**の選択 -> **新しい項目**では、 **Web**セクションから新しい**HTML ページ**を追加します。</span><span class="sxs-lookup"><span data-stu-id="41207-150">Right click on the root project of the Solution explorer, select **Add** -> **New Item**, and add a new **HTML Page** from the **Web** section.</span></span>
+<span data-ttu-id="f261c-150">ソリューション エクスプ ローラーのルート プロジェクトを右クリックしてで、**追加**の選択 -> **新しい項目**では、 **Web** ] セクションから新しい**HTML ページ**を追加します。</span><span class="sxs-lookup"><span data-stu-id="f261c-150">Right click on the root project of the Solution explorer, select **Add** -> **New Item**, and add a new **HTML Page** from the **Web** section.</span></span>
 
-<span data-ttu-id="41207-151">HTML ページを作成した後は、ソリューション エクスプ ローラーでの HTML ページを右クリックし、**スタート**ページに設定します。</span><span class="sxs-lookup"><span data-stu-id="41207-151">Once the HTML page is created, right click on the HTML page in the Solution Explorer and select **Set As Start Page**.</span></span>  
+<span data-ttu-id="f261c-151">HTML ページを作成した後は、ソリューション エクスプ ローラーでの HTML ページを右クリックし、**スタート ページに設定**を選択します。</span><span class="sxs-lookup"><span data-stu-id="f261c-151">Once the HTML page is created, right click on the HTML page in the Solution Explorer and select **Set As Start Page**.</span></span>  
 
-<span data-ttu-id="41207-152">コード エディター ウィンドウで開く HTML ファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="41207-152">Double-click the HTML file to open it in the code editor window.</span></span> <span data-ttu-id="41207-153">このチュートリアルでは、Windows 10 アプリをインストールするには、正常にアプリ インストーラー アプリを起動する web ページで必須要素のみが使用されます。</span><span class="sxs-lookup"><span data-stu-id="41207-153">In this tutorial, only the elements in the required in the web page to invoke the App Installer app successfully to install a Windows 10 app will be used.</span></span> 
+<span data-ttu-id="f261c-152">コード エディター ウィンドウで開く HTML ファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="f261c-152">Double-click the HTML file to open it in the code editor window.</span></span> <span data-ttu-id="f261c-153">このチュートリアルでは、Windows 10 アプリをインストールするには、正常にアプリ インストーラー アプリを起動する web ページで必須要素のみが使用されます。</span><span class="sxs-lookup"><span data-stu-id="f261c-153">In this tutorial, only the elements in the required in the web page to invoke the App Installer app successfully to install a Windows 10 app will be used.</span></span> 
 
-<span data-ttu-id="41207-154">次の HTML コードは、web ページに含めます。</span><span class="sxs-lookup"><span data-stu-id="41207-154">Include the following HTML code in your web page.</span></span> <span data-ttu-id="41207-155">アプリ インストーラーを正常に実行するキーは、OS にアプリ インストーラーが登録されるカスタム スキームを使用する:`ms-appinstaller:?source=`します。</span><span class="sxs-lookup"><span data-stu-id="41207-155">The key to successfully invoking App Installer is to use the custom scheme that App Installer registers with the OS: `ms-appinstaller:?source=`.</span></span> <span data-ttu-id="41207-156">詳細については、次のコード例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="41207-156">See the code example below for more details.</span></span>
+<span data-ttu-id="f261c-154">次の HTML コードは、web ページに含めます。</span><span class="sxs-lookup"><span data-stu-id="f261c-154">Include the following HTML code in your web page.</span></span> <span data-ttu-id="f261c-155">アプリ インストーラーを正常に実行するキーが os にアプリ インストーラーを登録するカスタム スキームを使用する:`ms-appinstaller:?source=`します。</span><span class="sxs-lookup"><span data-stu-id="f261c-155">The key to successfully invoking App Installer is to use the custom scheme that App Installer registers with the OS: `ms-appinstaller:?source=`.</span></span> <span data-ttu-id="f261c-156">詳細については、次のコード例を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f261c-156">See the code example below for more details.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="41207-157">カスタム スキームが VS ソリューションの [web] タブで、プロジェクトの Url と一致した後に指定された URL パスを確認します。</span><span class="sxs-lookup"><span data-stu-id="41207-157">Ensure that the URL path specified after the custom scheme matches the Project Url in the web tab of your VS solution.</span></span>
+> <span data-ttu-id="f261c-157">カスタム スキームが、VS ソリューションの [web] タブで、プロジェクトの Url と一致した後に指定された URL パスを確認します。</span><span class="sxs-lookup"><span data-stu-id="f261c-157">Ensure that the URL path specified after the custom scheme matches the Project Url in the web tab of your VS solution.</span></span>
  
 ```HTML
 <html>
@@ -100,9 +98,9 @@ ms.locfileid: "7575636"
 </html>
 ```
 
-## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a><span data-ttu-id="41207-158">手順 7: アプリ パッケージの MIME タイプ用の web アプリを構成します。</span><span class="sxs-lookup"><span data-stu-id="41207-158">Step 7 - Configure the web app for app package MIME types</span></span>
+## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a><span data-ttu-id="f261c-158">手順 7: アプリ パッケージの MIME タイプ用の web アプリを構成します。</span><span class="sxs-lookup"><span data-stu-id="f261c-158">Step 7 - Configure the web app for app package MIME types</span></span>
 
-<span data-ttu-id="41207-159">ソリューション エクスプ ローラーから、 **Web.config**ファイルを開き、内で、次の行を追加、`<configuration>`要素です。</span><span class="sxs-lookup"><span data-stu-id="41207-159">Open the **Web.config** file from the solution explorer and add the following lines within the `<configuration>` element.</span></span> 
+<span data-ttu-id="f261c-159">ソリューション エクスプ ローラーから、 **Web.config**ファイルを開き、内で、次の行を追加、`<configuration>`要素です。</span><span class="sxs-lookup"><span data-stu-id="f261c-159">Open the **Web.config** file from the solution explorer and add the following lines within the `<configuration>` element.</span></span> 
 
 ```xml
 <system.webServer>
@@ -117,11 +115,11 @@ ms.locfileid: "7575636"
 </system.webServer>
 ```
 
-## <a name="step-8---add-loopback-exemption-for-app-installer"></a><span data-ttu-id="41207-160">手順 8 のアプリ インストーラーのループバックに関する除外を追加します。</span><span class="sxs-lookup"><span data-stu-id="41207-160">Step 8 - Add loopback exemption for App Installer</span></span>
+## <a name="step-8---add-loopback-exemption-for-app-installer"></a><span data-ttu-id="f261c-160">手順 8 のアプリ インストーラーのループバックに関する除外を追加します。</span><span class="sxs-lookup"><span data-stu-id="f261c-160">Step 8 - Add loopback exemption for App Installer</span></span>
 
-<span data-ttu-id="41207-161">ネットワークの分離のためアプリ インストーラーなどの UWP アプリは制限などの IP ループバック アドレスを使用するhttp://localhost/します。</span><span class="sxs-lookup"><span data-stu-id="41207-161">Due to network isolation, UWP apps like App Installer are restricted to use IP loopback addresses like http://localhost/.</span></span> <span data-ttu-id="41207-162">ローカル IIS サーバーを使用して、アプリ インストーラーがループバックの除外一覧に追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="41207-162">When using local IIS Server, App Installer must be added to the loopback exempt list.</span></span> 
+<span data-ttu-id="f261c-161">アプリ インストーラーなどの UWP アプリのような IP ループバック アドレスを使用する制限されますネットワークの分離が原因http://localhost/します。</span><span class="sxs-lookup"><span data-stu-id="f261c-161">Due to network isolation, UWP apps like App Installer are restricted to use IP loopback addresses like http://localhost/.</span></span> <span data-ttu-id="f261c-162">ローカル IIS サーバーを使用して、アプリ インストーラーがループバックの除外一覧に追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f261c-162">When using local IIS Server, App Installer must be added to the loopback exempt list.</span></span> 
 
-<span data-ttu-id="41207-163">これを行うには、**管理者**として**コマンド プロンプト**を開き、次を入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span><span class="sxs-lookup"><span data-stu-id="41207-163">To do this, open **Command Prompt** as an **Administrator** and enter the following: \`\`\`Command Line CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span></span>
+<span data-ttu-id="f261c-163">これを行うには、**管理者**として**コマンド プロンプト**を開き、次を入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span><span class="sxs-lookup"><span data-stu-id="f261c-163">To do this, open **Command Prompt** as an **Administrator** and enter the following: \`\`\`Command Line CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span></span>
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -129,11 +127,11 @@ To verify that the app is added to the exempt list, use the following command to
 CheckNetIsolation.exe LoopbackExempt -s
 ```
 
-<span data-ttu-id="41207-164">検索する必要があります`microsoft.desktopappinstaller_8wekyb3d8bbwe`一覧にします。</span><span class="sxs-lookup"><span data-stu-id="41207-164">You should find `microsoft.desktopappinstaller_8wekyb3d8bbwe` in the list.</span></span>
+<span data-ttu-id="f261c-164">検索する必要があります`microsoft.desktopappinstaller_8wekyb3d8bbwe`一覧にします。</span><span class="sxs-lookup"><span data-stu-id="f261c-164">You should find `microsoft.desktopappinstaller_8wekyb3d8bbwe` in the list.</span></span>
 
-<span data-ttu-id="41207-165">アプリ インストーラーでアプリのインストールのローカルの検証が完了したら後でこの手順で追加した、ループバックに関する除外を削除できます。</span><span class="sxs-lookup"><span data-stu-id="41207-165">Once the local validation of app installation via App Installer is complete, you can remove the loopback exemption that you added in this step by:</span></span>
+<span data-ttu-id="f261c-165">アプリ インストーラーでアプリのインストールのローカルの検証が完了したら後でこの手順で追加した、ループバックに関する除外を削除できます。</span><span class="sxs-lookup"><span data-stu-id="f261c-165">Once the local validation of app installation via App Installer is complete, you can remove the loopback exemption that you added in this step by:</span></span>
 
-<span data-ttu-id="41207-166">'' コマンド ライン CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span><span class="sxs-lookup"><span data-stu-id="41207-166">\`\`\`Command Line CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span></span>
+<span data-ttu-id="f261c-166">'' コマンド ライン CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span><span class="sxs-lookup"><span data-stu-id="f261c-166">\`\`\`Command Line CheckNetIsolation.exe LoopbackExempt -d -n=microsoft.desktopappinstaller_8wekyb3d8bbwe</span></span>
 ```
 
 ## Step 9 - Run the Web App 

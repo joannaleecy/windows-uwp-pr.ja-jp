@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows ドキュメントの最新情報、2017 年 7 月 - UWP アプリの開発
 description: 2017 年 7 月版の Windows 10 開発者向けドキュメントには、新しい機能、サンプル、開発者向けガイダンスが追加されました
 keywords: 最新情報, 更新, 機能, 開発者向けガイダンス, Windows 10
-ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dd00d1aba0e6a58cd2128c90b2c7f714d3f8f802
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579540"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717352"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a><span data-ttu-id="93926-104">Windows 開発者向けドキュメントの最新情報、2017 年 7 月</span><span class="sxs-lookup"><span data-stu-id="93926-104">What's New in the Windows Developer Docs in July 2017</span></span>
 

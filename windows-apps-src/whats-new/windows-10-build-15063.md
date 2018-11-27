@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 の開発者向け新着情報、ツール、機能
 description: Windows 10 ビルド 15063 と新しい開発者ツールでは、ユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1703, 3 月, 最新, 15063
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b853a4ac5afa03759094327c2b80d266751b8ec
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3791887baaefeca0052a10c60d4650d5623ba3fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573967"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717243"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-15063"></a><span data-ttu-id="38cc7-104">Windows 10 ビルド 15063 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="38cc7-104">What's New in Windows 10 for developers, build 15063</span></span>
 

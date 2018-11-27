@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Windows マップ アプリの起動
 description: アプリから Windows マップ アプリを起動する方法について説明します。
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 08fab2b312fa4ea79d03f350d62070e205d535f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567756"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717615"
 ---
 # <a name="launch-the-windows-maps-app"></a><span data-ttu-id="183c6-104">Windows マップ アプリの起動</span><span class="sxs-lookup"><span data-stu-id="183c6-104">Launch the Windows Maps app</span></span>
 

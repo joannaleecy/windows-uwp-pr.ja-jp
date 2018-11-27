@@ -1,19 +1,17 @@
 ---
 description: UWP アプリの開発方法を説明します。
 title: UWP アプリの開発
-author: mijacobs
 layout: LandingPage
 keywords: uwp アプリ 開発 スレッディング 非同期 プラットフォーム 概要 ポータル 開発 開発者
-ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558978"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718643"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>
@@ -227,7 +225,7 @@ ms.locfileid: "7558978"
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概要</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight から UWP へ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight UWP から</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows ランタイム 8.x から UWP へ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">デスクトップ ブリッジ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップと UWP でコードを共有する</a></p>

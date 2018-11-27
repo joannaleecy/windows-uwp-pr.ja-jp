@@ -4,17 +4,15 @@ description: 頂点シェーダー (VS) ステージでは、頂点を処理し�
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
 keywords:
 - 頂点シェーダー (VS) ステージ
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b9c67220c282ef1677559d586013c14366967a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca3b5e230270b46b7cb2709d4bfa06c4c51d0224
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581164"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718686"
 ---
 # <a name="vertex-shader-vs-stage"></a><span data-ttu-id="bdd47-105">頂点シェーダー (VS) ステージ</span><span class="sxs-lookup"><span data-stu-id="bdd47-105">Vertex Shader (VS) stage</span></span>
 

@@ -1,37 +1,35 @@
 ---
-author: Xansky
 description: UWP アプリでバナー広告を使用する方法について説明します。
 title: バナー広告
-ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 広告, 宣伝, AdControl, バナー広告
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a8a08f81328be5dcf28a3f73a592e88e1edd135
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564438"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716806"
 ---
-# <a name="banner-ads"></a><span data-ttu-id="92543-104">バナー広告</span><span class="sxs-lookup"><span data-stu-id="92543-104">Banner ads</span></span>
+# <a name="banner-ads"></a><span data-ttu-id="cd922-104">バナー広告</span><span class="sxs-lookup"><span data-stu-id="cd922-104">Banner ads</span></span>
 
-<span data-ttu-id="92543-105">このセクションの記事では、UWP アプリにバナー広告を追加する、Microsoft Advertising SDK で[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)クラスを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="92543-105">The articles in this section show how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class in the Microsoft Advertising SDK to add banner ads to your UWP app.</span></span>
+<span data-ttu-id="cd922-105">このセクションの記事では、UWP アプリにバナー広告を追加する、Microsoft Advertising SDK で[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)クラスを使用する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="cd922-105">The articles in this section show how to use the [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) class in the Microsoft Advertising SDK to add banner ads to your UWP app.</span></span>
 
-<span data-ttu-id="92543-106">バナー広告とは、プロモーション用のコンテンツを表示するアプリ内のページの四角形の部分を利用する静的な表示広告です。</span><span class="sxs-lookup"><span data-stu-id="92543-106">Banner ads are static display ads that utilize a rectangular portion of a page in your app to display promotional content.</span></span> <span data-ttu-id="92543-107">これらの広告は、一定間隔で自動的に更新できます。</span><span class="sxs-lookup"><span data-stu-id="92543-107">These ads can refresh automatically at regular intervals.</span></span> <span data-ttu-id="92543-108">これは、初めてアプリで広告を行う場合はここから始めることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="92543-108">This is a good place to start if you are new to advertising in your app.</span></span>
+<span data-ttu-id="cd922-106">バナー広告とは、プロモーション用のコンテンツを表示するアプリ内のページの四角形の部分を利用する静的な表示広告です。</span><span class="sxs-lookup"><span data-stu-id="cd922-106">Banner ads are static display ads that utilize a rectangular portion of a page in your app to display promotional content.</span></span> <span data-ttu-id="cd922-107">これらの広告は、一定間隔で自動的に更新できます。</span><span class="sxs-lookup"><span data-stu-id="cd922-107">These ads can refresh automatically at regular intervals.</span></span> <span data-ttu-id="cd922-108">これは、初めてアプリで広告を行う場合はここから始めることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="cd922-108">This is a good place to start if you are new to advertising in your app.</span></span>
 
 ![addreferences](images/banner-ad.png)
 
-## <a name="in-this-section"></a><span data-ttu-id="92543-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="92543-110">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="cd922-110">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="cd922-110">In this section</span></span>
 
-|  <span data-ttu-id="92543-111">トピック</span><span class="sxs-lookup"><span data-stu-id="92543-111">Topic</span></span>    | <span data-ttu-id="92543-112">説明</span><span class="sxs-lookup"><span data-stu-id="92543-112">Description</span></span> |               
+|  <span data-ttu-id="cd922-111">トピック</span><span class="sxs-lookup"><span data-stu-id="cd922-111">Topic</span></span>    | <span data-ttu-id="cd922-112">説明</span><span class="sxs-lookup"><span data-stu-id="cd922-112">Description</span></span> |               
 |----------|-------|
-| [<span data-ttu-id="92543-113">XAML および .NET の AdControl</span><span class="sxs-lookup"><span data-stu-id="92543-113">AdControl in XAML and .NET</span></span>](adcontrol-in-xaml-and--net.md)     | <span data-ttu-id="92543-114">XAML/.NET アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="92543-114">Add a banner ad in your XAML/.NET app.</span></span>        |
-| [<span data-ttu-id="92543-115">HTML 5 および Javascript の AdControl</span><span class="sxs-lookup"><span data-stu-id="92543-115">AdControl in HTML 5 and Javascript</span></span>](adcontrol-in-html-5-and-javascript.md)     | <span data-ttu-id="92543-116">HTML5/JavaScript アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="92543-116">Add a banner ad in your HTML5/JavaScript app.</span></span>        |
-| [<span data-ttu-id="92543-117">サポートされているバナー広告のサイズ</span><span class="sxs-lookup"><span data-stu-id="92543-117">Supported banner ad sizes</span></span>](supported-ad-sizes-for-banner-ads.md)    |  <span data-ttu-id="92543-118">UWP アプリでバナー広告でサポートされているサイズを確認します。</span><span class="sxs-lookup"><span data-stu-id="92543-118">Review the supported sizes for banner ads in UWP apps.</span></span>        |
+| [<span data-ttu-id="cd922-113">XAML および .NET の AdControl</span><span class="sxs-lookup"><span data-stu-id="cd922-113">AdControl in XAML and .NET</span></span>](adcontrol-in-xaml-and--net.md)     | <span data-ttu-id="cd922-114">XAML/.NET アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="cd922-114">Add a banner ad in your XAML/.NET app.</span></span>        |
+| [<span data-ttu-id="cd922-115">HTML 5 および Javascript の AdControl</span><span class="sxs-lookup"><span data-stu-id="cd922-115">AdControl in HTML 5 and Javascript</span></span>](adcontrol-in-html-5-and-javascript.md)     | <span data-ttu-id="cd922-116">HTML5/JavaScript アプリにバナー広告を追加します。</span><span class="sxs-lookup"><span data-stu-id="cd922-116">Add a banner ad in your HTML5/JavaScript app.</span></span>        |
+| [<span data-ttu-id="cd922-117">サポートされているバナー広告のサイズ</span><span class="sxs-lookup"><span data-stu-id="cd922-117">Supported banner ad sizes</span></span>](supported-ad-sizes-for-banner-ads.md)    |  <span data-ttu-id="cd922-118">UWP アプリでバナー広告でサポートされているサイズを確認します。</span><span class="sxs-lookup"><span data-stu-id="cd922-118">Review the supported sizes for banner ads in UWP apps.</span></span>        |
 
 
-## <a name="related-topics"></a><span data-ttu-id="92543-119">関連トピック</span><span class="sxs-lookup"><span data-stu-id="92543-119">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="cd922-119">関連トピック</span><span class="sxs-lookup"><span data-stu-id="cd922-119">Related topics</span></span>
 
-* [<span data-ttu-id="92543-120">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="92543-120">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
-* [<span data-ttu-id="92543-121">アプリの広告ユニットをセットアップする</span><span class="sxs-lookup"><span data-stu-id="92543-121">Set up ad units for your app</span></span>](set-up-ad-units-in-your-app.md)
+* [<span data-ttu-id="cd922-120">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="cd922-120">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
+* [<span data-ttu-id="cd922-121">アプリの広告ユニットをセットアップする</span><span class="sxs-lookup"><span data-stu-id="cd922-121">Set up ad units for your app</span></span>](set-up-ad-units-in-your-app.md)

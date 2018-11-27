@@ -4,17 +4,15 @@ description: Direct3D では、いくつかの浮動小数点表現がサポー�
 ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords:
 - 浮動小数点の規則
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bcfdb8f6258547ff210d80136a6113e04092aad2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553413"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717572"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span data-ttu-id="03ace-105"><span id="direct3dconcepts.floating-point_rules"></span>浮動小数点の規則</span><span class="sxs-lookup"><span data-stu-id="03ace-105"><span id="direct3dconcepts.floating-point_rules"></span>Floating-point rules</span></span>
 

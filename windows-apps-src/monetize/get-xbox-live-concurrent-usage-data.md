@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Xbox Live の同時使用状況データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: Xbox Live の同時使用状況データの取得
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 同時使用状況
 ms.localizationpriority: medium
-ms.openlocfilehash: 4506176dcd62a4699c57343c50dfc1b0e7a40b14
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 40d35b45065566db22aef791a94faa1cc0fa5c62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564006"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718122"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a><span data-ttu-id="5e342-104">Xbox Live の同時使用状況データの取得</span><span class="sxs-lookup"><span data-stu-id="5e342-104">Get Xbox Live concurrent usage data</span></span>
 

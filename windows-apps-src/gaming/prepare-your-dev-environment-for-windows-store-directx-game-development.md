@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ゲームのプロジェクト テンプレートとツール
 description: ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テンプレート, ツール, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571524"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717378"
 ---
 # <a name="project-templates-and-tools-for-games"></a><span data-ttu-id="dfcf7-104">ゲームのプロジェクト テンプレートとツール</span><span class="sxs-lookup"><span data-stu-id="dfcf7-104">Project templates and tools for games</span></span>
 
