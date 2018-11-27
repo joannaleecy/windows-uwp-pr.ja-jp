@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 Description: Lets the user set a value in a given range.
 title: スライダー
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b6512782d5fa3423dcfee98c98223d77995deeb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e13f28d9b82bca04d108bac818faa873567d77f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559184"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697928"
 ---
 # <a name="sliders"></a><span data-ttu-id="14eda-103">スライダー</span><span class="sxs-lookup"><span data-stu-id="14eda-103">Sliders</span></span>
 

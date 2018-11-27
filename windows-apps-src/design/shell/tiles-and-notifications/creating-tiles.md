@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
 title: タイル
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f4388b67335bce497987ab22e3b281cf86e029af
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575403"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703672"
 ---
 # <a name="tiles-for-uwp-apps"></a><span data-ttu-id="8363d-103">UWP アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="8363d-103">Tiles for UWP apps</span></span>
 

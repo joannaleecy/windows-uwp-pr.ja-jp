@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: バックグラウンド タスクによるシステム イベントへの応答
 description: SystemTrigger イベントに応答するバックグラウンド タスクを作成する方法について説明します。
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: f65751e894d45bab5b39382c7bec43d5f06f18b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c3773a486a1b7a29fc2a171c473edf38f6f3a7f1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557675"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699287"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a><span data-ttu-id="6c697-104">バックグラウンド タスクによるシステム イベントへの応答</span><span class="sxs-lookup"><span data-stu-id="6c697-104">Respond to system events with background tasks</span></span>
 

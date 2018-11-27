@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: Learn how to store and retrieve local, roaming, and temporary app data.
 title: 設定と他のアプリ データを保存して取得する
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af9aec9742a950f7bd35794ff4d10763e6c2c5c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a5e3a29a252b091b1e52dbea5fa7af5058488ed5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570950"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705217"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a><span data-ttu-id="1fc3c-103">設定と他のアプリ データを保存して取得する</span><span class="sxs-lookup"><span data-stu-id="1fc3c-103">Store and retrieve settings and other app data</span></span>
 

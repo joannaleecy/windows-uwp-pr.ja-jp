@@ -1,19 +1,17 @@
 ---
-author: jaster
 ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
 title: XAML でのビジュアル レイヤーの使用
 description: ビジュアル レイヤー API を既存の XAML コンテンツと組み合わせて使用し、高度なアニメーションや効果を作成する方法について説明します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f25cda10d5fde88bbe2cff75406cc0454780a5b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569878"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706192"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a><span data-ttu-id="eaece-104">XAML でのビジュアル レイヤーの使用</span><span class="sxs-lookup"><span data-stu-id="eaece-104">Using the Visual Layer with XAML</span></span>
 

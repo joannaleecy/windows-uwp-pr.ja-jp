@@ -1,19 +1,17 @@
 ---
-author: scottmill
 title: 相対マウス移動
 description: 相対マウス制御を使用して、ゲーム内でのマウス移動の間隔をピクセル デルタとして追跡します。相対マウス制御ではシステム カーソルが使われず、画面の絶対座標は返されません。
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, マウス, 入力
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575099"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697645"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a><span data-ttu-id="26595-104">相対マウス移動と CoreWindow</span><span class="sxs-lookup"><span data-stu-id="26595-104">Relative mouse movement and CoreWindow</span></span>
 

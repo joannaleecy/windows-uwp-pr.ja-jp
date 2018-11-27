@@ -1,20 +1,18 @@
 ---
-author: normesta
 Description: Run the Desktop Converter App to package a Windows desktop application (like Win32, WPF, and Windows Forms).
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter を使用してアプリをパッケージ化する (デスクトップ ブリッジ)
-ms.author: normesta
 ms.date: 08/21/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fc8c8e68e4b20498f84b4d20d84eca0dbfa7237
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565894"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699618"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a><span data-ttu-id="654da-103">Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="654da-103">Package a desktop application using the Desktop App Converter</span></span>
 

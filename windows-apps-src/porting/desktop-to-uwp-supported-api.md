@@ -1,20 +1,18 @@
 ---
-author: normesta
 Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 Search.Product: eADQiWindows 10XVcnh
 title: パッケージ デスクトップ アプリで利用可能な UWP API (デスクトップ ブリッジ)
-ms.author: normesta
 ms.date: 10/27/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
-ms.openlocfilehash: 086025e46e0e5293e44dda61896fa3fd4ae6115b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c89c3ace4b85852f93bb0d5edf4c520403f39b44
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578468"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699472"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a><span data-ttu-id="f3999-103">パッケージ デスクトップ アプリで使用可能な UWP Api</span><span class="sxs-lookup"><span data-stu-id="f3999-103">UWP APIs available to a packaged desktop app</span></span>
 

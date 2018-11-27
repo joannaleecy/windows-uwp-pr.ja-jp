@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: XAML マークアップで、プロパティに null 値を指定します。
 title: xNull マークアップ拡張
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b6033a01ee811977b3a37f820217005fdbd80616
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578036"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698910"
 ---
 # <a name="xnull-markup-extension"></a><span data-ttu-id="aced1-104">{x:Null} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="aced1-104">{x:Null} markup extension</span></span>
 

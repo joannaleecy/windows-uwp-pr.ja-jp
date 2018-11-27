@@ -4,17 +4,15 @@ description: ラスタライザーは、表示されないプリミティブを�
 ms.assetid: 7E80724B-5696-4A99-91AF-49744B5CD3A9
 keywords:
 - ラスタライザー (RS) ステージ
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d58a05a57fa833003b7c229db91473f6cde3d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 499d361bddbecef50ee8cdf44b56530a98cfccd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580937"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707557"
 ---
 # <a name="rasterizer-rs-stage"></a><span data-ttu-id="56ab7-104">ラスタライザー (RS) ステージ</span><span class="sxs-lookup"><span data-stu-id="56ab7-104">Rasterizer (RS) stage</span></span>
 

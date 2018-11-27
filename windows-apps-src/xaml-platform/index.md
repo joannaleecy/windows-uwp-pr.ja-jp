@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: このセクションのトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリ用の XAML フレームワークについて説明します。
 title: XAML プラットフォーム
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9bad5afabca3ef0b9c782446e581aea61fe4dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567558"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696813"
 ---
 # <a name="xaml-platform"></a><span data-ttu-id="8b83d-104">XAML プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="8b83d-104">XAML platform</span></span>
 

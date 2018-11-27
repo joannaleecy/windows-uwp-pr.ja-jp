@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: パートナー センター アカウントに登録されているアプリのパッケージ フライト情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
 title: アプリのパッケージ フライトの入手
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c7e7ab4db7690cee86b76e39caa30b3c0fb25618
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556821"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705816"
 ---
 # <a name="get-package-flights-for-an-app"></a><span data-ttu-id="9b6b2-104">アプリのパッケージ フライトの入手</span><span class="sxs-lookup"><span data-stu-id="9b6b2-104">Get package flights for an app</span></span>
 

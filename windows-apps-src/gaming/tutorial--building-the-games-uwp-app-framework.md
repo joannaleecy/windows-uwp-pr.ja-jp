@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: ゲームの UWP アプリ フレームワークの定義
 description: DirectX によるユニバーサル Windows プラットフォーム (UWP) ゲームのコーディングでは、まず、ゲーム オブジェクトと Windows との対話を可能にするフレームワークを構築します。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563032"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697305"
 ---
 #  <a name="define-the-uwp-app-framework"></a><span data-ttu-id="0a538-104">UWP アプリ フレームワークの定義</span><span class="sxs-lookup"><span data-stu-id="0a538-104">Define the UWP app framework</span></span>
 

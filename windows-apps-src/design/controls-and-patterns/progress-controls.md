@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 Description: A progress control provides feedback to the user that a long-running operation is underway.
 title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 352a4ce0bc37297fb4d53cb5246d18af88f749b7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c0340b4b990a2397e24ad83af0d9239fe00f6f21
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562651"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704699"
 ---
 # <a name="progress-controls"></a><span data-ttu-id="b9e83-103">プログレス コントロール</span><span class="sxs-lookup"><span data-stu-id="b9e83-103">Progress controls</span></span>
 

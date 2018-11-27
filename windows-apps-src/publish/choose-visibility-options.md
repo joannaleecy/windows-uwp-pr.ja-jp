@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 表示オプションを選択する
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
 ms.localizationpriority: medium
-ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a002037e85f179e4a2dbe3dfdaf4bc3579e110e4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553929"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699638"
 ---
 # <a name="choose-visibility-options"></a><span data-ttu-id="b01d0-103">表示オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="b01d0-103">Choose visibility options</span></span>
 

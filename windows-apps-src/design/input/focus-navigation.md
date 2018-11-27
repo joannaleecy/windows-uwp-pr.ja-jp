@@ -1,24 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 title: キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション
 Description: ''
 label: ''
 template: detail.hbs
 keywords: キーボード, ゲーム コントローラー, リモコン, ナビゲーション, 方向内部ナビゲーション, 方向領域, ナビゲーション方法, 入力, ユーザーの操作, アクセシビリティ, 操作性
 ms.date: 03/02/2018
-ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580602"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705064"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a><span data-ttu-id="44181-103">キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="44181-103">Focus navigation for keyboard, gamepad, remote control, and accessibility tools</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: 特定のユーザーが使用する権利を持っているサブスクリプションを取得するには、Microsoft Store 購入 API の以下のメソッドを使います。
 title: ユーザーのサブスクリプションの取得
-ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
-ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579450"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698191"
 ---
 # <a name="get-subscriptions-for-a-user"></a><span data-ttu-id="36382-104">ユーザーのサブスクリプションの取得</span><span class="sxs-lookup"><span data-stu-id="36382-104">Get subscriptions for a user</span></span>
 

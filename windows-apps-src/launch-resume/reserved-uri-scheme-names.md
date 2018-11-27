@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 予約済みのファイルと URI スキーム名
 description: ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 91732a6c4abc082283dc397fb87ad38d9de452b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554653"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704573"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a><span data-ttu-id="83c5f-104">予約済みのファイルと URI スキーム名</span><span class="sxs-lookup"><span data-stu-id="83c5f-104">Reserved file and URI scheme names</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: アプリ パッケージの要件
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580692"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704098"
 ---
 # <a name="app-package-requirements"></a><span data-ttu-id="b2e64-103">アプリ パッケージの要件</span><span class="sxs-lookup"><span data-stu-id="b2e64-103">App package requirements</span></span>
 

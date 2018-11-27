@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
 title: 商標と著作権の保護
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
-ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 68ef1a9372523ea489677620acc039642bfc64ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 658694e157a526f9090a5dbf387c80087ae1d4fc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572034"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701563"
 ---
 # <a name="trademark-and-copyright-protection"></a><span data-ttu-id="7135e-103">商標と著作権の保護</span><span class="sxs-lookup"><span data-stu-id="7135e-103">Trademark and copyright protection</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: パッケージ フライトの申請に関するパッケージのロールアウトを完了するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: フライトの申請に関するロールアウトを完了する
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, フライトの申請, 最終処理
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
-ms.openlocfilehash: 560576dd60c42f48c625b8c4c55a2b0c85ce511c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 29ac212e0549e754c0865aab5d497fa6d51f075f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578988"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702926"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a><span data-ttu-id="85228-104">フライトの申請に関するロールアウトを完了する</span><span class="sxs-lookup"><span data-stu-id="85228-104">Finalize the rollout for a flight submission</span></span>
 

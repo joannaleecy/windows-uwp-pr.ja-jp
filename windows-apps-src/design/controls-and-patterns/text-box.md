@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 Description: The TextBox control lets a user enter text into an app.
 title: テキスト ボックス
 label: Text box
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 43af446513ebb857858c21f0b2859af6febd82d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a40449b66d2187aacb60501240a0c38de2dc3abc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575538"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699545"
 ---
 # <a name="text-box"></a><span data-ttu-id="2bccd-103">テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="2bccd-103">Text box</span></span>
 

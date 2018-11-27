@@ -1,9 +1,7 @@
 ---
-author: jwmsft
 description: XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
 title: カスタム添付プロパティ
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
-ms.author: jimwalk
 ms.date: 07/18/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: de2d319f536b2c9d25d53e0b1ec2886831c66e12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573206"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702726"
 ---
 # <a name="custom-attached-properties"></a><span data-ttu-id="ff757-104">カスタム添付プロパティ</span><span class="sxs-lookup"><span data-stu-id="ff757-104">Custom attached properties</span></span>
 

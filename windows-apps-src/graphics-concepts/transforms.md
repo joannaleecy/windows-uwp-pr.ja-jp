@@ -4,17 +4,15 @@ description: Direct3D の処理の中で、ジオメトリを固定機能ジオ�
 ms.assetid: 0DF2A99A-335C-4D14-9720-6D7996DD635A
 keywords:
 - 変換
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eb129609b2fa8564b04d128c3cb06251b044360
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a29d42a9254ca47402a38ea71c8c1ef69de5c6c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572670"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708995"
 ---
 # <a name="transforms"></a><span data-ttu-id="54f70-104">変換</span><span class="sxs-lookup"><span data-stu-id="54f70-104">Transforms</span></span>
 

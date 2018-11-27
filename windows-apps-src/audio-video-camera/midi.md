@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。
 title: MIDI
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36d1e4afd620b871d4273699aea5c02cc9faec80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560394"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701504"
 ---
 # <a name="midi"></a><span data-ttu-id="c18d0-104">MIDI</span><span class="sxs-lookup"><span data-stu-id="c18d0-104">MIDI</span></span>
 

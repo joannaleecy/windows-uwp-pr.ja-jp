@@ -1,19 +1,17 @@
 ---
-author: JordanRh1
 title: GPIO、I2C、SPI へのユーザー モード アクセスの有効化
 description: このチュートリアルでは、Windows 10 で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP, ACPI, GPIO, I2C, SPI, UEFI
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: ead1ef6dc9c9a840b61b1d18567860d85201b26a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 442b3b9328212a5115384b5175b519b76286dd28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555413"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696926"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a><span data-ttu-id="bea62-104">GPIO、I2C、SPI へのユーザー モード アクセスの有効化</span><span class="sxs-lookup"><span data-stu-id="bea62-104">Enable usermode access to GPIO, I2C, and SPI</span></span>
 

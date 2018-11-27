@@ -4,17 +4,15 @@ description: グローバル照明の計算式に含まれるディフューズ 
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
 keywords:
 - 減衰とスポットライト係数
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581718"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701905"
 ---
 # <a name="attenuation-and-spotlight-factor"></a><span data-ttu-id="84fe6-104">減衰とスポットライト係数</span><span class="sxs-lookup"><span data-stu-id="84fe6-104">Attenuation and spotlight factor</span></span>
 

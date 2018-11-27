@@ -1,8 +1,6 @@
 ---
-author: daneuber
 title: XAML の照明
 description: Light オブジェクトは、動的な照明と反射をシミュレートするために SceneLightingEffect と共に使用されます。
-ms.author: jimwalk
 ms.date: 06/28/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -12,12 +10,12 @@ dev_langs:
 - vb
 - cppcx
 - cppwinrt
-ms.openlocfilehash: fae2a222ae20c64e8e8adb2abfa973d62216239e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580247"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700500"
 ---
 # <a name="xaml-lighting"></a><span data-ttu-id="544fc-104">XAML の照明</span><span class="sxs-lookup"><span data-stu-id="544fc-104">XAML lighting</span></span>
 

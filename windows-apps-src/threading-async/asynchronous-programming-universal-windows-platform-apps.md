@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: 非同期プログラミング
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) とは、c#、Microsoft Visual Basic.NET、C++、および JavaScript での形式での非同期プログラミングについて説明します。
-ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10、UWP、非同期
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d91fc7166812f53e8b2238b1a47c8aeb9c425f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560331"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699737"
 ---
 # <a name="asynchronous-programming"></a><span data-ttu-id="52e3d-104">非同期プログラミング</span><span class="sxs-lookup"><span data-stu-id="52e3d-104">Asynchronous programming</span></span>
 <span data-ttu-id="52e3d-105">このトピックでは、ユニバーサル Windows プラットフォーム (UWP) とは、c#、Microsoft Visual Basic.NET、C++、および JavaScript での形式での非同期プログラミングについて説明します。</span><span class="sxs-lookup"><span data-stu-id="52e3d-105">This topic describes asynchronous programming in the Universal Windows Platform (UWP) and its representation in C#, Microsoft Visual Basic.NET, C++, and JavaScript.</span></span>

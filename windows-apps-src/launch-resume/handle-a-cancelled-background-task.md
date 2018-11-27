@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 取り消されたバックグラウンド タスクの処理
 description: 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581668"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701849"
 ---
 # <a name="handle-a-cancelled-background-task"></a><span data-ttu-id="3ec31-104">取り消されたバックグラウンド タスクの処理</span><span class="sxs-lookup"><span data-stu-id="3ec31-104">Handle a cancelled background task</span></span>
 

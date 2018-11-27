@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 自動再生による自動起動
 description: 自動再生を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558839"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699099"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span data-ttu-id="5dc22-105"><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動</span><span class="sxs-lookup"><span data-stu-id="5dc22-105"><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay</span></span>
 

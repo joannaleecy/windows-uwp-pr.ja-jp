@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: チュートリアル -- Direct3D 11 のシャドウ ボリュームの深度バッファー
 description: このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, シャドウ ボリューム, 深度バッファー, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2feecb3080efefb2f9625fd8b66c5b722ad02a45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562305"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697265"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a><span data-ttu-id="79c21-104">チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装</span><span class="sxs-lookup"><span data-stu-id="79c21-104">Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11</span></span>
 

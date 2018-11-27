@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: LOB アプリの企業への配布
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: d90a3b3b0eb216dbc07bbc331d7d461ed0f825c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eecd7a3ff86de5db9693bf6ce597e2b1e00bb4ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554574"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705004"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a><span data-ttu-id="e395a-103">LOB アプリの企業への配布</span><span class="sxs-lookup"><span data-stu-id="e395a-103">Distribute LOB apps to enterprises</span></span>
 

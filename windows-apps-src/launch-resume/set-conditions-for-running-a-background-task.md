@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: バックグラウンド タスクを実行するための条件の設定
 description: バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560706"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698900"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a><span data-ttu-id="0de02-104">バックグラウンド タスクを実行するための条件の設定</span><span class="sxs-lookup"><span data-stu-id="0de02-104">Set conditions for running a background task</span></span>
 

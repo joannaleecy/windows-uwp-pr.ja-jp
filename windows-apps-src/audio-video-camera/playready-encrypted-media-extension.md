@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
 title: PlayReady の Encrypted Media Extension
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 35f76b933807ce2dcf582ccbc2d3ac432195211c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574578"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701441"
 ---
 # <a name="playready-encrypted-media-extension"></a><span data-ttu-id="f6cb0-104">PlayReady の Encrypted Media Extension</span><span class="sxs-lookup"><span data-stu-id="f6cb0-104">PlayReady Encrypted Media Extension</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: DirectX ユニバーサル Windows プラットフォーム (UWP) ゲームの作成
 description: この一連のチュートリアルでは、DirectX と C++ を使って基本的なユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法を説明します。
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX ゲームのサンプル, ゲームのサンプル, ユニバーサル Windows プラットフォーム (UWP), Direct3D 11 ゲーム
-ms.author: joanlee
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c589eeb71d93619b92254207ddc5eb1b1494a55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575452"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702510"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a><span data-ttu-id="73e83-104">DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成</span><span class="sxs-lookup"><span data-stu-id="73e83-104">Create a simple Universal Windows Platform (UWP) game with DirectX</span></span>
 

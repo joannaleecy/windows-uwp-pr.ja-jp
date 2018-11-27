@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to pin a secondary tile from your UWP app.
 title: セカンダリ タイルをピン留めする
 label: Pin secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ピン留め、クイック スタート、コード サンプル、例
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fcea65a43ec3ca3d7e29056bec129e0f03d4229
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6fda249e38ddc9126816b0ea479ec0339fc6202b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573588"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703742"
 ---
 # <a name="pin-secondary-tiles"></a><span data-ttu-id="69431-103">セカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="69431-103">Pin secondary tiles</span></span>
 

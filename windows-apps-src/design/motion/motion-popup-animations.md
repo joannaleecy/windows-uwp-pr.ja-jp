@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
 title: UWP アプリでのポップアップ UI のアニメーション
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a304df30986c904f19cc2401c9a1fb468514f6f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d79c369e14236b827bdc18aba6c74349528728b3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570242"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703549"
 ---
 # <a name="pop-up-ui-animations"></a><span data-ttu-id="313af-103">ポップアップ UI のアニメーション</span><span class="sxs-lookup"><span data-stu-id="313af-103">Pop-up UI animations</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: パートナー センターへの新規または更新されたアプリの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 title: アプリの申請のコミット
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請のコミット
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582079"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697365"
 ---
 # <a name="commit-an-app-submission"></a><span data-ttu-id="6c586-104">アプリの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="6c586-104">Commit an app submission</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、HttpClient とその他の Windows.Web.Http 名前空間 API を使います。
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c874c690826dfa74b8dcb2312204cd549db3db2b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567942"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703186"
 ---
 # <a name="httpclient"></a><span data-ttu-id="0ccc5-104">HttpClient</span><span class="sxs-lookup"><span data-stu-id="0ccc5-104">HttpClient</span></span>
 

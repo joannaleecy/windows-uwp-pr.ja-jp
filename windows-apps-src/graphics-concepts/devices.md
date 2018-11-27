@@ -4,17 +4,15 @@ description: Direct3D デバイスは、Direct3D のレンダリング コンポ
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords:
 - デバイス
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c35af3dd1f8826fbd61268c5c47cef9d77146a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e49a9dcaa2638065946f01797cbea084a1432a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570819"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705523"
 ---
 # <a name="devices"></a><span data-ttu-id="c07d2-105">デバイス</span><span class="sxs-lookup"><span data-stu-id="c07d2-105">Devices</span></span>
 

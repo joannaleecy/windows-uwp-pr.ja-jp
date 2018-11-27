@@ -1,11 +1,9 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 title: アクセス キーの設計ガイドライン
 label: Access keys design guidelines
 keywords: キーボード, アクセス キー, keytip, キーのヒント, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作
 template: detail.hbs
-ms.author: kbridge
 ms.date: 06/08/2018
 ms.topic: article
 pm-contact: miguelrb
@@ -13,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 844e5d8e9442192d75f2aac07a7a2f82dd0196f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd71e4715b26f9e06326690d3642b4d19e23d292
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568191"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699952"
 ---
 # <a name="access-keys"></a><span data-ttu-id="dec0b-103">アクセス キー</span><span class="sxs-lookup"><span data-stu-id="dec0b-103">Access keys</span></span>
 

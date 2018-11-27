@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
 title: UWP アプリでのモーションとアニメーション
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7175d456fb4bed912d5a05494bb2682ecc3801fd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568171"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708856"
 ---
 # <a name="motion-for-uwp-apps"></a><span data-ttu-id="4d801-103">UWP アプリのモーション</span><span class="sxs-lookup"><span data-stu-id="4d801-103">Motion for UWP apps</span></span>
 

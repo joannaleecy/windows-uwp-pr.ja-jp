@@ -4,17 +4,15 @@ description: 頂点バッファーには、頂点のリストのデータが保�
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
 - 頂点バッファー ビュー (VBV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7956c7a03256da04e98a5b8f9a33951d7e0216d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577888"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704210"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a><span data-ttu-id="234fc-104">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="234fc-104">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span>
 

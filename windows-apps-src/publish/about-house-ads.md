@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
 title: 自社広告について
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 93c8a9ad51baab0edf96d08682aefce99ba04fd5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556193"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703902"
 ---
 # <a name="about-house-ads"></a><span data-ttu-id="c99d3-103">自社広告について</span><span class="sxs-lookup"><span data-stu-id="c99d3-103">About house ads</span></span>
 

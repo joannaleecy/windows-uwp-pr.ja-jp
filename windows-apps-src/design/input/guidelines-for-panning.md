@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
 title: パン
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b1711c29486b0a8d50c2dbed4c0240886febc084
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562854"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699684"
 ---
 # <a name="guidelines-for-panning"></a><span data-ttu-id="89685-103">パンのガイドライン</span><span class="sxs-lookup"><span data-stu-id="89685-103">Guidelines for panning</span></span>
 

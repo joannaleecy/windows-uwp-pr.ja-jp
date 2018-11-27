@@ -1,21 +1,19 @@
 ---
-author: Jwmsft
 Description: Learn how to use page transitions in your UWP apps.
 title: UWP アプリのページ切り替え効果
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 04/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dde68411062d53c865b43df8a2b6d4904b9440ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554373"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702370"
 ---
 # <a name="page-transitions"></a><span data-ttu-id="9be0d-103">ページ切り替え効果</span><span class="sxs-lookup"><span data-stu-id="9be0d-103">Page transitions</span></span>
 

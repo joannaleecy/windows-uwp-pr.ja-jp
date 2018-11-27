@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Microsoft Store のキーを更新するには、以下のメソッドを使います。
 title: Microsoft Store ID キーの更新
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 95ee20628108bd3ea8eb9e48955a356410e91b1b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f1c6248b2d87a68b77cad6f1bdc7cce0fae587e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559859"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703376"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a><span data-ttu-id="8f3e7-104">Microsoft Store ID キーの更新</span><span class="sxs-lookup"><span data-stu-id="8f3e7-104">Renew a Microsoft Store ID key</span></span>
 

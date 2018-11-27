@@ -4,17 +4,15 @@ description: Direct3D では、頂点は位置と方向を表します。 プリ
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - ベクター、頂点、四元数
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2373d18b51015652bc1ef3035402e1da95a54abf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563496"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704350"
 ---
 # <a name="vectors-vertices-and-quaternions"></a><span data-ttu-id="f1bca-105">ベクター、頂点、四元数</span><span class="sxs-lookup"><span data-stu-id="f1bca-105">Vectors, vertices, and quaternions</span></span>
 

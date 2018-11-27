@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: ユーザーのサブスクリプションの請求状態を変更するには、Microsoft Store 購入 API の以下のメソッドを使います。
 title: ユーザーのサブスクリプションに関する請求の状態を変更する
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, サブスクリプション
 ms.localizationpriority: medium
-ms.openlocfilehash: 8daec4928867c92734fc3f6322836eb923aeda21
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e4cf27331a218c0c0ef06ee1a80c141b889504a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567889"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699965"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a><span data-ttu-id="70921-104">ユーザーのサブスクリプションに関する請求の状態を変更する</span><span class="sxs-lookup"><span data-stu-id="70921-104">Change the billing state of a subscription for a user</span></span>
 

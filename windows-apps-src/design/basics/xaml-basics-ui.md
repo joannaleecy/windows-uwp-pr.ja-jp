@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: ユーザー インターフェイスの作成のチュートリアル
 description: この記事では、XAML のユーザー インターフェイス作成の基本について説明します。
 keywords: XAML, UWP, 概要
-ms.author: jimwalk
 ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d54df07cd5f2ccc32098b17fd7c656900cba978
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571627"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700960"
 ---
 # <a name="tutorial-create-a-user-interface"></a><span data-ttu-id="4c8a1-104">チュートリアル: ユーザー インターフェイスの作成</span><span class="sxs-lookup"><span data-stu-id="4c8a1-104">Tutorial: Create a user interface</span></span>
 

@@ -4,17 +4,15 @@ description: このセクションでは、リソースのストリーミング�
 ms.assetid: 145EB4A3-3910-4126-BC7E-A4CF53E2A098
 keywords:
 - ストリーミング リソースに利用可能なアドレス空間
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b6e3f8080d33f9aadf22d5d5b1ebdd9a4739e16
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 35a591d805870df97ee03169b20e664316e094a7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576060"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697535"
 ---
 # <a name="address-space-available-for-streaming-resources"></a><span data-ttu-id="f8f90-104">ストリーミング リソースに利用可能なアドレス空間</span><span class="sxs-lookup"><span data-stu-id="f8f90-104">Address space available for streaming resources</span></span>
 

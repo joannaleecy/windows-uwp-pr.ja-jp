@@ -1,20 +1,18 @@
 ---
-author: Xansky
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Microsoft Store 分析 API を使って、自分または自分の組織に登録されているアプリの分析データをプログラムによって取得 ' Windows パートナー センター アカウント。
 title: ストア サービスを使った分析データへのアクセス
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aaf1675d102a714b32d2e59483f6c10ad704284f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6bd559a630c1299c28ff135692ee15e9443180c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561367"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701716"
 ---
 # <a name="access-analytics-data-using-store-services"></a><span data-ttu-id="627c1-104">ストア サービスを使った分析データへのアクセス</span><span class="sxs-lookup"><span data-stu-id="627c1-104">Access analytics data using Store services</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: URI のアクティブ化の処理
 description: URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 808242fd7e179c225b3119dad146e7f05d72ffd4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566503"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700307"
 ---
 # <a name="handle-uri-activation"></a><span data-ttu-id="bff5e-104">URI のアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="bff5e-104">Handle URI activation</span></span>
 

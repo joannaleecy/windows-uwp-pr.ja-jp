@@ -1,20 +1,18 @@
 ---
-author: manoskow
 Description: Learn how to create effective and user-focused notifications that make your users productive and happy.
 title: トーストの UX ガイダンス
 label: Toast UX Guidance
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション, グループ、ux, ux ガイダンスについては、ガイダンス、アクション、トースト、アクション センター、noninterruptive、効果的な通知、侵入通知、実践的な管理、整理
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d9c33a4fa4b9c408927292b7def38f42d53b816
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 17861760ea5640eca01d3e69c1ed36a023c8f9d3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559575"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702350"
 ---
 # <a name="toast-notification-ux-guidance"></a><span data-ttu-id="28cac-103">トースト通知の UX ガイダンス</span><span class="sxs-lookup"><span data-stu-id="28cac-103">Toast Notification UX Guidance</span></span>
 <span data-ttu-id="28cac-104">通知は、最新の寿命に必要な部分ユーザーの生産性とアプリと web サイト、任意の更新プログラムが現在のままに猶予期間に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="28cac-104">Notifications are a necessary part of modern life; they help users be more productive and engaged with apps and websites, as well as stay current with any updates.</span></span> <span data-ttu-id="28cac-105">ただし、通知場合にすばやく、overbearing に便利で、ユーザーを中心とした方法でない設計されている場合は、侵入から有効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="28cac-105">However, notifications can quickly turn from useful to overbearing and intrusive if they are not designed in a user-centric way.</span></span> <span data-ttu-id="28cac-106">通知は 1 つを右クリックしてから、無効にされている可能性はほとんどありませんオフにすると、それらが再びオンになります。</span><span class="sxs-lookup"><span data-stu-id="28cac-106">Your notifications are one right-click away from being turned off, and it's unlikely once they are turned off, they will be turned on again.</span></span>  <span data-ttu-id="28cac-107">開いているこのエンゲージメント チャネルを維持することができますが、通知、ユーザーの画面領域と時刻を尊重を確認しておきます。</span><span class="sxs-lookup"><span data-stu-id="28cac-107">So make sure your notifications are respectful of the user's screen space and time, so you can keep this engagement channel open.</span></span>

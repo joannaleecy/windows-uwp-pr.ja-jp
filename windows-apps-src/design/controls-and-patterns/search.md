@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 title: 検索とページ内検索
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b506b439ff98da873823bd586bb5388fe360b2ba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554306"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699452"
 ---
 # <a name="search-and-find-in-page"></a><span data-ttu-id="03bd3-103">検索とページ内検索</span><span class="sxs-lookup"><span data-stu-id="03bd3-103">Search and find-in-page</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: POS (店舗販売時点管理) の概要
 description: この記事には、POS (店舗販売時点管理) UWP API の概要に関する情報が含まれています。
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: f3959254787ce22bea27495520805485e0ea179b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0e537e40d5224f2522cb5ecebd92664d1794dd06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561636"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699049"
 ---
 # <a name="getting-started-with-point-of-service"></a><span data-ttu-id="5926c-104">POS (店舗販売時点管理) の概要</span><span class="sxs-lookup"><span data-stu-id="5926c-104">Getting started with Point of Service</span></span>
 

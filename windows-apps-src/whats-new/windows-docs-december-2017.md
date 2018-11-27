@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows ドキュメントの最新情報、2017 年 12 月 - UWP アプリの開発
 description: 2017 年 12 月版の Windows 10 開発者向けドキュメントには、新しい機能、ビデオ、開発者向けガイダンスが追加されました
 keywords: 最新情報, 更新, 機能, 開発者向けガイダンス, Windows 10, 12 月
-ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560903"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701037"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a><span data-ttu-id="0819c-104">Windows 開発者向けドキュメントの最新情報、2017 年 12 月</span><span class="sxs-lookup"><span data-stu-id="0819c-104">What's New in the Windows Developer Docs in December 2017</span></span>
 

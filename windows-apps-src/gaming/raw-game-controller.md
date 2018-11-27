@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 未加工のゲーム コントローラー
 description: ほとんどすべての種類のゲーム コントローラーから入力を読み取るには、Windows.Gaming.Input 未加工のゲーム コントローラー API を使用します。
 ms.assetid: 2A466C16-1F51-4D8D-AD13-704B6D3C7BEC
-ms.author: wdg-dev-content
 ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, 未加工のゲーム コントローラー
 ms.localizationpriority: medium
-ms.openlocfilehash: c57db3f9604e20d0dc83d6c3cf2ced87b1f5dcc1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577898"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702603"
 ---
 # <a name="raw-game-controller"></a><span data-ttu-id="abcaf-104">未加工のゲーム コントローラー</span><span class="sxs-lookup"><span data-stu-id="abcaf-104">Raw game controller</span></span>
 

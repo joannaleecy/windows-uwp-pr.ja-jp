@@ -1,18 +1,16 @@
 ---
-author: c-don
 title: Azure Web サーバーからの UWP アプリのインストール
 description: このチュートリアルでは、Azure Web サーバーをセットアップし、Web アプリでアプリ パッケージをホストできることを確認し、アプリ インストーラを効果的に起動して使用する方法を示しています。
-ms.author: cdon
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ、Azure Web サーバー
 ms.localizationpriority: medium
-ms.openlocfilehash: b7ea002686199b992af45af775f53c96fd108a13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567982"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705233"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a><span data-ttu-id="169dc-104">Azure Web アプリからの UWP アプリのインストール</span><span class="sxs-lookup"><span data-stu-id="169dc-104">Install a UWP app from an Azure Web App</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: コンポジションのシャドウ
 description: シャドウ Api を使用して、動的なカスタマイズ可能なシャドウを UI コンテンツを追加できます。
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2f42235e6a74747059723841d3082037b558c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572242"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703176"
 ---
 # <a name="shadows-in-windows-ui"></a><span data-ttu-id="d4a99-104">Windows UI でのシャドウ</span><span class="sxs-lookup"><span data-stu-id="d4a99-104">Shadows in Windows UI</span></span>
 

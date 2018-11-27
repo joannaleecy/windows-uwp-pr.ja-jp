@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: レンダリングの概要
 description: グラフィックスを表示するレンダリング パイプラインをアセンブルする方法について説明します。 レンダリングの概要。
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567584"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702500"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a><span data-ttu-id="461d0-105">レンダリング フレームワーク I: レンダリングの概要</span><span class="sxs-lookup"><span data-stu-id="461d0-105">Rendering framework I: Intro to rendering</span></span>
 

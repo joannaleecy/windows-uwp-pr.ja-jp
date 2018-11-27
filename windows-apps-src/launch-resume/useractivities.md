@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: デバイス間でもユーザーのアクティビティを継続する
 description: このトピックでは、前回ユーザーがアプリで実行していた状態から再開できるようにする方法 (複数のデバイス間で再開する場合にも対応) について説明します。
 keywords: ユーザー アクティビティ、ユーザー アクティビティ、タイムライン、Cortana の前回終了した位置から再開する、Cortana の前回終了した位置から再開する、Project Rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561854"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708059"
 ---
 # <a name="continue-user-activity-even-across-devices"></a><span data-ttu-id="d4402-104">デバイス間でもユーザーのアクティビティを継続する</span><span class="sxs-lookup"><span data-stu-id="d4402-104">Continue user activity, even across devices</span></span>
 

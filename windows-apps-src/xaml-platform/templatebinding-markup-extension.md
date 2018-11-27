@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクします。 XAML では、TemplateBinding は ControlTemplate 定義内でのみ使用できます。
 title: TemplateBinding マークアップ拡張
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
-ms.author: jimwalk
 ms.date: 10/29/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554090"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702330"
 ---
 # <a name="templatebinding-markup-extension"></a><span data-ttu-id="56fc3-105">{TemplateBinding} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="56fc3-105">{TemplateBinding} markup extension</span></span>
 

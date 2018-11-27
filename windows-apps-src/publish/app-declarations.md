@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Product declarations help make sure your app is displayed appropriately in the Microsoft Store and offered to the right set of customers.
 title: 製品の宣言
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b2f4a0ce5fb44665a38824e4805d74e60bd3021
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573638"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702137"
 ---
 # <a name="product-declarations"></a><span data-ttu-id="cab6b-103">製品の宣言</span><span class="sxs-lookup"><span data-stu-id="cab6b-103">Product declarations</span></span>
 

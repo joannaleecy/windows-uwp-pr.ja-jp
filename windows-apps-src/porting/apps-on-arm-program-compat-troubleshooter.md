@@ -1,18 +1,16 @@
 ---
 title: プログラム互換性のトラブルシューティング ツール (ARM)
-author: msatranjr
 description: アプリが ARM で正しく動作しない場合に互換性の設定を調整するためのガイダンス
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 常時接続, 互換性トラブルシューティング ツール, ARM 版 Windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572322"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701139"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a><span data-ttu-id="af00e-104">プログラム互換性のトラブルシューティング ツール (ARM)</span><span class="sxs-lookup"><span data-stu-id="af00e-104">Program Compatibility Troubleshooter on ARM</span></span>
 <span data-ttu-id="af00e-105">x86 アプリが ARM64 上の Windows 10 用に作成された新しい機能をサポートするようにエミュレーションします。</span><span class="sxs-lookup"><span data-stu-id="af00e-105">Emulation to support x86 apps is a new feature created for Windows 10 on ARM64.</span></span> <span data-ttu-id="af00e-106">エミュレーションは、最適なエクスペリエンスの結果の最適化を実行することがあります。</span><span class="sxs-lookup"><span data-stu-id="af00e-106">Sometimes the emulation performs optimizations that don't result in the best experience.</span></span> <span data-ttu-id="af00e-107">プログラム互換性のトラブルシューティング ツールを使って x86 アプリのエミュレーション設定を切り替えることができるため、既定の最適化が減少し、互換性が強化される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="af00e-107">You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.</span></span>

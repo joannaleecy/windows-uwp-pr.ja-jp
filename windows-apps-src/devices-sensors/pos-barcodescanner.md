@@ -1,19 +1,17 @@
 ---
-author: TerryWarwick
 title: バーコード スキャナー
 description: この記事では、UWP アプリで使用可能なバーコード スキャナー機能と、その使用方法を示すハウツー記事へのリンクを示します。
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a58062ba3908287f9009288136814e7e26d3127
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580310"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703955"
 ---
 # <a name="barcode-scanner"></a><span data-ttu-id="4f997-104">バーコード スキャナー</span><span class="sxs-lookup"><span data-stu-id="4f997-104">Barcode scanner</span></span>
 

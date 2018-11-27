@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: スレッド プールへの作業項目の送信
 description: スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
-ms.openlocfilehash: fe73520782b18fb7419807695296bc6487f9c018
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579928"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705357"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a><span data-ttu-id="aed13-104">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="aed13-104">Submit a work item to the thread pool</span></span>
 

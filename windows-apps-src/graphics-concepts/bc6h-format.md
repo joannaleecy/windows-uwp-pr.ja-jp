@@ -4,17 +4,15 @@ description: BC6H 形式は、ソース データのハイ ダイナミック �
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
 keywords:
 - BC6H 形式
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be88f06cd5893f2f67697a54754826440bdf7d18
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f147f4c30d2a662806df5928fc79178522b9b6a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581438"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696648"
 ---
 # <a name="bc6h-format"></a><span data-ttu-id="b7089-104">BC6H 形式</span><span class="sxs-lookup"><span data-stu-id="b7089-104">BC6H format</span></span>
 

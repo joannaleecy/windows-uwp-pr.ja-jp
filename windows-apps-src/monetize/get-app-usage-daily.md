@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: 特定の日付範囲やその他のオプション フィルターを日単位のアプリの使用状況データを取得する、Microsoft Store 分析 API でこのメソッドを使います。
 title: アプリの使用状況 (日単位) の取得
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
-ms.openlocfilehash: 24542f165c0caa2c07db1866c96603916c6ac750
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3460b61e6a9a7c36be6fd87c4dc7fcc1ab811d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563649"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703346"
 ---
 # <a name="get-daily-app-usage"></a><span data-ttu-id="17f74-104">アプリの使用状況 (日単位) の取得</span><span class="sxs-lookup"><span data-stu-id="17f74-104">Get daily app usage</span></span>
 

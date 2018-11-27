@@ -1,18 +1,16 @@
 ---
-author: PatrickFarley
 title: ユーザー アクティビティのベスト プラクティス
 description: このガイドでは、作成およびユーザー アクティビティを更新するための推奨事項について説明します。
 keywords: ユーザー アクティビティ、ユーザー アクティビティ、タイムライン、Cortana の前回終了した位置から再開する、Cortana の前回終了した位置から再開する、Project Rome
-ms.author: pafarley
 ms.date: 08/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 199499e8737d638301f32d01a00ac603e3f5348f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 33103ebfc7ee3e26a11de781af7981bce78b349c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577673"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699320"
 ---
 # <a name="user-activities-best-practices"></a><span data-ttu-id="8be35-104">ユーザー アクティビティのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="8be35-104">User Activities best practices</span></span>
 

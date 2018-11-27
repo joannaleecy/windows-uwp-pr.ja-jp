@@ -1,19 +1,17 @@
 ---
 title: UWP アプリのサンプルを取得する
 description: GitHub から UWP コードのサンプルをダウンロードする方法について説明します
-author: JoshuaPartlow
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、サンプル コード、コード サンプル
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8f99ade3fa5e4d9f12b8670bf22242e7c4e585
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581816"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696430"
 ---
 # <a name="get-uwp-app-samples"></a><span data-ttu-id="fd504-104">UWP アプリのサンプルを取得する</span><span class="sxs-lookup"><span data-stu-id="fd504-104">Get UWP app samples</span></span>
 

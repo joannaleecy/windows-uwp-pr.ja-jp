@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: シェーダー オブジェクトの移植
 description: OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL
 ms.localizationpriority: medium
-ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571837"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696823"
 ---
 # <a name="port-the-shader-objects"></a><span data-ttu-id="e2fab-104">シェーダー オブジェクトの移植</span><span class="sxs-lookup"><span data-stu-id="e2fab-104">Port the shader objects</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 無料のアプリまたはアドオンを特定のユーザーに付与するには、Microsoft Store 購入 API の以下のメソッドを使います。
 title: 無料の製品の付与
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 購入 API, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: 27503148d4406cb0ba1c2ce9782ca7131c8ce081
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75edbe720e2e4483432d3d865650e5d7e7a24b40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578538"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703456"
 ---
 # <a name="grant-free-products"></a><span data-ttu-id="12941-104">無料の製品の付与</span><span class="sxs-lookup"><span data-stu-id="12941-104">Grant free products</span></span>
 

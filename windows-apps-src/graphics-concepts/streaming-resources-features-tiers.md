@@ -4,17 +4,15 @@ description: Direct3D は、機能の 3 階層でストリーミング リソー
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
 keywords:
 - ストリーミング リソース機能の階層
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bc7d04a826bd8be0947e8d84ab8dbff6f67e8027
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569717"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708312"
 ---
 # <a name="streaming-resources-features-tiers"></a><span data-ttu-id="8cd7c-104">ストリーミング リソース機能の階層</span><span class="sxs-lookup"><span data-stu-id="8cd7c-104">Streaming resources features tiers</span></span>
 

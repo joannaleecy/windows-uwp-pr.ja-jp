@@ -2,18 +2,16 @@
 title: 指紋生体認証
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccd2efee17c7f1205bcac6f05b016af7e6c6dae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573522"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699843"
 ---
 # <a name="fingerprint-biometrics"></a><span data-ttu-id="47d80-104">指紋生体認証</span><span class="sxs-lookup"><span data-stu-id="47d80-104">Fingerprint biometrics</span></span>
 

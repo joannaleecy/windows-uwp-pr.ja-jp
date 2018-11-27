@@ -1,19 +1,17 @@
 ---
-author: rido-min
 Description: This guide explains how to configure your Visual Studio Solution to optimize the application binaries with native images.
 Search.Product: eADQiWindows 10XVcnh
 title: ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。
-ms.author: normesta
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, ネイティブ コンパイラを画像します。
 ms.localizationpriority: medium
-ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3071b843a1605d765ab5b087d5e1bfb96a220218
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553859"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702210"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a><span data-ttu-id="160cc-103">ネイティブ イメージを使って、.NET デスクトップ アプリを最適化します。</span><span class="sxs-lookup"><span data-stu-id="160cc-103">Optimize your .NET Desktop apps with native images</span></span>
 

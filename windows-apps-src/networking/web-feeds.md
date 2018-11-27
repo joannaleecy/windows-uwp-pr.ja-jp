@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。
 title: RSS/Atom フィード
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562581"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697275"
 ---
 # <a name="rssatom-feeds"></a><span data-ttu-id="3d5fc-104">RSS/Atom フィード</span><span class="sxs-lookup"><span data-stu-id="3d5fc-104">RSS/Atom feeds</span></span>
 

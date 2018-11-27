@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: PointOfService デバイスの共有
 description: PointOfService 周辺機器の共有
-ms.author: jken
 ms.date: 06/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 591ba592d1c17b03ae29c6fb98ef546bc18b8bdc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53dc22b2aa35b5e69854f6fb489ff6a454c73bf6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579782"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699089"
 ---
 # <a name="pointofservice-device-sharing"></a><span data-ttu-id="8c5f8-104">PointOfService デバイスの共有</span><span class="sxs-lookup"><span data-stu-id="8c5f8-104">PointOfService device sharing</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX ゲームでのリソースの読み込み
 description: ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソースの読み込み
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554627"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703136"
 ---
 # <a name="load-resources-in-your-directx-game"></a><span data-ttu-id="173e6-104">DirectX ゲームでのリソースの読み込み</span><span class="sxs-lookup"><span data-stu-id="173e6-104">Load resources in your DirectX game</span></span>
 

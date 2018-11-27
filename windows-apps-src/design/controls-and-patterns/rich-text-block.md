@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ebc375a72984af8bbc40823121d2d94689fcf2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d71a7995bc56a87e6a9b0fc53ff35fdebe82596
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570671"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699432"
 ---
 # <a name="rich-text-block"></a><span data-ttu-id="edaf7-103">リッチ テキスト ブロック</span><span class="sxs-lookup"><span data-stu-id="edaf7-103">Rich text block</span></span>
 

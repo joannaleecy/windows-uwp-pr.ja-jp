@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Windows.Services.Store 名前空間を使ってサブスクリプション アドオンを実装する方法について説明します。
 title: アプリのサブスクリプション アドオンの有効化
 keywords: Windows 10, UWP, サブスクリプション, アドオン, アプリ内購入, IAP, Windows.Services.Store
-ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577951"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697495"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a><span data-ttu-id="d24c2-104">アプリのサブスクリプション アドオンの有効化</span><span class="sxs-lookup"><span data-stu-id="d24c2-104">Enable subscription add-ons for your app</span></span>
 

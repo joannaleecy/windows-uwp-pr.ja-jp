@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX リソースの設定と画像の表示
 description: ここでは、Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成し、レンダリングされた画像をディスプレイに表示する方法について説明します。
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソース、画像
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697625"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a><span data-ttu-id="5a735-104">DirectX リソースの設定と画像の表示</span><span class="sxs-lookup"><span data-stu-id="5a735-104">Set up DirectX resources and display an image</span></span>
 

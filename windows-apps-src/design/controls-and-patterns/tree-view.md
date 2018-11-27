@@ -1,10 +1,8 @@
 ---
-author: Jwmsft
 description: 展開可能なツリー ビューを作成するには、階層データ ソースを ItemsSource をバインドまたは作成し、TreeViewNode オブジェクトを管理することができます。
 title: ツリー ビュー
 label: Tree view
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.localizationpriority: medium
 pm-contact: predavid
@@ -15,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5
-ms.openlocfilehash: 1a7dfa2605607c3b2440a9ebc46a0b3eb6010287
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 753d0cd808daef96aa16c34c3962201ca73e5be9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553343"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702170"
 ---
 # <a name="treeview"></a><span data-ttu-id="fcb60-103">TreeView</span><span class="sxs-lookup"><span data-stu-id="fcb60-103">TreeView</span></span>
 

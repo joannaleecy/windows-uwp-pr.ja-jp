@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 Description: Use alignment, margin, and padding properties to arrange the layout of elements on a page.
 title: レイアウトの配置、余白、およびパディング
-ms.author: quradic
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ea8a02835a90235bc17efe60ee6e4fd214ffffa7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb8d430619ad05cea1212b48850f52f27056c658
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574425"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704250"
 ---
 # <a name="alignment-margin-padding"></a><span data-ttu-id="01b05-103">配置、余白、パディング</span><span class="sxs-lookup"><span data-stu-id="01b05-103">Alignment, margin, padding</span></span>
 

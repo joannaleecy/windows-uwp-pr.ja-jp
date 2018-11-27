@@ -2,18 +2,16 @@
 title: MAC、ハッシュ、および署名
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: b472a7209ddb9e67f7bb7c00e967295892568a29
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572748"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701606"
 ---
 # <a name="macs-hashes-and-signatures"></a><span data-ttu-id="c17ff-104">MAC、ハッシュ、および署名</span><span class="sxs-lookup"><span data-stu-id="c17ff-104">MACs, hashes, and signatures</span></span>
 

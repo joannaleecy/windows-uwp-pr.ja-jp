@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
 title: セカンダリ タイル
 label: Secondary tiles
 template: detail.hbs
-ms.author: wdg-dev-content
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, セカンダリ タイル
 ms.localizationpriority: medium
-ms.openlocfilehash: e27786701fa2ae9ac00a7eab57e840ec9a0dc811
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558384"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698048"
 ---
 # <a name="secondary-tiles"></a><span data-ttu-id="61481-103">セカンダリ タイル</span><span class="sxs-lookup"><span data-stu-id="61481-103">Secondary tiles</span></span>
 

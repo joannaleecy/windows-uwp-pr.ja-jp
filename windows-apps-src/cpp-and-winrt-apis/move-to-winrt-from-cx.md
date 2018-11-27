@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。
 title: C++/CX から C++/WinRT への移行
-ms.author: stwhi
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 35fe84747624c9a855df5520322546b83772379b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560200"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700751"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a><span data-ttu-id="a9747-104">C++/CX から C++/WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="a9747-104">Move to C++/WinRT from C++/CX</span></span>
 

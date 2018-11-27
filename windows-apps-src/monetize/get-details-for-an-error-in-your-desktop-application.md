@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: デスクトップ アプリケーションの特定のエラーに関する詳細データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: デスクトップ アプリケーションのエラーに関する詳細情報の取得
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 922ab18bfebfbe539788ade3caa7626919d6b19a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1451d0196b1bffa6b49f44c556502c1e086aeff0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562731"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699988"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a><span data-ttu-id="5da8c-104">デスクトップ アプリケーションのエラーに関する詳細情報の取得</span><span class="sxs-lookup"><span data-stu-id="5da8c-104">Get details for an error in your desktop application</span></span>
 

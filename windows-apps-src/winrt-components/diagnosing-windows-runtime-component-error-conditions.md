@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Windows ランタイム コンポーネントでのエラー状態の診断
 description: この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570518"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699913"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a><span data-ttu-id="6f274-104">Windows ランタイム コンポーネントでのエラー状態の診断</span><span class="sxs-lookup"><span data-stu-id="6f274-104">Diagnosing Windows Runtime Component error conditions</span></span>
 

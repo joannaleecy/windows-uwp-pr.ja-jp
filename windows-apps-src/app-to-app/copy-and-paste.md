@@ -2,18 +2,16 @@
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、クリップボードを使用してコピーと貼り付けをサポートする方法について説明します。
 title: コピーと貼り付け
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f730d01ba019a220658bc94be5f0a18da6b217f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba498a9bc6541f45f01e74b1ea90f4f9a1bfde90
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569779"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701238"
 ---
 # <a name="copy-and-paste"></a><span data-ttu-id="19edc-104">コピーと貼り付け</span><span class="sxs-lookup"><span data-stu-id="19edc-104">Copy and paste</span></span>
 

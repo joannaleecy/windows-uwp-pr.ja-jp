@@ -1,21 +1,19 @@
 ---
-author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
 Search.Product: eADQiWindows 10XVcnh
 title: デスクトップ アプリケーションのパッケージ化
-ms.author: normesta
 ms.date: 09/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1e365818b54cc8c6e039a56f2b3bdb3ae723019a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 99657899615a5d485af788004589c2bc53a0a0e8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570548"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703822"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a><span data-ttu-id="7c60b-103">デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)</span><span class="sxs-lookup"><span data-stu-id="7c60b-103">Package desktop applications (Desktop Bridge)</span></span>
 

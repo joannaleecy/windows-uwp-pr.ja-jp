@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: Web インストール用に AWS で UWP アプリ パッケージをホストする
 description: アプリ インストーラー アプリ経由でアプリのインストールを検証する AWS web サーバーを設定するためのチュートリアル
-ms.author: cdon
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10、Windows 10, UWP, アプリ インストーラー, AppInstaller, サイドローディングでは、関連セット, オプション パッケージ、AWS
 ms.localizationpriority: medium
-ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579087"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696199"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a><span data-ttu-id="f89a7-104">Web インストール用に AWS で UWP アプリ パッケージをホストする</span><span class="sxs-lookup"><span data-stu-id="f89a7-104">Hosting UWP app packages on AWS for web install</span></span>
 

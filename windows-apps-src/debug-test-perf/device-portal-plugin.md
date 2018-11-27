@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
 title: Device Portal 用のカスタム プラグインの作成
 description: Windows Device Portal を使用して Web ページをホストし、診断情報を提供する UWP アプリを作成する方法について説明します。
-ms.author: pafarley
 ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: cceceae4b6b9bf4cecd3c3bee36344f4e5a1eed1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560295"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705596"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a><span data-ttu-id="fd087-104">Device Portal 用のカスタム プラグインの作成</span><span class="sxs-lookup"><span data-stu-id="fd087-104">Write a custom plugin for Device Portal</span></span>
 

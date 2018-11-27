@@ -1,20 +1,18 @@
 ---
-author: vladimp
 Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: デスクトップ アプリケーションからセカンダリ タイルをピン留めする
 label: Pin secondary tiles from desktop application
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: Windows 10、デスクトップ ブリッジ、セカンダリ タイル、ピン留め、クイックスタート、コード サンプル、例、デスクトップ アプリケーション、Win32、WinForms、WPF
 ms.localizationpriority: medium
-ms.openlocfilehash: 44e37b47e22d10f509afd5d7503fa8f7a43ab365
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572728"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703732"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a><span data-ttu-id="c9e13-103">デスクトップ アプリケーションからセカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="c9e13-103">Pin secondary tiles from desktop application</span></span>
 

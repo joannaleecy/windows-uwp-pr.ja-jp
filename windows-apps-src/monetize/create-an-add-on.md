@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: PartnerCenter アカウントに登録されているアプリのアドオンを作成するのに、Microsoft Store 申請 API の以下のメソッドを使用します。
 title: アドオンの作成
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの作成, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8465dc7a42961a20fcd33ba8d43c71e2d73727ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572094"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700181"
 ---
 # <a name="create-an-add-on"></a><span data-ttu-id="f202d-104">アドオンの作成</span><span class="sxs-lookup"><span data-stu-id="f202d-104">Create an add-on</span></span>
 

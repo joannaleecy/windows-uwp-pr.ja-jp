@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: Device Portal の SMB API のリファレンス
 description: SMB API にプログラムでアクセスする方法について説明します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a337fe722d73a08c1c75a84478fc31e5bdf6b03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562431"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704851"
 ---
 # <a name="developer-folder-api-reference"></a><span data-ttu-id="7f3bb-104">開発者向けフォルダー API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="7f3bb-104">Developer folder API reference</span></span>   
 <span data-ttu-id="7f3bb-105">標準的なエクスプローラーを使って、Xbox One の開発に関連するファイルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7f3bb-105">You can access development-related files on your Xbox One using a standard file explorer.</span></span> <span data-ttu-id="7f3bb-106">これにより、ファイルを簡単に表示したり、PC から本体に置き換えることができます。</span><span class="sxs-lookup"><span data-stu-id="7f3bb-106">This allows you to easily view and replace files from your PC to the console.</span></span>

@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: アクセシビリティ
 label: Accessibility
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5827bf0c9ddb7f5ebbab3f34e40e08d1620b6e0c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574717"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699717"
 ---
 # <a name="accessibility"></a><span data-ttu-id="53b5a-103">ユーザー補助</span><span class="sxs-lookup"><span data-stu-id="53b5a-103">Accessibility</span></span>  
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 title: ゲームのブロードキャストとキャプチャ
 description: ここでは、ゲームのキャプチャ機能とブロードキャスト機能を UWP アプリに追加するための情報を提供します。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: ad42b62d627dd4a506fc4ff451f6365d4133fd70
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 03b3c48fedcc99d2d667712bfdd51ad1d75f7fbd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555687"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703036"
 ---
 # <a name="game-broadcast-and-capture"></a><span data-ttu-id="60682-104">ゲームのブロードキャストとキャプチャ</span><span class="sxs-lookup"><span data-stu-id="60682-104">Game broadcast and capture</span></span>
 

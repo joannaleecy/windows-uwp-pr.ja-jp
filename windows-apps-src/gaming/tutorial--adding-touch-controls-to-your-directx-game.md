@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ゲームのタッチ コントロール
 description: ここでは、DirectX を使うユニバーサル Windows プラットフォーム (UWP) C++ ゲームに、基本的なタッチ コントロールを追加する方法について説明します。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562388"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697012"
 ---
 # <a name="touch-controls-for-games"></a><span data-ttu-id="ab3a8-104">ゲームのタッチ コントロール</span><span class="sxs-lookup"><span data-stu-id="ab3a8-104">Touch controls for games</span></span>
 

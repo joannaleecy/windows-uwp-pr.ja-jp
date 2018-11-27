@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: XAML テーマ リソース
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 770896f467ff3a2c24fff65fdf16f1e13c83b688
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554918"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699307"
 ---
 # <a name="xaml-theme-resources"></a><span data-ttu-id="b3dc1-103">XAML テーマ リソース</span><span class="sxs-lookup"><span data-stu-id="b3dc1-103">XAML theme resources</span></span>
 

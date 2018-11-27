@@ -4,17 +4,15 @@ description: 光源は、シーン内のオブジェクトを照射するのに�
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
 keywords:
 - 光源
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f690e08d211692b05f0a80722aa4a3e3a06b39f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568062"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705197"
 ---
 # <a name="lighting"></a><span data-ttu-id="49ccb-105">光源</span><span class="sxs-lookup"><span data-stu-id="49ccb-105">Lighting</span></span>
 

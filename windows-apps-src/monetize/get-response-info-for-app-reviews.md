@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: 特定のレビューに返信できるかどうかを判断したり、特定のアプリに関するいずれかのレビューに返信できるかどうかを判断したりするには、Microsoft Store レビュー API の以下のメソッドを使います。
 title: レビューへの返信情報の取得
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, 返信情報
 ms.localizationpriority: medium
-ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553998"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698211"
 ---
 # <a name="get-response-info-for-reviews"></a><span data-ttu-id="d9cec-104">レビューへの返信情報の取得</span><span class="sxs-lookup"><span data-stu-id="d9cec-104">Get response info for reviews</span></span>
 
