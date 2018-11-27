@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: 日付範囲やその他のオプション フィルターを指定してレビュー データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのレビューの取得
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, レビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557093"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707953"
 ---
 # <a name="get-app-reviews"></a><span data-ttu-id="06641-104">アプリのレビューの取得</span><span class="sxs-lookup"><span data-stu-id="06641-104">Get app reviews</span></span>
 

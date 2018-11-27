@@ -4,17 +4,15 @@ description: システム生成値は、シェーダー操作で一定の効率�
 ms.assetid: C7CBA81D-68CA-4E9A-95E3-8185C280C843
 keywords:
 - システム生成値の使用
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558483"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709169"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span data-ttu-id="ef812-104"><span id="direct3dconcepts.using_system-generated_values"></span>システム生成値の使用</span><span class="sxs-lookup"><span data-stu-id="ef812-104"><span id="direct3dconcepts.using_system-generated_values"></span>Using system-generated values</span></span>
 

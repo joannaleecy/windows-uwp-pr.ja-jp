@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 包括性を備えた Windows 10 アプリの開発
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2adb3c67c4c7c1d024cd969af15cc12baa424511
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8e38b57deb7101dcf0476bd3d952fc01ffd605db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579180"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709620"
 ---
 # <a name="developing-inclusive-windows-apps"></a><span data-ttu-id="96249-103">包括性を備えた Windows アプリの開発</span><span class="sxs-lookup"><span data-stu-id="96249-103">Developing inclusive Windows apps</span></span>  
 

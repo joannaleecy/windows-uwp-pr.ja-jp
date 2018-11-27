@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: この記事では、BitmapDecoder と BitmapEncoder を使って画像ファイルを読み込んだり保存したりする方法のほか、SoftwareBitmap オブジェクトを使ってビットマップ画像を表現する方法について説明します。
 title: ビットマップ画像の作成、編集、保存
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dc7d3d70291d29102af614f29fd4531523a961e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563857"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711347"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a><span data-ttu-id="03bbb-104">ビットマップ画像の作成、編集、保存</span><span class="sxs-lookup"><span data-stu-id="03bbb-104">Create, edit, and save bitmap images</span></span>
 

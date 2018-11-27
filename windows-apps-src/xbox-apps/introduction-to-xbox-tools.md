@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Xbox One ツールの概要
 description: Windows デバイス ポータルを使った、Xbox One 固有のツールである Dev Home
-ms.author: elcowle
 ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox one, ツール
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fd9f3ad1c3fcf02420502692518310b896f52a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580891"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709093"
 ---
 # <a name="introduction-to-xbox-one-tools"></a><span data-ttu-id="67039-104">Xbox One ツールの概要</span><span class="sxs-lookup"><span data-stu-id="67039-104">Introduction to Xbox One tools</span></span>
 

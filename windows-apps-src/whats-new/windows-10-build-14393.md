@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 の開発者向け新着情報、ツール、機能
 description: Windows 10 ビルド 14393 と新しい開発者ツールでは、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1607, 7 月, 最新, 14393
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: a350ff9cd5a2a3ec22637eabbcfc55b693cdd283
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570222"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709715"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a><span data-ttu-id="6ef71-104">Windows 10 ビルド 14393 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="6ef71-104">What's new in Windows 10 for developers, build 14393</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: マイクロソフトの広告仲介サービスを利用すると、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。
 title: マイクロソフトの広告仲介サービス
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, 広告, 広告, 広告仲介
 ms.localizationpriority: medium
-ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565739"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711449"
 ---
 # <a name="microsoft-ad-mediation-service"></a><span data-ttu-id="d5fe9-104">マイクロソフトの広告仲介サービス</span><span class="sxs-lookup"><span data-stu-id="d5fe9-104">Microsoft ad mediation service</span></span>
 

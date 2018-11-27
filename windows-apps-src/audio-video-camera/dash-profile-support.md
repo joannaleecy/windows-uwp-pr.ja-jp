@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 3E0FBB43-F6A4-4558-AA89-20E7760BA73F
 description: この記事では、UWP アプリでサポートされる Dynamic Adaptive Streaming over HTTP (DASH) プロファイルの一覧を示します。
 title: Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポート
-ms.author: drewbat
 ms.date: 02/15/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4ec9f9e81010d39af496da156afa676f4b3714
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556831"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711295"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a><span data-ttu-id="25cb2-104">Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポート</span><span class="sxs-lookup"><span data-stu-id="25cb2-104">Dynamic Adaptive Streaming over HTTP (DASH) profile support</span></span>
 

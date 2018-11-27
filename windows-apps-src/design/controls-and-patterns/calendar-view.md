@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.
 title: カレンダー ビュー
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fba6d8ee56e4d9a3d187721b4b2f1c5daa9b1b1f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0a0cfba50f5e61486b41cd78b8ff0c1098cff5fa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557139"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711082"
 ---
 # <a name="calendar-view"></a><span data-ttu-id="9428e-103">カレンダー ビュー</span><span class="sxs-lookup"><span data-stu-id="9428e-103">Calendar view</span></span>
 

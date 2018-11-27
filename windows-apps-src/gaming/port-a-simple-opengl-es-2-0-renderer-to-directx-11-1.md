@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植
 description: 最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: e7541a8f54f64197c17acea5f1737e36b0e6f670
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559194"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707708"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a><span data-ttu-id="22372-104">簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植</span><span class="sxs-lookup"><span data-stu-id="22372-104">Port a simple OpenGL ES 2.0 renderer to Direct3D 11</span></span>
 

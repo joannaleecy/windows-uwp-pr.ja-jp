@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
 title: 日付コントロールと時刻コントロールのガイドライン
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 363c60a9aeaaa98d808e015f96e4096cf889a501
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f65ed68db51ea173dfec3c06a9dc81a7f7735afd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556104"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711042"
 ---
 # <a name="calendar-date-and-time-controls"></a><span data-ttu-id="cb3e1-103">カレンダー、日付、および時刻コントロール</span><span class="sxs-lookup"><span data-stu-id="cb3e1-103">Calendar, date, and time controls</span></span>
 

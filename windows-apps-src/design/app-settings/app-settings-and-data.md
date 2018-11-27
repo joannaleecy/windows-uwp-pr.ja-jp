@@ -1,21 +1,19 @@
 ---
-author: mijacobs
 Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
 title: アプリの設定とデータ
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 62310191b17910d0ff980d6f4cc54170de7077b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556519"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709795"
 ---
 # <a name="app-settings-and-data"></a><span data-ttu-id="5be70-103">アプリの設定とデータ</span><span class="sxs-lookup"><span data-stu-id="5be70-103">App settings and data</span></span>
 

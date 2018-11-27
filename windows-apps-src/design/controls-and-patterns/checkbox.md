@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
 title: チェック ボックス
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c926f9dc7a87b83550bb2cd3a5bff856ec27866
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 526cc42b8b276ae9a37c99c1ed7b72bba37c6913
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564877"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710350"
 ---
 # <a name="check-boxes"></a><span data-ttu-id="22888-103">チェック ボックス</span><span class="sxs-lookup"><span data-stu-id="22888-103">Check boxes</span></span>
 

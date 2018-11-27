@@ -2,18 +2,16 @@
 title: アプリ間での証明書の共有
 description: ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とするユニバーサル Windows プラットフォーム (UWP) アプリでは、証明書を認証に使うことができます。
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570355"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711399"
 ---
 # <a name="share-certificates-between-apps"></a><span data-ttu-id="076f2-104">アプリ間での証明書の共有</span><span class="sxs-lookup"><span data-stu-id="076f2-104">Share certificates between apps</span></span>
 

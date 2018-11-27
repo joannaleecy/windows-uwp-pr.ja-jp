@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: Windows.Media.Editing 名前空間の API を使うと、オーディオやビデオのソース ファイルからメディア コンポジションを作成するアプリを簡単に開発できます。
 title: メディアのコンポジションと編集
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565646"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711321"
 ---
 # <a name="media-compositions-and-editing"></a><span data-ttu-id="2eaff-104">メディアのコンポジションと編集</span><span class="sxs-lookup"><span data-stu-id="2eaff-104">Media compositions and editing</span></span>
 

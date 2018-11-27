@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: このトピックでは、アプリケーション バイナリ インターフェイス (ABI) と C++/WinRT オブジェクト間の変換方法について説明します。
 title: C++/WinRT と ABI 間の相互運用
-ms.author: stwhi
 ms.date: 05/21/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 40d2c29dcab1a54046cb0def882cfa5f80b1f1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6597846ae96b498a7b0068151a33cf31d17511d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565397"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710688"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a><span data-ttu-id="70773-104">C++/WinRT と ABI 間の相互運用</span><span class="sxs-lookup"><span data-stu-id="70773-104">Interop between C++/WinRT and the ABI</span></span>
 

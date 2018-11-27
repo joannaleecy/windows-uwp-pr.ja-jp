@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: UWP アプリでの設定の保存と読み込み
 description: ユニバーサル Windows プラットフォーム アプリでのアプリの設定の保存と読み込みについて説明します。
-ms.author: twhitney
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, 設定, 設定の保存, 設定の読み込み
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 63af8aa4ab4d12a3a4aa69bd7d870106e21844f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562022"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710214"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a><span data-ttu-id="d6f99-104">UWP アプリでの設定の保存と読み込み</span><span class="sxs-lookup"><span data-stu-id="d6f99-104">Save and load settings in a UWP app</span></span>
 

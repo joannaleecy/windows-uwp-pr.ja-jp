@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: アクセシビリティ対応にするために避ける事項
 label: Accessibility practices to avoid
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9505dfc666042c22e6f77ed02ffca7c5973d4fba
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 96bc0c48865d862e5ac834c5828d4057a06242d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579679"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709828"
 ---
 # <a name="accessibility-practices-to-avoid"></a><span data-ttu-id="04d25-103">アクセシビリティ対応にするために避ける事項</span><span class="sxs-lookup"><span data-stu-id="04d25-103">Accessibility practices to avoid</span></span>
 
