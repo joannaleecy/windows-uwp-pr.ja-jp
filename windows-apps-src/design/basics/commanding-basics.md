@@ -1,29 +1,27 @@
 ---
-author: mijacobs
 Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのコマンド設計の基本
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
 ms.date: 10/01/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f5a994a76b66c04e8750315b6466471dc95b897
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7ef7927af7acc8f437a323f374ae7dbf8a36d452
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558869"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715322"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP アプリのコマンド設計の基本
 
-ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーが記載されたメールを送信、項目の削除、フォームの送信などの操作を実行できる対話型の UI 要素をします。 *コマンド インターフェイス*は、一般的なコマンド要素、それらをホストするコマンド サーフェス、サポートされる操作、および提供するエクスペリエンスで構成されます。
+ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメールの送信、項目の削除、フォームの送信などの操作を実行できる対話型の UI 要素をします。 *コマンド インターフェイス*は、一般的なコマンド要素、それらをホストするコマンド サーフェス、サポートされる操作、および提供するエクスペリエンスで構成されます。
 
-## <a name="provide-the-best-command-experience"></a>コマンドの最適なエクスペリエンスを提供します。
+## <a name="provide-the-best-command-experience"></a>最適なコマンド エクスペリエンスを提供します。
 
 コマンド インターフェイスの最も重要な側面は、どのようなしようとしたユーザーが行うようにします。 アプリの機能を計画する際は、これらのタスクと有効にするユーザー エクスペリエンスを実現するための手順を検討してください。 これらのエクスペリエンスの初期の下書きが完了したら、それらを実装するツールと対話式操作の決定事項を作成できます。
 
@@ -35,7 +33,7 @@ ms.locfileid: "7558869"
 - ファイルを開く、保存する、削除する
 - コンテンツの編集または作成
 
-コマンド エクスペリエンスの設計とクリエイティブされます。 入力デバイス、アプリの選択をサポートし、各デバイスにアプリがどのように対応するか。 広範な機能や基本設定をサポートすることによって、使用可能な移植性とできるだけアクセシビリティ対応として、アプリを行います。
+クリエイティブのコマンド エクスペリエンスの設計します。 入力デバイス、アプリの選択をサポートし、デバイスごとに、アプリがどのように対応するか。 広範な機能や基本設定をサポートすることによって、使用可能な移植性および可能なアクセシビリティ対応として、アプリを行います。
 
 
 
@@ -101,7 +99,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="place-commands-on-the-right-surface"></a>適切なサーフェスへのコマンドの配置
 
-アプリのキャンバスやコマンド バー、コマンド バーのポップアップ、メニュー バーでは、ダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。
+アプリのキャンバスや、コマンド バー、コマンド バーのポップアップ、メニュー バー、またはダイアログなどの特殊なコマンド コンテナーを含む、アプリでの多くのサーフェスにコマンド要素を配置できます。
 
 常にユーザーが直接コンテンツを操作できるようにするではなくを通じてコマンドを上下に移動するコマンド ボタンではなく、ドラッグ アンド ドロップ リスト項目を配置し直すなど、そのコンテンツにその動作を表します。 
 
@@ -145,10 +143,10 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="provide-command-feedback"></a>コマンドのフィードバックを提供します。 
 
-コマンドのフィードバックは、操作やコマンドが検出された、どのように解釈および処理された、かどうかが成功したかに、ユーザーと通信します。 これにより、実行したこと、および次に実行できる機能を把握することができます。 フィードバックが UI に自然に統合されていて、ユーザーの介在が不要であるか、どうしても必要な場合以外は他の操作が不要であることが理想的です。
+コマンドのフィードバックは、操作やコマンドが検出された、どのように解釈および処理された、かどうかが成功したかをユーザーに通信します。 これにより、実行したこと、および次に実行できる機能を把握することができます。 フィードバックが UI に自然に統合されていて、ユーザーの介在が不要であるか、どうしても必要な場合以外は他の操作が不要であることが理想的です。
 
 > [!NOTE]
-> どうしても必要な場合を除き、フィードバックは別の場所、フィードバックを提供しません。 値を追加する場合を除き、簡潔、アプリの UI を維持します。
+> どうしても必要な場合を除き、フィードバックは使用できません別の場所、フィードバックを提供しません。 値を追加する場合を除き、簡潔、アプリの UI を維持します。
 
 アプリでフィードバックを提供する方法をいくつか示します。
 
@@ -188,7 +186,7 @@ When designing a command interface, the most important decision is choosing what
 
 ### <a name="when-to-confirm-or-undo-actions"></a>アクションを確認または元に戻すタイミング
 
-適切に設計されたアプリケーションの UI は、すべてのユーザーであってアクションを実行します。 最近の操作を元に戻す方法を提供することや、アクションの確認を求めるによってこれらの状況で、アプリが役立ちます。
+適切に設計されたアプリケーションの UI は、すべてのユーザーであってアクションを実行します。 最近の操作を元に戻す方法を提供するや、アクションの確認を求めるによってこれらの状況で、アプリができます。
 
 :::row:::
     :::column:::

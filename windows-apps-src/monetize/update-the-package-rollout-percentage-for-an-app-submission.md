@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: アプリの申請に関するパッケージのロールアウト率を更新するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリの申請に関するロールアウト率の更新
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, アプリの申請, 更新, 割合
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: ee7657a1ebd08e70e6b5dac8a9a723637539066e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 172c750d370f8fd8822d78265a04e694bc958ddf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574873"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713416"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>アプリの申請に関するロールアウト率の更新
 
@@ -27,7 +25,7 @@ ms.locfileid: "7574873"
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリの 1 つの申請を作成します。 [アプリの申請の作成](create-an-app-submission.md)方法を使用して行うことができますパートナー センターで、これを行うこともできます。
+* アプリの 1 つの申請を作成します。 パートナー センターで、これを行うか、[アプリの申請の作成](create-an-app-submission.md)方法を使用して、これを行うことができます。
 * 申請に関する段階的なパッケージのロールアウトを有効にします。 [パートナー センターで](../publish/gradual-package-rollout.md)、これを行うか、 [Microsoft Store 申請 API を使用](manage-app-submissions.md#manage-gradual-package-rollout)してこれを行います。
 
 ## <a name="request"></a>要求
@@ -51,7 +49,7 @@ ms.locfileid: "7574873"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| submissionId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請の ID です。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。   |
+| submissionId | string | 必須。 パッケージ ロールアウト率を更新する対象の申請の ID です。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。   |
 | percentage  |  float  |  必須。 段階的なロールアウト パッケージを受信するユーザーの割合。  |
 
 

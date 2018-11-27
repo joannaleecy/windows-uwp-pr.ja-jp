@@ -1,23 +1,21 @@
 ---
-author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: ユーザー セグメントを作成する
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, セグメント, セグメント, 対象グループ, ユーザー
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0df23f0da4efe01877c45e5b2b6b5f4e2142a92
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555453"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714449"
 ---
 # <a name="create-customer-segments"></a>ユーザー セグメントを作成する
 
-プロモーションやエンゲージメントの目的で、ユーザー ベースのサブセットをターゲットに設定する場合があります。 [パートナー センター](https://partner.microsoft.com/dashboard)で、人口統計データを満たす Windows 10 のユーザーまたは選択した収益条件を含む*セグメント*と呼ばれる[顧客グループ](create-customer-groups.md)の種類を作成して、これを実現できます。
+プロモーションやエンゲージメントの目的で、ユーザー ベースのサブセットをターゲットに設定する場合があります。 [パートナー センター](https://partner.microsoft.com/dashboard)で[顧客グループ](create-customer-groups.md)を人口統計データを満たす Windows 10 のユーザーまたは選択した収益条件を含む、*セグメント*と呼ばれるの型を作成して、これを実現できます。
 
 たとえば、50 歳以上のユーザーや、Microsoft Store で 10 ドル以上を費やしたユーザーのみを含む、セグメントを作成できます。 また、これらの条件を組み合わせて、Windows ストアで 10 ドル以上を費やした 50 歳以上のすべてのユーザーを含むセグメントを作成することもできます。 
 
@@ -35,7 +33,7 @@ ms.locfileid: "7555453"
 
 ## <a name="to-create-a-customer-segment"></a>ユーザー セグメントを作成するには
 
-1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。
 2.  **[ユーザー グループ]** ページで、次のいずれかの手順を実行します。
  - **[自分のユーザー グループ]** セクションで、**[新しいグループの作成]** を選択して、セグメントを最初から定義します。 次のページで、**[セグメント]** ラジオ ボタンを選びます。
  - **[テンプレート セグメント**] セクションで、定義済みのセグメントの 1 つの横に表示された **[コピー]** を選びます (定義済みのセグメントは、そのまま使用することも、必要に合わせて変更することもできます)。

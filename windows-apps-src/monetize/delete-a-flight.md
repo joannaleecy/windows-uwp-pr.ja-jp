@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: パートナー センター アカウントに登録されているアプリのパッケージ フライトを削除する、Microsoft Store 申請 API でこのメソッドを使います。
 title: パッケージ フライトの削除
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの削除
 ms.localizationpriority: medium
-ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa3fa78c695538ec13dbd20d38a24224c560463e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555548"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715820"
 ---
 # <a name="delete-a-package-flight"></a>パッケージ フライトの削除
 
@@ -77,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定されたパッケージ フライトは見つかりませんでした。  |
-| 409  | 指定されたパッケージ フライトは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アプリが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | 指定されたパッケージ フライトは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アプリは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

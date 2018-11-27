@@ -1,27 +1,25 @@
 ---
 description: Fluent Design とアプリに組み込む方法について学習します。
 title: Windows 用の fluent Design System
-author: mijacobs
 keywords: UWP アプリのレイアウト, ユニバーサル Windows プラットフォーム, アプリの設計, インターフェイス, Fluent Design System
-ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c61eb71a82234a1339295536140121d80f83a033
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570799"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715586"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design System の Windows アプリの作成者
 
 ![Fluent Design ヘッダー](images/fluentdesign-app-header.jpg)
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
-Fluent Design System では、システムの作成アダプティブ、親近感、優れた美しさを持つユーザー インターフェイスです。
+Fluent Design System では、優れた美しさを持つユーザー インターフェイスをアダプティブ、高く、親近感を作成して、システムです。
 
 ## <a name="principles"></a>原則
 
@@ -42,7 +40,7 @@ Fluent エクスペリエンスは動作と意図を読み取ります。すな�
 
 ![Fluent design のロゴ](images/fluentdesign_header.png)
 
-設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 どのようなアプリかどうか。 ガイドラインの多くは、すべてのプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするためには作成します。
+設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 どのようなアプリかどうか。 ガイドラインの多くは、すべてのプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするために作成します。
 
 Fluent Design 機能は UWP に組み込まれています。 これらの機能のいくつか (有効ピクセルやユニバーサル入力システムなど) は、自動的に取り込まれます。 これらの機能を利用するために追加のコードを記述する必要はありません。 他の機能 (アクリル効果など) はオプションであり、それらの機能をアプリに取り込むには、機能を追加するためのコードを記述します。
 
@@ -119,7 +117,7 @@ Fluent Design 機能は UWP に組み込まれています。 これらの機能
 
 ## <a name="make-it-intuitive"></a>直感的なこと
 
-ユーザーの期待に動作するとき、エクスペリエンスは直観操作できます。 アクセシビリティとグローバリゼーションを実現するためにコントロールとパターンを確立し、プラットフォーム サポートを活用することで、操作の手間が省け、生産性が向上します。
+ユーザーの期待に動作するとき、エクスペリエンスは直感的な操作できます。 アクセシビリティとグローバリゼーションを実現するためにコントロールとパターンを確立し、プラットフォーム サポートを活用することで、操作の手間が省け、生産性が向上します。
 
 共感を得るには、適切なタイミングで適切な処理を行います。
 

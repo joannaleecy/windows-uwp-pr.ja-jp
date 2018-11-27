@@ -1,27 +1,25 @@
 ---
-author: andrewleader
 Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
 title: アダプティブ タイルの作成
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0af7dc153f75826444a517d4958bfeba53b103d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581257"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713735"
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
-アダプティブ タイル テンプレートは、さまざまな画面密度に合わせて変化するシンプルで柔軟なマークアップ言語を使用して、独自のタイル通知コンテンツをデザインできる、windows 10 の新機能です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
+アダプティブ タイル テンプレートは、さまざまな画面密度に合わせて変化するシンプルで柔軟なマークアップ言語を使用して、独自のタイル通知コンテンツをデザインすることができるように、windows 10 の新機能です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
 
-(必要な場合でも使用できますプリセット テンプレート[Windows8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)を windows 10 の通知を設計するとき。)
+(する場合は、引き続き使用できます[Windows8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)からプリセット テンプレートの windows 10 の通知を設計するときです。)
 
 
 ## <a name="getting-started"></a>概要
@@ -282,7 +280,7 @@ TileContent content = new TileContent()
 
 通知ペイロード内でブランディングを指定しない場合は、ベース タイルのプロパティによってブランディングが決まります。 ベース タイルに表示名が表示される場合、ブランディングは既定で "name" に設定されます。 表示名が表示されない場合、ブランディングは既定で "none" に設定されます。
 
-**注:** これは、これで、既定のブランディングが"logo あった"Windows8.x からの変更。
+**注:** ですが、既定のブランディングが"logo あった"の Windows8.x からの変更。
 
  
 

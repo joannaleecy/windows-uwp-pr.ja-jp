@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: アプリからスキャンする
 description: フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74c01c21ae65f9e93638e2ce1df604591043a729
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553189"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714794"
 ---
 # <a name="scan-from-your-app"></a>アプリからスキャンする
 
@@ -100,7 +98,7 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
 
 既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。 スキャンの設定は変更されません。 この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。 このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。
 
-**注:** ユーザーがフィーダーにスキャンする文書を配置する場合と、スキャナーが代わりに、フラット ベッドからスキャンされます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
+**注:** フィーダーにスキャンするドキュメントを配置して、ユーザー場合と、スキャナーが代わりに、フラット ベッドからスキャンされます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
@@ -111,7 +109,7 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
 
 デバイスの[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)を使うと、最適なスキャン設定でスキャンを実行することができます。 このオプションでは、スキャン対象のコンテンツに応じた最適なスキャン設定 (カラー モード、スキャン解像度など) をデバイスが自動的に判断します。 スキャン設定は、新しいスキャン ジョブの実行時にその都度選択されます。
 
-**注:** ため、アプリがこの設定を使用する前に、スキャナーがこの機能をサポートしているかを確認する必要があります、すべてのスキャナーがこの機能をサポートします。
+**注:**、アプリでこの設定を使用する前に、スキャナーがこの機能をサポートしているかを確認する必要がありますので、すべてのスキャナーがこの機能をサポートします。
 
 この例では、スキャナーが自動構成に対応しているかどうかをアプリがまずチェックしたうえで、スキャンを実行しています。 フラットベッド スキャナーまたはフィーダー スキャナーを指定する場合は、単に **AutoConfigured** を **Flatbed** または **Feeder** に置き換えます。
 

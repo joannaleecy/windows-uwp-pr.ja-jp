@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: アプリのレビューに返信を送るには、Microsoft Store レビュー API の以下のメソッドを使います。
 title: レビューに対する返信の送信
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568105"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713246"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
@@ -23,7 +21,7 @@ ms.locfileid: "7568105"
 顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、任意で、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使用して、特定のレビューへの返信が許可されているかどうかを確認できます。
 
 > [!NOTE]
-> プログラムでレビューに返信するには、このメソッドを使って、返信できます返信することもレビューを[パートナー センターを使用](../publish/respond-to-customer-reviews.md)します。
+> プログラムでレビューに返信するには、このメソッドを使って、返信またはレビューを[パートナー センターを使用](../publish/respond-to-customer-reviews.md)する返信できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -71,7 +69,7 @@ ms.locfileid: "7568105"
 | ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  ○  |
 | ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  ○  |
 | SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  ○  |
-| IsPublic | Boolean |  **True**を指定する場合、返信は、アプリのストア登録情報、顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 **False**と、ユーザーがメールへの返信オプトアウトしていないを指定する場合、返信はメールで顧客に送信され、アプリのストア登録情報内の他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
+| IsPublic | Boolean |  **True**を指定する場合、返信はアプリのストア登録情報を顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 **False**と、ユーザーがメールへの返信オプトアウトしていないを指定する場合、返信がメールで顧客に送信され、アプリのストア登録情報で他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
 
 
 ### <a name="request-example"></a>要求の例

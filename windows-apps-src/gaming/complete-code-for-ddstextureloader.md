@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DDSTextureLoader のコード一式
 description: メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DDSTextureLoader
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ba0de548cb1c4222783ae4245e1aacba4ab09e2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570285"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713396"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
 
@@ -69,7 +67,6 @@ ms.locfileid: "7570285"
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #pragma once
 
 void CreateDDSTextureFromMemory(
@@ -102,7 +99,6 @@ void CreateDDSTextureFromMemory(
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //--------------------------------------------------------------------------------------
-
 #include "pch.h"
 #include <dxgiformat.h>
 #include <assert.h>

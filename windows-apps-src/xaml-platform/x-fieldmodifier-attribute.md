@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: XAML コンパイルの動作を変更して、名前付きオブジェクトの参照のフィールドが、既定のプライベートの動作ではなくパブリック アクセスとして定義されるようにします。
 title: xFieldModifier 属性
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: de1d7dedbd2bd3d51bd2e1c1a9652d18f2b78ef0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 751cda36fc58d0e6add9204327a74ec947c9fc53
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565775"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714469"
 ---
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 属性
 
@@ -32,7 +30,7 @@ XAML コンパイルの動作を変更して、名前付きオブジェクトの
 
 ## <a name="remarks"></a>注釈
 
-**x:FieldModifier** 属性の値はプログラミング言語によって異なります。 有効な値は、**private**、**public**、**protected**、**internal**、**friend** です。 C#、Microsoft Visual Basic、または VisualC ではコンポーネント拡張機能 (、C++/cli CX)、文字列を提供する値"public"または"Public"パーサーには、この属性の値の大文字を区別しません。
+**x:FieldModifier** 属性の値はプログラミング言語によって異なります。 有効な値は、**private**、**public**、**protected**、**internal**、**friend** です。 C#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能 (、C++/cli CX)、文字列を提供する値"public"または"Public"パーサーには、この属性の値の大文字を区別しません。
 
 既定値は **Private** アクセスです。
 

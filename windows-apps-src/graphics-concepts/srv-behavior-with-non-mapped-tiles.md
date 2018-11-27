@@ -4,17 +4,15 @@ description: マップされていないタイルに関連するシェーダー 
 ms.assetid: 0E1D64BE-EB09-4F9D-9800-BD23A3B374EE
 keywords:
 - マップされていないタイルでの SRV 動作
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd5a5308504bda662ae3aff1968122fcfe020ca3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d62a1d3158e13187f89277a1ba009bd56fc2b39a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579054"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711538"
 ---
 # <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>マップされていないタイルでの SRV 動作
 

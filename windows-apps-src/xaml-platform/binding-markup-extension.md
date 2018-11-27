@@ -1,29 +1,27 @@
 ---
-author: jwmsft
 description: Binding マークアップ拡張は、XAML の読み込み時に Binding クラスのインスタンスに変換されます。
 title: Binding マークアップ拡張
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c35f8794cb77d7a05f2861e1d4d45023dc216129
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572644"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713988"
 ---
 # <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
 
 **注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインディングのメカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
-**注:** データの使用についての一般的な情報は、バインディングの**バインディング**では {} (、全体的な比較 **{X:bind}** と **{Binding}**)、アプリは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、**バインディング**では {} (、全体的な比較 **{X:bind}** と **{Binding}**)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
-**{Binding}** マークアップ拡張機能は、データのプロパティをバインドするコードなどのデータ ソースからの値をコントロールに使われます。 **{Binding}** マークアップ拡張は、XAML の読み込み時に [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスのインスタンスに変換されます。 このバインド オブジェクトは、データ ソースのプロパティから値を取得し、その値をコントロールのプロパティにプッシュします。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます。 また、そのコントロールの値の変化をソース プロパティにプッシュするように構成することもできます。 データ バインディングのターゲットとなるプロパティは、依存関係プロパティである必要があります。 詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
+**{Binding}** マークアップ拡張機能は、コードなどのデータ ソースからの値をコントロールにデータ バインド プロパティに使用されます。 **{Binding}** マークアップ拡張は、XAML の読み込み時に [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスのインスタンスに変換されます。 このバインド オブジェクトは、データ ソースのプロパティから値を取得し、その値をコントロールのプロパティにプッシュします。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます。 また、そのコントロールの値の変化をソース プロパティにプッシュするように構成することもできます。 データ バインディングのターゲットとなるプロパティは、依存関係プロパティである必要があります。 詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
 
 **{Binding}** には、ローカル値と同じ依存関係プロパティの優先順位があります。命令型コードにローカル値を設定すると、マークアップに設定されたすべての **{Binding}** の影響がなくなります。
 

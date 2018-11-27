@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: ファイルに応じた既定のアプリの起動
 description: ファイルに応じて既定のアプリを起動する方法について説明します。
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 736018fbf966b547c3dd41e245149d498c1231e3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566154"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7712016"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>ファイルに応じた既定のアプリの起動
 
@@ -440,7 +438,7 @@ void MainPage::DefaultLaunch()
               この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わってもよいことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
 
 > [!NOTE]
-> Windows では、たとえば、ソース アプリの最終的なウィンドウのサイズを決定する場合、複数の異なる要素、ソース アプリの基本設定、画面、画面の向き、上のアプリの数が考慮されます。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
+> Windows では、複数の異なる要素など、ソース アプリの最終的なウィンドウのサイズを決定する場合、ソース アプリの基本設定、画面、画面の向き、上のアプリの数が考慮されます。 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
 
 **モバイル デバイス ファミリ:**[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)は、モバイル デバイス ファミリでサポートされていません。
 

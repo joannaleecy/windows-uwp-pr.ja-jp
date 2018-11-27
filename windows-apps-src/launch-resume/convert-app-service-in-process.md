@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 description: 別のバックグラウンド プロセスで実行されたアプリ サービスのコードを、アプリ サービスのプロバイダーと同じプロセス内で実行されるコードに変換します。
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: 272102f08b145c0681b0e036be4d41bc7c9ad9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561551"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714834"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 
@@ -46,7 +44,7 @@ ms.locfileid: "7561551"
 
 これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: 内
 
-[!NOTE] 次のコードでは、例 1 (アウト プロセス サービス) に使用したものよりも異なります。 次のコードは提供のみを目的と (インプロセス サービス) 例 2 の一部としては使用する必要があります。  記事の切り替えの例を続けるには、例 2 (インプロセス サービス) に 1 (アウト プロセス サービス) は、次の例のコードではなく 1 の例のコードを使用に進みます。
+[!NOTE] 次のコードでは、例 1 (アウト プロセスのサービス) に使用したものよりも異なります。 次のコードは提供のみを目的と、(インプロセス サービス) の例 2 の一部としては使用する必要があります。  記事の切り替えの例を続けるには、例 2 (インプロセス サービス) に 1 (アウト プロセスのサービス) は、次の例のコードではなく 1 の例のコードを使用に進みます。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

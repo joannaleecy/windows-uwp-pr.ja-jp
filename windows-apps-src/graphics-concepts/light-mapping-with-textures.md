@@ -4,17 +4,15 @@ description: ライト マップは、3D シーン内の照明に関する情報
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
 keywords:
 - テクスチャでのライト マッピング
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bbb723cc039d6ecca8a5ebcd30ef03559076934
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571158"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713685"
 ---
 # <a name="light-mapping-with-textures"></a>テクスチャでのライト マッピング
 

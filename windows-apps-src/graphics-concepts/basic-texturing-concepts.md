@@ -4,17 +4,15 @@ description: コンピューターで作成された初期の 3D 画像は、当
 ms.assetid: 3CA3905D-E837-48EB-A81F-319AA1C6537E
 keywords:
 - テクスチャリングの基本概念
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c48b7b007c1af1eaf6013d5f6e99468713d50745
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2124c9e620694f62414c865e6d3247cd25ce70d0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580350"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715830"
 ---
 # <a name="basic-texturing-concepts"></a>テクスチャリングの基本概念
 

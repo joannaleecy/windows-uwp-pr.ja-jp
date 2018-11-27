@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 2D、3D、Streetside ビューでの地図の表示
 description: 地図を表示するには、マップ *プレースカード*と呼ばれる簡易非表示に対応したウィンドウか、フル機能を備えたマップ コントロールを使うことができます。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: normesta
 ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ コントロール, マップ ビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b162be26073db6989f9ea13cc7805d2d0f3f0d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564784"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714854"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>2D、3D、Streetside ビューでの地図の表示
 
@@ -325,7 +323,7 @@ Streetside ビューを表示するには
 
 次の例は、前掲の画像に似た Streetside ビューを表示する方法を示しています。
 
-**注:** マップ コントロールのサイズが小さすぎる場合の概要の地図は表示されません。
+**注:** マップ コントロールのサイズが小さすぎる場合、地図は表示されません。
 
  
 

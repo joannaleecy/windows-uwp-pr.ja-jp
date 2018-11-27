@@ -1,12 +1,13 @@
 ---
-author: JordanEllis6809
 title: Unity - UWP プロジェクトのバージョン管理
 description: UWP プロジェクトをバージョン管理します。
-ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.locfileid: "246557"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711634"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: UWP プロジェクトのバージョン管理
 
@@ -48,19 +49,19 @@ ms.locfileid: "246557"
 
 ## <a name="folders"></a>フォルダー  
 
-`Assets` | ***含める*** | Windows ストアの画像が格納されています  
-`Data`   | ***無視*** | Unity でプロジェクト (シーン、シェーダー、スクリプト、プレハブなど) のコンパイル先となる場所です  
-`Dependencies` | ***含める*** | このフォルダーは、UWP のすべての依存関係 (たとえば、XboxLiveSDK.dll) を格納するために作成したフォルダーです  
-`Properties` | ***含める*** | 開発者が変更できる高度な設定が格納されています  
-`Unprocessed` | ***無視*** | Unity の `.dll` ファイルと `.pdb` ファイルが格納されています  
+`Assets` | ***含める***|Microsoft Store の画像が含まれています  
+`Data`   | ***無視***|Unity が (シーン、シェーダー、スクリプト、プレハブなど) にプロジェクトをコンパイル  
+`Dependencies` | ***含める***|このフォルダーは、作成したすべての UWP の依存関係 (たとえば、xboxlivesdk.dll) を格納する  
+`Properties` | ***含める***|開発者が変更できる高度な設定が含まれています  
+`Unprocessed` | ***無視***|Unity を含む`.dll`と`.pdb`ファイル  
 
 ## <a name="files"></a>ファイル  
 
-`App.cs` | ***含める*** | UWP アプリケーションのエントリ ポイントであり、他のソース ファイルを使って、変更、拡張することができます  
-`Package.appxmanifest` | ***含める*** | AppX のパッケージ マニフェストです  
-`project.json` | ***含める*** | `*.csproj` が依存する NuGet パッケージを記述します。  
-`ScrapyardPhoenix.csproj` | ***含める*** | UWP ビルド ターゲットを記述します。新しい依存関係を UWP プロジェクトに追加した場合、この `*.csproj` ファイルにその情報が格納されます  
-`ScrapyardPhoenix.csproj.user` | ***無視*** | このファイルにはローカル ユーザーの情報が格納されます
+`App.cs` | ***含める***|UWP アプリケーションのエントリ ポイント変更およびその他のソース ファイルを使って拡張するには、この  
+`Package.appxmanifest` | ***含める***|アプリ パッケージ マニフェスト ソース ファイルには AppX の  
+`project.json` | ***含める***|NuGet パッケージを説明する`*.csproj`に依存  
+`ScrapyardPhoenix.csproj` | ***含める***|UWP ビルド対象; をについて説明します。UWP に追加の依存関係を追加する場合は、プロジェクトに、この`*.csproj`ファイルがその情報を含める  
+`ScrapyardPhoenix.csproj.user` | ***無視***|このファイルには、ローカル ユーザーの情報が含まれています。
 
 ## <a name="resulting-gitignore"></a>結果として得られる .gitignore
 

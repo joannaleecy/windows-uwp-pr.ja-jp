@@ -2,18 +2,16 @@
 title: 暗号化に関する輸出制限の順守
 description: アプリでの暗号化が、Microsoft Store に登録されない可能性がある方法で使われていないかどうかを判断する場合に、この情報を利用してください。
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: a29c4aeb5a5928e04e0018d68884fdb4a4876332
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566759"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715312"
 ---
 # <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 
@@ -35,7 +33,7 @@ ms.locfileid: "7566759"
 
 まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。 この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。
 
-> **重要な**、アプリもすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネント、アプリが含まれていますかへのリンクを記述したコードだけでなくを検討してください。
+> **重要な**、アプリもすべてのソフトウェア ライブラリ、ユーティリティ、およびオペレーティング システム コンポーネント、アプリが含まれていますかへのリンクを記述したコードだけでなくを検討してください。
 
 -   認証、整合性チェックなどの、デジタル署名の使用
 -   アプリが使ったりアクセスしたりするデータまたはファイルの暗号化

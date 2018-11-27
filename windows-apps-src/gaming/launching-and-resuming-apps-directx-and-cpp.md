@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: アプリの起動と再開 (DirectX と C++)
 description: ユニバーサル Windows プラットフォーム (UWP) DirectX アプリを起動、一時停止、再開する方法について説明します。
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 起動, 再開
 ms.localizationpriority: medium
-ms.openlocfilehash: ebcec430c4fc916e77ebdf25ee53deb23b02185d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac2f7e70d813ea3314d897eedb5e245d781ce412
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559761"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713023"
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>アプリの起動と再開 (DirectX と C++)
 

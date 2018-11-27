@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion fundamentals come together in your app.
 title: 実践的なモーション -  UWP アプリのアニメーション
 label: Motion in practice
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 889abda830d0721392d9a1b0dac17ea10c3e8604
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577248"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711923"
 ---
 # <a name="bringing-it-together"></a>まとめる
 
@@ -98,7 +96,7 @@ ms.locfileid: "7577248"
 - [境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_切り替え_プロパティがあります。 プロパティをアニメーション化するには、対応する_切り替え_プロパティに切り替えの種類を割り当てます。 次の表では、_切り替え効果_のプロパティとごとに使用する切り替えの種類を示します。
+暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_切り替え_プロパティがあります。 プロパティをアニメーション化するには対応する_切り替え効果_のプロパティに切り替えタイプを割り当てます。 _切り替え効果_のプロパティとごとに使用する切り替え効果の種類を示します。
 
 | アニメーション化されたプロパティ | 切り替え効果のプロパティ | 暗黙的な切り替えの種類 |
 | -- | -- | -- |
@@ -110,7 +108,7 @@ ms.locfileid: "7577248"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-この例では、ボタン コントロールを有効にするフェードイン/が無効化するときに、Opacity プロパティと切り替え効果を使用する方法を示します。
+この例では、ボタン コントロールを有効にするフェードイン/無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。
 
 ```xaml
 <Button x:Name="SubmitButton"

@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: POS (店舗販売時点管理) デバイスのサポート
 description: この記事には、POS (店舗販売時点管理) デバイス クラスの各ハードウェアのサポートに関する情報が含まれています
-ms.author: jken
 ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582402"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714301"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -69,7 +67,7 @@ ms.locfileid: "7582402"
 
 
 Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
-² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
+² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
 
 
 <hr>

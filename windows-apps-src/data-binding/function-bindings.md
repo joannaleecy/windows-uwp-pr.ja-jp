@@ -1,22 +1,20 @@
 ---
-author: jwmsft
 description: XBind マークアップ拡張は、マークアップで使用する機能を許可します。
 title: x:Bind の関数
-ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560008"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715478"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間で、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより。
 
@@ -86,7 +84,7 @@ public class MyPage : Page
 }
 ```
 
-たとえば日付の書式設定、テキストの書式設定、テキストの連結などの単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
+たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -106,7 +104,7 @@ public class MyPage : Page
 - 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
-次回のメジャー アップデートを Windows 10 以降、バインド エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングが再評価します。 例: 
+次回のメジャー アップデートを Windows 10 以降、バインド エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングを再評価すます。 例: 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -175,7 +173,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これを行う**BindBack**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Microsoft Store コレクション API の以下のメソッドを使います。 スコープを指定して特定の製品を照会したり、その他のフィルターを使用したりできます。
 title: 製品の照会
-ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, 製品の表示
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5e0f7f8c0f682eaa129f44eaa421fabd63dbfce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581405"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713163"
 ---
 # <a name="query-for-products"></a>製品の照会
 
@@ -134,7 +132,7 @@ CollectionItemContractV6 オブジェクトには以下のパラメーターが�
 | devOfferId           | string             | アプリ内購入からのプラン ID。              | 省略可能       |
 | endDate              | datetime           | 項目の終了日。              | 必須      |
 | fulfillmentData      | string             | 該当なし         | 省略可能       |
-| inAppOfferToken      | string             | パートナー センターでの項目に割り当てられている開発者が指定した製品 ID の文字列。 製品 ID の例では、 *product123*です。 | 省略可能       |
+| inAppOfferToken      | string             | パートナー センターでの項目に割り当てられている開発者が指定した製品 ID 文字列です。 製品 ID の例では、 *product123*です。 | 省略可能       |
 | itemId               | string             | ユーザーが所有する他の項目からこのコレクション項目を識別する ID。 この ID は製品ごとに一意です。   | 必須      |
 | localTicketReference | string             | 要求本文の *localTicketReference* で指定された ID。                  | 必須      |
 | modifiedDate         | datetime           | この項目が最後に更新された日付。              | 必須      |

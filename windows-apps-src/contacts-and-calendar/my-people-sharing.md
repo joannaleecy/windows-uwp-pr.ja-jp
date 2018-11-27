@@ -1,18 +1,16 @@
 ---
 title: マイ連絡先の共有
 description: マイ連絡先の共有のサポートを追加する方法について説明します。
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569344"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716067"
 ---
 # <a name="my-people-sharing"></a>マイ連絡先の共有
 
@@ -105,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を検索するには、既定のエディターを使って**Package.appxmanifest**を開くし、"Packaging"タブします。ここでは、"App"は、共有ターゲット ビューに対応するアクティブ化可能なクラスです。
+“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を検索するには、 **Package.appxmanifest**既定のエディターを使用して開き、"Packaging"タブします。ここでは、"App"は、共有ターゲット ビューに対応するアクティブ化可能なクラスです。
 
 ## <a name="running-as-a-my-people-share-target"></a>マイ連絡先の共有ターゲットとして実行する
 

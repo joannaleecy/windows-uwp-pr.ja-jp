@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: DirectX の概要
 description: DirectX プログラミングの概要について説明します。
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
-ms.author: joanlee
 ms.date: 06/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 66cbc3d281fef68937fd8af2e41a7f04d92d8977
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565109"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713356"
 ---
 # <a name="directx-getting-started"></a>DirectX: 概要
 

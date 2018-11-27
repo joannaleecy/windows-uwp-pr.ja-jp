@@ -1,24 +1,22 @@
 ---
-author: jnHs
 Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: '[広告パフォーマンス] レポート'
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555518"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714887"
 ---
 # <a name="advertising-performance-report"></a>広告パフォーマンス レポート
 
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で**の広告パフォーマンス レポート**では、コミュニティ広告など、[広告ユニット](in-app-ads.md)の実施状況を表示します。 このレポートには、[広告仲介](in-app-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**の広告パフォーマンス レポート**では、コミュニティ広告など、[広告ユニット](in-app-ads.md)の実行方法を示しています。 このレポートには、[広告仲介](in-app-ads.md#mediation)を使う UWP アプリの複数のプロバイダーからのデータが含まれます。
 
 このレポートを表示するには、左側のナビゲーション メニューで **[分析]** を展開し、**[広告パフォーマンス]** を選びます。 パートナー センターで、このデータを表示したり、ページの矢印アイコンをクリックしてオフラインで表示するレポート データをダウンロードできます。 このデータは、[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[広告のパフォーマンス データの取得](../monetize/get-ad-performance-data.md)メソッドを使ってプログラムで取得することもできます。
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: GLSL の移植
 description: バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, GLSL, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554031"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713083"
 ---
 # <a name="port-the-glsl"></a>GLSL の移植
 
@@ -60,7 +58,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 <a name="instructions"></a>手順
 ------------
-
 ### <a name="step-1-port-the-vertex-shader"></a>手順 1: 頂点シェーダーの移植
 
 この簡単な OpenGL ES 2.0 の例では、頂点シェーダーに 3 つの入力があります。1 つの定数のモデル ビュー プロジェクション 4x4 マトリックスと 2 つの 4 座標ベクトルです。 これら 2 つのベクトルには、頂点の位置と色が含まれます。 シェーダーでは、ラスタライズするために、位置ベクトルをパースペクティブ座標に変換し、それを gl\_Position 組み込みメソッドに割り当てます。 また、頂点の色は、ラスタライズ時に補間のために varying 変数にコピーされます。
@@ -160,10 +157,8 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 [頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md) 次の手順
 ---------
-
 [画面への描画](draw-to-the-screen.md) 解説
 -------
-
 HLSL セマンティクスと定数バッファーのパッキングについて理解すると、デバッグの苦労がいくらか少なくなるだけでなく、最適化できるようにもなります。 機会があれば、「[変数の構文 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)」、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」、「[定数バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476896)」をご覧ください。 機会がない場合は、次のセマンティクスと定数バッファーについての基本的なヒントを心に留めておいてください。
 
 -   必ずレンダラーの Direct3D 構成コードを見直して、定数バッファーの構造体が HLSL の cbuffer 構造体の宣言と一致し、コンポーネントのスカラー型が両方の宣言で一致していることを確認する。

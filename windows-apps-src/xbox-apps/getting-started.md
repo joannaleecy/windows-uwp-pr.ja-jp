@@ -1,18 +1,16 @@
 ---
-author: Mtoepke
 title: Xbox One の UWP アプリ開発の概要
 description: UWP 開発のために PC と Xbox One を設定する方法。
-ms.author: scotmi
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4761b668877af6380ad176e56fb84410a4f509fc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a8f217322d6d10b91ebc82c3434c88e9d11128f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579014"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711810"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>Xbox One の UWP アプリ開発の概要
 
@@ -21,7 +19,7 @@ ms.locfileid: "7579014"
 ## <a name="before-you-start"></a>開始前の作業
 
 開始する前に、次の操作をする必要があります。
--   最新バージョンの Windows 10 での PC を設定します。
+-   最新バージョンの Windows 10 で PC を設定します。
 <!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
 
     > [!NOTE]
@@ -35,7 +33,7 @@ ms.locfileid: "7579014"
 
     Visual Studio 2015 Update 3 をインストールしている場合は、既定のインストールの一部ではないこと:**カスタム**インストールを選択して、**ユニバーサル Windows アプリ開発ツール**のチェック ボックスをオンを確認します。 C++ 開発者の場合は、**カスタム インストール**と **C++** を選択してください。
 
-    Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 場合 C++ 開発者が、右側の [**概要**] ウィンドウで、**ユニバーサル Windows プラットフォーム開発**、必ず**C++ ユニバーサル Windows プラットフォーム ツール**のチェック ボックスを選択すること。 既定のインストールの一部ではありません。
+    Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 場合 C++ 開発者が、右側の [**概要**] ウィンドウで、**ユニバーサル Windows プラットフォーム開発**、確認**C++ ユニバーサル Windows プラットフォーム ツール**のチェック ボックスを選択します。 既定のインストールの一部ではありません。
 
     詳細については、 [UWP Xbox の開発環境をセットアップ](development-environment-setup.md)を参照してください。
 
@@ -64,7 +62,7 @@ ms.locfileid: "7579014"
 
 詳細については、 [UWP Xbox の開発環境をセットアップ](development-environment-setup.md)を参照してください。
 
-1.  **C# の**: 新しいユニバーサル Windows プロジェクトを作成し、**ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**プロパティ**を選択します。 [**デバッグ**] タブを選択して、**ターゲット デバイス**を**リモート コンピューター**に変更、**リモート コンピューター** ] フィールドに IP アドレスまたは Xbox One 本体のホスト名を入力、および、**で**ユニバーサル (暗号化されていないプロトコル)** を選択認証モード**ドロップダウン リスト。   
+1.  **C# の**: 新しいユニバーサル Windows プロジェクトを作成し、**ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**プロパティ**を選択します。 [**デバッグ**] タブを選択して、**ターゲット デバイス**を**リモート コンピューター**に変更する、**リモート コンピューター** ] フィールドに IP アドレスまたは Xbox One 本体のホスト名を入力および、**で**ユニバーサル (暗号化されていないプロトコル)** を選択認証モード**ドロップダウン リスト。   
 
     本体で Dev Home (ホーム画面の右側の大きなタイル) を開始すると、左上隅に Xbox One の IP アドレスが表示されます。 Dev Home について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。  
 
@@ -74,7 +72,7 @@ ms.locfileid: "7579014"
    
 4.  F5 キーを押してアプリをビルドして、Xbox One での展開を開始します。
   
-5.  初めてこれを行う際には、Visual Studio に Xbox One の PIN の入力を求められます。 Xbox One で Dev Home を開始して、 **Visual Studio pin の表示**] ボタンを選択して、PIN を取得できます。
+5.  初めてこれを行う際には、Visual Studio に Xbox One の PIN の入力を求められます。 Xbox One で Dev Home を開始して、 **Visual Studio pin の表示**] ボタンを選択して、暗証番号 (pin) を取得できます。
   
 6.  ペアリングを行うと、アプリの展開が開始されます。 初めてこれを行う際には、(すべてのツールを Xbox にコピーする必要があるため) 少し時間がかかることがありますが、数分以上かかる場合には、何か問題がある場合があります。 上記のすべての手順を実行していることを確認します (特に **[認証モード]** を **[ユニバーサル]** に設定していることを確認します)。また Xbox One に有線接続していることを確認します。  
 

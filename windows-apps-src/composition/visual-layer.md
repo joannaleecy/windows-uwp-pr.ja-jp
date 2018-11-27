@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: ビジュアル レイヤー
 description: Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571391"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716130"
 ---
 # <a name="visual-layer"></a>ビジュアル レイヤー
 
@@ -40,7 +38,7 @@ Windows UWP アプリは、いずれかの UI フレームワークを介して�
 
 ### <a name="content"></a>コンテンツ
 
-コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 Visual のサブクラスでは、子コンテンツの視覚効果と[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)が含まれているツリーを作成できるようにする [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)を含めるし、カスタム描画コンテンツ、視覚効果、単色で塗りつぶすことができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
+コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 Visual のサブクラスでは、子コンテンツの視覚効果とが含まれている[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)のツリーを作成できるようにする [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)を含めるし、カスタム描画コンテンツ、視覚効果、単色で塗りつぶすことができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
 
 詳しくは、[コンポジションのビジュアル](composition-visual-tree.md)の概要をご覧ください。
 

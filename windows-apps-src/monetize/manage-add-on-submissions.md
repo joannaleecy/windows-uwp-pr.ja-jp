@@ -1,32 +1,30 @@
 ---
-author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: Microsoft Store 申請 API でこれらのメソッドを使用すると、パートナー センター アカウントに登録されているアプリのアドオンの申請を管理できます。
+description: パートナー センター アカウントに登録されているアプリのアドオンの申請を管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: アドオンの申請の管理
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576759"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713183"
 ---
 # <a name="manage-add-on-submissions"></a>アドオンの申請の管理
 
 Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品または IAP とも呼ばれます) 申請を管理するために使用できるメソッドが用意されています。 Microsoft Store 申請 API の概要については、「[Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)」をご覧ください。この API を使用するための前提条件などの情報があります。
 
 > [!IMPORTANT]
-> Microsoft Store 申請 API を使用して、アドオンの申請を作成する場合は、さらに変更を申請にパートナー センターでの変更を加えるよりも、API を使用してのみを必ず。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
+> Microsoft Store 申請 API を使用して、アドオンの申請を作成する場合は、さらに変更を申請にパートナー センターで変更を加えるよりも、API を使用してのみを必ず。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
 
 <span id="methods-for-add-on-submissions" />
 
 ## <a name="methods-for-managing-add-on-submissions"></a>アドオンの申請を管理するためのメソッド
 
-アドオンの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用する前にする必要があります、アドオンがパートナー センター アカウントに既に存在します。 [製品の種類と製品 ID を定義すること](../publish/set-your-add-on-product-id.md)によって、またはで説明されている[アドオンの管理](manage-add-ons.md)で、Microsoft Store 申請 API のメソッドを使用して、パートナー センターでアドオンを作成できます。
+アドオンの申請を取得、作成、更新、コミット、または削除するには、次のメソッドを使用します。 これらのメソッドを使用する前にする必要があります、アドオンが、パートナー センター アカウントに既に存在します。 [製品の種類と製品 ID を定義すること](../publish/set-your-add-on-product-id.md)によって、またはで説明されている[アドオンの管理](manage-add-ons.md)で、Microsoft Store 申請 API のメソッドを使用して、パートナー センターでアドオンを作成できます。
 
 <table>
 <colgroup>
@@ -81,7 +79,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
 
 アドオンの申請を作成するには、次のプロセスに従います。
 
-1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)Azure AD アプリケーションをパートナー センター アカウントに関連付けると、ID とキー、クライアントの取得を含め、します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
+1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)Azure AD アプリケーションをパートナー センター アカウントに関連付けると、ID とキー、クライアントの取得を含めて、します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
 
 2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Microsoft Store 申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
@@ -121,7 +119,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、申請をコミットします。 これは、申請を完了したことと、更新がアカウントに適用できるようになりましたする必要がありますにパートナー センターに通知されます。 詳しくは、「[アドオンの申請のコミット](commit-an-add-on-submission.md)」をご覧ください。
+5. 次のメソッドを実行して、申請をコミットします。 これでパートナー センターに通知が申請に完了したことと、更新がアカウントに適用できるようになりましたする必要があります。 詳しくは、「[アドオンの申請のコミット](commit-an-add-on-submission.md)」をご覧ください。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -135,7 +133,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 またはパートナー センターにアクセスして、以前のメソッドを使用して、申請の進行状況を監視する続行することができます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 引き続き、以前のメソッドを使用するか、パートナー センターにアクセスして申請進行状況を監視できます。
 
 <span/>
 
@@ -232,7 +230,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 | 値      | 型   | 説明        |
 |------------|--------|----------------------|
-| id            | string  | 申請 ID。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求、[すべてのアドオンの取得](get-all-add-ons.md)要求、[アドオンの取得](get-an-add-on.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| id            | string  | 申請 ID。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求、[すべてのアドオンの取得](get-all-add-ons.md)要求、[アドオンの取得](get-an-add-on.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 | contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
 | lifetime           | string  |  アドオンの有効期間です。 次のいずれかの値を使用できます。 <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
@@ -354,7 +352,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 |  Base               |   価格帯が設定されていない場合、アドオンの基本価格が使用されます。      |     
 |  NotAvailable              |   アドオンは指定された地域で提供されていません。    |     
 |  Free              |   アドオンは無償です。    |    
-|  Tier*xxxx*               |   アドオンの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられた市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは**価格**のセクションで)。     |
+|  Tier*xxxx*               |   アドオンの価格帯を指定する文字列 (**Tier<em>xxxx</em>** の形式)。 現在のところ、次の範囲の価格帯がサポートされています。<br/><br/><ul><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **true** の場合、アカウントで利用可能な価格帯値は **Tier1012** - **Tier1424** です。</li><li>[価格リソース](#pricing-object)の *isAdvancedPricingModel* 値が **false** の場合、アカウントで利用可能な価格帯値は **Tier2** - **Tier96** です。</li></ul>価格の完全な表をご覧くださいに、各階層に関連付けられている市場固有の価格を含む、開発者アカウントで利用可能な階層がパートナー センターで、アプリの申請の**価格と使用可能状況**のページに移動し、**市場と特別価格**のセクションで**テーブルを表示**リンクをクリックして (一部の開発者アカウントでは、このリンクは、**価格**のセクションで)。     |
 
 <span id="submission-status-code" />
 

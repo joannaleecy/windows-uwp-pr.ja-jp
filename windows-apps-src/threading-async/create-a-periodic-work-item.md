@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: 定期的な作業項目の作成
 description: 定期的に実行される作業項目の作成方法を説明します。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、定期的な作業項目、スレッド、タイマー
 ms.localizationpriority: medium
-ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570315"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715223"
 ---
 # <a name="create-a-periodic-work-item"></a>定期的な作業項目の作成
 
@@ -31,7 +29,7 @@ ms.locfileid: "7570315"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
 
-> **注:** 0 の値を指定することを避けるため (または 1 ミリ秒未満の値) の間隔をします。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
+> **注:** 値 0 を指定することを避けるため (または 1 ミリ秒未満の値) の間隔をします。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
 
 > **注:** を UI にアクセスし、作業項目の進捗状況を表示する[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)を使用することができます。
 

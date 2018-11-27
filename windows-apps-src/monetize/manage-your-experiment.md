@@ -1,32 +1,30 @@
 ---
-author: Xansky
 Description: After you define your experiment in Partner Center and code your experiment in your app, you are ready to active your experiment and use Partner Center to review the results of your experiment.
 title: パートナー センターで実験を管理する
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d1cdb80a2278850f18cecc631fef0b5dff0fefc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6e5c0d0ca1b1d771df2b224cc41ec5a37e267bc9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566144"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713549"
 ---
 # <a name="manage-your-experiment-in-partner-center"></a>パートナー センターで実験を管理する
 
 [パートナー センターで実験を定義](define-your-experiment-in-the-dev-center-dashboard.md)すると、[実験用のアプリのコード](code-your-experiment-in-your-app.md)実験をアクティブ化し、パートナー センターを使用して、実験の結果を確認する準備ができたらします。 必要なすべてのデータを取得したら、実験を終了し、すべてのアプリでコントロールのバリエーションの変数値を使用し続けるか、他のバリエーションの変数値を使用することに切り替えるかを選択できます。
 
 > [!NOTE]
-> 実験をアクティブ化するとすぐにパートナー センターが実験のデータをログにインストルメント化されたアプリからデータの収集を開始します。 ただし、実験のデータがパートナー センターで表示される数時間がかかることができます。
+> 実験をアクティブ化するとすぐにパートナー センターが実験のデータをログにインストルメント化されたアプリからデータの収集を開始します。 ただし、実験のデータがパートナー センターで表示される数時間かかることができます。
 
 実験の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
 ## <a name="activate-your-experiment"></a>実験をアクティブ化する
 
-パートナー センターで実験のパラメーターに問題がなければ、アプリのコードを更新するは、アプリから実験データの収集を開始するために、実験をアクティブ化する準備ができたらします。 実験がアクティブである場合、アプリはバリエーション値を取得し、パートナー センターにビュー イベントとコンバージョン イベントを報告できます。
+パートナー センターで実験のパラメーターに問題がなければ、アプリのコードを更新するは、アプリから実験データの収集を開始できるように、実験をアクティブ化する準備ができたらします。 実験がアクティブになって、アプリはバリエーション値を取得し、パートナー センターにビュー イベントとコンバージョン イベントを報告できます。
 
 1. [パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。
 2. **[アプリ]** の下で、アクティブ化する実験を備えたアプリを選択します。
@@ -47,7 +45,7 @@ ms.locfileid: "7566144"
   * **[結果の詳細]** セクションには、ビュー、コンバージョン、固有ユーザー数、コンバージョン率、デルタ %、信頼性、重要性など、実験のすべての目標に対する各検証結果の詳細が表示されます。 *信頼性*は、推定値の信頼性の統計的な計測であり、許容誤差を計算したものです。 *重要性*は、サンプル サイズに基づいた統計的な計測であり、結果が偶然に発生したのではなく、特定の原因によって発生した可能性があることを示すものです。
 
 > [!NOTE]
-> パートナー センターでは、24 時間の期間内の各ユーザーの最初のコンバージョン イベントのみを報告します。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
+> パートナー センターでは、24 時間の期間に各ユーザーの最初のコンバージョン イベントのみを報告します。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の結果が歪曲されないようにすることを目的としています。
 
 
 ## <a name="complete-your-experiment"></a>実験を完了する

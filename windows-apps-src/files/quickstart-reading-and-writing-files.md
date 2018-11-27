@@ -1,9 +1,7 @@
 ---
-author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: ファイルの作成、書き込み、および読み取り
 description: StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。
-ms.author: lahugh
 ms.date: 06/28/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 9bc19460fe1b9b9c6b637606a737e1157d98feef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6079ea8ca844efc912b970c00c6907d98378dd07
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577175"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714353"
 ---
 # <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
@@ -37,7 +35,7 @@ ms.locfileid: "7577175"
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C++ 非同期アプリの作成する方法について/WinRT を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 C++ 非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C++ 非同期アプリの作成する方法について//winrt を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。 C++ で非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。
 
 -   **読み取り、書き込み、またはその両方の対象となるファイルを取得する方法についての知識**
 
@@ -152,7 +150,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **バッファーを使ったファイルへのバイトの書き込み (2 ステップ)**
 
-1.  最初に、(文字列に基づく) バイトのバッファーを取得するのには、 [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)を呼び出して、ファイルを作成します。
+1.  最初に、(文字列に基づく) バイトのバッファーを取得するのには、 [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)を呼び出してファイルに記述します。
 
 ```csharp
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -282,7 +280,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  これを追加できるようになりました (使っている場合は、c#、既存の**using**ステートメント内) を新しい[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)オブジェクトを作成し、 [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)メソッドを呼び出すことによって、出力ストリームを記述するコードします。
+3.  これを追加できるようになりました (使用している場合は、c#、既存の**using**ステートメント内で) の新しい[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)オブジェクトを作成し、 [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)メソッドを呼び出すことによって、出力ストリームを記述するコードします。
 
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -308,7 +306,7 @@ Dim dataWriter As New DataWriter(outputStream)
 dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  最後に、この追加コード (使用している場合は、c#**を使って**内部ステートメント内で) [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)をファイルにテキストを保存して[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)でストリームを閉じます。
+4.  最後に、この追加コード (使用している場合は、c#**を使って**内部ステートメント内で) [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)でファイルにテキストを保存して[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)でストリームを閉じます。
 
 ```csharp
 await dataWriter.StoreAsync();

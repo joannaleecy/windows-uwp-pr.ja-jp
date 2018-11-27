@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
 title: ホーム ページ (Dev Home)
 description: Xbox one Dev Home アプリのホーム ページについての情報を提供します。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555082"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714502"
 ---
 # <a name="home-page-dev-home"></a>ホーム ページ (Dev Home)
    
@@ -73,7 +71,7 @@ Dev Home の**ホーム**ページは、開発機本体で定期的に実行さ�
 次の操作を実行する**テスト アカウント**のウィンドウを使用できます。   
  
    *  コンソールに登録されているユーザーの一覧を表示します。  
-   *  1 回のクリックにユーザーをサインインします。  
+   *  1 回のクリックでまたはをユーザーにサインインします。  
    *  ユーザーとゲスト アカウントを追加します。  
    *  ユーザーやゲスト アカウントの詳細を表示します。  
 

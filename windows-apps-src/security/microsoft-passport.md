@@ -2,18 +2,16 @@
 title: Windows Hello
 description: この記事では、Windows 10 オペレーティング システムの一部としてリリースされる新しい Windows Hello テクノロジについて説明します。また、開発者がこのテクノロジを実装して、ユニバーサル Windows プラットフォーム (UWP) アプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b2ee216059163e7232d65eb515645d9e7db56b3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccffc523dd1196c208c2fe0abdb7297c19892279
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581972"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716015"
 ---
 # <a name="windows-hello"></a>Windows Hello
 

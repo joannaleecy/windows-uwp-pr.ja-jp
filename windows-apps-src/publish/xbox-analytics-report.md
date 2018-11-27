@@ -1,27 +1,25 @@
 ---
-author: jnHs
 Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox 分析レポート
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
-ms.openlocfilehash: c2c1f54a402fc4ae7184f1d588cc255525f762c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557050"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711759"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、ユーザーを引き付ける方法、ゲームの Xbox 機能に関する統計情報を示しています。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、ユーザーを引き付ける方法、ゲームで Xbox 機能に関する統計情報を示しています。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
-> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲーム経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームは、このレポートに表示されているされません。
+> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲームの経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームはこのレポートに表示されているされません。
 
-**分析**を展開し、 **Xbox 分析**を選択して、ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示できます。  このデータは、パートナー中央揃え、または[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示できます。
+ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示するには**分析**を展開し、 **Xbox 分析**を選択します。  オフラインで表示するパートナー センターでは、または[レポートをダウンロードするの](download-analytic-reports.md)には、このデータを表示できます。
 
 
 ## <a name="overview-tab"></a>[概要] タブ

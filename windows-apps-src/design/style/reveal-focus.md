@@ -1,9 +1,7 @@
 ---
-author: cphilippona
-description: 表示フォーカスは、ユーザーにゲームパッドやキーボードのフォーカスを移動するときにフォーカス可能な要素の境界線をアニメーション化する発光効果。
+description: 表示フォーカスにユーザーがゲームパッドやキーボードのフォーカスを移動すると、フォーカス可能な要素の境界線をアニメーション化する発光効果。
 title: 表示フォーカス
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 03/1/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -11,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c80ed7521d797602cde15607f966a1fc3665cd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581224"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711588"
 ---
 # <a name="reveal-focus"></a>表示フォーカス
 
@@ -24,13 +22,13 @@ ms.locfileid: "7581224"
 
 表示フォーカスは[10 フィート エクスペリエンス](/windows/uwp/design/devices/designing-for-tv)を Xbox One やテレビ画面などの照明効果。 ユーザーがゲームパッドやキーボードのフォーカスをボタンなどのフォーカス可能な要素に移動したときに、その要素の境界線がアニメーション化されます。 表示フォーカスは既定で無効になっていますが、簡単に有効にできます。 
 
-(表示ハイライト効果、対話型要素を発光[強調表示の記事](/windows/uwp/design/style/reveal)を参照してください)。
+(表示効果を強調表示の効果、対話型要素を発光[強調表示効果の記事](/windows/uwp/design/style/reveal)を参照してください)。
 
 
 > **重要な API**: [Application.FocusVisualKind プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind 列挙](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals プロパティ](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>動作の仕組み
-フォーカスが置かれた要素にフォーカス注意を表示するには、要素の境界線の周囲のアニメーション化されたグロー部分を追加します。
+フォーカスが置かれた要素にフォーカス注意を表示するには、要素の境界線をアニメーション化されたグローを追加します。
 
 ![表示のビジュアル効果](images/traveling-focus-fullscreen-light-rf.gif)
 
@@ -67,18 +65,18 @@ ms.locfileid: "7581224"
 
 **FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティが**True** (ほとんどのコントロールの既定値) に設定されてすべてのコントロールに適用されます。 
 
-## <a name="why-isnt-reveal-focus-on-by-default"></a>既定で表示フォーカスをできない理由かどうか。 
-ご覧のように、Xbox で実行されているアプリを検出した場合、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトで問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズするされます。
+## <a name="why-isnt-reveal-focus-on-by-default"></a>既定で表示効果のフォーカスをできない理由かどうか。 
+ご覧のように、Xbox で実行されているアプリを検出した場合、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズします。
 
 ## <a name="customizing-reveal-focus"></a>表示フォーカスのカスタマイズ
 
 各コントロールのフォーカス視覚効果プロパティを変更することによって、表示フォーカス効果をカスタマイズすることができます: [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)、および[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)します。 これらのプロパティでは、フォーカスの四角形の色と太さをカスタマイズできます。 (これらは、[視認性の高いフォーカスの視覚効果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)を作成する場合と同じプロパティです。) 
 
-カスタマイズを開始する前に、それが明らかにフォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
+カスタマイズを開始する前に、それは表示効果のフォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
 
-既定の表示フォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分には、プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
+既定の表示効果のフォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分、プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
 
-だけでなく、静的な要素は、表示フォーカスの視覚効果は、置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動するためのアニメーション化された光を備えています。
+だけでなく、静的な要素表示フォーカスの視覚効果機能は、アニメーション化された光を置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動します。
 
 ![表示フォーカス レイヤー](images/reveal-breakdown.svg)
 

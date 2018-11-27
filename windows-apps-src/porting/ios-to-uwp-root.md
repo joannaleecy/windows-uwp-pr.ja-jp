@@ -1,20 +1,18 @@
 ---
-author: stevewhims
 description: iOS から UWP への移行
 Search.SourceType: Video
 title: iOS から UWP への移行
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c769876b13eede84a776676aed69274d34e4bbbf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d4740c108491751afa038894de2e9c50579e74c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581868"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713529"
 ---
 # <a name="move-from-ios-to-uwp"></a>iOS から UWP への移行
 

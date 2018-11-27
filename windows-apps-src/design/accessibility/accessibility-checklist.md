@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: アクセシビリティのチェック リスト
 label: Accessibility checklist
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bf9c3c4d803c4e5c2bc369449b83cf711bda6f99
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d63c7465234b6aebe876259ee095a183571946b2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564847"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716770"
 ---
 # <a name="accessibility-checklist"></a>アクセシビリティのチェック リスト
 

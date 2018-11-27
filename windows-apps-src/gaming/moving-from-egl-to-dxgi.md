@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: EGL コードと DXGI および Direct3D の比較
 description: DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, EGL, DXGI, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565341"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713033"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL コードと DXGI および Direct3D の比較
 
@@ -394,7 +392,7 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 | eglDestroySurface                | なし。 グラフィックス リソースは、UWP アプリの CoreWindow がプラットフォームによって閉じられたときにクリーンアップされます。                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | 現在のメイン アプリ ウィンドウへの参照を取得するには、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出します。                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | これが現在の [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) です。 通常、これのスコープはレンダラー オブジェクトに限定されます。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | エラーは、DirectX インターフェイスのほとんどのメソッドによって返される HRESULT として取得されます。 メソッドから HRESULT が返されない場合は、[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) を呼び出します。 システム エラーを anHRESULTvalue に変換するには、[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)を使用してマクロです。                                                                                                                                                                                                  |
+| eglGetError                      | エラーは、DirectX インターフェイスのほとんどのメソッドによって返される HRESULT として取得されます。 メソッドから HRESULT が返されない場合は、[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) を呼び出します。 システム エラーを anHRESULTvalue に変換するには、[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)を使用マクロです。                                                                                                                                                                                                  |
 | eglInitialize                    | 現在のメイン アプリ ウィンドウへの参照を取得するには、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出します。                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を使って、現在のコンテキストに描画するためのレンダー ターゲットを設定します。                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | なし。 ただし、[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) インスタンスからレンダリング ターゲットと一部の構成データを取得できます  (利用できるメソッドの一覧については、リンクをご覧ください)。                                                                                                                                                                                                                                                                                           |

@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: 開発者アカウントを作る
 description: 今すぐ開発者アカウントにご登録ください。Microsoft Store でアプリを公開し、他の Microsoft プログラムに参加できます。
-ms.author: quradic
 ms.date: 4/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, サインアップ, 開発者アカウント
 ms.localizationpriority: medium
-ms.openlocfilehash: dc7f887018dc550ff28101acc6187c9b06235f1f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c15f6df30477f11c8b20afd08fa1c1cd55b34b3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563055"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715850"
 ---
 # <a name="create-a-developer-account"></a>開発者アカウントを作る
 

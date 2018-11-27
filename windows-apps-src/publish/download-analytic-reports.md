@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can download .tsv files that contain your analytics data so that you can review your stats and info offline.
 title: 分析レポートのダウンロード
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 371fbed113af10c8e5b388a8f271d99df4b4c4e9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9b6bc75d2747a750c324aa979cd132774cf091f5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555707"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714913"
 ---
 # <a name="download-analytics-reports"></a>分析レポートのダウンロード
 

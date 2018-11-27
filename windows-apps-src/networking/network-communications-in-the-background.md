@@ -1,24 +1,22 @@
 ---
-author: stevewhims
 description: バックグラウンドでないときにネットワーク通信を続けるため、アプリはバックグラウンド タスクを使うことができます。ソケット ブローカーまたはコントロール チャネルがトリガーされます。
 title: バックグラウンドでのネットワーク通信
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: stwhi
 ms.date: 06/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555384"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713569"
 ---
 # <a name="network-communications-in-the-background"></a>バックグラウンドでのネットワーク通信
 フォア グラウンドでないときにネットワーク通信を続行するには、アプリはバック グラウンド タスクとこれら 2 つのオプションのいずれかを使用できます。
-- ソケット ブローカーします。 アプリ ソケットを使用して長期的な接続し、フォア グラウンドを離れたとき場合、は、ソケットの所有権をシステムのソケット ブローカーに委任ができます。 その後、ブローカー:; ソケットでトラフィックが到着したときにアプリをアクティブ化所有権をアプリに転送します。アプリがし、着信トラフィックを処理します。
-- コントロール チャネル トリガーされます。 
+- ソケット ブローカーします。 アプリ ソケットを使用して長期的な接続し、フォア グラウンドから離れたとき場合、ソケットの所有権をシステムのソケット ブローカーに委任できます。 その後、ブローカー:; ソケットでトラフィックが到着するときに、アプリをアクティブ化元のアプリに所有権アプリは、着信トラフィックを処理します。
+- コントロール チャネル トリガーします。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>バックグラウンド タスクでのネットワーク操作の実行
 - パケットを受信し、有効期間が短いタスクを実行する必要がある場合は、[SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) を使用して、バックグラウンド タスクをアクティブにします。 タスクを実行するには、バック グラウンド タスクが電力を節約するために終了する必要があります。
@@ -159,7 +157,7 @@ case SocketActivityTriggerReason.SocketClosed:
 ## <a name="control-channel-triggers"></a>コントロール チャネル トリガー
 まず、コントロール チャネル トリガー (CCT) を適切に使っていることを確認します。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)接続を使用している場合、お勧めします[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)を使用することです。 **StreamSocket** には CCT を使うことができますが、リソースを多く使うため、コネクト スタンバイ モードでは動作しない可能性があります。
 
-Websocket、 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、 [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または[**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)を使用している場合は、 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)を使う必要があります。
+Websocket、 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、 [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または[**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)を使用している場合は、 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)を使用する必要があります。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ControlChannelTrigger と WebSocket
 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を使う場合は、特別な注意事項がいくつかあります。 **ControlChannelTrigger** で **MessageWebSocket** または **StreamWebSocket** を使う際には、トランスポート固有の使用パターンとベスト プラクティスに従う必要があります。 また、**StreamWebSocket** でパケットを受け取る要求の処理方法にも、これらの注意事項が関係します。 **MessageWebSocket** でパケットを受け取るための要求には影響しません。

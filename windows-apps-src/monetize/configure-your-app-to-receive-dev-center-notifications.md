@@ -1,25 +1,23 @@
 ---
-author: Xansky
 Description: Learn how to register your UWP app to receive push notifications that you send from Partner Center.
 title: ターゲット プッシュ通知用のアプリの構成
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store Services SDK, ターゲット プッシュ通知、パートナー センター
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1281436ce0fe8c7b04429cea897eedc58b15d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60780186256e7f78a9596c979c79bfc704ae4c2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553516"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715810"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>ターゲット プッシュ通知用のアプリの構成
 
-パートナー センターで**プッシュ通知**] ページを使用するには、ユニバーサル Windows プラットフォーム (UWP) アプリがインストールされているデバイスにターゲット プッシュ通知を送信することでお客様と直接関わり合うします。 たとえば、ターゲット プッシュ通知を使用して、ユーザーにアプリの評価や新しい機能の試用などの行動を促すことができます。 トースト通知、タイル通知、生の XML 通知など、さまざまな種類のプッシュ通知を送信できます。 また、プッシュ通知の結果としてのアプリの起動率を追跡することもできます。 この機能について詳しくは、「[アプリのユーザーにプッシュ通知を送信する](../publish/send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+パートナー センターで**プッシュ通知**] ページを使用するには、ユニバーサル Windows プラットフォーム (UWP) アプリがインストールされているデバイスにターゲット プッシュ通知を送信することでユーザーと直接関わり合うします。 たとえば、ターゲット プッシュ通知を使用して、ユーザーにアプリの評価や新しい機能の試用などの行動を促すことができます。 トースト通知、タイル通知、生の XML 通知など、さまざまな種類のプッシュ通知を送信できます。 また、プッシュ通知の結果としてのアプリの起動率を追跡することもできます。 この機能について詳しくは、「[アプリのユーザーにプッシュ通知を送信する](../publish/send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
-ターゲット プッシュ通知を顧客に送信するには、パートナー センターから、前に、Microsoft Store Services SDK で通知を受信するアプリを登録する[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)クラスのメソッドを使う必要があります。 このクラスの追加のメソッドを使用するには (の通知に起因するアプリの起動率を追跡するには) 場合に、アプリがターゲット プッシュ通知への応答で起動されたことをパートナー センターに通知して、通知の受信を停止します。
+顧客にターゲット プッシュ通知を送信するにはパートナー センターから、前に、Microsoft Store Services SDK で通知を受信するアプリを登録する[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)クラスのメソッドを使う必要があります。 このクラスの追加のメソッドを使用するには (の通知に起因するアプリの起動率を追跡するには) 場合に、アプリがターゲット プッシュ通知への応答で起動されたことをパートナー センターに通知して、通知の受信を停止します。
 
 ## <a name="configure-your-project"></a>プロジェクトを構成する
 
@@ -33,7 +31,7 @@ ms.locfileid: "7553516"
 
 ## <a name="register-for-push-notifications"></a>プッシュ通知への登録
 
-パートナー センターからターゲット プッシュ通知を受信するアプリを登録するには。
+パートナー センターからターゲット プッシュ通知を受信するアプリを登録します。
 
 1. プロジェクトで、起動中に実行されるコード セクションを見つけます。このセクションで、通知を受信するようにアプリケーションを登録することができます。
 2. コード ファイルの先頭に、次のステートメントを追加します。
@@ -65,7 +63,7 @@ ms.locfileid: "7553516"
 
 ### <a name="how-your-app-responds-when-the-user-launches-your-app"></a>ユーザーがアプリを起動したときのアプリの対応方法
 
-通知と[パートナー センターからアプリのユーザーにプッシュ通知の送信](../publish/send-push-notifications-to-your-apps-customers.md)を受信するアプリを登録すると、アプリでは、次のエントリ ポイントのいずれかのときに呼び出される、ユーザーにプッシュへの応答としてアプリを起動します。通知です。 ユーザーがアプリを起動したときに実行するコードがある場合は、アプリのこれらのエントリ ポイントのいずれかにコードを追加できます。
+アプリを受け取る通知と[パートナー センターからアプリのユーザーにプッシュ通知を送信](../publish/send-push-notifications-to-your-apps-customers.md)するには、登録後、アプリでは、次のエントリ ポイントのいずれかのときに呼び出される、ユーザーが、プッシュへの応答でアプリを起動通知です。 ユーザーがアプリを起動したときに実行するコードがある場合は、アプリのこれらのエントリ ポイントのいずれかにコードを追加できます。
 
   * プッシュ通知にフォアグラウンドのアクティブ化の種類がある場合には、プロジェクトの**アプリ**クラスの [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) メソッドを上書きして、このメソッドにコードを追加します。
 
@@ -75,9 +73,9 @@ ms.locfileid: "7553516"
 
 ## <a name="notify-partner-center-of-your-app-launch"></a>アプリの起動のパートナー センターに通知します。
 
-パートナー センターでターゲット プッシュ通知の**アプリの起動率の追跡**オプションを選択した場合は、アプリがパートナー センターに通知するアプリの適切なエントリ ポイントから[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)メソッドを呼び出すプッシュ通知への応答として起動されます。
+パートナー センターでターゲット プッシュ通知を**アプリの起動率の追跡**オプションを選択した場合は、アプリがパートナー センターに通知するアプリで適切なエントリ ポイントから[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)メソッドを呼び出すプッシュ通知への応答として起動されます。
 
-このメソッドは、アプリの元の起動引数を返します。 プッシュ通知のアプリの起動率の追跡を選択すると、不透明な追跡に ID を追加、アプリを追跡するための起動引数を起動パートナー センターでします。 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)メソッドには、アプリの起動引数を渡す必要があり、このメソッドは、追跡 ID をパートナー センターに送信し、起動引数から追跡 ID を削除を元の起動引数を返します、。コードです。
+このメソッドは、アプリの元の起動引数を返します。 プッシュ通知のアプリの起動率の追跡を選択すると、不透明な追跡に ID を追加、アプリを追跡するための起動引数を起動パートナー センターでします。 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)メソッドには、アプリの起動引数を渡す必要があります、このメソッドは、追跡 ID をパートナー センターに送信し、起動引数から追跡 ID を削除を元の起動引数を返します、。コードです。
 
 このメソッドを呼び出す方法は、プッシュ通知のアクティブ化の種類によって異なります。
 
@@ -93,7 +91,7 @@ ms.locfileid: "7553516"
 
 ## <a name="unregister-for-push-notifications"></a>プッシュ通知の登録解除
 
-パートナー センターからターゲット プッシュ通知の受信を停止するアプリの場合は、 [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync)メソッドを呼び出します。
+パートナー センターからターゲット プッシュ通知の受信を停止してアプリを実行する場合に、 [UnregisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync)メソッドを呼び出します。
 
 [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
 

@@ -1,5 +1,4 @@
 ---
-author: Jwmsft
 Description: You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework.
 MS-HAID: dev\_ctrl\_layout\_txt.control\_templates
 MSHAttr: PreferredLib:/library/windows/apps
@@ -8,17 +7,16 @@ title: コントロール テンプレート
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576120"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714611"
 ---
 # <a name="control-templates"></a>コントロール テンプレート
 
@@ -55,7 +53,7 @@ XAML フレームワークで、コントロール テンプレートを作る�
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) は、コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクする特殊なバインディングです。 XAML では、TemplateBinding は ControlTemplate 定義内でのみ使用できます。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
 
 > [!NOTE]
-> Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 以降では[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)マークアップ拡張を使うことができますの場所では、 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)を使用します。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
+> Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 以降では[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)マークアップ拡張機能を使うことができますの場所では、 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)を使用します。 詳しくは、「[TemplateBinding マークアップ拡張](../../xaml-platform/templatebinding-markup-extension.md)」をご覧ください。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -204,5 +202,5 @@ XAML の例を見ると、一部の属性について [{ThemeResource} マーク
 
  # のサンプル コードを入手します。
 
-* [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML コントロール ギャラリーのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [カスタム テキスト編集コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
