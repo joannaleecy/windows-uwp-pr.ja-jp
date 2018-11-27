@@ -1,9 +1,7 @@
 ---
-author: jwmsft
 description: ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。
 title: XAML の概要
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
-ms.author: jimwalk
 ms.date: 07/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: b2576c11e50092b5d8e70189e0e8a88cfab716f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568673"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704046"
 ---
 # <a name="xaml-overview"></a>XAML の概要
 

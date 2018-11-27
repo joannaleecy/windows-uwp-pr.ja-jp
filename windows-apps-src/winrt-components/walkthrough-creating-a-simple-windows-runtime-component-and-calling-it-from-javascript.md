@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し
 description: このチュートリアルでは、Visual Basic または C# で .NET Framework を使って、Windows ランタイム コンポーネントにパッケージ化される独自の Windows ランタイム型を作成する方法と、JavaScript を使って Windows 用にビルドされたユニバーサル Windows アプリからコンポーネントを呼び出す方法について説明します。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571972"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696893"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し
 

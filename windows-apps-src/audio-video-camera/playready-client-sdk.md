@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。
 title: PlayReady DRM
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557212"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701517"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 

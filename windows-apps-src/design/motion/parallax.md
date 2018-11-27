@@ -1,11 +1,9 @@
 ---
-author: mijacobs
 Description: Use the ParallaxView control to add depth and movement to your app.
 title: ParallaxView コントロールを使用して、アプリに奥行きと動きを追加する方法
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -14,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 987202969f22a5b1b34efc9089ea7f7f08282d8c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d53bb0747ba5fb3469f9a395847eb856f72c9632
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564498"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703436"
 ---
 # <a name="parallax"></a>視差
 

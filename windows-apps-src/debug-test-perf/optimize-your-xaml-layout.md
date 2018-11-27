@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: XAML レイアウトの最適化
 description: レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7576916"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708752"
 ---
 # <a name="optimize-your-xaml-layout"></a>XAML レイアウトの最適化
 
@@ -136,7 +134,7 @@ ms.locfileid: "7576916"
 
 一般的な UI 要件として、要素が互いに重なり合ったレイアウトがあります。 通常、この方法で要素を配置するために、パディング、余白、整列、変換が使用されます。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) コントロールは、重なり合った要素のレイアウトのパフォーマンスを向上させるために最適化されています。
 
-**重要な**改善を確認するには、単一セルの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/BR242704)を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
+**重要な**改善を参照するには、単一セルの[**グリッド**](https://msdn.microsoft.com/library/windows/apps/BR242704)を使用します。 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
 
 ### <a name="examples"></a>例
 

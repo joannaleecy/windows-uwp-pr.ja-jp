@@ -1,21 +1,19 @@
 ---
-author: Jwmsft
 Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 title: Web ビュー
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dfe7495e08bfcecac839b0ae15d2d65b00311298
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2a29f58ff8dc842fd985a44f94ff44baea51dc2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554051"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700520"
 ---
 # <a name="web-view"></a>Web ビュー
  

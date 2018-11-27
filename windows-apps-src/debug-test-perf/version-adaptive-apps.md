@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: バージョン アダプティブ アプリ
 description: 以前のバージョンとの互換性を保ちながら、新しい API を利用する方法について説明します
-ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b96fafe380c08c74c4e411c7d559cc961c6da1ed
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568903"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701982"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>バージョン アダプティブ アプリ: 以前のバージョンとの互換性を保ちながら新しい API を使う
 

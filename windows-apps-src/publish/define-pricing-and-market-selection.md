@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: 市場の選択の定義
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 市場, 国, 地域
 ms.localizationpriority: medium
-ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f99ca0db7b6e1f46c45ac8713c83ad34c02078f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564283"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699386"
 ---
 # <a name="define-market-selection"></a>市場の選択の定義
 
@@ -368,7 +366,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>スウェーデン *</td>
     <td>スイス *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>タジキスタン</td>
   </tr>
   <tr>
@@ -410,7 +408,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>ベトナム</td>
     <td>ワリス・フテュナ諸島</td>
-    <td>Western Sahara (Disputed)</td>
+    <td>西サハラ (紛争中)</td>
     <td>イエメン</td>
   </tr>
   <tr>

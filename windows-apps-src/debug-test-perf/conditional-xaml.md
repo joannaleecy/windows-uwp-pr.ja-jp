@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 条件付き XAML
 description: 以前のバージョンとの互換性を保ちながら、XAML マークアップで新しい API を使います
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 46954968f11f000025ee352676d3f0d17ecb9621
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570435"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705044"
 ---
 # <a name="conditional-xaml"></a>条件付き XAML
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: 既存のパッケージ フライトの申請を削除するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの申請の削除
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 削除, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564152"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707893"
 ---
 # <a name="delete-a-package-flight-submission"></a>パッケージ フライトの申請の削除
 
@@ -48,7 +46,7 @@ ms.locfileid: "7564152"
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 削除するパッケージ フライトの申請が含まれるアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
 | flightId | string | 必須。 削除する申請が含まれるパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なもします。  |
-| submissionId | string | 必須。 削除する申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| submissionId | string | 必須。 削除する申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -77,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定した申請は見つかりませんでした。 |
-| 409  | 指定した申請は見つかりましたが、現在の状態で削除できなかった可能性がありますか、アプリが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |
+| 409  | 指定した申請は見つかりましたが、現在の状態で削除できなかった可能性がありますかは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)パートナー センター機能、アプリで使用します。 |
 
 
 ## <a name="related-topics"></a>関連トピック

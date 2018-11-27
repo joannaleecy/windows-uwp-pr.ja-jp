@@ -2,18 +2,16 @@
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
 description: このロードマップは、windows 10 とユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能の概要を示します。
 title: Enterprise
-author: awkoren
-ms.author: alkoren
 ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ffdc88449c025ba0a590ccc2bbd3f0c05346630f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3106df6d8a1fd85b92aa06dd5c5cf7a7f79ded5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579077"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696708"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -118,7 +116,7 @@ MSIX 安全性と信頼性の高い、セキュリティで保護されたに組
 
 <a id="distribution" />
 
-## <a name="security"></a>Security
+## <a name="security"></a>セキュリティ
 
 Windows 10 では、一連のアプリ開発者の id、ユーザー、企業のネットワークのセキュリティやデバイスに保存されている任意のビジネス データを保護するためのセキュリティ機能を提供します。 新しい windows 10 は Microsoft Passport、PIN を使用して、アクセス可能な 2 要素のパスワードの導入が容易な代替または Windows こんにちは、エンタープライズ レベルのセキュリティを提供し、指紋、顔をサポートする、ベース虹彩認識です。
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: アプリの特定のエラーに関する詳細データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのエラーに関する詳細情報の取得
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
-ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5176e123d57b8bcc5d4981acc91b22329ad4c643
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566042"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702956"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>アプリのエラーに関する詳細情報の取得
 

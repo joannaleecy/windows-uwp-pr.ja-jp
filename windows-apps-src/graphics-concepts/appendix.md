@@ -2,18 +2,16 @@
 title: 付録
 description: これらのセクションでは、技術的な詳細について説明します。
 ms.assetid: 461CCE6F-BAF0-4965-90A5-FD36B511F72C
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 15e149a6381a511c66f5c337c8256e5ce5024939
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578661"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705243"
 ---
 # <a name="appendices"></a>付録
 

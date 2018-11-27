@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: アプリのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: アプリのエラーに関するスタック トレースの取得
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: 0befb91175690576b4c0b44fe6e701d4c4efd7df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561037"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697805"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>アプリのエラーに関するスタック トレースの取得
 

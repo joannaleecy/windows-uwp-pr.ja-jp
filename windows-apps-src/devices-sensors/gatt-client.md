@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: Bluetooth GATT クライアント
 description: この記事では、一般的な用途のサンプル コードでと一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリの Bluetooth 汎用属性プロファイル (GATT) のクライアントの概要を示します。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 345e6f82ddf97c2595dad0029ca432f075a6190b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572705"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703599"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT クライアント
 

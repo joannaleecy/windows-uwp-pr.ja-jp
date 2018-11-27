@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: 既存のアドオンの申請を更新するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アドオンの申請の更新
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 更新, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b363132924af5fca976fda814b185155292385e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd0bb8df9b9fc36216da72e4ad01ebd2e650ad1a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566437"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698028"
 ---
 # <a name="update-an-add-on-submission"></a>アドオンの申請の更新
 

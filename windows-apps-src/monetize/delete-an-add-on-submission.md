@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: 既存のアドオンの申請を削除するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アドオンの申請の削除
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581566"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700327"
 ---
 # <a name="delete-an-add-on-submission"></a>アドオンの申請の削除
 

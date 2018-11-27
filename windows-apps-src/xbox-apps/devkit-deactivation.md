@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Xbox One 開発者モードの非アクティブ化
 description: 開発者モードを非アクティブ化する方法を説明します。
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 8708e127eb7cb7f1654b2911457074e20c82b665
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580987"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698926"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 開発者モードの非アクティブ化
 

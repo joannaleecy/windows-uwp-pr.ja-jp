@@ -4,17 +4,15 @@ description: 以下の表に、Texture2D および Texture2DArray サブリソ�
 ms.assetid: 2DC14DFC-5299-44D9-895F-5A223D3FD530
 keywords:
 - Texture2D と Texture2DArray のサブリソースのタイル表示
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2175ce19824068a850ff70340b467f09e5c76540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580765"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700784"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D と Texture2DArray のサブリソースのタイル表示
 

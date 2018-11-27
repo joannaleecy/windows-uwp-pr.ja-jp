@@ -1,20 +1,18 @@
 ---
-author: QuinnRadich
 Description: How to use thumbnail images to help users preview files in UWP apps.
 title: UWP アプリでのサムネイル画像のガイドライン
 label: Thumbnail images
 template: detail.hbs
-ms.author: quradic
 ms.date: 01/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8499f64e265cfeaa0a21c111c1aec1e2d3adb8ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92899333f0bc787fc6538e0bb22c148ac9f5c56f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579223"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697032"
 ---
 # <a name="thumbnail-images"></a>サムネイル画像
 

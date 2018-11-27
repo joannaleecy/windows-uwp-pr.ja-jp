@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: カメラ バーコード スキャナーの概要
 description: カメラ バーコード スキャナーの使用方法について説明します。
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 12aabff66fc116f510dced78aa56f3df5f84c850
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b49ba463e39d09b915ce3925f94ae7d9f11a9a47
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569410"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697675"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>カメラ バーコード スキャナーの概要
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>手順 1: アプリ マニフェストに機能宣言を追加する

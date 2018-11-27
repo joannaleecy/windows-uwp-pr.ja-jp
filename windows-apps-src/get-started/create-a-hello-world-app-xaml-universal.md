@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "\"Hello, world\" アプリを作成する方法 (XAML)"
 description: C# で Extensible Application Markup Language (XAML) を使用すると、windows 10 の対象とするユニバーサル Windows プラットフォーム (UWP) の単純なこんにちは, world アプリを作成できます。
-ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b30a592951017fb4a0b3803261cb0258be6ae3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563339"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700480"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 

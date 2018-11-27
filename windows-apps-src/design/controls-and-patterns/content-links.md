@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Use content links to embed rich data in your text controls.
 title: テキスト コントロールのコンテンツ リンク
 label: Content links
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, UWP
@@ -12,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561284"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700031"
 ---
 # <a name="content-links-in-text-controls"></a>テキスト コントロールのコンテンツ リンク
 

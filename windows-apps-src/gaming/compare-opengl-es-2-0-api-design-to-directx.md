@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: OpenGL ES 2.0 から Direct3D への移植の計画
 description: iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、OpenGL、Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 2308c0b931b58209d1233205c355ac09680803dd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b17f18876ebc2faead08d8c777c7502e937aef86
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574618"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703096"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>OpenGL ES 2.0 から Direct3D への移植の計画
 

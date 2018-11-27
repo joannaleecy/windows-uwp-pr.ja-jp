@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: Direct3D 11 の初期化
 description: Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, Direct3D 11, 初期化, 移植, Direct3D 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580426"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707577"
 ---
 # <a name="initialize-direct3d-11"></a>Direct3D 11 の初期化
 
@@ -127,7 +125,7 @@ Direct3D 11 には、DirectX Graphics Infrastructure (DXGI) と呼ばれるデ�
 
 Direct3D デバイスでは、DXGI の COM インターフェイスを実装します。 最初に、そのインターフェイスを取得し、それを使って、デバイスをホストしている DXGI アダプターを要求する必要があります。 次に、DXGI アダプターを使って、DXGI ファクトリを作成します。
 
-> **注:**  [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)を使用する場合、最初の応答がありますので、これらの COM インターフェイスです。 しかし、代わりに、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) スマート ポインターを使ってください。 次に、[**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) メソッドを呼び出して、適切なインターフェイスの種類の空の COM ポインターを提供します。
+> **注:**  [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)を使用する場合、最初の応答がありますので、これらは、COM インターフェイスです。 しかし、代わりに、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) スマート ポインターを使ってください。 次に、[**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) メソッドを呼び出して、適切なインターフェイスの種類の空の COM ポインターを提供します。
 
  
 

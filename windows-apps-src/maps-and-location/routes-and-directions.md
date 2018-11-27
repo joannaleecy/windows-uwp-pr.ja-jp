@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 地図へのルートとルート案内の表示
 description: ルートとルート案内を要求し、アプリで表示します。
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
-ms.author: normesta
 ms.date: 09/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, ルート, マップ, 位置情報, ルート案内
 ms.localizationpriority: medium
-ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dd93a092ee0db0821e9326d0f9ffa86890850b87
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582322"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702796"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>地図へのルートとルート案内の表示
 

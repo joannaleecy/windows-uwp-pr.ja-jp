@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: パッケージ フライトの申請の状態を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: パッケージ フライトの申請の状態の取得
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 状態
 ms.localizationpriority: medium
-ms.openlocfilehash: 4378df5333e29dfe570ff50efd37b0361b9a6ca9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1cd898c51d694d2dd60185623126c7f566af0f55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560603"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697395"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>パッケージ フライトの申請の状態の取得
 

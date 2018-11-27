@@ -1,19 +1,17 @@
 ---
-author: JordanEllis6809
 title: 既存のゲームの Xbox への移行
 description: 既存のゲームを UWP を使って Xbox へ移行します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
-ms.openlocfilehash: b531782e00ab380e64de0fe5f4e6b1737c1f5669
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568913"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707447"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>既存のゲームの Xbox への移行
 

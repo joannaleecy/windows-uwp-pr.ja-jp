@@ -4,17 +4,15 @@ description: テクスチャ マップとは、視覚的な詳細を追加する
 ms.assetid: 2DD5FF94-A029-4694-B103-26946C8DFBC1
 keywords:
 - 圧縮テクスチャ リソース
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e808bf0fe1f521a60aa347efd148ede96be95964
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9318479fffc415e94407166bd1be20a93691a179
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581267"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702310"
 ---
 # <a name="compressed-texture-resources"></a>圧縮テクスチャ リソース
 

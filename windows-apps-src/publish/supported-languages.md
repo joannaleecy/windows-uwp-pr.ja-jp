@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: サポートされている言語
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.author: wdg-dev-content
 ms.date: 10/25/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0628dcfc5ece046ca728763876e8e00c9a2d5904
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573849"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702117"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 

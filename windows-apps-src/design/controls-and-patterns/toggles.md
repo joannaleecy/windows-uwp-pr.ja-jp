@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 Description: The toggle switch represents a physical switch that allows users to turn things on or off.
 title: トグル スイッチ コントロールのガイドライン
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d166e872af0824c9eb5df15510f9597d0303f483
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0436f360facceb4a7ee0d02defd5fac2e33eaae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571574"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699373"
 ---
 # <a name="toggle-switches"></a>トグル スイッチ
 

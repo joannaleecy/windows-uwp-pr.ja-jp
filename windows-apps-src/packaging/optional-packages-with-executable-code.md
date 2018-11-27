@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 実行可能コードを使用したオプション パッケージ
 description: Visual Studio を使用して、実行可能コードでオプション パッケージを作成する方法について説明します。
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567912"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697415"
 ---
 # <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
  

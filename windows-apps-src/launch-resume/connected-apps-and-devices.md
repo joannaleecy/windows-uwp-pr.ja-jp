@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 接続されるアプリやデバイス ("Rome" プロジェクト)
 description: このセクションでは、Remote Systems プラットフォームを使って、リモート デバイスの検出、リモート デバイスでのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。
-ms.author: pafarley
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c462bb28de23db735b957870cf456d3649282ae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574232"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699168"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>接続されるアプリやデバイス ("Rome" プロジェクト)
 

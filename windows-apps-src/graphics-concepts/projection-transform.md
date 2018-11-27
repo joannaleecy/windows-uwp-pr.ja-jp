@@ -4,17 +4,15 @@ description: 射影トランスフォームは、カメラの内部を制御し�
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
 keywords:
 - 射影トランスフォーム
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 01a410e0e2759dcdfd6adff9c25238447fe4138b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553323"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703276"
 ---
 # <a name="projection-transform"></a>射影トランスフォーム
 

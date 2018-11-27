@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how to capture and recognize long-form, continuous dictation speech input.
 title: 継続的なディクテーションの有効化
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
 keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーション, 入力, ユーザーの操作
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557738"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705034"
 ---
 # <a name="continuous-dictation"></a>継続的なディクテーション
 
@@ -28,7 +26,7 @@ ms.locfileid: "7557738"
 ディクテーションまたはメールなど、より長い継続的な音声認識セッションの場合は、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
 
 > [!NOTE]
-> 音声入力言語のサポートは、アプリが実行されている[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)に依存します。 Pc とノート pc、EN-US のみ認識されると、音声認識でサポートされているすべての言語を認識できる Xbox と電話間です。 詳しくは、[音声認識エンジンの言語を指定する](specify-the-speech-recognizer-language.md)を参照してください。
+> 音声入力言語のサポートは、アプリが実行されている[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)に依存します。 Pc とノート pc、EN-US のみ認識されると、音声認識でサポートされているすべての言語を認識できる Xbox と電話間です。 詳しくは、[音声認識の言語を指定する](specify-the-speech-recognizer-language.md)を参照してください。
 
 ## <a name="set-up"></a>設定
 

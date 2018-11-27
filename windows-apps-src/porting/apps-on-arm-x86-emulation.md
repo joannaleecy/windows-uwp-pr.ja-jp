@@ -1,18 +1,16 @@
 ---
 title: ARM での x86 および ARM32 エミュレーションのしくみ
-author: msatranjr
 description: ARM での x86 アプリのエミュレーションの概要。
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 常時接続, ARM での x86 エミュレーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b596ab9abd31fa10d0ca07dec973082b495262e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 22b8d55fa2074d18ed3e5f3fe9fa3ab8161637be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559479"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700873"
 ---
 # <a name="how-x86-emulation-works-on-arm"></a>ARM での x86 エミュレーション
 x86 アプリのエミュレーションにより、Win32 アプリのリッチなエコシステムが ARM で利用できるようになります。 これにより、アプリに変更を加えなくても、ユーザーが既存の x86 win32 アプリを問題なく実行できるようになります。 アプリは、固有の API ([IsWoW64Process2](https://msdn.microsoft.com/en-us/library/windows/desktop/mt804318.aspx)) を呼び出すことを除いて、ARM PC の Windows で実行されていることを認識することもありません。

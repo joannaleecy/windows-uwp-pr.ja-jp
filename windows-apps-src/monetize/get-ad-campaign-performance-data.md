@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: 日付範囲やその他のオプション フィルターを指定して、特定のアプリケーションの広告キャンペーンのパフォーマンスに関する集計データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: 広告キャンペーンのパフォーマンス データの取得
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告キャンペーン
 ms.localizationpriority: medium
-ms.openlocfilehash: c9d348ffc0895d5adb16886c5a66af14a1884b8b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569032"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697595"
 ---
 # <a name="get-ad-campaign-performance-data"></a>広告キャンペーンのパフォーマンス データの取得
 

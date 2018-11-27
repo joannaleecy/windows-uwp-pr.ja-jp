@@ -1,19 +1,17 @@
 ---
-author: Xansky
 Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 title: アプリ内製品購入の有効化
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: UWP, アドオン, アプリ内購入, IAP, Windows.ApplicationModel.Store
-ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a203ef79fc6ebb45107cd9ac9d79cadf330f7a5d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565010"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705279"
 ---
 # <a name="enable-in-app-product-purchases"></a>アプリ内製品購入の有効化
 
@@ -83,7 +81,7 @@ ms.locfileid: "7565010"
 パートナー センターで、アプリと[アドオンを作成](../publish/add-on-submissions.md)する製品と一致するアプリ内に移動します。 アドオンの製品 ID、種類、価格などのプロパティを定義します。 テストのときに WindowsStoreProxy.xml で設定した構成と同じ構成になっていることを確認してください。
 
   > [!NOTE]
-  > コードで使用するアプリ内販売トークンは、パートナー センターで対応するアドオンに対して指定した[製品 ID](../publish/set-your-add-on-product-id.md#product-id)の値と一致する必要があります。
+  > コードで使用するアプリ内販売トークンは、パートナー センターで対応するアドオンに対して指定した[製品 ID](../publish/set-your-add-on-product-id.md#product-id)値と一致する必要があります。
 
 ## <a name="remarks"></a>注釈
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。
 title: WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 301dcbe95d7509db07d5b7dd11a16460063bbffe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566391"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703994"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 

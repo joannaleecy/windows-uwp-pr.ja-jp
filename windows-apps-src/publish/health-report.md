@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: '[正常性] レポート'
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 正常性, クラッシュ, 応答停止イベント, アプリの正常性, 正常性データ, スタック トレース, cab ファイル, 失敗, エラー, pdb, シンボル
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c547cc933247e69fd208e8d3c297572815a5f2ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554786"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704719"
 ---
 # <a name="health-report"></a>状態レポート
 
@@ -84,7 +82,7 @@ ms.locfileid: "7554786"
 
 このグラフには、2 つのタブがあります。
 - **デバイスのクラッシュのない**: 毎日 (過去 30 日) の間で障害が発生しなかった一意のデバイスの割合を示します。
-- **クラッシュのないセッション**: 毎日 (過去 30 日) の間で障害が発生しなかった一意のユーザー セッションの割合を示します。
+- **クラッシュのないセッション**: 各日 (過去 30 日間) 中にエラーが発生しなかった一意のユーザー セッションの割合を示します。
 
 
  

@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: アセット パッケージとパッケージ圧縮を使った開発
 description: アセット パッケージとパッケージ圧縮を使ってアプリケーションを効率的に整理する方法について説明します。
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10, パッケージ化, パッケージ レイアウト, アセット パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: efdf560158e2b57ae9e05ecc31d49c7cf981d8c0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9241ffeb6b232c5b5be3098b114f6c7bf00bcf0d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567677"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708049"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>アセット パッケージとパッケージ圧縮を使った開発 
 
@@ -27,7 +25,7 @@ ms.locfileid: "7567677"
 
 パッケージ圧縮が開発プロセスに影響を与えないことを理解するため、まずアプリを複数のパッケージ (アセット パッケージまたはリソース パッケージを使用) に分割するとどうなるかをもう一度確認してみましょう。 
 
-大まかに言うと、アプリの一部のファイルを (アーキテクチャ パッケージではない) 他のパッケージに分割すると、コードが実行される場所から直接それらのファイルにアクセスすることができなくなります。 これは、パッケージがすべて、アーキテクチャ パッケージがインストールされている場所とは別のディレクトリにインストールされているためです。 たとえば、ゲームを作成している場合に、ゲームがローカライズされるフランス語とドイツ語用にビルドされた x86 と x64 の両方のコンピューター、し、ゲームのアプリ バンドル内のこれらのアプリ パッケージ ファイルがあります。
+大まかに言うと、アプリの一部のファイルを (アーキテクチャ パッケージではない) 他のパッケージに分割すると、コードが実行される場所から直接それらのファイルにアクセスすることができなくなります。 これは、パッケージがすべて、アーキテクチャ パッケージがインストールされている場所とは別のディレクトリにインストールされているためです。 たとえば、ゲームを作成している場合に、ゲームがローカライズされるフランス語とドイツ語用にビルドされた x86 と x64 の両方のコンピューター、し、ゲームのアプリ バンドルに含まれるこれらのアプリ パッケージ ファイルが必要があります。
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx
@@ -47,7 +45,7 @@ C:\Program Files\WindowsApps\
 
 ファイルには、ユーザーに適用できないするには、アプリ パッケージに (x86 およびドイツ語のパッケージ) がインストールされていることに注意してください。 
 
-このユーザーの場合、ゲームの主な実行可能ファイルは **MyGame_1.0_x64** フォルダーに置かれ、そこから実行されます。通常、このフォルダー内のファイルにのみアクセスできます。 **MyGame_1.0_language-fr** フォルダーのファイルにアクセスするには、MRT API または PackageManager API を使う必要があります。 MRT Api は、インストールされている言語から自動的に最も適切なファイルを選ぶことができます、 [windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core)MRT Api について詳しく見つけることができます。 または、[PackageManager クラス](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)を使ってフランス語言語パッケージのインストール場所を見つけることもできます。 アプリのパッケージのインストール場所は変わることがり、ユーザーごとに異なるため、思い込まないでください。 
+このユーザーの場合、ゲームの主な実行可能ファイルは **MyGame_1.0_x64** フォルダーに置かれ、そこから実行されます。通常、このフォルダー内のファイルにのみアクセスできます。 **MyGame_1.0_language-fr** フォルダーのファイルにアクセスするには、MRT API または PackageManager API を使う必要があります。 MRT Api は、インストールされている言語から自動的に最も適切なファイルを選ぶことができます、 [windows.applicationmodel.resources.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core)MRT Api の詳細を見つけることができます。 または、[PackageManager クラス](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)を使ってフランス語言語パッケージのインストール場所を見つけることもできます。 アプリのパッケージのインストール場所は変わることがり、ユーザーごとに異なるため、思い込まないでください。 
 
 ## <a name="asset-package-folding"></a>アセット パッケージの圧縮
 

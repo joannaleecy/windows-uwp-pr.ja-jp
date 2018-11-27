@@ -1,20 +1,18 @@
 ---
-author: mijacobs
 Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要 (Windows アプリ)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0168ae8d5058b6dde7cd137e95560008d2a4973d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0006d20c1db7da16b885e82fb3f066b081e27349
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574828"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706108"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -28,11 +26,11 @@ ms.locfileid: "7574828"
 
 ## <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
-UWP アプリでは、タブレット、PC、TV からすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切に表示される UI を設計するには、どのように行うかどうか。
+UWP アプリでは、タブレット、PC、TV からすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切な外観の UI を設計するには、どのように行うかどうか。
 
 ![さまざまなデバイス上にある同じアプリ](images/universal-image-1.jpg)
 
-UWP は、読みやすく操作し、やすいですべてのデバイスや画面サイズになるように UI 要素を自動的に調整することで役立ちます。
+UWP は、読みやすくしやすいですべてのデバイスや画面サイズとの対話になるように UI 要素を自動的に調整することで役立ちます。
 
 デバイスでアプリを実行するとき、システムでは、UI 要素を画面に表示する方法を正規化するアルゴリズムを使います。 このスケーリング アルゴリズムでは、視聴距離と画面の密度 (ピクセル/インチ) を考慮して、体感的なサイズを最適化します (物理的なサイズではありません)。 スケーリング アルゴリズムによって、10 フィート離れた Surface Hub における 24 ピクセルのフォントが、数インチ離れた 5 インチ サイズの電話における 24 ピクセルのフォントと同じようにユーザーに読みやすい状態で表示されます。
 

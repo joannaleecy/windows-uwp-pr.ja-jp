@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: アプリとアドオンのカタログがある場合は、Microsoft Store コレクション API および Microsoft Store 購入 API を使って、サービスからこれらの製品の所有権情報にアクセスできます。
 title: サービスから製品の権利を管理する
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582252"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697725"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 

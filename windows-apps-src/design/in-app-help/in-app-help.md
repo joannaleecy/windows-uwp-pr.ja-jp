@@ -1,21 +1,19 @@
 ---
-author: QuinnRadich
 Description: Design effective help to be displayed reactively inside your app.
 title: アプリ内ヘルプの設計のためのガイドライン。
 label: In-app help
 template: detail.hbs
-ms.author: quradic
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
 ms.localizationpriority: medium
-ms.openlocfilehash: 089b71464234abe21d7dc8613d46ef6778f0f5a6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4783d28e4da6c06df0d0676f4a7d28ef3995481a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577411"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704944"
 ---
 # <a name="in-app-help-pages"></a>アプリ内ヘルプのページ
 

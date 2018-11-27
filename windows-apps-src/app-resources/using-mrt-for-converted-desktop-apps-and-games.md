@@ -1,18 +1,16 @@
 ---
-author: ptorr-msft
 title: 変換されたデスクトップ アプリとゲームに MRT を使用する
 description: .NET または Win32 アプリやゲームを AppX パッケージとしてパッケージ化することにより、リソース管理システムを活用して実行時のコンテキストに合わせたアプリ リソースを読み込むことができます。 この詳細なトピックでは、この手法について説明します。
-ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576811"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706167"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する
 
@@ -305,7 +303,7 @@ PRI ファイルがビルドされました。次はパッケージをビルド�
  * `/f` (前の手順で作成された) 使用するマッピング ファイルを設定します 
  * `/p` 出力パッケージの名前を設定します
  * `/o` 出力ファイルが存在する場合、上書きします
-0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studio で空のユニバーサル Windows プロジェクトを作成し、コピー、`.pfx`が作成されるファイルは 1 つを使って手動で作成できます、`MakeCert`と`Pvk2Pfx`ユーティリティ」の説明に従って [、**を作成する方法アプリ パッケージの署名証明書**msdn のトピック] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)します。 
+0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studio で空のユニバーサル Windows プロジェクトを作成し、コピー、`.pfx`が作成されるファイルは 1 つを使って手動で作成できます、`MakeCert`と`Pvk2Pfx`ユーティリティ」の説明に従って [、**を作成する方法アプリ パッケージの署名証明書**MSDN のトピック] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)します。 
  * **重要:** 署名証明書を手動で作成した場合、必ずソース プロジェクトまたはパッケージ ソースとは別のディレクトリにファイルを配置します。そうしない場合、秘密キーも含めてパッケージに含まれてしまう場合があります。
 0. パッケージに署名するには、次のコマンドを使用します。 `AppxManifest.xml` の `Identity` 要素で指定されている `Publisher` は、証明書の `Subject` と一致する必要があります (これは `<PublisherDisplayName>` 要素では**ありません**。それはユーザーに表示されるローカライズされた表示名です)。 通常と同様に、`contoso_demo...` のファイル名をプロジェクトに適した名前で置き換えます。さらに `.pfx` ファイルが現在のディレクトリにないことを確認します (**これは非常に重要です**。そうしない場合、プライベート署名キーを含めて、パッケージの一部として作成されてしまいます)。
 

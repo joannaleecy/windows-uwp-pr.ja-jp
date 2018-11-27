@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: パートナー センター アカウントに登録されている特定のアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
 title: アプリの入手
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569740"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707913"
 ---
 # <a name="get-an-app"></a>アプリの入手
 

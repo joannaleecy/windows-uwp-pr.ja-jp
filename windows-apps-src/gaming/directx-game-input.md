@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: DirectX ゲームのゲーム入力
 description: DirectX ゲームのゲーム入力について説明します。
 ms.assetid: 4c7dff42-978b-475e-a1a6-88c99bf2350a
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力, マウス, タッチ, コントロール
 ms.localizationpriority: medium
-ms.openlocfilehash: 8787400cc1d77afb32df51ba943ae72a99c2b470
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581550"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707527"
 ---
 # <a name="game-input-for-directx-games"></a>DirectX ゲームのゲーム入力
 

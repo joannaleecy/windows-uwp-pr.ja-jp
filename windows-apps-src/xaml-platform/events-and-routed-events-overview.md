@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: C#、Visual Basic、または VisualC ではコンポーネント拡張機能を使用する場合に、Windows ランタイム アプリでのイベントのプログラミングの概念について説明します (、C++/cli CX) として、プログラミング言語や、UI 定義に XAML をします。
 title: イベントとルーティング イベントの概要
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570588"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708029"
 ---
 # <a name="events-and-routed-events-overview"></a>イベントとルーティング イベントの概要
 
@@ -29,7 +27,7 @@ C#、Visual Basic、または VisualC ではコンポーネント拡張機能を
 
 プログラミング言語として C#、Visual Basic、または C++/CX を使用する場合、UI はマークアップ (XAML) で定義されます。 XAML マークアップの構文で、マークアップ要素とランタイム コード エンティティの間でイベントを関連付けるときの原則の一部は、他の Web テクノロジ (ASP.NET、HTML5 など) と似ています。
 
-**注:** XAML で定義された UI の実行時ロジックを提供するコードは、*コード ビハインド*ファイルまたはコード ビハインド ファイルと呼ばれる多くの場合。 Microsoft Visual Studio のソリューション ビューでは、コード ビハインド ファイルが参照先の XAML ページに対して依存する入れ子のファイルとして表示されて、この関係がグラフィカルに示されます。
+**注:** XAML で定義された UI にランタイム ロジックを提供するコードは、*コード ビハインド*ファイルまたはコード ビハインド ファイルと呼ばれる多くの場合。 Microsoft Visual Studio のソリューション ビューでは、コード ビハインド ファイルが参照先の XAML ページに対して依存する入れ子のファイルとして表示されて、この関係がグラフィカルに示されます。
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click: イベントと XAML の概要
 
@@ -149,7 +147,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**注:** **Handles**キーワードではなくインスタンス処理の手法が一般に宣伝 Visual Studio とその XAML デザイン サーフェイス。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使う手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
+**注:** **Handles**キーワードではなくインスタンス処理の手法が一般に Visual Studio とその XAML デザイン サーフェイス昇格します。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使う手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
 
 C++/cli CX、使用することも、**+=** 構文では c# の基本的な形式からの違いがありますが。
 
@@ -267,7 +265,7 @@ Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では
 -   要素の [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) プロパティの値が [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006) である。
 -   要素の **Background** または **Fill** プロパティの値が **null** ではない。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 値は、要素は透明で、ヒット テストで不可視になります  (要素を透明にしつつ、ヒット テストも可能にするには、**null** ではなく [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) を使います)。
 
-**注:****バック グラウンド** **Fill** [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、によって定義されていないし、[**コントロール**](https://msdn.microsoft.com/library/windows/apps/br209390)や[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)などの別の派生クラスによって代わりに定義されます。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
+**注:****バック グラウンド** **Fill** [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、によって定義されていないし、代わりに、[**コントロール**](https://msdn.microsoft.com/library/windows/apps/br209390)や[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)などの別の派生クラスによって定義します。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
 
 -   要素がコントロールの場合、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) プロパティの値は **true** である必要がある。
 -   要素はレイアウトで実際のサイズを持ったものである必要がある。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) と [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) のいずれかが 0 である要素は、入力イベントを発生させません。

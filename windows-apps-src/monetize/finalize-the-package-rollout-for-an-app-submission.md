@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: アプリの申請に関するパッケージのロールアウトを完了するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アプリの申請に関するロールアウトの完了
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロールアウト, アプリの申請, 最終処理
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ac0ebcef45bc19bd38381a3c6fdfa5d02276be6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8fe211268190ac269018a6bd47acb4b824d2075
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567122"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702996"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>アプリの申請に関するロールアウトの完了
 

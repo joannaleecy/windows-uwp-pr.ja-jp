@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: URI を使ったアプリの起動
 description: このセクションでは、URI (Uniform Resource Identifier) を使って別のアプリからアプリを起動する方法について説明します。
 ms.assetid: a40c4ce2-4f41-4a55-aeb3-1beb3e84e839
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9126d33c18ede90e9c20339d9a793f3ab2835e76
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a42a59f76da99461b2e2428f5732ca0c433b6540
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570275"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705951"
 ---
 # <a name="launch-an-app-with-a-uri"></a>URI を使ったアプリの起動
 
@@ -29,7 +27,7 @@ ms.locfileid: "7570275"
 | [UWP アプリを起動します。](launch-store-app.md) | ここでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、UWP アプリを起動し、Store 内の特定のページを表示できます。 |
 | [Windows マップ アプリの起動](launch-maps-app.md) | アプリから Windows マップ アプリを起動する方法について説明します。 |
 | [People アプリの起動](launch-people-apps.md) | ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
-| [画面切り取りの起動](launch-screen-snipping.md) | 新しいの切り取り領域を開くか、アプリを開き、切り取り領域とスケッチ URI スキームを使用する方法について説明します。 |
+| [画面切り取りの起動](launch-screen-snipping.md) | または切り取り領域とスケッチ アプリを開き、新しい切り取り領域を開くには、URI スキームを使用する方法について説明します。 |
 | [アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。](web-to-app-linking.md) | ユーザーを導くアプリと web サイトの機能のアプリをサポートします。 |
 
 ## <a name="related-topics"></a>関連トピック

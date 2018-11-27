@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more.
 title: アプリのアイコンとロゴ
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -11,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 95452a11f2c8ee15d54a4717701bc2b63e5c2c34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7083152efb4cf871f8abebf6d2970d2da4ba06e9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574342"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698131"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 
@@ -169,9 +167,9 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 1. **ソース**フィールドの横にある **...** ] をクリックし、使用するイメージを選択します。 ビットマップ画像を使用している場合は、鋭い結果を取得できるように、400 ピクセル以上 400 を確認します。 ベクター ベースの画像が最適です。Visual Studio では、AI (Adobe Illustrator) と PDF ファイルを使用することができます。 
 2. (省略可能)**ディスプレイの設定**] セクションでは、これらのオプションを構成します。
 
-    a.  **短い名前**: アプリの短い名前を指定します。
+    a.   **短い名前**: アプリの短い名前を指定します。
 
-    b.  **表示名**: 普通、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。 
+    b.   **表示名**: 普通、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。 
 
     c. **バック グラウンドのタイル**: 16 進値またはタイルの背景色の色の名前を指定します。 たとえば、`#464646` と記述します。 既定値は、`transparent` です。
 

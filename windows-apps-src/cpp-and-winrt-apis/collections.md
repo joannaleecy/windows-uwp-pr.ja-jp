@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: C++/WinRT 機能と、多くの時間と労力を実装やコレクションに合格するときに保存する基底クラスを提供します。
 title: C++/WinRT でのコレクション
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、コレクション
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9c5cbf5c7709c70d2eb47c57009bbd264a6d2c20
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567385"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700420"
 ---
 # <a name="collections-with-cwinrt"></a>C++/WinRT でのコレクション
 

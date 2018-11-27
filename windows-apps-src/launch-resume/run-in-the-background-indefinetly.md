@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: バックグラウンドで無期限に実行する
 description: extendedExecutionUnconstrained 機能を使用すると、バックグラウンドで無期限にバックグラウンド タスクまたは延長実行セッションを実行できます。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: バック グラウンド タスク、延長実行セッション, リソース, 制限, バック グラウンド タスク
-ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6e0735620c4a940d3414f22aaa4f09bb608424
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554080"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698936"
 ---
 # <a name="run-in-the-background-indefinitely"></a>バックグラウンドで無期限に実行する
 

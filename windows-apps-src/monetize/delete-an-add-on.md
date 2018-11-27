@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: パートナー センター アカウントに登録されているアプリのアドオンを削除する、Microsoft Store 申請 API で以下のメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのアドオンを削除する、Microsoft Store 申請 API でこのメソッドを使います。
 title: アドオンの削除
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565871"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705124"
 ---
 # <a name="delete-an-add-on"></a>アドオンの削除
 

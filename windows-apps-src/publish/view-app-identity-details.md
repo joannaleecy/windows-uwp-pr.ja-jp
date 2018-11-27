@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: アプリ ID の詳細の表示
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
-ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3efbbd09cc066a7455ef8d60556345a2ed5b459c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582089"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699585"
 ---
 # <a name="view-app-identity-details"></a>アプリ ID の詳細の表示
 

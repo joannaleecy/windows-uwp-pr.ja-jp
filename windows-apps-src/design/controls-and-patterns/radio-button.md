@@ -1,11 +1,9 @@
 ---
-author: QuinnRadich
 Description: Radio buttons let users select one option from two or more choices.
 title: ラジオ ボタンのガイドライン
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 577e4ca0716427298344ac2eec5155c786d5530c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f614b6f167f91f276557aaff383921742d63c684
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581530"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700347"
 ---
 # <a name="radio-buttons"></a>ラジオ ボタン
 

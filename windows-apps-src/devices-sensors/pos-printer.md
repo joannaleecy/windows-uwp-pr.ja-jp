@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: POS プリンター
 description: この記事では、UWP アプリで使用可能な POS プリンター機能と、その使用方法を示すハウツー記事へのリンクを示します。
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 1adaf2b7df04a6e60d5d2ea37167cd4d5c55c42c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b1b01f366c5a094e538424c57091fb2589eae329
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565199"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704513"
 ---
 # <a name="posprinter"></a>POS プリンター
 

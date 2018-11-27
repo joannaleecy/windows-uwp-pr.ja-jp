@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 title: 画面のサイズとレスポンシブ デザインのブレークポイント
 description: Windows 10 エコシステムの多くのデバイス用に UI を最適化するのではなく、ブレークポイントと呼ばれるいくつかの主要な幅カテゴリ用に設計することをお勧めします。
-ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dbe71805ac0607a974374fb7a4f50a1d3f4d6811
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574478"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708917"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>画面のサイズとブレークポイント
 
@@ -102,6 +100,6 @@ UWP アプリは、すべての Windows 10 デバイスでアプリが判読可�
 - 常に表示されるように[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)を固定モードにします。
 
 >[!TIP] 
-> [**ある電話用 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431)ユーザーはその電話をノートのように機能させるモニター、マウス、キーボードを windows 10 の互換性のあるモバイル デバイスを接続できます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常にそのサイズ クラスで維持されるわけではありません。
+> [**ある電話用 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431)ユーザーはその電話をノートのように機能するモニター、マウス、キーボードに互換性のある windows 10 のモバイル デバイスを接続できます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常にそのサイズ クラスで維持されるわけではありません。
 
 

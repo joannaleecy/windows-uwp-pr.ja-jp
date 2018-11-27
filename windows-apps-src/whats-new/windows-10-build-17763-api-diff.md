@@ -1,21 +1,19 @@
 ---
-author: QuinnRadich
 title: Windows 10 ビルド 17763 API の変更
 description: 開発者は Windows 10 ビルド 17763 新規または変更された名前空間を識別するのに次の一覧を使用することができます。
 keywords: 新機能、新機能, 更新プログラム, Windows 10, 最新, api, 17763、年 10 月
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bce94f47f91237c8a9e8222e5862ffdbffaec91f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fd6d2c41cd2f632f22819f452b2f203fd8ac309
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575980"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704871"
 ---
-# <a name="new-apis-in-windows-10-build-17763"></a>新しい Windows 10 ビルド Api 17763
+# <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 の新しい Api 17763 をビルドします。
 
 新規および更新された API 名前空間に加えられた利用可能な Windows 10 ビルド 17763 の開発者 (とも呼ばれる、年 2018年 10 月 Update またはバージョン 1809)。 このリリースで追加または変更された名前空間について公開されているドキュメントの完全な一覧を以下に示します。
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
 title: アプリ名の管理
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
-ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリの名前, アプリ名, アプリ名の更新、ゲームの名前, 製品名を変更します。
 ms.localizationpriority: medium
-ms.openlocfilehash: b35db620956e99791d03fb2d25dea8682d4ffaac
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a27955f64a36fadde9b0f1781337929ce6871a9c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557308"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699820"
 ---
 # <a name="manage-app-names"></a>アプリ名の管理
 

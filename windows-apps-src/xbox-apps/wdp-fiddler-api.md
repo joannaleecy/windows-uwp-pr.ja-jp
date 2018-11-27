@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Device Portal の Fiddler API のリファレンス
 description: プログラムによって Fiddler のトレースを有効または無効にする方法について説明します。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570598"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705154"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API のリファレンス   
 この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。
@@ -22,7 +20,7 @@ ms.locfileid: "7570598"
 
 **要求**
 
-Fiddler のトレースが次の要求を使用して、デバイスで有効になっているかどうかを確認することができます。
+次の要求を使用して、デバイスで Fiddler のトレースが有効になっているかどうかを確認することができます。
 
 メソッド      | 要求 URI
 :------     | :-----

@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: キーボードのアクセシビリティ
 label: Keyboard accessibility
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 41c5e018ee56b6a0d26bf2159f62801aa4ab5c3c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562074"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699767"
 ---
 # <a name="keyboard-accessibility"></a>キーボードのアクセシビリティ  
 

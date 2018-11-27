@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
 title: セマンティック ズーム
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 17391b48b7b75209321f35ffd20610e17e3935c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 65cf8afbb423c72b9960b58a1b80dc3477f3a5fc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560954"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708142"
 ---
 # <a name="semantic-zoom"></a>セマンティック ズーム
 

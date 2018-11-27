@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: With the package resource indexing (PRI) APIs, you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs.
 title: パッケージ リソース インデックス (PRI) API とカスタム ビルド システム
 template: detail.hbs
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b85f40fc391df764515d21ba3b334bfe068725c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554875"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701371"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>パッケージ リソース インデックス (PRI) API とカスタム ビルド システム
 [パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用すると、UWP アプリのリソース用にカスタム ビルド システムを開発することができます。 ビルド システムでは、UWP アプリが必要とする複雑さのレベルにかかわらず、パッケージ リソース インデックス (PRI) ファイルを (XML として) 作成、バージョン管理、ダンプすることができます。 現在 MakePri.exe コマンド ライン ツールを使用しているカスタム ビルド システムがある場合 (「[MakePri.exe を使用して手動でリソースをコンパイルする](makepri-exe-command-options.md)」を参照)、パフォーマンスと制御を向上させるために、MakePri.exe の呼び出しではなく、PRI API の呼び出しに切り替えることをお勧めします。

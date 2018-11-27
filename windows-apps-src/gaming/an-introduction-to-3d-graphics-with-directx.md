@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX ゲームの基本的な 3D グラフィックス
 description: DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, グラフィックス
 ms.localizationpriority: medium
-ms.openlocfilehash: e9834a83620343f26acaabd0e05b30cc2c1dcfab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575274"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707655"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>DirectX ゲームの基本的な 3D グラフィックス
 
@@ -35,7 +33,7 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 ここでは、DirectX と C++\\Cx を使って 3D グラフィックスを開発する方法について説明します。 この 5 つのパートから成るチュートリアルでは、[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API と、その他の DirectX サンプルの多くでも使われる概念やコードを紹介しています。 各パートでは、UWP の C++ アプリ向けに DirectX を構成することから始まって、プリミティブのテクスチャリングや効果の追加まで、段階的に構築していきます。
 
-> **注:** このチュートリアルでは、列のベクトルと右手による座標系を使用します。 多くの DirectX サンプルと DirectX アプリでは、左手による座標系と行のベクターを使います。 より完全なグラフィックス数式ソリューションと、左手による座標系と行のベクターをサポートするグラフィックス数式ソリューションが必要な場合は、[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) を使うことを検討してください。 詳しくは、「[Direct3D との DirectXMath の使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)」をご覧ください。
+> **注:** このチュートリアルでは、右手による座標系と列のベクター使用します。 多くの DirectX サンプルと DirectX アプリでは、左手による座標系と行のベクターを使います。 より完全なグラフィックス数式ソリューションと、左手による座標系と行のベクターをサポートするグラフィックス数式ソリューションが必要な場合は、[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) を使うことを検討してください。 詳しくは、「[Direct3D との DirectXMath の使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)」をご覧ください。
 
  
 

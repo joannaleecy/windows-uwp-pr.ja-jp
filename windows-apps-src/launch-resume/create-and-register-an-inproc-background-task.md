@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: インプロセス バックグラウンド タスクの作成と登録
 description: フォアグラウンド アプリと同じプロセスで実行されるインプロセスのタスクを作成して登録します。
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2a59fe6056661289726fdaa6c2dd26e90d5e3fad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577918"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709021"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>インプロセス バックグラウンド タスクの作成と登録
 
@@ -70,7 +68,7 @@ ms.locfileid: "7577918"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>バックグラウンド アクティビティのコードを OnBackgroundActivated() に配置する
 
-[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)発生したときに、バック グラウンド トリガーに応答するには、バック グラウンド アクティビティのコードを配置します。 **OnBackgroundActivated**は[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)と同じように扱うことができます。 メソッドでは、 **Run**メソッドで提供されるすべての情報が含まれている、 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターがあります。 たとえば、App.xaml.cs: 内
+[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)発生したときに、バック グラウンド トリガーに応答するには、バック グラウンド アクティビティのコードを配置します。 **OnBackgroundActivated**は[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)と同じように扱うことができます。 このメソッドでは、 **Run**メソッドで提供されるすべての情報が含まれている、 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターがあります。 たとえば、App.xaml.cs: 内
 
 ``` cs
 using Windows.ApplicationModel.Background;

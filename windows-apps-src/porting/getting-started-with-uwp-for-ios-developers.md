@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: iOS 開発者のための UWP の概要
 title: iOS 開発者のための UWP の概要
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3212128a5fda9f6c5c811b2725b97f64655588b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557860"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703516"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>iOS 開発者のための UWP の概要
 

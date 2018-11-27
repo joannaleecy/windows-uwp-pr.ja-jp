@@ -2,18 +2,16 @@
 title: 証明書の概要
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8caae5110b137245fd15fcc6e1b3cb61025d72ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2ee96628fd90ec9eea998abf312c5da11bff3826
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578601"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704020"
 ---
 # <a name="intro-to-certificates"></a>証明書の概要
 

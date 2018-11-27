@@ -4,17 +4,15 @@ description: テクスチャ形式 BC1 は、不透明なテクスチャや単�
 ms.assetid: 8C53ACDD-72ED-4307-B4F3-2FCF9A9F53EC
 keywords:
 - 不透明なテクスチャと 1 ビットのアルファ テクスチャ
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577539"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703226"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明なテクスチャと 1 ビットのアルファ テクスチャ
 

@@ -1,18 +1,16 @@
 ---
-author: ridomin
 title: Visual Studio を使ったアプリ インストーラー ファイルの作成
 description: Visual Studio を使い、.appinstaller ファイルを使って自動更新を有効にする方法について説明します。
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567700"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697775"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Visual Studio を使ったアプリ インストーラー ファイルの作成
 

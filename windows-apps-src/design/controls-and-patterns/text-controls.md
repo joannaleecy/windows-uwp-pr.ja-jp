@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
 title: テキスト コントロール
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/01/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,19 +11,19 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: fa990d7e4733c90b7ea46cec881ea502dd6a11b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 467be141d2c198bc95c93771ffa9cf2ad8fd6c0d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558929"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705849"
 ---
 # <a name="text-controls"></a>テキスト コントロール
 
 テキスト コントロールは、テキスト入力ボックス、パスワード ボックス、自動提案ボックス、テキスト ブロックで構成されています。 XAML フレームワークには、テキストのレンダリング、入力、編集用のいくつかのコントロールと、テキストの書式設定用のプロパティのセットが用意されています。
 
 - 読み取り専用テキストを表示するためのコントロールは、[TextBlock](text-block.md) および [RichTextBlock](rich-text-block.md) です。
-- テキスト入力と編集用のコントロールは: [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)、および[PasswordBox](password-box.md)します。
+- テキスト入力と編集用のコントロールは、: [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)、および[PasswordBox](password-box.md)します。
 
 > **重要な Api**: [TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
@@ -125,7 +123,7 @@ Windows 10 バージョン 1803 以降では、XAML テキスト入力ボック�
 
 ![ペンでタップするとテキスト ボックスが展開する](images/handwritingview/handwritingview2.gif)
 
-詳しくは、[手書きのビューを使って、テキスト入力](text-handwriting-view.md)を参照してください。
+詳しくは、[テキスト入力では、手書きのビュー](text-handwriting-view.md)を参照してください。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 

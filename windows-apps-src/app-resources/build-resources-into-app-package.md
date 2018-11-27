@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
 title: リソースをリソース パックではなくアプリ パッケージに組み込む
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 61b526cd7aa2da8733457b16dd0487ef4ead9cca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554525"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701162"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>リソースをリソース パックではなくアプリ パッケージに組み込む
 

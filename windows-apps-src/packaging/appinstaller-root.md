@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: アプリ インストーラーで UWP アプリをインストールする
 description: このセクションには、アプリ インストーラーに関する記事とアプリ インストーラーの機能を使用する方法に関する記事へのリンクが含まれています。
-ms.author: lahugh
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: f3da1f4f393eea1362b6e59d2ad7e9a2a97bc33b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca72f9570c5ecef4a93b03f297ecb1d5064c5bef
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565956"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703246"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>アプリ インストーラーで UWP アプリをインストールする
 

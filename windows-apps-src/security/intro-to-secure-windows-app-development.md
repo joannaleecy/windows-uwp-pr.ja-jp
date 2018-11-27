@@ -2,18 +2,16 @@
 title: 安全な Windows アプリの開発について
 description: この概要記事は、アプリの設計者と開発者が適切なセキュリティで保護されたユニバーサル Windows プラットフォーム (UWP) アプリの作成を加速するさまざまな windows 10 プラットフォーム機能を理解します。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: adc74410a5012dbc59cc995e80ee5fa729f0176f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 38318e7f97c8eba7d0137a865f5025fb9a77fa55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564234"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704749"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全な Windows アプリの開発について
 

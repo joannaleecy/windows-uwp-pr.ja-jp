@@ -1,9 +1,7 @@
 ---
-author: jwmsft
 Description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: ナビゲーション ビュー
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d8164571644c4e8ef84cae896fb7dce2265219e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2e436e45e70980e9f75749b3a9377f61b636f890
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562177"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700708"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 

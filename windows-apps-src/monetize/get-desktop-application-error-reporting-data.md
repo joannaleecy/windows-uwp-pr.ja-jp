@@ -1,22 +1,20 @@
 ---
-author: Xansky
 description: 日付範囲やその他のオプション フィルターを指定して、デスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: デスクトップ アプリケーションのエラー報告データの取得
-ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0081024f59af5180f5018664934277e7fad835
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d7a017f2b9530a88b76a9d374b92e9cfd8890b51
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576226"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708642"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>デスクトップ アプリケーションのエラー報告データの取得
 
-[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでは、過去 30 日以内に発生したエラーのみ取得できます。 この情報は、パートナー センターでのデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)で利用可能なもできます。
+[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションに関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、過去 30 日以内に発生したエラーをのみ取得できます。 この情報は、パートナー センターでデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)で利用可能なもできます。
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: デバイス情報プロパティ
 description: デバイスにはそれぞれ DeviceInformation プロパティが関連付けられており、特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができます。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca733ef88eb8b575b8974f71f9395800d5de3875
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558612"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703862"
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 

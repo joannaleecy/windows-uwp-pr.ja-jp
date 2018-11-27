@@ -1,20 +1,18 @@
 ---
-author: GrantMeStrength
 Description: Compare platform features between iOS, Android, and Windows 10.
 Search.Product: eADQiWindows 10XVcnh
 title: Android と iOS 開発者向けの Windows アプリ概念マッピング
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d73c89602db877b35d357d15393e089db9ae027
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576386"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700832"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
 

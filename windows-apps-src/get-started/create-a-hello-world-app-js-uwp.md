@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: Hello, world アプリを作成する (JS)
-description: このチュートリアルでは、対象を JavaScript と HTML を使って単純な & \#0034; を作成する方法こんにちは, world & \#0034 です。windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象とするアプリ。
-ms.author: jken
+description: このチュートリアルでは、対象を JavaScript と HTML を使って単純な & \#0034; を作成する方法こんにちは, world & \#0034;windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象とするアプリです。
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576000"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705803"
 ---
 # <a name="create-a-hello-world-app-js"></a>Hello, world アプリを作成する (JS)
 

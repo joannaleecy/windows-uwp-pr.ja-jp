@@ -4,17 +4,15 @@ description: 深度バッファーは、ビューから隠される多角形の�
 ms.assetid: 98B9D73A-04A7-4758-AC27-33CD4CB24216
 keywords:
 - 深度バッファーとステンシル バッファー
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e292e0c992edb26da2a92885e1f949d254d75da6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0336054b99e5aae6739e22afd29ee344aad3d42c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577069"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702530"
 ---
 # <a name="depth-and-stencil-buffers"></a>深度バッファーとステンシル バッファー
 

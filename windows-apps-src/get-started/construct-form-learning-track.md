@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 学習トラック - フォームの作成と構成
 description: アプリで堅牢なフォームを作成するために必要となることについて説明します。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575234"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697082"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 

@@ -1,24 +1,22 @@
 ---
-author: stevewhims
 title: Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: このトピックでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566835"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704423"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 
 
-このトピックでは、Windows10Universal Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。 ユニバーサル 8.1 アプリは、Windows8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+このトピックでは、非常に単純なユニバーサル 8.1 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリの移植のケース スタディを示します。 ユニバーサル 8.1 アプリは、Windows8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 移植するアプリは、ビュー モデルにバインドされた **ListBox** で構成されます。 ビュー モデルにはタイトル、著者、表紙を示す書籍の一覧が含まれます。 表紙画像では、**[ビルド アクション]** が **[コンテンツ]** に設定され、**[出力ディレクトリにコピー]** が **[コピーしない]** に設定されています。
 

@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: 受取りアカウントの設定と税関連の書類
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
-ms.author: wdg-dev-content
 ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 767ea7ca6a5f226fda75d97c3497ae77a5819626
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576183"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701735"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 

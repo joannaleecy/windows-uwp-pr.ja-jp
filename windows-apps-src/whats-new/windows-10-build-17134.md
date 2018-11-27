@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows 10 の開発者向け新着情報、ツール、機能
 description: Windows 10 ビルド 17134 と新しい開発者ツールでは、ユニバーサル Windows プラットフォームによって強化されたツール、機能、エクスペリエンスを利用できます。
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 最新, 開発者, 17134
-ms.author: quradic
 ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b25df0a8445322ceb422fd6485f7d08c1c49a25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 72319e7d97bfaaff4595c56a09fb7d3a874faa50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567145"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705084"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>Windows 10 ビルド 17134 の開発者向け新着情報
 
@@ -71,7 +69,7 @@ PlayReady | Microsoft PlayReady は、デジタル コンテンツを保護し�
 システム トリガー | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) を使用すると、必要なシステム トリガーが OS から提供されない場合に、システム トリガーを定義できます。 ハードウェア ドライバーと UWP アプリの両方がサード パーティ製であり、ハードウェア ドライバーでカスタム イベントを生成し、アプリで処理する必要がある場合などに必要になります。 例として、オーディオ ジャックが接続されたときに、オーディオ カードからユーザーに通知する場合などが該当します。
 ユーザー アクティビティ | 新しい [UserActivity に関するドキュメント](../launch-resume/useractivities.md)では、前回ユーザーがアプリで実行していた状態から再開できるようにする方法 (複数のデバイス間で再開する場合にも対応) について説明します。</br>**UserActivitySessionHistoryItem** クラスには、最近のユーザー アクティビティを取得する新しいメソッドが含まれています。 詳しくは、[GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) およびそのオーバーロードの説明をご覧ください。
 Windows Mixed Reality API | 拡張中の Windows Mixed Reality プラットフォームをサポートするために、[Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 名前空間と [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 名前空間に新しい API が追加されました。
-Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスが[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じようにこれらの UWP のドキュメントでできるようになりましたフィードバックを GitHub の問題したり、プル要求を介して、独自の投稿を提出できます。
+Windows Mixed Reality に関するドキュメント | Windows Mixed Reality の開発者向けガイダンスは[docs.microsoft.com でホストされるようになりました](https://docs.microsoft.com/windows/mixed-reality/)。 同じようにこれらの UWP のドキュメントでできるようになりましたフィードバックを GitHub の問題したり、プル要求を介して、独自の投稿を提出できます。
 
 ## <a name="publish--monetize-windows-apps"></a>Windows アプリを公開および収益化する
 

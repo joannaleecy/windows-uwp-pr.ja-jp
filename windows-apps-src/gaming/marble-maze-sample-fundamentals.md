@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: Marble Maze サンプルの基礎
 description: このドキュメントには、Marble Maze プロジェクトの基本的な特性について説明します。たとえば、Windows ランタイム環境で Visual C を使用する方法を作成する方法と、構造化し、組み込まれている方法です。
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
-ms.author: elcowle
 ms.date: 08/22/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎
 ms.localizationpriority: medium
-ms.openlocfilehash: f595c8f429c93a13d6342c281a90f3b0f5741621
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577023"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704131"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 

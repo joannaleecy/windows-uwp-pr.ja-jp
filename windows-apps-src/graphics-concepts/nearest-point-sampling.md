@@ -4,17 +4,15 @@ description: アプリケーションがテクスチャ フィルタリングを
 ms.assetid: D7F88320-2C61-47E9-9B92-EC31D48DB079
 keywords:
 - 最近点サンプリング
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 965660f51efc914f7ca21a5bf747fe809319eff9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 18703a75747e09436e7938e1229dda09cd457fa5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582372"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699697"
 ---
 # <a name="span-iddirect3dconceptsnearest-pointsamplingspannearest-point-sampling"></a><span id="direct3dconcepts.nearest-point_sampling"></span>最近点サンプリング
 

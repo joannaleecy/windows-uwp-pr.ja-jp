@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: アプリのパッケージ化
 description: このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
-ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 04736c9ac4de5adf162d32191ff30f7a981d6a6f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575689"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703056"
 ---
 # <a name="packaging-apps"></a>アプリのパッケージ化
 

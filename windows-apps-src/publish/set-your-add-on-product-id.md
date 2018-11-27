@@ -1,23 +1,21 @@
 ---
-author: jnHs
 Description: When you create a new add-on in Partner Center, you need to specify a product type and assign it a product ID.
 title: アドオンの製品の種類と製品 ID を設定する
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, アドオン, iap, 永続的, コンシューマブル, サブスクリプション, 製品の種類, 製品 id, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
-ms.openlocfilehash: 14d0cd40e0a7a170a835b000dc66ec683c2fb59c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 51807b96d80245b8dc5b22f1f376f603285d518a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573568"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705829"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>アドオンの製品の種類と製品 ID を設定する
 
-アドオンは、(まだ送信したしていない) 場合でも、[パートナー センター](https://partner.microsoft.com/dashboard)で作成したアプリを関連付ける必要があります。 アプリの **[概要]** ページまたは **[アドオン]** ページに **[新しいアドオンを作成する]** ボタンがあります。
+アドオン (まだ送信したしていない) 場合でも、[パートナー センター](https://partner.microsoft.com/dashboard)で作成したアプリに関連付けられている必要があります。 アプリの **[概要]** ページまたは **[アドオン]** ページに **[新しいアドオンを作成する]** ボタンがあります。
 
 **[新しいアドオンを作成する]** を選ぶと、製品の種類を指定し、アドオンに製品 ID を割り当てるように求められます。
 
@@ -56,7 +54,7 @@ ms.locfileid: "7573568"
 
 ## <a name="product-id"></a>製品 ID
 
-どの製品の種類を選んでも、アドオンに割り当てる一意の製品 ID を入力する必要があります。 この名前は、パートナー センターで、アドオンを識別するために使用され、[コードでアドオンを参照](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)するには、この識別子を使用することができます。
+どの製品の種類を選んでも、アドオンに割り当てる一意の製品 ID を入力する必要があります。 この名前はパートナー センターで、アドオンを識別に使用され[、コードでアドオンを参照](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code)するには、この識別子を使用することができます。
 
 次に示しているのは、製品 ID を選ぶときの留意点です。
 

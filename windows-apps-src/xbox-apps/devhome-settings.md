@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: '[設定] ページ (Dev Home)'
 description: Xbox one Dev Home アプリの設定ページについて説明します。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
-ms.openlocfilehash: ec27464c2bcece46e4a658cc59ac8ef0b7f390f7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558073"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698867"
 ---
 # <a name="settings-page-dev-home"></a>[設定] ページ (Dev Home)
    

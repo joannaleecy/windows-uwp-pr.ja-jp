@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows ドキュメントの最新情報で新 2018 年 9 月 - UWP アプリの開発
 description: 2018 年 9 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10 年 9 月
-ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 918fd0208d6af17c25ad184a856b2a87a6f61791
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560111"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701882"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 9 月
 

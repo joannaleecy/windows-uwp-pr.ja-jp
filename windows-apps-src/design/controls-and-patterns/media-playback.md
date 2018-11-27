@@ -1,22 +1,20 @@
 ---
-author: Jwmsft
 Description: The media player is used to view and listen to video, audio, and images.
 title: メディア プレーヤー
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6df7d7dc7d35ed46f3f741bd1783b5af2755f0a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e8ed0c28199e49e9c4be69785a7af5985afae6a2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578179"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700011"
 ---
 # <a name="media-player"></a>メディア プレーヤー
 

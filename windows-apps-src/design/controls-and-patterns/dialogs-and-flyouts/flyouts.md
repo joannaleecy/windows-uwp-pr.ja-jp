@@ -1,9 +1,7 @@
 ---
-author: mijacobs
 Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: ポップアップ コントロール
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e68f8f48ca9ba67a29c8a52a5d59767a080f642b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ce3222ed13cf82a9f235a592b5830ab96384664
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568287"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704606"
 ---
 # <a name="flyouts"></a>ポップアップ
 

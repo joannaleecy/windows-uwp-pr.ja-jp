@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 記述スタイル
 description: アプリのテキストを設計と融合させるには、適切なボイスとトーンを使用することが重要です。
 keywords: UWP, Windows 10, テキスト, 記述, ボイス, トーン, 設計, UI, UX
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 500eb490083dfa631f9ff84195ec3ae86027e3ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b09265164ccd922ab310c06e6c2bd14b6d7a841c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576100"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697062"
 ---
 # <a name="writing-style"></a>記述スタイル
 

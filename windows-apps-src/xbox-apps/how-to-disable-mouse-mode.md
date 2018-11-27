@@ -1,19 +1,17 @@
 ---
-author: payzer
 title: マウス モードを無効にする方法
 description: 既定のマウス モードを無効にするための操作手順。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc6989103442deb364654ec006c0fe4b1455511
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557844"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702260"
 ---
 # <a name="how-to-disable-mouse-mode"></a>マウス モードを無効にする方法
 マウス モードは、すべてのアプリケーションについて既定でオンになっています。つまり、オプトアウトしていないすべてのアプリケーションがマウス ポインターを受け取ります (コンソール上の Edge ブラウザー内のアプリケーションに似ています)。 コントローラーの方向移動操作を最適化するため、マウス モードは無効にすることを強くお勧めします。   

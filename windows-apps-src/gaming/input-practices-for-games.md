@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: ゲームの入力プラクティス
 description: 入力デバイスを効果的に使用するためのパターンと手法について説明します。
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
-ms.author: elcowle
 ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: ed0d611c761315e42decb89e1a5a5ad84f4b067a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563748"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707695"
 ---
 # <a name="input-practices-for-games"></a>ゲームの入力プラクティス
 

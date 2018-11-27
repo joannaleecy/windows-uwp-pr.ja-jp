@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: ファイルのアクティブ化の処理
 description: アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9f1e41c3e09d9a711ce9174a5a658a55c7c44abd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571042"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705556"
 ---
 # <a name="handle-file-activation"></a>ファイルのアクティブ化の処理
 
@@ -123,9 +121,9 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 ```
 
 > [!NOTE]
-> ファイルのコントラクトによって起動すると、その戻るボタン戻る、アプリを起動した画面としないアプリの以前のコンテンツを確認します。
+> ファイルのコントラクトによって起動すると、その戻るボタン戻るアプリを起動した画面としないアプリの以前のコンテンツを確認します。
 
-新しいページを開くアクティブ化イベントごとに新しい XAML**フレーム**を作成することをお勧めします。 これにより、新しい XAML フレームのナビゲーション backstack は、中断されたときに、現在のウィンドウで、アプリが以前のコンテンツを含まれていません。 起動とファイル コントラクトに単一 XAML**フレーム**を使用した場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにある内のページをクリアする必要があります。
+新しいページを開くアクティブ化イベントごとに新しい XAML**フレーム**を作成することをお勧めします。 これにより、新しい XAML フレームのナビゲーション backstack は、中断されたときに、現在のウィンドウで、アプリが以前のコンテンツを含まれていません。 起動とファイル コントラクトに単一 XAML**フレーム**を使用する場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにある内のページをクリアする必要があります。
 
 ファイル アクティブ化によってアプリを起動すると、アプリの先頭ページに戻るには、ユーザーは、UI を含めることを検討する必要があります。
 

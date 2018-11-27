@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: The calendar date picker is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important.
 title: カレンダーの日付の選択コントロール
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6756d8c64f33de8d16d6aa455c3fad694a6306d5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 960628156777e18781c82eeda9348823be3dbf4c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558546"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709008"
 ---
 # <a name="calendar-date-picker"></a>カレンダーの日付の選択コントロール
 

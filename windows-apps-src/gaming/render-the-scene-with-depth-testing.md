@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 深度のテストを使ったシーンのレンダリング
 description: シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、レンダリング、シーン、深度のテスト、Direct3D、シャドウ
 ms.localizationpriority: medium
-ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568340"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696668"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>深度のテストを使ったシーンのレンダリング
 
