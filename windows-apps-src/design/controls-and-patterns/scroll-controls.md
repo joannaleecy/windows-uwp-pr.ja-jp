@@ -1,11 +1,9 @@
 ---
-author: muhsinking
 Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
 title: スクロール ビューアー コントロール
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10、UWP
@@ -14,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 983f80c705aba44fe096f9dfa05b71b0cf28f294
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 22e2321c301535fe89f2a7bba13497d51c6d8b78
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573770"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718178"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 

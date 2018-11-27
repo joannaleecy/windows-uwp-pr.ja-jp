@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
-description: Microsoft Store 申請 API でこれらのメソッドを使用すると、パートナー センター アカウントに登録されているアプリのパッケージ フライトを管理できます。
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライトを管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
 title: パッケージ フライトの管理
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1300151d8b50a0a9e192c2090e9a3d72afa86e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560919"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718062"
 ---
 # <a name="manage-package-flights"></a>パッケージ フライトの管理
 

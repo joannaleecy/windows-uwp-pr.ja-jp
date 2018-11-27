@@ -1,23 +1,21 @@
 ---
-author: Xansky
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
-description: パートナー センター アカウントに登録されているアプリのパッケージ フライトのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
+description: パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに Microsoft Store 申請 API の以下のメソッドを使用します。
 title: パッケージ フライトの取得
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライト, パッケージ フライト
 ms.localizationpriority: medium
-ms.openlocfilehash: 09fd5c703e4a601ad28a05156aec9133444cfd9e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c4ff6c929a7264b5dece0057701c8348fe5d39be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568201"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717972"
 ---
 # <a name="get-a-package-flight"></a>パッケージ フライトの取得
 
-パートナー センター アカウントに登録されているアプリのパッケージ フライトのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
+パートナー センター アカウントに登録されているアプリのパッケージ フライトに関するデータを取得するのに Microsoft Store 申請 API の以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -1,23 +1,21 @@
 ---
-author: TylerMSFT
 title: ユニバーサル Windows プラットフォーム (UWP) アプリとは
 description: Windows 10 を搭載するさまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.author: twhitney
 ms.date: 5/7/2018
 ms.topic: article
 keywords: Windows 10, UWP, ユニバーサル
 ms.localizationpriority: medium
-ms.openlocfilehash: a687aa7ed1115692f765e516dc8c8b15504b709e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c174bb81deb84d3638a948555e045168c89f02a7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576873"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717778"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
-![ユニバーサル Windows プラットフォーム アプリのさまざまなデバイスで実行、アダプティブ ユーザー インターフェイス、自然なユーザー入力、1 つのストア、パートナー センターのサポートし、クラウド サービス](images/universalapps-overview.png)
+![ユニバーサル Windows プラットフォーム アプリのさまざまなデバイスで実行、アダプティブ ユーザー インターフェイス、自然なユーザー入力、1 つのストア、パートナー センターのサポートと、およびクラウド サービス](images/universalapps-overview.png)
 
 UWP アプリには次のような特長があります。
 
@@ -37,9 +35,9 @@ UWP アプリでは、マイク、位置情報、Web カメラ、USB デバイ�
 
 ## <a name="a-common-api-surface-across-all-devices"></a>すべてのデバイスに共通の API セット
 
-Windows 10 では、ユニバーサル Windows プラットフォーム (UWP)、windows 10 を実行するすべてのデバイスで共通のアプリ プラットフォームを提供します。 UWP のコア API は、すべての Windows デバイスで同じです。 アプリは、コア Api のみを使用する場合は、任意の windows 10 デバイスがデスクトップ PC、Xbox、Mixed reality ヘッドセットをターゲットとしているし、ようにするかどうかに関係なくで実行されます。
+Windows 10 では、ユニバーサル Windows プラットフォーム (UWP)、windows 10 を実行するすべてのデバイスで共通のアプリ プラットフォームを提供します。 UWP のコア API は、すべての Windows デバイスで同じです。 アプリは、コア Api のみを使用する場合は、デスクトップ PC、Xbox、Mixed reality ヘッドセットをターゲットとしているし、ようにするかどうかに関係なくすべての windows 10 デバイスで実行されます。
 
-C++/WinRT または C++/CX で記述された UWP アプリは UWP の一部である Win32 API にアクセスします。 これらの Win32 Api は、すべての windows 10 デバイスによって実装されます。
+C++/WinRT または C++/CX で記述された UWP アプリは UWP の一部である Win32 API にアクセスします。 これらの Win32 Api は、windows 10 のすべてのデバイスによって実装されます。
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>拡張 SDK が特定のデバイスの種類に固有の機能を公開する
 
@@ -132,7 +130,7 @@ Microsoft デザイン システムは Fluent と呼ばれます。 Fluent Desig
 - アプリで音声コマンドに応答できるようにするために、[アプリに Cortana を追加する](https://mva.microsoft.com/training-courses/integrating-cortana-in-your-apps-8487?l=20D3s5Xz_5904984382)方法について説明します。
 - [プッシュ通知](https://msdn.microsoft.com/library/windows/apps/mt187203)と[アプリ内購入](https://msdn.microsoft.com/library/windows/apps/mt219684)を計画に盛り込みます。 これらの機能はさまざまなデバイスで動作する必要があります。
 
-### <a name="submit-your-app-to-the-store"></a>ストアにアプリを提出します。
+### <a name="submit-your-app-to-the-store"></a>アプリをストアに提出します。
 
 [パートナー センター](https://partner.microsoft.com/dashboard)では、すべて 1 か所での Windows デバイス向けにアプリの管理し、申請することができます。 [Windows アプリを公開しゲーム](../publish/index.md)アプリ、Microsoft Store で公開を提出する方法について参照してください。
 
@@ -151,10 +149,10 @@ Microsoft デザイン システムは Fluent と呼ばれます。 Fluent Desig
 - [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用して、既存のデスクトップ アプリに Windows 10 ユーザー向けの最新のエクスペリエンスを追加し、Microsoft Store で配布する方法について説明しています。
 
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>ユニバーサル Windows プラットフォームが Windows ランタイム Api に関連する方法
-ユニバーサル Windows プラットフォーム (UWP) アプリを構築する場合は、多くの経費と"ユニバーサル Windows プラットフォーム (UWP)"と「Windows ランタイム (WinRT)」という用語を増減同義語として扱う外の利便性を取得できます。 ただし** では、テクノロジの外観やだけどのような違いは、それらのアイデアの間を判断することもできます。 については、興味がある場合、この最後のセクションが役立ちます。
+ユニバーサル Windows プラットフォーム (UWP) アプリを構築する場合は、多くの経費と増減同義語として"ユニバーサル Windows プラットフォーム (UWP)"と「Windows ランタイム (WinRT)」という用語を扱う外の利便性を取得できます。 ですが、** では、テクノロジの外観やだけどのような違いは、それらのアイデアの間を判断することもできます。 については、興味があるなら、し、この最後のセクションが役立ちます。
 
-Windows ランタイムと WinRT の Api は、Windows Api の進化したものです。 最初に、フラット、C スタイルの Win32 Api 経由で Windows のプログラム。 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)著名な例をされている) が追加されました。 Windows フォーム、WPF、.NET、およびマネージ言語なり、独自の Windows アプリ、および API のテクノロジの独自のフレーバーの作成の方法が設定されます。 Windows ランタイムでは、COM の次のステージ 実際のアプリケーション バイナリ インターフェイス (ABI) レイヤーで COM では、そのルートが表示されます。 ただし、Windows ランタイムがさまざまなプログラミング言語の優れた範囲から呼び出せるように設計されています。 各言語に非常に自然な方法で呼び出すことができます。 このため、Windows ランタイムへのアクセスは言語プロジェクションとして知られる経由で使用可能になります。 C#、Visual basic、標準的な C++ に、JavaScript、およびなどに、Windows ランタイム言語プロジェクションがあります。 さらに、1 回パッケージ化に適切に ([デスクトップ ブリッジ](/windows/uwp/porting/desktop-to-uwp-root)を参照)、優れたさまざまなアプリケーション モデルのいずれかで構築されたアプリから WinRT Api を呼び出すことができます: Win32 や .NET、WinForms、WPF します。
+Windows ランタイムと WinRT Api では、Windows Api の進化したものです。 最初に、フラット、C スタイルの Win32 Api 経由で Windows のプログラム。 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)著名な例をされている) が追加されました。 Windows フォーム、WPF、.NET、およびマネージ言語なり、独自の Windows アプリ、および API のテクノロジの独自のフレーバーの作成の方法が設定されます。 Windows ランタイムでは、COM の次のステージ 実際のアプリケーション バイナリ インターフェイス (ABI) レイヤーで COM では、そのルートが表示されます。 ただし、Windows ランタイムはさまざまなプログラミング言語の優れた範囲から呼び出すことに設計されています。 各言語に非常に自然な方法で呼び出すことができます。 このため、Windows ランタイムへのアクセスは言語プロジェクションとして知られる経由で使用可能になります。 C#、Visual basic、標準的な C++ に、JavaScript、およびなどに、Windows ランタイム言語プロジェクションがあります。 さらに、1 回パッケージ化に適切に ([デスクトップ ブリッジ](/windows/uwp/porting/desktop-to-uwp-root)を参照)、アプリケーション モデルの優れた範囲のいずれかで構築されたアプリから WinRT Api を呼び出すことができます: .NET、Win32、WinForms、および WPF します。
 
-そして、もちろん、UWP アプリから WinRT Api を呼び出すことができます。 UWP は、Windows ランタイムの上に構築されたアプリケーション モデルです。 技術的には、UWP アプリケーション モデルは、プログラミング言語の好みに応じてからその詳細が表示されないことが[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)に基づいています。 値提案の観点から、このトピックでは説明したように、UWP に適していますが、選択する必要があります、Microsoft Store に公開して実行できる優れたさまざまなデバイスのフォーム ファクターのいずれかで 1 つのバイナリを記述します。 UWP アプリのデバイスの範囲を呼び出し、アプリを制限することや、条件付きで呼び出すこと、UWP Api のサブセットとは異なります。
+そして、もちろん、UWP アプリから WinRT Api を呼び出すことができます。 UWP は、Windows ランタイムの上に構築されたアプリケーション モデルです。 技術的には、UWP アプリケーション モデルは、プログラミング言語の好みに応じて、その詳細が表示されないことが[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)に基づいています。 値提案の観点から、このトピックでは説明したように、UWP に適していますが、選択する必要があります、Microsoft Store に公開して実行できる優れたさまざまなデバイスのフォーム ファクターのいずれかを 1 つのバイナリを記述します。 UWP アプリのデバイスに到達を呼び出して、アプリを制限することや、条件付きで呼び出すこと、UWP Api のサブセットとは異なります。
 
-できれば、このセクションでは、Windows ランタイム Api とメカニズムとユニバーサル Windows プラットフォームのビジネスの値を基になるテクノロジの違いの説明に成功しています。
+できれば、このセクションでは、Windows ランタイム Api では、メカニズムとユニバーサル Windows プラットフォームのビジネスの値を基になるテクノロジの違いの説明に成功しています。

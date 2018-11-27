@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Xbox Live の実績データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。
 title: Xbox Live の実績データの取得
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 実績
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b635a659a8516184998b5f0b05d2d7692a42af1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 23a99c637dfd466ba21169626315803dec60e4e8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581007"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718284"
 ---
 # <a name="get-xbox-live-achievements-data"></a>Xbox Live の実績データの取得
 

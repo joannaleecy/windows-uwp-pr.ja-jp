@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: PropertyPath クラスと文字列構文を使うと、PropertyPath 値を XAML またはコードでインスタンス化できます。
 title: プロパティ パス構文
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574093"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717715"
 ---
 # <a name="property-path-syntax"></a>プロパティ パス構文
 
@@ -56,7 +54,7 @@ Windows ランタイムでは、任意の依存関係プロパティのターゲ
 
 たとえば、"Teams" (順序指定された一覧) の一覧を含むビジネス オブジェクトがあるとします。それぞれには、各プレイヤーの姓がキーとして使われている、"Players" という辞書があるとします。 たとえば、2 番目のチームの特定のプレイヤーのプロパティ パスは、"Teams\[1\].Players\[Smith\]" となります  (一覧はインデックス 0 で始まるため、"Teams" の 2 番目の項目を示すには 1 を使います)。
 
-**注:** C++ データ ソースに対してインデックスのサポートが制限されます。[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** C++ データ ソースに対してインデックス作成サポートは制限されます。[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 ### <a name="attached-properties"></a>添付プロパティ
 

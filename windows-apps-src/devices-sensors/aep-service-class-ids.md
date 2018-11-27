@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: AEP サービス クラス ID
 description: アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568390"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718370"
 ---
 # <a name="aep-service-class-ids"></a>AEP サービス クラス ID
 

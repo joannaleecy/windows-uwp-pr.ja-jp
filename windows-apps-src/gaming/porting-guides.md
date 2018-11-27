@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: ゲーム移植ガイド
 description: Direct3d11、ユニバーサル Windows プラットフォーム (UWP) と windows 10 に、既存のゲームを移植するためのガイドを提供します。
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, Direct3D 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 47892bac1a19018201187cbc901e4b680480268b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559271"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717592"
 ---
 # <a name="game-porting-guides"></a>ゲーム移植ガイド
 

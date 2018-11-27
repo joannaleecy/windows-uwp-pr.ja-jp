@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
 title: バックグラウンドでのメディア ファイルの処理
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569819"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716680"
 ---
 # <a name="process-media-files-in-the-background"></a>バックグラウンドでのメディア ファイルの処理
 
@@ -132,7 +130,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-UI コントロールの**クリックして**イベントなど、一般的なアプリは、ユーザー操作への応答としてバック グラウンド タスクを起動します。
+UI コントロールの**クリックして**イベントのように、一般的なアプリは、ユーザー操作への応答としてバック グラウンド タスクを起動します。
 
 バックグラウンド タスクが操作の進行状況を更新すると、**OnProgress** イベント ハンドラーが呼び出されます。 この機会を使って、進行状況情報によって UI を更新することができます。
 

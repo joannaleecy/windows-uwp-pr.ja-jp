@@ -1,14 +1,13 @@
 ---
-author: WilliamsJason
 title: Device Portal リモコン入力 API リファレンス
 description: Xbox でコントローラー、キーボード、およびマウス入力をリモートで送信する方法について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: a2217b87d840bc95010e2e1ce47ea72e991e8fa3
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: e0db86ad50bfb1cb27f516243542a554e710c3ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921264"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7719635"
 ---
 # <a name="remote-input-api-reference"></a>リモート入力 API リファレンス   
 この API を介してリモートからリアルタイムでコントローラー、キーボード、およびマウス入力を送信することができます。

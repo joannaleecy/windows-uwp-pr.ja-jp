@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: 印刷プレビュー UI のカスタマイズ
 description: このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fb45842e8aaa4200e2597ac0736d911ac9bf34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570786"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718523"
 ---
 # <a name="customize-the-print-preview-ui"></a>印刷プレビュー UI のカスタマイズ
 
@@ -27,7 +25,7 @@ ms.locfileid: "7570786"
 
 このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 印刷機能の詳細については、「[アプリからの印刷](print-from-your-app.md)」を参照してください。
 
-**ヒント:** このトピックの例のほとんどは、サンプルに基づいて印刷します。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
+**ヒント:** のこのトピックの例のほとんどは、サンプルに基づいて印刷します。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
 
  
 
@@ -50,7 +48,7 @@ ms.locfileid: "7570786"
 
 ただし、この方法を使って加えた変更は、印刷プレビュー UI にのみ影響します。 ユーザーは印刷プレビュー UI で **[その他の設定]** をタップすることで、プリンターでサポートされているすべてのオプションにいつでもアクセスできます。
 
-**注:** アプリは、表示される任意の印刷オプションを指定しますが、選んだプリンターでサポートされているようにのみが印刷プレビュー UI にします。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
+**注:** アプリは、表示される印刷オプションを指定しますが、選択されたプリンターでサポートされているようにのみが印刷プレビュー UI にします。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
 
  
 
@@ -98,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要な**、印刷プレビュー UI に**複数の設定**のリンクを含むからすべての印刷オプションを削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
+**重要な**、印刷プレビュー UI に**他の設定**のリンクを含むからすべての印刷オプションの削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
 
 ### <a name="specify-default-options"></a>既定のオプションの指定
 

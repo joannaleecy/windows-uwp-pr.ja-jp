@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。
 title: BitmapEncoder オプションのリファレンス
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 07f5c6ef180cb4abe90a705e73be8d99ecbd2ca7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563870"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7716710"
 ---
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder オプションのリファレンス
 

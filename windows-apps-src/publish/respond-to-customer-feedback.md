@@ -1,19 +1,17 @@
 ---
 title: 顧客のフィードバックに返信する
 description: 顧客がフィードバック Hub に入力したフィードバックに直接返信できます。
-author: JnHs
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10、UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574893"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717035"
 ---
 # <a name="respond-to-customer-feedback"></a>顧客のフィードバックに返信する
 
@@ -24,7 +22,7 @@ ms.locfileid: "7574893"
 
 フィードバックに返信するには、**フィードバック レポート**でフィードバックをクリックし、表示される **[フィードバックに返信する]** リンクをクリックします。
 
-[パートナー センター](https://partner.microsoft.com/dashboard)には、アプリについてのフィードバックを提供したユーザーに応答するための 3 つのオプションがサポートしています。 いずれの方法を選択した場合も、1 回の返信につき 1000 文字の文字数制限があるので注意してください。
+[パートナー センター](https://partner.microsoft.com/dashboard)には、アプリについてのフィードバックを提供したユーザーに対応するための 3 つのオプションがサポートしています。 いずれの方法を選択した場合も、1 回の返信につき 1000 文字の文字数制限があるので注意してください。
 
 ## <a name="public-comments-in-feedback-hub"></a>フィードバック Hub での公開コメント
 

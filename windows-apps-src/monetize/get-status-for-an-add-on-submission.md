@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: アドオンの申請の状態を取得するには、Microsoft Store 申請 API の以下のメソッドを使います。
 title: アドオンの申請の状態の取得
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 状態
 ms.localizationpriority: medium
-ms.openlocfilehash: e2013a081898dbf46958190da1df01adaac9d820
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1bfec8232fe8e410e65997098954e35d3f5fdc1b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564857"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718234"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>アドオンの申請の状態の取得
 
@@ -25,7 +23,7 @@ ms.locfileid: "7564857"
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリのいずれかのアドオンの申請を作成します。 [アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して行うことができますパートナー センターで、これを行うこともできます。
+* アプリのいずれかのアドオンの申請を作成します。 パートナー センターで、これを行うか、[アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して、これを行うことができます。
 
 ## <a name="request"></a>要求
 
@@ -48,7 +46,7 @@ ms.locfileid: "7564857"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | string | 必須。 状態を取得する申請が含まれているアドオンのストア ID です。 ストア ID は、パートナー センターで利用できます。  |
-| submissionId | string | 必須。 状態を取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| submissionId | string | 必須。 状態を取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文

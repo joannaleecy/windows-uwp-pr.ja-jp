@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 試験的な API
 description: 試験的な API について
-ms.author: twhitney
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 試験的, api
 ms.localizationpriority: medium
-ms.openlocfilehash: fe5fa437c5a1e564be07b7277de0f190d6eab862
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570345"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717005"
 ---
 # <a name="experimental-apis"></a>試験的な API
 

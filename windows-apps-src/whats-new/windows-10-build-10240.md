@@ -1,25 +1,23 @@
 ---
-author: QuinnRadich
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
 title: Windows 10 ビルド 10240 - 2015 年 7 月の新機能
 keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規, Windows 10, 1507, 10240
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578056"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717758"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>Windows 10 開発者向け新については、ビルド 10240
 
 Windows 10 ビルド 10240 と更新された SDK では、優れたユニバーサル Windows プラットフォーム アプリを作るためツール、機能、エクスペリエンスを利用できます。 Windows 10 への[ツールと SDK のインストール](http://go.microsoft.com/fwlink/?LinkId=821431)が完了したら、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)を試したりすることができます。
 
-Windows 10 ビルド 10240 (Windows 10 バージョン 1507 とも呼ばれます) の新機能で確認を次に示します。
+Windows 10 ビルド 10240 (Windows 10 バージョン 1507 とも呼ばれます) の新機能によって確認を次に示します。
 
 ## <a name="adaptive-layouts"></a>アダプティブ レイアウト
 

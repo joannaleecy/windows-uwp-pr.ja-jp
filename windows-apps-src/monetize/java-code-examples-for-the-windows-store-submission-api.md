@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: このセクションの Java コード例を使用して、Microsoft Store 申請 API を使用する方法をご確認ください。
 title: Java のコード例 - アプリ、アドオン、およびフライトの申請
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Java
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0df9fe873ab7d7330e06a18bb1816df3157d7a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579322"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718593"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java のコード例: アプリ、アドオン、およびフライトの申請
 
@@ -85,7 +83,7 @@ ms.locfileid: "7579322"
 
 ## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、```SubmitNewInAppProductSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、```SubmitNewInAppProductSubmission```メソッドは、最後に公開された申請の複製として新しい申請を作成し、し、更新プログラムのパートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
@@ -100,13 +98,13 @@ ms.locfileid: "7579322"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、```SubmitNewFlightSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、```SubmitNewFlightSubmission```メソッドは、最後に公開された申請の複製として新しい申請を作成し、し、更新プログラムのパートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。
 3. その後、[パッケージ フライトの新しい申請を作成](create-a-flight-submission.md)します (新しい申請は、最後に公開された申請のコピーです)。
 4. 申請の新しいパッケージを Azure Blob Storage にアップロードします。
-5. 次に、その[更新プログラム](update-a-flight-submission.md)とその PartnerCenter に新しい申請を[コミット](commit-a-flight-submission.md)します。
+5. 次に、その[更新プログラム](update-a-flight-submission.md)とし、PartnerCenter に新しい申請を[コミット](commit-a-flight-submission.md)します。
 6. 最後に、申請が正常にコミットされるまで、定期的に[新しい申請の状態をチェック](get-status-for-a-flight-submission.md)します。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L223-L308)]

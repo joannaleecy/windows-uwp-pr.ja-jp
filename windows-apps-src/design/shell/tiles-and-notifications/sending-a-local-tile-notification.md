@@ -1,25 +1,23 @@
 ---
-author: andrewleader
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: ローカル タイル通知の送信
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 76af980aeb759905259a043fdb9b4b828a90d819
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563548"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716832"
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
  
 
-Windows 10 でのアプリのプライマリ タイルは、セカンダリ タイルをプログラムで作成し、アプリ コードで定義されているときに、アプリ マニフェストで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
+Windows 10 でアプリのプライマリ タイルは、セカンダリ タイルをプログラムで作成し、アプリ コードで定義されているときに、アプリ マニフェストで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
 
 ![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
@@ -48,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>タイル通知のコンテンツを作成する
 
 
-Windows 10、タイルのペイロードは、通知にカスタムの視覚的なレイアウトを作成するため、アダプティブ タイル テンプレートを使用して定義します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
+Windows 10 では、タイルのペイロードは、通知にカスタムの視覚的なレイアウトを作成するため、アダプティブ タイル テンプレートを使用して定義します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 

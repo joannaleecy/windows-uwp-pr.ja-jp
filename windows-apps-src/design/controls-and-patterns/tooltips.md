@@ -1,11 +1,9 @@
 ---
-author: Jwmsft
 Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
 title: ヒント
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 87001cb99a7d5cb1a150bceed3f6c9ba187caa94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568148"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716195"
 ---
 # <a name="tooltips"></a>ヒント
 
@@ -114,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 既定では、ToolTip はポインターの上部に中央揃えで表示されます。 配置はアプリ ウィンドウによって制約されていないため、ToolTip が部分的に表示されたり、完全にアプリ ウィンドウの境界の外部に表示されたりすることがあります。
 
-広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最後の位置 - VerticalOffset 配置ときに上または下、HorizontalOffset の配置を左または右に影響します。
+広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最後の位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -127,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-ヒントを参照しているコンテンツを覆い隠す、正確にプロパティを使って、新しい**PlacementRect**の配置を調整できます。 PlacementRect は固定ツールチップの位置と、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくは、領域としても機能します。 ToolTip の所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
+ヒントを参照しているコンテンツを覆い隠す、正確に新しい**PlacementRect**プロパティを使用して配置を調整できます。 PlacementRect は、ツールヒントの位置を固定して、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくなります、領域としても機能します。 ToolTip の所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558417"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716890"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -90,7 +88,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 クラス ライブラリ (ユニバーサル Windows) または[Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) プロジェクト内からこの同じコードを使用することができます。 実行時に、ライブラリをホストしているアプリのリソースが読み込まれます。 アプリはローカライズの度合いが大きくなる可能性があるため、ライブラリでは、ライブラリをホストしているアプリからリソースを読み込むことをお勧めします。 ライブラリがリソースを提供する必要がある場合、ライブラリをホストしているアプリがそれらのリソースを入力に置き換えられるようにするオプションを提供する必要があります。
 
-リソース名がセグメント化されている場合 (が含まれている"."文字)、し、置換のドット スラッシュ (「/」) で、リソース名で文字です。 プロパティの識別子には、ドット; などが含まれます。そのためのコードからそれらのいずれかを読み込むためにこのブロックを行う必要があります。
+リソース名がセグメント化されている場合 (が含まれている"."の文字)、し、置換ドットとスラッシュ (「/」) リソース名の文字です。 プロパティの識別子には、ドット; などが含まれます。そのためのコードからそれらのいずれかを読み込むためにこのブロックを行う必要があります。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -173,7 +171,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイル名がセグメント化されている場合 (が含まれている"."文字) を参照するときに名前で、ドットを終了します。 文字をスラッシュ (「/」)、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイルの名前がセグメント化されている場合 (が含まれている"."の文字) を参照するときに名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -259,20 +257,20 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>クラス ライブラリまたは Windows ランタイム ライブラリから文字列を読み込む
 参照されているクラス ライブラリ (ユニバーサル Windows) または [Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) の文字列リソースは、通常、構築プロセス中にそれらが含まれているパッケージのサブフォルダーに追加されます。 このような文字列のリソース識別子は、通常、*LibraryName/ResourcesFileName/ResourceIdentifier* という形式になります。
 
-ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリが、ライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
+ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリがライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間を分割する場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
+Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化されている場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、 [MakePri.exe](makepri-exe-command-options.md)を使用して、コンポーネントまたはライブラリの PRI ファイルをダンプことができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、コンポーネントまたはライブラリの PRI ファイルをダンプに[MakePri.exe](makepri-exe-command-options.md)を使用できます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...

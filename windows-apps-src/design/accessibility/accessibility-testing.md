@@ -1,21 +1,19 @@
 ---
-author: Xansky
 Description: Testing procedures to follow to ensure that your Universal Windows Platform (UWP) app is accessible.
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: アクセシビリティ テスト
 label: Accessibility testing
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b23d06f84a0d798a1e8b9c45a41d33751037402
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a06859d6580720150383f2995505e671c0a31a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567276"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716670"
 ---
 # <a name="accessibility-testing"></a>アクセシビリティ テスト  
 
