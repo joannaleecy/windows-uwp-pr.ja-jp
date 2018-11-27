@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 広告ユニットの視認性を向上させる方法について説明します。
 title: 広告ユニットの視認性の最適化
-ms.author: mhopkins
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 広告, 宣伝, ガイドライン, 視認性
 ms.localizationpriority: medium
-ms.openlocfilehash: ef815dab027f86e5d73f24ae0355f7f41612fae5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558849"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713226"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a><span data-ttu-id="8fa06-104">広告ユニットの視認性の最適化</span><span class="sxs-lookup"><span data-stu-id="8fa06-104">Optimize the viewability of your ad units</span></span>
 

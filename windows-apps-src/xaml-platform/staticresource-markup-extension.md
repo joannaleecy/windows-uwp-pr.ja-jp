@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 定義済みリソースへの参照を評価することで、任意の XAML 属性の値を提供します。 リソースは ResourceDictionary で定義されており、StaticResource の使用では ResourceDictionary 内のそのリソースのキーを参照します。
 title: StaticResource マークアップ拡張
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573608"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715158"
 ---
 # <a name="staticresource-markup-extension"></a><span data-ttu-id="10f36-105">{StaticResource} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="10f36-105">{StaticResource} markup extension</span></span>
 

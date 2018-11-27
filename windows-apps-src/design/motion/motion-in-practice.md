@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion fundamentals come together in your app.
 title: 実践的なモーション -  UWP アプリのアニメーション
 label: Motion in practice
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,18 +11,18 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 889abda830d0721392d9a1b0dac17ea10c3e8604
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577248"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711923"
 ---
-# <a name="bringing-it-together"></a><span data-ttu-id="a5d19-103">まとめる</span><span class="sxs-lookup"><span data-stu-id="a5d19-103">Bringing it together</span></span>
+# <a name="bringing-it-together"></a><span data-ttu-id="56e54-103">まとめる</span><span class="sxs-lookup"><span data-stu-id="56e54-103">Bringing it together</span></span>
 
-<span data-ttu-id="a5d19-104">タイミング、イージング、方向、および重力は、連携して Fluent モーションの基礎となります。</span><span class="sxs-lookup"><span data-stu-id="a5d19-104">Timing, easing, directionality, and gravity work together to form the foundation of Fluent motion.</span></span> <span data-ttu-id="a5d19-105">それぞれが、互いのコンテキストで考慮され、アプリのコンテキストで適切に適用される必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5d19-105">Each has to be considered in the context of the others, and applied appropriately in the context of your app.</span></span>
+<span data-ttu-id="56e54-104">タイミング、イージング、方向、および重力は、連携して Fluent モーションの基礎となります。</span><span class="sxs-lookup"><span data-stu-id="56e54-104">Timing, easing, directionality, and gravity work together to form the foundation of Fluent motion.</span></span> <span data-ttu-id="56e54-105">それぞれが、互いのコンテキストで考慮され、アプリのコンテキストで適切に適用される必要があります。</span><span class="sxs-lookup"><span data-stu-id="56e54-105">Each has to be considered in the context of the others, and applied appropriately in the context of your app.</span></span>
 
-<span data-ttu-id="a5d19-106">アプリに Fluent モーションの基礎を適用する 3 つの方法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="a5d19-106">Here are 3 ways to apply Fluent motion fundamentals in your app.</span></span>
+<span data-ttu-id="56e54-106">アプリに Fluent モーションの基礎を適用する 3 つの方法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="56e54-106">Here are 3 ways to apply Fluent motion fundamentals in your app.</span></span>
 
 :::row:::
     :::column:::
@@ -44,7 +42,7 @@ ms.locfileid: "7577248"
     :::column-end:::
 :::row-end:::
 
-**<span data-ttu-id="a5d19-107">切り替えの例</span><span class="sxs-lookup"><span data-stu-id="a5d19-107">Transition example</span></span>**
+**<span data-ttu-id="56e54-107">切り替えの例</span><span class="sxs-lookup"><span data-stu-id="56e54-107">Transition example</span></span>**
 
 ![機能的なアニメーション](images/pageRefresh.gif)
 
@@ -65,7 +63,7 @@ ms.locfileid: "7577248"
     :::column-end:::
 :::row-end:::
 
-**<span data-ttu-id="a5d19-109">オブジェクトの例</span><span class="sxs-lookup"><span data-stu-id="a5d19-109">Object example</span></span>**
+**<span data-ttu-id="56e54-109">オブジェクトの例</span><span class="sxs-lookup"><span data-stu-id="56e54-109">Object example</span></span>**
 
  ![300 ミリ秒のモーション](images/control.gif)
 
@@ -80,37 +78,37 @@ ms.locfileid: "7577248"
     :::column-end:::
 :::row-end:::
 
-## <a name="implicit-animations"></a><span data-ttu-id="a5d19-111">暗黙的なアニメーション</span><span class="sxs-lookup"><span data-stu-id="a5d19-111">Implicit Animations</span></span>
+## <a name="implicit-animations"></a><span data-ttu-id="56e54-111">暗黙的なアニメーション</span><span class="sxs-lookup"><span data-stu-id="56e54-111">Implicit Animations</span></span>
 
-> <span data-ttu-id="a5d19-112">暗黙的なアニメーションに必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。</span><span class="sxs-lookup"><span data-stu-id="a5d19-112">Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.</span></span>
+> <span data-ttu-id="56e54-112">暗黙的なアニメーションに必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。</span><span class="sxs-lookup"><span data-stu-id="56e54-112">Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.</span></span>
 
 
-<span data-ttu-id="a5d19-113">暗黙的なアニメーションは、パラメーターの変更時に新旧の値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="a5d19-113">Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.</span></span>
+<span data-ttu-id="56e54-113">暗黙的なアニメーションは、パラメーターの変更時に新旧の値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。</span><span class="sxs-lookup"><span data-stu-id="56e54-113">Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.</span></span>
 
-<span data-ttu-id="a5d19-114">暗黙的に、次のプロパティへの変更をアニメーション化することができます。</span><span class="sxs-lookup"><span data-stu-id="a5d19-114">You can implicitly animate changes to the following properties:</span></span>
+<span data-ttu-id="56e54-114">暗黙的に、次のプロパティへの変更をアニメーション化することができます。</span><span class="sxs-lookup"><span data-stu-id="56e54-114">You can implicitly animate changes to the following properties:</span></span>
 
-- [<span data-ttu-id="a5d19-115">UIElement</span><span class="sxs-lookup"><span data-stu-id="a5d19-115">UIElement</span></span>](/uwp/api/windows.ui.xaml.uielement)
-  - **<span data-ttu-id="a5d19-116">Opacity</span><span class="sxs-lookup"><span data-stu-id="a5d19-116">Opacity</span></span>**
-  - **<span data-ttu-id="a5d19-117">回転</span><span class="sxs-lookup"><span data-stu-id="a5d19-117">Rotation</span></span>**
-  - **<span data-ttu-id="a5d19-118">Scale</span><span class="sxs-lookup"><span data-stu-id="a5d19-118">Scale</span></span>**
-  - **<span data-ttu-id="a5d19-119">Translation</span><span class="sxs-lookup"><span data-stu-id="a5d19-119">Translation</span></span>**
+- [<span data-ttu-id="56e54-115">UIElement</span><span class="sxs-lookup"><span data-stu-id="56e54-115">UIElement</span></span>](/uwp/api/windows.ui.xaml.uielement)
+  - **<span data-ttu-id="56e54-116">Opacity</span><span class="sxs-lookup"><span data-stu-id="56e54-116">Opacity</span></span>**
+  - **<span data-ttu-id="56e54-117">回転</span><span class="sxs-lookup"><span data-stu-id="56e54-117">Rotation</span></span>**
+  - **<span data-ttu-id="56e54-118">Scale</span><span class="sxs-lookup"><span data-stu-id="56e54-118">Scale</span></span>**
+  - **<span data-ttu-id="56e54-119">Translation</span><span class="sxs-lookup"><span data-stu-id="56e54-119">Translation</span></span>**
 
-- <span data-ttu-id="a5d19-120">[境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)</span><span class="sxs-lookup"><span data-stu-id="a5d19-120">[Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), or [Panel](/uwp/api/windows.ui.xaml.controls.panel)</span></span>
-  - **<span data-ttu-id="a5d19-121">Background</span><span class="sxs-lookup"><span data-stu-id="a5d19-121">Background</span></span>**
+- <span data-ttu-id="56e54-120">[境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)</span><span class="sxs-lookup"><span data-stu-id="56e54-120">[Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), or [Panel](/uwp/api/windows.ui.xaml.controls.panel)</span></span>
+  - **<span data-ttu-id="56e54-121">Background</span><span class="sxs-lookup"><span data-stu-id="56e54-121">Background</span></span>**
 
-<span data-ttu-id="a5d19-122">暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_切り替え_プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="a5d19-122">Each property that can have changes implicitly animated has a corresponding _transition_ property.</span></span> <span data-ttu-id="a5d19-123">プロパティをアニメーション化するには、対応する_切り替え_プロパティに切り替えの種類を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="a5d19-123">To animate the property, you assign a transition type to the corresponding _transition_ property.</span></span> <span data-ttu-id="a5d19-124">次の表では、_切り替え効果_のプロパティとごとに使用する切り替えの種類を示します。</span><span class="sxs-lookup"><span data-stu-id="a5d19-124">This table shows the _transition_ properties and the transition type to use for each one.</span></span>
+<span data-ttu-id="56e54-122">暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_切り替え_プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="56e54-122">Each property that can have changes implicitly animated has a corresponding _transition_ property.</span></span> <span data-ttu-id="56e54-123">プロパティをアニメーション化するには対応する_切り替え効果_のプロパティに切り替えタイプを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="56e54-123">To animate the property, you assign a transition type to the corresponding _transition_ property.</span></span> <span data-ttu-id="56e54-124">_切り替え効果_のプロパティとごとに使用する切り替え効果の種類を示します。</span><span class="sxs-lookup"><span data-stu-id="56e54-124">This table shows the _transition_ properties and the transition type to use for each one.</span></span>
 
-| <span data-ttu-id="a5d19-125">アニメーション化されたプロパティ</span><span class="sxs-lookup"><span data-stu-id="a5d19-125">Animated property</span></span> | <span data-ttu-id="a5d19-126">切り替え効果のプロパティ</span><span class="sxs-lookup"><span data-stu-id="a5d19-126">Transition property</span></span> | <span data-ttu-id="a5d19-127">暗黙的な切り替えの種類</span><span class="sxs-lookup"><span data-stu-id="a5d19-127">Implicit transition type</span></span> |
+| <span data-ttu-id="56e54-125">アニメーション化されたプロパティ</span><span class="sxs-lookup"><span data-stu-id="56e54-125">Animated property</span></span> | <span data-ttu-id="56e54-126">切り替え効果のプロパティ</span><span class="sxs-lookup"><span data-stu-id="56e54-126">Transition property</span></span> | <span data-ttu-id="56e54-127">暗黙的な切り替えの種類</span><span class="sxs-lookup"><span data-stu-id="56e54-127">Implicit transition type</span></span> |
 | -- | -- | -- |
-| [<span data-ttu-id="a5d19-128">UIElement.Opacity</span><span class="sxs-lookup"><span data-stu-id="a5d19-128">UIElement.Opacity</span></span>](/uwp/api/windows.ui.xaml.uielement.opacity) | [<span data-ttu-id="a5d19-129">OpacityTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-129">OpacityTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [<span data-ttu-id="a5d19-130">ScalarTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-130">ScalarTransition</span></span>](/uwp/api/windows.ui.xaml.scalartransition) |
-| [<span data-ttu-id="a5d19-131">UIElement.Rotation</span><span class="sxs-lookup"><span data-stu-id="a5d19-131">UIElement.Rotation</span></span>](/uwp/api/windows.ui.xaml.uielement.rotation) | [<span data-ttu-id="a5d19-132">RotationTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-132">RotationTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [<span data-ttu-id="a5d19-133">ScalarTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-133">ScalarTransition</span></span>](/uwp/api/windows.ui.xaml.scalartransition) |
-| [<span data-ttu-id="a5d19-134">UIElement.Scale</span><span class="sxs-lookup"><span data-stu-id="a5d19-134">UIElement.Scale</span></span>](/uwp/api/windows.ui.xaml.uielement.scale) | [<span data-ttu-id="a5d19-135">ScaleTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-135">ScaleTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [<span data-ttu-id="a5d19-136">Vector3Transition</span><span class="sxs-lookup"><span data-stu-id="a5d19-136">Vector3Transition</span></span>](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
-| [<span data-ttu-id="a5d19-137">UIElement.Translation</span><span class="sxs-lookup"><span data-stu-id="a5d19-137">UIElement.Translation</span></span>](/uwp/api/windows.ui.xaml.uielement.scale) | [<span data-ttu-id="a5d19-138">TranslationTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-138">TranslationTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [<span data-ttu-id="a5d19-139">Vector3Transition</span><span class="sxs-lookup"><span data-stu-id="a5d19-139">Vector3Transition</span></span>](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
-| [<span data-ttu-id="a5d19-140">Border.Background</span><span class="sxs-lookup"><span data-stu-id="a5d19-140">Border.Background</span></span>](/uwp/api/windows.ui.xaml.controls.border.background) | [<span data-ttu-id="a5d19-141">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-141">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [<span data-ttu-id="a5d19-142">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-142">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [<span data-ttu-id="a5d19-143">ContentPresenter.Background</span><span class="sxs-lookup"><span data-stu-id="a5d19-143">ContentPresenter.Background</span></span>](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [<span data-ttu-id="a5d19-144">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-144">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [<span data-ttu-id="a5d19-145">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-145">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
-| [<span data-ttu-id="a5d19-146">Panel.Background</span><span class="sxs-lookup"><span data-stu-id="a5d19-146">Panel.Background</span></span>](/uwp/api/windows.ui.xaml.controls.panel.background) | [<span data-ttu-id="a5d19-147">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-147">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [<span data-ttu-id="a5d19-148">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="a5d19-148">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [<span data-ttu-id="56e54-128">UIElement.Opacity</span><span class="sxs-lookup"><span data-stu-id="56e54-128">UIElement.Opacity</span></span>](/uwp/api/windows.ui.xaml.uielement.opacity) | [<span data-ttu-id="56e54-129">OpacityTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-129">OpacityTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [<span data-ttu-id="56e54-130">ScalarTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-130">ScalarTransition</span></span>](/uwp/api/windows.ui.xaml.scalartransition) |
+| [<span data-ttu-id="56e54-131">UIElement.Rotation</span><span class="sxs-lookup"><span data-stu-id="56e54-131">UIElement.Rotation</span></span>](/uwp/api/windows.ui.xaml.uielement.rotation) | [<span data-ttu-id="56e54-132">RotationTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-132">RotationTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [<span data-ttu-id="56e54-133">ScalarTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-133">ScalarTransition</span></span>](/uwp/api/windows.ui.xaml.scalartransition) |
+| [<span data-ttu-id="56e54-134">UIElement.Scale</span><span class="sxs-lookup"><span data-stu-id="56e54-134">UIElement.Scale</span></span>](/uwp/api/windows.ui.xaml.uielement.scale) | [<span data-ttu-id="56e54-135">ScaleTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-135">ScaleTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [<span data-ttu-id="56e54-136">Vector3Transition</span><span class="sxs-lookup"><span data-stu-id="56e54-136">Vector3Transition</span></span>](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [<span data-ttu-id="56e54-137">UIElement.Translation</span><span class="sxs-lookup"><span data-stu-id="56e54-137">UIElement.Translation</span></span>](/uwp/api/windows.ui.xaml.uielement.scale) | [<span data-ttu-id="56e54-138">TranslationTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-138">TranslationTransition</span></span>](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [<span data-ttu-id="56e54-139">Vector3Transition</span><span class="sxs-lookup"><span data-stu-id="56e54-139">Vector3Transition</span></span>](/uwp/api/windows.ui.xaml.uielement.vector3transition) |
+| [<span data-ttu-id="56e54-140">Border.Background</span><span class="sxs-lookup"><span data-stu-id="56e54-140">Border.Background</span></span>](/uwp/api/windows.ui.xaml.controls.border.background) | [<span data-ttu-id="56e54-141">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-141">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [<span data-ttu-id="56e54-142">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-142">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [<span data-ttu-id="56e54-143">ContentPresenter.Background</span><span class="sxs-lookup"><span data-stu-id="56e54-143">ContentPresenter.Background</span></span>](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [<span data-ttu-id="56e54-144">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-144">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [<span data-ttu-id="56e54-145">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-145">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
+| [<span data-ttu-id="56e54-146">Panel.Background</span><span class="sxs-lookup"><span data-stu-id="56e54-146">Panel.Background</span></span>](/uwp/api/windows.ui.xaml.controls.panel.background) | [<span data-ttu-id="56e54-147">BackgroundTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-147">BackgroundTransition</span></span>](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [<span data-ttu-id="56e54-148">BrushTransition</span><span class="sxs-lookup"><span data-stu-id="56e54-148">BrushTransition</span></span>](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-<span data-ttu-id="a5d19-149">この例では、ボタン コントロールを有効にするフェードイン/が無効化するときに、Opacity プロパティと切り替え効果を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a5d19-149">This example shows how to use the Opacity property and transition to make a button fade in when the control is enabled and fade out when it's disabled.</span></span>
+<span data-ttu-id="56e54-149">この例では、ボタン コントロールを有効にするフェードイン/無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="56e54-149">This example shows how to use the Opacity property and transition to make a button fade in when the control is enabled and fade out when it's disabled.</span></span>
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -129,8 +127,8 @@ public double OpaqueIfEnabled(bool IsEnabled)
 }
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="a5d19-150">関連記事</span><span class="sxs-lookup"><span data-stu-id="a5d19-150">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="56e54-150">関連記事</span><span class="sxs-lookup"><span data-stu-id="56e54-150">Related articles</span></span>
 
-- [<span data-ttu-id="a5d19-151">モーションの概要</span><span class="sxs-lookup"><span data-stu-id="a5d19-151">Motion overview</span></span>](index.md)
-- [<span data-ttu-id="a5d19-152">タイミングとイージング</span><span class="sxs-lookup"><span data-stu-id="a5d19-152">Timing and easing</span></span>](timing-and-easing.md)
-- [<span data-ttu-id="a5d19-153">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="a5d19-153">Directionality and gravity</span></span>](directionality-and-gravity.md)
+- [<span data-ttu-id="56e54-151">モーションの概要</span><span class="sxs-lookup"><span data-stu-id="56e54-151">Motion overview</span></span>](index.md)
+- [<span data-ttu-id="56e54-152">タイミングとイージング</span><span class="sxs-lookup"><span data-stu-id="56e54-152">Timing and easing</span></span>](timing-and-easing.md)
+- [<span data-ttu-id="56e54-153">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="56e54-153">Directionality and gravity</span></span>](directionality-and-gravity.md)

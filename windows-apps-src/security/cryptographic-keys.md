@@ -2,18 +2,16 @@
 title: 暗号化キー
 description: この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a47ba36c84176e83a81dd234d05315aa1e2525
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573246"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714621"
 ---
 # <a name="cryptographic-keys"></a><span data-ttu-id="58982-104">暗号化キー</span><span class="sxs-lookup"><span data-stu-id="58982-104">Cryptographic keys</span></span>
 

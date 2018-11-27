@@ -2,18 +2,16 @@
 title: 認証とユーザー ID
 description: ユニバーサル Windows プラットフォーム (UWP) のアプリには、Web 認証ブローカーを使う簡単なシングル サインオン (SSO) から、高度なセキュリティで保護された 2 要素認証に至るまで、ユーザー認証用にいくつかのオプションがあります。
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e41ef25f0d4cce3b36187862936136d84988ad0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d23f54a371a883de8b56d03ddd153ab2d91c230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570142"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715039"
 ---
 # <a name="authentication-and-user-identity"></a><span data-ttu-id="9e9fb-104">認証とユーザー ID</span><span class="sxs-lookup"><span data-stu-id="9e9fb-104">Authentication and user identity</span></span>
 

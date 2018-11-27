@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 description: この記事では、LowLightFusion クラスを使用してビットマップを処理する方法について説明します。
 title: 低光量 Fusion API を使用したビットマップの処理
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 低光量 Fusion, ビットマップ, 画像処理
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562917"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713376"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a><span data-ttu-id="b877a-104">LowLightFusion を使用したビットマップの処理</span><span class="sxs-lookup"><span data-stu-id="b877a-104">Process bitmaps with the LowLightFusion API</span></span>
 

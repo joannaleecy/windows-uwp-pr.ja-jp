@@ -1,19 +1,17 @@
 ---
 title: 入門チュートリアル - 3D UWP ゲーム (JavaScript)
 description: JavaScript と three.js で記述された Microsoft Store 向けの UWP ゲーム
-author: abbycar
-ms.author: abigailc
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 0183e19135758f73dfea9b63535437ff9b66011a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553972"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713582"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a><span data-ttu-id="c7529-104">hree.js を使用して 3D JavaScript ゲームを作成する</span><span class="sxs-lookup"><span data-stu-id="c7529-104">Creating a 3D JavaScript game using three.js</span></span>
 

@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: ポインター ベース アニメーション
 description: ポインターの位置を使用して、動的な "カーソル追跡" エクスペリエンスを作成する方法ついて説明します。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: b69899761e1c4a139fd2b15d6810440df5192487
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3512d47c8b3e689b0baadec26c1d8f0f510e03ef
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573339"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713426"
 ---
 # <a name="pointer-based-animations"></a><span data-ttu-id="3e006-104">ポインター ベース アニメーション</span><span class="sxs-lookup"><span data-stu-id="3e006-104">Pointer-based animations</span></span>
 

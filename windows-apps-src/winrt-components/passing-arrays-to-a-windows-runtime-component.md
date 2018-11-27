@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: Windows ランタイム コンポーネントに配列を渡す
 description: Windows ユニバーサル プラットフォーム (UWP) では、パラメーターは入力または出力のどちらかに使用され、両方に使用されることはありません。 つまり、メソッドに渡される配列の内容および配列自体は、入力か出力のどちらかに使用されます。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e01c9e5698ec1d7a23298b46f6bde9e1bbf36b04
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553071"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711697"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a><span data-ttu-id="3c355-105">Windows ランタイム コンポーネントに配列を渡す</span><span class="sxs-lookup"><span data-stu-id="3c355-105">Passing arrays to a Windows Runtime Component</span></span>
 

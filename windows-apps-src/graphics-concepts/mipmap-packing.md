@@ -4,17 +4,15 @@ description: ストリーミング リソースの大きさ、形式、ミップ
 ms.assetid: 906C3CAC-4E84-4947-B508-06788551BE85
 keywords:
 - ミップマップのパッキング
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3d091d7cc5aca82aeef9a3e7f29a8d363705a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b2733da1f843062a1fa7f2b4a7969326523d54e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571824"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713765"
 ---
 # <a name="mipmap-packing"></a><span data-ttu-id="6ea2c-104">ミップマップのパッキング</span><span class="sxs-lookup"><span data-stu-id="6ea2c-104">Mipmap packing</span></span>
 

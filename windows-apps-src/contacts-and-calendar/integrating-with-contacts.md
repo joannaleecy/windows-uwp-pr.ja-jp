@@ -1,20 +1,18 @@
 ---
-author: normesta
 description: 連絡先カードの操作の横にアプリを追加する方法を説明する
 MSHAttr: PreferredLib:/library/windows/apps
 title: アプリを連絡先カードの操作に接続する
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 連絡先, 連絡先カード, 注釈
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: eb1c01a4fe370f899da185dc39b7d3abe6a1904e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579912"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715992"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a><span data-ttu-id="0e3ad-104">アプリを連絡先カードの操作に接続する</span><span class="sxs-lookup"><span data-stu-id="0e3ad-104">Connect your app to actions on a contact card</span></span>
 

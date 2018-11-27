@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: アプリのプロパティの入力
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, ゲーム設定, 表示モード, システム要件, ハードウェア要件, 最小ハードウェア, 推奨されるハードウェア, プライバシー ポリシー, サポートの問い合わせ先情報, アプリ Web サイト, サポート情報
 ms.localizationpriority: medium
-ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 80220f8402b225691a2e4eb3202f1f04d48e06b4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714903"
 ---
 # <a name="enter-app-properties"></a><span data-ttu-id="de053-103">アプリのプロパティの入力</span><span class="sxs-lookup"><span data-stu-id="de053-103">Enter app properties</span></span>
 

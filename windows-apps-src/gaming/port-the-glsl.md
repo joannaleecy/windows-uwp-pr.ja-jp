@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: GLSL の移植
 description: バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, GLSL, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554031"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713083"
 ---
 # <a name="port-the-glsl"></a><span data-ttu-id="d0bb7-104">GLSL の移植</span><span class="sxs-lookup"><span data-stu-id="d0bb7-104">Port the GLSL</span></span>
 
@@ -60,7 +58,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 <a name="instructions"></a><span data-ttu-id="d0bb7-131">手順</span><span class="sxs-lookup"><span data-stu-id="d0bb7-131">Instructions</span></span>
 ------------
-
 ### <a name="step-1-port-the-vertex-shader"></a><span data-ttu-id="d0bb7-132">手順 1: 頂点シェーダーの移植</span><span class="sxs-lookup"><span data-stu-id="d0bb7-132">Step 1: Port the vertex shader</span></span>
 
 <span data-ttu-id="d0bb7-133">この簡単な OpenGL ES 2.0 の例では、頂点シェーダーに 3 つの入力があります。1 つの定数のモデル ビュー プロジェクション 4x4 マトリックスと 2 つの 4 座標ベクトルです。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-133">In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors.</span></span> <span data-ttu-id="d0bb7-134">これら 2 つのベクトルには、頂点の位置と色が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-134">These two vectors contain the vertex position and its color.</span></span> <span data-ttu-id="d0bb7-135">シェーダーでは、ラスタライズするために、位置ベクトルをパースペクティブ座標に変換し、それを gl\_Position 組み込みメソッドに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-135">The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization.</span></span> <span data-ttu-id="d0bb7-136">また、頂点の色は、ラスタライズ時に補間のために varying 変数にコピーされます。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-136">The vertex color is copied to a varying variable for interpolation during rasterization, as well.</span></span>
@@ -160,10 +157,8 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 <span data-ttu-id="d0bb7-154">[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md) 次の手順</span><span class="sxs-lookup"><span data-stu-id="d0bb7-154">[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md) Next step</span></span>
 ---------
-
 <span data-ttu-id="d0bb7-155">[画面への描画](draw-to-the-screen.md) 解説</span><span class="sxs-lookup"><span data-stu-id="d0bb7-155">[Draw to the screen](draw-to-the-screen.md) Remarks</span></span>
 -------
-
 <span data-ttu-id="d0bb7-156">HLSL セマンティクスと定数バッファーのパッキングについて理解すると、デバッグの苦労がいくらか少なくなるだけでなく、最適化できるようにもなります。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-156">Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities.</span></span> <span data-ttu-id="d0bb7-157">機会があれば、「[変数の構文 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)」、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」、「[定数バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476896)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-157">If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896).</span></span> <span data-ttu-id="d0bb7-158">機会がない場合は、次のセマンティクスと定数バッファーについての基本的なヒントを心に留めておいてください。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-158">If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:</span></span>
 
 -   <span data-ttu-id="d0bb7-159">必ずレンダラーの Direct3D 構成コードを見直して、定数バッファーの構造体が HLSL の cbuffer 構造体の宣言と一致し、コンポーネントのスカラー型が両方の宣言で一致していることを確認する。</span><span class="sxs-lookup"><span data-stu-id="d0bb7-159">Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.</span></span>

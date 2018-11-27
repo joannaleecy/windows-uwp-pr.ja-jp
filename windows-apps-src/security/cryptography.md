@@ -2,18 +2,16 @@
 title: 暗号化
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 0caa3f63d8a92c75bdce10cdb277967dca21fafb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 156c4cc62e1997f5d647c06c87e226fe519de168
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568360"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715342"
 ---
 # <a name="cryptography"></a><span data-ttu-id="cd973-105">暗号化</span><span class="sxs-lookup"><span data-stu-id="cd973-105">Cryptography</span></span>
 

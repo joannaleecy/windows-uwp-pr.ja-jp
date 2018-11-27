@@ -8,12 +8,12 @@ ms.author: mijacobs
 ms.date: 08/4/2017
 keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e7cd5a012204b5b9ccab4e87993273f65c3849c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0b31e29d0967c8514de0566647c657574f6e5930
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558089"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713612"
 ---
 # <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
 ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。
@@ -270,7 +270,7 @@ ms.locfileid: "7558089"
                     <div class="cardText">
                         <h3>コミュニティとサポート</h3>
                         <p>
-                            <a href="https://twitter.com/WindowsDocs">@WindowsDocstwitter</a>
+                            <a href="https://twitter.com/WindowsDocs">@WindowsDocsTwitter で</a>
                         </p>
                         <p>
                             <a href="http://aka.ms/OneDevMinute">YouTube で OneDevMinute</a>

@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: Windows.ApplicationModel.Contacts 名前空間を使うと、連絡先を選ぶ複数のオプションがあります。
 title: 連絡先の選択
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: 連絡先, 単一の連絡先の選択, 複数の連絡先の選択, 複数の選択, 特定の連絡先データ連絡先の選択, 特定のデータ連絡先の選択, 特定のフィールドの選択
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579709"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716163"
 ---
 # <a name="select-contacts"></a><span data-ttu-id="19b8b-104">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="19b8b-104">Select contacts</span></span>
 

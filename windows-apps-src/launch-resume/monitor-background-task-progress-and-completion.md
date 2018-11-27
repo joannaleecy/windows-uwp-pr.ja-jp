@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: バックグラウンド タスクの進捗状況と完了の監視
 description: バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9c71d8a42a71d221f6a20850f1d002be922517be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582422"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715860"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a><span data-ttu-id="da209-104">バックグラウンド タスクの進捗状況と完了の監視</span><span class="sxs-lookup"><span data-stu-id="da209-104">Monitor background task progress and completion</span></span>
 

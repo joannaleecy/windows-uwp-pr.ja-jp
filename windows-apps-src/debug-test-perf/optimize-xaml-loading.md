@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: XAML マークアップの最適化
 description: UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。
-ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 884825f2e9639f620d8db4e6110791fddf2d7e77
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560364"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716002"
 ---
 # <a name="optimize-your-xaml-markup"></a><span data-ttu-id="bfda6-105">XAML マークアップの最適化</span><span class="sxs-lookup"><span data-stu-id="bfda6-105">Optimize your XAML markup</span></span>
 

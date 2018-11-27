@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: アプリ内広告の UI とユーザー エクスペリエンスのガイドラインについて説明します。
 title: 広告の UI とユーザー エクスペリエンスのガイドライン
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564165"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7713276"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a><span data-ttu-id="e9385-104">広告の UI とユーザー エクスペリエンスのガイドライン</span><span class="sxs-lookup"><span data-stu-id="e9385-104">UI and user experience guidelines for ads</span></span>
 

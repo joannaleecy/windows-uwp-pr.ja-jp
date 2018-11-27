@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: グラフィックス診断ツール
 description: Visual Studio でグラフィックス デバッグ、グラフィックス フレーム分析、GPU 使用率などのグラフィックス診断機能を取得して使用する方法について説明します。
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, グラフィックス, 診断, ツール, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581301"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716650"
 ---
 # <a name="graphics-diagnostics-tools"></a><span data-ttu-id="4570f-104">グラフィックス診断ツール</span><span class="sxs-lookup"><span data-stu-id="4570f-104">Graphics diagnostics tools</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 Description: Follow these best practices for geofencing in your app.
 title: ジオフェンス アプリのガイドライン
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 86104f00ed0189290fd0cd718042573d9d592cc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e29bcdb8c36cc8cbbb5de11d669da1249e10d706
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553939"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714684"
 ---
 # <a name="guidelines-for-geofencing-apps"></a><span data-ttu-id="878fa-103">ジオフェンス アプリのガイドライン</span><span class="sxs-lookup"><span data-stu-id="878fa-103">Guidelines for geofencing apps</span></span>
 

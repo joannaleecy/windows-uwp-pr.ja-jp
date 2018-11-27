@@ -1,21 +1,19 @@
 ---
-author: stevewhims
 Description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
 Search.Refinement.TopicID: 180
 title: グローバリゼーションのガイドライン
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 177332515db26eca7cef7a7be75c5752a239a8f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2e2dc5186c028aa8f20c2cc1d697f1749b4f1765
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578129"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715382"
 ---
 # <a name="guidelines-for-globalization"></a><span data-ttu-id="8a7ee-103">グローバリゼーションのガイドライン</span><span class="sxs-lookup"><span data-stu-id="8a7ee-103">Guidelines for globalization</span></span>
 

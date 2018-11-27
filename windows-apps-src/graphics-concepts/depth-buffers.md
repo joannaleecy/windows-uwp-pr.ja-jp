@@ -4,17 +4,15 @@ description: 深度バッファー (z バッファー) は、ビューから隠�
 ms.assetid: BE83A1D7-D43D-4013-8817-EFD2B24DC58E
 keywords:
 - 深度バッファー
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 279e650532505467f3c0dbabf3814618b893aedb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565729"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7712003"
 ---
 # <a name="depth-buffers"></a><span data-ttu-id="73006-104">深度バッファー</span><span class="sxs-lookup"><span data-stu-id="73006-104">Depth buffers</span></span>
 

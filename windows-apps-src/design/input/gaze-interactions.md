@@ -1,6 +1,4 @@
 ---
-author: Karl-Bridge-Microsoft
-ms.author: kbridge
 title: 視線の操作
 Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
 label: Gaze interactions
@@ -13,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 758678a7fb65e32d4d3d411956aadfdab515df43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5dc12e9b85b7274c9e1deb7d629917cbeaa981c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581698"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713848"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a><span data-ttu-id="96fba-103">UWP アプリでの視線の操作と視線追跡</span><span class="sxs-lookup"><span data-stu-id="96fba-103">Gaze interactions and eye tracking in UWP apps</span></span>
 

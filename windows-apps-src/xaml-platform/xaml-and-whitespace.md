@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: XAML で使われる空白処理規則について説明します。
 title: XAML と空白
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 521e794680df6449ebc49745319c4aeec74405d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568973"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714397"
 ---
 # <a name="xaml-and-whitespace"></a><span data-ttu-id="0ce6c-104">XAML と空白</span><span class="sxs-lookup"><span data-stu-id="0ce6c-104">XAML and whitespace</span></span>
 

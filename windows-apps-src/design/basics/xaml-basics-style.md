@@ -1,18 +1,16 @@
 ---
-author: mijacobs
 title: カスタム スタイルを作成する
 description: この記事では、XAML に含まれる UI 要素のスタイルの基本について説明します。
 keywords: XAML, UWP, 概要
-ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560091"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716995"
 ---
 # <a name="tutorial-create-custom-styles"></a><span data-ttu-id="4fa11-104">チュートリアル: カスタム スタイルを作成する</span><span class="sxs-lookup"><span data-stu-id="4fa11-104">Tutorial: Create custom styles</span></span>
 

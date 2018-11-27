@@ -4,17 +4,15 @@ description: 色の付いたライト マップは、そのライト情報にラ
 ms.assetid: 6116D7C0-D614-4CF4-952E-A987ED9BD9D7
 keywords:
 - 色のライト マップ
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 757fbf93aa364e4143af0b5d5f2fc3f63a2f9c0c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e866b3841a610d4027ba9e91005591ef18c707e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582262"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711784"
 ---
 # <a name="color-light-maps"></a><span data-ttu-id="68f55-105">色のライト マップ</span><span class="sxs-lookup"><span data-stu-id="68f55-105">Color light maps</span></span>
 

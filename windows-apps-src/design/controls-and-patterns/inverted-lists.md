@@ -1,10 +1,8 @@
 ---
-author: muhsinking
 Description: Use an inverted list to add new items at the bottom.
 title: 反転リスト
 label: Inverted lists
 template: detail.hbs
-ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d19d18d55c973644f5c3f99ae3d442e6dbf3a724
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12f86c0d4f8980cea375b9a0a8a6876510c795b0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575960"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716336"
 ---
 # <a name="inverted-lists"></a><span data-ttu-id="df6d8-103">反転リスト</span><span class="sxs-lookup"><span data-stu-id="df6d8-103">Inverted lists</span></span>
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: スワップ チェーンのスケーリングとオーバーレイ
 description: モバイル デバイスでのレンダリングを高速化するためにスケーリングされたスワップ チェーンを作成し、オーバーレイ スワップ チェーン (使用できる場合) を使って画質を高める方法について説明します。
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, スワップ チェーン スケーリング, オーバーレイ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564556"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713143"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a><span data-ttu-id="6eb0d-104">スワップ チェーンのスケーリングとオーバーレイ</span><span class="sxs-lookup"><span data-stu-id="6eb0d-104">Swap chain scaling and overlays</span></span>
 

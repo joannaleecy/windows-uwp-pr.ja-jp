@@ -4,17 +4,15 @@ description: ストリーミング リソースは、リソースを作成する
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
 keywords:
 - ストリーミング リソースの作成
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a796897aa786283499c25b0f405e302feeb5f938
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec96f6245969d32357563c44107f539fb9043aac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572898"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712118"
 ---
 # <a name="creating-streaming-resources"></a><span data-ttu-id="36a13-104">ストリーミング リソースの作成</span><span class="sxs-lookup"><span data-stu-id="36a13-104">Creating streaming resources</span></span>
 

@@ -4,17 +4,15 @@ description: リソースは、Direct3D パイプラインからアクセスで�
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
 keywords:
 - リソース
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a56b03de29e110a2768ebe71f4e61d8099ca1cf8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577298"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711963"
 ---
 # <a name="resources"></a><span data-ttu-id="acb82-104">リソース</span><span class="sxs-lookup"><span data-stu-id="acb82-104">Resources</span></span>
 

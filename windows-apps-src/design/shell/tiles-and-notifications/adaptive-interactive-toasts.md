@@ -1,21 +1,19 @@
 ---
-author: andrewleader
 Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 title: トーストのコンテンツ
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, トースト通知, 対話型トースト, アダプティブ トースト, トーストのコンテンツ, トースト ペイロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 791b1dcede799de4ecf8480d994a5c0f1ddb58af
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577447"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713336"
 ---
 # <a name="toast-content"></a><span data-ttu-id="cda58-103">トーストのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="cda58-103">Toast content</span></span>
 
