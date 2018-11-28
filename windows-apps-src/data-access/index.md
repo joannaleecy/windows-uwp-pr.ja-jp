@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, データ, データベース, リレーショナル, テーブル, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695121"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7846389"
 ---
 # <a name="data-access"></a>データ アクセス
 
-SQLite データベースを使用してユーザーのデバイスでデータを格納することができます。 あらゆる種類のサービスのレイヤーを使用することがなく SQL Server データベースに直接アプリを接続することもできます。
+SQLite データベースを使用して、ユーザーのデバイスでデータを格納することができます。 あらゆる種類のサービスのレイヤーを使用することがなくアプリを SQL Server データベースに直接接続することもことができます。
 
 | トピック | 説明|
 |-------|------------|

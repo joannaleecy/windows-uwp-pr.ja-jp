@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702500"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845086"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>レンダリング フレームワーク I: レンダリングの概要
 
-これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプル ゲームで Direct3D11 (通常は DirectX 11 と呼ばれます) を使用してゲームのシーンをレンダリングする方法を見てみましょう。
+これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプル ゲームで Direct3D11 (通常は DirectX 11 と呼ばれます) を使用して、ゲームのシーンをレンダリングする方法を見てみましょう。
 
 >[!Note]
 >このサンプルの最新ゲーム コードをダウンロードしていない場合は、[Direct3D ゲーム サンプルのページ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)に移動してください。 このサンプルは、UWP 機能のサンプルの大規模なコレクションの一部です。 サンプルをダウンロードする手順については、「[GitHub から UWP のサンプルを取得する](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」をご覧ください。
@@ -626,7 +626,7 @@ Microsoft DirectX グラフィックス インフラストラクチャ (DXGI) �
 
 機能レベルを使用すると、デバイスを作成するときに、必要な機能レベルのデバイスを作成してみることができます。 デバイスの作成に成功した場合は、その機能レベルが存在します。失敗した場合は、ハードウェアはその機能レベルをサポートしていません。 低い機能レベルでデバイスを再作成してみることも、アプリケーションの終了を選択することもできます。 たとえば、12\_0 機能レベルでは、Direct3D 11.3 や Direct3D 12、およびシェーダー モデル 5.1 が必要です。 詳細については、[Direct3D の各機能レベルの概要に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)を参照してください。
 
-機能レベルを使用して、Direct3D9 や Microsoft Direct3D10、Direct3D11 では、アプリケーションを開発し、9、10、11 のハードウェア (一部例外あり) で実行できます。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
+機能レベルを使用して、Direct3D9 や Microsoft Direct3D10、Direct3D11 では、アプリケーションを開発し、9、10 または 11 のハードウェア (一部例外あり) で実行できます。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
 
 ### <a name="stereo-rendering"></a>ステレオ レンダリング
 

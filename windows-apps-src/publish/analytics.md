@@ -1,19 +1,17 @@
 ---
-author: JnHs
 Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: アプリのパフォーマンスの分析
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10、uwp、分析, レポート, ダッシュ ボード、アプリ、データ、メトリック
+keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d7998366d484c95b90b765eb9227a7c3df41b6f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560756"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845851"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -47,7 +45,7 @@ ms.locfileid: "7560756"
 
 <span id="outside"/>
 
-## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部分析データにアクセス
+## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センターの外部分析データにアクセス
 
 パートナー センターでレポートを表示する、だけでなく他の方法でアプリ分析にアクセスできます。
 
@@ -66,4 +64,4 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリから資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。

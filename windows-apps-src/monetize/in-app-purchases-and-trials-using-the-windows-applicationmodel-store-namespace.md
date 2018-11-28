@@ -7,11 +7,11 @@ ms.topic: article
 keywords: UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700234"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7845606"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
 
@@ -20,7 +20,7 @@ ms.locfileid: "7700234"
 このセクションの記事では、いくつかの一般的なシナリオにおいて **Windows.ApplicationModel.Store** 名前空間のメンバーを使用するための詳しいガイダンスとコード例を示します。 UWP アプリのアプリ内での購入に関する基本概念の概要については、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。 **Windows.ApplicationModel.Store** 名前空間を使用した試用版とアプリ内購入の実装方法を示す完全なサンプルについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)をご覧ください。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されません。 Visual Studio でプロジェクトのターゲットを **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースに設定している (つまり、Windows 10 Version 1607 以降をターゲットとしている) 場合は、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使うことをお勧めします。 詳しくは、「[アプリ内購入と試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)」をご覧ください。 **Windows.ApplicationModel.Store**名前空間は、[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用する Windows デスクトップ アプリケーションで、またはアプリやパートナー センターで開発サンド ボックスを使用するゲームでサポートされていません (たとえば、このような場合にゲームのいずれかのXbox Live と統合)。 このような製品では、**Windows.Services.Store** 名前空間を使ってアプリ内購入と試用版を実装する必要があります。
+> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されません。 Visual Studio でプロジェクトのターゲットを **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースに設定している (つまり、Windows 10 Version 1607 以降をターゲットとしている) 場合は、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使うことをお勧めします。 詳しくは、「[アプリ内購入と試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)」をご覧ください。 [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用する Windows デスクトップ アプリケーションで、またはアプリまたはパートナー センターで開発サンド ボックスを使用するゲーム、 **Windows.ApplicationModel.Store**名前空間がサポートされていません (たとえば、このような場合にゲームのいずれかのXbox Live と統合)。 このような製品では、**Windows.Services.Store** 名前空間を使ってアプリ内購入と試用版を実装する必要があります。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>CurrentApp クラスと CurrentAppSimulator クラスの概要
 
@@ -388,7 +388,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **AppId**  |    必須   |  1   |   ストアでアプリを識別する GUID です。 テストでは任意の GUID を使用できます。        |
 |  **LinkUri**  |    必須  |  1   |    ストアの登録情報ページの URI です。 テストでは任意の有効な URI を使用できます。         |
 |  **CurrentMarket**  |    必須  |  1   |    顧客の国/地域です。         |
-|  **AgeRating**  |    必須  |  1   |     アプリの年齢区分の下限を表す整数です。 これは、アプリの提出時にパートナー センターで指定するのと同じ値です。 ストアで使われる値は、3、7、12、および 16 です。 これらの年齢区分について詳しくは、「[年齢区分](../publish/age-ratings.md)」をご覧ください。        |
+|  **AgeRating**  |    必須  |  1   |     アプリの年齢区分の下限を表す整数です。 これは、アプリを提出するときにパートナー センターで指定するのと同じ値です。 ストアで使われる値は、3、7、12、および 16 です。 これらの年齢区分について詳しくは、「[年齢区分](../publish/age-ratings.md)」をご覧ください。        |
 |  [MarketData](#marketdata-child-of-app)  |    必須  |  1 以上      |    アプリに関する特定の国/地域向けの情報が含まれています。 アプリが掲載される国/地域ごとに、**MarketData**要素を含める必要があります。       |    |
 
 <span id="marketdata-child-of-app"/>
