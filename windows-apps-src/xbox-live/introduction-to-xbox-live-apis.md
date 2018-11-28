@@ -1,19 +1,17 @@
 ---
 title: Xbox Live API の概要
-author: KevinAsgari
 description: Xbox Live サービスとのやり取りに使用できる、さまざまな API モデルについて説明します。
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
-ms.author: kevinasg
 ms.date: 06/05/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 5751ad77607f989963b94d8b0ea2dee574098fe0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 118c451bb4e015d578620647f09ff23724701da0
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577498"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825959"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
@@ -41,7 +39,7 @@ Xbox Live Services API (**XSAPI**) を使用する方法には、以下のよう
 
 ## <a name="xbox-live-services-api-overview"></a>Xbox Live Services API の概要 ##
 
-Xbox Live Services API (**XSAPI**) は、次の 3 つのセットのクライアント側のさまざまなユーザー シナリオをサポートする Api を公開します。
+Xbox Live Services API (**XSAPI**) は、次の 3 つのセットのクライアント側広範なユーザー シナリオをサポートする Api を公開します。
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
 - [XSAPI C++11 ベース API](#xsapi-c++11-based-api)
@@ -55,7 +53,7 @@ Api を比較します。
     - C++/CX はマイクロソフトの C++ 拡張であり、^ を WinRT ポインターとして使用するなど、WinRT プログラミングを容易にします。
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - C++/CX を含むすべての言語で、エラーは例外を使用して処理されます。
-- C++/WinRT もサポートされます。  について、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  詳細については、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT を使用する XSAPI WinRT API の呼び出しの例を次に示します。
 
@@ -89,7 +87,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 #include "xsapi\services.h"
 ```
 
-- C++/WinRT もサポートされます。  について、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  詳細については、C++/cli で WinRT を入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT と XSAPI C++ API を使うには、XSAPI ヘッダーをインクルードする前に XSAPI_CPPWINRT を定義します。  次に、例を示します。
 
@@ -108,7 +106,7 @@ std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_s
 ### <a name="xsapi-c-based-api"></a>XSAPI C ベース API
 
 - タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
-- により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
+- タイトル XSAPI を呼び出すときの処理スレッドの完全な制御を取得できます。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 
 詳細については、 [Xbox Live C Api の概要](xsapi-flat-c.md)をご覧ください。

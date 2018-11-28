@@ -2,19 +2,17 @@
 title: GameClipUri (JSON)
 assetID: 03c097e8-7f29-1026-7a77-5c785b8511e9
 permalink: en-us/docs/xboxlive/rest/json-gameclipuri.html
-author: KevinAsgari
 description: " GameClipUri (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: db92c3e405029d76264b0e1e9b159ae2650d6650
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9b7c30815a2d6e9a8bcac0730f0330ea41624c3e
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561111"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825662"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -23,12 +21,12 @@ ms.locfileid: "7561111"
  
 ## <a name="gameclipuri"></a>GameClipUri
  
-GameClipUri オブジェクトでは、次の仕様があります。
+GameClipUri オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>uri</b>| string| ビデオのアセットの場所への URI。| 
-| <b>fileSize</b>| 32 ビットの符号なし整数| サムネイル画像の合計ファイル サイズ。| 
+| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像のファイルの合計サイズ。| 
 | <b>uriType</b>| GameClipUriType| URI の種類です。| 
 | <b>有効期限</b>| DateTime| この応答に含まれている URI の有効期限の時刻。 URL の場合は、空のまたは再生する前に有効期限切れと見なされ、呼び出し元は RefreshUrl API を呼び出す必要があります。| 
   
