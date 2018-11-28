@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714158"
+ms.locfileid: "7840682"
 ---
 # <a name="frequently-asked-questions"></a><span data-ttu-id="ce4cd-104">よく寄せられる質問</span><span class="sxs-lookup"><span data-stu-id="ce4cd-104">Frequently asked questions</span></span>
 

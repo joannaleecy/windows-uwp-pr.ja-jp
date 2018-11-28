@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ccc99395dba2f2d1894db81fb48abb59f9a8ba4f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705256"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845576"
 ---
 # <a name="choosing-a-resource"></a><span data-ttu-id="bb9dd-104">リソースの選択</span><span class="sxs-lookup"><span data-stu-id="bb9dd-104">Choosing a resource</span></span>
 

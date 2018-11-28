@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4960f6eb18fe4cffe34b8167a328521e9038c684
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716176"
+ms.locfileid: "7838003"
 ---
 # <a name="create-custom-transport-controls"></a><span data-ttu-id="e61c9-103">カスタム トランスポート コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="e61c9-103">Create custom transport controls</span></span>
 

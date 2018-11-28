@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716750"
+ms.locfileid: "7840113"
 ---
 # <a name="receive-data"></a><span data-ttu-id="13f86-105">データの受信</span><span class="sxs-lookup"><span data-stu-id="13f86-105">Receive data</span></span>
 

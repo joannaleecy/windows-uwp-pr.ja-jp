@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709702"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834921"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a><span data-ttu-id="7d12d-103">Windows 10 用の包括性を備えたソフトウェアの設計</span><span class="sxs-lookup"><span data-stu-id="7d12d-103">Designing inclusive software for Windows 10</span></span>  
 

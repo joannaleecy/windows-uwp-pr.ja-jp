@@ -8,36 +8,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b1e8958874ede50a18f2d2446c8f156361210e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697895"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833819"
 ---
-# <a name="multipass-texture-blending"></a><span data-ttu-id="557db-104">マルチパス テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="557db-104">Multipass texture blending</span></span>
+# <a name="multipass-texture-blending"></a><span data-ttu-id="89d47-104">マルチパス テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="89d47-104">Multipass texture blending</span></span>
 
 
-<span data-ttu-id="557db-105">Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。</span><span class="sxs-lookup"><span data-stu-id="557db-105">Direct3D applications can achieve numerous special effects by applying various textures to a primitive over the course of multiple rendering passes.</span></span> <span data-ttu-id="557db-106">これを表す一般的な用語が*マルチパス テクスチャ ブレンド*です。</span><span class="sxs-lookup"><span data-stu-id="557db-106">The common term for this is *multipass texture blending*.</span></span> <span data-ttu-id="557db-107">通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="557db-107">A typical use for multipass texture blending is to emulate the effects of complex lighting and shading models by applying multiple colors from several different textures.</span></span> <span data-ttu-id="557db-108">このような適用は*ライト マッピング*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="557db-108">One such application is called *light mapping*.</span></span> <span data-ttu-id="557db-109">「[テクスチャでのライト マッピング](light-mapping-with-textures.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="557db-109">See [Light mapping with textures](light-mapping-with-textures.md).</span></span>
+<span data-ttu-id="89d47-105">Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。</span><span class="sxs-lookup"><span data-stu-id="89d47-105">Direct3D applications can achieve numerous special effects by applying various textures to a primitive over the course of multiple rendering passes.</span></span> <span data-ttu-id="89d47-106">これを表す一般的な用語が*マルチパス テクスチャ ブレンド*です。</span><span class="sxs-lookup"><span data-stu-id="89d47-106">The common term for this is *multipass texture blending*.</span></span> <span data-ttu-id="89d47-107">通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="89d47-107">A typical use for multipass texture blending is to emulate the effects of complex lighting and shading models by applying multiple colors from several different textures.</span></span> <span data-ttu-id="89d47-108">このような適用は*ライト マッピング*と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="89d47-108">One such application is called *light mapping*.</span></span> <span data-ttu-id="89d47-109">「[テクスチャでのライト マッピング](light-mapping-with-textures.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89d47-109">See [Light mapping with textures](light-mapping-with-textures.md).</span></span>
 
-<span data-ttu-id="557db-110">**注:** デバイスによっては複数のテクスチャを 1 つのパスでプリミティブに適用できます。</span><span class="sxs-lookup"><span data-stu-id="557db-110">**Note** Some devices are capable of applying multiple textures to primitives in a single pass.</span></span> <span data-ttu-id="557db-111">「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="557db-111">See [Texture blending](texture-blending.md).</span></span>
+<span data-ttu-id="89d47-110">**注:** デバイスによっては複数の 1 つのパスでプリミティブにテクスチャを適用できます。</span><span class="sxs-lookup"><span data-stu-id="89d47-110">**Note** Some devices are capable of applying multiple textures to primitives in a single pass.</span></span> <span data-ttu-id="89d47-111">「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="89d47-111">See [Texture blending](texture-blending.md).</span></span>
 
  
 
-<span data-ttu-id="557db-112">ユーザーのハードウェアで複数テクスチャ ブレンドがサポートされていない場合、アプリケーションはマルチパス テクスチャ ブレンドを使って同じ視覚効果を実現できます。</span><span class="sxs-lookup"><span data-stu-id="557db-112">If the user's hardware does not support multiple texture blending, your application can use multipass texture blending to achieve the same visual effects.</span></span> <span data-ttu-id="557db-113">ただし、アプリケーションは複数テクスチャ ブレンドを使ったときに生じる可能性があるフレーム レートに対応できません。</span><span class="sxs-lookup"><span data-stu-id="557db-113">However, the application cannot sustain the frame rates that are possible when using multiple texture blending.</span></span>
+<span data-ttu-id="89d47-112">ユーザーのハードウェアで複数テクスチャ ブレンドがサポートされていない場合、アプリケーションはマルチパス テクスチャ ブレンドを使って同じ視覚効果を実現できます。</span><span class="sxs-lookup"><span data-stu-id="89d47-112">If the user's hardware does not support multiple texture blending, your application can use multipass texture blending to achieve the same visual effects.</span></span> <span data-ttu-id="89d47-113">ただし、アプリケーションは複数テクスチャ ブレンドを使ったときに生じる可能性があるフレーム レートに対応できません。</span><span class="sxs-lookup"><span data-stu-id="89d47-113">However, the application cannot sustain the frame rates that are possible when using multiple texture blending.</span></span>
 
-<span data-ttu-id="557db-114">C/C++ アプリケーションでマルチパス テクスチャ ブレンドを実行するには</span><span class="sxs-lookup"><span data-stu-id="557db-114">To perform multipass texture blending in a C/C++ application:</span></span>
+<span data-ttu-id="89d47-114">C/C++ アプリケーションでマルチパス テクスチャ ブレンドを実行するには</span><span class="sxs-lookup"><span data-stu-id="89d47-114">To perform multipass texture blending in a C/C++ application:</span></span>
 
-1.  <span data-ttu-id="557db-115">テクスチャ ステージ 0 でテクスチャを設定します。</span><span class="sxs-lookup"><span data-stu-id="557db-115">Set a texture in texture stage 0.</span></span>
-2.  <span data-ttu-id="557db-116">必要な色およびアルファ ブレンドの引数と操作を選択します。</span><span class="sxs-lookup"><span data-stu-id="557db-116">Select the desired color and alpha blending arguments and operations.</span></span> <span data-ttu-id="557db-117">既定の設定は、マルチパス テクスチャ ブレンドに最適です。</span><span class="sxs-lookup"><span data-stu-id="557db-117">The default settings are well-suited for multipass texture blending.</span></span>
-3.  <span data-ttu-id="557db-118">シーン内の適切なオブジェクトをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="557db-118">Render the appropriate objects in the scene.</span></span>
-4.  <span data-ttu-id="557db-119">テクスチャ ステージ 0 で次のテクスチャを設定します。</span><span class="sxs-lookup"><span data-stu-id="557db-119">Set the next texture in texture stage 0.</span></span>
-5.  <span data-ttu-id="557db-120">レンダー状態を設定し、必要に応じてソース ブレンドとターゲット ブレンドを調整します。</span><span class="sxs-lookup"><span data-stu-id="557db-120">Set the render states to adjust the source and destination blending factors as needed.</span></span> <span data-ttu-id="557db-121">システムが、これらのパラメーターに従って、レンダー ターゲット サーフェスで新しいテクスチャと既存のピクセルをブレンドします。</span><span class="sxs-lookup"><span data-stu-id="557db-121">The system blends the new textures with the existing pixels in the render-target surface according to these parameters.</span></span>
-6.  <span data-ttu-id="557db-122">必要な数のテクスチャに対して手順 3、4、5 を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="557db-122">Repeat Steps 3, 4, and 5 with as many textures as needed.</span></span>
+1.  <span data-ttu-id="89d47-115">テクスチャ ステージ 0 でテクスチャを設定します。</span><span class="sxs-lookup"><span data-stu-id="89d47-115">Set a texture in texture stage 0.</span></span>
+2.  <span data-ttu-id="89d47-116">必要な色およびアルファ ブレンドの引数と操作を選択します。</span><span class="sxs-lookup"><span data-stu-id="89d47-116">Select the desired color and alpha blending arguments and operations.</span></span> <span data-ttu-id="89d47-117">既定の設定は、マルチパス テクスチャ ブレンドに最適です。</span><span class="sxs-lookup"><span data-stu-id="89d47-117">The default settings are well-suited for multipass texture blending.</span></span>
+3.  <span data-ttu-id="89d47-118">シーン内の適切なオブジェクトをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="89d47-118">Render the appropriate objects in the scene.</span></span>
+4.  <span data-ttu-id="89d47-119">テクスチャ ステージ 0 で次のテクスチャを設定します。</span><span class="sxs-lookup"><span data-stu-id="89d47-119">Set the next texture in texture stage 0.</span></span>
+5.  <span data-ttu-id="89d47-120">レンダー状態を設定し、必要に応じてソース ブレンドとターゲット ブレンドを調整します。</span><span class="sxs-lookup"><span data-stu-id="89d47-120">Set the render states to adjust the source and destination blending factors as needed.</span></span> <span data-ttu-id="89d47-121">システムが、これらのパラメーターに従って、レンダー ターゲット サーフェスで新しいテクスチャと既存のピクセルをブレンドします。</span><span class="sxs-lookup"><span data-stu-id="89d47-121">The system blends the new textures with the existing pixels in the render-target surface according to these parameters.</span></span>
+6.  <span data-ttu-id="89d47-122">必要な数のテクスチャに対して手順 3、4、5 を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="89d47-122">Repeat Steps 3, 4, and 5 with as many textures as needed.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="557db-123"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="557db-123"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="89d47-123"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="89d47-123"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="557db-124">テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="557db-124">Texture blending</span></span>](texture-blending.md)
+[<span data-ttu-id="89d47-124">テクスチャ ブレンド</span><span class="sxs-lookup"><span data-stu-id="89d47-124">Texture blending</span></span>](texture-blending.md)
 
  
 

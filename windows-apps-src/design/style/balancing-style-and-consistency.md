@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb511fad1aa4e1605d83090a5e4e8d98efff1be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707062"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7846020"
 ---
 # <a name="balancing-style-and-consistency"></a><span data-ttu-id="19f35-104">スタイルと一貫性のバランスをとる</span><span class="sxs-lookup"><span data-stu-id="19f35-104">Balancing style and consistency</span></span>
 

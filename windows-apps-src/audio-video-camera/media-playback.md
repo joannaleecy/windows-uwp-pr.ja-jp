@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: acfc63e06ed1259adfb56836eac790a1f03d7853
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696128"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836012"
 ---
 # <a name="media-playback"></a><span data-ttu-id="843a1-104">メディア再生</span><span class="sxs-lookup"><span data-stu-id="843a1-104">Media playback</span></span>
 

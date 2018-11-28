@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711242"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843483"
 ---
 # <a name="composition-visual"></a><span data-ttu-id="99a94-105">コンポジションのビジュアル</span><span class="sxs-lookup"><span data-stu-id="99a94-105">Composition visual</span></span>
 
