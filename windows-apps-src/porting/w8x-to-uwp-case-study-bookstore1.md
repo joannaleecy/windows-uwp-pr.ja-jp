@@ -1,17 +1,17 @@
 ---
 title: Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: このトピックでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。
+description: このトピックでは、非常に単純なユニバーサル 8.1 アプリを windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリを移植するケース スタディを示します。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704423"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827317"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 
@@ -28,7 +28,7 @@ ms.locfileid: "7704423"
 
 [Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532946)。
 
-[ダウンロード bookstore1universal \_10 windows 10 アプリ](http://go.microsoft.com/fwlink/?linkid=532950)。
+[Windows 10 アプリの bookstore1universal \_10 をダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)します。
 
 ## <a name="the-universal-81-app"></a>ユニバーサル 8.1 アプリ
 
@@ -50,7 +50,7 @@ Bookstore1\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 -   Bookstore1\_81.WindowsPhone。 これは、Windows Phone 8.1 用アプリ パッケージを構築するプロジェクトです。
 -   Bookstore1\_81.Shared。 これは、他の 2 つのプロジェクトの両方で使われるソース コード、マークアップ ファイル、および他のアセットやリソースを含むプロジェクトです。
 
-このケース スタディでは、サポートするデバイスに関して、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」で説明した通常のオプションを使います。 意思決定をここでは、単純なもの: このアプリと同じの機能があり、Windows8.1 と Windows Phone 8.1 の両方の形式で、同じコードで、ほとんどの場合。 そのためを移植します (とその他のプロジェクトから必要なもの) を共有プロジェクトの内容を (1 つは多様なデバイスにインストールすることができます)、ユニバーサル デバイス ファミリを対象とした windows 10。
+このケース スタディでは、サポートするデバイスに関して、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」で説明した通常のオプションを使います。 意思決定をここでは、単純なもの: このアプリは、同じ機能と Windows8.1 と Windows Phone 8.1 の両方の形式で、同じコードで、ほとんどの場合。 そのためを移植します (とその他のプロジェクトから必要なもの) を共有プロジェクトの内容を (1 つは多様なデバイスにインストールすることができます)、ユニバーサル デバイス ファミリを対象とした windows 10。
 
 Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\_81 からファイルをコピーし、コピーしたファイルを新しいプロジェクトに含めるという作業は、非常に短時間で実行できます。 最初に、"新しいアプリケーション (Windows ユニバーサル)" プロジェクトを新規作成します。 そして、"Bookstore1Universal\_10" という名前を付けます。 Bookstore1\_81 から Bookstore1Universal\_10 にコピーするファイルを、以下に示します。
 
@@ -62,7 +62,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 **Windows プロジェクトから**
 
--   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、出発点として 1 つ使用します同等の WindowsPhone ファイル内にある一部のではありません。
+-   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として 1 つ使用します同等の WindowsPhone ファイル内にある一部のではありません。
 
 コピーしたソース コードとマークアップ ファイルを編集し、Bookstore1\_81 名前空間への参照をすべて、Bookstore1Universal\_10 に変更します。 これをすばやく行うには、**[フォルダーを指定して置換]** 機能を使います。 ビュー モデルでも、その他の命令型コードでも、コードを変更する必要はありません。 ただし、どのバージョンのアプリが実行されているかをわかりやすくするために、**Bookstore1Universal\_10.BookstoreViewModel.AppName** プロパティによって返される値を、"BOOKSTORE1\_81" から "BOOKSTORE1UNIVERSAL\_10" に変更します。
 
@@ -80,7 +80,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 ## <a name="universal-styling"></a>ユニバーサル スタイル設定
 
-Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確が含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
+Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確には含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
 
 -   項目間のスペースを縮めるために、MainPage.xaml で `BookTemplate` データ テンプレートを探し、`Margin="0,0,0,8"` をルートの **Grid** から削除します。
 -   また、`BookTemplate` には、`BookTemplateTitleTextBlockStyle` と `BookTemplateAuthorTextBlockStyle` への参照があります。 Bookstore1\_81 は、それらのキーを間接参照として使うため、2 つのアプリで 1 つのキーの実装が異なります。 その間接参照は、必要ではなくなりました。システム スタイルを直接参照できます。 そこで、これらの参照をそれぞれ、`TitleTextBlockStyle` と `SubtitleTextBlockStyle` で置き換えます。

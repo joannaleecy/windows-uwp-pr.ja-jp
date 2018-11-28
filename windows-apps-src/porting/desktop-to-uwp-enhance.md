@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696183"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837136"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>Windows 10 向けのデスクトップ アプリを強化する
 
@@ -55,7 +55,7 @@ C++ プロジェクトを構成する/WinRT、」をご覧ください[を追加
 
 :white_check_mark: **追加するエクスペリエンスを最初に決定する**
 
-選択肢はたくさんあります。 たとえば、またはを使用して収益化 Api をアプリに注目を別のユーザーが投稿した新しい写真など共有に興味深いコンテンツがある場合、発注フローを簡略化できます。
+選択肢はたくさんあります。 たとえば、またはを使用して収益化 Api をアプリに注目を別のユーザーが投稿した新しい写真など共有興味深いコンテンツがある場合、発注フローを簡略化できます。
 
 ![トースト](images/desktop-to-uwp/toast.png)
 
@@ -201,7 +201,7 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>ランタイム チェック
 
-ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーション Windows ランタイム Api を呼び出す、ユーザーが実行される場合にのみ、アプリケーションをパッケージ化されたアプリケーションとして Windows 10。
+ユーザーが実行する Windows のバージョンに関係なく、1 組のバイナリをすべての Windows ユーザー向けにコンパイルできます。 アプリケーション Windows ランタイム Api を呼び出す、ユーザーが実行される場合にのみアプリケーションをパッケージ化されたアプリケーションとして Windows 10 にします。
 
 ランタイム チェックをコードを追加する最も簡単な方法は、この Nuget パッケージのインストール: [Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/)し、使用して、``IsRunningAsUWP()``メソッドが通過しなければならない関門を Windows ランタイム Api を呼び出すコードをすべて無効にします。 詳細については、[デスクトップ ブリッジを使用したアプリケーションのコンテキストの特定](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)に関するブログ記事を参照してください。
 

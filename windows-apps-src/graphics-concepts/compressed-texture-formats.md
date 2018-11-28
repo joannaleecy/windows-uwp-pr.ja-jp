@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3171eba376911157a6ad2687fe3879df751615ac
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695031"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827466"
 ---
 # <a name="compressed-texture-formats"></a>圧縮テクスチャ形式
 

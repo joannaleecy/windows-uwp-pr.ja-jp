@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693632"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826255"
 ---
 # <a name="category-and-subcategory-table"></a>カテゴリとサブカテゴリの一覧
 
@@ -20,7 +20,7 @@ ms.locfileid: "7693632"
 
 アプリに最も適したカテゴリを 1 つ選ぶ必要があります。 利用可能な場合は、サブカテゴリを選ぶこともできます。 どのカテゴリやサブカテゴリを使えばよいかわからない場合、または、ぴったりだと思えるものが見つからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。
 
-カテゴリの**ゲーム**を選択した場合を少なくとも 1 つのサブカテゴリ (ゲームの*ジャンル*と呼ばれます) を選択することが必要です。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
+カテゴリの**ゲーム**を選択した場合、少なくとも 1 つのサブカテゴリ (ゲームの*ジャンル*と呼ばれます) を選択することが必要です。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
 
 > [!IMPORTANT] 
 > **ゲーム**カテゴリでアプリを公開する場合、新しい申請で別のカテゴリを選択することはできません。引き続き**ゲーム**カテゴリで公開する必要があります (ただし、新しい申請でジャンルの選択は変更できます)。 同様に、ゲーム以外のカテゴリで公開したアプリを更新するときに、**ゲーム**のカテゴリを選ぶこともできません。

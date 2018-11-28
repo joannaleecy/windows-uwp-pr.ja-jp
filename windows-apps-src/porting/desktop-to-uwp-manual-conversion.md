@@ -9,19 +9,19 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697205"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836959"
 ---
 # <a name="package-a-desktop-application-manually"></a>デスクトップ アプリケーションを手動でパッケージ化します。
 
-このトピックでは、Visual Studio、Desktop App Converter (DAC) などのツールを使用せず、アプリケーションをパッケージ化する方法を示しています。
+このトピックでは、Visual Studio、Desktop App Converter (DAC) などのツールを使用せず、アプリケーションをパッケージ化する方法を示します。
 
 アプリを手動でパッケージ化するには、パッケージ マニフェスト ファイルを作成してから、Windows アプリ パッケージを生成するコマンド ライン ツールを実行します。
 
-Xcopy コマンドを使用して、アプリケーションをインストールするか、アプリのインストーラーによるシステムへの変更に慣れている場合は、手動によるパッケージ化を検討し、プロセスをさらに細かく制御すます。
+Xcopy コマンドを使用して、アプリケーションをインストールするか、アプリのインストーラーがシステムに変更を熟知している場合、手動によるパッケージ化を検討し、プロセスをさらに細かく制御すます。
 
 インストーラーによってどのような変更がシステムに加えられるのかわからない場合や、自動化ツールを使用してパッケージ マニフェストを生成する場合は、[こちら](desktop-to-uwp-root.md#convert)のオプションのいずれかを検討してください。
 
@@ -88,7 +88,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 ### <a name="properties"></a>プロパティ
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **DisplayName**は、ストアにアップロードされたアプリの場合、ストアで予約するアプリケーションの名前です。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 要素には、必須の子要素が 3 つあります。 次に示すのは、**Properties** ノードの例です。要素はプレースホルダー テキストが指定されています。 **表示名**は、ストアにアップロードされたアプリの場合、ストアで予約するアプリケーションの名前です。
 
 ```XML
 <Properties>
@@ -131,7 +131,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 ### <a name="application-element"></a>Application 要素
 
-デスクトップ アプリで、パッケージを作成する、 ``EntryPoint`` Application 要素の属性は常に``Windows.FullTrustApplication``します。
+デスクトップ アプリで、パッケージを作成する、 ``EntryPoint`` 、Application 要素の属性は常に``Windows.FullTrustApplication``します。
 
 ```XML
 <Applications>
@@ -184,7 +184,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 
 5.  コマンド ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` を使用して、resources.pri ファイルを作成します。
 
-    たとえば、アプリケーションのコマンドが、これのようになります。:``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``します。
+    たとえば、アプリのコマンドが、これのようになります。:``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``します。
 
 6.  次の手順の説明に従って Windows アプリ パッケージをパッケージ化します。
 
@@ -205,7 +205,7 @@ Xcopy コマンドを使用して、アプリケーションをインストー�
 アプリの .exe または .dll ファイルを更新するには、パッケージ内の既存のファイルを新しいファイルに置き換え、AppxManifest.xml のバージョン番号を繰り上げて、上記のコマンドをもう一度実行します。
 
 > [!NOTE]
-> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行してにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
+> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行されにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
 
 ## <a name="next-steps"></a>次のステップ
 

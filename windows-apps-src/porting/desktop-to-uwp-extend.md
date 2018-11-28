@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707081"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828801"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
 一部の Windows 10 エクスペリエンス (タッチ対応 UI ページなど) は、最新のアプリ コンテナー内で実行する必要があります。 こうしたエクスペリエンスを追加するには、UWP プロジェクトと Windows ランタイム コンポーネントを使ってデスクトップ アプリケーションを拡張します。
 
-多くの場合、デスクトップ アプリケーションから直接 Windows ランタイム Api を呼び出す、そのため、このガイドを確認する前に参照してください[for Windows 10 に強化](desktop-to-uwp-enhance.md)できます。
+多くの場合、デスクトップ アプリケーションから直接 Windows ランタイム Api を呼び出して、ため、このガイドを確認する前に[Windows 10 の強化](desktop-to-uwp-enhance.md)を表示できます。
 
 >[!NOTE]
 >このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 まだまだ行っていない場合、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
@@ -42,7 +42,7 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 
 デスクトップ アプリケーションを Windows ランタイム Api を呼び出す必要があるファイルへの参照があることを確認してください。
 
-これを行うには、 [Windows 10 のデスクトップ アプリケーションの効果を高める](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)トピックの[最初に、プロジェクトをセットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)セクションをご覧ください。
+これを行うには、 [Windows 10 のデスクトップ アプリケーションの効果を高める](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)トピックの[最初に、プロジェクトのセットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)」セクションを参照してください。
 
 ### <a name="add-a-uwp-project"></a>UWP プロジェクトを追加する
 
@@ -93,7 +93,7 @@ UWP プロジェクトとランタイム コンポーネントで行うことが
 ![アダプティブ デザイン](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui を表示する安定したサポートされている方法です。 このアプローチを代わりに、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加することです。 XAML 諸島現在利用可能な開発者プレビューとして。 それらプロトタイプ コードで今すぐ試すことをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後の Windows リリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
+>この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされているアプローチです。 このアプローチを代わりに、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加することです。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがないことで使う運用コードこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後の Windows のリリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -250,11 +250,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 デスクトップ アプリケーションを共有ターゲットにすることで、共有をサポートしている他のアプリのデータ (画像など) をユーザーが簡単に共有できるようになります。
 
-たとえば、ユーザーは、Microsoft Edge やフォト アプリから画像を共有するアプリケーションを選択できます。 WPF サンプル アプリケーションを持つその機能を次に示します。
+たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 WPF サンプル アプリケーションを持つその機能を次に示します。
 
 ![共有ターゲット](images/desktop-to-uwp/share-target.png).
 
-完全なサンプルをご覧ください[ここで](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)。
+完全なサンプルを参照してください[ここで](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -276,7 +276,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>共有ターゲットの拡張機能を追加する
 
-**ソリューション エクスプ ローラー**でソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、共有ターゲットの拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションで、パッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、共有ターゲットの拡張機能を追加します。
 
 ```xml
 <Extensions>
@@ -296,7 +296,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 UWP プロジェクトによって生成された実行可能ファイルの名前と、エントリ ポイント クラスの名前を指定します。 このマークアップは、UWP アプリの実行可能ファイルの名前が前提としています。`ShareTarget.exe`します。
 
-アプリとの間で共有できるようにするファイルの種類を指定することも必要です。 この例ではここを行う[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを共有ターゲット ビットマップ画像を指定するための`Bitmap`のサポートされているファイルの種類。
+アプリとの間で共有できるようにするファイルの種類を指定することも必要です。 この例では、ここを行う[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを共有ターゲット ビットマップ画像を指定するための`Bitmap`のサポートされているファイルの種類。
 
 <a id="override" />
 
@@ -329,7 +329,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-このコードは、アプリのローカル ストレージ フォルダーに、ユーザーが共有されているイメージを保存します。 その後、その同じフォルダーからのイメージをプルするデスクトップ アプリケーションを変更します。 UWP アプリとして、同じパッケージに含まれているために、デスクトップ アプリケーションを実行できます。
+このコードでは、アプリのローカル ストレージ フォルダーに、ユーザーが共有されているイメージを保存します。 その後、その同じフォルダーからイメージをプルするデスクトップ アプリケーションを変更します。 UWP アプリとして、同じパッケージに含まれているために、デスクトップ アプリケーションを実行できます。
 
 <a id="desktop-extensions" />
 
@@ -343,7 +343,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="add-the-full-trust-process-extension"></a>完全な信頼プロセスの拡張機能を追加します。
 
-**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、以前このファイルを追加する共有ターゲットの拡張機能の横にある完全な信頼プロセスの拡張機能を追加します。
+**ソリューション エクスプ ローラー**で、ソリューションにパッケージ プロジェクトの**package.appxmanifest**ファイルを開くし、以前このファイルを追加する共有ターゲットの拡張機能の横にある完全な信頼プロセス拡張機能を追加し、します。
 
 ```xml
 <Extensions>
@@ -359,13 +359,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>共有ファイルを取得するデスクトップ アプリケーションを変更します。
 
-共有ファイルの処理を検索するデスクトップ アプリケーションを変更します。 この例では、UWP アプリには、ローカル アプリ データ フォルダーに共有ファイルが格納されます。 したがって、 [WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションそのフォルダーからプル写真を変更します。
+共有ファイルを処理を検索するデスクトップ アプリケーションを変更します。 この例では、UWP アプリには、共有、ローカル アプリ データ フォルダーにファイルが格納されます。 そのため、そのフォルダーからプル写真に[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを変更しますします。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-を、ユーザーが既にいるデスクトップ アプリケーションのインスタンスを開くためします[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)イベントを処理してファイルの場所にパスを渡す可能性があります。 これにより、開いているデスクトップ アプリケーションのインスタンスに、共有の写真が表示されます。
+デスクトップ アプリケーションのインスタンスが既に存在するユーザーが開くには、ここ[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)イベントを処理し、ファイルの場所へのパスを渡す可能性があります。 これにより、開いているデスクトップ アプリケーションのインスタンスに、共有の写真が表示されます。
 
 ```csharp
 ...
@@ -401,7 +401,7 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 タスクは http 要求を行い、要求が応答を返すのにかかる時間を測定します。 タスクはさらに興味深いものと考えられますが、このサンプルはバックグラウンド タスクの基本的なしくみを学習するのに適しています。
 
-完全なサンプルをご覧ください。[次に](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)します。
+完全なサンプルを参照してください。[次に](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)します。
 
 ### <a name="the-design-pattern"></a>設計パターン
 

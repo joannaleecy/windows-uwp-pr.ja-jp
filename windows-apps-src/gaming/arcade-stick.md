@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、アーケード スティック、入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692803"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830890"
 ---
 # <a name="arcade-stick"></a>アーケード スティック
 
@@ -28,7 +28,7 @@ ms.locfileid: "7692803"
 
 アーケード スティックは、店頭のアーケード マシンの雰囲気を再現し、デジタルにより高い精度で制御できる入力デバイスです。 アーケード スティックは、格闘ゲームなどのアーケード ゲームに最適な入力デバイスで、完全デジタル制御に対応しているあらゆるゲームに適しています。 アーケード スティックは、Windows 10 および Xbox One UWP アプリで [Windows.Gaming.Input][] 名前空間によってサポートされています。
 
-Xbox One アーケード スティックが装備されて、8 方向デジタル ジョイスティック、6 つの**アクション**ボタン (下の画像で A1 A6 として表されます)、および 2 つの**特別な**ボタン (S1 と S2 として表されます)。これらはサポートされていないアナログ制御やバイブレーション デジタルの入力デバイスです。 Xbox One アーケード スティックも UI ナビゲーションをサポートするために使用する**ビュー**と**メニュー**のボタンも搭載されていますが、これらには、ゲームプレイ コマンドのサポートを意図しない、ジョイスティック ボタンとしてすぐにアクセスすることはできません。
+Xbox One アーケード スティックが装備されて、8 方向デジタル ジョイスティック、6 つの**アクション**ボタン (下の画像の A1 A6 として表されます)、および 2 つの**特別な**ボタン (S1 と S2 として表されます)。これらはサポートされていないアナログ制御やバイブレーション デジタルの入力デバイスです。 Xbox One アーケード スティックも UI ナビゲーションをサポートするために使用する**ビュー**と**メニュー**のボタンも搭載されていますが、これらのゲームプレイ コマンドのサポートを意図しない、ジョイスティック ボタンとしてすぐにアクセスすることはできません。
 
 ![アーケード スティックとジョイスティックの 4 方向、6 つのアクション ボタン (A1-A6) と 2 つの特別なボタン (S1 と S2)](images/arcade-stick-1.png)
 
@@ -36,7 +36,7 @@ Xbox One アーケード スティックが装備されて、8 方向デジタ�
 
 ユーザー インターフェイスの操作にさまざまな入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理__ 入力デバイスは、[UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理__ 入力デバイスとして同時に機能します。 UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。
 
-UI ナビゲーション コント ローラーとしては、アーケード スティックは、ナビゲーション コマンドの[必須の設定](ui-navigation-controller.md#required-set)をジョイスティックと**ビュー**、**メニュー**の**アクション 1**、および**アクション 2**ボタンにマップされます。
+UI ナビゲーション コント ローラー、としては、アーケード スティックは、ナビゲーション コマンドの[必要なセット](ui-navigation-controller.md#required-set)をジョイスティックと**ビュー**、**メニュー**の**アクション 1**、および**アクション 2**ボタンにマップされます。
 
 | ナビゲーション コマンド | アーケード スティック入力  |
 | ------------------:| ------------------- |
@@ -53,7 +53,7 @@ UI ナビゲーション コント ローラーとしては、アーケード �
 
 ## <a name="detect-and-track-arcade-sticks"></a>アーケード スティックの検出と追跡
 
-検出と追跡のアーケード スティックのまったく同じ方法では、ゲームパッドを除く、[ゲームパッド](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)のクラスではなく[ArcadeStick][]クラスです。 詳細については、「[ゲームパッドと振動](gamepad-and-vibration.md)」を参照してください。
+検出と追跡のアーケード スティックのまったく同じ方法では、ゲームパッドを除く、[ゲームパッド](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad)のクラスではなく、 [ArcadeStick][]クラスです。 詳細については、「[ゲームパッドと振動](gamepad-and-vibration.md)」を参照してください。
 
 <!-- Arcade sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected arcades sticks and events to notify you when an arcade stick is added or removed.
 
@@ -141,7 +141,7 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 ### <a name="reading-the-buttons"></a>ボタンの読み取り
 
-アーケード スティックのボタンの各&mdash;ジョイスティック、6 つの**アクション**ボタンと 2 つの**特別な**ボタンの 4 方向&mdash;かどうかが押さ (ダウン) か、離さ (アップ) を示すデジタルの読み取り値を提供します。 効率、ボタンの読み取り値がない個別のブール値として表されます。代わりに、すべて豊富な[ArcadeStickButtons][]列挙型で表される単一のビット フィールドにします。
+アーケード スティックのボタンの各&mdash;ジョイスティック、6 つの**アクション**ボタンと 2 つの**特別な**ボタンの 4 方向&mdash;かどうかが押さ (ダウン) か、離さ (アップ) を示すデジタルの読み取り値を提供します。 効率は、ボタンの読み取り値は個別のブール値として表現します。代わりに、すべて豊富な[ArcadeStickButtons][]列挙型で表される単一のビット フィールドにします。
 
 > [!NOTE]
 > アーケード スティックには、**ビュー**と**メニュー**ボタンなどの UI ナビゲーション用に使用するボタンが装備されています。 これらのボタンは `ArcadeStickButtons` 列挙型には含まれず、UI ナビゲーション デバイスとしてアーケード スティックを利用する場合にしか、読み取られません。 詳しくは、「[UI ナビゲーション デバイス](ui-navigation-controller.md)」をご覧ください。

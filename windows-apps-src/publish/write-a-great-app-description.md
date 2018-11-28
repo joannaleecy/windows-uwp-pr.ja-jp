@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 説明, 説明する, Store 登録情報, マーケティング
 ms.localizationpriority: medium
 ms.openlocfilehash: a6cea0103d484cc84f9c253a08f07ed3d69b67f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694543"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827984"
 ---
 # <a name="write-a-great-app-description"></a>人の心をつかむアプリの説明を書く
 
@@ -25,7 +25,7 @@ ms.locfileid: "7694543"
 -   **箇条書きや短い段落を使う。** 見込み客は、アプリの説明に軽く目を通すだけで終わることがあります。 可能であれば短い段落や箇条書きを使ってコンテンツを分割すると、目を通しやすくなります。
 
     > [!NOTE]
-    > [製品の機能](create-app-store-listings.md#product-features)の一覧に追加するアプリが何をすばやく表示にも役立ちます。 この一覧は、アプリの説明のすぐ下に表示されます。
+    > [製品の機能](create-app-store-listings.md#product-features)の一覧を追加することをすばやくアプリが何も役立ちます。 この一覧は、アプリの説明のすぐ下に表示されます。
 
 -   **無味乾燥な文章を避ける。** 魅力的な文章で説明を記述してください。 アプリの機能を明確に説明する文章を使いつつ、退屈でない表現を選びます。 多くのアプリで、カジュアルでフレンドリーなトーンが適しています。
 -   **適切な長さにする。** 優れた説明はすばやく読むことができますが、その一方で、読み手の興味を引きアプリの機能を説明するために十分な情報が含まれています。 複雑なアプリであれば、説明に必要な文の数が多くなります。単純なアプリであれば、2 文から 3 文で足りる場合があります。 多くの場合、適切な長さは 200 語をやや上回る程度であり、3,000 語になると長すぎます。

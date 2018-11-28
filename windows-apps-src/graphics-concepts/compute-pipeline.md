@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720318"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826737"
 ---
 # <a name="compute-pipeline"></a>計算パイプライン
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698311"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826378"
 ---
 # <a name="screen-capture"></a>画面キャプチャ
 
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のようなアプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合、強制的に実行できます次のコードで、UI スレッドで実行されるが。
+これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のように、アプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合は、強制的に実行できます次のコードで、UI スレッドで実行されるが。
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -163,10 +163,10 @@ UI スレッドで **FrameArrived** を使用することはできれば避け�
 
 ## <a name="putting-it-all-together"></a>完成したコードの例
 
-次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルでは、フロント エンドにボタンがある、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
+次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルで、フロント エンドにボタンがある、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
 
 > [!NOTE]
-> このスニペットでは、 [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
+> このスニペットでは、 [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)での 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
 
 ```cs
 using Microsoft.Graphics.Canvas;

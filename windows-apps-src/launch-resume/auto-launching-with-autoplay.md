@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699099"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827274"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
 
@@ -218,7 +218,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
 2.  アプリを実行するには、カメラのメモリ カードまたはカメラの他のストレージ デバイスを PC に挿入します。 次に、自動再生のオプションの一覧から package.appxmanifest ファイルで指定したコンテンツ イベント オプションのいずれかを選びます。 このサンプル コードは、カメラのメモリ カードの DCIM フォルダーにある画像の表示またはコピーのみを行います。 カメラのメモリ カードの AVCHD または PRIVATE\\ACHD フォルダーに画像が格納される場合は、適宜コードを更新する必要があります。
-    **注:** 場合は、ルートに**DCIM**をという名前のフォルダーがあり、画像が含まれている DCIM フォルダーのサブフォルダーがある場合に、フラッシュ ドライブを使用するカメラのメモリ カードがない場合。
+    **注:** 場合は、そのルートに**DCIM**という名前のフォルダーがあり、画像が含まれている DCIM フォルダーのサブフォルダーがある場合、フラッシュ ドライブを使ってカメラのメモリ カードをお持ちでない場合。
 
 ## <a name="register-for-an-autoplay-device"></a>自動再生デバイスに登録する
 

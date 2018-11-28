@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691313"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835993"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Notifications Visualizer は、新しいユニバーサル Windows プラットフォーム (UWP) アプリ[ストアで](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)開発者を支援する設計アダプティブ ライブ タイルと windows 10 の対話型トースト通知。
+Notifications Visualizer は、新しいユニバーサル Windows プラットフォーム (UWP) アプリ[ストアで](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)開発者に役立つデザイン アダプティブ ライブ タイルと windows 10 の対話型トースト通知。
 
 
 ## <a name="overview"></a>概要
@@ -34,7 +34,7 @@ Notifications Visualizer では、Visual Studio の XAML エディター/デザ�
 
 Notifications Visualizer を使うと、アプリ自体を編集、展開しなくても、アダプティブ タイルとトーストのペイロードを作成してテストすることができます。 適切な表示のペイロードが完成したら、そのペイロードをアプリに統合できます。 詳しくは、「[ローカル タイル通知の送信](sending-a-local-tile-notification.md)」および 「[ローカル トースト通知の送信](send-local-toast.md)」をご覧ください。
 
-**注:**  Notifications Visualizer のシミュレーション Windows のスタート メニューとトースト通知が完全に正確でない常に、いくつかの高度なペイロード プロパティがサポートされていません。 タイルやトーストを適切にデザインしたら、意図したとおりに表示されることを確認するために、タイルをスタート メニューにピン留めしたり、トーストを表示したりしてテストします。
+**注:**  Notifications Visualizer のシミュレーション Windows のスタート メニューとトースト通知は、完全に正確な必ずしもし、いくつかの高度なペイロード プロパティがサポートされていません。 タイルやトーストを適切にデザインしたら、意図したとおりに表示されることを確認するために、タイルをスタート メニューにピン留めしたり、トーストを表示したりしてテストします。
 
  
 

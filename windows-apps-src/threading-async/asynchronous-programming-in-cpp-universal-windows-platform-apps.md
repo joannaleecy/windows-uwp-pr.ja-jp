@@ -1,17 +1,17 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: この記事では VisualC コンポーネント拡張機能での非同期メソッドに推奨される方法について説明します。 (、C++/cli CX) では、ppltasks.h の concurrency 名前空間で定義された task クラスを使用して、します。
+description: この記事では VisualC コンポーネント拡張機能での非同期メソッドに推奨される方法について説明します。 (、C++/cli CX) ppltasks.h の concurrency 名前空間で定義された task クラスを使用しています。
 title: C++ での非同期プログラミング
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10、UWP、スレッド、非同期、C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699873"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834730"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX での非同期プログラミング
 > [!NOTE]

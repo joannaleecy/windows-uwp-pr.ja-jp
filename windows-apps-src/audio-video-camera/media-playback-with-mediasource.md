@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c3929c2b3765bd90dbe0be687834e94b4f222fc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695955"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835630"
 ---
 # <a name="media-items-playlists-and-tracks"></a>メディア項目、プレイリスト、トラック
 

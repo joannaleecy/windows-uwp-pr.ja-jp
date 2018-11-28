@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694587"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826717"
 ---
 # <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠する必要があります。
+この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠している必要があります。
 
 以下では、"yes" と "no" のバリエーションをリッスンします。
 

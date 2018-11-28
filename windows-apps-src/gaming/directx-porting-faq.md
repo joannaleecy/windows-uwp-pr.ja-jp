@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692643"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826873"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 の移植に関する FAQ
 
@@ -47,7 +47,7 @@ Direct3D デバイスは、ビデオ メモリにリソースを作成するた�
 ##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>デスクトップと Microsoft Store のコード パスを維持する方法
 
 
-Chuck Walbourn 記事シリーズで[ゲームの二重用途のコーディング手法](http://go.microsoft.com/fwlink/p/?LinkID=286210)では、デスクトップと Microsoft ストア コード パスの間でコードを共有に関するガイダンスを提供します。
+Chuck Walbourn の記事シリーズで[ゲームの二重用途のコーディング手法](http://go.microsoft.com/fwlink/p/?LinkID=286210)では、デスクトップと Microsoft Store のコード パスの間でコードを共有に関するガイダンスを提供します。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>DirectX UWP アプリの画像リソースを読み込む方法を教えてください。
 

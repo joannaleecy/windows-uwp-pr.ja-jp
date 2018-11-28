@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707873"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826727"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 

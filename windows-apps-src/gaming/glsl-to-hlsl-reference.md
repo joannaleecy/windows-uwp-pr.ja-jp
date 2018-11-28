@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691956"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826893"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL と HLSL の対応を示すリファレンス
 
@@ -94,7 +94,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">行優先マトリックス (既定)</td>
 <td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>注:</strong>  <strong>row_major</strong>の種類の修飾子を使用して、1 つの変数のレイアウトを変更します。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
+<strong>注:</strong>  <strong>row_major</strong>の種類の修飾子を使用して 1 つの変数のレイアウトを変更します。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
  
@@ -109,7 +109,7 @@ GLSL と HLSL は一般に次の点で異なります。
 
  
 
-> **注:** HLSL がテクスチャとサンプラーとして 2 つのオブジェクトです。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
+> **注:** HLSL はテクスチャとサンプラーとして 2 つのオブジェクトです。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
 
  
 

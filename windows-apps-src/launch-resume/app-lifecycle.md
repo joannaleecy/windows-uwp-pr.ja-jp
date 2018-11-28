@@ -7,11 +7,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718430"
+ms.locfileid: "7830973"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル
 

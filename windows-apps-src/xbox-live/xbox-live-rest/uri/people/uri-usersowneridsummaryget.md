@@ -2,22 +2,20 @@
 title: GET (/users/{ownerId}/summary)
 assetID: 754190c9-b15d-f34b-1dca-5c92f6f67d12
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummaryget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/summary)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 60938acedd58934ec8b758d435776f227e82b91d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3b228adab7b035ec8f4e65fc8b7458228a677987
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567337"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829112"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
-呼び出し元の観点から、所有者に関する集計データを取得します。
+呼び出し元の観点から所有者に関する集計データを取得します。
 
   * [URI パラメーター](#ID4EQ)
   * [Authorization](#ID4E2)
@@ -35,7 +33,7 @@ ms.locfileid: "7567337"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの id。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
@@ -53,7 +51,7 @@ ms.locfileid: "7567337"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| データを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x = [ハッシュ]、[トークン]</b>します。|
+| Authorization| string| 承認のデータです。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x = [ハッシュ]、[トークン]</b>します。|
 
 <a id="ID4EHD"></a>
 
@@ -62,7 +60,7 @@ ms.locfileid: "7567337"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
+| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
 | Accept| string| コンテンツの種類の受け入れられる。 すべての返信はされます<code>application/json</code>します。|
 
 <a id="ID4EXE"></a>
@@ -77,7 +75,7 @@ ms.locfileid: "7567337"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

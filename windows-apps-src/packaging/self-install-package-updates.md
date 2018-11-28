@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720178"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826358"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
 
-Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間で [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスのメソッドを使用して、現在のアプリに対するパッケージ更新がないかプログラムによって Microsoft Store でチェックし、更新後のパッケージをダウンロードしてインストールすることができます。 パートナー センターで必須としてマークしたし、必須の更新がインストールされるまでに、アプリで機能を無効にするパッケージを照会できます。
+Windows 10 バージョン 1607 以降では、[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間で [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスのメソッドを使用して、現在のアプリに対するパッケージ更新がないかプログラムによって Microsoft Store でチェックし、更新後のパッケージをダウンロードしてインストールすることができます。 パートナー センターで必須としてマークがあるし、必須の更新がインストールされるまでに、アプリで機能を無効にすることのパッケージを照会できます。
 
 Windows 10 バージョン 1803 で導入された追加の [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) メソッドを使うと、パッケージの更新プログラムを背後で (ユーザーに通知 UI を表示せずに) ダウンロードおよびインストールしたり、[オプション パッケージ](optional-packages.md)をアンインストールしたり、アプリのダウンロードおよびインストール キューにあるパッケージの情報を取得したりすることができます。
 
@@ -193,7 +193,7 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>必須のパッケージの更新プログラム
 
-パートナー センターで Windows 10 バージョン 1607 以降をターゲットとするアプリのパッケージの申請を作成する場合[、パッケージを必須としてマーク](../publish/upload-app-packages.md#mandatory-update)することができます。 と、日付と時刻を必須になります。 このプロパティが設定されている場合、利用可能なパッケージの更新が検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (機能を無効にするなど)。
+パートナー センターで Windows 10 バージョン 1607 以降をターゲットとするアプリのパッケージの申請を作成すると[パッケージを必須としてマーク](../publish/upload-app-packages.md#mandatory-update)することができます。 日付と時刻を必須になります。 このプロパティが設定されている場合、利用可能なパッケージの更新が検出されると、アプリは更新パッケージが必須であることを認識し、更新がインストールされるまで、その動作を変更することができます (機能を無効にするなど)。
 
 > [!NOTE]
 > パッケージ更新の必須ステータスは Microsoft によって強制されるものではありません。アプリの必須更新プログラムをインストールする必要があることをユーザーに示すための UI は、OS では提供されていません。 必須設定は、開発者が自身のコード内でアプリの必須更新プログラムを強制するために使用するものです。  

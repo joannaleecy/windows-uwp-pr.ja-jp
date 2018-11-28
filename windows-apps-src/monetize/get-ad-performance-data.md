@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
 ms.openlocfilehash: c6bec86929284e49e4e882597422d316276c0a33
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697505"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829525"
 ---
 # <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
@@ -121,7 +121,7 @@ Authorization: Bearer <your access token>
 | deviceType          | string | 広告が提供されたデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                              |
 | market              | string | 広告が提供された市場の ISO 3166 国コードです。             |
 | accountCurrencyCode     | string | アカウントの通貨コードです。        |
-| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている、pubCenter アプリの名前です。   |
+| pubCenterAppName       |  string  |   パートナー センターでのアプリに関連付けられている、pubCenter アプリの名前です。   |
 | adProviderRequests        | int | 指定した広告プロバイダーに対する広告要求の数です。                 |
 | impressions           | int | 広告インプレッションの数です。        |
 | clicks            | int | クリックの数です。       |
