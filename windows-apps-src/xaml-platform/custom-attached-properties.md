@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702726"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7846186"
 ---
 # <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
@@ -39,7 +39,7 @@ ms.locfileid: "7702726"
 
 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティを宣言することで、添付プロパティを依存関係プロパティとして定義します。 このプロパティは、[**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドの戻り値を使って定義します。 プロパティ名は、**RegisterAttached** *name* パラメーターとして指定した添付プロパティ名の終わりに "Property" という文字列を追加した名前と一致する必要があります。 これは、依存関係プロパティが表すプロパティとの関連で依存関係プロパティの識別子に名前を付ける場合の確立された規則です。
 
-カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 使って[カスタム依存関係プロパティ](custom-dependency-properties.md)で説明されているラッパー手法ではなく、静的なを提供する必要がありますも **を取得する。 PropertyName*と **設定。 PropertyName*メソッドを添付プロパティのアクセサーとして。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
+カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 使って[カスタム依存関係プロパティ](custom-dependency-properties.md)で説明されているラッパー手法ではなく、静的なを提供する必要がありますも **を取得する。 PropertyName*と **設定。 PropertyName*メソッドを添付プロパティのアクセサーとしてします。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
 
 > [!IMPORTANT]
 > アクセサーを正しく定義していない場合は、XAML プロセッサは、添付プロパティでアクセスできないおそらくはそれを使用しようとするすべてのユーザーは、XAML 解析エラーを取得します。 また、デザイン ツールとコーディング ツールは、参照されるアセンブリでカスタム依存関係プロパティを検出した場合に、"\*Property" という識別子の命名規則に依存することがよくあります。
@@ -73,7 +73,7 @@ Visual Basic の場合は、次のようになります。
 
 この例は、([**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドを使った) 依存関係プロパティの登録と、カスタム添付プロパティの **Get** アクセサーと **Set** アクセサーを示しています。 この例では、添付プロパティ名は `IsMovable` です。 したがって、アクセサーの名前は `GetIsMovable` と `SetIsMovable` にする必要があります。 添付プロパティの所有者は `GameService` という名前の独自の UI を持たないサービス クラスです。その目的は **GameService.IsMovable** 添付プロパティを使うときに、添付プロパティ サービスを提供することだけです。
 
-添付プロパティを C++ で定義 +/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++/cli CX このプロパティとフィールドの関係を定義する必要があります単純なプロパティのバッキング .NET **readonly**キーワードと暗黙的に依存するのではなく明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
+添付プロパティを C++ で定義 +/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++/cli CX このプロパティとフィールドの関係を定義する必要があります単純なプロパティのバッキング .NET **readonly**キーワードと暗黙的な証明書利用者のではなく明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
 
 ```csharp
 public class GameService : DependencyObject

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c844c37bab8a135468d74558e8dc053b18d48cc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707311"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848350"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>アプリとアドオンの販売
 
@@ -25,7 +25,7 @@ ms.locfileid: "7707311"
 開発者が指定した、製品の特売期間中は、ユーザーは割引価格で製品を購入できるようになります。 価格を **[無料]** にした場合は、特売期間中、無料でダウンロードできます。
 
 > [!IMPORTANT]
-> セール価格は、Xbox One を含む、windows 10 デバイスのユーザーにのみ表示されます。 その他の製品のいずれかの所有者のみに提供する売り上げは、Windows 10 バージョン 1607 以降のユーザーにのみ表示されます。
+> セール価格は、Xbox One を含む、windows 10 デバイスのユーザーにのみ表示されます。 その他の製品のいずれかの所有者にのみを提供する売り上げは、Windows 10 バージョン 1607 以降のユーザーにのみ表示されます。
 > 
 > 他のオペレーティング システムでは、アプリやアドオンの通常価格がユーザーに表示され、セール価格で購入することはできません。 価格は新しい申請で異なる価格帯を選択することでいつでも変更できますが、その場合、期間限定販売としては表示されません。
 

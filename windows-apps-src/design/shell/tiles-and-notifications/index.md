@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ea005dd33bbb5461921fa17eded8430d7648c87
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718967"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845023"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP アプリのタイル、バッジ、通知
  
@@ -51,7 +51,7 @@ ms.locfileid: "7718967"
 | --- | --- |
 | [トースト通知](adaptive-interactive-toasts.md) | アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。 |
 | [ローカル トースト通知の送信](send-local-toast.md) | 対話型トースト通知を送信する方法について説明します。 |
-| [Notifications Visualizer](notifications-visualizer.md) | Windows 10 のライブ タイルを notifications Visualizer はにより、開発者はアダプティブ設計[、ストア](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)での新しいユニバーサル Windows プラットフォーム (UWP) アプリ。 |
+| [Notifications Visualizer](notifications-visualizer.md) | Windows 10 のライブ タイルを notifications Visualizer は[、ストア](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)により、開発者はアダプティブを設計する新しいユニバーサル Windows プラットフォーム (UWP) アプリ。 |
 | [通知配信方法の選択](choosing-a-notification-delivery-method.md) | この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。 |
 | [定期的な通知の概要](periodic-notification-overview.md) | 定期的な通知 (ポーリング通知とも呼ばれます) では、クラウド サービスから直接コンテンツをダウンロードして、一定の間隔でタイルやバッジを更新します。 |
 | [Windows プッシュ通知サービス (WNS) の概要](windows-push-notification-services--wns--overview.md) | Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。 |

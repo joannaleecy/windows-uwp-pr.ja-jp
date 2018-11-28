@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691290"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847196"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} マークアップ拡張
 
@@ -138,7 +138,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 ## <a name="windows8-behavior"></a>Windows8 動作
 
-Windows8 **ThemeResource**マークアップ拡張をサポートしていませんが、Windows8.1 で利用できます。 また、Windows8 いない切り替えをサポートして動的に Windows ランタイム アプリのテーマに関連するリソースです。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは、手順は、優れたユーザー エクスペリエンスのためアプリを再コンパイルしてターゲット Windows8.1 を強くお勧めできるように、 **ThemeResource**使用法とスタイルを使うことができますされには、ユーザーがときに、テーマを動的に切り替えることができます。 Windows8 が Windows8.1 で実行されている Windows8 動作を使い続けるためにコンパイルされたアプリ。
+Windows8 **ThemeResource**マークアップ拡張をサポートしていませんが、Windows8.1 で利用できます。 また、Windows8 では、Windows ランタイム アプリのテーマに関連するリソースを動的に切り替えしなかったできません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは、手順は、優れたユーザー エクスペリエンスのため、アプリは、再コンパイルしてターゲット Windows8.1 を強くお勧めできるように、 **ThemeResource**使用法とスタイルを使用してには、ユーザーがときに、テーマを動的に切り替えることができます。 Windows8 が Windows8.1 で実行されている Windows8 動作を使い続けるためにコンパイルされたアプリ。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
 

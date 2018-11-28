@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 96bc0c48865d862e5ac834c5828d4057a06242d5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709828"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852303"
 ---
 # <a name="accessibility-practices-to-avoid"></a>アクセシビリティ対応にするために避ける事項
 

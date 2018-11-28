@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691050"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845831"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
-各アプリに関連する詳細を管理および表示できます [パートナー センターでは、通知などのサービスを構成 B は、テスト、およびマップします。
+管理および各アプリに関連する詳細を表示する [パートナー センターでは、通知などのサービスを構成 B は、テスト、およびマップします。
 
 パートナー センターでアプリを使用する場合の**サービス**と**アプリの管理**セクションでは、左側のナビゲーション メニューが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
@@ -39,7 +39,7 @@ ms.locfileid: "7691050"
 
 Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
 
-Windows Phone 8.1 と以前公開したアプリのみの**マップ**ページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますされます。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
+Windows Phone 8.1 と以前公開したアプリのみで、**マップ**のページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
 ## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
@@ -49,7 +49,7 @@ Microsoft Store コレクション API と、Microsoft Store 購入 API を使�
 
 ## <a name="administrator-consent"></a>管理者の承認
 
-Azure AD と統合し、管理者の承認を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して、製品の f は、次に、Azure AD クライアント ID を入力します。 これにより、管理者は、組織に与える同意テナント内のすべてのユーザーの代理として行為する製品のアプリを入手できます。
+Azure AD と統合し、管理者の承認を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して、製品の f では、次に、Azure AD クライアント ID を入力します。 これにより、管理者が組織付与同意を得て、テナントのすべてのユーザーの代理として行為する製品のためにアプリを入手できます。
 
 詳しくは、[全体のテナントの同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
 
@@ -85,7 +85,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 **WNS/MPNS** ] セクションでは、作成し、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 の顧客の対象となるサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
 アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することも。 
 

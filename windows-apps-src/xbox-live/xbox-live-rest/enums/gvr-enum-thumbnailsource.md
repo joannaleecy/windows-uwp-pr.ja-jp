@@ -2,19 +2,17 @@
 title: ThumbnailSource 列挙型
 assetID: 82c42460-ba6d-fa50-4796-60188595a4f5
 permalink: en-us/docs/xboxlive/rest/gvr-enum-thumbnailsource.html
-author: KevinAsgari
 description: " ThumbnailSource 列挙型"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b97271c96b09ef83069ddb597bcfd5c9f71509
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1fa68fcffbca4326ccdb5a65404260f81458c8d7
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555619"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840736"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙型
 ThumbnailSource 列挙型をについて説明します。 

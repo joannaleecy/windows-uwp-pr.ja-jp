@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Python
 ms.localizationpriority: medium
 ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692633"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844798"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python のコード例: アプリ、アドオン、およびフライトの申請
 
@@ -52,7 +52,7 @@ ms.locfileid: "7692633"
 
 ## <a name="create-an-app-submission"></a>アプリの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アプリの申請を作成する方法を示しています。 これを行うには、コード最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アプリの申請を作成する方法を示しています。 これを行うには、コードは、最後に公開された申請の複製として新しい申請を作成し、更新プログラムとパートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
 
 1. まず、例では[指定されたアプリのデータを取得](get-an-app.md)します。
 2. 次に、[アプリの保留中の申請を削除](delete-an-app-submission.md)します (存在する場合)。
@@ -67,7 +67,7 @@ ms.locfileid: "7692633"
 
 ## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、コード最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、コードは、最後に公開された申請の複製として新しい申請を作成し、更新プログラムとパートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
 
 1. まず、例では[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
@@ -82,7 +82,7 @@ ms.locfileid: "7692633"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、コード最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、コードは、最後に公開された申請の複製として新しい申請を作成し、更新プログラムとパートナー センターに複製された申請をコミットします。 具体的には、この例では次のタスクを実行します。
 
 1. まず、例では[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。

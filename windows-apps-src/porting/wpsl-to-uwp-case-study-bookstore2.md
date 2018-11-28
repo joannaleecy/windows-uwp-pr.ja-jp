@@ -1,28 +1,28 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディ、Bookstore で情報に基づいて、グループ化されたデータを LongListSelector を表示する WindowsPhone Silverlight アプリから始まります。
+description: このケース スタディ、Bookstore で指定された情報、グループ化された、LongListSelector 内のデータを表示する WindowsPhone Silverlight アプリから始まります。
 title: WindowsPhone Silverlight から UWP ケース スタディ-Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719544"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848739"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight から UWP へのケース スタディ: Bookstore2
 
 
-このケース スタディ- [bookstore1](wpsl-to-uwp-case-study-bookstore1.md)情報に基づいて、グループ化された**LongListSelector**内のデータを表示する WindowsPhone Silverlight アプリから始まります。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 Windows10Universal Windows プラットフォーム (UWP) アプリにアプリを移植する手順について説明します。
+このケース スタディ- [bookstore1](wpsl-to-uwp-case-study-bookstore1.md)情報に基づいて、グループ化された**LongListSelector**内のデータを表示する WindowsPhone Silverlight アプリから始まります。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリを移植する手順について説明します。
 
-**注:** と Visual Studio で bookstore2universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージを表示し、手順[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)でターゲット プラットフォームのバージョンを設定するためです。
+**注:** と Visual Studio で bookstore2universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージが表示し、手順[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)でターゲット プラットフォームのバージョンを設定します。
 
 ## <a name="downloads"></a>ダウンロード
 
-[ダウンロード、Bookstore2WPSL8 WindowsPhone Silverlight アプリ](http://go.microsoft.com/fwlink/p/?linkid=522601)です。
+[WindowsPhone Silverlight アプリをダウンロード、Bookstore2WPSL8](http://go.microsoft.com/fwlink/p/?linkid=522601)します。
 
 [Windows 10 アプリをダウンロード、bookstore2universal \_10](http://go.microsoft.com/fwlink/?linkid=532952)します。
 
@@ -120,7 +120,7 @@ MainPage.xaml では、初期の移植作業のために次の変更を行う必
 
 ![最初のソース コードの変更を加えたモバイルの UWP アプリ](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-ビュー モデル、拡大表示、縮小表示は適切に連携しますが、スタイル設定やテンプレート化の作業を必要とする問題があります。 たとえば、適切なスタイルとブラシがまだ使われていない、テキストが縮小表示のためにクリックできるグループ ヘッダーに表示されないようにします。デスクトップ デバイスでアプリを実行すると、アプリがまだ対応していないこと、最適なエクスペリエンスと、windows できる可能性のあるモバイル デバイスの画面よりもずっとサイズが大きい大型デバイス上の領域を使用するためのユーザー インターフェイスは、2 つ目の問題が表示されます。 次のセクション (「[最初のスタイル設定とテンプレート化](#initial-styling-and-templating)」、「[アダプティブ UI](#adaptive-ui)」、「[最終的なスタイル設定](#final-styling)」) では、これらの問題に対処します。
+ビュー モデル、拡大表示、縮小表示は適切に連携しますが、スタイル設定やテンプレート化の作業を必要とする問題があります。 たとえば、適切なスタイルとブラシがまだ使われていない、テキストが縮小表示のためにクリックできるグループ ヘッダーに表示されないようにします。デスクトップ デバイスでアプリを実行する場合、アプリは、最適なエクスペリエンスと、windows できる可能性のあるモバイル デバイスの画面よりもずっとサイズが大きい大型デバイス上の領域を使用するためのユーザー インターフェイスにまだ対応しませんが、2 つ目の問題には表示されます。 次のセクション (「[最初のスタイル設定とテンプレート化](#initial-styling-and-templating)」、「[アダプティブ UI](#adaptive-ui)」、「[最終的なスタイル設定](#final-styling)」) では、これらの問題に対処します。
 
 ## <a name="initial-styling-and-templating"></a>最初のスタイル設定とテンプレート化
 
@@ -268,7 +268,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 ## <a name="making-the-view-model-more-flexible"></a>ビュー モデルの柔軟性の向上
 
-このセクションでは、UWP を使うようにアプリを移行することによって利用可能になる機能の例を紹介します。 ここでは、**CollectionViewSource** を使ってアクセスするときにビュー モデルの柔軟性を向上させるために実行できるオプションの手順について説明します。 ビュー モデル (ソース ファイルは ViewModel\\BookstoreViewModel.cs) から派生した Author という名前のクラスを含む WindowsPhone Silverlight アプリ Bookstore2WPSL8 からに移植します**一覧&lt;T&gt;**、 **T**は BookSku します。 これは、Author クラスが BookSku の*グループである*ことを意味します。
+このセクションでは、UWP を使うようにアプリを移行することによって利用可能になる機能の例を紹介します。 ここでは、**CollectionViewSource** を使ってアクセスするときにビュー モデルの柔軟性を向上させるために実行できるオプションの手順について説明します。 (ソース ファイルは ViewModel\\BookstoreViewModel.cs) ビュー モデルから派生した、Author という名前のクラスを含む WindowsPhone Silverlight アプリ Bookstore2WPSL8 から移植すること**一覧&lt;T&gt;**、 **T**は BookSku します。 これは、Author クラスが BookSku の*グループである*ことを意味します。
 
 **CollectionViewSource.Source** を Authors にバインドするとき、Authors 内の各 Author が*何か*のグループであるということを伝える必要があります。 このケース スタディでは、**CollectionViewSource** に依存して、Author が BookSku のグループであることを特定しています。 この設定でも機能しますが、柔軟性はありません。 Author が BookSku のグループ*および*著者の住所のグループの*両方*を表す必要がある場合は、どうしたらよいでしょうか。 Author を、これらの両方のグループにすることは*できません*。 ただし、Author に任意の数のグループを*保持させる*ことはできます。 これが解決策となります。つまり、現在使っている "*グループである*" というパターンの代わりに、またはこのパターンに加えて、"*グループを保持する*" というパターンを使います。 以下にその方法を示します。
 
@@ -301,4 +301,4 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 ## <a name="conclusion"></a>まとめ
 
-このケース スタディには、前のケース スタディよりも複雑なユーザー インターフェイスが関連しています。 すべての機能と WindowsPhone Silverlight の **LongListSelector**の概念- 度を高める- **SemanticZoom**、 **ListView**、 **GridView**、および**CollectionViewSource**の形式での UWP アプリを利用できることが検出されました。 UWP アプリで命令型コードやマークアップの両方を再利用 (コピーと編集) して、最小および最大の Windows デバイスのフォーム ファクターや、その中間のあらゆるサイズに合わせて調整された機能、UI、および操作を実現する方法について説明しました。
+このケース スタディには、前のケース スタディよりも複雑なユーザー インターフェイスが関連しています。 すべての機能と WindowsPhone Silverlight の **LongListSelector**の概念- とその他: **SemanticZoom**、 **ListView**、 **GridView**、および**CollectionViewSource**の形式での UWP アプリを利用できることが検出されました。 UWP アプリで命令型コードやマークアップの両方を再利用 (コピーと編集) して、最小および最大の Windows デバイスのフォーム ファクターや、その中間のあらゆるサイズに合わせて調整された機能、UI、および操作を実現する方法について説明しました。

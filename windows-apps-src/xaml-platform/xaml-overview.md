@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704046"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843942"
 ---
 # <a name="xaml-overview"></a>XAML の概要
 
@@ -70,7 +70,7 @@ Microsoft Visual Studio では、XAML テキスト エディターでも、も�
 |------|-------------|
 | [x:Key](x-key-attribute.md) | XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の各リソースにユーザー定義の一意のキーを設定します。 このキー トークンの文字列は、**StaticResource** マークアップ拡張の引数であり、後でこのキーを使って、アプリの XAML のどこかで使われた別の XAML の XAML リソースを取得することができます。 |
 | [x:Class](x-class-attribute.md) | XAML ページのコード ビハインドを提供するクラスのコード名前空間とコード クラス名を指定します。 これによって、アプリのビルド時にビルド アクションによって作成または結合されたクラスの名前が付けられます。 これらのビルド アクションは、XAML マークアップ コンパイラをサポートし、アプリがコンパイルされるときにマークアップとコード ビハインドを組み合わせます。 XAML ページのコード ビハインドをサポートするには、このようなクラスが必要です。 既定の Windows ランタイムのライセンス認証モデルの [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
-| [x:Name](x-name-attribute.md) | XAML で定義されたオブジェクト要素が処理された後のランタイム コードに存在するインスタンスのランタイム オブジェクト名を指定します。 XAML で **x:Name** を設定することは、コードで名前付き変数を宣言するようなものと考えることができます。 後でわかるように、これは、まさに Windows ランタイム アプリのコンポーネントとして XAML を読み込むときに起こることです。 <br/><div class="alert">**注:**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)は、フレームワークで同様のプロパティがすべての要素でサポートします。 そのため、その要素型で **FrameworkElement.Name** がサポートされていない場合はいつでも、要素 ID に **x:Name** を使用できます。 |
+| [x:Name](x-name-attribute.md) | XAML で定義されたオブジェクト要素が処理された後のランタイム コードに存在するインスタンスのランタイム オブジェクト名を指定します。 XAML で **x:Name** を設定することは、コードで名前付き変数を宣言するようなものと考えることができます。 後でわかるように、これは、まさに Windows ランタイム アプリのコンポーネントとして XAML を読み込むときに起こることです。 <br/><div class="alert">**注:**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)はフレームワークの同様のプロパティがすべての要素でサポートします。 そのため、その要素型で **FrameworkElement.Name** がサポートされていない場合はいつでも、要素 ID に **x:Name** を使用できます。 |
 | [x:Uid](x-uid-directive.md) | 一部のプロパティ値にローカライズされたリソースを使う必要がある要素を識別します。 **x:Uid** の使い方について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。 |
 | [XAML 固有のデータ型](xaml-intrinsic-data-types.md) | これらの型は、属性やリソースで必要なときに、単純な値型の値を指定できます。 この本質的な型は、各プログラミング言語に固有の定義の一部として一般的に定義される単純な値型に対応しています。 たとえば、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) のストーリーボードに設定された表示状態で使うブール値に対応する **true** を表すオブジェクトが必要になることがあります。 XAML でのその値の場合、**x:Boolean** 固有の型を次のようにオブジェクト要素として使います。  <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
@@ -252,6 +252,6 @@ XAML は、Visual Studio などの IDE や XAML デザイン サーフェイス�
 
 アプリを実際に実行したとき、XAML 解析エラーが設計時に検出されていないと、共通言語ランタイム (CLR) によって、[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) として報告されます。 実行時の **XamlParseException** に関する操作について詳しくは、「[C# または Visual Basic での Windows ランタイム アプリの例外処理](https://msdn.microsoft.com/library/windows/apps/dn532194)」をご覧ください。
 
-**注:**、C++ を使用するアプリ +/CX コードは特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)を取得しないでください。 ただし、例外のメッセージによって、エラーの原因が XAML 関連であることが明らかになります。このメッセージには、**XamlParseException** と同様に、XAML ファイル内の行番号などのコンテキスト情報も含まれています。
+**注:**、C++ を使用するアプリ/コードの CX 特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)を取得しないでください。 ただし、例外のメッセージによって、エラーの原因が XAML 関連であることが明らかになります。このメッセージには、**XamlParseException** と同様に、XAML ファイル内の行番号などのコンテキスト情報も含まれています。
 
 Windows ランタイム アプリのデバッグについて詳しくは、「[デバッグ セッションの開始](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)」をご覧ください。

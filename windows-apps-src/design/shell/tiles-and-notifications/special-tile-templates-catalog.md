@@ -8,16 +8,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698141"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850009"
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
  
 
-特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 各特別なタイル テンプレート具体的には用にビルドした windows 10、アイコン タイル テンプレートを除く従来特別なテンプレートが windows 10 に更新されました。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
+特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 各特別なタイル テンプレート具体的には用にビルドした windows 10、アイコン タイル テンプレートを除くクラシック特別なテンプレートが windows 10 に更新されました。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
 
 ## <a name="iconic-tile-template"></a>アイコン タイル テンプレート
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 173164106e068e3fa081c8d7ddf7838d5b3d18db
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697765"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848109"
 ---
 # <a name="networking-basics"></a>ネットワークの基本
 ネットワーク対応アプリで実行する必要がある事柄について説明します。
@@ -464,7 +464,7 @@ using Windows::Storage::Streams;
 ネットワーク経由で接続するときに、認証資格情報を提供する方法。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 で[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (このする必要がありますが設定されるオブジェクトは TLS ハンドシェイクが開始される前に) でクライアント証明書を提供できます。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (このする必要がありますが設定されるオブジェクトは TLS ハンドシェイクが開始される前に) のクライアント証明書を提供できます。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 

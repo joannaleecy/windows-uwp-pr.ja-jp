@@ -1,17 +1,17 @@
 ---
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
-description: 特定の日付範囲やその他のオプション フィルターを日単位のアプリの使用状況データを取得する、Microsoft Store 分析 API でこのメソッドを使います。
+description: 特定の日付範囲やその他のオプション フィルターを使って毎日のアプリの使用状況データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
 title: アプリの使用状況 (日単位) の取得
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: d3460b61e6a9a7c36be6fd87c4dc7fcc1ab811d1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703346"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847634"
 ---
 # <a name="get-daily-app-usage"></a>アプリの使用状況 (日単位) の取得
 
@@ -89,14 +89,14 @@ Authorization: Bearer <your access token>
 | packageVersion            | string  | 使用状況が発生したパッケージのバージョン。                          |
 | market                    | string  | 顧客にアプリが使用されている市場の ISO 3166 国コードです。 |
 | subscriptionName          | string  | Xbox Game Pass を通じて使用量があったかどうかを示します。                            |
-| dailySessionCount         | long    | その日のユーザー セッションの数。                                  |
-| engagementDurationMinutes | double  | ユーザーが積極的に個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了位置分。             |
+| dailySessionCount         | long    | その日のユーザー セッションの数です。                                  |
+| engagementDurationMinutes | double  | ユーザーがアクティブに個別のアプリを起動したときに始まり、時間の期間で測定されたアプリ (プロセスが開始) を使用して終了 (プロセスの終了) または後に一定の期間の終了場所分。             |
 | dailyActiveUsers          | long    | その日にアプリを使用しているユーザーの数。                           |
 | dailyActiveDevices        | long    | すべてのユーザーがアプリを操作するために使用 1 日あたりのデバイスの数。  |
 | dailyNewUsers             | long    | 最初にその日にアプリを使用したユーザーの数。    |
 | monthlyActiveUsers        | long    | アプリをその月を使っているユーザーの数。                         |
 | monthlyActiveDevices      | long    | 一定の期間後または時間、アプリを起動したときに始まり (プロセスが開始) の個別の期間のアプリを実行していると、終了 (プロセスの終了) を終了するデバイスの数。                                      |
-| monthlyNewUsers           | long    | その月の初めてのアプリを使用したユーザーの数。  |
+| monthlyNewUsers           | long    | 最初にその月のアプリを使用したユーザーの数。  |
 
 
 ### <a name="response-example"></a>応答の例

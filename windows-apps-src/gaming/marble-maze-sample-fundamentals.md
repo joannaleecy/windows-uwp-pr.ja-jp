@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 基礎
 ms.localizationpriority: medium
 ms.openlocfilehash: 94dd22a6f6b1ace5589104574a695b236c1ebd39
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704131"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7854989"
 ---
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze サンプルの基礎
 
@@ -34,7 +34,7 @@ ms.locfileid: "7704131"
 ## <a name="creating-the-visual-studio-project"></a>Visual Studio プロジェクトの作成
 
 
-ダウンロードし、サンプルを抽出した場合、 **MarbleMaze_VS2017.sln**フォルダーにファイル ( **C++** ) は、Visual Studio で開くことができ、コードがあります。
+ダウンロードしたサンプルを抽出して場合、 **MarbleMaze_VS2017.sln**フォルダーにファイル ( **C++** ) は、Visual Studio で開くことができ、コードがあります。
 
 Marble Maze の Visual Studio プロジェクトを作ったときには、既にあるプロジェクトを利用しました。 しかし、DirectX UWP ゲームで必要となる基本的な機能を持つプロジェクトがまだない場合は、Visual Studio **DirectX 11 アプリ (ユニバーサル Windows)** テンプレートに基づくプロジェクトを作ることをお勧めします。このテンプレートには、基本的な機能を備えた 3D アプリケーションが用意されているためです。 これを行うには、次の手順に従います。
 
@@ -42,7 +42,7 @@ Marble Maze の Visual Studio プロジェクトを作ったときには、既�
 
 2. **新しいプロジェクト**] ウィンドウの左側のサイドバーで選択**インストール済み > テンプレート > Visual C**します。
 
-3. 中央のリストでは、 **DirectX 11 アプリ (ユニバーサル Windows)** を選択します。 必要なコンポーネントをインストールする必要がありますしない場合、このオプションが表示されない、&mdash;その他のコンポーネントをインストールする方法についての情報の[追加または削除のワークロードとコンポーネントの Visual Studio 2017 の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を参照してください。
+3. 中央のリストでは、 **DirectX 11 アプリ (ユニバーサル Windows)** を選択します。 インストールされている必要なコンポーネントがない場合は、このオプションが表示されない、&mdash;その他のコンポーネントをインストールする方法についての情報の[追加または削除のワークロードとコンポーネントの Visual Studio 2017 の変更](https://docs.microsoft.com/visualstudio/install/modify-visual-studio)を参照してください。
 
 4. **名前**、格納するファイルの**場所**および**ソリューション名**では、プロジェクトを提供し、 **[ok]** をクリックします。
 
@@ -72,7 +72,7 @@ Visual Studio の上部の、緑色の再生ボタンの左のドロップダウ
 -   タッチ、A またはスタート画面を使用して、コント ローラーまたはマウスを高などのメニューを閉じるボタン スコア表。
 -   一時停止または再開ゲーム コント ローラーまたはキーボードの P キーで、[スタート] ボタンを使用します。
 -   ゲームを再開始するには、コントローラーの [戻る] ボタンやキーボードの Home キーを使います。
--   ハイ スコア表が表示されている場合は、すべてのスコアをクリアする、コント ローラーまたはキーボードの Home キーで、戻るボタンを使用します。
+-   ハイ スコア表が表示されている場合は、すべてのスコアをクリアする、コント ローラーまたはキーボードの Home キーを戻るボタンを使用します。
 
 ##  <a name="code-conventions"></a>コードの規則
 
@@ -111,7 +111,7 @@ Marble Maze では、予期しないエラーに対応する主な方法とし�
         );
     ```
 
--   予期しないエラーの**HRESULT**の使用を避けることをお勧めしますが、コードのフローを制御する例外処理の使用を回避するためにさらに重要ながします。 そのため、コードのフローを制御するために必要な場合は、**HRESULT** 戻り値を使う方が適切です。
+-   予期しないエラーの**HRESULT**の使用を避けることをお勧めしますが、コードのフローを制御する例外処理の使用を回避するためにさらに重要なは。 そのため、コードのフローを制御するために必要な場合は、**HRESULT** 戻り値を使う方が適切です。
 
 ###  <a name="sal-annotations"></a>SAL 注釈
 
@@ -119,7 +119,7 @@ Marble Maze では、予期しないエラーに対応する主な方法とし�
 
 Microsoft Source-code Annotation Language (SAL) を使うと、関数がパラメーターをどのように使うかを説明する注を付けることができます。 SAL 注釈は、戻り値についても説明します。 SAL 注釈を C/C++ コード分析ツールと共に使うと、C や C++ ソース コードの潜在的な不具合を検出できます。 ツールによって報告される一般的なコーディング エラーは、バッファー オーバーラン、初期化されていないメモリ、null ポインターの逆参照、メモリとリソースのリークなどです。
 
-[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)で宣言されている**basicloader::loadmesh**メソッドを検討してください。 このメソッドを使用して`_In_`*ファイル名*には、入力パラメーターを指定する (とそのためからのみ読み取られます)、 `_Out_` *筆者*と*indexBuffer*が出力パラメーターを指定する (とそのためのみに書き込まれます)`_Out_opt_` *vertexCount*と*indexCount*は省略可能なことを指定する出力パラメーター (とに書き込まれる可能性があります)。 *vertexCount* と *indexCount* は省略可能な出力パラメーターであるため、**nullptr** にすることができます。 C/C++ コード分析ツールは、このメソッドの呼び出しを調べて、渡されるパラメーターが条件を満たしていることを確認します。
+[BasicLoader.h](https://github.com/Microsoft/Windows-appsample-marble-maze/blob/e62d68a85499e208d591d2caefbd9df62af86809/C%2B%2B/Shared/BasicLoader.h)で宣言されている**basicloader::loadmesh**のメソッドを検討してください。 このメソッドを使用して`_In_`*ファイル名*には、入力パラメーターを指定する (とそのためからのみ読み取られます)、 `_Out_` *筆者*と*indexBuffer*は、出力パラメーターを指定する (とそのためだけに書き込まれます)`_Out_opt_` *vertexCount*と*indexCount*は省略可能なことを指定する出力パラメーター (およびに書き込まれる場合があります)。 *vertexCount* と *indexCount* は省略可能な出力パラメーターであるため、**nullptr** にすることができます。 C/C++ コード分析ツールは、このメソッドの呼び出しを調べて、渡されるパラメーターが条件を満たしていることを確認します。
 
 ```cpp
 void LoadMesh(

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720188"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852514"
 ---
 # <a name="mouse-interactions"></a>マウス操作
 
@@ -65,7 +65,7 @@ ms.locfileid: "7720188"
 <td align="left"><p>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
-<strong>注:</strong>選択コマンドやアプリ バー コマンドが適切な UI 動作ではない場合は、コンテキスト メニューを表示するを右クリックします。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
+<strong>注:</strong>の選択やアプリ バーのコマンドが適切な UI 動作ではない場合は、コンテキスト メニューを表示するを右クリックします。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
 </div>
 <div>
  

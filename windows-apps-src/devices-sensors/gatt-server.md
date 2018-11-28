@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a68e78bef540717d4f4c33d3132748fa727b4068
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7714088"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840015"
 ---
 # <a name="bluetooth-gatt-server"></a>Bluetooth GATT サーバー
 
@@ -68,7 +68,7 @@ Windows は、通常、クライアントの役割で動作します。 それ�
 
 > この時点では、ブロードキャストの注はサポートされていません。  ブロードキャスト GattCharacteristicProperty を指定すると、例外が発生します。
 
-### <a name="build-up-the-heirarchy-of-services-and-characteristics"></a>サービスと特性についての階層を作成します。
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>サービスと特性についての階層を作成します。
 作成して、ルートの主要なサービスの定義を提供する、GattServiceProvider を使用します。  各サービスでは、GUID では、独自のサービス プロバイダー オブジェクトである必要があります。 
 
 ```csharp

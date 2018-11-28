@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請の作成, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fcc98252efb1157bc539b68656c96f7afec7104a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691813"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851665"
 ---
 # <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
@@ -51,7 +51,7 @@ ms.locfileid: "7691813"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 申請を作成するアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なと[アドオンの作成](create-an-add-on.md)または[アドオンの詳細を取得する](get-all-add-ons.md)要求の応答データに含まれています。  |
+| inAppProductId | string | 必須。 申請を作成するアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成アドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -151,7 +151,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
-| 409  | アプリの現在の状態があるため、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能、アプリで使用します。 |   
+| 409  | アプリの現在の状態があるため、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

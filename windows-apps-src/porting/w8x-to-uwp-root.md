@@ -1,5 +1,5 @@
 ---
-description: ユニバーサル 8.1 アプリと \#8212;whether がある場合がターゲットとして Windows8.1、Windows Phone 8.1、または両方 & \#8212;then こと、ソース コードとスキルがスムーズに移植 windows 10 が生じることがわかります。
+description: ユニバーサル 8.1 アプリおよび \#8212;whether がある場合がターゲットとして Windows8.1、Windows Phone 8.1、または両方 & \#8212;then こと、ソース コードとスキルがスムーズに移植 windows 10 が生じることがわかります。
 title: Windows ランタイム 8.x から UWP への移行'
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693750"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852034"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>Windows ランタイム 8.x から UWP への移行
 
 
-ユニバーサル 8.1 アプリがある場合、Windows8.1、Windows Phone 8.1、またはその両方の対象かどうか、わかること、ソース コードとスキルがスムーズに移植 windows 10。 Windows 10 では、お客様がすべての種類のデバイスにインストールできる単一のアプリ パッケージはユニバーサル Windows プラットフォーム (UWP) アプリを作成できます。 Windows 10 の詳細については、UWP アプリ、およびアダプティブ コードとアダプティブ UI でこの移植ガイドでは、およびこの概念には、 [UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)が参照してください。
+ユニバーサル 8.1 アプリがある場合、Windows8.1、Windows Phone 8.1、またはその両方の対象かどうか、わかること、ソース コードとスキルがスムーズに移植 windows 10。 Windows 10、ユニバーサル Windows プラットフォーム (UWP) アプリでは、ユーザーがすべての種類のデバイスにインストールできる単一のアプリ パッケージを作成できます。 Windows 10 の詳細については、UWP アプリ、およびアダプティブ コードと、この移植ガイドで触れてアダプティブ UI の概念には、 [UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)が参照してください。
 
-移植, ながらことがわかります windows 10 の以前のプラットフォームでは、ほか、XAML マークアップ、UI フレームワーク、ツール、Api の大部分を共有することを確認して、すべて見慣れたします。 以前と同様に、XAML UI フレームワークとともに使用するプログラミング言語として、C++、C#、Visual Basic のどれかを選択できます。 現在のアプリの取り扱いの詳細を計画する最初のステップは、所有するアプリとプロジェクトの種類によって異なります。 これについては、次のセクションで説明します。
+、移植するときにことがわかります windows 10 の以前のプラットフォームでは、ほか、XAML マークアップ、UI フレームワーク、ツール、Api の大部分を共有することを確認して、すべて見慣れたします。 以前と同様に、XAML UI フレームワークとともに使用するプログラミング言語として、C++、C#、Visual Basic のどれかを選択できます。 現在のアプリの取り扱いの詳細を計画する最初のステップは、所有するアプリとプロジェクトの種類によって異なります。 これについては、次のセクションで説明します。
 
 ## <a name="if-you-have-a-universal-81-app"></a>ユニバーサル 8.1 アプリがある場合
 
