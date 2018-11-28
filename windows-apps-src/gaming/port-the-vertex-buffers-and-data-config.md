@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, 頂点バッファー, データ, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7843350"
+ms.locfileid: "7964742"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a><span data-ttu-id="ec8a6-104">頂点バッファーと頂点データの移植</span><span class="sxs-lookup"><span data-stu-id="ec8a6-104">Port the vertex buffers and data</span></span>
 

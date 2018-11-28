@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, カスタム タイムスタンプ, タイムスタンプ, 通知, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714268"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7965535"
 ---
 # <a name="custom-timestamps-on-toasts"></a><span data-ttu-id="45cf8-103">トーストでのカスタム タイムスタンプの表示</span><span class="sxs-lookup"><span data-stu-id="45cf8-103">Custom timestamps on toasts</span></span>
 

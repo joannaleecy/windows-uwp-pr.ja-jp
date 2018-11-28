@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, マルチサンプリング, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832852"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7969225"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span data-ttu-id="65cb4-104"><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング</span><span class="sxs-lookup"><span data-stu-id="65cb4-104"><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps</span></span>
 

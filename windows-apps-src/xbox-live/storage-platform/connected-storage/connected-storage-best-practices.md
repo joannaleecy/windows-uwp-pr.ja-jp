@@ -1,18 +1,16 @@
 ---
 title: 接続ストレージのベスト プラクティス
-author: aablackm
 description: 接続ストレージによってパフォーマンスとエクスペリエンスを最大限に高める方法に関する推奨事項
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: f8c72ca14ed4bda118994a765cb0624a0e3b190a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dbdb8f95e9afc44a3280d897e74f74d327f94b97
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558100"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7825897"
 ---
 # <a name="connected-storage-best-practices"></a><span data-ttu-id="7ffde-104">接続ストレージのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="7ffde-104">Connected Storage best practices</span></span>
 

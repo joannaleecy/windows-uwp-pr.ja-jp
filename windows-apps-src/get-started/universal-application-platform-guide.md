@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ユニバーサル
 ms.localizationpriority: medium
 ms.openlocfilehash: c174bb81deb84d3638a948555e045168c89f02a7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7717778"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7971348"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a><span data-ttu-id="1cd4c-104">ユニバーサル Windows プラットフォーム (UWP) アプリとは</span><span class="sxs-lookup"><span data-stu-id="1cd4c-104">What's a Universal Windows Platform (UWP) app?</span></span>
 

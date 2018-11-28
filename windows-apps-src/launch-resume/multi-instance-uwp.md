@@ -6,11 +6,11 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7710624"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7972057"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a><span data-ttu-id="b3320-104">マルチインスタンスのユニバーサル Windows アプリの作成</span><span class="sxs-lookup"><span data-stu-id="b3320-104">Create a multi-instance Universal Windows App</span></span>
 

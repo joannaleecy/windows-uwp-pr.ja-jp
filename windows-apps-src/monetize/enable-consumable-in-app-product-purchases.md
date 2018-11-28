@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5588558eff3e9c9b2954f0726995765a2862c43b
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7849370"
+ms.locfileid: "7964662"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a><span data-ttu-id="c30c8-103">コンシューマブルなアプリ内製品購入の有効化</span><span class="sxs-lookup"><span data-stu-id="c30c8-103">Enable consumable in-app product purchases</span></span>
 

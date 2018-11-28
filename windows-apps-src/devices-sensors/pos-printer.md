@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b1b01f366c5a094e538424c57091fb2589eae329
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704513"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7965485"
 ---
 # <a name="posprinter"></a><span data-ttu-id="b11fd-104">POS プリンター</span><span class="sxs-lookup"><span data-stu-id="b11fd-104">POSPrinter</span></span>
 
