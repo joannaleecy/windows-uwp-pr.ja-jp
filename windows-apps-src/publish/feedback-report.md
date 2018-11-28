@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d40e921f999381421a5a6ce422e019e7db58bbd
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837782"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7967151"
 ---
 # <a name="feedback-report"></a><span data-ttu-id="93fe4-103">フィードバック レポート</span><span class="sxs-lookup"><span data-stu-id="93fe4-103">Feedback report</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7854300"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7968199"
 ---
 # <a name="high-contrast-themes"></a><span data-ttu-id="fd61a-104">ハイ コントラスト テーマ</span><span class="sxs-lookup"><span data-stu-id="fd61a-104">High contrast themes</span></span>  
 

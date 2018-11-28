@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703902"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7993438"
 ---
 # <a name="about-house-ads"></a><span data-ttu-id="c99d3-103">自社広告について</span><span class="sxs-lookup"><span data-stu-id="c99d3-103">About house ads</span></span>
 

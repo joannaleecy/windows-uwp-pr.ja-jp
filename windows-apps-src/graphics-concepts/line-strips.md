@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 869f0ac2b255c0dee231828f6d9064a917668821
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692723"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7967754"
 ---
 # <a name="line-strips"></a><span data-ttu-id="640fe-106">ライン ストリップ</span><span class="sxs-lookup"><span data-stu-id="640fe-106">Line strips</span></span>
 
