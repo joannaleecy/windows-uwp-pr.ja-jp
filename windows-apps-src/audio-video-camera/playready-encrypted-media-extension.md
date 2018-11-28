@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701441"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840259"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
@@ -23,7 +23,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
 
-このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にするために、PlayReady Encrypted Media Extension (EME) を加えられた変更の一覧を示します。
+このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にする PlayReady Encrypted Media Extension (EME) に加えられた変更の一覧を示します。
 
 次の一覧では、新しい機能と windows 10 の PlayReady Encrypted Media Extension に加えられた変更について説明します。
 
@@ -34,7 +34,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 -   永続的でないライセンスの事前の取得を提供します。
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    複数のキー識別子 (Keyid) Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
+    複数のキー識別子 (Keyid)、Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
 
     > [!NOTE]
     > 下で windows 10 では、複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
@@ -266,7 +266,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
 
-このセクションでは、windows 10 用 PlayReady 対応の web アプリを作成するときに考慮プログラミングの考慮事項を示します。
+このセクションでは、windows 10 用 PlayReady が有効な web アプリを作成するときに考慮プログラミングの考慮事項を示します。
 
 アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
 

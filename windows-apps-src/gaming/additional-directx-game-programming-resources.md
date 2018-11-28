@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、プログラミング
 ms.localizationpriority: medium
 ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692963"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838299"
 ---
 # <a name="game-programming-resources"></a>ゲーム プログラミング リソース
 
@@ -45,7 +45,7 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 -   [DirectXTex テクスチャ処理ライブラリに関するページ](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio [ グラフィックス診断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) に関するページ
 -   [Win2D](https://github.com/Microsoft/Win2D) - GPU アクセラレーションを使った即時モードの 2D グラフィックス レンダリング用の、使いやすい Windows ランタイム API です。
--   [Microsoft Store 用の ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES コンテンツを実行 Windows で OpenGL ES API 呼び出しを DirectX 11 API 呼び出しを変換することによってします。
+-   [Microsoft Store 用の ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES API 呼び出しを DirectX 11 API 呼び出しを変換することによって Windows 実行 OpenGL ES コンテンツ。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 のゲーム開発セッションのビデオ
 

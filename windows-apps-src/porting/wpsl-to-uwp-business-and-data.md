@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703994"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7849150"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 
@@ -44,9 +44,9 @@ UWP アプリには、現在、大量のデータ アクセスを実行するシ
 
 ## <a name="launchers-and-choosers"></a>ランチャーとセレクター
 
-ランチャーとセレクター ( **Microsoft.Phone.Tasks**名前空間にあります)、WindowsPhone Silverlight アプリは、メールの作成、写真の選択、特定の種類の共有などの一般的な操作を実行するオペレーティング システムを操作できるの別のアプリとデータです。 [Windows Phone Silverlight は、windows 10 の名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)と同等の UWP の型を検索するトピックの「 **Microsoft.Phone.Tasks**を検索します。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
+ランチャーとセレクター ( **Microsoft.Phone.Tasks**名前空間にあります)、WindowsPhone Silverlight アプリは、メールの作成、写真を選択または特定の種類の共有などの一般的な操作を実行するオペレーティング システムを操作できるの別のアプリとデータです。 トピックの「 [windows 10 の名前空間とクラス マッピングに Windows Phone Silverlight](wpsl-to-uwp-namespace-and-class-mappings.md)と同等の UWP の型を検索する**Microsoft.Phone.Tasks**を検索します。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
 
-WindowsPhone Silverlight アプリ配置できます休止状態にまたは廃棄でも使用する場合、たとえば、写真選択タスク。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
+WindowsPhone Silverlight アプリ配置できます休止状態にまたは廃棄でも、たとえば、写真選択タスクを使用する場合。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
 
 ## <a name="monetization-trial-mode-and-in-app-purchases"></a>収益化 (試用モードとアプリ内購入)
 
@@ -82,7 +82,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
 
 ## <a name="storage-file-access"></a>ストレージ (ファイル アクセス)
 
-アプリの設定を分離ストレージ キー/値ペアとして保存 WindowsPhone Silverlight コードは簡単に移植します。 ここでは前に、と後で例では、まず WindowsPhone Silverlight バージョンです。
+分離ストレージのキー/値ペアとしてアプリの設定を格納する WindowsPhone Silverlight コードは簡単に移植します。 ここでは前に、と後で例では、まず WindowsPhone Silverlight バージョンです。
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -101,7 +101,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-**Windows.Storage**名前空間のサブセットが使用できるようにする、WindowsPhone Silverlight アプリの多くは、i/o **IsolatedStorageFile**をクラスがサポートされているなったファイルを実行します。 **IsolatedStorageFile**が使用される、まず WindowsPhone Silverlight バージョンのファイルの読み取りと手書きの前に、と後で例を次に示します。
+**Windows.Storage**名前空間のサブセットが使用できるようにする、WindowsPhone Silverlight アプリの多くは i/o **IsolatedStorageFile**をクラスがサポートされているなったファイルを実行します。 **IsolatedStorageFile**が使用される、まず、WindowsPhone Silverlight バージョンのファイルの読み取りと手書きの前に、と後で例を次に示します。
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -129,7 +129,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
     string myFavoriteAuthor = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-WindowsPhone Silverlight アプリでは、オプションの SD カードへの読み取り専用のアクセスを持ちます。 UWP アプリは、オプションの SD カードに読み取り専用のアクセスを行います。 詳しくは、「[SD カードへのアクセス](https://msdn.microsoft.com/library/windows/apps/mt188699)」をご覧ください。
+WindowsPhone Silverlight アプリでは、オプションの SD カードへの読み取り専用アクセスがあります。 UWP アプリは、オプションの SD カードに読み取り専用のアクセスを行います。 詳しくは、「[SD カードへのアクセス](https://msdn.microsoft.com/library/windows/apps/mt188699)」をご覧ください。
 
 UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスについて詳しくは、「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](https://msdn.microsoft.com/library/windows/apps/mt188703)」をご覧ください。
 

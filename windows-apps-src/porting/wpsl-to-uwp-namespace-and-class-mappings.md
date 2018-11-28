@@ -1,26 +1,26 @@
 ---
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) の相当する WindowsPhone Silverlight Api の包括的なマッピングを提供します。
-title: UWP の名前空間とクラス マッピングを WindowsPhone Silverlight
+title: UWP の名前空間とクラス マッピングに WindowsPhone Silverlight
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706958"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848452"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight UWP API へのマッピングから
 
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) の相当する WindowsPhone Silverlight Api の包括的なマッピングを提供します。 一般に、機能の 1 対 1 での対応関係はありませんが、いずれかのプラットフォームが、名前空間またはクラス内で他方のプラットフォームの対応する API よりも持っている機能が多い場合や少ない場合があります。
 
-UWP プロジェクトで作業して、WindowsPhone Silverlight プロジェクトからのソース コードを再使用している場合、このマッピング表ではやすくなります。 2 つのプラットフォーム間で、名前空間とクラス (UI コントロールを含む) の名前に違いがあります。 多くの場合、名前空間名を簡単に変更するだけでコードはコンパイルします。 名前空間名に加えて、クラス名または API 名も変更される場合があります。 マッピングに若干の追加作業が必要になり、まれにアプローチの変更が必要になることもあります。
+UWP プロジェクトで作業しているし、WindowsPhone Silverlight プロジェクトからのソース コードを再使用している場合、このマッピング表ではやすくなります。 2 つのプラットフォーム間で、名前空間とクラス (UI コントロールを含む) の名前に違いがあります。 多くの場合、名前空間名を簡単に変更するだけでコードはコンパイルします。 名前空間名に加えて、クラス名または API 名も変更される場合があります。 マッピングに若干の追加作業が必要になり、まれにアプローチの変更が必要になることもあります。
 
-**表の使用方法:** まず、使うクラスの名前を検索します。 マッピングで単純な名前空間名の変更よりも複雑になる場合は常に、クラスが示されています。 クラスが示されていない場合は、マッピングは名前空間の変更のみです。 したがって、クラスの名前空間名を探すことで、相当する UWP の名前空間名が見つかります。 目的のクラスはその名前空間に含まれています。 名前空間が示されていない場合は、その名前は変更されていません。
+**テーブルを使用する方法:** まず、使うクラスの名前を検索します。 マッピングで単純な名前空間名の変更よりも複雑になる場合は常に、クラスが示されています。 クラスが示されていない場合は、マッピングは名前空間の変更のみです。 したがって、クラスの名前空間名を探すことで、相当する UWP の名前空間名が見つかります。 目的のクラスはその名前空間に含まれています。 名前空間が示されていない場合は、その名前は変更されていません。
 
 **注:** と .NET Framework より多く、Windows Phone ストア アプリは windows 10 をサポートします。 たとえば、windows 10 にはいくつかの System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、および system.net.sockets があります。
 また、windows 10 アプリでのメリットは .NET ネイティブを MSIL をネイティブに実行可能なマシン コードに変換する事前コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。

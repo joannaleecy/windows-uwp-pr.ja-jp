@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694119"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835744"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Windows ランタイム 8.x から UWP への移植のトラブルシューティング
 
@@ -30,9 +30,9 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 
 ## <a name="targetplatformversion"></a>TargetPlatformVersion
 
-このセクションで説明を Visual Studio で windows 10 プロジェクトを開いたときにメッセージが表示される場合は、"Visual Studio 更新プログラムが必要です。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK <version> が必要です。"
+このセクションで説明を Visual Studio で windows 10 プロジェクトを開いたときに、メッセージが表示する場合は、"Visual Studio 更新プログラムが必要です。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK <version> が必要です。"
 
--   まず、インストールされている windows 10 の SDK のバージョン番号を決定します。 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** に移動し、*<versionfoldername>* をメモしてください。これは、4 つの部分 "メジャー.マイナー.ビルド.リビジョン" から成るバージョン文字列です。
+-   最初に、インストールされている windows 10 の SDK のバージョン番号を決定します。 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** に移動し、*<versionfoldername>* をメモしてください。これは、4 つの部分 "メジャー.マイナー.ビルド.リビジョン" から成るバージョン文字列です。
 -   編集用のプロジェクト ファイルを開き、`TargetPlatformVersion` 要素と `TargetPlatformMinVersion` 要素を探します。 これらの要素を次のように編集します。*<versionfoldername>* は、ディスク上で見つけた 4 つの部分から成るバージョン文字列に置き換えてください。
 
 ```xml
@@ -48,7 +48,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 |---------|--------|
 | Windows 10 プロジェクトを開いたとき、Visual Studio で、メッセージが表示される"Visual Studio 更新プログラムが必要です。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示されます。 | このトピックの「[TargetPlatformVersion](#targetplatformversion)」セクションをご覧ください。 |
 | InitializeComponent が xaml.cs ファイルで呼び出されると、System.InvalidCastException がスローされます。| これは、同じ xaml.cs ファイルを共有している xaml ファイルが複数あり (少なくとも 1 つは MRT 修飾されたファイル)、要素が持つ x:Name 属性が 2 つの xaml ファイル間で整合性がとれていない場合に発生することがあります。 両方の xaml ファイルで同じ要素に同じ名前を追加してみるか、どちらの名前も省略してください。 |
-| デバイスでは、実行時にアプリを終了、または Visual Studio から起動すると、エラーを表示"できません。 Windows ランタイム 8.x アプリ \ [… \]。 アクティブ化要求がエラー "Windows がターゲット アプリケーションと通信できませんでした" により失敗します。 これは通常、ターゲット アプリケーションのプロセスが中断されたことを示します。 \[…\]”. | この問題は、初期化時に独自のページ、またはバインド プロパティ (またはその他の型) で実行する命令型コードにあることが考えられます。 また、アプリの終了時に表示される XAML ファイルの解析でエラーが発生した可能性があります (Visual Studio から起動した場合は、これは起動ページになります)。 無効なリソース キーを検索するか、このトピックの「問題の検出」セクションのガイダンスを実行します。|
+| デバイスでは、実行時にアプリを終了、または Visual Studio から起動すると、エラーが表示"できません。 Windows ランタイム 8.x アプリ \ [… \]。 アクティブ化要求がエラー "Windows がターゲット アプリケーションと通信できませんでした" により失敗します。 これは通常、ターゲット アプリケーションのプロセスが中断されたことを示します。 \[…\]”. | この問題は、初期化時に独自のページ、またはバインド プロパティ (またはその他の型) で実行する命令型コードにあることが考えられます。 また、アプリの終了時に表示される XAML ファイルの解析でエラーが発生した可能性があります (Visual Studio から起動した場合は、これは起動ページになります)。 無効なリソース キーを検索するか、このトピックの「問題の検出」セクションのガイダンスを実行します。|
 | XAML のパーサーやコンパイラ、またはランタイム例外で、"*リソース "<resourcekey>" を解決できませんでした*" というエラーが発生します。 | リソース キーは、ユニバーサル Windows プラットフォーム (UWP) アプリには適用されません (たとえば、一部の Windows Phone リソースがこの場合に該当します)。 同等の正しいリソースを探し、マークアップを更新します。 発生する可能性が高い例としては、`PhoneAccentBrush` などのシステム キーが挙げられます。 |
 | C# コンパイラで、エラー "*型または名前空間の名前 '<name>' が見つかりませんでした \[...\]*"、*型または名前空間の名前 '<name>' は名前空間 \[...\] に存在しません*"、または "*型または名前空間の名前 '<name>' が現在のコンテキスト内に存在しません*" が発生します。 | これは、型が拡張 SDK に実装されていることを示していると考えられます (ただし、この場合、対処法が難しくなる可能性があります)。 [Windows API](https://msdn.microsoft.com/library/windows/apps/bg124285) の参照コンテンツを使って、API を実装している拡張 SDK を特定し、Visual Studio の **[追加]** にある **[参照]** コマンドを使って、その SDK への参照をプロジェクトに追加します。 アプリがユニバーサル デバイス ファミリと呼ばれる一連の API をターゲットとしている場合は、API を呼び出す前に、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時にテストを行い、拡張 SDK の有無を確認する必要があります (これはアダプティブ コードと呼ばれます)。 ユニバーサル API が存在する場合、拡張 SDK の API では常にこれが推奨されます。 詳しくは、「[拡張 SDK](w8x-to-uwp-porting-to-a-uwp-project.md)」をご覧ください。 |
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、メッシュ、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693612"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848826"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 
@@ -19,7 +19,7 @@ ms.locfileid: "7693612"
 
 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。 そのような多角形によるオブジェクトやサーフェスの構造を構成する頂点のリストをメッシュと呼びます。 ここでは、立方体オブジェクトの基本的なメッシュを作り、シェーダー パイプラインに渡してレンダリングと表示を行います。
 
-> **重要な**含まれているコードの例は、ここで (directx::xmfloat3:xmfloat4x4 など) の型と DirectXMath.h で宣言されているインライン メソッドに使用します。 このコードを切り取って貼り付ける場合は、プロジェクトに \#include &lt;DirectXMath.h&gt; を含めてください。
+> **重要な** (directx::xmfloat3:xmfloat4x4 など) の種類とインライン メソッド DirectXMath.h で宣言されている次に含まれているコード例を使用します。 このコードを切り取って貼り付ける場合は、プロジェクトに \#include &lt;DirectXMath.h&gt; を含めてください。
 
  
 
@@ -257,7 +257,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注:** 通常ためにを宣言する射影行列デバイス固有のリソースをセットアップするときに乗算の結果は、現在の 2 D ビューポート サイズ パラメーターに一致する必要があります (多くの場合、ピクセルの高さと幅に対応していますが、表示する)。 これらのパラメーターを変更する場合は、それに合わせて x 座標と y 座標の値をスケーリングする必要があります。
+> **注:** 通常ためにを宣言する射影行列デバイス固有のリソースをセットアップするときに乗算の結果が現在 2 D ビューポートのサイズのパラメーターと一致する必要があります (多くの場合、ピクセルの高さと幅に対応していますが、表示する)。 これらのパラメーターを変更する場合は、それに合わせて x 座標と y 座標の値をスケーリングする必要があります。
 
  
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712188"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848472"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "7712188"
 
 依存関係プロパティとは、特殊な種類のプロパティです。 具体的には、Windows ランタイムの一部である専用のプロパティ システムによってプロパティの値が追跡され影響を受けるプロパティです。
 
-依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義の使用**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
+依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義を使用する**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
 
 依存関係プロパティの目的は、他の入力 (その他のプロパティや、アプリの実行時にアプリ内で発生するイベントと状態) に基づいてプロパティの値を計算する方法を提供することです。 たとえば、他の入力には次のようなものがあります。
 
@@ -30,7 +30,7 @@ ms.locfileid: "7712188"
 - リソースやスタイルなどの多目的テンプレート パターン
 - オブジェクト ツリー内の他の要素との親子のリレーションシップから判断される値
 
-または、Windows ランタイム XAML を使ったアプリ UI と c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するため、プログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コードのします。 次のような機能があります。
+または XAML を使った Windows ランタイム アプリの UI とは、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するため、プログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コード。 次のような機能があります。
 
 - データ バインディング
 - スタイル
@@ -74,7 +74,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてのものではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
+> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてはありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
 ## <a name="dependency-property-value-precedence"></a>依存関係プロパティ値の優先順位
 
@@ -149,7 +149,7 @@ XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com
 XAML ではなく、コードを使ってバインドを確立することもできます。 「[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)」をご覧ください。
 
 > [!NOTE]
-> このようなバインドは、依存関係プロパティの値の優先順位の目的上のローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。 {x:Bind} バインドは生成されたコードを使用して実装され、プロパティにローカル値を設定します。 {x:Bind} を使用しているプロパティにローカル値が設定されると、次にバインディングが評価されるときに、その値は置き換えられます。たとえば、ソース オブジェクトのプロパティが変更されるときなどです。
+> このようなバインドは、依存関係プロパティ値の優先順位の目的上のローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。 {x:Bind} バインドは生成されたコードを使用して実装され、プロパティにローカル値を設定します。 {x:Bind} を使用しているプロパティにローカル値が設定されると、次にバインディングが評価されるときに、その値は置き換えられます。たとえば、ソース オブジェクトのプロパティが変更されるときなどです。
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>バインディング ソース、バインディング ターゲット、FrameworkElement の役割
 
@@ -162,7 +162,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 カスタム バインディング ソースの場合には、プロパティは依存関係プロパティである必要があるか、またはオブジェクトが [ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートする必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 > [!NOTE]
-> 型は、ここではサポートを一覧表示されている Microsoft .NET データ ソースです。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+> 型は、ここではサポートを一覧表示されている Microsoft .NET データ ソース。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 ### <a name="styles-and-templates"></a>スタイルとテンプレート
 

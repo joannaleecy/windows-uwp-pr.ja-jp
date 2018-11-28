@@ -6,15 +6,15 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701882"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850506"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 9 月
 
-Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオが公開されたものでの 9 月。
+Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオには 9 月で利用可能ななりました。
 
 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
@@ -22,7 +22,7 @@ Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/f
 
 ### <a name="windows-machine-learning"></a>Windows Machine Learning
 
-[ドキュメントの「Windows Machine Learning](https://docs.microsoft.com/windows/ai/)自身のサイト上にあり最新の Windows Insider SDK の更新できるようになりました。 デスクトップあり、C++ および c# に役立つ UWP チュートリアルは開始 WinML アプリケーションを追加します。
+[ドキュメントの「Windows Machine Learning](https://docs.microsoft.com/windows/ai/)自身のサイト上にあり最新の Windows Insider SDK の更新できるようになりました。 デスクトップがあり、WinML をアプリケーションに追加する C++ および c# に役立つ UWP チュートリアルを開始します。
 
 最新の Windows Insider SDK の[「Windows.AI.MachineLearning API リファレンス](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)が更新されました。
 
@@ -38,11 +38,11 @@ Windows UI のライブラリについて詳しくは、次を参照してくだ
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
-### <a name="how-blur-effects-work"></a>効果の作業をどのようにぼかし
+### <a name="how-blur-effects-work"></a>効果の作業をどのように blur
 
-一連の中アプリとゲームの設計に写真をビジョンからのぼかしについての記事、作成者、esteemed マイク Jacobs のいずれかが開始します。 この一般的な視覚効果に関する詳細情報に興味がある場合をチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
+一連の中アプリとゲームの設計に写真をビジョンからのぼかしについての記事、作成者、esteemed マイク Jacobs のいずれかが開始します。 この一般的な視覚効果に関する詳細情報に興味があるならをチェック アウト[ビジョンと写真の最初の記事](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)と[、2 つ目のアンチエイリアシング グラフィックス内で](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)。
 
-![ぼかしの動作](images/blur-example.jpg)
+![ぼかしの動作を確認](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>ガイダンスの貢献に関するページ
 
@@ -64,4 +64,4 @@ Chris Heilmann
 
 Larry Osterman:
 
-* [COM のどの部分は、Windows ランタイムではかどうか。](https://youtu.be/_nsMjHqRn1w)
+* [Windows ランタイムは、COM のどの部分かどうか。](https://youtu.be/_nsMjHqRn1w)

@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Windows 10, UWP, ジオコーディング, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706899"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842955"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>ジオコーディングと逆ジオコーディングの実行
 
 このガイドでは、住所を地理的な場所 (ジオコーディング) に変換[**Windows.Services.Maps で[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)クラスのメソッドを呼び出すことによって (逆ジオコーディング) の住所を地理的な位置を変換する方法**](https://msdn.microsoft.com/library/windows/apps/dn636979)名前空間です。
 
 > [!TIP]
-> アプリでの地図の使用について詳しくは、github の[Windows ユニバーサル サンプルのリポジトリ](hhttps://github.com/Microsoft/Windows-universal-samples)から[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)サンプルをダウンロードします。
+> アプリでの地図の使用について詳しくには、github の[Windows ユニバーサル サンプルのリポジトリ](hhttps://github.com/Microsoft/Windows-universal-samples)から[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)サンプルをダウンロードします。
 
-ジオコーディングや逆ジオコーディングに関連するクラスは、次のように編成されています。
+ジオコーディングや逆ジオコーディングに関連するクラスは、次のように整理されます。
 
 -   [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)クラスには、ジオコーディング ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) の処理し、逆ジオコーディング ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) するメソッドが含まれています。
 -   このメソッドは、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)インスタンスを返します。
@@ -32,7 +32,7 @@ ms.locfileid: "7706899"
 
 ## <a name="get-a-location-geocode"></a>位置情報の取得 (ジオコーディング)
 
-このセクションでは、住所や地名を地理的な場所 (ジオコーディング) に変換する方法を示しています。
+このセクションでは、住所や地名を地理的な位置 (ジオコーディング) に変換する方法を示します。
 
 1.  場所の名前と住所の番地[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)クラスの[**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)メソッドのオーバー ロードのいずれかを呼び出します。
 2.  [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)メソッドは、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)オブジェクトを返します。

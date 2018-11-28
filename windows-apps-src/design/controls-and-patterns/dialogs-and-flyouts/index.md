@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d5635a41bec716487c08dd57e6ba2ac360649ad
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693113"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848640"
 ---
 # <a name="dialogs-and-flyouts"></a>ダイアログとポップアップ
 
@@ -92,7 +92,7 @@ ms.locfileid: "7693113"
 
 ## <a name="how-to-create-a-dialog"></a>ダイアログを作成する方法
 
-[ダイアログ ボックスの記事](dialogs.md)を参照してください。 
+[ダイアログ ボックスの記事](dialogs.md)をご覧ください。 
 
 ## <a name="how-to-create-a-flyout"></a>ポップアップを作成する方法
 

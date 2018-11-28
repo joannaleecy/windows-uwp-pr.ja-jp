@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 追跡可能なタイル, ライブ タイル, 追跡可能なタイル通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718849"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850217"
 ---
 # <a name="chaseable-tile-notifications"></a>追跡可能なタイル通知
 
@@ -111,7 +111,7 @@ LaunchActivatedEventArgs オブジェクトには、追跡可能な通知を有�
 
 [TileActivatedInfo オブジェクト](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)には [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) と呼ばれるプロパティが含まれています。このプロパティは、過去 15 分以内にタイルに表示されていた通知の一覧を保持しています。 一覧の最初の項目はタイルの現在の通知を表しており、それ以降の項目は現在の通知よりも前に表示されていた通知を表しています。 タイルがクリアされた場合、この一覧は空になります。
 
-各 ShownTileNotificationhas、Argumentsproperty します。 Argumentsproperty は、タイル通知ペイロードから argumentsstring で初期化されたか、ペイロードには、argumentsstring が含まれていない場合は null になります。
+各 ShownTileNotificationhas、Argumentsproperty します。 Argumentsproperty は、タイル通知ペイロードから argumentsstring に初期化されたか、ペイロードには、argumentsstring が含まれていない場合は null になります。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)

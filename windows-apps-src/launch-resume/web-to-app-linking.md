@@ -7,19 +7,19 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699330"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7847914"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。
 
-Web サイト用のアプリ、アプリと web サイトに関連付けるため、ブラウザーが開くのではなく、アプリが起動して web サイトへのリンクを開いたとき。 アプリがインストールされていない場合、web サイトは通常どおり、ブラウザーで開きます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。 ユーザーはすべて、登録されている web アプリへのリンクの設定に移動して確認することが > アプリ > web サイト向けアプリ。
+Web サイト用のアプリ、アプリと web サイトに関連付けるため、ブラウザーが開くのではなく、アプリが起動して web サイトへのリンクを開いたときです。 アプリがインストールされていない場合、web サイトは通常どおり、ブラウザーで開きます。 検証済みのコンテンツ所有者だけがリンクに登録できるため、ユーザーはこのエクスペリエンスを信頼することができます。 ユーザーはすべて、登録されている web アプリへのリンクの設定に移動して確認することが > アプリ > web サイト用のアプリです。
 
 Web とアプリのリンクを有効にする必要があります。
 - アプリが処理する URI をマニフェスト ファイル内に指定します。
-- アプリと web サイト間の関係を定義する JSON ファイルです。 ホストのルート、同じアプリとしてアプリのパッケージ ファミリ名とマニフェストの宣言を実行します。
+- アプリと web サイトの間の関連付けを定義する JSON ファイルです。 アプリと同じホストのルートに、アプリのパッケージ ファミリ名には、マニフェストの宣言をします。
 - アプリでアクティブ化を処理します。
 
 > [!Note]
@@ -166,7 +166,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 場合は、ツールは何も返さない、そのファイルをアップロードするときの検証が動作します。 エラー コードがある場合は機能しません。
 
-ローカルの検証の一部としてアプリのサイドロードの照合のパスを強制する次のレジストリ キーを有効にすることができます。
+ローカルの検証の一部としてサイドロード アプリの対応付けのパスを強制する次のレジストリ キーを有効にすることができます。
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -198,4 +198,4 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 [Web とアプリのサンプル プロジェクト](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol の登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 [URI のアクティブ化を処理する](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[関連付けを起動するサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使い方を示しています。
+[関連付けを起動するサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API を使用する方法を示します。

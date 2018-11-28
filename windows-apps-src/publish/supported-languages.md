@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702117"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7849409"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 
 
 100 個以上の言語で Microsoft ストアにアプリを提出することができます。
 
-アプリでの言語の構成について詳しくは、[理解ユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
+アプリでの言語の構成について詳しくは、[理解するユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
 
 ## <a name="supported-languages"></a>サポートされている言語
 
 
-これらは、Microsoft ストアでサポートされている言語です。 アプリは、少なくとも 1 つの言語をサポートする必要があります。 
+これらは、Microsoft ストアでサポートされている言語です。 アプリは、これらの言語の 1 つ以上をサポートする必要があります。 
 
-ここでは含まれていません言語コードは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、ユーザーには配布されないと、認定の遅延またはエラーが発生する可能性があります。
+ここでは含まれていません言語コードでは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、顧客には配布されないと、認定で遅延やエラーが発生する可能性があります。
 
 | 言語名         | サポートされる言語コード                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

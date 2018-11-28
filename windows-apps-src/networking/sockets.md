@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703116"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847789"
 ---
 # <a name="sockets"></a>ソケット
 ソケットは、下位レベルのデータ転送テクノロジであり、多くのネットワーク プロトコルがこの上に実装されています。 UWP は、接続が長期間維持されるか、確立された接続が必要あるかどうかに関係なく、クライアント/サーバー アプリケーションまたは ピア ツー ピア アプリケーションの TCP および UDP ソケット クラスを提供します。
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 手法では、その出力ストリームで、windows 10 の時点で、出力ストリームに対するすべての操作が完了した後にのみを返すことが保証[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)を呼び出します。
+次の例は、C# の場合だけでなくあらゆる UWP 言語に当てはまります。 送信をまとめてバッチ処理する [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) と [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) での動作に依存しています。 手法では、その出力ストリームで、windows 10 の時点で、出力ストリームに対するすべての操作が完了した後のみを返すことが保証[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)を呼び出します。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
