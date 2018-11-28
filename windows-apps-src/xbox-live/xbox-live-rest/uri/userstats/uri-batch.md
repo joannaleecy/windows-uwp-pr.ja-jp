@@ -2,42 +2,40 @@
 title: /batch
 assetID: 07c51e75-cdbb-3aae-fc02-8a156a0babd4
 permalink: en-us/docs/xboxlive/rest/uri-batch.html
-author: KevinAsgari
 description: " /batch"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e816a6f9ebb0918cd779bb16a7d439041a2d45b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8e8ea66b8d59ad7bd415626f218e0b7f49093f00
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573035"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855056"
 ---
-# <a name="batch"></a><span data-ttu-id="a5723-104">/batch</span><span class="sxs-lookup"><span data-stu-id="a5723-104">/batch</span></span>
-<span data-ttu-id="a5723-105">複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="a5723-105">Accesses complex batch requests for multiple player statistics across multiple titles.</span></span> <span data-ttu-id="a5723-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a5723-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
+# <a name="batch"></a><span data-ttu-id="e5c2b-104">/batch</span><span class="sxs-lookup"><span data-stu-id="e5c2b-104">/batch</span></span>
+<span data-ttu-id="e5c2b-105">複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e5c2b-105">Accesses complex batch requests for multiple player statistics across multiple titles.</span></span> <span data-ttu-id="e5c2b-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="e5c2b-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="a5723-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a5723-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="e5c2b-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="e5c2b-107">Valid methods</span></span>
 
-[<span data-ttu-id="a5723-108">POST</span><span class="sxs-lookup"><span data-stu-id="a5723-108">POST</span></span>](uri-batchpost.md)
+[<span data-ttu-id="e5c2b-108">POST</span><span class="sxs-lookup"><span data-stu-id="e5c2b-108">POST</span></span>](uri-batchpost.md)
 
-<span data-ttu-id="a5723-109">&nbsp;&nbsp;POST メソッドは、複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。</span><span class="sxs-lookup"><span data-stu-id="a5723-109">&nbsp;&nbsp;POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles.</span></span>
+<span data-ttu-id="e5c2b-109">&nbsp;&nbsp;POST メソッドは複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。</span><span class="sxs-lookup"><span data-stu-id="e5c2b-109">&nbsp;&nbsp;POST method that functions as a GET method for complex batch requests for multiple player statistics across multiple titles.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="a5723-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="a5723-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e5c2b-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="e5c2b-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="a5723-111">Parent</span><span class="sxs-lookup"><span data-stu-id="a5723-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="e5c2b-111">Parent</span><span class="sxs-lookup"><span data-stu-id="e5c2b-111">Parent</span></span> 
 
-[<span data-ttu-id="a5723-112">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="a5723-112">User Statistics URIs</span></span>](atoc-reference-userstats.md)
+[<span data-ttu-id="e5c2b-112">ユーザー統計 URI</span><span class="sxs-lookup"><span data-stu-id="e5c2b-112">User Statistics URIs</span></span>](atoc-reference-userstats.md)
 
    

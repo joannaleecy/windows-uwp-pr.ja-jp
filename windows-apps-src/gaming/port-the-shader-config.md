@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL
 ms.localizationpriority: medium
 ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696823"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854610"
 ---
 # <a name="port-the-shader-objects"></a><span data-ttu-id="e2fab-104">シェーダー オブジェクトの移植</span><span class="sxs-lookup"><span data-stu-id="e2fab-104">Port the shader objects</span></span>
 

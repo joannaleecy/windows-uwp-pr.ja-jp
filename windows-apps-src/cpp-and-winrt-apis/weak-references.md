@@ -7,11 +7,11 @@ keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7710923"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852649"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a><span data-ttu-id="53b10-104">強度への参照では、C++/WinRT</span><span class="sxs-lookup"><span data-stu-id="53b10-104">Strong and weak references in C++/WinRT</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703842"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839367"
 ---
 # <a name="use-the-inclinometer"></a><span data-ttu-id="24af0-104">傾斜計の使用</span><span class="sxs-lookup"><span data-stu-id="24af0-104">Use the inclinometer</span></span>
 
