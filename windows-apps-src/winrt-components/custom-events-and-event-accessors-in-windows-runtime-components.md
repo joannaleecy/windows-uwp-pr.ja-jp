@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b8c4777e1c34bca36200bf6e8a96c35d6a0b1079
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701530"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836546"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
 
@@ -31,7 +31,7 @@ Visual Basic と C# コンパイラはこのプロセスを簡略化します。
 
 NumberChanged イベントの次のコードは、UWP イベントの基本パターンを示しています。 この例では、イベント引数オブジェクトのコンストラクターである NumberChangedEventArgs は、変更された数値を表す単一の整数パラメーターを受け取ります。
 
-> **注:** これは Windows ランタイム コンポーネントで宣言する通常のイベントのコンパイラが使う同じパターンです。
+> **注:** これは、Windows ランタイム コンポーネントで宣言する通常のイベントのコンパイラが使う同じパターンです。
 
  
 > [!div class="tabbedCodeSnippets"]

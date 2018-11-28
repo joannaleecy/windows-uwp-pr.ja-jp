@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 05cf78d7dec260b990d2ce71662e3db6eb07d07f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703935"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835507"
 ---
 # <a name="getting-started-common-controls"></a>はじめに: コモン コントロール
 
@@ -22,7 +22,7 @@ ms.locfileid: "7703935"
 
 UWP コントロールが優れている点は、実行されているデバイスの種類を検出して、それに応じて外観と機能を変更できることです。 たとえば、プロジェクトが [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) コントロールを使用している場合、たとえば、電話と比較して、デスクトップ コンピューターで異なる外観と動作に自動的に最適化します。 何もする必要はありません。コントロールが実行時に自動的に調整します。
 
-| iOS のコントロール (クラス/プロトコル) | UWP コントロール |
+| iOS のコントロール (クラス/プロトコル) | 同等の UWP コントロール |
 |------------------------------|--------------------------------------|
 | アクティビティ インジケーター (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 「[クイック スタート: プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)」もご覧ください。 |
 | 広告バナー ビュー (**ADBannerView**) と広告バナー ビュー デリゲート (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 「[アプリでの広告の表示](../monetize/display-ads-in-your-app.md)」もご覧ください。 |
@@ -51,7 +51,7 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 その他のコントロールについては、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-**注:**、JavaScript と HTML を使った UWP アプリ用のコントロールの一覧については、[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)を参照してください。
+**注:** JavaScript と HTML を使った UWP アプリ用のコントロールの一覧、[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)を参照してください。
 
 ### <a name="next-step"></a>次のステップ
 

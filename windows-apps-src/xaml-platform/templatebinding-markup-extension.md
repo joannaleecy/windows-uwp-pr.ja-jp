@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ade10b4d5e2653eb214d93c2c9166e6a3e3defc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702330"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841129"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} マークアップ拡張
 
@@ -59,13 +59,13 @@ XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/b
 > [!NOTE]
 > Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk))、ControlTemplate で X:bind を使用する必要またはそれ以降。 ターゲット バージョンについて詳しくは、「[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」をご覧ください。
 
-Windows 10、バージョン 1809、以降では**X:bind**マークアップ拡張を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)で**TemplateBinding**を使用する任意の場所。 
+Windows 10、バージョン 1809、以降では、 **X:bind**マークアップ拡張機能を使用することができます[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)で**TemplateBinding**を使用する任意の場所です。 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)プロパティは、(オプションではなく) が必要で[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) **X:bind**を使用する場合。
+(オプションではなく) が必要に[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)プロパティ[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391) **X:bind**を使用する場合にします。
 
-**X:bind**のサポートには、 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向バインディングとして[関数バインディング](../data-binding/function-bindings.md)の両方を使用できます。
+**X:bind**サポートにより、 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)でも、双方向バインディングとして両方の[関数のバインディング](../data-binding/function-bindings.md)を使用できます。
 
-この例では、 **TextBlock.Text**プロパティは、 **Button.Content.ToString**に評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親に TemplateBinding と同じ結果を実現します。
+この例では、 **TextBlock.Text**プロパティは、 **Button.Content.ToString**に評価されます。 ControlTemplate で TargetType では、データ ソースとして機能し、親の TemplateBinding と同じ結果を実現します。
 
 ```xaml
 <ControlTemplate TargetType="Button">

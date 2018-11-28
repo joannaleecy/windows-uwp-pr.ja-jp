@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699214"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837772"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
@@ -28,7 +28,7 @@ ms.locfileid: "7699214"
 
 追加スプラッシュ画面の外観は、次の推奨事項に従って、既定のスプラッシュ画面に厳密に似せるようにしてください。
 
--   この追加スプラッシュ画面ページでは、アプリ マニフェスト内でスプラッシュ画面に指定したイメージ (アプリのスプラッシュ画面のイメージ) と一致する 620 x 300 ピクセルのイメージを使います。 Microsoft Visual の Studio2015 では、スプラッシュ画面の設定は、アプリ マニフェスト (Package.appxmanifest ファイル) の [**ビジュアル資産**] タブの [**スプラッシュ画面**] セクションで保存されます。
+-   この追加スプラッシュ画面ページでは、アプリ マニフェスト内でスプラッシュ画面に指定したイメージ (アプリのスプラッシュ画面のイメージ) と一致する 620 x 300 ピクセルのイメージを使います。 Microsoft Visual の Studio2015 では、スプラッシュ画面の設定は、アプリ マニフェスト (Package.appxmanifest ファイル) で、[**ビジュアル資産**] タブの [**スプラッシュ画面**] セクションで保存されます。
 -   追加スプラッシュ画面では、アプリ マニフェスト内でスプラッシュ画面に指定した背景色 (アプリのスプラッシュ画面の背景) と一致する背景色を使います。
 -   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って、アプリのスプラッシュ画面画像の座標が、既定のスプラッシュ画面と同じになるようにします。
 -   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って追加スプラッシュ画面上の項目を配置し直すことで、ウィンドウ サイズ変更イベント (画面が回転されたり、画面上で次の別のアプリに移動したりするなど) に応答するようにする必要があります。
@@ -58,7 +58,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 -   [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素を [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) に追加します。 既定のスプラッシュ画面用に選んだ同じ 600 × 320 ピクセルの画像を追加スプラッシュ画面に使います。
 -   (省略可能) アプリが読み込み中であることをユーザーに示すにはプログレス コントロールを追加します。 このトピックでは、確定または不定の [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529) ではなく、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加します。
 
-次の例は、これらの追加や変更を持つ[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)を示しています。
+次の例では、これらの追加や変更を持つ[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)を示します。
 
 ```xaml
     <Grid Background="#464646">
@@ -213,13 +213,13 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     ```
 
     > [!NOTE]
-    > 取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、有効な[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクトが含まれています。
+    > 取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、[**スプラッシュ画面**](https://msdn.microsoft.com/library/windows/apps/br224763)の有効なオブジェクトが含まれています。
 
      
 
 8.  **(省略可能) クラス メソッドを追加して保存済みのセッション状態を復元する**
 
-    手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」で [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドに追加したコードにより、アプリでは起動時に追加スプラッシュ画面が表示されます。 追加スプラッシュ画面クラスにアプリの起動に関連するすべてのメソッドを統合するには、ExtendedSplash.xaml.cs ファイルに、アプリの状態を復元する方法を追加することを検討する可能性があります。
+    手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」で [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドに追加したコードにより、アプリでは起動時に追加スプラッシュ画面が表示されます。 追加スプラッシュ画面クラスにアプリの起動に関連するすべてのメソッドを統合するには、ExtendedSplash.xaml.cs ファイルに、アプリの状態を復元するメソッドを追加することを検討する可能性があります。
 
     ```cs
     void RestoreState(bool loadState)
@@ -264,7 +264,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
 
-この例に含まれる、`DismissSplash`ボタンをアプリのリソースを読み込むことがあるないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
+この例に含まれる、`DismissSplash`ボタンのアプリのリソースを読み込むことがあるないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
 
 ```xml
 <Page

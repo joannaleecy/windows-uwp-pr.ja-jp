@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705295"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835769"
 ---
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
@@ -264,7 +264,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ## <a name="remarks"></a>解説
 
 > [!NOTE]
-> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを特定し、その情報に基づいて新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうかを決定する[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。
+> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを判断し、新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうか、その情報に基づいて決定[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。
 
 ## <a name="important-apis"></a>重要な API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)

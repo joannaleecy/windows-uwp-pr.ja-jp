@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691823"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853264"
 ---
 # <a name="get-all-apps"></a>すべてのアプリの入手
 
 
-パートナー センター アカウントに登録されているすべてのアプリに関するデータを取得、Microsoft Store 申請 API でこのメソッドを使います。
+パートナー センター アカウントに登録されているすべてのアプリのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697495"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7841618"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -124,7 +124,7 @@ REST API を使用して、ユーザーの代わりにサブスクリプショ�
 次のシナリオは、サブスクリプション アドオンで現在サポートされていません。
 
 * 現時点では、ストアを通じたユーザーへのサブスクリプションの直接販売はサポートされていません。 サブスクリプションはデジタル製品のアプリ内購入でのみ利用可能です。
-* ユーザーが Microsoft アカウントの [http://account.microsoft.com/services](http://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 切り替える別のサブスクリプション期間中に、顧客が現在サブスクリプションを取り消すし、アプリから別のサブスクリプション期間のサブスクリプションを購入する必要があります。
+* ユーザーが Microsoft アカウントの [http://account.microsoft.com/services](http://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 別のサブスクリプション期間に切り替えると、ユーザーは、現在のサブスクリプションをキャンセルをアプリから別のサブスクリプション期間のサブスクリプションを購入し、必要があります。
 * サブスクリプション アドオンでは現在、サブスクリプション レベルの切り替えはサポートされていません (たとえば、ユーザーをベーシック サブスクリプションから機能の多いプレミアム サブスクリプションに切り替えるなど)。
 * サブスクリプション アドオンでは現在、[セール](../publish/put-apps-and-add-ons-on-sale.md)と[プロモーション コード](../publish/generate-promotional-codes.md)はサポートされていません。
 

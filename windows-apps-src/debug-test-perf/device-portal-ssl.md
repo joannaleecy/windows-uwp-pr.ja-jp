@@ -7,29 +7,29 @@ ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700410"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7843204"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal をプロビジョニングする
-Windows 10 の Creators Update では、Windows Device Portal には、デバイスの管理者を HTTPS 通信で使われるカスタム証明書をインストールするための方法が追加されました。 
+Windows 10 の Creators Update では、Windows Device Portal には、デバイスの管理者 HTTPS 通信で使われるカスタム証明書をインストールするための方法が追加されました。 
 
-これを行うには、独自の PC で中、か所で既存の証明書のインフラストラクチャを保有している企業のこの機能は、ほとんどの場合。  
+自分の PC でこれを行うことができます中の場所で既存の証明書のインフラストラクチャを保有している企業のこの機能は、ほとんどの場合。  
 
 たとえば、企業には、HTTPS 経由で提供されたイントラネット web サイト用の証明書の署名に使われる証明書機関 (CA) があります。 この機能は、インフラストラクチャで一緒にします。 
 
 ## <a name="overview"></a>概要
-既定では、Device Portal は自己署名されたルート CA が生成され、使用して、待機しているすべてのエンドポイントの SSL 証明書に署名します。 ここでは`localhost`、 `127.0.0.1`、および`::1`(IPv6 localhost)。
+既定では、Device Portal は自己署名されたルート CA が生成され、待機しているすべてのエンドポイントの SSL 証明書の署名に使用しています。 ここでは`localhost`、 `127.0.0.1`、および`::1`(IPv6 localhost)。
 
-デバイスのホスト名も含まれています (たとえば、 `https://LivingRoomPC`) と、デバイスに割り当てられている各リンク ローカル IP アドレス (最大で 2 つ [IPv4] IPv6 ネットワーク アダプターごと)。 Device Portal でのネットワーク ツールを見ているによって、デバイスのリンク ローカル IP アドレスを確認できます。 作業を始めますが`10.`または`192.`ipv4、または`fe80:`IPv6 用です。 
+デバイスのホスト名も含まれています (たとえば、 `https://LivingRoomPC`) と、デバイスに割り当てられている各リンク ローカル IP アドレス (最大で 2 つ [IPv4、IPv6] ネットワーク アダプターごと)。 Device Portal のネットワー キング ツールを見ているによって、デバイスのリンク ローカル IP アドレスを確認できます。 作業を始めますが`10.`または`192.`ipv4、または`fe80:`IPv6 用です。 
 
-既定の設定で証明書の警告が表示されるブラウザーで信頼されていないルート CA があるためです。 具体的には、Device Portal によって提供される SSL 証明書は、ルートのブラウザーまたは PC が信頼できない CA によって署名されています。 これは、新しい信頼されたルート CA を作成して修正できます。
+既定の設定、証明書の警告が信頼されていないルート CA があるため、ブラウザーで表示されます。 具体的には、Device Portal によって提供される SSL 証明書は、ルートのブラウザーまたは PC が信頼できない CA によって署名されています。 これは、新しい信頼されたルート CA を作成して修正されることができます。
 
 ## <a name="create-a-root-ca"></a>ルート CA を作成します。
 
-これにより、会社 (またはホーム) には、セットアップ、証明書のインフラストラクチャを持っていない場合にのみ実行され、1 回だけ実行する必要があります。 次の PowerShell スクリプトは、ルート CA _WdpTestCA.cer_と呼ばれるを作成します。 このファイルをローカル コンピューターの信頼されたルート証明機関をインストールすると、このルート CA によって署名されている SSL 証明書を信頼するデバイスが発生します。 できます (および必要があります) をインストールする各 PC に Windows Device Portal に接続するのには、この .cer ファイル。  
+これは、会社 (またはホーム) は、セットアップ、証明書のインフラストラクチャを持っていない場合にのみ行う必要があり、1 回だけ実行する必要があります。 次の PowerShell スクリプトは、ルート CA _WdpTestCA.cer_と呼ばれるを作成します。 ローカル コンピューターの信頼されたルート証明機関にこのファイルをインストールすると、このルート CA によって署名されている SSL 証明書を信頼するデバイスが発生します。 できます (および必要があります) をインストールする各 PC に Windows Device Portal に接続するのには、この .cer ファイル。  
 
 ```PowerShell
 $CN = "PickAName"
@@ -46,9 +46,9 @@ $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 
 ## <a name="create-an-ssl-certificate-with-the-root-ca"></a>ルート CA と SSL 証明書を作成します。
 
-SSL 証明書がある 2 つの重要な機能: 安全な接続を暗号化を使用し、ブラウザー バーに表示されるアドレスと通信して実際に確認する (Bing.com、192.168.1.37 など) と悪意のあるサード パーティではありません。
+SSL 証明書がある 2 つの重要な機能: 安全な接続を暗号化を使用して、ブラウザーのバーに表示されるアドレスとの通信に実際にはの検証 (Bing.com、192.168.1.37 など) と悪意のあるサード パーティではありません。
 
-次の PowerShell スクリプトの SSL 証明書を作成する、`localhost`エンドポイント。 Device Portal がリッスンする各エンドポイントには、独自の証明書が必要があります。要素に置き換えること、`$IssuedTo`お使いのデバイスのさまざまなエンドポイントのそれぞれで、スクリプト内の引数: ホスト名、localhost、および IP アドレスします。
+次の PowerShell スクリプトの SSL 証明書を作成する、`localhost`エンドポイントです。 Device Portal がリッスンする各エンドポイントに必要な独自の証明書。置き換えることが、`$IssuedTo`お使いのデバイスのさまざまなエンドポイントのそれぞれで、スクリプト内の引数: ホスト名、ローカル ホスト、および IP アドレスします。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -76,14 +76,14 @@ $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (Con
 WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
 ```
 
-使用例を以下をご覧ください。
+使用状況など以下をご覧ください。
 ```
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 ```
 
-証明書をインストールした後、サービスを再起動するだけで、変更を反映するようにします。
+証明書をインストールした後は、サービスを再起動しますので、変更が有効になります。
 
 ```
 sc stop webmanagement
@@ -92,4 +92,4 @@ sc start webmanagement
 
 > [!TIP]
 > IP アドレスは、時間の経過と共に変更できます。
-多くのネットワークでは、DHCP を使用して、デバイスは、以前あったが同じの IP アドレスを取得常にしないように、IP アドレスを入力します。 デバイスの IP アドレス用の証明書を作成したら、デバイスのアドレスが変更された場合 Windows Device Portal は既存の自己署名証明書を使用して、新しい証明書を生成し、作成した 1 つの使用を停止します。 証明書の警告ページをブラウザーでもう一度表示になります。 このため、Device Portal で設定できますが、ホスト名をデバイスへの接続をお勧めします。 IP アドレスに関係なく同じこれらが残ります。
+多くのネットワークでは、DHCP を使用しているため、デバイスしない常にあった以前と同じ IP アドレス、IP アドレスを提供します。 デバイスの IP アドレス用の証明書を作成したら、デバイスのアドレスが変更された場合 Windows Device Portal は、既存の自己署名証明書を使用して、新しい証明書を生成し、作成した 1 つの使用を停止します。 お使いのブラウザーにもう一度表示する証明書の警告ページになります。 このため、Device Portal で設定することができますが、ホスト名をデバイスへの接続をお勧めします。 IP アドレスに関係なく同じこれらが残ります。

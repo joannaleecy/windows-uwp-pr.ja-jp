@@ -6,11 +6,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693493"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7853165"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 
@@ -78,7 +78,7 @@ POS (店舗販売時点管理) | [POS (店舗販売時点管理) サービス](.
 
 機能 | 説明
  :------ | :------
-アカウント管理 | 柔軟性を提供しますと[Azure AD テナントとパートナー センター アカウントに関連付ける](../publish/associate-azure-ad-with-dev-center.md)に複数のアカウント ユーザーを追加します。 複数の Azure AD テナントを 1 つのパートナー センター アカウントに関連付けるか、1 つを関連付ける Azure AD テナントは、複数のパートナー センター アカウントを使用します。
+アカウント管理 | 今すぐ柔軟性を提供するときに複数のアカウント ユーザーを追加する[と、パートナー センター アカウントの Azure AD テナントの関連付け](../publish/associate-azure-ad-with-dev-center.md)のします。 複数の Azure AD テナントを 1 つのパートナー センター アカウントに関連付けるか、1 つを関連付ける Azure AD テナントは、複数のパートナー センター アカウントを使用します。
 広告 | Microsoft Advertising SDK で、アプリ内に[ネイティブ広告](../monetize/native-ads.md)を表示できるようになりました。 ネイティブ広告は、コンポーネント ベースの広告形式で、各広告クリエイティブ (タイトル、画像、説明、行動喚起テキストなど) が個々の要素としてアプリに配信されます。 ネイティブ広告は、現在はパイロット プログラムに参加している開発者にのみ提供されますが、まもなくすべての開発者がこの機能を利用できるようになる予定です。
 価格と使用可能状況 |  新しい価格と利用可能状況のオプションでは、[価格変更のスケジュール](../publish/set-and-schedule-app-pricing.md)や[正確なリリース日の設定](../publish/configure-precise-release-scheduling.md)を行うことができます。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) に、[アプリのエラーの CAB ファイルをダウンロード](../monetize/download-the-cab-file-for-an-error-in-your-app.md)するために使用できるメソッドが追加されました。

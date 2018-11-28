@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692360"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845003"
 ---
 # <a name="getting-started-with-point-of-service"></a>POS (店舗販売時点管理) の概要
 
@@ -23,8 +23,8 @@ ms.locfileid: "7692360"
 | [機能の宣言](pos-basics-capability.md)      | **pointOfService** 機能をアプリケーション マニフェストに追加する方法について説明します。  Windows.Devices.PointOfService 名前空間の使用にはこの機能が必要になります。  |
 | [デバイスの列挙](pos-basics-enumerating.md)        | システムが利用できるデバイスを照会するために使用するデバイス セレクターを定義し、このセレクターを使用して POS デバイスを列挙する方法について説明します。  |
 | [デバイス オブジェクトの作成](pos-basics-deviceobject.md)  | 周辺機器の読み取り専用のプロパティにアクセスできるようにする PointOfService デバイス オブジェクトを作成し、排他的使用のために周辺機器を要求する方法について説明します。 |
-| [要求と有効化 ](pos-basics-claim.md)  | PointOfService 排他的使用の周辺機器を予約し、I/O 操作に対して有効にする方法について説明します。  |
-| [周辺機器の共有](pos-basics-sharing.md) | ネットワークまたは Bluetooth 接続されている周辺機器を複数の Pc が各コンピューターに接続されている専用の周辺機器ではなく、共有の周辺機器に依存している環境では、他のコンピューターと共有する方法について説明します。
+| [要求と有効にします。 ](pos-basics-claim.md)  | PointOfService 排他的使用の周辺機器を予約し、I/O 操作に対して有効にする方法について説明します。  |
+| [周辺機器の共有](pos-basics-sharing.md) | 複数の Pc が各コンピューターに接続されている専用の周辺機器ではなく、共有の周辺機器に依存している環境では、他のコンピューターとネットワークまたは Bluetooth 接続されている周辺機器を共有する方法について説明します。
 | [PointOfService エンド ツー エンド](pos-get-started.md)  | これは、上記の例を使用して PointOfService 周辺機器を操作する方法のエンド ツー エンド例を示します。 |
 |
 
@@ -35,7 +35,7 @@ ms.locfileid: "7692360"
 | [アプリケーションの配布](../publish/distribute-lob-apps-to-enterprises.md) | 企業のお客様にアプリを配布するためのオプションについて説明します。 |
 | [アプリケーションのライフ サイクル](../launch-resume/app-lifecycle.md) | UWP アプリケーションのライフ サイクルと、Windows が起動、中断、およびアプリを再開するときの動作について説明します。 |
 | [アプリケーション リソース](../app-resources/index.md) | パッケージを作成して、アプリの文字列、イメージ、およびファイル リソースを利用する方法について説明します。 |
-| [データ バインディング](../data-binding/index.md) | データ バインディングを使って、アプリの UI でデータを表示する方法について説明します。 |
+| [データ バインディング](../data-binding/index.md) | データ バインディングを使用して、アプリの UI でデータを表示する方法について説明します。 |
 | [デバイスの列挙](enumerate-devices.md) | 周辺機器を検索する高度な使用列挙手法について説明します。|
 | [バージョン アダプティブ アプリケーション](../debug-test-perf/version-adaptive-apps.md) | 複数のバージョンの Windows 10 で実行されるようにアプリを設計する方法を薄きます。|
 |

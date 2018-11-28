@@ -7,11 +7,11 @@ ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b00ace982bb39b99816013a8491b5b75be765833
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704638"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834888"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 
@@ -22,12 +22,12 @@ ms.locfileid: "7704638"
 [アプリのパッケージをアップロード](upload-app-packages.md)するには、アプリに予約した名前と [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
 
 > [!IMPORTANT]
-> 、アプリの追加の名前を予約して、まずパートナー センターでアプリを作成するときを予約するものではなく、アプリの公開されているバージョンでそれらのいずれかを使用することができます。 ただし、ここで入力した最初の名前が、アプリの[id の詳細](view-app-identity-details.md)、**パッケージ ファミリ名 (PFN)** などの一部使用されることに注意します。 これらの値は、一部のユーザーに表示される場合がありすることはできません、変更されたため、必ず、名前を予約するが、このような使用に適していること。
+> 、アプリの追加の名前を予約して、まずパートナー センターでアプリを作成するときを予約するものではなく、アプリの公開されているバージョンでそれらのいずれかを使用することができます。 ただし、ここで入力した最初の名前が、アプリの[id の詳細](view-app-identity-details.md)など、**パッケージ ファミリ名 (PFN)** の一部使用されることに注意します。 これらの値は、一部のユーザーに表示される場合がありすることはできません、変更されたため、必ず、名前を予約するが、このような使用に適していること。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>新しい名前の予約によるアプリの作成
 
-パートナー センターでアプリを作成する最初の手順は、名前を予約します。 
+パートナー センターでのアプリを作成する最初の手順は、名前を予約します。 
 
 1.  **[概要]** ページで、**[新しいアプリの作成]** をクリックします。
 2.  使う名前をテキスト ボックスに入力して、**[使用可能か確認]** を選びます。 名前が利用可能な場合は、緑色のチェック マークが表示されます  (入力した名前が他の開発者によって既に予約または使用されている場合は、名前が利用できないことを示すエラー メッセージが表示されます)。

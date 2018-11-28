@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、C#、Visual Basic、非同期
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704891"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7841837"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>C# または Visual Basic での非同期 API の呼び出し
 
@@ -79,7 +79,7 @@ ms.locfileid: "7704891"
 
 非同期メソッドが他の非同期メソッドを呼び出している場合は、例外が発生した非同期メソッドが外側のメソッドに伝達されます。 つまり、最も外側のメソッドで **try/catch** ブロックを使うと、入れ子になっている非同期メソッドのエラーをキャッチできます。 これも、同期メソッドで例外をキャッチする方法と同様です。 ただし、**catch** ブロックで **await** を使うことはできません。
 
-**ヒント:** 以降では、Microsoft Visual Studio2005 c# では、 **await**で使える**キャッチ**ブロックします。
+**ヒント:** 以降では、Microsoft Visual Studio2005 c# では、 **await**で使える**catch**ブロックします。
 
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 

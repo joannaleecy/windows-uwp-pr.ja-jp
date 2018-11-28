@@ -3,11 +3,11 @@ title: Device Portal ネットワーク資格情報 API リファレンス
 description: 追加、削除、またはネットワーク資格情報をプログラムで更新する方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705104"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836237"
 ---
 # <a name="network-credentials-api-reference"></a>ネットワーク資格情報 API リファレンス
 追加、削除、またはこの REST API を使用して、開発機で保存されているネットワーク資格情報を更新することができます。
@@ -16,7 +16,7 @@ ms.locfileid: "7705104"
 
 **要求**
 
-そのネットワーク共有の資格情報を持っているユーザーのユーザー名と共に保存されている共有の一覧を取得することができます。
+そのネットワーク共有の資格情報を持っているユーザーのユーザー名と共に保存されている共有の一覧を取得できます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -38,8 +38,8 @@ GET | /ext/networkcredential
 
 - 次の形式の JSON 配列。
 * 資格情報
-  * ネットワーク パス、ネットワーク共有へのパス。
-  * Username: 資格情報を保存しているユーザー名。
+  * ネットワーク パスのネットワーク共有へのパス。
+  * ユーザー名の資格情報を保存しているユーザー名。
 
 **状態コード**
 

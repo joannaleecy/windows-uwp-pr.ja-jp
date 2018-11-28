@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ca733ef88eb8b575b8974f71f9395800d5de3875
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703862"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7835052"
 ---
 # <a name="device-information-properties"></a>デバイス情報プロパティ
 
@@ -31,10 +31,10 @@ ms.locfileid: "7703862"
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトには、[**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) や [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx) などの基本的なプロパティがいくつか用意されていますが、ほとんどのプロパティは、[**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) の下にあるプロパティ バッグに格納されています。 このため、プロパティ バッグには、プロパティ バッグからプロパティを提供するのに使われるプロパティが含まれています。 たとえば、[System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) を使うと、[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) プロパティを提供できます。 これは、わかりやすい名前を持つ一般的な既知のプロパティの一例です。 このように、Windows はわかりやすい名前を付け、プロパティの照会を簡単にしています。
 
-要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 例:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"。 
+要求できるプロパティは、わかりやすい名前を持つ一般的なプロパティだけではありません。 基になる GUID とプロパティ ID (PID) を指定することで、個別のデバイスまたはドライバーによって提供されたカスタム プロパティも含め、利用可能なすべてのプロパティを要求できます。 カスタム プロパティの指定形式は「`{GUID} PID`」です。 例:"`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"です。 
 
 > [!Note]
-> デバイス ドライバーのデバイス プロパティ キー ヘッダー ファイルのプロパティの Guid の一覧を確認できます。
+> デバイス ドライバーのデバイス プロパティ キー ヘッダー ファイルのプロパティの Guid の一覧が表示されます。
 
 一部のプロパティは、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) のすべてのオブジェクトで共通していますが、ほとんどのプロパティは特定の種類に固有です。 以下のセクションでは、**DeviceInformationKind** ごとに並べ替えた共通プロパティの一部を紹介しています。 さまざまな種類の関係性について詳しくは、「**DeviceInformationKind**」をご覧ください。
 

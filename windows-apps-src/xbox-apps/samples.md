@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706974"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844540"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Xbox One サンプルの UWP
 
@@ -27,13 +27,13 @@ TVJS には、自動コントローラー ナビゲーション、リッチ メ�
 
 ## <a name="the-news-experience"></a>ニュース エクスペリエンス
 
-[[ニュース エクスペリエンス](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)、4 番目のコーヒーとは、デスクトップ、電話、および Xbox One の間で機能し、各デバイスのメリットを活用する premium エクスペリエンスを提供するサンプル ニュース アプリです。 Xbox では、ゲームパッド用に最適化されている UI は、10 フィート エクスペリエンスに合わせて、コンテンツ間での他の最適化、テレビのセーフ エリアに保存します。 詳細については[、ブログの投稿](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)を参照してください。
+デスクトップ、電話、および Xbox One の間で機能し、各デバイスのメリットを活用する premium エクスペリエンスを提供するサンプル ニュース アプリは、 [「ニュース エクスペリエンス](https://github.com/Microsoft/uwp-experiences/tree/news/apps/News)、4 番目のコーヒーします。 Xbox では、ゲームパッド用に最適化されている UI は、10 フィート エクスペリエンスに合わせて、コンテンツ間での他の最適化、テレビのセーフ エリアに保存します。 詳細については[、ブログの投稿](https://blogs.windows.com/buildingapps/2016/09/09/tailoring-your-app-for-xbox-and-the-tv-app-dev-on-xbox-series/)を参照してください。
 
 ![ニュース エクスペリエンス](images/samples-1.png)
 
-## <a name="gamepad-style-navigation-xaml-sample"></a>ゲームパッド スタイルのナビゲーション (XAML) のサンプル
+## <a name="gamepad-style-navigation-xaml-sample"></a>ゲームパッドのスタイルのナビゲーション (XAML) のサンプル
 
-[ゲームパッド スタイルのナビゲーション (XAML) のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation)は、アプリでのナビゲーションの方向を改善する方法を示す UWP サンプルです。 これも、デスクトップ アプリケーションに適用可能な顧客にキーボードを使用して、アプリ内を移動できるようにする必要のあるが特に Xbox アプリケーション、入力の主な方法はゲームパッドやリモコンに関連します。
+[ゲームパッドのスタイルのナビゲーション (XAML) のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation)は、アプリでのナビゲーションの方向を改善する方法を示す UWP サンプルです。 これも、デスクトップ アプリケーションに適用可能な顧客にキーボードを使用して、アプリ内を移動できるようにする必要のあるが特に Xbox アプリケーション、入力の主な方法はゲームパッドやリモコンに関連します。
 
 ![ユニバーサル Windows プラットフォームのサンプル: アプリのビューのサイズを変更します。](images/samples-2.png)
 

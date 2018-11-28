@@ -1,21 +1,21 @@
 ---
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
-description: 自分または自分の組織のパートナー センター アカウントに登録されているアプリのプロモーション用の広告キャンペーンをプログラムで管理するのにには、Microsoft Store プロモーション API を使用します。
+description: Microsoft Store プロモーション API を使用して、自分または自分の組織のパートナー センター アカウントに登録されているアプリのプロモーション用の広告キャンペーンをプログラムで管理します。
 title: ストア サービスを使用した広告キャンペーンの実行
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698351"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838795"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>ストア サービスを使用した広告キャンペーンの実行
 
-*Microsoft Store プロモーション API*を使用して、自分または自分の組織のパートナー センター アカウントに登録されているアプリのプロモーション用の広告キャンペーンをプログラムで管理します。 この API では、キャンペーンとその他の関連アセット (ターゲット設定やクリエイティブなど) を作成、更新、監視できます。 この API は、大量のキャンペーンを作成していると、パートナー センターを使用せずにする必要の開発者に特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+*Microsoft Store プロモーション API*を使用して、自分または自分の組織のパートナー センター アカウントに登録されているアプリのプロモーション用の広告キャンペーンをプログラムで管理します。 この API では、キャンペーンとその他の関連アセット (ターゲット設定やクリエイティブなど) を作成、更新、監視できます。 この API は、大量のキャンペーンを作成していると、パートナー センターを使用せずにしたい開発者に特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 次の手順で、このプロセスについて詳しく説明しています。
 
@@ -23,10 +23,10 @@ ms.locfileid: "7698351"
 2.  Microsoft Store プロモーション API のメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。 トークンを取得した後、Microsoft Store プロモーション API の呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
 3.  [Microsoft Store プロモーション API を呼び出します](#call-the-windows-store-promotions-api)。
 
-別の方法として作成し、パートナー センターを使用して広告キャンペーンと API は、パートナー センターにアクセスすることも、Microsoft Store プロモーション経由でプログラムにより作成したどの広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理について詳しくは、[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)を参照してください。
+または、作成をパートナー センターを使用して広告キャンペーンと API は、パートナー センターにアクセスすることも、Microsoft Store プロモーション経由でプログラムにより作成したどの広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理について詳しくは、[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)を参照してください。
 
 > [!NOTE]
-> パートナー センター アカウントを持つすべての開発者は、自分のアプリの広告キャンペーンを管理するのに、Microsoft Store プロモーション API を使用できます。 メディア エージェンシーもこの API へのアクセスを要求して、広告主の代わりに広告キャンペーンを実行できます。 お客様がメディア エージェンシーで、この API について詳しい情報を希望される場合、またはこの API へのアクセスを要求される場合は、storepromotionsapi@microsoft.com までリクエストをお送りください。
+> 開発者のパートナー センター アカウントは、アプリの広告キャンペーンを管理するのに、Microsoft Store プロモーション API を使用できます。 メディア エージェンシーもこの API へのアクセスを要求して、広告主の代わりに広告キャンペーンを実行できます。 お客様がメディア エージェンシーで、この API について詳しい情報を希望される場合、またはこの API へのアクセスを要求される場合は、storepromotionsapi@microsoft.com までリクエストをお送りください。
 
 <span id="prerequisites" />
 
@@ -34,7 +34,7 @@ ms.locfileid: "7698351"
 
 Microsoft Store プロモーション API を呼び出すコードの作成を開始する前に、次の前提条件が満たされていることを確認します。
 
-* 正常に作成してこの API を使用して広告キャンペーンの開始前に、最初は[パートナー センターでの**広告キャンペーン**のページを使用して 1 つの有料の広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)する必要があり、このページで、1 つ以上の支払い方法を追加する必要があります。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 この API を使用して作成した広告キャンペーンの配信ラインでは、パートナー センターで**の広告キャンペーン**] ページで選んだ既定の支払い方法を自動的に請求されます。
+* 作成して、この API を使用して広告キャンペーンを開始することができますが正常に、前に、最初は[パートナー センターで**の広告キャンペーン**のページを使用して 1 つの有料広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)する必要があり、このページで、1 つ以上の支払い方法を追加する必要があります。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 この API を使用して作成した広告キャンペーンの配信ラインでは、パートナー センターで**の広告キャンペーン**] ページで選んだ既定の支払い方法を自動的に請求されます。
 
 * ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
@@ -46,7 +46,7 @@ Azure AD アプリケーションをパートナー センター アカウント
 
 1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センターのアカウントのプロモーション キャンペーンの管理に使用される**アカウント設定**] セクションの [**ユーザー** ] ページから次に、 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。 
+2.  次に、パートナー センター、 [Azure AD アプリケーションを追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)アプリを表すまたはパートナー センターのアカウントのプロモーション キャンペーンの管理に使用するサービスの**アカウント設定**] セクションで、**ユーザー**ページから。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。 
 
 3.  **[ユーザー]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
@@ -71,7 +71,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI と*client \_id*と*client \_secret*パラメーターで*tenant\_id*値、テナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+POST URI と*client \_id*と*client \_secret*パラメーターで、 *tenant\_id*値のテナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
