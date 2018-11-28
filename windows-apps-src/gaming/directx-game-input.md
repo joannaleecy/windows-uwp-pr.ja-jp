@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力, マウス, タッチ, コントロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 549a4da0614dd1c7cc6884c5556c061edfccaf18
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707527"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826946"
 ---
 # <a name="game-input-for-directx-games"></a><span data-ttu-id="6951b-104">DirectX ゲームのゲーム入力</span><span class="sxs-lookup"><span data-stu-id="6951b-104">Game input for DirectX games</span></span>
 

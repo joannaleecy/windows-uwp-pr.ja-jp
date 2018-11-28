@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7713246"
+ms.locfileid: "7828663"
 ---
 # <a name="submit-responses-to-reviews"></a><span data-ttu-id="b9cfe-104">レビューに対する返信の送信</span><span class="sxs-lookup"><span data-stu-id="b9cfe-104">Submit responses to reviews</span></span>
 

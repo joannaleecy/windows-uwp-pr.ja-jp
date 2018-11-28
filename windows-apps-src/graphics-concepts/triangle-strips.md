@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704270"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831179"
 ---
 # <a name="triangle-strips"></a><span data-ttu-id="6dc81-105">トライアングル ストリップ</span><span class="sxs-lookup"><span data-stu-id="6dc81-105">Triangle strips</span></span>
 

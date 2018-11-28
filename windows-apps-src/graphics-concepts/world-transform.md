@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: af694ed32d845e518f4189f75309f1f371743f90
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718603"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829997"
 ---
 # <a name="world-transform"></a><span data-ttu-id="191f3-104">ワールド変換</span><span class="sxs-lookup"><span data-stu-id="191f3-104">World transform</span></span>
 

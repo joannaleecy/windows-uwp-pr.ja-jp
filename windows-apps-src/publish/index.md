@@ -8,15 +8,15 @@ keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, �
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f18c7f20673b7875c60c8797bb1e92410cda8fe
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719916"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833925"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  
-[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、アプリやゲームを Microsoft Store に公開することができます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、Microsoft Store にアプリやゲームを公開することができます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
