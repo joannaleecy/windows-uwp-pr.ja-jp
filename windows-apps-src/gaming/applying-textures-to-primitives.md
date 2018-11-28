@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: プリミティブへのテクスチャの適用
 description: ここでは、生のテクスチャ データを読み込み、そのデータを、「プリミティブに対する深度と各種効果の使用」で作成した立方体を使って 3D プリミティブに適用します。
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、テクスチャ、DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 437c861e6d3017d83b520732dd0e279d882835c5
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577746"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854164"
 ---
 # <a name="apply-textures-to-primitives"></a>プリミティブへのテクスチャの適用
 
@@ -34,7 +32,6 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 <a name="instructions"></a>手順
 ------------
-
 ### <a name="1-defining-variables-for-a-textured-cube"></a>1. テクスチャの適用対象となる立方体の変数を定義する
 
 まず、テクスチャの適用対象となる立方体の **BasicVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。 立方体の頂点の位置、方向、テクスチャに加え、その見え方が、これらの構造体によって指定されます。 それ以外は、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) と同様の変数を宣言します。

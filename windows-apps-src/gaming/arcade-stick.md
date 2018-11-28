@@ -28,7 +28,7 @@ ms.locfileid: "7830890"
 
 アーケード スティックは、店頭のアーケード マシンの雰囲気を再現し、デジタルにより高い精度で制御できる入力デバイスです。 アーケード スティックは、格闘ゲームなどのアーケード ゲームに最適な入力デバイスで、完全デジタル制御に対応しているあらゆるゲームに適しています。 アーケード スティックは、Windows 10 および Xbox One UWP アプリで [Windows.Gaming.Input][] 名前空間によってサポートされています。
 
-Xbox One アーケード スティックが装備されて、8 方向デジタル ジョイスティック、6 つの**アクション**ボタン (下の画像の A1 A6 として表されます)、および 2 つの**特別な**ボタン (S1 と S2 として表されます)。これらはサポートされていないアナログ制御やバイブレーション デジタルの入力デバイスです。 Xbox One アーケード スティックも UI ナビゲーションをサポートするために使用する**ビュー**と**メニュー**のボタンも搭載されていますが、これらのゲームプレイ コマンドのサポートを意図しない、ジョイスティック ボタンとしてすぐにアクセスすることはできません。
+Xbox One arcade sticks are equipped with an 8-way digital joystick, six **Action** buttons (represented as A1-A6 in the image below), and two **Special** buttons (represented as S1 and S2); they're all-digital input devices that don't support analog controls or vibration. Xbox One アーケード スティックも UI ナビゲーションをサポートするために使用する**ビュー**と**メニュー**のボタンも搭載されていますが、これらのゲームプレイ コマンドのサポートを意図しない、ジョイスティック ボタンとしてすぐにアクセスすることはできません。
 
 ![アーケード スティックとジョイスティックの 4 方向、6 つのアクション ボタン (A1-A6) と 2 つの特別なボタン (S1 と S2)](images/arcade-stick-1.png)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697575"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854630"
 ---
 # <a name="get-an-add-on-submission"></a>アドオンの申請の取得
 
@@ -23,7 +23,7 @@ ms.locfileid: "7697575"
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリのいずれかのアドオンの申請を作成します。 [アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して行うことができますパートナー センターで、これを行うこともできます。
+* アプリのいずれかのアドオンの申請を作成します。 パートナー センターで、これを行うか、[アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して、これを行うことができます。
 
 ## <a name="request"></a>要求
 
@@ -45,8 +45,8 @@ ms.locfileid: "7697575"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なと[アドオンの作成](create-an-add-on.md)または[アドオンの詳細を取得する](get-all-add-ons.md)要求の応答データに含まれています。  |
-| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成アドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719945"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855540"
 ---
 # <a name="introduction-to-buffers"></a>バッファーの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "7719945"
 
 バッファー要素は 1 ~ 4 つのコンポーネントの構成されています。 バッファー要素には、圧縮済みデータ値 (R8G8B8A8 サーフェス値)、単一の 8 ビット整数、または 4 つの 32 ビット浮動小数点値を含めることができます。
 
-バッファーは構造化されていないリソースとして作成されます。 構造化されていないため、バッファーはミップマップ レベルを含めることはできません、読み取り時とフィルターを取得することはできません、マルチ サンプリングすることはできません。
+バッファーは構造化されていないリソースとして作成されます。 構造化されていないためバッファーはミップマップ レベルを含めることはできません、読み取り時とフィルターを取得することはできません、マルチ サンプリングすることはできません。
 
 ## <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>バッファーの種類
 
@@ -36,7 +36,7 @@ Direct3d11 でサポートされているバッファー リソースの種類�
 
 頂点バッファーには、ジオメトリの定義に使われる頂点データが含まれています。 頂点データには、位置座標、色データ、テクスチャ座標データ、法線データなどが含まれます。
 
-頂点バッファーの最も簡単な例は、位置データにはのみが含まれています。 これを視覚化すると次の図のようになります。
+頂点バッファーの最も簡単な例は、1 つだけの位置データが含まれています。 これを視覚化すると次の図のようになります。
 
 ![位置データを格納する頂点バッファーの図](images/d3d10-resources-single-element-vb2.png)
 
@@ -46,32 +46,32 @@ Direct3d11 でサポートされているバッファー リソースの種類�
 
 この頂点バッファーには、頂点ごとのデータが含まれています。各頂点には、次の 3 つの要素 (位置、法線、およびテクスチャ座標) が格納されます。 一般的に、位置座標と法線座標はそれぞれ 3 つの 32 ビット浮動小数点を使って指定され、テクスチャ座標は 2 つの 32 ビット浮動小数点を使って指定されます。
 
-頂点バッファーからデータにアクセスするには、アクセス、に加えて、次の追加のバッファー パラメーターをどの頂点を知る必要があります。
+頂点バッファーからデータにアクセスするには、アクセス権と、次の追加のバッファー パラメーターをどの頂点を知っておく必要があります。
 
 -   オフセット - バッファーの先頭から最初の頂点データまでのバイト数です。
 -   BaseVertexLocation - オフセットから、該当する描画呼び出しで使用される最初の頂点までのバイト数です。
 
-頂点バッファーを作成する前に、そのレイアウトを定義する必要があります。 入力レイアウト オブジェクトを作成した後は、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)にバインドします。
+頂点バッファーを作成する前に、そのレイアウトを定義する必要があります。 入力レイアウト オブジェクトを作成したら、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)にバインドします。
 
 ### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>インデックス バッファー
 
-インデックス バッファーは頂点バッファーへの整数オフセットを含めるしより効率的にプリミティブのレンダリングに使われます。 インデックス バッファーは 16 ビットまたは 32 ビットの連続するインデックスを格納します。各インデックスは頂点バッファーの頂点を識別するのに使用されます。 インデックス バッファーを視覚化すると次の図のようになります。
+インデックス バッファーは、頂点バッファーへの整数オフセットを含むより効率的にプリミティブのレンダリングに使用されます。 インデックス バッファーは 16 ビットまたは 32 ビットの連続するインデックスを格納します。各インデックスは頂点バッファーの頂点を識別するのに使用されます。 インデックス バッファーを視覚化すると次の図のようになります。
 
 ![インデックス バッファーの図](images/d3d10-index-buffer.png)
 
 インデックス バッファーに格納される一連のインデックスの位置は、次のパラメーターを使用して特定します。
 
 -   オフセット - インデックス バッファーの基本アドレスからのバイト数。
--   StartIndexLocation には、基本のアドレスとオフセットから最初のインデックス バッファー要素を指定します。 スタート画面の位置情報は、レンダリングする最初のインデックスを表します。
+-   StartIndexLocation - ベースのアドレスとオフセットから最初のインデックス バッファーの要素を指定します。 スタート画面の位置情報は、レンダリングする最初のインデックスを表します。
 -   IndexCount - レンダリングするインデックスの数です。
 
-インデックス バッファーの先頭インデックス バッファーの基本アドレス + オフセット (バイト) StartIndexLocation = \ * ElementSize (バイト)。
+インデックス バッファーの先頭 = インデックス バッファーのベース アドレス + オフセット (バイト) + StartIndexLocation \ * ElementSize (バイト)。
 
-この計算では、ElementSize は、2 つまたは 4 つのいずれかのバイトは、各インデックス バッファー要素のサイズです。
+この計算には、ElementSize は、2 つまたは 4 つのいずれかのバイトは、各インデックス バッファー要素のサイズです。
 
 ### <a name="span-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>定数バッファー
 
-定数バッファーには、シェーダー定数データをパイプラインに効率的に提供することができます。 定数バッファーを使用して、ストリーム出力ステージの結果を格納することができます。 概念的には、次の図に示すように、定数バッファーは、単一要素の頂点バッファーように見えます。
+定数バッファーには、シェーダー定数データをパイプラインに効率的に提供することができます。 定数バッファーを使用して、ストリーム出力ステージの結果を格納することができます。 概念的には、次の図に示すように、定数バッファーは単一要素の頂点バッファー、ように見えます。
 
 ![シェーダー定数バッファーの図](images/d3d10-shader-resource-buffer.png)
 
