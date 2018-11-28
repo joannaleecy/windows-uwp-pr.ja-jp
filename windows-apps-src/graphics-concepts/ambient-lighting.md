@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707397"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854460"
 ---
 # <a name="ambient-lighting"></a><span data-ttu-id="d5028-104">環境光</span><span class="sxs-lookup"><span data-stu-id="d5028-104">Ambient lighting</span></span>
 

@@ -2,19 +2,17 @@
 title: /global/scids/{scid}
 assetID: 721e8be9-a50a-ae14-91c1-e103add0abab
 permalink: en-us/docs/xboxlive/rest/uri-globalscidsscid.html
-author: KevinAsgari
 description: " /global/scids/{scid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea4103ee7e4a1ae6ce6906dfa93a6cba9fe492b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ad106da41f8cd5d91cfba0ef5c58e66cf3534e06
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575418"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855102"
 ---
 # <a name="globalscidsscid"></a><span data-ttu-id="f968e-104">/global/scids/{scid}</span><span class="sxs-lookup"><span data-stu-id="f968e-104">/global/scids/{scid}</span></span>
 <span data-ttu-id="f968e-105">このストレージの種類のクォータ情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="f968e-105">Retrieves quota information for this storage type.</span></span> <span data-ttu-id="f968e-106">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="f968e-106">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>
