@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706382"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852751"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a><span data-ttu-id="10279-103">リソース管理システムでのリソースの照合と選択の仕組み</span><span class="sxs-lookup"><span data-stu-id="10279-103">How the Resource Management System matches and chooses resources</span></span>
 <span data-ttu-id="10279-104">リソースを要求すると、現在のリソース コンテキストにある程度一致するリソース候補がいくつか存在する場合があります。</span><span class="sxs-lookup"><span data-stu-id="10279-104">When a resource is requested, there may be several candidates that match the current resource context to some degree.</span></span> <span data-ttu-id="10279-105">リソース管理システムはすべての候補を分析して、返すのに最もよい候補を決定します。</span><span class="sxs-lookup"><span data-stu-id="10279-105">The Resource Management System will analyze all of the candidates and determine the best candidate to return.</span></span> <span data-ttu-id="10279-106">これはすべての修飾子を考慮して、すべての候補をランク付けすることで実行されます。</span><span class="sxs-lookup"><span data-stu-id="10279-106">This is done by taking all qualifiers into consideration to rank all of the candidates.</span></span>

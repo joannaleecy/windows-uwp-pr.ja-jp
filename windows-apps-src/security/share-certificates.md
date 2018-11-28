@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711399"
+ms.locfileid: "7848578"
 ---
 # <a name="share-certificates-between-apps"></a><span data-ttu-id="076f2-104">アプリ間での証明書の共有</span><span class="sxs-lookup"><span data-stu-id="076f2-104">Share certificates between apps</span></span>
 

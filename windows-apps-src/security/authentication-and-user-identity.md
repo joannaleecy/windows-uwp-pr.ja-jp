@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d23f54a371a883de8b56d03ddd153ab2d91c230
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715039"
+ms.locfileid: "7849292"
 ---
 # <a name="authentication-and-user-identity"></a><span data-ttu-id="9e9fb-104">認証とユーザー ID</span><span class="sxs-lookup"><span data-stu-id="9e9fb-104">Authentication and user identity</span></span>
 

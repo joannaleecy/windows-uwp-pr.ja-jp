@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a06859d6580720150383f2995505e671c0a31a4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716670"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851453"
 ---
 # <a name="accessibility-testing"></a><span data-ttu-id="70e14-103">アクセシビリティ テスト</span><span class="sxs-lookup"><span data-stu-id="70e14-103">Accessibility testing</span></span>  
 

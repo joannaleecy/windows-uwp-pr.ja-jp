@@ -14,11 +14,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 9edf7bcb2ad76ed02887dfffc3e72d0d47f5aa1a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705892"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848604"
 ---
 # <a name="menus-and-context-menus"></a><span data-ttu-id="38594-103">メニューとコンテキスト メニュー</span><span class="sxs-lookup"><span data-stu-id="38594-103">Menus and context menus</span></span>
 

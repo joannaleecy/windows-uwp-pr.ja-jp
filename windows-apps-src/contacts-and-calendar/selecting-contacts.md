@@ -7,11 +7,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716163"
+ms.locfileid: "7843795"
 ---
 # <a name="select-contacts"></a><span data-ttu-id="19b8b-104">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="19b8b-104">Select contacts</span></span>
 

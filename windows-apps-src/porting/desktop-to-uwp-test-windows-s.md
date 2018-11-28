@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a8b17697612d50d10ecfbb07388207527a4cb39b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708672"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840908"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a><span data-ttu-id="24d50-103">Windows アプリの S モードの Windows 10 をテストする</span><span class="sxs-lookup"><span data-stu-id="24d50-103">Test your Windows app for Windows 10 in S mode</span></span>
 

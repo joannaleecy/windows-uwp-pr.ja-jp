@@ -7,11 +7,11 @@ keywords: windows 10, uwp, アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714834"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845970"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a><span data-ttu-id="10d82-104">ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する</span><span class="sxs-lookup"><span data-stu-id="10d82-104">Convert an app service to run in the same process as its host app</span></span>
 

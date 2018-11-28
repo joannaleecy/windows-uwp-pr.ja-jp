@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 4113df37446d93883cf395e7c1e86b1de6c1b328
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7711495"
+ms.locfileid: "7840842"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a><span data-ttu-id="dd908-104">コンソール (Dev Home) における開発者ホーム</span><span class="sxs-lookup"><span data-stu-id="dd908-104">Developer Home on the Console (Dev Home)</span></span>
    

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699843"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7848125"
 ---
 # <a name="fingerprint-biometrics"></a><span data-ttu-id="47d80-104">指紋生体認証</span><span class="sxs-lookup"><span data-stu-id="47d80-104">Fingerprint biometrics</span></span>
 
