@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700307"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831398"
 ---
 # <a name="handle-uri-activation"></a>URI のアクティブ化の処理
 
@@ -27,7 +27,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 以下の手順では、カスタムの URI スキーム名 `alsdk://` を登録する方法と、ユーザーによって `alsdk://` URI が起動されたときにアプリをアクティブ化する方法について説明します。
 
 > [!NOTE]
-> UWP アプリで、組み込みのアプリとオペレーティング システムによって使用するため、特定の Uri とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
+> 、UWP アプリで組み込みのアプリと、オペレーティング システムを使用するため、特定の Uri とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>ステップ 1: パッケージ マニフェストに拡張点を指定する
 
@@ -134,7 +134,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> プロトコル コントラクトによって起動すると、その戻るボタン戻る、アプリを起動した画面としないアプリの以前のコンテンツを確認します。
+> プロトコル コントラクトによって起動すると、その戻るボタン戻るアプリを起動した画面としないアプリの以前のコンテンツを確認します。
 
 次のコードでは、プログラムで URI からアプリを起動しています。
 
@@ -158,7 +158,7 @@ URI スキーム名は、悪意のあるものも含め、あらゆるアプリ�
 > アプリの新しい URI スキーム名を作成する場合は、 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550)のガイダンスに従ってください。 これにより確実に名前が URI スキームの標準に準拠するようになります。
 
 > [!NOTE]
-> プロトコル コントラクトによって起動すると、その戻るボタン戻る、アプリを起動した画面としないアプリの以前のコンテンツを確認します。
+> プロトコル コントラクトによって起動すると、その戻るボタン戻るアプリを起動した画面としないアプリの以前のコンテンツを確認します。
 
 新しい URI ターゲットを開くアクティブ化イベントごとに、アプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
 

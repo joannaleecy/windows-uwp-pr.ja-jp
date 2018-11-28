@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712771"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828577"
 ---
 # <a name="accessing-homegroup-content"></a>ホームグループ コンテンツへのアクセス
 
@@ -193,7 +193,7 @@ ms.locfileid: "7712771"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **読み取りアクセス権のユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。
+3.  **、読み取りアクセスのユーザーのファイルの選択内容を開き、ファイル ストリームをソースとして設定、**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)、し、プレイ ファイル。
     ```cs
     if (file != null)
     {

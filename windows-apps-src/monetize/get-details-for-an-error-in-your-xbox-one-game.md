@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712606"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827776"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>ゲームの Xbox One のエラーに関する詳細を取得します。
 
-Microsoft Store 分析 API に関する詳細データを取得する特定のエラー、Xbox One のゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。
+Microsoft Store 分析 API に関する詳細データを取得する特定のエラー、Xbox One のゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析パートナー センター ダッシュ ボードで利用するには、このメソッドを使います。 このメソッドで取得できるのは、過去 30 日以内に発生したエラーの詳細のみです。
 
 以下のメソッドを使用する前に、まずは、詳細情報を取得するエラーの ID を取得するのにことで、 [Xbox One ゲームに関するエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用する必要があります。
 
@@ -25,7 +25,7 @@ Microsoft Store 分析 API に関する詳細データを取得する特定の�
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* 詳細情報を取得するエラーの ID を取得します。 この ID を取得するには、[ゲーム、Xbox One のエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用して、そのメソッドの応答本文で**failureHash**値を使用します。
+* 詳細情報を取得するエラーの ID を取得します。 この ID を取得するには、[ゲーム、Xbox One のエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用し、そのメソッドの応答本文で**failureHash**値を使用します。
 
 ## <a name="request"></a>要求
 
@@ -48,7 +48,7 @@ Microsoft Store 分析 API に関する詳細データを取得する特定の�
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | エラーの詳細を取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | エラーの詳細を取得して、Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
 | failureHash | string | 取得する詳細情報の対象となるエラーの一意の ID です。 興味のあるエラーにこの値を取得するには、[ゲーム、Xbox One のエラー報告データを取得する](get-error-reporting-data-for-your-xbox-one-game.md)メソッドを使用し、そのメソッドの応答本文で**failureHash**値を使用します。 |  必須  |
 | startDate | date | 取得する詳細なエラー データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  必須ではない  |
 | endDate | date | 取得する詳細なエラー データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |
@@ -98,10 +98,10 @@ Authorization: Bearer <your access token>
 | cabExpirationTime  | string  | CAB ファイルの有効期限が切れ、ダウンロードできなくなる日付と時刻 (ISO 8601 形式) です。   |
 | market          | string  | デバイスの市場の ISO 3166 国コードです。     |
 | osBuild         | string  | エラーが発生した OS のビルド番号です。       |
-| packageVersion  | string  | このエラーに関連付けられているゲームのパッケージのバージョンです。    |
-| deviceModel           | string  | エラーが発生したときに、ゲームが実行されていた Xbox One 本体を指定する次の文字列のいずれか。<p/><ul><li><strong>Microsoft Xbox One</strong></li><li><strong>Microsoft Xbox One S</strong></li><li><strong>Microsoft Xbox One X</strong></li></ul>  |
+| packageVersion  | string  | このエラーに関連付けられているゲームのパッケージのバージョン。    |
+| deviceModel           | string  | 次のエラーが発生したときに、ゲームを実行していた Xbox One 本体を指定する文字列のいずれかです。<p/><ul><li><strong>Microsoft Xbox One</strong></li><li><strong>Microsoft Xbox One S</strong></li><li><strong>Microsoft Xbox One X</strong></li></ul>  |
 | osVersion       | string  | エラーが発生した OS のバージョンです。 これは、常に、 **Windows 10**の値です。    |
-| osRelease       | string  |  エラーが発生したを (OS バージョン内のサブグループ) としての Windows 10 OS リリースまたはフライティング リングを指定する次の文字列のいずれか。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>バージョン 1803</strong></li><li><strong>リリース プレビュー</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p>OS リリースまたはフライティング リングが不明な場合、このフィールドは値 <strong>Unknown</strong> になります。</p>    |
+| osRelease       | string  |  エラーが発生した Windows 10 OS リリースまたはフライティング リングを (OS バージョン内のサブグループ) として指定する次の文字列のいずれかです。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>バージョン 1803</strong></li><li><strong>リリース プレビュー</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p>OS リリースまたはフライティング リングが不明な場合、このフィールドは値 <strong>Unknown</strong> になります。</p>    |
 | deviceType      | string  | エラーが発生したデバイスの種類です。 これは、常に、**コンソール**の値です。     |
 | cabDownloadable           | Boolean  | このユーザーが CAB ファイルをダウンロードできるかどうかを示します。   |
 
@@ -139,5 +139,5 @@ Authorization: Bearer <your access token>
 
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
 * [ゲームの Xbox One に関するエラー報告データを取得します。](get-error-reporting-data-for-your-xbox-one-game.md)
-* [ゲームに Xbox One でのエラーに関するスタック トレースを取得します。](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
+* [ゲーム、Xbox One でのエラーに関するスタック トレースを取得します。](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [Xbox One ゲームのエラーに関する CAB ファイルをダウンロードします。](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)

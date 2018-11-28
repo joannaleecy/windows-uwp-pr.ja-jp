@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: ゲーム コントローラーのレジストリ データ
 description: UWP ゲームで使用されるコントローラーを有効にするために、PC のレジストリに追加できるデータについて説明します。
 ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
-ms.author: wdg-dev-content
 ms.date: 06/25/2018
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, レジストリ, カスタム
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbd4074c52514b9cb66fd6f2dd189421f61d5ee
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577046"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831478"
 ---
 # <a name="registry-data-for-game-controllers"></a>ゲーム コントローラーのレジストリ データ
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
 ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703692"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833692"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
@@ -277,7 +277,7 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>追加/無視される通知のフォアグラウンド イベント
 
 > [!IMPORTANT] 
-> 既知の問題: フォア グラウンド イベント最近のバージョンの Windows での CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを解決しますされます。
+> 既知の問題: フォア グラウンド イベントの最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこの修正する予定です。
 
 フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に両方の変更イベント通知を受け取るもできます。
 
@@ -294,4 +294,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクでの文書 fixdelays
 
-アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 プロンプトがシステム設定をユーザー トーゴ遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定その後にするバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
+アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 プロンプトがシステム設定をユーザー トーゴ遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定その後にはバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。

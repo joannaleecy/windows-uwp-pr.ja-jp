@@ -1,17 +1,17 @@
 ---
 title: MonoGame 2D で UWP ゲームを作成する
-description: C# と MonoGame で記述された Microsoft Store のゲームのシンプルな UWP
+description: ゲームは、c# と MonoGame で記述された Microsoft Store 向けのシンプルな UWP
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702666"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832258"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -36,7 +36,7 @@ MonoGame は、軽量のゲーム開発フレームワークです。 このチ�
 ## <a name="get-the-code"></a>コードを入手する
 段階を追ってチュートリアルを進めるのではなく、MonoGame の動作を確認するには、[こちらをクリックして完成したアプリを入手してください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-Visual Studio 2017 で、プロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
+Visual Studio 2017 でプロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
 
 これを行った場合は、MonoGame のセットアップに関する次のセクションをスキップして、順を追ったコードのウォークスルーに進むことができます。
 
@@ -66,7 +66,7 @@ Visual Studio 2017 で、プロジェクトを開き、サンプルを実行す�
 
 **protected override void UnloadContent()** このメソッドは、非コンテンツ マネージャーのコンテンツをアンロードするために使用されます。 ここでは使用しません。
 
-**保護されている上書き (GameTime gameTime) の更新を無効にします。** このメソッドは、ゲーム ループのすべてのサイクルに 1 回呼び出されます。 ここでは、ゲームで使用するあらゆるオブジェクトや変数の状態を更新します。 これには、オブジェクトの位置、速度、色などが含まれます。 これは、ユーザー入力が処理されます。 つまりこのメソッドでは、画面へのオブジェクトの描画を除いて、ゲーム ロジックのすべての部分が処理されます。
+**保護されたオーバーライド (GameTime gameTime) の更新を無効にします。** このメソッドは、ゲーム ループのすべてのサイクルに 1 回呼び出されます。 ここでは、ゲームで使用するあらゆるオブジェクトや変数の状態を更新します。 これには、オブジェクトの位置、速度、色などが含まれます。 これは、ユーザー入力が処理されます。 つまりこのメソッドでは、画面へのオブジェクトの描画を除いて、ゲーム ロジックのすべての部分が処理されます。
 **protected override void Draw(GameTime gameTime)** ここでは、Update メソッドで指定された位置を使用して、オブジェクトが画面に描画されます。
 
 ## <a name="draw-a-sprite"></a>スプライトの描画
@@ -379,7 +379,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7. キーボード入力を処理します。
-次に、キーボード経由でのユーザー入力を処理する新しいメソッドが必要です。 **Game1.cs**には、以下のメソッドを追加します。
+次に、キーボード経由でユーザー入力を処理する新しいメソッドが必要です。 **Game1.cs**に以下のメソッドを追加します。
 
 ```CSharp
 void KeyboardHandler()
@@ -482,7 +482,7 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、broccoli と dino スプライトの両方がようにすることはありません非表示にできます背後にある自分の位置に関係なく、既存の grass スプライト経由で描画されます。
+MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、dino スプライトとブロッコリの両方がようにすることはありません非表示にできます背後にある自分の位置に関係なく、既存の grass スプライトが描画されます。
 
 ここでゲームを実行し、方向キーと Space キーを使用して、恐竜を動かしてみてください。 上記の手順を実行している場合は、アバター ゲームのウィンドウ内を移動できる必要があり、ブロッコリが増え速度で起動する必要があります。
 
@@ -648,7 +648,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 これにより、**SpriteClass** で作成した **RectangleCollision** メソッドが呼び出され、true が返された場合は、ゲーム オーバーのフラグが設定されます。
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. ゲームをリセットするためのユーザー入力を追加する
-ユーザーが Enter を押した場合、ゲームをリセットできるように**KeyboardHandler**メソッドには、このコードを追加します。
+このコードをユーザーが Enter キーを押している場合は、ゲームをリセットできるようにする、 **KeyboardHandler**メソッドに追加します。
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

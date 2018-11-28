@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719012"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844659"
 ---
 # <a name="hardware-drm"></a>ハードウェア DRM
 
@@ -25,7 +25,7 @@ ms.locfileid: "7719012"
 
 ## <a name="windows-tee-implementation"></a>Windows TEE 実装
 
-このトピックでは、windows 10 が信頼された実行環境 (TEE) を実装する方法の簡単な概要を説明します。
+このトピックでは、windows 10 が信頼された実行環境 (TEE) を実装する方法の簡単な概要を示します。
 
 Windows TEE 実装の詳細については、このドキュメントでは説明しません。 ただし、標準の移植キット TEE ポートと Windows ポートの違いについては、簡単に説明します。 Windows は OEM プロキシ レイヤーを実装し、Windows メディア ファンデーション サブシステムのユーザー モード ドライバーに、シリアル化された PRITEE 関数呼び出しを転送します。 これは最終的に Windows TrEE (信頼される実行環境) ドライバーまたは OEM のグラフィックス ドライバーにルーティングされます。 これらのいずれの方法についても、このドキュメントでは説明しません。 次の図は、Windows ポートのコンポーネントの一般的な操作を示しています。 Windows PlayReady TEE 実装を開発する場合は、<WMLA@Microsoft.com> にご連絡ください。
 

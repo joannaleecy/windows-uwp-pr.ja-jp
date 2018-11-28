@@ -7,11 +7,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7718836"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828004"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
@@ -29,7 +29,7 @@ ms.locfileid: "7718836"
 
 アプリがユーザーに表示されなくなると、Windows はメモリと CPU リソースを解放するためにそのアプリを中断または終了します。 こうすることで、他のアプリがフォアグラウンドで実行できるようにし、バッテリの消費量を減らします。 このとき、バックグラウンド タスクの助けがないと、進行中のデータ イベントが失われます。 Windows には、バックグラウンド タスク トリガー [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) があり、アプリが中断状態になっても、各種のデバイスやセンサーでの時間のかかる同期操作や監視操作をバックグラウンドで安全に実行できるようにします。 アプリのライフサイクルについて詳しくは、「[起動、再開、バックグラウンド タスク](index.md)」をご覧ください。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-**注:** ユニバーサル Windows アプリでは、バック グラウンドでデバイスの同期、ユーザーがアプリによるバック グラウンド同期を承認している必要があります。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
+**注:** ユニバーサル Windows アプリでは、バック グラウンドでデバイスの同期ユーザーがアプリによるバック グラウンド同期を許可する必要があります。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
 
 ### <a name="limitation-critical-device-operations"></a>制限: 重要なデバイス操作
 
@@ -83,7 +83,7 @@ ms.locfileid: "7718836"
 
 **重要な** [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)を使用する場合は、これらの重要な点を検討してください。
 
--   プログラムで[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)を使うバック グラウンド タスクをトリガーする機能はまず Windows8.1 と Windows Phone 8.1 で導入されました。
+-   プログラムで[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)を使うバック グラウンド タスクをトリガーする機能は、Windows8.1 と Windows Phone 8.1 で最初に導入されました。
 
 -   PC で周辺機器を更新するとき、ユーザーの許可を得るためのポリシーが Windows によって適用されます。
 

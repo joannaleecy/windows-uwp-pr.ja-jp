@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705905"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7851493"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D グラフィックスの用語集
 
 
-Microsoft Direct3D グラフィックスの用語を定義します。 Direct3D のゲームとアプリの開発で使用される高レベル、汎用の 3D コンピューター グラフィックス条件で、この用語集定義します。
+Microsoft Direct3D グラフィックスの用語を定義します。 Direct3D ゲームとアプリの開発で使用される高レベル、一般的な 3D コンピューター グラフィックスの条件で、この用語集定義します。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
 

@@ -14,11 +14,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: e6aebac45dc32933f55d917c0b1153cba952d819
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700582"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827387"
 ---
 # <a name="designing-for-mixed-reality"></a>Mixed Reality 向けの設計
 
@@ -84,7 +84,7 @@ Mixed Reality 専用のいくつかの新しい入力方法が設計されまし
 * [クリッカー デバイス](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens のみ)
 * [モーション コントローラー](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (Mixed Reality デバイスのみ、上述のとおり)
 
-これらのコントローラーにより、仮想オブジェクトの操作が自然かつ正確になります。 いくつかの操作は無料で利用できます。 たとえば、HoloLens の選択ジェスチャまたはモーション コント ローラーの Windows キーやトリガーをクリックするとは、予想される、ここでも、ユーザー側でコーディングしなくて入力応答が生成されます。
+これらのコントローラーにより、仮想オブジェクトの操作が自然かつ正確になります。 いくつかの操作は無料で利用できます。 たとえば、HoloLens の選択ジェスチャまたはモーション コント ローラーの Windows キーやトリガーをクリックすると、入力の応答は、予想される、ここでも、ユーザー側でコーディングしなくてが生成されます。
 
 それ以外の場合は、追加情報と利用可能な入力情報を活用するコードを追加します。 たとえば、位置とボタン操作を考慮するコードを作成する場合、モーション コントローラーを使用すると、オブジェクトを細かく操作できます。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705357"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7839680"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>スレッド プールへの作業項目の送信
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>要約と次の手順
 
-[項目のサンプルを使用して、スレッド プールを作成](http://go.microsoft.com/fwlink/p/?LinkID=328569)、Windows8.1 向けに書かれたでこのクイック スタートのコードのダウンロードの詳細については、win \_unap windows 10 アプリでソース コードを再利用しているとします。
+このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成する](http://go.microsoft.com/fwlink/p/?LinkID=328569)Windows8.1、向けに書かれたからのコードをダウンロードすることの詳細については、および、win \_unap windows 10 アプリでソース コードを再利用します。
 
 ## <a name="related-topics"></a>関連トピック
 

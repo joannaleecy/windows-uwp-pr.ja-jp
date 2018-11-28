@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
 ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695041"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848020"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
@@ -98,9 +98,9 @@ UWP アプリで広告仲介の使用を開始するには、広告ユニット�
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>手順 4: アプリを提出してパフォーマンスを確認する
 
-広告を含むアプリの開発が完了したら、ストアで利用できるように、パートナー センターでの[更新されたアプリを提出](https://docs.microsoft.com/windows/uwp/publish/app-submissions)することができます。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
+広告を含むアプリの開発が完了したら、ストアで利用できるようにするパートナー センターでの[更新されたアプリを提出](https://docs.microsoft.com/windows/uwp/publish/app-submissions)することができます。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
 
-アプリが公開されてストア後、は、パートナー センターで、[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認し、引き続き、広告のパフォーマンスを最適化するために、仲介設定を変更することができます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
+後、アプリが公開されてストア、パートナー センターで、[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認し、広告のパフォーマンスを最適化するために、仲介の設定に変更を続行できます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
 
 <span id="additional-help" />
 

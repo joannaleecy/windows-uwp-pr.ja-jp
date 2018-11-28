@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701735"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834419"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 
 
 Microsoft Store でアプリの売上から収益を受け取るには、受取りアカウントを設定し、[パートナー センター](https://partner.microsoft.com/dashboard)で税関連の必要があります。
 
-無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 変わったり、後で変更し、アプリ (またはアドオン) を販売するかを決定する場合は、受取りアカウントをセットアップし、その時点で、税関連の書類を記入します。 受け取りアカウントと税プロファイルの設定が完了するまで、有料アプリまたはアドオンを申請することはできません。
+無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 変わったり、後で変更し、アプリ (またはアドオン) を販売するかを決定する場合は、受取りアカウントを設定し、その時点で税フォームに記入します。 受け取りアカウントと税プロファイルの設定が完了するまで、有料アプリまたはアドオンを申請することはできません。
 
 > [!NOTE]
 > [特定の市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)では、無料のアプリしか申請できません。 アカウントがそうした市場のいずれかで登録されている場合は、受取りアカウントを設定できません。
@@ -121,7 +121,7 @@ Microsoft は、支払いの初回実行時に 3 つの書類をすべてお送�
 
 ## <a name="tax-forms"></a>税関連の書類
 
-[受取りアカウント](#payout-account)の設定し[、開発者アカウントに登録されている](opening-a-developer-account.md)が、次の手順を実行して、Microsoft Store の*税務プロファイル*を作成できます。
+[受取りアカウント](#payout-account)の設定し[、開発者アカウントに登録されている](opening-a-developer-account.md)が、次の手順で Microsoft ストアの*税務プロファイル*を作成できます。
 
 -   住所と国籍がある国を指定する
 -   該当する税関連の書類を入力する
@@ -129,7 +129,7 @@ Microsoft は、支払いの初回実行時に 3 つの書類をすべてお送�
 完了し、パートナー センターで電子的に税関連の書類を提出することができます。ほとんどの場合、書類を印刷する必要はありません。
 
 > [!IMPORTANT]
-> 税の要件は、国や地域によって異なります。 納める必要がある税金の正確な額は、アプリを販売する国と地域によって異なります。 Microsoft がお客様に代わって売上税と使用税を支払う国については、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」をご覧ください。 その他の国の場合、登録した国によっては、アプリの販売に関する売上税と使用税を該当する課税当局にお客様が直接支払う必要がある可能性があります。 また、お客様が受け取るアプリの売り上げ収益が、所得として課税対象になることもあります。 強く、機関に問い合わせ、関連する国または地域最適に役立つ Microsoft ストア開発者アクティビティの適切な税情報をお勧めします。
+> 税の要件は、国や地域によって異なります。 納める必要がある税金の正確な額は、アプリを販売する国と地域によって異なります。 Microsoft がお客様に代わって売上税と使用税を支払う国については、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」をご覧ください。 その他の国の場合、登録した国によっては、アプリの販売に関する売上税と使用税を該当する課税当局にお客様が直接支払う必要がある可能性があります。 また、お客様が受け取るアプリの売り上げ収益が、所得として課税対象になることもあります。 強く、機関に問い合わせ、該当する国または地域最適に役立つ Microsoft ストア開発者アクティビティの適切な税情報をお勧めします。
 
  
 **税務プロファイルを作成するには**

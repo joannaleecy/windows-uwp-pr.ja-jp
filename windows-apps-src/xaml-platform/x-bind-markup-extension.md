@@ -1,21 +1,21 @@
 ---
-description: XBind マークアップ拡張では、高パフォーマンスの代わりのバインディングにです。 xBind - Windows 10 での新しい短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
+description: XBind マークアップ拡張には、バインド、高パフォーマンス代わりです。 xBind - Windows 10 の新規の短時間でおよび少ないメモリ動作バインディングとデバッグの向上をサポートしています。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5407849c15da25adc29fa97c0215b9734a5d3258
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694851"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855400"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間で、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 **{X:bind}** マークアップ拡張-windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
@@ -111,7 +111,7 @@ _注: C# スタイルのキャスト構文は添付プロパティ構文より�
 
 ## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数バインディング](../data-binding/function-bindings.md)を参照してください。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
 
 ## <a name="event-binding"></a>イベント バインディング
 
@@ -143,7 +143,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 | **Mode** | "OneTime"、"OneWay"、"TwoWay" のいずれかの文字列として、バインド モードを指定します。 既定は "OneTime" です。 これは、**{Binding}** の既定値 (ほとんどの場合は "OneWay") とは異なる点に注意してください。 |
 | **TargetNullValue** | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | **BindBack** | 双方向バインディングの逆方向に使う関数を指定します。 |
-| **UpdateSourceTrigger** | コントロールから双方向バインディングのモデルに変更を戻すタイミングを指定します。 TextBox.Text を除くすべてのプロパティの既定値は PropertyChanged です。TextBox.Text の既定値は LostFocus です。|
+| **UpdateSourceTrigger** | コントロールから双方向バインディングのモデルに変更を戻すタイミングを指定します。 TextBox.Text を除くすべてのプロパティの既定値は PropertyChanged です。値は、lostfocus です。|
 
 > [!NOTE]
 > マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
@@ -154,7 +154,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 
 **{x:Bind}** は、その利点を得るために、生成されたコードを使用するので、コンパイル時に型情報が必要です。 つまり、型が事前にわかっていない場合は、プロパティにバインドできません。 このため、**{x:Bind}** は、型が **Object** で、実行時に変更されることもある **DataContext** プロパティと共に使用することはできません。
 
-**{x:Bind}** をデータ テンプレートと共に使用するときは、以下の例に示すように **x:DataType** 値を設定し、バインド先の型を指定する必要があります。 型をインターフェイスまたは基底クラス型に設定することもでき、完全な式を指定するために必要な場合は、キャストを使用できます。
+**{X:bind}** をデータ テンプレートと共に使用する場合は、「[例](#examples)に示すように、 **X:datatype**値を設定するバインド先の型を示す必要があります。 型をインターフェイスまたは基底クラス型に設定することもでき、完全な式を指定するために必要な場合は、キャストを使用できます。
 
 コンパイル済みバインドは、コード生成によって異なります。 そのため、リソース ディクショナリで **{x:Bind}** を使う場合、リソース ディクショナリにはコード ビハインド クラスが必要です。 コード例については、「[リソース ディクショナリと {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind)」をご覧ください。
 

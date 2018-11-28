@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d6fd8f194a3c9c98fb969034cab5a3e9e2f0de
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698910"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7837481"
 ---
 # <a name="xnull-markup-extension"></a>{x:Null} マークアップ拡張
 
@@ -30,7 +30,7 @@ XAML マークアップで、プロパティに **null** 値を指定します�
 
 初期の既定値は、依存関係プロパティごとに異なる場合があり、必ずしも **null** というわけではありません。 また、依存関係プロパティの多くは、その内部実装により、(マークアップまたはコードのいずれによる場合でも) **null** を値として受け入れません。 このような場合、**{x:Null}** で XAML 属性値を設定すると、パーサー例外が発生することがあります。
 
-一部の Windows ランタイム型では、null を使うことができます。 null 許容型に **null** が既定値として設定されていない場合に備え、**{x:Null}** を使って XAML 内で **null** 値に設定することができます。 VisualC ではコンポーネント拡張機能を使用する場合 (、C++/cli CX)、null 許容型として表されます[**platform::ibox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx)します。 Microsoft .NET 言語を使う場合、null 許容型は [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) として表されます。
+一部の Windows ランタイム型では、null を使うことができます。 null 許容型に **null** が既定値として設定されていない場合に備え、**{x:Null}** を使って XAML 内で **null** 値に設定することができます。 VisualC ではコンポーネント拡張機能を使用している場合 (、C++/cli CX)、null 許容型として表されます[**platform::ibox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx)します。 Microsoft .NET 言語を使う場合、null 許容型は [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) として表されます。
 
 ## <a name="related-topics"></a>関連トピック
 

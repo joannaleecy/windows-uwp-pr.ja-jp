@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706879"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830817"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>WindowsPhone Silverlight から UWP へのフォーム ファクターと UX の移植
 
 
 前のトピックは、「[ビジネス レイヤーとデータ レイヤーの移植](wpsl-to-uwp-business-and-data.md)」でした。
 
-Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。 Windows 10 では、物理サイズ、既定の向き、方法は、ユニバーサル Windows プラットフォーム (UWP) アプリに効果的なピクセルの解像度の係数などのデバイス間で違いがレンダリングされます。 さいわいなことに、これらの大変な作業の多くは、有効ピクセルなどのスマートな概念を用いてシステムにより自動的に処理されます。
+Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。 Windows 10 では、物理サイズ、既定の向き、方法は、ユニバーサル Windows プラットフォーム (UWP) アプリに効果的なピクセルの解像度の係数などのデバイス間の違いがレンダリングされます。 さいわいなことに、これらの大変な作業の多くは、有効ピクセルなどのスマートな概念を用いてシステムにより自動的に処理されます。
 
 ## <a name="different-form-factors-and-user-experience"></a>フォーム ファクターとユーザー エクスペリエンスの相違
 
@@ -52,7 +52,7 @@ Windows アプリは、PC、モバイル デバイス、その他の多くの種
 
 リスト ビューとグリッド ビューなどの新しいコントロールは、だけでなく WindowsPhone Silverlight から確立されているレイアウトの種類の大部分は同等機能をユニバーサル Windows プラットフォーム (UWP) にあります。 たとえば、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) などです。 こうしたレイアウトを使う UI の多くは、簡単に移植できるはずですが、さまざまなサイズのデバイスでサイズ変更と再レイアウトを自動的に行うために、こうしたレイアウト パネルの動的レイアウト機能を活用する方法を常に模索してください。
 
-システム コントロールとレイアウト パネルに組み込まれている動的レイアウト以外に移動して、[アダプティブな Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md)と呼ばれる新しい windows 10 の機能を使用することができます。
+システム コントロールとレイアウト パネルに組み込まれている動的レイアウト以外に移動して、[アダプティブな Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md)と呼ばれる新しい windows 10 機能を使用します。
 
 ## <a name="input-modalities"></a>入力モダリティ
 

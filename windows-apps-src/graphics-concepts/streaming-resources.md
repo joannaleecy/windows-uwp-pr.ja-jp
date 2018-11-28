@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c15c8a82219109a96d0a9ca192c4dfff5d86c9aa
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692573"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844030"
 ---
 # <a name="streaming-resources"></a>ストリーミング リソース
 

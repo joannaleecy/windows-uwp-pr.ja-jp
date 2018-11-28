@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dbcaa683e2c7a2bb18d88fcba03e10fa951d4459
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719097"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832347"
 ---
 # <a name="deploy-barcode-scanner-profiles-with-mdm"></a>MDM によるバーコード スキャナー プロファイルの展開
 
-**注:** この機能は、windows 10 Mobile を必要とまたはそれ以降。
+**注:** この機能では windows 10 Mobile またはそれ以降。
 
 バーコード スキャナー プロファイルは、MDM サーバーを使って展開できます。 プロファイルを展開するには、[EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025) の *OemProfile* を使用して、\\Data\\SharedData\\OEM\\Public\\Profile フォルダーにプロファイルを配置します。 ドライバーの製造元では、これらのスキャナー プロファイルを使用して、API サーフェスを通じて公開されていない設定を構成できます。
 
@@ -23,4 +23,4 @@ Microsoft では、スキャナーのプロファイルやそれらを実装す�
 
 ## <a name="related-topics"></a>関連トピック
 - [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025)
-- [バーコード スキャナーのデバイスのサポート](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)
+- [バーコード スキャナー デバイスのサポート](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

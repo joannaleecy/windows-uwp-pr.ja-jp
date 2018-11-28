@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701504"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7843473"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。 Windows 10 は、USB (クラス準拠と最も独自のドライバー)、Bluetooth LE 経由で MIDI 経由で MIDI をサポートしています (Windows 10 Anniversary Edition 以降)、およびサード パーティ製品の自由に利用可能なイーサネット上の MIDI、ルーティング MIDI 経由します。
+この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。 Windows 10 は、USB (クラスに準拠したと最も独自のドライバー)、Bluetooth LE 経由で MIDI 経由で MIDI をサポートしています (Windows 10 Anniversary Edition 以降)、およびサード パーティ製品の自由に利用可能なイーサネット上の MIDI、ルーティング MIDI 経由します。
 
 ## <a name="enumerate-midi-devices"></a>MIDI デバイスの列挙
 

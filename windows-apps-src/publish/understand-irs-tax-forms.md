@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696170"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854104"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -42,7 +42,7 @@ ms.locfileid: "7696170"
 <table>
 <tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
 <tr><td>Windows、Office、Azure</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft Corporation での Microsoft Corporation 修飾仲介として機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
-<tr><td>広告 *</td><td>Microsoft アイルランド操作の制限 (支払いがによって行われた Microsoft アイルランド経由で Microsoft Online inc. Microsoft Online inc. の支払いエージェントとして機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
+<tr><td>広告 *</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft Online inc. によって Microsoft Online inc. の支払いエージェントとして機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
 <tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路図<br>89511 Reno、NV USA</td></tr>
 <tr><td colspan="3">* 広告の収益を獲得する次の国の Microsoft アイルランド操作付きを通じて支払われますオーストリア、ベルギー、ブルガリア、クロアチア、キプロス、チェコ共和国、デンマーク、エストニア、フィンランド、フランス、ドイツ、ギリシャ、ハンガリー、アイルランド、。マン島、イタリア、ラトビア、リヒテンシュタイン、リトアニア、ルクセンブルク、マルタ、モナコ、オランダ、ノルウェー、ポーランド、ポルトガル、ルーマニア、スロバキア、スロベニア、南アフリカ、スペイン、スウェーデン、スイス、英国</td></tr>
 </table>
@@ -104,7 +104,7 @@ ms.locfileid: "7696170"
     <td valign="top"><b>W8 フォームをすべて記入した際に支払いが源泉徴収されたのはなぜですか。</b></td>
     <td valign="top">税金は次のいずれかの場合に源泉徴収されます。<br>
      1. W8 の租税条約の項がすべて正しく記載されていなかった場合<br>
-     2. 米国との租税条約がない国に在住している場合<br><br>パートナー センターは、更新した W8 フォームを送信するには、いつでもアクセスできます。<br><br><b>注</b>: すべての収益とは、源泉徴収の対象です。</td>
+     2. 米国との租税条約がない国に在住している場合<br><br>更新した W8 フォームを送信するには、いつでもパートナー センターにアクセスすることができます。<br><br><b>注</b>: すべての収益とは、源泉徴収の対象です。</td>
   </tr>
   <tr>
     <td valign="top"><b>適切な条約情報を使って更新した W8 フォームを提出しました。 マイクロソフトは源泉徴収された税金を払い戻してくれますか。</b></td>

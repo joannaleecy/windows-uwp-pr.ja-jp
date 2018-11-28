@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, xbox, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694597"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7850641"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 情報 API リファレンス   
 この API を使用して Xbox One のデバイス情報にアクセスすることができます。
@@ -19,7 +19,7 @@ ms.locfileid: "7694597"
 
 **要求**
 
-Xbox One については、デバイス情報を取得できます。
+Xbox One については、デバイスの情報を取得できます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -45,9 +45,9 @@ GET | /ext/xbox/info
 * ConsoleId - (String) 本体の id。
 * DeviceId - (String) 本体の Xbox Live デバイス id。
 * SerialNumber - (String) 本体のシリアル番号。
-* DevMode - (String) 本体の現在の開発者モード、"None"など、または「市販」。
-* ConsoleType - (String) 本体の種類、"Xbox One"または"Xbox One S"など。
-* DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の有効期限が切れます。
+* DevMode - (String) 本体の現在の開発者モード、"None"など、または「市販」します。
+* ConsoleType - (String) 本体の種類、"Xbox One"または"Xbox One S"などです。
+* DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の期限が切れるします。
 
 **状態コード**
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719622"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7844702"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーのロールまたはカスタムのアクセス許可の設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "7719622"
 > ユーザー、グループ、Azure AD アプリケーションのどれを追加する場合でも、適用できるロールやアクセス許可は同じです。
 
 適用するロールまたはアクセス許可を決めるときは、次のことに注意してください。 
--   ユーザー (グループと Azure AD アプリケーションを含む) は、割り当てられた役割に関連付けられているアクセス許可を持つパートナー センター アカウント全体にアクセスすることが、[アクセス許可のカスタマイズ](#custom)と割り当て[製品レベルのアクセス許可](#product-level-permissions)特定のアプリやアドオンを操作できないようにできますのみです。
+-   ユーザー (グループと Azure AD アプリケーションを含む) は、割り当てられた役割に関連付けられているアクセス許可を持つパートナー センター アカウント全体にアクセスすることがする[アクセス許可のカスタマイズ](#custom)と割り当て[製品レベルのアクセス許可](#product-level-permissions)特定のアプリやアドオンを操作できないようにできますのみです。
 -   複数のロールを選択するか、カスタムのアクセス許可を使って必要なアクセス許可を付与することにより、ユーザー、グループ、または Azure AD アプリケーションが複数のロールの機能にアクセスできるようにすることができます。
 -   特定の 1 つのロール (またはカスタムのアクセス許可のセット) を持つユーザーは、別のロール (またはアクセス許可のセット) を持つグループの一部となることも可能です。 その場合ユーザーは、グループと個人アカウントの両方に関連付けられた機能のすべてにアクセスできます。
 
@@ -43,7 +43,7 @@ ms.locfileid: "7719622"
 
 | 役割                 | 説明              |
 |----------------------|--------------------------|
-| マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これは、パートナー センターで、ユーザーの管理が含まれていますが、作成および Azure AD テナント内のユーザーを削除する機能は Azure AD でアカウントのアクセス許可に依存して、ことに注意してください。 つまり、ユーザーがマネージャーの役割が割り当てられますが、組織のグローバル管理者のアクセス許可がない場合、Azure AD ことはできません新しいユーザーを作成したり、(ただし、ユーザーのパートナー センターの役割を変更することができます)、ディレクトリからユーザーを削除します。 <p> パートナー センター アカウントが 1 つ以上の Azure AD テナントに関連付けられている場合は、マネージャーは、ユーザーの完全な詳細を表示することはできません、(名、姓、名、パスワードの回復メールなど、Azure AD グローバル管理者かどうかが) でない限り、そのユーザーをそのテナントのグローバル管理者のアクセス許可を持つアカウントと同じテナントにサインインします。 ただし、追加し、パートナー センター アカウントに関連付けられているどのテナントでもでユーザーの削除ができます。 |
+| マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これは、パートナー センターで、ユーザーの管理が含まれていますが、作成および Azure AD テナント内のユーザーを削除する機能は Azure AD でアカウントのアクセス許可に依存して、ことに注意してください。 つまり、ユーザー マネージャーの役割が割り当てられますが、組織のグローバル管理者権限がない場合、Azure AD をすることはできませんを新しいユーザーを作成または (ただし、ユーザーのパートナー センターの役割を変更することができます)、ディレクトリからユーザーを削除します。 <p> パートナー センター アカウントが 1 つ以上の Azure AD テナントに関連付けられている場合は、マネージャーによって、ユーザーの完全な詳細表示ことはできません (名、姓、名、パスワードの回復メールなど、Azure AD グローバル管理者かどうかが) でない限り、そのユーザーをそのテナントのグローバル管理者のアクセス許可を持つアカウントと同じテナントにサインインします。 ただし、追加し、パートナー センター アカウントに関連付けられているどのテナントでもでユーザーの削除ができます。 |
 | 開発者            | パッケージをアップロードし、アプリおよびアドオンを申請できます。また、[使用状況レポート](usage-report.md)で統計情報の詳細を確認できます。 [クロス デバイス エクスペリエンス](https://go.microsoft.com/fwlink/?linkid=874042)機能にアクセスできます。 財務情報やアカウントの設定を表示することはできません。   |
 | 経営担当者 | [状態](health-report.md)レポートと[利用状況](usage-report.md)レポートを表示できます。 製品の作成や申請、アカウント設定の変更、財務情報の表示はできません。   |
 | 財務担当者  | [支払いレポート](payout-summary.md)、財務情報、取得レポートを表示できます。 アプリ、アドオン、またはアカウント設定を変更することはできません。    |
@@ -170,7 +170,7 @@ ms.locfileid: "7719622"
     <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>カスタマー フィードバック</b>    </td><td>    製品の <a href="reviews-report.md">[レビュー]</a> レポートと <a href="feedback-report.md">[フィードバック]</a> レポートを表示できます。       </td><td>    該当なし (フィードバックやレビューに返信するには、<b>[顧客への連絡]</b> アクセス許可を付与する必要があります)   </td><td>    該当なし     </td><td>    該当なし         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示できます。    </td><td>    なし   </td><td>    なし       </td><td>    該当なし          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示することができます。    </td><td>    なし   </td><td>    なし       </td><td>    該当なし          </td></tr>
     </tbody>
     </table>
 
@@ -189,7 +189,7 @@ ms.locfileid: "7719622"
     <tbody>
     <tr><td align="left">    <b>プロモーション コード</b>     </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文と利用状況の情報、また利用状況情報を表示できます。         </td><td>    製品とそのアドオンの<a href="generate-promotional-codes.md">プロモーション コード</a>の注文の表示、管理、および作成、また利用状況情報の表示ができます。          </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td><td>    該当なし (すべてのアドオンに親製品の設定が適用されます)     </td></tr>
     <tr><td align="left">    <b>対象のプラン</b>     </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示できます。         </td><td>    製品の<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象プラン</a>を表示、管理、作成できます。          </td><td>    該当なし     </td><td>    該当なし      </td></tr>
-    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <a href="respond-to-customer-feedback.md">顧客のフィードバックに返信して</a>、<a href="respond-to-customer-reviews.md">顧客のレビューに返信する</a>が、<b>お客様のフィードバック</b>のアクセス許可も付与されている限りすることができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
+    <tr><td align="left">    <b>顧客への連絡</b>  </td><td>    <b>カスタマー フィードバック</b> アクセス許可も付与されている限り、<a href="respond-to-customer-feedback.md">カスタマー フィードバックへの返信</a>と<a href="respond-to-customer-reviews.md">カスタマー レビューへの返信</a>を表示できます。 製品に対して作成された<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知</a>も表示できます。    </td><td>    <a href="respond-to-customer-feedback.md">お客様のフィードバックに返信して</a>、<a href="respond-to-customer-reviews.md">顧客のレビューに返信する</a>が、<b>顧客からのフィードバック</b>のアクセス許可も付与されている限りすることができます。 製品に対する<a href="send-push-notifications-to-your-apps-customers.md">ターゲット通知の作成と送信</a>もできます。                   </td><td>    該当なし         </td><td>    該当なし                          </td></tr>
     <tr><td align="left">    <b>実験</b></td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/Bテスト)</a>と実験データを表示できます。   </td><td>    製品の<a href="../monetize/run-app-experiments-with-a-b-testing.md">実験 (A/B テスト)</a> の作成、管理、および表示と、実験データの表示ができます。     </td><td>    該当なし  </td><td>    該当なし                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store セール イベント</b>&nbsp;*</td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td><td>    製品のセール イベントの状態を表示できます。   </td><td>    製品をセール イベントに追加して、割引を構成できます。      </td></tr>
     </tbody>

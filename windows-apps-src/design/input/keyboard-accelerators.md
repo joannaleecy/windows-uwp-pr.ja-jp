@@ -1,23 +1,21 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
 title: キーボード アクセラレータ
 label: Keyboard accelerators
 template: detail.hbs
 keywords: キーボード, アクセラレータ, アクセラレータ キー, キーボード ショートカット, アクセシビリティ, ナビゲーション, フォーカス, テキスト, 入力, ユーザーの操作, ゲームパッド, リモート
-ms.author: kbridge
 ms.date: 10/10/2017
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567132"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831627"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -46,11 +44,11 @@ ms.locfileid: "7567132"
 
 UI に適切な場合は必ずキーボード アクセラレータを指定し、すべてのカスタム コントロールでアクセラレータをサポートすることをお勧めします。
 
-- キーボード アクセラレータによりアプリのさらに、一度に 1 つだけのキーを押してしたりが難しい押せる * を使用してユーザーを含む、運動障碍を持つ accessiblefor ユーザー
+- キーボード アクセラレータによりアプリのさらに、一度に 1 つだけのキーを押してしたりが難しい押せる * を使用しているユーザーを含む、運動障碍を持つ accessiblefor ユーザー
 
   適切に設計されたキーボード UI はソフトウェアのアクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーはマウスを操作できない場合があるため、代わりにさまざまな支援技術 (キーボード強化ツール、スクリーン キーボード、スクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなど) が不可欠になる可能性があります。 このようなユーザーにとっては、コマンドを包括的にカバーすることが重要です。
 
-- キーボード アクセラレータは、詳しく usablefor 好むパワー ユーザーにとって、キーボードを使った操作をアプリを作成します。
+- キーボード アクセラレータは、複数 usablefor 好むパワー ユーザーにとって、キーボードを使った操作をアプリを行います。
 
   多くの経験豊富なユーザーには、キーボードの使用の方がはるかに好まれます。キーボード ベースのコマンドであれば、すばやく入力することができ、キーボードから手を離す必要がないためです。 このようなユーザーにとっては、効率性と一貫性が重要です。包括性が重要になるのは、特に頻繁に使用するコマンドに対してのみです。
 
@@ -359,7 +357,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 **Windows 10、バージョン 1803 (April 2018 Update) 以降**
 
-既定では、キーボード アクセラレータを宣言すると、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロールを表示、対応するキーの組み合わせヒントに表示します。
+既定では、キーボード アクセラレータが宣言されている場合、( [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) を除くすべてのコントロールを表示、対応するキーの組み合わせヒントに表示します。
 
 > [!NOTE] 
 > コントロールには、複数のアクセラレータが定義されている場合、最初のものだけが表示されます。
@@ -368,10 +366,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *ヒントでのアクセラレータ キーの組み合わせ*
 
-[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータは、ポップアップ テキストで表示されます。
+[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータがポップアップ テキストで表示されます。
 
 > [!NOTE]
-> ヒントを指定する (次の例では Button1 を参照) は、この動作を上書きします。
+> ヒントを指定する (次の例で Button1 を参照) は、この動作を上書きします。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">

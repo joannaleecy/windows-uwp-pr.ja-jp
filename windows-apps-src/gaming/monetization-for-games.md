@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 収益化
 ms.localizationpriority: medium
 ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7697122"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831308"
 ---
 #  <a name="monetization-for-games"></a>ゲームの収益化
 
@@ -20,14 +20,14 @@ ms.locfileid: "7697122"
 以前は、ゲームから収益を得るには、価格を設定し、それがストアで購入されるのを待つ以外に方法はありませんでした。 しかし今は、さまざまなオプションがあります。 実店舗での販売や、オンラインでの販売 (物理メディアまたはソフト コピー) のほか、ゲームを無料で公開する代わりに広告を表示したり、無料のゲーム内で有料のアイテムを販売したりする方法もあります。 ゲーム自体も、もはや単体の製品ではありません。 メインのゲームに関連して追加のコンテンツを販売する方法が主流となっています。
 
 UWP ゲームの販売促進や収益化には、次の方法があります。
-* これはセキュリティで保護された、オンラインのストア製品[世界規模](#worldwide-distribution-channel)の Microsoft Store でゲームを配置します。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
+* [世界規模](#worldwide-distribution-channel)のセキュリティで保護された、オンライン ストア製品には、Microsoft Store でゲームを配置します。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
 * Windows SDK の API を使って[ゲーム内購入](#in-game-purchases)を作成する。 ゲーマーはゲーム内からアイテムを購入したり、特別な機器、スキン、地図、ゲーム レベルなどの追加のコンテンツを購入したりすることができます。
 * [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
 * [広告キャンペーンによってゲームの可能性を最大限に広げる](#maximize-your-games-potential-through-ad-campaigns)。 有料広告、コミュニティ広告 (無料)、または自社広告 (無料) キャンペーンを使ってゲームを宣伝し、ユーザー ベースを拡大します。
 
 ## <a name="worldwide-distribution-channel"></a>世界規模の販売チャネル
 
-Microsoft Store できます、ゲームで利用できるようにダウンロード 200 以上の国と地域、世界中の請求方法を通じて支払い Visa、Mastercard、PayPal などのさまざまな形式のサポート。 国や地域の完全な一覧は、[市場の選択の定義](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)を参照してください。
+Microsoft Store できますゲームで利用できるようにダウンロード 200 以上の国と地域、世界中の請求方法を通じて支払い Visa、Mastercard、PayPal などのさまざまな形式のサポート。 国や地域の完全な一覧は、[市場の選択の定義](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)を参照してください。
 
 ## <a name="set-a-price-for-your-game"></a>ゲームの価格設定
 
@@ -102,7 +102,7 @@ Microsoft Store できます、ゲームで利用できるようにダウンロ�
 2. __[ダッシュボード概要]__ ページまたは __[すべてのアプリ]__ ページで、目的のアプリをクリックします。 アプリの申請をまだ作成していない場合は、__[新しいアプリの作成]__ をクリックして名前を予約します。
 3. __[アプリの概要]__ ページで、__[提出を開始する]__ をクリックします。
 4. この新しい申請を構成します。 [申請] ページで、次の手順を実行します。
-    * __[価格と使用可能状況]__ をクリックします。 __可視性__」セクションでは、「__このアプリを非表示にし… 取得できないように__' 開発チームのみゲームへのアクセスを確保を選択します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
+    * __[価格と使用可能状況]__ をクリックします。 __可視性__のセクションでは、「__このアプリを非表示にして取得. できないように__' 開発チームのみが、ゲームへのアクセス確保を選択します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
     * __[プロパティ]__ をクリックします。 __[カテゴリとサブカテゴリ]__ セクションで __[ゲーム]__ を選択し、ゲームに適したサブカテゴリを選びます。
     * __[年齢区分]__ をクリックします。 質問表に正確に入力します。
     * __[パッケージ]__ をクリックします。 前の手順で作成したゲーム パッケージをアップロードします。

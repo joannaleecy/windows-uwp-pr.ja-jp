@@ -11,11 +11,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698231"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831156"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 
@@ -54,7 +54,7 @@ ms.locfileid: "7698231"
 
 ## <a name="how-to-use-it"></a>使用方法
 
-表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にする](#enabling-reveal-on-custom-controls)セクションで説明したよう他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
+表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明したよう、他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
 
 ## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
 

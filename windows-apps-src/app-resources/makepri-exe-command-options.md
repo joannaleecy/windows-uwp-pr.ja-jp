@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720478"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832062"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
@@ -22,7 +22,7 @@ ms.locfileid: "7720478"
 
 ## <a name="getting-help-from-the-command-line"></a>コマンドラインからヘルプを取得します。
 
-実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することもできます`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
+実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することも`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
 
 ## <a name="makepri-commands"></a>MakePri のコマンド
 
@@ -418,7 +418,7 @@ MakePri は、インデクサーのメタデータ ファイルにリソース �
 
 ## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) オプション
 
-インデックスのオプションを使用する (/io) で`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。 既定では、インデックスのオプションが無効になります。
+インデックスのオプションを使用する (/io) と`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。 既定では、インデックスのオプションが無効になります。
 
 ```console
 /IndexOptions(io) <OPTIONS>
