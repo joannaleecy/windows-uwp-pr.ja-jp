@@ -11,11 +11,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: fb286b591881d16ff08dae9fe12770644d886acf
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839447"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7968037"
 ---
 # <a name="combo-box"></a>コンボ ボックス
 
