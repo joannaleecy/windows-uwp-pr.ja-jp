@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7964341"
+ms.locfileid: "8196671"
 ---
 # <a name="devices-sensors-and-power"></a><span data-ttu-id="41459-104">デバイス、センサーの使用</span><span class="sxs-lookup"><span data-stu-id="41459-104">Devices, sensors, and power</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7838987"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8198226"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a><span data-ttu-id="6b4fc-104">Windows ランタイム コンポーネントでイベントを生成する</span><span class="sxs-lookup"><span data-stu-id="6b4fc-104">Raising Events in Windows Runtime Components</span></span>
 > [!NOTE]

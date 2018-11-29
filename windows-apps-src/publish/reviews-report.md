@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10、uwp、レビュー、コメント、レビュー担当者
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ec883e7bcb98d69673b520df918e085182d35ec
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7984658"
+ms.locfileid: "8199409"
 ---
 # <a name="reviews-report"></a><span data-ttu-id="2fe77-103">レビュー レポート</span><span class="sxs-lookup"><span data-stu-id="2fe77-103">Reviews report</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 474f97f32439c389be8283bb10e0c0ed716b3f69
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7982340"
+ms.locfileid: "8197806"
 ---
 # <a name="texture-filtering-with-mipmaps"></a><span data-ttu-id="2033f-105">ミップマップでのテクスチャ フィルタリング</span><span class="sxs-lookup"><span data-stu-id="2033f-105">Texture filtering with mipmaps</span></span>
 

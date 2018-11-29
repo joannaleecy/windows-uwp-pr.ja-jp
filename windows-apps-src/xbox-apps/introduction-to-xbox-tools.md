@@ -7,11 +7,11 @@ keywords: windows 10, uwp, xbox one, ツール
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
 ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7853049"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8197584"
 ---
 # <a name="introduction-to-xbox-one-tools"></a><span data-ttu-id="67039-104">Xbox One ツールの概要</span><span class="sxs-lookup"><span data-stu-id="67039-104">Introduction to Xbox One tools</span></span>
 

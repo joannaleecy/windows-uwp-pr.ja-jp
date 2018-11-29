@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、クラウド サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993185"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200312"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a><span data-ttu-id="5687d-104">UWP ゲーム用のクラウド サービスの使用</span><span class="sxs-lookup"><span data-stu-id="5687d-104">Using cloud services for UWP games</span></span>
 

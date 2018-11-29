@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718370"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8199366"
 ---
 # <a name="aep-service-class-ids"></a><span data-ttu-id="f8225-105">AEP サービス クラス ID</span><span class="sxs-lookup"><span data-stu-id="f8225-105">AEP service class IDs</span></span>
 

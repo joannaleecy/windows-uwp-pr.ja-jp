@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986930"
+ms.locfileid: "8197449"
 ---
 # <a name="advertising-performance-report"></a><span data-ttu-id="ac0c6-103">広告パフォーマンス レポート</span><span class="sxs-lookup"><span data-stu-id="ac0c6-103">Advertising performance report</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: fe1e88383d6562526d77aea8c75891216cd75ade
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7981069"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8197826"
 ---
 # <a name="update-a-package-flight-submission"></a><span data-ttu-id="3070c-104">パッケージ フライトの申請の更新</span><span class="sxs-lookup"><span data-stu-id="3070c-104">Update a package flight submission</span></span>
 
