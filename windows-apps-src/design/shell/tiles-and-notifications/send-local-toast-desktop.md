@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C#, c シャープ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c32ba5928d3c272ef77a70790640346fb000762
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7842417"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992856"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a><span data-ttu-id="7deca-103">デスクトップ C# アプリからのローカル トースト通知の送信</span><span class="sxs-lookup"><span data-stu-id="7deca-103">Send a local toast notification from desktop C# apps</span></span>
 

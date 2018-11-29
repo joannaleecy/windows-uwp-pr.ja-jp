@@ -12,11 +12,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 639f552a240cf8d28d1a2a0ce530315671128746
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7843942"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7982615"
 ---
 # <a name="xaml-overview"></a><span data-ttu-id="8f610-104">XAML の概要</span><span class="sxs-lookup"><span data-stu-id="8f610-104">XAML overview</span></span>
 

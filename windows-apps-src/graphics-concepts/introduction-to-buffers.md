@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7855540"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7991938"
 ---
 # <a name="introduction-to-buffers"></a><span data-ttu-id="51798-104">バッファーの概要</span><span class="sxs-lookup"><span data-stu-id="51798-104">Introduction to buffers</span></span>
 

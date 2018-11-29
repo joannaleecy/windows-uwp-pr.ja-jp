@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 取得, アプリの売り上げ, アプリのダウンロード, インストール, ファネル, 購入, コンバージョン, チャネル, アプリ ページ ビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: 33d5885c5161793807bf32f62ff2df4bab5b2c1d
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7847236"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985812"
 ---
 # <a name="acquisitions-report"></a><span data-ttu-id="5efbd-103">取得レポート</span><span class="sxs-lookup"><span data-stu-id="5efbd-103">Acquisitions report</span></span>
 

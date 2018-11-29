@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 64a15526b32be52b0fc667dc6f8b549d6faae8f1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708492"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7986722"
 ---
 # <a name="programmatic-focus-navigation"></a><span data-ttu-id="3b2f2-103">プログラムによるフォーカス ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="3b2f2-103">Programmatic focus navigation</span></span>
 

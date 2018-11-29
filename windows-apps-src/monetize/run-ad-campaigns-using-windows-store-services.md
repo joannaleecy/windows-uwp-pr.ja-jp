@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7838795"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7991337"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a><span data-ttu-id="869fc-104">ストア サービスを使用した広告キャンペーンの実行</span><span class="sxs-lookup"><span data-stu-id="869fc-104">Run ad campaigns using Store services</span></span>
 

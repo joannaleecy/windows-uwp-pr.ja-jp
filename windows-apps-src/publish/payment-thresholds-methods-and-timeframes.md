@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f837674ff9af123c7535e3aea00b632b8b35bfc
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7845286"
+ms.locfileid: "7979351"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a><span data-ttu-id="9d6fb-103">支払しきい値、方法、期間</span><span class="sxs-lookup"><span data-stu-id="9d6fb-103">Payment thresholds, methods, and timeframes</span></span>
 

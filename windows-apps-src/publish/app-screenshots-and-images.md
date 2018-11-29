@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 予告編, ビデオ, スクリーン ショット, 画像, アイコン, Store 登録情報, Store 登録情報の画像
 ms.localizationpriority: medium
 ms.openlocfilehash: 0019ded3b409acf0e6530bffa4ad73f85bfa8855
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709457"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992585"
 ---
 # <a name="app-screenshots-images-and-trailers"></a><span data-ttu-id="35feb-103">アプリのスクリーンショット、画像、トレーラー</span><span class="sxs-lookup"><span data-stu-id="35feb-103">App screenshots, images, and trailers</span></span>
 
