@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7826883"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985080"
 ---
 # <a name="input-for-games"></a>ゲームの入力
 
@@ -25,9 +25,9 @@ Windows 10 と Xbox One の UWP ゲームおよび UWP アプリ でのゲーム
 
 ### <a name="gamepads"></a>ゲームパッド
 
-ゲームパッドは Xbox One の標準入力デバイスです。一般的に、キーボードやマウスを好まない Windows のゲーマーが選びます。 They provide a variety of digital and analog controls making them suitable for almost any kind of game and also provide tactile feedback through embedded vibration motors.
+ゲームパッドは Xbox One の標準入力デバイスです。一般的に、キーボードやマウスを好まない Windows のゲーマーが選びます。 ゲームパッドでは、デジタルとアナログのさまざまなコントロールを用意して、ほとんどの種類のゲームに適合させています。また、埋め込みバイブレーション モーターを使って触覚的なフィードバックも提供しています。
 
-For information on how to use gamepads in your UWP game, see [Gamepad and vibration](gamepad-and-vibration.md).
+UWP ゲームでゲームパッドを使用する方法について詳しくは、「[ゲームパッドとバイブレーション](gamepad-and-vibration.md)」をご覧ください。
 
 ### <a name="arcade-sticks"></a>アーケード スティック
 
@@ -37,7 +37,7 @@ UWP ゲームでのアーケード スティックの使用方法について詳
 
 ### <a name="racing-wheels"></a>レース ホイール
 
-レース ホイールは、実際のレーシングカーのコックピットの操縦性を模した入力デバイスで、自動車やトラックを主役にしたレーシング ゲームに最適な入力デバイスです。 Many racing wheels are equipped with true force feedback--that is, they can apply actual forces on an axis of control such as the steering wheel--not just simple vibration.
+レース ホイールは、実際のレーシングカーのコックピットの操縦性を模した入力デバイスで、自動車やトラックを主役にしたレーシング ゲームに最適な入力デバイスです。 多くのレース ホイールには、単なるバイブレーションではなく、真のフォース フィードバックが備わっています。フォース フィードバックでは、ハンドルなどのコントロール軸に実際の力を加えることができます。
 
 UWP ゲームでのレース ホイールの使用方法について詳しくは、「[レース ホイールとフォースフィードバック](racing-wheel-and-force-feedback.md)」をご覧ください。
 
