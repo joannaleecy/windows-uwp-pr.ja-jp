@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング フレームワーク, 変換, Direct3D 9, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7855041"
+ms.locfileid: "7976027"
 ---
 # <a name="convert-the-rendering-framework"></a><span data-ttu-id="83bee-104">レンダリング フレームワークの変換</span><span class="sxs-lookup"><span data-stu-id="83bee-104">Convert the rendering framework</span></span>
 
