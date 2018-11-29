@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 22e2321c301535fe89f2a7bba13497d51c6d8b78
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 368454e32ba2c88994161f6c7deb554fff73972a
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827377"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983388"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-次の XAML は、スクロール ビューアーに画像を配置し、ズームを有効にする方法を示しています。
+この XAML では、水平スクロールを有効にする、スクロール ビューアーに画像を配置およびズームを有効にする方法を示します。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"

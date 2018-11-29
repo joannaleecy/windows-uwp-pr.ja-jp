@@ -8,16 +8,16 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
-ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833692"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983894"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
-通知リスナーを使用すると、ユーザーの通知にアクセスすることができます。 スマートウォッチや他のウェアラブルでは、通知リスナーを使用して、電話の通知をウェアラブル デバイスに送信することができます。 ホーム オートメーション アプリでは、通知リスナーを使用して、通知を受信したときに特定のアクション (電話がかかってきたときにランプを点滅するなど) を実行することができます。 
+通知リスナーを使用すると、ユーザーの通知にアクセスすることができます。 スマートウォッチや他のウェアラブルでは、通知リスナーを使用して、電話の通知をウェアラブル デバイスに送信することができます。 ホーム オートメーション アプリでは、呼び出しを受信した場合を点滅するなどの通知を受け取ったときに特定のアクションを実行するのに、通知リスナーを使用できます。 
 
 > [!IMPORTANT]
 > **Anniversary Update が必要**: 通知リスナーを使用するには、SDK 14393 以降をターゲットとし、ビルド 14393 以降を実行している必要があります。
