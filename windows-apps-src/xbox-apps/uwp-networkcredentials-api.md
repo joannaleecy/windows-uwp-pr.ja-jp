@@ -3,11 +3,11 @@ title: Device Portal ネットワーク資格情報 API リファレンス
 description: 追加、削除、またはネットワーク資格情報をプログラムで更新する方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7836237"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7974097"
 ---
 # <a name="network-credentials-api-reference"></a>ネットワーク資格情報 API リファレンス
 追加、削除、またはこの REST API を使用して、開発機で保存されているネットワーク資格情報を更新することができます。

@@ -3,11 +3,11 @@ title: デバイス ポータル展開情報 API リファレンス
 description: 展開情報 API にプログラムでアクセスする方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832661"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973963"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>1 つ以上のインストール パッケージの展開情報を要求します。
 
