@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
-ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7829957"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992387"
 ---
 # <a name="get-app-data"></a>アプリ データの取得
 
@@ -109,7 +109,7 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 <span id="add-on-object" />
 
-### <a name="add-on-resouce"></a>アドオン リソース
+### <a name="add-on-resource"></a>アドオン リソース
 
 このリソースは、アドオンに関する情報を提供します。
 
