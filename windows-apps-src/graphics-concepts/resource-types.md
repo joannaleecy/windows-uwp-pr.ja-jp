@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704363"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8194335"
 ---
 # <a name="resource-types"></a><span data-ttu-id="cc09f-104">リソースの種類</span><span class="sxs-lookup"><span data-stu-id="cc09f-104">Resource types</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718676"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8194239"
 ---
 # <a name="monetization-engagement-and-store-services"></a><span data-ttu-id="f52b6-104">収益化、エンゲージメント、ストア サービス</span><span class="sxs-lookup"><span data-stu-id="f52b6-104">Monetization, engagement, and Store services</span></span>
 

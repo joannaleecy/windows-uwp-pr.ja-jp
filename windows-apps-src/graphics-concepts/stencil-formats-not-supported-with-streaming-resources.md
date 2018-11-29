@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d35813a6242abd555e87329c25a413285d1d948
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985459"
+ms.locfileid: "8188937"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a><span data-ttu-id="da59f-104">ステンシルの書式はストリーミング リソースでサポートされない</span><span class="sxs-lookup"><span data-stu-id="da59f-104">Stencil formats not supported with streaming resources</span></span>
 

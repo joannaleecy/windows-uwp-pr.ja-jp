@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 概要
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f4e38d590fc2e905221c71c1fbc6b137f5fdea0
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992294"
+ms.locfileid: "8194070"
 ---
 # <a name="start-coding"></a><span data-ttu-id="636c1-104">コーディングの開始</span><span class="sxs-lookup"><span data-stu-id="636c1-104">Start coding</span></span>
 

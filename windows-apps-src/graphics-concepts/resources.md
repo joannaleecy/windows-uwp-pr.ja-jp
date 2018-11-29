@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7975434"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8218115"
 ---
 # <a name="resources"></a><span data-ttu-id="acb82-104">リソース</span><span class="sxs-lookup"><span data-stu-id="acb82-104">Resources</span></span>
 
