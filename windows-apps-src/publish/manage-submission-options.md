@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 公開の保留, 公開日, 申請を送信して公開, 制限付き機能の承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 3fb075a4d8766f4f9bfc352160c6a1f5d99d9a0e
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7984578"
+ms.locfileid: "8198095"
 ---
 # <a name="manage-submission-options"></a>申請オプションの管理
 
