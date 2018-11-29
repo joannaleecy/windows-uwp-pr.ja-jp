@@ -13,11 +13,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f65ed68db51ea173dfec3c06a9dc81a7f7735afd
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7983318"
+ms.locfileid: "8194551"
 ---
 # <a name="calendar-date-and-time-controls"></a><span data-ttu-id="cb3e1-103">カレンダー、日付、および時刻コントロール</span><span class="sxs-lookup"><span data-stu-id="cb3e1-103">Calendar, date, and time controls</span></span>
 

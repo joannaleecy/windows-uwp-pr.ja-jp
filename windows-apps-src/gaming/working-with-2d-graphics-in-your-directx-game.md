@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 2D, グラフィックス
 ms.localizationpriority: medium
 ms.openlocfilehash: 1154abc4305307d87f15fbe0c0e5461e3a15e27e
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992044"
+ms.locfileid: "8196517"
 ---
 # <a name="2d-graphics-for-directx-games"></a><span data-ttu-id="e1618-104">DirectX ゲームの 2D グラフィックス</span><span class="sxs-lookup"><span data-stu-id="e1618-104">2D graphics for DirectX games</span></span>
 

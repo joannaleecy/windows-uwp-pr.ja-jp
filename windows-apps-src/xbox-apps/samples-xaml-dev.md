@@ -1,11 +1,11 @@
 ---
 ms.localizationpriority: medium
 ms.openlocfilehash: 649c221f8dd9221e0a1df8dbea74e4facefadd92
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7967712"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8193304"
 ---
 #<a name="xaml-samples-for-developers"></a><span data-ttu-id="2d6bc-101">開発者向け XAML サンプル</span><span class="sxs-lookup"><span data-stu-id="2d6bc-101">XAML samples for developers</span></span>
 

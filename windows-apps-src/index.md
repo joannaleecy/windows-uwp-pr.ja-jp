@@ -9,11 +9,11 @@ ms.date: 08/4/2017
 keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b31e29d0967c8514de0566647c657574f6e5930
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993538"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8193725"
 ---
 # <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
 ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。

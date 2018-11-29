@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 194bbeefbd3ca5f8237bb3449ec935211056aea3
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7988530"
+ms.locfileid: "8190860"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a><span data-ttu-id="bcc90-104">階層データをバインドしてマスター/詳細ビューを作る方法</span><span class="sxs-lookup"><span data-stu-id="bcc90-104">Bind hierarchical data and create a master/details view</span></span>
 

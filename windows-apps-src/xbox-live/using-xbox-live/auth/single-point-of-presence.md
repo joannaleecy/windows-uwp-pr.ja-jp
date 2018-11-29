@@ -1,19 +1,17 @@
 ---
 title: Single Point of Presence (SPOP)
-author: KevinAsgari
 description: Xbox Live Single Point of Presence (SPOP) を使ってタイトルが一度に 1 台のデバイスでのみ再生されるようにする方法について説明します。
 ms.assetid: 40f19319-9ccc-4d35-85eb-4749c2cf5ef8
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, spop, single point of presence
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7159c5478d8e3325dabdb86e212d84c43cfb18
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f1503a6168a50175e861e17027e8b642d1b7834d
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564614"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8217898"
 ---
 # <a name="single-point-of-presence-spop"></a><span data-ttu-id="ed8c4-104">Single Point of Presence (SPOP)</span><span class="sxs-lookup"><span data-stu-id="ed8c4-104">Single Point of Presence (SPOP)</span></span>
 

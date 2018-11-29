@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, Visual Studio, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992307"
+ms.locfileid: "8209746"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a><span data-ttu-id="bfc85-104">ゲーム プログラミング用の Visual Studio ツール</span><span class="sxs-lookup"><span data-stu-id="bfc85-104">Visual Studio tools for game programming</span></span>
 

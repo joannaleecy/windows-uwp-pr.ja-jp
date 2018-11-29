@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7835802"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8188927"
 ---
 # <a name="appendices"></a><span data-ttu-id="1d5e7-104">付録</span><span class="sxs-lookup"><span data-stu-id="1d5e7-104">Appendices</span></span>
 

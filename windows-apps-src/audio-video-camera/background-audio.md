@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b8a859f27ff24dba15f7e4fde66a8d54a84a8bf4
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7966849"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8194837"
 ---
 # <a name="play-media-in-the-background"></a><span data-ttu-id="f4a48-104">バックグラウンドでのメディアの再生</span><span class="sxs-lookup"><span data-stu-id="f4a48-104">Play media in the background</span></span>
 <span data-ttu-id="f4a48-105">この記事では、アプリをフォアグラウンドからバックグラウンドに移動してもメディアの再生を続行できるように、アプリを構成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f4a48-105">This article shows you how to configure your app so that media continues to play when your app moves from the foreground to the background.</span></span> <span data-ttu-id="f4a48-106">バックグラウンドでの再生とは、ユーザーがアプリを最小化してホーム画面に戻った後や、それ以外の方法でアプリから離れた後も、アプリでオーディオの再生を続行できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="f4a48-106">This means that even after the user has minimized your app, returned to the home screen, or has navigated away from your app in some other way, your app can continue to play audio.</span></span> 
