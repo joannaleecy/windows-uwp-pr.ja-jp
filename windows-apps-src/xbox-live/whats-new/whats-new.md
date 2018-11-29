@@ -1,18 +1,16 @@
 ---
 title: Xbox Live の新機能
-author: PhillipLucas
 description: Xbox Live SDK の新機能
-ms.author: aablackm
 ms.date: 10/23/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bf536298f075535bf9f5e5198573a87db33dd2a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 33e5b6afbf0d60679bfce1789be2d965fd881f1c
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554160"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8217901"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
@@ -34,7 +32,7 @@ ms.locfileid: "7554160"
 
 #### <a name="c-api-layer-for-xsapi"></a>Xsapi C API レイヤー
 
-一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリの管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
+一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリ管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
 
 詳細については、 [Xbox Live C Api](../xsapi-flat-c.md)を参照してください。
 

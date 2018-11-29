@@ -2,19 +2,17 @@
 title: GET (/handles/{handle-id})
 assetID: c95b5ab5-d56a-f70d-20d8-afb48d122ccd
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidget.html
-author: KevinAsgari
 description: " GET (/handles/{handle-id})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 39d39db0fa17c85dfad3dcca7526d13618835135
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 501d36f4d1ac079af15d6bb7f35a90d5328fc8db
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562198"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8204167"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 ハンドル ID で指定されたハンドルを取得します。
@@ -35,7 +33,7 @@ ms.locfileid: "7562198"
 
 この HTTP/REST メソッドでは、指定したハンドル、セッションでは、ユーザーの現在のアクティビティを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
 
-このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
+このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
 <a id="ID4EDB"></a>
 

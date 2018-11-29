@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Python
 ms.localizationpriority: medium
 ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7976886"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8215291"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python のコード例: アプリ、アドオン、およびフライトの申請
 

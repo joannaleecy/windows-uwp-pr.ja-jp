@@ -2,23 +2,21 @@
 title: ユニバーサル リソース識別子 (URI) リファレンス
 assetID: cb7c6fe2-0376-dab4-9115-e4e3ebcfbd39
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-uris.html
-author: KevinAsgari
 description: " ユニバーサル リソース識別子 (URI) リファレンス"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f5615cb0a8a5fa15652724040057c43697fa0782
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cd86a6147c047a2925cdb931d9735712a4032adb
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554195"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8217885"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
-このセクションでは、Uniform Resource Identifier (Uri) と Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Uniform Resource Identifier (Uri) および Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 <a id="ID4EAB"></a>
 
@@ -27,11 +25,11 @@ ms.locfileid: "7554195"
 
 [実績 URI](achievements/atoc-reference-achievementsv2.md)
 
-&nbsp;&nbsp;Uri との実績に関連付けられている HTTP メソッド。
+&nbsp;&nbsp;Uri との実績に関連付けられている HTTP メソッドです。
 
 [ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;Uri はクライアントによって、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
+&nbsp;&nbsp;Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
 
 [ゲーム DVR URI](dvr/atoc-reference-dvr.md)
 
@@ -51,11 +49,11 @@ ms.locfileid: "7554195"
 
 [マーケットプレース URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri と Xbox の市場のサービスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri と Xbox marketplace サービスの HTTP メソッドが関連付けられています。
 
 [マッチメイキング URI](matchtickets/atoc-reference-matchtickets.md)
 
-&nbsp;&nbsp;Uri とマッチメイ キング用の関連の HTTP/REST メソッドです。
+&nbsp;&nbsp;マッチメイ キングに関連付けられている HTTP/REST 方法と Uri。
 
 [People URI](people/atoc-reference-people.md)
 
@@ -63,7 +61,7 @@ ms.locfileid: "7554195"
 
 [プレゼンス URI](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;Uri とプレゼンスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;プレゼンスに関連する HTTP メソッドと Uri。
 
 [プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
@@ -95,7 +93,7 @@ ms.locfileid: "7554195"
 
 [ユーザー URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri とユーザーの関連付けの HTTP メソッドです。
+&nbsp;&nbsp;Uri とユーザーの HTTP メソッドが関連付けられています。
 
 [ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 
