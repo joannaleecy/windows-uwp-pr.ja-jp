@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7847868"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7988632"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>DirectX 11 API への DirectX 9 の機能のマッピング
 

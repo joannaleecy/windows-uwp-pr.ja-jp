@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 分析 API, CAB のダウンロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7834842"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985229"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>Xbox One ゲームのエラーに関する CAB ファイルをダウンロードします。
 

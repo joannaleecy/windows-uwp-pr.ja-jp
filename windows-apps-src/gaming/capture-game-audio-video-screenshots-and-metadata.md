@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839800"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992234"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
 この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。 
@@ -152,7 +152,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>システムがメタデータを削除するときに通知を受け取る
-**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベントのハンドラーを登録することで、システムがアプリのメタデータの削除を開始するときに、通知を受け取るように登録できます。
+システムが**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベントのハンドラーを登録することにより、アプリのメタデータの削除を開始するときに通知を受信登録することができます。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

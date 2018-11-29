@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7834760"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987730"
 ---
 # <a name="diffuse-lighting"></a>拡散光
 

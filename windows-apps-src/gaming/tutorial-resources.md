@@ -6,11 +6,11 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7848686"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984781"
 ---
 # <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 

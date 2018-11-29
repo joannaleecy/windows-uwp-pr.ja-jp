@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a77cb67891b3cfcb814e66fd14db9e79a0bff1c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7831013"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987173"
 ---
 # <a name="upload-app-packages"></a>アプリ パッケージのアップロード
 

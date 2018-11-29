@@ -6,11 +6,11 @@ ms.topic: article
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
 ms.openlocfilehash: b162fbaaeda8e1ded1f0d3e1d75c840dfa543f4c
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7840314"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987530"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT についてよく寄せられる質問
 可能性はの作成と Windows ランタイム Api の使用に関する質問への回答[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。

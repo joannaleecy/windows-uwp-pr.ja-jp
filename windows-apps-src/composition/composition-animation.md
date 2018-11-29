@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7846752"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983258"
 ---
 # <a name="composition-animations"></a>コンポジションのアニメーション
 

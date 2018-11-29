@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: bedbad9e4de22ee098863d013a1e4ad16d86543e
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7855260"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984313"
 ---
 # <a name="resource-management-system"></a>リソース管理システム
 リソース管理システムには、ビルド時と実行時の両方の機能があります。 ビルド時に、システムは、アプリとしてパッケージ化されているリソースのさまざまなバリエーションすべてのインデックスを作成します。 このインデックスがパッケージ リソース インデックス (PRI) であり、アプリのパッケージにも含まれています。 実行時に、システムは、有効になっているユーザーやコンピューターの設定を検出し、PRI でその情報を参照して、それらの設定に最適なリソースを自動的に読み込みます。

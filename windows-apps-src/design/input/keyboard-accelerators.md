@@ -11,11 +11,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7831627"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7986979"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 

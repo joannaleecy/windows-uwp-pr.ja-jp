@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 076e4b0ddf30a23271bbb6b488f235f7233b28c2
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7846060"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7988685"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 アイコン
 

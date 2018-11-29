@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10、uwp、azure ad アプリケーション, aad, ユーザー、グループ、複数のユーザー、マルチ ユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: 7dd300aa6a37c205e01c6f73d95ef1818d516fc0
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7840918"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989866"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>ユーザー、グループ、および Azure AD アプリケーションをパートナー センター アカウントを追加します。
 
