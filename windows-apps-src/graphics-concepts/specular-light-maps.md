@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d88989be04704395c056f1bae058e2aefd1a2a4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707590"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7979953"
 ---
 # <a name="specular-light-maps"></a><span data-ttu-id="e458e-104">反射ライト マップ</span><span class="sxs-lookup"><span data-stu-id="e458e-104">Specular light maps</span></span>
 

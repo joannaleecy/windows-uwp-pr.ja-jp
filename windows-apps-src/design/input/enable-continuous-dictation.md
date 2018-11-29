@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705034"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7978481"
 ---
 # <a name="continuous-dictation"></a><span data-ttu-id="ca724-103">継続的なディクテーション</span><span class="sxs-lookup"><span data-stu-id="ca724-103">Continuous dictation</span></span>
 

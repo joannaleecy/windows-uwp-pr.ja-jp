@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7827307"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973363"
 ---
 # <a name="in-app-purchases-and-trials"></a><span data-ttu-id="9e748-104">アプリ内購入と試用版</span><span class="sxs-lookup"><span data-stu-id="9e748-104">In-app purchases and trials</span></span>
 

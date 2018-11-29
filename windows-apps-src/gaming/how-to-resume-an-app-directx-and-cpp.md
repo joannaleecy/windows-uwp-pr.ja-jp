@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 再開, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/28/2018
-ms.locfileid: "7843168"
+ms.locfileid: "7975816"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a><span data-ttu-id="60dc3-104">アプリを再開する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="60dc3-104">How to resume an app (DirectX and C++)</span></span>
 

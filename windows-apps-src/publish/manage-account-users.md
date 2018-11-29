@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アカウント ユーザー, ユーザー、azure ad, マルチ ユーザー、複数のユーザーを管理します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7826588"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7973257"
 ---
 # <a name="manage-account-users"></a><span data-ttu-id="c50e7-103">アカウント ユーザーの管理</span><span class="sxs-lookup"><span data-stu-id="c50e7-103">Manage account users</span></span>
 

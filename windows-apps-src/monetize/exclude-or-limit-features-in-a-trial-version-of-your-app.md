@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d7ada6567db95609203f8f163b78631e141b4f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712466"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7972996"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a><span data-ttu-id="f59bc-103">試用版での機能の除外または制限</span><span class="sxs-lookup"><span data-stu-id="f59bc-103">Exclude or limit features in a trial version</span></span>
 

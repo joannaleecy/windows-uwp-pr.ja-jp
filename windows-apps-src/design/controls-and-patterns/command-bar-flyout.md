@@ -13,11 +13,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ef472863550b7d17836dc7f47e2fe789c9ca7fbc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709883"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7977322"
 ---
 # <a name="command-bar-flyout"></a><span data-ttu-id="168ef-103">コマンド バーのポップアップ</span><span class="sxs-lookup"><span data-stu-id="168ef-103">Command bar flyout</span></span>
 
