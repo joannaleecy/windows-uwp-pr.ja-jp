@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993448"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200550"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design System の Windows アプリの作成者
 

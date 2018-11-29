@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DDSTextureLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7980767"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200342"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
 
