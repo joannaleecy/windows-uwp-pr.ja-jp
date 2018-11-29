@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ms.openlocfilehash: b39507fb1333fdb642601c6b4828c3d160c6ceb5
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7983278"
+ms.locfileid: "8217915"
 ---
 # <a name="instructional-ui-guidelines"></a><span data-ttu-id="11a58-103">説明 UI のガイドライン</span><span class="sxs-lookup"><span data-stu-id="11a58-103">Instructional UI guidelines</span></span>
 

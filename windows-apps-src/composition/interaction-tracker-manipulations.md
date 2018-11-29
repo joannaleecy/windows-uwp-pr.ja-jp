@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7987986"
+ms.locfileid: "8191218"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a><span data-ttu-id="0e163-104">InteractionTracker を使用したカスタム操作エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="0e163-104">Custom manipulation experiences with InteractionTracker</span></span>
 

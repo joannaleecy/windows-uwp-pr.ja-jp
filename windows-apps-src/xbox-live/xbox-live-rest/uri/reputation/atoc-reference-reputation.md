@@ -2,19 +2,17 @@
 title: 評判 URI
 assetID: d1cb76c0-86a4-8c51-19f6-5f223b517d46
 permalink: en-us/docs/xboxlive/rest/atoc-reference-reputation.html
-author: KevinAsgari
 description: " 評判 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 56c7627a3b0761419537d10e595afc38943e7354
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 93d6d6e6acfd8fa39bd9d26c87ed99362d2c88d6
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571721"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8217907"
 ---
 # <a name="reputation-uris"></a><span data-ttu-id="d1f48-104">評判 URI</span><span class="sxs-lookup"><span data-stu-id="d1f48-104">Reputation URIs</span></span>
  
