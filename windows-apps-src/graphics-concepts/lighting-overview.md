@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694991"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990415"
 ---
 # <a name="lighting-overview"></a><span data-ttu-id="de370-105">光源の概要</span><span class="sxs-lookup"><span data-stu-id="de370-105">Lighting overview</span></span>
 

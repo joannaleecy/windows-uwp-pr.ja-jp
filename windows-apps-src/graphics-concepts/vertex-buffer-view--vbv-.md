@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704210"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987644"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a><span data-ttu-id="234fc-104">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="234fc-104">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span>
 

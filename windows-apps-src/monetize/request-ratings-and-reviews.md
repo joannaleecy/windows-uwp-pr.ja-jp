@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 評価, レビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: 377b71dba2fb62dfc562b56d40e65e43b0bd49c9
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7847358"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7986616"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a><span data-ttu-id="79915-103">アプリの評価とレビューを求める</span><span class="sxs-lookup"><span data-stu-id="79915-103">Request ratings and reviews for your app</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7829851"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7982721"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span data-ttu-id="548b5-104"><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>深度/ステンシル機能の構成</span><span class="sxs-lookup"><span data-stu-id="548b5-104"><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuring depth-stencil functionality</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cd5ca66635b57b79c2fca3e6ff10b8debb43fd0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693672"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984608"
 ---
 # <a name="introduction-to-textures"></a><span data-ttu-id="898e7-105">テクスチャの概要</span><span class="sxs-lookup"><span data-stu-id="898e7-105">Introduction to textures</span></span>
 

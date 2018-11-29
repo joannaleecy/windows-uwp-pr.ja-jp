@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7835000"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989422"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a><span data-ttu-id="7dfbb-104">Windows デスクトップ ブリッジ アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="7dfbb-104">Windows Desktop Bridge app tests</span></span>
 

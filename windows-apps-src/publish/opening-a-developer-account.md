@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e1c2567393e6d6bfab75b2db068f0b61f7fb6893
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837633"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987806"
 ---
 # <a name="opening-a-developer-account"></a><span data-ttu-id="8f7ac-104">開発者アカウントを開く</span><span class="sxs-lookup"><span data-stu-id="8f7ac-104">Opening a developer account</span></span>
 

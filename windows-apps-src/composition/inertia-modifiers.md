@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7854084"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7986702"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a><span data-ttu-id="780cd-104">慣性修飾子を使用したスナップ位置の作成</span><span class="sxs-lookup"><span data-stu-id="780cd-104">Create snap points with inertia modifiers</span></span>
 

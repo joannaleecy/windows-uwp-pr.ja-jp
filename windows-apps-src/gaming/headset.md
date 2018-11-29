@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ヘッドセット
 ms.localizationpriority: medium
 ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7835257"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989445"
 ---
 # <a name="headset"></a><span data-ttu-id="d833c-104">ヘッドセット</span><span class="sxs-lookup"><span data-stu-id="d833c-104">Headset</span></span>
 

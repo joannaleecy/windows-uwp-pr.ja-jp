@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション, コレクション, グループの通知, 通知のグループ化, グループ、整理, アクション センター, トースト
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7849429"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983797"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a><span data-ttu-id="34f3c-103">コレクションを使用したトースト通知のグループ化</span><span class="sxs-lookup"><span data-stu-id="34f3c-103">Grouping toast notifications with collections</span></span>
 <span data-ttu-id="34f3c-104">コレクションを使用してアクション センターでアプリのトーストを整理します。</span><span class="sxs-lookup"><span data-stu-id="34f3c-104">Use collections to organize your app's toasts in Action Center.</span></span> <span data-ttu-id="34f3c-105">コレクションにより、ユーザーはアクション センター内での情報をより簡単に見つけることができ、開発者が通知をより適切に管理できるようになります。</span><span class="sxs-lookup"><span data-stu-id="34f3c-105">Collections help users locate information within Action Center more easily and allow for developers to better manage their notifications.</span></span>  <span data-ttu-id="34f3c-106">下の API では、通知のコレクションの削除、作成、および更新が可能です。</span><span class="sxs-lookup"><span data-stu-id="34f3c-106">The APIs below allow for removing, creating, and updating notification collections.</span></span>

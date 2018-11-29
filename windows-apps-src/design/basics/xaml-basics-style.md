@@ -6,11 +6,11 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7849315"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7984568"
 ---
 # <a name="tutorial-create-custom-styles"></a><span data-ttu-id="4fa11-104">チュートリアル: カスタム スタイルを作成する</span><span class="sxs-lookup"><span data-stu-id="4fa11-104">Tutorial: Create custom styles</span></span>
 

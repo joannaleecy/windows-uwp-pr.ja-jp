@@ -11,11 +11,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: a984e30bbdc569522b04d328087775aa9e8ce2bc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700031"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990142"
 ---
 # <a name="content-links-in-text-controls"></a><span data-ttu-id="f1c6f-103">テキスト コントロールのコンテンツ リンク</span><span class="sxs-lookup"><span data-stu-id="f1c6f-103">Content links in text controls</span></span>
 

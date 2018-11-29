@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f85bf490bd1dd68e2d0ba31335f2fc0f89fe27b0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715576"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983308"
 ---
 # <a name="coordinate-systems"></a><span data-ttu-id="85fb7-105">座標系</span><span class="sxs-lookup"><span data-stu-id="85fb7-105">Coordinate systems</span></span>
 

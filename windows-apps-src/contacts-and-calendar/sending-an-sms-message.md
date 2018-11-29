@@ -7,11 +7,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 427eb1b895269727d82e42d5abc3ae1f1da1a35d
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7840974"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7985709"
 ---
 # <a name="send-an-sms-message"></a><span data-ttu-id="4d8d7-106">SMS メッセージの送信</span><span class="sxs-lookup"><span data-stu-id="4d8d7-106">Send an SMS message</span></span>
 
