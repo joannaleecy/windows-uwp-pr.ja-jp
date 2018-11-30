@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8211608"
+ms.locfileid: "8324690"
 ---
 # <a name="game-porting-guides"></a><span data-ttu-id="c5efc-104">ゲーム移植ガイド</span><span class="sxs-lookup"><span data-stu-id="c5efc-104">Game porting guides</span></span>
 

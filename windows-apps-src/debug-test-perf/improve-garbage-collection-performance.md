@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3940f519706fba6d795d60344cbd83337ae482
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201555"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8325196"
 ---
 # <a name="improve-garbage-collection-performance"></a><span data-ttu-id="43cad-105">ガベージ コレクションのパフォーマンスの向上</span><span class="sxs-lookup"><span data-stu-id="43cad-105">Improve garbage collection performance</span></span>
 

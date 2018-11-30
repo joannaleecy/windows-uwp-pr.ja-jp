@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8191077"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8327597"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a><span data-ttu-id="1d053-103">UI とアプリ パッケージ マニフェスト内の文字列をローカライズする</span><span class="sxs-lookup"><span data-stu-id="1d053-103">Localize strings in your UI and app package manifest</span></span>
 <span data-ttu-id="1d053-104">アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1d053-104">For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).</span></span>

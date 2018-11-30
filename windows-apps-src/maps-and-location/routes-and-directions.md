@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ルート, マップ, 位置情報, ルート案内
 ms.localizationpriority: medium
 ms.openlocfilehash: dd93a092ee0db0821e9326d0f9ffa86890850b87
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216076"
+ms.locfileid: "8325819"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a><span data-ttu-id="92acb-104">地図へのルートとルート案内の表示</span><span class="sxs-lookup"><span data-stu-id="92acb-104">Display routes and directions on a map</span></span>
 

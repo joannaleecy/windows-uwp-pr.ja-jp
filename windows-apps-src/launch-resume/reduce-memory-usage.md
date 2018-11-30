@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c9716483d7df51c2c02d2f9c88e5a4cec05437cc
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993618"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8325677"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a><span data-ttu-id="36384-104">アプリがバックグラウンドに移動したときのメモリの解放</span><span class="sxs-lookup"><span data-stu-id="36384-104">Free memory when your app moves to the background</span></span>
 

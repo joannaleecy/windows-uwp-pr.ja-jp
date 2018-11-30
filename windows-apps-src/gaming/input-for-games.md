@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985080"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329192"
 ---
 # <a name="input-for-games"></a><span data-ttu-id="966cb-104">ゲームの入力</span><span class="sxs-lookup"><span data-stu-id="966cb-104">Input for games</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0336054b99e5aae6739e22afd29ee344aad3d42c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8208838"
+ms.locfileid: "8324414"
 ---
 # <a name="depth-and-stencil-buffers"></a><span data-ttu-id="4be08-104">深度バッファーとステンシル バッファー</span><span class="sxs-lookup"><span data-stu-id="4be08-104">Depth and stencil buffers</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7965515"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323366"
 ---
 # <a name="legacy-background-media-playback"></a><span data-ttu-id="b6f59-104">従来のバックグラウンドでのメディアの再生</span><span class="sxs-lookup"><span data-stu-id="b6f59-104">Legacy background media playback</span></span>
 

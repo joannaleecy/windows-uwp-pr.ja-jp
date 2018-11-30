@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、スレッド、スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213377"
+ms.locfileid: "8325759"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a><span data-ttu-id="244d4-104">スレッド プールを使うためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="244d4-104">Best practices for using the thread pool</span></span>
 

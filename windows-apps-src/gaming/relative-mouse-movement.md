@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, ゲーム, マウス, 入力
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8208084"
+ms.locfileid: "8326426"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a><span data-ttu-id="26595-104">相対マウス移動と CoreWindow</span><span class="sxs-lookup"><span data-stu-id="26595-104">Relative mouse movement and CoreWindow</span></span>
 

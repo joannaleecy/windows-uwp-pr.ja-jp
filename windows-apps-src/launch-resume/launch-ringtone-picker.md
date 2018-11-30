@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
 ms.localizationpriority: medium
 ms.openlocfilehash: 293c755ecaf81ce80fab148a8aca92a7e3a8fa48
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8214942"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8328807"
 ---
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a><span data-ttu-id="6365a-104">ms-tonepicker URI スキームを使ったトーンの選択と保存</span><span class="sxs-lookup"><span data-stu-id="6365a-104">Choose and save tones using the ms-tonepicker URI scheme</span></span>
 

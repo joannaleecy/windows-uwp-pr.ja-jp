@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1443730e343bc00563142e937d534282b9b34524
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8203801"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8327285"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a><span data-ttu-id="276a5-103">ユーザー プロファイルの言語とアプリ マニフェストの言語について</span><span class="sxs-lookup"><span data-stu-id="276a5-103">Understand user profile languages and app manifest languages</span></span>
 <span data-ttu-id="276a5-104">Windows ユーザーは、**[設定]** > **[時刻と言語]** > **[地域と言語]** の順に移動して、優先される表示言語の順序指定された一覧を構成するか、または優先される 1 つの表示言語を構成できます。</span><span class="sxs-lookup"><span data-stu-id="276a5-104">A Windows user can use **Settings** > **Time & Language** > **Region & language** to configure an ordered list of preferred display languages, or just a single preferred display language.</span></span> <span data-ttu-id="276a5-105">言語には場合によっては地域バリアントがあります。</span><span class="sxs-lookup"><span data-stu-id="276a5-105">A language can have a regional variant.</span></span> <span data-ttu-id="276a5-106">たとえば、スペインで話されるスペイン語、メキシコで話されるスペイン語、米国で話されるスペイン語などを選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="276a5-106">For example, you can select Spanish as spoken in Spain, Spanish as spoken in Mexico, Spanish as spoken in the United States, among others.</span></span>

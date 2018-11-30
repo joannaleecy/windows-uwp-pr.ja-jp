@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8204322"
+ms.locfileid: "8323636"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a><span data-ttu-id="97cca-103">言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート</span><span class="sxs-lookup"><span data-stu-id="97cca-103">Tile and toast notification support for language, scale, and high contrast</span></span>
 

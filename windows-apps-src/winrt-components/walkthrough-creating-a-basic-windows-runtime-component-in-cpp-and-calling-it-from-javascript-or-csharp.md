@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c9e80296510d327e60f8c7dba5e38f19b95b7f
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8190462"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8328982"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a><span data-ttu-id="2dc8b-104">チュートリアル: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し</span><span class="sxs-lookup"><span data-stu-id="2dc8b-104">Walkthrough: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#</span></span>
 > [!NOTE]

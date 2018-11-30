@@ -1,19 +1,17 @@
 ---
 title: プロトコルのアクティブ化を処理する
-author: KevinAsgari
 description: Xbox Live Multiplayer Manager を使用してプロトコルのアクティブ化を処理する方法について説明します。
 ms.assetid: e514bcb8-4302-4eeb-8c5b-176e23f3929f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, プロトコルのアクティブ化
 ms.localizationpriority: medium
-ms.openlocfilehash: 9046686a9db1428935e834e28f02269d710cd8ad
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0b5dead742e18bbf5f3e9c271109352ae48e8fef
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566070"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8351859"
 ---
 # <a name="handle-protocol-activation"></a><span data-ttu-id="3874b-104">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="3874b-104">Handle protocol activation</span></span>
 

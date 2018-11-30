@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8212389"
+ms.locfileid: "8352366"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a><span data-ttu-id="0bf18-103">アプリ リソースとリソース管理システム</span><span class="sxs-lookup"><span data-stu-id="0bf18-103">App resources and the Resource Management System</span></span>
 

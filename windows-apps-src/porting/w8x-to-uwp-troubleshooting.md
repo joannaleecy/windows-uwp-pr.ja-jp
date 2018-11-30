@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8211284"
+ms.locfileid: "8352146"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a><span data-ttu-id="954b9-104">Windows ランタイム 8.x から UWP への移植のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="954b9-104">Troubleshooting porting Windows Runtime 8.x to UWP</span></span>
 

@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, データ バインディ
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210242"
+ms.locfileid: "8324424"
 ---
 # <a name="display-customers-in-a-list"></a><span data-ttu-id="c57af-104">一覧での顧客の表示</span><span class="sxs-lookup"><span data-stu-id="c57af-104">Display customers in a list</span></span>
 

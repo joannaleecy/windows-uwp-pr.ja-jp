@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8200590"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8324394"
 ---
 # <a name="tier-2"></a><span data-ttu-id="629c9-104">階層 2</span><span class="sxs-lookup"><span data-stu-id="629c9-104">Tier 2</span></span>
 

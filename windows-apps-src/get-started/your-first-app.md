@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216556"
+ms.locfileid: "8325027"
 ---
 # <a name="create-your-first-app"></a><span data-ttu-id="92675-104">初めてのアプリの作成</span><span class="sxs-lookup"><span data-stu-id="92675-104">Create your first app</span></span>
 
