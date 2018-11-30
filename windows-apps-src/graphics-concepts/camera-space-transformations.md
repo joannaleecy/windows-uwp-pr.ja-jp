@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201992"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323908"
 ---
 # <a name="camera-space-transformations"></a>カメラの空間変換
 
@@ -45,10 +45,10 @@ L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の�
 
 | パラメーター       | 既定値 | 種類                                          | 説明                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
-| L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
+| L<sub>dir</sub> | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
 | V               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間での頂点の位置                           |
 | wvMatrix        | ID      | 浮動小数点値の 4 x 4 マトリックス           | ワールドとビューの変換を含む合成行列 |
-| N               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
+| N               | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
 | Lₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間でのライトの位置                            |
 | vMatrix         | ID      | 浮動小数点値の 4 x 4 マトリックス           | ビュー変換を含む行列                      |
 

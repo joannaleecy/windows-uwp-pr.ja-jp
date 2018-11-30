@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8191284"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8323108"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 

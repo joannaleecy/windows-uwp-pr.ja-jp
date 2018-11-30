@@ -2,22 +2,20 @@
 title: /users/{userId}/profile/settings/people/{userList}?settings={settings}
 assetID: 0ba20eba-f0ab-28ab-61d3-b4f9e4c07bc5
 permalink: en-us/docs/xboxlive/rest/uri-usersuseridprofilesettingspeopleuserlist.html
-author: KevinAsgari
 description: " /users/{userId}/profile/settings/people/{userList}?settings={settings}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b7c5140838ccc29c9b60d80c7a1f52e4d6eb90a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 24b58c817156a7c372a8e6acfab895e6b7c51207
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557391"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8352008"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
-People モニカー サポートでのユーザーのプロファイルにアクセスします。 これらの Uri のドメインが`profile.xboxlive.com`します。
+ユーザーのプロファイルへのアクセスやユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -28,7 +26,7 @@ People モニカー サポートでのユーザーのプロファイルにアク
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| userId| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
+| ユーザー Id| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
 | userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧を示します。| 
   
 <a id="ID4E1B"></a>

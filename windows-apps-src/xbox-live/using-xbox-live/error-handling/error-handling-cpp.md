@@ -1,19 +1,17 @@
 ---
 title: C++ API のエラー処理
-author: KevinAsgari
 description: C++ API を使って Xbox Live サービス呼び出しを行ったときのエラーを処理する方法について説明します。
 ms.assetid: 10b47e68-8b1f-4023-96a4-404f3f6a9850
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9947180764d196579569536ec979fc31f3570d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 90fd816f8d44b27c1df0ded9bee6473f642478a9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564021"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8351800"
 ---
 # <a name="c-api-error-handling"></a>C++ API のエラー処理
 
