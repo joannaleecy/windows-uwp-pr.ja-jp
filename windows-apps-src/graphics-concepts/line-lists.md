@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 43013dc820c0f0f67df2e9502d3c57c77e03f250
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8195998"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8330818"
 ---
 # <a name="line-lists"></a><span data-ttu-id="e878a-106">線リスト</span><span class="sxs-lookup"><span data-stu-id="e878a-106">Line lists</span></span>
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: バック グラウンド タスクのトリガー、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 237f342029f8d9bc0bbec1fcef5c7059cbf09840
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201243"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8330346"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a><span data-ttu-id="9f92b-104">アプリ内からのバックグラウンド タスクのトリガー</span><span class="sxs-lookup"><span data-stu-id="9f92b-104">Trigger a background task from within your app</span></span>
 

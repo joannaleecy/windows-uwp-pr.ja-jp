@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8192591"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8329823"
 ---
 # <a name="display-the-camera-preview"></a><span data-ttu-id="5668f-104">カメラ プレビューの表示</span><span class="sxs-lookup"><span data-stu-id="5668f-104">Display the camera preview</span></span>
 
