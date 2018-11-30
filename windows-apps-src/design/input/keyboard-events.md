@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992688"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8208871"
 ---
 # <a name="keyboard-events"></a><span data-ttu-id="e9b1a-103">キーボード イベント</span><span class="sxs-lookup"><span data-stu-id="e9b1a-103">Keyboard events</span></span>
 
