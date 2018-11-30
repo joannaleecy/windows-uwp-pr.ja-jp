@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7982007"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8214483"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>画像やビデオでの顔の検出
 
