@@ -13,11 +13,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ef472863550b7d17836dc7f47e2fe789c9ca7fbc
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7977322"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8204250"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
 
