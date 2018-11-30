@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b4ff9443c40cf44e171bf898b627de3e2819034
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7976632"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8208881"
 ---
 # <a name="getting-started-with-point-of-service"></a><span data-ttu-id="d4de8-104">POS (店舗販売時点管理) の概要</span><span class="sxs-lookup"><span data-stu-id="d4de8-104">Getting started with Point of Service</span></span>
 

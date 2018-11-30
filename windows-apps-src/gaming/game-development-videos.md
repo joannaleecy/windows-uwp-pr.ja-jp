@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ビデオ, GDC, build
 ms.localizationpriority: medium
 ms.openlocfilehash: de04b0b272bbc6889c5fb9b13e5487902a77e98c
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7975180"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213927"
 ---
 # <a name="game-development-videos"></a><span data-ttu-id="f5273-104">ゲーム開発ビデオ</span><span class="sxs-lookup"><span data-stu-id="f5273-104">Game development videos</span></span>
 

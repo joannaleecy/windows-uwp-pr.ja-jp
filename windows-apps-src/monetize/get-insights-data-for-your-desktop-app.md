@@ -7,11 +7,11 @@ keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, イ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5545d27668b23e5b7ae91201421dfa4c92f9c8ed
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7988708"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8210862"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a><span data-ttu-id="4a5b1-104">デスクトップ アプリケーションのインサイト データの取得</span><span class="sxs-lookup"><span data-stu-id="4a5b1-104">Get insights data for your desktop application</span></span>
 

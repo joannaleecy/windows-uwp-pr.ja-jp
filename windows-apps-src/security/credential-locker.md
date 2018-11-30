@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7968027"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8204361"
 ---
 # <a name="credential-locker"></a><span data-ttu-id="7cdd4-104">資格情報保管ボックス</span><span class="sxs-lookup"><span data-stu-id="7cdd4-104">Credential locker</span></span>
 

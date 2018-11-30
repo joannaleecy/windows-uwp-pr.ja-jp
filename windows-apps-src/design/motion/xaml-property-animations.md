@@ -9,11 +9,11 @@ design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 81da1e769ab171e47a4f4046e8ec7e7c84ecf2d1
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7965970"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8209060"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a><span data-ttu-id="32ce2-104">コンポジション アニメーションでの XAML 要素をアニメーション化</span><span class="sxs-lookup"><span data-stu-id="32ce2-104">Animating XAML elements with composition animations</span></span>
 

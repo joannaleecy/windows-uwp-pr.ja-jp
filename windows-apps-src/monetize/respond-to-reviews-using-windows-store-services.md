@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store レビュー API, レビューに返信
 ms.localizationpriority: medium
 ms.openlocfilehash: 2547daa3de7b4a3825060550b7ddc00c10df3e90
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986370"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8212787"
 ---
 # <a name="respond-to-reviews-using-store-services"></a><span data-ttu-id="bacd4-104">ストアのサービスを使用してレビューに返信する</span><span class="sxs-lookup"><span data-stu-id="bacd4-104">Respond to reviews using Store services</span></span>
 

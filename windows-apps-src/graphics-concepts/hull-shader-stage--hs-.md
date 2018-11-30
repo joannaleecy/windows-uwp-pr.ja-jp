@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7987601"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8210285"
 ---
 # <a name="hull-shader-hs-stage"></a><span data-ttu-id="650e9-104">ハル シェーダー (HS) ステージ</span><span class="sxs-lookup"><span data-stu-id="650e9-104">Hull Shader (HS) stage</span></span>
 

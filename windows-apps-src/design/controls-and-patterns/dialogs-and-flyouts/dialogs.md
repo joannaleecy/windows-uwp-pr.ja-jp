@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 520f4bdd72c51cd1508c9e655107ae909f6e4243
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7840767"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213469"
 ---
 ## <a name="dialog-controls"></a><span data-ttu-id="d7784-103">ダイアログ コントロール</span><span class="sxs-lookup"><span data-stu-id="d7784-103">Dialog controls</span></span>
 

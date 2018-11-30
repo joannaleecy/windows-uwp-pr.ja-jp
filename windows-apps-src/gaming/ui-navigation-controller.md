@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, UI, ナビゲーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7848237"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8209106"
 ---
 # <a name="ui-navigation-controller"></a><span data-ttu-id="84977-104">UI ナビゲーション コントローラー</span><span class="sxs-lookup"><span data-stu-id="84977-104">UI navigation controller</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 追跡可能なタイル, ライブ タイル, 追跡可能なタイル通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7972172"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8210954"
 ---
 # <a name="chaseable-tile-notifications"></a><span data-ttu-id="20a0e-103">追跡可能なタイル通知</span><span class="sxs-lookup"><span data-stu-id="20a0e-103">Chaseable tile notifications</span></span>
 

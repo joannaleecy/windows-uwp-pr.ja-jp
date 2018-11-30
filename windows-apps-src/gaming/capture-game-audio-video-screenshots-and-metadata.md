@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992234"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8211807"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a><span data-ttu-id="1d161-104">ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ</span><span class="sxs-lookup"><span data-stu-id="1d161-104">Capture game audio, video, screenshots, and metadata</span></span>
 <span data-ttu-id="1d161-105">この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1d161-105">This article describes how to capture game video, audio, and screenshots, and how to submit metadata that the system will embed in captured and broadcast media, allowing your app and others to create dynamic experiences that are synchronized to gameplay events.</span></span> 

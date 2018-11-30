@@ -3,11 +3,11 @@ title: Device Portal ネットワーク資格情報 API リファレンス
 description: 追加、削除、またはネットワーク資格情報をプログラムで更新する方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7974097"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213707"
 ---
 # <a name="network-credentials-api-reference"></a><span data-ttu-id="8a996-103">ネットワーク資格情報 API リファレンス</span><span class="sxs-lookup"><span data-stu-id="8a996-103">Network Credentials API reference</span></span>
 <span data-ttu-id="8a996-104">追加、削除、またはこの REST API を使用して、開発機で保存されているネットワーク資格情報を更新することができます。</span><span class="sxs-lookup"><span data-stu-id="8a996-104">You can add, remove, or update stored network credentials on your devkit using this REST API.</span></span>
