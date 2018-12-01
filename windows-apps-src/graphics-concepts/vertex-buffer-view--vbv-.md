@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201043"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349160"
 ---
-# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a><span data-ttu-id="234fc-104">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="234fc-104">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span>
+# <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a><span data-ttu-id="e0822-104">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="e0822-104">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span>
 
 
-<span data-ttu-id="234fc-105">頂点バッファーには、頂点のリストのデータが保持されます。</span><span class="sxs-lookup"><span data-stu-id="234fc-105">A vertex buffer holds data for a list of vertices.</span></span> <span data-ttu-id="234fc-106">各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="234fc-106">The data for each vertex can include position, color, normal vector, texture co-ordinates, and so on.</span></span> <span data-ttu-id="234fc-107">インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</span><span class="sxs-lookup"><span data-stu-id="234fc-107">An index buffer holds integer indexes (offsets) into a vertex buffer, and is used to define and render an object made up of a subset of the full list of vertices.</span></span>
+<span data-ttu-id="e0822-105">頂点バッファーには、頂点のリストのデータが保持されます。</span><span class="sxs-lookup"><span data-stu-id="e0822-105">A vertex buffer holds data for a list of vertices.</span></span> <span data-ttu-id="e0822-106">各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="e0822-106">The data for each vertex can include position, color, normal vector, texture co-ordinates, and so on.</span></span> <span data-ttu-id="e0822-107">インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</span><span class="sxs-lookup"><span data-stu-id="e0822-107">An index buffer holds integer indexes (offsets) into a vertex buffer, and is used to define and render an object made up of a subset of the full list of vertices.</span></span>
 
-<span data-ttu-id="234fc-108">多くの場合、単独の頂点の定義はアプリケーションが独自に決定できます。たとえば、次のように定義することができます。</span><span class="sxs-lookup"><span data-stu-id="234fc-108">The definition of a single vertex is often up to the application to define, such as:</span></span>
+<span data-ttu-id="e0822-108">多くの場合、単独の頂点の定義はアプリケーションが独自に決定できます。たとえば、次のように定義することができます。</span><span class="sxs-lookup"><span data-stu-id="e0822-108">The definition of a single vertex is often up to the application to define, such as:</span></span>
 
 ``` syntax
 struct CUSTOMVERTEX { 
@@ -30,12 +30,12 @@ struct CUSTOMVERTEX {
 }; 
 ```
 
-<span data-ttu-id="234fc-109">その後、CUSTOMVERTEX の定義は、頂点バッファーの作成時にグラフィックス ドライバーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="234fc-109">The definition of CUSTOMVERTEX would then be passed to the graphics driver when creating vertex buffers.</span></span>
+<span data-ttu-id="e0822-109">その後、CUSTOMVERTEX の定義は、頂点バッファーの作成時にグラフィックス ドライバーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="e0822-109">The definition of CUSTOMVERTEX would then be passed to the graphics driver when creating vertex buffers.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="234fc-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="234fc-110"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="e0822-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="e0822-110"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="234fc-111">ビュー</span><span class="sxs-lookup"><span data-stu-id="234fc-111">Views</span></span>](views.md)
+[<span data-ttu-id="e0822-111">ビュー</span><span class="sxs-lookup"><span data-stu-id="e0822-111">Views</span></span>](views.md)
 
  
 
