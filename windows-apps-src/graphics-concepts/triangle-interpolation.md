@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e8017cd75ed3dfd4129d6c15d668648792cc8d0a
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8191715"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349150"
 ---
 # <a name="triangle-interpolation"></a><span data-ttu-id="f8f87-104">三角形の補間</span><span class="sxs-lookup"><span data-stu-id="f8f87-104">Triangle interpolation</span></span>
 
