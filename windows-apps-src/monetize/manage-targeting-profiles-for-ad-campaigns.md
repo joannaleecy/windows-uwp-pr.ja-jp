@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8192495"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349374"
 ---
 # <a name="manage-targeting-profiles"></a><span data-ttu-id="73553-104">ターゲット プロファイルの管理</span><span class="sxs-lookup"><span data-stu-id="73553-104">Manage targeting profiles</span></span>
 
