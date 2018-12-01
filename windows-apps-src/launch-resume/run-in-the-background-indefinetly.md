@@ -7,11 +7,11 @@ ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197376"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8348401"
 ---
 # <a name="run-in-the-background-indefinitely"></a>バックグラウンドで無期限に実行する
 

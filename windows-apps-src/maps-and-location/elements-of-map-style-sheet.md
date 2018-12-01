@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202790"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349665"
 ---
 # <a name="map-style-sheet-reference"></a>マップ スタイル シート リファレンス
 
@@ -62,7 +62,7 @@ ms.locfileid: "8202790"
 | 名前                         | プロパティ グループ            | 1703 | 1709 | 1803 | 1809 | 説明    |
 |------------------------------|---------------------------|------|------|------|------|----------------|
 | version                      | [バージョン](#version)       |  ✔   |  ✔   |  ✔   |  ✔   | 使用するスタイル シートのバージョン。 |
-| settings                     | [Settings](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | スタイル シート全体に適用される設定。 |
+| settings                     | [設定](#settings)     |  ✔   |  ✔   |  ✔   |  ✔   | スタイル シート全体に適用される設定。 |
 | mapElement                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 地図のすべてのエントリの親エントリ。 |
 | > baseMapElement             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | すべての非ユーザー エントリの親エントリ。 |
 | >> area                      | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 土地を記述している領域を使用します。  これらは、構造体エントリの下位は物理建物と混同しないでくださいする必要があります。 |

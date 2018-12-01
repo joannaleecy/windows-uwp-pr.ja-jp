@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f02e40c74e11bbc7a5cb308b71ce819d45891a2e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8192517"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "8351689"
 ---
 # <a name="text-block"></a>テキスト ブロック
 

@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ データ
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198755"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8348824"
 ---
 # <a name="get-app-data"></a>アプリ データの取得
 
@@ -19,44 +19,12 @@ ms.locfileid: "8198755"
 
 これらのメソッドを使用する前に、アプリが、パートナー センター アカウントに存在既にする必要があります。 アプリの申請を作成または管理する方法については、「[アプリ申請の管理](manage-app-submissions.md)」のメソッドを参照してください。
 
-<table>
-<colgroup>
-<col width="10%" />
-<col width="30%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">メソッド</th>
-<th align="left">URI</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications</td>
-<td align="left"><a href="get-all-apps.md">全アプリのデータの取得</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}</td>
-<td align="left"><a href="get-an-app.md">特定アプリのデータの取得</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
-<td align="left"><a href="get-add-ons-for-an-app.md">アプリのアドオンの入手</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
-<td align="left"><a href="get-flights-for-an-app.md">アプリのパッケージ フライトの入手</a></td>
-</tr>
-</tbody>
-</table>
-
-<span/>
+| メソッド | URI                                                                                             | 説明                                                 |
+|------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [全アプリのデータの取得](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [特定アプリのデータの取得](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [アプリのアドオンの入手](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [アプリのパッケージ フライトの入手](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -180,13 +148,12 @@ Microsoft Store 申請 API に関するすべての[前提条件](create-and-man
 
 このリソースには、次の値があります。
 
-| 値           | 型    | 説明                 |
-|-----------------|---------|------------------------------|
-| id            | string  | 申請 ID。    |
-| resourceLocation   | string  | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。            |
- 
-<span/>
+| 値              | 型   | 説明               |
+|--------------------|--------|---------------------------|
+| id                 | string | 申請 ID。 |
+| resourceLocation   | string | 申請の完全なデータを取得するために基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に付加できる相対パス。 |
 
+ 
 ## <a name="related-topics"></a>関連トピック
 
 * [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)

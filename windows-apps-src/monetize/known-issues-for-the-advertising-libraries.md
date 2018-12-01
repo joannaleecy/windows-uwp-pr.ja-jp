@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b32b390cc4ca6af5b03a22e30323ded5aeac516
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217287"
+ms.locfileid: "8344648"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -46,7 +46,7 @@ ms.locfileid: "8217287"
 
 * 新しい広告ユニット ID の作成を行ったのがこの 30 分以内の場合、サーバーによってシステムに新しいデータが伝達されるまで、広告は表示されません。 広告が表示されていた既存の ID を使用すると、広告はすぐに表示されます。
 
-アプリにテスト広告が表示される場合は、コードが正常に動作していて広告を表示できることを示します。 問題が発生した場合は、[製品サポート](https://developer.microsoft.com/en-us/windows/support)にお問い合わせください。 このページで、**[アプリ内広告]** を選択してください。
+アプリにテスト広告が表示される場合は、コードが正常に動作していて広告を表示できることを示します。 問題が発生した場合は、[製品サポート](https://developer.microsoft.com/en-us/windows/support)にお問い合わせください。 ページで、**お問い合わせ**を選択します。
 
 [フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)に質問を投稿することもできます。
 

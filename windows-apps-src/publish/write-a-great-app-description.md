@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 説明, 説明する, Store 登録情報, マーケティング
 ms.localizationpriority: medium
 ms.openlocfilehash: a6cea0103d484cc84f9c253a08f07ed3d69b67f3
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210744"
+ms.locfileid: "8349836"
 ---
 # <a name="write-a-great-app-description"></a>人の心をつかむアプリの説明を書く
 
