@@ -9,11 +9,11 @@ label: XAML styles
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: d9f77d92e3c80e4a0d4e0808289f032b4a1125a5
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8203582"
+ms.locfileid: "8337022"
 ---
 # <a name="xaml-styles"></a>XAML スタイル
 
