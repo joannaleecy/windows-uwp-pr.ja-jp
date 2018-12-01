@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b2ffd15a07dc6f1018bd28cf9799e1e5209c0b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198590"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8342748"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a><span data-ttu-id="3ca9a-104">XAML/C# ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="3ca9a-104">Error handling in XAML/C# walkthrough</span></span>
 

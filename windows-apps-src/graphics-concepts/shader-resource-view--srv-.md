@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bd6cca08c0845e2da5420fc1f040cc285c87953d
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7982159"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8345631"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a><span data-ttu-id="a3a4b-105">シェーダー リソース ビュー (SRV) と順序指定されていないアクセス ビュー (UAV)</span><span class="sxs-lookup"><span data-stu-id="a3a4b-105">Shader resource view (SRV) and Unordered Access view (UAV)</span></span>
 

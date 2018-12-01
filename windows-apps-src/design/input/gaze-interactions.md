@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5dc12e9b85b7274c9e1deb7d629917cbeaa981c0
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8204864"
+ms.locfileid: "8345010"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a><span data-ttu-id="96fba-103">UWP アプリでの視線の操作と視線追跡</span><span class="sxs-lookup"><span data-stu-id="96fba-103">Gaze interactions and eye tracking in UWP apps</span></span>
 

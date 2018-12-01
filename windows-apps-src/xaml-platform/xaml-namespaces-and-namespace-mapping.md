@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8218065"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349531"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a><span data-ttu-id="f788f-105">XAML 名前空間と名前空間マッピング</span><span class="sxs-lookup"><span data-stu-id="f788f-105">XAML namespaces and namespace mapping</span></span>
 

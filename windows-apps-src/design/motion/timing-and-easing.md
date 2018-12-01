@@ -12,31 +12,31 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8190436"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8345176"
 ---
-# <a name="timing-and-easing"></a><span data-ttu-id="dc276-103">タイミングとイージング</span><span class="sxs-lookup"><span data-stu-id="dc276-103">Timing and easing</span></span>
+# <a name="timing-and-easing"></a><span data-ttu-id="2e350-103">タイミングとイージング</span><span class="sxs-lookup"><span data-stu-id="2e350-103">Timing and easing</span></span>
 
-<span data-ttu-id="dc276-104">モーションが現実世界に基づいている場合、私たちは速度とパフォーマンスへの期待を伴うデジタル メディアでもあります。</span><span class="sxs-lookup"><span data-stu-id="dc276-104">While motion is based in the real world, we are also a digital medium, which comes with an expectation of speed and performance.</span></span> 
+<span data-ttu-id="2e350-104">モーションが現実世界に基づいている場合、私たちは速度とパフォーマンスへの期待を伴うデジタル メディアでもあります。</span><span class="sxs-lookup"><span data-stu-id="2e350-104">While motion is based in the real world, we are also a digital medium, which comes with an expectation of speed and performance.</span></span> 
 
-## <a name="how-fluent-motion-uses-time"></a><span data-ttu-id="dc276-105">Fluent モーションが時間を使用する方法</span><span class="sxs-lookup"><span data-stu-id="dc276-105">How Fluent motion uses time</span></span>
+## <a name="how-fluent-motion-uses-time"></a><span data-ttu-id="2e350-105">Fluent モーションが時間を使用する方法</span><span class="sxs-lookup"><span data-stu-id="2e350-105">How Fluent motion uses time</span></span>
 
-<span data-ttu-id="dc276-106">タイミングは、UI 内で出入りしたり、移動したりするオブジェクトのモーションを自然に感じさせる重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="dc276-106">Timing is an important element to making motion feel natural for objects entering, exiting, or moving within the UI.</span></span>
+<span data-ttu-id="2e350-106">タイミングは、UI 内で出入りしたり、移動したりするオブジェクトのモーションを自然に感じさせる重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="2e350-106">Timing is an important element to making motion feel natural for objects entering, exiting, or moving within the UI.</span></span>
 
-1. <span data-ttu-id="dc276-107">ビューに入るオブジェクトまたはシーンはあっという間ですが、美しく彩ります。</span><span class="sxs-lookup"><span data-stu-id="dc276-107">Objects or scenes entering the view are quick, but celebrated.</span></span> <span data-ttu-id="dc276-108">これらのアニメーションは、通常、シーンの階層的なビルドアップを可能にするために、シーンから出るときより継続時間が長くなります。</span><span class="sxs-lookup"><span data-stu-id="dc276-108">These animations are typically longer in duration than exits to allow for hierarchical build-up of a scene.</span></span>
-1. <span data-ttu-id="dc276-109">ビューを出るオブジェクトまたはシーンは、非常にあっという間です。</span><span class="sxs-lookup"><span data-stu-id="dc276-109">Objects or scenes exiting the view are very quick.</span></span> <span data-ttu-id="dc276-110">ユーザーは、UI がどこに行ったかを理解できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="dc276-110">The user should be able to understand where the UI went.</span></span> <span data-ttu-id="dc276-111">ただし、UI が閉じたら、それが邪魔にならないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="dc276-111">However, once the UI is dismissed, it should get out of the way.</span></span>
-1. <span data-ttu-id="dc276-112">シーンを移動するオブジェクトは、移動距離に適した時間が必要です。</span><span class="sxs-lookup"><span data-stu-id="dc276-112">Objects translating across a scene should have a duration appropriate to the amount of distance they travel.</span></span>
+1. <span data-ttu-id="2e350-107">ビューに入るオブジェクトまたはシーンはあっという間ですが、美しく彩ります。</span><span class="sxs-lookup"><span data-stu-id="2e350-107">Objects or scenes entering the view are quick, but celebrated.</span></span> <span data-ttu-id="2e350-108">これらのアニメーションは、通常、シーンの階層的なビルドアップを可能にするために、シーンから出るときより継続時間が長くなります。</span><span class="sxs-lookup"><span data-stu-id="2e350-108">These animations are typically longer in duration than exits to allow for hierarchical build-up of a scene.</span></span>
+1. <span data-ttu-id="2e350-109">ビューを出るオブジェクトまたはシーンは、非常にあっという間です。</span><span class="sxs-lookup"><span data-stu-id="2e350-109">Objects or scenes exiting the view are very quick.</span></span> <span data-ttu-id="2e350-110">ユーザーは、UI がどこに行ったかを理解できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e350-110">The user should be able to understand where the UI went.</span></span> <span data-ttu-id="2e350-111">ただし、UI が閉じたら、それが邪魔にならないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e350-111">However, once the UI is dismissed, it should get out of the way.</span></span>
+1. <span data-ttu-id="2e350-112">シーンを移動するオブジェクトは、移動距離に適した時間が必要です。</span><span class="sxs-lookup"><span data-stu-id="2e350-112">Objects translating across a scene should have a duration appropriate to the amount of distance they travel.</span></span>
 
-## <a name="timing-in-fluent-motion"></a><span data-ttu-id="dc276-113">Fluent モーションのタイミング</span><span class="sxs-lookup"><span data-stu-id="dc276-113">Timing in Fluent motion</span></span>
+## <a name="timing-in-fluent-motion"></a><span data-ttu-id="2e350-113">Fluent モーションのタイミング</span><span class="sxs-lookup"><span data-stu-id="2e350-113">Timing in Fluent motion</span></span>
 
-<span data-ttu-id="dc276-114">Fluent のモーションのタイミングでは、ベースラインとして 500 ミリ秒 (0.5 秒) を使用します。これはユーザーが瞬間に認識する最長時間です。</span><span class="sxs-lookup"><span data-stu-id="dc276-114">The timing of motion in Fluent uses 500ms (or one-half second) as a baseline because this is the maximum amount of time that a user perceives as instant.</span></span>
+<span data-ttu-id="2e350-114">Fluent のモーションのタイミングでは、ベースラインとして 500 ミリ秒 (0.5 秒) を使用します。これはユーザーが瞬間に認識する最長時間です。</span><span class="sxs-lookup"><span data-stu-id="2e350-114">The timing of motion in Fluent uses 500ms (or one-half second) as a baseline because this is the maximum amount of time that a user perceives as instant.</span></span>
 
 ![ヒーロー イメージ](images/time.gif)
 
-### <a name="150ms-exit"></a><span data-ttu-id="dc276-116">**150ミリ秒** (終了)</span><span class="sxs-lookup"><span data-stu-id="dc276-116">**150ms** (Exit)</span></span>
+### <a name="150ms-exit"></a><span data-ttu-id="2e350-116">**150ミリ秒** (終了)</span><span class="sxs-lookup"><span data-stu-id="2e350-116">**150ms** (Exit)</span></span>
 
 :::row:::
     :::column:::
@@ -48,7 +48,7 @@ ms.locfileid: "8190436"
     :::column-end:::
 :::row-end:::
 
-### <a name="300ms-enter"></a><span data-ttu-id="dc276-117">**300 ミリ秒** (入力)</span><span class="sxs-lookup"><span data-stu-id="dc276-117">**300ms** (Enter)</span></span>
+### <a name="300ms-enter"></a><span data-ttu-id="2e350-117">**300 ミリ秒** (入力)</span><span class="sxs-lookup"><span data-stu-id="2e350-117">**300ms** (Enter)</span></span>
 
 :::row:::
     :::column:::
@@ -60,7 +60,7 @@ ms.locfileid: "8190436"
     :::column-end:::
 :::row-end:::
 
-### <a name="500ms-move"></a><span data-ttu-id="dc276-118">**≤500 ミリ秒** (移動)</span><span class="sxs-lookup"><span data-stu-id="dc276-118">**≤500ms** (Move)</span></span>
+### <a name="500ms-move"></a><span data-ttu-id="2e350-118">**≤500 ミリ秒** (移動)</span><span class="sxs-lookup"><span data-stu-id="2e350-118">**≤500ms** (Move)</span></span>
 
 :::row:::
     :::column:::
@@ -71,19 +71,19 @@ ms.locfileid: "8190436"
     :::column-end:::
 :::row-end:::
 
-## <a name="easing-in-fluent-motion"></a><span data-ttu-id="dc276-119">Fluent モーションのイージング</span><span class="sxs-lookup"><span data-stu-id="dc276-119">Easing in Fluent motion</span></span>
+## <a name="easing-in-fluent-motion"></a><span data-ttu-id="2e350-119">Fluent モーションのイージング</span><span class="sxs-lookup"><span data-stu-id="2e350-119">Easing in Fluent motion</span></span>
 
-<span data-ttu-id="dc276-120">イージングは、移動時のオブジェクトの速度を操作する方法です。</span><span class="sxs-lookup"><span data-stu-id="dc276-120">Easing is a way to manipulate the velocity of an object as it travels.</span></span> <span data-ttu-id="dc276-121">Fluent モーションのすべてのエクスペリエンスを結び付ける接着剤です。</span><span class="sxs-lookup"><span data-stu-id="dc276-121">It's the glue that ties together all the Fluent motion experiences.</span></span> <span data-ttu-id="dc276-122">極端ですが、システムで使用されるイージングは、システム内で移動するオブジェクトの物理的な操作感を統合することができます。</span><span class="sxs-lookup"><span data-stu-id="dc276-122">While extreme, the easing used in the system helps unify the physical feel of objects moving throughout the system.</span></span> <span data-ttu-id="dc276-123">これは、現実世界を模倣し、移動中のオブジェクトがその環境に属しているように感じさせる 1 つの方法です。</span><span class="sxs-lookup"><span data-stu-id="dc276-123">This is one way to mimic the real world, and make objects in motion feel like they belong in their environment.</span></span>
+<span data-ttu-id="2e350-120">イージングは、移動時のオブジェクトの速度を操作する方法です。</span><span class="sxs-lookup"><span data-stu-id="2e350-120">Easing is a way to manipulate the velocity of an object as it travels.</span></span> <span data-ttu-id="2e350-121">Fluent モーションのすべてのエクスペリエンスを結び付ける接着剤です。</span><span class="sxs-lookup"><span data-stu-id="2e350-121">It's the glue that ties together all the Fluent motion experiences.</span></span> <span data-ttu-id="2e350-122">極端ですが、システムで使用されるイージングは、システム内で移動するオブジェクトの物理的な操作感を統合することができます。</span><span class="sxs-lookup"><span data-stu-id="2e350-122">While extreme, the easing used in the system helps unify the physical feel of objects moving throughout the system.</span></span> <span data-ttu-id="2e350-123">これは、現実世界を模倣し、移動中のオブジェクトがその環境に属しているように感じさせる 1 つの方法です。</span><span class="sxs-lookup"><span data-stu-id="2e350-123">This is one way to mimic the real world, and make objects in motion feel like they belong in their environment.</span></span>
 
 ![ヒーロー イメージ](images/easing.gif)
 
-## <a name="apply-easing-to-motion"></a><span data-ttu-id="dc276-125">モーションへのイージングの適用</span><span class="sxs-lookup"><span data-stu-id="dc276-125">Apply easing to motion</span></span>
+## <a name="apply-easing-to-motion"></a><span data-ttu-id="2e350-125">モーションへのイージングの適用</span><span class="sxs-lookup"><span data-stu-id="2e350-125">Apply easing to motion</span></span>
 
-<span data-ttu-id="dc276-126">これらのイージングは、より自然な操作感を得るのに役立ち、Fluent モーションのために使用するベースラインとなります。</span><span class="sxs-lookup"><span data-stu-id="dc276-126">These easings will help you achieve a more natural feel, and are the baseline we use for Fluent motion.</span></span>
+<span data-ttu-id="2e350-126">これらのイージングは、より自然な操作感を得るのに役立ち、Fluent モーションのために使用するベースラインとなります。</span><span class="sxs-lookup"><span data-stu-id="2e350-126">These easings will help you achieve a more natural feel, and are the baseline we use for Fluent motion.</span></span>
 
-<span data-ttu-id="dc276-127">コード例では、推奨されるイージング値を Storyboard アニメーション (XAML) または Composition アニメーション (C#) に適用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="dc276-127">The code examples show how to apply recommended easing values to Storyboard animations (XAML) or Composition animations (C#).</span></span>
+<span data-ttu-id="2e350-127">コード例では、推奨されるイージング値を Storyboard アニメーション (XAML) または Composition アニメーション (C#) に適用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e350-127">The code examples show how to apply recommended easing values to Storyboard animations (XAML) or Composition animations (C#).</span></span>
 
-### <a name="accelerate-exit"></a><span data-ttu-id="dc276-128">**高速化**(終了)</span><span class="sxs-lookup"><span data-stu-id="dc276-128">**Accelerate** (Exit)</span></span>
+### <a name="accelerate-exit"></a><span data-ttu-id="2e350-128">**高速化**(終了)</span><span class="sxs-lookup"><span data-stu-id="2e350-128">**Accelerate** (Exit)</span></span>
 
 :::row:::
     :::column:::
@@ -122,7 +122,7 @@ _exitAnimation.InsertKeyFrame(1.0f, _endValue, accelerate);
 _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 ```
 
-### <a name="decelerate-enter"></a><span data-ttu-id="dc276-129">**減速**(入力)</span><span class="sxs-lookup"><span data-stu-id="dc276-129">**Decelerate** (Enter)</span></span>
+### <a name="decelerate-enter"></a><span data-ttu-id="2e350-129">**減速**(入力)</span><span class="sxs-lookup"><span data-stu-id="2e350-129">**Decelerate** (Enter)</span></span>
 
 :::row:::
     :::column:::
@@ -163,7 +163,7 @@ _enterAnimation.InsertKeyFrame(1.0f, _endValue, decelerate);
 _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 ```
 
-### <a name="standard-easing-move"></a><span data-ttu-id="dc276-130">**標準的なイージング**(移動)</span><span class="sxs-lookup"><span data-stu-id="dc276-130">**Standard Easing** (Move)</span></span>
+### <a name="standard-easing-move"></a><span data-ttu-id="2e350-130">**標準的なイージング**(移動)</span><span class="sxs-lookup"><span data-stu-id="2e350-130">**Standard Easing** (Move)</span></span>
 
 :::row:::
     :::column:::
@@ -202,7 +202,7 @@ CubicBezierEasingFunction standard =
  _moveAnimation.Duration = TimeSpan.FromMilliseconds(500);
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="dc276-131">関連記事</span><span class="sxs-lookup"><span data-stu-id="dc276-131">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="2e350-131">関連記事</span><span class="sxs-lookup"><span data-stu-id="2e350-131">Related articles</span></span>
 
-- [<span data-ttu-id="dc276-132">モーションの概要</span><span class="sxs-lookup"><span data-stu-id="dc276-132">Motion overview</span></span>](index.md)
-- [<span data-ttu-id="dc276-133">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="dc276-133">Directionality and gravity</span></span>](directionality-and-gravity.md)
+- [<span data-ttu-id="2e350-132">モーションの概要</span><span class="sxs-lookup"><span data-stu-id="2e350-132">Motion overview</span></span>](index.md)
+- [<span data-ttu-id="2e350-133">方向性と重力</span><span class="sxs-lookup"><span data-stu-id="2e350-133">Directionality and gravity</span></span>](directionality-and-gravity.md)

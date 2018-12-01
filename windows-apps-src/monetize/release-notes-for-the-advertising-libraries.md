@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, リリース ノート
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bab822c81cdd5af1e6b00ca8d33ed7f7ea3838f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7969318"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8345282"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a><span data-ttu-id="cb644-104">Advertising ライブラリのリリース ノート</span><span class="sxs-lookup"><span data-stu-id="cb644-104">Release notes for the advertising libraries</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8218125"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8344990"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a><span data-ttu-id="62ed5-104">ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化</span><span class="sxs-lookup"><span data-stu-id="62ed5-104">Package your Universal Windows Platform (UWP) DirectX game</span></span>
 
