@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197657"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8335473"
 ---
 # <a name="diffuse-lighting"></a>拡散光
 
@@ -29,7 +29,7 @@ ms.locfileid: "8197657"
 
 | パラメーター       | 既定値 | 種類          | 説明                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| sum             | なし           | なし           | 各ライトの拡散コンポーネントの総和。                                                     |
+| sum             | 該当なし           | なし           | 各ライトの拡散コンポーネントの総和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 拡散色。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 明るい拡散色。                                                                             |
 | N               | なし           | D3DVECTOR     | 頂点法線                                                                                    |

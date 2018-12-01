@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, インストール, SDK, Advertising ライブラリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8206122"
+ms.locfileid: "8343193"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK のインストール
 

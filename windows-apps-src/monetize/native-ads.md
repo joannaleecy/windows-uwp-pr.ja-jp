@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 広告コントロール, ネイティブ広告
 ms.localizationpriority: medium
 ms.openlocfilehash: c978a07ceb30aaf9c2d0df3d38ff7ee9abbb5b2a
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213142"
+ms.locfileid: "8340994"
 ---
 # <a name="native-ads"></a>ネイティブ広告
 

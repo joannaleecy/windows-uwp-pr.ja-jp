@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: ARM、ARM、ARM64 の win32 アプリの構築、ARM64 ドライバーのビルドで Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8209766"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8340106"
 ---
 # <a name="windows-10-on-arm"></a>ARM 版 Windows 10
 Windows 10 では、ARM プロセッサを搭載の Pc で実行されます。 このページは、プラットフォームについて詳しくは、アプリの開発を開始するための情報を提供します。 また、ページの下部にあるリンクを使用して、フィードバックをお勧めします。

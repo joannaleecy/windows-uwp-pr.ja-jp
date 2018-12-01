@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210262"
+ms.locfileid: "8342553"
 ---
 # <a name="tutorial-create-a-user-interface"></a>チュートリアル: ユーザー インターフェイスの作成
 

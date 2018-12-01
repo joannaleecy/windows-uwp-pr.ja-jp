@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bf27de9c9b1bce2b35918b2a9d1357d2f3ba20b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8214734"
+ms.locfileid: "8342924"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>モバイル デバイスのカメラ UI の機能
 
