@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, トースト通知の送信, 通知, 通知の送信, トースト通知, 方法, クイックスタート, 作業の開始, コード サンプル, チュートリアル
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7dfb621d84a3ce1d934c358ab60683caee9238
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8215686"
+ms.locfileid: "8343853"
 ---
 # <a name="send-a-local-toast-notification"></a>ローカル トースト通知の送信
 
@@ -361,7 +361,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 トースト (またはトースト内のボタンで) でバックグラウンドのアクティブ化を指定すると、フォアグラウンド アプリがアクティブ化されるのではなく、バックグラウンド タスクが実行されます。
 
-バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](/launch-resume/support-your-app-with-background-tasks.md)」をご覧ください。
+バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](/windows/uwp/launch-resume/support-your-app-with-background-tasks)」をご覧ください。
 
 ビルド 14393 以降をターゲットとしている場合、インプロセス バックグラウンド タスクを使用できるため、大幅に簡略化できます。 インプロセス バックグラウンド タスクは古いバージョンの Windows では実行できないことに注意してください。 次のコード サンプルでは、インプロセス バックグラウンド タスクが使用されています。
 
