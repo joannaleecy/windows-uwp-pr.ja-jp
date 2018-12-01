@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ddeee438e946dd28a78d59d163f59cb1114aa65
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8208163"
+ms.locfileid: "8331722"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Windows ランタイム 8.x の XAML と UI の UWP への移植
 
@@ -438,7 +438,7 @@ Windows ランタイム 8.x アプリで (表示されていた) 場合、縮小
 
 Windows Phone ストア アプリであると windows 10 アプリでは、[戻る] ボタンが押されたとき、縮小表示ビューが閉じられます。 Windows ランタイム 8.x アプリではない組み込みの戻るボタンを処理するため、該当しません。
 
-## <a name="settings"></a>Settings
+## <a name="settings"></a>設定
 
 Windows ランタイム 8.x **SettingsPane**クラスでは、windows 10 に適していません。 代わりに、[設定] ページを作成し、さらに、アプリ内から [設定] ページにアクセスする方法をユーザーに提供する必要があります。 このアプリの [設定] ページはトップ レベルで表示されるようにすることをお勧めしますが、ナビゲーション ウィンドウの最後のピン留めされた項目として、ここにはオプションの完全なセットがあります。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ユーザー ロール, ユーザーのアクセス許可, カスタム ロール, ユーザー アクセス, アクセス許可のカスタマイズ, 標準ロール
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8212081"
+ms.locfileid: "8341382"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>アカウント ユーザーのロールまたはカスタムのアクセス許可の設定
 
@@ -167,10 +167,10 @@ ms.locfileid: "8212081"
     </thead>
     <tbody>
     <tr><td align="left">    <b>取得</b>     </td><td>    製品の<a href="acquisitions-report.md">取得</a>レポートと<a href="add-on-acquisitions-report.md">アドオンの取得</a>レポートを表示できます。        </td><td>    該当なし    </td><td>    該当なし (親製品の設定は、**アドオン取得**レポートを含む)        </td><td>    該当なし                         </td></tr>
-    <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    なし     </td><td>    該当なし         </td></tr>
-    <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    なし     </td><td>    該当なし         </td></tr>
+    <tr><td align="left">    <b>利用状況</b> </td><td>    製品の<a href="usage-report.md">利用状況レポート</a>を表示できます。     </td><td>    該当なし       </td><td>    該当なし     </td><td>    該当なし         </td></tr>
+    <tr><td align="left">    <b>正常性</b> </td><td>    製品の<a href="health-report.md">正常性レポート</a>を表示できます。    </td><td>    該当なし     </td><td>    該当なし     </td><td>    該当なし         </td></tr>
     <tr><td align="left">    <b>カスタマー フィードバック</b>    </td><td>    製品の <a href="reviews-report.md">[レビュー]</a> レポートと <a href="feedback-report.md">[フィードバック]</a> レポートを表示できます。       </td><td>    該当なし (フィードバックやレビューに返信するには、<b>[顧客への連絡]</b> アクセス許可を付与する必要があります)   </td><td>    該当なし     </td><td>    該当なし         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示することができます。    </td><td>    なし   </td><td>    なし       </td><td>    該当なし          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    製品の[Xbox 分析レポート](xbox-analytics-report.md)を表示することができます。    </td><td>    該当なし   </td><td>    該当なし       </td><td>    該当なし          </td></tr>
     </tbody>
     </table>
 
