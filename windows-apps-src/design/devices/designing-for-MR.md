@@ -14,11 +14,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: e6aebac45dc32933f55d917c0b1153cba952d819
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7974444"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8331355"
 ---
 # <a name="designing-for-mixed-reality"></a><span data-ttu-id="fdf52-103">Mixed Reality 向けの設計</span><span class="sxs-lookup"><span data-stu-id="fdf52-103">Designing for Mixed Reality</span></span>
 

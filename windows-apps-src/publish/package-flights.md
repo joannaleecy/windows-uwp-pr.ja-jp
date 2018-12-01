@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, フライティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216644"
+ms.locfileid: "8334022"
 ---
 # <a name="package-flights"></a><span data-ttu-id="5c9a0-103">パッケージ フライト</span><span class="sxs-lookup"><span data-stu-id="5c9a0-103">Package flights</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, クラウド環境にあるアクション センター, 通知のミラーリング, 通知, クロス デバイス
 ms.localizationpriority: medium
 ms.openlocfilehash: dc870601159a80bc6d03a287fd19f082e968e09e
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7969062"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8337572"
 ---
 # <a name="notification-mirroring"></a><span data-ttu-id="c6603-103">通知のミラーリング</span><span class="sxs-lookup"><span data-stu-id="c6603-103">Notification mirroring</span></span>
 

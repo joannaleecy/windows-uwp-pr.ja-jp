@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, タッチ, コントロール, DirectX, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: e8892219b485d320bb77f90ac0d172e8e2403392
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8210182"
+ms.locfileid: "8332179"
 ---
 # <a name="touch-controls-for-games"></a><span data-ttu-id="ab3a8-104">ゲームのタッチ コントロール</span><span class="sxs-lookup"><span data-stu-id="ab3a8-104">Touch controls for games</span></span>
 

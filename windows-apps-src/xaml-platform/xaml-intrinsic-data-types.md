@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8213545"
+ms.locfileid: "8331245"
 ---
 # <a name="xaml-intrinsic-data-types"></a><span data-ttu-id="feb38-104">XAML 固有のデータ型</span><span class="sxs-lookup"><span data-stu-id="feb38-104">XAML intrinsic data types</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 構造
 ms.localizationpriority: medium
 ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8196406"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8339199"
 ---
 # <a name="marble-maze-application-structure"></a><span data-ttu-id="e9fd4-104">Marble Maze のアプリケーション構造</span><span class="sxs-lookup"><span data-stu-id="e9fd4-104">Marble Maze application structure</span></span>
 

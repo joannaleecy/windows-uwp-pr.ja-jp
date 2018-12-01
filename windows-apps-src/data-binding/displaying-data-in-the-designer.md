@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e18be702c1b2bbd9ce1831b6991324896769192
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8192604"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8332328"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a><span data-ttu-id="936eb-104">デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ</span><span class="sxs-lookup"><span data-stu-id="936eb-104">Sample data on the design surface, and for prototyping</span></span>
 =============================================================================================

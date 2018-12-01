@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 84a08d480070e4a23147679dd9b5dda1f8c9cca1
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8215007"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8332126"
 ---
 # <a name="point-lists"></a><span data-ttu-id="f1bc0-105">ポイント リスト</span><span class="sxs-lookup"><span data-stu-id="f1bc0-105">Point lists</span></span>
 
