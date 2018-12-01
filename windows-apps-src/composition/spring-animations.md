@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7974652"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8337158"
 ---
 # <a name="spring-animations"></a><span data-ttu-id="88e9f-104">ばねアニメーション</span><span class="sxs-lookup"><span data-stu-id="88e9f-104">Spring animations</span></span>
 

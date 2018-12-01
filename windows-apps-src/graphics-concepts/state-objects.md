@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3437119979073a5cec27948fc90f954e06c2fc93
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8202810"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8337493"
 ---
 # <a name="state-objects"></a><span data-ttu-id="ff3d1-106">状態オブジェクト</span><span class="sxs-lookup"><span data-stu-id="ff3d1-106">State objects</span></span>
 

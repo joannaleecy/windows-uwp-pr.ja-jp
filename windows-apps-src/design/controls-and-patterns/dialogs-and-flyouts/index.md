@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d5635a41bec716487c08dd57e6ba2ac360649ad
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8203837"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8333946"
 ---
 # <a name="dialogs-and-flyouts"></a><span data-ttu-id="752fe-103">ダイアログとポップアップ</span><span class="sxs-lookup"><span data-stu-id="752fe-103">Dialogs and flyouts</span></span>
 
