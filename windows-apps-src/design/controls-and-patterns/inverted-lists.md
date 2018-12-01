@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 12f86c0d4f8980cea375b9a0a8a6876510c795b0
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8193463"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8336496"
 ---
 # <a name="inverted-lists"></a><span data-ttu-id="df6d8-103">反転リスト</span><span class="sxs-lookup"><span data-stu-id="df6d8-103">Inverted lists</span></span>
 

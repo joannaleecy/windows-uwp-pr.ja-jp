@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217955"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8336801"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a><span data-ttu-id="4c385-104">C# のコード例 : アプリ、アドオン、およびフライトの申請</span><span class="sxs-lookup"><span data-stu-id="4c385-104">C\# sample: submissions for apps, add-ons, and flights</span></span>
 

@@ -12,23 +12,23 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216388"
+ms.locfileid: "8342273"
 ---
-# <a name="handle-app-activation"></a><span data-ttu-id="e49b1-104">アプリのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="e49b1-104">Handle app activation</span></span>
+# <a name="handle-app-activation"></a><span data-ttu-id="31194-104">アプリのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="31194-104">Handle app activation</span></span>
 
-<span data-ttu-id="e49b1-105">[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドして、アプリのアクティブ化を処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e49b1-105">Learn how to handle app activation by overriding the [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method.</span></span>
+<span data-ttu-id="31194-105">[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドして、アプリのアクティブ化を処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="31194-105">Learn how to handle app activation by overriding the [**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) method.</span></span>
 
-## <a name="override-the-launch-handler"></a><span data-ttu-id="e49b1-106">起動ハンドラーを上書きする</span><span class="sxs-lookup"><span data-stu-id="e49b1-106">Override the launch handler</span></span>
+## <a name="override-the-launch-handler"></a><span data-ttu-id="31194-106">起動ハンドラーを上書きする</span><span class="sxs-lookup"><span data-stu-id="31194-106">Override the launch handler</span></span>
 
-<span data-ttu-id="e49b1-107">何らかの理由で、アプリがアクティブ化されるとき、システムは[**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)イベントを送信します。</span><span class="sxs-lookup"><span data-stu-id="e49b1-107">When an app is activated, for any reason, the system sends the [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) event.</span></span> <span data-ttu-id="e49b1-108">アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e49b1-108">For a list of activation types, see the [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) enumeration.</span></span>
+<span data-ttu-id="31194-107">何らかの理由で、アプリがアクティブ化されるとき、システムは[**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)イベントを送信します。</span><span class="sxs-lookup"><span data-stu-id="31194-107">When an app is activated, for any reason, the system sends the [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) event.</span></span> <span data-ttu-id="31194-108">アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="31194-108">For a list of activation types, see the [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) enumeration.</span></span>
 
-<span data-ttu-id="e49b1-109">[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。</span><span class="sxs-lookup"><span data-stu-id="e49b1-109">The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types.</span></span> <span data-ttu-id="e49b1-110">一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="e49b1-110">Several of the activation types have a specific method that you can override.</span></span> <span data-ttu-id="e49b1-111">それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。</span><span class="sxs-lookup"><span data-stu-id="e49b1-111">For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.</span></span>
+<span data-ttu-id="31194-109">[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。</span><span class="sxs-lookup"><span data-stu-id="31194-109">The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types.</span></span> <span data-ttu-id="31194-110">一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。</span><span class="sxs-lookup"><span data-stu-id="31194-110">Several of the activation types have a specific method that you can override.</span></span> <span data-ttu-id="31194-111">それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。</span><span class="sxs-lookup"><span data-stu-id="31194-111">For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.</span></span>
 
-<span data-ttu-id="e49b1-112">アプリのクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="e49b1-112">Define the class for your application.</span></span>
+<span data-ttu-id="31194-112">アプリのクラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="31194-112">Define the class for your application.</span></span>
 
 ```xml
 <Application
@@ -37,10 +37,10 @@ ms.locfileid: "8216388"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-<span data-ttu-id="e49b1-113">[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。</span><span class="sxs-lookup"><span data-stu-id="e49b1-113">Override the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.</span></span> <span data-ttu-id="e49b1-114">このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="e49b1-114">This method is called whenever the user launches the app.</span></span> <span data-ttu-id="e49b1-115">[**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e49b1-115">The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.</span></span>
+<span data-ttu-id="31194-113">[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。</span><span class="sxs-lookup"><span data-stu-id="31194-113">Override the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.</span></span> <span data-ttu-id="31194-114">このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="31194-114">This method is called whenever the user launches the app.</span></span> <span data-ttu-id="31194-115">[**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。</span><span class="sxs-lookup"><span data-stu-id="31194-115">The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e49b1-116">Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動する以下のメソッドを呼び出すしません。</span><span class="sxs-lookup"><span data-stu-id="e49b1-116">On Windows, launching a suspended app from Start tile or app list doesn't call this method.</span></span>
+> <span data-ttu-id="31194-116">Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動する以下のメソッドを呼び出すしません。</span><span class="sxs-lookup"><span data-stu-id="31194-116">On Windows, launching a suspended app from Start tile or app list doesn't call this method.</span></span>
 
 ```csharp
 using System;
@@ -185,9 +185,9 @@ void App::EnsurePageCreatedAndActivate()
 }
 ```
 
-## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a><span data-ttu-id="e49b1-117">アプリが一時停止後に終了された場合は、アプリケーション データを復元する</span><span class="sxs-lookup"><span data-stu-id="e49b1-117">Restore application data if app was suspended then terminated</span></span>
+## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a><span data-ttu-id="31194-117">アプリが一時停止後に終了された場合は、アプリケーション データを復元する</span><span class="sxs-lookup"><span data-stu-id="31194-117">Restore application data if app was suspended then terminated</span></span>
 
-<span data-ttu-id="e49b1-118">ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。</span><span class="sxs-lookup"><span data-stu-id="e49b1-118">When the user switches to your terminated app, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**.</span></span> <span data-ttu-id="e49b1-119">アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e49b1-119">The app should load its saved application data and refresh its displayed content.</span></span>
+<span data-ttu-id="31194-118">ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。</span><span class="sxs-lookup"><span data-stu-id="31194-118">When the user switches to your terminated app, the system sends the [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**.</span></span> <span data-ttu-id="31194-119">アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="31194-119">The app should load its saved application data and refresh its displayed content.</span></span>
 
 ```csharp
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -259,19 +259,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-<span data-ttu-id="e49b1-120">[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。</span><span class="sxs-lookup"><span data-stu-id="e49b1-120">If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app failed to save its application data successfully and the app should start over as if it were being initially launched.</span></span>
+<span data-ttu-id="31194-120">[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。</span><span class="sxs-lookup"><span data-stu-id="31194-120">If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app failed to save its application data successfully and the app should start over as if it were being initially launched.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="e49b1-121">解説</span><span class="sxs-lookup"><span data-stu-id="e49b1-121">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="31194-121">解説</span><span class="sxs-lookup"><span data-stu-id="31194-121">Remarks</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e49b1-122">現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。</span><span class="sxs-lookup"><span data-stu-id="e49b1-122">Apps can skip initialization if there is already content set on the current window.</span></span> <span data-ttu-id="e49b1-123">プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを判断し、新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうか、その情報に基づいて決定[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="e49b1-123">You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine whether the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.</span></span>
+> <span data-ttu-id="31194-122">現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。</span><span class="sxs-lookup"><span data-stu-id="31194-122">Apps can skip initialization if there is already content set on the current window.</span></span> <span data-ttu-id="31194-123">プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを判断し、新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうか、その情報に基づいて決定[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="31194-123">You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine whether the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.</span></span>
 
-## <a name="important-apis"></a><span data-ttu-id="e49b1-124">重要な API</span><span class="sxs-lookup"><span data-stu-id="e49b1-124">Important APIs</span></span>
-* [<span data-ttu-id="e49b1-125">Windows.ApplicationModel.Activation</span><span class="sxs-lookup"><span data-stu-id="e49b1-125">Windows.ApplicationModel.Activation</span></span>](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [<span data-ttu-id="e49b1-126">Windows.UI.Xaml.Application</span><span class="sxs-lookup"><span data-stu-id="e49b1-126">Windows.UI.Xaml.Application</span></span>](https://msdn.microsoft.com/library/windows/apps/br242324)
+## <a name="important-apis"></a><span data-ttu-id="31194-124">重要な API</span><span class="sxs-lookup"><span data-stu-id="31194-124">Important APIs</span></span>
+* [<span data-ttu-id="31194-125">Windows.ApplicationModel.Activation</span><span class="sxs-lookup"><span data-stu-id="31194-125">Windows.ApplicationModel.Activation</span></span>](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [<span data-ttu-id="31194-126">Windows.UI.Xaml.Application</span><span class="sxs-lookup"><span data-stu-id="31194-126">Windows.UI.Xaml.Application</span></span>](https://msdn.microsoft.com/library/windows/apps/br242324)
 
-## <a name="related-topics"></a><span data-ttu-id="e49b1-127">関連トピック</span><span class="sxs-lookup"><span data-stu-id="e49b1-127">Related topics</span></span>
-* [<span data-ttu-id="e49b1-128">アプリの中断の処理</span><span class="sxs-lookup"><span data-stu-id="e49b1-128">Handle app suspend</span></span>](suspend-an-app.md)
-* [<span data-ttu-id="e49b1-129">アプリの再開の処理</span><span class="sxs-lookup"><span data-stu-id="e49b1-129">Handle app resume</span></span>](resume-an-app.md)
-* [<span data-ttu-id="e49b1-130">アプリの中断と再開のガイドライン</span><span class="sxs-lookup"><span data-stu-id="e49b1-130">Guidelines for app suspend and resume</span></span>](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [<span data-ttu-id="e49b1-131">アプリのライフサイクル</span><span class="sxs-lookup"><span data-stu-id="e49b1-131">App lifecycle</span></span>](app-lifecycle.md)
+## <a name="related-topics"></a><span data-ttu-id="31194-127">関連トピック</span><span class="sxs-lookup"><span data-stu-id="31194-127">Related topics</span></span>
+* [<span data-ttu-id="31194-128">アプリの中断の処理</span><span class="sxs-lookup"><span data-stu-id="31194-128">Handle app suspend</span></span>](suspend-an-app.md)
+* [<span data-ttu-id="31194-129">アプリの再開の処理</span><span class="sxs-lookup"><span data-stu-id="31194-129">Handle app resume</span></span>](resume-an-app.md)
+* [<span data-ttu-id="31194-130">アプリの中断と再開のガイドライン</span><span class="sxs-lookup"><span data-stu-id="31194-130">Guidelines for app suspend and resume</span></span>](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [<span data-ttu-id="31194-131">アプリのライフサイクル</span><span class="sxs-lookup"><span data-stu-id="31194-131">App lifecycle</span></span>](app-lifecycle.md)

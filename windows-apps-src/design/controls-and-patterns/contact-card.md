@@ -10,11 +10,11 @@ dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: b04a8f616e9f6c7726a222f4a7264b9580ddee3a
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8211933"
+ms.locfileid: "8335725"
 ---
 # <a name="contact-card"></a><span data-ttu-id="fbccf-103">連絡先カード</span><span class="sxs-lookup"><span data-stu-id="fbccf-103">Contact card</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8214704"
+ms.locfileid: "8339431"
 ---
 # <a name="stream-output-so-stage"></a><span data-ttu-id="bdaa3-105">ストリーム出力 (SO) ステージ</span><span class="sxs-lookup"><span data-stu-id="bdaa3-105">Stream Output (SO) stage</span></span>
 

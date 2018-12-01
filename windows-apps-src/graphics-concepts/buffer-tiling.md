@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e5e117e05cef478ede508240a6b1d1022dea70
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7982731"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8338314"
 ---
 # <a name="buffer-tiling"></a><span data-ttu-id="d50e4-104">バッファーのタイリング</span><span class="sxs-lookup"><span data-stu-id="d50e4-104">Buffer tiling</span></span>
 
