@@ -2,66 +2,64 @@
 title: /handles/query
 assetID: e00d31ad-b9ba-8e52-1333-83192eab0446
 permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
-author: KevinAsgari
 description: " /handles/query"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eaa148972ce1e65056470a6c4082cb4e50de3f09
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571024"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328123"
 ---
-# <a name="handlesquery"></a><span data-ttu-id="9846b-104">/handles/query</span><span class="sxs-lookup"><span data-stu-id="9846b-104">/handles/query</span></span>
-<span data-ttu-id="9846b-105">セッション ハンドルのクエリを作成する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9846b-105">Supports POST operations to create queries for session handles.</span></span> 
+# <a name="handlesquery"></a><span data-ttu-id="9c78d-104">/handles/query</span><span class="sxs-lookup"><span data-stu-id="9c78d-104">/handles/query</span></span>
+<span data-ttu-id="9c78d-105">セッション ハンドルのクエリを作成する POST 操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9c78d-105">Supports POST operations to create queries for session handles.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="9846b-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="9846b-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="9846b-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="9846b-107">It is intended for use with template contract 104/105 or later.</span></span>  
+> <span data-ttu-id="9c78d-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="9c78d-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="9c78d-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="9c78d-107">It is intended for use with template contract 104/105 or later.</span></span>  
 
  
 <a id="ID4EQ"></a>
 
  
-## <a name="domain"></a><span data-ttu-id="9846b-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="9846b-108">Domain</span></span>
-<span data-ttu-id="9846b-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="9846b-109">sessiondirectory.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="9c78d-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="9c78d-108">Domain</span></span>
+<span data-ttu-id="9c78d-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="9c78d-109">sessiondirectory.xboxlive.com</span></span>  
 <a id="ID4EV"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="9846b-110">注釈</span><span class="sxs-lookup"><span data-stu-id="9846b-110">Remarks</span></span>
-<span data-ttu-id="9846b-111">この URI は、ハンドルのクエリをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9846b-111">This URI supports queries for handles.</span></span> <span data-ttu-id="9846b-112">セッションのクエリ文字列とバッチのクエリであるとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="9846b-112">Unlike session queries, which are string and batch queries, handle queries use a query-processor style.</span></span> <span data-ttu-id="9846b-113">最大 100 ハンドルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="9846b-113">Up to 100 handles are supported.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9c78d-110">注釈</span><span class="sxs-lookup"><span data-stu-id="9c78d-110">Remarks</span></span>
+<span data-ttu-id="9c78d-111">この URI は、ハンドルのクエリをサポートします。</span><span class="sxs-lookup"><span data-stu-id="9c78d-111">This URI supports queries for handles.</span></span> <span data-ttu-id="9c78d-112">クエリ文字列とバッチであり、セッション クエリとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。</span><span class="sxs-lookup"><span data-stu-id="9c78d-112">Unlike session queries, which are string and batch queries, handle queries use a query-processor style.</span></span> <span data-ttu-id="9c78d-113">最大 100 ハンドルがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="9c78d-113">Up to 100 handles are supported.</span></span>  
 <a id="ID4E2"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="9846b-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9846b-114">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="9c78d-114">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="9c78d-114">URI parameters</span></span>
  
-<span data-ttu-id="9846b-115">なし</span><span class="sxs-lookup"><span data-stu-id="9846b-115">None</span></span>   
+<span data-ttu-id="9c78d-115">なし</span><span class="sxs-lookup"><span data-stu-id="9c78d-115">None</span></span>   
 <a id="ID4EEB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="9846b-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9846b-116">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="9c78d-116">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="9c78d-116">Valid methods</span></span>
 
-[<span data-ttu-id="9846b-117">POST (/handles/query)</span><span class="sxs-lookup"><span data-stu-id="9846b-117">POST (/handles/query)</span></span>](uri-handlesquerypost.md)
+[<span data-ttu-id="9c78d-117">POST (/handles/query)</span><span class="sxs-lookup"><span data-stu-id="9c78d-117">POST (/handles/query)</span></span>](uri-handlesquerypost.md)
 
-<span data-ttu-id="9846b-118">&nbsp;&nbsp;セッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="9846b-118">&nbsp;&nbsp;Creates queries for session handles.</span></span>
+<span data-ttu-id="9c78d-118">&nbsp;&nbsp;セッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="9c78d-118">&nbsp;&nbsp;Creates queries for session handles.</span></span>
 
-[<span data-ttu-id="9846b-119">POST (/handles/query?include=relatedInfo)</span><span class="sxs-lookup"><span data-stu-id="9846b-119">POST (/handles/query?include=relatedInfo)</span></span>](uri-handlesqueryincludepost.md)
+[<span data-ttu-id="9c78d-119">POST (/handles/query?include=relatedInfo)</span><span class="sxs-lookup"><span data-stu-id="9c78d-119">POST (/handles/query?include=relatedInfo)</span></span>](uri-handlesqueryincludepost.md)
 
-<span data-ttu-id="9846b-120">&nbsp;&nbsp;関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="9846b-120">&nbsp;&nbsp;Creates queries for session handles that include related session information.</span></span>
+<span data-ttu-id="9c78d-120">&nbsp;&nbsp;関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="9c78d-120">&nbsp;&nbsp;Creates queries for session handles that include related session information.</span></span>
  
 <a id="ID4EQB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="9846b-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="9846b-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c78d-121">関連項目</span><span class="sxs-lookup"><span data-stu-id="9c78d-121">See also</span></span>
  
 <a id="ID4ESB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="9846b-122">Parent</span><span class="sxs-lookup"><span data-stu-id="9846b-122">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="9c78d-122">Parent</span><span class="sxs-lookup"><span data-stu-id="9c78d-122">Parent</span></span> 
 
-[<span data-ttu-id="9846b-123">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="9846b-123">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
+[<span data-ttu-id="9c78d-123">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="9c78d-123">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
 
    

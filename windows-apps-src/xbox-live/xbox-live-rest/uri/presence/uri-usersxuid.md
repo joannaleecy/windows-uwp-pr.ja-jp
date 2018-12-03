@@ -2,53 +2,51 @@
 title: /users/xuid({xuid})
 assetID: 99ebb6b1-4c9b-0f51-10cc-3cad4ed8db74
 permalink: en-us/docs/xboxlive/rest/uri-usersxuid.html
-author: KevinAsgari
 description: " /users/xuid({xuid})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e0cc89d7411f513c23e74caf2c7cd151bcbf7df3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 827bdd417377856dcd70fd42d00febdf908ef339
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575773"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326645"
 ---
-# <a name="usersxuidxuid"></a><span data-ttu-id="8e79f-104">/users/xuid({xuid})</span><span class="sxs-lookup"><span data-stu-id="8e79f-104">/users/xuid({xuid})</span></span>
-<span data-ttu-id="8e79f-105">別のユーザーまたはクライアントの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="8e79f-105">Access the presence of another user or client.</span></span> <span data-ttu-id="8e79f-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="8e79f-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersxuidxuid"></a><span data-ttu-id="b232c-104">/users/xuid({xuid})</span><span class="sxs-lookup"><span data-stu-id="b232c-104">/users/xuid({xuid})</span></span>
+<span data-ttu-id="b232c-105">別のユーザーまたはクライアントの有無にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="b232c-105">Access the presence of another user or client.</span></span> <span data-ttu-id="b232c-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b232c-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="8e79f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e79f-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="b232c-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b232c-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="8e79f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e79f-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="b232c-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b232c-108">URI parameters</span></span>
  
-| <span data-ttu-id="8e79f-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8e79f-109">Parameter</span></span>| <span data-ttu-id="8e79f-110">型</span><span class="sxs-lookup"><span data-stu-id="8e79f-110">Type</span></span>| <span data-ttu-id="8e79f-111">説明</span><span class="sxs-lookup"><span data-stu-id="8e79f-111">Description</span></span>| 
+| <span data-ttu-id="b232c-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b232c-109">Parameter</span></span>| <span data-ttu-id="b232c-110">型</span><span class="sxs-lookup"><span data-stu-id="b232c-110">Type</span></span>| <span data-ttu-id="b232c-111">説明</span><span class="sxs-lookup"><span data-stu-id="b232c-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="8e79f-112">xuid</span><span class="sxs-lookup"><span data-stu-id="8e79f-112">xuid</span></span>| <span data-ttu-id="8e79f-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="8e79f-113">64-bit unsigned integer</span></span>| <span data-ttu-id="8e79f-114">Xbox ユーザー ID (XUID) 対象ユーザーのです。</span><span class="sxs-lookup"><span data-stu-id="8e79f-114">Xbox User ID (XUID) of the target user.</span></span>| 
+| <span data-ttu-id="b232c-112">xuid</span><span class="sxs-lookup"><span data-stu-id="b232c-112">xuid</span></span>| <span data-ttu-id="b232c-113">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="b232c-113">64-bit unsigned integer</span></span>| <span data-ttu-id="b232c-114">Xbox ユーザー ID (XUID) 対象ユーザーのします。</span><span class="sxs-lookup"><span data-stu-id="b232c-114">Xbox User ID (XUID) of the target user.</span></span>| 
   
 <a id="ID4EUB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="8e79f-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="8e79f-115">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="b232c-115">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="b232c-115">Valid methods</span></span>
 
-[<span data-ttu-id="8e79f-116">GET (/users/xuid({xuid}))</span><span class="sxs-lookup"><span data-stu-id="8e79f-116">GET (/users/xuid({xuid}))</span></span>](uri-usersxuidget.md)
+[<span data-ttu-id="b232c-116">GET (/users/xuid({xuid}))</span><span class="sxs-lookup"><span data-stu-id="b232c-116">GET (/users/xuid({xuid}))</span></span>](uri-usersxuidget.md)
 
-<span data-ttu-id="8e79f-117">&nbsp;&nbsp;別のユーザーまたはクライアントの有無を検出します。</span><span class="sxs-lookup"><span data-stu-id="8e79f-117">&nbsp;&nbsp;Discover the presence of another user or client.</span></span>
+<span data-ttu-id="b232c-117">&nbsp;&nbsp;別のユーザーまたはクライアントの有無を検出します。</span><span class="sxs-lookup"><span data-stu-id="b232c-117">&nbsp;&nbsp;Discover the presence of another user or client.</span></span>
  
 <a id="ID4E5B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="8e79f-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="8e79f-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b232c-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="b232c-118">See also</span></span>
  
 <a id="ID4EAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="8e79f-119">Parent</span><span class="sxs-lookup"><span data-stu-id="8e79f-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b232c-119">Parent</span><span class="sxs-lookup"><span data-stu-id="b232c-119">Parent</span></span> 
 
-[<span data-ttu-id="8e79f-120">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="8e79f-120">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="b232c-120">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="b232c-120">Presence URIs</span></span>](atoc-reference-presence.md)
 
    

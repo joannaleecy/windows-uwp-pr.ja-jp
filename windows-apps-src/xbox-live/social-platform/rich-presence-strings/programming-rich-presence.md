@@ -1,23 +1,21 @@
 ---
 title: リッチ プレゼンスのプログラミング
-author: KevinAsgari
 description: Xbox Live メンバーのオンライン プレゼンス状態を設定するコード例について説明します。
 ms.assetid: 7e6e7b69-d7c3-42fa-bcc4-6d68947f6fdb
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 640ae98c947280732165c7e63d951a91a2f65a3b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0a113dc140500c982ddf22e25308eaafeaed66d6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552884"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327171"
 ---
-# <a name="programming-rich-presence"></a><span data-ttu-id="ac77f-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="ac77f-104">Programming Rich Presence</span></span>
+# <a name="programming-rich-presence"></a><span data-ttu-id="1fdbc-104">リッチ プレゼンスのプログラミング</span><span class="sxs-lookup"><span data-stu-id="1fdbc-104">Programming Rich Presence</span></span>
 
-<span data-ttu-id="ac77f-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="ac77f-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="ac77f-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ac77f-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
+<span data-ttu-id="1fdbc-105">リッチ プレゼンスは、プレイヤーの現在のアクティビティを他のプレイヤーに通知するための機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="1fdbc-105">Rich presence provides features for advertising a player's current activity to other players.</span></span> <span data-ttu-id="1fdbc-106">詳細については、「[リッチ プレゼンス文字列 - 概要](rich-presence-strings-overview.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1fdbc-106">For more information, see [Rich Presence Strings: Overview](rich-presence-strings-overview.md).</span></span>
 
 ```cpp
 

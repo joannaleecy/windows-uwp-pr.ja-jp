@@ -2,97 +2,95 @@
 title: POST (/users/me/scids/{scid}/clips)
 assetID: 44535926-9fb8-5498-b1c8-514c0763e6c9
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipspost.html
-author: KevinAsgari
 description: " POST (/users/me/scids/{scid}/clips)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: dd074b6ffc7b5367992c984e7e3c24b036f0f11d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a8973390ccbf5dd9980410f60f03a7edd78c134
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557768"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330893"
 ---
-# <a name="post-usersmescidsscidclips"></a><span data-ttu-id="b0075-104">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="b0075-104">POST (/users/me/scids/{scid}/clips)</span></span>
-<span data-ttu-id="b0075-105">初期のアップロード要求を実行します。</span><span class="sxs-lookup"><span data-stu-id="b0075-105">Make an initial upload request.</span></span> <span data-ttu-id="b0075-106">これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="b0075-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
+# <a name="post-usersmescidsscidclips"></a><span data-ttu-id="b0dba-104">POST (/users/me/scids/{scid}/clips)</span><span class="sxs-lookup"><span data-stu-id="b0dba-104">POST (/users/me/scids/{scid}/clips)</span></span>
+<span data-ttu-id="b0dba-105">初期のアップロード要求を実行します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-105">Make an initial upload request.</span></span> <span data-ttu-id="b0dba-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>
  
-  * [<span data-ttu-id="b0075-107">注釈</span><span class="sxs-lookup"><span data-stu-id="b0075-107">Remarks</span></span>](#ID4EX)
-  * [<span data-ttu-id="b0075-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0075-108">URI parameters</span></span>](#ID4EFB)
-  * [<span data-ttu-id="b0075-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0075-109">Authorization</span></span>](#ID4EQB)
-  * [<span data-ttu-id="b0075-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-110">Required Request Headers</span></span>](#ID4EKC)
-  * [<span data-ttu-id="b0075-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-111">Optional Request Headers</span></span>](#ID4ENE)
-  * [<span data-ttu-id="b0075-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="b0075-112">Request body</span></span>](#ID4ENF)
-  * [<span data-ttu-id="b0075-113">要求の例</span><span class="sxs-lookup"><span data-stu-id="b0075-113">Sample request</span></span>](#ID4E1F)
-  * [<span data-ttu-id="b0075-114">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="b0075-114">HTTP status codes</span></span>](#ID4EDG)
-  * [<span data-ttu-id="b0075-115">応答本文</span><span class="sxs-lookup"><span data-stu-id="b0075-115">Response body</span></span>](#ID4EVAAC)
-  * [<span data-ttu-id="b0075-116">応答の例</span><span class="sxs-lookup"><span data-stu-id="b0075-116">Sample response</span></span>](#ID4EFBAC)
+  * [<span data-ttu-id="b0dba-107">注釈</span><span class="sxs-lookup"><span data-stu-id="b0dba-107">Remarks</span></span>](#ID4EX)
+  * [<span data-ttu-id="b0dba-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0dba-108">URI parameters</span></span>](#ID4EFB)
+  * [<span data-ttu-id="b0dba-109">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0dba-109">Authorization</span></span>](#ID4EQB)
+  * [<span data-ttu-id="b0dba-110">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-110">Required Request Headers</span></span>](#ID4EKC)
+  * [<span data-ttu-id="b0dba-111">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-111">Optional Request Headers</span></span>](#ID4ENE)
+  * [<span data-ttu-id="b0dba-112">要求本文</span><span class="sxs-lookup"><span data-stu-id="b0dba-112">Request body</span></span>](#ID4ENF)
+  * [<span data-ttu-id="b0dba-113">要求の例</span><span class="sxs-lookup"><span data-stu-id="b0dba-113">Sample request</span></span>](#ID4E1F)
+  * [<span data-ttu-id="b0dba-114">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="b0dba-114">HTTP status codes</span></span>](#ID4EDG)
+  * [<span data-ttu-id="b0dba-115">応答本文</span><span class="sxs-lookup"><span data-stu-id="b0dba-115">Response body</span></span>](#ID4EVAAC)
+  * [<span data-ttu-id="b0dba-116">応答の例</span><span class="sxs-lookup"><span data-stu-id="b0dba-116">Sample response</span></span>](#ID4EFBAC)
  
 <a id="ID4EX"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="b0075-117">注釈</span><span class="sxs-lookup"><span data-stu-id="b0075-117">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b0dba-117">注釈</span><span class="sxs-lookup"><span data-stu-id="b0dba-117">Remarks</span></span>
  
-<span data-ttu-id="b0075-118">これは、GameClip アップロード プロセスの最初の部分です。</span><span class="sxs-lookup"><span data-stu-id="b0075-118">This is the first part of the GameClip upload process.</span></span> <span data-ttu-id="b0075-119">ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。</span><span class="sxs-lookup"><span data-stu-id="b0075-119">Upon capture of a video, it's recommended to call the GameClips service immediately to obtain the ID and URI for the upload of the bits, even if the upload is not scheduled to start right away.</span></span> <span data-ttu-id="b0075-120">この呼び出しは、ユーザーのクォータ チェックとその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードもスケジュールするかどうか、プライバシー、コンテンツの分離を通じて実行されます。</span><span class="sxs-lookup"><span data-stu-id="b0075-120">This call will perform user quota checks and other checks through content isolation, privacy, and so on to see if a video should even be scheduled for upload by the client.</span></span> <span data-ttu-id="b0075-121">この呼び出しからの正の応答では、サービスが許容アップロード用のビデオ クリップを示します。</span><span class="sxs-lookup"><span data-stu-id="b0075-121">A positive response from this call indicates the service is willing to accept the video clip for upload.</span></span> <span data-ttu-id="b0075-122">アップロードされたすべてのクリップを承諾するのには、システムと、(SCID) を通じて、特定のタイトルに関連付けられたする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-122">All clips uploaded must be associated with a specific title (through a SCID) to be accepted in the system.</span></span>
+<span data-ttu-id="b0dba-118">これは、GameClip アップロード プロセスの最初の部分です。</span><span class="sxs-lookup"><span data-stu-id="b0dba-118">This is the first part of the GameClip upload process.</span></span> <span data-ttu-id="b0dba-119">ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。</span><span class="sxs-lookup"><span data-stu-id="b0dba-119">Upon capture of a video, it's recommended to call the GameClips service immediately to obtain the ID and URI for the upload of the bits, even if the upload is not scheduled to start right away.</span></span> <span data-ttu-id="b0dba-120">この呼び出しは、ユーザー クォータ チェックやその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードもスケジュールするかどうか、プライバシー、コンテンツの分離を通じて実行されます。</span><span class="sxs-lookup"><span data-stu-id="b0dba-120">This call will perform user quota checks and other checks through content isolation, privacy, and so on to see if a video should even be scheduled for upload by the client.</span></span> <span data-ttu-id="b0dba-121">この呼び出しからの正の応答では、サービスが許容アップロード用のビデオ クリップを示します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-121">A positive response from this call indicates the service is willing to accept the video clip for upload.</span></span> <span data-ttu-id="b0dba-122">アップロードされたすべてのクリップを承諾するのには、システムと、(SCID) を通じて、特定のタイトルに関連付けられたする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-122">All clips uploaded must be associated with a specific title (through a SCID) to be accepted in the system.</span></span>
  
-<span data-ttu-id="b0075-123">この呼び出しでない等です。後続の呼び出しと、別の Id と Uri が発行されます。</span><span class="sxs-lookup"><span data-stu-id="b0075-123">This call is not idempotent; subsequent calls will cause different IDs and URIs to be issued.</span></span> <span data-ttu-id="b0075-124">エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-124">Retries on failure should follow standard client-side back-off behavior.</span></span>
+<span data-ttu-id="b0dba-123">この呼び出しでない等です。後続の呼び出しと、別の Id と Uri が発行されます。</span><span class="sxs-lookup"><span data-stu-id="b0dba-123">This call is not idempotent; subsequent calls will cause different IDs and URIs to be issued.</span></span> <span data-ttu-id="b0dba-124">エラー発生時における再試行は、標準的なクライアント側のバックオフを動作に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-124">Retries on failure should follow standard client-side back-off behavior.</span></span>
   
 <a id="ID4EFB"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="b0075-125">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0075-125">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="b0dba-125">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0dba-125">URI parameters</span></span>
  
-| <span data-ttu-id="b0075-126">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0075-126">Parameter</span></span>| <span data-ttu-id="b0075-127">型</span><span class="sxs-lookup"><span data-stu-id="b0075-127">Type</span></span>| <span data-ttu-id="b0075-128">説明</span><span class="sxs-lookup"><span data-stu-id="b0075-128">Description</span></span>| 
+| <span data-ttu-id="b0dba-126">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b0dba-126">Parameter</span></span>| <span data-ttu-id="b0dba-127">型</span><span class="sxs-lookup"><span data-stu-id="b0dba-127">Type</span></span>| <span data-ttu-id="b0dba-128">説明</span><span class="sxs-lookup"><span data-stu-id="b0dba-128">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="b0075-129">scid</span><span class="sxs-lookup"><span data-stu-id="b0075-129">scid</span></span>| <span data-ttu-id="b0075-130">string</span><span class="sxs-lookup"><span data-stu-id="b0075-130">string</span></span>| <span data-ttu-id="b0075-131">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="b0075-131">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="b0075-132">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-132">Must match the SCID of the authenticated user.</span></span>| 
+| <span data-ttu-id="b0dba-129">scid</span><span class="sxs-lookup"><span data-stu-id="b0dba-129">scid</span></span>| <span data-ttu-id="b0dba-130">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-130">string</span></span>| <span data-ttu-id="b0dba-131">アクセスされているリソースのサービス構成 ID。</span><span class="sxs-lookup"><span data-stu-id="b0dba-131">Service Config ID of the resource that is being accessed.</span></span> <span data-ttu-id="b0dba-132">認証されたユーザーの SCID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-132">Must match the SCID of the authenticated user.</span></span>| 
   
 <a id="ID4EQB"></a>
 
  
-## <a name="authorization"></a><span data-ttu-id="b0075-133">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0075-133">Authorization</span></span>
+## <a name="authorization"></a><span data-ttu-id="b0dba-133">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0dba-133">Authorization</span></span>
  
-<span data-ttu-id="b0075-134">次の要求は、このメソッドでは必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-134">The following claims are required for this method:</span></span>
+<span data-ttu-id="b0dba-134">次の要求は、このメソッドでは必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-134">The following claims are required for this method:</span></span>
  
-   * <span data-ttu-id="b0075-135">Xuid</span><span class="sxs-lookup"><span data-stu-id="b0075-135">Xuid</span></span>
-   * <span data-ttu-id="b0075-136">DeviceType - デバイスにアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-136">DeviceType - Must be device to upload</span></span>
-   * <span data-ttu-id="b0075-137">DeviceId</span><span class="sxs-lookup"><span data-stu-id="b0075-137">DeviceId</span></span>
-   * <span data-ttu-id="b0075-138">TitleId</span><span class="sxs-lookup"><span data-stu-id="b0075-138">TitleId</span></span>
-   * <span data-ttu-id="b0075-139">TitleSandboxId</span><span class="sxs-lookup"><span data-stu-id="b0075-139">TitleSandboxId</span></span>
+   * <span data-ttu-id="b0dba-135">Xuid</span><span class="sxs-lookup"><span data-stu-id="b0dba-135">Xuid</span></span>
+   * <span data-ttu-id="b0dba-136">DeviceType - デバイスにアップロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-136">DeviceType - Must be device to upload</span></span>
+   * <span data-ttu-id="b0dba-137">DeviceId</span><span class="sxs-lookup"><span data-stu-id="b0dba-137">DeviceId</span></span>
+   * <span data-ttu-id="b0dba-138">TitleId</span><span class="sxs-lookup"><span data-stu-id="b0dba-138">TitleId</span></span>
+   * <span data-ttu-id="b0dba-139">TitleSandboxId</span><span class="sxs-lookup"><span data-stu-id="b0dba-139">TitleSandboxId</span></span>
    
 <a id="ID4EKC"></a>
 
  
-## <a name="required-request-headers"></a><span data-ttu-id="b0075-140">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-140">Required Request Headers</span></span>
+## <a name="required-request-headers"></a><span data-ttu-id="b0dba-140">必要な要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-140">Required Request Headers</span></span>
  
-| <span data-ttu-id="b0075-141">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-141">Header</span></span>| <span data-ttu-id="b0075-142">型</span><span class="sxs-lookup"><span data-stu-id="b0075-142">Type</span></span>| <span data-ttu-id="b0075-143">説明</span><span class="sxs-lookup"><span data-stu-id="b0075-143">Description</span></span>| 
+| <span data-ttu-id="b0dba-141">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-141">Header</span></span>| <span data-ttu-id="b0dba-142">型</span><span class="sxs-lookup"><span data-stu-id="b0dba-142">Type</span></span>| <span data-ttu-id="b0dba-143">説明</span><span class="sxs-lookup"><span data-stu-id="b0dba-143">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="b0075-144">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0075-144">Authorization</span></span>| <span data-ttu-id="b0075-145">string</span><span class="sxs-lookup"><span data-stu-id="b0075-145">string</span></span>| <span data-ttu-id="b0075-146">HTTP の認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="b0075-146">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="b0075-147">値の例: <b>Xauth =&lt;authtoken ></b></span><span class="sxs-lookup"><span data-stu-id="b0075-147">Example values: <b>Xauth=&lt;authtoken></b></span></span>| 
-| <span data-ttu-id="b0075-148">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="b0075-148">X-RequestedServiceVersion</span></span>| <span data-ttu-id="b0075-149">string</span><span class="sxs-lookup"><span data-stu-id="b0075-149">string</span></span>| <span data-ttu-id="b0075-150">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="b0075-150">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="b0075-151">要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。</span><span class="sxs-lookup"><span data-stu-id="b0075-151">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, etc. Examples: 1, vnext.</span></span>| 
-| <span data-ttu-id="b0075-152">Content-Type</span><span class="sxs-lookup"><span data-stu-id="b0075-152">Content-Type</span></span>| <span data-ttu-id="b0075-153">string</span><span class="sxs-lookup"><span data-stu-id="b0075-153">string</span></span>| <span data-ttu-id="b0075-154">応答本文の MIME タイプ。</span><span class="sxs-lookup"><span data-stu-id="b0075-154">MIME type of the response body.</span></span> <span data-ttu-id="b0075-155">例:<b>アプリケーション/json</b>します。</span><span class="sxs-lookup"><span data-stu-id="b0075-155">Example: <b>application/json</b>.</span></span>| 
-| <span data-ttu-id="b0075-156">Accept</span><span class="sxs-lookup"><span data-stu-id="b0075-156">Accept</span></span>| <span data-ttu-id="b0075-157">string</span><span class="sxs-lookup"><span data-stu-id="b0075-157">string</span></span>| <span data-ttu-id="b0075-158">コンテンツの種類の利用可能な値です。</span><span class="sxs-lookup"><span data-stu-id="b0075-158">Acceptable values of Content-Type.</span></span> <span data-ttu-id="b0075-159">例:<b>アプリケーション/json</b>します。</span><span class="sxs-lookup"><span data-stu-id="b0075-159">Example: <b>application/json</b>.</span></span>| 
+| <span data-ttu-id="b0dba-144">Authorization</span><span class="sxs-lookup"><span data-stu-id="b0dba-144">Authorization</span></span>| <span data-ttu-id="b0dba-145">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-145">string</span></span>| <span data-ttu-id="b0dba-146">HTTP 認証の資格情報を認証します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-146">Authentication credentials for HTTP authentication.</span></span> <span data-ttu-id="b0dba-147">値の例: <b>Xauth =&lt;authtoken ></b></span><span class="sxs-lookup"><span data-stu-id="b0dba-147">Example values: <b>Xauth=&lt;authtoken></b></span></span>| 
+| <span data-ttu-id="b0dba-148">X RequestedServiceVersion</span><span class="sxs-lookup"><span data-stu-id="b0dba-148">X-RequestedServiceVersion</span></span>| <span data-ttu-id="b0dba-149">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-149">string</span></span>| <span data-ttu-id="b0dba-150">この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。</span><span class="sxs-lookup"><span data-stu-id="b0dba-150">Build name/number of the Xbox LIVE service to which this request should be directed.</span></span> <span data-ttu-id="b0dba-151">要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-151">The request will only be routed to that service after verifying the validity of the header, the claims in the auth token, etc. Examples: 1, vnext.</span></span>| 
+| <span data-ttu-id="b0dba-152">Content-Type</span><span class="sxs-lookup"><span data-stu-id="b0dba-152">Content-Type</span></span>| <span data-ttu-id="b0dba-153">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-153">string</span></span>| <span data-ttu-id="b0dba-154">応答本文の MIME タイプ。</span><span class="sxs-lookup"><span data-stu-id="b0dba-154">MIME type of the response body.</span></span> <span data-ttu-id="b0dba-155">例:<b>アプリケーション/json</b>します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-155">Example: <b>application/json</b>.</span></span>| 
+| <span data-ttu-id="b0dba-156">Accept</span><span class="sxs-lookup"><span data-stu-id="b0dba-156">Accept</span></span>| <span data-ttu-id="b0dba-157">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-157">string</span></span>| <span data-ttu-id="b0dba-158">コンテンツの種類の利用可能な値です。</span><span class="sxs-lookup"><span data-stu-id="b0dba-158">Acceptable values of Content-Type.</span></span> <span data-ttu-id="b0dba-159">例:<b>アプリケーション/json</b>します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-159">Example: <b>application/json</b>.</span></span>| 
   
 <a id="ID4ENE"></a>
 
  
-## <a name="optional-request-headers"></a><span data-ttu-id="b0075-160">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-160">Optional Request Headers</span></span>
+## <a name="optional-request-headers"></a><span data-ttu-id="b0dba-160">オプションの要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-160">Optional Request Headers</span></span>
  
-| <span data-ttu-id="b0075-161">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0075-161">Header</span></span>| <span data-ttu-id="b0075-162">型</span><span class="sxs-lookup"><span data-stu-id="b0075-162">Type</span></span>| <span data-ttu-id="b0075-163">説明</span><span class="sxs-lookup"><span data-stu-id="b0075-163">Description</span></span>| 
+| <span data-ttu-id="b0dba-161">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="b0dba-161">Header</span></span>| <span data-ttu-id="b0dba-162">型</span><span class="sxs-lookup"><span data-stu-id="b0dba-162">Type</span></span>| <span data-ttu-id="b0dba-163">説明</span><span class="sxs-lookup"><span data-stu-id="b0dba-163">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="b0075-164">Accept-Encoding</span><span class="sxs-lookup"><span data-stu-id="b0075-164">Accept-Encoding</span></span>| <span data-ttu-id="b0075-165">string</span><span class="sxs-lookup"><span data-stu-id="b0075-165">string</span></span>| <span data-ttu-id="b0075-166">受け入れ可能な圧縮エンコードします。</span><span class="sxs-lookup"><span data-stu-id="b0075-166">Acceptable compression encodings.</span></span> <span data-ttu-id="b0075-167">値の例: gzip、圧縮を識別します。</span><span class="sxs-lookup"><span data-stu-id="b0075-167">Example values: gzip, deflate, identity.</span></span>| 
+| <span data-ttu-id="b0dba-164">Accept-Encoding</span><span class="sxs-lookup"><span data-stu-id="b0dba-164">Accept-Encoding</span></span>| <span data-ttu-id="b0dba-165">string</span><span class="sxs-lookup"><span data-stu-id="b0dba-165">string</span></span>| <span data-ttu-id="b0dba-166">受け入れ可能な圧縮エンコードします。</span><span class="sxs-lookup"><span data-stu-id="b0dba-166">Acceptable compression encodings.</span></span> <span data-ttu-id="b0dba-167">値の例: gzip、圧縮を識別します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-167">Example values: gzip, deflate, identity.</span></span>| 
   
 <a id="ID4ENF"></a>
 
  
-## <a name="request-body"></a><span data-ttu-id="b0075-168">要求本文</span><span class="sxs-lookup"><span data-stu-id="b0075-168">Request body</span></span>
+## <a name="request-body"></a><span data-ttu-id="b0dba-168">要求本文</span><span class="sxs-lookup"><span data-stu-id="b0dba-168">Request body</span></span>
  
-<span data-ttu-id="b0075-169">要求の本文には、JSON 形式で[InitialUploadRequest](../../json/json-initialuploadrequest.md)オブジェクトを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-169">The body of the request should be an [InitialUploadRequest](../../json/json-initialuploadrequest.md) object in JSON format.</span></span>
+<span data-ttu-id="b0dba-169">要求の本文には、JSON 形式で[InitialUploadRequest](../../json/json-initialuploadrequest.md)オブジェクトを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-169">The body of the request should be an [InitialUploadRequest](../../json/json-initialuploadrequest.md) object in JSON format.</span></span>
   
 <a id="ID4E1F"></a>
 
  
-## <a name="sample-request"></a><span data-ttu-id="b0075-170">要求の例</span><span class="sxs-lookup"><span data-stu-id="b0075-170">Sample request</span></span>
+## <a name="sample-request"></a><span data-ttu-id="b0dba-170">要求の例</span><span class="sxs-lookup"><span data-stu-id="b0dba-170">Sample request</span></span>
  
 
 ```cpp
@@ -120,29 +118,29 @@ ms.locfileid: "7557768"
 <a id="ID4EDG"></a>
 
  
-## <a name="http-status-codes"></a><span data-ttu-id="b0075-171">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="b0075-171">HTTP status codes</span></span>
+## <a name="http-status-codes"></a><span data-ttu-id="b0dba-171">HTTP ステータス コード</span><span class="sxs-lookup"><span data-stu-id="b0dba-171">HTTP status codes</span></span>
  
-<span data-ttu-id="b0075-172">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="b0075-172">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="b0075-173">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b0075-173">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
+<span data-ttu-id="b0dba-172">サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-172">The service returns one of the status codes in this section in response to a request made with this method on this resource.</span></span> <span data-ttu-id="b0dba-173">Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b0dba-173">For a complete list of standard HTTP status codes used with Xbox Live Services, see [Standard HTTP status codes](../../additional/httpstatuscodes.md).</span></span>
  
-| <span data-ttu-id="b0075-174">コード</span><span class="sxs-lookup"><span data-stu-id="b0075-174">Code</span></span>| <span data-ttu-id="b0075-175">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="b0075-175">Reason phrase</span></span>| <span data-ttu-id="b0075-176">説明</span><span class="sxs-lookup"><span data-stu-id="b0075-176">Description</span></span>| 
+| <span data-ttu-id="b0dba-174">コード</span><span class="sxs-lookup"><span data-stu-id="b0dba-174">Code</span></span>| <span data-ttu-id="b0dba-175">理由フレーズ</span><span class="sxs-lookup"><span data-stu-id="b0dba-175">Reason phrase</span></span>| <span data-ttu-id="b0dba-176">説明</span><span class="sxs-lookup"><span data-stu-id="b0dba-176">Description</span></span>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <span data-ttu-id="b0075-177">200</span><span class="sxs-lookup"><span data-stu-id="b0075-177">200</span></span>| <span data-ttu-id="b0075-178">OK</span><span class="sxs-lookup"><span data-stu-id="b0075-178">OK</span></span>| <span data-ttu-id="b0075-179">セッションが正常に取得されました。</span><span class="sxs-lookup"><span data-stu-id="b0075-179">The session was successfully retrieved.</span></span>| 
-| <span data-ttu-id="b0075-180">400</span><span class="sxs-lookup"><span data-stu-id="b0075-180">400</span></span>| <span data-ttu-id="b0075-181">Bad Request</span><span class="sxs-lookup"><span data-stu-id="b0075-181">Bad Request</span></span>| <span data-ttu-id="b0075-182">要求の本文でエラーが発生しましたや、ユーザーがそのクォータを超えています。</span><span class="sxs-lookup"><span data-stu-id="b0075-182">There was an error in the request body, or the user is over their quota.</span></span>| 
-| <span data-ttu-id="b0075-183">401</span><span class="sxs-lookup"><span data-stu-id="b0075-183">401</span></span>| <span data-ttu-id="b0075-184">権限がありません</span><span class="sxs-lookup"><span data-stu-id="b0075-184">Unauthorized</span></span>| <span data-ttu-id="b0075-185">要求の認証トークンの形式で問題があります。</span><span class="sxs-lookup"><span data-stu-id="b0075-185">There is a problem with the auth token format in the request.</span></span>| 
-| <span data-ttu-id="b0075-186">403</span><span class="sxs-lookup"><span data-stu-id="b0075-186">403</span></span>| <span data-ttu-id="b0075-187">Forbidden</span><span class="sxs-lookup"><span data-stu-id="b0075-187">Forbidden</span></span>| <span data-ttu-id="b0075-188">一部の必須の要求がないか、または DeviceType はありません。</span><span class="sxs-lookup"><span data-stu-id="b0075-188">Some required claims are missing, or DeviceType is not .</span></span>| 
-| <span data-ttu-id="b0075-189">503</span><span class="sxs-lookup"><span data-stu-id="b0075-189">503</span></span>| <span data-ttu-id="b0075-190">許容できません。</span><span class="sxs-lookup"><span data-stu-id="b0075-190">Not Acceptable</span></span>| <span data-ttu-id="b0075-191">サービスまたは一部ダウン ストリームの依存関係ダウンしています。</span><span class="sxs-lookup"><span data-stu-id="b0075-191">The service or some downstream dependencies are down.</span></span> <span data-ttu-id="b0075-192">標準的なバックオフ動作を指定して再試行します。</span><span class="sxs-lookup"><span data-stu-id="b0075-192">Retry with standard back-off behavior.</span></span>| 
+| <span data-ttu-id="b0dba-177">200</span><span class="sxs-lookup"><span data-stu-id="b0dba-177">200</span></span>| <span data-ttu-id="b0dba-178">OK</span><span class="sxs-lookup"><span data-stu-id="b0dba-178">OK</span></span>| <span data-ttu-id="b0dba-179">セッションが正常に取得されました。</span><span class="sxs-lookup"><span data-stu-id="b0dba-179">The session was successfully retrieved.</span></span>| 
+| <span data-ttu-id="b0dba-180">400</span><span class="sxs-lookup"><span data-stu-id="b0dba-180">400</span></span>| <span data-ttu-id="b0dba-181">Bad Request</span><span class="sxs-lookup"><span data-stu-id="b0dba-181">Bad Request</span></span>| <span data-ttu-id="b0dba-182">要求の本文でエラーが発生しましたや、ユーザーがそのクォータを超えています。</span><span class="sxs-lookup"><span data-stu-id="b0dba-182">There was an error in the request body, or the user is over their quota.</span></span>| 
+| <span data-ttu-id="b0dba-183">401</span><span class="sxs-lookup"><span data-stu-id="b0dba-183">401</span></span>| <span data-ttu-id="b0dba-184">権限がありません</span><span class="sxs-lookup"><span data-stu-id="b0dba-184">Unauthorized</span></span>| <span data-ttu-id="b0dba-185">要求の認証トークンの形式で問題があります。</span><span class="sxs-lookup"><span data-stu-id="b0dba-185">There is a problem with the auth token format in the request.</span></span>| 
+| <span data-ttu-id="b0dba-186">403</span><span class="sxs-lookup"><span data-stu-id="b0dba-186">403</span></span>| <span data-ttu-id="b0dba-187">Forbidden</span><span class="sxs-lookup"><span data-stu-id="b0dba-187">Forbidden</span></span>| <span data-ttu-id="b0dba-188">一部の必須の要求がないか、または DeviceType はありません。</span><span class="sxs-lookup"><span data-stu-id="b0dba-188">Some required claims are missing, or DeviceType is not .</span></span>| 
+| <span data-ttu-id="b0dba-189">503</span><span class="sxs-lookup"><span data-stu-id="b0dba-189">503</span></span>| <span data-ttu-id="b0dba-190">許容できません。</span><span class="sxs-lookup"><span data-stu-id="b0dba-190">Not Acceptable</span></span>| <span data-ttu-id="b0dba-191">サービスまたは一部ダウン ストリームの依存関係ダウンしています。</span><span class="sxs-lookup"><span data-stu-id="b0dba-191">The service or some downstream dependencies are down.</span></span> <span data-ttu-id="b0dba-192">標準のバックオフ動作を指定して再試行します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-192">Retry with standard back-off behavior.</span></span>| 
   
 <a id="ID4EVAAC"></a>
 
  
-## <a name="response-body"></a><span data-ttu-id="b0075-193">応答本文</span><span class="sxs-lookup"><span data-stu-id="b0075-193">Response body</span></span>
+## <a name="response-body"></a><span data-ttu-id="b0dba-193">応答本文</span><span class="sxs-lookup"><span data-stu-id="b0dba-193">Response body</span></span>
  
-<span data-ttu-id="b0075-194">応答には、 [InitialUploadResponse](../../json/json-initialuploadresponse.md)オブジェクト、または JSON 形式で[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="b0075-194">The response can be an [InitialUploadResponse](../../json/json-initialuploadresponse.md) object or a [ServiceErrorResponse](../../json/json-serviceerrorresponse.md) object in JSON format.</span></span>
+<span data-ttu-id="b0dba-194">応答には、 [InitialUploadResponse](../../json/json-initialuploadresponse.md)オブジェクト、または JSON 形式で[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="b0dba-194">The response can be an [InitialUploadResponse](../../json/json-initialuploadresponse.md) object or a [ServiceErrorResponse](../../json/json-serviceerrorresponse.md) object in JSON format.</span></span>
   
 <a id="ID4EFBAC"></a>
 
  
-## <a name="sample-response"></a><span data-ttu-id="b0075-195">応答の例</span><span class="sxs-lookup"><span data-stu-id="b0075-195">Sample response</span></span>
+## <a name="sample-response"></a><span data-ttu-id="b0dba-195">応答の例</span><span class="sxs-lookup"><span data-stu-id="b0dba-195">Sample response</span></span>
  
 
 ```cpp
@@ -161,13 +159,13 @@ ms.locfileid: "7557768"
 <a id="ID4EOBAC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="b0075-196">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0075-196">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b0dba-196">関連項目</span><span class="sxs-lookup"><span data-stu-id="b0dba-196">See also</span></span>
  
 <a id="ID4EQBAC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="b0075-197">Parent</span><span class="sxs-lookup"><span data-stu-id="b0075-197">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="b0dba-197">Parent</span><span class="sxs-lookup"><span data-stu-id="b0dba-197">Parent</span></span> 
 
-[<span data-ttu-id="b0075-198">/users/me/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="b0075-198">/users/me/scids/{scid}/clips</span></span>](uri-usersmescidclips.md)
+[<span data-ttu-id="b0dba-198">/users/me/scids/{scid}/clips</span><span class="sxs-lookup"><span data-stu-id="b0dba-198">/users/me/scids/{scid}/clips</span></span>](uri-usersmescidclips.md)
 
    

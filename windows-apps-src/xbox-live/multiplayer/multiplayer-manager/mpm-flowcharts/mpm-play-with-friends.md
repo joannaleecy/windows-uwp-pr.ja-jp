@@ -1,34 +1,32 @@
 ---
 title: Flowchart - フレンドとプレイする
-author: KevinAsgari
 description: Xbox Live Multiplayer Manager のフローチャート - フレンドとマルチプレイヤー/協力型ゲームをプレイします。
 ms.assetid: ead5b172-6410-4aae-97fc-3c295745d27e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: 866b4da39314e120906a8e2de841432d09bfe2ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5393d473efae96a1b43c68eacc9e34ca4c897999
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558016"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326729"
 ---
-# <a name="flowchart---play-a-multiplayerco-op-game-with-friends"></a><span data-ttu-id="9ef00-104">フローチャート - フレンドとマルチプレイヤー/協力型ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="9ef00-104">Flowchart - Play a multiplayer/co-op game with friends</span></span>
+# <a name="flowchart---play-a-multiplayerco-op-game-with-friends"></a><span data-ttu-id="3dafd-104">フローチャート - フレンドとマルチプレイヤー/協力型ゲームをプレイする</span><span class="sxs-lookup"><span data-stu-id="3dafd-104">Flowchart - Play a multiplayer/co-op game with friends</span></span>
 
-<span data-ttu-id="9ef00-105">次のフローチャートでは、フレンドをゲームに追加および招待することにより新しいマルチプレイヤー ゲームを開始する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9ef00-105">The following flowcharts show how to start a new multiplayer game by adding and inviting friends to the game.</span></span>
+<span data-ttu-id="3dafd-105">次のフローチャートでは、フレンドをゲームに追加および招待することにより新しいマルチプレイヤー ゲームを開始する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="3dafd-105">The following flowcharts show how to start a new multiplayer game by adding and inviting friends to the game.</span></span>
 
-<span data-ttu-id="9ef00-106">このプロセスの Multiplayer Manager のコードの例については、「[マルチプレイヤー ゲームをフレンドとプレイする](../play-multiplayer-with-friends.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9ef00-106">You can see multiplayer manager code examples of this process in [Play a multiplayer game with friends](../play-multiplayer-with-friends.md).</span></span>
+<span data-ttu-id="3dafd-106">このプロセスの Multiplayer Manager のコードの例については、「[マルチプレイヤー ゲームをフレンドとプレイする](../play-multiplayer-with-friends.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3dafd-106">You can see multiplayer manager code examples of this process in [Play a multiplayer game with friends](../play-multiplayer-with-friends.md).</span></span>
 
-## <a name="add-and-invite-friends"></a><span data-ttu-id="9ef00-107">フレンドを追加および招待する</span><span class="sxs-lookup"><span data-stu-id="9ef00-107">Add and invite friends</span></span>
+## <a name="add-and-invite-friends"></a><span data-ttu-id="3dafd-107">フレンドを追加および招待する</span><span class="sxs-lookup"><span data-stu-id="3dafd-107">Add and invite friends</span></span>
 
-<span data-ttu-id="9ef00-108">次のフローチャートは、マルチプレイヤー ゲームを開始しようとしているクライアントに対するものです。</span><span class="sxs-lookup"><span data-stu-id="9ef00-108">The following flowchart applies to the client that is starting the multiplayer game:</span></span>
+<span data-ttu-id="3dafd-108">次のフローチャートは、マルチプレイヤー ゲームを開始しようとしているクライアントに対するものです。</span><span class="sxs-lookup"><span data-stu-id="3dafd-108">The following flowchart applies to the client that is starting the multiplayer game:</span></span>
 
 ![マルチプレイヤー ゲームに招待する側のフロー](../../../images/multiplayer/mpm-play-with-friends-inviter.png)
 
-## <a name="accept-an-invite-to-a-game"></a><span data-ttu-id="9ef00-110">ゲームへの招待を受け入れる</span><span class="sxs-lookup"><span data-stu-id="9ef00-110">Accept an invite to a game</span></span>
+## <a name="accept-an-invite-to-a-game"></a><span data-ttu-id="3dafd-110">ゲームへの招待を受け入れる</span><span class="sxs-lookup"><span data-stu-id="3dafd-110">Accept an invite to a game</span></span>
 
-<span data-ttu-id="9ef00-111">次のフローチャートは、ゲームへの招待を受け取って受け入れるクライアントに対するものです。</span><span class="sxs-lookup"><span data-stu-id="9ef00-111">The following flowchart applies to the client that receives and accepts an invite to a game:</span></span>
+<span data-ttu-id="3dafd-111">次のフローチャートは、ゲームへの招待を受け取って受け入れるクライアントに対するものです。</span><span class="sxs-lookup"><span data-stu-id="3dafd-111">The following flowchart applies to the client that receives and accepts an invite to a game:</span></span>
 
 ![マルチプレイヤー ゲームに招待される側のフロー](../../../images/multiplayer/mpm-play-with-friends-invitee.png)

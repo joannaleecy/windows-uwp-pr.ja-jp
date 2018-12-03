@@ -2,64 +2,62 @@
 title: /handles/{handleId}
 assetID: 5b722d3e-fe80-fec5-a26b-8b3db6422004
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleid.html
-author: KevinAsgari
 description: " /handles/{handleId}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1711cf9ffeaafaa3bf20ac455dc9314245546b9a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577061"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349353"
 ---
-# <a name="handleshandleid"></a><span data-ttu-id="cd577-104">/handles/{handleId}</span><span class="sxs-lookup"><span data-stu-id="cd577-104">/handles/{handleId}</span></span>
-<span data-ttu-id="cd577-105">識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="cd577-105">Supports DELETE and GET operations for session handles specified by identifier.</span></span> 
+# <a name="handleshandleid"></a><span data-ttu-id="0a55e-104">/handles/{handleId}</span><span class="sxs-lookup"><span data-stu-id="0a55e-104">/handles/{handleId}</span></span>
+<span data-ttu-id="0a55e-105">識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0a55e-105">Supports DELETE and GET operations for session handles specified by identifier.</span></span> 
 
 > [!NOTE] 
-> <span data-ttu-id="cd577-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="cd577-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="cd577-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="cd577-107">It is intended for use with template contract 104/105 or later.</span></span>  
+> <span data-ttu-id="0a55e-106">この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。</span><span class="sxs-lookup"><span data-stu-id="0a55e-106">This URI is used by 2015 Multiplayer and applies only to that multiplayer version and later.</span></span> <span data-ttu-id="0a55e-107">テンプレート コントラクト 104/105 以降で使用されます。</span><span class="sxs-lookup"><span data-stu-id="0a55e-107">It is intended for use with template contract 104/105 or later.</span></span>  
 
  
 <a id="ID4EQ"></a>
 
  
-## <a name="domain"></a><span data-ttu-id="cd577-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="cd577-108">Domain</span></span>
-<span data-ttu-id="cd577-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="cd577-109">sessiondirectory.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="0a55e-108">ドメイン</span><span class="sxs-lookup"><span data-stu-id="0a55e-108">Domain</span></span>
+<span data-ttu-id="0a55e-109">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="0a55e-109">sessiondirectory.xboxlive.com</span></span>  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="cd577-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="cd577-110">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="0a55e-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="0a55e-110">URI parameters</span></span>
  
-| <span data-ttu-id="cd577-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="cd577-111">Parameter</span></span>| <span data-ttu-id="cd577-112">型</span><span class="sxs-lookup"><span data-stu-id="cd577-112">Type</span></span>| <span data-ttu-id="cd577-113">説明</span><span class="sxs-lookup"><span data-stu-id="cd577-113">Description</span></span>| 
+| <span data-ttu-id="0a55e-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="0a55e-111">Parameter</span></span>| <span data-ttu-id="0a55e-112">型</span><span class="sxs-lookup"><span data-stu-id="0a55e-112">Type</span></span>| <span data-ttu-id="0a55e-113">説明</span><span class="sxs-lookup"><span data-stu-id="0a55e-113">Description</span></span>| 
 | --- | --- | --- | --- | 
-| <span data-ttu-id="cd577-114">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="cd577-114">handleId</span></span>| <span data-ttu-id="cd577-115">GUID</span><span class="sxs-lookup"><span data-stu-id="cd577-115">GUID</span></span>| <span data-ttu-id="cd577-116">セッション ハンドルの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="cd577-116">The unique ID of the handle for the session.</span></span>| 
+| <span data-ttu-id="0a55e-114">ハンドル id を使用</span><span class="sxs-lookup"><span data-stu-id="0a55e-114">handleId</span></span>| <span data-ttu-id="0a55e-115">GUID</span><span class="sxs-lookup"><span data-stu-id="0a55e-115">GUID</span></span>| <span data-ttu-id="0a55e-116">セッション ハンドルの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="0a55e-116">The unique ID of the handle for the session.</span></span>| 
   
 <a id="ID4ERB"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="cd577-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="cd577-117">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="0a55e-117">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="0a55e-117">Valid methods</span></span>
 
-[<span data-ttu-id="cd577-118">DELETE (/handles/{handleId})</span><span class="sxs-lookup"><span data-stu-id="cd577-118">DELETE (/handles/{handleId})</span></span>](uri-handleshandleiddelete.md)
+[<span data-ttu-id="0a55e-118">DELETE (/handles/{handleId})</span><span class="sxs-lookup"><span data-stu-id="0a55e-118">DELETE (/handles/{handleId})</span></span>](uri-handleshandleiddelete.md)
 
-<span data-ttu-id="cd577-119">&nbsp;&nbsp;ハンドル ID で指定されたハンドルを削除します。</span><span class="sxs-lookup"><span data-stu-id="cd577-119">&nbsp;&nbsp;Deletes handles specified by handle ID.</span></span>
+<span data-ttu-id="0a55e-119">&nbsp;&nbsp;ハンドル ID で指定されたハンドルを削除します。</span><span class="sxs-lookup"><span data-stu-id="0a55e-119">&nbsp;&nbsp;Deletes handles specified by handle ID.</span></span>
 
-[<span data-ttu-id="cd577-120">GET (/handles/{handle-id})</span><span class="sxs-lookup"><span data-stu-id="cd577-120">GET (/handles/{handle-id})</span></span>](uri-handleshandleidget.md)
+[<span data-ttu-id="0a55e-120">GET (/handles/{handle-id})</span><span class="sxs-lookup"><span data-stu-id="0a55e-120">GET (/handles/{handle-id})</span></span>](uri-handleshandleidget.md)
 
-<span data-ttu-id="cd577-121">&nbsp;&nbsp;ハンドル ID で指定されたハンドルを取得します。</span><span class="sxs-lookup"><span data-stu-id="cd577-121">&nbsp;&nbsp;Retrieves handles specified by handle ID.</span></span>
+<span data-ttu-id="0a55e-121">&nbsp;&nbsp;ハンドル ID で指定されたハンドルを取得します。</span><span class="sxs-lookup"><span data-stu-id="0a55e-121">&nbsp;&nbsp;Retrieves handles specified by handle ID.</span></span>
  
 <a id="ID4E4B"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="cd577-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="cd577-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0a55e-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="0a55e-122">See also</span></span>
  
 <a id="ID4E6B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="cd577-123">Parent</span><span class="sxs-lookup"><span data-stu-id="cd577-123">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="0a55e-123">Parent</span><span class="sxs-lookup"><span data-stu-id="0a55e-123">Parent</span></span> 
 
-[<span data-ttu-id="cd577-124">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="cd577-124">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
+[<span data-ttu-id="0a55e-124">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="0a55e-124">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
 
    

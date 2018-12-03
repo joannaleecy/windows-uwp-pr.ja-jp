@@ -1,38 +1,36 @@
 ---
 title: 接続ストレージを使ったデータの保存
-author: aablackm
 description: 接続ストレージを使ってデータを保存する方法について説明します。
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: d8c29a3371383209ef2c13eaf2b2ffc69b7e0455
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4140e3bbe0f0ab229e3637008e01892f4179292e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564393"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348957"
 ---
-# <a name="use-connected-storage-to-save-data"></a><span data-ttu-id="d0c21-104">接続ストレージを使ったデータの保存</span><span class="sxs-lookup"><span data-stu-id="d0c21-104">Use Connected Storage to save data</span></span>
+# <a name="use-connected-storage-to-save-data"></a><span data-ttu-id="cd75a-104">接続ストレージを使ったデータの保存</span><span class="sxs-lookup"><span data-stu-id="cd75a-104">Use Connected Storage to save data</span></span>
 
 
-<span data-ttu-id="d0c21-105">データは、ユーザーの `ConnectedStorageSpace` で `ConnectedStorageContainer` を作成し、そのコンテナーで `SubmitUpdatesAsync` メソッドを呼び出すことによって、非同期で保存されます。</span><span class="sxs-lookup"><span data-stu-id="d0c21-105">Data is asynchronously saved by creating a `ConnectedStorageContainer` in a `ConnectedStorageSpace` for a user and calling the `SubmitUpdatesAsync` method on the container.</span></span>
+<span data-ttu-id="cd75a-105">データは、ユーザーの `ConnectedStorageSpace` で `ConnectedStorageContainer` を作成し、そのコンテナーで `SubmitUpdatesAsync` メソッドを呼び出すことによって、非同期で保存されます。</span><span class="sxs-lookup"><span data-stu-id="cd75a-105">Data is asynchronously saved by creating a `ConnectedStorageContainer` in a `ConnectedStorageSpace` for a user and calling the `SubmitUpdatesAsync` method on the container.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="d0c21-106">接続ストレージ コンテナーをまたがるデータ依存関係は安全ではありません。</span><span class="sxs-lookup"><span data-stu-id="d0c21-106">Data dependencies across connected storage containers are unsafe.</span></span> <span data-ttu-id="d0c21-107">たとえば、あるコンテナーをクラウドにアップロードする操作が完了しても、別のコンテナーがアップロードのキューに残っている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d0c21-107">For example, uploading of one container to the cloud might complete, while another might remain queued for uploading.</span></span> <span data-ttu-id="d0c21-108">ユーザーが別の本体に移動しても、同期操作によって最初のコンテナーを同期すると、最初のコンテナーが存在していなくても 2 番目の本体でアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="d0c21-108">If the user moved to another console, the synchronization operation would allow the first container to be synchronized and accessed on the second console, without the first container being present.</span></span>
+> <span data-ttu-id="cd75a-106">接続ストレージ コンテナーをまたがるデータ依存関係は安全ではありません。</span><span class="sxs-lookup"><span data-stu-id="cd75a-106">Data dependencies across connected storage containers are unsafe.</span></span> <span data-ttu-id="cd75a-107">たとえば、あるコンテナーをクラウドにアップロードする操作が完了しても、別のコンテナーがアップロードのキューに残っている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="cd75a-107">For example, uploading of one container to the cloud might complete, while another might remain queued for uploading.</span></span> <span data-ttu-id="cd75a-108">ユーザーが別の本体に移動しても、同期操作によって最初のコンテナーを同期すると、最初のコンテナーが存在していなくても 2 番目の本体でアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="cd75a-108">If the user moved to another console, the synchronization operation would allow the first container to be synchronized and accessed on the second console, without the first container being present.</span></span>
 
-## <a name="to-save-data-to-connected-storage"></a><span data-ttu-id="d0c21-109">接続ストレージにデータを保存するには</span><span class="sxs-lookup"><span data-stu-id="d0c21-109">To save data to Connected Storage</span></span>
+## <a name="to-save-data-to-connected-storage"></a><span data-ttu-id="cd75a-109">接続ストレージにデータを保存するには</span><span class="sxs-lookup"><span data-stu-id="cd75a-109">To save data to Connected Storage</span></span>
 
-1.  <span data-ttu-id="d0c21-110">`GetForUserAsync` を呼び出してユーザーの `ConnectedStorageSpace` オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="d0c21-110">Retrieve a `ConnectedStorageSpace` object for the user by calling `GetForUserAsync`.</span></span>
+1.  <span data-ttu-id="cd75a-110">`GetForUserAsync` を呼び出してユーザーの `ConnectedStorageSpace` オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="cd75a-110">Retrieve a `ConnectedStorageSpace` object for the user by calling `GetForUserAsync`.</span></span>
 
-    <span data-ttu-id="d0c21-111">XDK の例では、複数のユーザーの `ConnectedStorageSpace` オブジェクトの管理を容易にするために、返される `ConnectedStorageSpace` オブジェクトがマップに追加されています。</span><span class="sxs-lookup"><span data-stu-id="d0c21-111">In the XDK example the returned `ConnectedStorageSpace` object is being added to a map to enable easy management of `ConnectedStorageSpace` objects for multiple users.</span></span>
+    <span data-ttu-id="cd75a-111">XDK の例では、複数のユーザーの `ConnectedStorageSpace` オブジェクトの管理を容易にするために、返される `ConnectedStorageSpace` オブジェクトがマップに追加されています。</span><span class="sxs-lookup"><span data-stu-id="cd75a-111">In the XDK example the returned `ConnectedStorageSpace` object is being added to a map to enable easy management of `ConnectedStorageSpace` objects for multiple users.</span></span>
 
-2.  <span data-ttu-id="d0c21-112">`ConnectedStorageContainer` オブジェクトを作成するには、`ConnectedStorageSpace` オブジェクトで `CreateContainer` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="d0c21-112">Create a `ConnectedStorageContainer` object by calling `CreateContainer` on the `ConnectedStorageSpace` object.</span></span>
-3.  <span data-ttu-id="d0c21-113">`blobsToWrite` パラメーターとして game save データ BLOB を指定して、`ConnectedStorageContainer` で `SubmitUpdatesAsync` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="d0c21-113">Call `SubmitUpdatesAsync` on the `ConnectedStorageContainer` with you game save data blob as the `blobsToWrite` parameter.</span></span>
+2.  <span data-ttu-id="cd75a-112">`ConnectedStorageContainer` オブジェクトを作成するには、`ConnectedStorageSpace` オブジェクトで `CreateContainer` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="cd75a-112">Create a `ConnectedStorageContainer` object by calling `CreateContainer` on the `ConnectedStorageSpace` object.</span></span>
+3.  <span data-ttu-id="cd75a-113">`blobsToWrite` パラメーターとして game save データ BLOB を指定して、`ConnectedStorageContainer` で `SubmitUpdatesAsync` を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="cd75a-113">Call `SubmitUpdatesAsync` on the `ConnectedStorageContainer` with you game save data blob as the `blobsToWrite` parameter.</span></span>
 
-## <a name="c-xdk-sample"></a><span data-ttu-id="d0c21-114">C++ XDK のサンプル</span><span class="sxs-lookup"><span data-stu-id="d0c21-114">C++ XDK sample</span></span>
+## <a name="c-xdk-sample"></a><span data-ttu-id="cd75a-114">C++ XDK のサンプル</span><span class="sxs-lookup"><span data-stu-id="cd75a-114">C++ XDK sample</span></span>
 
 ```cpp
 auto gConnectedStorageSpaceForUsers = ref new Platform::Collections::Map<unsigned int, Windows::Xbox::Storage::ConnectedStorageSpace^>();
@@ -122,14 +120,14 @@ void SaveCheckpoint(Windows::Storage::Streams::IBuffer^ buffer, User^ user)
 }
 ```
 
-<span data-ttu-id="d0c21-115">XDK .chm ファイルで説明されている XDK 接続ストレージ API は、パス **Xbox ONE XDK >> API リファレンス >> プラットフォーム API リファレンス >> システム API リファレンス >> Windows.Xbox.Storage** にあります。</span><span class="sxs-lookup"><span data-stu-id="d0c21-115">You can find the XDK Connected Storage APIs documented in the XDK .chm file under the path: **Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**.</span></span>
-<span data-ttu-id="d0c21-116">XDK API については、[developer.microsoft.com サイト](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)でも説明されています。</span><span class="sxs-lookup"><span data-stu-id="d0c21-116">The XDK APIs are also documented on the [developer.microsoft.com site](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n).</span></span>
-<span data-ttu-id="d0c21-117">XDK API へのリンクを開くには、Xbox 開発キット (XDK) へのアクセスが有効になっている Microsoft アカウント (MSA) が必要です。</span><span class="sxs-lookup"><span data-stu-id="d0c21-117">The link to XDK APIs requires that you have a Microsoft Account(MSA) that has been enabled for Xbox Developer Kit(XDK) access.</span></span>
-<span data-ttu-id="d0c21-118">Windows.Xbox.Storage は、Xbox One 本体の接続ストレージ名前空間の名前です。</span><span class="sxs-lookup"><span data-stu-id="d0c21-118">Windows.Xbox.Storage is the name of the Connected Storage namespace for Xbox One consoles.</span></span>
+<span data-ttu-id="cd75a-115">XDK .chm ファイルで説明されている XDK 接続ストレージ API は、パス **Xbox ONE XDK >> API リファレンス >> プラットフォーム API リファレンス >> システム API リファレンス >> Windows.Xbox.Storage** にあります。</span><span class="sxs-lookup"><span data-stu-id="cd75a-115">You can find the XDK Connected Storage APIs documented in the XDK .chm file under the path: **Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**.</span></span>
+<span data-ttu-id="cd75a-116">XDK API については、[developer.microsoft.com サイト](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)でも説明されています。</span><span class="sxs-lookup"><span data-stu-id="cd75a-116">The XDK APIs are also documented on the [developer.microsoft.com site](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n).</span></span>
+<span data-ttu-id="cd75a-117">XDK API へのリンクを開くには、Xbox 開発キット (XDK) へのアクセスが有効になっている Microsoft アカウント (MSA) が必要です。</span><span class="sxs-lookup"><span data-stu-id="cd75a-117">The link to XDK APIs requires that you have a Microsoft Account(MSA) that has been enabled for Xbox Developer Kit(XDK) access.</span></span>
+<span data-ttu-id="cd75a-118">Windows.Xbox.Storage は、Xbox One 本体の接続ストレージ名前空間の名前です。</span><span class="sxs-lookup"><span data-stu-id="cd75a-118">Windows.Xbox.Storage is the name of the Connected Storage namespace for Xbox One consoles.</span></span>
 
-## <a name="c-uwp-sample"></a><span data-ttu-id="d0c21-119">C# UWP のサンプル</span><span class="sxs-lookup"><span data-stu-id="d0c21-119">C# UWP sample</span></span>
+## <a name="c-uwp-sample"></a><span data-ttu-id="cd75a-119">C# UWP のサンプル</span><span class="sxs-lookup"><span data-stu-id="cd75a-119">C# UWP sample</span></span>
 
-<span data-ttu-id="d0c21-120">XDK ゲームと UWP アプリでは異なる API を使うことがありますが、UWP API はかなり細かく XDK API に倣っています。</span><span class="sxs-lookup"><span data-stu-id="d0c21-120">While XDK games and UWP apps may use different APIs, the UWP API is modeled after the XDK API very closely.</span></span> <span data-ttu-id="d0c21-121">データを保存するには、名前空間とクラス名の変更を書き留めると同時に同じ基本的な手順に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d0c21-121">To save data you will still need to follow the same basic steps while making note of some namespace and class name changes.</span></span> <span data-ttu-id="d0c21-122">名前空間 `Windows::Xbox::Storage` を使う代わりに、`Windows.Gaming.XboxLive.Storage` を使います。</span><span class="sxs-lookup"><span data-stu-id="d0c21-122">Instead of using the namespace `Windows::Xbox::Storage` you will use `Windows.Gaming.XboxLive.Storage`.</span></span> <span data-ttu-id="d0c21-123">クラス `ConnectedStorageSpace` は `GameSaveProvider` と同等です。</span><span class="sxs-lookup"><span data-stu-id="d0c21-123">The class `ConnectedStorageSpace`, is equivalent to `GameSaveProvider`.</span></span> <span data-ttu-id="d0c21-124">クラス `ConnectedStorageContainer` は `GameSaveContainer` と同等です。</span><span class="sxs-lookup"><span data-stu-id="d0c21-124">The class `ConnectedStorageContainer` is equivalent to `GameSaveContainer`.</span></span> <span data-ttu-id="d0c21-125">これらの変更については、「[XDK から UWP への Xbox Live コードの移植](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)」の「接続ストレージ」で詳しく説明されています。</span><span class="sxs-lookup"><span data-stu-id="d0c21-125">These changes are further detailed in the Connected Storage Section of [Porting Xbox Live Code From XDK to UWP](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md).</span></span>
+<span data-ttu-id="cd75a-120">XDK ゲームと UWP アプリでは異なる API を使うことがありますが、UWP API はかなり細かく XDK API に倣っています。</span><span class="sxs-lookup"><span data-stu-id="cd75a-120">While XDK games and UWP apps may use different APIs, the UWP API is modeled after the XDK API very closely.</span></span> <span data-ttu-id="cd75a-121">データを保存するには、名前空間とクラス名の変更を書き留めると同時に同じ基本的な手順に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="cd75a-121">To save data you will still need to follow the same basic steps while making note of some namespace and class name changes.</span></span> <span data-ttu-id="cd75a-122">名前空間 `Windows::Xbox::Storage` を使う代わりに、`Windows.Gaming.XboxLive.Storage` を使います。</span><span class="sxs-lookup"><span data-stu-id="cd75a-122">Instead of using the namespace `Windows::Xbox::Storage` you will use `Windows.Gaming.XboxLive.Storage`.</span></span> <span data-ttu-id="cd75a-123">クラス `ConnectedStorageSpace` は `GameSaveProvider` と同等です。</span><span class="sxs-lookup"><span data-stu-id="cd75a-123">The class `ConnectedStorageSpace`, is equivalent to `GameSaveProvider`.</span></span> <span data-ttu-id="cd75a-124">クラス `ConnectedStorageContainer` は `GameSaveContainer` と同等です。</span><span class="sxs-lookup"><span data-stu-id="cd75a-124">The class `ConnectedStorageContainer` is equivalent to `GameSaveContainer`.</span></span> <span data-ttu-id="cd75a-125">これらの変更については、「[XDK から UWP への Xbox Live コードの移植](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)」の「接続ストレージ」で詳しく説明されています。</span><span class="sxs-lookup"><span data-stu-id="cd75a-125">These changes are further detailed in the Connected Storage Section of [Porting Xbox Live Code From XDK to UWP](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md).</span></span>
 
 ```csharp
 //Namespace Required
@@ -185,5 +183,5 @@ GameSaveOperationResult gameSaveOperationResult = await gameSaveContainer.Submit
 //string displayName
 ```
 
-<span data-ttu-id="d0c21-126">UWP アプリの接続ストレージ API については、「[Xbox Live API リファレンス](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage)」で説明されています。</span><span class="sxs-lookup"><span data-stu-id="d0c21-126">Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage).</span></span>
-<span data-ttu-id="d0c21-127">接続ストレージを使う別のサンプルについては、[Xbox Live API のサンプル Game Save プロジェクトに関するページ](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d0c21-127">To see another sample that uses Connected Storage check out the [Xbox Live API Samples Game Save project](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave).</span></span>
+<span data-ttu-id="cd75a-126">UWP アプリの接続ストレージ API については、「[Xbox Live API リファレンス](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage)」で説明されています。</span><span class="sxs-lookup"><span data-stu-id="cd75a-126">Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage).</span></span>
+<span data-ttu-id="cd75a-127">接続ストレージを使う別のサンプルについては、[Xbox Live API のサンプル Game Save プロジェクトに関するページ](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="cd75a-127">To see another sample that uses Connected Storage check out the [Xbox Live API Samples Game Save project](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave).</span></span>

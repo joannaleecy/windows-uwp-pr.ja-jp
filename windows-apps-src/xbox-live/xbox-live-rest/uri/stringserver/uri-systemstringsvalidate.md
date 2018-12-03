@@ -8,34 +8,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cf13b8d28de1c6f9ba3e17bc5c3d8914d68aacc8
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217882"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338003"
 ---
-# <a name="systemstringsvalidate"></a><span data-ttu-id="ddb8c-104">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="ddb8c-104">/system/strings/validate</span></span>
-<span data-ttu-id="ddb8c-105">検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="ddb8c-105">Accesses an array of strings for validation.</span></span> <span data-ttu-id="ddb8c-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="ddb8c-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>
+# <a name="systemstringsvalidate"></a><span data-ttu-id="6b67d-104">/system/strings/validate</span><span class="sxs-lookup"><span data-stu-id="6b67d-104">/system/strings/validate</span></span>
+<span data-ttu-id="6b67d-105">検証のための文字列の配列にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="6b67d-105">Accesses an array of strings for validation.</span></span> <span data-ttu-id="6b67d-106">これらの Uri のドメインが`client-strings.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="6b67d-106">The domain for these URIs is `client-strings.xboxlive.com`.</span></span>
   
 <a id="ID4EV"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="ddb8c-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="ddb8c-107">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="6b67d-107">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="6b67d-107">Valid methods</span></span>
 
-[<span data-ttu-id="ddb8c-108">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="ddb8c-108">POST (/system/strings/validate)</span></span>](uri-systemstringsvalidatepost.md)
+[<span data-ttu-id="6b67d-108">POST (/system/strings/validate)</span><span class="sxs-lookup"><span data-stu-id="6b67d-108">POST (/system/strings/validate)</span></span>](uri-systemstringsvalidatepost.md)
 
-<span data-ttu-id="ddb8c-109">&nbsp;&nbsp;検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="ddb8c-109">&nbsp;&nbsp;Accepts an array of strings for validation and returns an array of results of equal size.</span></span>
+<span data-ttu-id="6b67d-109">&nbsp;&nbsp;検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="6b67d-109">&nbsp;&nbsp;Accepts an array of strings for validation and returns an array of results of equal size.</span></span>
  
 <a id="ID4E6"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="ddb8c-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="ddb8c-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6b67d-110">関連項目</span><span class="sxs-lookup"><span data-stu-id="6b67d-110">See also</span></span>
  
 <a id="ID4EBB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="ddb8c-111">Parent</span><span class="sxs-lookup"><span data-stu-id="ddb8c-111">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="6b67d-111">Parent</span><span class="sxs-lookup"><span data-stu-id="6b67d-111">Parent</span></span> 
 
-[<span data-ttu-id="ddb8c-112">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="ddb8c-112">System Strings Validatation URIs</span></span>](atoc-reference-systemstringsvalidate.md)
+[<span data-ttu-id="6b67d-112">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="6b67d-112">System Strings Validatation URIs</span></span>](atoc-reference-systemstringsvalidate.md)
 
    

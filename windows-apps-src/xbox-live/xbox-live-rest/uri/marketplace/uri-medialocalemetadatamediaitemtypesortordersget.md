@@ -2,61 +2,59 @@
 title: GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)
 assetID: 225e8cb2-44eb-6b7b-eaa0-1ea2d2602f6f
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypesortordersget.html
-author: KevinAsgari
 description: " GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 070df5fb2bbab51e07dcd4bfb488778c2d6b64c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5cec9bf585e1d885c4c1b6950e94923908cc06e8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563288"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342447"
 ---
-# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a><span data-ttu-id="a7768-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)</span><span class="sxs-lookup"><span data-stu-id="a7768-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)</span></span>
-<span data-ttu-id="a7768-105">Mediaitem の特定の種類と EDS の特定のバージョンで利用可能な並べ替え順の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="a7768-105">Lists available sort orders for a given mediaitem type and a given version of EDS.</span></span> <span data-ttu-id="a7768-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a7768-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
+# <a name="get-mediamarketplaceidmetadatamediaitemtypesmediaitemtypesortorders"></a><span data-ttu-id="639fd-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)</span><span class="sxs-lookup"><span data-stu-id="639fd-104">GET (/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders)</span></span>
+<span data-ttu-id="639fd-105">Mediaitem の特定の種類と EDS の特定のバージョンで利用可能な並べ替え順の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="639fd-105">Lists available sort orders for a given mediaitem type and a given version of EDS.</span></span> <span data-ttu-id="639fd-106">これらの Uri のドメインが`eds.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="639fd-106">The domain for these URIs is `eds.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="a7768-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7768-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="639fd-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="639fd-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="a7768-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7768-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="639fd-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="639fd-108">URI parameters</span></span>
  
-| <span data-ttu-id="a7768-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7768-109">Parameter</span></span>| <span data-ttu-id="a7768-110">型</span><span class="sxs-lookup"><span data-stu-id="a7768-110">Type</span></span>| <span data-ttu-id="a7768-111">説明</span><span class="sxs-lookup"><span data-stu-id="a7768-111">Description</span></span>| 
+| <span data-ttu-id="639fd-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="639fd-109">Parameter</span></span>| <span data-ttu-id="639fd-110">型</span><span class="sxs-lookup"><span data-stu-id="639fd-110">Type</span></span>| <span data-ttu-id="639fd-111">説明</span><span class="sxs-lookup"><span data-stu-id="639fd-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="a7768-112">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="a7768-112">marketplaceId</span></span>| <span data-ttu-id="a7768-113">string</span><span class="sxs-lookup"><span data-stu-id="a7768-113">string</span></span>| <span data-ttu-id="a7768-114">必須。</span><span class="sxs-lookup"><span data-stu-id="a7768-114">Required.</span></span> <span data-ttu-id="a7768-115"><b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。</span><span class="sxs-lookup"><span data-stu-id="a7768-115">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
-| <span data-ttu-id="a7768-116">mediaitemtype</span><span class="sxs-lookup"><span data-stu-id="a7768-116">mediaitemtype</span></span>| <span data-ttu-id="a7768-117">string</span><span class="sxs-lookup"><span data-stu-id="a7768-117">string</span></span>| <span data-ttu-id="a7768-118">必須。</span><span class="sxs-lookup"><span data-stu-id="a7768-118">Required.</span></span> <span data-ttu-id="a7768-119">値のいずれか[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。</span><span class="sxs-lookup"><span data-stu-id="a7768-119">One of the values from [GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md).</span></span>| 
+| <span data-ttu-id="639fd-112">marketplaceId</span><span class="sxs-lookup"><span data-stu-id="639fd-112">marketplaceId</span></span>| <span data-ttu-id="639fd-113">string</span><span class="sxs-lookup"><span data-stu-id="639fd-113">string</span></span>| <span data-ttu-id="639fd-114">必須。</span><span class="sxs-lookup"><span data-stu-id="639fd-114">Required.</span></span> <span data-ttu-id="639fd-115">文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。</span><span class="sxs-lookup"><span data-stu-id="639fd-115">String value obtained from the <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>.</span></span>| 
+| <span data-ttu-id="639fd-116">mediaitemtype</span><span class="sxs-lookup"><span data-stu-id="639fd-116">mediaitemtype</span></span>| <span data-ttu-id="639fd-117">string</span><span class="sxs-lookup"><span data-stu-id="639fd-117">string</span></span>| <span data-ttu-id="639fd-118">必須。</span><span class="sxs-lookup"><span data-stu-id="639fd-118">Required.</span></span> <span data-ttu-id="639fd-119">値のいずれかの[GET (/media/{marketplaceId}//metadata/mediagroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md)します。</span><span class="sxs-lookup"><span data-stu-id="639fd-119">One of the values from [GET (/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes)](uri-medialocalemetadatamediagroupsmediaitemtypesget.md).</span></span>| 
   
 <a id="ID4EAB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="a7768-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7768-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="639fd-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="639fd-120">See also</span></span>
  
 <a id="ID4ECB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="a7768-121">Parent</span><span class="sxs-lookup"><span data-stu-id="a7768-121">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="639fd-121">Parent</span><span class="sxs-lookup"><span data-stu-id="639fd-121">Parent</span></span> 
 
-[<span data-ttu-id="a7768-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span><span class="sxs-lookup"><span data-stu-id="a7768-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span></span>](uri-medialocalemetadatamediaitemtypesortorders.md)
+[<span data-ttu-id="639fd-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span><span class="sxs-lookup"><span data-stu-id="639fd-122">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span></span>](uri-medialocalemetadatamediaitemtypesortorders.md)
 
   
 <a id="ID4EMB"></a>
 
  
-##### <a name="further-information"></a><span data-ttu-id="a7768-123">詳細情報</span><span class="sxs-lookup"><span data-stu-id="a7768-123">Further Information</span></span> 
+##### <a name="further-information"></a><span data-ttu-id="639fd-123">詳細情報</span><span class="sxs-lookup"><span data-stu-id="639fd-123">Further Information</span></span> 
 
-[<span data-ttu-id="a7768-124">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="a7768-124">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
+[<span data-ttu-id="639fd-124">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="639fd-124">EDS Common Headers</span></span>](../../additional/edscommonheaders.md)
 
- [<span data-ttu-id="a7768-125">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="a7768-125">EDS Parameters</span></span>](../../additional/edsparameters.md)
+ [<span data-ttu-id="639fd-125">EDS パラメーター</span><span class="sxs-lookup"><span data-stu-id="639fd-125">EDS Parameters</span></span>](../../additional/edsparameters.md)
 
- [<span data-ttu-id="a7768-126">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="a7768-126">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
+ [<span data-ttu-id="639fd-126">EDS クエリの絞り込み条件</span><span class="sxs-lookup"><span data-stu-id="639fd-126">EDS Query Refiners</span></span>](../../additional/edsqueryrefiners.md)
 
- [<span data-ttu-id="a7768-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="a7768-127">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
+ [<span data-ttu-id="639fd-127">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="639fd-127">Marketplace URIs</span></span>](atoc-reference-marketplace.md)
 
- [<span data-ttu-id="a7768-128">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="a7768-128">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+ [<span data-ttu-id="639fd-128">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="639fd-128">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

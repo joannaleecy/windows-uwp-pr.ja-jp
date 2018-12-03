@@ -1,181 +1,179 @@
 ---
 title: Xbox のトーナメント情報の提供
-author: KevinAsgari
 description: ゲームのトーナメント情報を提供するための UI の作成方法について説明します。
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e8e48ac6995adb36fac998bfbd8cf9fa0dbf7f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71a065d6d4da290f2ce3345c7da0026d4c116335
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552999"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324937"
 ---
-# <a name="discovering-xbox-tournaments"></a><span data-ttu-id="1c3e8-104">Xbox のトーナメント情報の提供</span><span class="sxs-lookup"><span data-stu-id="1c3e8-104">Discovering Xbox tournaments</span></span>
+# <a name="discovering-xbox-tournaments"></a><span data-ttu-id="ed707-104">Xbox のトーナメント情報の提供</span><span class="sxs-lookup"><span data-stu-id="ed707-104">Discovering Xbox tournaments</span></span>
 
-<span data-ttu-id="1c3e8-105">ゲーマーは、Xbox ダッシュボードや PC 上の Xbox アプリで、複数の方法によってトーナメントの参加情報や観戦情報を入手できます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-105">Gamers have multiple options in the Xbox Dashboard, or the Xbox app on a PC, to learn more about participating in or watching a tournament.</span></span> <span data-ttu-id="1c3e8-106">またタイトル内でトーナメント情報を積極的に収集することもできます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-106">There are also opportunities to increase tournament discovery from within your title.</span></span>  
+<span data-ttu-id="ed707-105">ゲーマーは、Xbox ダッシュボードや PC 上の Xbox アプリで、複数の方法によってトーナメントの参加情報や観戦情報を入手できます。</span><span class="sxs-lookup"><span data-stu-id="ed707-105">Gamers have multiple options in the Xbox Dashboard, or the Xbox app on a PC, to learn more about participating in or watching a tournament.</span></span> <span data-ttu-id="ed707-106">またタイトル内でトーナメント情報を積極的に収集することもできます。</span><span class="sxs-lookup"><span data-stu-id="ed707-106">There are also opportunities to increase tournament discovery from within your title.</span></span>  
 
-<span data-ttu-id="1c3e8-107">ゲーマーがアリーナ対応のトーナメントを探すには、次の方法があります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-107">A gamer can find Arena-enabled tournaments by:</span></span>
+<span data-ttu-id="ed707-107">ゲーマーがアリーナ対応のトーナメントを探すには、次の方法があります。</span><span class="sxs-lookup"><span data-stu-id="ed707-107">A gamer can find Arena-enabled tournaments by:</span></span>
 
-* <span data-ttu-id="1c3e8-108">Xbox ホームから、最近プレイしたゲームのトーナメント ハブを開く。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-108">Opening a recently played game's Tournaments Hub from Xbox Home.</span></span>
-* <span data-ttu-id="1c3e8-109">プレイヤーのプロフィールにアクセスして、プレイしたトーナメント、プレイ中のトーナメント、登録済みのトーナメントを確認する。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-109">Visiting a player profile for tournaments played, now playing, or registered for.</span></span>
-* <span data-ttu-id="1c3e8-110">所属しているクラブ内で、チームが投稿したグループを検索 (LFG) に応募する。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-110">Responding to a team Looking for Group (LFG) post in a club they belong to.</span></span>
-* <span data-ttu-id="1c3e8-111">Mixer アプリ、Web サイト、ゲーム ハブやアリーナのウォッチ ピボットで、トーナメントのストリーミングを視聴する。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-111">Watching a tournament stream in the Mixer app, website, or the Watch pivot in the Game Hub/Arena.</span></span>
-* <span data-ttu-id="1c3e8-112">Xbox ダッシュボードでゲーム ハブにアクセスする。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-112">Visiting a Game Hub in the Xbox Dashboard.</span></span>
+* <span data-ttu-id="ed707-108">Xbox ホームから、最近プレイしたゲームのトーナメント ハブを開く。</span><span class="sxs-lookup"><span data-stu-id="ed707-108">Opening a recently played game's Tournaments Hub from Xbox Home.</span></span>
+* <span data-ttu-id="ed707-109">プレイヤーのプロフィールにアクセスして、プレイしたトーナメント、プレイ中のトーナメント、登録済みのトーナメントを確認する。</span><span class="sxs-lookup"><span data-stu-id="ed707-109">Visiting a player profile for tournaments played, now playing, or registered for.</span></span>
+* <span data-ttu-id="ed707-110">所属しているクラブ内で、チームが投稿したグループを検索 (LFG) に応募する。</span><span class="sxs-lookup"><span data-stu-id="ed707-110">Responding to a team Looking for Group (LFG) post in a club they belong to.</span></span>
+* <span data-ttu-id="ed707-111">Mixer アプリ、Web サイト、ゲーム ハブやアリーナのウォッチ ピボットで、トーナメントのストリーミングを視聴する。</span><span class="sxs-lookup"><span data-stu-id="ed707-111">Watching a tournament stream in the Mixer app, website, or the Watch pivot in the Game Hub/Arena.</span></span>
+* <span data-ttu-id="ed707-112">Xbox ダッシュボードでゲーム ハブにアクセスする。</span><span class="sxs-lookup"><span data-stu-id="ed707-112">Visiting a Game Hub in the Xbox Dashboard.</span></span>
 
-## <a name="promoting-tournaments-in-game"></a><span data-ttu-id="1c3e8-113">ゲーム内でのトーナメントの宣伝</span><span class="sxs-lookup"><span data-stu-id="1c3e8-113">Promoting tournaments in-game</span></span>
+## <a name="promoting-tournaments-in-game"></a><span data-ttu-id="ed707-113">ゲーム内でのトーナメントの宣伝</span><span class="sxs-lookup"><span data-stu-id="ed707-113">Promoting tournaments in-game</span></span>
 
-<span data-ttu-id="1c3e8-114">ユーザーがトーナメントを観戦するのは、そのタイトルに関心があるからです。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-114">People watch tournaments because they're interested in the title.</span></span> <span data-ttu-id="1c3e8-115">Xbox Games には、ゲーマーが新しいことに挑戦してゲームプレイ体験を広げたいと考えているタイミングを捉えて、ゲーマーを獲得するしくみが用意されています。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-115">Xbox games have a unique opportunity to catch gamers at that crucial moment when they are looking for new ways to extend their gameplay experience.</span></span>
+<span data-ttu-id="ed707-114">ユーザーがトーナメントを観戦するのは、そのタイトルに関心があるからです。</span><span class="sxs-lookup"><span data-stu-id="ed707-114">People watch tournaments because they're interested in the title.</span></span> <span data-ttu-id="ed707-115">Xbox Games には、ゲーマーが新しいことに挑戦してゲームプレイ体験を広げたいと考えているタイミングを捉えて、ゲーマーを獲得するしくみが用意されています。</span><span class="sxs-lookup"><span data-stu-id="ed707-115">Xbox games have a unique opportunity to catch gamers at that crucial moment when they are looking for new ways to extend their gameplay experience.</span></span>
 
 > [!TIP]
-> <span data-ttu-id="1c3e8-116">**推奨される UX:** プレイヤーが決断するタイミングでトーナメントを宣伝します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-116">**UX recommendation:** Promote tournaments at decision-making moments.</span></span>
+> <span data-ttu-id="ed707-116">**推奨される UX:** プレイヤーが決断するタイミングでトーナメントを宣伝します。</span><span class="sxs-lookup"><span data-stu-id="ed707-116">**UX recommendation:** Promote tournaments at decision-making moments.</span></span>
 >
-> <span data-ttu-id="1c3e8-117">プレイヤーがプレイを続行するか終了するかを決断するタイミングで、トーナメントを宣伝してください (ゲームの起動時、メイン メニュー、マッチ終了時など)。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-117">Raise awareness for tournaments at times when gamers need to decide whether to keep playing or exit (for example, at game launch, main menu, multiplayer menu, or end of match).</span></span>
+> <span data-ttu-id="ed707-117">プレイヤーがプレイを続行するか終了するかを決断するタイミングで、トーナメントを宣伝してください (ゲームの起動時、メイン メニュー、マッチ終了時など)。</span><span class="sxs-lookup"><span data-stu-id="ed707-117">Raise awareness for tournaments at times when gamers need to decide whether to keep playing or exit (for example, at game launch, main menu, multiplayer menu, or end of match).</span></span>
 
-### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a><span data-ttu-id="1c3e8-118">1 動的なお知らせ機能の使用 (例: "今日のメッセージ" など)。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-118">1.  Use a dynamic announcement feature (example: Message of the Day)</span></span>
+### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a><span data-ttu-id="ed707-118">1 動的なお知らせ機能の使用 (例: "今日のメッセージ" など)。</span><span class="sxs-lookup"><span data-stu-id="ed707-118">1.  Use a dynamic announcement feature (example: Message of the Day)</span></span>
 
-<span data-ttu-id="1c3e8-119">ゲーム UI にお知らせ機能が組み込まれているタイトルでは、通常、即時更新が可能なコンテンツ管理システムが使用されています。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-119">Titles that have built an announcement feature into their game UI typically use a content-management system that allows for instant updates.</span></span> <span data-ttu-id="1c3e8-120">これを利用すれば、コンテンツを更新したり、ダウンロード コンテンツ リリースを発行したりせずに、新しいコンテンツをゲーマーにプッシュできます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-120">This is useful for pushing new content to gamers without relying on a content update or downloadable content release.</span></span> <span data-ttu-id="1c3e8-121">たとえば、Halo では "今日のメッセージ" 機能を使って、コミュニティのお知らせやヒントを表示しています。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-121">For example, Halo uses a “Message of the Day” feature to surface community announcements and tips.</span></span> <span data-ttu-id="1c3e8-122">この機能は、トーナメントの宣伝に最適です。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-122">Tournament promotion is perfect fit for this scenario.</span></span>
+<span data-ttu-id="ed707-119">ゲーム UI にお知らせ機能が組み込まれているタイトルでは、通常、即時更新が可能なコンテンツ管理システムが使用されています。</span><span class="sxs-lookup"><span data-stu-id="ed707-119">Titles that have built an announcement feature into their game UI typically use a content-management system that allows for instant updates.</span></span> <span data-ttu-id="ed707-120">これを利用すれば、コンテンツを更新したり、ダウンロード コンテンツ リリースを発行したりせずに、新しいコンテンツをゲーマーにプッシュできます。</span><span class="sxs-lookup"><span data-stu-id="ed707-120">This is useful for pushing new content to gamers without relying on a content update or downloadable content release.</span></span> <span data-ttu-id="ed707-121">たとえば、Halo では "今日のメッセージ" 機能を使って、コミュニティのお知らせやヒントを表示しています。</span><span class="sxs-lookup"><span data-stu-id="ed707-121">For example, Halo uses a “Message of the Day” feature to surface community announcements and tips.</span></span> <span data-ttu-id="ed707-122">この機能は、トーナメントの宣伝に最適です。</span><span class="sxs-lookup"><span data-stu-id="ed707-122">Tournament promotion is perfect fit for this scenario.</span></span>
 
-**<span data-ttu-id="1c3e8-123">ユーザーへの影響</span><span class="sxs-lookup"><span data-stu-id="1c3e8-123">User impact</span></span>**
+**<span data-ttu-id="ed707-123">ユーザーへの影響</span><span class="sxs-lookup"><span data-stu-id="ed707-123">User impact</span></span>**
 
-* <span data-ttu-id="1c3e8-124">ゲーマーは、ゲーム セッションを開始する前に、新しい対戦形式でゲームをプレイする機会を案内されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-124">Gamers are introduced to a new competitive gaming opportunity before initiating a game session.</span></span>
-* <span data-ttu-id="1c3e8-125">宣伝の表示は一時的です (起動時に、他のお知らせと共に表示されます)。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-125">Exposure is intermittent (at launch, combined with other announcements).</span></span>
-* <span data-ttu-id="1c3e8-126">ゲーマーが詳細情報を表示するには、ゲームを終了してアリーナ ハブにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-126">To learn more, gamers will be directed to leave the game and go to the Arena Hub.</span></span>
-* <span data-ttu-id="1c3e8-127">この機能では、コンテンツを更新せずに情報を設定できます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-127">The feature does not require a content update to populate.</span></span>
-* <span data-ttu-id="1c3e8-128">宣伝の関連性とタイミングは柔軟性が維持されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-128">Relevancy and timing of promotion remains flexible.</span></span>
+* <span data-ttu-id="ed707-124">ゲーマーは、ゲーム セッションを開始する前に、新しい対戦形式でゲームをプレイする機会を案内されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-124">Gamers are introduced to a new competitive gaming opportunity before initiating a game session.</span></span>
+* <span data-ttu-id="ed707-125">宣伝の表示は一時的です (起動時に、他のお知らせと共に表示されます)。</span><span class="sxs-lookup"><span data-stu-id="ed707-125">Exposure is intermittent (at launch, combined with other announcements).</span></span>
+* <span data-ttu-id="ed707-126">ゲーマーが詳細情報を表示するには、ゲームを終了してアリーナ ハブにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ed707-126">To learn more, gamers will be directed to leave the game and go to the Arena Hub.</span></span>
+* <span data-ttu-id="ed707-127">この機能では、コンテンツを更新せずに情報を設定できます。</span><span class="sxs-lookup"><span data-stu-id="ed707-127">The feature does not require a content update to populate.</span></span>
+* <span data-ttu-id="ed707-128">宣伝の関連性とタイミングは柔軟性が維持されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-128">Relevancy and timing of promotion remains flexible.</span></span>
 
-###### <a name="ui-example-message-of-the-day"></a><span data-ttu-id="1c3e8-129">UI の例: "今日のメッセージ"</span><span class="sxs-lookup"><span data-stu-id="1c3e8-129">UI Example: 'Message of the Day'</span></span>
+###### <a name="ui-example-message-of-the-day"></a><span data-ttu-id="ed707-129">UI の例: "今日のメッセージ"</span><span class="sxs-lookup"><span data-stu-id="ed707-129">UI Example: 'Message of the Day'</span></span>
 
 ![トーナメントの今日のメッセージ](../../images/arena/arena-ux-motd.png)
 
-#### <a name="a-main-heading-ex-play-watch-learn"></a><span data-ttu-id="1c3e8-131">A.</span><span class="sxs-lookup"><span data-stu-id="1c3e8-131">A.</span></span> <span data-ttu-id="1c3e8-132">大見出し。たとえば、"Play, Watch, Learn" (プレイしよう。観戦しよう。スキルを磨こう。) など</span><span class="sxs-lookup"><span data-stu-id="1c3e8-132">Main Heading ex: Play, Watch, Learn</span></span>  
+#### <a name="a-main-heading-ex-play-watch-learn"></a><span data-ttu-id="ed707-131">A.</span><span class="sxs-lookup"><span data-stu-id="ed707-131">A.</span></span> <span data-ttu-id="ed707-132">大見出し。たとえば、"Play, Watch, Learn" (プレイしよう。観戦しよう。スキルを磨こう。) など</span><span class="sxs-lookup"><span data-stu-id="ed707-132">Main Heading ex: Play, Watch, Learn</span></span>  
 
-<span data-ttu-id="1c3e8-133">ゲーマーにすべてのトーナメントについて告知することも、特定のトーナメントについて告知することもできます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-133">Informs gamers about all tournaments or a specific one.</span></span>
+<span data-ttu-id="ed707-133">ゲーマーにすべてのトーナメントについて告知することも、特定のトーナメントについて告知することもできます。</span><span class="sxs-lookup"><span data-stu-id="ed707-133">Informs gamers about all tournaments or a specific one.</span></span>
 
-#### <a name="b-go-to-arena-hub"></a><span data-ttu-id="1c3e8-134">B.</span><span class="sxs-lookup"><span data-stu-id="1c3e8-134">B.</span></span> <span data-ttu-id="1c3e8-135">[Go to Arena Hub] (アリーナ ハブへ移動する)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-135">Go to Arena Hub</span></span>  
+#### <a name="b-go-to-arena-hub"></a><span data-ttu-id="ed707-134">B.</span><span class="sxs-lookup"><span data-stu-id="ed707-134">B.</span></span> <span data-ttu-id="ed707-135">[Go to Arena Hub] (アリーナ ハブへ移動する)</span><span class="sxs-lookup"><span data-stu-id="ed707-135">Go to Arena Hub</span></span>  
 
-<span data-ttu-id="1c3e8-136">ゲーム ハブ/トーナメントへのディープリンク: ゲームに関連するすべてのトーナメントを宣伝する場合にお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-136">Deep-link to Game Hub/Tournaments - Recommended when promoting all tournaments related to your game.</span></span>  
-<span data-ttu-id="1c3e8-137">–または–</span><span class="sxs-lookup"><span data-stu-id="1c3e8-137">–Or–</span></span>  
-<span data-ttu-id="1c3e8-138">ゲーム ハブ/トーナメント/詳細情報へのディープリンク: 特定のトーナメントについて告知する場合にお勧めします。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-138">Deep-link to Game Hub/Tournament/Details - Recommended when announcing a specific tournament.</span></span>
+<span data-ttu-id="ed707-136">ゲーム ハブ/トーナメントへのディープリンク: ゲームに関連するすべてのトーナメントを宣伝する場合にお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ed707-136">Deep-link to Game Hub/Tournaments - Recommended when promoting all tournaments related to your game.</span></span>  
+<span data-ttu-id="ed707-137">–または–</span><span class="sxs-lookup"><span data-stu-id="ed707-137">–Or–</span></span>  
+<span data-ttu-id="ed707-138">ゲーム ハブ/トーナメント/詳細情報へのディープリンク: 特定のトーナメントについて告知する場合にお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ed707-138">Deep-link to Game Hub/Tournament/Details - Recommended when announcing a specific tournament.</span></span>
 
-#### <a name="c-game-exit-confirmation"></a><span data-ttu-id="1c3e8-139">C.</span><span class="sxs-lookup"><span data-stu-id="1c3e8-139">C.</span></span> <span data-ttu-id="1c3e8-140">ゲームの終了確認</span><span class="sxs-lookup"><span data-stu-id="1c3e8-140">Game-exit confirmation</span></span>
+#### <a name="c-game-exit-confirmation"></a><span data-ttu-id="ed707-139">C.</span><span class="sxs-lookup"><span data-stu-id="ed707-139">C.</span></span> <span data-ttu-id="ed707-140">ゲームの終了確認</span><span class="sxs-lookup"><span data-stu-id="ed707-140">Game-exit confirmation</span></span>
 
-<span data-ttu-id="1c3e8-141">A と B の画面要素によって、ユーザーはゲームを終了して Xbox ダッシュボードに移動します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-141">Screen elements A and B lead the user out the game to the Xbox Dashboard.</span></span> <span data-ttu-id="1c3e8-142">タイトルの UI によってこれからの動作を予告したうえで、ゲーマーに確認を求めます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-142">Set that expectation in your title’s UI before the gamer makes a decision.</span></span>
+<span data-ttu-id="ed707-141">A と B の画面要素によって、ユーザーはゲームを終了して Xbox ダッシュボードに移動します。</span><span class="sxs-lookup"><span data-stu-id="ed707-141">Screen elements A and B lead the user out the game to the Xbox Dashboard.</span></span> <span data-ttu-id="ed707-142">タイトルの UI によってこれからの動作を予告したうえで、ゲーマーに確認を求めます。</span><span class="sxs-lookup"><span data-stu-id="ed707-142">Set that expectation in your title’s UI before the gamer makes a decision.</span></span>
 
-###### <a name="ui-example-exit-game-confirmation"></a><span data-ttu-id="1c3e8-143">UI の例: ゲームの終了確認</span><span class="sxs-lookup"><span data-stu-id="1c3e8-143">UI Example: Exit game confirmation</span></span>
+###### <a name="ui-example-exit-game-confirmation"></a><span data-ttu-id="ed707-143">UI の例: ゲームの終了確認</span><span class="sxs-lookup"><span data-stu-id="ed707-143">UI Example: Exit game confirmation</span></span>
 ![トーナメントの情報を表示するためのゲーム終了の確認](../../images/arena/arena-ux-exit-confirm.png)
 
-### <a name="2--promote-tournaments-on-the-main-menu"></a><span data-ttu-id="1c3e8-145">2. メイン メニューでのトーナメントの宣伝</span><span class="sxs-lookup"><span data-stu-id="1c3e8-145">2.  Promote tournaments on the Main Menu</span></span>
+### <a name="2--promote-tournaments-on-the-main-menu"></a><span data-ttu-id="ed707-145">2. メイン メニューでのトーナメントの宣伝</span><span class="sxs-lookup"><span data-stu-id="ed707-145">2.  Promote tournaments on the Main Menu</span></span>
 
-<span data-ttu-id="1c3e8-146">この例では、対話型広告を使って開催予定のイベントを告知しています。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-146">In this example, the announcement is an interactive ad for an upcoming event.</span></span> <span data-ttu-id="1c3e8-147">この広告では、ゲーマーの関心を引く十分な情報が提供されています。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-147">It gives enough information to entice the gamer to learn more.</span></span> <span data-ttu-id="1c3e8-148">**[Select]** (選択) を選ぶと、ゲーマーはアリーナ ハブのトーナメントの詳細ページに誘導され、そこでトーナメントに登録できます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-148">On **Select**, the gamer is led to a tournaments detail page in the Arena Hub, where they can manage their registration.</span></span>
+<span data-ttu-id="ed707-146">この例では、対話型広告を使って開催予定のイベントを告知しています。</span><span class="sxs-lookup"><span data-stu-id="ed707-146">In this example, the announcement is an interactive ad for an upcoming event.</span></span> <span data-ttu-id="ed707-147">この広告では、ゲーマーの関心を引く十分な情報が提供されています。</span><span class="sxs-lookup"><span data-stu-id="ed707-147">It gives enough information to entice the gamer to learn more.</span></span> <span data-ttu-id="ed707-148">**[Select]** (選択) を選ぶと、ゲーマーはアリーナ ハブのトーナメントの詳細ページに誘導され、そこでトーナメントに登録できます。</span><span class="sxs-lookup"><span data-stu-id="ed707-148">On **Select**, the gamer is led to a tournaments detail page in the Arena Hub, where they can manage their registration.</span></span>
 
-###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a><span data-ttu-id="1c3e8-149">UI の例: メイン メニューと共に表示されているトーナメントの広告</span><span class="sxs-lookup"><span data-stu-id="1c3e8-149">UI Example: A tournament ad displayed alongside the main menu</span></span>
+###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a><span data-ttu-id="ed707-149">UI の例: メイン メニューと共に表示されているトーナメントの広告</span><span class="sxs-lookup"><span data-stu-id="ed707-149">UI Example: A tournament ad displayed alongside the main menu</span></span>
 
 ![](../../images/arena/arena-ux-promo.png)
 
 > [!TIP]
-> **<span data-ttu-id="1c3e8-150">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="1c3e8-150">UX recommendation</span></span>**  
-> <span data-ttu-id="1c3e8-151">お知らせには、ゲーマーが詳細情報を表示するかどうかを決断するために必要な情報のみを表示します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-151">The announcement should Include just enough detail to help gamers decide if they want to learn more.</span></span> <span data-ttu-id="1c3e8-152">たとえば、***説明***、***人気***、***タイミング***について記載します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-152">For example, ***description***, ***popularity***, and ***timing***.</span></span>
+> **<span data-ttu-id="ed707-150">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="ed707-150">UX recommendation</span></span>**  
+> <span data-ttu-id="ed707-151">お知らせには、ゲーマーが詳細情報を表示するかどうかを決断するために必要な情報のみを表示します。</span><span class="sxs-lookup"><span data-stu-id="ed707-151">The announcement should Include just enough detail to help gamers decide if they want to learn more.</span></span> <span data-ttu-id="ed707-152">たとえば、***説明***、***人気***、***タイミング***について記載します。</span><span class="sxs-lookup"><span data-stu-id="ed707-152">For example, ***description***, ***popularity***, and ***timing***.</span></span>
 
-## <a name="browsing-tournaments-in-game"></a><span data-ttu-id="1c3e8-153">ゲーム内でのトーナメント情報の閲覧</span><span class="sxs-lookup"><span data-stu-id="1c3e8-153">Browsing tournaments in-game</span></span>
+## <a name="browsing-tournaments-in-game"></a><span data-ttu-id="ed707-153">ゲーム内でのトーナメント情報の閲覧</span><span class="sxs-lookup"><span data-stu-id="ed707-153">Browsing tournaments in-game</span></span>
 
-<span data-ttu-id="1c3e8-154">アリーナ API からタイトルに提供されるデータを使って、ゲーム内に閲覧エクスペリエンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-154">The Arena APIs provide enough data for your title to create a browsing experience inside the game.</span></span> <span data-ttu-id="1c3e8-155">閲覧機能を構築する場合は、Multiplayer セクションに **Tournaments** エントリ ポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-155">If you intend to build a browsing feature, add a **Tournaments** entry point in the Multiplayer section.</span></span>
+<span data-ttu-id="ed707-154">アリーナ API からタイトルに提供されるデータを使って、ゲーム内に閲覧エクスペリエンスを作成できます。</span><span class="sxs-lookup"><span data-stu-id="ed707-154">The Arena APIs provide enough data for your title to create a browsing experience inside the game.</span></span> <span data-ttu-id="ed707-155">閲覧機能を構築する場合は、Multiplayer セクションに **Tournaments** エントリ ポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="ed707-155">If you intend to build a browsing feature, add a **Tournaments** entry point in the Multiplayer section.</span></span>
 
 > [!TIP]
-> **<span data-ttu-id="1c3e8-156">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="1c3e8-156">UX recommendations</span></span>**  
-> <span data-ttu-id="1c3e8-157">トーナメントをマルチプレイヤー ゲーム モードで提示します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-157">Present Tournaments as a Multiplayer game mode.</span></span>  
-> <span data-ttu-id="1c3e8-158">Xbox アリーナは新しい機能であるため、階層 1 または階層 2 レベルで表示できる状態を維持してください。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-158">Because Xbox Arena is a new feature, be sure to keep it visible at the Tier 1 or Tier 2 level.</span></span>
+> **<span data-ttu-id="ed707-156">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="ed707-156">UX recommendations</span></span>**  
+> <span data-ttu-id="ed707-157">トーナメントをマルチプレイヤー ゲーム モードで提示します。</span><span class="sxs-lookup"><span data-stu-id="ed707-157">Present Tournaments as a Multiplayer game mode.</span></span>  
+> <span data-ttu-id="ed707-158">Xbox アリーナは新しい機能であるため、階層 1 または階層 2 レベルで表示できる状態を維持してください。</span><span class="sxs-lookup"><span data-stu-id="ed707-158">Because Xbox Arena is a new feature, be sure to keep it visible at the Tier 1 or Tier 2 level.</span></span>
 
-###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a><span data-ttu-id="1c3e8-159">UI の例: [Multiplayer] (マルチプレイヤー) セクションに追加のモードとしてトーナメントを表示</span><span class="sxs-lookup"><span data-stu-id="1c3e8-159">UI Example: Tournaments listed as an additional mode in the Multiplayer section</span></span>
+###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a><span data-ttu-id="ed707-159">UI の例: [Multiplayer] (マルチプレイヤー) セクションに追加のモードとしてトーナメントを表示</span><span class="sxs-lookup"><span data-stu-id="ed707-159">UI Example: Tournaments listed as an additional mode in the Multiplayer section</span></span>
 
 ![トーナメント モード](../../images/arena/arena-ux-tournament-mode.png)
 
-### <a name="provide-a-comprehensive-list-of-tournaments"></a><span data-ttu-id="1c3e8-161">すべてのトーナメント一覧の提供</span><span class="sxs-lookup"><span data-stu-id="1c3e8-161">Provide a comprehensive list of tournaments</span></span>
+### <a name="provide-a-comprehensive-list-of-tournaments"></a><span data-ttu-id="ed707-161">すべてのトーナメント一覧の提供</span><span class="sxs-lookup"><span data-stu-id="ed707-161">Provide a comprehensive list of tournaments</span></span>
 
-<span data-ttu-id="1c3e8-162">ゲーマーが、現在登録済みのトーナメントの状態を素早く確認し、ゲームプレイのセッションとセッションの間にトーナメント情報を確認できる環境を整えます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-162">Empower gamers to quickly check the status of tournaments they’re currently registered in, and to browse tournaments between gameplay sessions.</span></span>
+<span data-ttu-id="ed707-162">ゲーマーが、現在登録済みのトーナメントの状態を素早く確認し、ゲームプレイのセッションとセッションの間にトーナメント情報を確認できる環境を整えます。</span><span class="sxs-lookup"><span data-stu-id="ed707-162">Empower gamers to quickly check the status of tournaments they’re currently registered in, and to browse tournaments between gameplay sessions.</span></span>
 
-#### <a name="user-impact"></a><span data-ttu-id="1c3e8-163">ユーザーへの影響</span><span class="sxs-lookup"><span data-stu-id="1c3e8-163">User impact</span></span>
+#### <a name="user-impact"></a><span data-ttu-id="ed707-163">ユーザーへの影響</span><span class="sxs-lookup"><span data-stu-id="ed707-163">User impact</span></span>
 
-* <span data-ttu-id="1c3e8-164">ゲーマは、たいていの場合、ゲームを終了してダッシュボードを確認しなくても、トーナメントの状態を把握できるようになります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-164">Minimizes the gamer’s need to leave the game to check tournament status in the Dashboard.</span></span>
-* <span data-ttu-id="1c3e8-165">ゲーマーが Xbox アリーナのトースト通知を見逃した場合の、優れたバックアップ ソリューションとなります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-165">Serves as a great back-up solution if gamers miss Xbox Arena toast notifications.</span></span>
-* <span data-ttu-id="1c3e8-166">ゲーム開発者に、管理すべき追加コストが発生します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-166">Does involve additional cost for the game developer to manage.</span></span>
-* <span data-ttu-id="1c3e8-167">ゲーマーは、参加、登録、チェックイン、シード処理、チーム編成のためのアリーナ UI に誘導されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-167">Leads gamers to the Arena UI for joining, registration, checking in, seeding and team formation.</span></span>
+* <span data-ttu-id="ed707-164">ゲーマは、たいていの場合、ゲームを終了してダッシュボードを確認しなくても、トーナメントの状態を把握できるようになります。</span><span class="sxs-lookup"><span data-stu-id="ed707-164">Minimizes the gamer’s need to leave the game to check tournament status in the Dashboard.</span></span>
+* <span data-ttu-id="ed707-165">ゲーマーが Xbox アリーナのトースト通知を見逃した場合の、優れたバックアップ ソリューションとなります。</span><span class="sxs-lookup"><span data-stu-id="ed707-165">Serves as a great back-up solution if gamers miss Xbox Arena toast notifications.</span></span>
+* <span data-ttu-id="ed707-166">ゲーム開発者に、管理すべき追加コストが発生します。</span><span class="sxs-lookup"><span data-stu-id="ed707-166">Does involve additional cost for the game developer to manage.</span></span>
+* <span data-ttu-id="ed707-167">ゲーマーは、参加、登録、チェックイン、シード処理、チーム編成のためのアリーナ UI に誘導されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-167">Leads gamers to the Arena UI for joining, registration, checking in, seeding and team formation.</span></span>
 
 > [!NOTE]  
-> <span data-ttu-id="1c3e8-168">アリーナ API では、ユーザー作成トーナメント (クラブが作成する) を検索するクエリは提供されていません。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-168">The Arena APIs do not provide a query for user-generated tournaments (club generated).</span></span>
+> <span data-ttu-id="ed707-168">アリーナ API では、ユーザー作成トーナメント (クラブが作成する) を検索するクエリは提供されていません。</span><span class="sxs-lookup"><span data-stu-id="ed707-168">The Arena APIs do not provide a query for user-generated tournaments (club generated).</span></span>
 
 
 > [!TIP]
-> **<span data-ttu-id="1c3e8-169">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="1c3e8-169">UX recommendation</span></span>**  
-> <span data-ttu-id="1c3e8-170">UI はサイズ変更できるように作成します。また、一覧に膨大な数のトーナメントが含まれていてもゲーマーが管理できるように、適切な機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-170">Create a UI that can scale, and provide methods for gamers to manage a large list of tournaments.</span></span>
+> **<span data-ttu-id="ed707-169">推奨される UX</span><span class="sxs-lookup"><span data-stu-id="ed707-169">UX recommendation</span></span>**  
+> <span data-ttu-id="ed707-170">UI はサイズ変更できるように作成します。また、一覧に膨大な数のトーナメントが含まれていてもゲーマーが管理できるように、適切な機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="ed707-170">Create a UI that can scale, and provide methods for gamers to manage a large list of tournaments.</span></span>
 
-### <a name="filters"></a><span data-ttu-id="1c3e8-171">フィルター</span><span class="sxs-lookup"><span data-stu-id="1c3e8-171">Filters</span></span>
+### <a name="filters"></a><span data-ttu-id="ed707-171">フィルター</span><span class="sxs-lookup"><span data-stu-id="ed707-171">Filters</span></span>
 
-<span data-ttu-id="1c3e8-172">トーナメントをフィルター処理する機能を提供します。フィルター条件には、**[All]** (すべて)、**[Active]** (アクティブ) (終了前のすべてのトーナメントを網羅)、**[Canceled]** (キャンセル済み)、**[Completed]** (完了済み) の各状態を使用できるほか、ゲーマーが既にプレイしたトーナメントやこれらから参加するトーナメントのみを表示 (たとえば、[My Tournaments] (マイ トーナメント)など) することができます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-172">Filter tournaments by **All**, **Active** (which covers everything until the tournament ends), **Canceled**, and **Completed** states, and tournaments a gamer has or will be participating in (for example, My Tournaments).</span></span>
+<span data-ttu-id="ed707-172">トーナメントをフィルター処理する機能を提供します。フィルター条件には、**[All]** (すべて)、**[Active]** (アクティブ) (終了前のすべてのトーナメントを網羅)、**[Canceled]** (キャンセル済み)、**[Completed]** (完了済み) の各状態を使用できるほか、ゲーマーが既にプレイしたトーナメントやこれらから参加するトーナメントのみを表示 (たとえば、[My Tournaments] (マイ トーナメント)など) することができます。</span><span class="sxs-lookup"><span data-stu-id="ed707-172">Filter tournaments by **All**, **Active** (which covers everything until the tournament ends), **Canceled**, and **Completed** states, and tournaments a gamer has or will be participating in (for example, My Tournaments).</span></span>
 
-###### <a name="ui-example"></a><span data-ttu-id="1c3e8-173">UI の例:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-173">UI Example:</span></span>
+###### <a name="ui-example"></a><span data-ttu-id="ed707-173">UI の例:</span><span class="sxs-lookup"><span data-stu-id="ed707-173">UI Example:</span></span>
 
 ![トーナメントのフィルター画面](../../images/arena/arena-ux-filters.png)
 
 > [!NOTE]  
-> <span data-ttu-id="1c3e8-175">API がサポートしていないカスタム フィルターを追加することもできますが、*お勧めしません*。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-175">Adding custom filters, outside of what the API supports is possible, *but not recommended*.</span></span>
+> <span data-ttu-id="ed707-175">API がサポートしていないカスタム フィルターを追加することもできますが、*お勧めしません*。</span><span class="sxs-lookup"><span data-stu-id="ed707-175">Adding custom filters, outside of what the API supports is possible, *but not recommended*.</span></span>
 
-<span data-ttu-id="1c3e8-176">タイトルでは、要求したデータに対して、他のプロパティを使ってフィルター処理することはできますが、それらのプロパティをクエリ パラメーターで指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-176">Your title can filter by other properties after it makes the request, but it can’t specify them on the query parameter.</span></span> <span data-ttu-id="1c3e8-177">そのため、この種の UI で、他のプロパティを使ったフィルター処理は信頼性が確保できません。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-177">This makes filtering by other properties unreliable for this type of UI.</span></span> <span data-ttu-id="1c3e8-178">アリーナ API では、一度に取得するタイトル数を指定することができます。たとえば、タイトルで **maxItems** の値を 10 トーナメントに指定できます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-178">The Arena APIs retrieve a title-specified number of results at a time—for example, the title may specify a **maxItems** value of 10 tournaments.</span></span> <span data-ttu-id="1c3e8-179">これにより、タイトルのパフォーマンスを管理し、膨大な一覧がユーザーに表示されるリスクを最小限に抑えることができます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-179">This helps your title manage performance and minimizes the risk of overwhelming the user with a large list.</span></span> <span data-ttu-id="1c3e8-180">ただし、ゲームで提供されるカスタム フィルターは、その時点で検索結果として返された 10 個の項目にしか適用できません。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-180">However, any custom filters provided by your game would apply only to the 10 items requested at that time.</span></span> <span data-ttu-id="1c3e8-181">そのため、API 呼び出しを行うたびに、異なる数のフィルター結果が検出される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-181">This could result in an inconsistent number of filtered results after each API call.</span></span> <span data-ttu-id="1c3e8-182">たとえば、最初の検索では、返された 10 個のトーナメントの中の 2 個がカスタム フィルター ("プレイ中" など) に一致するが、</span><span class="sxs-lookup"><span data-stu-id="1c3e8-182">For example, the first set of 10 tournaments returned might contain 2 that are related to a custom filter, like ‘Playing.’</span></span> <span data-ttu-id="1c3e8-183">次回の検索時には、10 個のうち 9 個が一致するといったことが起こります。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-183">But the next 10 may show 9 such items, and so on.</span></span> <span data-ttu-id="1c3e8-184">タイトルで各カスタム フィルターについて、一致するすべての項目を確実に検出するには、アクティブなすべてのトーナメントを要求した後、それらをまとめてフィルター処理するしかありませんが、この方法はお勧めしません。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-184">The only reliable way for your title to fully populate each custom filter is to request every active tournament and then filter them all, which we don’t recommend.</span></span>
+<span data-ttu-id="ed707-176">タイトルでは、要求したデータに対して、他のプロパティを使ってフィルター処理することはできますが、それらのプロパティをクエリ パラメーターで指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="ed707-176">Your title can filter by other properties after it makes the request, but it can’t specify them on the query parameter.</span></span> <span data-ttu-id="ed707-177">そのため、この種の UI で、他のプロパティを使ったフィルター処理は信頼性が確保できません。</span><span class="sxs-lookup"><span data-stu-id="ed707-177">This makes filtering by other properties unreliable for this type of UI.</span></span> <span data-ttu-id="ed707-178">アリーナ API では、一度に取得するタイトル数を指定することができます。たとえば、タイトルで **maxItems** の値を 10 トーナメントに指定できます。</span><span class="sxs-lookup"><span data-stu-id="ed707-178">The Arena APIs retrieve a title-specified number of results at a time—for example, the title may specify a **maxItems** value of 10 tournaments.</span></span> <span data-ttu-id="ed707-179">これにより、タイトルのパフォーマンスを管理し、膨大な一覧がユーザーに表示されるリスクを最小限に抑えることができます。</span><span class="sxs-lookup"><span data-stu-id="ed707-179">This helps your title manage performance and minimizes the risk of overwhelming the user with a large list.</span></span> <span data-ttu-id="ed707-180">ただし、ゲームで提供されるカスタム フィルターは、その時点で検索結果として返された 10 個の項目にしか適用できません。</span><span class="sxs-lookup"><span data-stu-id="ed707-180">However, any custom filters provided by your game would apply only to the 10 items requested at that time.</span></span> <span data-ttu-id="ed707-181">そのため、API 呼び出しを行うたびに、異なる数のフィルター結果が検出される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ed707-181">This could result in an inconsistent number of filtered results after each API call.</span></span> <span data-ttu-id="ed707-182">たとえば、最初の検索では、返された 10 個のトーナメントの中の 2 個がカスタム フィルター ("プレイ中" など) に一致するが、</span><span class="sxs-lookup"><span data-stu-id="ed707-182">For example, the first set of 10 tournaments returned might contain 2 that are related to a custom filter, like ‘Playing.’</span></span> <span data-ttu-id="ed707-183">次回の検索時には、10 個のうち 9 個が一致するといったことが起こります。</span><span class="sxs-lookup"><span data-stu-id="ed707-183">But the next 10 may show 9 such items, and so on.</span></span> <span data-ttu-id="ed707-184">タイトルで各カスタム フィルターについて、一致するすべての項目を確実に検出するには、アクティブなすべてのトーナメントを要求した後、それらをまとめてフィルター処理するしかありませんが、この方法はお勧めしません。</span><span class="sxs-lookup"><span data-stu-id="ed707-184">The only reliable way for your title to fully populate each custom filter is to request every active tournament and then filter them all, which we don’t recommend.</span></span>
 
-#### <a name="filter-recommendations"></a><span data-ttu-id="1c3e8-185">推奨されるフィルター:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-185">Filter recommendations:</span></span>
+#### <a name="filter-recommendations"></a><span data-ttu-id="ed707-185">推奨されるフィルター:</span><span class="sxs-lookup"><span data-stu-id="ed707-185">Filter recommendations:</span></span>
 
-##### <a name="all"></a><span data-ttu-id="1c3e8-186">[ALL] (すべて)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-186">ALL</span></span>
+##### <a name="all"></a><span data-ttu-id="ed707-186">[ALL] (すべて)</span><span class="sxs-lookup"><span data-stu-id="ed707-186">ALL</span></span>
 
-<span data-ttu-id="1c3e8-187">**[Active]** (アクティブ)、**[Canceled]** (キャンセル済み)、**[Completed]** (完了済み) のすべてのトーナメントが新しい順に表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-187">View all **Active**, **Canceled**, and **Completed** tournaments, sorted by most recent.</span></span>
+<span data-ttu-id="ed707-187">**[Active]** (アクティブ)、**[Canceled]** (キャンセル済み)、**[Completed]** (完了済み) のすべてのトーナメントが新しい順に表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-187">View all **Active**, **Canceled**, and **Completed** tournaments, sorted by most recent.</span></span>
 
-<span data-ttu-id="1c3e8-188">結果:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-188">Results:</span></span>
+<span data-ttu-id="ed707-188">結果:</span><span class="sxs-lookup"><span data-stu-id="ed707-188">Results:</span></span>
 
-* <span data-ttu-id="1c3e8-189">トーナメントの状態</span><span class="sxs-lookup"><span data-stu-id="1c3e8-189">Tournament state</span></span>
-* <span data-ttu-id="1c3e8-190">トーナメント開始日</span><span class="sxs-lookup"><span data-stu-id="1c3e8-190">Tournament start date</span></span>
-* <span data-ttu-id="1c3e8-191">トーナメントのステータス: 登録受け付け中など</span><span class="sxs-lookup"><span data-stu-id="1c3e8-191">Tournament status—for example, Registration open</span></span>
-* <span data-ttu-id="1c3e8-192">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="1c3e8-192">Deep link to Tournament Detail Page in the dashboard</span></span>
+* <span data-ttu-id="ed707-189">トーナメントの状態</span><span class="sxs-lookup"><span data-stu-id="ed707-189">Tournament state</span></span>
+* <span data-ttu-id="ed707-190">トーナメント開始日</span><span class="sxs-lookup"><span data-stu-id="ed707-190">Tournament start date</span></span>
+* <span data-ttu-id="ed707-191">トーナメントのステータス: 登録受け付け中など</span><span class="sxs-lookup"><span data-stu-id="ed707-191">Tournament status—for example, Registration open</span></span>
+* <span data-ttu-id="ed707-192">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="ed707-192">Deep link to Tournament Detail Page in the dashboard</span></span>
 
-##### <a name="my-tournaments"></a><span data-ttu-id="1c3e8-193">[MY TOURNAMENTS] (マイ トーナメント)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-193">MY TOURNAMENTS</span></span>
+##### <a name="my-tournaments"></a><span data-ttu-id="ed707-193">[MY TOURNAMENTS] (マイ トーナメント)</span><span class="sxs-lookup"><span data-stu-id="ed707-193">MY TOURNAMENTS</span></span>
 
-<span data-ttu-id="1c3e8-194">参加者が現在登録されているトーナメントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-194">View tournaments that a participant is currently registered in.</span></span>
+<span data-ttu-id="ed707-194">参加者が現在登録されているトーナメントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-194">View tournaments that a participant is currently registered in.</span></span>
 
-<span data-ttu-id="1c3e8-195">結果:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-195">Results:</span></span>
+<span data-ttu-id="ed707-195">結果:</span><span class="sxs-lookup"><span data-stu-id="ed707-195">Results:</span></span>
 
-* <span data-ttu-id="1c3e8-196">現在サインインしているユーザーの参加トーナメント</span><span class="sxs-lookup"><span data-stu-id="1c3e8-196">Tournaments that the currently signed-in user is participating in</span></span>
-* <span data-ttu-id="1c3e8-197">トーナメントのステータス</span><span class="sxs-lookup"><span data-stu-id="1c3e8-197">Tournament status</span></span>
-* <span data-ttu-id="1c3e8-198">トーナメント マッチに移行する方法 (ステータスが "マッチの準備完了" の場合)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-198">A method to enter a tournament match (for ‘match ready’ status)</span></span>
-* <span data-ttu-id="1c3e8-199">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="1c3e8-199">Deep link to Tournament Detail Page in the Dashboard</span></span>
+* <span data-ttu-id="ed707-196">現在サインインしているユーザーの参加トーナメント</span><span class="sxs-lookup"><span data-stu-id="ed707-196">Tournaments that the currently signed-in user is participating in</span></span>
+* <span data-ttu-id="ed707-197">トーナメントのステータス</span><span class="sxs-lookup"><span data-stu-id="ed707-197">Tournament status</span></span>
+* <span data-ttu-id="ed707-198">トーナメント マッチに移行する方法 (ステータスが "マッチの準備完了" の場合)</span><span class="sxs-lookup"><span data-stu-id="ed707-198">A method to enter a tournament match (for ‘match ready’ status)</span></span>
+* <span data-ttu-id="ed707-199">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="ed707-199">Deep link to Tournament Detail Page in the Dashboard</span></span>
 
-##### <a name="active"></a><span data-ttu-id="1c3e8-200">[ACTIVE] (アクティブ)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-200">ACTIVE</span></span>
+##### <a name="active"></a><span data-ttu-id="ed707-200">[ACTIVE] (アクティブ)</span><span class="sxs-lookup"><span data-stu-id="ed707-200">ACTIVE</span></span>
 
-<span data-ttu-id="1c3e8-201">作成済みのすべてのトーナメント (開催予定、登録受付中、チェックイン、プレイ中のトーナメント) が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-201">View all tournaments that have been created: upcoming, open for registration, check-in, and playing.</span></span>
+<span data-ttu-id="ed707-201">作成済みのすべてのトーナメント (開催予定、登録受付中、チェックイン、プレイ中のトーナメント) が表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-201">View all tournaments that have been created: upcoming, open for registration, check-in, and playing.</span></span>
 
-<span data-ttu-id="1c3e8-202">結果:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-202">Results:</span></span>
+<span data-ttu-id="ed707-202">結果:</span><span class="sxs-lookup"><span data-stu-id="ed707-202">Results:</span></span>
 
-* <span data-ttu-id="1c3e8-203">現在登録受付中で、現在のユーザーがまだ参加していないトーナメント</span><span class="sxs-lookup"><span data-stu-id="1c3e8-203">Tournaments that are open to register for, that the current user has not already joined</span></span>
-* <span data-ttu-id="1c3e8-204">登録終了までの残り時間</span><span class="sxs-lookup"><span data-stu-id="1c3e8-204">Time remaining until registration closes</span></span>
+* <span data-ttu-id="ed707-203">現在登録受付中で、現在のユーザーがまだ参加していないトーナメント</span><span class="sxs-lookup"><span data-stu-id="ed707-203">Tournaments that are open to register for, that the current user has not already joined</span></span>
+* <span data-ttu-id="ed707-204">登録終了までの残り時間</span><span class="sxs-lookup"><span data-stu-id="ed707-204">Time remaining until registration closes</span></span>
 
-##### <a name="completedcanceled"></a><span data-ttu-id="1c3e8-205">[COMPLETED/CANCELED] (完了済み/キャンセル済み)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-205">COMPLETED/CANCELED</span></span>
+##### <a name="completedcanceled"></a><span data-ttu-id="ed707-205">[COMPLETED/CANCELED] (完了済み/キャンセル済み)</span><span class="sxs-lookup"><span data-stu-id="ed707-205">COMPLETED/CANCELED</span></span>
 
-<span data-ttu-id="1c3e8-206">最近の結果が表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-206">View recent results.</span></span> <span data-ttu-id="1c3e8-207">終了直後のトーナメントは、終了後もすぐには削除されず、時間の経過と共に表示順位が下がっていきます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-207">Tournaments that just ended can age out over time, instead of simply disappearing after they are complete.</span></span>
+<span data-ttu-id="ed707-206">最近の結果が表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-206">View recent results.</span></span> <span data-ttu-id="ed707-207">終了直後のトーナメントは、終了後もすぐには削除されず、時間の経過と共に表示順位が下がっていきます。</span><span class="sxs-lookup"><span data-stu-id="ed707-207">Tournaments that just ended can age out over time, instead of simply disappearing after they are complete.</span></span>
 
-<span data-ttu-id="1c3e8-208">結果:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-208">Results:</span></span>
+<span data-ttu-id="ed707-208">結果:</span><span class="sxs-lookup"><span data-stu-id="ed707-208">Results:</span></span>
 
-* <span data-ttu-id="1c3e8-209">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="1c3e8-209">Deep link to Tournament Detail Page in the Dashboard</span></span>
-* <span data-ttu-id="1c3e8-210">トーナメントのステータス</span><span class="sxs-lookup"><span data-stu-id="1c3e8-210">Tournament Status</span></span>
-* <span data-ttu-id="1c3e8-211">終了日時</span><span class="sxs-lookup"><span data-stu-id="1c3e8-211">End date/time</span></span>
+* <span data-ttu-id="ed707-209">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="ed707-209">Deep link to Tournament Detail Page in the Dashboard</span></span>
+* <span data-ttu-id="ed707-210">トーナメントのステータス</span><span class="sxs-lookup"><span data-stu-id="ed707-210">Tournament Status</span></span>
+* <span data-ttu-id="ed707-211">終了日時</span><span class="sxs-lookup"><span data-stu-id="ed707-211">End date/time</span></span>
 
-##### <a name="canceled"></a><span data-ttu-id="1c3e8-212">[CANCELED] (キャンセル済み)</span><span class="sxs-lookup"><span data-stu-id="1c3e8-212">CANCELED</span></span>
+##### <a name="canceled"></a><span data-ttu-id="ed707-212">[CANCELED] (キャンセル済み)</span><span class="sxs-lookup"><span data-stu-id="ed707-212">CANCELED</span></span>
 
-<span data-ttu-id="1c3e8-213">キャンセル済みのトーナメントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1c3e8-213">View tournaments that have been canceled.</span></span>
+<span data-ttu-id="ed707-213">キャンセル済みのトーナメントが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ed707-213">View tournaments that have been canceled.</span></span>
 
-<span data-ttu-id="1c3e8-214">結果:</span><span class="sxs-lookup"><span data-stu-id="1c3e8-214">Results:</span></span>
+<span data-ttu-id="ed707-214">結果:</span><span class="sxs-lookup"><span data-stu-id="ed707-214">Results:</span></span>
 
-* <span data-ttu-id="1c3e8-215">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="1c3e8-215">Deep link to Tournament Detail Page in the Dashboard</span></span>
-* <span data-ttu-id="1c3e8-216">キャンセル日時</span><span class="sxs-lookup"><span data-stu-id="1c3e8-216">Date/time of cancellation</span></span>
+* <span data-ttu-id="ed707-215">ダッシュボードのトーナメントの詳細ページへのディープ リンク</span><span class="sxs-lookup"><span data-stu-id="ed707-215">Deep link to Tournament Detail Page in the Dashboard</span></span>
+* <span data-ttu-id="ed707-216">キャンセル日時</span><span class="sxs-lookup"><span data-stu-id="ed707-216">Date/time of cancellation</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="1c3e8-217">アリーナ UI を使ってトーナメントに参加する</span><span class="sxs-lookup"><span data-stu-id="1c3e8-217">Join a tournament by using the Arena UI</span></span>](arena-ux-join-tournament.md)
+> [<span data-ttu-id="ed707-217">アリーナ UI を使ってトーナメントに参加する</span><span class="sxs-lookup"><span data-stu-id="ed707-217">Join a tournament by using the Arena UI</span></span>](arena-ux-join-tournament.md)

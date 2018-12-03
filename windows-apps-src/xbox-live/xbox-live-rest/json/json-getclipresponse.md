@@ -2,37 +2,35 @@
 title: GetClipResponse (JSON)
 assetID: ef128790-dc6a-6055-92d5-2ac08b708443
 permalink: en-us/docs/xboxlive/rest/json-getclipresponse.html
-author: KevinAsgari
 description: " GetClipResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bd1d536cb4f7ba44208f2c298928b4fa4ed3074e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef6875bfecfe7ee90fb1794164240116fd39ed91
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581961"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337717"
 ---
-# <a name="getclipresponse-json"></a><span data-ttu-id="a97bb-104">GetClipResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="a97bb-104">GetClipResponse (JSON)</span></span>
-<span data-ttu-id="a97bb-105">ゲーム クリップをラップします。</span><span class="sxs-lookup"><span data-stu-id="a97bb-105">Wraps the game clip.</span></span> 
+# <a name="getclipresponse-json"></a><span data-ttu-id="3c631-104">GetClipResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="3c631-104">GetClipResponse (JSON)</span></span>
+<span data-ttu-id="3c631-105">ゲーム クリップをラップします。</span><span class="sxs-lookup"><span data-stu-id="3c631-105">Wraps the game clip.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="getclipresponse"></a><span data-ttu-id="a97bb-106">GetClipResponse</span><span class="sxs-lookup"><span data-stu-id="a97bb-106">GetClipResponse</span></span>
+## <a name="getclipresponse"></a><span data-ttu-id="3c631-106">GetClipResponse</span><span class="sxs-lookup"><span data-stu-id="3c631-106">GetClipResponse</span></span>
  
-<span data-ttu-id="a97bb-107">GetClipResponse オブジェクトでは、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="a97bb-107">The GetClipResponse object has the following specification.</span></span>
+<span data-ttu-id="3c631-107">GetClipResponse オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="3c631-107">The GetClipResponse object has the following specification.</span></span>
  
-| <span data-ttu-id="a97bb-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="a97bb-108">Member</span></span>| <span data-ttu-id="a97bb-109">種類</span><span class="sxs-lookup"><span data-stu-id="a97bb-109">Type</span></span>| <span data-ttu-id="a97bb-110">説明</span><span class="sxs-lookup"><span data-stu-id="a97bb-110">Description</span></span>| 
+| <span data-ttu-id="3c631-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="3c631-108">Member</span></span>| <span data-ttu-id="3c631-109">種類</span><span class="sxs-lookup"><span data-stu-id="3c631-109">Type</span></span>| <span data-ttu-id="3c631-110">説明</span><span class="sxs-lookup"><span data-stu-id="3c631-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="a97bb-111">gameClip</span><span class="sxs-lookup"><span data-stu-id="a97bb-111">gameClip</span></span>| [<span data-ttu-id="a97bb-112">GameClip</span><span class="sxs-lookup"><span data-stu-id="a97bb-112">GameClip</span></span>](json-gameclip.md)| <span data-ttu-id="a97bb-113">問題がなければ、クエリを 1 つのゲーム クリップ。</span><span class="sxs-lookup"><span data-stu-id="a97bb-113">A single game clip that satisfied the query.</span></span>| 
+| <span data-ttu-id="3c631-111">gameClip</span><span class="sxs-lookup"><span data-stu-id="3c631-111">gameClip</span></span>| [<span data-ttu-id="3c631-112">GameClip</span><span class="sxs-lookup"><span data-stu-id="3c631-112">GameClip</span></span>](json-gameclip.md)| <span data-ttu-id="3c631-113">問題がなければ、クエリを 1 つのゲーム クリップ。</span><span class="sxs-lookup"><span data-stu-id="3c631-113">A single game clip that satisfied the query.</span></span>| 
   
 <a id="ID4ELB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="a97bb-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="a97bb-114">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="3c631-114">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="3c631-114">Sample JSON syntax</span></span>
  
 
 ```json
@@ -87,13 +85,13 @@ ms.locfileid: "7581961"
 <a id="ID4EUB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="a97bb-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="a97bb-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3c631-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="3c631-115">See also</span></span>
  
 <a id="ID4EWB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="a97bb-116">Parent</span><span class="sxs-lookup"><span data-stu-id="a97bb-116">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="3c631-116">Parent</span><span class="sxs-lookup"><span data-stu-id="3c631-116">Parent</span></span> 
 
-[<span data-ttu-id="a97bb-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="a97bb-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="3c631-117">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="3c631-117">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    
