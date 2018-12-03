@@ -2,16 +2,16 @@
 title: 画面キャプチャ
 description: Windows.Graphics.Capture 名前空間 には、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、コラボレーティブでインタラクティブなエクスペリエンスを構築できます。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328458"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470766"
 ---
 # <a name="screen-capture"></a>画面キャプチャ
 
@@ -383,6 +383,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## <a name="record-a-video"></a>ビデオを録画します。
+
+アプリケーションのビデオを記録する場合より簡単に[Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)で実行できます。 これは、デスクトップでのみ動作するようのデスクトップ拡張 SDK の一部をプロジェクトからへの参照を追加することが必要になります。 詳細については、[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
