@@ -1,19 +1,17 @@
 ---
 title: バイナリ JSON の保存
-author: KevinAsgari
 description: Xbox Live タイトル ストレージにバイナリ JSON を保存する方法について説明します。
 ms.assetid: f424aca1-e671-4e31-84c6-098fda4a9558
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 629bc38e8d5e5afa4c9d78349587585d0701b3de
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dabcd0634bb20bc6b82ae302c77338b5bb726a63
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7574921"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328280"
 ---
 # <a name="storing-a-json-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージへの JSON BLOB の保存
 

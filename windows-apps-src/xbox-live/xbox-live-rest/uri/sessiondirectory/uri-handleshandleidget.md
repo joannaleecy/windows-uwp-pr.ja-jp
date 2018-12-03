@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 501d36f4d1ac079af15d6bb7f35a90d5328fc8db
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8204167"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340083"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
 ハンドル ID で指定されたハンドルを取得します。

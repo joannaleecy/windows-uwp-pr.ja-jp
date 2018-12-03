@@ -2,22 +2,20 @@
 title: GET (/handles/{handleId}/session)
 assetID: 1f22954c-e77b-69c2-63f4-741fbd965f8f
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionget.html
-author: KevinAsgari
 description: " GET (/handles/{handleId}/session)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ef2559177bcecb7c1c23fbc1f08bed065cf4bae9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 41911dc53b316f4f323b9859d9101581ec88e497
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557424"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337641"
 ---
 # <a name="get-handleshandleidsession"></a>GET (/handles/{handleId}/session)
-指定したハンドル識別子セッション オブジェクトを取得します。
+指定したハンドル識別子のセッション オブジェクトを取得します。
 
 > [!IMPORTANT]
 > このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
@@ -35,7 +33,7 @@ ms.locfileid: "7557424"
 
 この HTTP/REST メソッドは、セッション (ハンドル) に指定されたサービス側ポインターを使用して、サーバーからセッション オブジェクトを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
 
-このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
+このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
 <a id="ID4EDB"></a>
 

@@ -2,23 +2,21 @@
 title: その他の参照情報
 assetID: 2ed55e24-4a4f-625b-7cbb-f10855382bb4
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference-additional.html
-author: KevinAsgari
 description: " その他の参照情報"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 106fe8e79752125a8c30670e226aebd689c3d240
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fdb0bd26ebe97b5f93a04e31b1cb1921c4059516
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552669"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329762"
 ---
 # <a name="additional-reference"></a>その他の参照情報
 
-このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足のリファレンス情報を提供します。
+このセクションのトピックでは、Xbox Live サービスとエンターテイメント検出サービス (EDS) に関する補足リファレンス情報を提供します。
 
 <a id="ID4EZ"></a>
 
@@ -27,7 +25,7 @@ ms.locfileid: "7552669"
 
 [承認のタイプ](authorizationtypes.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使用される標準的な認証の種類について説明します。
+&nbsp;&nbsp;Xbox Live サービスで使用される標準の承認の種類について説明します。
 
 [データ型の概要](datatypeoverview.md)
 
@@ -35,7 +33,7 @@ ms.locfileid: "7552669"
 
 [EDS の補助 API](eds-apis.md)
 
-&nbsp;&nbsp;EDS の補助の Api について説明します。
+&nbsp;&nbsp;EDS の補助 Api について説明します。
 
 [EDS 承認](edsauthorization.md)
 
@@ -65,7 +63,7 @@ ms.locfileid: "7552669"
 
 [標準の HTTP 要求および応答ヘッダー](httpstandardheaders.md)
 
-&nbsp;&nbsp;Xbox Live サービス要求を行うときに使用する標準的な HTTP ヘッダーを説明します。
+&nbsp;&nbsp;Xbox Live サービス要求を作成するときに使用される標準の HTTP ヘッダーを説明します。
 
 [標準の HTTP 状態コード](httpstatuscodes.md)
 

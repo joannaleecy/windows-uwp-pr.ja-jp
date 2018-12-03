@@ -2,28 +2,26 @@
 title: UpdateMetadataRequest (JSON)
 assetID: 0bc210e3-c1dc-9267-e322-aadb9f0a074a
 permalink: en-us/docs/xboxlive/rest/json-updatemetadatarequest.html
-author: KevinAsgari
 description: " UpdateMetadataRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b7a3d90e5a69807e3ac9532a58a845568c93f2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a76e4b12e0ffadb112913775b500ac0d39d413d5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563753"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337475"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-このメタデータ クリップを更新する必要があります。 
+このメタデータは、クリップを更新する必要があります。 
 <a id="ID4EN"></a>
 
  
 ## <a name="updatemetadatarequest"></a>UpdateMetadataRequest
  
-UpdateMetadataRequest オブジェクトでは、次の仕様があります。
+UpdateMetadataRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -36,7 +34,7 @@ UpdateMetadataRequest オブジェクトでは、次の仕様があります。
  
 ## <a name="sample-json-syntax"></a>JSON 構文の例
  
-ユーザーのクリップ名と認知度を変更するには。
+ユーザーのクリップの名前を変更して表示します。
  
 
 ```json

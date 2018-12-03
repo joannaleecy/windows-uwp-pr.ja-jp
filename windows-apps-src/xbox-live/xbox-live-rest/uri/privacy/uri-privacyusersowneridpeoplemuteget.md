@@ -2,19 +2,17 @@
 title: GET (/users/{ownerId}/people/mute)
 assetID: 49b6c830-95f7-3200-0e46-0a1af573971c
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemuteget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/people/mute)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9c5a1f95873028d38dfacea9d91393ab7dba12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 94e2bf4d04619ffa3348ae08fc37964cdc58e7b5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575889"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338009"
 ---
 # <a name="get-usersowneridpeoplemute"></a>GET (/users/{ownerId}/people/mute)
 ユーザーのミュートの一覧を取得します。
@@ -34,7 +32,7 @@ ms.locfileid: "7575889"
 
 ## <a name="remarks"></a>注釈
 
-この URI にターゲットを指定すると、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合のみ、そのユーザーを返します。
+ターゲットを指定すると場合、この URI は、ユーザーがない場合、ユーザーがミュートの一覧で、空の場合、そのユーザーのみを返します。
 
 <a id="ID4EZ"></a>
 
@@ -43,7 +41,7 @@ ms.locfileid: "7575889"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの id。 可能な値は、"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4EEB"></a>
 
@@ -68,8 +66,8 @@ ms.locfileid: "7575889"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの妥当性を確認した後。 値の例: <code>1</code>、<code>vnext</code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: <code>1</code>、<code>vnext</code>します。 最大サイズ: なし。|
 | Accept| string| コンテンツの種類の受け入れられる。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4EPE"></a>
@@ -84,14 +82,14 @@ ms.locfileid: "7575889"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| OK| ミュートの一覧については要求が成功した場合。|
+| 200| OK| ミュート リストの要求が成功した場合。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| Not Found します。| URI で指定された所有者は存在しません。|
+| 404| 見つかりません。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E3G"></a>
 
@@ -102,7 +100,7 @@ ms.locfileid: "7575889"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例: <code>application/json</code>|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34|
-| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
+| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 例: <code>no-cache, no-store</code>|
 
 <a id="ID4ETAAC"></a>
 

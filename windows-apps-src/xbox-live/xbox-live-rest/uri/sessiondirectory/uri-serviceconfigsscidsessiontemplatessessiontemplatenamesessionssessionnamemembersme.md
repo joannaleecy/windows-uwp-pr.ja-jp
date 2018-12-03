@@ -2,19 +2,17 @@
 title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 assetID: a6c2fa17-8bed-d0df-d7ff-db1aa60f44b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc5fed7a9bbf18f04683875ba6a847601459f61
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b0ecadb543434383ef32c7fd2a749760d5bcc98
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566843"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329765"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me
 セッション メンバーを削除する削除操作をサポートしています。
@@ -28,7 +26,7 @@ sessiondirectory.xboxlive.com
  
 ## <a name="remarks"></a>注釈
 
-セッション メンバーのリソースのすべての操作では、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。
+セッション メンバーのリソースのすべての操作は、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。
 
 <a id="ID4EAB"></a>
 
@@ -37,7 +35,7 @@ sessiondirectory.xboxlive.com
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 | セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
 

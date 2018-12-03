@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/groups/{moniker}/broadcasting/count
 assetID: 535c8d46-7001-c31e-3e9d-82ad275095ae
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcastingcount.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/groups/{moniker}/broadcasting/count"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: dbfe207483f5814d2cd32ffcd5ac651c0ab5aa52
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a39bc9c3302ba26949700774997355a216fe70d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563809"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330224"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcastingcount"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting/count
 アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI 内に表示される XUID に関連します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -29,7 +27,7 @@ ms.locfileid: "7563809"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | xuid| string| Xbox ユーザー ID (XUID)、ユーザー、グループ内の Xuid に関連します。| 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点でのみ受け入れたモニカーでは、大文字の 'P'"People"でです。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4E4B"></a>
 

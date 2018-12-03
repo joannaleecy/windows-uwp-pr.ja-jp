@@ -1,19 +1,17 @@
 ---
 title: ゲームへの招待を送信する
-author: KevinAsgari
 description: Xbox Live Multiplayer Manager を使用して、プレイヤーにゲームの招待の送信を許可する方法について説明します。
 ms.assetid: 8b9a98af-fb78-431b-9a2a-876168e2fd76
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, ゲームへの招待
 ms.localizationpriority: medium
-ms.openlocfilehash: 512e0d33fb71d85486b1e12513977af250c431c6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 85aa45558d1443638ba7dd50dbea8923125ef664
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555583"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324864"
 ---
 # <a name="send-game-invites"></a>ゲームへの招待を送信する
 

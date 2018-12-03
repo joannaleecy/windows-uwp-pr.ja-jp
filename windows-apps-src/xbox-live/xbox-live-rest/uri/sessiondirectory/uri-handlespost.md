@@ -2,19 +2,17 @@
 title: POST (/handles)
 assetID: 21f3e289-0b0e-2731-befb-bd4c0d71973e
 permalink: en-us/docs/xboxlive/rest/uri-handlespost.html
-author: KevinAsgari
 description: " POST (/handles)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: aa749dac2638dbdb1f474300e9799e3e67827079
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ed3482b8e629749d294ed25944db16372cc7fee6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554350"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335730"
 ---
 # <a name="post-handles"></a>POST (/handles)
 ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。
@@ -33,7 +31,7 @@ ms.locfileid: "7554350"
 
 ## <a name="remarks"></a>注釈
 
-現在のアクティビティ セッションを設定するのには、この HTTP/REST メソッドを使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。 要求本文には、JSON ファイルで、「アクティビティ」の種類] フィールドに**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。 応答本文は取得されません。 セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。
+現在のアクティビティのセッションを設定するは、この HTTP/REST メソッドを使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。 要求本文には、JSON ファイルで、「アクティビティ」の種類] フィールドに**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。 応答本文は取得されません。 セッションの参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。
 
 この POST メソッドは、セッションへのハンドルによって指定されたユーザーを招待するも使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。 このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型フィールド「招待」に設定します。 応答本文では、招待ハンドルです。
 
@@ -57,7 +55,7 @@ ms.locfileid: "7554350"
 <a id="ID4E1B"></a>
 
 
-### <a name="request-body-for-setting-activity"></a>要求本文のアクティビティの設定
+### <a name="request-body-for-setting-activity"></a>要求本文のアクティビティを設定します。
 
 
 ```cpp

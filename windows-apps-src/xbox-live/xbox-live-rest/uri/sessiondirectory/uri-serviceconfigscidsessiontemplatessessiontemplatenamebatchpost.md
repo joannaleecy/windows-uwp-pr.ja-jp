@@ -2,19 +2,17 @@
 title: POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)
 assetID: 1a0a62ca-e120-e705-3c93-efd4697e2ccf
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigscidsessiontemplatessessiontemplatenamebatchpost.html
-author: KevinAsgari
 description: " POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b132e74082c22e381e0ca3c5e568fcca79fd879
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 833b3c6b532dd65856342678d646798c5f24a6c1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567038"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350924"
 ---
 # <a name="post-serviceconfigsscidsessiontemplatessessiontemplatenamebatch"></a>POST (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch)
 複数の Xbox ユーザー Id には、バッチ クエリを作成します。
@@ -34,11 +32,11 @@ ms.locfileid: "7567038"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、複数の Xbox ユーザー Id、セッション テンプレート レベルでのバッチのクエリを作成します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync**でラップすることができます。
+この HTTP/REST メソッドでは、複数の Xbox ユーザー Id、セッション テンプレート レベルでバッチ クエリを作成します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync**でラップすることができます。
 
-2015 マルチプレイヤーを組み合わせます多くのクエリを 1 つの呼び出しにすべてのクエリが同じである場合、 *xuid*クエリ文字列パラメーターで表される、さまざまな Xbox ユーザー Id (Xuid) を処理します。 クエリ文字列パラメーターと、応答は、通常のクエリやバッチ クエリの同じであるに注意してください。
+2015 マルチプレイヤーを組み合わせます多くのクエリを 1 つの呼び出しにすべてのクエリが同じ場合、 *xuid*がクエリ文字列パラメーターで表されるさまざまな Xbox ユーザー Id (Xuid) を処理します。 クエリ文字列パラメーターと、応答は、定期的なクエリおよびバッチ クエリの同じである注意してください。
 
-バッチ クエリでは、各 XUID に属するセッションは、 *xuid*パラメーターが要求で示された順番で応答に書き込まれます。 同じセッションと一致する各*xuid*に 1 回、応答を複数回のことができます。
+バッチ クエリでは、各 XUID に属するセッションは、 *xuid*パラメーターが要求されると同じ順序で応答に書き込まれます。 同じセッションと一致する各*xuid*に 1 回、応答を複数回のことができます。
 
 <a id="ID4EKB"></a>
 
@@ -47,7 +45,7 @@ ms.locfileid: "7567038"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 
 <a id="ID4EVB"></a>
@@ -59,17 +57,17 @@ ms.locfileid: "7567038"
 
 | <b>パラメーター</b>| <b>型</b>| <b>説明</b>|
 | --- | --- | --- | --- | --- | --- | --- |
-| キーワード| string| キーワード、たとえば、"foo"を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
+| キーワード| string| キーワード、たとえば、"foo"a を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID で、たとえば、「123」、セッションをクエリに含めます。 既定では、ユーザーに含まれているため、セッション内でアクティブにある必要があります。 |
 | 予約| boolean| セッションが含まれる場合は true、ユーザーは、予約済みプレイヤーとして設定されますが、アクティブなプレイヤーが参加していません。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
-| 非アクティブです| boolean| ユーザーが受け入れたがアクティブにプレイしていないセッションを 場合は true。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
+| 非アクティブです| boolean| True に、ユーザーが受け入れたがアクティブに再生されていないセッションを含めます。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
 | プライベート| boolean| プライベート セッションを含める場合は true。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
 | visibility| string| セッションの可視性の状態。 設定可能な値は、 <b>MultiplayerSessionVisibility</b>によって定義されます。 このパラメーターは、「開く」に設定されている場合、クエリが開いている唯一のセッションを含める必要があります。 <i>プライベート</i>のパラメーターを設定する必要があります「プライベート」に設定されている場合を true に設定します。 |
-| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、2 の値は、2 の主なセッションのバージョンでのみそのセッションを指定します。 または含まれている小さい必要があります。 バージョン番号は、要求のコントラクト バージョン mod 100 以内である必要があります。 |
-| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は、0 ~ 100 の間にある必要があります。 |
+| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、2 の値は、2 のセッションのメジャー バージョンとその専用のセッションを指定します。 または含まれている小さい必要があります。 バージョン番号は、要求のコントラクト バージョン mod 100 以下である必要があります。 |
+| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は 0 ~ 100 の間にある必要があります。 |
 
 
-*プライベート*または*予約*のいずれかを true に設定するには、セッションにサーバー レベルのアクセスが必要です。 代わりに、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
+*プライベート*または*予約*のいずれかを true に設定すると、セッションにサーバー レベルのアクセスが必要です。 代わりに、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
 
 <a id="ID4EGF"></a>
 

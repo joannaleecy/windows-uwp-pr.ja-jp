@@ -2,19 +2,17 @@
 title: Player (JSON)
 assetID: eaf6d082-869b-d2d3-d548-5cef65e54541
 permalink: en-us/docs/xboxlive/rest/json-player.html
-author: KevinAsgari
 description: " Player (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0454f364bf2612c88b8f212ba935872968ce2476
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a5967cbfecd47c5675926bd45939442c45dda7b6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558574"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329562"
 ---
 # <a name="player-json"></a>Player (JSON)
 ゲーム セッションにプレイヤーのデータが含まれています。 
@@ -27,7 +25,7 @@ ms.locfileid: "7558574"
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| customData| 8 ビットの符号なし整数の配列| Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。 この値は、サーバーに不透明です。| 
+| customData| 8 ビット符号なし整数の配列| Base64 1024 バイトは、ゲーム固有のプレイヤーのデータをエンコードします。 この値は、サーバーに不透明です。| 
 | ゲーマータグ| string| ゲーマータグ-は最大 15 文字、プレイヤーのします。 クライアントは、プレイヤーを識別するために、UI でこの値を使用する必要があります。 | 
 | isCurrentlyInSession| ブール値| プレイヤーがセッションで現在使用されてまたはセッションを抜けたかどうかを示します。| 
 | seatIndex| 32 ビット符号付き整数| セッション内のプレイヤーのインデックス。| 

@@ -2,19 +2,17 @@
 title: Reward (JSON)
 assetID: d1c92e8a-afbc-22c5-c0b5-6063963f8c4d
 permalink: en-us/docs/xboxlive/rest/json-reward.html
-author: KevinAsgari
 description: " Reward (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 41b8aafc25c3f8ae8ca677f8049235f327c0e36e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581850"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334366"
 ---
 # <a name="reward-json"></a>Reward (JSON)
 実績に関連付けられているリワードです。
@@ -23,14 +21,14 @@ ms.locfileid: "7581850"
 
 ## <a name="reward"></a>リワード
 
-リワード オブジェクトでは、次の仕様があります。
+リワード オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | name| string| リワードのユーザーに表示される名前です。|
 | description| string| ユーザーに表示されるリワードの説明です。|
 | value| string| リワードの値。|
-| type| RewardType 列挙型| リワードの種類: <ul><li>無効 (0): 不明なおよびサポートされていないリワード型が構成されています。</li><li>(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</li><li>inApp (2): リワードが定義されているし、タイトルによって配信します。</li><li>アート (3): リワードは、デジタル資産です。</li></ul> | 
+| type| RewardType 列挙型| リワードの種類: <ul><li>無効 (0): 不明なおよびサポートされていないリワードの種類が構成されています。</li><li>(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</li><li>inApp (2): リワードが定義されているし、タイトルによって配信します。</li><li>アート (3): リワードは、デジタル資産です。</li></ul> | 
 | valueType| ProgressValueDataType 列挙型| 値の種類です。 詳細については、[要件 (JSON)](json-requirement.md)を参照してください。|
 
 <a id="ID4EBD"></a>

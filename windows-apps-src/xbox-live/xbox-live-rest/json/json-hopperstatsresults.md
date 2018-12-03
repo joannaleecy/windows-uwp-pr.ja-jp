@@ -2,19 +2,17 @@
 title: HopperStatsResults (JSON)
 assetID: 91927da1-2e97-f7bc-ae62-7e0e9966b98e
 permalink: en-us/docs/xboxlive/rest/json-hopperstatsresults.html
-author: KevinAsgari
 description: " HopperStatsResults (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f1322d2c22e65c33667ea409b10d9209628d3b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 38e345fc20e92cdf6446c6ae1100e347fe634eff
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563163"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329510"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 
@@ -22,13 +20,13 @@ ms.locfileid: "7563163"
 
   
  
-HopperStatsResults JSON オブジェクトでは、次の仕様があります。
+HopperStatsResults JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | hopperName| string| 選択したホッパーの名前です。| 
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
-| カタログの作成| 32 ビット符号付き整数| ホッパーでマッチを待っているユーザーの数。| 
+| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。| 
   
 <a id="ID4EW"></a>
 

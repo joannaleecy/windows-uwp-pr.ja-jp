@@ -1,19 +1,17 @@
 ---
 title: Xbox Live とは
-author: KevinAsgari
 description: Xbox Live サービスがゲームにどのように役立つかについて説明します。
 ms.assetid: 5a402113-b485-46f3-a30e-73f4b71492b6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 6962db1c6677cbdecb04148afa94127d26bf88a0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ece18c49318ea6fbea58983434ae67ca862d168
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581473"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328283"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 

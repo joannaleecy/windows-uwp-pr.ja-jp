@@ -2,19 +2,17 @@
 title: /inventory/{itemID}
 assetID: e53242a3-e74d-77a2-4427-62ef7954c731
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurl.html
-author: KevinAsgari
 description: " /inventory/{itemID}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b551daee0f9b7eba898c2b04dcd150129b8e6d65
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adac175675230e107b3066d1d8f955e660bdbd00
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552612"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339758"
 ---
 # <a name="inventoryitemid"></a>/inventory/{itemID}
 特定のインベントリ項目の詳細情報の完全なセットにアクセスします。 これらの Uri のドメインが`inventory.xboxlive.com`します。
@@ -26,7 +24,7 @@ ms.locfileid: "7552612"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID| 
+| itemID| string| 各ユーザーには単数形インベントリ項目に一意の ID| 
   
 <a id="ID4EPB"></a>
 

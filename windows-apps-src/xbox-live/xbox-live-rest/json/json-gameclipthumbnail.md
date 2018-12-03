@@ -2,33 +2,31 @@
 title: GameClipThumbnail (JSON)
 assetID: 3ed87fc1-734c-d8b5-d908-0ae3359769ed
 permalink: en-us/docs/xboxlive/rest/json-gameclipthumbnail.html
-author: KevinAsgari
 description: " GameClipThumbnail (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fae93f76d9c8647b2d4264463b434d86897e2a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a491b70b8e34c1c736667b50271af7b970b6bb2a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575605"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349851"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができますされ、表示用の適切なものを選択するクライアントまでなります。 
+個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、クライアントを表示用の適切なものを選択することができます。 
 <a id="ID4EN"></a>
 
  
 ## <a name="gameclipthumbnail"></a>GameClipThumbnail
  
-GameClipThumbnail オブジェクトでは、次の仕様があります。
+GameClipThumbnail オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>uri</b>| string| サムネイル画像の URI です。| 
-| <b>fileSize</b>| 32 ビットの符号なし整数| サムネイル画像の合計ファイル サイズ。| 
+| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像のファイルの合計サイズ。| 
 | <b>thumbnailType</b>| ThumbnailType| サムネイル画像の種類です。| 
   
 <a id="ID4EAC"></a>

@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/outbox
 assetID: 0b66b885-15ff-be55-f8be-e6e9d85d087e
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutbox.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/outbox"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a10fbb4b2008a3c953d101111d064c6f06491e10
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88f3f3753aeac99db0a8a53e0a2ddde21d034ac5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566604"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324075"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
-ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスのトレイします。 これらの Uri のドメインが`msg.xboxlive.com`します。
+メッセージの送信のみのアクセスをユーザーには、Xbox LIVE サービスに送信トレイします。 これらの Uri のドメインが`msg.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -28,7 +26,7 @@ ms.locfileid: "7566604"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 | 
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
   
 <a id="ID4EXB"></a>
 
@@ -37,7 +35,7 @@ ms.locfileid: "7566604"
 
 [POST (/users/xuid({xuid})/outbox)](uri-usersxuidoutboxpost.md)
 
-&nbsp;&nbsp;受信者の一覧を指定されたメッセージを送信します。 
+&nbsp;&nbsp;受信者の一覧に指定されたメッセージを送信します。 
  
 <a id="ID4EFC"></a>
 

@@ -2,19 +2,17 @@
 title: ResetReputation (JSON)
 assetID: 15edb5e7-a00b-4188-9b49-9db5774c4a10
 permalink: en-us/docs/xboxlive/rest/json-resetreputation.html
-author: KevinAsgari
 description: " ResetReputation (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: cf6db0ec47e92023fb43c7599fac3dcc9cdd9f0a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d09c8bbc1130f91dfea3d4c35e391dcf9adcf127
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577038"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324633"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
 ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。 
@@ -23,11 +21,11 @@ ms.locfileid: "7577038"
  
 ## <a name="resetreputation"></a>ResetReputation
  
-ResetReputation オブジェクトでは、次の仕様があります。
+ResetReputation オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| fairplayReputation| number| 必要な基本フェアプレイ評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
+| fairplayReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーのフェアプレイ評判スコア。| 
 | commsReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。| 
 | userContentReputation| number| 必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
   

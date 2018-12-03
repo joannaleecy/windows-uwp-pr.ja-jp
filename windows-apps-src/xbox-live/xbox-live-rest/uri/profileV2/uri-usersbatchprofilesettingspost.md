@@ -2,19 +2,17 @@
 title: POST (/users/batch/profile/settings)
 assetID: 2a619148-a626-f413-bda1-a2790063075d
 permalink: en-us/docs/xboxlive/rest/uri-usersbatchprofilesettingspost.html
-author: KevinAsgari
 description: " POST (/users/batch/profile/settings)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b947bf1d9897416623472e078bc49e9ea9df164d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aa029c0cffa369eeb802521b394a52b958b54557
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582071"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337682"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
@@ -37,7 +35,7 @@ ms.locfileid: "7582071"
  
 ## <a name="authorization"></a>Authorization
  
-アクセスしたり、プロファイルを通常の認証トークンと要求のみが必要です。
+プロファイルにアクセスするに通常の認証トークンと要求のみが必要です。
   
 <a id="ID4EOB"></a>
 
@@ -46,7 +44,7 @@ ms.locfileid: "7582071"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビットの符号なし整数| コントラクト バージョンは、Xbox 360 API からこの呼び出しを区別するために 2 に設定する必要があります。| 
+| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 API 呼び出しは、このを区別するために 2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>

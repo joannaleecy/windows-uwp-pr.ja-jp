@@ -2,19 +2,17 @@
 title: DeviceRecord (JSON)
 assetID: aca4f4d3-f9b4-8919-5b6d-5ae0fe11e162
 permalink: en-us/docs/xboxlive/rest/json-devicerecord.html
-author: KevinAsgari
 description: " DeviceRecord (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ecfaf3ff6ee83c2d577614dc613939669ef60d62
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9746706c00a09cd8b64913b4ae8b5c3426551e48
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555286"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325250"
 ---
 # <a name="devicerecord-json"></a>DeviceRecord (JSON)
 、その種類とそれに対するアクティブなタイトルなど、デバイスに関する情報。 
@@ -23,7 +21,7 @@ ms.locfileid: "7555286"
  
 ## <a name="devicerecord"></a>DeviceRecord
  
-DeviceRecord オブジェクトでは、次の仕様があります。
+DeviceRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

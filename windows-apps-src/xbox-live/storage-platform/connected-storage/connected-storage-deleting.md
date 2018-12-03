@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージを使ったデータの削除
-author: aablackm
 description: 接続ストレージを使って BLOB およびコンテナー データを削除する方法について説明します。
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 94e77a1059f4c114c94969763317f380a7c49618
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 756de46d05cdbf64d85491b4e8c6f783122f2356
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569484"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322689"
 ---
 # <a name="use-connected-storage-to-delete-data"></a>接続ストレージを使ったデータの削除
 

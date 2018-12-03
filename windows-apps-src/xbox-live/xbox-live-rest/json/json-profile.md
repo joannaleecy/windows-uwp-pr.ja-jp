@@ -2,44 +2,42 @@
 title: Profile (JSON)
 assetID: b92b1750-c2df-39b6-6c5c-f9e8068c8097
 permalink: en-us/docs/xboxlive/rest/json-profile.html
-author: KevinAsgari
 description: " Profile (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 444f765101c1067b6a13125099040c64197848e4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7299fcb4d375a3fc35ad67306b70f5fa4afde963
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581909"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342470"
 ---
 # <a name="profile-json"></a>Profile (JSON)
-ユーザーの個人用プロファイルの設定。 
+ユーザーの個人用プロファイル設定します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="profile"></a>プロファイル
  
-プロファイル オブジェクトでは、次の仕様があります。
+プロファイル オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実名」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
-| GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実名」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。| 
+| AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
+| GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。| 
 | Gamertag| string| ユーザーのゲーマータグです。| 
 | AppDisplayPicRaw| string| アプリを直接表示 pic URL (下記参照)。| 
 | GameDisplayPicRaw| string| 未加工のゲーム表示 pic URL (下記参照)。| 
 | AccountTier| string| ユーザーには、アカウントの種類はありますか。 ゴールド、シルバー、または FamilyGold かどうか。| 
-| TenureLevel| 32 ビットの符号なし整数| 数年間、ユーザーされた Xbox Live を使用しますか。| 
-| ゲーマースコア| 32 ビットの符号なし整数| ユーザーのゲーマー スコア。| 
+| TenureLevel| 32 ビット符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
+| ゲーマースコア| 32 ビット符号なし整数| ユーザーのゲーマー スコア。| 
   
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の図' またはその XboxOne ゲーマー アイコン、プライバシーに応じてであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
+> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定は、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
 
 
  
@@ -47,7 +45,7 @@ ms.locfileid: "7581909"
  
 形式: png
  
-サイズ: 64 x 64, 208 x 208, 424 x 424
+サイズ: 64 x 64、208 x 208、424 x 424
  
 <a id="ID4E2D"></a>
 

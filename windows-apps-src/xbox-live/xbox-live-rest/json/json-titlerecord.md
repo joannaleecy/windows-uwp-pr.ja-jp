@@ -2,19 +2,17 @@
 title: TitleRecord (JSON)
 assetID: 8e1bd699-e408-67c8-31da-2d968adfbc21
 permalink: en-us/docs/xboxlive/rest/json-titlerecord.html
-author: KevinAsgari
 description: " TitleRecord (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e4cdec869727cb6182d86616782c640020a0b7ac
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 89baf7e9a737428d492246f1647a561a4a8170cf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7570863"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340475"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
 最終更新タイムスタンプとその名前を含む、タイトルに関する情報。 
@@ -23,17 +21,17 @@ ms.locfileid: "7570863"
  
 ## <a name="titlerecord"></a>TitleRecord
  
-TitleRecord、DeviceRecord や、LastSeenRecord に含める必要がありますが、両方を含めない場合があります。
+TitleRecord、DeviceRecord や、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。
  
-TitleRecord オブジェクトでは、次の仕様があります。
+TitleRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| レコードのタイトル Id。| 
+| id| 32 ビット符号なし整数| レコードのタイトル Id。| 
 | name| string| ローカライズされたタイトルの名前。| 
 | activity (アクティビティ)| [ActivityRecord](json-activityrecord.md)| タイトルでのユーザーのアクティビティ。 のみ深度"all"が返されます。| 
 | lastModified| DateTime| レコードが最後に更新されたときにタイムスタンプを UTC です。| 
-| 配置| string| ユーザー インターフェイス内でアプリの場所です。 可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。 既定では、「完全」アプリを配置することができないデバイスです。| 
+| 配置| string| ユーザー インターフェイス内でアプリの場所です。 可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。 既定では、「完全」のアプリを配置することができないデバイスです。| 
 | 状態| string| タイトルの状態。 「アクティブ」や「非アクティブ」にすることができます (既定)。 タイトルでは、アクティビティおよび非アクティブの独自の基準に基づいて状態を設定します。| 
   
 <a id="ID4E6C"></a>

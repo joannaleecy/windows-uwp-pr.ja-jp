@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤー サービスの構成
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー サービスを構成する方法について説明します。
 ms.assetid: d042d4d5-1c75-4257-8a6f-07eddd39ca7e
-ms.author: kevinasg
 ms.date: 07/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, サービスの構成, セッション テンプレート, カスタム招待文字列, SmartMatch ホッパー
 ms.localizationpriority: medium
-ms.openlocfilehash: 44cf15cf63ce1ebbb7d205af44b07149e1ee3a4a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bf829069824443cdc1c8c0658fcfdfcbe72d0b93
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555136"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337518"
 ---
 # <a name="multiplayer-service-configuration"></a>マルチプレイヤー サービスの構成
 Xbox Live が提供するサービスをタイトルで利用するには、最初にサービス構成を定義する必要があります。 このサービス構成は Xbox Live クラウド サービスに存在し、タイトル/ゲームを実行しているデバイスと Xbox Live サービスが対話する方法が定義されています。

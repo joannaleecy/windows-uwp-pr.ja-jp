@@ -2,19 +2,17 @@
 title: /handles/{handleId}
 assetID: 5b722d3e-fe80-fec5-a26b-8b3db6422004
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleid.html
-author: KevinAsgari
 description: " /handles/{handleId}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1711cf9ffeaafaa3bf20ac455dc9314245546b9a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577061"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349353"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
 識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。 

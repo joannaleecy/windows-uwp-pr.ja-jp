@@ -1,19 +1,17 @@
 ---
 title: オフラインのベスト プラクティス
-author: KevinAsgari
 description: Xbox Live 対応のタイトルのオフライン シナリオを処理するためのベスト プラクティスについて説明します。
 ms.assetid: 6290dd67-1145-4fe2-8ada-c3a29a9ad29a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, オフライン
 ms.localizationpriority: medium
-ms.openlocfilehash: a552f275a69fde67f22d25a79b5b8c318c4f8dc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5680b045873ebf6eed1422cb915f3f53df748790
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557518"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351056"
 ---
 # <a name="best-practices-for-offline"></a>オフラインのベスト プラクティス
 

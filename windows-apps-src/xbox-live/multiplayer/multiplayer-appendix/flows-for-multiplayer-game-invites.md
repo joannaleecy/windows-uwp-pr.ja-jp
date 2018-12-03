@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤー ゲームへの招待に関する更新されたフロー
-author: KevinAsgari
 description: Xbox Live のマルチプレイヤー ゲームへの招待を改善するために更新されたフローを説明します。
 ms.assetid: 1569588e-3bbc-47d3-8b7d-cc9774071adc
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: 257dea8d3a69195b81e23dd43f304eabf99779ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1092c84521271e996db0b89630d22f7e51727bfa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552941"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348592"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a>マルチプレイヤー ゲームへの招待に関する更新されたフロー
 

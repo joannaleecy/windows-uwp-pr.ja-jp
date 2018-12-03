@@ -1,18 +1,16 @@
 ---
-author: KevinAsgari
 title: Xbox Live
 description: Xbox Live サービスを使用して、ゲームを Xbox Live ゲーミング ネットワークに接続する方法について説明します。
-ms.author: kevinasg
 ms.date: 05/30/2017
 ms.topic: article
 keywords: windows 10, uwp, ゲーム, xbox, xbox live
 ms.localizationpriority: medium
-ms.openlocfilehash: 5388e0e667a342bc6dc6a666796c0e8be3ae86e3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1789bb7a758a62bdae8cc4c890541b595e347baa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556175"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351162"
 ---
 # <a name="xbox-live"></a>Xbox Live
 

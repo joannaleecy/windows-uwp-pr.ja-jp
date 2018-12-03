@@ -2,19 +2,17 @@
 title: User (JSON)
 assetID: dbc733e4-0348-0e3d-1f55-17b465e599d6
 permalink: en-us/docs/xboxlive/rest/json-user.html
-author: KevinAsgari
 description: " User (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 255fe2918f10bb3b941cf2023ff358c58e191cbf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c1b3a34ef329696d51e615dd79d57783a132d05
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566718"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347654"
 ---
 # <a name="user-json"></a>User (JSON)
 ユーザーのランキング データが含まれています。 
@@ -23,7 +21,7 @@ ms.locfileid: "7566718"
  
 ## <a name="user"></a>ユーザー
  
-ユーザー オブジェクトでは、次の仕様があります。
+ユーザー オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

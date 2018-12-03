@@ -1,19 +1,17 @@
 ---
 title: リッチ プレゼンスのベスト プラクティス
-author: KevinAsgari
 description: Xbox Live のリッチ プレゼンスを使うためのベスト プラクティスについて説明します。
 ms.assetid: 51a84137-37e4-4f98-b3d3-5ae70e27753d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b671ef58850fde91f2bf19167672cc20157959a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75268575dd9dce59141d8909a59909bc973edbec
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564548"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347773"
 ---
 # <a name="rich-presence-best-practices"></a>リッチ プレゼンスのベスト プラクティス
 

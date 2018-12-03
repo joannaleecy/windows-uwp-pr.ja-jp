@@ -2,19 +2,17 @@
 title: GameClipState 列挙型
 assetID: 97fe5c1e-f7b5-537e-69eb-8284b69cd3e1
 permalink: en-us/docs/xboxlive/rest/gvr-enum-gameclipstate.html
-author: KevinAsgari
 description: " GameClipState 列挙型"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce2ec90377dcd78797fa5708577f24028c3ccf2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f7b20224eeab1b98c7c80f0e4b551420b5a15e7d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577943"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335322"
 ---
 # <a name="gameclipstate-enumeration"></a>GameClipState 列挙型
 GameClipState 列挙型をについて説明します。 
@@ -27,14 +25,14 @@ GameClipState 列挙型をについて説明します。
 | --- | --- | 
 | None | ゲーム クリップ サービスの状態が、不明なまたは設定されていません。| 
 | PendingUpload | ゲーム クリップ サービスは、資産のアップロードを待機しています。| 
-| PendingDelete | ゲーム クリップは、削除、キューにです。 (実質的に「は」)。| 
+| PendingDelete | ゲーム クリップは削除のキューです。 (実質的には、「削除」)。| 
 | 処理済み | ゲーム クリップには、すべての処理が完了します。| 
 | Processing| ゲーム クリップが処理されている (エンコーディングは、サムネイルなどです。)。| 
-| Publishing| ゲーム クリップ アセットが公開されています。| 
-| Published| ゲーム クリップ アセットが公開された – この状態は、すべてのセットを表示することを示します。| 
-| フラグ| ゲーム クリップは実施のフラグが設定されています。| 
+| Publishing| ゲーム クリップのアセットが公開されています。| 
+| Published| ゲーム クリップのアセットが公開された – この状態は、すべてのセットを表示することを示します。| 
+| フラグが設定| ゲーム クリップを適用してマークされています。| 
 | 禁止| ゲーム クリップが禁止されましたが削除されていません。| 
 | Uploaded| ゲーム クリップには、アップロードが完了しました。| 
 | 削除済み| ゲーム クリップが削除されました。| 
-| エラー| ゲーム クリップがエラー状態と使用できなくなります。| 
+| エラー| ゲーム クリップはエラー状態と使用できなくなります。| 
   

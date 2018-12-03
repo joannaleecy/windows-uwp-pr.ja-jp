@@ -1,19 +1,17 @@
 ---
 title: Xbox Live ソーシャル プラットフォーム - ゲームおよびゲーマー向け
-author: aablackm
 description: Xbox Live ソーシャル プラットフォーム サービスについて説明するリンクを示します。
 ms.assetid: 27b85218-60f3-4eb0-9f7e-fe90e027db5c
-ms.author: aablackm
 ms.date: 09/18/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c02fc7510f3856b7e31aad4d47fcf07d935dd126
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9bc835d5980aacc414b173d2ee3896ae14392790
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559339"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344772"
 ---
 # <a name="xbox-live-social-platform---for-games-and-gamers"></a>Xbox Live ソーシャル プラットフォーム - ゲームおよびゲーマー向け
 

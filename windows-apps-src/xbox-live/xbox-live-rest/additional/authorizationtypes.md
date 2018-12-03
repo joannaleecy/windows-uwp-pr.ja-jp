@@ -2,23 +2,21 @@
 title: 承認のタイプ
 assetID: 9e4d41ee-9078-7d3f-9393-20c88c20c4fd
 permalink: en-us/docs/xboxlive/rest/authorizationtypes.html
-author: KevinAsgari
 description: " 承認のタイプ"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0269b3e95e2c5b3e36c1c199e5af36527639a149
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48bac0cedfb47c2ff1efcdc9c07ffce8330466e2
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558118"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329487"
 ---
 # <a name="authorization-types"></a>承認のタイプ
  
-Xbox Live サービスは、要求と承認のタイプの数を使用します。 このトピックでは、標準的な認証の種類について説明します。
+Xbox Live サービスは、要求と承認のタイプの数値を使用します。 このトピックでは、標準的な認証の種類について説明します。
  
 | 種類| 説明| 
 | --- | --- | 

@@ -1,18 +1,16 @@
 ---
 title: 非同期 C API の呼び出しパターン
-author: aablackm
 description: XSAPI C API の非同期 C API 呼び出しパターンについて説明します。
-ms.author: aablackm
 ms.date: 06/10/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム,
 ms.localizationpriority: medium
-ms.openlocfilehash: b247a69e0def8a2e3a62a8c05a8fac3106bded35
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: edc6248a363b844d94c8fa03ab7ce071cc941908
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578005"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347057"
 ---
 # <a name="calling-pattern-for-xsapi-flat-c-layer-async-calls"></a>XSAPI フラット C レイヤーの非同期呼び出しの呼び出しパターン
 
@@ -65,7 +63,7 @@ typedef struct AsyncBlock
 * *context* - データをコールバック関数に渡すことができるようにします。
 * *queue* - **AsyncQueue** を指定するハンドルである async_queue_handle_t。 これが設定されていない場合、既定のキューが使用されます。
 
-各非同期 API を呼び出すのヒープでは、新しい AsyncBlock を作成する必要があります。  AsyncBlock の完了コールバックが呼び出され、削除し、まで、AsyncBlock はライブする必要があります。
+各非同期 API を呼び出すのヒープで新しい AsyncBlock を作成する必要があります。  まで、AsyncBlock の完了コールバックが呼び出され、削除し、AsyncBlock はライブする必要があります。
 
 > [!IMPORTANT]
 > **AsyncBlock** は、**非同期タスク**が完了するまでメモリ内に存在している必要があります。 動的に割り当てられる場合、AsyncBlock の**完了コールバック**内で削除できます。
@@ -273,7 +271,7 @@ DWORD WINAPI BackgroundWorkThreadProc(LPVOID lpParam)
 }
 ```
 
-お勧め Win32 セマフォ オブジェクトを使用して実装を使用することをお勧めします。  代わりに実装する場合、Win32 イベント オブジェクトを使用することを確認する必要があります忘れないコードで、イベントなど。
+お勧め Win32 セマフォ オブジェクトを使用して実装を使用することをお勧めします。  代わりに実装する場合、Win32 イベント オブジェクトを使用することを確認する必要があります忘れないすべてのイベントをコードで次のように。
 
 ```cpp
     case WAIT_OBJECT_0: 

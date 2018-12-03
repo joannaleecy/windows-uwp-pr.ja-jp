@@ -2,19 +2,17 @@
 title: /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 assetID: edcb19bd-87a5-732b-0c45-6f7355fc2dd1
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidlistspinslistnameindex.html
-author: KevinAsgari
 description: " /users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d95d3f0f171fa0e529d57ab5deca8160ddc3c43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b56b563c72c206340aa2c1ce9f73aa8dfe50809d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572678"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339636"
 ---
 # <a name="usersxuidxuidlistspinslistnameindexindexinsertindexinsertindex"></a>/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}
 一覧内の項目を移動します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
@@ -39,7 +37,7 @@ ms.locfileid: "7572678"
 
 [POST](uri-usersxuidlistspinslistnameindexpost.md)
 
-&nbsp;&nbsp;リスト内の項目をリスト内の異なる位置に移動します。
+&nbsp;&nbsp;リスト項目をリスト内の異なる位置に移動します。
  
 <a id="ID4ERC"></a>
 

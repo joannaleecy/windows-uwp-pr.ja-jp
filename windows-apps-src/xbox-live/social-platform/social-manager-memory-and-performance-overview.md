@@ -1,19 +1,17 @@
 ---
 title: Social Manager のメモリーとパフォーマンス
-author: KevinAsgari
 description: Xbox Live Social Manager API マネージャーを使う場合のメモリとパフォーマンスに関する考慮事項について説明します。
 ms.assetid: 2540145e-b8e2-4ab5-9390-65e2c9b19792
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, people
 ms.localizationpriority: medium
-ms.openlocfilehash: 711f04f29321736ae8adc887b54ce752963908c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c6a0a31c8fe82faa644a59147060f9323d42eb0
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554982"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350431"
 ---
 # <a name="social-manager-memory-and-performance-overview"></a>Social Manager のメモリーとパフォーマンスの概要
 

@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤー セッション参照
-author: KevinAsgari
 description: Xbox Live マルチプレイヤーを使用してマルチプレイヤー セッション参照を実装する方法について説明します。
 ms.assetid: b4b3ed67-9e2c-4c14-9b27-083b8bccb3ce
-ms.author: kevinasg
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 227cd378a92fcdfec88e1ae0ccd7173986d37abf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de3ff0afd2526c6cb62bc6b6af148712a997a174
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564526"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329917"
 ---
 # <a name="multiplayer-session-browse"></a>マルチプレイヤー セッション参照
 

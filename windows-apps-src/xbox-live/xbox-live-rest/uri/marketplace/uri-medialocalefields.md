@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/fields
 assetID: 25e0e3ad-3446-41c0-7111-4c23491d5f5b
 permalink: en-us/docs/xboxlive/rest/uri-medialocalefields.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/fields"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 495441a15fbb35f201333dc7dd85c45a7c101c8a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7e7214b41a1cd2d2867e85e9fac55871bd8fa90f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571130"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347447"
 ---
 # <a name="mediamarketplaceidfields"></a>/media/{marketplaceId}/fields
 フィールド トークンにアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -28,7 +26,7 @@ ms.locfileid: "7571130"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EUB"></a>
 

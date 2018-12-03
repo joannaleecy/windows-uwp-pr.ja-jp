@@ -2,27 +2,25 @@
 title: マーケットプレース URI
 assetID: 27b6035f-84b9-67a8-6a12-85c450d18a58
 permalink: en-us/docs/xboxlive/rest/atoc-reference-marketplace.html
-author: KevinAsgari
 description: " マーケットプレース URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 96055bd7a2d4169c15e37b55aa70a94fab128a59
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9fd8112c6e16b3e9d9fb70c34381e88ba5aa6273
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7574052"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330549"
 ---
 # <a name="marketplace-uris"></a>マーケットプレース URI
 
-このセクションでは、 *marketplace*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*市場*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
 
-これらの Uri ドメイン eds.xboxlive.com、inventory.xboxlive.com です。
+これらの Uri のドメインは eds.xboxlive.com inventory.xboxlive.com です。
 
 <a id="ID4EPB"></a>
 
@@ -55,7 +53,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/details](uri-medialocaledetails.md)
 
-&nbsp;&nbsp;返しますプランの詳細とメタデータについての 1 つまたは複数の項目。
+&nbsp;&nbsp;返しますプランの詳細とメタデータについての 1 つまたは複数の項目です。
 
 [/media/{marketplaceId}/fields](uri-medialocalefields.md)
 
@@ -71,11 +69,11 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields](uri-medialocalemetadatamediaitemtypefields.md)
 
-&nbsp;&nbsp;特定の mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。
+&nbsp;&nbsp;指定された mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
-&nbsp;&nbsp;特定のメディア項目の種類のクエリの絞り込み条件にアクセスします。
+&nbsp;&nbsp;指定したメディア項目の種類のクエリの絞り込み条件にアクセスします。
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
@@ -91,7 +89,7 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders](uri-medialocalemetadatamediaitemtypesortorders.md)
 
-&nbsp;&nbsp;利用可能なアクセスは、特定 mediaitem 型と EDS の特定のバージョン向けの注文を並べ替えます。
+&nbsp;&nbsp;利用可能なアクセス mediaitem の特定の種類と EDS の特定のバージョン向けの注文を並べ替えます。
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 

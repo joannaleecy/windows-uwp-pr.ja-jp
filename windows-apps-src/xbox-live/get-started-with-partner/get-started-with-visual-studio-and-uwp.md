@@ -1,19 +1,17 @@
 ---
 title: UWP ゲーム用 Visual Studio の概要
-author: KevinAsgari
 description: UWP ゲーム用に Xbox Live を有効にするように Visual Studio プロジェクトをセットアップする方法について説明します
 ms.assetid: b53bc91f-79db-4d8f-8919-b9144e2d609b
-ms.author: kevinasg
 ms.date: 11/28/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e9809a8abea46d8aade53f26a0b8fd63d803021
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d27dcb1856456e7856306de7ddddc3450b98fec8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562393"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334372"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 

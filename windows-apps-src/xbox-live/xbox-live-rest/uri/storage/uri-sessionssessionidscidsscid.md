@@ -2,19 +2,17 @@
 title: /sessions/{sessionId}/scids/{scid}
 assetID: a33a1002-3b0b-2a7f-f74a-334f66541172
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidsscid.html
-author: KevinAsgari
 description: " /sessions/{sessionId}/scids/{scid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 923c2e2f1570e00bc686fa2e8387094692f98e93
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ae3ade71d4b7847d671fe7f01cdc31b0014f766
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569425"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332491"
 ---
 # <a name="sessionssessionidscidsscid"></a>/sessions/{sessionId}/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

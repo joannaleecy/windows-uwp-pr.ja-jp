@@ -1,19 +1,17 @@
 ---
 title: エラー処理
-author: KevinAsgari
 description: Xbox Live サービス呼び出しを行ったときのエラーを処理する方法について説明します。
 ms.assetid: e433dfbd-488b-44ff-8333-1dcf0329cd60
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, エラー, サービス呼び出し
 ms.localizationpriority: medium
-ms.openlocfilehash: 1728af14afb0840975ad175608da3f0e9b03645d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 637b9da84ef3ae50ea6235ca86e6318ae62acd11
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575836"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337937"
 ---
 # <a name="error-handling"></a>エラー処理
 

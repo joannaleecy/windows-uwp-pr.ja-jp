@@ -2,23 +2,21 @@
 title: GET (/users/{ownerId}/clips)
 assetID: da972b4e-bc38-66f5-2222-5e79d7c8a183
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridclipsget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/clips)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 586f4ea2ac8e7fceffd347bd53f40ac531bbb114
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c52daf4a07914c34f1aadc84a7238771669d65f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561062"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326768"
 ---
 # <a name="get-usersowneridclips"></a>GET (/users/{ownerId}/clips)
 ユーザーのクリップの一覧を取得します。
-これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
 
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EEB)
@@ -34,11 +32,11 @@ ms.locfileid: "7561062"
 
 ## <a name="remarks"></a>注釈
 
-この API を使用すると、ユーザー独自のサービスに保存されているも他のユーザーのクリップのクリップの一覧にさまざまな方法です。 複数のエントリ ポイントは、異なるレベルのデータが返され、クエリ パラメーターによってフィルター処理するためです。 要求で XUID には、URI で指定された所有者が一致すると場合、は、コンテンツの分離がチェックされた後、ユーザーのクリップは返されます。 URI の所有者が要求 XUID が一致しない場合、指定されたユーザーのクリップ返されるプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。
+この API を使用すると、ユーザー独自のサービスに保存されているも他のユーザーのクリップのクリップの一覧にさまざまな方法です。 複数のエントリ ポイントは、異なるレベルのデータが返され、クエリ パラメーターによってフィルター処理するためです。 要求で XUID には、URI で指定された所有者が一致すると場合、は、コンテンツの分離がチェックされた後、ユーザーのクリップは返されます。 URI の所有者に XUID クレームが一致しない場合、指定されたユーザーのクリップ返されるプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。
 
-ユーザーごと、サービス構成 id (scid) は、クエリが最適化されています。 または指定するさらにフィルターを使って、既定値以外の並べ替え順序の下に指定されているいくつかの状況で長い時間がかかるに戻ります。 これは、ユーザーごとのビデオのセットの大規模なより明確です。
+ユーザーごと、サービス構成 id (scid) は、クエリが最適化されています。 または指定するさらにフィルターを使って、既定値以外の並べ替え順序の下に指定されている状況によっては時間がかかりますに戻ります。 これは、ユーザーごとのビデオのセットの大規模なより明確です。
 
-同じ API の呼び出し内で複数のユーザーのリストを取得するバッチ API はありません。 推奨されるパターン (現在) SLS 深くからではユーザーごとに照会します。
+同じ API の呼び出し内で複数のユーザーのリストを取得するバッチ API はありません。 推奨されるパターン (現在) SLS 設計者からではユーザーごとに照会します。
 
 <a id="ID4EEB"></a>
 
@@ -47,7 +45,7 @@ ms.locfileid: "7561062"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"。 最大長: 16 します。|
+| ownerId| string| リソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"です。 最大長: 16 します。|
 
 <a id="ID4EPB"></a>
 
@@ -57,12 +55,12 @@ ms.locfileid: "7561062"
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
 | skipItems| 32 ビット符号付き整数| 省略可能。 N+1 コレクション (つまり、スキップ N 項目) で始まる項目を返します。|
-| continuationToken| 文字列| 省略可能。 特定の継続トークンから項目を返します。 ContinuationToken パラメーターよりも優先 skipItems 両方が提供されている場合。 つまり、continuationToken パラメーターが存在する場合、skipItems パラメーターは無視されます。 最大サイズ: 36 です。|
-| maxItems| 32 ビット符号付き整数| 省略可能。 (SkipItems と範囲の項目を返す continuationToken と組み合わせることができます)、コレクションから返される項目の最大数。 MaxItems が存在しないと、(結果の最後のページが返されていない) 場合でも、maxItems よりも少ないを返す可能性がある場合、サービスは既定値を提供可能性があります。|
-| 順序| Unicode 文字| 省略可能。 (D) escending で一覧が返されるかどうかを指定します (最初に値が最高) または (A) scending (最初に値が最も低い) 注文します。 既定: D.|
-| type| GameClipTypes| 省略可能。 返すクリップの種類のコンマ区切りのセット。 既定: すべて。|
+| continuationToken| 文字列| 省略可能。 特定の継続トークンで始まる項目を返します。 ContinuationToken パラメーターよりも優先 skipItems 場合はどちらも提供されます。 つまり、continuationToken パラメーターが存在する場合、skipItems パラメーターは無視されます。 最大サイズ: 36 です。|
+| maxItems| 32 ビット符号付き整数| 省略可能。 (SkipItems と項目の範囲を返す continuationToken と組み合わせることができます)、コレクションから返される項目の最大数。 MaxItems が存在しないと、(結果の最後のページが返されていない) 場合でも maxItems よりも少ない返す可能性がある場合、サービスは既定値を提供可能性があります。|
+| 順序| Unicode 文字| 省略可能。 (D) escending でリストが返されるかどうかを指定します (最初に値が最高) または (A) scending (最初に値が最も低い) 注文します。 既定: D.|
+| type| GameClipTypes| 省略可能。 返すクリップの種類のコンマ区切りのセット。 既定: すべてします。|
 | イベント Id| string| 省略可能。 EventIDs で結果をフィルタ リングのコンマ区切りのセット。 既定: Null。|
-| 修飾子| string| 省略可能。 クリップを取得するために使用される順序の修飾子を指定します。 <ul><li>作成した - クリップがシステムに日付の順序で返されるを指定します</li><li>評価 - [Top 評価] - クリップがその評価値によって返されるを指定します</li><li>[最も表示] - ビュー - クリップはビューの数によって返されるを指定します。</li></ul><br/> 最大サイズ: 12。 既定値:「作成」されます。| 
+| 修飾子| string| 省略可能。 クリップを取得するために使用する、順序の修飾子を指定します。 <ul><li>作成した - クリップがシステムに日付の順序で返されるを指定します。</li><li>評価 - [Top 評価] - クリップがその評価値によって返されるを指定します</li><li>[最も表示] - ビュー - クリップはビューの数によって返されるを指定します。</li></ul><br/> 最大サイズ: 12。 既定値:「作成」されます。| 
 
 <a id="ID4EPE"></a>
 
@@ -78,7 +76,7 @@ ms.locfileid: "7561062"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。例: 1、vnext します。|
+| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。|
 | Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。|
 | キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。|
 | Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。|
@@ -92,7 +90,7 @@ ms.locfileid: "7561062"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"。|
+| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"です。|
 
 <a id="ID4EOAAC"></a>
 
@@ -180,7 +178,7 @@ ms.locfileid: "7561062"
 
 ## <a name="related-uris"></a>関連する Uri
 
-次の URI は、このドキュメントでは、SCID を指定する追加パス パラメーターを使って、プライマリ チャネルと同じです。 その SCID にそのユーザーのクリップのみが返されます。 要求元のユーザーには、要求された SCID へのアクセスが必要、それ以外の場合 HTTP エラー 403 が返されます。
+次の URI は、このドキュメントでは、SCID を指定する追加パス パラメーターを使って、プライマリものと同じです。 その SCID にそのユーザーのクリップのみが返されます。 要求元のユーザーには、要求された SCID へのアクセスが必要、それ以外の場合 HTTP エラー 403 が返されます。
 
    * **/users/{ownerId}/scids/{scid}/clips**
 

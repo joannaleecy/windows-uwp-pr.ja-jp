@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤー セッション ディレクトリ
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー セッション ディレクトリ (MPSD) について説明します。
 ms.assetid: a9b029ea-4cc1-485a-8253-e1c74184f35e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, MPSD, マルチプレイヤー セッション ディレクトリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d39435f7f6669a0bdb953e0501f69fc80c4d179
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1681fe59533ebaf0db197efb95ca46b828846f5d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573864"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8338421"
 ---
 # <a name="multiplayer-session-directory-mpsd"></a>マルチプレイヤー セッション ディレクトリ (MPSD)
 
@@ -213,7 +211,7 @@ MPSD を呼び出すための推奨方法は、Multiplayer WinRT API および M
 
 ### <a name="using-the-multiplayer-rest-api-to-interact-with-mpsd"></a>Multiplayer REST API を使用した MPSD との対話
 
-タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、 [Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)に保存されているセッション テンプレートと共に、新しいセッションを作成する要求の本文が使われます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}有効な PUT 要求のゼロの差分を示します。
+タイトル、またはそのサービスでは、Multiplayer REST API および Matchmaking REST API への標準 HTTP 呼び出しを使用できます。 REST の機能を直接利用するとき、呼び出し元は、セッション ディレクトリの URI に対して DELETE、PUT、POST、および GET 呼び出しを発行してほとんどの操作を行います。 PUT 要求では、要求本文は既存のセッションにマージされます。 既存のセッションがない場合は、要求本文は[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)に保存されているセッション テンプレートと共に、新しいセッションの作成に使用されます。 すべてのフィールドはオプションで、指定する必要があるのは差分だけです。 そのため、{}ゼロの差分で有効な PUT 要求です。
 
 サーバーのセッションの公式コピーに影響を与えずにマージの結果を返す仮定の PUT 要求を実行するには、クエリ文字列 "?nocommit=true" を PUT 要求に追加できます。
 

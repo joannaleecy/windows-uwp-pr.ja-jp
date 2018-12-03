@@ -2,19 +2,17 @@
 title: 実績 URI
 assetID: 568bbc2c-9746-37ef-3514-99ffc96e3c15
 permalink: en-us/docs/xboxlive/rest/atoc-reference-achievementsv2.html
-author: KevinAsgari
 description: " 実績 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 54886423d564e43cb72e2ff390433997c7a18f1d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cf8ae4bd06abfb1ea9a4d5fe40c869057b68ad93
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575641"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332821"
 ---
 # <a name="achievements-uris"></a>実績 URI
 
@@ -33,7 +31,7 @@ ms.locfileid: "7575641"
 
 [/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
-&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。
+&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績についての詳細を返します。
 
 
 > [!NOTE] 

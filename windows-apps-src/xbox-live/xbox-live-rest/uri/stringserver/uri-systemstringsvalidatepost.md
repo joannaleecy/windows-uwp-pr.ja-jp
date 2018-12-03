@@ -2,19 +2,17 @@
 title: POST (/system/strings/validate)
 assetID: 6a59bc0b-8edd-87bf-efaf-f16efa3bedf7
 permalink: en-us/docs/xboxlive/rest/uri-systemstringsvalidatepost.html
-author: KevinAsgari
 description: " POST (/system/strings/validate)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c3364d3020627aa0d0826a390bf5c4f0b633af8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 70e86567f449674c7a046e072437d9ee715dc6d6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555074"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340227"
 ---
 # <a name="post-systemstringsvalidate"></a>POST (/system/strings/validate)
 検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。 これらの Uri のドメインが`client-strings.xboxlive.com`します。
@@ -30,9 +28,9 @@ ms.locfileid: "7555074"
  
 ## <a name="remarks"></a>注釈
  
-各結果は、対応する文字列が Xbox live で許容されると、該当する場合、問題の文字列が含まれて かどうかを示します。
+各結果は、対応する文字列が Xbox live で許容されると、該当する場合、問題のある文字列が含まれて かどうかを示します。
  
-同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合は、結果を分析し、適宜変更して、文字列。
+同一の文字列には、常に同一の結果が得られます。 非成功の結果が発生した場合、結果を分析し、適宜変更して、文字列。
  
  
 
@@ -48,7 +46,7 @@ ms.locfileid: "7555074"
  
 | ヘッダー| 説明| 
 | --- | --- | --- | 
-| Authorization| 認証トークン。 例: XBL3.0 x = [ハッシュ]。[トークン]。| 
+| Authorization| 認証トークンです。 例: XBL3.0 x = [ハッシュ]。[トークン]。| 
 | x xbl コントラクト バージョン| 整数 API コントラクト バージョンです。 この API を 1 または 2 をする必要があります。| 
   
 <a id="ID4ELC"></a>
@@ -83,11 +81,11 @@ ms.locfileid: "7555074"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| 200| OK| すべての文字列が正常に処理されます。 これは、必ずしもとすべての文字列が正の値の Hresult。| 
+| 200| OK| すべての文字列が正常に処理されました。 これは、必ずしもとすべての文字列が正の値の Hresult。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
 | 406| 許容できません。| 不足している<b>コンテンツの種類: アプリケーション/json</b>ヘッダー。| 

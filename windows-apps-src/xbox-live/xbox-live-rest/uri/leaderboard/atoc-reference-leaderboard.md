@@ -2,19 +2,17 @@
 title: ランキング URI
 assetID: f0a0fb49-ef10-3e6e-e989-2f3f30fca954
 permalink: en-us/docs/xboxlive/rest/atoc-reference-leaderboard.html
-author: KevinAsgari
 description: " ランキング URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f229ad872140ba4b0d21049f13ab4f4320e746d1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b9e22b926f01a2020504d4d5c70eba6af9e52afb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553249"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322776"
 ---
 # <a name="leaderboards-uris"></a>ランキング URI
 

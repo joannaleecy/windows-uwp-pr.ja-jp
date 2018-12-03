@@ -1,18 +1,16 @@
 ---
 title: XIM (C#) の使用
-author: KevinAsgari
 description: C# で Xbox Integrated Multiplayer (XIM) を使用する方法について説明します。
-ms.author: kevinasg
 ms.date: 04/24/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a588a633f2c12a6adf4c062940c4e2bee7fe18
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d230d59de1b40797505ac7a47ee52184857b8d05
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567705"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336594"
 ---
 # <a name="using-xim-c"></a>XIM (C#) の使用
 

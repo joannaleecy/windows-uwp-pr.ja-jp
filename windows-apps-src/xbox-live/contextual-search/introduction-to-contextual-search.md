@@ -1,19 +1,17 @@
 ---
 title: コンテキスト検索
-author: KevinAsgari
 description: コンテキスト検索を使用し、関連するメタデータを使って配信やゲーム クリップに自動的にタグ付けする方法を説明します。
 ms.assetid: 0c2afbfa-f32a-4ddd-9e9e-c8ac7eedae18
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, コンテキスト検索, 配信, ゲーム クリップ
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d24b31087db9c73f6b286a140c6dcf3a7e1eb4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a4112af4c54d21280b57cb0d976f129201efc269
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554687"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344208"
 ---
 # <a name="contextual-search"></a>コンテキスト検索
 
@@ -27,4 +25,4 @@ ms.locfileid: "7554687"
 * 新しい DLC の内容の確認
 * 作成者のコメントをコンテキストに応じて配信
 
-単に XDP またはパートナー センターで構成すると、タイトルのコンテキスト検索は自動的に点灯しませんブロードキャスト アプリケーションをすぐに、Xbox のシェルと Cortana で後日。  さらに、ゲーム内で検索 API を直接利用すれば、ゲームから離れることなく、今までにないエクスペリエンスをユーザーに提供できます。  統合のレベルに関係なく、タイトルの価値や知名度を大きく高めることができます。
+単に XDP またはパートナー センターで構成すると、タイトルのコンテキスト検索が自動的に点灯しませんですぐに、ブロードキャストのアプリケーションと Xbox のシェルと Cortana 後日します。  さらに、ゲーム内で検索 API を直接利用すれば、ゲームから離れることなく、今までにないエクスペリエンスをユーザーに提供できます。  統合のレベルに関係なく、タイトルの価値や知名度を大きく高めることができます。

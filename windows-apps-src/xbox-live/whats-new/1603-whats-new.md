@@ -1,19 +1,17 @@
 ---
 title: Xbox Live SDK の新規事項 - March 2016
-author: KevinAsgari
 description: Xbox Live SDK の新規事項 - March 2016
 ms.assetid: 6c5d6723-cb61-4e7a-b72d-e6f4c328c37e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c07853ee80be1b19a024aef75dfdb3b23018b81b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 83ddea2991eb65b06e079ab980650ee791023080
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581293"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326307"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---march-2016"></a>Xbox Live SDK の新規事項 - March 2016
 

@@ -2,19 +2,17 @@
 title: DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 assetID: 39c921d1-a166-74b9-fcbc-ea3c0c58cc40
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersservernamedelete.html
-author: KevinAsgari
 description: " DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 85ec5589d169c145676730b03ad95226fac426e6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 65da52284d49d4d9384685d073f13bd93b10a30b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7570860"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340230"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
 指定されたサーバーは、セッションから削除します。
@@ -34,7 +32,7 @@ ms.locfileid: "7570860"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 | セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
 

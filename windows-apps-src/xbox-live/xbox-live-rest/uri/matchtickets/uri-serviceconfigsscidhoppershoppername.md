@@ -2,19 +2,17 @@
 title: /serviceconfigs/{scid}/hoppers/{hoppername}
 assetID: ba1e129d-b4c4-6535-46ce-fd184465c85f
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppername.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/hoppers/{hoppername}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 29bbde83fd5480575ff4f9ff6620ab3bf5a15797
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1db069f59eeba565a257531907d6be0b1dcd189d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7570041"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332387"
 ---
 # <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/{scid}/hoppers/{hoppername}
 

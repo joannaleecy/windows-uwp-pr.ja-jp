@@ -2,19 +2,17 @@
 title: PUT (/users/me/gamerpic)
 assetID: ddf71c62-197d-a81d-35a7-47c6dc9e1b0c
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpicput.html
-author: KevinAsgari
 description: " PUT (/users/me/gamerpic)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d9346303e82dea2dbbd60b542c4ee207dd40901
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aedc7cbd8366c9cb8d3a60e2cb1f5e843b24a8a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554163"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328545"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
 1080 x 1080 ゲーマー アイコンをアップロードします。 
@@ -27,14 +25,14 @@ ms.locfileid: "7554163"
  
 ## <a name="request-body"></a>要求本文
  
-要求本文には、ゲーマー アイコン (1080 x 1080 PNG ファイル) です。
+要求本文は、ゲーマー アイコン (1080 x 1080 PNG ファイルです)。
   
 <a id="ID4EZ"></a>
 
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | 

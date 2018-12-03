@@ -1,19 +1,17 @@
 ---
 title: Xbox Live Trace Analyzer
-author: KevinAsgari
 description: Xbox Live Trace Analyzer を使ってタイトルにより行われるサービス呼び出しを確認する方法について説明します。
 ms.assetid: b4490fae-d554-403d-bbbc-601af38af0ef
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス呼び出し, テスト, trace analyzer
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eaec6d830dece484d3300ea244f05bf2add5a60
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fa8ca37842edfbeaab0063cd953f3a34358a82da
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555507"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340462"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live Trace Analyzer
 
@@ -66,7 +64,6 @@ xbtrace でトレースを開始および停止するには、タイトルが実
 
 <a name="starting-and-stopping-tracing-by-using-protocol-activation"></a>プロトコル アクティベーションを使用してトレースを開始および停止する
 ----------------------------------------------------------
-
 "xbApp launch" のプロトコル アクティベーション機能を使用してトレースを制御することもできます。 プロトコル アクティベーションを通じてトレースを開始および停止するには、タイトルの titleid がわかっている必要があります。 titleid はタイトルのマニフェスト ファイル内にあります。 "serviceCallTracking" パラメーターを含む URI を通じてトレースを制御できます。 次の例は、titleid が 12345678 のタイトルのトレースを開始および停止する方法を示しています。
 
     xbapp launch "ms-xbl-12345678://serviceCallTracking?state=start"

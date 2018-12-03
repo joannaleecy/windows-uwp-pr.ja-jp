@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d8172063d40f8df77827ab845c4dfd0c0799811
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707158"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347909"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
 操作を実行するに Xuid のリスト。 
@@ -21,11 +21,11 @@ ms.locfileid: "7707158"
  
 ## <a name="xuidlist"></a>XuidList
  
-XuidList オブジェクトでは、次の仕様があります。
+XuidList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 文字列の配列| 操作を実行する必要がありますまたは返されるデータの Xbox ユーザー ID (XUID) 値の一覧。| 
+| xuid| 文字列の配列| 操作を実行する必要がありますまたは返されるデータの Xbox ユーザー ID (XUID) 値の一覧です。| 
   
 <a id="ID4EMB"></a>
 

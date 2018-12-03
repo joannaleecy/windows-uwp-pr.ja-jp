@@ -2,19 +2,17 @@
 title: /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 assetID: 25deb7fe-859c-01d2-d14f-455a36c08a7c
 permalink: en-us/docs/xboxlive/rest/uri-scidhoppernameticketid.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c64d54b3f1d8515018e256400af8e04f77d8955
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9722d06af64c5fd24f53485a1bcfe765f89b08cf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552615"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8333091"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
@@ -32,7 +30,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI には、対象ユーザーの構成で所有者識別子の値の xuid、gt、および me がサポートしています。  
+この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。  
 <a id="ID4E2"></a>
 
 

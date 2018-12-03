@@ -1,20 +1,18 @@
 ---
-title: パートナー センターでのリッチ プレゼンスの構成
-author: aablackm
+title: パートナー センターでリッチ プレゼンスの構成
 description: パートナー センターでリッチ プレゼンス文字列を構成する方法を説明します。
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, uwp、windows 10, Xbox one, リッチ プレゼンス文字列, パートナー センター
-ms.openlocfilehash: cb16b7e8c3776f2509207f15a6c26341f9028fe5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+keywords: Xbox Live, Xbox, ゲーム, uwp、windows 10, Xbox one, リッチ プレゼンス文字列では、パートナー センター
+ms.openlocfilehash: 5c2add99c6fc6ad1c7f085eb35dc4fdba9e0688d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578825"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346550"
 ---
-# <a name="configure-rich-presence-in-partner-center"></a>パートナー センターでのリッチ プレゼンスを構成します。
+# <a name="configure-rich-presence-in-partner-center"></a>パートナー センターでリッチ プレゼンスを構成します。
 
 リッチ プレゼンス文字列には、ユーザーのゲーム内のアクティビティが表示されます。 **[フレンドとクラブ]** リストにあるプレイヤーのゲーマータグの下に、Xbox Live ユーザー プロフィールと共に表示されます。 構成済みのリッチ プレゼンス文字列が、プレイしているゲームの名前に付加されます。 BubblePop というゲームを作成し、リッチ プレゼンス文字列 "友だちと一緒にバブルをはじこう" を構成した場合、構成された文字列により状態 "BubblePop - 友だちと一緒にバブルをはじこう" が生成されます。 リッチ プレゼンス文字列が実際にどのように表示されるかを以下で確認できます。
 
@@ -35,9 +33,9 @@ ms.locfileid: "7578825"
 
 - Windows 開発アカウントを持っている。
 - 開発アカウントが ID@Xboxプログラムに登録されているか、対象パートナーの開発者アカウントとして登録されている。
-- タイトルでは、パートナー センターに登録する必要があり、Xbox live が有効にします。
+- タイトルは、パートナー センターに登録する必要があり、Xbox live が有効にします。
 
-リッチ プレゼンス文字列を使用する前に、パートナー センターで構成する必要があります。
+リッチ プレゼンス文字列を使用する前にパートナー センターで構成する必要があります。
 
 ## <a name="rich-presence-configuration-page"></a>リッチ プレゼンスの構成ページ
 
@@ -45,7 +43,7 @@ ms.locfileid: "7578825"
 
 次の手順に従って、リッチ プレゼンスの構成ページに移動します。
 
-1. Developer.microsoft.com では、[パートナー センター](https://partner.microsoft.com/dashboard)に移動します。
+1. Developer.microsoft.com で[パートナー センター](https://partner.microsoft.com/dashboard)に移動します。
 2. サインインが要求された場合は、登録されている Windows 開発者アカウントでサインインします。
 3. **[概要]** ページで Xbox Live 対応のタイトルまたはアプリを選択します。 リッチ プレゼンス文字列の構成が有効にならないため、クリエイター プログラムのタイトルは選択しないでください。
 4. **[サービス]** ドロップダウン リストをクリックして [Xbox Live] を選択します。

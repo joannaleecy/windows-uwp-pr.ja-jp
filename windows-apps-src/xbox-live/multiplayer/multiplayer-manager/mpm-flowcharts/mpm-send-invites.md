@@ -1,19 +1,17 @@
 ---
 title: フローチャート - 別のプレイヤーを招待する
-author: KevinAsgari
 description: Xbox Live Multiplayer Manager のフローチャート - 別のプレイヤーに招待を送信します。
 ms.assetid: d43b5030-a639-4445-ba33-7bddd35d13e1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a08ed2620bf3483cdfe4d77d683cc3abec26f7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a95e53ebd948404858500695bdec28ec4f5d6c42
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571977"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336888"
 ---
 # <a name="flowchart---send-an-invitation-to-another-player"></a>フローチャート - 別のプレイヤーに招待を送信する
 

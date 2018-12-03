@@ -2,19 +2,17 @@
 title: QueryClipsResponse (JSON)
 assetID: 5d668588-54d6-3cf3-20ad-bb2600a156b3
 permalink: en-us/docs/xboxlive/rest/json-queryclipsresponse.html
-author: KevinAsgari
 description: " QueryClipsResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: aea8a1914a9466b7e24fd0214059a0dac5a6c3a7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 23955d311d57fa3454bdb84df67ddae07a0c8548
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556339"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326100"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
 一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。 
@@ -23,11 +21,11 @@ ms.locfileid: "7556339"
  
 ## <a name="queryclipsresponse"></a>QueryClipsResponse
  
-QueryClipsResponse オブジェクトでは、次の仕様があります。
+QueryClipsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>gameClips</b>| GameClip の配列| 要求の制限 (<b>maxItems</b>) までクエリが満たされるゲーム クリップの配列です。| 
+| <b>ゲーム クリップ</b>| GameClip の配列| ゲーム クリップの問題がなければ、要求の制限 (<b>maxItems</b>) まで、クエリの配列です。| 
 | <b>pagingInfo</b>| PagingInfo| 必要な継続とリストの後続の呼び出しのページングする要求の制限を超える (<b>maxItems</b>) の情報が含まれています。| 
   
 <a id="ID4E2B"></a>

@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージのオンデマンド読み込み
-author: aablackm
 description: 接続ストレージ データをすべて一度に読み込むのではなくオンデマンドで読み込む方法について説明します。
 ms.assetid: a0797a14-c972-4017-864c-c6ba0d5a3363
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7bff55582aed0308df4d847f208bce53772b24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 31c1893f09e6d56682b4e718ee8b905ce72c7ad8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581522"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328924"
 ---
 # <a name="connected-storage-loading-on-demand"></a>接続ストレージのオンデマンド読み込み
 

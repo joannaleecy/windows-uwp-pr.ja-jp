@@ -1,19 +1,17 @@
 ---
 title: Xbox One マルチプレイヤー セッション ディレクトリ
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー セッション ディレクトリ (MPSD) サービスを使用してマルチプレイヤー セッションを作成する方法について説明します。
 ms.assetid: 70da1be3-5f39-4eed-b62d-9cdd47e413d2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b0c97e2b5b4f9561385f7854ea2ee13292278fc8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 52b363492d1cd17ae54ae5d23d04371c5adf73ed
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557988"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328493"
 ---
 # <a name="xbox-one-multiplayer-session-directory"></a>Xbox One マルチプレイヤー セッション ディレクトリ
 

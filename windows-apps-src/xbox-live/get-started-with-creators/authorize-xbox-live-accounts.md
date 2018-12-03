@@ -1,19 +1,17 @@
 ---
 title: テスト環境で Xbox Live アカウントを承認する
-author: KevinAsgari
 description: 開発環境でのテストに使用するパブリックな Xbox Live アカウントを承認する方法について説明します。
 ms.assetid: 9772b8f1-81db-4c57-a54d-4e9ca9142111
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アカウント, テスト アカウント
 ms.localizationpriority: medium
-ms.openlocfilehash: 7899f332794661a6203a0035040db6914b7e8100
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f48f9baa574128530f5794b441c45a8c8f980eb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578918"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342575"
 ---
 # <a name="authorize-xbox-live-accounts-for-testing-in-your-environment"></a>環境内でテスト用の Xbox Live アカウントを承認する
 
@@ -31,7 +29,7 @@ Xbox Live テスト アカウントを承認するには、次のものが必要
 
 このセクションには、2 つの方法のいずれかでアクセスできます。
 
-1. [パートナー センター](https://partner.microsoft.com/dashboard/windows/overview)では、ダッシュ ボードの右上隅で設定ギア ⚙ をクリックし、ドロップダウン リストから**開発者の設定**を選択します。 これにより、Xbox Live ドロップダウンし、[ **Xbox テスト アカウント**のリンクを選択する画面の左側のナビゲーション メニューが開きます。
+1. [パートナー センター](https://partner.microsoft.com/dashboard/windows/overview)では、ダッシュ ボードの右上隅で設定ギア ⚙ をクリックし、ドロップダウン リストから**開発者の設定**を選択します。 これにより、Xbox Live ドロップダウンし、 **Xbox テスト アカウント**のリンクを選択する画面の左側のナビゲーション メニューが開きます。
 2. Xbox Live クリエーターズの構成に関するページでテスト セクションを探し、**[Authorize Xbox Live accounts for your test environment]** (テスト環境用に Xbox Live アカウントを承認する) というタイトルのリンクをクリックします。
 
 ## <a name="authorize-an-xbox-live-account-for-your-test-environment"></a>テスト環境用の Xbox Live アカウントを承認する

@@ -1,19 +1,17 @@
 ---
 title: 統計の更新 2017
-author: KevinAsgari
 description: 統計 2017 を使用して Xbox Live のプレイヤーの統計を更新する方法について説明します。
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
-ms.author: kevinasg
 ms.date: 08/24/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f61858347955bde007d97420cfb33d8e0298fd2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d5b37c008e6aa719b641321c5e5a1c3360b20786
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556401"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346931"
 ---
 # <a name="updating-stats-2017"></a>統計の更新 2017
 
@@ -22,7 +20,7 @@ ms.locfileid: "7556401"
 プレイヤーの統計を追跡するかどうかは、タイトルに応じて決めることができます。また、統計を必要に応じて更新するには `StatsManager` を呼び出します。  `StatsManager` は、あらゆる変更をバッファリングして、定期的にサービスにフラッシュします。  タイトルでは、手動でフラッシュすることもできます。
 
 > [!NOTE]
-> 多くの統計をフラッシュされません。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
+> 多くの場合の統計をフラッシュされません。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
 
 ### <a name="multiple-devices"></a>複数のデバイス
 

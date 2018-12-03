@@ -1,19 +1,17 @@
 ---
 title: XDK プロジェクトに Xbox Live を追加する
-author: KevinAsgari
 description: 新規または既存の Xbox 開発キット (XDK) プロジェクトに Xbox Live を追加する方法について説明します。
 ms.assetid: fc6f987c-1a87-4ff5-b063-891591aa6653
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6821579e9ba96c679a6cace19e65645ae79455
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f17765b09dcb0b6f5c89d168f2d3d9611a60ffa6
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564408"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322686"
 ---
 # <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a>新規または既存の XDK プロジェクトに Xbox Live を追加する
 

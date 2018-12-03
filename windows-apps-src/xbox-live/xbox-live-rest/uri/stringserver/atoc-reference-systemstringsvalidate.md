@@ -2,19 +2,17 @@
 title: システム文字列の検証 URI
 assetID: b9a54456-7b4a-f6d8-16b9-5b6c3bd9813e
 permalink: en-us/docs/xboxlive/rest/atoc-reference-systemstringsvalidate.html
-author: KevinAsgari
 description: " システム文字列の検証 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fedb5a94fe9bd265502c107aba919a9f5aec643
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2eaad3791830086d6b086ac0026523d28d596d1a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579261"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350428"
 ---
 # <a name="system-strings-validatation-uris"></a>システム文字列の検証 URI
  

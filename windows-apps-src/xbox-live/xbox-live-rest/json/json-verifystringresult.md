@@ -2,19 +2,17 @@
 title: VerifyStringResult (JSON)
 assetID: 272c688e-179e-c7e9-086b-e76d0d4bcb57
 permalink: en-us/docs/xboxlive/rest/json-verifystringresult.html
-author: KevinAsgari
 description: " VerifyStringResult (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ba5336ed0bf734eff60a4bbffca3397fd1ea3eb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b01793222be80efccdca1f24f5226a2e9ff78064
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554236"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341717"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
 [/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
@@ -23,12 +21,12 @@ ms.locfileid: "7554236"
 
 ## <a name="verifystringresult"></a>VerifyStringResult
 
-VerifyStringResult オブジェクトでは、次の仕様があります。
+VerifyStringResult オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| resultCode| 32 ビットの符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
-| offendingString| string| 必須。 拒否される文字列の原因となった文字列値。|
+| resultCode| 32 ビット符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
+| offendingString| string| 必須。 拒否する文字列の原因となった文字列値。|
 
 <a id="ID4EXB"></a>
 

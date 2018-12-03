@@ -1,18 +1,16 @@
 ---
 title: リアルタイム オーディオ操作
-author: KevinAsgari
 description: ゲーム チャット 2 によってキャプチャされたチャット オーディオを操作および処理する方法について説明します。
-ms.author: kevinasg
 ms.date: 05/10/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信, バッファー操作, オーディオ操作
 ms.localizationpriority: medium
-ms.openlocfilehash: cd0a88c5d3ae50cb7dd86585507c951cc061503d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 44604d51d929c15fe7c93372324f1ef05f12d6cf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577485"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326674"
 ---
 # <a name="real-time-audio-manipulation"></a>リアルタイム オーディオ操作
 
@@ -28,12 +26,12 @@ ms.locfileid: "7577485"
 
 ## <a name="initializing-the-audio-manipulation-pipeline"></a>オーディオ操作パイプラインの初期化
 
-既定でゲーム チャット 2 はリアルタイム オーディオ操作を有効になりません。 リアルタイム オーディオ操作を有効にするアプリする必要がありますを指定オーディオ操作の形式で有効になっている`chat_manager::initialize()`audioManipulationMode パラメーターを設定します。
+既定でゲーム チャット 2 はリアルタイム オーディオ操作を有効になりません。 リアルタイム オーディオ操作を有効にするアプリする必要がありますを指定するオーディオ操作の形式で有効になっている`chat_manager::initialize()`audioManipulationMode パラメーターを設定します。
 
 現在のところ、次のオーディオ操作形式がサポートされています。
 
 * `game_chat_audio_manipulation_mode_flags::none` - オーディオ操作を無効にします。 これは既定の構成です。 このモードでは、チャット オーディオが常時流し込まれます。
-* `game_chat_audio_manipulation_mode_flags::pre_encode_stream_manipulation` - プリエンコード オーディオ操作を有効にします。 このモードでは、ローカル ユーザーによって生成されたすべてのチャット オーディオが、エンコード前にオーディオ操作パイプラインを通じて取り込まれます。 場合でも、アプリは、のみチャット オーディオ データを検査および操作されませんが、エンコードして転送できるように、ゲーム チャット 2 に改変されていないオーディオ バッファーを提出するアプリの責任ではあります。
+* `game_chat_audio_manipulation_mode_flags::pre_encode_stream_manipulation` - プリエンコード オーディオ操作を有効にします。 このモードでは、ローカル ユーザーによって生成されたすべてのチャット オーディオが、エンコード前にオーディオ操作パイプラインを通じて取り込まれます。 場合でも、アプリは、チャット オーディオ データを検査および操作されませんのみが、エンコードして転送できるように、ゲーム チャット 2 に改変されていないオーディオ バッファーを提出するアプリの責任ではあります。
 * `game_chat_audio_manipulation_mode_flags::post_decode_stream_manipulation` - ポストデコード オーディオ操作を有効にします。 このモードは現在開発中のため、使用しないでください。
 
 ## <a name="processing-audio-stream-state-changes"></a>オーディオ ストリームの状態の変化の処理
@@ -74,9 +72,9 @@ chat_manager::singleton_instance().finish_processing_stream_state_changes(stream
 ### <a name="stream-lifetime"></a>ストリームの有効期間
 新しい`pre_encode_audio_stream`インスタンスは、アプリで利用できる状態になりますはを通じて配信、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::pre_encode_audio_stream_created`します。 オーディオ ストリームを可能になりますゲーム チャット 2 にこのストリーム状態の変化が返されると、プリエン コード オーディオ操作を実行します。
 
-既存`pre_encode_audio_stream`が提供を停止すると、オーディオ操作を使用して、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::pre_encode_audio_stream_closed`します。 アプリは、この機会にこのオーディオ ストリームに関連付けられたリソースのクリーンアップを開始できます。 ゲーム チャット 2 に、このストリーム状態の変化が返されると、オーディオ ストリームにできなくなりますプリエン コード オーディオ操作を実行します。
+既存のとき`pre_encode_audio_stream`になる提供を停止すると、オーディオ操作を使用して、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::pre_encode_audio_stream_closed`します。 アプリは、この機会にこのオーディオ ストリームに関連付けられたリソースのクリーンアップを開始できます。 ゲーム チャット 2 に、このストリーム状態の変化が返されると、オーディオ ストリームにできなくなりますプリエン コード オーディオ操作を実行します。
 
-閉じられた`pre_encode_audio_stream`がすべてのリソースが返される、ストリームが破棄され、アプリはによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::pre_encode_audio_stream_destroyed`します。 このストリームへの参照またはポインターをすべてクリーンアップする必要があります。 ゲーム チャット 2 にこのストリーム状態の変化が返されると、オーディオ ストリーム メモリが無効になります。
+閉じられた`pre_encode_audio_stream`がすべてのリソースが返される、ストリームが破棄され、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::pre_encode_audio_stream_destroyed`します。 このストリームへの参照またはポインターをすべてクリーンアップする必要があります。 ゲーム チャット 2 にこのストリーム状態の変化が返されると、オーディオ ストリーム メモリが無効になります。
 
 ### <a name="stream-users"></a>ストリーム ユーザー
 ストリームに関連付けられているユーザーのリストは、`pre_encode_audio_stream::get_users()` を使って検査できます。
@@ -84,7 +82,7 @@ chat_manager::singleton_instance().finish_processing_stream_state_changes(stream
 ### <a name="audio-formats"></a>オーディオ形式
 アプリがゲーム チャット 2 から取得するバッファーのオーディオ形式を使って検査できます`pre_encode_audio_stream::get_pre_processed_format()`します。 前処理されたオーディオ形式は常にモノラルになります。 アプリは、32 ビット浮動小数点値、16 ビット整数値、および 32 ビット整数値として表されるデータを処理することを予期する必要があります。
 
-アプリはエンコードして転送の使用に送信されている操作対象のバッファーのオーディオ形式のゲーム チャット 2 に通知する必要があります`pre_encode_audio_stream::set_processed_format()`します。 プリエンコード オーディオ ストリームの処理形式は、以下の前提条件を満たしている必要があります。
+アプリはエンコードして転送の使用に送信されている操作のバッファーのオーディオ形式のゲーム チャット 2 に通知する必要があります`pre_encode_audio_stream::set_processed_format()`します。 プリエンコード オーディオ ストリームの処理形式は、以下の前提条件を満たしている必要があります。
 
 * 形式はモノラルでなければなりません。
 * 形式は 32 ビット浮動小数点 PCM、32 ビット整数 PCM、または 16 ビット整数 PCM 形式である必要があります。
@@ -95,7 +93,7 @@ chat_manager::singleton_instance().finish_processing_stream_state_changes(stream
 
 アプリは、`pre_encode_audio_stream::get_next_buffer()` を使ってプリエンコード オーディオ ストリームからオーディオ バッファーを取得できます。 新しいオーディオ バッファーは、平均で 40 ミリ秒に 1 回使用可能になります。 このメソッドによって返されるバッファーは、使い終わったら `pre_encode_audio_stream::return_buffer()` にリリースされる必要があります。 プリエンコード オーディオ ストリームには、キューに入れられたバッファーまたは返されていないバッファーが任意の時点で最大 10 個存在することができます。 この制限に達すると、未処理のバッファーの一部が返されるまで、プレイヤーのオーディオ ソースからキャプチャされた新しいバッファーが破棄されます。
 
-アプリは、エンコードおよび転送を使用してゲーム チャット 2 に戻るに検査および操作済みのバッファーを送信できる`pre_encode_audio_stream::submit_buffer()`します。 ゲーム チャット 2 には、インプレースおよびアウトな場所のオーディオ操作がサポートするために送信されるバッファー`pre_encode_audio_stream::submit_buffer()`必ずしもしなくても、同じから取得されるバッファー`pre_encode_audio_stream::get_next_buffer()`します。 これらの送信バッファーのプライバシー/特権は、このストリームに関連付けられているユーザーに基づいて適用されます。 40 ミリ秒ごとに、このストリームから取得される次の 40 ミリ秒間のオーディオがエンコードされて転送されます。 オーディオの中断を防ぐため、連続して聞こえるオーディオのバッファーは一定のレートでこのストリームに送信する必要があります。
+アプリがエンコードおよび転送を使用してゲーム チャット 2 に戻るに検査および操作済みのバッファーを送信できる`pre_encode_audio_stream::submit_buffer()`します。 ゲーム チャット 2 には、インプレースおよびアウトな場所のオーディオ操作がサポートするために送信されるバッファー`pre_encode_audio_stream::submit_buffer()`必ずしもしなくても、同じから取得されるバッファー`pre_encode_audio_stream::get_next_buffer()`します。 これらの送信バッファーのプライバシー/特権は、このストリームに関連付けられているユーザーに基づいて適用されます。 40 ミリ秒ごとに、このストリームから取得される次の 40 ミリ秒間のオーディオがエンコードされて転送されます。 オーディオの中断を防ぐため、連続して聞こえるオーディオのバッファーは一定のレートでこのストリームに送信する必要があります。
 
 ### <a name="stream-contexts"></a>ストリーム コンテキスト
 アプリは、`pre_encode_audio_stream::set_custom_stream_context()` と `pre_encode_audio_stream::custom_stream_context()` を使って、プリエンコード オーディオ ストリームでカスタム ポインター サイズのコンテキスト値を管理できます。 これらのカスタム ストリーム コンテキストは、ゲーム チャット 2 のオーディオ ストリームと補助データの間のマッピングを作成するために役立ちます。 ストリームのメタデータ、ゲームの状態などです。
@@ -212,46 +210,46 @@ Sleep(audioProcessingPeriodInMilliseconds);
 ゲーム チャット 2 を使ったチャット オーディオ データをポストデ コードへのアクセスを提供する、`post_decode_audio_source_stream`と`post_decode_audio_sink_stream`クラス、ユーザーがチャット オーディオの各ローカル受信者のリモート ユーザーからのオーディオを一意に操作ができるようにします。
 
 ### <a name="sources-and-sinks"></a>ソースとシンク
-Pre-encode パイプラインとは異なり、モデル ポストデ コード オーディオ データを扱うのために分割 2 つのクラス:`post_decode_audio_source_stream`と`post_decode_audio_sink_stream`します。 リモート ユーザーからデコードされたオーディオがから取得できる`post_decode_audio_source_stream`オブジェクト、操作、およびに送信される`post_decode_audio_sink_stream`レンダリング用のオブジェクト。 これにより、ゲーム チャット 2 の間の統合は、オーディオ処理パイプラインと役立つオーディオ ミドルウェアにポストデ コードのできます。
+Pre-encode パイプラインとは異なり、モデル ポストデ コード オーディオ データを扱うのために分割 2 つのクラス:`post_decode_audio_source_stream`と`post_decode_audio_sink_stream`します。 リモート ユーザーからデコードされたオーディオから取得できる`post_decode_audio_source_stream`オブジェクト、操作、およびに送信される`post_decode_audio_sink_stream`レンダリング用のオブジェクト。 これにより、ゲーム チャット 2 の間の統合は、オーディオ処理パイプラインと役立つオーディオ ミドルウェアにポストデ コードのできます。
 
 ### <a name="stream-lifetime"></a>ストリームの有効期間
 新しい`post_decode_audio_source_stream`または`post_decode_audio_sink_stream`インスタンスは、アプリで利用できる状態になりますはを通じて配信、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::post_decode_audio_source_stream_created`または`game_chat_stream_state_change_type::post_decode_audio_sink_stream_created`、それぞれします。 オーディオ ストリームを可能になりますゲーム チャット 2 にこのストリーム状態の変化が返されると、ポストデ コード オーディオ操作します。
 
-既存`post_decode_audio_source_stream`または`post_decode_audio_sink_stream`が提供を停止すると、オーディオ操作を使用して、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::post_decode_audio_source_stream_closed`または`game_chat_stream_state_change_type::post_decode_audio_sink_stream`、それぞれします。 アプリは、この機会にこのオーディオ ストリームに関連付けられたリソースのクリーンアップを開始できます。 ゲーム チャット 2 に、このストリーム状態の変化が返されると、オーディオ ストリームにできなくなりますポストデ コード オーディオ操作します。 ソースのストリームない以上のバッファーがキュー操作にことを意味します。 シンク ストリームでは、バッファーはレンダリングされなくなったを提出することを意味します。
+既存のとき`post_decode_audio_source_stream`または`post_decode_audio_sink_stream`になる提供を停止すると、オーディオ操作を使用して、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::post_decode_audio_source_stream_closed`または`game_chat_stream_state_change_type::post_decode_audio_sink_stream`、それぞれします。 アプリは、この機会にこのオーディオ ストリームに関連付けられたリソースのクリーンアップを開始できます。 ゲーム チャット 2 に、このストリーム状態の変化が返されると、オーディオ ストリームにできなくなりますポストデ コード オーディオ操作します。 ソース ストリームは、バッファーがありませんがキューの操作にことを意味します。 シンク ストリームは、バッファーは表示されなくなったを送信することを意味します。
 
-閉じられた`post_decode_audio_source_stream`または`post_decode_audio_sink_stream`がすべてのリソースが返される、ストリームが破棄され、アプリはによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::post_decode_audio_source_stream_destroyed`または`game_chat_stream_state_change_type::post_decode_audio_sink_stream_destroyed`、それぞれします。 このストリームへの参照またはポインターをすべてクリーンアップする必要があります。 ゲーム チャット 2 にこのストリーム状態の変化が返されると、オーディオ ストリーム メモリが無効になります。
+閉じられた`post_decode_audio_source_stream`または`post_decode_audio_sink_stream`がすべてのリソースが返される、ストリームが破棄され、アプリによって通知されます、`game_chat_stream_state_change`構造体の`state_change_type`フィールドに設定`game_chat_stream_state_change_type::post_decode_audio_source_stream_destroyed`または`game_chat_stream_state_change_type::post_decode_audio_sink_stream_destroyed`、それぞれします。 このストリームへの参照またはポインターをすべてクリーンアップする必要があります。 ゲーム チャット 2 にこのストリーム状態の変化が返されると、オーディオ ストリーム メモリが無効になります。
 
 ### <a name="stream-users"></a>ストリーム ユーザー
-Post-decode ソース ストリームに関連付けられているリモート ユーザーの一覧を使って検査できます`post_decode_audio_source_stream::get_users()`します。 Post-decode シンク ストリームに関連付けられているローカル ユーザーの一覧を使って検査できます`post_decode_audio_sink_stream::get_users()`します。
+Post-decode ソースのストリームに関連付けられているリモート ユーザーの一覧を使って検査できます`post_decode_audio_source_stream::get_users()`します。 Post-decode シンク ストリームに関連付けられているローカル ユーザーの一覧を使って検査できます`post_decode_audio_sink_stream::get_users()`します。
 
 ### <a name="audio-formats"></a>オーディオ形式
 アプリがゲーム チャット 2 から取得するバッファーのオーディオ形式を使って検査できます`post_decode_audio_source_stream::get_pre_processed_format()`します。 前処理されたオーディオ形式では、モノラル、16 ビット整数 PCM は常になります。
 
-アプリはレンダリングを使用するために送信されている操作対象のバッファーのオーディオ形式のゲーム チャット 2 に通知する必要があります`post_decode_audio_sink_stream::set_processed_format()`します。 ポストデ コード オーディオの処理形式のシンク ストリームは、以下の前提条件を満たす必要があります。
+アプリはレンダリングを使用するために送信されている操作のバッファーのオーディオ形式のゲーム チャット 2 に通知する必要があります`post_decode_audio_sink_stream::set_processed_format()`します。 ポストデ コード オーディオの処理形式のシンク ストリームは、以下の前提条件を満たす必要があります。
 
-* 形式は、64 個未満のチャネルが必要です。
+* 64 個未満のチャネルの形式があります。
 * 形式は、16 ビット整数 PCM (最適な)、20 ビット整数 PCM (24 ビット コンテナー) で、24 ビット整数 PCM、32 ビット整数 PCM、または 32 ビット浮動小数点 PCM (16 ビット整数 PCM 後の優先形式) である必要があります。 
 * 形式のサンプル レートは、1 秒あたり 1,000 と 200000 サンプルの間である必要があります。
 
 ### <a name="retrieving-and-submitting-audio"></a>オーディオの取得と送信
-アプリが照会できる処理を使用可能なバッファーの数のオーディオ ソースのストリームをポストデ コード`post_decode_audio_source_stream::get_available_buffer_count()`します。 この情報は、バッファーの最小数が使用可能になるまでアプリがオーディオ処理を延期する場合に使用できます。 10 個のバッファーが各キューに入れられますオーディオ ソースのストリームをポストデ コードありオーディオ遅延によりオーディオ パイプラインに待機時間ので、アプリがドレインすることをお勧めしますが、4 つ以上のバッファーのキューに入れる前に、オーディオ ストリームをポストデ コードします。
+アプリを照会できますポストデ コード オーディオ ソースのストリームを使って処理可能なバッファーの数の`post_decode_audio_source_stream::get_available_buffer_count()`します。 この情報は、バッファーの最小数が使用可能になるまでアプリがオーディオ処理を延期する場合に使用できます。 10 個のバッファーが各キューに入れられますポストデ コード オーディオ ソース ストリームありオーディオ遅延によりオーディオ パイプラインに待機時間ので、アプリがドレインすることをお勧めしますが、4 つ以上のバッファーのキューに入れる前に、オーディオ ストリームをポストデ コードします。
 
-アプリからオーディオ バッファーを取得できる、ポストデ コード オーディオ ソースのストリームを使用して`post_decode_audio_source_stream::get_next_buffer()`します。 新しいオーディオ バッファーは、平均で 40 ミリ秒に 1 回使用可能になります。 このメソッドによって返されるバッファーは、使い終わったら `post_decode_audio_source_stream::return_buffer()` にリリースされる必要があります。 最大で 10 のキューに入れられたバッファーまたはできます存在の任意の時点で、オーディオ ソースのストリームをポストデ コードします。 この制限に達すると、新しいデコードされたリモート プレイヤーからはまでバッファーが破棄未処理のバッファーの一部が返されます。
+アプリからオーディオ バッファーを取得できる、ポストデ コード オーディオ ソースのストリームを使用して`post_decode_audio_source_stream::get_next_buffer()`します。 新しいオーディオ バッファーは、平均で 40 ミリ秒に 1 回使用可能になります。 このメソッドによって返されるバッファーは、使い終わったら `post_decode_audio_source_stream::return_buffer()` にリリースされる必要があります。 最大で 10 のキューに入れられたバッファーまたはできる存在の任意の時点で、ポストデ コード オーディオ ソース ストリームします。 この制限に達すると、新しいデコードされたリモート プレイヤーからはまでバッファーが破棄未処理のバッファーの一部が返されます。
 
 アプリがを通じてゲーム チャット 2 に戻るに検査および操作済みのバッファーは、レンダリングを使用するためのシンク オーディオ ストリームをポストデ コードを送信できる`post_decode_audio_sink_stream::submit_mixed_buffer()`します。 ゲーム チャット 2 には、インプレースおよびアウトな場所のオーディオ操作がサポートするために送信されるバッファー`post_decode_audio_sink_stream::submit_mixed_buffer()`必ずしもしなくても、同じから取得されるバッファー`post_decode_audio_source_stream::get_next_buffer()`します。 40 ミリ秒に、このストリームからのオーディオの次の 40 が表示されます。 オーディオの中断を防ぐため、連続して聞こえるオーディオのバッファーは一定のレートでこのストリームに送信する必要があります。
 
 ### <a name="privacy-and-mixing"></a>プライバシーとミキシング
-Post-decode パイプラインのソース シンクのモデルがあるため、アプリのする責任はから取得されるバッファーを混在させる`post_decode_audio_source_stream`オブジェクトし、混合のバッファーに`post_decode_audio_sink_stream`オブジェクトをレンダリングします。 これは、適切なプライバシーと特権が適用されると、ミックスを実行するアプリの責任があることも意味します。 ゲーム チャット 2 は、`post_decode_audio_sink_stream::can_receive_audio_from_source_stream()`シンプルで効率的なは、この情報のクエリを作成します。
+Post-decode パイプラインのソース シンク モデルがあるため、アプリのする責任はから取得されたバッファーを混在させる`post_decode_audio_source_stream`オブジェクトし、混合のバッファーに`post_decode_audio_sink_stream`オブジェクトをレンダリングします。 これは、適切なプライバシーと特権が適用されると、ミックスを実行するアプリの責任であるも意味します。 ゲーム チャット 2 は、`post_decode_audio_sink_stream::can_receive_audio_from_source_stream()`シンプルで効率的なは、この情報のクエリを作成します。
 
 ### <a name="chat-indicators"></a>チャット インジケーター
 
-ポストデ コード オーディオ操作には、各ユーザーのチャット インジケーターの状態は変わりません。 たとえば、リモート ユーザーがミュートされているときは、オーディオは、アプリに提供されますが、そのリモート ユーザーのチャット インジケーターがミュートも示されます。 リモート ユーザーを説明するとき、オーディオが提供されますが、アプリがそのユーザーからオーディオを含むオーディオのミックスを提供するかどうかに関係なく話すチャット インジケーターが示されます。 UI とチャット インジケーターの詳細については、[ゲーム チャット 2 の使用](using-game-chat-2.md#ui)を参照してください。 余分なアプリに固有の制限を使用して、ユーザーがオーディオのミックスに存在するかを決定した場合、アプリのする責任はゲーム チャット 2 によって提供されるチャット インジケーターを読み取り、ときに、その同じ制限を考慮してください。
+ポストデ コード オーディオ操作には、各ユーザーのチャット インジケーターの状態は変わりません。 たとえば、リモート ユーザーがミュートされている場合、オーディオをアプリに提供されますが、そのリモート ユーザーのチャット インジケーターがミュートも示されます。 リモート ユーザーが話すとき、は、オーディオが提供されますが、チャット インジケーターは、アプリがそのユーザーからオーディオを含むオーディオのミックスを提供するかどうかに関係なく会話を指定します。 UI とチャット インジケーターの詳細については、[ゲーム チャット 2 の使用](using-game-chat-2.md#ui)を参照してください。 余分なアプリに固有の制限を使用して、ユーザーがオーディオのミックスに存在するかを決定した場合、アプリのする責任はゲーム チャット 2 によって提供されるチャット インジケーターを読み取り、ときに、その同じ制限を考慮してください。
 
 ### <a name="stream-contexts"></a>ストリーム コンテキスト
 アプリでカスタム ポインター サイズのコンテキスト値を管理できますを使用して、オーディオ ストリームをポストデ コードで、`set_custom_stream_context()`と`custom_stream_context()`メソッドです。 これらのカスタム ストリーム コンテキストは、ゲーム チャット 2 のオーディオ ストリームと補助データの間のマッピングを作成するために役立ちます。 ストリームのメタデータ、ゲームの状態などです。
 
 ### <a name="example"></a>例
-使用する方法に関する簡単なエンド ツー エンド サンプルを次に示します 1 つのオーディオ処理フレームでオーディオ ストリームをポストデ コードします。
+使用する方法について簡単なエンド ツー エンドのサンプルを次に示しますポストデ コード オーディオ ストリームで 1 つのオーディオ処理フレーム。
 
 ```cpp
 uint32_t streamStateChangeCount;

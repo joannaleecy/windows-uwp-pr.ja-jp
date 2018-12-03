@@ -1,19 +1,17 @@
 ---
 title: Xbox Live エクスペリエンスの設計
-author: KevinAsgari
 description: Xbox Live メンバー向けの優れたエクスペリエンスを設計する方法について説明します。そのためには、タイトルに関連するプレイヤーの統計、ランキング、実績についての計画を立てます。
 ms.assetid: d2a85621-7d02-4b11-a7fa-9ebaee0092d5
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 統計, 実績, ランキング, 設計
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bcf2c0697f932e8ad121fe0e3cc52c221b7ed5f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0f080593727ec6d7ddd529b2ce976708174250ba
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569580"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330243"
 ---
 # <a name="designing-xbox-live-experiences"></a>Xbox Live エクスペリエンスの設計
 

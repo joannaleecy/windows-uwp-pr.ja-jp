@@ -1,19 +1,17 @@
 ---
 title: コンテキスト検索の構成
-author: KevinAsgari
 description: ゲーム クリップやゲーム配信にタグ付けするようにコンテキスト検索を構成する方法について説明します。
 ms.assetid: 6cb2cb10-811a-4b20-9b9b-a3fc59a033c2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成, コンテキスト検索, ゲーム クリップ, 配信
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e310eb0a38f64796d773075bdc9ca9034e7e536
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8c78f115a160c82a28881a3c551a958cdf4b68c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581290"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327961"
 ---
 # <a name="configuring-contextual-search"></a>コンテキスト検索の構成
 

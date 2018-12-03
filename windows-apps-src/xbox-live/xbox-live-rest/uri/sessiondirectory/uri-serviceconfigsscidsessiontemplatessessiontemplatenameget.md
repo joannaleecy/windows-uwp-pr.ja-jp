@@ -2,22 +2,20 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
 assetID: 81139619-dc27-1601-30ba-08f6c45aaaca
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 25a2e4cd0ec13baea6ea14c44b277a8d14e1b3eb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e70c2412728eafe76e520e871fbe106c4b1a8ea3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560492"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331403"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
-一連のセッション テンプレート名を取得します。
+セッション テンプレートの名前のセットを取得します。
 
 > [!IMPORTANT]
 > この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。

@@ -1,19 +1,17 @@
 ---
 title: SmartMatch マッチメイキング
-author: KevinAsgari
 description: マルチプレイヤー ゲームでプレイヤーをマッチングする Xbox Live SmartMatch マッチメイキング サービスについて説明します。
 ms.assetid: ba0c1ecb-e928-4e86-9162-8cb456b697ff
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
 ms.localizationpriority: medium
-ms.openlocfilehash: 68997bc3a7ff6a7b1dfa67862ece49020539dba3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 487ba1e2b6ab6bccbed4231034d09046a93292db
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563727"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332556"
 ---
 # <a name="smartmatch-matchmaking"></a>SmartMatch マッチメイキング
 
@@ -190,7 +188,7 @@ SmartMatch マッチメイ キングのすべての構成は、 [Xbox デベロ�
 
 ターゲット セッションでは、マッチメイキングされるゲーム プレイ向けのテンプレートを使用する必要があります。 ゲーム プレイの開始前にピア間の QoS チェックを有効にする設定が含まれている必要があり、"ゲームプレイ" 機能でマークされている必要があります。
 
-XDP またはパートナー センターの UI の構成と各セッションを 1 つまたは複数のホッパーを各どのセッション一緒にマッチされたそのホッパー内を決定するルールが含まれますにマップすることができます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
+Config XDP またはパートナー センターの UI では、各セッションをマップを 1 つまたは複数のホッパーを各どのセッション一緒にマッチされたそのホッパー内を決定するルールが含まれます。 詳細については、「マッチメイキングの基本的なホッパー構成」を参照してください。
 
 
 #### <a name="basic-hopper-configuration-for-matchmaking"></a>マッチメイキングの基本的なホッパー構成

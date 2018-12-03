@@ -2,19 +2,17 @@
 title: MultiplayerSessionReference (JSON)
 assetID: 6e03e060-8c9b-b394-415f-af7e85be569f
 permalink: en-us/docs/xboxlive/rest/json-multiplayersessionreference.html
-author: KevinAsgari
 description: " MultiplayerSessionReference (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f7e6e4e9579059f690baffd29e1fa855b4b67d9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5986079e1cae3338d8cc24a9e85f6941cf4fbec4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577771"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328039"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
 **MultiplayerSessionReference**を表す JSON オブジェクト。 
@@ -22,13 +20,13 @@ ms.locfileid: "7577771"
 
   
  
-MultiplayerSessionReference JSON オブジェクトでは、次の仕様があります。
+MultiplayerSessionReference JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。| 
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。| 
 | templateName | string | セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。 | 
-| name | string | セッションの名前。 セッション識別子のパート 3 です。 | 
+| name | string | セッションの名前です。 セッション識別子のパート 3 です。 | 
   
 <a id="ID4EZ"></a>
 

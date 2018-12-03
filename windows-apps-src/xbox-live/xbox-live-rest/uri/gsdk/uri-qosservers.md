@@ -2,22 +2,20 @@
 title: /qosservers
 assetID: 6adbcc27-474c-959b-f0b7-de97241862c7
 permalink: en-us/docs/xboxlive/rest/uri-qosservers.html
-author: KevinAsgari
 description: " /qosservers"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: fbf22063c3eabc61f97b4892e0a2a9bb9c24e387
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fdd55e1c4b1d162906dc4480aa7349e4dd734a49
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571226"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332553"
 ---
 # <a name="qosservers"></a>/qosservers
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [ホスト名](#ID4EZ)
  

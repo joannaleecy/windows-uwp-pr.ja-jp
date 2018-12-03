@@ -2,19 +2,17 @@
 title: GET (/users/xuid({xuid})/inbox/{messageId})
 assetID: d76563d0-2c74-0308-054b-762c80392a02
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinboxmessageidget.html
-author: KevinAsgari
 description: " GET (/users/xuid({xuid})/inbox/{messageId})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e3885caae38d1ce69d3ae8e6f7d8de8839cb30ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 29b4c57468148a431a10e0d74f85d360ff0992b3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557962"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347382"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
 サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
@@ -35,7 +33,7 @@ ms.locfileid: "7557962"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。
+この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとでもう一度、Xbox 360 は読み取り/未読メ状態を更新されません。
 
 この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
@@ -46,7 +44,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 |
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 |
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 |
 
 <a id="ID4ERB"></a>
@@ -68,14 +66,14 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-のみユーザー メッセージを取得することができます。
+のみ、独自のユーザーのメッセージを取得できます。
 
 <a id="ID4EUC"></a>
 
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- |
@@ -103,13 +101,13 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
-| 送信| DateTime|  | 日付と時刻は、メッセージが送信されました。 (サービスによって提供されます)。|
-| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する最長有効期間がある)。|
+| 送信| DateTime|  | メッセージが送信された日付と時刻。 (サービスによって提供されます)。|
+| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する、最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="sample-response"></a>応答の例
@@ -139,7 +137,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | errorSource| string| エラーが発生した場所を指定します。|
-| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。|
+| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。|
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。|
 
 <a id="ID4E3DAC"></a>

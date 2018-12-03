@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤー セッション ステータス コード
-author: KevinAsgari
 description: マルチプレイヤー セッションを要求したときに Xbox Live サービスから返されるステータス コードについて説明します。
 ms.assetid: 4ab320d6-8050-41a9-9f00-faaad3b128fd
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, ステータス コード, セッション
 ms.localizationpriority: medium
-ms.openlocfilehash: 31e8e73008505457949fd8123b1c4bd1452785ef
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fbddd0070eb24d6fc050c59fa2a0197f98ee08c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552954"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337127"
 ---
 # <a name="multiplayer-session-status-codes"></a>マルチプレイヤー セッション ステータス コード
 

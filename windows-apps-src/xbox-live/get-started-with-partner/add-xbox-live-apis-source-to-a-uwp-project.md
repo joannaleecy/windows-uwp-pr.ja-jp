@@ -1,19 +1,17 @@
 ---
 title: Xbox Live API のソースを UWP プロジェクトに追加する
-author: KevinAsgari
 description: UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする方法について説明します。
 ms.assetid: 744f87dc-510b-4a26-b2c0-74fc70b8453b
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 0900786f4aeb8e2baf1bfe7a9fcc302ac857f91a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2ca7d0aca0f05a56f51d13f8ae27c1c0ccd6e39e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561276"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332765"
 ---
 # <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a>UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする
 

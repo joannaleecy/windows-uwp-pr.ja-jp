@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/crossMediaGroupSearch
 assetID: 5c8c28a1-a492-2817-7164-eef9ae2f3fd1
 permalink: en-us/docs/xboxlive/rest/uri-localecrossmediagroupsearch.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/crossMediaGroupSearch"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a5a672c2b9abf986ac46850c8d43ad9ff927871
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 301c350ad757546d03eaf5fce3e09692db632f34
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566357"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342542"
 ---
 # <a name="mediamarketplaceidcrossmediagroupsearch"></a>/media/{marketplaceId}/crossMediaGroupSearch
 いくつかの異なるメディア グループからの項目をアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -28,7 +26,7 @@ ms.locfileid: "7566357"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EUB"></a>
 

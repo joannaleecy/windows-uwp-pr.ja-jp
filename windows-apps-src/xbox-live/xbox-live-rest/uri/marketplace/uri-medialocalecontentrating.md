@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/contentRating
 assetID: 573cf378-36a4-cc82-0029-37d268da933c
 permalink: en-us/docs/xboxlive/rest/uri-medialocalecontentrating.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/contentRating"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aa0cdd7b1167ee139774114ad65e507bce759e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a7c269a85be16426a6c05860bda5bc72a51872bf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577794"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324193"
 ---
 # <a name="mediamarketplaceidcontentrating"></a>/media/{marketplaceId}/contentRating
 コンテンツの規制トークンにアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -28,7 +26,7 @@ ms.locfileid: "7577794"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EUB"></a>
 

@@ -1,19 +1,17 @@
 ---
 title: マルチプレイヤーの実行方法
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー 2015 で一般的なタスクを実装する方法について説明します。
 ms.assetid: 99c5b7c4-018c-4f7a-b2c9-0deed0e34097
-ms.author: kevinasg
 ms.date: 08/29/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
-ms.openlocfilehash: e845d1d714b42e1c1989b442a9c232f610b72ae4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20bf3486491e8173ce946a3a5dc2e4bc83305c83
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554801"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344412"
 ---
 # <a name="multiplayer-how-tos"></a>マルチプレイヤーの実行方法
 

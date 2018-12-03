@@ -1,19 +1,17 @@
 ---
 title: XIM 帯域外予約
-author: KevinAsgari
 description: 帯域外予約を介した専用チャット ソリューションとして Xbox Integrated Multiplayer (XIM) を使用する方法について説明します。
 ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
-ms.author: kevinasg
 ms.date: 01/28/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, XIM, チャット
 ms.localizationpriority: medium
-ms.openlocfilehash: b5e67e75a981a6abc88b877983e544293055e90b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 217517031c230cfca98bf4420d1f5b9876afbdc1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572175"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322625"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>帯域外予約を介した専用チャット ソリューションとしての XIM の使用
 

@@ -2,19 +2,17 @@
 title: /handles/query
 assetID: e00d31ad-b9ba-8e52-1333-83192eab0446
 permalink: en-us/docs/xboxlive/rest/uri-handlesquery.html
-author: KevinAsgari
 description: " /handles/query"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d4ce38768923f9adb2cdb8e2237e9afcb774433b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eaa148972ce1e65056470a6c4082cb4e50de3f09
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571024"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328123"
 ---
 # <a name="handlesquery"></a>/handles/query
 セッション ハンドルのクエリを作成する POST 操作をサポートしています。 
@@ -32,7 +30,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>注釈
-この URI は、ハンドルのクエリをサポートしています。 セッションのクエリ文字列とバッチのクエリであるとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。 最大 100 ハンドルがサポートされています。  
+この URI は、ハンドルのクエリをサポートします。 クエリ文字列とバッチであり、セッション クエリとは異なり、ハンドルのクエリはクエリ プロセッサ スタイルを使用します。 最大 100 ハンドルがサポートされています。  
 <a id="ID4E2"></a>
 
  

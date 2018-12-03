@@ -2,19 +2,17 @@
 title: /users/{ownerId}/people/xuids
 assetID: db2faec7-9f6c-f240-586a-45d6ed596e88
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridpeoplexuids.html
-author: KevinAsgari
 description: " /users/{ownerId}/people/xuids"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d2b915e185462e65f68fefce009d6081e7cddf37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27b7695ba163bf0ca832a96df030868e646e0abc
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572782"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332448"
 ---
 # <a name="usersowneridpeoplexuids"></a>/users/{ownerId}/people/xuids
 XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。 これらの Uri のドメインが`social.xboxlive.com`します。
@@ -28,7 +26,7 @@ XUID によって people を呼び出し元のユーザーのコレクション�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの id。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
   
 <a id="ID4EOB"></a>
 
@@ -37,7 +35,7 @@ XUID によって people を呼び出し元のユーザーのコレクション�
 
 [POST](uri-usersowneridpeoplexuidspost.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーからコレクションに対応する XUID によってユーザーを取得します。
+&nbsp;&nbsp;呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。
  
 <a id="ID4EYB"></a>
 

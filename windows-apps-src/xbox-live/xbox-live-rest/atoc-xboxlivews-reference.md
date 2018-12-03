@@ -2,19 +2,17 @@
 title: Xbox Live サービス RESTful リファレンス
 assetID: 527db3b0-5ebd-eeca-4330-2074199c82ff
 permalink: en-us/docs/xboxlive/rest/atoc-xboxlivews-reference.html
-author: KevinAsgari
 description: " Xbox Live サービス RESTful リファレンス"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f58c9028d506b6f2773529e3c1e8f8fdfbff4d6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2076cf7b909083072904128a8f53c200a681ee8e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554988"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334589"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
@@ -31,7 +29,7 @@ Xbox Live サービスでは、一連のゲームとプレイヤーの情報を�
 
 [JavaScript Object Notation (JSON) オブジェクト リファレンス](json/atoc-xboxlivews-reference-json.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
+&nbsp;&nbsp;Xbox Live サービスを使用する JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
 
 [JavaScript Object Notation (JSON) オブジェクトで使用される列挙型](enums/atoc-xboxlivews-reference-enums.md)
 

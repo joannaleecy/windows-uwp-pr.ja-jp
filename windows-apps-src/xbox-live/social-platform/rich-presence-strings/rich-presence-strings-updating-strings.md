@@ -1,19 +1,17 @@
 ---
 title: リッチ プレゼンスの文字列の更新
-author: KevinAsgari
 description: Xbox Live のリッチ プレゼンス文字列を更新する方法について説明します。
 ms.assetid: eb2bb82e-8730-4d74-9b33-95d133360e44
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd235edd7f47f0a2d9b42be28bd974042de5739
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac4549301c60eafb935dab0ac9c5b5028452edfb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566136"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341238"
 ---
 # <a name="rich-presence-updating-strings"></a>リッチ プレゼンスの文字列の更新
 

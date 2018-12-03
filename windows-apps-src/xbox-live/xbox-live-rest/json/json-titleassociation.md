@@ -2,19 +2,17 @@
 title: TitleAssociation (JSON)
 assetID: 05f4edbb-cc3d-c17d-0979-aac9e44a4988
 permalink: en-us/docs/xboxlive/rest/json-titleassociation.html
-author: KevinAsgari
 description: " TitleAssociation (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: c90dbca0e16cf1dcebc53fd8fa90006ca7ae7caf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 21a583e7556f98b827a63de3948f43d76f25c907
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581958"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339607"
 ---
 # <a name="titleassociation-json"></a>TitleAssociation (JSON)
 実績に関連付けられているタイトルです。 
@@ -23,7 +21,7 @@ ms.locfileid: "7581958"
  
 ## <a name="titleassociation"></a>TitleAssociation
  
-TitleAssociation オブジェクトでは、次の仕様があります。
+TitleAssociation オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

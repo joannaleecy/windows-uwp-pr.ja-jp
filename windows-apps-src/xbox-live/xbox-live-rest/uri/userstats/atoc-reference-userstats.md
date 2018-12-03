@@ -2,19 +2,17 @@
 title: ユーザー統計 URI
 assetID: b17d420b-b210-0b57-6cb1-49191103a765
 permalink: en-us/docs/xboxlive/rest/atoc-reference-userstats.html
-author: KevinAsgari
 description: " ユーザー統計 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f850cfcb99df079698a685399680bfdb6e32c813
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1aadbf1a59f67dfdb55843002d1a4f534fc411bd
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7570008"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339938"
 ---
 # <a name="user-statistics-uris"></a>ユーザー統計 URI
  
@@ -33,7 +31,7 @@ ms.locfileid: "7570008"
 
 [/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りの一覧でサービス構成にアクセスします。
+&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。
  
 <a id="ID4EMB"></a>
 

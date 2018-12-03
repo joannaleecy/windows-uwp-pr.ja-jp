@@ -2,19 +2,17 @@
 title: quotaInfo (JSON)
 assetID: 3147ab78-e671-e142-0a3a-688dc4079451
 permalink: en-us/docs/xboxlive/rest/json-quota.html
-author: KevinAsgari
 description: " quotaInfo (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cb2283f5214d1d25e1aa0e8bcba17f4c51019fd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f3499fdba972d6e953813fc490d080910921698e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558335"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344511"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
 クォータ タイトル グループについてを説明します。 

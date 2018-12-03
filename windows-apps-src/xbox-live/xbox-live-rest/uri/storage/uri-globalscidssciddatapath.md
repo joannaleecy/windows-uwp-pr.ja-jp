@@ -2,19 +2,17 @@
 title: /global/scids/{scid}/data/{path}
 assetID: d6353cd3-9127-98d4-bb99-5df690e07022
 permalink: en-us/docs/xboxlive/rest/uri-globalscidssciddatapath.html
-author: KevinAsgari
 description: " /global/scids/{scid}/data/{path}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ad4c3238dca10150293af60aedb14a4d1ca756
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b8788ae6773c53c2f86b3f51ee9023876416feeb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552672"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351545"
 ---
 # <a name="globalscidssciddatapath"></a>/global/scids/{scid}/data/{path}
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -29,7 +27,7 @@ ms.locfileid: "7552672"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
+| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
   
 <a id="ID4E3B"></a>
 

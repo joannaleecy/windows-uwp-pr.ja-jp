@@ -2,19 +2,17 @@
 title: DELETE (/handles/{handleId})
 assetID: 71cceff4-3a74-dc05-12db-cfe3f20a8aea
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleiddelete.html
-author: KevinAsgari
 description: " DELETE (/handles/{handleId})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: da73760969e7a4a9e268644555d0790980b16123
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 354f3563c48139edc5d5cc041e8304998af55620
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579248"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351744"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
 ハンドル ID で指定されたハンドルを削除します。

@@ -2,19 +2,17 @@
 title: GET (/users/{ownerId}/people/avoid)
 assetID: e3420658-4738-8e80-44da-8281726fce01
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoidget.html
-author: KevinAsgari
 description: " GET (/users/{ownerId}/people/avoid)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 68237ed101870a8fed4b7b5fb298006f784a0910
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 745893b4b975b5fbf64fe76591ec15d18af59d73
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7566396"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324246"
 ---
 # <a name="get-usersowneridpeopleavoid"></a>GET (/users/{ownerId}/people/avoid)
 ユーザーの回避一覧を取得します。
@@ -32,7 +30,7 @@ ms.locfileid: "7566396"
 
 ## <a name="remarks"></a>注釈
 
-ターゲットを指定するはしている場合、ブロック一覧で、空いないいるかどうかにのみそのユーザーを返します。
+ターゲットを指定するはしている場合、ブロックの一覧に、空いないいるかどうかにのみそのユーザーを返します。
 
 <a id="ID4EZ"></a>
 
@@ -41,7 +39,7 @@ ms.locfileid: "7566396"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの id。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4EEB"></a>
 
@@ -59,7 +57,7 @@ ms.locfileid: "7566396"
 
 | ヘッダー| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization | string| HTTP の認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
+| Authorization | string| HTTP 認証の資格情報を認証します。 値の例:<code>Xauth=&lt;authtoken></code>します。 最大サイズ: なし。|
 | Accept| string| コンテンツの種類の受け入れられる。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4EYD"></a>
@@ -67,14 +65,14 @@ ms.locfileid: "7566396"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 理由フレーズ| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| OK| セッションが正常に取得されました。|
 | 400| Bad Request| URI で指定されたターゲット ID が正しくありません。|
 | 403| Forbidden| URI で指定された所有者は、認証されたユーザーではありません。|
-| 404| Not Found します。| URI で指定された所有者は存在しません。|
+| 404| 見つかりません。| URI で指定された所有者は存在しません。|
 
 <a id="ID4E1F"></a>
 
@@ -85,7 +83,7 @@ ms.locfileid: "7566396"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Content-Type| string| 要求の本文の MIME タイプ。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 | Content-Length| string| 応答に送信されるバイト数。 値の例: 34 します。 最大サイズ: なし。|
-| キャッシュ コントロール| string| キャッシュ動作を指定する、サーバーからていねい要求します。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
+| キャッシュ コントロール| string| キャッシュ動作を指定するサーバーからていねい要求します。 値の例:<code>application/json</code>します。 最大サイズ: なし。|
 
 <a id="ID4ESH"></a>
 

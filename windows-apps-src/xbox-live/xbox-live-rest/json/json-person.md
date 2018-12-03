@@ -2,19 +2,17 @@
 title: Person (JSON)
 assetID: b49234b1-03cd-f16e-c293-c74174382167
 permalink: en-us/docs/xboxlive/rest/json-person.html
-author: KevinAsgari
 description: " Person (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ab54fce4631e8b1d0c5361863078d28d0cf3f2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 175d66ffc7744ca8203fe7681fcb0167e150f012
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576999"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341095"
 ---
 # <a name="person-json"></a>Person (JSON)
 People システムで 1 人のユーザーに関するメタデータ。 
@@ -23,13 +21,13 @@ People システムで 1 人のユーザーに関するメタデータ。
  
 ## <a name="person"></a>人
  
-Person オブジェクトでは、次の仕様があります。
+ユーザー オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | xuid| string| 必須。 Xbox ユーザー ID (XUID)、10 進数。 値の例: 2603643534573573 します。| 
-| isFavorite| ブール値| 必須。 かどうかこのユーザーは、ユーザーが気詳細です。 ユーザーためできます非常に多数のユーザーの自分のユーザー リストで、にお気に入りユーザーをエクスペリエンスの優先し、する前に [お気に入り] ではない他のユーザーに表示する必要があります。| 
-| isFollowingCaller| ブール値| 省略可能。 このユーザーが、ユーザーをフォローするかどうかを代わりに、API 呼び出ししました。| 
+| isFavorite| ブール値| 必須。 かどうかこのユーザーは、ユーザーが気詳細です。 ユーザーためできるユーザー数が非常に大規模な自分のユーザー リストで、にお気に入りユーザーをエクスペリエンスに優先順位し、する前に [お気に入り] ではない他のユーザーに表示する必要があります。| 
+| isFollowingCaller| ブール値| 省略可能。 このユーザーがユーザーをフォローするかどうかを代わりに、API 呼び出ししました。| 
 | socialNetworks| 文字列の配列| 省略可能。 外部ネットワーク内でユーザーがこの人と関係のあります。| 
   
 <a id="ID4EHC"></a>

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa68fcffbca4326ccdb5a65404260f81458c8d7
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7840736"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329650"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙型
 ThumbnailSource 列挙型をについて説明します。 

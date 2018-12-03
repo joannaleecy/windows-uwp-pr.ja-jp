@@ -1,19 +1,17 @@
 ---
 title: Xbox Live サービス API のトラブルシューティング
-author: KevinAsgari
 description: Xbox Live API の問題をトラブルシューティングするときに追加のエラー情報を記録する方法について説明します。
 ms.assetid: 3827bba1-902f-4f2d-ad51-af09bd9354c4
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング, エラー, ログ
 ms.localizationpriority: medium
-ms.openlocfilehash: fad6a36c3678a6b3c48dcbd78d9c19ed843a118f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 67735d83e5ff301ee4434a6917fce814cabe8309
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563664"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341294"
 ---
 # <a name="troubleshooting-the-xbox-live-apis"></a>Xbox Live API のトラブルシューティング
 

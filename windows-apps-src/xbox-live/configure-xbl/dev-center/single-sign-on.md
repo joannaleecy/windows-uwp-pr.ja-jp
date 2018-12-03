@@ -1,19 +1,17 @@
 ---
 title: パートナー センターでシングル サインオンを構成します。
-author: KevinAsgari
-description: タイトルでの Xbox Live ID を使用して、ユーザーをサービスにサインインできるようにするパートナー センターでシングル サインオンを構成する方法について説明します。
+description: タイトルでの Xbox Live ID を使用してユーザーをサービスにサインインできるようにするパートナー センターでシングル サインオンを構成する方法について説明します。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター, シングル サインオン
-ms.openlocfilehash: 01714289ff12d096a17c5474f6a7619680481aa3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7568246"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339561"
 ---
 # <a name="configure-single-sign-on-in-partner-center"></a>パートナー センターでシングル サインオンを構成します。
 

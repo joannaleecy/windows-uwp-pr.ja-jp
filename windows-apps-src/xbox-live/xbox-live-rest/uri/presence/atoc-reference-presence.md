@@ -2,23 +2,21 @@
 title: プレゼンス URI
 assetID: 4ba44d9c-8615-cacc-2eee-7ff5e7c74383
 permalink: en-us/docs/xboxlive/rest/atoc-reference-presence.html
-author: KevinAsgari
 description: " プレゼンス URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf14449fa3a9137b31a11bdd1b6b73032ed5162
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1a46ecd48c2b0bf523ab234a5f20cf9ed6669e75
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7569946"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8333951"
 ---
 # <a name="presence-uris"></a>プレゼンス URI
  
-このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
 Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームのみでは、このサービスを使用できます。
  
@@ -57,7 +55,7 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting](uri-usersxuidgroupsmonikerbroadcasting.md)
 
-&nbsp;&nbsp;アクセス グループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードに関連する XUID URI に表示されます。
+&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting/count](uri-usersxuidgroupsmonikerbroadcastingcount.md)
 

@@ -1,19 +1,17 @@
 ---
 title: XDK から UWP への Xbox Live コードの移植
-author: KevinAsgari
 description: Xbox Live コードを Xbox 開発キット (XDK) プラットフォームからユニバーサル Windows プラットフォーム (UWP) に移植する方法について説明します。
 ms.assetid: 69939f95-44ad-4ffd-851f-59b0745907c8
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 91a30a81123902d7b4b2f8311ae1f24bd23b3e43
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6e8a6ebe716f1e062940066184e9f734441371b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565389"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328825"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植
 
@@ -27,7 +25,7 @@ ms.locfileid: "7565389"
 
 <a name="_Setting_up_and"></a>
 
-## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>設定して、パートナー センターおよび XDP でプロジェクトを構成します。
+## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>設定をセットアップして、パートナー センターおよび XDP でプロジェクトを構成します。
 
 Xbox Live サービスを使用する UWP タイトルは、[パートナー センター](https://partner.microsoft.com/dashboard)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
 
@@ -77,7 +75,7 @@ XDP でクロス プレイとその構成要件をサポートにすることに
 
 Xbox バージョンの appxmanifest.xml ファイルと、UWP バージョンの appxmanifest.xml ファイルの最も一般的な変更点は次のとおりです。
 
-1. UWP では、開発中であっても Package Identity が問題となります。 Id 名と発行元の両方*と一致する必要があります*UWP アプリのパートナー センターで定義されたものです。
+1. UWP では、開発中であっても Package Identity が問題となります。 ユーザー名と発行元の両方*と一致する必要があります*内容が、UWP アプリのパートナー センターで定義されました。
 
 1. Package Dependency セクションが必要です。 次に、例を示します。
 

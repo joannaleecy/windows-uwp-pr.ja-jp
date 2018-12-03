@@ -2,25 +2,23 @@
 title: リスト URI
 assetID: 84dcbd11-86a0-8a1e-7db9-bcecf9b7f853
 permalink: en-us/docs/xboxlive/rest/atoc-reference-lists.html
-author: KevinAsgari
 description: " リスト URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 63c84b68f990392d17342e333b18e5f5d38d2266
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a6f1e743542e70ee96ad93ee1cf2a7f2c3ed7158
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579568"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326392"
 ---
 # <a name="lists-uris"></a>リスト URI
  
 このセクションでは、*ピン*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
  
-ゲームと Xbox 360、Windows Phone デバイスで、SmartGlass、または Xbox.com で実行されているアプリケーションのみには、このサービスを使用できます。
+ゲームと Xbox 360、Windows Phone デバイスで、SmartGlass、または Xbox.com で実行されているアプリケーションのみが、このサービスを使用できます。
  
 これらの Uri のドメインは、eplists.xboxlive.com です。
  
@@ -35,7 +33,7 @@ ms.locfileid: "7579568"
 
 [/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。
+&nbsp;&nbsp;完全な一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 

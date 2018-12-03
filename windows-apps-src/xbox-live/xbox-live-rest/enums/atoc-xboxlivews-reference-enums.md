@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d0deb009ec40eaeda09687e5ed9dbb69066ca317
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707102"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335763"
 ---
 # <a name="enumerations-used-in-javascript-object-notation-json-objects"></a>JavaScript Object Notation (JSON) オブジェクトで使用される列挙型
  
-Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 サービスによって使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。 このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。 
+Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 サービスで使われる多くの JavaScript Object Notation (JSON) オブジェクトには、JavaScript Object Notation (JSON) オブジェクトに表示されるフィールドの有効な値を指定する列挙体が関連付けられています。 このセクションでは、JavaScript Object Notation (JSON) オブジェクトで使用する列挙体で示します。 
  
 <a id="ID4EJB"></a>
 

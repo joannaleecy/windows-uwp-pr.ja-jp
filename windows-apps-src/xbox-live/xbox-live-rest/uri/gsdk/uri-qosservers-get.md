@@ -2,22 +2,20 @@
 title: GET (/qosservers)
 assetID: 8b940c1b-947c-eab3-78ed-4384f57ea0bd
 permalink: en-us/docs/xboxlive/rest/uri-qosservers-get.html
-author: KevinAsgari
 description: " GET (/qosservers)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a6a912e663773d427a6786a6af7b1fdf26c548
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02d24dbf1d189b759784dbbfa7052e2c218ec27e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557108"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326330"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4EBB)
   * [必要な応答ヘッダー](#ID4EUC)
@@ -49,7 +47,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答は常に、次の表に示すようにヘッダーを含めます。
+応答には常に、次の表に示すようにヘッダーが含まれます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | 

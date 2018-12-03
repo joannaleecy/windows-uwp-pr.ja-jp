@@ -2,28 +2,26 @@
 title: Property (JSON)
 assetID: 93de547e-d936-6fcc-92cb-e4dd284dd609
 permalink: en-us/docs/xboxlive/rest/json-property.html
-author: KevinAsgari
 description: " Property (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d37054d03f6ebe8299db78673dc631c9b4b4bc16
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7e2a721886509c49c60d663d491f8d49bc3c95e9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556465"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349129"
 ---
 # <a name="property-json"></a>Property (JSON)
-マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。
+マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。
 <a id="ID4EN"></a>
 
 
 ## <a name="property"></a>プロパティ
 
-プロパティのオブジェクトでは、次の仕様があります。
+プロパティ オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |

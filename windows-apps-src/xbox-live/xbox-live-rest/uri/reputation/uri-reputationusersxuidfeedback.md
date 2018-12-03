@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/feedback
 assetID: 86c9663c-650b-bb0c-743c-8280ee3a82f7
 permalink: en-us/docs/xboxlive/rest/uri-reputationusersxuidfeedback.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/feedback"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: defd8161211065318242077dde02d8a6f777ac0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7bf186091eacfcdb39c41bf256000990613d3685
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575279"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327102"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -27,7 +25,7 @@ ms.locfileid: "7575279"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
+| xuid| ulong| Xbox ユーザー ID (XUID)、ユーザーが報告されるのです。| 
   
 <a id="ID4EZB"></a>
 

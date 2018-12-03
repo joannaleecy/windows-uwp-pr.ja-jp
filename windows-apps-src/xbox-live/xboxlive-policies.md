@@ -1,19 +1,17 @@
 ---
-author: KevinAsgari
 title: Xbox Live ポリシー
 description: Windows 10 または Xbox One のゲームに Xbox Live を追加するためのポリシーについて説明します。
-ms.author: kevinasg
 ms.date: 05/17/2018
 ms.topic: article
 layout: LandingPage
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live, ポリシー
 ms.localizationpriority: medium
-ms.openlocfilehash: 849d89f0cfd261b1e2dfc3b5eb355e3f1c4f434a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dae8ce84e791406a78252c231cb2cdc60caa07fb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560930"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8328365"
 ---
 ## <a name="xbox-live-policies"></a>Xbox Live ポリシー
 

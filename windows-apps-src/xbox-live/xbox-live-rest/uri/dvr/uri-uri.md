@@ -2,22 +2,20 @@
 title: /{uri}
 assetID: 40b256c3-197d-66c9-5680-15ddddde82ee
 permalink: en-us/docs/xboxlive/rest/uri-uri.html
-author: KevinAsgari
 description: " /{uri}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b759fe8049b5f194a0754c9b357a4aab271950e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 58df5fba21d207e352b6c6915ef21688cde8a7a4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556198"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324649"
 ---
 # <a name="uri"></a>/{uri}
-ゲーム クリップ データにアクセスします。 これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ゲーム クリップ データにアクセスします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
  
   * [URI パラメーター](#ID4EX)
  
@@ -28,7 +26,7 @@ ms.locfileid: "7556198"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| <b>uri</b>| string| 使用する URI です。 詳細については、メソッドのページを参照してください。| 
+| <b>uri</b>| string| 使用する URI です。 詳細についてはメソッドのページを参照してください。| 
   
 <a id="ID4ETB"></a>
 

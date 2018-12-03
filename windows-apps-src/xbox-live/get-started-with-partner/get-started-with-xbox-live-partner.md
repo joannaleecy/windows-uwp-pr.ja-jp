@@ -1,19 +1,17 @@
 ---
 title: パートナーとして Xbox Live を使用する際の概要
-author: KevinAsgari
 description: 対象パートナーや ID@Xbox メンバーが Xbox Live の開発を始める際に役立つリンクを紹介します。
 ms.assetid: 69ab75d1-c0e7-4bad-bf8f-5df5cfce13d5
-ms.author: kevinasg
 ms.date: 06/07/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, パートナー, ID@Xbox
 ms.localizationpriority: medium
-ms.openlocfilehash: 74b343ce248201b997f5bcd357095154e221092f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1a219ee6f4e1dc80ead893c4e230d70e8caa2400
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7573825"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345577"
 ---
 # <a name="get-started-with-xbox-live-as-a-managed-partner-or-an-idxbox-developer"></a>対象パートナーまたは ID@Xbox 開発者として Xbox Live の利用を開始する
 
@@ -21,7 +19,7 @@ ms.locfileid: "7573825"
 
 対象パートナーおよび ID@Xbox 開発者は、ユニバーサル Windows プラットフォーム (UWP) や Xbox 開発キット (XDK) プラットフォームに対応した Xbox Live タイトルを開発できます。
 
-利用可能なコンテンツだけでなくここも含まれますが、承認されたパートナー センター アカウントを持つパートナーが利用できるその他のドキュメント。 そのようなコンテンツには、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)でアクセスできます。
+利用可能なコンテンツだけでなくここも含まれますが、承認されたパートナー センター アカウントを使用してパートナーが利用できるその他のドキュメント。 そのようなコンテンツには、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content)でアクセスできます。
 
 ## <a name="why-should-you-use-xbox-live"></a>Xbox Live を使用する理由
 

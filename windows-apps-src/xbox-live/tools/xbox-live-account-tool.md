@@ -1,19 +1,17 @@
 ---
 title: Xbox Live Account Tool
-author: KevinAsgari
 description: Xbox Live Account Tool を使って Xbox Live 対応タイトルをテストするためのテスト アカウントをすばやく作成する方法について説明します。
 ms.assetid: ec5959f9-1c60-4aa4-94a6-5d8bdcf77a96
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト, テスト アカウント
 ms.localizationpriority: medium
-ms.openlocfilehash: e76f12ab9ebaffff6b106c13c033d5a7210346d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dead4e62e41b7b597ba9a578ee8f174386529937
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558081"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331829"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live Account Tool
 
@@ -23,7 +21,7 @@ Xbox Live Account Tool は、タイトル デベロッパーが既存のデベ�
 ## <a name="what-can-i-do-with-xbox-live-account-tool"></a>Xbox Live Account Tool の機能
 以下が可能です。
   1. ユーザーのプロフィール設定、XUID、アクティブな権限を表示する
-  2. フォロワーのリストをテキスト ファイルまたは Xbox 開発者向けプラットフォーム csv からユーザーのソーシャル グラフに追加します。
+  2. フォロワーのリストをいずれかのテキスト ファイルまたは Xbox 開発者向けプラットフォーム csv からユーザーのソーシャル グラフに追加します。
   3. ユーザーのフレンド リストを管理する: フォローしているユーザーのお気に入り登録、お気に入り解除、ブロック、ブロック解除、およびそのユーザーにフォローされているかどうかの確認
   4. 開発ユーザーの評判を変更する (および、未処理の評判統計値をすぐに表示する)
   5. ユーザーのゲーマータグを変更する

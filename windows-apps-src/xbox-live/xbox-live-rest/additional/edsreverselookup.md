@@ -2,19 +2,17 @@
 title: ビデオの EDS 逆引き参照
 assetID: 773f7a8e-7571-3aec-96d6-478437696ea6
 permalink: en-us/docs/xboxlive/rest/edsreverselookup.html
-author: KevinAsgari
 description: " ビデオの EDS 逆引き参照"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e46bfb70ad377723694bfedb1dde0448564a97a8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d535dec8a95eba4d486bfc6946e187e2da66ae49
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581348"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8331694"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  
@@ -29,7 +27,7 @@ ms.locfileid: "7581348"
  
 逆引き参照では、4 つのパラメーターを渡すことが必要です。 
    * `idType=ScopedMediaId`
-   * `ids=` プロバイダーのメディア ID
+   * `ids=` プロバイダー メディア ID
    * `ScopeIdType=Title`
    * `ScopeId=` プロバイダーのタイトル ID
  
@@ -42,7 +40,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 以前の応答から**ProviderMediaId**フィールドを使用した逆引き参照の呼び出しを発行するには。 
+   * 応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B

@@ -1,18 +1,16 @@
 ---
 title: XIM (Unity と IL2CPP) の使用
-author: KevinAsgari
 description: UWP 用の Unity と IL2CPP スクリプト バックエンドと共に Xbox Integrated Multiplayer を使用する
-ms.author: kevinasg
 ms.date: 04/03/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
-ms.openlocfilehash: 4171fa830059eb557106ad3a7c485a6e96deeec6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a600fd253efae1daca34241b105a69514561e01d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558039"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340095"
 ---
 # <a name="use-xim-unity-with-il2cpp"></a>XIM (Unity と IL2CPP) の使用
 

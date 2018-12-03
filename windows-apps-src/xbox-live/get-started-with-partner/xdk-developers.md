@@ -1,19 +1,17 @@
 ---
 title: XDK ゲーム用 Visual Studio の概要
-author: KevinAsgari
 description: Visual Studio を使用して Xbox 開発キット (XDK) ゲームを開発する方法について学習するためのリンクを紹介します。
 ms.assetid: 3430cf97-0136-4c69-bcec-9cc3edf5fc95
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e071d6430190dbd25a54d46fc136d205839d865
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c197115bf7c71c8e794c0009d5f3435ea77f592a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554334"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8343042"
 ---
 # <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a>XDK ベースのゲームで Visual Studio を使用する際の概要
 

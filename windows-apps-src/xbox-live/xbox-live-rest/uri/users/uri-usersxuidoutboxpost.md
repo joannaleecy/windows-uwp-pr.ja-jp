@@ -2,22 +2,20 @@
 title: POST (/users/xuid({xuid})/outbox)
 assetID: de991d88-efe0-04f2-f6b2-0bc3e68bfd46
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidoutboxpost.html
-author: KevinAsgari
 description: " POST (/users/xuid({xuid})/outbox)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 86853a490ab407fa96d40c4b2e3deb42c5f346a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b225e8441fee3d499f172e2e5701096cdbc161a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556623"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322628"
 ---
 # <a name="post-usersxuidxuidoutbox"></a>POST (/users/xuid({xuid})/outbox)
-受信者の一覧を指定されたメッセージを送信します。
+受信者の一覧に指定されたメッセージを送信します。
 これらの Uri のドメインが`msg.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -42,7 +40,7 @@ ms.locfileid: "7556623"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 |
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 |
 
 <a id="ID4ENB"></a>
 
@@ -70,13 +68,13 @@ ms.locfileid: "7556623"
 | me| -| 前述のようにします。|
 | フレンド登録の依頼| すべてのユーザー| 200 OK|
 | フレンド登録の依頼| フレンドのみ| 200 OK|
-| フレンド登録の依頼| ブロック| 200 OK|
+| フレンド登録の依頼| ブロックされています。| 200 OK|
 | フレンド以外のユーザー| すべてのユーザー| 200 OK|
 | フレンド以外のユーザー| フレンドのみ| 200 OK|
-| フレンド以外のユーザー| ブロック| 200 OK|
+| フレンド以外のユーザー| ブロックされています。| 200 OK|
 | サード パーティのサイト| すべてのユーザー| 200 OK|
 | サード パーティのサイト| フレンドのみ| 200 OK|
-| サード パーティのサイト| ブロック| 200 OK|
+| サード パーティのサイト| ブロックされています。| 200 OK|
 
 <a id="ID4E3F"></a>
 
@@ -122,15 +120,15 @@ ms.locfileid: "7556623"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 200| 成功します。|
 | 400| 受信者の一覧が空または最大の長さを超えています。または、ゲーマータグと XUID の両方が指定されました。または、メッセージ テキストが長すぎます。|
 | 403| XUID を変換することはできません。|
-| 404| ゲーマータグが無効であるか、ユーザーが見つからない。|
-| 409| ユーザーは、システムによって 1 日あたりの制限に達した。|
+| 404| ゲーマータグが正しくないか、ユーザーが見つからない。|
+| 409| ユーザーは、システムによって 1 日あたりの制限に達したします。|
 | 500| サーバー側の一般的なエラーです。|
 
 <a id="ID4E1EAC"></a>

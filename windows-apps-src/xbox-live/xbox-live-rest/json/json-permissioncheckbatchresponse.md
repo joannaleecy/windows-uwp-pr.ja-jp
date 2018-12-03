@@ -2,19 +2,17 @@
 title: PermissionCheckBatchResponse (JSON)
 assetID: f157ed8d-7483-1b34-bc3d-e3fcf6a7d055
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckbatchresponse.html
-author: KevinAsgari
 description: " PermissionCheckBatchResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b9996c8631b44eafcee3d5300c330ed4d89a296
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ac79d3361e83993c372b1d651e97e900788d39f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561388"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327955"
 ---
 # <a name="permissioncheckbatchresponse-json"></a>PermissionCheckBatchResponse (JSON)
 バッチのアクセス許可の結果は、複数のユーザーのアクセス許可の値の一覧を確認します。 
@@ -23,7 +21,7 @@ ms.locfileid: "7561388"
  
 ## <a name="permissioncheckbatchresponse"></a>PermissionCheckBatchResponse
  
-PermissionCheckBatchResponse オブジェクトでは、次の仕様があります。
+PermissionCheckBatchResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

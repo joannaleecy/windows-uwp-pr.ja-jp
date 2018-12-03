@@ -1,19 +1,17 @@
 ---
 title: Xbox 開発機本体を構成する
-author: KevinAsgari
 description: Xbox Live の開発をサポートするように Xbox 開発機本体を構成する方法について説明します。
 ms.assetid: f8fd1caa-b1e9-4882-a01f-8f17820dfb55
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ef85dfa85f6beaabc038a1bec1c9a66cf6ea4148
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 479be2401e0c54801645ad1c0d91b11b7ffb6869
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562040"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330985"
 ---
 # <a name="configure-your-xbox-development-console"></a>Xbox 開発機本体を構成する
 

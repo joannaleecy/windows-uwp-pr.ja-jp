@@ -2,19 +2,17 @@
 title: GameResult (JSON)
 assetID: 43d863c0-2179-ae46-5d4a-2f08cd44b667
 permalink: en-us/docs/xboxlive/rest/json-gameresult.html
-author: KevinAsgari
 description: " GameResult (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb87b331fabf61ecd44dddf14a1f9c1ede51cff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b408b1aaae5e6f54958a016575c4a2c37765f1e9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576960"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350752"
 ---
 # <a name="gameresult-json"></a>GameResult (JSON)
 ゲーム セッションの結果を示すデータを表す JSON オブジェクト。 
@@ -28,9 +26,9 @@ GameResult JSON オブジェクトには、次のメンバーがあります。
 | --- | --- | --- | 
 | blob| 8 ビットの符号なし整数の配列| タイトルに固有のカスタムの結果データです。| 
 | 結果| string| ゲーム セッションにプレイヤーの参加の結果。 有効な値は、"Win"、"Loss"または「結び付けられて」はします。 | 
-| スコア| 64 ビットの符号付き整数| このスコア、プレイヤーがゲーム セッションで受信します。| 
+| スコア| 64 ビットの符号付き整数| プレイヤーがゲーム セッションで受信スコアです。| 
 | time| 64 ビットの符号付き整数| ゲーム セッションのプレイヤーの時間。| 
-| xuid| 64 ビットの符号なし整数| 結果の適用先のプレイヤーの Xbox ユーザー ID です。| 
+| xuid| 64 ビットの符号なし整数| 結果の適用先のプレイヤーの Xbox ユーザー ID。| 
   
 <a id="ID4EPC"></a>
 

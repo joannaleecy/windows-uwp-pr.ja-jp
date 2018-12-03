@@ -2,22 +2,20 @@
 title: ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス
 assetID: bbd7e3f3-77ac-6ffd-8951-fe4b8b48eb4c
 permalink: en-us/docs/xboxlive/rest/atoc-gsdk-uri-reference.html
-author: KevinAsgari
 description: " ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eff98593c122001cab591b9f45793aa6649736a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a9a0a38cff9214485b2d7e8b1f8a28acb3207444
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552687"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334474"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a>ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス
-Uri はクライアントによって、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
 <a id="ID4EY"></a>
 
@@ -30,7 +28,7 @@ Uri はクライアントによって、タイトルのゲーム サーバー開
 
 [/titles/{titleId}/clusters](uri-titlestitleidclusters.md)
 
-&nbsp;&nbsp;タイトルの Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。
+&nbsp;&nbsp;により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。
 
 [/titles/{titleId}/variants](uri-titlestitleidvariants.md)
 
@@ -38,7 +36,7 @@ Uri はクライアントによって、タイトルのゲーム サーバー開
 
 [/titles/{titleId}/sessionhosts](uri-titlestitleidsessionhosts.md)
 
-&nbsp;&nbsp;特定のタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。
+&nbsp;&nbsp;指定されたタイトル id に割り当てられる Xbox Live Compute sessionhost を要求します。
 
 [/titles/{titleId}/sessions/{sessionId}/allocationStatus](uri-titlestitleidsessionssessionidallocationstatus.md)
 

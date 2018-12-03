@@ -1,19 +1,17 @@
 ---
 title: Xbox Live クリエーターズ サービス構成
-author: KevinAsgari
 description: クリエーターズ プログラムの Xbox Live サービス構成について説明します。
 ms.assetid: 22b8f893-abb3-426e-9840-f79de0753702
-ms.author: kevinasg
 ms.date: 10/03/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b8136aa4d07204d2c97fec393439a17d3660f934
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 76d25a48caadb908e30e6e1897c19178e2b837e1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580810"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342601"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>クリエーターズ プログラムの Xbox Live サービス構成
 
@@ -25,7 +23,7 @@ ms.locfileid: "7580810"
 
 また、これを実現するためには、Xbox Live でランキングを認識できるよう、一度限りの構成を実行する必要があります。 たとえば、値を昇順で並び替えるか、降順で並び替えるか、データのどの部分を並び替えるかなどを構成します。
 
-この構成は Xbox Live クリエーターズ プログラムの[パートナー センター](https://partner.microsoft.com/dashboard)で発生し、 [Xbox Live の概要](get-started-with-xbox-live-creators.md)をセットアップする方法についてを読み取ることができます。
+この構成は Xbox Live クリエーターズ プログラムの[パートナー センター](https://partner.microsoft.com/dashboard)で発生し、セットアップを取得する方法については[Xbox Live の概要](get-started-with-xbox-live-creators.md)を読むことができます。
 
 ## <a name="get-your-ids"></a>ID を取得する
 

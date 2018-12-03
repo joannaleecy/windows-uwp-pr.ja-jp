@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/resetreputation
 assetID: 85c74beb-a12f-4015-e244-36942e366afc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidresetreputation.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/resetreputation"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ba9221b7b213cfd6c92a9a6cfcd5c6dec5c051fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6cd2f28833cdc86fb3fd01bb85890dcb0654901
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557916"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344907"
 ---
 # <a name="usersxuidxuidresetreputation"></a>/users/xuid({xuid})/resetreputation
-指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインとポート番号は`reputation.xboxlive.com:10433`します。
+指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10433`します。
  
   * [URI パラメーター](#ID4EV)
  

@@ -2,19 +2,17 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: 6a4c4a13-c968-3271-cbc3-b742a8de98b3
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d1bee897396236e0bb4423517371ebc2d25482c3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 21d534d7b55934d7174c925838ed88980acff609
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552696"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322644"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 セッション オブジェクトを取得します。
@@ -33,7 +31,7 @@ ms.locfileid: "7552696"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、指定した名前のセッション ドキュメントを読み取るし、セッションを取得します。 成功した場合、サーバーから取得したすべての属性をセッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 GET メソッドのパラメーターを使用して、指定されている**MultiplayerSessionReference**オブジェクトで、セッションの**GetCurrentSessionAsync**の*sessionReference*パラメーターで渡される直接平行します。
+この HTTP/REST メソッドは、指定した名前のセッション ドキュメントを読み取り、セッションを取得します。 成功した場合、サーバーから取得したすべての属性と、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 直接、GET メソッドのパラメーターでは指定されている**MultiplayerSessionReference**オブジェクトのセッションでは、 **GetCurrentSessionAsync**の*sessionReference*パラメーターで渡されたは似ています。
 
 GET メソッドのワイヤ形式は、次に示します。
 
@@ -52,7 +50,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 | セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
 

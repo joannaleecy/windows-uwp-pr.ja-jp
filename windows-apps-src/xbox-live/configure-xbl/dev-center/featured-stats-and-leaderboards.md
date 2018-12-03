@@ -1,19 +1,17 @@
 ---
 title: 注目の統計とランキング 2017
-author: shrutimundra
 description: パートナー センターで Xbox Live の注目の統計とランキング 2017年を構成する方法を説明します。
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
-ms.author: kevinasg
 ms.date: 10/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10、Xbox one, 注目の統計とランキング, ランキング, 統計 2017, パートナー センター
-ms.openlocfilehash: eebf1e96601f7bb576088f71239196f0bb5a124c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e152ea8aa745536f0b7843f4f7d372a79dc3223f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557369"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340593"
 ---
 # <a name="configuring-featured-stats-and-leaderboards-2017-in-partner-center"></a>パートナー センターで注目の統計とランキング 2017年を構成します。
 
@@ -21,7 +19,7 @@ ms.locfileid: "7557369"
 
 ![ゲーム ハブの実績ページのスクリーンショット](../../images/dev-center/featured-stats-and-leaderboards/featured-stats-and-leaderboards-2.png) 上の図は、タイトルのゲーム ハブに、注目の統計がどのように表示されるかを示しています。 注目の統計は赤のボックス内に表示されています。
 
-データ プラットフォーム 2017 のみにプレイヤーのゲーム ハブ ページで注目されるソーシャル ランキングで使用される統計を構成する必要があります。
+データ プラットフォーム 2017 でのみ表示されるソーシャル ランキングは、プレイヤーのゲーム ハブ ページで注目としてに使用されます。 統計を構成する必要があります。
 
 パートナー センターを使用して、注目の統計とランキングをゲームに関連付けられているを構成することができます。 次の手順に従って、構成を追加します。
 

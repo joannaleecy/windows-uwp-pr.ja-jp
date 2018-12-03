@@ -2,19 +2,17 @@
 title: MultiplayerSessionRequest (JSON)
 assetID: 2e311c6d-3427-5a39-1989-06dc08483057
 permalink: en-us/docs/xboxlive/rest/json-multiplayersessionrequest.html
-author: KevinAsgari
 description: " MultiplayerSessionRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 889db33ff81d3bf10743376118a0fab00ae44d8d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 18929c060adeae47f0305422dd312e7410f93981
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558373"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345715"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
 **MultiplayerSession**オブジェクト上の操作に対して要求の JSON オブジェクトが渡されます。 
@@ -22,14 +20,14 @@ ms.locfileid: "7558373"
 
   
  
-MultiplayerSessionRequest JSON オブジェクトでは、次の仕様があります。
+MultiplayerSessionRequest JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | 定数| object| セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。 | 
 | プロパティ | object | セッションのプロパティへの結合を変更します。| 
-| members.me | object| 定数および機能もプロパティなどのトップレベルの相当します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 | 
-| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクトです。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 メンバーは、要求で表示される順序でセッションに追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
+| members.me | object| 定数および機能もプロパティなどのトップレベルの対応します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 | 
+| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 要求で表示される順序でセッションにメンバーが追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
 | サーバー | object| 関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 | 
   
 <a id="ID4EZ"></a>

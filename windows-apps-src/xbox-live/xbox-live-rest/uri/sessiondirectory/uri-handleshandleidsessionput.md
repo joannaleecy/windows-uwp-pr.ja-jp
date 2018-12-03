@@ -2,22 +2,20 @@
 title: PUT (/handles/{handle-id}/session)
 assetID: d8a3d473-1192-ec0c-3935-c301f4f61e03
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsessionput.html
-author: KevinAsgari
 description: " PUT (/handles/{handle-id}/session)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8bd73ce7b71ddbe4a159a4d3e089c5adb9ad87
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a1872857d8b8e692f67e3c7b2a067ae86663c00
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582065"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347942"
 ---
 # <a name="put-handleshandle-idsession"></a>PUT (/handles/{handle-id}/session)
-作成またはハンドルを逆参照によって、セッションを更新します。
+作成またはハンドルを逆参照により、セッションを更新します。
 
 > [!IMPORTANT]
 > このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
@@ -33,9 +31,9 @@ ms.locfileid: "7582065"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、提供されているセッション ハンドル ID を使用して、マルチプレイヤー サービスに新規または更新されたセッションを書き込みます 結果は、サーバーから返されるものは、新規または更新されたセッションを表すオブジェクトです。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**でラップすることができます。
+この HTTP/REST メソッドは、提供されているセッション ハンドル ID を使用して、マルチプレイヤー サービスに新規または更新されたセッションを書き込みます 結果は、サーバーから返される新規または更新されたセッションを表すオブジェクトです。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionByHandleAsync**でラップすることができます。
 
-このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
+このメソッドの呼び出し元は、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
 
 <a id="ID4ECB"></a>
 

@@ -2,25 +2,23 @@
 title: ゲーム DVR URI
 assetID: 472f705e-bf28-7894-b1ba-80933d8746a6
 permalink: en-us/docs/xboxlive/rest/atoc-reference-dvr.html
-author: KevinAsgari
 description: " ゲーム DVR URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b4da88a85535d6be97607663c96e416e226efb31
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b4bfd6e51efce4c6ec85db99a10a44a776dcb840
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575720"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348638"
 ---
 # <a name="game-dvr-uris"></a>ゲーム DVR URI
  
-このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
  
-本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスがクリップを表示できます。
+本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
  
 によっては、対象の URI の関数にはこれらの Uri のドメインです。
  

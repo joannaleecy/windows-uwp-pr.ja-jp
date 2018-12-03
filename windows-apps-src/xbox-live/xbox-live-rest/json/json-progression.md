@@ -2,19 +2,17 @@
 title: Progression (JSON)
 assetID: cdff6415-f12b-0a45-61f2-26dbf47b1b56
 permalink: en-us/docs/xboxlive/rest/json-progression.html
-author: KevinAsgari
 description: " Progression (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 173c7dd42e0e5fda0d18e270c32a594171ebd7b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dda124e5be9a4d21a1ee5b9d6130290207e31921
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580106"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340393"
 ---
 # <a name="progression-json"></a>Progression (JSON)
 実績をロック解除に向けたユーザーの進行します。 
@@ -23,7 +21,7 @@ ms.locfileid: "7580106"
  
 ## <a name="progression"></a>進行状況
  
-進行状況のオブジェクトでは、次の仕様があります。
+進行状況オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 

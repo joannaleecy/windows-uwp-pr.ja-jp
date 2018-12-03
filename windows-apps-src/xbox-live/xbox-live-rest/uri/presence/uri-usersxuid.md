@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})
 assetID: 99ebb6b1-4c9b-0f51-10cc-3cad4ed8db74
 permalink: en-us/docs/xboxlive/rest/uri-usersxuid.html
-author: KevinAsgari
 description: " /users/xuid({xuid})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e0cc89d7411f513c23e74caf2c7cd151bcbf7df3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 827bdd417377856dcd70fd42d00febdf908ef339
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7575773"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326645"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
 別のユーザーまたはクライアントの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
@@ -28,7 +26,7 @@ ms.locfileid: "7575773"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのです。| 
+| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
   
 <a id="ID4EUB"></a>
 

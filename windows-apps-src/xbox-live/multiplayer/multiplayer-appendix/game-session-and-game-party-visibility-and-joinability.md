@@ -1,19 +1,17 @@
 ---
 title: ゲーム セッションの可視性と参加可能性
-author: KevinAsgari
 description: Xbox Live ゲーム セッションおよびゲーム パーティーの可視性と参加可能性について説明します。
 ms.assetid: 39b6dac1-0c6b-4dc1-9fe0-3cb7c471fbab
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: c039a2c78824de64c503786d911bb3427e53cf64
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 65da0d60080cd790b84ce46f8598c2f6f638ff05
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554758"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8334540"
 ---
 # <a name="game-session-and-game-party-visibility-and-joinability"></a>ゲーム セッションおよびゲーム パーティーの可視性と参加可能性
 
@@ -119,6 +117,5 @@ MPSD セッションの制御に加えて、タイトルはゲーム パーテ�
 
 <a name="client-multiplayer-flow"></a>クライアント マルチプレイヤーのフロー
 -----------------------
-
 ![](../../images/whitepapers/gamesessionvisibility_image1.png)
 ![](../../images/whitepapers/gamesessionvisibility_image2.png)

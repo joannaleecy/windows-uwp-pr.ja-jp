@@ -2,19 +2,17 @@
 title: GET (/serviceconfigs/{scid}/sessiontemplates)
 assetID: 5172c7be-371b-f0b1-d1d0-f0981eb2bfa7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatesget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/sessiontemplates)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f9b20801b9c687d64fdf5d02e22a7cac60535d7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5cb51ea751ca843dfc2a08cda2e79f79409d97b5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562909"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342667"
 ---
 # <a name="get-serviceconfigsscidsessiontemplates"></a>GET (/serviceconfigs/{scid}/sessiontemplates)
 MPSD セッション テンプレートのセットを取得します。

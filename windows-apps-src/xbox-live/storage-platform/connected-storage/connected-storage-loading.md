@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージを使ったデータの読み込み
-author: aablackm
 description: 接続ストレージを使ってデータを読み込む方法について説明します。
 ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
-ms.author: aablackm
 ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a54076f6105c4dbef257408a4af0cfe19f0574e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2f7498e8063e290dc506de72b34d2c77d29b26e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554216"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350566"
 ---
 # <a name="use-connected-storage-to-load-data"></a>接続ストレージを使ったデータの読み込み
 

@@ -2,19 +2,17 @@
 title: TitleRequest (JSON)
 assetID: 43aeb6f9-726d-9260-e2ba-f005ea688bf1
 permalink: en-us/docs/xboxlive/rest/json-titlerequest.html
-author: KevinAsgari
 description: " TitleRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ab030f1f8086bc33243b4a764ccafd8747ea6c81
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a90f42c2f830ba6f04f77a1acaba067a2746a062
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576963"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322641"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
 タイトルに関する情報を要求します。 
@@ -23,14 +21,14 @@ ms.locfileid: "7576963"
  
 ## <a name="titlerequest"></a>TitleRequest
  
-TitleRequest オブジェクトでは、次の仕様があります。
+TitleRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| タイトルの識別子です。| 
-| activity (アクティビティ)| [ActivityRequest](json-activityrequest.md)| タイトル内、利用可能な場合は、リッチ プレゼンスおよびメディア情報をなどの情報。| 
+| id| 32 ビット符号なし整数| タイトルの識別子です。| 
+| activity (アクティビティ)| [ActivityRequest](json-activityrequest.md)| タイトルでの利用可能な場合は、リッチ プレゼンスおよびメディア情報をなどの情報です。| 
 | 状態| string| かどうか、ユーザーがアクティブか。 ユーザーを非アクティブとしてマークするには、このフィールドが必要です。 既定では「アクティブ」です。| 
-| 配置| string| タイトルの配置モード。 設定可能な値には、「完全」、「入力と」、「スナップ」または"background"が含まれます。 既定値は、「完全」です。| 
+| 配置| string| タイトルの配置モードです。 設定可能な値には、「完全」、「入力と」、「スナップ」または"background"が含まれます。 既定値は、「完全」です。| 
   
 <a id="ID4EJC"></a>
 

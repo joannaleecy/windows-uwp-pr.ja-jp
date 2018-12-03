@@ -2,22 +2,20 @@
 title: POST ({itemID})
 assetID: 2c3c166b-e638-cfb9-d68e-9f8ab9a838d3
 permalink: en-us/docs/xboxlive/rest/uri-inventoryconsumablesitemurlpost.html
-author: KevinAsgari
 description: " POST ({itemID})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: da2a3fc507915f3ed20b718f5a40cca3d0ba5e0b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559517"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344478"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント要求の量によって、コンシューマブルの数量。
+または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント コンシューマブルを要求した量の数量。
 これらの Uri のドメインが`inventory.xboxlive.com`します。
 
   * [注釈](#ID4EX)
@@ -30,11 +28,11 @@ ms.locfileid: "7559517"
 
 ## <a name="remarks"></a>注釈
 
-   * 呼び出し元が利用するよう求め数量は、項目の残りの電源を超えている場合、呼び出しが拒否されます。
-   * 呼び出し元が利用するよう求め数量は 0 上の正の整数である必要があります。 消費量の値を 0 または小さい呼び出しが拒否されます。
+   * 数量を利用するよう求め、呼び出し元では、項目の残りのサプライを超えている場合、呼び出しが拒否されます。
+   * 数量を利用するよう求め、呼び出し元は、正の整数 0 である必要があります。 消費量の値を 0 または小さい呼び出しが拒否されます。
    * 呼び出し元では、空のトランザクション ID を提供する場合は、要求が拒否されます。
-   * 利用可能な場合は、どのタイトルによって報告されている使用量を判断することができるように、タイトル クレームが記録されます。
-   * 一部の期間は、同じ transactionId とその他の投稿が無視されます。
+   * 利用可能な場合は、どのタイトルによって報告されている使用量を決定することができるようにタイトル クレームが記録されます。
+   * いくつかの期間は、同じ transactionId とその他の投稿が無視されます。
 
 
 > [!NOTE]
@@ -48,7 +46,7 @@ ms.locfileid: "7559517"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID|
+| itemID| string| 各ユーザーには単数形インベントリ項目に一意の ID|
 
 <a id="ID4E2B"></a>
 
@@ -70,7 +68,7 @@ ms.locfileid: "7559517"
 ```
 
 
-削除の数量フィールドには、コンシューマブルの残りの数量から削除するコンシューマブルの数量を示すために、呼び出し元ことができます。 トランザクション ID] フィールドには、同時使用状況を 2 回にカウントのリスクを軽減しつつ、コンシューマブルなコンテンツの操作を使用して再試行する手段を呼び出し元が提供します。
+削除数量フィールドには、コンシューマブルの残りの数量から削除するコンシューマブルの数量を示すために、呼び出し元ことができます。 トランザクション ID] フィールドでは、同じの使用状況を 2 回にカウントのリスクを軽減しながらコンシューマブルなコンテンツの操作を使用して再試行する手段を呼び出し元を提供します。
 
 <a id="ID4ENC"></a>
 

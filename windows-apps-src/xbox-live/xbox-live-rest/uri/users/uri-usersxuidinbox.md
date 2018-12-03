@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/inbox
 assetID: 352740c6-42e2-0000-495d-bf384dc3e941
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidinbox.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/inbox"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 890ee500cc29ca6766830e7a8b648865dfbb159d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ded70b32dfd291d17a43a1741b26710f681a397
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563862"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329861"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
 ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。 これらの Uri のドメインが`msg.xboxlive.com`します。
@@ -28,7 +26,7 @@ ms.locfileid: "7563862"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) 要求を行っているプレイヤーのします。 | 
+| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
 | メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
   
 <a id="ID4EDC"></a>

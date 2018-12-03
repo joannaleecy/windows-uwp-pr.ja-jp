@@ -1,18 +1,16 @@
 ---
 title: アリーナ参加者のユーザー シナリオ
-author: KevinAsgari
 description: Xbox アリーナ参加者のユーザー シナリオについて説明します。
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b77ed3318f7e12adc5f35053b310034159e720
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 03e1cec88b7e6528759501fdc8ab5af0a1753c81
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554693"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347051"
 ---
 # <a name="participant-user-scenarios"></a>参加者のユーザー シナリオ
 

@@ -1,19 +1,17 @@
 ---
 title: Xbox Live を使用する
-author: KevinAsgari
 description: Xbox Live 対応タイトルを開発する方法に関するリンクの一覧を示します。
 ms.assetid: 9f3c7071-778f-4f9c-8a7f-94087785016e
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b076aa0816600be65b92e2d59a76f07485b7d4ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47d18f7f4f71b3bbeee3e50712550fafe09b57f8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557479"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342418"
 ---
 # <a name="using-xbox-live"></a>Xbox Live を使用する
 

@@ -2,23 +2,21 @@
 title: /serviceconfigs/{scid}/hoppers/{name}/stats
 assetID: 56bb4398-445b-e8c5-a4ce-1651576ee7e7
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestats.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/hoppers/{name}/stats"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 74712e5d20f1e74810f3123ec82dabc6b466ff1a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 04376505b76296e052ea431f2a4e5fcfeac7b9e4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7571117"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326354"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
-ホッパーの統計情報を取得する GET 操作をサポートしています。
+ホッパーの統計情報を取得するための取得操作をサポートしています。
 
 > [!IMPORTANT]
 > この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 103 または後ですべての要求します。
@@ -32,7 +30,7 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI には、対象ユーザーの構成で所有者識別子の値の xuid、gt、および me がサポートしています。 チケットの作成者のみでは、チケットを削除したり、URI の状態を取得することができます。  
+この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。 チケットの作成者だけでは、チケットを削除したり、URI の状態を取得することができます。  
 <a id="ID4E6"></a>
 
 

@@ -2,19 +2,17 @@
 title: GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 assetID: 4de5b07d-93e1-8ff0-05dd-1d3bb1802088
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidhoppershoppernamestatsget.html
-author: KevinAsgari
 description: " GET (/serviceconfigs/{scid}/hoppers/{name}/stats)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e072ffa2ced07982247cebd633564606d1e9bb4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 95de95b35de496331dd3fe0a4c69f18e047c1020
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572327"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322657"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
@@ -52,8 +50,8 @@ ms.locfileid: "7572327"
 
 | 型| 必須かどうか| 説明| 不足している場合、応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには主張でマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
+| XUID (ユーザー ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
+| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
 | タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
@@ -77,7 +75,7 @@ ms.locfileid: "7572327"
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | hopperName| string| 選択したホッパーの名前です。|
 | 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 |
-| カタログの作成| 32 ビット符号付き整数| ホッパーでマッチを待っているユーザーの数。|
+| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。|
 
 <a id="ID4E1D"></a>
 

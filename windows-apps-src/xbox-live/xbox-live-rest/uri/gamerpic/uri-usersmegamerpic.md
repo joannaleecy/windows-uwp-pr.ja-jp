@@ -2,19 +2,17 @@
 title: /users/me/gamerpic
 assetID: 1ef06d91-391b-f5ac-af26-9d84a2dbee47
 permalink: en-us/docs/xboxlive/rest/uri-usersmegamerpic.html
-author: KevinAsgari
 description: " /users/me/gamerpic"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5383cfc5a39eadd8d4fd13cb1762e03e85d5c5e0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c8304686c3c7bb5a56657da6e737518cf1171348
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558109"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348355"
 ---
 # <a name="usersmegamerpic"></a>/users/me/gamerpic
 1080 x 1080 ゲーマー アイコンにアクセスします。  

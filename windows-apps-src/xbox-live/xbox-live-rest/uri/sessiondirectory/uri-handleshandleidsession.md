@@ -2,19 +2,17 @@
 title: /handles/{handleId}/session
 assetID: 4ed2dcf5-5d1f-91ce-4a3f-eb3ba68727bf
 permalink: en-us/docs/xboxlive/rest/uri-handleshandleidsession.html
-author: KevinAsgari
 description: " /handles/{handleId}/session"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 38fa1ad62b2e76dceda79744c59eb59ddc50ea90
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e7b6990917437c22dd4d9282492e2a0eab37893b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7567851"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324682"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
@@ -49,11 +47,11 @@ sessiondirectory.xboxlive.com
 
 [GET (/handles/{handleId}/session)](uri-handleshandleidsessionget.md)
 
-&nbsp;&nbsp;指定したハンドル識別子セッション オブジェクトを取得します。 
+&nbsp;&nbsp;指定したハンドル識別子のセッション オブジェクトを取得します。 
 
 [PUT (/handles/{handle-id}/session)](uri-handleshandleidsessionput.md)
 
-&nbsp;&nbsp;作成またはハンドルを逆参照によって、セッションを更新します。
+&nbsp;&nbsp;作成またはハンドルを逆参照により、セッションを更新します。
  
 <a id="ID4E6B"></a>
 

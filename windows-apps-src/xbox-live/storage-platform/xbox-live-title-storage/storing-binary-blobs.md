@@ -1,19 +1,17 @@
 ---
 title: バイナリ BLOB の保存
-author: KevinAsgari
 description: Xbox Live タイトル ストレージにバイナリ BLOB を保存する方法について説明します。
 ms.assetid: a0da36ef-5a5a-466d-80a8-e055ba7e4cdc
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa0598e724ffc0d919c9ad8b2ffdc3bb29d7d09
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 70e620f2e992dfdd240f71b5c73165f13d4ef5cb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554438"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330588"
 ---
 # <a name="storing-a-binary-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージへのバイナリ BLOB の保存
 

@@ -2,19 +2,17 @@
 title: GET (/sessions/{sessionId}/scids/{scid}/data/{path})
 assetID: 007821b8-16f0-2fe1-5196-890743d77775
 permalink: en-us/docs/xboxlive/rest/uri-sessionssessionidscidssciddatapath-get.html
-author: KevinAsgari
 description: " GET (/sessions/{sessionId}/scids/{scid}/data/{path})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b925bfe28255633c32ebc97dee4d8a32e8958594
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 28a279347fa5a463c0d482a624af831c0cdb0fba
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559117"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347261"
 ---
 # <a name="get-sessionssessionidscidssciddatapath"></a>GET (/sessions/{sessionId}/scids/{scid}/data/{path})
 指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -36,7 +34,7 @@ ms.locfileid: "7559117"
 | --- | --- | --- | 
 | sessionId| string| 検索するセッションの ID。| 
 | scid| guid| ルックアップ サービス構成の ID です。| 
-| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
+| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
   
 <a id="ID4ECB"></a>
 
@@ -45,16 +43,16 @@ ms.locfileid: "7559117"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| skipItems| int| N 個の項目をスキップする n+1、コレクションから項目を返します。| 
-| continuationToken| string| 特定の継続トークンから項目を返します。 ContinuationToken パラメーターよりも優先 skipItems 両方が提供されている場合。 つまり、continuationToken パラメーターが存在する場合、skipItems パラメーターは無視されます。| 
-| maxItems| int| SkipItems と範囲の項目を返す continuationToken と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは maxItems が存在しないと、maxItems より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
+| skipItems| int| N 個の項目をスキップ n+1、コレクションから項目を返します。| 
+| continuationToken| string| 特定の継続トークンで始まる項目を返します。 ContinuationToken パラメーターよりも優先 skipItems 場合はどちらも提供されます。 つまり、continuationToken パラメーターが存在する場合、skipItems パラメーターは無視されます。| 
+| maxItems| int| SkipItems と項目の範囲を返す continuationToken と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは maxItems が存在しないと、maxItems よりも少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
   
 <a id="ID4EWC"></a>
 
  
 ## <a name="authorization"></a>Authorization 
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可しない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 不正な応答を返します。 
+要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは 403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは 401 承認されていない応答を返します。 
   
 <a id="ID4EDD"></a>
 
@@ -64,7 +62,7 @@ ms.locfileid: "7559117"
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークン。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
+| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は認証要求によって返されるトークンで置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EME"></a>
 
@@ -78,7 +76,7 @@ ms.locfileid: "7559117"
  
 ## <a name="http-status-codes"></a>HTTP ステータス コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
  
 | コード| 理由フレーズ| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -87,11 +85,11 @@ ms.locfileid: "7559117"
 | 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
 | 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
+| 404| 見つかりません。| 指定されたリソースは見つかりませんでした。| 
 | 406| 許容できません。| リソースのバージョンがサポートされていません。| 
 | 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
 | 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求がスロット リングされた、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
+| 503| Service Unavailable| 要求が調整された、秒 (例: 5 秒後) のクライアント再試行値後にもう一度やり直してください。| 
   
 <a id="ID4EUBAC"></a>
 

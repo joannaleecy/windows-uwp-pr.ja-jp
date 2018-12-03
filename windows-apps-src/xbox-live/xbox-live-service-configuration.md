@@ -1,19 +1,17 @@
 ---
 title: Xbox Live サービス構成
-author: KevinAsgari
 description: Xbox Live サービスをゲーム向けに構成する方法について説明します。
 ms.assetid: 631c415b-5366-4a84-ba4f-4f513b229c32
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5db2d750f297c226f377d8f90ddc3ff900f6f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 78fe82bee8630286fbe43cd0e06e6016212b7db8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553531"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336025"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 
@@ -27,7 +25,7 @@ ms.locfileid: "7553531"
 
 この構成は、ほとんどの場合で、[パートナー センター](https://partner.microsoft.com/dashboard)で発生します。 しかし、[Xbox 開発者ポータル (XDP)](http://xdp.xboxlive.com) を使用する開発者もいます。
 
-Xbox Live クリエーターズ プログラムの一部としてタイトルを開発する場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、 [Xbox Live の概要](get-started-with-creators/get-started-with-xbox-live-creators.md)をセットアップする方法についてを読み取ることができます。
+Xbox Live クリエーターズ プログラムの一部としてタイトルを開発する場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用しており、セットアップを取得する方法については[Xbox Live の概要](get-started-with-creators/get-started-with-xbox-live-creators.md)を読むことができます。
 
 ID@Xbox の開発者である場合、または Microsoft パートナーのパブリッシャーと共同で作業を行っている場合は、続きをお読みください。
 
@@ -37,7 +35,7 @@ ID@Xbox の開発者である場合、または Microsoft パートナーのパ�
 
 今後は、すべてのタイトルのパートナー センターが推奨される特定の機能、可能性がある場合でも、XDP を使用します。 このセクションでは、どこでタイトルを構成したらよいかを説明します。
 
-選んだポータルに応じて特定のサービス構成ページの情報をご覧ください。
+選択したポータルによって構成ページの特定のサービスに関する情報をご覧ください。
 
 * [パートナー センターの構成](configure-xbl/windows-dev-center.md)
 * [Xbox デベロッパー ポータルの構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/atoc-service-configuration)- このリンクにアクセスすると、Microsoft アカウント (MSA) Xbox Live のフル アクセスが有効になっている必要があります。
@@ -45,7 +43,7 @@ ID@Xbox の開発者である場合、または Microsoft パートナーのパ�
 既にタイトルを構成済みの場合は、「[ID を取得する](#get_ids)」まで下にスクロールして、タイトルの設定に必要なさまざまな ID を取得する方法をご覧いただけます。
 
 ### <a name="pcmobile-uwp-game-only"></a>PC/Mobile UWP ゲーム専用
-Windows 10 Pc や Windows 10 mobile デバイスでのみ動作する UWP ゲームを構成およびは、パートナー センターをお勧めします。
+構成および管理の Windows 10 Pc や Windows 10 mobile デバイスでのみ実行する UWP ゲームは、パートナー センターをお勧めします。
 
 #### <a name="using-xdp-to-configure-uwp-titles"></a>XDP の使用による UWP タイトルの構成
 
@@ -74,7 +72,7 @@ XDP を使用した UWP アプリケーション用の Xbox Live サービスの
 
 * **XDP を使用して XDK ゲームを構成し、公開します。** パートナー センターは、この時点で Xbox One XDK ゲームをサポートしていません。
 * **XDP で作成した単一の Xbox Live サービス構成を、ゲームの XDK バージョンと UWP バージョンの両方に使用します。** XDP の新しい機能により、ゲームの XDK バージョンと UWP バージョンで単一の Xbox Live サービス構成を共有できます。
-* **取り込みして UWP ゲームを公開するには、パートナー センターを使用します。** ただし、ゲームが XDP で作成したサービス構成を使用して、Xbox Live サービスを構成するのにパートナー センターを使用しないでください。
+* **取り込み、UWP ゲームを公開するには、パートナー センターを使用します。** ただし、ゲームが XDP で作成したサービス構成を使用して、Xbox Live サービスを構成するのにパートナー センターを使用しないでください。
 * **XDP とパートナー センターで Xbox Live サービス構成を分割することはできません。** XDP とパートナー センターは互いを認識されず、サービス構成を公開する 1 つのソースからその他のソースから公開された構成が上書きされます。 これが原因でユーザー データが失われ (実績の達成状況が失われる、ゲームのセーブ データが消去されるなど)、ユーザー エクスペリエンスが損なわれる可能性があります。 この理由から、**クロスプレイ対応の XDK + UWP ゲームについては、Xbox Live サービス構成の 100% が XDP で行われることを要件とします。**
 
 セルフサービスでは*ない*アイテムなど、このプロセスの詳細については「[クロスプレイ ゲームの概要](get-started-with-partner/get-started-with-cross-play-games.md)」ガイドを参照してください。
@@ -82,7 +80,7 @@ XDP を使用した UWP アプリケーション用の Xbox Live サービスの
 ### <a name="separate-versions-of-xbox-one-and-pcmobile-games-that-are-not-cross-play"></a>クロスプレイに対応しない Xbox One ゲームと PC/モバイル ゲームのバージョンを分ける
 ゲームの Xbox One バージョンを、同じゲームの PC/モバイル バージョンとは分けたままにしておくこともできます。 この場合、2 つの独立したプロダクトを作成し、Xbox One XDK 専用のガイダンスと PC/モバイル UWP ゲーム専用のガイダンスにそれぞれ従います。
 
-この場合、両方のバージョンの同じサービス構成を使うことはできません、作成する必要が手動で、ゲームの別のバージョンごとのサービス構成では、パートナー センターまたは XDP で適切にします。
+この例では、両方のバージョンの同じサービス構成を使うことはできませんし、作成する必要が手動で、ゲームの独立したバージョンごとのサービス構成では、パートナー センターまたは XDP で適切にします。
 
 <a name="get_ids"></a>
 
@@ -124,7 +122,7 @@ SCID は大文字と小文字を区別します。
 
 **パートナー センター**
 
-パートナー センターで SCID を取得するには、Xbox Live サービス] セクションに移動し、[ *Xbox Live のセットアップ*に移動します。 以下に示すテーブルに SCID が表示されます。
+パートナー センターで SCID を取得するには、Xbox Live サービス] セクションに移動し、 *Xbox Live のセットアップ*に移動します。 以下に示すテーブルに SCID が表示されます。
 
 ![](images/getting_started/devcenter_scid.png)
 
@@ -142,7 +140,7 @@ XDP で SCID を取得するには、タイトルの下にある [Product Setup]
 
 **パートナー センター**
 
-パートナー センターでタイトル ID は、 *Xbox Live のセットアップ*] ページで SCID と同じテーブルにあります。
+パートナー センターでタイトル ID は*Xbox Live のセットアップ*] ページで SCID と同じテーブル内にあります。
 
 **XDP**
 

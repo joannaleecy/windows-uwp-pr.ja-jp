@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 assetID: 0983dad0-59b7-45b7-505d-603e341fe0cc
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidscidstatnamepeople.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c6967cb337da2188b0403450db373ee3c9088a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 85a6470a64ceef3b154384d1ca859fb28733aad3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572697"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322802"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 ソーシャル (ランク付け) ランキングにアクセスします。
@@ -41,7 +39,7 @@ ms.locfileid: "7572697"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;ランキング、統計値は、すべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) によって、ソーシャル ランキングを返します。
+&nbsp;&nbsp;ランキング、統計値は、すべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア)、ソーシャル ランキングを返します。
 
 <a id="ID4EYC"></a>
 

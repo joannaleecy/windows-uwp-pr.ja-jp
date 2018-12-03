@@ -1,24 +1,22 @@
 ---
 title: タイトル ストレージの構成では、パートナー センター
-author: aablackm
 description: パートナー センターでタイトル ストレージを構成する方法を説明します。
-ms.author: aablackm
 ms.date: 04/24/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, タイトル ストレージ, パートナー センター
-ms.openlocfilehash: 38abe0188dff74bdf0584bcb6664c5f6453e7e42
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d32f9f2f4e003db50ad560acc513511a850d43b5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554365"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8348928"
 ---
 # <a name="configure-storage-for-you-title-in-partner-center"></a>パートナー センターでのタイトルのストレージを構成します。
 
 Xbox Live では、タイトル ストレージ サービスを通じて、クラウド内のゲームに関連付けられているデータを保存することができます。 タイトル ストレージの構成ページでは、ゲームで許可されるクラウド ストレージ サービスの種類を判別できるだけでなく、グローバル ストレージに使用するファイルをアップロードすることができます。
 
-**Xbox Live**を選択して、Xbox Live タイトル ストレージには、[パートナー](https://partner.microsoft.com/dashboard)は、アプリの**概要**や**製品**、**サービス**を開いてから選択の構成ページのドロップダウンを見つけることができます。 クリエーターズ プログラムの開発者は、構成ページの **[Cloud saves and storage]** (クラウドのセーブとストレージ) セクションで **[show options]** (オプションの表示) をクリックし、タイトル ストレージの構成オプションを表示する必要があります。 すべての Xbox Live 機能セットを利用できる開発者は、**[タイトル ストレージ]** リンクを見つけてタイトル ストレージの構成ページに移動する必要があります。
+**Xbox Live**を選択して、Xbox Live タイトル ストレージには、[パートナー](https://partner.microsoft.com/dashboard)は、**概要**や**製品**、**サービス**を開いてから、アプリの選択の構成ページのドロップダウンを見つけることができます。 クリエーターズ プログラムの開発者は、構成ページの **[Cloud saves and storage]** (クラウドのセーブとストレージ) セクションで **[show options]** (オプションの表示) をクリックし、タイトル ストレージの構成オプションを表示する必要があります。 すべての Xbox Live 機能セットを利用できる開発者は、**[タイトル ストレージ]** リンクを見つけてタイトル ストレージの構成ページに移動する必要があります。
 
 タイトル ストレージの構成には、2 つの主なセクションがあります。 タイトル ストレージの設定セクションとグローバル ストレージ ファイルの管理セクションです。
 

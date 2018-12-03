@@ -1,19 +1,17 @@
 ---
 title: Xbox Live の呼び出しのベスト プラクティス
-author: KevinAsgari
 description: Xbox Live API を呼び出すためのベスト プラクティスについて説明します。
 ms.assetid: f4c7156b-7736-41e5-9b3d-e87cc8dd2531
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ベスト プラクティス
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a28595b74fc316950d6d5b93b234ffa7a26e550
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 55e05ef7de2e2981f9f5af86623a8d8413ce2c99
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559342"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8340590"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>Xbox Live の呼び出しのベスト プラクティス
 

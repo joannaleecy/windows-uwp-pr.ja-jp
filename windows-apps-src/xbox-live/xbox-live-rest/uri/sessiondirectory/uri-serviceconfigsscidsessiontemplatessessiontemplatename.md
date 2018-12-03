@@ -2,22 +2,20 @@
 title: /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}
 assetID: cc306ca0-57f8-f676-6d4b-f9ddd716dcc0
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatename.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3011ca3622e79bc3b2062f1c572d2f1db3167b87
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 36b4034607fc6b5011491424551ed60bc3da5fa7
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563209"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342730"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}
-一連のセッション テンプレート名を取得する GET 操作をサポートしています。 
+セッション テンプレート名のセットを取得する GET 操作をサポートしています。 
 <a id="ID4EO"></a>
 
  
@@ -40,7 +38,7 @@ sessiondirectory.xboxlive.com
 
 [GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
 
-&nbsp;&nbsp;一連のセッション テンプレート名を取得します。
+&nbsp;&nbsp;セッション テンプレートの名前のセットを取得します。
  
 <a id="ID4ECC"></a>
 

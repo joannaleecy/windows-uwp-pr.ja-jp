@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/groups/{moniker}/broadcasting
 assetID: cf8319f6-46a2-b263-ea4c-f1ce403b571b
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidgroupsmonikerbroadcasting.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/groups/{moniker}/broadcasting"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 8df1812871272526c8b7d4242aa64a97610fc4cc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98eaa60204e3c98eb1b09a13372f7b0c084a6608
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582046"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322780"
 ---
 # <a name="usersxuidxuidgroupsmonikerbroadcasting"></a>/users/xuid({xuid})/groups/{moniker}/broadcasting
-アクセス グループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードに関連する XUID URI に表示されます。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -29,7 +27,7 @@ ms.locfileid: "7582046"
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
 | xuid| string| Xbox ユーザー ID (XUID)、ユーザー、グループ内の Xuid に関連します。| 
-| モニカー| string| ユーザーのグループを定義する文字列です。 現時点でのみ受け入れたモニカーでは、大文字の 'P'"People"でです。| 
+| モニカー| string| ユーザーのグループを定義する文字列です。 現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。| 
   
 <a id="ID4E4B"></a>
 

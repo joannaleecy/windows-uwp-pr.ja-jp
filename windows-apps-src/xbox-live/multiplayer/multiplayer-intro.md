@@ -1,19 +1,17 @@
 ---
 title: Xbox Live マルチプレイヤー プラットフォーム
-author: KevinAsgari
 description: Xbox Live でサポートされているマルチプレイヤー プラットフォームについて説明します。
 ms.assetid: 958b94b3-dccd-479a-bf52-54f7ff1656fa
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a02d525e99338ee5c21ae510a5dc48a0fc75ec
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c71fc28a9bb8668d0253834c1a2c9c6ca7736fd1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552957"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322718"
 ---
 # <a name="xbox-live-multiplayer-platform"></a>Xbox Live マルチプレイヤー プラットフォーム
 

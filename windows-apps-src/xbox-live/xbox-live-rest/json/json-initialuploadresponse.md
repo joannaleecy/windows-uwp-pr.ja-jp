@@ -2,19 +2,17 @@
 title: InitialUploadResponse (JSON)
 assetID: 6abb7d37-2c35-2cc3-d9e5-eff695235262
 permalink: en-us/docs/xboxlive/rest/json-initialuploadresponse.html
-author: KevinAsgari
 description: " InitialUploadResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 24dc0b140991b7aab27472e291646da6f564a789
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dab59fefb389cf550a1bc4fc6429f6b0970f50ab
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7576941"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337663"
 ---
 # <a name="initialuploadresponse-json"></a>InitialUploadResponse (JSON)
  
@@ -23,14 +21,14 @@ ms.locfileid: "7576941"
  
 ## <a name="initialuploadresponse"></a>InitialUploadResponse
  
-InitialUploadResponse オブジェクトでは、次の仕様があります。
+InitialUploadResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| アップロードのデータ要求に割り当てられている ID。| 
 | <b>uploadUri</b>| URI| 場所は、ゲーム クリップをアップロードする必要があります。| 
 | <b>largeThumbnailUri</b>| URI| 省略可能。 場所は、大きなサムネイルをアップロードする必要があります。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
-| <b>smallThumbnailUri</b>| URI| 省略可能。 小さなサムネイルのアップロード場所です。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
+| <b>smallThumbnailUri</b>| URI| 省略可能。 小さなサムネイルのアップロード先の場所です。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
   
 <a id="ID4EYC"></a>
 

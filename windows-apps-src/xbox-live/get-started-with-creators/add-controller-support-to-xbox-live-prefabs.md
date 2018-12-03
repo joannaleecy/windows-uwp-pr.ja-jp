@@ -1,19 +1,17 @@
 ---
 title: コントローラー サポートを Xbox Live プレハブに追加する
-author: KevinAsgari
 description: Xbox Live Unity プラグインを使用して、コントローラー サポートを Xbox Live プレハブに追加する
 ms.assetid: ''
-ms.author: heba
 ms.date: 07/14/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, コントローラー サポート
 ms.localizationpriority: medium
-ms.openlocfilehash: b4fb8f710a04b2243f32daadc652aca8404d4577
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20defe8598b8360787454134eab3b2daaf244441
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553217"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322741"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>コントローラー サポートを Xbox Live プレハブに追加する
 

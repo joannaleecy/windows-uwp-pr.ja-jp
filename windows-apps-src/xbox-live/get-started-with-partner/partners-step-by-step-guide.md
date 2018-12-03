@@ -1,19 +1,17 @@
 ---
 title: Xbox Live パートナー向けステップ バイ ステップ ガイド
-author: KevinAsgari
 description: 対象パートナー向けに Xbox Live を統合するための手順のガイドラインを説明します。
 ms.assetid: f0c9db8f-f492-4955-8622-e1736f0a4509
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 06b0bd764f7bd15eb67e4f6356ff56d869e6fd58
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a2d0b9e7d97adfb02281e7bae34ed51afd44f7f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553220"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330972"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-for-managed-partners-and-idxbox-members"></a>対象パートナーおよび ID@Xbox メンバー向けに Xbox Live を統合するためのステップ バイ ステップ ガイド
 

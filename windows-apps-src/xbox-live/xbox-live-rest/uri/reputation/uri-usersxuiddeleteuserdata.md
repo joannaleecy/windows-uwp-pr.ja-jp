@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/deleteuserdata
 assetID: 1925da6f-f6c1-ae5b-5af9-e143b70e6717
 permalink: en-us/docs/xboxlive/rest/uri-usersxuiddeleteuserdata.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/deleteuserdata"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eaba6a02fa2ebb00ef4861a5bf37963796b78b5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: efcf214c366edb891e13301da0eedbc87627ca79
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561490"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8324029"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
 テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。

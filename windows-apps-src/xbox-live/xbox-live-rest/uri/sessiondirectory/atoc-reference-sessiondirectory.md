@@ -2,23 +2,21 @@
 title: セッション ディレクトリ URI
 assetID: e3ba951d-b21f-0014-c358-2603d549d118
 permalink: en-us/docs/xboxlive/rest/atoc-reference-sessiondirectory.html
-author: KevinAsgari
 description: " セッション ディレクトリ URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2778014220dc0e75e286e2b6e4af56ea8a2412b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9492ff3272af830404a546c9b01d62178adbac96
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552606"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339777"
 ---
 # <a name="session-directory-uris"></a>セッション ディレクトリ URI
 
-このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Xbox Live サービスのマルチプレイヤー セッション ディレクトリ (MPSD) からユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。
 
 
 > [!NOTE] 
@@ -47,7 +45,7 @@ sessiondirectory.xboxlive.com
 
 ## <a name="system-objects-and-properties"></a>システム オブジェクトとプロパティ
 
-セッションとテンプレートを構成する、MPSD は、ディレクトリ適用および解釈される固定のスキーマに準拠しているセッションの JSON オブジェクトの数を使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証マージ、サポートされているスキーマに基づいています。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
+セッションとテンプレートを構成する、MPSD は、ディレクトリを適用および解釈される固定のスキーマを多数の準拠したセッションの JSON オブジェクトを使用します。 さまざまなセッション ディレクトリ Uri でサポートされているメソッドの呼び出し時にこれらのオブジェクトは検証およびマージに基づいて、サポートされているスキーマ。 マルチプレイヤーの構成に関連付けられている主な JSON オブジェクトは次のとおりです。
 
    *  [MultiplayerActivityDetails (JSON)](../../json/json-multiplayeractivitydetails.md)
    *  [MultiplayerSession (JSON)](../../json/json-multiplayersession.md)
@@ -55,7 +53,7 @@ sessiondirectory.xboxlive.com
    *  [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)
 
 
-ゲームに具体的には関係が関連付けられている JSON オブジェクトは次のとおりです。
+ゲームで具体的には関係している関連付けられている JSON オブジェクトは次のとおりです。
 
    *  [GameMessage (JSON)](../../json/json-gamemessage.md)
    *  [GameResult (JSON)](../../json/json-gameresult.md)
@@ -104,7 +102,7 @@ sessiondirectory.xboxlive.com
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}](uri-serviceconfigsscidsessiontemplatessessiontemplatename.md)
 
-&nbsp;&nbsp;一連のセッション テンプレート名を取得する GET 操作をサポートしています。
+&nbsp;&nbsp;セッション テンプレート名のセットを取得する GET 操作をサポートしています。
 
 [/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/batch](uri-serviceconfigscidsessiontemplatessessiontemplatenamebatch.md)
 

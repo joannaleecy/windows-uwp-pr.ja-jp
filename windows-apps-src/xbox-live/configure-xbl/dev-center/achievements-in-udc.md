@@ -1,19 +1,17 @@
 ---
 title: Achievements 2017
-author: PhillipLucas
 description: リワードを提供するパートナー センターで実績を構成する方法について説明します。
 ms.assetid: ''
-ms.author: kevinasg
 ms.date: 11/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: d5e84e2e124a8ca6cac814dfb05120a8e6137ac3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ef2365ee560e273108c38570697d599adde4c0b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564414"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329838"
 ---
 # <a name="configure-achievements-2017-in-partner-center"></a>パートナー センターでの Achievements 2017 を構成します。
 
@@ -28,7 +26,7 @@ ms.locfileid: "7564414"
 ![パートナー センターで新しい実績を作成するスクリーン ショット](../../images/dev-center/achievement-table.png)
 
 ## <a name="description"></a>説明
-説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 実績にローカライゼーション サポートを追加するには、[パートナー センター](https://partner.microsoft.com/dashboard)では、**ローカライズされた文字列**サービス構成セクションにアクセスします。
+説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 [パートナー センター](https://partner.microsoft.com/dashboard)では、**ローカライズされた文字列**サービス構成セクションにアクセスして、実績にローカライゼーション サポートを追加できます。
 
 ![パートナー センターで新しい実績を構成する際の説明フィールドのスクリーン ショット](../../images/dev-center/achievements-2.png)
 

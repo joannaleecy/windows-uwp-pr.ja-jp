@@ -2,19 +2,17 @@
 title: RichPresenceRequest (JSON)
 assetID: 599266be-f747-0be1-fadf-f8e0262dc27f
 permalink: en-us/docs/xboxlive/rest/json-richpresencerequest.html
-author: KevinAsgari
 description: " RichPresenceRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 92e52e4ebb58abb3a522f81a5ae4cce6486785f0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c49da63ecd091a886a68f508af09e33fb9c58ac
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577817"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8343812"
 ---
 # <a name="richpresencerequest-json"></a>RichPresenceRequest (JSON)
 リッチ プレゼンス情報の使用に関する情報を要求します。 
@@ -23,12 +21,12 @@ ms.locfileid: "7577817"
  
 ## <a name="richpresencerequest"></a>RichPresenceRequest
  
-RichPresenceRequest オブジェクトでは、次の仕様があります。
+RichPresenceRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| 使用するリッチ プレゼンス文字列の<b>フレンドリ名</b>。| 
-| scid| string| リッチ プレゼンス文字列を定義する場所を示す Scid です。| 
+| scid| string| リッチ プレゼンス文字列が定義されている場所を示す Scid です。| 
 | パラメーター| 文字列の配列| リッチ プレゼンス文字列を完了するための<b>フレンドリ名</b>の文字列の配列です。 列挙フレンドリ名を指定する必要があります、統計ではありません。この空のまま、以前の値が削除されます。| 
   
 <a id="ID4EDC"></a>

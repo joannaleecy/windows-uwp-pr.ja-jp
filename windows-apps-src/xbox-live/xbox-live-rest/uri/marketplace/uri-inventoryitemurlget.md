@@ -2,19 +2,17 @@
 title: GET (/inventory/{itemID})
 assetID: d3ca14a5-0214-ef42-091e-3f05f2a3482d
 permalink: en-us/docs/xboxlive/rest/uri-inventoryitemurlget.html
-author: KevinAsgari
 description: " GET (/inventory/{itemID})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 1aaef11864a513b42cb5a1c036e7699477884b4a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d1620c5afe7b0d005840112d4eddd2ec50e134db
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560545"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345423"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
 特定のインベントリ項目の詳細の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
@@ -37,7 +35,7 @@ ms.locfileid: "7560545"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単一のインベントリ項目の各ユーザーに一意の ID| 
+| itemID| string| 各ユーザーには単数形インベントリ項目に一意の ID| 
   
 <a id="ID4ELB"></a>
 
@@ -49,7 +47,7 @@ ms.locfileid: "7560545"
  
 ### <a name="sample-response"></a>応答の例
  
-認証の渡し、適切な承認のコンテキストが割り当てられていると仮定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
+認証に合格して、適切な承認コンテキストが割り当てられていると仮定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
  
 
 ```cpp

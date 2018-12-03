@@ -2,19 +2,17 @@
 title: UserSettings (JSON)
 assetID: 17c030cb-05e0-f78e-5ab1-cdbd8b801ceb
 permalink: en-us/docs/xboxlive/rest/json-usersettings.html
-author: KevinAsgari
 description: " UserSettings (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 67b9edcb4ffd4c0da6929de8dfd47652cf7ab375
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5451c59ab608105677a657ade41154bd2b622f5e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564193"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327059"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
 現在の認証されたユーザーの設定を返します。 
@@ -23,14 +21,14 @@ ms.locfileid: "7564193"
  
 ## <a name="usersettings"></a>UserSettings
  
-UserSettings オブジェクトでは、次の仕様があります。
+UserSettings オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| 設定の識別子です。| 
-| ソース| 32 ビットの符号なし整数| 設定のソースを表します。 | 
-| titleId| 32 ビットの符号なし整数| 設定に関連付けられているタイトルの識別子。 | 
-| value| 8 ビットの符号なし整数の配列| 設定の値を表します。 クライアント設定を取得するには、表現の形式のデータを読み取ることができるを理解する必要があります。 | 
+| id| 32 ビット符号なし整数| 設定の識別子です。| 
+| ソース| 32 ビット符号なし整数| 設定のソースを表します。 | 
+| titleId| 32 ビット符号なし整数| 設定に関連付けられているタイトルの識別子。 | 
+| value| 8 ビット符号なし整数の配列| 設定の値を表します。 クライアント設定を取得してデータを読み取ることができるため表現の書式設定する必要がありますについて説明します。 | 
   
 <a id="ID4EJC"></a>
 

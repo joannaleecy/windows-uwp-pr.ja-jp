@@ -2,19 +2,17 @@
 title: /media/{marketplaceId}/metadata/mediaItemTypes
 assetID: a88f4c31-082a-45d2-e5d7-b881e829e357
 permalink: en-us/docs/xboxlive/rest/uri-medialocalemetadatamediaitemtypes.html
-author: KevinAsgari
 description: " /media/{marketplaceId}/metadata/mediaItemTypes"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b752b23c5fdbfe8fa26bd49d0dfaf7472559441c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd5884b2d416c74fa7043791c8e817e66dd6e5ef
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572795"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332656"
 ---
 # <a name="mediamarketplaceidmetadatamediaitemtypes"></a>/media/{marketplaceId}/metadata/mediaItemTypes
 EDS の特定のバージョンのサポートされているすべての mediaItemTypes にアクセスします。 これらの Uri のドメインが`eds.xboxlive.com`します。
@@ -28,7 +26,7 @@ EDS の特定のバージョンのサポートされているすべての mediaI
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
   
 <a id="ID4EUB"></a>
 

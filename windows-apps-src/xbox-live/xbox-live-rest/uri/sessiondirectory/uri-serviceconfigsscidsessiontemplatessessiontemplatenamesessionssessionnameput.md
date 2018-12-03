@@ -2,19 +2,17 @@
 title: PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 assetID: e3e4f164-ac5e-cbd9-8c05-2e1ac00dc55e
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameput.html
-author: KevinAsgari
 description: " PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c5e104add620c68f06a589be8f49f2a625de63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d35b3f89f8b866a5236e8f5ac91eb37d9a82d306
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556355"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337970"
 ---
 # <a name="put-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>PUT (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 作成、更新、またはセッションに参加します。
@@ -33,7 +31,7 @@ ms.locfileid: "7556355"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、作成すると、参加、または同じ JSON 要求本文のテンプレートのサブセットを送信することによって、セッションを更新します。 成功した場合、サーバーから返された応答を含む**MultiplayerSession**オブジェクトを返します。 その属性は、渡された**MultiplayerSession**オブジェクト内の属性とは異なる場合があります。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**でラップすることができます。
+この HTTP/REST メソッドでは、作成すると、参加、または同じ JSON 要求本文のテンプレートのサブセットを送信することによって、セッションを更新します。 成功した場合、サーバーから返された応答を含む**MultiplayerSession**オブジェクトを返します。 その属性は、渡された**MultiplayerSession**オブジェクト内の属性から異なる可能性があります。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.WriteSessionAsync**でラップすることができます。
 
 セッションの作成と更新操作は、適用される変更を表すアプリケーション/json 本文と put メソッドを使用します。 操作は、等は、同様の変更の複数のアプリケーションには追加の効果にありません。
 
@@ -42,7 +40,7 @@ JSON 要求本文は、セッション データ構造体をミラーリング�
 PUT メソッドのセッションの作成やモードへの参加ワイヤ形式は、次に示します。
 
 > [!NOTE]
-> このパターンを使用して処理します。 Upates セッションの現在の状態に関係なく無条件に、適用されます。
+> このパターンを使用して処理します。 Upates セッションの現在の状態に関係なく、無条件が適用されます。
 
 
 
@@ -83,7 +81,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 | sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
 | セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
 
@@ -97,14 +95,14 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="request-body"></a>要求本文
 
-以下には、作成またはセッションに参加するためのサンプル要求本文を示します。 要求本文の次のメンバーは省略可能です。 要求では、他の可能なすべてのメンバーが禁止されています。
+以下の作成またはセッションに参加するためのサンプル要求本文です。 要求本文の次のメンバーは省略可能です。 要求では、他の可能なすべてのメンバーが禁止されています。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 定数| object| セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。 |
 | プロパティ | object | セッションのプロパティへの結合を変更します。|
-| members.me | object| 定数および機能もプロパティなどのトップレベルの相当します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 |
-| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクトです。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 メンバーは、要求で表示される順序でセッションに追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 |
+| members.me | object| 定数および機能もプロパティなどのトップレベルの対応します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 |
+| メンバー | object| 0 から始まるインデックスでキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。 要求のメンバー数常に 0 から始まり、場合でも、既にセッションにはメンバーが含まれています。 要求で表示される順序でセッションにメンバーが追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 |
 | サーバー | object| 関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 |
 
 
@@ -135,7 +133,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="response-body"></a>応答本文
 
-応答の本文を作成またはセッションに参加するためにサンプル:
+応答本文を作成またはセッションに参加するためにサンプル:
 
 
 ```cpp

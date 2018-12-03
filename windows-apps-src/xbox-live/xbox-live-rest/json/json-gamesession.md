@@ -2,19 +2,17 @@
 title: GameSession (JSON)
 assetID: 325af9ae-a9a9-5b36-8342-1aff5aff01d1
 permalink: en-us/docs/xboxlive/rest/json-gamesession.html
-author: KevinAsgari
 description: " GameSession (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a62dd48857ed9c7ba8601d5ca08179c6a32b0db5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca7276ccdc13d896d19873811b4fa9df9a831cd1
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7574990"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351571"
 ---
 # <a name="gamesession-json"></a>GameSession (JSON)
 マルチプレイヤー セッションのゲーム データを表す JSON オブジェクト。 
@@ -22,21 +20,21 @@ ms.locfileid: "7574990"
 
   
  
-GameSession JSON オブジェクトでは、次の仕様があります。
+GameSession JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日付と時刻とき、セッションが作成された、UTC でします。 | 
+| creationTime| DateTime| 日付と、セッションが作成された、UTC で。 | 
 | customData| 8 ビットの符号なし整数の配列| ゲーム固有のセッション データの 1024 バイトです。 この値は、サーバーに不透明です。 | 
 | displayName| string| 表示名ゲームのセッション 128 文字の最大長を持つ。 この値は、サーバーに不透明です。 | 
-| hasEnded| ブール値| セッションが終了した場合は true、それ以外の場合。 セッションへの提出からさらにデータを妨げて true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。 | 
-| 閉じられても| ブール値| セッションが閉じられていていない追加のプレイヤーは、追加、false それ以外の場合は true。 この値が true の場合、セッションに参加する要求が拒否されます。 | 
-| maxPlayers| 32 ビット符号付き整数| セッションを同時にすることができるプレイヤーの最大数。 値の範囲は、2 ~ 16 です。 セッションにプレイヤーの最大数が含まれているとはさらにセッションに参加要求が拒否されます。 | 
+| hasEnded| ブール値| セッションが終了した場合は true、それ以外の場合。 さらにデータがセッションに送信されているように true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。 | 
+| 閉じられても| ブール値| セッションが閉じられていていない追加のプレイヤーは、追加された、false それ以外の場合は true。 この値が true の場合、セッションに参加する要求が拒否されます。 | 
+| maxPlayers| 32 ビット符号付き整数| セッションを同時にすることができるプレイヤーの最大数。 値の範囲は、2 ~ 16 です。 セッションにプレイヤーの最大数が含まれているとさらに、セッションの参加要求が拒否されます。 | 
 | playersCanBeRemovedBy| PlayerAcl| その他のプレイヤーをセッションから削除が許可されているプレイヤーを示す値。 設定可能な値は、取ります、Self AnyPlayer します。 | 
-| 名簿| プレイヤー オブジェクトの配列| セッション内のプレイヤーの配列です。 名簿には、現在のプレイヤーとを離れたが、セッションで以前のプレイヤーが含まれています。 名簿内のプレイヤーの順序は不変です。 新しいプレイヤーは、配列の末尾に追加されます。 | 
+| 名簿| プレイヤー オブジェクトの配列| セッション内のプレイヤーの配列です。 名簿には、現在のプレイヤーとプレイヤーがセッションで以前が左が含まれています。 名簿内のプレイヤーの順序は不変です。 新しいプレイヤーは、配列の末尾に追加されます。 | 
 | seatsAvailable| 32 ビット符号付き整数| まだ参加できるプレイヤーの最大数に達する前に、セッションのプレイヤーの数。 この値は読み取り専用であり常に maxPlayers フィールドの値よりも少なくなります。 | 
 | sessionId| string| セッションが作成されると、MPSD によって割り当てられているセッションの ID。 URI には、この値が、セッションに格納されている情報にアクセスする通常は含まれています。| 
-| titleId| 32 ビットの符号なし整数| ゲーム セッションの作成、タイトルの ID です。| 
+| titleId| 32 ビット符号なし整数| ゲーム セッションの作成、タイトルの ID です。| 
 | variant| 32 ビット符号付き整数| ゲームのバリアントです。 この値は、サーバーに不透明です。| 
 | visibility| VisibilityLevel| セッションの可視性を示す値。 使用可能な値: PlayersCurrentlyInSession、PlayersEverInSession、すべてのユーザーとします。| 
   

@@ -2,19 +2,17 @@
 title: /serviceconfigs/{scid}/batch
 assetID: eb1b510f-d92e-ae9b-a3e6-0edf58b4f075
 permalink: en-us/docs/xboxlive/rest/uri-serviceconfigsscidbatch.html
-author: KevinAsgari
 description: " /serviceconfigs/{scid}/batch"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f32b4d3198d073a13d48ef5ec0cbb817a2a29d6e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 208ee92106563372dd4d92a8c800cc08f513e8c7
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7568465"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330761"
 ---
 # <a name="serviceconfigsscidbatch"></a>/serviceconfigs/{scid}/batch
 サービス構成の識別子レベルでバッチ クエリの POST 操作をサポートしています。
@@ -34,7 +32,7 @@ sessiondirectory.xboxlive.com
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッション識別子です。|
+| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
 
 <a id="ID4ESB"></a>
 

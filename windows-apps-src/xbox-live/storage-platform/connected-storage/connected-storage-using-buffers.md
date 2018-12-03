@@ -1,19 +1,17 @@
 ---
 title: 接続ストレージのバッファーの操作
-author: KevinAsgari
 description: 接続ストレージのバッファーの操作について説明します。
 ms.assetid: 1d9d1b52-4bfe-4cd9-8b80-50ca6c0e9ae1
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 95a265644897ce9469914782484796a622dcf971
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3df95e4807e8d3457143e67eebfb62011bf365cc
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563998"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344386"
 ---
 # <a name="working-with-connected-storage-buffers"></a>接続ストレージのバッファーの操作
 

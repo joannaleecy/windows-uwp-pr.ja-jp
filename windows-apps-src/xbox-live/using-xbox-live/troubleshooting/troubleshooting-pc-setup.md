@@ -1,23 +1,21 @@
 ---
 title: Windows PC での Xbox Live セットアップのトラブルシューティング
-author: KevinAsgari
 description: Windows PC で Xbox Live 開発環境をトラブルシューティングする方法について説明します。
 ms.assetid: 9cfebdcd-0c1c-4fc2-9457-e7e434b6374c
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 9484a324b060bbbf3e31dab0ace915bd4c551ebb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c1f055a49fe34be35335e50dc8b1efbfb7b9b922
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558238"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344106"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows PC での Xbox Live セットアップのトラブルシューティング
 
-Windows 10 PC で、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
+Windows 10 の PC で、コンピューターは、次の手順を使用して正しくセットアップを確保できます。
 
 1. コンピューターにサンプルを実行するもので、XDKS.1 サンド ボックスを変更します。  それには次のスクリプトを実行します。
 

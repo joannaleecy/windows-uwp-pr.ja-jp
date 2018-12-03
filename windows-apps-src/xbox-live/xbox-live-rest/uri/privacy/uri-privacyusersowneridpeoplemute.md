@@ -2,22 +2,20 @@
 title: /users/{ownerId}/people/mute
 assetID: efb929d8-79a7-83f0-c348-c92ced42bc05
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersowneridpeoplemute.html
-author: KevinAsgari
 description: " /users/{ownerId}/people/mute"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 569aa173a0074fd147092716b9a36d53acaef0db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 86010d11ff0a7ebe188766f51bc3160a4f2befa4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7563621"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8335571"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
-ユーザーのミュート一覧にアクセスします。
+ユーザーのミュート リストにアクセスします。
 
   * [URI パラメーター](#ID4EQ)
 
@@ -28,7 +26,7 @@ ms.locfileid: "7563621"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの id。 可能な値は、"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4ETB"></a>
 

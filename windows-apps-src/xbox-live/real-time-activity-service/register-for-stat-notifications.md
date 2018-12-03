@@ -1,19 +1,17 @@
 ---
 title: 統計情報の変更通知の登録
-author: KevinAsgari
 description: Xbox Live リアルタイム アクティビティ サービスを使ってプレイヤー統計情報の変更通知に登録する方法について説明します。
 ms.assetid: d8dd61d4-4188-4dbc-abc5-ffcb491a2778
-ms.author: kevinasg
 ms.date: 06/12/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, rta, 統計情報, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0d4501840f592d8098470b53df12b553321889
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 96b3026cde6dc458044b1346f6389d9158d2c051
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7564617"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342301"
 ---
 # <a name="how-to-register-for-stat-change-notifications"></a>統計情報の変更通知の登録方法
 

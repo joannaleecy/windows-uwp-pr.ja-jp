@@ -1,18 +1,16 @@
 ---
-author: KevinAsgari
 title: Xbox Live リソース
 description: Xbox Live 開発のための重要なリソースをダウンロードできる場所を紹介します。
-ms.author: kevinasg
 ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 392269add8d54873726f225e5314e7f14bd92923
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b12816166aa99311b9adffded176c4d808f2c677
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561885"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345522"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live リソース
 
@@ -20,11 +18,11 @@ ms.locfileid: "7561885"
 
 ## <a name="api-reference"></a>API リファレンス
 
-WinRT SDK API リファレンスをご覧オンライン。
+WinRT SDK API リファレンスを参照してオンラインください。
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-C++ SDK は、現在オフラインの形式で利用可能なのみです。
+C++ SDK は、現在オフライン形式で利用可能なのみです。
 
 完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードできます。
 

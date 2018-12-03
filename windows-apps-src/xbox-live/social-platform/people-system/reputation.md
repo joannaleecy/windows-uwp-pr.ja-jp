@@ -1,19 +1,17 @@
 ---
 title: 評判
-author: KevinAsgari
 description: Xbox Live が評判サービスを使って前向きなゲームプレイを推進している方法について説明します。
 ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, ソーシャル プラットフォーム
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b3ff2d546dc142331406f198848e9d7a7077b3d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4e7763294458f19509d5b797a6fa10e03678abee
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553021"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348563"
 ---
 # <a name="reputation"></a>評判
 

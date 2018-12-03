@@ -1,19 +1,17 @@
 ---
 title: SmartMatch マッチメイキングの使用
-author: KevinAsgari
 description: Xbox Live SmartMatch を使用してマルチプレイヤー ゲームでプレイヤーをマッチングする方法について説明します。
 ms.assetid: 10b6413e-51d9-4fec-9110-5e258d291040
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
 ms.localizationpriority: medium
-ms.openlocfilehash: c013995c29b0916d10291a954a22787c3dfa9716
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 89f33768efcd649987866fd0798c222aa97f7ff8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552893"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330501"
 ---
 # <a name="using-smartmatch-matchmaking"></a>SmartMatch マッチメイキングの使用
 

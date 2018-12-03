@@ -1,19 +1,17 @@
 ---
 title: 実績
-author: KevinAsgari
 description: 実績
 ms.assetid: 35e055c2-3c84-4d73-bb86-fc776327d901
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac421b78f5b0c6ccadd787c16edc817c7694173
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4283369ea01e9b8ff06d57cb48867c97782591e9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561434"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327529"
 ---
 # <a name="achievements"></a>実績
 

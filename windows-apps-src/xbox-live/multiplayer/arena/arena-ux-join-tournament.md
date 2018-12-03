@@ -1,18 +1,16 @@
 ---
 title: トーナメントへの参加
-author: KevinAsgari
 description: プレイヤーがゲームのトーナメントに参加するための UI の作成方法について説明します。
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: f3240007d5501941ea3579dab2942d67d4e69809
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1cdcfc7243463a35eccfaeb13a3b9b92b616952b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554517"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346925"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a>アリーナ UI を使ってトーナメントに参加する
 

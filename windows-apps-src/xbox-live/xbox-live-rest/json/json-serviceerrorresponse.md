@@ -2,33 +2,31 @@
 title: ServiceErrorResponse (JSON)
 assetID: a2077df8-f76c-0233-8e41-68267b681862
 permalink: en-us/docs/xboxlive/rest/json-serviceerrorresponse.html
-author: KevinAsgari
 description: " ServiceErrorResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da4a36bca0cad761ef4dda89f86b23f6cf44c30
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 86f9389f6f76c1c51955a6c784393e9b05909298
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554166"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8330709"
 ---
 # <a name="serviceerrorresponse-json"></a>ServiceErrorResponse (JSON)
-サービスのエラーが発生した場合は、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下に定義されています。 運用環境での低いデータを含めることができます。 
+サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。 運用環境での低いデータを含めることができます。 
 <a id="ID4EN"></a>
 
  
 ## <a name="serviceerrorresponse"></a>ServiceErrorResponse
  
-ServiceErrorResponse オブジェクトでは、次の仕様があります。
+ServiceErrorResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>errorCode</b>| 32 ビット符号付き整数| (Null にすることができます) エラーに関連付けられたコード。| 
-| <b>エラー メッセージ</b>| string| エラーに関する詳細を追加します。| 
+| <b>errorCode</b>| 32 ビット符号付き整数| (Null にすることができます) エラーに関連付けられたコードです。| 
+| <b>エラー メッセージ</b>| string| エラーの詳細を追加します。| 
   
 <a id="ID4EVB"></a>
 

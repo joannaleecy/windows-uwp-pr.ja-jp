@@ -2,19 +2,17 @@
 title: POST (/titles/{Title Id}/sessionhosts)
 assetID: 8558b336-1af9-8143-9752-477ceb3a8e4e
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionhosts-post.html
-author: KevinAsgari
 description: " POST (/titles/{Title Id}/sessionhosts)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: dbbc7baf12daea485dec22389846e5e4acec16c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47e3ecbf0a519b92ae467199e5d454523864310a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577005"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8342431"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
 新しいクラスターの要求を作成します。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
@@ -65,7 +63,7 @@ gameserverms.xboxlive.com
 | SandboxId| サンド ボックスで割り当てられるセッション ホストをします。| 
 | cloudGameId| クラウド ゲームの識別子です。| 
 | 場所| 優先する場所の順序指定された一覧から割り当てられるセッションたいです。| 
-| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 Sessionhost に関連付けられたし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
+| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 これは、sessionhost に関連付けられたし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
 | gameModelId| ゲーム モードの識別子です。| 
  
 <a id="ID4EDD"></a>
@@ -149,15 +147,15 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
+次の応答コードを受信すると、タイトルはサービスに呼び出しを再試行のみする必要があります。
  
    * 200、成功の応答が返されます。
    * 400-無効なパラメーターまたは形式が正しくない要求本文。
    * 401: Unauthorized
    * 404-タイトル id を割り当てられているすべてのサブスクリプションはありません。
-   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられました。 割り当て要求が行われたとセッションのホストが既に指定した sessionId とアクティブになっている場合はその sessionhost に関する詳細情報が返されます。 セッション ホストただしがない場合、競合を受け取るがまだ Active します。
+   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 セッションのホストが既に指定した sessionId しアクティブになって、割り当て要求が行われた場合はその sessionhost に関する詳しい情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
    * 500-サーバーの予期しないエラー。
-   * 503-sessionhosts StandingBy しません。 これらのリソースの一部は無料ときは、要求を再試行します。
+   * 503-なし sessionhosts StandingBy します。 これらのリソースの一部は無料ときは、要求を再試行します。
    
 <a id="ID4EFG"></a>
 

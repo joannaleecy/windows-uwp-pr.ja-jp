@@ -2,35 +2,33 @@
 title: AggregateSessionsResponse (JSON)
 assetID: 020ee9b2-c96c-2e65-4e6d-f9f4bd25a374
 permalink: en-us/docs/xboxlive/rest/json-aggregatesessionsresponse.html
-author: KevinAsgari
 description: " AggregateSessionsResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 590acdd89d83fa21a401b5573053ba341f7f05c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef026fd5096d047b2014faaf95a667c69827e043
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581281"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332384"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
-ユーザーの適合性のセッションは、集計されたデータが含まれています。 
+ユーザーの適合性のセッションの集計データが含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="aggregatesessionsresponse"></a>AggregateSessionsResponse
  
-AggregateSessionsResponse オブジェクトでは、次の仕様があります。
+AggregateSessionsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | totalDurationInSeconds| 64 ビットの符号付き整数| 集計期間を秒単位でセッションの合計期間です。| 
 | totalJoules| 64 ビットの符号付き整数| エネルギーの書き込みの合計-コンセントで-集計期間中です。 | 
 | totalSessions| 64 ビットの符号付き整数| 集計期間中のセッションの合計数。| 
-| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝と同等の集計期間中のタスク (MET) の値。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個人の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較を使用できます。| 
+| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝と同等の集計期間中のタスク (MET) の値。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個々 のユーザーの静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
   
 <a id="ID4ESC"></a>
 

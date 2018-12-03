@@ -1,19 +1,17 @@
 ---
 title: Xbox Live SDK の新規事項 - November 2016
-author: KevinAsgari
 description: Xbox Live SDK の新規事項 - November 2016
 ms.assetid: 5cf9ba9d-5a15-4e62-bc1f-45ff8b8bf3b0
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c17bad95cc309d39f50341d296dc5d54552ece
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de716ea88e5225789f93a7ff770d7b8dd2f8bd94
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558235"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326658"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---november-2016"></a>Xbox Live SDK の新規事項 - November 2016
 

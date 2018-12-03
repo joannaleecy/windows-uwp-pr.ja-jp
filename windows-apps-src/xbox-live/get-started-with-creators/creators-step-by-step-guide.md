@@ -1,19 +1,17 @@
 ---
 title: Xbox Live クリエーターズ向けステップ バイ ステップ ガイド
-author: KevinAsgari
 description: クリエーターズ プログラム向けに Xbox Live を統合するための手順に関するガイドラインについて説明します。
 ms.assetid: 7f9d093e-479a-4ad4-9965-a4ea6f0b2ac3
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4d7d03bc218d7507c8c2971bf76946a9fca6b4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae02fe412e6300ac74b3f1106cdf6a5bb304d36b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554362"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8322692"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラムを統合するためのステップ バイ ステップ ガイド
 
@@ -25,7 +23,7 @@ ms.locfileid: "7554362"
 ## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 適切なガイドに従って、IDE やゲーム エンジンをセットアップする
 プラットフォームやエンジンに関する適切なファースト ステップ ガイドに従い、それに沿って学習することで、Xbox Live の基本を習得することができます。
 
-* [Visual Studio を使用してクリエーターズ タイトルの開発](develop-creators-title-with-visual-studio.md)では、Visual Studio プロジェクト パートナー センターで Xbox Live 構成をリンクする方法を示します。
+* [Visual Studio を使用して、クリエーターズ タイトルの開発](develop-creators-title-with-visual-studio.md)では、パートナー センターで Xbox Live 構成を Visual Studio プロジェクトをリンクする方法を説明します。
 
 * 「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」では、Xbox Live 対応の新しい Unity タイトルを作成する方法、ランキングなどの機能をタイトルに追加する方法、およびネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 

@@ -2,22 +2,20 @@
 title: /users/xuid({xuid})/achievements/{scid}/{achievementid}
 assetID: 656a6d63-1a11-b0a5-63d2-2b010abd62e7
 permalink: en-us/docs/xboxlive/rest/uri-usersxuidachievementsscidachievementid.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/achievements/{scid}/{achievementid}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 9766222ea3a1c8671eadd42458b1c5aceaf0f587
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 00c577f60b67f15f75c47b5e737ca12819695110
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559484"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339662"
 ---
 # <a name="usersxuidxuidachievementsscidachievementid"></a>/users/xuid({xuid})/achievements/{scid}/{achievementid}
-構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。 
+構成済みのメタデータとユーザー固有のデータを含む、実績についての詳細を返します。 
 
 > [!NOTE] 
 > プラットフォームでのみサポートされます。 
@@ -36,7 +34,7 @@ ms.locfileid: "7559484"
 | --- | --- | --- | --- | 
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) がリソースにアクセスしているユーザー。 認証されたユーザーの XUID に一致する必要があります。| 
 | scid| GUID| その実績にアクセスしているサービス構成の一意の識別子。| 
-| achievementid| 32 ビットの符号なし整数| アクセスされている実績を (指定された SCID) 内で一意の識別子です。| 
+| achievementid| 32 ビット符号なし整数| アクセスされている実績を (指定された SCID) 内で一意の識別子です。| 
   
 <a id="ID4EMC"></a>
 

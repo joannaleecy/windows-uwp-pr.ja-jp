@@ -2,33 +2,31 @@
 title: PermissionCheckResponse (JSON)
 assetID: 7a749001-b569-b0e0-2a35-f299474c8710
 permalink: en-us/docs/xboxlive/rest/json-permissioncheckresponse.html
-author: KevinAsgari
 description: " PermissionCheckResponse (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 79ac86b1cd99b8d1a6074b6aaadc8b6a62eec6db
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7623a45fa21e30a015bd5c6a7c1f5add19cc189b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7581915"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8346706"
 ---
 # <a name="permissioncheckresponse-json"></a>PermissionCheckResponse (JSON)
-1 つの対象ユーザーに対して 1 つのアクセス許可の設定の 1 人のユーザーからのチェックの結果。 
+1 つの対象ユーザーに対して単一のアクセス許可の設定の 1 人のユーザーからのチェックの結果。 
 <a id="ID4EN"></a>
 
  
 ## <a name="permissioncheckresponse"></a>PermissionCheckResponse
  
-PermissionCheckResponse オブジェクトでは、次の仕様があります。
+PermissionCheckResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | どう| ブール値| 必須。 このメンバーは、ターゲット ユーザーと要求された操作を実行する要求元のユーザーが許可されている場合<b>は true</b> 。| 
-| 結果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)の配列| 省略可能。 <b>どう</b>が false 要求者に関連するもので、チェックが拒否された場合は、アクセス許可が拒否された理由を示します。| 
+| 結果| [PermissionCheckResult (JSON)](json-permissioncheckresult.md)の配列| 省略可能。 <b>どう</b>された false 要求者に関連するもので、チェックが拒否された場合は、アクセス許可が拒否された理由を示します。| 
   
 <a id="ID4E3B"></a>
 

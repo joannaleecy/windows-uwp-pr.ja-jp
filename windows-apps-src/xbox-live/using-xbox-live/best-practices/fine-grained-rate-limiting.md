@@ -1,19 +1,17 @@
 ---
 title: Xbox Live のきめ細かなレート制限
-author: KevinAsgari
 description: Xbox Live のきめ細かなレート制限のしくみと、タイトルがレート制限されないようにする方法について説明します。
 ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, スロットリング, レート制限
 ms.localizationpriority: medium
-ms.openlocfilehash: a639fb503111e9949ffa02fcccd68087bba61279
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b79a4f0a873ffaf5dd824a0c9832f61aa4a7d77f
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556453"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8340956"
 ---
 # <a name="xbox-live-fine-grained-rate-limiting"></a>Xbox Live のきめ細かなレート制限
 

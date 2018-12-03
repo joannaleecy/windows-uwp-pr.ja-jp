@@ -2,19 +2,17 @@
 title: GET (/users/xuid({xuid})/achievements)
 assetID: 381d49d1-7a4b-4a1e-1baf-cf674f7e0d54
 permalink: en-us/docs/xboxlive/rest/uri-achievementsusersxuidachievementsgetv2.html
-author: KevinAsgari
 description: " GET (/users/xuid({xuid})/achievements)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 550a835bf729b22c9adc79a15ef643fa1cb009b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f69ceaa0ecffcbd230127818b0a566666c936680
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7557852"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8333193"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
 タイトル、進行中のユーザーが、または、ユーザーがロックを解除するもので定義されている実績の一覧を取得します。 これらの Uri のドメインが`achievements.xboxlive.com`します。
@@ -43,14 +41,14 @@ ms.locfileid: "7557852"
  
 | パラメーター| 必須かどうか| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <b>skipItems</b>| いいえ| 32 ビット符号付き整数| 特定の項目数後以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
-| <b>continuationToken</b>| いいえ| string| 特定の継続トークンから項目を返します。 | 
-| <b>maxItems</b>| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と範囲の項目を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
-| <b>titleId</b>| いいえ| string| 返された結果のフィルター。 1 つまたは複数のコンマで区切られた、10 進数のタイトル id を受け取ります。| 
-| <b>unlockedOnly</b>| いいえ| ブール値| 返された結果をフィルター処理します。 場合は<b>true</b>に設定、唯一の戻り値をユーザーのロック解除した実績されます。 既定値は<b>false</b>。| 
+| <b>skipItems</b>| いいえ| 32 ビット符号付き整数| 項目数が指定した後、以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
+| <b>continuationToken</b>| いいえ| string| 特定の継続トークンで始まる項目を返します。 | 
+| <b>maxItems</b>| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
+| <b>titleId</b>| いいえ| string| 返される結果のフィルターします。 1 つまたは複数のコンマで区切られた、10 進数のタイトル id を受け取ります。| 
+| <b>unlockedOnly</b>| いいえ| ブール値| 返された結果をフィルター処理します。 場合は<b>true</b>に設定、ユーザーのロック解除した実績をのみが返さになります。 既定値は<b>false</b>。| 
 | <b>possibleOnly</b>| いいえ| ブール値| 返された結果をフィルター処理します。 場合<b>は true</b>に設定、使用可能なすべての結果がないロックされていないメタデータ - XMS から実績情報だけが返されます。 既定値は<b>false</b>。| 
-| <b>種類</b>| いいえ| string| 返された結果のフィルター。 「固定」または"Challenge"できます。 既定ではサポートされているすべての種類です。| 
-| <b>orderBy</b>| いいえ| string| 結果が返される順序を指定します。 「順序指定されていない」、「タイトル」、"UnlockTime"または"EndingSoon"を指定できます。 既定値は「順序なし」。| 
+| <b>種類</b>| いいえ| string| 返される結果のフィルターします。 「固定」または「チャレンジ」を指定できます。 既定ではサポートされているすべての種類です。| 
+| <b>orderBy</b>| いいえ| string| 結果が返される順序を指定します。 「順序指定されていない」、「タイトル」、"UnlockTime"または"EndingSoon"を指定できます。 既定値は「順序なし」です。| 
   
 <a id="ID4ENF"></a>
 
@@ -68,7 +66,7 @@ ms.locfileid: "7557852"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
   
 <a id="ID4ESH"></a>
 
@@ -77,9 +75,9 @@ ms.locfileid: "7557852"
  
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの妥当性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| <b>x xbl コントラクト バージョン</b>| 32 ビットの符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
-| <b>同意言語</b>| string| 目的のロケールとフォールバック (FR-FR, fr, EN-GB、en 世界、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで、実績サービスは、一覧で動作します。 見つからない場合は、ユーザーの IP アドレスに由来するユーザー トークンで定義されている場所と一致しようとします。 まだ一致するローカライズされた文字列はありません。 が見つかった場合、タイトル開発者または発行元によって提供される既定の文字列を使用します。 | 
+| <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
+| <b>x xbl コントラクト バージョン</b>| 32 ビット符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
+| <b>同意言語</b>| string| 目的のロケールとフォールバック (FR-FR, fr, EN-GB、en 世界、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで、実績サービスは、一覧で動作します。 見つからない場合は、ユーザーの IP アドレスに由来するユーザーのトークンで定義されている場所と一致しようとします。 一致しないローカライズされた文字列でもが見つかった場合、タイトル開発者または発行元によって提供される既定の文字列を使用します。 | 
   
 <a id="ID4EIBAC"></a>
 

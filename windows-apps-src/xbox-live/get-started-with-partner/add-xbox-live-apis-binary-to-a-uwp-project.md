@@ -1,19 +1,17 @@
 ---
 title: Xbox Live API のバイナリを UWP プロジェクトに追加する
-author: KevinAsgari
 description: NuGet を使用して Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する方法について説明します。
 ms.assetid: 1e77ce9f-8a0e-402c-9f46-e37f9cda90ed
-ms.author: kevinasg
 ms.date: 11/28/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, NuGet
 ms.localizationpriority: medium
-ms.openlocfilehash: 29280b55cb2178d05414ff3413cd0a92d2f93916
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20b4d4ae27282ccf71964d31da4d1f577c280de8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560146"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339492"
 ---
 # <a name="add-xbox-live-apis-binary-package-to-your-uwp-project"></a>Xbox Live API のバイナリ パッケージを UWP プロジェクトに追加する
 

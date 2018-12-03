@@ -1,18 +1,16 @@
 ---
 title: Xbox アリーナ
-author: KevinAsgari
 description: Xbox アリーナを使用して、ゲームのトーナメントを実行する方法を説明します。
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
-ms.openlocfilehash: 84944060bac0a14e78cb4a5b28bbc848a71d7602
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b08da01323d05c961005d562b70667dbbdf85437
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552938"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8350454"
 ---
 # <a name="xbox-arena"></a>Xbox アリーナ
 
@@ -80,7 +78,7 @@ Xbox アリーナの役割 (トーナメントの設定)   | タイトルの役�
 
 記事 | description
 --- | ---
-[Xbox アリーナ操作ポータル](operations-portal.md) | 操作ポータルを作成し、Xbox アリーナと統合されているタイトルのトーナメントを公式の管理に使用できるについて説明します。
+[Xbox アリーナ操作ポータル](operations-portal.md) | ポータルを作成し、Xbox アリーナと統合されているタイトルのトーナメントを公式の管理に使用できる操作について説明します。
 
 ## <a name="user-experience-guidance"></a>ユーザー エクスペリエンス ガイダンス
 

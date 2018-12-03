@@ -2,19 +2,17 @@
 title: POST (/handles/query?include=relatedInfo)
 assetID: 66ecd1fe-24d4-4cd5-256d-8950ac658529
 permalink: en-us/docs/xboxlive/rest/uri-handlesqueryincludepost.html
-author: KevinAsgari
 description: " POST (/handles/query?include=relatedInfo)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2caffd029e5b5c79eb411678621643a48f65e1f1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb30561c91a085902dd9d79b6c4a2045dc709bfb
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572808"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325886"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a>POST (/handles/query?include=relatedInfo)
 関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。
@@ -34,9 +32,9 @@ ms.locfileid: "7572808"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドは、「含める」のクエリ文字列で指定されたセッション情報を使って、データのハンドルに対するクエリを作成します。 クエリ文字列値はコンマで区切られたリストなどのサポート、今後のクエリ オプションをサポートするために拡張できるように設計されています"? 含める = relatedInfo、セッション"。 POST メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**でラップすることができます。
+この HTTP/REST メソッドは、「含める」クエリ文字列で指定されたセッション情報を使って、データのハンドルに対するクエリを作成します。 クエリ文字列値はコンマで区切られたリストなどのサポート、今後のクエリ オプションをサポートするために拡張できるように設計されています"? 含める = relatedInfo、セッション"します。 POST メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetActivitiesForUsersAsync**でラップすることができます。
 
-このメソッドの要求本文で型フィールドは、「アクティビティ」に設定する必要があります。 応答本文内の項目は、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**のプロパティに直接マップされます。
+このメソッドの要求の本文で型フィールドは、「アクティビティ」に設定する必要があります。 応答本文内の項目は、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**のプロパティに直接マップされます。
 
 <a id="ID4ECB"></a>
 
@@ -52,17 +50,17 @@ ms.locfileid: "7572808"
 
 | <b>パラメーター</b>| <b>型</b>| <b>説明</b>|
 | --- | --- | --- | --- |
-| キーワード| string| キーワード、たとえば、"foo"を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
+| キーワード| string| キーワード、たとえば、"foo"a を取得する場合は、セッションまたはテンプレートに含まれてする必要があります。 |
 | xuid| 64 ビットの符号なし整数| Xbox ユーザー ID で、たとえば、「123」、セッションをクエリに含めます。 既定では、ユーザーに含まれているため、セッション内でアクティブにある必要があります。 |
 | 予約| boolean| セッションが含まれる場合は true、ユーザーは、予約済みプレイヤーとして設定されますが、アクティブなプレイヤーが参加していません。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
-| 非アクティブです| boolean| ユーザーが受け入れたがアクティブにプレイしていないセッションを 場合は true。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
+| 非アクティブです| boolean| True に、ユーザーが受け入れたがアクティブに再生されていないセッションを含めます。 セッションのユーザーが「準備完了」ですが「アクティブ」では、非アクティブとしてカウントされます。 |
 | プライベート| boolean| プライベート セッションを含める場合は true。 自分のセッションをクエリするとき、または特定のユーザーのセッションのサーバーを照会すると、このパラメーターは使用のみ。 |
 | visibility| string| セッションの可視性の状態。 設定可能な値は、 <b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>によって定義されます。 このパラメーターは、「開く」に設定されている場合、クエリが開いている唯一のセッションを含める必要があります。 <i>プライベート</i>のパラメーターを設定する必要があります「プライベート」に設定されている場合を true に設定します。 |
-| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、2 の値は、2 の主なセッションのバージョンでのみそのセッションを指定します。 または含まれている小さい必要があります。 バージョン番号は、要求のコントラクト バージョン mod 100 以内である必要があります。 |
-| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は、0 ~ 100 の間にある必要があります。 |
+| version| 32 ビット符号付き整数| セッションの最大バージョンが含まれている場合があります。 たとえば、2 の値は、2 のセッションのメジャー バージョンとその専用のセッションを指定します。 または含まれている小さい必要があります。 バージョン番号は、要求のコントラクト バージョン mod 100 以下である必要があります。 |
+| アプリでは| 32 ビット符号付き整数| 取得するセッションの最大数。 この数は 0 ~ 100 の間にある必要があります。 |
 
 
-*プライベート*または*予約*のいずれかを true に設定するには、セッションにサーバー レベルのアクセスが必要です。 代わりに、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
+*プライベート*または*予約*のいずれかを true に設定すると、セッションにサーバー レベルのアクセスが必要です。 代わりに、これらの設定では、呼び出し元の XUID を要求 URI の XUID フィルターに一致する必要があります。 それ以外の場合、/403 HTTP ステータス コードが返されます、そのようなセッションが実際に存在するかどうか。
 
 <a id="ID4EAF"></a>
 
@@ -79,7 +77,7 @@ ms.locfileid: "7572808"
 
 ### <a name="sample-request"></a>要求の例
 
-ユーザーの「お気に入り」のソーシャル グラフのすべてのアクティビティを取得するには、次のような POST 本文。
+ユーザーの「お気に入り」のソーシャル グラフのすべてのアクティビティを取得、次のような POST 本文。
 
 
 ```cpp
@@ -102,7 +100,7 @@ ms.locfileid: "7572808"
 
 ## <a name="response-body"></a>応答本文
 
-結果は、各ハンドルに埋め込まれている一意の id、ハンドルの構造体の配列として返されます。 **RelatedInfo**オブジェクトでは、特定のセッションの情報が返されます。 この情報は返されません正規の POST メソッドでこの URI に注意してください。
+結果は、各ハンドルに埋め込まれている一意の id、ハンドルの構造体の配列として返されます。 **RelatedInfo**オブジェクトでは、特定のセッションの情報が返されます。 この情報はこの URI に通常の POST メソッドの返されませんことに注意してください。
 
 <a id="ID4EDG"></a>
 

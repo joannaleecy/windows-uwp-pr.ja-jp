@@ -1,19 +1,17 @@
 ---
 title: WinRT API のエラー処理
-author: KevinAsgari
 description: WinRT API を使って Xbox Live サービス呼び出しを行ったときのエラーを処理する方法について説明します。
 ms.assetid: b4f04798-df91-430e-90f0-83b5a48b9ab2
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
-ms.openlocfilehash: d1127811e44eecb03cfc9a9818733a2b2234d2c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e72dfa0b6f98284c240cf6af2dde02439d694b48
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561928"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347069"
 ---
 # <a name="winrt-api-error-handling"></a>WinRT API のエラー処理
 

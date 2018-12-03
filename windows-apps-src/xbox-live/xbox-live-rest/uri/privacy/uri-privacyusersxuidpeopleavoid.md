@@ -2,19 +2,17 @@
 title: /users/{ownerId}/people/avoid
 assetID: 13dc3a10-ed04-4600-3afb-aa95a4139a06
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersxuidpeopleavoid.html
-author: KevinAsgari
 description: " /users/{ownerId}/people/avoid"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f4e7523790f527cc8c5816a01dd10ae92112af8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0ae745f825d6afda87167859b12bcc52b899f18
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7579330"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345669"
 ---
 # <a name="usersowneridpeopleavoid"></a>/users/{ownerId}/people/avoid
 ユーザーの回避一覧にアクセスします。
@@ -28,7 +26,7 @@ ms.locfileid: "7579330"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの id。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>します。 認証されたユーザーである必要があります。 値の例:<code>xuid(2603643534573581)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4ERB"></a>
 

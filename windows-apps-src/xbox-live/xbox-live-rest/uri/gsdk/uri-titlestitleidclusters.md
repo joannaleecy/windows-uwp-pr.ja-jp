@@ -2,22 +2,20 @@
 title: /titles/{titleId}/clusters
 assetID: 5b1e242c-fd99-180b-e133-87946febd51c
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidclusters.html
-author: KevinAsgari
 description: " /titles/{titleId}/clusters"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f790d596eb393976bdfdac68c9aba4b00b50d4f3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 821b346958846b56a55c0ec5920d71f4b3cc13c4
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555055"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8327642"
 ---
 # <a name="titlestitleidclusters"></a>/titles/{titleId}/clusters
-タイトルの Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EU)
   * [ホスト名](#ID4EIB)

@@ -2,22 +2,20 @@
 title: GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
 assetID: 613ba53f-03cb-5ed3-a5ba-be59e5a146d1
 permalink: en-us/docs/xboxlive/rest/uri-titlestitleidsessionssessionidallocationstatus-get.html
-author: KevinAsgari
 description: " GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da982d9ce3c1f24b00c62a3668253f086b41f55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 793d634bc1e3dc431b3797759751afb6dfd9c00a
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7562274"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349379"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId によって識別 sessionhost の割り当ての状態を返します。 これらの Uri のドメイン`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+その sessionId で識別される sessionhost の割り当てを取得します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -48,7 +46,7 @@ ms.locfileid: "7562274"
 | --- | --- | 
 | description| 空の文字列 (左での下位互換性) を返します。| 
 | clusterId| 空の文字列 (左での下位互換性) を返します。| 
-| ホスト名| セッション ホストの URL。| 
+| ホスト名| セッションのホストの URL。| 
 | status| キューに入れ、満たされると、または中止されたことを示します。| 
 | sessionHostId| セッション ホストの id。| 
 | sessionId| (割り当て時) に提供されるクライアント セッション id。| 
@@ -102,7 +100,7 @@ ms.locfileid: "7562274"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスへの呼び出しをのみ再試行する必要があります。
+次の応答コードを受信すると、タイトルはサービスに呼び出しを再試行のみする必要があります。
  
    * 200-成功 
    * 400-要求が無効なパラメーターが含まれています 

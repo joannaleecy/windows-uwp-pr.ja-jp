@@ -2,22 +2,20 @@
 title: /users/me/scids/{scid}/clips/{gameClipId}
 assetID: f5bead69-4fc9-f551-39cb-c8754645ac88
 permalink: en-us/docs/xboxlive/rest/uri-usersmescidclipsgameclipid.html
-author: KevinAsgari
 description: " /users/me/scids/{scid}/clips/{gameClipId}"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 36be1a1f30c659bec70fdd67a02bbe5ad7ffad3d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3cbe2d2c996b466fd94287129f1add0868f05b05
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7561230"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349454"
 ---
 # <a name="usersmescidsscidclipsgameclipid"></a>/users/me/scids/{scid}/clips/{gameClipId}
-ゲーム クリップ データへのアクセスとメタデータ。 これらの Uri のドメイン`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ゲーム クリップ データへのアクセスとメタデータ。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
  
   * [URI パラメーター](#ID4EX)
  

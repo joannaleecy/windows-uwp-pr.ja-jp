@@ -1,19 +1,17 @@
 ---
 title: UWP プロジェクトの認証
-author: aablackm
 description: ユニバーサル Windows プラットフォーム (UWP) タイトルで Xbox Live ユーザーをサインインする方法について説明します。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
-ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: 36373fbc25c7f478bda9bbbf14f996f3997e91d2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9872ab1fef773cb3f3dadfaea20a55dbe43f0de
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558285"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347063"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP プロジェクトの認証
 

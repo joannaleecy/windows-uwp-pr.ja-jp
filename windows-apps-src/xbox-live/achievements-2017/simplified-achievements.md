@@ -1,19 +1,17 @@
 ---
 title: Achievements 2017
-author: KevinAsgari
 description: Achievements 2017
 ms.assetid: d424db04-328d-470c-81d3-5d4b82cb792f
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 21f14d6e50983954bfda07d1e713c2543e344436
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e7588639d9a83b50066e4dd313d6427d047c8482
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7552817"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344524"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 

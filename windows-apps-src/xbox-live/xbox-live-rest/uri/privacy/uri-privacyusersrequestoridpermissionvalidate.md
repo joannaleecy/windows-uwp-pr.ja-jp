@@ -2,19 +2,17 @@
 title: /users/{requestorId}/permission/validate
 assetID: 400a9721-bf43-76df-4cd1-9f2ae6ca5035
 permalink: en-us/docs/xboxlive/rest/uri-privacyusersrequestoridpermissionvalidate.html
-author: KevinAsgari
 description: " /users/{requestorId}/permission/validate"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 5aadd94fbee7fff63ff6c98dc2f71e5b50ed7343
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a062fd417bae37fd66c944e0e534ef7a50de5fa
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7565227"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8325725"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -27,7 +25,7 @@ ms.locfileid: "7565227"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| requestorId| string| 必須。 アクションを実行しているユーザーの id。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。| 
+| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。| 
   
 <a id="ID4ETB"></a>
 
@@ -36,7 +34,7 @@ ms.locfileid: "7565227"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;対象ユーザーで指定された操作を実行するユーザーを許可するかどうかに関するはいまたは no 応答を取得します。
+&nbsp;&nbsp;ユーザーをターゲット ユーザーと、指定されたアクションの実行を許可するかどうかに関するはいまたは no 応答を取得します。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 

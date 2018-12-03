@@ -2,19 +2,17 @@
 title: PeopleList (JSON)
 assetID: ac538652-c10c-44e5-c1e3-5314ebe8ba83
 permalink: en-us/docs/xboxlive/rest/json-peoplelist.html
-author: KevinAsgari
 description: " PeopleList (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 261ab440091ce3825c1025e2831b054807910e94
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1f9ab412088707752d62cc20fd54da2639f26ddc
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559306"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8326680"
 ---
 # <a name="peoplelist-json"></a>PeopleList (JSON)
 [Person](json-person.md)オブジェクトのコレクションです。 
@@ -23,12 +21,12 @@ ms.locfileid: "7559306"
  
 ## <a name="peoplelist"></a>PeopleList
  
-PeopleList オブジェクトでは、次の仕様があります。
+PeopleList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | People| [ユーザー](json-person.md)の配列| ユーザーのリストを構成する[Person](json-person.md)オブジェクト。| 
-| totalCount| 32 ビットの符号なし整数| セットで利用可能な[Person](json-person.md)オブジェクトの合計数。 この値は、全体のセットだけでなく、最新の応答のサイズを表すためにのページングのクライアントで使用できます。 値の例: 680 します。| 
+| totalCount| 32 ビット符号なし整数| セットで利用可能な[Person](json-person.md)オブジェクトの合計数。 この値は、全体のセットだけでなく、最新の応答のサイズを表すためにのページングのクライアントで使用できます。 値の例: 680 します。| 
   
 <a id="ID4EAC"></a>
 

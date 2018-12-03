@@ -1,19 +1,17 @@
 ---
 title: 構成 BLOB の読み取り
-author: KevinAsgari
 description: Xbox Live タイトル ストレージ内の構成 BLOB の読み取りについて説明します。
 ms.assetid: ee62d221-69b9-4f52-9b5d-5a44d04de548
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: be118ff3bc12cd3dd541d6889daa70c7e5a8eab3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71607f05f07ee4a98f73a19c28c85dc325041a10
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7580385"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8329979"
 ---
 # <a name="reading-a-configuration-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージ内の構成 BLOB の読み取り
 

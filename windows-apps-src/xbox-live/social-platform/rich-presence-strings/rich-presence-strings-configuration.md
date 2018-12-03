@@ -1,19 +1,17 @@
 ---
 title: リッチ プレゼンスの構成
-author: KevinAsgari
 description: Xbox Live のリッチ プレゼンス文字列を構成する方法について説明します。
 ms.assetid: 7b08d46d-d3aa-42eb-93f2-ecd9338fccea
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b85b1997f11a81d7223bddd78591db604d8ad4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d69aaadaa1f64d1cb6eb40b52016a330d924b9b9
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7553002"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8339915"
 ---
 # <a name="rich-presence-configuration"></a>リッチ プレゼンスの構成
 

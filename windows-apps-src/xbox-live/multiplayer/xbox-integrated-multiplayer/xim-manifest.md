@@ -1,19 +1,17 @@
 ---
 title: XIM プロジェクト構成
-author: KevinAsgari
 description: Xbox Integrated Multiplayer (XIM) で使用する UWP アプリ マニフェストを構成する方法について説明します。
 ms.assetid: 5d0ed7bd-9527-42a3-ae09-8cc9012c1111
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, マニフェスト
 ms.localizationpriority: medium
-ms.openlocfilehash: f83cad8ffc78fa34d5b5198d53dd024e363ff038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 926cc4495236fc4762f9b3176a5d6a4a579e2e2e
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7558307"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8345459"
 ---
 # <a name="xim-project-configuration"></a>XIM プロジェクト構成
 

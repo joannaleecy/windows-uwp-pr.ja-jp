@@ -1,18 +1,16 @@
 ---
 title: 大規模なセッション
-author: KevinAsgari
 description: Xbox Live マルチプレイヤー プラットフォームで大規模なセッションを使用する方法について説明します。
-ms.author: kevinasg
 ms.date: 07/11/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, 大規模なセッション, 最近のプレイヤー
 ms.localizationpriority: medium
-ms.openlocfilehash: 52b65f0e6c4ee8642b49ff71533961f50761be98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dcd7b27bc0aea8b8406e7eccb420140cf32c1ed5
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554804"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8332352"
 ---
 # <a name="large-sessions"></a>大規模なセッション
 

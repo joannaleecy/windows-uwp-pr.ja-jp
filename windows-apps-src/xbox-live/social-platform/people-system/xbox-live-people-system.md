@@ -1,19 +1,17 @@
 ---
 title: Xbox Live People システム
-author: aablackm
 description: Xbox Live People システムについて説明します。
 ms.assetid: f1881a52-8e65-4364-9937-d2b8b8476cbf
-ms.author: aablackm
 ms.date: 03/19/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ソーシャル, People システム, フレンド
 ms.localizationpriority: medium
-ms.openlocfilehash: 10b7baaef13d7358aa8f4161d21b2fe63d917565
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 39fd9283e169efa04f9c61d1c5e1d206617ab0c8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7554847"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8348358"
 ---
 # <a name="xbox-live-people-system"></a>Xbox Live People システム
 

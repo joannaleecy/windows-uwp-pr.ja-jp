@@ -2,19 +2,17 @@
 title: GameMessage (JSON)
 assetID: c11606e6-701f-5807-4aef-5608c98ad831
 permalink: en-us/docs/xboxlive/rest/json-gamemessage.html
-author: KevinAsgari
 description: " GameMessage (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f8d04b0487c7b42becd9a899c3532a6e5221f22e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2bddd9e26b4716fd1e33c4b5bbde56672b5d3f8
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7577959"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8347618"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。 
@@ -22,12 +20,12 @@ ms.locfileid: "7577959"
 
   
  
-GameMessage JSON オブジェクトでは、次の仕様があります。
+GameMessage JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | data| 8 ビットの符号なし整数の配列| ゲームのクライアントが他のゲームのクライアントに送信する必要がある Base64 でエンコードされたデータ。 この値は、サーバーに不透明です。 | 
-| senderXuid| 64 ビットの符号なし整数| メッセージの送信、プレイヤーの Xbox ユーザー ID です。 | 
+| senderXuid| 64 ビットの符号なし整数| メッセージの送信、プレイヤーの Xbox ユーザー ID。 | 
 | シーケンス番号| 32 ビット符号付き整数| ゲームのメッセージのシーケンス番号。 この値は、サーバーが割り当てられます。 シーケンス番号を単調に増加することが保証連続することができない可能性があります。 シーケンス番号が一意がメッセージ キュー間ではなく、メッセージ キュー内でします。 | 
 | queueIndex| 32 ビット符号付き整数| メッセージのセッション メッセージ キューのインデックス。 設定可能な値は、0 ~ 3 です。| 
 | タイムスタンプ| DateTime| サーバーは、UTC で、ゲームのメッセージをキューに作成されたときの時間。 | 

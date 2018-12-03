@@ -2,22 +2,20 @@
 title: /users/{ownerId}/summary
 assetID: 63f8ed09-532d-381e-59e6-2849893df5bf
 permalink: en-us/docs/xboxlive/rest/uri-usersowneridsummary.html
-author: KevinAsgari
 description: " /users/{ownerId}/summary"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ce4bd9d444069af95c4f3c875cc12e4ff950cc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca75261420449ac0b5af27ec34256ccef89fad2d
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7572913"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336214"
 ---
 # <a name="usersowneridsummary"></a>/users/{ownerId}/summary
-呼び出し元の観点から所有者に関する集計データにアクセスします。
+呼び出し元の観点から所有者に関する集計データをアクセスします。
 
   * [URI パラメーター](#ID4EQ)
 
@@ -28,7 +26,7 @@ ms.locfileid: "7572913"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの id。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4ESB"></a>
 
@@ -37,7 +35,7 @@ ms.locfileid: "7572913"
 
 [GET (/users/{ownerId}/summary)](uri-usersowneridsummaryget.md)
 
-&nbsp;&nbsp;呼び出し元の観点から、所有者に関する集計データを取得します。
+&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データを取得します。
 
 <a id="ID4E3B"></a>
 

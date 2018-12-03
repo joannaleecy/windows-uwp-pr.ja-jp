@@ -2,19 +2,17 @@
 title: 実績タイトル履歴 URI
 assetID: a7499a25-d957-2ab9-fe47-f2615e5f2ea5
 permalink: en-us/docs/xboxlive/rest/atoc-reference-titlehistoryv2.html
-author: KevinAsgari
 description: " 実績タイトル履歴 URI"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2267537ed250ac50ac0acdde477c6a6ad3814ea3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6bb37b1567349ef0684d1001da3f65b0a2b2694c
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7559098"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8351700"
 ---
 # <a name="achievement-title-history-uris"></a>実績タイトル履歴 URI
  

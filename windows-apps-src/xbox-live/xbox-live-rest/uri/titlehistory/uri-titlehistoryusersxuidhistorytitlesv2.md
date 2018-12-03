@@ -2,19 +2,17 @@
 title: /users/xuid({xuid})/history/titles
 assetID: 2f8eb79a-42c2-0267-cbf2-8682bb28f270
 permalink: en-us/docs/xboxlive/rest/uri-titlehistoryusersxuidhistorytitlesv2.html
-author: KevinAsgari
 description: " /users/xuid({xuid})/history/titles"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b404b6b48139236397e765f885caef953acd87ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7bb528f139e9db97f886f57fb98461ce15e77a42
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7560231"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8341932"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
@@ -38,7 +36,7 @@ ms.locfileid: "7560231"
 
 [GET](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
 
-&nbsp;&nbsp;タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。
+&nbsp;&nbsp;タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動したユーザーのすべての履歴は返されません。
  
 <a id="ID4EKC"></a>
 

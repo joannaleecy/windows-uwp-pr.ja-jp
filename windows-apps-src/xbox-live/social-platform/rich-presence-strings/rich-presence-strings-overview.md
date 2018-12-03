@@ -1,19 +1,17 @@
 ---
 title: リッチ プレゼンス
-author: KevinAsgari
 description: Xbox Live リッチ プレゼンスがタイトルの販売促進にどのように役立つかついて説明します。
 ms.assetid: 00042359-f877-4b26-9067-58834590b1dd
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 280df5a5fb2ffda28117d7e49196f2a19fc4ecd6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0ae0d0189954ed8fa9a0bc7651d6a90b9789c388
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7555237"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8349712"
 ---
 # <a name="rich-presence"></a>リッチ プレゼンス
 

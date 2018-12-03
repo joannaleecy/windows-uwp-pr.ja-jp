@@ -2,19 +2,17 @@
 title: MediaRequest (JSON)
 assetID: b95c6bc2-e4d3-6fa1-647e-0cb48307e90a
 permalink: en-us/docs/xboxlive/rest/json-mediarequest.html
-author: KevinAsgari
 description: " MediaRequest (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: a01268ba88e50fd170924163cf4f4880825535c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0fc878b5d759d7cbaefd92eedadfe38702c56baf
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582023"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8337785"
 ---
 # <a name="mediarequest-json"></a>MediaRequest (JSON)
  
@@ -23,12 +21,12 @@ ms.locfileid: "7582023"
  
 ## <a name="mediarequest"></a>MediaRequest
  
-MediaRequest オブジェクトでは、次の仕様があります。
+MediaRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。| 
-| idType| string| <b>Id</b>を解釈する方法。設定可能な値には、"bing"および「プロバイダー」が含まれます。| 
+| idType| string| <b>Id</b>を解釈する方法。設定可能な値には、"bing"と「プロバイダー」が含まれます。| 
   
 <a id="ID4E2B"></a>
 

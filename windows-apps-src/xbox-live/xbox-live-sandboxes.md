@@ -1,25 +1,23 @@
 ---
 title: Xbox Live のサンドボックス
-author: KevinAsgari
 description: Xbox Live 開発のためのサンドボックスについて説明します。
 ms.assetid: a5acb5bf-dc11-4dff-aa94-6d1f01472d2a
-ms.author: kevinasg
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 60452c65a00aca134cfa33aa6378da06b94ac865
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ee284550a9b508a8d46556bf0353bd75d55014f3
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7578746"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "8336607"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live のサンドボックスの概要
 
 [Xbox Live サービス構成](xbox-live-service-configuration.md)では、された必要がありますで構成することはオンラインで、タイトルに関する通常[パートナー センター](https://partner.microsoft.com/dashboard)について説明します。  この情報には、タイトルで表示するランキングなどの項目、プレイヤーが解除できる実績、マッチメイキング構成などが含まれます。
 
-サービス構成を変更するときは、変更が Xbox Live の残りの部分によって取得されてタイトルで表示されるようにするにはパートナー センターから公開これら必要があります。
+サービス構成を変更するとき、これら変更が Xbox Live の残りの部分は取得し、タイトルで表示されるようにする前にパートナー センターから公開する必要があります。
 
 この公開先は、開発サンドボックスと呼ばれています。  これらにより、分離された環境でタイトルに対して変更作業を行うことができます。  これには、以下のセクションで説明するようにいくつかの利点があります。
 

@@ -2,19 +2,17 @@
 title: MediaAsset (JSON)
 assetID: 858c720a-1648-738b-bb43-f050e7cac19e
 permalink: en-us/docs/xboxlive/rest/json-mediaasset.html
-author: KevinAsgari
 description: " MediaAsset (JSON)"
-ms.author: kevinasg
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: b50cb58f6c6262d653e90e1e6ca9666cecadf680
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 42a2a6e62494bd8fd5872e7664da8ac71cccbf57
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2018
-ms.locfileid: "7556501"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8344202"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
 実績やそのリワードに関連付けられているメディア アセット。
@@ -23,7 +21,7 @@ ms.locfileid: "7556501"
 
 ## <a name="mediaasset"></a>MediaAsset
 
-MediaAsset オブジェクトでは、次の仕様があります。
+MediaAsset オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
