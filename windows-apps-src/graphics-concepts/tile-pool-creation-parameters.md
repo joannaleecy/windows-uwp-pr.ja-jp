@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88b854ae3fcccc65b111cee873ef3aee528d6a82
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346383"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8461138"
 ---
 # <a name="tile-pool-creation-parameters"></a>タイル プールの作成パラメーター
 

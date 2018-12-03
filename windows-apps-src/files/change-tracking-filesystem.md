@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e90692753924572a932767b9c188ed6d24f94593
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343253"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8459755"
 ---
 # <a name="track-file-system-changes-in-the-background"></a>バック グラウンドでファイル システムの変更を追跡します。
 
