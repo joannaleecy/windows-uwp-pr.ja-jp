@@ -6,11 +6,11 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351137"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470587"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a><span data-ttu-id="47632-104">REST API のバックエンドを使った単一ページの Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="47632-104">Create a single-page web app with REST API backend</span></span>
 

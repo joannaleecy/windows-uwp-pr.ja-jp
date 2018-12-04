@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 521e794680df6449ebc49745319c4aeec74405d1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340710"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8471371"
 ---
 # <a name="xaml-and-whitespace"></a><span data-ttu-id="36d06-104">XAML と空白</span><span class="sxs-lookup"><span data-stu-id="36d06-104">XAML and whitespace</span></span>
 

@@ -7,45 +7,45 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、BasicLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcec2550455df8afe5870f9b760e1f7225f847c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330599"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470838"
 ---
-# <a name="complete-code-for-basicloader"></a><span data-ttu-id="628a5-104">BasicLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="628a5-104">Complete code for BasicLoader</span></span>
+# <a name="complete-code-for-basicloader"></a><span data-ttu-id="15ec0-104">BasicLoader のコード一式</span><span class="sxs-lookup"><span data-stu-id="15ec0-104">Complete code for BasicLoader</span></span>
 
 
 
-<span data-ttu-id="628a5-105">メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="628a5-105">Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.</span></span>
+<span data-ttu-id="15ec0-105">メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="15ec0-105">Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.</span></span>
 
-<span data-ttu-id="628a5-106">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="628a5-106">This topic contains these sections:</span></span>
+<span data-ttu-id="15ec0-106">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="15ec0-106">This topic contains these sections:</span></span>
 
--   [<span data-ttu-id="628a5-107">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="628a5-107">Technologies</span></span>](#technologies)
--   [<span data-ttu-id="628a5-108">必要条件</span><span class="sxs-lookup"><span data-stu-id="628a5-108">Requirements</span></span>](#requirements)
--   [<span data-ttu-id="628a5-109">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="628a5-109">View the code (C++)</span></span>](#view-the-code-c)
+-   [<span data-ttu-id="15ec0-107">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="15ec0-107">Technologies</span></span>](#technologies)
+-   [<span data-ttu-id="15ec0-108">必要条件</span><span class="sxs-lookup"><span data-stu-id="15ec0-108">Requirements</span></span>](#requirements)
+-   [<span data-ttu-id="15ec0-109">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="15ec0-109">View the code (C++)</span></span>](#view-the-code-c)
 
 <span id="download_locations"></span>
 
-## <a name="download-location"></a><span data-ttu-id="628a5-110">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="628a5-110">Download location</span></span>
+## <a name="download-location"></a><span data-ttu-id="15ec0-110">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="15ec0-110">Download location</span></span>
 
 
-<span data-ttu-id="628a5-111">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="628a5-111">This sample is not available for download.</span></span>
+<span data-ttu-id="15ec0-111">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="15ec0-111">This sample is not available for download.</span></span>
 
-## <a name="technologies"></a><span data-ttu-id="628a5-112">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="628a5-112">Technologies</span></span>
+## <a name="technologies"></a><span data-ttu-id="15ec0-112">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="15ec0-112">Technologies</span></span>
 
-<span data-ttu-id="628a5-113">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="628a5-113">**Programming languages** - C++</span></span>  
-<span data-ttu-id="628a5-114">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="628a5-114">**Programming models** - Windows Runtime</span></span>
+<span data-ttu-id="15ec0-113">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="15ec0-113">**Programming languages** - C++</span></span>  
+<span data-ttu-id="15ec0-114">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="15ec0-114">**Programming models** - Windows Runtime</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="628a5-115">要件</span><span class="sxs-lookup"><span data-stu-id="628a5-115">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="15ec0-115">要件</span><span class="sxs-lookup"><span data-stu-id="15ec0-115">Requirements</span></span>
 
-<span data-ttu-id="628a5-116">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="628a5-116">**Minimum supported client** - Windows 10</span></span>                              
-<span data-ttu-id="628a5-117">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="628a5-117">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span> 
+<span data-ttu-id="15ec0-116">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="15ec0-116">**Minimum supported client** - Windows 10</span></span>                              
+<span data-ttu-id="15ec0-117">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="15ec0-117">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span> 
 
 
-## <a name="view-the-code-c"></a><span data-ttu-id="628a5-118">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="628a5-118">View the code (C++)</span></span>
+## <a name="view-the-code-c"></a><span data-ttu-id="15ec0-118">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="15ec0-118">View the code (C++)</span></span>
 
-## <a name="basicloaderh"></a><span data-ttu-id="628a5-119">BasicLoader.h</span><span class="sxs-lookup"><span data-stu-id="628a5-119">BasicLoader.h</span></span>
+## <a name="basicloaderh"></a><span data-ttu-id="15ec0-119">BasicLoader.h</span><span class="sxs-lookup"><span data-stu-id="15ec0-119">BasicLoader.h</span></span>
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -226,7 +226,7 @@ private:
 };
 ```
 
-## <a name="basicloadercpp"></a><span data-ttu-id="628a5-120">BasicLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="628a5-120">BasicLoader.cpp</span></span>
+## <a name="basicloadercpp"></a><span data-ttu-id="15ec0-120">BasicLoader.cpp</span><span class="sxs-lookup"><span data-stu-id="15ec0-120">BasicLoader.cpp</span></span>
 
 
 ```cpp

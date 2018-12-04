@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342273"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474010"
 ---
 # <a name="handle-app-activation"></a><span data-ttu-id="31194-104">アプリのアクティブ化の処理</span><span class="sxs-lookup"><span data-stu-id="31194-104">Handle app activation</span></span>
 

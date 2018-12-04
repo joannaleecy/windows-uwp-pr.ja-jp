@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, サンプル
 ms.localizationpriority: medium
 ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344055"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467811"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a><span data-ttu-id="7b22f-104">Marble Maze サンプルへの入力と対話機能の追加</span><span class="sxs-lookup"><span data-stu-id="7b22f-104">Adding input and interactivity to the Marble Maze sample</span></span>
 
