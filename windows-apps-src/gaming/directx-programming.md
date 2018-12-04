@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 概要, プログラミング, Directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216335"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479896"
 ---
-# <a name="directx-programming"></a><span data-ttu-id="4d2d6-104">DirectX プログラミング</span><span class="sxs-lookup"><span data-stu-id="4d2d6-104">DirectX programming</span></span>
+# <a name="directx-programming"></a><span data-ttu-id="eac44-104">DirectX プログラミング</span><span class="sxs-lookup"><span data-stu-id="eac44-104">DirectX programming</span></span>
 
-<span data-ttu-id="4d2d6-105">このセクションでは、DirectX を使用した UWP ゲームの開発について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-105">This section provides information about developing UWP games with DirectX.</span></span>
+<span data-ttu-id="eac44-105">このセクションでは、DirectX を使用した UWP ゲームの開発について説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-105">This section provides information about developing UWP games with DirectX.</span></span>
 
 <table>
 <colgroup>
@@ -24,44 +24,44 @@ ms.locfileid: "8216335"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="4d2d6-106">トピック</span><span class="sxs-lookup"><span data-stu-id="4d2d6-106">Topic</span></span></th>
-<th align="left"><span data-ttu-id="4d2d6-107">説明</span><span class="sxs-lookup"><span data-stu-id="4d2d6-107">Description</span></span></th>
+<th align="left"><span data-ttu-id="eac44-106">トピック</span><span class="sxs-lookup"><span data-stu-id="eac44-106">Topic</span></span></th>
+<th align="left"><span data-ttu-id="eac44-107">説明</span><span class="sxs-lookup"><span data-stu-id="eac44-107">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="directx-getting-started.md"><span data-ttu-id="4d2d6-108">概要</span><span class="sxs-lookup"><span data-stu-id="4d2d6-108">Getting started</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-109">DirectX プログラミングの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-109">Introduction to DirectX programming.</span></span></p></td>
+<td align="left"><p><a href="directx-getting-started.md"><span data-ttu-id="eac44-108">概要</span><span class="sxs-lookup"><span data-stu-id="eac44-108">Getting started</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-109">DirectX プログラミングの概要を説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-109">Introduction to DirectX programming.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="directx-samples.md"><span data-ttu-id="4d2d6-110">サンプル</span><span class="sxs-lookup"><span data-stu-id="4d2d6-110">Samples</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-111">ゲーム サンプルを利用して、DirectX を説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-111">Learn DirectX through game samples.</span></span></p></td>
+<td align="left"><p><a href="directx-samples.md"><span data-ttu-id="eac44-110">サンプル</span><span class="sxs-lookup"><span data-stu-id="eac44-110">Samples</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-111">ゲーム サンプルを利用して、DirectX を説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-111">Learn DirectX through game samples.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-fundamentals.md"><span data-ttu-id="4d2d6-112">基本事項</span><span class="sxs-lookup"><span data-stu-id="4d2d6-112">Fundamentals</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-113">DirectX の基本的なプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-113">Explains DirectX basic programming concepts.</span></span></p></td>
+<td align="left"><p><a href="directx-fundamentals.md"><span data-ttu-id="eac44-112">基本事項</span><span class="sxs-lookup"><span data-stu-id="eac44-112">Fundamentals</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-113">DirectX の基本的なプログラミングの概念について説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-113">Explains DirectX basic programming concepts.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="directx-add-features.md"><span data-ttu-id="4d2d6-114">機能の追加</span><span class="sxs-lookup"><span data-stu-id="4d2d6-114">Add features</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-115">さまざまなゲーム機能を DirectX ゲームに追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-115">Describes how to add various game features into your DirectX game.</span></span></p></td>
+<td align="left"><p><a href="directx-add-features.md"><span data-ttu-id="eac44-114">機能の追加</span><span class="sxs-lookup"><span data-stu-id="eac44-114">Add features</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-115">さまざまなゲーム機能を DirectX ゲームに追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-115">Describes how to add various game features into your DirectX game.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-optimization-and-advanced-topics.md"><span data-ttu-id="4d2d6-116">最適化と高度なトピック</span><span class="sxs-lookup"><span data-stu-id="4d2d6-116">Optimization and advanced topics</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-117">最適化およびその他の高度なトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-117">Learn about optimization and other advanced topics.</span></span></p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md"><span data-ttu-id="eac44-116">最適化と高度なトピック</span><span class="sxs-lookup"><span data-stu-id="eac44-116">Optimization and advanced topics</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-117">最適化およびその他の高度なトピックについて説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-117">Learn about optimization and other advanced topics.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md"><span data-ttu-id="4d2d6-118">UWP への DirectX 9 の移植</span><span class="sxs-lookup"><span data-stu-id="4d2d6-118">Port DirectX 9 to UWP</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-119">UWP への DirectX 9 ゲームの移植方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-119">Learn how to port your DirectX 9 game to UWP.</span></span></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md"><span data-ttu-id="eac44-118">UWP への DirectX 9 の移植</span><span class="sxs-lookup"><span data-stu-id="eac44-118">Port DirectX 9 to UWP</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-119">UWP への DirectX 9 ゲームの移植方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-119">Learn how to port your DirectX 9 game to UWP.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md"><span data-ttu-id="4d2d6-120">Direct3D への OpenGL の移植</span><span class="sxs-lookup"><span data-stu-id="4d2d6-120">Port OpenGL to Direct3D</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="4d2d6-121">OpenGL ES 2.0 ゲームを Direct3D 11 に移植する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-121">Learn how to port your OpenGL ES 2.0 game to Direct3D 11.</span></span></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md"><span data-ttu-id="eac44-120">Direct3D への OpenGL の移植</span><span class="sxs-lookup"><span data-stu-id="eac44-120">Port OpenGL to Direct3D</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="eac44-121">OpenGL ES 2.0 ゲームを Direct3D 11 に移植する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="eac44-121">Learn how to port your OpenGL ES 2.0 game to Direct3D 11.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
 
-<span data-ttu-id="4d2d6-122">DirectX のリファレンスとプログラミング ガイドについては、「[Direct3D 11 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx)」と「[Direct3D 12 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4d2d6-122">For DirectX reference and programming guides, see [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) and [Direct3D 12 Graphics](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).</span></span>
+<span data-ttu-id="eac44-122">DirectX のリファレンスとプログラミング ガイドについては、「[Direct3D 11 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx)」と「[Direct3D 12 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="eac44-122">For DirectX reference and programming guides, see [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) and [Direct3D 12 Graphics](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).</span></span>
  
 
 

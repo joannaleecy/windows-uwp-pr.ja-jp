@@ -7,17 +7,17 @@ ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
 ms.openlocfilehash: 826fb141fd636ae899fff9696108965d94187f8d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338063"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478849"
 ---
-# <a name="layout"></a><span data-ttu-id="4f3c4-104">レイアウト</span><span class="sxs-lookup"><span data-stu-id="4f3c4-104">Layout</span></span>
+# <a name="layout"></a><span data-ttu-id="393df-104">レイアウト</span><span class="sxs-lookup"><span data-stu-id="393df-104">Layout</span></span>
 
 ![ヒーロー イメージ](images/header-layout2.jpg)
 
-<span data-ttu-id="4f3c4-106">次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="4f3c4-106">These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.</span></span>
+<span data-ttu-id="393df-106">次の記事は、さまざまな画面サイズ、ウィンドウ サイズ、解像度、向きで適切に表示される柔軟な UI を作成する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="393df-106">These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.</span></span>
 
 :::row:::
     :::column:::

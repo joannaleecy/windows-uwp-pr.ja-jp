@@ -3,11 +3,11 @@ title: Device Portal の SSH ピン API のリファレンス
 description: 信頼されているすべての SSH ピンをプログラムで削除する方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8335523"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478019"
 ---
 # <a name="ssh-pins-api-reference"></a><span data-ttu-id="948e7-103">SSH ピン API リファレンス</span><span class="sxs-lookup"><span data-stu-id="948e7-103">SSH Pins API reference</span></span>
 <span data-ttu-id="948e7-104">この REST API を使用して、開発キットで信頼されているすべての SSH ピンを削除することができます。</span><span class="sxs-lookup"><span data-stu-id="948e7-104">You can remove all trusted SSH pins on your devkit using this REST API.</span></span>
