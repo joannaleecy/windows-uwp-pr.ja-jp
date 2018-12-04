@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ed63b3a22329fcf65aa20fc994037aeea2e86be
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350594"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482852"
 ---
 # <a name="compute-shader-cs-stage"></a>計算シェーダー (CS) ステージ
 

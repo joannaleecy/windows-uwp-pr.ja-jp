@@ -7,11 +7,11 @@ keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8334419"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483937"
 ---
 # <a name="value-categories-and-references-to-them"></a>値のカテゴリとへの参照
 このトピックでは、C++ で存在するさまざまなカテゴリの値 (および値への参照) について説明します。 *左辺値*と*rvalue*の音が間違いされますが、このトピックでは条件でそれらのない考え。 すぎるは、値の他の種類があります。

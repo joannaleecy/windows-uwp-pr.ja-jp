@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, レビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: 084158c0eb20f1d2a03c0e178064ac168c689872
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330366"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479834"
 ---
 # <a name="get-app-reviews"></a>アプリのレビューの取得
 
