@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
 ms.openlocfilehash: 826fb141fd636ae899fff9696108965d94187f8d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338063"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8478849"
 ---
 # <a name="layout"></a>レイアウト
 
