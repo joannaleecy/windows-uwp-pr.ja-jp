@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, セカンダリ タイルは、タスク バーに暗証番号 (pin)、タスク バーにセカンダリ タイルをピン留めショートカット
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad322fe371b0e1f3605ffb4c29108a15bb28e0c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331761"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474924"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>タスク バーにセカンダリ タイルをピン留め
 
