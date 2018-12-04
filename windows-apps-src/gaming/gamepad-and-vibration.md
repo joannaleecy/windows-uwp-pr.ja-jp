@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ゲームパッド, 振動
 ms.localizationpriority: medium
 ms.openlocfilehash: e65b22039c381bd333516bd9f98c60bbddb9621c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8349743"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8481424"
 ---
 # <a name="gamepad-and-vibration"></a><span data-ttu-id="a6d43-104">ゲームパッドと振動</span><span class="sxs-lookup"><span data-stu-id="a6d43-104">Gamepad and vibration</span></span>
 

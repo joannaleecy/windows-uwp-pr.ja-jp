@@ -7,35 +7,35 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, トラブルシューティング, HTML, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330486"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484220"
 ---
-# <a name="html-and-javascript-troubleshooting-guide"></a><span data-ttu-id="2e261-104">HTML と JavaScript のトラブルシューティング ガイド</span><span class="sxs-lookup"><span data-stu-id="2e261-104">HTML and JavaScript troubleshooting guide</span></span>
+# <a name="html-and-javascript-troubleshooting-guide"></a><span data-ttu-id="11748-104">HTML と JavaScript のトラブルシューティング ガイド</span><span class="sxs-lookup"><span data-stu-id="11748-104">HTML and JavaScript troubleshooting guide</span></span>
 
-<span data-ttu-id="2e261-105">このトピックでは、JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。</span><span class="sxs-lookup"><span data-stu-id="2e261-105">This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.</span></span>
+<span data-ttu-id="11748-105">このトピックでは、JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。</span><span class="sxs-lookup"><span data-stu-id="11748-105">This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.</span></span>
 
-* [<span data-ttu-id="2e261-106">HTML</span><span class="sxs-lookup"><span data-stu-id="2e261-106">HTML</span></span>](#html)
-  * [<span data-ttu-id="2e261-107">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="2e261-107">AdControl not appearing</span></span>](#html-notappearing)
-  * [<span data-ttu-id="2e261-108">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="2e261-108">Black box blinks and disappears</span></span>](#html-blackboxblinksdisappears)
-  * [<span data-ttu-id="2e261-109">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="2e261-109">Ads not refreshing</span></span>](#html-adsnotrefreshing)
+* [<span data-ttu-id="11748-106">HTML</span><span class="sxs-lookup"><span data-stu-id="11748-106">HTML</span></span>](#html)
+  * [<span data-ttu-id="11748-107">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="11748-107">AdControl not appearing</span></span>](#html-notappearing)
+  * [<span data-ttu-id="11748-108">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="11748-108">Black box blinks and disappears</span></span>](#html-blackboxblinksdisappears)
+  * [<span data-ttu-id="11748-109">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="11748-109">Ads not refreshing</span></span>](#html-adsnotrefreshing)
 
-* [<span data-ttu-id="2e261-110">JavaScript</span><span class="sxs-lookup"><span data-stu-id="2e261-110">JavaScript</span></span>](#js)
-  * [<span data-ttu-id="2e261-111">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="2e261-111">AdControl not appearing</span></span>](#js-adcontrolnotappearing)
-  * [<span data-ttu-id="2e261-112">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="2e261-112">Black box blinks and disappears</span></span>](#js-blackboxblinksdisappears)
-  * [<span data-ttu-id="2e261-113">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="2e261-113">Ads not refreshing</span></span>](#js-adsnotrefreshing)
+* [<span data-ttu-id="11748-110">JavaScript</span><span class="sxs-lookup"><span data-stu-id="11748-110">JavaScript</span></span>](#js)
+  * [<span data-ttu-id="11748-111">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="11748-111">AdControl not appearing</span></span>](#js-adcontrolnotappearing)
+  * [<span data-ttu-id="11748-112">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="11748-112">Black box blinks and disappears</span></span>](#js-blackboxblinksdisappears)
+  * [<span data-ttu-id="11748-113">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="11748-113">Ads not refreshing</span></span>](#js-adsnotrefreshing)
 
-## <a name="html"></a><span data-ttu-id="2e261-114">HTML</span><span class="sxs-lookup"><span data-stu-id="2e261-114">HTML</span></span>
+## <a name="html"></a><span data-ttu-id="11748-114">HTML</span><span class="sxs-lookup"><span data-stu-id="11748-114">HTML</span></span>
 
 <span id="html-notappearing"/>
 
-### <a name="adcontrol-not-appearing"></a><span data-ttu-id="2e261-115">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="2e261-115">AdControl not appearing</span></span>
+### <a name="adcontrol-not-appearing"></a><span data-ttu-id="11748-115">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="11748-115">AdControl not appearing</span></span>
 
-1.  <span data-ttu-id="2e261-116">Package.appxmanifest で **[インターネット (クライアント)]** 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-116">Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.</span></span>
+1.  <span data-ttu-id="11748-116">Package.appxmanifest で **[インターネット (クライアント)]** 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-116">Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.</span></span>
 
-2.  <span data-ttu-id="2e261-117">JavaScript の参照が存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-117">Ensure the JavaScript reference is present.</span></span> <span data-ttu-id="2e261-118">&lt;head&gt; セクション (default.js リファレンスの後ろ) に ad.js の参照がない場合、**AdControl** は表示できず、ビルド中にエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="2e261-118">Without the ad.js reference in the &lt;head&gt; section (after the default.js reference) the **AdControl** will be unable to display and an error will occur during build.</span></span>
+2.  <span data-ttu-id="11748-117">JavaScript の参照が存在することを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-117">Ensure the JavaScript reference is present.</span></span> <span data-ttu-id="11748-118">&lt;head&gt; セクション (default.js リファレンスの後ろ) に ad.js の参照がない場合、**AdControl** は表示できず、ビルド中にエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="11748-118">Without the ad.js reference in the &lt;head&gt; section (after the default.js reference) the **AdControl** will be unable to display and an error will occur during build.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -46,7 +46,7 @@ ms.locfileid: "8330486"
     </head>
     ```
 
-3.  <span data-ttu-id="2e261-119">アプリケーション ID と広告ユニット ID を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-119">Check the application ID and ad unit ID.</span></span> <span data-ttu-id="2e261-120">これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-120">These IDs must match the application ID and ad unit ID that you obtained in Partner Center.</span></span> <span data-ttu-id="2e261-121">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2e261-121">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
+3.  <span data-ttu-id="11748-119">アプリケーション ID と広告ユニット ID を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-119">Check the application ID and ad unit ID.</span></span> <span data-ttu-id="11748-120">これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-120">These IDs must match the application ID and ad unit ID that you obtained in Partner Center.</span></span> <span data-ttu-id="11748-121">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="11748-121">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -58,7 +58,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-4.  <span data-ttu-id="2e261-122">**height** プロパティと **width** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-122">Check the **height** and **width** properties.</span></span> <span data-ttu-id="2e261-123">これらのプロパティは、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-123">These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).</span></span>
+4.  <span data-ttu-id="11748-122">**height** プロパティと **width** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-122">Check the **height** and **width** properties.</span></span> <span data-ttu-id="11748-123">これらのプロパティは、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-123">These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -70,21 +70,9 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-5.  <span data-ttu-id="2e261-124">要素の配置を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-124">Check the element positioning.</span></span> <span data-ttu-id="2e261-125">[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) は表示可能領域の内部にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-125">The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.</span></span>
+5.  <span data-ttu-id="11748-124">要素の配置を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-124">Check the element positioning.</span></span> <span data-ttu-id="11748-125">[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) は表示可能領域の内部にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-125">The [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) must be inside the viewable area.</span></span>
 
-6.  <span data-ttu-id="2e261-126">**visibility** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-126">Check the **visibility** property.</span></span> <span data-ttu-id="2e261-127">このプロパティは、collapsed または hidden に設定しないでください。</span><span class="sxs-lookup"><span data-stu-id="2e261-127">This property must not be set to collapsed or hidden.</span></span> <span data-ttu-id="2e261-128">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="2e261-128">This property can be set inline (as shown below) or in an external style sheet.</span></span>
-
-    > [!div class="tabbedCodeSnippets"]
-    ``` html
-    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
-                          left: 500px; width: 250px; height: 250px; z-index: 1"
-         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-         data-win-options="{applicationId: 'ApplicationID',
-                            adUnitId: 'AdUnitID'}">
-    </div>
-    ```
-
-7.  <span data-ttu-id="2e261-129">**position** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-129">Check the **position** property.</span></span> <span data-ttu-id="2e261-130">position は、要素の他のプロパティ (親要素の margin、z-index など) に応じた適切な値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-130">The position property must be set to an appropriate value depending on the element’s other properties (for example, margins in parent element and z-index).</span></span> <span data-ttu-id="2e261-131">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="2e261-131">This property can be set inline (as shown below) or in an external style sheet.</span></span>
+6.  <span data-ttu-id="11748-126">**visibility** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-126">Check the **visibility** property.</span></span> <span data-ttu-id="11748-127">このプロパティは、collapsed または hidden に設定しないでください。</span><span class="sxs-lookup"><span data-stu-id="11748-127">This property must not be set to collapsed or hidden.</span></span> <span data-ttu-id="11748-128">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="11748-128">This property can be set inline (as shown below) or in an external style sheet.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -96,7 +84,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-8.  <span data-ttu-id="2e261-132">**z-index** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-132">Check the **z-index** property.</span></span> <span data-ttu-id="2e261-133">**z-index** プロパティは、**AdControl** が常に他の要素の上に表示されるように、十分な高さに設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-133">The **z-index** property must be set high enough so the **AdControl** always appears on top of other elements.</span></span> <span data-ttu-id="2e261-134">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="2e261-134">This property can be set inline (as shown below) or in an external style sheet.</span></span>
+7.  <span data-ttu-id="11748-129">**position** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-129">Check the **position** property.</span></span> <span data-ttu-id="11748-130">position は、要素の他のプロパティ (親要素の margin、z-index など) に応じた適切な値に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-130">The position property must be set to an appropriate value depending on the element’s other properties (for example, margins in parent element and z-index).</span></span> <span data-ttu-id="11748-131">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="11748-131">This property can be set inline (as shown below) or in an external style sheet.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -108,7 +96,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-9.  <span data-ttu-id="2e261-135">外部スタイル シートを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-135">Check external style sheets.</span></span> <span data-ttu-id="2e261-136">外部スタイル シートを使って **AdControl** 要素でプロパティを設定している場合、上記のプロパティがすべて正しく設定されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="2e261-136">If properties are set on the **AdControl** element through an external style sheet, ensure all of the above properties are correctly set.</span></span>
+8.  <span data-ttu-id="11748-132">**z-index** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-132">Check the **z-index** property.</span></span> <span data-ttu-id="11748-133">**z-index** プロパティは、**AdControl** が常に他の要素の上に表示されるように、十分な高さに設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-133">The **z-index** property must be set high enough so the **AdControl** always appears on top of other elements.</span></span> <span data-ttu-id="11748-134">(次のように) インラインで設定できるほか、外部スタイル シートで設定できます。</span><span class="sxs-lookup"><span data-stu-id="11748-134">This property can be set inline (as shown below) or in an external style sheet.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -120,7 +108,19 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-10. <span data-ttu-id="2e261-137">**AdControl** の親を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-137">Check the parent of the **AdControl**.</span></span> <span data-ttu-id="2e261-138">**AdControl** が親要素の中にある場合、この親はアクティブで表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-138">If the **AdControl** resides in a parent element, the parent must be active and visible.</span></span>
+9.  <span data-ttu-id="11748-135">外部スタイル シートを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-135">Check external style sheets.</span></span> <span data-ttu-id="11748-136">外部スタイル シートを使って **AdControl** 要素でプロパティを設定している場合、上記のプロパティがすべて正しく設定されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="11748-136">If properties are set on the **AdControl** element through an external style sheet, ensure all of the above properties are correctly set.</span></span>
+
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
+    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
+                          left: 500px; width: 250px; height: 250px; z-index: 1"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'ApplicationID',
+                            adUnitId: 'AdUnitID'}">
+    </div>
+    ```
+
+10. <span data-ttu-id="11748-137">**AdControl** の親を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-137">Check the parent of the **AdControl**.</span></span> <span data-ttu-id="11748-138">**AdControl** が親要素の中にある場合、この親はアクティブで表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-138">If the **AdControl** resides in a parent element, the parent must be active and visible.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -134,17 +134,17 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-11. <span data-ttu-id="2e261-139">**AdControl** がビューポートから隠れていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-139">Ensure the **AdControl** is not hidden from the viewport.</span></span> <span data-ttu-id="2e261-140">**AdControl** は、広告が正常に表示されるように、見える必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-140">The **AdControl** must be visible for ads to display properly.</span></span>
+11. <span data-ttu-id="11748-139">**AdControl** がビューポートから隠れていないことを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-139">Ensure the **AdControl** is not hidden from the viewport.</span></span> <span data-ttu-id="11748-140">**AdControl** は、広告が正常に表示されるように、見える必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-140">The **AdControl** must be visible for ads to display properly.</span></span>
 
-12. <span data-ttu-id="2e261-141">[ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) と [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) の実際の値は、エミュレーターでのテストに使わないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="2e261-141">Live values for [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator.</span></span> <span data-ttu-id="2e261-142">**AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。</span><span class="sxs-lookup"><span data-stu-id="2e261-142">To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.</span></span>
+12. <span data-ttu-id="11748-141">[ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) と [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) の実際の値は、エミュレーターでのテストに使わないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="11748-141">Live values for [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) and [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) should not be tested in the emulator.</span></span> <span data-ttu-id="11748-142">**AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。</span><span class="sxs-lookup"><span data-stu-id="11748-142">To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.</span></span>
 
 <span id="html-blackboxblinksdisappears"/>
 
-### <a name="black-box-blinks-and-disappears"></a><span data-ttu-id="2e261-143">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="2e261-143">Black box blinks and disappears</span></span>
+### <a name="black-box-blinks-and-disappears"></a><span data-ttu-id="11748-143">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="11748-143">Black box blinks and disappears</span></span>
 
-1.  <span data-ttu-id="2e261-144">前の「[AdControl が表示されない](#html-notappearing)」セクションの手順をすべてもう一度確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-144">Double-check all steps in the previous [AdControl not appearing](#html-notappearing) section.</span></span>
+1.  <span data-ttu-id="11748-144">前の「[AdControl が表示されない](#html-notappearing)」セクションの手順をすべてもう一度確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-144">Double-check all steps in the previous [AdControl not appearing](#html-notappearing) section.</span></span>
 
-2.  <span data-ttu-id="2e261-145">**onErrorOccurred** イベントを処理します。イベント ハンドラーに渡されるメッセージを使って、エラーが発生したかどうかと、スローされたエラーの種類を特定します。</span><span class="sxs-lookup"><span data-stu-id="2e261-145">Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown.</span></span> <span data-ttu-id="2e261-146">詳しくは、「[Error handling in JavaScript walkthrough (JavaScript チュートリアルでのエラー処理)](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2e261-146">More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).</span></span>
+2.  <span data-ttu-id="11748-145">**onErrorOccurred** イベントを処理します。イベント ハンドラーに渡されるメッセージを使って、エラーが発生したかどうかと、スローされたエラーの種類を特定します。</span><span class="sxs-lookup"><span data-stu-id="11748-145">Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown.</span></span> <span data-ttu-id="11748-146">詳しくは、「[Error handling in JavaScript walkthrough (JavaScript チュートリアルでのエラー処理)](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="11748-146">More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -161,15 +161,15 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-    <span data-ttu-id="2e261-147">ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。</span><span class="sxs-lookup"><span data-stu-id="2e261-147">The most common error that causes a black box is “No ad available.”</span></span> <span data-ttu-id="2e261-148">このエラーは、要求から復帰する利用可能な広告がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="2e261-148">This error means there is no ad available to return from the request.</span></span>
+    <span data-ttu-id="11748-147">ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。</span><span class="sxs-lookup"><span data-stu-id="11748-147">The most common error that causes a black box is “No ad available.”</span></span> <span data-ttu-id="11748-148">このエラーは、要求から復帰する利用可能な広告がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="11748-148">This error means there is no ad available to return from the request.</span></span>
 
-3.  <span data-ttu-id="2e261-149">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-149">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="2e261-150">既定では、**AdControl** は広告を表示できない場合に折りたたまれます。</span><span class="sxs-lookup"><span data-stu-id="2e261-150">By default, the **AdControl** will collapse when it cannot display an ad.</span></span> <span data-ttu-id="2e261-151">他の要素が同じ親の子である場合、これらの他の要素は折りたたんだ **AdControl** の隙間を埋めるように移動し、次の要求がなされたときに展開することがあります。</span><span class="sxs-lookup"><span data-stu-id="2e261-151">If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.</span></span>
+3.  <span data-ttu-id="11748-149">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="11748-149">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="11748-150">既定では、**AdControl** は広告を表示できない場合に折りたたまれます。</span><span class="sxs-lookup"><span data-stu-id="11748-150">By default, the **AdControl** will collapse when it cannot display an ad.</span></span> <span data-ttu-id="11748-151">他の要素が同じ親の子である場合、これらの他の要素は折りたたんだ **AdControl** の隙間を埋めるように移動し、次の要求がなされたときに展開することがあります。</span><span class="sxs-lookup"><span data-stu-id="11748-151">If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.</span></span>
 
 <span id="html-adsnotrefreshing"/>
 
-### <a name="ads-not-refreshing"></a><span data-ttu-id="2e261-152">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="2e261-152">Ads not refreshing</span></span>
+### <a name="ads-not-refreshing"></a><span data-ttu-id="11748-152">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="11748-152">Ads not refreshing</span></span>
 
-1.  <span data-ttu-id="2e261-153">**isAutoRefreshEnabled** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-153">Check the **isAutoRefreshEnabled** property.</span></span> <span data-ttu-id="2e261-154">既定では、この省略可能なプロパティは true に設定されています。</span><span class="sxs-lookup"><span data-stu-id="2e261-154">By default, this optional property is set to true.</span></span> <span data-ttu-id="2e261-155">false に設定すると、他の広告を取得するために **refresh** メソッドを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-155">When set to false, the **refresh** method must be used to retrieve another ad.</span></span>
+1.  <span data-ttu-id="11748-153">**isAutoRefreshEnabled** プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-153">Check the **isAutoRefreshEnabled** property.</span></span> <span data-ttu-id="11748-154">既定では、この省略可能なプロパティは true に設定されています。</span><span class="sxs-lookup"><span data-stu-id="11748-154">By default, this optional property is set to true.</span></span> <span data-ttu-id="11748-155">false に設定すると、他の広告を取得するために **refresh** メソッドを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-155">When set to false, the **refresh** method must be used to retrieve another ad.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -183,9 +183,9 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-2.  <span data-ttu-id="2e261-156">**refresh** メソッドの呼び出しを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-156">Check calls to the **refresh** method.</span></span> <span data-ttu-id="2e261-157">自動更新を使う場合、他の広告を取得するために **refresh** を使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="2e261-157">When using automatic refresh, **refresh** cannot be used to retrieve another ad.</span></span> <span data-ttu-id="2e261-158">手動更新を使う場合、デバイスの現在のデータ接続に応じて、少なくとも 30 ～ 60 秒経ってから **refresh** を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-158">When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.</span></span>
+2.  <span data-ttu-id="11748-156">**refresh** メソッドの呼び出しを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-156">Check calls to the **refresh** method.</span></span> <span data-ttu-id="11748-157">自動更新を使う場合、他の広告を取得するために **refresh** を使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="11748-157">When using automatic refresh, **refresh** cannot be used to retrieve another ad.</span></span> <span data-ttu-id="11748-158">手動更新を使う場合、デバイスの現在のデータ接続に応じて、少なくとも 30 ～ 60 秒経ってから **refresh** を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-158">When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.</span></span>
 
-    <span data-ttu-id="2e261-159">この例は、**refresh** メソッドの使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-159">This example demonstrates how to use the **refresh** method.</span></span> <span data-ttu-id="2e261-160">次の HTML コードは、**isAutoRefreshEnabled** を false に設定した状態で **AdControl** をインスタンス化する方法を示した例です。</span><span class="sxs-lookup"><span data-stu-id="2e261-160">The following HTML code shows an example of how to instantiate the **AdControl** with **isAutoRefreshEnabled** set to false.</span></span>
+    <span data-ttu-id="11748-159">この例は、**refresh** メソッドの使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-159">This example demonstrates how to use the **refresh** method.</span></span> <span data-ttu-id="11748-160">次の HTML コードは、**isAutoRefreshEnabled** を false に設定した状態で **AdControl** をインスタンス化する方法を示した例です。</span><span class="sxs-lookup"><span data-stu-id="11748-160">The following HTML code shows an example of how to instantiate the **AdControl** with **isAutoRefreshEnabled** set to false.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -199,7 +199,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-    <span data-ttu-id="2e261-161">次の例は **refresh** 関数の使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-161">Theis example demonstrates how to use the **refresh** function.</span></span>
+    <span data-ttu-id="11748-161">次の例は **refresh** 関数の使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-161">Theis example demonstrates how to use the **refresh** function.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -213,21 +213,21 @@ ms.locfileid: "8330486"
     );
     ```
 
-3.  <span data-ttu-id="2e261-162">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-162">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="2e261-163">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="2e261-163">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
+3.  <span data-ttu-id="11748-162">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="11748-162">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="11748-163">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="11748-163">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
 
 <span id="js"/>
 
-## <a name="javascript"></a><span data-ttu-id="2e261-164">JavaScript</span><span class="sxs-lookup"><span data-stu-id="2e261-164">JavaScript</span></span>
+## <a name="javascript"></a><span data-ttu-id="11748-164">JavaScript</span><span class="sxs-lookup"><span data-stu-id="11748-164">JavaScript</span></span>
 
 <span id="js-adcontrolnotappearing"/>
 
-### <a name="adcontrol-not-appearing"></a><span data-ttu-id="2e261-165">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="2e261-165">AdControl not appearing</span></span>
+### <a name="adcontrol-not-appearing"></a><span data-ttu-id="11748-165">AdControl が表示されない</span><span class="sxs-lookup"><span data-stu-id="11748-165">AdControl not appearing</span></span>
 
-1.  <span data-ttu-id="2e261-166">Package.appxmanifest で **[インターネット (クライアント)]** 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-166">Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.</span></span>
+1.  <span data-ttu-id="11748-166">Package.appxmanifest で **[インターネット (クライアント)]** 機能が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-166">Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.</span></span>
 
-2.  <span data-ttu-id="2e261-167">**AdControl** がインスタンス化されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-167">Ensure the **AdControl** is instantiated.</span></span> <span data-ttu-id="2e261-168">インスタンス化されていない **AdControl** は</span><span class="sxs-lookup"><span data-stu-id="2e261-168">If the **AdControl** is not instantiated.</span></span> <span data-ttu-id="2e261-169">使うことができません。</span><span class="sxs-lookup"><span data-stu-id="2e261-169">it will not be available.</span></span>
+2.  <span data-ttu-id="11748-167">**AdControl** がインスタンス化されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-167">Ensure the **AdControl** is instantiated.</span></span> <span data-ttu-id="11748-168">インスタンス化されていない **AdControl** は</span><span class="sxs-lookup"><span data-stu-id="11748-168">If the **AdControl** is not instantiated.</span></span> <span data-ttu-id="11748-169">使うことができません。</span><span class="sxs-lookup"><span data-stu-id="11748-169">it will not be available.</span></span>
 
-    <span data-ttu-id="2e261-170">次のスニペットは、**AdControl** のインスタンス化の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-170">The following snippets show an example of instantiating the **AdControl**.</span></span> <span data-ttu-id="2e261-171">この HTML コードは、**AdControl** 用の UI の設定を示した例です。</span><span class="sxs-lookup"><span data-stu-id="2e261-171">This HTML code shows an example of setting up the UI for the **AdControl**</span></span>
+    <span data-ttu-id="11748-170">次のスニペットは、**AdControl** のインスタンス化の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-170">The following snippets show an example of instantiating the **AdControl**.</span></span> <span data-ttu-id="11748-171">この HTML コードは、**AdControl** 用の UI の設定を示した例です。</span><span class="sxs-lookup"><span data-stu-id="11748-171">This HTML code shows an example of setting up the UI for the **AdControl**</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -237,7 +237,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-    <span data-ttu-id="2e261-172">次の JavaScript コードは、**AdControl** のインスタンス化の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-172">The following JavaScript code shows an example of instantiating the **AdControl**</span></span>
+    <span data-ttu-id="11748-172">次の JavaScript コードは、**AdControl** のインスタンス化の例を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-172">The following JavaScript code shows an example of instantiating the **AdControl**</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -260,7 +260,7 @@ ms.locfileid: "8330486"
     }
     ```
 
-3.  <span data-ttu-id="2e261-173">親要素を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-173">Check the parent element.</span></span> <span data-ttu-id="2e261-174">親の **&lt;div&gt;** は、正しく割り当てられ、アクティブな状態で表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-174">The parent **&lt;div&gt;** must be correctly assigned, active, and visible.</span></span>
+3.  <span data-ttu-id="11748-173">親要素を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-173">Check the parent element.</span></span> <span data-ttu-id="11748-174">親の **&lt;div&gt;** は、正しく割り当てられ、アクティブな状態で表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-174">The parent **&lt;div&gt;** must be correctly assigned, active, and visible.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -271,7 +271,7 @@ ms.locfileid: "8330486"
     });  
     ```
 
-4.  <span data-ttu-id="2e261-175">アプリケーション ID と広告ユニット ID を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-175">Check the application ID and ad unit ID.</span></span> <span data-ttu-id="2e261-176">これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-176">These IDs must match the application ID and ad unit ID that you obtained in Partner Center.</span></span> <span data-ttu-id="2e261-177">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2e261-177">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
+4.  <span data-ttu-id="11748-175">アプリケーション ID と広告ユニット ID を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-175">Check the application ID and ad unit ID.</span></span> <span data-ttu-id="11748-176">これらの Id は、アプリケーション ID とパートナー センターで取得した広告ユニット ID に一致する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-176">These IDs must match the application ID and ad unit ID that you obtained in Partner Center.</span></span> <span data-ttu-id="11748-177">詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="11748-177">For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -281,19 +281,19 @@ ms.locfileid: "8330486"
     });  
     ```
 
-5.  <span data-ttu-id="2e261-178">**AdControl** の親要素を確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-178">Check the parent element of the **AdControl**.</span></span> <span data-ttu-id="2e261-179">親はアクティブな状態で表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-179">The parent must be active and visible.</span></span>
+5.  <span data-ttu-id="11748-178">**AdControl** の親要素を確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-178">Check the parent element of the **AdControl**.</span></span> <span data-ttu-id="11748-179">親はアクティブな状態で表示されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-179">The parent must be active and visible.</span></span>
 
-6.  <span data-ttu-id="2e261-180">**ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="2e261-180">Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator.</span></span> <span data-ttu-id="2e261-181">**AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。</span><span class="sxs-lookup"><span data-stu-id="2e261-181">To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.</span></span>
+6.  <span data-ttu-id="11748-180">**ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="11748-180">Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator.</span></span> <span data-ttu-id="11748-181">**AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても[テスト値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってください。</span><span class="sxs-lookup"><span data-stu-id="11748-181">To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.</span></span>
 
 <span id="js-blackboxblinksdisappears"/>
 
-### <a name="black-box-blinks-and-disappears"></a><span data-ttu-id="2e261-182">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="2e261-182">Black box blinks and disappears</span></span>
+### <a name="black-box-blinks-and-disappears"></a><span data-ttu-id="11748-182">ブラック ボックスが点滅し、表示されなくなる</span><span class="sxs-lookup"><span data-stu-id="11748-182">Black box blinks and disappears</span></span>
 
-1.  <span data-ttu-id="2e261-183">「[AdControl が表示されない](#js-adcontrolnotappearing)」セクションの手順をすべてもう一度確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-183">Double-check all steps in the [AdControl not appearing](#js-adcontrolnotappearing) section.</span></span>
+1.  <span data-ttu-id="11748-183">「[AdControl が表示されない](#js-adcontrolnotappearing)」セクションの手順をすべてもう一度確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-183">Double-check all steps in the [AdControl not appearing](#js-adcontrolnotappearing) section.</span></span>
 
-2.  <span data-ttu-id="2e261-184">**onErrorOccurred** イベントを処理します。イベント ハンドラーに渡されるメッセージを使って、エラーが発生したかどうかと、スローされたエラーの種類を特定します。</span><span class="sxs-lookup"><span data-stu-id="2e261-184">Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown.</span></span> <span data-ttu-id="2e261-185">詳しくは、「[Error handling in JavaScript walkthrough (JavaScript チュートリアルでのエラー処理)](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2e261-185">More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).</span></span>
+2.  <span data-ttu-id="11748-184">**onErrorOccurred** イベントを処理します。イベント ハンドラーに渡されるメッセージを使って、エラーが発生したかどうかと、スローされたエラーの種類を特定します。</span><span class="sxs-lookup"><span data-stu-id="11748-184">Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown.</span></span> <span data-ttu-id="11748-185">詳しくは、「[Error handling in JavaScript walkthrough (JavaScript チュートリアルでのエラー処理)](error-handling-in-javascript-walkthrough.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="11748-185">More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).</span></span>
 
-    <span data-ttu-id="2e261-186">次の例では、エラー メッセージを報告するエラー ハンドラーを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2e261-186">This example demonstrates how to implement an error handler that reports error messages.</span></span> <span data-ttu-id="2e261-187">HTML コードのこのスニペットは、エラー メッセージを表示するように UI を設定する方法を示した例です。</span><span class="sxs-lookup"><span data-stu-id="2e261-187">This snippet of HTML code provides an example of how to set up the UI to display error messages.</span></span>
+    <span data-ttu-id="11748-186">次の例では、エラー メッセージを報告するエラー ハンドラーを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="11748-186">This example demonstrates how to implement an error handler that reports error messages.</span></span> <span data-ttu-id="11748-187">HTML コードのこのスニペットは、エラー メッセージを表示するように UI を設定する方法を示した例です。</span><span class="sxs-lookup"><span data-stu-id="11748-187">This snippet of HTML code provides an example of how to set up the UI to display error messages.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -303,7 +303,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-    <span data-ttu-id="2e261-188">次の例では、**AdControl** をインスタンス化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2e261-188">This example demonstrates how to instantiate the **AdControl**.</span></span> <span data-ttu-id="2e261-189">この関数は app.onactivated ファイルに挿入されます。</span><span class="sxs-lookup"><span data-stu-id="2e261-189">This function would be inserted in the app.onactivated file.</span></span>
+    <span data-ttu-id="11748-188">次の例では、**AdControl** をインスタンス化する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="11748-188">This example demonstrates how to instantiate the **AdControl**.</span></span> <span data-ttu-id="11748-189">この関数は app.onactivated ファイルに挿入されます。</span><span class="sxs-lookup"><span data-stu-id="11748-189">This function would be inserted in the app.onactivated file.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -315,7 +315,7 @@ ms.locfileid: "8330486"
     myAdControl.onErrorOccurred = myAdError;
     ```
 
-    <span data-ttu-id="2e261-190">次の例では、エラーを報告する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="2e261-190">This example demonstrates how to report errors.</span></span> <span data-ttu-id="2e261-191">この関数は、default.js ファイルの自己実行関数の下に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="2e261-191">This function would be inserted below the self-running function in the default.js file.</span></span>
+    <span data-ttu-id="11748-190">次の例では、エラーを報告する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="11748-190">This example demonstrates how to report errors.</span></span> <span data-ttu-id="11748-191">この関数は、default.js ファイルの自己実行関数の下に挿入されます。</span><span class="sxs-lookup"><span data-stu-id="11748-191">This function would be inserted below the self-running function in the default.js file.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -330,19 +330,19 @@ ms.locfileid: "8330486"
     );
     ```
 
-    <span data-ttu-id="2e261-192">ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。</span><span class="sxs-lookup"><span data-stu-id="2e261-192">The most common error that causes a black box is “No ad available.”</span></span> <span data-ttu-id="2e261-193">このエラーは、要求から復帰する利用可能な広告がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="2e261-193">This error means there is no ad available to return from the request.</span></span>
+    <span data-ttu-id="11748-192">ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。</span><span class="sxs-lookup"><span data-stu-id="11748-192">The most common error that causes a black box is “No ad available.”</span></span> <span data-ttu-id="11748-193">このエラーは、要求から復帰する利用可能な広告がないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="11748-193">This error means there is no ad available to return from the request.</span></span>
 
-3.  <span data-ttu-id="2e261-194">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-194">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="2e261-195">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="2e261-195">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
+3.  <span data-ttu-id="11748-194">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="11748-194">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="11748-195">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="11748-195">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
 
 <span id="js-adsnotrefreshing"/>
 
-### <a name="ads-not-refreshing"></a><span data-ttu-id="2e261-196">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="2e261-196">Ads not refreshing</span></span>
+### <a name="ads-not-refreshing"></a><span data-ttu-id="11748-196">広告が更新されない</span><span class="sxs-lookup"><span data-stu-id="11748-196">Ads not refreshing</span></span>
 
-1.  <span data-ttu-id="2e261-197">**AdControl** の [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) プロパティが false に設定されているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-197">Check whether the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false.</span></span> <span data-ttu-id="2e261-198">既定では、この省略可能なプロパティは **true** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="2e261-198">By default, this optional property is set to **true**.</span></span> <span data-ttu-id="2e261-199">**false** に設定すると、他の広告を取得するために **Refresh** メソッドを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="2e261-199">When set to **false**, the **Refresh** method must be used to retrieve another ad.</span></span>
+1.  <span data-ttu-id="11748-197">**AdControl** の [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) プロパティが false に設定されているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-197">Check whether the [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property of your **AdControl** is set to false.</span></span> <span data-ttu-id="11748-198">既定では、この省略可能なプロパティは **true** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="11748-198">By default, this optional property is set to **true**.</span></span> <span data-ttu-id="11748-199">**false** に設定すると、他の広告を取得するために **Refresh** メソッドを使う必要があります。</span><span class="sxs-lookup"><span data-stu-id="11748-199">When set to **false**, the **Refresh** method must be used to retrieve another ad.</span></span>
 
-2.  <span data-ttu-id="2e261-200">[Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) メソッドの呼び出しを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e261-200">Check calls to the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method.</span></span> <span data-ttu-id="2e261-201">自動更新 (**IsAutoRefreshEnabled** が **true**) の場合、他の広告を取得するために **Refresh** を使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="2e261-201">When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad.</span></span> <span data-ttu-id="2e261-202">手動更新 (**IsAutoRefreshEnabled** が **false**) の場合、デバイスの現在のデータ接続に応じて、少なくとも 30 秒から 60 秒経ってから **Refresh** を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="2e261-202">When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.</span></span>
+2.  <span data-ttu-id="11748-200">[Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) メソッドの呼び出しを確認します。</span><span class="sxs-lookup"><span data-stu-id="11748-200">Check calls to the [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method.</span></span> <span data-ttu-id="11748-201">自動更新 (**IsAutoRefreshEnabled** が **true**) の場合、他の広告を取得するために **Refresh** を使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="11748-201">When using automatic refresh (**IsAutoRefreshEnabled** is **true**), **Refresh** cannot be used to retrieve another ad.</span></span> <span data-ttu-id="11748-202">手動更新 (**IsAutoRefreshEnabled** が **false**) の場合、デバイスの現在のデータ接続に応じて、少なくとも 30 秒から 60 秒経ってから **Refresh** を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="11748-202">When using manual refresh (**IsAutoRefreshEnabled** is **false**), **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.</span></span>
 
-    <span data-ttu-id="2e261-203">次の例は、**AdControl** の **div** を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-203">This example demonstrates how to create the **div** for the **AdControl**.</span></span>
+    <span data-ttu-id="11748-203">次の例は、**AdControl** の **div** を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-203">This example demonstrates how to create the **div** for the **AdControl**.</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -352,7 +352,7 @@ ms.locfileid: "8330486"
     </div>
     ```
 
-    <span data-ttu-id="2e261-204">次の例は、**Refresh** 関数の使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-204">This example shows how to use the **Refresh** function</span></span>
+    <span data-ttu-id="11748-204">次の例は、**Refresh** 関数の使い方を示しています。</span><span class="sxs-lookup"><span data-stu-id="11748-204">This example shows how to use the **Refresh** function</span></span>
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -373,7 +373,7 @@ ms.locfileid: "8330486"
     );
     ```
 
-3.  <span data-ttu-id="2e261-205">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="2e261-205">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="2e261-206">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="2e261-206">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
+3.  <span data-ttu-id="11748-205">**AdControl** は正常に動作しています。</span><span class="sxs-lookup"><span data-stu-id="11748-205">The **AdControl** is behaving normally.</span></span> <span data-ttu-id="11748-206">同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。</span><span class="sxs-lookup"><span data-stu-id="11748-206">Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.</span></span>
 
  
 

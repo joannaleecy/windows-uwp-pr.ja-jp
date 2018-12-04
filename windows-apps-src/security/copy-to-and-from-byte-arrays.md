@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b3ce63ca1780f9ed1ecd32f3ab1c029a1a92e1b5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343458"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8479611"
 ---
-# <a name="copy-to-and-from-byte-arrays"></a><span data-ttu-id="18a2e-104">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="18a2e-104">Copy to and from byte arrays</span></span>
+# <a name="copy-to-and-from-byte-arrays"></a><span data-ttu-id="df08f-104">バイト配列間のコピー</span><span class="sxs-lookup"><span data-stu-id="df08f-104">Copy to and from byte arrays</span></span>
 
 
 
-<span data-ttu-id="18a2e-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="18a2e-105">This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.</span></span>
+<span data-ttu-id="df08f-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="df08f-105">This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.</span></span>
 
 ```cs
 public void ByteArrayCopy()

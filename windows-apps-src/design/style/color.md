@@ -8,11 +8,11 @@ design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8345252"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8483580"
 ---
 # <a name="color"></a><span data-ttu-id="d3c25-104">色</span><span class="sxs-lookup"><span data-stu-id="d3c25-104">Color</span></span>
 

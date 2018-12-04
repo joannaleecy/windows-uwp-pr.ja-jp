@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8333660"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482799"
 ---
 # <a name="splash-screens"></a><span data-ttu-id="ddabd-104">スプラッシュ画面</span><span class="sxs-lookup"><span data-stu-id="ddabd-104">Splash screens</span></span>
 

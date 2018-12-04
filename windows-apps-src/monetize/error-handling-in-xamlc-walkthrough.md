@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b2ffd15a07dc6f1018bd28cf9799e1e5209c0b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342748"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8482570"
 ---
-# <a name="error-handling-in-xamlc-walkthrough"></a><span data-ttu-id="3ca9a-104">XAML/C# ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="3ca9a-104">Error handling in XAML/C# walkthrough</span></span>
+# <a name="error-handling-in-xamlc-walkthrough"></a><span data-ttu-id="c8024-104">XAML/C# ウォークスルーでのエラー処理</span><span class="sxs-lookup"><span data-stu-id="c8024-104">Error handling in XAML/C# walkthrough</span></span>
 
-<span data-ttu-id="3ca9a-105">このチュートリアルでは、アプリで広告関連のエラーをキャッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-105">This walkthrough demonstrates how to catch ad-related errors in your app.</span></span> <span data-ttu-id="3ca9a-106">このチュートリアルでは、[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) を使用してバナー広告を表示していますが、その中の一般的な概念はスポット広告やネイティブ広告にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-106">This walkthrough uses an [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.</span></span>
+<span data-ttu-id="c8024-105">このチュートリアルでは、アプリで広告関連のエラーをキャッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c8024-105">This walkthrough demonstrates how to catch ad-related errors in your app.</span></span> <span data-ttu-id="c8024-106">このチュートリアルでは、[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) を使用してバナー広告を表示していますが、その中の一般的な概念はスポット広告やネイティブ広告にも適用されます。</span><span class="sxs-lookup"><span data-stu-id="c8024-106">This walkthrough uses an [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.</span></span>
 
-<span data-ttu-id="3ca9a-107">これらの例は、**AdControl** を含む XAML/C# アプリがあることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-107">These examples assume that you have a XAML/C# app that contains an **AdControl**.</span></span> <span data-ttu-id="3ca9a-108">アプリに **AdControl** を追加する方法を示す具体的な手順については、「[XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-108">For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md).</span></span> 
+<span data-ttu-id="c8024-107">これらの例は、**AdControl** を含む XAML/C# アプリがあることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="c8024-107">These examples assume that you have a XAML/C# app that contains an **AdControl**.</span></span> <span data-ttu-id="c8024-108">アプリに **AdControl** を追加する方法を示す具体的な手順については、「[XAML および .NET の AdControl](adcontrol-in-xaml-and--net.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c8024-108">For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md).</span></span> 
 
-1.  <span data-ttu-id="3ca9a-109">MainPage.xaml ファイルで、**AdControl** の定義を見つけます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-109">In your MainPage.xaml file, locate the definition for the **AdControl**.</span></span> <span data-ttu-id="3ca9a-110">コードは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-110">That code looks like this.</span></span>
+1.  <span data-ttu-id="c8024-109">MainPage.xaml ファイルで、**AdControl** の定義を見つけます。</span><span class="sxs-lookup"><span data-stu-id="c8024-109">In your MainPage.xaml file, locate the definition for the **AdControl**.</span></span> <span data-ttu-id="c8024-110">コードは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="c8024-110">That code looks like this.</span></span>
     ``` xml
     <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -31,7 +31,7 @@ ms.locfileid: "8342748"
       Width="300" />
     ```
 
-2.   <span data-ttu-id="3ca9a-111">**Width** プロパティの後、終了タグの前で、エラー イベント ハンドラーの名前を [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) イベントに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-111">After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) event.</span></span> <span data-ttu-id="3ca9a-112">このウォークスルーでは、エラー イベント ハンドラーの名前は **OnAdError** です。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-112">In this walkthrough, the name of the error event handler is **OnAdError**.</span></span>
+2.   <span data-ttu-id="c8024-111">**Width** プロパティの後、終了タグの前で、エラー イベント ハンドラーの名前を [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) イベントに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c8024-111">After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) event.</span></span> <span data-ttu-id="c8024-112">このウォークスルーでは、エラー イベント ハンドラーの名前は **OnAdError** です。</span><span class="sxs-lookup"><span data-stu-id="c8024-112">In this walkthrough, the name of the error event handler is **OnAdError**.</span></span>
     ``` xml
     <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -44,9 +44,9 @@ ms.locfileid: "8342748"
       ErrorOccurred="OnAdError"/>
     ```
 
-3.  <span data-ttu-id="3ca9a-113">実行時にエラーを生成するために、2 つ目の **AdControl** を異なるアプリケーション ID を使って作成します。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-113">To generate an error at runtime, create a second **AdControl** with a different application ID.</span></span> <span data-ttu-id="3ca9a-114">アプリ内のすべての **AdControl** オブジェクトは同じアプリケーション ID を使う必要があるため、追加の **AdControl** を異なるアプリケーション ID を使って作成するとエラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-114">Because all **AdControl** objects in an app must use the same application ID, creating an additional **AdControl** with a different application id will throw an error.</span></span>
+3.  <span data-ttu-id="c8024-113">実行時にエラーを生成するために、2 つ目の **AdControl** を異なるアプリケーション ID を使って作成します。</span><span class="sxs-lookup"><span data-stu-id="c8024-113">To generate an error at runtime, create a second **AdControl** with a different application ID.</span></span> <span data-ttu-id="c8024-114">アプリ内のすべての **AdControl** オブジェクトは同じアプリケーション ID を使う必要があるため、追加の **AdControl** を異なるアプリケーション ID を使って作成するとエラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="c8024-114">Because all **AdControl** objects in an app must use the same application ID, creating an additional **AdControl** with a different application id will throw an error.</span></span>
 
-    <span data-ttu-id="3ca9a-115">MainPage.xaml で、最初の **AdControl** の直後に 2 つ目の **AdControl** を定義し、[ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) プロパティをゼロ (“0”) に設定します。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-115">Define a second **AdControl** in MainPage.xaml just after the first **AdControl**, and set the [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) property to zero (“0”).</span></span>
+    <span data-ttu-id="c8024-115">MainPage.xaml で、最初の **AdControl** の直後に 2 つ目の **AdControl** を定義し、[ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) プロパティをゼロ (“0”) に設定します。</span><span class="sxs-lookup"><span data-stu-id="c8024-115">Define a second **AdControl** in MainPage.xaml just after the first **AdControl**, and set the [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) property to zero (“0”).</span></span>
     ``` xml
     <UI:AdControl
         ApplicationId="0"
@@ -59,7 +59,7 @@ ms.locfileid: "8342748"
         ErrorOccurred="OnAdError" />
     ```
 
-4.  <span data-ttu-id="3ca9a-116">MainPage.xaml.cs で、次の **OnAdError** イベント ハンドラーを **MainPage** クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-116">In MainPage.xaml.cs, add the following **OnAdError** event handler to the **MainPage** class.</span></span> <span data-ttu-id="3ca9a-117">このイベント ハンドラーは、Visual Studio の **[出力]** ウィンドウに情報を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-117">This event handler writes information to the Visual Studio **Output** window.</span></span>
+4.  <span data-ttu-id="c8024-116">MainPage.xaml.cs で、次の **OnAdError** イベント ハンドラーを **MainPage** クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="c8024-116">In MainPage.xaml.cs, add the following **OnAdError** event handler to the **MainPage** class.</span></span> <span data-ttu-id="c8024-117">このイベント ハンドラーは、Visual Studio の **[出力]** ウィンドウに情報を書き込みます。</span><span class="sxs-lookup"><span data-stu-id="c8024-117">This event handler writes information to the Visual Studio **Output** window.</span></span>
     ``` csharp
     private void OnAdError(object sender, AdErrorEventArgs e)
     {
@@ -68,11 +68,11 @@ ms.locfileid: "8342748"
     }
     ```
 
-4.  <span data-ttu-id="3ca9a-118">プロジェクトをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-118">Build and run the project.</span></span> <span data-ttu-id="3ca9a-119">アプリの実行後に、次のようなメッセージが Visual Studio の **[出力]** ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="3ca9a-119">After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.</span></span>
+4.  <span data-ttu-id="c8024-118">プロジェクトをビルドして実行します。</span><span class="sxs-lookup"><span data-stu-id="c8024-118">Build and run the project.</span></span> <span data-ttu-id="c8024-119">アプリの実行後に、次のようなメッセージが Visual Studio の **[出力]** ウィンドウに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c8024-119">After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.</span></span>
     ```
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 
-## <a name="related-topics"></a><span data-ttu-id="3ca9a-120">関連トピック</span><span class="sxs-lookup"><span data-stu-id="3ca9a-120">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="c8024-120">関連トピック</span><span class="sxs-lookup"><span data-stu-id="c8024-120">Related topics</span></span>
 
-* [<span data-ttu-id="3ca9a-121">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="3ca9a-121">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
+* [<span data-ttu-id="c8024-121">GitHub の広告サンプル</span><span class="sxs-lookup"><span data-stu-id="c8024-121">Advertising samples on GitHub</span></span>](http://aka.ms/githubads)
