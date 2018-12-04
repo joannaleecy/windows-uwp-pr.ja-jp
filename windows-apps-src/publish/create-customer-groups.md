@@ -7,11 +7,11 @@ keywords: windows 10, uwp, ユーザー グループ, セグメント, フライ
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: b757c304398c60bd539eb3c023892b68138880db
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350535"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470086"
 ---
 # <a name="create-customer-groups"></a>ユーザー グループを作成する
 

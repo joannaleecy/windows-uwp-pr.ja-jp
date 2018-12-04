@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、プログラミング
 ms.localizationpriority: medium
 ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8332146"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470096"
 ---
 # <a name="game-programming-resources"></a>ゲーム プログラミング リソース
 

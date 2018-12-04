@@ -9,11 +9,11 @@ pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339441"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470964"
 ---
 # <a name="windows-template-studio"></a>Windows Template Studio
 

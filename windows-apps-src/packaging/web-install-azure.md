@@ -1,24 +1,22 @@
 ---
 title: Azure Web サーバーからの UWP アプリのインストール
 description: このチュートリアルでは、Azure Web サーバーをセットアップし、Web アプリでアプリ パッケージをホストできることを確認し、アプリ インストーラを効果的に起動して使用する方法を示しています。
-ms.date: 09/30/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ、Azure Web サーバー
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325634"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469213"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Azure Web アプリからの UWP アプリのインストール
 
 アプリ インストーラー アプリは、開発者と IT 担当者が、Windows 10 アプリを独自の Content Delivery Network (CDN) でホストすることで配布できるようにします。 これは Microsoft Store にアプリを公開しない、または公開する必要がないが、Windows 10 のパッケージおよび展開のプラットフォームを利用したい企業に役立ちます。
 
 このトピックでは、Azure Web サーバーが UWP アプリ パッケージをホストするように構成し、アプリ インストーラー アプリを使用してアプリ パッケージをインストールする手順を示しています。
-
-このチュートリアルでは、IIS サーバーをセットアップし、Web アプリケーションが適切にアプリ パッケージをホストし、アプリ インストーラー アプリを効果的に起動して使用できることをローカルで確認する方法について説明します。 また、現場で一般的なクラウド Web サービス (Azure および AWS) で Web アプリケーションを適切にホストし、それらのアプリケーションがアプリ インストーラーの Web インストール要件を満たしていることを確認するためのチュートリアルもあります。 この手順を説明したチュートリアルには専門知識は必要なく、非常に簡単に理解できます。 
 
 ## <a name="setup"></a>セットアップ
 

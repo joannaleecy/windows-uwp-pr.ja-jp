@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング、関連セット, オプション パッケージ、IIS サーバー
 ms.localizationpriority: medium
-ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352136"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469372"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>IIS サーバーから UWP アプリをインストールする
 
@@ -119,7 +119,7 @@ HTML ページを作成した後は、ソリューション エクスプ ロー�
 
 アプリ インストーラーなどの UWP アプリのような IP ループバック アドレスを使用する制限されますネットワークの分離が原因http://localhost/します。 ローカル IIS サーバーを使用して、アプリ インストーラーがループバックの除外一覧に追加する必要があります。 
 
-これを行うには、**管理者**として**コマンド プロンプト**を開き、次を入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+これを行うには、**管理者**として**コマンド プロンプト**を開き、次を入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -131,7 +131,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 アプリ インストーラーでアプリのインストールのローカルの検証が完了したら後でこの手順で追加した、ループバックに関する除外を削除できます。
 
-'' コマンド ライン CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+'' コマンド ライン CheckNetIsolation.exe LoopbackExempt-d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 ## Step 9 - Run the Web App 

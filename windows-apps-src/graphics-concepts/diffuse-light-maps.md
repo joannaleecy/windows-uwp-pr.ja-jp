@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8331424"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8467775"
 ---
 # <a name="diffuse-light-maps"></a>拡散ライト マップ
 
