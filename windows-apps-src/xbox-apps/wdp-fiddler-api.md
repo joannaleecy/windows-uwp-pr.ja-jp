@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8351028"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475004"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API のリファレンス   
 この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。

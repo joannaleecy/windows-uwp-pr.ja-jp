@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, オーディオ, 入力, ネットワーク
 ms.localizationpriority: medium
 ms.openlocfilehash: c3e2a03b1302fcf5690e653cbf07efad8ef14fe8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8322988"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8476414"
 ---
 # <a name="uwp-programming"></a>UWP プログラミング
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351421"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8474874"
 ---
 # <a name="composition-brushes"></a>コンポジションのブラシ
 ブラシによって描画されているために、すべての UWP アプリケーションから、画面に表示されることが表示されます。 ブラシを使用すると、シンプルで単色の色から画像や複雑な効果のチェーンに描画に至るまでコンテンツを持つユーザー インターフェイス (UI) オブジェクトを使ってペイントできます。 このトピックでは、CompositionBrush と描画の概念を紹介します。
