@@ -1,16 +1,16 @@
 ---
 title: UWP アプリでの SQLite データベースの使用
 description: UWP アプリでの SQLite データベースの使用。
-ms.date: 06/08/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, UWP, SQLite, データベース
 ms.localizationpriority: medium
-ms.openlocfilehash: 1588dfbfb1c33b246caba0816c584135f2094f35
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8336949"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473192"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>UWP アプリでの SQLite データベースの使用
 SQLite を使用すると、ユーザー デバイス上の軽量なデータベースにデータを保存し、取得することができます。 このガイドでその方法を示します。
@@ -163,10 +163,11 @@ namespace DataAccessLibrary
 
 ```
 
-このファイルの先頭に、次の using ステートメントを追加します。
+次の追加 using ステートメントをこのファイルの先頭にします。
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />
