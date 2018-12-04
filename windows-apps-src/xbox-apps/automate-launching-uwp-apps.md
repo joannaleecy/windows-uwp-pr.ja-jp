@@ -3,11 +3,11 @@ title: Windows 10 ユニバーサル Windows プラットフォーム (UWP) ア�
 description: 開発者はプロトコルのアクティブ化および起動アクティブ化を使って、自動テスト用に UWP アプリや UWP ゲームを自動で起動できます。
 ms.localizationpriority: medium
 ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350763"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8473732"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a><span data-ttu-id="01d63-103">Windows 10 UWP アプリの自動起動</span><span class="sxs-lookup"><span data-stu-id="01d63-103">Automate launching Windows 10 UWP apps</span></span>
 

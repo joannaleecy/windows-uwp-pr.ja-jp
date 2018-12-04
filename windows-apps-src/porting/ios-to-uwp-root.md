@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4740c108491751afa038894de2e9c50579e74c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346661"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8475376"
 ---
 # <a name="move-from-ios-to-uwp"></a><span data-ttu-id="4374e-104">iOS から UWP への移行</span><span class="sxs-lookup"><span data-stu-id="4374e-104">Move from iOS to UWP</span></span>
 

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f4cd2e17754dc5b5958e8bca208e30b87718cdd8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8343754"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470627"
 ---
-# <a name="appendices"></a><span data-ttu-id="1d5e7-104">付録</span><span class="sxs-lookup"><span data-stu-id="1d5e7-104">Appendices</span></span>
+# <a name="appendices"></a><span data-ttu-id="a453f-104">付録</span><span class="sxs-lookup"><span data-stu-id="a453f-104">Appendices</span></span>
 
-<span data-ttu-id="1d5e7-105">これらのセクションでは、技術的な詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-105">These sections provide in-depth technical details.</span></span>
+<span data-ttu-id="a453f-105">これらのセクションでは、技術的な詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="a453f-105">These sections provide in-depth technical details.</span></span>
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="1d5e7-106"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="1d5e7-106"><span id="in-this-section"></span>In this section</span></span>
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="a453f-106"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="a453f-106"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -27,36 +27,36 @@ ms.locfileid: "8343754"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="1d5e7-107">トピック</span><span class="sxs-lookup"><span data-stu-id="1d5e7-107">Topic</span></span></th>
-<th align="left"><span data-ttu-id="1d5e7-108">説明</span><span class="sxs-lookup"><span data-stu-id="1d5e7-108">Description</span></span></th>
+<th align="left"><span data-ttu-id="a453f-107">トピック</span><span class="sxs-lookup"><span data-stu-id="a453f-107">Topic</span></span></th>
+<th align="left"><span data-ttu-id="a453f-108">説明</span><span class="sxs-lookup"><span data-stu-id="a453f-108">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="floating-point-rules.md"><span data-ttu-id="1d5e7-109">浮動小数点の規則</span><span class="sxs-lookup"><span data-stu-id="1d5e7-109">Floating-point rules</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="1d5e7-110">Direct3D では、いくつかの浮動小数点表現がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-110">Direct3D supports several floating-point representations.</span></span> <span data-ttu-id="1d5e7-111">すべての浮動小数点演算は、IEEE 754 32 ビット単精度浮動小数点ルールのサブセットの定義のもとで動作します。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-111">All floating-point computations operate under a defined subset of the IEEE 754 32-bit single precision floating-point rules.</span></span></p></td>
+<td align="left"><p><a href="floating-point-rules.md"><span data-ttu-id="a453f-109">浮動小数点の規則</span><span class="sxs-lookup"><span data-stu-id="a453f-109">Floating-point rules</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="a453f-110">Direct3D では、いくつかの浮動小数点表現がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="a453f-110">Direct3D supports several floating-point representations.</span></span> <span data-ttu-id="a453f-111">すべての浮動小数点演算は、IEEE 754 32 ビット単精度浮動小数点ルールのサブセットの定義のもとで動作します。</span><span class="sxs-lookup"><span data-stu-id="a453f-111">All floating-point computations operate under a defined subset of the IEEE 754 32-bit single precision floating-point rules.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="data-type-conversion.md"><span data-ttu-id="1d5e7-112">データ型の変換</span><span class="sxs-lookup"><span data-stu-id="1d5e7-112">Data type conversion</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="1d5e7-113">次のセクションでは、Direct3D がデータ型の間の変換を処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-113">The following sections describe how Direct3D handles conversions between data types.</span></span></p></td>
+<td align="left"><p><a href="data-type-conversion.md"><span data-ttu-id="a453f-112">データ型の変換</span><span class="sxs-lookup"><span data-stu-id="a453f-112">Data type conversion</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="a453f-113">次のセクションでは、Direct3D がデータ型の間の変換を処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a453f-113">The following sections describe how Direct3D handles conversions between data types.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="rasterization-rules.md"><span data-ttu-id="1d5e7-114">ラスター化ルール</span><span class="sxs-lookup"><span data-stu-id="1d5e7-114">Rasterization rules</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="1d5e7-115">ラスター化ルールは、ベクトル データをラスター データにマップする方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-115">Rasterization rules define how vector data is mapped into raster data.</span></span> <span data-ttu-id="1d5e7-116">ラスター データは、整数値の位置に配置されてからカリングおよびクリッピングされ (描画するピクセルの数を最小限にするため)、ピクセル単位の属性が (頂点単位の属性から) 補間された後、ピクセル シェーダーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-116">The raster data is snapped to integer locations that are then culled and clipped (to draw the minimum number of pixels), and per-pixel attributes are interpolated (from per-vertex attributes) before being passed to a pixel shader.</span></span></p></td>
+<td align="left"><p><a href="rasterization-rules.md"><span data-ttu-id="a453f-114">ラスター化ルール</span><span class="sxs-lookup"><span data-stu-id="a453f-114">Rasterization rules</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="a453f-115">ラスター化ルールは、ベクトル データをラスター データにマップする方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="a453f-115">Rasterization rules define how vector data is mapped into raster data.</span></span> <span data-ttu-id="a453f-116">ラスター データは、整数値の位置に配置されてからカリングおよびクリッピングされ (描画するピクセルの数を最小限にするため)、ピクセル単位の属性が (頂点単位の属性から) 補間された後、ピクセル シェーダーに渡されます。</span><span class="sxs-lookup"><span data-stu-id="a453f-116">The raster data is snapped to integer locations that are then culled and clipped (to draw the minimum number of pixels), and per-pixel attributes are interpolated (from per-vertex attributes) before being passed to a pixel shader.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-block-compression.md"><span data-ttu-id="1d5e7-117">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="1d5e7-117">Texture block compression</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="1d5e7-118">Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-118">Block Compression (BC) support for textures has been extended in Direct3D 11 to include the BC6H and BC7 algorithms.</span></span> <span data-ttu-id="1d5e7-119">BC6H はハイ ダイナミック レンジのカラー ソース データをサポートし、BC7 は標準 RGB ソース データのアーティファクトを低減して標準よりも優れた品質の圧縮を提供します。</span><span class="sxs-lookup"><span data-stu-id="1d5e7-119">BC6H supports high-dynamic range color source data, and BC7 provides better-than-average quality compression with less artifacts for standard RGB source data.</span></span></p></td>
+<td align="left"><p><a href="texture-block-compression.md"><span data-ttu-id="a453f-117">テクスチャのブロック圧縮</span><span class="sxs-lookup"><span data-stu-id="a453f-117">Texture block compression</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="a453f-118">Direct3D 11 では、テクスチャのブロック圧縮 (BC) サポートが拡張され、BC6H および BC7 アルゴリズムが組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="a453f-118">Block Compression (BC) support for textures has been extended in Direct3D 11 to include the BC6H and BC7 algorithms.</span></span> <span data-ttu-id="a453f-119">BC6H はハイ ダイナミック レンジのカラー ソース データをサポートし、BC7 は標準 RGB ソース データのアーティファクトを低減して標準よりも優れた品質の圧縮を提供します。</span><span class="sxs-lookup"><span data-stu-id="a453f-119">BC6H supports high-dynamic range color source data, and BC7 provides better-than-average quality compression with less artifacts for standard RGB source data.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="1d5e7-120"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="1d5e7-120"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="a453f-120"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="a453f-120"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="1d5e7-121">Direct3D グラフィックスの学習ガイド</span><span class="sxs-lookup"><span data-stu-id="1d5e7-121">Direct3D Graphics Learning Guide</span></span>](index.md)
+[<span data-ttu-id="a453f-121">Direct3D グラフィックスの学習ガイド</span><span class="sxs-lookup"><span data-stu-id="a453f-121">Direct3D Graphics Learning Guide</span></span>](index.md)
 
  
 
