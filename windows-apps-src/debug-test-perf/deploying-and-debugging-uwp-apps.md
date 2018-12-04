@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, デバッグ, テスト, パフォーマンス
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339798"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472862"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a><span data-ttu-id="29dea-104">UWP アプリの展開とデバッグ</span><span class="sxs-lookup"><span data-stu-id="29dea-104">Deploying and debugging UWP apps</span></span>
 

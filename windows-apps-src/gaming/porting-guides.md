@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8324690"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8461198"
 ---
-# <a name="game-porting-guides"></a><span data-ttu-id="c5efc-104">ゲーム移植ガイド</span><span class="sxs-lookup"><span data-stu-id="c5efc-104">Game porting guides</span></span>
+# <a name="game-porting-guides"></a><span data-ttu-id="26c80-104">ゲーム移植ガイド</span><span class="sxs-lookup"><span data-stu-id="26c80-104">Game porting guides</span></span>
 
 
 
-<span data-ttu-id="c5efc-105">Direct3d11、ユニバーサル Windows プラットフォーム (UWP) と windows 10 に、既存のゲームを移植するためのガイドを提供します。</span><span class="sxs-lookup"><span data-stu-id="c5efc-105">Provides guides for porting your existing games to Direct3D 11, Universal Windows Platform (UWP), and Windows10.</span></span>
+<span data-ttu-id="26c80-105">Direct3d11、ユニバーサル Windows プラットフォーム (UWP) と windows 10 に、既存のゲームを移植するためのガイドを提供します。</span><span class="sxs-lookup"><span data-stu-id="26c80-105">Provides guides for porting your existing games to Direct3D 11, Universal Windows Platform (UWP), and Windows10.</span></span>
 
 <table>
 <colgroup>
@@ -26,18 +26,18 @@ ms.locfileid: "8324690"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="c5efc-106">トピック</span><span class="sxs-lookup"><span data-stu-id="c5efc-106">Topic</span></span></th>
-<th align="left"><span data-ttu-id="c5efc-107">説明</span><span class="sxs-lookup"><span data-stu-id="c5efc-107">Description</span></span></th>
+<th align="left"><span data-ttu-id="26c80-106">トピック</span><span class="sxs-lookup"><span data-stu-id="26c80-106">Topic</span></span></th>
+<th align="left"><span data-ttu-id="26c80-107">説明</span><span class="sxs-lookup"><span data-stu-id="26c80-107">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md"><span data-ttu-id="c5efc-108">DirectX 9 からユニバーサル Windows プラットフォームへの移植</span><span class="sxs-lookup"><span data-stu-id="c5efc-108">Port from DirectX 9 to Universal Windows Platform</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="c5efc-109">このセクションでは、UWP に DirectX 9 ゲームを移植する方法を説明した記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="c5efc-109">This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to UWP.</span></span></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md"><span data-ttu-id="26c80-108">DirectX 9 からユニバーサル Windows プラットフォームへの移植</span><span class="sxs-lookup"><span data-stu-id="26c80-108">Port from DirectX 9 to Universal Windows Platform</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="26c80-109">このセクションでは、UWP に DirectX 9 ゲームを移植する方法を説明した記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="26c80-109">This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to UWP.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md"><span data-ttu-id="c5efc-110">OpenGL ES 2.0 から Direct3D 11.1 への移植</span><span class="sxs-lookup"><span data-stu-id="c5efc-110">Port from OpenGL ES 2.0 to Direct3D 11.1</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="c5efc-111">OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="c5efc-111">Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.</span></span></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md"><span data-ttu-id="26c80-110">OpenGL ES 2.0 から Direct3D 11.1 への移植</span><span class="sxs-lookup"><span data-stu-id="26c80-110">Port from OpenGL ES 2.0 to Direct3D 11.1</span></span></a></p></td>
+<td align="left"><p><span data-ttu-id="26c80-111">OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。</span><span class="sxs-lookup"><span data-stu-id="26c80-111">Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.</span></span></p></td>
 </tr>
 </tbody>
 </table>

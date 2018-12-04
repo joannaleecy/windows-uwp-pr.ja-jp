@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アプリのインストール数
 ms.localizationpriority: medium
 ms.openlocfilehash: e2dc604e15180296e84d6177aa3d9b71a0bf82dc
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8342695"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8472229"
 ---
 # <a name="get-app-installs"></a><span data-ttu-id="067d8-104">アプリのインストール数の取得</span><span class="sxs-lookup"><span data-stu-id="067d8-104">Get app installs</span></span>
 

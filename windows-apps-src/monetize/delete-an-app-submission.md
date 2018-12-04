@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 削除
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d582f79d57fb8b3648d8c872f700d998a2fec1a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8346360"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8463814"
 ---
 # <a name="delete-an-app-submission"></a><span data-ttu-id="5a8ca-104">アプリの申請の削除</span><span class="sxs-lookup"><span data-stu-id="5a8ca-104">Delete an app submission</span></span>
 

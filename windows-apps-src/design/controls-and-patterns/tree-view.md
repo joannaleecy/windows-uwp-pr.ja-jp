@@ -14,11 +14,11 @@ dev_langs:
 - vb
 ms.custom: RS5
 ms.openlocfilehash: 753d0cd808daef96aa16c34c3962201ca73e5be9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351920"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464907"
 ---
 # <a name="treeview"></a><span data-ttu-id="14bcb-103">TreeView</span><span class="sxs-lookup"><span data-stu-id="14bcb-103">TreeView</span></span>
 
