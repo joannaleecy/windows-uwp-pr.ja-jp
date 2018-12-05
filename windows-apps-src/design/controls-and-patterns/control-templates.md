@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461857"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709784"
 ---
 # <a name="control-templates"></a>コントロール テンプレート
 
