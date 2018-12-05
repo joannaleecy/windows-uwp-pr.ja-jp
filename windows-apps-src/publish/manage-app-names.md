@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリの名前, アプリ名, アプリ名の更新、ゲームの名前, 製品名を変更します。
 ms.localizationpriority: medium
 ms.openlocfilehash: a27955f64a36fadde9b0f1781337929ce6871a9c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467360"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695372"
 ---
 # <a name="manage-app-names"></a><span data-ttu-id="2cfb2-103">アプリ名の管理</span><span class="sxs-lookup"><span data-stu-id="2cfb2-103">Manage app names</span></span>
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ、Azure Web サーバー
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469213"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695746"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a><span data-ttu-id="77e35-104">Azure Web アプリからの UWP アプリのインストール</span><span class="sxs-lookup"><span data-stu-id="77e35-104">Install a UWP app from an Azure Web App</span></span>
 

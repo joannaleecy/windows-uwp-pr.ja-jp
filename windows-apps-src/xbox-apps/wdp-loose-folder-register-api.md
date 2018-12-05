@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467260"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693504"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a><span data-ttu-id="8eb1b-104">アプリをルース フォルダーに登録する</span><span class="sxs-lookup"><span data-stu-id="8eb1b-104">Register an app in a loose folder</span></span>  
 

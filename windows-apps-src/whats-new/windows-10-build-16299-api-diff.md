@@ -6,11 +6,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 25707dfbf6753c51b4cf47bcbe95dc66802ee781
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8483518"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695118"
 ---
 # <a name="new-apis-in-windows-10-build-16299"></a><span data-ttu-id="9f424-104">Windows 10 ビルド 16299 の新しい API</span><span class="sxs-lookup"><span data-stu-id="9f424-104">New APIs in Windows 10 build 16299</span></span>
 

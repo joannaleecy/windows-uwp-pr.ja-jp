@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fcbaa0a3db826ef971878acd6a553dd7a836508
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350078"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8695942"
 ---
 # <a name="optical-zoom-and-resizing"></a><span data-ttu-id="ade99-103">光学式ズームとサイズ変更</span><span class="sxs-lookup"><span data-stu-id="ade99-103">Optical zoom and resizing</span></span>
 

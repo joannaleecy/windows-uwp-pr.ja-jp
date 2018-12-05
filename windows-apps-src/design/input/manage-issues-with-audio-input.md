@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c33e2890ce962f1321ef40ca0e0605e0f4e1f5f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467480"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693478"
 ---
 # <a name="manage-issues-with-audio-input"></a><span data-ttu-id="9cc74-103">音声入力の問題の管理</span><span class="sxs-lookup"><span data-stu-id="9cc74-103">Manage issues with audio input</span></span>
 

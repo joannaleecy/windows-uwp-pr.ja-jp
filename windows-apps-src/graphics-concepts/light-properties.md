@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b8627461251a5d43762facc18c8a414a117fc9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8339371"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693698"
 ---
 # <a name="light-properties"></a><span data-ttu-id="2b682-104">光源のプロパティ</span><span class="sxs-lookup"><span data-stu-id="2b682-104">Light properties</span></span>
 
