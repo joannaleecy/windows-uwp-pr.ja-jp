@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10、uwp、オプション パッケージ、関連セット, パッケージの拡張機能、visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e19f9673090501d59e260a698f9968a8f98f1cd5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: f62d6c99acc75033403fac7a498308cea6f7d3f8
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699044"
+ms.locfileid: "8750248"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>オプション パッケージと関連セットの作成
 オプション パッケージには、メイン パッケージに統合できるコンテンツが格納されます。 これらは、ダウンロード可能なコンテンツ (DLC) のサイズ制限、大規模なアプリを分割するのに便利ですか、元のアプリから分離して追加コンテンツを出荷します。
@@ -34,7 +34,7 @@ ms.locfileid: "8699044"
 
 ## <a name="optional-packages"></a>オプション パッケージ
 Visual Studio でオプション パッケージを作成するには、する必要があります。
-1. 確認にアプリの**ターゲット プラットフォームの最小バージョン**が設定されます: 10.0.15063.0 します。
+1. 確認にアプリの**ターゲット プラットフォームの最小バージョン**が設定されます: 10.0.15063.0 以上。
 2. **メイン パッケージ**プロジェクトを開き、`Package.appxmanifest`ファイル。 "Packaging"タブに移動し、「_」文字の前にすべてのものであることを**パッケージ ファミリ名**をメモします。
 3. **オプション パッケージ**プロジェクトを右クリックして、`Package.appxmanifest`選択**で開く > XML (テキスト) エディター**します。
 4. 検索、`<Dependencies>`ファイル内の要素です。 次に追加します。
@@ -62,6 +62,7 @@ Visual Studio は、オプション パッケージを展開するたびに、�
 2. ウィンドウで、".txt"のインストールされたテンプレートを検索し、新しいテキスト ファイルを追加します。
 > [!IMPORTANT]
 > 新しいテキスト ファイルの名前にする必要があります:`Bundle.Mapping.txt`します。
+
 3. `Bundle.Mapping.txt`ファイル、オプション パッケージ プロジェクトや外部パッケージへの相対パスを指定します。 サンプル`Bundle.Mapping.txt`ファイルは次のようになります。
 
 ```syntax
@@ -75,7 +76,7 @@ Visual Studio は、オプション パッケージを展開するたびに、�
 
 ソリューションにこのように構成されると、Visual Studio はすべての関連セットに必要なメタデータをメイン パッケージのバンドル マニフェストを作成します。 
 
-などのオプション パッケージ、注意、`Bundle.Mapping.txt`関連セットのファイルは Windows 10 バージョン 1703 でのみ動作します。 さらに、アプリのターゲット プラットフォームの最小バージョンは、10.0.15063.0 に設定する必要があります。
+などのオプション パッケージ、注意、`Bundle.Mapping.txt`関連セットのファイルは Windows 10 バージョン 1703 以降でのみ動作します。 さらに、アプリのターゲット プラットフォームの最小バージョンは、10.0.15063.0 以上に設定する必要があります。
 
 ## 既知の問題<a name="known_issues"></a>
 
