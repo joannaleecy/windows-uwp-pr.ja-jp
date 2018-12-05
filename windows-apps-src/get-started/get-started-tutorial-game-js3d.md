@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479499"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8699889"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>hree.js を使用して 3D JavaScript ゲームを作成する
 

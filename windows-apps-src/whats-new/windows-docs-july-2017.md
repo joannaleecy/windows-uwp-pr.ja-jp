@@ -6,11 +6,11 @@ ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dd00d1aba0e6a58cd2128c90b2c7f714d3f8f802
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460175"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701844"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 7 月
 

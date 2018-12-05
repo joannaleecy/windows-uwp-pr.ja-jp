@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f1030e6cddf5a0ded289545de752d926789314ed
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8477880"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8701325"
 ---
 # <a name="handle-pointer-input"></a>ポインター入力の処理
 

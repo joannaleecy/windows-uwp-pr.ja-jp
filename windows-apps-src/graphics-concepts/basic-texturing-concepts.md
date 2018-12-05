@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2124c9e620694f62414c865e6d3247cd25ce70d0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478869"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700196"
 ---
 # <a name="basic-texturing-concepts"></a>テクスチャリングの基本概念
 

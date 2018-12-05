@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8476590"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8704194"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>MediaCapture を使ってデバイスの向きを処理する
 アプリ外での表示を目的とする写真やビデオ (ユーザーのデバイスにファイルを保存する場合や、オンラインで共有する場合など) をアプリでキャプチャする際は、別のアプリやデバイスで画像を表示するときに正しい向きで表示されるよう、適切な向きのメタデータを使って画像をエンコーディングすることが重要です。 メディア ファイルにどの向きのデータを含めれば良いか特定するのは複雑な作業です。これは、デバイス シャーシの向き、ディスプレイの向き、シャーシ上のカメラの位置 (全面カメラか背面カメラか) など、考慮すべき変数が複数あるためです。 
