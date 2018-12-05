@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bc555030c2f5202e5c128c1d1a2fe45b5b71b4b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8465668"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8698147"
 ---
 # <a name="keep-the-ui-thread-responsive"></a><span data-ttu-id="bc5de-104">UI スレッドの応答性の確保</span><span class="sxs-lookup"><span data-stu-id="bc5de-104">Keep the UI thread responsive</span></span>
 

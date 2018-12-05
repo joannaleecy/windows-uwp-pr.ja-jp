@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8471189"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8703532"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a><span data-ttu-id="dad33-104">Web ページから UWP アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="dad33-104">Installing UWP apps from a web page</span></span>
 

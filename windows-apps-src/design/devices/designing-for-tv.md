@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8466467"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700371"
 ---
 # <a name="designing-for-xbox-and-tv"></a><span data-ttu-id="9e95c-103">Xbox およびテレビ向け設計</span><span class="sxs-lookup"><span data-stu-id="9e95c-103">Designing for Xbox and TV</span></span>
 

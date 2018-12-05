@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487064"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8702756"
 ---
 # <a name="add-and-delete-animations"></a><span data-ttu-id="a2153-103">追加と削除のアニメーション</span><span class="sxs-lookup"><span data-stu-id="a2153-103">Add and delete animations</span></span>
 
