@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f43244e39d825e75d6c6cd71fd9633ca158a7a16
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457400"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713658"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
 現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。

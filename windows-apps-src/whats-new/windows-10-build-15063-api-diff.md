@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 ms.localizationpriority: medium
 ms.openlocfilehash: fb258c23e38fb2aee5f6f5194371bb72940e51b5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467881"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690106"
 ---
 # <a name="new-apis-in-windows-10-build-15063"></a>Windows 10 ビルド 15063 の新しい API
 

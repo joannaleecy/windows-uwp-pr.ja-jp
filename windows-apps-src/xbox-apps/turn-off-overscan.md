@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac49d80f1d99a56eff565a0daa8f2f3e9289636
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8477324"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691673"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>画面の端に UI を描画する方法   
 既定では、テレビのセーフ エリアを考慮して、アプリケーションのビューポートの端には境界線が表示されます (詳しくは「[Xbox およびテレビ向け設計](../design/devices/designing-for-tv.md#tv-safe-area)」をご覧ください)。 
