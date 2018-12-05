@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、レンダリング、シャドウ マップ、深度バッファー、Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694137"
+ms.locfileid: "8729408"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a><span data-ttu-id="d101d-104">深度バッファーへのシャドウ マップのレンダリング</span><span class="sxs-lookup"><span data-stu-id="d101d-104">Render the shadow map to the depth buffer</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: abbcd688df01b779a1cb3ab9e30bd13709926be4
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696048"
+ms.locfileid: "8738731"
 ---
 # <a name="plan-your-directx-port"></a><span data-ttu-id="b5251-104">DirectX の移植の計画</span><span class="sxs-lookup"><span data-stu-id="b5251-104">Plan your DirectX port</span></span>
 

@@ -13,11 +13,11 @@ dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 960628156777e18781c82eeda9348823be3dbf4c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8703063"
+ms.locfileid: "8729736"
 ---
 # <a name="calendar-date-picker"></a><span data-ttu-id="546ab-103">カレンダーの日付の選択コントロール</span><span class="sxs-lookup"><span data-stu-id="546ab-103">Calendar date picker</span></span>
 

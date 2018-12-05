@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696106"
+ms.locfileid: "8731953"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a><span data-ttu-id="bb5f5-104">アプリの試用版の実装</span><span class="sxs-lookup"><span data-stu-id="bb5f5-104">Implement a trial version of your app</span></span>
 

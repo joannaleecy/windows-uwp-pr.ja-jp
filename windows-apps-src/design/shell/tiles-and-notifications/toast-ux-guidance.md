@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション、グループ、ux, ux ガイダンスについては、ガイダンス、アクション、トースト、アクション センター、noninterruptive、効果的な通知、侵入通知、アクション可能な管理、整理
 ms.localizationpriority: medium
 ms.openlocfilehash: 17861760ea5640eca01d3e69c1ed36a023c8f9d3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8701493"
+ms.locfileid: "8729710"
 ---
 # <a name="toast-notification-ux-guidance"></a><span data-ttu-id="68883-103">トースト通知の UX ガイダンス</span><span class="sxs-lookup"><span data-stu-id="68883-103">Toast Notification UX Guidance</span></span>
 <span data-ttu-id="68883-104">通知は、現代の生活に必要な部分ユーザーの生産性とアプリと web サイト、任意の更新プログラムが現在のままに猶予期間に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="68883-104">Notifications are a necessary part of modern life; they help users be more productive and engaged with apps and websites, as well as stay current with any updates.</span></span> <span data-ttu-id="68883-105">ただし、通知は overbearing に便利で、ユーザーを中心とした方法でない設計されている場合、侵入からすぐにできます。</span><span class="sxs-lookup"><span data-stu-id="68883-105">However, notifications can quickly turn from useful to overbearing and intrusive if they are not designed in a user-centric way.</span></span> <span data-ttu-id="68883-106">通知は 1 つを右クリックしてから、無効にされている可能性はほとんどありませんオフにすると、それらが再びオンになります。</span><span class="sxs-lookup"><span data-stu-id="68883-106">Your notifications are one right-click away from being turned off, and it's unlikely once they are turned off, they will be turned on again.</span></span>  <span data-ttu-id="68883-107">開いているこのエンゲージメント チャネルを維持することができますが、通知、ユーザーの画面領域と時刻を尊重を確認しておきます。</span><span class="sxs-lookup"><span data-stu-id="68883-107">So make sure your notifications are respectful of the user's screen space and time, so you can keep this engagement channel open.</span></span>

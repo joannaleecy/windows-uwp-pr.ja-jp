@@ -3,11 +3,11 @@ title: Unity - UWP プロジェクトのバージョン管理
 description: UWP プロジェクトをバージョン管理します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8691052"
+ms.locfileid: "8732398"
 ---
 # <a name="unity-version-control-your-uwp-project"></a><span data-ttu-id="7fa94-103">Unity: UWP プロジェクトのバージョン管理</span><span class="sxs-lookup"><span data-stu-id="7fa94-103">Unity: Version control your UWP project</span></span>
 
