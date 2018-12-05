@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, コーデック, エンコーダー, デコーダー, クエリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8460424"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8687089"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>デバイスにインストールされているコーデックの照会
 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** クラスによって、現在のデバイスにインストールされているコーデックを照会できます。 Windows 10 に含まれているさまざまなデバイス ファミリのコーデックの一覧については、「[サポートされるコーデック](supported-codecs.md)」の記事に示されています。ただし、ユーザーやアプリはデバイスに追加のコーデックをインストールできるため、現在のデバイスでどのようなコーデックが利用可能かを特定するために、実行時にコーデックのサポートを照会することができます。

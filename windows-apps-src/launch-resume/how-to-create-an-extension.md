@@ -6,11 +6,11 @@ ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 99ba3ee5f62ed9455e95d9e760abdba6009e5027
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473792"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8692324"
 ---
 # <a name="create-and-host-an-app-extension"></a>アプリ拡張機能の作成とホスト
 

@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aec7ed4f97a0ce4733cfba450770de86a84d6ee
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469850"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688282"
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 
@@ -41,9 +41,9 @@ ms.locfileid: "8469850"
 
 Microsoft Store 申請 API を呼び出すコードの作成を開始する前に、次の前提条件が満たされていることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
-* [Azure AD アプリケーションをパートナー センター アカウントに関連付ける](#associate-an-azure-ad-application-with-your-windows-dev-center-account)必要があり、ID、クライアント ID、キー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
+* [Azure AD アプリケーションをパートナー センター アカウントに関連付ける](#associate-an-azure-ad-application-with-your-windows-partner-center-account)必要があり、ID、クライアント ID、キー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
 
 * Microsoft Store 申請 API で使うアプリを準備します。
 
@@ -57,7 +57,7 @@ Microsoft Store 申請 API を呼び出すコードの作成を開始する前�
 
   * アドオンの申請を作成または更新するときにアイコンを含める必要がある場合は、[アイコンを準備](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)します。
 
-<span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
+<span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Azure AD アプリケーションをパートナー センター アカウントに関連付ける方法
 
@@ -66,7 +66,7 @@ Microsoft Store 申請 API を使用する前に、Azure AD アプリケーシ�
 > [!NOTE]
 > この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-dev-center.md)。
+1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-partner-center.md)。
 
 2.  次に、パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センターのアカウントの申請へのアクセスを使用する**アカウント設定**] セクションで、**ユーザー**ページから。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。  
 

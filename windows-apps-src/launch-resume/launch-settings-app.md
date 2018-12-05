@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9510b65bd635b5b10e0cbea551c12b29ef8f37
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478622"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8684780"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -300,7 +300,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 開発者向け | ms-settings:developers |
 | 回復 | ms-settings:recovery |
 | トラブルシューティング | ms-settings:troubleshoot |
-| Windows のセキュリティ | ms-settings:windowsdefender |
+| Windows セキュリティ | ms-settings:windowsdefender |
 | Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - 詳細オプション | ms-settings:windowsupdate-options |

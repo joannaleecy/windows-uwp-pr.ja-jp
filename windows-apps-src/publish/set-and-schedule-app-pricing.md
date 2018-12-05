@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 価格設定, アプリの価格設定, アプリの価格, アプリの販売, 価格変更, カスタム価格, 価格, 料金, コスト, 基本価格の上書き, 自由設定価格, 自由設定
 ms.localizationpriority: medium
-ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462222"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696778"
 ---
 # <a name="set-and-schedule-app-pricing"></a>アプリの価格の設定とスケジュール
 
@@ -32,7 +32,7 @@ ms.locfileid: "8462222"
 
 すべての通貨での対応する価格を確認するには、**[価格設定]** セクションで **[変換テーブルを表示]** をクリックします。 これにより、各価格帯に関連付けられている ID 番号も表示されます。この ID は、[Microsoft Store 申請 API](../monetize/manage-app-submissions.md#price-tiers) を使って価格を入力する場合に必要になります。 **[ダウンロード]** をクリックすると、価格帯の表のコピーを .csv ファイルとしてダウンロードできます。
 
-選んだ価格帯には、ユーザーが支払う必要のある売上税や付加価値税が含まれている場合があることに注意してください。 選択した市場でのアプリの税について詳しくは、「[有料アプリの税金の詳細](tax-details-for-paid-apps.md)」をご覧ください。 また、[特定の市場の価格に関する考慮事項](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)も確認する必要があります。
+選んだ価格帯には、ユーザーが支払う必要のある売上税や付加価値税が含まれている場合があることに注意してください。 選択した市場でのアプリの税について詳しくは、「[有料アプリの税金の詳細](tax-details-for-paid-apps.md)」をご覧ください。 また、[特定の市場の価格に関する考慮事項](define-market-selection.md#price-considerations-for-specific-markets)も確認する必要があります。
 
 > [!NOTE]
 > かどうかオプションを選択する **[購入の停止** **[この製品をストアでできないは**[[表示]](choose-visibility-options.md#discoverability)セクションで)、(アプリを入手することはないため、申請の価格を設定することはできませんこれらを使用しない限りプロモーション コード アプリを無料で入手する)。

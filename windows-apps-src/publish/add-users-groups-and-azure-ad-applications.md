@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、azure ad アプリケーション, aad, ユーザー、グループ、複数のユーザー、マルチ ユーザー
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd300aa6a37c205e01c6f73d95ef1818d516fc0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461401"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685806"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>ユーザー、グループ、および Azure AD アプリケーションをパートナー センター アカウントを追加します。
 
@@ -19,11 +19,11 @@ ms.locfileid: "8461401"
 ユーザーをアカウントに追加したら、[アカウントの詳細の編集](#edit)、[ロールやアクセス許可](set-custom-permissions-for-account-users.md)の変更、[ユーザーの削除](#remove)を行うことができます。
 
 > [!IMPORTANT]
-> ユーザーに自分のアカウントを追加するために最初に[、組織の Azure Active Directory テナントとパートナー センター アカウントに関連付ける](associate-azure-ad-with-dev-center.md)必要があります。 
+> ユーザーに自分のアカウントを追加するために最初に[、組織の Azure Active Directory テナントとパートナー センター アカウントに関連付ける](associate-azure-ad-with-partner-center.md)必要があります。 
 
 ユーザーを追加するときは、[役割またはカスタムのアクセス許可のセット](set-custom-permissions-for-account-users.md)を割り当てることにより、パートナー センター アカウントへのアクセスを指定する必要があります。 
 
-すべてのパートナー センター ユーザー (グループと Azure AD アプリケーションを含む) が[、パートナー センター アカウントに関連付けられている Azure AD テナント](associate-azure-ad-with-dev-center.md)でアクティブなアカウントが必要に留意してください。 ユーザーの管理は、1 テナントずつ行います。ユーザーを追加または編集するテナントの管理者アカウントでサインインする必要があります。 パートナー センターで新しいユーザーを作成するは、そのユーザーのアカウントは Azure AD テナントにサインインしているし、組織の Azure AD テナントで同じ変更を行うはパートナー センターでユーザーの名前に変更を加える作成もします。
+すべてのパートナー センター ユーザー (グループと Azure AD アプリケーションを含む) が[、パートナー センター アカウントに関連付けられている Azure AD テナント](associate-azure-ad-with-partner-center.md)でアクティブなアカウントが必要に留意してください。 ユーザーの管理は、1 テナントずつ行います。ユーザーを追加または編集するテナントの管理者アカウントでサインインする必要があります。 パートナー センターで新しいユーザーを作成するは、そのユーザーのアカウントは Azure AD テナントにサインインしているし、組織の Azure AD テナントで同じ変更を行うはパートナー センターでユーザーの名前に変更を加える作成もします。
 
 > [!NOTE]
 > 組織では、オンプレミスのディレクトリ サービスを Azure AD と同期する[ディレクトリの統合](http://go.microsoft.com/fwlink/p/?LinkID=724033)を使用している場合は、パートナー センターで新しいユーザー、グループ、または Azure AD アプリケーションを作成できません。 ユーザー (または、オンプレミスのディレクトリ内の別の管理者) が参照し、パートナー センターでそれらを追加することができます前に、オンプレミスのディレクトリで直接作成する必要があります。
@@ -92,7 +92,7 @@ Azure AD テナントの[グローバル管理者](https://docs.microsoft.com/az
 招待を再送信する必要がある場合は、**[ユーザー]** ページでユーザーを見つけ、メール アドレス (または **[承認待ちの招待]** というテキスト) を選択します。 次に、ページの下部の **[招待状の再送信]** をクリックします。
 
 > [!IMPORTANT]
-> 外部ユーザーへの参加を招待するにパートナー センターのアカウント割り当てることができ、同じ役割とアクセス許可の他のユーザーとして。 ただし、外部ユーザーは、アプリを Microsoft Store に関連付けたり、パッケージを作成して Microsoft Store にアップロードするなどの特定のタスクを Visual Studio で実行できなくなります。 ユーザーがこれらのタスクを実行する必要がある場合、**[外部ユーザーの招待]** ではなく **[新しいユーザーの作成]** を選択します。 (これらのユーザーを既存の Azure AD テナントに追加しない場合、[新しいテナントを作成](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)した後、そのテナントにそれらのユーザーの新しいユーザー アカウントを作成することができます)。 
+> 外部ユーザーへの参加を招待するにパートナー センターのアカウント割り当てることができ、同じ役割とアクセス許可の他のユーザーとして。 ただし、外部ユーザーは、アプリを Microsoft Store に関連付けたり、パッケージを作成して Microsoft Store にアップロードするなどの特定のタスクを Visual Studio で実行できなくなります。 ユーザーがこれらのタスクを実行する必要がある場合、**[外部ユーザーの招待]** ではなく **[新しいユーザーの作成]** を選択します。 (これらのユーザーを既存の Azure AD テナントに追加しない場合、[新しいテナントを作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)した後、そのテナントにそれらのユーザーの新しいユーザー アカウントを作成することができます)。 
 
 
 ### <a name="changing-a-users-directory-password"></a>ユーザーのディレクトリ パスワードを変更する

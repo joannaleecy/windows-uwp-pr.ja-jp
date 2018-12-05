@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, JavaScript, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325166"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8686747"
 ---
 # <a name="handle-ad-errors"></a>広告のエラー処理
 
