@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709913"
+ms.locfileid: "8739226"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>Windows 10 用の包括性を備えたソフトウェアの設計  
 

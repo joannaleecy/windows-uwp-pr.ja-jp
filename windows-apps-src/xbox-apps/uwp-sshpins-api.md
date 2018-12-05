@@ -3,11 +3,11 @@ title: Device Portal の SSH ピン API のリファレンス
 description: 信頼されているすべての SSH ピンをプログラムで削除する方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705236"
+ms.locfileid: "8741210"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH ピン API リファレンス
 この REST API を使用して、開発キットで信頼されているすべての SSH ピンを削除することができます。
