@@ -6,12 +6,12 @@ ms.date: 11/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, 税金, アプリの税, 税の要件, コマース拡張, 税率
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bf36e8e5e07c73e8c59088be167e9dfb584c60
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2065fb2a1cfeb2a895757e1aedc86cd421ff826c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8480034"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709870"
 ---
 # <a name="tax-details-for-paid-apps"></a>有料アプリの税の詳細
 
@@ -19,7 +19,7 @@ ms.locfileid: "8480034"
 選択された価格の税金に関する考慮事項、支払内容、および税金の負担について理解するには、下の表で配布対象の国/地域を参照してください。
 
 > [!NOTE]
-> Commerce Expansion Adjustment (商取引拡大調整) は、一部の国/地域で支払に影響することがあります。 Commerce Expansion Adjustment とそれが適用される市場の詳細については、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)および[影響を受ける国/地域](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)のリストを参照してください。
+> Commerce Expansion Adjustment (商取引拡大調整) は、一部の国/地域で支払に影響することがあります。 Commerce Expansion Adjustment とそれが適用される市場の詳細については、[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)および[影響を受ける国/地域](define-market-selection.md#price-considerations-for-specific-markets)のリストを参照してください。
 
 > [!IMPORTANT]
 > 税率は、いつでも変更される可能性があります。 Microsoft は、下記の表に記載された税率が常に正確であることを保証できません。
