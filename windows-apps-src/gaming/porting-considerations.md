@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a9273c33dd45904e2050af02fd52ddeaedb7e5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461278"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8708728"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a><span data-ttu-id="3073c-104">DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行</span><span class="sxs-lookup"><span data-stu-id="3073c-104">Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)</span></span>
 

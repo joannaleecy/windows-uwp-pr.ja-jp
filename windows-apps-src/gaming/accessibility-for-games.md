@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アクセシビリティ、ゲーム
 ms.localizationpriority: medium
 ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337998"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709397"
 ---
 #  <a name="making-games-accessible"></a><span data-ttu-id="b6574-105">ゲームをアクセシビリティ対応にする</span><span class="sxs-lookup"><span data-stu-id="b6574-105">Making games accessible</span></span>
 

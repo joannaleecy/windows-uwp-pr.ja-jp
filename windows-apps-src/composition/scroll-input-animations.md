@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8478918"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8707940"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a><span data-ttu-id="9fd8b-104">既存の ScrollViewer エクスペリエンスを強化する</span><span class="sxs-lookup"><span data-stu-id="9fd8b-104">Enhance existing ScrollViewer experiences</span></span>
 

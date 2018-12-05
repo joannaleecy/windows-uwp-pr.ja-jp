@@ -13,11 +13,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: b68b3480ac81a445551a070eaf0a1454ff22a9e7
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8483967"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8706658"
 ---
 # <a name="auto-suggest-box"></a><span data-ttu-id="ed488-103">自動提案ボックス</span><span class="sxs-lookup"><span data-stu-id="ed488-103">Auto-suggest box</span></span>
 

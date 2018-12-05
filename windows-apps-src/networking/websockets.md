@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, ネットワーク, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
 ms.openlocfilehash: 74bf686346951337f785f0eac6570aca35df6060
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8475242"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712070"
 ---
 # <a name="websockets"></a><span data-ttu-id="c1151-104">WebSocket</span><span class="sxs-lookup"><span data-stu-id="c1151-104">WebSockets</span></span>
 <span data-ttu-id="c1151-105">WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供し、UTF-8 メッセージとバイナリ メッセージの両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="c1151-105">WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.</span></span>

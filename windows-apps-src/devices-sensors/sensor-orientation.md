@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c7f1ad75e1e0544486049f9bd721d8a82edf03
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473414"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713244"
 ---
 # <a name="sensor-orientation"></a><span data-ttu-id="be185-105">センサーの向き</span><span class="sxs-lookup"><span data-stu-id="be185-105">Sensor orientation</span></span>
 

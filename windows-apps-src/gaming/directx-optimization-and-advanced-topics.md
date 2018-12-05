@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 最適化, マルチサンプリング, スワップ チェーン
 ms.localizationpriority: medium
 ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463624"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709639"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a><span data-ttu-id="ebf42-104">DirectX ゲームの最適化と高度なトピック</span><span class="sxs-lookup"><span data-stu-id="ebf42-104">Optimization and advanced topics for DirectX games</span></span>
 

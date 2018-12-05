@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 広告, 広告, 広告仲介
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8475581"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8709857"
 ---
 # <a name="microsoft-ad-mediation-service"></a><span data-ttu-id="063e9-104">マイクロソフトの広告仲介サービス</span><span class="sxs-lookup"><span data-stu-id="063e9-104">Microsoft ad mediation service</span></span>
 
