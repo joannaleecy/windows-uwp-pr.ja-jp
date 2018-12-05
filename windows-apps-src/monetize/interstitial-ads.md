@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, 広告コントロール, スポット
 ms.localizationpriority: medium
 ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8470382"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8713992"
 ---
 # <a name="interstitial-ads"></a><span data-ttu-id="f15d6-104">スポット広告</span><span class="sxs-lookup"><span data-stu-id="f15d6-104">Interstitial ads</span></span>
 

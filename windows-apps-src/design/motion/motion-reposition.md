@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2a96169f44802c62f341029b9bc1c5eb7e31de
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "8351854"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8692235"
 ---
 # <a name="reposition-animations"></a><span data-ttu-id="d9ffd-103">位置変更アニメーション</span><span class="sxs-lookup"><span data-stu-id="d9ffd-103">Reposition animations</span></span>
 

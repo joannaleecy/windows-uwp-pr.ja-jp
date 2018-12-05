@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 35a591d805870df97ee03169b20e664316e094a7
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467300"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8684946"
 ---
 # <a name="address-space-available-for-streaming-resources"></a><span data-ttu-id="45bb0-104">ストリーミング リソースに利用可能なアドレス空間</span><span class="sxs-lookup"><span data-stu-id="45bb0-104">Address space available for streaming resources</span></span>
 

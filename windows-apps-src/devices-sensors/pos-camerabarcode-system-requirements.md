@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: aea2a339c450f50ca3ae6f6250d056b4a1e70aa1
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479982"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685308"
 ---
 # <a name="camera-barcode-scanner-system-requirements"></a><span data-ttu-id="3206c-104">カメラ バーコード スキャナーのシステム要件</span><span class="sxs-lookup"><span data-stu-id="3206c-104">Camera barcode scanner system requirements</span></span>
 <span data-ttu-id="3206c-105">Windows 10 バージョン 1803 以降では、ユニバーサル Windows アプリケーションから標準のカメラ レンズでバーコードを読み取ることができます。</span><span class="sxs-lookup"><span data-stu-id="3206c-105">Starting with Windows 10, version 1803, you can read barcodes through a standard camera lens from a Universal Windows Application.</span></span>

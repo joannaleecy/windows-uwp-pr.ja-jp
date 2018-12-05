@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb37b1567349ef0684d1001da3f65b0a2b2694c
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8351700"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693282"
 ---
 # <a name="achievement-title-history-uris"></a><span data-ttu-id="05a78-104">実績タイトル履歴 URI</span><span class="sxs-lookup"><span data-stu-id="05a78-104">Achievement Title History URIs</span></span>
  

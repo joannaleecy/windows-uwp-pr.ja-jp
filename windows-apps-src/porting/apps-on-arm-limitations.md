@@ -7,11 +7,11 @@ keywords: windows 10 s, 常時接続, 制限事項, ARM 版 windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
 ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464036"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8684497"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a><span data-ttu-id="35117-104">ARM でのアプリとエクスペリエンスの制限事項</span><span class="sxs-lookup"><span data-stu-id="35117-104">Limitations of apps and experiences on ARM</span></span>
 <span data-ttu-id="35117-105">ARM 版 Windows 10 には、次の必須の制限事項があります。</span><span class="sxs-lookup"><span data-stu-id="35117-105">Windows 10 on ARM has the following necessary limitations:</span></span>

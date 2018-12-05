@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング、関連セット, オプション パッケージ、IIS サーバー
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469372"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8704621"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a><span data-ttu-id="2756b-104">IIS サーバーから UWP アプリをインストールする</span><span class="sxs-lookup"><span data-stu-id="2756b-104">Install a UWP app from an IIS server</span></span>
 

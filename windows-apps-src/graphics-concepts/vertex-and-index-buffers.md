@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d2ea6ce4060957ade5dd1007389be51176440f04
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8473742"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8704869"
 ---
 # <a name="vertex-and-index-buffers"></a><span data-ttu-id="6d67f-104">頂点バッファーとインデックス バッファー</span><span class="sxs-lookup"><span data-stu-id="6d67f-104">Vertex and index buffers</span></span>
 

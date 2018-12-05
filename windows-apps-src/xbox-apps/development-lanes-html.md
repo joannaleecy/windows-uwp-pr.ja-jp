@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 60642016e5924c554534775a6576b61e935eaf1e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479818"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8714012"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a><span data-ttu-id="3ef18-104">HTML ゲームの Xbox での UWP への移行</span><span class="sxs-lookup"><span data-stu-id="3ef18-104">Bringing HTML games to UWP on Xbox</span></span>
 <span data-ttu-id="3ef18-105">Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="3ef18-105">Xbox One is an excellent platform for HTML 5 games.</span></span> <span data-ttu-id="3ef18-106">HTML 5 ゲームは、[Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) ブラウザー エンジンで実行されます。</span><span class="sxs-lookup"><span data-stu-id="3ef18-106">HTML 5 games run on the [Edge](https://developer.microsoft.com/microsoft-edge/) browser engine.</span></span> <span data-ttu-id="3ef18-107">Microsoft Edge は高速で、WebGL やキャンバスなど、HTML 5 と CSS 3 の機能を完全にサポートしています。</span><span class="sxs-lookup"><span data-stu-id="3ef18-107">Edge is fast and fully supports HTML 5 and CSS 3 features such as WebGL and canvas.</span></span>

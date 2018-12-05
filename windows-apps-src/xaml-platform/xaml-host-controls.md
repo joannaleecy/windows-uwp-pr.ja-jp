@@ -7,11 +7,11 @@ keywords: windows 10, uwp, windows, フォーム, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd22aa761d4a9a79c95c7bc424ab1d2a31ca6cdf
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8482239"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8714032"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a><span data-ttu-id="ede9a-104">デスクトップ アプリケーションの UWP コントロール</span><span class="sxs-lookup"><span data-stu-id="ede9a-104">UWP controls in desktop applications</span></span>
 

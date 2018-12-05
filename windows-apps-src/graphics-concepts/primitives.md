@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c2bf3aa2f421efa7061f3003e6cab8c9f7b8c58
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8471860"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8686803"
 ---
 # <a name="primitives"></a><span data-ttu-id="833d9-104">プリミティブ</span><span class="sxs-lookup"><span data-stu-id="833d9-104">Primitives</span></span>
 
