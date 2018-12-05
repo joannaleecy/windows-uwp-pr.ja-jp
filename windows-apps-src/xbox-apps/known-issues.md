@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 55068ef3f0a0a0d01c61746bde02ddb7aa4ef885
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8465285"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8738101"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a><span data-ttu-id="c156a-104">Xbox 開発者プログラムの UWP の既知の問題</span><span class="sxs-lookup"><span data-stu-id="c156a-104">Known issues with UWP on Xbox Developer Program</span></span>
 

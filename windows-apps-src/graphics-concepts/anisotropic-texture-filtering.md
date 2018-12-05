@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: efac0a9454f750d4b9040577b613496d29a30bc3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685432"
+ms.locfileid: "8739381"
 ---
 # <a name="anisotropic-texture-filtering"></a><span data-ttu-id="93618-105">異方性テクスチャ フィルタ リング</span><span class="sxs-lookup"><span data-stu-id="93618-105">Anisotropic texture filtering</span></span>
 

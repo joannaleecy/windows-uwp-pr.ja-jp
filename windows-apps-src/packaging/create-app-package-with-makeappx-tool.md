@@ -8,11 +8,11 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696974"
+ms.locfileid: "8739997"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a><span data-ttu-id="5042c-104">MakeAppx.exe ツールを使ったアプリ パッケージの作成</span><span class="sxs-lookup"><span data-stu-id="5042c-104">Create an app package with the MakeAppx.exe tool</span></span>
 

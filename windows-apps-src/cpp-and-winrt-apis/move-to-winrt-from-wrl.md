@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: ddef0cec572da5ca6b4c6de1bb40a26b505674c7
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461068"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8743745"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a><span data-ttu-id="45f90-104">WRL から C++/WinRT への移行</span><span class="sxs-lookup"><span data-stu-id="45f90-104">Move to C++/WinRT from WRL</span></span>
 <span data-ttu-id="45f90-105">このトピックでは、それに対応する[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)コードを移植する方法を示しています[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。</span><span class="sxs-lookup"><span data-stu-id="45f90-105">This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).</span></span>

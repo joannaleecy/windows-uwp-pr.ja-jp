@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, Direct3D 11, 初期化, 移植, Direct3D 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696331"
+ms.locfileid: "8738363"
 ---
 # <a name="initialize-direct3d-11"></a><span data-ttu-id="b7a43-104">Direct3D 11 の初期化</span><span class="sxs-lookup"><span data-stu-id="b7a43-104">Initialize Direct3D 11</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690852"
+ms.locfileid: "8739914"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a><span data-ttu-id="2370a-104">Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版</span><span class="sxs-lookup"><span data-stu-id="2370a-104">In-app purchases and trials using the Windows.ApplicationModel.Store namespace</span></span>
 

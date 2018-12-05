@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10、Windows 10, UWP, アプリ インストーラー, AppInstaller, サイドローディングでは、関連セット, オプション パッケージ、AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8693665"
+ms.locfileid: "8733100"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a><span data-ttu-id="659d6-104">Web インストール用に AWS で UWP アプリ パッケージをホストする</span><span class="sxs-lookup"><span data-stu-id="659d6-104">Hosting UWP app packages on AWS for web install</span></span>
 

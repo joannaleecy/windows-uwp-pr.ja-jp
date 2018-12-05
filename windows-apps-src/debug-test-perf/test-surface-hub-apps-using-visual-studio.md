@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8694806"
+ms.locfileid: "8738820"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a><span data-ttu-id="89a91-104">Visual Studio を使った Surface Hub アプリのテスト</span><span class="sxs-lookup"><span data-stu-id="89a91-104">Test Surface Hub apps using Visual Studio</span></span>
 <span data-ttu-id="89a91-105">Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。</span><span class="sxs-lookup"><span data-stu-id="89a91-105">The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub.</span></span> <span data-ttu-id="89a91-106">シミュレーターは、Surface Hub と同じユーザー インターフェイスを使用できませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。</span><span class="sxs-lookup"><span data-stu-id="89a91-106">The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves with the Surface Hub's screen size and resolution.</span></span>

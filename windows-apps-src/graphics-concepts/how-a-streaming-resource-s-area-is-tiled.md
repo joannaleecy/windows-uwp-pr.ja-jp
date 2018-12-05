@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713545"
+ms.locfileid: "8739834"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a><span data-ttu-id="f15eb-106">ストリーミング リソースの領域をタイル表示する方法</span><span class="sxs-lookup"><span data-stu-id="f15eb-106">How a streaming resource's area is tiled</span></span>
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ローカライズの可否, ローカライズ, RTL, LTR
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8711646"
+ms.locfileid: "8733179"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a><span data-ttu-id="35867-103">レイアウトやフォントの調整と RTL のサポート</span><span class="sxs-lookup"><span data-stu-id="35867-103">Adjust layout and fonts, and support RTL</span></span>
 <span data-ttu-id="35867-104">RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを設計します。</span><span class="sxs-lookup"><span data-stu-id="35867-104">Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.</span></span> <span data-ttu-id="35867-105">テキストの方向はスクリプトに書き込みが行われて表示される方向であり、ページの UI 要素は目で走査されます。</span><span class="sxs-lookup"><span data-stu-id="35867-105">Flow direction is the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye.</span></span>

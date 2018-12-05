@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710552"
+ms.locfileid: "8740193"
 ---
 # <a name="in-app-ads"></a><span data-ttu-id="d9113-103">アプリ内広告</span><span class="sxs-lookup"><span data-stu-id="d9113-103">In-app ads</span></span>
 

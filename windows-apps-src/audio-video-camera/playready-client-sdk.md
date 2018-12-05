@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704118"
+ms.locfileid: "8736602"
 ---
 # <a name="playready-drm"></a><span data-ttu-id="d130d-104">PlayReady DRM</span><span class="sxs-lookup"><span data-stu-id="d130d-104">PlayReady DRM</span></span>
 

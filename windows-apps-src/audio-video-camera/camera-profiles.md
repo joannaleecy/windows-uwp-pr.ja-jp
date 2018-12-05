@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8348975"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8758742"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a><span data-ttu-id="b9c5c-105">カメラ プロファイルを使用したカメラ機能の検出と選択</span><span class="sxs-lookup"><span data-stu-id="b9c5c-105">Discover and select camera capabilities with camera profiles</span></span>
 

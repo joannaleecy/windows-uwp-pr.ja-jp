@@ -10,11 +10,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ce639faac66e93b65a398e6d9cdc700546fc68ab
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8706370"
+ms.locfileid: "8750564"
 ---
 # <a name="connected-animation-for-uwp-apps"></a><span data-ttu-id="01100-104">UWP アプリ用の接続型アニメーション</span><span class="sxs-lookup"><span data-stu-id="01100-104">Connected animation for UWP apps</span></span>
 
