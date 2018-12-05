@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8470766"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712308"
 ---
 # <a name="screen-capture"></a><span data-ttu-id="7a3ba-104">画面キャプチャ</span><span class="sxs-lookup"><span data-stu-id="7a3ba-104">Screen capture</span></span>
 
