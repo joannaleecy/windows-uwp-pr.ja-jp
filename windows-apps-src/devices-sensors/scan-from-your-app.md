@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c01c21ae65f9e93638e2ce1df604591043a729
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8468141"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8744425"
 ---
 # <a name="scan-from-your-app"></a><span data-ttu-id="cb19d-104">アプリからスキャンする</span><span class="sxs-lookup"><span data-stu-id="cb19d-104">Scan from your app</span></span>
 

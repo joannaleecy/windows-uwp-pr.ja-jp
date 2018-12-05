@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: b49ba463e39d09b915ce3925f94ae7d9f11a9a47
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8697810"
+ms.locfileid: "8735199"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a><span data-ttu-id="3b1a6-104">カメラ バーコード スキャナーの概要</span><span class="sxs-lookup"><span data-stu-id="3b1a6-104">Getting started with a camera barcode scanner</span></span>
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a><span data-ttu-id="3b1a6-105">手順 1: アプリ マニフェストに機能宣言を追加する</span><span class="sxs-lookup"><span data-stu-id="3b1a6-105">Step 1: Add capability declarations to your app manifest</span></span>

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 145912f08075678c98dfb34ac491e123577c69e3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8701467"
+ms.locfileid: "8733974"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a><span data-ttu-id="189d5-104">キー フレーム アニメーションとイージング関数のアニメーション</span><span class="sxs-lookup"><span data-stu-id="189d5-104">Key-frame animations and easing function animations</span></span>
 
