@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 12772d81742815b8d739f61aee9461e64f970ef2
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469820"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689147"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a><span data-ttu-id="1e73e-104">バックグラウンド タスクの進捗状況と完了の監視</span><span class="sxs-lookup"><span data-stu-id="1e73e-104">Monitor background task progress and completion</span></span>
 

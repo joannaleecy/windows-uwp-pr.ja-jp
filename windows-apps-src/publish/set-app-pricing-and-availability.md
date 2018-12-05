@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 価格, 使用可能状況, 見つけやすさ, 無料試用版, 試用版, トライアル, アプリ, リリース日
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8350254"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690971"
 ---
 # <a name="set-app-pricing-and-availability"></a><span data-ttu-id="01c2a-103">アプリの価格と使用可能状況の設定</span><span class="sxs-lookup"><span data-stu-id="01c2a-103">Set app pricing and availability</span></span>
 

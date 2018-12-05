@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8475297"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689325"
 ---
 # <a name="enter-add-on-properties"></a><span data-ttu-id="8c6e5-103">アドオン プロパティの入力</span><span class="sxs-lookup"><span data-stu-id="8c6e5-103">Enter add-on properties</span></span>
 

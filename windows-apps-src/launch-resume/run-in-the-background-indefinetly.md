@@ -7,11 +7,11 @@ ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8485218"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8705035"
 ---
 # <a name="run-in-the-background-indefinitely"></a><span data-ttu-id="bbb20-104">バックグラウンドで無期限に実行する</span><span class="sxs-lookup"><span data-stu-id="bbb20-104">Run in the background indefinitely</span></span>
 

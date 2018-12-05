@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8481709"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689743"
 ---
 # <a name="guidelines-for-panning"></a><span data-ttu-id="571e6-103">パンのガイドライン</span><span class="sxs-lookup"><span data-stu-id="571e6-103">Guidelines for panning</span></span>
 

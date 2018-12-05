@@ -9,11 +9,11 @@ ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
 ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8470670"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690616"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP アプリの操作性
 

@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8474120"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689968"
 ---
 # <a name="version-adaptive-code"></a><span data-ttu-id="02ce6-104">バージョン アダプティブ コード</span><span class="sxs-lookup"><span data-stu-id="02ce6-104">Version adaptive code</span></span>
 

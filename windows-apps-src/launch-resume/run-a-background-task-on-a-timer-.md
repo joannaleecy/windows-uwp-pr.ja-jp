@@ -7,11 +7,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b64ca35e47044cbc2320ca77c1d1ba2e3d66fcb
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8340116"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691263"
 ---
 # <a name="run-a-background-task-on-a-timer"></a><span data-ttu-id="f509d-104">タイマーでのバックグラウンド タスクの実行</span><span class="sxs-lookup"><span data-stu-id="f509d-104">Run a background task on a timer</span></span>
 

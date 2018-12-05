@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462821"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8690381"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a><span data-ttu-id="a7f02-105">"Hello world"アプリで作成する、C++/cli CX</span><span class="sxs-lookup"><span data-stu-id="a7f02-105">Create a "Hello world" app in C++/CX</span></span>
 

@@ -7,11 +7,11 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8487164"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8704419"
 ---
 # <a name="send-email"></a><span data-ttu-id="e925d-106">メールの送信</span><span class="sxs-lookup"><span data-stu-id="e925d-106">Send email</span></span>
 

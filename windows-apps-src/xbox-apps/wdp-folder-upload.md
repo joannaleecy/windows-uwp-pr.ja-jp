@@ -7,52 +7,52 @@ keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8330466"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691318"
 ---
-# <a name="upload-a-folder-to-the-development-directory"></a><span data-ttu-id="5762c-104">開発ディレクトリにフォルダーをアップロードする</span><span class="sxs-lookup"><span data-stu-id="5762c-104">Upload a folder to the development directory</span></span>
+# <a name="upload-a-folder-to-the-development-directory"></a><span data-ttu-id="67bf9-104">開発ディレクトリにフォルダーをアップロードする</span><span class="sxs-lookup"><span data-stu-id="67bf9-104">Upload a folder to the development directory</span></span>
 
-**<span data-ttu-id="5762c-105">要求</span><span class="sxs-lookup"><span data-stu-id="5762c-105">Request</span></span>**
+**<span data-ttu-id="67bf9-105">要求</span><span class="sxs-lookup"><span data-stu-id="67bf9-105">Request</span></span>**
 
-<span data-ttu-id="5762c-106">フォルダー全体を DevelopmentFiles の既知のフォルダー ID (またはそのフォルダーのサブフォルダー) に一度にアップロードできます。</span><span class="sxs-lookup"><span data-stu-id="5762c-106">You can upload an entire folder at once to the Known Folder Id for the DevelopmentFiles (or to a subfolder within that folder).</span></span>
+<span data-ttu-id="67bf9-106">フォルダー全体を DevelopmentFiles の既知のフォルダー ID (またはそのフォルダーのサブフォルダー) に一度にアップロードできます。</span><span class="sxs-lookup"><span data-stu-id="67bf9-106">You can upload an entire folder at once to the Known Folder Id for the DevelopmentFiles (or to a subfolder within that folder).</span></span>
 
-<span data-ttu-id="5762c-107">メソッド</span><span class="sxs-lookup"><span data-stu-id="5762c-107">Method</span></span>      | <span data-ttu-id="5762c-108">要求 URI</span><span class="sxs-lookup"><span data-stu-id="5762c-108">Request URI</span></span>
+<span data-ttu-id="67bf9-107">メソッド</span><span class="sxs-lookup"><span data-stu-id="67bf9-107">Method</span></span>      | <span data-ttu-id="67bf9-108">要求 URI</span><span class="sxs-lookup"><span data-stu-id="67bf9-108">Request URI</span></span>
 :------     | :------
-<span data-ttu-id="5762c-109">POST</span><span class="sxs-lookup"><span data-stu-id="5762c-109">POST</span></span> | <span data-ttu-id="5762c-110">/api/app/packagemanager/upload</span><span class="sxs-lookup"><span data-stu-id="5762c-110">/api/app/packagemanager/upload</span></span> 
+<span data-ttu-id="67bf9-109">POST</span><span class="sxs-lookup"><span data-stu-id="67bf9-109">POST</span></span> | <span data-ttu-id="67bf9-110">/api/app/packagemanager/upload</span><span class="sxs-lookup"><span data-stu-id="67bf9-110">/api/app/packagemanager/upload</span></span> 
 <br />
-**<span data-ttu-id="5762c-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5762c-111">URI parameters</span></span>**
+**<span data-ttu-id="67bf9-111">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="67bf9-111">URI parameters</span></span>**
 
-<span data-ttu-id="5762c-112">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="5762c-112">You can specify the following additional parameters on the request URI:</span></span>
+<span data-ttu-id="67bf9-112">次の追加パラメーターを要求 URI に指定できます。</span><span class="sxs-lookup"><span data-stu-id="67bf9-112">You can specify the following additional parameters on the request URI:</span></span>
 
-<span data-ttu-id="5762c-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="5762c-113">URI Parameter</span></span>      | <span data-ttu-id="5762c-114">説明</span><span class="sxs-lookup"><span data-stu-id="5762c-114">Description</span></span>
+<span data-ttu-id="67bf9-113">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="67bf9-113">URI Parameter</span></span>      | <span data-ttu-id="67bf9-114">説明</span><span class="sxs-lookup"><span data-stu-id="67bf9-114">Description</span></span>
 :------     | :-----
-<span data-ttu-id="5762c-115">destinationFolder (必須)</span><span class="sxs-lookup"><span data-stu-id="5762c-115">destinationFolder  (required)</span></span> | <span data-ttu-id="5762c-116">アップロードするフォルダーのターゲット フォルダー名です。</span><span class="sxs-lookup"><span data-stu-id="5762c-116">The destination folder name of the folder to be uploaded.</span></span> <span data-ttu-id="5762c-117">このフォルダーは、本体の d:\developmentfiles\LooseApps に配置されます。</span><span class="sxs-lookup"><span data-stu-id="5762c-117">This folder will be placed under d:\developmentfiles\LooseApps on the console.</span></span> <span data-ttu-id="5762c-118">フォルダーが LooseApps の下のサブフォルダーである場合、フォルダー名にパスの区切り文字が含まれる可能性があるため、このフォルダー名は base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="5762c-118">This folder name should be base64 encoded as it may contain path separators if the folder is a subfolder under LooseApps.</span></span>
+<span data-ttu-id="67bf9-115">destinationFolder (必須)</span><span class="sxs-lookup"><span data-stu-id="67bf9-115">destinationFolder  (required)</span></span> | <span data-ttu-id="67bf9-116">アップロードするフォルダーのターゲット フォルダー名です。</span><span class="sxs-lookup"><span data-stu-id="67bf9-116">The destination folder name of the folder to be uploaded.</span></span> <span data-ttu-id="67bf9-117">このフォルダーは、本体の d:\developmentfiles\LooseApps に配置されます。</span><span class="sxs-lookup"><span data-stu-id="67bf9-117">This folder will be placed under d:\developmentfiles\LooseApps on the console.</span></span> <span data-ttu-id="67bf9-118">フォルダーが LooseApps の下のサブフォルダーである場合、フォルダー名にパスの区切り文字が含まれる可能性があるため、このフォルダー名は base64 でエンコードされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="67bf9-118">This folder name should be base64 encoded as it may contain path separators if the folder is a subfolder under LooseApps.</span></span>
 <br />
 
-**<span data-ttu-id="5762c-119">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="5762c-119">Request headers</span></span>**
+**<span data-ttu-id="67bf9-119">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="67bf9-119">Request headers</span></span>**
 
-- <span data-ttu-id="5762c-120">なし</span><span class="sxs-lookup"><span data-stu-id="5762c-120">None</span></span>
+- <span data-ttu-id="67bf9-120">なし</span><span class="sxs-lookup"><span data-stu-id="67bf9-120">None</span></span>
 
-**<span data-ttu-id="5762c-121">要求本文</span><span class="sxs-lookup"><span data-stu-id="5762c-121">Request body</span></span>**
+**<span data-ttu-id="67bf9-121">要求本文</span><span class="sxs-lookup"><span data-stu-id="67bf9-121">Request body</span></span>**
 
-- <span data-ttu-id="5762c-122">ディレクトリ コンテンツの原則に従ったマルチパートの http 本文。</span><span class="sxs-lookup"><span data-stu-id="5762c-122">multi-part conforming http body of the directory contents.</span></span>
+- <span data-ttu-id="67bf9-122">ディレクトリ コンテンツの原則に従ったマルチパートの http 本文。</span><span class="sxs-lookup"><span data-stu-id="67bf9-122">multi-part conforming http body of the directory contents.</span></span>
 
-**<span data-ttu-id="5762c-123">応答</span><span class="sxs-lookup"><span data-stu-id="5762c-123">Response</span></span>**
+**<span data-ttu-id="67bf9-123">応答</span><span class="sxs-lookup"><span data-stu-id="67bf9-123">Response</span></span>**
 
-**<span data-ttu-id="5762c-124">状態コード</span><span class="sxs-lookup"><span data-stu-id="5762c-124">Status code</span></span>**
+**<span data-ttu-id="67bf9-124">状態コード</span><span class="sxs-lookup"><span data-stu-id="67bf9-124">Status code</span></span>**
 
-<span data-ttu-id="5762c-125">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="5762c-125">This API has the following expected status codes.</span></span>
+<span data-ttu-id="67bf9-125">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="67bf9-125">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="5762c-126">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="5762c-126">HTTP status code</span></span>      | <span data-ttu-id="5762c-127">説明</span><span class="sxs-lookup"><span data-stu-id="5762c-127">Description</span></span>
+<span data-ttu-id="67bf9-126">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="67bf9-126">HTTP status code</span></span>      | <span data-ttu-id="67bf9-127">説明</span><span class="sxs-lookup"><span data-stu-id="67bf9-127">Description</span></span>
 :------     | :-----
-<span data-ttu-id="5762c-128">200</span><span class="sxs-lookup"><span data-stu-id="5762c-128">200</span></span> | <span data-ttu-id="5762c-129">成功</span><span class="sxs-lookup"><span data-stu-id="5762c-129">Success</span></span>
-<span data-ttu-id="5762c-130">4XX</span><span class="sxs-lookup"><span data-stu-id="5762c-130">4XX</span></span> | <span data-ttu-id="5762c-131">エラー コード</span><span class="sxs-lookup"><span data-stu-id="5762c-131">Error codes</span></span>
-<span data-ttu-id="5762c-132">5XX</span><span class="sxs-lookup"><span data-stu-id="5762c-132">5XX</span></span> | <span data-ttu-id="5762c-133">エラー コード</span><span class="sxs-lookup"><span data-stu-id="5762c-133">Error codes</span></span>
+<span data-ttu-id="67bf9-128">200</span><span class="sxs-lookup"><span data-stu-id="67bf9-128">200</span></span> | <span data-ttu-id="67bf9-129">成功</span><span class="sxs-lookup"><span data-stu-id="67bf9-129">Success</span></span>
+<span data-ttu-id="67bf9-130">4XX</span><span class="sxs-lookup"><span data-stu-id="67bf9-130">4XX</span></span> | <span data-ttu-id="67bf9-131">エラー コード</span><span class="sxs-lookup"><span data-stu-id="67bf9-131">Error codes</span></span>
+<span data-ttu-id="67bf9-132">5XX</span><span class="sxs-lookup"><span data-stu-id="67bf9-132">5XX</span></span> | <span data-ttu-id="67bf9-133">エラー コード</span><span class="sxs-lookup"><span data-stu-id="67bf9-133">Error codes</span></span>
 <br />
-**<span data-ttu-id="5762c-134">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="5762c-134">Available device families</span></span>**
+**<span data-ttu-id="67bf9-134">利用可能なデバイス ファミリ</span><span class="sxs-lookup"><span data-stu-id="67bf9-134">Available device families</span></span>**
 
-* <span data-ttu-id="5762c-135">Windows Xbox</span><span class="sxs-lookup"><span data-stu-id="5762c-135">Windows Xbox</span></span>
+* <span data-ttu-id="67bf9-135">Windows Xbox</span><span class="sxs-lookup"><span data-stu-id="67bf9-135">Windows Xbox</span></span>
 

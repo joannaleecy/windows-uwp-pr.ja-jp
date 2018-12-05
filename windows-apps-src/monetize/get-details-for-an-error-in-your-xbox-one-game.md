@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー, 詳細
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8484660"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8693006"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a><span data-ttu-id="c7110-104">ゲームの Xbox One のエラーに関する詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="c7110-104">Get details for an error in your Xbox One game</span></span>
 

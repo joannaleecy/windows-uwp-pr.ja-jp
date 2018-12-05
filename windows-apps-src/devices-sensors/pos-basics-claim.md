@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8485098"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8689589"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a><span data-ttu-id="b6b70-104">Point of Service デバイス要求およびモデルを有効にします。</span><span class="sxs-lookup"><span data-stu-id="b6b70-104">Point of Service device claim and enable model</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a93d59a00630c240e74049a9fd98d50f285b0dd
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8474680"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8691434"
 ---
 # <a name="calibrate-sensors"></a><span data-ttu-id="df1cd-104">センサーの調整</span><span class="sxs-lookup"><span data-stu-id="df1cd-104">Calibrate sensors</span></span>
 
