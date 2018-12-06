@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705012"
+ms.locfileid: "8758302"
 ---
 # <a name="export-restrictions-on-cryptography"></a><span data-ttu-id="30239-104">暗号化に関する輸出制限の順守</span><span class="sxs-lookup"><span data-stu-id="30239-104">Export restrictions on cryptography</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690925"
+ms.locfileid: "8755492"
 ---
 # <a name="which-networking-technology"></a><span data-ttu-id="2de5b-104">アプリに適したネットワーク テクノロジ</span><span class="sxs-lookup"><span data-stu-id="2de5b-104">Which networking technology?</span></span>
 

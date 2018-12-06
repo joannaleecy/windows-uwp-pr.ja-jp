@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8695781"
+ms.locfileid: "8756766"
 ---
 # <a name="create-an-nfc-smart-card-app"></a><span data-ttu-id="8bde7-104">NFC スマート カード アプリの作成</span><span class="sxs-lookup"><span data-stu-id="8bde7-104">Create an NFC Smart Card app</span></span>
 

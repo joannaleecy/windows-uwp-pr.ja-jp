@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705680"
+ms.locfileid: "8754477"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a><span data-ttu-id="4ea11-104">スレッド プールへの作業項目の送信</span><span class="sxs-lookup"><span data-stu-id="4ea11-104">Submit a work item to the thread pool</span></span>
 

@@ -3,11 +3,11 @@ title: Device Portal の HTTP モニター API のリファレンス
 description: Xbox でフォーカスのあるアプリから HTTP トラフィックにアクセスする方法について説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 81de2a2a3194384e9c5de1c5c45a827e4d965c91
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690696"
+ms.locfileid: "8751931"
 ---
 # <a name="http-monitor-api-reference"></a><span data-ttu-id="809d6-103">HTTP モニター API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="809d6-103">HTTP Monitor API reference</span></span>   
 <span data-ttu-id="809d6-104">Dev Home のチェック ボックスをオンにすることにより Xbox 本体で HTTP モニターが有効になっている場合、この API を使用してフォーカスのあるアプリのリアルタイム HTTP トラフィックにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="809d6-104">You can access real-time HTTP traffic for the focused app using this API if the HTTP monitor has been enabled on the Xbox console by checking the box in Dev Home.</span></span>

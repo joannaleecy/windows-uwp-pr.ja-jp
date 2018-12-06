@@ -7,11 +7,11 @@ ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710085"
+ms.locfileid: "8752614"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a><span data-ttu-id="fbd32-104">DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成</span><span class="sxs-lookup"><span data-stu-id="fbd32-104">Create a simple Universal Windows Platform (UWP) game with DirectX</span></span>
 

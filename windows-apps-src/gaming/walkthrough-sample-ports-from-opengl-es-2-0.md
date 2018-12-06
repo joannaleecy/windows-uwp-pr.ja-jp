@@ -4,11 +4,11 @@ description: この一連のトピックでは、複雑さの異なるさまざ�
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8486567"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8746617"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a><span data-ttu-id="f9fe3-103">OpenGL ES 2.0 からのチュートリアル サンプルの移植</span><span class="sxs-lookup"><span data-stu-id="f9fe3-103">Walkthrough sample ports from OpenGL ES 2.0</span></span>
 

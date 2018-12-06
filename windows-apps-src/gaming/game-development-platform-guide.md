@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テクノロジ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8687563"
+ms.locfileid: "8752715"
 ---
 # <a name="game-technologies-for-uwp-apps"></a><span data-ttu-id="10977-104">UWP アプリのゲーム テクノロジ</span><span class="sxs-lookup"><span data-stu-id="10977-104">Game technologies for UWP apps</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, テンプレート
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8470547"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8750743"
 ---
 # <a name="directx-game-project-templates"></a><span data-ttu-id="7a117-104">DirectX ゲーム プロジェクト テンプレート</span><span class="sxs-lookup"><span data-stu-id="7a117-104">DirectX game project templates</span></span>
 
