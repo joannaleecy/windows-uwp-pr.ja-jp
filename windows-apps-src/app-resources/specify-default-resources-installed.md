@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: f18a1db19c3a8c6632a8cbc3104dc1328f97fdb4
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690021"
+ms.locfileid: "8744690"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a><span data-ttu-id="2943a-103">アプリで使用する既定のリソースを指定する</span><span class="sxs-lookup"><span data-stu-id="2943a-103">Specify the default resources that your app uses</span></span>
 

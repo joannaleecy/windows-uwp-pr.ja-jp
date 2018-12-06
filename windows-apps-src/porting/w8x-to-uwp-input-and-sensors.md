@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8692205"
+ms.locfileid: "8743346"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a><span data-ttu-id="702fe-104">入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植</span><span class="sxs-lookup"><span data-stu-id="702fe-104">Porting Windows Runtime 8.x to UWP for I/O, device, and app model</span></span>
 

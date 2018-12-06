@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8703113"
+ms.locfileid: "8743313"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a><span data-ttu-id="889fc-104">アプリ内広告の既知の問題とトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="889fc-104">Known issues and troubleshooting for ads in apps</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d48cbbf45dc2a09ca8eea3538501cbbe6f07ce02
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685248"
+ms.locfileid: "8746576"
 ---
 # <a name="launch-an-app-through-file-activation"></a><span data-ttu-id="fc178-104">ファイルのアクティブ化によるアプリの起動</span><span class="sxs-lookup"><span data-stu-id="fc178-104">Launch an app through file activation</span></span>
 

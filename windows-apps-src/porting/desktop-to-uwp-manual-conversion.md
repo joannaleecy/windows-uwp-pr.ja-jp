@@ -9,11 +9,11 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8707264"
+ms.locfileid: "8749316"
 ---
 # <a name="package-a-desktop-application-manually"></a><span data-ttu-id="8fdf5-103">デスクトップ アプリケーションを手動でパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="8fdf5-103">Package a desktop application manually</span></span>
 

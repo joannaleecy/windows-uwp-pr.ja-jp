@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8702553"
+ms.locfileid: "8747720"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a><span data-ttu-id="96d21-104">受領通知を使った製品購入の確認</span><span class="sxs-lookup"><span data-stu-id="96d21-104">Use receipts to verify product purchases</span></span>
 

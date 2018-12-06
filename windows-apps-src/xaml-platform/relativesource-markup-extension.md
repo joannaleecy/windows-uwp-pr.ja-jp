@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26cde97f82e6962d530721f1e0230138e5917016
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685178"
+ms.locfileid: "8746046"
 ---
 # <a name="relativesource-markup-extension"></a><span data-ttu-id="b3555-104">{RelativeSource} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="b3555-104">{RelativeSource} markup extension</span></span>
 

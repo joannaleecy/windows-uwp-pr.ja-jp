@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a810c097b4f162395106e74b68d5e9cdb2f8538
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699655"
+ms.locfileid: "8750954"
 ---
 # <a name="track-recently-used-files-and-folders"></a><span data-ttu-id="fb3a7-104">最近使ったファイルやフォルダーの追跡</span><span class="sxs-lookup"><span data-stu-id="fb3a7-104">Track recently used files and folders</span></span>
 
