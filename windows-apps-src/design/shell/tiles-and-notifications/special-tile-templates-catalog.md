@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708678"
+ms.locfileid: "8758037"
 ---
 # <a name="special-tile-templates"></a><span data-ttu-id="9c59f-103">特別なタイル テンプレート</span><span class="sxs-lookup"><span data-stu-id="9c59f-103">Special tile templates</span></span>
  

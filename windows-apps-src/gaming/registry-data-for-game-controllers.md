@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, レジストリ, カスタム
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8689651"
+ms.locfileid: "8752624"
 ---
 # <a name="registry-data-for-game-controllers"></a><span data-ttu-id="80a1f-104">ゲーム コントローラーのレジストリ データ</span><span class="sxs-lookup"><span data-stu-id="80a1f-104">Registry data for game controllers</span></span>
 

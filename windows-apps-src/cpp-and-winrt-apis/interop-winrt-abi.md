@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f84debc3fdf421db8f734d1c2184355d0508c8b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8710712"
+ms.locfileid: "8755318"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a><span data-ttu-id="ea62b-104">C++/WinRT と ABI 間の相互運用</span><span class="sxs-lookup"><span data-stu-id="ea62b-104">Interop between C++/WinRT and the ABI</span></span>
 

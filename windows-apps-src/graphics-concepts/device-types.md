@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ddb1dc0e42f88cf65464841388b9addfb4b5748
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8712060"
+ms.locfileid: "8756526"
 ---
 # <a name="device-types"></a><span data-ttu-id="5526a-104">デバイスの種類</span><span class="sxs-lookup"><span data-stu-id="5526a-104">Device types</span></span>
 
