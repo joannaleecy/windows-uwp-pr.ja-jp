@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2bb5a450aebdf38f3d4f1a710f3537544dcddd6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729494"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794491"
 ---
 # <a name="notifications-visualizer"></a>Notifications Visualizer
 
  
 
 
-Notifications Visualizer は、新しいユニバーサル Windows プラットフォーム (UWP) アプリ[ストアで](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)開発者に役立つデザイン アダプティブ ライブ タイルと windows 10 の対話型トースト通知。
+Notifications Visualizer は、新しいユニバーサル Windows プラットフォーム (UWP) アプリ[ストアで](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)開発者を支援する設計アダプティブ ライブ タイルと windows 10 の対話型トースト通知。
 
 
 ## <a name="overview"></a>概要

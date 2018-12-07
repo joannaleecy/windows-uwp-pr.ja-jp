@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747740"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800543"
 ---
 # <a name="textures-with-alpha-channels"></a>アルファ チャネルを含むテクスチャ
 
@@ -37,7 +37,7 @@ ms.locfileid: "8747740"
 
 ![64 ビットの透明度ブロックの図](images/colors4.png)
 
-**注:**  Direct3D の圧縮方法で、4 つの最上位ビットを使用します。
+**注:**  Direct3D の圧縮方法は、4 つの最上位ビットを使用します。
 
  
 

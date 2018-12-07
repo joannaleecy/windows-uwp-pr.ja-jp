@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ad00090fdfc3ce7be34ef6271d16e76541b584bb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742381"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789463"
 ---
 # <a name="raw-notification-overview"></a>直接通知の概要
 
@@ -113,7 +113,7 @@ ms.locfileid: "8742381"
 ## <a name="other-resources"></a>その他のリソース
 
 
-詳細については、Windows8.1、および[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)の Windows8.1、[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)をダウンロードして、windows 10 アプリでそれらのソース コードを再利用しています。
+Windows8.1、および[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231476)の Windows8.1、[直接通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=241553)をダウンロードして、windows 10 アプリでそれらのソース コードを再利用して詳しくを知ることができます。
 
 ## <a name="related-topics"></a>関連トピック
 

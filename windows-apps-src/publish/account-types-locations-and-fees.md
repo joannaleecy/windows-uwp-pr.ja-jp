@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 開発者アカウント, 個人, 会社, ビジネス
 ms.localizationpriority: medium
 ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747382"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789380"
 ---
 # <a name="account-types-locations-and-fees"></a>アカウントの種類、場所、料金
 
-Windows では、[パートナー センター](https://partner.microsoft.com/dashboard)のプランでプログラムの両方の個人と会社の多数の[国や地域](#developer-account-and-app-submission-markets)でアカウント。 どちらの種類のアカウントは、アプリをストアに公開して、その他の Microsoft プログラムに参加するためのアクセスを提供します。
+Windows では、[パートナー センター](https://partner.microsoft.com/dashboard)のプランでプログラムの両方の個人と、会社の多数の[国や地域](#developer-account-and-app-submission-markets)でアカウント。 どちらの種類のアカウントは、アプリをストアに公開して、その他の Microsoft プログラムに参加するためのアクセスを提供します。
 
 > [!NOTE]
 > 開発者アカウントを開くときは、開発者アカウントを使用する Microsoft アカウントを使って[パートナー センター](https://partner.microsoft.com/dashboard)にサインインすることを確認してください。 後で[追加のユーザーをアカウントに追加](manage-account-users.md)できます。
@@ -33,11 +33,11 @@ Windows では、[パートナー センター](https://partner.microsoft.com/da
 |--------------------|-----------------|
 | <ul><li>約 19 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>短いアカウント検証プロセス</li></ul> | <ul><li>約 99 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li><li>より厳格なアカウントの確認が必要になる</li><li>所在地の国または地域で、その会社が会社として認識されている必要がある</li><li>機能が制限されたアプリを提出できる ([Microsoft Store ポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)の説明に従う)</li></ul> |
 
-会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 [ストアのポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、特定の機能を使ったアプリあたりなど財務アカウントにアクセスする情報を必要と認証 (セキュリティで保護された専用のサード パーティ認証プロバイダーを使用) なし主な機能にアクセスするには会社のアカウントでのみ公開されることができます。
+会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 [ストアのポリシー](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)、特定の機能を備えたアプリあたりなど財務アカウントにアクセスする情報を必要と認証 (使用せずに、セキュリティで保護された専用のサード パーティ認証プロバイダー)、主要な機能にアクセスするには会社のアカウントでのみ公開されることができます。
 
 ## <a name="account-verification"></a>アカウントの検証
 
-サインアップ プロセスが完了すると、アカウントに対して検証プロセスが開始されます。 個人アカウントの場合、別の会社が、発行者の表示名を既に使用していないかどうかを確認します。 会社のアカウントについては、Microsoft の確認パートナーの Dun & Bradstreet により、会社の代理でアカウントを作る権限をお持ちかどうかを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときにはすべて最新の連絡先を指定してください)。 これが確認されていますを待っている間[、アプリの名前を予約](create-your-app-by-reserving-a-name.md)することができます。 まで会社のアカウントからアプリを提出することはできません構築とテスト アプリでは、を続行し、申請のための準備で動作します。
+サインアップ プロセスが完了すると、アカウントに対して検証プロセスが開始されます。 個人アカウントの場合、別の会社が、発行者の表示名を既に使用していないかどうかを確認します。 会社のアカウントについては、Microsoft の確認パートナーの Dun & Bradstreet により、会社の代理でアカウントを作る権限をお持ちかどうかを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときにはすべて最新の連絡先を指定してください)。 これが確認されていますを待っている間[、アプリの名前を予約](create-your-app-by-reserving-a-name.md)することができます。 まで会社のアカウントからアプリを提出できない構築とテスト アプリでは、を続行し、申請の準備で動作します。
 
 **[アカウント設定]** ページで確認状態をチェックすることができます。 
 

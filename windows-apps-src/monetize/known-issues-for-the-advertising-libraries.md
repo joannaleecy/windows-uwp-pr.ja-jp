@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743313"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789106"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -58,7 +58,7 @@ ms.locfileid: "8743313"
 
 * サイドローディングされたアプリやエミュレーターで実行されているアプリには、ライブ広告は表示されません。
 
-ライブ広告ユニットがテスト広告を提供すると、広告ユニットのステータスはパートナー センターで**アクティブとサービスのテスト広告**表示されます。 現時点で、これは、電話アプリには適用されません。
+ライブ広告ユニットがテスト広告を提供すると、広告ユニットの状態はパートナー センターで**アクティブなサービスのテストの広告**表示されます。 現時点で、これは、電話アプリには適用されません。
 
 
 <span id="reference_errors"/>

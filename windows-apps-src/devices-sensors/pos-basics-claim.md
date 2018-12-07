@@ -6,20 +6,20 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734545"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806625"
 ---
-# <a name="point-of-service-device-claim-and-enable-model"></a>Point of Service デバイス要求およびモデルを有効にします。
+# <a name="point-of-service-device-claim-and-enable-model"></a>ポイントのサービスのデバイスを要求し、モデルを有効にします。
 
 ## <a name="claiming-for-exclusive-use"></a>排他的使用のための要求
 
 PointOfService デバイス オブジェクトを正常に作成したら、入出力にデバイスを使用する前に、デバイスの種類に適切な要求方法を使用して要求する必要があります。  要求により、多くのデバイスの機能に対する排他的アクセスがアプリケーションに付与され、あるアプリケーションが別のアプリケーションによるデバイスの使用を妨げないようにします。  排他的使用のために一度に PointOfService デバイスを要求できるアプリケーションは 1 つだけです。 
 
 > [!Note]
-> 要求アクションは、デバイスを排他的にロックを確立していますが、操作の状態には配置されません。  詳細については、 [I/O 操作用のデバイスを有効にする](#Enable-device-for-I/O-operations)を参照してください。
+> 要求アクションは、デバイスにロックを確立していますが、操作の状態には配置されません。  詳細については、 [I/O 操作用のデバイスを有効にする](#Enable-device-for-I/O-operations)を参照してください。
 
 ### <a name="apis-used-to-claim--release"></a>要求/リリースに使用する Api
 
@@ -34,7 +34,7 @@ PointOfService デバイス オブジェクトを正常に作成したら、入�
 
 ## <a name="enable-device-for-io-operations"></a>I/O 操作用のデバイスを有効にします。
 
-要求アクションは単に、デバイスを排他的の権利を確立していますが、操作の状態には配置されません。  イベントを受信または出力の操作を実行するのには、 **EnableAsync**を使用してデバイスを有効にする必要があります。  逆に、デバイスまたは実行中の出力からイベントをリッスンしてを停止する**DisableAsync**を呼び出すことができます。  お使いのデバイスの状態を判断**IsEnabled**を使用することもできます。
+要求アクションは単に、デバイスを排他的の権利を確立していますが、操作の状態には配置されません。  イベントを受信または出力操作を実行するのには、 **EnableAsync**を使用してデバイスを有効にする必要があります。  逆に、デバイスまたは実行中の出力からイベントをリッスンしてを停止する**DisableAsync**を呼び出すことができます。  お使いのデバイスの状態を判断**IsEnabled**を使用することもできます。
 
 ### <a name="apis-used-enable--disable"></a>使用されている Api を有効にする/無効にします。
 
@@ -47,7 +47,7 @@ PointOfService デバイス オブジェクトを正常に作成したら、入�
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
-¹ ライン ディスプレイでは、I/O 操作用にデバイスを明示的に有効にする必要はありません。  有効にするとは、I/O を実行する PointOfService LineDisplay Api によって自動的に実行されます。
+¹ ライン ディスプレイでは、I/O 操作については、デバイスを明示的に有効にする必要はありません。  有効にするとは、I/O を実行する PointOfService LineDisplay Api によって自動的に実行されます。
 
 ## <a name="code-sample-claim-and-enable"></a>サンプル コード: 要求し、有効化
 
@@ -107,7 +107,7 @@ Windows はマルチタスク環境であるため、同じコンピューター
     }
 ```
 
-要求されたデバイスに関連付け、イベント ハンドラーを登録します。
+要求されたデバイスとの関連付け、イベント ハンドラーを登録します。
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

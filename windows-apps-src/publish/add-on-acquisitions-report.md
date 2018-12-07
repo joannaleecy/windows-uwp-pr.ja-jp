@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン販売, アドオン取得, IAP 売り上げ, アプリ内製品, iap, アドオン
 ms.localizationpriority: medium
 ms.openlocfilehash: 8027276779dac59f0745dd8053ee73cf1615e630
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735479"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787016"
 ---
 # <a name="add-on-acquisitions-report"></a>[アドオン取得] レポート
 
 
 [パートナー センター](https://partner.microsoft.com/dashboard)で**のアドオン取得]** レポートでは、人口統計データと共に、販売したアドオンの数を表示できます。 プラットフォームの詳細、および windows 10 (Xbox を含む) のユーザーのコンバージョン情報を示しています。 最後の時間、または 70 ~ 2 時間の期間のリアルタイムの入手データの近く表示することもできます。
 
-オフラインで表示するパートナー センターでは、または[レポートをダウンロードするの](download-analytic-reports.md)には、このデータを表示できます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
+パートナー センター、または[レポートをダウンロード](download-analytic-reports.md)オフラインで表示するでは、このデータを表示できます。 または、[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) の[アドオンの入手数の取得](../monetize/get-in-app-acquisitions.md)メソッドを使って、プログラムでこのデータを取得できます。
 
 このレポートで、アドオン取得とは、ユーザーが開発者からアドオンを購入 (または、無料で提供している場合は、支払いなしでアドオンを獲得) したことを意味します。 同じユーザーが同じコンシューマブルなアドオンを複数回購入した場合は、個別のアドオン取得としてカウントされます。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8735479"
 
 ## <a name="apply-filters"></a>フィルターを適用
 
-ページの上部で、データを表示する期間を選択できます。 既定では **[30 日間]** が選択されていますが、3、6、12 か月間のデータや、指定した任意の期間のデータを表示することもできます。 1 時間、または 70-2 時間をほぼリアルタイムで入手データを表示するには、 **1 H**または**72 H**を選択することもできます。これらの期間は、**アドオンの入手数**グラフの**アドオンを毎日**タブと**市場**グラフの**取得**] タブにのみ適用されます。 
+ページの上部で、データを表示する期間を選択できます。 既定では **[30 日間]** が選択されていますが、3、6、12 か月間のデータや、指定した任意の期間のデータを表示することもできます。 1 時間、または 70 2 時間をほぼリアルタイムで入手データを表示するには、 **1 H**または**72 H**を選択することもできます。これらの期間は、**アドオンの入手数**グラフの**アドオンを毎日**タブと**市場**グラフの**取得**] タブにのみ適用されます。 
 
 このページにある **[フィルター]** を展開して、このページのすべてのデータを特定のアドオン、および市場やデバイスの種類を基にフィルター処理できます。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b44aaf741c188658c7a639422b0d091f8db6e3e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730940"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800633"
 ---
 # <a name="template-settings-classes"></a>Template settings (テンプレート設定) クラス
 
@@ -95,7 +95,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 ここでも、テンプレートの XAML は量が多いため、一部のみを抜粋して示しています。 これは、それぞれ同じ [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) プロパティを使用する、複数ある状態とテーマのアニメーションのうちの 1 つにすぎません。 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) では、バインドを利用して **ComboBoxTemplateSettings** 値を使うと、テンプレート内の関連アニメーションが共有値に基づく位置で停止および開始し、スムーズに遷移します。
 
-**注:**  **TemplateSettings**値を使用する、コントロール テンプレートの一部として、する場合、値の型に一致するプロパティを設定して確認します。 そうしないと、バインドのターゲットの型を **TemplateSettings** 値の異なるソース型から変換できるように、バインドの値のコンバーターを作成することが必要になる場合があります。 詳しくは、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)」をご覧ください。
+**注:**  **TemplateSettings**値を使用する、コントロール テンプレートの一部としてとき、は、値の型に一致するプロパティを設定することを確認してください。 そうしないと、バインドのターゲットの型を **TemplateSettings** 値の異なるソース型から変換できるように、バインドの値のコンバーターを作成することが必要になる場合があります。 詳しくは、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

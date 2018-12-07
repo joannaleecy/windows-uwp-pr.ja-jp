@@ -7,20 +7,20 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a77cb67891b3cfcb814e66fd14db9e79a0bff1c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741429"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800653"
 ---
 # <a name="upload-app-packages"></a>アプリ パッケージのアップロード
 
-**[パッケージ**] ページでは、すべての提出するアプリのパッケージ ファイル (.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle) をアップロードします。 このページで、同じアプリについて、すべてのパッケージをアップロードして、ユーザーがアプリをダウンロードするとき、ストアが自動的に各ユーザーのデバイスに対して最適に機能するパッケージを提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
+**[パッケージ**] ページでは、すべての提出するアプリのパッケージ ファイル (.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle) をアップロードします。 このページで、同じアプリについて、すべてのパッケージをアップロードして、各ユーザーのデバイスに対して最適に機能するパッケージに、ユーザーがアプリをダウンロードするとき、自動的にストアを提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
 
 > [!IMPORTANT]
 > 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
 
-パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 [特定のユーザーに配信されるパッケージに対するのバージョン番号の影響](package-version-numbering.md)や[さまざまなシナリオのパッケージを管理する方法](guidance-for-app-package-management.md)について説明したいもします。
+パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 [特定のユーザーに配信されるパッケージのバージョン番号の影響](package-version-numbering.md)や[さまざまなシナリオのパッケージを管理する方法](guidance-for-app-package-management.md)について説明したいもします。
 
 
 ## <a name="uploading-packages-to-your-submission"></a>申請へのパッケージのアップロード
@@ -32,7 +32,7 @@ ms.locfileid: "8741429"
 
 アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 
-検証中にパッケージを使用してエラーを検出した場合問題がある内容を理解できるようにするためのメッセージを表示します。 パッケージを削除、問題を修正してから、もう一度アップロードする必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
+検証中にパッケージを使用してエラーを検出した場合は問題を把握できるようにするためのメッセージを表示します。 パッケージを削除して、問題を修正してから、もう一度アップロードする必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
 
 
 ## <a name="device-family-availability"></a>デバイス ファミリの利用可否

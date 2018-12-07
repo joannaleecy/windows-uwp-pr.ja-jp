@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: c0c283f9edd33b8c39ebccd0a71019741a0d1448
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755298"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788396"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>Microsoft Store Services SDK を使ってユーザーとの関係を深める
 
-Microsoft Store Services SDK を提供するための機能がアプリを対象となる通知の送信を行ったりなど、ユニバーサル Windows プラットフォーム (UWP) アプリで顧客と関わりあう B は、アプリでテストします。 この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。
+Microsoft Store Services SDK の提供に役立つ機能がアプリを対象となる通知の送信を行ったりなど、ユニバーサル Windows プラットフォーム (UWP) アプリでの顧客と関わりあう B は、アプリでテストします。 この SDK は、Visual Studio 2015 とそれ以降のバージョンの Visual Studio 用の拡張です。
 
 > [!NOTE]
 > UWP アプリで広告を表示するには、Microsoft Store Services SDK ではなく [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使います。 Advertising ライブラリは、Microsoft Store Services SDK から Microsoft Advertising SDK に移動されました。 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。
@@ -28,10 +28,10 @@ Microsoft Store Services SDK を提供するための機能がアプリを対象
 
 |  シナリオ  |  説明   |
 |------------|----------------|
-|  [UWP アプリの A/B テストの実行](run-app-experiments-with-a-b-testing.md)    |  ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 パートナー センターで実験を定義した後は、 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)クラスを使用して、実験のバリエーションを取得するアプリでこのデータを使用してテストすると、機能の動作を変更し、 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)パートナー センターにビュー イベントとコンバージョン イベントを送信する方法。 最後に、パートナー センターを使用して、結果を表示し、実験を管理します。  |
-|  [UWP アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)    |  UWP アプリで [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) クラスを使用し、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、パートナー センターで、[フィードバック] レポート](../publish/feedback-report.md)では、このフィードバックを管理します。 |
+|  [UWP アプリの A/B テストの実行](run-app-experiments-with-a-b-testing.md)    |  ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 パートナー センターで実験を定義した後は、アプリで実験のバリエーションを取得し、このデータを使用してテストすると、機能の動作を変更して、 [LogForVariation を使用して[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)クラスを使う](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)パートナー センターにビュー イベントとコンバージョン イベントを送信する方法。 最後に、パートナー センターを使用して、結果を表示し、実験を管理します。  |
+|  [UWP アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)    |  UWP アプリで [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) クラスを使用し、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、パートナー センターで[フィードバック] レポート](../publish/feedback-report.md)では、このフィードバックを管理します。 |
 |  [パートナー センターのプッシュ通知を受信する UWP アプリを構成します。](configure-your-app-to-receive-dev-center-notifications.md)    |  UWP アプリで[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)クラスを使用すると、パートナー センターを使用して、顧客に送信するターゲット プッシュ通知を受信するのにアプリを登録できます。  |
-|   [パートナー センターでの利用状況レポート用の UWP アプリでカスタム イベントをログに記録します。](log-custom-events-for-dev-center.md)   |  UWP アプリで[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)クラスを使用すると、パートナー センターでのアプリに関連付けられているカスタム イベント ログに記録します。 次に、パートナー センターでの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントの発生した合計回数を確認します。  |
+|   [パートナー センターでの利用状況レポート用の UWP アプリでカスタム イベント ログに記録します。](log-custom-events-for-dev-center.md)   |  UWP アプリで[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)クラスを使用すると、パートナー センターでのアプリに関連付けられているカスタム イベント ログに記録します。 次に、パートナー センターでの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントの発生した合計回数を確認します。  |
 
 <span id="prerequisites" />
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733721"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785745"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -26,7 +26,7 @@ ms.locfileid: "8733721"
 
 ## <a name="back-button"></a>[戻る] ボタン
 
-"戻る"ボタンを作成すると、[ボタン](../controls-and-patterns/buttons.md)コントロールを使用して、 `NavigationBackButtonNormalStyle` 、スタイルを設定し、アプリの UI の左上隅にあるボタンを配置 (詳細については、次の XAML コード例を参照してください)。
+"戻る"ボタンを作成すると、[ボタン](../controls-and-patterns/buttons.md)コントロールを使用して、 `NavigationBackButtonNormalStyle` 、スタイルを設定し、アプリの UI の左上隅にあるボタンを配置 (詳細については、XAML のコード例を参照してください)。
 
 ![アプリの UI の左上隅にある [戻る] ボタン](images/back-nav/BackEnabled.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "8733721"
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-アプリ内で動き回る UI 要素を最小化するために、バックスタックに何もないときに、無効になった戻るボタンを表示します (以下のコード例を参照)。 ただし、アプリは、backstack を持つことがない場合は、すべての"戻る"ボタンを表示する必要はありません。
+アプリ内で動き回る UI 要素を最小化するために、バックスタックに何もないときに、無効になった戻るボタンを表示します (以下のコード例を参照)。 ただし、アプリは、backstack を持つことがない場合は、[戻る] ボタンを表示する必要はありません。
 
 ![[戻る] ボタンの状態](images/back-nav/BackDisabled.png)
 
@@ -167,9 +167,9 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-上記の単一ページのナビゲーションが処理前に戻る。 "戻る"ナビゲーションから特定のページを除外するか、ページを表示する前に、ページ レベルのコードを実行する場合は、各ページでのナビゲーションを処理できます。
+上記の 1 つのページのナビゲーションが処理前に戻る。 "戻る"ナビゲーションから特定のページを除外するか、ページを表示する前に、ページ レベルのコードを実行する場合は、各ページでのナビゲーションを処理できます。
 
-前に戻るナビゲーションをアプリ全体を処理する[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)イベントのグローバル リスナーを登録するが、`App.xaml`コード ビハインド ファイル。
+前に戻るナビゲーションをアプリ全体を処理するで[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)イベントのグローバル リスナーを登録するが、`App.xaml`コード ビハインド ファイル。
 
 App.xaml 分離コード:
 
@@ -282,9 +282,9 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>下位互換性のためのシステムの戻る動作
 
-以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 API は引き続き下位の互換性を確保するサポートされているがしなくなった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
+以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 この API は引き続き下位の互換性を確保するためにサポートするがしなくなった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
 
-[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI には、システムはレンダリング戻るボタン。
+[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI を表示する、システムで戻るボタンが使用。
 
 - アプリが**タブがない**場合は、タイトル バーの内部、戻るボタンがレンダリングします。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
 
@@ -297,11 +297,11 @@ bool App::On_BackRequested()
 ### <a name="system-back-bar"></a>システムの戻るバー
 
 > [!NOTE]
-> "システムの戻るバー"正式な名前ではなく、説明のみです。
+> "システムの戻るバー"は、公式の名前ではなく説明のみです。
 
-システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドには、戻るボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
+システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドには、[戻る] ボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
 
-システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されるとき、システムの戻るバーが挿入され、32 ピクセルがタブ バンドの下でアプリのコンテンツの下に移動します。 [戻る] ボタンを非表示するとき、システムの戻るバーは動的に削除され、× 32 ピクセルをタブ バンドを満たすためにアプリのコンテンツを移動します。 上または下に、アプリの UI shift キーを持つを避けるためには、[アプリ内の戻るボタン](#back-button)を描画お勧めします。
+システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されている場合、システムの戻るバーが挿入され、アプリのコンテンツをタブ バンドの下の 32 ピクセル下に移動します。 [戻る] ボタンを非表示するとき、システムの戻るバーは動的に削除され、× 32 ピクセルをタブ バンドを満たすためにアプリのコンテンツを移動します。 上または下に、アプリの UI shift キーを持つを避けるためには、[アプリ内の戻るボタン](#back-button)を描画お勧めします。
 
 [タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリ タブとシステムの戻るの両方に引き継がバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定する場合、色がタブとシステムの戻るに適用されますバー。
 
@@ -330,7 +330,7 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong>
-<p>ユーザーは、同じピア グループでページ間を移動します。 画面ではありませんが ( <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) などの両方のページに直接的なナビゲーションを提供するナビゲーション要素です。</p></td>
+<p>ユーザーは、同じピア グループでページ間を移動します。 いいえ画面は両方のページに直接的なナビゲーションを提供します ( <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) などのナビゲーション要素です。</p></td>
 <td style="vertical-align:top;"><strong>はい</strong>
 <p>次の図に、ユーザーが、同じピア グループ内の 2 つのページ間を移動し、このナビゲーションはナビゲーション履歴に追加する必要があります。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
@@ -339,7 +339,7 @@ bool App::On_BackRequested()
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong>
 <p>ユーザーは、同じピア グループ内のページ間を移動します。 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>など、同じナビゲーション要素は、両方のページが表示されます。</p></td>
 <td style="vertical-align:top;"><strong>場合によって異なります。</strong>
-<p>はい、2 つの例外、ナビゲーション履歴に追加します。 アプリのユーザーが多くの場合、ピア グループ内のページ間を切り替えることが予想ナビゲーション階層を保持する場合や、その追加しないでくださいナビゲーション履歴にします。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
+<p>はい、2 つの例外、ナビゲーション履歴に追加します。 ユーザーは、アプリの多くの場合、ピア グループ内のページ間を切り替えることが予想ナビゲーション階層を保持する場合や、その追加しないでくださいナビゲーション履歴にします。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">

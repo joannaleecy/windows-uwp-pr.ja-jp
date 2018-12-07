@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、Microsoft Store Services SDK、A/B テスト、実験
 ms.localizationpriority: medium
 ms.openlocfilehash: acfd654f02cb7fb727d35271175e59966e2abdc4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739123"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785142"
 ---
 # <a name="create-an-experiment-project-in-partner-center"></a>パートナー センターで実験プロジェクトを作成する
 
@@ -30,7 +30,7 @@ ms.locfileid: "8739123"
   1. **[リモート変数]** セクションが折りたたまれている場合、セクション見出しの **[表示]** をクリックします。
   2. **[変数の追加]** をクリックして、このプロジェクトのあらゆる実験で利用できるようにする新しい変数をそれぞれ作成し、変数の変数名と既定値を入力します。
   3. 追加の変数が終わったら、**[保存]** をクリックします。
-3. **[SDK 統合]** セクションで、[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値を書き留めます。 [実験用のアプリのコード](code-your-experiment-in-your-app.md)をする必要がありますで参照するときこのプロジェクト ID コード バリエーション データを受信し、パートナー センターにビュー イベントとコンバージョン イベントを報告できます。
+3. **[SDK 統合]** セクションで、[プロジェクト ID](run-app-experiments-with-a-b-testing.md#terms) 値を書き留めます。 [実験用のアプリのコード](code-your-experiment-in-your-app.md)を参照するときする必要がありますこのプロジェクト ID コードでバリエーション データを受信し、パートナー センターにビューとコンバージョン イベントを報告できます。
 
 > [!NOTE]
 > プロジェクトの実験がアクティブなときに、リモート変数を編集、追加、削除することはできません。 この制限により、アクティブな実験のコントロール グループのデータの整合性を保護できます。

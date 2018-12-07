@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732811"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787276"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>JavaScript で UWP ゲームを作成する
 
@@ -69,7 +69,7 @@ Microsoft Store にアプリを公開するために、UWP (ユニバーサル W
 
 ## <a name="walkthough"></a>チュートリアル
 
-F5 キーでゲームを開始した場合は、内部的に何が起こっているのか疑問に思うかもしれません。 その答えは、"しない"とコードの多くは、現在コメント アウトします。これまでは、すべてが表示されますが、恐竜と Space キーを押すだけ要請します。 
+F5 キーでゲームを開始した場合は、内部的に何が起こっているのか疑問に思うかもしれません。 その答えは、"できません"とコードの多くは、現在コメント アウトします。これまでは、すべてが表示されますが、恐竜と Space キーを押すだけ要請します。 
 
 ### <a name="1-setting-the-stage"></a>1. ステージを設定する
 
@@ -257,7 +257,7 @@ Gamestate は、ゲームで一般的に使用される設計パターンです�
 
 ## <a name="publishing-to-the-microsoft-store"></a>Microsoft Store への公開
 
-UWP アプリがある場合は、ここでは、(もう少し改善が最初に!)、Microsoft Store に申請を公開することもできます。 
+UWP アプリがある場合は、ここでは、(もう少し改善がまず!)、Microsoft Store に申請を公開することもできます。 
 
 このプロセスにはいくつかの手順が必要になります。
 

@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749492"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794601"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>バナー広告用の最新の Advertising ライブラリを使用するようにアプリを更新する
 
@@ -27,7 +27,7 @@ ms.locfileid: "8749492"
 
 * アプリ内の **AdControl** から新しい広告が要求されると、コントロールの **ErrorOccurred** イベントが発生し、イベント引数の **ErrorCode** プロパティに **NoAdAvailable** という値が設定されます。
 
-* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 これらの非アクティブ化された広告ユニットは、DePartnerv センターのアカウントから削除することはできません。 アプリを更新して [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
+* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 これらの非アクティブ化された広告ユニットは、DePartnerv センター アカウントから削除することはできません。 アプリを更新して [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
 
 * 複数のアプリで使われている広告ユニットにも、バナー広告が提供されなくなりました。 広告ユニットがそれぞれ 1 つのアプリだけで使われるようにしてください。
 

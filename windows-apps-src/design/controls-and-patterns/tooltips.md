@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737052"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800824"
 ---
 # <a name="tooltips"></a>ヒント
 
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 既定では、ToolTip はポインターの上部に中央揃えで表示されます。 配置はアプリ ウィンドウによって制約されていないため、ToolTip が部分的に表示されたり、完全にアプリ ウィンドウの境界の外部に表示されたりすることがあります。
 
-広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最後の位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
+広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最終的な位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-ヒントを参照しているコンテンツを覆い隠す、正確に新しい**PlacementRect**プロパティを使用して配置を調整できます。 PlacementRect は、ツールヒントの位置を固定して、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくなります、領域としても機能します。 ToolTip の所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
+ヒントを参照しているコンテンツを覆い隠す、正確に新しい**PlacementRect**プロパティを使用して配置を調整できます。 PlacementRect では、ヒントの位置に固定し、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくは、領域としても機能します。 ヒントの所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

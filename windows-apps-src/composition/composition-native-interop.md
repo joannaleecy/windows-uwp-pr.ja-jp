@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f5eabfaf8e526899c17b2d0da688a5135133f65
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745223"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788240"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>コンポジションでの DirectX と Direct2D のネイティブ相互運用
 
@@ -39,11 +39,11 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 ## <a name="usage-example"></a>使用例
 
-次のコード例は、相互運用のシナリオを示しています。 例では、相互運用性のヘッダーと DirectWrite の COM ベースと Direct2D Api を使用してテキストを表示するコードからタイプと共に、Windows のコンポジションの Windows ランタイムに基づくサーフェス領域からの種類を結合します。 例では、これらのテクノロジの間の相互運用にシームレスに[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)と[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)を使用します。 例では、DirectWrite を使用して、テキストがレイアウトし、Direct2D を使ってレンダリングします。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、アプリケーションを作成して、Direct2D コンテキストを各描画操作で返される ID3D11Texture2D インターフェイスをラップするよりもかなり効率的は**ID2D1DeviceContext**インターフェイス ポインターを返す**BeginDraw**できます。
+次のコード例は、相互運用のシナリオを示しています。 例では、相互運用性のヘッダーと DirectWrite の COM ベースと Direct2D Api を使用してテキストを表示するコードからタイプと共に、Windows のコンポジションの Windows ランタイムに基づくサーフェス領域からの種類を結合します。 この例は、これらのテクノロジの間の相互運用にシームレスに[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)と[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)を使用します。 例では、DirectWrite を使用して、テキストがレイアウトし、レンダリングするために Direct2D を使用します。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、アプリケーションを作成して、Direct2D コンテキストを各描画操作で返される ID3D11Texture2D インターフェイスをラップするよりもかなり効率的は**ID2D1DeviceContext**インターフェイス ポインターを返す**BeginDraw**できます。
 
-次の 2 つのコード例があります。 最初に、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の例 (これが完了すると)、し、c++/cli CX のコード例 (の例では、DirectWrite and Direct2D の部分を省略する)。
+次の 2 つのコード例があります。 まず、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) (これは完全な) 例では、し、C + + CX のコード例 (の例では、DirectWrite and Direct2D の部分を省略する)。
 
-C++ を使用する/WinRT 以下のコード例は最初に、新しい作成**コア アプリ (、C++/WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [、C++、Visual Studio サポート/WinRT、と VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-and-the-vsix))。 プロジェクトの作成中に、ターゲット バージョン**Windows 10 バージョン 1803 (10.0; として選択します。ビルド 17134)** します。 および対象となるこのコードが組み込まれているテストのバージョンです。 内容を置き換える、`App.cpp`し、以下に示すコードをソース コード ファイルをビルドして実行します。 アプリケーションのレンダリング、文字列「こんにちは, World!」 で透明の背景に黒のテキスト。
+C++ を使用する/WinRT 以下のコード例は最初に、新規作成**コア アプリ (、C++/WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [、C++、Visual Studio サポート/WinRT、と VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-and-the-vsix))。 プロジェクトを作成する際に、ターゲット バージョン**Windows 10 バージョン 1803 (10.0; として選択します。ビルド 17134)** します。 および対象となるこのコードが組み込まれているテストのバージョンです。 内容を置き換える、`App.cpp`し、以下に示すコードをソース コード ファイルをビルドして実行します。 アプリケーションのレンダリング、文字列「こんにちは, World!」 で透明の背景に黒のテキスト。
 
 ```cppwinrt
 // App.cpp

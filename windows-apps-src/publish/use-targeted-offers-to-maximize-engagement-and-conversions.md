@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 対象のプラン, プラン, 販売, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: e894e81b560f071cf42198f09aad0b2b82eae2cd
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756666"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794271"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>対象のプランによるエンゲージメントとコンバージョンの最大化
 
@@ -23,7 +23,7 @@ ms.locfileid: "8756666"
 
 対象のプランを使うには、次の 3 ステップを実行します。
 
-1. **[パートナー センター](https://partner.microsoft.com/dashboard)でプランを作成します。** **[Engage] (関心を引く) の [対象のプラン]** ページに移動して、プランを作成します。 このプロセスについては、以降で詳しく説明します。
+1. **[パートナー センター](https://partner.microsoft.com/dashboard)で、プランを作成します。** **[Engage] (関心を引く) の [対象のプラン]** ページに移動して、プランを作成します。 このプロセスについては、以降で詳しく説明します。
 2. **アプリ内販売エクスペリエンスを実装する。** *Microsoft Store ターゲット オファー API*コードで使うアプリの特定のユーザー向けの利用可能なプランを取得します。 対象のプラン用のアプリ内エクスペリエンスを作成する必要もあります。 詳しくは、「[ストア サービスを使ってターゲット オファーを管理する](../monetize/manage-targeted-offers-using-windows-store-services.md)」をご覧ください。
 3. **アプリをストアに提出する。** プランをユーザーに提供するには、アプリ内販売エクスペリエンスを実装して、アプリを発行する必要があります。
 
@@ -32,7 +32,7 @@ ms.locfileid: "8756666"
 
 ## <a name="to-create-and-send-a-targeted-offer"></a>対象のプランを作成して送信するには
 
-1.  [パートナー センター](https://partner.microsoft.com/dashboard)で、左側のナビゲーション メニューで、**利用率の引き上げ**を展開し、**対象のプラン**を選択します。
+1.  [パートナー センター](https://partner.microsoft.com/dashboard)で、左側のナビゲーション メニューで [**利用率の引き上げ**を展開し、**対象のプラン**を選択します。
 2.  **[対象のプラン]** ページで、利用可能なプランを確認します。 実装するプランについて、**[新しいプランの作成]** を選びます。
 
     > [!NOTE]

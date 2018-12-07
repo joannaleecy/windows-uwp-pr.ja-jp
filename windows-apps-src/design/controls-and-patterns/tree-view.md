@@ -1,5 +1,5 @@
 ---
-description: ItemsSource を階層データ ソースにバインドすることによって、展開可能なツリー ビューを作成または作成して、自分で TreeViewNode オブジェクトを管理することができます。
+description: ItemsSource を階層データ ソースにバインドすることによって、展開可能なツリー ビューを作成するかを作成して、自分で TreeViewNode オブジェクトを管理することができます。
 title: ツリー ビュー
 label: Tree view
 template: detail.hbs
@@ -14,11 +14,11 @@ dev_langs:
 - vb
 ms.custom: RS5
 ms.openlocfilehash: 753d0cd808daef96aa16c34c3962201ca73e5be9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736072"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806756"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -28,14 +28,14 @@ TreeView API は、以下の機能をサポートします。
 
 - N レベルの入れ子
 - 1 つまたは複数のノードの選択
-- (プレビュー)ツリー ビューと TreeViewItem で ItemsSource プロパティをデータ バインディング
+- (プレビュー)ツリー ビューで TreeViewItem ItemsSource プロパティをデータ バインディング
 - (プレビュー)ツリー ビュー項目テンプレートのルートとして TreeViewItem
 - (プレビュー)TreeViewItem 内のコンテンツの任意の型
 - (プレビュー)ドラッグ アンド ドロップ ツリー ビューの間で
 
 | **Windows UI のライブラリを入手します。** |
 | - |
-| このコントロールは、Windows UI のライブラリ、新しいコントロールと UWP アプリの UI の機能が含まれている NuGet パッケージの一部として含まれています。 詳しくは、インストール手順を含む、 [Windows UI のライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)をご覧ください。 |
+| このコントロールは、Windows UI のライブラリ、新しいコントロールと UWP アプリの UI の機能が含まれている NuGet パッケージの一部として含まれています。 詳しくは、インストールの手順を含む、 [Windows UI のライブラリの概要](https://docs.microsoft.com/uwp/toolkits/winui/)をご覧ください。 |
 
 | **プラットフォーム Api** | **Windows UI ライブラリ Api** |
 | - | - |
@@ -54,7 +54,7 @@ TreeView API は、以下の機能をサポートします。
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、アプリを<a href="xamlcontrolsgallery:/item/TreeView">開き、ツリー ビューの動作を参照してください</a>ここをクリックします。</p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリがインストールされている場合は、ここをクリックして<a href="xamlcontrolsgallery:/item/TreeView">アプリを開き、操作でのツリー ビューを参照してください</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
@@ -77,12 +77,12 @@ TreeView API は、以下の機能をサポートします。
 
 ツリー ビューを作成するには、階層データ ソースを[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)をバインドまたはを作成して、自分で TreeViewNode オブジェクトを管理することができます。
 
-ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。 ノード階層を作成するには、TreeView コントロールの[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)コレクションに 1 つまたは複数のルート ノードを追加します。 各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。 ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。
+ツリー ビューを作成するには、[TreeView](/uwp/api/windows.ui.xaml.controls.treeview) コントロールと [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) オブジェクトの階層を使用します。 ノード階層を作成するには、ツリー ビュー コントロールの[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)コレクションに 1 つまたは複数のルート ノードを追加します。 各 TreeViewNode では、より多くのノードをその Children コレクションに追加することができます。 ツリー ビュー ノードは、必要な任意の深さまで入れ子にすることができます。
 
 以降、Windows Insider Preview では、バインドできます階層データ ソース ツリー ビューのコンテンツを提供する[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)プロパティをするリスト ビューの ItemsSource と同様です。 同様に、項目を表示する DataTemplate を提供する[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (およびオプションの[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)) を使用します。
 
 > [!IMPORTANT]
-> ItemsSource は、TreeView.RootNodes に TreeView コントロールにコンテンツを格納するための代替のメカニズムです。 同時に ItemsSource と RootNodes の両方を設定することはできません。 ItemsSource を使用する場合は、ノードは、作成し、TreeView.RootNodes プロパティからアクセスできることができます。
+> ItemsSource は、TreeView コントロールにコンテンツを移行させるに TreeView.RootNodes 代替メカニズムです。 同時に ItemsSource と RootNodes の両方を設定することはできません。 ItemsSource を使用して、ノードが作成された TreeView.RootNodes プロパティからアクセスすることができます。
 
 XAML で宣言された単純なツリー ビューの例を以下に示します。 通常は、コードにノードを追加しますが、ノードの階層を作成する方法を視覚化するうえで役立つため、XAML の階層をここに示します。
 
@@ -104,7 +104,7 @@ XAML で宣言された単純なツリー ビューの例を以下に示しま�
 
 ### <a name="bind-to-a-hierarchical-data-source"></a>階層データ ソースにバインドします。
 
-データ バインディングを使用して、ツリー ビューを作成するには、TreeView.ItemsSource プロパティに階層コレクションを設定します。 ItemTemplate で子項目のコレクション プロパティに設定 TreeViewItem.ItemsSource します。
+データ バインディングを使用して、ツリー ビューを作成するには、階層のコレクションを TreeView.ItemsSource プロパティに設定します。 ItemTemplate で子項目のコレクション プロパティに設定 TreeViewItem.ItemsSource します。
 
 ```xaml
 <TreeView ItemsSource="{x:Bind DataSource}">
@@ -126,12 +126,12 @@ _ツリー ビューのデータ バインディングを使用して_完全な�
 | **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
 | - | - |
 | [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 指定した TreeViewItem コンテナーのデータ項目を取得します。 |
-| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 指定されたデータ項目の TreeViewItem コンテナーを取得します。 |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 指定したデータ項目の TreeViewItem コンテナーを取得します。 |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
 | - | - |
 | [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 指定した TreeViewItem コンテナーの TreeViewNode を取得します。 |
-| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 指定した TreeViewNode の TreeViewItem コンテナーを取得します。 |
+| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 指定した TreeViewNode TreeViewItem コンテナーを取得します。 |
 
 ### <a name="manage-tree-view-nodes"></a>ツリー ビュー ノードを管理します。
 
@@ -210,7 +210,7 @@ ItemsSource または RootNodes、– 各ノードを表示するために使用
 
 ### <a name="item-template-selectors"></a>項目テンプレート セレクター
 
-さまざまな項目の種類に基づいてツリー ビューの項目の DataTemplate を設定することができます。 たとえば、アプリでは、ファイル エクスプ ローラーには、そのフォルダー、およびファイル用に別の 1 つのデータ テンプレートを使用します。
+項目の種類に基づいてツリー ビューの項目のさまざまな DataTemplate を設定することができます。 たとえば、アプリでは、ファイル エクスプ ローラーには、そのフォルダー、およびファイル用に別の 1 つのデータ テンプレートを使用します。
 
 ![フォルダーとファイルの異なるデータ テンプレートを使用します。](images/treeview-icons.png)
 
@@ -340,7 +340,7 @@ End Sub
 
 ItemInvoked イベント引数は、呼び出された項目にアクセスを提供します。 [InvokedItem](/uwp/api/windows.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem) プロパティには呼び出されたノードが含まれています。 これを TreeViewNode にキャストし、データ項目を TreeViewNode.Content プロパティから取得できます。
 
-ItemInvoked イベント ハンドラーの例を次に示します。 データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。 ノードがフォルダー ノードの場合、展開またはノードを同時に折りたたまれます。 それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。
+ItemInvoked イベント ハンドラーの例を次に示します。 データ項目は [IStorageItem](/uwp/api/windows.storage.istorageitem) です。この例では、ファイルおよびツリーについての情報だけが表示されます。 また、ノードがフォルダー ノードの場合は、これを展開またはノードを同時に折りたたまれますです。 それ以外の場合、ノードは山形マークをクリックした場合にのみ展開または折りたたまれます。
 
 ```csharp
 private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEventArgs args)

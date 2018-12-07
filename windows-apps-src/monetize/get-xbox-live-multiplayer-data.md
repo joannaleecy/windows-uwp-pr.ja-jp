@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 74f1a64bde32fe68a51527527a0b049d811d0853
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744593"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806717"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>Xbox Live のマルチプレイヤー データの取得
 
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)のマルチプレイヤー データを日単位または月単位で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、 [Xbox 分析レポート](../publish/xbox-analytics-report.md)では、パートナー センターで利用可能なもできます。
+[Xbox Live 対応ゲーム](../xbox-live/index.md)のマルチプレイヤー データを日単位または月単位で取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、パートナー センターで[Xbox 分析レポート](../publish/xbox-analytics-report.md)で利用可能なもできます。
 
 > [!IMPORTANT]
 > このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。

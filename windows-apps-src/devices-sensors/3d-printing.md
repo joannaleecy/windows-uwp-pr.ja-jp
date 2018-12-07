@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 3dprinting、3 d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735652"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8806456"
 ---
 # <a name="3d-printing"></a>3D 印刷
 
@@ -23,7 +23,7 @@ ms.locfileid: "8735652"
 | トピック | 説明 |
 |-------|-------------|
 | [アプリからの 3D 印刷](3d-print-from-app.md) | UWP アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。 |
-| [3MF パッケージの生成](generate-3mf.md) | 3D Manufacturing Format ファイルの種類とどのように作成したり Windows.Graphics.Printing3D Api を使った操作の構造について説明します。 |
+| [3MF パッケージの生成](generate-3mf.md) | 3D Manufacturing Format ファイルの種類と方法を作成したり Windows.Graphics.Printing3D Api を使った操作の構造について説明します。 |
 
 ## <a name="related-topics"></a>関連トピック
 

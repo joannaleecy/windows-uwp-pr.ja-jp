@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745187"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794112"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 
@@ -32,12 +32,12 @@ ms.locfileid: "8745187"
 1.  [Azure ad アプリケーションを構成](#step-1)します。
 2.  [パートナー センターでアプリに、Azure AD アプリケーション ID を関連付けます](#step-2)。
 3.  サービスで、発行元 ID を表す [Azure AD アクセス トークンを作成します](#step-3)。
-4.  クライアント Windows アプリで[Microsoft Store ID キーを作成](#step-4)現在のユーザーとキーのパスの id を表す、サービスにバックアップします。
+4.  クライアントの Windows アプリを[Microsoft Store ID キーを作成](#step-4)現在のユーザーとキーのパスの id を表す、サービスにバックアップします。
 5.  必要な Azure AD のアクセス トークンと Microsoft Store ID キーを取得した後、[サービスから Microsoft Store コレクション API または Microsoft Store 購入 API を呼び出します](#step-5)。
 
 このエンド ツー エンドのプロセスには、さまざまなタスクを実行する 2 つのソフトウェア コンポーネントが含まれます。
 
-* **サービス**です。 これはお客様のビジネス環境のコンテキストで安全に実行されるアプリケーションであり、選択した任意の開発プラットフォームを使用して実装できます。 サービスは、Azure AD アクセス トークンの作成に、必要なシナリオでは、Microsoft Store コレクションの残りの部分の Uri を呼び出す API および購入 API を担当します。
+* **サービス**です。 これはお客様のビジネス環境のコンテキストで安全に実行されるアプリケーションであり、選択した任意の開発プラットフォームを使用して実装できます。 サービスは、Azure AD アクセス トークンの作成、必要なシナリオでは、Microsoft Store コレクションの残りの部分の Uri を呼び出す API および購入 API を担当します。
 * **クライアント Windows アプリ**。 これは、アクセスし、顧客の資格情報 (アプリのアドオンを含む) を管理するアプリです。 このアプリは、Microsoft Store コレクション API を呼び出すし、サービスから API を購入する必要がある Microsoft Store ID キーを作成します。
 
 <span id="step-1"/>
@@ -49,13 +49,13 @@ Microsoft Store コレクション API または購入 API を使う前に、Azu
 > [!NOTE]
 > このセクションの作業は 1 回実行する必要があるだけです。 いつでも新しいを作成する必要があるをこれらの値を再利用することができます、Azure AD アプリケーション マニフェストを更新すると、テナント ID、アプリケーション ID とクライアント シークレットがある場合、Azure AD アクセス トークン。
 
-1.  まだ完了していないしたら場合で[Azure Active Directory とアプリケーションの統合](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)を登録の指示に従って、 **Web アプリ/API**と Azure AD アプリケーション。
+1.  まだ完了していないしたら場合を登録する[Azure Active Directory とアプリケーションの統合](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)の指示に従って、 **Web アプリ/API**と Azure AD アプリケーション。
     > [!NOTE]
     > 選択する必要があります、アプリケーションを登録すると、 **Web アプリ/API**アプリケーション入力できるように、アプリケーションのキー (*クライアント シークレット*とも呼ばれます) を取得することができます。 Microsoft Store コレクション API または購入 API を呼び出すには、後の手順で Azure AD からアクセス トークンを要求するときにクライアント シークレットを指定する必要があります。
 
 2.  [Azure 管理ポータル](https://portal.azure.com/)で、 **Azure Active Directory**に移動します。 ディレクトリを選び、左側のナビゲーション ウィンドウで、**アプリの登録**をクリックし、アプリケーションを選びます。
-3.  アプリケーションの登録のメイン ページが表示されます。 このページで、後で使用の**アプリケーション ID**の値をコピーします。
-4.  後で必要となるキーを作成 (これはすべてと呼ばれる*クライアント シークレット*)。 左側のウィンドウで**設定**し、**キー**をクリックします。 このページで、[キーを作成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)する手順を完了します。 後で使うには、このキーをコピーします。
+3.  アプリケーションの登録のメイン ページが表示されます。 このページでは、後で使用の**アプリケーション ID**の値をコピーします。
+4.  後で必要となるキーを作成 (これはすべてと呼ばれる*クライアント シークレット*)。 左側のウィンドウで**設定**し、**キー**をクリックします。 このページでは、[キーを作成](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#to-add-application-credentials-or-permissions-to-access-web-apis)する手順を完了します。 後で使用するには、このキーをコピーします。
 5.  必要ないくつかのオーディエンス Uri を[アプリケーション マニフェスト](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)に追加します。 左側のウィンドウでは、**マニフェスト**をクリックします。 [**編集**] を置き換え、`"identifierUris"`セクションを次のテキストと**保存**] をクリックします。
 
     ```json
@@ -72,13 +72,13 @@ Microsoft Store コレクション API または購入 API を使う前に、Azu
 
 ## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>手順 2: Azure AD アプリケーション ID をパートナー センターで、クライアント アプリに関連付ける
 
-Microsoft Store コレクション API または購入 API の所有権と、アプリやアドオンの購入を構成するを使う前に、パートナー センターでアプリ (またはアドオンを含むアプリ) で、Azure AD アプリケーション ID を関連付ける必要があります。
+Microsoft Store コレクション API または購入 API の所有権と、アプリやアドオンの購入を構成するを使う前に、パートナー センターで、アプリ (またはアドオンを含むアプリ) で、Azure AD アプリケーション ID を関連付ける必要があります。
 
 > [!NOTE]
 > この作業を行うのは一度だけです。
 
 1.  [パートナー センター](https://partner.microsoft.com/dashboard)にサインインし、アプリを選択します。
-2.  **サービス**に移動&gt;**製品のコレクションと購入**ページを利用可能な**クライアント ID**フィールドのいずれかに、Azure AD アプリケーション ID を入力します。
+2.  **サービス**に移動&gt;**製品のコレクションと購入**ページし、利用可能な**クライアント ID**フィールドのいずれかに、Azure AD アプリケーション ID を入力します。
 
 <span id="step-3"/>
 
@@ -153,7 +153,7 @@ Microsoft Store コレクション API または Microsoft Store 購入 API の�
 
   * アプリで [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 名前空間の  [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerCollectionsIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomercollectionsidasync) メソッドを使用します。
 
-    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 *PublisherUserId*パラメーター (ユーザーの ID になります em 新しい Microsoft Store ID キーを使って、現在のユーザーを関連付けるにユーザー ID を渡すことと、現在のアプリの発行元を管理するサービスのコンテキストで匿名ユーザー Id を保持している場合もできます。bedded キー)。 それ以外の場合、Microsoft Store ID キーを持つユーザー ID を関連付けるにはない場合は、任意の文字列値を*publisherUserId*パラメーターに渡すことができます。
+    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 *PublisherUserId*のパラメーター (ユーザーの ID になります em 新しい Microsoft Store ID キーを使って、現在のユーザーを関連付けるには、ユーザーの ID を渡すことができます、現在のアプリの発行元としての管理サービスのコンテキストで匿名ユーザー Id を保持している場合bedded キー)。 それ以外の場合、Microsoft Store ID キーを持つユーザー ID を関連付けるにはない場合は、任意の文字列値を*publisherUserId*パラメーターに渡すことができます。
 
 3.  アプリで正しく Microsoft Store ID キーを作成したら、そのキーをサービスに渡します。
 
@@ -171,7 +171,7 @@ Microsoft Store コレクション API または Microsoft Store 購入 API の�
 
   * アプリで [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 名前空間の [CurrentApp](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) クラスを使ってアプリ内購入を管理する場合は、[CurrentApp.GetCustomerPurchaseIdAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getcustomerpurchaseidasync) メソッドを使用します。
 
-    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 *PublisherUserId*パラメーター (ユーザーの ID になります em 新しい Microsoft Store ID キーを使って、現在のユーザーを関連付けるにユーザー ID を渡すことと、現在のアプリの発行元を管理するサービスのコンテキストで匿名ユーザー Id を保持している場合もできます。bedded キー)。 それ以外の場合、Microsoft Store ID キーを持つユーザー ID を関連付けるにはない場合は、任意の文字列値を*publisherUserId*パラメーターに渡すことができます。
+    メソッドの *serviceTicket* パラメーターに、Azure AD アクセス トークンを渡します。 *PublisherUserId*のパラメーター (ユーザーの ID になります em 新しい Microsoft Store ID キーを使って、現在のユーザーを関連付けるには、ユーザーの ID を渡すことができます、現在のアプリの発行元としての管理サービスのコンテキストで匿名ユーザー Id を保持している場合bedded キー)。 それ以外の場合、Microsoft Store ID キーを持つユーザー ID を関連付けるにはない場合は、任意の文字列値を*publisherUserId*パラメーターに渡すことができます。
 
 3.  アプリで正しく Microsoft Store ID キーを作成したら、そのキーをサービスに渡します。
 

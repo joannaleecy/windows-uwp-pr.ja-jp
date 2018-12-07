@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751911"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787860"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、ユーザーを引き付ける方法、ゲームで Xbox 機能に関する統計情報を示しています。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、お客様の Xbox 機能をゲームにエンゲージメント状況の統計情報を示しています。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
-> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲームの経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームはこのレポートに表示されているされません。
+> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲームの経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームは、このレポートに表示されているされません。
 
-ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示するには**分析**を展開し、 **Xbox 分析**を選択します。  オフラインで表示するパートナー センターでは、または[レポートをダウンロードするの](download-analytic-reports.md)には、このデータを表示できます。
+**分析**を展開し、 **Xbox 分析**を選択して、ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示できます。  パートナー センター、または[レポートをダウンロード](download-analytic-reports.md)オフラインで表示するでは、このデータを表示できます。
 
 
 ## <a name="overview-tab"></a>[概要] タブ

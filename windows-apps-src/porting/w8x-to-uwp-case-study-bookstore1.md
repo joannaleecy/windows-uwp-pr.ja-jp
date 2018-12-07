@@ -1,22 +1,22 @@
 ---
 title: Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: このトピックでは、非常に単純なユニバーサル 8.1 アプリを windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリを移植するケース スタディを示します。
+description: このトピックでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732851"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789740"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 
 
-このトピックでは、非常に単純なユニバーサル 8.1 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリの移植のケース スタディを示します。 ユニバーサル 8.1 アプリは、Windows8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+このトピックでは、Windows10Universal Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。 ユニバーサル 8.1 アプリは、Windows8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 移植するアプリは、ビュー モデルにバインドされた **ListBox** で構成されます。 ビュー モデルにはタイトル、著者、表紙を示す書籍の一覧が含まれます。 表紙画像では、**[ビルド アクション]** が **[コンテンツ]** に設定され、**[出力ディレクトリにコピー]** が **[コピーしない]** に設定されています。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8732851"
 
 [Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532946)。
 
-[Windows 10 アプリの bookstore1universal \_10 をダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)します。
+[Windows 10 アプリをダウンロード、bookstore1universal \_10](http://go.microsoft.com/fwlink/?linkid=532950)します。
 
 ## <a name="the-universal-81-app"></a>ユニバーサル 8.1 アプリ
 
@@ -62,7 +62,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 **Windows プロジェクトから**
 
--   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として 1 つ使用します同等の WindowsPhone ファイル内にある一部のではありません。
+-   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として 1 つ使用しますいくつかのと同じ WindowsPhone ファイル内にあるのではありません。
 
 コピーしたソース コードとマークアップ ファイルを編集し、Bookstore1\_81 名前空間への参照をすべて、Bookstore1Universal\_10 に変更します。 これをすばやく行うには、**[フォルダーを指定して置換]** 機能を使います。 ビュー モデルでも、その他の命令型コードでも、コードを変更する必要はありません。 ただし、どのバージョンのアプリが実行されているかをわかりやすくするために、**Bookstore1Universal\_10.BookstoreViewModel.AppName** プロパティによって返される値を、"BOOKSTORE1\_81" から "BOOKSTORE1UNIVERSAL\_10" に変更します。
 
@@ -80,7 +80,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 ## <a name="universal-styling"></a>ユニバーサル スタイル設定
 
-Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確には含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
+Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確が含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
 
 -   項目間のスペースを縮めるために、MainPage.xaml で `BookTemplate` データ テンプレートを探し、`Margin="0,0,0,8"` をルートの **Grid** から削除します。
 -   また、`BookTemplate` には、`BookTemplateTitleTextBlockStyle` と `BookTemplateAuthorTextBlockStyle` への参照があります。 Bookstore1\_81 は、それらのキーを間接参照として使うため、2 つのアプリで 1 つのキーの実装が異なります。 その間接参照は、必要ではなくなりました。システム スタイルを直接参照できます。 そこで、これらの参照をそれぞれ、`TitleTextBlockStyle` と `SubtitleTextBlockStyle` で置き換えます。

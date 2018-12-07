@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751013"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794399"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -58,7 +58,7 @@ Desktop App Converter (DAC) は、配布を含む、Microsoft Store 経由でサ
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
+アプリケーションのパッケージの作成を開始する前に、このガイドを確認します。[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>システムで DCA を実行できることを確認する
 
@@ -120,7 +120,7 @@ Desktop App Converter (DAC) は、配布を含む、Microsoft Store 経由でサ
 パラメーターを使用して、アプリケーションのパッケージ名、発行元、バージョン番号を指定します。
 
 > [!NOTE]
-> Microsoft Store でアプリ名を予約済み場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、パッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
+> Microsoft Store でアプリ名を予約済みの場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用してパッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
 
 ### <a name="a-quick-look-at-command-parameters"></a>コマンド パラメーターの確認
 
@@ -143,7 +143,7 @@ DesktopAppConverter.exe
 * [インストーラー (.msi) ファイルを持つアプリケーションをパッケージ化します。](#installer-conversion)
 * [セットアップの実行可能ファイルを持つアプリケーションをパッケージ化します。](#setup-conversion)
 * [インストーラーがないアプリケーションをパッケージ化します。](#no-installer-conversion)
-* [アプリのパッケージ化と、アプリの署名、ストアの申請のための準備](#optional-parameters)
+* [アプリのパッケージ化と、アプリの署名、ストア申請用の準備](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -156,7 +156,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
+> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 次に、パートナー センターをパッケージに数値で始まる id を割り当てる場合、こと確認するも<i>-appid</i>パラメーターに渡すそのパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用します。  
 
 **ビデオ**
 
@@ -174,9 +174,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
-``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合、使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
+``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
 
 **ビデオ**
 
@@ -186,7 +186,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 #### <a name="package-an-application-that-doesnt-have-an-installer"></a>インストーラーがないアプリケーションをパッケージ化します。
 
-この例で使用して、 ``Installer`` 、アプリケーションのファイルのルート フォルダーをポイントするパラメーター。
+この例で使用して、``Installer``アプリケーションのファイルのルート フォルダーをポイントするパラメーター。
 
 アプリの実行可能ファイルを指定するには、`AppExecutable` パラメーターを使用します。
 
@@ -195,7 +195,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 **ビデオ**
 
@@ -205,15 +205,15 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>アプリをパッケージ化し、アプリに署名して、パッケージに対して検証チェックを実行する
 
-この例は、点を除いて、アプリケーション ローカル テスト用に署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示しています 1 つ目に似ています。
+この例は、ローカル テスト用アプリケーションに署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示していますを除き 1 つ目に似ています。
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
-``Sign``パラメーターが証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
+``Sign``パラメーターは、証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
 
 検証するアプリケーションを使用して、``Verify``パラメーター。
 
@@ -267,9 +267,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerArguments &lt;String&gt; |省略可能 |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。 <br><br>このパラメーターの使用例: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log"。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス &lt;log_folder&gt; を指定する必要があります。|
 |-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合、出力を MSIX パッケージとしてパッケージ化するには、このスクリプトに指示するスイッチ。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合は、出力を MSIX パッケージとしてパッケージ化するには、このスクリプトを指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージ ID パラメーター</strong>||
-|-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。 |
+|-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。 |
 |-Publisher &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの発行元 |
 |-Version &lt;Version&gt; |必須 |ユニバーサル Windows アプリ パッケージのバージョン番号 |
 |<a id="manifest-params" /><strong>パッケージ マニフェスト パラメーター</strong>||
@@ -301,7 +301,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 アプリを実行するには、2 種類の方法があります。
 
-1 つ目は、PowerShell コマンド プロンプトを開いて、```Add-AppxPackage –Register AppxManifest.xml``` というコマンドを入力する方法です。 おそらくに署名する必要がないために、アプリケーションを実行する最も簡単な方法です。
+1 つ目は、PowerShell コマンド プロンプトを開いて、```Add-AppxPackage –Register AppxManifest.xml``` というコマンドを入力する方法です。 署名する必要がないために、アプリケーションを実行する最も簡単な方法では可能性があります。
 
 証明書を使って、アプリケーションの署名を別の方法です。 使用する場合、```sign```パラメーター、Desktop App Converter は、1 つ生成し、し、それを使用してアプリケーションに署名します。 その証明書ファイルは **auto-generated.cer** という名前になり、パッケージ アプリのルート フォルダーに配置されます。
 
@@ -347,7 +347,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-次の 2 つのセクションでは、いくつかの省略可能な修正を検討してパッケージ化されたアプリケーションにについて説明します。
+次の 2 つのセクションでは、いくつかの省略可能な修正を検討してパッケージのアプリケーションについて説明します。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>不要なファイルとレジストリ キーを削除する
 

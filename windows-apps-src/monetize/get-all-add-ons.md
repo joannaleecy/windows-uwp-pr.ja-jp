@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50733bc0617d56b7e6b8596b661aff8056961f18
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738436"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785715"
 ---
 # <a name="get-all-add-ons"></a>すべてのアドオンの入手
 
-パートナー センター アカウントに登録されているすべてのアプリのすべてのアドオンに関するデータを取得、Microsoft Store 申請 API でこのメソッドを使います。
+パートナー センター アカウントに登録されているすべてのアプリのすべてのアドオンに関するデータを取得、Microsoft Store 申請 API の以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 

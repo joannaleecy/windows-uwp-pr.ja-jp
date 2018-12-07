@@ -8,17 +8,17 @@ keywords: Windows 10, UWP
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756951"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793912"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 
 拡張機能を使用すると、あらかじめ定義された方法で Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合します。
 
-たとえば、ファイアウォールの例外を作成、アプリケーションのファイルの種類の既定のアプリケーションを作成またはスタート画面のタイルをポイントして、アプリのパッケージ バージョン、拡張機能を使用します。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
+たとえば、ファイアウォールの例外を作成、アプリケーションのファイルの種類の既定のアプリケーションやスタート画面のタイルをポイントして、アプリのパッケージ バージョン、拡張機能を使用します。 拡張機能は、アプリのパッケージ マニフェスト ファイルに XML を追加するだけで使用できます。 コードは必要ありません。
 
 このトピックでは、これらの拡張機能について説明し、拡張機能を使って実行できるタスクについても示します。
 
@@ -154,7 +154,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>ファイルの種類のセットをパッケージ化されたアプリケーションを関連付ける
 
-パッケージ化されたアプリケーションは、ファイル拡張子に関連付けられていることができます。 ユーザーは、ファイルを右クリックし、**プログラムから開く**] オプションを選択し、候補の一覧に、アプリケーションが表示されます。
+パッケージ化されたアプリケーションは、ファイル拡張子に関連付けられていることができます。 ユーザーは、ファイルを右クリックし、**プログラムから開く**] オプションを選択し、アプリケーションは候補の一覧に表示されます。
 
 #### <a name="xml-namespace"></a>XML 名前空間
 
@@ -242,7 +242,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |Category | 常に ``windows.fileTypeAssociation`` です。
 |名前 |アプリの一意の ID。 |
 |Verb |エクスプローラーのコンテキスト メニューに表示される名前です。 この文字列は、```ms-resource``` を使用してローカライズできます。|
-|Id |動詞の一意の ID。 アプリが UWP アプリの場合、ユーザーの選択を適切に処理できるようにアクティブ化イベント引数の一部としてアプリに渡されます。 アプリが完全に信頼できるパッケージ アプリの場合は、パラメーターを受け取ります (次の項目をご覧ください)。 |
+|Id |動詞の一意の ID。 アプリが UWP アプリの場合は、ユーザーの選択内容を適切に処理できるようにアクティブ化イベント引数の一部としてアプリに渡されます。 アプリが完全に信頼できるパッケージ アプリの場合は、パラメーターを受け取ります (次の項目をご覧ください)。 |
 |パラメーター |動詞に関連付けられている引数のパラメーターと値のリスト。 アプリが完全に信頼できるパッケージ アプリの場合は、アプリケーションがアクティブ化されるときに、これらのパラメーターがイベント引数としてアプリケーションに渡されます。 さまざまなアクティブ化の動詞に基づいて、アプリケーションの動作をカスタマイズすることができます。 変数にファイル パスが含まれる可能性がある場合は、パラメーター値を引用符で囲みます。 これにより、パスにスペースが含まれている場合に発生する問題を回避できます。 アプリが UWP アプリの場合は、パラメーターを渡すことはできません。 アプリは、代わりに ID を受け取ります (前の項目を参照してください)。|
 |Extended |ユーザーが **Shift** キーを押しながらファイルを右クリックすることでコンテキスト メニューを表示した場合にのみ表示される動詞を指定します。 この属性は省略可能であり、指定されていない場合の既定値は **False** (常に動詞を表示する) です。 この動作は各動詞について個別に指定します ("開く" は例外で、常に **False**)。|
 
@@ -856,14 +856,14 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [プロトコルを使用して、アプリケーションを起動します。](#protocol)
 * [エイリアスを使用して、アプリケーションを起動します。](#alias)
 * [ユーザーが Windows にログオンしたときに実行可能ファイルを起動する](#executable)
-* [ユーザーが自分の PC にデバイスを接続するときに、アプリケーションを起動を有効にします。](#autoplay)
+* [デバイスを自分の PC に接続するときに、アプリケーションを起動できるようにします。](#autoplay)
 * [Microsoft Store から更新プログラムを受信した後、自動的に再起動する](#updates)
 
 <a id="protocol" />
 
 ### <a name="start-your-application-by-using-a-protocol"></a>プロトコルを使用して、アプリケーションを起動します。
 
-プロトコルの関連付けによって、他のプログラムやシステム コンポーネントがパッケージ アプリと相互運用できるようにします。 プロトコルを使用して、パッケージ化されたアプリケーションを起動するときは、特定が適切に動作できるように、アクティブ化イベント引数に渡すパラメーターを指定できます。 パラメーターは、完全に信頼できるパッケージ アプリでのみサポートされています。 UWP アプリでは、パラメーターを使用できません。
+プロトコルの関連付けによって、他のプログラムやシステム コンポーネントがパッケージ アプリと相互運用できるようにします。 プロトコルを使用して、パッケージ化されたアプリケーションが開始されると、特定が適切に動作できるように、アクティブ化イベント引数に渡すパラメーターを指定できます。 パラメーターは、完全に信頼できるパッケージ アプリでのみサポートされています。 UWP アプリでは、パラメーターを使用できません。
 
 #### <a name="xml-namespace"></a>XML 名前空間
 
@@ -969,9 +969,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 スタートアップ タスクは、ユーザーがログオンするたびに、実行可能ファイルを自動的に実行するアプリケーションを許可します。
 
 > [!NOTE]
-> ユーザーは、このスタートアップ タスクを登録する少なくとも 1 回、アプリケーションを起動します。
+> ユーザーは、アプリケーションを起動、少なくとも 1 回このスタートアップ タスクを登録します。
 
-アプリケーションは、複数のスタートアップ タスクを宣言できます。 各タスクは独立して起動されます。 すべてのスタートアップ タスクは、タスク マネージャーの **[スタートアップ]** タブに、アプリのマニフェストで指定した名前とアプリのアイコンを使って表示されます。 タスク マネージャーによって、タスクの起動への影響が自動的に分析されます。
+アプリケーションでは、複数のスタートアップ タスクを宣言できます。 各タスクは独立して起動されます。 すべてのスタートアップ タスクは、タスク マネージャーの **[スタートアップ]** タブに、アプリのマニフェストで指定した名前とアプリのアイコンを使って表示されます。 タスク マネージャーによって、タスクの起動への影響が自動的に分析されます。
 
 ユーザーは、タスク マネージャーを使用して、アプリのスタートアップ タスクを手動で無効にすることができます。 ユーザーがタスクを無効にした場合、プログラムでタスクを再度有効にすることはできません。
 
@@ -1027,7 +1027,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 
 <a id="autoplay" />
 
-### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>ユーザーが自分の PC にデバイスを接続するときに、アプリケーションを起動を有効にします。
+### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>デバイスを自分の PC に接続するときに、アプリケーションを起動できるようにします。
 
 自動再生は、ユーザーがデバイスを自分の PC に接続するときにオプションとして、アプリケーションを表示できます。
 
@@ -1088,13 +1088,13 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>Microsoft Store から更新プログラムを受信した後、自動的に再起動する
 
-ユーザーを更新プログラムをインストールするときに、アプリケーションが開いている場合、アプリケーションを閉じます。
+ユーザーを更新プログラムをインストールするときに、アプリケーションが開いている場合は、アプリケーションを閉じます。
 
-更新の完了後に再起動するようにアプリケーションを設定する場合は、再起動するすべてのプロセスで、 [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出します。
+更新の完了後に再起動するようにアプリケーションを設定する場合は、再起動するすべてのプロセスで[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出します。
 
-アプリケーションの各アクティブ ウィンドウが[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)メッセージを受信します。 この時点で、アプリケーションは、必要に応じて、コマンド ラインを更新するには、もう一度[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出すことができます。
+アプリケーションの各アクティブ ウィンドウが[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)メッセージを受信します。 この時点で、アプリケーションでは、必要に応じて、コマンド ラインを更新するには、もう一度[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)関数を呼び出すことができます。
 
-アプリケーションの各アクティブ ウィンドウは[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを受信するとき、アプリケーションがデータを保存する、シャット ダウンする必要があります。
+[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを受信するアプリの各アクティブ ウィンドウに、アプリケーションがデータを保存、シャット ダウンする必要があります。
 
 >[!NOTE]
 アクティブ ウィンドウは、アプリケーションが[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)メッセージを処理しない場合にも[WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx)メッセージを受け取ります。
@@ -1264,9 +1264,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Package>
 ```
 
-この拡張機能は、すべてのデバイスで実行できるユニバーサル Windows プラットフォームのユーザー インターフェイスを作成する場合に便利にあります必要がある完全信頼で実行を続ける、Win32 アプリケーションのコンポーネント。
+この拡張機能は、すべてのデバイスで実行できるユニバーサル Windows プラットフォームのユーザー インターフェイスを作成する場合に便利にありますが、完全信頼で実行を続ける Win32 アプリケーションのコンポーネントが必要な。
 
-Win32 アプリの Windows アプリ パッケージの作成だけです。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能は、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](../launch-resume/app-services.md)を設定します。 このシナリオについては詳しくは、[こちら](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)をご覧ください。
+だけ、Win32 アプリの Windows アプリ パッケージを作成します。 そのうえで、この拡張機能を UWP アプリのパッケージ ファイルに追加してください。 この拡張機能は、Windows アプリ パッケージで実行可能ファイルを開始することを示します。  UWP アプリと Win32 アプリの間でやり取りを行うには、1 つまたは複数の[アプリ サービス](../launch-resume/app-services.md)を設定します。 このシナリオについては詳しくは、[こちら](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)をご覧ください。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742668"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786107"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間で、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
-**{X:bind}** マークアップ拡張-windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
+**{X:bind}** マークアップ拡張機能: windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -85,7 +85,7 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 
 C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプライベート フィールドおよびプロパティにバインドできません。バインドできるようにするには、パブリック プロパティが必要です。 バインディング用のサーフェス領域を CX クラス/インターフェイスとして公開し、関連するメタデータを取得できるようにする必要があります。 **\[Bindable\]** 属性は必要ありません。
 
-**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付き要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
+**x:Bind** では、**ElementName=xxx** をバインド式の一部として使用する必要はありません。 代わりに、名前付きの要素が、ルート バインディング ソースを表すページまたはユーザー コントロール内のフィールドになるためには、バインディングのパスの最初の部分として、要素の名前を使用することができます。 
 
 
 ### <a name="collections"></a>コレクション
@@ -111,7 +111,7 @@ _注: C# スタイルのキャスト構文は添付プロパティ構文より�
 
 ## <a name="functions-in-binding-paths"></a>バインディング パス内の関数
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、データ バインド マークアップでいくつかのシナリオを可能にするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これは、マークアップでいくつかのシナリオを可能にするデータをバインドするための強力な機能です。 詳細については、[関数のバインディング](../data-binding/function-bindings.md)を参照してください。
 
 ## <a name="event-binding"></a>イベント バインディング
 
@@ -167,7 +167,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 > [!NOTE]
 > Windows 10、バージョン1607 以降では、XAML フレームワークにブール値と Visibility 値のコンバーターが組み込まれています。 コンバーターは、**Visible** 列挙値に対して **true** を、**Collapsed** に対して **false** をマッピングします。これにより、コンバーターを作成せずに Visibility プロパティをブール値にバインドできます。 これは、関数バインドの機能ではないことに注意してください。プロパティのバインドにすぎません。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンについて詳しくは、「[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」をご覧ください。
 
-**ヒント:** の値を 1 つの中かっこを指定する必要がある場合など、[**パス**](https://msdn.microsoft.com/library/windows/apps/br209830)または[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)、前に付けますバック スラッシュ:`\{`します。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
+**ヒント:** バック スラッシュ前[**パス**](https://msdn.microsoft.com/library/windows/apps/br209830)または[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)などの値を 1 つの中かっこを指定する必要がある場合:`\{`します。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 

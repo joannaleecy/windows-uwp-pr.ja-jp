@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ea005dd33bbb5461921fa17eded8430d7648c87
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 8a87fe2bbff1768da43d6cb366b173077555270f
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739450"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789626"
 ---
 # <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP アプリのタイル、バッジ、通知
  
@@ -42,7 +42,7 @@ ms.locfileid: "8739450"
 | [タイルのコンテンツ](create-adaptive-tiles.md) | アダプティブを使用してタイル通知のコンテンツを指定すると、windows 10 の新機能をデザインできるよう、独自のタイル通知のコンテンツのさまざまな画面密度に合わせて変化するシンプルで柔軟なマークアップ言語を使用して、します。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 |
 | [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md) | アダプティブ タイルの作成に使う要素と属性を次に示します。 |
 | [特別なタイル テンプレート](special-tile-templates-catalog.md) | 特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 |
-| [ローカル タイル通知の送信](sending-a-local-tile-notification.md) | ローカル タイル通知を送信して、ライブ タイルにリッチな動的コンテンツを追加する方法について説明します。 |
+| [ローカル タイル通知を送信します。](sending-a-local-tile-notification.md) | ローカル タイル通知を送信して、ライブ タイルにリッチな動的コンテンツを追加する方法について説明します。 |
 
 
 ## <a name="notifications"></a>通知

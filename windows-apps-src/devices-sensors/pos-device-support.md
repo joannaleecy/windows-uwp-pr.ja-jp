@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743968"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789890"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -67,7 +67,7 @@ ms.locfileid: "8743968"
 
 
 Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
-² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
+² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
 
 
 <hr>

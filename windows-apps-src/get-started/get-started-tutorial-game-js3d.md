@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744008"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807120"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>hree.js を使用して 3D JavaScript ゲームを作成する
 
@@ -28,7 +28,7 @@ Web 開発者や JavaScript 作者にとって、JavaScript で UWP アプリを
 </iframe>
 
 > [!NOTE] 
-> ない、完全なゲームです。JavaScript やサード パーティ製ライブラリを使用して、アプリに準備するため、Microsoft Store に公開する方法を示すために設計されています。
+> ない、完全なゲームです。JavaScript やサード パーティ製ライブラリを使用してアプリを Microsoft Store に公開する準備が方法を示すために設計されています。
 
 
 ## <a name="requirements"></a>要件
@@ -640,7 +640,7 @@ function animatePlayer(delta) {
 
 これで、 プレイヤーによって制御されるカメラで、自由に見回し、動き回ることができます。 まだ、壁に入り込むことができますが、これについては後で考えましょう。 次は、恐竜を追加します。
 
-<iframe height='300' scrolling='no' title='移動します。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペン<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>の移動</a>で Microsoft Edge Docs を参照してください (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
+<iframe height='300' scrolling='no' title='移動します。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/qrbKZg/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペン<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qrbKZg/'>の移動</a>で、Microsoft Edge Docs を参照してください (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
 </iframe>
 
 > [!NOTE]
@@ -729,7 +729,7 @@ function animateDino(delta) {
 
 このままでは恐竜が消えるのを見守るだけですが、衝突検出機能を追加すると、もう少しおもしろくなります。
 
-<iframe height='300' scrolling='no' title='Moving the - なし' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>Moving the dino - no collision</a>) をご覧ください。
+<iframe height='300' scrolling='no' title='Moving、なし' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/jBMbbL/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/jBMbbL/'>Moving the dino - no collision</a>) をご覧ください。
 </iframe>
 
 ### <a name="8-collision-detection-for-the-player"></a>8. プレイヤーの衝突を検出する
@@ -844,7 +844,7 @@ function animatePlayer(delta) {
 
 プレイヤーの衝突も検出できるので、何か所かの壁に突き当たってみてください。
 
-<iframe height='300' scrolling='no' title='します player-collision' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>Moving the player - collision</a>) をご覧ください。
+<iframe height='300' scrolling='no' title='プレイヤーの衝突の移行' src='//codepen.io/MicrosoftEdgeDocumentation/embed/preview/qraOeO/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'><a href='https://codepen.io'>CodePen</a> で、Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) による Pen (<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/qraOeO/'>Moving the player - collision</a>) をご覧ください。
 </iframe>
 
 
@@ -1081,7 +1081,7 @@ function lockChange() {
 
 
 ## <a name="publishing-to-the-microsoft-store"></a>Microsoft Store への公開
-UWP アプリがある場合は、ここでは、(もう少し改善が最初に!)、Microsoft Store に申請を公開することもできます。プロセスにいくつかの手順があります。
+UWP アプリがある場合は、ここでは、(もう少し改善がまず!)、Microsoft Store に申請を公開することもできます。プロセスにいくつかの手順があります。
 
 1.  Windows 開発者として[登録](https://developer.microsoft.com/store/register)する必要があります。
 2.  アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。

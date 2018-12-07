@@ -7,11 +7,11 @@ keywords: windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753595"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782377"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>UWP アプリの自動ビルドを設定する
 
@@ -82,7 +82,7 @@ VSTS で最初のビルド定義を作成するには、[ビルド] タブに移
 
 #### <a name="configure-the-build-solution-build-task"></a>ソリューションのビルドのビルド タスクを構成する
 
-このタスクは、バイナリに作業フォルダー内では出力アプリ パッケージ ファイルを生成したすべてのソリューションをコンパイルします。
+このタスクは、バイナリに作業フォルダー内では出力アプリ パッケージのファイルを生成したすべてのソリューションをコンパイルします。
 このタスクでは、MSBuild の引数を使用します。  これらの引数の値を指定する必要があります。 次の表をガイドとして使用してください。
 
 |**MSBuild の引数**|**値**|**説明**|
@@ -270,7 +270,7 @@ HockeyApp アカウントを設定するには、Microsoft アカウント、ソ
 
 次に、手動で、または既存のアプリ パッケージ ファイルをアップロードすることで、HockeyApp アプリを作成できます。 詳しくは、[新しいアプリを作成する方法に関するページ](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)をご覧ください。
 
-既存のアプリ パッケージ ファイルを使用して、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパスのパラメーターを設定します。
+既存のアプリ パッケージ ファイルを使用するには、ビルド ステップを追加し、ビルド ステップのバイナリ ファイルのパス パラメーターを設定します。
 
 ![HockeyApp を構成する](images/building-screen15.png)
 
@@ -290,7 +290,7 @@ HockeyApp タスクには、シンボル ファイルへのパスを指定する
 
 このウィザードでは、Microsoft Store の関連付けの情報が含まれる Package.StoreAssociation.xml という名前のファイルが生成されます。 GitHub などのパブリック リポジトリでソース コードを保存する場合、このファイルには、そのアカウントのすべてのアプリの予約名が含まれます。 公開する前に、このファイルを除外または削除することができます。
 
-アプリを公開するために使用したパートナー センター アカウントへのアクセスをお持ちでない場合、このドキュメントで手順に従ってできます:[サード パーティ製のアプリを構築するかどうか。ストア アプリをパッケージ化する方法](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)します。
+このドキュメントの手順では、アプリを公開するために使用されたパートナー センター アカウントへのアクセスをお持ちでない場合:[サード パーティのアプリを構築するかどうか。ストア アプリをパッケージ化する方法](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)します。
 
 次に、ビルド ステップに次のパラメーターが含まれていることを確認する必要があります。
 
@@ -327,11 +327,11 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 ストアに公開せずに、アプリを配布する場合は、直接デバイスにアプリをサイドロードできます。ただし、それらのデバイスは、アプリ パッケージの署名に使用された証明書を信頼している必要があります。
 
-`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするか、アプリ パッケージ ファイルを更新します。
+`Add-AppDevPackage.ps1` PowerShell スクリプトを使用してアプリをインストールします。 このスクリプトは、証明書を追加して、ローカル コンピューターの信頼されたルート証明セクションにをインストールするかアプリのパッケージ ファイルを更新します。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>Windows 10 Anniversary Update でのアプリのサイドロード
 
-Windows 10 Anniversary update では、アプリ パッケージ ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。
+Windows 10 Anniversary update では、アプリのパッケージ ファイルをダブルクリックし、ダイアログ ボックスで [インストール] ボタンを選択してアプリをインストールできます。
 
 ![rs1 でのサイドロード](images/building-screen18.png)
 

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b65a62c2a6182e3b120f8ae8cb6b5fe3a0bf45aa
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732514"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782510"
 ---
 # <a name="performance"></a>パフォーマンス
 
 
 ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。 このセクションでは、パフォーマンスのワークフローの整理、アニメーション エラーやフレーム レートの問題の解決、および起動時間、ページ ナビゲーションの時間、メモリ使用量の調整を行う方法を示します。
 
-いない場合、されている手順をパフォーマンスに大幅な改善がターゲットの windows 10 にアプリを移植するだけきました。 いくつかの XAML の最適化 (たとえば、 [{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) では、windows 10 アプリで利用可能なのみです。 [Windows 10 に移植アプリ](https://msdn.microsoft.com/library/windows/apps/Mt238321)と[ユニバーサル Windows プラットフォームに移行する](http://channel9.msdn.com/Events/Build/2015/3-741)//build/ セッションを参照してください。
+いない場合、されている手順をパフォーマンスに大幅な改善が windows 10 をターゲットにアプリを移植するだけきました。 いくつかの XAML の最適化 (たとえば、 [{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) では、windows 10 アプリで利用可能なのみです。 [Windows 10 に移植アプリ](https://msdn.microsoft.com/library/windows/apps/Mt238321)と[ユニバーサル Windows プラットフォームに移行する](http://channel9.msdn.com/Events/Build/2015/3-741)//build/ セッションを参照してください。
 
 | トピック | 説明 |
 |-------|-------------|

@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732957"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808367"
 ---
 # <a name="home-page-dev-home"></a>ホーム ページ (Dev Home)
    
@@ -37,7 +37,7 @@ Dev Home の**ホーム**ページは、開発機本体で定期的に実行さ�
   
 **クイック アクション**のウィンドウには、頻繁に実行されるアクションにすばやくアクセスを提供する次のボタンが含まれています。   
  
-   *  **Visual Studio pin の表示:** コンピューターに Visual Studio のインストールと開発機本体をペアリングするために使用できるコードが表示されます。   
+   *  **Visual Studio pin の表示:** お使いのコンピューターで Visual Studio のインストールに関する、開発機本体をペアリングするために使用できるコードが表示されます。   
    *  **サンド ボックスの変更:** 使用すると、本体がどのサンド ボックスを変更できます。   
    *  **再起動コンソール:** 開発機本体を再起動します。   
    *  **開発者モードの終了:** 本体をリテール モードに返し、本体を再起動します。   
@@ -71,7 +71,7 @@ Dev Home の**ホーム**ページは、開発機本体で定期的に実行さ�
 次の操作を実行する**テスト アカウント**のウィンドウを使用できます。   
  
    *  コンソールに登録されているユーザーの一覧を表示します。  
-   *  1 回のクリックでまたはをユーザーにサインインします。  
+   *  1 回のクリックでまたはサインアウト ユーザーをサインインします。  
    *  ユーザーとゲスト アカウントを追加します。  
    *  ユーザーやゲスト アカウントの詳細を表示します。  
 

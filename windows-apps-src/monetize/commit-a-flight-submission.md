@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請のコミット
 ms.localizationpriority: medium
 ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750150"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787539"
 ---
 # <a name="commit-a-package-flight-submission"></a>パッケージ フライトの申請のコミット
 
-パートナー センターに新規または更新されたパッケージ フライトの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。 コミット アクション パートナー センターに通知 (関連パッケージを含む)、申請データをアップロードされています。 応答には、パートナー センターは、インジェストと公開の申請のデータへの変更をコミットします。 コミット操作が成功した後、申請に対する変更は、パートナー センターで表示されます。
+パートナー センターに新規または更新されたパッケージ フライトの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。 コミット アクション パートナー センターに通知 (関連パッケージを含む)、申請データをアップロードされています。 応答には、パートナー センターは、インジェストと公開の申請のデータへの変更をコミットします。 コミット操作が成功した後、申請に対する変更はパートナー センターで表示されます。
 
 コミット操作が Microsoft Store 申請 API を使ったパッケージ フライト申請の作成プロセスにどのように適合するかについては、「[パッケージ フライト申請の管理](manage-flight-submissions.md)」をご覧ください。
 
@@ -48,8 +48,8 @@ ms.locfileid: "8750150"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 コミットするパッケージ フライトの申請が含まれるアプリのストア ID です。 アプリのストア ID は、パートナー センターで利用できます。  |
-| flightId | string | 必須。 コミットする申請が含まれるパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なもします。  |
-| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| flightId | string | 必須。 コミットする申請が含まれるパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライトはこの ID はパートナー センターでのフライト ページの URL で利用可能なもします。  |
+| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定した申請は見つかりませんでした。 |
-| 409  | 指定した申請は見つかりましたが、現在の状態でコミットできなかったことまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |
+| 409  | 指定した申請は見つかりました、現在の状態でコミットできなかった可能性がありますか、アプリが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |
 
 
 ## <a name="related-topics"></a>関連トピック
