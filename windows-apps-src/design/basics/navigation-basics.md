@@ -11,11 +11,11 @@ keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735892"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799299"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -55,7 +55,7 @@ ms.locfileid: "8735892"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準的なコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -185,7 +185,7 @@ ms.locfileid: "8735892"
         Use top navigation when:
 
         - 画面上のすべてのナビゲーション オプションを表示します。
-        - アプリのコンテンツを追加する領域を必要とします。
+        - アプリのコンテンツを追加する領域がしたいです。
         - アイコンは、ナビゲーションのカテゴリを明確に記述ことはできません。
         
         ときにタブを使用します。

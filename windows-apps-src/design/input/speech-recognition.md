@@ -9,11 +9,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740173"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801315"
 ---
 # <a name="speech-recognition"></a>音声認識
 
@@ -26,15 +26,15 @@ ms.locfileid: "8740173"
 
 ## <a name="configure-speech-recognition"></a>音声認識を構成します。
 
-ユーザーが接続する必要があります、アプリで音声認識をサポートするには、デバイスでマイクを有効にし、マイクロソフトのプライバシー ポリシー、アプリの許可を使うことに同意します。
+ユーザーが接続する必要があります、アプリで音声認識をサポートするには、デバイスでマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
 
-自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード (から[音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)を次になど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
+自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード ([音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)を次にからなど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
 
 ![マイク アクセス用のプライバシー ポリシー](images/speech/privacy.png)
 
-ユーザー設定の承認済みアプリケーションの一覧にアプリが追加されたマイク、アクセスを許可するには、[はい] をクリックした場合は、[プライバシー]-> [マイク] ページ]-> [します。 ただし、いつでもでもこの設定をオフにするには、ユーザーが選択できる、としてことは、アプリがマイクにアクセスして使用する前に確認する必要があります。
+ユーザー設定の承認済みアプリケーションの一覧にアプリが追加されたマイク、アクセスを許可するには、[はい] をクリックした場合は、[プライバシー]-> [マイク] ページ]-> [します。 ただし、いつでもでもこの設定をオフにするには、ユーザーが選択できる、として、アプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
 
-Cortana、ディクテーションをサポートする、またはサービス (トピック制約で定義されている[定義済みの文法](#predefined-grammars)) などの他の音声認識もことを確認して**Online の音声認識**(設定のプライバシー]-> [音声認識]-> [) は、有効になります。
+ディクテーション、Cortana をサポートする、またはその他の音声認識サービスの (など、[定義済みの文法](#predefined-grammars)で定義されたトピック制約)、またことを確認して**Online の音声認識**(設定のプライバシー]-> [音声認識]-> [) は、有効になります。
 
 このスニペットでは、アプリがマイクが存在する場合、それを使用するアクセス許可がある場合を確認する方法を示しています。
 
@@ -279,7 +279,7 @@ Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメン�
 
 [ **SpeechRecognitionVoiceCommandDefinitionConstraint**を参照してください。](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**注:** 制約型を使用するは、作成する認識エクスペリエンスの複雑さによって決まります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
+**注:** 種類を使用するの制約は、作成する認識エクスペリエンスの複雑さによって決まります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
 制約を使う場合は、「[カスタム認識の制約の定義](define-custom-recognition-constraints.md)」をご覧ください。
 
 ユニバーサル Windows アプリで定義済みのディクテーション文法によって、言語のほとんどの単語と短い語句が認識されます。 これは、カスタム制約なしで音声認識エンジン オブジェクトをインスタンス化すると既定で有効になります。

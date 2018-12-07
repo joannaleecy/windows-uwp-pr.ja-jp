@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: deeae0cc66a7e75da2e44c0d2aba2a9ed459b824
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729312"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799876"
 ---
 # <a name="introduction-to-buffers"></a>バッファーの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "8729312"
 
 バッファー要素は 1 ~ 4 つのコンポーネントの構成されています。 バッファー要素には、圧縮済みデータ値 (R8G8B8A8 サーフェス値)、単一の 8 ビット整数、または 4 つの 32 ビット浮動小数点値を含めることができます。
 
-バッファーは構造化されていないリソースとして作成されます。 構造化されていないためバッファーはミップマップ レベルを含めることはできません、読み取り時とフィルターを取得することはできません、マルチ サンプリングすることはできません。
+バッファーは構造化されていないリソースとして作成されます。 構造化されていないため、バッファーはミップマップ レベルを含めることはできません、読み取り時とフィルターを取得することはできません、マルチ サンプリングすることはできません。
 
 ## <a name="span-idbuffertypesspanspan-idbuffertypesspanspan-idbuffertypesspanbuffer-types"></a><span id="Buffer_Types"></span><span id="buffer_types"></span><span id="BUFFER_TYPES"></span>バッファーの種類
 
@@ -51,7 +51,7 @@ Direct3d11 でサポートされているバッファー リソースの種類�
 -   オフセット - バッファーの先頭から最初の頂点データまでのバイト数です。
 -   BaseVertexLocation - オフセットから、該当する描画呼び出しで使用される最初の頂点までのバイト数です。
 
-頂点バッファーを作成する前に、そのレイアウトを定義する必要があります。 入力レイアウト オブジェクトを作成したら、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)にバインドします。
+頂点バッファーを作成する前に、そのレイアウトを定義する必要があります。 入力レイアウト オブジェクトを作成した後は、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)にバインドします。
 
 ### <a name="span-idindexbufferspanspan-idindexbufferspanspan-idindexbufferspanspan-idindex-bufferspanindex-buffer"></a><span id="Index_Buffer"></span><span id="index_buffer"></span><span id="INDEX_BUFFER"></span><span id="index-buffer"></span>インデックス バッファー
 
@@ -65,13 +65,13 @@ Direct3d11 でサポートされているバッファー リソースの種類�
 -   StartIndexLocation - ベースのアドレスとオフセットから最初のインデックス バッファーの要素を指定します。 スタート画面の位置情報は、レンダリングする最初のインデックスを表します。
 -   IndexCount - レンダリングするインデックスの数です。
 
-インデックス バッファーの先頭 = インデックス バッファーのベース アドレス + オフセット (バイト) + StartIndexLocation \ * ElementSize (バイト)。
+インデックス バッファーの先頭インデックス バッファーのベース アドレス オフセット (バイト) + StartIndexLocation = \ * ElementSize (バイト)。
 
-この計算には、ElementSize は、2 つまたは 4 つのいずれかのバイトは、各インデックス バッファー要素のサイズです。
+この計算では、ElementSize は、2 つまたは 4 つのいずれかのバイトは、各インデックス バッファー要素のサイズです。
 
 ### <a name="span-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshaderconstantbufferspanspan-idshader-constant-bufferspanconstant-buffer"></a><span id="Shader_Constant_Buffer"></span><span id="shader_constant_buffer"></span><span id="SHADER_CONSTANT_BUFFER"></span><span id="shader-constant-buffer"></span>定数バッファー
 
-定数バッファーには、シェーダー定数データをパイプラインに効率的に提供することができます。 定数バッファーを使用して、ストリーム出力ステージの結果を格納することができます。 概念的には、次の図に示すように、定数バッファーは単一要素の頂点バッファー、ように見えます。
+定数バッファーには、シェーダー定数データをパイプラインに効率的に提供することができます。 定数バッファーを使用して、ストリーム出力ステージの結果を格納することができます。 概念的には、次の図に示すように、定数バッファーは、単一要素の頂点バッファーように見えます。
 
 ![シェーダー定数バッファーの図](images/d3d10-shader-resource-buffer.png)
 
@@ -79,7 +79,7 @@ Direct3d11 でサポートされているバッファー リソースの種類�
 
 定数バッファーは、他のバインド フラグと組み合わせることはできませんが、1 つのバインド フラグのみ使用できます。
 
-シェーダーからのシェーダー定数バッファーを読み取り、HLSL ロード関数を使用します。 各シェーダー ステージでは最大 15 個の定数バッファーを使用でき、各バッファーには最大 4,096 の定数を保持できます。
+シェーダーからシェーダー定数バッファーを読み取るには、HLSL の読み込み関数を使用します。 各シェーダー ステージでは最大 15 個の定数バッファーを使用でき、各バッファーには最大 4,096 の定数を保持できます。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 

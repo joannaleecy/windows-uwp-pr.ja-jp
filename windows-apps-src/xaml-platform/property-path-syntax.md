@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f0f49792a92010f97c8388540fd63c38eed5f75e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744882"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798699"
 ---
 # <a name="property-path-syntax"></a>プロパティ パス構文
 
@@ -54,7 +54,7 @@ Windows ランタイムでは、任意の依存関係プロパティのターゲ
 
 たとえば、"Teams" (順序指定された一覧) の一覧を含むビジネス オブジェクトがあるとします。それぞれには、各プレイヤーの姓がキーとして使われている、"Players" という辞書があるとします。 たとえば、2 番目のチームの特定のプレイヤーのプロパティ パスは、"Teams\[1\].Players\[Smith\]" となります  (一覧はインデックス 0 で始まるため、"Teams" の 2 番目の項目を示すには 1 を使います)。
 
-**注:** C++ データ ソースに対してインデックス作成サポートは制限されます。[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** C++ データ ソースに対してインデックスのサポートが制限されます。[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 ### <a name="attached-properties"></a>添付プロパティ
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755585"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801380"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>UWP アプリのコントロールとパターン
  
@@ -40,7 +40,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 :::row-end:::
 
 ## <a name="get-the-windows-ui-library"></a>Windows UI のライブラリを入手します。
-一部のコントロールは、Windows UI のライブラリでのみ利用できます。 それを取得するのには、 [Windows UI のライブラリの概要とインストールの手順](/uwp/toolkits/winui/)を参照してください。
+一部のコントロールは、Windows UI のライブラリでのみ利用できます。 これを取得するのには、 [Windows UI のライブラリの概要とインストールの手順](/uwp/toolkits/winui/)を参照してください。
 
 ## <a name="alphabetical-index"></a>アルファベット順インデックス 
 

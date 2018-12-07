@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
 ms.openlocfilehash: c72137b8419526b65dc3c6cb75a511a7a6f50a82
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751063"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800307"
 ---
 # <a name="xbox-live-page-dev-home"></a>Xbox Live ページ (Dev Home)
    
@@ -33,7 +33,7 @@ Dev Home の**Xbox Live**ページでは、マルチプレイヤーの情報を�
 ## <a name="xbtrace-advancedmp"></a>XBTrace (advancedmp)  
    
   
-**XBTrace (advancedmp)** ページを開始または停止マルチプレイヤーのトレースをキャプチャします。 マルチプレイヤーの現在の状態のスナップショットをキャプチャすることもできます。   
+**XBTrace (advancedmp)** ページを開始またはマルチプレイヤー トレースのキャプチャを停止します。 マルチプレイヤーの現在の状態のスナップショットをキャプチャすることもできます。   
   
 <a id="ID4E3B"></a>
 
@@ -42,7 +42,7 @@ Dev Home の**Xbox Live**ページでは、マルチプレイヤーの情報を�
 ## <a name="xbox-live-status"></a>Xbox Live の状態  
    
   
-**Xbox Live の状態**ウィンドウには、サービスの問題や停止について、Xbox Live からフィード ステータスが表示されます。   
+**Xbox Live の状態**のウィンドウには、サービスの問題や停止について、Xbox Live からフィード ステータスが表示されます。   
   
 <a id="ID4EPC"></a>
 

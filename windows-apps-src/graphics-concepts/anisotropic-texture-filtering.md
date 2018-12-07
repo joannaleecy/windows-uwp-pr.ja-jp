@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: efac0a9454f750d4b9040577b613496d29a30bc3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739381"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801766"
 ---
 # <a name="anisotropic-texture-filtering"></a>異方性テクスチャ フィルタ リング
 

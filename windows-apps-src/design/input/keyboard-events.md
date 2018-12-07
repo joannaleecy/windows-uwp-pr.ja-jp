@@ -13,11 +13,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753565"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801367"
 ---
 # <a name="keyboard-events"></a>キーボード イベント
 
@@ -325,7 +325,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 特定のコントロールのキー イベント (たとえば [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView) など) をオーバーライドして、キーボードとゲームパッドを含むさまざまな入力デバイスに一貫したフォーカス ナビゲーションを提供できます。
 
-次の例では、お任意の方向キーが押されたときにコンテンツ コントロールをサブクラス化し、GridView にフォーカスを移動 KeyDown 動作をオーバーライドします。
+次の例では GridView にフォーカスを移動 KeyDown 動作をオーバーライドし、コントロールをサブクラス化コンテンツのいずれかの方向キーが押されたとき。
 
 ```csharp
 public class CustomGridView : GridView

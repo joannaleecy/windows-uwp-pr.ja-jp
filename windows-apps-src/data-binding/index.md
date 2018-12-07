@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755218"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799289"
 ---
 # <a name="data-binding"></a>データ バインディング
 
@@ -21,6 +21,6 @@ ms.locfileid: "8755218"
 |-------|-------------|
 | [データ バインディングの概要](data-binding-quickstart.md) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。 | 
 | [データ バインディングの詳細](data-binding-in-depth.md) | このトピックでは、データ バインディングの機能について詳しく説明します。 |
-| [デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](displaying-data-in-the-designer.md) | コントロールが、(アプリのレイアウト、テンプレート、およびその他のビジュアルのプロパティで使用できます) するために、Visual Studio デザイナーでデータを格納するために、さまざまな方法で設計時のサンプル データを使用することができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。 |
+| [デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](displaying-data-in-the-designer.md) | コントロールが、(アプリのレイアウト、テンプレート、およびその他のビジュアルのプロパティで使用できます) するために、Visual Studio デザイナーでのデータを格納するために、さまざまな方法で設計時のサンプル データを使用することができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。 |
 | [階層データをバインドしてマスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md) | チェーン内でバインドされた [<strong>CollectionViewSource</strong>](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 |
-| [データ バインディングと MVVM](data-binding-and-mvvm.md) | このトピックでは、モデル-ビュー-ビューモデル (MVVM) UI のアーキテクチャの設計パターンについて説明します。 データ バインディングは、MVVM の中心し、により、UI と非 UI コード間で疎結合します。 |
+| [データ バインディングと MVVM](data-binding-and-mvvm.md) | このトピックでは、モデル-ビュー-ビューモデル (MVVM) UI のアーキテクチャの設計パターンについて説明します。 データ バインディングは、MVVM の中心し、により、UI と、以外の UI コード間で疎結合します。 |

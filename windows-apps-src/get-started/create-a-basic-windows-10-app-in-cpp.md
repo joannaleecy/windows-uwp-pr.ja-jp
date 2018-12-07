@@ -1,19 +1,19 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 作成、Hello World アプリでは、C++/CX (windows 10)
-description: Microsoft Visual の Studio2017 を使用できます C + + CX を windows 10 を実行するスマート フォンなど、windows 10 で実行されるアプリを開発します。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
+description: Microsoft Visual の Studio2017 を使用できます C + + CX windows 10 を実行するスマート フォンなど、windows 10 で実行されるアプリを開発します。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742523"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801338"
 ---
-# <a name="create-a-hello-world-app-in-ccx"></a>"Hello world"アプリで作成する、C++/cli CX
+# <a name="create-a-hello-world-app-in-ccx"></a>C++ の"Hello world"アプリの作成/CX
 
 > [!IMPORTANT]
 > このチュートリアルでは、C++/cli CX します。 Microsoft がリリースされると、C++/WinRT: 完全に標準化された最新の c++ 17 言語プロジェクションの Windows ランタイム (WinRT) Api です。 この言語について詳しくを参照してください[、C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)します。 
@@ -26,7 +26,7 @@ Microsoft Visual の Studio2017 を使用できます C + + CX Extensible Applic
 ## <a name="before-you-start"></a>開始前の作業
 
 -   このチュートリアルを完了するには、windows 10 を実行しているコンピューターで Visual の StudioCommunity 2017 または Visual の Studio2017 のコミュニティ以外のバージョンのいずれかを使う必要があります。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
--   C + の基本的な知識があると仮定すると + CX、XAML では、 [XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)で説明されている概念です。
+-   C + の基本的な理解があると仮定すると/CX、XAML では、 [XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)で説明されている概念です。
 -   Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトに戻すには、メニュー バーで **[ウィンドウ]**、**[ウィンドウ レイアウトのリセット]** の順にクリックします。
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>C++ デスクトップ アプリと Windows アプリの比較
@@ -61,7 +61,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ## <a name="hello-world-store-app-in-ccx"></a>Hello World ストア アプリでは、C++/cli CX
 
-初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows8.1 や Windows Phone 8.1 用アプリを開発した場合は、Windows アプリの 1 つは、電話アプリと共有コード用に 1 つの Visual Studio で 3 つのプロジェクトに設定していた憶えておいてください可能性があります。 Windows 10 のユニバーサル Windows プラットフォーム (UWP) などの windows 10、タブレット、携帯電話、VR デバイスなどのデバイスを実行しているコンピューターのデスクトップやノート pc、すべてのデバイスで実行されているプロジェクトが 1 つだけすることもできます。
+初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows8.1 や Windows Phone 8.1 用アプリを開発した場合は、3 つのプロジェクトを Visual Studio、Windows アプリの 1 つは、電話アプリと共有コード用に 1 つである必要がある注意してください可能性があります。 Windows 10 のユニバーサル Windows プラットフォーム (UWP) では、すべてのデバイスに windows 10、タブレット、携帯電話、VR デバイスなどのデバイスを実行しているコンピューターのデスクトップやノート pc で実行されているプロジェクトが 1 つだけできます。
 
 それでは、次に示す基礎から始めましょう。
 
@@ -69,7 +69,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 -   作成されるプロジェクトとファイルを把握する方法。
 
--   VisualC ではコンポーネント拡張機能内の拡張機能を理解する方法 (、C++/cli CX)、およびそれらを使用する場合。
+-   VisualC ではコンポーネント拡張機能内の拡張機能を理解する方法 (、C++/cli CX) と、それらを使用する場合。
 
 **まず Visual Studio でソリューションを作成する**
 
@@ -86,7 +86,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 4.  プロジェクトの名前を入力します。 ここでは、名前を "HelloWorld" とします。
 
- ![C++/cli 新しいプロジェクト] ダイアログ ボックスで CX プロジェクト テンプレート ](images/vs2017-uwp-01.png)
+ ![C++/cli で新しいプロジェクト] ダイアログ ボックスの CX プロジェクト テンプレート ](images/vs2017-uwp-01.png)
 
 5.  **[OK]** をクリックします。
 
@@ -101,7 +101,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ### <a name="about-the-project-files"></a>プロジェクト ファイルについて
 
-プロジェクト フォルダー内のすべての .xaml ファイルには、対応する .xaml.h ファイルと .xaml.cpp ファイルが同じフォルダーに、.g ファイルと .g.hpp ファイルが [生成されたファイル] フォルダーにそれぞれ存在します。このフォルダーはプロジェクト内ではなく、ディスク上にあります。 UI 要素を作成してデータ ソースに接続 (DataBinding) するには、XAML ファイルに変更を加えます。 イベント ハンドラーにカスタム ロジックを追加するには、.h ファイルと .cpp ファイルに変更を加えます。 自動生成されたファイルには、C++、XAML マークアップの変換を表す + CX します。 これらのファイルは変更しないでください。ただし、ファイルを観察すると、分離コードの働きをより深く理解できます。 基本的に、生成されたファイルには、XAML ルート要素の部分クラスの定義が記述されています。これは、\*.xaml.h ファイルや .cpp ファイルで変更するクラスと同じです。 生成されたファイルには、XAML UI の子要素がクラスのメンバーとして宣言されており、開発者がコードの中で参照することができます。 ビルド時には、生成されたコードと自分で記述したコードとがマージされてクラス定義が完成し、コンパイルされます。
+プロジェクト フォルダー内のすべての .xaml ファイルには、対応する .xaml.h ファイルと .xaml.cpp ファイルが同じフォルダーに、.g ファイルと .g.hpp ファイルが [生成されたファイル] フォルダーにそれぞれ存在します。このフォルダーはプロジェクト内ではなく、ディスク上にあります。 UI 要素を作成してデータ ソースに接続 (DataBinding) するには、XAML ファイルに変更を加えます。 イベント ハンドラーにカスタム ロジックを追加するには、.h ファイルと .cpp ファイルに変更を加えます。 自動生成されたファイルには、C++、XAML マークアップの変換を表す/CX します。 これらのファイルは変更しないでください。ただし、ファイルを観察すると、分離コードの働きをより深く理解できます。 基本的に、生成されたファイルには、XAML ルート要素の部分クラスの定義が記述されています。これは、\*.xaml.h ファイルや .cpp ファイルで変更するクラスと同じです。 生成されたファイルには、XAML UI の子要素がクラスのメンバーとして宣言されており、開発者がコードの中で参照することができます。 ビルド時には、生成されたコードと自分で記述したコードとがマージされてクラス定義が完成し、コンパイルされます。
 
 まずプロジェクト ファイルを見てみましょう。
 
@@ -117,7 +117,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 **ref クラス**
 
-Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++/cli CX、これらの型の有効期間は自動参照されるため、これらのオブジェクトを明示的に削除する (ガベージ コレクションではなく) をカウントによって制御されます。 ref クラスは独自に作成することもできます。
+Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++/cli CX、これらの型の有効期間は自動参照されるため、これらのオブジェクトを明示的に削除 (ガベージ コレクションではなく) をカウントによって制御されます。 ref クラスは独自に作成することもできます。
 
 ```cpp
 namespace HelloWorld
@@ -334,7 +334,7 @@ MainPage::MainPage()
 
 7.  このプロセスを繰り返してフォント サイズを設定し、**BaseTextBlockStyle** を `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素に割り当てます。
 
-    **ヒント:** が選択できるように XAML デザイン サーフェイス上でポインターを移動するときにこの[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)でにテキストがありませんが、青色の輪郭を示しています。  
+    **ヒント:** が選択できるように XAML デザイン サーフェイスの上にポインターを移動するときにこの[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)でにテキストがありませんが、青色の輪郭を示しています。  
 
     XAML は次のようになります。
 

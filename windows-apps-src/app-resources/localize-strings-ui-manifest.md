@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740780"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799087"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -33,7 +33,7 @@ ms.locfileid: "8740780"
     1. プロジェクト ノードで、新しいフォルダーを作成し、"Strings" という名前を付けます。
     2. `Strings` で、新しいサブフォルダーを作成し、"en-US" という名前を付けます。
     3. `en-US` で、新しいリソース ファイル (.resw) を作成し、その名前が "Resources.resw" になっていることを確認します。
-    <br>**注:**[への移植の XAML と UI の](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)移植する .NET リソース ファイル (.resx) を使っている場合を参照してください。
+    <br>**注:**[移植 XAML と UI の](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)移植する .NET リソース ファイル (.resx) を使っている場合を参照してください。
 3.  `Resources.resw` を開き、次の文字列リソースを追加します。
 
     `Strings/en-US/Resources.resw`
@@ -257,27 +257,27 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>クラス ライブラリまたは Windows ランタイム ライブラリから文字列を読み込む
 参照されているクラス ライブラリ (ユニバーサル Windows) または [Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) の文字列リソースは、通常、構築プロセス中にそれらが含まれているパッケージのサブフォルダーに追加されます。 このような文字列のリソース識別子は、通常、*LibraryName/ResourcesFileName/ResourceIdentifier* という形式になります。
 
-ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリがライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
+ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリが、ライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化されている場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
+Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間を分割する場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、コンポーネントまたはライブラリの PRI ファイルをダンプに[MakePri.exe](makepri-exe-command-options.md)を使用できます。 各リソースの`uri`ダンプ ファイルに表示されます。
+そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、 [MakePri.exe](makepri-exe-command-options.md)を使用して、コンポーネントまたはライブラリの PRI ファイルをダンプことができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>他のパッケージから文字列を読み込む
-アプリ パッケージのためのリソースが管理され、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有しています。 各パッケージ内でさまざまなコンポーネントが ownResourceMapsubtrees では、 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)経由でアクセスできることができます。
+アプリ パッケージのためのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有します。 各パッケージ内でさまざまなコンポーネントが ownResourceMapsubtrees では、 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)経由でアクセスできることができます。
 
 フレームワーク パッケージは、絶対リソース識別子 URI を使って独自のリソースにアクセスできます。 「[URI スキーム](uri-schemes.md)」もご覧ください。
 

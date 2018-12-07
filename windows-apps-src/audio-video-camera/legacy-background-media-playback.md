@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752227"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801449"
 ---
 # <a name="legacy-background-media-playback"></a>従来のバックグラウンドでのメディアの再生
 
@@ -19,7 +19,7 @@ ms.locfileid: "8752227"
 この記事では、UWP アプリにバックグラウンド オーディオのサポートを追加できる従来の 2 プロセスのモデルについて説明します。 Windows 10 バージョン 1607 以降では、バックグラウンド オーディオ用に 1 プロセスのモデルが提供されているため、より簡単に実装できます。 バックグラウンド オーディオに対する現在の推奨事項について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。 この記事は、従来の 2 プロセスのモデルを使用して既に開発されたアプリにサポートを提供することを目的としています。
 
 > [!NOTE]
-> Windows、バージョン 1703 以降では**BackgroundMediaPlayer**は非推奨し、将来のバージョンの Windows で利用可能なことができない可能性があります。
+> **BackgroundMediaPlayer**は、Windows、バージョン 1703 以降では推奨されなくなりましたし、Windows の将来のバージョンで利用可能なことができない可能性があります。
 
 ## <a name="background-audio-architecture"></a>バックグラウンド オーディオのアーキテクチャ
 

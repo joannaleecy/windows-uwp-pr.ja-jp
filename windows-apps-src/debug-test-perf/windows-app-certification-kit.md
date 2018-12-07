@@ -7,24 +7,24 @@ ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 614f59fe06528d7b5bac36290eae14f0d7d49653
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750773"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798643"
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
 
 
-[Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)認定を取得または[Microsoft Store に公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)のための準備、する必要がありますの検証し、テスト ローカルで最初にします。 このトピックでは、インストールして、アプリを安全かつ効率的に[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を実行する方法を示します。
+[Windows](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)認定を取得または[Microsoft Store に公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)のための準備、する必要がありますの検証し、テスト ローカルまずします。 このトピックでは、インストールして、アプリを安全かつ効率的に[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を実行する方法を示します。
 
 ## <a name="prerequisites"></a>前提条件
 
 ユニバーサル Windows アプリのテストの前提条件:
 
--   インストールし、windows 10 を実行する必要があります。
--   [バージョンの Windows アプリ認定キット 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)、windows 10 用 Windows ソフトウェア開発キット (SDK) に含まれるをインストールする必要があります。
+-   インストールして、windows 10 を実行する必要があります。
+-   [バージョンの Windows アプリ認定キット 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)、windows 10 用 Windows ソフトウェア開発キット (SDK) が含まれているをインストールする必要があります。
 -   [開発用にデバイスを有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)必要があります。
 -   テストする Windows アプリをコンピューターに展開する必要があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "8750773"
 
 6.  レポート ファイルを開いて、テストの結果を確認します。
 
-**注:** Visual Studio を使用している場合、アプリ パッケージを作成するとき、Windows アプリ認定キットを実行することができます。 方法については、「[UWP アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/Mt627715)」をご覧ください。
+**注:** Visual Studio を使用している場合は、アプリ パッケージを作成するとき、Windows アプリ認定キットを実行することができます。 方法については、「[UWP アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/Mt627715)」をご覧ください。
 
  
 
@@ -86,7 +86,7 @@ ms.locfileid: "8750773"
 
 Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
-テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めしますした Intel Atom プロセッサ ベースのコンピューター 1366 x 768 以上) の画面の解像度と、回転式ハードの低電力コンピューターでアプリをテストします。(、ソリッド ステート ハード ドライブ) ではなくドライブです。
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 調べるには、アプリのパフォーマンスが[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうか、お勧めしますした Intel Atom プロセッサ ベースのコンピューターと 1366 x 768 以上) の画面の解像度、回転式ハードなどの低電力コンピューターでアプリをテストします。(、ソリッド ステート ハード ドライブ) ではなくドライブです。
 
 低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 最新の[Microsoft Store ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を参照し、アプリが最新のパフォーマンス要件に準拠しているかどうかを確認するには、Windows アプリ認定キットの最新バージョンでアプリをテストします。
 

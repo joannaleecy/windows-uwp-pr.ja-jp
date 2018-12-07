@@ -1,11 +1,13 @@
 ---
 ms.localizationpriority: medium
-ms.openlocfilehash: 649c221f8dd9221e0a1df8dbea74e4facefadd92
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: a82ce4449df8d3fe6057bfc5c67653bd03cec3de
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745894"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8801036"
 ---
 #<a name="xaml-samples-for-developers"></a>開発者向け XAML サンプル
 

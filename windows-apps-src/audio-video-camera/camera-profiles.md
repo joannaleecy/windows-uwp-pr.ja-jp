@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758742"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799971"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>カメラ プロファイルを使用したカメラ機能の検出と選択
 
@@ -73,7 +73,7 @@ Windows 10、バージョン 1803 以降では、[**MediaFrameSourceGroup**](htt
 > [!NOTE] 
 > このセクションで説明されている API は、Windows 10、バージョン 1803 以降では非推奨です。 上記の「**メディア フレーム ソース グループを使用してプロファイルを取得する**」をご覧ください。
 
-HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 キャプチャ デバイス ID を保持するために、 **MediaCaptureInitializationSettings**と文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
+HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 キャプチャ デバイス ID を格納するには、 **MediaCaptureInitializationSettings**と文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 
