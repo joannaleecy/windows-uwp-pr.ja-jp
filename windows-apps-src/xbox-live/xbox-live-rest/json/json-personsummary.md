@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a787992507405a70185140e879be731d72806eff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8752073"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799963"
 ---
 # <a name="personsummary-json"></a><span data-ttu-id="cf2ef-104">PersonSummary (JSON)</span><span class="sxs-lookup"><span data-stu-id="cf2ef-104">PersonSummary (JSON)</span></span>
 <span data-ttu-id="cf2ef-105">[ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="cf2ef-105">Collection of [Person (JSON)](json-person.md) objects.</span></span> 

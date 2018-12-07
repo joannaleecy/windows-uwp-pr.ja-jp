@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: b08da01323d05c961005d562b70667dbbdf85437
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8751604"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800039"
 ---
 # <a name="xbox-arena"></a><span data-ttu-id="c3a65-104">Xbox アリーナ</span><span class="sxs-lookup"><span data-stu-id="c3a65-104">Xbox Arena</span></span>
 

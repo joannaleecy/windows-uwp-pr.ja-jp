@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47376338a1c515aa00a7e0247df4cc16ee0db8d2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8746597"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800289"
 ---
 # <a name="post-usersbatch"></a><span data-ttu-id="1d776-104">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="1d776-104">POST (/users/batch)</span></span>
 <span data-ttu-id="1d776-105">ユーザーのバッチのプレゼンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="1d776-105">Get presence for a batch of users.</span></span>
