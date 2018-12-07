@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cadbf38385bbc321ef5bf23eb93c3fbc5c1a2417
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8345214"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8753988"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
-タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動したユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。
+タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EY)
   * [クエリ文字列パラメーター](#ID4EDB)
@@ -39,9 +39,9 @@ ms.locfileid: "8345214"
  
 | パラメーター| 必須かどうか| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| skipItems| いいえ| 32 ビット符号付き整数| 項目数が指定した後、以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
+| skipItems| いいえ| 32 ビット符号付き整数| 特定の項目数後以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
 | continuationToken| いいえ| string| 特定の継続トークンで始まる項目を返します。 | 
-| maxItems| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
+| maxItems| いいえ| 32 ビット符号付き整数| 組み合わせた<b>skipItems</b>と<b>continuationToken</b>項目の範囲を返すことができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
   
 <a id="ID4EFD"></a>
 
@@ -50,7 +50,7 @@ ms.locfileid: "8345214"
  
 | 要求| 必須?| 説明| 不足している場合の動作| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。| 403 Forbidden| 
+| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元では、Xbox LIVE で有効なユーザーを指定する必要があります。| 403 Forbidden| 
   
 <a id="ID4EGE"></a>
 
@@ -60,7 +60,7 @@ ms.locfileid: "8345214"
 | ヘッダー| 型| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。| 
-| <b>x xbl コントラクト バージョン</b>| 32 ビット符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
+| <b>x xbl コントラクト バージョン</b>| 32 ビットの符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
   
 <a id="ID4ERF"></a>
 

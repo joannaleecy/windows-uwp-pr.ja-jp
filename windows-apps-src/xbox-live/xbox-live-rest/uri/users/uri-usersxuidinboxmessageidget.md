@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 29b4c57468148a431a10e0d74f85d360ff0992b3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8347382"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751828"
 ---
 # <a name="get-usersxuidxuidinboxmessageid"></a>GET (/users/xuid({xuid})/inbox/{messageId})
 サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。
@@ -33,9 +33,9 @@ ms.locfileid: "8347382"
 
 Get 操作は、ユーザー、システム、および FriendRequest メッセージの種類でのみ実行できます。
 
-この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとでもう一度、Xbox 360 は読み取り/未読メ状態を更新されません。
+この URI には、Xbox.com に更新が必要です。 現時点では、まで、ユーザーがサインアウトしたとに戻り、Xbox 360 は読み取り/未読メ状態を更新されません。
 
-この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -73,7 +73,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
-正常に呼び出されると、サービスは、JSON 形式での結果データを返します。 ルート オブジェクトは、UserMessageHeader オブジェクトです。
+正常に呼び出されると、サービスは結果データを JSON 形式で返します。 ルート オブジェクトは、UserMessageHeader オブジェクトです。
 
 #### <a name="usermessageheader"></a>UserMessageHeader
 
@@ -102,12 +102,12 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
 | 送信| DateTime|  | メッセージが送信された日付と時刻。 (サービスによって提供されます)。|
-| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、将来的に決定する、最長有効期間がある)。|
+| 有効期限| DateTime|  | 日付と時刻のメッセージの有効期限が切れます。 (すべてのメッセージによって、決定する、今後の最長有効期間がある)。|
 | メッセージの種類| string| 13| メッセージの種類: ユーザー、システム、FriendRequest します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルかどうか。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="sample-response"></a>応答の例
@@ -137,7 +137,7 @@ Get 操作は、ユーザー、システム、および FriendRequest メッセ�
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | errorSource| string| エラーが発生した場所を指定します。|
-| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。|
+| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。|
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。|
 
 <a id="ID4E3DAC"></a>

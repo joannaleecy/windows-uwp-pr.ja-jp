@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: ae02fe412e6300ac74b3f1106cdf6a5bb304d36b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322692"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8742272"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラムを統合するためのステップ バイ ステップ ガイド
 
@@ -23,7 +23,7 @@ ms.locfileid: "8322692"
 ## <a name="2-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>2. 適切なガイドに従って、IDE やゲーム エンジンをセットアップする
 プラットフォームやエンジンに関する適切なファースト ステップ ガイドに従い、それに沿って学習することで、Xbox Live の基本を習得することができます。
 
-* [Visual Studio を使用して、クリエーターズ タイトルの開発](develop-creators-title-with-visual-studio.md)では、パートナー センターで Xbox Live 構成を Visual Studio プロジェクトをリンクする方法を説明します。
+* [Visual Studio を使用してクリエーターズ タイトルの開発](develop-creators-title-with-visual-studio.md)では、パートナー センターで Xbox Live 構成を Visual Studio プロジェクトをリンクする方法を説明します。
 
 * 「[Unity を使用してクリエーターズ タイトルを開発する](develop-creators-title-with-unity.md)」では、Xbox Live 対応の新しい Unity タイトルを作成する方法、ランキングなどの機能をタイトルに追加する方法、およびネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 

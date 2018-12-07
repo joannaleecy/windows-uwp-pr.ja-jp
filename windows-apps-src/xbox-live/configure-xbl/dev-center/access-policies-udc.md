@@ -1,5 +1,5 @@
 ---
-title: パートナー センターへのアクセス ポリシーを構成します。
+title: パートナー センターでアクセス ポリシーを構成します。
 description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定にアクセスできるようにするパートナー センターでアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
 ms.date: 02/21/2018
@@ -7,15 +7,15 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: ae26c18abdac30ff988e90ee5c56f178bf14b74a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332400"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752681"
 ---
-# <a name="configure-access-policies-in-partner-center"></a>パートナー センターへのアクセス ポリシーを構成します。
+# <a name="configure-access-policies-in-partner-center"></a>パートナー センターでアクセス ポリシーを構成します。
 
-[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、他のサービス、ゲーム、およびアプリ タイトルの Xbox Live 設定とデータにアクセスできるようにすることができます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、その他のサービス、ゲーム、およびタイトルの Xbox Live 設定とデータにアクセスするアプリを許可することができます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
 
 既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。 パートナー センターでアクセス ポリシーを構成することによって、これを変更することができます。
 

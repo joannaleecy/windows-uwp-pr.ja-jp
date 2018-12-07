@@ -8,24 +8,24 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e2a721886509c49c60d663d491f8d49bc3c95e9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349129"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8747986"
 ---
 # <a name="property-json"></a>Property (JSON)
-マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。
+マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。
 <a id="ID4EN"></a>
 
 
 ## <a name="property"></a>プロパティ
 
-プロパティ オブジェクトには、次の仕様があります。
+プロパティ オブジェクトには、次仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| id| string| このプロパティの id。|
+| id| string| このプロパティの id です。|
 | type| 32 ビット符号付き整数 | プロパティの型です。 サポートされる値は次のとおりです。 <ul><li>0 = 整数</li><li>1 = 文字列</li></ul>| 
 | value| string| このプロパティの値。|
 

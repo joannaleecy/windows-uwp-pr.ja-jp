@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a2d0b9e7d97adfb02281e7bae34ed51afd44f7f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330972"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755778"
 ---
 # <a name="step-by-step-guide-to-integrate-xbox-live-for-managed-partners-and-idxbox-members"></a>対象パートナーおよび ID@Xbox メンバー向けに Xbox Live を統合するためのステップ バイ ステップ ガイド
 
@@ -31,7 +31,7 @@ Xbox 開発キット (XDK)、ユニバーサル Windows プラットフォーム
 ## <a name="3-follow-the-appropriate-guide-to-setup-your-ide-or-game-engine"></a>3. 適切なガイドに従って、IDE やゲーム エンジンをセットアップする
 プラットフォームやエンジンに関する適切なファースト ステップ ガイドに従い、それに沿って学習することで、Xbox Live の基本を習得することができます。
 
-* [UWP ゲーム用 Visual Studio を使って概要](get-started-with-visual-studio-and-uwp.md)は方法を説明にパートナー センターで Xbox Live 構成を Visual Studio プロジェクトをリンクします。
+* [UWP ゲーム用 Visual Studio を使って概要](get-started-with-visual-studio-and-uwp.md)は方法を説明、Visual Studio プロジェクトをパートナー センターで Xbox Live 構成をリンクします。
 
 * 「[UWP ゲーム用 Unity の使用に関する概要](partner-add-xbox-live-to-unity-uwp.md)」では、Xbox Live 対応の新しい Unity タイトルを作成する方法、ランキングなどの機能をタイトルに追加する方法、およびネイティブの Visual Studio プロジェクトを生成する方法について説明します。
 

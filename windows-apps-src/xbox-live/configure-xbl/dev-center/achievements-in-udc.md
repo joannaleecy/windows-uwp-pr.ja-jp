@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: 9ef2365ee560e273108c38570697d599adde4c0b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8329838"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755612"
 ---
 # <a name="configure-achievements-2017-in-partner-center"></a>パートナー センターでの Achievements 2017 を構成します。
 
@@ -26,9 +26,9 @@ ms.locfileid: "8329838"
 ![パートナー センターで新しい実績を作成するスクリーン ショット](../../images/dev-center/achievement-table.png)
 
 ## <a name="description"></a>説明
-説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 [パートナー センター](https://partner.microsoft.com/dashboard)では、**ローカライズされた文字列**サービス構成セクションにアクセスして、実績にローカライゼーション サポートを追加できます。
+説明セクションに、名前やロック状態/ロック解除状態での説明など、実績の基本情報を入力します。 [パートナー センター](https://partner.microsoft.com/dashboard)では、**ローカライズされた文字列**サービス構成セクションにアクセスすることによって、実績にローカライゼーション サポートを追加できます。
 
-![パートナー センターで新しい実績を構成する際の説明フィールドのスクリーン ショット](../../images/dev-center/achievements-2.png)
+![パートナー センターで新しい実績を構成する場合は、説明フィールドのスクリーン ショット](../../images/dev-center/achievements-2.png)
 
 **[Achievement Name]** フィールドには、実績の一般向けの名前を入力します。
 

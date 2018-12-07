@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b4c54a4bf3ab665ded7bfaa45d3b6be9346c384d
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8323202"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8749786"
 ---
 # <a name="advanced-xbox-live-sandboxes"></a>高度な Xbox Live のサンドボックス
 
@@ -119,7 +119,7 @@ Xbox One の開発者アカウントは、特別なルールが適用された�
 
 -   公開元によって作成されるときに、外部開発者のロールが割り当てられます。
 
--   XDP アカウントやデベロッパー アカウントを作成したパートナー センター アカウントに関連付けられます。
+-   XDP アカウントまたはデベロッパー アカウントを作成したパートナー センター アカウントに関連付けられます。
 
 -   開発キットのみにログインできます。 製品デバイス上では開発者アカウントへのログインは拒否されます。
 

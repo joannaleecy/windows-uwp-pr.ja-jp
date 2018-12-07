@@ -3,20 +3,20 @@ title: Xbox Live C Api
 description: Xbox Live サービスとのやり取りに使用できるフラット C API モデルについて説明します。
 ms.date: 06/05/2018
 ms.topic: article
-keywords: xbox live, xbox、ゲーム、uwp、windows 10, xbox one、c、xsapi
+keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: a1c73661b561d586f9e28957c7caa6a1b1f9cb03
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349552"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755701"
 ---
 # <a name="introduction-to-the-xbox-live-c-apis"></a>Xbox Live C Api の概要
 
 2018 年 6 月の新しいフラット C API レイヤーは、XSAPI に追加されました。 この新しい API レイヤーでは、C++ と WinRT API レイヤーで発生したいくつかの問題を解決します。
 
-C API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。 すべて 3 API レイヤー、C、C++ と WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。
+C++ API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。 すべて 3 API レイヤー、C、C++ と WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。
 
 > [!NOTE]
 > C++ Api は、現在のみ動作 Xbox 開発キット (XDK) を使用するタイトルにします。 この時点で UWP ゲームはサポートしていません。
@@ -34,10 +34,10 @@ C API は、XSAPI のすべての機能をまだ対応していませんが、�
 ## <a name="benefits-of-the-c-api-for-xsapi"></a>Xsapi C API のメリット
 
 - タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
-- タイトル XSAPI を呼び出すときの処理スレッドの完全な制御を取得できます。
+- により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 
-と共に、C++ XSAPI C Api を使用することができますが、C++ Api を使って上記の活用できるようはありません。
+と共に C++ XSAPI C Api を使用することができますが、C++ Api を使った上記の特典を取得はしません。
 
 ### <a name="managing-memory-allocations"></a>メモリ割り当てを管理します。
 
@@ -49,26 +49,26 @@ C API は、XSAPI のすべての機能をまだ対応していませんが、�
   - 呼び出す`XblMemSetFunctions(memAllocFunc, memFreeFunc)`を割り当てると、メモリを解放して割り当てコールバックを指定します。
   - 呼び出す`XblInitialize()`ライブラリのインスタンスを初期化します。  
 - ゲームが実行中します。
-  - 新しい C++ Api のいずれかの XSAPI でした呼び出しの割り当てまたは XSAPI に指定されたメモリ処理コールバックを呼び出すと、メモリを解放します。  
+  - 新しい C++ Api のいずれかの XSAPI でした呼び出しを割り当てるまたは指定されたメモリ処理コールバックの呼び出しを XSAPI により、メモリを解放します。  
 - ゲームが終了します。
   - 呼び出す`XblCleanup()`XSAPI ライブラリに関連付けられているすべてのリソースを解放します。
-  - ゲームのカスタム メモリ マネージャーをクリーンアップします。
+  - ゲームのカスタム メモリー マネージャーをクリーンアップします。
 
 ### <a name="managing-asynchronous-threads"></a>非同期のスレッドを管理します。
 
-C API には、呼び出しパターンにより、開発者はスレッド モデルの完全な制御を新しい非同期スレッドが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
+C++ API には、呼び出しパターンにより、開発者はスレッド モデルを完全に制御する新しい非同期スレッドが導入されています。 詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。
 
 ## <a name="migrating-code-to-use-c-xsapi"></a>C++ XSAPI を使用するコードの移行
 
 XSAPI C Api は、一度に 1 つの機能を移行することをお勧めしますプロジェクトでは、XSAPI の C++ Api と共に使用できます。
 
-C++ Api と C++ Api 別のエントリ ポイント、同様に、一般的なコアの単なるシン ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。
+C++ Api と C++ Api シン実際には、さまざまなエントリ ポイントでの一般的なコア ラッパーはであるため、機能が変更する必要があります。 ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。
 
 > [!IMPORTANT]
 > C++ Api と XSAPI WinRT Api を混在させることはできません。
 
 ## <a name="where-to-view-the-c-apis"></a>C++ Api を表示します。
 
-- [ヘッダー ファイルに C API](https://github.com/Microsoft/xbox-live-api/tree/master/Include/xsapi-c)
+- [C++ API のヘッダー ファイル](https://github.com/Microsoft/xbox-live-api/tree/master/Include/xsapi-c)
 - [新しい C++ Api を使用するサンプル コード](https://github.com/Microsoft/xbox-live-api/tree/master/InProgressSamples/Social/Xbox/C)
 - [libHttpClient](https://github.com/Microsoft/libHttpClient)

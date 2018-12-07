@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7299fcb4d375a3fc35ad67306b70f5fa4afde963
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8342470"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8750438"
 ---
 # <a name="profile-json"></a>Profile (JSON)
 ユーザーの個人用プロファイル設定します。 
@@ -21,7 +21,7 @@ ms.locfileid: "8342470"
  
 ## <a name="profile"></a>プロファイル
  
-プロファイル オブジェクトには、次の仕様があります。
+プロファイル オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -31,13 +31,13 @@ ms.locfileid: "8342470"
 | AppDisplayPicRaw| string| アプリを直接表示 pic URL (下記参照)。| 
 | GameDisplayPicRaw| string| 未加工のゲーム表示 pic URL (下記参照)。| 
 | AccountTier| string| ユーザーには、アカウントの種類はありますか。 ゴールド、シルバー、または FamilyGold かどうか。| 
-| TenureLevel| 32 ビット符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
-| ゲーマースコア| 32 ビット符号なし整数| ユーザーのゲーマー スコア。| 
+| TenureLevel| 32 ビットの符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
+| ゲーマースコア| 32 ビットの符号なし整数| ユーザーのゲーマー スコア。| 
   
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定は、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
+> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
 
 
  
