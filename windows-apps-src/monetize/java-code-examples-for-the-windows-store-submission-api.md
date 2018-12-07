@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Java
 ms.localizationpriority: medium
 ms.openlocfilehash: 0466c7dad5ac2f543e6b447a9b2661c2889f7b4e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734064"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781533"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java のコード例: アプリ、アドオン、およびフライトの申請
 
@@ -83,7 +83,7 @@ ms.locfileid: "8734064"
 
 ## <a name="create-an-add-on-submission"></a>アドオンの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、```SubmitNewInAppProductSubmission```メソッドは、最後に公開された申請の複製として新しい申請を作成し、し、更新プログラムのパートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、アドオンの申請を作成する方法を示しています。 これを行うには、```SubmitNewInAppProductSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewInAppProductSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたアドオンのデータを取得](get-an-add-on.md)します。
 2. 次に、[アドオンの保留中の申請を削除](delete-an-add-on-submission.md)します (存在する場合)。
@@ -98,7 +98,7 @@ ms.locfileid: "8734064"
 
 ## <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
-次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、```SubmitNewFlightSubmission```メソッドは、最後に公開された申請の複製として新しい申請を作成し、し、更新プログラムのパートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
+次の例は、Microsoft Store 申請 API のいくつかのメソッドを使用して、パッケージ フライトの申請を作成する方法を示しています。 これを行うには、```SubmitNewFlightSubmission```メソッド最後に公開された申請の複製として新しい申請を作成し、更新プログラムし、パートナー センターに複製された申請をコミットします。 具体的には、```SubmitNewFlightSubmission``` メソッドは次のタスクを実行します。
 
 1. まず、メソッドは[指定されたパッケージ フライトのデータを取得](get-a-flight.md)します。
 2. 次に、[パッケージ フライトの保留中の申請を削除](delete-a-flight-submission.md)します (存在する場合)。

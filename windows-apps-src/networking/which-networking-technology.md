@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755492"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786706"
 ---
 # <a name="which-networking-technology"></a>アプリに適したネットワーク テクノロジ
 
@@ -69,7 +69,7 @@ HTTP(S) を使って Web サービスまたは Web サーバーと通信する�
 
 ネットワーク経由でファイルを確実に転送する場合は、[バックグラウンド転送 API](background-transfers.md) を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 アプリがモバイル デバイスやバッテリー駆動デバイスで実行されている場合、これらの機能は不可欠です。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
 
-Windows 10 の新しいバック グラウンド転送機能は、ファイル転送が完了したら、ローカル カタログの更新、他のアプリをアクティブ化したりダウンロードが完了したら、ユーザーに通知できるようにするために、後処理をトリガーすることができます。
+Windows 10 の新しいバック グラウンド転送機能は、ファイル転送が完了したら、ローカル カタログの更新、他のアプリをアクティブ化したり、ダウンロードが完了したら、ユーザーに通知できるようにするために、後処理をトリガーすることができます。
 
 ### <a name="when-to-use-background-transfers"></a>バックグラウンド転送を使う状況
 

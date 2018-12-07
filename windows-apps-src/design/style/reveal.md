@@ -11,17 +11,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8278b126ed209148a2e44ea464e04073dcefc829
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753403"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780778"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 
 ![ヒーロー イメージ](images/header-reveal-highlight.svg)
 
-表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調する発光効果。 
+表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調表示する発光効果。 
 
 > **重要な API**: [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -54,7 +54,7 @@ ms.locfileid: "8753403"
 
 ## <a name="how-to-use-it"></a>使用方法
 
-表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明したよう、他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
+表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明するよう、他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
 
 ## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
 
@@ -65,7 +65,7 @@ ms.locfileid: "8753403"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-強調表示効果を表示するいくつかの異なるコントロールに次の図。
+強調表示効果を表示するいくつかの異なるコントロールで次の図。
 
 ![表示効果の例](images/RevealExamples_Collage.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "8753403"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>カスタム コントロールで表示効果を有効にする
 
-表示効果は、カスタム コントロールにも追加できます。 実行する前に、表示効果のしくみについてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
+表示効果は、カスタム コントロールにも追加できます。 実行する前に、表示効果の動作についてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
 
 - **表示効果の境界線**では、ポインターが近付くと、対話型要素の境界線が表示されます。 この効果では、現在フォーカスが置かれているオブジェクトと類似したアクションを、近くにある他のオブジェクトでも実行できることが示されます。
 - **表示効果のホバー**では、ホバーされた (フォーカスが置かれた) 項目の周囲に淡く発光する図形が描画され、クリック時には押下操作のアニメーションが再生されます。 
@@ -255,7 +255,7 @@ ms.locfileid: "8753403"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>カスタム コントロールに対する表示効果を微調整する 
 
-カスタムまたは再テンプレート化されたコントロールまたはカスタムのコマンド実行サーフェスで表示効果を有効にすると次のヒント、効果を最適化できます。
+カスタムまたは再テンプレート化されたコントロールや、カスタム コマンド実行サーフェスで表示効果を有効にすると次のヒント、効果を最適化できます。
  
 * 隣接する項目の高さまたは幅が一致しない場合 (特に、リスト内): 境界線のアプローチ動作を削除し、ホバー時のみ境界線を表示しておきます。
 * 無効状態への移行と解除が頻繁に発生するコマンド実行項目の場合: 境界線アプローチのブラシを要素のバックプレートとバックプレートの境界線に配置して、状態を強調します。

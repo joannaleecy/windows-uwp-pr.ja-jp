@@ -7,11 +7,11 @@ ms.topic: article
 keywords: UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739914"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780876"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
 
@@ -388,7 +388,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **AppId**  |    必須   |  1   |   ストアでアプリを識別する GUID です。 テストでは任意の GUID を使用できます。        |
 |  **LinkUri**  |    必須  |  1   |    ストアの登録情報ページの URI です。 テストでは任意の有効な URI を使用できます。         |
 |  **CurrentMarket**  |    必須  |  1   |    顧客の国/地域です。         |
-|  **AgeRating**  |    必須  |  1   |     アプリの年齢区分の下限を表す整数です。 これは、アプリを提出するときにパートナー センターで指定するのと同じ値です。 ストアで使われる値は、3、7、12、および 16 です。 これらの年齢区分について詳しくは、「[年齢区分](../publish/age-ratings.md)」をご覧ください。        |
+|  **AgeRating**  |    必須  |  1   |     アプリの年齢区分の下限を表す整数です。 これは、同じアプリの提出時にパートナー センターで指定する値です。 ストアで使われる値は、3、7、12、および 16 です。 これらの年齢区分について詳しくは、「[年齢区分](../publish/age-ratings.md)」をご覧ください。        |
 |  [MarketData](#marketdata-child-of-app)  |    必須  |  1 以上      |    アプリに関する特定の国/地域向けの情報が含まれています。 アプリが掲載される国/地域ごとに、**MarketData**要素を含める必要があります。       |    |
 
 <span id="marketdata-child-of-app"/>

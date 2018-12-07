@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, メイン オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731577"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779582"
 ---
 # <a name="define-the-main-game-object"></a>メイン ゲーム オブジェクトの定義
 
@@ -22,18 +22,18 @@ ms.locfileid: "8731577"
 
 ## <a name="objective"></a>目標
 
-ゲームのルールと、UWP DirectX ゲームのしくみを実装する基本的な開発手法を適用する方法について説明します。
+ゲームのルールおよび UWP DirectX ゲームのしくみを実装する基本的な開発手法を適用する方法について説明します。
 
 ## <a name="main-game-object"></a>メイン ゲーム オブジェクト
 
 このサンプル ゲームでは、 __Simple3DGame__は、メイン ゲーム オブジェクト クラスです。 __App::load__メソッドでは、 __Simple3DGame__オブジェクトのインスタンスが構築されます。
 
 __Simple3DGame__クラス オブジェクト。
-* ゲームプレイ ロジックの実装を指定します。
+* ゲームプレイのロジックの実装を指定します。
 * 通信メソッドが含まれています。
     * アプリのフレームワークで定義されたステート マシンをゲームの状態の変化します。
     * ゲーム オブジェクト自体をアプリからゲームの状態の変化します。
-    * ゲームの UI (オーバーレイとヘッドアップ ディスプレイ)、アニメーション、および物理学 (力学) を更新するための詳細
+    * ゲームの UI (オーバーレイとヘッドアップ ディスプレイ)、アニメーション、および物理学 (力学) を更新するために説明します。
 
     >[!Note]
     >グラフィックスの更新は取得し、ゲームで使用されるグラフィックス デバイス リソースを使用するメソッドが含まれている__GameRenderer__クラスによって処理されます。 詳しくは、[レンダリング フレームワーク i: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)をご覧ください。
@@ -44,7 +44,7 @@ __Simple3DGame__クラス オブジェクト。
 
 ## <a name="initialize-and-start-the-game"></a>初期化し、ゲームを開始します。
 
-プレーヤーがゲームを開始すると、ゲーム オブジェクトはその状態を初期化し、オーバーレイの作成と追加を行い、プレーヤーのパフォーマンスを追跡する変数を設定して、レベルの構築時に使うオブジェクトをインスタンス化する必要があります。 このサンプルでは、 [__app::load__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L115-L123)で新しい__GameMain__インスタンスが作成されると実行します。 
+プレーヤーがゲームを開始すると、ゲーム オブジェクトはその状態を初期化し、オーバーレイの作成と追加を行い、プレーヤーのパフォーマンスを追跡する変数を設定して、レベルの構築時に使うオブジェクトをインスタンス化する必要があります。 このサンプルでは、このに[__app::load__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L115-L123)で新しい__GameMain__インスタンスが作成されたとき行われます。 
 
 __GameMain__コンス トラクターで、 __Simple3DGame__、ゲーム オブジェクトが作成されます。 その後、[非同期__GameMain__コンス トラクターでタスクの作成](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L65-L74)中に[__Simple3DGame::Initialize__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L54-L250)メソッドを使用してを初期化します。
 
@@ -58,7 +58,7 @@ __GameMain__コンス トラクターで、 __Simple3DGame__、ゲーム オブ�
 * ゲーム タイマーと初期ゲーム内オーバーレイ ビットマップを作成します。
 * 具体的なビュー パラメーターとプロジェクション パラメーター セットを使って新規のカメラを作成します。
 * プレーヤーがコントロール開始位置とカメラ位置の 1 対 1 の対応を確保されるように、入力デバイス (コントローラー) をカメラと同じ位置に上下と左右の開始位置を設定します。
-* プレーヤー オブジェクトを作成し、アクティブに設定します。 球体を使用して、壁や障害物をプレイヤーの近接通信を検出して、カメラが没入を阻害する位置に配置を取得することを防止します。
+* プレーヤー オブジェクトを作成し、アクティブに設定します。 球体を使用して、壁や障害物近接するプレーヤーを検出して、カメラが没入を阻害する位置に配置を取得することを防止します。
 * ゲーム ワールド プリミティブを作成します。
 * 円筒形の障害物を作成します。
 * 標的 (**Face** オブジェクト) を作成し、番号を付けます。
@@ -71,13 +71,13 @@ __GameMain__コンス トラクターで、 __Simple3DGame__、ゲーム オブ�
 
 ## <a name="build-and-load-game-levels"></a>ビルドして、ゲームのレベルを読み込む
 
-レベルの構築を面倒な作業のほとんどは、サンプル ソリューションの__GameLevels__フォルダーにある__Level.h/.cpp__ファイルで行われます。 非常に特定の実装に重点を置いています、ためしますは説明しませんに次にします。 重要な点は、各レベルのコードがそれぞれ個別の __LevelN__ オブジェクトとして実行されるということです。 ゲームを拡張する場合は、パラメーターとして割り当てられた数を受け取り、障害物、標的を無作為に配置**レベル**のオブジェクトを作成できます。 または、リソース ファイル、またはインターネットからレベルの構成データを読み込むことができます。
+レベルの構築を面倒な作業のほとんどは、サンプルのソリューションの__GameLevels__フォルダーにある__Level.h/.cpp__ファイルで行われます。 非常に特定の実装に重点を置いていますため、私たちは説明しませんにここでします。 重要な点は、各レベルのコードがそれぞれ個別の __LevelN__ オブジェクトとして実行されるということです。 ゲームを拡張する場合は、パラメーターとして割り当てられた数を取得し、障害物、標的を無作為に配置**レベル**のオブジェクトを作成できます。 または、リソース ファイル、またはインターネットからレベルの構成データを読み込むことができます。
 
 ## <a name="define-the-game-play"></a>ゲーム プレイを定義します。
 
 この時点でゲームのアセンブルに必要なコンポーネントがすべて揃います。 レベルは、中、プリミティブからメモリに構築されているし、プレイヤーにやり取りを開始する準備ができました。
 
-単位の最適なゲームでは、プレイヤーの入力に即座に反応し、即時フィードバックを提供します。 これは、トゥイッチ アクションやリアルタイムの主観ガン、ターン制の戦略ゲームからのすべての種類、ゲームの場合は true。
+この最適なゲームでは、プレイヤーの入力に即座に反応し、イミディ エイト フィードバックを提供します。 これは、トゥイッチ アクションやリアルタイムの主観ガン、ターン制の戦略ゲームからのすべての種類、ゲームの場合は true。
 
 ### <a name="simple3dgamerungame-method"></a>Simple3DGame::RunGame メソッド
 
@@ -109,9 +109,9 @@ void GameMain::Update()
       //...
 ```
           
-[__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418)は、ゲーム ループの現在の反復でのゲーム プレイの現在の状態を定義するデータのセットを処理します。
+[__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418)では、ゲーム ループの現在の反復でのゲーム プレイの現在の状態を定義するデータのセットを処理します。
 
-ゲームのフローのロジック__RunGame__:
+ゲームのフロー ロジック__RunGame__:
 *  メソッドは、レベルが終了するまでの間、残り時間を秒数でカウント ダウンするタイマーを更新し、レベルの時間が過ぎていないかをテストします。 これは、ゲームのルールの 1 つ: 時間切れ、すべてのターゲットが撮影されていないときは、ゲーム オーバーします。
 *  時間切れになると、メソッドは **TimeExpired** ゲーム状態を設定し、前のコードの **Update** メソッドに戻ります。
 *  時間が残っている場合は、ムーブ/ルック コントローラーがポーリングを行って、カメラ位置に更新がないかどうかを確認します。具体的には、カメラ平面 (プレーヤーが見ている面) の延長上にあるビュー法線の角度や、前回のコントローラーのポーリング時からの角度の移動距離が更新されていないかどうかを確認します。
@@ -122,11 +122,11 @@ void GameMain::Update()
 
 ## <a name="update-the-game-world"></a>ゲーム ワールドを更新します。
 
-このサンプルでゲームが実行されているとき、 [__Simple3DGame::UpdateDynamics()__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856)メソッドが呼び出されて ([__お__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329)から呼び出される) [__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418)メソッドからゲームのシーンをレンダリングするオブジェクトを更新します。
+このサンプルで、ゲームが実行されている場合、 [__Simple3DGame::UpdateDynamics()__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L436-L856)メソッドが呼び出されて ([__お__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L261-L329)から呼び出される) [__Simple3DGame::RunGame__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Simple3DGame.cpp#L337-L418)メソッドからゲームのシーンをレンダリングするオブジェクトを更新します。
 
-__UpdateDynamics__ループで、モーション、プレイヤーの独立したゲーム ワールドの設定に使用されるメソッドの呼び出し入力、イマーシブなゲーム エクスペリエンスを作成および*始め*、レベルを調整します。 これは、グラフィックス レンダリングする必要があると実行中のアニメーションは、プレイヤーの入力がない場合でも、ワールドを息生きた実現するためにループします。 たとえば、ツリーで wind、まきが風になびき、波禁煙区域など、エイリアンの怪物伸縮と動き回るに沿って cresting 生まれました。 また、プレーヤーの球体とワールドの間、または弾薬、障害物、標的の間に生じる衝突を含め、物体どうしの相互作用も統合されます。
+__UpdateDynamics__ループで、モーション、プレイヤーの独立したゲーム ワールドの設定に使用されるメソッドの呼び出し入力、イマーシブのゲーム エクスペリエンスを作成および*始め*、レベルを調整します。 これは、グラフィックス レンダリングする必要があると実行中のアニメーションは、プレイヤーの入力がない場合でも、ワールドを息生きた実現するためにループします。 たとえばが風になびき、波禁煙区域など、エイリアンの怪物伸縮と動き回るに沿って cresting 波 wind でまきのツリー。 また、プレーヤーの球体とワールドの間、または弾薬、障害物、標的の間に生じる衝突を含め、物体どうしの相互作用も統合されます。
 
-ゲーム ループが常に物理アルゴリズムは、ゲームのロジックに基づいているかどうか、または単かどうか、ゲーム ワールドの更新を除くと、ゲームが一時停止具体的には、ランダムな維持します。 
+ゲーム ループに常にする必要があります物理アルゴリズムは、ゲームのロジックに基づいているかどうか、または単かどうか、ゲーム ワールドの更新を除くと、ゲームが一時停止具体的には、ランダムな維持します。 
 
 ゲーム サンプルでは、この原理のことを*ダイナミクス*と呼んでいます。これにより、柱の障害物の上下の動き、発砲時に見られる弾薬の球体の動きや物理的動作が統合されます。 
 
@@ -139,11 +139,11 @@ __UpdateDynamics__ループで、モーション、プレイヤーの独立し�
 * プレーヤーとワールドの境界の交差部分
 * 弾薬の球体と、障害物、標的、他の弾薬球体、ワールドとの衝突
 
-障害物のアニメーションは、**Animate.h/.cpp** で定義されたループとして実行されます。 弾薬と衝突の動作は簡素化された物理アルゴリズムで定義されているコードで指定された、一連の重力や素材のプロパティも含め、ゲーム ワールドのグローバル定数によってパラメーター化します。 これはすべて、ゲーム ワールドの座標空間で計算されます。
+障害物のアニメーションは、**Animate.h/.cpp** で定義されたループとして実行されます。 弾薬と衝突の動作は簡略化した物理アルゴリズムによって定義されたコードで指定された、一連の重力や素材のプロパティも含め、ゲーム ワールドのグローバル定数によってパラメーター化します。 これはすべて、ゲーム ワールドの座標空間で計算されます。
 
 ### <a name="review-the-flow"></a>フローを確認します。
 
-これで、シーン内のすべてのオブジェクトを更新され、すべての衝突を計算した、この情報を使用して、対応する視覚的な変更を描画する必要があります。 
+これでシーン内のすべてのオブジェクトが更新され、すべての衝突が計算した、この情報を使用して、対応する視覚的な変更を描画する必要があります。 
 
 __GameMain::Update()__ には、ゲーム ループの現在の反復処理が完了すると、サンプルはすぐに更新されたオブジェクトのデータを取得し、次のように、プレイヤーに表示する新しいシーンを生成__Render()__ を呼び出します。 次に、レンダリングを見てみましょう。
 
@@ -181,12 +181,12 @@ void GameMain::Run()
 
 ゲーム中のグラフィックスはできるだけ頻繁 (最大ではメインのゲーム ループが反復するごと) に更新することをお勧めします。 ループが反復するごとに、プレーヤーからの入力の有無を問わず、ゲームを更新します。 これにより、計算するアニメーションと動作がスムーズに表示されるようになります。 たとえば、プレーヤーがボタンを押したときにのみ、水が流れるという単純なシーンを思い浮かべてください。 ひどくつまらないビジュアルになるでしょう。 優れたゲームは、流れるような自然の動きを伴うものです。
 
-[__Gamemain::run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202)で上記のように、サンプル ゲーム ループを思い出してください。 ゲームのメイン ウィンドウが表示されていて、スナップされたり、非アクティブにされたりしなければ、ゲームはそのまま、その更新結果の更新とレンダリングを続けます。 いるを調べること[__Render__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameRenderer.cpp#L474-L624)メソッドは、状態を表すようになりましたをレンダリングします。 これは、**更新**、 **RunGame**状態を更新する前のセクションで説明したが含まれているへの呼び出しの直後にします。
+[__Gamemain::run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202)で上記のように、サンプル ゲーム ループを思い出してください。 ゲームのメイン ウィンドウが表示されていて、スナップされたり、非アクティブにされたりしなければ、ゲームはそのまま、その更新結果の更新とレンダリングを続けます。 いるを調べること[__Render__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameRenderer.cpp#L474-L624)メソッドは、今すぐの状態を表すをレンダリングします。 これは、**更新**、 **RunGame**状態を更新する前のセクションで説明したが含まれているへの呼び出しの直後に行われます。
 
 このメソッドではまず 3D ワールドのプロジェクションが描画され、続いてその上に Direct2D オーバーレイが描画されます。 描画が完了すると、表示用に結合されたバッファーとともに最終的なスワップ チェーンが表示されます。
 
 >[!Note]
->サンプル ゲームの Direct2D オーバーレイの 2 つの状態: いずれかのゲームが一時停止メニューで、もう 1 つのゲームのムーブ/ルックのタッチ スクリーン用の四角形と共に十字表示位置のビットマップが含まれているゲーム情報オーバーレイを表示しますコント ローラー。 両方の状態でスコア テキストが描画されます。 詳細については、「[レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)」を参照してください。
+>サンプル ゲームの Direct2D オーバーレイの 2 つの状態がある: いずれかのゲームが一時停止メニューで、もう 1 つのゲームのムーブ/ルックのタッチ スクリーン用の四角形と共に十字表示位置のビットマップが含まれているゲーム情報オーバーレイが表示されますコント ローラー。 両方の状態でスコア テキストが描画されます。 詳細については、「[レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)」を参照してください。
 
 ### <a name="gamerendererrender-method"></a>GameRenderer::Render メソッド
 
@@ -237,7 +237,7 @@ void GameRenderer::Render()
 
 ## <a name="simple3dgame-object"></a>Simple3DGame オブジェクト
 
-これらは、メソッドと__Simple3DGame__オブジェクト クラスで定義されているデータです。
+これらは、メソッドと__Simple3DGame__オブジェクトのクラスで定義されているデータです。
 
 ### <a name="methods"></a>メソッド
 
@@ -245,7 +245,7 @@ void GameRenderer::Render()
 
 -   **初期化**: グローバル変数の開始値を設定し、ゲーム オブジェクトを初期化します。 これは、セクションで説明[を初期化しゲームを開始](#initialize-and-start-the-game)します。
 -   **LoadGame**: 新しいレベルを初期化し、読み込みを開始します。
--   **LoadLevelAsync**: 非同期タスクを開始 (非同期タスクに慣れていない場合は[並列パターン ライブラリ](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)を参照)、レベルを初期化し、その後、レンダラーでデバイス固有のレベルのリソースの読み込みを非同期タスクを呼び出します。 このメソッドは独立したスレッドで実行されます。そのため、このスレッドから呼び出すことができるのは [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) メソッドだけです ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) メソッドは呼び出されません)。 デバイス コンテキストのメソッドは、**FinalizeLoadLevel** メソッドで呼び出されます。
+-   **LoadLevelAsync**: 非同期タスクを開始 (非同期タスクに慣れていない場合は[並列パターン ライブラリ](https://docs.microsoft.com/cpp/parallel/concrt/parallel-patterns-library-ppl)を参照)、レベルを初期化してから、レンダラーでデバイス固有のレベルのリソースの読み込みを非同期タスクを呼び出します。 このメソッドは独立したスレッドで実行されます。そのため、このスレッドから呼び出すことができるのは [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) メソッドだけです ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) メソッドは呼び出されません)。 デバイス コンテキストのメソッドは、**FinalizeLoadLevel** メソッドで呼び出されます。
 -   **FinalizeLoadLevel**: メイン スレッドで実行する必要があるレベル読み込みの作業を完了します。 これには、Direct3D 11 のデバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) のメソッドの呼び出しが含まれます。
 -   **StartLevel**: 新しいレベルでゲームのプレイを開始します。
 -   **PauseGame**: ゲームを一時停止します。
@@ -254,10 +254,10 @@ void GameRenderer::Render()
 
 さらに、次のプライベート メソッドがあります。
 
--   **LoadSavedState**と**SaveState**: ロードし、それぞれ、ゲームの現在の状態を保存します。
--   **SaveHighScore**と**LoadHighScore**: 保存し、それぞれ、ゲーム全体のハイ スコアを読み込みます。
+-   **LoadSavedState**と**SaveState**: 読み込みし、それぞれ、ゲームの現在の状態を保存します。
+-   **SaveHighScore**と**LoadHighScore**: を保存し、それぞれ、ゲーム全体のハイ スコアを読み込みます。
 -   **InitializeAmmo**: 各ラウンドの最初の元の状態に戻す弾として使われるそれぞれの球体の状態にリセットします。
--   **UpdateDynamics**: これは、アニメーションのキャンド ルーチンをはじめ、物理学とコントロール入力に基づいてゲーム オブジェクトをすべて更新するための重要な方法です。 これが、ゲームを定義するインタラクティビティの中核部分に相当します。 これについては、[ゲーム ワールドの更新](#update-the-game-world)のセクションで説明します。
+-   **UpdateDynamics**: これは、アニメーションのキャンド ルーチンをはじめ、物理学とコントロール入力に基づいてゲーム オブジェクトがすべて更新するための重要な方法です。 これが、ゲームを定義するインタラクティビティの中核部分に相当します。 これについては、[ゲーム ワールドの更新](#update-the-game-world)のセクションで説明します。
 
 これ以外のパブリック メソッドとして、表示用のアプリ フレームワークにゲーム プレイとオーバーレイ固有の情報を返すプロパティの getter があります。
 
@@ -273,4 +273,4 @@ void GameRenderer::Render()
 
 ## <a name="next-steps"></a>次のステップ
 
-ここでは、実際のレンダリング エンジンに興味がおそらく場合: 画面上、更新されたプリミティブの__レンダリング__メソッドを呼び出すをピクセルに変換を取得する方法。 これは 2 つの部分で説明&mdash;[レンダリング フレームワーク i: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)と[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)します。 またプレーヤー コントロールによってゲーム状態がどのように更新されるのかについては、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください。
+ここでは、実際のレンダリング エンジンに興味がおそらく場合: を取得する、更新されたプリミティブに対する__レンダリング__メソッドの呼び出しをピクセルに変換、画面上方法です。 これは 2 つの部分で説明&mdash;[レンダリング フレームワーク i: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)と[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)します。 またプレーヤー コントロールによってゲーム状態がどのように更新されるのかについては、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください。

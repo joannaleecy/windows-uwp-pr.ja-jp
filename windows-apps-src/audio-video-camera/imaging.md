@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736960"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787918"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>ビットマップ画像の作成、編集、保存
 
@@ -45,7 +45,7 @@ ms.locfileid: "8736960"
 
 **SoftwareBitmap** をファイルに保存するには、画像の保存先となる **StorageFile** のインスタンスを取得します。 この例では、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーが出力ファイルを選択できるピッカーを表示しています。
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 **StorageFile** オブジェクトの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) メソッドを呼び出して、画像の書き込み先となるランダム アクセス ストリームを取得します。 静的メソッド [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) を呼び出して、指定したストリームの [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) クラスのインスタンスを取得します。 **CreateAsync** の第 1 パラメーターは、画像のエンコードに使うコーデックの GUID です。 エンコーダーがサポートしている各コーデックについて、この ID を保持するプロパティが、**BitmapEncoder** クラスによって公開されています ([**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226) など)。
 

@@ -1,16 +1,16 @@
 ---
-title: Device Portal の Xbox 情報 API リファレンス
+title: デバイス ポータル Xbox 情報 API リファレンス
 description: Xbox デバイス情報にアクセスする方法をについて説明します。
 ms.date: 11/7/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox, デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749947"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786147"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 情報 API リファレンス   
 この API を使用して Xbox One のデバイス情報にアクセスすることができます。
@@ -46,7 +46,7 @@ GET | /ext/xbox/info
 * DeviceId - (String) 本体の Xbox Live デバイス id。
 * SerialNumber - (String) 本体のシリアル番号。
 * DevMode - (String) 本体の現在の開発者モード、"None"など、または「市販」します。
-* ConsoleType - (String) 本体の種類、"Xbox One"または"Xbox One S"などです。
+* ConsoleType - (String) 本体の種類は、"Xbox One"または"Xbox One S"などです。
 * DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の期限が切れるします。
 
 **状態コード**

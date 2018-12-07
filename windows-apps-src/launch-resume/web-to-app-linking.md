@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
 ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735642"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782999"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>アプリの URI ハンドラーを使用して web サイト向けアプリを有効にします。
 
@@ -19,11 +19,11 @@ Web サイト用のアプリ、アプリと web サイトに関連付けるた�
 
 Web とアプリのリンクを有効にする必要があります。
 - アプリが処理する URI をマニフェスト ファイル内に指定します。
-- アプリと web サイトの間の関連付けを定義する JSON ファイルです。 アプリと同じホストのルートに、アプリのパッケージ ファミリ名には、マニフェストの宣言をします。
+- アプリと web サイト間の関係を定義する JSON ファイルです。 アプリと同じホストのルートにあるアプリのパッケージ ファミリ名のマニフェスト宣言します。
 - アプリでアクティブ化を処理します。
 
 > [!Note]
-> クリックしてされた Microsoft Edge でサポートされているリンクは、Windows 10 Creators update 以降では、対応するアプリを起動します。 サポートされているへのリンク (例: Internet Explorer など)、その他のブラウザーでクリックしてでは、閲覧エクスペリエンスで保持されます。
+> クリックしてされた Microsoft Edge でサポートされているリンクは、Windows 10 Creators update 以降では、対応するアプリを起動します。 サポートされているリンクをクリックして (例: Internet Explorer など) は、他のブラウザーでは、閲覧エクスペリエンスで保持されます。
 
 ## <a name="register-to-handle-http-and-https-links-in-the-app-manifest"></a>http リンクや https リンクを処理できるようにアプリ マニフェストに登録する
 
@@ -166,7 +166,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 場合は、ツールは何も返さない、そのファイルをアップロードするときの検証が動作します。 エラー コードがある場合は機能しません。
 
-ローカルの検証の一部としてサイドロード アプリの対応付けのパスを強制する次のレジストリ キーを有効にすることができます。
+アプリのサイド ローディング ローカルの検証の一部として対応付けのパスを強制的に次のレジストリ キーを有効にすることができます。
 
 `HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\
 AppModel\SystemAppData\YourApp\AppUriHandlers`
@@ -195,7 +195,7 @@ AppModel\SystemAppData\YourApp\AppUriHandlers`
 
 ## <a name="see-also"></a>関連項目
 
-[Web とアプリのサンプル プロジェクト](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
+[Web アプリの使用例プロジェクト](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 [windows.protocol の登録](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
-[URI のアクティブ化を処理する](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-[関連付けを起動するサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API を使用する方法を示します。
+[URI のアクティブ化の処理](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
+[関連付けを起動するサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)では、LaunchUriAsync() API の使い方を示しています。

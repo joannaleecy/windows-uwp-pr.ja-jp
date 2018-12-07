@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740183"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779396"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -59,7 +59,7 @@ Xbox では、x86 アプリの開発または x86 アプリのストアへの申
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>Xbox One を開発者モードにしたままで売却した場合に、 開発者モードを非アクティブ化する方法
 
-しなくなった Xbox One にアクセスできる場合、は、Windows のパートナー センターで無効にできます。 詳細については、 [Xbox One 開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-using-partner-center)のトピックで、**パートナー センターを使用して、本体を非アクティブ化**のセクションを参照してください。 
+Xbox One にアクセスをしなくなったがある場合は、Windows のパートナー センターで無効にできます。 詳細については、 [Xbox One 開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-using-partner-center)のトピックで、**パートナー センターを使用して、本体を非アクティブ化**のセクションを参照してください。 
 
 ### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>まだ開発者モードで停止しますが、パートナー センターを使用して開発者プログラムをまま教えてください。 どうすればよいでしょうか。
 

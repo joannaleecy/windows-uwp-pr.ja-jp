@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743988"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779244"
 ---
 # <a name="rotation"></a>回転
 
@@ -88,7 +88,7 @@ Windows8 は 3 種類の回転をサポートしています: 自由、制約付
 <td align="left">複合回転</td>
 <td align="left"><p>複合回転は自由回転をサポートしますが、(<a href="guidelines-for-panning.md">パン</a>におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>注:</strong>ユーザー インターフェイスのレールはターゲットの周辺の領域がに向けてする特定の値または場所の選択に影響を与える動き機能します。
+<strong>注:</strong>ユーザー インターフェイスのレールは、ターゲットの周辺の領域がに向けてする特定の値または場所の選択に影響を与える動き機能します。
 </div>
 <div>
  

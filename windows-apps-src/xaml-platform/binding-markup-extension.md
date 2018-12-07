@@ -8,18 +8,18 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755028"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780017"
 ---
 # <a name="binding-markup-extension"></a>{Binding} マークアップ拡張
 
 
-**注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインディングのメカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
+**注:** パフォーマンスと開発者の生産性向上のために最適化されている windows 10 の新しいバインド メカニズムで利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
-**注:** データの使用についての一般的な情報は、**バインディング**では {} (、全体的な比較 **{X:bind}** と **{Binding}**)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、バインディングの**バインディング**では {} (、 **{X:bind}** と **{Binding}** の間で、全体的な比較)、アプリは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 **{Binding}** マークアップ拡張機能は、コードなどのデータ ソースからの値をコントロールにデータ バインド プロパティに使用されます。 **{Binding}** マークアップ拡張は、XAML の読み込み時に [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスのインスタンスに変換されます。 このバインド オブジェクトは、データ ソースのプロパティから値を取得し、その値をコントロールのプロパティにプッシュします。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます。 また、そのコントロールの値の変化をソース プロパティにプッシュするように構成することもできます。 データ バインディングのターゲットとなるプロパティは、依存関係プロパティである必要があります。 詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
 
@@ -80,7 +80,7 @@ ms.locfileid: "8755028"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | バインド ソースの更新のタイミングを指定します。 指定されていない場合は、既定値は **Default** です。 |
 
-**注:** の相違点が既定の**モード**プロパティの値から **{X:bind}** **{Binding}** マークアップを変換する場合は注意してください。
+**注:** の相違点が既定の**モード**のプロパティの値から **{X:bind}** **{Binding}** マークアップを変換する場合は注意してください。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 

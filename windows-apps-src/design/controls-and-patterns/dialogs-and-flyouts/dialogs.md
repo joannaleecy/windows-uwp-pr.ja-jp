@@ -13,15 +13,15 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 520f4bdd72c51cd1508c9e655107ae909f6e4243
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754062"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786866"
 ---
 ## <a name="dialog-controls"></a>ダイアログ コントロール
 
-ダイアログ コントロールは、アプリのコンテキスト情報を提供するモーダル UI オーバーレイです。 明示的に閉じられるまでアプリ ウィンドウの対話的操作がブロックされています。 多くの場合、ユーザーに何らかの操作を要求します。
+ダイアログ コントロールは、アプリのコンテキスト情報を提供するモーダル UI オーバーレイです。 明示的に閉じられるまでアプリ ウィンドウとのやり取りがブロックされています。 多くの場合、ユーザーに何らかの操作を要求します。
 
 ![ダイアログの例](../images/dialogs/dialog_RS2_delete_file.png)
 

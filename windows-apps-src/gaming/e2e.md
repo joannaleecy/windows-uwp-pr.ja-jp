@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
 ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749117"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780560"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 ゲーム開発ガイド
 
@@ -106,7 +106,7 @@ Windows または Xbox で初めてゲームを開発する場合は、最初に
 
 Windows ゲームの公開に向けての最初の手順は、[パートナー センターで開発者アカウントを登録](https://developer.microsoft.com/store/register)します。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Microsoft Store に提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理したり、詳細な分析を取得したり、世界中のプレイヤーに優れたエクスペリエンスを提供するサービスを実現することができます。 
 
-さらにマイクロソフトでは、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 パートナー センター アカウントに登録する前に適切な場合表示されることをお勧めします。 詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
+さらにマイクロソフトでは、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 いずれかにパートナー センター アカウントに登録する前に適切な場合は、表示されることをお勧めします。 詳しくは、「[開発者プログラム](#developer-programs)」をご覧ください。
 
 
 ### <a name="developer-programs"></a>開発者プログラム
@@ -1358,7 +1358,7 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>アプリ内製品 (アドオン) の購入を有効にします。
 
-アドオン (アプリ内製品) は、プレイヤーがゲーム内を購入できる補助アイテムです。 アドオンは、ゲームのレベル、アイテム、またはその他、プレイヤーが楽しめるものにできます。 適切に使用すると、アドオンはゲームのエクスペリエンスを向上させながら収益を提供できます。 定義し、パートナー センターを使用して、ゲームのアドオンを公開し、ゲームのコードでのアプリ内購入を有効にします。
+アドオン (アプリ内製品) は、プレイヤーがゲーム内を購入できる補助アイテムです。 アドオンは、ゲームのレベル、項目、または何プレーヤーを楽しませるできます。 適切に使用すると、アドオンはゲームのエクスペリエンスを向上させながら収益を提供できます。 パートナー センターを使用して、ゲームのアドオンを公開して、ゲームのコードでのアプリ内購入を有効にするを定義します。
 
 <table>
     <colgroup>
@@ -1536,7 +1536,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
 
 ### <a name="publishing"></a>Publishing
 
-[パートナー センター](https://partner.microsoft.com/dashboard)を公開し、ゲームのパッケージの管理に使用します。
+公開し、ゲームのパッケージの管理を[パートナー センター](https://partner.microsoft.com/dashboard)を使用します。
 
 <table>
     <colgroup>
@@ -1548,7 +1548,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
         <td><a href="https://dev.windows.com/publish">Windows アプリの公開</a></td>
     </tr>
     <tr>
-        <td>パートナー センター advanced 公開 (GDN)</td>
+        <td>パートナー センターに詳細な公開 (GDN)</td>
         <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">パートナー センターに詳細な公開ガイド</a></td>
     </tr>
     <tr>

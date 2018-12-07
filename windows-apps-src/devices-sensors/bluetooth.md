@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6b5c95b59c1542df743ecc1f53bf3c3fc90aa1b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740233"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781206"
 ---
 # <a name="bluetooth"></a>Bluetooth
-このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事が含まれています。 アプリに実装することもできますが 2 つの異なる bluetooth テクノロジがあります。
+このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事が含まれています。 アプリ内に実装することも可能 2 つの異なる bluetooth テクノロジがあります。
 
 ## <a name="classic-bluetooth-rfcomm"></a>従来の Bluetooth (RFCOMM)
-Bluetooth LE、前にデバイスは Bluetooth を使用した通信がこのプロトコルをよく使われます。 このプロトコルは、シンプルでの消費電力の削減することがなくデバイスの通信に役立つです。 サンプルのコードを含む、このプロトコルについて詳しくは、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)のトピックを参照してください。
+Bluetooth LE、前にデバイスは Bluetooth を使用した通信がこのプロトコルをよく使われます。 このプロトコルは、シンプルで消費電力の削減することがなくデバイスの通信に便利です。 コードのサンプルを含む、このプロトコルについて詳しくは、 [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md)のトピックを参照してください。
 
 ## <a name="bluetooth-low-energy-le"></a>Bluetooth 低エネルギー (LE)
-Bluetooth 低エネルギー (LE) は、プロトコルの検出、効率的な電力使用量の必要性があるデバイス間の通信を定義する仕様です。 コード サンプルを含むの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。
+Bluetooth 低エネルギー (LE) は、検出と効率的な電力使用量の必要性があるデバイス間で通信プロトコルを定義する仕様です。 コード サンプルを含むの詳細については、 [Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)トピックを参照してください。
 
 ## <a name="see-also"></a>参照
 - [Bluetooth に関する開発者向け FAQ](bluetooth-dev-faq.md)

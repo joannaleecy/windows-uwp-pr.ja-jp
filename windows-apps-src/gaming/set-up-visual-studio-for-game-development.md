@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, Visual Studio, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754431"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779353"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>ゲーム プログラミング用の Visual Studio ツール
 
@@ -45,7 +45,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 詳しくは、「[テクスチャおよびイメージの使用](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)」をご覧ください。
 
-> **注:** イメージ エディターは、フル機能画像を編集アプリを置き換えるものではありませんが、多くの簡単な表示や編集シナリオに適しています。
+> **注:** イメージ エディターは、フル機能イメージを編集アプリを置き換えるものではありませんが多くの簡単な表示や編集シナリオに適しています。
 
  
 

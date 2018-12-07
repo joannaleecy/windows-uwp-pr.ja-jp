@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745197"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783210"
 ---
 # <a name="guidance-for-app-package-management"></a>アプリ パッケージ管理のガイダンス
 
@@ -45,15 +45,15 @@ ms.locfileid: "8745197"
 
 アプリを既に持っているユーザーは使用し続けることができ、もう一度アプリをダウンロードできることに注意してください (後で新しいパッケージを申請した場合には更新プログラムを入手することもできます)。
 
-アプリが不可にした後でもが表示されますがパートナー センターで。 アプリをもう一度ユーザーに提供する場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 確認後、数時間以内に新しいユーザーがアプリを入手できるようになります (前回の申請時の設定により制限されている場合を除く)。
+アプリ入手不可にした後もが表示されますがパートナー センターで。 アプリをもう一度ユーザーに提供する場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 確認後、数時間以内に新しいユーザーがアプリを入手できるようになります (前回の申請時の設定により制限されている場合を除く)。
 
 > [!NOTE]
-> アプリの提供は継続しながら、特定の OS バージョンで新しいユーザーへの提供を終了する場合は、新しい申請を作成して、新規の取得を許可しない OS バージョン用のパッケージをすべて削除できます。 たとえば、Windows Phone 8.1 と windows 10 では、パッケージを持っていた WindowsPhone8.1 の新しいユーザーに、アプリの提供を継続したくない場合は、すべて WindowsPhone8.1 パッケージの申請から削除します。 更新プログラムが公開されると、WindowsPhone8.1 で新しいユーザーできなくなりますを既に持っているユーザーは使い続けることがアプリを入手する)。 ただし、アプリも新しいユーザーに windows 10 で利用できます。
+> アプリの提供は継続しながら、特定の OS バージョンで新しいユーザーへの提供を終了する場合は、新しい申請を作成して、新規の取得を許可しない OS バージョン用のパッケージをすべて削除できます。 たとえば、Windows Phone 8.1 と windows 10 では、パッケージを持っていた WindowsPhone8.1 で新しいユーザーへのアプリの提供を継続したくない場合は、すべて WindowsPhone8.1 パッケージの申請から削除します。 更新プログラムが公開されると、WindowsPhone8.1 で新しいユーザーできなくなりますを既に持っているユーザーは使い続けることがアプリを入手する)。 ただし、アプリも新しいユーザーに windows 10 で利用できます。
 
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>これまでサポートされていたデバイス ファミリ用のパッケージを削除する
 
-場合は、特定の[デバイス ファミリ](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリ以前サポートされている、ように求められます**パッケージ**] ページで、変更を保存する前に意図いることを確認するためのすべてのパッケージを削除します。
+場合は、特定の[デバイス ファミリ](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)アプリでサポートされていた、ように求められます**パッケージ**] ページで、変更を保存する前に、意図いることを確認するをすべてのパッケージを削除します。
 
 すべてのアプリが以前にサポートされているデバイス ファミリで実行できるパッケージを削除する申請を公開するときは、新しいユーザーはそのデバイス ファミリでアプリを入手できません。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
 
@@ -64,11 +64,11 @@ ms.locfileid: "8745197"
 
 ## <a name="adding-packages-for-windows10-to-a-previously-published-app"></a>Windows 10 の以前に公開されたアプリ パッケージに追加します。
 
-For Windows パッケージしか含まれているストアにアプリがあるかどうかは 8.x や Windows Phone 8.x をし、windows 10 向けアプリの更新プログラム、新しい申請を作成および[パッケージ](upload-app-packages.md)手順中に、UWP の .msixupload または .appxupload パッケージを追加します。 アプリが認定プロセスが、UWP パッケージは windows 10 のユーザーが新規取得用に利用可能なあります。
+のみのパッケージを Windows に含まれてストアでアプリがあるかどうかは 8.x や Windows Phone 8.x をし、windows 10 向けアプリの更新プログラム、新しい申請を作成および[パッケージ](upload-app-packages.md)手順中に、UWP の .msixupload または .appxupload パッケージを追加します。 アプリが認定プロセスが、UWP パッケージは windows 10 のユーザーが新規取得用に利用可能なあります。
 
 > [!NOTE]
 > Windows 10 のユーザーが UWP パッケージを取得した後は、パッケージを使用して、以前の OS バージョン用にそのユーザーをロールバックことはできません。 
 
-Windows 10 パッケージのバージョン番号を使用した Windows8、Windows8.1、や Windows Phone 8.1 のパッケージよりも高いにする必要のあるに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+Windows 10 パッケージのバージョン番号を使用した Windows8 や Windows8.1、Windows Phone 8.1 のパッケージよりも高いにする必要のあるに注意してください。 詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
 
 Microsoft Store 用の UWP アプリのパッケージ化について詳しくは、「[アプリのパッケージ化](../packaging/index.md)」をご覧ください。

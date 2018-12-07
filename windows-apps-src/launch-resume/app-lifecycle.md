@@ -7,11 +7,11 @@ ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731334"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781064"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル
 
@@ -173,7 +173,7 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 アプリは、中断されている間、受信登録したネットワーク イベントを受け取りません。 これらのネットワーク イベントはキューに入れられず、受け取ることができません。 そのため、再開時にアプリでネットワーク ステータスをテストする必要があります。
 
-**注:**、再開ハンドラーのコードは、UI と通信する場合は、 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)イベントがないに発生するため、UI スレッドからディスパッチャーを使う必要があります。 これを行う方法のコード例については、[バックグラウンド スレッドからの UI スレッドの更新に関するページ](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)をご覧ください。
+**注:**、再開ハンドラーのコードは、UI と通信する場合は[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)イベントがないに発生するため、UI スレッドからディスパッチャーを使う必要があります。 これを行う方法のコード例については、[バックグラウンド スレッドからの UI スレッドの更新に関するページ](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)をご覧ください。
 
 一般的なガイドラインについては、[アプリの中断と再開のガイドラインに関するページ](https://msdn.microsoft.com/library/windows/apps/hh465088)をご覧ください。
 
@@ -181,9 +181,9 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 一般に、アプリを閉じる処理はユーザーが行う必要はなく、Windows で管理されます。 ただし、ユーザーはジェスチャを使うか、Alt + F4 キーを押すか、Windows Phone でタスク スイッチャーを使って、アプリを閉じることができます。
 
-ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows8.1 以降では、アプリは、ユーザーによって閉じられると、アプリが画面から削除されると切り替えリストが、明示的に終了します。
+ユーザーがアプリを閉じたことを示すイベントはありません。 アプリがユーザーによって閉じられたとき、その状態を保存する機会を提供するために、アプリはまず中断されます。 Windows8.1 以降では、アプリは、ユーザーによって閉じられると、アプリが画面から削除されると切り替えリストが明示的に終了します。
 
-**ユーザーによって閉じられた動作:** アプリは、それが Windows によって閉じられたよりも、ユーザーによって閉じられたときに、異なる処理を実行する必要がある場合、アプリのユーザーによって、または Windows によって終了されたかどうかを判断する、アクティブ化イベント ハンドラーを使用することができます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
+**ユーザーによって閉じられた動作:** アプリは、それが Windows によって閉じられたよりもユーザーによって閉じられたときに、異なる処理を実行する必要がある場合、アプリのユーザーによって、または Windows によって終了されたかどうかを判断する、アクティブ化イベント ハンドラーを使用することができます。 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
 
 必要でない限り、アプリをプログラムで閉じないことをお勧めします。 たとえば、メモリ リークが検出された場合などは、ユーザーの個人データのセキュリティを確保するためにアプリ自体で閉じてもかまいません。
 

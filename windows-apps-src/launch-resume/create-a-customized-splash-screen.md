@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730632"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785930"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
@@ -213,7 +213,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     ```
 
     > [!NOTE]
-    > 取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、[**スプラッシュ画面**](https://msdn.microsoft.com/library/windows/apps/br224763)の有効なオブジェクトが含まれています。
+    > 取得しようとする前に、イメージの場所を確認クラス変数 (`splash`) の例に示すように、有効な[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)オブジェクトが含まれています。
 
      
 
@@ -264,7 +264,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
 
-この例に含まれる、`DismissSplash`ボタンのアプリのリソースを読み込むことがあるないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
+この例に含まれる、`DismissSplash`ボタンをアプリのリソースを読み込むことがあるないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
 
 ```xml
 <Page

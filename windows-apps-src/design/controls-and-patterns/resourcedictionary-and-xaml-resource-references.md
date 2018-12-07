@@ -12,11 +12,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 51461df47fe92c296fee198a6f2ed1c34e833cd7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743918"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780729"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary と XAML リソースの参照
 
@@ -202,7 +202,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) は、コントロールの継承元の基底クラスであり、[Resources](https://msdn.microsoft.com/library/windows/apps/br208740) プロパティがあります。 そのため、任意の **FrameworkElement** にローカル リソース ディクショナリを追加できます。
 
-ここでは、[Page](https://msdn.microsoft.com/library/windows/apps/br227503) と [Border](https://msdn.microsoft.com/library/windows/apps/br209250) の両方にリソース ディクショナリがあり、どちらにも "greeting" というリソースがあります。 'TextBlock2' という名前の[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、**境界線**内でそのリソース検索はまず、**境界線**のリソースし、**ページ**のリソース、および[アプリケーション](https://msdn.microsoft.com/library/windows/apps/br242324)リソース。 **TextBlock** には、"Hola mundo" と表示されます。
+ここでは、[Page](https://msdn.microsoft.com/library/windows/apps/br227503) と [Border](https://msdn.microsoft.com/library/windows/apps/br209250) の両方にリソース ディクショナリがあり、どちらにも "greeting" というリソースがあります。 'TextBlock2' という名前の[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は**境界線**、内でそのリソース検索はまず、**境界線**のリソースし、**ページ**のリソース、および[アプリケーション](https://msdn.microsoft.com/library/windows/apps/br242324)リソース。 **TextBlock** には、"Hola mundo" と表示されます。
 
 コードからその要素のリソースにアクセスするには、その要素の [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) プロパティを使います。 XAML ではなくコード内の [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) のリソースにアクセスすると、親要素のディクショナリではなくそのディクショナリのみ検索されます。
 

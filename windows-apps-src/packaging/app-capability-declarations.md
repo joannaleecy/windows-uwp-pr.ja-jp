@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f31381dd4bfcecd33d4934b4bcd1a9af0ff8411a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731294"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780768"
 ---
 # <a name="app-capability-declarations"></a>アプリ機能の宣言
 
@@ -21,7 +21,7 @@ ms.locfileid: "8731294"
 
 一部の機能では、アプリが*機密性の高いリソース*にアクセスできます。 ユーザーの個人データにアクセスしたり、ユーザーに課金したりできるため、これらのリソースは機密性の高いリソースと見なされます。 設定アプリで管理されるプライバシー設定で、機密性の高いリソースへのアクセスを動的に制御することができます。 したがって、機密性の高いリソースが常に利用できるとアプリで認識されないことが重要です。 機密性の高いリソースへのアクセスについて詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh768223)」をご覧ください。 *機密性の高いリソース*へのアクセス許可をアプリに与える機能は、機能のシナリオの横にアスタリスク (\*) が付いています。
 
-いくつかの機能の種類があります。
+機能のいくつかの種類があります。
 
 - [一般的な用途の機能](#general-use-capabilities)アプリの最も一般的なシナリオに適用します。
 - [デバイスの機能](#device-capabilities)アプリが周辺機器と内部デバイスにアクセスできるようにします。
@@ -50,7 +50,7 @@ ms.locfileid: "8731294"
 | **VoIP 呼び出し** | **VoipCall**機能には、VoIP 呼び出し[**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266)名前空間の Api にアクセスするアプリができます。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**voipCall** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="voipCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **3D オブジェクト** | **objects3D** 機能を使用すると、アプリは 3D オブジェクト ファイルにプログラムでアクセスできます。 通常、この機能は、3D オブジェクト ライブラリ全体にアクセスする必要がある 3D アプリやゲームで使用されます。<br /><br />[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API を使って 3D オブジェクトを含むフォルダーにアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**objects3D** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="objects3D"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **ブロックされているメッセージの読み取り**\* | **blockedChatMessages** 機能を使うと、アプリはスパム フィルター アプリでブロックされた SMS メッセージや MMS メッセージを読み取ることができます。<br /><br />[**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使ってブロックされたメッセージにアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**blockedChatMessages** 機能に **uap** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="blockedChatMessages"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
-| **カスタム デバイス** | **LowLevelDevices**機能には、さまざまな追加の要件が満たされているカスタム デバイスにアクセスするアプリができます。 この機能は、GPIO、I2C、SPI、および PWM デバイスにアクセスできるように、**ローレベル**デバイス機能と混同しないでください。<br /><br /> 必要な[デバイス インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を公開するカスタム ドライバーを開発する場合、このデバイスへのハンドルを開くし、Ioctl を送信します。<ul><li>アプリケーション マニフェストで**lowLevelDevices**機能を有効にします。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></li><li>[埋め込みモード](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)を有効にします。</li><li>[制限付き](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)、 [INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)で、またはドライバーの[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)を呼び出すことによってとしてデバイス インターフェイスをマークします。</ul>  <br /><br />[**Windows.Devices.Custom.CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)を使用して、デバイスへのハンドルを開くをすることができます。 詳細については、[内部のデバイス用の UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)を参照してください。
+| **カスタム デバイス** | **LowLevelDevices**機能には、さまざまな追加の要件が満たされているカスタム デバイスにアクセスするアプリができます。 この機能は、GPIO、I2C、SPI、および PWM デバイスにアクセスできるように、**ローレベル**デバイス機能と混同しないでください。<br /><br /> 必要な[デバイス インターフェイス](https://docs.microsoft.com/windows-hardware/drivers/install/device-interface-classes)を公開するカスタム ドライバーを開発する場合、このデバイスへのハンドルを開くし、Ioctl を送信します。<ul><li>アプリケーション マニフェストで**lowLevelDevices**機能を有効にします。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></li><li>[埋め込みモード](https://docs.microsoft.com/windows/iot-core/develop-your-app/EmbeddedMode)を有効にします。</li><li>[制限付き](https://docs.microsoft.com/windows-hardware/drivers/install/devpkey-deviceinterface-restricted)、 [INF](https://msdn.microsoft.com/library/windows/desktop/hh404264(v=vs.85).aspx)または[WdfDeviceAssignInterfaceProperty()](https://docs.microsoft.com/windows-hardware/drivers/ddi/content/wdfdevice/nf-wdfdevice-wdfdeviceassigninterfaceproperty)を呼び出すことで、ドライバーによってとしてデバイス インターフェイスをマークします。</ul>  <br /><br />[**Windows.Devices.Custom.CustomDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.Custom.CustomDevice)を使用して、デバイスへのハンドルを開くをすることができます。 詳細については、[内部のデバイス用の UWP デバイス アプリ](https://docs.microsoft.com/windows-hardware/drivers/devapps/uwp-device-apps-for-specialized-devices)を参照してください。
 | **IoT システム管理** | **systemManagement** 機能を使うと、アプリは基本的なシステム管理者特権 (シャットダウン、再起動、ロケール、タイムゾーンなど) を持つことができます。<br /><br />[**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) 名前空間の一部の API にアクセスする場合は、この機能が必要になります。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**systemManagement** 機能に **iot** 名前空間を含める必要があります。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="systemManagement"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **バックグラウンドでのメディアの再生** | **backgroundMediaPlayback** 機能は、[ **MediaPlayer** ](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) クラスや [ **AudioGraph** ](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) クラスなど、メディア固有の API の動作を変更して、アプリがバック グラウンドで実行されている間のメディアの再生を有効にします。 アプリがバックグラウンドに移行しても、アクティブなすべてのオーディオ ストリームはミュートせず、音声を発し続けます。 また再生が行われている間はアプリが有効に保たれるように、アプリの有効期間が自動的に延長されます。
 | **リモート システム** | **remoteSystem**機能を使うと、アプリがユーザーの Microsoft アカウントに関連付けられているデバイスの一覧にアクセスできるようになります。 デバイスの一覧へのアクセスは、実行した操作を複数のデバイス間で保持するために不可欠です。 この機能は、次の項目のすべてのメンバーにアクセスするために必要です。<br /><br />Windows.System.RemoteSystems 名前空間<br />Windows.System.RemoteLauncher 名前空間<br />AppServiceConnection.OpenRemoteAsync メソッド |
@@ -76,7 +76,7 @@ ms.locfileid: "8731294"
 | **モーション アクティビティ** | デバイス機能 **activity** を使うと、アプリはデバイスの現在の動きを検出できるようになります。<br/>[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
 | **シリアル通信** | **serialcommunication** デバイス機能では Windows.Devices.SerialCommunication 名前空間の API へのアクセスが提供され、Windows アプリはシリアル ポートまたはシリアル ポートのアブストラクションを公開するデバイスと通信できるようになります。 [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) 名前空間の API を使う場合は、この機能が必要になります。 |
 | **アイ トラッカー** | **gazeInput** 機能を使うと、互換性のある視線追跡デバイスが接続されているときにユーザーがアプリケーション境界内で見ている場所を検出できます。 [**Windows.Devices.Input.Preview**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview)名前空間の一部の Api を使用するには、この機能が必要です。 |
-| **GPIO、I2C、SPI、および PWM** | **ローレベル**デバイス機能は、GPIO、I2C、SPI、および PWM デバイスへのアクセスを提供します。 この機能は、次の名前空間で Api を使用するために必要です: [**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、 [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、 [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)します。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;DeviceCapability Name="lowLevel"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>|
+| **GPIO、I2C、SPI、および PWM** | **ローレベル**デバイスの機能は、GPIO、I2C、SPI、および PWM デバイスへのアクセスを提供します。 この機能は、次の名前空間で Api を使用するために必要です: [**Windows.Devices.Gpio**](https://docs.microsoft.com/uwp/api/windows.devices.gpio)、 [**Windows.Devices.I2c**](https://docs.microsoft.com/uwp/api/windows.devices.i2c)、 [**Windows.Devices.Spi**](https://docs.microsoft.com/uwp/api/windows.devices.spi)、[**Windows.Devices.Pwm**](https://docs.microsoft.com/uwp/api/windows.devices.pwm)します。 <table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;DeviceCapability Name="lowLevel"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>|
 
 <span id="special-and-restricted-capabilities" />
 
@@ -106,7 +106,7 @@ ms.locfileid: "8731294"
 
 ### <a name="restricted-capability-approval-process"></a>制限付き機能の承認プロセス
 
-以前は、機能を使う承認を得るためにサポートに問い合わせる必要がありました。 しますできる[申請プロセス](../publish/app-submissions.md)の一環として[パートナー センター](https://partner.microsoft.com/dashboard/)では、この情報を提供するようになりました。
+以前は、機能を使う承認を得るためにサポートに問い合わせる必要がありました。 [申請プロセス](../publish/app-submissions.md)の一環として、[パートナー センター](https://partner.microsoft.com/dashboard/)では、この情報を提供することができるようになりました。
 
 申請のパッケージをアップロードするとき、制限付き機能が宣言されているかどうかが検出されます。 検出された場合、製品で各機能が使用されているかどうかに関する詳しい情報を[申請オプション](../publish/manage-submission-options.md#restricted-capabilities)ページで提供する必要があります。 製品が機能を宣言する必要がある理由を理解できるように、必ずできる限り詳しく入力してください。 これにより、申請が認定プロセスを完了するまでの時間がいくらか長くなる可能性があります。
 
@@ -115,7 +115,7 @@ ms.locfileid: "8731294"
 機能の使用が承認されない、申請は認定に失敗し、認定レポートでフィードバックが提供されます。 その後、新しい申請を作成して機能を宣言しないパッケージをアップロードすることを選択できます。または、該当する場合は、機能の使用に関連する問題を解決し、新しい申請で承認をリクエストします。
 
 > [!NOTE]
-> 申請でパートナー センターで開発サンド ボックスを使うかどうか (たとえば、これは Xbox Live と統合されるゲームに任意の場合)、**申請オプション**] ページで情報を提供するのではなく、事前に承認を要求する必要があります。 このためには、[Windows 開発者向けサポート ページ](https://developer.microsoft.com/windows/support)にアクセスしてください。 開発者向けサポート トピック**ダッシュ ボードの問題**問題の種類として**アプリの申請**、およびサブカテゴリ**他**を選択します。 その機能を使用している方法と、製品の必要がある理由を説明します。 必要情報がすべて記載されていない場合、要求が拒否されます。 また別途、追加情報の提供を求められることがあります。 このプロセスには通常 5 営業日以上かかるため、十分前もってリクエストを送信してください。
+> 申請でパートナー センターで開発サンド ボックスを使うかどうか (たとえば、これは Xbox Live と統合されるゲームがケースの場合)、**申請オプション**ページで情報を提供するのではなく、事前に承認を要求する必要があります。 このためには、[Windows 開発者向けサポート ページ](https://developer.microsoft.com/windows/support)にアクセスしてください。 開発者向けサポート トピック**ダッシュ ボードの問題**問題の種類として**アプリの申請**、およびサブカテゴリ**他**を選択します。 その機能を使用している方法と、製品の必要がある理由を説明します。 必要情報がすべて記載されていない場合、要求が拒否されます。 また別途、追加情報の提供を求められることがあります。 このプロセスには通常 5 営業日以上かかるため、十分前もってリクエストを送信してください。
 >
 > 承認を要求するには、このメソッドを使用することもできます (のではなく、申請時にこの情報を提供します)、かどうかを使用している、開発サンド ボックスを開始する前に、制限付き機能を使う承認されていることを確認する場合は、申請します。
 
@@ -123,7 +123,7 @@ ms.locfileid: "8731294"
 
 ### <a name="restricted-capability-list"></a>制限付き機能の一覧
 
-次の表は、制限付き機能を示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。
+次の表では、制限付き機能を示します。 上記で説明したプロセスに従うことによって、Microsoft Store に提出するアプリでこれらの機能の承認をリクエストすることができます。
 
 > [!IMPORTANT]
 > かなり限定された状況を除き、一部の制限付き機能が Microsoft Store に提出されるアプリで承認されることはほとんどありません。 これらの機能は、次の表で言及されています。 Microsoft Store で配布する予定の場合、アプリでこれらの機能を宣言しないことをお勧めします。
@@ -131,8 +131,8 @@ ms.locfileid: "8731294"
 | 機能のシナリオ | 機能の使用法 |
 |---------------------|------------------|
 | **エンタープライズ** | Windows ドメイン資格情報により、ユーザーはそれぞれの資格情報を使ってリモートのリソースにログインし、ユーザー名とパスワードを指定したかのように動作できます。 **EnterpriseAuthentication**機能は通常、企業内のサーバーに接続する基幹業務アプリで使われます。 <br /><br />インターネット上での汎用通信にはこの機能は不要です。<br /><br />**EnterpriseAuthentication**機能は、一般的な基幹業務アプリをサポートするものです。 企業リソースにアクセスする必要がないアプリでは宣言しないでください。 [**ファイル ピッカー**](https://msdn.microsoft.com/library/windows/apps/BR207847) は、アプリで使うネットワーク共有上のファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 プログラムによるアクセスを必要とするアプリのシナリオと、**ファイル ピッカー**を使って実現できない場合にのみ、 **enterpriseAuthentication**機能を宣言します。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**enterpriseAuthentication** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**EnterpriseDataPolicy**機能により、アプリに企業データを個別に処理し、アプリが Windows 情報保護ポリシーを使って管理されているときに安全に (例: モバイル デバイス管理およびモバイル アプリケーション管理システム)。  次に示すように、この制限付き機能を宣言します。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />この機能は、次のクラスのすべてのメンバーを使うために必要です。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
-| **ユーザー証明書の共有** | **SharedUserCertificates**機能により、アプリを追加し、ソフトウェアにアクセスし、ハードウェア ベースの共有ユーザー ストアに証明書、スマート カードに格納されている証明書など。 通常、この機能は、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**sharedUserCertificates** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
-|**ドキュメント**\* | **DocumentsLibrary**機能は、ファイルの種類の関連付けに限定、パッケージ マニフェストで宣言されている OneDrive へのオフライン アクセスをサポートするために、ユーザーのドキュメントへのプログラムによるアクセスを提供します。 たとえば、DOC リーダー アプリで .doc ファイルの種類の関連付けを宣言すると、ドキュメント フォルダー内の .doc ファイルを開くことはできますが、他の種類のファイルを開くことはできません。 <br /><br />**DocumentsLibrary**機能を宣言するアプリは、ホーム グループ コンピューター上のドキュメントにアクセスできません。 [ファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/Hh465174)は、アプリで使うファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 ファイル ピッカーを使えない場合にのみ、 **documentsLibrary**機能を宣言します。<br /><br />**DocumentsLibrary**機能を使用して、アプリが必要です。<ul><li>有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする</li><li>オフライン時に、開いているファイルをユーザーの OneDrive に自動的に保存する</li></ul>必要に応じてこれら 2 つの目的上、 **documentsLibrary**機能を使用するアプリは、機能を使用して、別のドキュメント内の埋め込みのコンテンツを開く可能性があります。 上記**documentsLibrary**機能の使用のみが受け入れられます。<ul><li>アプリは、電話の内部ストレージにあるドキュメント ライブラリにはアクセスできません。 ただし、別のアプリによってオプションの SD カード上にドキュメント フォルダーが作られた場合は、アプリでそのフォルダーを表示できます。</li></ul>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**documentsLibrary** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
+| **ユーザー証明書の共有** | **SharedUserCertificates**機能により、アプリを追加し、ソフトウェアにアクセスし、ハードウェア ベースの共有ユーザー ストアに証明書、スマート カードに格納されている証明書などです。 通常、この機能は、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。<br /><br />アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**sharedUserCertificates** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
+|**ドキュメント**\* | **DocumentsLibrary**機能は、ファイルの種類の関連付けに限定、パッケージ マニフェストで宣言されている OneDrive へのオフライン アクセスをサポートするために、ユーザーのドキュメントへのプログラムによるアクセスを提供します。 たとえば、DOC リーダー アプリで .doc ファイルの種類の関連付けを宣言すると、ドキュメント フォルダー内の .doc ファイルを開くことはできますが、他の種類のファイルを開くことはできません。 <br /><br />**DocumentsLibrary**機能を宣言するアプリは、ホーム グループ コンピューター上のドキュメントにアクセスできません。 [ファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/Hh465174)は、アプリで使うファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 ファイル ピッカーを使えない場合にのみ、 **documentsLibrary**機能を宣言します。<br /><br />**DocumentsLibrary**機能を使用して、アプリが必要です。<ul><li>有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする</li><li>オフライン時に、開いているファイルをユーザーの OneDrive に自動的に保存する</li></ul>必要に応じてこれら 2 つの目的上、 **documentsLibrary**機能を使用するアプリは、機能を使用して、別のドキュメント内の埋め込みのコンテンツを開く可能性があります。 **DocumentsLibrary**機能の上記の使用のみが受け入れられます。<ul><li>アプリは、電話の内部ストレージにあるドキュメント ライブラリにはアクセスできません。 ただし、別のアプリによってオプションの SD カード上にドキュメント フォルダーが作られた場合は、アプリでそのフォルダーを表示できます。</li></ul>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**documentsLibrary** 機能に **uap** 名前空間を含める必要があります。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **ゲーム DVR 設定** | 制限された機能 **appCaptureSettings** を使うと、アプリはゲーム DVR のユーザー設定を制御できます。<br /><br />[**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 名前空間の一部の API を使う場合は、この機能が必要になります。 <br /><br />Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。  |
 | **携帯電話** | 制限された機能 **cellularDeviceControl** を使うと、アプリは携帯デバイスを制御できます。<br /><br />**cellularDeviceIdentity** 機能を使うと、アプリは携帯デバイスの ID データにアクセスできます。<br /><br />**cellularMessaging** 機能を使うと、アプリは SMS と RCS を利用できます。<br /><br />[**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 名前空間の一部の API を使う場合は、これらの機能が必要になります。  |
 | **デバイスのロック解除** | 制限された機能 **deviceUnlock** を使うと、アプリは、開発者サイドローディングのシナリオやエンタープライズ サイドローディングのシナリオ向けにデバイスをロック解除できます。<br /><br /> Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
@@ -210,15 +210,15 @@ ms.locfileid: "8731294"
 | **Windows チーム デバイスの資格情報** | **TeamEditionDeviceCredential**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでデバイス アカウントの資格情報を要求する Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
 | **Windows チーム アプリケーション ビュー** | **TeamEditionView**制限付き機能には、Windows 10 バージョン 1703 以降を実行する Surface Hub デバイスでのアプリケーションのビューをホストするための Api にアクセスするアプリができます。<br/><br/>Microsoft Store に提出するアプリケーションでは、この機能を宣言することはお勧めしません。 ほとんどの場合、この機能の使用が承認されません。 |
 | **カメラの処理の拡張機能** | **CameraProcessingExtension**制限付き機能には、直接カメラの制御なし、カメラからキャプチャしたイメージを処理するアプリができます。<br /><br />[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)名前空間で Api を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
-| **データ使用量の管理*** | **NetworkDataUsageManagement**制限付き機能には、ネットワーク データの使用状況の情報を収集するアプリができます。<br /><br />[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
+| **データ使用量の管理*** | **NetworkDataUsageManagement**制限付き機能には、ネットワーク データの使用状況に関する情報を収集するアプリができます。<br /><br />[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)を呼び出すには、この機能が必要です。<br /><br />この機能は、ストア申請用に誰でもアクセスを要求できます。 |
 
-## <a name="custom-capabilities"></a>カスタム機能
+## <a name="custom-capabilities"></a>カスタムの機能
 
-上記の[制限付き機能](#restricted-capabilities)には、同じ機能の承認プロセスをカスタム機能を使う承認を要求するために使用できるについて説明します。 [埋め込まれた SIM](/uwp/api/windows.networking.networkoperators.esim) Api は、カスタム機能を必要とする Api の例を示します。 開発者モードでアプリケーションをローカルで実行する場合は、カスタムの機能を必要はありません。 ただし、Microsoft Store にアプリを公開するか、開発者モード外で実行する必要があります。
+上記の[制限付き機能](#restricted-capabilities)には、カスタムの機能を使う承認をリクエストを使って、同じ機能の承認プロセスについて説明します。 [埋め込みの SIM](/uwp/api/windows.networking.networkoperators.esim) Api は、カスタムの機能を必要とする Api の例を示します。 開発者モードでアプリケーションをローカルで実行する場合は、カスタムの機能を必要はありません。 ただし、Microsoft Store にアプリを公開するか、開発者モード外で実行する必要があります。
 
-Windows のテクニカル アカウント マネージャー (TAM) がある場合、TAM へのアクセスを要求すると操作することができます。 詳細については、[連絡先 Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam)で入手できます。
+場合は、Windows のテクニカル アカウント マネージャー (TAM) がある場合は、TAM へのアクセスを要求すると操作することができます。 詳細については、[連絡先 Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam)で入手できます。
 
-カスタム機能を宣言する[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)ソース ファイルを変更します (`Package.appxmanifest`)。 **Xmlns:uap4** XML 名前空間の宣言を追加し、カスタムの機能を宣言するときに、 **uap4**プレフィックスを使用します。 次に例を示します。
+カスタムの機能を宣言する[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)ソース ファイルを変更します (`Package.appxmanifest`)。 **Xmlns:uap4** XML 名前空間の宣言を追加し、カスタムの機能を宣言するときに、 **uap4**プレフィックスを使用します。 次に例を示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

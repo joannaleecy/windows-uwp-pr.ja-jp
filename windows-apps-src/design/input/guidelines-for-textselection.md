@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754557"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785297"
 ---
 # <a name="selecting-text-and-images"></a>テキストと画像の選択
 
@@ -60,7 +60,7 @@ ms.locfileid: "8754557"
 
 タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 同様に Windowstouch 他の対話式操作時間制限のある対話式操作に制限は情報 UI を表示するジェスチャを保持します。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Windowsrecognizes 2 つの可能な状態で編集可能なと編集不可、選択操作し、それに応じて選択 UI、フィードバック、および機能を調整します。
+Windowsrecognizes 2 つの可能な状態で、選択操作で編集可能なと編集不可し、それに応じて選択 UI、フィードバック、および機能を調整します。
 
 **編集可能なコンテンツ**
 

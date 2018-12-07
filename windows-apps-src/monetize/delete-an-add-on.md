@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオン, 削除, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 837cbc19268a88be986068f4a5e60002a1eb55e2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755522"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781299"
 ---
 # <a name="delete-an-add-on"></a>アドオンの削除
 
@@ -73,7 +73,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求が無効です。 |
 | 404  | 指定したアドオンは見つかりませんでした。  |
-| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかった可能性がありますかアドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | 指定したアドオンは見つかりましたが、現在の状態で削除できなかった可能性がありますか、アドオンが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

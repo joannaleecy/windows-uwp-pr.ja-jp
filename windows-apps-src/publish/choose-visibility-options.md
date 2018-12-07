@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 表示, プライベート対象ユーザー, 入手可能, 見つけやすさ
 ms.localizationpriority: medium
 ms.openlocfilehash: a002037e85f179e4a2dbe3dfdaf4bc3579e110e4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755855"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783500"
 ---
 # <a name="choose-visibility-options"></a>表示オプションを選択する
 
@@ -71,7 +71,7 @@ ms.locfileid: "8755855"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>この製品を Microsoft Store で提供し、検索可能にします
 
-これは既定のオプションです。 このオプションを選択する場合は、アプリや、整理された一覧での検索、参照、および包含を含むその他の方法でアプリの直接リンク見つけられるユーザー ストアに登録するのままにします。 
+これは既定のオプションです。 このオプションを選択する場合は、ストアでおすすめの一覧での検索、参照、および包含を含む、他の方法でやアプリの直接リンク見つけられるユーザーに表示するアプリのままにします。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>この製品を Microsoft Store で提供しますが、検索はできないようにします
 

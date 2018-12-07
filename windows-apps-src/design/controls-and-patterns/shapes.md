@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a576add7a080874fb0f042748bef7472e04ac817
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743389"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782256"
 ---
 # <a name="draw-shapes"></a>図形の描画
 
@@ -102,7 +102,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![レンダリングされた Rectangle。](images/shapes-rectangle.jpg)
 
-**ヒント:** 状況によっては、UI 定義の場所[**の四角形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)を使用してではなく、[**境界線**](https://msdn.microsoft.com/library/windows/apps/BR209250)方が適しています。 一般に、コンテンツの周囲に四角形の図形を作成することが目的であるときは、**Border** の方が適しています。子のコンテンツを設定できるほか、高さと幅によってサイズが固定されている **Rectangle** とは異なり、コンテンツに合わせてサイズが自動的に調整されるためです。 **Border** は、[**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) プロパティを設定することによって、角に丸みを持たせることもできます。
+**ヒント:** 状況によっては、UI 定義の場所[**の四角形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)を使用してではなく[**境界線**](https://msdn.microsoft.com/library/windows/apps/BR209250)方が適しています。 一般に、コンテンツの周囲に四角形の図形を作成することが目的であるときは、**Border** の方が適しています。子のコンテンツを設定できるほか、高さと幅によってサイズが固定されている **Rectangle** とは異なり、コンテンツに合わせてサイズが自動的に調整されるためです。 **Border** は、[**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) プロパティを設定することによって、角に丸みを持たせることもできます。
 
 また、[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) は、コントロールの合成に適したオプションであると考えられます。 **Rectangle** の図形は多くのコントロール テンプレートで使われます。これは、フォーカス対応コントロールの "FocusVisual" 部分としてこの図形が使われるためです。 コントロールが "Focused" の表示状態にある場合は常に、この四角形が表示されます。その他の状態にある場合は非表示です。
 
@@ -141,7 +141,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![レンダリングされた Polygon。](images/shapes-polygon.jpg)
 
-**ヒント:** 図形の頂点を宣言する場合以外のシナリオの場合、XAML 内の型として[**ポイント**](https://msdn.microsoft.com/library/windows/apps/BR225870)値が使用多くの場合。 たとえば、**Point** はタッチ イベントのイベント データの一部であるため、座標空間におけるタッチ操作が発生した位置を正確に認識することができます。 **Point** の詳しい情報と、それを XAML やコードで使う方法については、API リファレンスの [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) のトピックをご覧ください。
+**ヒント:** 図形の頂点を宣言する場合以外のシナリオの[**ポイント**](https://msdn.microsoft.com/library/windows/apps/BR225870)の値が使用、型として XAML で多くの場合。 たとえば、**Point** はタッチ イベントのイベント データの一部であるため、座標空間におけるタッチ操作が発生した位置を正確に認識することができます。 **Point** の詳しい情報と、それを XAML やコードで使う方法については、API リファレンスの [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) のトピックをご覧ください。
 
 ## <a name="line"></a>直線
 
@@ -169,7 +169,7 @@ layoutRoot.Children.Add(line1);
 
 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) は、[**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) と同様に、図形の境界線を点のセットによって定義しますが、**Polyline** では最後の点が最初の点に接続されません。
 
-**注:** 同一の始点を明示的に持つ可能性がありますと[**ポイント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)で終了ポイントに[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)、設定しますが、その場合はおそらくを使用しても、[**多角形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)代わりにします。
+**注:** 同一の始点を明示的に持つ可能性がありますと終点[**ポイント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)に[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)、設定しますが、その場合はおそらくを使用しても、[**多角形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)代わりにします。
 
 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) を指定した場合、**Polyline** に対して設定された [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) の始点と終点が交わらなくても、図形の内部領域が **Fill** によって塗りつぶされます。 **Polyline** で **Fill** を指定しなかった場合のレンダリングは、複数の [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 要素を個別に指定し、前の直線の終点が次の直線の始点と交わるようにした場合と同様の結果となります。
 

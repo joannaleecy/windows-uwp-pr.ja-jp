@@ -7,11 +7,11 @@ keywords: Windows 10、UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
 ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736042"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784024"
 ---
 # <a name="respond-to-customer-feedback"></a>顧客のフィードバックに返信する
 
@@ -22,7 +22,7 @@ ms.locfileid: "8736042"
 
 フィードバックに返信するには、**フィードバック レポート**でフィードバックをクリックし、表示される **[フィードバックに返信する]** リンクをクリックします。
 
-[パートナー センター](https://partner.microsoft.com/dashboard)には、アプリについてのフィードバックを提供したユーザーに対応するための 3 つのオプションがサポートしています。 いずれの方法を選択した場合も、1 回の返信につき 1000 文字の文字数制限があるので注意してください。
+[パートナー センター](https://partner.microsoft.com/dashboard)には、アプリについてのフィードバックを提供したユーザーに応答するための 3 つのオプションがサポートしています。 いずれの方法を選択した場合も、1 回の返信につき 1000 文字の文字数制限があるので注意してください。
 
 ## <a name="public-comments-in-feedback-hub"></a>フィードバック Hub での公開コメント
 

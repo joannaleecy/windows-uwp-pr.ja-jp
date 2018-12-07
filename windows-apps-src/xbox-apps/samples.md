@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
 ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741416"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785699"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Xbox One サンプルの UWP
 
@@ -31,9 +31,9 @@ TVJS には、自動コントローラー ナビゲーション、リッチ メ�
 
 ![ニュース エクスペリエンス](images/samples-1.png)
 
-## <a name="gamepad-style-navigation-xaml-sample"></a>ゲームパッドのスタイルのナビゲーション (XAML) のサンプル
+## <a name="gamepad-style-navigation-xaml-sample"></a>ゲームパッド スタイルのナビゲーション (XAML) のサンプル
 
-[ゲームパッドのスタイルのナビゲーション (XAML) のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation)は、アプリでのナビゲーションの方向を改善する方法を示す UWP サンプルです。 これも、デスクトップ アプリケーションに適用可能な顧客にキーボードを使用して、アプリ内を移動できるようにする必要のあるが特に Xbox アプリケーション、入力の主な方法はゲームパッドやリモコンに関連します。
+[ゲームパッド スタイルのナビゲーション (XAML) のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlGamepadNavigation)は、アプリでのナビゲーションの方向を改善する方法を示す UWP サンプルです。 顧客にキーボードを使用して、アプリ内を移動できるようにする必要のあるデスクトップ アプリケーションに適用されるもこれは、特に Xbox アプリケーション、入力の主な方法はゲームパッドやリモコンに関連する勧めします。
 
 ![ユニバーサル Windows プラットフォームのサンプル: アプリのビューのサイズを変更します。](images/samples-2.png)
 

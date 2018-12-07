@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, Xbox One のアドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733530"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780057"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>Xbox One アドオンの入手数の取得
 
-Microsoft Store 分析 API 集計アドオン入手データを取得する JSON 形式で、Xbox One ゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析パートナー センター ダッシュ ボードで利用するには、このメソッドを使います。
+Microsoft Store 分析 API 集計アドオン入手データを取得する JSON 形式で、Xbox One ゲームを Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するには、このメソッドを使います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -46,7 +46,7 @@ Microsoft Store 分析 API 集計アドオン入手データを取得する JSON
 
 | パラメーター        | 型   |  説明      |  必須かどうか  |
 |---------------|--------|---------------|------|
-| applicationId | string | 入手データを取得して、Xbox One ゲームの*productId*します。 ゲームの*商品 Id*を取得するには、XDP 分析プログラムでゲームに移動し、URL から*productId*を取得します。 また、パートナー センターの分析レポートから入手データをダウンロードする場合*productId*は、.tsv ファイルに含まれています。 |  はい  |
+| applicationId | string | 入手データを取得する Xbox One ゲームの*productId*します。 ゲームの*productId*を取得するには、XDP 分析プログラムでゲームに移動し、URL から*productId*を取得します。 また、パートナー センターの分析レポートから入手データをダウンロードする場合*productId*は、.tsv ファイルに含まれています。 |  はい  |
 | addonProductId | string | 入手データを取得するアドオンの*productId*します。  | 必須  |
 | startDate | date | 取得するアドオン入手データの日付範囲の開始日です。 既定値は現在の日付です。 |  必須ではない  |
 | endDate | date | 取得するアドオン入手データの日付範囲終了日です。 既定値は現在の日付です。 |  必須ではない  |
@@ -95,16 +95,16 @@ Authorization: Bearer <your access token>
 |---------------------|---------|---------------------|
 | date                | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | addonProductId      | string  | 入手データを取得するアドオンの*productId*します。                                                                                                                                                                 |
-| addonProductName    | string  | アドオンの表示名です。 この値にのみ表示されます応答データで*aggregationLevel*パラメーターは、1**日**に設定されている場合、 *groupby*パラメーターで**addonProductName**フィールドを指定しない限りします。                                                                                                                                                                                                            |
+| addonProductName    | string  | アドオンの表示名です。 この値のみが表示されます応答データで*aggregationLevel*パラメーターは、1**日**に設定されている場合、 *groupby*パラメーターで**addonProductName**フィールドを指定しない限り。                                                                                                                                                                                                            |
 | applicationId       | string  | アドオン入手データを取得するアプリの*productId*します。                                                                                                                                                           |
 | applicationName     | string  | ゲームの表示名です。                                                                                                                                                                                                             |
 | deviceType          | string  | <p>入手が完了したデバイスの種類を指定する、以下のいずれかの文字列です。</p> <ul><li>"PC"</li><li>「電話」</li><li>「コンソール」</li><li>"IoT"</li><li>「サーバー」</li><li>"Tablet"</li><li>"Holographic"</li><li>「不明」</li></ul>                                                                                                  |
-| storeClient         | string  | <p>入手が発生した Store のバージョンを示す、以下のいずれかの文字列です。</p> <ul><li>"Windows Phone Store (client)"</li><li>"Microsoft Store (client)"(または"Windows Store (client)"2018 年 3 月 23日する前に、データの照会した場合)</li><li>"Microsoft Store (web)"(または"Windows Store (web)"2018 年 3 月 23日する前に、データの照会した場合)</li><li>"Volume purchase by organizations"</li><li>"の"その他</li></ul>                                                                                            |
+| storeClient         | string  | <p>入手が発生した Store のバージョンを示す、以下のいずれかの文字列です。</p> <ul><li>"Windows Phone Store (client)"</li><li>"Microsoft Store (client)"(または"Windows Store (client)"2018 年 3 月 23日する前に、データの照会した場合)</li><li>"Microsoft Store (web)"(または"Windows Store (web)"2018 年 3 月 23日する前に、データの照会した場合)</li><li>"Volume purchase by organizations"</li><li>「その他の」</li></ul>                                                                                            |
 | osVersion           | string  | 入手が発生した OS のバージョンです。 このメソッドは、この値は常に値が"Windows 10"です。                                                                                                   |
 | market              | string  | 入手が発生した市場の ISO 3166 国コードです。                                                                                                                                                                  |
 | gender              | string  | <p>入手したユーザーの性別を指定する、以下のいずれかの文字列です。</p> <ul><li>"m"</li><li>"f"</li><li>「不明」</li></ul>                                                                                                    |
 | age            | string  | <p>入手したユーザーの年齢グループを示す、以下のいずれかの文字列です。</p> <ul><li>「未満 13」</li><li>「13 17」</li><li>「18 ~ 24」</li><li>「25 34」</li><li>「35 44」</li><li>「44-55」</li><li>「55 より大きい」</li><li>「不明」</li></ul>                                                                                                 |
-| acquisitionType     | string  | <p>入手の種類を示す、以下のいずれかの文字列です。</p> <ul><li>「無料」</li><li>「試用版」</li><li>「有料」</li><li>「プロモーション コード」</li><li>"Iap"</li><li>"サブスクリプション Iap"</li><li>「プライベート対象ユーザー」</li><li>「より前の順序」</li><li>"Xbox Game Pass"(または"Game Pass"2018 年 3 月 23日する前に、データの照会した場合)</li><li>「ディスク」</li><li>"Prepaid Code"</li><li>「より前の注文の請求」</li><li>「より前の順序がキャンセル」</li><li>「より前の順序が失敗しました」</li></ul>                                                                                                    |
+| acquisitionType     | string  | <p>入手の種類を示す、以下のいずれかの文字列です。</p> <ul><li>「無料」</li><li>「試用版」</li><li>「有料」</li><li>「プロモーション コード」</li><li>"Iap"</li><li>"サブスクリプション Iap"</li><li>「プライベート対象ユーザー」</li><li>「事前順序」</li><li>"Xbox Game Pass"(または"Game Pass"2018 年 3 月 23日する前に、データの照会した場合)</li><li>「ディスク」</li><li>"Prepaid Code"</li><li>「より前の注文の請求」</li><li>「より前の順序がキャンセル」</li><li>「より前の順序が失敗しました」</li></ul>                                                                                                    |
 | acquisitionQuantity | 整数 | 発生した入手の数です。                        |
 
 
