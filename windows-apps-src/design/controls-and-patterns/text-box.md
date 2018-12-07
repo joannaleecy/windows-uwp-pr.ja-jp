@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a40449b66d2187aacb60501240a0c38de2dc3abc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733688"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808687"
 ---
 # <a name="text-box"></a><span data-ttu-id="c9d5b-103">テキスト ボックス</span><span class="sxs-lookup"><span data-stu-id="c9d5b-103">Text box</span></span>
 

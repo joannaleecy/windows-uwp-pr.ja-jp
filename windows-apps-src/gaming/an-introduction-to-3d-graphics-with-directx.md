@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, グラフィックス
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755630"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788416"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a><span data-ttu-id="d40c6-104">DirectX ゲームの基本的な 3D グラフィックス</span><span class="sxs-lookup"><span data-stu-id="d40c6-104">Basic 3D graphics for DirectX games</span></span>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743267"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807064"
 ---
 # <a name="input-assembler-ia-stage"></a><span data-ttu-id="75b0f-104">入力アセンブラー (IA) ステージ</span><span class="sxs-lookup"><span data-stu-id="75b0f-104">Input Assembler (IA) stage</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e431694f3f0effb6fd5e7688b146109dfc1f5dc7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734624"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786391"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a><span data-ttu-id="f7d67-104">Microsoft OneDrive ファイルが利用可能かどうかの確認</span><span class="sxs-lookup"><span data-stu-id="f7d67-104">Determining availability of Microsoft OneDrive files</span></span>
 

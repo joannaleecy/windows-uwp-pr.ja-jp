@@ -1,11 +1,13 @@
 ---
 ms.localizationpriority: medium
-ms.openlocfilehash: 346efcc8f6c6992fa7cbfa6dd5c842f15df8a069
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: 16e3181b258bf19d064fdbb41f3690e1fcc0a0c4
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744524"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8800553"
 ---
 #<a name="xaml-samples-for-media-apps"></a><span data-ttu-id="e2429-101">メディア アプリの XAML サンプル</span><span class="sxs-lookup"><span data-stu-id="e2429-101">XAML samples for media apps</span></span>
 

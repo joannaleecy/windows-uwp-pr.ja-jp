@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758612"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808737"
 ---
 # <a name="visual-layer"></a><span data-ttu-id="e693b-104">ビジュアル レイヤー</span><span class="sxs-lookup"><span data-stu-id="e693b-104">Visual layer</span></span>
 

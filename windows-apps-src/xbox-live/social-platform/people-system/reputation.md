@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, ソーシャル プラットフォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7763294458f19509d5b797a6fa10e03678abee
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744461"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794678"
 ---
 # <a name="reputation"></a><span data-ttu-id="7b1d9-104">評判</span><span class="sxs-lookup"><span data-stu-id="7b1d9-104">Reputation</span></span>
 

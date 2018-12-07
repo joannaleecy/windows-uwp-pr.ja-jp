@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 922798fad97754421541297a5434a81e9c660b2b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8696600"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788280"
 ---
 # <a name="operations-available-on-streaming-resources"></a><span data-ttu-id="eb7cf-104">ストリーミング リソースで利用可能な操作</span><span class="sxs-lookup"><span data-stu-id="eb7cf-104">Operations available on streaming resources</span></span>
 
