@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736530"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783256"
 ---
 # <a name="face-and-vertex-normal-vectors"></a><span data-ttu-id="fa669-105">面と頂点の法線ベクトル</span><span class="sxs-lookup"><span data-stu-id="fa669-105">Face and vertex normal vectors</span></span>
 

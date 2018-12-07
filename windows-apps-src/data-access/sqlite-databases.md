@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, UWP, SQLite, データベース
 ms.localizationpriority: medium
 ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754181"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781464"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a><span data-ttu-id="ba5e6-104">UWP アプリでの SQLite データベースの使用</span><span class="sxs-lookup"><span data-stu-id="ba5e6-104">Use a SQLite database in a UWP app</span></span>
 <span data-ttu-id="ba5e6-105">SQLite を使用すると、ユーザー デバイス上の軽量なデータベースにデータを保存し、取得することができます。</span><span class="sxs-lookup"><span data-stu-id="ba5e6-105">You can use SQLite to store and retrieve data in a light-weight database on the users device.</span></span> <span data-ttu-id="ba5e6-106">このガイドでその方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ba5e6-106">This guide shows you how.</span></span>

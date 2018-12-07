@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756366"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785020"
 ---
 # <a name="customresource-markup-extension"></a><span data-ttu-id="9e70f-105">{CustomResource} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="9e70f-105">{CustomResource} markup extension</span></span>
 

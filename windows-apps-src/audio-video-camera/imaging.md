@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7959231596829e20dc8afea654b2d51977abe4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736960"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787918"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a><span data-ttu-id="86ab4-104">ビットマップ画像の作成、編集、保存</span><span class="sxs-lookup"><span data-stu-id="86ab4-104">Create, edit, and save bitmap images</span></span>
 
@@ -45,7 +45,7 @@ ms.locfileid: "8736960"
 
 <span data-ttu-id="86ab4-120">**SoftwareBitmap** をファイルに保存するには、画像の保存先となる **StorageFile** のインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="86ab4-120">To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved.</span></span> <span data-ttu-id="86ab4-121">この例では、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーが出力ファイルを選択できるピッカーを表示しています。</span><span class="sxs-lookup"><span data-stu-id="86ab4-121">This example uses a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to select an output file.</span></span>
 
-[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOutputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOutputFile)]
 
 <span data-ttu-id="86ab4-122">**StorageFile** オブジェクトの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) メソッドを呼び出して、画像の書き込み先となるランダム アクセス ストリームを取得します。</span><span class="sxs-lookup"><span data-stu-id="86ab4-122">Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream to which the image will be written.</span></span> <span data-ttu-id="86ab4-123">静的メソッド [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) を呼び出して、指定したストリームの [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) クラスのインスタンスを取得します。</span><span class="sxs-lookup"><span data-stu-id="86ab4-123">Call the static method [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) to get an instance of the [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) class for the specified stream.</span></span> <span data-ttu-id="86ab4-124">**CreateAsync** の第 1 パラメーターは、画像のエンコードに使うコーデックの GUID です。</span><span class="sxs-lookup"><span data-stu-id="86ab4-124">The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image.</span></span> <span data-ttu-id="86ab4-125">エンコーダーがサポートしている各コーデックについて、この ID を保持するプロパティが、**BitmapEncoder** クラスによって公開されています ([**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226) など)。</span><span class="sxs-lookup"><span data-stu-id="86ab4-125">**BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).</span></span>
 

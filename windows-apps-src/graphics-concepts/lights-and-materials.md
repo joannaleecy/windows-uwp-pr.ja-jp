@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747521"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8781084"
 ---
 # <a name="lighting"></a><span data-ttu-id="6c8aa-105">光源</span><span class="sxs-lookup"><span data-stu-id="6c8aa-105">Lighting</span></span>
 

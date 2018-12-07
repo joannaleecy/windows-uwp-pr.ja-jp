@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753675"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789596"
 ---
 # <a name="landmarks-and-headings"></a><span data-ttu-id="d8b05-103">ランドマークと見出し</span><span class="sxs-lookup"><span data-stu-id="d8b05-103">Landmarks and Headings</span></span>
 

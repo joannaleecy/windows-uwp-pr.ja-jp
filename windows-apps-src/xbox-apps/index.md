@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
 ms.openlocfilehash: 776eae9bbfa31d840964ca4622258eff0a2acfdc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758372"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8779439"
 ---
 # <a name="uwp-on-xbox-one"></a><span data-ttu-id="646a2-104">Xbox One の UWP</span><span class="sxs-lookup"><span data-stu-id="646a2-104">UWP on Xbox One</span></span>
 
