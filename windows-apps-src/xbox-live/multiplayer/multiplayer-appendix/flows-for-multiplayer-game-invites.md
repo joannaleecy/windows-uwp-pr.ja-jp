@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 1092c84521271e996db0b89630d22f7e51727bfa
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8741619"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780298"
 ---
 # <a name="updated-flows-for-multiplayer-game-invites"></a><span data-ttu-id="67e8a-104">マルチプレイヤー ゲームへの招待に関する更新されたフロー</span><span class="sxs-lookup"><span data-stu-id="67e8a-104">Updated Flows For Multiplayer Game Invites</span></span>
 

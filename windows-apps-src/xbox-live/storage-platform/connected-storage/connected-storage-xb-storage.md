@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: f4a0549a92a7855abb2c55bcef246018aacbb9b0
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8748860"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789359"
 ---
 # <a name="managing-local-connected-storage"></a><span data-ttu-id="34290-104">ローカル接続ストレージの管理</span><span class="sxs-lookup"><span data-stu-id="34290-104">Managing local Connected Storage</span></span>
 <span data-ttu-id="34290-105">接続ストレージは、ゲーム データをクラウドに保存するために使用されますが、接続ストレージ サービスへのローカル ストレージ コンポーネントもあります。</span><span class="sxs-lookup"><span data-stu-id="34290-105">While Connected Storage is used to store your game data in the cloud, there is also a local storage component to the Connected Storage service.</span></span> <span data-ttu-id="34290-106">PC を使っているか本体を使っているかに関係なく、接続ストレージ データのローカル キャッシュが存在し、クラウドに同期されたデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="34290-106">Whether you are on a PC or console there is a local cache of the Connected Storage data which contains the data synced to the cloud.</span></span> <span data-ttu-id="34290-107">XDK タイトルを作成するのか UWP タイトルを作成するのかに関係なく、ローカルの接続ストレージ データを管理できるツールが用意されています。</span><span class="sxs-lookup"><span data-stu-id="34290-107">Whether you are creating an XDK or UWP title there is a tool to allow you to manage your local Connected Storage data.</span></span>

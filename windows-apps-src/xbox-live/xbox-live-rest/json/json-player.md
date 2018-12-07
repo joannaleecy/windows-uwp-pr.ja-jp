@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a5967cbfecd47c5675926bd45939442c45dda7b6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8735336"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8782366"
 ---
 # <a name="player-json"></a><span data-ttu-id="666c8-104">Player (JSON)</span><span class="sxs-lookup"><span data-stu-id="666c8-104">Player (JSON)</span></span>
 <span data-ttu-id="666c8-105">ゲーム セッションにプレイヤーのデータが含まれています。</span><span class="sxs-lookup"><span data-stu-id="666c8-105">Contains data for a player in a game session.</span></span> 

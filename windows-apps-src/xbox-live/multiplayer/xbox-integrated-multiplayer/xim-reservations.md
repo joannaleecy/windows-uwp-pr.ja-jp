@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, XIM, チャット
 ms.localizationpriority: medium
 ms.openlocfilehash: 217517031c230cfca98bf4420d1f5b9876afbdc1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8747187"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790770"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a><span data-ttu-id="df4ae-104">帯域外予約を介した専用チャット ソリューションとしての XIM の使用</span><span class="sxs-lookup"><span data-stu-id="df4ae-104">Using XIM as a dedicated chat solution via out-of-band reservations</span></span>
 

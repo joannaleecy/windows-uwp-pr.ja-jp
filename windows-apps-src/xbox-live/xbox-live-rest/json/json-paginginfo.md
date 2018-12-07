@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e773d73499e79fe23f736a536027932ca1a07b4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8752759"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791660"
 ---
 # <a name="paginginfo-json"></a><span data-ttu-id="08629-104">PagingInfo (JSON)</span><span class="sxs-lookup"><span data-stu-id="08629-104">PagingInfo (JSON)</span></span>
 <span data-ttu-id="08629-105">データのページで返される結果のページング情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="08629-105">Contains paging information for results that are returned in pages of data.</span></span> 

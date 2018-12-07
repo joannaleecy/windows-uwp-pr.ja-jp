@@ -11,11 +11,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751382"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788742"
 ---
 # <a name="content-transition-animations"></a><span data-ttu-id="64eaf-103">コンテンツ切り替えアニメーション</span><span class="sxs-lookup"><span data-stu-id="64eaf-103">Content transition animations</span></span>
 

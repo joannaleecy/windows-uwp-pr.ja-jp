@@ -7,34 +7,34 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2076cf7b909083072904128a8f53c200a681ee8e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 5e63e4ee6789e4ffb292608aa446138109e00e05
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757455"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785704"
 ---
-# <a name="xbox-live-services-restful-reference"></a><span data-ttu-id="bb0b5-104">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="bb0b5-104">Xbox Live Services RESTful Reference</span></span>
+# <a name="xbox-live-services-restful-reference"></a><span data-ttu-id="15f91-104">Xbox Live サービス RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="15f91-104">Xbox Live Services RESTful Reference</span></span>
 
-<span data-ttu-id="bb0b5-105">Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-105">Xbox Live Services is a set of services for managing games and player information.</span></span> <span data-ttu-id="bb0b5-106">これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-106">These services support the **Xbox.Services** API which should be used whenever possible.</span></span> <span data-ttu-id="bb0b5-107">まだ**Xbox.Services**に追加していない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-107">Use the RESTful interface described in this section for newer methods that have not be added to **Xbox.Services** yet.</span></span>
+<span data-ttu-id="15f91-105">Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。</span><span class="sxs-lookup"><span data-stu-id="15f91-105">Xbox Live Services is a set of services for managing games and player information.</span></span> <span data-ttu-id="15f91-106">これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="15f91-106">These services support the **Xbox.Services** API which should be used whenever possible.</span></span> <span data-ttu-id="15f91-107">まだ**Xbox.Services**に追加されていない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。</span><span class="sxs-lookup"><span data-stu-id="15f91-107">Use the RESTful interface described in this section for newer methods that have not been added to **Xbox.Services** yet.</span></span>
 
 <a id="ID4E5"></a>
 
 
-## <a name="in-this-section"></a><span data-ttu-id="bb0b5-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="bb0b5-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="15f91-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="15f91-108">In this section</span></span>
 
-[<span data-ttu-id="bb0b5-109">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="bb0b5-109">Universal Resource Identifier (URI) Reference</span></span>](uri/atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="15f91-109">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="15f91-109">Universal Resource Identifier (URI) Reference</span></span>](uri/atoc-xboxlivews-reference-uris.md)
 
-<span data-ttu-id="bb0b5-110">&nbsp;&nbsp;リソースと Xbox Live サービスで使用できるメソッドのリファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-110">&nbsp;&nbsp;Provides reference material for the resources and methods that can be used with Xbox Live Services.</span></span>
+<span data-ttu-id="15f91-110">&nbsp;&nbsp;リソースと Xbox Live サービスで使用できるメソッドのリファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="15f91-110">&nbsp;&nbsp;Provides reference material for the resources and methods that can be used with Xbox Live Services.</span></span>
 
-[<span data-ttu-id="bb0b5-111">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="bb0b5-111">JavaScript Object Notation (JSON) Object Reference</span></span>](json/atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="15f91-111">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="15f91-111">JavaScript Object Notation (JSON) Object Reference</span></span>](json/atoc-xboxlivews-reference-json.md)
 
-<span data-ttu-id="bb0b5-112">&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-112">&nbsp;&nbsp;Provides reference material for the JavaScript Object Notation (JSON) objects used with Xbox Live Services.</span></span>
+<span data-ttu-id="15f91-112">&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="15f91-112">&nbsp;&nbsp;Provides reference material for the JavaScript Object Notation (JSON) objects used with Xbox Live Services.</span></span>
 
-[<span data-ttu-id="bb0b5-113">JavaScript Object Notation (JSON) オブジェクトで使用される列挙型</span><span class="sxs-lookup"><span data-stu-id="bb0b5-113">Enumerations Used In JavaScript Object Notation (JSON) Objects</span></span>](enums/atoc-xboxlivews-reference-enums.md)
+[<span data-ttu-id="15f91-113">JavaScript Object Notation (JSON) オブジェクトで使用される列挙型</span><span class="sxs-lookup"><span data-stu-id="15f91-113">Enumerations Used In JavaScript Object Notation (JSON) Objects</span></span>](enums/atoc-xboxlivews-reference-enums.md)
 
-<span data-ttu-id="bb0b5-114">&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトで使用する列挙体に関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-114">&nbsp;&nbsp;Provides reference material for the enumerations used in JavaScript Object Notation (JSON) objects used with Xbox Live Services.</span></span>
+<span data-ttu-id="15f91-114">&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトで使用する列挙体に関するリファレンス情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="15f91-114">&nbsp;&nbsp;Provides reference material for the enumerations used in JavaScript Object Notation (JSON) objects used with Xbox Live Services.</span></span>
 
-[<span data-ttu-id="bb0b5-115">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="bb0b5-115">Additional Reference</span></span>](additional/atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="15f91-115">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="15f91-115">Additional Reference</span></span>](additional/atoc-xboxlivews-reference-additional.md)
 
-<span data-ttu-id="bb0b5-116">&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-116">&nbsp;&nbsp;Supplementary reference material for Xbox Live Services.</span></span> <span data-ttu-id="bb0b5-117">これには、承認のタイプ、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーター、およびエンターテイメント探索サービス (EDS) に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="bb0b5-117">This includes information about authorization types, data types, standard HTTP status codes and headers, paging parameters, and Entertainment Discovery Services (EDS).</span></span>
+<span data-ttu-id="15f91-116">&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。</span><span class="sxs-lookup"><span data-stu-id="15f91-116">&nbsp;&nbsp;Supplementary reference material for Xbox Live Services.</span></span> <span data-ttu-id="15f91-117">これには、承認のタイプ、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーター、およびエンターテイメント探索サービス (EDS) に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="15f91-117">This includes information about authorization types, data types, standard HTTP status codes and headers, paging parameters, and Entertainment Discovery Services (EDS).</span></span>

@@ -7,66 +7,66 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736352"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793253"
 ---
-# <a name="create-an-app-submission"></a><span data-ttu-id="d7269-104">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="d7269-104">Create an app submission</span></span>
+# <a name="create-an-app-submission"></a><span data-ttu-id="e2009-104">アプリの申請の作成</span><span class="sxs-lookup"><span data-stu-id="e2009-104">Create an app submission</span></span>
 
-<span data-ttu-id="d7269-105">パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="d7269-105">Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account.</span></span> <span data-ttu-id="d7269-106">このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。</span><span class="sxs-lookup"><span data-stu-id="d7269-106">After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.</span></span>
+<span data-ttu-id="e2009-105">パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="e2009-105">Use this method in the Microsoft Store submission API to create a new submission for an app that is registered to your Partner Center account.</span></span> <span data-ttu-id="e2009-106">このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。</span><span class="sxs-lookup"><span data-stu-id="e2009-106">After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.</span></span>
 
-<span data-ttu-id="d7269-107">このメソッドが Microsoft Store 申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7269-107">For more information about how this method fits into the process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).</span></span>
+<span data-ttu-id="e2009-107">このメソッドが Microsoft Store 申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e2009-107">For more information about how this method fits into the process of creating an app submission by using the Microsoft Store submission API, see [Manage app submissions](manage-app-submissions.md).</span></span>
 
 
-## <a name="prerequisites"></a><span data-ttu-id="d7269-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="d7269-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="e2009-108">前提条件</span><span class="sxs-lookup"><span data-stu-id="e2009-108">Prerequisites</span></span>
 
-<span data-ttu-id="d7269-109">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d7269-109">To use this method, you need to first do the following:</span></span>
+<span data-ttu-id="e2009-109">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="e2009-109">To use this method, you need to first do the following:</span></span>
 
-* <span data-ttu-id="d7269-110">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="d7269-110">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
-* <span data-ttu-id="d7269-111">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="d7269-111">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="d7269-112">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="d7269-112">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="d7269-113">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="d7269-113">After the token expires, you can obtain a new one.</span></span>
-* <span data-ttu-id="d7269-114">[年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)の情報を含む 1 つ以上の申請がアプリで既に完了していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d7269-114">Make sure the app already has at least one submission with the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) information completed.</span></span>
+* <span data-ttu-id="e2009-110">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="e2009-110">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="e2009-111">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="e2009-111">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="e2009-112">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="e2009-112">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="e2009-113">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="e2009-113">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="e2009-114">[年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)の情報を含む 1 つ以上の申請がアプリで既に完了していることを確認します。</span><span class="sxs-lookup"><span data-stu-id="e2009-114">Make sure the app already has at least one submission with the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) information completed.</span></span>
 
-## <a name="request"></a><span data-ttu-id="d7269-115">要求</span><span class="sxs-lookup"><span data-stu-id="d7269-115">Request</span></span>
+## <a name="request"></a><span data-ttu-id="e2009-115">要求</span><span class="sxs-lookup"><span data-stu-id="e2009-115">Request</span></span>
 
-<span data-ttu-id="d7269-116">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d7269-116">This method has the following syntax.</span></span> <span data-ttu-id="d7269-117">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7269-117">See the following sections for usage examples and descriptions of the header and request body.</span></span>
+<span data-ttu-id="e2009-116">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="e2009-116">This method has the following syntax.</span></span> <span data-ttu-id="e2009-117">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e2009-117">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-| <span data-ttu-id="d7269-118">メソッド</span><span class="sxs-lookup"><span data-stu-id="d7269-118">Method</span></span> | <span data-ttu-id="d7269-119">要求 URI</span><span class="sxs-lookup"><span data-stu-id="d7269-119">Request URI</span></span>                                                      |
+| <span data-ttu-id="e2009-118">メソッド</span><span class="sxs-lookup"><span data-stu-id="e2009-118">Method</span></span> | <span data-ttu-id="e2009-119">要求 URI</span><span class="sxs-lookup"><span data-stu-id="e2009-119">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| <span data-ttu-id="d7269-120">POST</span><span class="sxs-lookup"><span data-stu-id="d7269-120">POST</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
+| <span data-ttu-id="e2009-120">POST</span><span class="sxs-lookup"><span data-stu-id="e2009-120">POST</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions``` |
 
 
-### <a name="request-header"></a><span data-ttu-id="d7269-121">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="d7269-121">Request header</span></span>
+### <a name="request-header"></a><span data-ttu-id="e2009-121">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="e2009-121">Request header</span></span>
 
-| <span data-ttu-id="d7269-122">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="d7269-122">Header</span></span>        | <span data-ttu-id="d7269-123">型</span><span class="sxs-lookup"><span data-stu-id="d7269-123">Type</span></span>   | <span data-ttu-id="d7269-124">説明</span><span class="sxs-lookup"><span data-stu-id="d7269-124">Description</span></span>                                                                 |
+| <span data-ttu-id="e2009-122">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="e2009-122">Header</span></span>        | <span data-ttu-id="e2009-123">型</span><span class="sxs-lookup"><span data-stu-id="e2009-123">Type</span></span>   | <span data-ttu-id="e2009-124">説明</span><span class="sxs-lookup"><span data-stu-id="e2009-124">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| <span data-ttu-id="d7269-125">Authorization</span><span class="sxs-lookup"><span data-stu-id="d7269-125">Authorization</span></span> | <span data-ttu-id="d7269-126">string</span><span class="sxs-lookup"><span data-stu-id="d7269-126">string</span></span> | <span data-ttu-id="d7269-127">必須。</span><span class="sxs-lookup"><span data-stu-id="d7269-127">Required.</span></span> <span data-ttu-id="d7269-128">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="d7269-128">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
+| <span data-ttu-id="e2009-125">Authorization</span><span class="sxs-lookup"><span data-stu-id="e2009-125">Authorization</span></span> | <span data-ttu-id="e2009-126">string</span><span class="sxs-lookup"><span data-stu-id="e2009-126">string</span></span> | <span data-ttu-id="e2009-127">必須。</span><span class="sxs-lookup"><span data-stu-id="e2009-127">Required.</span></span> <span data-ttu-id="e2009-128">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="e2009-128">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 
-### <a name="request-parameters"></a><span data-ttu-id="d7269-129">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="d7269-129">Request parameters</span></span>
+### <a name="request-parameters"></a><span data-ttu-id="e2009-129">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="e2009-129">Request parameters</span></span>
 
-| <span data-ttu-id="d7269-130">名前</span><span class="sxs-lookup"><span data-stu-id="d7269-130">Name</span></span>        | <span data-ttu-id="d7269-131">種類</span><span class="sxs-lookup"><span data-stu-id="d7269-131">Type</span></span>   | <span data-ttu-id="d7269-132">説明</span><span class="sxs-lookup"><span data-stu-id="d7269-132">Description</span></span>                                                                 |
+| <span data-ttu-id="e2009-130">名前</span><span class="sxs-lookup"><span data-stu-id="e2009-130">Name</span></span>        | <span data-ttu-id="e2009-131">種類</span><span class="sxs-lookup"><span data-stu-id="e2009-131">Type</span></span>   | <span data-ttu-id="e2009-132">説明</span><span class="sxs-lookup"><span data-stu-id="e2009-132">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| <span data-ttu-id="d7269-133">applicationId</span><span class="sxs-lookup"><span data-stu-id="d7269-133">applicationId</span></span> | <span data-ttu-id="d7269-134">string</span><span class="sxs-lookup"><span data-stu-id="d7269-134">string</span></span> | <span data-ttu-id="d7269-135">必須。</span><span class="sxs-lookup"><span data-stu-id="d7269-135">Required.</span></span> <span data-ttu-id="d7269-136">申請を作成するアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="d7269-136">The Store ID of the app for which you want to create a submission.</span></span> <span data-ttu-id="d7269-137">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7269-137">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
+| <span data-ttu-id="e2009-133">applicationId</span><span class="sxs-lookup"><span data-stu-id="e2009-133">applicationId</span></span> | <span data-ttu-id="e2009-134">string</span><span class="sxs-lookup"><span data-stu-id="e2009-134">string</span></span> | <span data-ttu-id="e2009-135">必須。</span><span class="sxs-lookup"><span data-stu-id="e2009-135">Required.</span></span> <span data-ttu-id="e2009-136">申請を作成するアプリのストア ID です。</span><span class="sxs-lookup"><span data-stu-id="e2009-136">The Store ID of the app for which you want to create a submission.</span></span> <span data-ttu-id="e2009-137">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e2009-137">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
 
 
-### <a name="request-body"></a><span data-ttu-id="d7269-138">要求本文</span><span class="sxs-lookup"><span data-stu-id="d7269-138">Request body</span></span>
+### <a name="request-body"></a><span data-ttu-id="e2009-138">要求本文</span><span class="sxs-lookup"><span data-stu-id="e2009-138">Request body</span></span>
 
-<span data-ttu-id="d7269-139">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="d7269-139">Do not provide a request body for this method.</span></span>
+<span data-ttu-id="e2009-139">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="e2009-139">Do not provide a request body for this method.</span></span>
 
-### <a name="request-example"></a><span data-ttu-id="d7269-140">要求の例</span><span class="sxs-lookup"><span data-stu-id="d7269-140">Request example</span></span>
+### <a name="request-example"></a><span data-ttu-id="e2009-140">要求の例</span><span class="sxs-lookup"><span data-stu-id="e2009-140">Request example</span></span>
 
-<span data-ttu-id="d7269-141">次の例は、アプリの新しい申請を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="d7269-141">The following example demonstrates how to create a new submission for an app.</span></span>
+<span data-ttu-id="e2009-141">次の例は、アプリの新しい申請を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e2009-141">The following example demonstrates how to create a new submission for an app.</span></span>
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a><span data-ttu-id="d7269-142">応答</span><span class="sxs-lookup"><span data-stu-id="d7269-142">Response</span></span>
+## <a name="response"></a><span data-ttu-id="e2009-142">応答</span><span class="sxs-lookup"><span data-stu-id="e2009-142">Response</span></span>
 
-<span data-ttu-id="d7269-143">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="d7269-143">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="d7269-144">応答本文には、新しい申請に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d7269-144">The response body contains information about the new submission.</span></span> <span data-ttu-id="d7269-145">応答本文内の値について詳しくは、[アプリの申請のリソース](manage-app-submissions.md#app-submission-object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d7269-145">For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).</span></span>
+<span data-ttu-id="e2009-143">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="e2009-143">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="e2009-144">応答本文には、新しい申請に関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="e2009-144">The response body contains information about the new submission.</span></span> <span data-ttu-id="e2009-145">応答本文内の値について詳しくは、[アプリの申請のリソース](manage-app-submissions.md#app-submission-object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="e2009-145">For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).</span></span>
 
 ```json
 {
@@ -179,21 +179,21 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## <a name="error-codes"></a><span data-ttu-id="d7269-146">エラー コード</span><span class="sxs-lookup"><span data-stu-id="d7269-146">Error codes</span></span>
+## <a name="error-codes"></a><span data-ttu-id="e2009-146">エラー コード</span><span class="sxs-lookup"><span data-stu-id="e2009-146">Error codes</span></span>
 
-<span data-ttu-id="d7269-147">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="d7269-147">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
+<span data-ttu-id="e2009-147">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="e2009-147">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| <span data-ttu-id="d7269-148">エラー コード</span><span class="sxs-lookup"><span data-stu-id="d7269-148">Error code</span></span> |  <span data-ttu-id="d7269-149">説明</span><span class="sxs-lookup"><span data-stu-id="d7269-149">Description</span></span>   |
+| <span data-ttu-id="e2009-148">エラー コード</span><span class="sxs-lookup"><span data-stu-id="e2009-148">Error code</span></span> |  <span data-ttu-id="e2009-149">説明</span><span class="sxs-lookup"><span data-stu-id="e2009-149">Description</span></span>   |
 |--------|------------------|
-| <span data-ttu-id="d7269-150">400</span><span class="sxs-lookup"><span data-stu-id="d7269-150">400</span></span>  | <span data-ttu-id="d7269-151">要求が無効なため、申請を作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="d7269-151">The submission could not be created because the request is invalid.</span></span> |
-| <span data-ttu-id="d7269-152">409</span><span class="sxs-lookup"><span data-stu-id="d7269-152">409</span></span>  | <span data-ttu-id="d7269-153">アプリの現在の状態があるため、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。</span><span class="sxs-lookup"><span data-stu-id="d7269-153">The submission could not be created because of the current state of the app, or the app uses a Partner Center  feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span> |   
+| <span data-ttu-id="e2009-150">400</span><span class="sxs-lookup"><span data-stu-id="e2009-150">400</span></span>  | <span data-ttu-id="e2009-151">要求が無効なため、申請を作成できませんでした。</span><span class="sxs-lookup"><span data-stu-id="e2009-151">The submission could not be created because the request is invalid.</span></span> |
+| <span data-ttu-id="e2009-152">409</span><span class="sxs-lookup"><span data-stu-id="e2009-152">409</span></span>  | <span data-ttu-id="e2009-153">アプリの現在の状態が原因、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。</span><span class="sxs-lookup"><span data-stu-id="e2009-153">The submission could not be created because of the current state of the app, or the app uses a Partner Center  feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span> |   
 
 
-## <a name="related-topics"></a><span data-ttu-id="d7269-154">関連トピック</span><span class="sxs-lookup"><span data-stu-id="d7269-154">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="e2009-154">関連トピック</span><span class="sxs-lookup"><span data-stu-id="e2009-154">Related topics</span></span>
 
-* [<span data-ttu-id="d7269-155">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="d7269-155">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
-* [<span data-ttu-id="d7269-156">アプリの申請の取得</span><span class="sxs-lookup"><span data-stu-id="d7269-156">Get an app submission</span></span>](get-an-app-submission.md)
-* [<span data-ttu-id="d7269-157">アプリの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="d7269-157">Commit an app submission</span></span>](commit-an-app-submission.md)
-* [<span data-ttu-id="d7269-158">アプリの申請の更新</span><span class="sxs-lookup"><span data-stu-id="d7269-158">Update an app submission</span></span>](update-an-app-submission.md)
-* [<span data-ttu-id="d7269-159">アプリの申請の削除</span><span class="sxs-lookup"><span data-stu-id="d7269-159">Delete an app submission</span></span>](delete-an-app-submission.md)
-* [<span data-ttu-id="d7269-160">アプリの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="d7269-160">Get the status of an app submission</span></span>](get-status-for-an-app-submission.md)
+* [<span data-ttu-id="e2009-155">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="e2009-155">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="e2009-156">アプリの申請の取得</span><span class="sxs-lookup"><span data-stu-id="e2009-156">Get an app submission</span></span>](get-an-app-submission.md)
+* [<span data-ttu-id="e2009-157">アプリの申請のコミット</span><span class="sxs-lookup"><span data-stu-id="e2009-157">Commit an app submission</span></span>](commit-an-app-submission.md)
+* [<span data-ttu-id="e2009-158">アプリの申請の更新</span><span class="sxs-lookup"><span data-stu-id="e2009-158">Update an app submission</span></span>](update-an-app-submission.md)
+* [<span data-ttu-id="e2009-159">アプリの申請の削除</span><span class="sxs-lookup"><span data-stu-id="e2009-159">Delete an app submission</span></span>](delete-an-app-submission.md)
+* [<span data-ttu-id="e2009-160">アプリの申請の状態の取得</span><span class="sxs-lookup"><span data-stu-id="e2009-160">Get the status of an app submission</span></span>](get-status-for-an-app-submission.md)
