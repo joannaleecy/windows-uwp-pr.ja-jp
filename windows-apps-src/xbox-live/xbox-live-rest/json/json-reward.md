@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8748797"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807644"
 ---
 # <a name="reward-json"></a><span data-ttu-id="0ed01-104">Reward (JSON)</span><span class="sxs-lookup"><span data-stu-id="0ed01-104">Reward (JSON)</span></span>
 <span data-ttu-id="0ed01-105">実績に関連付けられたリワードです。</span><span class="sxs-lookup"><span data-stu-id="0ed01-105">The reward associated with the achievement.</span></span>

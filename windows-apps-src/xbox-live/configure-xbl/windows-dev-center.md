@@ -6,11 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: dc081925e1a3bd671c01794dca5e432e957a7809
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8744611"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807307"
 ---
 # <a name="partner-center-service-configuration"></a><span data-ttu-id="49fdf-104">パートナー センター サービスの構成</span><span class="sxs-lookup"><span data-stu-id="49fdf-104">Partner Center service configuration</span></span>
 

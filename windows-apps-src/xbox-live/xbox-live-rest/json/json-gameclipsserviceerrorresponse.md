@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 01db596d7cb866d568000eff85254c3f5d668398
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8750808"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8805705"
 ---
 # <a name="gameclipsserviceerrorresponse-json"></a><span data-ttu-id="38ce6-104">GameClipsServiceErrorResponse (JSON)</span><span class="sxs-lookup"><span data-stu-id="38ce6-104">GameClipsServiceErrorResponse (JSON)</span></span>
 <span data-ttu-id="38ce6-105">/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答のオプションの一部/uri 形式/{gameClipUriType} API です。</span><span class="sxs-lookup"><span data-stu-id="38ce6-105">An optional part of the response to the /users/{ownerId}/scids/{scid}/clips/{gameClipId}/uris/format/{gameClipUriType} API.</span></span> 
