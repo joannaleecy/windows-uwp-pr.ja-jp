@@ -7,11 +7,11 @@ ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8753118"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793426"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>

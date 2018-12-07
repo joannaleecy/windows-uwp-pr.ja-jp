@@ -7,11 +7,11 @@ ms.topic: article
 keywords: 概要, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756204"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798465"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  

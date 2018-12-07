@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 757d84c9ad5a005e042b42d699ada08504dc57ff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8735300"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798352"
 ---
 # <a name="get-uri"></a><span data-ttu-id="599f2-104">GET (/{uri})</span><span class="sxs-lookup"><span data-stu-id="599f2-104">GET (/{uri})</span></span>
 <span data-ttu-id="599f2-105">ゲーム クリップをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="599f2-105">Download game clip.</span></span> <span data-ttu-id="599f2-106">これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。</span><span class="sxs-lookup"><span data-stu-id="599f2-106">The domains for these URIs are `gameclipsmetadata.xboxlive.com` and `gameclipstransfer.xboxlive.com`, depending on the function of the URI in question.</span></span>

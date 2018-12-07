@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a56bc23b4b727d5be2ed35fb77afae03f0689c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730499"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794893"
 ---
 # <a name="optimize-background-activity"></a><span data-ttu-id="568d7-104">バックグラウンド アクティビティの最適化</span><span class="sxs-lookup"><span data-stu-id="568d7-104">Optimize background activity</span></span>
 

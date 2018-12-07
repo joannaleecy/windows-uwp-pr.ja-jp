@@ -13,11 +13,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d53bb0747ba5fb3469f9a395847eb856f72c9632
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750206"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797020"
 ---
 # <a name="parallax"></a><span data-ttu-id="24f7e-103">視差</span><span class="sxs-lookup"><span data-stu-id="24f7e-103">Parallax</span></span>
 

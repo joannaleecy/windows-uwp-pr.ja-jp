@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 88e45740f457086a925674b37baacc8fc7b4e9b6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750452"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798968"
 ---
 # <a name="security"></a><span data-ttu-id="61077-104">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="61077-104">Security</span></span>
 

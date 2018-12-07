@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f84debc3fdf421db8f734d1c2184355d0508c8b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755318"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795831"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a><span data-ttu-id="ea62b-104">C++/WinRT と ABI 間の相互運用</span><span class="sxs-lookup"><span data-stu-id="ea62b-104">Interop between C++/WinRT and the ABI</span></span>
 
@@ -204,15 +204,22 @@ namespace abi
     using namespace ABI::Windows::Foundation;
 };
 
-template <typename T>
-T convert_from_abi(::IUnknown* from)
+namespace sample
 {
-    T to{ nullptr };
+    template <typename T>
+    T convert_from_abi(::IUnknown* from)
+    {
+        T to{ nullptr };
 
-    winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
-        reinterpret_cast<void**>(winrt::put_abi(to))));
+        winrt::check_hresult(from->QueryInterface(winrt::guid_of<T>(),
+            reinterpret_cast<void**>(winrt::put_abi(to))));
 
-    return to;
+        return to;
+    }
+    inline auto put_abi(winrt::hstring& object) noexcept
+    {
+        return reinterpret_cast<HSTRING*>(winrt::put_abi(object));
+    }
 }
 
 int main()
@@ -223,13 +230,13 @@ int main()
     std::wcout << "C++/WinRT: " << uri.Domain().c_str() << std::endl;
 
     // Convert to an ABI type.
-    winrt::com_ptr<abi::IUriRuntimeClass> ptr{ uri.as<abi::IUriRuntimeClass>() };
+    winrt::com_ptr<abi::IUriRuntimeClass> ptr = uri.as<abi::IUriRuntimeClass>();
     winrt::hstring domain;
-    winrt::check_hresult(ptr->get_Domain(reinterpret_cast<HSTRING*>(put_abi(domain))));
+    winrt::check_hresult(ptr->get_Domain(sample::put_abi(domain)));
     std::wcout << "ABI: " << domain.c_str() << std::endl;
 
     // Convert from an ABI type.
-    winrt::Uri uri_from_abi{ convert_from_abi<winrt::Uri>(ptr.get()) };
+    winrt::Uri uri_from_abi = sample::convert_from_abi<winrt::Uri>(ptr.get());
 
     WINRT_ASSERT(uri.Domain() == uri_from_abi.Domain());
     WINRT_ASSERT(uri == uri_from_abi);

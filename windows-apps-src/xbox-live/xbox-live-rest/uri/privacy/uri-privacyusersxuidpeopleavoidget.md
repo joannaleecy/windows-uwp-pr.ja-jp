@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 745893b4b975b5fbf64fe76591ec15d18af59d73
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8740631"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798431"
 ---
 # <a name="get-usersowneridpeopleavoid"></a><span data-ttu-id="f39e9-104">GET (/users/{ownerId}/people/avoid)</span><span class="sxs-lookup"><span data-stu-id="f39e9-104">GET (/users/{ownerId}/people/avoid)</span></span>
 <span data-ttu-id="f39e9-105">ユーザーの回避一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="f39e9-105">Gets the Avoid list for a user.</span></span>

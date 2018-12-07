@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaad3791830086d6b086ac0026523d28d596d1a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8728890"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797954"
 ---
 # <a name="system-strings-validatation-uris"></a><span data-ttu-id="6ac4d-104">システム文字列の検証 URI</span><span class="sxs-lookup"><span data-stu-id="6ac4d-104">System Strings Validatation URIs</span></span>
  

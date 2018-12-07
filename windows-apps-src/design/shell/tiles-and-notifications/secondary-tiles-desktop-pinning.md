@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、デスクトップ ブリッジ、セカンダリ タイル、ピン留め、クイックスタート、コード サンプル、例、デスクトップ アプリケーション、Win32、WinForms、WPF
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747481"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795049"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a><span data-ttu-id="8e8ef-103">デスクトップ アプリケーションからセカンダリ タイルをピン留めする</span><span class="sxs-lookup"><span data-stu-id="8e8ef-103">Pin secondary tiles from desktop application</span></span>
 

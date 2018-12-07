@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ba498a9bc6541f45f01e74b1ea90f4f9a1bfde90
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736970"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799991"
 ---
 # <a name="copy-and-paste"></a><span data-ttu-id="9903a-104">コピーと貼り付け</span><span class="sxs-lookup"><span data-stu-id="9903a-104">Copy and paste</span></span>
 

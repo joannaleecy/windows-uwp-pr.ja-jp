@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745116"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795986"
 ---
 # <a name="image-metadata"></a><span data-ttu-id="85225-104">画像のメタデータ</span><span class="sxs-lookup"><span data-stu-id="85225-104">Image Metadata</span></span>
 

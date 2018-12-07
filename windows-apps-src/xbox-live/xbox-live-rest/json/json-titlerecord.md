@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89baf7e9a737428d492246f1647a561a4a8170cf
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8737461"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795440"
 ---
 # <a name="titlerecord-json"></a><span data-ttu-id="4c8e1-104">TitleRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="4c8e1-104">TitleRecord (JSON)</span></span>
 <span data-ttu-id="4c8e1-105">その名前と最終変更日のタイムスタンプを含む、タイトルに関する情報。</span><span class="sxs-lookup"><span data-stu-id="4c8e1-105">Information about a title, including its name and a last-modified timestamp.</span></span> 

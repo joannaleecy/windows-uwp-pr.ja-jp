@@ -8,47 +8,47 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8740340"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797225"
 ---
-# <a name="networking-page-dev-home"></a><span data-ttu-id="d4eaa-104">[ネットワーク] ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="d4eaa-104">Networking Page (Dev Home)</span></span>
+# <a name="networking-page-dev-home"></a><span data-ttu-id="32d9e-104">[ネットワーク] ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="32d9e-104">Networking Page (Dev Home)</span></span>
    
   
-<span data-ttu-id="d4eaa-105">Dev Home の [**ネットワーク**] ページでは、トラブルシューティングのためのさまざまなネットワーク条件をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="d4eaa-105">The **Networking** page of Dev Home simulates various networking conditions for troubleshooting purposes.</span></span> <span data-ttu-id="d4eaa-106">ネットワーク パケットのトレースを開始することもできます。</span><span class="sxs-lookup"><span data-stu-id="d4eaa-106">It also allows you to initiate a network packet trace.</span></span>   
+<span data-ttu-id="32d9e-105">Dev Home の [**ネットワーク**] ページでは、トラブルシューティングのためにさまざまなネットワーク条件をシミュレートします。</span><span class="sxs-lookup"><span data-stu-id="32d9e-105">The **Networking** page of Dev Home simulates various networking conditions for troubleshooting purposes.</span></span> <span data-ttu-id="32d9e-106">ネットワーク パケットのトレースを開始することもできます。</span><span class="sxs-lookup"><span data-stu-id="32d9e-106">It also allows you to initiate a network packet trace.</span></span>   
  ![Dev Home のネットワーク ページ](images/devhome_networking.png)   
   
-<span data-ttu-id="d4eaa-108">**ネットワーク**のページには、次のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d4eaa-108">The **Networking** page contains the following panes:</span></span>   
+<span data-ttu-id="32d9e-108">**ネットワーク**ページには、次のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="32d9e-108">The **Networking** page contains the following panes:</span></span>   
  
-   *  [<span data-ttu-id="d4eaa-109">ネットワーク シミュレーション</span><span class="sxs-lookup"><span data-stu-id="d4eaa-109">Network simulation</span></span>](#ID4EEB)  
-   *  [<span data-ttu-id="d4eaa-110">XBTrace (netcap)</span><span class="sxs-lookup"><span data-stu-id="d4eaa-110">XBTrace (netcap)</span></span>](#ID4EOB)  
+   *  [<span data-ttu-id="32d9e-109">ネットワーク シミュレーション</span><span class="sxs-lookup"><span data-stu-id="32d9e-109">Network simulation</span></span>](#ID4EEB)  
+   *  [<span data-ttu-id="32d9e-110">XBTrace (netcap)</span><span class="sxs-lookup"><span data-stu-id="32d9e-110">XBTrace (netcap)</span></span>](#ID4EOB)  
 
  
 <a id="ID4EEB"></a>
 
    
 
-## <a name="network-simulation"></a><span data-ttu-id="d4eaa-111">ネットワーク シミュレーション</span><span class="sxs-lookup"><span data-stu-id="d4eaa-111">Network simulation</span></span>  
+## <a name="network-simulation"></a><span data-ttu-id="32d9e-111">ネットワーク シミュレーション</span><span class="sxs-lookup"><span data-stu-id="32d9e-111">Network simulation</span></span>  
    
   
-<span data-ttu-id="d4eaa-112">**ネットワーク シミュレーション**ウィンドウは、さまざまな帯域幅のプロファイルに対してテストするネットワーク シミュレーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="d4eaa-112">The **Network simulation** pane runs a network simulation to test against various bandwidth profiles.</span></span>   
+<span data-ttu-id="32d9e-112">**ネットワーク シミュレーション**ウィンドウは、さまざまな帯域幅のプロファイルに対してテストするネットワーク シミュレーションを実行します。</span><span class="sxs-lookup"><span data-stu-id="32d9e-112">The **Network simulation** pane runs a network simulation to test against various bandwidth profiles.</span></span>   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="xbtrace-netcap"></a><span data-ttu-id="d4eaa-113">XBTrace (netcap)</span><span class="sxs-lookup"><span data-stu-id="d4eaa-113">XBTrace (netcap)</span></span>  
+## <a name="xbtrace-netcap"></a><span data-ttu-id="32d9e-113">XBTrace (netcap)</span><span class="sxs-lookup"><span data-stu-id="32d9e-113">XBTrace (netcap)</span></span>  
    
   
-<span data-ttu-id="d4eaa-114">**XBTrace (netcap)** ウィンドウを開始またはネットワーク パケットのトレースを停止します。</span><span class="sxs-lookup"><span data-stu-id="d4eaa-114">The **XBTrace (netcap)** pane starts or stops a network packet trace.</span></span>   
+<span data-ttu-id="32d9e-114">**XBTrace (netcap)** ウィンドウを開始またはネットワーク パケットのトレースを停止します。</span><span class="sxs-lookup"><span data-stu-id="32d9e-114">The **XBTrace (netcap)** pane starts or stops a network packet trace.</span></span>   
   
 <a id="ID4E2B"></a>
 
    
 
-## <a name="see-also"></a><span data-ttu-id="d4eaa-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="d4eaa-115">See also</span></span>  
- [<span data-ttu-id="d4eaa-116">コンソール (Dev Home) における開発者ホーム</span><span class="sxs-lookup"><span data-stu-id="d4eaa-116">Developer Home on the Console (Dev Home)</span></span>](dev-home.md)
+## <a name="see-also"></a><span data-ttu-id="32d9e-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="32d9e-115">See also</span></span>  
+ [<span data-ttu-id="32d9e-116">コンソール (Dev Home) における開発者ホーム</span><span class="sxs-lookup"><span data-stu-id="32d9e-116">Developer Home on the Console (Dev Home)</span></span>](dev-home.md)
 
   

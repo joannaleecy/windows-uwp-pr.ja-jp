@@ -8,34 +8,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc638dfe7735856295ed92f35e244213be7bc1e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750493"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792675"
 ---
-# <a name="matchticket-json"></a><span data-ttu-id="dddeb-104">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="dddeb-104">MatchTicket (JSON)</span></span>
-<span data-ttu-id="dddeb-105">プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="dddeb-105">A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD).</span></span> 
+# <a name="matchticket-json"></a><span data-ttu-id="c10f3-104">MatchTicket (JSON)</span><span class="sxs-lookup"><span data-stu-id="c10f3-104">MatchTicket (JSON)</span></span>
+<span data-ttu-id="c10f3-105">プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c10f3-105">A JSON object representing a match ticket, used by players to locate other players through the multiplayer session directory (MPSD).</span></span> 
 <a id="ID4EN"></a>
 
   
  
-<span data-ttu-id="dddeb-106">MatchTicket JSON オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="dddeb-106">The MatchTicket JSON object has the following specification.</span></span>
+<span data-ttu-id="c10f3-106">MatchTicket JSON オブジェクトには、次仕様があります。</span><span class="sxs-lookup"><span data-stu-id="c10f3-106">The MatchTicket JSON object has the following specification.</span></span>
  
-| <span data-ttu-id="dddeb-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="dddeb-107">Member</span></span>| <span data-ttu-id="dddeb-108">種類</span><span class="sxs-lookup"><span data-stu-id="dddeb-108">Type</span></span>| <span data-ttu-id="dddeb-109">説明</span><span class="sxs-lookup"><span data-stu-id="dddeb-109">Description</span></span>| 
+| <span data-ttu-id="c10f3-107">メンバー</span><span class="sxs-lookup"><span data-stu-id="c10f3-107">Member</span></span>| <span data-ttu-id="c10f3-108">種類</span><span class="sxs-lookup"><span data-stu-id="c10f3-108">Type</span></span>| <span data-ttu-id="c10f3-109">説明</span><span class="sxs-lookup"><span data-stu-id="c10f3-109">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="dddeb-110">serviceConfig</span><span class="sxs-lookup"><span data-stu-id="dddeb-110">serviceConfig</span></span>| <span data-ttu-id="dddeb-111">GUID</span><span class="sxs-lookup"><span data-stu-id="dddeb-111">GUID</span></span>| <span data-ttu-id="dddeb-112">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="dddeb-112">Service configuration identifier (SCID) for the session.</span></span>| 
-| <span data-ttu-id="dddeb-113">hopperName</span><span class="sxs-lookup"><span data-stu-id="dddeb-113">hopperName</span></span>| <span data-ttu-id="dddeb-114">string</span><span class="sxs-lookup"><span data-stu-id="dddeb-114">string</span></span>| <span data-ttu-id="dddeb-115">このチケットを配置する必要があります、ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="dddeb-115">Name of the hopper in which this ticket should be placed.</span></span>| 
-| <span data-ttu-id="dddeb-116">giveUpDuration</span><span class="sxs-lookup"><span data-stu-id="dddeb-116">giveUpDuration</span></span>| <span data-ttu-id="dddeb-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="dddeb-117">32-bit signed integer</span></span>| <span data-ttu-id="dddeb-118">最大待機時間 (秒の整数)。</span><span class="sxs-lookup"><span data-stu-id="dddeb-118">Maximum wait time (integral number of seconds).</span></span>| 
-| <span data-ttu-id="dddeb-119">preserveSession</span><span class="sxs-lookup"><span data-stu-id="dddeb-119">preserveSession</span></span>| <span data-ttu-id="dddeb-120">列挙型</span><span class="sxs-lookup"><span data-stu-id="dddeb-120">enumeration</span></span>| <span data-ttu-id="dddeb-121">セッションに一致するようになると、セッションを再利用する必要があるかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="dddeb-121">A value indicating if the session must be reused as the session into which to match.</span></span> <span data-ttu-id="dddeb-122">値は、「ことはありません」または"always"します。</span><span class="sxs-lookup"><span data-stu-id="dddeb-122">Possible values are "always" or "never".</span></span> | 
-| <span data-ttu-id="dddeb-123">ticketSessionRef</span><span class="sxs-lookup"><span data-stu-id="dddeb-123">ticketSessionRef</span></span>| <span data-ttu-id="dddeb-124">MultiplayerSessionReference</span><span class="sxs-lookup"><span data-stu-id="dddeb-124">MultiplayerSessionReference</span></span>| <span data-ttu-id="dddeb-125">いるプレイヤーまたはグループは、現在再生中のセッションの<b>MultiplayerSessionReference</b>オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="dddeb-125"><b>MultiplayerSessionReference</b> object for the session in which the player or group is currently playing.</span></span> <span data-ttu-id="dddeb-126">このメンバーは必須です。</span><span class="sxs-lookup"><span data-stu-id="dddeb-126">This member is always required.</span></span> | 
-| <span data-ttu-id="dddeb-127">ticketAttributes</span><span class="sxs-lookup"><span data-stu-id="dddeb-127">ticketAttributes</span></span>| <span data-ttu-id="dddeb-128">オブジェクトの配列</span><span class="sxs-lookup"><span data-stu-id="dddeb-128">array of objects</span></span>| <span data-ttu-id="dddeb-129">プレイヤーのユーザーが指定の属性と値について、チケットのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="dddeb-129">Collection of user-provided attributes and values about the tickets for the players.</span></span>| 
-| <span data-ttu-id="dddeb-130">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="dddeb-130">players</span></span>| <span data-ttu-id="dddeb-131">オブジェクトの配列</span><span class="sxs-lookup"><span data-stu-id="dddeb-131">array of objects</span></span>| <span data-ttu-id="dddeb-132">それぞれのユーザーが指定した属性のプロパティ バッグに、プレイヤーのオブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="dddeb-132">Collection of player objects, each with a property bag of user-provided attributes.</span></span> | 
+| <span data-ttu-id="c10f3-110">serviceConfig</span><span class="sxs-lookup"><span data-stu-id="c10f3-110">serviceConfig</span></span>| <span data-ttu-id="c10f3-111">GUID</span><span class="sxs-lookup"><span data-stu-id="c10f3-111">GUID</span></span>| <span data-ttu-id="c10f3-112">セッションのサービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="c10f3-112">Service configuration identifier (SCID) for the session.</span></span>| 
+| <span data-ttu-id="c10f3-113">hopperName</span><span class="sxs-lookup"><span data-stu-id="c10f3-113">hopperName</span></span>| <span data-ttu-id="c10f3-114">string</span><span class="sxs-lookup"><span data-stu-id="c10f3-114">string</span></span>| <span data-ttu-id="c10f3-115">このチケットを配置する必要があります、ホッパーの名前です。</span><span class="sxs-lookup"><span data-stu-id="c10f3-115">Name of the hopper in which this ticket should be placed.</span></span>| 
+| <span data-ttu-id="c10f3-116">giveUpDuration</span><span class="sxs-lookup"><span data-stu-id="c10f3-116">giveUpDuration</span></span>| <span data-ttu-id="c10f3-117">32 ビット符号付き整数</span><span class="sxs-lookup"><span data-stu-id="c10f3-117">32-bit signed integer</span></span>| <span data-ttu-id="c10f3-118">最大待機時間 (秒の整数)。</span><span class="sxs-lookup"><span data-stu-id="c10f3-118">Maximum wait time (integral number of seconds).</span></span>| 
+| <span data-ttu-id="c10f3-119">preserveSession</span><span class="sxs-lookup"><span data-stu-id="c10f3-119">preserveSession</span></span>| <span data-ttu-id="c10f3-120">列挙型</span><span class="sxs-lookup"><span data-stu-id="c10f3-120">enumeration</span></span>| <span data-ttu-id="c10f3-121">一致するように、セッションとして、セッションを再利用する必要があるかどうかを示す値。</span><span class="sxs-lookup"><span data-stu-id="c10f3-121">A value indicating if the session must be reused as the session into which to match.</span></span> <span data-ttu-id="c10f3-122">値は、「しない」または"always"します。</span><span class="sxs-lookup"><span data-stu-id="c10f3-122">Possible values are "always" or "never".</span></span> | 
+| <span data-ttu-id="c10f3-123">ticketSessionRef</span><span class="sxs-lookup"><span data-stu-id="c10f3-123">ticketSessionRef</span></span>| <span data-ttu-id="c10f3-124">MultiplayerSessionReference</span><span class="sxs-lookup"><span data-stu-id="c10f3-124">MultiplayerSessionReference</span></span>| <span data-ttu-id="c10f3-125">これでプレイヤーまたはグループは、現在再生中のセッションの<b>MultiplayerSessionReference</b>オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="c10f3-125"><b>MultiplayerSessionReference</b> object for the session in which the player or group is currently playing.</span></span> <span data-ttu-id="c10f3-126">このメンバーは必須です。</span><span class="sxs-lookup"><span data-stu-id="c10f3-126">This member is always required.</span></span> | 
+| <span data-ttu-id="c10f3-127">ticketAttributes</span><span class="sxs-lookup"><span data-stu-id="c10f3-127">ticketAttributes</span></span>| <span data-ttu-id="c10f3-128">オブジェクトの配列</span><span class="sxs-lookup"><span data-stu-id="c10f3-128">array of objects</span></span>| <span data-ttu-id="c10f3-129">プレイヤーのユーザー指定の属性と値について、チケットのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="c10f3-129">Collection of user-provided attributes and values about the tickets for the players.</span></span>| 
+| <span data-ttu-id="c10f3-130">プレイヤー</span><span class="sxs-lookup"><span data-stu-id="c10f3-130">players</span></span>| <span data-ttu-id="c10f3-131">オブジェクトの配列</span><span class="sxs-lookup"><span data-stu-id="c10f3-131">array of objects</span></span>| <span data-ttu-id="c10f3-132">ユーザー指定の属性のプロパティ バッグに各プレイヤーのオブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="c10f3-132">Collection of player objects, each with a property bag of user-provided attributes.</span></span> | 
   
 <a id="ID4EW"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="dddeb-133">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="dddeb-133">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="c10f3-133">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="c10f3-133">Sample JSON syntax</span></span>
  
 
 ```json
@@ -78,13 +78,13 @@ ms.locfileid: "8750493"
 <a id="ID4EEB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="dddeb-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="dddeb-134">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c10f3-134">関連項目</span><span class="sxs-lookup"><span data-stu-id="c10f3-134">See also</span></span>
  
 <a id="ID4EGB"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="dddeb-135">Parent</span><span class="sxs-lookup"><span data-stu-id="dddeb-135">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="c10f3-135">Parent</span><span class="sxs-lookup"><span data-stu-id="c10f3-135">Parent</span></span> 
 
-[<span data-ttu-id="dddeb-136">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="dddeb-136">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="c10f3-136">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="c10f3-136">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    
