@@ -8,109 +8,109 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fd8112c6e16b3e9d9fb70c34381e88ba5aa6273
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8330549"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8741016"
 ---
-# <a name="marketplace-uris"></a><span data-ttu-id="af4e8-104">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="af4e8-104">Marketplace URIs</span></span>
+# <a name="marketplace-uris"></a><span data-ttu-id="fa2cc-104">マーケットプレース URI</span><span class="sxs-lookup"><span data-stu-id="fa2cc-104">Marketplace URIs</span></span>
 
-<span data-ttu-id="af4e8-105">このセクションでは、*市場*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="af4e8-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *marketplace* services, also known as Entertainment Discovery Services (EDS).</span></span>
+<span data-ttu-id="fa2cc-105">このセクションでは、*市場*サービスとも呼ばれますエンターテイメント探索サービス (EDS) 用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *marketplace* services, also known as Entertainment Discovery Services (EDS).</span></span>
 
-<span data-ttu-id="af4e8-106">Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="af4e8-106">Only games running on an Xbox 360, on a Windows Phone device, or on Xbox.com can use this service.</span></span>
+<span data-ttu-id="fa2cc-106">Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-106">Only games running on an Xbox 360, on a Windows Phone device, or on Xbox.com can use this service.</span></span>
 
-<span data-ttu-id="af4e8-107">これらの Uri のドメインは eds.xboxlive.com inventory.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="af4e8-107">The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.</span></span>
+<span data-ttu-id="fa2cc-107">これらの Uri のドメイン eds.xboxlive.com、inventory.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-107">The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.</span></span>
 
 <a id="ID4EPB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="af4e8-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="af4e8-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="fa2cc-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="fa2cc-108">In this section</span></span>
 
-[<span data-ttu-id="af4e8-109">/users/me/inventory</span><span class="sxs-lookup"><span data-stu-id="af4e8-109">/users/me/inventory</span></span>](uri-inventory.md)
+[<span data-ttu-id="fa2cc-109">/users/me/inventory</span><span class="sxs-lookup"><span data-stu-id="fa2cc-109">/users/me/inventory</span></span>](uri-inventory.md)
 
-<span data-ttu-id="af4e8-110">&nbsp;&nbsp;指定されたユーザーに関連付けられているインベントリのセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-110">&nbsp;&nbsp;Accesses the set of inventory currently associated with the provided user.</span></span>
+<span data-ttu-id="fa2cc-110">&nbsp;&nbsp;指定されたユーザーに関連付けられているインベントリのセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-110">&nbsp;&nbsp;Accesses the set of inventory currently associated with the provided user.</span></span>
 
-[<span data-ttu-id="af4e8-111">/users/me/consumables/{itemID}</span><span class="sxs-lookup"><span data-stu-id="af4e8-111">/users/me/consumables/{itemID}</span></span>](uri-inventoryconsumablesitemurl.md)
+[<span data-ttu-id="fa2cc-111">/users/me/consumables/{itemID}</span><span class="sxs-lookup"><span data-stu-id="fa2cc-111">/users/me/consumables/{itemID}</span></span>](uri-inventoryconsumablesitemurl.md)
 
-<span data-ttu-id="af4e8-112">&nbsp;&nbsp;特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-112">&nbsp;&nbsp;Accesses the full set of details for a specific consumable inventory item.</span></span>
+<span data-ttu-id="fa2cc-112">&nbsp;&nbsp;特定のコンシューマブルなインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-112">&nbsp;&nbsp;Accesses the full set of details for a specific consumable inventory item.</span></span>
 
-[<span data-ttu-id="af4e8-113">/inventory/{itemID}</span><span class="sxs-lookup"><span data-stu-id="af4e8-113">/inventory/{itemID}</span></span>](uri-inventoryitemurl.md)
+[<span data-ttu-id="fa2cc-113">/inventory/{itemID}</span><span class="sxs-lookup"><span data-stu-id="fa2cc-113">/inventory/{itemID}</span></span>](uri-inventoryitemurl.md)
 
-<span data-ttu-id="af4e8-114">&nbsp;&nbsp;特定のインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-114">&nbsp;&nbsp;Accesses the full set of details for a specific inventory item.</span></span>
+<span data-ttu-id="fa2cc-114">&nbsp;&nbsp;特定のインベントリ項目の詳細情報の完全なセットにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-114">&nbsp;&nbsp;Accesses the full set of details for a specific inventory item.</span></span>
 
-[<span data-ttu-id="af4e8-115">/media/{marketplaceId}/crossMediaGroupSearch</span><span class="sxs-lookup"><span data-stu-id="af4e8-115">/media/{marketplaceId}/crossMediaGroupSearch</span></span>](uri-localecrossmediagroupsearch.md)
+[<span data-ttu-id="fa2cc-115">/media/{marketplaceId}/crossMediaGroupSearch</span><span class="sxs-lookup"><span data-stu-id="fa2cc-115">/media/{marketplaceId}/crossMediaGroupSearch</span></span>](uri-localecrossmediagroupsearch.md)
 
-<span data-ttu-id="af4e8-116">&nbsp;&nbsp;いくつかの異なるメディア グループからの項目をアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-116">&nbsp;&nbsp;Accesses items from several different media groups.</span></span>
+<span data-ttu-id="fa2cc-116">&nbsp;&nbsp;いくつかの異なるメディア グループからの項目にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-116">&nbsp;&nbsp;Accesses items from several different media groups.</span></span>
 
-[<span data-ttu-id="af4e8-117">/media/{marketplaceId}/browse</span><span class="sxs-lookup"><span data-stu-id="af4e8-117">/media/{marketplaceId}/browse</span></span>](uri-medialocalebrowse.md)
+[<span data-ttu-id="fa2cc-117">/media/{marketplaceId}/browse</span><span class="sxs-lookup"><span data-stu-id="fa2cc-117">/media/{marketplaceId}/browse</span></span>](uri-medialocalebrowse.md)
 
-<span data-ttu-id="af4e8-118">&nbsp;&nbsp;1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="af4e8-118">&nbsp;&nbsp;Allows browsing for items within a single media group.</span></span>
+<span data-ttu-id="fa2cc-118">&nbsp;&nbsp;1 つのメディア グループ内の項目を参照できます。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-118">&nbsp;&nbsp;Allows browsing for items within a single media group.</span></span>
 
-[<span data-ttu-id="af4e8-119">/media/{marketplaceId}/contentRating</span><span class="sxs-lookup"><span data-stu-id="af4e8-119">/media/{marketplaceId}/contentRating</span></span>](uri-medialocalecontentrating.md)
+[<span data-ttu-id="fa2cc-119">/media/{marketplaceId}/contentRating</span><span class="sxs-lookup"><span data-stu-id="fa2cc-119">/media/{marketplaceId}/contentRating</span></span>](uri-medialocalecontentrating.md)
 
-<span data-ttu-id="af4e8-120">&nbsp;&nbsp;コンテンツの規制トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-120">&nbsp;&nbsp;Access the content rating token.</span></span>
+<span data-ttu-id="fa2cc-120">&nbsp;&nbsp;コンテンツの規制トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-120">&nbsp;&nbsp;Access the content rating token.</span></span>
 
-[<span data-ttu-id="af4e8-121">/media/{marketplaceId}/details</span><span class="sxs-lookup"><span data-stu-id="af4e8-121">/media/{marketplaceId}/details</span></span>](uri-medialocaledetails.md)
+[<span data-ttu-id="fa2cc-121">/media/{marketplaceId}/details</span><span class="sxs-lookup"><span data-stu-id="fa2cc-121">/media/{marketplaceId}/details</span></span>](uri-medialocaledetails.md)
 
-<span data-ttu-id="af4e8-122">&nbsp;&nbsp;返しますプランの詳細とメタデータについての 1 つまたは複数の項目です。</span><span class="sxs-lookup"><span data-stu-id="af4e8-122">&nbsp;&nbsp;Returns offer details and metadata about one or more items.</span></span>
+<span data-ttu-id="fa2cc-122">&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-122">&nbsp;&nbsp;Returns offer details and metadata about one or more items.</span></span>
 
-[<span data-ttu-id="af4e8-123">/media/{marketplaceId}/fields</span><span class="sxs-lookup"><span data-stu-id="af4e8-123">/media/{marketplaceId}/fields</span></span>](uri-medialocalefields.md)
+[<span data-ttu-id="fa2cc-123">/media/{marketplaceId}/fields</span><span class="sxs-lookup"><span data-stu-id="fa2cc-123">/media/{marketplaceId}/fields</span></span>](uri-medialocalefields.md)
 
-<span data-ttu-id="af4e8-124">&nbsp;&nbsp;フィールド トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-124">&nbsp;&nbsp;Accesses the fields token.</span></span>
+<span data-ttu-id="fa2cc-124">&nbsp;&nbsp;フィールド トークンにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-124">&nbsp;&nbsp;Accesses the fields token.</span></span>
 
-[<span data-ttu-id="af4e8-125">/media/{marketplaceId}/metadata/mediaGroups</span><span class="sxs-lookup"><span data-stu-id="af4e8-125">/media/{marketplaceId}/metadata/mediaGroups</span></span>](uri-medialocalemetadatamediagroups.md)
+[<span data-ttu-id="fa2cc-125">/media/{marketplaceId}/metadata/mediaGroups</span><span class="sxs-lookup"><span data-stu-id="fa2cc-125">/media/{marketplaceId}/metadata/mediaGroups</span></span>](uri-medialocalemetadatamediagroups.md)
 
-<span data-ttu-id="af4e8-126">&nbsp;&nbsp;EDS の特定のバージョンのサポートされているすべての mediaGroups の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="af4e8-126">&nbsp;&nbsp;Lists all supported mediaGroups for the given EDS version.</span></span>
+<span data-ttu-id="fa2cc-126">&nbsp;&nbsp;EDS の特定のバージョンのサポートされているすべての mediaGroups の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-126">&nbsp;&nbsp;Lists all supported mediaGroups for the given EDS version.</span></span>
 
-[<span data-ttu-id="af4e8-127">/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="af4e8-127">/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes</span></span>](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
+[<span data-ttu-id="fa2cc-127">/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="fa2cc-127">/media/{marketplaceId}/metadata/mediaGroups/{mediagroup}/mediaItemTypes</span></span>](uri-medialocalemetadatamediagroupsmediaitemtypes.md)
 
-<span data-ttu-id="af4e8-128">&nbsp;&nbsp;EDS の特定のバージョンのメディアのグループごとの利用可能な mediaItemTypes にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-128">&nbsp;&nbsp;Accesses the available mediaItemTypes per media group for the given version of EDS.</span></span>
+<span data-ttu-id="fa2cc-128">&nbsp;&nbsp;EDS の特定のバージョンのメディアのグループごとの利用可能な mediaItemTypes にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-128">&nbsp;&nbsp;Accesses the available mediaItemTypes per media group for the given version of EDS.</span></span>
 
-[<span data-ttu-id="af4e8-129">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields</span><span class="sxs-lookup"><span data-stu-id="af4e8-129">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields</span></span>](uri-medialocalemetadatamediaitemtypefields.md)
+[<span data-ttu-id="fa2cc-129">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields</span><span class="sxs-lookup"><span data-stu-id="fa2cc-129">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaItemType}/fields</span></span>](uri-medialocalemetadatamediaitemtypefields.md)
 
-<span data-ttu-id="af4e8-130">&nbsp;&nbsp;指定された mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。</span><span class="sxs-lookup"><span data-stu-id="af4e8-130">&nbsp;&nbsp;Accesses fields from which one can expect data, for a given mediaitemtype and a given version of EDS.</span></span>
+<span data-ttu-id="fa2cc-130">&nbsp;&nbsp;特定の mediaitemtype と EDS の特定のバージョンのデータを期待いずれかからアクセス フィールド。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-130">&nbsp;&nbsp;Accesses fields from which one can expect data, for a given mediaitemtype and a given version of EDS.</span></span>
 
-[<span data-ttu-id="af4e8-131">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span><span class="sxs-lookup"><span data-stu-id="af4e8-131">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span></span>](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
+[<span data-ttu-id="fa2cc-131">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span><span class="sxs-lookup"><span data-stu-id="fa2cc-131">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners</span></span>](uri-medialocalemetadatamediaitemtypequeryrefiners.md)
 
-<span data-ttu-id="af4e8-132">&nbsp;&nbsp;指定したメディア項目の種類のクエリの絞り込み条件にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-132">&nbsp;&nbsp;Accesses the query refiners for the given media item type.</span></span>
+<span data-ttu-id="fa2cc-132">&nbsp;&nbsp;指定したメディア項目の種類のクエリの絞り込み条件にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-132">&nbsp;&nbsp;Accesses the query refiners for the given media item type.</span></span>
 
-[<span data-ttu-id="af4e8-133">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span><span class="sxs-lookup"><span data-stu-id="af4e8-133">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span></span>](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
+[<span data-ttu-id="fa2cc-133">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span><span class="sxs-lookup"><span data-stu-id="fa2cc-133">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryrefinername}</span></span>](uri-medialocalemetadatamediaitemtypequeryrefinersqueryrefinername.md)
 
-<span data-ttu-id="af4e8-134">&nbsp;&nbsp;指定されたクエリの絞り込み条件名と、特定のメディア項目の種類に利用可能な値にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-134">&nbsp;&nbsp;Accesses the acceptable values for the given query refiner name and given media item type.</span></span>
+<span data-ttu-id="fa2cc-134">&nbsp;&nbsp;指定されたクエリの絞り込み条件名と、特定のメディア項目の種類に利用可能な値にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-134">&nbsp;&nbsp;Accesses the acceptable values for the given query refiner name and given media item type.</span></span>
 
-[<span data-ttu-id="af4e8-135">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues</span><span class="sxs-lookup"><span data-stu-id="af4e8-135">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues</span></span>](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
+[<span data-ttu-id="fa2cc-135">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues</span><span class="sxs-lookup"><span data-stu-id="fa2cc-135">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/queryrefiners/{queryRefiner}/subQueryRefinerValues</span></span>](uri-medialocalemediaitemtypequeryrefinersubqueryrefinervalues.md)
 
-<span data-ttu-id="af4e8-136">&nbsp;&nbsp;指定されたクエリの絞り込み条件値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-136">&nbsp;&nbsp;Access the list of sub-values for a given query refiner value (e.g., "subgenres in a given genre").</span></span>
+<span data-ttu-id="fa2cc-136">&nbsp;&nbsp;指定されたクエリの絞り込み条件値 ("subgenres には、指定されたジャンル"など) のサブ値の一覧にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-136">&nbsp;&nbsp;Access the list of sub-values for a given query refiner value (e.g., "subgenres in a given genre").</span></span>
 
-[<span data-ttu-id="af4e8-137">/media/{marketplaceId}/metadata/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="af4e8-137">/media/{marketplaceId}/metadata/mediaItemTypes</span></span>](uri-medialocalemetadatamediaitemtypes.md)
+[<span data-ttu-id="fa2cc-137">/media/{marketplaceId}/metadata/mediaItemTypes</span><span class="sxs-lookup"><span data-stu-id="fa2cc-137">/media/{marketplaceId}/metadata/mediaItemTypes</span></span>](uri-medialocalemetadatamediaitemtypes.md)
 
-<span data-ttu-id="af4e8-138">&nbsp;&nbsp;EDS の特定のバージョンのサポートされているすべての mediaItemTypes にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="af4e8-138">&nbsp;&nbsp;Accesses all supported mediaItemTypes for the given EDS version.</span></span>
+<span data-ttu-id="fa2cc-138">&nbsp;&nbsp;EDS の特定のバージョンのサポートされているすべての mediaItemTypes にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-138">&nbsp;&nbsp;Accesses all supported mediaItemTypes for the given EDS version.</span></span>
 
-[<span data-ttu-id="af4e8-139">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span><span class="sxs-lookup"><span data-stu-id="af4e8-139">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span></span>](uri-medialocalemetadatamediaitemtypesortorders.md)
+[<span data-ttu-id="fa2cc-139">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span><span class="sxs-lookup"><span data-stu-id="fa2cc-139">/media/{marketplaceId}/metadata/mediaItemTypes/{mediaitemtype}/sortorders</span></span>](uri-medialocalemetadatamediaitemtypesortorders.md)
 
-<span data-ttu-id="af4e8-140">&nbsp;&nbsp;利用可能なアクセス mediaitem の特定の種類と EDS の特定のバージョン向けの注文を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="af4e8-140">&nbsp;&nbsp;Accesses available sort orders for a given mediaitem type and a given version of EDS.</span></span>
+<span data-ttu-id="fa2cc-140">&nbsp;&nbsp;利用可能なアクセスは、特定 mediaitem 型と EDS の特定のバージョン向けの注文を並べ替えます。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-140">&nbsp;&nbsp;Accesses available sort orders for a given mediaitem type and a given version of EDS.</span></span>
 
-[<span data-ttu-id="af4e8-141">/media/{marketplaceId}/singleMediaGroupSearch</span><span class="sxs-lookup"><span data-stu-id="af4e8-141">/media/{marketplaceId}/singleMediaGroupSearch</span></span>](uri-medialocalesinglemediagroupsearch.md)
+[<span data-ttu-id="fa2cc-141">/media/{marketplaceId}/singleMediaGroupSearch</span><span class="sxs-lookup"><span data-stu-id="fa2cc-141">/media/{marketplaceId}/singleMediaGroupSearch</span></span>](uri-medialocalesinglemediagroupsearch.md)
 
-<span data-ttu-id="af4e8-142">&nbsp;&nbsp;1 つのメディア グループ内の項目を検索をできます。</span><span class="sxs-lookup"><span data-stu-id="af4e8-142">&nbsp;&nbsp;Allows search for items within a single media group.</span></span>
+<span data-ttu-id="fa2cc-142">&nbsp;&nbsp;1 つのメディア グループ内の項目を検索をできます。</span><span class="sxs-lookup"><span data-stu-id="fa2cc-142">&nbsp;&nbsp;Allows search for items within a single media group.</span></span>
 
 <a id="ID4EFD"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="af4e8-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="af4e8-143">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fa2cc-143">関連項目</span><span class="sxs-lookup"><span data-stu-id="fa2cc-143">See also</span></span>
 
 <a id="ID4EHD"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="af4e8-144">Parent</span><span class="sxs-lookup"><span data-stu-id="af4e8-144">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="fa2cc-144">Parent</span><span class="sxs-lookup"><span data-stu-id="fa2cc-144">Parent</span></span>
 
-[<span data-ttu-id="af4e8-145">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="af4e8-145">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="fa2cc-145">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="fa2cc-145">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
 
 <a id="ID4ERD"></a>
 
 
-##### <a name="further-information"></a><span data-ttu-id="af4e8-146">詳細情報</span><span class="sxs-lookup"><span data-stu-id="af4e8-146">Further Information</span></span>
+##### <a name="further-information"></a><span data-ttu-id="fa2cc-146">詳細情報</span><span class="sxs-lookup"><span data-stu-id="fa2cc-146">Further Information</span></span>
 
-[<span data-ttu-id="af4e8-147">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="af4e8-147">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)
+[<span data-ttu-id="fa2cc-147">その他の参照情報</span><span class="sxs-lookup"><span data-stu-id="fa2cc-147">Additional Reference</span></span>](../../additional/atoc-xboxlivews-reference-additional.md)

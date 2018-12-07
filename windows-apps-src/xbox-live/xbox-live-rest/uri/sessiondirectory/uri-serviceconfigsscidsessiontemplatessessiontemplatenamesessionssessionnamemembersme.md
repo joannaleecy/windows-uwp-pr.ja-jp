@@ -8,54 +8,54 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b0ecadb543434383ef32c7fd2a749760d5bcc98
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8329765"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752361"
 ---
-# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a><span data-ttu-id="72cf6-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me</span><span class="sxs-lookup"><span data-stu-id="72cf6-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me</span></span>
-<span data-ttu-id="72cf6-105">セッション メンバーを削除する削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="72cf6-105">Supports a DELETE operation to remove session members.</span></span>
+# <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersme"></a><span data-ttu-id="75e2a-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me</span><span class="sxs-lookup"><span data-stu-id="75e2a-104">/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me</span></span>
+<span data-ttu-id="75e2a-105">セッション メンバーを削除する削除操作をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="75e2a-105">Supports a DELETE operation to remove session members.</span></span>
 <a id="ID4EO"></a>
 
 
-## <a name="domain"></a><span data-ttu-id="72cf6-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="72cf6-106">Domain</span></span>
-<span data-ttu-id="72cf6-107">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="72cf6-107">sessiondirectory.xboxlive.com</span></span>  
+## <a name="domain"></a><span data-ttu-id="75e2a-106">ドメイン</span><span class="sxs-lookup"><span data-stu-id="75e2a-106">Domain</span></span>
+<span data-ttu-id="75e2a-107">sessiondirectory.xboxlive.com</span><span class="sxs-lookup"><span data-stu-id="75e2a-107">sessiondirectory.xboxlive.com</span></span>  
 <a id="ID4ET"></a>
 
  
-## <a name="remarks"></a><span data-ttu-id="72cf6-108">注釈</span><span class="sxs-lookup"><span data-stu-id="72cf6-108">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="75e2a-108">注釈</span><span class="sxs-lookup"><span data-stu-id="75e2a-108">Remarks</span></span>
 
-<span data-ttu-id="72cf6-109">セッション メンバーのリソースのすべての操作は、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。</span><span class="sxs-lookup"><span data-stu-id="72cf6-109">All session member resource operations require an Xbox User ID (XUID) user claim authorization.</span></span>
+<span data-ttu-id="75e2a-109">セッション メンバー リソースのすべての操作は、Xbox ユーザー ID (XUID) ユーザーの承認を要求する必要があります。</span><span class="sxs-lookup"><span data-stu-id="75e2a-109">All session member resource operations require an Xbox User ID (XUID) user claim authorization.</span></span>
 
 <a id="ID4EAB"></a>
 
 
-## <a name="uri-parameters"></a><span data-ttu-id="72cf6-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="72cf6-110">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="75e2a-110">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="75e2a-110">URI parameters</span></span>
 
-| <span data-ttu-id="72cf6-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="72cf6-111">Parameter</span></span>| <span data-ttu-id="72cf6-112">型</span><span class="sxs-lookup"><span data-stu-id="72cf6-112">Type</span></span>| <span data-ttu-id="72cf6-113">説明</span><span class="sxs-lookup"><span data-stu-id="72cf6-113">Description</span></span>|
+| <span data-ttu-id="75e2a-111">パラメーター</span><span class="sxs-lookup"><span data-stu-id="75e2a-111">Parameter</span></span>| <span data-ttu-id="75e2a-112">型</span><span class="sxs-lookup"><span data-stu-id="75e2a-112">Type</span></span>| <span data-ttu-id="75e2a-113">説明</span><span class="sxs-lookup"><span data-stu-id="75e2a-113">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="72cf6-114">scid</span><span class="sxs-lookup"><span data-stu-id="72cf6-114">scid</span></span>| <span data-ttu-id="72cf6-115">GUID</span><span class="sxs-lookup"><span data-stu-id="72cf6-115">GUID</span></span>| <span data-ttu-id="72cf6-116">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="72cf6-116">Service configuration identifier (SCID).</span></span> <span data-ttu-id="72cf6-117">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="72cf6-117">Part 1 of the session identifier.</span></span>|
-| <span data-ttu-id="72cf6-118">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="72cf6-118">sessionTemplateName</span></span>| <span data-ttu-id="72cf6-119">string</span><span class="sxs-lookup"><span data-stu-id="72cf6-119">string</span></span>| <span data-ttu-id="72cf6-120">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="72cf6-120">Name of the current instance of the session template.</span></span> <span data-ttu-id="72cf6-121">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="72cf6-121">Part 2 of the session identifier.</span></span>|
-| <span data-ttu-id="72cf6-122">セッション名</span><span class="sxs-lookup"><span data-stu-id="72cf6-122">sessionName</span></span>| <span data-ttu-id="72cf6-123">GUID</span><span class="sxs-lookup"><span data-stu-id="72cf6-123">GUID</span></span>| <span data-ttu-id="72cf6-124">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="72cf6-124">Unique ID of the session.</span></span> <span data-ttu-id="72cf6-125">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="72cf6-125">Part 3 of the session identifier.</span></span>|
+| <span data-ttu-id="75e2a-114">scid</span><span class="sxs-lookup"><span data-stu-id="75e2a-114">scid</span></span>| <span data-ttu-id="75e2a-115">GUID</span><span class="sxs-lookup"><span data-stu-id="75e2a-115">GUID</span></span>| <span data-ttu-id="75e2a-116">サービス構成 id (SCID)。</span><span class="sxs-lookup"><span data-stu-id="75e2a-116">Service configuration identifier (SCID).</span></span> <span data-ttu-id="75e2a-117">セッション識別子のパート 1 です。</span><span class="sxs-lookup"><span data-stu-id="75e2a-117">Part 1 of the session identifier.</span></span>|
+| <span data-ttu-id="75e2a-118">sessionTemplateName</span><span class="sxs-lookup"><span data-stu-id="75e2a-118">sessionTemplateName</span></span>| <span data-ttu-id="75e2a-119">string</span><span class="sxs-lookup"><span data-stu-id="75e2a-119">string</span></span>| <span data-ttu-id="75e2a-120">セッション テンプレートの現在のインスタンスの名前です。</span><span class="sxs-lookup"><span data-stu-id="75e2a-120">Name of the current instance of the session template.</span></span> <span data-ttu-id="75e2a-121">セッション識別子のパート 2 です。</span><span class="sxs-lookup"><span data-stu-id="75e2a-121">Part 2 of the session identifier.</span></span>|
+| <span data-ttu-id="75e2a-122">セッション名</span><span class="sxs-lookup"><span data-stu-id="75e2a-122">sessionName</span></span>| <span data-ttu-id="75e2a-123">GUID</span><span class="sxs-lookup"><span data-stu-id="75e2a-123">GUID</span></span>| <span data-ttu-id="75e2a-124">セッションの一意の ID。</span><span class="sxs-lookup"><span data-stu-id="75e2a-124">Unique ID of the session.</span></span> <span data-ttu-id="75e2a-125">セッション識別子のパート 3 です。</span><span class="sxs-lookup"><span data-stu-id="75e2a-125">Part 3 of the session identifier.</span></span>|
 
 <a id="ID4EOC"></a>
 
 
-## <a name="valid-methods"></a><span data-ttu-id="72cf6-126">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="72cf6-126">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="75e2a-126">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="75e2a-126">Valid methods</span></span>
 
-[<span data-ttu-id="72cf6-127">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span><span class="sxs-lookup"><span data-stu-id="72cf6-127">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
+[<span data-ttu-id="75e2a-127">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span><span class="sxs-lookup"><span data-stu-id="75e2a-127">DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/me)</span></span>](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersmedelete.md)
 
-<span data-ttu-id="72cf6-128">&nbsp;&nbsp;メンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="72cf6-128">&nbsp;&nbsp;Removes a member from a session.</span></span>
+<span data-ttu-id="75e2a-128">&nbsp;&nbsp;メンバーをセッションから削除します。</span><span class="sxs-lookup"><span data-stu-id="75e2a-128">&nbsp;&nbsp;Removes a member from a session.</span></span>
 
 <a id="ID4EYC"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="72cf6-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="72cf6-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="75e2a-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="75e2a-129">See also</span></span>
 
 <a id="ID4E1C"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="72cf6-130">Parent</span><span class="sxs-lookup"><span data-stu-id="72cf6-130">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="75e2a-130">Parent</span><span class="sxs-lookup"><span data-stu-id="75e2a-130">Parent</span></span>
 
-[<span data-ttu-id="72cf6-131">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="72cf6-131">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)
+[<span data-ttu-id="75e2a-131">セッション ディレクトリ URI</span><span class="sxs-lookup"><span data-stu-id="75e2a-131">Session Directory URIs</span></span>](atoc-reference-sessiondirectory.md)

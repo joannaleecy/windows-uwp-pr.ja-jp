@@ -8,43 +8,43 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b381243bec00faa68b37706146769402e3b799a
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8336680"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8733444"
 ---
-# <a name="profiles-uris"></a><span data-ttu-id="e4e2f-104">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="e4e2f-104">Profiles URIs</span></span>
+# <a name="profiles-uris"></a><span data-ttu-id="3fbd5-104">プロフィール URI</span><span class="sxs-lookup"><span data-stu-id="3fbd5-104">Profiles URIs</span></span>
  
-<span data-ttu-id="e4e2f-105">このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法についての詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="e4e2f-105">This section provides detail about the Profile Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *profiles*.</span></span>
+<span data-ttu-id="3fbd5-105">このセクションでは、*プロファイル*用の Xbox Live サービスからプロファイル ユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="3fbd5-105">This section provides detail about the Profile Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *profiles*.</span></span>
  
-<span data-ttu-id="e4e2f-106">のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="e4e2f-106">Only games running on Windows 8, on an Xbox 360, or on a Windows Phone device can use this service.</span></span>
+<span data-ttu-id="3fbd5-106">のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。</span><span class="sxs-lookup"><span data-stu-id="3fbd5-106">Only games running on Windows 8, on an Xbox 360, or on a Windows Phone device can use this service.</span></span>
  
-<span data-ttu-id="e4e2f-107">これらの Uri のドメインは、profile.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="e4e2f-107">The domain for these URIs is profile.xboxlive.com.</span></span>
+<span data-ttu-id="3fbd5-107">これらの Uri のドメインは、profile.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="3fbd5-107">The domain for these URIs is profile.xboxlive.com.</span></span>
  
 <a id="ID4EPB"></a>
 
  
-## <a name="in-this-section"></a><span data-ttu-id="e4e2f-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="e4e2f-108">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="3fbd5-108">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="3fbd5-108">In this section</span></span>
 
-[<span data-ttu-id="e4e2f-109">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="e4e2f-109">/users/batch/profile/settings</span></span>](uri-usersbatchprofilesettings.md)
+[<span data-ttu-id="3fbd5-109">/users/batch/profile/settings</span><span class="sxs-lookup"><span data-stu-id="3fbd5-109">/users/batch/profile/settings</span></span>](uri-usersbatchprofilesettings.md)
 
-<span data-ttu-id="e4e2f-110">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="e4e2f-110">&nbsp;&nbsp;Access the profile for a user or users.</span></span>
+<span data-ttu-id="3fbd5-110">&nbsp;&nbsp;ユーザーまたはユーザーのプロファイルにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="3fbd5-110">&nbsp;&nbsp;Access the profile for a user or users.</span></span>
 
-[<span data-ttu-id="e4e2f-111">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span><span class="sxs-lookup"><span data-stu-id="e4e2f-111">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span></span>](uri-usersuseridprofilesettingspeopleuserlist.md)
+[<span data-ttu-id="3fbd5-111">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span><span class="sxs-lookup"><span data-stu-id="3fbd5-111">/users/{userId}/profile/settings/people/{userList}?settings={settings}</span></span>](uri-usersuseridprofilesettingspeopleuserlist.md)
 
-<span data-ttu-id="e4e2f-112">&nbsp;&nbsp;ユーザーのプロファイルへのアクセスやユーザー, People モニカーをサポートします。</span><span class="sxs-lookup"><span data-stu-id="e4e2f-112">&nbsp;&nbsp;Access the profile for a user or users, with People Moniker support.</span></span>
+<span data-ttu-id="3fbd5-112">&nbsp;&nbsp;ユーザーのプロファイルへのアクセスや、ユーザー, People モニカーをサポートします。</span><span class="sxs-lookup"><span data-stu-id="3fbd5-112">&nbsp;&nbsp;Access the profile for a user or users, with People Moniker support.</span></span>
  
 <a id="ID4EYB"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="e4e2f-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4e2f-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3fbd5-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="3fbd5-113">See also</span></span>
  
 <a id="ID4E1B"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="e4e2f-114">Parent</span><span class="sxs-lookup"><span data-stu-id="e4e2f-114">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="3fbd5-114">Parent</span><span class="sxs-lookup"><span data-stu-id="3fbd5-114">Parent</span></span> 
 
-[<span data-ttu-id="e4e2f-115">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="e4e2f-115">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="3fbd5-115">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="3fbd5-115">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
 
    

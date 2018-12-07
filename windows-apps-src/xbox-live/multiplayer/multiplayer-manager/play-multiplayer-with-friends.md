@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: d0d946cdbd29fb51d98c8febb52c5855f948b4ea
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8337619"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8756328"
 ---
 # <a name="play-a-multiplayer-game-with-friends"></a><span data-ttu-id="6dad4-104">マルチプレイヤー ゲームをフレンドとプレイする</span><span class="sxs-lookup"><span data-stu-id="6dad4-104">Play a multiplayer game with friends</span></span>
 

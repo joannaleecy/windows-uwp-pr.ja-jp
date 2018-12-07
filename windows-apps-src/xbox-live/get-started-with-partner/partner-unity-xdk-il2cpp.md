@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: cfd722ca0d0b080f6395680cd62000cea9b402fa
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8324098"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732866"
 ---
 # <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a><span data-ttu-id="0714a-104">ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを XDK 用 Unity に追加する</span><span class="sxs-lookup"><span data-stu-id="0714a-104">Add Xbox Live support to Unity for XDK with IL2CPP scripting backend for ID@Xbox and managed partners</span></span>
 
