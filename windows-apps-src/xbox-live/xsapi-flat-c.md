@@ -3,72 +3,72 @@ title: Xbox Live C Api
 description: Xbox Live サービスとのやり取りに使用できるフラット C API モデルについて説明します。
 ms.date: 06/05/2018
 ms.topic: article
-keywords: xbox live, xbox、ゲーム、uwp、windows 10, xbox one、c、xsapi
+keywords: xbox live, xbox, ゲーム、uwp、windows 10, xbox one、c, xsapi
 ms.localizationpriority: medium
 ms.openlocfilehash: a1c73661b561d586f9e28957c7caa6a1b1f9cb03
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349552"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8755701"
 ---
-# <a name="introduction-to-the-xbox-live-c-apis"></a><span data-ttu-id="18b86-104">Xbox Live C Api の概要</span><span class="sxs-lookup"><span data-stu-id="18b86-104">Introduction to the Xbox Live C APIs</span></span>
+# <a name="introduction-to-the-xbox-live-c-apis"></a><span data-ttu-id="efa60-104">Xbox Live C Api の概要</span><span class="sxs-lookup"><span data-stu-id="efa60-104">Introduction to the Xbox Live C APIs</span></span>
 
-<span data-ttu-id="18b86-105">2018 年 6 月の新しいフラット C API レイヤーは、XSAPI に追加されました。</span><span class="sxs-lookup"><span data-stu-id="18b86-105">In June, 2018, a new flat C API layer was added to XSAPI.</span></span> <span data-ttu-id="18b86-106">この新しい API レイヤーでは、C++ と WinRT API レイヤーで発生したいくつかの問題を解決します。</span><span class="sxs-lookup"><span data-stu-id="18b86-106">This new API layer solves some issues that occurred with the C++ and WinRT API layers.</span></span>
+<span data-ttu-id="efa60-105">2018 年 6 月の新しいフラット C API レイヤーは、XSAPI に追加されました。</span><span class="sxs-lookup"><span data-stu-id="efa60-105">In June, 2018, a new flat C API layer was added to XSAPI.</span></span> <span data-ttu-id="efa60-106">この新しい API レイヤーでは、C++ と WinRT API レイヤーで発生したいくつかの問題を解決します。</span><span class="sxs-lookup"><span data-stu-id="efa60-106">This new API layer solves some issues that occurred with the C++ and WinRT API layers.</span></span>
 
-<span data-ttu-id="18b86-107">C API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。</span><span class="sxs-lookup"><span data-stu-id="18b86-107">The C API does not yet cover all XSAPI features, but additional features are being worked on.</span></span> <span data-ttu-id="18b86-108">すべて 3 API レイヤー、C、C++ と WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="18b86-108">All 3 API layers, C, C++, and WinRT will continue to be supported and have additional features added over time.</span></span>
+<span data-ttu-id="efa60-107">C++ API は、XSAPI のすべての機能をまだ対応していませんが、作業中は追加の機能。</span><span class="sxs-lookup"><span data-stu-id="efa60-107">The C API does not yet cover all XSAPI features, but additional features are being worked on.</span></span> <span data-ttu-id="efa60-108">すべて 3 API レイヤー、C、C++ と WinRT は引き続きサポートされているし、時間の経過と共に新しい機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="efa60-108">All 3 API layers, C, C++, and WinRT will continue to be supported and have additional features added over time.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="18b86-109">C++ Api は、現在のみ動作 Xbox 開発キット (XDK) を使用するタイトルにします。</span><span class="sxs-lookup"><span data-stu-id="18b86-109">The C APIs currently only work with titles that use the Xbox Developer Kit (XDK).</span></span> <span data-ttu-id="18b86-110">この時点で UWP ゲームはサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="18b86-110">They do not support UWP games at this time.</span></span>
+> <span data-ttu-id="efa60-109">C++ Api は、現在のみ動作 Xbox 開発キット (XDK) を使用するタイトルにします。</span><span class="sxs-lookup"><span data-stu-id="efa60-109">The C APIs currently only work with titles that use the Xbox Developer Kit (XDK).</span></span> <span data-ttu-id="efa60-110">この時点で UWP ゲームはサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="efa60-110">They do not support UWP games at this time.</span></span>
 
-## <a name="features-covered-by-the-c-apis"></a><span data-ttu-id="18b86-111">C++ Api で取り上げた機能</span><span class="sxs-lookup"><span data-stu-id="18b86-111">Features covered by the C APIs</span></span>
+## <a name="features-covered-by-the-c-apis"></a><span data-ttu-id="efa60-111">C++ Api で取り上げた機能</span><span class="sxs-lookup"><span data-stu-id="efa60-111">Features covered by the C APIs</span></span>
 
-<span data-ttu-id="18b86-112">現在、C API には、次の機能とサービスがサポートしています。</span><span class="sxs-lookup"><span data-stu-id="18b86-112">The C API currently supports the following features and services:</span></span>
+<span data-ttu-id="efa60-112">現在、C API には、次の機能とサービスがサポートしています。</span><span class="sxs-lookup"><span data-stu-id="efa60-112">The C API currently supports the following features and services:</span></span>
 
-- <span data-ttu-id="18b86-113">実績</span><span class="sxs-lookup"><span data-stu-id="18b86-113">Achievements</span></span>
-- <span data-ttu-id="18b86-114">プレゼンス</span><span class="sxs-lookup"><span data-stu-id="18b86-114">Presence</span></span>
-- <span data-ttu-id="18b86-115">プロファイル</span><span class="sxs-lookup"><span data-stu-id="18b86-115">Profile</span></span>
-- <span data-ttu-id="18b86-116">ソーシャル</span><span class="sxs-lookup"><span data-stu-id="18b86-116">Social</span></span>
-- <span data-ttu-id="18b86-117">Social Manager</span><span class="sxs-lookup"><span data-stu-id="18b86-117">Social Manager</span></span>
+- <span data-ttu-id="efa60-113">実績</span><span class="sxs-lookup"><span data-stu-id="efa60-113">Achievements</span></span>
+- <span data-ttu-id="efa60-114">プレゼンス</span><span class="sxs-lookup"><span data-stu-id="efa60-114">Presence</span></span>
+- <span data-ttu-id="efa60-115">プロファイル</span><span class="sxs-lookup"><span data-stu-id="efa60-115">Profile</span></span>
+- <span data-ttu-id="efa60-116">ソーシャル</span><span class="sxs-lookup"><span data-stu-id="efa60-116">Social</span></span>
+- <span data-ttu-id="efa60-117">Social Manager</span><span class="sxs-lookup"><span data-stu-id="efa60-117">Social Manager</span></span>
 
-## <a name="benefits-of-the-c-api-for-xsapi"></a><span data-ttu-id="18b86-118">Xsapi C API のメリット</span><span class="sxs-lookup"><span data-stu-id="18b86-118">Benefits of the C API for XSAPI</span></span>
+## <a name="benefits-of-the-c-api-for-xsapi"></a><span data-ttu-id="efa60-118">Xsapi C API のメリット</span><span class="sxs-lookup"><span data-stu-id="efa60-118">Benefits of the C API for XSAPI</span></span>
 
-- <span data-ttu-id="18b86-119">タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。</span><span class="sxs-lookup"><span data-stu-id="18b86-119">Allows titles to control the memory allocations when calling XSAPI.</span></span>
-- <span data-ttu-id="18b86-120">タイトル XSAPI を呼び出すときの処理スレッドの完全な制御を取得できます。</span><span class="sxs-lookup"><span data-stu-id="18b86-120">Allows titles to gain full control of thread handling when calling XSAPI.</span></span>
-- <span data-ttu-id="18b86-121">新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。</span><span class="sxs-lookup"><span data-stu-id="18b86-121">Uses a new HTTP library, libHttpClient, designed for game developers.</span></span>
+- <span data-ttu-id="efa60-119">タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。</span><span class="sxs-lookup"><span data-stu-id="efa60-119">Allows titles to control the memory allocations when calling XSAPI.</span></span>
+- <span data-ttu-id="efa60-120">により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。</span><span class="sxs-lookup"><span data-stu-id="efa60-120">Allows titles to gain full control of thread handling when calling XSAPI.</span></span>
+- <span data-ttu-id="efa60-121">新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。</span><span class="sxs-lookup"><span data-stu-id="efa60-121">Uses a new HTTP library, libHttpClient, designed for game developers.</span></span>
 
-<span data-ttu-id="18b86-122">と共に、C++ XSAPI C Api を使用することができますが、C++ Api を使って上記の活用できるようはありません。</span><span class="sxs-lookup"><span data-stu-id="18b86-122">You can use the C APIs alongside C++ XSAPI, but you will not gain the previously listed benefits with the C++ APIs.</span></span>
+<span data-ttu-id="efa60-122">と共に C++ XSAPI C Api を使用することができますが、C++ Api を使った上記の特典を取得はしません。</span><span class="sxs-lookup"><span data-stu-id="efa60-122">You can use the C APIs alongside C++ XSAPI, but you will not gain the previously listed benefits with the C++ APIs.</span></span>
 
-### <a name="managing-memory-allocations"></a><span data-ttu-id="18b86-123">メモリ割り当てを管理します。</span><span class="sxs-lookup"><span data-stu-id="18b86-123">Managing memory allocations</span></span>
+### <a name="managing-memory-allocations"></a><span data-ttu-id="efa60-123">メモリ割り当てを管理します。</span><span class="sxs-lookup"><span data-stu-id="efa60-123">Managing memory allocations</span></span>
 
-<span data-ttu-id="18b86-124">新しい C++ API を使った、XSAPI がメモリを割り当てることがしようとしたときに呼び出す関数コールバックを指定できます。</span><span class="sxs-lookup"><span data-stu-id="18b86-124">With the new C API, you can now specify a function callback that XSAPI will call whenever it tries to allocate memory.</span></span> <span data-ttu-id="18b86-125">関数コールバックを指定しない場合、XSAPI は標準的なメモリ割り当てルーチンを使用します。</span><span class="sxs-lookup"><span data-stu-id="18b86-125">If you do not specify function callbacks, XSAPI will use standard memory allocation routines.</span></span>
+<span data-ttu-id="efa60-124">新しい C++ API を使った、XSAPI がメモリを割り当てることがしようとしたときに呼び出す関数コールバックを指定できます。</span><span class="sxs-lookup"><span data-stu-id="efa60-124">With the new C API, you can now specify a function callback that XSAPI will call whenever it tries to allocate memory.</span></span> <span data-ttu-id="efa60-125">関数コールバックを指定しない場合、XSAPI は標準的なメモリ割り当てルーチンを使用します。</span><span class="sxs-lookup"><span data-stu-id="efa60-125">If you do not specify function callbacks, XSAPI will use standard memory allocation routines.</span></span>
 
-<span data-ttu-id="18b86-126">メモリ ルーチンを手動で指定するには、次の操作を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="18b86-126">To manually specify your memory routines, you can do the following:</span></span>
+<span data-ttu-id="efa60-126">メモリ ルーチンを手動で指定するには、次の操作を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="efa60-126">To manually specify your memory routines, you can do the following:</span></span>
 
-- <span data-ttu-id="18b86-127">ゲームの起動時には。</span><span class="sxs-lookup"><span data-stu-id="18b86-127">At the start of the game:</span></span>
-  - <span data-ttu-id="18b86-128">呼び出す`XblMemSetFunctions(memAllocFunc, memFreeFunc)`を割り当てると、メモリを解放して割り当てコールバックを指定します。</span><span class="sxs-lookup"><span data-stu-id="18b86-128">Call `XblMemSetFunctions(memAllocFunc, memFreeFunc)` to specify the allocation callbacks for assigning and releasing memory.</span></span>
-  - <span data-ttu-id="18b86-129">呼び出す`XblInitialize()`ライブラリのインスタンスを初期化します。</span><span class="sxs-lookup"><span data-stu-id="18b86-129">Call `XblInitialize()` to initialize the library instance.</span></span>  
-- <span data-ttu-id="18b86-130">ゲームが実行中します。</span><span class="sxs-lookup"><span data-stu-id="18b86-130">While the game is running:</span></span>
-  - <span data-ttu-id="18b86-131">新しい C++ Api のいずれかの XSAPI でした呼び出しの割り当てまたは XSAPI に指定されたメモリ処理コールバックを呼び出すと、メモリを解放します。</span><span class="sxs-lookup"><span data-stu-id="18b86-131">Calling any of the new C APIs in XSAPI that allocate or free memory will cause XSAPI to call the specified memory handling callbacks.</span></span>  
-- <span data-ttu-id="18b86-132">ゲームが終了します。</span><span class="sxs-lookup"><span data-stu-id="18b86-132">When the game exits:</span></span>
-  - <span data-ttu-id="18b86-133">呼び出す`XblCleanup()`XSAPI ライブラリに関連付けられているすべてのリソースを解放します。</span><span class="sxs-lookup"><span data-stu-id="18b86-133">Call `XblCleanup()` to reclaim all resources associated with the XSAPI library.</span></span>
-  - <span data-ttu-id="18b86-134">ゲームのカスタム メモリ マネージャーをクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="18b86-134">Clean up your game's custom memory manager.</span></span>
+- <span data-ttu-id="efa60-127">ゲームの起動時には。</span><span class="sxs-lookup"><span data-stu-id="efa60-127">At the start of the game:</span></span>
+  - <span data-ttu-id="efa60-128">呼び出す`XblMemSetFunctions(memAllocFunc, memFreeFunc)`を割り当てると、メモリを解放して割り当てコールバックを指定します。</span><span class="sxs-lookup"><span data-stu-id="efa60-128">Call `XblMemSetFunctions(memAllocFunc, memFreeFunc)` to specify the allocation callbacks for assigning and releasing memory.</span></span>
+  - <span data-ttu-id="efa60-129">呼び出す`XblInitialize()`ライブラリのインスタンスを初期化します。</span><span class="sxs-lookup"><span data-stu-id="efa60-129">Call `XblInitialize()` to initialize the library instance.</span></span>  
+- <span data-ttu-id="efa60-130">ゲームが実行中します。</span><span class="sxs-lookup"><span data-stu-id="efa60-130">While the game is running:</span></span>
+  - <span data-ttu-id="efa60-131">新しい C++ Api のいずれかの XSAPI でした呼び出しを割り当てるまたは指定されたメモリ処理コールバックの呼び出しを XSAPI により、メモリを解放します。</span><span class="sxs-lookup"><span data-stu-id="efa60-131">Calling any of the new C APIs in XSAPI that allocate or free memory will cause XSAPI to call the specified memory handling callbacks.</span></span>  
+- <span data-ttu-id="efa60-132">ゲームが終了します。</span><span class="sxs-lookup"><span data-stu-id="efa60-132">When the game exits:</span></span>
+  - <span data-ttu-id="efa60-133">呼び出す`XblCleanup()`XSAPI ライブラリに関連付けられているすべてのリソースを解放します。</span><span class="sxs-lookup"><span data-stu-id="efa60-133">Call `XblCleanup()` to reclaim all resources associated with the XSAPI library.</span></span>
+  - <span data-ttu-id="efa60-134">ゲームのカスタム メモリー マネージャーをクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="efa60-134">Clean up your game's custom memory manager.</span></span>
 
-### <a name="managing-asynchronous-threads"></a><span data-ttu-id="18b86-135">非同期のスレッドを管理します。</span><span class="sxs-lookup"><span data-stu-id="18b86-135">Managing asynchronous threads</span></span>
+### <a name="managing-asynchronous-threads"></a><span data-ttu-id="efa60-135">非同期のスレッドを管理します。</span><span class="sxs-lookup"><span data-stu-id="efa60-135">Managing asynchronous threads</span></span>
 
-<span data-ttu-id="18b86-136">C API には、呼び出しパターンにより、開発者はスレッド モデルの完全な制御を新しい非同期スレッドが導入されています。</span><span class="sxs-lookup"><span data-stu-id="18b86-136">The C API introduces a new asynchronous thread calling pattern that allows developers full control over the threading model.</span></span> <span data-ttu-id="18b86-137">詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="18b86-137">For more information, see [Calling pattern for XSAPI flat C layer async calls](flatc-async-patterns.md).</span></span>
+<span data-ttu-id="efa60-136">C++ API には、呼び出しパターンにより、開発者はスレッド モデルを完全に制御する新しい非同期スレッドが導入されています。</span><span class="sxs-lookup"><span data-stu-id="efa60-136">The C API introduces a new asynchronous thread calling pattern that allows developers full control over the threading model.</span></span> <span data-ttu-id="efa60-137">詳細については、[呼び出しパターン XSAPI フラット C レイヤーの非同期呼び出し](flatc-async-patterns.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="efa60-137">For more information, see [Calling pattern for XSAPI flat C layer async calls](flatc-async-patterns.md).</span></span>
 
-## <a name="migrating-code-to-use-c-xsapi"></a><span data-ttu-id="18b86-138">C++ XSAPI を使用するコードの移行</span><span class="sxs-lookup"><span data-stu-id="18b86-138">Migrating code to use C XSAPI</span></span>
+## <a name="migrating-code-to-use-c-xsapi"></a><span data-ttu-id="efa60-138">C++ XSAPI を使用するコードの移行</span><span class="sxs-lookup"><span data-stu-id="efa60-138">Migrating code to use C XSAPI</span></span>
 
-<span data-ttu-id="18b86-139">XSAPI C Api は、一度に 1 つの機能を移行することをお勧めしますプロジェクトでは、XSAPI の C++ Api と共に使用できます。</span><span class="sxs-lookup"><span data-stu-id="18b86-139">The XSAPI C APIs can be used alongside the XSAPI C++ APIs in a project, so we recommend that you migrate one feature at a time.</span></span>
+<span data-ttu-id="efa60-139">XSAPI C Api は、一度に 1 つの機能を移行することをお勧めしますプロジェクトでは、XSAPI の C++ Api と共に使用できます。</span><span class="sxs-lookup"><span data-stu-id="efa60-139">The XSAPI C APIs can be used alongside the XSAPI C++ APIs in a project, so we recommend that you migrate one feature at a time.</span></span>
 
-<span data-ttu-id="18b86-140">C++ Api と C++ Api 別のエントリ ポイント、同様に、一般的なコアの単なるシン ラッパーはであるため、機能が変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18b86-140">The C APIs and C++ APIs are really just thin wrappers around a common core, just with different entry points, so the functionality should be unchanged.</span></span> <span data-ttu-id="18b86-141">ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。</span><span class="sxs-lookup"><span data-stu-id="18b86-141">However, only the C APIs can take advantage of the custom memory and thread management features.</span></span>
+<span data-ttu-id="efa60-140">C++ Api と C++ Api シン実際には、さまざまなエントリ ポイントでの一般的なコア ラッパーはであるため、機能が変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="efa60-140">The C APIs and C++ APIs are really just thin wrappers around a common core, just with different entry points, so the functionality should be unchanged.</span></span> <span data-ttu-id="efa60-141">ただし、C Api のみを利用スレッド、カスタムのメモリの管理機能ができます。</span><span class="sxs-lookup"><span data-stu-id="efa60-141">However, only the C APIs can take advantage of the custom memory and thread management features.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="18b86-142">C++ Api と XSAPI WinRT Api を混在させることはできません。</span><span class="sxs-lookup"><span data-stu-id="18b86-142">You cannot mix XSAPI WinRT APIs with the C APIs.</span></span>
+> <span data-ttu-id="efa60-142">C++ Api と XSAPI WinRT Api を混在させることはできません。</span><span class="sxs-lookup"><span data-stu-id="efa60-142">You cannot mix XSAPI WinRT APIs with the C APIs.</span></span>
 
-## <a name="where-to-view-the-c-apis"></a><span data-ttu-id="18b86-143">C++ Api を表示します。</span><span class="sxs-lookup"><span data-stu-id="18b86-143">Where to view the C APIs</span></span>
+## <a name="where-to-view-the-c-apis"></a><span data-ttu-id="efa60-143">C++ Api を表示します。</span><span class="sxs-lookup"><span data-stu-id="efa60-143">Where to view the C APIs</span></span>
 
-- [<span data-ttu-id="18b86-144">ヘッダー ファイルに C API</span><span class="sxs-lookup"><span data-stu-id="18b86-144">C API header files</span></span>](https://github.com/Microsoft/xbox-live-api/tree/master/Include/xsapi-c)
-- [<span data-ttu-id="18b86-145">新しい C++ Api を使用するサンプル コード</span><span class="sxs-lookup"><span data-stu-id="18b86-145">Sample code using the new C APIs</span></span>](https://github.com/Microsoft/xbox-live-api/tree/master/InProgressSamples/Social/Xbox/C)
-- [<span data-ttu-id="18b86-146">libHttpClient</span><span class="sxs-lookup"><span data-stu-id="18b86-146">libHttpClient</span></span>](https://github.com/Microsoft/libHttpClient)
+- [<span data-ttu-id="efa60-144">C++ API のヘッダー ファイル</span><span class="sxs-lookup"><span data-stu-id="efa60-144">C API header files</span></span>](https://github.com/Microsoft/xbox-live-api/tree/master/Include/xsapi-c)
+- [<span data-ttu-id="efa60-145">新しい C++ Api を使用するサンプル コード</span><span class="sxs-lookup"><span data-stu-id="efa60-145">Sample code using the new C APIs</span></span>](https://github.com/Microsoft/xbox-live-api/tree/master/InProgressSamples/Social/Xbox/C)
+- [<span data-ttu-id="efa60-146">libHttpClient</span><span class="sxs-lookup"><span data-stu-id="efa60-146">libHttpClient</span></span>](https://github.com/Microsoft/libHttpClient)
