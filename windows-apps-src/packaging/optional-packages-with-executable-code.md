@@ -5,12 +5,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755048"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792631"
 ---
 # <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
  
@@ -25,6 +25,9 @@ ms.locfileid: "8755048"
 
 > [!NOTE]
 > オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 オプション パッケージや関連セットは、ストアに提出しない場合に、パートナー センターのアクセス許可のない基幹業務 (LOB) や企業のアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
+
+> [!NOTE]
+> 実行可能コードが含まれているオプション パッケージは、[関連セット](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)の一部である必要があります。 関連セットの一部である場合を除き、オプション パッケージからコードを実行することはできません。
 
 ## <a name="c-optional-packages-with-executable-code"></a>実行可能コードを使用した C++ オプション パッケージ
 

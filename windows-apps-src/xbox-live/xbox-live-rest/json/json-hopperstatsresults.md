@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 38e345fc20e92cdf6446c6ae1100e347fe634eff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8742927"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787959"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
 ホッパーの統計情報を表す JSON オブジェクト。 

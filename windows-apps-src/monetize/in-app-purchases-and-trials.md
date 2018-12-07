@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, 試用版, コンシューマブル, 永続的, サブスクリプション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743855"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789212"
 ---
 # <a name="in-app-purchases-and-trials"></a>アプリ内購入と試用版
 
@@ -19,7 +19,7 @@ Windows SDK に用意されている API を使用して、以下の機能を実
 
 * **アプリ内購入**&nbsp;&nbsp; アプリが無料であるかどうかにかかわらず、コンテンツやアプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。
 
-* **試用版機能**&nbsp;&nbsp;かどうかは[アプリをパートナー センターで無料試用版として構成](../publish/set-app-pricing-and-availability.md#free-trial)すると、するように仕向けるを除外または、試用期間中に一部の機能を制限することによって、アプリの通常版を購入する顧客です。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
+* **試用版機能**&nbsp;&nbsp;かどうかは[パートナー センターで無料試用版としてアプリを構成](../publish/set-app-pricing-and-availability.md#free-trial)すると、するように仕向けるを除外または、試用期間中に一部の機能を制限することによって、アプリの通常版を購入する顧客です。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
 
 この記事では、UWP アプリでのアプリ内購入と試用版のしくみについて、その概要を説明します。
 
@@ -29,7 +29,7 @@ Windows SDK に用意されている API を使用して、以下の機能を実
 
 UWP アプリにアプリ内購入機能や試用版機能を追加する際に使用できる名前空間は、2 つあります。どちらの名前空間を使用するかは、アプリのターゲットとなる Windows 10 のバージョンによって決まります。 これらの名前空間の API は同じ目的を果たしますが、その設計は大きく異なります。また、この 2 つの API 間にコードの互換性はありません。
 
-* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Windows 10 バージョン 1607 以降の場合、アプリはこの名前空間の API を使用して、アプリ内購入および試用版を実装することができます。 Visual Studio でアプリ プロジェクトのターゲットが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降である場合は、この名前空間のメンバーを使用することをお勧めします。 この名前空間では、ストアで管理されるコンシューマブルなアドオンなど、最新のアドオン種類をサポートし、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するのには設計されています。 この名前空間について詳しくは、この記事の「[Windows.Services.Store 名前空間を使用するアプリ内購入と試用版](#api_intro)」をご覧ください。
+* **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Windows 10 バージョン 1607 以降の場合、アプリはこの名前空間の API を使用して、アプリ内購入および試用版を実装することができます。 Visual Studio でアプリ プロジェクトのターゲットが **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降である場合は、この名前空間のメンバーを使用することをお勧めします。 この名前空間は、最新の種類のアドオンをストアで管理されるコンシューマブルなアドオンをサポートし、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するのには設計されています。 この名前空間について詳しくは、この記事の「[Windows.Services.Store 名前空間を使用するアプリ内購入と試用版](#api_intro)」をご覧ください。
 
 * **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;Windows 10 のすべてのバージョンでは、この名前空間にあるアプリ内購入と試用版向けの以前の API がサポートされています。 **Windows.ApplicationModel.Store** 名前空間については、「[Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)」をご覧ください。
 
@@ -158,7 +158,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 アプリで **Windows.Services.Store** 名前空間の API を使用してアプリ内購入や試用版機能を実装する場合は、アプリを Store に公開してからそのアプリを開発デバイスにダウンロードし、そのライセンスを使用してテストを行う必要があります。 コードをテストするには次のプロセスに従います。
 
-1. アプリがまだ公開されてストア内でない場合は、アプリがパートナー センターで、[アプリの提出](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を、 [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たしていることを確認し、アプリが認定プロセスを通過かどうかを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。 [パッケージ フライト](../publish/package-flights.md)の適切な構成に注意してください。 正しく構成されているパッケージをフライト可能性がありますできませんをダウンロードします。
+1. アプリがまだ公開されてストア内でない場合は、アプリがパートナー センターで、[アプリの申請](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を[Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)の最小要件を満たしているかどうかを確認し、アプリが認定プロセスを通過かどうかを確認します。 テスト中に[ストアでアプリを検索できないようにアプリを構成する](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)ことも可能です。 [パッケージ フライト](../publish/package-flights.md)の適切な構成に注意してください。 正しく構成されているパッケージをフライト可能性がありますできませんをダウンロードします。
 
 2. 次に、以下の操作が完了していることを確認します。
 
@@ -225,7 +225,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 
 ### <a name="products-skus-and-availabilities"></a>製品、SKU、および可用性
 
-ストア内のすべての製品には少なくとも 1 つの *SKU* があり、各 SKU ごとに少なくとも 1 つの*可用性*があります。 これらの概念はパートナー センターで、ほとんどの開発者から抽象化し、Sku や可用性アプリまたはアドオンのほとんどの開発者が定義されることはありません。 ただし、**Windows.Services.Store** 名前空間のストア製品のオブジェクト モデルには SKU と可用性が含まれているため、シナリオによっては、これらの概念の基本的な知識があると役に立つことがあります。
+ストア内のすべての製品には少なくとも 1 つの *SKU* があり、各 SKU ごとに少なくとも 1 つの*可用性*があります。 これらの概念はパートナー センターで、ほとんどの開発者から抽象化して、Sku や可用性アプリまたはアドオンのほとんどの開発者が定義されることはありません。 ただし、**Windows.Services.Store** 名前空間のストア製品のオブジェクト モデルには SKU と可用性が含まれているため、シナリオによっては、これらの概念の基本的な知識があると役に立つことがあります。
 
 | オブジェクト |  説明  |
 |---------|-------------------|
@@ -259,7 +259,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
 アプリのコンテキストでユーザーにアドオンを利用できるようにする場合は、する必要があります[一意の製品 ID を入力して](../publish/set-your-add-on-product-id.md#product-id)アドオンのとパートナー センターでの[アドオンの申請を作成](../publish/add-on-submissions.md)します。 この製品 ID を使用することでコード内でアドオンを参照できます。ただし、製品 ID を使用できる特定のシナリオは、アプリのアプリ内購入に使用する名前空間によって異なります。
 
 > [!NOTE]
-> パートナー センターでアドオン用に入力する製品 ID とは異なります、追加の[ストア ID です](#store-ids)。 ストア ID は、パートナー センターによって生成されます。
+> アドオン用にパートナー センターで入力する製品 ID とは異なります、アドオンの[ストア ID です](#store-ids)。 ストア ID は、パートナー センターによって生成されます。
 
 ### <a name="apps-that-use-the-windowsservicesstore-namespace"></a>Windows.Services.Store 名前空間を使うアプリ
 

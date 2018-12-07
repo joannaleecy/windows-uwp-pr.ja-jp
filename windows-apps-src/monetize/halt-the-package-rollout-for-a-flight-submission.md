@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732200"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792422"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>フライトに関するロールアウトを停止する
 
@@ -27,7 +27,7 @@ ms.locfileid: "8732200"
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 * このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 * アプリの 1 つの申請を作成します。 パートナー センターで、これを行うか、[アプリの申請の作成](create-an-app-submission.md)方法を使用して、これを行うことができます。
-* 申請に関する段階的なパッケージのロールアウトを有効にします。 この[パートナー センターで](../publish/gradual-package-rollout.md)行うことができますか、 [Microsoft Store 申請 API を使用](manage-flight-submissions.md#manage-gradual-package-rollout)してこれを行います。
+* 申請に関する段階的なパッケージのロールアウトを有効にします。 この[パートナー センターで](../publish/gradual-package-rollout.md)行うことができますか、 [Microsoft Store 申請 API を使用して](manage-flight-submissions.md#manage-gradual-package-rollout)これを行います。
 
 ## <a name="request"></a>要求
 
@@ -50,8 +50,8 @@ ms.locfileid: "8732200"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 停止するパッケージのロールアウトの対象となるパッケージ フライトの申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 停止するパッケージのロールアウトの対象となる申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライト、この ID はパートナー センターでのフライト ページの URL で利用可能なもします。   |
-| submissionId | string | 必須。 停止するパッケージのロールアウトの対象となる申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| flightId | string | 必須。 停止するパッケージのロールアウトの対象となる申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライトはこの ID はパートナー センターでのフライト ページの URL で利用可能なもします。   |
+| submissionId | string | 必須。 停止するパッケージのロールアウトの対象となる申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文

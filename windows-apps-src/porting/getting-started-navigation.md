@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748156"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790146"
 ---
 # <a name="getting-started-navigation"></a>はじめに: ナビゲーション
 
@@ -20,9 +20,9 @@ ms.locfileid: "8748156"
 
 iOS では、アプリのナビゲーション用に **UINavigationController** クラスが用意されています。ビューのプッシュ/ポップ操作を通じて、アプリを定義する **UIViewControllers** の階層を作ることができます。
 
-これに対し、複数のビューを含む windows 10 アプリには、web サイト アプローチのナビゲーション。 ユーザーがコントロールをクリックしてページ間を移動し、アプリ内を進むことを考えてみることができます。 詳しくは、「[ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」をご覧ください。
+これに対し、複数のビューを含む windows 10 アプリは、複数の web サイト アプローチ ナビゲーション。 ユーザーがコントロールをクリックしてページ間を移動し、アプリ内を進むことを考えてみることができます。 詳しくは、「[ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」をご覧ください。
 
-Windows 10 アプリでこのナビゲーションを管理する方法の 1 つは、[**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)クラスを使用します。 以下のチュートリアルでは実際に試す方法を示しています。
+Windows 10 アプリでこのナビゲーションを管理する方法の 1 つは、[**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)のクラスを使用します。 以下のチュートリアルでは実際に試す方法を示しています。
 
 以前に開始したソリューションに戻り、**MainPage.xaml** ファイルを開いて、**[デザイン]** ビューにボタンを追加します。 このボタンの **Content** プロパティを "Button" から "Go To Page" に変更します。 次に、ボタンの **Click** イベントのハンドラーを、次の図に示すように作成します。 作成方法がわからない場合は、前のセクションのチュートリアルを見直してください (ヒント: **[デザイン]** ビューにあるボタンをダブルクリックします)。
 
@@ -64,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 それでは、プログラムを実行してみましょう。 [Go To Page] ボタンをタップすると、他のページに進みます。矢印スタイルの戻るボタンをタップすると、前のページに戻ります。
 
-ページのナビゲーションは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスによって管理されます。 IOS で**UINavigationController**クラスは、 **pushViewController**および**popViewController**メソッドを使用するいると、UWP アプリの**フレーム**クラスは、[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)と[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)方法を提供します。 **Frame** クラスには、名前から推測されるとおりに動作する [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) というメソッドもあります。
+ページのナビゲーションは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスによって管理されます。 IOS で**UINavigationController**クラスは、 **pushViewController**および**popViewController**メソッドを使用すると、UWP アプリの**フレーム**クラスは、[**移動**](https://msdn.microsoft.com/library/windows/apps/br242694)と[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)メソッドを提供します。 **Frame** クラスには、名前から推測されるとおりに動作する [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) というメソッドもあります。
 
 このチュートリアルでは、ナビゲーションを行うたびに BlankPage の新しいインスタンスが作成されます。 (前のインスタンスは自動的に*解放*されます)。 毎回新しいインスタンスが作成されることがないようにするには、BlankPage.xaml.cs ファイル内の BlankPage クラスのコンストラクターに以下のコードを追加します。 これにより、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 動作が有効になります。
 

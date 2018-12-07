@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dace19404ae7c8b1d1ef296a21c874e4dd14c6f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8753087"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788113"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
 ゲーム セッションの集計データを表す JSON オブジェクト。 

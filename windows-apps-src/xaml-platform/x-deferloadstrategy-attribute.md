@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751326"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791886"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 
@@ -32,7 +32,7 @@ ms.locfileid: "8751326"
 
 **x:DeferLoadStrategy** を使う際の制約を以下に示します。
 
-- [X:name](x-name-attribute.md)を定義する必要があります要素、そこにする必要があります、要素を後で検索する手段です。
+- [X: Name](x-name-attribute.md)を定義する必要があります、要素として存在する必要があります、要素を後で検索する手段です。
 - 遅延できるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) または [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型のみです。
 - [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) のルート要素は遅延できません。
 - [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。

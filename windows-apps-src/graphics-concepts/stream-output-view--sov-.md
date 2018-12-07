@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b0fbd684787062d9416b4e6e4ac90b82e07e186
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756726"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792060"
 ---
 # <a name="stream-output-view-sov"></a>ストリーム出力ビュー (SOV)
 

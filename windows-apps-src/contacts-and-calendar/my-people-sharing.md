@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751556"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791632"
 ---
 # <a name="my-people-sharing"></a>マイ連絡先の共有
 
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を検索するには、 **Package.appxmanifest**既定のエディターを使用して開き、"Packaging"タブします。ここでは、"App"は、共有ターゲット ビューに対応するアクティブ化可能なクラスです。
+“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を検索するには、 **Package.appxmanifest**既定のエディターを使ってを開き、"Packaging"タブします。ここでは、"App"は、共有ターゲット ビューに対応するアクティブ化可能なクラスです。
 
 ## <a name="running-as-a-my-people-share-target"></a>マイ連絡先の共有ターゲットとして実行する
 

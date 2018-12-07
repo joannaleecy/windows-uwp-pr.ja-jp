@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c89c3ace4b85852f93bb0d5edf4c520403f39b44
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738608"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790278"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>パッケージ デスクトップ アプリで使用可能な UWP Api
 
@@ -26,7 +26,7 @@ ms.locfileid: "8738608"
 <tr><td>バックグラウンド タスク</td><td>パッケージ アプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク<i>として</i>実行できます。 詳しくは、<a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub のバックグラウンド タスク サンプル</a>をご覧ください。</td></tr>
 <tr><td>Bluetooth</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>チャットと電話</td><td>パッケージ アプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
-<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化できます。</td></tr>
+<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化ことができます。</td></tr>
 <tr><td>Cryptography</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>位置情報</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>ファイルおよびフォルダー ピッカー</td><td>パッケージ アプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>

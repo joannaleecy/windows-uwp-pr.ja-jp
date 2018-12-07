@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738781"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788951"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
 この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。 
@@ -57,7 +57,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>アプリが現在記録できるかどうかを確認する
-現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 **CanRecord**が**false**アプリが現在記録できないことを意味を返す場合は、理由を特定する**[詳細](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** プロパティを確認できます。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
+現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 **CanRecord**が**false**、つまり、アプリが現在記録できないことを返す場合は、理由を特定する**[詳細](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** プロパティを確認できます。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
 
 
 
@@ -152,7 +152,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>システムがメタデータを削除するときに通知を受け取る
-システムが**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベントのハンドラーを登録することにより、アプリのメタデータの削除を開始するときに通知を受信登録することができます。
+**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベントのハンドラーを登録することにより、アプリのメタデータの削除が開始されると、システムに通知を受信登録することができます。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

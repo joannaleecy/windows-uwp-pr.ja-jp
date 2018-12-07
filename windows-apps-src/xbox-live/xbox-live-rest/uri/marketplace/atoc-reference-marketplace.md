@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fd8112c6e16b3e9d9fb70c34381e88ba5aa6273
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8741016"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8786289"
 ---
 # <a name="marketplace-uris"></a>マーケットプレース URI
 

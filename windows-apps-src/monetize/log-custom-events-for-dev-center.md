@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, イベントをログ�
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: d7b338fd3b34d530ad365b0377d6b6c6c65398b7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734515"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789176"
 ---
 # <a name="log-custom-events-for-partner-center"></a>パートナー センターのカスタム イベントをログに記録する
 
@@ -20,11 +20,11 @@ ms.locfileid: "8734515"
 アプリからのカスタム イベントをログに記録するには、カスタム イベントの文字列を Microsoft Store Services SDK で提供されている [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) メソッドに渡します。 パートナー センターでの[利用状況レポート](https://msdn.microsoft.com/windows/uwp/publish/usage-report)の**カスタム イベント**のセクションで、カスタム イベントした合計回数を確認できます。
 
 > [!NOTE]
-> パートナー センターに記録したカスタム イベントは、 [Windows イベント](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)に関連するされず、**イベント ビューアー**には表示されません。
+> パートナー センターに記録したカスタム イベントは、 [Windows イベント](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)に関連するされず、これらの**イベント ビューアー**には表示されません。
 
 ## <a name="prerequisites"></a>前提条件
 
-パートナー センターでのアプリの**使用状況] レポート**でカスタム ログ イベントを確認することができます、前に、ストアでアプリを公開する必要があります。
+**使用状況] レポート**でカスタム ログ イベントを確認するにはパートナー センターでのアプリの前に、アプリは、ストアで公開する必要があります。
 
 ## <a name="how-to-log-custom-events"></a>カスタム イベントをログに記録する方法
 

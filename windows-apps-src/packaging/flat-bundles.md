@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, パッケージ化, パッケージ構成, フラット バンドル
 ms.localizationpriority: medium
 ms.openlocfilehash: b7066b7f2e5bd72ebee3169e03c7940b6fef4dba
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741740"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790583"
 ---
 # <a name="flat-bundle-app-packages"></a>フラット バンドル アプリ パッケージ 
 
 > [!IMPORTANT]
 > Microsoft Store にアプリを提出する予定がある場合、[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)に連絡してフレット バンドルを使う承認を得る必要があります。
 
-フラット バンドルは、アプリのパッケージ ファイルをバンドルする改善された方法です。 アプリ バンドル ファイルが、バンドル内に含めるアプリのパッケージ ファイルが必要な複数レベルのパッケージ構造を使用する一般的な Windows、フラット バンドルはアプリ バンドルの外部にできるように、アプリのパッケージ ファイルを参照するだけでこの必要性を削除します。 アプリのパッケージ ファイルがバンドルには含まれなく、ためにできる並列処理され、その結果のアップロード時間、高速な公開 (各アプリのパッケージ ファイルは、同時に処理できることができます) ため、最終的に開発繰り返しできません。
+フラット バンドルは、アプリのパッケージ ファイルをバンドルする改善された方法です。 アプリ バンドルのファイルが、バンドル内に含めるアプリのパッケージ ファイルが必要な複数レベルのパッケージ構造を使用する一般的な Windows、フラット バンドルはアプリ バンドルの外部にできるように、アプリのパッケージ ファイルを参照するだけで、この必要性を削除します。 アプリのパッケージ ファイルがバンドルには含まれなく、ためにできる並列処理、その結果のアップロード時間、高速な公開 (各アプリのパッケージ ファイルは、同時に処理できることができます) ため、最終的に開発繰り返しできません。
 
 ![フラット バンドルの図](images/bundle-combined.png)
 
@@ -29,7 +29,7 @@ ms.locfileid: "8741740"
 フラット バンドルは、MakeAppx.exe ツールを使うか、パッケージ レイアウトを使ってバンドルの構造を定義することにより作成できます。
 
 ### <a name="using-makeappxexe"></a>MakeAppx.exe の使用
-MakeAppx.exe を使ってフラット バンドルを作成するには、コマンドを使って"MakeAppx.exe bundle"通常どおりですが、/fb スイッチ、ファイルを生成、フラット アプリ バンドル (のみにアプリのパッケージ ファイルを参照し、実際のペイロードが含まれていないために、非常に小さくなります). 
+MakeAppx.exe を使ってフラット バンドルを作成するには、コマンドを使って"MakeAppx.exe bundle"通常どおりが、/fb スイッチを使用してファイルを生成、フラット アプリ バンドル (のみにアプリのパッケージ ファイルを参照し、実際のペイロードが含まれていないために、非常に小さくなります). 
 
 コマンド構文の例を以下に示します。
 
@@ -43,4 +43,4 @@ MakeAppx.exe について詳しくは、「[MakeAppx.exe ツールを使った�
 または、パッキング レイアウトを使ってフラット バンドルを作成することができます。 これを行うには、アプリ バンドル マニフェストの **PackageFamily** 要素で **FlatBundle** 属性を **true** に設定します。 パッケージ レイアウトについて詳しくは、「[パッケージ レイアウトを使ったパッケージの作成](packaging-layout.md)」をご覧ください。
 
 ## <a name="how-to-deploy-a-flat-bundle"></a>フラット バンドルを展開する方法 
-フラット バンドルを展開する前に、(アプリ バンドルに加えて) 各アプリ パッケージに同じ証明書で署名する必要があります。 これは、すべてのアプリ パッケージ ファイル (.appx/.msix) が独立したファイルになりできなくなったアプリ バンドル (.appxbundle/.msixbundle) ファイルに含まれないためです。 パッケージが署名されたら、アプリ バンドル ファイルをポイントし、アプリを展開します (アプリ パッケージには、アプリ バンドルを想定してそれらを想定) PowerShell の[Add-appxpackage コマンドレット](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps)を使用します。 
+フラット バンドルを展開する前に、(アプリ バンドルに加えて) 各アプリ パッケージに同じ証明書で署名する必要があります。 これは、すべてのアプリ パッケージ ファイル (.appx/.msix) が独立したファイルになりできなくなった、アプリ バンドル (.appxbundle/.msixbundle) ファイルに含まれないためです。 パッケージが署名されたら、アプリ バンドルのファイルをポイントし、アプリを展開します (アプリ パッケージには、アプリ バンドルを想定してそれらを想定) PowerShell の[Add-appxpackage コマンドレット](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps)を使用します。 

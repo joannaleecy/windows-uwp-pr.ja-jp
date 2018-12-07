@@ -1,17 +1,17 @@
 ---
 title: 画面切り取りの起動
-description: このトピックでは、ms screenclip と ms screensketch URI スキームについて説明します。 アプリは、これらの URI スキームを使用して、切り取り領域とスケッチ アプリを起動する、または新しい切り取り領域を開くことができます。
+description: このトピックでは、ms screenclip と ms screensketch の URI スキームについて説明します。 アプリは、これらの URI スキームを使用して、切り取り領域とスケッチ アプリを起動したり、新しい切り取り領域を開いたりすることができます。
 ms.date: 8/1/2017
 ms.topic: article
-keywords: windows 10、uwp、uri、切り取り領域、スケッチ
+keywords: windows 10、uwp、uri、切り取り、スケッチ
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7aa0b70aee50c79088a68378fa75664711c3d564
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750846"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792254"
 ---
 # <a name="launch-screen-snipping"></a>画面切り取りの起動
 
@@ -26,7 +26,7 @@ ms.locfileid: "8750846"
 | パラメーター | 型 | 必須かどうか | 説明 |
 | --- | --- | --- | --- |
 | ソース | string | いいえ | URI を起動したソースを示す自由形式の文字列です。 |
-| delayInSeconds | int | × | 1 ~ 30 の整数値。 URI の呼び出しと snipping の開始時の間の完全な秒の遅延を指定します。 |
+| delayInSeconds | int | × | 1 ~ 30 の整数値。 URI の呼び出しと snipping の開始時の間の完全な秒単位で、遅延を指定します。 |
 
 ## <a name="launching-the-snip--sketch-app"></a>切り取り領域 & スケッチ アプリを起動します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "8750846"
 
 | パラメーター | 型 | 必須かどうか | 説明 |
 | --- | --- | --- | --- |
-| sharedAccessToken | string | いいえ | 切り取り領域とスケッチ アプリで開くには、ファイルを識別するトークンです。 [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)から取得されます。 このパラメーターを省略すると、ファイルを開くことがなく、アプリが起動します。 |
+| sharedAccessToken | string | いいえ | 切り取り領域とスケッチ アプリで開くには、ファイルを識別するトークンです。 [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)から取得されます。 このパラメーターを省略すると、開いているファイルを使用せず、アプリが起動します。 |
 | ソース | string | いいえ | URI を起動したソースを示す自由形式の文字列です。 |
 | isTemporary | bool | × | 場合は、画面スケッチが True に設定は、開いた後、ファイルを削除しようとしています。 |
 

@@ -5,16 +5,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, エラー
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 22dff391e787e1763cb730272ba9cea029758c99
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750027"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791283"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>ゲームの Xbox One に関するエラー報告データを取得します。
 
-Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析パートナー センター ダッシュ ボードで利用するゲームの Xbox One に関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。
+Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分析のパートナー センター ダッシュ ボードで利用するゲームの Xbox One に関する集計エラー報告データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。
 
 [ゲームの Xbox One でのエラーに関する詳細を取得する](get-details-for-an-error-in-your-xbox-one-game.md)、[ゲーム、Xbox One でのエラーに関するスタック トレースを取得する](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)には、および[Xbox One ゲームのエラーに関する CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)方法を使用して、追加のエラー情報を取得できます。
 
@@ -47,7 +47,7 @@ Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | エラー報告データを取得して、Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、Xbox デベロッパー ポータル (XDP) で目的のゲームに移動し、URL から製品 ID を取得します。 または、Windows パートナー センターの分析レポートから正常性データをダウンロードした場合、製品 ID は .tsv ファイルに含まれています。 |  必須  |
+| applicationId | string | エラー報告データを取得する Xbox One ゲームの**ストア ID**です。 **ストア ID**は、パートナー センターでのアプリ id] ページで利用可能です。 **ストア ID**の例では、9WZDNCRFJ3Q8 です。 |  必須  |
 | startDate | date | 取得するエラー報告データの日付範囲の開始日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。  |  必須ではない  |
 | endDate | date | 取得するエラー報告データの日付範囲の終了日です。 既定値は現在の日付です。 *aggregationLevel* が **day**、**week**、または **month** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定する必要があります。 *aggregationLevel* が **hour** の場合、このパラメーターには日付を ```mm/dd/yyyy``` の形式で指定するか、日付と時刻を ```yyyy-mm-dd hh:mm:ss``` の形式で指定できます。 |  必須ではない  |
 | top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
@@ -60,7 +60,7 @@ Xbox デベロッパー ポータル (XDP) を通じて取り込まれ、XDP 分
 
 ### <a name="request-example"></a>要求の例
 
-次の例では、Xbox One のゲームのエラー報告データを取得するためのいくつかの要求を示します。 *ApplicationId*値をゲームの製品 ID に置き換えます。
+次の例では、Xbox One のゲームのエラー報告データを取得するためのいくつかの要求を示します。 *ApplicationId*値をゲームの**Store ID**に置き換えます。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failurehits?applicationId=BRRT4NJ9B3D1&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -88,14 +88,14 @@ Authorization: Bearer <your access token>
 
 | 値           | 型    | 説明        |
 |-----------------|---------|---------------------|
-| date            | string  | エラー データの日付範囲の最初の日付を ```yyyy-mm-dd``` の形式で示します。 要求に単一の日付を指定した場合、この値はその日付になります。 要求に日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 *AggregationLevel* **時間**の値を指定する要求では、この値も含まれています時間の値の形式で```hh:mm:ss```でエラーが発生したローカル タイム ゾーン。  |
-| applicationId   | string  | エラー データを取得する Xbox One ゲームの製品 ID です。   |
+| date            | string  | エラー データの日付範囲の最初の日付を ```yyyy-mm-dd``` の形式で示します。 要求に単一の日付を指定した場合、この値はその日付になります。 要求に日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 *AggregationLevel* **時間**の値を指定する要求では、この値も含まれています時刻の値の形式で```hh:mm:ss```でエラーが発生したローカル タイム ゾーン。  |
+| applicationId   | string  | エラー データを取得する Xbox One ゲームの**ストア ID**です。   |
 | applicationName | string  | ゲームの表示名です。   |
 | failureName     | string  | 4 つの部分から成るエラーの名前です。問題が発生した 1 つ以上のクラス、例外/バグ チェック コード、障害が発生したイメージの名前、関連する関数の名前で構成されます。  |
 | failureHash     | string  | エラーの一意の識別子です。   |
 | symbol          | string  | このエラーに割り当てられた記号です。 |
 | osVersion       | string  | エラーが発生した OS のバージョンです。 これは、常に、 **Windows 10**の値です。  |
-| osRelease       | string  |  エラーが発生した Windows 10 OS リリースまたはフライティング リングを (OS バージョン内のサブグループ) として指定する次の文字列のいずれかです。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>バージョン 1803</strong></li><li><strong>リリース プレビュー</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p>OS リリースまたはフライティング リングが不明な場合、このフィールドは値 <strong>Unknown</strong> になります。</p>    |
+| osRelease       | string  |  エラーが発生したを (OS バージョン内のサブグループ) としての Windows 10 OS リリースまたはフライティング リングを指定する次の文字列のいずれか。<p/><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>バージョン 1803</strong></li><li><strong>リリース プレビュー</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p>OS リリースまたはフライティング リングが不明な場合、このフィールドは値 <strong>Unknown</strong> になります。</p>    |
 | eventType       | string  | 次のいずれかの文字列です。<ul><li>**crash**</li><li>**hang**</li><li>**メモリに失敗しました**</li></ul>      |
 | market          | string  | デバイスの市場の ISO 3166 国コードです。   |
 | deviceType      | string  | エラーが発生したデバイスの種類です。 これは、常に、**コンソール**の値です。    |
@@ -138,7 +138,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ゲームの Xbox One のエラーに関する詳細を取得します。](get-details-for-an-error-in-your-xbox-one-game.md)
+* [ゲームの Xbox One でのエラーに関する詳細を取得します。](get-details-for-an-error-in-your-xbox-one-game.md)
 * [ゲーム、Xbox One でのエラーに関するスタック トレースを取得します。](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)
 * [Xbox One ゲームのエラーに関する CAB ファイルをダウンロードします。](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)
 * [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)

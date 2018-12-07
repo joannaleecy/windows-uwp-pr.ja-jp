@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 558d7e655a54b22f1fc74591a718a7180d90366f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732639"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791415"
 ---
 # <a name="ambient-lighting"></a>環境光
 
@@ -44,7 +44,7 @@ Cₐ の値は、次のいずれかになります。
 -   AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2 で、2 つ目の頂点色が頂点の宣言で指定されている場合は、頂点色 2。
 -   マテリアルのアンビエント色。
 
-**注:** どちら AMBIENTMATERIALSOURCE オプションを使用するとし、頂点の色が指定されていないからマテリアルのアンビエント色を使用します。
+**注:** かどうかは、いずれかの AMBIENTMATERIALSOURCE オプションを使用するとと、頂点の色が指定されていないマテリアルのアンビエント色を使用します。
 
  
 

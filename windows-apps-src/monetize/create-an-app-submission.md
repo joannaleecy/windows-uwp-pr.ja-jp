@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736352"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793253"
 ---
 # <a name="create-an-app-submission"></a>アプリの申請の作成
 
@@ -186,7 +186,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
-| 409  | アプリの現在の状態があるため、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | アプリの現在の状態が原因、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

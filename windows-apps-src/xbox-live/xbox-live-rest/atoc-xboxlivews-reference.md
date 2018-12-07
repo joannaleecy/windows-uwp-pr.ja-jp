@@ -7,16 +7,16 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 2076cf7b909083072904128a8f53c200a681ee8e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 5e63e4ee6789e4ffb292608aa446138109e00e05
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757455"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8785704"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
-Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。 これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。 まだ**Xbox.Services**に追加していない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。
+Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。 これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。 まだ**Xbox.Services**に追加されていない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。
 
 <a id="ID4E5"></a>
 

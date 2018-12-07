@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734399"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790106"
 ---
 # <a name="barcode-scanner"></a>バーコード スキャナー
 
@@ -21,7 +21,7 @@ ms.locfileid: "8734399"
 
 |トピック |説明 |
 |------|------------|
-| [バーコード スキャナーの構成](../devices-sensors/pos-barcodescanner-configure.md)  | 目的の用途のバーコード スキャナーを構成する方法について説明します。 |
+| [バーコード スキャナーの構成](../devices-sensors/pos-barcodescanner-configure.md)  | 目的のアプリケーションのバーコード スキャナーを構成する方法について説明します。 |
 | [ソフトウェア トリガーの使用](../devices-sensors/pos-barcodescanner-software-trigger.md) | ソフトウェアからスキャンの動作を制御する方法について説明します。 |
 | [シンボル体系の操作](pos-barcodescanner-symbologies.md) | バーコード スキャナーがサポートするバーコードの種類を特定し、アプリケーションからバーコード スキャナーで認識されるバーコードの種類を制御する方法について説明します。 |
 | [バーコード データの取得と理解](pos-barcodescanner-scan-data.md) | 取得およびスキャンするバーコード データを解釈する方法について説明します。 |

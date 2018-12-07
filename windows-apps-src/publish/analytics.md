@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729677"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790344"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
@@ -45,7 +45,7 @@ ms.locfileid: "8729677"
 
 <span id="outside"/>
 
-## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センターの外部分析データにアクセス
+## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部分析データにアクセス
 
 パートナー センターでレポートを表示する、だけでなく他の方法でアプリ分析にアクセスできます。
 
@@ -55,7 +55,7 @@ ms.locfileid: "8729677"
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>Power BI 用 Windows デベロッパー センター コンテンツ パック
 
-[Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)を使用して、調査と Power BI でパートナー センター分析データを監視します。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
+調査し、Power BI でパートナー センター分析データを監視するには、 [Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)を使用します。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
 
 Power BI を使って分析データにアクセスするには、まず、次のリソースをご覧ください。
 

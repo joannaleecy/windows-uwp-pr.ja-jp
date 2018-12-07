@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 73c7e889b4633dae9e416cf7ccde13eb3f58e8ee
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742046"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788921"
 ---
 # <a name="set-speech-recognition-timeouts"></a>音声認識のタイムアウトの設定
 
@@ -31,7 +31,7 @@ ms.locfileid: "8742046"
 -   BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。
 -   EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。
 
-**注:** タイムアウトは、認識エンジンごとに設定できます。
+**注:** タイムアウトは認識エンジンごとに設定できます。
 
  
 

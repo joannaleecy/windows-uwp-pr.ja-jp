@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756566"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792858"
 ---
 # <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
@@ -27,7 +27,7 @@ ms.locfileid: "8756566"
 
 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリに取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 
-このトピックでは、既にバック グラウンド タスクのエントリ ポイントとして使用される**実行**メソッドも含めて、バック グラウンド タスク クラスを作成するいると想定しています。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+このトピックでは、既にバック グラウンド タスクのエントリ ポイントとして使用される**実行**メソッドも含めて、バック グラウンド タスク クラスを作成するいると想定します。 バックグラウンド タスクの作成方法の概要については、「[アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」または「[インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
 このトピックは、インプロセス バックグラウンド タスクにも適用されます。 ただし、 **Run**メソッドではなく**OnBackgroundActivated**。 インプロセス バックグラウンド タスクでは、バックグラウンド タスクがフォアグラウンド アプリと同じプロセスで実行されているため、取り消しを通知するために固定ストレージを使用する必要はありません。アプリの状態を使用して、取り消しを伝えることができます。
 
@@ -115,7 +115,7 @@ void ExampleBackgroundTask::OnCanceled(IBackgroundTaskInstance^ taskInstance, Ba
 }
 ```
 
-バック グラウンド タスクの**Run**メソッドでは、作業を開始する前に**OnCanceled**イベント ハンドラー メソッドを登録します。 インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使用します。
+バック グラウンド タスクの**Run**メソッドでは、作業を開始する前に**OnCanceled**イベントのハンドラー メソッドを登録します。 インプロセス バックグラウンド タスクでは、アプリケーションの初期化の一部としてこの登録を実行できます。 たとえば、次のコード行を使用します。
 
 ```csharp
 taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
@@ -133,9 +133,9 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 バックグラウンド処理を実行しているメソッドは、**\_cancelRequested** が **true** に設定されたタイミングを認識し、処理を停止して終了する必要があります。 インプロセス バック グラウンド タスクの場合、 **OnBackgroundActivated**メソッドから戻ることを意味します。 アウト プロセス バック グラウンド タスクの場合、 **Run**メソッドから戻ることを意味します。
 
-バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_CancelRequested**になる続行 true に設定場合します。
+バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 場合**\_cancelRequested**は、続行から true に設定になります。
 
-[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれています。
+[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)には、バック グラウンド タスクが取り消された場合、定期タイマーのコールバックを停止することを確認するが含まれています。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -177,9 +177,9 @@ else
 ```
 
 > [!NOTE]
-> 上記のコード サンプルでは、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進行状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
+> 前に示したコード サンプルでは、 [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)を使用します。[**進行状況**](https://msdn.microsoft.com/library/windows/apps/br224800)のプロパティがバック グラウンド タスクの進捗状況を記録するために使用されています。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
-**Run**メソッドは、処理が停止した後、タスクが完了したか、取り消されたかどうか記録するように変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
+処理が停止した後、タスクが完了したか、取り消されたかどうか記録するように、 **Run**メソッドを変更します。 この手順は、バックグラウンド タスクが取り消されたときにプロセス間で通信する手段が必要となるため、別のプロセスで実行されるアウトプロセス バック グラウンド タスクに適用されます。 インプロセス バックグラウンド タスクでは、タスクが取り消されたことを示すために、状態をアプリケーションと共有するだけで十分です。
 
 [バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings に状態を記録します。
 
@@ -261,7 +261,7 @@ else
 
 ## <a name="run-method-example"></a>メソッド例を実行します。
 
-**Run**メソッドとタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキスト。
+メソッドの**実行**とタイマーのコールバック コード一式、[バック グラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から次のとおりのコンテキスト。
 
 ```csharp
 // The Run method is the entry point of a background task.

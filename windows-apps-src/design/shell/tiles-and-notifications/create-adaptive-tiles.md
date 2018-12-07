@@ -9,17 +9,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733894"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790609"
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
 アダプティブ タイル テンプレートは、さまざまな画面密度に合わせて変化するシンプルで柔軟なマークアップ言語を使用して、独自のタイル通知コンテンツをデザインすることができるように、windows 10 の新機能です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
 
-(する場合は、引き続き使用できます[Windows8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)からプリセット テンプレートの windows 10 の通知を設計するときです。)
+(必要な場合でも使用できます[Windows8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)からプリセット テンプレート windows 10 の通知を設計するとき。)
 
 
 ## <a name="getting-started"></a>概要
@@ -208,7 +208,7 @@ TileContent content = new TileContent()
 
 通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
 
-**注:** Windows Mobile モバイルでコーナー ロゴ、その"logo"と"nameAndLogo"既定"name"をサポートしません。
+**注:** Windows Mobile Mobile でコーナー ロゴ、その"logo"と"nameAndLogo"既定"name"をサポートしません。
 
  
 

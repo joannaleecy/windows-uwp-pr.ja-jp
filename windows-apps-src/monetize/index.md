@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729451"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792878"
 ---
 # <a name="monetization-engagement-and-store-services"></a>収益化、エンゲージメント、ストア サービス
 
@@ -25,14 +25,14 @@ Microsoft Store の手数料に関する説明とアプリの収益を受け取�
 |--------------------|-----------------------------|
 | [アプリ内購入と試用版](in-app-purchases-and-trials.md)      | Windows SDK の API を使用して、アプリ内製品の購入と試用版機能をアプリに追加する方法を説明します。  |
 | [Microsoft Advertising SDK を使用したアプリでの広告の表示](display-ads-in-your-app.md)      |   アプリにバナー広告やスポット広告を表示して収益を増やします。 この機能には、Microsoft Advertising SDK が必要です。 |
-| [Microsoft Store Services SDK を使ってユーザーとの関係を深める](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK が提供するライブラリとツールを利用すると、顧客エンゲージメントの獲得を図る機能をアプリに追加できます。 これらの機能は、ターゲット通知、/B テスト、およびアプリからフィードバック Hub の起動します。 |
+| [Microsoft Store Services SDK を使ってユーザーとの関係を深める](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK が提供するライブラリとツールを利用すると、顧客エンゲージメントの獲得を図る機能をアプリに追加できます。 これらの機能は、ターゲット通知、/B のテスト、およびアプリからフィードバック Hub を起動します。 |
 | [A/B テストによる実験の実行](run-app-experiments-with-a-b-testing.md)      |   ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 この機能を使うには、Microsoft Store Services SDK が必要です。  |
-| [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)      |   UWP アプリにコードを追加して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、パートナー センターで、[フィードバック] レポート](../publish/feedback-report.md)では、このフィードバックを管理します。 この機能を使うには、Microsoft Store Services SDK が必要です。   |
+| [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)      |   UWP アプリにコードを追加して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、パートナー センターで[フィードバック] レポート](../publish/feedback-report.md)では、このフィードバックを管理します。 この機能を使うには、Microsoft Store Services SDK が必要です。   |
 | [パートナー センターのプッシュ通知を受信するアプリを構成します。](configure-your-app-to-receive-dev-center-notifications.md)  |  [パートナー センターのプッシュ通知](../publish/send-push-notifications-to-your-apps-customers.md)を受信しのプッシュ通知に起因するアプリの起動率の追跡ができるように、UWP アプリの通知チャネルを登録します。 この機能を使うには、Microsoft Store Services SDK が必要です。  |
-| [パートナー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)  | UWP アプリからカスタム イベントをログに記録し、パートナー センターでの[使用状況] レポート](../publish/usage-report.md)でイベントを確認します。 この機能を使うには、Microsoft Store Services SDK が必要です。 |
+| [パートナー センターのカスタム イベントをログに記録する](log-custom-events-for-dev-center.md)  | UWP アプリからカスタム イベント ログに記録し、パートナー センターでの[使用状況] レポート](../publish/usage-report.md)でイベントを確認します。 この機能を使うには、Microsoft Store Services SDK が必要です。 |
 | [評価とレビューを求める](request-ratings-and-reviews.md) |  プログラムで評価とレビュー UI を表示して、ユーザーにアプリの評価やレビューを求めます。  |
 | [Microsoft Store サービス](using-windows-store-services.md)    |  RESTful API を使用して、ストアへの申請の自動化、アプリの分析データへのアクセス、ストアに関連するその他のタスクの自動化を行う方法を説明します。    |
-| [市販デモ (RDX) 機能をアプリに追加します。](retail-demo-experience.md)        |  右に進むことが Pc やデバイス販売フロアに試すお客様 Windows アプリで市販デモ モードが含まれます。  |
+| [市販デモ (RDX) 機能をアプリに追加します。](retail-demo-experience.md)        |  右に進むことが Pc やデバイス販売フロアに試すお客様 Windows アプリで、市販デモ モードが含まれます。  |
 
 ## <a name="related-topics"></a>関連トピック
 

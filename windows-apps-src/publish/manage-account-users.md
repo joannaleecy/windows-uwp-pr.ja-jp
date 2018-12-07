@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アカウント ユーザー, ユーザー、azure ad, マルチ ユーザー、複数のユーザーを管理します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 282b1eb087fa081b621437206f338ed4b6d3569b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742241"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790950"
 ---
 # <a name="manage-account-users"></a>アカウント ユーザーの管理
 
@@ -21,8 +21,8 @@ Azure Active Directory を使用して、追加して、[パートナー セン�
 
 このセクションでは、次の操作手順について説明します。
 
--   [パートナー センターのアカウントを Azure Active Directory を関連付ける](associate-azure-ad-with-dev-center.md)
--   [ユーザー、グループ、および Azure AD アプリケーションをパートナー センター アカウントを追加します。](add-users-groups-and-azure-ad-applications.md)
+-   [パートナー センター アカウントに Azure Active Directory を関連付ける](associate-azure-ad-with-dev-center.md)
+-   [ユーザー、グループ、およびパートナー センター アカウントに Azure AD アプリケーションを追加します。](add-users-groups-and-azure-ad-applications.md)
 -   [アカウント ユーザーのロールとカスタムのアクセス許可の設定](set-custom-permissions-for-account-users.md)
 
 > [!TIP]

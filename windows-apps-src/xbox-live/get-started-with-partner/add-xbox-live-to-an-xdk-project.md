@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: f17765b09dcb0b6f5c89d168f2d3d9611a60ffa6
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8729162"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790846"
 ---
 # <a name="add-xbox-live-to-a-new-or-existing-xdk-project"></a>新規または既存の XDK プロジェクトに Xbox Live を追加する
 

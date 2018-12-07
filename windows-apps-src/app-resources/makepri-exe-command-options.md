@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756078"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791711"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe のコマンド ライン オプション
 
@@ -20,7 +20,7 @@ ms.locfileid: "8756078"
 > [!NOTE]
 > MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
-## <a name="getting-help-from-the-command-line"></a>コマンドラインからヘルプを取得します。
+## <a name="getting-help-from-the-command-line"></a>コマンドラインからのヘルプの取得
 
 実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。 発行することも`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。
 

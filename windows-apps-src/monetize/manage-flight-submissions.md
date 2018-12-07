@@ -1,17 +1,17 @@
 ---
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: パートナー センター アカウントに登録されているアプリのパッケージ フライトの申請を管理するのに、Microsoft Store 申請 API でこれらのメソッドを使用します。
+description: Microsoft Store 申請 API でこれらのメソッドを使用すると、パートナー センター アカウントに登録されているアプリのパッケージ フライトの申請を管理できます。
 title: パッケージ フライトの申請の管理
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750216"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791916"
 ---
 # <a name="manage-package-flight-submissions"></a>パッケージ フライトの申請の管理
 
@@ -79,7 +79,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
 パッケージ フライトの申請を作成するには、次のプロセスに従います。
 
-1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)Azure AD アプリケーションをパートナー センター アカウントに関連付けると、ID とキー、クライアントの取得を含めて、します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
+1. 場合はまだ準備ができていないため、完全な前提条件で説明されている[を作成し、Microsoft Store サービスを使用した申請の管理](create-and-manage-submissions-using-windows-store-services.md)など、Azure AD アプリケーションをパートナー センター アカウントに関連付けると、クライアントの ID とキーを取得します。 この作業は 1 度行うだけでよく、クライアント ID とキーを入手したら、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。  
 
 2. [Azure AD アクセス トークンを取得します](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 このアクセス トークンを Microsoft Store 申請 API のメソッドに渡す必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
 
@@ -119,7 +119,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これでパートナー センターに通知が申請に完了したことと、更新がアカウントに適用できるようになりましたする必要があります。
+5. 次のメソッドを実行して、[パッケージ フライトの申請をコミット](commit-a-flight-submission.md)します。 これでパートナー センターに通知は、申請を完了したことと、更新がアカウントに適用できるようになりましたする必要があります。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -133,7 +133,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 
     申請の状態を確認するには、応答本文の *status* の値を確認します。 この値が **CommitStarted** から **PreProcessing** (要求が成功した場合) または **CommitFailed** (要求でエラーが発生した場合) に変わっています。 エラーがある場合は、*statusDetails* フィールドにエラーについての詳細情報が含まれています。
 
-7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 引き続き、以前のメソッドを使用するか、パートナー センターにアクセスして申請進行状況を監視できます。
+7. コミットが正常に処理されると、インジェストのために申請がストアに送信されます。 または、以前のメソッドを使用して、パートナー センターにアクセスして申請の進行状況を監視する続行することができます。
 
 <span/>
 
@@ -155,7 +155,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>パッケージ フライトの申請の段階的なパッケージのロールアウトを管理する
 
-パッケージ フライトの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 詳細についてなどを有効にして、パートナー センターで、段階的なパッケージのロールアウトを管理する方法については、[この記事](../publish/gradual-package-rollout.md)を参照してください。
+パッケージ フライトの申請で更新されたパッケージを、アプリの Windows 10 のユーザーの一部に、段階的にロールアウトできます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 新しい申請を作成することなく、公開された申請のロールアウトの割合を変更する (または更新を停止する) ことができます。 詳しくなどを有効にして、パートナー センターで、段階的なパッケージのロールアウトを管理する方法については、[この記事](../publish/gradual-package-rollout.md)を参照してください。
 
 パッケージ フライトの申請の段階的なパッケージのロールアウトをプログラムによって有効化するには、Microsoft Store 申請 API のメソッドを使用して、次の手順に従います。
 
@@ -389,7 +389,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 | fallbackSubmissionId    |  string   |  段階的なロールアウトのパッケージを入手しないユーザーが受信する申請の ID。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*と*fallbackSubmissionId*の値は、パートナー センターで割り当てられているし、開発者が設定するものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
+> *PackageRolloutStatus*と*fallbackSubmissionId*値は、パートナー センターで割り当てられているし、開発者が設定するものではありません。 これらの値を要求本文に含めると、これらの値は無視されます。
 
 <span/>
 

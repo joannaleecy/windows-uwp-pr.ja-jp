@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: db2f1dbf680badd823438f89c23bde22f4c549b8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8750444"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784483"
 ---
 # <a name="standard-http-status-codes"></a>標準の HTTP 状態コード
  

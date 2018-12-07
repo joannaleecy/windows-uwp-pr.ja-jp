@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730983"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792474"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、デバイス、およびアプリ モデルの WindowsPhone Silverlight UWP からへの移植
 
@@ -22,9 +22,9 @@ ms.locfileid: "8730983"
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>アプリケーションのライフサイクル (プロセス ライフタイム管理)
 
-WindowsPhone Silverlight アプリには、保存、廃棄と後に再アクティブ化をサポートするためにアプリケーションの状態とビュー状態を復元するためのコードが含まれています。 ユニバーサル Windows プラットフォーム (UWP) アプリのアプリのライフ サイクルが共にと WindowsPhone Silverlight アプリでは、どちらも利用可能なリソースを最大限に高めることを目的と同じ設計しているために、ユーザーが選択した任意のアプリ、任意の時点でフォア グラウンドします。 コードは、新しいシステムに合理的な容易さで適合することがわかります。
+WindowsPhone Silverlight アプリには、保存、廃棄と後に再アクティブ化をサポートするためにアプリケーションの状態とビュー状態を復元するためのコードが含まれています。 ユニバーサル Windows プラットフォーム (UWP) アプリのアプリのライフ サイクルは共にと WindowsPhone Silverlight アプリでは、両方とも利用可能なリソースを最大限に高めることを目的と同じ設計しているために、ユーザーが選択した任意のアプリ、任意の時点でフォア グラウンドします。 コードは、新しいシステムに合理的な容易さで適合することがわかります。
 
-**注:**  WindowsPhone Silverlight アプリをハードウェア [**戻る**] ボタンを押すと自動的に終了します。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
+**注:**  WindowsPhone Silverlight アプリを終了するハードウェア [**戻る**] ボタンを押すと自動的にします。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
 
 "デバウンス時間" は、アプリが非アクティブになり、システムで中断イベントが発生するまでの時間です。 UWP アプリにはデバウンス時間がありません。このため、アプリが非アクティブになるとすぐに中断イベントが発生します。
 
@@ -32,9 +32,9 @@ WindowsPhone Silverlight アプリには、保存、廃棄と後に再アクテ�
 
 ## <a name="camera"></a>カメラ
 
-WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**、または**Microsoft.Phone.Tasks.CameraCaptureTask**クラスを使います。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 そのメソッドでは、ストレージ ファイルに写真のキャプチャでき、**マイク**および**web カメラ**は、[**デバイスの機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)をアプリ パッケージ マニフェストに設定する必要があります。
+WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**、または**Microsoft.Phone.Tasks.CameraCaptureTask**クラスを使用します。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 そのメソッドでは、ストレージ ファイルに写真をキャプチャすることができ、**マイク** **web カメラ**[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)をアプリのパッケージ マニフェストに設定する必要があります。
 
-別のオプションは、**マイク**と**web カメラ**の[**デバイスの機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)も必要になります[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)クラスです。
+別のオプションは、 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)クラスは、**マイク** **web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)も必要になります。
 
 レンズ アプリは、UWP アプリではサポートされません。
 
@@ -42,7 +42,7 @@ WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsof
 
 Windows 10 でアプリを対象とした変更について考えたりの方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
-**注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをしない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+**注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをいない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
 さまざまなデバイスに合わせてアプリの UI を調整するには、推奨される方法がいくつかあります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使います。 また、XAML マークアップで、有効ピクセル (以前の表示ピクセル) 単位のサイズを引き続き使います。これにより、UI がさまざまな解像度やスケール ファクターに対応します (「[表示/有効ピクセル、視聴距離、スケール ファクター](wpsl-to-uwp-porting-xaml-and-ui.md)」をご覧ください)。 Visual State Manager のアダプティブなトリガーとセッターを使って、UI をウィンドウ サイズに対応させることもできます (「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください)。
 
@@ -67,7 +67,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 ## <a name="device-status"></a>デバイスの状態
 
-WindowsPhone Silverlight アプリは、アプリが実行されているデバイスに関する情報を取得するのに**Microsoft.Phone.Info.DeviceStatus**クラスを使用することができます。 **Microsoft.Phone.Info** 名前空間に直接相当する UWP の要素はありませんが、ここでは **DeviceStatus** クラスのメンバーを呼び出す代わりに、UWP アプリで使うことができるプロパティとイベントがいくつかあります。
+WindowsPhone Silverlight アプリでは、 **Microsoft.Phone.Info.DeviceStatus**クラスを使用して、アプリが実行されているデバイスに関する情報を取得します。 **Microsoft.Phone.Info** 名前空間に直接相当する UWP の要素はありませんが、ここでは **DeviceStatus** クラスのメンバーを呼び出す代わりに、UWP アプリで使うことができるプロパティとイベントがいくつかあります。
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

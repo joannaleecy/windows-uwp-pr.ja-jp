@@ -1,16 +1,16 @@
 ---
 title: バーコード スキャナーの構成
-description: 目的の用途のバーコード スキャナーを構成する方法について説明します。
+description: 目的のアプリケーションのバーコード スキャナーを構成する方法について説明します。
 ms.date: 08/29/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f88b376dca80043f88260700bb7ef4168b3a445
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758222"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790503"
 ---
 # <a name="configure-a-barcode-scanner"></a>バーコード スキャナーの構成
 
@@ -28,6 +28,6 @@ Bluetooth で接続されているスキャナーで UWP バーコード スキ�
 
 使用してペアリングする必要があります、Bluetooth バーコード スキャナーを使用する前に**設定 > デバイス > Bluetooth とその他のデバイス > [Bluetooth またはその他のデバイス**します。
 
-開始および[Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)名前空間を使用して、ペアリング プロセスを制御することができます。  詳細については、「[デバイスのペアリング](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)」を参照してください。
+開始し、 [Windows.Devices.Enumeration](https://docs.microsoft.com/uwp/api/windows.devices.enumeration)名前空間を使用して、ペアリング プロセスを制御できます。  詳細については、「[デバイスのペアリング](https://docs.microsoft.com/windows/uwp/devices-sensors/pair-devices)」を参照してください。
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

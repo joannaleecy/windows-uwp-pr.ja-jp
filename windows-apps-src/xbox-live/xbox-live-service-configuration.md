@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
 ms.localizationpriority: medium
 ms.openlocfilehash: 78fe82bee8630286fbe43cd0e06e6016212b7db8
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8755922"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788358"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 

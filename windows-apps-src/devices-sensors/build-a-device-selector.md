@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731718"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788911"
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 

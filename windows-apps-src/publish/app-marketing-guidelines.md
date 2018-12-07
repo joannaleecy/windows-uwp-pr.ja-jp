@@ -1,19 +1,19 @@
 ---
 Description: Learn how to promote your apps and content in the Microsoft Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
-title: Microsoft Store アプリのガイドラインをマーケティング
+title: Microsoft Store のアプリのガイドラインをマーケティング
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 19b76966cf4909af460575882e2d2be7c82743a0
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747301"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790920"
 ---
-# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store アプリのガイドラインをマーケティング
+# <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store のアプリのガイドラインをマーケティング
 
 アプリや、Microsoft Store でのコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
 
@@ -43,13 +43,13 @@ Microsoft Store でアプリの登録情報をより多くのユーザーを集�
 
 *Microsoft マーク*[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) ] ページで説明されている*Microsoft バッジ*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
--   Microsoft Store でアプリまたはその他のコンテンツは利用可能なか、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部となります。
+-   Microsoft Store でアプリまたはその他のコンテンツは利用可能なか、 [Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463)の一部であります。
 
 -   パートナー センターで、アプリ開発者として登録している場合は、アプリ開発者契約の[「ライセンスを Microsoft マーク」](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)セクションに準拠します。
 
 -   パートナー センターで、アプリ開発者として登録されていない場合は、Microsoft にバッジを使うには、Microsoft ストア バッジのガイドラインに記載されて、世界中である、独占的、譲渡、無償のライセンスが付与します。 Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。 Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。
 
--   [Microsoft Store バッジのガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)に記載されているロゴ使用量の仕様に従ってください。
+-   [Microsoft ストア バッジのガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)に記載されているロゴの使用状況の仕様に従ってください。
 
 Microsoft は、Microsoft マークおよび関連する営業権の唯一の所有者であり、お客様による Microsoft マークの使用に関する営業権の唯一の受益者です。 Microsoft は、その独自の裁量により、このライセンスをいつでも取り消すことができます。
 

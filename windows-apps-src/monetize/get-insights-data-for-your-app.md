@@ -1,5 +1,5 @@
 ---
-description: アプリのインサイト データを取得するのに、Microsoft Store 分析 API の以下のメソッドを使用します。
+description: アプリのインサイト データを取得する、Microsoft Store 分析 API でこのメソッドを使います。
 title: インサイト データを取得します。
 ms.date: 07/31/2018
 ms.topic: article
@@ -7,15 +7,15 @@ keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, イ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1847f22f52eb066115b5681e745e74ec74f77f7d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731194"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790430"
 ---
 # <a name="get-insights-data"></a>インサイト データを取得します。
 
-特定の日付範囲やその他のオプション フィルターを使って取得数、状態、およびアプリの使用状況のメトリックを関連のインサイト データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。 この情報も[インサイト レポート](../publish/insights-report.md)では、パートナー センターで使用できます。
+特定の日付範囲やその他のオプション フィルター、取得、正常性, アプリの使用状況のメトリックに関連するインサイト データを取得するには、Microsoft Store 分析 API の以下のメソッドを使用します。 この情報も[インサイト レポート](../publish/insights-report.md)では、パートナー センターで使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -49,7 +49,7 @@ ms.locfileid: "8731194"
 | applicationId | string | インサイト データを取得するアプリの[ストア ID です](in-app-purchases-and-trials.md#store-ids)。 このパラメーターを指定しない場合、応答本文にはアカウントに登録されているすべてのアプリのインサイト データが含まれます。  |  必須ではない  |
 | startDate | date | 取得するインサイト データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  必須ではない  |
 | endDate | date | 取得するインサイト データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |
-| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 たとえば、 *filter = dataType eq '入手'* します。 <p/><p/>次のフィルター フィールドを指定することができます。<p/><ul><li><strong>入手</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul> | いいえ   |
+| filter | string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 各ステートメントには、応答本文からのフィールド名、および **eq** 演算子または **ne** 演算子と関連付けられる値が含まれており、**and** や **or** を使用してステートメントを組み合わせることができます。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。 たとえば、*フィルター = dataType eq '入手'* します。 <p/><p/>次のフィルター フィールドを指定することができます。<p/><ul><li><strong>入手</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul> | いいえ   |
 
 ### <a name="request-example"></a>要求の例
 
@@ -66,18 +66,18 @@ Authorization: Bearer <your access token>
 
 | 値      | 型   | 説明                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | array  | アプリのインサイト データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、後述の「[インサイトの値](#insight-values)を参照してください。                                                                                                                      |
+| Value      | array  | アプリのインサイト データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、以下の[洞察値](#insight-values)のセクションを参照してください。                                                                                                                      |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                 |
 
 
-### <a name="insight-values"></a>Insight 値
+### <a name="insight-values"></a>洞察値
 
 *Value* 配列の要素には、次の値が含まれます。
 
 | 値               | 型   | 説明                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | インサイト データを取得するアプリのストア ID です。     |
-| insightDate                | string | 特定のメトリックの変更わかりました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
+| insightDate                | string | 特定のメトリックの変更を特定しました日です。 この日付またはそれより前に、の週との比較メトリックの短縮を大幅に増加を検出しました週の終わりを表します。 |
 | データ型     | string | この情報を記述する一般的な分析領域を指定する次の文字列のいずれか。<p/><ul><li><strong>入手</strong></li><li><strong>正常性</strong></li><li><strong>使用状況</strong></li></ul>   |
 | insightDetail          | array | 1 つまたは複数[InsightDetail 値](#insightdetail-values)を表す現在インサイトの詳細情報。    |
 
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | DimensionValue              | string | 現在のディメンションに記載されているメトリックの値。 たとえば、 **DimensionName**が**イベントの種類**である場合は、**クラッシュ**や**ハング**が**DimensionValue**することがあります。   |
 | FactValue     | string | 情報を得ることが検出された日付のメトリックの絶対値。  |
 | Direction | string |  (**正**または**負**) の変更の方向です。   |
-| Date              | string |  現在の分析情報と現在のディメンションに関連する変更わかりました日です。   |
+| Date              | string |  現在の洞察または現在のディメンションに関連する変更を特定しました日です。   |
 
 ### <a name="response-example"></a>応答の例
 

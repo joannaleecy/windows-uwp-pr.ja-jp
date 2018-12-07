@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744280"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790384"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
 
@@ -34,7 +34,7 @@ ms.locfileid: "8744280"
 
 この問題を解決するには、管理者特権で開いたコマンド プロンプトで `Netsh int ipv4 reset` コマンドを実行して、コンピューターを再起動します。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗するには
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションが"AnyCPU"ビルド オプションでコンパイルされ、インストールに失敗するには
 
 この問題は、メインの実行可能ファイルまたは何らかの依存ファイルが、**Program Files** または **Windows\System32** のフォルダー階層に配置された場合に発生することがあります。
 
@@ -91,7 +91,7 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 この操作を行うアプリケーションを更新プログラムをインストールしていないユーザーに利用できなくなることに注意します。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するため、AppxManifest.xml ファイルに次のように変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 注意アプリをこれにより、更新プログラムをインストールしていないユーザーに利用できなくなります。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するには、次のように、AppxManifest.xml ファイルを変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -127,15 +127,15 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>不適切な PE 証明書 (番号: 0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>PE 証明書が正しくありません (番号: 0x800700C1)
 
 これは、パッケージには、破損している証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を次に示します。
 
-* 証明書の開始は画像の終了時にありません。  
+* 証明書のスタート画面は画像の終了時にありません。  
 
 * 証明書のサイズは正の値はありません。
 
-* 証明書のスタート画面のない後、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造体、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造。
+* 証明書のスタート画面のない後、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造体、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造体。
 
 * 証明書のポインターがない、正しく WIN_CERTIFICATE 構造体に配置されます。
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bb528f139e9db97f886f57fb98461ce15e77a42
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758151"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8784139"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
@@ -36,7 +36,7 @@ ms.locfileid: "8758151"
 
 [GET](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
 
-&nbsp;&nbsp;タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動したユーザーのすべての履歴は返されません。
+&nbsp;&nbsp;タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。
  
 <a id="ID4EKC"></a>
 

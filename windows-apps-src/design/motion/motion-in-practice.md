@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735100"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791270"
 ---
 # <a name="bringing-it-together"></a>まとめる
 
@@ -80,12 +80,12 @@ ms.locfileid: "8735100"
 
 ## <a name="implicit-animations"></a>暗黙的なアニメーション
 
-> 暗黙的なアニメーションに必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
+> 暗黙的なアニメーションに必要な Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
 
 
-暗黙的なアニメーションは、パラメーターの変更時に新旧の値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。
+暗黙的なアニメーションは、パラメーターの変更時に古いと新しい値の間で自動的に補間によって Fluent モーションを実現するための簡単な方法です。
 
-暗黙的に、次のプロパティへの変更をアニメーション化することができます。
+暗黙的に次のプロパティを変更するをアニメーション化することができます。
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -96,7 +96,7 @@ ms.locfileid: "8735100"
 - [境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)
   - **Background**
 
-暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_切り替え_プロパティがあります。 プロパティをアニメーション化するには対応する_切り替え効果_のプロパティに切り替えタイプを割り当てます。 _切り替え効果_のプロパティとごとに使用する切り替え効果の種類を示します。
+暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_移行_プロパティがあります。 プロパティをアニメーション化するには、対応するの_切り替え効果_プロパティに遷移タイプを割り当てます。 次の表では、_遷移_プロパティとごとに使用する切り替えの種類を示します。
 
 | アニメーション化されたプロパティ | 切り替え効果のプロパティ | 暗黙的な切り替えの種類 |
 | -- | -- | -- |

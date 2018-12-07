@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, ゲーム, uwp, windows 10, Xbox one, パートナー センター, Xbox Live のセットアップ
 ms.openlocfilehash: 9a846a4b7f0069216e92eb123b33d9fc0f7f67c9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8751167"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783568"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>パートナー センターで Xbox Live のセットアップを構成します。
 

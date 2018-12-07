@@ -10,11 +10,11 @@ keywords: Windows 10, UWP, Windows 情報保護, 企業データ, エンター�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: b65da20c8931f74800f817ecba0139b14d0447ad
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749402"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788518"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
 
@@ -61,7 +61,7 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
 アプリを対応させる準備ができたら、以下のガイドのいずれかをご覧ください。
 
-**C# を使用して構築したユニバーサル Windows プラットフォーム (UWP) アプリの場合**
+**ユニバーサル Windows プラットフォーム (UWP) アプリは、c# を使用してビルドします。**
 
 [Windows 情報保護 (WIP) 開発者向けガイド](wip-dev-guide.md)。
 
