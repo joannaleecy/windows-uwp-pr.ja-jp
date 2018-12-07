@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a8679c96c86754a8b929b44b5bd4eb402d851e90
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8334543"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752750"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
 1 つまたは複数のユーザーのリッチ プレゼンスの書式設定されたとローカライズされた文字列です。 
@@ -21,11 +21,11 @@ ms.locfileid: "8334543"
  
 ## <a name="activityrecord"></a>ActivityRecord
  
-ActivityRecord オブジェクトには、次の仕様があります。
+ActivityRecord オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| richPresence| string| フォーマットされて、ローカライズされたリッチ プレゼンス文字列。| 
+| richPresence| string| フォーマットされ、ローカライズされたリッチ プレゼンス文字列。| 
 | メディア| MediaRecord| ユーザーの視聴やをリッスンしています。| 
   
 <a id="ID4ETB"></a>

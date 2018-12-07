@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d25a48caadb908e30e6e1897c19178e2b837e1
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457285"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8738540"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>クリエーターズ プログラムの Xbox Live サービス構成
 
@@ -23,13 +23,13 @@ ms.locfileid: "8457285"
 
 また、これを実現するためには、Xbox Live でランキングを認識できるよう、一度限りの構成を実行する必要があります。 たとえば、値を昇順で並び替えるか、降順で並び替えるか、データのどの部分を並び替えるかなどを構成します。
 
-この構成は Xbox Live クリエーターズ プログラムの[パートナー センター](https://partner.microsoft.com/dashboard)で発生し、セットアップを取得する方法については[Xbox Live の概要](get-started-with-xbox-live-creators.md)を読むことができます。
+この構成は Xbox Live クリエーターズ プログラムの[パートナー センター](https://partner.microsoft.com/dashboard)で発生し、 [Xbox Live の概要](get-started-with-xbox-live-creators.md)をセットアップする方法についてを読み取ることができます。
 
 ## <a name="get-your-ids"></a>ID を取得する
 
 Xbox Live サービスを有効にするには、開発環境とタイトルを構成するためのいくつかの ID を取得する必要があります。 これらの ID は、Xbox Live サービスの構成を更新することによって取得できます。
 
-パートナー センターでタイトルがいない場合、ガイダンスを[作成およびテストを新しいクリエーターズ タイトル](create-and-test-a-new-creators-title.md)をご覧ください。
+パートナー センターでタイトルがいない場合、ガイダンスを[作成およびテスト新しいクリエーターズ タイトル](create-and-test-a-new-creators-title.md)をご覧ください。
 
 ### <a name="critical-ids"></a>重要な ID
 

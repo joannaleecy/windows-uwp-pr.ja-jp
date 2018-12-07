@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ee9c97a01ce9edc945dd7b83cc13328c8668631
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705060"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8750335"
 ---
 # <a name="thumbnailtype-enumeration"></a>ThumbnailType 列挙型
 ThumbnailType 列挙型をについて説明します。 
@@ -24,6 +24,6 @@ ThumbnailType 列挙型をについて説明します。
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
 | None| サムネイルの種類が指定されていません。 これは、ほとんどの場合、無効な値です。| 
-| 小| 小さなサムネイルを指定します。 小さな 424 × 高さ 208 ピクセル幅でです。| 
-| 大| 大きなサムネイルを指定します。 大 856 × 高さ 424 ピクセル幅には| 
+| 小| 小さなサムネイルを指定します。 小さな 424 × 高さ 208 ピクセル幅では、します。| 
+| 大| 大きなサムネイルを指定します。 大は、424 ピクセルの幅、高さ 856 ピクセルです。| 
   

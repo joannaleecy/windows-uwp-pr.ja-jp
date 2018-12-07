@@ -6,11 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: dc081925e1a3bd671c01794dca5e432e957a7809
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8322805"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8744611"
 ---
 # <a name="partner-center-service-configuration"></a>パートナー センター サービスの構成
 
@@ -19,7 +19,7 @@ ms.locfileid: "8322805"
 > [!IMPORTANT]
 > これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
-設定ページにアクセスするために、ゲームを Xbox Live のフル アクセスに対して有効にする必要があります。
+ゲームは、設定ページにアクセスするために Xbox Live のフル アクセス用に有効にする必要があります。
 
 Xbox Live 構成にアクセスするページでは、[パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。
 

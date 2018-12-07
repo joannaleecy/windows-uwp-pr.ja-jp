@@ -8,26 +8,26 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8334366"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748797"
 ---
 # <a name="reward-json"></a>Reward (JSON)
-実績に関連付けられているリワードです。
+実績に関連付けられたリワードです。
 <a id="ID4EN"></a>
 
 
 ## <a name="reward"></a>リワード
 
-リワード オブジェクトには、次の仕様があります。
+リワード オブジェクトには、次仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | name| string| リワードのユーザーに表示される名前です。|
 | description| string| ユーザーに表示されるリワードの説明です。|
-| value| string| リワードの値。|
+| value| string| リワードの値です。|
 | type| RewardType 列挙型| リワードの種類: <ul><li>無効 (0): 不明なおよびサポートされていないリワードの種類が構成されています。</li><li>(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</li><li>inApp (2): リワードが定義されているし、タイトルによって配信します。</li><li>アート (3): リワードは、デジタル資産です。</li></ul> | 
 | valueType| ProgressValueDataType 列挙型| 値の種類です。 詳細については、[要件 (JSON)](json-requirement.md)を参照してください。|
 

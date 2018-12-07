@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5451c59ab608105677a657ade41154bd2b622f5e
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8327059"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748325"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
 現在の認証されたユーザーの設定を返します。 
@@ -21,14 +21,14 @@ ms.locfileid: "8327059"
  
 ## <a name="usersettings"></a>UserSettings
  
-UserSettings オブジェクトには、次の仕様があります。
+UserSettings オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビット符号なし整数| 設定の識別子です。| 
-| ソース| 32 ビット符号なし整数| 設定のソースを表します。 | 
-| titleId| 32 ビット符号なし整数| 設定に関連付けられているタイトルの識別子。 | 
-| value| 8 ビット符号なし整数の配列| 設定の値を表します。 クライアント設定を取得してデータを読み取ることができるため表現の書式設定する必要がありますについて説明します。 | 
+| id| 32 ビットの符号なし整数| 設定の識別子です。| 
+| ソース| 32 ビットの符号なし整数| 設定のソースを表します。 | 
+| titleId| 32 ビットの符号なし整数| 設定に関連付けられているタイトルの識別子です。 | 
+| value| 8 ビットの符号なし整数の配列| 設定の値を表します。 クライアント設定を取得してデータを読み取ることができるため表現の書式設定する必要がありますについて説明します。 | 
   
 <a id="ID4EJC"></a>
 

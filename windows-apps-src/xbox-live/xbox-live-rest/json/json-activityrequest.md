@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 791a566d278b92aeb34ab36d38719b44e9cc6c8f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8345410"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8729298"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
 1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。 
@@ -21,12 +21,12 @@ ms.locfileid: "8345410"
  
 ## <a name="activityrequest"></a>ActivityRequest
  
-ActivityRequest オブジェクトには、次の仕様があります。
+ActivityRequest オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | richPresence| [RichPresenceRequest](json-richpresencerequest.md)| ために使用するリッチ プレゼンス文字列のフレンドリ名。| 
-| メディア| MediaRequest| どのようなユーザーのメディア情報が視聴またはをリッスンします。| 
+| メディア| MediaRequest| どのようなユーザーのメディアの情報が視聴またはをリッスンします。| 
   
 <a id="ID4EVB"></a>
 

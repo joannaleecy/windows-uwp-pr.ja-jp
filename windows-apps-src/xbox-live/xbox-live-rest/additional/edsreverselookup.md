@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d535dec8a95eba4d486bfc6946e187e2da66ae49
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8331694"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751998"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  
@@ -27,7 +27,7 @@ ms.locfileid: "8331694"
  
 逆引き参照では、4 つのパラメーターを渡すことが必要です。 
    * `idType=ScopedMediaId`
-   * `ids=` プロバイダー メディア ID
+   * `ids=` プロバイダーのメディア ID
    * `ScopeIdType=Title`
    * `ScopeId=` プロバイダーのタイトル ID
  
@@ -40,7 +40,7 @@ GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaIt
 ```
 
  
-   * 応答には、以前から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
+   * 以前の応答から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B

@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f2e5496c9aab2629591a121850685e7f5a1b2fe
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8340999"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732116"
 ---
 # <a name="xbox-live-sandboxes-introduction"></a>Xbox Live のサンドボックスの概要
 
-記事では、 [Xbox Live サービス構成](xbox-live-service-configuration-creators.md)、[パートナー センター](https://partner.microsoft.com/dashboard)で、タイトルに関する情報を構成する必要があります説明しました。 この情報には、統計、ランキング、ローカライズなどが含まれます。 Xbox Live サービス構成への変更は、パートナー センターから開発サンド ボックスに前に公開する変更が Xbox Live の残りの部分が取得し、タイトルからアクセスでく必要があります。
+記事では、 [Xbox Live サービス構成](xbox-live-service-configuration-creators.md)、[パートナー センター](https://partner.microsoft.com/dashboard)で、タイトルに関する情報を構成する必要があります説明しました。 この情報には、統計、ランキング、ローカライズなどが含まれます。 Xbox Live サービス構成への変更は、パートナー センターから開発サンド ボックスに前に公開する変更アレイ Xbox Live の残りの部分によって取得し、タイトルでアクセスできる必要があります。
 
 開発サンドボックスでは、分離された環境でタイトルへの変更に取り組むことができます。 サンドボックスには、いくつかの利点があります。
 
@@ -108,4 +108,4 @@ Xbox デベロッパー ポータルを使用して、本体でサンドボッ�
 
 ### <a name="sign-in-with-the-xbox-app"></a>Xbox アプリにサインイン
 
-開発用に、サインインしている Xbox Live に、テスト対象アカウントを使用することを確認することが、タイトルの適切なサンド ボックスを使用して PC を切り替えることです。 これは、 [Xbox Live のアプリ](https://www.xbox.com/en-US/xbox-app)に署名することで実行できます。 開発環境が起動すると、目的のサンド ボックスの Xbox アプリを使用して、その他の Xbox Live として同じ制約を使用してサインイン ユーザー サービス サンド ボックス内で実行されています。 これにより、サンド ボックスの有効なアカウントを使用していることを確認すると便利です。
+開発用に、サインインしている Xbox Live に、テスト対象アカウントを使用することを確認することが、タイトルの適切なサンド ボックスを使用して PC を切り替えることです。 これは、 [Xbox Live のアプリ](https://www.xbox.com/en-US/xbox-app)に署名することによって実行できます。 開発環境が起動すると、目的のサンド ボックスの Xbox アプリを使用して、その他の Xbox Live として同じ制約を使用してサインイン ユーザー サービス サンド ボックス内で実行されています。 これにより、サンド ボックスの有効なアカウントを使用していることを確認すると便利です。

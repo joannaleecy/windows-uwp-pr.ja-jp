@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f1da635dc927a9222076bb697afb626077249320
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349864"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8738884"
 ---
 # <a name="gamecliptype-enumeration"></a>GameClipType 列挙型
 GameClipTypes 列挙をについて説明します。 
@@ -21,7 +21,7 @@ GameClipTypes 列挙をについて説明します。
  
 ## <a name="gamecliptypes"></a>GameClipTypes
  
-これは、複数の値は、考えられるため、フラグ列挙体です。
+これは、複数の値は、考えられるため、フラグの列挙体です。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 

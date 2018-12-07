@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348796"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8742360"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
 指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
@@ -84,8 +84,8 @@ gameserverds.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| 返されるバリエーションのローカルです。| 
-| maxVariants| 返されるバリアントの最大数。| 
+| locale| 返すバリエーションのローカルです。| 
+| maxVariants| 返すバリエーションの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
@@ -111,7 +111,7 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すようにヘッダーが含まれます。
+応答は常に、次の表に示すようにヘッダーを含めます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -139,7 +139,7 @@ gameserverds.xboxlive.com
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | バリエーション| バリアントの配列です。| 
-| バリエーション Id| バリアントの Id です。| 
+| バリエーション| バリアントの Id です。| 
 | name| バリアントの名前です。| 
 | isPublisher|  | 
 | ランク|  | 
@@ -149,12 +149,12 @@ gameserverds.xboxlive.com
 | schemaContent| スキーマの内容| 
 | name| スキーマの名前| 
 | gsiSets| GSI セットの配列です。| 
-| minRequiredPlayers| バリアントのプレイヤーの最小数。| 
+| minRequiredPlayers| バリアントのプレイヤーの最小数です。| 
 | maxAllowedPlayers| バリアントのプレイヤーの最大数。| 
 | は| GSI セットの Id です。| 
 | gsiSetName| GSI セットの名前です。| 
 | selectionOrder|  | 
-| variantSchemaId| セットの GSI で使われる varaint スキーマの id です。| 
+| variantSchemaId| セット、GSI で使われる varaint スキーマの id です。| 
  
 <a id="ID4EYBAC"></a>
 

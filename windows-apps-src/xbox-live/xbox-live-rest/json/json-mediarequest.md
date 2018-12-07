@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc878b5d759d7cbaefd92eedadfe38702c56baf
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8337785"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8756219"
 ---
 # <a name="mediarequest-json"></a>MediaRequest (JSON)
  
@@ -21,12 +21,12 @@ ms.locfileid: "8337785"
  
 ## <a name="mediarequest"></a>MediaRequest
  
-MediaRequest オブジェクトには、次の仕様があります。
+MediaRequest オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | id| string| Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。| 
-| idType| string| <b>Id</b>を解釈する方法。設定可能な値には、"bing"と「プロバイダー」が含まれます。| 
+| idType| string| <b>Id</b>を解釈する方法。使用可能な値には、"bing"および「プロバイダー」が含まれます。| 
   
 <a id="ID4E2B"></a>
 

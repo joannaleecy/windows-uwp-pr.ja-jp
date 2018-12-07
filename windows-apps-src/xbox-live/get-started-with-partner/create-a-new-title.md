@@ -1,17 +1,17 @@
 ---
 title: 新しいタイトルを作成する
-description: パートナー センターを使用して Xbox Live の新しいタイトルを作成する方法について説明します。
+description: パートナー センターを使用して、Xbox Live の新しいタイトルを作成する方法について説明します。
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa2447a2044bec9b2013b30c05e45342b763fc3
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8342347"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8739254"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>Xbox Live 用の新しいタイトルを作成する
 
@@ -22,11 +22,11 @@ ms.locfileid: "8342347"
 この記事では、新しいタイトルをセットアップする手順について説明します。前提条件は以下のとおりです。
 
 1. ユニバーサル Windows プラットフォーム (UWP) のタイトルを開発している。  UWP タイトルは、Xbox One、Windows 10 デスクトップ PC、およびモバイルで動作するタイトルです。
-2. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを構成しています。
+2. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを構成します。
 3. カスタム ゲーム エンジンを備えた Visual Studio、または Unity のいずれかを使用している。
 4. 開発用コンピュータは Windows 10 を実行している。
 
-上記が true に、この記事の残りの部分では、新しいプロジェクトの作成、および Xbox Live サインイン コードの記述されテストされたパートナー センターで構成されているタイトルを取得するために必要なすべての手順について説明します。
+上記が true に、この記事の残りの部分は、新しいプロジェクトの作成、および Xbox Live サインイン コードの記述されテストされたパートナー センターで構成されているタイトルを取得するために必要なすべての手順について説明します。
 
 > [!NOTE]
 > Xbox Live クリエーターズ プログラムに参加している場合は、上記の前提条件が適用されますので、この記事に従ってください。
@@ -36,7 +36,7 @@ ms.locfileid: "8342347"
 Xbox Live 機能が動作する前提条件として、[パートナー センター](https://partner.microsoft.com/dashboard)で作成した Xbox Live 対応のタイトルが必要です。
 
 ### <a name="create-a-microsoft-account"></a>Microsoft アカウントを作成する
-Microsoft アカウント (MSA とも呼ばれます) があるない場合は一度に 1 つを最初に作成する必要があります。[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
+Microsoft アカウント (MSA とも呼ばれます) があるない場合は、一度に 1 つを最初に作成する必要があります。[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
 
 ### <a name="register-as-an-app-developer"></a>アプリ開発者として登録する
 パートナー センターで新しいタイトルを作成することが前に、アプリ開発者として登録する必要があります。

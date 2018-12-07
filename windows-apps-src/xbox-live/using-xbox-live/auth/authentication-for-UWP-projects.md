@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
 ms.openlocfilehash: d9872ab1fef773cb3f3dadfaea20a55dbe43f0de
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8347063"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748854"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP プロジェクトの認証
 

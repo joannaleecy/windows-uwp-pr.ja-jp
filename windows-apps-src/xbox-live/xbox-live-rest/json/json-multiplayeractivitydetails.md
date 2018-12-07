@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 188bcebb8d6bff879f30dcc83d7039fbcbfae0b2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8334411"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751205"
 ---
 # <a name="multiplayeractivitydetails-json"></a>MultiplayerActivityDetails (JSON)
 **Microsoft.Xbox.Services.Multiplayer.MultiplayerActivityDetails**を表す JSON オブジェクト。 
@@ -25,19 +25,19 @@ ms.locfileid: "8334411"
 
   
  
-MultiplayerActivityDetails JSON オブジェクトには、次の仕様があります。
+MultiplayerActivityDetails JSON オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | --- | 
-| SessionReference| MultiplayerSessionReference| セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクト。| 
-| ハンドル id を使用| 64 ビットの符号なし整数| アクティビティに対応するハンドル ID です。| 
-| TitleId| 32 ビット符号なし整数| タイトル ID は、アクティビティに参加するために起動する必要があります。| 
+| SessionReference| MultiplayerSessionReference| セッションの識別情報を表す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference</b>オブジェクトを返します。| 
+| ハンドル id を使用| 64 ビットの符号なし整数| アクティビティに対応するハンドル ID。| 
+| TitleId| 32 ビットの符号なし整数| タイトル ID は、アクティビティに参加するために起動する必要があります。| 
 | 表示| MultiplayerSessionVisibility| セッションの可視性の状態を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionVisibility</b>値。| 
-| による| MultiplayerSessionJoinRestriction| セッションへの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。 表示のフィールドが「開く」に設定されている場合、この制限が適用されます。| 
-| クローズ済み| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
+| による| MultiplayerSessionJoinRestriction| セッションの参加制限を示す<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionJoinRestriction</b>値。 表示のフィールドが「開く」に設定されている場合、この制限が適用されます。| 
+| 終了| ブール値| セッションが一時的に閉じている場合、参加するため、false それ以外の場合は true。| 
 | OwnerXboxUserId| 64 ビットの符号なし整数| アクティビティを所有しているメンバーの Xbox ユーザー ID。| 
-| MaxMembersCount| 32 ビット符号なし整数| スロットの合計数。| 
-| MembersCount| 32 ビット符号なし整数| スロットを占有の数。| 
+| MaxMembersCount| 32 ビットの符号なし整数| スロットの合計数。| 
+| MembersCount| 32 ビットの符号なし整数| スロットを占有の数。| 
   
 <a id="ID4E3D"></a>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: c6e8a6ebe716f1e062940066184e9f734441371b
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8328825"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8742933"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植
 
@@ -380,7 +380,7 @@ Xbox Live SDK で、**CheckPrivilegeAsync()** と同等のものはまだ利用�
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>Xbox One および PC UWP の間のマルチプレイヤー クロスプレイのサポート
 
-XDP で新しいセッション テンプレートの要件に加えて ([を設定しパートナー センターおよび XDP でプロジェクトを構成する](#_Setting_up_and)を参照)、クロス プレイのセッションへの参加機能に新しい制限が付属します。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
+XDP で新しいセッション テンプレートの要件に加えて ([を設定しパートナー センターおよび XDP でプロジェクトを構成する](#_Setting_up_and)を参照)、クロス プレイ セッションへの参加機能に新しい制限が加わっています。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
 
 また、Windows 10 でのマルチプレイヤーに必要な **userAuthorizationStyle** 機能のために、参加と読み取りの制限は既定で "Local" になります。
 

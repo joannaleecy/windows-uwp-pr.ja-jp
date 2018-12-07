@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8686070"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8757091"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
 スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
@@ -26,7 +26,7 @@ ms.locfileid: "8686070"
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| xuid| GUID| Xbox ユーザー ID (XUID) サービス構成にアクセスする対象ユーザーのします。| 
+| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのします。| 
 | scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。| 
   
 <a id="ID4E4B"></a>

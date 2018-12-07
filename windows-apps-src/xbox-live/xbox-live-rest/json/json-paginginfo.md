@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e773d73499e79fe23f736a536027932ca1a07b4
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8341397"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8752759"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
 データのページで返される結果のページング情報が含まれています。 
@@ -23,7 +23,7 @@ ms.locfileid: "8341397"
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| continuationToken| string| 結果の次のページにアクセスするために使用する不透明な継続トークンです。 最大 32 文字以下です。呼び出し元は、次のコレクション内の項目のセットを取得するために、 <b>continuationToken</b>クエリ パラメーターでは、この値を指定できます。 このプロパティが<b>null</b>の場合、項目がない追加コレクション内です。 このプロパティは、必要な場合でも、 <b>skipItems</b>でページングされるコレクションが提供されます。| 
+| continuationToken| string| 結果の次のページにアクセスするために使用する不透明な継続トークンです。 最大 32 文字以下です。呼び出し元では、次のコレクション内の項目のセットを取得するために、 <b>continuationToken</b>クエリ パラメーターでは、この値を指定できます。 このプロパティが<b>null</b>の場合、項目がない追加コレクション内します。 このプロパティは、必要な場合でも、 <b>skipItems</b>でページングされるコレクションが提供されます。| 
 | totalItems| 32 ビット符号付き整数| コレクション内の項目の合計数。 これが指定されていない場合は、サービスは、コレクションのサイズにリアルタイムで表示を提供することはできません。| 
   
 <a id="ID4E4B"></a>

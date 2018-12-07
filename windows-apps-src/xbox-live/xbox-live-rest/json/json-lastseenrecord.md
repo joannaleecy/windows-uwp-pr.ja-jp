@@ -8,26 +8,26 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e06de31cabaedb68ed57d3d4f2ff30614ceb6317
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8333120"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8735388"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
-利用できるは、ユーザーには、有効な DeviceRecord があるないと、ユーザーが最後システムに表示されていた場合について説明します。 
+ユーザーには、有効な DeviceRecord があるないときに使用できる、ユーザーが最後、システムに表示されていた場合について説明します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="lastseenrecord"></a>LastSeenRecord
  
-LastSeenRecord オブジェクトには、次の仕様があります。
+LastSeenRecord オブジェクトには、次仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| deviceType| string| ユーザーが過去の現在のデバイスの種類。| 
-| titleId| 32 ビット符号なし整数| ユーザーが過去の現在のタイトルの識別子です。| 
-| titleName| string| ユーザーが過去の現在のタイトルの名前です。| 
+| deviceType| string| ユーザーが最後の存在をでしたデバイスの種類。| 
+| titleId| 32 ビットの符号なし整数| ユーザーが最後の存在をでしたタイトルの識別子です。| 
+| titleName| string| ユーザーが最後の存在をでしたタイトルの名前です。| 
 | タイムスタンプ| DateTime| Utc 形式のユーザーが過去の存在を示すタイムスタンプ。| 
   
 <a id="ID4EHC"></a>

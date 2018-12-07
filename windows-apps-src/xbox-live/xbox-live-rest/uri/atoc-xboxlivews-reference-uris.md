@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cd86a6147c047a2925cdb931d9735712a4032adb
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457522"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8754436"
 ---
 # <a name="universal-resource-identifier-uri-reference"></a>ユニバーサル リソース識別子 (URI) リファレンス
 
-このセクションでは、Uniform Resource Identifier (Uri) および Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Uniform Resource Identifier (Uri) と Xbox Live サービスで使用されるハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
 
 <a id="ID4EAB"></a>
 
@@ -29,7 +29,7 @@ ms.locfileid: "8457522"
 
 [ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス](gsdk/atoc-gsdk-uri-reference.md)
 
-&nbsp;&nbsp;Uri のクライアントが、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
+&nbsp;&nbsp;Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。
 
 [ゲーム DVR URI](dvr/atoc-reference-dvr.md)
 
@@ -49,11 +49,11 @@ ms.locfileid: "8457522"
 
 [マーケットプレース URI](marketplace/atoc-reference-marketplace.md)
 
-&nbsp;&nbsp;Uri と Xbox marketplace サービスの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri と Xbox の市場のサービスの HTTP メソッドが関連付けられています。
 
 [マッチメイキング URI](matchtickets/atoc-reference-matchtickets.md)
 
-&nbsp;&nbsp;マッチメイ キングに関連付けられている HTTP/REST 方法と Uri。
+&nbsp;&nbsp;Uri とマッチメイ キングに関連付けられている HTTP/REST メソッドです。
 
 [People URI](people/atoc-reference-people.md)
 
@@ -61,7 +61,7 @@ ms.locfileid: "8457522"
 
 [プレゼンス URI](presence/atoc-reference-presence.md)
 
-&nbsp;&nbsp;プレゼンスに関連する HTTP メソッドと Uri。
+&nbsp;&nbsp;Uri とプレゼンスの関連する HTTP メソッドです。
 
 [プライバシー URI](privacy/atoc-reference-privacyv2.md)
 
@@ -93,7 +93,7 @@ ms.locfileid: "8457522"
 
 [ユーザー URI](users/atoc-reference-users.md)
 
-&nbsp;&nbsp;Uri とユーザーの HTTP メソッドが関連付けられています。
+&nbsp;&nbsp;Uri とユーザーの関連付けの HTTP メソッドです。
 
 [ユーザー統計 URI](userstats/atoc-reference-userstats.md)
 

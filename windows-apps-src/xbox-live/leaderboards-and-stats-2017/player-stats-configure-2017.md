@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ea2baf4bc27e6d1cfd5beb9ef0386acda72a39d2
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8336452"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8734682"
 ---
-# <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>データ プラットフォーム 2017 でパートナー センターで注目の統計やランキングの構成
+# <a name="configuring-featured-stats-or-leaderboards-in-partner-center-with-data-platform-2017"></a>データ プラットフォーム 2017 をパートナー センターで注目の統計やランキングの構成
 
 データ プラットフォーム 2017 では、統計を構成する必要があるのは次の 2 つの場合のみです。
 

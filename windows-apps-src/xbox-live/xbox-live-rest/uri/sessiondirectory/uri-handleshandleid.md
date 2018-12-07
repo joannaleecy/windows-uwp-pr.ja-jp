@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8349353"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8732740"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
-識別子により指定されたセッション ハンドルを削除または取得の操作をサポートしています。 
+識別子により指定されたセッション ハンドルの削除と取得の操作をサポートしています。 
 
 > [!NOTE] 
 > この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  

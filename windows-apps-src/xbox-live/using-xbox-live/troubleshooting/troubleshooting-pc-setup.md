@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: c1f055a49fe34be35335e50dc8b1efbfb7b9b922
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8344106"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8730439"
 ---
 # <a name="troubleshooting-xbox-live-setup-on-windows-pc"></a>Windows PC での Xbox Live セットアップのトラブルシューティング
 
@@ -29,6 +29,6 @@ Windows 10 の PC で、コンピューターは、次の手順を使用して�
 1. ビルド対象のプラットフォームを、"Win32" または "x64" に変更します。
 1. ソリューションを右クリックして、すべてのものを再ビルドします。
 1. デバッガーでアプリを起動します。
-1. サインイン[Xbox デベロッパー ポータル](https://xdp.xboxlive.com)で、作成した開発アカウントまたは[パートナー センター](https://partner.microsoft.com/dashboard)で承認されて製品版の開発者アカウントを使用します。
+1. サインイン[Xbox デベロッパー ポータル](https://xdp.xboxlive.com)で、作成した開発アカウントまたは[パートナー センター](https://partner.microsoft.com/dashboard)で承認されて小売開発者アカウントを使用します。
 1. Xbox Live の情報にアクセスする権限をアプリに付与します。
 1. アプリが情報を取得できること、およびゲーマータグが表示されることを確認します。

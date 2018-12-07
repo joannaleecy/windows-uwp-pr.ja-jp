@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e7b6990917437c22dd4d9282492e2a0eab37893b
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705096"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8745244"
 ---
 # <a name="handleshandleidsession"></a>/handles/{handleId}/session
 PUT および GET 操作セッションでは、ハンドルを逆参照を使用してをサポートしています。 
@@ -23,7 +23,7 @@ PUT および GET 操作セッションでは、ハンドルを逆参照を使�
  
 
 > [!NOTE] 
-> この URI は、現在 Xbox One 本体とサービスの識別子を使用してサーバーによって外部的にもアクセスのみです。  
+> この URI は、現在 Xbox One 本体とサーバーのサービスの識別子を使用してアクセスできる外部のみです。  
 
  
 <a id="ID4ES"></a>
@@ -47,11 +47,11 @@ sessiondirectory.xboxlive.com
 
 [GET (/handles/{handleId}/session)](uri-handleshandleidsessionget.md)
 
-&nbsp;&nbsp;指定したハンドル識別子のセッション オブジェクトを取得します。 
+&nbsp;&nbsp;指定したハンドル識別子セッション オブジェクトを取得します。 
 
 [PUT (/handles/{handle-id}/session)](uri-handleshandleidsessionput.md)
 
-&nbsp;&nbsp;作成またはハンドルを逆参照により、セッションを更新します。
+&nbsp;&nbsp;作成またはハンドルを逆参照によって、セッションを更新します。
  
 <a id="ID4E6B"></a>
 

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c5be8f144f9c39076ba880223af08a30404c759
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705093"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8746250"
 ---
 # <a name="get-mediamarketplaceiddetails"></a>GET (/media/{marketplaceId}/details)
-返しますプランの詳細とメタデータについての 1 つまたは複数の項目です。
+返します提供の詳細とメタデータについての 1 つまたは複数の項目です。
 これらの Uri のドメインが`eds.xboxlive.com`します。
 
   * [注釈](#ID4EV)
@@ -28,7 +28,7 @@ ms.locfileid: "8705093"
 
 ## <a name="remarks"></a>注釈
 
-**SandboxId**はこれで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
 
 <a id="ID4ECB"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8705093"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。|
+| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。|
 
 <a id="ID4ERB"></a>
 
@@ -46,11 +46,11 @@ ms.locfileid: "8705093"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- | --- | --- | --- |
-| id| string[]| 必須。 すべての詳細が返されます (最大 10) の Id。 いずれかの ID をメモには URL を配置する不正な文字が含まれています (ProviderContentId 種類 Id は通常、完全な Url 自体と無効な文字を含めるため) <b>URL エンコード エンターテイメント探索サービス (EDS) に正常に送信する必要があります</b>。 これだけできる単一の値を ID の種類が ProviderContentId である場合にも注意してください。 1 つ以上の ProviderContentId を使用する場合は、複数の呼び出しを eds でなければなりません。|
-| IdType| string| 省略可能。 'Id' のパラメーターに渡された Id の種類です。 有効な値は次のとおりです。 <ul><li><b>正規</b>(Bing/Marketplace) </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>(たとえば、1 ~ 32 kb WMA 音楽ファイル) </li><li><b>AMG</b></li><li><b>MediaNet</b>(事前 MusiWave) </li><li><b>XboxHexTitle</b>(本体でプレイしているアプリ) </li></ul>|
-| DesiredMediaItemTypes| string| <b>MediaGroup が渡されないかどうかが必要です。 どちらも渡すことはできません。</b> メディア項目の Id の種類。 すべて指定 Id は、同じ型を共有する必要があります。 複数の種類が必要な場合は、上記の IdType で説明したよう使用可能なすべての型に渡します。 この値は、既定では"Unknown"が存在しない場合ができない可能性があるすべての ID の種類の valied します。 |
-| MediaGroup| string| <b>DesiredMediaItemTypes が渡されないかどうかが必要です。 どちらも渡すことはできません。</b>|
-| ConditionSets| string| <b>省略可能です</b>。 クライアントは、条件セットは、このクエリ文字列を使用して指定キー/値ペアに基づく<b>可用性</b>の排除を要求できます。 これらは、使用可能状況の条件セットに一致するように使用されます。 条件セットと一致するために使用できるキーの一覧は次のとおりです。 <ul><li><b>プラットフォーム</b>: 製品が、構築され、再生されることができます。</li><li><b>サブスクリプション</b>: この可用性 (Gold または Silver) のサポートされているサブスクリプションの一覧。</li><li><b>EntitlementIds</b>: ユーザーがゲームを購入後に追跡します。</li></ul> | 
+| id| string[]| 必須。 すべての詳細が返されます (最大 10) の Id。 注、いずれかの ID を URL に配置する不正な文字が含まれています (Id は通常、ProviderContentId 型は、完全な Url 自体と、無効な文字を含めるため) <b>URL エンコード エンターテイメント探索サービス (EDS) に正常に送信する必要があります</b>。 こののみできる 1 つの値 ID の種類が ProviderContentId である場合にも注意してください。 1 つ以上の ProviderContentId を使用する場合は、複数の呼び出しを eds でなければなりません。|
+| IdType| string| 省略可能。 'Id' のパラメーターに渡された Id の種類です。 有効な値は次のとおりです。 <ul><li><b>正規</b>(Bing/Marketplace) </li><li><b>ZuneCatalog</b></li><li><b>ZuneMediaInstance</b>(たとえば、1 ~ 32 kb WMA 音楽ファイル) </li><li><b>AMG</b></li><li><b>MediaNet</b>(事前 MusiWave) </li><li><b>XboxHexTitle</b>(アプリ、本体でプレイ) </li></ul>|
+| DesiredMediaItemTypes| string| <b>MediaGroup が渡されないかどうかが必要です。 両方は渡されませんする必要があります。</b> メディア項目の Id の種類。 すべて指定 Id は、同じ型を共有する必要があります。 複数の種類が必要な場合は、IdType 上記で説明したよう使用可能なすべての型に渡します。 この値は、既定では"Unknown"が存在しない場合ができない可能性があるすべての ID の種類の valied します。 |
+| MediaGroup| string| <b>DesiredMediaItemTypes が渡されないかどうかが必要です。 両方は渡されませんする必要があります。</b>|
+| ConditionSets| string| <b>省略可能です</b>。 クライアントは、条件セットは、このクエリ文字列を使用して指定キー/値ペアに基づく<b>可用性</b>の排除を要求できます。 これらは、使用可能状況の条件セットに一致するように使用されます。 条件セットと一致するために使用できるキーの一覧は次のとおりです。 <ul><li><b>プラットフォーム</b>: 製品が、構築され、再生されることができます。</li><li><b>サブスクリプション</b>: (Gold または Silver) は、この可用性のサポートされているサブスクリプションの一覧。</li><li><b>EntitlementIds</b>: ユーザーがゲームを購入後に追跡します。</li></ul> | 
 
 <a id="ID4EYF"></a>
 
@@ -62,7 +62,7 @@ ms.locfileid: "8705093"
 
 ### <a name="sample-response"></a>応答の例
 
-次の JSON コードは、呼び出しへの応答で、`/media/en-us/details?ids=6c5402e4-3cd5-4b29-a9c4-bec7d2c7514a&mediaGroup=GameType`します。
+次の JSON コードは、呼び出しへの応答で`/media/en-us/details?ids=6c5402e4-3cd5-4b29-a9c4-bec7d2c7514a&mediaGroup=GameType`します。
 
 
 ```cpp

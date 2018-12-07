@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 05f75510f15f6e6c5f1b1673673428c00f7a6c16
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8348501"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8737101"
 ---
 # <a name="get-usersxuidxuidinbox"></a>GET (/users/xuid({xuid})/inbox)
 サービスから指定したメッセージの概要をユーザー数を取得します。
@@ -35,7 +35,7 @@ ms.locfileid: "8348501"
 
 メッセージが送信された注文の逆の順序で返されますつまり、新しいメッセージは、最初に返されます。
 
-この API は、サポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
+この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。
 
 <a id="ID4EEB"></a>
 
@@ -54,8 +54,8 @@ ms.locfileid: "8348501"
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- | --- | --- | --- |
 | maxItems| int| 100| メッセージの最大数が返されます。|
-| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙値を続行するために使用します。|
-| skipItems| int| 100| をスキップするメッセージの数continuationToken が存在する場合は無視されます。|
+| continuationToken| string|  | 以前の列挙呼び出し; で返される文字列列挙を続行するために使用します。|
+| skipItems| int| 100| これを省略すると、メッセージの最大数continuationToken が存在する場合は無視されます。|
 
 <a id="ID4EGE"></a>
 
@@ -76,7 +76,7 @@ ms.locfileid: "8348501"
 
 ## <a name="http-status-codes"></a>HTTP ステータス コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、状態コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
 
 | コード| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -93,7 +93,7 @@ ms.locfileid: "8348501"
 
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答
 
-正常に呼び出されると、サービスは、JSON 形式での結果データを返します。
+正常に呼び出されると、サービスは結果データを JSON 形式で返します。
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
@@ -114,19 +114,19 @@ ms.locfileid: "8348501"
 | id| string| 50| メッセージ id、メッセージの詳細を取得またはメッセージを削除するために使用します。|
 | isRead| bool|  | ユーザーがメッセージの詳細を既に「ことを示すしますフラグ。|
 | 送信| DateTime|  | UTC 日付と時刻は、メッセージが送信されました。 (サービスによって提供されます)。|
-| 有効期限| DateTime|  | UTC 日付と時刻は、有効期限が切れるメッセージ。 (すべてのメッセージによって、将来的に決定する、最長有効期間がある)。|
+| 有効期限| DateTime|  | UTC 日付と時刻は、有効期限が切れるメッセージ。 (すべてのメッセージによって、決定する、今後の最長有効期間がある)。|
 | メッセージの種類| string| 50| メッセージの種類: ユーザー、システム、FriendRequest、ビデオ、QuickChat、VideoChat、PartyChat、タイトル、GameInvite します。|
 | senderXuid| ulong|  | 送信者の XUID です。|
 | 送信者| string| 15| 送信者のゲーマータグです。|
 | hasAudio| bool|  | かどうか、メッセージには、オーディオ (声) 添付ファイルがあります。|
-| hasPhoto| bool|  | メッセージに写真の添付ファイルかどうか。|
+| hasPhoto| bool|  | メッセージに写真の添付ファイルがあるかどうか。|
 | hasText| bool|  | かどうか、メッセージには、テキストが含まれています。|
 
 #### <a name="paging-info"></a>ページング情報
 
 | プロパティ| 型| 最大長| 注釈|
 | --- | --- | --- | --- |
-| continuationToken| string| 100| 必要に応じてサーバーによって返されます。 列挙を続行するそれ以降の呼び出しを許可します。|
+| continuationToken| string| 100| 必要に応じてサーバーによって返されます。 列挙体の続行を後で呼び出すを許可します。|
 | totalItems| int|  | 受信トレイのメッセージの合計数。|
 
 #### <a name="sample-response"></a>応答の例
@@ -169,7 +169,7 @@ ms.locfileid: "8348501"
 | プロパティ| 型| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | errorSource| string| エラーが発生した場所を指定します。|
-| errorCode| int| (Null にすることができます)、エラーに関連付けられている数値コードです。|
+| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。|
 | エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。|
 
 <a id="ID4EIKAC"></a>

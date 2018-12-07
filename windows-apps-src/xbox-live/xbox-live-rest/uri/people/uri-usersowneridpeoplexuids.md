@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 27b7695ba163bf0ca832a96df030868e646e0abc
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332448"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8733290"
 ---
 # <a name="usersowneridpeoplexuids"></a>/users/{ownerId}/people/xuids
-XUID によって people を呼び出し元のユーザーのコレクションからアクセスします。 これらの Uri のドメインが`social.xboxlive.com`します。
+XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスします。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -26,7 +26,7 @@ XUID によって people を呼び出し元のユーザーのコレクション�
  
 | パラメーター| 型| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 可能な値は、"me"xuid({xuid})、または gt({gamertag}) です。| 
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
   
 <a id="ID4EOB"></a>
 
@@ -35,7 +35,7 @@ XUID によって people を呼び出し元のユーザーのコレクション�
 
 [POST](uri-usersowneridpeoplexuidspost.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。
+&nbsp;&nbsp;呼び出し元のユーザーからコレクションに対応する XUID によってユーザーを取得します。
  
 <a id="ID4EYB"></a>
 

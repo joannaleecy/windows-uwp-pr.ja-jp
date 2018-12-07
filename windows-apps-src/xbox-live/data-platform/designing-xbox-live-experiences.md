@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 統計, 実績, ランキング, 設計
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f080593727ec6d7ddd529b2ce976708174250ba
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8457311"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8733667"
 ---
 # <a name="designing-xbox-live-experiences"></a>Xbox Live エクスペリエンスの設計
 
@@ -75,6 +75,6 @@ _Races 2015_ では、実績の一部は次のように構成されます。
 * 車の最大収集数
 
 ## <a name="next-steps"></a>次の手順
-ここでは、統計、ランキング、実績を効率的に設計する方法について説明しました。次の手順では、統計、ランキング、実績をタイトルに実装してください。  次のセクションでは、パートナー センターでの構成から始まるエンド ツー エンドのプロセスを説明します。
+ここでは、統計、ランキング、実績を効率的に設計する方法について説明しました。次の手順では、統計、ランキング、実績をタイトルに実装してください。  次のいくつかのセクションでは、パートナー センターでの構成から始まるエンド ツー エンドのプロセスを説明します。
 
 「[プレイヤーの統計](../leaderboards-and-stats-2017/player-stats.md)」をご覧ください。

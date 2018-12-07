@@ -7,15 +7,15 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox live, Xbox, ゲーム, uwp, windows 10, Xbox one, パートナー センター, Xbox Live のセットアップ
 ms.openlocfilehash: 9a846a4b7f0069216e92eb123b33d9fc0f7f67c9
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8350010"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8751167"
 ---
 # <a name="configure-xbox-live-setup-in-partner-center"></a>パートナー センターで Xbox Live のセットアップを構成します。
 
-[パートナー センター](https://developer.microsoft.com/dashboard)を使用して、ゲームに関連付けられている Xbox Live のプロパティの初期セットを構成します。 次の手順に従って、構成を追加します。
+[パートナー センター](https://developer.microsoft.com/dashboard)を使用すると、ゲームに関連付けられている Xbox Live のプロパティの初期セットを構成します。 次の手順に従って、構成を追加します。
 
 1. **[サービス]** > **[Xbox Live]** > **[Xbox Live Setup]** (Xbox Live セットアップ) の順に選択して、**[Xbox Live Setup]** (Xbox Live セットアップ) セクションに移動します。
 2. このページでは、タイトル名、既定のロケール、製品の種類、デバイス ファミリ、公開開始日を設定できます。 構成の設定が完了したら、**[保存]** ボタンをクリックして変更を確定します。
@@ -33,7 +33,7 @@ ms.locfileid: "8350010"
 ![パートナー センターで既定のロケールを選択するドロップダウンの画像](../../images/dev-center/xbox-live-setup/xbox-live-setup-2.png)
 
 ## <a name="product-type"></a>製品の種類
-このドロップダウン メニューでは、製品の種類を変更できます。 既定値は、種類 **[ゲーム]** です。 使用できる XboxLivefeatures 選択内容に影響します。 次の 3 つのオプションから選択できます。
+このドロップダウン メニューでは、製品の種類を変更できます。 既定値は、種類 **[ゲーム]** です。 使用する XboxLivefeatures 選択内容に影響します。 次の 3 つのオプションから選択できます。
 1. アプリ 
 2. ゲーム 
 3. ゲームの体験版 

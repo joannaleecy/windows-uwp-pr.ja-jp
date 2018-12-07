@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d7c49628914f887c5d2243942e10e47d47b095
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2018
-ms.locfileid: "8332778"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "8748872"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
-Xbox Live Compute サーバー インスタンスを作成するクライアントをできる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
+クライアントが Xbox Live Compute サーバー インスタンスを作成することができる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [必要な要求ヘッダー](#ID4EGB)
@@ -72,7 +72,7 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| MPSD からセッション識別子。| 
+| sessionId| MPSD からセッション識別子です。| 
 | abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトを含むは<code>"fulfillmentState" : "Aborted"</code>します。 | 
  
 <a id="ID4ERE"></a>
@@ -96,11 +96,11 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答には常に、次の表に示すようにヘッダーが含まれます。
+応答は常に、次の表に示すようにヘッダーを含めます。
  
 | ヘッダー| 設定値| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| キャッシュ コントロール|  | ディレクティブ要求/応答のチェーンに沿ったすべてのキャッシュ メカニズムによって obeyed する必要があります。| 
+| キャッシュ コントロール|  | ディレクティブ要求/応答のチェーンに沿ったのすべてのキャッシュ メカニズムによって obeyed する必要があります。| 
 | Content-Type| application/json| 応答には、データの種類です。| 
 | Content-Length|  | 応答本文の長さ。| 
 | X コンテンツの種類オプション|  |  | 
@@ -116,8 +116,8 @@ gameserverms.xboxlive.com
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| 完了するためのポーリングをミリ秒の間隔をお勧めします。 注: これには、クラスターが準備ができたらときの推定値ではありませんが、サブスクリプションと要求とフルフィルメントの完了率の現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
-| fulfillmentState| 示します、提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」、または中止され、「中止」、要求を処理することができない原因とすぐに要求"true"と指定した abortIfQueued します。 | 
+| pollIntervalMilliseconds| (ミリ秒) の完了をポーリング間隔をお勧めします。 注意がこれには、クラスターが準備ができたらときの推定値ではありませんが、サブスクリプションと要求とフルフィルメントの完了率の現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
+| fulfillmentState| 示します提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」、または中止され、「中止」、要求を処理することができない原因とすぐに、要求"true"と指定した abortIfQueued します。 | 
  
 <a id="ID4EWH"></a>
 
@@ -139,7 +139,7 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受信すると、タイトルはサービスに呼び出しを再試行のみする必要があります。
+次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
  
    * 408-サーバー タイムアウト
    * 429: too Many Requests
