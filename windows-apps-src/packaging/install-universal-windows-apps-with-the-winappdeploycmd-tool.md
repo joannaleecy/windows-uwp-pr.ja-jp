@@ -1,22 +1,22 @@
 ---
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: WinAppDeployCmd.exe ツールを使ったアプリのインストール
-description: Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 デバイスを windows 10 PC からのユニバーサル Windows プラットフォーム (UWP) アプリを展開に使用できるコマンド ライン ツールです。
+description: Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 デバイスを windows 10 PC からユニバーサル Windows プラットフォーム (UWP) アプリの展開に使用できるコマンド ライン ツールです。
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ec673236f41d4128e6aa5702f4d54f43c55890ab
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754958"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797725"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>WinAppDeployCmd.exe ツールを使ったアプリのインストール
 
 
-Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 デバイスを windows 10 PC からのユニバーサル Windows プラットフォーム (UWP) アプリを展開に使用できるコマンド ライン ツールです。 このツールを使用すると、デバイスが、windows 10 USB で接続されているか同じサブネット上に利用可能なそのアプリの Microsoft Visual Studio やソリューションがなくても、アプリ パッケージを展開します。 最初にパッケージ化することなく、リモート PC や Xbox One にアプリを展開することもできます。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。
+Windows アプリケーションの展開 (WinAppDeployCmd.exe) は、すべての windows 10 デバイスを windows 10 PC からユニバーサル Windows プラットフォーム (UWP) アプリの展開に使用できるコマンド ライン ツールです。 このツールを使用すると、デバイスが、windows 10 USB で接続されているか同じサブネット上に利用可能なそのアプリの Microsoft Visual Studio や、ソリューションがなくても、アプリ パッケージを展開します。 最初にパッケージ化することなく、リモート PC や Xbox One にアプリを展開することもできます。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。
 
 Windows 10 SDK をインストール、コマンド プロンプトまたはスクリプト ファイルから WinAppDeployCmd ツールを実行するだけ必要があります。 WinAppDeployCmd.exe でアプリをインストールすると.appx/.msix ファイルや AppxManifest (ルーズ ファイル用) を使って windows 10 デバイスにアプリのサイド アンド ロードします。 このコマンドによって、アプリに必要な証明書はインストールされません。 アプリを実行するには、windows 10 デバイスは開発者モードまたは既にインストールされている証明書がある必要があります。
 

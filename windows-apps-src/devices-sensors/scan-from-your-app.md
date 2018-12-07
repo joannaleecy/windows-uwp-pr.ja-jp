@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c01c21ae65f9e93638e2ce1df604591043a729
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8744425"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799077"
 ---
 # <a name="scan-from-your-app"></a>アプリからスキャンする
 
@@ -98,7 +98,7 @@ Windows はスキャナーを自動的には検出しません。 アプリが�
 
 既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。 スキャンの設定は変更されません。 この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。 このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。
 
-**注:** フィーダーにスキャンするドキュメントを配置して、ユーザー場合と、スキャナーが代わりに、フラット ベッドからスキャンされます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
+**注:** フィーダーでスキャンするドキュメントを配置して、ユーザー場合と、スキャナーが代わりに、フラット ベッドからスキャンされます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,

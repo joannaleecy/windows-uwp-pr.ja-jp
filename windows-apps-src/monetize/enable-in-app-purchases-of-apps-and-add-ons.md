@@ -7,11 +7,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a64a52005221c418ea82e8fffa9ecf94b6d1bef3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731434"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793605"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>アプリとアドオンのアプリ内購入の有効化
 

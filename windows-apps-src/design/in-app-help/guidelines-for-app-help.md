@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
 ms.openlocfilehash: bd2174c6bbfb84a3ea6c6956e1d0b02ed5c9be33
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749230"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793416"
 ---
 # <a name="guidelines-for-app-help"></a>アプリのヘルプのガイドライン
 

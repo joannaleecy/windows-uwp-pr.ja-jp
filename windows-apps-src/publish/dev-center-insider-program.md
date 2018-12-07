@@ -7,15 +7,15 @@ keywords: windows 10, uwp, insider, デベロッパー センター insider, プ
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: ad70e986a35767c687d863a7db0754bd980be5db
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756911"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795175"
 ---
 # <a name="dev-center-insider-program"></a>デベロッパー センター Insider Program
 
-[登録開発者](http://go.microsoft.com/fwlink/?LinkID=615100)、としてデベロッパー センター Insider Program を結合することで利用できるように機能に影響を与えることができます。 デベロッパー センター Insider Program に登録すると、すべての開発者に公開される前に新しい機能を試すことができます。 フィードバックの送信、これらの機能にダッシュ ボードの右上隅の疑問符アイコンの下の [フィードバック] リンクを使用することをお勧めします。 デベロッパー センターのインサイダーから受け取ったすべてのフィードバックは、念入りに読まれ、高い優先順位で扱われます。
+[登録開発者](http://go.microsoft.com/fwlink/?LinkID=615100)、としてデベロッパー センター Insider Program に参加させることで利用できるように機能に影響を与えることができます。 デベロッパー センター Insider Program に登録すると、すべての開発者に公開される前に新しい機能を試すことができます。 フィードバックの送信、これらの機能にダッシュ ボードの右上隅の疑問符アイコンの下の [フィードバック] リンクを使用してすることをお勧めします。 デベロッパー センターのインサイダーから受け取ったすべてのフィードバックは、念入りに読まれ、高い優先順位で扱われます。
 
 プログラムに参加するには、**アカウントの設定**] ページでオプトインします。 プログラムへの参加はいつでもやめることができます。
 

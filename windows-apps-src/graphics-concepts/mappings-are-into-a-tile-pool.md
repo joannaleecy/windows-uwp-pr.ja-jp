@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0474345e21161e76fbfeebe0086e5d433b2d219
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731652"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793641"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>タイル プールにマッピングされます
 
@@ -60,7 +60,7 @@ ms.locfileid: "8731652"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tile-pool-creation.md">タイル プールの作成</a></p></td>
-<td align="left"><p>アプリケーションは、Direct3D デバイスごとに 1 つ以上のタイル プールを作成できます。 各タイル プールの合計サイズは、GPU RAM の 1/4 では約 Direct3D11 のリソース サイズ制限に制限されます。</p></td>
+<td align="left"><p>アプリケーションは、Direct3D デバイスごとに 1 つ以上のタイル プールを作成できます。 各タイル プールの合計サイズは、GPU RAM の 1/4 ではほぼ Direct3D11 のリソースのサイズ制限に制限されます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">タイル プールのサイズ変更</a></p></td>

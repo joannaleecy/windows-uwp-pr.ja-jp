@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 非同期, スレッド, スレッド化
 ms.localizationpriority: medium
 ms.openlocfilehash: 22c151b90be30b39da7decd9a0ce3109e29b7fb7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747072"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794843"
 ---
 # <a name="threading-and-async-programming"></a>スレッド化と非同期プログラミング
 スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
@@ -30,7 +30,7 @@ ms.locfileid: "8747072"
 
 | トピック                                                                                                          | 説明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [非同期プログラミング (UWP アプリ)](asynchronous-programming-universal-windows-platform-apps.md)              | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングとは、c#、Microsoft Visual Basic.NET VisualC ではコンポーネント拡張機能での形式について説明します (、C++/cli CX)、および JavaScript します。 |
+| [非同期プログラミング (UWP アプリ)](asynchronous-programming-universal-windows-platform-apps.md)              | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと c# では、Microsoft Visual Basic.NET、VisualC ではコンポーネント拡張機能には、その表現について説明します (、C++/cli CX)、および JavaScript します。 |
 | [C++/CX での非同期プログラミング (UWP アプリ)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| ここでは、ppltasks.h の <code>task</code> 名前空間で定義された <code>concurrency</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。 |
 | [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)                         | このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。 |
 | [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。 このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。 |

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 757d84c9ad5a005e042b42d699ada08504dc57ff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8735300"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798352"
 ---
 # <a name="get-uri"></a>GET (/{uri})
 ゲーム クリップをダウンロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。

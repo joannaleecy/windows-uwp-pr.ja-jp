@@ -1,24 +1,24 @@
 ---
 description: Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。
-title: WindowsPhone Silverlight から UWP へのフォーム ファクターと UX の移植
+title: WindowsPhone Silverlight UWP からのフォーム ファクターと UX の移植
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735712"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799021"
 ---
-#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>WindowsPhone Silverlight から UWP へのフォーム ファクターと UX の移植
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>WindowsPhone Silverlight UWP からのフォーム ファクターと UX の移植
 
 
 前のトピックは、「[ビジネス レイヤーとデータ レイヤーの移植](wpsl-to-uwp-business-and-data.md)」でした。
 
-Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。 Windows 10 では、物理サイズ、既定の向き、方法は、ユニバーサル Windows プラットフォーム (UWP) アプリに効果的なピクセルの解像度の係数などのデバイス間の違いがレンダリングされます。 さいわいなことに、これらの大変な作業の多くは、有効ピクセルなどのスマートな概念を用いてシステムにより自動的に処理されます。
+Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。 Windows 10 では、物理サイズ、既定の向き、方法は、ユニバーサル Windows プラットフォーム (UWP) アプリに効果的なピクセルの解像度の係数などのデバイス間で違いがレンダリングされます。 さいわいなことに、これらの大変な作業の多くは、有効ピクセルなどのスマートな概念を用いてシステムにより自動的に処理されます。
 
 ## <a name="different-form-factors-and-user-experience"></a>フォーム ファクターとユーザー エクスペリエンスの相違
 
@@ -50,7 +50,7 @@ Windows アプリは、PC、モバイル デバイス、その他の多くの種
 
 光学的にアプリを拡大表示してモバイル バージョンを大きくするだけでは、デバイスとその追加領域を活用できず、ユーザーに対して適切な機能を提供しません。 同じコンテンツをより大きく表示するのではなく、より多くのコンテンツを表示することを検討する必要があります。 タブレットであっても、コンテンツの表示行数を増やすことができます。 広告など、さまざまなコンテンツを表示するために追加領域を使うことができます。また、リスト ボックスをリスト ビューに変更することや、領域で可能であれば複数の列に項目を折り返すことができます。 「[リスト ビュー コントロールとグリッド ビュー コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)」をご覧ください。
 
-リスト ビューとグリッド ビューなどの新しいコントロールは、だけでなく WindowsPhone Silverlight から確立されているレイアウトの種類の大部分は同等機能をユニバーサル Windows プラットフォーム (UWP) にあります。 たとえば、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) などです。 こうしたレイアウトを使う UI の多くは、簡単に移植できるはずですが、さまざまなサイズのデバイスでサイズ変更と再レイアウトを自動的に行うために、こうしたレイアウト パネルの動的レイアウト機能を活用する方法を常に模索してください。
+だけでなくリスト ビューとグリッド ビューなどの新しいコントロールは、WindowsPhone Silverlight から確立されているレイアウトの種類の大部分は同等機能をユニバーサル Windows プラットフォーム (UWP) にあります。 たとえば、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) などです。 こうしたレイアウトを使う UI の多くは、簡単に移植できるはずですが、さまざまなサイズのデバイスでサイズ変更と再レイアウトを自動的に行うために、こうしたレイアウト パネルの動的レイアウト機能を活用する方法を常に模索してください。
 
 システム コントロールとレイアウト パネルに組み込まれている動的レイアウト以外に移動して、[アダプティブな Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md)と呼ばれる新しい windows 10 機能を使用します。
 

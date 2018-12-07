@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f0a53d0f725c134bbb7adecaa956000a53235b0
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741280"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793549"
 ---
 # <a name="hardware-drm"></a>ハードウェア DRM
 
@@ -25,7 +25,7 @@ ms.locfileid: "8741280"
 
 ## <a name="windows-tee-implementation"></a>Windows TEE 実装
 
-このトピックでは、windows 10 が信頼された実行環境 (TEE) を実装する方法の簡単な概要を示します。
+このトピックでは、windows 10 が信頼された実行環境 (TEE) を実装する方法の簡単な概要を説明します。
 
 Windows TEE 実装の詳細については、このドキュメントでは説明しません。 ただし、標準の移植キット TEE ポートと Windows ポートの違いについては、簡単に説明します。 Windows は OEM プロキシ レイヤーを実装し、Windows メディア ファンデーション サブシステムのユーザー モード ドライバーに、シリアル化された PRITEE 関数呼び出しを転送します。 これは最終的に Windows TrEE (信頼される実行環境) ドライバーまたは OEM のグラフィックス ドライバーにルーティングされます。 これらのいずれの方法についても、このドキュメントでは説明しません。 次の図は、Windows ポートのコンポーネントの一般的な操作を示しています。 Windows PlayReady TEE 実装を開発する場合は、<WMLA@Microsoft.com> にご連絡ください。
 
@@ -79,7 +79,7 @@ localSettings.values["SoftwareOverride"] = 1;
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-ハードウェア DRM を使用しているか、ソフトウェア DRM は、C:\\Users\\ を参照するよう指示する最善の方法&lt;ユーザー名&gt;\\AppData\\Local\\Packages\\&lt;アプリケーション名&gt;\\LocalCache\\PlayReady\\\*
+ハードウェア DRM を使用しているかどうか、またはソフトウェア DRM は、C:\\Users\\ を参照するよう指示する最善の方法&lt;ユーザー名&gt;\\AppData\\Local\\Packages\\&lt;アプリケーション名&gt;\\LocalCache\\PlayReady\\\*
 
 -   mspr.hds ファイルがある場合は、ソフトウェア DRM を使っています。
 -   他の \*.hds ファイルがある場合は、ハードウェア DRM を使っています。

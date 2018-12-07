@@ -1,25 +1,27 @@
 ---
 title: UWP プロジェクトの認証
+author: aablackm
 description: ユニバーサル Windows プラットフォーム (UWP) タイトルで Xbox Live ユーザーをサインインする方法について説明します。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
+ms.author: aablackm
 ms.date: 03/14/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: d9872ab1fef773cb3f3dadfaea20a55dbe43f0de
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: adea0d0e964c994c74ccb14b55907a152858f35e
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8748854"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795378"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP プロジェクトの認証
 
 ゲームで Xbox Live の機能を利用するために、ユーザーは Xbox Live プロフィールを作成し、Xbox Live コミュニティで自らの身元を明らかにする必要があります。  Xbox Live サービスは、ユーザーの Xbox Live プロフィール (ユーザーのゲーマータグやゲーマーアイコン、ユーザーが一緒にゲームをするフレンド、ユーザーがプレイしたゲーム、ユーザーがロック解除した実績、特定のゲームにおけるユーザーのランキング順位など) を使用してゲーム関連のアクティビティを追跡します。
 
-特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。  ゲームは Xbox Live API を呼び出して認証プロセスを開始できます。  追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。
+特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。  ゲームでは、認証プロセスを開始する Xbox Live Api を呼び出すことができます。  追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。
 
-認証されたユーザーは、Xbox アプリで Xbox Live から明示的にサインアウトするまで、そのデバイスと関連付けられます。  (すべての Xbox Live ゲームに対して) 1 台のデバイス上で同時に認証を受けられるのは 1 人のプレイヤーだけです。デバイス上で新しいプレイヤーが認証を行うには、まず既存の認証済みプレイヤーがサインアウトする必要があります。
+認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。  (すべて Xbox Live のゲームに対する) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。
 
 ## <a name="steps-to-sign-in"></a>サインイン手順
 
@@ -34,7 +36,7 @@ ms.locfileid: "8748854"
 
 ### <a name="creating-an-xboxliveuser-object"></a>XboxLiveUser オブジェクトの作成
 
-ほとんどの Xbox Live アクティビティは Xbox Live ユーザーに関連します。  ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。
+ほとんどの Xbox Live アクティビティに関連する Xbox Live ユーザーです。  ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。
 
 C++:
 
@@ -84,7 +86,7 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  Thread Dispatcher は、スレッド間の通信に使用されます。 サイレント サインイン API は UI をまったく表示しませんが、XSAPI には appx のロケールについての情報を取得するための UI スレッド ディスパッチャが引き続き必要です。 静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。 または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。
+  Thread Dispatcher は、スレッド間の通信に使用されます。 サイレント サインイン API が任意の UI を表示する予定はありませんが、XSAPI 必要 UI スレッド ディスパッチャ appx のロケールについての情報を取得するためです。 静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。 または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。
 
 
 暗黙的サインイン試行の結果には 3 つの可能性があります。
@@ -353,11 +355,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## <a name="determining-if-the-device-is-offline"></a>デバイスがオフラインかどうかの判定
 
-ユーザーが一度サインインしている場合は、オフラインのときでもサインイン API が成功し、前回サインインしたアカウントが返されます。
+サインイン Api でもが成功したとオフライン場合は、ユーザーがサインインしたら、され、最後にサインインしたアカウントが返されます。  
 
-タイトルがオフラインでプレイできる場合 (キャンペーン モードなど): デバイスがオンラインかオフラインかを問わず、タイトルは、WriteInGameEvent API と接続ストレージ API によってゲームの進行状況を再生および記録することをユーザーに許可できます。これらの API はどちらも、デバイスがオフラインの状態で正しく動作します。
+ユーザーが存在しない場合は、前に、オフライン サインインしないすることが可能署名されています。
 
-タイトルがオフラインでプレイできない場合 (マルチプレイヤー ゲーム、サーバー ベースのゲームなど): タイトルは GetNetworkConnectivityLevel API を呼び出して、デバイスがオフラインかどうかを調べ、状態および解決方法 (例: "続行するにはインターネットに接続する必要があります…") をユーザーに通知する必要があります。
+タイトルがオフラインでプレイできる場合 (キャンペーン モードなど)、タイトルはユーザーがプレイを許可することができ、WriteInGameEvent API と接続ストレージ API によって記録ゲーム進行状況、それらの両方で正しく動作、デバイスがオフラインです。
+
+タイトルがオフラインでプレイできない場合 (マルチプレイヤー ゲームまたはサーバー ベースのゲームなど)、タイトルは、デバイスがオフラインであり、状態と解決策についてユーザーに知らせるかどうかを確認する GetNetworkConnectivityLevel API を呼び出す必要があります (たとえば、' する必要がありますインターネットに接続して、引き続き…")。
 
 ## <a name="online-status-code-samples"></a>オンライン状態コードのサンプル
 

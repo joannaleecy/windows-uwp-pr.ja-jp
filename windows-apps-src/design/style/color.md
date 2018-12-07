@@ -8,11 +8,11 @@ design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738721"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794999"
 ---
 # <a name="color"></a>色
 
@@ -259,16 +259,16 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 - 任意の色**ColorSchemeResources**を使用して設定には、ハイ コントラストは変わりません。
   * つまり、アプリはデベロッパー コストや追加のデザインを加えなくても多くのユーザーにアクセスできなくなります
-- 簡単に設定できます色ライト、濃色テーマまたは広範囲に両方のテーマで API を 1 つのプロパティを設定して
+- 簡単に設定できます色ライト、濃色テーマまたは広範囲に両方のテーマで API を 1 つのプロパティを設定
 - **ColorSchemeResources**の設定の色、そのシステム カラーを使用するすべてのようなコントロールに伝播します。
-  * これにより、一貫した色ストーリー ブランドの外観を維持しながらアプリ全体でがされます。
+  * これにより、一貫した色ストーリー ブランドの外観を維持しながら、アプリ間でがされます。
 - テンプレートを再適用することがなくすべての表示状態、アニメーション、不透明度のバリエーションを効果します。
 
 ### <a name="how-to-use-colorschemeresources"></a>ColorSchemeResources を使用する方法
 
 ColorSchemeResources は、どのようなリソースがされているシステムの場所のスコープを指示する API です。 ColorSchemeResources、 [X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)ことができる 3 つの選択肢のいずれかを実行する必要があります。
 - 既定値
-  * [淡色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)と[濃色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)テーマの色の変更内容が表示されます。
+  * [淡色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)と[濃色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)テーマの色の変更を表示します。
 - Light
   * [淡色テーマ](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)でのみ、色の変更が表示されます。 
 - Dark
@@ -278,9 +278,9 @@ X: キーを設定により、システムまたはアプリのテーマに色�
 
 ### <a name="how-to-apply-scoped-colors"></a>スコープ指定された色を適用する方法
 
-によって、 **ColorSchemeResources** API では、XAML リソースのスコープを設定するには、任意のシステム カラーまたはブラシで[テーマ リソース](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)ライブラリであり、ページまたはコンテナーのスコープ内でそれらを再定義することができます。
+によって、 **ColorSchemeResources** API では、XAML リソースのスコープを設定するには、すべてのシステム カラーまたはブラシで[テーマ リソース](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)ライブラリであり、ページまたはコンテナーのスコープ内でそれらを再定義することができます。
 
-たとえば、ページの 2 つのボタンを配置して 2 つのシステム カラー - **SystemBaseLowColor**および**SystemBaseMediumLowColor**グリッド内で定義されている場合、: グリッド内で 1 つと 1 つの外側。
+たとえば、ページに 2 つのボタンを配置して 2 つのシステム カラー - **SystemBaseLowColor**および**SystemBaseMediumLowColor**グリッド内で定義されている場合、: グリッド内の 1 つと 1 つの外部。
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -299,8 +299,8 @@ X: キーを設定により、システムまたはアプリのテーマに色�
 
 ![スコープ指定されたシステムのボタンの色](images/color/scopedcolors_cyan_button.png)
 
-ただし、ため、すべてのシステム色に伝播他のコントロールも、 **SystemBaseLowColor**と**SystemBaseMediumLowColor**設定は、影響ボタンだけで。 この場合、制御**トグル ボタン**、**ラジオ ボタン**と**スライダー**もの影響を受けるこれらのシステム カラーの変更によってようにそれらのコントロールを配置する exampl グリッドのスコープの上します。
-スコープ、システムの色の変更*に 1 つのコントロールだけに*する場合**ColorSchemeResources**をそのコントロールのリソース内で定義することでこれを実行できます。
+ただし、ため、システムのすべての色は、他のコントロールにもカスケード、 **SystemBaseLowColor**と**SystemBaseMediumLowColor**設定は、影響ボタンだけで。 この場合、制御**トグル ボタン**、**ラジオ ボタン**と**スライダー**もの影響を受けるこれらのシステム カラーの変更によってようにそれらのコントロールを配置する exampl グリッドのスコープの上します。
+スコープ、システムの色の変更*を 1 つのコントロールだけ*にする場合は、そのコントロールのリソース内で**ColorSchemeResources**を定義することによってためを実行できます。
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -314,11 +314,11 @@ X: キーを設定により、システムまたはアプリのテーマに色�
 </Grid>
 <Button Content="Button_B"/>
 ```
-基本的にする前とまったく同じものがある場合も、色の変更をグリッドに追加されたその他の任意のコントロールを選択してができるようになりました。 これは、ため、これらのシステム色のスコープは**Button_A**のみです。
+基本的にする前とまったく同じものがある場合も、色の変更をグリッドに追加して、他のコントロールを選択してができるようになりました。 これは、ため、これらのシステム色のスコープは**Button_A**のみです。
 
 ### <a name="nesting-scoped-resources"></a>スコープ入れ子リソース
 
-システム カラーを入れ子に可能であればとも**ColorSchemeResources**をアプリのレイアウトのマークアップ内で入れ子になった要素のリソースに配置することで操作が完了です。
+システム カラーを入れ子に可能であればとも**ColorSchemeResources**をアプリのレイアウトのマークアップ内で入れ子になった要素のリソースに配置することで実行します。
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -341,7 +341,7 @@ X: キーを設定により、システムまたはアプリのテーマに色�
 </Grid>
 ```
 
-この例では、 **Button_A**が継承する、 **Grid_A**をリソースで色を定義し、**入れ子になったボタン**が**Grid_B**をリソースからの色を継承します。 定義されている何も表示されない場合は最後に、既定の色を適用して拡張機能によって、他のコントロールが**Grid_B**内に配置することを意味オンまたはオフにチェックまたは**Grid_A**をのリソースを適用する前にまず、 **Grid_B**をリソースを適用しますページまたはアプリ レベルです。
+この例では、 **Button_A**が継承する**Grid_A**をのリソースで色を定義し、**入れ子になったボタン**が**Grid_B**をリソースからの色を継承します。 何も表示されない場合、最後に、既定の色を適用することが定義されていると拡張機能によって、他のコントロールが**Grid_B**内に配置することを意味オンまたはオフにチェックまたは**Grid_A**をのリソースを適用する前にまず、 **Grid_B**をリソースを適用しますページまたはアプリ レベルです。
 
 これは、さまざまなリソースを含む色の定義がある入れ子になった要素で機能します。
 
@@ -387,9 +387,9 @@ X: キーを設定により、システムまたはアプリのテーマに色�
 </Grid>
 ```
 
-これで、すべてのリソース、テーマ、およびカスタムの色は 1 つの**MyCustomTheme**リソース ディクショナリに格納される、レイアウト マークアップに余分ななくすについて心配しなくても必要となるスコープします。
+これで、すべてのリソース、テーマ、およびカスタムの色は 1 つの**MyCustomTheme**リソース ディクショナリに格納される、レイアウトのマークアップで余分な要素について心配しなくても必要な場所のスコープします。
 
-### <a name="other-ways-to-define-color-resources"></a>カラー リソースを定義する他の方法
+### <a name="other-ways-to-define-color-resources"></a>カラー リソースを定義するには、その他の方法
 
 ColorSchemeResources に配置されるシステム カラーと行ではなく、ラッパーとして直接内で定義することもできます。
 

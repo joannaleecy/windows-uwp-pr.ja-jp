@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 30be8d13c7e549f8ed75060f614de5bbcdb6284f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736122"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795059"
 ---
 # <a name="tools-for-profiling-and-performance"></a>プロファイリングとパフォーマンスに関するツール
 
 
 Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。 以下のリンクをクリックすると、これらのツールの使い方について学習することができます。
 
-**Visual Studio の XAML UI の応答ツール**です。 アプリ内でのパフォーマンスへの影響を測定するために使用するための最適なツールの 1 つは、XAML UI の応答ツールです。 さらに多くのシナリオをサポートするために[更新](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)をこのされています。
+**Visual Studio の XAML UI の応答ツール**です。 アプリ内でのパフォーマンスへの影響を測定するために使用する最適なツールの 1 つは、XAML UI の応答ツールです。 さらに多くのシナリオをサポートするために[更新](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx)をこのされています。
 
 関連項目: 
 

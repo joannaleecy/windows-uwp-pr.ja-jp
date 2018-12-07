@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0906d32a0e15b2eaaf9c33e7f658e9e9f0cd5124
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8728893"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796041"
 ---
 # <a name="post-usersbatchfeedback"></a>POST (/users/batchfeedback)
 タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。 これらの Uri のドメインが`reputation.xboxlive.com`します。

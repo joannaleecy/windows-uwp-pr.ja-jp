@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, ゲーム ループ, Direct3D 9, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732977"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793803"
 ---
 # <a name="port-the-game-loop"></a>ゲーム ループの移植
 
@@ -131,7 +131,7 @@ while (true)
 
 DirectX UWP テンプレートには、ゲームですぐに使うことができる堅牢な Direct3D デバイス インフラストラクチャが含まれています。 適切なテンプレートを選ぶためのガイダンスについては、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
-Microsoft Store ゲームの開発に関する次の詳しい記事をご覧ください。
+次の詳細な Microsoft Store ゲーム開発に関する記事をご覧ください。
 
 -   [チュートリアル: DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-uwp-directx-game.md)
 -   [ゲームのオーディオ](working-with-audio-in-your-directx-game.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749681"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797702"
 ---
 # <a name="set-up-a-geofence"></a>ジオフェンスのセットアップ
 
@@ -475,7 +475,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 アプリが位置情報にアクセスする前に、デバイスで **[位置情報]** を有効にする必要があります。 **設定**アプリで、次の**位置情報に関するプライバシー設定**がオンになっていることを確認します。
 
--   **このデバイス] の位置情報****オン (windows 10 Mobile には適用されません)**
+-   **このデバイス] の位置情報****オン (windows 10 Mobile では適用されません)**
 -   位置情報サービス設定の **[位置情報]** が **オン** になっている
 -   **[位置情報を使うことができるアプリを選ぶ]** で、アプリが **オン** になっている
 

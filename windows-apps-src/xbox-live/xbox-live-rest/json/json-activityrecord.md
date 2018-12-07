@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a8679c96c86754a8b929b44b5bd4eb402d851e90
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8752750"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796867"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
 1 つまたは複数のユーザーのリッチ プレゼンスの書式設定されたとローカライズされた文字列です。 

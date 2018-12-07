@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0aa227a47fc3940f3fa5c3010eed70f37067935
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745126"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799545"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
 

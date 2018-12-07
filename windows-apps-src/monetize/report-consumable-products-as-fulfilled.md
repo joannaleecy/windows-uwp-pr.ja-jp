@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, フルフィルメント, コンシューマブル
 ms.localizationpriority: medium
 ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742166"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795396"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>コンシューマブルな製品のフルフィルメント完了の報告
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736232"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8799492"
 ---
 # <a name="app-package-requirements"></a>アプリ パッケージの要件
 
@@ -37,7 +37,7 @@ Visual Studio でパッケージを作るときは、必ず、開発者アカウ
 
 ### <a name="app-bundles"></a>アプリ バンドル
 
-UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle) をユーザーがダウンロードするアプリのサイズを減らすために、アプリ バンドルを生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
+UWP アプリでは、Visual Studio は、アプリ バンドル (.msixbundle または .appxbundle)、ユーザーがダウンロードするアプリのサイズを小さくを生成できます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
 
 > [!NOTE]
 > 1 つのアプリ バンドルには、すべてのアーキテクチャ用のパッケージを含めることができます。
@@ -57,7 +57,7 @@ UWP アプリでは、Visual Studio は (.msixbundle または .appxbundle) を�
 > マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
 
 
-アプリ バンドル (.msixbundle または .appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注 .msixbundle や .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ[Id](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を除くの属性と要素を使う必要があります。
+アプリ バンドル (.msixbundle または .appxbundle) は、さまざまなマニフェストを使用します。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest) に関するドキュメントをご覧ください。 注 .msixbundle や .appxbundle では、それぞれのマニフェスト含まれているパッケージには、同じ要素と属性を除くの[Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)要素の**ProcessorArchitecture**属性を使用する必要があります。
 
 > [!TIP]
 > 必ず、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。

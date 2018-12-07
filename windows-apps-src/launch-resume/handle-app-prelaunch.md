@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8745769"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797271"
 ---
 # <a name="handle-app-prelaunch"></a>アプリの事前起動の処理
 
@@ -19,7 +19,7 @@ ms.locfileid: "8745769"
 
 ## <a name="introduction"></a>はじめに
 
-利用可能なシステム リソースができるように、事前にバック グラウンドで、ユーザーが頻繁に使用されるアプリを起動することによりデスクトップ デバイス ファミリのデバイス上の UWP アプリの起動時のパフォーマンスが向上しています。 事前起動されたアプリは起動直後に中断状態になります。 その後、ユーザーがアプリを呼び出すと、アプリは中断状態から実行状態に移って再開されます。これは、アプリのコールド スタートよりも高速です。 ユーザーのエクスペリエンスとしては、アプリが非常に短時間で起動するように感じられます。
+利用可能なシステム リソースには、事前にバック グラウンドでのユーザーの最も頻繁に使うアプリを起動してデスクトップ デバイス ファミリのデバイス上の UWP アプリの起動時のパフォーマンスが向上します。 事前起動されたアプリは起動直後に中断状態になります。 その後、ユーザーがアプリを呼び出すと、アプリは中断状態から実行状態に移って再開されます。これは、アプリのコールド スタートよりも高速です。 ユーザーのエクスペリエンスとしては、アプリが非常に短時間で起動するように感じられます。
 
 Windows 10 より前では、アプリは自動的には事前起動を利用しませんでした。 Windows 10 バージョン 1511 では、すべてのユニバーサル Windows プラットフォーム (UWP) アプリが事前起動の候補をでした。 Windows 10 バージョン 1607 では、[CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) を呼び出すことで、事前起動の動作にオプトインする必要があります。 この呼び出しを配置する最適な場所は、`OnLaunched()` 内の `if (e.PrelaunchActivated == false)` チェックが実行される位置の近くです。
 
@@ -110,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注:、`TryEnablePrelaunch()`関数で、上記のします。 理由の呼び出しを`CoreApplication.EnablePrelaunch()`に関しては、この関数には、メソッドが呼び出されたとき (だけでコンパイル) JIT がしようとするとメソッド全体をコンパイルするため。 アプリがサポートされていない Windows 10 のバージョンで実行されているかどうかは`CoreApplication.EnablePrelaunch()`、JIT は失敗します。 アプリをプラットフォームをサポートしているときにのみ呼び出されるメソッドの呼び出しを考慮することによって`CoreApplication.EnablePrelaunch()`、問題を回避します。
+注:、`TryEnablePrelaunch()`関数で、上記のします。 理由の呼び出しを`CoreApplication.EnablePrelaunch()`に関しては、この関数には、メソッドが呼び出されたとき (だけでコンパイル) JIT はしようとするとメソッド全体をコンパイルするためです。 アプリがサポートされていない Windows 10 のバージョンで実行されているかどうかは`CoreApplication.EnablePrelaunch()`、JIT は失敗します。 アプリをプラットフォームをサポートしているときにのみ呼び出されるメソッドの呼び出しを考慮することによって`CoreApplication.EnablePrelaunch()`、問題を回避します。
 
-アプリがオプトアウト事前起動の Windows 10 バージョン 1511 で実行されているときする必要があるかどうかはコメント解除できる上記の例でもコードがあります。 バージョン 1511 では、すべての UWP アプリはオプトインが自動的に、事前起動されるできない可能性があるアプリに適したします。
+アプリがオプトアウト事前起動の Windows 10 バージョン 1511 で実行されているときする必要があるかどうかはコメント解除できる上記の例でもコードがあります。 バージョン 1511 では、すべての UWP アプリはオプトインが自動的に事前起動されるできない可能性があるアプリの適切なします。
 
 ## <a name="use-the-visibilitychanged-event"></a>VisibilityChanged イベントの使用
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743242"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798905"
 ---
 # <a name="launch-the-people-app"></a>People アプリの起動
 

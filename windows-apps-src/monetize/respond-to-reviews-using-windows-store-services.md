@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store レビュー API, レビューに返信
 ms.localizationpriority: medium
 ms.openlocfilehash: 95de2cc1de1b71a435fc8d4388f599c417132814
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751954"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795550"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>ストアのサービスを使用してレビューに返信する
 
-Store のアプリのレビューにプログラムで返信するには、*Microsoft Store レビュー API* を使います。 この API は、パートナー センターを使用せず、多数のレビューに返信一括する必要がある開発者に特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+Store のアプリのレビューにプログラムで返信するには、*Microsoft Store レビュー API* を使います。 この API は、多数のレビューに返信を一括する必要がある開発者は、パートナー センターを使用せずに特に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 次の手順で、このプロセスについて詳しく説明しています。
 
@@ -24,7 +24,7 @@ Store のアプリのレビューにプログラムで返信するには、*Micr
 3.  [Microsoft Store レビュー API を呼び出します](#call-the-windows-store-reviews-api)。
 
 > [!NOTE]
-> 使用してだけでなく、Microsoft Store レビューにプログラムでレビューに返信する、レビューの[パートナー センターの使用](../publish/respond-to-customer-reviews.md)に返信することもできます。 API を使用します。
+> 使用するだけでなく、Microsoft Store レビューにプログラムでレビューに返信する、レビューの[パートナー センターの使用](../publish/respond-to-customer-reviews.md)に返信することもできます。 API のします。
 
 <span id="prerequisites" />
 
@@ -32,17 +32,17 @@ Store のアプリのレビューにプログラムで返信するには、*Micr
 
 Microsoft Store レビュー API を呼び出すコードの作成を開始する前に、次の前提条件が満たされていることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](http://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)することができます。
 
 * Azure AD アプリケーションをパートナー センター アカウントに関連付け、テナント ID とアプリケーションのクライアント ID を取得して、キーを生成する必要があります。 Azure AD アプリケーションは、Microsoft Store レビュー API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
     > [!NOTE]
     > この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-Azure AD アプリケーションをパートナー センター アカウントに関連付けると、必要な値を取得します。
+Azure AD アプリケーションをパートナー センター アカウントに関連付けと必要な値を取得します。
 
 1.  パートナー センターで、[組織のパートナー センターのアカウントを組織の Azure AD ディレクトリを関連付けます](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  次に、パートナー センターの**アカウント設定**] セクションの [**ユーザー** ] ページから[Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)のアプリまたはに応答を使用するサービスを表すを確認します。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。 
+2.  次に、パートナー センターの**アカウント設定**] セクションの [**ユーザー** ] ページから[Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)のアプリまたはに返信するために使用するサービスを表すを確認します。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[を新規作成パートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。 
 
 3.  **[ユーザー]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
@@ -67,7 +67,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI と*client \_id*と*client \_secret*パラメーターで、 *tenant\_id*値のテナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+POST URI と*client \_id*と*client \_secret*パラメーターで*tenant\_id*値、テナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 

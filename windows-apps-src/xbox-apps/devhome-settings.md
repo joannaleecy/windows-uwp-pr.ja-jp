@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735034"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797659"
 ---
 # <a name="settings-page-dev-home"></a>[設定] ページ (Dev Home)
    
@@ -73,7 +73,7 @@ Dev Home の**設定**] ページでは、開発機本体のさまざまな設�
 ## <a name="unattended-script-configuration"></a>無人インストール スクリプトの構成  
    
   
-**無人スクリプト設定**ウィンドウでは、Xbox One 本体のセットアップ スクリプトを管理します。   
+**無人設定のスクリプト**ウィンドウは、Xbox One 本体のセットアップ スクリプトを管理します。   
   
 <a id="ID4E3C"></a>
 

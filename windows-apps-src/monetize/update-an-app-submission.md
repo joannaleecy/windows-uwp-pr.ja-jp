@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: b61508edf2ebc2ab155110189fe67df63e2bab30
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736549"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797261"
 ---
 # <a name="update-an-app-submission"></a>アプリの申請の更新
 
@@ -48,7 +48,7 @@ ms.locfileid: "8736549"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 申請を更新するアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| submissionId | string | 必須。 更新する申請の ID です。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| submissionId | string | 必須。 更新する申請の ID です。 この ID は、[アプリの申請の作成](create-an-app-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -294,7 +294,7 @@ Content-Type: application/json
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を更新できませんでした。 |
-| 409  | アプリの現在の状態があるため、申請を更新できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | アプリの現在の状態が原因、申請を更新できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

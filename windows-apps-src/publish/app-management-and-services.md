@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748444"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793529"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -25,7 +25,7 @@ ms.locfileid: "8748444"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-ゲームを公開する場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
+ゲームを公開している場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にできます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
 
 詳しくは、 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と、[新しい Xbox Live クリエーターズ プログラム タイトルを作成しテスト環境に公開する](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)を参照してください。
 
@@ -39,7 +39,7 @@ ms.locfileid: "8748444"
 
 Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
 
-Windows Phone 8.1 と以前公開したアプリのみで、**マップ**のページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
+Windows Phone 8.1 と以前公開したアプリのみの**マップ**ページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
 ## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
@@ -82,10 +82,10 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 ## <a name="wnsmpns"></a>WNS/MPNS
 
-**WNS/MPNS** ] セクションでは、作成し、アプリのユーザーに通知を送信するためのオプションが提供されます。 
+**WNS/MPNS** ] セクションでは、作成したり、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 の顧客の対象となるサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
 アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することも。 
 
@@ -93,7 +93,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 -   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
--   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone 向けに公開した .xap パッケージで使用できます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
+-   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap を以前に公開されたパッケージで使用できます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
  
 
  

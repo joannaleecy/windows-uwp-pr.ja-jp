@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: caf0e8e63716f6ba140ef9346257687f0e7293bb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738495"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793747"
 ---
 # <a name="search-and-find-in-page"></a>検索とページ内検索
 
@@ -31,7 +31,7 @@ ms.locfileid: "8738495"
 
 **入力**。テキスト検索入力の最も一般的なモードは、このガイドのフォーカス。 その他の一般的な入力モードには音声やカメラがありますが、通常、それらにはデバイス ハードウェアを操作する機能が必要であり、追加のコントロールやカスタム UI がアプリ内で必要になる場合があります。
 
-**0 を入力します**。されたら、ユーザーが入力フィールドをアクティブには、ユーザーがテキストを入力すると、前に、「ゼロ入力キャンバス」と呼ばれるものを表示することができます。 通常、ゼロ入力キャンバスは、アプリのキャンバスに表示され、ユーザーがクエリの入力を開始したときに、このコンテンツが[自動提案](auto-suggest-box.md)で置き換えられます。 最近の検索履歴、トレンド検索、状況依存の検索候補、ヒントが、すべてゼロ入力状態の候補となります。
+**0 を入力します**。されたら、ユーザーが入力フィールドをアクティブには、ユーザーがテキストを入力する前に、「ゼロ入力キャンバス」と呼ばれるものを表示することができます。 通常、ゼロ入力キャンバスは、アプリのキャンバスに表示され、ユーザーがクエリの入力を開始したときに、このコンテンツが[自動提案](auto-suggest-box.md)で置き換えられます。 最近の検索履歴、トレンド検索、状況依存の検索候補、ヒントが、すべてゼロ入力状態の候補となります。
 
 ![ゼロ入力キャンバスでの Cortana の例](images/search-cortana-example.png)
 

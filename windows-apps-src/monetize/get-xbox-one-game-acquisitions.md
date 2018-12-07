@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox One ゲームの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: 348430f7ceee66a9c4e82f258a70e57d8f344943
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738525"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796799"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>Xbox One ゲームの入手数の取得
 
@@ -45,7 +45,7 @@ Microsoft Store 分析 API 集計入手データを取得する JSON 形式で�
 
 | パラメーター        | 型   |  説明      |  必須かどうか  
 |---------------|--------|---------------|------|
-| applicationId | string | 入手データを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、XDP 分析プログラムでゲームに移動し、URL から製品 ID を取得します。 または、パートナー センターの分析レポートから入手データをダウンロードする場合、製品 ID は、.tsv ファイルに含まれています。  |  必須  |
+| applicationId | string | 入手データを取得する Xbox One ゲームの製品 ID です。 ゲームの製品 ID を取得するには、XDP 分析プログラムで、ゲームに移動し、URL から製品 ID を取得します。 または、パートナー センターの分析レポートから入手データをダウンロードする場合、製品 ID は、.tsv ファイルに含まれています。  |  必須  |
 | startDate | date | 取得する入手データの日付範囲の開始日です。 既定値は現在の日付です。 |  必須ではない  |
 | endDate | date | 取得する入手データの日付範囲終了日です。 既定値は現在の日付です。 |  必須ではない  |
 | top | int | 返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |

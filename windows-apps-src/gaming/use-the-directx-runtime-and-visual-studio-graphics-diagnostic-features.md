@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, グラフィックス, 診断, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743010"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8798064"
 ---
 # <a name="graphics-diagnostics-tools"></a>グラフィックス診断ツール
 

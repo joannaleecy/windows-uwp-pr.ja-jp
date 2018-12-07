@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファー
 ms.localizationpriority: medium
 ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755966"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797486"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>ストア サービスを使ってターゲット オファーを管理する
 
-*対象のプラン*を作成する場合、**利用率の引き上げ > 対象のプラン**パートナー センターで、使用して、 *Microsoft Store ターゲット オファー API*で、アプリのコードに役立つ情報を取得するエクスペリエンスを実装するアプリ内のアプリのページ、ターゲット オファーします。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
+*対象のプラン*を作成する場合、**利用率の引き上げ > 対象のプラン**パートナー センターで、使用して、 *Microsoft Store ターゲット オファー API* 、アプリのコードに役立つ情報を取得するエクスペリエンスを実装するアプリ内のアプリのページ、ターゲット オファーします。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
 
 ターゲット オファー API はシンプルな REST API で、これを使用すると、ユーザーがターゲット オファーの顧客セグメントに属しているかどうかに基づいて、現在のユーザーに適用されるターゲット オファーを取得できます。 アプリのコードでこの API を使うには、次の手順に従います。
 

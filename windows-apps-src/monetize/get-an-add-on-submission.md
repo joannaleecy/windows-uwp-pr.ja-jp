@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: a87f0e694434774db215f3f5323588f94ec0465b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737869"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797033"
 ---
 # <a name="get-an-add-on-submission"></a>アドオンの申請の取得
 
@@ -45,8 +45,8 @@ ms.locfileid: "8737869"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成アドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
-| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請ではこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| inAppProductId | string | 必須。 取得する申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成するアドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
+| submissionId | string | 必須。 取得する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -138,7 +138,7 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | 申請は見つかりませんでした。 |
-| 409  | 指定されたアドオンに、申請が属していないか、アドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | 指定されたアドオンに、申請が属していないか、アドオンは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック

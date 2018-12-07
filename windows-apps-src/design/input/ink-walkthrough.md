@@ -7,11 +7,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cc650c1f81fbcac5b62b090a6dc58b5f8709cd7a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739954"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795069"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>チュートリアル: UWP アプリでインクをサポートする
 
@@ -66,7 +66,7 @@ Windows Ink を使うと、ユーザーに、ペンと紙の体験とほぼ同�
 
 | コンポーネント | 説明 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAMLUI プラットフォーム コントロールを既定では、受信し、ペンからのすべての入力をインク ストロークか消去ストロークとして表示されます。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAMLUI プラットフォーム コントロール、既定では、受信し、ペンからのすべての入力をインク ストロークか消去ストロークとして表示します。 |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールと共にインスタンス化される分離コード オブジェクトです ([**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) プロパティによって公開されます)。 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) によって公開される既定の手描き入力機能のすべてと、追加のカスタマイズや個人用設定のための包括的な API のセットを提供します。 |
 | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | カスタマイズと拡張、関連付けられた[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)のインク関連機能をアクティブ化するボタンのコレクションが含まれている XAMLUI プラットフォーム コントロールです。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>この機能は、このドキュメントの対象範囲外です。詳しくは、「[複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)」をご覧ください。 | 既定の [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールの代わりに、ユニバーサル Windows アプリが指定した Direct2D デバイス コンテキストにインク ストロークをレンダリングできます。 |

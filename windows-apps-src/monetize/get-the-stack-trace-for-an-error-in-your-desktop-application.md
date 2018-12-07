@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー, デスクトップ アプリケーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc8aaef2b26af88234efe62bf7cf1cb998e19bc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736182"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795540"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>デスクトップ アプリケーションのエラーに関するスタック トレースの取得
 
-[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。 スタック トレースでは、パートナー センターでデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)で利用できます。
+[Windows デスクトップ アプリケーション プログラム](https://msdn.microsoft.com/library/windows/desktop/mt826504)に追加したデスクトップ アプリケーションのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したエラーに関するスタック トレースのみです。 スタック トレースでは、パートナー センターでのデスクトップ アプリケーションの[正常性レポート](https://msdn.microsoft.com/library/windows/desktop/mt826504)で利用できます。
 
 このメソッドを使うには、その前にまず「[デスクトップ アプリケーションのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-desktop-application.md)」のメソッドを使って、スタック トレースを取得するエラーに関連付けられた CAB ファイルの ID ハッシュを取得する必要があります。
 

@@ -1,5 +1,5 @@
 ---
-description: C#、Visual Basic、または VisualC ではコンポーネント拡張機能を使用する場合に、Windows ランタイム アプリでのイベントのプログラミングの概念について説明します (、C++/cli CX) として、プログラミング言語や、UI 定義に XAML をします。
+description: C#、Visual Basic、または VisualC ではコンポーネント拡張機能を使用する場合に、Windows ランタイム アプリでのイベントのプログラミングの概念について説明します (、C++/cli CX) として、プログラミング言語と、UI 定義に XAML をします。
 title: イベントとルーティング イベントの概要
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747372"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796980"
 ---
 # <a name="events-and-routed-events-overview"></a>イベントとルーティング イベントの概要
 
@@ -19,7 +19,7 @@ ms.locfileid: "8747372"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-C#、Visual Basic、または VisualC ではコンポーネント拡張機能を使用する場合に、Windows ランタイム アプリでのイベントのプログラミングの概念について説明します (、C++/cli CX) として、プログラミング言語や、UI 定義に XAML をします。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは*ルーティング イベント*をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。
+C#、Visual Basic、または VisualC ではコンポーネント拡張機能を使用する場合に、Windows ランタイム アプリでのイベントのプログラミングの概念について説明します (、C++/cli CX) として、プログラミング言語と、UI 定義に XAML をします。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは*ルーティング イベント*をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。
 
 ## <a name="events-as-a-programming-concept"></a>プログラミングの概念としてのイベント
 
@@ -265,7 +265,7 @@ Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では
 -   要素の [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) プロパティの値が [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006) である。
 -   要素の **Background** または **Fill** プロパティの値が **null** ではない。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 値は、要素は透明で、ヒット テストで不可視になります  (要素を透明にしつつ、ヒット テストも可能にするには、**null** ではなく [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) を使います)。
 
-**注:****バック グラウンド** **Fill** [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、によって定義されていないし、代わりに、[**コントロール**](https://msdn.microsoft.com/library/windows/apps/br209390)や[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)などの別の派生クラスによって定義します。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
+**注:****バック グラウンド** **Fill** [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、によって定義されていないし、[**コントロール**](https://msdn.microsoft.com/library/windows/apps/br209390)や[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)などの別の派生クラスによって代わりに定義されます。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
 
 -   要素がコントロールの場合、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) プロパティの値は **true** である必要がある。
 -   要素はレイアウトで実際のサイズを持ったものである必要がある。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) と [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) のいずれかが 0 である要素は、入力イベントを発生させません。

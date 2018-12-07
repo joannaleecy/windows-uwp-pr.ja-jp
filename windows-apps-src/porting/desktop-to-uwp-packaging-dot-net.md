@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729388"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794979"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。
 
@@ -25,7 +25,7 @@ Visual Studio を使用して、デスクトップ アプリのパッケージ�
 
 ## <a name="first-prepare-your-application"></a>まず、アプリケーションを準備します
 
-アプリケーションのパッケージの作成を開始する前に、このガイドを確認:[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
+アプリケーションのパッケージの作成を開始する前に、このガイドを確認します。[デスクトップ アプリケーションのパッケージを準備](desktop-to-uwp-prepare.md)します。
 
 <a id="new-packaging-project"/>
 
