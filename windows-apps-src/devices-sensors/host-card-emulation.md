@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756766"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808169"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>NFC スマート カード アプリの作成
 
@@ -36,7 +36,7 @@ Windows 10 Mobile では、次の機能を提供する HCE サービスを実装
 -   外部リーダー カードの選択とユーザー設定に基づいて、アプリケーション プロトコル データ ユニット (APDU) のコマンドと応答のペアをいずれかの登録済みアプリにルーティングし、競合を解決する。
 -   ユーザー操作の結果としてイベントとアプリへの通知を処理する。
 
-Windows 10 には、ISO-DEP に基づくスマート カードのエミュレーションがサポートしています (ISO-IEC 14443-4) で定義されている ISO-IEC 7816-4 仕様の Apdu を使用した通信とします。 Windows 10 では、HCE アプリ用 ISO/IEC 14443-4 Type A テクノロジをサポートします。 Type B、Type F、非 ISO-DEP (MIFARE など) のテクノロジは、既定では SIM にルーティングされます。
+Windows 10 には、ISO DEP に基づくスマート カードのエミュレーションがサポートしています (ISO-IEC 14443-4) で定義されている ISO-IEC 7816-4 仕様の Apdu を使用した通信とします。 Windows 10 では、HCE アプリ用 ISO/IEC 14443-4 Type A テクノロジをサポートします。 Type B、Type F、非 ISO-DEP (MIFARE など) のテクノロジは、既定では SIM にルーティングされます。
 
 カード エミュレーション機能では、windows 10 Mobile デバイスのみが有効になります。 SIM ベースおよび HCE ベースのカード エミュレーションは、他のバージョンの windows 10 では使用できません。
 
@@ -46,7 +46,7 @@ HCE および SIM ベースのカード エミュレーションのサポート�
 
 ## <a name="app-selection-and-aid-routing"></a>アプリの選択と AID ルーティング
 
-HCE アプリを開発するには、windows 10 Mobile デバイス Aid ルーティングされるしくみ、特定のアプリをユーザーが複数のさまざまな HCE アプリをインストールできるためを理解する必要があります。 各アプリは、HCE ベースおよび SIM ベースのカードを複数登録できます。 SIM ベースである従来の Windows Phone 8.1 アプリは引き続き、ユーザーが NFC 設定メニューで既定の支払い用カードとして「SIM カード」オプションを選んだ場合に限り、windows 10 Mobile で動作します。 これは、初めてデバイスに電源を入れると既定で設定される構成です。
+HCE アプリを開発するには、windows 10 Mobile デバイス Aid ルーティングされるしくみ、特定のアプリをユーザーが複数のさまざまな HCE アプリをインストールできるためを理解する必要があります。 各アプリは、HCE ベースおよび SIM ベースのカードを複数登録できます。 SIM ベースである従来の Windows Phone 8.1 アプリは引き続き、ユーザーが NFC 設定メニューで、既定の支払い用カードとして「SIM カード」オプションを選んだ場合に限り、windows 10 Mobile で動作します。 これは、初めてデバイスに電源を入れると既定で設定される構成です。
 
 ユーザーが自分の windows 10 Mobile デバイスを端末にタップと、データは自動的にデバイスにインストールされている適切なアプリにルーティングします。 このルーティングは、5 ～ 16 バイトの識別子であるアプレット ID (AID) に基づいています。 タップが発生すると、外部端末は SELECT コマンドの APDU を送出し、後続のすべての APDU コマンドのルーティング先とする AID を指定します。 後続の SELECT コマンドでは、ルーティング先を再度変更できます。 アプリとユーザー設定によって登録されている AID に基づいて、APDU トラフィックが特定のアプリにルーティングされます。ルーティング先のアプリは、応答の APDU を送信します。 端末側では同じタップで異なる複数のアプリとの通信を必要としている場合もあるので注意してください。 このため、別のアプリのバックグラウンド タスクが APDU に応答する余地ができるように、アプリのバックグラウンド タスクは、非アクティブ化されたらできる限り早く終了する必要があります。 バックグラウンド タスクについては、後で説明します。
 
@@ -82,7 +82,7 @@ Windows 10 Mobile では、システムは、コント ローラー レイヤー
 
 Windows 10 Mobile では、引き続きレガシ Windows Phone 8.1 SIM ベース アプリは登録しないで、Aid システムを使用する NFC 設定ページのメニュー オプション「SIM カード」を提供します。 ユーザーが既定の支払い用カードとして "SIM カード" を選択すると、ISO-DEP ルートが UICC に設定されます (ドロップダウン メニュー内の他の選択肢ではすべて、ISO-DEP ルート先はホスト)。
 
-ある、SE 対応の SIM カード、最初に windows 10 Mobile のデバイスが起動したときのデバイスの「SIM カード」に、ISO-DEP ルートが設定されます。 ユーザーが HCE 対応のアプリをインストールし、そのアプリでなんらかの HCE AID グループ登録が有効になった場合は、ISO-DEP ルート先がホストになります。 新しい SIM ベースのアプリケーションでは、特定の AID ルートがコントローラーのルーティング テーブルに設定されるように、AID を SIM に登録する必要があります。
+SE 対応の SIM カード デバイスが windows 10 Mobile で初めて起動したときのデバイスの「SIM カード」に、ISO-DEP ルートが設定されます。 ユーザーが HCE 対応のアプリをインストールし、そのアプリでなんらかの HCE AID グループ登録が有効になった場合は、ISO-DEP ルート先がホストになります。 新しい SIM ベースのアプリケーションでは、特定の AID ルートがコントローラーのルーティング テーブルに設定されるように、AID を SIM に登録する必要があります。
 
 ## <a name="creating-an-hce-based-app"></a>HCE ベース アプリの作成
 
@@ -312,7 +312,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 アプリでは、デバイスに NFC ハードウェアがあるかどうか、カード エミュレーション機能がサポートされているかどうか、これらの機能をユーザーに提供する前にホスト カード エミュレーションがサポートされるかどうかを確認する必要があります。
 
-NFC スマート カード エミュレーション機能は、windows 10 Mobile では、windows 10 の他のバージョンでスマート カード エミュレーター Api を使用しようとするためにのみ有効には、エラーが発生します。 次のコード スニペットでは、スマート カード API のサポートを確認することができます。
+NFC スマート カード エミュレーション機能では、windows 10 Mobile では、windows 10 の他のバージョンでスマート カード エミュレーター Api を使用しようとするためにのみ有効には、エラーが発生します。 次のコード スニペットでは、スマート カード API のサポートを確認することができます。
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -332,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>ロック画面と画面オフの動作
 
-Windows 10 Mobile は、デバイス レベルでのカード エミュレーション設定は、携帯電話会社またはデバイスの製造元によって設定できます。 既定では、"タップして支払い" のトグルがオフになっており "デバイス レベルでの有効化ポリシー" が "常時" に設定されています (通信事業者または OEM パートナーによってこれらの値が上書きされていない場合)。
+Windows 10 Mobile は、デバイス レベルのカード エミュレーション設定は、携帯電話会社またはデバイスの製造元によって設定できます。 既定では、"タップして支払い" のトグルがオフになっており "デバイス レベルでの有効化ポリシー" が "常時" に設定されています (通信事業者または OEM パートナーによってこれらの値が上書きされていない場合)。
 
 アプリケーションでは、デバイス レベルで [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) の値を照会し、それぞれの状態で望ましいアプリの動作に基づいて、各ケースに対処することができます。
 

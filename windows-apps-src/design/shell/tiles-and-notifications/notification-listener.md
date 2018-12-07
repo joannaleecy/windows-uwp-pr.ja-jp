@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
-ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755278"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807464"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-ユーザーは Windows 設定アプリを使用して、アクセスをいつでも取り消すことができます。 そのため、アプリでは常に、通知リスナーを使用するコードを実行する前に、[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) メソッドを使用してアクセス状態を確認する必要があります。 ユーザーがアクセスを取り消すと、API は例外をスローせず、警告なしに失敗します (たとえば、すべての通知を取得する API は空のリストを返すだけです)。
+ユーザーは Windows 設定アプリを使用して、アクセスをいつでも取り消すことができます。 そのため、アプリが、通知リスナーを使用するコードを実行する前に[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)メソッドを使用してアクセス状態を常に確認する必要があります。 ユーザーがアクセスを取り消すと、API は例外をスローせず、警告なしに失敗します (たとえば、すべての通知を取得する API は空のリストを返すだけです)。
 
 
 ## <a name="access-the-users-notifications"></a>ユーザーの通知にアクセスする
@@ -277,9 +277,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>追加/無視される通知のフォアグラウンド イベント
 
 > [!IMPORTANT] 
-> 既知の問題: フォア グラウンド イベントの最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこの修正する予定です。
+> 既知の問題: フォア グラウンド イベントで最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを修正しますします。
 
-フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に両方の変更イベント通知を受け取るもできます。
+フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に、両方の変更イベント通知を受け取るもできます。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -294,4 +294,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクでの文書 fixdelays
 
-アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 プロンプトがシステム設定をユーザー トーゴ遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定その後にはバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
+アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 システム設定に対するユーザー トーゴ プロンプト、遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定してその後にはバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。

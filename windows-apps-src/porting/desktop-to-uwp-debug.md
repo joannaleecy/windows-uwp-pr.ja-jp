@@ -8,13 +8,13 @@ keywords: Windows 10, UWP
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: 20351737e17dce7654385d6843280005cae9800c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756686"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8808271"
 ---
-# <a name="run-debug-and-test-a-packaged-desktop-application"></a>実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト
+# <a name="run-debug-and-test-a-packaged-desktop-application"></a>実行、デバッグ、およびデスクトップ アプリケーションのパッケージのテスト
 
 パッケージ化されたアプリケーションを実行し、それに署名することがなくの外観を確認します。 その後、ブレークポイントを設定し、コード全体をステップ実行します。 実稼働環境でアプリケーションをテストする準備ができたら、アプリケーションに署名し、それをインストールします。 このトピックでは、これらの作業を行う方法について説明します。
 
@@ -40,7 +40,7 @@ Add-AppxPackage –Register AppxManifest.xml
 ![[スタート] メニューでパッケージ化されたアプリケーション](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行されにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
+> パッケージ化されたアプリケーションでは、常には、対話ユーザーとして実行してにパッケージ化されたアプリケーションをインストールするすべてのドライブを NTFS 形式にフォーマットする必要があります。
 
 ## <a name="debug-your-app"></a>アプリのデバッグ
 
@@ -64,7 +64,7 @@ Visual Studio 2017 リリース 15.4 で使用可能な[新しいパッケージ
 
 #### <a name="modify-your-application-in-between-debug-sessions"></a>デバッグ セッションの間に、アプリケーションを変更します。
 
-バグの修正をアプリケーションに変更を加えた場合は、MakeAppx ツールを使用して再パッケージ化します。 「[MakeAppx ツールを実行する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
+バグを修正するアプリケーションに、変更を加えた場合は、MakeAppx ツールを使用して再パッケージ化します。 「[MakeAppx ツールを実行する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
 ### <a name="debug-the-entire-application-lifecycle"></a>全体のアプリケーションのライフ サイクルをデバッグします。
 
@@ -76,7 +76,7 @@ Visual Studio 2017 リリース 15.4 で使用可能な[新しいパッケージ
 
 ## <a name="test-your-app"></a>アプリのテスト
 
-配布用に準備する現実的な設定で、アプリケーションをテストするには、アプリケーションに署名し、それをインストールすることをお勧めします。
+配布用に準備する現実的な設定で、アプリケーションをテストするには、アプリケーションに署名し、インストールすることをお勧めします。
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>Visual Studio を使ってパッケージ化されたアプリケーションをテストします。
 
@@ -84,7 +84,7 @@ Visual Studio では、テスト証明書を使用して、アプリケーショ
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>Desktop App Converter (DAC) を使用してパッケージ化されたアプリケーションをテストします。
 
-Desktop App Converter を使用して、アプリケーションをパッケージ化する場合は使ってできます、``sign``パラメーターを自動的に生成された証明書を使用して、アプリケーションに署名します。 その証明書をインストールしてから、アプリをインストールする必要があります。 「[パッケージ アプリを実行する](desktop-to-uwp-run-desktop-app-converter.md#run-app)」をご覧ください。   
+使える Desktop App Converter を使用して、アプリケーションをパッケージ化する場合、``sign``パラメーターを自動的に生成された証明書を使って、アプリケーションに署名します。 その証明書をインストールしてから、アプリをインストールする必要があります。 「[パッケージ アプリを実行する](desktop-to-uwp-run-desktop-app-converter.md#run-app)」をご覧ください。   
 
 
 ### <a name="manually-sign-apps-optional"></a>アプリに手動で署名する (省略可能)
@@ -105,11 +105,11 @@ Desktop App Converter を使用して、アプリケーションをパッケー�
     [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
-### <a name="test-your-application-for-windows-10-s"></a>Windows 10 S のアプリケーションをテストします。
+### <a name="test-your-application-for-windows-10-s"></a>アプリケーションを Windows 10 S をテストします。
 
 アプリを公開する前に Windows 10 秒を実行するデバイスで正しく動作すること確認します。実際には、Microsoft Store にアプリを公開する場合は、必要がありますこれを行うストア要件があるためです。 Windows 10 S を実行するデバイスで正しく動作しないアプリは認定されません。
 
-[Windows 10 S の Windows アプリケーションのテスト](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)を参照してください。
+[テストの Windows 10 S、Windows アプリケーション](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)を参照してください。
 
 ### <a name="run-another-process-inside-the-full-trust-container"></a>完全な信頼コンテナー内で別のプロセスを実行する
 
