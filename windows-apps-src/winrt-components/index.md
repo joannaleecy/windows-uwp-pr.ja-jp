@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c018c890f8fcab2cb0c778c8c91840911f158c9
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8871487"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8925336"
 ---
 # <a name="windows-runtime-components"></a><span data-ttu-id="9a688-104">Windows ランタイム コンポーネント</span><span class="sxs-lookup"><span data-stu-id="9a688-104">Windows Runtime components</span></span>
 <span data-ttu-id="9a688-105">Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使用することができます。</span><span class="sxs-lookup"><span data-stu-id="9a688-105">Windows Runtime components are self-contained objects that you can instantiate and use from any language, including C#, Visual Basic, JavaScript, and C++.</span></span>

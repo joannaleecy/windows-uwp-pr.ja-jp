@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8894254"
+ms.locfileid: "8925707"
 ---
 # <a name="import-media-from-a-device"></a><span data-ttu-id="ba46a-104">デバイスからのメディアのインポート</span><span class="sxs-lookup"><span data-stu-id="ba46a-104">Import media from a device</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8873648"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8925024"
 ---
 # <a name="launch-the-default-app-for-a-file"></a><span data-ttu-id="c0699-104">ファイルに応じた既定のアプリの起動</span><span class="sxs-lookup"><span data-stu-id="c0699-104">Launch the default app for a file</span></span>
 
