@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム、ゲーム開発
 ms.localizationpriority: medium
 ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780560"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8900702"
 ---
 # <a name="windows-10-game-development-guide"></a><span data-ttu-id="2cd8f-104">Windows 10 ゲーム開発ガイド</span><span class="sxs-lookup"><span data-stu-id="2cd8f-104">Windows 10 game development guide</span></span>
 

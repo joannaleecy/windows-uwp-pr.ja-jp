@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794080"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8874397"
 ---
 # <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span data-ttu-id="8dcde-104"><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>マップされていないタイルでのラスタライザー動作</span><span class="sxs-lookup"><span data-stu-id="8dcde-104"><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Rasterizer behavior with non-mapped tiles</span></span>
 

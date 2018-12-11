@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4227a3ad77eadaa40e47420a5fdab6d65c875da5
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8854573"
+ms.locfileid: "8874564"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span data-ttu-id="91f0b-104"><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明なテクスチャと 1 ビットのアルファ テクスチャ</span><span class="sxs-lookup"><span data-stu-id="91f0b-104"><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>Opaque and 1-bit alpha textures</span></span>
 

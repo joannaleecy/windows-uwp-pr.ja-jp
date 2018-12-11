@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8798905"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872157"
 ---
 # <a name="launch-the-people-app"></a><span data-ttu-id="2ccf7-105">People アプリの起動</span><span class="sxs-lookup"><span data-stu-id="2ccf7-105">Launch the People app</span></span>
 

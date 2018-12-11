@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, Store サービス, Microsoft Store 分析 API, 使用状況
 ms.localizationpriority: medium
 ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8798189"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872137"
 ---
 # <a name="get-monthly-app-usage"></a><span data-ttu-id="a5fa7-104">アプリの使用状況 (月単位) の取得</span><span class="sxs-lookup"><span data-stu-id="a5fa7-104">Get monthly app usage</span></span>
 

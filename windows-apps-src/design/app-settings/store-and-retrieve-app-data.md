@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a5e3a29a252b091b1e52dbea5fa7af5058488ed5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785536"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8900449"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a><span data-ttu-id="ebb37-103">設定と他のアプリ データを保存して取得する</span><span class="sxs-lookup"><span data-stu-id="ebb37-103">Store and retrieve settings and other app data</span></span>
 

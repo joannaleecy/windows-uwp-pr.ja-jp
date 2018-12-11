@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3171eba376911157a6ad2687fe3879df751615ac
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8798669"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8828621"
 ---
 # <a name="compressed-texture-formats"></a><span data-ttu-id="0ca74-104">圧縮テクスチャ形式</span><span class="sxs-lookup"><span data-stu-id="0ca74-104">Compressed texture formats</span></span>
 

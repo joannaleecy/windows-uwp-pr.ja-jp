@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 08c6dda8759a6e1452daf7cf0a3cd3e5db9ea1e6
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8782351"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8900672"
 ---
 # <a name="data-type-conversion"></a><span data-ttu-id="c8e6b-104">データ型の変換</span><span class="sxs-lookup"><span data-stu-id="c8e6b-104">Data type conversion</span></span>
 

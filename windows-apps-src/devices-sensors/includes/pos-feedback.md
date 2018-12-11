@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8856453"
+ms.locfileid: "8902119"
 ---
 ## <a name="support-and-feedback"></a><span data-ttu-id="a1303-104">サポートとフィードバック</span><span class="sxs-lookup"><span data-stu-id="a1303-104">Support and feedback</span></span>
 

@@ -6,11 +6,11 @@ ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797559"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8874911"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a><span data-ttu-id="a1fd3-104">新機能、Windows 開発者向けドキュメントの 2018 年 9 月</span><span class="sxs-lookup"><span data-stu-id="a1fd3-104">What's New in the Windows Developer Docs in September 2018</span></span>
 
