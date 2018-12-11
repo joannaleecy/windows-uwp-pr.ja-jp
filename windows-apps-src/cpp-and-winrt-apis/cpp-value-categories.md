@@ -7,11 +7,11 @@ keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8874179"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8924384"
 ---
 # <a name="value-categories-and-references-to-them"></a><span data-ttu-id="99254-105">値のカテゴリとへの参照</span><span class="sxs-lookup"><span data-stu-id="99254-105">Value categories, and references to them</span></span>
 <span data-ttu-id="99254-106">このトピックでは、C++ で存在するさまざまなカテゴリの値 (および値への参照) について説明します。</span><span class="sxs-lookup"><span data-stu-id="99254-106">This topic describes the various categories of values (and references to values) that exist in C++.</span></span> <span data-ttu-id="99254-107">*左辺値*と*rvalue*の音が間違いが、このトピックでは条件でそれらのない考えです。</span><span class="sxs-lookup"><span data-stu-id="99254-107">You will doubtless have heard of *lvalues* and *rvalues*, but you may not think of them in the terms that this topic presents.</span></span> <span data-ttu-id="99254-108">すぎるは、値の他の種類があります。</span><span class="sxs-lookup"><span data-stu-id="99254-108">And there are other kinds of values, too.</span></span>

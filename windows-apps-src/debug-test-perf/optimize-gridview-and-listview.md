@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8873929"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8919794"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a><span data-ttu-id="fc483-104">ListView と GridView の UI の最適化</span><span class="sxs-lookup"><span data-stu-id="fc483-104">ListView and GridView UI optimization</span></span>
 

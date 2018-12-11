@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、非同期プログラミング、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 8551a49512d4b17ab1bab704596d9e5389de3eb6
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8897408"
+ms.locfileid: "8924858"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a><span data-ttu-id="84eb7-104">非同期プログラミング (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="84eb7-104">Asynchronous programming (DirectX and C++)</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 応答、応答することを確認します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1feb6f463fe018d356d678b23199716ad0cbd3e8
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8889388"
+ms.locfileid: "8920626"
 ---
 # <a name="respond-to-customer-reviews"></a><span data-ttu-id="11bc6-103">顧客のレビューに返信する</span><span class="sxs-lookup"><span data-stu-id="11bc6-103">Respond to customer reviews</span></span>
 

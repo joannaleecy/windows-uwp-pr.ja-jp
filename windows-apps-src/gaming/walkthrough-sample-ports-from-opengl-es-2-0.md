@@ -6,11 +6,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 6f9b424428753529e753c9fd15bbab4321fa05b4
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8877476"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8922489"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a><span data-ttu-id="f9fe3-103">OpenGL ES 2.0 からのチュートリアル サンプルの移植</span><span class="sxs-lookup"><span data-stu-id="f9fe3-103">Walkthrough sample ports from OpenGL ES 2.0</span></span>
 
