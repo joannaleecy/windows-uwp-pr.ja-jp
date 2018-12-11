@@ -156,7 +156,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 次に、パートナー センターをパッケージに数値で始まる id を割り当てる場合、こと確認するも<i>-appid</i>パラメーターに渡すそのパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用します。  
+> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
 
 **ビデオ**
 
