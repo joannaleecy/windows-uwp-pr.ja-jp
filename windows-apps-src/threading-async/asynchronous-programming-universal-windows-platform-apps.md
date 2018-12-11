@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、非同期
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735057"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896038"
 ---
 # <a name="asynchronous-programming"></a>非同期プログラミング
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) とは、c#、Microsoft Visual Basic.NET、C++、および JavaScript での形式での非同期プログラミングについて説明します。
@@ -21,7 +21,7 @@ ms.locfileid: "8735057"
 処理の完了までに時間がかかるメソッドの場合、UWP で非同期プログラミングを使うのは標準で、例外ではありません。 JavaScript、c#、Visual Basic、および C++ 各非同期メソッドの言語のサポートを提供します。
 
 ## <a name="asynchronous-programming-in-the-uwp"></a>UWP での非同期プログラミング
-[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) Api と[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) Api など、UWP 機能の多くは非同期 Api として公開されます。 慣例により、非同期 Api の名前は部が実行が呼び出し元に制御が返される後に実行する可能性が高いことを示す"Async"で終わります。
+[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) Api と[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) Api など、UWP 機能の多くは非同期 Api として公開されます。 慣例により、非同期 Api の名前は、その実行の一部が、呼び出し元に制御が返されます後に実行する可能性が高いであることを示す"Async"で終了します。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリで非同期 API を使う場合、コードは一貫した方法で非ブロック呼び出しを行います。 これらの非同期パターンを独自の API 定義に実装すると、呼び出し元はコードを理解し、予測可能な方法で使うことができます。
 
@@ -55,7 +55,7 @@ UWP の非同期パターンを利用すると、スレッドの明示的な管�
 C# または Visual Basic で書かれたコードのセグメントは、通常は同期して実行されます。つまり、ある行が実行されるときには、その行は次の行が実行される前に完了します。 以前は非同期実行の Microsoft .NET プログラミング モデルがありましたが、作成されたコードでは、コードで実行しようとしているタスクではなく、非同期コードを実行するしくみに重点が置かれる傾向があります。 UWP、.NET framework、C# と Visual Basic のコンパイラでは、コードから非同期のしくみを取り出す機能が追加されました。 これにより、.NET や UWP を使う場合、いつどのように達成するかではなく何を達成するかに重点を置いた非同期コードを記述できます。 記述される非同期コードは、同期コードに類似しています。 詳しくは、「[C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)」をご覧ください。
 
 ## <a name="asynchronous-patterns-in-uwp-with-cwinrt"></a>C++ の UWP での非同期パターン/WinRT
-C++/cli コルーチンと**co_await**演算子を使用する、WinRT します。 詳しくとコード例は、「 [、C++ での非同期プログラミング/WinRT](../cpp-and-winrt-apis/concurrency.md)します。
+C++/cli コルーチンと**co_await**演算子を使用する WinRT、します。 詳しくとコード例は、「 [、C++ での非同期プログラミング/WinRT](../cpp-and-winrt-apis/concurrency.md)します。
 
 ## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>C++ の UWP での非同期パターン/CX
 C++/CX では、非同期プログラミングは [**task クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) とその [**then メソッド**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx) に基づいています。 構文は JavaScript の promise の構文に似ています。 **task クラス**とそれに関連する型は、スレッド コンテキストの取り消しと管理に使われる機能を提供します。 詳しくは、次を参照してください。 [、C++ での非同期プログラミング/CX](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)します。

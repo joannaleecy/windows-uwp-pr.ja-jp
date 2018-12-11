@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 6079ea8ca844efc912b970c00c6907d98378dd07
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748899"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896008"
 ---
 # <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
@@ -35,7 +35,7 @@ ms.locfileid: "8748899"
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C++ 非同期アプリの作成する方法について//winrt を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。 C++ で非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C++ 非同期アプリの作成する方法について/WinRT を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。 C++ 非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。
 
 -   **読み取り、書き込み、またはその両方の対象となるファイルを取得する方法についての知識**
 
@@ -116,7 +116,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **ファイルへのテキストの書き込み**
 
-[**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)メソッドを呼び出すことによって、ファイルにテキストを作成します。
+[**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync)メソッドを呼び出してファイルにテキストを作成します。
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -150,7 +150,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **バッファーを使ったファイルへのバイトの書き込み (2 ステップ)**
 
-1.  最初に、(文字列に基づく) バイトのバッファーを取得するのには、 [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)を呼び出してファイルに記述します。
+1.  最初に、(文字列に基づく) バイトのバッファーを取得するのには、 [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary)を呼び出して、ファイルを作成します。
 
 ```csharp
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -254,7 +254,7 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  次に、出力ストリームを取得するから[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)メソッドを呼び出すことによって、`stream`します。 C# を使用している場合、これをステートメントで囲みます**を使用して**出力ストリームの有効期間を管理します。 使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、その有効期間を制御するには、ブロックで囲んでまたはを設定することによって`nullptr`完了したときにします。
+2.  次から[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)メソッドを呼び出すことによって、出力ストリームを取得、`stream`します。 C# を使用している場合、これをステートメントで囲みます**を使用して**出力ストリームの有効期間を管理します。 使っている場合[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、その有効期間を制御するには、ブロックで囲んでまたはを設定することによって`nullptr`を終了したらします。
 
 ```csharp
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  これを追加できるようになりました (使用している場合は、c#、既存の**using**ステートメント内で) の新しい[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)オブジェクトを作成し、 [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)メソッドを呼び出すことによって、出力ストリームを記述するコードします。
+3.  これを追加できるようになりました (使用している場合は、c#、既存の**using**ステートメント内) を新しい[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)オブジェクトを作成し、 [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)メソッドを呼び出すことによって、出力ストリームを記述するコードします。
 
 ```csharp
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))

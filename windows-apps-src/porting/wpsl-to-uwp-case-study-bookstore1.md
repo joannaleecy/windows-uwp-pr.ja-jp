@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 19045e84f1ca3396321dd4f8c4e76da24dc9a588
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733301"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896768"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight から UWP へのケース スタディ: Bookstore1
 
@@ -26,9 +26,9 @@ ms.locfileid: "8733301"
 
 ## <a name="downloads"></a>ダウンロード
 
-[WindowsPhone Silverlight アプリをダウンロード、Bookstore1WPSL8](http://go.microsoft.com/fwlink/?linkid=517053)します。
+[ダウンロード、Bookstore1WPSL8 WindowsPhone Silverlight アプリ](http://go.microsoft.com/fwlink/?linkid=517053)です。
 
-[Windows 10 アプリの bookstore1universal \_10 をダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)します。
+[Windows 10 アプリをダウンロード、bookstore1universal \_10](http://go.microsoft.com/fwlink/?linkid=532950)します。
 
 ## <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight アプリ
 
@@ -78,7 +78,7 @@ MainPage.xaml では、移植作業のために次の変更を行う必要があ
 
 既定では、すべての向きがサポートされます。 WindowsPhone Silverlight アプリを明示的に制約自体縦向きのみには、そのため元に戻す項目 \#1 および \#2 支払われる新しいプロジェクトで、アプリ パッケージ マニフェストに移動して、**縦****向きがサポートされている**下を確認しています。
 
-このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 と \#5 を使っていた WindowsPhone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP) の **TextBlock**スタイルを検索する必要があります。 エミュレーターで WindowsPhone Silverlight アプリを実行し、[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md)のセクションで、図と並行して比較できます。 これを行う、および WindowsPhone Silverlight システム スタイルのプロパティを見ているから、次の表を作成できます。
+このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 と \#5 を使用していた WindowsPhone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP) の **TextBlock**スタイルを検索する必要があります。 エミュレーターで WindowsPhone Silverlight アプリを実行して、[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md)のセクションで、図と並行して比較できます。 これを行う、および、WindowsPhone Silverlight システム スタイルのプロパティを見ているから、次の表を作成できます。
 
 | Windows Phone Silverlight スタイル キー | UWP スタイル キー          |
 |-------------------------------------|------------------------|

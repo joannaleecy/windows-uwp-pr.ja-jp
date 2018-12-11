@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 81f4232d038b89f2c49cf584346d632911fb70e2
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731204"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895822"
 ---
 # <a name="get-battery-information"></a>バッテリー情報の取得
 
@@ -336,7 +336,7 @@ namespace App1
 
 最後に、この基本的なバッテリー アプリを実行します: **[デバッグ]** メニューで **[デバッグの開始]** をクリックしてソリューションをテストします。
 
-**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)オブジェクトから数値を受信する、**ローカル コンピューター**または外部**デバイス**(Windows Phone) などのアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
+**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)オブジェクトから数値を受信する、**ローカル コンピューター**または (Windows Phone) など、外部の**デバイス**でアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
 
  
 
