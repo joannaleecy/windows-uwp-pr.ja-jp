@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cadbf38385bbc321ef5bf23eb93c3fbc5c1a2417
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779032"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897625"
 ---
 # <a name="get-usersxuidxuidhistorytitles"></a>GET (/users/xuid({xuid})/history/titles)
 タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。 これらの Uri のドメインが`achievements.xboxlive.com`します。

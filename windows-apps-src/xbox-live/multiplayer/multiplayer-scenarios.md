@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 338c6e65846ca0ce1307e1e5843f37fe63ecf70a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793199"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885320"
 ---
 # <a name="multiplayer-scenarios"></a>マルチプレイヤー シナリオ
 マルチプレイヤー シナリオには多くの種類があります。適切なシナリオを選択することで、プレイヤーのエンゲージメントを高め、ゲームのプレイヤー ベースを拡大することができます。これは、ゲームがアクティブにプレイされる期間をできるだけ長くするために有効です。

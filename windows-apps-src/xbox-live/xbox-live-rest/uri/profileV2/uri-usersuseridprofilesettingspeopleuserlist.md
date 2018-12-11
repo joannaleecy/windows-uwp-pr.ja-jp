@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b58c817156a7c372a8e6acfab895e6b7c51207
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757179"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8872225"
 ---
 # <a name="usersuseridprofilesettingspeopleuserlistsettingssettings"></a>/users/{userId}/profile/settings/people/{userList}?settings={settings}
 ユーザーのプロファイルへのアクセスや、ユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。

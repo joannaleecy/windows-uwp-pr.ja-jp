@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a99bfaf11074092bd4c6aa1ed822f71f65a9d62
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8737539"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8886532"
 ---
 # <a name="usersme"></a>/users/me
 現在のユーザーのプレゼンスにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e63e4ee6789e4ffb292608aa446138109e00e05
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785704"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891503"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 

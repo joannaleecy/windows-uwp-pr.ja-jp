@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, ランキング
 ms.localizationpriority: medium
 ms.openlocfilehash: e8b88f3db93f98789ada3c3b3dfe74195925657e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8795608"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895271"
 ---
 # <a name="player-stats"></a>プレイヤーの統計
 

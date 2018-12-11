@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3acbefdec9af8c60c3a2bc7ece185c2b83e3b63b
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825897"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889607"
 ---
 # <a name="post-untrustedplatformusersbatchscidssciddatapathandfilenametype"></a>POST (/untrustedplatform/users/batch/scids/{scid}/data/{pathAndFileName},{type})
 同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。

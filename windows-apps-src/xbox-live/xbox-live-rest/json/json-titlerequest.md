@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a90f42c2f830ba6f04f77a1acaba067a2746a062
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780904"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8877586"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
 タイトルに関する情報を要求します。 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 703b0750dabfdad55d55534bbe7a66a69d988f53
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8752070"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8871393"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript Object Notation (JSON) オブジェクト リファレンス
  

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb160f3276d215e3aba5dfd671c67fa17d883b5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8789941"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8870983"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
 呼び出し元のユーザーからコレクションに対応する XUID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。

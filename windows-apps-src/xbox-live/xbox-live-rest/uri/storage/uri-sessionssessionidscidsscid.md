@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ae3ade71d4b7847d671fe7f01cdc31b0014f766
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784408"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8877602"
 ---
 # <a name="sessionssessionidscidsscid"></a>/sessions/{sessionId}/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
