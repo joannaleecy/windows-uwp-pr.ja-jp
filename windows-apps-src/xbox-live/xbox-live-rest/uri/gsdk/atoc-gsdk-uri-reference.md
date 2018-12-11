@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a9a0a38cff9214485b2d7e8b1f8a28acb3207444
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8789849"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8871022"
 ---
 # <a name="game-server-universal-resource-identifier-uri-reference"></a><span data-ttu-id="40d99-104">ゲーム サーバー ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="40d99-104">Game Server Universal Resource Identifier (URI) Reference</span></span>
 <span data-ttu-id="40d99-105">Uri のクライアントで、タイトルのゲーム サーバー開発キット サーバーのインスタンスを作成するために使用します。</span><span class="sxs-lookup"><span data-stu-id="40d99-105">URIs used by clients to create Game Server Development Kit server instances for a title.</span></span> <span data-ttu-id="40d99-106">これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="40d99-106">The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

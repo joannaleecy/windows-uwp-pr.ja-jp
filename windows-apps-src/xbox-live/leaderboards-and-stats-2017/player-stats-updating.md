@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b37c008e6aa719b641321c5e5a1c3360b20786
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794190"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8898392"
 ---
 # <a name="updating-stats-2017"></a><span data-ttu-id="f8d92-104">統計の更新 2017</span><span class="sxs-lookup"><span data-stu-id="f8d92-104">Updating Stats 2017</span></span>
 

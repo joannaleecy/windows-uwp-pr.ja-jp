@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784165"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883739"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a><span data-ttu-id="178a0-104">/users/xuid({xuid})/scids/{scid}/stats</span><span class="sxs-lookup"><span data-stu-id="178a0-104">/users/xuid({xuid})/scids/{scid}/stats</span></span>
 <span data-ttu-id="178a0-105">スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="178a0-105">Accesses a service configuration scoped by a comma-delimited list of user statistic names on behalf of the specified user.</span></span> <span data-ttu-id="178a0-106">これらの Uri のドメインが`userstats.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="178a0-106">The domain for these URIs is `userstats.xboxlive.com`.</span></span>

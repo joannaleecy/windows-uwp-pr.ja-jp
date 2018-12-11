@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787199"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8874637"
 ---
 # <a name="post-titlestitleidvariants"></a><span data-ttu-id="aaa9e-104">POST (/titles/{titleId}/variants)</span><span class="sxs-lookup"><span data-stu-id="aaa9e-104">POST (/titles/{titleId}/variants)</span></span>
 <span data-ttu-id="aaa9e-105">指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="aaa9e-105">URI called by a client that retrieves a list of game variants for the specified title Id. The domains for these URIs are `gameserverds.xboxlive.com` and `gameserverms.xboxlive.com`.</span></span>

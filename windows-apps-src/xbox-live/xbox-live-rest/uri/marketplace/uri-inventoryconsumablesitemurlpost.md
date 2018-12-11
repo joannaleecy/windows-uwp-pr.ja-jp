@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783228"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888929"
 ---
 # <a name="post-itemid"></a><span data-ttu-id="bb7ec-104">POST ({itemID})</span><span class="sxs-lookup"><span data-stu-id="bb7ec-104">POST ({itemID})</span></span>
 <span data-ttu-id="bb7ec-105">または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。</span><span class="sxs-lookup"><span data-stu-id="bb7ec-105">Indicates that all or a portion of a consumable inventory item has been used and decrements the quantity of the consumable by the requested amount.</span></span>

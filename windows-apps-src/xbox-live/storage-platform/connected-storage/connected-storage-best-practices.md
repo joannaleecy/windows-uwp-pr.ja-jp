@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: dbdb8f95e9afc44a3280d897e74f74d327f94b97
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799112"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8877599"
 ---
 # <a name="connected-storage-best-practices"></a><span data-ttu-id="84436-104">接続ストレージのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="84436-104">Connected Storage best practices</span></span>
 

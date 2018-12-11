@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a46ecd48c2b0bf523ab234a5f20cf9ed6669e75
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8733654"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890013"
 ---
 # <a name="presence-uris"></a><span data-ttu-id="69c9a-104">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="69c9a-104">Presence URIs</span></span>
  

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4549301c60eafb935dab0ac9c5b5028452edfb
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8795747"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8879377"
 ---
 # <a name="rich-presence-updating-strings"></a><span data-ttu-id="24913-104">リッチ プレゼンスの文字列の更新</span><span class="sxs-lookup"><span data-stu-id="24913-104">Rich Presence updating strings</span></span>
 

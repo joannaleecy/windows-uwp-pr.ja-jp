@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a0be72142a3e11c7c680cfc998287f396c2afc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8757607"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896471"
 ---
 # <a name="reading-a-binary-blob-in-xbox-live-title-storage"></a><span data-ttu-id="4bf1e-104">Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り</span><span class="sxs-lookup"><span data-stu-id="4bf1e-104">Reading a binary blob in Xbox Live Title Storage</span></span>
 

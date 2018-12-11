@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d6d6e6acfd8fa39bd9d26c87ed99362d2c88d6
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780891"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887869"
 ---
 # <a name="reputation-uris"></a><span data-ttu-id="2a477-104">評判 URI</span><span class="sxs-lookup"><span data-stu-id="2a477-104">Reputation URIs</span></span>
  

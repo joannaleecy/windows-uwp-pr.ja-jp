@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, ゲーム、xbox、xbox live, xbox one
 ms.localizationpriority: low
 ms.openlocfilehash: aa14071f5ddc9af778fc59cc20891bf83310088b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794737"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8877487"
 ---
 # <a name="testing-on-the-xbox-one-console"></a><span data-ttu-id="6c972-104">Xbox One 本体上でのテスト</span><span class="sxs-lookup"><span data-stu-id="6c972-104">Testing on the Xbox One console</span></span>
 

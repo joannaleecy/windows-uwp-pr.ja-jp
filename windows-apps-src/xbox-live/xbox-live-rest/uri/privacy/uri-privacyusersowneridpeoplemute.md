@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 86010d11ff0a7ebe188766f51bc3160a4f2befa4
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784832"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899413"
 ---
 # <a name="usersowneridpeoplemute"></a><span data-ttu-id="cf3fc-104">/users/{ownerId}/people/mute</span><span class="sxs-lookup"><span data-stu-id="cf3fc-104">/users/{ownerId}/people/mute</span></span>
 <span data-ttu-id="cf3fc-105">ユーザーのミュート リストにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="cf3fc-105">Accesses the mute list for a user.</span></span>

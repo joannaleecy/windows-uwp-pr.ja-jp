@@ -6,11 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10, Xbox one, リッチ プレゼンス文字列では、パートナー センター
 ms.openlocfilehash: 5c2add99c6fc6ad1c7f085eb35dc4fdba9e0688d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8753312"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885036"
 ---
 # <a name="configure-rich-presence-in-partner-center"></a><span data-ttu-id="65ce4-104">パートナー センターでのリッチ プレゼンスを構成します。</span><span class="sxs-lookup"><span data-stu-id="65ce4-104">Configure Rich Presence in Partner Center</span></span>
 

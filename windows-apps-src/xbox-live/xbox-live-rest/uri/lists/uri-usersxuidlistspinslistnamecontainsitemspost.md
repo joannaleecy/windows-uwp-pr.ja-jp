@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c18bf70773de60d4c831d4be891255f98750efa8
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790402"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890811"
 ---
 # <a name="post-usersxuidxuidlistspinslistnamecontainsitems"></a><span data-ttu-id="92b2d-104">POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems</span><span class="sxs-lookup"><span data-stu-id="92b2d-104">POST /users/xuid(xuid)/lists/PINS/{listname}/ContainsItems</span></span>
 <span data-ttu-id="92b2d-105">全体の一覧を取得することがなく、一連項目 (itemId により指定) にはが一覧に含まれて かどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="92b2d-105">Determines whether a list contains a set of items (specified by itemId) without retrieving the entire list.</span></span> <span data-ttu-id="92b2d-106">これらの Uri のドメインが`eplists.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="92b2d-106">The domain for these URIs is `eplists.xboxlive.com`.</span></span>

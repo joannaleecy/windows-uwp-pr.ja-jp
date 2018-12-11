@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b9f846c9335a3c8213b7e213b354f71fdd855e4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8743178"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899663"
 ---
 # <a name="gameclip-json"></a><span data-ttu-id="1c0f4-104">GameClip (JSON)</span><span class="sxs-lookup"><span data-stu-id="1c0f4-104">GameClip (JSON)</span></span>
  

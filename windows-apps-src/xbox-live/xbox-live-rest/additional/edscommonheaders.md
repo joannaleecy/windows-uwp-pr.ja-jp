@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 31b2966fad6fa83d359af9c443a1cb2eb97214da
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8728861"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8872788"
 ---
 # <a name="eds-common-headers"></a><span data-ttu-id="e270e-104">EDS 共通ヘッダー</span><span class="sxs-lookup"><span data-stu-id="e270e-104">EDS Common Headers</span></span>
 

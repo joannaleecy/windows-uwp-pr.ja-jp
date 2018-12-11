@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, マルチユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: 483a0e966be756de483bf7e2ab8458647397687b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785216"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887229"
 ---
 # <a name="add-multi-user-support-to-your-unity-game"></a><span data-ttu-id="b3105-104">マルチユーザー サポートを Unity ゲームに追加する</span><span class="sxs-lookup"><span data-stu-id="b3105-104">Add multi-user support to your Unity Game</span></span>
 > [!IMPORTANT]

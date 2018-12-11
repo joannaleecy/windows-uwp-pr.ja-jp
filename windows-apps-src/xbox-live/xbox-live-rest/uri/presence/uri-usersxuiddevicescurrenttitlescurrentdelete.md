@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd916fee5455276d45e4437e4ee90cacbde30bf9
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786224"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8877854"
 ---
 # <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a><span data-ttu-id="49e41-104">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="49e41-104">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span></span>
 <span data-ttu-id="49e41-105">[PresenceRecord](../../json/json-presencerecord.md)有効期限が切れるのを待っているではなく、終了のタイトルのプレゼンスを削除します。</span><span class="sxs-lookup"><span data-stu-id="49e41-105">Remove the presence of a closing title, instead of waiting for the [PresenceRecord](../../json/json-presencerecord.md) to expire.</span></span> <span data-ttu-id="49e41-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="49e41-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>

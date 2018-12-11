@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 32eca20af0714c5968cf51fcd568d89f2768f369
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785961"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894372"
 ---
 # <a name="multiplayersession-json"></a><span data-ttu-id="dff0c-104">MultiplayerSession (JSON)</span><span class="sxs-lookup"><span data-stu-id="dff0c-104">MultiplayerSession (JSON)</span></span>
 <span data-ttu-id="dff0c-105">**MultiplayerSession**を表す JSON オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="dff0c-105">A JSON object representing the **MultiplayerSession**.</span></span> 

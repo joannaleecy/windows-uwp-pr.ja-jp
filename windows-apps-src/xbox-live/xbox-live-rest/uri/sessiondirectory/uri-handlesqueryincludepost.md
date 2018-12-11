@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eb30561c91a085902dd9d79b6c4a2045dc709bfb
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794749"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883984"
 ---
 # <a name="post-handlesqueryincluderelatedinfo"></a><span data-ttu-id="0074f-104">POST (/handles/query?include=relatedInfo)</span><span class="sxs-lookup"><span data-stu-id="0074f-104">POST (/handles/query?include=relatedInfo)</span></span>
 <span data-ttu-id="0074f-105">関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。</span><span class="sxs-lookup"><span data-stu-id="0074f-105">Creates queries for session handles that include related session information.</span></span>

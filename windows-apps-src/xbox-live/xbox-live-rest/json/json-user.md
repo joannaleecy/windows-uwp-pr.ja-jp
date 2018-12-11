@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c1b3a34ef329696d51e615dd79d57783a132d05
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "8744933"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888049"
 ---
 # <a name="user-json"></a><span data-ttu-id="55ab6-104">User (JSON)</span><span class="sxs-lookup"><span data-stu-id="55ab6-104">User (JSON)</span></span>
 <span data-ttu-id="55ab6-105">ユーザーのランキング データが含まれています。</span><span class="sxs-lookup"><span data-stu-id="55ab6-105">Contains user leaderboard data.</span></span> 

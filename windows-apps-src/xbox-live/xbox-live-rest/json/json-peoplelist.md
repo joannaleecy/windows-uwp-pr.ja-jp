@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f9ab412088707752d62cc20fd54da2639f26ddc
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8781708"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899547"
 ---
 # <a name="peoplelist-json"></a><span data-ttu-id="ec79a-104">PeopleList (JSON)</span><span class="sxs-lookup"><span data-stu-id="ec79a-104">PeopleList (JSON)</span></span>
 <span data-ttu-id="ec79a-105">[Person](json-person.md)オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="ec79a-105">Collection of [Person](json-person.md) objects.</span></span> 
