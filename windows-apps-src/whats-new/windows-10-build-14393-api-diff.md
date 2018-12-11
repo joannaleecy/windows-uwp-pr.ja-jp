@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ms.openlocfilehash: 1635ab0d7043057c09a3e9ac451ccdba1410b471
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8877787"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8925183"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a>Windows 10 ビルド 14393 の新しい API
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8880202"
+ms.locfileid: "8925634"
 ---
 # <a name="map-style-sheet-reference"></a>マップ スタイル シート リファレンス
 

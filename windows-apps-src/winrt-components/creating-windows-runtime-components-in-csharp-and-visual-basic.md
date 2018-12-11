@@ -10,11 +10,11 @@ dev_langs:
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8878263"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8928111"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>C# および Visual Basic での Windows ランタイム コンポーネントの作成
 .NET Framework 4.5 以降、マネージ コードを使用して、独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化します。 コンポーネントは、C++、JavaScript、Visual Basic または c# で記述されたユニバーサル Windows プラットフォーム (UWP) アプリで使用できます。 このトピックでは、コンポーネントを作成するための規則について説明し、Windows ランタイムの .NET Framework のサポートの一部の側面を説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
@@ -43,7 +43,7 @@ Visual Basic または c# で記述されている UWP アプリでのみ使う�
 
 ## <a name="debugging-your-component"></a>コンポーネントのデバッグ
 
-If both your UWP app and your component are built with managed code, then you can debug them both at the same time.
+UWP アプリとコンポーネントの両方がマネージ コードでに組み込まれている場合、デバッグできますその両方同時にします。
 
 C++ を使った UWP アプリの一部としてコンポーネントをテストしている場合は、同時にマネージとネイティブ コードをデバッグできます。 既定では、ネイティブ コードのみになります。
 
