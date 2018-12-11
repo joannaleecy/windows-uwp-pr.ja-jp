@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791886"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854553"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 属性
 

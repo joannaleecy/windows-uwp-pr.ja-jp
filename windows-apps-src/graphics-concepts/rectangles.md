@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: aa94eb00058ba3297e7ca7cc4f93581d9281fd1c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784419"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8828341"
 ---
 # <a name="rectangles"></a>矩形
 

@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b40fd56a85be6dce441324a427790cda28f9d7ac
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738820"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8828923"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>Visual Studio を使った Surface Hub アプリのテスト
-Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターは、Surface Hub と同じユーザー インターフェイスを使用できませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。
+Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターが Surface Hub と同じユーザー インターフェイスを使用していませんが、アプリの外観し、Surface Hub の画面サイズと解像度で動作をテストするために便利です。
 
-シミュレーター ツールについて詳しくは一般に、[シミュレーターでアプリの UWP の実行](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)を参照してください。
+シミュレーター ツールについて詳しくは一般に、 [UWP アプリの実行、シミュレーターで](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)を参照してください。
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>Surface Hub の解像度をシミュレーターに追加する
 Surface Hub の解像度をシミュレーターに追加するには、次の手順を実行します。
@@ -71,7 +71,7 @@ Surface Hub の解像度をシミュレーターに追加するには、次の�
    > [!TIP]
    > Surface Hub のエクスペリエンスをシミュレート[タブレット モードを有効に](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet)向上します。
 
-## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Visual Studio から Surface Hub のデバイスにアプリを展開します。
+## <a name="deploy-apps-to-a-surface-hub-device-from-visual-studio"></a>Visual Studio からアプリを Surface Hub デバイスに展開します。
 Surface Hub にアプリを手動で展開は、単純なプロセスです。
 
 ### <a name="enable-developer-mode"></a>開発者モードを有効にする
@@ -93,7 +93,7 @@ Surface Hub にアプリを手動で展開は、単純なプロセスです。
 展開プロセスの詳細については一般を参照してください[の展開と UWP アプリをデバッグ](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)します。
 
    > [!NOTE]
-   > この機能では、最新の最新バージョンの Visual Studio を使用することをお勧めしますが、Visual Studio 2015 Update 1 日以降が必要です。 最新の Visual Studio インスタンスは、セキュリティ更新プログラムとするすべての最新の開発 gibe されます。
+   > この機能では、最新の最新バージョンの Visual Studio を使用することをお勧めしますが、Visual Studio 2015 Update 1 以降が必要です。 最新の Visual Studio のインスタンスは、セキュリティ更新プログラムとするすべての最新の開発 gibe されます。
 
 1. **[デバッグの開始]** ボタンの横にあるデバッグ ターゲットのドロップダウンに移動し、**[リモート コンピューター]** を選択します。
 
@@ -104,9 +104,9 @@ Surface Hub にアプリを手動で展開は、単純なプロセスです。
 2. Surface Hub ハブの IP アドレスを入力します。 **[ユニバーサル]** 認証モードが選択されていることを確認します。
 
    > [!TIP] 
-   > 開発者モードを有効にした後、ようこそ画面で、Surface Hub の IP アドレスを見つけることができます。
+   > 開発者モードを有効にした後、ようこそ画面に、Surface Hub の IP アドレスを見つけることができます。
 
 3. **デバッグの開始 (F5)** を展開して、Surface Hub にアプリをデバッグする] を選択または Ctrl + f5 キーを押してだけアプリを展開します。
 
    > [!TIP]
-   > Surface Hub がようこそ画面を表示している場合は、いずれかのボタンを選択して閉じます。
+   > Surface Hub がようこそ画面を表示している場合は、いずれかのボタンを選択して簡易非表示します。

@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746963"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873495"
 ---
 # <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
 
@@ -81,7 +81,7 @@ ms.locfileid: "8746963"
 
 ## <a name="using-the-right-type-of-icon"></a>適切な種類のアイコンの使用
 
-アイコンを作成する方法は数多くあります。 Segoe MDL2 アセットなどの記号フォントを使用できます。 独自のベクター ベースのイメージを作成できます。 ビットマップ画像も使用できますが、お勧めしません。 アプリにアイコンを追加するさまざまな方法の概要を次に示します。 
+アイコンを作成する方法は数多くあります。 Segoe MDL2 アセットなどの記号フォントを使用できます。 独自のベクター ベースのイメージを作成することができます。 ビットマップ画像も使用できますが、お勧めしません。 アプリにアイコンを追加するさまざまな方法の概要を次に示します。 
 
 ### <a name="use-a-predefined-icon"></a>定義済みのアイコンを使用します。
 :::row:::
@@ -136,7 +136,7 @@ ms.locfileid: "8746963"
 
 ## <a name="make-the-icon-do-something"></a>アイコンで何かを行う
 
-アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることを行うには何かにすることです。 これを行うには、最善の方法では、ボタンやコマンド バーにアイコンを追加します。 
+アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることで何にすることです。 これを行うには、最善の方法では、ボタンやコマンド バーにアイコンを追加します。 
 
 ![コマンド バーのイメージ](images/icons/app-bar-desktop.svg)
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731055"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871938"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 固有のデータ型
 
@@ -31,7 +31,7 @@ Windows ランタイムの XAML は、次の型に対する言語レベルのサ
 
 これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
 
-**注:** 慣例により、XAML とその他のすべての XAML 言語要素の言語プリミティブは、「x:」プレフィックスで表示します。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
+**注:**「x:」プレフィックス含む慣例により、XAML とその他のすべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
 
 ## <a name="other-xaml-primitives"></a>その他の XAML プリミティブ
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743222"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873999"
 ---
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 
@@ -51,7 +51,7 @@ ms.locfileid: "8743222"
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [ルートとルート案内の表示](routes-and-directions.md) | ルートとルート案内を要求し、アプリで表示します。 |
 | [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
-| [検索してオフラインで使用するマップ パッケージをダウンロードします。](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 以前は、アプリをオフライン マップをダウンロード、設定アプリをユーザーに指示する必要があります。 これで、( [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)などに基づきます)。 特定の領域にダウンロードしたパッケージを検索する[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)名前空間のクラスを使用できます。 <br> ことができますも確認するマップ パッケージのダウンロードされた状態のリッスンし、アプリをそのままにユーザーを必要とせず、ダウンロードを開始します。 <br> リファレンス コンテンツと[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)の両方でこれを行う方法の例があります。
+| [検索してオフラインで使用するマップ パッケージをダウンロードします。](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 以前は、アプリを直接設定アプリをユーザーがオフライン マップをダウンロードする必要があります。 これで、( [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)などに基づきます)。 特定の領域にダウンロードしたパッケージを検索する[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)名前空間のクラスを使用できます。 <br> ことができますも確認するマップ パッケージのダウンロードされた状態のリッスンし、アプリをそのままにユーザーを必要とせず、ダウンロードを開始します。 <br> リファレンス コンテンツと[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)の両方でこれを行う方法の例になることがわかります。
 
 ## <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 

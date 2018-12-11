@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, ARM での ARM32 アプリ, ARM 版 windows 10, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 6858f9add2430dc83d468b98d4147cc205dd372e
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8827307"
+ms.locfileid: "8874099"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>ARM32 UWP アプリのトラブルシューティング
 >[!IMPORTANT]

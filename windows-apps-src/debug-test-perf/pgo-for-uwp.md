@@ -2,11 +2,11 @@
 title: ユニバーサル Windows プラットフォーム (UWP) アプリにおけるガイド付き最適化のプロファイル (PGO) の実行
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d7321f0ef49c12ac4506fb72fab937fde77f740
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790011"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8900802"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>ユニバーサル Windows プラットフォーム アプリにおけるガイド付き最適化のプロファイルの実行 
  

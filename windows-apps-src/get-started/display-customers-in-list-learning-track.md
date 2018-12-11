@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, データ バインディ
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752843"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827858"
 ---
 # <a name="display-customers-in-a-list"></a>一覧での顧客の表示
 

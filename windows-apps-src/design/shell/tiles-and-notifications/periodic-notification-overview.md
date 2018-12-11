@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f7a5054fde1a1a24945b193f578b8389519dc2d5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730049"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871822"
 ---
 # <a name="periodic-notification-overview"></a>定期的な通知の概要
  
@@ -25,7 +25,7 @@ ms.locfileid: "8730049"
 
 定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。
 
-**注:**  Windows8.1[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再利用して、詳細については、します。
+**注:**  Windows8.1 のため[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再使用の詳細については、します。
 
  
 

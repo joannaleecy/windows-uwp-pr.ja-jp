@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ローカライズの可否, ローカライズ, RTL, LTR
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793479"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872928"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>レイアウトやフォントの調整と RTL のサポート
 RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを設計します。 テキストの方向はスクリプトに書き込みが行われて表示される方向であり、ページの UI 要素は目で走査されます。

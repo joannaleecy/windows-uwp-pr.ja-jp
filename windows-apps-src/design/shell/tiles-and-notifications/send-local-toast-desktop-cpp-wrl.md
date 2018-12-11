@@ -7,12 +7,12 @@ ms.date: 03/7/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C++, cpp, c プラスプラス, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 8508ed18e216270b901a5462d80238fae0763982
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: f4b7dbe75b06e264eed67d9f08b1e12a42ecb890
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732543"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8874308"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>デスクトップ C++ WRL アプリからのローカル トースト通知の送信
 
@@ -51,7 +51,7 @@ compat ライブラリのヘッダー ファイル、および UWP トースト 
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
-#include "NotificationActivationCallback.h"
+#include <NotificationActivationCallback.h>
 #include <windows.ui.notifications.h>
 
 using namespace ABI::Windows::Data::Xml::Dom;
@@ -218,7 +218,7 @@ if (SUCCEEDED(hr))
     {
         // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc.Get(), &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!
