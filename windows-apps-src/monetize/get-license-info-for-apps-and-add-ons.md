@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ライセンス, アプリ, アドオン, アプリ内購入, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7c832907af17436d588f0fac6c5039d4affa82
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797443"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894713"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>アプリとアドオンのライセンス情報の取得
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dec33768eff90b9bd35a3ea60f3158fce663345e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756456"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895001"
 ---
 # <a name="texture-block-compression"></a>テクスチャのブロック圧縮
 

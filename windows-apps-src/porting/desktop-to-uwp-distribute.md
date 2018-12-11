@@ -8,24 +8,24 @@ keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737892"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891066"
 ---
-# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージを配布します。
+# <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージの配布します。
 
 Microsoft ストアまたはサイドローディングをパッケージ化されたデスクトップ アプリケーションを公開して 1 つまたは複数のデバイスにします。  
 
 > [!NOTE]
-> パッケージ化されたアプリケーションにユーザーを移行する方法の計画はありますか。 アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
+> パッケージ化されたアプリケーションにユーザーを移行する方法を計画していますか。 アプリを配布する前に、このガイドの「[パッケージ アプリにユーザーを移行する](#transition-users)」セクションを参照して、アイデアを得てください。
 
 ## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>Microsoft Store に公開してアプリを配布します。
 
 [Microsoft Store](https://www.microsoft.com/store/apps) は、お客様がアプリを取得する場合に最も便利な方法です。
 
-幅広いお客様を対象に、Microsoft Store にアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリケーションを入手できます。
+幅広いお客様を対象に、Microsoft Store にアプリを公開します。 また、組織のお客様は、[ビジネス向け Microsoft ストア](https://www.microsoft.com/business-store)を通じて、組織に内部的に配布するアプリを入手できます。
 
 Microsoft Store への公開を計画している場合は、申請プロセスの一部としていくつかの追加の質問をされます。 これは、パッケージ マニフェストが **runFullTrust** という名前の制限付き機能を宣言し、弊社でアプリケーションによるその機能の使用を承認する必要があるためです。 この要件の詳細については、「[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)」を参照してください。
 
@@ -38,11 +38,11 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 
 ## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずにアプリを配布します。
 
-配布するアプリケーション ストアを使用することがなく場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
+配布するアプリのストアを使用せず場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
-ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイスにアプリを使用してその証明書、サイドローディングによって、アプリケーションの署名する必要があります。
+ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイス上にアプリケーションを使用してその証明書、サイドローディングによって、アプリケーションに署名する必要があります。
 
 [証明書を作成](../packaging/create-certificate-package-signing.md)することも、[Verisign](https://www.verisign.com/) などのポピュラーなベンダーから取得することもできます。
 
@@ -55,7 +55,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 
 証明書を使って、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
 
-サイドローディング アプリ、他のデバイスに[サイドローディング LOB アプリの Windows 10 で](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)参照してください。
+サイドローディングは、他のデバイスに、アプリケーションには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
 
 **ビデオ**
 
@@ -70,7 +70,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 ユーザーによってパッケージ アプリが使用されるようにするには、アプリを配布する前に、パッケージ マニフェストにいくつかの拡張機能を追加することを検討してください。 次のようなことができます。
 
 * 既存のスタート タイルとタスク バー ボタンの参照先をパッケージ アプリに設定する。
-* ファイルの種類のセットをパッケージ化されたアプリケーションを関連付けます。
+* パッケージ アプリを一連のファイルの種類に関連付けます。
 * 既定では、特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
 
 拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」を参照してください。
@@ -84,7 +84,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 
 ### <a name="migrate-user-data"></a>ユーザー データの移行
 
-ユーザー データを移行するコードを追加する場合は、アプリケーションを初めて起動したときにのみ、そのコードを実行することをお勧めします。 ユーザー データを移行する前に、ユーザーに対してダイアログ ボックスを表示して、何が起こっているか、なぜ移行が推奨されるのか、既存のデータにどのような影響があるかを説明します。
+ユーザー データを移行するコードを追加する場合は、アプリケーションが初めて起動したときにのみ、そのコードを実行することをお勧めします。 ユーザー データを移行する前に、ユーザーに対してダイアログ ボックスを表示して、何が起こっているか、なぜ移行が推奨されるのか、既存のデータにどのような影響があるかを説明します。
 
 例として、.NET ベースのパッケージ アプリでの方法を次に示します。
 

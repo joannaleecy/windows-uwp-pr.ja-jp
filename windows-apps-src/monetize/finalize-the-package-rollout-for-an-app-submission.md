@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
 ms.openlocfilehash: c8fe211268190ac269018a6bd47acb4b824d2075
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8808537"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894869"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>アプリの申請に関するロールアウトの完了
 

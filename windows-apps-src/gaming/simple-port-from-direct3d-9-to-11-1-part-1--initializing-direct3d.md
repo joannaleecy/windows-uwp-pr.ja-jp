@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, Direct3D 11, 初期化, 移植, Direct3D 9
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738363"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895513"
 ---
 # <a name="initialize-direct3d-11"></a>Direct3D 11 の初期化
 
@@ -169,7 +169,7 @@ swapChain.As(&m_swapChain);
 
 画面に実際に表示できる頻度を超えてレンダリングしないように、フレーム待機時間を 1 に設定し、[**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077) を使います。 これにより、電力が節約されます。また、これはストアの認定の要件です。このチュートリアルのパート 2 では、画面への表示について詳しく説明します。
 
-> **注:** することができますマルチ スレッドを使用 (たとえば、[**スレッド プール**](https://msdn.microsoft.com/library/windows/apps/br229642)作業項目など) をレンダリング スレッドがブロックされている他の作業を継続します。
+> **注:** することができますマルチ スレッドを使用 (たとえば、[**スレッド プール**](https://msdn.microsoft.com/library/windows/apps/br229642)作業項目) をレンダリング スレッドがブロックされている他の作業を継続します。
 
  
 

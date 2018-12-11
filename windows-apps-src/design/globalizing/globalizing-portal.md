@@ -5,16 +5,16 @@ title: グローバリゼーションとローカライズ
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738846"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892355"
 ---
 # <a name="globalization-and-localization"></a>グローバリゼーションとローカライズ
 
@@ -65,3 +65,4 @@ Windows は世界中で利用されており、言語、地域、文化の異な
 | [双方向テキストに対応したアプリを設計する](design-for-bidi-text.md) | 左から右方向および右から左方向の書記体系のスクリプトを組み合わせることができるように、双方向テキスト サポート (BiDi) を備えたアプリを設計します。 |
 | [多言語アプリ ツールキット 4.0 の使用](use-mat.md) | Microsoft Visual Studio 2017 には多言語アプリ ツールキット (MAT) 4.0 が統合されています。そのため、UWP アプリで翻訳がサポートされ、翻訳ファイルを管理したり、エディター ツールを利用したりできます。 |
 | [多言語アプリ ツールキット 4.0 に関する FAQ とトラブルシューティング](mat-faq-troubleshooting.md) | このトピックでは、多言語アプリ ツールキット (MAT) 4.0 に関連したよくある質問と問題の回答を示します。 |
+| [日本語の era 変更するアプリケーションを準備します。](japanese-era-change.md) | 月 2019年年号変更し、アプリケーションを準備する方法について説明します。 |

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, ARM での x86 エミュレーション, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8729746"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895094"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>x86 デスクトップ アプリのトラブルシューティング
 >[!IMPORTANT]

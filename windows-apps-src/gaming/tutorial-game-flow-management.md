@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: c6d13b848a9e5d2dfc145431f732187c35c46ab6
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825408"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895712"
 ---
 # <a name="game-flow-management"></a>ゲームのフロー管理
 
