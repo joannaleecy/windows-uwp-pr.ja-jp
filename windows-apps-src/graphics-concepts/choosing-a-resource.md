@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ccc99395dba2f2d1894db81fb48abb59f9a8ba4f
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784537"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899016"
 ---
 # <a name="choosing-a-resource"></a>リソースの選択
 

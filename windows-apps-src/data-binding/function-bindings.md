@@ -6,15 +6,15 @@ ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735882"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899167"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間で、全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
 Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより。
 
@@ -173,7 +173,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、 **BindBack**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

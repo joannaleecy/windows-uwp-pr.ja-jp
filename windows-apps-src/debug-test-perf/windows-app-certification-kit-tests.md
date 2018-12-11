@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8757975"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899039"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
@@ -309,7 +309,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="test-details"></a>テストの詳細
 
--   で、アプリ パッケージ内の各バイナリ依存していないバイナリのインポート アドレス テーブルをチェックすることによって、UWP アプリ開発のサポートされていない Win32 api を確認します。
+-   で、アプリ パッケージ内の各バイナリ依存していないバイナリのインポート アドレス テーブルをチェックすることによって、UWP アプリの開発のサポートされていない Win32 api を確認します。
 -   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
 
 ### <a name="corrective-actions"></a>問題への対応
@@ -430,7 +430,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布するアプリをお勧めしません。 Microsoft Store で配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store を通じて配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -534,7 +534,7 @@ Microsoft Direct3D アプリをテストして、以前のグラフィックス 
 
 ### <a name="background"></a>背景
 
-Microsoft Store では、Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗するすべてのアプリケーションが必要です。
+Microsoft Store では、すべてのアプリケーションが Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗する必要があります。
 
 アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 
