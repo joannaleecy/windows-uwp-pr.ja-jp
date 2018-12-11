@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, WIP, Windows 情報保護, 企業データ, エンタ
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
 ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8827127"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895948"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a><span data-ttu-id="b4215-103">Windows 情報保護 (WIP) 開発者向けガイド</span><span class="sxs-lookup"><span data-stu-id="b4215-103">Windows Information Protection (WIP) developer guide</span></span>
 

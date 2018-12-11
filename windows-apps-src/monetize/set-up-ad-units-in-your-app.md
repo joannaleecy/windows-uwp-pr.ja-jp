@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 広告ユニット, テスト
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780126"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894043"
 ---
 # <a name="set-up-ad-units-in-your-app"></a><span data-ttu-id="ae50c-104">アプリの広告ユニットをセットアップする</span><span class="sxs-lookup"><span data-stu-id="ae50c-104">Set up ad units in your app</span></span>
 

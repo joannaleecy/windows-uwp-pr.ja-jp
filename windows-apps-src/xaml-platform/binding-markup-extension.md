@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825368"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895054"
 ---
 # <a name="binding-markup-extension"></a><span data-ttu-id="66a88-104">{Binding} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="66a88-104">{Binding} markup extension</span></span>
 

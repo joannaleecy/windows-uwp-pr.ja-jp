@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 更新, バック グラウンド タスク、updatetask, バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cd7d4494340d1c5e617361f2e3d750b35ebabb9
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8827157"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894826"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a><span data-ttu-id="df93e-104">UWP アプリが更新された際のバックグラウンド タスクの実行</span><span class="sxs-lookup"><span data-stu-id="df93e-104">Run a background task when your UWP app is updated</span></span>
 

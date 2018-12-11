@@ -13,11 +13,11 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8781322"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888740"
 ---
 # <a name="motion-for-uwp-apps"></a><span data-ttu-id="d58f8-103">UWP アプリのモーション</span><span class="sxs-lookup"><span data-stu-id="d58f8-103">Motion for UWP apps</span></span>
 

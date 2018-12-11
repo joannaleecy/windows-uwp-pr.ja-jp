@@ -5,11 +5,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800443"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890282"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a><span data-ttu-id="01d63-103">Windows 10 UWP アプリの自動起動</span><span class="sxs-lookup"><span data-stu-id="01d63-103">Automate launching Windows 10 UWP apps</span></span>
 

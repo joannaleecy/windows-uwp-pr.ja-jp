@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, パッケージ要件, パッケージ, パッケージ形式, サポートされているバージョン, 提出
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c04ac5aa12fc67cf911d575540b05f96753519b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799492"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8895127"
 ---
 # <a name="app-package-requirements"></a><span data-ttu-id="4112d-103">アプリ パッケージの要件</span><span class="sxs-lookup"><span data-stu-id="4112d-103">App package requirements</span></span>
 
