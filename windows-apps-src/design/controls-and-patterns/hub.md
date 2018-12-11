@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 779c9a875753ed54b61d73df8ba3a9401bc67cbf
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788768"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854923"
 ---
 # <a name="hub-controlpattern"></a><span data-ttu-id="40754-103">ハブ コントロール/パターン</span><span class="sxs-lookup"><span data-stu-id="40754-103">Hub control/pattern</span></span>
 

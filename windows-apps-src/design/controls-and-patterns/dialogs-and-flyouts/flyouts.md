@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce3222ed13cf82a9f235a592b5830ab96384664
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8731244"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827789"
 ---
 # <a name="flyouts"></a><span data-ttu-id="89f14-103">ポップアップ</span><span class="sxs-lookup"><span data-stu-id="89f14-103">Flyouts</span></span>
 

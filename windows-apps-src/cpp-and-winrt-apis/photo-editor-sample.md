@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, サンプル, アプリケーション, フォト, エディター
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783975"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854723"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a><span data-ttu-id="1d261-105">フォト エディター C++/WinRT サンプル アプリケーション</span><span class="sxs-lookup"><span data-stu-id="1d261-105">Photo Editor C++/WinRT sample application</span></span>
 <span data-ttu-id="1d261-106">[フォト エディター C++/WinRT サンプル アプリケーション](https://github.com/Microsoft/Windows-appsample-photo-editor)の GitHub リポジトリからサンプル アプリケーションを複製またはダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="1d261-106">You can clone or download the sample application from the [Photo Editor C++/WinRT sample application](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub repository.</span></span>

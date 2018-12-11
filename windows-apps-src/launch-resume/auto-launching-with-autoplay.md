@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791177"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872733"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span data-ttu-id="91992-105"><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動</span><span class="sxs-lookup"><span data-stu-id="91992-105"><span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay</span></span>
 

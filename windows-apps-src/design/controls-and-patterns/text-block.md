@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f02e40c74e11bbc7a5cb308b71ce819d45891a2e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749157"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826916"
 ---
 # <a name="text-block"></a><span data-ttu-id="e1e00-103">テキスト ブロック</span><span class="sxs-lookup"><span data-stu-id="e1e00-103">Text block</span></span>
 

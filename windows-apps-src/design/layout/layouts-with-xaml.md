@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8808467"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826287"
 ---
 # <a name="responsive-layouts-with-xaml"></a><span data-ttu-id="16201-103">XAML でのレスポンシブ レイアウト</span><span class="sxs-lookup"><span data-stu-id="16201-103">Responsive layouts with XAML</span></span>
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 入手, ファネル
 ms.localizationpriority: medium
 ms.openlocfilehash: d9ccbb081ef6f39ad795105ee2449de4d8442ab3
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779702"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825431"
 ---
 # <a name="get-app-acquisition-funnel-data"></a><span data-ttu-id="2fdcd-104">アプリの入手に関するファネル データの取得</span><span class="sxs-lookup"><span data-stu-id="2fdcd-104">Get app acquisition funnel data</span></span>
 

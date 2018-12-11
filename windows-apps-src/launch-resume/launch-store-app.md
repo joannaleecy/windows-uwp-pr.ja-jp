@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796905"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825212"
 ---
 # <a name="launch-the-microsoft-store-app"></a><span data-ttu-id="58561-105">Microsoft Store アプリの起動</span><span class="sxs-lookup"><span data-stu-id="58561-105">Launch the Microsoft Store app</span></span>
 

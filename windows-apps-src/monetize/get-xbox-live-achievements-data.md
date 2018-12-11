@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, 実績
 ms.localizationpriority: medium
 ms.openlocfilehash: 23a99c637dfd466ba21169626315803dec60e4e8
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8784134"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8829935"
 ---
 # <a name="get-xbox-live-achievements-data"></a><span data-ttu-id="c03cc-104">Xbox Live の実績データの取得</span><span class="sxs-lookup"><span data-stu-id="c03cc-104">Get Xbox Live achievements data</span></span>
 

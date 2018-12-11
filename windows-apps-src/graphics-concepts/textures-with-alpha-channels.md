@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800543"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825172"
 ---
 # <a name="textures-with-alpha-channels"></a><span data-ttu-id="55f5c-104">アルファ チャネルを含むテクスチャ</span><span class="sxs-lookup"><span data-stu-id="55f5c-104">Textures with alpha channels</span></span>
 

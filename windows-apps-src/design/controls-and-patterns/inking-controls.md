@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: a76a03eaff3d831b48e7b86c0b70ff2cbae7360a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794903"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873054"
 ---
 # <a name="inking-controls"></a><span data-ttu-id="e74ab-103">インク コントロール</span><span class="sxs-lookup"><span data-stu-id="e74ab-103">Inking controls</span></span>
 

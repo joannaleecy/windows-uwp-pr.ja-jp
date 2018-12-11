@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799021"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827567"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a><span data-ttu-id="643c5-105">WindowsPhone Silverlight UWP からのフォーム ファクターと UX の移植</span><span class="sxs-lookup"><span data-stu-id="643c5-105">Porting WindowsPhone Silverlight to UWP for form factor and UX</span></span>
 

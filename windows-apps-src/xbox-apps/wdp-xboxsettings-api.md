@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747029"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871527"
 ---
 # <a name="developer-settings-api-reference"></a><span data-ttu-id="29ab9-104">開発者向け設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="29ab9-104">Developer settings API reference</span></span>   
 <span data-ttu-id="29ab9-105">この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="29ab9-105">You can access Xbox One settings that are useful for development using this API.</span></span>

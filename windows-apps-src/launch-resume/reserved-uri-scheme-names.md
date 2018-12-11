@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799442"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826704"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a><span data-ttu-id="9b43f-104">予約済みのファイルと URI スキーム名</span><span class="sxs-lookup"><span data-stu-id="9b43f-104">Reserved file and URI scheme names</span></span>
 

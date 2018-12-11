@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8792422"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871792"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a><span data-ttu-id="307e1-104">フライトに関するロールアウトを停止する</span><span class="sxs-lookup"><span data-stu-id="307e1-104">Halt the rollout for a flight</span></span>
 

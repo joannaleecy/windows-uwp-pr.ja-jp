@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 40ad13e46e074154d72d7aad236747c3374110ef
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785147"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826086"
 ---
 # <a name="connected-storage"></a><span data-ttu-id="e98cf-104">接続ストレージ</span><span class="sxs-lookup"><span data-stu-id="e98cf-104">Connected Storage</span></span>
 <span data-ttu-id="e98cf-105">接続ストレージは、複数のデバイス間でローミングされる必要があるゲームプレイ データや他の関連するアプリの状態データをタイトルが保存できるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="e98cf-105">Connected Storage is designed to allow your title to save gameplay data and other relevant state data that should roam between devices.</span></span> <span data-ttu-id="e98cf-106">接続ストレージ API を使うと、Xbox One とユニバーサル Windows プラットフォーム (UWP) のタイトルが、ローカルに保存されているタイトル データを保存、読み込み、削除できるようになるだけでなく、Xbox One または UWP タイトルがインターネットに接続されている場合は常にクラウドと同期されます。</span><span class="sxs-lookup"><span data-stu-id="e98cf-106">The Connected Storage API allows titles on Xbox One and Universal Windows Platform(UWP) to save, load, and delete title data that is stored locally and also synced to the cloud whenever the Xbox One or UWP title is connected to the internet.</span></span> <span data-ttu-id="e98cf-107">保存されたデータは、同期されるとタイトルを実行する他のデバイスで利用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="e98cf-107">Saved data will be available on any other device which runs your title after synchronization occurs.</span></span> <span data-ttu-id="e98cf-108">外出中でも最良の形でゲームをプレイできるように、開発者にはタイトルの状態をできる限り正確に保存することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e98cf-108">Developers are encouraged to save title state as accurately as possible to offer the best away from home play experience.</span></span> <span data-ttu-id="e98cf-109">接続ストレージを利用すると、自宅でゲームのプレイを進めた後、同じゲームをサポートする他のデバイスで、ちょうどゲームを中断した場所から再開できるようになります。</span><span class="sxs-lookup"><span data-stu-id="e98cf-109">Connected Storage is what allows you to progress in a game at home, then pick up your game right where you left off on any other device that supports the same game.</span></span>

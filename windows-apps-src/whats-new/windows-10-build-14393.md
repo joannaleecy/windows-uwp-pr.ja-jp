@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786196"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826796"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a><span data-ttu-id="b9107-104">Windows 10 ビルド 14393 の開発者向け新着情報</span><span class="sxs-lookup"><span data-stu-id="b9107-104">What's new in Windows 10 for developers, build 14393</span></span>
 

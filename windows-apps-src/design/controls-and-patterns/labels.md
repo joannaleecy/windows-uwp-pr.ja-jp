@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793651"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8828933"
 ---
 # <a name="labels"></a><span data-ttu-id="72180-103">ラベル</span><span class="sxs-lookup"><span data-stu-id="72180-103">Labels</span></span>
 

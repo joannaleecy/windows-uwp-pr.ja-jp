@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787918"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8829745"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a><span data-ttu-id="86ab4-104">ビットマップ画像の作成、編集、保存</span><span class="sxs-lookup"><span data-stu-id="86ab4-104">Create, edit, and save bitmap images</span></span>
 

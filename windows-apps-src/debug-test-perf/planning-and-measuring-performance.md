@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8782947"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854853"
 ---
 # <a name="planning-for-performance"></a><span data-ttu-id="b1e9a-104">パフォーマンスの計画</span><span class="sxs-lookup"><span data-stu-id="b1e9a-104">Planning for performance</span></span>
 

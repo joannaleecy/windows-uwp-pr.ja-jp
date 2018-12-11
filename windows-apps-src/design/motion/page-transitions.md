@@ -9,11 +9,11 @@ pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797972"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825222"
 ---
 # <a name="page-transitions"></a><span data-ttu-id="8a834-103">ページ切り替え効果</span><span class="sxs-lookup"><span data-stu-id="8a834-103">Page transitions</span></span>
 

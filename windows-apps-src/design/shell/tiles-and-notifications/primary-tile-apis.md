@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, StartScreenManager, プライマリ タイルをピン留めする, プライマリ タイル API, タイルのピン留めの確認, ライブ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8787226"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854613"
 ---
 # <a name="primary-tile-apis"></a><span data-ttu-id="a8bbd-103">プライマリ タイル API</span><span class="sxs-lookup"><span data-stu-id="a8bbd-103">Primary tile APIs</span></span>
  

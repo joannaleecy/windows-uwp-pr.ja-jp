@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、概念の承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4ecdbb77e1e3df10963a59dff38d4ecf215126
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786180"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8871838"
 ---
 # <a name="concept-approval"></a><span data-ttu-id="03b98-104">概念の承認</span><span class="sxs-lookup"><span data-stu-id="03b98-104">Concept approval</span></span>
 
