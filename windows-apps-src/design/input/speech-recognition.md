@@ -9,11 +9,11 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8801315"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892064"
 ---
 # <a name="speech-recognition"></a><span data-ttu-id="12f30-103">音声認識</span><span class="sxs-lookup"><span data-stu-id="12f30-103">Speech recognition</span></span>
 

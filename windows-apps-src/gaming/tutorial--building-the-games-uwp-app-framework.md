@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796640"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892227"
 ---
 #  <a name="define-the-uwp-app-framework"></a><span data-ttu-id="f9948-104">UWP アプリ フレームワークの定義</span><span class="sxs-lookup"><span data-stu-id="f9948-104">Define the UWP app framework</span></span>
 

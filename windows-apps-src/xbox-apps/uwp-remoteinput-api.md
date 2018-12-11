@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 882e84c5126e4f67e246dd479008133c979c06b1
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825305"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8889418"
 ---
 # <a name="remote-input-api-reference"></a><span data-ttu-id="3d2dd-103">リモート入力 API リファレンス</span><span class="sxs-lookup"><span data-stu-id="3d2dd-103">Remote Input API reference</span></span>   
 <span data-ttu-id="3d2dd-104">この API を介してリモートからリアルタイムでコントローラー、キーボード、およびマウス入力を送信することができます。</span><span class="sxs-lookup"><span data-stu-id="3d2dd-104">You can send controller, keyboard, and mouse input in real time remotely via this API.</span></span>

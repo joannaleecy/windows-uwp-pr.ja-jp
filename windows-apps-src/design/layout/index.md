@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
 ms.openlocfilehash: 826fb141fd636ae899fff9696108965d94187f8d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8806926"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891840"
 ---
 # <a name="layout"></a><span data-ttu-id="393df-104">レイアウト</span><span class="sxs-lookup"><span data-stu-id="393df-104">Layout</span></span>
 

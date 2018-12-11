@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, フライト スティック
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756283"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8884859"
 ---
 # <a name="flight-stick"></a><span data-ttu-id="5104b-104">フライト スティック</span><span class="sxs-lookup"><span data-stu-id="5104b-104">Flight stick</span></span>
 

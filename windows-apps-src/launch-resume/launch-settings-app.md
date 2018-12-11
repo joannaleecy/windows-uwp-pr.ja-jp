@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ff9510b65bd635b5b10e0cbea551c12b29ef8f37
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8826208"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890342"
 ---
 # <a name="launch-the-windows-settings-app"></a><span data-ttu-id="9e23b-106">Windows 設定アプリの起動</span><span class="sxs-lookup"><span data-stu-id="9e23b-106">Launch the Windows Settings app</span></span>
 

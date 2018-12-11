@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8794172"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888687"
 ---
 # <a name="rssatom-feeds"></a><span data-ttu-id="394fc-104">RSS/Atom フィード</span><span class="sxs-lookup"><span data-stu-id="394fc-104">RSS/Atom feeds</span></span>
 

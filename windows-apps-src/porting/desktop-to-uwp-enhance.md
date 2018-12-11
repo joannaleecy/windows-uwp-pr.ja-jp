@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788660"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893207"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a><span data-ttu-id="4bbe8-103">Windows 10 向けのデスクトップ アプリを強化する</span><span class="sxs-lookup"><span data-stu-id="4bbe8-103">Enhance your desktop application for Windows 10</span></span>
 

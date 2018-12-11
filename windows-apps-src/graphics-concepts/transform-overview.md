@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6be8ee8aa67196581907087d99e0324d741a00
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8789245"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892908"
 ---
 # <a name="transform-overview"></a><span data-ttu-id="be914-104">変換の概要</span><span class="sxs-lookup"><span data-stu-id="be914-104">Transform overview</span></span>
 

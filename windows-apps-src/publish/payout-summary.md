@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
 ms.localizationpriority: medium
 ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796400"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893158"
 ---
 # <a name="payout-summary"></a><span data-ttu-id="45f70-103">入金状況</span><span class="sxs-lookup"><span data-stu-id="45f70-103">Payout summary</span></span>
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ コントロール, マップ ビュー
 ms.localizationpriority: medium
 ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780116"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890763"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a><span data-ttu-id="a24aa-104">2D、3D、Streetside ビューでの地図の表示</span><span class="sxs-lookup"><span data-stu-id="a24aa-104">Display maps with 2D, 3D, and Streetside views</span></span>
 
