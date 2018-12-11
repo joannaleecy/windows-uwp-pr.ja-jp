@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP, 市販デモ アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6baaff5ca2af781e72c9b4643fa1ea0624e0eb
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800986"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880924"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a><span data-ttu-id="b6d72-104">市販デモ (RDX) 機能をアプリに追加します。</span><span class="sxs-lookup"><span data-stu-id="b6d72-104">Add retail demo (RDX) features to your app</span></span>
 

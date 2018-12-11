@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790543"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8881964"
 ---
 # <a name="cryptographic-keys"></a><span data-ttu-id="6618b-104">暗号化キー</span><span class="sxs-lookup"><span data-stu-id="6618b-104">Cryptographic keys</span></span>
 

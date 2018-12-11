@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b25a37fb06688e7841490e00d1c83640d3155d50
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790778"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8886583"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a><span data-ttu-id="87333-103">Windows Ink のストロークをテキストおよび図形として認識する</span><span class="sxs-lookup"><span data-stu-id="87333-103">Recognize Windows Ink strokes as text and shapes</span></span>
 

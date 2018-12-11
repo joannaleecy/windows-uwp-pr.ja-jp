@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e46d73c91f54b1bb74a70990a238f13ccd47645d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796703"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8884308"
 ---
 # <a name="tiles-for-uwp-apps"></a><span data-ttu-id="e1845-103">UWP アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="e1845-103">Tiles for UWP apps</span></span>
 

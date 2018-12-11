@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス
 ms.localizationpriority: medium
 ms.openlocfilehash: e29bcdb8c36cc8cbbb5de11d669da1249e10d706
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791187"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885305"
 ---
 # <a name="guidelines-for-geofencing-apps"></a><span data-ttu-id="9a058-103">ジオフェンス アプリのガイドライン</span><span class="sxs-lookup"><span data-stu-id="9a058-103">Guidelines for geofencing apps</span></span>
 

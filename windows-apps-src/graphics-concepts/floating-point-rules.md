@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4de5ba146c8241598527dd268d604fcc9bb97d6d
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8806433"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8881282"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span data-ttu-id="79f9c-105"><span id="direct3dconcepts.floating-point_rules"></span>浮動小数点の規則</span><span class="sxs-lookup"><span data-stu-id="79f9c-105"><span id="direct3dconcepts.floating-point_rules"></span>Floating-point rules</span></span>
 

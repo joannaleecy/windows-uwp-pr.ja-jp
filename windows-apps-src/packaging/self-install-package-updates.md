@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8786673"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882334"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a><span data-ttu-id="ae216-104">パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする</span><span class="sxs-lookup"><span data-stu-id="ae216-104">Download and install package updates from the Store</span></span>
 

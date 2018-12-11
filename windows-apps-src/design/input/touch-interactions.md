@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b662a7689f0b0b24fc3f70a9fbc143d4268d2cb8
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8780067"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885898"
 ---
 # <a name="touch-interactions"></a><span data-ttu-id="61166-103">タッチ操作</span><span class="sxs-lookup"><span data-stu-id="61166-103">Touch interactions</span></span>
 

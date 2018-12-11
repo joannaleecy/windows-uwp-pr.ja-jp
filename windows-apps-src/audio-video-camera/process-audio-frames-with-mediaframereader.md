@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8808757"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883229"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a><span data-ttu-id="55cff-104">MediaFrameReader を使ったオーディオ フレームの処理</span><span class="sxs-lookup"><span data-stu-id="55cff-104">Process audio frames with MediaFrameReader</span></span>
 

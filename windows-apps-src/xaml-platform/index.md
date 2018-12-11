@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b725a823f31309c2419bcdc5095a78994d1929c0
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8829735"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8887609"
 ---
 # <a name="xaml-platform"></a><span data-ttu-id="e56d8-104">XAML プラットフォーム</span><span class="sxs-lookup"><span data-stu-id="e56d8-104">XAML platform</span></span>
 

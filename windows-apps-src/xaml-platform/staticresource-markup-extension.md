@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797079"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885968"
 ---
 # <a name="staticresource-markup-extension"></a><span data-ttu-id="2cb2b-105">{StaticResource} マークアップ拡張</span><span class="sxs-lookup"><span data-stu-id="2cb2b-105">{StaticResource} markup extension</span></span>
 
