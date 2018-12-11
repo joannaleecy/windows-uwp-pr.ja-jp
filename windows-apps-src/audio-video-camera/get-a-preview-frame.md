@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7faa018dad336b6e22dd236e57585cade38f8a94
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8887330"
+ms.locfileid: "8921932"
 ---
 # <a name="get-a-preview-frame"></a><span data-ttu-id="e5c21-104">プレビュー フレームの取得</span><span class="sxs-lookup"><span data-stu-id="e5c21-104">Get a preview frame</span></span>
 

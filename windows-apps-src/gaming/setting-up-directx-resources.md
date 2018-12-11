@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソース、画像
 ms.localizationpriority: medium
 ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8876035"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8937066"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a><span data-ttu-id="ed8b3-104">DirectX リソースの設定と画像の表示</span><span class="sxs-lookup"><span data-stu-id="ed8b3-104">Set up DirectX resources and display an image</span></span>
 

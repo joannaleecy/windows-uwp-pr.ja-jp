@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, コーデック, エンコーダー, デコーダー, クエリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8890332"
+ms.locfileid: "8921576"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a><span data-ttu-id="4a2d9-104">デバイスにインストールされているコーデックの照会</span><span class="sxs-lookup"><span data-stu-id="4a2d9-104">Query for codecs installed on a device</span></span>
 <span data-ttu-id="4a2d9-105">**[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** クラスによって、現在のデバイスにインストールされているコーデックを照会できます。</span><span class="sxs-lookup"><span data-stu-id="4a2d9-105">The **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** class allows you to query for codecs installed on the current device.</span></span> <span data-ttu-id="4a2d9-106">Windows 10 に含まれているさまざまなデバイス ファミリのコーデックの一覧については、「[サポートされるコーデック](supported-codecs.md)」の記事に示されています。ただし、ユーザーやアプリはデバイスに追加のコーデックをインストールできるため、現在のデバイスでどのようなコーデックが利用可能かを特定するために、実行時にコーデックのサポートを照会することができます。</span><span class="sxs-lookup"><span data-stu-id="4a2d9-106">The list of codecs that are included with Windows 10 for different device families are listed in the article [Supported codecs](supported-codecs.md), but since users and apps can install additional codecs on a device, you may want to query for codec support at runtime to determine what codecs are available on the current device.</span></span>

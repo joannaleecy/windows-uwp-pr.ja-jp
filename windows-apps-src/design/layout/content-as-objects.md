@@ -4,11 +4,11 @@ title: オブジェクトとしてのコンテンツ
 template: detail.hbs
 ms.localizationpriority: medium
 ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8898680"
+ms.locfileid: "8942403"
 ---
 # <a name="content-as-objects"></a><span data-ttu-id="efe12-102">オブジェクトとしてのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="efe12-102">Content as objects</span></span>
 

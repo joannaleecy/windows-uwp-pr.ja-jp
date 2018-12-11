@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1196b5dd11f006e42d43e15efd56b2be92f35c4b
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8874159"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8947158"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a><span data-ttu-id="0e765-103">Windows Ink ストローク データの保存と取得</span><span class="sxs-lookup"><span data-stu-id="0e765-103">Store and retrieve Windows Ink stroke data</span></span>
 

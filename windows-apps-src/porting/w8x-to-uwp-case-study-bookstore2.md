@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 156f780e5637852d554488adfeeb9d688fa4a4d7
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8877613"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8947944"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a><span data-ttu-id="6c082-104">Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2</span><span class="sxs-lookup"><span data-stu-id="6c082-104">Windows Runtime 8.x to UWP case study: Bookstore2</span></span>
 

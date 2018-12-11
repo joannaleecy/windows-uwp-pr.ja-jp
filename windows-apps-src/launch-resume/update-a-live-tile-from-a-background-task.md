@@ -8,11 +8,11 @@ ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d5d9e1b93c9f769a748a6a44d0ed77f5bd3a9da
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8894165"
+ms.locfileid: "8919565"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a><span data-ttu-id="078d2-104">バックグラウンド タスクによるライブ タイルの更新</span><span class="sxs-lookup"><span data-stu-id="078d2-104">Update a live tile from a background task</span></span>
 

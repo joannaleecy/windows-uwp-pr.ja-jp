@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
 ms.openlocfilehash: 9000cad79e12a645689d90ef37a8ff43b9fc95b7
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8879217"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8922001"
 ---
 # <a name="consume-com-components-with-cwinrt"></a><span data-ttu-id="c3170-104">C++/WinRT での COM コンポーネントの使用</span><span class="sxs-lookup"><span data-stu-id="c3170-104">Consume COM components with C++/WinRT</span></span>
 

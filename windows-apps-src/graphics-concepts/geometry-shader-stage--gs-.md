@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 63c678f4b2dde1a5e35c0131b5154493c9703951
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8871996"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8942666"
 ---
 # <a name="geometry-shader-gs-stage"></a><span data-ttu-id="24432-104">ジオメトリ シェーダー (GS) ステージ</span><span class="sxs-lookup"><span data-stu-id="24432-104">Geometry Shader (GS) stage</span></span>
 

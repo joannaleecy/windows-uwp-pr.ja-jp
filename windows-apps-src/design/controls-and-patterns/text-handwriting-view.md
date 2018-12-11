@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3660586b856205721bfa8e9cbb3e72df4fd3ad43
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8899340"
+ms.locfileid: "8921699"
 ---
 # <a name="text-input-with-the-handwriting-view"></a><span data-ttu-id="0775a-103">テキスト入力と手書きビュー</span><span class="sxs-lookup"><span data-stu-id="0775a-103">Text input with the handwriting view</span></span>
 

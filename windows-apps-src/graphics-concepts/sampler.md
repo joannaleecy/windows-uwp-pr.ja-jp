@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e80e160e1225e510ab95f52cbd9f21049c890457
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8895420"
+ms.locfileid: "8942473"
 ---
 # <a name="sampler"></a><span data-ttu-id="c05c0-105">サンプラー</span><span class="sxs-lookup"><span data-stu-id="c05c0-105">Sampler</span></span>
 
