@@ -6,11 +6,11 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8742791"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8888413"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
@@ -52,13 +52,13 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
  UWP アプリのマルチインスタンス化のサポートは、単に複数のアプリ インスタンスを起動することを可能にするだけではありません。 アプリの新しいインスタンスを起動するか、すでに実行しているインスタンスをアクティブにするかを選択する場合に、カスタマイズできます。 たとえば、既に別のインスタンスで編集中のファイルを編集するためにアプリが起動されている場合、そのファイルを編集している別のインスタンスを開くのではなく、そのインスタンスにアクティブ化をリダイレクトすることができます。
 
-アクションの表示は、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
+操作で表示するには、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
 **Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティが存在する場合、このライセンス認証要求のシェルが提供優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合は、し、そのインスタンスにアクティブ化をリダイレクトすることができます。 または選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティは、いずれかを使用する必要がある場合にこのライセンス認証要求のシェルに搭載されている優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合、そのインスタンスにアクティブ化をリダイレクトまたは選択した場合に無視することができます。
 
 ``` csharp
 public static class Program
