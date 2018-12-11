@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: daf0452a30d494b3835ea043eee7d596921b0a75
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8828850"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897600"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>ゲームパッドとリモコンの操作
 

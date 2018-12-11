@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e988582877a6aa4ca3cf88ba0a5d98aceb56939e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741564"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896698"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 構文のガイド
 
@@ -238,7 +238,7 @@ XML や HTML などのマークアップ言語でプロパティ値を設定す�
 
 XAML のもう 1 つの規則は、要素の属性がどのような順序でも設定できる必要があるというものです。 たとえば、`<Rectangle Height="50" Width="100" />` と `<Rectangle Width="100"  Height="50" />` の間には違いがありません。 順序をどちらにするかは、スタイルの問題です。
 
-**注:** XAML デザイナー多くの場合の宣伝順序指定の規則、XML エディター以外のデザイン サーフェイスを使用するが、属性を並べ替えたり、新たに導入またはを後で、その XAML を自由に編集することができます。
+**注:** XAML デザイナー多くの場合の宣伝順序指定の規則、XML エディター以外のデザイン サーフェイスを使用するが、属性を並べ替えたり、新たに導入を後で、その XAML を自由に編集することができます。
 
 ## <a name="attached-properties"></a>添付プロパティ
 
@@ -286,7 +286,7 @@ Windows ランタイム API の多くのプロパティでは、値として列�
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows ランタイム リファレンスでの XAML プレースホルダーの規則
 
-XAML を使用できる Windows ランタイム API のリファレンス トピックでいずれかの「**構文**」セクションを調べたことがあれば、構文にかなりの数のプレースホルダーが含まれていることに気付いたことでしょう。 XAML 構文は、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能とは異なる (、C++/cli CX) 構文、XAML 構文は使用法構文であるためです。 独自の XAML ファイルでの具体的な使い方を示しますが、使用できる値について説明し過ぎないようにしています。 そのため、通常は使用法としてリテラルとプレースホルダーを混ぜて文法を説明し、プレースホルダーの一部は「**XAML 値**」のセクションで定義します。
+XAML を使用できる Windows ランタイム API のリファレンス トピックでいずれかの「**構文**」セクションを調べたことがあれば、構文にかなりの数のプレースホルダーが含まれていることに気付いたことでしょう。 XAML 構文は、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能とは異なる (、C++/cli CX) 構文 XAML 構文は使用法構文であるためです。 独自の XAML ファイルでの具体的な使い方を示しますが、使用できる値について説明し過ぎないようにしています。 そのため、通常は使用法としてリテラルとプレースホルダーを混ぜて文法を説明し、プレースホルダーの一部は「**XAML 値**」のセクションで定義します。
 
 プロパティの XAML 構文で型名または要素名が表示されている場合、それらの名前は、元はプロパティを定義する型のための名前です。 しかし、Windows ランタイム XAML は、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) ベースのクラスのクラス継承モデルをサポートしています。 そのため、多くの場合、実際の定義クラスではなく、プロパティまたは属性を最初に定義したクラスから派生したクラスの属性を使います。 たとえば、深い継承を使って、任意の [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスの属性として [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) を設定できます  (例: `<Button Visibility="Visible" />`)。 そのため、XAML 使用方法の構文で示されている要素名が厳密に文字どおりであるとは考えないでください。そのクラスを表す要素と、派生クラスを表す要素でも、その構文が使用できることがあります。 定義要素として示されている型が、現実に使うことはまれであるか不可能である場合、その型の名前は構文内で意図的に小文字にしてあります。 たとえば、**UIElement.Visibility** の構文は、次のようになっています。
 
