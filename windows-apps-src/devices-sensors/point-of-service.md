@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a0c55f1b739ef88ec65b7fd44655406415bc0468
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8691996"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877249"
 ---
 # <a name="point-of-service"></a><span data-ttu-id="b498c-104">POS (店舗販売時点管理)</span><span class="sxs-lookup"><span data-stu-id="b498c-104">Point of Service</span></span>
 <span data-ttu-id="b498c-105">このセクションには、[Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) を使用して、ユニバーサル Windows アプリケーションから、小売業やホスピタリティ環境で使用される周辺機器を操作する方法に関する記事が含まれています。</span><span class="sxs-lookup"><span data-stu-id="b498c-105">This section contains articles on how to use [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) to interact with peripherals found in retail and hospitality environments from Universal Windows Applications.</span></span>

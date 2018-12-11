@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、C#、Visual Basic、非同期
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790090"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878313"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a><span data-ttu-id="d5c04-104">C# または Visual Basic での非同期 API の呼び出し</span><span class="sxs-lookup"><span data-stu-id="d5c04-104">Call asynchronous APIs in C# or Visual Basic</span></span>
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 92899333f0bc787fc6538e0bb22c148ac9f5c56f
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785619"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8879705"
 ---
 # <a name="thumbnail-images"></a><span data-ttu-id="d25fb-103">サムネイル画像</span><span class="sxs-lookup"><span data-stu-id="d25fb-103">Thumbnail images</span></span>
 

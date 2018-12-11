@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
 ms.openlocfilehash: e248a6ff666efe7dca262daa81a21ab44a4dc5aa
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8779185"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8879108"
 ---
 # <a name="developer-folder-api-reference"></a><span data-ttu-id="dc7ec-104">開発者向けフォルダー API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="dc7ec-104">Developer folder API reference</span></span>   
 <span data-ttu-id="dc7ec-105">標準的なエクスプローラーを使って、Xbox One の開発に関連するファイルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="dc7ec-105">You can access development-related files on your Xbox One using a standard file explorer.</span></span> <span data-ttu-id="dc7ec-106">これにより、ファイルを簡単に表示したり、PC から本体に置き換えることができます。</span><span class="sxs-lookup"><span data-stu-id="dc7ec-106">This allows you to easily view and replace files from your PC to the console.</span></span>

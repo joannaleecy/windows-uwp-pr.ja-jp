@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: eb9283e336cb13d733098c139edc36d1216b2727
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799289"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8886477"
 ---
 # <a name="data-binding"></a><span data-ttu-id="43cbd-104">データ バインディング</span><span class="sxs-lookup"><span data-stu-id="43cbd-104">Data binding</span></span>
 

@@ -9,14 +9,14 @@ ms.localizationpriority: medium
 ms.topic: article
 keywords: ARM、ARM、ARM64 の win32 アプリの構築、ARM64 ドライバーのビルドで Windows 10
 ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748619"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8879444"
 ---
 # <a name="windows-10-on-arm"></a>ARM 版 Windows 10
-Windows 10 では、ARM プロセッサを搭載の Pc で実行されます。 このページは、プラットフォームについて詳しくは、アプリの開発を開始するための情報を提供します。 また、ページの下部にあるリンクを使用して、フィードバックをお勧めします。
+Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 このページは、プラットフォームについて詳しくは、アプリの開発を開始するための情報を提供します。 また、ページの下部にあるリンクを使用して、フィードバックをお勧めします。
 
 ## <a name="introductory-videos"></a>別の入門ビデオ
 観察し、Windows 10 が ARM で実行する方法について説明します。
@@ -24,11 +24,11 @@ Windows 10 では、ARM プロセッサを搭載の Pc で実行されます。 
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>ARM64 Win32 C++ アプリの構築</h3><p>Visual Studio の ARM64 ツールをインストールする方法について説明します。 その後について説明しますするを作成して、新しい ARM 64 プロジェクトのコンパイルの手順を実行します。</p>
+        <h3>ARM64 Win32 C++ アプリの構築</h3><p>Visual Studio の ARM64 ツールをインストールする方法について説明します。 について説明しますするを作成して、新しい ARM 64 プロジェクトのコンパイルの手順を実行します。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>開発者向けの ARM でビルド 2018 Windows 10</h3><p>については、Windows 10 on ARM デバイス、方法、魔法のような x86 エミュレーションのしくみと、最後に送信し、ARM で Windows 10 向けのアプリを構築する方法。 デスクトップと UWP のアプリを ARM64 を構築する方法表示されます。</p>
+        <h3>開発者向けの ARM でビルド 2018 Windows 10</h3><p>については、Windows 10 on ARM デバイス、方法、魔法のような x86 エミュレーションのしくみと、最後に提出し、ARM での Windows 10 のアプリを構築する方法。 デスクトップと UWP の ARM64 アプリを構築する方法表示されます。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
@@ -101,7 +101,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
                     </div>
                     </a>
                 <div class="cardText">
-                    <h3>Sdk ARM64 アプリの構築</h3>
+                    <h3>SDK で ARM64 アプリの構築</h3>
                     <p class="x-hidden-focus">この場所を説明します ARM64 arm 版 Windows 10 でネイティブに実行すると、アプリをコンパイルするブログの投稿を確認します。</p>
                 </div>
             </div>
@@ -125,7 +125,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="ARM64 アプリのデバッグ" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="アプリを ARM64 のデバッグ" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
@@ -164,7 +164,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
                 </a>
                 <div class="cardText">
                     <h3>x86 ARM でのアプリ</h3>
-                    <p class="x-hidden-focus">開発 x86 アプリが arm 版 Windows 10 での最高を実行します。</p>
+                    <p class="x-hidden-focus">開発 x86 アプリが ARM での Windows 10 での最高を実行します。</p>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
 </ul>-->
 
 ## <a name="let-us-know-if-you-have-feedback"></a>知らせフィードバックがあるかどうか
-継続的にして、既存のお客様からのフィードバックを活用することにより、製品を向上しますがします。 把握している、問題に保持されているか、単に適切する方法を共有する場合、エクスペリエンスは、これらのリンクに役立ちます。
+継続的にして、既存のお客様からのフィードバックを活用することにより、製品を向上しますがします。 把握している、問題に保持されているか、単に適切ではどのように共有する場合、エクスペリエンスは、これらのリンクに役立ちます。
 
 <ul class="cardsM cols cols3">
 <li>
@@ -209,7 +209,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
             <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>バグを報告します。</h3>
-                <p>プラットフォームのバグを発見かどうか。 詳細をマイクロソフトにメールを送信します。</p>
+                <p>このプラットフォームでバグを発見するかどうか。 詳細をマイクロソフトにメールを送信します。</p>
             </div>
         </a>
     </li>
@@ -218,7 +218,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
                 <h3>フィードバックのドキュメント</h3>
-                <p>ドキュメントで問題が見つかったかどうか。 何か明確にごしますか。 ドキュメントの GitHub リポジトリで懸案事項を作成します。</p>
+                <p>ドキュメントで問題が見つかったかどうか。 ものより明確にしますか。 ドキュメントの GitHub リポジトリで懸案事項を作成します。</p>
             </div>
         </a>
     </li>

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 486eb4adc1151bac1bf6a04a8f54b67530b426a3
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8854913"
+ms.locfileid: "8879404"
 ---
 # <a name="swap-chains"></a><span data-ttu-id="e1bfb-104">スワップ チェーン</span><span class="sxs-lookup"><span data-stu-id="e1bfb-104">Swap chains</span></span>
 

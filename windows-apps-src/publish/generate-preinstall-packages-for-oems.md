@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab17adc80a643c04ac7793945486c3ff975fde5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8807371"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877971"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a><span data-ttu-id="a9b0f-103">OEM 向けのプレインストール パッケージの生成</span><span class="sxs-lookup"><span data-stu-id="a9b0f-103">Generate preinstall packages for OEMs</span></span>
 

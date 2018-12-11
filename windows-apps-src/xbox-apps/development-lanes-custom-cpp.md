@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8806805"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880162"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a><span data-ttu-id="7510f-104">Xbox で UWP をカスタム C++ ゲームを移植します。</span><span class="sxs-lookup"><span data-stu-id="7510f-104">Bring custom C++ games to UWP on Xbox</span></span>
 

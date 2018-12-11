@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 一時停止, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8825487"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8879602"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a><span data-ttu-id="0acb8-104">アプリを一時停止する方法 (DirectX と C++)</span><span class="sxs-lookup"><span data-stu-id="0acb8-104">How to suspend an app (DirectX and C++)</span></span>
 

@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b444a11ab032034976d2f1b269bd10a89bf339e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748221"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878057"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a><span data-ttu-id="0737f-104">チュートリアル: アダプティブ レイアウトの作成</span><span class="sxs-lookup"><span data-stu-id="0737f-104">Tutorial: Create adaptive layouts</span></span>
 

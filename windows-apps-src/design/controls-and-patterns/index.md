@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/10/2018
-ms.locfileid: "8854743"
+ms.locfileid: "8877463"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a><span data-ttu-id="0c741-105">UWP アプリのコントロールとパターン</span><span class="sxs-lookup"><span data-stu-id="0c741-105">Controls and patterns for UWP apps</span></span>
  
