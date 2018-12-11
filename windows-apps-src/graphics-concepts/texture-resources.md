@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8792090"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8884981"
 ---
 # <a name="texture-resources"></a>テクスチャ リソース
 

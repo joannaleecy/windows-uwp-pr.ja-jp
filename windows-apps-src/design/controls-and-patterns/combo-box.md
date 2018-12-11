@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: fb286b591881d16ff08dae9fe12770644d886acf
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2dcefdfd3438e0bf8de94f0b9fd2376cf5c23190
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737583"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8885928"
 ---
 # <a name="combo-box"></a>コンボ ボックス
 
@@ -23,7 +23,7 @@ ms.locfileid: "8737583"
 
 コンボ ボックスを閉じると、現在の選択範囲を表示するか選択した項目がない場合は空です。 ユーザーがコンボ ボックスを展開するときは、選択可能な項目の一覧を表示します。
 
-> **重要な Api**: [ComboBox クラス](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable プロパティ](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text プロパティ](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)を、 [TextSubmitted イベント](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
+> **重要な Api**: [ComboBox クラス](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [IsEditable プロパティ](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、 [Text プロパティ](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、 [TextSubmitted イベント](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
 コンボ ボックス、ヘッダーを含むコンパクトな状態にします。
 
@@ -72,14 +72,14 @@ XAML で追加された項目の単純なコンボ ボックスを次に示し�
 
 ```xaml
 <ComboBox Header="Colors" PlaceholderText="Pick a color" Width="200">
-    <x:String>Blue<x:String>
-    <x:String>Green<x:String>
-    <x:String>Red<x:String>
-    <x:String>Yellow<x:String>
+    <x:String>Blue</x:String>
+    <x:String>Green</x:String>
+    <x:String>Red</x:String>
+    <x:String>Yellow</x:String>
 </ComboBox>
 ```
 
-次の例は、コンボ ボックスを FontFamily オブジェクトのコレクションにバインドを示しています。
+次の例では、コンボ ボックスを FontFamily オブジェクトのコレクションにバインドを示します。
 
 ```xaml
 <ComboBox x:Name="FontsCombo" Header="Fonts" Height="44" Width="296"
@@ -100,18 +100,18 @@ public MainPage()
 
 ### <a name="item-selection"></a>項目の選択
 
-ListView や GridView のようにコンボ ボックスは[セレクター](/uwp/api/windows.ui.xaml.controls.primitives.selector)から派生したため、同じ標準的な方法でユーザーの選択内容を取得することができます。
+ListView や GridView のように ComboBox は[セレクター](/uwp/api/windows.ui.xaml.controls.primitives.selector)から派生したため、同じ標準的な方法でユーザーの選択内容を取得することができます。
 
 取得して、 [SelectedItem](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem)プロパティを使用して、項目の選択、コンボ ボックスを設定し、または取得するか、または[SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex)プロパティを使用して、選択した項目のインデックスを設定できます。
 
-選択したデータ項目の特定のプロパティの値を取得するには、 [「selectedvalue」](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue)プロパティを使用することができます。 この例では、選択した項目から値を取得するどのプロパティを指定する[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)を設定します。
+選択したデータ項目の特定のプロパティの値を取得するには、 [「selectedvalue」](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvalue)プロパティを使用することができます。 この例では、どのプロパティを選択した項目から値を取得するに指定する[SelectedValuePath](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedvaluepath)を設定します。
 
 > [!TIP]
-> SelectedItem SelectedIndex を指定したりする既定の選択を設定すると、コンボ ボックス項目のコレクションが指定されている前に、プロパティが設定されている場合、例外が発生します。 XAML で項目を定義する場合を除き、コンボ ボックスの Loaded イベントを処理し、SelectedItem または SelectedIndex Loaded イベント ハンドラーで設定することをお勧めします。
+> SelectedItem または SelectedIndex を示す既定の選択を設定すると、コンボ ボックス項目のコレクションが指定されている前に、プロパティが設定されている場合、例外が発生します。 XAML で項目を定義する場合を除き、コンボ ボックスの Loaded イベントを処理し、SelectedItem または SelectedIndex Loaded イベント ハンドラーで設定することをお勧めします。
 
-XAML では、これらのプロパティにバインドしたり、選択内容の変更に応答する[SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)イベントを処理できます。
+XAML では、これらのプロパティにバインドしたり、選択内容の変更に応答する[SelectionChanged](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged)イベントを処理することができます。
 
-イベント ハンドラーのコード[SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)プロパティから、選択した項目を取得できます。 [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)プロパティから選択された項目 (ある場合) を取得できます。 AddedItems と RemovedItems の各のコレクションには、コンボ ボックスでは、複数選択をサポートしていないために、1 つだけの項目が含まれます。
+イベント ハンドラーのコード[SelectionChangedEventArgs.AddedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.addeditems)プロパティから、選択した項目を取得できます。 (ある場合)、以前に選択した項目は、 [SelectionChangedEventArgs.RemovedItems](/uwp/api/windows.ui.xaml.controls.selectionchangedeventargs.removeditems)プロパティから取得できます。 AddedItems と RemovedItems の各のコレクションには、コンボ ボックスでは、複数選択をサポートしていないために、1 つだけの項目が含まれます。
 
 この例では、選択した項目にバインドする方法と、SelectionChanged イベントを処理する方法を示します。
 
@@ -161,21 +161,21 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selectionchanged-and-keyboard-navigation"></a>SelectionChanged とキーボード ナビゲーション
 
-既定では、コンボ ボックスを閉じると、ユーザーがクリックした、タップ、または項目で Enter 自分の選択が確定する一覧に SelectionChanged イベントが発生します。 ユーザーがキーボードの方向キーで開くコンボ ボックスの一覧を移動するとき、選択範囲は変更されません。
+既定では、コンボ ボックスを閉じるとユーザーがクリックした、タップ、または自分の選択が確定するリストで項目を enter SelectionChanged イベントが発生します。 選択範囲は、ユーザーはキーボードの方向キーで開いているコンボ ボックスの一覧を移動するときに変更されません。
 
-コンボ ボックス作成その「ライブ更新」(フォント選択ドロップダウン) のような方向キーで、ユーザーが一覧を開きますを移動するときに、 [SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)を[Always](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)に設定します。 これにより、開いている一覧の別の項目にフォーカスが変更されたときに発生する SelectionChanged イベントします。
+更新コンボ ボックス作成その"ライブ"(フォント選択ドロップダウン) のような方向キーで、ユーザーが一覧を開きますを移動するときに、 [SelectionChangedTrigger](/uwp/api/windows.ui.xaml.controls.combobox.selectionchangedtrigger)を[Always](/uwp/api/windows.ui.xaml.controls.comboboxselectionchangedtrigger)に設定します。 これにより、開いている一覧の別の項目にフォーカスが変更されたときに発生する SelectionChanged イベントします。
 
 #### <a name="selected-item-behavior-change"></a>選択した項目の動作の変更
 
-Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) でまたは編集可能なコンボ ボックスをサポートするために後で、選択した項目の動作が更新されます。
+Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) で選択した項目の動作が編集可能なコンボ ボックスをサポートするために更新された後で、またはします。
 
-SDK 17763、SelectedItem プロパティの値の前に (およびそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要がありました。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`の結果します。
+SDK 17763、SelectedItem プロパティの値の前に (およびそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要がありました。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
 
 - SelectedItem = null
 - 「Selectedvalue」= null
 - SelectedIndex は-1
 
-Sdk 17763 以降、SelectedItem プロパティの値 (つまり、「selectedvalue」と SelectedIndex) コンボ ボックスの項目のコレクション内にする必要はありません。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`の結果します。
+Sdk 17763 以降、SelectedItem プロパティの値 (とそのため、「selectedvalue」と SelectedIndex)、コンボ ボックス項目のコレクション内にする必要はありません。 前の例では、設定を使用して`colorComboBox.SelectedItem = "Pink"`結果します。
 
 - SelectedItem ピンク =
 - 「Selectedvalue」ピンク =
@@ -190,17 +190,17 @@ Sdk 17763 以降、SelectedItem プロパティの値 (つまり、「selectedva
 ## <a name="make-a-combo-box-editable"></a>コンボ ボックスを編集します。
 
 > [!IMPORTANT]
-> この機能では Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
+> この機能では Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
 
 コンボ ボックスで、ユーザーは既定では、オプションの事前に定義された一覧から選択します。 ただし、これには、有効な値のサブセットのみが一覧に含まれて、ユーザーに記載されていないその他の値を入力できる必要がありますである場合があります。 これをサポートするには、ことができますコンボ ボックス編集可能です。
 
-コンボ ボックスを編集可能にするために、 [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)プロパティを**true**に設定します。 次に、ユーザーが入力した値を操作する[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)イベントを処理します。
+コンボ ボックスを編集するためには、 [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)プロパティを**true**に設定します。 次に、ユーザーが入力した値を操作する[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)イベントを処理します。
 
 既定では、ユーザーのカスタム テキストをコミットすると、SelectedItem 値が更新されます。 この動作を上書きするには、 **Handled**を**true** TextSubmitted イベント引数で設定します。 イベントが処理済みとしてマークし、コンボ ボックスは何も実行さらに、イベントの後に編集の状態に維持されます。 SelectedItem が更新されなくなります。
 
 この例では、単純な編集可能なコンボ ボックスを使用します。 一覧には、単純な文字列が含まれてされ、ユーザーが入力した任意の値が、入力に使用されます。
 
-「最近使った名前を」セレクターでは、ユーザーがカスタム文字列を入力できます。 'RecentlyUsedNames' 一覧には、ユーザーが選択できる、いくつかの値が含まれていますが、ユーザーにも、カスタムの新しい値を追加できます。 'CurrentName' プロパティは、現在の入力した名前を表します。
+「最近使った名前を」の選択では、ユーザーがカスタム文字列を入力できます。 'RecentlyUsedNames' 一覧にはから、ユーザーが選択できるいくつかの値が含まれていますが、ユーザーにも、カスタムの新しい値を追加できます。 'CurrentName' プロパティは、現在の入力の名前を表します。
 
 ```xaml
 <ComboBox IsEditable="true"
@@ -210,7 +210,7 @@ Sdk 17763 以降、SelectedItem プロパティの値 (つまり、「selectedva
 
 ### <a name="text-submitted"></a>提出されたテキスト
 
-ユーザーが入力した値を操作する[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)イベントを処理することができます。 イベント ハンドラーでは通常を検証するユーザーが入力した値が有効である、アプリで値を使用します。 状況によって後で使用するためのオプションのコンボ ボックスの一覧に値を追加することも可能性があります。
+ユーザーが入力した値を操作する[TextSubmitted](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)イベントを処理することができます。 イベント ハンドラーでは通常を検証するユーザーが入力した値が有効である、アプリで、値を使用します。 状況によって将来使用するためのオプションのコンボ ボックスの一覧に値を追加することも可能性があります。
 
 TextSubmitted イベントは、これらの条件が満たされた場合に発生します。
 
@@ -218,9 +218,9 @@ TextSubmitted イベントは、これらの条件が満たされた場合に発
 - ユーザーがコンボ ボックスの一覧の既存のエントリに一致しないテキストを入力します。
 - ユーザーは、Enter を押すか、コンボ ボックスからフォーカスが移動します。
 
-ユーザーがテキストを入力し、一覧を上下に移動する場合、TextSubmitted イベントは発生しません。
+ユーザーがテキストを入力し、リストを上または下に移動する場合、TextSubmitted イベントは発生しません。
 
-### <a name="sample---validate-input-and-use-locally"></a>サンプル - 入力を検証し、ローカルで使う
+### <a name="sample---validate-input-and-use-locally"></a>サンプル - 入力を検証し、ローカルで使用
 
 この例では、フォント サイズの選択には、フォント サイズの見本に対応する値のセットが含まれていますが、ユーザーは、一覧にないフォント サイズを入力します。
 
@@ -255,7 +255,7 @@ private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmitt
 
 ### <a name="sample---validate-input-and-add-to-list"></a>サンプル - 入力を検証し、一覧に追加します。
 
-ここでは、「好きな色の選択」には、最も一般的な好みの色 (赤、青、緑、オレンジ色) が含まれていますが、ユーザーは、一覧に含まれていない好きな色を入力します。 ユーザーは、(ピンク) のように有効な色を追加するとき、新たに入力された色がリストに追加し、「好きな色」アクティブとして設定します。
+ここでは、「好きな色の選択」には、最も一般的な好みの色 (赤、青、緑、Orange) が含まれていますが、ユーザーは、一覧に含まれていない好きな色を入力します。 ユーザーは、(ピンク) のように有効な色を追加するとき、新たに入力された色がリストに追加し、「好きな色」アクティブとして設定します。
 
 ```xaml
 <ComboBox x:Name="favoriteColorComboBox"

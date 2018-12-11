@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, azure ad, azure テナント, aad テナント, azure ad テナント, テナント管理, テナント
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f807799740d7e832da2f6a6fa3ea63e00deaee4
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796453"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883721"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>パートナー センター アカウントに Azure Active Directory を関連付ける
 

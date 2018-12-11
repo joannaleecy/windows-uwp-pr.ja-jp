@@ -2,12 +2,14 @@
 title: Device Portal ネットワーク資格情報 API リファレンス
 description: 追加、削除、またはネットワーク資格情報をプログラムで更新する方法について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730973"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8883051"
 ---
 # <a name="network-credentials-api-reference"></a>ネットワーク資格情報 API リファレンス
 追加、削除、またはこの REST API を使用して、開発機で保存されているネットワーク資格情報を更新することができます。
@@ -93,7 +95,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## <a name="remove-stored-credentials-for-a-share"></a>共有の資格情報を削除します。
+## <a name="remove-stored-credentials-for-a-share"></a>共有に保存された資格情報を削除します。
 
 **要求**
 

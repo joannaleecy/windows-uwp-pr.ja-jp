@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, ジオコーディング, 地図, 位置情報
 ms.localizationpriority: medium
 ms.openlocfilehash: e8b0efe39578974090844a4224055821c29f8ced
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8747925"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880618"
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>ジオコーディングと逆ジオコーディングの実行
 
 このガイドでは、住所を地理的な場所 (ジオコーディング) に変換[**Windows.Services.Maps で[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)クラスのメソッドを呼び出すことによって (逆ジオコーディング) の住所を地理的な位置を変換する方法**](https://msdn.microsoft.com/library/windows/apps/dn636979)名前空間です。
 
 > [!TIP]
-> アプリでの地図の使用について詳しくには、github の[Windows ユニバーサル サンプルのリポジトリ](hhttps://github.com/Microsoft/Windows-universal-samples)から[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)サンプルをダウンロードします。
+> アプリでの地図の使用について詳しくは、github の[Windows ユニバーサル サンプルのリポジトリ](hhttps://github.com/Microsoft/Windows-universal-samples)から[MapControl](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)サンプルをダウンロードします。
 
 ジオコーディングや逆ジオコーディングに関連するクラスは、次のように整理されます。
 
@@ -36,7 +36,7 @@ ms.locfileid: "8747925"
 
 1.  場所の名前と住所の番地[**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)クラスの[**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)メソッドのオーバー ロードのいずれかを呼び出します。
 2.  [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)メソッドは、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)オブジェクトを返します。
-3.  [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)オブジェクトのコレクションを公開するのにには、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)の[**場所**](https://msdn.microsoft.com/library/windows/apps/dn627552)のプロパティを使用します。 システムは、特定の入力に対応する複数の場所を見つけることがありますので[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)の複数のオブジェクトがかかることがあります。
+3.  コレクションの[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)オブジェクトを公開するのにには、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)の[**場所**](https://msdn.microsoft.com/library/windows/apps/dn627552)のプロパティを使用します。 システムは、特定の入力に対応する複数の場所を見つけることがありますので[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)の複数のオブジェクトがかかることがあります。
 
 ```csharp
 using Windows.Services.Maps;
@@ -84,7 +84,7 @@ result = (47.6406099647284,-122.129339994863)
 
 1.  [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドを呼び出します。
 2.  [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
-3.  [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)オブジェクトのコレクションを公開するのにには、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)の[**場所**](https://msdn.microsoft.com/library/windows/apps/dn627552)のプロパティを使用します。 システムは、特定の入力に対応する複数の場所を見つけることがありますので[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)の複数のオブジェクトがかかることがあります。
+3.  コレクションの[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)オブジェクトを公開するのにには、 [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551)の[**場所**](https://msdn.microsoft.com/library/windows/apps/dn627552)のプロパティを使用します。 システムは、特定の入力に対応する複数の場所を見つけることがありますので[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)の複数のオブジェクトがかかることがあります。
 4.  各[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549)の[**アドレス**](https://msdn.microsoft.com/library/windows/apps/dn636929)プロパティを通じて[**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533)オブジェクトにアクセスします。
 
 ```csharp

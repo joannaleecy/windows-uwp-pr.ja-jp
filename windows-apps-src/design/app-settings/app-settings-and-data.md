@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709705"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8882224"
 ---
 # <a name="app-settings-and-data"></a>アプリの設定とデータ
 
