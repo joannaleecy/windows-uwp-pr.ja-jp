@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, アドオンのコンバージョン, チャネル
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b1cbc33b2ce53ea7f851e78433b74b103e5a035
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8796601"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8896406"
 ---
 # <a name="get-add-on-conversions-by-channel"></a><span data-ttu-id="c7782-104">チャネルごとのアドオンのコンバージョンの取得</span><span class="sxs-lookup"><span data-stu-id="c7782-104">Get add-on conversions by channel</span></span>
 

@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8783724"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8897706"
 ---
 # <a name="identify-input-devices"></a><span data-ttu-id="d0ad8-103">入力デバイスの識別</span><span class="sxs-lookup"><span data-stu-id="d0ad8-103">Identify input devices</span></span>
 
