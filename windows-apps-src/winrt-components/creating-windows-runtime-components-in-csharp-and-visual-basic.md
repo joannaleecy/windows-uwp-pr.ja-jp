@@ -43,7 +43,7 @@ Visual Basic または c# で記述されている UWP アプリでのみ使う�
 
 ## <a name="debugging-your-component"></a>コンポーネントのデバッグ
 
-UWP アプリとコンポーネントの両方がマネージ コードでに組み込まれている場合、デバッグできますその両方同時にします。
+If both your UWP app and your component are built with managed code, then you can debug them both at the same time.
 
 C++ を使った UWP アプリの一部としてコンポーネントをテストしている場合は、同時にマネージとネイティブ コードをデバッグできます。 既定では、ネイティブ コードのみになります。
 

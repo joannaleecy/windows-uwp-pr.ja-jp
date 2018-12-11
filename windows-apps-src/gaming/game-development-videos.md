@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ビデオ, GDC, build
 ms.localizationpriority: medium
 ms.openlocfilehash: de04b0b272bbc6889c5fb9b13e5487902a77e98c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750170"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892729"
 ---
 # <a name="game-development-videos"></a>ゲーム開発ビデオ
 
@@ -23,17 +23,17 @@ GDC や //build などの主要なカンファレンスで収録された、ゲ�
 
 LiveOps とは何ですか。 開発者はライブ ゲームを作成する理由について説明します[PlayFab (インタビュー) のすべてのユーザーに対して、ゲーム](https://channel9.msdn.com/Shows/Level-Up/Your-Game-For-Everyone-with-PlayFab)の James Gwertzman、David Holladay。
 
-* [ゲーム開発にする方法、インディーズ studio ふわふわした妖精のリーン アプローチはゲームのみ 8 週間後ヒット成長](https://channel9.msdn.com/Shows/Level-Up/Fluffy-Fairys-Lean-Approach-to-Game-Development-How-an-Indie-Studio-Grew-a-Hit-Game-After-Only-8-W)- ふわふわした妖精から Oliver Löffler
+* [ゲーム開発の方法、インディーズ studio ふわふわした妖精のリーン アプローチはゲームのみ 8 週間後、ヒット成長](https://channel9.msdn.com/Shows/Level-Up/Fluffy-Fairys-Lean-Approach-to-Game-Development-How-an-Indie-Studio-Grew-a-Hit-Game-After-Only-8-W)- ふわふわした妖精から Oliver Löffler
 * [1 日 1: すべての場所で、ゲーム](https://channel9.msdn.com/Shows/Level-Up/Your-game-everywhere-PlayFab)-Brendan Vanous
 * [日 2: PlayFab (プレゼンテーション) のすべてのユーザーのゲーム](https://channel9.msdn.com/Shows/Level-Up/Your-Game-For-Everyone-With-PlayFab-Theater-Presentation)-Brendan Vanous
-* [日 3: ゲームを再生しているすべての方法](https://channel9.msdn.com/Shows/Level-Up/Your-game-every-way-its-played-PlayFab-Theater-Presentation)-Brendan Vanous
+* [日 3: ゲーム、すべての方法が再生](https://channel9.msdn.com/Shows/Level-Up/Your-game-every-way-its-played-PlayFab-Theater-Presentation)-Brendan Vanous
 
 ### <a name="azure-cloud-services"></a>Azure クラウド サービス
 
 * [方法、Walking Dead いいえ男性の陸地ゲームが構築された Azure 上のスケールに](https://channel9.msdn.com/Shows/Level-Up/How-The-Walking-Dead-No-Mans-Land-was-built-to-scale-on-Azure-Theater-Presentation)-Next Games から Kalle Hiitola
 * [Azure Cosmos DB: 包括的な概要](https://channel9.msdn.com/Shows/Level-Up/Azure-Cosmos-DB-Comprehensive-Overview)-Aleksey Savateyev
 * [コンテナー、クラスターおよびゲーム用のクラウド](https://channel9.msdn.com/Shows/Level-Up/Containers-Clusters-and-the-Cloud-for-Gaming-Theater-Presentation-1)- James より
-* [Azure でのレンダリング](https://channel9.msdn.com/Shows/Level-Up/Rendering-in-Azure-Theater-Presentation)- John Thuotte
+* [Azure でのレンダリング](https://channel9.msdn.com/Shows/Level-Up/Rendering-in-Azure-Theater-Presentation)John Thuotte
 * [Hyper-v の使用で実行されている](https://channel9.msdn.com/Shows/Level-Up/Running-on-a-Hypervisor-Theater-Presentation)- Andrew Farrier
 
 ### <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
@@ -42,7 +42,7 @@ LiveOps とは何ですか。 開発者はライブ ゲームを作成する理�
 
 ### <a name="mixer"></a>Mixer
 
-* [Mixer の最小限の労力を大幅に増えてを昇格](https://channel9.msdn.com/Shows/Level-Up/Get-massive-promotion-for-minimal-effort-with-Mixer-Theater-presentation)- Gersh Payzer
+* [Mixer で最小限の労力を大幅に増えてを昇格](https://channel9.msdn.com/Shows/Level-Up/Get-massive-promotion-for-minimal-effort-with-Mixer-Theater-presentation)- Gersh Payzer
 
 ### <a name="visual-studio-team-services-vsts-and-app-center"></a>Visual Studio Team Services (VSTS) とアプリ センター
 
@@ -50,9 +50,9 @@ VSTS は何ですか。 ビルド プロセスで DevOps を実装する方法�
 
 * [の計画と VSTS の完全な電源を使用してゲームの構築: アジャイル、CI & CD エンド ツー エンドのデモ](https://channel9.msdn.com/Shows/Level-Up/Planning-and-building-games-using-the-full-power-of-VSTS-Agile-CI--CD-end-to-end-demo)-Rogan Ferguson
 * [クラウドのビルドを Visual Studio Team Services と Unity チームによって強化された次のゲームを構築](https://channel9.msdn.com/Shows/Level-Up/Build-your-next-game-powered-by-Visual-Studio-Team-Services-and-Unity-Teams-cloud-build-Theater)- ございました Lyalin
-* [継続的にテストし、配布しアプリのセンターでのゲームを監視](https://channel9.msdn.com/Shows/Level-Up/Continuously-Test-distribute-and-monitor-your-game-with-App-Center-Theater-Presentation)- James ホワイト
+* [継続的にテストし、配布しアプリのセンターでのゲームの監視](https://channel9.msdn.com/Shows/Level-Up/Continuously-Test-distribute-and-monitor-your-game-with-App-Center-Theater-Presentation)- James 白
 * [CI/CD Node.js、Python、.NET、移動、Ruby、または Java - 分単位でのパイプラインのセットアップ](https://channel9.msdn.com/Shows/Level-Up/Setup-your-CICD-pipeline-for-Nodejs-Python-NET-Go-Ruby-or-Java-in-Minutes)- Abel さん
-* [アジャイル ツール セット vsts](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) - Rogan Ferguson、James Montemagno
+* [アジャイル ツール セット VSTS](https://channel9.msdn.com/Shows/Level-Up/Agile-tooling-set-with-VSTS) - Rogan Ferguson、James Montemagno
 
 ### <a name="git"></a>Git
 
@@ -72,20 +72,20 @@ VSTS は何ですか。 ビルド プロセスで DevOps を実装する方法�
 
 ### <a name="microsoft-store"></a>Microsoft Store
 
-* [Microsoft Store: Xbox One と Windows 10 のユーザーに到達するどの](https://channel9.msdn.com/Shows/Level-Up/Microsoft-Store-How-You-Can-Reach-Xbox-One-and-Windows-10-users)-Bernardo Zamora
-* [キャンディでの Windows 10 と Microsoft Store での Crush 理由](https://channel9.msdn.com/Shows/Level-Up/Why-Candy-Crush-on-Windows-10-and-in-Microsoft-Store)- キングから Alex が定年後の生活
+* [Microsoft Store: Xbox One と Windows 10 のユーザーのアクセス方法](https://channel9.msdn.com/Shows/Level-Up/Microsoft-Store-How-You-Can-Reach-Xbox-One-and-Windows-10-users)-Bernardo Zamora
+* [Candy での Windows 10 と Microsoft ストアでの Crush 理由](https://channel9.msdn.com/Shows/Level-Up/Why-Candy-Crush-on-Windows-10-and-in-Microsoft-Store)- キングから Alex が定年後の生活
 
 ### <a name="mixed-reality"></a>Mixed Reality
 
-* [Unity での Windows MR アプリの構築](https://channel9.msdn.com/Shows/Level-Up/Building-Windows-MR-Apps-with-Unity)- Jaime ロドリゲス
+* [Unity での Windows MR アプリの構築](https://channel9.msdn.com/Shows/Level-Up/Building-Windows-MR-Apps-with-Unity)に Jaime ロドリゲス
 * [、AR クラウド: それらのすべては将来の MR がデバイスではない理由](https://channel9.msdn.com/Shows/Level-Up/The-AR-Cloud-Why-the-future-of-MR-is-not-a-device-itsall-of-them)-Jesse McCulloch
 
 ## <a name="game-accessibility-conference-2018"></a>ゲームのアクセシビリティ会議 2018
 
-* [探して明るい。 2017 のゲームのアクセシビリティ進めます](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Looking-Bright-2017s-Game-Accessibility-Advances)- Ian Hamilton、アクセシビリティ業界エキスパート
-* [、CVAA し、どのようなゲームへのアクセスの意味](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access)-連邦通信委員会から管理者 Petlz の
-* [[ゲーム ブラインド – アクセシビリティ対応することを行った次が発生したものと思われる.](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) -MetalPop ゲームから Michelle 島
-* [認知的アクセシビリティ設計の選択肢と音楽 Education Autism for](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Cognitive-Accessibility-Design-Choices-and-Music-Education-for-Autism) - Berklee 大学の音楽から Lori Landay
+* [探して明るい。 2017 のゲームのアクセシビリティ進めます](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Looking-Bright-2017s-Game-Accessibility-Advances)- Ian Hamilton、アクセシビリティ業界のエキスパート
+* [、CVAA とは、ゲームへのアクセスの意味が](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-The-CVAA-and-What-it-Means-for-Gaming-Access)-連邦通信委員会から管理者 Petlz の
+* [[ゲーム ブラインド – アクセスすることを行った次が発生したものと思われる.](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-I-Made-My-Game-Blind-Accessible--You-Wont-Believe-What-Happened-Next) の MetalPop ゲームから Michelle 島
+* [認知的アクセシビリティ設計の選択肢と音楽 Education Autism for](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Cognitive-Accessibility-Design-Choices-and-Music-Education-for-Autism) - Berklee 大学音楽から Lori Landay
 * [アクセシビリティを Ramping](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Ramping-Up-Accessibility) - EA スポーツから管理者スティーブンズ
 * ゲームのアクセシビリティを最新[します。ソリューションにお見舞いを変更する](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Modern-Game-Accessibility-Changing-Sympathy-to-Solution)-プレイ ステーションから Kevin Keeker および Sony ワールド ワイド スタジオから Sam Thompson
 * [事前せず主流ビデオ ゲームのプレイ](https://channel9.msdn.com/Shows/Level-Up/GAConf-2018-Playing-Mainstream-Video-Games-Without-Sight)- SightlessKombat、アクセシビリティ代弁
