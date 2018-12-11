@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799532"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899710"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a><span data-ttu-id="5c96e-105">ファイルとフォルダーの列挙と照会</span><span class="sxs-lookup"><span data-stu-id="5c96e-105">Enumerate and query files and folders</span></span>
 
