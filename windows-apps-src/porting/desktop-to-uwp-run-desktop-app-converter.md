@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8895407"
+ms.locfileid: "8920950"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -156,7 +156,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
+> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 次に、パートナー センターをパッケージに数値で始まる id を割り当てる場合、こと確認するも<i>-appid</i>パラメーターに渡すそのパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用します。  
 
 **ビデオ**
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8894786"
+ms.locfileid: "8919774"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールとの統合
 
