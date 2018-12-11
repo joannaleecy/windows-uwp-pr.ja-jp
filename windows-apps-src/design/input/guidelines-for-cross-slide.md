@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f6a37af19c9e3e9beaebbadfcc71f3ad01e3087c
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734465"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872852"
 ---
 # <a name="guidelines-for-cross-slide"></a>クロススライドのガイドライン
 
@@ -56,7 +56,7 @@ ms.locfileid: "8734465"
 
 クロススライドは、単一の方向にスクロールするリストやコレクションに使います。 詳しくは、「[ListView コントロールの追加](https://msdn.microsoft.com/library/windows/apps/hh465382)」をご覧ください。
 
-**注:** 画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すため、コンテンツ領域を web ブラウザーや電子ブック リーダーなどの 2 つの方向にパンする場合と長時間制限のある対話式操作に使用する必要があります。
+**注:** 画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すため、コンテンツ領域を web ブラウザーや電子ブック リーダーなどの 2 つの方向にパンする場合と長押時間制限のある対話式操作に使用する必要があります。
 
  
 

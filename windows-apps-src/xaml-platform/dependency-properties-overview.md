@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750733"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854467"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -30,7 +30,7 @@ ms.locfileid: "8750733"
 - リソースやスタイルなどの多目的テンプレート パターン
 - オブジェクト ツリー内の他の要素との親子のリレーションシップから判断される値
 
-または XAML を使った Windows ランタイム アプリの UI とは、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するため、プログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コード。 次のような機能があります。
+または XAML を使った Windows ランタイム アプリの UI とは、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するためのプログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コード。 次のような機能があります。
 
 - データ バインディング
 - スタイル
@@ -162,7 +162,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 カスタム バインディング ソースの場合には、プロパティは依存関係プロパティである必要があるか、またはオブジェクトが [ **INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートする必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 > [!NOTE]
-> 型は、ここではサポートを一覧表示されている Microsoft .NET データ ソース。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+> 型は、ここではサポートを一覧表示されている Microsoft .NET データ ソースです。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 ### <a name="styles-and-templates"></a>スタイルとテンプレート
 

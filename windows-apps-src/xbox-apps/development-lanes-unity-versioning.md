@@ -2,12 +2,14 @@
 title: Unity - UWP プロジェクトのバージョン管理
 description: UWP プロジェクトをバージョン管理します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.topic: article
+ms.date: 02/08/2017
+ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732398"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873107"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: UWP プロジェクトのバージョン管理
 
@@ -50,7 +52,7 @@ ms.locfileid: "8732398"
 ## <a name="folders"></a>フォルダー  
 
 `Assets` | ***含める***|Microsoft Store の画像が含まれています  
-`Data`   | ***無視***|Unity が (シーン、シェーダー、スクリプト、プレハブなど) にプロジェクトをコンパイル  
+`Data`   | ***無視***|Unity でプロジェクト (シーン、シェーダー、スクリプト、プレハブなど) をコンパイルする場所  
 `Dependencies` | ***含める***|このフォルダーは、作成したすべての UWP の依存関係 (たとえば、xboxlivesdk.dll) を格納する  
 `Properties` | ***含める***|開発者が変更できる高度な設定が含まれています  
 `Unprocessed` | ***無視***|Unity を含む`.dll`と`.pdb`ファイル  
@@ -58,8 +60,8 @@ ms.locfileid: "8732398"
 ## <a name="files"></a>ファイル  
 
 `App.cs` | ***含める***|UWP アプリケーションのエントリ ポイント変更およびその他のソース ファイルを使って拡張するには、この  
-`Package.appxmanifest` | ***含める***|アプリ パッケージ マニフェスト ソース ファイルには AppX の  
-`project.json` | ***含める***|NuGet パッケージを説明する`*.csproj`に依存  
+`Package.appxmanifest` | ***含める***|アプリのパッケージ マニフェスト ソース ファイルには AppX の  
+`project.json` | ***含める***|NuGet パッケージの説明、`*.csproj`に依存  
 `ScrapyardPhoenix.csproj` | ***含める***|UWP ビルド対象; をについて説明します。UWP に追加の依存関係を追加する場合は、プロジェクトに、この`*.csproj`ファイルがその情報を含める  
 `ScrapyardPhoenix.csproj.user` | ***無視***|このファイルには、ローカル ユーザーの情報が含まれています。
 

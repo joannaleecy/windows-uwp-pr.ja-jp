@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755825"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8854490"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -69,7 +69,7 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 これらの例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
 * パートナー センター内にある[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリは、ストアで公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
-* パートナー センターで[、アプリのサブスクリプション アドオンを作成](../publish/add-on-submissions.md)あります。
+* パートナー センターで[アプリのサブスクリプション アドオンを作成した](../publish/add-on-submissions.md)あります。
 
 これらの例のコードは、次の点を前提としています。
 * コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。

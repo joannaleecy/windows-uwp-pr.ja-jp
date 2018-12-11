@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d67bb7c7fd2173e1406669367935efdb09967ea
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8743692"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827147"
 ---
 # <a name="background-transfers"></a>バックグラウンド転送
 ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
@@ -28,7 +28,7 @@ ms.locfileid: "8743692"
 > [!NOTE]
 > アプリごとのリソースの制約により、常にアプリに 200 を超える転送 (DownloadOperations および UploadOperations) を含めてはなりません。 この制限を超過すると、アプリの転送キューが回復不能な状態になる可能性があります。
 
-アプリケーションを起動すると、既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトがすべての[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)に呼び出す必要があります。 そうしない既に完了転送のリークが発生し、最終的にレンダリング バック グラウンド転送機能の使用役に立ちません。
+アプリケーションを起動すると、既存[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)と[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)オブジェクトがすべての[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)に呼び出す必要があります。 これを行わない既に完了転送のリークが発生しは最終的にレンダリング バック グラウンド転送機能の使用役に立ちません。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>バックグラウンド転送での認証されたファイル要求の実行
 バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
@@ -260,7 +260,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   接続が確立された後、2 分以内で応答を受け取らなかった HTTP 要求メッセージは中止されます。
 
-> **注:** どちらのシナリオでは、インターネット接続があると仮定するとバック グラウンド転送は要求 3 回まで自動的に再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
+> **注:** いずれかのシナリオでは、インターネット接続があると想定してバック グラウンド転送は要求 3 回まで自動的に再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
 ## <a name="debugging-guidance"></a>デバッグのガイダンス
 Microsoft Visual Studio でデバッグ セッションを停止することは、アプリを閉じることに相当します。PUT によるアップロードは一時停止され、POST によるアップロードは終了されます。 デバッグ時であっても、アプリでは、持続しているアップロードを列挙し、再実行や取り消しを行うことができる必要があります。 たとえば、そのデバッグ セッションで以前の操作が重要ではない場合、アプリの起動時に、列挙された持続しているアップロード操作をアプリで取り消すことができます。

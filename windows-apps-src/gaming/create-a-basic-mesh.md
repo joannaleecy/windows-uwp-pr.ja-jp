@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、メッシュ、DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754772"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8872842"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>基本的なメッシュの作成と表示
 
@@ -19,7 +19,7 @@ ms.locfileid: "8754772"
 
 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。 そのような多角形によるオブジェクトやサーフェスの構造を構成する頂点のリストをメッシュと呼びます。 ここでは、立方体オブジェクトの基本的なメッシュを作り、シェーダー パイプラインに渡してレンダリングと表示を行います。
 
-> **重要な** (directx::xmfloat3:xmfloat4x4 など) の種類とインライン メソッド DirectXMath.h で宣言されている次に含まれているコード例を使用します。 このコードを切り取って貼り付ける場合は、プロジェクトに \#include &lt;DirectXMath.h&gt; を含めてください。
+> **重要な**含まれているコードの例は、ここで (directx::xmfloat3:xmfloat4x4 など) の型と DirectXMath.h で宣言されているインライン メソッドに使用します。 このコードを切り取って貼り付ける場合は、プロジェクトに \#include &lt;DirectXMath.h&gt; を含めてください。
 
  
 

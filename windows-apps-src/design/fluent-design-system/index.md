@@ -7,11 +7,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8748843"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825378"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design System の Windows アプリの作成者
 
@@ -19,7 +19,7 @@ ms.locfileid: "8748843"
 
 ## <a name="introduction"></a>はじめに
 
-Fluent Design System では、優れた美しさを持つユーザー インターフェイスをアダプティブ、高く、親近感を作成して、システムです。
+Fluent Design System では、アダプティブ、親近感を作成し、優れた美しさを持つユーザー インターフェイスのシステムです。
 
 ## <a name="principles"></a>原則
 
@@ -40,7 +40,7 @@ Fluent エクスペリエンスは動作と意図を読み取ります。すな�
 
 ![Fluent design のロゴ](images/fluentdesign_header.png)
 
-設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 どのようなアプリかどうか。 ガイドラインの多くは、すべてのプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするために作成します。
+設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 アプリの種類ですか。 ガイドラインの多くは、すべてのプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするために作成します。
 
 Fluent Design 機能は UWP に組み込まれています。 これらの機能のいくつか (有効ピクセルやユニバーサル入力システムなど) は、自動的に取り込まれます。 これらの機能を利用するために追加のコードを記述する必要はありません。 他の機能 (アクリル効果など) はオプションであり、それらの機能をアプリに取り込むには、機能を追加するためのコードを記述します。
 

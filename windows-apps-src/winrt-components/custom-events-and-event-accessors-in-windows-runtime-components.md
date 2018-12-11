@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b8c4777e1c34bca36200bf6e8a96c35d6a0b1079
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8751497"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826866"
 ---
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
 
@@ -31,7 +31,7 @@ Visual Basic と C# コンパイラはこのプロセスを簡略化します。
 
 NumberChanged イベントの次のコードは、UWP イベントの基本パターンを示しています。 この例では、イベント引数オブジェクトのコンストラクターである NumberChangedEventArgs は、変更された数値を表す単一の整数パラメーターを受け取ります。
 
-> **注:** これは、Windows ランタイム コンポーネントで宣言する通常のイベントのコンパイラが使う同じパターンです。
+> **注:** これは Windows ランタイム コンポーネントで宣言する通常のイベントのコンパイラが使う同じパターンです。
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -112,7 +112,7 @@ UWP イベント パターンで使われる EventRegistrationTokenTable&lt;T&gt
 
 -    [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) プロパティは、イベントを処理するために現在登録されているすべてのイベント ハンドラーを含むデリゲートを返します。 このデリゲートを使ってイベントを発生させるか、Delegate クラスのメソッドを使ってハンドラーを個別に呼び出します。
 
-    >**注:**、この記事の前半での例で示したパターンに従うし、デリゲートを呼び出す前に一時変数にコピーことをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。 デリゲートは変更できないため、コピーは引き続き有効です。
+    >**注:**、この記事の前半での例で示したパターンに従うし、デリゲートを呼び出す前に一時変数にコピーすることをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。 デリゲートは変更できないため、コピーは引き続き有効です。
 
 必要に応じて、独自のコードをアクセサーに配置します。 スレッド セーフが問題の場合、独自のロックをコードに提供する必要があります。
 
