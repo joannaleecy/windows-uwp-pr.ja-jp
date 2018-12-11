@@ -12,11 +12,11 @@ design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a7fa4b824e0472971fab61935857670fa5b49ee
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8799369"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8899273"
 ---
 # <a name="flip-view"></a><span data-ttu-id="73dd4-103">フリップ ビュー</span><span class="sxs-lookup"><span data-stu-id="73dd4-103">Flip view</span></span>
 

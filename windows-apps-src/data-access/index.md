@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, データ, データベース, リレーショナル, テーブル, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: eb5adbdd3ae12d039d934e8d0cbe468ae5c1187c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800208"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8900001"
 ---
 # <a name="data-access"></a><span data-ttu-id="f9b1c-104">データ アクセス</span><span class="sxs-lookup"><span data-stu-id="f9b1c-104">Data access</span></span>
 
