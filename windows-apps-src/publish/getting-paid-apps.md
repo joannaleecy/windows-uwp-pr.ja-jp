@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
 ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730725"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875388"
 ---
 # <a name="getting-paid"></a>支払いの受け取り
 次に、アプリ、アドオン、および advertising による収益の支払の受け取りについての重要な情報を示します。
 
 > [!IMPORTANT]
-> Microsoft Store でアプリの売上から収益を受け取ることができます、[受取りアカウントの設定し、税関連の](setting-up-your-payout-account-and-tax-forms.md)する必要があります。
+> Microsoft Store でアプリの売上から収益を受け取ることができます[受取りアカウントの設定し、税関連の](setting-up-your-payout-account-and-tax-forms.md)する必要があります。
 
 ## <a name="store-fee"></a>Windows ストアの手数料
 

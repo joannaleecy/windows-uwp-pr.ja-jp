@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8735308"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877309"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>"Hello, world" アプリを作成する (XAML)
 
-このチュートリアルは、XAML と c# を使って、シンプルなを作成する方法を教えて「こんにちは, world」アプリを windows 10 ユニバーサル Windows プラットフォーム (UWP) 用です。 Microsoft Visual Studio でプロジェクトを 1 つは、任意の windows 10 デバイスで実行されるアプリをビルドすることができます。
+このチュートリアルは、XAML と c# を使って、シンプルなを作成する方法を教えて「こんにちは, world」アプリでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) 用です。 Microsoft Visual Studio でプロジェクトを 1 つは、任意の windows 10 デバイスで実行されるアプリをビルドすることができます。
 
 ここでは、次の方法について説明します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "8735308"
 
 2.  **[ファイル**] メニューから選択**新規 > プロジェクト**を*新しいプロジェクト*] ダイアログを開きます。
 
-3.  、左側のテンプレートの一覧から選択**インストール済み > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
+3.  左側のテンプレートの一覧から選択**インストール済み > Visual C#] > Windows ユニバーサル**UWP プロジェクト テンプレートの一覧を表示します。
 
     ユニバーサル テンプレートが表示されない場合は、UWP アプリを作成するためのコンポーネントがない可能性があります。 インストール プロセスを繰り返して UWP サポートを追加することもできます (*[新しいプロジェクト]* ダイアログで **[Visual Studio インストーラーを開く]** をクリック)。 参照[を取得する設定](get-set-up.md))。
 
@@ -93,14 +93,14 @@ ms.locfileid: "8735308"
 
 *Package.appxmanifest*
 -   名前、説明、タイル、開始ページなど、アプリを説明するマニフェスト ファイルです。
--   依存関係、リソースと、アプリが含まれているファイルの一覧が含まれます。
+-   依存関係、リソースと、アプリが含まれているファイルの一覧が含まれています。
 
 *一連のロゴ イメージ*
--   Assets/Square150x150Logo.scale-200.png と Wide310x150Logo.scale 200.png は、[スタート] メニューのアプリ (中] または [ワイド サイズ) を表します。
+-   Assets/Square150x150Logo.scale-200.png と Wide310x150Logo.scale 200.png は、[スタート] メニューで、アプリ (中] または [ワイド サイズ) を表します。
 -   Assets/Square44x44Logo.png は、[スタート] メニューのタスク バーとタスク マネージャーのアプリの一覧でアプリを表します。
 -   Assets/StoreLogo.png は、Microsoft Store 内のアプリを表します。
 -   Assets/SplashScreen.scale-200.png は、アプリが起動したときに表示するスプラッシュ画面です。
--   システムがロックされているときに、ロック画面上のアプリを表す Assets/LockScreenLogo.scale-200.png を使用できます。
+-   システムがロックされているときに、ロック画面でアプリを表す Assets/LockScreenLogo.scale-200.png を使用できます。
 
 ## <a name="step-2-adding-a-button"></a>手順 2. ボタンを追加する
 

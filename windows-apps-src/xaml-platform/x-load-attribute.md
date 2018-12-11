@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa0f12779ad56d57c92f667443644851dc3d5e5
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8752081"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878561"
 ---
 # <a name="xload-attribute"></a>x:Load 属性
 
 **X:load**を使用して、起動、ビジュアル ツリーの作成、および XAML アプリのメモリ使用量を最適化することができます。 **X:load**を使用して、要素が読み込まれていない場合、メモリが解放され、ビジュアル ツリー内の場所をマークする小さなプレース ホルダーを内部的に使用される点を除けば、**可視性**のような視覚効果があります。
 
-X:load で属性が UI 要素は、ロードとアンロード経由でのコード、または[X:bind](x-bind-markup-extension.md)式を使用できます。 これは、表示頻度の低い要素や条件付きで表示される要素のコストを削減するのに役立ちます。 グリッドや StackPanel などのコンテナーで X:load を使用して、コンテナーとそのすべての子が読み込まれるか、グループとしてアンロードします。
+X:load で属性が UI 要素には、ロードとアンロード経由でコードまたは[X:bind](x-bind-markup-extension.md)式を使用してを使用できます。 これは、表示頻度の低い要素や条件付きで表示される要素のコストを削減するのに役立ちます。 グリッドや StackPanel などのコンテナーで X:load を使用して、コンテナーとそのすべての子が読み込まれるか、グループとしてアンロードします。
 
-XAML フレームワークによる遅延要素の追跡は、X:load を使ってに起因するアカウントのプレース ホルダーの各要素のメモリ使用量に約 600 バイトを追加します。 したがって、実際には、パフォーマンスが低下するは、この属性を過剰にことができます。 のみで使用することが非表示にする必要がある要素をお勧めします。 コンテナーの X:load を使用する場合は、X:load 属性を持つ要素に対してのみオーバーヘッドが支払われます。
+XAML フレームワークによる遅延要素の追跡は、x: 負荷に起因するアカウントのプレース ホルダーの各要素のメモリ使用量に約 600 バイトを追加します。 したがって、過剰この属性をパフォーマンスが低下することができます。 のみで使用することが非表示にする必要がある要素をお勧めします。 コンテナーに対して X:load を使用する場合は、X:load 属性を持つ要素に対してのみ、オーバーヘッドが支払われます。
 
 > [!IMPORTANT]
 > X:load 属性では、Windows 10 バージョン 1703 (Creators Update) 以降で利用できます。 x:Load を使用するには、Visual Studio プロジェクトの対象とする最小バージョンを *Windows 10 Creators Update (10.0、ビルド 15063)* にする必要があります。
@@ -39,7 +39,7 @@ XAML フレームワークによる遅延要素の追跡は、X:load を使っ�
 - 要素に対して定義した名前を指定して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出します。
 - 要素に対して定義した名前を指定して [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。
 - [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007)では、 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817)または**ストーリー ボード**のアニメーションで、要素をターゲットに X:load を使用します。
-- 任意の**ストーリー ボード**にあるアンロード要素をターゲットにします。
+- ターゲットの**ストーリー ボード**でアンロード要素です。
 
 > 注: 要素のインスタンス化が開始されると、インスタンスは UI スレッド上で作成されます。そのため、一度に作成されるインスタンスが多すぎると、UI で引っかかりが起きることがあります。
 
@@ -60,13 +60,13 @@ XAML フレームワークによる遅延要素の追跡は、X:load を使っ�
 
 オブジェクトが読み込まれると、それに置き換えられますツリーのプレース ホルダーです。 すべての参照がリリースされるまで、オブジェクト インスタンスはメモリに残ります。 ページ/UserControl の UnloadObject API は、x: Name と X:bind codegen によって保持されている参照を解放する設計されています。 アプリ コードでその他の参照を保持する場合を解放する必要はも。
 
-要素が読み込まれると、要素に関連付けられているすべての状態は破棄されますめ、可視性の最適化のバージョンとして X:load を使用している場合、バインディングを介してが適用されるすべての状態を確認しますか Loaded イベントが発生したときにコードを再適用します。
+要素が読み込まれると、要素に関連付けられているすべての状態は破棄されますめの可視性の最適化のバージョンとして X:load を使用する場合、バインディングを介してが適用されるすべての状態を確認しますか Loaded イベントが発生したときにコードを再適用します。
 
 ## <a name="restrictions"></a>制限
 
 **X:load**を使用するための制限は次のとおりです。
 
-- [X:name](x-name-attribute.md)を定義する必要があります要素、そこにする必要があります、要素を後で検索する手段です。
+- [X: Name](x-name-attribute.md)を定義する必要があります、要素として存在する必要があります、要素を後で検索する手段です。
 - X:load は[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)または[**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249)から派生した型でのみ使用できます。
 - [**ページ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、または[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)のルート要素では、X:load を使うことはできません。
 - [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)内の要素では、X:load を使用できません。
@@ -75,13 +75,13 @@ XAML フレームワークによる遅延要素の追跡は、X:load を使っ�
 
 ## <a name="remarks"></a>注釈
 
-最も外側の要素から実体化される必要が、入れ子になった要素は、X:load を使用できます。 親が実体化される前に子要素を実体化しようとすると、例外が生成されます。
+最も外側の要素から実体化にする必要が、入れ子になった要素は、X:load を使用できます。 親が実体化される前に子要素を実体化しようとすると、例外が生成されます。
 
 通常は、最初のフレームに表示できないものを遅延させることをお勧めします。遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。 また、ユーザーの操作によってトリガーされる UI は、遅延できる要素がないか探す対象として適しています。
 
 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) の遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。 パンのパフォーマンスを向上させる方法については、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
 
-[X:phase 属性](x-phase-attribute.md)は、要素または要素ツリーが実体化されると、 **X:load**と組み合わせて使用、現在のフェーズを含むバインディングが適用されます。 **X:phase**指定されたフェーズによって影響または要素の読み込み中の状態を制御します。 リスト項目がパンの一部として再利用、実現した要素が動作する同じ方法で、アクティブな他の要素と、コンパイル済みバインド (**{X:bind}** バインディング) は、フェージングを含む、同じ規則を使用して処理されます。
+[X:phase 属性](x-phase-attribute.md)は、要素または要素ツリーが実体化されると、 **X:load**と組み合わせて使用、現在のフェーズを含むバインディングが適用されます。 **X:phase**指定されたフェーズによってが影響または要素の読み込み中の状態を制御します。 リスト項目がパンの一部として再利用、実現した要素が動作する同じ方法で、アクティブな他の要素と、コンパイル済みバインド (**{X:bind}** バインディング) は、フェージングを含む、同じ規則を使用して処理されます。
 
 一般的なガイドラインでは、必要なパフォーマンスが得られていることを確認するために、作業の前と後にアプリのパフォーマンスを測定します。
 

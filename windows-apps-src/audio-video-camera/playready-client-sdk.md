@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fac02f892c66a1bcf0b08986ae00a3a162b44ca
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736602"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878871"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -28,7 +28,7 @@ PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが�
 
 ## <a name="whats-new-in-playready-drm"></a>PlayReady DRM の新機能
 
-次の一覧は、新しい機能と windows 10 用の PlayReady DRM に加えられた変更について説明します。
+次の一覧では、新しい機能と windows 10 用の PlayReady DRM に加えられた変更について説明します。
 
 -   追加されたハードウェア デジタル著作権管理 (HWDRM)。
 
@@ -398,7 +398,7 @@ PlayReady DRM では、HDCP 2.0 以降がエンゲージされるとすぐに Mi
 PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
 
 -   Windows 10。
--   UWP アプリ用の PlayReady DRM の任意のサンプルをコンパイルするは場合、は、Microsoft Visual Studio2015 を使用する必要がありますか、後で、サンプルをコンパイルします。 Windows8.1 ストア アプリ用の PlayReady DRM のサンプルのいずれかをコンパイルするのに Microsoft Visual Studio2013 を引き続き使用できます。
+-   UWP アプリの PlayReady DRM の任意のサンプルをコンパイルするが場合、は、Microsoft Visual Studio2015 を使用する必要がありますか、後で、サンプルをコンパイルします。 Windows8.1 ストア アプリ用の PlayReady DRM のサンプルのいずれかをコンパイルするのに Microsoft Visual Studio2013 を引き続き使用できます。
 
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->

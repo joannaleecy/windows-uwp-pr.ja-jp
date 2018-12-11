@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9941c18936291b3dad6de9b47ef1299d986bef68
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8756048"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8886224"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>ユーザーへのアピールとアプリの宣伝
 
@@ -20,7 +20,7 @@ ms.locfileid: "8756048"
 -   [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
 -   [カスタム アプリ プロモーション キャンペーンの作成](create-a-custom-app-promotion-campaign.md)
 -   [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)
--   [Microsoft Store アプリのガイドラインをマーケティング](app-marketing-guidelines.md)
+-   [Microsoft Store のアプリのガイドラインをマーケティング](app-marketing-guidelines.md)
 -   [アプリへのリンク](link-to-your-app.md)
 -   [アプリの販売促進を容易にする](make-your-app-easier-to-promote.md)
 
