@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 低光量 Fusion, ビットマップ, 画像処理
 ms.localizationpriority: medium
 ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8895902"
+ms.locfileid: "8947734"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>LowLightFusion を使用したビットマップの処理
 

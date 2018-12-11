@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション、グループ、ux, ux ガイダンスについては、ガイダンス、アクション、トースト、アクション センター、noninterruptive、効果的な通知、侵入通知、実践的な管理、整理
 ms.localizationpriority: medium
 ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8891574"
+ms.locfileid: "8918851"
 ---
 # <a name="toast-notification-ux-guidance"></a>トースト通知の UX ガイダンス
 通知は、現代の生活に必要な部分ユーザーの生産性とアプリと web サイトでは、すべての更新プログラムを現在のままに猶予期間に役立ちます。 ただし、通知場合にすばやく、overbearing に便利で、ユーザーを中心とした方法でない設計されている場合は、侵入から有効にすることができます。 通知は 1 つを右クリックしてから、無効にされている可能性はほとんどありませんオフにすると、それらが再びオンになります。  開いているこのエンゲージメント チャネルを維持することができますが、通知、ユーザーの画面領域と時刻を尊重を確認しておきます。
