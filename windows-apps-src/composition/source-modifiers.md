@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8899809"
+ms.locfileid: "8932598"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a><span data-ttu-id="56ac1-104">ソース修飾子を使用した引っ張って更新</span><span class="sxs-lookup"><span data-stu-id="56ac1-104">Pull-to-refresh with source modifiers</span></span>
 

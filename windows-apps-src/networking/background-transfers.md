@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d67bb7c7fd2173e1406669367935efdb09967ea
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8890914"
+ms.locfileid: "8932525"
 ---
 # <a name="background-transfers"></a><span data-ttu-id="81698-104">バックグラウンド転送</span><span class="sxs-lookup"><span data-stu-id="81698-104">Background transfers</span></span>
 <span data-ttu-id="81698-105">ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。</span><span class="sxs-lookup"><span data-stu-id="81698-105">Use the background transfer API to copy files reliably over the network.</span></span> <span data-ttu-id="81698-106">バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。</span><span class="sxs-lookup"><span data-stu-id="81698-106">The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination.</span></span> <span data-ttu-id="81698-107">この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。</span><span class="sxs-lookup"><span data-stu-id="81698-107">The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status.</span></span> <span data-ttu-id="81698-108">この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。</span><span class="sxs-lookup"><span data-stu-id="81698-108">The API is ideal for uploading and downloading large files using HTTP(S).</span></span> <span data-ttu-id="81698-109">FTP もサポートされますが、その対象はダウンロードのみです。</span><span class="sxs-lookup"><span data-stu-id="81698-109">FTP is also supported, but only for downloads.</span></span>

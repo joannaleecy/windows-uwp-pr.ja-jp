@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8888278"
+ms.locfileid: "8935256"
 ---
 # <a name="httpclient"></a><span data-ttu-id="5d0be-104">HttpClient</span><span class="sxs-lookup"><span data-stu-id="5d0be-104">HttpClient</span></span>
 

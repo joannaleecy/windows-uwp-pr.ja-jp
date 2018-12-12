@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb7b1b620fcfa16576d84eaa2564408394d59de
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8889888"
+ms.locfileid: "8929383"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a><span data-ttu-id="08f57-104">アプリケーションでのカメラ バーコード スキャナーのプレビューのホスト</span><span class="sxs-lookup"><span data-stu-id="08f57-104">Hosting a camera barcode scanner preview in your application</span></span>
 ## <a name="step-1-setup-your-camera-preview"></a><span data-ttu-id="08f57-105">手順 1: カメラ プレビューをセットアップする</span><span class="sxs-lookup"><span data-stu-id="08f57-105">Step 1: Setup your camera preview</span></span>

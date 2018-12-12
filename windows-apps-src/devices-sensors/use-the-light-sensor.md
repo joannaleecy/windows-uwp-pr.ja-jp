@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 47092c128fe3a3855d7e32706451545b357c39c4
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8879003"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8928828"
 ---
 # <a name="use-the-light-sensor"></a><span data-ttu-id="f44ee-104">光センサーの使用</span><span class="sxs-lookup"><span data-stu-id="f44ee-104">Use the light sensor</span></span>
 
