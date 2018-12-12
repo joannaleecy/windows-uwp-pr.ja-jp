@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a2bddd9e26b4716fd1e33c4b5bbde56672b5d3f8
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8889909"
+ms.locfileid: "8923880"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
 ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。 
