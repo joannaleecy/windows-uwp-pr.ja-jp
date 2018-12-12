@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8894536"
+ms.locfileid: "8943637"
 ---
 # <a name="xclass-attribute"></a><span data-ttu-id="36f7c-105">x:Class 属性</span><span class="sxs-lookup"><span data-stu-id="36f7c-105">x:Class attribute</span></span>
 

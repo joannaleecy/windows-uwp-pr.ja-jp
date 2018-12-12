@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8877309"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8941079"
 ---
 # <a name="create-a-hello-world-app-xaml"></a><span data-ttu-id="260d1-104">"Hello, world" アプリを作成する (XAML)</span><span class="sxs-lookup"><span data-stu-id="260d1-104">Create a "Hello, world" app (XAML)</span></span>
 

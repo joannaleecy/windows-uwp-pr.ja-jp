@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8875594"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8939880"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a><span data-ttu-id="ea312-104">簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植</span><span class="sxs-lookup"><span data-stu-id="ea312-104">Port a simple OpenGL ES 2.0 renderer to Direct3D 11</span></span>
 

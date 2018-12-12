@@ -8,11 +8,11 @@ keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 348b937b7967cbde80c0bc25a502e727a04e8af0
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8890579"
+ms.locfileid: "8940770"
 ---
 # <a name="media-capture-page-dev-home"></a><span data-ttu-id="caa5c-104">メディア キャプチャ ページ (Dev Home)</span><span class="sxs-lookup"><span data-stu-id="caa5c-104">Media Capture Page (Dev Home)</span></span>
    

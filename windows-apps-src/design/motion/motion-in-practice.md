@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 355c760e173bd101b2865c300824de44b6434ee4
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8884178"
+ms.locfileid: "8944277"
 ---
 # <a name="bringing-it-together"></a><span data-ttu-id="4e5c4-103">まとめる</span><span class="sxs-lookup"><span data-stu-id="4e5c4-103">Bringing it together</span></span>
 
