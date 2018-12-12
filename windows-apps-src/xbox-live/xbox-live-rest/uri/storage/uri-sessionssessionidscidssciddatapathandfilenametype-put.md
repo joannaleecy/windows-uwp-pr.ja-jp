@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 95e3c9498de3657093377447deabc76e27a2bd07
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8900230"
+ms.locfileid: "8938197"
 ---
 # <a name="put-sessionssessionidscidssciddatapathandfilenametype"></a><span data-ttu-id="b940c-104">PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})</span><span class="sxs-lookup"><span data-stu-id="b940c-104">PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})</span></span>
 <span data-ttu-id="b940c-105">ファイルをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="b940c-105">Uploads a file.</span></span> <span data-ttu-id="b940c-106">データやメタデータが送信される 1 つのメッセージで、または一連の小さいブロックのデータやメタデータが送信される複数のブロック アップロードとして完全なアップロードでは、データをアップロードできます。</span><span class="sxs-lookup"><span data-stu-id="b940c-106">The data can be uploaded in a full upload in which the data and metadata are sent in a single message, or as a multi-block upload in which the data and metadata are sent in a series of smaller blocks.</span></span> <span data-ttu-id="b940c-107">1 つのメッセージとしては 4 つのメガバイトよりも小さいファイルのみを送信できます。</span><span class="sxs-lookup"><span data-stu-id="b940c-107">Only files that are smaller than four megabytes can be sent as a single message.</span></span> <span data-ttu-id="b940c-108">Json の種類のデータの複数のブロックのアップロードはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="b940c-108">Multi-block upload is not supported for data of type json.</span></span> <span data-ttu-id="b940c-109">これらの Uri のドメインが`titlestorage.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="b940c-109">The domain for these URIs is `titlestorage.xboxlive.com`.</span></span>

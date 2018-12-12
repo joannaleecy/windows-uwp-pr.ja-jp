@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b4322d002747145c3b09e0f3cd7eb03874380b
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8885732"
+ms.locfileid: "8935348"
 ---
 # <a name="userclaims-json"></a><span data-ttu-id="d5b11-104">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="d5b11-104">UserClaims (JSON)</span></span>
 <span data-ttu-id="d5b11-105">現在の認証されたユーザーに関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="d5b11-105">Returns information about the current authenticated user.</span></span> 
