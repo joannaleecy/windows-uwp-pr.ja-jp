@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8874855"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8931753"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a><span data-ttu-id="b692b-103">パッケージ リソース インデックス (PRI) API とカスタム ビルド システム</span><span class="sxs-lookup"><span data-stu-id="b692b-103">Package resource indexing (PRI) APIs and custom build systems</span></span>
 <span data-ttu-id="b692b-104">[パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用すると、UWP アプリのリソース用にカスタム ビルド システムを開発することができます。</span><span class="sxs-lookup"><span data-stu-id="b692b-104">With the [package resource indexing (PRI) APIs](https://msdn.microsoft.com/library/windows/desktop/mt845690), you can develop a custom build system for your UWP app's resources.</span></span> <span data-ttu-id="b692b-105">ビルド システムでは、UWP アプリが必要とする複雑さのレベルにかかわらず、パッケージ リソース インデックス (PRI) ファイルを (XML として) 作成、バージョン管理、ダンプすることができます。</span><span class="sxs-lookup"><span data-stu-id="b692b-105">The build system will be able to create, version, and dump (as XML) package resource index (PRI) files to whatever level of complexity your UWP app needs.</span></span> <span data-ttu-id="b692b-106">現在 MakePri.exe コマンド ライン ツールを使用しているカスタム ビルド システムがある場合 (「[MakePri.exe を使用して手動でリソースをコンパイルする](makepri-exe-command-options.md)」を参照)、パフォーマンスと制御を向上させるために、MakePri.exe の呼び出しではなく、PRI API の呼び出しに切り替えることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b692b-106">If you have a custom build system that currently uses the MakePri.exe command-line tool (see [Compile resources manually with MakePri.exe](makepri-exe-command-options.md)) then, for increased performance and control, we recommend that you switch over to calling the PRI APIs instead of calling MakePri.exe.</span></span>

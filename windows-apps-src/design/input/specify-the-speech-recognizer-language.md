@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: acd8b06c98c95750b6d047cda96b8c2884a9d7a9
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8878233"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8937916"
 ---
 # <a name="specify-the-speech-recognizer-language"></a><span data-ttu-id="0cf4d-103">音声認識エンジンの言語の指定</span><span class="sxs-lookup"><span data-stu-id="0cf4d-103">Specify the speech recognizer language</span></span>
 
