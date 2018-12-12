@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, ゲームへの招待
 ms.localizationpriority: medium
 ms.openlocfilehash: 85aa45558d1443638ba7dd50dbea8923125ef664
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8885281"
+ms.locfileid: "8926759"
 ---
 # <a name="send-game-invites"></a><span data-ttu-id="7f84f-104">ゲームへの招待を送信する</span><span class="sxs-lookup"><span data-stu-id="7f84f-104">Send game invites</span></span>
 

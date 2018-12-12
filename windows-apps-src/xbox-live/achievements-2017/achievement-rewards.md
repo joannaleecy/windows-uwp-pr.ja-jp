@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 実績, リワード
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbcb06a2aba927301cf982d09fdb55192ec84c
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8873381"
+ms.locfileid: "8922629"
 ---
 # <a name="achievement-rewards"></a><span data-ttu-id="d43e3-104">実績のリワード</span><span class="sxs-lookup"><span data-stu-id="d43e3-104">Achievement Rewards</span></span>
 

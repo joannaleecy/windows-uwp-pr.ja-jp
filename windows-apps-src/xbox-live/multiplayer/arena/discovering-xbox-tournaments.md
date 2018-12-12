@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a065d6d4da290f2ce3345c7da0026d4c116335
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8892797"
+ms.locfileid: "8931024"
 ---
 # <a name="discovering-xbox-tournaments"></a><span data-ttu-id="ed707-104">Xbox のトーナメント情報の提供</span><span class="sxs-lookup"><span data-stu-id="ed707-104">Discovering Xbox tournaments</span></span>
 
