@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b1eb428b130798c34befc999736153fc0e89735
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8897091"
+ms.locfileid: "8926678"
 ---
 # <a name="get-usersxuidxuidachievementsscidachievementid"></a><span data-ttu-id="7d7ec-104">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span><span class="sxs-lookup"><span data-stu-id="7d7ec-104">GET (/users/xuid({xuid})/achievements/{scid}/{achievementid})</span></span>
 <span data-ttu-id="7d7ec-105">実績の詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="7d7ec-105">Gets the details of the Achievement.</span></span> <span data-ttu-id="7d7ec-106">これらの Uri のドメインが`achievements.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="7d7ec-106">The domain for these URIs is `achievements.xboxlive.com`.</span></span>
