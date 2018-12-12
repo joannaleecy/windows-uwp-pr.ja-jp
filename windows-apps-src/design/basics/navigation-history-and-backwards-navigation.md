@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8873628"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8945954"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a><span data-ttu-id="4ed49-103">UWP アプリのナビゲーション履歴と前に戻る移動</span><span class="sxs-lookup"><span data-stu-id="4ed49-103">Navigation history and backwards navigation for UWP apps</span></span>
 

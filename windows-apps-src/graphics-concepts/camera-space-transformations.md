@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8876284"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8945974"
 ---
 # <a name="camera-space-transformations"></a><span data-ttu-id="86438-104">カメラの空間変換</span><span class="sxs-lookup"><span data-stu-id="86438-104">Camera space transformations</span></span>
 

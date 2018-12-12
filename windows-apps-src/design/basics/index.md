@@ -6,11 +6,11 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5196503a4a50d1565d00b9ac0e48e6c2d0b6e426
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8878097"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8946470"
 ---
 # <a name="design-basics-for-uwp-apps"></a><span data-ttu-id="dabe4-104">UWP アプリの設計の基本</span><span class="sxs-lookup"><span data-stu-id="dabe4-104">Design basics for UWP apps</span></span>
 

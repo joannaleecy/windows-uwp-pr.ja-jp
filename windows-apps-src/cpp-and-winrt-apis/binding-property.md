@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, XAML, コントロール, バインド, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: fc38dfff99e5bef9de686d754444ee93375c7895
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8878907"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8943707"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a><span data-ttu-id="a7906-105">XAML コントロール: C++/WinRT プロパティへのバインド</span><span class="sxs-lookup"><span data-stu-id="a7906-105">XAML controls; bind to a C++/WinRT property</span></span>
 <span data-ttu-id="a7906-106">XAML コントロールに効果的にバインドできるプロパティは、*監視可能な*プロパティと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="a7906-106">A property that can be effectively bound to a XAML control is known as an *observable* property.</span></span> <span data-ttu-id="a7906-107">この概念は、*オブザーバー パターン*と呼ばれるソフトウェアの設計パターンに基づいています。</span><span class="sxs-lookup"><span data-stu-id="a7906-107">This idea is based on the software design pattern known as the *observer pattern*.</span></span> <span data-ttu-id="a7906-108">このトピックでは、監視可能なプロパティを実装する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、および XAML コントロールをバインドする方法。</span><span class="sxs-lookup"><span data-stu-id="a7906-108">This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them.</span></span>

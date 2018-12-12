@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8886768"
+ms.locfileid: "8945398"
 ---
 # <a name="my-people-sharing"></a><span data-ttu-id="9be19-104">マイ連絡先の共有</span><span class="sxs-lookup"><span data-stu-id="9be19-104">My People sharing</span></span>
 

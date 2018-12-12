@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8872822"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8945473"
 ---
 # <a name="pointofservice-device-capability"></a><span data-ttu-id="bda16-104">PointOfService デバイス機能</span><span class="sxs-lookup"><span data-stu-id="bda16-104">PointOfService device capability</span></span>
 <span data-ttu-id="bda16-105">アプリケーション パッケージのマニフェストで機能を宣言することで、PointOfService API へのアクセスを要求します。Microsoft Visual Studio のマニフェスト デザイナーを使用することで、ほとんどの機能を宣言することができます。または、手動で追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="bda16-105">You request access to the PointOfService APIs by declaring the capability in your application package manifest]  You can declare most capabilities by using the Manifest Designer, in Microsoft Visual Studio, or you can add them manually.</span></span>  

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8888554"
+ms.locfileid: "8945043"
 ---
 # <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span data-ttu-id="45920-104"><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>ウィンドウ モードと全画面表示モード</span><span class="sxs-lookup"><span data-stu-id="45920-104"><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>Windowed vs. full-screen mode</span></span>
 
