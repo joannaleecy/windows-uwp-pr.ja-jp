@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 064eaf42fe7d664be273cd7e2222fa5d90be1a11
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8873107"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8936413"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity: UWP プロジェクトのバージョン管理
 

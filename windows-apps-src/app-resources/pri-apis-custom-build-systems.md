@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 617812415d3dcd00ec24d5f55971ae311265b61d
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8874855"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8931753"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>パッケージ リソース インデックス (PRI) API とカスタム ビルド システム
 [パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用すると、UWP アプリのリソース用にカスタム ビルド システムを開発することができます。 ビルド システムでは、UWP アプリが必要とする複雑さのレベルにかかわらず、パッケージ リソース インデックス (PRI) ファイルを (XML として) 作成、バージョン管理、ダンプすることができます。 現在 MakePri.exe コマンド ライン ツールを使用しているカスタム ビルド システムがある場合 (「[MakePri.exe を使用して手動でリソースをコンパイルする](makepri-exe-command-options.md)」を参照)、パフォーマンスと制御を向上させるために、MakePri.exe の呼び出しではなく、PRI API の呼び出しに切り替えることをお勧めします。

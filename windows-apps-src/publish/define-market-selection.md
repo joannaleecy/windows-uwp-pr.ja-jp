@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 市場, 国, 地域
 ms.localizationpriority: medium
 ms.openlocfilehash: 980dc41303a2689c0f86415beb6ba9adb44fe39c
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8876559"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8936723"
 ---
 # <a name="define-market-selection"></a>市場の選択の定義
 
@@ -366,7 +366,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>スウェーデン *</td>
     <td>スイス *</td>
-    <td>Taiwan *</td>
+    <td>台湾 *</td>
     <td>タジキスタン</td>
   </tr>
   <tr>
@@ -408,7 +408,7 @@ Microsoft Store は、世界中の 200 以上の国と地域のお客様が利�
   <tr>
     <td>ベトナム</td>
     <td>ワリス・フテュナ諸島</td>
-    <td>Western Sahara (Disputed)</td>
+    <td>西サハラ (紛争中)</td>
     <td>イエメン</td>
   </tr>
   <tr>

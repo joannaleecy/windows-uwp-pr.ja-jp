@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, グラフィックス
 ms.localizationpriority: medium
 ms.openlocfilehash: fc93111d48f71a6ca8acad8191a2afb535fad2f0
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8880430"
+ms.locfileid: "8931499"
 ---
 # <a name="draw-to-the-screen"></a>画面への描画
 
