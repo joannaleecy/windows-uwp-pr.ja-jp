@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8ffcbbcc73db049498eb09ea60061f93cd7b09f2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7089f4b6e28056f44a6ad5d37aa90f6cf84784df
+ms.sourcegitcommit: 05335f65dfe497ef4027b7249c0119fc59e355e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928516"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "8964675"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a><span data-ttu-id="30d17-104">UWP アプリ用の設計ツールキットとサンプル</span><span class="sxs-lookup"><span data-stu-id="30d17-104">Design toolkits and samples for UWP apps</span></span>
  
@@ -61,6 +61,7 @@ ms.locfileid: "8928516"
     :::column:::
         ![hero image](images/framer.png)
         <b>Framer toolkit</b><br>
+        (This toolkit is no longer supported.)<br/>
         v1806, June 2018<br>
         <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
