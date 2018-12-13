@@ -5,12 +5,12 @@ ms.date: 07/23/2018
 ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、COM、コンポーネント、クラス、インターフェイス
 ms.localizationpriority: medium
-ms.openlocfilehash: 9000cad79e12a645689d90ef37a8ff43b9fc95b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922001"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968606"
 ---
 # <a name="consume-com-components-with-cwinrt"></a><span data-ttu-id="c3170-104">C++/WinRT での COM コンポーネントの使用</span><span class="sxs-lookup"><span data-stu-id="c3170-104">Consume COM components with C++/WinRT</span></span>
 
@@ -388,7 +388,9 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
         D2D1_RECT_F const rect{ 100.0f, 100.0f, size.width - 100.0f, size.height - 100.0f };
         m_target->DrawRectangle(rect, m_brush.get(), 100.0f);
 
-        WINRT_TRACE("Draw %.2f x %.2f @ %.2f\n", size.width, size.height, m_dpi);
+        char buffer[1024];
+        (void)snprintf(buffer, sizeof(buffer), "Draw %.2f x %.2f @ %.2f\n", size.width, size.height, m_dpi);
+        ::OutputDebugStringA(buffer);
     }
 
     void Render()
