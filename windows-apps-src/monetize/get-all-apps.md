@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 267e1d4de3917ae332cdfe15309f3871ef7b6647
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919082"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968566"
 ---
 # <a name="get-all-apps"></a>すべてのアプリの入手
 
 
-パートナー センター アカウントに登録されているすべてのアプリのデータを取得する、Microsoft Store 申請 API でこのメソッドを使います。
+パートナー センター アカウントに登録されているアプリに関するデータを取得、Microsoft Store 申請 API の以下のメソッドを使用します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -31,7 +31,7 @@ ms.locfileid: "8919082"
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications` |
 
 
 ### <a name="request-header"></a>要求ヘッダー
@@ -43,7 +43,7 @@ ms.locfileid: "8919082"
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-このメソッドでは、要求パラメーターはすべてオプションです。 パラメーターを指定せずにこのメソッドを呼び出す場合、応答には、アカウントに登録するすべてのアプリのデータが含まれます。
+このメソッドでは、要求パラメーターはすべてオプションです。 応答には、パラメーターを指定せずには、このメソッドを呼び出す場合は、最初の 10 データが含まれています、アカウントに登録されているアプリ。
 
 |  パラメーター  |  型  |  説明  |  必須かどうか  |
 |------|------|------|------|
@@ -57,19 +57,44 @@ ms.locfileid: "8919082"
 
 ### <a name="request-examples"></a>要求の例
 
-次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。
+次の例は、アカウントに登録されている最初の 10 個のアプリを取得する方法を示しています。
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-次の例は、アカウントに登録されている最初の 10 個のアプリを取得する方法を示しています。
+次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。 最初に、トップ 10 アプリを取得します。
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
+
+再帰的に呼び出します`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`まで`{@nextlink}`が null または応答に存在しません。 例:
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+  
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=20&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+アカウント内にあるアプリの合計数がわかっている場合、すべてのアプリに関する情報を取得する**上部**パラメーターでその数を渡すことができますだけです。
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
 
 ## <a name="response"></a>応答
 
@@ -114,7 +139,7 @@ Authorization: Bearer <your access token>
 | 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | array  | アカウントに登録されている各アプリについての情報が含まれるオブジェクトの配列。 各オブジェクトのデータについて詳しくは、「[アプリケーション リソース](get-app-data.md#application_object)」をご覧ください。                                                                                                                           |
-| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 20 個のアプリが登録されている場合、応答本文には、```applications?skip=10&top=10``` という @nextLink 値が含まれます。これは、次の 10 個のアプリを要求するために、```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` を呼び出すことができることを示しています。 |
+| @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 20 個のアプリが登録されている場合、応答本文には、`applications?skip=10&top=10` という @nextLink 値が含まれます。これは、次の 10 個のアプリを要求するために、`https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10` を呼び出すことができることを示しています。 |
 | totalCount | int    | クエリの結果データ内の行の総数 (つまり、自分のアカウントに登録されているアプリの合計数)。                                                |
 
 

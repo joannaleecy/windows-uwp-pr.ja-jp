@@ -1,16 +1,16 @@
 ---
 title: 時間ベース アニメーション
 description: KeyFrameAnimation クラスを使用すると、時間の経過と共に UI を変更できます。
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934371"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968576"
 ---
 # <a name="time-based-animations"></a>時間ベース アニメーション
 
@@ -62,22 +62,22 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
 1. アニメーション テンプレートを使用して、KeyFrame の追加とアニメーションのプロパティの定義を開始します。
     - 1 つ以上の KeyFrame が必要です (100% または 1f KeyFrame)。
     - また、継続時間を定義することもお勧めします。
-1. このアニメーションを実行する準備ができたら、アニメーション化するプロパティをターゲットとして、CompositionObject で StartAnimation(…) を呼び出します。 具体的には、次のとおりです。
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 実行中のアニメーションがあり、アニメーションまたはアニメーション グループを停止する場合は、以下の API を使用できます。
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. 1 回、このアニメーションを実行し、アニメーション化するプロパティをターゲットとして CompositionObject で startanimation (…) を呼び出してする準備ができたらします。 具体的には、次のとおりです。
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. 実行中のアニメーションがあり、アニメーションまたはアニメーション グループを停止する場合は、これらの Api を使用できます。
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 式の実際の動作例を見てみましょう。
 
 ## <a name="example"></a>例
 
-この例では、<0,0,0> ～ <20,20,20> のビジュアルのオフセットを 1 秒間アニメーション化します。 また、ビジュアルがこれらの位置の間を 10 回アニメーション化されるようにします。
+この例では、1 秒を超える < 200,0,0 > ~ < 0,0,0 > のビジュアルのオフセットをアニメーション化するします。 また、ビジュアルがこれらの位置の間を 10 回アニメーション化されるようにします。
 
 ![キーフレーム アニメーション](images/animation/animated-rectangle.gif)
 
-最初に、CompositionObject とアニメーション化するプロパティを特定します。 この場合、赤色の正方形は、`redSquare` という Composition の Visual で表されています。 このオブジェクトからアニメーションを開始します。
+最初に、CompositionObject とアニメーション化するプロパティを特定します。 この場合、赤色の正方形は、`redVisual` という Composition の Visual で表されています。 このオブジェクトからアニメーションを開始します。
 
 次に、Offset プロパティをアニメーション化するため、Vector3KeyFrameAnimation を作成する必要があります (Offset の種類は Vector3)。 また、対応する KeyFrameAnimation の KeyFrame も定義します。
 
@@ -86,7 +86,7 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-その後で、KeyFrameAnimation のプロパティを定義して、2 つの位置 (現在の位置と <200,0,0>) の間で 10 回アニメーション化される動作と共に継続時間を記述します。
+その後の間で 2 つの位置 (現在と < 200,0,0 >) 10 回アニメーション化される動作と共に期間を記述する KeyFrameAnimation のプロパティを定義します。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -98,13 +98,13 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
 最後に、アニメーションを実行するために、CompositionObject のプロパティでアニメーションを開始する必要があります。
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 完全なコードは次のようになります。
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -112,6 +112,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```

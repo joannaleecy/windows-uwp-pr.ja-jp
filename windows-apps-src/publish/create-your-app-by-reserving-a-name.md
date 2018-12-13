@@ -6,16 +6,16 @@ ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b00ace982bb39b99816013a8491b5b75be765833
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 122be597bbf772d891b7e9839dfc4d9039754b00
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933586"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968586"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>名前の予約によるアプリの作成
 
-アプリ名の予約は、最初の手順は、[パートナー センター](https://partner.microsoft.com/dashboard)で新しいアプリを作成します。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
+[パートナー センター](https://partner.microsoft.com/dashboard)で新しいアプリを作成する最初の手順は、アプリ名の予約します。 各予約名 (アプリの*タイトル*と呼ばれることもあります) は、Microsoft Store 全体で一意でなければなりません。
 
 アプリの構築をまだ開始していない場合でも、アプリの名前を予約することができます。 その他のユーザー名を使用できるように、できるだけ早くこれを行うことをお勧めします。 その名前の予約を維持sるには、3 か月以内にアプリを申請する必要がある点に注意してください。
 
