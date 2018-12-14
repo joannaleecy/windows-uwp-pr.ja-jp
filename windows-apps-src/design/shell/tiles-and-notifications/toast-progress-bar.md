@@ -7,12 +7,12 @@ ms.date: 12/7/2017
 ms.topic: article
 keywords: windows 10, uwp, トースト, 進行状況バー, トーストの進行状況バー, 通知, トーストのデータ バインディング
 ms.localizationpriority: medium
-ms.openlocfilehash: 853e9c1672f1933789c961838734a67b3e816b6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
+ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921317"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8969059"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>トーストの進行状況バーとデータ バインディング
 
@@ -21,7 +21,7 @@ ms.locfileid: "8921317"
 > [!IMPORTANT]
 > **Creators Update と Notifications ライブラリ 1.4.0 が必要**: トーストで進行状況バーを使用するには、SDK 15063 をターゲットとし、ビルド 15063 以上を実行する必要があります。 トーストのコンテンツ内に進行状況バーを作成するには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。
 
-トースト内の進行状況バーには、特定の値が表示されず、単に処理中であることをアニメーションのドットによって示す "不確定型" と、完了した処理の割合 (60% など) をバーの塗りつぶしによって示すを示す ”確定型” があります。
+トースト内の進行状況バーできますかできない「確定型」(特定値なしに、アニメーションのドットによって示す操作が行われている)「確定型」(、バーの塗りつぶし、60% など)。
 
 > **重要な API**: [NotificationData クラス](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、[ToastNotifier.Update メソッド](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、[ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
