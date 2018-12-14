@@ -6,12 +6,12 @@ ms.date: 06/28/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 05ff8dd78f58910512291b819d59d68f682cc93c
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940023"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970937"
 ---
 # <a name="file-access-permissions"></a>ファイル アクセス許可
 
@@ -24,7 +24,7 @@ ms.locfileid: "8940023"
 ### <a name="application-install-directory"></a>アプリケーションのインストール ディレクトリ
 ユーザーのシステムで、アプリがインストールされているフォルダーです。
 
-ファイルにアクセスする 2 つの主要な方法し、フォルダーで、アプリのインストール ディレクトリ。
+ファイルにアクセスする 2 つの主な方法がありますが、フォルダーで、アプリのインストール ディレクトリ。
 
 1. 次のように、アプリのインストール ディレクトリを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得できます。
 
@@ -159,7 +159,7 @@ URI の "ms-appdata:///local/" プレフィックスは、アプリのローカ�
 
 さらに、他の場所とは異なり、[UWP アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や Visual Studio の C/C++ 標準ライブラリ関数を使ってアプリ データの場所にあるファイルにアクセスすることもできます。
 
-ファイル ピッカーでは、ローカル、移動、または一時フォルダーにアクセスできません。
+ファイル ピッカーでローカル、移動、または一時フォルダーにアクセスすることはできません。
 
 ### <a name="removable-devices"></a>リムーバブル デバイス
 さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。
@@ -254,7 +254,7 @@ Downloads フォルダーにファイルやフォルダーを作成する場合�
 
 | 場所 | 機能 | Windows.Storage API |
 |----------|------------|---------------------|
-| ユーザーがアクセス権を持つすべてのファイル。 例: ドキュメント、画像、写真、ダウンロード、デスクトップ、OneDrive などです。 | broadFileSystemAccess<br><br>これは、制限付き機能です。 最初に使うとき、システムはユーザーにアクセスを許可するかどうかを要求します。 アクセスは、[設定] > [プライバシー] > [ファイル システム] で構成できます。 この機能を宣言するアプリを Microsoft Store に提出する場合、アプリでこの機能が必要となる理由およびこの機能の使用目的に関する追加の説明を提供する必要があります。<br>この機能は、[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API で動作します。 | なし |
+| ユーザーがアクセス権を持つすべてのファイル。 例: ドキュメント、画像、写真、ダウンロード、デスクトップ、OneDrive などです。 | broadFileSystemAccess<br><br>これは、制限付き機能です。 **設定**では、アクセス > **プライバシー** > **ファイル システム**です。 ユーザーを許可または拒否の**設定**では、いつでも、ため、アプリがこれらの変更に弾力性のあることを行う必要があります。 アプリにはアクセスがない場合は、 [Windows 10 ファイル システムへのアクセスとプライバシー](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)の記事へのリンクを提供することで、設定を変更するユーザーに確認することもできます。 注意ユーザーする必要があります、アプリを閉じる、設定を切り替えて、アプリを再起動します。 場合は、アプリの実行中の設定を切り替えること、状態を保存して新しい設定を適用するために、アプリを強制的に終了できるように、プラットフォームはアプリを中断します。 2018 年 4 月更新プログラムでは、アクセス許可の既定値は、上はします。 October 2018 update では、既定値は、オフはします。<br /><br />この機能を宣言するアプリを Microsoft Store に提出する場合、アプリでこの機能が必要となる理由およびこの機能の使用目的に関する追加の説明を提供する必要があります。<br>この機能は、 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)名前空間の Api に対して機能します。 アプリでこの機能を有効にする方法の例は、この記事の最後には、「**例**」セクションを参照してください。 | なし |
 | ドキュメント | DocumentsLibrary <br><br>注: アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 <br><br>この機能は、アプリが次の条件を満たす場合に使います。<br>- 有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする<br>、中に自動的にユーザーの OneDrive にファイルを開いて保存オフライン | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | ミュージック     | MusicLibrary <br>「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | ピクチャ  | PicturesLibrary<br> 「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  

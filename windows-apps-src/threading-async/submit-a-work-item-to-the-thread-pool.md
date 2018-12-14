@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c1df6a4b72b7c73cac41e66ef1074975db0d979
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a0865480cf65495465470e72fb4f14baa9619a9a
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937056"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970927"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>スレッド プールへの作業項目の送信
 
@@ -199,7 +199,7 @@ std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
-auto workItem = ref new WorkItemHandler(
+auto workItem = ref new Windows::System::Threading::WorkItemHandler(
     \[this, n, nthPrime](IAsyncAction^ workItem)
 {
     unsigned int progress = 0; // For progress reporting.
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>要約と次の手順
 
-このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成](http://go.microsoft.com/fwlink/p/?LinkID=328569)、Windows8.1 向けに書かれたからのコードをダウンロードすることの詳細については、および win \_unap windows 10 アプリでソース コードを再利用します。
+このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成する](http://go.microsoft.com/fwlink/p/?LinkID=328569)、windows 8.1 向けに書かれたからコードをダウンロードすることの詳細については、および、win \_unap windows 10 アプリでソース コードを再利用します。
 
 ## <a name="related-topics"></a>関連トピック
 
