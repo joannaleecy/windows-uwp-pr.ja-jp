@@ -1,0 +1,59 @@
+items:
+- name: Windows 10 ビルド 17763 の開発者向け新着情報
+  href: ../whats-new/windows-10-build-17763.md
+  items:
+  - name: Windows 10 ビルド 17763 での API の追加
+    href: ../whats-new/windows-10-build-17763-api-diff.md
+- name: Windows ドキュメントの最新情報、2018 年 9 月
+  href: ../whats-new/windows-docs-september-2018.md
+  items:
+  - name: Windows ドキュメントの最新情報、2018 年 8 月
+    href: ../whats-new/windows-docs-august-2018.md
+  - name: Windows ドキュメントの最新情報、2018 年 7 月
+    href: ../whats-new/windows-docs-july-2018.md
+  - name: Windows ドキュメントの最新情報、2018 年 5 月
+    href: ../whats-new/windows-docs-may-2018.md
+  - name: Windows ドキュメントの最新情報、2018 年 2 月
+    href: ../whats-new/windows-docs-february-2018.md
+  - name: Windows ドキュメントの最新情報、2017 年 12 月
+    href: ../whats-new/windows-docs-december-2017.md
+  - name: Windows ドキュメントの最新情報、2017 年 9 月
+    href: ../whats-new/windows-docs-september-2017.md
+  - name: Windows ドキュメントの最新情報、2017 年 8 月
+    href: ../whats-new/windows-docs-august-2017.md
+  - name: Windows ドキュメントの最新情報、2017 年 7 月
+    href: ../whats-new/windows-docs-july-2017.md
+- name: Windows 10 の以前のバージョン
+  items:
+  - name: Windows 10 ビルド 17134 の開発者向け新着情報
+    href: ../whats-new/windows-10-build-17134.md
+    items:
+    - name: Windows 10 ビルド 17134 での API の追加
+      href: ../whats-new/windows-10-build-17134-api-diff.md
+  - name: Windows 10 ビルド 16299 の開発者向け新着情報
+    href: ../whats-new/windows-10-build-16299.md
+    items:
+    - name: Windows 10 ビルド 16299 での API の追加
+      href: ../whats-new/windows-10-build-16299-api-diff.md
+  - name: Windows 10 ビルド 15063 の新着情報
+    href: ../whats-new/windows-10-build-15063.md
+    items:
+    - name: Windows 10 ビルド 15063 での API の追加
+      href: ../whats-new/windows-10-build-15063-api-diff.md
+  - name: Windows 10 ビルド 14393 の新着情報
+    href: ../whats-new/windows-10-build-14393.md
+    items:
+    - name: Windows 10 ビルド 14393 での API の追加
+      href: ../whats-new/windows-10-build-14393-api-diff.md
+  - name: Windows 10 ビルド 10586 の新着情報
+    href: ../whats-new/windows-10-build-10586.md
+  - name: Windows 10 ビルド 10240 の新着情報
+    href: ../whats-new/windows-10-build-10240.md
+- name: 試験的な API
+  href: ../whats-new/experimental-apis.md
+ms.openlocfilehash: 167336081b680deecb9781c36e51da1559d1f91f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962564"

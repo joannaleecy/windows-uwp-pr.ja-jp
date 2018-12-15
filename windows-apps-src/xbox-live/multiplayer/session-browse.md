@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: de3ff0afd2526c6cb62bc6b6af148712a997a174
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f09687e1ec48318bc785e74fee65c7502835a071
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931428"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970977"
 ---
 # <a name="multiplayer-session-browse"></a>マルチプレイヤー セッション参照
 
@@ -54,7 +54,7 @@ ms.locfileid: "8931428"
 セッションに空きがない場合、またはそれ以外の理由で参加できない場合は、タイトルは MPSD からの検索ハンドルを削除して、セッション参照クエリにセッションが表示されないようにできます。
 
 >[!NOTE]
-> 検索ハンドルは、ユーザーに表示するセッションの一覧を表示するために使用します。 可能であれば、バックグラウンドのマッチメイキングには検索ハンドルを使わないでください。代わりに、[SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md) の使用を検討してください。
+> 検索ハンドルは、ユーザーに表示するセッションの一覧を表示するために使用します。 バック グラウンドのマッチメイ キングの検索ハンドルを使用して有効ではないと、 [SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)を使用する代わりに検討
 
 ## <a name="set-up-a-session-for-session-browse"></a>セッション参照用にセッションを設定する
 
@@ -224,6 +224,8 @@ Multiplayer 2015 API では、`multiplayer_service.get_search_handles()` メソ�
  プレイヤーがセッションに参加しようとしてもセッションに空きがないか閉じている場合も、ゲームは検索結果を更新する必要があります。
 
  検索の更新が多すぎるとサービスのスロットリングにつながるため、タイトルではクエリの更新頻度を制限する必要があります。
+
+ サービス呼び出しのボリュームを減らすためには、検索ハンドルには、保存および急速に変化するセッションの属性を照会するために使用するカスタム セッション プロパティが含まれます。 検索属性に、このような属性を格納されませんする必要があります。
 
 ### <a name="example-query-for-search-handles"></a>例: 検索ハンドルの照会
 

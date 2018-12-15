@@ -10,18 +10,18 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 336e4e64cc0b1819081a7e42b6e3e2d099355248
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947844"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970985"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
 ![ヒーロー イメージ](images/header-acrylic.svg)
 
-アクリルは、半透明のテクスチャを作成する[ブラシ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)の種類です。 アクリルをアプリ サーフェスに適用すると、奥行きを加えたり、視覚的な階層を確立したりすることができます。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+アクリルは、半透明のテクスチャを作成する[ブラシ](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)の型です。 アクリルをアプリ サーフェスに適用すると、奥行きを加えたり、視覚的な階層を確立したりすることができます。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
 > **重要な API**: [AcrylicBrush クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[Background プロパティ](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
@@ -72,21 +72,21 @@ ms.locfileid: "8947844"
 
 ## <a name="when-to-use-acrylic"></a>アクリルを使用する状況
 
-* NavigationView またはインラインのコマンド実行要素などの UI をサポートするためには、アプリ内アクリルを使用します。 
+* NavigationView またはインライン コマンド実行要素などの UI をサポートするためには、アプリ内アクリルを使用します。
 * コンテキスト メニューのポップアップ、および光 dimsissable UI などの一時的な UI 要素の背景アクリルを使用します。<br />一時的なシナリオでアクリルを使用すると、一時的な UI をトリガーしたコンテンツと視覚的な関係を維持できます。
 
-ナビゲーションのサーフェスをアプリ内アクリルを使用している場合は、アプリのフローを向上させるために、アクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これを自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジ - を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成これことができます。 アクリルは、デザインを視覚的な調和を移植するためのツールが適切に使用できますノイズ。
+ナビゲーションのサーフェスをアプリ内アクリルを使用している場合は、アプリのフローを向上させるために、アクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これを自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジ - を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成このことができます。 アクリルは、デザインを視覚的な調和を移植するためのツールが適切に使用できますノイズのします。
 
 アクリルをアプリに組み込むに最適な方法を決定する次の使用パターンを検討してください。
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平方向のナビゲーションやコマンド実行
 
-NavigationView を利用できるように、アプリは、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的透明なアクリルの使用をお勧めします。
+アプリは NavigationView を活用することはできません、独自にアクリルを追加する場合は、60% の濃淡の不透明度で比較的半透明のアクリルの使用をお勧めします。
  - ウィンドウが他のアプリ コンテンツ上でオーバーレイとして開くときは、[60% のアプリ内アクリル](#acrylic-theme-resources)にする必要があります
 
-![アプリ内の水平方向コマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
+![アプリ内の水平方向のによるコマンド実行を使ったマップ アプリ](images/Maps_In_App_Acrylic_1.png)
 
-さらに、上部にある、コンテンツの拡張または、アクリルの下にスクロールをことにより、アプリより没入型とシームレスなエクスペリエンスします。
+さらに、上部に、コンテンツの拡張または、アクリルの下にスクロールをことにより、アプリより没入型とシームレスなエクスペリエンスします。
 
 ### <a name="vertical-panes"></a>垂直方向のウィンドウ
 
@@ -94,24 +94,24 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 
 ### <a name="transient-surfaces"></a>一時的なサーフェス
 
-メニュー ポップアップ、非モーダル ポップアップでは、アプリのウィンドウでは、簡易または背景アクリルを使用することをお勧めします。
+メニュー ポップアップ、非モーダル ポップアップでは、アプリのウィンドウ、簡易または背景アクリルを使用することをお勧めします。
 
 ![情報のポップアップを使用してメール アプリのパターン](images/Mail_TransientContextMenu.png)
 
-アクリルを使用して、既定では、コントロールの多くはします。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)光 dimiss ポップアップを持つようなコントロールはすべてを使用して一時的なアクリルときに呼び出されます。
+アクリルを使用して、既定では、コントロールの多くはします。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[コンボ ボックス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)などの光 dimiss ポップアップを持つコントロールはすべてを使用して一時的なアクリルときに呼び出されます。
 
 > [!Note]
-> アクリル サーフェスのレンダリングでは GPU を多用すると、デバイスの電力消費量を増やすし、バッテリーの寿命を短くことができます。 アクリルの効果は自動的に無効にデバイスがバッテリー節約機能モードを入力し、ユーザーは、すべてのアプリでアクリルの効果を無効にできます選択した場合。
+> アクリル サーフェスのレンダリングでは GPU を多用するデバイスの電力消費量を増やすし、バッテリーの寿命を短くできます。 アクリルの効果は自動的に無効にデバイスが、バッテリー節約機能モードを入力し、ユーザーは、すべてのアプリでアクリルの効果を無効にできます選択した場合。
 
 ## <a name="usability-and-adaptability"></a>使いやすさと適応性
 アクリルの外観は、さまざまなデバイスやコンテキストに合うように自動的に対応します。
 
 ハイ コントラスト モードでは、ユーザーが選んだ見慣れた背景色が、アクリルの代わりに引き続き表示されます。 さらに、背景アクリルとアプリ内アクリルのどちらも、単色として表示されます。
  - ユーザーが設定で透明度をオフにすると > [パーソナル設定] > 色
- - バッテリー節約機能モードがアクティブ化されます。
+ - バッテリー節約機能モードが有効な場合
  - アプリがローエンド ハードウェアで実行されている場合
 
-さらに、背景アクリルのみがその透明度とテクスチャを置き換える単色。
+さらに、背景アクリルのみ、その透明度とテクスチャを置き換える単色。
  - アプリ ウィンドウがデスクトップで非アクティブ化されている場合
  - UWP アプリが、電話、Xbox、HoloLens、またはタブレット モードで実行されている場合
 
@@ -192,6 +192,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 色の濃淡をアプリのアクリルに加えて、ブランドを表示したり、ページ上にある他の要素と視覚的にバランスをとったりすることができます。 グレースケール以外の色を表示するには、次のプロパティを使って、独自のアクリル ブラシを定義する必要があります。
  - **TintColor**: 色/濃淡のオーバーレイ レイヤーです。 RGB の色の値とアルファ チャネルの不透明度の両方を指定することを検討してください。
  - **TintOpacity**: 濃淡レイヤーの不透明度です。 別の色がより魅力的に他の translucencies を表示することがありますが、開始点として 80% の不透明度お勧めします。
+ - **TintLuminosityOpacity**: 背景アクリル サーフェスを通じて許可されている彩度の量を制御します。
  - **BackgroundSource**: 背景アクリルまたはアプリ内アクリルのどちらを使用するかを指定するフラグです。
  - **FallbackColor**: 単色のバッテリー節約機能のアクリルに置き換えられます。 背景アクリルでは、フォールバックの色は、アプリが作業中のデスクトップ ウィンドウにない場合、またはアプリが電話や Xbox 上で実行されている場合にもアクリルと置き換わります。
 
@@ -199,7 +200,12 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
 
 ![濃色テーマのアクリルの見本](images/CustomAcrylic_Swatches_DarkTheme.png)
 
+![明るさ opactity 濃淡の不透明度との比較](images/LuminosityVersusTint.png)
+
 アクリル ブラシを追加するには、濃色テーマ、淡色テーマ、ハイ コントラスト テーマの 3 つのリソースを定義します。 ハイ コントラストでは、濃色/淡色の AcrylicBrush と同じ x:Key で SolidColorBrush を使用することをお勧めします。
+
+> [!Note] 
+> TintLuminosityOpacity 値を指定しない場合、システムは自動的に TintColor と TintOpacity に基づいて、その値を調整します。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -208,6 +214,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FF7F0000"/>
     </ResourceDictionary>
 
@@ -221,6 +228,7 @@ NavigationView を利用できるように、アプリは、独自にアクリ�
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FFFF7F7F"/>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
@@ -249,10 +257,9 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>アクリルをタイトル バーに拡張する
 
-アプリのウィンドウを滑らかな外観にするには、タイトル バー領域にアクリルを使います。 この例では、[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) オブジェクトの [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) および [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) プロパティを [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent) に設定することで、アクリルをタイトル バーに拡張します。 
+アプリのウィンドウを滑らかな外観にするには、タイトル バー領域にアクリルを使います。 この例では、[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) オブジェクトの [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) および [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) プロパティを [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent) に設定することで、アクリルをタイトル バーに拡張します。
 
 ```csharp
-/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -262,11 +269,10 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-このコードは、ここに示すようにアプリの [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) メソッド (_App.xaml.cs_) 内の [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) の呼び出しの後か、アプリの最初のページに配置できます。 
-
+このコードは、ここに示すようにアプリの [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) メソッド (_App.xaml.cs_) 内の [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) の呼び出しの後か、アプリの最初のページに配置できます。
 
 ```csharp
-// Call your extend acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {

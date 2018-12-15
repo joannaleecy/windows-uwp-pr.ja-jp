@@ -1,0 +1,651 @@
+items:
+- name: はじめに
+  href: ../gaming/getting-started.md
+- name: Windows 10 ゲーム開発ガイド
+  href: ../gaming/e2e.md
+- name: ゲーム プログラミング
+  href: ../gaming/index.md
+  items:
+  - name: 計画
+    href: ../gaming/planning.md
+    items:
+    - name: ゲーム テクノロジ
+      href: ../gaming/game-development-platform-guide.md
+    - name: ゲームのアクセシビリティ
+      href: ../gaming/accessibility-for-games.md
+    - name: ゲーム用のクラウド
+      href: ../gaming/cloud-for-games.md
+    - name: ゲームの収益化
+      href: ../gaming/monetization-for-games.md
+    - name: 概念の承認
+      href: ../gaming/concept-approval.md
+    - name: ゲームのパッケージ化
+      href: ../gaming/package-your-windows-store-directx-game.md
+  - name: UWP プログラミング
+    href: ../gaming/uwp-programming.md
+    items:
+    - name: ゲームのオーディオ
+      href: ../gaming/working-with-audio-in-your-directx-game.md
+    - name: ゲームのブロードキャストとキャプチャ
+      href: ../gaming/game-broadcast-and-capture.md
+      items:
+      - name: ゲームのブロードキャストを管理する
+        href: ../gaming/manage-game-broadcasting.md
+      - name: ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
+        href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
+    - name: ゲームの入力
+      href: ../gaming/input-for-games.md
+      items:
+      - name: ゲームパッドとバイブレーション
+        href: ../gaming/gamepad-and-vibration.md
+      - name: アーケード スティック
+        href: ../gaming/arcade-stick.md
+      - name: レース ホイールとフォース フィードバック
+        href: ../gaming/racing-wheel-and-force-feedback.md
+      - name: フライト スティック
+        href: ../gaming/flight-stick.md
+      - name: 未加工のゲーム コントローラー
+        href: ../gaming/raw-game-controller.md
+      - name: ヘッドセット
+        href: ../gaming/headset.md
+      - name: UI ナビゲーション コントローラー
+        href: ../gaming/ui-navigation-controller.md
+      - name: ゲームの入力プラクティス
+        href: ../gaming/input-practices-for-games.md
+      - name: ゲーム コントローラーのレジストリ データ
+        href: ../gaming/registry-data-for-game-controllers.md
+    - name: Unity や UWP で不足している .NET API
+      href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
+    - name: ゲームのネットワーク
+      href: ../gaming/work-with-networking-in-your-directx-game.md
+  - name: ゲーム開発ビデオ
+    href: ../gaming/game-development-videos.md
+- name: DirectX プログラミング
+  href: ../gaming/directx-programming.md
+  items:
+  - name: はじめに
+    href: ../gaming/directx-getting-started.md
+    items:
+    - name: アプリ オブジェクト
+      href: ../gaming/about-the-uwp-user-interface-and-directx.md
+    - name: プロジェクト テンプレートとツール
+      href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
+      items:
+      - name: ゲーム プロジェクト テンプレート
+        href: ../gaming/user-interface.md
+      - name: Visual Studio ツール
+        href: ../gaming/set-up-visual-studio-for-game-development.md
+      - name: グラフィックス診断ツール
+        href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
+    - name: アプリの起動と再開
+      href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
+      items:
+      - name: アプリのアクティブ化
+        href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
+      - name: アプリの一時停止
+        href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
+      - name: アプリの再開
+        href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
+  - name: サンプル
+    href: ../gaming/directx-samples.md
+    items:
+    - name: シンプルな UWP ゲーム
+      href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
+      items:
+      - name: プロジェクトのセットアップ
+        href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
+      - name: UWP フレームワーク
+        href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
+      - name: ゲームのフロー管理
+        href: ../gaming/tutorial-game-flow-management.md
+      - name: メイン ゲーム オブジェクト
+        href: ../gaming/tutorial--defining-the-main-game-loop.md
+      - name: レンダリング フレームワーク I
+        href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
+      - name: レンダリング フレームワーク II
+        href: ../gaming/tutorial-game-rendering.md
+      - name: UI の追加
+        href: ../gaming/tutorial--adding-a-user-interface.md
+      - name: コントロールの追加
+        href: ../gaming/tutorial--adding-controls.md
+      - name: サウンドの追加
+        href: ../gaming/tutorial--adding-sound.md
+      - name: ゲームの拡張
+        href: ../gaming/tutorial-resources.md
+    - name: Marble Maze
+      href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
+      items:
+      - name: 基本事項
+        href: ../gaming/marble-maze-sample-fundamentals.md
+      - name: アプリの構造
+        href: ../gaming/marble-maze-application-structure.md
+      - name: 視覚的なコンテンツの追加
+        href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
+      - name: 入力と対話機能の追加
+        href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
+      - name: オーディオの追加
+        href: ../gaming/adding-audio-to-the-marble-maze-sample.md
+  - name: Direct3D でのグラフィックスの概念
+    href: ../graphics-concepts/index.md
+    items:
+    - name: 座標系とジオメトリ
+      href: ../graphics-concepts/coordinate-systems-and-geometry.md
+      items:
+      - name: 座標系
+        href: ../graphics-concepts/coordinate-systems.md
+      - name: プリミティブ
+        href: ../graphics-concepts/primitives.md
+        items:
+        - name: ポイント一覧
+          href: ../graphics-concepts/point-lists.md
+        - name: 線リスト
+          href: ../graphics-concepts/line-lists.md
+        - name: ライン ストリップ
+          href: ../graphics-concepts/line-strips.md
+        - name: トライアングル リスト
+          href: ../graphics-concepts/triangle-lists.md
+        - name: 三角形ストリップ
+          href: ../graphics-concepts/triangle-strips.md
+      - name: 顔と頂点の標準ベクター
+        href: ../graphics-concepts/face-and-vertex-normal-vectors.md
+      - name: 四角形
+        href: ../graphics-concepts/rectangles.md
+      - name: 三角形補間
+        href: ../graphics-concepts/triangle-interpolation.md
+      - name: ベクター、頂点、および四元数
+        href: ../graphics-concepts/vectors--vertices--and-quaternions.md
+      - name: 変換
+        href: ../graphics-concepts/transforms.md
+        items:
+        - name: 変換の概要
+          href: ../graphics-concepts/transform-overview.md
+        - name: ワールド変換
+          href: ../graphics-concepts/world-transform.md
+        - name: ビュー変換
+          href: ../graphics-concepts/view-transform.md
+        - name: プロジェクション変換
+          href: ../graphics-concepts/projection-transform.md
+      - name: ビューポートとクリッピング
+        href: ../graphics-concepts/viewports-and-clipping.md
+    - name: 頂点バッファーとインデックス バッファー
+      href: ../graphics-concepts/vertex-and-index-buffers.md
+      items:
+      - name: バッファーの概要
+        href: ../graphics-concepts/introduction-to-buffers.md
+      - name: インデックス バッファー
+        href: ../graphics-concepts/index-buffers.md
+    - name: デバイス
+      href: ../graphics-concepts/devices.md
+      items:
+      - name: デバイスの種類
+        href: ../graphics-concepts/device-types.md
+      - name: ウィンドウモードと全画面表示モード
+        href: ../graphics-concepts/windowed-vs--full-screen-mode.md
+      - name: 失われたデバイス
+        href: ../graphics-concepts/lost-devices.md
+      - name: スワップ チェーン
+        href: ../graphics-concepts/swap-chains.md
+      - name: ラスター化規則の概要
+        href: ../graphics-concepts/introduction-to-rasterization-rules.md
+    - name: 光源
+      href: ../graphics-concepts/lights-and-materials.md
+      items:
+      - name: 光源の概要
+        href: ../graphics-concepts/lighting-overview.md
+      - name: 光源の種類
+        href: ../graphics-concepts/light-types.md
+      - name: 光源のプロパティ
+        href: ../graphics-concepts/light-properties.md
+      - name: 光源の計算
+        href: ../graphics-concepts/mathematics-of-lighting.md
+        items:
+        - name: 環境光
+          href: ../graphics-concepts/ambient-lighting.md
+        - name: 拡散光
+          href: ../graphics-concepts/diffuse-lighting.md
+        - name: 反射光
+          href: ../graphics-concepts/specular-lighting.md
+        - name: 放射光
+          href: ../graphics-concepts/emissive-lighting.md
+        - name: カメラの空間変換
+          href: ../graphics-concepts/camera-space-transformations.md
+        - name: 減衰とスポットライトの要素
+          href: ../graphics-concepts/attenuation-and-spotlight-factor.md
+    - name: 深度バッファーとステンシル バッファー
+      href: ../graphics-concepts/depth-and-stencil-buffers.md
+      items:
+      - name: 深度バッファー
+        href: ../graphics-concepts/depth-buffers.md
+      - name: ステンシル バッファー
+        href: ../graphics-concepts/stencil-buffers.md
+    - name: テクスチャ
+      href: ../graphics-concepts/textures.md
+      items:
+      - name: テクスチャの概要
+        href: ../graphics-concepts/introduction-to-textures.md
+      - name: テクスチャリングの基本概念
+        href: ../graphics-concepts/basic-texturing-concepts.md
+      - name: テクスチャのアドレス指定モード
+        href: ../graphics-concepts/texture-addressing-modes.md
+      - name: テクスチャ フィルタリング
+        href: ../graphics-concepts/texture-filtering.md
+        items:
+        - name: 最近点サンプリング
+          href: ../graphics-concepts/nearest-point-sampling.md
+        - name: バイリニア テクスチャ フィルタリング
+          href: ../graphics-concepts/bilinear-texture-filtering.md
+        - name: 異方性テクスチャ フィルタ リング
+          href: ../graphics-concepts/anisotropic-texture-filtering.md
+        - name: ミップマップでのテクスチャ フィルタリング
+          href: ../graphics-concepts/texture-filtering-with-mipmaps.md
+      - name: テクスチャ リソース
+        href: ../graphics-concepts/texture-resources.md
+      - name: テクスチャの折り返し
+        href: ../graphics-concepts/texture-wrapping.md
+      - name: テクスチャ ブレンド
+        href: ../graphics-concepts/texture-blending.md
+        items:
+        - name: ブレンド ステージ
+          href: ../graphics-concepts/blending-stages.md
+        - name: マルチパス テクスチャ ブレンド
+          href: ../graphics-concepts/multipass-texture-blending.md
+      - name: テクスチャでのライト マッピング
+        href: ../graphics-concepts/light-mapping-with-textures.md
+        items:
+        - name: モノクロ ライト マップ
+          href: ../graphics-concepts/monochrome-light-maps.md
+        - name: 色のライト マップ
+          href: ../graphics-concepts/color-light-maps.md
+        - name: 反射ライト マップ
+          href: ../graphics-concepts/specular-light-maps.md
+        - name: 拡散ライト マップ
+          href: ../graphics-concepts/diffuse-light-maps.md
+      - name: 圧縮テクスチャ リソース
+        href: ../graphics-concepts/compressed-texture-resources.md
+        items:
+        - name: 不透明なテクスチャと 1 ビットのアルファ テクスチャ
+          href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
+        - name: アルファ チャネルを含むテクスチャ
+          href: ../graphics-concepts/textures-with-alpha-channels.md
+        - name: ブロック圧縮
+          href: ../graphics-concepts/block-compression.md
+        - name: 圧縮テクスチャ形式
+          href: ../graphics-concepts/compressed-texture-formats.md
+    - name: グラフィックス パイプライン
+      href: ../graphics-concepts/graphics-pipeline.md
+      items:
+      - name: 入力アセンブラー (IA) ステージ
+        href: ../graphics-concepts/input-assembler-stage--ia-.md
+        items:
+        - name: プリミティブ トポロジ
+          href: ../graphics-concepts/primitive-topologies.md
+        - name: システムで生成される値の使用
+          href: ../graphics-concepts/using-system-generated-values.md
+      - name: 頂点シェーダー (VS) ステージ
+        href: ../graphics-concepts/vertex-shader-stage--vs-.md
+      - name: ハル シェーダー (HS) ステージ
+        href: ../graphics-concepts/hull-shader-stage--hs-.md
+      - name: テッセレータ (TS) ステージ
+        href: ../graphics-concepts/tessellator-stage--ts-.md
+      - name: ドメイン シェーダー (DS) ステージ
+        href: ../graphics-concepts/domain-shader-stage--ds-.md
+      - name: ジオメトリ シェーダー (GS) ステージ
+        href: ../graphics-concepts/geometry-shader-stage--gs-.md
+      - name: ストリーム出力 (SO) ステージ
+        href: ../graphics-concepts/stream-output-stage--so-.md
+      - name: ラスタライザー (RS) ステージ
+        href: ../graphics-concepts/rasterizer-stage--rs-.md
+      - name: ピクセル シェーダー (PS) ステージ
+        href: ../graphics-concepts/pixel-shader-stage--ps-.md
+      - name: 出力マージャー (OM) ステージ
+        href: ../graphics-concepts/output-merger-stage--om-.md
+        items:
+        - name: 深度ステンシル機能の構成
+          href: ../graphics-concepts/configuring-depth-stencil-functionality.md
+      - name: 状態オブジェクト
+        href: ../graphics-concepts/state-objects.md
+    - name: ビュー
+      href: ../graphics-concepts/views.md
+      items:
+      - name: 定数バッファー ビュー (CBV)
+        href: ../graphics-concepts/constant-buffer-view--cbv-.md
+      - name: 頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)
+        href: ../graphics-concepts/vertex-buffer-view--vbv-.md
+      - name: シェーダー リソース ビュー (SRV) と順序指定されていないアクセス ビュー (UAV)
+        href: ../graphics-concepts/shader-resource-view--srv-.md
+      - name: サンプル集
+        href: ../graphics-concepts/sampler.md
+      - name: レンダー ターゲット ビュー (RTV)
+        href: ../graphics-concepts/render-target-view--rtv-.md
+      - name: 深度ステンシル ビュー (DSV)
+        href: ../graphics-concepts/depth-stencil-view--dsv-.md
+      - name: ストリーム出力ビュー (SOV)
+        href: ../graphics-concepts/stream-output-view--sov-.md
+      - name: ラスタライザー順序指定ビュー (ROV)
+        href: ../graphics-concepts/rasterizer-ordered-view--rov-.md
+    - name: 計算パイプライン
+      href: ../graphics-concepts/compute-pipeline.md
+      items:
+      - name: 計算シェーダー (CS) ステージ
+        href: ../graphics-concepts/compute-shader-stage--cs-.md
+    - name: リソース
+      href: ../graphics-concepts/resources.md
+      items:
+      - name: リソースの種類
+        href: ../graphics-concepts/resource-types.md
+      - name: リソースの選択
+        href: ../graphics-concepts/choosing-a-resource.md
+      - name: リソース データのコピーとアクセス
+        href: ../graphics-concepts/copying-and-accessing-resource-data.md
+      - name: テクスチャ ビュー
+        href: ../graphics-concepts/texture-views.md
+    - name: ストリーミング リソース
+      href: ../graphics-concepts/streaming-resources.md
+      items:
+      - name: ストリーミング リソースのニーズ
+        href: ../graphics-concepts/the-need-for-streaming-resources.md
+      - name: ストリーミング リソースの作成
+        href: ../graphics-concepts/creating-streaming-resources.md
+        items:
+        - name: タイル プールにマッピングされます
+          href: ../graphics-concepts/mappings-are-into-a-tile-pool.md
+          items:
+          - name: タイル プールの作成
+            href: ../graphics-concepts/tile-pool-creation.md
+          - name: タイル プールのサイズ変更
+            href: ../graphics-concepts/tile-pool-resizing.md
+          - name: ハザード追跡対タイル プール リソース
+            href: ../graphics-concepts/hazard-tracking-versus-tile-pool-resources.md
+        - name: ストリーミング リソースの作成パラメーター
+          href: ../graphics-concepts/streaming-resource-creation-parameters.md
+          items:
+          - name: ストリーミング リソースに利用可能なアドレス空間
+            href: ../graphics-concepts/address-space-available-for-streaming-resources.md
+        - name: タイル プールの作成パラメーター
+          href: ../graphics-concepts/tile-pool-creation-parameters.md
+        - name: ストリーミング リソースのプロセスとデバイス間での共有
+          href: ../graphics-concepts/streaming-resource-cross-process-and-device-sharing.md
+          items:
+          - name: ストリーミング リソースでサポートされていないステンシルの書式
+            href: ../graphics-concepts/stencil-formats-not-supported-with-streaming-resources.md
+        - name: ストリーミング リソースで利用可能な操作
+          href: ../graphics-concepts/operations-available-on-streaming-resources.md
+        - name: タイル プールで利用可能な操作
+          href: ../graphics-concepts/operations-available-on-tile-pools.md
+        - name: ストリーミング リソースの領域をタイル表示する方法
+          href: ../graphics-concepts/how-a-streaming-resource-s-area-is-tiled.md
+          items:
+          - name: Texture2D と Texture2DArray のサブリソースのタイル表示
+            href: ../graphics-concepts/texture2d-and-texture2darray-subresource-tiling.md
+          - name: Texture3D サブリソースのタイル表示
+            href: ../graphics-concepts/texture3d-subresource-tiling.md
+          - name: バッファーのタイル表示
+            href: ../graphics-concepts/buffer-tiling.md
+          - name: ミップマップのパッキング
+            href: ../graphics-concepts/mipmap-packing.md
+      - name: ストリーミング リソースへのパイプライン アクセス
+        href: ../graphics-concepts/pipeline-access-to-streaming-resources.md
+        items:
+        - name: マップされていないタイルでの SRV 動作
+          href: ../graphics-concepts/srv-behavior-with-non-mapped-tiles.md
+        - name: マップされていないタイルでの UAV 動作
+          href: ../graphics-concepts/uav-behavior-with-non-mapped-tiles.md
+        - name: マップされていないタイルでのラスタライザー動作
+          href: ../graphics-concepts/rasterizer-behavior-with-non-mapped-tiles.md
+        - name: 重複するマッピングを含むタイルのアクセス制限
+          href: ../graphics-concepts/tile-access-limitations-with-duplicate-mappings.md
+        - name: ストリーミング リソース テクスチャ サンプリング機能
+          href: ../graphics-concepts/streaming-resources-texture-sampling-features.md
+        - name: HLSL ストリーミング リソースの露出
+          href: ../graphics-concepts/hlsl-streaming-resources-exposure.md
+      - name: ストリーミング リソース機能の階層
+        href: ../graphics-concepts/streaming-resources-features-tiers.md
+        items:
+        - name: 階層 1
+          href: ../graphics-concepts/tier-1.md
+        - name: 階層 2
+          href: ../graphics-concepts/tier-2.md
+        - name: 階層 3
+          href: ../graphics-concepts/tier-3.md
+    - name: 付録
+      href: ../graphics-concepts/appendix.md
+      items:
+      - name: 浮動小数点の規則
+        href: ../graphics-concepts/floating-point-rules.md
+      - name: データ型の変換
+        href: ../graphics-concepts/data-type-conversion.md
+      - name: ラスター化の規則
+        href: ../graphics-concepts/rasterization-rules.md
+      - name: テクスチャのブロック圧縮
+        href: ../graphics-concepts/texture-block-compression.md
+        items:
+        - name: BC6H 形式
+          href: ../graphics-concepts/bc6h-format.md
+        - name: BC7 形式
+          href: ../graphics-concepts/bc7-format.md
+  - name: 基本事項
+    href: ../gaming/directx-fundamentals.md
+    items:
+    - name: 2D グラフィックス
+      href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
+    - name: 基本的な 3D グラフィックス
+      href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
+      items:
+      - name: リソースのセットアップ
+        href: ../gaming/setting-up-directx-resources.md
+      - name: プリミティブの描画
+        href: ../gaming/creating-shaders-and-drawing-primitives.md
+      - name: 深度と各種効果の使用
+        href: ../gaming/using-depth-and-effects-on-primitives.md
+      - name: テクスチャの適用
+        href: ../gaming/applying-textures-to-primitives.md
+      - name: 基本的なメッシュの作成
+        href: ../gaming/create-a-basic-mesh.md
+    - name: リソースの読み込み
+      href: ../gaming/load-a-game-asset.md
+      items:
+      - name: BasicLoader
+        href: ../gaming/complete-code-for-basicloader.md
+      - name: BasicReaderWriter
+        href: ../gaming/complete-code-for-basicreaderwriter.md
+      - name: DDSTextureLoader
+        href: ../gaming/complete-code-for-ddstextureloader.md
+  - name: 機能の追加
+    href: ../gaming/directx-add-features.md
+    items:
+    - name: DirectX と XAML の相互運用機能
+      href: ../gaming/directx-and-xaml-interop.md
+    - name: ゲーム入力
+      href: ../gaming/directx-game-input.md
+      items:
+      - name: ムーブ/ルック コントロール
+        href: ../gaming/tutorial--adding-move-look-controls-to-your-directx-game.md
+      - name: 相対マウス移動
+        href: ../gaming/relative-mouse-movement.md
+      - name: タッチ コントロール
+        href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
+    - name: 画面の向きのサポート
+      href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
+  - name: 最適化と高度なトピック
+    href: ../gaming/directx-optimization-and-advanced-topics.md
+    items:
+    - name: 非同期プログラミング
+      href: ../gaming/asynchronous-programming-directx-and-cpp.md
+    - name: デバイス削除シナリオ
+      href: ../gaming/handling-device-lost-scenarios.md
+    - name: マルチサンプリング
+      href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
+    - name: 入力とレンダリング ループの最適化
+      href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
+    - name: スワップ チェーンによる遅延の減少
+      href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
+    - name: スワップ チェーンのスケーリングとオーバーレイ
+      href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
+  - name: UWP への DirectX 9 の移植
+    href: ../gaming/porting-your-directx-9-game-to-windows-store.md
+    items:
+    - name: DirectX 9 から DirectX 11.1 へ
+      href: ../gaming/porting-considerations.md
+      items:
+      - name: 移植の計画
+        href: ../gaming/plan-your-directx-port.md
+      - name: 主要な相違点
+        href: ../gaming/understand-direct3d-11-1-concepts.md
+      - name: マッピング機能
+        href: ../gaming/feature-mapping.md
+    - name: 簡単なチュートリアル
+      href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
+      items:
+      - name: Direct3D 11 の初期化
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
+      - name: レンダリング フレームワークの変換
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
+      - name: ゲーム ループの移植
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
+    - name: シャドウ ボリュームの実装
+      href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
+      items:
+      - name: 深度バッファーの作成
+        href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
+      - name: 深度バッファーへのシャドウ マップのレンダリング
+        href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
+      - name: 深度のテストを使ったシーンのレンダリング
+        href: ../gaming/render-the-scene-with-depth-testing.md
+      - name: さまざまなハードウェアのサポート
+        href: ../gaming/target-a-range-of-hardware.md
+    - name: FAQ
+      href: ../gaming/directx-porting-faq.md
+  - name: Direct3D への OpenGL の移植
+    href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
+    items:
+    - name: Direct3D への OpenGL のマッピング
+      href: ../gaming/map-concepts-and-infrastructure.md
+      items:
+      - name: 移植の計画
+        href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
+      - name: EGL と DXGI
+        href: ../gaming/moving-from-egl-to-dxgi.md
+      - name: バッファー、uniform、頂点
+        href: ../gaming/porting-uniforms-and-attributes.md
+      - name: シェーダー パイプライン
+        href: ../gaming/change-your-shader-loading-code.md
+    - name: Direct3D への OpenGL レンダラーの移植
+      href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
+      items:
+      - name: シェーダー オブジェクト
+        href: ../gaming/port-the-shader-config.md
+      - name: 頂点バッファーとデータ
+        href: ../gaming/port-the-vertex-buffers-and-data-config.md
+      - name: GLSL
+        href: ../gaming/port-the-glsl.md
+      - name: 画面への描画
+        href: ../gaming/draw-to-the-screen.md
+    - name: OpenGL から Direct3D への移行のためのリファレンス
+      href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
+      items:
+      - name: GLSL から HLSL へ
+        href: ../gaming/glsl-to-hlsl-reference.md
+- name: Xbox One の UWP
+  href: ../xbox-apps/index.md
+  items:
+  - name: はじめに
+    href: ../xbox-apps/getting-started.md
+  - name: 新着情報
+    href: ../xbox-apps/whats-new.md
+  - name: Xbox One 開発者モードのアクティブ化
+    href: ../xbox-apps/devkit-activation.md
+  - name: Xbox One で開発者モードを無効にする
+    href: ../xbox-apps/devkit-deactivation.md
+  - name: 開発環境のセットアップ
+    href: ../xbox-apps/development-environment-setup.md
+  - name: サンプル
+    href: ../xbox-apps/samples.md
+  - name: 既知の問題
+    href: ../xbox-apps/known-issues.md
+  - name: FAQ
+    href: ../xbox-apps/frequently-asked-questions.md
+  - name: ツール
+    href: ../xbox-apps/introduction-to-xbox-tools.md
+    items:
+    - name: Dev Home
+      href: ../xbox-apps/dev-home.md
+      items:
+      - name: ホーム ページ
+        href: ../xbox-apps/devhome-home.md
+      - name: Xbox Live ページ
+        href: ../xbox-apps/devhome-live.md
+      - name: 設定ページ
+        href: ../xbox-apps/devhome-settings.md
+      - name: メディア キャプチャ ページ
+        href: ../xbox-apps/devhome-capture.md
+      - name: ネットワーク ページ
+        href: ../xbox-apps/devhome-networking.md
+      - name: パフォーマンス ページ
+        href: ../xbox-apps/devhome-performance.md
+    - name: Xbox 開発者モード コンパニオン
+      href: ../xbox-apps/xbox-dev-mode-companion.md
+    - name: Fiddler
+      href: ../xbox-apps/uwp-fiddler.md
+  - name: Xbox ベスト プラクティス
+    href: ../xbox-apps/tailoring-for-xbox.md
+    items:
+    - name: マウス モードを無効にする方法
+      href: ../xbox-apps/how-to-disable-mouse-mode.md
+    - name: スケーリングを無効にする方法
+      href: ../xbox-apps/disable-scaling.md
+    - name: オーバースキャンを無効にする方法
+      href: ../xbox-apps/turn-off-overscan.md
+  - name: システム リソースの割り当て
+    href: ../xbox-apps/system-resource-allocation.md
+  - name: マルチ ユーザー アプリケーションの概要
+    href: ../xbox-apps/multi-user-applications.md
+  - name: 既存のゲームの Xbox への移行
+    href: ../xbox-apps/development-lanes-landing.md
+    items:
+    - name: カスタム C++
+      href: ../xbox-apps/development-lanes-custom-cpp.md
+    - name: Unity
+      href: ../xbox-apps/development-lanes-unity.md
+    - name: HTML/JS
+      href: ../xbox-apps/development-lanes-html.md
+  - name: Xbox Device Portal REST API
+    href: ../xbox-apps/reference.md
+    items:
+    - name: /api/app/packagemanager/register
+      href: ../xbox-apps/wdp-loose-folder-register-api.md
+    - name: /api/app/packagemanager/upload
+      href: ../xbox-apps/wdp-folder-upload.md
+    - name: /ext/app/deployinfo
+      href: ../xbox-apps/uwp-deployinfo-api.md
+    - name: /ext/app/sshpins
+      href: ../xbox-apps/uwp-sshpins-api.md
+    - name: /ext/fiddler
+      href: ../xbox-apps/wdp-fiddler-api.md
+    - name: /ext/httpmonitor/sessions
+      href: ../xbox-apps/wdp-httpMonitor-api.md
+    - name: /ext/networkcredential
+      href: ../xbox-apps/uwp-networkcredentials-api.md
+    - name: /ext/remoteinput
+      href: ../xbox-apps/uwp-remoteinput-api.md
+    - name: /ext/remoteinput/controllers
+      href: ../xbox-apps/uwp-remoteinput-controllers-api.md
+    - name: /ext/screenshot
+      href: ../xbox-apps/wdp-media-capture-api.md
+    - name: /ext/settings
+      href: ../xbox-apps/wdp-xboxsettings-api.md
+    - name: /ext/smb/developerfolder
+      href: ../xbox-apps/wdp-smb-api.md
+    - name: /ext/user
+      href: ../xbox-apps/wdp-user-management.md
+    - name: /ext/xbox/info
+      href: ../xbox-apps/wdp-xboxinfo-api.md
+    - name: /ext/xboxlive/sandbox
+      href: ../xbox-apps/wdp-sandbox-api.md
+- name: Xbox Live
+  href: ../xbox-live/TOC.md
+ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962584"
