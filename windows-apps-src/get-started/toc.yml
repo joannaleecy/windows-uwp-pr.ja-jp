@@ -1,0 +1,42 @@
+items:
+- name: 概要
+  href: index.md
+- name: UWP アプリとは
+  href: ../get-started/universal-application-platform-guide.md
+- name: 準備
+  href: ../get-started/get-set-up.md
+  items:
+  - name: デバイスを開発用に有効にする
+    href: ../get-started/enable-your-device-for-development.md
+  - name: 開発者アカウントを作る
+    href: ../get-started/sign-up.md
+- name: コーディングの開始
+  href: ../get-started/create-uwp-apps.md
+  items:
+  - name: フォームの作成
+    href: construct-form-learning-track.md
+  - name: 一覧での顧客の表示
+    href: display-customers-in-list-learning-track.md
+  - name: 設定の保存と読み込み
+    href: settings-learning-track.md
+  - name: ファイルの操作
+    href: fileio-learning-track.md
+  - name: 初めてのアプリ
+    href: ../get-started/your-first-app.md
+    items:
+    - name: "\"Hello, world\" アプリを作成する (C#)"
+      href: ../get-started/create-a-hello-world-app-xaml-universal.md
+    - name: "\"Hello, world\" アプリを作成する (C++)"
+      href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
+    - name: "\"Hello, world\" アプリを作成する (JS)"
+      href: ../get-started/create-a-hello-world-app-js-uwp.md
+  - name: 複雑なアプリを構築する
+    href: ../get-started/plan-your-app.md
+- name: UWP アプリのサンプルを取得する
+  href: ../get-started/get-uwp-app-samples.md
+ms.openlocfilehash: 6d2635bec653e5c9f409ff6a5249ee0215276225
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962444"
