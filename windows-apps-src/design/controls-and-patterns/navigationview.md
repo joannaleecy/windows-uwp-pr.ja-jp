@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e436e45e70980e9f75749b3a9377f61b636f890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c86ddee3558da23cd8bea5e0f16c6a8695babf84
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928549"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973953"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 
@@ -29,15 +29,15 @@ _ナビゲーション ビューは、上部と左側のナビゲーション �
 >
 > **Windows UI ライブラリ Api**: [Microsoft.UI.Xaml.Controls.NavigationView クラス](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
-> _上部_のナビゲーションなど、NavigationView の一部の機能に必要な Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> _上部_のナビゲーションなど、NavigationView の一部の機能に必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-NavigationView に適していますが、アダプティブ ナビゲーション コントロールを示します。
+NavigationView は、適切に動作するアダプティブ ナビゲーション コントロールを示します。
 
 - アプリ全体で一貫性のあるナビゲーション エクスペリエンスを提供します。
 - 幅が狭いウィンドウには、画面領域を保持します。
-- 多くのナビゲーション カテゴリへのアクセスを構成します。
+- ナビゲーション カテゴリに分かれたへのアクセスを構成します。
 
 その他のナビゲーション パターンは、[ナビゲーション デザインの基本](../basics/navigation-basics.md)を参照してください。
 
@@ -59,7 +59,7 @@ NavigationView に適していますが、アダプティブ ナビゲーショ�
 
 ## <a name="display-modes"></a>表示モード
 
-> PaneDisplayMode プロパティには、Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要なまたはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> PaneDisplayMode プロパティには、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 PaneDisplayMode プロパティを使用して、さまざまなナビゲーションのスタイルを構成したり、NavigationView の表示モード、できます。
 
@@ -76,7 +76,7 @@ PaneDisplayMode プロパティを使用して、さまざまなナビゲーシ�
 
 _上部_のナビゲーションをお勧めする場合。
 
-- 5 または均等に重要ですが、以下のトップレベルのナビゲーション カテゴリと、ドロップダウン オーバーフロー メニューにたどり着きますカテゴリは、重要度の低いと見なされる追加トップレベルのナビゲーションがあります。
+- 5 または均等に重要ですより少ないのトップレベルのナビゲーション カテゴリと、ドロップダウン オーバーフロー メニューにたどり着きますカテゴリは、重要度の低いと見なされる追加トップレベルのナビゲーションがあります。
 - 画面上のすべてのナビゲーション オプションを表示する必要があります。
 - アプリのコンテンツのスペースを追加するとします。
 - アイコンは、アプリのナビゲーションのカテゴリを明確に記述ことはできません。
@@ -84,7 +84,7 @@ _上部_のナビゲーションをお勧めする場合。
 :::row:::
     :::column:::
     ### <a name="left"></a>Left
-    ウィンドウは展開され、コンテンツの左側に配置します。</br>
+    ウィンドウが展開され、コンテンツの左側に配置します。</br>
     `PaneDisplayMode="Left"`
     :::column-end:::
     :::column span="2":::
@@ -95,7 +95,7 @@ _上部_のナビゲーションをお勧めする場合。
 _左側_のナビゲーションをお勧めする場合。
 
 - 5 ~ 10 均等に重要なトップレベルのナビゲーションのカテゴリがあります。
-- ナビゲーションのカテゴリの他のアプリのコンテンツ領域が少なく、非常に目立つにします。
+- ナビゲーションのカテゴリの他のアプリのコンテンツ領域が少なく、非常に掲示する場合します。
 
 :::row:::
     :::column:::
@@ -128,7 +128,7 @@ _ナビゲーション ビューの既定のアダプティブ動作_
 
 ## <a name="anatomy"></a>構造
 
-これらの画像は、ウィンドウ、ヘッダーおよびコンテンツ領域の_上部_または_左側_のナビゲーション用に構成されている場合、コントロールのレイアウトを表示します。
+これらの画像は、ウィンドウ、ヘッダー、およびコンテンツ領域の_上_または_左側_のナビゲーション用に構成されている場合、コントロールのレイアウトを表示します。
 
 ![上部のナビゲーション ビューのレイアウト](images/topnav-anatomy.png)<br/>
 _上部のナビゲーションのレイアウト_
@@ -142,10 +142,10 @@ PaneDisplayMode プロパティを使用して、コンテンツの上または�
 
 NavigationView ウィンドウを含めることができます。
 
-- [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)オブジェクト。 特定のページに移動するためのナビゲーション項目。
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクト。 ナビゲーション項目をグループ化するための区切り記号です。 [不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。
-- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)オブジェクト。 項目のグループにラベルを付けるためのヘッダー。
-- アプリ レベルの検索を許可するオプション[AutoSuggestBox](auto-suggest-box.md)コントロール。 [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)プロパティには、コントロールを割り当てます。
+- [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)オブジェクトです。 特定のページに移動するためのナビゲーション項目。
+- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクトです。 ナビゲーション項目をグループ化するための区切り記号です。 [不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。
+- [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)オブジェクトです。 項目のグループにラベルを付けるためのヘッダー。
+- アプリ レベルの検索を許可するオプションの[AutoSuggestBox](auto-suggest-box.md)コントロール。 [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)プロパティにコントロールを割り当てます。
 - [アプリ設定](../app-settings/app-settings-and-data.md)のエントリ ポイント (オプション) 設定項目を非表示に[IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)プロパティを**false**に設定します。
 
 左側のウィンドウが含まれています。
@@ -164,7 +164,7 @@ NavigationView ウィンドウを含めることができます。
 1. ナビゲーション項目
 1. 区切り文字
 1. AutoSuggestBox (省略可能)
-1. 設定ボタン (省略可能)
+1. (省略可能) の設定] ボタン
 
 #### <a name="left-navigation-pane"></a>左側のナビゲーション ウィンドウ
 
@@ -175,7 +175,7 @@ NavigationView ウィンドウを含めることができます。
 1. 区切り文字
 1. ヘッダー
 1. AutoSuggestBox (省略可能)
-1. 設定ボタン (省略可能)
+1. (省略可能) の設定] ボタン
 
 #### <a name="pane-footer"></a>ウィンドウのフッター
 
@@ -196,7 +196,7 @@ NavigationView ウィンドウを含めることができます。
 
 ウィンドウのヘッダー領域でテキスト コンテンツを配置するには、 [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle)プロパティを設定します。 文字列に移動し、メニュー ボタンの横にあるテキストを表示します。
 
-画像やロゴなどのテキスト以外のコンテンツを追加するには、 [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)プロパティを追加することによって、ウィンドウのヘッダーで任意の要素を配置できます。
+画像やロゴなどのテキスト以外のコンテンツを追加するには、 [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)プロパティに追加することによって、ウィンドウのヘッダーに任意の要素を配置できます。
 
 PaneTitle と PaneHeader の両方が設定されている場合、コンテンツは、メニュー ボタンに最も近い PaneTitle、メニュー ボタンの横にある水平方向に stacked します。
 
@@ -213,7 +213,7 @@ PaneTitle と PaneHeader の両方が設定されている場合、コンテン�
 
 #### <a name="pane-content"></a>ウィンドウのコンテンツ
 
-[PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)プロパティを追加することによって、ウィンドウで自由形式のコンテンツを配置できます。
+ウィンドウで自由形式のコンテンツを配置するには、 [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)プロパティに追加します。
 
 :::row:::
     :::column:::
@@ -244,19 +244,19 @@ _ナビゲーション ビューのコンテンツ_
 
 コンテンツ領域には、選んだナビゲーション カテゴリのほとんどの情報が表示されます。
 
-お勧めします NavigationView が**最小**モードのときは、コンテンツ領域の余白を 12px 24px 余白それ以外の場合。
+お勧めします NavigationView が**最小**モード場合は、コンテンツ領域の余白を 12px 24px 余白それ以外の場合。
 
 ## <a name="adaptive-behavior"></a>アダプティブ動作
 
-既定では、ナビゲーション ビューは自動的に利用可能な画面領域の量に基づいて表示モードを変更します。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth)と[ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth)プロパティは、表示モードが変化するブレークポイントを指定します。 アダプティブ表示モードの動作をカスタマイズするこれらの値を変更することができます。
+既定では、ナビゲーション ビューは表示モードを利用できる画面領域の量に基づいて自動的に変更します。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth)と[ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth)プロパティは、表示モードが変化するブレークポイントを指定します。 アダプティブ表示モードの動作をカスタマイズするこれらの値を変更することができます。
 
 ### <a name="default"></a>既定値
 
 PaneDisplayMode が**自動**の既定値に設定されている場合、アダプティブ動作は表示されます。
 
 - 大きなウィンドウの幅で展開された左側のウィンドウ (1008 ピクセル以上)。
-- A 左、アイコンのみ普通サイズのウィンドウの幅では、ナビゲーション ウィンドウ (LeftCompact) (641 ピクセル ~ 1007 ピクセル)。
-- のみメニュー上のボタン (LeftMinimal) 小さいウィンドウ幅 (640 ピクセル以下以内)。
+- A 左、アイコンのみ、普通サイズのウィンドウの幅では、ナビゲーション ウィンドウ (LeftCompact) (641 ピクセル ~ 1007 ピクセル)。
+- のみ] メニュー上のボタン (LeftMinimal) 小さいウィンドウ幅 (640 ピクセル以下以内)。
 
 アダプティブ動作のウィンドウ サイズについて詳しくは、[画面サイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を参照してください。
 
@@ -283,12 +283,12 @@ _ナビゲーション ビューの「最小」アダプティブ動作_
 
 ### <a name="compact"></a>コンパクト
 
-3 番目の一般的なアダプティブ パターンでは、大きなウィンドウの幅と、LeftCompact、アイコンのみ両方大小の普通サイズのウィンドウの幅をナビゲーション ウィンドウで展開された左側のウィンドウを使用します。
+3 番目の一般的なアダプティブ パターンでは、大きなウィンドウの幅、そして、LeftCompact、アイコンのみで両方大小の普通サイズのウィンドウの幅をナビゲーション ウィンドウで、展開された左側のウィンドウを使用します。
 
 このときをお勧めします。
 
 - 常に画面上のすべてのナビゲーション オプションを表示するのには重要です。
-- ナビゲーションのカテゴリは、アイコンを含む明確に表すことができます。
+- ナビゲーションのカテゴリは、アイコンを明確に表すことができます。
 
 ![左側のナビゲーション コンパクトなアダプティブ動作](images/adaptive-behavior-compact.png)<br/>
 _ナビゲーション ビュー"compact"のアダプティブ動作_
@@ -301,7 +301,7 @@ _ナビゲーション ビュー"compact"のアダプティブ動作_
 
 ### <a name="no-adaptive-behavior"></a>アダプティブ動作がないです。
 
-自動のアダプティブ動作を無効にするには、PaneDisplayMode を自動以外の値に設定します。ここでは、設定されている、ウィンドウの幅に関係なく、LeftMinimal にメニュー ボタンのみが表示されます。
+自動のアダプティブ動作を無効にするには、自動以外の値に PaneDisplayMode を設定します。ここでは、設定されている、ウィンドウの幅に関係なく、LeftMinimal にメニュー ボタンのみが表示されます。
 
 ![左側のナビゲーションなしのアダプティブ動作](images/adaptive-behavior-none.png)<br/>
 _PaneDisplayMode LeftMinimal に設定とナビゲーション ビュー_
@@ -310,15 +310,15 @@ _PaneDisplayMode LeftMinimal に設定とナビゲーション ビュー_
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-前述_の表示モード_のセクションで、最上位、常に展開された、常にコンパクトまたは常に最低限に常にするウィンドウを設定できます。 管理することも、表示モード自分で、アプリのコードでします。 この例は、次のセクションに表示されます。
+_表示モード_のセクションで既に説明した、としてトップ、常に展開された、常にコンパクトまたは常に最低限に常にするウィンドウを設定できます。 管理することも、表示モード自分で、アプリのコードにします。 この例は、次のセクションに表示されます。
 
 ### <a name="top-to-left-navigation"></a>左側のナビゲーションを上
 
-上部のナビゲーションを使用して、アプリのナビゲーション項目はウィンドウの幅の減少として、オーバーフロー メニューに折りたたみます。 とき、アプリ ウィンドウが狭い場合は、すべての項目は、オーバーフロー メニューに折りたたむことのではなく、LeftMinimal のナビゲーションを上から PaneDisplayMode を切り替えるユーザー エクスペリエンスの向上を提供できます。
+上部のナビゲーションを使用して、アプリで、ナビゲーション項目は、ウィンドウの幅の減少として、オーバーフロー メニューに折りたたみます。 とき、アプリ ウィンドウが狭い場合は、すべての項目がオーバーフロー メニューに折りたたむことのではなく、LeftMinimal ナビゲーション、上から PaneDisplayMode を切り替えるユーザー エクスペリエンスが向上を提供できます。
 
 大きなウィンドウのサイズと小さなの左側のナビゲーションでの上部のナビゲーションの使用をお勧めします] ウィンドウのサイズを場合。
 
-- その重要度が同じ権を付与する左側のナビゲーションを折りたたむこのセットの 1 つのカテゴリを画面に収まらない場合、一緒に表示される均等に重要なトップレベルのナビゲーション カテゴリのセットがあります。
+- その重要度が同じを与えるの左側のナビゲーションを折りたたむこのセットの 1 つのカテゴリを画面に収まらない場合、一緒に表示される均等に重要なトップレベルのナビゲーション カテゴリのセットがあります。
 - 小さいウィンドウのサイズで可能な領域がはるかにコンテンツを維持したいです。
 
 この例では、上部と LeftMinimal ナビゲーション間を切り替える[VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager)と[AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)プロパティを使用する方法を示します。
@@ -354,28 +354,28 @@ _PaneDisplayMode LeftMinimal に設定とナビゲーション ビュー_
 ```
 
 > [!TIP]
-> AdaptiveTrigger.MinWindowWidth を使用すると、ウィンドウが指定された最小幅よりも広い場合、表示状態がトリガーされます。 これには、既定の XAML は、幅の狭いウィンドウを定義し、VisualState 幅の広いウィンドウを取得するときに適用される変更を定義することを意味します。 既定の PaneDisplayMode ナビゲーション ビューは、自動、したがってときに、ウィンドウの幅が CompactModeThresholdWidth、小さい LeftMinimal ナビゲーションを使用します。 ウィンドウが大きく、VisualState は、既定値を上書きし、上部のナビゲーションを使用します。
+> AdaptiveTrigger.MinWindowWidth を使用すると、ウィンドウが指定された最小幅よりも広い場合、表示状態がトリガーされます。 これは、既定の XAML は、ウィンドウの幅の狭いを定義し、VisualState 幅の広いウィンドウを取得するときに適用される変更を定義することを意味します。 既定の PaneDisplayMode ナビゲーション ビューは、自動、したがってときに、ウィンドウの幅が CompactModeThresholdWidth、小さい LeftMinimal ナビゲーションを使用します。 幅の広いウィンドウを取得、VisualState は、既定値を上書きし、上部のナビゲーションを使用します。
 
 ## <a name="navigation"></a>ナビゲーション
 
 ナビゲーション ビューは、自動的にナビゲーション タスクを実行しません。 ナビゲーション項目をタップ、ナビゲーション ビューは、選択された項目と[ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked)イベントを発生させます。 タップにより新しいアイテムが選択されていると場合も、 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)イベントが発生します。
 
-要求されたナビゲーションに関連するタスクを実行するいずれかのイベントを処理することができます。 これの 1 つ処理する必要がありますは、アプリに目的の動作に依存します。 通常、要求されたページに移動し、これらのイベントへの応答でナビゲーション ビューのヘッダーを更新します。
+要求されたナビゲーションに関連するタスクを実行するいずれかのイベントを処理することができます。 1 つを処理する必要がありますアプリの動作をによって異なります。 通常、要求されたページに移動し、これらのイベントへの応答でナビゲーション ビューのヘッダーを更新します。
 
-**ItemInvoked**が既に選択されている場合でも、いつでも、ユーザーが、ナビゲーション項目をタップ発生します。 (項目も呼び出せるマウス、キーボード、またはその他の入力を使用して、同等の操作とします。 詳しくは、参照[入力と操作](../input/index.md))。ItemInvoked ハンドラーで移動する場合は、既定では、ページが再読み込みは、され、重複したエントリがナビゲーション スタックに追加されます。 呼び出されると、項目を移動する場合は、ページの再読み込みを許可しないやナビゲーション バック スタックに重複するエントリが作成されないである場合、ページが再読み込みすることを確認する必要があります。 (詳しくは、コード例を参照してください)。
+**ItemInvoked**が既に選択されている場合でも、いつでも、ユーザーが、ナビゲーション項目をタップ発生します。 (項目も呼び出せるマウス、キーボード、またはその他の入力を使用して、同等の操作とします。 詳しくは、参照[入力と操作](../input/index.md))。ItemInvoked ハンドラーで移動する場合は、既定では、ページが再読み込みは、および重複したエントリがナビゲーション スタックに追加します。 呼び出されると、項目を移動する場合は、ページの再読み込みを許可しないまたはページの再読み込み時、重複したエントリは、ナビゲーション バック スタックに作成しないことを確認する必要があります。 (詳しくは、コード例を参照してください)。
 
-ユーザーではない、現在選択されている項目の呼び出しによって、またはをプログラムで選択した項目を変更することは、 **SelectionChanged**を発生させることができます。 ユーザーには、項目が呼び出されないため、選択の変更が発生した場合、ItemInvoked イベントが最初に発生します。 選択の変更がプログラムの場合は、ItemInvoked は発生しません。
+ユーザーではない、現在選択されている項目の呼び出しによってまたはをプログラムで選択した項目を変更することは、 **SelectionChanged**を発生させることができます。 ユーザーが項目を呼び出すために選択の変更が発生した場合、ItemInvoked イベントが最初に発生します。 選択の変更がプログラムの場合は、ItemInvoked は発生しません。
 
 ### <a name="backwards-navigation"></a>逆方向のナビゲーション
 
-NavigationView は、組み込みの戻るボタンただしと同様に上位のナビゲーションがない前に戻るナビゲーションを自動的に実行します。 ユーザーが戻るボタンをタップ、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。 前に戻るナビゲーションを実行するには、このイベントを処理します。 詳細情報とコード例については、次を参照してください。[ナビゲーション履歴と前に戻るナビゲーション](../basics/navigation-history-and-backwards-navigation.md)します。
+NavigationView は、組み込みの戻るボタンただし、転送のナビゲーションと同様、しない前に戻るナビゲーションを自動的に実行します。 ユーザーが戻るボタンをタップ、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。 前に戻るナビゲーションを実行するには、このイベントを処理します。 詳細情報とコード例については、次を参照してください。[ナビゲーション履歴と前に戻るナビゲーション](../basics/navigation-history-and-backwards-navigation.md)します。
 
-最小限またはコンパクト モードでは、ナビゲーション ビューは、ウィンドウ、ポップアップとして開いて。 この例では、"戻る"ボタンのクリックしてはウィンドウを閉じるし、 **PaneClosing**イベントを発生させる代わりにします。
+最小限またはコンパクト モードでは、ナビゲーション ビューは、ウィンドウがポップアップとして開いてします。 この例では、[戻る] ボタンをクリックするとは、ウィンドウを閉じるし、 **PaneClosing**イベントが発生する代わりにします。
 
 非表示にするか、これらのプロパティを設定して、戻るボタンを無効にできます。
 
-- [IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): と"戻る"ボタンを非表示に使用します。 このプロパティは、 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列挙体の値を受け取り、既定では**自動的**に設定されます。 ボタンが折りたたまれていると領域ありません用に予約されてレイアウトします。
-- [IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): を有効にするまたは戻るボタンを無効にします。 このプロパティには、ナビゲーション フレームの[CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback)プロパティにデータ バインドできます。 **IsBackEnabled**が**false**の場合、 **BackRequested**は発生しません。
+- [IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): と、戻るボタンを非表示に使用します。 このプロパティは、 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列挙体の値を受け取り、既定では**自動的**に設定されます。 ボタンが折りたたまれているとき領域ない用に予約されてレイアウトします。
+- [IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): を有効にするまたは"戻る"ボタンを無効にします。 このプロパティには、ナビゲーション フレームの[CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback)プロパティにデータ バインドできます。 **IsBackEnabled**が**false**の場合、 **BackRequested**は発生しません。
 
 :::row:::
     :::column:::
@@ -390,9 +390,9 @@ NavigationView は、組み込みの戻るボタンただしと同様に上位�
 
 ## <a name="code-example"></a>コードの例
 
-この例では、大規模なウィンドウ サイズの上部のナビゲーション ウィンドウと小さなウィンドウ サイズの左側のナビゲーション ウィンドウの両方で NavigationView を使用する方法を示しています。 VisualStateManager の_最上部_のナビゲーションの設定を削除して左専用のナビゲーションに合わせることができます。
+この例では、大規模なウィンドウ サイズの上部のナビゲーション ウィンドウと小さなウィンドウ サイズの左側のナビゲーション ウィンドウの両方で NavigationView を使用する方法を示します。 VisualStateManager で、_上部_のナビゲーションの設定を削除することで左専用のナビゲーションに合わせることができます。
 
-多くの一般的なシナリオで動作するナビゲーション データを設定する方法がお勧めの例を示します。 また、前に戻るナビゲーションで NavigationView の"戻る"ボタンとキーボード ナビゲーションを実装する方法を示しています。
+多くの一般的なシナリオに対応するナビゲーション データを設定に推奨される方法の例を示します。 また、前に戻るナビゲーションで NavigationView の"戻る"ボタンとキーボード ナビゲーションを実装する方法を示しています。
 
 このコードでは、アプリがページに移動する次の名前が含まれていると想定しています:_ホームページ_、 _AppsPage_、 _GamesPage_、 _MusicPage_、 _MyContentPage_、および_SettingsPage_します。 これらのページのコードは表示されません。
 
@@ -624,11 +624,30 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
+以下は、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)上記の c# コード例から**NavView_ItemInvoked**ハンドラーのバージョン。 C++ での手法/WinRT ハンドラーは、最初を保存する ( [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)のタグ) ページの完全な型名を移動します。 ハンドラーで、その値をボックス化解除、 [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)オブジェクトにして使うを切り替え先のページに移動します。 という名前のマッピングの変数の必要はありません`_pages`の C# のコード例で表示されます。有効な型のタグの内部値であることを確認する単体テストを作成することができます。 表示[C + 使用した IInspectable へのスカラー値をボックス化とボックス化解除/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)します。
+
+```cppwinrt
+void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
+{
+    if (args.IsSettingsInvoked())
+    {
+        // Navigate to Settings.
+    }
+    else if (args.InvokedItemContainer())
+    {
+        Windows::UI::Xaml::Interop::TypeName pageTypeName;
+        pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
+        pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+        ContentFrame().Navigate(pageTypeName, nullptr);
+    }
+}
+```
+
 ## <a name="navigation-view-customization"></a>ナビゲーション ビューのカスタマイズ
 
 ### <a name="pane-backgrounds"></a>ウィンドウの背景
 
-既定では、NavigationView ウィンドウは、表示モードに応じて、さまざまな背景を使用します。
+既定では、NavigationView ウィンドウは、表示モードに応じて、別の背景を使用します。
 
 - ウィンドウは、単色の灰色カラー (左モード) では、コンテンツと並行して、左側の展開されたときです。
 - ウィンドウは、コンテンツ (上、最小限に抑えながら、またはコンパクト モードで) 上にオーバーレイとして開くときに、アプリ内アクリルを使用します。
