@@ -11,62 +11,62 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e436e45e70980e9f75749b3a9377f61b636f890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c86ddee3558da23cd8bea5e0f16c6a8695babf84
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928549"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973953"
 ---
-# <a name="navigation-view"></a><span data-ttu-id="c6fe3-103">ナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-103">Navigation view</span></span>
+# <a name="navigation-view"></a><span data-ttu-id="43c95-103">ナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="43c95-103">Navigation view</span></span>
 
-<span data-ttu-id="c6fe3-104">NavigationView コントロールでは、アプリのトップレベルのナビゲーションを提供します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-104">The NavigationView control provides top-level navigation for your app.</span></span> <span data-ttu-id="c6fe3-105">さまざまな画面サイズに合わせて変化して、_上部_と_左側_のナビゲーションのスタイルをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-105">It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles.</span></span>
+<span data-ttu-id="43c95-104">NavigationView コントロールでは、アプリのトップレベルのナビゲーションを提供します。</span><span class="sxs-lookup"><span data-stu-id="43c95-104">The NavigationView control provides top-level navigation for your app.</span></span> <span data-ttu-id="43c95-105">さまざまな画面サイズに合わせて変化して、_上部_と_左側_のナビゲーションのスタイルをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="43c95-105">It adapts to a variety of screen sizes and supports both _top_ and _left_ navigation styles.</span></span>
 
 ![上部のナビゲーション](images/nav-view-header.png)<br/>
-_<span data-ttu-id="c6fe3-107">ナビゲーション ビューは、上部と左側のナビゲーション ウィンドウまたはメニューの両方をサポートしています</span><span class="sxs-lookup"><span data-stu-id="c6fe3-107">Navigation view supports both top and left navigation pane or menu</span></span>_
+_<span data-ttu-id="43c95-107">ナビゲーション ビューは、上部と左側のナビゲーション ウィンドウまたはメニューの両方をサポートしています</span><span class="sxs-lookup"><span data-stu-id="43c95-107">Navigation view supports both top and left navigation pane or menu</span></span>_
 
-> <span data-ttu-id="c6fe3-108">**プラットフォーム Api**: [Windows.UI.Xaml.Controls.NavigationView クラス](/uwp/api/windows.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-108">**Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)</span></span>
+> <span data-ttu-id="43c95-108">**プラットフォーム Api**: [Windows.UI.Xaml.Controls.NavigationView クラス](/uwp/api/windows.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="43c95-108">**Platform APIs**: [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)</span></span>
 >
-> <span data-ttu-id="c6fe3-109">**Windows UI ライブラリ Api**: [Microsoft.UI.Xaml.Controls.NavigationView クラス](/uwp/api/microsoft.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-109">**Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview)</span></span>
+> <span data-ttu-id="43c95-109">**Windows UI ライブラリ Api**: [Microsoft.UI.Xaml.Controls.NavigationView クラス](/uwp/api/microsoft.ui.xaml.controls.navigationview)</span><span class="sxs-lookup"><span data-stu-id="43c95-109">**Windows UI Library APIs**: [Microsoft.UI.Xaml.Controls.NavigationView class](/uwp/api/microsoft.ui.xaml.controls.navigationview)</span></span>
 >
-> <span data-ttu-id="c6fe3-110">_上部_のナビゲーションなど、NavigationView の一部の機能に必要な Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-110">Some features of NavigationView, such as _top_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).</span></span>
+> <span data-ttu-id="43c95-110">_上部_のナビゲーションなど、NavigationView の一部の機能に必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。</span><span class="sxs-lookup"><span data-stu-id="43c95-110">Some features of NavigationView, such as _top_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).</span></span>
 
-## <a name="is-this-the-right-control"></a><span data-ttu-id="c6fe3-111">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="c6fe3-111">Is this the right control?</span></span>
+## <a name="is-this-the-right-control"></a><span data-ttu-id="43c95-111">適切なコントロールの選択</span><span class="sxs-lookup"><span data-stu-id="43c95-111">Is this the right control?</span></span>
 
-<span data-ttu-id="c6fe3-112">NavigationView に適していますが、アダプティブ ナビゲーション コントロールを示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-112">NavigationView is an adaptive navigation control that works well for:</span></span>
+<span data-ttu-id="43c95-112">NavigationView は、適切に動作するアダプティブ ナビゲーション コントロールを示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-112">NavigationView is an adaptive navigation control that works well for:</span></span>
 
-- <span data-ttu-id="c6fe3-113">アプリ全体で一貫性のあるナビゲーション エクスペリエンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-113">Providing a consistent navigational experience throughout your app.</span></span>
-- <span data-ttu-id="c6fe3-114">幅が狭いウィンドウには、画面領域を保持します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-114">Preserving screen real estate on smaller windows.</span></span>
-- <span data-ttu-id="c6fe3-115">多くのナビゲーション カテゴリへのアクセスを構成します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-115">Organizing access to many navigation categories.</span></span>
+- <span data-ttu-id="43c95-113">アプリ全体で一貫性のあるナビゲーション エクスペリエンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="43c95-113">Providing a consistent navigational experience throughout your app.</span></span>
+- <span data-ttu-id="43c95-114">幅が狭いウィンドウには、画面領域を保持します。</span><span class="sxs-lookup"><span data-stu-id="43c95-114">Preserving screen real estate on smaller windows.</span></span>
+- <span data-ttu-id="43c95-115">ナビゲーション カテゴリに分かれたへのアクセスを構成します。</span><span class="sxs-lookup"><span data-stu-id="43c95-115">Organizing access to many navigation categories.</span></span>
 
-<span data-ttu-id="c6fe3-116">その他のナビゲーション パターンは、[ナビゲーション デザインの基本](../basics/navigation-basics.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-116">For other navigation patterns, see [Navigation design basics](../basics/navigation-basics.md).</span></span>
+<span data-ttu-id="43c95-116">その他のナビゲーション パターンは、[ナビゲーション デザインの基本](../basics/navigation-basics.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43c95-116">For other navigation patterns, see [Navigation design basics](../basics/navigation-basics.md).</span></span>
 
-## <a name="examples"></a><span data-ttu-id="c6fe3-117">例</span><span class="sxs-lookup"><span data-stu-id="c6fe3-117">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="43c95-117">例</span><span class="sxs-lookup"><span data-stu-id="43c95-117">Examples</span></span>
 
 <table>
-<th align="left"><span data-ttu-id="c6fe3-118">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-118">XAML Controls Gallery</span></span><th>
+<th align="left"><span data-ttu-id="43c95-118">XAML コントロール ギャラリー</span><span class="sxs-lookup"><span data-stu-id="43c95-118">XAML Controls Gallery</span></span><th>
 <tr>
 <td><img src="images/XAML-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p><span data-ttu-id="c6fe3-119"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">アプリを開き、NavigationView の動作を確認</a>してください。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-119">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</span></span></p>
+    <p><span data-ttu-id="43c95-119"><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">アプリを開き、NavigationView の動作を確認</a>してください。</span><span class="sxs-lookup"><span data-stu-id="43c95-119">If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</span></span></p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="c6fe3-120">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-120">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="c6fe3-121">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="c6fe3-121">Get the source code (GitHub)</span></span></a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT"><span data-ttu-id="43c95-120">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</span><span class="sxs-lookup"><span data-stu-id="43c95-120">Get the XAML Controls Gallery app (Microsoft Store)</span></span></a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><span data-ttu-id="43c95-121">ソース コード (GitHub) を入手する</span><span class="sxs-lookup"><span data-stu-id="43c95-121">Get the source code (GitHub)</span></span></a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-## <a name="display-modes"></a><span data-ttu-id="c6fe3-122">表示モード</span><span class="sxs-lookup"><span data-stu-id="c6fe3-122">Display modes</span></span>
+## <a name="display-modes"></a><span data-ttu-id="43c95-122">表示モード</span><span class="sxs-lookup"><span data-stu-id="43c95-122">Display modes</span></span>
 
-> <span data-ttu-id="c6fe3-123">PaneDisplayMode プロパティには、Windows 10、バージョン 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要なまたはそれ以降、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-123">The PaneDisplayMode property requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).</span></span>
+> <span data-ttu-id="43c95-123">PaneDisplayMode プロパティには、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。</span><span class="sxs-lookup"><span data-stu-id="43c95-123">The PaneDisplayMode property requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/).</span></span>
 
-<span data-ttu-id="c6fe3-124">PaneDisplayMode プロパティを使用して、さまざまなナビゲーションのスタイルを構成したり、NavigationView の表示モード、できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-124">You can use the PaneDisplayMode property to configure different navigation styles, or display modes, for the NavigationView.</span></span>
+<span data-ttu-id="43c95-124">PaneDisplayMode プロパティを使用して、さまざまなナビゲーションのスタイルを構成したり、NavigationView の表示モード、できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-124">You can use the PaneDisplayMode property to configure different navigation styles, or display modes, for the NavigationView.</span></span>
 
 :::row:::
     :::column:::
-    ### <a name="top"></a><span data-ttu-id="c6fe3-125">Top</span><span class="sxs-lookup"><span data-stu-id="c6fe3-125">Top</span></span>
-    <span data-ttu-id="c6fe3-126">ウィンドウはコンテンツの上に配置されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-126">The pane is positioned above the content.</span></span></br>
+    ### <a name="top"></a><span data-ttu-id="43c95-125">Top</span><span class="sxs-lookup"><span data-stu-id="43c95-125">Top</span></span>
+    <span data-ttu-id="43c95-126">ウィンドウはコンテンツの上に配置されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-126">The pane is positioned above the content.</span></span></br>
     `PaneDisplayMode="Top"`
     :::column-end:::
     :::column span="2":::
@@ -74,17 +74,17 @@ _<span data-ttu-id="c6fe3-107">ナビゲーション ビューは、上部と左
     :::column-end:::
 :::row-end:::
 
-<span data-ttu-id="c6fe3-128">_上部_のナビゲーションをお勧めする場合。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-128">We recommend _top_ navigation when:</span></span>
+<span data-ttu-id="43c95-128">_上部_のナビゲーションをお勧めする場合。</span><span class="sxs-lookup"><span data-stu-id="43c95-128">We recommend _top_ navigation when:</span></span>
 
-- <span data-ttu-id="c6fe3-129">5 または均等に重要ですが、以下のトップレベルのナビゲーション カテゴリと、ドロップダウン オーバーフロー メニューにたどり着きますカテゴリは、重要度の低いと見なされる追加トップレベルのナビゲーションがあります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-129">You have 5 or fewer top-level navigation categories that are equally important, and any additional top-level navigation categories that end up in the dropdown overflow menu are considered less important.</span></span>
-- <span data-ttu-id="c6fe3-130">画面上のすべてのナビゲーション オプションを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-130">You need to show all navigation options on screen.</span></span>
-- <span data-ttu-id="c6fe3-131">アプリのコンテンツのスペースを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-131">You want more space for your app content.</span></span>
-- <span data-ttu-id="c6fe3-132">アイコンは、アプリのナビゲーションのカテゴリを明確に記述ことはできません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-132">Icons cannot clearly describe your app's navigation categories.</span></span>
+- <span data-ttu-id="43c95-129">5 または均等に重要ですより少ないのトップレベルのナビゲーション カテゴリと、ドロップダウン オーバーフロー メニューにたどり着きますカテゴリは、重要度の低いと見なされる追加トップレベルのナビゲーションがあります。</span><span class="sxs-lookup"><span data-stu-id="43c95-129">You have 5 or fewer top-level navigation categories that are equally important, and any additional top-level navigation categories that end up in the dropdown overflow menu are considered less important.</span></span>
+- <span data-ttu-id="43c95-130">画面上のすべてのナビゲーション オプションを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-130">You need to show all navigation options on screen.</span></span>
+- <span data-ttu-id="43c95-131">アプリのコンテンツのスペースを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="43c95-131">You want more space for your app content.</span></span>
+- <span data-ttu-id="43c95-132">アイコンは、アプリのナビゲーションのカテゴリを明確に記述ことはできません。</span><span class="sxs-lookup"><span data-stu-id="43c95-132">Icons cannot clearly describe your app's navigation categories.</span></span>
 
 :::row:::
     :::column:::
-    ### <a name="left"></a><span data-ttu-id="c6fe3-133">Left</span><span class="sxs-lookup"><span data-stu-id="c6fe3-133">Left</span></span>
-    <span data-ttu-id="c6fe3-134">ウィンドウは展開され、コンテンツの左側に配置します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-134">The pane is expanded and positioned to the left of the content.</span></span></br>
+    ### <a name="left"></a><span data-ttu-id="43c95-133">Left</span><span class="sxs-lookup"><span data-stu-id="43c95-133">Left</span></span>
+    <span data-ttu-id="43c95-134">ウィンドウが展開され、コンテンツの左側に配置します。</span><span class="sxs-lookup"><span data-stu-id="43c95-134">The pane is expanded and positioned to the left of the content.</span></span></br>
     `PaneDisplayMode="Left"`
     :::column-end:::
     :::column span="2":::
@@ -92,15 +92,15 @@ _<span data-ttu-id="c6fe3-107">ナビゲーション ビューは、上部と左
     :::column-end:::
 :::row-end:::
 
-<span data-ttu-id="c6fe3-136">_左側_のナビゲーションをお勧めする場合。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-136">We recommend _left_ navigation when:</span></span>
+<span data-ttu-id="43c95-136">_左側_のナビゲーションをお勧めする場合。</span><span class="sxs-lookup"><span data-stu-id="43c95-136">We recommend _left_ navigation when:</span></span>
 
-- <span data-ttu-id="c6fe3-137">5 ~ 10 均等に重要なトップレベルのナビゲーションのカテゴリがあります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-137">You have 5-10 equally important top-level navigation categories.</span></span>
-- <span data-ttu-id="c6fe3-138">ナビゲーションのカテゴリの他のアプリのコンテンツ領域が少なく、非常に目立つにします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-138">You want navigation categories to be very prominent, with less space for other app content.</span></span>
+- <span data-ttu-id="43c95-137">5 ~ 10 均等に重要なトップレベルのナビゲーションのカテゴリがあります。</span><span class="sxs-lookup"><span data-stu-id="43c95-137">You have 5-10 equally important top-level navigation categories.</span></span>
+- <span data-ttu-id="43c95-138">ナビゲーションのカテゴリの他のアプリのコンテンツ領域が少なく、非常に掲示する場合します。</span><span class="sxs-lookup"><span data-stu-id="43c95-138">You want navigation categories to be very prominent, with less space for other app content.</span></span>
 
 :::row:::
     :::column:::
-    ### <a name="leftcompact"></a><span data-ttu-id="c6fe3-139">LeftCompact</span><span class="sxs-lookup"><span data-stu-id="c6fe3-139">LeftCompact</span></span>
-    <span data-ttu-id="c6fe3-140">ウィンドウを開くし、コンテンツの左側に配置されるまでアイコンのみを示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-140">The pane shows only icons until opened and is positioned to the left of the content.</span></span></br>
+    ### <a name="leftcompact"></a><span data-ttu-id="43c95-139">LeftCompact</span><span class="sxs-lookup"><span data-stu-id="43c95-139">LeftCompact</span></span>
+    <span data-ttu-id="43c95-140">ウィンドウを開くし、コンテンツの左側に配置されるまでアイコンのみを示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-140">The pane shows only icons until opened and is positioned to the left of the content.</span></span></br>
     `PaneDisplayMode="LeftCompact"`
     :::column-end:::
     :::column span="2":::
@@ -110,8 +110,8 @@ _<span data-ttu-id="c6fe3-107">ナビゲーション ビューは、上部と左
 
 :::row:::
     :::column:::
-    ### <a name="leftminimal"></a><span data-ttu-id="c6fe3-142">LeftMinimal</span><span class="sxs-lookup"><span data-stu-id="c6fe3-142">LeftMinimal</span></span>
-    <span data-ttu-id="c6fe3-143">ウィンドウが開かれるまで、メニュー ボタンのみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-143">Only the menu button is shown until the pane is opened.</span></span> <span data-ttu-id="c6fe3-144">開いているときは、コンテンツの左側に配置されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-144">When opened, it's positioned to the left of the content.</span></span></br>
+    ### <a name="leftminimal"></a><span data-ttu-id="43c95-142">LeftMinimal</span><span class="sxs-lookup"><span data-stu-id="43c95-142">LeftMinimal</span></span>
+    <span data-ttu-id="43c95-143">ウィンドウが開かれるまで、メニュー ボタンのみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-143">Only the menu button is shown until the pane is opened.</span></span> <span data-ttu-id="43c95-144">開いているときは、コンテンツの左側に配置されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-144">When opened, it's positioned to the left of the content.</span></span></br>
     `PaneDisplayMode="LeftMinimal"`
     :::column-end:::
     :::column span="2":::
@@ -119,209 +119,209 @@ _<span data-ttu-id="c6fe3-107">ナビゲーション ビューは、上部と左
     :::column-end:::
 :::row-end:::
 
-### <a name="auto"></a><span data-ttu-id="c6fe3-146">自動</span><span class="sxs-lookup"><span data-stu-id="c6fe3-146">Auto</span></span>
+### <a name="auto"></a><span data-ttu-id="43c95-146">自動</span><span class="sxs-lookup"><span data-stu-id="43c95-146">Auto</span></span>
 
-<span data-ttu-id="c6fe3-147">既定では、PaneDisplayMode が Auto に設定されます。自動モードでは、ナビゲーション ビューは、LeftMinimal、ウィンドウが狭い LeftCompact、するときの間で対応し、幅の広いウィンドウを取得し、ままします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-147">By default, PaneDisplayMode is set to Auto. In Auto mode, the navigation view adapts between LeftMinimal when the window is narrow, to LeftCompact, and then Left as the window gets wider.</span></span> <span data-ttu-id="c6fe3-148">詳しくは、[アダプティブ動作](#adaptive-behavior)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-148">For more info, see the [adaptive behavior](#adaptive-behavior) section.</span></span>
+<span data-ttu-id="43c95-147">既定では、PaneDisplayMode が Auto に設定されます。自動モードでは、ナビゲーション ビューは、LeftMinimal、ウィンドウが狭い LeftCompact、するときの間で対応し、幅の広いウィンドウを取得し、ままします。</span><span class="sxs-lookup"><span data-stu-id="43c95-147">By default, PaneDisplayMode is set to Auto. In Auto mode, the navigation view adapts between LeftMinimal when the window is narrow, to LeftCompact, and then Left as the window gets wider.</span></span> <span data-ttu-id="43c95-148">詳しくは、[アダプティブ動作](#adaptive-behavior)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43c95-148">For more info, see the [adaptive behavior](#adaptive-behavior) section.</span></span>
 
 ![左側のナビゲーションの既定のアダプティブ動作](images/displaymode-auto.png)<br/>
-_<span data-ttu-id="c6fe3-150">ナビゲーション ビューの既定のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="c6fe3-150">Navigation view default adaptive behavior</span></span>_
+_<span data-ttu-id="43c95-150">ナビゲーション ビューの既定のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="43c95-150">Navigation view default adaptive behavior</span></span>_
 
-## <a name="anatomy"></a><span data-ttu-id="c6fe3-151">構造</span><span class="sxs-lookup"><span data-stu-id="c6fe3-151">Anatomy</span></span>
+## <a name="anatomy"></a><span data-ttu-id="43c95-151">構造</span><span class="sxs-lookup"><span data-stu-id="43c95-151">Anatomy</span></span>
 
-<span data-ttu-id="c6fe3-152">これらの画像は、ウィンドウ、ヘッダーおよびコンテンツ領域の_上部_または_左側_のナビゲーション用に構成されている場合、コントロールのレイアウトを表示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-152">These images show the layout of the pane, header, and content areas of the control when configured for _top_ or _left_ navigation.</span></span>
+<span data-ttu-id="43c95-152">これらの画像は、ウィンドウ、ヘッダー、およびコンテンツ領域の_上_または_左側_のナビゲーション用に構成されている場合、コントロールのレイアウトを表示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-152">These images show the layout of the pane, header, and content areas of the control when configured for _top_ or _left_ navigation.</span></span>
 
 ![上部のナビゲーション ビューのレイアウト](images/topnav-anatomy.png)<br/>
-_<span data-ttu-id="c6fe3-154">上部のナビゲーションのレイアウト</span><span class="sxs-lookup"><span data-stu-id="c6fe3-154">Top navigation layout</span></span>_
+_<span data-ttu-id="43c95-154">上部のナビゲーションのレイアウト</span><span class="sxs-lookup"><span data-stu-id="43c95-154">Top navigation layout</span></span>_
 
 ![左側のナビゲーション ビューのレイアウト](images/leftnav-anatomy.png)<br/>
-_<span data-ttu-id="c6fe3-156">左側のナビゲーションのレイアウト</span><span class="sxs-lookup"><span data-stu-id="c6fe3-156">Left navigation layout</span></span>_
+_<span data-ttu-id="43c95-156">左側のナビゲーションのレイアウト</span><span class="sxs-lookup"><span data-stu-id="43c95-156">Left navigation layout</span></span>_
 
-### <a name="pane"></a><span data-ttu-id="c6fe3-157">ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-157">Pane</span></span>
+### <a name="pane"></a><span data-ttu-id="43c95-157">ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="43c95-157">Pane</span></span>
 
-<span data-ttu-id="c6fe3-158">PaneDisplayMode プロパティを使用して、コンテンツの上またはコンテンツの左側のウィンドウを配置することができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-158">You can use the PaneDisplayMode property to position the pane above the content or to the left of the content.</span></span>
+<span data-ttu-id="43c95-158">PaneDisplayMode プロパティを使用して、コンテンツの上またはコンテンツの左側のウィンドウを配置することができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-158">You can use the PaneDisplayMode property to position the pane above the content or to the left of the content.</span></span>
 
-<span data-ttu-id="c6fe3-159">NavigationView ウィンドウを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-159">The NavigationView pane can contain:</span></span>
+<span data-ttu-id="43c95-159">NavigationView ウィンドウを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-159">The NavigationView pane can contain:</span></span>
 
-- <span data-ttu-id="c6fe3-160">[NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-160">[NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) objects.</span></span> <span data-ttu-id="c6fe3-161">特定のページに移動するためのナビゲーション項目。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-161">Navigation items for navigating to specific pages.</span></span>
-- <span data-ttu-id="c6fe3-162">[NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-162">[NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) objects.</span></span> <span data-ttu-id="c6fe3-163">ナビゲーション項目をグループ化するための区切り記号です。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-163">Separators for grouping navigation items.</span></span> <span data-ttu-id="c6fe3-164">[不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-164">Set the [Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) property to 0 to render the separator as space.</span></span>
-- <span data-ttu-id="c6fe3-165">[NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-165">[NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects.</span></span> <span data-ttu-id="c6fe3-166">項目のグループにラベルを付けるためのヘッダー。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-166">Headers for labeling groups of items.</span></span>
-- <span data-ttu-id="c6fe3-167">アプリ レベルの検索を許可するオプション[AutoSuggestBox](auto-suggest-box.md)コントロール。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-167">An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search.</span></span> <span data-ttu-id="c6fe3-168">[NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)プロパティには、コントロールを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-168">Assign the control to the [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) property.</span></span>
-- <span data-ttu-id="c6fe3-169">[アプリ設定](../app-settings/app-settings-and-data.md)のエントリ ポイント (オプション)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-169">An optional entry point for [app settings](../app-settings/app-settings-and-data.md).</span></span> <span data-ttu-id="c6fe3-170">設定項目を非表示に[IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)プロパティを**false**に設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-170">To hide the settings item, set the [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property to **false**.</span></span>
+- <span data-ttu-id="43c95-160">[NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="43c95-160">[NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem) objects.</span></span> <span data-ttu-id="43c95-161">特定のページに移動するためのナビゲーション項目。</span><span class="sxs-lookup"><span data-stu-id="43c95-161">Navigation items for navigating to specific pages.</span></span>
+- <span data-ttu-id="43c95-162">[NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="43c95-162">[NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) objects.</span></span> <span data-ttu-id="43c95-163">ナビゲーション項目をグループ化するための区切り記号です。</span><span class="sxs-lookup"><span data-stu-id="43c95-163">Separators for grouping navigation items.</span></span> <span data-ttu-id="43c95-164">[不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-164">Set the [Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity) property to 0 to render the separator as space.</span></span>
+- <span data-ttu-id="43c95-165">[NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="43c95-165">[NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) objects.</span></span> <span data-ttu-id="43c95-166">項目のグループにラベルを付けるためのヘッダー。</span><span class="sxs-lookup"><span data-stu-id="43c95-166">Headers for labeling groups of items.</span></span>
+- <span data-ttu-id="43c95-167">アプリ レベルの検索を許可するオプションの[AutoSuggestBox](auto-suggest-box.md)コントロール。</span><span class="sxs-lookup"><span data-stu-id="43c95-167">An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search.</span></span> <span data-ttu-id="43c95-168">[NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)プロパティにコントロールを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="43c95-168">Assign the control to the [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) property.</span></span>
+- <span data-ttu-id="43c95-169">[アプリ設定](../app-settings/app-settings-and-data.md)のエントリ ポイント (オプション)</span><span class="sxs-lookup"><span data-stu-id="43c95-169">An optional entry point for [app settings](../app-settings/app-settings-and-data.md).</span></span> <span data-ttu-id="43c95-170">設定項目を非表示に[IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)プロパティを**false**に設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-170">To hide the settings item, set the [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) property to **false**.</span></span>
 
-<span data-ttu-id="c6fe3-171">左側のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-171">The left pane also contains:</span></span>
+<span data-ttu-id="43c95-171">左側のウィンドウが含まれています。</span><span class="sxs-lookup"><span data-stu-id="43c95-171">The left pane also contains:</span></span>
 
-- <span data-ttu-id="c6fe3-172">開閉ウィンドウを切り替えるメニュー ボタン。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-172">A menu button to toggle the pane opened and closed.</span></span> <span data-ttu-id="c6fe3-173">[IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) プロパティを使うと、ウィンドウが開いたとき、大きなアプリ ウィンドウで、このボタンを非表示にすることを選択できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-173">On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.</span></span>
+- <span data-ttu-id="43c95-172">開閉ウィンドウを切り替えるメニュー ボタン。</span><span class="sxs-lookup"><span data-stu-id="43c95-172">A menu button to toggle the pane opened and closed.</span></span> <span data-ttu-id="43c95-173">[IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) プロパティを使うと、ウィンドウが開いたとき、大きなアプリ ウィンドウで、このボタンを非表示にすることを選択できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-173">On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) property.</span></span>
 
-<span data-ttu-id="c6fe3-174">ナビゲーション ビューには、ウィンドウの左上隅に配置されている"戻る"ボタンがあります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-174">The navigation view has a back button that is placed in the top left-hand corner of the pane.</span></span> <span data-ttu-id="c6fe3-175">ただし、自動的に処理する前に戻るナビゲーションし、バック スタックにコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-175">However, it does not automatically handle backwards navigation and add content to the back stack.</span></span> <span data-ttu-id="c6fe3-176">を有効にする前に戻るナビゲーションを参照してください。、[前に戻るナビゲーション](#backwards-navigation)セクションです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-176">To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.</span></span>
+<span data-ttu-id="43c95-174">ナビゲーション ビューには、ウィンドウの左上隅に配置されている"戻る"ボタンがあります。</span><span class="sxs-lookup"><span data-stu-id="43c95-174">The navigation view has a back button that is placed in the top left-hand corner of the pane.</span></span> <span data-ttu-id="43c95-175">ただし、自動的に処理する前に戻るナビゲーションし、バック スタックにコンテンツを追加します。</span><span class="sxs-lookup"><span data-stu-id="43c95-175">However, it does not automatically handle backwards navigation and add content to the back stack.</span></span> <span data-ttu-id="43c95-176">を有効にする前に戻るナビゲーションを参照してください。、[前に戻るナビゲーション](#backwards-navigation)セクションです。</span><span class="sxs-lookup"><span data-stu-id="43c95-176">To enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.</span></span>
 
-<span data-ttu-id="c6fe3-177">上部と左側のウィンドウの位置の詳細ウィンドウの構造を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-177">Here is the detailed pane anatomy for the top and left pane positions.</span></span>
+<span data-ttu-id="43c95-177">上部と左側のウィンドウの位置の詳細ウィンドウの構造を次に示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-177">Here is the detailed pane anatomy for the top and left pane positions.</span></span>
 
-#### <a name="top-navigation-pane"></a><span data-ttu-id="c6fe3-178">上部のナビゲーション ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-178">Top navigation pane</span></span>
+#### <a name="top-navigation-pane"></a><span data-ttu-id="43c95-178">上部のナビゲーション ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="43c95-178">Top navigation pane</span></span>
 
 ![ナビゲーション ビューの上部のウィンドウの構造](images/navview-pane-anatomy-horizontal.png)
 
-1. <span data-ttu-id="c6fe3-180">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-180">Headers</span></span>
-1. <span data-ttu-id="c6fe3-181">ナビゲーション項目</span><span class="sxs-lookup"><span data-stu-id="c6fe3-181">Navigation items</span></span>
-1. <span data-ttu-id="c6fe3-182">区切り文字</span><span class="sxs-lookup"><span data-stu-id="c6fe3-182">Separators</span></span>
-1. <span data-ttu-id="c6fe3-183">AutoSuggestBox (省略可能)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-183">AutoSuggestBox (optional)</span></span>
-1. <span data-ttu-id="c6fe3-184">設定ボタン (省略可能)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-184">Settings button (optional)</span></span>
+1. <span data-ttu-id="43c95-180">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-180">Headers</span></span>
+1. <span data-ttu-id="43c95-181">ナビゲーション項目</span><span class="sxs-lookup"><span data-stu-id="43c95-181">Navigation items</span></span>
+1. <span data-ttu-id="43c95-182">区切り文字</span><span class="sxs-lookup"><span data-stu-id="43c95-182">Separators</span></span>
+1. <span data-ttu-id="43c95-183">AutoSuggestBox (省略可能)</span><span class="sxs-lookup"><span data-stu-id="43c95-183">AutoSuggestBox (optional)</span></span>
+1. <span data-ttu-id="43c95-184">(省略可能) の設定] ボタン</span><span class="sxs-lookup"><span data-stu-id="43c95-184">Settings button (optional)</span></span>
 
-#### <a name="left-navigation-pane"></a><span data-ttu-id="c6fe3-185">左側のナビゲーション ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-185">Left navigation pane</span></span>
+#### <a name="left-navigation-pane"></a><span data-ttu-id="43c95-185">左側のナビゲーション ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="43c95-185">Left navigation pane</span></span>
 
 ![左ペインの構造、ナビゲーション ビュー](images/navview-pane-anatomy-vertical.png)
 
-1. <span data-ttu-id="c6fe3-187">メニュー ボタン</span><span class="sxs-lookup"><span data-stu-id="c6fe3-187">Menu button</span></span>
-1. <span data-ttu-id="c6fe3-188">ナビゲーション項目</span><span class="sxs-lookup"><span data-stu-id="c6fe3-188">Navigation items</span></span>
-1. <span data-ttu-id="c6fe3-189">区切り文字</span><span class="sxs-lookup"><span data-stu-id="c6fe3-189">Separators</span></span>
-1. <span data-ttu-id="c6fe3-190">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-190">Headers</span></span>
-1. <span data-ttu-id="c6fe3-191">AutoSuggestBox (省略可能)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-191">AutoSuggestBox (optional)</span></span>
-1. <span data-ttu-id="c6fe3-192">設定ボタン (省略可能)</span><span class="sxs-lookup"><span data-stu-id="c6fe3-192">Settings button (optional)</span></span>
+1. <span data-ttu-id="43c95-187">メニュー ボタン</span><span class="sxs-lookup"><span data-stu-id="43c95-187">Menu button</span></span>
+1. <span data-ttu-id="43c95-188">ナビゲーション項目</span><span class="sxs-lookup"><span data-stu-id="43c95-188">Navigation items</span></span>
+1. <span data-ttu-id="43c95-189">区切り文字</span><span class="sxs-lookup"><span data-stu-id="43c95-189">Separators</span></span>
+1. <span data-ttu-id="43c95-190">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-190">Headers</span></span>
+1. <span data-ttu-id="43c95-191">AutoSuggestBox (省略可能)</span><span class="sxs-lookup"><span data-stu-id="43c95-191">AutoSuggestBox (optional)</span></span>
+1. <span data-ttu-id="43c95-192">(省略可能) の設定] ボタン</span><span class="sxs-lookup"><span data-stu-id="43c95-192">Settings button (optional)</span></span>
 
-#### <a name="pane-footer"></a><span data-ttu-id="c6fe3-193">ウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="c6fe3-193">Pane footer</span></span>
+#### <a name="pane-footer"></a><span data-ttu-id="43c95-193">ウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="43c95-193">Pane footer</span></span>
 
-<span data-ttu-id="c6fe3-194">ウィンドウのフッターの自由形式のコンテンツを配置するには、 [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter)プロパティに追加します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-194">You can place free-form content in the pane's footer by adding it to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property.</span></span>
+<span data-ttu-id="43c95-194">ウィンドウのフッターの自由形式のコンテンツを配置するには、 [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter)プロパティに追加します。</span><span class="sxs-lookup"><span data-stu-id="43c95-194">You can place free-form content in the pane's footer by adding it to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneFooter) property.</span></span>
 
 :::row:::
     :::column:::
     ![ウィンドウのフッターに目的の上部のナビゲーション](images/navview-freeform-footer-top.png)<br>
-     _<span data-ttu-id="c6fe3-196">上部のウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="c6fe3-196">Top pane footer</span></span>_<br>
+     _<span data-ttu-id="43c95-196">上部のウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="43c95-196">Top pane footer</span></span>_<br>
     :::column-end:::
     :::column:::
     ![ウィンドウのフッターに目的の左側のナビゲーション](images/navview-freeform-footer-left.png)<br>
-    _<span data-ttu-id="c6fe3-198">左側のウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="c6fe3-198">Left pane footer</span></span>_<br>
+    _<span data-ttu-id="43c95-198">左側のウィンドウのフッター</span><span class="sxs-lookup"><span data-stu-id="43c95-198">Left pane footer</span></span>_<br>
     :::column-end:::
 :::row-end:::
 
-#### <a name="pane-title-and-header"></a><span data-ttu-id="c6fe3-199">ウィンドウのタイトルとヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-199">Pane title and header</span></span>
+#### <a name="pane-title-and-header"></a><span data-ttu-id="43c95-199">ウィンドウのタイトルとヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-199">Pane title and header</span></span>
 
-<span data-ttu-id="c6fe3-200">ウィンドウのヘッダー領域でテキスト コンテンツを配置するには、 [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle)プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-200">You can place text content in the pane header area by setting the [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) property.</span></span> <span data-ttu-id="c6fe3-201">文字列に移動し、メニュー ボタンの横にあるテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-201">It takes a string and shows the text next to the menu button.</span></span>
+<span data-ttu-id="43c95-200">ウィンドウのヘッダー領域でテキスト コンテンツを配置するには、 [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle)プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-200">You can place text content in the pane header area by setting the [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneTitle) property.</span></span> <span data-ttu-id="43c95-201">文字列に移動し、メニュー ボタンの横にあるテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-201">It takes a string and shows the text next to the menu button.</span></span>
 
-<span data-ttu-id="c6fe3-202">画像やロゴなどのテキスト以外のコンテンツを追加するには、 [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)プロパティを追加することによって、ウィンドウのヘッダーで任意の要素を配置できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-202">To add non-text content, such as an image or logo, you can place any element in the pane's header by adding it to the [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) property.</span></span>
+<span data-ttu-id="43c95-202">画像やロゴなどのテキスト以外のコンテンツを追加するには、 [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader)プロパティに追加することによって、ウィンドウのヘッダーに任意の要素を配置できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-202">To add non-text content, such as an image or logo, you can place any element in the pane's header by adding it to the [PaneHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneHeader) property.</span></span>
 
-<span data-ttu-id="c6fe3-203">PaneTitle と PaneHeader の両方が設定されている場合、コンテンツは、メニュー ボタンに最も近い PaneTitle、メニュー ボタンの横にある水平方向に stacked します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-203">If both PaneTitle and PaneHeader are set, the content is stacked horizontally next to the menu button, with the PaneTitle closest to the menu button.</span></span>
+<span data-ttu-id="43c95-203">PaneTitle と PaneHeader の両方が設定されている場合、コンテンツは、メニュー ボタンに最も近い PaneTitle、メニュー ボタンの横にある水平方向に stacked します。</span><span class="sxs-lookup"><span data-stu-id="43c95-203">If both PaneTitle and PaneHeader are set, the content is stacked horizontally next to the menu button, with the PaneTitle closest to the menu button.</span></span>
 
 :::row:::
     :::column:::
     ![ウィンドウのヘッダーの上部のナビゲーション](images/navview-freeform-header-top.png)<br>
-     _<span data-ttu-id="c6fe3-205">上部のウィンドウのヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-205">Top pane header</span></span>_<br>
+     _<span data-ttu-id="43c95-205">上部のウィンドウのヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-205">Top pane header</span></span>_<br>
     :::column-end:::
     :::column:::
     ![ウィンドウのヘッダーの左側のナビゲーション](images/navview-freeform-header-left.png)<br>
-    _<span data-ttu-id="c6fe3-207">左側のウィンドウのヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-207">Left pane header</span></span>_<br>
+    _<span data-ttu-id="43c95-207">左側のウィンドウのヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-207">Left pane header</span></span>_<br>
     :::column-end:::
 :::row-end:::
 
-#### <a name="pane-content"></a><span data-ttu-id="c6fe3-208">ウィンドウのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-208">Pane content</span></span>
+#### <a name="pane-content"></a><span data-ttu-id="43c95-208">ウィンドウのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="43c95-208">Pane content</span></span>
 
-<span data-ttu-id="c6fe3-209">[PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)プロパティを追加することによって、ウィンドウで自由形式のコンテンツを配置できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-209">You can place free-form content in the pane by adding it to the [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) property.</span></span>
+<span data-ttu-id="43c95-209">ウィンドウで自由形式のコンテンツを配置するには、 [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent)プロパティに追加します。</span><span class="sxs-lookup"><span data-stu-id="43c95-209">You can place free-form content in the pane by adding it to the [PaneCustomContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview.PaneCustomContent) property.</span></span>
 
 :::row:::
     :::column:::
     ![ウィンドウ カスタム コンテンツ上部のナビゲーション](images/navview-freeform-pane-top.png)<br>
-     _<span data-ttu-id="c6fe3-211">上部のウィンドウのカスタム コンテンツ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-211">Top pane custom content</span></span>_<br>
+     _<span data-ttu-id="43c95-211">上部のウィンドウのカスタム コンテンツ</span><span class="sxs-lookup"><span data-stu-id="43c95-211">Top pane custom content</span></span>_<br>
     :::column-end:::
     :::column:::
     ![ナビゲーションの左ペインのカスタム コンテンツ](images/navview-freeform-pane-left.png)<br>
-    _<span data-ttu-id="c6fe3-213">左側のウィンドウのカスタム コンテンツ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-213">Left pane custom content</span></span>_<br>
+    _<span data-ttu-id="43c95-213">左側のウィンドウのカスタム コンテンツ</span><span class="sxs-lookup"><span data-stu-id="43c95-213">Left pane custom content</span></span>_<br>
     :::column-end:::
 :::row-end:::
 
-### <a name="header"></a><span data-ttu-id="c6fe3-214">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-214">Header</span></span>
+### <a name="header"></a><span data-ttu-id="43c95-214">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-214">Header</span></span>
 
-<span data-ttu-id="c6fe3-215">ページ タイトルを追加するには、 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header)プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-215">You can add a page title by setting the [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) property.</span></span>
+<span data-ttu-id="43c95-215">ページ タイトルを追加するには、 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header)プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-215">You can add a page title by setting the [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) property.</span></span>
 
 ![ナビゲーション ビューのヘッダー領域の例](images/nav-header.png)<br/>
-_<span data-ttu-id="c6fe3-217">ナビゲーション ビューのヘッダー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-217">Navigation view header</span></span>_
+_<span data-ttu-id="43c95-217">ナビゲーション ビューのヘッダー</span><span class="sxs-lookup"><span data-stu-id="43c95-217">Navigation view header</span></span>_
 
-<span data-ttu-id="c6fe3-218">ヘッダー領域は、左側のウィンドウの位置、ナビゲーション ボタンと垂直に揃えし、は、ウィンドウの上部のウィンドウの位置で下に配置します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-218">The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position.</span></span> <span data-ttu-id="c6fe3-219">固定高さが 52 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-219">It has a fixed height of 52 px.</span></span> <span data-ttu-id="c6fe3-220">これは、選択されたナビゲーション カテゴリのページ タイトルを保持するためです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-220">Its purpose is to hold the page title of the selected nav category.</span></span> <span data-ttu-id="c6fe3-221">ヘッダーはページ上部に固定され、コンテンツ領域のスクロール クリッピング ポイントとして機能します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-221">The header is docked to the top of the page and acts as a scroll clipping point for the content area.</span></span>
+<span data-ttu-id="43c95-218">ヘッダー領域は、左側のウィンドウの位置、ナビゲーション ボタンと垂直に揃えし、は、ウィンドウの上部のウィンドウの位置で下に配置します。</span><span class="sxs-lookup"><span data-stu-id="43c95-218">The header area is vertically aligned with the navigation button in the left pane position, and lies below the pane in the top pane position.</span></span> <span data-ttu-id="43c95-219">固定高さが 52 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="43c95-219">It has a fixed height of 52 px.</span></span> <span data-ttu-id="43c95-220">これは、選択されたナビゲーション カテゴリのページ タイトルを保持するためです。</span><span class="sxs-lookup"><span data-stu-id="43c95-220">Its purpose is to hold the page title of the selected nav category.</span></span> <span data-ttu-id="43c95-221">ヘッダーはページ上部に固定され、コンテンツ領域のスクロール クリッピング ポイントとして機能します。</span><span class="sxs-lookup"><span data-stu-id="43c95-221">The header is docked to the top of the page and acts as a scroll clipping point for the content area.</span></span>
 
-<span data-ttu-id="c6fe3-222">ヘッダーは最小限に抑えながら表示モードは、NavigationView はいつでも表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-222">The header is visible any time the NavigationView is in Minimal display mode.</span></span> <span data-ttu-id="c6fe3-223">ウィンドウの幅をもっと広げて使用される他のモードでは、ヘッダーを非表示にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-223">You may choose to hide the header in other modes, which are used on larger window widths.</span></span> <span data-ttu-id="c6fe3-224">ヘッダーを非表示に[AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader)プロパティを**false**に設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-224">To hide the header, set the [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.</span></span>
+<span data-ttu-id="43c95-222">ヘッダーは最小限に抑えながら表示モードは、NavigationView はいつでも表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-222">The header is visible any time the NavigationView is in Minimal display mode.</span></span> <span data-ttu-id="43c95-223">ウィンドウの幅をもっと広げて使用される他のモードでは、ヘッダーを非表示にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="43c95-223">You may choose to hide the header in other modes, which are used on larger window widths.</span></span> <span data-ttu-id="43c95-224">ヘッダーを非表示に[AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader)プロパティを**false**に設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-224">To hide the header, set the [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) property to **false**.</span></span>
 
-### <a name="content"></a><span data-ttu-id="c6fe3-225">コンテンツ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-225">Content</span></span>
+### <a name="content"></a><span data-ttu-id="43c95-225">コンテンツ</span><span class="sxs-lookup"><span data-stu-id="43c95-225">Content</span></span>
 
 ![ナビゲーション ビューのコンテンツ領域の例](images/nav-content.png)<br/>
-_<span data-ttu-id="c6fe3-227">ナビゲーション ビューのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-227">Navigation view content</span></span>_
+_<span data-ttu-id="43c95-227">ナビゲーション ビューのコンテンツ</span><span class="sxs-lookup"><span data-stu-id="43c95-227">Navigation view content</span></span>_
 
-<span data-ttu-id="c6fe3-228">コンテンツ領域には、選んだナビゲーション カテゴリのほとんどの情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-228">The content area is where most of the information for the selected nav category is displayed.</span></span>
+<span data-ttu-id="43c95-228">コンテンツ領域には、選んだナビゲーション カテゴリのほとんどの情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-228">The content area is where most of the information for the selected nav category is displayed.</span></span>
 
-<span data-ttu-id="c6fe3-229">お勧めします NavigationView が**最小**モードのときは、コンテンツ領域の余白を 12px 24px 余白それ以外の場合。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-229">We recommend 12px margins for your content area when NavigationView is in **Minimal** mode and 24px margins otherwise.</span></span>
+<span data-ttu-id="43c95-229">お勧めします NavigationView が**最小**モード場合は、コンテンツ領域の余白を 12px 24px 余白それ以外の場合。</span><span class="sxs-lookup"><span data-stu-id="43c95-229">We recommend 12px margins for your content area when NavigationView is in **Minimal** mode and 24px margins otherwise.</span></span>
 
-## <a name="adaptive-behavior"></a><span data-ttu-id="c6fe3-230">アダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="c6fe3-230">Adaptive behavior</span></span>
+## <a name="adaptive-behavior"></a><span data-ttu-id="43c95-230">アダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="43c95-230">Adaptive behavior</span></span>
 
-<span data-ttu-id="c6fe3-231">既定では、ナビゲーション ビューは自動的に利用可能な画面領域の量に基づいて表示モードを変更します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-231">By default, the navigation view automatically changes its display mode based on the amount of screen space available to it.</span></span> <span data-ttu-id="c6fe3-232">[CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth)と[ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth)プロパティは、表示モードが変化するブレークポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-232">The [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes.</span></span> <span data-ttu-id="c6fe3-233">アダプティブ表示モードの動作をカスタマイズするこれらの値を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-233">You can modify these values to customize the adaptive display mode behavior.</span></span>
+<span data-ttu-id="43c95-231">既定では、ナビゲーション ビューは表示モードを利用できる画面領域の量に基づいて自動的に変更します。</span><span class="sxs-lookup"><span data-stu-id="43c95-231">By default, the navigation view automatically changes its display mode based on the amount of screen space available to it.</span></span> <span data-ttu-id="43c95-232">[CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth)と[ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth)プロパティは、表示モードが変化するブレークポイントを指定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-232">The [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) and [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) properties specify the breakpoints at which the display mode changes.</span></span> <span data-ttu-id="43c95-233">アダプティブ表示モードの動作をカスタマイズするこれらの値を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-233">You can modify these values to customize the adaptive display mode behavior.</span></span>
 
-### <a name="default"></a><span data-ttu-id="c6fe3-234">既定値</span><span class="sxs-lookup"><span data-stu-id="c6fe3-234">Default</span></span>
+### <a name="default"></a><span data-ttu-id="43c95-234">既定値</span><span class="sxs-lookup"><span data-stu-id="43c95-234">Default</span></span>
 
-<span data-ttu-id="c6fe3-235">PaneDisplayMode が**自動**の既定値に設定されている場合、アダプティブ動作は表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-235">When PaneDisplayMode is set to its default value of **Auto**, the adaptive behavior is to show:</span></span>
+<span data-ttu-id="43c95-235">PaneDisplayMode が**自動**の既定値に設定されている場合、アダプティブ動作は表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-235">When PaneDisplayMode is set to its default value of **Auto**, the adaptive behavior is to show:</span></span>
 
-- <span data-ttu-id="c6fe3-236">大きなウィンドウの幅で展開された左側のウィンドウ (1008 ピクセル以上)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-236">An expanded left pane on large window widths (1008px or greater).</span></span>
-- <span data-ttu-id="c6fe3-237">A 左、アイコンのみ普通サイズのウィンドウの幅では、ナビゲーション ウィンドウ (LeftCompact) (641 ピクセル ~ 1007 ピクセル)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-237">A left, icon-only, nav pane (LeftCompact) on medium window widths (641px to 1007px).</span></span>
-- <span data-ttu-id="c6fe3-238">のみメニュー上のボタン (LeftMinimal) 小さいウィンドウ幅 (640 ピクセル以下以内)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-238">Only a menu button (LeftMinimal) on small window widths (640px or less).</span></span>
+- <span data-ttu-id="43c95-236">大きなウィンドウの幅で展開された左側のウィンドウ (1008 ピクセル以上)。</span><span class="sxs-lookup"><span data-stu-id="43c95-236">An expanded left pane on large window widths (1008px or greater).</span></span>
+- <span data-ttu-id="43c95-237">A 左、アイコンのみ、普通サイズのウィンドウの幅では、ナビゲーション ウィンドウ (LeftCompact) (641 ピクセル ~ 1007 ピクセル)。</span><span class="sxs-lookup"><span data-stu-id="43c95-237">A left, icon-only, nav pane (LeftCompact) on medium window widths (641px to 1007px).</span></span>
+- <span data-ttu-id="43c95-238">のみ] メニュー上のボタン (LeftMinimal) 小さいウィンドウ幅 (640 ピクセル以下以内)。</span><span class="sxs-lookup"><span data-stu-id="43c95-238">Only a menu button (LeftMinimal) on small window widths (640px or less).</span></span>
 
-<span data-ttu-id="c6fe3-239">アダプティブ動作のウィンドウ サイズについて詳しくは、[画面サイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-239">For more information about window sizes for adaptive behavior, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).</span></span>
+<span data-ttu-id="43c95-239">アダプティブ動作のウィンドウ サイズについて詳しくは、[画面サイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43c95-239">For more information about window sizes for adaptive behavior, see [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).</span></span>
 
 ![左側のナビゲーションの既定のアダプティブ動作](images/displaymode-auto.png)<br/>
-_<span data-ttu-id="c6fe3-241">ナビゲーション ビューの既定のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="c6fe3-241">Navigation view default adaptive behavior</span></span>_
+_<span data-ttu-id="43c95-241">ナビゲーション ビューの既定のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="43c95-241">Navigation view default adaptive behavior</span></span>_
 
-### <a name="minimal"></a><span data-ttu-id="c6fe3-242">最小</span><span class="sxs-lookup"><span data-stu-id="c6fe3-242">Minimal</span></span>
+### <a name="minimal"></a><span data-ttu-id="43c95-242">最小</span><span class="sxs-lookup"><span data-stu-id="43c95-242">Minimal</span></span>
 
-<span data-ttu-id="c6fe3-243">大きなウィンドウの幅、および両方大小の普通サイズのウィンドウの幅をメニュー ボタンのみで展開された左側のウィンドウを使用する 2 つ目の一般的なアダプティブ パターンです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-243">A second common adaptive pattern is to use an expanded left pane on large window widths, and only a menu button on both medium and small window widths.</span></span>
+<span data-ttu-id="43c95-243">大きなウィンドウの幅、および両方大小の普通サイズのウィンドウの幅をメニュー ボタンのみで展開された左側のウィンドウを使用する 2 つ目の一般的なアダプティブ パターンです。</span><span class="sxs-lookup"><span data-stu-id="43c95-243">A second common adaptive pattern is to use an expanded left pane on large window widths, and only a menu button on both medium and small window widths.</span></span>
 
-<span data-ttu-id="c6fe3-244">このときをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-244">We recommend this when:</span></span>
+<span data-ttu-id="43c95-244">このときをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="43c95-244">We recommend this when:</span></span>
 
-- <span data-ttu-id="c6fe3-245">小さいウィンドウの幅をアプリのコンテンツのスペースを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-245">You want more space for app content on smaller window widths.</span></span>
-- <span data-ttu-id="c6fe3-246">アイコンを含む、ナビゲーションのカテゴリを明確に表示できません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-246">Your navigation categories cannot be clearly represented with icons.</span></span>
+- <span data-ttu-id="43c95-245">小さいウィンドウの幅をアプリのコンテンツのスペースを追加するとします。</span><span class="sxs-lookup"><span data-stu-id="43c95-245">You want more space for app content on smaller window widths.</span></span>
+- <span data-ttu-id="43c95-246">アイコンを含む、ナビゲーションのカテゴリを明確に表示できません。</span><span class="sxs-lookup"><span data-stu-id="43c95-246">Your navigation categories cannot be clearly represented with icons.</span></span>
 
 ![左側のナビゲーション最小限のアダプティブ動作](images/adaptive-behavior-minimal.png)<br/>
-_<span data-ttu-id="c6fe3-248">ナビゲーション ビューの「最小」アダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="c6fe3-248">Navigation view "minimal" adaptive behavior</span></span>_
+_<span data-ttu-id="43c95-248">ナビゲーション ビューの「最小」アダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="43c95-248">Navigation view "minimal" adaptive behavior</span></span>_
 
-<span data-ttu-id="c6fe3-249">この動作を構成するを折りたたむウィンドウ幅を CompactModeThresholdWidth を設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-249">To configure this behavior, set CompactModeThresholdWidth to the width at which you want the pane to collapse.</span></span> <span data-ttu-id="c6fe3-250">ここでは、640 に 1007 の既定値から変更されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-250">Here, it's changed from the default of 640 to 1007.</span></span> <span data-ttu-id="c6fe3-251">値が競合しないことを確認する ExpandedModeThresholdWidth を設定することもする必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-251">You should also set ExpandedModeThresholdWidth to ensure the values don't conflict.</span></span>
+<span data-ttu-id="43c95-249">この動作を構成するを折りたたむウィンドウ幅を CompactModeThresholdWidth を設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-249">To configure this behavior, set CompactModeThresholdWidth to the width at which you want the pane to collapse.</span></span> <span data-ttu-id="43c95-250">ここでは、640 に 1007 の既定値から変更されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-250">Here, it's changed from the default of 640 to 1007.</span></span> <span data-ttu-id="43c95-251">値が競合しないことを確認する ExpandedModeThresholdWidth を設定することもする必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-251">You should also set ExpandedModeThresholdWidth to ensure the values don't conflict.</span></span>
 
 ```xaml
 <NavigationView CompactModeThresholdWidth="1007" ExpandedModeThresholdWidth="1007"/>
 ```
 
-### <a name="compact"></a><span data-ttu-id="c6fe3-252">コンパクト</span><span class="sxs-lookup"><span data-stu-id="c6fe3-252">Compact</span></span>
+### <a name="compact"></a><span data-ttu-id="43c95-252">コンパクト</span><span class="sxs-lookup"><span data-stu-id="43c95-252">Compact</span></span>
 
-<span data-ttu-id="c6fe3-253">3 番目の一般的なアダプティブ パターンでは、大きなウィンドウの幅と、LeftCompact、アイコンのみ両方大小の普通サイズのウィンドウの幅をナビゲーション ウィンドウで展開された左側のウィンドウを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-253">A third common adaptive pattern is to use an expanded left pane on large window widths, and a LeftCompact, icon-only, nav pane on both medium and small window widths.</span></span>
+<span data-ttu-id="43c95-253">3 番目の一般的なアダプティブ パターンでは、大きなウィンドウの幅、そして、LeftCompact、アイコンのみで両方大小の普通サイズのウィンドウの幅をナビゲーション ウィンドウで、展開された左側のウィンドウを使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-253">A third common adaptive pattern is to use an expanded left pane on large window widths, and a LeftCompact, icon-only, nav pane on both medium and small window widths.</span></span>
 
-<span data-ttu-id="c6fe3-254">このときをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-254">We recommend this when:</span></span>
+<span data-ttu-id="43c95-254">このときをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="43c95-254">We recommend this when:</span></span>
 
-- <span data-ttu-id="c6fe3-255">常に画面上のすべてのナビゲーション オプションを表示するのには重要です。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-255">It is important to always show all navigation options on screen.</span></span>
-- <span data-ttu-id="c6fe3-256">ナビゲーションのカテゴリは、アイコンを含む明確に表すことができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-256">Your navigation categories can be clearly represented with icons.</span></span>
+- <span data-ttu-id="43c95-255">常に画面上のすべてのナビゲーション オプションを表示するのには重要です。</span><span class="sxs-lookup"><span data-stu-id="43c95-255">It is important to always show all navigation options on screen.</span></span>
+- <span data-ttu-id="43c95-256">ナビゲーションのカテゴリは、アイコンを明確に表すことができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-256">Your navigation categories can be clearly represented with icons.</span></span>
 
 ![左側のナビゲーション コンパクトなアダプティブ動作](images/adaptive-behavior-compact.png)<br/>
-_<span data-ttu-id="c6fe3-258">ナビゲーション ビュー"compact"のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="c6fe3-258">Navigation view "compact" adaptive behavior</span></span>_
+_<span data-ttu-id="43c95-258">ナビゲーション ビュー"compact"のアダプティブ動作</span><span class="sxs-lookup"><span data-stu-id="43c95-258">Navigation view "compact" adaptive behavior</span></span>_
 
-<span data-ttu-id="c6fe3-259">この動作を構成するには、CompactModeThresholdWidth を 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-259">To configure this behavior, set CompactModeThresholdWidth to 0.</span></span>
+<span data-ttu-id="43c95-259">この動作を構成するには、CompactModeThresholdWidth を 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="43c95-259">To configure this behavior, set CompactModeThresholdWidth to 0.</span></span>
 
 ```xaml
 <NavigationView CompactModeThresholdWidth="0"/>
 ```
 
-### <a name="no-adaptive-behavior"></a><span data-ttu-id="c6fe3-260">アダプティブ動作がないです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-260">No adaptive behavior</span></span>
+### <a name="no-adaptive-behavior"></a><span data-ttu-id="43c95-260">アダプティブ動作がないです。</span><span class="sxs-lookup"><span data-stu-id="43c95-260">No adaptive behavior</span></span>
 
-<span data-ttu-id="c6fe3-261">自動のアダプティブ動作を無効にするには、PaneDisplayMode を自動以外の値に設定します。ここでは、設定されている、ウィンドウの幅に関係なく、LeftMinimal にメニュー ボタンのみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-261">To disable the automatic adaptive behavior, set PaneDisplayMode to a value other than Auto. Here, it's set to LeftMinimal, so only the menu button is shown regardless of the window width.</span></span>
+<span data-ttu-id="43c95-261">自動のアダプティブ動作を無効にするには、自動以外の値に PaneDisplayMode を設定します。ここでは、設定されている、ウィンドウの幅に関係なく、LeftMinimal にメニュー ボタンのみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-261">To disable the automatic adaptive behavior, set PaneDisplayMode to a value other than Auto. Here, it's set to LeftMinimal, so only the menu button is shown regardless of the window width.</span></span>
 
 ![左側のナビゲーションなしのアダプティブ動作](images/adaptive-behavior-none.png)<br/>
-_<span data-ttu-id="c6fe3-263">PaneDisplayMode LeftMinimal に設定とナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="c6fe3-263">Navigation view with PaneDisplayMode set to LeftMinimal</span></span>_
+_<span data-ttu-id="43c95-263">PaneDisplayMode LeftMinimal に設定とナビゲーション ビュー</span><span class="sxs-lookup"><span data-stu-id="43c95-263">Navigation view with PaneDisplayMode set to LeftMinimal</span></span>_
 
 ```xaml
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-<span data-ttu-id="c6fe3-264">前述_の表示モード_のセクションで、最上位、常に展開された、常にコンパクトまたは常に最低限に常にするウィンドウを設定できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-264">As described previously in the _Display modes_ section, you can set the pane to be always on top, always expanded, always compact, or always minimal.</span></span> <span data-ttu-id="c6fe3-265">管理することも、表示モード自分で、アプリのコードでします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-265">You can also manage the display modes yourself in your app code.</span></span> <span data-ttu-id="c6fe3-266">この例は、次のセクションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-266">An example of this is shown in the next section.</span></span>
+<span data-ttu-id="43c95-264">_表示モード_のセクションで既に説明した、としてトップ、常に展開された、常にコンパクトまたは常に最低限に常にするウィンドウを設定できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-264">As described previously in the _Display modes_ section, you can set the pane to be always on top, always expanded, always compact, or always minimal.</span></span> <span data-ttu-id="43c95-265">管理することも、表示モード自分で、アプリのコードにします。</span><span class="sxs-lookup"><span data-stu-id="43c95-265">You can also manage the display modes yourself in your app code.</span></span> <span data-ttu-id="43c95-266">この例は、次のセクションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-266">An example of this is shown in the next section.</span></span>
 
-### <a name="top-to-left-navigation"></a><span data-ttu-id="c6fe3-267">左側のナビゲーションを上</span><span class="sxs-lookup"><span data-stu-id="c6fe3-267">Top to left navigation</span></span>
+### <a name="top-to-left-navigation"></a><span data-ttu-id="43c95-267">左側のナビゲーションを上</span><span class="sxs-lookup"><span data-stu-id="43c95-267">Top to left navigation</span></span>
 
-<span data-ttu-id="c6fe3-268">上部のナビゲーションを使用して、アプリのナビゲーション項目はウィンドウの幅の減少として、オーバーフロー メニューに折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-268">When you use top navigation in your app, navigation items collapse into an overflow menu as the window width decreases.</span></span> <span data-ttu-id="c6fe3-269">とき、アプリ ウィンドウが狭い場合は、すべての項目は、オーバーフロー メニューに折りたたむことのではなく、LeftMinimal のナビゲーションを上から PaneDisplayMode を切り替えるユーザー エクスペリエンスの向上を提供できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-269">When your app window is narrow, it can provide a better user experience to switch the PaneDisplayMode from Top to LeftMinimal navigation, rather than letting all the items collapse into the overflow menu.</span></span>
+<span data-ttu-id="43c95-268">上部のナビゲーションを使用して、アプリで、ナビゲーション項目は、ウィンドウの幅の減少として、オーバーフロー メニューに折りたたみます。</span><span class="sxs-lookup"><span data-stu-id="43c95-268">When you use top navigation in your app, navigation items collapse into an overflow menu as the window width decreases.</span></span> <span data-ttu-id="43c95-269">とき、アプリ ウィンドウが狭い場合は、すべての項目がオーバーフロー メニューに折りたたむことのではなく、LeftMinimal ナビゲーション、上から PaneDisplayMode を切り替えるユーザー エクスペリエンスが向上を提供できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-269">When your app window is narrow, it can provide a better user experience to switch the PaneDisplayMode from Top to LeftMinimal navigation, rather than letting all the items collapse into the overflow menu.</span></span>
 
-<span data-ttu-id="c6fe3-270">大きなウィンドウのサイズと小さなの左側のナビゲーションでの上部のナビゲーションの使用をお勧めします] ウィンドウのサイズを場合。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-270">We recommend using top navigation on large window sizes and left navigation on small window sizes when:</span></span>
+<span data-ttu-id="43c95-270">大きなウィンドウのサイズと小さなの左側のナビゲーションでの上部のナビゲーションの使用をお勧めします] ウィンドウのサイズを場合。</span><span class="sxs-lookup"><span data-stu-id="43c95-270">We recommend using top navigation on large window sizes and left navigation on small window sizes when:</span></span>
 
-- <span data-ttu-id="c6fe3-271">その重要度が同じ権を付与する左側のナビゲーションを折りたたむこのセットの 1 つのカテゴリを画面に収まらない場合、一緒に表示される均等に重要なトップレベルのナビゲーション カテゴリのセットがあります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-271">You have a set of equally important top-level navigation categories to be displayed together, such that if one category in this set doesn't fit on screen, you collapse to left navigation to give them equal importance.</span></span>
-- <span data-ttu-id="c6fe3-272">小さいウィンドウのサイズで可能な領域がはるかにコンテンツを維持したいです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-272">You wish to preserve as much content space as possible in small window sizes.</span></span>
+- <span data-ttu-id="43c95-271">その重要度が同じを与えるの左側のナビゲーションを折りたたむこのセットの 1 つのカテゴリを画面に収まらない場合、一緒に表示される均等に重要なトップレベルのナビゲーション カテゴリのセットがあります。</span><span class="sxs-lookup"><span data-stu-id="43c95-271">You have a set of equally important top-level navigation categories to be displayed together, such that if one category in this set doesn't fit on screen, you collapse to left navigation to give them equal importance.</span></span>
+- <span data-ttu-id="43c95-272">小さいウィンドウのサイズで可能な領域がはるかにコンテンツを維持したいです。</span><span class="sxs-lookup"><span data-stu-id="43c95-272">You wish to preserve as much content space as possible in small window sizes.</span></span>
 
-<span data-ttu-id="c6fe3-273">この例では、上部と LeftMinimal ナビゲーション間を切り替える[VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager)と[AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)プロパティを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-273">This example shows how to use a [VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager) and [AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property to switch between Top and LeftMinimal navigation.</span></span>
+<span data-ttu-id="43c95-273">この例では、上部と LeftMinimal ナビゲーション間を切り替える[VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager)と[AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth)プロパティを使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-273">This example shows how to use a [VisualStateManager](/uwp/api/Windows.UI.Xaml.VisualStateManager) and [AdaptiveTrigger.MinWindowWidth](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) property to switch between Top and LeftMinimal navigation.</span></span>
 
 ![または左端のアダプティブ動作 1 の例](images/navigation-top-to-left.png)
 
@@ -354,28 +354,28 @@ _<span data-ttu-id="c6fe3-263">PaneDisplayMode LeftMinimal に設定とナビゲ
 ```
 
 > [!TIP]
-> <span data-ttu-id="c6fe3-275">AdaptiveTrigger.MinWindowWidth を使用すると、ウィンドウが指定された最小幅よりも広い場合、表示状態がトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-275">When you use AdaptiveTrigger.MinWindowWidth, the visual state is triggered when the window is wider than the specified minimum width.</span></span> <span data-ttu-id="c6fe3-276">これには、既定の XAML は、幅の狭いウィンドウを定義し、VisualState 幅の広いウィンドウを取得するときに適用される変更を定義することを意味します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-276">This means the default XAML defines the narrow window, and the VisualState defines the modifications that are applied when the window gets wider.</span></span> <span data-ttu-id="c6fe3-277">既定の PaneDisplayMode ナビゲーション ビューは、自動、したがってときに、ウィンドウの幅が CompactModeThresholdWidth、小さい LeftMinimal ナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-277">The default PaneDisplayMode for the navigation view is Auto, so when the window width is less than or equal to CompactModeThresholdWidth, LeftMinimal navigation is used.</span></span> <span data-ttu-id="c6fe3-278">ウィンドウが大きく、VisualState は、既定値を上書きし、上部のナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-278">When the window gets wider, the VisualState overrides the default, and Top navigation is used.</span></span>
+> <span data-ttu-id="43c95-275">AdaptiveTrigger.MinWindowWidth を使用すると、ウィンドウが指定された最小幅よりも広い場合、表示状態がトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="43c95-275">When you use AdaptiveTrigger.MinWindowWidth, the visual state is triggered when the window is wider than the specified minimum width.</span></span> <span data-ttu-id="43c95-276">これは、既定の XAML は、ウィンドウの幅の狭いを定義し、VisualState 幅の広いウィンドウを取得するときに適用される変更を定義することを意味します。</span><span class="sxs-lookup"><span data-stu-id="43c95-276">This means the default XAML defines the narrow window, and the VisualState defines the modifications that are applied when the window gets wider.</span></span> <span data-ttu-id="43c95-277">既定の PaneDisplayMode ナビゲーション ビューは、自動、したがってときに、ウィンドウの幅が CompactModeThresholdWidth、小さい LeftMinimal ナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-277">The default PaneDisplayMode for the navigation view is Auto, so when the window width is less than or equal to CompactModeThresholdWidth, LeftMinimal navigation is used.</span></span> <span data-ttu-id="43c95-278">幅の広いウィンドウを取得、VisualState は、既定値を上書きし、上部のナビゲーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-278">When the window gets wider, the VisualState overrides the default, and Top navigation is used.</span></span>
 
-## <a name="navigation"></a><span data-ttu-id="c6fe3-279">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c6fe3-279">Navigation</span></span>
+## <a name="navigation"></a><span data-ttu-id="43c95-279">ナビゲーション</span><span class="sxs-lookup"><span data-stu-id="43c95-279">Navigation</span></span>
 
-<span data-ttu-id="c6fe3-280">ナビゲーション ビューは、自動的にナビゲーション タスクを実行しません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-280">The navigation view doesn't perform any navigation tasks automatically.</span></span> <span data-ttu-id="c6fe3-281">ナビゲーション項目をタップ、ナビゲーション ビューは、選択された項目と[ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked)イベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-281">When the user taps on a navigation item, the navigation view shows that item as selected and raises an [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event.</span></span> <span data-ttu-id="c6fe3-282">タップにより新しいアイテムが選択されていると場合も、 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-282">If the tap results in a new item being selected, a [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.</span></span>
+<span data-ttu-id="43c95-280">ナビゲーション ビューは、自動的にナビゲーション タスクを実行しません。</span><span class="sxs-lookup"><span data-stu-id="43c95-280">The navigation view doesn't perform any navigation tasks automatically.</span></span> <span data-ttu-id="43c95-281">ナビゲーション項目をタップ、ナビゲーション ビューは、選択された項目と[ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked)イベントを発生させます。</span><span class="sxs-lookup"><span data-stu-id="43c95-281">When the user taps on a navigation item, the navigation view shows that item as selected and raises an [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) event.</span></span> <span data-ttu-id="43c95-282">タップにより新しいアイテムが選択されていると場合も、 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged)イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="43c95-282">If the tap results in a new item being selected, a [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) event is also raised.</span></span>
 
-<span data-ttu-id="c6fe3-283">要求されたナビゲーションに関連するタスクを実行するいずれかのイベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-283">You can handle either event to perform tasks related to the requested navigation.</span></span> <span data-ttu-id="c6fe3-284">これの 1 つ処理する必要がありますは、アプリに目的の動作に依存します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-284">Which one you should handle depends on the behavior you want for your app.</span></span> <span data-ttu-id="c6fe3-285">通常、要求されたページに移動し、これらのイベントへの応答でナビゲーション ビューのヘッダーを更新します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-285">Typically, you navigate to the requested page and update the navigation view header in response to these events.</span></span>
+<span data-ttu-id="43c95-283">要求されたナビゲーションに関連するタスクを実行するいずれかのイベントを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-283">You can handle either event to perform tasks related to the requested navigation.</span></span> <span data-ttu-id="43c95-284">1 つを処理する必要がありますアプリの動作をによって異なります。</span><span class="sxs-lookup"><span data-stu-id="43c95-284">Which one you should handle depends on the behavior you want for your app.</span></span> <span data-ttu-id="43c95-285">通常、要求されたページに移動し、これらのイベントへの応答でナビゲーション ビューのヘッダーを更新します。</span><span class="sxs-lookup"><span data-stu-id="43c95-285">Typically, you navigate to the requested page and update the navigation view header in response to these events.</span></span>
 
-<span data-ttu-id="c6fe3-286">**ItemInvoked**が既に選択されている場合でも、いつでも、ユーザーが、ナビゲーション項目をタップ発生します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-286">**ItemInvoked** is raised any time the user taps a navigation item, even if it's already selected.</span></span> <span data-ttu-id="c6fe3-287">(項目も呼び出せるマウス、キーボード、またはその他の入力を使用して、同等の操作とします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-287">(The item can also be invoked with an equivalent action using mouse, keyboard, or other input.</span></span> <span data-ttu-id="c6fe3-288">詳しくは、参照[入力と操作](../input/index.md))。ItemInvoked ハンドラーで移動する場合は、既定では、ページが再読み込みは、され、重複したエントリがナビゲーション スタックに追加されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-288">For more info, see [Input and interactions](../input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack.</span></span> <span data-ttu-id="c6fe3-289">呼び出されると、項目を移動する場合は、ページの再読み込みを許可しないやナビゲーション バック スタックに重複するエントリが作成されないである場合、ページが再読み込みすることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-289">If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded.</span></span> <span data-ttu-id="c6fe3-290">(詳しくは、コード例を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-290">(See code examples.)</span></span>
+<span data-ttu-id="43c95-286">**ItemInvoked**が既に選択されている場合でも、いつでも、ユーザーが、ナビゲーション項目をタップ発生します。</span><span class="sxs-lookup"><span data-stu-id="43c95-286">**ItemInvoked** is raised any time the user taps a navigation item, even if it's already selected.</span></span> <span data-ttu-id="43c95-287">(項目も呼び出せるマウス、キーボード、またはその他の入力を使用して、同等の操作とします。</span><span class="sxs-lookup"><span data-stu-id="43c95-287">(The item can also be invoked with an equivalent action using mouse, keyboard, or other input.</span></span> <span data-ttu-id="43c95-288">詳しくは、参照[入力と操作](../input/index.md))。ItemInvoked ハンドラーで移動する場合は、既定では、ページが再読み込みは、および重複したエントリがナビゲーション スタックに追加します。</span><span class="sxs-lookup"><span data-stu-id="43c95-288">For more info, see [Input and interactions](../input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack.</span></span> <span data-ttu-id="43c95-289">呼び出されると、項目を移動する場合は、ページの再読み込みを許可しないまたはページの再読み込み時、重複したエントリは、ナビゲーション バック スタックに作成しないことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-289">If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded.</span></span> <span data-ttu-id="43c95-290">(詳しくは、コード例を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="43c95-290">(See code examples.)</span></span>
 
-<span data-ttu-id="c6fe3-291">ユーザーではない、現在選択されている項目の呼び出しによって、またはをプログラムで選択した項目を変更することは、 **SelectionChanged**を発生させることができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-291">**SelectionChanged** can be raised by a user invoking an item that isn't currently selected, or by programmatically changing the selected item.</span></span> <span data-ttu-id="c6fe3-292">ユーザーには、項目が呼び出されないため、選択の変更が発生した場合、ItemInvoked イベントが最初に発生します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-292">If the selection change occurs because a user invoked an item, the ItemInvoked event occurs first.</span></span> <span data-ttu-id="c6fe3-293">選択の変更がプログラムの場合は、ItemInvoked は発生しません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-293">If the selection change is programmatic, ItemInvoked is not raised.</span></span>
+<span data-ttu-id="43c95-291">ユーザーではない、現在選択されている項目の呼び出しによってまたはをプログラムで選択した項目を変更することは、 **SelectionChanged**を発生させることができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-291">**SelectionChanged** can be raised by a user invoking an item that isn't currently selected, or by programmatically changing the selected item.</span></span> <span data-ttu-id="43c95-292">ユーザーが項目を呼び出すために選択の変更が発生した場合、ItemInvoked イベントが最初に発生します。</span><span class="sxs-lookup"><span data-stu-id="43c95-292">If the selection change occurs because a user invoked an item, the ItemInvoked event occurs first.</span></span> <span data-ttu-id="43c95-293">選択の変更がプログラムの場合は、ItemInvoked は発生しません。</span><span class="sxs-lookup"><span data-stu-id="43c95-293">If the selection change is programmatic, ItemInvoked is not raised.</span></span>
 
-### <a name="backwards-navigation"></a><span data-ttu-id="c6fe3-294">逆方向のナビゲーション</span><span class="sxs-lookup"><span data-stu-id="c6fe3-294">Backwards navigation</span></span>
+### <a name="backwards-navigation"></a><span data-ttu-id="43c95-294">逆方向のナビゲーション</span><span class="sxs-lookup"><span data-stu-id="43c95-294">Backwards navigation</span></span>
 
-<span data-ttu-id="c6fe3-295">NavigationView は、組み込みの戻るボタンただしと同様に上位のナビゲーションがない前に戻るナビゲーションを自動的に実行します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-295">NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically.</span></span> <span data-ttu-id="c6fe3-296">ユーザーが戻るボタンをタップ、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-296">When the user taps the back button, the [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) event is raised.</span></span> <span data-ttu-id="c6fe3-297">前に戻るナビゲーションを実行するには、このイベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-297">You handle this event to perform backwards navigation.</span></span> <span data-ttu-id="c6fe3-298">詳細情報とコード例については、次を参照してください。[ナビゲーション履歴と前に戻るナビゲーション](../basics/navigation-history-and-backwards-navigation.md)します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-298">For more info and code examples, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).</span></span>
+<span data-ttu-id="43c95-295">NavigationView は、組み込みの戻るボタンただし、転送のナビゲーションと同様、しない前に戻るナビゲーションを自動的に実行します。</span><span class="sxs-lookup"><span data-stu-id="43c95-295">NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically.</span></span> <span data-ttu-id="43c95-296">ユーザーが戻るボタンをタップ、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。</span><span class="sxs-lookup"><span data-stu-id="43c95-296">When the user taps the back button, the [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) event is raised.</span></span> <span data-ttu-id="43c95-297">前に戻るナビゲーションを実行するには、このイベントを処理します。</span><span class="sxs-lookup"><span data-stu-id="43c95-297">You handle this event to perform backwards navigation.</span></span> <span data-ttu-id="43c95-298">詳細情報とコード例については、次を参照してください。[ナビゲーション履歴と前に戻るナビゲーション](../basics/navigation-history-and-backwards-navigation.md)します。</span><span class="sxs-lookup"><span data-stu-id="43c95-298">For more info and code examples, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).</span></span>
 
-<span data-ttu-id="c6fe3-299">最小限またはコンパクト モードでは、ナビゲーション ビューは、ウィンドウ、ポップアップとして開いて。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-299">In Minimal or Compact mode, the navigation view Pane is open as a flyout.</span></span> <span data-ttu-id="c6fe3-300">この例では、"戻る"ボタンのクリックしてはウィンドウを閉じるし、 **PaneClosing**イベントを発生させる代わりにします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-300">In this case, clicking the back button will close the Pane and raise the **PaneClosing** event instead.</span></span>
+<span data-ttu-id="43c95-299">最小限またはコンパクト モードでは、ナビゲーション ビューは、ウィンドウがポップアップとして開いてします。</span><span class="sxs-lookup"><span data-stu-id="43c95-299">In Minimal or Compact mode, the navigation view Pane is open as a flyout.</span></span> <span data-ttu-id="43c95-300">この例では、[戻る] ボタンをクリックするとは、ウィンドウを閉じるし、 **PaneClosing**イベントが発生する代わりにします。</span><span class="sxs-lookup"><span data-stu-id="43c95-300">In this case, clicking the back button will close the Pane and raise the **PaneClosing** event instead.</span></span>
 
-<span data-ttu-id="c6fe3-301">非表示にするか、これらのプロパティを設定して、戻るボタンを無効にできます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-301">You can hide or disable the back button by setting these properties:</span></span>
+<span data-ttu-id="43c95-301">非表示にするか、これらのプロパティを設定して、戻るボタンを無効にできます。</span><span class="sxs-lookup"><span data-stu-id="43c95-301">You can hide or disable the back button by setting these properties:</span></span>
 
-- <span data-ttu-id="c6fe3-302">[IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): と"戻る"ボタンを非表示に使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-302">[IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): use to show and hide the back button.</span></span> <span data-ttu-id="c6fe3-303">このプロパティは、 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列挙体の値を受け取り、既定では**自動的**に設定されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-303">This property takes a value of the [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible) enumeration, and is set to **Auto** by default.</span></span> <span data-ttu-id="c6fe3-304">ボタンが折りたたまれていると領域ありません用に予約されてレイアウトします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-304">When the button is collapsed, no space is reserved for it in the layout.</span></span>
-- <span data-ttu-id="c6fe3-305">[IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): を有効にするまたは戻るボタンを無効にします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-305">[IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): use to enable or disable the back button.</span></span> <span data-ttu-id="c6fe3-306">このプロパティには、ナビゲーション フレームの[CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback)プロパティにデータ バインドできます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-306">You can data bind this property to the [CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback) property of your navigation frame.</span></span> <span data-ttu-id="c6fe3-307">**IsBackEnabled**が**false**の場合、 **BackRequested**は発生しません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-307">**BackRequested** is not raised if **IsBackEnabled** is **false**.</span></span>
+- <span data-ttu-id="43c95-302">[IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): と、戻るボタンを非表示に使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-302">[IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible): use to show and hide the back button.</span></span> <span data-ttu-id="43c95-303">このプロパティは、 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列挙体の値を受け取り、既定では**自動的**に設定されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-303">This property takes a value of the [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible) enumeration, and is set to **Auto** by default.</span></span> <span data-ttu-id="43c95-304">ボタンが折りたたまれているとき領域ない用に予約されてレイアウトします。</span><span class="sxs-lookup"><span data-stu-id="43c95-304">When the button is collapsed, no space is reserved for it in the layout.</span></span>
+- <span data-ttu-id="43c95-305">[IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): を有効にするまたは"戻る"ボタンを無効にします。</span><span class="sxs-lookup"><span data-stu-id="43c95-305">[IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled): use to enable or disable the back button.</span></span> <span data-ttu-id="43c95-306">このプロパティには、ナビゲーション フレームの[CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback)プロパティにデータ バインドできます。</span><span class="sxs-lookup"><span data-stu-id="43c95-306">You can data bind this property to the [CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback) property of your navigation frame.</span></span> <span data-ttu-id="43c95-307">**IsBackEnabled**が**false**の場合、 **BackRequested**は発生しません。</span><span class="sxs-lookup"><span data-stu-id="43c95-307">**BackRequested** is not raised if **IsBackEnabled** is **false**.</span></span>
 
 :::row:::
     :::column:::
@@ -388,19 +388,19 @@ _<span data-ttu-id="c6fe3-263">PaneDisplayMode LeftMinimal に設定とナビゲ
     :::column-end:::
 :::row-end:::
 
-## <a name="code-example"></a><span data-ttu-id="c6fe3-308">コードの例</span><span class="sxs-lookup"><span data-stu-id="c6fe3-308">Code example</span></span>
+## <a name="code-example"></a><span data-ttu-id="43c95-308">コードの例</span><span class="sxs-lookup"><span data-stu-id="43c95-308">Code example</span></span>
 
-<span data-ttu-id="c6fe3-309">この例では、大規模なウィンドウ サイズの上部のナビゲーション ウィンドウと小さなウィンドウ サイズの左側のナビゲーション ウィンドウの両方で NavigationView を使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-309">This example shows how you can use NavigationView with both a top navigation pane on large window sizes and a left navigation pane on small window sizes.</span></span> <span data-ttu-id="c6fe3-310">VisualStateManager の_最上部_のナビゲーションの設定を削除して左専用のナビゲーションに合わせることができます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-310">It can be adapted to left-only navigation by removing the _top_ navigation settings in the VisualStateManager.</span></span>
+<span data-ttu-id="43c95-309">この例では、大規模なウィンドウ サイズの上部のナビゲーション ウィンドウと小さなウィンドウ サイズの左側のナビゲーション ウィンドウの両方で NavigationView を使用する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-309">This example shows how you can use NavigationView with both a top navigation pane on large window sizes and a left navigation pane on small window sizes.</span></span> <span data-ttu-id="43c95-310">VisualStateManager で、_上部_のナビゲーションの設定を削除することで左専用のナビゲーションに合わせることができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-310">It can be adapted to left-only navigation by removing the _top_ navigation settings in the VisualStateManager.</span></span>
 
-<span data-ttu-id="c6fe3-311">多くの一般的なシナリオで動作するナビゲーション データを設定する方法がお勧めの例を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-311">The example demonstrates a recommended way to set up navigation data that will work for many common scenarios.</span></span> <span data-ttu-id="c6fe3-312">また、前に戻るナビゲーションで NavigationView の"戻る"ボタンとキーボード ナビゲーションを実装する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-312">It also demonstrates how to implement backwards navigation with NavigationView's back button and keyboard navigation.</span></span>
+<span data-ttu-id="43c95-311">多くの一般的なシナリオに対応するナビゲーション データを設定に推奨される方法の例を示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-311">The example demonstrates a recommended way to set up navigation data that will work for many common scenarios.</span></span> <span data-ttu-id="43c95-312">また、前に戻るナビゲーションで NavigationView の"戻る"ボタンとキーボード ナビゲーションを実装する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="43c95-312">It also demonstrates how to implement backwards navigation with NavigationView's back button and keyboard navigation.</span></span>
 
-<span data-ttu-id="c6fe3-313">このコードでは、アプリがページに移動する次の名前が含まれていると想定しています:_ホームページ_、 _AppsPage_、 _GamesPage_、 _MusicPage_、 _MyContentPage_、および_SettingsPage_します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-313">This code assumes that your app contains pages with the following names to navigate to: _HomePage_, _AppsPage_, _GamesPage_, _MusicPage_, _MyContentPage_, and _SettingsPage_.</span></span> <span data-ttu-id="c6fe3-314">これらのページのコードは表示されません。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-314">Code for these pages is not shown.</span></span>
-
-> [!IMPORTANT]
-> <span data-ttu-id="c6fe3-315">アプリのページについては、 [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple)に格納されます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-315">Information about the app's pages is stored in a [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple).</span></span> <span data-ttu-id="c6fe3-316">この構造体は、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要がありますが必要です。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-316">This struct requires that the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="c6fe3-317">NavigationView の WinUI バージョンを以前のバージョンの Windows 10 をターゲットに使用する場合は、代わりに、 [System.ValueTuple NuGet パッケージ](https://www.nuget.org/packages/System.ValueTuple/)を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-317">If you use the WinUI version of NavigationView to target earlier versions of Windows 10, you can use the [System.ValueTuple NuGet package](https://www.nuget.org/packages/System.ValueTuple/) instead.</span></span>
+<span data-ttu-id="43c95-313">このコードでは、アプリがページに移動する次の名前が含まれていると想定しています:_ホームページ_、 _AppsPage_、 _GamesPage_、 _MusicPage_、 _MyContentPage_、および_SettingsPage_します。</span><span class="sxs-lookup"><span data-stu-id="43c95-313">This code assumes that your app contains pages with the following names to navigate to: _HomePage_, _AppsPage_, _GamesPage_, _MusicPage_, _MyContentPage_, and _SettingsPage_.</span></span> <span data-ttu-id="43c95-314">これらのページのコードは表示されません。</span><span class="sxs-lookup"><span data-stu-id="43c95-314">Code for these pages is not shown.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="c6fe3-318">このコードは、NavigationView の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-318">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of NavigationView.</span></span> <span data-ttu-id="c6fe3-319">NavigationView のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-319">If you use the platform version of NavigationView instead, the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="c6fe3-320">プラットフォームのバージョンを使用するすべての参照を削除`muxc:`します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-320">To use the platform version, remove all references to `muxc:`.</span></span>
+> <span data-ttu-id="43c95-315">アプリのページについては、 [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple)に格納されます。</span><span class="sxs-lookup"><span data-stu-id="43c95-315">Information about the app's pages is stored in a [ValueTuple](https://docs.microsoft.com/dotnet/api/system.valuetuple).</span></span> <span data-ttu-id="43c95-316">この構造体は、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要がありますが必要です。</span><span class="sxs-lookup"><span data-stu-id="43c95-316">This struct requires that the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="43c95-317">NavigationView の WinUI バージョンを以前のバージョンの Windows 10 をターゲットに使用する場合は、代わりに、 [System.ValueTuple NuGet パッケージ](https://www.nuget.org/packages/System.ValueTuple/)を使用できます。</span><span class="sxs-lookup"><span data-stu-id="43c95-317">If you use the WinUI version of NavigationView to target earlier versions of Windows 10, you can use the [System.ValueTuple NuGet package](https://www.nuget.org/packages/System.ValueTuple/) instead.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="43c95-318">このコードは、NavigationView の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="43c95-318">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of NavigationView.</span></span> <span data-ttu-id="43c95-319">NavigationView のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-319">If you use the platform version of NavigationView instead, the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="43c95-320">プラットフォームのバージョンを使用するすべての参照を削除`muxc:`します。</span><span class="sxs-lookup"><span data-stu-id="43c95-320">To use the platform version, remove all references to `muxc:`.</span></span>
 
 ```xaml
 <!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
@@ -461,7 +461,7 @@ _<span data-ttu-id="c6fe3-263">PaneDisplayMode LeftMinimal に設定とナビゲ
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="c6fe3-321">このコードは、NavigationView の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-321">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of NavigationView.</span></span> <span data-ttu-id="c6fe3-322">NavigationView のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-322">If you use the platform version of NavigationView instead, the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="c6fe3-323">プラットフォームのバージョンを使用するすべての参照を削除`muxc`します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-323">To use the platform version, remove all references to `muxc`.</span></span>
+> <span data-ttu-id="43c95-321">このコードは、NavigationView の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="43c95-321">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of NavigationView.</span></span> <span data-ttu-id="43c95-322">NavigationView のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 17763 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-322">If you use the platform version of NavigationView instead, the minimum version for your app project must be SDK 17763 or greater.</span></span> <span data-ttu-id="43c95-323">プラットフォームのバージョンを使用するすべての参照を削除`muxc`します。</span><span class="sxs-lookup"><span data-stu-id="43c95-323">To use the platform version, remove all references to `muxc`.</span></span>
 
 ```csharp
 // Add "using" for WinUI controls.
@@ -624,29 +624,48 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 }
 ```
 
-## <a name="navigation-view-customization"></a><span data-ttu-id="c6fe3-324">ナビゲーション ビューのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="c6fe3-324">Navigation view customization</span></span>
+<span data-ttu-id="43c95-324">以下は、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)上記の c# コード例から**NavView_ItemInvoked**ハンドラーのバージョン。</span><span class="sxs-lookup"><span data-stu-id="43c95-324">Below is a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index) version of the **NavView_ItemInvoked** handler from the C# code example above.</span></span> <span data-ttu-id="43c95-325">C++ での手法/WinRT ハンドラーは、最初を保存する ( [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)のタグ) ページの完全な型名を移動します。</span><span class="sxs-lookup"><span data-stu-id="43c95-325">The technique in the C++/WinRT handler involves you first storing (in the tag of the [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate.</span></span> <span data-ttu-id="43c95-326">ハンドラーで、その値をボックス化解除、 [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)オブジェクトにして使うを切り替え先のページに移動します。</span><span class="sxs-lookup"><span data-stu-id="43c95-326">In the handler, you unbox that value, turn it into a [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) object, and use that to navigate to the destination page.</span></span> <span data-ttu-id="43c95-327">という名前のマッピングの変数の必要はありません`_pages`の C# のコード例で表示されます。有効な型のタグの内部値であることを確認する単体テストを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="43c95-327">There's no need for the mapping variable named `_pages` that you see in the C# example; and you'll be able to create unit tests confirming that the values inside your tags are of a valid type.</span></span> <span data-ttu-id="43c95-328">表示[C + 使用した IInspectable へのスカラー値をボックス化とボックス化解除/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)します。</span><span class="sxs-lookup"><span data-stu-id="43c95-328">Also see [Boxing and unboxing scalar values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).</span></span>
 
-### <a name="pane-backgrounds"></a><span data-ttu-id="c6fe3-325">ウィンドウの背景</span><span class="sxs-lookup"><span data-stu-id="c6fe3-325">Pane Backgrounds</span></span>
+```cppwinrt
+void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* sender */, Windows::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const & args)
+{
+    if (args.IsSettingsInvoked())
+    {
+        // Navigate to Settings.
+    }
+    else if (args.InvokedItemContainer())
+    {
+        Windows::UI::Xaml::Interop::TypeName pageTypeName;
+        pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
+        pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+        ContentFrame().Navigate(pageTypeName, nullptr);
+    }
+}
+```
 
-<span data-ttu-id="c6fe3-326">既定では、NavigationView ウィンドウは、表示モードに応じて、さまざまな背景を使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-326">By default, the NavigationView pane uses a different background depending on the display mode:</span></span>
+## <a name="navigation-view-customization"></a><span data-ttu-id="43c95-329">ナビゲーション ビューのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="43c95-329">Navigation view customization</span></span>
 
-- <span data-ttu-id="c6fe3-327">ウィンドウは、単色の灰色カラー (左モード) では、コンテンツと並行して、左側の展開されたときです。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-327">the pane is a solid grey color when expanded on the left, side-by-side with the content (in Left mode).</span></span>
-- <span data-ttu-id="c6fe3-328">ウィンドウは、コンテンツ (上、最小限に抑えながら、またはコンパクト モードで) 上にオーバーレイとして開くときに、アプリ内アクリルを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-328">the pane uses in-app acrylic when open as an overlay on top of content (in Top, Minimal, or Compact mode).</span></span>
+### <a name="pane-backgrounds"></a><span data-ttu-id="43c95-330">ウィンドウの背景</span><span class="sxs-lookup"><span data-stu-id="43c95-330">Pane Backgrounds</span></span>
 
-<span data-ttu-id="c6fe3-329">ウィンドウの背景を変更するには、各モードの背景をレンダリングするために使用する XAML テーマ リソースをオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-329">To modify the pane background, you can override the XAML theme resources used to render the background in each mode.</span></span> <span data-ttu-id="c6fe3-330">(この手法が使用 PaneBackground の 1 つのプロパティではなくさまざまな表示モードのさまざまな背景をサポートするために)。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-330">(This technique is used rather than a single PaneBackground property in order to support different backgrounds for different display modes.)</span></span>
+<span data-ttu-id="43c95-331">既定では、NavigationView ウィンドウは、表示モードに応じて、別の背景を使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-331">By default, the NavigationView pane uses a different background depending on the display mode:</span></span>
 
-<span data-ttu-id="c6fe3-331">次の表では、どのテーマ リソースが各表示モードで使用されるを示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-331">This table shows which theme resource is used in each display mode.</span></span>
+- <span data-ttu-id="43c95-332">ウィンドウは、単色の灰色カラー (左モード) では、コンテンツと並行して、左側の展開されたときです。</span><span class="sxs-lookup"><span data-stu-id="43c95-332">the pane is a solid grey color when expanded on the left, side-by-side with the content (in Left mode).</span></span>
+- <span data-ttu-id="43c95-333">ウィンドウは、コンテンツ (上、最小限に抑えながら、またはコンパクト モードで) 上にオーバーレイとして開くときに、アプリ内アクリルを使用します。</span><span class="sxs-lookup"><span data-stu-id="43c95-333">the pane uses in-app acrylic when open as an overlay on top of content (in Top, Minimal, or Compact mode).</span></span>
 
-| <span data-ttu-id="c6fe3-332">表示モード</span><span class="sxs-lookup"><span data-stu-id="c6fe3-332">Display mode</span></span> | <span data-ttu-id="c6fe3-333">テーマ リソース</span><span class="sxs-lookup"><span data-stu-id="c6fe3-333">Theme resource</span></span> |
+<span data-ttu-id="43c95-334">ウィンドウの背景を変更するには、各モードの背景をレンダリングするために使用する XAML テーマ リソースをオーバーライドできます。</span><span class="sxs-lookup"><span data-stu-id="43c95-334">To modify the pane background, you can override the XAML theme resources used to render the background in each mode.</span></span> <span data-ttu-id="43c95-335">(この手法が使用 PaneBackground の 1 つのプロパティではなくさまざまな表示モードのさまざまな背景をサポートするために)。</span><span class="sxs-lookup"><span data-stu-id="43c95-335">(This technique is used rather than a single PaneBackground property in order to support different backgrounds for different display modes.)</span></span>
+
+<span data-ttu-id="43c95-336">次の表では、どのテーマ リソースが各表示モードで使用されるを示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-336">This table shows which theme resource is used in each display mode.</span></span>
+
+| <span data-ttu-id="43c95-337">表示モード</span><span class="sxs-lookup"><span data-stu-id="43c95-337">Display mode</span></span> | <span data-ttu-id="43c95-338">テーマ リソース</span><span class="sxs-lookup"><span data-stu-id="43c95-338">Theme resource</span></span> |
 | ------------ | -------------- |
-| <span data-ttu-id="c6fe3-334">Left</span><span class="sxs-lookup"><span data-stu-id="c6fe3-334">Left</span></span> | <span data-ttu-id="c6fe3-335">NavigationViewExpandedPaneBackground</span><span class="sxs-lookup"><span data-stu-id="c6fe3-335">NavigationViewExpandedPaneBackground</span></span> |
-| <span data-ttu-id="c6fe3-336">LeftCompact</span><span class="sxs-lookup"><span data-stu-id="c6fe3-336">LeftCompact</span></span><br/><span data-ttu-id="c6fe3-337">LeftMinimal</span><span class="sxs-lookup"><span data-stu-id="c6fe3-337">LeftMinimal</span></span> | <span data-ttu-id="c6fe3-338">NavigationViewDefaultPaneBackground</span><span class="sxs-lookup"><span data-stu-id="c6fe3-338">NavigationViewDefaultPaneBackground</span></span> |
-| <span data-ttu-id="c6fe3-339">Top</span><span class="sxs-lookup"><span data-stu-id="c6fe3-339">Top</span></span> | <span data-ttu-id="c6fe3-340">NavigationViewTopPaneBackground</span><span class="sxs-lookup"><span data-stu-id="c6fe3-340">NavigationViewTopPaneBackground</span></span> |
+| <span data-ttu-id="43c95-339">Left</span><span class="sxs-lookup"><span data-stu-id="43c95-339">Left</span></span> | <span data-ttu-id="43c95-340">NavigationViewExpandedPaneBackground</span><span class="sxs-lookup"><span data-stu-id="43c95-340">NavigationViewExpandedPaneBackground</span></span> |
+| <span data-ttu-id="43c95-341">LeftCompact</span><span class="sxs-lookup"><span data-stu-id="43c95-341">LeftCompact</span></span><br/><span data-ttu-id="43c95-342">LeftMinimal</span><span class="sxs-lookup"><span data-stu-id="43c95-342">LeftMinimal</span></span> | <span data-ttu-id="43c95-343">NavigationViewDefaultPaneBackground</span><span class="sxs-lookup"><span data-stu-id="43c95-343">NavigationViewDefaultPaneBackground</span></span> |
+| <span data-ttu-id="43c95-344">Top</span><span class="sxs-lookup"><span data-stu-id="43c95-344">Top</span></span> | <span data-ttu-id="43c95-345">NavigationViewTopPaneBackground</span><span class="sxs-lookup"><span data-stu-id="43c95-345">NavigationViewTopPaneBackground</span></span> |
 
-<span data-ttu-id="c6fe3-341">この例では、App.xaml 内のテーマ リソースをオーバーライドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-341">This example shows how to override the theme resources in App.xaml.</span></span> <span data-ttu-id="c6fe3-342">テーマ リソースをオーバーライドする場合は常を入力してください少なくとも、"Default"と"HighContrast"のリソース ディクショナリとディクショナリ「ライト」または"Dark"のリソースに応じてします。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-342">When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed.</span></span> <span data-ttu-id="c6fe3-343">詳しくは、 [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-343">For more info, see [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).</span></span>
+<span data-ttu-id="43c95-346">この例では、App.xaml 内のテーマ リソースをオーバーライドする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="43c95-346">This example shows how to override the theme resources in App.xaml.</span></span> <span data-ttu-id="43c95-347">テーマ リソースをオーバーライドする場合は常を入力してください少なくとも、"Default"と"HighContrast"のリソース ディクショナリとディクショナリ「ライト」または"Dark"のリソースに応じてします。</span><span class="sxs-lookup"><span data-stu-id="43c95-347">When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed.</span></span> <span data-ttu-id="43c95-348">詳しくは、 [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43c95-348">For more info, see [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries).</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="c6fe3-344">このコードは、AcrylicBrush の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-344">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of AcrylicBrush.</span></span> <span data-ttu-id="c6fe3-345">AcrylicBrush のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 16299 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-345">If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater.</span></span> <span data-ttu-id="c6fe3-346">プラットフォームのバージョンを使用するすべての参照を削除`muxm:`します。</span><span class="sxs-lookup"><span data-stu-id="c6fe3-346">To use the platform version, remove all references to `muxm:`.</span></span>
+> <span data-ttu-id="43c95-349">このコードは、AcrylicBrush の[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)のバージョンを使用する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="43c95-349">This code shows how to use the [Windows UI Library](https://docs.microsoft.com/uwp/toolkits/winui/) version of AcrylicBrush.</span></span> <span data-ttu-id="43c95-350">AcrylicBrush のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは SDK 16299 以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="43c95-350">If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater.</span></span> <span data-ttu-id="43c95-351">プラットフォームのバージョンを使用するすべての参照を削除`muxm:`します。</span><span class="sxs-lookup"><span data-stu-id="43c95-351">To use the platform version, remove all references to `muxm:`.</span></span>
 
 ```xaml
 <Application
@@ -691,9 +710,9 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 </Application>
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="c6fe3-347">関連トピック</span><span class="sxs-lookup"><span data-stu-id="c6fe3-347">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="43c95-352">関連トピック</span><span class="sxs-lookup"><span data-stu-id="43c95-352">Related topics</span></span>
 
-- [<span data-ttu-id="c6fe3-348">NavigationView クラス</span><span class="sxs-lookup"><span data-stu-id="c6fe3-348">NavigationView class</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
-- [<span data-ttu-id="c6fe3-349">マスター/詳細</span><span class="sxs-lookup"><span data-stu-id="c6fe3-349">Master/details</span></span>](master-details.md)
-- [<span data-ttu-id="c6fe3-350">ナビゲーションの基本</span><span class="sxs-lookup"><span data-stu-id="c6fe3-350">Navigation basics</span></span>](../basics/navigation-basics.md)
-- [<span data-ttu-id="c6fe3-351">UWP 用 Fluent Design の概要</span><span class="sxs-lookup"><span data-stu-id="c6fe3-351">Fluent Design for UWP overview</span></span>](../fluent-design-system/index.md)
+- [<span data-ttu-id="43c95-353">NavigationView クラス</span><span class="sxs-lookup"><span data-stu-id="43c95-353">NavigationView class</span></span>](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+- [<span data-ttu-id="43c95-354">マスター/詳細</span><span class="sxs-lookup"><span data-stu-id="43c95-354">Master/details</span></span>](master-details.md)
+- [<span data-ttu-id="43c95-355">ナビゲーションの基本</span><span class="sxs-lookup"><span data-stu-id="43c95-355">Navigation basics</span></span>](../basics/navigation-basics.md)
+- [<span data-ttu-id="43c95-356">UWP 用 Fluent Design の概要</span><span class="sxs-lookup"><span data-stu-id="43c95-356">Fluent Design for UWP overview</span></span>](../fluent-design-system/index.md)
