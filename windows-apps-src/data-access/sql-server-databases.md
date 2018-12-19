@@ -5,64 +5,69 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, UWP, SQL Server, データベース
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cb4b16cea3368660ffcb1bc4b252391a73ab13e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940813"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976929"
 ---
-# <a name="use-a-sql-server-database-in-a-uwp-app"></a><span data-ttu-id="611fd-104">UWP アプリでの SQL Server データベースの使用</span><span class="sxs-lookup"><span data-stu-id="611fd-104">Use a SQL Server database in a UWP app</span></span>
-<span data-ttu-id="611fd-105">アプリで [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間のクラスを使用して、SQL Server データベースに直接接続し、データを保存および取得することができます。</span><span class="sxs-lookup"><span data-stu-id="611fd-105">Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace.</span></span>
+# <a name="use-a-sql-server-database-in-a-uwp-app"></a><span data-ttu-id="7d700-104">UWP アプリでの SQL Server データベースの使用</span><span class="sxs-lookup"><span data-stu-id="7d700-104">Use a SQL Server database in a UWP app</span></span>
+<span data-ttu-id="7d700-105">アプリで [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間のクラスを使用して、SQL Server データベースに直接接続し、データを保存および取得することができます。</span><span class="sxs-lookup"><span data-stu-id="7d700-105">Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace.</span></span>
 
-<span data-ttu-id="611fd-106">このガイドでは、それを行う方法の 1 つを示します。</span><span class="sxs-lookup"><span data-stu-id="611fd-106">In this guide, we'll show you one way to do that.</span></span> <span data-ttu-id="611fd-107">[Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) サンプル データベースを SQL Server インスタンスにインストールし、ここで示すスニペットを使用して、Northwind サンプルのデータベースから取得した製品を表示する基本的な UI を作成します。</span><span class="sxs-lookup"><span data-stu-id="611fd-107">If you install the [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.</span></span>
+<span data-ttu-id="7d700-106">このガイドでは、それを行う方法の 1 つを示します。</span><span class="sxs-lookup"><span data-stu-id="7d700-106">In this guide, we'll show you one way to do that.</span></span> <span data-ttu-id="7d700-107">[Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) サンプル データベースを SQL Server インスタンスにインストールし、ここで示すスニペットを使用して、Northwind サンプルのデータベースから取得した製品を表示する基本的な UI を作成します。</span><span class="sxs-lookup"><span data-stu-id="7d700-107">If you install the [Northwind](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases) sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.</span></span>
 
 ![Northwind 製品](images/products-northwind.png)
 
-<span data-ttu-id="611fd-109">このガイドで示すスニペットは、このもっと[完全なサンプル](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo)に基づいています。</span><span class="sxs-lookup"><span data-stu-id="611fd-109">The snippets that appear in this guide are based on this more [complete sample](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).</span></span>
+<span data-ttu-id="7d700-109">このガイドで示すスニペットは、このもっと[完全なサンプル](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo)に基づいています。</span><span class="sxs-lookup"><span data-stu-id="7d700-109">The snippets that appear in this guide are based on this more [complete sample](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).</span></span>
 
-## <a name="first-set-up-your-solution"></a><span data-ttu-id="611fd-110">まず、ソリューションをセットアップする</span><span class="sxs-lookup"><span data-stu-id="611fd-110">First, set up your solution</span></span>
+## <a name="first-set-up-your-solution"></a><span data-ttu-id="7d700-110">まず、ソリューションをセットアップする</span><span class="sxs-lookup"><span data-stu-id="7d700-110">First, set up your solution</span></span>
 
-<span data-ttu-id="611fd-111">アプリを SQL Server データベースに直接接続するために、プロジェクトの最小バージョンが Fall Creators Update を対象にしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="611fd-111">To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Fall Creators update.</span></span>  <span data-ttu-id="611fd-112">UWP プロジェクトのプロパティ ページにその情報があります。</span><span class="sxs-lookup"><span data-stu-id="611fd-112">You can find that information in the properties page of your UWP project.</span></span>
+<span data-ttu-id="7d700-111">アプリを SQL Server データベースに直接接続するために、プロジェクトの最小バージョンが Fall Creators Update を対象にしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7d700-111">To connect your app directly to a SQL Server database, make sure that the minimum version of your project targets the Fall Creators update.</span></span>  <span data-ttu-id="7d700-112">UWP プロジェクトのプロパティ ページにその情報があります。</span><span class="sxs-lookup"><span data-stu-id="7d700-112">You can find that information in the properties page of your UWP project.</span></span>
 
 ![Windows SDK の最小バージョン](images/min-version-fall-creators.png)
 
-<span data-ttu-id="611fd-114">マニフェスト デザイナーで、UWP プロジェクトの **Package.appxmanifest** ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="611fd-114">Open the **Package.appxmanifest** file of your UWP project in the manifest designer.</span></span>
+<span data-ttu-id="7d700-114">マニフェスト デザイナーで、UWP プロジェクトの **Package.appxmanifest** ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="7d700-114">Open the **Package.appxmanifest** file of your UWP project in the manifest designer.</span></span>
 
-<span data-ttu-id="611fd-115">**[機能]** タブで、**[エンタープライズ認証]** チェックボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="611fd-115">In the **Capabilities** tab, select the **Enterprise Authentication** checkbox.</span></span>
+<span data-ttu-id="7d700-115">**[機能**] タブでは、SQL Server を認証するために Windows 認証を使用している場合、**エンタープライズ認証**チェック ボックスを選択します。</span><span class="sxs-lookup"><span data-stu-id="7d700-115">In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.</span></span>
 
 ![エンタープライズ認証機能](images/enterprise-authentication.png)
 
 <a id="use-data" />
 
-## <a name="add-and-retrieve-data-in-a-sql-server-database"></a><span data-ttu-id="611fd-117">SQL Server データベースのデータの追加と取得</span><span class="sxs-lookup"><span data-stu-id="611fd-117">Add and retrieve data in a SQL Server database</span></span>
+## <a name="add-and-retrieve-data-in-a-sql-server-database"></a><span data-ttu-id="7d700-117">SQL Server データベースのデータの追加と取得</span><span class="sxs-lookup"><span data-stu-id="7d700-117">Add and retrieve data in a SQL Server database</span></span>
 
-<span data-ttu-id="611fd-118">このセクションでは、以下のことを行います。</span><span class="sxs-lookup"><span data-stu-id="611fd-118">In this section,  we'll do these things:</span></span>
+<span data-ttu-id="7d700-118">このセクションでは、以下のことを行います。</span><span class="sxs-lookup"><span data-stu-id="7d700-118">In this section,  we'll do these things:</span></span>
 
-<span data-ttu-id="611fd-119">:1: 接続文字列を追加します。</span><span class="sxs-lookup"><span data-stu-id="611fd-119">:one: Add a connection string.</span></span>
+<span data-ttu-id="7d700-119">:1: 接続文字列を追加します。</span><span class="sxs-lookup"><span data-stu-id="7d700-119">:one: Add a connection string.</span></span>
 
-<span data-ttu-id="611fd-120">:2: 製品データを保持するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="611fd-120">:two: Create a class to hold product data.</span></span>
+<span data-ttu-id="7d700-120">:2: 製品データを保持するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="7d700-120">:two: Create a class to hold product data.</span></span>
 
-<span data-ttu-id="611fd-121">:3: SQL Server データベースから製品を取得します。</span><span class="sxs-lookup"><span data-stu-id="611fd-121">:three: Retrieve products from the SQL Server database.</span></span>
+<span data-ttu-id="7d700-121">:3: SQL Server データベースから製品を取得します。</span><span class="sxs-lookup"><span data-stu-id="7d700-121">:three: Retrieve products from the SQL Server database.</span></span>
 
-<span data-ttu-id="611fd-122">:4: 基本的なユーザー インターフェイスを追加します。</span><span class="sxs-lookup"><span data-stu-id="611fd-122">:four: Add a basic user interface.</span></span>
+<span data-ttu-id="7d700-122">:4: 基本的なユーザー インターフェイスを追加します。</span><span class="sxs-lookup"><span data-stu-id="7d700-122">:four: Add a basic user interface.</span></span>
 
-<span data-ttu-id="611fd-123">:5: UI に製品を追加します。</span><span class="sxs-lookup"><span data-stu-id="611fd-123">:five: Populate the UI with Products.</span></span>
+<span data-ttu-id="7d700-123">:5: UI に製品を追加します。</span><span class="sxs-lookup"><span data-stu-id="7d700-123">:five: Populate the UI with Products.</span></span>
 
 >[!NOTE]
-> <span data-ttu-id="611fd-124">このセクションでは、データ アクセス コードを編成する方法の 1 つを示します。</span><span class="sxs-lookup"><span data-stu-id="611fd-124">This section illustrates one way to organize your data access code.</span></span> <span data-ttu-id="611fd-125">つまり、[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) を使用して、SQL Server データベースのデータを保存および取得する方法の例を示すだけです。</span><span class="sxs-lookup"><span data-stu-id="611fd-125">It's meant only to provide an example of how you can use  [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) to store and retrieve data from a SQL Server database.</span></span> <span data-ttu-id="611fd-126">アプリケーションの設計に最も適した方法でコードを編成してください。</span><span class="sxs-lookup"><span data-stu-id="611fd-126">You can organize your code in any way that makes the most sense to your application's design.</span></span>
+> <span data-ttu-id="7d700-124">このセクションでは、データ アクセス コードを編成する方法の 1 つを示します。</span><span class="sxs-lookup"><span data-stu-id="7d700-124">This section illustrates one way to organize your data access code.</span></span> <span data-ttu-id="7d700-125">つまり、[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) を使用して、SQL Server データベースのデータを保存および取得する方法の例を示すだけです。</span><span class="sxs-lookup"><span data-stu-id="7d700-125">It's meant only to provide an example of how you can use  [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) to store and retrieve data from a SQL Server database.</span></span> <span data-ttu-id="7d700-126">アプリケーションの設計に最も適した方法でコードを編成してください。</span><span class="sxs-lookup"><span data-stu-id="7d700-126">You can organize your code in any way that makes the most sense to your application's design.</span></span>
 
-### <a name="add-a-connection-string"></a><span data-ttu-id="611fd-127">接続文字列を追加する</span><span class="sxs-lookup"><span data-stu-id="611fd-127">Add a connection string</span></span>
+### <a name="add-a-connection-string"></a><span data-ttu-id="7d700-127">接続文字列を追加する</span><span class="sxs-lookup"><span data-stu-id="7d700-127">Add a connection string</span></span>
 
-<span data-ttu-id="611fd-128">**App.xaml.cs** ファイルで、``App`` クラスにプロパティを追加します。これにより、ソリューションに含まれる他のクラスが接続文字列にアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="611fd-128">In the **App.xaml.cs** file, add a property to the ``App`` class, that gives other classes in your solution access to the connection string.</span></span>
+<span data-ttu-id="7d700-128">**App.xaml.cs** ファイルで、``App`` クラスにプロパティを追加します。これにより、ソリューションに含まれる他のクラスが接続文字列にアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="7d700-128">In the **App.xaml.cs** file, add a property to the ``App`` class, that gives other classes in your solution access to the connection string.</span></span>
 
-<span data-ttu-id="611fd-129">接続文字列は、SQL Server Express のインスタンスの Northwind データベースを指しています。</span><span class="sxs-lookup"><span data-stu-id="611fd-129">Our connection string points to the Northwind database in a SQL Server Express instance.</span></span>
+<span data-ttu-id="7d700-129">接続文字列は、SQL Server Express のインスタンスの Northwind データベースを指しています。</span><span class="sxs-lookup"><span data-stu-id="7d700-129">Our connection string points to the Northwind database in a SQL Server Express instance.</span></span>
 
 ```csharp
 sealed partial class App : Application
 {
+    // Connection string for using Windows Authentication.
     private string connectionString =
         @"Data Source=YourServerName\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+    // This is an example connection string for using SQL Server Authentication.
+    // private string connectionString =
+    //     @"Data Source=YourServerName\YourInstanceName;Initial Catalog=DatabaseName; User Id=XXXXX; Password=XXXXX";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
@@ -70,9 +75,9 @@ sealed partial class App : Application
 }
 ```
 
-### <a name="create-a-class-to-hold-product-data"></a><span data-ttu-id="611fd-130">製品データを保持するクラスを作成する</span><span class="sxs-lookup"><span data-stu-id="611fd-130">Create a class to hold product data</span></span>
+### <a name="create-a-class-to-hold-product-data"></a><span data-ttu-id="7d700-130">製品データを保持するクラスを作成する</span><span class="sxs-lookup"><span data-stu-id="7d700-130">Create a class to hold product data</span></span>
 
-<span data-ttu-id="611fd-131">XAML UI でこのクラスのプロパティに属性をバインドできるように、[INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) イベントを実装するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="611fd-131">We'll create a class that implements the [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) event so that we can bind attributes in our XAML UI to the properties in this class.</span></span>
+<span data-ttu-id="7d700-131">XAML UI でこのクラスのプロパティに属性をバインドできるように、[INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) イベントを実装するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="7d700-131">We'll create a class that implements the [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged.aspx) event so that we can bind attributes in our XAML UI to the properties in this class.</span></span>
 
 ```csharp
 public class Product : INotifyPropertyChanged
@@ -99,9 +104,9 @@ public class Product : INotifyPropertyChanged
 }
 ```
 
-### <a name="retrieve-products-from-the-sql-server-database"></a><span data-ttu-id="611fd-132">SQL Server データベースから製品を取得する</span><span class="sxs-lookup"><span data-stu-id="611fd-132">Retrieve products from the SQL Server database</span></span>
+### <a name="retrieve-products-from-the-sql-server-database"></a><span data-ttu-id="7d700-132">SQL Server データベースから製品を取得する</span><span class="sxs-lookup"><span data-stu-id="7d700-132">Retrieve products from the SQL Server database</span></span>
 
-<span data-ttu-id="611fd-133">Northwind サンプル データベースから製品を取得し、``Product`` インスタンスの [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) コレクションとしてそれらを返すメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="611fd-133">Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) collection of ``Product`` instances.</span></span>
+<span data-ttu-id="7d700-133">Northwind サンプル データベースから製品を取得し、``Product`` インスタンスの [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) コレクションとしてそれらを返すメソッドを作成します。</span><span class="sxs-lookup"><span data-stu-id="7d700-133">Create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) collection of ``Product`` instances.</span></span>
 
 ```csharp
 public ObservableCollection<Product> GetProducts(string connectionString)
@@ -149,11 +154,11 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 }
 ```
 
-### <a name="add-a-basic-user-interface"></a><span data-ttu-id="611fd-134">基本的なユーザー インターフェイスを追加する</span><span class="sxs-lookup"><span data-stu-id="611fd-134">Add a basic user interface</span></span>
+### <a name="add-a-basic-user-interface"></a><span data-ttu-id="7d700-134">基本的なユーザー インターフェイスを追加する</span><span class="sxs-lookup"><span data-stu-id="7d700-134">Add a basic user interface</span></span>
 
- <span data-ttu-id="611fd-135">次の XAML を、UWP プロジェクトの **MainPage.xaml** ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="611fd-135">Add the following XAML to the **MainPage.xaml** file of the UWP project.</span></span>
+ <span data-ttu-id="7d700-135">次の XAML を、UWP プロジェクトの **MainPage.xaml** ファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="7d700-135">Add the following XAML to the **MainPage.xaml** file of the UWP project.</span></span>
 
- <span data-ttu-id="611fd-136">この XAML では、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) を作成して前のスニペットで返された各製品を表示し、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 内の各行の属性を ``Product`` クラスで定義したプロパティにバインドします。</span><span class="sxs-lookup"><span data-stu-id="611fd-136">This XAML creates a [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the ``Product`` class.</span></span>
+ <span data-ttu-id="7d700-136">この XAML では、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) を作成して前のスニペットで返された各製品を表示し、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 内の各行の属性を ``Product`` クラスで定義したプロパティにバインドします。</span><span class="sxs-lookup"><span data-stu-id="7d700-136">This XAML creates a [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to show each product that you returned in the previous snippet, and binds the attributes of each row in the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the properties that we defined in the ``Product`` class.</span></span>
 
 ```xml
 <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
@@ -201,9 +206,9 @@ public ObservableCollection<Product> GetProducts(string connectionString)
 </Grid>
 ```
 
-### <a name="show-products-in-the-listview"></a><span data-ttu-id="611fd-137">ListView で製品を表示する</span><span class="sxs-lookup"><span data-stu-id="611fd-137">Show products in the ListView</span></span>
+### <a name="show-products-in-the-listview"></a><span data-ttu-id="7d700-137">ListView で製品を表示する</span><span class="sxs-lookup"><span data-stu-id="7d700-137">Show products in the ListView</span></span>
 
-<span data-ttu-id="611fd-138">**MainPage.xaml.cs** ファイルを開き、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) の **ItemSource** プロパティを ``Product`` インスタンスの [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) に設定するコードを、``MainPage`` クラスのコンストラクターに追加します。</span><span class="sxs-lookup"><span data-stu-id="611fd-138">Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) of ``Product`` instances.</span></span>
+<span data-ttu-id="7d700-138">**MainPage.xaml.cs** ファイルを開き、[ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) の **ItemSource** プロパティを ``Product`` インスタンスの [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) に設定するコードを、``MainPage`` クラスのコンストラクターに追加します。</span><span class="sxs-lookup"><span data-stu-id="7d700-138">Open the **MainPage.xaml.cs** file, and add code to the constructor of the ``MainPage`` class that sets the **ItemSource** property of the [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) to the [ObservableCollection](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) of ``Product`` instances.</span></span>
 
 ```csharp
 public MainPage()
@@ -213,32 +218,32 @@ public MainPage()
 }
 ```
 
-<span data-ttu-id="611fd-139">プロジェクトを開始すると、Northwind サンプル データベースから取得した製品が UI に表示されます。</span><span class="sxs-lookup"><span data-stu-id="611fd-139">Start the project and see products from the Northwind sample database appear in the UI.</span></span>
+<span data-ttu-id="7d700-139">プロジェクトを開始すると、Northwind サンプル データベースから取得した製品が UI に表示されます。</span><span class="sxs-lookup"><span data-stu-id="7d700-139">Start the project and see products from the Northwind sample database appear in the UI.</span></span>
 
 ![Northwind 製品](images/products-northwind.png)
 
-<span data-ttu-id="611fd-141">[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間を調べて、SQL Server データベース内のデータを使用して他に何ができるかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="611fd-141">Explore the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace to see what other things you can do with data in your SQL Server database.</span></span>
+<span data-ttu-id="7d700-141">[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間を調べて、SQL Server データベース内のデータを使用して他に何ができるかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="7d700-141">Explore the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace to see what other things you can do with data in your SQL Server database.</span></span>
 
-## <a name="trouble-connecting-to-your-database"></a><span data-ttu-id="611fd-142">データベースへの接続で問題が発生した場合</span><span class="sxs-lookup"><span data-stu-id="611fd-142">Trouble connecting to your database?</span></span>
+## <a name="trouble-connecting-to-your-database"></a><span data-ttu-id="7d700-142">データベースへの接続で問題が発生した場合</span><span class="sxs-lookup"><span data-stu-id="7d700-142">Trouble connecting to your database?</span></span>
 
-<span data-ttu-id="611fd-143">ほとんどの場合、SQL Server 構成のいくつかの側面を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="611fd-143">In most cases, some aspect of the SQL Server configuration needs to be changed.</span></span> <span data-ttu-id="611fd-144">Windows フォームや WPF アプリケーションなどの別の種類のデスクトップ アプリケーションからデータベースに接続できる場合は、SQL Server の TCP/IP を有効にしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="611fd-144">If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server.</span></span> <span data-ttu-id="611fd-145">これは、**コンピューターの管理**コンソールで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="611fd-145">You can do that in the **Computer Management** console.</span></span>
+<span data-ttu-id="7d700-143">ほとんどの場合、SQL Server 構成のいくつかの側面を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7d700-143">In most cases, some aspect of the SQL Server configuration needs to be changed.</span></span> <span data-ttu-id="7d700-144">Windows フォームや WPF アプリケーションなどの別の種類のデスクトップ アプリケーションからデータベースに接続できる場合は、SQL Server の TCP/IP を有効にしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7d700-144">If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server.</span></span> <span data-ttu-id="7d700-145">これは、**コンピューターの管理**コンソールで行うことができます。</span><span class="sxs-lookup"><span data-stu-id="7d700-145">You can do that in the **Computer Management** console.</span></span>
 
 ![コンピューターの管理](images/computer-management.png)
 
-<span data-ttu-id="611fd-147">次に、SQL Server Browser サービスが実行されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="611fd-147">Then, make sure that your SQL Server Browser service is running.</span></span>
+<span data-ttu-id="7d700-147">次に、SQL Server Browser サービスが実行されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="7d700-147">Then, make sure that your SQL Server Browser service is running.</span></span>
 
 ![SQL Server Browser サービス](images/sql-browser-service.png)
 
-## <a name="next-steps"></a><span data-ttu-id="611fd-149">次のステップ</span><span class="sxs-lookup"><span data-stu-id="611fd-149">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="7d700-149">次のステップ</span><span class="sxs-lookup"><span data-stu-id="7d700-149">Next steps</span></span>
 
-**<span data-ttu-id="611fd-150">軽量なデータベースを使用して、ユーザー デバイスにデータを保存する</span><span class="sxs-lookup"><span data-stu-id="611fd-150">Use a light-weight database to store data on the users device</span></span>**
+**<span data-ttu-id="7d700-150">軽量なデータベースを使用して、ユーザー デバイスにデータを保存する</span><span class="sxs-lookup"><span data-stu-id="7d700-150">Use a light-weight database to store data on the users device</span></span>**
 
-<span data-ttu-id="611fd-151">「[UWP アプリでの SQLite データベースの使用](sqlite-databases.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="611fd-151">See [Use a SQLite database in a UWP app](sqlite-databases.md).</span></span>
+<span data-ttu-id="7d700-151">「[UWP アプリでの SQLite データベースの使用](sqlite-databases.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7d700-151">See [Use a SQLite database in a UWP app](sqlite-databases.md).</span></span>
 
-**<span data-ttu-id="611fd-152">異なるプラットフォームにわたる異なるアプリの間でコードを共有する</span><span class="sxs-lookup"><span data-stu-id="611fd-152">Share code between different apps across different platforms</span></span>**
+**<span data-ttu-id="7d700-152">異なるプラットフォームにわたる異なるアプリの間でコードを共有する</span><span class="sxs-lookup"><span data-stu-id="7d700-152">Share code between different apps across different platforms</span></span>**
 
-<span data-ttu-id="611fd-153">「[デスクトップと UWP でコードを共有する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="611fd-153">See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).</span></span>
+<span data-ttu-id="7d700-153">「[デスクトップと UWP でコードを共有する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7d700-153">See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).</span></span>
 
-**<span data-ttu-id="611fd-154">Azure SQL バックエンドでマスター/詳細ページを追加する</span><span class="sxs-lookup"><span data-stu-id="611fd-154">Add master detail pages with Azure SQL back ends</span></span>**
+**<span data-ttu-id="7d700-154">Azure SQL バックエンドでマスター/詳細ページを追加する</span><span class="sxs-lookup"><span data-stu-id="7d700-154">Add master detail pages with Azure SQL back ends</span></span>**
 
-<span data-ttu-id="611fd-155">「[顧客注文データベースのサンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="611fd-155">See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).</span></span>
+<span data-ttu-id="7d700-155">「[顧客注文データベースのサンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7d700-155">See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).</span></span>
