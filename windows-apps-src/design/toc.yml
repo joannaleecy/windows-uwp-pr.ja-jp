@@ -1,0 +1,572 @@
+items:
+- name: 設計の基本
+  items:
+  - name: 概要
+    href: basics/index.md
+  - name: アプリ設計の概要
+    href: basics/design-and-ui-intro.md
+  - name: Fluent Design System
+    href: fluent-design-system/index.md
+  - name: ナビゲーションの基本
+    items:
+    - name: 概要
+      href: basics/navigation-basics.md
+    - name: 基本的なナビゲーションの実装
+      href: basics/navigate-between-two-pages.md
+    - name: ナビゲーション履歴と前に戻る移動
+      href: basics/navigation-history-and-backwards-navigation.md
+  - name: コマンドの基本
+    href: basics/commanding-basics.md
+  - name: コンテンツの基本
+    href: basics/content-basics.md
+  - name: チュートリアル
+    items:
+    - name: ユーザー インターフェイスの作成
+      href: basics/xaml-basics-ui.md
+    - name: アダプティブ レイアウトを作成する
+      href: basics/xaml-basics-adaptive-layout.md
+    - name: コントロールのスタイル指定
+      href: basics/xaml-basics-style.md
+- name: レイアウト
+  items:
+  - name: 概要
+    href: layout/index.md
+  - name: ページのレイアウト
+    href: layout/page-layout.md
+  - name: 画面のサイズとブレークポイント
+    href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
+  - name: レスポンシブ デザインの手法
+    href: layout/responsive-design.md
+  - name: XAML を使ったレイアウト
+    href: layout/layouts-with-xaml.md
+  - name: 複数のビューの表示
+    href: layout/show-multiple-views.md
+  - name: 配置、余白、およびパディング
+    href: layout/alignment-margin-padding.md
+  - name: レイアウト パネル
+    items:
+    - name: 概要
+      href: layout/layout-panels.md
+    - name: 'チュートリアル: レイアウト パネルの使用'
+      href: layout/grid-tutorial.md
+    - name: 分割ビュー
+      href: controls-and-patterns/split-view.md
+    - name: カスタム パネル
+      href: layout/custom-panels-overview.md
+    - name: 'カスタム パネルの例: BoxPanel'
+      href: layout/boxpanel-example-custom-panel.md
+  - name: 変換
+    items:
+    - name: 概要
+      href: layout/transforms.md
+    - name: 3-D 遠近効果
+      href: layout/3-d-perspective-effects.md
+- name: コントロール
+  items:
+  - name: 概要
+    href: controls-and-patterns/index.md
+  - name: コントロールとイベントの概要
+    href: controls-and-patterns/controls-and-events-intro.md
+  - name: 機能別コントロールのインデックス
+    href: controls-and-patterns/controls-by-function.md
+  - name: 基本入力
+    items:
+    - name: ボタン
+      href: controls-and-patterns/buttons.md
+    - name: チェック ボックス
+      href: controls-and-patterns/checkbox.md
+    - name: コンボ ボックス
+      href: controls-and-patterns/combo-box.md
+    - name: ハイパーリンク
+      href: controls-and-patterns/hyperlinks.md
+    - name: ラジオ ボタン
+      href: controls-and-patterns/radio-button.md
+    - name: 評価コントロール
+      href: controls-and-patterns/rating.md
+    - name: スライダー
+      href: controls-and-patterns/slider.md
+    - name: トグル
+      href: controls-and-patterns/toggles.md
+  - name: コレクション
+    items:
+    - name: 概要
+      href: controls-and-patterns/lists.md
+    - name: フリップ ビュー
+      href: controls-and-patterns/flipview.md
+    - name: リスト ビューとグリッド ビュー
+      href: controls-and-patterns/listview-and-gridview.md
+      items:
+      - name: 項目コンテナーやテンプレート
+        href: controls-and-patterns/item-containers-templates.md
+      - name: リスト ビューの項目テンプレート
+        href: controls-and-patterns/item-templates-listview.md
+      - name: グリッド ビューの項目テンプレート
+        href: controls-and-patterns/item-templates-gridview.md
+    - name: 反転リスト
+      href: controls-and-patterns/inverted-lists.md
+    - name: 引っ張って更新
+      href: controls-and-patterns/pull-to-refresh.md
+    - name: 入れ子になった UI
+      href: controls-and-patterns/nested-ui.md
+    - name: コレクションのコマンド実行
+      href: controls-and-patterns/collection-commanding.md
+    - name: スワイプ
+      href: controls-and-patterns/swipe.md
+    - name: ツリー ビュー
+      href: controls-and-patterns/tree-view.md
+  - name: ダイアログとポップアップ
+    items:
+    - name: 概要
+      href: controls-and-patterns/dialogs-and-flyouts/index.md
+    - name: ダイアログ
+      href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
+    - name: ポップアップ
+      href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+  - name: フォーム
+    href: controls-and-patterns/forms.md
+  - name: メディア、グラフィックス、図形
+    items:
+    - name: 画像とイメージ ブラシ
+      href: controls-and-patterns/images-imagebrushes.md
+    - name: インク
+      href: controls-and-patterns/inking-controls.md
+    - name: メディア再生
+      href: controls-and-patterns/media-playback.md
+    - name: カスタム トランスポート コントロール
+      href: controls-and-patterns/custom-transport-controls.md
+    - name: 図形
+      href: controls-and-patterns/shapes.md
+    - name: Web ビュー
+      href: controls-and-patterns/web-view.md
+  - name: メニューとツール バー
+    items:
+    - name: アプリ バーとコマンド バー
+      href: controls-and-patterns/app-bars.md
+    - name: コマンド バーのポップアップ
+      href: controls-and-patterns/command-bar-flyout.md
+    - name: メニューとコンテキスト メニュー
+      href: controls-and-patterns/menus.md
+  - name: ナビゲーション
+    items:
+    - name: ハブ
+      href: controls-and-patterns/hub.md
+    - name: マスター/詳細
+      href: controls-and-patterns/master-details.md
+    - name: ナビゲーション ビュー
+      href: controls-and-patterns/navigationview.md
+    - name: ピボット
+      href: controls-and-patterns/pivot.md
+  - name: People
+    items:
+    - name: 連絡先カード
+      href: controls-and-patterns/contact-card.md
+    - name: ユーザー画像
+      href: controls-and-patterns/person-picture.md
+  - name: ピッカー
+    items:
+    - name: カラー ピッカー
+      href: controls-and-patterns/color-picker.md
+    - name: 日付と時刻コントロール
+      href: controls-and-patterns/date-and-time.md
+    - name: カレンダーの日付の選択コントロール
+      href: controls-and-patterns/calendar-date-picker.md
+    - name: カレンダー ビュー
+      href: controls-and-patterns/calendar-view.md
+    - name: 日付の選択コントロール
+      href: controls-and-patterns/date-picker.md
+    - name: 時刻の選択
+      href: controls-and-patterns/time-picker.md
+  - name: スクロール
+    items:
+    - name: スクロール コントロールとパン コントロール
+      href: controls-and-patterns/scroll-controls.md
+    - name: セマンティック ズーム
+      href: controls-and-patterns/semantic-zoom.md
+  - name: 検索
+    href: controls-and-patterns/search.md
+  - name: 状態と情報
+    items:
+    - name: 進行状況
+      href: controls-and-patterns/progress-controls.md
+    - name: ヒント
+      href: controls-and-patterns/tooltips.md
+  - name: テキスト
+    items:
+    - name: 概要
+      href: controls-and-patterns/text-controls.md
+    - name: 自動提案ボックス
+      href: controls-and-patterns/auto-suggest-box.md
+    - name: テキスト ブロック
+      href: controls-and-patterns/text-block.md
+    - name: リッチ テキスト ブロック
+      href: controls-and-patterns/rich-text-block.md
+    - name: テキスト ボックス
+      href: controls-and-patterns/text-box.md
+    - name: リッチ エディット ボックス
+      href: controls-and-patterns/rich-edit-box.md
+    - name: パスワード ボックス
+      href: controls-and-patterns/password-box.md
+    - name: ラベル
+      href: controls-and-patterns/labels.md
+    - name: コンテンツ リンク
+      href: controls-and-patterns/content-links.md
+    - name: 手書きビュー
+      href: controls-and-patterns/text-handwriting-view.md
+- name: 形式
+  items:
+  - name: 概要
+    href: style/index.md
+  - name: 色
+    href: style/color.md
+  - name: 文字体裁
+    href: style/typography.md
+  - name: アイコン
+    items:
+    - name: 概要
+      href: style/icons.md
+    - name: アプリのアイコンとロゴ
+      href: style/app-icons-and-logos.md
+    - name: Segoe MDL2 アイコン
+      href: style/segoe-ui-symbol-font.md
+  - name: アクリル
+    href: style/acrylic.md
+  - name: 表示ハイライト
+    href: style/reveal.md
+  - name: 表示フォーカス
+    href: style/reveal-focus.md
+  - name: サウンド
+    href: style/sound.md
+  - name: 記述スタイル
+    href: style/writing-style.md
+  - name: XAML ブラシ
+    href: style/brushes.md
+  - name: XAML スタイル
+    href: controls-and-patterns/xaml-styles.md
+    items:
+    - name: XAML コントロール テンプレート
+      href: controls-and-patterns/control-templates.md
+    - name: ResourceDictionary と XAML リソースの参照
+      href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
+    - name: XAML テーマ リソース
+      href: controls-and-patterns/xaml-theme-resources.md
+- name: モーション
+  items:
+  - name: 概要
+    href: motion/index.md
+  - name: タイミングとイージング
+    href: motion/timing-and-easing.md
+  - name: 方向性と重力
+    href: motion/directionality-and-gravity.md
+  - name: 実践的なモーション
+    href: motion/motion-in-practice.md
+  - name: ページ切り替え効果
+    href: motion/page-transitions.md
+  - name: 接続型アニメーション
+    href: motion/connected-animation.md
+  - name: 視差
+    href: motion/parallax.md
+  - name: XAML でのアニメーション
+    href: motion/xaml-animation.md
+    items:
+    - name: プロパティ アニメーション
+      href: motion/xaml-property-animations.md
+    - name: ストーリーボードに設定されたアニメーション
+      href: motion/storyboarded-animations.md
+    - name: キー フレームとイージング関数のアニメーション
+      href: motion/key-frame-and-easing-function-animations.md
+- name: シェル
+  items:
+  - name: タイル
+    href: shell/tiles-and-notifications/creating-tiles.md
+    items:
+    - name: セカンダリ タイル
+      href: shell/tiles-and-notifications/secondary-tiles.md
+      items:
+      - name: ガイダンス
+        href: shell/tiles-and-notifications/secondary-tiles-guidance.md
+      - name: スタートにピン留めする
+        href: shell/tiles-and-notifications/secondary-tiles-pinning.md
+      - name: タスク バーにピン留めする
+        href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
+      - name: デスクトップ アプリケーション
+        href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
+    - name: タイルのコンテンツ
+      href: shell/tiles-and-notifications/create-adaptive-tiles.md
+    - name: タイルのコンテンツのスキーマ
+      href: shell/tiles-and-notifications/tile-schema.md
+    - name: 特別なタイル テンプレート
+      href: shell/tiles-and-notifications/special-tile-templates-catalog.md
+    - name: ローカル タイル通知の送信
+      href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
+    - name: 追跡可能なタイル通知
+      href: shell/tiles-and-notifications/chaseable-tile-notifications.md
+    - name: プライマリ タイル API
+      href: shell/tiles-and-notifications/primary-tile-apis.md
+    - name: 言語、スケール、コントラストに合わせたタイルとトースト通知のサポート
+      href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
+  - name: アプリをタスク バーにピン留めする
+    href: shell/pin-to-taskbar.md
+  - name: タイトル バーのカスタマイズ
+    href: shell/title-bar.md
+  - name: 通知
+    items:
+    - name: トースト通知
+      items:
+      - name: UX ガイダンス
+        href: shell/tiles-and-notifications/toast-ux-guidance.md
+      - name: トーストのコンテンツ
+        href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
+      - name: トーストのコンテンツのスキーマ
+        href: shell/tiles-and-notifications/toast-schema.md
+      - name: ローカル トーストの送信
+        href: shell/tiles-and-notifications/send-local-toast.md
+        items:
+        - name: デスクトップ アプリ
+          href: shell/tiles-and-notifications/toast-desktop-apps.md
+          items:
+          - name: C# アプリ
+            href: shell/tiles-and-notifications/send-local-toast-desktop.md
+          - name: C++ WRL アプリ
+            href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+      - name: カスタム オーディオ
+        href: shell/tiles-and-notifications/custom-audio-on-toasts.md
+      - name: 進行状況バー
+        href: shell/tiles-and-notifications/toast-progress-bar.md
+      - name: 保留中の更新プログラム
+        href: shell/tiles-and-notifications/toast-pending-update.md
+      - name: カスタム タイムスタンプ
+        href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
+      - name: コレクション
+        href: shell/tiles-and-notifications/toast-collections.md
+      - name: ヘッダー
+        href: shell/tiles-and-notifications/toast-headers.md
+      - name: 通知リスナー
+        href: shell/tiles-and-notifications/notification-listener.md
+      - name: 通知のミラーリング
+        href: shell/tiles-and-notifications/notification-mirroring.md
+      - name: ユニバーサル無視
+        href: shell/tiles-and-notifications/universal-dismiss.md
+    - name: バッジ通知
+      href: shell/tiles-and-notifications/badges.md
+    - name: Notifications Visualizer
+      href: shell/tiles-and-notifications/notifications-visualizer.md
+    - name: 通知の配信方法
+      href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
+      items:
+      - name: 通知チャンネルの種類
+        href: shell/tiles-and-notifications/channel-types.md
+      - name: Webpush と VAPID による代替チャネル
+        href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
+      - name: 定期的な通知
+        href: shell/tiles-and-notifications/periodic-notification-overview.md
+    - name: Windows プッシュ通知サービス
+      href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+      items:
+      - name: WNS の優先順位
+        href: shell/tiles-and-notifications/wns-notification-priorities.md
+      - name: プッシュ通知ウィザードにより生成されるコード
+        href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+    - name: 直接通知
+      href: shell/tiles-and-notifications/raw-notification-overview.md
+- name: 入力と操作
+  items:
+  - name: 概要
+    href: input/index.md
+  - name: 入力の基本情報
+    href: input/input-primer.md
+  - name: ポインター入力
+    href: input/handle-pointer-input.md
+  - name: 視線入力
+    href: input/gaze-interactions.md
+  - name: ペンと Windows Ink
+    href: input/pen-and-stylus-interactions.md
+    items:
+    - name: 'チュートリアル: アプリに手描き入力のサポートを追加する'
+      href: input/ink-walkthrough.md
+    - name: インク ストロークの認識
+      href: input/convert-ink-to-text.md
+    - name: インク ストロークの保存と取得
+      href: input/save-and-load-ink.md
+    - name: Ink ツール バーの追加
+      href: input/ink-toolbar.md
+  - name: タッチ
+    href: input/touch-interactions.md
+  - name: マウス
+    href: input/mouse-interactions.md
+  - name: キーボード
+    href: input/keyboard-interactions.md
+    items:
+    - name: アクセス キー
+      href: input/access-keys.md
+    - name: キーボード アクセラレータ
+      href: input/keyboard-accelerators.md
+    - name: キーボード、ゲームパッド、リモコン、アクセシビリティ ツールによるフォーカス ナビゲーション
+      href: input/focus-navigation.md
+    - name: プログラムによるフォーカス ナビゲーション
+      href: input/focus-navigation-programmatic.md
+    - name: キーボード イベント
+      href: input/keyboard-events.md
+    - name: タッチ キーボードの表示への応答
+      href: input/respond-to-the-presence-of-the-touch-keyboard.md
+    - name: 入力スコープを使用してタッチ キーボードを変更する
+      href: input/use-input-scope-to-change-the-touch-keyboard.md
+  - name: ゲームパッドとリモコン
+    href: input/gamepad-and-remote-interactions.md
+  - name: タッチパッド
+    href: input/touchpad-interactions.md
+  - name: Surface Dial
+    href: input/windows-wheel-interactions.md
+    items:
+    - name: 'チュートリアル: アプリに Surface Dial のサポートを追加する'
+      href: input/radialcontroller-walkthrough.md
+  - name: 音声操作
+    href: input/speech-interactions.md
+    items:
+    - name: 音声認識
+      href: input/speech-recognition.md
+    - name: 音声認識エンジンの言語の指定
+      href: input/specify-the-speech-recognizer-language.md
+    - name: カスタム認識の制約の定義
+      href: input/define-custom-recognition-constraints.md
+    - name: 継続的なディクテーション
+      href: input/enable-continuous-dictation.md
+    - name: オーディオ入力の問題
+      href: input/manage-issues-with-audio-input.md
+    - name: 音声認識のタイムアウト
+      href: input/set-speech-recognition-timeouts.md
+  - name: Cortana
+    href: input/cortana-interactions.md
+    items:
+    - name: 設計ガイドライン
+      href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
+    - name: フォアグラウンド アプリのアクティブ化
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+    - name: 音声コマンド定義 (VCD) の語句一覧の変更
+      href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+    - name: バックグラウンド アプリの起動
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+    - name: バックグラウンド アプリの操作
+      href: https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana
+    - name: バックグラウンド アプリからのディープ リンク
+      href: https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana
+    - name: 自然言語音声コマンドのサポート
+      href: https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+  - name: 複数の入力
+    href: input/multiple-input-design-guidelines.md
+  - name: 入力の挿入
+    href: input/input-injection.md
+  - name: 入力デバイスの識別
+    href: input/identify-input-devices.md
+  - name: カスタム テキスト入力
+    href: input/custom-text-input.md
+  - name: テキストの拡大縮小
+    href: input/text-scaling.md
+  - name: ドラッグ アンド ドロップ
+    href: input/drag-and-drop.md
+  - name: 光学式ズームとサイズ変更
+    href: input/guidelines-for-optical-zoom.md
+  - name: パン
+    href: input/guidelines-for-panning.md
+  - name: 回転
+    href: input/guidelines-for-rotation.md
+  - name: テキストと画像の選択
+    href: input/guidelines-for-textselection.md
+  - name: ターゲット設定
+    href: input/guidelines-for-targeting.md
+  - name: 視覚的なフィードバック
+    href: input/guidelines-for-visualfeedback.md
+- name: デバイス
+  items:
+  - name: 概要
+    href: devices/index.md
+  - name: Xbox およびテレビ向け設計
+    href: devices/designing-for-tv.md
+  - name: Mixed Reality
+    href: devices/designing-for-MR.md
+- name: ユーザビリティ
+  items:
+  - name: 概要
+    href: usability/index.md
+  - name: アクセシビリティ
+    href: accessibility/accessibility.md
+    items:
+    - name: 概要
+      href: accessibility/accessibility-overview.md
+    - name: 包括的なソフトウェアの設計
+      href: accessibility/designing-inclusive-software.md
+    - name: 包括的な Windows アプリの開発
+      href: accessibility/developing-inclusive-windows-apps.md
+    - name: アクセシビリティ テスト
+      href: accessibility/accessibility-testing.md
+    - name: ストア内のアクセシビリティ
+      href: accessibility/accessibility-in-the-store.md
+    - name: アクセシビリティのチェック リスト
+      href: accessibility/accessibility-checklist.md
+    - name: 基本的なアクセシビリティ情報の開示
+      href: accessibility/basic-accessibility-information.md
+    - name: キーボードのアクセシビリティ
+      href: accessibility/keyboard-accessibility.md
+    - name: ランドマークと見出し
+      href: accessibility/landmarks-and-headings.md
+    - name: ハイ コントラスト テーマ
+      href: accessibility/high-contrast-themes.md
+    - name: アクセシビリティに対応したテキストの要件
+      href: accessibility/accessible-text-requirements.md
+    - name: アクセシビリティ対応にするために避ける事項
+      href: accessibility/practices-to-avoid.md
+    - name: カスタム オートメーション ピア
+      href: accessibility/custom-automation-peers.md
+      items:
+      - name: コントロール パターンとインターフェイス
+        href: accessibility/control-patterns-and-interfaces.md
+  - name: アプリの設定
+    href: app-settings/app-settings-and-data.md
+    items:
+    - name: ガイドライン
+      href: app-settings/guidelines-for-app-settings.md
+    - name: アプリの設定とデータを保存して取得する
+      href: app-settings/store-and-retrieve-app-data.md
+  - name: グローバリゼーションとローカライズ
+    href: globalizing/globalizing-portal.md
+    items:
+    - name: グローバリゼーションのガイドライン
+      href: globalizing/guidelines-and-checklist-for-globalizing-your-app.md
+    - name: ユーザー プロファイルとアプリ マニフェストの言語について
+      href: globalizing/manage-language-and-region.md
+    - name: 日付、時刻、数値の形式のグローバル化
+      href: globalizing/use-global-ready-formats.md
+    - name: テンプレートとパターンを使った日付と時刻の書式設定
+      href: globalizing/use-patterns-to-format-dates-and-times.md
+    - name: レイアウトやフォントの調整と RTL のサポート
+      href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
+    - name: NumeralSystem 値
+      href: globalizing/glob-numeralsystem-values.md
+    - name: アプリをローカライズ可能にする
+      href: globalizing/prepare-your-app-for-localization.md
+    - name: 国際フォント
+      href: globalizing/loc-international-fonts.md
+    - name: 双方向テキストに対応したアプリを設計する
+      href: globalizing/design-for-bidi-text.md
+    - name: 多言語アプリ ツールキット 4.0 の使用
+      href: globalizing/use-mat.md
+    - name: 多言語アプリ ツールキット 4.0 に関する FAQ とトラブルシューティング
+      href: globalizing/mat-faq-troubleshooting.md
+    - name: アプリケーションの新元号対応
+      href: globalizing/japanese-era-change.md
+  - name: アプリのヘルプのガイドライン
+    href: in-app-help/guidelines-for-app-help.md
+    items:
+    - name: 説明 UI
+      href: in-app-help/instructional-ui.md
+    - name: アプリ内ヘルプ
+      href: in-app-help/in-app-help.md
+    - name: 外部のヘルプ
+      href: in-app-help/external-help.md
+- name: 設計ツールキット
+  href: downloads/index.md
+ms.openlocfilehash: 410998c21e9351062118d63328c8e580a52b4c08
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962604"
