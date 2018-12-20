@@ -2,20 +2,18 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: ファイルのプロパティの取得
 description: StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0747dd3b8992ab456bdb00a4dc7157211eb8ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932984"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980360"
 ---
 # <a name="get-file-properties"></a>ファイルのプロパティの取得
-
-
 
 **重要な API**
 
@@ -26,10 +24,7 @@ ms.locfileid: "8932984"
 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
 
 > [!NOTE]
-> 「[File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995)」(ファイル アクセスのサンプル) もご覧ください。
-
- 
-
+> 完全なサンプルについては、[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -45,9 +40,8 @@ ms.locfileid: "8932984"
 
 多くの最上位ファイル プロパティは、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスのメンバーとしてアクセスできます。 これらのプロパティには、ファイル属性、コンテンツの種類、作成日、表示名、ファイルの種類などがあります。
 
-**注:** **picturesLibrary**機能を宣言することに注意してください。
-
- 
+> [!NOTE]
+> 必ず **picturesLibrary** 機能を宣言してください。
 
 この例では、画像ライブラリ内のすべてのファイルを列挙して、各ファイルの最上位プロパティの一部にアクセスします。
 
