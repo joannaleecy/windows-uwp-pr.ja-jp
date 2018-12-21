@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 56586e3c26c2adc07bad58e3ee072b4dc57db2ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946410"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981416"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 
@@ -106,7 +106,7 @@ ms.locfileid: "8946410"
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">テキスト ブロック</a>、<a href="../controls-and-patterns/text-box.md">テキスト ボックス</a>、<a href="../controls-and-patterns/rich-edit-box.md">リッチ エディット ボックス</a></p>
 </td>
 <td align="left">テキストを表示します。 一部の要素を使うと、ユーザーがテキストを編集することができます。 詳しくは、「<a href="../controls-and-patterns/text-controls.md">テキスト コントロール</a>」をご覧ください。
-<p>テキストの表示方法のガイドラインについては、「[文字体裁](../style/typography.md)」をご覧ください。</p>
+<p>テキストの表示方法のガイドラインについては、「<a href="../style/typography.md">文字体裁</a>」をご覧ください。</p>
 </td>
 </tr>
 <tr class="odd">

@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c9e80296510d327e60f8c7dba5e38f19b95b7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919098"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981436"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>チュートリアル: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し
 > [!NOTE]
@@ -24,14 +24,14 @@ ms.locfileid: "8919098"
 
 コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。 これらは方法を示すことだけを目的に用意されており、 必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。
 
-## **<a name="to-create-the-c-component-project"></a>C++ コンポーネント プロジェクトを作成するには**
-Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
+### **<a name="to-create-the-c-component-project"></a>C++ コンポーネント プロジェクトを作成するには**
+1. Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
 
-**[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。
+2. **[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。
 
-中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。
+3. 中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。
 
-**[OK]** をクリックします。
+4. **[OK]** をクリックします。
 
 ## **<a name="to-add-an-activatable-class-to-the-component"></a>コンポーネントにアクティブ化可能なクラスを追加するには**
 アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。 コンポーネントでは、**public ref class sealed** として宣言します。 実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。 名前を変更することはできますが、この例では既定の名前 (Class1) を使います。 必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。 ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
@@ -85,15 +85,15 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## <a name="to-add-the-header-and-namespace-directives"></a>ヘッダーと名前空間のディレクティブを追加するには
-Class1.cpp で、次の #include ディレクティブを追加します。
+### <a name="to-add-the-header-and-namespace-directives"></a>ヘッダーと名前空間のディレクティブを追加するには
+1. Class1.cpp で、次の #include ディレクティブを追加します。
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-次の using ステートメントを追加して必要な名前空間を追加します。
+2. 次の using ステートメントを追加して必要な名前空間を追加します。
 
 ```cpp
 using namespace concurrency;
@@ -269,22 +269,22 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 ## <a name="creating-a-javascript-client-app"></a>JavaScript クライアント アプリケーションの作成
 C# クライアントだけを作成する場合は、このセクションをスキップして構いません。
 
-## <a name="to-create-a-javascript-project"></a>JavaScript プロジェクトを作成するには
-ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
+### <a name="to-create-a-javascript-project"></a>JavaScript プロジェクトを作成するには
+1. ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
 
-[JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。
+2. [JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。
 
-**[OK]** をクリックして、既定の名前 (App1) を受け入れます。
+3. **[OK]** をクリックして、既定の名前 (App1) を受け入れます。
 
-App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
+4. App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
 
-WinRT_CPP へのプロジェクト参照を追加します。
+5. WinRT_CPP へのプロジェクト参照を追加します。
 
-[参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
+6. [参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
 
-[参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
+7. [参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
 
-中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
+8. 中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
 
 ## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a>JavaScript イベント ハンドラーを呼び出す HTML を追加するには
 default.html ページの <body> ノードに、次の HTML を貼り付けます。
@@ -440,22 +440,22 @@ F5 キーを押してアプリを実行します。
 
 ## <a name="creating-a-c-client-app"></a>C# クライアント アプリケーションの作成
 
-## <a name="to-create-a-c-project"></a>C# プロジェクトを作成するには
-ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
+### <a name="to-create-a-c-project"></a>C# プロジェクトを作成するには
+1. ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。
 
-[Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。
+2. [Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。
 
-このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。
+3. このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。
 
-CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
+4. CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。
 
-WinRT_CPP へのプロジェクト参照を追加します。
+5. WinRT_CPP へのプロジェクト参照を追加します。
 
-**[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
+   - **[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。
 
-**[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
+   - **[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。
 
-中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
+   - 中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。
 
 ## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>ユーザー インターフェイスを定義する XAML を追加するには
 MainPage.xaml 内の Grid 要素に次のコードをコピーします。
@@ -584,20 +584,20 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
 オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。 これには、Platform 名前空間と既定の名前空間の型が含まれます。 ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。
 
-## **<a name="to-inspect-a-component"></a>コンポーネントを検査するには**
-メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
+### **<a name="to-inspect-a-component"></a>コンポーネントを検査するには**
+1. メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
 
-オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
+2. オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
 
 ## <a name="debugging-tips"></a>デバッグのヒント
 デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。
 
-## **<a name="to-download-debugging-symbols"></a>デバッグ シンボルをダウンロードするには**
-メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
+### **<a name="to-download-debugging-symbols"></a>デバッグ シンボルをダウンロードするには**
+1. メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
 
-**[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。
+2. **[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。
 
-**[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。
+3. **[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。
 
 シンボルを初めてダウンロードするときは時間がかかる場合があります。 次回 F5 キーを押したときのパフォーマンスを向上させるには、シンボルをキャッシュするローカル ディレクトリを指定します。
 

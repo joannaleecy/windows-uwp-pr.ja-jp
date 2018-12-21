@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 776eae9bbfa31d840964ca4622258eff0a2acfdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1bcffedfea6903c5e62222529b5e7fb8f6f8366e
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945316"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981466"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 
@@ -55,3 +55,4 @@ Channel 9 の以下の講演は、Xbox でのすばらしいアプリの開発�
 
 - [Windows 10 UWP アプリの自動起動](automate-launching-uwp-apps.md)
 - [ゲーム開発用の CPUSets](cpusets-games.md)
+- [Xbox One 用のプログレッシブ Web アプリ](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

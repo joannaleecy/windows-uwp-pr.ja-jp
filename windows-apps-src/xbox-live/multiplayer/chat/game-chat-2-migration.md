@@ -5,12 +5,12 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b638fce06aeb439af9fca1642507fb781c912af
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3e4e96738f0b37342ea3e166706a7cafa4e6f185
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928541"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981368"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
@@ -274,7 +274,7 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
-2 番目のブール値パラメーターは、音声合成変換を制御します。 詳細については、「[ユーザー補助](#accessibility)」を参照してください。次に、ゲーム チャットは、このメッセージを含むチャット パケットを生成します。 ゲーム チャットのリモート インスタンスには、`OnTextMessageReceived` イベント経由でテキスト メッセージが通知されます。
+2 番目のブール値パラメーターは、音声合成変換を制御します。 詳細については、[アクセシビリティ](#accessibility)を参照してください。 ゲーム チャットは、このメッセージを含むチャット パケットを生成します。 ゲーム チャットのリモート インスタンスには、`OnTextMessageReceived` イベント経由でテキスト メッセージが通知されます。
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 

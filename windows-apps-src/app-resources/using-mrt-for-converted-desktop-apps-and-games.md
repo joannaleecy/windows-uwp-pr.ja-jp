@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, MRT, PRI,  リソース, ゲーム, Centennial, Desktop App Converter, MUI, サテライト アセンブリ
 ms.localizationpriority: medium
-ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927955"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981456"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する
 
@@ -158,7 +158,7 @@ MRT は複数の修飾子に合わせてカスタマイズされたリソース�
 
 最後に、Visual Studio を使って新しいプロジェクトを作成し、既存のコード全体を移行するには、[新しい UWP プロジェクトをビルドするための MSDN ドキュメント](https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)をご覧ください。 既存のコードを新しいプロジェクトに含めることはできますが、「純粋な」UWP として実行するためには、相当なコードの変更 (特にユーザー インターフェイス) が必要となる場合があります。 それらの変更は、このドキュメントの対象範囲外です。
 
-***
+---
 
 ## <a name="phase-1-localize-the-application-manifest"></a>フェーズ 1: アプリケーション マニフェストをローカライズする
 
@@ -178,7 +178,7 @@ MRT は複数の修飾子に合わせてカスタマイズされたリソース�
  * 既定の言語が英語 (米国) 以外の場合には、適切な BCP-47 コードを使用します。 
 0. XML ファイルに次のコンテンツを追加します。使用する既定の言語で、<span style="background-color: yellow">強調表示されたテキスト</span>を、アプリのために適切なテキストに置き換えます。
 
-**注** これらの文字列の一部については、長さに制限があります。 詳しくは、「[VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)」をご覧ください。
+[!Note] これらの文字列の一部の長さに制限があります。 詳しくは、「[VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)」をご覧ください。
 
 <blockquote>
 <pre>
@@ -303,7 +303,7 @@ PRI ファイルがビルドされました。次はパッケージをビルド�
  * `/f` (前の手順で作成された) 使用するマッピング ファイルを設定します 
  * `/p` 出力パッケージの名前を設定します
  * `/o` 出力ファイルが存在する場合、上書きします
-0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studio で空のユニバーサル Windows プロジェクトを作成し、コピー、`.pfx`が作成されるファイルは 1 つを使って手動で作成できます、`MakeCert`と`Pvk2Pfx`ユーティリティ」の説明に従って [、**を作成する方法アプリ パッケージの署名証明書**MSDN のトピック] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)します。 
+0. パッケージが作成されたら、それに署名する必要があります。 署名証明書を取得する最も簡単な方法は、Visual Studio で空のユニバーサル Windows プロジェクトを作成し、コピー、`.pfx`が作成されるファイルは 1 つを使って手動で作成できます、`MakeCert`と`Pvk2Pfx`ユーティリティ<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">で作成する方法を説明するよう、アプリ パッケージの署名証明書</a>、MSDN のトピックを説明します。 
  * **重要:** 署名証明書を手動で作成した場合、必ずソース プロジェクトまたはパッケージ ソースとは別のディレクトリにファイルを配置します。そうしない場合、秘密キーも含めてパッケージに含まれてしまう場合があります。
 0. パッケージに署名するには、次のコマンドを使用します。 `AppxManifest.xml` の `Identity` 要素で指定されている `Publisher` は、証明書の `Subject` と一致する必要があります (これは `<PublisherDisplayName>` 要素では**ありません**。それはユーザーに表示されるローカライズされた表示名です)。 通常と同様に、`contoso_demo...` のファイル名をプロジェクトに適した名前で置き換えます。さらに `.pfx` ファイルが現在のディレクトリにないことを確認します (**これは非常に重要です**。そうしない場合、プライベート署名キーを含めて、パッケージの一部として作成されてしまいます)。
 

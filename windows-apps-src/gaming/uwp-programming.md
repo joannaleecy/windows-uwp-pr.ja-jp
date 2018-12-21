@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, オーディオ, 入力, ネットワーク
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e2a03b1302fcf5690e653cbf07efad8ef14fe8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a7cbe5cfbc2146feaefb40cee8ca96ddfa11705c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924594"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981406"
 ---
 # <a name="uwp-programming"></a>UWP プログラミング
 
@@ -40,7 +40,7 @@ ms.locfileid: "8924594"
 </tr>
 <tr class="odd">
     <td align="left">
-        <p>[Unity や UWP で不足している .NET API](missing-dot-net-apis-in-unity-and-uwp.md)</p>
+        <p><a href="missing-dot-net-apis-in-unity-and-uwp.md">Unity や UWP で不足している .NET API</a></p>
     </td>
     <td align="left">
         <p>Unity で UWP ゲームを作成する際に不足している .NET API と、一般的な問題に対する回避策について説明します。</p>

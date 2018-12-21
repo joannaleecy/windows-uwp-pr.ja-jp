@@ -3,12 +3,12 @@ description: ''
 title: オブジェクトとしてのコンテンツ
 template: detail.hbs
 ms.localizationpriority: medium
-ms.openlocfilehash: 37ba5093f2d7cfe268be40413b889801daf00967
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ed2ac8530d69929cc0e0e921cfb1cc5368058cd2
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942403"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981446"
 ---
 # <a name="content-as-objects"></a>オブジェクトとしてのコンテンツ
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942403"
   <p>それでは、分かりやすい視覚的な階層はどのように作成するのでしょうか。 以前のバージョンの Windows 10 では、視覚的な階層を定義するために、空白、位置、および文字体裁を使用することができました。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![フラット レイアウト](images/content-as-objects/flat-layout.png)
+    <a href="images/content-as-objects/flat-layout.png">フラット レイアウト</a>
     
   </div>
 </div>
@@ -43,7 +43,7 @@ ms.locfileid: "8942403"
 
 Windows 10 RS2 では、深度という文字通り別の次元が追加されました。 
 
-![レイアウトの深度](images/content-as-objects/depth-in-layout2.png)
+<a href="images/content-as-objects/depth-in-layout2.png">レイアウトの深度</a>
 
 
 ## <a name="use-depth-to-establish-a-hierarchy"></a>深度を使用して階層を確立する 
@@ -59,7 +59,7 @@ Windows 10 RS2 では、深度という文字通り別の次元が追加され�
     </p>
   </div>
   <div class="side-by-side-content-right">
-    ![レイアウトの深度](images/content-as-objects/elements-forward-backward.png) 
+    <a href="images/content-as-objects/elements-forward-backward.png">レイアウトの深度</a> 
     
   </div>
 </div>
@@ -76,13 +76,12 @@ Windows 10 RS2 では、深度という文字通り別の次元が追加され�
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **背景の後** <br/>
-このレイヤーはアプリの背後に配置されます。  要素をこのレイヤーに移動する場合は、非対話型の要素にすることをお勧めします。 このレイヤーの要素は、視差が最も少なく、アプリ ウィンドウにクリップされます。 TODO: このレイヤーは拡大縮小しますか? 
+<b>背景の後</b>このレイヤーは、アプリの背後に配置されます。  要素をこのレイヤーに移動する場合は、非対話型の要素にすることをお勧めします。 このレイヤーの要素は、視差が最も少なく、アプリ ウィンドウにクリップされます。 TODO: このレイヤーは拡大縮小しますか? 
 
 <p>背景要素の例には、コンテンツ背後の画像、TODO: 例、TODO: 例が含まれます。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![アプリの背景の後のレイヤー](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">アプリの背景の後のレイヤー</a>
     
   </div>
 </div>
@@ -93,13 +92,12 @@ Windows 10 RS2 では、深度という文字通り別の次元が追加され�
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **パッシブ レイヤー** <br/>
-これはアプリの基本レイヤーで、UI 要素が既定で配置されています。  要素はこのレイヤー上をリアルタイムに移動し (視差なし)、アプリ ウィンドウにクリップされます。倍率は 100% です。 
+<b>パッシブ レイヤー</b>これは、既定で UI 要素の所在、アプリの基本レイヤーです。  要素はこのレイヤー上をリアルタイムに移動し (視差なし)、アプリ ウィンドウにクリップされます。倍率は 100% です。 
 
 <p>要素の例: アプリの背景、テキスト、アプリ ナビゲーション UI などのセカンダリ UI。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![アプリのパッシブ レイヤー](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">アプリのパッシブ レイヤー</a>
     
   </div>
 </div>
@@ -110,13 +108,12 @@ Windows 10 RS2 では、深度という文字通り別の次元が追加され�
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **行動喚起** <br/>
-このレイヤーは、パッシブ レイヤーの要素よりも上位に順位付けされた対話型の項目向けです。 このレイヤーの要素は、中程度の視差があり、アプリ ウィンドウにクリップされます。 TODO: このレイヤーの要素は拡大縮小しますか、ドロップ シャドウはありますか?
+<b>行動喚起</b>このレイヤーはパッシブ レイヤーの要素の優先順位を付ける対話型の項目向けです。 このレイヤーの要素は、中程度の視差があり、アプリ ウィンドウにクリップされます。 TODO: このレイヤーの要素は拡大縮小しますか、ドロップ シャドウはありますか?
 
 <p>要素の例: リスト、グリッド、プライマリ コマンド (TODO: ...など)。</p> 
   </div>
   <div class="side-by-side-content-right">
-    ![アプリの行動喚起レイヤー](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">アプリの行動喚起レイヤー</a>
     
   </div>
 </div>
@@ -126,13 +123,12 @@ Windows 10 RS2 では、深度という文字通り別の次元が追加され�
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  **ヒーロー レイヤー** <br/>
-このレイヤーは、そのときの画面上で優先順位の最も高い要素向けです。  このレイヤーの要素はアプリ ウィンドウの境界を分割したり、拡大縮小したり、ドロップ シャドウを自動的に追加したりできます。
+<b>ヒーロー レイヤー</b>このレイヤーは、画面に優先順位の最も高い要素の時点でです。  このレイヤーの要素はアプリ ウィンドウの境界を分割したり、拡大縮小したり、ドロップ シャドウを自動的に追加したりできます。
 
 <p>要素の例: 写真要素、現在選択されている項目。</p>  
   </div>
   <div class="side-by-side-content-right">
-    ![アプリのヒーロー レイヤー](images/content-as-objects/elements-forward-backward.png)
+    <a href="images/content-as-objects/elements-forward-backward.png">アプリのヒーロー レイヤー</a>
     
   </div>
 </div>
