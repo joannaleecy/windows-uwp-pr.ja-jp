@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50c9e80296510d327e60f8c7dba5e38f19b95b7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919098"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981436"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a><span data-ttu-id="9fd6c-104">チュートリアル: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し</span><span class="sxs-lookup"><span data-stu-id="9fd6c-104">Walkthrough: Creating a Windows Runtime component in C++/CX, and calling it from JavaScript or C#</span></span>
 > [!NOTE]
@@ -24,14 +24,14 @@ ms.locfileid: "8919098"
 
 <span data-ttu-id="9fd6c-115">コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-115">Notice that the main class of the component contains examples of property and method definitions, and an event declaration.</span></span> <span data-ttu-id="9fd6c-116">これらは方法を示すことだけを目的に用意されており、</span><span class="sxs-lookup"><span data-stu-id="9fd6c-116">These are provided just to show you how it's done.</span></span> <span data-ttu-id="9fd6c-117">必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-117">They are not required, and in this example, we'll replace all of the generated code with our own code.</span></span>
 
-## **<a name="to-create-the-c-component-project"></a><span data-ttu-id="9fd6c-118">C++ コンポーネント プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-118">To create the C++ component project</span></span>**
-<span data-ttu-id="9fd6c-119">Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-119">On the Visual Studio menu bar, choose **File, New, Project**.</span></span>
+### **<a name="to-create-the-c-component-project"></a><span data-ttu-id="9fd6c-118">C++ コンポーネント プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-118">To create the C++ component project</span></span>**
+1. <span data-ttu-id="9fd6c-119">Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-119">On the Visual Studio menu bar, choose **File, New, Project**.</span></span>
 
-<span data-ttu-id="9fd6c-120">**[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-120">In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.</span></span>
+2. <span data-ttu-id="9fd6c-120">**[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-120">In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.</span></span>
 
-<span data-ttu-id="9fd6c-121">中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-121">In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.</span></span>
+3. <span data-ttu-id="9fd6c-121">中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-121">In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.</span></span>
 
-<span data-ttu-id="9fd6c-122">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-122">Choose the **OK** button.</span></span>
+4. <span data-ttu-id="9fd6c-122">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-122">Choose the **OK** button.</span></span>
 
 ## **<a name="to-add-an-activatable-class-to-the-component"></a><span data-ttu-id="9fd6c-123">コンポーネントにアクティブ化可能なクラスを追加するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-123">To add an activatable class to the component</span></span>**
 <span data-ttu-id="9fd6c-124">アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-124">An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++).</span></span> <span data-ttu-id="9fd6c-125">コンポーネントでは、**public ref class sealed** として宣言します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-125">In your component, you declare it as **public ref class sealed**.</span></span> <span data-ttu-id="9fd6c-126">実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-126">In fact, the Class1.h and .cpp files already have a ref class.</span></span> <span data-ttu-id="9fd6c-127">名前を変更することはできますが、この例では既定の名前 (Class1) を使います。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-127">You can change the name, but in this example we’ll use the default name—Class1.</span></span> <span data-ttu-id="9fd6c-128">必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-128">You can define additional ref classes or regular classes in your component if they are required.</span></span> <span data-ttu-id="9fd6c-129">ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-129">For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).</span></span>
@@ -85,15 +85,15 @@ private:
         Windows::UI::Core::CoreDispatcher^ m_dispatcher;
 ```
 
-## <a name="to-add-the-header-and-namespace-directives"></a><span data-ttu-id="9fd6c-151">ヘッダーと名前空間のディレクティブを追加するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-151">To add the header and namespace directives</span></span>
-<span data-ttu-id="9fd6c-152">Class1.cpp で、次の #include ディレクティブを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-152">In Class1.cpp, add these #include directives:</span></span>
+### <a name="to-add-the-header-and-namespace-directives"></a><span data-ttu-id="9fd6c-151">ヘッダーと名前空間のディレクティブを追加するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-151">To add the header and namespace directives</span></span>
+1. <span data-ttu-id="9fd6c-152">Class1.cpp で、次の #include ディレクティブを追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-152">In Class1.cpp, add these #include directives:</span></span>
 
 ```cpp
 #include <ppltasks.h>
 #include <concurrent_vector.h>
 ```
 
-<span data-ttu-id="9fd6c-153">次の using ステートメントを追加して必要な名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-153">Now add these using statements to pull in the required namespaces:</span></span>
+2. <span data-ttu-id="9fd6c-153">次の using ステートメントを追加して必要な名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-153">Now add these using statements to pull in the required namespaces:</span></span>
 
 ```cpp
 using namespace concurrency;
@@ -269,22 +269,22 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 ## <a name="creating-a-javascript-client-app"></a><span data-ttu-id="9fd6c-174">JavaScript クライアント アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="9fd6c-174">Creating a JavaScript client app</span></span>
 <span data-ttu-id="9fd6c-175">C# クライアントだけを作成する場合は、このセクションをスキップして構いません。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-175">If you just want to create a C# client, you can skip this section.</span></span>
 
-## <a name="to-create-a-javascript-project"></a><span data-ttu-id="9fd6c-176">JavaScript プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-176">To create a JavaScript project</span></span>
-<span data-ttu-id="9fd6c-177">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-177">In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.</span></span>
+### <a name="to-create-a-javascript-project"></a><span data-ttu-id="9fd6c-176">JavaScript プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-176">To create a JavaScript project</span></span>
+1. <span data-ttu-id="9fd6c-177">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-177">In Solution Explorer, open the shortcut menu for the Solution node and choose **Add, New Project**.</span></span>
 
-<span data-ttu-id="9fd6c-178">[JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-178">Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.</span></span>
+2. <span data-ttu-id="9fd6c-178">[JavaScript] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[空白のアプリ (ユニバーサル Windows)]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-178">Expand JavaScript (it might be nested under **Other Languages**) and choose **Blank App (Universal Windows)**.</span></span>
 
-<span data-ttu-id="9fd6c-179">**[OK]** をクリックして、既定の名前 (App1) を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-179">Accept the default name—App1—by choosing the **OK** button.</span></span>
+3. <span data-ttu-id="9fd6c-179">**[OK]** をクリックして、既定の名前 (App1) を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-179">Accept the default name—App1—by choosing the **OK** button.</span></span>
 
-<span data-ttu-id="9fd6c-180">App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-180">Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.</span></span>
+4. <span data-ttu-id="9fd6c-180">App1 プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-180">Open the shortcut menu for the App1 project node and choose **Set as Startup Project**.</span></span>
 
-<span data-ttu-id="9fd6c-181">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-181">Add a project reference to WinRT_CPP:</span></span>
+5. <span data-ttu-id="9fd6c-181">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-181">Add a project reference to WinRT_CPP:</span></span>
 
-<span data-ttu-id="9fd6c-182">[参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-182">Open the shortcut menu for the References node and choose **Add Reference**.</span></span>
+6. <span data-ttu-id="9fd6c-182">[参照] ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-182">Open the shortcut menu for the References node and choose **Add Reference**.</span></span>
 
-<span data-ttu-id="9fd6c-183">[参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-183">In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.</span></span>
+7. <span data-ttu-id="9fd6c-183">[参照マネージャー] ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-183">In the left pane of the References Manager dialog box, select **Projects** and then select **Solution**.</span></span>
 
-<span data-ttu-id="9fd6c-184">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-184">In the center pane, select WinRT_CPP and then choose the **OK** button</span></span>
+8. <span data-ttu-id="9fd6c-184">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-184">In the center pane, select WinRT_CPP and then choose the **OK** button</span></span>
 
 ## <a name="to-add-the-html-that-invokes-the-javascript-event-handlers"></a><span data-ttu-id="9fd6c-185">JavaScript イベント ハンドラーを呼び出す HTML を追加するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-185">To add the HTML that invokes the JavaScript event handlers</span></span>
 <span data-ttu-id="9fd6c-186">default.html ページの <body> ノードに、次の HTML を貼り付けます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-186">Paste this HTML into the <body> node of the default.html page:</span></span>
@@ -440,22 +440,22 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 ## <a name="creating-a-c-client-app"></a><span data-ttu-id="9fd6c-196">C# クライアント アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="9fd6c-196">Creating a C# client app</span></span>
 
-## <a name="to-create-a-c-project"></a><span data-ttu-id="9fd6c-197">C# プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-197">To create a C# project</span></span>
-<span data-ttu-id="9fd6c-198">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-198">In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.</span></span>
+### <a name="to-create-a-c-project"></a><span data-ttu-id="9fd6c-197">C# プロジェクトを作成するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-197">To create a C# project</span></span>
+1. <span data-ttu-id="9fd6c-198">ソリューション エクスプローラーで、[ソリューション] ノードのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-198">In Solution Explorer, open the shortcut menu for the Solution node and then choose **Add, New Project**.</span></span>
 
-<span data-ttu-id="9fd6c-199">[Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-199">Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.</span></span>
+2. <span data-ttu-id="9fd6c-199">[Visual C#] (**[他の言語]** の下に入れ子になっていることがあります) を展開し、**[Windows]** をクリックします。左ペインで **[ユニバーサル]** をクリックし、中央ペインで **[空のアプリケーション]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-199">Expand Visual C# (it might be nested under **Other Languages**), select **Windows** and then **Universal** in the left pane, and then select **Blank App** in the middle pane.</span></span>
 
-<span data-ttu-id="9fd6c-200">このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-200">Name this app CS_Client and then choose the **OK** button.</span></span>
+3. <span data-ttu-id="9fd6c-200">このアプリケーションに CS_Client という名前を付け、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-200">Name this app CS_Client and then choose the **OK** button.</span></span>
 
-<span data-ttu-id="9fd6c-201">CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-201">Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.</span></span>
+4. <span data-ttu-id="9fd6c-201">CS_Client プロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-201">Open the shortcut menu for the CS_Client project node and choose **Set as Startup Project**.</span></span>
 
-<span data-ttu-id="9fd6c-202">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-202">Add a project reference to WinRT_CPP:</span></span>
+5. <span data-ttu-id="9fd6c-202">WinRT_CPP へのプロジェクト参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-202">Add a project reference to WinRT_CPP:</span></span>
 
-<span data-ttu-id="9fd6c-203">**[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-203">Open the shortcut menu for the **References** node and choose **Add Reference**.</span></span>
+   - <span data-ttu-id="9fd6c-203">**[参照]** ノードのショートカット メニューを開き、**[参照の追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-203">Open the shortcut menu for the **References** node and choose **Add Reference**.</span></span>
 
-<span data-ttu-id="9fd6c-204">**[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-204">In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.</span></span>
+   - <span data-ttu-id="9fd6c-204">**[参照マネージャー]** ダイアログ ボックスの左ペインで、**[プロジェクト]** をクリックし、**[ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-204">In the left pane of the **References Manager** dialog box, select **Projects** and then select **Solution**.</span></span>
 
-<span data-ttu-id="9fd6c-205">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-205">In the center pane, select WinRT_CPP and then choose the **OK** button.</span></span>
+   - <span data-ttu-id="9fd6c-205">中央ペインで [WinRT_CPP] を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-205">In the center pane, select WinRT_CPP and then choose the **OK** button.</span></span>
 
 ## <a name="to-add-the-xaml-that-defines-the-user-interface"></a><span data-ttu-id="9fd6c-206">ユーザー インターフェイスを定義する XAML を追加するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-206">To add the XAML that defines the user interface</span></span>
 <span data-ttu-id="9fd6c-207">MainPage.xaml 内の Grid 要素に次のコードをコピーします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-207">Copy the following code into the Grid element in MainPage.xaml.</span></span>
@@ -584,20 +584,20 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ## <a name="inspecting-your-component-in-object-browser-optional"></a><span data-ttu-id="9fd6c-216">オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)</span><span class="sxs-lookup"><span data-stu-id="9fd6c-216">Inspecting your component in Object Browser (optional)</span></span>
 <span data-ttu-id="9fd6c-217">オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-217">In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files.</span></span> <span data-ttu-id="9fd6c-218">これには、Platform 名前空間と既定の名前空間の型が含まれます。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-218">This includes the types in the Platform namespace and the default namespace.</span></span> <span data-ttu-id="9fd6c-219">ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-219">However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.</span></span>
 
-## **<a name="to-inspect-a-component"></a><span data-ttu-id="9fd6c-220">コンポーネントを検査するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-220">To inspect a component</span></span>**
-<span data-ttu-id="9fd6c-221">メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-221">On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).</span></span>
+### **<a name="to-inspect-a-component"></a><span data-ttu-id="9fd6c-220">コンポーネントを検査するには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-220">To inspect a component</span></span>**
+1. <span data-ttu-id="9fd6c-221">メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-221">On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).</span></span>
 
-<span data-ttu-id="9fd6c-222">オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-222">In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.</span></span>
+2. <span data-ttu-id="9fd6c-222">オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-222">In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.</span></span>
 
 ## <a name="debugging-tips"></a><span data-ttu-id="9fd6c-223">デバッグのヒント</span><span class="sxs-lookup"><span data-stu-id="9fd6c-223">Debugging tips</span></span>
 <span data-ttu-id="9fd6c-224">デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-224">For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:</span></span>
 
-## **<a name="to-download-debugging-symbols"></a><span data-ttu-id="9fd6c-225">デバッグ シンボルをダウンロードするには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-225">To download debugging symbols</span></span>**
-<span data-ttu-id="9fd6c-226">メニュー バーで、**[ツール]、[オプション]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-226">On the menu bar, choose **Tools, Options**.</span></span>
+### **<a name="to-download-debugging-symbols"></a><span data-ttu-id="9fd6c-225">デバッグ シンボルをダウンロードするには</span><span class="sxs-lookup"><span data-stu-id="9fd6c-225">To download debugging symbols</span></span>**
+1. <span data-ttu-id="9fd6c-226">メニュー バーで、**[ツール]、[オプション]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-226">On the menu bar, choose **Tools, Options**.</span></span>
 
-<span data-ttu-id="9fd6c-227">**[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-227">In the **Options** dialog box, expand **Debugging** and select **Symbols**.</span></span>
+2. <span data-ttu-id="9fd6c-227">**[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-227">In the **Options** dialog box, expand **Debugging** and select **Symbols**.</span></span>
 
-<span data-ttu-id="9fd6c-228">**[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-228">Select **Microsoft Symbol Servers** and the choose the **OK** button.</span></span>
+3. <span data-ttu-id="9fd6c-228">**[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-228">Select **Microsoft Symbol Servers** and the choose the **OK** button.</span></span>
 
 <span data-ttu-id="9fd6c-229">シンボルを初めてダウンロードするときは時間がかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-229">It might take some time to download the symbols the first time.</span></span> <span data-ttu-id="9fd6c-230">次回 F5 キーを押したときのパフォーマンスを向上させるには、シンボルをキャッシュするローカル ディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="9fd6c-230">For faster performance the next time you press F5, specify a local directory in which to cache the symbols.</span></span>
 
