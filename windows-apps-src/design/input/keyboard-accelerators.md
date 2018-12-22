@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921596"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981881"
 ---
 # <a name="keyboard-accelerators"></a>キーボード アクセラレータ
 
@@ -44,7 +44,7 @@ ms.locfileid: "8921596"
 
 UI に適切な場合は必ずキーボード アクセラレータを指定し、すべてのカスタム コントロールでアクセラレータをサポートすることをお勧めします。
 
-- キーボード アクセラレータによりアプリのさらに、一度に 1 つだけのキーを押してまたはが難しい押せる * を使用しているユーザーはそれらを含む、運動障碍を持つ accessiblefor ユーザー
+- キーボード アクセラレータによりアプリのそれら、一度に 1 つだけのキーを押してまたは苦労押せる * を使用しているユーザーを含む、運動障碍を持つ複数の accessiblefor ユーザー
 
   適切に設計されたキーボード UI はソフトウェアのアクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーはマウスを操作できない場合があるため、代わりにさまざまな支援技術 (キーボード強化ツール、スクリーン キーボード、スクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなど) が不可欠になる可能性があります。 このようなユーザーにとっては、コマンドを包括的にカバーすることが重要です。
 
@@ -193,9 +193,9 @@ MenuFlyoutItem.KeyboardAccelerators 要素の ScopeOwner 属性は、アクセ�
 
 ## <a name="invoke-a-keyboard-accelerator"></a>キーボード アクセラレータを呼び出す 
 
-[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) オブジェクトは、[UI オートメーション (UIA) コントロール パターン](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx)を使用して、アクセラレータが呼び出されたときにアクションを実行します。
+[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) オブジェクトは、[UI オートメーション (UIA) コントロール パターン](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview)を使用して、アクセラレータが呼び出されたときにアクションを実行します。
 
-UIA [コントロール パターン] では、一般的なコントロール機能が公開されます。 たとえば Button コントロールには、Click イベントをサポートするために [Invoke](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx) コントロール パターンが実装されています (一般的に、コントロールはクリックまたはダブルクリックの操作のほか、Enter キー、定義済みのショートカット キー、または別の組み合わせのキー入力よって呼び出されます)。 キーボード アクセラレータでコントロールが呼び出されると、XAML フレームワークは、コントロールに Invoke コントロール パターンが実装されているかどうかを調べ、その場合は、コントロールをアクティブ化します (KeyboardAcceleratorInvoked イベントをリッスンする必要はありません)。
+UIA [コントロール パターン] では、一般的なコントロール機能が公開されます。 たとえば、ボタン コントロールは Click イベントをサポートするために[Invoke](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)コントロール パターンを実装しています (通常で、コントロールはクリック、ダブルクリック、またはキーの入力、定義済みのショートカット キーまたはキー入力の他のいくつかの組み合わせによって呼び出されます)。 キーボード アクセラレータでコントロールが呼び出されると、XAML フレームワークは、コントロールに Invoke コントロール パターンが実装されているかどうかを調べ、その場合は、コントロールをアクティブ化します (KeyboardAcceleratorInvoked イベントをリッスンする必要はありません)。
 
 次の例では、ボタンに Invoke パターンが実装されているため、Ctrl + S によって Click イベントがトリガーされます。
 
@@ -218,10 +218,12 @@ UIA [コントロール パターン] では、一般的なコントロール機
 ## <a name="custom-keyboard-accelerator-behavior"></a>カスタムのキーボード アクセラレータの動作
 
 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) オブジェクトの Invoked イベントは、アクセラレータが実行されたときに発生します。 [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) イベント オブジェクトには、次のプロパティが含まれています。
-- **Handled** (Boolean): これを true に設定すると、イベントによるコントロール パターンのトリガーが回避され、アクセラレータ イベントのバブルが停止されます。 既定値は false です。
-- **Element** (DependencyObject): アクセラレータを含むオブジェクトです。
 
-次のコードは、キーボード アクセラレータのコレクションを定義する方法と、Invoked イベントを処理する方法を示しています。
+- [**処理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)(Boolean): これを true に設定するとコントロール パターンをトリガーするイベントされアクセラレータ イベントのバブルを停止します。 既定値は false です。
+- [**要素**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element)(DependencyObject): アクセラレータに関連付けられているオブジェクトです。
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator): キーボード アクセラレータが Invoked イベントを発生させるために使用します。
+
+ここでは、それぞれのアクセラレータの Invoked イベントを処理する方法と、ListView の項目のキーボード アクセラレータのコレクションを定義する方法を示します。
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -229,26 +231,27 @@ UIA [コントロール パターン] では、一般的なコントロール機
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
 
 ## <a name="override-default-keyboard-behavior"></a>既定のキーボード動作を上書き
 
-場合によっては、Backspace キーや Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
+場合によっては、Backspace キーまたは Enter キーなどの特定のキーの既定の動作をオーバーライドする必要があります。 例: 
 
 ## <a name="disable-a-keyboard-accelerator"></a>キーボード アクセラレータを無効にする 
 
@@ -257,7 +260,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -366,7 +369,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *ヒントでのアクセラレータ キーの組み合わせ*
 
-[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)、および[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトの場合は、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータは、ポップアップ テキストで表示されます。
+[ボタン](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)オブジェクトは、キーボード アクセラレータは、コントロールの既定のヒントに追加されます。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)と[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) オブジェクト、キーボード アクセラレータがポップアップ テキストで表示されます。
 
 > [!NOTE]
 > ヒントを指定する (次の例では Button1 を参照) は、この動作を上書きします。
@@ -487,7 +490,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ### <a name="when-an-accelerator-is-invoked"></a>アクセラレータの呼び出し
 
-アクセラレータは、2 種類のキー (修飾キーと非修飾キー) で構成されます。 修飾キーには、Shift キー、メニュー キー、Ctrl キー、Windows キーがあり、[VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers) で公開されます。 非修飾子キーは、Del キー、F3 キー、Space キー、Esc キーなどのすべての仮想キーと、すべての英数字キー、記号キーです。 キーボード アクセラレータは、ユーザーが 1 つまたは複数の修飾キーを押しながら非修飾キーを押したときに呼び出されます。 たとえば、ユーザーが Ctrl + Shift + M を押す場合、M キーが押されたときに、フレームワークは修飾キー (Ctrl キーと Shift キー) を確認し、存在する場合はアクセラレータを起動します。
+アクセラレータは、2 種類のキー (修飾キーと非修飾キー) で構成されます。 修飾キーには、Shift キー、メニュー キー、Ctrl キー、Windows キーがあり、[VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers) で公開されます。 非修飾子キーは、Del キー、F3 キー、Space キー、Esc キーなどのすべての仮想キーと、すべての英数字キー、記号キーです。 キーボード アクセラレータは、ユーザーが 1 つまたは複数の修飾キーを押しながら非修飾キーを押したときに呼び出されます。 たとえば、ユーザーが Ctrl + Shift + M を押す場合、M キーが押されたときに、フレームワークは修飾キー (Ctrl キーと Shift キー) を確認し、存在する場合はアクセラレータを起動します。
 
 > [!NOTE]
 > 仕様では、アクセラレータは自動的に反復されます (たとえば、ユーザーが Ctrl + Shift を押しながら M キーを押した場合は、M キーが解放されるまで、アクセラレータが繰り返し呼び出されます)。 この動作は変更できません。
@@ -499,7 +502,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 XAML では、入力バブル パイプラインが 1 つだけであるかのようにキー入力が処理されます。 この入力パイプラインは KeyDown/KeyUp イベントや文字入力によって使用されます。 たとえば、要素にフォーカスがある場合にユーザーがキーを押すと、その要素で KeyDown イベントが発生します。これに続き、要素の親、さらにその親と、args.Handled プロパティが true になるまでツリー上層方向にイベントの発生が続きます。
 
-KeyDown イベントは、一部のコントロールで組み込みのコントロール アクセラレータを実装するためにも使用されます。 コントロールにキーボード アクセラレータが設定されている場合は、KeyDown イベントが処理されます。つまり、KeyDown イベント バブルは発生しません。 たとえば、RichEditBox は、Ctrl + C によるコピー操作をサポートします。 Ctrl が押されると KeyDown イベントおよびバブルが発生しますが、ユーザーが同時に C キーを押した場合、KeyDown イベントが Handled となり発生しません ([UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) の handledEventsToo パラメーターが true に設定されている場合は例外)。
+KeyDown イベントは、一部のコントロールで組み込みのコントロール アクセラレータを実装するためにも使用されます。 コントロールにキーボード アクセラレータが設定されている場合は、KeyDown イベントが処理されます。つまり、KeyDown イベント バブルは発生しません。 たとえば、RichEditBox は、Ctrl + C によるコピー操作をサポートします。 Ctrl が押されると KeyDown イベントおよびバブルが発生しますが、ユーザーが同時に C キーを押した場合、KeyDown イベントが Handled となり発生しません ([UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) の handledEventsToo パラメーターが true に設定されている場合は例外)。
 
 #### <a name="the-characterreceived-event"></a>CharacterReceived イベント
 
