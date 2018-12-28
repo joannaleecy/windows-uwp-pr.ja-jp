@@ -5,12 +5,12 @@ keywords: マルチインスタンス UWP
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
+ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940883"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "8990208"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
@@ -19,15 +19,15 @@ ms.locfileid: "8940883"
 Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
 
 > [!IMPORTANT]
-> マルチ インスタンスが JavaScript アプリケーションでサポートされているが、マルチ インスタンスのリダイレクトはありません。 JavaScript のアプリケーションの複数インスタンスのリダイレクトがサポートされていないために、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
+> マルチ インスタンスが JavaScript アプリケーションでサポートされているが、マルチ インスタンスのリダイレクトはありません。 マルチ インスタンスのリダイレクトがアプリケーションを JavaScript のサポートされていないため、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作にオプトインします。
 
 新しいマルチインスタンス アプリケーションを作成する場合は、[Visual Studio Marketplace](https://aka.ms/E2nzbv) から入手可能な **Multi-Instance App Project Templates.VSIX** をインストールします。 テンプレートをインストールすると、**[Visual C#] > [Windows ユニバーサル]** の **[新しいプロジェクト]** ダイアログ (または **[他の言語] > [Visual C++] > [Windows ユニバーサル]**) で使用可能になります。
 
-2 つのテンプレートがインストールされます。**Multi-Instance UWP app** は、マルチインスタンス アプリを作成するためのテンプレートを提供します。**Multi-Instance Redirection UWP app** は、新しいインスタンスを起動するか、すでに起動されているインスタンスを選択的にアクティブ化するために構築する追加ロジックを提供します。 たとえば、一度に 1 つのインスタンスのみを同じドキュメントを編集する場合は、新しいインスタンスを起動するのではなく、そのファイルを開いているインスタンスをフォアグラウンドにします。
+2 つのテンプレートがインストールされます。**Multi-Instance UWP app** は、マルチインスタンス アプリを作成するためのテンプレートを提供します。**Multi-Instance Redirection UWP app** は、新しいインスタンスを起動するか、すでに起動されているインスタンスを選択的にアクティブ化するために構築する追加ロジックを提供します。 たとえば、おそらく同じドキュメントの編集時に 1 つのインスタンスのみする、新しいインスタンスを起動するのではなく、フォア グラウンドにそのファイルがあるインスタンスを開く移植するためです。
 
-どちらのテンプレートの追加`SupportsMultipleInstances`を`package.appxmanifest`ファイル。 名前空間のプレフィックスに注意してください`desktop4`と`iot2`: デスクトップをターゲットとする唯一のプロジェクトまたはモ ノのインターネット (IoT) プロジェクトでは、マルチ インスタンスをサポートします。
+どちらのテンプレートの追加`SupportsMultipleInstances`に、`package.appxmanifest`ファイル。 名前空間のプレフィックスに注意してください`desktop4`と`iot2`: デスクトップをターゲットとする唯一のプロジェクトまたはモ ノのインターネット (IoT) プロジェクトでは、マルチ インスタンスをサポートします。
 
 ```xml
 <Package
@@ -52,13 +52,13 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
  UWP アプリのマルチインスタンス化のサポートは、単に複数のアプリ インスタンスを起動することを可能にするだけではありません。 アプリの新しいインスタンスを起動するか、すでに実行しているインスタンスをアクティブにするかを選択する場合に、カスタマイズできます。 たとえば、既に別のインスタンスで編集中のファイルを編集するためにアプリが起動されている場合、そのファイルを編集している別のインスタンスを開くのではなく、そのインスタンスにアクティブ化をリダイレクトすることができます。
 
-操作で表示するには、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
+アクションの表示は、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**用のテンプレートは、次に示します。
+**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**のテンプレートは、次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティは、いずれかを使用する必要がある場合にこのライセンス認証要求のシェルに搭載されている優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合、そのインスタンスにアクティブ化をリダイレクトまたは選択した場合に無視することができます。
+[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティが存在する場合、このライセンス認証要求のシェルが提供優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合は、し、そのインスタンスにアクティブ化をリダイレクトすることができます。 または選択した場合に無視することができます。
 
 ``` csharp
 public static class Program
