@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bdfcdc0782515928740a9c01b409b5170540cb27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
+ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934507"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "8990475"
 ---
 # <a name="accessible-text-requirements"></a>アクセシビリティに対応したテキストの要件  
 
@@ -114,25 +114,31 @@ HTML で組み込みのコントロールを使っている場合は、UIA 実�
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
 
-## <a name="text-in-graphics"></a>グラフィックス内のテキスト  
+## <a name="text-in-graphics"></a>グラフィックス内のテキスト
+
 可能な限り、テキストをグラフィックスに含めないでください。 たとえば、アプリで [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素として表示されるイメージ ソース ファイルにテキストを含めると、支援技術ではそのテキストのアクセスや読み取りを自動的に行うことはできません。 グラフィックス内でテキストを使う必要がある場合は、"alt テキスト" に相当するものとして指定する [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) の値に、そのテキストまたはテキストの意味の要約を含めてください。 これは、テキスト文字をベクトルから [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) の一部として作成する場合や、[**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) を使って作成する場合も同様です。
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
 
-## <a name="text-font-size"></a>テキストのフォント サイズ  
-小さすぎて読むことができないサイズのテキスト フォントが使われているだけで、多くのユーザーが、アプリのテキストを読みにくいと感じます。 この問題は、アプリの UI のテキストを最初から適切な大きさにすることで防止できます。 Windows に含まれる支援技術もあり、これらの支援技術では、ユーザーがアプリの表示サイズや通常の表示を変更できるようにします。
+## <a name="text-font-size-and-scale"></a>テキストのフォント サイズとスケール
 
-* 一部のユーザーはアクセシビリティ対応オプションとして 1 インチあたりのドット数 (dpi) の値を変更します。 このオプションは、**[コンピューターの簡単操作]** の **[画面上の項目を拡大します]** から利用できます。この操作は、**コントロール パネル**の UI の **[デスクトップのカスタマイズ]** / **[ディスプレイ]** にリダイレクトされます。 ディスプレイ デバイスの機能に左右されるため、実際に使用できるサイズ変更のオプションは異なる場合があります。
-* 拡大鏡ツールは UI で選択された領域を拡大できます。 ただし、テキストを読むために拡大鏡ツールを使うのは困難です。
+ユーザーが困難なフォントは単に、アプリでテキストを読むことができますが小さすぎるように、アプリケーション内のテキストは、適切なサイズが、最初に確認してください。
 
-<span id="Text_scale_factor"/>
-<span id="text_scale_factor"/>
-<span id="TEXT_SCALE_FACTOR"/>
+操作が完了したら、明確な Windows には、さまざまなアクセシビリティ ツールとユーザーを活用して、独自のニーズとテキストを読むための基本設定を調整することができる設定が含まれます。 たとえば、次のような場合です。
 
-## <a name="text-scale-factor"></a>テキストの倍率  
-さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 値が **true** の場合、電話の **[テキストの拡大縮小]** 設定 (**[設定] &gt; [コンピューターの簡単操作]**) に応じて、対象要素のテキストのサイズが拡大されます。 拡大縮小は、**FontSize** が大きいテキストよりも、**FontSize** が小さいテキストにより大きな影響を及ぼします。 ただし、要素の **IsTextScaleFactorEnabled** プロパティを **false** に設定することで自動拡大を無効にすることができます。 次のマークアップを使って電話の **[テキスト サイズ]** 設定を調整し、**TextBlock** がどうなるのかを確認してください。
+* 拡大鏡ツール、UI の選択領域を拡大します。 アプリ内のテキストのレイアウトが難しくなるに関して、拡大鏡を使用して行う必要があります。
+* スケールと解像度の設定をグローバル**設定には、システムが]-> [表示]-> [拡大縮小とレイアウト]-> [** します。 正確にどのサイズ変更のオプションが利用可能なと、これは、ディスプレイ デバイスの機能に依存とは異なることができます。
+* [テキスト サイズ設定**設定簡単操作]-> [表示]-> [** します。 すべてのアプリケーションと (すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングするテキストをサポート) 画面でコントロールをサポートでテキストのサイズだけを指定する**テキストがより大きくする**設定を調整します。 
+> [!NOTE]
+> **すべてのものを大きく**設定では、ユーザーがプライマリ画面のみで一般的にテキストとアプリの推奨サイズを指定します。
+
+さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 場合**は true**、その要素のテキストのサイズ拡張できます。 スケーリングがある大規模な**FontSize**テキストに影響を与えるよりも高いに小さな**FontSize**テキストに影響します。 要素の**IsTextScaleFactorEnabled**のプロパティを**false**に設定して、自動サイズ変更を無効にすることができます。 
+
+詳細については、[テキストの拡大縮小](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)を参照してください。
+
+次のマークアップをアプリに追加し、それを実行します。 **テキストのサイズ**の設定を調整し、各**TextBlock**に何が起きるを参照してください。
 
 XAML
 ```xml
@@ -143,9 +149,9 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-ただし、通常は自動拡大を無効にしないでください。一般に、UI テキストの拡大縮小はユーザーにとって重要なアクセシビリティ エクスペリエンスであり、どのアプリでもこの機能が動作することが求められています。
+すべてのアプリ間でユニバーサル スケーリングの UI テキストは、重要なアクセシビリティ エクスペリエンスのユーザーとテキストの拡大縮小を無効にすることはお勧めしません。
 
-[**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) イベントと [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) プロパティを使って、電話の **[テキスト サイズ]** 設定の変更に関する情報を確認することもできます。 その方法を次に紹介します。
+[**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) イベントと [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) プロパティを使って、電話の **[テキスト サイズ]** 設定の変更に関する情報を確認することもできます。 その方法を次に紹介します。
 
 C#
 ```csharp
@@ -163,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor** の値は、範囲 \[1,2\] の倍精度浮動小数点数です。 最も小さい文字がこの大きさまで拡大されます。 たとえば、この値を使ってテキストに合わせてグラフィックスを拡大縮小できます。 ただし、すべてのテキストが同じ倍率で拡大縮小されるわけではないことに注意してください。 一般に、最初の状態のテキストのサイズが大きいほど、拡大縮小の影響は小さくなります。
+**TextScaleFactor**の値が範囲 \[1,2.25\ 倍] です。 最も小さい文字がこの大きさまで拡大されます。 たとえば、この値を使ってテキストに合わせてグラフィックスを拡大縮小できます。 ただし、すべてのテキストが同じ倍率で拡大縮小されるわけではないことに注意してください。 一般に、最初の状態のテキストのサイズが大きいほど、拡大縮小の影響は小さくなります。
 
 次の型に **IsTextScaleFactorEnabled** プロパティがあります。  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
@@ -176,6 +182,8 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>関連トピック  
+
+* [テキストの拡大縮小](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [アクセシビリティ](accessibility.md)
 * [基本的なアクセシビリティ情報](basic-accessibility-information.md)
 * [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)

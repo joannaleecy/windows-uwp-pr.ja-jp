@@ -5,12 +5,12 @@ ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 90d9bf524cda8d3ceed921d3bc19b73648f7581e
+ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927257"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "8990495"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
@@ -68,19 +68,17 @@ class ColorEntry
 <Page 
      xmlns:local="using:MyPage">
      ...
-     <Grid x:Name="myGrid" Background="Black" >
-        <TextBlock Foreground="{x:Bind local:GenerateAppropriateForeground(myGrid.Background)}" Text="Hello World!" />
-    </Grid>
+    <StackPanel>
+        <TextBlock x:Name="BigTextBlock" FontSize="20" Text="Big text" />
+        <TextBlock FontSize="{x:Bind local:MyHelpers.Half(BigTextBlock.FontSize)}" 
+                   Text="Small text" />
+    </StackPanel>
 </Page>
 ```
 ```csharp
-public class MyPage : Page
+static public class MyHelpers
 {
-    public static GenerateAppropriateForeground(SolidColorBrush background)
-    {
-        //Implement static function
-        ...
-    }
+    public static double Half(double value) => value / 2.0;
 }
 ```
 
@@ -104,7 +102,7 @@ public class MyPage : Page
 - 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
-次回のメジャー アップデートを Windows 10 以降、バインド エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングを再評価すます。 例: 
+次回のメジャー アップデートから Windows 10 以降、バインディング エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングが再評価します。 例: 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -159,7 +157,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> コンバーターと wpf MultiBinding によってサポートされたものと同じシナリオを実現するために、X:bind で関数を使用できます。
+> コンバーターと wpf MultiBinding によってサポートされたものと同じシナリオを実現するために、X:bind の関数を使用できます。
 
 ## <a name="function-arguments"></a>関数の引数
 
@@ -173,7 +171,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、 **BindBack**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```
