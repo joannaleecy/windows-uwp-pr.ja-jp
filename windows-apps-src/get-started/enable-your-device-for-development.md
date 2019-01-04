@@ -6,12 +6,12 @@ keywords: 開発者用 Visual Studio での作業の開始, 開発者用ライ�
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
+ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943472"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991760"
 ---
 # <a name="enable-your-device-for-development"></a>デバイスを開発用に有効にする
 
@@ -44,23 +44,19 @@ ms.locfileid: "8943472"
 
 ![[設定] に移動し、[更新とセキュリティ] を選び、[開発者向け] を選んでオプションを表示する](images/devmode-pc-options.png)
 
-モバイル デバイス ファミリの設定ページを以下に示します。
-
-![電話の [設定] から [更新とセキュリティ] を選ぶ](images/devmode-mob.png)
-
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>選ぶ必要がある設定: アプリのサイドローディングか開発者モードか
 
  デバイスでは、開発者モードを有効にすることも、サイドローディングのみを有効にすることもできます。
 
 -   *Microsoft Store アプリ*では、既定の設定です。 アプリの開発中でない場合や、組織から配布された特殊な内部アプリを使っている場合は、この設定を有効にしておきます。
 -   *サイドローディング*では、Microsoft Store の認証を受けていないアプリをインストールし、実行やテストを行うことができます。 たとえば、社内のみで使うアプリなどがあります。
--   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。 
+-   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。
 
 既定では、Microsoft Store からのみユニバーサル Windows プラットフォーム (UWP) アプリをインストールできます。 開発者向け機能を使用するように設定を変更すると、デバイスのセキュリティ レベルが変わる場合があります。 未検証のソースからはアプリをインストールしないでください。
 
-### <a name="sideload-apps"></a>アプリのサイドローディング
+### <a name="sideload-apps"></a>アプリのサイドロード
 
-アプリのサイドローディング設定は、通常、Microsoft Store を使わずにカスタム アプリを管理対象デバイスにインストールする必要がある会社や学校によって使用されます。 この場合、設定ページのイメージで以前に示したように、*UWP アプリ*設定を無効にするポリシーを組織が適用していることはよくあります。 また、組織は、必要な証明書と、アプリをサイドローディングするインストール場所を提供します。 詳しくは、TechNet の記事「[Windows 10 でのアプリのサイド ローディング](https://technet.microsoft.com/library/mt269549.aspx)」と「[Microsoft Intune でのアプリ展開の開始](https://technet.microsoft.com/library/dn646955.aspx)」をご覧ください。
+アプリのサイドローディング設定は通常、会社や、Microsoft ストアを経由せずに、管理対象デバイスにカスタム アプリをインストールする必要がある学校や Microsoft 以外のソースからアプリを実行する必要があるその他のユーザーによって使われます。 この場合、設定ページのイメージで以前に示したように、*UWP アプリ*設定を無効にするポリシーを組織が適用していることはよくあります。 また、組織は、必要な証明書と、アプリをサイドローディングするインストール場所を提供します。 詳しくは、TechNet の記事「[Windows 10 でのアプリのサイド ローディング](https://technet.microsoft.com/library/mt269549.aspx)」と「[Microsoft Intune でのアプリ展開の開始](https://technet.microsoft.com/library/dn646955.aspx)」をご覧ください。
 
 デバイス ファミリ固有の情報
 
@@ -90,7 +86,7 @@ ms.locfileid: "8943472"
 
 この画像は、Windows 10 の開発者向け機能を示しています。
 
-![開発者モードのオプション](images/devmode-mob-options.png) 
+![開発者モードのオプション](images/devmode-mob-options.png)
 
 ### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>デバイス ポータル
 
@@ -103,7 +99,7 @@ Device Portal について詳しくは、「[Windows Device Portal の概要](..
 - [モバイル用 Device Portal](../debug-test-perf/device-portal-mobile.md)
 - [Xbox 用 Device Portal](../debug-test-perf/device-portal-xbox.md)
 
-開発者モードの有効化または Device Portal について問題が発生した場合には、「[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)」フォーラムで問題の回避策を見つけるか、または「[開発者モード パッケージのインストール エラー](#failure-to-install-developer-mode-package)」で、開発者モード パッケージをブロック解除するための WSUS サポート技術情報の追加の情報をご覧ください。 
+開発者モードの有効化または Device Portal について問題が発生した場合には、「[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)」フォーラムで問題の回避策を見つけるか、または「[開発者モード パッケージのインストール エラー](#failure-to-install-developer-mode-package)」で、開発者モード パッケージをブロック解除するための WSUS サポート技術情報の追加の情報をご覧ください。
 
 ### <a name="ssh"></a>SSH
 
@@ -114,7 +110,7 @@ Device Portal について詳しくは、「[Windows Device Portal の概要](..
 
 SSH サービスを利用するには、デバイスの検出を有効にして PIN のペアリングを許可できます。 別の SSH サービスを実行する予定の場合、別のポートにセットアップするか、開発者モードの SSH サービスを無効にできます。 SSH サービスを無効にするには、デバイスの検出を無効にします。  
 
-SSH ログインは、認証用のパスワードを受け入れる "DevToolsUser" アカウントを通じて行われます。  このパスワードは、デバイスの検出の [ペアリング] ボタンを押した後にデバイスに表示される PIN であり、PIN が表示されている間のみ有効です。  Visual Studio からルーズ ファイル配置がインストールされる DevelopmentFiles フォルダーを手動で管理するために、SFTP サブシステムも有効になります。 
+SSH ログインは、認証用のパスワードを受け入れる "DevToolsUser" アカウントを通じて行われます。  このパスワードは、デバイスの検出の [ペアリング] ボタンを押した後にデバイスに表示される PIN であり、PIN が表示されている間のみ有効です。  Visual Studio からルーズ ファイル配置がインストールされる DevelopmentFiles フォルダーを手動で管理するために、SFTP サブシステムも有効になります。
 
 #### <a name="caveats-for-ssh-usage"></a>SSH の使用に関する注意事項
 Windows で使用される既存の SSH サーバーはまだプロトコルに準拠していないため、SFTP または SSH クライアントを使うには特殊な構成が必要になることがあります。  具体的には、SFTP サブシステムはバージョン 3 以下で実行されるため、中継するクライアントが古いサーバーを使うように構成する必要があります。  古いデバイスの SSH サーバーは、公開キー認証として `ssh-dss` が使用されます。これは、OpenSSH によって非推奨となりました。  このようなデバイスに接続するには、`ssh-dss` を受け入れるように SSH クライアントを手動で構成する必要があります。  
@@ -129,7 +125,7 @@ Windows で使用される既存の SSH サーバーはまだプロトコルに�
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>エクスプローラー、リモート デスクトップ、PowerShell の最適化 (デスクトップのみ)
 
- デスクトップ デバイス ファミリの場合、**[開発者向け]** 設定ページには、開発タスク用 PC を最適化するために使用できる設定へのショートカットが備わっています。 それぞれの設定で、チェック ボックスを選択して **[適用]** をクリックするか、**[設定の表示]** リンクをクリックして対象オプションの設定ページを開くことができます。 
+ デスクトップ デバイス ファミリの場合、**[開発者向け]** 設定ページには、開発タスク用 PC を最適化するために使用できる設定へのショートカットが備わっています。 それぞれの設定で、チェック ボックスを選択して **[適用]** をクリックするか、**[設定の表示]** リンクをクリックして対象オプションの設定ページを開くことができます。
 
 
 ## <a name="notes"></a>注意
@@ -141,9 +137,9 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 -   [デバイス ポータル](../debug-test-perf/device-portal.md)を使用して、ブラウザーから、Windows 10 バージョン 1511 以降を実行しているモバイル デバイスに展開できます。 Device Portal の **[アプリ](../debug-test-perf/device-portal.md#apps-manager)** ページを使用して、アプリ パッケージ (.appx) をアップロードしてデバイスにインストールします。
 
 ## <a name="failure-to-install-developer-mode-package"></a>開発者モード パッケージのインストール エラー
-ネットワークや管理上の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、この PC への**リモート**展開に必要 (ブラウザーから Device Portal を使うか、またはデバイスの検出を使って SSH を有効化する) ですが、ローカル展開には必要ではありません。  これらの問題が発生した場合でも、Visual Studio を使用してローカルでアプリを展開できます。また、このデバイスから他のデバイスへ展開できます。 
+ネットワークや管理上の問題により、開発者モードが正しくインストールされないことがあります。 開発者モード パッケージは、この PC への**リモート**展開に必要 (ブラウザーから Device Portal を使うか、またはデバイスの検出を使って SSH を有効化する) ですが、ローカル展開には必要ではありません。  これらの問題が発生した場合でも、Visual Studio を使用してローカルでアプリを展開できます。また、このデバイスから他のデバイスへ展開できます。
 
-これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。 
+これらの問題に対する回避策を検索するには、[既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)フォーラムをご覧ください。
 
 > [!NOTE]
 > 開発者モードが正しくインストールしない場合、要求をフィードバックをお勧めします。 **フィードバック Hub**アプリでは、**新しいフィードバックの追加**を選択し、**開発者向けプラットフォーム**カテゴリとサブカテゴリ**開発者モード**を選択します。 フィードバックの送信は、Microsoft が発生した問題を解決するに役立ちます。
@@ -152,23 +148,24 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 
 "Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
 
-このエラーは、ネットワーク接続に問題がある場合、エンタープライズ設定になっている場合、またはパッケージが見つからない場合に発生することがあります。 
+このエラーは、ネットワーク接続に問題がある場合、エンタープライズ設定になっている場合、またはパッケージが見つからない場合に発生することがあります。
 
 この問題を解決するには:
 
-1. お使いのコンピューターがインターネットに接続されていることを確認します。 
-2. ドメインに参加しているコンピューターの場合は、ネットワーク管理者に問い合わせます。 開発者モード パッケージは、すべてのオンデマンド機能と同様に、既定では WSUS でブロックされています。 2.1. 現在または以前のリリースで開発者モード パッケージのブロックを解除するためには、WSUS で次のサポート技術情報を許可する必要があります: 4016509, 3180030, 3197985。  
+1. お使いのコンピューターがインターネットに接続されていることを確認します。
+2. ドメインに参加しているコンピューターの場合は、ネットワーク管理者に問い合わせます。 開発者モード パッケージは、すべてのオンデマンド機能と同様に、既定では WSUS でブロックされています。
+2.1. 現在または以前のリリースで開発者モード パッケージのブロックを解除するためには、WSUS で次のサポート技術情報を許可する必要があります: 4016509, 3180030, 3197985。  
 3. [設定] > [更新とセキュリティ] > [Windows Update] で Windows の更新プログラムをチェックします。
-4. [設定] > [システム] > [アプリと機能] > [オプション機能を管理する] に、Windows 開発者モード パッケージが存在することを確認します。 ない場合は、Windows はコンピューターの適切なパッケージを検出できません。 
+4. [設定] > [システム] > [アプリと機能] > [オプション機能を管理する] に、Windows 開発者モード パッケージが存在することを確認します。 ない場合は、Windows はコンピューターの適切なパッケージを検出できません。
 
-上記の手順のいずれかを実行後、修正を確認するために、開発者モードを無効にし、もう一度有効にします。 
+上記の手順のいずれかを実行後、修正を確認するために、開発者モードを無効にし、もう一度有効にします。
 
 
 ### <a name="failed-to-install-the-package"></a>パッケージ インストール エラー
 
 "Developer Mode package failed to install. Error code 0x80004005  Learn more"
 
-このエラーは、Windows のビルドと開発者モード パッケージの間に互換性の問題がある場合に発生します。 
+このエラーは、Windows のビルドと開発者モード パッケージの間に互換性の問題がある場合に発生します。
 
 この問題を解決するには:
 
@@ -178,7 +175,7 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>グループ ポリシーまたはレジストリ キーを使用してデバイスを有効にする
 
-ほとんどの開発者のためには、設定アプリを使用して、デバイスでデバッグを有効にします。 自動化テストなど特定のシナリオでは、他の方法を使用して、Windows 10 デスクトップ デバイスで開発を有効にできます。  これらの手順では SSH サーバーが有効になったり、リモート展開およびデバッグ用のデバイスを対象にできるようになったりはしない点に注意してください。 
+ほとんどの開発者のためには、設定アプリを使用して、デバイスでデバッグを有効にします。 自動化テストなど特定のシナリオでは、他の方法を使用して、Windows 10 デスクトップ デバイスで開発を有効にできます。  これらの手順では SSH サーバーが有効になったり、リモート展開およびデバッグ用のデバイスを対象にできるようになったりはしない点に注意してください。
 
 Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グループ ポリシーを設定してデバイスを有効にできます。 Windows 10 Home をお持ちの場合は、regedit または PowerShell コマンドを使ってレジストリ キーを直接設定し、デバイスを有効にしてください。
 
