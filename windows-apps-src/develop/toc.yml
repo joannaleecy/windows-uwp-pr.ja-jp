@@ -1003,7 +1003,7 @@ items:
         href: ../xaml-platform/template-settings-classes.md
       - name: x:Class 属性
         href: ../xaml-platform/x-class-attribute.md
-      - name: '{x:DefaultBindMode} 属性'
+      - name: x:DefaultBindMode 属性
         href: ../xaml-platform/x-defaultbindmode-attribute.md
       - name: x:DeferLoadStrategy 属性
         href: ../xaml-platform/x-deferloadstrategy-attribute.md
@@ -1513,9 +1513,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 08d0ccce3d0fda164519884b8b162de2d3bccab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfed0b442b408bd3ebded5b22993b9f1e19353ce
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962524"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981861"
