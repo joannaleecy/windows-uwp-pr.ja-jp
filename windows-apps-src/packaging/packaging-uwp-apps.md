@@ -2,25 +2,25 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: UWP アプリのパッケージ化
 description: ユニバーサル Windows プラットフォーム (UWP) アプリを配布または販売するには、そのアプリのアプリ パッケージを作成する必要があります。
-ms.date: 09/30/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: Windows 10, UWP
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f11fa421fe5bcbf8f37098df91344abdb9915890
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: dc5f033737e36bd5a891543fbad6b3eba933f052
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976889"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991628"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Visual Studio で UWP アプリをパッケージ化する
 
 ユニバーサル Windows プラットフォーム (UWP) アプリを販売、または他のユーザーに配布するには、パッケージ化する必要があります。 Microsoft Store を通じてアプリを配布しない場合は、アプリ パッケージを直接デバイスにサイドローディングしたり、[Web インストール](installing-UWP-apps-web.md)を通じて配布したりすることができます。 この記事では、Visual Studio を使って UWP アプリ パッケージを構成、作成、テストする方法について説明します。 基幹業務 (LOB) アプリの管理および展開について詳しくは、[エンタープライズ アプリ管理に関するページ](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)をご覧ください。
 
-Windows 10 では、アプリ パッケージ、アプリ バンドル、または[パートナー センター](https://partner.microsoft.com/dashboard)への完全なアプリ パッケージ アップロード ファイルを提出することができます。 これらのオプションのうち、パッケージ アップロード ファイルの提出が最適なエクスペリエンスになります。
+Windows 10 では、アプリ パッケージ、アプリ バンドル、または[パートナー センター](https://partner.microsoft.com/dashboard)への完全なアプリ パッケージ アップロード ファイルを提出することができます。 これらのオプションのアプリ パッケージ アップロード ファイルを送信する最適なエクスペリエンスが提供されます。
 
 ## <a name="types-of-app-packages"></a>アプリ パッケージの種類
 
@@ -31,7 +31,7 @@ Windows 10 では、アプリ パッケージ、アプリ バンドル、また�
     アプリ バンドルは、複数のアプリ パッケージを含めることができるパッケージの種類であり、それぞれ特定のデバイス アーキテクチャをサポートするようにビルドされます。 たとえば、アプリ バンドルには x86、x64、および ARM 構成用の別個のアプリ パッケージを含めることができます。 アプリ バンドルによってできる限り広範なデバイスでアプリが利用できるようになるため、アプリ バンドルは可能であれば必ず生成してください。  
 
 - **アプリ パッケージ アップロード ファイル (.appxupload または .msixupload)**  
-    さまざまなプロセッサ アーキテクチャをサポートする複数のアプリ パッケージまたは 1 つのアプリ バンドルを含めることができる 1 つのファイルです。 アプリが Microsoft Store に公開されると、アップロード ファイルには[アプリのパフォーマンスを分析](https://docs.microsoft.com/windows/uwp/publish/analytics)するためのシンボル ファイルも含められます。 このファイルは自動的に作成するの公開のパートナー センターに提出して目的として Visual Studio でアプリをパッケージ化している場合。 ことが重要では、申請**だけでは有効なアプリ パッケージ パートナー センター Visual Studio を使って作成できる**ことに注意してください。
+    さまざまなプロセッサ アーキテクチャをサポートする複数のアプリ パッケージまたは 1 つのアプリ バンドルを含めることができる 1 つのファイルです。 アプリ パッケージ アップロード ファイルには[アプリのパフォーマンスを分析](https://docs.microsoft.com/windows/uwp/publish/analytics)するシンボル ファイルが含まれています、Microsoft Store でアプリが公開された後。 このファイルは自動的に作成するの公開のパートナー センターに提出して目的として Visual Studio でアプリをパッケージ化している場合。
 
 アプリ パッケージを準備して作成する手順の概要は次のとおりです。
 
@@ -44,7 +44,7 @@ Windows 10 では、アプリ パッケージ、アプリ バンドル、また�
 
 ## <a name="before-packaging-your-app"></a>アプリ パッケージを作成する前に
 
-1.  **アプリをテストする。** パートナー センターへの申請用にアプリをパッケージ化する前に、サポートを予定しているすべてのデバイス ファミリに期待どおりに動作を確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、Xbox、IoT デバイスなどが含まれる場合があります。
+1.  **アプリをテストする。** パートナー センターへの申請用にアプリをパッケージ化する前に、サポートを予定しているすべてのデバイス ファミリに期待どおりに動作を確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、Xbox、IoT デバイスなどが含まれる場合があります。 展開して、Visual Studio を使ってアプリのテストについて詳しくは、[展開と UWP アプリのデバッグ](../debug-test-perf/deploying-and-debugging-uwp-apps.md)を参照してください。
 2.  **アプリを最適化する。** Visual Studio のプロファイリングおよびデバッグ ツールを使って、UWP アプリのパフォーマンスを最適化できます。 たとえば、UI 応答のタイムライン ツール、メモリ使用率のツール、CPU 使用率のツールを使えます。 これらのコマンド ライン ツールについて詳しくは、[プロファイリング機能ツアーに関するページ](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)をご覧ください。
 3.  **.NET ネイティブ互換性を確認する (VB と C# のアプリの場合)。** ユニバーサル Windows プラットフォームには、アプリの実行時のパフォーマンスを向上させるネイティブ コンパイラがあります。 この変更により、新しいコンパイル環境でアプリをテストする必要があります。 既定では、**リリース** ビルド構成により、.NET ネイティブ ツール チェーンが可能であるため、重要なのは、この**リリース**構成でアプリをテストし、想定どおりにアプリが動作することを確認することです。 .NET ネイティブで発生する可能性のあるいくつかの一般的なデバッグの問題について詳しくは、[.NET Native Windows ユニバーサル アプリのデバッグ](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)に関するブログをご覧ください。
 
@@ -76,14 +76,12 @@ Microsoft Store 経由でアプリを配布する場合、Visual Studio は、�
 
 ## <a name="create-an-app-package-upload-file"></a>アプリ パッケージ アップロード ファイルの作成
 
-Microsoft Store を通じてアプリを配布するには、アプリ パッケージ (.appx または .msix)、アプリ バンドル (.appxbundle または .msixbundle)、またはアップロード パッケージ (.appxupload)、および[パートナー センターにアプリをパッケージ化された申請](https://docs.microsoft.com/windows/uwp/publish/app-submissions)を作成する必要があります。 アプリ パッケージまたはアプリ バンドルを単独でパートナー センターに提出することはできますが、アップロード パッケージを提出することをお勧めしています。
+Microsoft Store を通じてアプリを配布するには、アプリ パッケージ (.appx または .msix)、アプリ バンドル (.appxbundle または .msixbundle)、またはアプリ パッケージ アップロード ファイル (.appxupload または .msixupload)、および[パートナー センターにアプリをパッケージ化された申請](https://docs.microsoft.com/windows/uwp/publish/app-submissions)を作成する必要があります。 アプリ パッケージまたはアプリ バンドルを単独でパートナー センターに提出することはできますが、アプリ パッケージ アップロード ファイルを提出することをお勧めします。 アプリ パッケージ アップロード ファイルを作成するには、Visual Studio で**アプリ パッケージの作成**ウィザードを使用して、または既存のアプリ パッケージまたはアプリ バンドルから手動で作成することができます。
 
 >[!NOTE]
-> アプリ パッケージ アップロード ファイル (.appxupload または .msixupload) では、Visual Studio を使って作成できるパートナー センターの有効なアプリ パッケージの型**だけ**です。 その他の有効な[アプリ パッケージは、Visual Studio を使わずに手動で作成することができます](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
+> アプリ パッケージ (.appx または .msix) またはアプリ バンドル (.appxbundle または .msixbundle) を手動で作成する場合は、 [MakeAppx.exe ツールを使ったアプリ パッケージの作成](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)を参照してください。
 
-これは**アプリ パッケージの作成**ウィザードを使って行えます。 Visual Studio を使ってパートナー センターへの申請に適したパッケージを作成する手順に従います。
-
-**アプリ パッケージ アップロード ファイルを作成するには**
+### <a name="to-create-your-app-package-upload-file-using-visual-studio"></a>Visual Studio を使ってアプリ パッケージ アップロード ファイルを作成するには
 
 1.  **ソリューション エクスプローラー**で、UWP アプリ プロジェクトのソリューションを開きます。
 2.  プロジェクトを右クリックし、**[ストア]** -> **[アプリ パッケージの作成]** の順に選択します。 このオプションが無効になっているか、まったく表示されない場合は、プロジェクトがユニバーサル Windows プロジェクトであることを確認します。  
@@ -102,34 +100,54 @@ Microsoft Store を通じてアプリを配布するには、アプリ パッケ
     ![[アプリ パッケージの作成] ウィンドウのパッケージ構成画面](images/packaging-screen5.jpg)
 7.  アプリが公開された後、完全な PDB シンボル ファイルからパートナー センター[分析アプリのパフォーマンス](https://docs.microsoft.com/windows/uwp/publish/analytics)に含めます。 バージョンの番号付けやパッケージの出力場所など、他の詳細情報を構成します。
 9.  **[作成]** をクリックして、アプリ パッケージを生成します。 手順 3 で **、Microsoft Store にアップロードするパッケージを作成する**オプションのいずれかを選択し、パートナー センターへの申請のパッケージを作成する場合、ウィザードはパッケージのアップロード (.appxupload または .msixupload) ファイルを作成します。 手順 3 で**サイドローディング用のパッケージを作成する**を選択した場合、ウィザードは、単一のアプリ パッケージまたは手順 6 での選択内容に基づいて、アプリ バンドルに作成されます。
-10. アプリが正常にパッケージ化されると、このダイアログ ボックスが表示されます。  
+10. アプリが正常にパッケージ化するときは、このダイアログ ボックスが表示され、指定された出力場所からアプリ パッケージ アップロード ファイルを取得することができます。 この時点では、[ローカル コンピューターまたはリモート コンピューターでアプリ パッケージを検証](#validate-your-app-package)することができます。
     ![[パッケージの作成が完了しました] ウィンドウの検証オプション](images/packaging-screen6.jpg)
 
-    ローカルまたはリモート コンピューター上の認定のパートナー センターに提出する前に、アプリを検証します。 アプリ パッケージのデバッグ ビルドではなくリリース ビルドのみを検証できます。
+### <a name="to-create-your-app-package-upload-file-manually"></a>アプリ パッケージ アップロード ファイルを手動で作成するには
 
-11. アプリをローカルで検証するには、**[ローカル コンピューター]** オプションを選んだままで、**[Windows アプリ認定キットを起動する]** をクリックします。 Windows アプリ認定キットでアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
+1. フォルダーで、次のファイルを配置します。
+    - 1 つまたは複数のアプリ パッケージ (.msix または .appx) またはアプリ バンドル (.msixbundle または .appxbundle)。
+    - .Appxsym ファイルの場合です。 これは、パートナー センターで[クラッシュ分析](../publish/health-report.md)のために使用するアプリのパブリック シンボルを含む圧縮 .pdb ファイルです。 このファイルを省略できますがするには、クラッシュ分析やデバッグ情報にないアプリの利用可能なします。
+2. フォルダーを zip します。
+3. Zip 形式フォルダー拡張子を .zip から .msixupload または .appxupload に変更します。
+
+### <a name="validate-your-app-package"></a>アプリ パッケージを検証します。
+
+ローカルまたはリモート コンピューター上の認定のパートナー センターに提出する前に、アプリを検証します。 アプリ パッケージのデバッグ ビルドではなくリリース ビルドのみを検証できます。 パートナー センターにアプリの提出の詳細については、[アプリの申請](https://docs.microsoft.com/windows/uwp/publish/app-submissions)を参照してください。
+
+**ローカルでアプリ パッケージを検証するには**
+
+1. 最終的な**パッケージの作成が完了**のページで、**アプリ パッケージの作成**ウィザード、**ローカル コンピューター** ] オプションを選択したままし、 **Windows アプリ認定キットを起動**] をクリックします。 Windows アプリ認定キットでアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
 
     Windows アプリ認定キットはさまざまなテストを実行し、結果を返します。 より具体的な情報については、「[Windows アプリ認定キットのテスト](https://msdn.microsoft.com/library/windows/apps/mt186450)」をご覧ください。
 
     リモート windows 10 デバイスを使用してテストする場合は、そのデバイスに Windows アプリ認定キットを手動でインストールする必要があります。 この手順については、次のセクションで説明します。 その後、[**リモート コンピューター**] を選び、[**Windows アプリ認定キットを起動する**] をクリックしてリモート デバイスに接続し、検証テストを実行します。
 
-12. Wack し、アプリが認定に合格した後は、パートナー センターにアプリを提出する準備ができたらします。 必ず正しいファイルをアップロードしてください。 ソリューションのルート フォルダーにファイルの既定の場所が見つかりません`\[AppName]\AppPackages`.appxupload または .msixupload ファイル拡張子が付いているとします。 フォームの名前になります`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`または`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`選択済みパッケージのアーキテクチャのすべてのアプリ バンドルを選択した場合。
+2. Wack し、アプリが認定に合格した後は、パートナー センターにアプリを提出する準備ができたらします。 必ず正しいファイルをアップロードしてください。 ソリューションのルート フォルダーにファイルの既定の場所が見つかりません`\[AppName]\AppPackages`.appxupload または .msixupload ファイル拡張子が付いているとします。 フォームの名前になります`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`または`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`選択済みパッケージのアーキテクチャのすべてのアプリ バンドルを選択した場合。
 
-パートナー センターにアプリの提出の詳細については、[アプリの申請](https://docs.microsoft.com/windows/uwp/publish/app-submissions)を参照してください。
-
-**リモート windows 10 デバイスでアプリ パッケージを検証します。**
+**リモート windows 10 デバイスでアプリ パッケージを検証するには**
 
 1.  [開発用にデバイスを有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)」の手順に従って、開発用の windows 10 デバイスを有効にします。
-    **重要な**windows 10 のリモート ARM デバイスでアプリ パッケージを検証することはできません。
+    >[!IMPORTANT]
+    > Windows 10 のリモート ARM デバイスでアプリ パッケージを検証することはできません。
 2.  Visual Studio のリモート ツールをダウンロードしてインストールします。 これらのツールを使って Windows アプリ認定キットをリモートで実行します。 これらのツールについてダウンロード場所など詳しくは、[リモート コンピューターでの UWP アプリの実行](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)に関するページをご覧ください。
 3.  必要な[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)をダウンロードし、リモート windows 10 デバイスでインストールします。
 4.  **パッケージの作成が完了しました**ウィザードのページで、[**リモート コンピューター**] オプション ボタンを選び、[**テスト接続**] ボタンの横にある省略記号ボタンをクリックします。
-    **注:****リモート コンピューター** ] オプション ボタンは検証をサポートするソリューション構成を少なくとも 1 つを選択した場合にのみ使用します。 WACK でアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
+    >[!NOTE]
+    > **リモート コンピューター** ] オプション ボタンは、検証をサポートするソリューション構成を少なくとも 1 つを選択した場合にのみ使用します。 WACK でアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
 5.  サブネットの内部にあるデバイスの形式を指定するか、サブネットの外部にあるデバイスのドメイン ネーム サーバー (DNS) 名または IP アドレスを指定します。
 6.  Windows 資格情報を使ってデバイスにログオンする必要がない場合は、**[認証モード]** ボックスの一覧で **[なし]** を選びます。
 7.  **[選択]**、**[Windows アプリ認定キットを起動する]** の順に選びます。 デバイスでリモート ツールが実行されていれば、Visual Studio がデバイスに接続されてから、検証テストが実行されます。 「[Windows アプリ認定キットのテスト](https://msdn.microsoft.com/library/windows/apps/mt186450)」をご覧ください。
 
 ## <a name="sideload-your-app-package"></a>アプリ パッケージをサイドローディングする
+
+UWP アプリ パッケージは、アプリはデスクトップ アプリを使用しているデバイスにインストールされません。 通常、Microsoft Store から UWP アプリをダウンロードし、デバイスにアプリをインストールします。 アプリは Microsoft Store で公開せずにインストールできます (サイドローディング)。 アプリ パッケージを使ってアプリをテスト ファイルを作成して、インストールできます。 基幹業務 (LOB) アプリのように、ストアで販売しないアプリの場合は、そのアプリをサイドローディングして、社内の他のユーザーが使えるようにできます。
+
+ターゲット デバイスにアプリをサイドローディングする、前に[、デバイスを開発用に有効に](../get-started/enable-your-device-for-development.md)する必要があります。
+
+サイドローディングには、windows 10 Mobile デバイスの場合は、アプリは、 [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)ツールを使用します。 デスクトップ、ラップトップ、およびタブレットでは、以下の手順に従います。
+
+### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>Windows 10 Anniversary Update 以降サイドローディング アプリをパッケージ化します。
 
 Windows 10 Anniversary Update 以降では、アプリ パッケージ ファイルをダブルクリックするだけでアプリ パッケージをインストールできます。 これを使用するには、アプリ パッケージまたはアプリ バンドルのファイルに移動してダブルクリックします。 アプリのインストーラーが起動し、アプリの基本情報と、インストール ボタン、インストール進行状況バー、関連するエラー メッセージが表示されます。
 
@@ -138,15 +156,7 @@ Windows 10 Anniversary Update 以降では、アプリ パッケージ ファイ
 > [!NOTE]
 > アプリのインストーラーは、アプリがデバイスによって信頼されていることを前提としています。 開発者アプリまたはエンタープライズ アプリをサイドローディングする場合、デバイス上の信頼されたユーザー ストアまたは信頼された発行元証明機関ストアに署名証明書をインストールする必要があります。 この方法がわからない場合は、[テスト証明書のインストール](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)に関するページをご覧ください。
 
-### <a name="sideload-your-app-on-previous-versions-of-windows"></a>以前のバージョンの Windows でアプリをサイドローディングする
-UWP アプリ パッケージの場合、デスクトップ アプリを使っているときは、アプリがデバイスにインストールされません。 通常、Microsoft Store から UWP アプリをダウンロードし、デバイスにアプリをインストールします。 アプリは Microsoft Store で公開せずにインストールできます (サイドローディング)。 アプリ パッケージを使ってアプリをテスト ファイルを作成して、インストールできます。 基幹業務 (LOB) アプリのように、ストアで販売しないアプリの場合は、そのアプリをサイドローディングして、社内の他のユーザーが使えるようにできます。
-
-次に示しているのは、アプリをサイドローディングするための要件です。
-
--   [開発用にデバイスを有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)必要があります。
--   サイドローディングには、windows 10 Mobile デバイスの場合は、アプリは、 [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)ツールを使用します。
-
-**デスクトップ、ラップトップ、またはタブレットにアプリをサイドローディングする**
+### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>サイドローディングの以前のバージョンの Windows でアプリをパッケージ化
 
 1.  インストールするアプリ バージョンのフォルダーをターゲット デバイスにコピーします。
 
@@ -165,6 +175,7 @@ UWP アプリ パッケージの場合、デスクトップ アプリを使っ�
     ![エクスプローラーでの PowerShell スクリプトへのナビゲーション](images/packaging-screen7.jpg)
 
     アプリ パッケージがインストールされると、PowerShell のウィンドウで "**アプリが正常にインストールされました**" というメッセージが表示されます。
+    >[!TIP]
+    > タブレットでショートカット メニューを開きに画面をタッチし先を右クリックし、完全な円が表示されるまで、指を放したします。 指を放した後にショートカット メニューが表示されます。
 
-    **ヒント**: タブレットでショートカット メニューを開きを右クリックし、完全な円が表示されるまで、指を放したする画面をタッチします。 指を放した後にショートカット メニューが表示されます。
 4.  スタート ボタンをクリックし、アプリをアプリ名で検索してから起動します。

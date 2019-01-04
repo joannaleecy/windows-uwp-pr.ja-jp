@@ -1,35 +1,29 @@
 ---
 title: MakeAppx.exe ツールを使ったアプリ パッケージの作成
 description: MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。
-ms.date: 06/21/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943013"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991608"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 
 
-**MakeAppx.exe** は、アプリ パッケージとアプリ パッケージ バンドルの両方を作成できます。 **MakeAppx.exe**はまた、アプリ パッケージまたはバンドルからのファイルの抽出や、アプリ パッケージとバンドルの暗号化または暗号化解除を行うこともできます。 このツールは、Windows 10 SDK に含まれており、コマンド プロンプトまたはスクリプト ファイルから使用できます。
+**MakeAppx.exe**は、パッケージ バンドル (.msixbundle または .appxbundle) .msix (.appx)、アプリ パッケージとアプリの両方を作成します。 **MakeAppx.exe**はまた、アプリ パッケージまたはバンドルからのファイルの抽出や、アプリ パッケージとバンドルの暗号化または暗号化解除を行うこともできます。 このツールは、Windows 10 SDK に含まれており、コマンド プロンプトまたはスクリプト ファイルから使用できます。
 
-> [!IMPORTANT] 
-> Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)」をご覧ください。
+> [!IMPORTANT]
+> Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](packaging-uwp-apps.md)」をご覧ください。
 
-**MakeAppx.exe** では .appxupload ファイルを作成できないことに注意してください。 .Appxupload ファイルは、Visual Studio のパッケージ化プロセスの一部として作成され、その他の 2 つのファイルが含まれています: .msix または .appx と .appxsym というします。 .Appxsym ファイルは、パートナー センターで[クラッシュ分析](../publish/health-report.md)のために使用されるアプリのパブリック シンボルを含む圧縮 .pdb ファイルです。 通常の .appx ファイルもストアに提出できますが、クラッシュ分析やデバッグ情報を行うことはできません。 ストアにパッケージを提出する方法について詳しくは、「[アプリ パッケージのアップロード](../publish/upload-app-packages.md)」をご覧ください。 
-
- 最新バージョンの Windows 10 では、このツールの更新プログラムでは、.appx パッケージの使用量は影響しません。 引き続き .appx パッケージでは、このツールを使用したり、以下のように .msix パッケージのサポート ツールを使用できます。
-
-.appxupload ファイルを手動で作成するには:
-- フォルダーで、.msix と .appxsym を配置します。
-- ファイルが入ったフォルダーを zip 圧縮する
-- zip 圧縮したフォルダーの拡張指名を .zip から .appxupload に変更する
+> [!IMPORTANT]
+> **MakeAppx.exe**は作成すること、[アプリ パッケージ アップロード ファイル (.appxupload または .msixupload)](packaging-uwp-apps.md#types-of-app-packages)、[パートナー センターへの申請](../publish/upload-app-packages.md)の有効なアプリ パッケージの推奨される型では注意してください。 アプリ パッケージ アップロード ファイルは、手動で作成もできますが、 [Visual Studio のパッケージ化プロセスの一部として作成](packaging-uwp-apps.md#create-an-app-package-upload-file)、通常です。
 
 ## <a name="using-makeappxexe"></a>MakeAppx.exe の使用
 
@@ -111,7 +105,7 @@ MakeAppx <command> [options]
 
 以下では、**pack**コマンドの構文オプションの使用例を示します。
 
-``` syntax 
+``` syntax
 MakeAppx pack [options] /d <content directory> /p <output package name>
 MakeAppx pack [options] /f <mapping file> /p <output package name>
 MakeAppx pack [options] /m <app package manifest> /f <mapping file> /p <output package name>
@@ -200,7 +194,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 **MakeAppx.exe**ツールでは、既存のパッケージやバンドルの暗号化や暗号化解除を行うこともできます。 これには、パッケージ名と出力パッケージ名に加え、暗号化や暗号化解除にキー ファイル (/kf) とグローバル テスト キー (/kt) のいずれを使用するかを指定します。
 
-暗号化と暗号化解除は、Visual Studio パッケージ ウィザードでは実行できません。 
+暗号化と暗号化解除は、Visual Studio パッケージ ウィザードでは実行できません。
 
  **encrypt** コマンドと **decrypt** コマンド固有のオプション:
 
@@ -251,7 +245,7 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 "\\MyServer\path\icon.png"              "icon.png"
 "my app files\readme.txt"               "my app files\readme.txt"
 "CustomManifest.xml"                    "AppxManifest.xml"
-``` 
+```
 
 マッピング ファイルを使用する場合は、/m オプションを使用するかどうかを選択できます。 /m オプションを使うと、マッピング ファイル内のリソースのメタデータを生成されたマニフェストに含めるように指定できます。 /m オプションを使う場合、マッピング ファイル内にそれに対応するセクションを設ける必要があります。このセクションは 1 行目に "[ResourceMetadata]" と指定し、それに続く行で "ResourceDimensions" と "ResourceId" を指定します。 アプリ パッケージには複数の "ResourceDimensions" を含めることができますが、"ResourceId" は 1 つだけです。
 
@@ -269,11 +263,11 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 
 ## <a name="semantic-validation-performed-by-makeappxexe"></a>MakeAppx.exe が実行するセマンティックの検証
 
-**MakeAppx.exe** では、限定的なセマンティックの検証機能により、一般的な展開エラーを検出し、アプリ パッケージの有効性を確認します。 **MakeAppx.exe** を使うときに検証をスキップする場合は、/nv オプションをご覧ください。 
+**MakeAppx.exe** では、限定的なセマンティックの検証機能により、一般的な展開エラーを検出し、アプリ パッケージの有効性を確認します。 **MakeAppx.exe** を使うときに検証をスキップする場合は、/nv オプションをご覧ください。
 
 この検証では、次の点を確認します。
 - パッケージ マニフェストで参照されているすべてのファイルがアプリ パッケージに含まれていること。
 - アプリケーションに、同一の 2 つのキーが存在しないこと。
-- アプリケーションが、SMB、FILE、MS-WWA-WEB、MS-WWA のリストに記載された禁止プロトコルを登録していないこと。 
+- アプリケーションが、SMB、FILE、MS-WWA-WEB、MS-WWA のリストに記載された禁止プロトコルを登録していないこと。
 
 これは一般的なエラーのみをチェックするように設計された機能であり、完全なセマンティックの検証ではありません。 **MakeAppx.exe** によって作成されたパッケージのインストール可能性については保証されていません。
