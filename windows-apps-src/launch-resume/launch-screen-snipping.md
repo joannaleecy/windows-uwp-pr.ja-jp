@@ -1,21 +1,21 @@
 ---
 title: 画面切り取りの起動
-description: このトピックでは、ms screenclip と ms screensketch の URI スキームについて説明します。 アプリは、これらの URI スキームを使用して、切り取り領域とスケッチ アプリを起動したり、新しい切り取り領域を開いたりすることができます。
+description: このトピックでは、ms screenclip と ms screensketch URI スキームについて説明します。 アプリは、これらの URI スキームを使用して、切り取り領域とスケッチ アプリを起動したり、新しい切り取り領域を開いたりすることができます。
 ms.date: 8/1/2017
 ms.topic: article
-keywords: windows 10、uwp、uri、切り取り、スケッチ
+keywords: windows 10、uwp、uri、切り取り領域、スケッチ
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0a90772e01885a7361cd51b54fc6e5ea9930bfbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
+ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920561"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992192"
 ---
 # <a name="launch-screen-snipping"></a>画面切り取りの起動
 
-**Ms screenclip:** と**ms screensketch:** URI スキームでは、開始 snipping やスクリーン ショットを編集することができます。
+**Ms screenclip:** と**ms screensketch:** URI スキームでは、開始切り取りやスクリーン ショットを編集することができます。
 
 ## <a name="open-a-new-snip-from-your-app"></a>アプリから新しい切り取り領域を開く
 
@@ -26,7 +26,7 @@ ms.locfileid: "8920561"
 | パラメーター | 型 | 必須かどうか | 説明 |
 | --- | --- | --- | --- |
 | ソース | string | いいえ | URI を起動したソースを示す自由形式の文字列です。 |
-| delayInSeconds | int | × | 1 ~ 30 の整数値。 URI の呼び出しと snipping の開始時の間の完全な秒単位で、遅延を指定します。 |
+| delayInSeconds | int | × | 1 ~ 30 の整数値。 URI の呼び出しと切り取りの開始時の間の完全な秒の遅延を指定します。 |
 
 ## <a name="launching-the-snip--sketch-app"></a>切り取り領域 & スケッチ アプリを起動します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "8920561"
 
 | パラメーター | 型 | 必須かどうか | 説明 |
 | --- | --- | --- | --- |
-| sharedAccessToken | string | いいえ | 切り取り領域とスケッチ アプリで開くには、ファイルを識別するトークンです。 [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)から取得されます。 このパラメーターを省略すると、開いているファイルを使用せず、アプリが起動します。 |
+| sharedAccessToken | string | いいえ | 切り取り領域とスケッチ アプリで開くファイルを識別するトークンです。 [SharedStorageAccessManager.AddFile](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile)から取得されます。 このパラメーターを省略すると、開いているファイルを使用せず、アプリが起動します。 |
 | secondarySharedAccessToken | string | いいえ | 切り取り領域に関するメタデータを含む JSON ファイルを識別する文字列。 メタデータは、配列の x、y 座標、や[userActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) **clipPoints**フィールドを含めることができます。 |
 | ソース | string | いいえ | URI を起動したソースを示す自由形式の文字列です。 |
 | isTemporary | bool | × | 場合は、画面スケッチが True に設定は、開いた後、ファイルを削除しようとしています。 |
@@ -49,7 +49,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-次の例を示します**ms スクリーン ショット**の**secondaryFileAccessToken**パラメーターで指定されたファイルに含めることができます。
+次の例を示します**ms screensketch**の**secondarySharedAccessToken**パラメーターで指定されたファイルに含めることができます。
 
 ```json
 {
