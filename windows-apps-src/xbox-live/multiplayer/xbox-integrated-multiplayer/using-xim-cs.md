@@ -5,12 +5,12 @@ ms.date: 04/24/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
-ms.openlocfilehash: d230d59de1b40797505ac7a47ee52184857b8d05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92ac7b9897b57de42fa56126b477f4db5b9b74dd
+ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946790"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8992078"
 ---
 # <a name="using-xim-c"></a>XIM (C#) の使用
 
@@ -561,3 +561,6 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedN
 ```
 
 2 つ以上のチームを宣言する `XimNetworkConfiguration.TeamConfiguration` を使用してネットワークのクエリを有効にすると、XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() を呼び出すことによって参加したプレイヤーの既定のチーム インデックス値は 0 になります。
+
+> [!NOTE]
+> 場合は、アプリは、複数のローカル ユーザーが指定されているし、ローカル ユーザーの数より少なくを持つネットワークに参加させる、参加が成功まだことができます。 ただし、ローカル ユーザーの最大数のみ network に参加することがあります。
