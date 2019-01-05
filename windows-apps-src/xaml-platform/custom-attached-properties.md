@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 12aabe7a17a9bc62c5e6da27fe019e540db725df
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923010"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992235"
 ---
 # <a name="custom-attached-properties"></a>カスタム添付プロパティ
 
@@ -56,7 +56,7 @@ Microsoft Visual Basic の場合は、次のようになります。
 
 *target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *valueType* 戻り値も、実装でより具体的な型にすることができます。 基本的な **Object** 型が受け入れられますが、多くの場合、添付プロパティにタイプ セーフを適用します。 タイプ セーフ手法として、getter シグネチャと setter シグネチャで型指定を使うことをお勧めします。
 
-シグネチャは、**設定。 PropertyName*アクセサーはこれである必要があります。
+署名、**設定。 PropertyName*アクセサーはこれである必要があります。
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
@@ -73,7 +73,7 @@ Visual Basic の場合は、次のようになります。
 
 この例は、([**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドを使った) 依存関係プロパティの登録と、カスタム添付プロパティの **Get** アクセサーと **Set** アクセサーを示しています。 この例では、添付プロパティ名は `IsMovable` です。 したがって、アクセサーの名前は `GetIsMovable` と `SetIsMovable` にする必要があります。 添付プロパティの所有者は `GameService` という名前の独自の UI を持たないサービス クラスです。その目的は **GameService.IsMovable** 添付プロパティを使うときに、添付プロパティ サービスを提供することだけです。
 
-添付プロパティを定義する c++ +/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++/cli CX このプロパティとフィールドの関係を定義する必要があります単純なプロパティのバッキング .NET **readonly**キーワードと暗黙的な証明書利用者のではなく明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
+C + で添付プロパティを定義する +/CX は、少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++/cli CX このプロパティとフィールドの関係を定義する必要があります単純なプロパティのバッキング .NET **readonly**キーワードと暗黙的な証明書利用者のではなく明示的にします。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
 
 ```csharp
 public class GameService : DependencyObject
@@ -120,19 +120,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -204,7 +206,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## <a name="using-your-custom-attached-property-in-xaml"></a>XAML でのカスタム添付プロパティの使用
+## <a name="setting-your-custom-attached-property-from-xaml-markup"></a>XAML マークアップから、カスタム添付プロパティを設定します。
+
+> [!NOTE]
+> 使用する場合、C++//winrt では、次のセクションをスキップし、([で命令を使って、カスタム添付プロパティを設定するには、C++/WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt))。
 
 添付プロパティを定義し、そのサポート メンバーをカスタム型の一部として含めたら、定義を XAML で利用できるようにする必要があります。 そのためには、関連クラスを含むコード名前空間を参照する XAML 名前空間をマップする必要があります。 添付プロパティをライブラリの一部として定義した場合は、そのライブラリをアプリのアプリ パッケージの一部として含める必要があります。
 
@@ -230,7 +235,32 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 ```
 
 > [!NOTE]
-> C++ での XAML UI を作成する場合、XAML ページが、その型を使用して、いつでも、添付プロパティを定義するカスタム型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
+> において、C++ の XAML UI を作成するかどうかは +/CX して含める必要がありますいつでも、添付プロパティを定義するカスタム型のヘッダーを XAML ページがその型を使用します。 各 XAML ページには、関連付けられたコード ビハインド ヘッダー (. xaml.h)。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
+
+## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>命令を使ってにおいて、C++、カスタム添付プロパティを設定/WinRT
+
+使用する場合、C++/cli が XAML マークアップからではなく、命令型コードからは、WinRT、してから、カスタム添付プロパティにアクセスすることができます。 下の例のコード方法です。
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## <a name="value-type-of-a-custom-attached-property"></a>カスタム添付プロパティの値型
 
@@ -266,7 +296,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> パネルの動作について詳しくは、 [XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)をご覧ください。
+> パネルの動作方法について詳しくは、 [XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
 
