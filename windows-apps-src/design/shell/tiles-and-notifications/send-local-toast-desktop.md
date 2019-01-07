@@ -6,14 +6,14 @@ label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C#, c シャープ
+keywords: windows 10, uwp, win32 では、デスクトップ, トースト通知、トーストを送信ローカル トースト通知の送信, デスクトップ ブリッジ, c# では、c シャープ、トースト通知, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c32ba5928d3c272ef77a70790640346fb000762
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
+ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926140"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992313"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>デスクトップ C# アプリからのローカル トースト通知の送信
 
@@ -66,7 +66,7 @@ Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、ま�
 
 ## <a name="step-4-implement-the-activator"></a>手順 4: アクティベーターを実装する
 
-ユーザーがトーストをクリックすると、アプリが動作できるトーストのアクティブ化するためのハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
+ユーザーは、トーストをクリックすると、アプリが動作できるトーストのアクティブ化ハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
 
 **NotificationActivator** クラスを展開し、以下の 3 つの属性を追加します。任意のオンライン GUID ジェネレーターを使用して、アプリ用に一意の GUID CLSID を作成します。 アクション センターは、この CLSID (クラス識別子) に基づいて、COM アクティブ化するクラスを認識します。
 
