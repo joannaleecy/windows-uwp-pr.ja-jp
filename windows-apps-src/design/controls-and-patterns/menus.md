@@ -3,7 +3,7 @@ Description: Menus and context menus display a list of commands or options when 
 title: メニューとコンテキスト メニュー
 label: Menus and context menus
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 01/08/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 038bb15029a3d9893c5b32558546ecf07066043b
-ms.sourcegitcommit: 43149cd43e8169edfbd241428ba49e56b64bfd0d
+ms.openlocfilehash: 3f585af5cff4b135760bf14b902b2783715392ed
+ms.sourcegitcommit: 404ec20d276adfd9e47f88a94efd4b9cf0725656
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/08/2019
-ms.locfileid: "8995053"
+ms.locfileid: "8995436"
 ---
 # <a name="menus-and-context-menus"></a>メニューとコンテキスト メニュー
 
@@ -216,7 +216,8 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-menu-bar"></a>メニュー バーを作成します。
 
-> **プレビュー**: メニュー バー[最新の Windows 10 Insider Preview ビルドと SDK](https://insider.windows.com/for-developers/)または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)が必要です。
+> [!IMPORTANT]
+> メニュー バーには、Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) が必要ですか、後で、または[Windows UI のライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 メニュー ポップアップと同様のメニュー バーでメニューを作成するのにには、同じ要素を使用します。 ただし、MenuFlyoutItem オブジェクトを MenuFlyout に、グループ化ではなくグループする MenuBarItem 要素にします。 各 MenuBarItem は、最上位メニューとして、メニュー バーに追加されます。
 
