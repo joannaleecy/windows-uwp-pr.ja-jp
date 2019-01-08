@@ -5,12 +5,12 @@ keywords: 最新情報, 更新, 機能, 開発者向けガイダンス, Windows 
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52a60189d7fba39709aa679dbff79551b151e5a4
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937221"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992616"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 12 月
 
@@ -58,7 +58,7 @@ UWP プロジェクトをパッケージに追加する方法については、�
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>サブスクリプション アドオンを Windows デベロッパー センター Insider program の開発者が利用できるようになりました
 
-[デベロッパー センター Insider program](../publish/dev-center-insider-program.md) に参加しているすべての開発者は、サブスクリプション アドオンを使うことにより、自動の定期的な課金期間を設定してアプリ内でデジタル製品 (アプリの機能やデジタル コンテンツなど) を販売できるようになりました。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
+デベロッパー センター Insider program に参加しているすべての開発者は、サブスクリプション アドオンを使うことにより、自動の定期的な課金期間を設定してアプリ内でデジタル製品 (アプリの機能やデジタル コンテンツなど) を販売できるようになりました。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
