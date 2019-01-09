@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
+ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937966"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8997397"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
-管理および各アプリに関連する詳細を表示する [パートナー センターでは、通知などのサービスを構成 B は、テスト、およびマップします。
+管理し各[パートナー センター](https://partner.microsoft.com/dashboard/)でのアプリに関連する詳細を表示して通知などのサービスを構成できます B は、テスト、およびにマップします。
 
 パートナー センターでアプリを使用する場合の**サービス**と**アプリの管理**セクションでは、左側のナビゲーション メニューが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8937966"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-ゲームを公開している場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にできます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
+ゲームを公開している場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
 
 詳しくは、 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と、[新しい Xbox Live クリエーターズ プログラム タイトルを作成しテスト環境に公開する](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)を参照してください。
 
@@ -49,7 +49,7 @@ Microsoft Store コレクション API と、Microsoft Store 購入 API を使�
 
 ## <a name="administrator-consent"></a>管理者の承認
 
-Azure AD と統合し、管理者の承認を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して、製品の f では、次に、Azure AD クライアント ID を入力します。 これにより、管理者が組織付与同意を得て、テナントのすべてのユーザーの代理として行為する製品のためにアプリを入手できます。
+Azure AD と統合し、管理者の承認を必要とする[アプリケーションのアクセス権やアクセス許可を委任](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を要求する Api を呼び出して、製品場合、は、次に、Azure AD クライアント ID を入力します。 これにより、管理者が組織付与同意を得て、テナントのすべてのユーザーの代理として行為する製品のためにアプリを入手できます。
 
 詳しくは、[全体のテナントの同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
 
@@ -85,7 +85,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 **WNS/MPNS** ] セクションでは、作成したり、アプリのユーザーに通知を送信するためのオプションが提供されます。 
 
 > [!TIP]
-> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーのターゲットのサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
+> UWP アプリでは、パートナー センターで**通知**機能の使用をお勧めします。 この機能では、すべてのアプリのユーザーに通知を送信できます。 または、[顧客セグメント](create-customer-segments.md)で定義した条件を満たす Windows 10 ユーザーの対象となるサブセットにします。 詳しくは、「[アプリのユーザーに通知を送信する](send-push-notifications-to-your-apps-customers.md)」をご覧ください。
 
 アプリのパッケージの種類とその具体的な要件に応じて、次のオプションのいずれかを使用することも。 
 
