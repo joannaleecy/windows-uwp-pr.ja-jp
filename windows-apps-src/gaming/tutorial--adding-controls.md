@@ -6,19 +6,19 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, コントロール, 入力
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c0d1361dcc0858a54792adc0d17408ed281c99
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09bda2bda5f6f8731b64321d3282f540e6c50db4
+ms.sourcegitcommit: 4e12e820141fa5c3e61052ec78452b4032a974da
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947854"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "8999757"
 ---
 # <a name="add-controls"></a>コントロールの追加
 
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。\]
 
-優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが windows 10 を搭載で物理的なボタンのない、PC、Xbox コント ローラーが接続されている、タブレット必要があります、または高性能マウス/ゲーム キーボード付属最新のデスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
+優れた ユニバーサル Windows プラットフォーム (UWP) ゲームは、幅広いインターフェイスをサポートしています。 潜在的なプレイヤーが物理的なボタンのない、接続されている場合、Xbox コント ローラーでの PC とタブレットで windows 10 を必要があります、または高性能マウス/ゲーム キーボード付属の最新デスクトップ ゲーム機かもしれません。 このゲームでは、コントロールは [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) クラスで実装されます。 このクラスは、3 種類のすべての入力 (マウスとキーボード、タッチ、ゲームパッド) を 1 つのコントローラーのに集約します。 最終的には、一人称視点のシューティング ゲームで使用するジャンル標準のムーブ/ルック コントロールが、複数のデバイスで利用できるようになります。
 
 > [!NOTE]
 > コントロールの詳細ついては、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」と「[ゲームのタッチ コントロール](tutorial--adding-touch-controls-to-your-directx-game.md)」を参照してください。
@@ -95,7 +95,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 ゲームが一時停止されると、ゲームは **WaitForInput** 状態になります。 これは、プレイヤーがゲームのメイン ウィンドウの外にポインターを動かすか、一時停止ボタン (P キーまたはゲームパッドの**スタート** ボタン) を押したときに発生します。 **MoveLookController** は、この押し操作を登録し、[**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) メソッドを呼び出すときにゲーム ループに通知します。 その時点で、**IsPauseRequested** が **true** を返すと、ゲーム ループは **MoveLookController** の **WaitForPress** を呼び出して、コントローラーを **WaitForInput** 状態にします。 
 
 
-**WaitForInput** 状態になると、ゲームは、**Active**状態 に戻るまで、ほぼすべてのゲームプレイ入力イベントの処理を停止します。 一時停止ボタンは例外で、このボタンを押すと、ゲームはアクティブ状態に戻ります。 一時停止ボタン以外は**アクティブ**状態に戻るには、ゲームの順序で、プレイヤーする必要があるメニュー項目を選択します。 
+**WaitForInput** 状態になると、ゲームは、**Active**状態 に戻るまで、ほぼすべてのゲームプレイ入力イベントの処理を停止します。 一時停止ボタンは例外で、このボタンを押すと、ゲームはアクティブ状態に戻ります。 一時停止ボタン以外の**アクティブな**状態に戻るには、ゲーム、プレイヤー必要がメニュー項目を選択します。 ある 
 
 
 
@@ -585,6 +585,9 @@ window->KeyUp +=
     Gamepad::GamepadRemoved +=
         ref new EventHandler<Gamepad^>(this, &MoveLookController::OnGamepadRemoved);
 ```
+
+> [!NOTE]
+> UWP アプリは、アプリがフォーカスにないときに、Xbox One コント ローラーから入力を受け取ることはできません。
 
 ### <a name="the-updatepollingdevices-method"></a>UpdatePollingDevices メソッド
 
