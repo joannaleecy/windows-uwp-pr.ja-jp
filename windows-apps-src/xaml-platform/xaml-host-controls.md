@@ -1,24 +1,24 @@
 ---
 description: このガイドは、WPF および Windows フォーム アプリケーションで直接 Fluent ベースの UWP UI を作成するのに役立ちます。
 title: デスクトップ アプリケーションの UWP コントロール
-ms.date: 09/21/2018
+ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10, uwp, windows, フォーム, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 43cdb19e791726732f564ffea1b03af53a4a1ffe
-ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
+ms.openlocfilehash: bf25fea6ca6e8809c12324ae57a42cc712ded2a5
+ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001558"
+ms.locfileid: "9001786"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>デスクトップ アプリケーションの UWP コントロール
 
 > [!NOTE]
 > XAML 諸島現在利用可能な開発者プレビューとしてします。 試すことに、独自のプロトタイプ コードのようになりましたをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、将来の Windows リリースに安定します。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。
 >
-> XAML 諸島に関するフィードバックがあればへのフィードバックを送信XamlIslandsFeedback@microsoft.comします。 Insights、およびシナリオはにとって非常に重要です。
+> についてフィードバックがある場合、XAML 諸島は[WindowsCommunityToolkit リポジトリ](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues)で新しい懸案事項を作成し、コメントのままに存在します。 お客様のフィードバックを個別に提出する場合に送信できますXamlIslandsFeedback@microsoft.comします。 Insights、およびシナリオはにとって非常に重要です。
 
 ここで、Windows 10 を使用すると、外観や操作感を既存のデスクトップ アプリケーション、最新の Windows 10 の UI 機能のみで利用可能な UWP コントロールの機能を高めることができるように、UWP 以外のデスクトップ アプリケーションで UWP コントロールを使用できます。 つまり、 [Windows Ink](../design/input/pen-and-stylus-interactions.md)と、既存の WPF、Windows フォーム、および C++ Win32 アプリケーションで、 [Fluent Design System](../design/fluent-design-system/index.md)をサポートするコントロールなどの UWP 機能を使用することができます。 この開発者シナリオは、 *XAML 諸島*と呼ばれます。
 
