@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981416"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004608"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 
@@ -38,11 +38,6 @@ ms.locfileid: "8981416"
 
 コレクションを使用すると、ユーザーはコンテンツやデータのグループを参照することができます。 [グリッド ビュー](../controls-and-patterns/item-templates-gridview.md)は写真またはメディアを中心とするコンテンツに適していて、[リスト ビュー](../controls-and-patterns/item-templates-listview.md)はテキストが多いコンテンツやデータに適しています。
 
-### <a name="hub"></a>ハブ
-
-![ハブ](images/content-basics/hub.png)
-
-[ハブ](../controls-and-patterns/hub.md)はウィンドウ ショッピング向けに設計されています。 ユーザーは提供されるコンテンツの一部を見ることができます。量を少なくして、多様なコンテンツが表示されます。 たとえば、ハブ セクション 1 にはヒーロー画面、ハブ セクション 2 にはコレクション、ハブ セクション 3 には別のコレクションを含めることができます。
 
 ### <a name="masterdetail"></a>マスター/詳細
 
