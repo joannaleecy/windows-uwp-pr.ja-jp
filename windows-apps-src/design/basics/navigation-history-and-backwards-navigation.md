@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
+ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945954"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004505"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -282,17 +282,11 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>下位互換性のためのシステムの戻る動作
 
-以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 この API は引き続き下位の互換性を確保するためにサポートするがしなくなった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
+以前、UWP アプリは前に戻る移動のために [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) を使用しました。 API は引き続き下位の互換性を確保するためにサポートするが不要になった[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)に依存することをお勧めします。 代わりに、アプリで独自のアプリ内の戻るボタンを描画してください。
 
-[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI を表示する、システムで戻るボタンが使用。
+[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)を使用して、アプリが引き続き発生する場合、システム UI を表示する、システムは、タイトル バー内のボタンをバックアップします。 ([戻る] ボタンの外観とユーザーの操作は以前のビルドから変更されません) です。
 
-- アプリが**タブがない**場合は、タイトル バーの内部、戻るボタンがレンダリングします。 "戻る"ボタンの視覚エクスペリエンスとユーザーの操作では、以前のビルドから変更されません。
-
-    ![タイトル バーの戻るボタン](images/nav-back-pc.png)
-
-- かどうかには、アプリが**タブ**で、戻るボタンは、新しいシステムの戻る内部にレンダリング バー。
-
-    ![戻るボタンのバーに描画されるシステム](images/back-nav/tabs.png)
+![タイトル バーの戻るボタン](images/nav-back-pc.png)
 
 ### <a name="system-back-bar"></a>システムの戻るバー
 
@@ -330,7 +324,7 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong>
-<p>ユーザーは、同じピア グループでページ間を移動します。 いいえ画面は両方のページに直接的なナビゲーションを提供します ( <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) などのナビゲーション要素です。</p></td>
+<p>ユーザーは、同じピア グループでページ間を移動します。 画面に表示されるありませんが ( <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>) などの両方のページに直接的なナビゲーションを提供するナビゲーション要素です。</p></td>
 <td style="vertical-align:top;"><strong>はい</strong>
 <p>次の図に、ユーザーが、同じピア グループ内の 2 つのページ間を移動し、このナビゲーションはナビゲーション履歴に追加する必要があります。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
@@ -339,7 +333,7 @@ bool App::On_BackRequested()
 <td style="vertical-align:top;"><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong>
 <p>ユーザーは、同じピア グループ内のページ間を移動します。 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>など、同じナビゲーション要素は、両方のページが表示されます。</p></td>
 <td style="vertical-align:top;"><strong>場合によって異なります。</strong>
-<p>はい、2 つの例外、ナビゲーション履歴に追加します。 ユーザーは、アプリの多くの場合、ピア グループ内のページ間を切り替えることが予想ナビゲーション階層を保持する場合や、その追加しないでくださいナビゲーション履歴にします。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
+<p>はい、2 つの例外、ナビゲーション履歴に追加します。 ユーザーは、アプリの多くの場合、ピア グループ内のページ間を切り替えることが予想ナビゲーション階層を保持する場合や、し、追加しないでくださいナビゲーション履歴にします。 この場合、ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
