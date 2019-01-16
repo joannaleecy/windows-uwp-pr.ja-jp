@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/design/controls-and-patterns/hub.md",
+      "redirect_url": "/windows/uwp/design/basics/navigation-basics",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/files/protect-your-enterprise-data-with-edp.md",
       "redirect_url": "/windows/uwp/files/../enterprise/wip-dev-guide",
       "redirect_document_id": false
@@ -1717,6 +1722,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/publish/associate-azure-ad-with-dev-center.md",
+      "redirect_url": "/windows/uwp/publish/associate-azure-ad-with-partner-center",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/managing-your-profile.md",
+      "redirect_url": "/windows/uwp/publish/manage-account-settings-and-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/define-pricing-and-market-selection.md",
+      "redirect_url": "/windows/uwp/publish/define-market-selection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/promote-your-app-report.md",
+      "redirect_url": "/windows/uwp/publish/ad-campaign-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/publish/app-declarations.md",
+      "redirect_url": "/windows/uwp/publish/product-declarations",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-create-windows.md",
       "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
       "redirect_document_id": false
@@ -1829,6 +1859,11 @@
     {
       "source_path": "windows-apps-src/xbox-live/configure-xbl/dev-center/data-sharing-udc.md",
       "redirect_url": "/windows/uwp/xbox-live/configure-xbl/dev-center/access-policies-udc",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/publish/dev-center-insider-program.md",
+      "redirect_url": "/windows/uwp/publish",
       "redirect_document_id": true
     }
   ]
