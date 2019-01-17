@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2451606ccb9dfb604dd9f8aaffe245016776c1e7
-ms.sourcegitcommit: 906b494aa190e6e5b46e7b73d4a900b2cc7d53ef
+ms.openlocfilehash: 0a548c7311042be52d90cad8594c3085614a8cda
+ms.sourcegitcommit: 575fb85387ade0e1ddfc50efdf613938f37f4037
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9010996"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014551"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP アプリでのペン操作と Windows Ink
 
@@ -64,7 +64,8 @@ Windows Ink UX のガイドラインについては、「[手描き入力コン�
 次の例では、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) を背景画像にオーバーレイしています。
 
 > [!NOTE]
-> InkCanvas では、 [StackPanel](stackpanel.md)や[グリッド](grid.md)コントロールなど、その子要素のサイズを自動的に要素の子である場合を除きにゼロの既定[**の高さ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)と[**幅**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)のプロパティがあります。
+> InkCanvas では、 [StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
+)や[グリッド](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)コントロールなど、その子要素のサイズを自動的に要素の子である場合を除きにゼロの既定[**の高さ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)と[**幅**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)のプロパティがあります。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
