@@ -6,12 +6,12 @@ keywords: アプリ間通信, プロセス間通信, IPC, バック グラウン
 ms.date: 1/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9029c8ee3a930e66ebdbd0c4d0681d87486a8393
-ms.sourcegitcommit: 6e2027f8ebc1d891d27ea6b2e4676d592871bcc7
+ms.openlocfilehash: 5239bff53bb0e5383bce28b4d781a0ab6a41c3af
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9011262"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013961"
 ---
 # <a name="create-and-consume-an-app-service"></a>アプリ サービスの作成と利用
 
@@ -214,17 +214,9 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>サービス アプリを展開して、パッケージ ファミリ名を取得する
 
-アプリ サービス プロバイダーは、クライアントから呼び出すことができます前に展開する必要があります。 これを呼び出すに、アプリ サービスのパッケージ ファミリ名も必要になります。
+アプリ サービス プロバイダーは、クライアントから呼び出すことができます前に展開する必要があります。 Visual Studio で **_gt 展開ソリューションのビルド**を選択して展開することができます。
 
-**AppServiceProvider**プロジェクト内で (たとえば**で**アプリ**のコンス トラクターからから[Windows.ApplicationModel.Package.Current.Id.FamilyName](https://msdn.microsoft.com/library/windows/apps/br224670)を呼び出すアプリ サービスのアプリケーションのパッケージ ファミリ名を取得する方法の 1 つは、します。App.xaml.cs**) 結果をメモします。 Visual Studio で**AppServiceProvider**を実行するには、**ソリューション エクスプ**ローラー ウィンドウで、スタートアップ プロジェクトとして設定し、プロジェクトを実行します。
-
-パッケージ ファミリ名を取得する別の方法は、ソリューションの展開する (**ビルド&gt;ソリューションの配置**) し、**出力**ウィンドウに完全なパッケージ名に注意してください (**ビュー&gt;出力**)。 パッケージ名を派生する**出力**ウィンドウ内の文字列からプラットフォーム情報を削除する必要があります。 たとえば、完全なパッケージ名が**出力**ウィンドウで報告された場合のとおりです。
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-抽出し、 `1.0.0.0\_x86\_\_`、パッケージ ファミリ名として、次から離れること。
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+これを呼び出すに、アプリ サービス プロバイダーのパッケージ ファミリ名も必要になります。 デザイナー ビューで、 **AppServiceProvider**プロジェクトの**Package.appxmanifest**ファイルを開くことによって取得することができます (**ソリューション エクスプ ローラー**でダブルクリックして)。 **パッケージ**] タブを選択、**パッケージ ファミリ名**の横にある値をコピーし、貼り付けますどこかメモ帳などのようになりました。
 
 ## <a name="write-a-client-to-call-the-app-service"></a>アプリ サービスを呼び出すクライアントを作成する
 
