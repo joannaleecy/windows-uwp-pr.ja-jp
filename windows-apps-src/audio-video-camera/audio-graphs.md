@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0211e451c3e700da34d24e39a5045f9e046020a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
+ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933615"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015257"
 ---
 # <a name="audio-graphs"></a>オーディオ グラフ
 
@@ -80,7 +80,7 @@ Windows ランタイム オーディオ グラフ API:
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-デバイス入力ノードに特定のオーディオ キャプチャ デバイスを指定する場合は、[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスを使ってシステムで利用可能なオーディオ キャプチャ デバイスの一覧を取得することもできます。これには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) を呼び出して、[**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) から返されるオーディオ レンダリング デバイス セレクターを渡します。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) に渡します。
+[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432)を呼び出すことによって、システムの利用可能なオーディオ キャプチャ デバイスの一覧を取得する[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)クラスを使用するには、デバイス入力ノードの特定のオーディオ キャプチャ デバイスを指定する場合は、およびオーディオを渡すことは、 [**Windows.Media.Devices.MediaDevice.GetAudioCaptureSelector**](https://docs.microsoft.com/uwp/api/windows.media.devices.mediadevice.getaudiocaptureselector)によって返されるデバイス セレクターをレンダリングします。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) に渡します。
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
