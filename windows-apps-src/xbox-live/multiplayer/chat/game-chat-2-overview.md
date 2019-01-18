@@ -5,16 +5,19 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット, ゲーム チャット 2, 音声によるコミュニケーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 80825e52e074e74b77891f34f29a3d443e3d0873
-ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
+ms.openlocfilehash: 9f013f8b80cc7bca367c3ef5cd2c0d1da86cc98c
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004497"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014696"
 ---
 # <a name="game-chat-2-overview"></a>ゲーム チャット 2 の概要
 
 ゲーム チャット 2 では、プレイヤーのプライバシー設定を考慮し、なおかつ Xbox One 向けゲームおよびハブ アプリの音声およびテキスト チャットに関する Xbox 要件に準拠し、ながら、アプリに音声およびテキスト チャット通信を簡単に追加することができます。 アクセスの簡単操作 - ゲーム チャット トランスクリプションの設定を使用してまたは音声からテキストへの変換を有効にしているプレイヤーのゲーム チャット 2 は透過的に実行翻訳チャット テキスト メッセージの着信の音声とプレイを表すを作成するにはそれぞれ、送信チャット テキスト メッセージの音声認識のオーディオを合成します。
+
+> [!NOTE]
+> API 特定の参照を探している場合は、ダウンロード可能な Xbox Live API コンパイルされた HTML のヘルプ (.chm) ファイルの検索できる[次に](https://aka.ms/xboxliveuwpdocs)します。
 
 - **コミュニケーション関係**- ゲーム チャット 2 では、プレイヤーが各他のユーザーと通信する方法をきめ細かく制御できます。 ゲーム チャット 2 では、チームまたはチャネルを指定するのではなく、ユーザーの各ペアの明示的な関係を定義する必要があります。 ゲーム チャット 2 のコミュニケーション関係は、uni とプレイヤーのペアの間で双方向通信をサポートします。 音声のコミュニケーション関係とテキストのコミュニケーション関係は相互に独立して設定できます。
 

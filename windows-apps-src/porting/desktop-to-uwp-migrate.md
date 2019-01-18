@@ -6,12 +6,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc2ba7287541d97208899b51e81110b464b6cdd
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932588"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014717"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932588"
 
 詳しい解説は、こちらのビデオでご覧ください。
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
+> [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
 ### <a name="add-net-standard-libraries"></a>.NET Standard ライブラリを追加する
 
@@ -53,7 +53,7 @@ ms.locfileid: "8932588"
 
 これらの同じツールを使用して、コードを分析します。 ここでツール ([dotnet apiport](https://github.com/Microsoft/dotnet-apiport/releases)) をダウンロードし、使用方法に関するビデオをご覧ください。
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
+> [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
 コードに標準との互換性がない場合は、そのコードを実装するための他の方法を検討してください。 まず [.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)を開きます。 このブラウザーを使用して、.NET Standard 2.0 に含まれている API を確認します。 一覧の範囲として .NET Standard 2.0 を指定してください。
 

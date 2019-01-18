@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935617"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014707"
 ---
 # <a name="launch-the-people-app"></a>People アプリの起動
 
@@ -58,7 +58,7 @@ ms.locfileid: "8935617"
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">ms-ユーザー: viewcontact?ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;メール =&lt;メール&gt;&amp;ContactName =&lt;名&gt;&amp;Contact =&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">People アプリ内の連絡先の保存ページを起動し、指定した連絡先を、指定した電話番号またはメール アドレスと共に保存します。

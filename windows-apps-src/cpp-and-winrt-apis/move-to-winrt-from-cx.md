@@ -1,34 +1,34 @@
 ---
 description: このトピックでは、C++/CX コードを C++/WinRT の同等のコードに移植する方法について説明します。
 title: C++/CX から C++/WinRT への移行
-ms.date: 10/18/2018
+ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4dc1d63451e1c344e4dd6bb2aeac31c814bd294a
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927237"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014737"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>C++/CX から C++/WinRT への移行
 
-このトピックでは、コードを移植する方法を示しています。、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)プロジェクトで同等額を[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。
+このトピックでは、コードを移植する方法を示しています。、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx) 、それに対応するプロジェクト[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。
 
 ## <a name="porting-strategies"></a>戦略の移植
 
-C++ の段階的に移植する場合 +/CX コードを C++//winrt では、そのことができます。 C++/cli/CX と C++/WinRT コードに XAML コンパイラ サポートと Windows ランタイム コンポーネントの例外を除き、同じプロジェクトに共存することができます。 これら 2 つの例外が必要になりますか C + をターゲットに +/CX または/同じプロジェクト内で WinRT します。
+C++ の段階的に移植する場合 +/CX コードを C++//winrt では、そのことができます。 C++/cli/CX と C++/WinRT コードに XAML コンパイラ サポートと Windows ランタイム コンポーネントの例外を除き、同じプロジェクトに共存することができます。 これら 2 つの例外が必要になりますか C + をターゲットに +/CX または + 同じプロジェクト内で WinRT します。
 
 > [!IMPORTANT]
-> プロジェクトは、XAML アプリケーションをビルドする場合推奨される 1 つのワークフローは、まず、C++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成する/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 次に、開始から、C++ 経由でソース コードとマークアップをコピー/CX プロジェクトです。 **プロジェクト**に新しい XAML ページを追加する \> **新しい項目の追加]** \>  **Visual C** > **空白のページ (、C++/WinRT)** します。
+> プロジェクトは、XAML アプリケーションをビルドする場合に、最初に、C++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成するし推奨される 1 つのワークフローが/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 次に、開始から、C++ 経由でソース コードとマークアップをコピー/CX プロジェクトです。 **プロジェクト**に新しい XAML ページを追加する \> **新しい項目の追加]** \>  **Visual C** > **空白のページ (、C++/WinRT)** します。
 >
-> 要素のコードから、XAML、C++ の Windows ランタイム コンポーネントを使用する代わりに、/CX プロジェクトの移植するとします。 移動するか、できるだけ多く C + + CX コードをコンポーネントに c++ XAML プロジェクトを変更すると/WinRT します。 またはそれ以外の場合、C++ と XAML プロジェクトのままに/CX、作成新しい C + + WinRT コンポーネント、C++ の移植を開始し、+/CX コード、XAML プロジェクトからコンポーネントにします。 場合もあります C + + と共に c++ コンポーネント プロジェクトを CX/WinRT コンポーネントのプロジェクトで、同じソリューション内でアプリケーション プロジェクトからそれらの両方を参照し、段階的に、他のいずれかから移植します。 参照してください[、C++ の間の相互運用機能//winrt と C++/cli CX](interop-winrt-cx.md)同じプロジェクトで、2 つの言語プロジェクションの使用の詳細についてはします。
+> 要素のコードから、XAML、C++ の Windows ランタイム コンポーネントを使用する代わりに、/CX プロジェクトの移植するとします。 移動するか、できるだけ多く C + + CX コードをコンポーネントには c++ XAML プロジェクトを変更すると/WinRT します。 またはそれ以外の場合、C++ と XAML プロジェクトのままに/CX、作成新しい C + + WinRT コンポーネント、C + の移植を開始および +/CX コード、XAML プロジェクトからコンポーネントにします。 場合もあります C + + と共に c++ コンポーネント プロジェクトを CX/WinRT コンポーネントのプロジェクトで、同じソリューション内でアプリケーション プロジェクトからそれらの両方を参照し、段階的に、他のいずれかから移植します。 参照してください[、C++ の間の相互運用機能//winrt と C++/cli CX](interop-winrt-cx.md) 2 つの言語プロジェクションを使用して、同じプロジェクト内の詳細についてはします。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) と Windows SDK の両方で、ルート名前空間 **Windows** で型を宣言します。 C++/WinRT に投影された Windows 型は Windows 型と同じ完全修飾名を持ちますが、 C++ **winrt** 名前空間に配置されます。 これらの異なる名前空間では、独自のペースで C++/CX から C++/WinRT へ移植できます。
 
-C++ の移植の最初の手順に留意する上で説明した例外の方位を/CX プロジェクトを C++/WinRT が手動で追加すると、C++、/WinRT サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C++ でのすべての依存関係オフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め +/CX またはすることができますサポートを有効に戻す (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
+C++ の移植の最初の手順は上で説明した例外に注意してください方位、/CX プロジェクトを C++/WinRT が手動で追加すると、C++、/WinRT サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C +、依存関係のすべてオフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め +/CX、またはすることができますサポートを有効に戻す (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
 
 **一般的な**プロジェクト プロパティはそのことを確認 \> **ターゲット プラットフォーム バージョン**10.0.17134.0 (Windows 10、バージョン 1803) に設定以上。
 
@@ -45,7 +45,7 @@ C++/WinRT の投影された Windows API ヘッダー (たとえば、`winrt/Win
 ## <a name="parameter-passing"></a>パラメーターの引き渡し
 C++/CX ソース コードを記述するときに、ハット (\^) が参照する C++/CX 型を関数パラメーターとして渡します。
 
-```cpp
+```cppcx
 void LogPresenceRecord(PresenceRecord^ record);
 ```
 
@@ -61,7 +61,7 @@ C++/WinRT オブジェクトは、基本的に Windows ランタイムのバッ�
 ## <a name="variable-and-field-references"></a>変数とフィールドの参照
 C++/CX ソース コードを記述するときに、ハット (\^) 変数を使用して Windows ランタイム オブジェクトを参照し、矢印 (-&gt;) 演算子を使用してハット変数を逆参照します。
 
-```cpp
+```cppcx
 IVectorView<User^>^ userList = User::Users;
 
 if (userList != nullptr)
@@ -70,7 +70,7 @@ if (userList != nullptr)
     ...
 ```
 
-同等の C++ + に移植するとき/WinRT コードでは、基本的には、ハットを削除し、矢印演算子を変更する (-&gt;) ドット演算子 (.) にため、C++//winrt の投影された型は値、およびポインターではありません。
+同等の C++ + に移植するとき/WinRT コードでは、長い方法を取得、ハットを削除し、矢印演算子を変更することにより (-&gt;) をドット演算子 (.)。 C++/cli/winrt の投影された型は値、およびポインターではありません。
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -81,6 +81,19 @@ if (userList != nullptr)
     ...
 ```
 
+既定のコンス トラクターの C + + CX ハット ポインターが null に初期化します。 ここでは、C++/cli CX コード例を適切な種類が初期化されていないが 1 の変数/フィールドを作成します。 つまり、最初は参照しません**TextBlock**です。後で参照を割り当てる予定です。
+
+```cppcx
+TextBlock^ textBlock;
+
+class MyClass
+{
+    TextBlock^ textBlock;
+};
+```
+
+同等の c++/cli/winrt では、[初期化の遅延](consume-apis.md#delayed-initialization)を参照してください。
+
 ## <a name="properties"></a>プロパティ
 C++/CX 言語拡張機能には、プロパティの概念が含まれています。 C++/CX ソース コードを記述するときに、フィールドと同様にプロパティにアクセスできます。 標準 C++ にはプロパティの概念がないため、C++/WinRT では、Get 関数と Set 関数を呼び出します。
 
@@ -89,7 +102,7 @@ C++/CX 言語拡張機能には、プロパティの概念が含まれていま�
 ### <a name="retrieving-a-value-from-a-property"></a>プロパティからの値の取得
 C++/CX でプロパティの値を取得する方法は次のとおりです。
 
-```cpp
+```cppcx
 void Sample::LogPresenceRecord(PresenceRecord^ record)
 {
     auto id = record->XboxUserId;
@@ -114,7 +127,7 @@ void Sample::LogPresenceRecord(PresenceRecord const& record)
 ### <a name="setting-a-property-to-a-new-value"></a>新しい値へのプロパティの設定
 新しい値にプロパティを設定するには、同様のパターンに従います。 まず、C++/CX で次の操作を行います。
 
-```cpp
+```cppcx
 record->UserState = newValue;
 ```
 
@@ -127,7 +140,7 @@ record.UserState(newValue);
 ## <a name="creating-an-instance-of-a-class"></a>クラスのインスタンスの作成
 C++/CX オブジェクトは、それに対するハンドル (通常はハット (\^) 参照と呼ばれます) を介して操作します。 `ref new` キーワードにより新しいオブジェクトを作成します。これにより、[**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) が呼び出され、ランタイム クラスの新しいインスタンスがアクティブ化されます。
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -151,7 +164,7 @@ private:
 
 リソースを初期化するコストが高い場合は、実際に必要になるまで初期化を遅延するのが一般的です。
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -187,9 +200,9 @@ private:
 ```
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>基本のランタイム クラスから派生した 1 つに変換します。
-参照から基本派生型のオブジェクトを参照することがわかっているが一般的です。 C + +/CX を使用する`dynamic_cast`に*キャスト*ベースに参照を参照する-派生にします。 `dynamic_cast` [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)するために非表示の呼び出しにすぎません。 一般的な例を次に示します&mdash;、依存関係プロパティの変更イベントを処理して、 **DependencyObject**から戻る、依存関係プロパティを所有している実際の型にキャストします。
+参照から基本派生型のオブジェクトを参照することがわかっているが一般的です。 C + +/CX を使用する`dynamic_cast`に*キャスト*ベースに参照を参照する-派生にします。 `dynamic_cast` [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)するために非表示の呼び出しにすぎません。 典型的な例を次に示します&mdash;、依存関係プロパティの変更イベントを処理して、 **DependencyObject**から依存関係プロパティを所有している実際の型にキャストします。
 
-```cpp
+```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
 {
     BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
@@ -201,7 +214,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Wind
 }
 ```
 
-同等の C + +/winrt コードを置き換えます、`dynamic_cast`カプセル化**QueryInterface** [**iunknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)関数を呼び出して、します。 必要なインターフェイス (要求している種類の既定のインターフェイス) の照会が返されない場合、例外をスローする代わりに、 [**iunknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)を呼び出してオプションもあります。 ここでは、c++/WinRT のコード例です。
+同等の C + +/winrt コードを置き換えます、`dynamic_cast`カプセル化**QueryInterface** [**iunknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)関数を呼び出して、します。 必要なインターフェイス (要求している種類の既定のインターフェイス) の照会が返されない場合は例外をスローする代わりに、 [**iunknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)を呼び出してオプションもあります。 ここでは、C++/WinRT のコード例です。
 
 ```cppwinrt
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
@@ -226,19 +239,21 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ## <a name="event-handling-with-a-delegate"></a>デリゲートを使用したイベント処理
 この場合はデリゲートとしてラムダ関数を使用して、C++/CX でイベントを処理する典型的な例を次に示します。
 
-```cpp
-auto token = myButton->Click += ref new RoutedEventHandler([&](Platform::Object^ sender, RoutedEventArgs^ args)
+```cppcx
+auto token = myButton->Click += ref new RoutedEventHandler([=](Platform::Object^ sender, RoutedEventArgs^ args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
 C++/WinRT で対応するコードは次のとおりです。
 
 ```cppwinrt
-auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs const& args)
+auto token = myButton().Click([=](IInspectable const& sender, RoutedEventArgs const& args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
@@ -249,7 +264,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 ## <a name="revoking-a-delegate"></a>デリゲートの取り消し
 C++/CX では、`-=` 演算子を使用して前のイベント登録を取り消します。
 
-```cpp
+```cppcx
 myButton->Click -= token;
 ```
 
@@ -273,11 +288,11 @@ C++/CX は **Platform** 名前空間でいくつかのデータ型を提供し�
 | **Platform::String\^** | [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) |
 
 ### <a name="port-platformagile-to-winrtagileref"></a>ポート**プラットフォーム: Agile\ ^** **winrt::agile_ref**する
-**プラットフォーム: Agile\ ^** c++ の型/CX が任意のスレッドからアクセスできる Windows ランタイム クラスを表します。 C++/WinRT 相当する[**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)します。
+**プラットフォーム: Agile\ ^** c++ の型/CX が任意のスレッドからアクセスできる Windows ランタイム クラスを表します。 C++/ [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref)は WinRT に相当します。
 
 C++/CX で、次の操作を行います。
 
-```cpp
+```cppcx
 Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
@@ -294,7 +309,7 @@ C++/WinRT に移植するには、**Platform::Exception\^** を使用するす�
 
 C++/CX で、次の操作を行います。
 
-```cpp
+```cppcx
 catch (Platform::Exception^ ex)
 ```
 
@@ -326,7 +341,7 @@ C++/WinRT には、これらの例外クラスが用意されています。
 
 C++/CX で例外をスローする例を次に示します。
 
-```cpp
+```cppcx
 throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 ```
 
@@ -348,21 +363,21 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 C++/CX では、[**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) プロパティにアクセスして、C スタイルの **const wchar_t\*** 配列 (たとえば、それを **std::wcout** に渡すために) として文字列を取得できます。
 
-```C++
-auto var = titleRecord->TitleName->Data();
+```cppcx
+auto var{ titleRecord->TitleName->Data() };
 ```
 
 C++/WinRT で同じ操作を行うには、[**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 関数を使用して null で終了する C スタイルの文字列バージョンを取得します。これは **std::wstring** から取得する場合と同様です。
 
-```C++
-auto var = titleRecord.TitleName().c_str();
+```cppwinrt
+auto var{ titleRecord.TitleName().c_str() };
 ```
 
 文字列を取るか、文字列を返す API の実装に関しては、通常、**Platform::String\^** を使用する C++/CX コードを変更して、代わりに **winrt::hstring** を使用します。
 
 文字列を取る C++/CX API の例を次に示します。
 
-```cpp
+```cppcx
 void LogWrapLine(Platform::String^ str);
 ```
 
@@ -377,6 +392,22 @@ void LogWrapLine(String str);
 
 ```cppwinrt
 void LogWrapLine(winrt::hstring const& str);
+```
+
+#### <a name="tostring"></a>ToString()
+
+C++/cli CX [Object::ToString](/cpp/cppcx/platform-object-class?view=vs-2017#tostring)メソッドを提供します。
+
+```cppcx
+int i{ 2 };
+auto s{ i.ToString() }; // s is a Platform::String^ with value L"2".
+```
+
+C++/WinRT がこの機能を直接指定しませんが、代替手段を有効にすることができます。
+
+```cppwinrt
+int i{ 2 };
+auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## <a name="important-apis"></a>重要な API

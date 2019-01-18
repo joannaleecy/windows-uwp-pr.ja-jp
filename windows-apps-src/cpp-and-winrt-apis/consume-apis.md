@@ -5,16 +5,16 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェクション、実装、ランタイム クラス、ライセンス認証
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919955"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014747"
 ---
 # <a name="consume-apis-with-cwinrt"></a>C++/WinRT での API の使用
 
-このトピックでは、使用する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api、Windows の一部になっているかどうか、サード パーティ コンポーネント ベンダーで実装された、またはユーザー自身が実装されます。
+このトピックでは、使用する方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api、Windows の一部になっているかどうか、サード パーティ コンポーネント ベンダーで実装された、またはユーザー自身が実装します。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>API が Windows 名前空間に含まれる場合
 これは Windows ランタイム API を使用する際に最も一般的なケースです。 メタデータで定義される Windows 名前空間のすべての型について、C++/WinRT は C++ 対応の同等の型を定義します (*投影された型*と呼ばれます)。 投影された型には Windows の型と同じ完全修飾名がありますが、C++ の構文を使用して **winrt** 名前空間に配置されます。 たとえば、[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) は **winrt::Windows::Foundation::Uri** として C++/WinRT に投影されます。
@@ -42,7 +42,7 @@ int main()
 
 上記のコード例では、C++/WinRT の初期化後、公開されているいずれかのコンストラクターを介して投影される型 **winrt::Windows::Foundation::Uri** の値をスタックに割り当てます (この場合は、[**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_))。 このため、最も一般的な使用事例を使用します。 C++/WinRT 投影型の値を取得したら、それにはすべての同じメンバーが含まれるため、実際の Windows ランタイム型のインスタンスのように扱うことができます。
 
-実際に、投影される値はプロキシです。基本的には、バッキング オブジェクトへのスマート ポインターに過ぎません。 投影された値のコンストラクターは [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) を呼び出し、Windows ランタイムのバッキング クラスのインスタンス (この場合は **Windows.Foundation.Uri**) を作成し、投影された新しい値の内部にそのオブジェクトの既定のインターフェイスを保存します。 次のように、投影された値のメンバーを呼び出す実際に委任するバッキング オブジェクトにはスマート ポインターを介して状態の変更が発生することができます。
+実際に、投影される値はプロキシです。基本的には、バッキング オブジェクトへのスマート ポインターに過ぎません。 投影された値のコンストラクターは [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) を呼び出し、Windows ランタイムのバッキング クラスのインスタンス (この場合は **Windows.Foundation.Uri**) を作成し、投影された新しい値の内部にそのオブジェクトの既定のインターフェイスを保存します。 次に示すよう、投影された値のメンバーへの呼び出し実際に委任するバッキング オブジェクトにはスマート ポインターを介して状態の変更が発生することができます。
 
 ![投影された Windows::Foundation::Uri 型](images/uri.png)
 
@@ -123,6 +123,20 @@ private:
 
 `nullptr_t` コンストラクターを*除く*投影された型のすべてのコンストラクターにより、Windows ランタイムのバッキング オブジェクトが作成されます。 `nullptr_t` コンストラクターは、基本的には何もしません。 投影されたオブジェクトがそれ以降に初期化されることが想定されます。 そのため、ランタイム クラスに既定のコンストラクターがあるかどうかに関係なく、効率的な初期化の遅延にこの方法を使用することができます。
 
+ベクトルとマップに場所など、既定のコンス トラクターを呼び出すしているその他の場所を考慮に影響します。 このコード例を検討してください。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+割り当ては、新しい**TextBlock**を作成し、使用してをすぐに上書き`value`します。 次に、対処法を示します。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
+
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>API が Windows ランタイム コンポーネントに実装されている場合
 このセクションは、コンポーネントを自分で作成した場合またはベンダーから提供された場合に適用されます。
 
@@ -176,7 +190,7 @@ MainPage::MainPage()
 詳細、コード、および使用中のプロジェクトに実装するランタイム クラスの使用に関するチュートリアルについては、「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)」をご覧ください。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>投影された型とインターフェイスをインスタンス化して返す
-次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、いずれかの例ではこの)、投影された型ツールで生成されたは、作成することは自分で何かに注意してください。
+次に、使用中のプロジェクトで投影された型とインターフェイスの例を示します。 (など、いずれかの例ではこの)、投影された型ツールで生成されたは、作成することは自分で何かを注意してください。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
