@@ -6,12 +6,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc2ba7287541d97208899b51e81110b464b6cdd
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932588"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014717"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a><span data-ttu-id="390cb-103">デスクトップ アプリケーションと UWP アプリの間でコードを共有します。</span><span class="sxs-lookup"><span data-stu-id="390cb-103">Share code between a desktop application and a UWP app</span></span>
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932588"
 
 <span data-ttu-id="390cb-111">詳しい解説は、こちらのビデオでご覧ください。</span><span class="sxs-lookup"><span data-stu-id="390cb-111">Here's a great video that tells you more about it.</span></span>
 <span data-ttu-id="390cb-112">&nbsp;</span><span class="sxs-lookup"><span data-stu-id="390cb-112">&nbsp;</span></span>
-> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
+> [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
 ### <a name="add-net-standard-libraries"></a><span data-ttu-id="390cb-113">.NET Standard ライブラリを追加する</span><span class="sxs-lookup"><span data-stu-id="390cb-113">Add .NET Standard libraries</span></span>
 
@@ -53,7 +53,7 @@ ms.locfileid: "8932588"
 
 <span data-ttu-id="390cb-128">これらの同じツールを使用して、コードを分析します。</span><span class="sxs-lookup"><span data-stu-id="390cb-128">Use these same tools to analyze your code.</span></span> <span data-ttu-id="390cb-129">ここでツール ([dotnet apiport](https://github.com/Microsoft/dotnet-apiport/releases)) をダウンロードし、使用方法に関するビデオをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="390cb-129">Download the tools here ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) and then watch this video to learn how to use them.</span></span>
 <span data-ttu-id="390cb-130">&nbsp;</span><span class="sxs-lookup"><span data-stu-id="390cb-130">&nbsp;</span></span>
-> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
+> [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
 <span data-ttu-id="390cb-131">コードに標準との互換性がない場合は、そのコードを実装するための他の方法を検討してください。</span><span class="sxs-lookup"><span data-stu-id="390cb-131">If your code isn't compatible with the standard, consider other ways that you could implement that code.</span></span> <span data-ttu-id="390cb-132">まず [.NET API ブラウザー](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)を開きます。</span><span class="sxs-lookup"><span data-stu-id="390cb-132">Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0).</span></span> <span data-ttu-id="390cb-133">このブラウザーを使用して、.NET Standard 2.0 に含まれている API を確認します。</span><span class="sxs-lookup"><span data-stu-id="390cb-133">You can use that browser to review the API's that are available in the .NET Standard 2.0.</span></span> <span data-ttu-id="390cb-134">一覧の範囲として .NET Standard 2.0 を指定してください。</span><span class="sxs-lookup"><span data-stu-id="390cb-134">Make sure to scope the list to the .NET Standard 2.0.</span></span>
 
