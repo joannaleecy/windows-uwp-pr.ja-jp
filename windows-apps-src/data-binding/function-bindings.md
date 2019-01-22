@@ -5,12 +5,12 @@ ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d9bf524cda8d3ceed921d3bc19b73648f7581e
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.openlocfilehash: 38573bf4602c88d2e04d4bf29b39191045eddec8
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990495"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024219"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 ```xaml
 <Page 
-     xmlns:local="using:MyPage">
+     xmlns:local="using:MyNamespace">
      ...
     <StackPanel>
         <TextBlock x:Name="BigTextBlock" FontSize="20" Text="Big text" />
@@ -76,9 +76,12 @@ class ColorEntry
 </Page>
 ```
 ```csharp
-static public class MyHelpers
+namespace MyNamespace
 {
-    public static double Half(double value) => value / 2.0;
+    static public class MyHelpers
+    {
+        public static double Half(double value) => value / 2.0;
+    }
 }
 ```
 
@@ -86,7 +89,7 @@ static public class MyHelpers
 ```xaml
 <Page 
      xmlns:sys="using:System"
-     xmlns:local="using:MyPage">
+     xmlns:local="using:MyNamespace">
      ...
      <CalendarDatePicker Date="{x:Bind sys:DateTime.Parse(TextBlock1.Text)}" />
      <TextBlock Text="{x:Bind sys:String.Format('{0} is now available in {1}', local:MyPage.personName, local:MyPage.location)}" />

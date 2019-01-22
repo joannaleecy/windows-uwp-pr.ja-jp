@@ -5,16 +5,16 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b547394657fc992474ac0ef9e79719e3ab8f31e1
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929669"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024229"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>Visual Studio を使ったアプリ インストーラー ファイルの作成
 
-Windows 10 バージョン 1804 と Visual Studio 2017 Update 15.7 以降では、`.appinstaller` ファイルを使って自動更新を受け取るようにサイドローディングされるアプリを構成できます。 Visual Studio では、このような更新の有効がサポートされています。
+Windows 10、バージョン 1803、および Visual Studio 2017 Update 15.7 以降サイドローディングしたアプリに構成できますを使用して自動更新プログラムを受信する`.appinstaller`ファイル。 Visual Studio では、このような更新の有効がサポートされています。
 
 ## <a name="app-installer-file-location"></a>アプリ インストーラー ファイルの場所
 `.appinstaller`ファイルは、HTTP エンドポイントや UNC 共有フォルダーなどの共有の場所にホストでき、インストールするアプリ パッケージを見つけるためのパスが含まれています。 ユーザーは、共有の場所からアプリをインストールし、新しい更新プログラムの定期的なチェックを有効にします。 
@@ -25,7 +25,7 @@ Windows 10 バージョン 1804 と Visual Studio 2017 Update 15.7 以降では�
 `TargetPlatformMinVersion` プロパティは、プロジェクトを作成するときに構成するか、後でプロジェクトのプロパティから変更できます。 
 
 >[!IMPORTANT]
-> アプリ インストーラー ファイルは、`TargetPlatformMinVersion` が Windows 10 バージョン 1804 以上の場合にのみ生成されます。
+> アプリ インストーラー ファイルは生成された場合、`TargetPlatformMinVersion`は Windows 10、バージョン 1803 以降。
 
 
 ### <a name="create-packages"></a>パッケージの作成
