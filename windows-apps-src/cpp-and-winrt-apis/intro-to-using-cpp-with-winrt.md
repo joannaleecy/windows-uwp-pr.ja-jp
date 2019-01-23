@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: b92d0def08267c36497f0afd24d23308bc4a2e85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a79302b13b45bf2319c4db2e527d8ef2b293d5f2
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927567"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024621"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -18,10 +18,10 @@ ms.locfileid: "8927567"
 
 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C++/WinRT の場合、標準に準拠した C++17 のコンパイラを使用して Windows ランタイム API を作成および使用できます。 Windows SDK には C++/WinRT が含まれます。バージョン 10.0.17134.0 (Windows 10、バージョン 1803) で導入されました。
 
-C++/WinRT は代わる Microsoft の推奨、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語プロジェクションで、および[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完全な一覧[C + に関するトピック/WinRT](index.md#topics-about-cwinrt)との相互運用の両方から、C++ の移植に関する情報を紹介 +/CX と WRL します。
+C++/WinRT はマイクロソフトの推奨される代替、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)言語プロジェクションで、および[Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完全な一覧[C + に関するトピック/WinRT](index.md#topics-about-cwinrt)との相互運用の両方から、C++ の移植に関する情報を紹介 +/CX と WRL します。
 
 > [!IMPORTANT]
-> C++/WinRT の知っておくべき 2 つの最も重要な部分は、「[C++/WinRT の SDK サポート](#sdk-support-for-cwinrt)」と「[C++/WinRT の Visual Studio サポートと VSIX](#visual-studio-support-for-cwinrt-and-the-vsix)」のセクションで説明されています。
+> C++/WinRT の知っておくべき 2 つの最も重要な部分は、「[C++/WinRT の SDK サポート](#sdk-support-for-cwinrt)」と「[C++/WinRT の Visual Studio サポートと VSIX](#visual-studio-support-for-cwinrt-xaml-and-the-vsix)」のセクションで説明されています。
 
 ## <a name="language-projections"></a>言語プロジェクション
 Windows ランタイムは、コンポーネント オブジェクト モデル (COM) API に基づいており、*言語プロジェクション*を使用してアクセスするよう設計されています。 プロジェクションは、COM の詳細を隠し、特定の言語により自然なプログラミング エクスペリエンスを提供します。
@@ -34,16 +34,16 @@ Windows ランタイムは、コンポーネント オブジェクト モデル 
 
 C++/WinRT では、COM スタイルのプログラミングを使用せずに、標準的な C++ を使用して独自のランタイム クラスを実装することもできます。 ランタイム クラスでは、IDL ファイルで型を記述するだけです。`midl.exe` および `cppwinrt.exe` が実装のスケルトン ソース コード ファイルを自動的に作成します。 または、C++/WinRT の基本クラスから派生することでインターフェイスを実装することもできます。 詳細については、「[C++/WinRT での API の作成](author-apis.md)」を参照してください。
 
-## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>C++/WinRT の Visual Studio サポートと VSIX
+## <a name="visual-studio-support-for-cwinrt-xaml-and-the-vsix"></a>Visual Studio のサポート、C++/WinRT、XAML では、VSIX
 Visual Studio の C++/WinRT プロジェクト テンプレート、および C++/WinRT MSBuild プロジェクト テンプレートの
 プロパティとターゲットでは、[Visual Studio Marketplace](https://marketplace.visualstudio.com/) から [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) をダウンロードし、インストールします。
 
 > [!NOTE]
-> バージョン 1.0.181002.2 (またはそれ以降) 新しい C + を作成するインストールされると、VSIX の/WinRT プロジェクトは、そのプロジェクトの[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)を自動的にインストールします。 Microsoft.Windows.CppWinRT NuGet パッケージを提供強化 C + + WinRT プロジェクト ビルドのサポート、開発コンピューターと (NuGet パッケージと、VSIX ではないがインストールされている)、ビルド エージェントの間で移植プロジェクトを作成します。
+> バージョン 1.0.181002.2 (またはそれ以降) 新しい C + を作成するインストールされると、VSIX の/WinRT プロジェクトは、そのプロジェクトの[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)を自動的にインストールします。 Microsoft.Windows.CppWinRT NuGet パッケージを提供強化 C + + WinRT プロジェクト ビルドのサポート、開発マシンと (のみ、NuGet パッケージと、VSIX ではないがインストールされている)、ビルド エージェントの間で移植プロジェクトを作成します。
 >
-> 既存のプロジェクトの&mdash;1.0.181002.2 のバージョンをインストールした後 (またはそれ以降) VSIX の&mdash;Visual Studio でプロジェクトを開く場合は、**プロジェクト**をクリックすることをお勧めします \> **NuGet パッケージを管理する.** \> **参照**を、入力または**Microsoft.Windows.CppWinRT**検索ボックスに、検索結果、項目を選択し、貼り付け**インストール**をそのプロジェクトのパッケージをインストールする] をクリックします。
+> 既存のプロジェクトの&mdash;1.0.181002.2 のバージョンをインストールした後 (またはそれ以降) VSIX の&mdash;Visual Studio でプロジェクトを開く場合は、**プロジェクト**をクリックすることをお勧めします \> **NuGet パッケージを管理する.** \> **参照**、入力または**Microsoft.Windows.CppWinRT**を検索ボックスに貼り付ける、検索結果の項目を選択して**インストール**をそのプロジェクトのパッケージをインストールする] をクリックします。
 
-Visual Studio 2017 が必要があります (少なくとも必要がありますがバージョン 15.6、15.7 以上をお勧め)、および Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803)。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **Update \ & セキュリティ** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
+Visual Studio 2017 が必要があります (以上必要がありますがバージョン 15.6、15.7 以上をお勧め)、および Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803)。 まだインストールして、Visual Studio インストーラー内から**C++ ユニバーサル Windows プラットフォーム ツール**のオプションをインストールする必要があります。 Windows の**設定**で > **\& セキュリティを更新** > **開発者のため**、**アプリのサイドローディング**オプションではなく、**開発者モード**のオプションを選択します。
 
 そのことができますを作成し、ビルド、または開くには、c++/WinRT Visual Studio でプロジェクトを作成し展開します。 追加することで、既存のプロジェクトを変換する代わりに、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティをその`.vcxproj`ファイル。
 
@@ -72,6 +72,8 @@ XAML ユーザー インターフェイスを持つユニバーサル Windows �
 
 Visual Studio では、各 XAML マークアップ ファイルの背後にあるインターフェイス定義言語 (IDL) (`.idl`) ファイルから実装とヘッダーのスタブを生成するために XAML コンパイラ サポートを提供します。 IDL ファイルで、アプリの XAML ページ内で参照する任意のローカルのランタイム クラスを定義してから、プロジェクトを 1 回ビルドして `Generated Files` で実装テンプレート、`Generated Files\sources` でスタブ型定義を生成します。 次にローカルのランタイム クラスの実装への参照にこれらのスタブ型定義を使用します。 各ランタイム クラスをその独自の IDL ファイル内で宣言することをお勧めします。
 
+C++ には、XAML デザイン サーフェイスのサポートを visual Studio の/WinRT は、c# と同等の近くです。 **[プロパティ**] ウィンドウの [**イベント**] タブは例外です。 C# プロジェクトをイベント ハンドラーを追加するのにその] タブを使用することができます。c++/WinRT プロジェクトでは、その機能が存在しません。 表示が[C + でデリゲートを使用してイベントを処理/WinRT](handle-events.md)コードにイベント ハンドラーを追加する方法について詳しくはします。
+
 ### <a name="core-app-cwinrt"></a>コア アプリ (C++/WinRT)
 XAML を使用しないユニバーサル Windows プラットフォーム (UWP) アプリのプロジェクト テンプレートです。
 
@@ -87,7 +89,7 @@ IDL ファイルでは、コンポーネント、それらの既定インター�
 ビルドした Windows ランタイム コンポーネントのバイナリとその `.winmd` を、それらを使用する UWP アプリとバンドルします。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT プロジェクションにおけるカスタム型
-C++//winrt プログラミングでは、標準的な C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。
+C++//winrt プログラミングでは、標準 C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) は、あるポイントで使用する可能性が高い別の型です。 ただし、[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) などの型を直接使用する可能性は低いです。 または、対応する型が C++ 標準ライブラリに現れた場合に変更すべきコードがないように、使用しないことを選択する場合もあります。
 

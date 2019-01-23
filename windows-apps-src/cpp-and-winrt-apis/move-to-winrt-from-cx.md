@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dc1d63451e1c344e4dd6bb2aeac31c814bd294a
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.openlocfilehash: a2735d233b26b605a3ec964d3264a3698d2b2173
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014737"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024611"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>C++/CX から C++/WinRT への移行
 
@@ -21,14 +21,14 @@ ms.locfileid: "9014737"
 C++ の段階的に移植する場合 +/CX コードを C++//winrt では、そのことができます。 C++/cli/CX と C++/WinRT コードに XAML コンパイラ サポートと Windows ランタイム コンポーネントの例外を除き、同じプロジェクトに共存することができます。 これら 2 つの例外が必要になりますか C + をターゲットに +/CX または + 同じプロジェクト内で WinRT します。
 
 > [!IMPORTANT]
-> プロジェクトは、XAML アプリケーションをビルドする場合に、最初に、C++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成するし推奨される 1 つのワークフローが/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 次に、開始から、C++ 経由でソース コードとマークアップをコピー/CX プロジェクトです。 **プロジェクト**に新しい XAML ページを追加する \> **新しい項目の追加]** \>  **Visual C** > **空白のページ (、C++/WinRT)** します。
+> プロジェクトは、XAML アプリケーションをビルドする場合に、最初に、C++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成するし推奨される 1 つのワークフローが/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。 次に、開始から、C++ 経由でソース コードとマークアップをコピー/CX プロジェクトです。 **プロジェクト**に新しい XAML ページを追加する \> **新しい項目の追加]** \>  **Visual C** > **空白のページ (、C++/WinRT)** します。
 >
 > 要素のコードから、XAML、C++ の Windows ランタイム コンポーネントを使用する代わりに、/CX プロジェクトの移植するとします。 移動するか、できるだけ多く C + + CX コードをコンポーネントには c++ XAML プロジェクトを変更すると/WinRT します。 またはそれ以外の場合、C++ と XAML プロジェクトのままに/CX、作成新しい C + + WinRT コンポーネント、C + の移植を開始および +/CX コード、XAML プロジェクトからコンポーネントにします。 場合もあります C + + と共に c++ コンポーネント プロジェクトを CX/WinRT コンポーネントのプロジェクトで、同じソリューション内でアプリケーション プロジェクトからそれらの両方を参照し、段階的に、他のいずれかから移植します。 参照してください[、C++ の間の相互運用機能//winrt と C++/cli CX](interop-winrt-cx.md) 2 つの言語プロジェクションを使用して、同じプロジェクト内の詳細についてはします。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) と Windows SDK の両方で、ルート名前空間 **Windows** で型を宣言します。 C++/WinRT に投影された Windows 型は Windows 型と同じ完全修飾名を持ちますが、 C++ **winrt** 名前空間に配置されます。 これらの異なる名前空間では、独自のペースで C++/CX から C++/WinRT へ移植できます。
 
-C++ の移植の最初の手順は上で説明した例外に注意してください方位、/CX プロジェクトを C++/WinRT が手動で追加すると、C++、/WinRT サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C +、依存関係のすべてオフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め +/CX、またはすることができますサポートを有効に戻す (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
+C++ の移植の最初の手順は上で説明した例外に注意してください方位、/CX プロジェクトを C++/WinRT が手動で追加すると、C++、/WinRT サポート (を参照してください[、C++、Visual Studio サポート/WinRT と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。 これを行うには、`.vcxproj` ファイルを編集し、`<PropertyGroup Label="Globals">` を見つけ、そのプロパティ グループ内で、プロパティ `<CppWinRTEnabled>true</CppWinRTEnabled>` を設定します。 その変更による 1 つの効果は、C++/CX のサポートがプロジェクトで無効になることです。 C +、依存関係のすべてオフになりメッセージをビルドする際に役立つ検索 (ポート) のサポートを残すことをお勧め +/CX、またはすることができますサポートを有効に戻す (プロジェクトのプロパティで**C/C++** \> **一般的な** \> **消費 Windows ランタイム拡張** \> **[はい (/ZW)**)、徐々 にポートとします。
 
 **一般的な**プロジェクト プロパティはそのことを確認 \> **ターゲット プラットフォーム バージョン**10.0.17134.0 (Windows 10、バージョン 1803) に設定以上。
 

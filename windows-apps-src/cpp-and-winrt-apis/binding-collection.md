@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML、コントロール、バインド、コレクション
 ms.localizationpriority: medium
-ms.openlocfilehash: 9df7c96549254ab8318fd9a7c8224c6e87701747
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5b87a21b8676eb810e8910e81ce560c3916dd53d
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934837"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024501"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML アイテム コントロール: C++/WinRT コレクションへのバインド
 
@@ -25,14 +25,14 @@ XAML アイテム コントロールに効果的にバインドできるコレ�
 コレクションを表すランタイム クラスが、要素が追加されるまたは削除されるたびに [**IObservableVector&lt;T&gt;:: VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) イベントを発生することを選択する場合、そのランタイム クラスは監視可能なコレクションです。 XAML アイテム コントロールでは、更新されたコレクションを取得して、現在の要素を表示するためにそれ自体を更新することで、これらのイベントをバインドし、処理することができます。
 
 > [!NOTE]
-> C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)」を参照してください。
+> C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)」を参照してください。
 
 ## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>**BookSkus** コレクションを **BookstoreViewModel** に追加する
 
-「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順でテンプレートを使用します、 [**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数を同じビュー モデルの**BookSku**の監視可能なコレクションを実装できるようにします。
+「[XAML コントロール、C++/WinRT プロパティへのバインド](binding-property.md)」では、**BookSku** 型のプロパティをメイン ビュー モデルに追加しました。 この手順で使います[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)ファクトリ関数テンプレートを同じビュー モデルの**BookSku**の監視可能なコレクションを実装できるようにします。
 
 > [!NOTE]
-> 場合する Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないまたは後で、し、表示[、Windows SDK の以前のバージョンがある場合](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてthreaded_observable_vector**します。
+> 場合する Windows SDK バージョン 10.0.17763.0 (Windows 10、バージョン 1809) をインストールしていないまたは後で、し、表示[Windows SDK の以前のバージョンがあれば](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) **winrt::single_ の代わりに使用できる、監視可能なベクター テンプレートの一覧についてthreaded_observable_vector**します。
 
 `BookstoreViewModel.idl` で新しいプロパティを宣言します。
 
@@ -48,7 +48,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目のソース バインドするされます。 リスト ボックスは、項目コントロールと正しく[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを設定する必要があります**IObservableVector**型の値に (または**IVector**) を設定する**IInspectable**、または[**など、相互運用性の種類のIBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)します。
+> 上記の MIDL 3.0 一覧で [ **BookSkus**プロパティの型が[**IObservableVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)の注意してください。 このトピックの次のセクションでは**BookSkus**に[**リスト ボックス**](/uwp/api/windows.ui.xaml.controls.listbox)の項目ソースしますバインドするされます。 リスト ボックスは、項目コントロールと[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)プロパティを正しく設定する必要があります**IObservableVector**型の値に (または**IVector**) を設定する**IInspectable**、または[**など、相互運用性の種類のIBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)します。
 
 保存してビルドします。 `Generated Files` フォルダーの `BookstoreViewModel.h` と `BookstoreViewModel.cpp` からアクセサー スタブをコピーし、それらを実装します。
 
