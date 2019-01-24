@@ -1,1521 +1,1514 @@
-items:
 - name: アプリの種類
   items:
-  - name: 教育アプリ
-    href: ../apps-for-education/index.md
-    items:
-    - name: テスト API
-      href: ../apps-for-education/take-a-test-api.md
-  - name: エンタープライズ アプリ
-    href: ../enterprise/index.md
-    items:
-    - name: Windows 情報保護 (WIP)
-      href: ../enterprise/wip-hub.md
+    - name: 教育アプリ
+      href: ../apps-for-education/index.md
       items:
-      - name: WIP 開発者向けガイド
-        href: ../enterprise/wip-dev-guide.md
-    - name: エンタープライズ共有記憶域
-      href: ../enterprise/enterprise-shared-storage.md
-    - name: 'チュートリアル: 顧客データベース アプリケーションの作成'
-      href: ../enterprise/customer-database-tutorial.md
+        - name: テスト API
+          href: ../apps-for-education/take-a-test-api.md
+    - name: エンタープライズ アプリ
+      href: ../enterprise/index.md
       items:
-      - name: 顧客データベース チュートリアル アプリの構造
-        href: ../enterprise/customer-database-app-structure.md
-  - name: プログレッシブ Web アプリ
-    href: /microsoft-edge/progressive-web-apps
+        - name: Windows 情報保護 (WIP)
+          href: ../enterprise/wip-hub.md
+          items:
+            - name: WIP 開発者向けガイド
+              href: ../enterprise/wip-dev-guide.md
+        - name: エンタープライズ共有記憶域
+          href: ../enterprise/enterprise-shared-storage.md
+        - name: 'チュートリアル: 顧客データベース アプリケーションの作成'
+          href: ../enterprise/customer-database-tutorial.md
+          items:
+            - name: 顧客データベース チュートリアル アプリの構造
+              href: ../enterprise/customer-database-app-structure.md
+    - name: プログレッシブ Web アプリ
+      href: /microsoft-edge/progressive-web-apps
 - name: オーディオ、ビデオ、カメラ
   href: ../audio-video-camera/index.md
   items:
-  - name: カメラ
-    href: ../audio-video-camera/camera.md
-    items:
-    - name: Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
-      href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
-    - name: カメラ プレビューの表示
-      href: ../audio-video-camera/simple-camera-preview-access.md
-    - name: MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
-      href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
-    - name: モバイル デバイスのカメラ UI の機能
-      href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
-    - name: MediaCapture を使ってデバイスと画面の向きを処理する
-      href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
-    - name: カメラ プロファイルを使用したカメラ機能の検出と選択
-      href: ../audio-video-camera/camera-profiles.md
-    - name: MediaCapture の形式、解像度、およびフレーム レートの設定
-      href: ../audio-video-camera/set-media-encoding-properties.md
-    - name: HDR とローライトの写真のキャプチャ
-      href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
-    - name: 写真とビデオのキャプチャのための手動カメラ制御
-      href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
-    - name: ビデオ キャプチャのための手動カメラ制御
-      href: ../audio-video-camera/capture-device-controls-for-video-capture.md
-    - name: ビデオ キャプチャのためのビデオ手ブレ補正効果
-      href: ../audio-video-camera/effects-for-video-capture.md
-    - name: MediaCapture のシーン分析
-      href: ../audio-video-camera/scene-analysis-for-media-capture.md
-    - name: VariablePhotoSequence で写真シーケンスをキャプチャする
-      href: ../audio-video-camera/variable-photo-sequence.md
-    - name: MediaFrameReader を使ったメディア フレームの処理
-      href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+    - name: カメラ
+      href: ../audio-video-camera/camera.md
       items:
-      - name: MediaFrameReader を使ったオーディオ フレームの処理
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-      - name: OpenCV と MediaFrameReader の使用
-        href: ../audio-video-camera/use-opencv-with-mediaframereader.md
-    - name: MediaFrameSourceGroup を使用して複数のソースからキャプチャする
-      href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
-    - name: プレビュー フレームの取得
-      href: ../audio-video-camera/get-a-preview-frame.md
-  - name: メディア再生
-    href: ../audio-video-camera/media-playback.md
-    items:
-    - name: MediaPlayer を使ったオーディオとビデオの再生
-      href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
-    - name: メディア項目、プレイリスト、トラック
-      href: ../audio-video-camera/media-playback-with-mediasource.md
-    - name: システム メディア トランスポート コントロールとの統合
-      href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+        - name: Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
+          href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
+        - name: カメラ プレビューの表示
+          href: ../audio-video-camera/simple-camera-preview-access.md
+        - name: MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ
+          href: ../audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md
+        - name: モバイル デバイスのカメラ UI の機能
+          href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
+        - name: MediaCapture を使ってデバイスと画面の向きを処理する
+          href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
+        - name: カメラ プロファイルを使用したカメラ機能の検出と選択
+          href: ../audio-video-camera/camera-profiles.md
+        - name: MediaCapture の形式、解像度、およびフレーム レートの設定
+          href: ../audio-video-camera/set-media-encoding-properties.md
+        - name: HDR とローライトの写真のキャプチャ
+          href: ../audio-video-camera/high-dynamic-range-hdr-photo-capture.md
+        - name: 写真とビデオのキャプチャのための手動カメラ制御
+          href: ../audio-video-camera/capture-device-controls-for-photo-and-video-capture.md
+        - name: ビデオ キャプチャのための手動カメラ制御
+          href: ../audio-video-camera/capture-device-controls-for-video-capture.md
+        - name: ビデオ キャプチャのためのビデオ手ブレ補正効果
+          href: ../audio-video-camera/effects-for-video-capture.md
+        - name: MediaCapture のシーン分析
+          href: ../audio-video-camera/scene-analysis-for-media-capture.md
+        - name: VariablePhotoSequence で写真シーケンスをキャプチャする
+          href: ../audio-video-camera/variable-photo-sequence.md
+        - name: MediaFrameReader を使ったメディア フレームの処理
+          href: ../audio-video-camera/process-media-frames-with-mediaframereader.md
+          items:
+            - name: MediaFrameReader を使ったオーディオ フレームの処理
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+            - name: OpenCV と MediaFrameReader の使用
+              href: ../audio-video-camera/use-opencv-with-mediaframereader.md
+        - name: MediaFrameSourceGroup を使用して複数のソースからキャプチャする
+          href: ../audio-video-camera/capture-from-multiple-sources-simultaneously.md
+        - name: プレビュー フレームの取得
+          href: ../audio-video-camera/get-a-preview-frame.md
+    - name: メディア再生
+      href: ../audio-video-camera/media-playback.md
       items:
-      - name: システム メディア トランスポート コントロールの手動制御
-        href: ../audio-video-camera/system-media-transport-controls.md
-    - name: サポートされているタイミングが設定されたメタデータのキュー
-      href: ../audio-video-camera/system-supported-metadata-cues.md
-    - name: メディアの中断の作成、スケジュール、管理
-      href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
-    - name: バックグラウンドでのメディアの再生
-      href: ../audio-video-camera/background-audio.md
+        - name: MediaPlayer を使ったオーディオとビデオの再生
+          href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
+        - name: メディア項目、プレイリスト、トラック
+          href: ../audio-video-camera/media-playback-with-mediasource.md
+        - name: システム メディア トランスポート コントロールとの統合
+          href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
+          items:
+            - name: システム メディア トランスポート コントロールの手動制御
+              href: ../audio-video-camera/system-media-transport-controls.md
+        - name: サポートされているタイミングが設定されたメタデータのキュー
+          href: ../audio-video-camera/system-supported-metadata-cues.md
+        - name: メディアの中断の作成、スケジュール、管理
+          href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
+        - name: バックグラウンドでのメディアの再生
+          href: ../audio-video-camera/background-audio.md
+          items:
+            - name: 従来のバックグラウンドでのメディアの再生
+              href: ../audio-video-camera/legacy-background-media-playback.md
+        - name: アダプティブ ストリーミング
+          href: ../audio-video-camera/adaptive-streaming.md
+          items:
+            - name: HLS タグのサポート
+              href: ../audio-video-camera/hls-tag-support.md
+            - name: DASH プロファイルのサポート
+              href: ../audio-video-camera/dash-profile-support.md
+        - name: メディアのキャスト
+          href: ../audio-video-camera/media-casting.md
+        - name: PlayReady DRM
+          href: ../audio-video-camera/playready-client-sdk.md
+          items:
+            - name: ハードウェア DRM
+              href: ../audio-video-camera/hardware-drm.md
+            - name: PlayReady を使ったアダプティブ ストリーミング
+              href: ../audio-video-camera/adaptive-streaming-with-playready.md
+        - name: PlayReady の Encrypted Media Extension
+          href: ../audio-video-camera/playready-encrypted-media-extension.md
+    - name: 画像やビデオでの顔の検出
+      href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
+    - name: カスタムのビデオ特殊効果
+      href: ../audio-video-camera/custom-video-effects.md
+    - name: カスタムのオーディオ特殊効果
+      href: ../audio-video-camera/custom-audio-effects.md
+    - name: メディアのコンポジションと編集
+      href: ../audio-video-camera/media-compositions-and-editing.md
+    - name: オーディオ デバイス情報のプロパティ
+      href: ../audio-video-camera/audio-device-information-properties.md
+    - name: オーディオ状態の変化の検出と対応
+      href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
+    - name: ビットマップ画像の作成、編集、保存
+      href: ../audio-video-camera/imaging.md
       items:
-      - name: 従来のバックグラウンドでのメディアの再生
-        href: ../audio-video-camera/legacy-background-media-playback.md
-    - name: アダプティブ ストリーミング
-      href: ../audio-video-camera/adaptive-streaming.md
-      items:
-      - name: HLS タグのサポート
-        href: ../audio-video-camera/hls-tag-support.md
-      - name: DASH プロファイルのサポート
-        href: ../audio-video-camera/dash-profile-support.md
-    - name: メディアのキャスト
-      href: ../audio-video-camera/media-casting.md
-    - name: PlayReady DRM
-      href: ../audio-video-camera/playready-client-sdk.md
-      items:
-      - name: ハードウェア DRM
-        href: ../audio-video-camera/hardware-drm.md
-      - name: PlayReady を使ったアダプティブ ストリーミング
-        href: ../audio-video-camera/adaptive-streaming-with-playready.md
-    - name: PlayReady の Encrypted Media Extension
-      href: ../audio-video-camera/playready-encrypted-media-extension.md
-  - name: 画像やビデオでの顔の検出
-    href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
-  - name: カスタムのビデオ特殊効果
-    href: ../audio-video-camera/custom-video-effects.md
-  - name: カスタムのオーディオ特殊効果
-    href: ../audio-video-camera/custom-audio-effects.md
-  - name: メディアのコンポジションと編集
-    href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: オーディオ デバイス情報のプロパティ
-    href: ../audio-video-camera/audio-device-information-properties.md
-  - name: オーディオ状態の変化の検出と対応
-    href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
-  - name: ビットマップ画像の作成、編集、保存
-    href: ../audio-video-camera/imaging.md
-    items:
-    - name: OpenCV でのビットマップの処理
-      href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
-    - name: LowLightFusion を使用したビットマップの処理
-      href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
-    - name: BitmapEncoder オプションのリファレンス
-      href: ../audio-video-camera/bitmapencoder-options-reference.md
-    - name: 画像のメタデータ
-      href: ../audio-video-camera/image-metadata.md
-  - name: メディア ファイルのトランスコード
-    href: ../audio-video-camera/transcode-media-files.md
-  - name: バックグラウンドでのメディア ファイルの処理
-    href: ../audio-video-camera/process-media-files-in-the-background.md
-  - name: オーディオ グラフ
-    href: ../audio-video-camera/audio-graphs.md
-  - name: MIDI
-    href: ../audio-video-camera/midi.md
-  - name: デバイスからのメディアのインポート
-    href: ../audio-video-camera/import-media-from-a-device.md
-  - name: カメラに依存しない懐中電灯
-    href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: サポートされているコーデック
-    href: ../audio-video-camera/supported-codecs.md
-  - name: インストールされているコーデックの照会
-    href: ../audio-video-camera/codec-query.md
-  - name: 画面キャプチャ
-    href: ../audio-video-camera/screen-capture.md
+        - name: OpenCV でのビットマップの処理
+          href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
+        - name: LowLightFusion を使用したビットマップの処理
+          href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
+        - name: BitmapEncoder オプションのリファレンス
+          href: ../audio-video-camera/bitmapencoder-options-reference.md
+        - name: 画像のメタデータ
+          href: ../audio-video-camera/image-metadata.md
+    - name: メディア ファイルのトランスコード
+      href: ../audio-video-camera/transcode-media-files.md
+    - name: バックグラウンドでのメディア ファイルの処理
+      href: ../audio-video-camera/process-media-files-in-the-background.md
+    - name: オーディオ グラフ
+      href: ../audio-video-camera/audio-graphs.md
+    - name: MIDI
+      href: ../audio-video-camera/midi.md
+    - name: デバイスからのメディアのインポート
+      href: ../audio-video-camera/import-media-from-a-device.md
+    - name: カメラに依存しない懐中電灯
+      href: ../audio-video-camera/camera-independent-flashlight.md
+    - name: サポートされているコーデック
+      href: ../audio-video-camera/supported-codecs.md
+    - name: インストールされているコーデックの照会
+      href: ../audio-video-camera/codec-query.md
+    - name: 画面キャプチャ
+      href: ../audio-video-camera/screen-capture.md
 - name: 通信
   items:
-  - name: アプリ間通信
-    href: ../app-to-app/index.md
-    items:
-    - name: データの共有
-      href: ../app-to-app/share-data.md
-    - name: データの受信
-      href: ../app-to-app/receive-data.md
-    - name: コピーと貼り付け
-      href: ../app-to-app/copy-and-paste.md
-  - name: ネットワークと Web サービス
-    href: ../networking/index.md
-    items:
-    - name: ネットワークの基本
-      href: ../networking/networking-basics.md
-    - name: アプリに適したネットワーク テクノロジ
-      href: ../networking/which-networking-technology.md
-    - name: バックグラウンドでのネットワーク通信
-      href: ../networking/network-communications-in-the-background.md
-    - name: ソケット
-      href: ../networking/sockets.md
-    - name: WebSocket
-      href: ../networking/websockets.md
-    - name: HttpClient
-      href: ../networking/httpclient.md
-    - name: RSS/Atom フィード
-      href: ../networking/web-feeds.md
-    - name: バックグラウンド転送
-      href: ../networking/background-transfers.md
+    - name: アプリ間通信
+      href: ../app-to-app/index.md
+      items:
+        - name: データの共有
+          href: ../app-to-app/share-data.md
+        - name: データの受信
+          href: ../app-to-app/receive-data.md
+        - name: コピーと貼り付け
+          href: ../app-to-app/copy-and-paste.md
+    - name: ネットワークと Web サービス
+      href: ../networking/index.md
+      items:
+        - name: ネットワークの基本
+          href: ../networking/networking-basics.md
+        - name: アプリに適したネットワーク テクノロジ
+          href: ../networking/which-networking-technology.md
+        - name: バックグラウンドでのネットワーク通信
+          href: ../networking/network-communications-in-the-background.md
+        - name: ソケット
+          href: ../networking/sockets.md
+        - name: WebSocket
+          href: ../networking/websockets.md
+        - name: HttpClient
+          href: ../networking/httpclient.md
+        - name: RSS/Atom フィード
+          href: ../networking/web-feeds.md
+        - name: バックグラウンド転送
+          href: ../networking/background-transfers.md
 - name: データとファイル
   items:
-  - name: アプリ リソース
-    href: ../app-resources/index.md
-    items:
-    - name: リソース管理システム
-      href: ../app-resources/resource-management-system.md
-    - name: RMS でのリソースの照合と選択の仕組み
-      href: ../app-resources/how-rms-matches-and-chooses-resources.md
-    - name: RMS での言語タグの照合の仕組み
-      href: ../app-resources/how-rms-matches-lang-tags.md
-    - name: 言語、スケール、コントラスト、その他の修飾子用にリソースを調整する
-      href: ../app-resources/tailor-resources-lang-scale-contrast.md
-    - name: UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
-      href: ../app-resources/localize-strings-ui-manifest.md
-    - name: 表示倍率、テーマ、コントラスト、その他の設定に合わせた画像やアセットの読み込み
-      href: ../app-resources/images-tailored-for-scale-theme-contrast.md
-    - name: URI スキーム
-      href: ../app-resources/uri-schemes.md
-    - name: アプリで使用する既定のリソースを指定する
-      href: ../app-resources/specify-default-resources-installed.md
-    - name: リソースをリソース パックではなくアプリ パッケージに組み込む
-      href: ../app-resources/build-resources-into-app-package.md
-    - name: PRI API とカスタム ビルド システム
-      href: ../app-resources/pri-apis-custom-build-systems.md
+    - name: アプリ リソース
+      href: ../app-resources/index.md
       items:
-      - name: シナリオ 1 (PRI API)
-        href: ../app-resources/pri-apis-scenario-1.md
-    - name: MakePri.exe を使用して手動でリソースをコンパイルする
-      href: ../app-resources/compile-resources-manually-with-makepri.md
-    - name: MakePri.exe のコマンド ライン オプション
-      href: ../app-resources/makepri-exe-command-options.md
-    - name: MakePri.exe 構成ファイル
-      href: ../app-resources/makepri-exe-configuration.md
-    - name: MakePri.exe の形式に固有のインデクサー
-      href: ../app-resources/makepri-exe-format-specific-indexers.md
-    - name: 従来のリソースを移行する
-      href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
-  - name: データ アクセス
-    href: ../data-access/index.md
-    items:
-    - name: SQLite データベースの使用
-      href: ../data-access/sqlite-databases.md
-    - name: SQL Server データベースの使用
-      href: ../data-access/sql-server-databases.md
-  - name: データ バインディング
-    href: ../data-binding/index.md
-    items:
-    - name: データ バインディングの概要
-      href: ../data-binding/data-binding-quickstart.md
-    - name: データ バインディングの詳細
-      href: ../data-binding/data-binding-in-depth.md
-    - name: x:Bind の関数
-      href: ../data-binding/function-bindings.md
-    - name: 'チュートリアル: データ バインディングを作成する'
-      href: ../data-binding/xaml-basics-data-binding.md
-    - name: デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
-      href: ../data-binding/displaying-data-in-the-designer.md
-    - name: 階層データをバインドしてマスター/詳細ビューを作る方法
-      href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
-    - name: データ バインディングと MVVM
-      href: ../data-binding/data-binding-and-mvvm.md
-  - name: ファイル、フォルダー、およびライブラリ
-    href: ../files/index.md
-    items:
-    - name: ファイルとフォルダーの列挙と照会
-      href: ../files/quickstart-listing-files-and-folders.md
-    - name: ファイルの作成、書き込み、および読み取り
-      href: ../files/quickstart-reading-and-writing-files.md
-    - name: ファイルのプロパティの取得
-      href: ../files/quickstart-getting-file-properties.md
-    - name: ピッカーでファイルやフォルダーを開く
-      href: ../files/quickstart-using-file-and-folder-pickers.md
-    - name: ピッカーによるファイルの保存
-      href: ../files/quickstart-save-a-file-with-a-picker.md
-    - name: ホームグループ コンテンツへのアクセス
-      href: ../files/quickstart-accessing-homegroup-content.md
-    - name: Microsoft OneDrive ファイルが利用可能かどうかの確認
-      href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
-    - name: ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
-      href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: サムネイル イメージ
-      href: ../files/thumbnails.md
-    - name: 最近使ったファイルやフォルダーの追跡
-      href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: ファイル システムの変更のバック グラウンドでの追跡
-      href: ../files/change-tracking-filesystem.md
-    - name: SD カードへのアクセス
-      href: ../files/access-the-sd-card.md
-    - name: ファイル アクセス許可
-      href: ../files/file-access-permissions.md
-    - name: UWP でファイルのプロパティにすばやくアクセスする
-      href: ../files/fast-file-properties.md
-  - name: Machine Learning
-    href: https://docs.microsoft.com/windows/ai/
+        - name: リソース管理システム
+          href: ../app-resources/resource-management-system.md
+        - name: RMS でのリソースの照合と選択の仕組み
+          href: ../app-resources/how-rms-matches-and-chooses-resources.md
+        - name: RMS での言語タグの照合の仕組み
+          href: ../app-resources/how-rms-matches-lang-tags.md
+        - name: 言語、スケール、コントラスト、その他の修飾子用にリソースを調整する
+          href: ../app-resources/tailor-resources-lang-scale-contrast.md
+        - name: UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
+          href: ../app-resources/localize-strings-ui-manifest.md
+        - name: 表示倍率、テーマ、コントラスト、その他の設定に合わせた画像やアセットの読み込み
+          href: ../app-resources/images-tailored-for-scale-theme-contrast.md
+        - name: URI スキーム
+          href: ../app-resources/uri-schemes.md
+        - name: アプリで使用する既定のリソースを指定する
+          href: ../app-resources/specify-default-resources-installed.md
+        - name: リソースをリソース パックではなくアプリ パッケージに組み込む
+          href: ../app-resources/build-resources-into-app-package.md
+        - name: PRI API とカスタム ビルド システム
+          href: ../app-resources/pri-apis-custom-build-systems.md
+          items:
+            - name: シナリオ 1 (PRI API)
+              href: ../app-resources/pri-apis-scenario-1.md
+        - name: MakePri.exe を使用して手動でリソースをコンパイルする
+          href: ../app-resources/compile-resources-manually-with-makepri.md
+        - name: MakePri.exe のコマンド ライン オプション
+          href: ../app-resources/makepri-exe-command-options.md
+        - name: MakePri.exe 構成ファイル
+          href: ../app-resources/makepri-exe-configuration.md
+        - name: MakePri.exe の形式に固有のインデクサー
+          href: ../app-resources/makepri-exe-format-specific-indexers.md
+        - name: 従来のリソースを移行する
+          href: ../app-resources/using-mrt-for-converted-desktop-apps-and-games.md
+    - name: データ アクセス
+      href: ../data-access/index.md
+      items:
+        - name: SQLite データベースの使用
+          href: ../data-access/sqlite-databases.md
+        - name: SQL Server データベースの使用
+          href: ../data-access/sql-server-databases.md
+    - name: データ バインディング
+      href: ../data-binding/index.md
+      items:
+        - name: データ バインディングの概要
+          href: ../data-binding/data-binding-quickstart.md
+        - name: データ バインディングの詳細
+          href: ../data-binding/data-binding-in-depth.md
+        - name: 'x:Bind の関数'
+          href: ../data-binding/function-bindings.md
+        - name: 'チュートリアル: データ バインディングを作成する'
+          href: ../data-binding/xaml-basics-data-binding.md
+        - name: デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
+          href: ../data-binding/displaying-data-in-the-designer.md
+        - name: 階層データをバインドしてマスター/詳細ビューを作る方法
+          href: ../data-binding/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: データ バインディングと MVVM
+          href: ../data-binding/data-binding-and-mvvm.md
+    - name: ファイル、フォルダー、およびライブラリ
+      href: ../files/index.md
+      items:
+        - name: ファイルとフォルダーの列挙と照会
+          href: ../files/quickstart-listing-files-and-folders.md
+        - name: ファイルの作成、書き込み、および読み取り
+          href: ../files/quickstart-reading-and-writing-files.md
+        - name: ファイルのプロパティの取得
+          href: ../files/quickstart-getting-file-properties.md
+        - name: ピッカーでファイルやフォルダーを開く
+          href: ../files/quickstart-using-file-and-folder-pickers.md
+        - name: ピッカーによるファイルの保存
+          href: ../files/quickstart-save-a-file-with-a-picker.md
+        - name: ホームグループ コンテンツへのアクセス
+          href: ../files/quickstart-accessing-homegroup-content.md
+        - name: Microsoft OneDrive ファイルが利用可能かどうかの確認
+          href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
+        - name: ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
+          href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
+        - name: サムネイル イメージ
+          href: ../files/thumbnails.md
+        - name: 最近使ったファイルやフォルダーの追跡
+          href: ../files/how-to-track-recently-used-files-and-folders.md
+        - name: ファイル システムの変更のバック グラウンドでの追跡
+          href: ../files/change-tracking-filesystem.md
+        - name: SD カードへのアクセス
+          href: ../files/access-the-sd-card.md
+        - name: ファイル アクセス許可
+          href: ../files/file-access-permissions.md
+        - name: UWP でファイルのプロパティにすばやくアクセスする
+          href: ../files/fast-file-properties.md
+    - name: Machine Learning
+      href: 'https://docs.microsoft.com/windows/ai/'
 - name: 展開
   items:
-  - name: UWP バージョンの選択
-    href: ../updates-and-versions/choose-a-uwp-version.md
-  - name: デバッグ、テスト、パフォーマンス
-    href: ../debug-test-perf/index.md
-    items:
-    - name: UWP アプリの展開とデバッグ
-      href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
-    - name: PLM のテスト ツールとデバッグ ツール
-      href: ../debug-test-perf/testing-debugging-plm.md
-    - name: Microsoft Emulator for Windows 10 を使ったテスト
-      href: ../debug-test-perf/test-with-the-emulator.md
-    - name: Visual Studio を使った Surface Hub アプリのテスト
-      href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
-    - name: ルーズ ファイルの登録によるアプリの展開
-      href: ../debug-test-perf/loose-file-registration.md
-    - name: ベータ テスト
-      href: ../debug-test-perf/beta-testing.md
-    - name: Windows Device Portal
-      href: ../debug-test-perf/device-portal.md
+    - name: UWP バージョンの選択
+      href: ../updates-and-versions/choose-a-uwp-version.md
+    - name: デバッグ、テスト、パフォーマンス
+      href: ../debug-test-perf/index.md
       items:
-      - name: デスクトップ用 Device Portal
-        href: ../debug-test-perf/device-portal-desktop.md
-      - name: モバイル用 Device Portal
-        href: ../debug-test-perf/device-portal-mobile.md
-      - name: Xbox 用 Device Portal
-        href: ../debug-test-perf/device-portal-xbox.md
-      - name: HoloLens 用 Device Portal
-        href: ../debug-test-perf/device-portal-hololens.md
-      - name: Device Portal のコア API
-        href: ../debug-test-perf/device-portal-api-core.md
-      - name: Device Portal 用のカスタム プラグインの作成
-        href: ../debug-test-perf/device-portal-plugin.md
-      - name: カスタムの SSL 証明書で Device Portal をプロビジョニングする
-        href: ../debug-test-perf/device-portal-ssl.md
-    - name: Windows アプリ認定キット
-      href: ../debug-test-perf/windows-app-certification-kit.md
+        - name: UWP アプリの展開とデバッグ
+          href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
+        - name: PLM のテスト ツールとデバッグ ツール
+          href: ../debug-test-perf/testing-debugging-plm.md
+        - name: Microsoft Emulator for Windows 10 を使ったテスト
+          href: ../debug-test-perf/test-with-the-emulator.md
+        - name: Visual Studio を使った Surface Hub アプリのテスト
+          href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
+        - name: ルーズ ファイルの登録によるアプリの展開
+          href: ../debug-test-perf/loose-file-registration.md
+        - name: ベータ テスト
+          href: ../debug-test-perf/beta-testing.md
+        - name: Windows Device Portal
+          href: ../debug-test-perf/device-portal.md
+          items:
+            - name: デスクトップ用 Device Portal
+              href: ../debug-test-perf/device-portal-desktop.md
+            - name: モバイル用 Device Portal
+              href: ../debug-test-perf/device-portal-mobile.md
+            - name: Xbox 用 Device Portal
+              href: ../debug-test-perf/device-portal-xbox.md
+            - name: HoloLens 用 Device Portal
+              href: ../debug-test-perf/device-portal-hololens.md
+            - name: Device Portal のコア API
+              href: ../debug-test-perf/device-portal-api-core.md
+            - name: Device Portal 用のカスタム プラグインの作成
+              href: ../debug-test-perf/device-portal-plugin.md
+            - name: カスタムの SSL 証明書で Device Portal をプロビジョニングする
+              href: ../debug-test-perf/device-portal-ssl.md
+        - name: Windows アプリ認定キット
+          href: ../debug-test-perf/windows-app-certification-kit.md
+          items:
+            - name: Windows アプリ認定キットのテスト
+              href: ../debug-test-perf/windows-app-certification-kit-tests.md
+              items:
+                - name: Windows デスクトップ ブリッジ アプリのテスト
+                  href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
+        - name: パフォーマンス
+          href: ../debug-test-perf/performance-and-xaml-ui.md
+          items:
+            - name: パフォーマンスの計画
+              href: ../debug-test-perf/planning-and-measuring-performance.md
+            - name: バックグラウンド アクティビティの最適化
+              href: ../debug-test-perf/optimize-background-activity.md
+            - name: ListView と GridView の UI の最適化
+              href: ../debug-test-perf/optimize-gridview-and-listview.md
+            - name: ListView と GridView のデータ仮想化
+              href: ../debug-test-perf/listview-and-gridview-data-optimization.md
+            - name: ガベージ コレクションのパフォーマンスの向上
+              href: ../debug-test-perf/improve-garbage-collection-performance.md
+            - name: UI スレッドの応答性の確保
+              href: ../debug-test-perf/keep-the-ui-thread-responsive.md
+            - name: XAML マークアップの最適化
+              href: ../debug-test-perf/optimize-xaml-loading.md
+            - name: XAML レイアウトの最適化
+              href: ../debug-test-perf/optimize-your-xaml-layout.md
+            - name: MVVM と言語のパフォーマンスに関するヒント
+              href: ../debug-test-perf/mvvm-performance-tips.md
+            - name: アプリ起動時のパフォーマンスのベスト プラクティス
+              href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
+            - name: アニメーション、メディア、画像の最適化
+              href: ../debug-test-perf/optimize-animations-and-media.md
+            - name: 中断/再開の最適化
+              href: ../debug-test-perf/optimize-suspend-resume.md
+            - name: ファイル アクセスの最適化
+              href: ../debug-test-perf/optimize-file-access.md
+            - name: Windows ランタイム コンポーネントと相互運用性の最適化
+              href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
+            - name: プロファイリングとパフォーマンスに関するツール
+              href: ../debug-test-perf/tools-for-profiling-and-performance.md
+        - name: バージョン アダプティブ アプリ
+          href: ../debug-test-perf/version-adaptive-apps.md
+          items:
+            - name: バージョン アダプティブ コード
+              href: ../debug-test-perf/version-adaptive-code.md
+            - name: 条件付き XAML
+              href: ../debug-test-perf/conditional-xaml.md
+    - name: 収益化、エンゲージメント、Microsoft Store サービス
+      href: ../monetize/index.md
       items:
-      - name: Windows アプリ認定キットのテスト
-        href: ../debug-test-perf/windows-app-certification-kit-tests.md
-        items:
-        - name: Windows デスクトップ ブリッジ アプリのテスト
-          href: ../debug-test-perf/windows-desktop-bridge-app-tests.md
-    - name: パフォーマンス
-      href: ../debug-test-perf/performance-and-xaml-ui.md
+        - name: アプリ内購入と試用版
+          href: ../monetize/in-app-purchases-and-trials.md
+          items:
+            - name: アプリとアドオンの製品情報の取得
+              href: ../monetize/get-product-info-for-apps-and-add-ons.md
+            - name: アプリとアドオンのライセンス情報の取得
+              href: ../monetize/get-license-info-for-apps-and-add-ons.md
+            - name: アプリとアドオンのアプリ内購入の有効化
+              href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
+            - name: コンシューマブルなアドオン購入の有効化
+              href: ../monetize/enable-consumable-add-on-purchases.md
+            - name: アプリのサブスクリプション アドオンの有効化
+              href: ../monetize/enable-subscription-add-ons-for-your-app.md
+            - name: アプリの試用版の実装
+              href: ../monetize/implement-a-trial-version-of-your-app.md
+            - name: Store 製品のデータ スキーマ
+              href: ../monetize/data-schemas-for-store-products.md
+            - name: Microsoft Store の操作のエラー コード
+              href: ../monetize/error-codes-for-store-operations.md
+            - name: Windows.ApplicationModel.Store 名前空間の使用
+              href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
+              items:
+                - name: 試用版での機能の除外または制限
+                  href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
+                - name: アプリ内製品購入の有効化
+                  href: ../monetize/enable-in-app-product-purchases.md
+                - name: コンシューマブルなアプリ内製品購入の有効化
+                  href: ../monetize/enable-consumable-in-app-product-purchases.md
+                - name: アプリ内製品の大規模なカタログの管理
+                  href: ../monetize/manage-a-large-catalog-of-in-app-products.md
+                - name: 受領通知を使った製品購入の確認
+                  href: ../monetize/use-receipts-to-verify-product-purchases.md
+        - name: Microsoft Advertising SDK を使用したアプリでの広告の表示
+          href: ../monetize/display-ads-in-your-app.md
+          items:
+            - name: Microsoft Advertising SDK のインストール
+              href: ../monetize/install-the-microsoft-advertising-libraries.md
+              items:
+                - name: 最新のバナー広告ライブラリを使用するようにアプリを更新する
+                  href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
+            - name: アプリでの広告の実装
+              href: ../monetize/developer-walkthroughs.md
+              items:
+                - name: バナー広告
+                  href: ../monetize/banner-ads.md
+                  items:
+                    - name: XAML および .NET の AdControl
+                      href: ../monetize/adcontrol-in-xaml-and--net.md
+                    - name: HTML 5 および JavaScript の AdControl
+                      href: ../monetize/adcontrol-in-html-5-and-javascript.md
+                    - name: サポートされているバナー広告のサイズ
+                      href: ../monetize/supported-ad-sizes-for-banner-ads.md
+                - name: スポット広告
+                  href: ../monetize/interstitial-ads.md
+                  items:
+                    - name: 'C# を使ったスポット広告のサンプル コード'
+                      href: ../monetize/interstitial-ad-sample-code-in-c.md
+                    - name: JavaScript を使ったスポット広告のサンプル コード
+                      href: ../monetize/interstitial-ad-sample-code-in-javascript.md
+                - name: ネイティブ広告
+                  href: ../monetize/native-ads.md
+                - name: ビデオ コンテンツに広告を表示する
+                  href: ../monetize/add-advertisements-to-video-content.md
+            - name: アプリの広告ユニットをセットアップする
+              href: ../monetize/set-up-ad-units-in-your-app.md
+            - name: Microsoft 広告仲介サービス
+              href: ../monetize/ad-mediation-service.md
+            - name: ベスト プラクティス
+              href: ../monetize/best-practices-for-ads-in-apps.md
+              items:
+                - name: UI とユーザー エクスペリエンス ガイドライン
+                  href: ../monetize/ui-and-user-experience-guidelines.md
+                - name: 広告ユニットの見やすさを最適化する
+                  href: ../monetize/optimize-ad-unit-viewability.md
+                - name: 広告のエラー処理
+                  href: ../monetize/error-handling-with-advertising-libraries.md
+                  items:
+                    - name: 'XAML/C# ウォークスルーでのエラー処理'
+                      href: ../monetize/error-handling-in-xamlc-walkthrough.md
+                    - name: JavaScript ウォークスルーでのエラー処理
+                      href: ../monetize/error-handling-in-javascript-walkthrough.md
+            - name: 既知の問題とトラブルシューティング
+              href: ../monetize/known-issues-for-the-advertising-libraries.md
+              items:
+                - name: HTML と JavaScript のトラブルシューティング ガイド
+                  href: ../monetize/html-and-javascript-troubleshooting-guide.md
+                - name: 'XAML と C# のトラブルシューティング ガイド'
+                  href: ../monetize/xaml-and-c-troubleshooting-guide.md
+            - name: リリース ノート
+              href: ../monetize/release-notes-for-the-advertising-libraries.md
+            - name: Windows Premium Ads Publishers Program
+              href: ../monetize/windows-premium-ads-publishers-program.md
+        - name: Microsoft Store Services SDK を使ってユーザーとの関係を深める
+          href: ../monetize/microsoft-store-services-sdk.md
+          items:
+            - name: A/B テストを使用してアプリの実験を実行する
+              href: ../monetize/run-app-experiments-with-a-b-testing.md
+              items:
+                - name: パートナー センターで実験プロジェクトを作成する
+                  href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
+                - name: アプリの実験用のコードを記述する
+                  href: ../monetize/code-your-experiment-in-your-app.md
+                - name: パートナー センターで実験を定義する
+                  href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
+                - name: パートナー センターで実験を管理する
+                  href: ../monetize/manage-your-experiment.md
+                - name: 最初の実験を作成して実行する
+                  href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
+            - name: アプリからのフィードバック Hub の起動
+              href: ../monetize/launch-feedback-hub-from-your-app.md
+            - name: ターゲット プッシュ通知用のアプリの構成
+              href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
+            - name: パートナー センターのカスタム イベントをログに記録する
+              href: ../monetize/log-custom-events-for-dev-center.md
+        - name: 評価とレビューを求める
+          href: ../monetize/request-ratings-and-reviews.md
+        - name: Microsoft Store サービス
+          href: ../monetize/using-windows-store-services.md
+          items:
+            - name: 分析データへのアクセス
+              href: ../monetize/access-analytics-data-using-windows-store-services.md
+              items:
+                - name: UWP アプリ
+                  items:
+                    - name: 取得データおよびインストール データの取得
+                      items:
+                        - name: アプリの取得数の取得
+                          href: ../monetize/get-app-acquisitions.md
+                        - name: アプリのインストール数の取得
+                          href: ../monetize/get-app-installs.md
+                        - name: アプリの入手に関するファネル データの取得
+                          href: ../monetize/get-acquisition-funnel-data.md
+                        - name: チャネルごとのアプリのコンバージョンの取得
+                          href: ../monetize/get-app-conversions-by-channel.md
+                        - name: アドオンの入手数の取得
+                          href: ../monetize/get-in-app-acquisitions.md
+                        - name: サブスクリプション アドオンの入手数の取得
+                          href: ../monetize/get-subscription-acquisitions.md
+                        - name: チャネルごとのアドオンのコンバージョンの取得
+                          href: ../monetize/get-add-on-conversions-by-channel.md
+                    - name: アプリのインサイト データの取得
+                      href: ../monetize/get-insights-data-for-your-app.md
+                    - name: アプリの評価の取得
+                      href: ../monetize/get-app-ratings.md
+                    - name: アプリのレビューの取得
+                      href: ../monetize/get-app-reviews.md
+                    - name: アプリの使用状況 (日単位) の取得
+                      href: ../monetize/get-app-usage-daily.md
+                    - name: アプリの使用状況 (月単位) の取得
+                      href: ../monetize/get-app-usage-monthly.md
+                    - name: エラー報告データの取得
+                      href: ../monetize/get-error-reporting-data.md
+                      items:
+                        - name: アプリのエラーに関する詳細情報の取得
+                          href: ../monetize/get-details-for-an-error-in-your-app.md
+                        - name: アプリのエラーに関するスタック トレースの取得
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
+                        - name: アプリのエラーの CAB ファイルをダウンロードする
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
+                    - name: 広告のパフォーマンス データの取得
+                      href: ../monetize/get-ad-performance-data.md
+                    - name: 広告キャンペーンのパフォーマンス データの取得
+                      href: ../monetize/get-ad-campaign-performance-data.md
+                - name: デスクトップ アプリ
+                  items:
+                    - name: デスクトップ アプリケーションのインストール数の取得
+                      href: ../monetize/get-desktop-app-installs.md
+                    - name: デスクトップ アプリケーションのインサイト データの取得
+                      href: ../monetize/get-insights-data-for-your-desktop-app.md
+                    - name: デスクトップ アプリケーションのアップグレード ブロックの取得
+                      href: ../monetize/get-desktop-block-data.md
+                    - name: デスクトップ アプリケーションのアップグレード ブロックの詳細情報の取得
+                      href: ../monetize/get-desktop-block-data-details.md
+                    - name: デスクトップ アプリケーションのエラー報告データの取得
+                      href: ../monetize/get-desktop-application-error-reporting-data.md
+                      items:
+                        - name: デスクトップ アプリケーションのエラーに関する詳細情報の取得
+                          href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
+                        - name: デスクトップ アプリケーションのエラーに関するスタック トレースの取得
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
+                        - name: デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
+                - name: Xbox One ゲームと Xbox Live
+                  items:
+                    - name: Xbox One ゲームの入手数の取得
+                      href: ../monetize/get-xbox-one-game-acquisitions.md
+                    - name: Xbox One アドオンの入手数の取得
+                      href: ../monetize/get-xbox-one-add-on-acquisitions.md
+                    - name: Xbox One ゲームのエラー報告データの取得
+                      href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
+                      items:
+                        - name: Xbox One ゲームのエラーに関する詳細情報の取得
+                          href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
+                        - name: Xbox One ゲームのエラーに関するスタック トレースの取得
+                          href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
+                        - name: Xbox One ゲームのエラーの CAB ファイルをダウンロードする
+                          href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
+                    - name: Xbox Live の分析データの取得
+                      href: ../monetize/get-xbox-live-analytics.md
+                      items:
+                        - name: Xbox Live の実績データの取得
+                          href: ../monetize/get-xbox-live-achievements-data.md
+                        - name: Xbox Live の正常性データの取得
+                          href: ../monetize/get-xbox-live-health-data.md
+                        - name: Xbox Live ゲーム ハブのデータの取得
+                          href: ../monetize/get-xbox-live-game-hub-data.md
+                        - name: Xbox Live クラブのデータの取得
+                          href: ../monetize/get-xbox-live-club-data.md
+                        - name: Xbox Live のマルチプレイヤー データの取得
+                          href: ../monetize/get-xbox-live-multiplayer-data.md
+                        - name: Xbox Live の同時使用状況データの取得
+                          href: ../monetize/get-xbox-live-concurrent-usage-data.md
+            - name: レビューへの返信
+              href: ../monetize/respond-to-reviews-using-windows-store-services.md
+              items:
+                - name: レビューへの返信情報の取得
+                  href: ../monetize/get-response-info-for-app-reviews.md
+                - name: レビューに対する返信の送信
+                  href: ../monetize/submit-responses-to-app-reviews.md
+            - name: 広告キャンペーンの実行
+              href: ../monetize/run-ad-campaigns-using-windows-store-services.md
+              items:
+                - name: 広告キャンペーンの管理
+                  href: ../monetize/manage-ad-campaigns.md
+                - name: 配信ラインの管理
+                  href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
+                - name: 対象プロファイルの管理
+                  href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
+                - name: クリエイティブの管理
+                  href: ../monetize/manage-creatives-for-ad-campaigns.md
+            - name: 申請の作成と管理
+              href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
+              items:
+                - name: アプリ データの取得
+                  href: ../monetize/get-app-data.md
+                  items:
+                    - name: すべてのアプリの入手
+                      href: ../monetize/get-all-apps.md
+                    - name: アプリの入手
+                      href: ../monetize/get-an-app.md
+                    - name: アプリのアドオンの入手
+                      href: ../monetize/get-add-ons-for-an-app.md
+                    - name: アプリのパッケージ フライトの入手
+                      href: ../monetize/get-flights-for-an-app.md
+                - name: アプリの申請の管理
+                  href: ../monetize/manage-app-submissions.md
+                  items:
+                    - name: アプリの申請の取得
+                      href: ../monetize/get-an-app-submission.md
+                    - name: アプリの申請の状態の取得
+                      href: ../monetize/get-status-for-an-app-submission.md
+                    - name: アプリの申請の作成
+                      href: ../monetize/create-an-app-submission.md
+                    - name: アプリの申請のコミット
+                      href: ../monetize/commit-an-app-submission.md
+                    - name: アプリの申請の更新
+                      href: ../monetize/update-an-app-submission.md
+                    - name: アプリの申請の削除
+                      href: ../monetize/delete-an-app-submission.md
+                    - name: アプリの申請に関するロールアウト情報の取得
+                      href: ../monetize/get-package-rollout-info-for-an-app-submission.md
+                    - name: アプリの申請に関するロールアウト率の更新
+                      href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
+                    - name: アプリの申請に関するロールアウトを停止する
+                      href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
+                    - name: アプリの申請に関するロールアウトを完了する
+                      href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
+                - name: アドオンの管理
+                  href: ../monetize/manage-add-ons.md
+                  items:
+                    - name: すべてのアドオンの入手
+                      href: ../monetize/get-all-add-ons.md
+                    - name: アドオンの入手
+                      href: ../monetize/get-an-add-on.md
+                    - name: アドオンの作成
+                      href: ../monetize/create-an-add-on.md
+                    - name: アドオンの削除
+                      href: ../monetize/delete-an-add-on.md
+                - name: アドオンの申請の管理
+                  href: ../monetize/manage-add-on-submissions.md
+                  items:
+                    - name: アドオンの申請の取得
+                      href: ../monetize/get-an-add-on-submission.md
+                    - name: アドオンの申請の状態の取得
+                      href: ../monetize/get-status-for-an-add-on-submission.md
+                    - name: アドオンの申請の作成
+                      href: ../monetize/create-an-add-on-submission.md
+                    - name: アドオンの申請のコミット
+                      href: ../monetize/commit-an-add-on-submission.md
+                    - name: アドオンの申請の更新
+                      href: ../monetize/update-an-add-on-submission.md
+                    - name: アドオンの申請の削除
+                      href: ../monetize/delete-an-add-on-submission.md
+                - name: パッケージ フライトの管理
+                  href: ../monetize/manage-flights.md
+                  items:
+                    - name: パッケージ フライトの取得
+                      href: ../monetize/get-a-flight.md
+                    - name: パッケージ フライトの作成
+                      href: ../monetize/create-a-flight.md
+                    - name: パッケージ フライトの削除
+                      href: ../monetize/delete-a-flight.md
+                - name: パッケージ フライトの申請の管理
+                  href: ../monetize/manage-flight-submissions.md
+                  items:
+                    - name: パッケージ フライトの申請の取得
+                      href: ../monetize/get-a-flight-submission.md
+                    - name: パッケージ フライトの申請の状態の取得
+                      href: ../monetize/get-status-for-a-flight-submission.md
+                    - name: パッケージ フライトの申請の作成
+                      href: ../monetize/create-a-flight-submission.md
+                    - name: パッケージ フライトの申請のコミット
+                      href: ../monetize/commit-a-flight-submission.md
+                    - name: パッケージ フライトの申請の更新
+                      href: ../monetize/update-a-flight-submission.md
+                    - name: パッケージ フライトの申請の削除
+                      href: ../monetize/delete-a-flight-submission.md
+                    - name: パッケージ フライトの申請に関するロールアウトの情報を取得する
+                      href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
+                    - name: フライトの申請に関するロールアウト率の更新
+                      href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
+                    - name: フライトの申請に関するロールアウトを停止する
+                      href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
+                    - name: フライトの申請に関するロールアウトを完了する
+                      href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
+                - name: 申請 API 用のコード例
+                  href: ../monetize/code-examples-for-the-windows-store-submission-api.md
+                  items:
+                    - name: 'C# のコード例: アプリ、アドオン、およびフライトの申請'
+                      href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'C# のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請'
+                      href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: 'Java のコード例: アプリ、アドオン、およびフライトの申請'
+                      href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請'
+                      href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
+                    - name: 'Python のコード例: アプリ、アドオン、およびフライトの申請'
+                      href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
+                    - name: 'Python のコード例: ゲーム オプションおよびトレーラーのアプリの申請'
+                      href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
+            - name: 対象のプランを管理する
+              href: ../monetize/manage-targeted-offers-using-windows-store-services.md
+              items:
+                - name: 対象のプランを取得する
+                  href: ../monetize/get-targeted-offers.md
+            - name: サービスから製品の権利を管理する
+              href: ../monetize/view-and-grant-products-from-a-service.md
+              items:
+                - name: 製品の照会
+                  href: ../monetize/query-for-products.md
+                - name: コンシューマブルな製品をフルフィルメント完了として報告する
+                  href: ../monetize/report-consumable-products-as-fulfilled.md
+                - name: 無料の製品の付与
+                  href: ../monetize/grant-free-products.md
+                - name: ユーザーのサブスクリプションを取得する
+                  href: ../monetize/get-subscriptions-for-a-user.md
+                - name: ユーザーのサブスクリプションに関する請求の状態を変更する
+                  href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
+                - name: Microsoft Store ID キーの更新
+                  href: ../monetize/renew-a-windows-store-id-key.md
+            - name: 広告ネットワーク用のアプリのメタデータ API
+              href: ../monetize/app-metadata-api-for-advertising-networks.md
+        - name: Store に要求を送信する
+          href: ../monetize/send-requests-to-the-store.md
+        - name: 市販デモ (RDX) 機能の追加
+          href: ../monetize/retail-demo-experience.md
+        - name: 支払い要求 API で支払いを簡略化する
+          href: ../monetize/payment-request.md
+    - name: アプリのパッケージ化
+      href: ../packaging/index.md
       items:
-      - name: パフォーマンスの計画
-        href: ../debug-test-perf/planning-and-measuring-performance.md
-      - name: バックグラウンド アクティビティの最適化
-        href: ../debug-test-perf/optimize-background-activity.md
-      - name: ListView と GridView の UI の最適化
-        href: ../debug-test-perf/optimize-gridview-and-listview.md
-      - name: ListView と GridView のデータ仮想化
-        href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: ガベージ コレクションのパフォーマンスの向上
-        href: ../debug-test-perf/improve-garbage-collection-performance.md
-      - name: UI スレッドの応答性の確保
-        href: ../debug-test-perf/keep-the-ui-thread-responsive.md
-      - name: XAML マークアップの最適化
-        href: ../debug-test-perf/optimize-xaml-loading.md
-      - name: XAML レイアウトの最適化
-        href: ../debug-test-perf/optimize-your-xaml-layout.md
-      - name: MVVM と言語のパフォーマンスに関するヒント
-        href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: アプリ起動時のパフォーマンスのベスト プラクティス
-        href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
-      - name: アニメーション、メディア、画像の最適化
-        href: ../debug-test-perf/optimize-animations-and-media.md
-      - name: 中断/再開の最適化
-        href: ../debug-test-perf/optimize-suspend-resume.md
-      - name: ファイル アクセスの最適化
-        href: ../debug-test-perf/optimize-file-access.md
-      - name: Windows ランタイム コンポーネントと相互運用性の最適化
-        href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
-      - name: プロファイリングとパフォーマンスに関するツール
-        href: ../debug-test-perf/tools-for-profiling-and-performance.md
-    - name: バージョン アダプティブ アプリ
-      href: ../debug-test-perf/version-adaptive-apps.md
-      items:
-      - name: バージョン アダプティブ コード
-        href: ../debug-test-perf/version-adaptive-code.md
-      - name: 条件付き XAML
-        href: ../debug-test-perf/conditional-xaml.md
-  - name: 収益化、エンゲージメント、Microsoft Store サービス
-    href: ../monetize/index.md
-    items:
-    - name: アプリ内購入と試用版
-      href: ../monetize/in-app-purchases-and-trials.md
-      items:
-      - name: アプリとアドオンの製品情報の取得
-        href: ../monetize/get-product-info-for-apps-and-add-ons.md
-      - name: アプリとアドオンのライセンス情報の取得
-        href: ../monetize/get-license-info-for-apps-and-add-ons.md
-      - name: アプリとアドオンのアプリ内購入の有効化
-        href: ../monetize/enable-in-app-purchases-of-apps-and-add-ons.md
-      - name: コンシューマブルなアドオン購入の有効化
-        href: ../monetize/enable-consumable-add-on-purchases.md
-      - name: アプリのサブスクリプション アドオンの有効化
-        href: ../monetize/enable-subscription-add-ons-for-your-app.md
-      - name: アプリの試用版の実装
-        href: ../monetize/implement-a-trial-version-of-your-app.md
-      - name: Store 製品のデータ スキーマ
-        href: ../monetize/data-schemas-for-store-products.md
-      - name: Microsoft Store の操作のエラー コード
-        href: ../monetize/error-codes-for-store-operations.md
-      - name: Windows.ApplicationModel.Store 名前空間の使用
-        href: ../monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md
-        items:
-        - name: 試用版での機能の除外または制限
-          href: ../monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md
-        - name: アプリ内製品購入の有効化
-          href: ../monetize/enable-in-app-product-purchases.md
-        - name: コンシューマブルなアプリ内製品購入の有効化
-          href: ../monetize/enable-consumable-in-app-product-purchases.md
-        - name: アプリ内製品の大規模なカタログの管理
-          href: ../monetize/manage-a-large-catalog-of-in-app-products.md
-        - name: 受領通知を使った製品購入の確認
-          href: ../monetize/use-receipts-to-verify-product-purchases.md
-    - name: Microsoft Advertising SDK を使用したアプリでの広告の表示
-      href: ../monetize/display-ads-in-your-app.md
-      items:
-      - name: Microsoft Advertising SDK のインストール
-        href: ../monetize/install-the-microsoft-advertising-libraries.md
-        items:
-        - name: 最新のバナー広告ライブラリを使用するようにアプリを更新する
-          href: ../monetize/update-your-app-to-the-latest-advertising-libraries.md
-      - name: アプリでの広告の実装
-        href: ../monetize/developer-walkthroughs.md
-        items:
-        - name: バナー広告
-          href: ../monetize/banner-ads.md
+        - name: Visual Studio で UWP アプリをパッケージ化する
+          href: ../packaging/packaging-uwp-apps.md
+        - name: 手動でのアプリのパッケージ化
+          href: ../packaging/manual-packaging-root.md
           items:
-          - name: XAML および .NET の AdControl
-            href: ../monetize/adcontrol-in-xaml-and--net.md
-          - name: HTML 5 および JavaScript の AdControl
-            href: ../monetize/adcontrol-in-html-5-and-javascript.md
-          - name: サポートされているバナー広告のサイズ
-            href: ../monetize/supported-ad-sizes-for-banner-ads.md
-        - name: スポット広告
-          href: ../monetize/interstitial-ads.md
+            - name: MakeAppx.exe ツールを使ったアプリ パッケージの作成
+              href: ../packaging/create-app-package-with-makeappx-tool.md
+            - name: パッケージ署名用証明書を作成する
+              href: ../packaging/create-certificate-package-signing.md
+            - name: SignTool を使ってアプリ パッケージに署名する
+              href: ../packaging/sign-app-package-using-signtool.md
+            - name: アセット パッケージとパッケージ圧縮を使った開発
+              href: ../packaging/package-folding.md
+            - name: フラット バンドル アプリ パッケージ
+              href: ../packaging/flat-bundles.md
+            - name: アセット パッケージの概要
+              href: ../packaging/asset-packages.md
+            - name: パッケージ レイアウトを使ったパッケージの作成
+              href: ../packaging/packaging-layout.md
+        - name: アプリ パッケージのアーキテクチャ
+          href: ../packaging/device-architecture.md
+        - name: UWP アプリ ストリーミング インストール
+          href: ../packaging/streaming-install.md
           items:
-          - name: C# を使ったスポット広告のサンプル コード
-            href: ../monetize/interstitial-ad-sample-code-in-c.md
-          - name: JavaScript を使ったスポット広告のサンプル コード
-            href: ../monetize/interstitial-ad-sample-code-in-javascript.md
-        - name: ネイティブ広告
-          href: ../monetize/native-ads.md
-        - name: ビデオ コンテンツに広告を表示する
-          href: ../monetize/add-advertisements-to-video-content.md
-      - name: アプリの広告ユニットをセットアップする
-        href: ../monetize/set-up-ad-units-in-your-app.md
-      - name: Microsoft 広告仲介サービス
-        href: ../monetize/ad-mediation-service.md
-      - name: ベスト プラクティス
-        href: ../monetize/best-practices-for-ads-in-apps.md
-        items:
-        - name: UI とユーザー エクスペリエンス ガイドライン
-          href: ../monetize/ui-and-user-experience-guidelines.md
-        - name: 広告ユニットの見やすさを最適化する
-          href: ../monetize/optimize-ad-unit-viewability.md
-        - name: 広告のエラー処理
-          href: ../monetize/error-handling-with-advertising-libraries.md
+            - name: ソース コンテンツ グループ マップの作成と変換
+              href: ../packaging/create-cgm.md
+        - name: オプション パッケージと関連セットの作成
+          href: ../packaging/optional-packages.md
           items:
-          - name: XAML/C# ウォークスルーでのエラー処理
-            href: ../monetize/error-handling-in-xamlc-walkthrough.md
-          - name: JavaScript ウォークスルーでのエラー処理
-            href: ../monetize/error-handling-in-javascript-walkthrough.md
-      - name: 既知の問題とトラブルシューティング
-        href: ../monetize/known-issues-for-the-advertising-libraries.md
-        items:
-        - name: HTML と JavaScript のトラブルシューティング ガイド
-          href: ../monetize/html-and-javascript-troubleshooting-guide.md
-        - name: XAML と C# のトラブルシューティング ガイド
-          href: ../monetize/xaml-and-c-troubleshooting-guide.md
-      - name: リリース ノート
-        href: ../monetize/release-notes-for-the-advertising-libraries.md
-      - name: Windows Premium Ads Publishers Program
-        href: ../monetize/windows-premium-ads-publishers-program.md
-    - name: Microsoft Store Services SDK を使ってユーザーとの関係を深める
-      href: ../monetize/microsoft-store-services-sdk.md
-      items:
-      - name: A/B テストを使用してアプリの実験を実行する
-        href: ../monetize/run-app-experiments-with-a-b-testing.md
-        items:
-        - name: パートナー センターで実験プロジェクトを作成する
-          href: ../monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md
-        - name: アプリの実験用のコードを記述する
-          href: ../monetize/code-your-experiment-in-your-app.md
-        - name: パートナー センターで実験を定義する
-          href: ../monetize/define-your-experiment-in-the-dev-center-dashboard.md
-        - name: パートナー センターで実験を管理する
-          href: ../monetize/manage-your-experiment.md
-        - name: 最初の実験を作成して実行する
-          href: ../monetize/create-and-run-your-first-experiment-with-a-b-testing.md
-      - name: アプリからのフィードバック Hub の起動
-        href: ../monetize/launch-feedback-hub-from-your-app.md
-      - name: ターゲット プッシュ通知用のアプリの構成
-        href: ../monetize/configure-your-app-to-receive-dev-center-notifications.md
-      - name: パートナー センターのカスタム イベントをログに記録する
-        href: ../monetize/log-custom-events-for-dev-center.md
-    - name: 評価とレビューを求める
-      href: ../monetize/request-ratings-and-reviews.md
-    - name: Microsoft Store サービス
-      href: ../monetize/using-windows-store-services.md
-      items:
-      - name: 分析データへのアクセス
-        href: ../monetize/access-analytics-data-using-windows-store-services.md
-        items:
-        - name: UWP アプリ
+            - name: 実行可能コードによるオプション パッケージ
+              href: ../packaging/optional-packages-with-executable-code.md
+        - name: アプリ インストーラーで UWP アプリをインストールする
+          href: ../packaging/appinstaller-root.md
           items:
-          - name: 取得データおよびインストール データの取得
-            items:
-            - name: アプリの取得数の取得
-              href: ../monetize/get-app-acquisitions.md
-            - name: アプリのインストール数の取得
-              href: ../monetize/get-app-installs.md
-            - name: アプリの入手に関するファネル データの取得
-              href: ../monetize/get-acquisition-funnel-data.md
-            - name: チャネルごとのアプリのコンバージョンの取得
-              href: ../monetize/get-app-conversions-by-channel.md
-            - name: アドオンの入手数の取得
-              href: ../monetize/get-in-app-acquisitions.md
-            - name: サブスクリプション アドオンの入手数の取得
-              href: ../monetize/get-subscription-acquisitions.md
-            - name: チャネルごとのアドオンのコンバージョンの取得
-              href: ../monetize/get-add-on-conversions-by-channel.md
-          - name: アプリのインサイト データの取得
-            href: ../monetize/get-insights-data-for-your-app.md
-          - name: アプリの評価の取得
-            href: ../monetize/get-app-ratings.md
-          - name: アプリのレビューの取得
-            href: ../monetize/get-app-reviews.md
-          - name: アプリの使用状況 (日単位) の取得
-            href: ../monetize/get-app-usage-daily.md
-          - name: アプリの使用状況 (月単位) の取得
-            href: ../monetize/get-app-usage-monthly.md
-          - name: エラー報告データの取得
-            href: ../monetize/get-error-reporting-data.md
-            items:
-            - name: アプリのエラーに関する詳細情報の取得
-              href: ../monetize/get-details-for-an-error-in-your-app.md
-            - name: アプリのエラーに関するスタック トレースの取得
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-app.md
-            - name: アプリのエラーの CAB ファイルをダウンロードする
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-app.md
-          - name: 広告のパフォーマンス データの取得
-            href: ../monetize/get-ad-performance-data.md
-          - name: 広告キャンペーンのパフォーマンス データの取得
-            href: ../monetize/get-ad-campaign-performance-data.md
-        - name: デスクトップ アプリ
-          items:
-          - name: デスクトップ アプリケーションのインストール数の取得
-            href: ../monetize/get-desktop-app-installs.md
-          - name: デスクトップ アプリケーションのインサイト データの取得
-            href: ../monetize/get-insights-data-for-your-desktop-app.md
-          - name: デスクトップ アプリケーションのアップグレード ブロックの取得
-            href: ../monetize/get-desktop-block-data.md
-          - name: デスクトップ アプリケーションのアップグレード ブロックの詳細情報の取得
-            href: ../monetize/get-desktop-block-data-details.md
-          - name: デスクトップ アプリケーションのエラー報告データの取得
-            href: ../monetize/get-desktop-application-error-reporting-data.md
-            items:
-            - name: デスクトップ アプリケーションのエラーに関する詳細情報の取得
-              href: ../monetize/get-details-for-an-error-in-your-desktop-application.md
-            - name: デスクトップ アプリケーションのエラーに関するスタック トレースの取得
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-desktop-application.md
-            - name: デスクトップ アプリケーションのエラーの CAB ファイルをダウンロードする
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-desktop-application.md
-        - name: Xbox One ゲームと Xbox Live
-          items:
-          - name: Xbox One ゲームの入手数の取得
-            href: ../monetize/get-xbox-one-game-acquisitions.md
-          - name: Xbox One アドオンの入手数の取得
-            href: ../monetize/get-xbox-one-add-on-acquisitions.md
-          - name: Xbox One ゲームのエラー報告データの取得
-            href: ../monetize/get-error-reporting-data-for-your-xbox-one-game.md
-            items:
-            - name: Xbox One ゲームのエラーに関する詳細情報の取得
-              href: ../monetize/get-details-for-an-error-in-your-xbox-one-game.md
-            - name: Xbox One ゲームのエラーに関するスタック トレースの取得
-              href: ../monetize/get-the-stack-trace-for-an-error-in-your-xbox-one-game.md
-            - name: Xbox One ゲームのエラーの CAB ファイルをダウンロードする
-              href: ../monetize/download-the-cab-file-for-an-error-in-your-xbox-one-game.md
-          - name: Xbox Live の分析データの取得
-            href: ../monetize/get-xbox-live-analytics.md
-            items:
-            - name: Xbox Live の実績データの取得
-              href: ../monetize/get-xbox-live-achievements-data.md
-            - name: Xbox Live の正常性データの取得
-              href: ../monetize/get-xbox-live-health-data.md
-            - name: Xbox Live ゲーム ハブのデータの取得
-              href: ../monetize/get-xbox-live-game-hub-data.md
-            - name: Xbox Live クラブのデータの取得
-              href: ../monetize/get-xbox-live-club-data.md
-            - name: Xbox Live のマルチプレイヤー データの取得
-              href: ../monetize/get-xbox-live-multiplayer-data.md
-            - name: Xbox Live の同時使用状況データの取得
-              href: ../monetize/get-xbox-live-concurrent-usage-data.md
-      - name: レビューへの返信
-        href: ../monetize/respond-to-reviews-using-windows-store-services.md
-        items:
-        - name: レビューへの返信情報の取得
-          href: ../monetize/get-response-info-for-app-reviews.md
-        - name: レビューに対する返信の送信
-          href: ../monetize/submit-responses-to-app-reviews.md
-      - name: 広告キャンペーンの実行
-        href: ../monetize/run-ad-campaigns-using-windows-store-services.md
-        items:
-        - name: 広告キャンペーンの管理
-          href: ../monetize/manage-ad-campaigns.md
-        - name: 配信ラインの管理
-          href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
-        - name: 対象プロファイルの管理
-          href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
-        - name: クリエイティブの管理
-          href: ../monetize/manage-creatives-for-ad-campaigns.md
-      - name: 申請の作成と管理
-        href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
-        items:
-        - name: アプリ データの取得
-          href: ../monetize/get-app-data.md
-          items:
-          - name: すべてのアプリの入手
-            href: ../monetize/get-all-apps.md
-          - name: アプリの入手
-            href: ../monetize/get-an-app.md
-          - name: アプリのアドオンの入手
-            href: ../monetize/get-add-ons-for-an-app.md
-          - name: アプリのパッケージ フライトの入手
-            href: ../monetize/get-flights-for-an-app.md
-        - name: アプリの申請の管理
-          href: ../monetize/manage-app-submissions.md
-          items:
-          - name: アプリの申請の取得
-            href: ../monetize/get-an-app-submission.md
-          - name: アプリの申請の状態の取得
-            href: ../monetize/get-status-for-an-app-submission.md
-          - name: アプリの申請の作成
-            href: ../monetize/create-an-app-submission.md
-          - name: アプリの申請のコミット
-            href: ../monetize/commit-an-app-submission.md
-          - name: アプリの申請の更新
-            href: ../monetize/update-an-app-submission.md
-          - name: アプリの申請の削除
-            href: ../monetize/delete-an-app-submission.md
-          - name: アプリの申請に関するロールアウト情報の取得
-            href: ../monetize/get-package-rollout-info-for-an-app-submission.md
-          - name: アプリの申請に関するロールアウト率の更新
-            href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
-          - name: アプリの申請に関するロールアウトを停止する
-            href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
-          - name: アプリの申請に関するロールアウトを完了する
-            href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
-        - name: アドオンの管理
-          href: ../monetize/manage-add-ons.md
-          items:
-          - name: すべてのアドオンの入手
-            href: ../monetize/get-all-add-ons.md
-          - name: アドオンの入手
-            href: ../monetize/get-an-add-on.md
-          - name: アドオンの作成
-            href: ../monetize/create-an-add-on.md
-          - name: アドオンの削除
-            href: ../monetize/delete-an-add-on.md
-        - name: アドオンの申請の管理
-          href: ../monetize/manage-add-on-submissions.md
-          items:
-          - name: アドオンの申請の取得
-            href: ../monetize/get-an-add-on-submission.md
-          - name: アドオンの申請の状態の取得
-            href: ../monetize/get-status-for-an-add-on-submission.md
-          - name: アドオンの申請の作成
-            href: ../monetize/create-an-add-on-submission.md
-          - name: アドオンの申請のコミット
-            href: ../monetize/commit-an-add-on-submission.md
-          - name: アドオンの申請の更新
-            href: ../monetize/update-an-add-on-submission.md
-          - name: アドオンの申請の削除
-            href: ../monetize/delete-an-add-on-submission.md
-        - name: パッケージ フライトの管理
-          href: ../monetize/manage-flights.md
-          items:
-          - name: パッケージ フライトの取得
-            href: ../monetize/get-a-flight.md
-          - name: パッケージ フライトの作成
-            href: ../monetize/create-a-flight.md
-          - name: パッケージ フライトの削除
-            href: ../monetize/delete-a-flight.md
-        - name: パッケージ フライトの申請の管理
-          href: ../monetize/manage-flight-submissions.md
-          items:
-          - name: パッケージ フライトの申請の取得
-            href: ../monetize/get-a-flight-submission.md
-          - name: パッケージ フライトの申請の状態の取得
-            href: ../monetize/get-status-for-a-flight-submission.md
-          - name: パッケージ フライトの申請の作成
-            href: ../monetize/create-a-flight-submission.md
-          - name: パッケージ フライトの申請のコミット
-            href: ../monetize/commit-a-flight-submission.md
-          - name: パッケージ フライトの申請の更新
-            href: ../monetize/update-a-flight-submission.md
-          - name: パッケージ フライトの申請の削除
-            href: ../monetize/delete-a-flight-submission.md
-          - name: パッケージ フライトの申請に関するロールアウトの情報を取得する
-            href: ../monetize/get-package-rollout-info-for-a-flight-submission.md
-          - name: フライトの申請に関するロールアウト率の更新
-            href: ../monetize/update-the-package-rollout-percentage-for-a-flight-submission.md
-          - name: フライトの申請に関するロールアウトを停止する
-            href: ../monetize/halt-the-package-rollout-for-a-flight-submission.md
-          - name: フライトの申請に関するロールアウトを完了する
-            href: ../monetize/finalize-the-package-rollout-for-a-flight-submission.md
-        - name: 申請 API 用のコード例
-          href: ../monetize/code-examples-for-the-windows-store-submission-api.md
-          items:
-          - name: 'C# のコード例: アプリ、アドオン、およびフライトの申請'
-            href: ../monetize/csharp-code-examples-for-the-windows-store-submission-api.md
-          - name: 'C# のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請'
-            href: ../monetize/csharp-code-examples-for-submissions-game-options-and-trailers.md
-          - name: 'Java のコード例: アプリ、アドオン、およびフライトの申請'
-            href: ../monetize/java-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請'
-            href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
-          - name: 'Python のコード例: アプリ、アドオン、およびフライトの申請'
-            href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Python のコード例: ゲーム オプションおよびトレーラーのアプリの申請'
-            href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
-      - name: 対象のプランを管理する
-        href: ../monetize/manage-targeted-offers-using-windows-store-services.md
-        items:
-        - name: 対象のプランを取得する
-          href: ../monetize/get-targeted-offers.md
-      - name: サービスから製品の権利を管理する
-        href: ../monetize/view-and-grant-products-from-a-service.md
-        items:
-        - name: 製品の照会
-          href: ../monetize/query-for-products.md
-        - name: コンシューマブルな製品をフルフィルメント完了として報告する
-          href: ../monetize/report-consumable-products-as-fulfilled.md
-        - name: 無料の製品の付与
-          href: ../monetize/grant-free-products.md
-        - name: ユーザーのサブスクリプションを取得する
-          href: ../monetize/get-subscriptions-for-a-user.md
-        - name: ユーザーのサブスクリプションに関する請求の状態を変更する
-          href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
-        - name: Microsoft Store ID キーの更新
-          href: ../monetize/renew-a-windows-store-id-key.md
-      - name: 広告ネットワーク用のアプリのメタデータ API
-        href: ../monetize/app-metadata-api-for-advertising-networks.md
-    - name: Store に要求を送信する
-      href: ../monetize/send-requests-to-the-store.md
-    - name: 市販デモ (RDX) 機能の追加
-      href: ../monetize/retail-demo-experience.md
-    - name: 支払い要求 API で支払いを簡略化する
-      href: ../monetize/payment-request.md
-  - name: アプリのパッケージ化
-    href: ../packaging/index.md
-    items:
-    - name: Visual Studio で UWP アプリをパッケージ化する
-      href: ../packaging/packaging-uwp-apps.md
-    - name: 手動でのアプリのパッケージ化
-      href: ../packaging/manual-packaging-root.md
-      items:
-      - name: MakeAppx.exe ツールを使ったアプリ パッケージの作成
-        href: ../packaging/create-app-package-with-makeappx-tool.md
-      - name: パッケージ署名用証明書を作成する
-        href: ../packaging/create-certificate-package-signing.md
-      - name: SignTool を使ってアプリ パッケージに署名する
-        href: ../packaging/sign-app-package-using-signtool.md
-      - name: アセット パッケージとパッケージ圧縮を使った開発
-        href: ../packaging/package-folding.md
-      - name: フラット バンドル アプリ パッケージ
-        href: ../packaging/flat-bundles.md
-      - name: アセット パッケージの概要
-        href: ../packaging/asset-packages.md
-      - name: パッケージ レイアウトを使ったパッケージの作成
-        href: ../packaging/packaging-layout.md
-    - name: アプリ パッケージのアーキテクチャ
-      href: ../packaging/device-architecture.md
-    - name: UWP アプリ ストリーミング インストール
-      href: ../packaging/streaming-install.md
-      items:
-      - name: ソース コンテンツ グループ マップの作成と変換
-        href: ../packaging/create-cgm.md
-    - name: オプション パッケージと関連セットの作成
-      href: ../packaging/optional-packages.md
-      items:
-      - name: 実行可能コードによるオプション パッケージ
-        href: ../packaging/optional-packages-with-executable-code.md
-    - name: アプリ インストーラーで UWP アプリをインストールする
-      href: ../packaging/appinstaller-root.md
-      items:
-      - name: Visual Studio を使ったアプリ インストーラー ファイルの作成
-        href: ../packaging/create-appinstallerfile-vs.md
-      - name: Web ページから UWP アプリをインストールする
-        href: ../packaging/installing-UWP-apps-web.md
-      - name: アプリ インストーラー ファイルを使用して関連セットをインストールする
-        href: ../packaging/install-related-set.md
-      - name: アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
-        href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Azure Web アプリから UWP アプリをインストールする
-        href: ../packaging/web-install-azure.md
-      - name: IIS サーバーから UWP アプリをインストールする
-        href: ../packaging/web-install-iis.md
-      - name: Web インストール用に AWS で UWP アプリ パッケージをホストする
-        href: ../packaging/web-install-aws.md
-    - name: WinAppDeployCmd.exe ツールを使ったアプリのインストール
-      href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
-    - name: アプリ機能の宣言
-      href: ../packaging/app-capability-declarations.md
-    - name: UWP アプリの自動ビルドを設定する
-      href: ../packaging/auto-build-package-uwp-apps.md
-    - name: パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
-      href: ../packaging/self-install-package-updates.md
+            - name: Visual Studio を使ったアプリ インストーラー ファイルの作成
+              href: ../packaging/create-appinstallerfile-vs.md
+            - name: Web ページから UWP アプリをインストールする
+              href: ../packaging/installing-UWP-apps-web.md
+            - name: アプリ インストーラー ファイルを使用して関連セットをインストールする
+              href: ../packaging/install-related-set.md
+            - name: アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
+              href: ../packaging/troubleshoot-appinstaller-issues.md
+            - name: Azure Web アプリから UWP アプリをインストールする
+              href: ../packaging/web-install-azure.md
+            - name: IIS サーバーから UWP アプリをインストールする
+              href: ../packaging/web-install-iis.md
+            - name: Web インストール用に AWS で UWP アプリ パッケージをホストする
+              href: ../packaging/web-install-aws.md
+        - name: WinAppDeployCmd.exe ツールを使ったアプリのインストール
+          href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
+        - name: アプリ機能の宣言
+          href: ../packaging/app-capability-declarations.md
+        - name: UWP アプリの自動ビルドを設定する
+          href: ../packaging/auto-build-package-uwp-apps.md
+        - name: パッケージの更新プログラムを Microsoft Store からダウンロードしてインストールする
+          href: ../packaging/self-install-package-updates.md
 - name: プラットフォーム
   items:
-  - name: C++/WinRT
-    href: ../cpp-and-winrt-apis/index.md
-    items:
-    - name: 概要
-      href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-    - name: 使ってみる
-      href: ../cpp-and-winrt-apis/get-started.md
-    - name: 新着情報
-      href: ../cpp-and-winrt-apis/news.md
-    - name: よく寄せられる質問
-      href: ../cpp-and-winrt-apis/faq.md
-    - name: トラブルシューティング
-      href: ../cpp-and-winrt-apis/troubleshooting.md
-    - name: Photo Editor サンプル アプリケーション
-      href: ../cpp-and-winrt-apis/photo-editor-sample.md
-    - name: 文字列の処理
-      href: ../cpp-and-winrt-apis/strings.md
-    - name: 標準 C++ データ型
-      href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-    - name: IInspectable へのスカラー値のボックス化とボックス化解除
-      href: ../cpp-and-winrt-apis/boxing.md
-    - name: API の使用
-      href: ../cpp-and-winrt-apis/consume-apis.md
-    - name: API の作成
-      href: ../cpp-and-winrt-apis/author-apis.md
-    - name: エラー処理
-      href: ../cpp-and-winrt-apis/error-handling.md
-    - name: デリゲートを使用したイベントの処理
-      href: ../cpp-and-winrt-apis/handle-events.md
-    - name: イベントの作成
-      href: ../cpp-and-winrt-apis/author-events.md
-    - name: コレクション
-      href: ../cpp-and-winrt-apis/collections.md
-    - name: 同時実行操作と非同期操作
-      href: ../cpp-and-winrt-apis/concurrency.md
-    - name: XAML コントロール; プロパティへのバインド
-      href: ../cpp-and-winrt-apis/binding-property.md
-    - name: XAML アイテム コントロール; コレクションへのバインド
-      href: ../cpp-and-winrt-apis/binding-collection.md
-    - name: XAML カスタム (テンプレート化) コントロール
-      href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
-    - name: COM コンポーネントの使用
-      href: ../cpp-and-winrt-apis/consume-com.md
-    - name: COM コンポーネントの作成
-      href: ../cpp-and-winrt-apis/author-coclasses.md
-    - name: C++/CX から C++/WinRT への移行
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
-    - name: C++/CX との相互運用
-      href: ../cpp-and-winrt-apis/interop-winrt-cx.md
-    - name: WRL から C++/WinRT への移行
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
-    - name: ABI との相互運用
-      href: ../cpp-and-winrt-apis/interop-winrt-abi.md
-    - name: 強参照と弱参照
-      href: ../cpp-and-winrt-apis/weak-references.md
-    - name: アジャイル オブジェクト
-      href: ../cpp-and-winrt-apis/agile-objects.md
-    - name: C++ 言語
+    - name: C++/WinRT
+      href: ../cpp-and-winrt-apis/index.md
       items:
-      - name: 値のカテゴリと参照
-        href: ../cpp-and-winrt-apis/cpp-value-categories.md
-  - name: セキュリティ
-    href: ../security/index.md
-    items:
-    - name: 安全な Windows アプリの開発について
-      href: ../security/intro-to-secure-windows-app-development.md
-    - name: 認証とユーザー ID
-      href: ../security/authentication-and-user-identity.md
-      items:
-      - name: 資格情報保管ボックス
-        href: ../security/credential-locker.md
-      - name: 指紋生体認証
-        href: ../security/fingerprint-biometrics.md
-      - name: Windows Hello
-        href: ../security/microsoft-passport.md
-        items:
-        - name: Windows Hello ログイン アプリの作成
-          href: ../security/microsoft-passport-login.md
-        - name: Windows Hello ログイン サービスの作成
-          href: ../security/microsoft-passport-login-auth-service.md
-      - name: スマート カード
-        href: ../security/smart-cards.md
-      - name: 共有証明書
-        href: ../security/share-certificates.md
-      - name: Web アカウント マネージャー
-        href: ../security/web-account-manager.md
-      - name: コンパニオン IoT デバイスを使ったロック解除
-        href: ../security/companion-device-unlock.md
-      - name: Web 認証ブローカー
-        href: ../security/web-authentication-broker.md
-    - name: 暗号化
-      href: ../security/cryptography.md
-      items:
-      - name: 証明書
-        href: ../security/certificates.md
-      - name: 暗号化キー
-        href: ../security/cryptographic-keys.md
-      - name: データ保護
-        href: ../security/data-protection.md
-      - name: MAC、ハッシュ、および署名
-        href: ../security/macs-hashes-and-signatures.md
-      - name: 暗号化に関する輸出制限の順守
-        href: ../security/export-restrictions-on-cryptography.md
-      - name: 一般的な暗号化タスク
-        href: ../security/common-cryptography-tasks.md
-        items:
-        - name: 乱数の生成
-          href: ../security/create-random-numbers.md
-        - name: バッファーの比較
-          href: ../security/compare-buffers.md
-        - name: 文字列とバイナリ データの間の変換
-          href: ../security/convert-between-strings-and-binary-data.md
-        - name: バイト配列間のコピー
-          href: ../security/copy-to-and-from-byte-arrays.md
-        - name: データのエンコードとデコード
-          href: ../security/encode-and-decode-data.md
-  - name: ビジュアル レイヤー
-    href: ../composition/visual-layer.md
-    items:
-    - name: コンポジションのビジュアル
-      href: ../composition/composition-visual-tree.md
-    - name: コンポジションのアニメーション
-      href: ../composition/composition-animation.md
-      items:
-      - name: 時間ベース アニメーション
-        href: ../composition/time-animations.md
-      - name: 関係ベース アニメーション
-        href: ../composition/relation-animations.md
-      - name: 自然な動作のアニメーション
-        href: ../composition/natural-animations.md
-        items:
-        - name: ばねアニメーション
-          href: ../composition/spring-animations.md
-      - name: 入力駆動型アニメーション
-        href: ../composition/input-driven-animations.md
-        items:
-        - name: スクロール ベース アニメーション
-          href: ../composition/scroll-input-animations.md
-        - name: ポインター ベース アニメーション
-          href: ../composition/pointer-input-animations.md
-        - name: カスタム操作
-          href: ../composition/interaction-tracker-manipulations.md
+        - name: 概要
+          href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
+        - name: 使ってみる
+          href: ../cpp-and-winrt-apis/get-started.md
+        - name: 新着情報
+          href: ../cpp-and-winrt-apis/news.md
+        - name: よく寄せられる質問
+          href: ../cpp-and-winrt-apis/faq.md
+        - name: トラブルシューティング
+          href: ../cpp-and-winrt-apis/troubleshooting.md
+        - name: Photo Editor サンプル アプリケーション
+          href: ../cpp-and-winrt-apis/photo-editor-sample.md
+        - name: 文字列の処理
+          href: ../cpp-and-winrt-apis/strings.md
+        - name: 標準 C++ データ型
+          href: ../cpp-and-winrt-apis/std-cpp-data-types.md
+        - name: IInspectable へのスカラー値のボックス化とボックス化解除
+          href: ../cpp-and-winrt-apis/boxing.md
+        - name: API の使用
+          href: ../cpp-and-winrt-apis/consume-apis.md
+        - name: API の作成
+          href: ../cpp-and-winrt-apis/author-apis.md
+        - name: エラー処理
+          href: ../cpp-and-winrt-apis/error-handling.md
+        - name: デリゲートを使用したイベントの処理
+          href: ../cpp-and-winrt-apis/handle-events.md
+        - name: イベントの作成
+          href: ../cpp-and-winrt-apis/author-events.md
+        - name: コレクション
+          href: ../cpp-and-winrt-apis/collections.md
+        - name: 同時実行操作と非同期操作
+          href: ../cpp-and-winrt-apis/concurrency.md
+        - name: XAML コントロール; プロパティへのバインド
+          href: ../cpp-and-winrt-apis/binding-property.md
+        - name: XAML アイテム コントロール; コレクションへのバインド
+          href: ../cpp-and-winrt-apis/binding-collection.md
+        - name: XAML カスタム (テンプレート化) コントロール
+          href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
+        - name: COM コンポーネントの使用
+          href: ../cpp-and-winrt-apis/consume-com.md
+        - name: COM コンポーネントの作成
+          href: ../cpp-and-winrt-apis/author-coclasses.md
+        - name: C++/CX から C++/WinRT への移行
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
+        - name: C++/CX との相互運用
+          href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+        - name: WRL から C++/WinRT への移行
+          href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+        - name: ABI との相互運用
+          href: ../cpp-and-winrt-apis/interop-winrt-abi.md
+        - name: 強参照と弱参照
+          href: ../cpp-and-winrt-apis/weak-references.md
+        - name: アジャイル オブジェクト
+          href: ../cpp-and-winrt-apis/agile-objects.md
+        - name: C++ 言語
           items:
-          - name: スナップ位置
-            href: ../composition/inertia-modifiers.md
-          - name: 引っ張って更新
-            href: ../composition/source-modifiers.md
-    - name: コンポジション効果
-      href: ../composition/composition-effects.md
+            - name: 値のカテゴリと参照
+              href: ../cpp-and-winrt-apis/cpp-value-categories.md
+    - name: セキュリティ
+      href: ../security/index.md
       items:
-      - name: コンポジションのシャドウ
-        href: ../composition/composition-shadows.md
-      - name: コンポジションの照明
-        href: ../composition/composition-lighting.md
-    - name: コンポジションのブラシ
-      href: ../composition/composition-brushes.md
-    - name: コンポジションのネイティブ相互運用
-      href: ../composition/composition-native-interop.md
-    - name: UI の調整
-      href: ../composition/composition-tailoring.md
-    - name: XAML の使用方法
-      href: ../composition/using-the-visual-layer-with-xaml.md
+        - name: 安全な Windows アプリの開発について
+          href: ../security/intro-to-secure-windows-app-development.md
+        - name: 認証とユーザー ID
+          href: ../security/authentication-and-user-identity.md
+          items:
+            - name: 資格情報保管ボックス
+              href: ../security/credential-locker.md
+            - name: 指紋生体認証
+              href: ../security/fingerprint-biometrics.md
+            - name: Windows Hello
+              href: ../security/microsoft-passport.md
+              items:
+                - name: Windows Hello ログイン アプリの作成
+                  href: ../security/microsoft-passport-login.md
+                - name: Windows Hello ログイン サービスの作成
+                  href: ../security/microsoft-passport-login-auth-service.md
+            - name: スマート カード
+              href: ../security/smart-cards.md
+            - name: 共有証明書
+              href: ../security/share-certificates.md
+            - name: Web アカウント マネージャー
+              href: ../security/web-account-manager.md
+            - name: コンパニオン IoT デバイスを使ったロック解除
+              href: ../security/companion-device-unlock.md
+            - name: Web 認証ブローカー
+              href: ../security/web-authentication-broker.md
+        - name: 暗号化
+          href: ../security/cryptography.md
+          items:
+            - name: 証明書
+              href: ../security/certificates.md
+            - name: 暗号化キー
+              href: ../security/cryptographic-keys.md
+            - name: データ保護
+              href: ../security/data-protection.md
+            - name: MAC、ハッシュ、および署名
+              href: ../security/macs-hashes-and-signatures.md
+            - name: 暗号化に関する輸出制限の順守
+              href: ../security/export-restrictions-on-cryptography.md
+            - name: 一般的な暗号化タスク
+              href: ../security/common-cryptography-tasks.md
+              items:
+                - name: 乱数の生成
+                  href: ../security/create-random-numbers.md
+                - name: バッファーの比較
+                  href: ../security/compare-buffers.md
+                - name: 文字列とバイナリ データの間の変換
+                  href: ../security/convert-between-strings-and-binary-data.md
+                - name: バイト配列間のコピー
+                  href: ../security/copy-to-and-from-byte-arrays.md
+                - name: データのエンコードとデコード
+                  href: ../security/encode-and-decode-data.md
+    - name: ビジュアル レイヤー
+      href: ../composition/visual-layer.md
       items:
-      - name: XAML の照明
-        href: ../composition/xaml-lighting.md
-  - name: サービスとしての Windows
-    href: ../updates-and-versions/application-development-for-windows-as-a-service.md
-  - name: Windows ランタイム コンポーネント
-    href: ../winrt-components/index.md
-    items:
-    - name: C++/CX での Windows ランタイム コンポーネントの作成
-      href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-    - name: 'チュートリアル: C++/CX での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し'
-      href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
-    - name: C# と Visual Basic での Windows ランタイム コンポーネントの作成
-      href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+        - name: コンポジションのビジュアル
+          href: ../composition/composition-visual-tree.md
+        - name: コンポジションのアニメーション
+          href: ../composition/composition-animation.md
+          items:
+            - name: 時間ベース アニメーション
+              href: ../composition/time-animations.md
+            - name: 関係ベース アニメーション
+              href: ../composition/relation-animations.md
+            - name: 自然な動作のアニメーション
+              href: ../composition/natural-animations.md
+              items:
+                - name: ばねアニメーション
+                  href: ../composition/spring-animations.md
+            - name: 入力駆動型アニメーション
+              href: ../composition/input-driven-animations.md
+              items:
+                - name: スクロール ベース アニメーション
+                  href: ../composition/scroll-input-animations.md
+                - name: ポインター ベース アニメーション
+                  href: ../composition/pointer-input-animations.md
+                - name: カスタム操作
+                  href: ../composition/interaction-tracker-manipulations.md
+                  items:
+                    - name: スナップ位置
+                      href: ../composition/inertia-modifiers.md
+                    - name: 引っ張って更新
+                      href: ../composition/source-modifiers.md
+        - name: コンポジション効果
+          href: ../composition/composition-effects.md
+          items:
+            - name: コンポジションのシャドウ
+              href: ../composition/composition-shadows.md
+            - name: コンポジションの照明
+              href: ../composition/composition-lighting.md
+        - name: コンポジションのブラシ
+          href: ../composition/composition-brushes.md
+        - name: コンポジションのネイティブ相互運用
+          href: ../composition/composition-native-interop.md
+        - name: UI の調整
+          href: ../composition/composition-tailoring.md
+        - name: XAML の使用方法
+          href: ../composition/using-the-visual-layer-with-xaml.md
+          items:
+            - name: XAML の照明
+              href: ../composition/xaml-lighting.md
+    - name: サービスとしての Windows
+      href: ../updates-and-versions/application-development-for-windows-as-a-service.md
+    - name: Windows ランタイム コンポーネント
+      href: ../winrt-components/index.md
       items:
-      - name: Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
-        href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
-      - name: Windows ランタイム コンポーネントに配列を渡す
-        href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
-      - name: Windows ランタイム コンポーネントでのエラー状態の診断
-        href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
-      - name: マネージ Windows ランタイム コンポーネントの配布
-        href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
-      - name: .NET Framework での Windows ランタイム型の対応付け
-        href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-    - name: 'チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し'
-      href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
-    - name: Windows ランタイム コンポーネントでイベントを生成する
-      href: ../winrt-components/raising-events-in-windows-runtime-components.md
-    - name: サイド ローディングされた UWP アプリのための Windows ランタイム コンポーネント ブローカー
-      href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
-  - name: XAML プラットフォーム
-    href: ../xaml-platform/index.md
-    items:
-    - name: XAML の概要
-      href: ../xaml-platform/xaml-overview.md
+        - name: C++/CX での Windows ランタイム コンポーネントの作成
+          href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
+        - name: 'チュートリアル: C++/CX での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し'
+          href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
+        - name: 'C# と Visual Basic での Windows ランタイム コンポーネントの作成'
+          href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
+          items:
+            - name: Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
+              href: ../winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md
+            - name: Windows ランタイム コンポーネントに配列を渡す
+              href: ../winrt-components/passing-arrays-to-a-windows-runtime-component.md
+            - name: Windows ランタイム コンポーネントでのエラー状態の診断
+              href: ../winrt-components/diagnosing-windows-runtime-component-error-conditions.md
+            - name: マネージ Windows ランタイム コンポーネントの配布
+              href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
+            - name: .NET Framework での Windows ランタイム型の対応付け
+              href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
+        - name: 'チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し'
+          href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
+        - name: Windows ランタイム コンポーネントでイベントを生成する
+          href: ../winrt-components/raising-events-in-windows-runtime-components.md
+        - name: サイド ローディングされた UWP アプリのための Windows ランタイム コンポーネント ブローカー
+          href: ../winrt-components/brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md
+    - name: XAML プラットフォーム
+      href: ../xaml-platform/index.md
       items:
-      - name: XAML 構文のガイド
-        href: ../xaml-platform/xaml-syntax-guide.md
-        items:
-        - name: プロパティ パス構文
-          href: ../xaml-platform/property-path-syntax.md
-        - name: 移動と描画のコマンド構文
-          href: ../xaml-platform/move-draw-commands-syntax.md
-      - name: XAML と空白
-        href: ../xaml-platform/xaml-and-whitespace.md
-      - name: XAML 名前スコープ
-        href: ../xaml-platform/xaml-namescopes.md
-      - name: XAML 名前空間と名前空間マッピング
-        href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
-      - name: Template settings (テンプレート設定) クラス
-        href: ../xaml-platform/template-settings-classes.md
-      - name: x:Class 属性
-        href: ../xaml-platform/x-class-attribute.md
-      - name: x:DefaultBindMode 属性
-        href: ../xaml-platform/x-defaultbindmode-attribute.md
-      - name: x:DeferLoadStrategy 属性
-        href: ../xaml-platform/x-deferloadstrategy-attribute.md
-      - name: x:FieldModifier 属性
-        href: ../xaml-platform/x-fieldmodifier-attribute.md
-      - name: x:Key 属性
-        href: ../xaml-platform/x-key-attribute.md
-      - name: x:Load 属性
-        href: ../xaml-platform/x-load-attribute.md
-      - name: x:Name 属性
-        href: ../xaml-platform/x-name-attribute.md
-      - name: x:Phase 属性
-        href: ../xaml-platform/x-phase-attribute.md
-      - name: x:Uid ディレクティブ
-        href: ../xaml-platform/x-uid-directive.md
-      - name: '{x:Bind} マークアップ拡張'
-        href: ../xaml-platform/x-bind-markup-extension.md
-      - name: '{Binding} マークアップ拡張'
-        href: ../xaml-platform/binding-markup-extension.md
-      - name: '{x:Null} マークアップ拡張'
-        href: ../xaml-platform/x-null-markup-extension.md
-      - name: XAML 固有のデータ型
-        href: ../xaml-platform/xaml-intrinsic-data-types.md
-      - name: '{CustomResource} マークアップ拡張'
-        href: ../xaml-platform/customresource-markup-extension.md
-      - name: '{RelativeSource} マークアップ拡張'
-        href: ../xaml-platform/relativesource-markup-extension.md
-      - name: '{StaticResource} マークアップ拡張'
-        href: ../xaml-platform/staticresource-markup-extension.md
-      - name: '{TemplateBinding} マークアップ拡張'
-        href: ../xaml-platform/templatebinding-markup-extension.md
-      - name: '{ThemeResource} マークアップ拡張'
-        href: ../xaml-platform/themeresource-markup-extension.md
-    - name: 依存関係プロパティの概要
-      href: ../xaml-platform/dependency-properties-overview.md
-    - name: カスタム依存関係プロパティ
-      href: ../xaml-platform/custom-dependency-properties.md
-    - name: 添付プロパティの概要
-      href: ../xaml-platform/attached-properties-overview.md
-    - name: カスタム添付プロパティ
-      href: ../xaml-platform/custom-attached-properties.md
-    - name: イベントとルーティング イベントの概要
-      href: ../xaml-platform/events-and-routed-events-overview.md
-    - name: デスクトップ アプリケーションの UWP コントロール
-      href: ../xaml-platform/xaml-host-controls.md
-      items:
-      - name: API をホストしている UWP XAML の使用
-        href: ../xaml-platform/using-the-xaml-hosting-api.md
+        - name: XAML の概要
+          href: ../xaml-platform/xaml-overview.md
+          items:
+            - name: XAML 構文のガイド
+              href: ../xaml-platform/xaml-syntax-guide.md
+              items:
+                - name: プロパティ パス構文
+                  href: ../xaml-platform/property-path-syntax.md
+                - name: 移動と描画のコマンド構文
+                  href: ../xaml-platform/move-draw-commands-syntax.md
+            - name: XAML と空白
+              href: ../xaml-platform/xaml-and-whitespace.md
+            - name: XAML 名前スコープ
+              href: ../xaml-platform/xaml-namescopes.md
+            - name: XAML 名前空間と名前空間マッピング
+              href: ../xaml-platform/xaml-namespaces-and-namespace-mapping.md
+            - name: Template settings (テンプレート設定) クラス
+              href: ../xaml-platform/template-settings-classes.md
+            - name: 'x:Class 属性'
+              href: ../xaml-platform/x-class-attribute.md
+            - name: 'x:DefaultBindMode 属性'
+              href: ../xaml-platform/x-defaultbindmode-attribute.md
+            - name: 'x:DeferLoadStrategy 属性'
+              href: ../xaml-platform/x-deferloadstrategy-attribute.md
+            - name: 'x:FieldModifier 属性'
+              href: ../xaml-platform/x-fieldmodifier-attribute.md
+            - name: 'x:Key 属性'
+              href: ../xaml-platform/x-key-attribute.md
+            - name: 'x:Load 属性'
+              href: ../xaml-platform/x-load-attribute.md
+            - name: 'x:Name 属性'
+              href: ../xaml-platform/x-name-attribute.md
+            - name: 'x:Phase 属性'
+              href: ../xaml-platform/x-phase-attribute.md
+            - name: 'x:Uid ディレクティブ'
+              href: ../xaml-platform/x-uid-directive.md
+            - name: '{x:Bind} マークアップ拡張'
+              href: ../xaml-platform/x-bind-markup-extension.md
+            - name: '{Binding} マークアップ拡張'
+              href: ../xaml-platform/binding-markup-extension.md
+            - name: '{x:Null} マークアップ拡張'
+              href: ../xaml-platform/x-null-markup-extension.md
+            - name: XAML 固有のデータ型
+              href: ../xaml-platform/xaml-intrinsic-data-types.md
+            - name: '{CustomResource} マークアップ拡張'
+              href: ../xaml-platform/customresource-markup-extension.md
+            - name: '{RelativeSource} マークアップ拡張'
+              href: ../xaml-platform/relativesource-markup-extension.md
+            - name: '{StaticResource} マークアップ拡張'
+              href: ../xaml-platform/staticresource-markup-extension.md
+            - name: '{TemplateBinding} マークアップ拡張'
+              href: ../xaml-platform/templatebinding-markup-extension.md
+            - name: '{ThemeResource} マークアップ拡張'
+              href: ../xaml-platform/themeresource-markup-extension.md
+        - name: 依存関係プロパティの概要
+          href: ../xaml-platform/dependency-properties-overview.md
+        - name: カスタム依存関係プロパティ
+          href: ../xaml-platform/custom-dependency-properties.md
+        - name: 添付プロパティの概要
+          href: ../xaml-platform/attached-properties-overview.md
+        - name: カスタム添付プロパティ
+          href: ../xaml-platform/custom-attached-properties.md
+        - name: イベントとルーティング イベントの概要
+          href: ../xaml-platform/events-and-routed-events-overview.md
+        - name: デスクトップ アプリケーションの UWP コントロール
+          href: ../xaml-platform/xaml-host-controls.md
+          items:
+            - name: API をホストしている UWP XAML の使用
+              href: ../xaml-platform/using-the-xaml-hosting-api.md
 - name: 人や場所
   items:
-  - name: 連絡先、マイ連絡先、カレンダー
-    href: ../contacts-and-calendar/index.md
-    items:
-    - name: マイ連絡先
-      href: ../contacts-and-calendar/my-people-support.md
+    - name: 連絡先、マイ連絡先、カレンダー
+      href: ../contacts-and-calendar/index.md
       items:
-      - name: マイ連絡先の共有
-        href: ../contacts-and-calendar/my-people-sharing.md
-      - name: マイ連絡先の通知
-        href: ../contacts-and-calendar/my-people-notifications.md
-    - name: 連絡先の選択
-      href: ../contacts-and-calendar/selecting-contacts.md
-    - name: メールの送信
-      href: ../contacts-and-calendar/sending-email.md
-    - name: SMS メッセージの送信
-      href: ../contacts-and-calendar/sending-an-sms-message.md
-    - name: 予定の管理
-      href: ../contacts-and-calendar/managing-appointments.md
-    - name: アプリを連絡先カードの操作に接続する
-      href: ../contacts-and-calendar/integrating-with-contacts.md
-  - name: マップと位置情報
-    href: ../maps-and-location/index.md
-    items:
-    - name: 認証キーの要求
-      href: ../maps-and-location/authentication-key.md
-    - name: 地図の表示
-      href: ../maps-and-location/display-maps.md
-    - name: 関心のあるポイントの表示
-      href: ../maps-and-location/display-poi.md
-    - name: ルートとルート案内の表示
-      href: ../maps-and-location/routes-and-directions.md
-    - name: タイル画像のオーバーレイ
-      href: ../maps-and-location/overlay-tiled-images.md
-    - name: ジオコーディングの実行
-      href: ../maps-and-location/geocoding.md
-    - name: 現在の位置情報の取得
-      href: ../maps-and-location/get-location.md
-    - name: 位置認識アプリの設計ガイドライン
-      href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
-    - name: ビジット追跡の使用ガイドライン
-      href: ../maps-and-location/guidelines-for-visits.md
-    - name: ジオフェンスのセットアップ
-      href: ../maps-and-location/set-up-a-geofence.md
-    - name: ジオフェンスの設計ガイドライン
-      href: ../maps-and-location/guidelines-for-geofencing.md
-    - name: マップ スタイル シート リファレンス
-      href: ../maps-and-location/elements-of-map-style-sheet.md
+        - name: マイ連絡先
+          href: ../contacts-and-calendar/my-people-support.md
+          items:
+            - name: マイ連絡先の共有
+              href: ../contacts-and-calendar/my-people-sharing.md
+            - name: マイ連絡先の通知
+              href: ../contacts-and-calendar/my-people-notifications.md
+        - name: 連絡先の選択
+          href: ../contacts-and-calendar/selecting-contacts.md
+        - name: メールの送信
+          href: ../contacts-and-calendar/sending-email.md
+        - name: SMS メッセージの送信
+          href: ../contacts-and-calendar/sending-an-sms-message.md
+        - name: 予定の管理
+          href: ../contacts-and-calendar/managing-appointments.md
+        - name: アプリを連絡先カードの操作に接続する
+          href: ../contacts-and-calendar/integrating-with-contacts.md
+    - name: マップと位置情報
+      href: ../maps-and-location/index.md
+      items:
+        - name: 認証キーの要求
+          href: ../maps-and-location/authentication-key.md
+        - name: 地図の表示
+          href: ../maps-and-location/display-maps.md
+        - name: 関心のあるポイントの表示
+          href: ../maps-and-location/display-poi.md
+        - name: ルートとルート案内の表示
+          href: ../maps-and-location/routes-and-directions.md
+        - name: タイル画像のオーバーレイ
+          href: ../maps-and-location/overlay-tiled-images.md
+        - name: ジオコーディングの実行
+          href: ../maps-and-location/geocoding.md
+        - name: 現在の位置情報の取得
+          href: ../maps-and-location/get-location.md
+        - name: 位置認識アプリの設計ガイドライン
+          href: ../maps-and-location/guidelines-and-checklist-for-detecting-location.md
+        - name: ビジット追跡の使用ガイドライン
+          href: ../maps-and-location/guidelines-for-visits.md
+        - name: ジオフェンスのセットアップ
+          href: ../maps-and-location/set-up-a-geofence.md
+        - name: ジオフェンスの設計ガイドライン
+          href: ../maps-and-location/guidelines-for-geofencing.md
+        - name: マップ スタイル シート リファレンス
+          href: ../maps-and-location/elements-of-map-style-sheet.md
 - name: 周辺機器、センサー、電源
   href: ../devices-sensors/index.md
   items:
-  - name: デバイス機能を有効にする
-    href: ../devices-sensors/enable-device-capabilities.md
-  - name: ユーザー モード アクセスの有効化
-    href: ../devices-sensors/enable-usermode-access.md
-  - name: デバイスの列挙
-    href: ../devices-sensors/enumerate-devices.md
-    items:
-    - name: デバイス セレクターのビルド
-      href: ../devices-sensors/build-a-device-selector.md
-    - name: ネットワーク経由でデバイスを列挙する
-      href: ../devices-sensors/enumerate-devices-over-a-network.md
-    - name: デバイス情報プロパティ
-      href: ../devices-sensors/device-information-properties.md
-    - name: AEP サービス クラス ID
-      href: ../devices-sensors/aep-service-class-ids.md
-  - name: デバイスのペアリング
-    href: ../devices-sensors/pair-devices.md
-  - name: Point of Service
-    href: ../devices-sensors/point-of-service.md
-    items:
-    - name: 基本
-      href: ../devices-sensors/pos-basics.md
+    - name: デバイス機能を有効にする
+      href: ../devices-sensors/enable-device-capabilities.md
+    - name: ユーザー モード アクセスの有効化
+      href: ../devices-sensors/enable-usermode-access.md
+    - name: デバイスの列挙
+      href: ../devices-sensors/enumerate-devices.md
       items:
-      - name: 機能の宣言
-        href: ../devices-sensors/pos-basics-capability.md
-      - name: デバイスの列挙
-        href: ../devices-sensors/pos-basics-enumerating.md
-      - name: デバイス オブジェクトの作成
-        href: ../devices-sensors/pos-basics-deviceobject.md
-      - name: 要求と有効化
-        href: ../devices-sensors/pos-basics-claim.md
-      - name: 周辺機器の共有
-        href: ../devices-sensors/pos-basics-sharing.md
-      - name: 開始するには
-        href: ../devices-sensors/pos-get-started.md
-    - name: ハードウェア サポート
-      href: ../devices-sensors/pos-device-support.md
-    - name: バーコード スキャナー
-      href: ../devices-sensors/pos-barcodescanner.md
+        - name: デバイス セレクターのビルド
+          href: ../devices-sensors/build-a-device-selector.md
+        - name: ネットワーク経由でデバイスを列挙する
+          href: ../devices-sensors/enumerate-devices-over-a-network.md
+        - name: デバイス情報プロパティ
+          href: ../devices-sensors/device-information-properties.md
+        - name: AEP サービス クラス ID
+          href: ../devices-sensors/aep-service-class-ids.md
+    - name: デバイスのペアリング
+      href: ../devices-sensors/pair-devices.md
+    - name: Point of Service
+      href: ../devices-sensors/point-of-service.md
       items:
-      - name: バーコード スキャナーの構成
-        href: ../devices-sensors/pos-barcodescanner-configure.md
-      - name: ソフトウェア トリガーの使用
-        href: ../devices-sensors/pos-barcodescanner-software-trigger.md
-      - name: シンボル体系の操作
-        href: ../devices-sensors/pos-barcodescanner-symbologies.md
-      - name: バーコード データの取得と理解
-        href: ../devices-sensors/pos-barcodescanner-scan-data.md
-      - name: カメラ バーコード スキャナー
-        href: ../devices-sensors/pos-camerabarcode.md
-        items:
-        - name: システム要件
-          href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: 開始するには
-          href: ../devices-sensors/pos-camerabarcode-get-started.md
-        - name: カメラ プレビューのホスティング
-          href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
-        - name: カメラ バーコード スキャナーの有効化/無効化
-          href: ../devices-sensors/pos-camerabarcode-enable-disable.md
-        - name: サポートされているシンボル体系
-          href: ../devices-sensors/pos-camerabarcode-symbologies.md
-    - name: 磁気ストライプ リーダー
-      href: ../devices-sensors/pos-magnetic-stripe-reader.md
+        - name: 基本
+          href: ../devices-sensors/pos-basics.md
+          items:
+            - name: 機能の宣言
+              href: ../devices-sensors/pos-basics-capability.md
+            - name: デバイスの列挙
+              href: ../devices-sensors/pos-basics-enumerating.md
+            - name: デバイス オブジェクトの作成
+              href: ../devices-sensors/pos-basics-deviceobject.md
+            - name: 要求と有効化
+              href: ../devices-sensors/pos-basics-claim.md
+            - name: 周辺機器の共有
+              href: ../devices-sensors/pos-basics-sharing.md
+            - name: 開始するには
+              href: ../devices-sensors/pos-get-started.md
+        - name: ハードウェア サポート
+          href: ../devices-sensors/pos-device-support.md
+        - name: バーコード スキャナー
+          href: ../devices-sensors/pos-barcodescanner.md
+          items:
+            - name: バーコード スキャナーの構成
+              href: ../devices-sensors/pos-barcodescanner-configure.md
+            - name: ソフトウェア トリガーの使用
+              href: ../devices-sensors/pos-barcodescanner-software-trigger.md
+            - name: シンボル体系の操作
+              href: ../devices-sensors/pos-barcodescanner-symbologies.md
+            - name: バーコード データの取得と理解
+              href: ../devices-sensors/pos-barcodescanner-scan-data.md
+            - name: カメラ バーコード スキャナー
+              href: ../devices-sensors/pos-camerabarcode.md
+              items:
+                - name: システム要件
+                  href: ../devices-sensors/pos-camerabarcode-system-requirements.md
+                - name: 開始するには
+                  href: ../devices-sensors/pos-camerabarcode-get-started.md
+                - name: カメラ プレビューのホスティング
+                  href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
+                - name: カメラ バーコード スキャナーの有効化/無効化
+                  href: ../devices-sensors/pos-camerabarcode-enable-disable.md
+                - name: サポートされているシンボル体系
+                  href: ../devices-sensors/pos-camerabarcode-symbologies.md
+        - name: 磁気ストライプ リーダー
+          href: ../devices-sensors/pos-magnetic-stripe-reader.md
+          items:
+            - name: 磁気ストライプ データの取得と理解
+              href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
+        - name: POS プリンター
+          href: ../devices-sensors/pos-printer.md
+          items:
+            - name: Epson ESC/POS と書式設定
+              href: ../devices-sensors/epson-esc-pos-with-formatting.md
+    - name: センサー
+      href: ../devices-sensors/sensors.md
       items:
-      - name: 磁気ストライプ データの取得と理解
-        href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
-    - name: POS プリンター
-      href: ../devices-sensors/pos-printer.md
+        - name: センサーの調整
+          href: ../devices-sensors/calibrate-sensors.md
+        - name: センサーの向き
+          href: ../devices-sensors/sensor-orientation.md
+        - name: 加速度計の使用
+          href: ../devices-sensors/use-the-accelerometer.md
+        - name: コンパスの使用
+          href: ../devices-sensors/use-the-compass.md
+        - name: ジャイロメーターの使用
+          href: ../devices-sensors/use-the-gyrometer.md
+        - name: 傾斜計の使用
+          href: ../devices-sensors/use-the-inclinometer.md
+        - name: 光センサーの使用
+          href: ../devices-sensors/use-the-light-sensor.md
+        - name: 方位センサーの使用
+          href: ../devices-sensors/use-the-orientation-sensor.md
+    - name: Bluetooth
+      href: ../devices-sensors/bluetooth.md
       items:
-      - name: Epson ESC/POS と書式設定
-        href: ../devices-sensors/epson-esc-pos-with-formatting.md
-  - name: センサー
-    href: ../devices-sensors/sensors.md
-    items:
-    - name: センサーの調整
-      href: ../devices-sensors/calibrate-sensors.md
-    - name: センサーの向き
-      href: ../devices-sensors/sensor-orientation.md
-    - name: 加速度計の使用
-      href: ../devices-sensors/use-the-accelerometer.md
-    - name: コンパスの使用
-      href: ../devices-sensors/use-the-compass.md
-    - name: ジャイロメーターの使用
-      href: ../devices-sensors/use-the-gyrometer.md
-    - name: 傾斜計の使用
-      href: ../devices-sensors/use-the-inclinometer.md
-    - name: 光センサーの使用
-      href: ../devices-sensors/use-the-light-sensor.md
-    - name: 方位センサーの使用
-      href: ../devices-sensors/use-the-orientation-sensor.md
-  - name: Bluetooth
-    href: ../devices-sensors/bluetooth.md
-    items:
-    - name: RFCOMM
-      href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
-    - name: Bluetooth 低エネルギー
-      href: ../devices-sensors/bluetooth-low-energy-overview.md
+        - name: RFCOMM
+          href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
+        - name: Bluetooth 低エネルギー
+          href: ../devices-sensors/bluetooth-low-energy-overview.md
+          items:
+            - name: GATT クライアント
+              href: ../devices-sensors/gatt-client.md
+            - name: GATT サーバー
+              href: ../devices-sensors//gatt-server.md
+            - name: 公開通知
+              href: ../devices-sensors/ble-beacon.md
+        - name: Bluetooth に関する開発者向け FAQ
+          href: ../devices-sensors/bluetooth-dev-faq.md
+    - name: 印刷とスキャン
+      href: ../devices-sensors/printing-and-scanning.md
       items:
-      - name: GATT クライアント
-        href: ../devices-sensors/gatt-client.md
-      - name: GATT サーバー
-        href: ../devices-sensors//gatt-server.md
-      - name: 公開通知
-        href: ../devices-sensors/ble-beacon.md
-    - name: Bluetooth に関する開発者向け FAQ
-      href: ../devices-sensors/bluetooth-dev-faq.md
-  - name: 印刷とスキャン
-    href: ../devices-sensors/printing-and-scanning.md
-    items:
-    - name: アプリからの印刷
-      href: ../devices-sensors/print-from-your-app.md
-    - name: 印刷プレビュー UI のカスタマイズ
-      href: ../devices-sensors/customize-the-print-preview-ui.md
-    - name: 印刷ワークフローのカスタマイズ
-      href: ../devices-sensors/print-workflow-customize.md
-    - name: アプリからスキャンする
-      href: ../devices-sensors/scan-from-your-app.md
-  - name: 3D 印刷
-    href: ../devices-sensors/3d-printing.md
-    items:
-    - name: アプリからの 3D 印刷
-      href: ../devices-sensors/3d-print-from-app.md
-    - name: 3MF パッケージの生成
-      href: ../devices-sensors/generate-3mf.md
-  - name: NFC
-    href: ../devices-sensors/nfc.md
-    items:
-    - name: NFC スマート カード アプリの作成
-      href: ../devices-sensors/host-card-emulation.md
-  - name: バッテリー情報の取得
-    href: ../devices-sensors/get-battery-info.md
+        - name: アプリからの印刷
+          href: ../devices-sensors/print-from-your-app.md
+        - name: 印刷プレビュー UI のカスタマイズ
+          href: ../devices-sensors/customize-the-print-preview-ui.md
+        - name: 印刷ワークフローのカスタマイズ
+          href: ../devices-sensors/print-workflow-customize.md
+        - name: アプリからスキャンする
+          href: ../devices-sensors/scan-from-your-app.md
+    - name: 3D 印刷
+      href: ../devices-sensors/3d-printing.md
+      items:
+        - name: アプリからの 3D 印刷
+          href: ../devices-sensors/3d-print-from-app.md
+        - name: 3MF パッケージの生成
+          href: ../devices-sensors/generate-3mf.md
+    - name: NFC
+      href: ../devices-sensors/nfc.md
+      items:
+        - name: NFC スマート カード アプリの作成
+          href: ../devices-sensors/host-card-emulation.md
+    - name: バッテリー情報の取得
+      href: ../devices-sensors/get-battery-info.md
 - name: アプリの移植
   items:
-  - name: 概要
-    href: ../porting/index.md
-  - name: Windows Phone Silverlight から UWP への移行
-    href: ../porting/wpsl-to-uwp-root.md
-    items:
-    - name: 名前空間とクラス マッピング
-      href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
-    - name: プロジェクトの移植
-      href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
-    - name: トラブルシューティング
-      href: ../porting/wpsl-to-uwp-troubleshooting.md
-    - name: XAML と UI の移植
-      href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
-    - name: 入出力、デバイス、アプリ モデルの移植
-      href: ../porting/wpsl-to-uwp-input-and-sensors.md
-    - name: ビジネス レイヤーとデータ レイヤーの移植
-      href: ../porting/wpsl-to-uwp-business-and-data.md
-    - name: フォーム ファクターと UX の移植
-      href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
-    - name: 'ケース スタディ: Bookstore1'
-      href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
-    - name: 'ケース スタディ: Bookstore2'
-      href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
-  - name: Windows ランタイム 8.x から UWP への移行
-    href: ../porting/w8x-to-uwp-root.md
-    items:
-    - name: プロジェクトの移植
-      href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
-    - name: トラブルシューティング
-      href: ../porting/w8x-to-uwp-troubleshooting.md
-    - name: XAML と UI の移植
-      href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
-    - name: 入出力、デバイス、アプリ モデルの移植
-      href: ../porting/w8x-to-uwp-input-and-sensors.md
-    - name: 'ケース スタディ: Bookstore1'
-      href: ../porting/w8x-to-uwp-case-study-bookstore1.md
-    - name: 'ケース スタディ: Bookstore2'
-      href: ../porting/w8x-to-uwp-case-study-bookstore2.md
-    - name: 'ケース スタディ: QuizGame'
-      href: ../porting/w8x-to-uwp-case-study-quizgame.md
-  - name: デスクトップ アプリケーションのパッケージ化
-    href: ../porting/desktop-to-uwp-root.md
-    items:
-    - name: パッケージ化の準備
-      href: ../porting/desktop-to-uwp-prepare.md
-    - name: Desktop App Converter を使用したパッケージ化
-      href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
-    - name: Visual Studio を使用したパッケージ化
-      href: ../porting/desktop-to-uwp-packaging-dot-net.md
-    - name: 手動でのパッケージ化
-      href: ../porting/desktop-to-uwp-manual-conversion.md
-    - name: Windows 10 との統合
-      href: ../porting/desktop-to-uwp-extensions.md
-    - name: Windows 10 のための拡張
-      href: ../porting/desktop-to-uwp-enhance.md
+    - name: 概要
+      href: ../porting/index.md
+    - name: Windows Phone Silverlight から UWP への移行
+      href: ../porting/wpsl-to-uwp-root.md
       items:
-      - name: 利用可能な UWP API
-        href: ../porting/desktop-to-uwp-supported-api.md
-      - name: ネイティブ イメージを使ったアプリのバイナリの最適化
-        href: ../porting/desktop-to-uwp-r2r.md
-    - name: UWP による拡張
-      href: ../porting/desktop-to-uwp-extend.md
-    - name: 実行、デバッグ、およびテスト
-      href: ../porting/desktop-to-uwp-debug.md
+        - name: 名前空間とクラス マッピング
+          href: ../porting/wpsl-to-uwp-namespace-and-class-mappings.md
+        - name: プロジェクトの移植
+          href: ../porting/wpsl-to-uwp-porting-to-a-uwp-project.md
+        - name: トラブルシューティング
+          href: ../porting/wpsl-to-uwp-troubleshooting.md
+        - name: XAML と UI の移植
+          href: ../porting/wpsl-to-uwp-porting-xaml-and-ui.md
+        - name: 入出力、デバイス、アプリ モデルの移植
+          href: ../porting/wpsl-to-uwp-input-and-sensors.md
+        - name: ビジネス レイヤーとデータ レイヤーの移植
+          href: ../porting/wpsl-to-uwp-business-and-data.md
+        - name: フォーム ファクターと UX の移植
+          href: ../porting/wpsl-to-uwp-form-factors-and-ux.md
+        - name: 'ケース スタディ: Bookstore1'
+          href: ../porting/wpsl-to-uwp-case-study-bookstore1.md
+        - name: 'ケース スタディ: Bookstore2'
+          href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
+    - name: Windows ランタイム 8.x から UWP への移行
+      href: ../porting/w8x-to-uwp-root.md
       items:
-      - name: Windows 10 (S モード) 対応のテスト
-        href: ../porting/desktop-to-uwp-test-windows-s.md
-    - name: ランタイムの修正プログラムの適用
-      href: ../porting/package-support-framework.md
-    - name: 配布
-      href: ../porting/desktop-to-uwp-distribute.md
-    - name: しくみ
-      href: ../porting/desktop-to-uwp-behind-the-scenes.md
-    - name: 既知の問題
-      href: ../porting/desktop-to-uwp-known-issues.md
-  - name: デスクトップと UWP でコードを共有する
-    href: ../porting/desktop-to-uwp-migrate.md
-  - name: Android と iOS 開発者向けの Windows アプリ概念マッピング
-    href: ../porting/android-ios-uwp-map.md
-  - name: iOS から UWP への移行
-    href: ../porting/ios-to-uwp-root.md
-    items:
-    - name: iOS と UWP のアプリ開発方法の選択
-      href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
-    - name: iOS 開発者のための UWP の概要
-      href: ../porting/getting-started-with-uwp-for-ios-developers.md
+        - name: プロジェクトの移植
+          href: ../porting/w8x-to-uwp-porting-to-a-uwp-project.md
+        - name: トラブルシューティング
+          href: ../porting/w8x-to-uwp-troubleshooting.md
+        - name: XAML と UI の移植
+          href: ../porting/w8x-to-uwp-porting-xaml-and-ui.md
+        - name: 入出力、デバイス、アプリ モデルの移植
+          href: ../porting/w8x-to-uwp-input-and-sensors.md
+        - name: 'ケース スタディ: Bookstore1'
+          href: ../porting/w8x-to-uwp-case-study-bookstore1.md
+        - name: 'ケース スタディ: Bookstore2'
+          href: ../porting/w8x-to-uwp-case-study-bookstore2.md
+        - name: 'ケース スタディ: QuizGame'
+          href: ../porting/w8x-to-uwp-case-study-quizgame.md
+    - name: デスクトップ アプリケーションのパッケージ化
+      href: ../porting/desktop-to-uwp-root.md
       items:
-      - name: 'はじめに: プロジェクトの作成'
-        href: ../porting/getting-started-creating-a-project.md
-      - name: 'はじめに: プログラミング言語の選択'
-        href: ../porting/getting-started-choosing-a-programming-language.md
-      - name: 'はじめに: Visual Studio の操作方法'
-        href: ../porting/getting-started-getting-around-in-visual-studio.md
-      - name: 'はじめに: コモン コントロール'
-        href: ../porting/getting-started-common-controls.md
-      - name: 'はじめに: ナビゲーション'
-        href: ../porting/getting-started-navigation.md
-      - name: 'はじめに: アニメーション'
-        href: ../porting/getting-started-animation.md
-      - name: 'はじめに: 次の手順'
-        href: ../porting/getting-started-what-next.md
-    - name: Windows 10 を使用するための Mac のセットアップ
-      href: ../porting/setting-up-your-mac-with-windows-10.md
-  - name: Windows 10 で Web アプリを PWA アプリに変換する
-    href: https://docs.microsoft.com/microsoft-edge/progressive-web-apps
-    items:
-    - name: Windows 7 アプリを PWA としてパッケージ化する
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html
-    - name: iOS アプリを PWA としてパッケージ化する
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html
-    - name: Android アプリを PWA としてパッケージ化する
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html
-    - name: MacOS アプリを PWA としてパッケージ化する
-      href: https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html
-  - name: ARM 版 Windows 10
-    href: ../porting/apps-on-arm.md
-    items:
-    - name: ARM での x86 エミュレーション
-      href: ../porting/apps-on-arm-x86-emulation.md
-    - name: デスクトップ x86 アプリのトラブルシューティング
-      href: ../porting/apps-on-arm-troubleshooting-x86.md
-    - name: UWP ARM32 アプリのトラブルシューティング
-      href: ../porting/apps-on-arm-troubleshooting-arm32.md
-    - name: プログラム互換性のトラブルシューティング ツール (ARM)
-      href: ../porting/apps-on-arm-program-compat-troubleshooter.md
+        - name: パッケージ化の準備
+          href: ../porting/desktop-to-uwp-prepare.md
+        - name: Desktop App Converter を使用したパッケージ化
+          href: ../porting/desktop-to-uwp-run-desktop-app-converter.md
+        - name: Visual Studio を使用したパッケージ化
+          href: ../porting/desktop-to-uwp-packaging-dot-net.md
+        - name: 手動でのパッケージ化
+          href: ../porting/desktop-to-uwp-manual-conversion.md
+        - name: Windows 10 との統合
+          href: ../porting/desktop-to-uwp-extensions.md
+        - name: Windows 10 のための拡張
+          href: ../porting/desktop-to-uwp-enhance.md
+          items:
+            - name: 利用可能な UWP API
+              href: ../porting/desktop-to-uwp-supported-api.md
+            - name: ネイティブ イメージを使ったアプリのバイナリの最適化
+              href: ../porting/desktop-to-uwp-r2r.md
+        - name: UWP による拡張
+          href: ../porting/desktop-to-uwp-extend.md
+        - name: 実行、デバッグ、およびテスト
+          href: ../porting/desktop-to-uwp-debug.md
+          items:
+            - name: Windows 10 (S モード) 対応のテスト
+              href: ../porting/desktop-to-uwp-test-windows-s.md
+        - name: ランタイムの修正プログラムの適用
+          href: ../porting/package-support-framework.md
+        - name: 配布
+          href: ../porting/desktop-to-uwp-distribute.md
+        - name: しくみ
+          href: ../porting/desktop-to-uwp-behind-the-scenes.md
+        - name: 既知の問題
+          href: ../porting/desktop-to-uwp-known-issues.md
+    - name: デスクトップと UWP でコードを共有する
+      href: ../porting/desktop-to-uwp-migrate.md
+    - name: Android と iOS 開発者向けの Windows アプリ概念マッピング
+      href: ../porting/android-ios-uwp-map.md
+    - name: iOS から UWP への移行
+      href: ../porting/ios-to-uwp-root.md
+      items:
+        - name: iOS と UWP のアプリ開発方法の選択
+          href: ../porting/selecting-an-approach-to-ios-and-uwp-app-development.md
+        - name: iOS 開発者のための UWP の概要
+          href: ../porting/getting-started-with-uwp-for-ios-developers.md
+          items:
+            - name: 'はじめに: プロジェクトの作成'
+              href: ../porting/getting-started-creating-a-project.md
+            - name: 'はじめに: プログラミング言語の選択'
+              href: ../porting/getting-started-choosing-a-programming-language.md
+            - name: 'はじめに: Visual Studio の操作方法'
+              href: ../porting/getting-started-getting-around-in-visual-studio.md
+            - name: 'はじめに: コモン コントロール'
+              href: ../porting/getting-started-common-controls.md
+            - name: 'はじめに: ナビゲーション'
+              href: ../porting/getting-started-navigation.md
+            - name: 'はじめに: アニメーション'
+              href: ../porting/getting-started-animation.md
+            - name: 'はじめに: 次の手順'
+              href: ../porting/getting-started-what-next.md
+        - name: Windows 10 を使用するための Mac のセットアップ
+          href: ../porting/setting-up-your-mac-with-windows-10.md
+    - name: Windows 10 で Web アプリを PWA アプリに変換する
+      href: 'https://docs.microsoft.com/microsoft-edge/progressive-web-apps'
+      items:
+        - name: Windows 7 アプリを PWA としてパッケージ化する
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html'
+        - name: iOS アプリを PWA としてパッケージ化する
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-ios.html'
+        - name: Android アプリを PWA としてパッケージ化する
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-android.html'
+        - name: MacOS アプリを PWA としてパッケージ化する
+          href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-mac.html'
+    - name: ARM 版 Windows 10
+      href: ../porting/apps-on-arm.md
+      items:
+        - name: ARM での x86 エミュレーション
+          href: ../porting/apps-on-arm-x86-emulation.md
+        - name: デスクトップ x86 アプリのトラブルシューティング
+          href: ../porting/apps-on-arm-troubleshooting-x86.md
+        - name: UWP ARM アプリのトラブルシューティング
+          href: ../porting/apps-on-arm-troubleshooting-arm32.md
+        - name: プログラム互換性のトラブルシューティング ツール (ARM)
+          href: ../porting/apps-on-arm-program-compat-troubleshooter.md
 - name: プロセスとスレッド
   items:
-  - name: 起動、再開、およびバックグラウンド タスク
-    href: ../launch-resume/index.md
-    items:
-    - name: ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
-      href: ../launch-resume/console-uwp.md
-    - name: マルチインスタンスの UWP アプリを作成する
-      href: ../launch-resume/multi-instance-uwp.md
-    - name: アプリのライフ サイクル
-      href: ../launch-resume/app-lifecycle.md
+    - name: 起動、再開、およびバックグラウンド タスク
+      href: ../launch-resume/index.md
       items:
-      - name: アプリの事前起動の処理
-        href: ../launch-resume/handle-app-prelaunch.md
-      - name: アプリのアクティブ化の処理
-        href: ../launch-resume/activate-an-app.md
-      - name: アプリの中断の処理
-        href: ../launch-resume/suspend-an-app.md
-      - name: アプリの再開の処理
-        href: ../launch-resume/resume-an-app.md
-      - name: アプリがバックグラウンドに移動したときのメモリの解放
-        href: ../launch-resume/reduce-memory-usage.md
-      - name: 延長実行を使ってアプリの中断を延期する
-        href: ../launch-resume/run-minimized-with-extended-execution.md
-    - name: URI を使ったアプリの起動
-      href: ../launch-resume/launch-app-with-uri.md
+        - name: ユニバーサル Windows プラットフォームを使用してコンソール アプリを作成する
+          href: ../launch-resume/console-uwp.md
+        - name: マルチインスタンスの UWP アプリを作成する
+          href: ../launch-resume/multi-instance-uwp.md
+        - name: アプリのライフ サイクル
+          href: ../launch-resume/app-lifecycle.md
+          items:
+            - name: アプリの事前起動の処理
+              href: ../launch-resume/handle-app-prelaunch.md
+            - name: アプリのアクティブ化の処理
+              href: ../launch-resume/activate-an-app.md
+            - name: アプリの中断の処理
+              href: ../launch-resume/suspend-an-app.md
+            - name: アプリの再開の処理
+              href: ../launch-resume/resume-an-app.md
+            - name: アプリがバックグラウンドに移動したときのメモリの解放
+              href: ../launch-resume/reduce-memory-usage.md
+            - name: 延長実行を使ってアプリの中断を延期する
+              href: ../launch-resume/run-minimized-with-extended-execution.md
+        - name: URI を使ったアプリの起動
+          href: ../launch-resume/launch-app-with-uri.md
+          items:
+            - name: URI に応じた既定のアプリの起動
+              href: ../launch-resume/launch-default-app.md
+            - name: URI のアクティブ化の処理
+              href: ../launch-resume/handle-uri-activation.md
+            - name: 結果を取得するためのアプリの起動
+              href: ../launch-resume/how-to-launch-an-app-for-results.md
+            - name: ms-tonepicker URI スキームを使ったトーンの選択と保存
+              href: ../launch-resume/launch-ringtone-picker.md
+            - name: Windows 設定アプリの起動
+              href: ../launch-resume/launch-settings-app.md
+            - name: Microsoft Store アプリの起動
+              href: ../launch-resume/launch-store-app.md
+            - name: Windows マップ アプリの起動
+              href: ../launch-resume/launch-maps-app.md
+            - name: People アプリの起動
+              href: ../launch-resume/launch-people-apps.md
+            - name: 画面切り取りの起動
+              href: ../launch-resume/launch-screen-snipping.md
+            - name: アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
+              href: ../launch-resume/web-to-app-linking.md
+        - name: ファイルのアクティブ化によるアプリの起動
+          href: ../launch-resume/launch-app-from-file.md
+          items:
+            - name: ファイルに応じた既定のアプリの起動
+              href: ../launch-resume/launch-the-default-app-for-a-file.md
+            - name: ファイルのアクティブ化の処理
+              href: ../launch-resume/handle-file-activation.md
+        - name: 自動再生による自動起動
+          href: ../launch-resume/auto-launching-with-autoplay.md
+        - name: 予約済みのファイルと URI スキーム名
+          href: ../launch-resume/reserved-uri-scheme-names.md
+        - name: アプリ サービスと拡張機能の使用
+          href: ../launch-resume/app-services.md
+          items:
+            - name: アプリ サービスの作成と利用
+              href: ../launch-resume/how-to-create-and-consume-an-app-service.md
+            - name: ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
+              href: ../launch-resume/convert-app-service-in-process.md
+            - name: サービス、拡張機能、パッケージでアプリを拡張する
+              href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
+            - name: アプリ拡張機能の作成と利用
+              href: ../launch-resume/how-to-create-an-extension.md
+        - name: バックグラウンド タスクによるアプリのサポート
+          href: ../launch-resume/support-your-app-with-background-tasks.md
+          items:
+            - name: バックグラウンド タスクのガイドライン
+              href: ../launch-resume/guidelines-for-background-tasks.md
+            - name: バックグラウンド タスクからのセンサーやデバイスへのアクセス
+              href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
+            - name: インプロセス バックグラウンド タスクの作成と登録
+              href: ../launch-resume/create-and-register-an-inproc-background-task.md
+            - name: アウトプロセス バックグラウンド タスクの作成と登録
+              href: ../launch-resume/create-and-register-a-background-task.md
+            - name: アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
+              href: ../launch-resume/convert-out-of-process-background-task.md
+            - name: バックグラウンド タスクのデバッグ
+              href: ../launch-resume/debug-a-background-task.md
+            - name: アプリケーション マニフェストでのバックグラウンド タスクの宣言
+              href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
+            - name: バックグラウンド タスクの登録のグループ化
+              href: ../launch-resume/group-background-tasks.md
+            - name: 取り消されたバックグラウンド タスクの処理
+              href: ../launch-resume/handle-a-cancelled-background-task.md
+            - name: バックグラウンド タスクの進捗状況と完了の監視
+              href: ../launch-resume/monitor-background-task-progress-and-completion.md
+            - name: バックグラウンド タスクの登録
+              href: ../launch-resume/register-a-background-task.md
+            - name: バックグラウンド タスクによるシステム イベントへの応答
+              href: ../launch-resume/respond-to-system-events-with-background-tasks.md
+            - name: タイマーでのバックグラウンド タスクの実行
+              href: ../launch-resume/run-a-background-task-on-a-timer-.md
+            - name: UWP アプリが更新された際のバックグラウンド タスクの実行
+              href: ../launch-resume/run-a-background-task-during-updatetask.md
+            - name: バックグラウンドで無期限に実行する
+              href: ../launch-resume/run-in-the-background-indefinetly.md
+            - name: バックグラウンド タスクを実行するための条件の設定
+              href: ../launch-resume/set-conditions-for-running-a-background-task.md
+            - name: アプリ内からのバックグラウンド タスクのトリガー
+              href: ../launch-resume/trigger-background-task-from-app.md
+            - name: バックグラウンド タスクによるライブ タイルの更新
+              href: ../launch-resume/update-a-live-tile-from-a-background-task.md
+            - name: メンテナンス トリガーの使用
+              href: ../launch-resume/use-a-maintenance-trigger.md
+        - name: 接続されるアプリやデバイス ("Rome" プロジェクト)
+          href: ../launch-resume/connected-apps-and-devices.md
+          items:
+            - name: リモート デバイスの検出
+              href: ../launch-resume/discover-remote-devices.md
+            - name: リモート デバイスでのアプリの起動
+              href: ../launch-resume/launch-a-remote-app.md
+            - name: リモート アプリ サービスとの通信
+              href: ../launch-resume/communicate-with-a-remote-app-service.md
+            - name: リモート セッションでデバイスを接続する
+              href: ../launch-resume/remote-sessions.md
+            - name: デバイス間でもユーザーのアクティビティを継続する
+              href: ../launch-resume/useractivities.md
+            - name: ユーザー アクティビティのベスト プラクティス
+              href: ../launch-resume/useractivities-best-practices.md
+        - name: スプラッシュ画面
+          href: ../launch-resume/splash-screens.md
+          items:
+            - name: スプラッシュ画面の追加
+              href: ../launch-resume/add-a-splash-screen.md
+            - name: スプラッシュ スクリーンの表示時間の延長
+              href: ../launch-resume/create-a-customized-splash-screen.md
+    - name: スレッド化と非同期プログラミング
+      href: ../threading-async/index.md
       items:
-      - name: URI に応じた既定のアプリの起動
-        href: ../launch-resume/launch-default-app.md
-      - name: URI のアクティブ化の処理
-        href: ../launch-resume/handle-uri-activation.md
-      - name: 結果を取得するためのアプリの起動
-        href: ../launch-resume/how-to-launch-an-app-for-results.md
-      - name: ms-tonepicker URI スキームを使ったトーンの選択と保存
-        href: ../launch-resume/launch-ringtone-picker.md
-      - name: Windows 設定アプリの起動
-        href: ../launch-resume/launch-settings-app.md
-      - name: Microsoft Store アプリの起動
-        href: ../launch-resume/launch-store-app.md
-      - name: Windows マップ アプリの起動
-        href: ../launch-resume/launch-maps-app.md
-      - name: People アプリの起動
-        href: ../launch-resume/launch-people-apps.md
-      - name: 画面切り取りの起動
-        href: ../launch-resume/launch-screen-snipping.md
-      - name: アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする
-        href: ../launch-resume/web-to-app-linking.md
-    - name: ファイルのアクティブ化によるアプリの起動
-      href: ../launch-resume/launch-app-from-file.md
-      items:
-      - name: ファイルに応じた既定のアプリの起動
-        href: ../launch-resume/launch-the-default-app-for-a-file.md
-      - name: ファイルのアクティブ化の処理
-        href: ../launch-resume/handle-file-activation.md
-    - name: 自動再生による自動起動
-      href: ../launch-resume/auto-launching-with-autoplay.md
-    - name: 予約済みのファイルと URI スキーム名
-      href: ../launch-resume/reserved-uri-scheme-names.md
-    - name: アプリ サービスと拡張機能の使用
-      href: ../launch-resume/app-services.md
-      items:
-      - name: アプリ サービスの作成と利用
-        href: ../launch-resume/how-to-create-and-consume-an-app-service.md
-      - name: ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
-        href: ../launch-resume/convert-app-service-in-process.md
-      - name: サービス、拡張機能、パッケージでアプリを拡張する
-        href: ../launch-resume/extend-your-app-with-services-extensions-packages.md
-      - name: アプリ拡張機能の作成と利用
-        href: ../launch-resume/how-to-create-an-extension.md
-    - name: バックグラウンド タスクによるアプリのサポート
-      href: ../launch-resume/support-your-app-with-background-tasks.md
-      items:
-      - name: バックグラウンド タスクのガイドライン
-        href: ../launch-resume/guidelines-for-background-tasks.md
-      - name: バックグラウンド タスクからのセンサーやデバイスへのアクセス
-        href: ../launch-resume/access-sensors-and-devices-from-a-background-task.md
-      - name: インプロセス バックグラウンド タスクの作成と登録
-        href: ../launch-resume/create-and-register-an-inproc-background-task.md
-      - name: アウトプロセス バックグラウンド タスクの作成と登録
-        href: ../launch-resume/create-and-register-a-background-task.md
-      - name: アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
-        href: ../launch-resume/convert-out-of-process-background-task.md
-      - name: バックグラウンド タスクのデバッグ
-        href: ../launch-resume/debug-a-background-task.md
-      - name: アプリケーション マニフェストでのバックグラウンド タスクの宣言
-        href: ../launch-resume/declare-background-tasks-in-the-application-manifest.md
-      - name: バックグラウンド タスクの登録のグループ化
-        href: ../launch-resume/group-background-tasks.md
-      - name: 取り消されたバックグラウンド タスクの処理
-        href: ../launch-resume/handle-a-cancelled-background-task.md
-      - name: バックグラウンド タスクの進捗状況と完了の監視
-        href: ../launch-resume/monitor-background-task-progress-and-completion.md
-      - name: バックグラウンド タスクの登録
-        href: ../launch-resume/register-a-background-task.md
-      - name: バックグラウンド タスクによるシステム イベントへの応答
-        href: ../launch-resume/respond-to-system-events-with-background-tasks.md
-      - name: タイマーでのバックグラウンド タスクの実行
-        href: ../launch-resume/run-a-background-task-on-a-timer-.md
-      - name: UWP アプリが更新された際のバックグラウンド タスクの実行
-        href: ../launch-resume/run-a-background-task-during-updatetask.md
-      - name: バックグラウンドで無期限に実行する
-        href: ../launch-resume/run-in-the-background-indefinetly.md
-      - name: バックグラウンド タスクを実行するための条件の設定
-        href: ../launch-resume/set-conditions-for-running-a-background-task.md
-      - name: アプリ内からのバックグラウンド タスクのトリガー
-        href: ../launch-resume/trigger-background-task-from-app.md
-      - name: バックグラウンド タスクによるライブ タイルの更新
-        href: ../launch-resume/update-a-live-tile-from-a-background-task.md
-      - name: メンテナンス トリガーの使用
-        href: ../launch-resume/use-a-maintenance-trigger.md
-    - name: 接続されるアプリやデバイス ("Rome" プロジェクト)
-      href: ../launch-resume/connected-apps-and-devices.md
-      items:
-      - name: リモート デバイスの検出
-        href: ../launch-resume/discover-remote-devices.md
-      - name: リモート デバイスでのアプリの起動
-        href: ../launch-resume/launch-a-remote-app.md
-      - name: リモート アプリ サービスとの通信
-        href: ../launch-resume/communicate-with-a-remote-app-service.md
-      - name: リモート セッションでデバイスを接続する
-        href: ../launch-resume/remote-sessions.md
-      - name: デバイス間でもユーザーのアクティビティを継続する
-        href: ../launch-resume/useractivities.md
-      - name: ユーザー アクティビティのベスト プラクティス
-        href: ../launch-resume/useractivities-best-practices.md
-    - name: スプラッシュ画面
-      href: ../launch-resume/splash-screens.md
-      items:
-      - name: スプラッシュ画面の追加
-        href: ../launch-resume/add-a-splash-screen.md
-      - name: スプラッシュ スクリーンの表示時間の延長
-        href: ../launch-resume/create-a-customized-splash-screen.md
-  - name: スレッド化と非同期プログラミング
-    href: ../threading-async/index.md
-    items:
-    - name: 非同期プログラミング (UWP アプリ)
-      href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
-    - name: C++/CX での非同期プログラミング (UWP アプリ)
-      href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
-    - name: スレッド プールを使うためのベスト プラクティス
-      href: ../threading-async/best-practices-for-using-the-thread-pool.md
-    - name: C# または Visual Basic での非同期 API の呼び出し
-      href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
-    - name: 定期的な作業項目の作成
-      href: ../threading-async/create-a-periodic-work-item.md
-    - name: スレッド プールへの作業項目の送信
-      href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
-    - name: タイマーを使った作業項目の送信
-      href: ../threading-async/use-a-timer-to-submit-a-work-item.md
-    - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
-      href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: bfed0b442b408bd3ebded5b22993b9f1e19353ce
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981861"
+        - name: 非同期プログラミング (UWP アプリ)
+          href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
+        - name: C++/CX での非同期プログラミング (UWP アプリ)
+          href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
+        - name: スレッド プールを使うためのベスト プラクティス
+          href: ../threading-async/best-practices-for-using-the-thread-pool.md
+        - name: 'C# または Visual Basic での非同期 API の呼び出し'
+          href: ../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md
+        - name: 定期的な作業項目の作成
+          href: ../threading-async/create-a-periodic-work-item.md
+        - name: スレッド プールへの作業項目の送信
+          href: ../threading-async/submit-a-work-item-to-the-thread-pool.md
+        - name: タイマーを使った作業項目の送信
+          href: ../threading-async/use-a-timer-to-submit-a-work-item.md
+        - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
+          href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
