@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
-ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
+ms.openlocfilehash: c74d4ebd08dfeddfb4a0149cffcd7bb845ceff11
+ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004505"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "9029945"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>UWP アプリのナビゲーション履歴と前に戻る移動
 
@@ -296,8 +296,6 @@ bool App::On_BackRequested()
 システムの戻るバーは、タブ バンドとアプリのコンテンツ領域の間に挿入されている「バンド」です。 バンドは、アプリの幅に沿って表示され、左端に戻るボタンが配置されます。 バンドには、[戻る] ボタンの適切なタッチ ターゲットのサイズを確認する 32 ピクセルの高さがあります。
 
 システムの戻るバーは、戻るボタンの可視性に基づいて動的に表示されます。 [戻る] ボタンが表示されている場合、システムの戻るバーが挿入され、アプリのコンテンツをタブ バンドの下の 32 ピクセル下に移動します。 [戻る] ボタンを非表示するとき、システムの戻るバーは動的に削除され、× 32 ピクセルをタブ バンドを満たすためにアプリのコンテンツを移動します。 上または下に、アプリの UI shift キーを持つを避けるためには、[アプリ内の戻るボタン](#back-button)を描画お勧めします。
-
-[タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリ タブとシステムの戻るの両方に引き継がバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定する場合、色がタブとシステムの戻るに適用されますバー。
 
 [タイトル バーのカスタマイズ](../shell/title-bar.md)は、アプリ タブとシステムの戻るの両方に引き継がバー。 アプリ[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、バック グラウンドとフォア グラウンドの色のプロパティを指定する場合、色がタブとシステムの戻るに適用されますバー。
 
