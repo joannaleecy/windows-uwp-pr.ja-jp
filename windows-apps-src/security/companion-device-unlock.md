@@ -6,16 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938822"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031388"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>Windows Hello コンパニオン (IoT) デバイスを使った Windows のロック解除
 
 Windows Hello コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 Windows Hello コンパニオン デバイス フレームワークを使用すると、コンパニオン デバイスは、生体認証を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Windows Hello のための優れたエクスペリエンスを提供できます。
+
+> **注:** Microsoft は将来的に Windows こんにちはコンパニオン デバイス フレームワークを非推奨して、ユーザーの代替ソリューションを展開する適切なリード タイムがあることを確認する日付を早期に公開されます。
 
 > **注:** Windows Hello コンパニオン デバイス フレームワークは特別な機能です。すべてのアプリ開発者が利用できるわけではありません。 このフレームワークを使用するには、アプリが Microsoft によって明確にプロビジョニングされ、制限された *secondaryAuthenticationFactor* 機能がアプリ マニフェストに含まれている必要があります。 承認を得るには、[cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) にお問い合わせください。
 

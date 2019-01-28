@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ed9be96ee44635249f01e7b919f3789d84305e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c1c9b75599efe4566bc1783f68ff9752510d1d99
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922148"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031378"
 ---
 # <a name="share-data"></a>データの共有
 
@@ -83,7 +83,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
         // Re-encode the image at 50% width and height.
         BitmapEncoder imageEncoder = await BitmapEncoder.CreateForTranscodingAsync(inMemoryStream, imageDecoder);
-        imageEncoder.BitmapTransform.ScaledWidth = (uint)(imageDecoder.OrientedPixelHeight * 0.5);
+        imageEncoder.BitmapTransform.ScaledWidth = (uint)(imageDecoder.OrientedPixelWidth * 0.5);
         imageEncoder.BitmapTransform.ScaledHeight = (uint)(imageDecoder.OrientedPixelHeight * 0.5);
         await imageEncoder.FlushAsync();
 

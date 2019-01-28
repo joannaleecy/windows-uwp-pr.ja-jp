@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929254"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031368"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>接続されるアプリやデバイス ("Rome" プロジェクト)
 
-このセクションでは、Rome プロジェクトを使ってデバイスとプラットフォーム間でアプリを接続する方法について説明します。 リモート デバイスの検出、リモート デバイス上でのアプリの起動、リモート デバイス上のアプリ サービスとの通信を行う方法について説明します。
+このセクションでは、デバイスと["rome"プロジェクト](https://developer.microsoft.com/en-us/windows/project-rome)を使用するプラットフォーム間でアプリを接続する方法について説明します。 クロス プラットフォームのシナリオでは"rome"プロジェクトを実装する方法については、 ["rome"プロジェクトのメイン ドキュメント ページ](https://docs.microsoft.com/en-us/windows/project-rome/)を参照してください。
 
-ほとんどのユーザーは複数のデバイスを持っており、あるデバイスでアクティビティを始めてデバイスで終えることがよくあります。 これに対応するため、アプリはデバイスとプラットフォームにまたがる必要があります。
+ほとんどのユーザーは複数のデバイスを持っており、あるデバイスでアクティビティを始めてデバイスで終えることがよくあります。 これに対応するため、アプリはデバイスとプラットフォームにまたがる必要があります。 "Rome"プロジェクトを使用すると、リモート デバイスの検出、リモート デバイスでは、アプリの起動し、リモート デバイス上のアプリ サービスと通信できます。
 
 Windows 10 バージョン 1607 に導入された[リモート システム API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems) を使うと、ユーザーがあるデバイスでタスクを開始して別のデバイスで終えることができるアプリを記述できます。 タスクは中央のフォーカスに残り、ユーザーは最も便利なデバイスで作業を行うことができます。 たとえば、ユーザーが車に乗りながら電話でラジオを聴きますが、帰宅したらホーム ステレオ システムに搭載した Xbox One に再生を転送することがあります。
 
