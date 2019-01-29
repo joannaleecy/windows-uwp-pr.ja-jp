@@ -6,15 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-dev_langs:
-- csharp
-- cppwinrt
-ms.openlocfilehash: 9cd5d9d275241ab107a3b1b06044ba0109d4bb3d
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
+ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035393"
+ms.locfileid: "9035446"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -105,14 +102,12 @@ catch (Exception ex)
 ```cppwinrt
 // pch.h
 #pragma once
-
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
 // main.cpp : Defines the entry point for the console application.
 #include "pch.h"
 #include <iostream>
-
 using namespace winrt;
 using namespace Windows::Foundation;
 
@@ -160,6 +155,66 @@ int main()
     std::wcout << httpResponseBody;
 }
 ```
+
+## <a name="post-binary-data-over-http"></a>HTTP 経由でデータをポスト バイナリ
+
+[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)少量の[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)クラスを使用して、POST 要求とバイナリ データを送信する次のコード例を示しています。
+
+```cppwinrt
+// pch.h
+#pragma once
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.Streams.h>
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+#include <sstream>
+#include <winrt/Windows.Security.Cryptography.h>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+
+int main()
+{
+    init_apartment();
+
+    // Create an HttpClient object.
+    Windows::Web::Http::HttpClient httpClient;
+
+    Uri requestUri{ L"http://www.contoso.com/post" };
+
+    auto buffer{
+    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+        L"A sentence of text by way of sample data",
+        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+    };
+    Windows::Web::Http::HttpBufferContent postContent{ buffer };
+    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    // Send the POST request asynchronously, and retrieve the response as a string.
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Send the POST request.
+        httpResponseMessage = httpClient.PostAsync(requestUri, postContent).get();
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        httpResponseBody = ex.message();
+    }
+    std::wcout << httpResponseBody;
+}
+```
+
+バイナリ ファイルの内容を投稿するを確認して[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)オブジェクトを使いやすくします。 1 つを作成して、そのコンス トラクターの引数として渡す[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)への呼び出しから返される値。 そのメソッドは、バイナリ ファイル内のデータのストリームを返します。
+
+また、(約 10 MB を超える) の大きなファイルをアップロードしている場合、お勧めします Windows ランタイムの[バック グラウンド転送](/uwp/api/windows.networking.backgroundtransfer)Api を使用することです。
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http の例外
 
