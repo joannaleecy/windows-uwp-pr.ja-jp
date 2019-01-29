@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7e6547267a1d0b478fdda8698bd1dcf89523442b
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: cbe2a62d52d546e06d3da3250dcd0f7394ba39c5
+ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976899"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035542"
 ---
 # <a name="color"></a>色
 
@@ -351,7 +351,7 @@ ColorSchemeResources は、どのようなリソースがされているシス�
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-まず、ResourceDictionary を作成します。 **ColorSchemeResources** ThemeDictionaries 内に配置し、目的のシステム カラーを上書きします。
+まず、ResourceDictionary を作成します。 **ColorPaletteResources** ThemeDictionaries 内に配置し、目的のシステム カラーを上書きします。
 
 ```xaml
 <ResourceDictionary
@@ -360,11 +360,16 @@ ColorSchemeResources は、どのようなリソースがされているシス�
     xmlns:local="using:TestApp">
 
     <ResourceDictionary.ThemeDictionaries>
-
-        <ColorSchemeResources x:Key="Default"
-            SystemBaseLowColor="LightGreen"
-            SystemBaseMediumLowColor="DarkCyan"/>
-        
+        <ResourceDictionary x:Key="Default">
+            <ResourceDictionary.MergedDictionaries>
+            
+                <ColorPaletteResources x:Key="Default"
+                    Accent="#FF0073CF" 
+                    AltHigh="#FF000000" 
+                    AltLow="#FF000000"/>
+                    
+            </ResourceDictionary>
+        </ResourceDictionary.MergedDictionaries>        
     </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
 ```

@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: b47991add56868fe534b0460ec65336e94f433e9
+ms.sourcegitcommit: 1391190e27907f0c7cd40e4bb56cdead387a53cf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970985"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035532"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 
@@ -72,7 +72,7 @@ ms.locfileid: "8970985"
 
 ## <a name="when-to-use-acrylic"></a>アクリルを使用する状況
 
-* NavigationView またはインライン コマンド実行要素などの UI をサポートするためには、アプリ内アクリルを使用します。
+* コンテンツをスクロールまたは操作するときに重複する可能性があるサーフェスでように、UI をサポートするためには、アプリ内アクリルを使用します。
 * コンテキスト メニューのポップアップ、および光 dimsissable UI などの一時的な UI 要素の背景アクリルを使用します。<br />一時的なシナリオでアクリルを使用すると、一時的な UI をトリガーしたコンテンツと視覚的な関係を維持できます。
 
 ナビゲーションのサーフェスをアプリ内アクリルを使用している場合は、アプリのフローを向上させるために、アクリル ウィンドウの下にあるコンテンツを拡張することを検討します。 NavigationView を使用して、これを自動的にします。 ただし、ストライプ効果の作成を回避するため、複数のアクリルのエッジ - を配置しないでくださいぼやけたの 2 つのサーフェスの間、望ましくない継ぎ目を作成このことができます。 アクリルは、デザインを視覚的な調和を移植するためのツールが適切に使用できますノイズのします。
@@ -107,7 +107,7 @@ ms.locfileid: "8970985"
 アクリルの外観は、さまざまなデバイスやコンテキストに合うように自動的に対応します。
 
 ハイ コントラスト モードでは、ユーザーが選んだ見慣れた背景色が、アクリルの代わりに引き続き表示されます。 さらに、背景アクリルとアプリ内アクリルのどちらも、単色として表示されます。
- - ユーザーが設定で透明度をオフにすると > [パーソナル設定] > 色
+ - とき、ユーザーがオフに設定 _gt の透明度個人用設定 _gt 色
  - バッテリー節約機能モードが有効な場合
  - アプリがローエンド ハードウェアで実行されている場合
 
