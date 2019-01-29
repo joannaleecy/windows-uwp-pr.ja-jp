@@ -9,12 +9,12 @@ ms.date: 12/7/2018
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944343"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035423"
 ---
 # <a name="globalization-and-localization"></a>グローバリゼーションとローカライズ
 
@@ -36,6 +36,10 @@ Windows は世界中で利用されており、言語、地域、文化の異な
 - 日付と時刻の形式
 - 数値、通貨、太さ、および測定の表記規則
 - 並べ替え規則
+
+>[!NOTE]
+> Microsoft で使用される標準の国/地域コードの一覧は、[公式の国/地域の一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)を参照してください。
+
 
 **ローカライズの可否**は、ローカライズ用にグローバル化したアプリを準備し、そのアプリがローカライズできる状態であることを検証するプロセスです。 適切にアプリをローカライズ可能にすることは、後続のローカライズ プロセスでアプリの機能上の欠陥が発生しないことを意味します。 ローカライズ可能なアプリの最も重要な特性は、その実行可能コードが、アプリのローカライズ可能なリソースから明確に区別されていることです。
 
@@ -65,4 +69,4 @@ Windows は世界中で利用されており、言語、地域、文化の異な
 | [双方向テキストに対応したアプリを設計する](design-for-bidi-text.md) | 左から右方向および右から左方向の書記体系のスクリプトを組み合わせることができるように、双方向テキスト サポート (BiDi) を備えたアプリを設計します。 |
 | [多言語アプリ ツールキット 4.0 の使用](use-mat.md) | Microsoft Visual Studio 2017 には多言語アプリ ツールキット (MAT) 4.0 が統合されています。そのため、UWP アプリで翻訳がサポートされ、翻訳ファイルを管理したり、エディター ツールを利用したりできます。 |
 | [多言語アプリ ツールキット 4.0 に関する FAQ とトラブルシューティング](mat-faq-troubleshooting.md) | このトピックでは、多言語アプリ ツールキット (MAT) 4.0 に関連したよくある質問と問題の回答を示します。 |
-| [日本語の era 変更するアプリケーションを準備します。](japanese-era-change.md) | 月 2019年年号変更し、アプリケーションを準備する方法について説明します。 |
+| [アプリケーションの新元号対応](japanese-era-change.md) | 月 2019年年号変更し、アプリケーションを準備する方法について説明します。 |

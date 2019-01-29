@@ -6,15 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 706432123d8a778af558d0c3e426ad4f5120bdba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+dev_langs:
+- csharp
+- cppwinrt
+ms.openlocfilehash: 9cd5d9d275241ab107a3b1b06044ba0109d4bb3d
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935256"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035393"
 ---
 # <a name="httpclient"></a>HttpClient
-
 
 **重要な API**
 
@@ -97,6 +99,65 @@ try
 catch (Exception ex)
 {
     httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
+}
+```
+
+```cppwinrt
+// pch.h
+#pragma once
+
+#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Web.Http.Headers.h>
+
+// main.cpp : Defines the entry point for the console application.
+#include "pch.h"
+#include <iostream>
+
+using namespace winrt;
+using namespace Windows::Foundation;
+
+int main()
+{
+    init_apartment();
+
+    // Create an HttpClient object.
+    Windows::Web::Http::HttpClient httpClient;
+
+    // Add a user-agent header to the GET request.
+    auto headers{ httpClient.DefaultRequestHeaders() };
+
+    // The safe way to add a header value is to use the TryParseAdd method, and verify the return value is true.
+    // This is especially important if the header value is coming from user input.
+    std::wstring header{ L"ie" };
+    if (!headers.UserAgent().TryParseAdd(header))
+    {
+        throw L"Invalid header value: " + header;
+    }
+
+    header = L"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+    if (!headers.UserAgent().TryParseAdd(header))
+    {
+        throw L"Invalid header value: " + header;
+    }
+
+    Uri requestUri{ L"http://www.contoso.com" };
+
+    // Send the GET request asynchronously, and retrieve the response as a string.
+    Windows::Web::Http::HttpResponseMessage httpResponseMessage;
+    std::wstring httpResponseBody;
+
+    try
+    {
+        // Send the GET request.
+        httpResponseMessage = httpClient.GetAsync(requestUri).get();
+        httpResponseMessage.EnsureSuccessStatusCode();
+        httpResponseBody = httpResponseMessage.Content().ReadAsStringAsync().get();
+    }
+    catch (winrt::hresult_error const& ex)
+    {
+        httpResponseBody = ex.message();
+    }
+    std::wcout << httpResponseBody;
 }
 ```
 
