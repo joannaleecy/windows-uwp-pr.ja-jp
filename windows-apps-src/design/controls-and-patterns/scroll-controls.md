@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 368454e32ba2c88994161f6c7deb554fff73972a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88b35c4ebc7e3b3f5c047ed5e1cef9d46a011909
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930881"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037024"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 
@@ -61,7 +61,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ScrollViewer">アプリを開き、ScrollViewer の動作を確認</a>してください。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-この XAML では、水平スクロールを有効にする、スクロール ビューアーに画像を配置およびズームを有効にする方法を示します。
+この XAML では、水平方向にスクロールを有効にする、スクロール ビューアーに画像を配置およびズームを有効にする方法を示します。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -147,7 +147,7 @@ ScrollViewer が XAML で明示的である場合、コード例に示すよう�
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
 
 ## <a name="related-topics"></a>関連トピック
 

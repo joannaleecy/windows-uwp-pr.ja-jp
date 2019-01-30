@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c86ddee3558da23cd8bea5e0f16c6a8695babf84
-ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
+ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "8973953"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037094"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 
@@ -51,7 +51,7 @@ NavigationView は、適切に動作するアダプティブ ナビゲーショ�
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">アプリを開き、NavigationView の動作を確認</a>してください。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

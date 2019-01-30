@@ -10,16 +10,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 48aff6bd0b5f6ce955168bdc5faef67b7f43925e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 56079bc51d3efa8f7ecaaee21379a6e9caf7d440
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932433"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036894"
 ---
 # <a name="pivot"></a>ピボット
 
-[ピボット](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)コントロールは、少数のセクションではコンテンツの間でのタッチ スワイプを使用できます。
+[ピボット](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)コントロールは、少数のセクションではコンテンツの間でタッチ スワイプを使用できます。
 
 > **重要な Api**: [Pivot クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
@@ -33,7 +33,7 @@ ms.locfileid: "8932433"
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、アプリを<a href="xamlcontrolsgallery:/item/Pivot">開き、Pivot コントロールの動作を参照してください。</a>ここをクリックします。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -47,7 +47,7 @@ ms.locfileid: "8932433"
 
 一般的な上部のナビゲーションとタブ パターンを実現するには、 [NavigationView](navigationview.md)、これは自動的にさまざまな画面サイズに合わせて変化するより詳細にカスタマイズの使用をお勧めします。
 
-ただし、ナビゲーションは、タッチ スワイプを必要とする場合は、ピボットを使って勧めします。
+ただし、ナビゲーションは、タッチ スワイプを必要とする場合は、ピボットを使用して勧めします。
 
 NavigationView とピボット コントロールの他の主な違いは、既定のオーバーフローの動作とナビゲーション API を示します。
 
@@ -58,7 +58,7 @@ NavigationView とピボット コントロールの他の主な違いは、既�
 
 アプリの UI は、Pivot コントロールを使用している場合は、次のコードでピボットを NavigationView を変換できます。
 
-この XAML では、Pivot の[pivot コントロールを作成する](#create-a-pivot-control)例のように、コンテンツの 3 つのセクションで、NavigationView を作成します。
+この XAML は、Pivot の[pivot コントロールを作成する](#create-a-pivot-control)例のように、コンテンツの 3 つのセクションで、NavigationView を作成します。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -83,7 +83,7 @@ NavigationView とピボット コントロールの他の主な違いは、既�
 </Page>
 ```
 
-NavigationView は、ナビゲーションのカスタマイズをより細かく制御し、コード ビハインドで対応する必要があります。 上記の XAML を添付するには、次のコード ビハインドを使用します。
+NavigationView は、ナビゲーションのカスタマイズをより細かく制御し、コード ビハインドで対応する必要があります。 上記の XAML を加え、次のコード ビハインドを使用します。
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -112,7 +112,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-このコードは、コンテンツのセクション間タッチ スワイプ エクスペリエンス マイナスのピボット コントロールの組み込みのナビゲーション エクスペリエンスを模したものです。 ただし、ご覧のように、切り替えのアニメーション化された、ナビゲーション パラメーターには、スタック機能など、いくつかのポイントもカスタマイズする可能性があります。
+このコードは、コンテンツのセクション間タッチ スワイプ エクスペリエンス マイナスのピボット コントロールの組み込みのナビゲーション エクスペリエンスを模したものです。 ただし、わかるように、切り替えのアニメーション化された、ナビゲーション パラメーターには、スタック機能など、いくつかのポイントもカスタマイズする可能性があります。
 
 ## <a name="create-a-pivot-control"></a>ピボット コントロールの作成
 
@@ -191,7 +191,7 @@ Pivot は [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/wi
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
 
 ## <a name="related-topics"></a>関連トピック
 

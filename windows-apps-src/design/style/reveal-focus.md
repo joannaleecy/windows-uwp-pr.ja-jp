@@ -9,18 +9,18 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938140"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037354"
 ---
 # <a name="reveal-focus"></a>表示フォーカス
 
 ![ヒーロー イメージ](images/header-reveal-focus.svg)
 
-表示フォーカスは[10 フィート エクスペリエンス](/windows/uwp/design/devices/designing-for-tv)を Xbox One やテレビ画面などの照明効果。 ユーザーがゲームパッドやキーボードのフォーカスをボタンなどのフォーカス可能な要素に移動したときに、その要素の境界線がアニメーション化されます。 表示フォーカスは既定で無効になっていますが、簡単に有効にできます。 
+表示フォーカスは[10 フィート エクスペリエンス](/windows/uwp/design/devices/designing-for-tv)、Xbox One やテレビ画面などの照明効果。 ユーザーがゲームパッドやキーボードのフォーカスをボタンなどのフォーカス可能な要素に移動したときに、その要素の境界線がアニメーション化されます。 表示フォーカスは既定で無効になっていますが、簡単に有効にできます。 
 
 (表示ハイライト効果、対話型要素を発光[強調表示の記事](/windows/uwp/design/style/reveal)を参照してください)。
 
@@ -41,10 +41,10 @@ ms.locfileid: "8938140"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、アプリを<a href="xamlcontrolsgallery:/item/RevealFocus">開き、表示効果のフォーカスの動作を参照してください。</a>ここをクリックします。</p>
+    <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールした場合は、<a href="xamlcontrolsgallery:/item/RevealFocus">アプリを開き表示効果のフォーカスの動作を確認を表示</a>するここをクリックします。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -63,10 +63,10 @@ ms.locfileid: "8938140"
     }
 ```
 
-**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティが**True** (ほとんどのコントロールの既定値) に設定されてすべてのコントロールに適用されます。 
+**FocusVisualKind**プロパティを設定した後、表示フォーカス効果は自動的に[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)プロパティ設定されている**場合は True** (ほとんどのコントロールの既定値) にすべてのコントロールに適用されます。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>既定で表示フォーカスをできない理由かどうか。 
-ご覧のように、Xbox で実行されているアプリを検出した場合、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズするされます。
+ご覧のように、Xbox で実行されているアプリを検出すると、フォーカスの表示をオンにする非常に簡単です。 それでは、システムによって自動的に有効にならないのはなぜでしょうか。 表示フォーカスには、フォーカス表示のサイズが増加するため、UI レイアウトに問題が発生する可能性があります。 場合によっては、アプリに合わせて最適化表示フォーカス効果をカスタマイズするされます。
 
 ## <a name="customizing-reveal-focus"></a>表示フォーカスのカスタマイズ
 
@@ -74,9 +74,9 @@ ms.locfileid: "8938140"
 
 カスタマイズを開始する前に、それが明らかにフォーカスを構成するコンポーネントについてもう少し詳しく知っておくと便利です。
 
-既定の表示フォーカス視覚効果は次の 3 つの部分で構成されて: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示フォーカスのグロー プライマリ境界線の幅に比例があり、*外部*プライマリ境界線の周囲を実行します。
+既定の表示フォーカス視覚効果を次の 3 つの部分があります: プライマリ境界線、セカンダリ境界線およびグロー表示します。 プライマリ境界線は、**2 px** の幅があり、セカンダリ境界線の*外側*に描画されます。 セカンダリ境界線は、**1 px** の幅があり、プライマリ境界線の*内側*に描画されます。 表示効果のフォーカスのグロー部分には、プライマリ境界線の太さに比例があり、*外部*プライマリ境界線の周囲を実行します。
 
-表示フォーカスの視覚効果だけでなく、静的な要素に置いたときに停止中は鼓動し、フォーカスを移動するときに、フォーカスの方向に移動するためのアニメーション化された光の機能です。
+だけでなく、静的な要素表示フォーカスの視覚効果機能は、アニメーション化された光に置いたときに停止中は鼓動し、フォーカスを移動するときにフォーカスの方向に移動します。
 
 ![表示フォーカス レイヤー](images/reveal-breakdown.svg)
 
@@ -108,7 +108,7 @@ ms.locfileid: "8938140"
 
 ## <a name="customize-the-color"></a>色のカスタマイズ
 
-表示フォーカス表示の色を変更するには、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)と[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)プロパティを使います。
+表示フォーカス表示の色を変更するには、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)と[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)プロパティを使用します。
 
 | プロパティ | 既定のリソース | 既定のリソースの値 |
 | ---- | ---- | --- | 
@@ -163,7 +163,7 @@ ms.locfileid: "8938140"
 
 ## <a name="use-your-own-focus-visuals"></a>独自のフォーカス視覚効果を使用する
 
-表示フォーカスをカスタマイズする方法、独自の表示状態を使って描画することによって、システム提供のフォーカスの視覚効果をオプトアウトすることです。 詳しくは、「[フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)」をご覧ください。
+独自の表示状態を使って描画することによって、システム提供のフォーカスの視覚効果をオプトアウトする別の方法で表示効果のフォーカスをカスタマイズすることです。 詳しくは、「[フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)」をご覧ください。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>表示フォーカスと Fluent Design System

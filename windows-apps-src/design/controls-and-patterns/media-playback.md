@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e8ed0c28199e49e9c4be69785a7af5985afae6a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944540"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037364"
 ---
 # <a name="media-player"></a>メディア プレーヤー
 
@@ -44,7 +44,7 @@ ms.locfileid: "8944540"
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> または <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> の動作を確認してください。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -97,7 +97,7 @@ XAML で [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/wi
 ### <a name="set-the-media-source"></a>メディア ソースを設定する
 ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、ファイルのパスを使用して [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) プロパティを [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) に設定します。
 
-**ヒント:**、インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) での**インターネット (クライアント)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
+**ヒント:** インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) での**インターネット (クライアント)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
 
  
 
@@ -302,7 +302,7 @@ private DisplayRequest appDisplayRequest = null;
 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) には、[MediaPlayerElement.MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) プロパティを介してオーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) のリファレンス ページをご覧ください。
 
 ### <a name="advanced-media-playback-scenarios"></a>高度なメディア再生のシナリオ
-プレイリストを再生するような複雑なメディア再生のシナリオでは、オーディオ言語間を切り替えたり、カスタム メタデータ トラックを作成したりするため、[MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) または [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx) に設定します。 さまざまな高度なメディア機能を有効にする方法の詳細については、[メディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)のページを参照してください。
+プレイリストを再生するような複雑なメディア再生のシナリオでは、オーディオ言語間を切り替えたり、カスタム メタデータ トラックを作成したりするため、[MediaPlayerElement.Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) を [MediaPlaybackItem](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) または [MediaPlaybackList](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx) に設定します。 さまざまな高度なメディア機能を有効にする方法の詳細については、[メディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/media-playback-with-mediasource)ページを参照してください。
 
 ### <a name="enable-full-window-video-rendering"></a>フル ウィンドウのビデオ レンダリングを有効にする
 
@@ -391,7 +391,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形で XAML コントロールのすべてを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 ## <a name="related-articles"></a>関連記事
 

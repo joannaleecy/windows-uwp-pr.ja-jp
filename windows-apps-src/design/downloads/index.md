@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7089f4b6e28056f44a6ad5d37aa90f6cf84784df
-ms.sourcegitcommit: 05335f65dfe497ef4027b7249c0119fc59e355e2
+ms.openlocfilehash: 09fa50319defd90479ca93e4ba1b920948fbb9d3
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "8964675"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036924"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
@@ -40,7 +40,7 @@ ms.locfileid: "8964675"
     :::column:::
         ![hero image](images/adobe-xd.png)
         <b>Adobe XD toolkit</b><br>
-        v1806, June 2018<br>
+        v1901, January 2019<br>
         <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
@@ -112,8 +112,8 @@ Fluent の XAML テーマ エディターは、Fluent Design System の柔軟性
 
 ![VanArsdel イメージ](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の基準を広く告知を構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>と ux のフレームワークとコンポジションの強力な基になる機能強化の密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
-<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">VanArsdel サンプルをダウンロードします。</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
+Van Arsdel, Ltd. エンド ツー エンドの UWP サンプル アプリは、Microsoft の Fluent Design System の次の基準を広く告知に構築されました。 <a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI のライブラリ</a>として ux フレームワークとコンポジションの強力な基盤となる機能で強化された密度と新しいコントロールの広範な使用をかなっています。 このサンプルでは、(この場合は、ライト) で IoT デバイスの購入を管理およびリッチな生産性エクスペリエンスを構築する方法を示します。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">サンプルをダウンロードする VanArsdel</a> <br><a href="https://github.com/microsoft/vanarsdel">GitHub で VanArsdel サンプルします。</a>
 
 ![キャスト イメージを構築する](images/buildcast.png)
 **BuildCast**<br>
@@ -126,7 +126,7 @@ BuildCast は、Fluent Design System と UWP に組み込まれているエン�
 
 ![Xaml コントロール ギャラリー](images/xaml-controls-gallery.png)
 **XAML コントロール ギャラリー**<br>
-このサンプルは、すべての XAML コントロールの対話型デモを提供します。 基本的なものから応用まで、さまざまなレイアウトを示し、独自のプロジェクトにコピーすることができますマークアップを表示します。 注: ダウンロード ファイルと GitHub リポジトリでは現在、このサンプル アプリが "UI の基本 (XAML)" と呼ばれています。 <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">XAML コントロール ギャラリー サンプルをダウンロードする</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Github で XAML コントロール ギャラリー サンプルを確認する</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">XAML コントロール ギャラリー アプリを Store からダウンロードする</a></p>
+このサンプルは、すべての XAML コントロールの対話型デモを提供します。 基本的なものから応用まで、さまざまなレイアウトを示し、独自のプロジェクトにコピーすることができますマークアップを表示します。 注: ダウンロード ファイルと GitHub リポジトリでは現在、このサンプル アプリが "UI の基本 (XAML)" と呼ばれています。 <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">XAML コントロール ギャラリー サンプルをダウンロードする</a><br/><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Github で XAML コントロール ギャラリー サンプルを確認する</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">XAML コントロール ギャラリー アプリを Store からダウンロードする</a></p>
 
 ## <a name="want-more-code"></a>他のコードをお探しの場合は、
 

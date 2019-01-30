@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 651914cfb2abd4326c6ac6295f10ad359925d465
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939814"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037064"
 ---
 # <a name="tooltips"></a>ヒント
 
@@ -64,7 +64,7 @@ ms.locfileid: "8939814"
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ToolTip">アプリを開き、ToolTip の動作を確認</a>してください。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 既定では、ToolTip はポインターの上部に中央揃えで表示されます。 配置はアプリ ウィンドウによって制約されていないため、ToolTip が部分的に表示されたり、完全にアプリ ウィンドウの境界の外部に表示されたりすることがあります。
 
-広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最終的な位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
+広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最後の位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -149,7 +149,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - インタラクティブな形で XAML コントロールのすべてを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 ## <a name="related-articles"></a>関連記事
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941379"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037054"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -45,7 +45,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="what-goes-in-a-form"></a>フォームに含めるもの
 
-各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、オプションを追加することもの基本的な一覧では – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
+各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、追加のオプションの基本的なリスト – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
 
 * [TextBox](../design/controls-and-patterns/text-box.md)では、アプリにユーザーがテキストを入力できます。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
@@ -172,5 +172,5 @@ UWP には、アプリに追加して構成することができる明示的な�
 |-----------------|---------------|
 | [アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md) | アダプティブ レイアウトやレスポンシブ デザインの手順を説明したガイド付きエクスペリエンスです。 | 
 | [顧客注文データベース](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | マルチページのエンタープライズのサンプルで、レイアウトとフォームの動作を確認してください。 |
-| [XAML コントロール ギャラリー](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) | 一部の XAML コントロール、およびそれらの実装方法を参照してください。 |
+| [XAML コントロール ギャラリー](https://github.com/Microsoft/Xaml-Controls-Gallery) | 一部の XAML コントロール、およびそれらの実装方法を参照してください。 |
 | [その他のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで **[コントロール、レイアウト、テキスト]** を選択し、関連するコード サンプルを参照してください。 |
