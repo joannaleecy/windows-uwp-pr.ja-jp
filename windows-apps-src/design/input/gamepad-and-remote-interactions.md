@@ -1,38 +1,32 @@
 ---
-Description: TODO
-title: ゲームパッドとリモコンの操作
-ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
-label: Gamepad and remote interactions
-template: detail.hbs
-isNew: true
-ms.date: 02/08/2017
-ms.topic: article
-keywords: Windows 10, UWP
-ms.localizationpriority: medium
-ms.openlocfilehash: daf0452a30d494b3835ea043eee7d596921b0a75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946257"
+<span data-ttu-id="d7e37-101"><<<<<<< ヘッド作成者: カール ブリッジ マイクロソフト製品の説明: Xbox ゲームパッドとリモコンから入力用にアプリを最適化します。</span><span class="sxs-lookup"><span data-stu-id="d7e37-101"><<<<<<< HEAD author: Karl-Bridge-Microsoft Description: Optimize your app for input from Xbox gamepad and remote control.</span></span>
+<span data-ttu-id="d7e37-102">=== 説明: TODO</span><span class="sxs-lookup"><span data-stu-id="d7e37-102">======= Description: TODO</span></span>
+>>>>>>> <span data-ttu-id="d7e37-103">タイトルをマスター: ゲームパッドとリモコンの操作 ms.assetid:: 784a08dc-2736-4bd3-bea0-08da16b1bd47 ラベル: ゲームパッドとリモートの対話式操作テンプレート: detail.hbs isNew: true <<<<<<< ヘッド ms.author:: kbridge=======
+マスターms.date:: 2017 08/02/ms.topic: キーワードの記事: windows 10, uwp ms.localizationpriority:: メディア</span><span class="sxs-lookup"><span data-stu-id="d7e37-103">master title: Gamepad and remote control interactions ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47 label: Gamepad and remote interactions template: detail.hbs isNew: true <<<<<<< HEAD ms.author: kbridge =======
+master ms.date: 02/08/2017 ms.topic: article keywords: windows 10, uwp ms.localizationpriority: medium</span></span>
 ---
-# <a name="gamepad-and-remote-control-interactions"></a><span data-ttu-id="98234-103">ゲームパッドとリモコンの操作</span><span class="sxs-lookup"><span data-stu-id="98234-103">Gamepad and remote control interactions</span></span>
+# <a name="gamepad-and-remote-control-interactions"></a><span data-ttu-id="d7e37-104">ゲームパッドとリモコンの操作</span><span class="sxs-lookup"><span data-stu-id="d7e37-104">Gamepad and remote control interactions</span></span>
 
-![リモートと方向パッド](images/dpad-remote/dpad-remote.png)
+![キーボードとゲームパッドのイメージ](images/keyboard/keyboard-gamepad.jpg)
 
-<span data-ttu-id="98234-105">ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。</span><span class="sxs-lookup"><span data-stu-id="98234-105">Universal Windows Platform (UWP) apps now support gamepad and remote control input, which are the primary input devices for Xbox and TV experiences.</span></span>
+***<span data-ttu-id="d7e37-106">一般的な対話式操作パターンは、ゲームパッド、リモコン、およびキーボードの間で共有されます。</span><span class="sxs-lookup"><span data-stu-id="d7e37-106">Common interaction patterns are shared between gamepad, remote control, and keyboard</span></span>***
 
-<span data-ttu-id="98234-106">UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。</span><span class="sxs-lookup"><span data-stu-id="98234-106">UWP apps should be optimized for these input device types, just like they are for keyboard and mouse input on a PC, and touch input on a phone or tablet.</span></span>
+<span data-ttu-id="d7e37-107">アプリがゲームパッドやリモコンで正しく動作するか確認することは、10 フィート エクスペリエンス向けの最適化で最も重要な手順です。</span><span class="sxs-lookup"><span data-stu-id="d7e37-107">Making sure that your app works well with gamepad and remote is the most important step in optimizing for 10-foot experiences.</span></span> <span data-ttu-id="d7e37-108">操作がある程度制限されたデバイスでユーザーの対話式操作エクスペリエンスを最適化できる、ゲームパッドやリモコン固有の改善点がいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="d7e37-108">There are several gamepad and remote-specific improvements that you can make to optimize the user interaction experience on a device where their actions are somewhat limited.</span></span>
 
-<span data-ttu-id="98234-107">Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが重要なステップです。</span><span class="sxs-lookup"><span data-stu-id="98234-107">Making sure that your app works well with these input devices is a critical  step when optimizing for Xbox and the TV.</span></span>
+<span data-ttu-id="d7e37-109">ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。</span><span class="sxs-lookup"><span data-stu-id="d7e37-109">Universal Windows Platform (UWP) apps now support gamepad and remote control input.</span></span> 
 
-> [!NOTE] 
-> <span data-ttu-id="98234-108">PC 上の UWP アプリで、ゲームパッドをプラグインして使用できます。これにより検証が容易に行えます。</span><span class="sxs-lookup"><span data-stu-id="98234-108">You can now plug in and use the gamepad with UWP apps on PC which makes validating the work easy.</span></span>
+<span data-ttu-id="d7e37-110">ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。</span><span class="sxs-lookup"><span data-stu-id="d7e37-110">Gamepads and remote controls are the primary input devices for Xbox and TV experiences.</span></span> 
 
-<span data-ttu-id="98234-109">UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。</span><span class="sxs-lookup"><span data-stu-id="98234-109">To ensure a successful and enjoyable user experience for your UWP app when using a gamepad or remote control, you should consider the following:</span></span>
+<span data-ttu-id="d7e37-111">UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。</span><span class="sxs-lookup"><span data-stu-id="d7e37-111">UWP apps should be optimized for these input device types, just like they are for keyboard and mouse input on a PC, and touch input on a phone or tablet.</span></span> 
 
-* <span data-ttu-id="98234-110">[ハードウェア ボタン](../devices/designing-for-tv.md#hardware-buttons) - ゲームパッドとリモコンでは、異なるボタンと構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="98234-110">[Hardware buttons](../devices/designing-for-tv.md#hardware-buttons) - The gamepad and remote provide very different buttons and configurations.</span></span>
+<span data-ttu-id="d7e37-112">Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが最も重要なステップです。</span><span class="sxs-lookup"><span data-stu-id="d7e37-112">Making sure that your app works well with these input devices is the most important step when optimizing for Xbox and the TV.</span></span>
 
-* <span data-ttu-id="98234-111">[XY フォーカス ナビゲーションと操作](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) - XY フォーカス ナビゲーションを使って、ユーザーがアプリの UI 間を移動できるようにします。</span><span class="sxs-lookup"><span data-stu-id="98234-111">[XY focus navigation and interaction](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) - XY focus navigation enables the user to navigate around your app's UI.</span></span>
+<span data-ttu-id="d7e37-113">PC 上の UWP アプリで、ゲームパッドをプラグインして使用できます。これにより検証が容易に行えます。</span><span class="sxs-lookup"><span data-stu-id="d7e37-113">You can now plug in and use the gamepad with UWP apps on PC which makes validating the work easy.</span></span>
 
-* <span data-ttu-id="98234-112">[マウス モード](../devices/designing-for-tv.md#mouse-mode) - XY フォーカス ナビゲーションでは十分でない場合、マウス モードを使うことで、アプリでマウスのエクスペリエンスをエミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="98234-112">[Mouse mode](../devices/designing-for-tv.md#mouse-mode) - Mouse mode lets your app emulate a mouse experience when XY focus navigation isn't sufficient.</span></span>
+<span data-ttu-id="d7e37-114">UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。</span><span class="sxs-lookup"><span data-stu-id="d7e37-114">To ensure a successful and enjoyable user experience for your UWP app when using a gamepad or remote control, you should consider the following:</span></span>
+
+* <span data-ttu-id="d7e37-115">[ハードウェア ボタン](../devices/designing-for-tv.md#hardware-buttons) - ゲームパッドとリモコンでは、異なるボタンと構成を提供します。</span><span class="sxs-lookup"><span data-stu-id="d7e37-115">[Hardware buttons](../devices/designing-for-tv.md#hardware-buttons) - The gamepad and remote provide very different buttons and configurations.</span></span>
+
+* <span data-ttu-id="d7e37-116">[XY フォーカス ナビゲーションと操作](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) - XY フォーカス ナビゲーションを使って、ユーザーがアプリの UI 間を移動できるようにします。</span><span class="sxs-lookup"><span data-stu-id="d7e37-116">[XY focus navigation and interaction](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) - XY focus navigation enables the user to navigate around your app's UI.</span></span>
+
+* <span data-ttu-id="d7e37-117">[マウス モード](../devices/designing-for-tv.md#mouse-mode) - XY フォーカス ナビゲーションでは十分でない場合、マウス モードを使うことで、アプリでマウスのエクスペリエンスをエミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="d7e37-117">[Mouse mode](../devices/designing-for-tv.md#mouse-mode) - Mouse mode lets your app emulate a mouse experience when XY focus navigation isn't sufficient.</span></span>
