@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7334711debf87d8834213af39ba384166404e1
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
+ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042375"
+ms.locfileid: "9042606"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -98,15 +98,19 @@ VSIX 拡張 1.0.181002.2、C++ より前のバージョンで、プロジェク�
 ...
 ```
 
-**Microsoft.Windows.CppWinRT** NuGet パッケージを手動でインストールすることによって、プロジェクトをアップグレードすることができます。 後のインストール (またはアップグレードする)、VSIX 拡張機能の最新バージョン Visual Studio でプロジェクトを開き、[**プロジェクト** \> **NuGet パッケージを管理する.** \> **参照**を、入力または**Microsoft.Windows.CppWinRT**検索ボックスに、検索結果の項目を選択し、貼り付け**をインストール**して、プロジェクトのパッケージをインストールする] をクリックします。 次に、編集、`.vcxproj`ファイル、および削除、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティ。
+**Microsoft.Windows.CppWinRT** NuGet パッケージを手動でインストールすることによって、プロジェクトをアップグレードすることができます。 後のインストール (またはアップグレードする)、VSIX 拡張機能の最新バージョン Visual Studio でプロジェクトを開き、[**プロジェクト** \> **NuGet パッケージを管理する.** \> **参照**を、入力または**Microsoft.Windows.CppWinRT**検索ボックスに、検索結果の項目を選択し、貼り付け**をインストール**して、プロジェクトのパッケージをインストールする] をクリックします。
 
 ### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>作成した (またはアップグレード) 1.0.181002.2 と 1.0.190128.3 間
 1.0.181002.2 と 1.0.190128.3 の間、VSIX 拡張機能のバージョンで、プロジェクトが作成された場合、包括性を備えたし、 **Microsoft.Windows.CppWinRT** NuGet パッケージがプロジェクトでによって自動的にインストール プロジェクト テンプレートです。 この範囲で、VSIX 拡張機能のバージョンを使用する以前のプロジェクトをアップグレードしたも可能性があります。 行った場合、その&mdash;ビルドのサポートがこの範囲で VSIX 拡張機能のバージョンで引き続き存在していたもため&mdash;、アップグレード後のプロジェクトがまたは**Microsoft.Windows.CppWinRT** NuGet パッケージがインストールされていない可能性があります。
 
-プロジェクトをアップグレードするには、前のセクションの指示に従って、プロジェクトの**Microsoft.Windows.CppWinRT** NuGet パッケージがインストールされていることを確認します。 その後、削除も、`<CppWinRTEnabled>true</CppWinRTEnabled>`プロパティ。
+プロジェクトをアップグレードするには、前のセクションの指示に従って、プロジェクトの**Microsoft.Windows.CppWinRT** NuGet パッケージがインストールされていることを確認します。
 
 ### <a name="invalid-upgrade-configurations"></a>無効なアップグレードの構成
 VSIX 拡張機能の最新のバージョンでことはできませんが、プロジェクトの`<CppWinRTEnabled>true</CppWinRTEnabled>` **Microsoft.Windows.CppWinRT** NuGet パッケージをインストールもされていない場合は、プロパティ。 この構成を持つプロジェクトがビルドのエラー メッセージを生成"c++/WinRT VSIX プロジェクト ビルドのサポートが提供されなくなります。  追加してください Microsoft.Windows.CppWinRT Nuget パッケージへの参照をプロジェクト。"
+
+前述した、C + + WinRT プロジェクトが NuGet パッケージがインストールされていることを今すぐ必要があります。
+
+`<CppWinRTEnabled>`要素は廃止されました、必要に応じてを編集できます、 `.vcxproj`、要素を削除します。 厳密に必要はありませんが、これは、オプション。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT プロジェクションにおけるカスタム型
 C++//winrt プログラミングでは、標準 C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。
