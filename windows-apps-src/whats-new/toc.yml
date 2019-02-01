@@ -4,9 +4,11 @@ items:
   items:
   - name: Windows 10 ビルド 17763 での API の追加
     href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: Windows ドキュメントの最新情報、2018 年 9 月
-  href: ../whats-new/windows-docs-september-2018.md
+- name: Windows ドキュメントの最新情報、2019 月 1 月
+  href: ../whats-new/windows-docs-january-2019.md
   items:
+  - name: Windows ドキュメントの最新情報、2018 年 9 月
+    href: ../whats-new/windows-docs-september-2018.md
   - name: Windows ドキュメントの最新情報、2018 年 8 月
     href: ../whats-new/windows-docs-august-2018.md
   - name: Windows ドキュメントの最新情報、2018 年 7 月
@@ -51,9 +53,9 @@ items:
     href: ../whats-new/windows-10-build-10240.md
 - name: 試験的な API
   href: ../whats-new/experimental-apis.md
-ms.openlocfilehash: 167336081b680deecb9781c36e51da1559d1f91f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962564"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013941"
