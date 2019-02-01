@@ -5,12 +5,12 @@ ms.date: 10/09/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: e1e4570320e9d48351ccb01052fc77d35ae03642
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024571"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042304"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
 
@@ -47,7 +47,7 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中の 2 つのヘルパー関数を示す例のプロジェクト
 
-簡単な方法での c++ コードを徐々 に移植するシナリオを再現するには/CX プロジェクトを C++/cli/winrt では、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/WinRT プロジェクト テンプレート (c++ [Visual Studio サポートを参照してください/WinRT、と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。
+簡単な方法での c++ コードを徐々 に移植するシナリオを再現するには + を C++ プロジェクトを CX +/winrt では、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
 
 この例のプロジェクトも、C++ の間それ以外の場合の潜在的な名前空間の競合を処理するために、コードの異なる断片の名前空間のエイリアスを使用する方法を示しています/WinRT プロジェクションと c++/cli/CX プロジェクション。
 

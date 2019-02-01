@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
-ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
+ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035446"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042424"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,7 +158,7 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>HTTP 経由でデータをポスト バイナリ
 
-[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)少量の[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)クラスを使用して、POST 要求とバイナリ データを送信する次のコード例を示しています。
+[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)少量の[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)クラスを使用して、POST 要求とバイナリ データを送信する次のコード例を示しています。 (次のコード例に示す) よう、**取得**を呼び出すことが適切でない UI スレッドにします。 その場合に使用する、適切な手法では、次を参照してください。[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。
 
 ```cppwinrt
 // pch.h

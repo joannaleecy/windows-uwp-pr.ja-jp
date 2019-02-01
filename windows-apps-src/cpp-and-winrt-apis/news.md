@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ニュース、ものの新機能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b46aaf9948587ef79a9c5bf73064b1a70c0e9c3a
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: cb624a93a010dfe9784cf8c26beed12c6cf2f77d
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035707"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042434"
 ---
 # <a name="whats-new-in-cwinrt"></a>新機能、C++/WinRT
 
@@ -43,8 +43,8 @@ ms.locfileid: "9035707"
 - 不要な再帰を削除します。 とき、コマンド ラインは特定のではなく、フォルダーに`.winmd`、`cppwinrt.exe`ツールを再帰的を検索されなくなった`.winmd`ファイル。 `cppwinrt.exe`ツールも処理重複よりインテリジェントなに適切な形式は、ユーザーのエラーを回復力の強化`.winmd`ファイル。
 - スマート ポインターを強化します。 以前は、取り消すときに失敗したイベント revokers 移動に割り当てられた新しい値。 これスマート ポインター クラス自動割り当ての処理を減少が生じない確実に問題が明らかになりました[**winrt::com_ptr 構造体のテンプレート**](/uwp/cpp-ref-for-winrt/com-ptr)が発行されます。 **winrt::com_ptr**が修正されましたし、処理する固定イベント revokers 移動セマンティクス正しく割り当て時に取り消すことができるようにします。、
 
-> [!NOTE]
-> 重要な変更が加えられて、 [、C++/WinRT Visual Studio Extension (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)、バージョン、1.0.181002.2 両方、バージョン 1.0.190128.4 します。 これらの変更と、プロジェクトにどのように影響がの詳細については、次を参照してください。 [、C++、Visual Studio サポート/WinRT、と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)します。
+> [!IMPORTANT]
+> 重要な変更が加えられて、 [、C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)、両方でバージョン 1.0.181002.2、1.0.190128.4 のバージョンで後とします。 詳細については、これらの変更と、既存のプロジェクトにどのように影響の[、C++、Visual Studio サポート/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) [VSIX 拡張機能の以前](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)のバージョン。
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>Windows SDK ヘッダー ファイルから分離
 

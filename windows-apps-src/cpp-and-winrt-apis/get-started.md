@@ -5,12 +5,12 @@ ms.date: 10/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 069212fd9a6e0bcf3fb024d7f28738dd3049f5e1
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024481"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042354"
 ---
 # <a name="get-started-with-cwinrt"></a>C++/WinRT の使用を開始する
 
@@ -22,7 +22,7 @@ ms.locfileid: "9024481"
 ## <a name="a-cwinrt-quick-start"></a>C++/WinRT のクイックスタート
 
 > [!NOTE]
-> C++/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートおよび C++/WinRT MSBuild プロパティとターゲットを提供) のインストールと使用については、「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)」を参照してください。
+> インストールと c++ を使用してについては/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートを提供します) を参照してください[、C++、Visual Studio サポート/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 新しい **Windows コンソール アプリケーション (C++/WinRT)** プロジェクトを作成します。
 
@@ -120,6 +120,8 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 このセクションでは、追加する方法、C++/cli/winrt サポートする必要があります Windows デスクトップ アプリケーション プロジェクトをします。 しないがある場合、既存の Windows デスクトップ アプリケーション プロジェクトで作成する最初のいずれかで次の手順に従ってすることができます。 たとえば、Visual Studio を開き、 **Visual C**を作成 \> **Windows デスクトップ** \> **Windows デスクトップ アプリケーション**プロジェクトです。
 
+インストールすることが必要に応じて、 [、C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、「 [Visual Studio サポートの C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
+
 ### <a name="set-project-properties"></a>プロジェクトのプロパティを設定します。
 
 **一般的な**プロパティをプロジェクトに移動する \> **Windows SDK バージョン**、および選択の**すべての構成**と**すべてのプラットフォーム**です。 **Windows SDK バージョン**を 10.0.17134.0 (Windows 10、バージョン 1803) に設定されていることを確認またはそれ以上。
@@ -146,11 +148,9 @@ C++/WinRT の c++ 17 標準から機能を使用して、プロジェクト プ�
 
 C++/cli [WindowsApp.lib](/uwp/win32-and-com/win32-apis)包括的なライブラリへのリンクは/winrt 言語プロジェクションは、特定の Windows ランタイムの自由 (非メンバー) 関数とエントリ ポイントに依存するを必要とします。 このセクションでは、リンカーを満たすの 3 つの方法について説明します。
 
-最初のオプションは、Visual Studio に追加するプロジェクトのすべての c++/cli/winrt MSBuild プロパティとターゲットします。 編集、`.vcxproj`ファイルで、見つけ`<PropertyGroup Label="Globals">`そのプロパティ グループ内でプロパティを設定し、`<CppWinRTEnabled>true</CppWinRTEnabled>`します。
+最初のオプションは、Visual Studio に追加するプロジェクトのすべての c++/cli/winrt MSBuild プロパティとターゲットします。 これを行うには、プロジェクトに[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)をインストールします。 Visual Studio でプロジェクト クリックの**プロジェクト**を開く \> **NuGet パッケージを管理する.** \> **参照**、入力または**Microsoft.Windows.CppWinRT**を検索ボックスに貼り付ける、検索結果の項目を選択して**インストール**をそのプロジェクトのパッケージをインストールする] をクリックします。
 
-明示的にリンクするプロジェクトのリンク設定を使用する代わりに、`WindowsApp.lib`します。
-
-または、ソース コードで行うことができます (で`pch.h`など) のようにします。
+明示的にリンクするプロジェクトのリンク設定を使用することもできます。`WindowsApp.lib`します。 または、ソース コードで行うことができます (で`pch.h`など) のようにします。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")

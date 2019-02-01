@@ -5,12 +5,12 @@ ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10、uwp、windows フォーム、wpf、win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 999a990dbbc98f4f1224ce55f48d99889afbb89a
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: efd7dc687b9aba2e3c07b0afefa2e4fa49b882b1
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024631"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042314"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>デスクトップ アプリケーションで API をホストしている UWP XAML の使用
 
@@ -55,9 +55,9 @@ API をホストしている UWP XAML では、これらの前提条件があり
 
 * Windows 10 Insider Preview ビルド 17709 (またはそれ以降のビルド) と Windows SDK の対応する Insider Preview ビルドします。 これは、進化する機能であるため、最適なエクスペリエンスをお勧めします利用可能な最新のビルドを使用します。
 
-* デスクトップ アプリケーションの API をホストしている UWP XAML を使用するための UWP Api を呼び出すことが、プロジェクトを構成する必要があります。
+* デスクトップ アプリケーションの API をホストしている UWP XAML を使用するには、UWP Api を呼び出すことができるように、プロジェクトを構成する必要があります。
 
-    * **C++ Win32:** 使用するプロジェクトを構成することをお勧めします[、C++/WinRT](../cpp-and-winrt-apis/index.md)します。 ダウンロードし、インストール、 [、C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)から Visual Studio Marketplace し、追加、 ```<CppWinRTEnabled>true</CppWinRTEnabled>``` .vcxproj ファイルとして記述[は、ここ](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)にプロパティ。
+    * **C++ Win32:** 使用するプロジェクトを構成することをお勧めします[、C++/WinRT](../cpp-and-winrt-apis/index.md)します。 手順については、次を参照してください。[を追加するには、C++ の Windows デスクトップ アプリケーション プロジェクトを変更する/WinRT サポート](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)します。
 
     * **Windows フォーム、WPF:**[次の手順](../porting/desktop-to-uwp-enhance.md)に従います。
 

@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: wwindows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 頻繁, 質問, 質問, faq
 ms.localizationpriority: medium
-ms.openlocfilehash: e02622452aa99cd262221cd0c448ceca8271b00d
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: 2d4bb534ae5b5dc02f72712cf417ca9054f21b6e
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035727"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042294"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>C++/WinRT についてよく寄せられる質問
 可能性はの作成と Windows ランタイム Api の使用に関する質問への回答[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。
@@ -19,15 +19,16 @@ ms.locfileid: "9035727"
 > 質問の内容が、表示されたエラー メッセージに関するものである場合は、「[C++/WinRT に関する問題のトラブルシューティング](troubleshooting.md)」のトピックも参照してください。
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>方法は I 再ターゲット my C + + 以降のバージョンの Windows SDK に WinRT プロジェクトかどうか。
-
 参照してください[c++ 対象範囲の変更方法/WinRT プロジェクトを Windows SDK のそれ以降のバージョンを](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)します。
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>新しいプロジェクトがコンパイルされません。 Visual Studio 2017 を使用している (バージョン 15.8.0 以上)、および SDK バージョン 17134
-
 Visual Studio 2017 を使用している場合 (バージョン 15.8.0 以上)、Windows SDK バージョン 10.0.17134.0 (Windows 10、バージョン 1803) し、新しく作成した、C++ をターゲットとし、/WinRT プロジェクトをコンパイル エラーで失敗する可能性が"*エラー C3861: 'from_abi': 識別子されません見つかった*"、および*base.h*でその他のエラー。 解決策は、いずれかのターゲット以降 (詳しく準拠) のバージョンの Windows SDK、またはプロジェクトのプロパティを設定する**C/C++** > **言語** > **Conformance mode: いいえ**(も場合、 **/制限解除-** **プロジェクトのプロパティに表示されますC/C++** > **コマンド ライン**[**その他のオプション**を削除します)。
 
-## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a> [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix) の要件
-[VSIX 拡張機能](https://aka.ms/cppwinrt/vsix)では、最小の Windows SDK ターゲット バージョン 10.0.17134.0 (Windows 10、バージョン 1803) の必要があります。 Visual Studio 2017 も必要になります (少なくともバージョン 15.6 以上、15.7 をお勧めします)、または Visual Studio 2019 します。 `.vcxproj` ファイルの `<PropertyGroup Label="Globals">` に `<CppWinRTEnabled>true</CppWinRTEnabled>` があるかどうかによって、VSIX を使用するプロジェクトを特定できます。 詳しくは、プロジェクトの[Microsoft.Windows.CppWinRT NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)をインストールするには、必要かどうかに関する情報を含むを参照してください。 [、C++、Visual Studio サポート/WinRT、と VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)します。
+## <a name="how-do-i-resolve-the-build-error-the-cwinrt-vsix-no-longer-provides-project-build-support--please-add-a-project-reference-to-the-microsoftwindowscppwinrt-nuget-package"></a>ビルド エラーを解決する方法"c++/WinRT VSIX プロジェクト ビルドのサポートが提供されなくなります。  追加してください Microsoft.Windows.CppWinRT Nuget パッケージへの参照をプロジェクト"かどうか。
+プロジェクトに**Microsoft.Windows.CppWinRT** NuGet パッケージをインストールします。 詳細については、 [VSIX 拡張機能の以前のバージョン](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)を参照してください。
+
+## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsix"></a>C++/WinRT Visual Studio Extension (VSIX) の要件
+バージョン 1.0.190128.4 VSIX 拡張機能の後で、次を参照してください。 [Visual Studio サポートの C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。 その他のバージョンでは、 [VSIX 拡張機能の以前のバージョン](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)を参照してください。
 
 ## <a name="whats-a-runtime-class"></a>*ランタイム クラス*とは
 ランタイム クラスは、通常実行可能な境界を越えて、モダン COM インターフェイス経由でアクティブ化および使用可能な型です。 ただし、ランタイム クラスは、それを実装するコンパイル ユニット内でも使用できます。 インターフェイス定義言語 (IDL) でランタイム クラスを宣言し、C++/WinRT を使用した標準の C++ で実装することができます。
@@ -89,10 +90,9 @@ windows.com
 
 C++/WinRT では C++17 標準の機能を使用するため、そのサポートを受けるために必要なコンパイラ フラグを使用する必要があります。そのようなフラグはコンパイラによって異なります。
 
-Visual Studio は、マイクロソフトがサポートし、C++/WinRT 用に推奨する開発ツールです。 「[C++/WinRT の Visual Studio サポートと VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)」を参照してください。
+Visual Studio は、マイクロソフトがサポートし、C++/WinRT 用に推奨する開発ツールです。 参照してください[Visual Studio サポートの C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 ## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>読み取り専用プロパティの実装が生成された関数がない理由、`const`修飾子かどうか。
-
 期待どおり[MIDL 3.0](/uwp/midl-3/)で読み取り専用プロパティを宣言するとき、`cppwinrt.exe`されるツールの実装の機能を生成する`const`-(const 関数は、定数として*この*ポインターを扱う) 修飾します。
 
 可能であれば、定数を使用してを確実にお勧めが、`cppwinrt.exe`のどの実装について関数が考え const、ありする可能性がある理由ツール自体は行われません。 この例のように、const させるを実装する関数のいずれかを選択できます。
@@ -130,7 +130,6 @@ winrt::hstring ToString() const;
 理解これらの例の`const`C + の実装の詳細は/WinRT プロジェクションおよび実装します。これらは、しやすくするコードに対する予防措置を構成します。 このようなものはありません`const`COM も (メンバー関数) 用の Windows ランタイム ABI のします。
 
 ## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>C++ コードのサイズを小さくに関する推奨事項がある/WinRT バイナリかどうか。
-
 Windows ランタイム オブジェクトを使用する際は、できますがある、否定的な影響をアプリケーションを生成するために必要なよりも多くのバイナリ コードを発生させることによってために、次に示すコーディング パターンを避ける必要があります。
 
 ```cppwinrt
@@ -151,7 +150,6 @@ a.f();
 上記の推奨パターンの対象だけでなく、C++/WinRT が、すべての Windows ランタイム言語プロジェクションにします。
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>型に文字列にどのように&mdash;ナビゲーションでは、たとえばかどうか。
-
 [ナビゲーション ビューのコード例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)(これは、c# でほとんどの場合は) の最後は c++/WinRT のコード スニペットがこれを行う方法を示します。
 
 > [!NOTE]
