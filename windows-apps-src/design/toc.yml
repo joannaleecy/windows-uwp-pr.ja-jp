@@ -148,8 +148,6 @@ items:
       href: controls-and-patterns/menus.md
   - name: ナビゲーション
     items:
-    - name: ハブ
-      href: controls-and-patterns/hub.md
     - name: マスター/詳細
       href: controls-and-patterns/master-details.md
     - name: ナビゲーション ビュー
@@ -564,9 +562,9 @@ items:
       href: in-app-help/external-help.md
 - name: 設計ツールキット
   href: downloads/index.md
-ms.openlocfilehash: 410998c21e9351062118d63328c8e580a52b4c08
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: af1472f7650982783ac08da2c73ebb5046401f3c
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962604"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004568"
