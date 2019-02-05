@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 428f6787dfeb18d7ebf02f96acea2a6ab55c7fe7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c7a40d81171113656a39dda2fe02e0701fdd8ba4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938593"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050362"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植
 
@@ -36,10 +36,10 @@ ms.locfileid: "8938593"
 -   すべてのデバイス ファミリに共通するファイルについては、特に考慮する必要はありません。 これらのファイルは、実行対象となるすべてのデバイス ファミリで、アプリが使うファイルです。 これには、XAML マークアップ ファイル、命令型ソース コード ファイル、アセット ファイルが含まれます。
 -   実行されているデバイス ファミリをアプリで検出し、そのデバイス ファミリ専用に設計されたビューに移動させることができます。 詳しくは、「[アプリが実行されているプラットフォームの検出](w8x-to-uwp-input-and-sensors.md)」をご覧ください。
 -   プラットフォームを検出するための代替方法がない場合に役立つと考えられる同様の手法として、マークアップ ファイルや **ResourceDictionary** ファイル (またはこのファイルが保存されているフォルダー) に対して特殊な名前を設定する方法があります。この特殊な名前によって、アプリが特定のデバイス ファミリで実行される場合にのみ、これらのファイルが実行時に自動的に読み込まれるようになります。 この手法については、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」のケース スタディをご覧ください。
--   Windows 10 をサポートするためにのみ必要がある場合、ユニバーサル 8.1 アプリのソース コードで条件付きコンパイル ディレクティブの多くを削除できる必要があります。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」をご覧ください。
+-   Windows 10 をサポートするためにのみ必要がある場合、ユニバーサル 8.1 アプリのソース コードで条件付きコンパイル ディレクティブの多くを削除することがあります。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」をご覧ください。
 -   一部のデバイス ファミリでのみ利用できる機能 (プリンター、スキャナー、またはカメラのボタンなど) を使うには、アダプティブ コードを記述します。 このトピックの「[条件付きコンパイルとアダプティブ コード](#conditional-compilation-and-adaptive-code)」に記載されている 3 番目の例をご覧ください。
--   Windows 8.1、Windows Phone 8.1、windows 10 をサポートする場合は、できる 3 つのプロジェクトと同じソリューション内に保持し、共有プロジェクトとコードを共有します。 または、プロジェクト間でソース コード ファイルを共有することができます。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。 また、ソース コントロールに追加することを忘れないでください。
--   ソース コード レベルではなくバイナリ レベルでの再利用については、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](http://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)」をご覧ください。 Windows 8.1、Windows Phone 8.1、および windows 10 アプリ (.NET Core) 用の .NET Framework と .NET Framework で利用できる .NET Api のサブセットをサポートするポータブル クラス ライブラリもします。 ポータブル クラス ライブラリ アセンブリは、これらのプラットフォームすべてとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](http://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
+-   Windows 8.1、Windows Phone 8.1、windows 10 をサポートする場合は、できる 3 つのプロジェクトを同じソリューションに保持し、共有プロジェクトとコードを共有します。 または、プロジェクト間でソース コード ファイルを共有することができます。 Visual Studio でこのような処理を行うには、**ソリューション エクスプローラー**でプロジェクトを右クリックして **[既存項目の追加]** を選択し、共有するファイルを選択して **[リンクとして追加]** をクリックします。 リンクしたプロジェクトを確認できるファイル システム上の共通のフォルダーにソース コード ファイルを格納します。 また、ソース コントロールに追加することを忘れないでください。
+-   ソース コード レベルではなくバイナリ レベルでの再利用については、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/br230301.aspx)」をご覧ください。 Windows 8.1、Windows Phone 8.1、および windows 10 アプリ (.NET Core) 用の .NET Framework と .NET Framework で利用できる .NET Api のサブセットをサポートするポータブル クラス ライブラリもします。 ポータブル クラス ライブラリ アセンブリは、これらのプラットフォームすべてとバイナリ レベルで互換性があります。 Visual Studio を使って、ポータブル クラス ライブラリをターゲットとするプロジェクトを作成します。 「[汎用性のあるクラス ライブラリを使用したプラットフォーム間の開発](https://msdn.microsoft.com/library/gg597391.aspx)」をご覧ください。
 
 ## <a name="extension-sdks"></a>拡張 SDK
 
@@ -71,7 +71,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 
 コード ファイルが Windows 8.1 と Windows Phone 8.1 の両方で動作するように条件付きコンパイル (c# プリプロセッサ ディレクティブ) によるを使用している場合は、windows 10 で行われた集約作業を踏まえてその条件付きコンパイルできるようになりました確認できます。 この集約作業は、windows 10 アプリでいくつかの条件を完全に削除することを意味します。 削除されない条件は、次に説明するように実行時チェックに変更します。
 
-**注:**  、1 つのコード ファイルで、Windows 8.1、Windows Phone 8.1、および windows 10 をサポートする場合も実行できます。 プロジェクトのプロパティ ページで、windows 10 プロジェクトで参照する場合、プロジェクトは、条件付きコンパイル シンボルとして \_uap が定義することが表示されます。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 これらの例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除の windows 10 アプリの同等のコードを置き換えるシンプルなケースを表示します。
+**注:**  、1 つのコード ファイルでは、Windows 8.1、Windows Phone 8.1、および windows 10 をサポートする場合も実行できます。 プロジェクトのプロパティ ページで、windows 10 プロジェクトで参照する場合、プロジェクトは、条件付きコンパイル シンボルとして \_uap が定義することが表示されます。 このため、このシンボルを WINDOWS\_APP や WINDOWS\_PHONE\_APP と組み合わせて使うことができます。 これらの例では、ユニバーサル 8.1 アプリから条件付きコンパイルを削除の windows 10 アプリの同等のコードを置き換えるシンプルなケースを表示します。
 
 最初の例では、**PickSingleFileAsync** API (Windows 8.1 にのみ適用) と **PickSingleFileAndContinue** API (Windows Phone 8.1 にのみ適用) の使用パターンを示しています。
 
@@ -83,7 +83,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 #endif // WINDOWS_APP
 ```
 
-Windows 10 は、次のように、コードが簡略化するため、 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API で収束します。
+Windows 10 は、次のように、コードが簡略化するため[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API に集約され。
 
 ```csharp
     // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
@@ -106,7 +106,7 @@ Windows 10 は、次のように、コードが簡略化するため、 [**PickS
 #endif // WINDOWS_PHONE_APP
 ```
 
-Windows 10 での戻るボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
+Windows 10 の"戻る"ボタンのイベントは、ユニバーサル概念です。 ハードウェアまたはソフトウェアに実装されているすべての "戻る" ボタンでは [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントが発生するため、このイベントを処理します。
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -137,7 +137,7 @@ void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input.CameraE
 #endif // WINDOWS_PHONE_APP
 ```
 
-、Windows 10 では、ハードウェアの"カメラ"ボタンは、モバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 このコードは事実上ユニバーサル 8.1 コードと同等のコードとなるため、このコードでは存在する機能のみを使うように注意してください。これは、別の方法で実施することもできます。
+Windows 10 は、ハードウェアの"カメラ"ボタンは、モバイル デバイス ファミリに固有の概念です。 1 つのアプリ パッケージがすべてのデバイスで実行されるため、アダプティブ コードと呼ばれる手法を使って、コンパイル時の条件を実行時の条件に変更します。 そのためには、[**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使って、実行時に [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラスの有無を照会します。 **HardwareButtons** は、モバイル拡張 SDK で定義されているため、その SDK への参照をプロジェクトに追加して、このコードをコンパイルする必要があります。 ただし、ハンドラーはモバイル拡張 SDK で定義されている型を実装するデバイスでのみ実行されることに注意してください。このようなデバイスは、モバイル デバイス ファミリに該当します。 このコードは事実上ユニバーサル 8.1 コードと同等のコードとなるため、このコードでは存在する機能のみを使うように注意してください。これは、別の方法で実施することもできます。
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -162,7 +162,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="app-package-manifest"></a>アプリ パッケージ マニフェスト
 
-[Windows 10 で変更された内容](https://msdn.microsoft.com/library/windows/apps/dn705793)のトピックでは、追加、削除、および変更されている要素を含む、windows 10 のパッケージ マニフェスト スキーマ リファレンスに対する変更を一覧表示されます。 このスキーマのすべての要素、属性、型に関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合、または Windows Phone ストアのアプリに対する更新となるアプリを作成する場合は、**pm:PhoneIdentity** 要素が、以前のアプリのアプリ マニフェストの値と一致していることを確認してください (ストアからアプリに割り当てられたものと同じ GUID を使用してください)。 これにより、アプリのユーザーが Windows 10 にアップグレードした場合に、新しいアプリが確実に更新プログラムとして配布され、アプリの重複を避けることができます。 詳しくは、[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) のリファレンス トピックをご覧ください。
+[Windows 10 の変更内容は、](https://msdn.microsoft.com/library/windows/apps/dn705793)このトピックでは、追加、削除、および変更されている要素を含む、windows 10 のパッケージ マニフェスト スキーマ リファレンスに対する変更を一覧表示されます。 このスキーマのすべての要素、属性、型に関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。 Windows Phone ストア アプリを移植する場合、または Windows Phone ストアのアプリに対する更新となるアプリを作成する場合は、**pm:PhoneIdentity** 要素が、以前のアプリのアプリ マニフェストの値と一致していることを確認してください (ストアからアプリに割り当てられたものと同じ GUID を使用してください)。 これにより、アプリのユーザーが Windows 10 にアップグレードした場合に、新しいアプリが確実に更新プログラムとして配布され、アプリの重複を避けることができます。 詳しくは、[**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) のリファレンス トピックをご覧ください。
 
 アプリが呼び出すことのできる API サーフェス領域は、プロジェクトの設定 (拡張 SDK の参照を含む) によって決定されます。 ただし、ユーザーがアプリをストアからインストールできる実際のデバイスのセットを決定するのは、アプリ パッケージ マニフェストです。 詳しくは、「[**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)」の例をご覧ください。
 
@@ -172,8 +172,8 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ユニバーサル Windows プラットフォーム用アプリの開発](http://msdn.microsoft.com/library/dn975273.aspx)
-* [すぐに Windows ランタイム 8.x のアプリ テンプレート (c#、C++、Visual Basic) を使用します。](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [ユニバーサル Windows プラットフォーム用アプリの開発](https://msdn.microsoft.com/library/dn975273.aspx)
+* [すぐに Windows ランタイム 8.x アプリ テンプレート (c#、C++、Visual Basic) を使用します。](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [Cross-Platform Development with the Portable Class Library (.NET Framework を使用したプラットフォーム間の開発)](http://msdn.microsoft.com/library/gg597391.aspx)
+* [Cross-Platform Development with the Portable Class Library (.NET Framework を使用したプラットフォーム間の開発)](https://msdn.microsoft.com/library/gg597391.aspx)
 

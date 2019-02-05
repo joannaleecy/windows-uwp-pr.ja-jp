@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047427"
+ms.locfileid: "9058653"
 ---
 # <a name="create-custom-transport-controls"></a>カスタム トランスポート コントロールを作成する
 
@@ -57,7 +57,7 @@ MediaPlayerElement には、ユニバーサル Windows プラットフォーム 
 - 3 番目のセクションには、さまざまな MediaTransportControls 要素をまとめて保持し、コンポーネントのレイアウトを定義する [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) が含まれています。
 
 > [!NOTE]
-> テンプレートの変更について詳しくは、「[コントロール テンプレート]()」をご覧ください。 テキスト エディターか、IDE の同様のエディターを使って、\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic にある XAML ファイルを開くことができます。 各コントロールの既定のスタイルとテンプレートは、**generic.xaml** ファイルで定義されています。 MediaTransportControls テンプレートは、generic.xaml で "MediaTransportControls" を検索すると見つけることができます。
+> テンプレートの変更について詳しくは、「[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)」をご覧ください。 テキスト エディターか、IDE の同様のエディターを使って、\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic にある XAML ファイルを開くことができます。 各コントロールの既定のスタイルとテンプレートは、**generic.xaml** ファイルで定義されています。 MediaTransportControls テンプレートは、generic.xaml で "MediaTransportControls" を検索すると見つけることができます。
 
 以下のセクションでは、トランスポート コントロールの主な要素のいくつかをカスタマイズする方法について説明します。
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): ユーザーがメディアをスクラブし、進行状況も表示できるようにします。
@@ -91,7 +91,7 @@ MediaTransportControls の外観のみを変更する場合、既定のコント
 </MediaPlayerElement>
 ```
 
-スタイルとテンプレートの変更について詳しくは、「[コントロールのスタイル]()」と「[コントロール テンプレート]()」をご覧ください。
+スタイルとテンプレートの変更について詳しくは、「[コントロールのスタイル](/windows/uwp/design/controls-and-patterns/xaml-styles)」と「[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)」をご覧ください。
 
 ### <a name="create-a-derived-control"></a>派生コントロールの作成
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: Windows 10, UWP, タイマー, スレッド
 ms.localizationpriority: medium
-ms.openlocfilehash: ad0d342d773723981138619a07ea6ee37ecdc8dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f11207a774b1ffcebde95e316634592020e6ed49
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044975"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058503"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>マルチスレッド環境での Windows ランタイム オブジェクトの使用
 この記事では、C# および Visual Basic コードからオブジェクト (Windows ランタイム や Windows ランタイム コンポーネントによって提供されるオブジェクト) を呼び出すとき、.NET Framework がどのようにこの呼び出しを処理するかについて説明します。
@@ -161,6 +161,6 @@ End Sub
 UI スレッドで実行され、UI スレッド以外のスレッドから呼び出された場合に例外をスローするオブジェクトでは、UI スレッドの [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトを使用して呼び出しをディスパッチできます。
 
 ## <a name="see-also"></a>関連項目
-[C# ガイド](/dotnet/articles/csharp/)
+[C# ガイド](/dotnet/csharp/)
 
-[Visual Basic ガイド](/dotnet/articles/visual-basic/)
+[Visual Basic ガイド](/dotnet/visual-basic/)

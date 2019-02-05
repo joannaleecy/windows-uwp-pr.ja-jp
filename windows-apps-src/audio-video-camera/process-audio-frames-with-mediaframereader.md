@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050835"
+ms.locfileid: "9058773"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>MediaFrameReader を使ったオーディオ フレームの処理
 
@@ -49,7 +49,7 @@ ms.locfileid: "9050835"
 
 **MediaFrameReader** の新しいインスタンスを取得するために、前の手順で選択した **MediaFrameSource** オブジェクトを渡して [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_) を呼び出します。 既定では、オーディオ フレームがバッファー モードで取得されます。これにより、フレーム損失の可能性は低くなりますが、それでもなおオーディオ フレームの処理が間に合わず、システムに割り当てられたメモリ バッファーがいっぱいになると、フレームの損失が発生します。
 
-オーディオ データの新しいフレームが利用可能になったときにシステムによって生成される [**MediaFrameReader.FrameArrived**](*https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) イベントのハンドラーを登録します。 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) を呼び出して、オーディオ フレームの取得を開始します。 フレーム リーダーが開始できない場合、呼び出しから返される状態値には、[**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外の値が格納されます。
+オーディオ データの新しいフレームが利用可能になったときにシステムによって生成される [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) イベントのハンドラーを登録します。 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) を呼び出して、オーディオ フレームの取得を開始します。 フレーム リーダーが開始できない場合、呼び出しから返される状態値には、[**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外の値が格納されます。
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 

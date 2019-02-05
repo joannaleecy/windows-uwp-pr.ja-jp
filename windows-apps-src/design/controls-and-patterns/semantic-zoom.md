@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5689fd967756025872fd45bf242076e854e700aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 210cca8a4b17b77e8c1f9cb490a79bcd1a53b6c7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048099"
+ms.locfileid: "9058793"
 ---
 # <a name="semantic-zoom"></a>セマンティック ズーム
 
@@ -80,7 +80,7 @@ ms.locfileid: "9048099"
 - 項目レベルのデータを表示する拡大表示ビュー。
 - グループ レベルのデータを表示する縮小表示ビュー。
 
-セマンティック ズームを使用する前に、グループ化されたデータに対してリスト ビューを使用する方法を理解する必要があります。 詳しくは、「[リスト ビューとグリッド ビュー](listview-and-gridview.md)」と「[リスト内の項目のグループ化]()」をご覧ください。 
+セマンティック ズームを使用する前に、グループ化されたデータに対してリスト ビューを使用する方法を理解する必要があります。 詳しくは、[リスト ビューとグリッド ビュー](listview-and-gridview.md)を参照してください。 
 
 > **注**&nbsp;&nbsp; SemanticZoom コントロールの拡大表示ビューと縮小表示ビューを定義するには、[ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) インターフェイスを実装する任意のコントロールを 2 つ使用できます。 XAML フレームワークには、このインターフェイスを実装するコントロールが 3 つ用意されています。ListView、GridView、および Hub です。
  

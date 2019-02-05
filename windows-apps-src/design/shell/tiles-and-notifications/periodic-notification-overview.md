@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a5054fde1a1a24945b193f578b8389519dc2d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918628"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050515"
 ---
 # <a name="periodic-notification-overview"></a>定期的な通知の概要
  
@@ -25,7 +25,7 @@ ms.locfileid: "8918628"
 
 定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。
 
-**注:**  Windows8.1 のため[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再使用の詳細については、します。
+**注:**  windows 8.1 用[プッシュ通知と定期的な通知のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再使用の詳細については、します。
 
  
 
@@ -77,7 +77,7 @@ URI がポーリングされるのは、デバイスがオンラインになっ�
 
 既定では、定期的なタイル通知とバッジ通知は、ダウンロードされたときから 3 日後に有効期限切れになります。 通知の有効期限が切れると、バッジ、タイル、キューからコンテンツが削除され、ユーザーに表示されなくなります。 すべての定期的なタイル通知とバッジ通知には、アプリや通知に適した時間を使って有効期限を明示的に設定し、コンテンツの意味がなくなっても保持されないようにすることをお勧めします。 明示的な有効期限は、コンテンツの存続期間が決まっている場合に重要です。 また、クラウド サービスにアクセスできなくなった場合や、ユーザーがネットワークに長時間接続していない場合に、古いコンテンツが確実に削除されます。
 
-クラウド サービスでは、応答のペイロードに X-WNS-Expires HTTP ヘッダーを含めることによって、通知の有効期限の日時が明示的に設定されます。 X-WNS-Expires HTTP ヘッダーは、[HTTP-date 形式](http://go.microsoft.com/fwlink/p/?linkid=253706)に準拠します。 詳しくは、「[**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)」または「[**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)」をご覧ください。
+クラウド サービスでは、応答のペイロードに X-WNS-Expires HTTP ヘッダーを含めることによって、通知の有効期限の日時が明示的に設定されます。 X-WNS-Expires HTTP ヘッダーは、[HTTP-date 形式](https://go.microsoft.com/fwlink/p/?linkid=253706)に準拠します。 詳しくは、「[**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_)」または「[**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)」をご覧ください。
 
 たとえば、株式市場の取引が活発な日は、株価の更新の有効期限をポーリング間隔の有効期限の 2 倍に設定することをお勧めします (ポーリング間隔が 30 分の場合は有効期限を受け取り後 1 時間にするなど)。 また、ニュース アプリの場合、毎日のニュースを表示するタイルの更新の有効期限は 1 日が適しています。
 

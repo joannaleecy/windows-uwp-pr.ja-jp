@@ -5,12 +5,12 @@ keywords: ホストされた Web アプリ、HWA、REST API、単一ページ �
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932618"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049549"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 
@@ -20,7 +20,7 @@ ms.locfileid: "8932618"
 
 2 つの部分から構成されるこのチュートリアルでは、モダンなフルスタックの Web 開発を簡単に紹介します。このチュートリアルでは、ブラウザーでも、Microsoft Store 用のホストされた Web アプリとしても動作する、簡単なメモリ ゲームを構築します。 パート 1 では、ゲームのバックエンドのためのシンプルな REST API サービスを構築します。 ゲーム ロジックをクラウドで API サービスとしてホストすることにより、ゲームの状態を保持することができ、ユーザーは異なるデバイスにわたって、ゲームの同じインスタンスのプレイを続けることができます。 パート 2 では、レスポンシブ レイアウトを使った単一ページの Web アプリとして、フロント エンド UI を構築します。
 
-ここでは、サーバー側の開発のための [Node.js](https://nodejs.org/en/) ランタイムや [Express](http://expressjs.com/)、[Bootstrap](http://getbootstrap.com/) UI フレームワーク、RESTful API 構築のための [Pug](https://www.npmjs.com/package/pug) テンプレート エンジンや [Swagger](http://swagger.io/tools/) などの、よく使われる Web テクノロジを使用します。 さらに、クラウド ホスティングのための [Azure Portal](https://ms.portal.azure.com/) や、[Visual Studio Code](https://code.visualstudio.com/) エディターの操作についても扱います。
+ここでは、サーバー側の開発のための [Node.js](https://nodejs.org/en/) ランタイムや [Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) UI フレームワーク、RESTful API 構築のための [Pug](https://www.npmjs.com/package/pug) テンプレート エンジンや [Swagger](https://swagger.io/tools/) などの、よく使われる Web テクノロジを使用します。 さらに、クラウド ホスティングのための [Azure Portal](https://ms.portal.azure.com/) や、[Visual Studio Code](https://code.visualstudio.com/) エディターの操作についても扱います。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -28,7 +28,7 @@ ms.locfileid: "8932618"
 
  - [Node.js](https://nodejs.org/en/download/) - Node を PATH に追加するオプションを必ず選択してください。
 
- - [Express ジェネレーター](http://expressjs.com/en/starter/generator.html)- Node のインストール後に、次のコマンドを実行して Express をインストールします。 `npm install express-generator -g`
+ - [Express ジェネレーター](https://expressjs.com/en/starter/generator.html)- Node のインストール後に、次のコマンドを実行して Express をインストールします。 `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -38,7 +38,7 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 ## <a name="part-i-build-a-rest-api-backend"></a>パート 1: REST API バックエンドの構築
 
-最初に、簡単なメモリ ゲームの Web アプリを実現するための、メモリ ゲームの API を構築します。 [Swagger](http://swagger.io/) を使って API を定義し、手動テストのためのスキャフォールディング コードと Web UI を生成します。
+最初に、簡単なメモリ ゲームの Web アプリを実現するための、メモリ ゲームの API を構築します。 [Swagger](https://swagger.io/) を使って API を定義し、手動テストのためのスキャフォールディング コードと Web UI を生成します。
 
 このパートを省略して、[パート 2: 単一ページの Web アプリを構築する](#part-ii-build-a-single-page-web-appl)に直接進む場合には、[パート 1 の完成コード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)を利用できます。*README* の指示に沿って、ローカルでコードを実行するか、または *5. API サービスを Azure でホストして CORS を有効化する*を参照して Azure で実行します。
 
@@ -80,7 +80,7 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 | パラメーター | 説明 |
 |-----------|-------------|
-| int *size* |ゲーム ボードに含まれる、一致するペアの数。 例:  `http://memorygameapisample/new?size=2`|
+| int *size* |ゲーム ボードに含まれる、一致するペアの数。 例: `http://memorygameapisample/new?size=2`|
 
 | 応答 | 説明 |
 |----------|-------------|
@@ -95,14 +95,14 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 | 応答 | 説明 |
 |----------|-------------|
-| 200 OK | カード オブジェクトの JSON 配列を返します。 各カードには、ペアが既に見つかったことを示す、**cleared** プロパティがあります。 一致したカードは、その **value** も報告します。 例:  `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
+| 200 OK | カード オブジェクトの JSON 配列を返します。 各カードには、ペアが既に見つかったことを示す、**cleared** プロパティがあります。 一致したカードは、その **value** も報告します。 例: `[{"cleared":"false"},{"cleared":"false"},{"cleared":"true","value":1},{"cleared":"true","value":1}]`|
 
 #### <a name="put-guess"></a>PUT /guess
 表向きにするカードを指定し、前に表向きにしたカードとの一致を確認します。
 
 | パラメーター | 説明 |
 |-----------|-------------|
-| int *card* | 表向きにするカードのカード ID (ゲーム ボード配列内のインデックス)。 完了した各「推測」は、指定された 2 枚のカード (つまり、有効で一意の *card* 値 を持つ、2 つの **/guess** の呼び出し) で構成されます。 例:  `http://memorygameapisample/guess?card=0`|
+| int *card* | 表向きにするカードのカード ID (ゲーム ボード配列内のインデックス)。 完了した各「推測」は、指定された 2 枚のカード (つまり、有効で一意の *card* 値 を持つ、2 つの **/guess** の呼び出し) で構成されます。 例: `http://memorygameapisample/guess?card=0`|
 
 | 応答 | 説明 |
 |----------|-------------|
@@ -111,11 +111,11 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 ### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. API を指定して、コード スタブを生成する
 
-[Swagger](http://swagger.io/) を使って、メモリ ゲームの API の設計を、動作する Node.js サーバー コードに変換します。 次のようにして、[メモリ ゲーム API を Swagger メタデータとして](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)定義できます。 これを使って、サーバー コードのスタブを生成します。
+[Swagger](https://swagger.io/) を使って、メモリ ゲームの API の設計を、動作する Node.js サーバー コードに変換します。 次のようにして、[メモリ ゲーム API を Swagger メタデータとして](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)定義できます。 これを使って、サーバー コードのスタブを生成します。
 
 1. 新しいフォルダー (たとえば、ローカルの *GitHub* ディレクトリ) を作成し、メモリ ゲーム API 定義を含む [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) ファイルをダウンロードします。 フォルダー名にスペースが含まれていないことを確認します。
 
-2. このフォルダーで好みのシェル ([または Visual Studio Code の統合ターミナル](https://code.visualstudio.com/docs/editor/integrated-terminal)) を開き、次の Node Package Manager (NPM) コマンドを実行して、[Yeoman](http://yeoman.io/) (yo) コード スキャフォールディング ツールおよび Swagger ジェネレーターをグローバル (**-g**) Node 環境にインストールします。
+2. このフォルダーで好みのシェル ([または Visual Studio Code の統合ターミナル](https://code.visualstudio.com/docs/editor/integrated-terminal)) を開き、次の Node Package Manager (NPM) コマンドを実行して、[Yeoman](https://yeoman.io/) (yo) コード スキャフォールディング ツールおよび Swagger ジェネレーターをグローバル (**-g**) Node 環境にインストールします。
 
     ```
     npm install -g yo
@@ -135,14 +135,14 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
     他は適宜に応答します。これらの情報の多くは *package.json* ファイルに連絡先情報を指定するために使用され、作成したコードを NPM パッケージとして配布できます。
 
-5. 最後に、新しいプロジェクトのすべての依存関係 (*package.json* に一覧表示されています) および [Swagger UI](http://swagger.io/swagger-ui/) サポートをインストールします。
+5. 最後に、新しいプロジェクトのすべての依存関係 (*package.json* に一覧表示されています) および [Swagger UI](https://swagger.io/swagger-ui/) サポートをインストールします。
 
     ```
     npm install
     npm install swaggerize-ui
     ```
 
-    VS Code を開始し、[**ファイル**]  >  [**フォルダーを開く**] と選び、MemoryGameAPI ディレクトリに移動します。 これは、先ほど作成した Node.js API サーバーです。 これは、よく使われる [ExpressJS](http://expressjs.com/en/4x/api.html) Web アプリケーション フレームワークを使って、プロジェクトを構造化して実行します。
+    VS Code を開始し、[**ファイル**]  >  [**フォルダーを開く**] と選び、MemoryGameAPI ディレクトリに移動します。 これは、先ほど作成した Node.js API サーバーです。 これは、よく使われる [ExpressJS](https://expressjs.com/en/4x/api.html) Web アプリケーション フレームワークを使って、プロジェクトを構造化して実行します。
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. サーバー コードのカスタマイズとデバッグのセットアップ
 
@@ -209,7 +209,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 ]
 ```
 
-F5 キーを押してブラウザーを開き、[http://localhost:8000](http://localhost:8000) に移動します。 メモリ ゲーム API の Swagger UI のページが開きます。詳細を展開して、各メソッドのフィールドを入力します。 API の呼び出しを試すこともできますが、応答には ([Swagmock](https://www.npmjs.com/package/swagmock) モジュールが提供する) モックアップ データのみが含まれています。 次に、API が実際に動作するように、ゲーム ロジックを追加します。
+F5 キーを押してブラウザーを開き、[http://localhost:8000](https://localhost:8000) に移動します。 メモリ ゲーム API の Swagger UI のページが開きます。詳細を展開して、各メソッドのフィールドを入力します。 API の呼び出しを試すこともできますが、応答には ([Swagmock](https://www.npmjs.com/package/swagmock) モジュールが提供する) モックアップ データのみが含まれています。 次に、API が実際に動作するように、ゲーム ロジックを追加します。
 
 ### <a name="3-set-up-your-route-handlers"></a>3. ルート ハンドラーを設定する
 
@@ -235,7 +235,7 @@ Swagger ファイル (config\swagger.json) では、定義されている各 URL
 
 ここでは簡単のため、ゲーム ボードを Node サーバーのグローバル変数 (`global.board`) に保存します。 同時に複数のプレイヤーによる複数のゲームをサポートする、実際に使えるメモリ ゲーム API サービスとするためには、クラウド ストレージ (Google [Cloud Datastore](https://cloud.google.com/datastore/) や Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/) など) を使用します。
 
-VS Code ですべての変更を保存したことを確認し、サーバーを再度起動 (VS Code で F5 キーを押すか、またはシェルから `npm start` を実行して、次に [http://localhost:8000](http://localhost:8000) に移動する) して、ゲームの API をテストします。
+VS Code ですべての変更を保存したことを確認し、サーバーを再度起動 (VS Code で F5 キーを押すか、またはシェルから `npm start` を実行して、次に [http://localhost:8000](https://localhost:8000) に移動する) して、ゲームの API をテストします。
 
 **Try it out!** ボタンを **/game**、**/guess**、**/new** のいずれかで押して、下の **Response Body** および **Response Code** の結果を確認し、予想どおりに動作していることを確認します。
 
@@ -284,7 +284,7 @@ for (var i=0; i < board.length; i++){
 
 ### <a name="going-further"></a>追加情報
 
-メモリ ゲーム API を実稼働アプリ用のバックエンド サービスとするためには、複数のプレイヤーとゲームをサポートするようにコードを拡張する必要があります。 そのためには、[認証](http://swagger.io/docs/specification/authentication/) (プレイヤーの ID を管理する)、[NoSQL データベース](https://docs.microsoft.com/en-us/azure/documentdb/) (ゲームとプレイヤーを管理する)、API の基本的な[単体テスト](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)について調べる必要があります。
+メモリ ゲーム API を実稼働アプリ用のバックエンド サービスとするためには、複数のプレイヤーとゲームをサポートするようにコードを拡張する必要があります。 そのためには、[認証](https://swagger.io/docs/specification/authentication/) (プレイヤーの ID を管理する)、[NoSQL データベース](https://docs.microsoft.com/en-us/azure/documentdb/) (ゲームとプレイヤーを管理する)、API の基本的な[単体テスト](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)について調べる必要があります。
 
 そのために役立つ追加情報を次に示します。
 
@@ -296,15 +296,15 @@ for (var i=0; i < board.length; i++){
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>パート 2: 単一ページの web アプリケーションを構築します。
 
-パート 1 では、[REST API バックエンド](#part-i-build-a-rest-api-backend)を構築 (または[ダウンロード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) しました。次に、[Node](https://nodejs.org/en/)、[Express](http://expressjs.com/)、[Bootstrap](http://getbootstrap.com/) を使って、単一ページのメモリ ゲームのフロントエンドを作成します。
+パート 1 では、[REST API バックエンド](#part-i-build-a-rest-api-backend)を構築 (または[ダウンロード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) しました。次に、[Node](https://nodejs.org/en/)、[Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) を使って、単一ページのメモリ ゲームのフロントエンドを作成します。
 
 このチュートリアルのパート 2 では、次の内容を扱います。 
 
 * [Node.js](https://nodejs.org/en/): ゲームをホストするサーバーの作成
-* [jQuery](http://jquery.com/): JavaScript ライブラリ
-* [Express](http://expressjs.com/): Web アプリケーション フレームワーク
+* [jQuery](https://jquery.com/): JavaScript ライブラリ
+* [Express](https://expressjs.com/): Web アプリケーション フレームワーク
 * [Pug](https://pugjs.org/): (旧 Jade) テンプレート エンジン
-* [Bootstrap](http://getbootstrap.com/): レスポンシブ レイアウト
+* [Bootstrap](https://getbootstrap.com/): レスポンシブ レイアウト
 * [Visual Studio Code](https://code.visualstudio.com/): コードの作成、マークダウン表示、デバッグ
 
 ### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Express を使って Node.js アプリケーションを作成する
@@ -333,7 +333,7 @@ for (var i=0; i < board.length; i++){
     npm start
     ```
 
-5. [http://localhost:3000/](http://localhost:3000/) に移動してアプリケーションを表示します。
+5. [http://localhost:3000/](https://localhost:3000/) に移動してアプリケーションを表示します。
 
     ![http://localhost:3000/ のスクリーンショット](./images/express.png)
 
@@ -464,14 +464,14 @@ for (var i=0; i < board.length; i++){
 > [!TIP] 
 > Visual Studio Code を使っている場合は、コメントを解除するコードのすべての行を選択して、Crtl + K、U キーの順に押します。
 
-次に、[`jQuery.ajax()`](http://api.jquery.com/jQuery.ajax/) と、パート 1 で作成した **PUT** [`/guess`](#part-i-build-a-rest-api-backend) メソッドを使用します。 
+次に、[`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) と、パート 1 で作成した **PUT** [`/guess`](#part-i-build-a-rest-api-backend) メソッドを使用します。 
 
 このコードは、次の順序で実行されます。
 
 * ユーザーが選択した最初のカードの `id` が、selectedCards[] 配列の最初の値として追加されます":  `selectedCards[0]` 
 * `selectedCards[0]` の値 (`id`) が [`/guess`](#part-i-build-a-rest-api-backend) メソッドを使ってサーバーに投稿されます
 * サーバーが、そのカードの `value` (整数) を応答します
-* `id` が次の値であるカードの裏に [Bootstrap glyphicon](http://getbootstrap.com/components/) が追加されます:  `selectedCards[0]`
+* `id` が次の値であるカードの裏に [Bootstrap glyphicon](https://getbootstrap.com/components/) が追加されます:  `selectedCards[0]`
 * (サーバーからの) 最初のカードの `value` が `selectedCardsValues[]` 配列: `selectedCardsValues[0]` に保存されます 
 
 ユーザーの 2 回目の推測も同じロジックに従います。 ユーザーが選択したカードが同じ ID である場合 (たとえば `selectedCards[0] == selectedCards[1]`)、カードは一致します。 一致したペアには CSS クラス `.matched` が追加され (緑色に変わり)、カードは反転されたまま残ります。
@@ -540,7 +540,7 @@ body
 > Pug では空白が意味を持つことに注意してください。 すべてのインデントが正しいことを確認します。
 
 ### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Bootstrap のグリッドのシステムを使ってレスポンシブ レイアウトを作成する
-Bootstrap の[グリッド システム](http://getbootstrap.com/css/#grid)は、デバイスのビューポートの変化にしたがって拡大縮小する、柔軟なグリッド システムです。 このゲームのカードは、次のような Bootstrap の定義済みのグリッド システム クラスをレイアウトに使用しています。
+Bootstrap の[グリッド システム](https://getbootstrap.com/css/#grid)は、デバイスのビューポートの変化にしたがって拡大縮小する、柔軟なグリッド システムです。 このゲームのカードは、次のような Bootstrap の定義済みのグリッド システム クラスをレイアウトに使用しています。
 * `.container-fluid`柔軟なグリッド コンテナーを指定します
 * `.row-fluid`: 柔軟な行を指定します
 * `.col-xs-3`: 列数を指定します
@@ -607,7 +607,7 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
     transform: rotateY(180deg);
     ```
 
-    `cards.flip` で定義されたスタイルは、`flipCard` 関数で [`.toggleClass()`](http://api.jquery.com/toggleClass/) を使って、オンとオフを切り替えることができます。 
+    `cards.flip` で定義されたスタイルは、`flipCard` 関数で [`.toggleClass()`](https://api.jquery.com/toggleClass/) を使って、オンとオフを切り替えることができます。 
 
     ``` javascript
     $(card).toggleClass("flip");
@@ -620,9 +620,9 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
 
 1. memory ディレクトリでコマンド プロンプトを開き、次のコマンドを入力します。 `npm start`
 
-2. ブラウザーで [http://localhost:3000/](http://localhost:3000/) に移動して、ゲームをプレイします。
+2. ブラウザーで [http://localhost:3000/](https://localhost:3000/) に移動して、ゲームをプレイします。
 
-3. エラーが発生した場合は、キーボードで F5 キーを押して、`Node.js` と入力すると、Visual Studio Code の Node.js デバッグ ツールを使用できます。 Visual Studio Code でのデバッグについて詳しくは、この[記事](http://code.visualstudio.com/docs/editor/debugging#_launch-configurations)をご覧ください。 
+3. エラーが発生した場合は、キーボードで F5 キーを押して、`Node.js` と入力すると、Visual Studio Code の Node.js デバッグ ツールを使用できます。 Visual Studio Code でのデバッグについて詳しくは、この[記事](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)をご覧ください。 
 
     コードを Final フォルダーに含まれているコードと比較することもできます。
 

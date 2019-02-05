@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5dc12e9b85b7274c9e1deb7d629917cbeaa981c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942373"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058543"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP アプリでの視線の操作と視線追跡
 
@@ -36,9 +36,9 @@ ms.locfileid: "8942373"
 さらに、視線入力は、ゲーム (ターゲット把握や追跡を含む) や従来の生産性向上アプリケーション、キオスクだけでなく、従来の入力デバイス (キーボード、マウス、タッチ) が使用できないか、ユーザーの両手を他のタスク (買い袋を持つなど) のために開放することが便利である可能性のあるその他の対話型シナリオで、同様に魅力的な機会をもたらします。
 
 > [!NOTE]
-> 視線追跡ハードウェアのサポートは、**Windows 10 Fall Creators Update** で[視線制御](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)と共に導入されました。視線制御は、ユーザーが目を使用して画面上のポインターを制御し、スクリーン キーボードで入力し、音声合成を使用して人々とやり取りすることができる組み込み機能です。 視線追跡ハードウェアと対話できるアプリケーションを作成するための [UWP API]([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) のセットは、**Windows 10 April 2018 Update (バージョン 1803、ビルド 17134)** 以降で利用可能です。
+> 視線追跡ハードウェアのサポートは、**Windows 10 Fall Creators Update** で[視線制御](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)と共に導入されました。視線制御は、ユーザーが目を使用して画面上のポインターを制御し、スクリーン キーボードで入力し、音声合成を使用して人々とやり取りすることができる組み込み機能です。 視線追跡ハードウェアと対話できるアプリケーションを構築するためには、UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) のセットがで利用可能な**Windows 10 April 2018 Update (バージョン 1803、ビルド 17134)** 以降。
 
-## <a name="privacy"></a>プライバシー
+## <a name="privacy"></a>Privacy
 
 視線追跡デバイスで収集された機密性が高い可能性のある個人データのために、UWP アプリケーションのアプリ マニフェストで `gazeInput` 機能を宣言することが必要になります (次の「**セットアップ**」セクションを参照してください)。 宣言すると、アプリが最初に実行されたときに Windows によって自動的にユーザーに同意ダイアログ ボックスが表示されます。ここでは、ユーザーはアプリが視線追跡デバイスと通信して、このデータにアクセスできるようにアクセス許可を付与する必要があります。
 

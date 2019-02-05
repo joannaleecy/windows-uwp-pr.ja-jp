@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 88b35c4ebc7e3b3f5c047ed5e1cef9d46a011909
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037024"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058613"
 ---
 # <a name="scroll-viewer-controls"></a>スクロール ビューアー コントロール
 
@@ -143,7 +143,7 @@ ScrollViewer が XAML で明示的である場合、コード例に示すよう�
 - ユーザーがより大きな領域の周囲で両方向にパンすること、そしておそらくズームできるようにする場合、たとえばユーザーが (画面に適合するサイズに設定されたイメージではなく) フル サイズのイメージをパンおよびズームできるようにする場合には、スクロール ビューアー内にイメージを配置します。
 - ユーザーが長いテキスト パスをスクロールする場合、垂直方向にのみスクロールするようにスクロール ビューアーを構成します。
 - 1 つのオブジェクトのみを含める場合にスクロール ビューアーを使います。 1 つのオブジェクトをレイアウト パネルとし、その任意の数のオブジェクトを含めることができる点に注意してください。
-- ピボットのスクロール ロジックが競合するのを避けるため、スクロール ビューアー内には[ピボット](tabs-pivot.md) コントロールを配置しないでください。
+- ピボットのスクロール ロジックが競合するのを避けるため、スクロール ビューアー内には[ピボット](pivot.md) コントロールを配置しないでください。
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 

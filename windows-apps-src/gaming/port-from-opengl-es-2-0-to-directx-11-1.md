@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、OpenGL、Direct3D 11, 移植, グラフィックス
 ms.localizationpriority: medium
-ms.openlocfilehash: 9af5e42a27e21b8a4300edc4b8171f7abc64bac7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4ee100bbbe70595049ca7298839e7906e21c3e59
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929274"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050292"
 ---
 # <a name="port-from-opengl-es-20-to-direct3d-11"></a>OpenGL ES 2.0 から Direct3D 11 への移植
 
@@ -19,7 +19,7 @@ ms.locfileid: "8929274"
 
 OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
 
-> **注:**  OpenGL ES 2.0 プロジェクトを移植する中間の手順は、Microsoft ストアの角度を使用します。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。 ANGLE について詳しくは、[Microsoft Store 用の ANGLE に関する Wiki ページ](http://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。
+> **注:**  OpenGL ES 2.0 プロジェクトを移植する中間の手順は、Microsoft Store の角度を使用します。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。 ANGLE について詳しくは、[Microsoft Store 用の ANGLE に関する Wiki ページ](https://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。
 
  
 

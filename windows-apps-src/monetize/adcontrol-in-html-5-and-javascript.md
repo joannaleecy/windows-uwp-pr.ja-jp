@@ -6,25 +6,25 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, 広告コントロール, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b834343aafb91fee1e75f9df7ed2a752992fa2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 556493ffc901021310036cfb417c3c3b815c529e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936251"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049599"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 および JavaScript の AdControl
 
 このチュートリアルでは、Windows 10 (HTML) 用のユニバーサル Windows プラットフォーム (UWP) JavaScript/HTML アプリで [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) クラスを使ってバナー広告を表示する方法について説明します。
 
-JavaScript/HTML アプリにバナー広告を追加する方法を示す完全なサンプル プロジェクトについては、「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。
+JavaScript/HTML アプリにバナー広告を追加する方法を示す完全なサンプル プロジェクトについては、「[GitHub の広告サンプル](https://aka.ms/githubads)」をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
-* Visual Studio 2015 以降の Visual Studio のリリースと共に [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
+* Visual Studio 2015 以降の Visual Studio のリリースと共に [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
 
 > [!NOTE]
-> Windows 10 SDK バージョン 10.0.14393 (Anniversary Update) またはそれ以降のバージョンの Windows SDK をインストールした場合、 [WinJS](https://github.com/winjs/winjs)ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 SDK バージョン 10.0.14393 (Anniversary Update) 以降ではこのライブラリを別個にインストールする必要があります。 
+> Windows 10 SDK バージョン 10.0.14393 (Anniversary Update) またはそれ以降のバージョンの Windows SDK をインストールした場合は、 [WinJS](https://github.com/winjs/winjs)ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 SDK バージョン 10.0.14393 (Anniversary Update) 以降ではこのライブラリを別個にインストールする必要があります。 
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>バナー広告をアプリに統合する
 
@@ -107,7 +107,7 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 このコードで広告が表示されない場合は、**AdControl** を含む **div** に **position:relative** の属性を挿入してみてください。 これにより、**IFrame** の既定の設定が上書きされます。 この属性の値が原因でなければ、広告が正しく表示されるようになります。 新しい広告ユニットが利用可能になるまでに最大で 30 分かかる場合があることに注意してください。
 
 > [!NOTE]
-> この例の *applicationId* の値と *adUnitId* の値は、[テスト モードの値](set-up-ad-units-in-your-app.md#test-ad-units)です。 申請用にアプリを提出する前にパートナー センターからの[これらの値を実際の値に置き換えます](set-up-ad-units-in-your-app.md#live-ad-units)あります。
+> この例の *applicationId* の値と *adUnitId* の値は、[テスト モードの値](set-up-ad-units-in-your-app.md#test-ad-units)です。 申請用にアプリを提出する前にパートナー センターからの[これらの値を実際の値に置き換えます](set-up-ad-units-in-your-app.md#live-ad-units)必要。
 
 <span id="release" />
 
@@ -121,7 +121,7 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 
 2. 必要に応じて、[[アプリ内広告]](../publish/in-app-ads.md) ページの [[仲介設定]](../publish/in-app-ads.md#mediation) セクションで設定を構成することで、**AdControl** の広告仲介を有効にできます。 広告仲介を使うと、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。表示される広告には、Taboola や Smaato などの他の有料広告ネットワークからの広告や、Microsoft のアプリ プロモーション キャンペーン用の広告などが含まれます。
 
-3.  コードで、テスト用の広告ユニット値 (**applicationId**と**adUnitId**) をパートナー センターで生成した実際の値に置き換えます。
+3.  コードで、テスト広告ユニット値 (**applicationId**と**adUnitId**) をパートナー センターで生成した実際の値に置き換えます。
 
 4.  パートナー センターを使用してストアに[アプリを提出](../publish/app-submissions.md)します。
 
@@ -139,6 +139,6 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 ## <a name="related-topics"></a>関連トピック
 
 * [バナー広告のガイドライン](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [GitHub の広告サンプル](http://aka.ms/githubads)
+* [GitHub の広告サンプル](https://aka.ms/githubads)
 * [アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)
 * [JavaScript ウォークスルーでのエラー処理](error-handling-in-javascript-walkthrough.md)

@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044506"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058583"
 ---
 # <a name="enterprise"></a>Enterprise
 
@@ -47,7 +47,7 @@ Windows Template Studio は、ウィザード ベースのエクスペリエン�
 
 従来のデスクトップ アプリケーション UI と UWP の UI のギャップを埋める UWP XAML コントロールの新しいリリースしたされてきました。
 
-たとえば、新しい[メニュー バー](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar)、 [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)、および[CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout)コントロールは、コマンドを公開するより柔軟な方法を提供し、 [EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable)ユーザーに記載されていない値を入力してみましょう[オプションの定義済みのリスト。
+たとえば、新しい[メニュー バー](/windows/uwp/design/controls-and-patterns/menus)、 [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)、および[CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout)コントロールは、コマンドを公開するより柔軟な方法を提供し、 [EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable)ユーザーに記載されていない値を入力してみましょう[オプションの定義済みのリスト。
 
 ![メニュー バー](images/menu-bar.png)
 
@@ -68,7 +68,7 @@ Windows UI のライブラリでは、UWP アプリのコントロールとそ�
 
 ![Windows UI ライブラリ](images/win-ui.png)
 
-[Windows UI ライブラリ (プレビュー版)](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)を参照してください。
+[Windows UI ライブラリ (プレビュー版)](https://docs.microsoft.com/uwp/toolkits/winui/)を参照してください。
 
 <a id="xaml-islands" />
 
@@ -161,7 +161,7 @@ Windows 10 では、アプリ開発者の id、ユーザー、企業のネット
 |-------|-------------|
 | [UWP アプリ ガイド](https://msdn.microsoft.com/library/windows/apps/dn894631) | この入門ガイドでするありますをお試し、Windows 10UWP プラットフォームを含む: どのようなデバイス ファミリは、新しい UI コントロールと UI を別のデバイスのフォーム ファクターに合わせて調整できるパネルをターゲットにする 1 つを決定する方法とを把握する方法アプリを利用できる API サーフェスを制御します。 |
 | [アダプティブ UI の XAML コード サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 次のコード サンプルでは、すべてのレイアウト オプションとデバイスの種類に関係なく、アプリのコントロールを示しています、探している任意のレイアウトを実現する方法を表示するパネルを操作することができます。 さまざまなフォーム ファクターに各コントロールがどのように対応するかを示すだけでなく、アプリ自体が応答性の高いでアダプティブ UI を実現するためのさまざまな方法を示しています。 |
-| [Xamarin トピック]() | Xamarin の電話を対象とします。 |
+| [Xamarin トピック](/xamarin/) | Xamarin の電話を対象とします。 |
 
 ## <a name="deployment"></a>展開
 

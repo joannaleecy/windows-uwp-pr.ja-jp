@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8257a8a0c6b8ca320adb04bfb64b0308a4cbefd3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930179"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050505"
 ---
 # <a name="use-the-gyrometer"></a>ジャイロメーターの使用
 
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>関連トピック
 
-* [ジャイロメーター センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241379)
+* [ジャイロメーター センサーのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=241379)

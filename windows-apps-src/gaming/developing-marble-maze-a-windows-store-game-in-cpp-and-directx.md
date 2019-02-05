@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: e61c96a1b4deb7dd1beb0233814f86ce1b5fb42c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936029"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050089"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>Marble Maze、C++ と DirectX での UWP ゲームの開発
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936029"
 このトピックでは、DirectX と Visual C++ を使って 3D のユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法について説明します。 Marble Maze と呼ばれるこのゲームでは、タブレット、従来のデスクトップ、ノート PC などの、複数のフォーム ファクターを活用しています。
 
 > [!NOTE]
-> Marble Maze のソース コードをダウンロードするには、[GitHub のサンプル](http://go.microsoft.com/fwlink/?LinkId=624011)をご覧ください。
+> Marble Maze のソース コードをダウンロードするには、[GitHub のサンプル](https://go.microsoft.com/fwlink/?LinkId=624011)をご覧ください。
 
 > [!IMPORTANT]
 > Marble Maze は、UWP ゲームを作成するためのベスト プラクティスと考えられる設計パターンを示しています。 各自のプラクティスと開発するゲームの固有の要件に適合するように、このゲームの実装の詳細を利用できます。 各自のニーズに適合する別のテクニックやライブラリがある場合はそれを自由にお使いください  (ただし、コードが [Windows アプリ認定キット](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit)によるテストに合格することを常に確かめてください。) ゲームの開発を成功させるために Marble Maze の実装が不可欠であると見なされる場合は、このドキュメントでその点を強調しています。

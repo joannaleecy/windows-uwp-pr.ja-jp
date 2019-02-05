@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab8dde9984ed0e4f7d99e7809361d928bebb718
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045428"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058753"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する
 
@@ -258,7 +258,7 @@ Windows では、ディスプレイの DPI (1 インチあたりのドット数)
 
 ## <a name="theme"></a>Theme
 
-`theme` 修飾子は、既定のアプリ モード設定に最も一致するリソースか、[Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme) を使用してアプリのオーバーライドを提供するために使用されます。
+`theme` 修飾子は、既定のアプリ モード設定に最も一致するリソースか、[Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) を使用してアプリのオーバーライドを提供するために使用されます。
 
 ## <a name="important-apis"></a>重要な API
 

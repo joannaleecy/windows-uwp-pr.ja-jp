@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3affe5f142c56314d132ba488d87c6f285723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 13bf5d60b547f71d0cd83e5790236534d05d2544
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920136"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050535"
 ---
 # <a name="custom-automation-peers"></a>カスタム オートメーション ピア  
 
@@ -318,7 +318,7 @@ UI オートメーションに対応した UWP 実装で利用可能なプロバ
 
 ピアでは、複数のパターンをサポートしていることを伝えることができます。 この場合、上書きのときに、サポートされる個々の [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 値に対するリターン パス ロジックを指定して、一致するケースごとにペアが返されるようにする必要があります。 このとき、呼び出し元では 1 回に 1 個ずつインターフェイスを要求すること、さらに予期されるインターフェイスへのキャストは呼び出し元が行うことが前提となります。
 
-次にカスタム ピアに対する [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) の上書きの例を示します。 [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) と [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) の 2 つのパターンに対するサポートが報告されます。 このコントロールは、全画面表示として表示できるメディア表示コントロール (トグル モード) です。進行状況バーの表示位置は変更可能 (範囲コントロール) です。 このコードは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)の抜粋です。
+次にカスタム ピアに対する [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) の上書きの例を示します。 [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) と [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) の 2 つのパターンに対するサポートが報告されます。 このコントロールは、全画面表示として表示できるメディア表示コントロール (トグル モード) です。進行状況バーの表示位置は変更可能 (範囲コントロール) です。 このコードは、[XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)の抜粋です。
 
 
 ```csharp
@@ -538,7 +538,7 @@ UWP アプリのテキスト コントロールの 1 つから派生させ、テ
 
 ## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
-* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

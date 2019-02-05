@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2235e8781d8a795145c7080bfd846c58b6253629
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947924"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049226"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、デバイス、およびアプリ モデルの WindowsPhone Silverlight UWP からへの移植
 
@@ -32,15 +32,15 @@ WindowsPhone Silverlight アプリには、保存、廃棄と後に再アクテ�
 
 ## <a name="camera"></a>カメラ
 
-WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**、または**Microsoft.Phone.Tasks.CameraCaptureTask**クラスを使用します。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 そのメソッドでは、ストレージ ファイルに写真をキャプチャすることができ、**マイク** **web カメラ**[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)をアプリのパッケージ マニフェストに設定する必要があります。
+WindowsPhone Silverlight カメラ キャプチャ コードでは、 **Microsoft.Devices.Camera**、 **Microsoft.Devices.PhotoCamera**、または**Microsoft.Phone.Tasks.CameraCaptureTask**クラスを使用します。 ユニバーサル Windows プラットフォーム (UWP) へのコードの移植では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスを使うことができます。 コードの例については、[**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) のトピックをご覧ください。 そのメソッドでは、ストレージ ファイルに写真をキャプチャすることができ、**マイク** **web カメラ**[**デバイスの機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)をアプリ パッケージ マニフェストに設定する必要があります。
 
-別のオプションは、 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)クラスは、**マイク** **web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)も必要になります。
+別のオプションは、**マイク** **web カメラ**の[**デバイス機能**](https://msdn.microsoft.com/library/windows/apps/dn934747)する必要もあります[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)クラスです。
 
 レンズ アプリは、UWP アプリではサポートされません。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>アプリが実行されているプラットフォームの検出
 
-Windows 10 でアプリを対象とした変更について考えたりの方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+Windows 10 アプリのターゲット設定の変更に関する考え方の方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 **注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをいない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
@@ -72,7 +72,7 @@ WindowsPhone Silverlight アプリでは、 **Microsoft.Phone.Info.DeviceStatus*
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ApplicationCurrentMemoryUsage** プロパティと **ApplicationCurrentMemoryUsageLimit** プロパティ | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) プロパティと [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) プロパティ                                                                                                                                    |
-| **ApplicationPeakMemoryUsage** プロパティ                                                 | Visual Studio のメモリ プロファイル ツールを使います。 詳しくは、「[メモリ使用率の分析](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)」をご覧ください。                                                                                                                                                                          |
+| **ApplicationPeakMemoryUsage** プロパティ                                                 | Visual Studio のメモリ プロファイル ツールを使います。 詳しくは、「[メモリ使用率の分析](https://msdn.microsoft.com/library/windows/apps/dn645469.aspx)」をご覧ください。                                                                                                                                                                          |
 | **DeviceFirmwareVersion** プロパティ                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
 | **DeviceHardwareVersion** プロパティ                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
 | **DeviceManufacturer** プロパティ                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                |
@@ -86,7 +86,7 @@ WindowsPhone Silverlight アプリでは、 **Microsoft.Phone.Info.DeviceStatus*
 
 ## <a name="location"></a>位置情報
 
-位置情報機能をアプリ パッケージ マニフェストで宣言するアプリは、windows 10 で実行しているシステムに同意をエンドユーザーが求められます。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
+Windows 10 デバイスでそのアプリのパッケージ マニフェストで位置情報機能を宣言するアプリが実行されると、同意をエンドユーザーが求められます。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
 
 ## <a name="orientation"></a>向き
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fd6accd3082c141d9288dba5c6156132188c214b
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 5451e0dd94510873f87b981a817fb55ba2c4f985
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037244"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049779"
 ---
 # <a name="images-and-image-brushes"></a>画像とイメージ ブラシ
 
@@ -155,7 +155,7 @@ Windows 10 バージョン 1607 からは、**Image** 要素で、アニメー�
 
 コードを使うよりも、XAML を使って Image と ImageBrush 要素を指定する方が一般的です。 これは、これらの要素が XAML UI 定義の一部としてのデザイン ツールの出力結果である場合が多いためです。
 
-コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([Image.Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と[ImageBrush.ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[SetSourceAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx** スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 画像ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、画像ソースの取得やデコードについてタイミングの問題がある場合は、[ImageOpened](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、[XAML 画像のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=238575)をご覧ください。
+コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([Image.Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と[ImageBrush.ImageSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[SetSourceAsync](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx** スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [BitmapImage](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 画像ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、画像ソースの取得やデコードについてタイミングの問題がある場合は、[ImageOpened](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、[XAML 画像のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=238575)をご覧ください。
 
 > [!NOTE]
 > コードを利用して画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [ResourceManager](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [ResourceMap](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。

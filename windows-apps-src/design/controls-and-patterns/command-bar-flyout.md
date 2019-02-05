@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050955"
+ms.locfileid: "9058573"
 ---
 # <a name="command-bar-flyout"></a>コマンド バーのポップアップ
 
@@ -165,7 +165,7 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 
 ### <a name="other-content"></a>その他のコンテンツ
 
-コマンド バーのポップアップを他のコントロールを追加するには、AppBarElementContainer でラップします。 これにより[DropDownButton]() [SplitButton]()などのコントロールを追加したりより複雑な UI を作成するために[StackPanel]()などのコンテナーを追加できます。
+コマンド バーのポップアップを他のコントロールを追加するには、AppBarElementContainer でラップします。 これにより[DropDownButton](buttons.md) [SplitButton](buttons.md)などのコントロールを追加したりより複雑な UI を作成するために[StackPanel](buttons.md)などのコンテナーを追加できます。
 
 コマンド バーのポップアップのプライマリまたはセカンダリ コマンドのコレクションに追加するために、要素は[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)インターフェイスを実装する必要があります。 AppBarElementContainer は、インターフェイス自体を実装していない場合でも、コマンド バーに要素を追加できるように、このインターフェイスを実装するラッパーです。
 
@@ -174,7 +174,7 @@ PrimaryCommands と SecondaryCommands には、 [AppBarButton](https://msdn.micr
 > [!TIP]
 > 既定では、アプリのキャンバス向けに設計された要素はないように見えます適切なコマンド バーにします。 AppBarElementContainer を使用して、要素を追加する場合は、その他のコマンド バーの要素に一致する要素を行う必要がいくつかの手順があります。
 >
-> - 要素の背景と境界線アプリ バーのボタンに一致する[軽量なスタイル設定](/design/controls-and-patterns/xaml-styles#lightweight-styling)の既定のブラシを上書きします。
+> - 要素の背景と境界線アプリ バーのボタンに一致する[軽量なスタイル設定](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)の既定のブラシを上書きします。
 > - 要素の位置とサイズを調整します。
 > - 幅の上部 16 ピクセルの高さと Viewbox でアイコンをラップします。
 

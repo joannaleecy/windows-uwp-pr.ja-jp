@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: ca75261420449ac0b5af27ec34256ccef89fad2d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f8ad32fb2033c97a408ccb0f6cc6871b01caf5c5
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937406"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058489"
 ---
 # <a name="usersowneridsummary"></a>/users/{ownerId}/summary
 呼び出し元の観点から所有者に関する集計データにアクセスします。
@@ -26,7 +26,7 @@ ms.locfileid: "8937406"
 
 | パラメーター| 型| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 可能な値は、"me"、xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4ESB"></a>
 
@@ -47,4 +47,4 @@ ms.locfileid: "8937406"
 
 ##### <a name="parent"></a>Parent
 
-[/users/{ownerId}/summary]()
+[/users/{ownerId}/summary](uri-usersowneridsummaryget.md)

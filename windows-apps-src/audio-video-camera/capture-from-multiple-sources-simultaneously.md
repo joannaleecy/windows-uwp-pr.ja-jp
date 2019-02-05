@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: Windows 10, UWP, キャプチャ, ビデオ
 ms.localizationpriority: medium
-ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919935"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058633"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>MediaFrameSourceGroup を使用して複数のソースからキャプチャする
 
@@ -56,7 +56,7 @@ Windows 10、バージョン 1803 以降では、オーディオとビデオに�
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-[MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**) を呼び出して、メタデータ ストリーム記述子をエンコード プロファイルに追加します。 次の例では、2 つのビデオ ストリーム記述子、1 つのオーディオ ストリーム記述子、1 つのタイミングが設定されたメタデータ ストリーム記述子を受け取り、ストリームのエンコードに使用できる **MediaEncodingProfile** を返すヘルパー メソッドを示します。
+メタデータ ストリーム記述子をエンコード プロファイルを追加する[**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)を呼び出します。 次の例では、2 つのビデオ ストリーム記述子、1 つのオーディオ ストリーム記述子、1 つのタイミングが設定されたメタデータ ストリーム記述子を受け取り、ストリームのエンコードに使用できる **MediaEncodingProfile** を返すヘルパー メソッドを示します。
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd47ce2acf78a76ad413d70ce8c3e7f39a793ea
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048199"
+ms.locfileid: "9058513"
 ---
 # <a name="sound"></a>サウンド
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>ページ内でのナビゲーション
 
-パネルまたはアプリのページ内でビューの間を移動するとき (参照[タブとピボット](../controls-and-patterns/tabs-pivot.md))、通常は、双方向の移動します。 つまり、現在表示しているアプリのページを離れずに、次のビュー/パネルまたは前のビュー/パネルに移動できます。
+パネルまたはアプリのページ内でビューの間を移動するとき (参照[タブとピボット](../controls-and-patterns/pivot.md))、通常は、双方向の移動します。 つまり、現在表示しているアプリのページを離れずに、次のビュー/パネルまたは前のビュー/パネルに移動できます。
 
 このナビゲーションの概念に関するオーディオ エクスペリエンスは、**MovePrevious** サウンドと **MoveNext** サウンドに包含されています。
 

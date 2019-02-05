@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6868975f793bf504dac167bf4d57d2574ddc0e9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930663"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058643"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
@@ -101,21 +101,21 @@ PC でキーボードやマウス、電話とタブレットでタッチを使�
 
 | ボタン                    | ゲームパッド   | リモコン    |
 |---------------------------|-----------|-------------------|
-| A/[選択] ボタン           | ○       | ○               |
-| B/[戻る] ボタン             | ○       | ○               |
-| 方向パッド   | ○       | ○               |
-| メニュー ボタン               | ○       | ○               |
-| ビュー ボタン               | ○       | ○               |
-| X ボタン、Y ボタン           | ○       | ×                |
-| 左スティック                | ○       | ×                |
-| 右スティック               | ○       | ×                |
-| 左トリガー、右トリガー   | ○       | ×                |
-| L ボタン、R ボタン    | ○       | ×                |
-| OneGuide ボタン           | ×        | ○               |
-| [音量] ボタン             | ×        | ○               |
-| チャネル ボタン            | ×        | ○               |
-| メディア コントロール ボタン     | ×        | ○               |
-| [ミュート] ボタン               | ×        | ○               |
+| A/[選択] ボタン           | はい       | はい               |
+| B/[戻る] ボタン             | はい       | はい               |
+| 方向パッド   | はい       | はい               |
+| メニュー ボタン               | はい       | 要               |
+| ビュー ボタン               | 要       | 要               |
+| X ボタン、Y ボタン           | はい       | いいえ                |
+| 左スティック                | はい       | いいえ                |
+| 右スティック               | はい       | いいえ                |
+| 左トリガー、右トリガー   | はい       | いいえ                |
+| L ボタン、R ボタン    | はい       | いいえ                |
+| OneGuide ボタン           | いいえ        | はい               |
+| [音量] ボタン             | いいえ        | はい               |
+| チャネル ボタン            | いいえ        | はい               |
+| メディア コントロール ボタン     | いいえ        | はい               |
+| [ミュート] ボタン               | いいえ        | はい               |
 
 ### <a name="built-in-button-support"></a>組み込みボタンのサポート
 
@@ -832,7 +832,7 @@ UWP にはフォーカス表示を [VisibleBounds](https://msdn.microsoft.com/li
 > [!NOTE]
 > このコード スニペットは `ListView` 専用です。`GridView` のスタイルの場合、[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) と [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) の両方の [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 属性を `GridView` に設定します。
 
-方法をより細かく管理の項目をビューに読み込むは、アプリケーションがバージョン 1803 をターゲットとする[UIElement.BringIntoViewRequested イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)を使用した後で場合。 **ListView**の[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)に配置できる/**GridView**内部**ScrollViewer**は、次のコード スニペットに示すように前にキャッチします。
+方法をより細かく管理の項目をビューに読み込むは、アプリケーションがバージョン 1803 をターゲットとする[UIElement.BringIntoViewRequested イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)を使用した後で場合。 **ListView**の[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)に配置できる/**GridView**内部**ScrollViewer**は、次のコード スニペットに示すように前に、それをキャッチします。
 
 ```xaml
 <GridView x:Name="gridView">
@@ -933,9 +933,9 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 ![ピボットの下線](images/designing-for-tv/pivot-underline.png)
 
-[Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](../controls-and-patterns/tabs-pivot.md)」をご覧ください。
+[Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](../controls-and-patterns/pivot.md)」をご覧ください。
 
-### <a name="navigation-pane-a-namenavigation-pane"></a>ナビゲーション ウィンドウ <a name="navigation-pane">
+### <a name="navigation-pane-a-namenavigation-pane-"></a>ナビゲーション ウィンドウ <a name="navigation-pane" />
 
 ナビゲーション ウィンドウ (*ハンバーガー メニュー*とも呼ばれる) は、UWP アプリでよく使われるナビゲーション コントロールです。 通常、リスト スタイルのメニューから選択できる複数のオプションを表示するウィンドウであり、ユーザーに異なるページを表示します。 一般的に、このウィンドウは領域を節約するために折りたたまれた状態で表示され、ユーザーがボタンをクリックすることで開くことができます。
 

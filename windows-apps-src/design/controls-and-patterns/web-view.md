@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a29f58ff8dc842fd985a44f94ff44baea51dc2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941004"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058553"
 ---
 # <a name="web-view"></a>Web ビュー
  
@@ -73,7 +73,7 @@ webView1.Navigate("http://www.contoso.com");
 
 POST 要求と HTTP ヘッダーを有する URI へと移動するには、[NavigateWithHttpRequestMessage](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) メソッドを使います。 このメソッドは、[HttpRequestMessage.Method](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) プロパティの値として [HttpMethod.Post](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) と [HttpMethod.Get](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) のみをサポートします。 
 
-圧縮されておらず、暗号化もされていないコンテンツをアプリの [LocalFolder]() データ ストアまたは [TemporaryFolder]() データ ストアから読み込むには、**Navigate** メソッドを、[ms-appdata]() スキームを使う **Uri** と用います。 このスキームを Web ビューがサポートするには、ローカル フォルダーまたは一時フォルダーの下にサブフォルダーを設け、そこにコンテンツを配置する必要があります。 これにより、「ms-appdata:///local/*フォルダー*/*ファイル*.html」や「ms-appdata:///temp/*フォルダー*/*ファイル*.html」といった URI への移動が可能になります  (圧縮され、暗号化されたファイルを読み込む場合は、[NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) に関するページをご覧ください)。 
+圧縮されておらず、暗号化もされていないコンテンツをアプリの [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) データ ストアまたは [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) データ ストアから読み込むには、**Navigate** メソッドを、[ms-appdata](/windows/uwp/app-resources/uri-schemes) スキームを使う **Uri** と用います。 このスキームを Web ビューがサポートするには、ローカル フォルダーまたは一時フォルダーの下にサブフォルダーを設け、そこにコンテンツを配置する必要があります。 これにより、「ms-appdata:///local/*フォルダー*/*ファイル*.html」や「ms-appdata:///temp/*フォルダー*/*ファイル*.html」といった URI への移動が可能になります  (圧縮され、暗号化されたファイルを読み込む場合は、[NavigateToLocalStreamUri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) に関するページをご覧ください)。 
 
 これらの第 1 レベルのサブフォルダーは、他の第 1 レベルのサブフォルダー内のコンテンツから分離されます。 たとえば「ms-appdata:///temp/folder1/file.html」に移動はできますが、そのファイル内のリンクに「ms-appdata:///temp/folder2/file.html」は指定できません。 ただし、**ms-appx-web** スキームを使ってアプリ パッケージの HTML コンテンツにリンクしたり、**http** または **https** の URI スキームを使って Web コンテンツにリンクしたりはできます。
 

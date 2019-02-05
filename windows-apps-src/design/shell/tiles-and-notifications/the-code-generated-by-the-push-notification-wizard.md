@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 957c4cf2e9e9fc4a32327ec29a96019609ebdfe5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923247"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049919"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>プッシュ通知ウィザードにより生成されるコード
  
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>サーバー側のスクリプト (JavaScript バックエンドのみ)
 
 
-JavaScript バックエンドを使うモバイル サービスの場合、サーバー側のスクリプトは、削除、挿入、読み取り、または更新操作が行われたときに実行されます。 スクリプトにはこれらの操作が実装されていませんが、クライアントから Windows モバイルの REST API への呼び出しによってこれらのイベントがトリガーされると実行されます。 次に、スクリプトは request.execute または request.respond を呼び出して呼び出し元コンテキストに応答を発行することで、コントロールを操作自体に渡します。 「[Azure のモバイル サービスの REST API リファレンス](http://go.microsoft.com/fwlink/p/?linkid=511139)」をご覧ください。
+JavaScript バックエンドを使うモバイル サービスの場合、サーバー側のスクリプトは、削除、挿入、読み取り、または更新操作が行われたときに実行されます。 スクリプトにはこれらの操作が実装されていませんが、クライアントから Windows モバイルの REST API への呼び出しによってこれらのイベントがトリガーされると実行されます。 次に、スクリプトは request.execute または request.respond を呼び出して呼び出し元コンテキストに応答を発行することで、コントロールを操作自体に渡します。 「[Azure のモバイル サービスの REST API リファレンス](https://go.microsoft.com/fwlink/p/?linkid=511139)」をご覧ください。
 
-サーバー側のスクリプトでは、さまざまな関数を使うことができます。 「[Azure のモバイル サービスでのテーブル操作の登録](http://go.microsoft.com/fwlink/p/?linkid=511140)」をご覧ください。 使用できる関数のリファレンスについては、「[Mobile Services サーバーのスクリプトのリファレンス](http://go.microsoft.com/fwlink/p/?linkid=257676)」をご覧ください。
+サーバー側のスクリプトでは、さまざまな関数を使うことができます。 「[Azure のモバイル サービスでのテーブル操作の登録](https://go.microsoft.com/fwlink/p/?linkid=511140)」をご覧ください。 使用できる関数のリファレンスについては、「[Mobile Services サーバーのスクリプトのリファレンス](https://go.microsoft.com/fwlink/p/?linkid=257676)」をご覧ください。
 
 また、Notifyallusers.js に次のカスタム API コードが作成されます。
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 関数は、1 つの通知をトースト通知として送信します。 他の種類のプッシュ通知を使うこともできます。
 
-**ヒント:** スクリプトの編集中にヘルプを取得する方法について詳しくは、[サーバー側の JavaScript の IntelliSense を有効にする](http://go.microsoft.com/fwlink/p/?LinkId=309275)を参照してください。
+**ヒント:** スクリプトの編集中にヘルプを取得する方法について詳しくは、[サーバー側の JavaScript の IntelliSense を有効にする](https://go.microsoft.com/fwlink/p/?LinkId=309275)を参照してください。
 
  
 
@@ -231,9 +231,9 @@ Windows は、プッシュ通知に応答するため、アプリが実行され
 
 Window Azure のモバイル サービスの柔軟性が不十分な場合、C# または Visual Basic でサーバー コードを記述する場合、または既にクラウド サービスを持っていてそこからプッシュ通知を送る場合は、Windows プッシュ通知サービス (WNS) を直接呼び出すこともできます。 WNS を直接呼び出すことで、データベースや他の Web サービスからのデータを監視するワーカーの役割など、独自のクラウド サービスからプッシュ通知を送ることができます。 クラウド サービスがプッシュ通知をアプリに送るには、WNS に対して認証する必要があります。 [Windows プッシュ通知サービスに対して認証する方法 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) または [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206) に関するページをご覧ください。
 
-モバイル サービスでスケジュール済みタスクを実行して、プッシュ通知を送ることもできます。 「[Mobile Services での繰り返し発生するジョブのスケジュール](http://go.microsoft.com/fwlink/p/?linkid=301694)」をご覧ください。
+モバイル サービスでスケジュール済みタスクを実行して、プッシュ通知を送ることもできます。 「[Mobile Services での繰り返し発生するジョブのスケジュール](https://go.microsoft.com/fwlink/p/?linkid=301694)」をご覧ください。
 
-**警告**プッシュ通知ウィザードは 1 回実行して、別のモバイル サービスの登録コードを追加するもう一度、[ウィザードを実行しないでください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
+**警告**プッシュ通知ウィザードは 1 回実行して、別のモバイル サービスの登録コードを追加する 2 番目に、[ウィザードを実行しないでください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
 
  
 

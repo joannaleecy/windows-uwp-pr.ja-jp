@@ -6,12 +6,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 4914a448432206e2418fe110c0b49517a7145e0b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccbfa5f06d336604160f98dd44c27cc0cf1b0aed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937979"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050585"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>リソース管理システムでの言語タグの照合の仕組み
 
@@ -21,7 +21,7 @@ ms.locfileid: "8937979"
 
 言語タグの修飾子を持つリソースは、アプリの実行時の言語の一覧に基づいて比較およびスコア付けされます。 さまざまな言語の一覧の定義については、「[ユーザー プロファイルの言語とアプリ マニフェストの言語について](../design/globalizing/manage-language-and-region.md)」を参照してください。 一覧内の最初の言語の対応付けが、一覧内の 2 つ目の言語の対応付けよりも先に発生します (他の地域バリアントのものであっても同様)。 たとえば、アプリの実行時の言語が en-US に指定されていると、fr-CA リソースより優先的に en-GB のリソースが選ばれます。 en という形式のリソースがない場合に限り、fr-CA のリソースが選ばれます (その場合、アプリの既定の言語が任意の形式の en に設定できないことに注意してください)。
 
-スコア付けメカニズムでは、[BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) サブタグ レジストリに含まれているデータと、その他のデータ ソースを使います。 一致の度合いに応じたスコアにすることができ、候補が複数あるときは一致スコアが最も高い候補を選びます。
+スコア付けメカニズムでは、[BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302) サブタグ レジストリに含まれているデータと、その他のデータ ソースを使います。 一致の度合いに応じたスコアにすることができ、候補が複数あるときは一致スコアが最も高い候補を選びます。
 
 したがって、言語コンテンツに汎用的な言語タグを付けることができますが、必要に応じて特定言語のコンテンツを指定することもできます。 たとえば、アプリに、米国、英国、その他の地域に共通する英語の文字列が多数含まれているとします。 これらの文字列に "en" (英語) というタグを付けるだけで、領域とローカライズのオーバーヘッドを節約できます。 "color/colour" が含まれる文字列など、区別が必要になった場合は、米国バージョンと英国バージョンにそれぞれ個別に、言語と地域の両方のサブタグを使用して、"en-US" と "en-GB" というタグを付けることができます。
 
@@ -74,7 +74,7 @@ Windows で 2 つの言語の比較が行われる場合は、通常、より大
 
 #### <a name="macro-region-match"></a>マクロ地域の一致
 
-タグの言語サブタグとスクリプト サブタグは一致しています。両方のタグに地域サブタグがあり、その片方がもう片方の地域を含むマクロ地域を表しています。 マクロ地域サブタグは常に数字で、国連統計部 M.49 の国コードと地域コードに由来します。 地域の包含関係について詳しくは、「[Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings (マクロ地理 (大陸) 地域、地理サブ地域、選ばれた経済グループなどのグループ分けの構成)](http://go.microsoft.com/fwlink/p/?LinkId=247929)」をご覧ください。
+タグの言語サブタグとスクリプト サブタグは一致しています。両方のタグに地域サブタグがあり、その片方がもう片方の地域を含むマクロ地域を表しています。 マクロ地域サブタグは常に数字で、国連統計部 M.49 の国コードと地域コードに由来します。 地域の包含関係について詳しくは、「[Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings (マクロ地理 (大陸) 地域、地理サブ地域、選ばれた経済グループなどのグループ分けの構成)](https://go.microsoft.com/fwlink/p/?LinkId=247929)」をご覧ください。
 
 **注** "経済的グループ分け" または "その他のグループ分け" に関する国連コードは、BCP-47 ではサポートされていません。
  
@@ -189,6 +189,6 @@ Windows で 2 つの言語の比較が行われる場合は、通常、より大
 ## <a name="related-topics"></a>関連トピック
 
 * [リソース管理システムでのリソースの照合と選択の仕組み](how-rms-matches-and-chooses-resources.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語について](../design/globalizing/manage-language-and-region.md)
-* [マクロ地理 (大陸) 地域、地理サブ地域、選ばれた経済グループなどのグループ分けの構成](http://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [マクロ地理 (大陸) 地域、地理サブ地域、選ばれた経済グループなどのグループ分けの構成](https://go.microsoft.com/fwlink/p/?LinkId=247929)

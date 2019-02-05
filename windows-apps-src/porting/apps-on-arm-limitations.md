@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, 制限事項, ARM 版 windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919278"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058673"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM でのアプリとエクスペリエンスの制限事項
 ARM 版 Windows 10 には、次の必須の制限事項があります。
 
-- **ARM64 ドライバーだけがサポートされます**。 すべてのアーキテクチャと同様、カーネル モード ドライバー、[ユーザー モード ドライバー フレームワーク (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) ドライバー、印刷ドライバーが OS のアーキテクチャと一致するようにコンパイルする必要があります。 ARM OS には x86 ユーザー モード アプリをエミュレートする機能がありますが、他のアーキテクチャ (x64 や x86 など) に実装されるドライバーは現在のところエミュレートされないため、このプラットフォームではサポートされません。 独自のカスタム ドライバーと連動するアプリはすべて、ARM64 に移植する必要があります。 限られたシナリオでは、アプリがエミュレーション下で x86 として実行される可能性がありますが、アプリのドライバー部分は ARM64 に移植する必要があります。 ARM64 用ドライバーのコンパイルについて詳しくは、「[WDK を使った ARM64 ドライバーのビルド](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers?branch=rs4-arm64)」をご覧ください。
+- **ARM64 ドライバーだけがサポートされます**。 すべてのアーキテクチャと同様、カーネル モード ドライバー、[ユーザー モード ドライバー フレームワーク (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf) ドライバー、印刷ドライバーが OS のアーキテクチャと一致するようにコンパイルする必要があります。 ARM OS には x86 ユーザー モード アプリをエミュレートする機能がありますが、他のアーキテクチャ (x64 や x86 など) に実装されるドライバーは現在のところエミュレートされないため、このプラットフォームではサポートされません。 独自のカスタム ドライバーと連動するアプリはすべて、ARM64 に移植する必要があります。 限られたシナリオでは、アプリがエミュレーション下で x86 として実行される可能性がありますが、アプリのドライバー部分は ARM64 に移植する必要があります。 ARM64 用ドライバーのコンパイルについて詳しくは、「[WDK を使った ARM64 ドライバーのビルド](/windows-hardware/drivers/develop/building-arm64-drivers)」をご覧ください。
 
 - **x64 アプリはサポートされません**。 ARM 版 Windows 10 では、x64 アプリのエミュレーションがサポートされません。
 

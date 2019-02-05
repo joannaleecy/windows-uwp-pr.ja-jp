@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050735"
+ms.locfileid: "9058663"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>MSIX パッケージにパッケージのサポートのフレームワークを使用して、ランタイムの修正プログラムを適用します。
 
@@ -86,7 +86,7 @@ Windows SDK と次の手順では、いくつかの単純なツールを使用�
 
 ### <a name="create-the-package-layout-folder"></a>パッケージ レイアウト フォルダーを作成します。
 
-.Msix (.appx) ファイルが既にある場合は、その内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。 SDK のインストール パスに基づき、makemsix ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC 上の makeappx.exe ツールの検索場所: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
+.Msix (.appx) ファイルが既にある場合は、その内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。 SDK のインストール パスに基づき、MakeAppx ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC 上の makeappx.exe ツールの検索場所: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -514,7 +514,7 @@ Visual Studio を使用すると、最も簡単な開発およびエクスペリ
 
 .Msix からインストールするのではなく、パッケージのレイアウト フォルダー パスからルーズ ファイルを展開することによって、アプリケーションを最初に、f5 キーを押してデバッグ実行/.appx パッケージ。  レイアウト フォルダー通常ありません同じセキュリティの制限、インストールされているパッケージのフォルダーとして。 その結果、にくいかもしれませんランタイムの修正プログラムを適用する前にパッケージのパス アクセス拒否エラーを再現することもできます。
 
-この問題に対処する使用 .msix f5 キーではなく、.appx パッケージの展開が失われるファイルの展開/します。  .Msix を作成する .appx パッケージ ファイル、/前述のように、Windows SDK から[MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)ユーティリティを使用します。 またはから、Visual Studio 内アプリケーション プロジェクト ノードを右クリックし、**ストア**を選択して->**アプリ パッケージの作成**します。
+この問題に対処する使用 .msix f5 キーではなく、.appx パッケージの展開が失われるファイルの展開/します。  .Msix を作成する .appx パッケージ ファイル、/前述のように、Windows SDK から[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)ユーティリティを使用します。 またはから、Visual Studio 内アプリケーション プロジェクト ノードを右クリックし、**ストア**を選択して->**アプリ パッケージの作成**します。
 
 Visual Studio の別の問題は、デバッガーを起動したすべての子プロセスにアタッチするための組み込みサポートがないことです。   Visual Studio によって起動後が手動で接続され、ターゲット アプリケーションのスタートアップ パス内のロジックをデバッグが困難になります。
 

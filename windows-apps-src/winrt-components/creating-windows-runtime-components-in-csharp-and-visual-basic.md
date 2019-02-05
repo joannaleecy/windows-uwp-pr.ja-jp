@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a7f2d2db5670b0102f589fcd6d764a239d3bb3f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928111"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058823"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>C# および Visual Basic での Windows ランタイム コンポーネントの作成
 .NET Framework 4.5 以降、マネージ コードを使用して、独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化します。 コンポーネントは、C++、JavaScript、Visual Basic または c# で記述されたユニバーサル Windows プラットフォーム (UWP) アプリで使用できます。 このトピックでは、コンポーネントを作成するための規則について説明し、Windows ランタイムの .NET Framework のサポートの一部の側面を説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
@@ -29,21 +29,21 @@ Visual Basic または c# で記述されている UWP アプリでのみ使う�
 
 - コンポーネント内にあるすべてのパブリック型とメンバーのフィールド、パラメーター、戻り値は、Windows ランタイム型である必要があります。 この制限には、および Windows ランタイム自体で提供される型を作成した Windows ランタイム型が含まれています。 また、さまざまな .NET Framework 型も対象となります。 これらの型の一部は、マネージ コードで Windows ランタイムの自然な使い方を有効にする .NET Framework が提供するサポートの&mdash;、基になる Windows ランタイム型の代わりに、使い慣れた .NET Framework 型を使用するコードが表示されます。 たとえば、.NET Framework のプリミティブ型**Int32**や**Double**、 **DateTimeOffset**や**Uri**などの特定の基本型などを使用して、 **IEnumerable などのジェネリック インターフェイス型をよく使われるいくつか&lt;T&gt; ** (Visual Basic では IEnumerable (Of T)) と**IDictionary&lt;TKey, TValue&gt;** します。 これらのジェネリック型の型引数は Windows ランタイム型である必要がありますに注意してください。 これは、セクションでは、 [Windows ランタイム型の引き渡しをマネージ コード](#passing-windows-runtime-types-to-managed-code)と[マネージ Windows ランタイム型の引き渡し](#passing-managed-types-to-the-windows-runtime)には、このトピックの後半で説明します。
 
-- パブリック クラスとインターフェイスには、メソッド、プロパティ、イベントを含めることができます。 イベントのデリゲートを宣言するか、使用、 **EventHandler&lt;T&gt;** を委任します。 パブリック クラスやインターフェイスは使用できません。
+- パブリック クラスとインターフェイスには、メソッド、プロパティ、イベントを含めることができます。 イベントのデリゲートを宣言するか、使用、 **EventHandler&lt;T&gt;** 委任できます。 パブリック クラスやインターフェイスは使用できません。
     - ジェネリックにする。
     - Windows ランタイム インターフェイスではないインターフェイスを実装 (ただし、独自の Windows ランタイム インターフェイスを作成してそれらを実装できます)。
-    - **System.Exception**や**System.EventArgs**など、Windows ランタイムではなく型から派生します。
+    - **System.Exception**や**System.EventArgs**など、Windows ランタイム型から派生します。
 
 - すべてのパブリック型にはアセンブリ名に一致するルート名前空間が必要になります。ただし、アセンブリ名の先頭には "Windows" を付けることはできません。
 
-    > **ヒント**をします。 既定では、Visual Studio プロジェクトはアセンブリ名に一致する名前空間名があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
+    > **ヒント**をします。 既定では、Visual Studio プロジェクトはアセンブリ名に一致する名前空間の名前があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
 
 - パブリック構造体はパブリック フィールド以外のメンバーを持つことができません。また、それらのフィールドは値型または文字列であることが必要です。
 - パブリック クラスは **sealed** (Visual Basic では **NotInheritable**) であることが必要です。 プログラミング モデルには、ポリモーフィズムが必要とする場合はパブリック インターフェイスを作成し、ポリモーフィックにする必要のあるクラスにそのインターフェイスを実装します。
 
 ## <a name="debugging-your-component"></a>コンポーネントのデバッグ
 
-If both your UWP app and your component are built with managed code, then you can debug them both at the same time.
+UWP アプリとコンポーネントの両方がマネージ コードでに組み込まれている場合、デバッグできますその両方同時に。
 
 C++ を使った UWP アプリの一部としてコンポーネントをテストしている場合は、同時にマネージとネイティブ コードをデバッグできます。 既定では、ネイティブ コードのみになります。
 
@@ -62,18 +62,18 @@ JavaScript を使って UWP アプリの一部としてコンポーネントを�
 4.  マネージ コードのブレークポイントを設定し、通常どおりにデバッグします。
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>マネージ コードへの Windows ランタイム型の引き渡し
-[Windows ランタイム コンポーネントの宣言型](#declaring-types-in-windows-runtime-components)セクションで既に説明した、特定の .NET Framework 型はパブリック クラスのメンバーのシグネチャに表示されます。 これは、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。 これには、プリミティブ型と一部のクラスやインターフェイスが含まれます。 JavaScript または C++ コードからコンポーネントを使用する場合は、呼び出し元に、.NET Framework 型がどのように表示されるかを知る必要があります。 JavaScript を使った例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」をご覧ください。 このセクションでは、よく使われる型について説明します。
+[Windows ランタイム コンポーネントの宣言型](#declaring-types-in-windows-runtime-components)セクションで既に説明した、特定の .NET Framework 型はパブリック クラスのメンバーのシグネチャに表示されます。 これは、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。 これには、プリミティブ型と一部のクラスやインターフェイスが含まれます。 JavaScript や C++ コードからコンポーネントを使用する場合は、呼び出し元に、.NET Framework 型がどのように表示されるかを知る必要があります。 JavaScript を使った例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」をご覧ください。 このセクションでは、よく使われる型について説明します。
 
 .NET framework では、多くの便利なプロパティやメソッドは、 **TryParse**メソッドなど、 **Int32**構造体などのプリミティブ型があります。 これに対して、Windows ランタイムのプリミティブ型と構造体は、フィールドしか保持していません。 これらの型をマネージ コードに渡すと、.NET Framework 型のように表示され、通常どおりに .NET Framework のプロパティとメソッドを使うことができます。 IDE で自動的に行われる置き換えの概要を次に示します。
 
 -   Windows ランタイムのプリミティブ**Int32**、 **Int64**、 **1 つ**、 **Double**、 **Boolean**、 **String** (Unicode 文字の変更できないコレクション)、**列挙型**、 **UInt32**、 **UInt64**、および**Guid**、System 名前空間で同じ名前の型を使用します。
 -   **UInt8**、 **System.Byte**を使用します。
 -   ** **Char16**、に対して system.char キーを押します。**
--   **IInspectable**インターフェイスでは、 **System.Object**を使用します。
+-   **IInspectable**インターフェイス、 **System.Object**を使用します。
 
-C# または Visual Basic のこれら型に対して言語キーワードを提供する場合、できます言語キーワード代わりに使うことです。
+C# または Visual Basic のこれら型に対して言語キーワードを提供する場合、できます言語キーワード代わりに使用します。
 
-プリミティブ型に加えて、よく使用される基本的な Windows ランタイム型が、同等の .NET Framework 型としてマネージ コードに表示されます。 たとえば、JavaScript コードで**Windows.Foundation.Uri**クラスを使用し、それを c# または Visual Basic のメソッドに渡すとします。 マネージ コードでの同等の型は、.NET Framework の**System.Uri**クラスとメソッドのパラメーターを使用する型がします。 マネージ コードを記述するとき、Visual Studio の IntelliSense によって Windows ランタイム型が表示されなくなり、同等の .NET Framework 型が示されるため、Windows ランタイム型が .NET Framework 型として表示されていることがわかります  (通常、2 つの型の名前は同じです。 ただし、 **Windows.Foundation.DateTime**構造体は、 **System.DateTime**ではなく、 **System.DateTimeOffset**としてマネージ コードでが表示されます。)
+プリミティブ型に加えて、よく使用される基本的な Windows ランタイム型が、同等の .NET Framework 型としてマネージ コードに表示されます。 たとえば、JavaScript コードで**Windows.Foundation.Uri**クラスを使用し、それを c# または Visual Basic のメソッドに渡すとします。 マネージ コードでの同等の型は、.NET Framework の**System.Uri**クラスとメソッドのパラメーターを使用する型です。 マネージ コードを記述するとき、Visual Studio の IntelliSense によって Windows ランタイム型が表示されなくなり、同等の .NET Framework 型が示されるため、Windows ランタイム型が .NET Framework 型として表示されていることがわかります  (通常、2 つの型の名前は同じです。 ただし、 **Windows.Foundation.DateTime**構造体は、 **System.DateTime**ではなく、 **System.DateTimeOffset**としてマネージ コードでが表示されます。)
 
 よく使われるコレクション型の一部では、Windows ランタイム型によって実装されるインターフェイスと、対応する .NET Framework 型によって実装されるインターフェイスと間で対応付けが行われます。 上で説明した型と同じように、.NET Framework 型を使ってパラメーターの型を宣言する必要があります。 これにより、型の間にある相違点を意識せずに、.NET Framework コードを通常どおりに記述することができます。
 
@@ -93,14 +93,14 @@ C# または Visual Basic のこれら型に対して言語キーワードを提
 | Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
 | Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
-型によって複数のインターフェイスが実装される場合、メンバーのパラメーターの型または戻り値の型として実装されるインターフェイスをすべて使うことができます。 たとえば、渡すや、戻り値、**ディクショナリ&lt;int, string&gt; ** (Visual Basic では**Dictionary (Of Integer, String)** ) として**IDictionary&lt;int, string&gt;**、 **IReadOnlyDictionary&lt;int, string&gt; **、または**IEnumerable&lt;的に System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;** します。
+型によって複数のインターフェイスが実装される場合、メンバーのパラメーターの型または戻り値の型として実装されるインターフェイスをすべて使うことができます。 たとえば、渡すや、戻り値、**辞書&lt;int, string&gt; ** (Visual Basic では**Dictionary (Of Integer, String)** ) として**IDictionary&lt;int, string&gt;**、 **IReadOnlyDictionary&lt;int, string&gt; **、または**IEnumerable&lt;的に System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;** します。
 
 > [!IMPORTANT]
-> JavaScript では、マネージ型によって実装されるインターフェイスの一覧で最初に表示されるインターフェイスを使用します。 たとえば、返すこと**ディクショナリ&lt;int, string&gt;** として表示、JavaScript コードに**IDictionary&lt;int, string&gt;** 戻り値の型としてどのインターフェイスに関係なくを指定します。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
+> JavaScript では、マネージ型によって実装されるインターフェイスの一覧で最初に表示されるインターフェイスを使用します。 たとえば、返すこと**辞書&lt;int, string&gt;** として表示、JavaScript コードに**IDictionary&lt;int, string&gt;** 戻り値の型としてどのインターフェイスに関係なくを指定します。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
-Windows ランタイムで**IMap&lt;K, V&gt;** と**IMapView&lt;K, V&gt; ** IKeyValuePair を使用して、補間されます。 として表示されるときに、マネージ コードに渡す、 **IDictionary&lt;TKey, TValue&gt;** と**IReadOnlyDictionary&lt;TKey, TValue&gt;** 必然的に System.Collections.Generic.KeyValuePair**を使用して、&lt;TKey、TValue&gt;** それらを列挙します。
+Windows ランタイムで**IMap&lt;K, V&gt;** と**IMapView&lt;K, V&gt; ** IKeyValuePair を使用して、補間されます。 として表示されるとき、それらをマネージ コードに渡す**IDictionary&lt;TKey, TValue&gt;** と**IReadOnlyDictionary&lt;TKey, TValue&gt;** 必然的に System.Collections.Generic.KeyValuePair**を使用して、&lt;TKey、TValue&gt;** それらを列挙します。
 
-インターフェイスがマネージ コード内に表示される方法によって、これらのインターフェイスを実装する型の表示方法が決まります。 たとえば、 **PropertySet**クラスを実装する**IMap&lt;K, V&gt;**、としてマネージ コードで表示される**IDictionary&lt;TKey, TValue&gt;** します。 **PropertySet**は、実装される場合とが表示される**IDictionary&lt;TKey, TValue&gt;** の代わりに**IMap&lt;K, V&gt;** ので、マネージ コードで**Add**メソッド、 **Add**メソッドと同様な動作を持つことが表示されます。.NET Framework ディクショナリです。 それがないように見える、 **Insert**メソッドです。 この例では、トピックを確認できます[チュートリアル: c# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)します。
+インターフェイスがマネージ コード内に表示される方法によって、これらのインターフェイスを実装する型の表示方法が決まります。 たとえば、 **PropertySet**クラスを実装する**IMap&lt;K, V&gt;**、としてマネージ コードで表示される**IDictionary&lt;TKey, TValue&gt;** します。 実装された場合は、 **PropertySet**が表示される**IDictionary&lt;TKey, TValue&gt;** の代わりに**IMap&lt;K, V&gt;** ので、マネージ コードで**Add**メソッド、 **Add**メソッドと同様な動作を持つことが表示されます。.NET Framework ディクショナリです。 それがないように見える、 **Insert**メソッドです。 この例では、トピックを確認できます[チュートリアル: c# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)します。
 
 ## <a name="passing-managed-types-to-the-windows-runtime"></a>Windows ランタイムへのマネージ型の引き渡し
 
@@ -140,9 +140,9 @@ End Function
 
 ## <a name="implementing-istringable"></a>IStringable の実装
 
-Windows 8.1 以降、Windows ランタイムが 1 つのメソッド、 **IStringable.ToString**、 **Object.ToString**で提供されると同等の基本的な書式設定サポートを提供する**IStringable**インターフェイスが含まれています。 Windows ランタイム コンポーネントでエクスポートしたパブリック マネージ型に**IStringable**を実装する場合は、次の制限が適用されます。
+Windows 8.1 以降、Windows ランタイムが 1 つのメソッドは**IStringable.ToString**、 **Object.ToString**で提供される同等の基本的な書式設定サポートの提供**IStringable**インターフェイスが含まれています。 Windows ランタイム コンポーネントでエクスポートしたパブリック マネージ型に**IStringable**を実装する場合は、次の制限が適用されます。
 
--   C# では、次のコードなどの「クラスが実装する」関係でのみ**IStringable**インターフェイスを定義することができます。
+-   C# では、次のコードなどの「クラス実装」関係でのみ**IStringable**インターフェイスを定義できます。
 
     ```cs
     public class NewClass : IStringable
@@ -207,7 +207,7 @@ Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 End Function
 ```
 
-次の JavaScript コードは、 [**WinJS.Promise**](https://msdn.microsoft.com/library/windows/apps/br211867.aspx)オブジェクトを使用して、どのようにメソッドを呼び出すことができますを示しています。 then メソッドに渡される関数は、非同期呼び出しが完了したときに実行されます。 StringList パラメーターには**DownloadAsStringAsync**メソッドによって返される文字列の一覧が含まれています、関数は、すべての処理が必要です。
+次の JavaScript コードでは、 [**WinJS.Promise**](https://msdn.microsoft.com/library/windows/apps/br211867.aspx)オブジェクトを使用してどのようにメソッドを呼び出すことができますを示します。 then メソッドに渡される関数は、非同期呼び出しが完了したときに実行されます。 StringList パラメーターには**DownloadAsStringAsync**メソッドによって返される文字列の一覧が含まれています、関数は、すべての処理が必要です。
 
 ```javascript
 function asyncExample(id) {
@@ -221,7 +221,7 @@ function asyncExample(id) {
 
 非同期アクションと取り消しや進行状況の報告をサポートする操作は、 [**AsyncInfo**](/dotnet/api/system.runtime.interopservices.windowsruntime)クラスを使って開始タスクの生成を取り消しや進行状況レポート タスクの取り消しや進行状況の機能をフック適切な Windows ランタイム インターフェイスの機能を報告します。 取り消しおよび進行状況の報告の両方をサポートする例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)」をご覧ください。
 
-非同期メソッドが取り消しをサポートしないや進行状況の報告場合でも、 **AsyncInfo**クラスのメソッドを使用することができることに注意してください。 Visual Basic のラムダ関数または c# の匿名メソッドを使用する場合は、トークンのパラメーターを指定しないでくださいと[**IProgress&lt;T&gt;**](https://msdn.microsoft.com/library/hh138298.aspx)インターフェイスです。 C# のラムダ関数を使う場合は、トークンのパラメーターを指定しますが、無視されます。 前の例は、使用 AsAsyncOperation&lt;TResult&gt;メソッドでは、次のようなを使用する場合、 [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/hh779740.aspx)) メソッド代わりにオーバー ロードされます。
+非同期メソッドが取り消しをサポートや、進行状況の報告いない場合でも、 **AsyncInfo**クラスのメソッドに使用することに注意してください。 Visual Basic のラムダ関数または c# の匿名メソッドを使用する場合は、トークンのパラメーターを指定しないと[**IProgress&lt;T&gt;**](https://msdn.microsoft.com/library/hh138298.aspx)インターフェイスです。 C# のラムダ関数を使う場合は、トークンのパラメーターを指定しますが、無視されます。 前の例は、使用 AsAsyncOperation&lt;TResult&gt;メソッドでは、次のようなを使用する場合、 [**AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/hh779740.aspx)) メソッド代わりにオーバー ロードされます。
 
 ```csharp
 public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
@@ -268,9 +268,9 @@ Windows アプリ用 .NET に含まれている例外の型は、どれでもス
 
 ## <a name="declaring-and-raising-events"></a>イベントの宣言と発生
 
-イベントのデータを保持する型を宣言する場合、EventArgs は Windows ランタイム型ではないので、EventArgs の代わりに Object から派生させます。 使用して[**EventHandler&lt;TEventArgs&gt;**](https://msdn.microsoft.com/library/db0etb8x.aspx)としての種類のイベントと、イベント引数の型をジェネリック型引数として使います。 イベントは .NET Framework アプリケーションの場合と同様に発生させます。
+イベントのデータを保持する型を宣言する場合、EventArgs は Windows ランタイム型ではないので、EventArgs の代わりに Object から派生させます。 使用して[**EventHandler&lt;TEventArgs&gt;**](https://msdn.microsoft.com/library/db0etb8x.aspx)としての種類のイベントと、イベント引数の型をジェネリック型引数として使用します。 イベントは .NET Framework アプリケーションの場合と同様に発生させます。
 
-Windows ランタイム コンポーネントが JavaScript や C++ で使われる場合、イベントはそれらの言語で想定されている Windows ランタイムのイベント パターンに従います。 C# や Visual Basic でコンポーネントを使う場合、イベントは通常の .NET Framework のイベントとして表示されます。 例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し]()」をご覧ください。
+Windows ランタイム コンポーネントが JavaScript や C++ で使われる場合、イベントはそれらの言語で想定されている Windows ランタイムのイベント パターンに従います。 C# や Visual Basic でコンポーネントを使う場合、イベントは通常の .NET Framework のイベントとして表示されます。 例については、「[チュートリアル: C# または Visual Basic での単純なコンポーネントの作成と JavaScript からの呼び出し](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)」をご覧ください。
 
 カスタム イベント アクセサーを実装する場合 (Visual Basic では **Custom** キーワードでイベントを宣言する場合) は、実装で Windows ランタイムのイベント パターンに従う必要があります。 「[Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー](custom-events-and-event-accessors-in-windows-runtime-components.md)」をご覧ください。 C# や Visual Basic コードでイベントを処理する場合でも、通常の .NET Framework のイベントとして表示されます。
 

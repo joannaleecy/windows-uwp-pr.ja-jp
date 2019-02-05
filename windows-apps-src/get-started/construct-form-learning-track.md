@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォーム
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037054"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058533"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
@@ -135,7 +135,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスを設定する場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
 
-また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
+また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 
 ## <a name="useful-apis-and-docs"></a>便利な API とドキュメント
 
@@ -161,7 +161,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 | [フォーム](../design/controls-and-patterns/forms.md) | フォームを作成するための全体的なガイダンスです。 |
 | [レイアウト パネル](../design/layout/layout-panels.md) | レイアウト パネルの種類とそれらを使用する場所に関する概要を示します。 |
 | [マスター/詳細パターン](../design/controls-and-patterns/master-details.md) | 1 つまたは複数のフォームの周囲に実装できる設計パターンです。 |
-| [ピボット コントロール](../design/controls-and-patterns/tabs-pivot.md) | 1 つまたは複数のフォームを含めることができるコントロールです。 |
+| [ピボット コントロール](../design/controls-and-patterns/pivot.md) | 1 つまたは複数のフォームを含めることができるコントロールです。 |
 | [レスポンシブ デザイン](../design/layout/responsive-design.md) | 大規模なレスポンシブ デザインの原則の概要です。 | 
 | [XAML でのレスポンシブ レイアウト](../design/layout/layouts-with-xaml.md) | レスポンシブ デザインの表示状態とその他の実装に関する具体的な情報です。 |
 | [レスポンシブ デザインの画面サイズ](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | レスポンシブ レイアウトの対象とする画面サイズに関するガイダンスです。 |

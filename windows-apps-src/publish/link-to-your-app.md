@@ -6,17 +6,17 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, リンク, windows store プロトコル, アプリにリンクする, アプリへのリンク
 ms.localizationpriority: medium
-ms.openlocfilehash: 59df207adf44cea04505e41a3323da1743170c46
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 56bc051c3c5a935f3b6b26e478731fcde9c06902
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931766"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050615"
 ---
 # <a name="link-to-your-app"></a>アプリへのリンク
 
 
-顧客の Microsoft Store でアプリの登録情報にリンクして、アプリを検出することができます。
+ユーザーが Microsoft Store でアプリの登録情報にリンクして、アプリを検出できます。
 
 ## <a name="getting-the-link-to-your-apps-store-listing"></a>ストアのアプリの内容へのリンク
 
@@ -29,7 +29,7 @@ ms.locfileid: "8931766"
 
 カスタム バッジを知らせる、Microsoft ストアにアプリを使って、アプリの登録情報に直接リンクすることができます。
 
-バッジを作成するには、 [Microsoft Store バッジ](http://go.microsoft.com/fwlink/p/?LinkID=534236)のページをご覧ください。 バッジとリンクを生成するには、アプリの 12 文字の**ストア ID** が必要です。 アプリの**ストア ID** は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
+バッジを作成するには、 [Microsoft Store バッジ](https://go.microsoft.com/fwlink/p/?LinkID=534236)のページをご覧ください。 バッジとリンクを生成するには、アプリの 12 文字の**ストア ID** が必要です。 アプリの**ストア ID** は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
 
 > [!NOTE]
 > 詳細と Microsoft Store バッジの使用に関連する要件については、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)を参照してください。
@@ -41,11 +41,11 @@ Microsoft Store の起動を使用して、ブラウザーを開かずに、ア�
 
 ユーザーが Windows デバイスを使っていることがわかっていて、ストアの登録情報ページにユーザーが直接アクセスできるようにする場合は、このリンクが便利です。 たとえば、ブラウザーのユーザー エージェント文字列を調べてユーザーのオペレーティング システムがストアをサポートしていることを確認した後や、既に UWP アプリを使って通信している場合に、このリンクを利用できます。
 
-アプリのストア登録情報に直接リンクをこの URI スキームを使用するには、このリンクをアプリのストア ID を追加します。
+アプリのストア登録情報に直接リンクをこの URI スキームを使用するには、このリンクに、アプリのストア ID を追加します。
 
 `ms-windows-store://pdp/?ProductId=`
 
-Microsoft Store プロトコルの使用について詳しくは、 [Microsoft アプリの起動](../launch-resume/launch-store-app.md)を参照してください。
+Microsoft ストア プロトコルの使用について詳しくは、 [Microsoft アプリの起動](../launch-resume/launch-store-app.md)を参照してください。
 
  
 

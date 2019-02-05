@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, win32 では、デスクトップ, トースト通知、トーストを送信ローカル トースト通知の送信, デスクトップ ブリッジ, c# では、c シャープ、トースト通知, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
-ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
+ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992313"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058703"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>デスクトップ C# アプリからのローカル トースト通知の送信
 
@@ -386,7 +386,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-10-deploying-and-debugging"></a>手順 10: 展開とデバッグ
 
-デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/porting/desktop-to-uwp-debug.md)」をご覧ください。
+デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/windows/uwp/porting/desktop-to-uwp-debug)」をご覧ください。
 
 従来の Win32 アプリを展開およびデバッグするには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。 スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。
 

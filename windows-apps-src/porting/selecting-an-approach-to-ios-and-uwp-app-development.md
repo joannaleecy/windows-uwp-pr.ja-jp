@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b87ee76481492de0dfb23394e0aef7f017f3305
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8334a99fc27d96214a73d0ad01ec8ece791fd90f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935986"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049659"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>iOS と UWP のアプリ開発方法の選択
 
@@ -26,19 +26,19 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
 ゼロから始める場合、次のように自由に選べる多くのオプションがあります。
 
--   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](https://go.microsoft.com/fwlink/p/?LinkID=320484)
 
     Xamarin を使うと、C# でアプリを作成して Windows 上で実行することができ、ネイティブの iOS アプリを作成することもできます。 Xamarin のサポートは Visual Studio に組み込まれており、適切なプロジェクトの種類を選ぶだけです。
 
--   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](https://go.microsoft.com/fwlink/p/?LinkID=400439)
 
     Javascript と HTML の方がよい場合は、Apache Cordova (PhoneGap とも呼ばれる) を使うと、iOS、Windows、および Android 向けのクロスプラットフォーム アプリを容易に作成できます。 このプロジェクトの種類は、Visual Studio にも組み込まれています。
 
 -   ゲーム エンジン
 
-    [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) や [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) などのツールを自由に利用することで、Windows のほか、iOS など多くのプラットフォーム用に最高品質のゲームを作成することができます。 Unity は C# スクリプトをサポートし、Unreal は C++ を使います。
+    [Unity3D](https://go.microsoft.com/fwlink/p/?LinkID=320479) や [Unreal Engine](https://go.microsoft.com/fwlink/p/?LinkID=394062) などのツールを自由に利用することで、Windows のほか、iOS など多くのプラットフォーム用に最高品質のゲームを作成することができます。 Unity は C# スクリプトをサポートし、Unreal は C++ を使います。
 
--   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](https://go.microsoft.com/fwlink/p/?LinkID=320483)
 
     XNA の後継にあたります。 これは、オープン ソースのクロスプラットフォーム フレームワークです。つまり、物理エンジン、2D および 3D グラフィック サポートにより、多くのプラットフォーム向けに C# でアプリを作成できます。
 
@@ -54,13 +54,13 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     主要なビジネス ロジックが、Objective-C や Swift ではなく C++ で作成されている場合、そのコードを少し変更するだけでプロジェクトで使用できます。 そして、他の Windows でアプリと同様に、XAML を使って UI を定義し、必要に応じて C++ コードを呼び出すことができます。
 
--   [ANGLE を使った Windows での OpenGL ES の実行](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [ANGLE を使った Windows での OpenGL ES の実行](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
     OpenGL ES 2.0 プロジェクトを移植する中間の手順で ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。
 
 ## <a name="other-cross-platform-authoring-tools"></a>その他のクロスプラットフォームの作成ツール
 
--   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [GameSalad](https://go.microsoft.com/fwlink/p/?LinkID=320480)
 
     ゲーム作成環境。
 
@@ -68,31 +68,31 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     ゲーム作成環境。
 
--   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     クロスプラットフォームの作成環境。
 
--   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
 
     スプライト処理と物理モデリング用のクロスプラットフォームのコード ライブラリ。
 
--   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Impact.js](https://go.microsoft.com/fwlink/p/?LinkID=320486)
 
     HTML ベースのゲーム ライブラリ。
 
--   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Marmalade](https://go.microsoft.com/fwlink/p/?LinkID=320487)
 
     クロスプラットフォーム SDK。
 
--   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [OpenFL](https://go.microsoft.com/fwlink/p/?LinkID=320488)
 
     クロスプラットフォームの開発ツール。
 
--   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [GameMaker](https://go.microsoft.com/fwlink/p/?LinkID=320490)
 
     特にゲーム用の作成環境。
 
--   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [PlayCanvas](https://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     HTML ベースのゲーム開発用ツール。
 

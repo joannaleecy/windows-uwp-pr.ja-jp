@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 13a22c33f3c975e5c1e797f52d7c4e81ea008b61
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 9aa5053d83518c61335807874cd0d31943a60695
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036984"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058603"
 ---
 # <a name="hyperlinks"></a>ハイパーリンク
 
@@ -158,7 +158,7 @@ helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
 
 **コンテンツ**
 
-ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
+ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン](/uwp/api/windows.ui.xaml.documents.span) タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
 
 **ハイパーリンクとテーマまたはスタイルの動作**
 

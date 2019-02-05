@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 19045e84f1ca3396321dd4f8c4e76da24dc9a588
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b9f8de488ad0baea1de9aea5c911f2519385d25
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935916"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049569"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>WindowsPhone Silverlight から UWP へのケース スタディ: Bookstore1
 
 
-このトピックでは、非常に単純な WindowsPhone Silverlight アプリを Windows10Universal Windows プラットフォーム (UWP) アプリの移植のケース スタディを示します。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+このトピックでは、非常に単純な WindowsPhone Silverlight アプリを Windows10Universal Windows プラットフォーム (UWP) アプリの移植のケース スタディを示します。 Windows 10 ではできるパッケージを作成する 1 つのアプリをさまざまなデバイス、ユーザーがインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 移植するアプリは、ビュー モデルにバインドされた **ListBox** で構成されます。 ビュー モデルにはタイトル、著者、表紙を示す書籍の一覧が含まれます。 表紙画像では、**[ビルド アクション]** が **[コンテンツ]** に設定され、**[出力ディレクトリにコピー]** が **[コピーしない]** に設定されています。
 
 このセクションの前のトピックでは、プラットフォーム間の違いについて説明し、ビュー モデルへのバインドを通じて、データへのアクセスに至るまで、XAML マークアップからのアプリのさまざまな要素に対する移植プロセスの詳細とガイダンスを提供しました。 ケース スタディでは、実際の例が動作するようすを示すことにより、このガイダンスを補足することを目的としています。 ケース スタディは、ガイダンスを読み終わっていることを前提としているため、繰り返し説明することはありません。
 
-**注:** と Visual Studio で bookstore1universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージが表示し、手順[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)ターゲット プラットフォームのバージョンを選択します。
+**注:** とき、Visual Studio で bookstore1universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージが表示し、手順[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)ターゲット プラットフォームのバージョンを選択します。
 
 ## <a name="downloads"></a>ダウンロード
 
-[ダウンロード、Bookstore1WPSL8 WindowsPhone Silverlight アプリ](http://go.microsoft.com/fwlink/?linkid=517053)です。
+[WindowsPhone Silverlight アプリをダウンロード、Bookstore1WPSL8](https://go.microsoft.com/fwlink/?linkid=517053)します。
 
-[Windows 10 アプリをダウンロード、bookstore1universal \_10](http://go.microsoft.com/fwlink/?linkid=532950)します。
+[Windows 10 アプリをダウンロード、bookstore1universal \_10](https://go.microsoft.com/fwlink/?linkid=532950)します。
 
 ## <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight アプリ
 
@@ -78,7 +78,7 @@ MainPage.xaml では、移植作業のために次の変更を行う必要があ
 
 既定では、すべての向きがサポートされます。 WindowsPhone Silverlight アプリを明示的に制約自体縦向きのみには、そのため元に戻す項目 \#1 および \#2 支払われる新しいプロジェクトで、アプリ パッケージ マニフェストに移動して、**縦****向きがサポートされている**下を確認しています。
 
-このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 と \#5 を使用していた WindowsPhone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP) の **TextBlock**スタイルを検索する必要があります。 エミュレーターで WindowsPhone Silverlight アプリを実行して、[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md)のセクションで、図と並行して比較できます。 これを行う、および、WindowsPhone Silverlight システム スタイルのプロパティを見ているから、次の表を作成できます。
+このアプリでは、ステータス バー (以前はシステム トレイと呼ばれていました) が既定で示されるので、項目 \#3 は元に戻す必要はありません。 項目 \#4 と \#5 を使用していた WindowsPhone Silverlight スタイルに対応する 4 つのユニバーサル Windows プラットフォーム (UWP) の **TextBlock**スタイルを検索する必要があります。 エミュレーターで WindowsPhone Silverlight アプリを実行し、[テキスト](wpsl-to-uwp-porting-xaml-and-ui.md)のセクションの図と並行して比較できます。 これを行う、および WindowsPhone Silverlight システム スタイルのプロパティを見ているから、次の表を作成できます。
 
 | Windows Phone Silverlight スタイル キー | UWP スタイル キー          |
 |-------------------------------------|------------------------|

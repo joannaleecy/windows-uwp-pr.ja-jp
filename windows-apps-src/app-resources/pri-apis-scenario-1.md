@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931449"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058843"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>シナリオ 1: 文字列リソースとアセット ファイルから PRI ファイルを生成する
 このシナリオでは、[パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用してカスタム ビルド システムを表す新しいアプリを作成します。 このカスタム ビルド システムの目的は、対象の UWP アプリの PRI ファイルを作成することです。 そのため、このチュートリアルの一部として、その対象とする UWP アプリのリソースを表す、(文字列、およびその他の種類のリソースを含む) サンプルのリソース ファイルを作成します。
@@ -119,7 +119,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 ::CreateDirectory(generatedPRIsFolder.c_str(), nullptr);
 ```
 
-COM を初期化するための呼び出しの直後に、リソース インデクサー ハンドルを宣言し、[**MrmCreateResourceIndexer**]() を呼び出してリソース インデクサーを作成します。
+COM を初期化するための呼び出しの直後に、リソース インデクサー ハンドルを宣言し、[**MrmCreateResourceIndexer**](/windows/desktop/menurc/mrmcreateresourceindexer) を呼び出してリソース インデクサーを作成します。
 
 ```cppwinrt
 MrmResourceIndexerHandle indexer;
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - 既定のリソース修飾子の一覧です。
 - 関数で設定できるようにするための、リソース インデクサー ハンドルへのポインターです。
 
-次の手順では、先ほど作成したリソース インデクサーにリソースを追加します。 `resources.resw`  は、対象の UWP アプリの中立的な文字列を含むリソース ファイル (.resw) です。 その内容を表示する場合は、(このトピック内で) 上方向にスクロールします。 `de-DE\resources.resw`  にはドイツ語の文字列、`en-US\resources.resw` には英語の文字列が含まれます。 リソース ファイル内の文字列リソースをリソース インデクサーに追加するには、[**MrmIndexResourceContainerAutoQualifiers**]() を呼び出します。 3 番目に、[**MrmIndexFile**]() 関数を呼び出して、中立的なイメージ リソースを含むファイルをリソース インデクサーに追加します。
+次の手順では、先ほど作成したリソース インデクサーにリソースを追加します。 `resources.resw`  は、対象の UWP アプリの中立的な文字列を含むリソース ファイル (.resw) です。 その内容を表示する場合は、(このトピック内で) 上方向にスクロールします。 `de-DE\resources.resw`  にはドイツ語の文字列、`en-US\resources.resw` には英語の文字列が含まれます。 リソース ファイル内の文字列リソースをリソース インデクサーに追加するには、[**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers) を呼び出します。 3 番目に、[**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 関数を呼び出して、中立的なイメージ リソースを含むファイルをリソース インデクサーに追加します。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -150,19 +150,19 @@ MrmResourceIndexerHandle indexer;
 
 **MrmIndexFile** の呼び出しで、値 L"ms-resource:///Files/sample-image.png" はリソース uri です。 最初のパス セグメントは "Files" で、これが後でこのリソース インデクサーから PRI ファイルを生成したときにリソース マップのサブツリー名として使用されます。
 
-リソース ファイルに関するリソース インデクサーの概要を説明したので、[**MrmCreateResourceFile**]() 関数を呼び出してディスクに PRI ファイルを自動的に生成できるようにしましょう。
+リソース ファイルに関するリソース インデクサーの概要を説明したので、[**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile) 関数を呼び出してディスクに PRI ファイルを自動的に生成できるようにしましょう。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
-この時点で、`resources.pri` という名前の PRI ファイルが `Generated PRIs` という名前のフォルダー内に作成されました。 これで、リソース インデクサーの作業が完了したので、[**MrmDestroyIndexerAndMessages**]() を呼び出して、そのハンドルを破棄し、割り当てられたマシン リソースをリリースします。
+この時点で、`resources.pri` という名前の PRI ファイルが `Generated PRIs` という名前のフォルダー内に作成されました。 これで、リソース インデクサーの作業が完了したので、[**MrmDestroyIndexerAndMessages**](/windows/desktop/menurc/mrmdestroyindexerandmessages) を呼び出して、そのハンドルを破棄し、割り当てられたマシン リソースをリリースします。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-PRI ファイルはバイナリであるため、バイナリ PRI ファイルをそれに対応する XML にダンプすると、先ほど生成したものを表示するのが簡単になります。 [**MrmDumpPriFile**]() の呼び出しによりこれが行われます。
+PRI ファイルはバイナリであるため、バイナリ PRI ファイルをそれに対応する XML にダンプすると、先ほど生成したものを表示するのが簡単になります。 [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile)への呼び出しのみを実行します。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));

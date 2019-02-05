@@ -6,12 +6,12 @@ ms.date: 11/13/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: a39d2b3133714ab784309e131a71219beae4e3c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926654"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050595"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多言語アプリ ツールキット 4.0 に関する FAQ とトラブルシューティング
 
@@ -83,7 +83,7 @@ No XLIFF language files were found. The app will not contain any localized resou
 
 ## <a name="what-is-microsoft-translator"></a>Microsoft Translator とは何ですか。
 
-Microsoft Translator は、機械ベースの翻訳に対応するクラウドベースのサービスです。 人の手による翻訳を手軽に利用できない場合は、機械翻訳が翻訳を利用する手段として適しています。 詳しくは、[Microsoft Translator に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=258220)をご覧ください。
+Microsoft Translator は、機械ベースの翻訳に対応するクラウドベースのサービスです。 人の手による翻訳を手軽に利用できない場合は、機械翻訳が翻訳を利用する手段として適しています。 詳しくは、[Microsoft Translator に関するページ](https://go.microsoft.com/fwlink/p/?LinkId=258220)をご覧ください。
 
 このツールキットでは、Microsoft Translator サービスを使って、翻訳候補をユーザーに提供します。 Microsoft Translator アイコンが [Translation Languages] (翻訳言語) ダイアログに表示されているときに、Microsoft Translator でサポートされている言語を確認できます。
 
@@ -178,5 +178,5 @@ Microsoft Store の認定プロセスを開始する前に、`<project-name>.qps
 ## <a name="related-topics"></a>関連トピック
 
 * [多言語アプリ ツールキット 4.0 の使用](use-mat.md)
-* [Microsoft Translator ](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Translator ](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [MakePri.exe のコマンド ライン オプション](../../app-resources/makepri-exe-command-options.md)

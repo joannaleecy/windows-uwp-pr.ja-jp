@@ -1,20 +1,20 @@
 ---
 description: マイクロソフトの広告仲介サービスを利用すると、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。
-title: マイクロソフトの広告仲介サービス
+title: Microsoft 広告仲介サービス
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, 広告, 広告, 広告仲介
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4041c21665bd77856b15b7e94e45d613d6ea51
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9197dd4b62df26ff63e469063573789da948c767
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945754"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049819"
 ---
 # <a name="microsoft-ad-mediation-service"></a>マイクロソフトの広告仲介サービス
 
-[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使用して[アプリに広告を表示する場合](display-ads-in-your-app.md)、必要に応じてマイクロソフトの広告仲介サービスを使って、広告の収益を最大化できます。 この記事では、広告仲介サービスとその目標の概要を示します。
+[Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) を使用して[アプリに広告を表示する場合](display-ads-in-your-app.md)、必要に応じてマイクロソフトの広告仲介サービスを使って、広告の収益を最大化できます。 この記事では、広告仲介サービスとその目標の概要を示します。
 
 広告仲介サービスは、[マイクロソフトの広告の収益化プラットフォーム](https://developer.microsoft.com/windows/ad-monetization-platform)の一部です。 プラットフォームは、次の部分で構成されます。
 
@@ -47,7 +47,7 @@ ms.locfileid: "8945754"
 
 新しい広告ネットワークは自動的に含まれ、学習予算を通じてパフォーマンスが評価されます。 短時間に、広告ネットワークは大量のイベント内で自分の場所を見つけます。 これにより、広告ネットワークの競争力が強化され、開発者は、アプリの収益化を最大限に活用できます。
 
-[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただし、広告と、順序を提供する広告ネットワークをより細かく制御するパートナー センターで、独自の仲介設定を選択することもあります。
+[推奨される仲介設定](../publish/in-app-ads.md#mediation-settings)を使用してアプリ内広告で得られる収入を最大化することを強くお勧めします。 これにより、アルゴリズムでアプリの最適な収益を可能にすることができます。 ただしより広告と、順序を提供する広告ネットワーク細かく制御するパートナー センターで、独自の仲介設定を選択することもあります。
 
 ## <a name="rich-data-and-signals"></a>豊富なデータと信号
 
@@ -55,6 +55,6 @@ ms.locfileid: "8945754"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [仲介設定](../publish/in-app-ads.md#mediation-settings)
 * [[広告パフォーマンス] レポート](../publish/advertising-performance-report.md)

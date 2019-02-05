@@ -5,18 +5,18 @@ keywords: 新着情報, 新機能, 更新, 更新プログラム, 機能, 新規
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bd333cecc5f9141b3fd34593ea10d17fe6face1e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0749ba30dc4c4e8d2791aa2d6699581b48fb8e5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929923"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050415"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>Windows 10 ビルド 16299 の開発者向け新着情報
 
-Windows 10 ビルド 16299 (Fall Creators Update またはバージョン 1709 とも呼ばれます) と Visual Studio 2017 および更新された SDK には、優れたユニバーサル Windows プラットフォーム アプリを作るためのツール、機能、エクスペリエンスが用意されています。 Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
+Windows 10 ビルド 16299 (Fall Creators Update またはバージョン 1709 とも呼ばれます) と Visual Studio 2017 および更新された SDK には、優れたユニバーサル Windows プラットフォーム アプリを作るためのツール、機能、エクスペリエンスが用意されています。 Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
-ここには、Windows 開発者にとって重要なこのリリースの新機能、強化された機能、ガイダンスを集めました。 Windows SDK に追加されたすべての新しい名前空間の一覧については、「[Windows 10 ビルド 16299 API の変更点](windows-10-build-16299-api-diff.md)」をご覧ください。 Windows 10 での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](http://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。 また、Windows プラットフォームに過去に追加された機能と今後追加される機能の概要については、[Windows 開発者向けプラットフォーム機能に関するページ](https://developer.microsoft.com/windows/platform/features)をご覧ください。
+ここには、Windows 開発者にとって重要なこのリリースの新機能、強化された機能、ガイダンスを集めました。 Windows SDK に追加されたすべての新しい名前空間の一覧については、「[Windows 10 ビルド 16299 API の変更点](windows-10-build-16299-api-diff.md)」をご覧ください。 Windows 10 での注目すべき機能について詳しくは、「[Windows 10 の優れた機能](https://go.microsoft.com/fwlink/?LinkId=823181)」をご覧ください。 また、Windows プラットフォームに過去に追加された機能と今後追加される機能の概要については、[Windows 開発者向けプラットフォーム機能に関するページ](https://developer.microsoft.com/windows/platform/features)をご覧ください。
 
 ## <a name="design--ui"></a>設計および UI
 
@@ -58,7 +58,7 @@ Cortana | Cortana の自然な機能を拡張し、アプリやサービスと�
 デスクトップ ブリッジ パッケージ | Visual Studio には、完全に信頼できるデスクトップ アプリケーションのパッケージ化に必要であった手動ステップをすべてなくす新しい[パッケージ プロジェクト](../porting/desktop-to-uwp-packaging-dot-net.md)が導入されています。 パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグするだけです。 手動で調整する必要はありません。 この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。
 診断とスレッド | 新しい診断 API は、実行中のアプリに関する情報を提供します。 </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) クラスは、アプリの予想されるコミット制限、プライベート コミット使用量などの情報を提供します。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) クラスは、アプリやタスクの実行状態を監視できるようになり、実行状態が変化したときに通知を行います。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) クラスには、アプリのメモリ使用制限を設定し、予想されるアプリのメモリ使用制限を報告する新しいメソッドがあります。 </br></br>優先度順にタスクをキューに入れ、[DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) クラスを使って別のスレッドで実行することができます。 この機能は、[CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 関数経由で Win32 から利用することもできます。
 EdgeHTML 16 | Microsoft Edge および JS ベースのユニバーサル Windows プラットフォーム アプリに対応する Web プラットフォームは、EdgeHTML 16 に更新され、F12 開発者ツール、CSS グリッド レイアウトのサポート、他の重要な機能が大幅に強化されました。 </br></br> * [CSS グリッド レイアウト](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)が Microsoft Edge でサポートされるようになりました。 グリッド レイアウトは、フローティングまたはスクリプトを使って配置するよりもレイアウトの流動性が高いグリッド ベースの 2 次元レイアウト システムを定義します。</br></br> * [Microsoft Edge F12 DevTools ドキュメント](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)が更新され、堅牢性とパフォーマンスが向上しました。 開発エクスペリエンスを最適化するために新機能も追加されました。 </br></br>* Microsoft Edge 内でのみ、[WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) によって[モーション コントローラー](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)とさまざまな [Windows Mixed Reality ヘッドセット](https://docs.microsoft.com/microsoft-edge/webvr/hardware)のサポートが追加されました。 さらに、WebVR は最大 1 秒あたりの 90 フレームをサポートするように最適化されています。 </br></br> すべての変更内容と新たにサポートされた API については、[Microsoft Edge 開発者ガイド](https://docs.microsoft.com/microsoft-edge/dev-guide)をご覧ください。
-マップの 3D 要素 | 3 次元オブジェクトをマップに追加できます。 新しい [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) クラスを使って、[3D Manufacturing Format (3MF)](http://3mf.io/specification/) ファイルから 3D オブジェクトをインポートできます。
+マップの 3D 要素 | 3 次元オブジェクトをマップに追加できます。 新しい [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) クラスを使って、[3D Manufacturing Format (3MF)](https://3mf.io/specification/) ファイルから 3D オブジェクトをインポートできます。
 マップの要素のスタイル設定 | マップの要素の外観をカスタマイズするには、2 つの新しい [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) プロパティである [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) と [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState) を使います。 </br></br>* [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) プロパティを使うと、マップの要素の外観をベース マップの一部であるかのようにすることができます (例: マップ スタイル シートで、要素のスタイルを *Water* などの既存のエントリに設定します)。 </br></br>* [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState) プロパティを使うと、マップ スタイル シートで *Hover* や *Selected* などの既定の状態を利用してマップの要素の外観を変更したり、それらの状態を上書きして独自の状態を作成したりすることができます。
 マップ レイヤー | 対象の要素の点を[マップ レイヤー](../maps-and-location/display-poi.md#layers)に追加し、XAML をそのレイヤーに直接バインドできます。 要素をレイヤーにグループ化します。 その後、各レイヤーを互いに独立して操作することができます。 たとえば、各レイヤーには独自のイベント セットがあるため、特定のレイヤーのイベントに応答し、そのイベントに固有の操作を実行することができます。
 マップの場所の情報 | UI 要素またはユーザーがタッチするアプリの領域の上下左右にある[軽量なポップアップ ウィンドウ](../maps-and-location/display-maps.md#placecard)の内部にマップを表示できます。  このウィンドウは、ユーザーがコンテキストを変更すると消えます。 これにより、ユーザーが別のアプリやブラウザー ウィンドウに切り替えて場所に関する情報を取得する必要がなくなります。

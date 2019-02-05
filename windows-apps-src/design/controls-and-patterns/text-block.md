@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b109dff2896d2db01892d2b62a511d392f8054b3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 692b8837f3bd74dfc5f74bee02786213c9a898f2
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037164"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058523"
 ---
 # <a name="text-block"></a>テキスト ブロック
 
@@ -80,7 +80,7 @@ textBlock1.Text = "Hello, world!";
     <Italic>italic</Italic>, or a <Bold><Italic>combination</Italic></Bold>.</TextBlock>
 ```
 
-Inline クラスから派生した要素 (Bold、Italic、Run、Span、LineBreak など) を使用すると、テキスト内の部分によって別々の書式を有効にすることができます。 詳しくは、「[テキストの書式設定]()」をご覧ください。 インラインの Hyperlink 要素を使うと、テキストにハイパーリンクを追加することができます。 ただし、Inlines を使用すると、テキストの高速パス レンダリングが無効になります。これについては、次のセクションで説明します。
+Inline クラスから派生した要素 (Bold、Italic、Run、Span、LineBreak など) を使用すると、テキスト内の部分によって別々の書式を有効にすることができます。 詳しくは、「[テキストの書式設定](#formatting-text)」をご覧ください。 インラインの Hyperlink 要素を使うと、テキストにハイパーリンクを追加することができます。 ただし、Inlines を使用すると、テキストの高速パス レンダリングが無効になります。これについては、次のセクションで説明します。
 
 
 ## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項

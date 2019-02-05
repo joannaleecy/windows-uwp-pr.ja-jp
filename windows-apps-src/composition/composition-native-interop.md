@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f68481078d7265ee11ba2b7147d28990081e80
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: cab06db098312531a488731fb50bae99d8f2c8f6
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042414"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058833"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>コンポジションでの DirectX と Direct2D のネイティブ相互運用
 
@@ -43,7 +43,7 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 次の 2 つのコード例があります。 まず、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の例 (これが完了すると)、し、C + + CX のコード例 (の例では、DirectWrite and Direct2D の部分を省略する)。
 
-C++ を使用する/WinRT 以下のコード例は最初に、新規作成**コア アプリ (、C++/WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [、C++、Visual Studio サポート/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 プロジェクトの作成中に、ターゲット バージョン**Windows 10、バージョン 1803 (10.0; として選択します。ビルド 17134)** します。 および対象となるこのコードが組み込まれているテストのバージョンです。 内容を置き換える、`App.cpp`し、以下に示すコードをソース コード ファイルをビルドして実行します。 アプリケーションは、文字列を「こんにちは, World!」にレンダリングします。 で透明の背景に黒のテキスト。
+C++ を使用する/WinRT 以下のコード例は最初に、新規作成**コア アプリ (、C++/WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [、C++、Visual Studio サポート/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 プロジェクトの作成中に、ターゲット バージョン**Windows 10、バージョン 1803 (10.0; として選択します。ビルド 17134)** します。 および対象となるこのコードが組み込まれているテストのバージョンです。 内容を置き換える、`App.cpp`し、以下に示すコードをソース コード ファイルをビルドして実行します。 アプリケーションは、文字列を「こんにちは, World!」にレンダリングします。 で透明の背景に黒のテキスト。
 
 ```cppwinrt
 // App.cpp

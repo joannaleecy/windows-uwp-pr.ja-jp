@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、アジャイル、オブジェクト、アジリティ、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945247"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058623"
 ---
 # <a name="agile-objects-in-cwinrt"></a>C++/WinRT におけるアジャイル オブジェクト
 
@@ -63,7 +63,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## <a name="opting-out-of-agile-object-support"></a>アジャイル オブジェクトのサポートのオプトアウト
 
-[**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) マーカー構造体をテンプレート引数として基底クラスに渡すことによって、アジャイル オブジェクトのサポートを明示的にオプトアウトすることを選択することができます。
+[**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) マーカー構造体をテンプレート引数として基底クラスに渡すことによって、アジャイル オブジェクトのサポートを明示的にオプトアウトすることを選択することができます。
 
 **winrt::implements** から直接派生する場合。
 
@@ -120,7 +120,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [winrt::agile_ref 構造体テンプレート](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 構造体テンプレート](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make_agile 関数テンプレート](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile マーカー構造体](/uwp/cpp-ref-for-winrt/non_agile)
+* [winrt::non_agile マーカー構造体](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown::as 関数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 関数](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 
