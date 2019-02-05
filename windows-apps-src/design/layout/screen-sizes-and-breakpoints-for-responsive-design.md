@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925654"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048139"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>画面のサイズとブレークポイント
 
@@ -90,7 +90,7 @@ UWP アプリは、すべての Windows 10 デバイスでアプリが判読可�
 - 最大で 2 つの列/領域を使用します。
 - 検索ボックスを表示します。
 - アイコンの幅の狭いストリップが常に表示されるように[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)を小片モードにします。
-- [テレビのエクスペリエンス](http://go.microsoft.com/fwlink/?LinkId=760736)の調整を検討します。
+- [テレビのエクスペリエンス](https://go.microsoft.com/fwlink/?LinkId=760736)の調整を検討します。
 
 ### <a name="large"></a>大
 - ウィンドウの左右の余白を 24 ピクセルに設定して、アプリ ウィンドウの左右の端の間で視覚的な区切りを作成します。
@@ -100,6 +100,6 @@ UWP アプリは、すべての Windows 10 デバイスでアプリが判読可�
 - 常に表示されるように[ナビゲーション ウィンドウ](../controls-and-patterns/navigationview.md)を固定モードにします。
 
 >[!TIP] 
-> [**ある電話用 Continuum**](http://go.microsoft.com/fwlink/p/?LinkID=699431)ユーザーはその電話をノートのように機能させるモニター、マウス、キーボードを windows 10 の互換性のあるモバイル デバイスを接続できます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常にそのサイズ クラスで維持されるわけではありません。
+> [**ある電話用 Continuum**](https://go.microsoft.com/fwlink/p/?LinkID=699431)ユーザーはその電話をノートのように機能させるモニター、マウス、キーボードに互換性のある windows 10 のモバイル デバイスを接続できます。 特定のブレークポイント向けに設計するときは、この新機能に注意してください。携帯電話が常にそのサイズ クラスで維持されるわけではありません。
 
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: ca618dde24c1eed254d89c2d84734b7e3aec6306
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 392c8c181906e9e403f2204689b5e0406ea0f914
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920950"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047826"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化します。
 
@@ -120,7 +120,7 @@ Desktop App Converter (DAC) は、配布を含む、Microsoft Store 経由でサ
 パラメーターを使用して、アプリケーションのパッケージ名、発行元、バージョン番号を指定します。
 
 > [!NOTE]
-> Microsoft Store でアプリ名を予約済みの場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用してパッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
+> Microsoft Store でアプリ名を予約済み場合は、[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、パッケージと発行元名を取得できます。 アプリを他のシステムにサイドローディング展開する場合は、独自の名前を指定できます。ただし、選択する発行元名は、アプリへの署名に使用する証明書の名前と一致する必要があります。
 
 ### <a name="a-quick-look-at-command-parameters"></a>コマンド パラメーターの確認
 
@@ -143,7 +143,7 @@ DesktopAppConverter.exe
 * [インストーラー (.msi) ファイルを持つアプリケーションをパッケージ化します。](#installer-conversion)
 * [セットアップの実行可能ファイルを持つアプリケーションをパッケージ化します。](#setup-conversion)
 * [インストーラーがないアプリケーションをパッケージ化します。](#no-installer-conversion)
-* [アプリのパッケージ化と、アプリの署名、ストア申請用の準備](#optional-parameters)
+* [アプリのパッケージ化と、アプリの署名、ストアの申請のための準備](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -156,7 +156,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> Secondly, if Partner Center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
+> ここで留意すべき重要なことが 2 つあります。 まず、インストーラーは独立したフォルダーに配置し、そのインストーラーに関連するファイルだけを同じフォルダーに配置してください。 コンバーターは、このフォルダーの内容をすべて、分離された Windows 環境にコピーします。 <br> 次に、パートナー センターをパッケージに数値で始まる id を割り当てる場合、も<i>-appid</i>パラメーターに渡すようにし、そのパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用してください。  
 
 **ビデオ**
 
@@ -174,7 +174,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 ``InstallerArguments`` パラメーターは省略可能なパラメーターです。 ただし、Desktop App Converter は、インストーラーを無人モードで実行する必要があるため、アプリケーションがサイレント フラグをサイレント モードで実行する必要がある場合に使用する必要があります。 ``/S`` フラグは非常に一般的なサイレント フラグですが、セットアップ ファイルを作成するために使用したインストーラー テクノロジによっては、使用するフラグが異なる場合もあります。
 
@@ -186,7 +186,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 #### <a name="package-an-application-that-doesnt-have-an-installer"></a>インストーラーがないアプリケーションをパッケージ化します。
 
-この例で使用して、``Installer``アプリケーションのファイルのルート フォルダーをポイントするパラメーター。
+この例では、使用して、``Installer``アプリケーションのファイルのルート フォルダーをポイントするパラメーター。
 
 アプリの実行可能ファイルを指定するには、`AppExecutable` パラメーターを使用します。
 
@@ -195,7 +195,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 **ビデオ**
 
@@ -205,13 +205,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>アプリをパッケージ化し、アプリに署名して、パッケージに対して検証チェックを実行する
 
-この例は、ローカル テスト用アプリケーションに署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示していますを除き 1 つ目に似ています。
+この例は、ローカル テスト用アプリケーションに署名し、パッケージ アプリと Microsoft Store 要件に照らしてアプリを検証する方法を示しています点を除いて 1 つ目に似ています。
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
+>パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。
 
 ``Sign``パラメーターは、証明書を生成し、それを使用してアプリケーションを署名します。 アプリを実行するには、生成された証明書をインストールする必要があります。 その方法については、このガイドの「[パッケージ アプリを実行する](#run-app)」セクションをご覧ください。
 
@@ -255,43 +255,43 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 ||||
 |-------------|-----------|-------------|
 |<a id="setup-params" /> <strong>セットアップ パラメーター</strong>  ||
-|-Setup [&lt;SwitchParameter&gt;] |必須 |セットアップ モードで DesktopAppConverter を実行します。 セットアップ モードでは、用意されている基本イメージの展開をサポートします。|
-|-BaseImage &lt;String&gt; | 必須 |展開されていない基本イメージの完全パス。 このパラメーターは、-Setup を指定する場合に必要です。|
-| -LogFile &lt;String&gt; |省略可能 |ログ ファイルを指定します。 省略した場合は、ログ ファイルの一時的な場所が作成されます。|
-|-NatSubnetPrefix &lt;String&gt; |省略可能 |Nat インスタンスで使うプレフィックス値。 通常この値は、ホスト コンピューターがコンバーターの NetNat と同じサブネット範囲に割り当てられている場合にのみ変更します。 現在のコンバーターの NetNat 構成は **Get NetNat** コマンドレットを使って照会できます。 |
-|-NoRestart [&lt;SwitchParameter&gt;] |必須 |セットアップの実行中に再起動を要求しません (コンテナー機能を有効にするには再起動が必要です)。 |
+|-Setup [&lt;SwitchParameter&gt;] |必須かどうか |セットアップ モードで DesktopAppConverter を実行します。 セットアップ モードでは、用意されている基本イメージの展開をサポートします。|
+|-BaseImage &lt;String&gt; | 必須かどうか |展開されていない基本イメージの完全パス。 このパラメーターは、-Setup を指定する場合に必要です。|
+| -LogFile &lt;String&gt; |オプション |ログ ファイルを指定します。 省略した場合は、ログ ファイルの一時的な場所が作成されます。|
+|-NatSubnetPrefix &lt;String&gt; |オプション |Nat インスタンスで使うプレフィックス値。 通常この値は、ホスト コンピューターがコンバーターの NetNat と同じサブネット範囲に割り当てられている場合にのみ変更します。 現在のコンバーターの NetNat 構成は **Get NetNat** コマンドレットを使って照会できます。 |
+|-NoRestart [&lt;SwitchParameter&gt;] |必須かどうか |セットアップの実行中に再起動を要求しません (コンテナー機能を有効にするには再起動が必要です)。 |
 |<a id="conversion-params" /> <strong>変換パラメーター</strong>|||
-|-AppInstallPath &lt;String&gt;  |省略可能 |インストール済みのファイルに対応する、アプリケーションのルート フォルダーの完全パス (インストールされている場合)。"C:\Program Files (x86)\MyApp" など。|
-|-Destination &lt;String&gt; |必須 |コンバーターの appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter によって作成されます。|
-|-Installer &lt;String&gt; |必須 |アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。 インストーラーの変換、これは、アプリケーションのファイルのルート ディレクトリへのパス。 |
-|-InstallerArguments &lt;String&gt; |省略可能 |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。 <br><br>このパラメーターの使用例: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log"。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス &lt;log_folder&gt; を指定する必要があります。|
-|-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
+|-AppInstallPath &lt;String&gt;  |オプション |インストール済みのファイルに対応する、アプリケーションのルート フォルダーの完全パス (インストールされている場合)。"C:\Program Files (x86)\MyApp" など。|
+|-Destination &lt;String&gt; |必須かどうか |コンバーターの appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter によって作成されます。|
+|-Installer &lt;String&gt; |必須かどうか |アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。 インストーラーの変換、これは、アプリケーションのファイルのルート ディレクトリへのパス。 |
+|-InstallerArguments &lt;String&gt; |オプション |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。 <br><br>このパラメーターの使用例: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log"。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス &lt;log_folder&gt; を指定する必要があります。|
+|-InstallerValidExitCodes &lt;Int32&gt; |オプション |インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合は、出力を MSIX パッケージとしてパッケージ化するには、このスクリプトを指示するスイッチ。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |オプション |存在する場合は、出力 MSIX パッケージとしてパッケージ化するには、このスクリプトを指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージ ID パラメーター</strong>||
-|-PackageName &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの名前。 パートナー センターでは、id が数値で始まる場合、パッケージを割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。 |
-|-Publisher &lt;String&gt; |必須 |ユニバーサル Windows アプリ パッケージの発行元 |
-|-Version &lt;Version&gt; |必須 |ユニバーサル Windows アプリ パッケージのバージョン番号 |
+|-PackageName &lt;String&gt; |必須かどうか |ユニバーサル Windows アプリ パッケージの名前。 パートナー センターが数値で始まる場合、パッケージに id を割り当てるも<i>-appid</i>パラメーターに渡すを使用する (ピリオドの区切り記号) の後の文字列サフィックスのみとしてそのパラメーターの値を確認します。 |
+|-Publisher &lt;String&gt; |必須かどうか |ユニバーサル Windows アプリ パッケージの発行元 |
+|-Version &lt;Version&gt; |必須かどうか |ユニバーサル Windows アプリ パッケージのバージョン番号 |
 |<a id="manifest-params" /><strong>パッケージ マニフェスト パラメーター</strong>||
-|-AppExecutable &lt;String&gt; |省略可能 |アプリケーションのメインの実行可能ファイルの名前 (例:"MyApp.exe")。 インストーラーを使用しない変換では、このパラメーターは必須です。 |
-|-AppFileTypes &lt;String&gt;|省略可能 |アプリケーションに関連付ける、ファイルの種類のコンマ区切りの一覧。 使用例: -AppFileTypes "'.md', '.markdown'"。|
-|-AppId &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーション ID を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 多くの場合、*PackageName* を使って問題ありません。 ただし、パートナー センターをパッケージに数値で始まる id を割り当てる場合、とことを確認も<i>-appid</i>パラメーターに渡すパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用してください。 |
-|-AppDisplayName &lt;String&gt;  |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーションの表示名を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 |
-|-AppDescription &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでアプリケーションの説明を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。|
-|-PackageDisplayName &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでパッケージの表示名を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 |
-|-PackagePublisherDisplayName &lt;String&gt; |省略可能 |Windows アプリ パッケージ マニフェストでパッケージ発行元の表示名を設定する値を指定します。 指定しなかった場合は、*Publisher* で渡した値が設定されます。 |
+|-AppExecutable &lt;String&gt; |オプション |アプリケーションのメインの実行可能ファイルの名前 (例:"MyApp.exe")。 インストーラーを使用しない変換では、このパラメーターは必須です。 |
+|-AppFileTypes &lt;String&gt;|オプション |アプリケーションに関連付ける、ファイルの種類のコンマ区切りの一覧。 使用例: -AppFileTypes "'.md', '.markdown'"。|
+|-AppId &lt;String&gt; |オプション |Windows アプリ パッケージ マニフェストでアプリケーション ID を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 多くの場合、*PackageName* を使って問題ありません。 ただし、パートナー センターをパッケージに数値で始まる id を割り当てる場合、も<i>-appid</i>パラメーターに渡すようにし、そのパラメーターの値として (ピリオドの区切り記号) の後の文字列サフィックスのみを使用してください。 |
+|-AppDisplayName &lt;String&gt;  |オプション |Windows アプリ パッケージ マニフェストでアプリケーションの表示名を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。 |
+|-AppDescription &lt;String&gt; |オプション |Windows アプリ パッケージ マニフェストでアプリケーションの説明を設定する値を指定します。 指定しないと、*PackageName* で渡した値が設定されます。|
+|-PackageDisplayName &lt;String&gt; |オプション |Windows アプリ パッケージ マニフェストでパッケージの表示名を設定する値を指定します。 指定しなかった場合は、*PackageName* で渡した値が設定されます。 |
+|-PackagePublisherDisplayName &lt;String&gt; |オプション |Windows アプリ パッケージ マニフェストでパッケージ発行元の表示名を設定する値を指定します。 指定しなかった場合は、*Publisher* で渡した値が設定されます。 |
 |<a id="cleanup-params" /><strong>クリーンアップ パラメーター</strong>|||
-|-Cleanup [&lt;Option&gt;] |必須 |DesktopAppConverter の成果物のクリーンアップを実行します。 クリーンアップ モードには 3 つの有効なオプションがあります。 |
+|-Cleanup [&lt;Option&gt;] |必須かどうか |DesktopAppConverter の成果物のクリーンアップを実行します。 クリーンアップ モードには 3 つの有効なオプションがあります。 |
 |-Cleanup All | |展開済みのすべての基本イメージを削除し、コンバーターのすべての一時ファイルを削除します。コンテナーのネットワークを削除し、Windows のオプション機能、コンテナーを無効にします。 |
-|-Cleanup WorkDirectory |必須 |コンバーターのすべての一時ファイルを削除します。 |
-|-Cleanup ExpandedImage |必須 |ホスト コンピューターにインストールされているすべての展開済みの基本イメージを削除します。 |
+|-Cleanup WorkDirectory |必須かどうか |コンバーターのすべての一時ファイルを削除します。 |
+|-Cleanup ExpandedImage |必須かどうか |ホスト コンピューターにインストールされているすべての展開済みの基本イメージを削除します。 |
 |<a id="architecture-params" /><strong>パッケージ アーキテクチャ パラメーター</strong>|||
-|-PackageArch &lt;String&gt; |必須 |指定したアーキテクチャのパッケージを生成します。 有効なオプションは、'x86' または 'x64' です。たとえば、-PackageArch x86 のように指定します。 このパラメーターは省略可能です。 指定されていない場合、DesktopAppConverter はパッケージのアーキテクチャの自動検出を試みます。 自動検出に失敗した場合、既定値は x64 パッケージです。 |
+|-PackageArch &lt;String&gt; |必須かどうか |指定したアーキテクチャのパッケージを生成します。 有効なオプションは、'x86' または 'x64' です。たとえば、-PackageArch x86 のように指定します。 このパラメーターは省略可能です。 指定されていない場合、DesktopAppConverter はパッケージのアーキテクチャの自動検出を試みます。 自動検出に失敗した場合、既定値は x64 パッケージです。 |
 |<a id="other-params" /><strong>その他のパラメーター</strong>|||
-|-ExpandedBaseImage &lt;String&gt;  |省略可能 |既に展開済みの基本イメージの完全パス。|
-|-LogFile &lt;String&gt;  |省略可能 |ログ ファイルを指定します。 省略した場合は、ログ ファイルの一時的な場所が作成されます。 |
-| -Sign [&lt;SwitchParameter&gt;] |省略可能 |出力する Windows アプリ パッケージに、テスト用に生成された証明書を使用して署名するようにこのスクリプトに指示します。 このスイッチは、```-MakeAppx``` スイッチと共に指定する必要があります。 |
-|&lt;共通パラメーター&gt; |必須 |このコマンドレットは、共通パラメーター *Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、*OutVariable* をサポートします。 詳しくは、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
+|-ExpandedBaseImage &lt;String&gt;  |オプション |既に展開済みの基本イメージの完全パス。|
+|-LogFile &lt;String&gt;  |オプション |ログ ファイルを指定します。 省略した場合は、ログ ファイルの一時的な場所が作成されます。 |
+| -Sign [&lt;SwitchParameter&gt;] |オプション |出力する Windows アプリ パッケージに、テスト用に生成された証明書を使用して署名するようにこのスクリプトに指示します。 このスイッチは、```-MakeAppx``` スイッチと共に含める必要があります。 |
+|&lt;共通パラメーター&gt; |必須 |このコマンドレットは、共通パラメーター *Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、*OutVariable* をサポートします。 詳しくは、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
 | -Verify [&lt;SwitchParameter&gt;] |オプション |指定されている場合、パッケージ アプリと Microsoft Store 要件に照らして、アプリ パッケージを検証するように DAC に指示するスイッチ。 結果は、検証レポート "VerifyReport.xml" で、ブラウザーでの視覚化に最適です。 このスイッチは、`-MakeAppx` スイッチと共に指定する必要があります。 |
 |-PublishComRegistrations| 省略可能| インストーラーによって行われたすべての パブリック COM 登録をスキャンし、有効な登録をマニフェストで公開します。 このフラグは、これらの登録を他のアプリケーションで利用できるようにする場合にのみ使用してください。 これらの登録を対象アプリケーションでのみ使用する場合、このフラグを使用する必要はありません。 <br><br>アプリをパッケージ化した後、正常に動作するように COM 登録を行うには、[こちらの記事](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)をご覧ください。
 
@@ -301,9 +301,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 アプリを実行するには、2 種類の方法があります。
 
-1 つ目は、PowerShell コマンド プロンプトを開いて、```Add-AppxPackage –Register AppxManifest.xml``` というコマンドを入力する方法です。 署名する必要がないために、アプリケーションを実行する最も簡単な方法では可能性があります。
+1 つ目は、PowerShell コマンド プロンプトを開いて、```Add-AppxPackage –Register AppxManifest.xml``` というコマンドを入力する方法です。 おそらくに署名する必要がないために、アプリケーションを実行する最も簡単な方法です。
 
-証明書を使って、アプリケーションの署名を別の方法です。 使用する場合、```sign```パラメーター、Desktop App Converter は、1 つ生成し、し、それを使用してアプリケーションに署名します。 その証明書ファイルは **auto-generated.cer** という名前になり、パッケージ アプリのルート フォルダーに配置されます。
+証明書を使って、アプリケーションの署名を別の方法です。 使用する場合、```sign```パラメーター、Desktop App Converter は、1 つを生成し、それを使用してアプリケーションに署名します。 その証明書ファイルは **auto-generated.cer** という名前になり、パッケージ アプリのルート フォルダーに配置されます。
 
 生成された証明書をインストールし、アプリを実行するには、次の手順を実行します。
 
@@ -330,9 +330,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ## <a name="modify-the-packaged-app"></a>パッケージ アプリを変更する
 
-バグを解決、ビジュアルのアセットを追加またはライブ タイルなどの最新のエクスペリエンスを使用してアプリケーションを強化をパッケージ化されたアプリケーションに変更を加えたあります可能性があります。
+バグを解決、ビジュアルのアセットを追加またはライブ タイルなどの最新のエクスペリエンスを使用してアプリケーションを強化にパッケージ化されたアプリケーションに変更を加えたあります可能性があります。
 
-変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化アプリケーション MakeAppx ツールを使用して、アプリの appxmanifest.xml ファイル、DAC が生成されます。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
+変更を加えた後、もう一度コンバーターを実行する必要はありません。 ほとんどの場合、することができますだけと再パッケージ化、アプリケーション、MakeAppx ツールを使ってアプリの appxmanifest.xml ファイル、DAC で生成されます。 「[Windows アプリ パッケージを生成する](desktop-to-uwp-manual-conversion.md#make-appx)」をご覧ください。
 
 * アプリのビジュアル アセットを変更する場合、新しいパッケージ リソース インデックス ファイルを生成し、MakeAppx ツールを実行して新しいパッケージを生成します。 「[パッケージ リソース インデックス (PRI) ファイルを生成する](desktop-to-uwp-manual-conversion.md#make-pri)」をご覧ください。
 
@@ -347,7 +347,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-次の 2 つのセクションでは、いくつかの省略可能な修正を検討してパッケージのアプリケーションについて説明します。
+次の 2 つのセクションでは、いくつかの省略可能な修正を検討してパッケージ化されたアプリケーションにについて説明します。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>不要なファイルとレジストリ キーを削除する
 
@@ -370,7 +370,7 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 ## <a name="telemetry-from-desktop-app-converter"></a>Desktop App Converter の利用統計情報
 
-Desktop App Converter は、ソフトウェアの使用者と使用方法に関する情報を収集して、この情報を Microsoft に送信することがあります。 Microsoft のデータ収集と製品ドキュメントでの使用の詳細については、「[マイクロソフトのプライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)」をご覧ください。 マイクロソフトのプライバシーに関する声明の該当するすべての条項に準拠することに同意します。
+Desktop App Converter は、ソフトウェアの使用者と使用方法に関する情報を収集して、この情報を Microsoft に送信することがあります。 Microsoft のデータ収集と製品ドキュメントでの使用の詳細については、「[マイクロソフトのプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)」をご覧ください。 マイクロソフトのプライバシーに関する声明の該当するすべての条項に準拠することに同意します。
 
 既定では、Desktop App Converter の利用統計情報は有効にされています。 利用統計情報を目的の設定に構成するには、次のレジストリ キーを追加します。  
 
@@ -388,7 +388,7 @@ Desktop App Converterは、Unicode をサポートしていません。したが
 
 **質問に対する回答を見つける**
 
-ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
+ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
 [ここ](desktop-to-uwp-known-issues.md#app-converter)で既知の問題の一覧を確認することもできます。
 

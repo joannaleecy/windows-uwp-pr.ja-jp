@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921788"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050705"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>MediaFrameReader を使ったメディア フレームの処理
 
@@ -23,7 +23,7 @@ ms.locfileid: "8921788"
 > この記事で説明している機能は、Windows 10 バージョン 1607 以降でのみ利用できます。
 
 > [!NOTE] 
-> **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
+> **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
 
 > [!NOTE] 
 > Windows 10、バージョン 1803 では、オーディオ データで **MediaFrameReader** を使用するための新しい API セットが導入されました。 詳しくは、「[MediaFrameReader を使ったオーディオ フレームの処理](process-audio-frames-with-mediaframereader.md)」をご覧ください。
@@ -48,7 +48,7 @@ ms.locfileid: "8921788"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)と[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)から返される値を使用して、通知を受信すると、デバイス上の利用可能なフレーム ソース グループを作成することもできます。外付けのカメラが接続されたときなどに変更します。 詳しくは、「[**デバイスの列挙**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)」をご覧ください。
+通知を受信するデバイス上の利用可能なフレーム ソース グループと[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)と[**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)から返される値を使用して[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)を作成することもできます。外付けのカメラが接続されたときなどに変更します。 詳しくは、「[**デバイスの列挙**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)」をご覧ください。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) には、グループに含まれるフレーム ソースを記述する [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) オブジェクトのコレクションがあります。 デバイスで利用可能なフレーム ソース グループを取得した後、目的のフレーム ソースを公開するグループを選択できます。
 
@@ -151,7 +151,7 @@ XAML でフレームを表示するときの最初の手順は、イメージ �
 アプリケーションが中断されたときのメディア キャプチャ オブジェクトのクリーンアップについて詳しくは、「[**カメラ プレビューの表示**](simple-camera-preview-access.md)」をご覧ください。
 
 ## <a name="the-framerenderer-helper-class"></a>FrameRenderer ヘルパー クラス
-ユニバーサル Windows の[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)は、アプリで色、赤外線、および深度のソースからフレームを表示するのを容易にするヘルパー クラスを提供します。 通常、深度や赤外線のデータを画面に表示するだけでなく、データを使ってそれ以上のことを行いたいですが、このヘルパー クラスは、フレーム リーダーの機能を示したり、独自のフレーム リーダーの実装をデバッグしたりするための便利なツールです。
+ユニバーサル Windows の[カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)は、アプリで色、赤外線、および深度のソースからフレームを表示するのを容易にするヘルパー クラスを提供します。 通常、深度や赤外線のデータを画面に表示するだけでなく、データを使ってそれ以上のことを行いたいですが、このヘルパー クラスは、フレーム リーダーの機能を示したり、独自のフレーム リーダーの実装をデバッグしたりするための便利なツールです。
 
 **FrameRenderer** ヘルパー クラスは、次のメソッドを実装します。
 
@@ -253,7 +253,7 @@ Windows、バージョン 1709 以降では、**MediaFrameReader** から取得�
 
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

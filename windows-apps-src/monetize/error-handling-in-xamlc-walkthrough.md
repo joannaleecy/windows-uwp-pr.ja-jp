@@ -6,12 +6,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, エラー処理, XAML, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b2ffd15a07dc6f1018bd28cf9799e1e5209c0b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fe01a01dc97b67c339d015a260288176a5ba57da
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946207"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047051"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# ウォークスルーでのエラー処理
 
@@ -75,4 +75,4 @@ ms.locfileid: "8946207"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [GitHub の広告サンプル](http://aka.ms/githubads)
+* [GitHub の広告サンプル](https://aka.ms/githubads)

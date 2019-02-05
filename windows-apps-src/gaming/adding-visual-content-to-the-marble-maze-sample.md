@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、サンプル、DirectX、グラフィックス
 ms.localizationpriority: medium
-ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b8ad6b9a46993dc1121703e820c924b113120e51
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918907"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046475"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>Marble Maze サンプルへの視覚的なコンテンツの追加
 
@@ -33,18 +33,18 @@ Marble Maze の視覚的側面は、次のような基本の手順に従って�
 また、開発プロセスでは、これらの手順の一部を何度も繰り返す必要がありました。 たとえば、メッシュや大理石のモデルに変更を行った場合、それらのモデルをサポートするシェーダー コードの一部も変更する必要もありました。
 
 > [!NOTE]
-> このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
+> このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](https://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ここでは、DirectX や視覚的なゲーム コンテンツを扱うとき、つまり DirectX グラフィックス ライブラリの初期化、シーンのリソースの読み込み、シーンの更新やレンダリングを行う際の次の重要事項について説明します。
 
--   ゲーム コンテンツの追加には、通常、多くの手順が必要です。 多くの場合、これらの手順を繰り返すことも必要です。 ゲーム開発者多くの場合は集中まず 3D ゲーム コンテンツを追加し、2 D のコンテンツを追加します。
+-   ゲーム コンテンツの追加には、通常、多くの手順が必要です。 多くの場合、これらの手順を繰り返すことも必要です。 ゲーム開発者多くの場合は集中最初 3D ゲーム コンテンツを追加し、2 D のコンテンツを追加します。
 -   より多くの顧客に製品を届けて優れたユーザー エクスペリエンスを提供できるように、できるだけ広範囲のグラフィックス ハードウェアをサポートするようにします。
 -   設計時と実行時の形式は明確に区別します。 設計時のアセットは、柔軟性を最大限に高め、コンテンツに対する迅速な繰り返し処理ができるように構造化します。 アセットは、実行時にできるだけ効率的に読み込みとレンダリングを行うことができるように、形式を設定して圧縮します。
 -   Direct3D デバイスと Direct2D デバイスの UWP アプリでの作成は、従来の Windows デスクトップ アプリでの作成とほぼ同じです。 1 つの大きな違いは、スワップ チェーンと出力ウィンドウとの関連付けの方法です。
 -   ゲームを設計するときは、選択したメッシュ形式が主要なシナリオをサポートすることを確かめます。 たとえば、ゲームで衝突が必要な場合は、メッシュから衝突データを取得できることを確かめます。
 -   まず、すべてのシーン オブジェクトを更新してからレンダリングすることによって、ゲーム ロジックとレンダリング ロジックを切り離します。
--   通常、3 D シーン オブジェクトを描画して、2 D オブジェクトのシーンの前面に表示されます。
+-   通常、3 D シーン オブジェクトを描画して、任意の 2 D オブジェクトのシーンの前面に表示されます。
 -   描画と垂直ブランクを同期して、実際にディスプレイに表示されないフレームの描画にゲームが時間をかけないようにします。 *垂直ブランク*は 1 つのフレームがモニターへの描画を終了するまでの時間と、次のフレームが開始されます。
 
 ## <a name="getting-started-with-directx-graphics"></a>DirectX グラフィックスの概要
@@ -52,7 +52,7 @@ Marble Maze の視覚的側面は、次のような基本の手順に従って�
 
 Marble Maze ユニバーサル Windows プラットフォーム (UWP) ゲームを計画したとき、選択した C++ と direct 3 d 11.1 なレンダリングと高パフォーマンスの最大の制御を必要とする 3D ゲームを作成するための最適な選択であるためです。 DirectX 11.1 は DirectX 9 から DirectX 11 までのハードウェアをサポートするため、より多くの顧客に効率よく製品を届けることができます。以前の各 DirectX バージョン用にコードを書き直す必要がないためです。
 
-Marble Maze では、direct 3 d 11.1 を使用して、3 D のゲーム アセット (大理石と迷路) をレンダリングします。 Marble Maze では、Direct2D、DirectWrite、および Windows Imaging Component (WIC) も、描画など、メニューやタイマーは、2 D ゲーム アセットを使用します。
+Marble Maze では、direct 3 d 11.1 を使用して、3 D のゲーム アセット (大理石と迷路) をレンダリングします。 Marble Maze では、Direct2D、DirectWrite、および Windows Imaging Component (WIC) も、メニューやタイマーは、2 D ゲーム アセットの描画を使用します。
 
 ゲームを開発するには計画が必要です。 読むことをお勧めします新しい DirectX グラフィックスの場合は、 [DirectX: 概要](directx-getting-started.md)、UWP DirectX ゲームの作成の基本概念を理解します。 このドキュメントで、Marble Maze のソース コードを使用すると、DirectX グラフィックスに関するより詳しい情報については、次のリソースを参照することができます。
 
@@ -63,7 +63,7 @@ Marble Maze では、direct 3 d 11.1 を使用して、3 D のゲーム アセ�
 
 ### <a name="feature-levels"></a>機能レベル
 
-Direct3d11 では、*機能レベル*をという名前のパラダイムについて説明します。 機能レベルは、明確に定義された GPU 機能のセットです。 機能レベルを使って、Direct3D ハードウェアの以前のバージョンで実行できるようにゲームのターゲットを設定します。 Marble Maze では機能レベル 9.1 がサポートされます。高いレベルの高度な機能は必要ないためです。 所有するコンピューターがハイエンドかローエンドかにかかわらず、すべての顧客に対して優れたユーザー エクスペリエンスを実現できるように、できるだけ幅広いハードウェアをサポートし、ゲーム コンテンツをそれに合わせることをお勧めします。 機能レベルについて詳しくは、「[下位レベル ハードウェアでの Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)」をご覧ください。
+Direct3d11 では、*機能レベル*をという名前のパラダイムを紹介します。 機能レベルは、明確に定義された GPU 機能のセットです。 機能レベルを使って、Direct3D ハードウェアの以前のバージョンで実行できるようにゲームのターゲットを設定します。 Marble Maze では機能レベル 9.1 がサポートされます。高いレベルの高度な機能は必要ないためです。 所有するコンピューターがハイエンドかローエンドかにかかわらず、すべての顧客に対して優れたユーザー エクスペリエンスを実現できるように、できるだけ幅広いハードウェアをサポートし、ゲーム コンテンツをそれに合わせることをお勧めします。 機能レベルについて詳しくは、「[下位レベル ハードウェアでの Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)」をご覧ください。
 
 ## <a name="initializing-direct3d-and-direct2d"></a>Direct3D と Direct2D の初期化
 
@@ -144,7 +144,7 @@ void DX::DeviceResources::CreateDeviceIndependentResources()
 
 ###  <a name="creating-the-direct3d-and-direct2d-devices"></a>Direct3D デバイスと Direct2D デバイスの作成
 
-**DeviceResources::CreateDeviceResources** メソッドは、[D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082) を呼び出して、Direct3D ディスプレイ アダプターを表すデバイス オブジェクトを作成します。 Marble Maze には、機能レベル 9.1 がサポートされているため、上記**deviceresources::createdeviceresources**メソッドは、 **featureLevels**配列でレベル 9.1 11.1 からを指定します。 Direct3D はリストを順に確かめ、使用可能な最初の機能レベルをアプリに提供します。 したがって**D3D\_FEATURE\_LEVEL**配列の項目は表示高いものから順にアプリが利用可能な最高の機能レベルを取得するようにします。 **DeviceResources::CreateDeviceResources** メソッドは、**D3D11CreateDevice** から返される Direct3D 11 デバイスを照会することによって Direct3D 11.1 デバイスを取得します。
+**DeviceResources::CreateDeviceResources** メソッドは、[D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082) を呼び出して、Direct3D ディスプレイ アダプターを表すデバイス オブジェクトを作成します。 Marble Maze には、機能レベル 9.1 がサポートされているため、上記**deviceresources::createdeviceresources**メソッドは、 **featureLevels**配列でレベル 9.1 11.1 からを指定します。 Direct3D はリストを順に確かめ、使用可能な最初の機能レベルをアプリに提供します。 したがって**D3D\_FEATURE\_LEVEL**配列の項目は表示高いものから最も低いにアプリが利用可能な最高の機能レベルを取得するようにします。 **DeviceResources::CreateDeviceResources** メソッドは、**D3D11CreateDevice** から返される Direct3D 11 デバイスを照会することによって Direct3D 11.1 デバイスを取得します。
 
 ```cpp
 // This flag adds support for surfaces with a different color channel ordering
@@ -248,7 +248,7 @@ DXGI や Direct2D と Direct3D の相互運用について詳しくは、「[DXG
 
 ### <a name="associating-direct3d-with-the-view"></a>Direct3D とビューの関連付け
 
-**DeviceResources::CreateWindowSizeDependentResources** メソッドは、スワップ チェーン、Direct3D と Direct2D のレンダー ターゲットなど、所定のウィンドウ サイズによって異なるグラフィックス リソースを作成します。 DirectX UWP アプリとデスクトップ アプリとの大きな違いは、スワップ チェーンが出力ウィンドウと関連付けられる方法です。 スワップ チェーンは、デバイスがモニターにレンダリングするバッファーを表示します。 [Marble Maze のアプリケーション構造](marble-maze-application-structure.md)では、デスクトップ アプリから UWP アプリのウィンドウ システムの異なる方法について説明します。 UWP アプリは、 [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751)オブジェクトでは動作しない、ために、Marble Maze は、デバイス出力をビューに関連付ける[idxgifactory 2::createswapchainforcorewindow](https://msdn.microsoft.com/library/windows/desktop/hh404559)メソッドを使用する必要があります。 次の例に、スワップ チェーンを作成する **DeviceResources::CreateWindowSizeDependentResources** メソッドの一部を示します。
+**DeviceResources::CreateWindowSizeDependentResources** メソッドは、スワップ チェーン、Direct3D と Direct2D のレンダー ターゲットなど、所定のウィンドウ サイズによって異なるグラフィックス リソースを作成します。 DirectX UWP アプリとデスクトップ アプリとの大きな違いは、スワップ チェーンが出力ウィンドウと関連付けられる方法です。 スワップ チェーンは、デバイスがモニターにレンダリングするバッファーを表示します。 [Marble Maze のアプリケーション構造](marble-maze-application-structure.md)では、デスクトップ アプリから UWP アプリのウィンドウ システムの違いについて説明します。 UWP アプリは、 [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751)オブジェクトでは動作しない、ために、Marble Maze は、ビューに、デバイス出力に関連付ける[idxgifactory 2::createswapchainforcorewindow](https://msdn.microsoft.com/library/windows/desktop/hh404559)メソッドを使用する必要があります。 次の例に、スワップ チェーンを作成する **DeviceResources::CreateWindowSizeDependentResources** メソッドの一部を示します。
 
 ```cpp
 // Obtain the final swap chain for this window from the DXGI factory.
@@ -277,7 +277,7 @@ DX::ThrowIfFailed(
 **DeviceResources::CreateWindowSizeDependentResources** メソッドは、多くのゲームに対応する方法でグラフィックス リソースを初期化します。
 
 > [!NOTE]
-> *ビュー*という用語は、direct3d よりも、Windows ランタイムで異なる意味をいます。 Windows ランタイムでは、ビューは、アプリのユーザー インターフェイス設定のコレクション (表示領域、入力動作、処理に使うスレッドなどを含む) を指します。 ビューを作成するときは、必要な構成と設定を指定します。 アプリのビューを設定するプロセスについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で説明します。
+> *ビュー*という用語は、direct3d よりも、Windows ランタイムでは別の意味を持ちます。 Windows ランタイムでは、ビューは、アプリのユーザー インターフェイス設定のコレクション (表示領域、入力動作、処理に使うスレッドなどを含む) を指します。 ビューを作成するときは、必要な構成と設定を指定します。 アプリのビューを設定するプロセスについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で説明します。
 > Direct3D では、ビューという用語には複数の意味があります。 リソース ビューは、リソースにアクセスできるサブリソースを定義します。 たとえば、テクスチャ オブジェクトがシェーダー リソース ビューに関連付けられている場合、そのシェーダーは後でテクスチャにアクセスできます。 リソース ビューの 1 つの長所は、レンダリング パイプラインの段階ごとに異なる方法でデータを解釈できることです。 リソース ビューについて詳しくは、[リソース ビュー](https://msdn.microsoft.com/library/windows/desktop/ff476900#Views)を参照してください。
 > ビュー変換またはビュー変換マトリックスのコンテキストで使われた場合、ビューは、カメラの位置と向きを表します。 ビュー変換は、カメラの位置と向きを基準として、ワールド内でオブジェクトを再配置します。 ビュー変換について詳しくは、「[ビュー変換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)」をご覧ください。 Marble Maze でリソース ビューやマトリックス ビューをどのように使っているかについて、このトピックで詳しく説明しています。
 
@@ -337,7 +337,7 @@ protected:
 UI 要素の共通基底クラスを提供することで、ユーザー インターフェイスを管理する **UserInterface** クラスが行う必要があるのは、**ElementBase** オブジェクトのコレクションの保持のみになります。これにより、UI の管理が簡略化され、再利用可能なユーザー インターフェイス マネージャーが提供されます。 Marble Maze では、ゲーム固有の動作を実装する型を **ElementBase** から派生させて定義します。 たとえば、**HighScoreTable** は、ハイ スコア表の動作を定義します。 これらの型について詳しくは、ソース コードをご覧ください。
 
 > [!NOTE]
-> XAML を使用すると、シミュレーション ゲームや戦略ゲーム、見などの複雑なユーザー インターフェイスをより簡単に作成されるため、XAML を使って、UI を定義するかどうかを検討してください。 DirectX UWP ゲームで XAML ユーザー インターフェイスを開発する方法について詳しくは、[拡張ゲームのサンプル](tutorial-resources.md)、DirectX 3D シューティング ゲームのサンプルを参照するを参照してください。
+> XAML を使用すると、シミュレーション ゲームや戦略ゲーム、見などの複雑なユーザー インターフェイスをより簡単に作成されるため、UI の定義に XAML を使用するかどうかを検討してください。 DirectX UWP ゲームで XAML ユーザー インターフェイスを開発する方法について詳しくは、[拡張ゲームのサンプル](tutorial-resources.md)、DirectX 3D シューティング ゲームのサンプルを参照するを参照してください。
 
  
 
@@ -492,7 +492,7 @@ sPSInput main(sVSInput input)
 
 Direct3D バッファーは、データのコレクションをグループ化します。 定数バッファーは、シェーダーにデータを渡すために使うことができるバッファーの種類の 1 つです。 Marble Maze では、定数バッファーを使って、モデル (またはワールド) ビューと、アクティブなシーン オブジェクトのためのプロジェクション マトリックスを保持します。
 
-次の例では、 **marblemazemain::loaddeferredresources**メソッドは後でマトリックス データを保持する定数バッファーを作成する方法を示しています。 この例では、**D3D11\_BIND\_CONSTANT\_BUFFER** フラグを使って定数バッファーとしての使用を指定する **D3D11\_BUFFER\_DESC** 構造体を作成しています。 この例では、次にこの構造体を [ID3D11Device::CreateBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476501) メソッドに渡します。 **m\_constantBuffer** 変数は [ID3D11Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476351) オブジェクトです。
+次の例では、 **marblemazemain::loaddeferredresources**メソッドが後でマトリックス データを保持する定数バッファーを作成する方法を示しています。 この例では、**D3D11\_BIND\_CONSTANT\_BUFFER** フラグを使って定数バッファーとしての使用を指定する **D3D11\_BUFFER\_DESC** 構造体を作成しています。 この例では、次にこの構造体を [ID3D11Device::CreateBuffer](https://msdn.microsoft.com/library/windows/desktop/ff476501) メソッドに渡します。 **m\_constantBuffer** 変数は [ID3D11Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476351) オブジェクトです。
 
 ```cpp
 // Create the constant buffer for updating model and camera data.
@@ -518,7 +518,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-**Marblemazemain::update**メソッドは、後で、 **ConstantBuffer**オブジェクト、迷路用と大理石のいずれかを更新します。 **Marblemazemain::render**メソッドは、各オブジェクトをレンダリングする前に、各**ConstantBuffer**オブジェクトと定数バッファーをバインドします。 次の例では、 **MarbleMazeMain.h**内にある**ConstantBuffer**構造を示します。
+**Marblemazemain::update**メソッドは、後で、 **ConstantBuffer**オブジェクト、迷路用と大理石のいずれかを更新します。 **Marblemazemain::render**メソッドは、各オブジェクトをレンダリングする前に、各**ConstantBuffer**オブジェクトと定数バッファーにバインドします。 次の例では、 **MarbleMazeMain.h**内にある**ConstantBuffer**構造を示します。
 
 ```cpp
 // Describes the constant buffer that draws the meshes.
@@ -534,7 +534,7 @@ struct ConstantBuffer
 };
 ```
 
-定数バッファーのマップを理解するためにシェーダーのコードを**BasicVertexShader.hlsl で頂点シェーダーで定義されている**ConstantBuffer**定数バッファーに**MarbleMazeMain.h**で**ConstantBuffer**構造体を比較します**:
+定数バッファーのマップを理解するために、シェーダー コードを**BasicVertexShader.hlsl で頂点シェーダーで定義されている**ConstantBuffer**定数バッファーに**MarbleMazeMain.h**で**ConstantBuffer**構造を比較**:
 
 ```hlsl
 cbuffer ConstantBuffer : register(b0)
@@ -561,7 +561,7 @@ Marble Maze では、実行時の形式として SDK メッシュを使います
 Marble Maze では、**SDKMesh** クラスを使ってメッシュを管理します。 このクラスは**SDKMesh.h**で宣言されています。 **SDKMesh** は、メッシュ データを読み込み、レンダリングし、破棄するためのメソッドを提供します。
 
 > [!IMPORTANT]
-> Marble Maze では、SDK メッシュ形式を使用して、 **SDKMesh**クラスを提供するだけです。 SDK メッシュ形式は学習用やプロトタイプの作成用に役立ちますが、ごく基本的な形式であるため、多くのゲーム開発の要件を満たさない可能性があります。 ゲーム固有の要件を満たすメッシュ形式を使うことをお勧めします。
+> Marble Maze では、SDK メッシュ形式を使用し、 **SDKMesh**クラスを提供するだけです。 SDK メッシュ形式は学習用やプロトタイプの作成用に役立ちますが、ごく基本的な形式であるため、多くのゲーム開発の要件を満たさない可能性があります。 ゲーム固有の要件を満たすメッシュ形式を使うことをお勧めします。
 
  
 
@@ -652,7 +652,7 @@ void UserInterface::Update(float timeTotal, float timeDelta)
 }
 ```
 
-**ElementBase** ( **UserInterface.h**で定義されている) から派生するクラスでは、特定の動作を実行する**Update**メソッドを実装します。 たとえば、**StopwatchTimer::Update** メソッドは、指定された時間で経過時間を更新し、後で表示されるテキストを更新します。
+**ElementBase** ( **UserInterface.h**に定義されている) から派生するクラスでは、特定の動作を実行する、 **Update**メソッドを実装します。 たとえば、**StopwatchTimer::Update** メソッドは、指定された時間で経過時間を更新し、後で表示されるテキストを更新します。
 
 ```cpp
 void StopwatchTimer::Update(float timeTotal, float timeDelta)
@@ -758,13 +758,13 @@ m_marbleConstantBufferData.view = view;
 5.  シーンの前面に表示する 2 D オブジェクトをレンダリングします。
 6.  レンダリングした画像をモニターに表示します。
 
-**Marblemazemain::render**メソッドは、レンダー ターゲットにバインド ファイルと深度ステンシル ビュー、これらのビューをクリア、シーンを描画し、オーバーレイを描画します。
+**Marblemazemain::render**メソッドは、レンダー ターゲットにバインドし、深度ステンシル ビュー、これらのビューをクリア、シーンを描画し、オーバーレイを描画します。
 
 ###  <a name="preparing-the-render-targets"></a>レンダー ターゲットの準備
 
 シーンをレンダリングする前に、現在のレンダー ターゲットの深度ステンシル バッファーを設定する必要があります。 シーンが画面のすべてのピクセルに描画される保証がない場合は、レンダー ビューとステンシル ビューもクリアします。 Marble Maze では、すべてのフレームのレンダー ビューとステンシル ビューをクリアして、前のフレームに由来して表示されるアーティファクトがないことを確かめます。
 
-次の例では、 **marblemazemain::render**メソッドが現在のものとして、レンダー ターゲットと深度/ステンシル バッファーを設定する[id 3d11devicecontext::omsetrendertargets](https://msdn.microsoft.com/library/windows/desktop/ff476464)メソッドを呼び出す方法を示しています。
+次の例では、 **marblemazemain::render**メソッドが現在のものとして、レンダー ターゲットおよび深度/ステンシル バッファーを設定する[id 3d11devicecontext::omsetrendertargets](https://msdn.microsoft.com/library/windows/desktop/ff476464)メソッドを呼び出す方法を示しています。
 
 ```cpp
 auto context = m_deviceResources->GetD3DDeviceContext();
@@ -832,7 +832,7 @@ m_deviceResources->GetD3DDeviceContext()->PSSetSamplers(
     m_sampler.GetAddressOf());  // to use this sampler
 ```
 
-**Marblemazemain::render**がシェーダーと入力レイアウトを設定した後、モデル、ビュー、および、迷路のプロジェクション マトリックスで定数バッファーを更新するのに[id 3d11devicecontext::updatesubresource](https://msdn.microsoft.com/library/windows/desktop/ff476486)メソッドを使用します。 **UpdateSubresource** メソッドは、CPU メモリから GPU メモリにマトリックス データをコピーします。 **Marblemazemain::update**メソッドで、 **ConstantBuffer**構造体のモデルとビュー コンポーネントが更新されることを思い出してください。 **Marblemazemain::render**メソッドは、現在の 1 つとして、この定数バッファーを設定する[id 3d11devicecontext::vssetconstantbuffers](https://msdn.microsoft.com/library/windows/desktop/ff476491)と[ID3D11DeviceContext::PSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476470)メソッドを呼び出します。
+**Marblemazemain::render**がシェーダーと入力レイアウトを設定した後、モデル、ビュー、および、迷路のプロジェクション マトリックスで定数バッファーを更新[id 3d11devicecontext::updatesubresource](https://msdn.microsoft.com/library/windows/desktop/ff476486)メソッドを使用します。 **UpdateSubresource** メソッドは、CPU メモリから GPU メモリにマトリックス データをコピーします。 **Marblemazemain::update**メソッドで**ConstantBuffer**構造体のモデルとビュー コンポーネントが更新されることを思い出してください。 **Marblemazemain::render**メソッドは、し、現在の 1 つとして、この定数バッファーを設定する[id 3d11devicecontext::vssetconstantbuffers](https://msdn.microsoft.com/library/windows/desktop/ff476491)と[ID3D11DeviceContext::PSSetConstantBuffers](https://msdn.microsoft.com/library/windows/desktop/ff476470)メソッドを呼び出します。
 
 ```cpp
 // Update the constant buffer with the new data.
@@ -921,9 +921,9 @@ void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
 
 ###  <a name="presenting-the-scene"></a>シーンの表示
 
-すべての 2D および 3D シーンのオブジェクトを描画した後は、Marble Maze は、モニターにレンダリングの画像を表示します。 描画を垂直ブランクに同期して、実際にディスプレイに表示されないフレームの描画に時間が費やされないようにします。 Marble Maze では、シーンを表示するときにデバイスの変更も処理します。
+すべての 2D および 3D シーンのオブジェクトを描画、した後は、Marble Maze は、モニターにレンダリングされた画像を表示します。 描画を垂直ブランクに同期して、実際にディスプレイに表示されないフレームの描画に時間が費やされないようにします。 Marble Maze では、シーンを表示するときにデバイスの変更も処理します。
 
-**Marblemazemain::render**メソッドから制御が戻った後、ゲーム ループは、レンダリングされた画像をモニターに送信やディスプレイに **::deviceresources::present**メソッドを呼び出します。 **:Deviceresources::present**メソッドは、次の例に示すように、存在する操作を実行する[::present](https://msdn.microsoft.com/library/windows/desktop/bb174576)を呼び出します。
+**Marblemazemain::render**メソッドから制御が戻った後、ゲーム ループは、レンダリングされた画像をモニターに送信するかを表示する **::deviceresources::present**メソッドを呼び出します。 **:Deviceresources::present**メソッドは、次の例に示すように、存在する操作を実行する[::present](https://msdn.microsoft.com/library/windows/desktop/bb174576)を呼び出します。
 
 ```cpp
 // The first argument instructs DXGI to block until VSync, putting the application
@@ -954,7 +954,7 @@ else
 ## <a name="next-steps"></a>次の手順
 
 
-入力デバイスを操作する際の重要な手順については、「[Marble Maze サンプルへの入力と対話機能の追加](adding-input-and-interactivity-to-the-marble-maze-sample.md)」をご覧ください。 このドキュメントでは、Marble Maze がタッチ、加速度計、Xbox コント ローラー、およびマウス入力をサポートする方法について説明します。
+入力デバイスを操作する際の重要な手順については、「[Marble Maze サンプルへの入力と対話機能の追加](adding-input-and-interactivity-to-the-marble-maze-sample.md)」をご覧ください。 このドキュメントでは、Marble Maze がタッチ、加速度計、Xbox コント ローラー、マウス入力をサポートする方法について説明します。
 
 ## <a name="related-topics"></a>関連トピック
 

@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e3e18bc5ec683e6c7a8aab18321f4b98511faa62
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: d60dcb60d8628822d7597ad25268aae5e7a7ae6a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980340"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044579"
 ---
 # <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
@@ -29,7 +29,7 @@ ms.locfileid: "8980340"
 [**StorageFile**](/uwp/api/windows.storage.storagefile) オブジェクトを使ってファイルの読み取りと書き込みを行います。
 
 > [!NOTE]
-> 完全なサンプルについては、[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
+> 完全なサンプルについては、[ファイル アクセスのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

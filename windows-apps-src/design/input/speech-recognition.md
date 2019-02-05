@@ -8,12 +8,12 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927346"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048549"
 ---
 # <a name="speech-recognition"></a>音声認識
 
@@ -26,15 +26,15 @@ ms.locfileid: "8927346"
 
 ## <a name="configure-speech-recognition"></a>音声認識を構成します。
 
-ユーザーが接続する必要があります、アプリで音声認識をサポートするには、デバイスでマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
+ユーザーが接続する必要があります、アプリで音声認識をサポートするがデバイスにマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
 
-自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード ([音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)を次にからなど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
+自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード ([音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)を次にからなど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
 
 ![マイク アクセス用のプライバシー ポリシー](images/speech/privacy.png)
 
-ユーザー設定の承認済みアプリケーションの一覧にアプリが追加されたマイク、アクセスを許可するには、[はい] をクリックした場合は、[プライバシー]-> [マイク] ページ]-> [します。 ただし、いつでもでもこの設定をオフにするには、ユーザーが選択できる、として、アプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
+設定の承認済みアプリケーションの一覧にアプリを追加する場合は、ユーザーは、マイクのアクセスを許可するには、[はい] をクリックすると、-_gt プライバシー-_gt マイク ページ。 ただし、として、いつでもでもこの設定をオフにするには、ユーザーが選択できる、アプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
 
-ディクテーション、Cortana をサポートする、またはその他の音声認識サービスの (など、[定義済みの文法](#predefined-grammars)で定義されたトピック制約)、またことを確認して**Online の音声認識**(設定のプライバシー]-> [音声認識]-> [) は、有効になります。
+ディクテーション、Cortana をサポートする、またはその他の音声認識サービスの (など、[定義済みの文法](#predefined-grammars)で定義されたトピック制約)、またことを確認して**オンライン音声認識**(設定の _gt プライバシー-_gt 音声) は、有効になります。
 
 このスニペットでは、アプリがマイクが存在する場合、それを使用するアクセス許可がある場合を確認する方法を示しています。
 
@@ -269,7 +269,7 @@ catch (Exception exception)
 
 ### <a name="srgs-grammars"></a>SRGS 文法
 
-Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
+Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
 
  [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)を参照してください。
 
@@ -279,7 +279,7 @@ Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメン�
 
 [ **SpeechRecognitionVoiceCommandDefinitionConstraint**を参照してください。](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**注:** 種類を使用するの制約は、作成する認識エクスペリエンスの複雑さによって決まります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
+**注:** を使用する制約型の型を作成する認識エクスペリエンスの複雑さによって異なります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
 制約を使う場合は、「[カスタム認識の制約の定義](define-custom-recognition-constraints.md)」をご覧ください。
 
 ユニバーサル Windows アプリで定義済みのディクテーション文法によって、言語のほとんどの単語と短い語句が認識されます。 これは、カスタム制約なしで音声認識エンジン オブジェクトをインスタンス化すると既定で有効になります。
@@ -373,7 +373,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 **デザイナー向け**
 * [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
 **サンプル**
-* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

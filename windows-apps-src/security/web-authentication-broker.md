@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930077"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050905"
 ---
 # <a name="web-authentication-broker"></a>Web 認証ブローカー
 
@@ -21,7 +21,7 @@ ms.locfileid: "8930077"
 この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。
 
 >[!NOTE]
->動作する完全なコード例が必要な場合は、[GitHub の WebAuthenticationBroker リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
+>動作する完全なコード例が必要な場合は、[GitHub の WebAuthenticationBroker リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
 
  
 
@@ -87,7 +87,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 のみ、Windows Phone 8.1 をターゲットとするアプリのように設計され、windows 10 以降は推奨されなくなりました。
+>[**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) に加え、[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 名前空間には [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) メソッドが含まれています。 このメソッドは呼び出さないでください。 Windows Phone 8.1 のみをターゲットとするアプリのように設計されたし、windows 10 以降では推奨します。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>シングル サインオン (SSO) を使った接続
 
@@ -155,7 +155,7 @@ Web 認証ブローカー API のトラブルシューティングには、操�
 
 Fiddler Web デバッガーはアプリに対して使うことができます。
 
-1.  独自のアプリ コンテナー内であるため、AuthHost が実行されるとので、プライベート ネットワーク機能を提供する必要があります設定するレジストリ キー: Windows レジストリ エディター Version 5.00 という
+1.  独自のアプリ コンテナー内であるため、AuthHost が実行されるとので、プライベート ネットワーク機能を追加する必要があります設定するレジストリ キー: Windows レジストリ エディター Version 5.00 という
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 

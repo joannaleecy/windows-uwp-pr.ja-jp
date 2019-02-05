@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939880"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047680"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植
 
@@ -80,7 +80,7 @@ typedef struct
 
 この構造体には、インスタンスが 1 つあり、頂点シェーディングされた非常に簡単なメッシュをレンダリングするために必要なコンポーネントがすべて含まれています。
 
-> **注:** このトピックの OpenGL ES 2.0 コードは、Khronos Group によって提供される Windows API の実装に基づいてし、Windows C プログラミング構文を使用します。
+> **注:** このトピックの OpenGL ES 2.0 コードは、Khronos Group によって提供される Windows API の実装に基づいており、Windows C プログラミング構文を使用します。
 
  
 
@@ -89,7 +89,7 @@ typedef struct
 
 ### <a name="technologies"></a>テクノロジ
 
--   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
 ### <a name="prerequisites"></a>前提条件

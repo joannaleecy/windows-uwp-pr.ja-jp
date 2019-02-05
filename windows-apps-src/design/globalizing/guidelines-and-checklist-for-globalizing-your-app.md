@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2dc5186c028aa8f20c2cc1d697f1749b4f1765
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bdc7e5de3be941f2622c04d515e5e1211247b9a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930683"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047244"
 ---
 # <a name="guidelines-for-globalization"></a>グローバリゼーションのガイドライン
 
@@ -29,7 +29,7 @@ ms.locfileid: "8930683"
 | 国際的な用紙サイズをサポートする。 | 最も一般的な用紙サイズは国によって異なるため、用紙サイズによって変化する機能 (印刷など) を含める場合には、必ず一般的な国際サイズをサポートし、テストしてください。 |
 | キーボードまたは IME の言語を記録する。 | アプリがユーザーにテキスト入力を求めるときに、現在有効なキーボード レイアウトまたは入力方式エディター (IME) の言語タグが記録されるようにします。 こうすると、その入力が後で表示されるときに適切な書式設定でユーザーに提示されます。 現在の入力言語の取得には、[**Language.CurrentInputMethodLanguageTag**](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag) プロパティを使います。 |
 | 言語からユーザーの地域を想定する、または地域からユーザーの言語を想定することはしない。 | 言語と地域は別の概念です。 特定の地理的な言語バリアント (en-GB (英国で話される英語) など) を話しても、住んでいる国または地域はまったく異なる場合があります。 UI テキストなどのためにアプリがユーザーの言語について認識する必要があるか、ライセンスなどのためにアプリがユーザーの地域について認識する必要があるかを検討してください。 詳細については、「[ユーザー プロファイルの言語とアプリ マニフェストの言語について](manage-language-and-region.md)」を参照してください。 |
-| 言語タグを比較するためのルールは重要となる。 | [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)は複雑です。 言語タグの比較では、スクリプト情報、前のタグ、複数の地域バリアントの対応付けに伴う問題など、多数の問題が発生します。 Windows のリソース管理システムでは、対応付けが自動的に行われます。 開発者はどの言語で作られたリソース セットでも指定でき、システムがユーザーとアプリのために適切なものを選びます。 「[アプリ リソースとリソース管理システム](../../app-resources/index.md)」および「[リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)」を参照してください。 |
+| 言語タグを比較するためのルールは重要となる。 | [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)は複雑です。 言語タグの比較では、スクリプト情報、前のタグ、複数の地域バリアントの対応付けに伴う問題など、多数の問題が発生します。 Windows のリソース管理システムでは、対応付けが自動的に行われます。 開発者はどの言語で作られたリソース セットでも指定でき、システムがユーザーとアプリのために適切なものを選びます。 「[アプリ リソースとリソース管理システム](../../app-resources/index.md)」および「[リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)」を参照してください。 |
 | 異なるテキストの長さとフォント サイズがラベルとテキストの入力コントロールに対応するように UI を設計する。 | 異なる言語に翻訳された文字列は、長さが大きく異なる場合があるため、コンテンツに合わせて UI コントロールのサイズを動的に変更する必要があります。 他の言語には、通常のアルファベットの上や下に記号が付いている文字 (Å、Ņ など) があります。 標準的なフォント サイズと行の高さを使って、縦方向に十分なスペースを確保します。 言語のフォントによっては、フォントの最小サイズを大きくして読みやすさを維持する必要がある場合があります。 [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live) 名前空間のクラスを参照してください。 |
 | 読み取り順序のミラーリングをサポートする。 | テキストの配置と読み取りは、英語のように左から右の順にも、アラビア語やヘブライ語のように右から左の順 (RTL) にも行うことができます。 読み取り順が自国語とは異なる言語に製品をローカライズする場合は、UI 要素のレイアウトが左右反転をサポートする必要があります。 戻るボタン、UI 切り替え効果、画像などのアイテムですら、左右反転が必要になることがあります。 詳細については、「[レイアウトやフォントの調整と RTL のサポート](adjust-layout-and-fonts--and-support-rtl.md)」を参照してください。 |
 | テキストとフォントを正しく表示する。 | テキストに適したフォント、フォント サイズ、方向は、市場によって異なります。 詳細については、「[**レイアウトやフォントの調整と RTL のサポート**](adjust-layout-and-fonts--and-support-rtl.md)」および「[国際フォント](loc-international-fonts.md)」を参照してください。 |
@@ -46,7 +46,7 @@ ms.locfileid: "8930683"
 * [文字列の使用に関する推奨事項](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
 * [日付、時刻、数値の形式のグローバル化](use-global-ready-formats.md)
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語について](manage-language-and-region.md)
-* [BCP-47 言語タグに関するページ](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 言語タグに関するページ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [アプリ リソースとリソース管理システム](../../app-resources/index.md)
 * [リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)
 * [レイアウトやフォントの調整と RTL のサポート](adjust-layout-and-fonts--and-support-rtl.md)
@@ -55,4 +55,4 @@ ms.locfileid: "8930683"
 
 ## <a name="samples"></a>サンプル
 
-* [グローバリゼーション設定サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231608)
+* [グローバリゼーション設定サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231608)

@@ -6,26 +6,26 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e18be702c1b2bbd9ce1831b6991324896769192
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c72af86edd3d0a20ab8a0f062b5e0ccf8608e8a9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930743"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050795"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
 =============================================================================================
 
 
 
-**注:** 度のサンプル データする必要があります: し、どの程度するに役立ちます-、バインディングが[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)または[{X:bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用するかどうかによって異なります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
+**注:** サンプル データする必要がある程度- し、どの程度するに役立ちます-、バインディングが[{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)または[{X:bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用するかどうかによって異なります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
 
 アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合に、 アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するためにコントロールにデータを設定するには、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。
 
 **{Binding} の使い方を示すサンプル アプリ**
 
--   [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) アプリのダウンロード。
--   [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) アプリのダウンロード。
+-   [Bookstore1](https://go.microsoft.com/fwlink/?linkid=532950) アプリのダウンロード。
+-   [Bookstore2](https://go.microsoft.com/fwlink/?linkid=532952) アプリのダウンロード。
 
 <a name="setting-datacontext-in-markup"></a>マークアップでの DataContext の設定
 -----------------------------
@@ -97,7 +97,7 @@ else
 
 さまざまな xmlns 宣言がありますが、これらは、**d:** プレフィックスの付いた属性は設計時にのみ解釈され、実行時には無視されることを表しています。 したがって、**d:DataContext** 属性が [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) プロパティの値に影響するのは設計時のみで、実行時には影響しません。 必要であれば、**d:DataContext** と **DataContext** の両方をマークアップで設定することもできます。 その場合、設計時には **d:DataContext** が優先され、実行時には **DataContext** が優先されます。 この規則は、すべての設計時属性と実行時属性に適用されます。
 
-**d:DataContext** 属性およびその他のすべての設計時属性について詳しくは、[設計時の属性に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=272504)をご覧ください。このページは、ユニバーサル Windows プラットフォーム (UWP) アプリに対しても有効です。
+**d:DataContext** 属性およびその他のすべての設計時属性について詳しくは、[設計時の属性に関するページ](https://go.microsoft.com/fwlink/p/?LinkId=272504)をご覧ください。このページは、ユニバーサル Windows プラットフォーム (UWP) アプリに対しても有効です。
 
 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) には **DataContext** プロパティはありませんが、**Source** プロパティがあります。 そのため、**CollectionViewSource** に設計時専用のサンプル データを設定するために使うことができる **d:Source** プロパティがあります。
 

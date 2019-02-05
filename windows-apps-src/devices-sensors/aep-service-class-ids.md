@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939840"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048299"
 ---
 # <a name="aep-service-class-ids"></a>AEP サービス クラス ID
 
@@ -72,7 +72,7 @@ Bluetooth プロトコルは複数のサービスをサポートしており、�
 
  
 
-利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](http://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](http://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。 また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。
+利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](https://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](https://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。 また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。
 
 ## <a name="custom-bluetooth-le-services"></a>Bluetooth LE のカスタム サービス
 

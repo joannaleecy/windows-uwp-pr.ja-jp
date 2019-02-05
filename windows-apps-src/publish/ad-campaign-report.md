@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 販売促進, アプリ, キャンペーン, レポート, インストール
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947482"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046841"
 ---
 # <a name="ad-campaign-report"></a>広告キャンペーン レポート
 
@@ -65,9 +65,9 @@ ms.locfileid: "8947482"
 
 1.  ユーザーは対象から除外されるように設定していない。
 2.  ユーザーは Microsoft アカウントにログインしている。
-3.  ユーザーは [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。
+3.  ユーザーは [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。
 
-この結果、アプリのインストールの追跡で、広告キャンペーンによって生じた実際のインストール数より少なく報告される可能性があります。 アプリのインストールの合計数を表示することに注意してください (キャンペーンによってし、それ以外の場合) パートナー センターでの[取得]](acquisitions-report.md)レポートでします。
+この結果、アプリのインストールの追跡で、広告キャンペーンによって生じた実際のインストール数より少なく報告される可能性があります。 アプリのインストールの合計数を表示することに注意してください (キャンペーンによってし、それ以外の場合) パートナー センターでの[取得]](acquisitions-report.md)レポートにします。
 
 
 ## <a name="account-billing-history"></a>アカウントの支払い履歴

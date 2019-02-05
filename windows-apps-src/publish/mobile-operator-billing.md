@@ -1,17 +1,17 @@
 ---
 Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
-title: 携帯電話会社による課金
+title: 通信事業者の請求
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 携帯電話会社, 携帯電話への課金, 携帯電話会社による課金
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f751735c2387ab5009e2e6f19f68db304916ec
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 3f23e40abfb269e2b52e9dc5b66c2486da071c9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980390"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045681"
 ---
 # <a name="mobile-operator-billing"></a>携帯電話会社による課金
 
@@ -19,7 +19,7 @@ ms.locfileid: "8980390"
 Microsoft Store では、Windows 10 を実行するデバイス、Windows 10 Mobile を実行するスマートフォン、Xbox One 本体用の支払い方法として、携帯電話会社による課金を提供しています。 ユーザーの携帯電話会社でこの機能がサポートされている場合、ユーザーは支払い方法として携帯電話会社による課金を追加し、この支払い方法を使用してモバイル アカウントによる Microsoft Store での購入を行うことができます。
 
 > [!TIP]
->  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、こちらの[手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
+>  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合は、こちらの[手順](https://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
 
 弊社は、定期的に携帯電話会社と協力して、この支払方法の機能を拡張しています。 以下のリストにない携帯電話会社を案内したい場合は、その携帯電話会社に連絡し、この支払い方法を追加するよう要請してください。
 

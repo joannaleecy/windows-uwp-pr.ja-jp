@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944897"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050835"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>MediaFrameReader を使ったオーディオ フレームの処理
 
@@ -21,7 +21,7 @@ ms.locfileid: "8944897"
 > この記事で説明している機能は、Windows 10 バージョン 1803 以降でのみ利用できます。
 
 > [!NOTE] 
-> **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
+> **MediaFrameReader** を使って色、深度、赤外線カメラなど、さまざまなフレーム ソースからのフレームを表示する方法を示す、ユニバーサル Windows アプリのサンプルがあります。 詳しくは、「[カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)」をご覧ください。
 
 ## <a name="setting-up-your-project"></a>プロジェクトの設定
 オーディオ フレームを取得するためのプロセスは、他の種類のメディア フレームを取得する場合とほぼ同じです。 **MediaCapture** を使う他のアプリと同様に、カメラ デバイスにアクセスする前にアプリが *webcam* 機能を使うことを宣言する必要があります。 アプリがオーディオ デバイスからキャプチャする場合は、*microphone* デバイス機能も宣言する必要があります。 
@@ -79,7 +79,7 @@ ms.locfileid: "8944897"
 * [MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md)
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [カメラ フレームのサンプル](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [オーディオ グラフ](audio-graphs.md)
  
 

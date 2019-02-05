@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930907"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044812"
 ---
 # <a name="maps-and-location-overview"></a>地図と位置情報の概要
 
@@ -21,9 +21,9 @@ ms.locfileid: "8930907"
 このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
 
 > [!TIP]
-> マップと位置情報、アプリでの使用について詳しくは、github の[Windows ユニバーサル-サンプルのリポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードします。
--   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
+> マップと位置情報、アプリでの使用について詳しくは、github の[Windows ユニバーサル-サンプルのリポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードします。
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [UWP の位置情報のサンプル](https://go.microsoft.com/fwlink/p/?linkid=533278)
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "8930907"
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [ルートとルート案内の表示](routes-and-directions.md) | ルートとルート案内を要求し、アプリで表示します。 |
 | [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
-| [検索してオフラインで使用するマップ パッケージをダウンロードします。](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 以前は、アプリを直接設定アプリをユーザーがオフライン マップをダウンロードする必要があります。 これで、( [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)などに基づきます)。 特定の領域にダウンロードしたパッケージを検索する[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)名前空間のクラスを使用できます。 <br> ことができますも確認するマップ パッケージのダウンロードされた状態のリッスンし、アプリをそのままにユーザーを必要とせず、ダウンロードを開始します。 <br> リファレンス コンテンツと[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)の両方でこれを行う方法の例になることがわかります。
+| [検索してオフラインで使用するマップ パッケージをダウンロードします。](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 以前は、アプリを直接設定アプリをユーザーがオフライン マップをダウンロードする必要があります。 これで、( [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint)、 [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)などに基づきます)。 特定の領域にダウンロードしたパッケージを検索する[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)名前空間のクラスを使用できます。 <br> ことができますも確認するマップ パッケージのダウンロードされた状態のリッスンし、アプリのままにするユーザーを必要とせず、ダウンロードを開始します。 <br> リファレンス コンテンツと[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)の両方でこれを行う方法の例があります。
 
 ## <a name="get-the-users-location"></a>ユーザーの位置情報の取得
 
@@ -74,12 +74,12 @@ ms.locfileid: "8930907"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP の地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP の位置情報のサンプル](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
 * [現在の位置情報の取得](get-location.md)
 * [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md)
 * [地図の設計ガイドライン](controls-map.md)
 * [個人データにアクセスするアプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP の交通情報アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619982)

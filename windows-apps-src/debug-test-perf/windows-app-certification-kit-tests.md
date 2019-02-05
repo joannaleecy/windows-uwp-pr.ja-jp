@@ -6,23 +6,23 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923129"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047161"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 
-[Windows アプリ認定キット](windows-app-certification-kit.md)には、さまざまな Microsoft Store に公開する準備ができたらを保証するためのテストが含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
+[Windows アプリ認定キット](windows-app-certification-kit.md)には、Microsoft Store に公開する準備ができたらを保証するためのテストの数が含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
 
 ## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
 
 認証テスト中にアプリを監視して、アプリがクラッシュやハングを起こしたタイミングを記録します。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 応答しなくなったアプリやクラッシュしたアプリは、データが失われたり操作性が低下したりする原因になることがあります。
 
@@ -54,7 +54,7 @@ Windows アプリ認定キットで [**IApplicationActivationManager::ActivateAp
 
 Windows アプリを将来のバージョンの OS で実行できることを確認します。 これまで、このテストはデスクトップ アプリ ワークフローにのみ適用されてきましたが、ストアおよびユニバーサル Windows プラットフォーム (UWP) のワークフローに有効になりました。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 オペレーティング システムのバージョン情報は、Microsoft ストアの使用量を制限されています。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
 
@@ -70,7 +70,7 @@ Windows アプリ認定キットは、HighVersionLie を使って、アプリが
 
 宣言されているバックグラウンド タスクの取り消しハンドラーがアプリにあることを確認します。 タスクが取り消されたときに呼び出される専用の関数が必要です。 このテストは、展開済みのアプリにのみ適用されます。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 ストア アプリは、バック グラウンドで実行されるプロセスを登録できます。 たとえば、メール アプリはときどき ping を実行することがあります。 しかし、OS がこれらのリソースを必要とする場合は、バックグラウンド タスクが取り消され、アプリはこの取り消しを適切に処理する必要があります。 取り消しハンドラーがないアプリはクラッシュする可能性や、ユーザーがアプリを閉じようとしても終了しない可能性があります。
 
@@ -86,7 +86,7 @@ Windows アプリ認定キットは、HighVersionLie を使って、アプリが
 
 アプリ パッケージ (APPX、アプリ バンドル) に 1 つのアプリケーションが含まれていることを確認します。 これは、キットでスタンドアロン テストに変更されました。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 このテストは、ストア ポリシーに従って実装されていました。
 
@@ -104,7 +104,7 @@ Windows 10 アプリの場合は、テストでは、バンドルのバージョ
 
 アプリ マニフェストのコンテンツをテストし、コンテンツが正しいかどうかを確認します。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 アプリ マニフェストは正しい形式でなければならない
 
@@ -245,7 +245,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
 
-マネージ実行可能ファイルには、テストが失敗した場合、UWP アプリの構築に最新のコンパイラとリンカー、Microsoft Visual Studio などを使用したことを確認します。
+マネージ実行可能ファイルには、テストが失敗した場合、最新のコンパイラとリンカー、Microsoft Visual Studio などを使用した UWP アプリを構築することを確認します。
 
 **注釈**
 
@@ -320,7 +320,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 [UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリを使用して、API を識別するエラー メッセージを確認します。
 
-> **注:** は、デバッグ構成でビルドされた C++ アプリは、構成が UWP アプリのみ Windows SDK の Api を使っている場合でもこのテストに合格しません。 詳しくは、 [UWP アプリでの Windows api の代替手段](http://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
+> **注:** デバッグ構成で構築された C++ アプリは、構成が UWP アプリのみ Windows SDK の Api を使っている場合でもこのテストに合格しません。 詳細情報の[UWP アプリでの Windows api の代替手段](https://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -430,7 +430,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store を通じて配布するアプリの resources.pri では、アプリのパッケージのルートをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store を通じて配布するアプリの resources.pri は、アプリのパッケージのルートであるをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -482,7 +482,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 
 ### <a name="branding-validation"></a>ブランドの検証
 
-UWP アプリ完成していて完全に機能することが期待されます。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
+UWP アプリは、完成していて完全に機能するされる予定です。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -496,9 +496,9 @@ UWP アプリ完成していて完全に機能することが期待されます�
 
 アプリをテストして、デバッグ用のビルドでないことを確認します。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
-Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグのされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -514,7 +514,7 @@ Microsoft Store の認定を受けるアプリする必要がありますいな�
 
 ### <a name="utf-8-file-encoding"></a>UTF-8 ファイル エンコード
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 バイトコード キャッシュを活用して特定の実行時エラー状態を避けるには、HTML、CSS、JavaScript の各ファイルが、対応するバイト オーダー マーク (BOM) を持つ UTF-8 形式でエンコードされている必要があります。
 
@@ -532,7 +532,7 @@ Visual Studio で、影響を受けるファイルを開き、**[ファイル]**
 
 Microsoft Direct3D アプリをテストして、以前のグラフィックス ハードウェアを搭載したデバイスでクラッシュしないことを確認します。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 Microsoft Store では、すべてのアプリケーションが Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗する必要があります。
 
@@ -544,13 +544,13 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="corrective-action"></a>問題への対応
 
-高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。 詳しくは、「[機能レベルが異なる Direct3D の開発](http://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
+高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。 詳しくは、「[機能レベルが異なる Direct3D の開発](https://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
 
 ### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
 
-> **注:** このテストは、UWP アプリ開発された Windows8.1 以降にのみ適用されます。
+> **注:** このテストは、UWP アプリ開発された windows 8.1 以降にのみ適用されます。
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 アプリが Direct3D デバイスで [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) を呼び出さない場合は、アプリは前の 3D 作業に割り当てられたメモリを解放しません。 この結果、システムのメモリ不足のためにアプリが終了するリスクが増加します。
 
@@ -566,7 +566,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="special-use-capabilities"></a>特殊な用途の機能
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 特殊な用途の機能は、特殊なシナリオ向けの機能です。 会社アカウントだけがこれらの機能を使うことができます。
 
@@ -586,7 +586,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows ランタイム メタデータ検証
 
-### <a name="background"></a>背景
+### <a name="background"></a>Background
 
 アプリに付属するコンポーネントが、UWP 型システムに準拠していることを確認します。
 

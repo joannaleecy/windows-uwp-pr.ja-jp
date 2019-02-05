@@ -6,18 +6,18 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, iap, アプリ内購入, アプリ内製品, iap の申請
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dc3e9b928c544b8552abc6c289c682694f623c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 28383ed82c418ff15806c325d6eab5a05f9987bf
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924258"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045065"
 ---
 # <a name="add-on-submissions"></a>アドオンの申請
 
 アドオン (アプリ内製品とも呼ばれる) は、お客様が購入可能なアプリの補助アイテムです。 アドオンは、楽しいと思われる新しいゲーム レベル、またはその他の新機能に対するユーザーのエンゲージメントとできます。 アドオンは収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
-アドオンは、[パートナー センター](https://partner.microsoft.com/dashboard)を通じて公開され、アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)を持っている必要があります。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
+アドオンは、[パートナー センター](https://partner.microsoft.com/dashboard)を通じて公開され、アクティブな[開発者アカウント](https://go.microsoft.com/fwlink/p/?LinkId=615100)を持っている必要があります。 また、アプリのコードで [アドオンを有効にする](../monetize/in-app-purchases-and-trials.md)ことも必要です。
 
 アドオンの申請プロセスには、最初に[その製品の種類と製品 ID を定義すること](set-your-add-on-product-id.md)によって、パートナー センターでアドオンを作成します。 その後、Microsoft Store 経由でアドオンを購入できるように、申請を作成します。 [アプリの申請](app-submissions.md)と同時にまたは別々にアドオンを申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、アドオンを[更新](#updating-an-add-on-after-publication)できます。
 
@@ -35,7 +35,7 @@ ms.locfileid: "8924258"
 | フィールド名                    | コメント                            |
 |-------------------------------|----------------------------------|
 | [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須 |  
-| [**製品 ID**](set-your-add-on-product-id.md#product-id)          | 必須 |        
+| [**製品 ID**](set-your-add-on-product-id.md#product-id)          | 必須かどうか |        
 
 
 ### <a name="properties-page"></a>[プロパティ] ページ
@@ -58,7 +58,7 @@ ms.locfileid: "8924258"
 | [**市場**](set-add-on-pricing-and-availability.md#markets)  | 既定値: 対象となるすべての市場 |
 | [**表示**](set-add-on-pricing-and-availability.md#visibility)   | 既定値: 購入可能。 アプリのリストに表示されます |
 | [**スケジュール**](set-add-on-pricing-and-availability.md#schedule)    | 既定値: 最短でリリース
-| [**価格設定**](set-add-on-pricing-and-availability.md#pricing)                | 必須                                    |
+| [**価格設定**](set-add-on-pricing-and-availability.md#pricing)                | 必須かどうか                                    |
 | [**セール価格**](put-apps-and-add-ons-on-sale.md)               | 省略可能                    |
 
 
@@ -81,11 +81,11 @@ ms.locfileid: "8924258"
 
 ## <a name="updating-an-add-on-after-publication"></a>公開後のアドオンの更新
 
-公開したアドオンはいつでも変更できます。 アドオンの変更が送信され、アプリに独立して公開されるためを一般に、価格や説明の更新などのアドオンを変更するために、アプリは全体を更新する必要はありません。
+公開したアドオンはいつでも変更できます。 アドオンの変更が送信され、アプリに独立して公開されるためを一般に、価格や説明の更新などのアドオンを変更するためにアプリ全体を更新する必要はありません。
 
-更新プログラムを提出するには、追加のページでは、パートナー センターに移動し、[**更新**] をクリックします。 これにより、開始点として、以前の申請からの情報を使用して、アドオンの新しい申請が作成されます。 などのし、**ストアに提出**をクリックすると、変更を加えます。
+更新プログラムを提出するには、パートナー センターで、追加でのページに移動し、**更新プログラム**をクリックします。 これにより、開始点として、以前の申請からの情報を使用して、アドオンの新しい申請が作成されます。 などのし、**ストアに提出**をクリックすると、変更を加えます。
 
-既に提供されているアドオンを削除する場合は、新しい申請を作成して、[[分布と認知度]](set-add-on-pricing-and-availability.md) オプションを **[ストアに表示しない]** に変更し、**[購入の停止]** オプションを選択します。 アドオンへの参照を削除する場合、必要に応じて、アプリのコードを更新してください (以前に公開されたアプリが Windows 8.1 を以前のバージョンがサポートする場合に特にこの表示の設定には適用されませんそれらのユーザー)。
+既に提供されているアドオンを削除する場合は、新しい申請を作成して、[[分布と認知度]](set-add-on-pricing-and-availability.md) オプションを **[ストアに表示しない]** に変更し、**[購入の停止]** オプションを選択します。 アドオンへの参照を削除する必要に応じて、アプリのコードを更新してください (以前に公開されたアプリが Windows 8.1 を以前のバージョンがサポートする場合に特にこの表示の設定には適用されませんそれらのユーザー)。
 
 > [!IMPORTANT]
 > 以前に公開されたアプリが Windows のユーザーに利用可能なかどうかは作成して、アドオンの更新をこれらのユーザーに表示されるようにするために、新しいアプリの申請を公開する必要がある 8.x、します。 同様に、アプリを公開した後で、Windows 8.x を対象とする新しいアドオンをアプリに追加する場合は、アドオンを参照するようにアプリのコードを更新して、アプリを再申請する必要があります。 それ以外の場合、新しいアドオンは、Windows 8.x のユーザーには表示されません。

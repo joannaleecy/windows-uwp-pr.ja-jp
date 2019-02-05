@@ -1,19 +1,19 @@
 ---
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
 description: メディアの再生中にシステムでサポートされているメタデータ キューを処理します
-title: システムでサポートされているタイミングが設定されたメタデータのキュー
+title: サポートされているタイミングが設定されたメタデータのキュー
 ms.date: 04/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, メタデータ, キュー, 音声, チャプター
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f461bb70c1319352c66b8d12775dc7fa1db0edf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2b3753e92524e300252930f48433f91e175353c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921626"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046109"
 ---
-# <a name="system-supported-timed-metadata-cues"></a>システムでサポートされているタイミングが設定されたメタデータのキュー
+# <a name="system-supported-timed-metadata-cues"></a>サポートされているタイミングが設定されたメタデータのキュー
 この記事では、メディア ファイルやストリームに埋め込まれる可能性がある、タイミングが設定されたメタデータのいくつかの形式を活用する方法について説明します。 UWP アプリは、これらのメタデータ キューが発生したときに、メディア パイプラインで再生中に発生したイベントについて登録できます。 アプリでは、[**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) クラスを使って独自のカスタム メタデータ キューを実装できますが、この記事ではメディア パイプラインで自動的に検出される、次のようなメタデータ標準に重点を置いて説明します。
 
 * VobSub 形式の画像ベースの字幕
@@ -148,7 +148,7 @@ ID3 メタデータ イベントに登録した後、[**MediaPlayerElement**](ht
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-**CueEntered** イベントのハンドラーで、[**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) の **Cue** プロパティに含まれるデータ キューを、[**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue) にキャストします。  **DataCue** とキューの [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) プロパティが null ではないことを確認します。 Extended EMU コメントは、トランスポート ストリーム内の未加工のバイトの形式で提供されます ([http://id3.org/id3v2.4.0-structure](http://id3.org/id3v2.4.0-structure) をご覧ください)。 新しい **DataReader** を作成し、[**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) を呼び出してキューのデータを読み取ります。  この例では、ID3 タグのヘッダー値が、キュー データから読み取られ、デバッグ出力に書き込まれます。
+**CueEntered** イベントのハンドラーで、[**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) の **Cue** プロパティに含まれるデータ キューを、[**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue) にキャストします。  **DataCue** とキューの [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) プロパティが null ではないことを確認します。 Extended EMU コメントは、トランスポート ストリーム内の未加工のバイトの形式で提供されます ([http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure) をご覧ください)。 新しい **DataReader** を作成し、[**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) を呼び出してキューのデータを読み取ります。  この例では、ID3 タグのヘッダー値が、キュー データから読み取られ、デバッグ出力に書き込まれます。
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -174,7 +174,7 @@ emsg ボックス メタデータ イベントに登録した後、[**MediaPlaye
 
 **CueEntered** イベントのハンドラーで、[**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) の **Cue** プロパティに含まれるデータ キューを、[**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue) にキャストします。  **DataCue** オブジェクトが null でないことを確認します。 emsg ボックスのプロパティは、メディア パイプラインによって、DataCue オブジェクトの [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) コレクション内のカスタム プロパティとして提供されます。 この例では、**[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** メソッドを使用して、複数の異なるプロパティ値の抽出を試行します。 このメソッドが null を返す場合、要求したプロパティが emsg ボックス内に存在しないことを意味するため、代わりに既定値が設定されます。
 
-この例の次の部分は、広告の再生がトリガーされるがシナリオを示しています。これに該当するのは、前の手順で取得した *scheme_id_uri* プロパティの値が "urn:scte:scte35:2013:xml" である場合です ([http://dashif.org/identifiers/event-schemes/](http://dashif.org/identifiers/event-schemes/) をご覧ください)。 標準では、冗長性のために、この emsg を複数回送信することを推奨しているため、この例では、処理済みの emsg ID のリストを保持し、新しいメッセージのみを処理していることに注意してください。 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) を呼び出してキュー データを読み取る新しい **DataReader** を作成し、[**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) プロパティを設定してエンコードを UTF-8 に設定した後、データを読み取ります。 この例では、メッセージ ペイロードがデバッグ出力に書き込まれます。 実際のアプリは、ペイロード データを使用して広告の再生をスケジュールします。
+この例の次の部分は、広告の再生がトリガーされるがシナリオを示しています。これに該当するのは、前の手順で取得した *scheme_id_uri* プロパティの値が "urn:scte:scte35:2013:xml" である場合です ([http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/) をご覧ください)。 標準では、冗長性のために、この emsg を複数回送信することを推奨しているため、この例では、処理済みの emsg ID のリストを保持し、新しいメッセージのみを処理していることに注意してください。 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) を呼び出してキュー データを読み取る新しい **DataReader** を作成し、[**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) プロパティを設定してエンコードを UTF-8 に設定した後、データを読み取ります。 この例では、メッセージ ペイロードがデバッグ出力に書き込まれます。 実際のアプリは、ペイロード データを使用して広告の再生をスケジュールします。
 
 [!code-cs[EmsgCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetEmsgCueEntered)]
 

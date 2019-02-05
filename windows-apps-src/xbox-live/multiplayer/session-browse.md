@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: f09687e1ec48318bc785e74fee65c7502835a071
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: 579c71ef9266fb9a1ee4ef0538d1beffec0bb4ea
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970977"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046287"
 ---
 # <a name="multiplayer-session-browse"></a>マルチプレイヤー セッション参照
 
@@ -156,7 +156,7 @@ auto result = xboxLiveContext->multiplayer_service().set_search_handle(searchHan
 
 検索ハンドルのリストを取得するときは、検索クエリを使用して、特定の条件に一致するセッションに結果を限定できます。
 
-検索クエリの構文は [OData](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) スタイルであり、次の演算子だけがサポートされます。
+検索クエリの構文は [OData](https://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398092) スタイルであり、次の演算子だけがサポートされます。
 
  演算子 | 説明
  --- | ---

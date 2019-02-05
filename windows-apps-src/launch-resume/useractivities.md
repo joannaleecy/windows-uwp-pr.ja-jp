@@ -5,12 +5,12 @@ keywords: ユーザー アクティビティ、ユーザー アクティビテ�
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941796"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046202"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 
@@ -34,7 +34,7 @@ ms.locfileid: "8941796"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) は、特定のコンテキストでアプリケーションを再開するために使用します。 通常、このリンクは、スキームのプロトコル ハンドラー (例: “my-app://page2?action=edit”) または AppUriHandler (例: http://constoso.com/page2?action=edit) のフォームをとります。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) は、タイトル、説明、またはアダプティブ カード要素でアクティビティを視覚的に識別できるようにするクラスを公開します。
-3. 最後に、[コンテンツ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) は、特定のコンテキストでアクティビティをグループ化したり取得したりするために使用できるアクティビティのメタデータを格納できます。 多くの場合、これは [http://schema.org](http://schema.org) データのフォームとなります。
+3. 最後に、[コンテンツ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) は、特定のコンテキストでアクティビティをグループ化したり取得したりするために使用できるアクティビティのメタデータを格納できます。 多くの場合、これは [http://schema.org](https://schema.org) データのフォームとなります。
 
 **UserActivity** をアプリに追加するには:
 
@@ -99,11 +99,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-このコードは、アプリがプロトコル経由でアクティブ化されたかどうかを検出します。 アクティブ化されていた場合は、アプリがアクティブ化されているタスクを再開するためにアプリが何をすべきかを確認します。 シンプルなアプリ、このアプリが再開する唯一のアクティビティは入れることセカンダリ ページ、アプリが起動したときです。
+このコードは、アプリがプロトコル経由でアクティブ化されたかどうかを検出します。 アクティブ化されていた場合は、アプリがアクティブ化されているタスクを再開するためにアプリが何をすべきかを確認します。 シンプルなアプリ、このアプリが再開する唯一のアクティビティが入れること、セカンダリ ページ、アプリが起動したときです。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>アダプティブ カードを使用して、タイムラインのエクスペリエンスを向上させる
 
-ユーザーのアクティビティは、Cortana とタイムラインに表示されます。 アクティビティがタイムラインに表示されたら、[アダプティブ カード](http://adaptivecards.io/)フレームワークを使用してアクティビティを表示します。 アクティビティごとにアダプティブ カードを用意していない場合、タイムラインはアプリケーション名とアイコン、タイトル フィールド、およびオプションの説明フィールドに基づいて、簡単なアクティビティ カードを自動的に作成します。 以下は、アダプティブ カードのペイロードとそれが生成するカードの例です。
+ユーザーのアクティビティは、Cortana とタイムラインに表示されます。 アクティビティがタイムラインに表示されたら、[アダプティブ カード](https://adaptivecards.io/)フレームワークを使用してアクティビティを表示します。 アクティビティごとにアダプティブ カードを用意していない場合、タイムラインはアプリケーション名とアイコン、タイトル フィールド、およびオプションの説明フィールドに基づいて、簡単なアクティビティ カードを自動的に作成します。 以下は、アダプティブ カードのペイロードとそれが生成するカードの例です。
 
 ![アダプティブ カード](images/adaptivecard.png)]
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API を使用して、アプリをタイムラインと Cortana に表示させることができます。
 * [ **UserActivity** API について詳しく知る](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 「[sample code](https://github.com/Microsoft/project-rome)」をご覧ください。
-* 「[more sophisticated Adaptive Cards](http://adaptivecards.io/)」を参照してください。
+* 「[more sophisticated Adaptive Cards](https://adaptivecards.io/)」を参照してください。
 * [Microsoft Graph](https://developer.microsoft.com/graph/) を介して、iOS、Android、または Web サービスから **UserActivity** を公開します。
 * [Project Rome on GitHub](https://github.com/Microsoft/project-rome) について詳しく知る
 
@@ -169,7 +169,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [ユーザー アクティビティ ("rome"プロジェクト ドキュメント)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [アダプティブ カード](https://docs.microsoft.com/adaptive-cards/)
-* [アダプティブ カード ビジュアライザー、サンプル](http://adaptivecards.io/)
+* [アダプティブ カード ビジュアライザー、サンプル](https://adaptivecards.io/)
 * [URI のアクティブ化の処理](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Microsoft Graph、アクティビティ フィード、およびアダプティブ カードを使用して、どのプラットフォームでも顧客の関心を惹きつける](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

@@ -6,18 +6,18 @@ ms.date: 5/30/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: medium
-ms.openlocfilehash: 621e9adac30e67ea5e9a2e164f3d427e96bd51a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0335711c210588142bf3d4f86acaee9705648373
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919525"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047705"
 ---
 # <a name="developer-program-overview"></a>開発者プログラムの概要
 
 Xbox Live 対応のタイトルを開発する場合、いくつかのオプションを利用可能です。 それぞれで、開発者に対する異なるレベルの時間投資、利用可能な機能、およびサポート オプションが提供されます。
 
-## <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
+## <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
 
 Xbox Live 開発を理解するには、Xbox Live クリエーターズ プログラムが Xbox Live の良い出発点になります。 このプログラムへの参加には、マイクロソフトによる承認プロセスは必要ありませんが、最小限の認定要件と公開要件があります。
 
@@ -45,21 +45,21 @@ Xbox Live クリエーターズ プログラム タイトルは、ゲーム エ�
 
 [Xbox Live を GameMaker Studio 2 プロジェクトに統合する方法について説明します。](https://www.yoyogames.com/gamemaker/xblc)
 
-[MonoGame](http://www.monogame.net/) や [Xenko](https://xenko.com/) など、Xbox Live の機能やプラグインが組み込まれていない他のゲーム開発エンジンについては、引き続き Xbox Live API を使って Xbox Live をタイトルに追加できます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
+[MonoGame](https://www.monogame.net/) や [Xenko](https://xenko.com/) など、Xbox Live の機能やプラグインが組み込まれていない他のゲーム開発エンジンについては、引き続き Xbox Live API を使って Xbox Live をタイトルに追加できます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
 
 ### <a name="support-and-feedback"></a>サポートとフィードバック
-[MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)では、あらゆる質問を行うことができます。  プログラミング関連の質問は、"xbox live" タグを付けて [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) でたずねることもできます。  Xbox Live チームは、コミュニティと連携し、コミュニティに寄せられたフィードバックに基づいて API、ツール、ドキュメントを継続的に改善しています。
+[MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)では、あらゆる質問を行うことができます。  プログラミング関連の質問は、"xbox live" タグを付けて [Stack Overflow](https://stackoverflow.com/questions/tagged/xbox-live) でたずねることもできます。  Xbox Live チームは、コミュニティと連携し、コミュニティに寄せられたフィードバックに基づいて API、ツール、ドキュメントを継続的に改善しています。
 
 Xbox Live クリエーターズ プログラムの開発者は、[Xbox User Voice](https://xbox.uservoice.com/forums/363186--new-ideas) で、[新しいアイデアを提出](https://xbox.uservoice.com/forums/363186--new-ideas?category_id=196261)したり、[既存のアイデアに投票](https://xbox.uservoice.com/forums/251649?category_id=210838)したりすることができます。
 
 ## <a name="idxbox"></a>ID@Xbox
 
-Xbox Live クリエーターズ プログラムは、多くのゲームや開発者に適しています。 ただし、オンライン マルチプレイヤー、実績、およびゲーマースコアを含む、フル Xbox Live スタックを利用したい場合、またはハードウェア開発キットを使用して Xbox One ファミリのデバイスのすべての機能を利用したい場合は、[ID@Xbox](http://www.xbox.com/en-US/developers/id) プログラムをお勧めします。
+Xbox Live クリエーターズ プログラムは、多くのゲームや開発者に適しています。 ただし、オンライン マルチプレイヤー、実績、およびゲーマースコアを含む、フル Xbox Live スタックを利用したい場合、またはハードウェア開発キットを使用して Xbox One ファミリのデバイスのすべての機能を利用したい場合は、[ID@Xbox](https://www.xbox.com/en-US/developers/id) プログラムをお勧めします。
 
 ID@Xbox プログラムでは、ゲームはコンセプトの承認を得て、Xbox One と Windows 10 の完全な認定を受ける必要があり、開発者はこれに多くの時間を費やします。
 ID@Xbox タイトルは、ストアの [作成者のコレクション] セクションではなく、主要セクションに配置されるため、ユーザーへの露出が大きくなる可能性があります。
 
-ID@Xbox プログラムの開発者は、マイクロソフトからの開発者サポートとプロモーションの支援を得られるうえ、非公開のホワイト ペーパーと開発者向け技術フォーラムもすべて利用できます。 必要に応じて、引き続き [MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)を使用することや、[Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) で "xbox-live" タグを使用してプログラミング関連の質問をすることができます。
+ID@Xbox プログラムの開発者は、マイクロソフトからの開発者サポートとプロモーションの支援を得られるうえ、非公開のホワイト ペーパーと開発者向け技術フォーラムもすべて利用できます。 必要に応じて、引き続き [MSDN フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)を使用することや、[Stack Overflow](https://stackoverflow.com/questions/tagged/xbox-live) で "xbox-live" タグを使用してプログラミング関連の質問をすることができます。
 
 ## <a name="microsoft-partners"></a>Microsoft パートナー
 
@@ -67,7 +67,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 ## <a name="feature-table"></a>機能テーブル
 
-下の表に、Xbox Live クリエーターズ プログラムで利用できる機能と、[ID@Xbox](http://www.xbox.com/en-US/developers/id) プログラムで利用できる機能を示します。  
+下の表に、Xbox Live クリエーターズ プログラムで利用できる機能と、[ID@Xbox](https://www.xbox.com/en-US/developers/id) プログラムで利用できる機能を示します。  
 
 <table>
 
@@ -155,14 +155,14 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 <tr>
 <td>リッチ プレゼンス</td>
 <td>タイトルでプレイヤーに関する詳しい情報を表示します。  基本的なプレゼンスの表示は "ユーザーがカー レーシング ゲームをプレイ中" のようなものですが、リッチ プレゼンスでは "ユーザーが RainyForest で SuperCar を運転中" などのより詳細な文字列を指定できます。</td>
-<td class="xbl-features-required">必須</td>
+<td class="xbl-features-required">必須かどうか</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>フレンド</td>
 <td>サインインしているユーザーのフレンド リストを取得して、タイトルでソーシャル ゲームプレイ シナリオを有効にします。</td>
-<td class="xbl-features-required">必須</td>
+<td class="xbl-features-required">必須かどうか</td>
 <td class="xbl-features-limited">オプション/制限あり (タイトルをプレイしたことのあるフレンドのみが表示されます)</td>
 </tr>
 
@@ -199,7 +199,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 <tr>
 <td>注目の統計</td>
 <td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須</td>
+<td class="xbl-features-required">必須かどうか</td>
 <td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
 </tr>
 
@@ -213,7 +213,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 <tr>
 <td>ゲーマースコアと実績</td>
 <td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須</td>
+<td class="xbl-features-required">必須かどうか</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
@@ -232,7 +232,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 <td>接続ストレージ</td>
 <td>Xbox One 本体と PC でローミング ゲームを保存します。</td>
-<td class="xbl-features-required">必須</td>
+<td class="xbl-features-required">必須かどうか</td>
 <td class="xbl-features-optional">オプション</td>
 </tr>
 
@@ -248,7 +248,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 <td>マルチプレイヤー セッション ディレクトリ (MPSD)</td>
 <td>プレイヤーの一覧、状態など、マルチプレイヤー セッションに関する情報を保存します。</td>
-<td class="xbl-features-optional">必須</td>
+<td class="xbl-features-optional">必須かどうか</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e28a4a7abaacd8b2de60c6163055bd9d667ba412
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e190a6d5134cc1fba4ac8be970bb8d90847700e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946913"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044416"
 ---
 # <a name="camera"></a>カメラ
 
@@ -50,14 +50,14 @@ ms.locfileid: "8946913"
 
 ## <a name="uwp-app-samples-for-camera"></a>カメラ用の UWP アプリ サンプル
 
-* [カメラの顔検出サンプル](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
-* [カメラのプレビュー フレーム サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
-* [カメラの HDR サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
-* [カメラの手動制御サンプル](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
-* [カメラのプロファイル サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
-* [カメラの解像度サンプル](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
-* [カメラのスターター キット](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
-* [カメラのビデオ手ブレ補正効果サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
+* [カメラの顔検出サンプル](https://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [カメラのプレビュー フレーム サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [カメラの HDR サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [カメラの手動制御サンプル](https://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [カメラのプロファイル サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [カメラの解像度サンプル](https://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [カメラのスターター キット](https://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [カメラのビデオ手ブレ補正効果サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
 ## <a name="related-topics"></a>関連トピック
 

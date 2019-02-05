@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a34a53e5a332276c121324d9cf891a506aadb7f7
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: ac4e5bb7c761ad6661647cb88f831ffa652b6241
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037114"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048802"
 ---
 # <a name="flip-view"></a>フリップ ビュー
 
@@ -204,7 +204,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ![コンテキスト インジケーターの例](images/controls_contextindicator.jpg)
 
-コンテキスト インジケーターを FlipView に追加する方法を示すサンプル コードについては、[XAML FlipView のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=311760)をご覧ください。
+コンテキスト インジケーターを FlipView に追加する方法を示すサンプル コードについては、[XAML FlipView のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?LinkID=311760)をご覧ください。
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 

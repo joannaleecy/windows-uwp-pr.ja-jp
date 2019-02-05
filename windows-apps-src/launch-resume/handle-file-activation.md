@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925899"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046515"
 ---
 # <a name="handle-file-activation"></a>ファイルのアクティブ化の処理
 
@@ -123,19 +123,19 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 > [!NOTE]
 > ファイルのコントラクトによって起動すると、その戻るボタン戻る、アプリを起動した画面としないアプリの以前のコンテンツを確認します。
 
-新しいページを開くアクティブ化イベントごとに新しい XAML**フレーム**を作成することをお勧めします。 これにより、新しい XAML フレームのナビゲーション backstack は、中断されたときに、現在のウィンドウで、アプリが以前のコンテンツを含まれていません。 起動とファイル コントラクトに単一 XAML**フレーム**を使用した場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにある内のページをクリアする必要があります。
+新しいページを開くアクティブ化イベントごとに新しい XAML**フレーム**を作成することをお勧めします。 これにより、新しい XAML フレームのナビゲーション backstack は、中断しているときは、現在のウィンドウで、アプリが以前のコンテンツを含まれていません。 起動とファイル コントラクトに単一 XAML**フレーム**を使用する場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにある内のページをクリアする必要があります。
 
 ファイル アクティブ化によってアプリを起動すると、アプリの先頭ページに戻るには、ユーザーは、UI を含めることを検討する必要があります。
 
 ## <a name="remarks"></a>注釈
 
-受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。 入力の検証について詳しくは、[安全なコードの記述](http://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。
+受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。 入力の検証について詳しくは、[安全なコードの記述](https://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 
 ### <a name="complete-example"></a>完全な例
 
-* [Association Launching サンプル](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Association Launching サンプル](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### <a name="concepts"></a>概念
 

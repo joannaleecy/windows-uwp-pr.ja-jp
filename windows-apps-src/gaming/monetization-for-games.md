@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 収益化
 ms.localizationpriority: medium
-ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92d85f81be25eed5f0a43cafb4bb34d9f879c827
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929758"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050925"
 ---
 #  <a name="monetization-for-games"></a>ゲームの収益化
 
@@ -22,12 +22,12 @@ ms.locfileid: "8929758"
 UWP ゲームの販売促進や収益化には、次の方法があります。
 * これはセキュリティで保護された、オンラインのストア製品[世界規模](#worldwide-distribution-channel)の Microsoft Store でゲームを配置します。 世界中のゲーマーが、[販売者の設定する価格](#set-a-price-for-your-game)でゲームをオンラインで購入できます。
 * Windows SDK の API を使って[ゲーム内購入](#in-game-purchases)を作成する。 ゲーマーはゲーム内からアイテムを購入したり、特別な機器、スキン、地図、ゲーム レベルなどの追加のコンテンツを購入したりすることができます。
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) の API を使って、広告ネットワークから供給される広告を表示する。 [ゲーム内で広告を表示](#display-ads-in-your-game)し、ゲーマーがビデオ広告を見るとゲーム内のリワードがもらえるオプションを提供できます。
 * [広告キャンペーンによってゲームの可能性を最大限に広げる](#maximize-your-games-potential-through-ad-campaigns)。 有料広告、コミュニティ広告 (無料)、または自社広告 (無料) キャンペーンを使ってゲームを宣伝し、ユーザー ベースを拡大します。
 
 ## <a name="worldwide-distribution-channel"></a>世界規模の販売チャネル
 
-Microsoft Store できますゲームで利用できるようにダウンロード 200 以上の国と地域、世界中の請求方法を通じて支払い Visa、Mastercard、PayPal などのさまざまな形式のサポート。 国や地域の完全な一覧は、[市場の選択の定義](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)を参照してください。
+Microsoft Store ことができます、ゲームで利用できるようにダウンロード 200 以上の国と地域、世界中の請求方法を通じて支払 Visa、Mastercard、PayPal などのさまざまな形式をサポートします。 国や地域の完全な一覧は、[市場の選択の定義](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)を参照してください。
 
 ## <a name="set-a-price-for-your-game"></a>ゲームの価格設定
 
@@ -47,18 +47,18 @@ Microsoft Store できますゲームで利用できるようにダウンロー�
 
 ## <a name="in-game-purchases"></a>ゲーム内購入
 
-ゲーム内購入とは、ゲームの中で購入できる製品です。 これらの製品は、一般に_アプリ内購入_とも呼ばれます。 Microsoft Store では、これらの製品には_アドオン_は呼び出されます。 [アドオンの公開](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)をパートナー センターを通じてしました。 また、ゲームのコードでアドオンを有効にする必要があります。
+ゲーム内購入とは、ゲームの中で購入できる製品です。 これらの製品は、一般に_アプリ内購入_とも呼ばれます。 Microsoft Store では、これらの製品には_アドオン_は呼び出されます。 [アドオンの公開](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)をパートナー センターを通じてします。 また、ゲームのコードでアドオンを有効にする必要があります。
 
 ### <a name="types-of-add-ons"></a>アドオンの種類
 
 ストアでは、_永続的_と_コンシューマブル_の 2 種類のアドオンを作成できます。 永続的なアドオンは、指定された時間にわたって使うことができ、有効期限の間に一度だけ購入できる項目です。 コンシューマブルなアドオンとは、繰り返し購入して使うことができる項目です。
 
-コンシューマブルを作成する際は、追跡方法として、それらの項目が_開発者による管理_か_ストアによる管理_か (この機能は Windows 10、バージョン 1607 以降で使用可能) を決定してください。 開発者により管理されるコンシューマブルのゲーマー; のアイテムの残量を追跡責任があります。ストアで管理されるコンシューマブルの場合、Microsoft Store の追跡項目の残高をします。 詳しくは、「[コンシューマブルなアドオン購入の有効化](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)」をご覧ください。
+コンシューマブルを作成する際は、追跡方法として、それらの項目が_開発者による管理_か_ストアによる管理_か (この機能は Windows 10、バージョン 1607 以降で使用可能) を決定してください。 開発者により管理されるコンシューマブルの場合のゲーマー; アイテムの残量を追跡責任があります。ストアで管理されるコンシューマブルの場合、Microsoft Store の記録、項目の残高します。 詳しくは、「[コンシューマブルなアドオン購入の有効化](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)」をご覧ください。
 
 ### <a name="create-in-game-purchases"></a>ゲーム内購入の作成
 
 最新のアプリ内購入およびライセンス情報 API は、Windows SDK (Windows 10 バージョン 1607 以降) の [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間に含まれています。 1607 以降のリリースをターゲットとする新しいゲームを開発している場合は、最新のアドオンの種類をサポートし、パフォーマンスに優れた __Windows.Services.Store__ 名前空間の使用をお勧めします。
-今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するよう設計もいます。 以前のバージョンの Windows 10 向けに開発を行う場合は、この代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使います。
+また、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応する設計います。 以前のバージョンの Windows 10 向けに開発を行う場合は、この代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使います。
 
 詳しくは、「[アプリ内購入と試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)」をご覧ください。
 
@@ -102,7 +102,7 @@ Microsoft Store できますゲームで利用できるようにダウンロー�
 2. __[ダッシュボード概要]__ ページまたは __[すべてのアプリ]__ ページで、目的のアプリをクリックします。 アプリの申請をまだ作成していない場合は、__[新しいアプリの作成]__ をクリックして名前を予約します。
 3. __[アプリの概要]__ ページで、__[提出を開始する]__ をクリックします。
 4. この新しい申請を構成します。 [申請] ページで、次の手順を実行します。
-    * __[価格と使用可能状況]__ をクリックします。 __可視性__」セクションでは、「__このアプリを非表示にし… 取得できないように__' 開発チームのみゲームへのアクセスを確保を選択します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
+    * __[価格と使用可能状況]__ をクリックします。 __可視性__」セクションでは、「__このアプリを非表示にして取得. できないように__' 開発チームのみが、ゲームへのアクセス確保を選択します。 詳しくは、「[分布と認知度](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)」をご覧ください。
     * __[プロパティ]__ をクリックします。 __[カテゴリとサブカテゴリ]__ セクションで __[ゲーム]__ を選択し、ゲームに適したサブカテゴリを選びます。
     * __[年齢区分]__ をクリックします。 質問表に正確に入力します。
     * __[パッケージ]__ をクリックします。 前の手順で作成したゲーム パッケージをアップロードします。
@@ -138,7 +138,7 @@ Microsoft Store できますゲームで利用できるようにダウンロー�
 * [価格と使用可能状況](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [ストア登録情報](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-ゲームに多くのアドオンがある場合は、 __Microsoft Store 申請 API__を使用してプログラムでに作成できます。 詳しくは、次を参照してください。[を作成し、Microsoft Store サービスを使用した申請の管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)します。
+ゲームに多くのアドオンがある場合は、 __Microsoft Store 申請 API__を使用してプログラムでに作成できます。 詳しくは、次を参照してください。[作成し、Microsoft Store サービスを使用した申請の管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)します。
 
 ## <a name="display-ads-in-your-game"></a>ゲーム内での広告の表示
 
@@ -165,7 +165,7 @@ Microsoft Advertising SDK を使って表示できる広告には、いくつか
 
 ゲームで広告を表示するには、Microsoft Advertising SDK の [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラス、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラス、[NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) クラスを使用します。
 
-これにはまず、[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をダウンロードし、Visual Studio 2015 以降のバージョンと共にインストールします。 詳しくは、「[Microsoft Advertising SDK のインストール](../monetize/install-the-microsoft-advertising-libraries.md)」をご覧ください。
+これにはまず、[Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をダウンロードし、Visual Studio 2015 以降のバージョンと共にインストールします。 詳しくは、「[Microsoft Advertising SDK のインストール](../monetize/install-the-microsoft-advertising-libraries.md)」をご覧ください。
 
 #### <a name="implementation-guides"></a>実装ガイド
 

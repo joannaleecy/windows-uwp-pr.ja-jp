@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a486f27d390a651cec0dcad82246a858bab2f33
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947555"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044446"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>アプリケーションにマイ連絡先のサポートを追加する
 
@@ -37,7 +37,7 @@ ms.locfileid: "8947555"
 
 マイ連絡先のコントラクトのサポートを宣言するには、Visual Studio でアプリケーションを開きます。 **ソリューション エクスプローラー** で **Package.appxmanifest** を右クリックして、[**プログラムから開く**] を選択します。 メニューをから [**XML (テキスト) エディター**] を選び、**[OK]** をクリックします。 マニフェストを次のように変更します。
 
-**変更前**
+**クリック前**
 
 ```xml
 <Package
@@ -53,7 +53,7 @@ ms.locfileid: "8947555"
 
 ```
 
-**変更後**
+**クリック後**
 
 ```xml
 <Package
@@ -252,7 +252,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [マイ連絡先の共有](my-people-sharing.md)
 + [マイ連絡先の通知](my-people-notifications.md)
 + [アプリケーションへのマイ連絡先のサポートの追加に関する Channel 9 ビデオ](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [マイ連絡先の統合のサンプル](http://aka.ms/mypeoplebuild2017)
++ [マイ連絡先の統合のサンプル](https://aka.ms/mypeoplebuild2017)
 + [連絡先カードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager クラスのドキュメント](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [アプリを連絡先カードの操作に接続する](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

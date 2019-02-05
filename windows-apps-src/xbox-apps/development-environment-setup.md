@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c812cea510865da68760788a723830fe0940c21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c1d8c6a33bd7d9249b5000767ece154ab7f8776
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920182"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046006"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Xbox の開発環境に UWP を設定する
 
@@ -66,9 +66,9 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 2. リモート デバッグの開発環境を構成します。
 
-    a. **[ソリューション エクスプローラー]** でプロジェクトを右クリックし、**[プロパティ]** を選びます。
+    a.  **[ソリューション エクスプローラー]** でプロジェクトを右クリックし、**[プロパティ]** を選びます。
 
-    b. **[デバッグ]** タブで、**[プラットフォーム]** を **[x64]** に変更します  (x86 プラットフォームは Xbox ではサポートされなくなりました)。
+    b.  **[デバッグ]** タブで、**[プラットフォーム]** を **[x64]** に変更します  (x86 プラットフォームは Xbox ではサポートされなくなりました)。
 
     c. **[起動オプション]** で、**[ターゲット デバイス]** を **[リモート コンピューター]** に変更します。
 
@@ -86,9 +86,9 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 2. リモート デバッグの開発環境を構成します。
 
-   a. **[ソリューション エクスプローラー]** でプロジェクトを右クリックし、**[プロパティ]** を選びます。
+   a.  **[ソリューション エクスプローラー]** でプロジェクトを右クリックし、**[プロパティ]** を選びます。
 
-   b. **[デバッグ]** タブで、**[起動するデバッガー]** を **[リモート コンピューター]** に変更します。
+   b.  **[デバッグ]** タブで、**[起動するデバッガー]** を **[リモート コンピューター]** に変更します。
 
    c. **[コンピューター名]** で、システムの IP アドレスまたは Xbox One 本体のホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
@@ -123,6 +123,6 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 ## <a name="see-also"></a>参照
 - [Xbox One 開発者モードのアクティブ化](devkit-activation.md)  
 - [Windows 10 用のダウンロードとツール](https://dev.windows.com/downloads)  
-- [Windows Insider Program](http://go.microsoft.com/fwlink/?LinkId=780552)  
+- [Windows Insider Program](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Xbox One ツールの概要](introduction-to-xbox-tools.md) 
 - [Xbox One の UWP](index.md)

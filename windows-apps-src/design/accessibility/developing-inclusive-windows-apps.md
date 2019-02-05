@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e38b57deb7101dcf0476bd3d952fc01ffd605db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942214"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047969"
 ---
 # <a name="developing-inclusive-windows-apps"></a>包括性を備えた Windows アプリの開発  
 
@@ -82,7 +82,7 @@ UWP アプリでは、システム カラーを上書きしない限り、既定
 
 ## <a name="related-topics"></a>関連トピック  
 * [包括性を備えたソフトウェアの設計](designing-inclusive-software.md)  
-* [包括性を備えた設計](http://design.microsoft.com/inclusive)
+* [包括性を備えた設計](https://design.microsoft.com/inclusive)
 * [アクセシビリティ対応にするために避ける事項](practices-to-avoid.md)
 * [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)

@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
-ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
+ms.openlocfilehash: 1dff4e3b37be14729abdc3262d484745a0245776
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "9000277"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048049"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>受取りアカウントの設定と税関連の書類
 
@@ -70,7 +70,7 @@ Microsoft Store でアプリの売上から収益を受け取るには、受取�
 
 支払いに PayPal を使う場合の一般的な質問:
 
--   **支払いを受けるには、どのような PayPal の設定が必要ですか。** PayPal アカウントで eCheck の支払いをブロックしないようにする必要があります。 この設定は、PayPal の [支払い受領設定] ページで管理します。 詳しくは、[PayPal のアカウント セットアップ ページ](http://go.microsoft.com/fwlink/p/?linkid=513139)をご覧ください。
+-   **支払いを受けるには、どのような PayPal の設定が必要ですか。** PayPal アカウントで eCheck の支払いをブロックしないようにする必要があります。 この設定は、PayPal の [支払い受領設定] ページで管理します。 詳しくは、[PayPal のアカウント セットアップ ページ](https://go.microsoft.com/fwlink/p/?linkid=513139)をご覧ください。
 -   **自分の国/地域はサポートされていますか。** PayPal が支払方法としてサポートされている国/地域を確かめるには、「[アカウントの種類、場所、料金](account-types-locations-and-fees.md)」をご覧ください。
 -   **PayPal アカウントは、パートナー センター アカウントと同じ国/地域で登録するがあるかどうか。** いいえ。 PayPal アカウントを設定する際は、既定の構成をそのまま使用できます。 特定の通貨による支払いをブロックしていない限り、国/地域と通貨が違っていても、問題は発生しません。 この設定は、PayPal の [支払い受領設定] ページで管理します。
 -   **PayPal の支払いを手動で承認する必要はありますか。** いいえ。 PayPal アカウントは、既定では、ユーザーに対して支払いを手動で承認するように求める設定になっています。この場合は、支払いを 30 日以内に承認しないと、支払いが返されることになります。 この設定を変更するには、PayPal の [その他の設定] ページで [確認する] をオフにします。

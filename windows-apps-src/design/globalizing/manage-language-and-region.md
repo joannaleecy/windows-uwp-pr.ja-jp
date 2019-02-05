@@ -7,26 +7,26 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: d782e8cd64cb976df964c72199964c1d349d527e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035403"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045661"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>ユーザー プロファイルの言語とアプリ マニフェストの言語について
 Windows ユーザーは、**[設定]** > **[時刻と言語]** > **[地域と言語]** の順に移動して、優先される表示言語の順序指定された一覧を構成するか、または優先される 1 つの表示言語を構成できます。 言語には場合によっては地域バリアントがあります。 たとえば、スペインで話されるスペイン語、メキシコで話されるスペイン語、米国で話されるスペイン語などを選ぶことができます。
 
 また、**[設定]** > **[時刻と言語]** > **[地域と言語]** では、言語とは別に世界中の場所 (地域と呼ばれます) を指定できます。 表示言語 (および地域バリアント) の設定は地域の設定を決定するものではありません。その逆も同様です。 たとえば、現在フランスに住んでいるユーザーが、優先される Windows 表示言語としてスペイン語 (メキシコ) を選択している場合があります。
 
-UWP アプリの場合、言語は [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)として表示されます。 たとえば、BCP-47 言語タグ "en-US" は **[設定]** の英語 (米国)に対応しています。 適切な UWP API は、BCP-47 言語タグの文字列表現を受け入れて返します。
+UWP アプリの場合、言語は [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)として表示されます。 たとえば、BCP-47 言語タグ "en-US" は **[設定]** の英語 (米国)に対応しています。 適切な UWP API は、BCP-47 言語タグの文字列表現を受け入れて返します。
 
-「[IANA 言語サブタグ レジストリ](http://go.microsoft.com/fwlink/p/?linkid=227303)」も参照してください。
+「[IANA 言語サブタグ レジストリ](https://go.microsoft.com/fwlink/p/?linkid=227303)」も参照してください。
 
 次の 3 つのセクションでは、"ユーザー プロファイルの言語の一覧"、"アプリ マニフェストの言語の一覧"、"アプリの実行時の言語の一覧" という用語を定義します。 これらの用語は、この機能領域のこのトピックおよびその他のトピックで使用しますので、意味を把握しておくことが重要です。
 
 ## <a name="user-profile-language-list"></a>ユーザー プロファイルの言語の一覧
-ユーザー プロファイルの言語の一覧は、**[設定]** > **[時刻と言語]** > **[地域と言語]** > **[言語]** でユーザーによって構成された一覧の名前です。 コードでは、[**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) プロパティを使用して、読み取り専用の文字列一覧としてユーザー プロファイルの言語の一覧にアクセスできます。この一覧では、各文字列は "en-US" または "ja-JP" などの単一の [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302) です。
+ユーザー プロファイルの言語の一覧は、**[設定]** > **[時刻と言語]** > **[地域と言語]** > **[言語]** でユーザーによって構成された一覧の名前です。 コードでは、[**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) プロパティを使用して、読み取り専用の文字列一覧としてユーザー プロファイルの言語の一覧にアクセスできます。この一覧では、各文字列は "en-US" または "ja-JP" などの単一の [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302) です。
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -70,7 +70,7 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](http://go.microsoft.com
 
 具体的には、アプリの実行時の言語の一覧は次の項目で構成されています。
 
-1.  **(オプション) 第 1 言語の上書き**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) は、独自の独立した言語選択をユーザーに提示するアプリや、既定の言語選択を無効にしなければならない重大な理由があるアプリで利用できる、シンプルな上書き設定です。 詳細については、「[アプリ リソースとローカライズのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231501)」を参照してください。
+1.  **(オプション) 第 1 言語の上書き**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) は、独自の独立した言語選択をユーザーに提示するアプリや、既定の言語選択を無効にしなければならない重大な理由があるアプリで利用できる、シンプルな上書き設定です。 詳細については、「[アプリ リソースとローカライズのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231501)」を参照してください。
 2.  **アプリでサポートされるユーザーの言語**。 これは、アプリ マニフェストの言語の一覧でフィルター処理されたユーザー プロファイルの言語の一覧です。 アプリでサポートされる言語でユーザーの言語をフィルター処理することで、ソフトウェア開発キット (SDK)、クラス ライブラリ、依存性のあるフレームワーク パッケージ、そのアプリの間で一貫性が保たれます。
 3.  **1 と 2 が空の場合、アプリでサポートされる既定または最初の言語**。 ユーザー プロファイルの言語の一覧に、アプリでサポートされる言語が含まれない場合は、アプリで最優先にサポートされる言語がアプリの実行時の言語として選ばれます。
 
@@ -98,7 +98,7 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](http://go.microsoft.com
 **注:** アプリの既定の言語のリソースであっても、言語修飾子を指定する必要があります。 たとえば、アプリの既定の言語が英語 (米国) の場合は、修飾として、アセット`\Assets\Images\en-US\logo.png`します。
 
 - Windows では、EN-US および EN-GB などの地域バリアント間も含む複雑な照合を実行します。 必要に応じて地域サブ タグを含めるようにします。 「[リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)」を参照してください。
-- 抑制スクリプト値を言語の定義がない場合は、修飾子で言語のスクリプトのサブ タグを指定します。 たとえば、ZH-CN または ZH-TW ではなく使用 Zh-hant、対応付けの ZH-TW、または Zh-hans (詳細については、 [IANA 言語サブタグ レジストリに関するページ](http://go.microsoft.com/fwlink/p/?linkid=227303)を参照してください)。
+- 抑制スクリプト値を言語の定義がない場合は、修飾子で言語のスクリプトのサブ タグを指定します。 たとえば、ZH-CN または ZH-TW ではなく使用 Zh-hant、対応付けの ZH-TW、または Zh-hans (詳細については、 [IANA 言語サブタグ レジストリに関するページ](https://go.microsoft.com/fwlink/p/?linkid=227303)を参照してください)。
 - 1 つの標準の言語の言語、地域の修飾子をインクルードする必要はありません。 たとえば、JA-JP ではなく ja を使用します。
 - 一部のツールやその他のコンポーネント (機械翻訳など) では、データの理解に役立つ地域言語情報など特定の言語タグを探す場合があります。
 
@@ -208,12 +208,12 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](http://go.microsoft.com
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-* [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA 言語サブタグ レジストリ](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA 言語サブタグ レジストリ](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [サポートされている言語](../../publish/supported-languages.md)
 * [日付、時刻、数値の形式のグローバル化](use-global-ready-formats.md)
 * [リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>サンプル
-* [アプリ リソースとローカライズのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [アプリ リソースとローカライズのサンプル](https://go.microsoft.com/fwlink/p/?linkid=231501)

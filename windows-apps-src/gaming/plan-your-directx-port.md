@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: abbcd688df01b779a1cb3ab9e30bd13709926be4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942513"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044383"
 ---
 # <a name="plan-your-directx-port"></a>DirectX の移植の計画
 
@@ -35,7 +35,7 @@ Direct3D 9 から Direct3D 11 へのアップグレードは、変更箇所を�
 
 D3DX と DXUT のヘルパー ライブラリは、独自のヘルパー ライブラリか、コミュニティ ツールに置き換える必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
-> **注:**  [DirectX ツール キット](http://go.microsoft.com/fwlink/p/?LinkID=248929)または[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)を使用して一部の機能と、D3DX と DXUT で提供された以前の置換することができます。
+> **注:**  [DirectX ツール キット](https://go.microsoft.com/fwlink/p/?LinkID=248929)または[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)を使用して一部の機能と、D3DX と DXUT で提供された以前の置換することができます。
 
  
 

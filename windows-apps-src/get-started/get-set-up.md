@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d14467856aee733f2e11d057db0deb873269ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920636"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047939"
 ---
 # <a name="get-set-up"></a>準備
 
@@ -64,7 +64,7 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ## <a name="want-more-tools-and-downloads"></a>その他のツールとダウンロード
 
-ツールとダウンロードの一覧については、[ダウンロード ページ](http://go.microsoft.com/fwlink/p/?linkid=285935)をご覧ください。
+ツールとダウンロードの一覧については、[ダウンロード ページ](https://go.microsoft.com/fwlink/p/?linkid=285935)をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 

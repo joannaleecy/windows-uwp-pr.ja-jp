@@ -6,16 +6,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファー
 ms.localizationpriority: medium
-ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937540"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045025"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>ストア サービスを使ってターゲット オファーを管理する
 
-*対象のプラン*を作成する場合、**利用率の引き上げ > 対象のプラン**パートナー センターで、使用して、 *Microsoft Store ターゲット オファー API* 、アプリのコードに役立つ情報を取得するエクスペリエンスを実装するアプリ内のアプリのページ、ターゲット オファーします。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
+*対象のプラン*では、パートナー センターを使用して、 *Microsoft Store ターゲット オファー API*をするために役立つ情報を取得するアプリのコードでのアプリ内エクスペリエンスの実装でアプリの**対象のプランとの連携 _gt**ページを作成する場合、ターゲット オファーします。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
 
 ターゲット オファー API はシンプルな REST API で、これを使用すると、ユーザーがターゲット オファーの顧客セグメントに属しているかどうかに基づいて、現在のユーザーに適用されるターゲット オファーを取得できます。 アプリのコードでこの API を使うには、次の手順に従います。
 
@@ -45,7 +45,7 @@ MSA トークンの取得について詳しくは、「[Web アカウント マ�
 
 このメソッドは、現在のユーザーが利用可能なターゲット オファーに関連付けられているアドオンの製品 ID を返します。 この情報を使って、1 つ以上のターゲット オファーをアプリ内購入としてユーザーに提供できます。
 
-次の例は、現在のユーザーのターゲット オファーを取得する方法を示しています。 この例は、[完全な例](#code-example)からの抜粋です。 Newtonsoft の [Json.NET](http://www.newtonsoft.com/json) ライブラリと、完全な例に示されている追加クラスおよび **using** ステートメントが必要です。
+次の例は、現在のユーザーのターゲット オファーを取得する方法を示しています。 この例は、[完全な例](#code-example)からの抜粋です。 Newtonsoft の [Json.NET](https://www.newtonsoft.com/json) ライブラリと、完全な例に示されている追加クラスおよび **using** ステートメントが必要です。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
@@ -59,7 +59,7 @@ MSA トークンの取得について詳しくは、「[Web アカウント マ�
 * 「[ターゲット オファーを取得する](get-targeted-offers.md)」の方法を使って、現在のユーザーのすべてのターゲット オファーを取得する。
 * ターゲット オファーに関連付けられているアドオンを購入する。
 
-この例では、Newtonsoft の [Json.NET](http://www.newtonsoft.com/json) ライブラリが必要です。 この例では、このライブラリを使って JSON 形式のデータをシリアル化および逆シリアル化します。
+この例では、Newtonsoft の [Json.NET](https://www.newtonsoft.com/json) ライブラリが必要です。 この例では、このライブラリを使って JSON 形式のデータをシリアル化および逆シリアル化します。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
 

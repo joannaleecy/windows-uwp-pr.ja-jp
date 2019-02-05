@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: e7588639d9a83b50066e4dd313d6427d047c8482
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfc67f6aca27abf095a89c451111e6429bca82e1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931200"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044754"
 ---
 # <a name="achievements-2017"></a>Achievements 2017
 
@@ -45,7 +45,7 @@ Xbox One の発売から数年、ゲーム デベロッパーからのフィー�
 | ロック解除の所有者             | タイトル                                 | Xbox Live                              |
 | 構成            | 文字列、イメージ、リワード              | 文字列、イメージ、リワード、ロック解除ルール \[+ 統計情報、+ イベント\]                    |
 | 進行状況              | サポートされる <br>*API 呼び出しによって直接的*                | サポートされる <br> *テレメトリー イベントによって間接的*       |
-| リアルタイム アクティビティ (RTA) | サポートされる                             | サポートされる                              |
+| リアルタイム アクティビティ (RTA) | サポートされる                             | サポートされています                              |
 | チャレンジ               | サポートされない   | サポートされる                      |
 
 ## <a name="title-requirements"></a>タイトルの要件
@@ -97,7 +97,7 @@ API のシグネチャは次のとおりです。
 `xbox::services::xbox_live_result<T>` は、すべての C++ Xbox Live Services API 呼び出しに対する戻りの呼び出しです。
 
 詳細については、Xfest 2015 の講演「XSAPI: C++, No Exceptions!」をご覧ください。<br>
-[ビデオ](http://go.microsoft.com/?linkid=9888207) |  [スライド](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
+[ビデオ](https://go.microsoft.com/?linkid=9888207) |  [スライド](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
 ### <a name="unlocking-via-updateachievement-api"></a>Update_Achievement API によるロック解除
 

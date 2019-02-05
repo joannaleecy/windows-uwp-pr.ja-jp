@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイル io, ファイルの読み取り, ファイルの書き込み, ファイルの作成, テキストの書き込み, テキストの読み取り
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921082"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045531"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 
@@ -130,7 +130,7 @@ API の簡単な概要と、ファイルやフォルダーの使用を開始す�
 | [ファイルの作成、書き込み、および読み取り](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | テキスト、バイナリ データ、およびストリームの作成、読み取り、書き込みについて説明します。 |
 | [アプリ データのローカルへの保存に関する概要](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | ローカル データを保存するためのベスト プラクティスだけでなく、LocalSettings および LocalCache フォルダーの目的について説明します。 |
 | [アプリのデータのローミングの概要](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | アプリのデータのローミングを使用する方法に関する 2 部で構成される資料です。 |
-| [アプリケーション データのローミングのガイドライン](http://msdn.microsoft.com/library/windows/apps/hh465094) | アプリの設計時にはデータ ローミングのガイドラインに従ってください。 |
+| [アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094) | アプリの設計時にはデータ ローミングのガイドラインに従ってください。 |
 | [設定と他のアプリ データを保存して取得する](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | ローカル フォルダー、移動フォルダー、および一時フォルダーなど、さまざまなアプリのデータ ストアの概要を示します。 「[ローミング データ](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)」セクションで、デバイス間でローミングされるデータの書き込みに関する追加の情報とガイドラインを参照してください。 |
 | [ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | アプリでアクセスできるファイル システムの場所に関する情報です。 |
 | [ピッカーでファイルやフォルダーを開く](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | ピッカーの UI を介してユーザーが決定できるようにすることでファイルやフォルダーにアクセスする方法を示します。 |
@@ -143,6 +143,6 @@ API の簡単な概要と、ファイルやフォルダーの使用を開始す�
 |-----------------|---------------|
 | [アプリケーション データ サンプル](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | アプリケーション データ API を使って、ユーザーごとに特有のデータを保存、取得する方法を示します。 |
 | [ファイル アクセスのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | ファイルを作成、読み取り、書き込み、コピー、および削除する方法を示します。 |
-| [ファイル ピッカーのサンプル](http://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | ユーザーが UI で選択できるようにしてファイルやフォルダーにアクセスする方法、ユーザーが保存するファイルの名前、ファイルの種類、場所を指定できるようにファイルを保存する方法を示します。 |
+| [ファイル ピッカーのサンプル](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | ユーザーが UI で選択できるようにしてファイルやフォルダーにアクセスする方法、ユーザーが保存するファイルの名前、ファイルの種類、場所を指定できるようにファイルを保存する方法を示します。 |
 | [JSON サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | [Windows.Data.Json namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json) を使用して、JavaScript Object Notation (JSON) オブジェクト、配列、文字列、数値、ブール値をエンコードおよびデコードする方法を示します。 |
 | [その他のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで、**[Files, folder, and libraries] (ファイル、フォルダー、およびライブラリ)** を選択します。 |

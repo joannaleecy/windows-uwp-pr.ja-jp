@@ -5,12 +5,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
-ms.openlocfilehash: b12816166aa99311b9adffded176c4d808f2c677
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c3ed5a76791bebfb1b82afaf12c699bfdd7c7437
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931138"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044080"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live リソース
 
@@ -18,11 +18,11 @@ ms.locfileid: "8931138"
 
 ## <a name="api-reference"></a>API リファレンス
 
-WinRT SDK API リファレンスをご覧オンライン。
+WinRT SDK API リファレンスを参照してオンラインください。
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-C++ SDK は、現在オフラインの形式で利用可能なのみです。
+C++ SDK は、現在オフライン形式で利用可能なのみです。
 
 完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードできます。
 
@@ -52,7 +52,7 @@ Unity を使ってゲームを開発している Xbox Live クリエーターズ
 
 このパッケージには、UWP プラットフォーム用のネットワークのセキュリティ保護機能および接続ストレージ機能に関する winmd ファイルとドキュメントが含まれています。 この拡張機能では、Windows.Gaming.XboxLive.Storage 名前空間を使うことにより UWP タイトルで接続ストレージを使えるようになります。
 
-* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)
+* [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk)
 
 > [!NOTE]
 > - 開発者環境で Windows 10 Fall Creators Update SDK 以降を使っている場合、このダウンロードは必要ありません。

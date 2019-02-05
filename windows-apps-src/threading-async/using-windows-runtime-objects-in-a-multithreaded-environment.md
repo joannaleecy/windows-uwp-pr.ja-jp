@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: Windows 10, UWP, タイマー, スレッド
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e1431a6689ef9ece91cef7e2b018e24f834039
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ad0d342d773723981138619a07ea6ee37ecdc8dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937720"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044975"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>マルチスレッド環境での Windows ランタイム オブジェクトの使用
 この記事では、C# および Visual Basic コードからオブジェクト (Windows ランタイム や Windows ランタイム コンポーネントによって提供されるオブジェクト) を呼び出すとき、.NET Framework がどのようにこの呼び出しを処理するかについて説明します。
@@ -20,11 +20,11 @@ ms.locfileid: "8937720"
 
 可能であれば、Windows ランタイム などの他のソースからのオブジェクトは共通言語ランタイム (CLR) によって処理されます。この場合、これらのオブジェクトは、.NET Framework オブジェクトであるかのように扱われます。
 
-- オブジェクトによって [IAgileObject](http://msdn.microsoft.com/library/Hh802476.aspx) インターフェイスが実装されるか、オブジェクトの [MarshalingBehaviorAttribute](http://go.microsoft.com/fwlink/p/?LinkId=256022) 属性の値が [MarshalingType.Agile](http://go.microsoft.com/fwlink/p/?LinkId=256023) である場合、CLR はこのオブジェクトをアジャイルとして処理します。
+- オブジェクトによって [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) インターフェイスが実装されるか、オブジェクトの [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 属性の値が [MarshalingType.Agile](https://go.microsoft.com/fwlink/p/?LinkId=256023) である場合、CLR はこのオブジェクトをアジャイルとして処理します。
 
 - ターゲット オブジェクトのスレッド コンテキストに対して行われるスレッドからの呼び出しを CLR がマーシャリングできる場合、それは透過的に行われます。
 
-- オブジェクトの [MarshalingBehaviorAttribute](http://go.microsoft.com/fwlink/p/?LinkId=256022) 属性の値が [MarshalingType.None](http://go.microsoft.com/fwlink/p/?LinkId=256023) である場合、このクラスはマーシャリング情報を提供しません。 CLR は呼び出しをマーシャリングできないため、オブジェクトを使用できるのはそのオブジェクトが作成されたスレッド コンテキスト内のみであることを示すメッセージと共に [InvalidCastException](/dotnet/api/system.invalidcastexception) 例外をスローします。
+- オブジェクトの [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 属性の値が [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023) である場合、このクラスはマーシャリング情報を提供しません。 CLR は呼び出しをマーシャリングできないため、オブジェクトを使用できるのはそのオブジェクトが作成されたスレッド コンテキスト内のみであることを示すメッセージと共に [InvalidCastException](/dotnet/api/system.invalidcastexception) 例外をスローします。
 
 以下のセクションでは、こうした動作がさまざまなソースからのオブジェクトに対してどのような影響を与えるかについて説明します。
 
@@ -34,10 +34,10 @@ ms.locfileid: "8937720"
 > [!NOTE]
 >  アジャイルであるからといって、スレッド セーフでもあるというわけではありません。 Windows ランタイム および .NET Framework のどちらの場合も、ほとんどのクラスはスレッド セーフではありません。これは、スレッド セーフはパフォーマンス コストを伴うためです。また、ほとんどのオブジェクトは、複数のスレッドによってアクセスされることはありません。 必要な場合にのみ、個々のオブジェクトへのアクセスを同期する (またはスレッド セーフなクラスを使用する) ことがより効率的な方法です。
 
-Windows ランタイム コンポーネントを作成する場合、既定値をオーバーライドができます。 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) インターフェイスと [IAgileObject](http://msdn.microsoft.com/library/Hh802476.aspx) インターフェイスをご覧ください。
+Windows ランタイム コンポーネントを作成する場合、既定値をオーバーライドができます。 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) インターフェイスと [IAgileObject](https://msdn.microsoft.com/library/Hh802476.aspx) インターフェイスをご覧ください。
 
 ## <a name="objects-from-the-windows-runtime"></a>Windows ランタイム からのオブジェクト
-Windows ランタイム のほとんどのクラスはアジャイルであり、CLR はこれらをアジャイルとして処理します。 これらのクラスに関するドキュメントでは、クラスの属性として "MarshalingBehaviorAttribute(Agile)" が示されています。 ただし、これらのアジャイル クラスの一部に属するメンバー (XAML コントロールなど) は、UI スレッド上で呼び出されない場合、例外をスローします。 たとえば、次のコードでは、バック グラウンド スレッドを使用して、クリックされたボタンのプロパティを設定しようとします。 ボタンの [Content](http://go.microsoft.com/fwlink/p/?LinkId=256025) プロパティは例外をスローします。
+Windows ランタイム のほとんどのクラスはアジャイルであり、CLR はこれらをアジャイルとして処理します。 これらのクラスに関するドキュメントでは、クラスの属性として "MarshalingBehaviorAttribute(Agile)" が示されています。 ただし、これらのアジャイル クラスの一部に属するメンバー (XAML コントロールなど) は、UI スレッド上で呼び出されない場合、例外をスローします。 たとえば、次のコードでは、バック グラウンド スレッドを使用して、クリックされたボタンのプロパティを設定しようとします。 ボタンの [Content](https://go.microsoft.com/fwlink/p/?LinkId=256025) プロパティは例外をスローします。
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ Private Async Sub Button_Click_2(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-ボタンの [Dispatcher](http://go.microsoft.com/fwlink/p/?LinkId=256026) プロパティ、または UI スレッドのコンテキスト (ボタンがあるページなど) に存在する任意のオブジェクトの `Dispatcher` プロパティを使用すれば、ボタンに安全にアクセスすることができます。 次のコードでは、[CoreDispatcher](http://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトの [RunAsync](http://go.microsoft.com/fwlink/p/?LinkId=256030) メソッドを使用して、UI スレッドに呼び出しをディスパッチします。
+ボタンの [Dispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256026) プロパティ、または UI スレッドのコンテキスト (ボタンがあるページなど) に存在する任意のオブジェクトの `Dispatcher` プロパティを使用すれば、ボタンに安全にアクセスすることができます。 次のコードでは、[CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトの [RunAsync](https://go.microsoft.com/fwlink/p/?LinkId=256030) メソッドを使用して、UI スレッドに呼び出しをディスパッチします。
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -92,9 +92,9 @@ UI スレッドで作成された Windows ランタイム オブジェクトの�
 XAML コントロールを継承したり、XAML コントロールのセットを作成したりすることによって、独自のコントロールを作成する場合、作成したコントロールは .NET Framework オブジェクトであるため、アジャイルになります。 ただし、そのコントロールの基底クラスまたは構成要素であるクラスのメンバーを呼び出す場合や、継承されたメンバーを呼び出す場合は、それらのメンバーは UI スレッド以外のいずれかのスレッドから呼び出されると、例外をスローします。
 
 ### <a name="classes-that-cant-be-marshaled"></a>マーシャリングできないクラス
-マーシャリング情報が提供されない Windows ランタイム クラスには、値が [MarshalingType.None](http://go.microsoft.com/fwlink/p/?LinkId=256023) である [MarshalingBehaviorAttribute](http://go.microsoft.com/fwlink/p/?LinkId=256022) 属性が含まれます。 このようなクラスに関するドキュメントでは、クラスの属性として "MarshalingBehaviorAttribute(None)" が示されています。
+マーシャリング情報が提供されない Windows ランタイム クラスには、値が [MarshalingType.None](https://go.microsoft.com/fwlink/p/?LinkId=256023) である [MarshalingBehaviorAttribute](https://go.microsoft.com/fwlink/p/?LinkId=256022) 属性が含まれます。 このようなクラスに関するドキュメントでは、クラスの属性として "MarshalingBehaviorAttribute(None)" が示されています。
 
-次のコードでは、UI スレッドに [CameraCaptureUI](http://go.microsoft.com/fwlink/p/?LinkId=256027) オブジェクトを作成して、スレッド プールのスレッドからオブジェクトのプロパティを設定しようとします。 CLR は呼び出しをマーシャリングできないため、オブジェクトを使用できるのはそのオブジェクトが作成されたスレッド コンテキスト内のみであることを示すメッセージと共に [System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外をスローします。
+次のコードでは、UI スレッドに [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) オブジェクトを作成して、スレッド プールのスレッドからオブジェクトのプロパティを設定しようとします。 CLR は呼び出しをマーシャリングできないため、オブジェクトを使用できるのはそのオブジェクトが作成されたスレッド コンテキスト内のみであることを示すメッセージと共に [System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外をスローします。
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -122,9 +122,9 @@ Private Async Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-[CameraCaptureUI](http://go.microsoft.com/fwlink/p/?LinkId=256027) に関するドキュメントでは、クラスの属性として "ThreadingAttribute(STA)" も示されています。これは、このクラスのオブジェクトが UI スレッドなどシングル スレッドのコンテキストで作成される必要があるためです。
+[CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) に関するドキュメントでは、クラスの属性として "ThreadingAttribute(STA)" も示されています。これは、このクラスのオブジェクトが UI スレッドなどシングル スレッドのコンテキストで作成される必要があるためです。
 
-別のスレッドから [CameraCaptureUI](http://go.microsoft.com/fwlink/p/?LinkId=256027) オブジェクトにアクセスする場合、UI スレッドの [CoreDispatcher](http://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトをキャッシュしておき、後でこのオブジェクト使用して、その別のスレッドに呼び出しをディスパッチすることができます。 または、次のコードに示すように、ページなどの XAML オブジェクトからディスパッチャーを取得することもできます。
+別のスレッドから [CameraCaptureUI](https://go.microsoft.com/fwlink/p/?LinkId=256027) オブジェクトにアクセスする場合、UI スレッドの [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトをキャッシュしておき、後でこのオブジェクト使用して、その別のスレッドに呼び出しをディスパッチすることができます。 または、次のコードに示すように、ページなどの XAML オブジェクトからディスパッチャーを取得することもできます。
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -158,7 +158,7 @@ End Sub
 ## <a name="objects-from-a-windows-runtime-component-that-is-written-in-c"></a>C++ で記述された Windows ランタイム コンポーネントからのオブジェクト
 既定では、アクティブ化できるコンポーネントのクラスはアジャイルです。 ただし、C++ ではスレッド モデルやマーシャリングの動作に対して非常に多数の制御を実行することができます。 この記事で既に説明したように、CLR はアジャイル クラスを認識し、クラスがアジャイルでない場合は呼び出しをマーシャリングしようとします。また、クラスにマーシャリング情報がない場合は、[System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外をスローします。
 
-UI スレッドで実行され、UI スレッド以外のスレッドから呼び出された場合に例外をスローするオブジェクトでは、UI スレッドの [CoreDispatcher](http://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトを使用して呼び出しをディスパッチできます。
+UI スレッドで実行され、UI スレッド以外のスレッドから呼び出された場合に例外をスローするオブジェクトでは、UI スレッドの [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトを使用して呼び出しをディスパッチできます。
 
 ## <a name="see-also"></a>関連項目
 [C# ガイド](/dotnet/articles/csharp/)

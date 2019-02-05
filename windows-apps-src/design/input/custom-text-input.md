@@ -8,12 +8,12 @@ keywords: キーボード, テキスト, 基本的なテキスト, カスタム 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 161278dc5fe0bb8c7d4c790def6a9f7ba88b83d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfb2a5203d2a8e5c497fa427c6a2a7ed5fe2302d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946578"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046182"
 ---
 # <a name="custom-text-input"></a>カスタム テキスト入力
 
@@ -156,6 +156,6 @@ ms.locfileid: "8946578"
 **サンプル**
 * [カスタム編集コントロールのサンプル](https://go.microsoft.com/fwlink/?linkid=831024)
 **サンプルのアーカイブ**
-* [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML テキスト編集のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?LinkID=251417)
 
 

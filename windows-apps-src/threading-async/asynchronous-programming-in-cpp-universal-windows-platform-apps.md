@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10、UWP、スレッド、非同期、C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920511"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045966"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX での非同期プログラミング
 > [!NOTE]
@@ -289,7 +289,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## <a name="related-topics"></a>関連トピック
 * [UWP アプリ用に C++/CX で非同期操作を作成](https://msdn.microsoft.com/library/hh750082)
-* [Visual C++ 言語のリファレンス](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Visual C++ 言語のリファレンス](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [非同期プログラミング][AsyncProgramming]
 * [タスクの並列処理 (同時実行ランタイム)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

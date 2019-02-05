@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 79b1889167f3c13aea78c31ec189cfeb7a6f17bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bf89810f67e16bcfabfc80de48d2dee82c9e0f92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925687"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048925"
 ---
 # <a name="toast-content-schema"></a>トーストのコンテンツのスキーマ
 
@@ -84,7 +84,7 @@ ToastContent は、視覚効果、アクション、オーディオなどの通�
 | **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | トースト通知の下部に表示される属性のテキストです (省略可能)。 |
 | **BaseUri** | Uri | false | 画像ソースの属性において相対 URL と組み合わされる、既定のベース URL です。 |
 | **AddImageQuery** | bool? | false | true に設定すると、トースト通知で指定された画像 URL に Windows がクエリ文字列を追加できるようになります。 この属性は、サーバーが画像をホストしていてクエリ文字列を処理できる場合に使用します。サーバーがこのために、クエリ文字列に基づいて画像の変化形を取得しているか、またはクエリ文字列を無視して使わずに指定の画像を返しているかどうかは問いません。 このクエリ文字列は、スケール、コントラスト設定、および言語を指定するものです。たとえば、通知で指定されている値 "www.website.com/images/hello.png" は "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" になります。 |
-| **Language**| string | false | ローカライズされたリソースを使用する際の視覚的なペイロードの対象ロケールです。"en-US" や "fr-FR" のように BCP-47 言語タグとして指定されます。 このロケールは、バインディングかテキストで指定されるあらゆるロケールによって上書きされます。 未指定の場合は、システム ロケールが代わりに使用されます。 |
+| **言語**| string | false | ローカライズされたリソースを使用する際の視覚的なペイロードの対象ロケールです。"en-US" や "fr-FR" のように BCP-47 言語タグとして指定されます。 このロケールは、バインディングかテキストで指定されるあらゆるロケールによって上書きされます。 未指定の場合は、システム ロケールが代わりに使用されます。 |
 
 
 ## <a name="itoastbindinggenericchild"></a>IToastBindingGenericChild
@@ -123,7 +123,7 @@ ToastContent は、視覚効果、アクション、オーディオなどの通�
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
 テキスト スタイルは、フォント サイズ、太さ、および不透明度を制御します。 "Subtle" の不透明度は 60% の不透明度になります。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 スタイルがレンダラーによって決定されます。 |
 | **Caption** | 段落のフォント サイズより小さいサイズです。 |
@@ -148,7 +148,7 @@ ToastContent は、視覚効果、アクション、オーディオなどの通�
 ### <a name="adaptivetextalign"></a>AdaptiveTextAlign
 テキストの水平方向の配置を制御します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 配置がレンダラーによって自動的に決定されます。 |
 | **Auto** | 配置が現在の言語とカルチャによって決定されます。 |
@@ -183,7 +183,7 @@ ToastContent は、視覚効果、アクション、オーディオなどの通�
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
 画像の水平方向の配置を指定します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 配置の動作がレンダラーによって決定されます。 |
 | **Stretch** | 利用可能な幅いっぱいに画像が拡大されます (また同時に、画像が配置される位置に応じて、利用可能な高さいっぱいに拡大されることもあります)。 |
@@ -272,7 +272,7 @@ Creators Update の新機能: 進行状況バーです。 デスクトップ版�
 ### <a name="toastgenericapplogocrop"></a>ToastGenericAppLogoCrop
 アプリ ロゴの画像のトリミングを制御します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | トリミングがレンダラーの既定の動作を使用します。 |
 | **None** | 画像がトリミングされず、正方形で表示されます。 |
@@ -349,7 +349,7 @@ Creators Update の新機能: 進行状況バーです。 デスクトップ版�
 | プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Id** | string | true | この Id は必須です。 ユーザーがこの項目を選択すると、この Id がアプリのコードに戻されて、ユーザーが選択したものを表します。 |
-| **Content** | string | true | Content は必須です。選択項目に表示される文字列です。 |
+| **コンテンツ** | string | true | Content は必須です。選択項目に表示される文字列です。 |
 
 
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
@@ -381,7 +381,7 @@ Creators Update の新機能: 進行状況バーです。 デスクトップ版�
 | プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Content** | string | true | 必須です。 ボタンに表示されるテキストです。 |
-| **Arguments** | string | true | 必須です。 ユーザーがこのボタンをクリックした場合にアプリが後から受け取る、アプリで定義された引数の文字列です。 |
+| **Arguments** | string | true | 必須。 ユーザーがこのボタンをクリックした場合にアプリが後から受け取る、アプリで定義された引数の文字列です。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | ユーザーがクリックしたときにこのボタンが使用するアクティブ化の種類を制御します。 既定では Foreground に設定されます。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Creators Update の新機能: トースト通知のボタンのアクティブ化に関する追加オプションを取得または設定します。 |
 
@@ -389,7 +389,7 @@ Creators Update の新機能: 進行状況バーです。 デスクトップ版�
 ### <a name="toastactivationtype"></a>ToastActivationType
 ユーザーが特定の操作を行った際に使用されるアクティブ化の種類を決定します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Foreground** | 既定値です。 フォアグラウンド アプリが起動します。 |
 | **Background** | (すべての設定が完了したと想定して) 対応するバックグラウンド タスクがトリガーされ、ユーザーの作業を中断することなくバックグラウンドでコードを実行できます (ユーザーのクイック返信メッセージの送信など)。 |
@@ -449,7 +449,7 @@ Creators Update の新機能: アクティブ化に関する追加オプショ�
 
 | プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
-| **Content** | string | true | 必須です。 表示するテキストです。 |
+| **Content** | string | true | 必須。 表示するテキストです。 |
 | **Arguments** | string | true | 必須です。 アプリで定義された引数の文字列です。ユーザーがメニュー項目をクリックしたときにアクティブ化されたら、アプリが後から取得することが可能になります。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | ユーザーがクリックしたときにこのメニュー項目が使用するアクティブ化の種類を制御します。 既定では Foreground に設定されます。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Creators Update の新機能: トーストのコンテキスト メニュー項目のアクティブ化に関する追加オプションです。 |
@@ -479,5 +479,5 @@ Creators Update の新機能: アクション センターで複数の通知を�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Quickstart: Send a local toast and handle activation (クイックスタート: ローカル トースト通知の送信とアクティブ化の処理)](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
+* [Quickstart: Send a local toast and handle activation (クイックスタート: ローカル トースト通知の送信とアクティブ化の処理)](https://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
 * [GitHub の Notifications ライブラリ](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e03da83d4045c570490a26cb2e111d12f709ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 1897eded4d18a00a3c11cf1926adb1ebec6ae69a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037154"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044649"
 ---
 # <a name="person-picture-control"></a>ユーザー画像コントロール
 
@@ -190,4 +190,4 @@ namespace SampleApp
 ## <a name="related-articles"></a>関連記事
 
 * [連絡先とカレンダー](../../contacts-and-calendar/index.md)
-* [連絡先カードのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=624040)
+* [連絡先カードのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=624040)

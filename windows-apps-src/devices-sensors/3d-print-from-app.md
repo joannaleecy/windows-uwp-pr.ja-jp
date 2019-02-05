@@ -4,14 +4,14 @@ description: ユニバーサル Windows アプリに 3D 印刷機能を追加す
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 3dprinting、3 d 印刷
+keywords: windows 10, uwp, 3dprinting、3d 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918781"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048269"
 ---
 # <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 
@@ -65,7 +65,7 @@ UI フィードバック用に **TextBlock** を追加します。
 これで、3D データ ファイルをアプリのメモリに読み込むことができます。 ただし、3D 形状データには、さまざまな形式がありますが、すべてが 3D 印刷に効率的であるわけではありません。 Windows 10 では、すべての 3D 印刷タスクについて 3D Manufacturing Format (.3mf) というファイル形式を使います。
 
 > [!NOTE]  
-> .3mf ファイル形式には、このチュートリアルで扱っている機能以外にも多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)をご覧ください。 Windows 10 API を使ってこれらの機能を利用する方法については、「[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)」チュートリアルをご覧ください。
+> .3mf ファイル形式には、このチュートリアルで扱っている機能以外にも多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](https://3mf.io/what-is-3mf/3mf-specification/)をご覧ください。 Windows 10 API を使ってこれらの機能を利用する方法については、「[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)」チュートリアルをご覧ください。
 
 [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) アプリでは、一般的なほとんどの 3D 形式のファイルを開くことができ、それらを .3mf ファイル形式で保存することができます。 この例では、ファイルの種類が異なる場合に、簡単な解決策として、3D Builder アプリを開き、インポートしたデータを .3mf ファイルとして保存し再度読み込むようユーザーに求めます。
 

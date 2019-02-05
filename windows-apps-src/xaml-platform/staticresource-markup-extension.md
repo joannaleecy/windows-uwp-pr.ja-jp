@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4f8c723dee8e943351d268ac678c8acc77efcbf4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936347"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051135"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} マークアップ拡張
 
@@ -38,7 +38,7 @@ ms.locfileid: "8936347"
 
 **StaticResource** がリソース ディクショナリの項目に解決される規則は、このトピックでは説明していません。 そのような規則は、参照とリソースがいずれもテンプレートに存在するかどうかや、マージされたリソース ディクショナリを使うかどうかなどによって異なります。 リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-**重要な** **StaticResource**が定義されているリソースへの前方参照を行うをしようとする必要があります、XAML ファイルの中で辞書します。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
+**重要な** **StaticResource**が定義されているリソースへの前方参照をしようとする必要があります、XAML ファイル内で辞書的にします。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
 
 解決できないキーに **StaticResource** を指定しようとすると、実行時に XAML の解析で例外が発生します。 デザイン ツールでも、警告やエラーが通知されることがあります。
 
@@ -50,7 +50,7 @@ Windows ランタイム XAML プロセッサの実装では、**StaticResource**
 
 ### <a name="an-example-staticresource-usage"></a>{StaticResource} の使用例
 
-この XAML 例は、[XAML データ バインディング サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226854)から抜粋したものです。
+この XAML 例は、[XAML データ バインディング サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=226854)から抜粋したものです。
 
 ```xml
 <StackPanel Margin="5">

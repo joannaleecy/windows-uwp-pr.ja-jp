@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9544c1eecc4c1a86552d053694872743a17142c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926225"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049289"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>はじめに: プログラミング言語の選択
 
@@ -31,7 +31,7 @@ C++、C#、Microsoft Visual Basic、JavaScript を使って開発できます。
 **注:** 3D グラフィックスを使用するアプリの場合、OpenGL 規格と OpenGL ES 規格は UWP アプリのネイティブで利用できません。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
 -   [Angle](https://code.google.com/p/angleproject/)
 -   [DirectX を使った初めての UWP アプリを作成します。](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [DirectX を使った UWP アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [DirectX を使った UWP アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK の場所](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>C# を試してみる
@@ -39,8 +39,8 @@ C++、C#、Microsoft Visual Basic、JavaScript を使って開発できます。
 iOS 開発者は、Objective-C と Swift を日常的に使っています。 両方に最も近い Microsoft プログラミング言語は C# です。 ほとんどの開発者とほとんどのアプリにおいて、最も簡単かつ短期間に学習して使用できる言語は C# と考えられます。そこで、この記事の情報とチュートリアルでは、この言語を中心に取り上げています。 C# について詳しくは、次のトピックをご覧ください。
 
 -   [C# または Visual Basic を使った初めての UWP アプリを作成します。](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [C# を使用する UWP アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#]](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [C# を使用する UWP アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#]](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 次に示すのは、Objective-C と C# で書かれたクラスです。 最初に Objective-C バージョンを示し、その後に C# バージョンを示します。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ddeee438e946dd28a78d59d163f59cb1114aa65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929422"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046036"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Windows ランタイム 8.x の XAML と UI の UWP への移植
 
@@ -30,7 +30,7 @@ ms.locfileid: "8929422"
 
 ## <a name="back-button-handling"></a>"戻る" ボタンの処理
 
-ユニバーサル 8.1 アプリ、Windows ランタイム 8.x アプリおよび Windows Phone ストア アプリには、UI を表示すると、戻るボタンで処理するイベントのさまざまなアプローチがあります。 ただし、windows 10 アプリの場合、アプリで 1 つのアプローチを使用することができます。 モバイル デバイスでは、このボタンはデバイス上の静電容量式のボタンまたはシェル内のボタンとして提供されます。 デスクトップ デバイスでは、アプリ内で戻るナビゲーションが可能な場合には常にアプリのクロムにボタンを追加します。このボタンは、ウィンドウ表示されたアプリのタイトル バーまたはタブレット モードのタスク バーに表示されます。 "戻る" ボタンのイベントはすべてのデバイス ファミリに共通するユニバーサルな概念であり、ハードウェアまたはソフトウェアに実装されるボタンは同じ [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントを発生させます。
+ユニバーサル 8.1 アプリ、Windows ランタイム 8.x アプリおよび Windows Phone ストア アプリには、UI を表示して、戻るボタンで処理するイベントを別のアプローチがあります。 ただし、windows 10 アプリの場合、アプリで 1 つのアプローチを使用することができます。 モバイル デバイスでは、このボタンはデバイス上の静電容量式のボタンまたはシェル内のボタンとして提供されます。 デスクトップ デバイスでは、アプリ内で戻るナビゲーションが可能な場合には常にアプリのクロムにボタンを追加します。このボタンは、ウィンドウ表示されたアプリのタイトル バーまたはタブレット モードのタスク バーに表示されます。 "戻る" ボタンのイベントはすべてのデバイス ファミリに共通するユニバーサルな概念であり、ハードウェアまたはソフトウェアに実装されるボタンは同じ [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントを発生させます。
 
 次の例は、すべてのデバイス ファミリで動作し、同じ処理をすべてのページに適用する場合や、ナビゲーションを確認する必要がない場合 (保存していない変更に関する警告を表示する場合など) に適しています。
 
@@ -82,7 +82,7 @@ ms.locfileid: "8929422"
 
 ## <a name="charms"></a>チャーム
 
-、チャームと統合されるコードのいずれかを変更する必要はありませんが、はいくつかの UI をアプリには、windows 10 シェルの一部では、チャーム バーの場所を追加する必要があります。 Windows 10 で実行されているユニバーサル 8.1 アプリには、独自の代替 UI がアプリのタイトル バーのシステムでレンダリングしたクロムによって提供されます。
+、チャームと統合されるコードのいずれかを変更する必要はありませんが、はアプリには、windows 10 シェルの一部では、チャーム バーの配置をいくつかの UI を追加する必要があります。 Windows 10 で実行されているユニバーサル 8.1 アプリには、独自の代替 UI がアプリのタイトル バーのシステムでレンダリングしたクロムによって提供されます。
 
 ## <a name="controls-and-control-styles-and-templates"></a>コントロールとコントロール スタイルおよびテンプレート
 
@@ -96,33 +96,33 @@ ms.locfileid: "8929422"
 | コントロール名 | 変更点 |
 |--------------|--------|
 | **AppBar**   | (代わりに[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927)に推奨)、 **AppBar**コントロールを使用している場合は、既定では、windows 10 アプリで非はありません。 これを制御するには、[**AppBar.ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/dn633872) プロパティを使います。 |
-| **AppBar**、[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows 10 アプリでは、 **AppBar**と[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) **よりを参照してください**] ボタン (省略記号) があります。 |
-| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows ランタイム 8.x アプリでは、 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927)のセカンダリ コマンドは、常に表示されます。 Windows Phone ストア アプリでは、windows 10 アプリで、コマンド バーが開くまで表示されません。 |
+| **AppBar**、[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows 10 アプリで**AppBar**と[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) **詳細を参照**ボタン (省略記号) があります。 |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows ランタイム 8.x アプリでは、 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927)のセカンダリ コマンドは、常に表示されます。 Windows Phone ストア アプリと windows 10 アプリで、コマンド バーが開くまで表示されません。 |
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows Phone ストア アプリでは、[**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) の値は、バーの簡易非表示の動作に影響しません。 Windows 10 は、アプリ、 **IsSticky**が true の場合、その**CommandBar**に設定されている場合は、簡易ジェスチャを無視します。 |
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Windows 10 アプリでは、 [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927)は[**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622)も[**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)イベントを処理しません。 タップまたはスワイプにも応答しません。 ただし、これらのイベントを処理し、[**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939) を設定するオプションがあります。 |
-| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) や [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) に加えられた視覚的な変化によってアプリの外観がどうなるかを確認してください。 モバイル デバイスで実行されている windows 10 アプリでこれらのコントロールはしなくなったの選択] ページに移動しますが、光閉じることができるポップアップを代わりに使用します。 |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) や [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) に加えられた視覚的な変化によってアプリの外観がどうなるかを確認してください。 モバイル デバイスで実行されている windows 10 アプリでこれらのコントロールは不要になったの選択] ページに移動しますが、代わりの簡易ポップアップを使用します。 |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Windows 10 アプリで随時アウト内[**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)または[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280)に配置することはできません。ポップアップ型のコントロールに表示されるこれらのコントロールを設定する場合は、 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013)と[**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)を使用できます。 |
 | **GridView**、**ListView** | **GridView**/**ListView** については、「[GridView と ListView の変更](#gridview-and-listview-changes)」をご覧ください。 |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Windows Phone ストア アプリでは、[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) コントロールは最後のセクションから最初のセクションに折り返します。 Windows ランタイム 8.x アプリでは、および windows 10 アプリでは、ハブ セクションは折り返されずします。 |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Windows Phone ストア アプリでは、[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) コントロールの背景画像は、ハブ セクションに対する視差効果で移動します。 Windows ランタイム 8.x アプリでは、および windows 10 アプリでは、視差効果は使われません。 |
-| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | ユニバーサル 8.1 アプリでは、[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) プロパティにより、セクション ヘッダーとその横に表示される山形のグリフが対話型になります。 Windows 10 アプリでは、ヘッダーの横にある対話型「詳細表示」アフォー ダンスがあるが、ヘッダーそのものは対話型ではありません。 **IsHeaderInteractive** により、操作で [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) イベントが発生するかどうかが決まります。 |
-| **MessageDialog** | **MessageDialog** を使っている場合は、柔軟性が向上した [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) の利用を検討してください。 [XAML UI の基本](http://go.microsoft.com/fwlink/p/?linkid=619992) のサンプルに関するページもご覧ください。 |
+| [**ハブ**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Windows Phone ストア アプリでは、[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) コントロールの背景画像は、ハブ セクションに対する視差効果で移動します。 Windows ランタイム 8.x アプリでは、および windows 10 アプリでは、視差効果は使われません。 |
+| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | ユニバーサル 8.1 アプリでは、[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) プロパティにより、セクション ヘッダーとその横に表示される山形のグリフが対話型になります。 Windows 10 アプリで、ヘッダーの横にある対話型「詳細表示」アフォー ダンスがあるが、ヘッダーそのものは対話型ではありません。 **IsHeaderInteractive** により、操作で [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) イベントが発生するかどうかが決まります。 |
+| **MessageDialog** | **MessageDialog** を使っている場合は、柔軟性が向上した [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) の利用を検討してください。 [XAML UI の基本](https://go.microsoft.com/fwlink/p/?linkid=619992) のサンプルに関するページもご覧ください。 |
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout**と**PickerFlyout**が windows 10 アプリの推奨されなくなりました。 単一選択ポップアップの場合は、[**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030) を使います。より複雑なエクスペリエンスの場合は、[**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496) を使います。 |
-| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579)プロパティは、windows 10 アプリで推奨されなくなりました、設定しても効果がありません。 **プレビュー** (、視線のグリフを表示するような Windows ランタイム 8.x アプリで) の既定値を代わりに、 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867)を使用します。 「[パスワード ボックスのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596103)」もご覧ください。 |
+| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579)プロパティは、windows 10 アプリで非推奨し、設定して効果はありません。 **プレビュー** (ボタンを表示するような Windows ランタイム 8.x アプリで) の既定値を代わりに、 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867)を使用します。 「[パスワード ボックスのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596103)」もご覧ください。 |
 | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) はユニバーサル コントロールとなり、モバイル デバイスでの利用のみに限定されていた制限が排除されました。 |
 | [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | ユニバーサル デバイス ファミリでは [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) が実装されていますが、モバイル デバイスでは部分的に機能しません。 「[AutoSuggestBox に使用されない SearchBox](#searchbox-deprecated-in-favor-of-autosuggestbox)」をご覧ください。 |
 | **SemanticZoom** | **SemanticZoom** については、「[SemanticZoom に関する変更](#semanticzoom-changes)」をご覧ください。 |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の既定のプロパティの一部が変更されています。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) が **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) が **Auto**、[**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) が **Disabled** です。 新しい既定値がアプリに対して適切でない場合は、スタイルで変更するか、コントロール自体のローカル値として変更できます。  |
-| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | Windows ランタイム 8.x アプリでスペル チェックは既定でオフ[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)にします。 Windows Phone ストア アプリ、および windows 10 アプリでは、これは既定でオンです。 |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | Windows ランタイム 8.x アプリでは、スペル チェックは既定でオフ[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)にします。 Windows Phone ストア アプリ、および windows 10 アプリでは、これは既定でオンです。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の既定のフォント サイズは 11 から 15 に変更されました。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) の既定値は、**Default** から **DetectFromContent** に変更されました。 これが望ましくない場合は、**UseFlowDirection** を使ってください。 **Default** は使われなくなりました。 |
-| Various | アクセント カラーは、Windows Phone ストア アプリ、および windows 10 アプリが Windows ランタイム 8.x アプリに適用されます。  |
+| Various | Windows 10 アプリと Windows ランタイム 8.x アプリにありませんが、Windows Phone ストア アプリのアクセント カラーが適用されます。  |
 
 UWP アプリのコントロールについて詳しくは、「[機能別コントロール](https://msdn.microsoft.com/library/windows/apps/mt185405)」、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」、「[コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 でのデザイン言語
 
-ユニバーサル 8.1 アプリと windows 10 アプリの間でデザイン言語では重要な違いがあります。 詳しくは、「[Design](http://dev.windows.com/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
+ユニバーサル 8.1 アプリと windows 10 アプリの間でデザイン言語に小さなが重要な違いがあります。 詳しくは、「[Design](https://dev.windows.com/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有効ピクセル、視聴距離、スケール ファクター
 
@@ -140,7 +140,7 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 
 すべてのスケール ファクターをサポートするためにしようとしたが、windows 10 アプリ用のスケール ファクターの完全な一覧が 100%、125%、150%、200%、250%、300%、400% お勧めしません。 すべてのスケール ファクターのアセットを提供した場合、ストアでは、各デバイスに合った適切なサイズのアセットが選ばれ、それらのアセットのみがダウンロードされます。 ストアでは、デバイスの DPI に基づいて、ダウンロードするアセットが選ばれます。 140% と 220% などのスケール ファクターで Windows ランタイム 8.x アプリからのアセットを再利用できますが、新しいスケール ファクターのいずれかで、アプリが実行され、ため、一部のビットマップ スケーリング回避できなくなります。 状況に合った最適な結果を得ることができるかどうかを確認するために、さまざまなデバイスでアプリをテストしてください。
 
-可能性があります再使用している Windows ランタイム 8.x のアプリから XAML マークアップ リテラルの寸法値がマークアップ (図形のサイズまたはその他の要素、文字体裁の) で使われています。 場合によっては、大きなスケール ファクターは、ユニバーサル 8.1 アプリ使用よりも windows 10 アプリ用のデバイスでされ (たとえば、150% を使用場所比べ、および 180% の位置が 200% を使用)。 そのため、これらのリテラル値が windows 10 には大きすぎるいる場合は、試してみるに 0.8 を乗算すること。 詳しくは、「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
+可能性があります再使用している Windows ランタイム 8.x アプリから XAML マークアップ リテラルの寸法値がマークアップ (図形のサイズまたはその他の要素、文字体裁の) で使われています。 場合によっては、大きなスケール ファクターはユニバーサル 8.1 アプリの使用よりも、windows 10 アプリ用のデバイスでは (たとえば、150% が使用場所比べ、および場所が 180%、200% が使用される)。 そのため、これらのリテラル値が windows 10 には大きすぎるいる場合は、試してみるに 0.8 を乗算すること。 詳しくは、「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
 
 ## <a name="gridview-and-listview-changes"></a>GridView と ListView の変更
 
@@ -154,13 +154,13 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 
 最後の変更 (**Orientation** に対する変更) は矛盾していると考えられますが、ここでは折り返しグリッドについて説明していることに注意してください。 横方向の折り返しグリッド (新しい値) は、テキストが横方向に表示され、ページの終端で次の行に改行される書記体系と類似しています。 そのようなテキストのページでは、縦方向にスクロールします。 これに対して、縦方向の折り返しグリッド (以前の値) は、テキストが縦方向に表示される書記体系と類似しています。このため、横方向にスクロールします。
 
-ここでは、 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の側面と[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)を持つ変更または windows 10 でサポートされていません。
+ここでは、 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の側面と[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)を持つを変更または windows 10 でサポートされていません。
 
 -   [**IsSwipeEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702518)プロパティ (Windows ランタイム 8.x アプリのみ) windows 10 アプリでサポートされていません。 API は存在しますが、API を設定しても効果はありません。 これまでのすべての選択ジェスチャがサポートされていますが、下方向へのスワイプと右クリックはサポートされていません。これは、下方向へのスワイプではデータが検出不可能と示されるためです。また、右クリックはコンテキスト メニューの表示用に予約されているためです。
 -   [**ReorderMode**](https://msdn.microsoft.com/library/windows/apps/dn625099)プロパティ (Windows Phone ストア アプリのみ) windows 10 アプリでサポートされていません。 API は存在しますが、API を設定しても効果はありません。 代わりに、**GridView** や **ListView** に対して [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/br208912) と [**CanReorderItems**](https://msdn.microsoft.com/library/windows/apps/br242882) を true に設定することで、ユーザーは、長押し (またはクリックしてドラッグ) のジェスチャを使って順序を変更することができます。
--   Windows 10 を開発する場合は、 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)と[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の両方[**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn279298)ではなく、項目コンテナーのスタイルで[**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn298500)を使用します。 アイテム コンテナーの既定のスタイルをコピーして編集する場合は、適切な種類のスタイルを取得できます。
+-   Windows 10 を開発する場合は、 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)と[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)の両方[**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn279298)ではなく、項目コンテナーのスタイル[**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn298500)を使用します。 アイテム コンテナーの既定のスタイルをコピーして編集する場合は、適切な種類のスタイルを取得できます。
 -   Windows 10 アプリ選択ビジュアルが変更されました。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/br242915) を **Multiple** に設定すると、既定では、各項目に対してチェック ボックスが表示されます。 **ListView** 項目の既定の設定では、チェック ボックスが項目の横にインラインで配置されます。その結果、他の項目が占める領域が若干小さくなり、移動されます。 **GridView** 項目の場合、既定では、チェック ボックスが項目の上部に重なって表示されます。 ただしどちらの場合も、チェック ボックスのレイアウト (インラインまたはオーバーレイ) を制御できます ([**CheckMode**](https://msdn.microsoft.com/library/windows/apps/dn913923) プロパティを使う)。また、アイテム コンテナーのスタイル内にある [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) 要素上にチェック ボックスをすべて表示するかどうかを制御することもできます ([**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298541) プロパティを使う)。次に例を示します。
--   、Windows 10 では、項目ごとに 2 回[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914)イベントを発生 UI の仮想化中に: 1 回、回収と 1 回、再利用します。 [**InRecycleQueue**](https://msdn.microsoft.com/library/windows/apps/dn279443) の値が **true** で、特別な回収操作がない場合、同じ項目が再利用されるとき (**InRecycleQueue** が **false** になる場合) には再入力されることが確実であれば、すぐにイベント ハンドラーを終了することができます。
+-   Windows 10 では、項目ごとに 2 回[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914)イベントを発生 UI の仮想化中に: 1 回は回収のため、1 回の再利用します。 [**InRecycleQueue**](https://msdn.microsoft.com/library/windows/apps/dn279443) の値が **true** で、特別な回収操作がない場合、同じ項目が再利用されるとき (**InRecycleQueue** が **false** になる場合) には再入力されることが確実であれば、すぐにイベント ハンドラーを終了することができます。
 
 ```xml
 <Style x:Key="CustomItemContainerStyle" TargetType="ListViewItem|GridViewItem">
@@ -182,15 +182,15 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 
 重ねて表示されるチェック ボックスを使った ListViewItemPresenter
 
--   選択する際の下方向へのスワイプと右クリックのジェスチャがサポートされなくなったため (理由については上記のとおり)、相互作用モデルが変更されました。その結果の 1 つとして、[**ItemClick**](https://msdn.microsoft.com/library/windows/apps/br242904) イベントと [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) イベントは相互に排他的ではなくなりました。 Windows 10 アプリについては、シナリオを確認し、「選択」または「呼び出し」の相互作用モデルを採用するかどうかを決定します。 詳しくは、「[操作モードを変更する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625)」をご覧ください。
--   [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) のスタイルを指定する際に使うプロパティについて、変更がいくつかあります。 新しいプロパティは、[**CheckBoxBrush**](https://msdn.microsoft.com/library/windows/apps/dn913905)、[**PressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913931)、[**SelectedPressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913937)、[**FocusSecondaryBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn898370) です。 Windows 10 アプリで無視されるプロパティは、[**パディング**](https://msdn.microsoft.com/library/windows/apps/dn424775)( [**ContentMargin**](https://msdn.microsoft.com/library/windows/apps/dn424773)代わりに使用)、 [**CheckHintBrush**](https://msdn.microsoft.com/library/windows/apps/dn298504)、 [**CheckSelectingBrush**](https://msdn.microsoft.com/library/windows/apps/dn298506)、 [**PointerOverBackgroundMargin**](https://msdn.microsoft.com/library/windows/apps/dn424778)、 [**ReorderHintOffset**](https://msdn.microsoft.com/library/windows/apps/dn298528)、 [**SelectedBorderThickness**](https://msdn.microsoft.com/library/windows/apps/dn298533)、 [**SelectedPointerOverBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn298539)とします。
+-   選択する際の下方向へのスワイプと右クリックのジェスチャがサポートされなくなったため (理由については上記のとおり)、相互作用モデルが変更されました。その結果の 1 つとして、[**ItemClick**](https://msdn.microsoft.com/library/windows/apps/br242904) イベントと [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) イベントは相互に排他的ではなくなりました。 Windows 10 アプリのシナリオを確認し、「選択」または「呼び出し」の相互作用モデルを採用するかどうかを決定します。 詳しくは、「[操作モードを変更する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625)」をご覧ください。
+-   [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) のスタイルを指定する際に使うプロパティについて、変更がいくつかあります。 新しいプロパティは、[**CheckBoxBrush**](https://msdn.microsoft.com/library/windows/apps/dn913905)、[**PressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913931)、[**SelectedPressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913937)、[**FocusSecondaryBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn898370) です。 Windows 10 アプリで無視されるプロパティは[**パディング**](https://msdn.microsoft.com/library/windows/apps/dn424775)( [**ContentMargin**](https://msdn.microsoft.com/library/windows/apps/dn424773)代わりに使用)、 [**CheckHintBrush**](https://msdn.microsoft.com/library/windows/apps/dn298504)、 [**CheckSelectingBrush**](https://msdn.microsoft.com/library/windows/apps/dn298506)、 [**PointerOverBackgroundMargin**](https://msdn.microsoft.com/library/windows/apps/dn424778)、 [**ReorderHintOffset**](https://msdn.microsoft.com/library/windows/apps/dn298528)、 [**SelectedBorderThickness**](https://msdn.microsoft.com/library/windows/apps/dn298533)、および[**SelectedPointerOverBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn298539)します。
 
 次の表では、[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) コントロール テンプレートと [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) コントロール テンプレートでの表示状態や表示状態グループに対する変更について説明します。
 
 | 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
-|                     | Normal                  |                   | Normal              |
+|                     | 正常                  |                   | Normal              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | Pressed                 |                   | Pressed             |
 |                     | PointerOverPressed      |                   | [利用不可]       |
@@ -239,7 +239,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
 
 ## <a name="play-to"></a>リモート再生
 
-[**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025)名前空間の Api は廃止[**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) Api、windows 10 アプリの推奨されなくなりました。
+[**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025)名前空間の Api は廃止[**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) Api の windows 10 アプリの推奨されなくなりました。
 
 ## <a name="resource-keys-and-textblock-style-sizes"></a>リソース キー、および TextBlock スタイル サイズ
 
@@ -247,7 +247,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
 
 それ以外の場合、リソース キーはサポートされなくなりました。 Visual Studio の XAML マークアップ エディターでは、解決できないリソース キーへの参照が強調表示されます。 たとえば XAML マークアップ エディターでは、スタイル キー `ListViewItemTextBlockStyle` への参照の下に赤い波線が引かれます。 これを修正しない場合、エミュレーターかデバイスに展開しようとしたときにアプリが直ちに終了します。 したがって、XAML マークアップの正確性に関する作業に着手することが重要です。 また、そのような問題を検出するために Visual Studio が優れたツールであることがわかります。
 
-まだサポートされているキーに関して、デザイン言語の変更は、一部のスタイルによって設定されるプロパティが変更されたことを意味します。 たとえば、 `TitleTextBlockStyle` Windows ランタイム 8.x アプリでは 14.667 と Windows Phone ストア アプリで 18.14 px に設定する**フォント サイズ**を設定します。 ただし、同じスタイル**FontSize**を windows 10 アプリで非常に大きい 24px に設定します。 デザインとレイアウトを確認し、適切なスタイルを適切な場所で使ってください。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://dev.windows.com/design)」をご覧ください。
+まだサポートされているキーに関して、デザイン言語の変更は、一部のスタイルによって設定されるプロパティが変更されたことを意味します。 たとえば、 `TitleTextBlockStyle` Windows ランタイム 8.x アプリでは 14.667 と Windows Phone ストア アプリで 18.14 px に設定する**フォント サイズ**を設定します。 同じスタイルは、windows 10 アプリで非常に大きい 24px に**FontSize**を設定します。 デザインとレイアウトを確認し、適切なスタイルを適切な場所で使ってください。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://dev.windows.com/design)」をご覧ください。
 
 サポートされなくなったキーの完全な一覧を次に示します。
 
@@ -424,7 +424,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
     </AutoSuggestBox>
 ```
 
-[AutoSuggestBox の移植のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619996)に関するページもご覧ください。
+[AutoSuggestBox の移植のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619996)に関するページもご覧ください。
 
 ## <a name="semanticzoom-changes"></a>SemanticZoom に関する変更
 
@@ -434,13 +434,13 @@ Windows Phone ストア アプリでは、画面のサイズを縮小 viewexpand
 
 Windows Phone ストア アプリでは、縮小表示ビューで背景に透明度が設定されている場合、そのビューの (Z オーダーに基づく) 背後のコンテンツが透けて表示されます。 Windows ランタイム 8.x アプリでは、および windows 10 アプリでは、何も、縮小表示ビューの背後に表示されます。
 
-Windows ランタイム 8.x アプリで (表示されていた) 場合、縮小表示ビューを閉じると、アプリが非アクティブ化され、再アクティブ化したと拡大表示ビューが代わりに表示されます。 Windows Phone ストア アプリと windows 10 アプリでは、表示されていた場合、縮小表示ビューが表示された残ります。
+Windows ランタイム 8.x アプリで、アプリが非アクティブ化され、再アクティブ化、(表示されていた) 場合、縮小表示ビューを閉じるし、拡大表示ビューが代わりに表示されます。 Windows Phone ストア アプリ、および windows 10 アプリでは、表示されていた場合、縮小表示ビューが表示された残ります。
 
 Windows Phone ストア アプリ、および windows 10 アプリでは、[戻る] ボタンが押されたとき、縮小表示ビューが閉じられます。 Windows ランタイム 8.x アプリではない組み込みの戻るボタンを処理するため、該当しません。
 
 ## <a name="settings"></a>設定
 
-Windows ランタイム 8.x の**SettingsPane**クラスでは、windows 10 の適していません。 代わりに、[設定] ページを作成し、さらに、アプリ内から [設定] ページにアクセスする方法をユーザーに提供する必要があります。 このアプリの [設定] ページはトップ レベルで表示されるようにすることをお勧めしますが、ナビゲーション ウィンドウの最後のピン留めされた項目として、ここにはオプションの完全なセットがあります。
+Windows ランタイム 8.x **SettingsPane**クラスでは、windows 10 の適していません。 代わりに、[設定] ページを作成し、さらに、アプリ内から [設定] ページにアクセスする方法をユーザーに提供する必要があります。 このアプリの [設定] ページはトップ レベルで表示されるようにすることをお勧めしますが、ナビゲーション ウィンドウの最後のピン留めされた項目として、ここにはオプションの完全なセットがあります。
 
 -   ナビゲーション ウィンドウ。 設定は選択肢のナビゲーション リストの最後の項目であり、下部にピン留めしている必要があります。
 -   アプリ バー/ツール バー (タブ ビューまたはピボット レイアウト内)。 [設定] はアプリ バーやツール バーのメニューのポップアップで最後の項目であることが必要です。 [設定] をナビゲーション内のトップレベルのいずれかの項目にすることはお勧めしません。
@@ -452,7 +452,7 @@ Windows ランタイム 8.x の**SettingsPane**クラスでは、windows 10 の�
 
 ## <a name="text"></a>テキスト
 
-テキスト (または文字体裁) は UWP アプリの重要な要素です。移植するときには、ビューの視覚的なデザインが新しいデザイン言語に適合するように、ビューの視覚的なデザインを再検討することが必要になる場合があります。 次の図を使って、ユニバーサル Windows プラットフォーム (UWP) の利用可能な  **TextBlock** システム スタイルを見つけてください。 使用して、WindowsPhone Silverlight スタイルに対応するものを見つけます。 または、独自のユニバーサル スタイルを作成でき、それらに、WindowsPhone Silverlight システム スタイルからプロパティをコピーできます。
+テキスト (または文字体裁) は UWP アプリの重要な要素です。移植するときには、ビューの視覚的なデザインが新しいデザイン言語に適合するように、ビューの視覚的なデザインを再検討することが必要になる場合があります。 次の図を使って、ユニバーサル Windows プラットフォーム (UWP) の利用可能な  **TextBlock** システム スタイルを見つけてください。 使用して、WindowsPhone Silverlight スタイルに対応するものを見つけます。 または、独自のユニバーサル スタイルを作成でき、それらに WindowsPhone Silverlight システム スタイルからプロパティをコピーできます。
 
 ![Windows 10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png) <br/>Windows 10 アプリのシステム TextBlock スタイル
 
@@ -460,7 +460,7 @@ Windows ランタイム 8.x のアプリと Windows Phone ストア アプリで
 
 Windows ランタイム 8.x のアプリと Windows Phone ストア アプリでは、テキストの既定の言語が設定、ビルドの言語または en-マイクロソフトします。 Windows 10 アプリでは、既定の言語が最上位のアプリ言語 (フォント フォールバック) に設定されます。 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066) を明示的に設定できますが、そのプロパティの値を設定しないと、フォントの優れたフォールバック動作を得ることができます。
 
-詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://go.microsoft.com/fwlink/p/?LinkID=533896)」をご覧ください。 テキスト コントロールの変更については、上記の「[コントロール](#controls-and-control-styles-and-templates)」セクションもご覧ください。
+詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://go.microsoft.com/fwlink/p/?LinkID=533896)」をご覧ください。 テキスト コントロールの変更については、上記の「[コントロール](#controls-and-control-styles-and-templates)」セクションもご覧ください。
 
 ## <a name="theme-changes"></a>テーマの変更
 

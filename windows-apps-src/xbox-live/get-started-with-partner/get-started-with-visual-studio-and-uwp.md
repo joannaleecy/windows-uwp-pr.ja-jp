@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: d27dcb1856456e7856306de7ddddc3450b98fec8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 314d5e937bb8680dc26b7dfdfa15ff90f8f26c81
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932356"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044847"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 
@@ -101,7 +101,7 @@ Windows 10 SDK 10.0.16299 以降をターゲットとした場合、追加の作
 #### <a name="windows-10-sdk-version-10015063-or-lower"></a>Windows 10 SDK バージョン 10.0.15063 以下
 接続ストレージまたはセキュア ソケットを使用する場合は、プロジェクトに参照を追加する前に、Xbox Live Platform Extensions SDK をインストールする必要があります。 そのためには、次のようにします。
 
-1. [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) をダウンロードして抽出します。
+1. [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk) をダウンロードして抽出します。
 2. 抽出されたら、使っている Windows 10 SDK バージョンに対応するインクルード MSI ファイルを実行します。
 
 Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio で参照を追加する必要があります。 そのためには、次のようにします。

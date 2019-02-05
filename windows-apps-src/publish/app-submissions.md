@@ -6,12 +6,12 @@ keywords: チェックリスト, windows, uwp, 申請, 提出, ゲーム, アプ
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944373"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044915"
 ---
 # <a name="app-submissions"></a>アプリの申請
 
@@ -21,9 +21,9 @@ ms.locfileid: "8944373"
 申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 戻るできたらいつでも作業できるように、申請を更新プログラムが保存されます。
 
 > [!NOTE]
-> アクティブな[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)は、Microsoft Store にアプリを提出するために[パートナー センター](https://partner.microsoft.com/dashboard)でが必要です。
+> アクティブな[開発者アカウント](https://go.microsoft.com/fwlink/p/?LinkId=615100)は、Microsoft Store にアプリを提出するために[パートナー センター](https://partner.microsoft.com/dashboard)でが必要です。
 
-アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横にある**更新**をクリックします。 ことも[、ストアからアプリを削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)(とし、利用できるように、後でもう一度たい場合) 行う必要がある場合。
+アプリが公開されると、パートナー センターで別の申請を作成して更新バージョンを公開することができます。 新しい申請を作成すると、新しいパッケージをアップロードするときでも、価格やカテゴリなどの情報を変更するだけのときでも、必要な変更を加えて公開することができます。 公開されたアプリの新しい申請を作成するには、その**概要**ページに表示されている前回の申請の横にある**更新**をクリックします。 こともできます[、ストアからアプリを削除](guidance-for-app-package-management.md#removing-an-app-from-the-store)する必要がある場合は (し、利用できるように、後でもう一度する場合)。
 
 > [!NOTE]
 > ドキュメントのこのセクションでは、パートナー センターでアプリの申請を作成する方法について説明します。 ここで説明する方法以外に、[Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使用してアプリ申請を自動化することもできます。
@@ -41,12 +41,12 @@ ms.locfileid: "8944373"
 | フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **市場**                   | 既定値: 対象となるすべての市場  | [価格設定と市場設定](define-pricing-and-market-selection.md)         |
-| **対象ユーザー**                | 既定値: パブリック対象ユーザー | [対象ユーザー](choose-visibility-options.md#audience) |
+| **対象者**                | 既定値: パブリック対象ユーザー | [対象ユーザー](choose-visibility-options.md#audience) |
 | **見つけやすさ**                | 既定値: この製品を Microsoft Store で提供し、検索可能にします | [見つけやすさ](choose-visibility-options.md#discoverability) |
 | **スケジュール**                  | 既定値: 最短でリリース        | [正確なリリース スケジュールの構成](configure-precise-release-scheduling.md) |
-| **基本価格**                | 必須                                    | [アプリの価格の設定とスケジュール](set-and-schedule-app-pricing.md)              |
+| **基本価格**                | 必須かどうか                                    | [アプリの価格の設定とスケジュール](set-and-schedule-app-pricing.md)              |
 | **無料試用版**                | 既定値: 無料の試用版なし                      | [無料試用版](set-app-pricing-and-availability.md#free-trial)              |
-| **セール価格**              | 省略可能                                    | [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)           |
+| **セール価格**              | オプション                                    | [アプリとアドオンの販売](put-apps-and-add-ons-on-sale.md)           |
 | **組織のライセンス**    | 既定値: このアプリの組織単位でのボリューム購入を許可する | [組織のライセンス オプション](organizational-licensing.md)        |
       |
 
@@ -60,9 +60,9 @@ ms.locfileid: "8944373"
 | **Web サイト**                   | 省略可能                                    | [Web サイト](enter-app-properties.md#website)                   |
 | **サポートの問い合わせ先情報**      | 製品が Xbox で使用可能な場合は必須。それ以外の場合は省略可能 (ただし推奨)                                   | [サポートの問い合わせ先情報](enter-app-properties.md#support-contact-info)              |
 | **ゲーム設定**             | 省略可能 (ゲームにのみ適用)         | [ゲーム設定](enter-app-properties.md#game-settings) |
-| **表示モード**             | 省略可能                   | [表示モード](enter-app-properties.md#display-mode) |
+| **表示モード**             | オプション                   | [表示モード](enter-app-properties.md#display-mode) |
 | **製品の宣言**          | 既定値: ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。Windows はこのアプリのデータを OneDrive に自動的にバックアップできます | [製品の宣言](app-declarations.md) |
-| **システム要件**      | 省略可能                                    | [システム要件](enter-app-properties.md#system-requirements)      |
+| **システム要件**      | オプション                                    | [システム要件](enter-app-properties.md#system-requirements)      |
 
 <span/>
 
@@ -91,18 +91,18 @@ ms.locfileid: "8944373"
 | フィールド名                    | コメント                                       | 詳しい情報                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **説明**               | 必須                                    | [人の心をつかむアプリの説明を書く](write-a-great-app-description.md) |
-| **今回のバージョンでの新機能**   | 省略可能                                 | [リリース ノート](create-app-store-listings.md#whats-new-in-this-version)       |
-| **アプリの機能**              | 省略可能                                    | [製品の機能](create-app-store-listings.md#product-features)         |
+| **今回のバージョンでの新機能**   | オプション                                 | [リリース ノート](create-app-store-listings.md#whats-new-in-this-version)       |
+| **アプリの機能**              | オプション                                    | [製品の機能](create-app-store-listings.md#product-features)         |
 | **スクリーンショット**               | 必須 (スクリーンショット 1 つ以上。4 つ以上を推奨)          | [スクリーンショット](app-screenshots-and-images.md#screenshots)          |
 | **Microsoft Store ロゴ**               | 推奨。一部の OS バージョンで必須 | [Microsoft Store ロゴ](app-screenshots-and-images.md#store-logos)             |
-| **トレーラー**                  | 省略可能                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
+| **トレーラー**                  | オプション                                    | [トレーラー](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)**     | 推奨        | [Windows 10 と Xbox の画像 (16:9 スーパー ヒーロー アート)
 (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 画像**     | Xbox に公開する場合に必要な適切な表示        | [Xbox 画像
 (アプリのスクリーン ショット-images.md #xbox の画像) |
 | **補足的なフィールド**  | オプション                                    | [補足的なフィールド](create-app-store-listings.md#supplemental-fields) 
-| **検索語句**              | 省略可能                                    | [検索語句](create-app-store-listings.md#search-terms)         |
-| **著作権と商標の情報** | 省略可能                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
+| **検索語句**              | オプション                                    | [検索語句](create-app-store-listings.md#search-terms)         |
+| **著作権と商標の情報** | オプション                                 | [著作権と商標の情報](create-app-store-listings.md#copyright-and-trademark-info) |
 | **追加のライセンス条項**  | 省略可能                                    | [追加のライセンス条項](create-app-store-listings.md#additional-license-terms) |
 | **Developed by (開発元)**              | 省略可能                                    | [Developed by (開発元)](create-app-store-listings.md#developed-by)                   |
 

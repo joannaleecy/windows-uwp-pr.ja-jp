@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931133"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045521"
 ---
 # <a name="keyboard-accessibility"></a>キーボードのアクセシビリティ  
 
@@ -148,7 +148,7 @@ XAML
 
 わかりやすくするために、上の例では "Ctrl + A" などの文字列に対するリソースは使っていません。 ただし、ローカライズ時にはショートカット キーについても考慮する必要があります。 ショートカット キーとして使うキーは通常、要素の表示テキスト ラベルに基づいて選ぶため、ショートカット キーをローカライズすることは適切な作業です。
 
-ショートカット キーの実装について詳しくは、Windows ユーザー エクスペリエンス インタラクション ガイドラインの[ショートカット キー](http://go.microsoft.com/fwlink/p/?linkid=221825)に関する説明をご覧ください。
+ショートカット キーの実装について詳しくは、Windows ユーザー エクスペリエンス インタラクション ガイドラインの[ショートカット キー](https://go.microsoft.com/fwlink/p/?linkid=221825)に関する説明をご覧ください。
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -249,5 +249,5 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
 * [アクセシビリティ](accessibility.md)
 * [キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [タッチ キーボードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

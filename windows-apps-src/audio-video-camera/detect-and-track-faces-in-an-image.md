@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923525"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045933"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>画像やビデオでの顔の検出
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923525"
 
 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使った顔を追跡する別の方法については、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。
 
-この記事のコードは、[基本的な顔検出](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。 これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。
+この記事のコードは、[基本的な顔検出](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。 これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。
 
 ## <a name="detect-faces-in-a-single-image"></a>1 つの画像内の顔を検出する
 
@@ -98,8 +98,8 @@ ms.locfileid: "8923525"
 ## <a name="related-topics"></a>関連トピック
 
 * [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
-* [基本的な顔検出のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本的な顔追跡のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [基本的な顔検出のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本的な顔追跡のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [カメラ](camera.md)
 * [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [メディア再生](media-playback.md)

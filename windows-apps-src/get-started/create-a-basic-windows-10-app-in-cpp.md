@@ -1,31 +1,31 @@
 ---
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 作成、Hello World アプリでは、C++/CX (windows 10)
-description: Microsoft Visual の Studio2017 を使用できます C + + CX windows 10 を実行するスマート フォンなど、windows 10 で実行されるアプリを開発します。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
+description: Microsoft Visual Studio2017 を使用できます C + + windows 10 を実行するスマート フォンなど、windows 10 デバイスで実行されるアプリを開発する CX します。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI を使います。
 ms.date: 06/11/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7acf2715ff4b6328beaae017722fc58d5788fe1d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919043"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047866"
 ---
-# <a name="create-a-hello-world-app-in-ccx"></a>C++ の"Hello world"アプリの作成/CX
+# <a name="create-a-hello-world-app-in-ccx"></a>"Hello world"アプリで作成する C + + CX
 
 > [!IMPORTANT]
 > このチュートリアルでは、C++/cli CX します。 Microsoft がリリースされると、C++/WinRT: 完全に標準化された最新の c++ 17 言語プロジェクションの Windows ランタイム (WinRT) Api です。 この言語について詳しくを参照してください[、C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)します。 
 
-Microsoft Visual の Studio2017 を使用できます C + + CX Extensible Application Markup Language (XAML) で定義された UI と windows 10 で実行されるアプリを開発します。
+Microsoft Visual Studio2017 を使用できます C + + CX Extensible Application Markup Language (XAML) で定義された ui には、windows 10 デバイスで実行されるアプリを開発します。
 
 > [!NOTE]
 > このチュートリアルでは、Visual Studio Community 2017 を使用します。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
 
 ## <a name="before-you-start"></a>開始前の作業
 
--   このチュートリアルを完了するには、windows 10 を実行しているコンピューターで Visual の StudioCommunity 2017 または Visual の Studio2017 のコミュニティ以外のバージョンのいずれかを使う必要があります。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
+-   このチュートリアルを完了するには、windows 10 を実行しているコンピューターで Visual の StudioCommunity 2017 または Visual の Studio2017 のコミュニティ以外のバージョンのいずれかを使う必要があります。 ツールをダウンロードするには、[ツールの入手に関するページ](https://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
 -   C + の基本的な理解があると仮定すると/CX、XAML では、 [XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)で説明されている概念です。
 -   Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトに戻すには、メニュー バーで **[ウィンドウ]**、**[ウィンドウ レイアウトのリセット]** の順にクリックします。
 
@@ -61,7 +61,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 ## <a name="hello-world-store-app-in-ccx"></a>Hello World ストア アプリでは、C++/cli CX
 
-初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows8.1 や Windows Phone 8.1 用アプリを開発した場合は、3 つのプロジェクトを Visual Studio、Windows アプリの 1 つは、電話アプリと共有コード用に 1 つである必要がある注意してください可能性があります。 Windows 10 のユニバーサル Windows プラットフォーム (UWP) では、すべてのデバイスに windows 10、タブレット、携帯電話、VR デバイスなどのデバイスを実行しているコンピューターのデスクトップやノート pc で実行されているプロジェクトが 1 つだけできます。
+初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows 8.1 や Windows Phone 8.1 用アプリを開発した場合は、3 つのプロジェクトを Visual Studio、Windows アプリの 1 つは、電話アプリと共有コード用に 1 つである必要がある注意してください可能性があります。 Windows 10 のユニバーサル Windows プラットフォーム (UWP) などの windows 10 のタブレット、携帯電話、VR デバイスなどのデバイスを実行しているコンピューターのデスクトップやノート pc、すべてのデバイスで実行されているプロジェクトが 1 つだけすることもできます。
 
 それでは、次に示す基礎から始めましょう。
 
@@ -69,7 +69,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 -   作成されるプロジェクトとファイルを把握する方法。
 
--   VisualC ではコンポーネント拡張機能内の拡張機能を理解する方法 (、C++/cli CX) と、それらを使用する場合。
+-   VisualC ではコンポーネント拡張機能内の拡張機能を理解する方法 (、C++/cli CX) とそれらを使用する場合。
 
 **まず Visual Studio でソリューションを作成する**
 
@@ -86,7 +86,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 4.  プロジェクトの名前を入力します。 ここでは、名前を "HelloWorld" とします。
 
- ![C++/cli で新しいプロジェクト] ダイアログ ボックスの CX プロジェクト テンプレート ](images/vs2017-uwp-01.png)
+ ![C++/cli 新しいプロジェクト] ダイアログ ボックスで CX プロジェクト テンプレート ](images/vs2017-uwp-01.png)
 
 5.  **[OK]** をクリックします。
 
@@ -117,7 +117,7 @@ C++ を使った Windows デスクトップのプログラミングに関する�
 
 **ref クラス**
 
-Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++/cli CX、これらの型の有効期間は自動参照されるため、これらのオブジェクトを明示的に削除 (ガベージ コレクションではなく) をカウントによって制御されます。 ref クラスは独自に作成することもできます。
+Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます  (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++/cli CX、これらの型の有効期間は自動参照されるため、これらのオブジェクトを明示的に削除する (ガベージ コレクションではなく) をカウントによって制御されます。 ref クラスは独自に作成することもできます。
 
 ```cpp
 namespace HelloWorld
@@ -238,7 +238,7 @@ MainPage::MainPage()
 
 アプリのデバッグを停止して閉じるには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押します。
 
-詳しくは、「[Visual Studio からのストア アプリの実行](http://go.microsoft.com/fwlink/p/?LinkId=619619)」をご覧ください。
+詳しくは、「[Visual Studio からのストア アプリの実行](https://go.microsoft.com/fwlink/p/?LinkId=619619)」をご覧ください。
 
 アプリの [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) に文字を入力することはできますが、この時点では [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) をクリックしても何も起こりません。 この後の手順で、ユーザーに合わせたあいさつを表示する、ボタンの [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント用のイベント ハンドラーを作成します。
 
@@ -334,7 +334,7 @@ MainPage::MainPage()
 
 7.  このプロセスを繰り返してフォント サイズを設定し、**BaseTextBlockStyle** を `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素に割り当てます。
 
-    **ヒント:** が選択できるように XAML デザイン サーフェイスの上にポインターを移動するときにこの[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)でにテキストがありませんが、青色の輪郭を示しています。  
+    **ヒント:** が選択できるように XAML デザイン サーフェイス上でポインターを移動するときにこの[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)でにテキストがありませんが、青色の輪郭を示しています。  
 
     XAML は次のようになります。
 
@@ -404,7 +404,7 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>次のステップ
 
-Windows8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、windows 10 へ移植することができます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
+Windows 8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、windows 10 へ移植することができます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
 
-UWP アプリと統合する既存の C++ コードがある場合、たとえば、既存のアプリケーションに新しい UWP UI を作成する場合は、「[方法: ユニバーサル Windows プロジェクトで既存の C++ コードを使う](http://go.microsoft.com/fwlink/p/?LinkId=619623)」をご覧ください。
+UWP アプリと統合する既存の C++ コードがある場合、たとえば、既存のアプリケーションに新しい UWP UI を作成する場合は、「[方法: ユニバーサル Windows プロジェクトで既存の C++ コードを使う](https://go.microsoft.com/fwlink/p/?LinkId=619623)」をご覧ください。
 

@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946903"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050935"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
 ## <a name="barcode-scanner"></a>バーコード スキャナー
 | 接続 | サポート |
 | -------------|-------------|
-| USB          | <p>Windows には、[USB.org](http://www.usb.org/developers/hidpage/) によって定義された HID POS Scanner Usage Table (8c) 仕様に基づく、USB 接続バーコード スキャナー用インボックス クラス ドライバーが含まれています。互換性のある既知のデバイスの一覧については、次の表をご覧ください。  **USB.HID.POS Scanner** モードでスキャナーを構成する方法については、バーコード スキャナーのマニュアルを参照するか、製造元にお問い合わせください。 </p><p>Windows では、USB.HID.POS Scanner 標準をサポートしない追加のバーコード スキャナーをサポートするために、ベンダー固有のドライバーの実装をサポートしています。 ベンダー固有のドライバーの利用可能性については、バーコード スキャナーの製造元に確認してください。</p><p>バーコード スキャナーのメーカー様は、カスタム バーコード スキャナー ドライバーの作成については、[バーコード スキャナー ドライバー設計ガイド](https://aka.ms/pointofservice-drv)をご覧ください。</p> |
+| USB          | <p>Windows には、[USB.org](https://www.usb.org/developers/hidpage/) によって定義された HID POS Scanner Usage Table (8c) 仕様に基づく、USB 接続バーコード スキャナー用インボックス クラス ドライバーが含まれています。互換性のある既知のデバイスの一覧については、次の表をご覧ください。  **USB.HID.POS Scanner** モードでスキャナーを構成する方法については、バーコード スキャナーのマニュアルを参照するか、製造元にお問い合わせください。 </p><p>Windows では、USB.HID.POS Scanner 標準をサポートしない追加のバーコード スキャナーをサポートするために、ベンダー固有のドライバーの実装をサポートしています。 ベンダー固有のドライバーの利用可能性については、バーコード スキャナーの製造元に確認してください。</p><p>バーコード スキャナーのメーカー様は、カスタム バーコード スキャナー ドライバーの作成については、[バーコード スキャナー ドライバー設計ガイド](https://aka.ms/pointofservice-drv)をご覧ください。</p> |
 | Bluetooth    | <p>Windows では、Serial Port Protocol - Simple Serial Interface (SPP-SSI) ベースの Bluetooth バーコード スキャナーがサポートされています。 既知の互換性のあるデバイスの一覧については、次の表を参照してください。 **SPP-SSI** モードでスキャナーを構成する方法については、バーコード スキャナーのマニュアルを参照するか、製造元にお問い合わせください。</p> |
 | Web カメラ       | <p>Windows 10 バージョン 1803 以降では、ユニバーサル Windows アプリケーションから標準のカメラ レンズでバーコードを読み取ることができます。 オート フォーカスと 1920 x 1440 以上の解像度をサポートするカメラを使用することをお勧めします。  バーコードが十分な大きさで印刷されている場合、これより解像度の低いカメラでも標準的なバーコードを読み取ることができる可能性があります。  バーコードの要素が細い場合は、より高い解像度のカメラが必要になる可能性があります。</p>| 
 |
@@ -39,7 +39,7 @@ ms.locfileid: "8946903"
 | Honeywell     | Voyager 1200 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1202 g                  | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | ハンドヘルド     | HID POS スキャナー           |
-| Honeywell     | Voyager 145Xg                  | 1D/2 D ¹   | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Honeywell     | Voyager 145Xg                  | 1 D/2 D ¹   | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Voyager 1602 g                  | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Xenon 1900 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Honeywell     | Xenon 1902 g                    | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
@@ -67,7 +67,7 @@ ms.locfileid: "8946903"
 
 
 Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
-² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
+² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](https://www.zebra.com/123Scan)を使用します。 
 
 
 <hr>
@@ -96,7 +96,7 @@ Honeywell でバーコードを 2D をサポートするために ¹ Upgradable 
 
 
 ## <a name="cash-drawer"></a>キャッシュ ドロワー
-| 接続 | サポート |
+| Connectivity | サポート |
 | -------------|-------------|
 | ネットワーク/Bluetooth | <p> キャッシュ ドロワー ユニットの機能に応じて、ネットワーク経由または Bluetooth によって、キャッシュ ドロワーに直接接続できます。 </p><p>APG Cash Drawer: NetPRO、BluePRO</p> |
 | DK ポート | <p> ネットワーク機能や Bluetooth 機能を持たないキャッシュ ドロワーは、サポートされているレシート プリンター上の DK ポートまたは Star Micronics DK-AirCash アクセサリ経由で接続できます。 </p>

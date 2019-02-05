@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9714488473bf4bdc118fd56129ea67e00019dcb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934767"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047344"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>カメラ フレームの分析の効果
 
@@ -97,7 +97,7 @@ HDR の使用が推奨された場合は、次の方法で実行できます。
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-イベントのハンドラーで、[**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) の [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) プロパティにアクセスすることにより、フレームで検出されたすべての顔の一覧を取得できます。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) プロパティは、プレビュー ストリームのサイズを基準とした単位で検出された顔を含む四角形を描画する [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 構造体です。 プレビュー ストリームの座標を画面座標に変換するサンプル コードについては、「[顔検出 UWP のサンプル](http://go.microsoft.com/fwlink/?LinkId=619486)」をご覧ください。
+イベントのハンドラーで、[**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) の [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) プロパティにアクセスすることにより、フレームで検出されたすべての顔の一覧を取得できます。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) プロパティは、プレビュー ストリームのサイズを基準とした単位で検出された顔を含む四角形を描画する [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 構造体です。 プレビュー ストリームの座標を画面座標に変換するサンプル コードについては、「[顔検出 UWP のサンプル](https://go.microsoft.com/fwlink/?LinkId=619486)」をご覧ください。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 

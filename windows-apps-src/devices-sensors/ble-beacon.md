@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: e9eafde0596ad3156f52a7a2f0a1566444a9836a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918960"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046791"
 ---
 # <a name="bluetooth-le-advertisements"></a>Bluetooth LE アドバタイズ
 
@@ -29,7 +29,7 @@ ms.locfileid: "8918960"
 -   [アドバタイズ ウォッチャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): 近くのビーコンをリッスンし、ペイロードまたは近接度に基づいてフィルター処理します。  
 -   [アドバタイズ パブリッシャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): 開発者に代わって、Windows のペイロードを定義してアドバタイズします。  
 
-完全なサンプル コードについては、GitHub の [Bluetooth アドバタイズ サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619990)をご覧ください。
+完全なサンプル コードについては、GitHub の [Bluetooth アドバタイズ サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619990)をご覧ください。
 
 ## <a name="basic-setup"></a>基本セットアップ
 

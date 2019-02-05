@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dde7f966e47aa6c35e3bc4e508eddabf13e313ee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921886"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045913"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>ハイ ダイナミック レンジ (HDR) 写真と低光量写真のキャプチャ
 
@@ -39,7 +39,7 @@ HDR キャプチャに関連したその他の記事を以下に示します。
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-**AdvancedPhotoCapture** クラスの使い方を示す、ユニバーサル Windows のサンプルがあります。コンテキスト内で API を使用する方法を確認したり、独自のアプリを作成し始めたりすることができます。 詳しくは、「[カメラの高度なキャプチャのサンプル](http://go.microsoft.com/fwlink/?LinkID=620517)」をご覧ください。
+**AdvancedPhotoCapture** クラスの使い方を示す、ユニバーサル Windows のサンプルがあります。コンテキスト内で API を使用する方法を確認したり、独自のアプリを作成し始めたりすることができます。 詳しくは、「[カメラの高度なキャプチャのサンプル](https://go.microsoft.com/fwlink/?LinkID=620517)」をご覧ください。
 
 ## <a name="advanced-photo-capture-namespaces"></a>高度な写真キャプチャの名前空間
 

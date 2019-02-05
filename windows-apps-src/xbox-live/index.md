@@ -5,12 +5,12 @@ ms.date: 08/22/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live
 ms.localizationpriority: medium
-ms.openlocfilehash: a3bd61c1c068689d364d7bafe89a90ed307fa126
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a08105d8ee4c78421d934f991fc4123299c38365
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922110"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044109"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 
@@ -29,7 +29,7 @@ Xbox Live クリエーターズ プログラム[パートナー センター](ht
 - クロスデバイス マルチプレイヤーでは、ゲーマーは Xbox One または Windows 10 PC のどちらを使うフレンドとでもプレイできます。
 
 > [!note]
-> これらのトピックは、ゲームに Xbox Live のサポートを追加しようとしているゲーム開発者を対象としています。 コンシューマー向けの Xbox Live の情報を探している場合は、[Xbox Live](http://www.xbox.com/live/) のサイトをご覧ください。
+> これらのトピックは、ゲームに Xbox Live のサポートを追加しようとしているゲーム開発者を対象としています。 コンシューマー向けの Xbox Live の情報を探している場合は、[Xbox Live](https://www.xbox.com/live/) のサイトをご覧ください。
 
 ## <a name="how-xbox-live-works"></a>Xbox Live のしくみ
 

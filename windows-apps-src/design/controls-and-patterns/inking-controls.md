@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037014"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047896"
 ---
 # <a name="inking-controls"></a>インク コントロール
 
@@ -84,7 +84,7 @@ InkCanvas と InkToolbar は、**Windows Ink ワークスペース**の**スケ�
 ```
 
 > [!NOTE]
-> InkPresenter 使った InkCanvas のカスタマイズについて詳しくは、「["UWP アプリのペン操作とスタイラス操作"](http://windowsstyleguide/input/pen-and-stylus-interactions/)」をご覧ください。
+> InkPresenter 使った InkCanvas のカスタマイズについて詳しくは、「["UWP アプリのペン操作とスタイラス操作"](https://windowsstyleguide/input/pen-and-stylus-interactions/)」をご覧ください。
 
 InkToolbar コントロールは、InkCanvas と組み合わせて使う必要があります。 InkToolbar (組み込みのすべてのツールが含まれています) をアプリに組み込むには、さらに次の 1 行のマークアップを追加する必要があります。
 
@@ -170,6 +170,6 @@ InkToolbar はトップ レベルの項目にすることもできますが、�
 
 ## <a name="related-articles"></a>関連記事
 
-- [UWP アプリのペン操作とスタイラス操作](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [インク ストロークの認識](http://windowsstyleguide/input/convert-ink-to-text/)
-- [インク ストロークの保存と取得](http://windowsstyleguide/input/save-and-load-ink/)
+- [UWP アプリのペン操作とスタイラス操作](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [インク ストロークの認識](https://windowsstyleguide/input/convert-ink-to-text/)
+- [インク ストロークの保存と取得](https://windowsstyleguide/input/save-and-load-ink/)

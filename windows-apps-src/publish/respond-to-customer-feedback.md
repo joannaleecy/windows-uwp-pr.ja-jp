@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10、UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938521"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047567"
 ---
 # <a name="respond-to-customer-feedback"></a>顧客のフィードバックに返信する
 
 [フィードバック レポート](feedback-report.md)を使用して、Windows 10 のユーザーがフィードバック Hub で入力したアプリ関連のフィードバックを確認し、そのフィードバックに直接返信することができます。 フィードバック Hub ですべてのユーザー向けに返信を投稿 (単独のコメントとして投稿したり、特定のフィードバックのステータスを更新して説明を追加するなど) すると、新機能やバグ修正に関する情報を顧客に通知したり、アプリの改善方法に関するより詳細なフィードバックを募ることができます。 また、フィードバックを入力した顧客への返信を、メールとして直接送信することもできます。
 
 > [!TIP]
-> [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 内の Feedback API を使用してコントロールを追加し、顧客が直接 [UWP アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)できるようにすることで、顧客からのフィードバック提供を促進することもできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを通じて直接フィードバックを残すことができます。 このため、アプリ内でフィードバックを特に募集していない場合でも、このレポートでユーザーからのフィードバックが表示される場合があります。
+> [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 内の Feedback API を使用してコントロールを追加し、顧客が直接 [UWP アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)できるようにすることで、顧客からのフィードバック提供を促進することもできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを通じて直接フィードバックを残すことができます。 このため、アプリ内でフィードバックを特に募集していない場合でも、このレポートでユーザーからのフィードバックが表示される場合があります。
 
 フィードバックに返信するには、**フィードバック レポート**でフィードバックをクリックし、表示される **[フィードバックに返信する]** リンクをクリックします。
 
@@ -66,4 +66,4 @@ ms.locfileid: "8938521"
 > [!NOTE]
 > 顧客は、開発者から不適切なフィードバック返信を受け取った場合、そのことを Microsoft に報告できます。 また顧客は、メールによるフィードバック返信の受信をオプトアウトすることもできます。
 
-顧客との関係はお客様の責任です。 開発者と顧客との間の係争に Microsoft は関与しません。 ただし、顧客からの製品のフィードバック内容が不適切であると思われる場合は、[サポート チケット](http://go.microsoft.com/fwlink/p/?LinkID=401178)を送信してください。
+顧客との関係はお客様の責任です。 開発者と顧客との間の係争に Microsoft は関与しません。 ただし、顧客からの製品のフィードバック内容が不適切であると思われる場合は、[サポート チケット](https://go.microsoft.com/fwlink/p/?LinkID=401178)を送信してください。

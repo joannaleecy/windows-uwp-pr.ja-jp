@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: e6938807a589337489f07f5865e02a580a72dae2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925859"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044629"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe の形式に固有のインデクサー
 
@@ -311,7 +311,7 @@ ResJSON インデクサーは、`type` 属性 RESJSON で識別されます。 �
 </xs:schema>\
 ```
 
-`.resjson` ファイルは JSON テキストを格納します ([JavaScript Object Notation (JSON) の application/json メディア型に関するページ](http://www.ietf.org/rfc/rfc4627.txt)を参照)。 ファイルには、階層プロパティを持つ単一の JSON オブジェクトが含まれている必要があります。 それぞれのプロパティは、別の JSON オブジェクトか、文字列値である必要があります。
+`.resjson` ファイルは JSON テキストを格納します ([JavaScript Object Notation (JSON) の application/json メディア型に関するページ](https://www.ietf.org/rfc/rfc4627.txt)を参照)。 ファイルには、階層プロパティを持つ単一の JSON オブジェクトが含まれている必要があります。 それぞれのプロパティは、別の JSON オブジェクトか、文字列値である必要があります。
 
 名前が下線 ("_") で始まる JSON プロパティは最終的な PRI ファイルにコンパイルされませんが、ログ ファイル内で保持されます。
 
@@ -400,4 +400,4 @@ ResW インデクサーは、`type` 属性 RESW で識別されます。 文字�
 * [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
 * [MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)
 * [MakePri.exe 構成ファイル](makepri-exe-configuration.md)
-* [JavaScript Object Notation (JSON) の application/json メディア型に関するページ](http://www.ietf.org/rfc/rfc4627.txt)
+* [JavaScript Object Notation (JSON) の application/json メディア型に関するページ](https://www.ietf.org/rfc/rfc4627.txt)

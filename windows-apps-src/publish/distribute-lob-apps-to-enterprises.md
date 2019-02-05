@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: eecd7a3ff86de5db9693bf6ce597e2b1e00bb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947606"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044589"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>LOB アプリの企業への配布
 
@@ -30,7 +30,7 @@ ms.locfileid: "8947606"
 LOB アプリを専用アプリとして企業に公開するには、最初に、お使いのアカウントと企業のプライベート ストアを関連付けます。
 
 > [!IMPORTANT]
-> この関連付けプロセスは、企業が開始する必要があります。また、開発者アカウントの作成に使った Microsoft アカウントに関連付けられているメール アドレスを使う必要があります。 詳しくは、「[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)」をご覧ください。
+> この関連付けプロセスは、企業が開始する必要があります。また、開発者アカウントの作成に使った Microsoft アカウントに関連付けられているメール アドレスを使う必要があります。 詳しくは、「[基幹業務アプリの操作](https://go.microsoft.com/fwlink/p/?LinkId=698846)」をご覧ください。
 
 企業は、専用アプリを公開してほしいと思う開発者に、関連付けを確認するためのリンクを含むメールを送信します。 **[アカウント設定]** の **[企業団体]** セクションに移動することで、これらの関連付けを確認することもできます (開発者アカウントを開くために使った Microsoft アカウントでサインインしている場合に限ります)。
 
@@ -73,7 +73,7 @@ LOB アプリでの申請のプロセスの[年齢区分](age-ratings.md)の手�
 > [!NOTE]
 > LOB アプリを取得するには、組織が[サポート対象の市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)に含まれている必要があります。また、アプリを提出する際に、その[市場を除外](define-pricing-and-market-selection.md)することはできません。 
 
-詳しくは、[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)に関するページ、および[プライベート ストアを使用したアプリの配布](http://go.microsoft.com/fwlink/p/?LinkId=698847)に関するページをご覧ください。
+詳しくは、[基幹業務アプリの操作](https://go.microsoft.com/fwlink/p/?LinkId=698846)に関するページ、および[プライベート ストアを使用したアプリの配布](https://go.microsoft.com/fwlink/p/?LinkId=698847)に関するページをご覧ください。
 
 
 ## <a name="update-lob-apps"></a>LOB アプリの更新
@@ -92,9 +92,9 @@ LOB として既に公開したアプリに更新プログラムを公開する�
 
 ビジネス向け Microsoft ストアまたは教育向け Microsoft ストアで企業にアプリを提供することで、アプリはストアによって確実に署名され、標準的なストア ポリシーに準拠します。
 
-場合によっては、企業しない場合があります (コンプライアンス上の理由やその他の機能を必要とするアプリなど)、パートナー センターを通じて提出するには、その LOB アプリ。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
+場合によっては、企業可能性があります (コンプライアンス上の理由やその他の機能を必要とするアプリなど)、パートナー センターを通じて提出するには、その LOB アプリをしません。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
 
-詳しくは、「[Windows 10 での LOB アプリのサイドローディング](http://go.microsoft.com/fwlink/p/?LinkId=623433)」をご覧ください。
+詳しくは、「[Windows 10 での LOB アプリのサイドローディング](https://go.microsoft.com/fwlink/p/?LinkId=623433)」をご覧ください。
 
  
 

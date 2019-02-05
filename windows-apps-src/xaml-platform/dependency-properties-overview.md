@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928463"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050775"
 ---
 # <a name="dependency-properties-overview"></a>依存関係プロパティの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "8928463"
 
 依存関係プロパティとは、特殊な種類のプロパティです。 具体的には、Windows ランタイムの一部である専用のプロパティ システムによってプロパティの値が追跡され影響を受けるプロパティです。
 
-依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義を使用する**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
+依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 多くの種類の XAML を使った UWP アプリの UI 定義に使用する**DependencyObject**サブクラスで、依存関係プロパティがサポートされます。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
 
 依存関係プロパティの目的は、他の入力 (その他のプロパティや、アプリの実行時にアプリ内で発生するイベントと状態) に基づいてプロパティの値を計算する方法を提供することです。 たとえば、他の入力には次のようなものがあります。
 
@@ -30,7 +30,7 @@ ms.locfileid: "8928463"
 - リソースやスタイルなどの多目的テンプレート パターン
 - オブジェクト ツリー内の他の要素との親子のリレーションシップから判断される値
 
-または XAML を使った Windows ランタイム アプリの UI とは、c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するためのプログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コード。 次のような機能があります。
+または、Windows ランタイム XAML を使ったアプリ UI と c#、Microsoft Visual Basic または VisualC ではコンポーネント拡張機能を定義するため、プログラミング モデルの特定の機能をサポートしている依存関係プロパティを表します (、C++/cli CX) コードのします。 次のような機能があります。
 
 - データ バインディング
 - スタイル
@@ -74,7 +74,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてはありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
+> 上記の例は、カスタム依存関係プロパティを作成する方法の完全な例としてのものではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
 ## <a name="dependency-property-value-precedence"></a>依存関係プロパティ値の優先順位
 
@@ -207,7 +207,7 @@ Windows 10 では、[ **RegisterPropertyChangedCallback** ](https://msdn.microso
 - [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-- [XAML ユーザーとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
+- [XAML ユーザーとカスタム コントロールのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
 ## <a name="apis-related-to-dependency-properties"></a>依存関係プロパティに関連する Api
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: c27891b47bb9f7774799c912cc6f4cae3cea92bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944658"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046728"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに Xbox One で Fiddler を使用する方法
 
@@ -19,14 +19,14 @@ Fiddler は、Xbox One 開発機とインターネットの間のすべての HT
 
 通常の操作では、プロキシ経由で通信するコンソールは、プロキシによって通信内容が変更されるリスクがあり、プレイヤーによる不適切な行為が発生する可能性があります。 そのため、コンソールはプロキシ経由の通信を許可しないように設計されています。 Xbox One 開発機で Fiddler を使うには、Fiddler プロキシの使用を許可するように、開発機で特別な構成手順を実行する必要があります。 
 
-Fiddler はフリーウェアであり、[Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)からダウンロードできます。 
+Fiddler はフリーウェアであり、[Fiddler の Web サイト](https://www.fiddler2.com/fiddler2/)からダウンロードできます。 
 
 Fiddler は、コンソールで報告されるネットワーク ステータスに影響を与える場合があります。 Fiddler を実行しているコンピューターからのアップストリーム接続が無効になっている場合、コンソールの認証の有効期限が切れるまで、コンソールでこの切断が検出されない可能性があります。 Fiddler を使っている場合、Fiddler を使って切断をシミュレートするのではなく、必ずコンソールと Fiddler を実行しているコンピューターとの接続を切断してください。
 
 ### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>開発用 PC に Fiddler をインストールして有効にするには
 次の手順に従って、Fiddler をインストールし、有効にして、開発機からのトラフィックを監視します。
 
-1. [Fiddler の Web サイト](http://www.fiddler2.com/fiddler2/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。 
+1. [Fiddler の Web サイト](https://www.fiddler2.com/fiddler2/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。 
 2. Fiddler を起動し、**[Tools]** メニューの **[Fiddler Options]** を選択します。 
 3. **[Connections]** タブを選択し、**[Allow remote computers to connect]** がオンになっていることを確認します。 
 4. **[OK]** をクリックして設定の変更を確認します。 ダイアログ ボックスが表示され、変更を有効にするには Fiddler を再起動する必要があり、ファイアウォールを手動で構成することが必要になる可能性があるというメッセージが表示されます。 このダイアログ ボックスで **[OK]** をクリックしますが、*まだ Fiddler を再起動しないでください*。

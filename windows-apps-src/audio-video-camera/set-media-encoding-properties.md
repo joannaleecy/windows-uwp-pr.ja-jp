@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77b8f075e0eac02722c29eddddb6f188575ca18f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929191"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047507"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>MediaCapture の形式、解像度、およびフレーム レートの設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929191"
 
 カメラ プロファイルは、カメラのストリーム プロパティを検出および設定するための高度な方法ですが、すべてのデバイスではサポートされていません。 詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
 
-この記事のコードは、[CameraResolution サンプル](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
+この記事のコードは、[CameraResolution サンプル](https://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
 > [!NOTE] 
 > この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
@@ -30,7 +30,7 @@ ms.locfileid: "8929191"
 
 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスの機能をラップする単純なヘルパー クラスを作成すると、特定の条件を満たす一連のエンコード プロパティを容易に選択できます。 特に、エンコード プロパティの機能の次のような動作に対して、このヘルパー クラスが便利です。
 
-**警告** 、 [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)メソッド**VideoRecord**や**写真**など、 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)列挙のメンバーを受け取り、いずれかの[**の一覧を返しますImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)またはストリームを伝える[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)オブジェクトがキャプチャした写真やビデオの解像度などの設定をエンコードします。 指定された **MediaStreamType** 値に関係なく、**GetAvailableMediaStreamProperties** を呼び出した結果には、**ImageEncodingProperties** または **VideoEncodingProperties** が含まれている可能性があります。 このため、いずれかのプロパティ値にアクセスする前に、常に各戻り値の型を確認し、適切な型にキャストする必要があります。
+**警告** 、 [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)メソッド[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)列挙体の**VideoRecord**や**写真**などのメンバーを受け取り、いずれかの[**の一覧を返しますImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)またはストリームを伝える[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)オブジェクトがキャプチャした写真やビデオの解像度などの設定をエンコードします。 指定された **MediaStreamType** 値に関係なく、**GetAvailableMediaStreamProperties** を呼び出した結果には、**ImageEncodingProperties** または **VideoEncodingProperties** が含まれている可能性があります。 このため、いずれかのプロパティ値にアクセスする前に、常に各戻り値の型を確認し、適切な型にキャストする必要があります。
 
 次に示すヘルパー クラスでは、型の確認と [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) または [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) へのキャストを処理しています。これにより、アプリのコードでは、2 つの型を区別する必要がなくなります。 これに加えて、ヘルパー クラスは、プロパティの縦横比、フレーム レート (ビデオ エンコード プロパティの場合のみ)、アプリの UI でエンコード プロパティをわかりやすく表示するためのフレンドリ名を使用できるように、プロパティを公開します。
 

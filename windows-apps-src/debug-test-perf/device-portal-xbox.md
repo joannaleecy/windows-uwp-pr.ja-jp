@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932671"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047274"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 用 Device Portal
 
@@ -165,7 +165,7 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 
 * **When idle, turn off after** (アイドル時、次の時間が経過後に電源を切る): アイドル状態でこの時間が経過後、デバイスをシャット ダウンします。
 
-* **電源モード**: デバイスの電源モード。 詳しくは、「[省電力モードとクイック起動電源モードについて](http://support.xbox.com/xbox-one/console/learn-about-power-modes)」をご覧ください。
+* **電源モード**: デバイスの電源モード。 詳しくは、「[省電力モードとクイック起動電源モードについて](https://support.xbox.com/xbox-one/console/learn-about-power-modes)」をご覧ください。
 
 * **Automatically boot console when connected to power** (電源に接続されたときに本体を自動的に起動): 電源に接続されると、デバイスが自動的にオンになります。
 
@@ -193,11 +193,11 @@ Xbox Device Portal の **[ネットワーク]** ページは Windows Device Port
 
 ![ワークスペースにツールを追加する](images/device-portal-xbox-13.png)
 
-### <a name="game-event-data"></a>ゲームのイベント データ
+### <a name="game-event-data"></a>ゲーム イベント データ
 
-**ゲーム イベントのデータ**] ページで、できますグラフを表示するリアルタイムそのストリームでは、現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲーム イベントの数。 システムに記録されているゲームのイベントがある場合は、表示することも (イベント名、イベントの発生とゲームのタイトル) の詳細データ グラフの下のデータ テーブル内の各イベントを記述しています。 表には、記録されたイベントがある場合は、できるだけです。
+**ゲーム イベントのデータ**] ページで、できますグラフを表示するリアルタイムそのストリームでは、現在、Xbox One で記録されているイベント Windows トレーシング (ETW) ゲーム イベントの数。 システムに記録されているゲームのイベントがある場合は、表示することも (イベント名、イベントの発生、およびゲーム タイトル) の詳細データ グラフの下のデータ テーブル内の各イベントを記述しています。 テーブルは、記録されたイベントがある場合に利用可能なのみ。
 
-![ゲームのイベント データ](images/device-portal-xbox-22.PNG)
+![ゲーム イベント データ](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>関連項目
 

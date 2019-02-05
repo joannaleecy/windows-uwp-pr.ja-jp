@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, スレッド, スレッド プール
 ms.localizationpriority: medium
-ms.openlocfilehash: 08608bc5715031f9ddf5b6bec05e7c86737f7e10
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981376"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048619"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>スレッド プールへの作業項目の送信
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](https://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 <b>重要な API</b>
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>要約と次の手順
 
-このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成する](http://go.microsoft.com/fwlink/p/?LinkID=328569)、windows 8.1 向けに書かれたからコードをダウンロードすることの詳細については、および、win \_unap windows 10 アプリでソース コードを再利用します。
+このクイック スタートの中で、[項目のサンプルを使用して、スレッド プールを作成する](https://go.microsoft.com/fwlink/p/?LinkID=328569)、windows 8.1 向けに書かれたからコードをダウンロードすることの詳細については、および、win \_unap windows 10 アプリでソース コードを再利用します。
 
 ## <a name="related-topics"></a>関連トピック
 

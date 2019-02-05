@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10、UWP、アクセシビリティ、ゲーム
 ms.localizationpriority: medium
-ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937600"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046335"
 ---
 #  <a name="making-games-accessible"></a>ゲームをアクセシビリティ対応にする
 
@@ -33,7 +33,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ゲームをプレイできるユーザー数 x ゲームのすばらしさ = ゲームの売り上げ
 
-すばらしいゲームを作っても、複雑すぎて一部の人にしかプレイできなければ、売り上げは限られてしまいます。 同様に、身体的、感覚的、または認知的な障碍を持つユーザーがプレイできないゲームを作成すると、潜在的な売り上げを失うことになります。 たとえば、[米国の人口の 19% にあたる人々に何らかの障碍があり](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)、[米国内の成人の約 14% は読むことが困難であり](https://nces.ed.gov/naal/estimates/overview.aspx)、[男性の約 10% は何らかの色覚の障碍を持っている](https://www.aao.org/eye-health/diseases/color-blindness-risk)ということを考えると、これはタイトルの収益に大きな影響を及ぼす可能性があります。 
+すばらしいゲームを作っても、複雑すぎて一部の人にしかプレイできなければ、売り上げは限られてしまいます。 同様に、身体的、感覚的、または認知的な障碍を持つユーザーがプレイできないゲームを作成すると、潜在的な売り上げを失うことになります。 たとえば、[米国の人口の 19% にあたる人々に何らかの障碍があり](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)、[米国内の成人の約 14% は読むことが困難であり](https://nces.ed.gov/naal/estimates/overview.aspx)、[男性の約 10% は何らかの色覚の障碍を持っている](https://www.aao.org/eye-health/diseases/color-blindness-risk)ということを考えると、これはタイトルの収益に大きな影響を及ぼす可能性があります。 
 
 その他の業務上の妥当性については、「[ビデオ ゲームのアクセシビリティ](https://msdn.microsoft.com/library/windows/desktop/ee415219)」をご覧ください。
 
@@ -158,7 +158,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ## <a name="game-accessibility-features"></a>ゲームのアクセシビリティ機能
 
-このセクションでは、ゲームのアクセシビリティを強化するいくつかの機能について概要を説明します。 これらの機能は、[ゲームのアクセシビリティに関するガイドライン](http://gameaccessibilityguidelines.com/)から入手した各種のガイドラインに基づいています。これらのガイドラインには、制作スタジオ、専門家、研究者のグループが共同で取り組んだ研究成果がまとめられています。 詳しくは、[ゲームのアクセシビリティに関するガイドライン](http://gameaccessibilityguidelines.com/)をご覧ください。 
+このセクションでは、ゲームのアクセシビリティを強化するいくつかの機能について概要を説明します。 これらの機能は、[ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)から入手した各種のガイドラインに基づいています。これらのガイドラインには、制作スタジオ、専門家、研究者のグループが共同で取り組んだ研究成果がまとめられています。 詳しくは、[ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)をご覧ください。 
 
 ### <a name="colorblind-friendly-graphics-and-user-interface"></a>色覚障碍に対応したグラフィックスとユーザー インターフェイス
 
@@ -175,7 +175,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
     
   + コミュニケーションやゲーム オブジェクトの区別に色のみを利用することは避けます。 形やパターンも使用します。
   + 色のみに依存する必要がある場合は、プリセットと自由に選択できる色を組み合わせて、必要とするプレイヤーは自由にカスタマイズでき、必要としないプレイヤーは余分な作業をしなくても済むようにします。
-  + 色覚障碍シミュレーターを使ってデザインをテストし、色覚に障碍がある場合でもデザインを見ることができることを確認します。 これによって、コントラストの一般的な問題を回避することもできます。 [Color Oracle](http://www.colororacle.org) は無料の色覚障碍シミュレーターであり、最も一般的な 3 種類の色覚障碍である、緑色覚障碍、赤色覚障碍、青色覚障碍をシミュレートすることができます。
+  + 色覚障碍シミュレーターを使ってデザインをテストし、色覚に障碍がある場合でもデザインを見ることができることを確認します。 これによって、コントラストの一般的な問題を回避することもできます。 [Color Oracle](https://www.colororacle.org) は無料の色覚障碍シミュレーターであり、最も一般的な 3 種類の色覚障碍である、緑色覚障碍、赤色覚障碍、青色覚障碍をシミュレートすることができます。
   
 ### <a name="closed-captioning-and-subtitles"></a>クローズド キャプションと字幕
 
@@ -209,13 +209,13 @@ ID@Xbox および対象パートナー向けプログラムの開発者の場合
 
 ### <a name="fully-mappable-controls"></a>完全にマップ可能なコントロール
 
-[Special Effect](http://www.specialeffect.org.uk/) のように、Windows や Xbox One などで使用できるカスタム ゲーム コントローラーを設計している会社や組織もあります。 このカスタマイズを利用すると、さまざまな障碍を持つユーザーが、他の方法ではプレイできなかったゲームをプレイできるようになります。 [ユーザー事例のページ](http://www.specialeffect.org.uk/who-we-helped)では、カスタマイズされたコントローラーを使うことで自由にゲームをプレイできるようになったユーザーが紹介されています。
+[Special Effect](https://www.specialeffect.org.uk/) のように、Windows や Xbox One などで使用できるカスタム ゲーム コントローラーを設計している会社や組織もあります。 このカスタマイズを利用すると、さまざまな障碍を持つユーザーが、他の方法ではプレイできなかったゲームをプレイできるようになります。 [ユーザー事例のページ](https://www.specialeffect.org.uk/who-we-helped)では、カスタマイズされたコントローラーを使うことで自由にゲームをプレイできるようになったユーザーが紹介されています。
 
 ゲーム開発者は、コントロールを完全にマップできるように設計することで、ゲームのアクセシビリティをさらに向上させることができます。これにより、ゲーマーは独自のカスタム コントローラーを接続し、各自のニーズに合わせてキーを再マップできます。
 
 コントロールを完全にマップできるようにすると、標準コントローラーを使用しているユーザーにもメリットがあります。 ゲーマーは、それぞれ固有のニーズに合ったレイアウトを設計できます。
 
-Xbox One の標準コントローラーと Xbox Elite コントローラーはいずれも、正確な操作を必要とするゲームのためにコントローラーのカスタマイズに対応しています。 それらの再マップ機能をすべて利用するには、__開発者がゲーム内に直接再マップ機能を含めることをお勧めします__。 詳しくは、[Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) と [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller) のページをご覧ください。
+Xbox One の標準コントローラーと Xbox Elite コントローラーはいずれも、正確な操作を必要とするゲームのためにコントローラーのカスタマイズに対応しています。 それらの再マップ機能をすべて利用するには、__開発者がゲーム内に直接再マップ機能を含めることをお勧めします__。 詳しくは、[Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) と [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller) のページをご覧ください。
 
 ### <a name="wider-selection-of-difficulty-levels"></a>幅広い難易度の選択肢
 
@@ -225,7 +225,7 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 
 ### <a name="photosensitivity-epilepsy-testing"></a>光過敏性発作のテスト
 
-光過敏性発作 (PSE) とは、光の点滅、視覚的な形状やパターンの特定の動きなど、視覚的な刺激によって発作が引き起こされる症状のことです。 これは人口の約 3% で発症するとされ、幼少期から青年期に多く見られます。 数字で示すと、[5 ～ 24 歳の人口のおよそ 4000 人に 1 人](http://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)に相当します。
+光過敏性発作 (PSE) とは、光の点滅、視覚的な形状やパターンの特定の動きなど、視覚的な刺激によって発作が引き起こされる症状のことです。 これは人口の約 3% で発症するとされ、幼少期から青年期に多く見られます。 数字で示すと、[5 ～ 24 歳の人口のおよそ 4000 人に 1 人](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)に相当します。
 
 ビデオ ゲームのプレイ中には、光過敏性反応を引き起こす可能性のある要因が多く出現します。これには、光の点滅の頻度、光の強度、背景と光のコントラスト、画面とゲーマーの間の距離、光の波長などが含まれます。
 
@@ -241,7 +241,7 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 * 5 本を超える均等な間隔で繰り返されるハイ コントラスト ストライプ (グリッドやチェッカーボードなどの行または列)。これは、水玉など、小さく規則的な要素で構成される場合があります。
 * 大文字のみで書式設定され、文字間の間隔が狭く、行間が行自体の高さと同じであるため、事実上、ハイ コントラストで均等に繰り返される行に見える、5 行を超えるテキスト。
 
-自動システムを使って、光過敏性発作を引き起こす可能性のある刺激がゲームプレイ中に発生していないかどうかをチェックします  (たとえば、Cambridge Research System Ltd と Graham Harding 教授によって開発された [The Harding Test](http://www.hardingtest.com/index.php?page=test) や [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/) があります)。 
+自動システムを使って、光過敏性発作を引き起こす可能性のある刺激がゲームプレイ中に発生していないかどうかをチェックします  (たとえば、Cambridge Research System Ltd と Graham Harding 教授によって開発された [The Harding Test](https://www.hardingtest.com/index.php?page=test) や [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) があります)。 
 
 **点滅オン/オフ**を設定オプションとして含め、**点滅**を既定で**オフ**に設定します。 こうすることで、まだ自分が発作を起こしやすいと知らないプレイヤーを保護します。
 
@@ -252,21 +252,21 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 以下に、ゲームのアクセシビリティに関する追加情報を入手できる外部サイトへのリンクを紹介します。
 
 ### <a name="game-accessibility-guidelines"></a>ゲームのアクセシビリティに関するガイドライン
-* [ゲームのアクセシビリティに関するガイドライン](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation のガイドライン](http://www.includification.com/)
-* [すべての人が利用できる (UA: Universally Accessible) ゲームのデザイン](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation のガイドライン](https://www.includification.com/)
+* [すべての人が利用できる (UA: Universally Accessible) ゲームのデザイン](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>カスタム入力コントローラー
-* [SpecialEffect](http://www.specialeffect.org.uk/)
-* [Warfighter Engaged](http://www.warfighterengaged.org/)
+* [SpecialEffect](https://www.specialeffect.org.uk/)
+* [Warfighter Engaged](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>参考資料
-* [ゲームのアクセシビリティに関するガイドライン](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation のガイドライン](http://www.includification.com/)
-* [コミュニティ利益会社 Color Blind Awareness](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [適切な字幕の作り方 - Ian Hamilton による Gamasutra のブログ記事](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [あらゆるプログラムのための技術革新](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsy foundation](http://www.epilepsy.com/)
+* [ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation のガイドライン](https://www.includification.com/)
+* [コミュニティ利益会社 Color Blind Awareness](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [適切な字幕の作り方 - Ian Hamilton による Gamasutra のブログ記事](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [あらゆるプログラムのための技術革新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [Epilepsy foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>関連リンク
 * [包括的なデザイン](https://www.microsoft.com/design/inclusive)

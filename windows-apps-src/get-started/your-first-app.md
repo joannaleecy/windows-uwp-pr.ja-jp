@@ -1,17 +1,17 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 初めてのアプリの作成
-description: 好みのプログラミング言語を使用して windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
+description: 好みのプログラミング言語を使用して windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.date: 1/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ef6e364f8c6c88400d2d47a0591d4b7432c33215
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923743"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048019"
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 
@@ -30,7 +30,7 @@ ms.locfileid: "8923743"
 * [文字どおりの初心者のための C# の基本](https://go.microsoft.com/fwlink/?linkid=850801)
 * [文字どおりの初心者のための VB の基本](https://go.microsoft.com/fwlink/?linkid=850802)
 * [Windows 10 開発者向けガイド](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [Microsoft Virtual Academy](https://www.microsoftvirtualacademy.com/)
 
 "Hello, World!" よりも少し進んだ内容が必要な場合は、次のチュートリアルを試してください。
 
@@ -40,14 +40,14 @@ ms.locfileid: "8923743"
 
 ## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC ではコンポーネント拡張機能 (、C++/cli CX) と XAML
 
-VisualC ではコンポーネント拡張機能を使用してアプリをビルドする C++ プログラミングの専門知識を活用 (、C++/cli CX) XAML を使用します。
+VisualC ではコンポーネント拡張機能を使用してアプリを構築、C++ プログラミングの専門知識を活用 (、C++/cli CX) XAML を使用します。
 
 * [XAML と C++/CX で "Hello, world" アプリを作る](create-a-basic-windows-10-app-in-cpp.md)
 
 C++ の詳しい情報については、以下をご覧ください。
 
-* [C++: 汎用言語およびライブラリ ジャンプ スタート](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++: 汎用言語およびライブラリ ジャンプ スタート](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 "Hello, World!" よりも少し進んだ内容が必要な場合は、次のチュートリアルを試してください。
 
@@ -71,9 +71,9 @@ Web アプリは、ホストされた Web アプリとして UWP フレームワ
 
 Web のスキルをブラッシュアップする必要がある場合は、以下をご覧ください。
 
-* [文字どおりの初心者のための JavaScript の基本](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [文字どおりの初心者のための HTML5 と CSS3 の基本](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [文字どおりの初心者のための JavaScript の基本](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [文字どおりの初心者のための HTML5 と CSS3 の基本](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>参照
 

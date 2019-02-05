@@ -8,12 +8,12 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd829881892eece08c30fcd665bdf21a1f43471
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945063"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050815"
 ---
 # <a name="speech-interactions"></a>音声操作
 
@@ -157,14 +157,14 @@ SRGS で定義された制約を使う音声認識エンジンにおける組み
 カスタム文法はお客様が設計および作成を行い、アプリと共にインストールされます。 カスタム制約を使う音声認識は、デバイスで実行されます。
 
 -   プログラムによる一覧の制約は、単語や語句の一覧を使って単純な文法を作成する手法で、軽量です。 個別の短い語句を認識するには、一覧の制約が適しています。 文法にすべての単語を明示的に指定すると、音声認識エンジンは音声と単語の一致を確認する際に音声だけを処理すればよいので、認識の精度が向上します。 また、一覧はプログラムで更新することもできます。
--   SRGS 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
+-   SRGS 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
 
     SRGS 文法を作成するためのヒントを次にいくつか紹介します。
 
     -   各文法の規模を小さくします。 文法に含める語句を少なくする方が、規模の大きな文法に多数の語句が含まれている場合よりも、認識精度が高くなる傾向があります。 アプリ全体に対して 1 つの文法を設定するよりも、特定のシナリオごとに別々の小規模な文法を設定することをお勧めします。
     -   ユーザーには、各アプリのコンテキストに基づいて何と話しかければよいかを知らせ、必要に応じて文法を無効にします。
     -   文法は、ユーザーがさまざまな形でコマンドを音声入力できるように設計します。 たとえば、**GARBAGE** 規則を使って、文法で定義されていない音声入力を照合することができます。 これにより、ユーザーはアプリにとって意味を持たない語句を含めて話すことができます。 たとえば、"お願い"、"それと"、"ええと"、"多分" などの語句を含めることができます。
-    -   音声入力の認識率を高めるには、[sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 要素を使います。 この要素は、部分的な語句の照合をサポートするための、SRGS 仕様に対する Microsoft の拡張機能です。
+    -   音声入力の認識率を高めるには、[sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 要素を使います。 この要素は、部分的な語句の照合をサポートするための、SRGS 仕様に対する Microsoft の拡張機能です。
     -   音節が 1 つしかない語句は、文法に定義しないようにしてください。 音節が 2 つ以上ある語句の方が、正確に認識されやすくなります。
     -   同じように聞こえる語句を使わないようにしてください。 たとえば、"hello"、"bellow"、"fellow" などの語句を使うと音声認識エンジンが混乱し、認識精度が低くなる可能性があります。
 
@@ -175,9 +175,9 @@ SRGS で定義された制約を使う音声認識エンジンにおける組み
 
 一般的ではない単語や架空の単語を含む特殊なボキャブラリや、普通とは異なる発音の単語がアプリに含まれる場合は、カスタムの発音を定義することで、認識性能が高まる可能性があります。
 
-単語や語句の一覧が小規模な場合や、あまり使われない単語や語句の一覧の場合、カスタムの発音を SRGS 文法で作成できます。 詳しくは、「[token 要素](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)」をご覧ください。
+単語や語句の一覧が小規模な場合や、あまり使われない単語や語句の一覧の場合、カスタムの発音を SRGS 文法で作成できます。 詳しくは、「[token 要素](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)」をご覧ください。
 
-単語や語句の一覧が大規模な場合や、頻繁に使われる単語や語句については、発音辞書のドキュメントを別途作成することもできます。 詳しくは、[辞書と音標文字に関するページ](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)をご覧ください。
+単語や語句の一覧が大規模な場合や、頻繁に使われる単語や語句については、発音辞書のドキュメントを別途作成することもできます。 詳しくは、[辞書と音標文字に関するページ](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)をご覧ください。
 
 ## <a name="testing"></a>テスト
 
@@ -200,7 +200,7 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 -   単語が不自然な順番で連続している場合や、文字列に含まれる数値や句読点を発声する場合に、語句が不明瞭になる可能性があります。
 -   韻律や抑揚がネイティブ スピーカーによる発声と異なると、音声が不自然に聞こえる場合があります。
 
-どちらの問題も、スピーチ シンセサイザーへの入力にプレーンテキストではなく SSML を使うことで対処できます。 SSML について詳しくは、「[SSML による合成音声の制御](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)」と「[Speech Synthesis Markup Language (SSML) のリファレンス](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)」をご覧ください。
+どちらの問題も、スピーチ シンセサイザーへの入力にプレーンテキストではなく SSML を使うことで対処できます。 SSML について詳しくは、「[SSML による合成音声の制御](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)」と「[Speech Synthesis Markup Language (SSML) のリファレンス](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)」をご覧ください。
 
 ## <a name="other-articles-in-this-section"></a>このセクションの他の記事 
 
@@ -220,7 +220,7 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 
  **サンプル**
 
-* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

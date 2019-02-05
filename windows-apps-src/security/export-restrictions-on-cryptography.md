@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6d445e5164d542a7e10f136a5fb238c575f35c2d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942493"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048812"
 ---
 # <a name="export-restrictions-on-cryptography"></a>暗号化に関する輸出制限の順守
 
@@ -25,9 +25,9 @@ ms.locfileid: "8942493"
 
  
 
-米国商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](http://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。
+米国商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](https://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。
 
-暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](https://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
 ## <a name="governed-uses"></a>管理対象の使用
 
@@ -43,7 +43,7 @@ ms.locfileid: "8942493"
 -   コピー防止やデジタル著作権管理 (DRM)
 -   ウイルス対策機能
 
-暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](https://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
 ## <a name="non-restricted-uses"></a>制限なしの使用
 
@@ -55,8 +55,8 @@ ms.locfileid: "8942493"
 -   デジタル著作権管理
 -   デジタル署名の使用
 
-暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](https://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
 アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。
 
-ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
+ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](https://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。

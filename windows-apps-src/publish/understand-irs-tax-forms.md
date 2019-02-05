@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課税, irs, 米国内国歳入庁, 税, 所得税, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb25887d9bc40bd9c596cd437b7d2d6d06047020
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918543"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047314"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>マイクロソフトが発行する IRS の税関連の書類について
 
@@ -23,13 +23,13 @@ ms.locfileid: "8918543"
 
 | IRS の税関連の書類 | 説明 | 利用可能時期 |
 |--------------|-------------|--------------|
-|1099-MISC、1099-K | マイクロソフトのマーケットプレースへの参加に関する販売アクティビティや開発者への支払いに関連します。 | 書類がするまでの消印で**年 1 月 31**日と .pdf コピーが[パートナー センター](https://partner.microsoft.com/dashboard)で利用可能になります (で**アカウント設定] > プロファイルを税**) 同時に |
-|1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 書類がするまでの消印で**3 月 15 日**と .pdf コピーがパートナー センターで利用可能になります (で**アカウント設定] > プロファイルを税**) 同時に |
+|1099-MISC、1099-K | マイクロソフトのマーケットプレースへの参加に関する販売アクティビティや開発者への支払いに関連します。 | 印刷フォームはするまでの消印で**年 1 月 31**日と同時に .pdf コピーが[パートナー センター](https://partner.microsoft.com/dashboard) ([**アカウント設定 _gt 税プロファイル**) で利用可能になります |
+|1042-S | 米国の源泉徴収税の対象になる開発者への支払いに関連します。 | 印刷フォームはするまでの消印で**3 月 15 日**と .pdf コピーが利用可能にパートナー センター ([**アカウント設定 _gt 税プロファイル**) で同時に |
 
 > [!NOTE]
-> IRS の税関連の書類を使用して、アドレスは、[税務プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所から取得されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
+> IRS の税関連の書類を使用して、アドレスは、[税プロファイル](setting-up-your-payout-account-and-tax-forms.md#tax-forms)内の住所から取得されます。 住所を変更した場合は、**[税プロファイル]** の住所も変更するようにしてください。
 
-税関連の書類は、次のアドレスからことに送信されます。
+税関連の書類は、次のアドレスからしたに送信されます。
 
 **米国人:**
 <table>
@@ -42,7 +42,7 @@ ms.locfileid: "8918543"
 <table>
 <tr><th>ビジネス グループ</th><th>法人</th><th>Address</th></tr>
 <tr><td>Windows、Office、Azure</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft Corporation での Microsoft Corporation 修飾仲介として機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
-<tr><td>広告 *</td><td>Microsoft アイルランド操作の制限 (支払いがによって行われた Microsoft アイルランド経由で Microsoft Online inc. Microsoft Online inc. の支払いエージェントとして機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
+<tr><td>広告 *</td><td>Microsoft アイルランド操作の制限 (支払 Microsoft アイルランド経由で Microsoft オンライン Inc. によって Microsoft Online inc. の支払いエージェントとして機能する)</td><td>Microsoft の 1 つの場所<br>南&nbsp;郡&nbsp;ビジネス&nbsp;Park<br>Leopardstown、ダブリン 18 アイルランド</td></tr>
 <tr><td>広告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路図<br>89511 Reno、NV USA</td></tr>
 <tr><td colspan="3">* 広告の収益を獲得する次の国の Microsoft アイルランド操作付きを通じて支払われますオーストリア、ベルギー、ブルガリア、クロアチア、キプロス、チェコ共和国、デンマーク、エストニア、フィンランド、フランス、ドイツ、ギリシャ、ハンガリー、アイルランド、。マン島、イタリア、ラトビア、リヒテンシュタイン、リトアニア、ルクセンブルク、マルタ、モナコ、オランダ、ノルウェー、ポーランド、ポルトガル、ルーマニア、スロバキア、スロベニア、南アフリカ、スペイン、スウェーデン、スイス、英国</td></tr>
 </table>
@@ -56,7 +56,7 @@ ms.locfileid: "8918543"
   </tr>
   <tr> 
      <td valign="top">適用される税年度に、<b>アプリの販売数が 200 個を上回り</b>、アプリ販売の合計購入金額が <b>20,000 米国ドルを超えました</b> (Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売された数は<b>含まれません</b>)。</td>
-    <td valign="top"><b>1099-K</b>:<br>提出者: Microsoft Corporation<br>検索: 4442。<br><br><b>重要</b>: フォーム 1099-k いない支払い、<b>総購入</b>金額が含まれています。</td>
+    <td valign="top"><b>1099-K</b>:<br>提出者: Microsoft Corporation<br>検索: 4442。<br><br><b>重要</b>: フォーム 1099-k<b>粗購入</b>金額、いない支払いが含まれています。</td>
   </tr>
   <tr> 
      <td valign="top">(i) Windows 10 の Microsoft Store 経由でブラジルおよび中国で販売したアプリまたは (ii) Minecraft Marketplace マーケットプレースでの売り上げについて、<b>10 ドル以上の支払い額</b>を受け取りました。<br>
@@ -127,4 +127,4 @@ ms.locfileid: "8918543"
 
 
 > [!NOTE]
-> **IRS の税関連の書類**に関する質問や懸案事項が他にもある場合は、[サポート チケット](http://aka.ms/storesupport)を作成してください。 マイクロソフトは特定の税金の事情に関する質問にはお答えできません。これらの質問については、税務の専門家にお問い合わせください。
+> **IRS の税関連の書類**に関する質問や懸案事項が他にもある場合は、[サポート チケット](https://aka.ms/storesupport)を作成してください。 マイクロソフトは特定の税金の事情に関する質問にはお答えできません。これらの質問については、税務の専門家にお問い合わせください。

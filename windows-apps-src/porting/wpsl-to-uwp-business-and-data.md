@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cb53295227655e3067dafd5e3a3f1f4631a97455
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3e5b97c236f71c95cdff9c56ccc205d3b0fbde5e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936743"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044699"
 ---
 #  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>WindowsPhone Silverlight のビジネスおよび UWP へのデータ レイヤーの移植
 
@@ -30,11 +30,11 @@ WindowsPhone Silverlight アプリは、アプリがフォア グラウンドに
 
 バック グラウンドで大きなデータ ファイルを転送するには、WindowsPhone Silverlight アプリは、 **BackgroundTransferService**クラスを使用します。 UWP アプリは、このために [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の API を使います。 機能は同様のパターンを使って転送を開始しますが、新しい API では機能と性能が向上しています。 詳しくは、「[バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975)」をご覧ください。
 
-WindowsPhone Silverlight アプリは、アプリがフォア グラウンドにないときにオーディオを再生する**Microsoft.Phone.BackgroundAudio**名前空間のマネージ クラスを使います。 UWP は Windows Phone ストア アプリ モデルを使います。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」および[バックグラウンド オーディオ](http://go.microsoft.com/fwlink/p/?linkid=619997)のサンプルをご覧ください。
+WindowsPhone Silverlight アプリは、アプリがフォア グラウンドにないときにオーディオを再生する**Microsoft.Phone.BackgroundAudio**名前空間のマネージ クラスを使います。 UWP は Windows Phone ストア アプリ モデルを使います。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」および[バックグラウンド オーディオ](https://go.microsoft.com/fwlink/p/?linkid=619997)のサンプルをご覧ください。
 
 ## <a name="cloud-services-networking-and-databases"></a>クラウド サービス、ネットワーク、データベース
 
-Azure を使ってクラウドでデータとアプリ サービスをホストできます。 「[Mobile Services の使用](http://go.microsoft.com/fwlink/p/?LinkID=403138)」をご覧ください。 オンラインおよびオフラインの両データを必要とするソリューションの場合は、「[Mobile Services でのオフライン データの同期の使用](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/)」をご覧ください。
+Azure を使ってクラウドでデータとアプリ サービスをホストできます。 「[Mobile Services の使用](https://go.microsoft.com/fwlink/p/?LinkID=403138)」をご覧ください。 オンラインおよびオフラインの両データを必要とするソリューションの場合は、「[Mobile Services でのオフライン データの同期の使用](https://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/)」をご覧ください。
 
 UWP は **System.Net.HttpWebRequest** クラスを部分的にサポートしていますが、**System.Net.WebClient** クラスはサポートされていません。 お勧めできる将来的な代替案は、[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) クラス (または、.NET をサポートする他のプラットフォームにコードを移植可能にする場合は [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)) です。 これらの API では、[System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) を使って HTTP 要求を表します。
 
@@ -44,7 +44,7 @@ UWP アプリには、現在、大量のデータ アクセスを実行するシ
 
 ## <a name="launchers-and-choosers"></a>ランチャーとセレクター
 
-ランチャーとセレクター ( **Microsoft.Phone.Tasks**名前空間にあります)、WindowsPhone Silverlight アプリは、メールの作成、写真を選択または特定の種類の共有などの一般的な操作を実行するオペレーティング システムを操作できるの別のアプリとデータです。 [Windows Phone Silverlight は、windows 10 の名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)と同等の UWP の型を検索するトピックの「 **Microsoft.Phone.Tasks**を検索します。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
+ランチャーとセレクター ( **Microsoft.Phone.Tasks**名前空間にあります)、WindowsPhone Silverlight アプリは、メールの作成、写真を選択または特定の種類の共有などの一般的な操作を実行するオペレーティング システムを操作できるの別のアプリとデータ。 [Windows Phone Silverlight は、windows 10 の名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)と同等の UWP の型を検索するトピックでは、 **Microsoft.Phone.Tasks**を検索します。 これには、ランチャーおよびピッカーと呼ばれる同様のメカニズムから、アプリ間でデータを共有するコントラクトの実装に至るまで、一連の型が含まれます。
 
 WindowsPhone Silverlight アプリ配置できます休止状態にまたは廃棄でも、たとえば、写真選択タスクを使用する場合。 UWP アプリは、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスの使用中はアクティブで実行中のままになります。
 
@@ -101,7 +101,7 @@ C++、C#、または Visual Basic を使った Windows ランタイム アプリ
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-**Windows.Storage**名前空間のサブセットでは、利用できるように、多くの WindowsPhone Silverlight アプリは i/o **IsolatedStorageFile**をクラスがサポートされているなったファイルを実行します。 できたことを前提**IsolatedStorageFile**が使われている記述と読み取りは、ファイルにはまず WindowsPhone Silverlight バージョンの前に、と後で例を次に示します。
+**Windows.Storage**名前空間のサブセットでは、利用できるように、多くの WindowsPhone Silverlight アプリは i/o **IsolatedStorageFile**をクラスがサポートされているなったファイルを実行します。 **IsolatedStorageFile**が使用される、まず WindowsPhone Silverlight バージョンのファイルの読み取りと手書きの前に、と後で例を次に示します。
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";

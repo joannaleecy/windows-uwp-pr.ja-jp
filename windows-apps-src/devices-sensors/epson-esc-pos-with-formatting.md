@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 11467a45021da7898c2b617e3b1b01312c795c4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947536"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047796"
 ---
 # <a name="epson-escpos-with-formatting"></a>書式設定における Epson ESC/POS
 
@@ -59,4 +59,4 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。
+利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](https://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。

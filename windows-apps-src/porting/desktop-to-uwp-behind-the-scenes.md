@@ -6,30 +6,30 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: f5320d4d6a4f43ee8d94a55e46333821656adb20
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 644139f800caa2ead61ce19d63d4408c01575025
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941185"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044905"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>パッケージ デスクトップ アプリケーションの内側
 
 この記事では、デスクトップ アプリケーションの Windows アプリ パッケージを作成するときのファイルとレジストリ エントリを動作で、について詳しく説明を提供します。
 
-アプリケーションの状態他のアプリとの互換性を維持しながら可能な限り多くのシステムの状態からを分離する、最新のパッケージの主な目標ことです。 ブリッジではこれを行うために、アプリケーションをユニバーサル Windows プラットフォーム (UWP) パッケージ内に配置し、実行時にファイル システムとレジストリに行われる変更を検出して、一部の変更のリダイレクトを行います。
+他のアプリとの互換性を維持しながら可能な限り多くのシステムの状態からアプリケーションの状態を分離する、最新のパッケージの主な目標ことです。 ブリッジではこれを行うために、アプリケーションをユニバーサル Windows プラットフォーム (UWP) パッケージ内に配置し、実行時にファイル システムとレジストリに行われる変更を検出して、一部の変更のリダイレクトを行います。
 
 デスクトップ アプリケーション用に作成されたパッケージは、完全信頼できるデスクトップ専用アプリケーションし、仮想化やサンド ボックス化されていません。 このため、従来のデスクトップ アプリケーションと同じように、他のアプリとやり取りすることが可能です。
 
 ## <a name="installation"></a>インストール
 
-アプリ パッケージは *C:\Program Files\WindowsApps\package_name* にインストールされ、実行可能プログラム名は *app_name.exe* になります。 各パッケージ フォルダーには、パッケージ アプリ用の XML 名前空間を含むマニフェスト (AppxManifest.xml という名前) が含まれています。 マニフェスト ファイル内の ```<EntryPoint>``` 要素で、完全信頼アプリを参照します。 そのアプリケーションが起動されるとき、アプリ コンテナー内では実行されませんが、代わりにそのユーザーとして実行される、通常どおり。
+アプリ パッケージは *C:\Program Files\WindowsApps\package_name* にインストールされ、実行可能プログラム名は *app_name.exe* になります。 各パッケージ フォルダーには、パッケージ アプリ用の XML 名前空間を含むマニフェスト (AppxManifest.xml という名前) が含まれています。 マニフェスト ファイル内の ```<EntryPoint>``` 要素で、完全信頼アプリを参照します。 そのアプリケーションが起動したとき、アプリ コンテナー内で実行されませんが、代わりにそのユーザーとして実行される、通常どおり。
 
 展開後、パッケージ ファイルは読み取り専用としてマークされ、オペレーティング システムによって厳重にロックダウンされます。 これらのファイルが改ざんされると、Windows によりアプリの起動が回避されます。
 
 ## <a name="file-system"></a>ファイル システム
 
-アプリの状態を含めるために、アプリケーションによる AppData への変更がキャプチャされます。 作成、削除、更新など、ユーザーの AppData フォルダー (例: *C:\Users\user_name\AppData*) に対する書き込みはすべて、書き込み時にユーザーごと、アプリごとのプライベートな場所にコピーされます。 これは、実際にはプライベート コピーを変更するときに、パッケージ化されたアプリケーションが、AppData を編集、奥行きを作成します。 このように書き込みのリダイレクトを行うことで、アプリによって行われたすべてのファイル変更をシステムで追跡できます。 これにより、アプリケーションがアンインストールされると、それらのファイルをクリーンアップするシステムで、したがってシステム「劣化」を削減しより優れたアプリケーションの削除を提供する、ユーザー操作します。
+アプリの状態を含めるために、アプリケーションが AppData に加える変更がキャプチャされます。 作成、削除、更新など、ユーザーの AppData フォルダー (例: *C:\Users\user_name\AppData*) に対する書き込みはすべて、書き込み時にユーザーごと、アプリごとのプライベートな場所にコピーされます。 これは、実際にはプライベート コピーを変更するときに、パッケージ化されたアプリケーションが、AppData を編集、奥行きを作成します。 このように書き込みのリダイレクトを行うことで、アプリによって行われたすべてのファイル変更をシステムで追跡できます。 これにより、アプリケーションがアンインストールされると、それらのファイルをクリーンアップするシステムで、したがってシステム「劣化」を削減しより優れたアプリケーションの削除を提供する、ユーザー操作します。
 
 AppData のリダイレクトに加えて Windows の既知のフォルダー (System32、Program Files (x86) など) は、アプリ パッケージ内の対応するディレクトリに動的にマージされます。 それぞれのパッケージのルート ディレクトリには、"VFS" という名前のフォルダーが含まれています。 この VFS ディレクトリ内のディレクトリまたはファイルに対する読み取り操作は、実行時にそれぞれ対応するネイティブ部分にマージされます。 たとえば、アプリケーションは、そのアプリ パッケージの一部として*C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*を含めることができますが、ファイル*C:\Windows\System32\vc10.dll*でインストールされるように表示されます。  これにより、ファイルがパッケージ外の場所にあることを想定しているデスクトップ アプリケーションとの互換性が維持されます。
 
@@ -48,7 +48,7 @@ AppData 内の書き込み | 書き込み時に、ユーザーごと、アプリ
 
 ### <a name="packaged-vfs-locations"></a>パッケージ化された VFS の場所
 
-次の表は、パッケージの一部として含まれるファイルが、システム上でアプリのためにどのように配置されるかを示しています。 これらのファイル内にある表示されたシステムの場所、 *C:\Program \windowsapps\package_name\vfs*内のリダイレクトされた場所に実際には、アプリケーションと感じます。 FOLDERID の場所は [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 定数で示されます。
+次の表は、パッケージの一部として含まれるファイルが、システム上でアプリのためにどのように配置されるかを示しています。 これらのファイル内にある一覧表示されているシステムの場所、 *C:\Program \windowsapps\package_name\vfs*内のリダイレクトされた場所に実際には、アプリケーションと感じます。 FOLDERID の場所は [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 定数で示されます。
 
 システムの場所 | リダイレクトされた場所 ([PackageRoot]\VFS\ の下) | 有効なアーキテクチャ
  :--- | :--- | :---
@@ -90,13 +90,13 @@ HKCU 以下の書き込み | 書き込み時に、ユーザーごと、アプリ
 
 ## <a name="uninstallation"></a>アンインストール
 
-パッケージがユーザーによってアンインストールされると、ファイルとフォルダーの*C:\Program \windowsapps\package_name*の下にあるすべて削除されます。 パッケージ化プロセス中にキャプチャされた AppData またはレジストリにリダイレクトされた書き込みも。
+パッケージがユーザーによってアンインストールされると、ファイルとフォルダー *C:\Program \windowsapps\package_name*の下にあるすべて削除されます。 パッケージ化プロセス中にキャプチャされた AppData またはレジストリにリダイレクトされた書き込みも。
 
 ## <a name="next-steps"></a>次のステップ
 
 **質問に対する回答を見つける**
 
-ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
+ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
 **フィードバックの提供または機能の提案を行う**
 

@@ -1,29 +1,29 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
+description: このセクションでは、以前のバージョンの windows 8.1 から windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
 title: PlayReady の Encrypted Media Extension
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945076"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047294"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
 
 
-このセクションでは、以前の Windows8.1 バージョンから windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
+このセクションでは、以前のバージョンの windows 8.1 から windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
 
 Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
 
-このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にする PlayReady Encrypted メディア拡張機能 (EME) に加えられた変更の一覧を示します。
+このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にする PlayReady 暗号化メディア拡張機能 (EME) に加えられた変更の一覧を示します。
 
 次の一覧では、新しい機能と windows 10 の PlayReady Encrypted Media Extension に加えられた変更について説明します。
 
@@ -34,10 +34,10 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 -   永続的でないライセンスの事前の取得を提供します。
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    複数のキー識別子 (Keyid)、Windows8.1 に示すように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
+    複数のキー識別子 (Keyid)、windows 8.1 のように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
 
     > [!NOTE]
-    > 下で windows 10 では、複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
+    > Windows 10 の複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
 
 -   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
@@ -61,7 +61,7 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 
 このセクションでは、PlayReady でサポートされている W3C 暗号化メディア拡張機能のバージョンについて説明します。
 
-Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。 このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。
+Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。 このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。
 
 ## <a name="use-hardware-drm"></a>ハードウェア DRM の使用
 

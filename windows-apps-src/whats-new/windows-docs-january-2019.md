@@ -5,18 +5,18 @@ keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10 
 ms.date: 1/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f224663506cbb60f6c1476caccb5ecffefeaf7b
-ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
+ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014404"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046132"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>新機能、Windows 開発者向けドキュメントの年 2019年 1 月
 
 Windows 開発者向けドキュメントは、Windows プラットフォームで開発者に提供される新機能の情報を反映して継続的に更新されています。 次の機能概要、開発者向けガイダンス、およびビデオには 1 月で利用可能ななりました。
 
-Windows 10 の[ツールと SDK をインストール](http://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
+Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/fwlink/?LinkId=821431)すると、[新しいユニバーサル Windows アプリを作成](../get-started/create-uwp-apps.md)したり、[Windows の既存のアプリ コード](../porting/index.md)がどのように使えるかを試したりすることができます。
 
 ## <a name="features"></a>機能
 
@@ -70,7 +70,7 @@ Github のオープン ソースの貢献度の WPF、Windows フォーム、お
 
 ### <a name="progressive-web-apps"></a>プログレッシブ Web アプリ
 
-プログレッシブ Web アプリは、さまざまなブラウザーやさまざまな Windows 10 デバイス間でネイティブのアプリと同様に機能する web サイトです。 について[は、ビデオ](https://youtu.be/ugAewC3308Y)をし、[チェック アウト、ドキュメント](http://aka.ms/Windows-PWA)を開始します。
+プログレッシブ Web アプリは、さまざまなブラウザーやさまざまな Windows 10 デバイス間でネイティブのアプリと同様に機能する web サイトです。 について[は、ビデオ](https://youtu.be/ugAewC3308Y)をし、[チェック アウト、ドキュメント](https://aka.ms/Windows-PWA)を開始します。
 
 ### <a name="vs-code-series"></a>VS コード シリーズ
 

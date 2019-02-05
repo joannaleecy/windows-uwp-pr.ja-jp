@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e3c74171c619fd59e272e539fd9a4e5428e258
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925581"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047617"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>多言語アプリ ツールキット 4.0 の使用
 
@@ -63,13 +63,13 @@ Visual Studio 2017 を使用している場合は、両方のインストーラ�
 
 ツールキットは、応答としてこれらを実行します。
 
-- 追加した言語ごとに、言語の [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302) の名前が付いた新しいフォルダーが作成されます。 そのフォルダー内に、既定の言語の文字列が含まれているものと一致する新しいリソース ファイル (.resw) が作成されます。
+- 追加した言語ごとに、言語の [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302) の名前が付いた新しいフォルダーが作成されます。 そのフォルダー内に、既定の言語の文字列が含まれているものと一致する新しいリソース ファイル (.resw) が作成されます。
 - 初めて言語を追加した場合は、`MultilingualResources` という名前の新しいフォルダーがプロジェクトに追加されます。 そのフォルダー内で、言語ごとに .xlf ファイルが追加されます。 .xlf ファイルには、プロジェクトの各リソース ファイル (.resw) 内の文字列ごとに翻訳単位が含まれます。
 - 出力ウィンドウには、追加した言語の追加を確認するメッセージが表示されます。
 
 既定の言語のリソース ファイル (.resw) を追加または削除するたびに、または既定の言語のリソース ファイル (.resw) 内の文字列を追加または削除するたびに、.xlf ファイルを再同期するようにプロジェクトをリビルドします。 これにより、.xlf ファイルに既定の言語の統合した文字列が含まれるようになります。
 
-[Microsoft Language Portal](http://go.microsoft.com/fwlink/p/?LinkId=330295) や [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220) などのインストール済みの翻訳プロバイダーを使って、アプリのリソースを翻訳できます。 プロバイダーが特定の言語をサポートしている場合、プロバイダーのアイコンが [Translation Languages] (翻訳言語) ダイアログの言語名の横に表示されます。
+[Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295) や [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) などのインストール済みの翻訳プロバイダーを使って、アプリのリソースを翻訳できます。 プロバイダーが特定の言語をサポートしている場合、プロバイダーのアイコンが [Translation Languages] (翻訳言語) ダイアログの言語名の横に表示されます。
 
 [Translation Languages] (翻訳言語) ダイアログでは、ツールキットで検出可能な .xlf ベースの言語は、選択ボックスがあらかじめオンになり、その言語がプロジェクトに既に含まれていることを示しています。
 
@@ -149,8 +149,8 @@ Visual Studio 内で翻訳サービスにアクセスするには、ソリュー
 
 多言語アプリ ツールキットには、2 種類のプロバイダーが付属しています。
 
-- [Microsoft Language Portal](http://go.microsoft.com/fwlink/p/?LinkId=330295) プロバイダーは、Microsoft の製品やサービスのユーザー インターフェイス テキストの翻訳に基づいて、翻訳のリサイクルおよび用語の検索を可能にします。
-- [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220) プロバイダーは、オンデマンドの機械翻訳サービスを実現します。
+- [Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295) プロバイダーは、Microsoft の製品やサービスのユーザー インターフェイス テキストの翻訳に基づいて、翻訳のリサイクルおよび用語の検索を可能にします。
+- [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) プロバイダーは、オンデマンドの機械翻訳サービスを実現します。
 
 多言語エディターでは、翻訳に確信が持てない箇所を後で確認できるよう、翻訳の状態を管理することができます。 **[プロパティ]** タブで各文字列の状態を設定することができます。状態の値は **[New]** (未翻訳)、**[Needs review]** (要確認)、**[Translated]** (翻訳済み)、**[Final]** (最終版)、**[Signed off]** (承認) です。 行の左にあるインジゲーターに状態が示されます。 多言語エディターですべての行が緑色になれば、翻訳作業は終了となります。
 
@@ -166,7 +166,7 @@ Microsoft Store の認定プロセスを開始する前に、`<project-name>.qps
 * [グローバリゼーションとローカライズ](globalizing-portal.md)
 * [グローバリゼーションのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)
 * [アプリをローカライズ可能にする](prepare-your-app-for-localization.md)
-* [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>ダウンロード
 
@@ -175,5 +175,5 @@ Microsoft Store の認定プロセスを開始する前に、`<project-name>.qps
 
 ## <a name="translation-services"></a>翻訳サービス
 
-* [Microsoft Language Portal](http://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator ](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295)
+* [Microsoft Translator ](https://go.microsoft.com/fwlink/p/?LinkId=258220)

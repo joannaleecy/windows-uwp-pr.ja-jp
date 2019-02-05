@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a9e796eee76025e7697c08669e6942e0d69206f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923492"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045571"
 ---
 # <a name="custom-video-effects"></a>カスタムのビデオ特殊効果
 
@@ -162,7 +162,7 @@ ms.locfileid: "8923492"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>ハードウェア処理を使用した IBasicVideoEffect インターフェイスの実装
 
 
-カスタムのビデオ特殊効果をハードウェア (GPU) 処理を使って作成する場合も、方法は上記のソフトウェア処理を使った場合とほぼ同じです。 このセクションでは、効果にハードウェア処理を使う場合のいくつかの違いについて説明します。 この例では、Win2D Windows ランタイム API を使います。 Win2D を使う方法について詳しくは、[Win2D のドキュメント](http://go.microsoft.com/fwlink/?LinkId=519078)をご覧ください。
+カスタムのビデオ特殊効果をハードウェア (GPU) 処理を使って作成する場合も、方法は上記のソフトウェア処理を使った場合とほぼ同じです。 このセクションでは、効果にハードウェア処理を使う場合のいくつかの違いについて説明します。 この例では、Win2D Windows ランタイム API を使います。 Win2D を使う方法について詳しくは、[Win2D のドキュメント](https://go.microsoft.com/fwlink/?LinkId=519078)をご覧ください。
 
 次の手順に従って、この記事の最初に「**アプリへのカスタム効果の追加**」で作成したプロジェクトに Win2D NuGet パッケージを追加します。
 
@@ -241,5 +241,5 @@ Win2D API を使って、入力フレームの [**Direct3DSurface**](https://msd
 ## <a name="related-topics"></a>関連トピック
 * [シンプルなカメラ プレビューへのアクセス](simple-camera-preview-access.md)
 * [メディアのコンポジションと編集](media-compositions-and-editing.md)
-* [Win2D ドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D ドキュメント](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [メディア再生](media-playback.md)

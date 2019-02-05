@@ -6,12 +6,12 @@ ms.date: 02/27/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a0549a92a7855abb2c55bcef246018aacbb9b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09fce637c50b0a03230d0808e51a9e5cfadc7179
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927119"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046763"
 ---
 # <a name="managing-local-connected-storage"></a>ローカル接続ストレージの管理
 接続ストレージは、ゲーム データをクラウドに保存するために使用されますが、接続ストレージ サービスへのローカル ストレージ コンポーネントもあります。 PC を使っているか本体を使っているかに関係なく、接続ストレージ データのローカル キャッシュが存在し、クラウドに同期されたデータが含まれています。 XDK タイトルを作成するのか UWP タイトルを作成するのかに関係なく、ローカルの接続ストレージ データを管理できるツールが用意されています。
@@ -228,7 +228,7 @@ Xbstorage には、開発者が XDK コマンド プロンプトで使うこと�
 |オプション  |説明  |
 |---------|---------|
 | /?                           |  xbstorage.exe のヘルプを表示します。 |
-| /X *:address* [*+accesskey*]  | ターゲットの本体のホスト名またはアドレス (本体に **Tools IP** として表示されます) を指定しますが、既定の本体は変更しません。 このオプションを使用しない場合、既定の本体が使用されます。*Accesskey* は、アクセス キーを知っている人だけに本体へのアクセスを制限するために使用できる文字列です。 **Xbconfig**コマンドを使用して、アクセス キーを設定**accesskey =。 キー、* です。アクセス キーを有効にする本体を再起動します。 アクセス キーが設定されている本体にアクセスするには、本体の IP アドレスまたはホスト名の後にプラス記号 (+) とアクセス キーを付け加える必要があります。
+| /X *:address* [*+accesskey*]  | ターゲットの本体のホスト名またはアドレス (本体に **Tools IP** として表示されます) を指定しますが、既定の本体は変更しません。 このオプションを使用しない場合、既定の本体が使用されます。*Accesskey* は、アクセス キーを知っている人だけに本体へのアクセスを制限するために使用できる文字列です。 **Xbconfig**コマンドを使用して、アクセス キーを設定**accesskey =。 キー、* です。次に、アクセス キーを有効にする本体を再起動します。 アクセス キーが設定されている本体にアクセスするには、本体の IP アドレスまたはホスト名の後にプラス記号 (+) とアクセス キーを付け加える必要があります。
 > [!NOTE]
 > xbconnect で既定の本体を設定するときにアクセス キーを指定した場合、アクセス キーは既定の本体アドレスの一部として保存されます。
 |
@@ -469,6 +469,6 @@ gamesaveutil generate dummydata.xml /containers:4 /blobs:10 /blobsize:512
 
 **ContextDescription** ノードは省略可能です。 コンピューターの接続ストレージ領域を作成している場合は、`<Account machine="true"/>` の代わりに `<Account msa="user@domain.com"/>` を使用できます。 これを使用しない場合は、インポートのコマンド ラインでコンテキストを指定できます。
 BLOB およびコンテナーは、そのファイルの生成対象であるゲームまたはアプリケーションによって与えられた対応する名前を持つ必要があります。
-各 BLOB の内容は、**CDATA** タグでラップされた文字列である必要があります。これは、**CRYPT_STRING_BASE64** フラグを指定して **CryptBinaryToStringW** を呼び出し、その BLOB のデータを RAW バイト配列として提供することによって生成されます。 逆に、**CryptStringToBinary** を呼び出し、元の暗号化された文字列を提供することによって、BLOB データを元の状態に変換できます。 これら 2 つの関数の使用例については、Visual Studio の MSDN フォーラムの「[CryptBinaryToString returns invalid bytes](http://social.msdn.microsoft.com/Forums/vstudio/en-US/9acac904-c226-4ae0-9b7f-261993b9fda2/cryptbinarytostring-returns-invalid-bytes?forum=vcgeneral)」を参照してください。
+各 BLOB の内容は、**CDATA** タグでラップされた文字列である必要があります。これは、**CRYPT_STRING_BASE64** フラグを指定して **CryptBinaryToStringW** を呼び出し、その BLOB のデータを RAW バイト配列として提供することによって生成されます。 逆に、**CryptStringToBinary** を呼び出し、元の暗号化された文字列を提供することによって、BLOB データを元の状態に変換できます。 これら 2 つの関数の使用例については、Visual Studio の MSDN フォーラムの「[CryptBinaryToString returns invalid bytes](https://social.msdn.microsoft.com/Forums/vstudio/en-US/9acac904-c226-4ae0-9b7f-261993b9fda2/cryptbinarytostring-returns-invalid-bytes?forum=vcgeneral)」を参照してください。
 
 <a id="ID4EWBAE"></a>

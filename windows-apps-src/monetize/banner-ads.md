@@ -5,12 +5,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 広告, 宣伝, AdControl, バナー広告
 ms.localizationpriority: medium
-ms.openlocfilehash: e8754790fac07e6e1babdb44888cfd1ff138c230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5f8aea8f204127a0f783f9b751a9f4178667753e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938234"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9045880"
 ---
 # <a name="banner-ads"></a>バナー広告
 
@@ -31,5 +31,5 @@ ms.locfileid: "8938234"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [GitHub の広告サンプル](http://aka.ms/githubads)
+* [GitHub の広告サンプル](https://aka.ms/githubads)
 * [アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 画面の向き, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4e2cf915e510c3d6e3d702417b72c097a293f03c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924324"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051075"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>画面の向きのサポート (DirectX と C++)
 
@@ -19,25 +19,25 @@ ms.locfileid: "8924324"
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは、[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントを処理するとき、複数の画面の向きをサポートできます。 ここでは、windows 10 デバイスのグラフィックス ハードウェアが効率的かつ効果的に使用されるように、UWP DirectX アプリで画面の向きを処理するためのベスト プラクティスをについて説明します。
 
-始める前に、グラフィックス ハードウェアは、デバイスの向きにかかわらず、常に同じ方法でピクセル データを出力するということを覚えておいてください。 Windows 10 デバイスでは、現在、表示の向きを判断し、(ある種のセンサーやソフトウェア トグルを使って) でき、ユーザーが表示設定を変更できるようにすることができます。 このため、windows 10 のため自体を確実が「直立」デバイスの向きに基づいて画像の回転を処理します。 既定では、アプリは何か (たとえば、ウィンドウ サイズ) の方向が変化したという通知を受け取ります。 この場合、windows 10 は直ちに最終的な表示の画像を回転します。 (後述) 4 つの特定の画面の向きの 3 つで、windows 10 は最終的な画像を表示するのに追加のグラフィックス リソースと計算を使用します。
+始める前に、グラフィックス ハードウェアは、デバイスの向きにかかわらず、常に同じ方法でピクセル データを出力するということを覚えておいてください。 Windows 10 デバイスでは、現在、表示の向きを判断し (ある種のセンサーやソフトウェア トグルを使って) でき、ユーザーが表示設定を変更できるようにすることができます。 このため、windows 10 のため自体が「直立」デバイスの向きに基づくことを確認する画像の回転を処理します。 既定では、アプリは何か (たとえば、ウィンドウ サイズ) の方向が変化したという通知を受け取ります。 この場合、windows 10 は直ちに最終的な表示の画像を回転します。 (後述) 4 つの特定の画面の向きの 3 つで、windows 10 は最終的な画像を表示するのに追加のグラフィックス リソースと計算を使用します。
 
 UWP DirectX アプリでは、アプリが照会できる基本的な表示の向きのデータを [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) オブジェクトが提供します。 既定の向きは*横*で、表示のピクセルの幅が高さよりも大きくなります。もう 1 つの向きは*縦*で、表示はどちらかの方向に 90° 回転され、幅は高さより小さくなります。
 
 Windows 10 には、4 つの特定のディスプレイの向きのモードが定義されています。
 
--   横: 既定値が、windows 10 の向きを表示し、(0 °) 回転の基準または本来の角度と見なされます。
+-   横: 既定の windows 10 の向きを表示し、(0 °) 回転の基準または本来の角度と見なされます。
 -   縦: 表示は時計回りに 90° (または反時計回りに 270°) 回転します。
 -   横、反転: 表示は 180° 回転されます (上下が逆になります)。
 -   縦、反転: 表示は時計回りに 270° (または反時計回りに 90°) 回転します。
 
 別に 1 つの方向から表示が回転すると、windows 10 は内部的に新しい向きで描画される画像を配置するために回転操作を実行し、ユーザーが画面に、直立した画像を表示します。
 
-また、windows 10 では、1 つの向きに変化するときにスムーズなユーザー エクスペリエンスを作成する自動切り替えアニメーションが表示されます。 表示の向きが変わる際に、ユーザーにはその変化が、表示されている画面の画像の固定拡大と回転アニメーションとして表示されます。 Windows 10 によって、新しい向きでレイアウトのアプリへの時間が割り当てられます。
+また、windows 10 では、1 つの方向から別に移行するときにスムーズなユーザー エクスペリエンスを作成する自動切り替えアニメーションが表示されます。 表示の向きが変わる際に、ユーザーにはその変化が、表示されている画面の画像の固定拡大と回転アニメーションとして表示されます。 新しい向きでレイアウトのためにアプリを windows 10 によって時間が割り当てられます。
 
 画面の向きの変更を処理する一般的なプロセスは、ほぼ次のようになります。
 
 1.  ウィンドウの境界値と表示の向きのデータの組み合わせを使って、デバイスの本来の表示の向きに合わせたスワップ チェーンを維持します。
-2.  [**1::setrotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)を使用して、スワップ チェーンの向きの windows 10 に通知します。
+2.  [**Idxgiswapchain 1::setrotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)を使用して、スワップ チェーンの向きの windows 10 に通知します。
 3.  レンダリング コードを変更して、デバイスのユーザーによる向きに合わせた画像を生成します。
 
 ## <a name="resizing-the-swap-chain-and-pre-rotating-its-contents"></a>スワップ チェーンのサイズ変更とその内容の事前回転
@@ -345,7 +345,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
     -   横、反転 (DXGI\_MODE\_ROTATION\_ROTATE180)
     -   縦、反転 (DXGI\_MODE\_ROTATION\_ROTATE90)
 
-    表示の向きを決定するは、( [**displayinformation::orientationchanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)の結果) など、windows 10 によって提供されるデータに基づいて適切なマトリックスを選択し、各ピクセル (Direct2D) または頂点の座標で乗算されます。(Direct3D)、シーンに効果的に回転すると、画面の向きに合わせて配置されます。 Direct2D では画面の原点が左上隅として定義されていますが、Direct3D では原点がウィンドウの論理的中央として定義されていることに注意してください。
+    表示の向きを決定するは、( [**displayinformation::orientationchanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)の結果) など、windows 10 によって提供されるデータに基づいて適切なマトリックスが選択され、各ピクセル (Direct2D) または頂点の座標で乗算されます。(Direct3D)、シーンに効果的に回転すると、画面の向きに合わせて配置されます。 Direct2D では画面の原点が左上隅として定義されていますが、Direct3D では原点がウィンドウの論理的中央として定義されていることに注意してください。
 
 > **注:** 回転し、その定義方法使われる 2-d 変換について詳しくは、[画面の回転 (2 D) を定義する行列](#appendix-a-applying-matrices-for-screen-rotation-2-d)を参照してください。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)」をご覧ください。
 
@@ -366,7 +366,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 ## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>CoreWindowResizeManager の使用による回転の遅延の短縮
 
 
-既定では、windows 10 は、アプリ モデルや言語に画像の回転を完了するのに関係なく、アプリの時間の短いながらも目立つ程度のウィンドウを提供します。 ただし、アプリがここで説明したいずれかの方法で回転の計算を行った場合は、この時間枠が閉じる前に処理を完了できる可能性があります。 残った時間は返して、回転アニメーションを完了するために使いたいと思うでしょう。 ここで、[**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) が登場します。
+既定では、windows 10 は、どのアプリには、アプリ モデルや画像の回転を完了する、言語に関係なく、時間の短いながらも目立つ程度ウィンドウを提供します。 ただし、アプリがここで説明したいずれかの方法で回転の計算を行った場合は、この時間枠が閉じる前に処理を完了できる可能性があります。 残った時間は返して、回転アニメーションを完了するために使いたいと思うでしょう。 ここで、[**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) が登場します。
 
 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) の使い方は、次のようになります。[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントが発生したら、イベントのハンドラー内で [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) を呼び出して、**CoreWindowResizeManager** のインスタンスを取得します。新しい向きのレイアウトが完了して提示されたら、[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) を呼び出し、Windows に対して、回転アニメーションを完了してアプリ画面を表示できることを知らせます。
 
@@ -380,7 +380,7 @@ CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeMana
 resizeManager->NotifyLayoutCompleted();
 ```
 
-ユーザーがディスプレイの向きを回転させると windows 10 アニメーション、アプリの独立したフィードバックとしてユーザーに表示します。 アニメーションは 3 つの部分から成り、次の順序で実行されます。
+ユーザーは、ディスプレイの向きを回転させると、windows 10 アニメーション、アプリの独立したフィードバックとしてユーザーに表示します。 アニメーションは 3 つの部分から成り、次の順序で実行されます。
 
 -   Windows 10 では、元の画像を縮小します。
 -   Windows 10 では、新しいレイアウトの再構築にかかる時間のイメージを保持します。 これが、短縮したい時間枠です。アプリはおそらく、この時間のすべては必要としません。
@@ -391,7 +391,7 @@ resizeManager->NotifyLayoutCompleted();
 ## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>付録 A: 画面の向きのためのマトリックスの適用 (2-D)
 
 
-[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のサンプル　コード (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) で既にお気付きかもしれませんが、回転マトリックスは Direct2D 出力用と Direct3D 出力用とに分けてきました。 まずは、2-D マトリックスを見てみましょう。
+[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のサンプル　コード (および [DXGI スワップ チェーンの回転のサンプル](https://go.microsoft.com/fwlink/p/?linkid=257600)) で既にお気付きかもしれませんが、回転マトリックスは Direct2D 出力用と Direct3D 出力用とに分けてきました。 まずは、2-D マトリックスを見てみましょう。
 
 Direct2D コンテンツと Direct3D コンテンツに同じ回転マトリックスを適用できない理由は、次の 2 つです。
 
@@ -488,7 +488,7 @@ default:
 ## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>付録 B: 画面の向きのためのマトリックスの適用 (3-D)
 
 
-[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のコード例 (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) では、画面の向きごとに特定の変換マトリックスを定義しました。 ここでは、3-D シーンを回転させるためのマトリックスを見てみましょう。 前と同じように、4 つのそれぞれの向きのために、マトリックスのセットを作成します。 丸めエラー、つまりわずかな視覚的アーティファクトを避けるために、コード内でマトリックスを明示的に宣言します。
+[スワップ チェーンのサイズ変更とその内容の事前回転](#resizing-the-swap-chain-and-pre-rotating-its-contents)のコード例 (および [DXGI スワップ チェーンの回転のサンプル](https://go.microsoft.com/fwlink/p/?linkid=257600)) では、画面の向きごとに特定の変換マトリックスを定義しました。 ここでは、3-D シーンを回転させるためのマトリックスを見てみましょう。 前と同じように、4 つのそれぞれの向きのために、マトリックスのセットを作成します。 丸めエラー、つまりわずかな視覚的アーティファクトを避けるために、コード内でマトリックスを明示的に宣言します。
 
 これらの 3-D 回転マトリックスは、次のようにセットアップします。 次のコード例で示されているマトリックスは、カメラの 3-D シーン空間内の点を定義する頂点を 0°、90°、180°、または 270° 回転させる、標準的な回転マトリックスです。 シーン内の各頂点の \[x, y, z\] 座標値は、シーンの 2-D プロジェクションが計算されるときに、この回転マトリックスによって乗算されます。
 

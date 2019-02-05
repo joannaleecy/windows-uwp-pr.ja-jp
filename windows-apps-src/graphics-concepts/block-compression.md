@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b7726067055b92ae51c01d4d056a2a11624204db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934351"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047211"
 ---
 # <a name="block-compression"></a>ブロック圧縮
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-'f' を 'u' のタイプとして再解釈するため、[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) を使います。
+'f' を 'u' のタイプとして再解釈するため、[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) を使います。
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-上の再解釈では、基になるデータの値は変更されません。[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) は浮動小数点数を符号なし整数として再解釈します。
+上の再解釈では、基になるデータの値は変更されません。[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) は浮動小数点数を符号なし整数として再解釈します。
 
 より一般的な変換を実行するには、割り当てを使用します。
 

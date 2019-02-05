@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926265"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046385"
 ---
 # <a name="customize-the-print-preview-ui"></a>印刷プレビュー UI のカスタマイズ
 
@@ -25,7 +25,7 @@ ms.locfileid: "8926265"
 
 このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 印刷機能の詳細については、「[アプリからの印刷](print-from-your-app.md)」を参照してください。
 
-**ヒント:** 例では、このトピックでは、のほとんどは、印刷サンプルに基づいています。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
+**ヒント:** このトピックの例のほとんどは、サンプルに基づいて印刷します。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
 
  
 
@@ -48,7 +48,7 @@ ms.locfileid: "8926265"
 
 ただし、この方法を使って加えた変更は、印刷プレビュー UI にのみ影響します。 ユーザーは印刷プレビュー UI で **[その他の設定]** をタップすることで、プリンターでサポートされているすべてのオプションにいつでもアクセスできます。
 
-**注:** アプリは、表示される印刷オプションを指定しますが、選んだプリンターでサポートされているようにのみが印刷プレビュー UI にします。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
+**注:**、選んだプリンターでサポートされているのみが印刷プレビュー UI に表示されるアプリは、表示される印刷オプションを指定しますが、します。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要な**、印刷プレビュー UI に**他の設定**のリンクを含むからすべての印刷オプションを削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
+**重要な**、印刷プレビュー UI に**他の設定**のリンクを含むからすべての印刷オプションの削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
 
 ### <a name="specify-default-options"></a>既定のオプションの指定
 
@@ -187,4 +187,4 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 * [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619984)

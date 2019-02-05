@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10、UWP、広告ネットワーク、アプリのメタデータ
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd0381d9ec8917f381cfeb045d58bfa3436de74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934421"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049429"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>広告ネットワーク用のアプリのメタデータ API
 
@@ -69,7 +69,7 @@ ms.locfileid: "8934421"
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Ocp-Apim-Subscription-Key | 文字列 | 必須。 [アプリのメタデータ API ポータルから取得した](#get-key)サブスクリプション キー。  |
+| Ocp-Apim-Subscription-Key | string | 必須。 [アプリのメタデータ API ポータルから取得した](#get-key)サブスクリプション キー。  |
 
 <span/>
 
@@ -77,7 +77,7 @@ ms.locfileid: "8934421"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------|
-| app_id | 文字列 | 必須。 メタデータを取得する対象となるアプリの ID。 次のいずれかの値を使用できます。<br/><br/><ul><li>アプリのストア ID。 ストア ID の例は 9NBLGGH29DM8 です。</li><li>当初は Windows 8.x または Windows Phone 8.x 用にビルドされたアプリの製品ID (*アプリID* とも呼ばれる)。 製品 ID は GUID です。</li></ul> |
+| app_id | string | 必須。 メタデータを取得する対象となるアプリの ID。 次のいずれかの値を使用できます。<br/><br/><ul><li>アプリのストア ID。 ストア ID の例は 9NBLGGH29DM8 です。</li><li>当初は Windows 8.x または Windows Phone 8.x 用にビルドされたアプリの製品ID (*アプリID* とも呼ばれる)。 製品 ID は GUID です。</li></ul> |
 
 <span/>
 
@@ -128,21 +128,21 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 | 値      | 型   | 説明    |
 |------------|--------|--------------------|
-| storeId           | 文字列  | アプリのストア ID。 ストア ID の例は 9NBLGGH29DM8 です。     |  
-| name           | 文字列  | アプリの名前。   |
-| description           | 文字列  | アプリのストア登録情報にある説明。  |
-| phoneStoreGuid           | 文字列  | アプリの製品 ID (Windows Phone 8.x)。 これは GUID です。  |
-| windowsStoreGuid           | 文字列  | アプリの製品 ID (Windows 8.x)。 これは GUID です。 |
-| storeCategory           | 文字列  | ストアでのアプリのカテゴリ。 サポートされる値については、ストア内のアプリの[カテゴリとサブカテゴリの一覧](../publish/category-and-subcategory-table.md)をご覧ください。  |
-| iabCategory           | 文字列  | Interactive Advertising Bureau (IAB) によって定義されているアプリのコンテンツのカテゴリ。 たとえば、**News** や **Sports** です。 コンテンツのカテゴリの一覧については、IAB の Web サイトで [IAB Tech Lab のコンテンツ分類](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy)のページをご覧ください。   |
-| iabCategoryId           | 文字列  | アプリのコンテンツ カテゴリの ID。 たとえば、**IAB12** はニュース カテゴリの ID で、**IAB17** はスポーツ カテゴリの ID です。 コンテンツ カテゴリ ID の一覧については、[OpenRTB API 仕様](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)のセクション 5.1 をご覧ください。 |
+| storeId           | string  | アプリのストア ID。 ストア ID の例は 9NBLGGH29DM8 です。     |  
+| name           | string  | アプリの名前。   |
+| description           | string  | アプリのストア登録情報にある説明。  |
+| phoneStoreGuid           | string  | アプリの製品 ID (Windows Phone 8.x)。 これは GUID です。  |
+| windowsStoreGuid           | string  | アプリの製品 ID (Windows 8.x)。 これは GUID です。 |
+| storeCategory           | string  | ストアでのアプリのカテゴリ。 サポートされる値については、ストア内のアプリの[カテゴリとサブカテゴリの一覧](../publish/category-and-subcategory-table.md)をご覧ください。  |
+| iabCategory           | string  | Interactive Advertising Bureau (IAB) によって定義されているアプリのコンテンツのカテゴリ。 たとえば、**News** や **Sports** です。 コンテンツのカテゴリの一覧については、IAB の Web サイトで [IAB Tech Lab のコンテンツ分類](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy)のページをご覧ください。   |
+| iabCategoryId           | 文字列  | アプリのコンテンツ カテゴリの ID。 たとえば、**IAB12** はニュース カテゴリの ID で、**IAB17** はスポーツ カテゴリの ID です。 コンテンツ カテゴリ ID の一覧については、[OpenRTB API 仕様](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)のセクション 5.1 をご覧ください。 |
 | coppa           | ブール値  | アプリが 13 歳未満の子供を対象しており、児童オンライン プライバシー保護法 (COPPA) の義務がある場合は true。それ以外の場合は false です。  |
 | downloadUrl           | 文字列  | ストア内のアプリの登録情報へのリンク。 このリンクは、```https://www.microsoft.com/store/apps/<Store ID>``` の形式で示されます。  |
 | isLive           | ブール値  | アプリが現在ストアで利用可能な場合は true。それ以外の場合は false。  |
-| iconUrls           | 配列  |  アプリに関連付けられたアイコン URL への相対パスを含む 1 つ以上の文字列の配列。 アイコンを取得するには、URL の先頭に *http* または *https* を付けます。  |
+| iconUrls           | array  |  アプリに関連付けられたアイコン URL への相対パスを含む 1 つ以上の文字列の配列。 アイコンを取得するには、URL の先頭に *http* または *https* を付けます。  |
 | type           | 文字列  | **App** または **Game** のいずれかの文字列。  |
-| devices           |  配列  | アプリがサポートするデバイスの種類を指定する次の 1 つ以上の文字列の配列: **PC**、**Phone**、**Xbox**、**IoT**、**Server**、**Holographic**。  |
-| platformVersions           | 配列  |  アプリがサポートするプラットフォームを指定する次の 1 つ以上の文字列の配列: **Windows.Universal**、**Windows.Windows8x**、**Windows.WindowsPhone8x**。  |
+| devices           |  array  | アプリがサポートするデバイスの種類を指定する次の 1 つ以上の文字列の配列: **PC**、**Phone**、**Xbox**、**IoT**、**Server**、**Holographic**。  |
+| platformVersions           | array  |  アプリがサポートするプラットフォームを指定する次の 1 つ以上の文字列の配列: **Windows.Universal**、**Windows.Windows8x**、**Windows.WindowsPhone8x**。  |
 | screenshotUrls           | 配列  | このアプリのスクリーンショット URL への相対パスを含む 1 つ以上の文字列の配列。 スクリーンショットを取得するには、URL の先頭に *http* または *https* を付けます。  |
 
 <span/>

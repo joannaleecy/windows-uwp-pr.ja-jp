@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、クラウド サービス
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925316"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045591"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 
@@ -81,7 +81,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games は <b>Age of Ascent</b> を開発した企業です。このゲームは、壮大な 3D 空間を舞台にした大規模マルチプレイヤー オンライン (MMO) ゲームであり、最新のブラウザーを備えたデバイスでプレイできます。 したがって、このゲームは、プラグインなしで、PC、ノート PC、スマートフォン、その他のモバイル デバイスでプレイできます。このゲームでは、ASP.NET Core、HTML5、WebGL、Azure が使用されています。</td>
         <td>
             <ul>
@@ -96,7 +96,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Next Games は、AMC のオリジナル シリーズをベースにしたビデオ ゲーム <b>The Walking Dead: No Man's Land</b> の開発元です。 Walking Dead ゲームでは、バックエンドとして Azure を使用しています。 公開後の最初の週末にダウンロード数は 1,000,000 回に達し、最初の 1 週間で、このゲームは、米国 App Store で iPhone と iPad の無料アプリ第 1 位、12 か国で無料アプリ第 1 位、13 か国で無料ゲーム第 1 に成りました。
         </td>
         <td>
@@ -111,7 +111,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad では、Unity ゲーム エンジンと Azure を使って <b>Crime Coast</b> を開発しました。 <b>Crime Coast</b> は、Android、iOS、Windows プラットフォームでプレイできるソーシャル戦略ゲームです。 このゲームでは、Azure BLOB ストレージ、Managed Azure Redis Cache、負荷分散された IIS VM アレイ、Microsoft 通知ハブが使用されています。 同社のスケーリングの管理方法や、同時接続プレイヤー数が 5,000 人にもなるプレイヤーの急増の処理方法を参考にしてください。
         </td>
         <td>
@@ -130,7 +130,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 ### <a name="other-links"></a>その他のリンク
 
 * [Hitman と Azure: ゲーム機能の作成 (クラウドの使用によってのみ可能となるエルーシブ ターゲットなど)](https://channel9.msdn.com/Series/Hitman)
-* [Hitcents、Game Troopers、InnoSpark の秘密のソースとしての Azure](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Hitcents、Game Troopers、InnoSpark の秘密のソースとしての Azure](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [Bizspark プログラムで Azure を使用しているゲーム関連新興企業](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -194,7 +194,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
     
 * [開発者プログラム](e2e.md#developer-programs)
 
-    Microsoft では、[ID@Xbox](http://www.xbox.com/Developers/id) や [Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)など、Windows ゲームの開発と公開に役立つ開発者向けプログラムを提供しています。
+    Microsoft では、[ID@Xbox](https://www.xbox.com/Developers/id) や [Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)など、Windows ゲームの開発と公開に役立つ開発者向けプログラムを提供しています。
 
 ## <a name="learning-resources"></a>学習リソース
 
@@ -225,7 +225,7 @@ SDK を使用して、このソリューションを、モバイル、PC、ま�
 * [ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

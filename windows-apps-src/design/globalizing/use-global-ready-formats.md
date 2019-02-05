@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a2b0125944a8a4db66b41d26fcd4a0aa35b5b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933752"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048609"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>日付、時刻、数値の形式のグローバル化
 
@@ -173,7 +173,7 @@ ms.locfileid: "8933752"
 
 ## <a name="samples"></a>サンプル
 
-* [カレンダーの詳細と数値演算のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日付と時刻の書式設定のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [グローバリゼーション設定サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [数字の書式設定と解析サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231620)
+* [カレンダーの詳細と数値演算のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日付と時刻の書式設定のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [グローバリゼーション設定サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [数字の書式設定と解析サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231620)

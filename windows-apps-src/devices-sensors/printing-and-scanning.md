@@ -4,14 +4,14 @@ title: 印刷とスキャン
 description: このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 印刷、3dprinting、3 d 印刷
+keywords: windows 10, uwp, 印刷、3dprinting、3d 印刷
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cfc91ae6f74117c6c3414691137b334cfd0dc4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935650"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044689"
 ---
 # <a name="printing-and-scanning"></a>印刷とスキャン
 
@@ -29,6 +29,6 @@ ms.locfileid: "8935650"
 
 * [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 

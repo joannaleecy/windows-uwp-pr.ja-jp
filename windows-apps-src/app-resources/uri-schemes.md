@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942848"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048349"
 ---
 # <a name="uri-schemes"></a>URI スキーム
 
@@ -19,9 +19,9 @@ ms.locfileid: "8942848"
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI スキームの一般的な機能
 
-このトピックで説明しているスキームはすべて、正規化とリソース取得について一般的な URI スキーム規則に従っています。 URI の一般的な構文については、[RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) をご覧ください。
+このトピックで説明しているスキームはすべて、正規化とリソース取得について一般的な URI スキーム規則に従っています。 URI の一般的な構文については、[RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) をご覧ください。
 
-すべての URI スキームでは [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) に従い、URI の機関コンポーネントおよびパス コンポーネントとして階層部分を定義しています。
+すべての URI スキームでは [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) に従い、URI の機関コンポーネントおよびパス コンポーネントとして階層部分を定義しています。
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -253,7 +253,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 パス コンポーネント `ms-resource` では、一般的な URI と同様、大文字と小文字が区別されます。 ただし、 [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)に*ignoreCase*に設定では、基になる取得`true`します。
 
-正規化された URI 形式では大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコードされます ("%" 記号の後に 2 桁の 16 進数表現)。 "?"、"#"、"/"、"*"、'”' (二重引用符) の各文字は、ファイル名やフォルダー名などのデータを示すパス内でパーセントエンコードする必要があります。 パーセントエンコードされたすべての文字は、取得前にデコードされます。 したがって、という名前のリソース ファイルから文字列リソースを取得する`Hello#World.resw`、この URI を使用します。
+正規化された URI 形式では大文字と小文字が保持され、RFC 3986 の非予約文字がパーセントデコードされます ("%" 記号の後に 2 桁の 16 進数表現)。 "?"、"#"、"/"、"*"、'”' (二重引用符) の各文字は、ファイル名やフォルダー名などのデータを示すパス内でパーセントエンコードする必要があります。 パーセントエンコードされたすべての文字は、取得前にデコードされます。 したがって、リソース ファイルから文字列リソースを取得するという`Hello#World.resw`、この URI を使用します。
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -267,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Uniform Resource Identifier (URI): 一般的な構文](http://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [Uniform Resource Identifier (URI): 一般的な構文](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [アプリのパッケージ化](../packaging/index.md)
 * [XAML マークアップとコードから画像やその他のアセットを参照する](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)

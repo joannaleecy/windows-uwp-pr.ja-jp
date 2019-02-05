@@ -6,12 +6,12 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d8cbb3d7e245b747a7637726df9559f5fa87a6d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946064"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046415"
 ---
 # <a name="handle-uri-activation"></a>URI のアクティブ化の処理
 
@@ -27,7 +27,7 @@ URI スキーム名に登録するのは、その種類の URI スキームの�
 以下の手順では、カスタムの URI スキーム名 `alsdk://` を登録する方法と、ユーザーによって `alsdk://` URI が起動されたときにアプリをアクティブ化する方法について説明します。
 
 > [!NOTE]
-> 、UWP アプリで組み込みのアプリとオペレーティング システムを使用するため、特定の Uri とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
+> 、UWP アプリで組み込みのアプリとオペレーティング システムで使用するため、特定の Uri とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>ステップ 1: パッケージ マニフェストに拡張点を指定する
 
@@ -155,7 +155,7 @@ URI からアプリを起動する方法について詳しくは、「[URI に�
 URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
 
 > [!NOTE]
-> アプリの新しい URI スキーム名を作成する場合に、 [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550)のガイダンスに従ってください。 これにより確実に名前が URI スキームの標準に準拠するようになります。
+> アプリの新しい URI スキーム名を作成する場合に、 [RFC 4395](https://go.microsoft.com/fwlink/p/?LinkID=266550)のガイダンスに従ってください。 これにより確実に名前が URI スキームの標準に準拠するようになります。
 
 > [!NOTE]
 > プロトコル コントラクトによって起動すると、その戻るボタン戻る、アプリを起動した画面としないアプリの以前のコンテンツを確認します。

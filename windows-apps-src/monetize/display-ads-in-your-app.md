@@ -6,16 +6,16 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, バナー, 広告コントロール, スポット広告
 ms.localizationpriority: medium
-ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941429"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044856"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>Microsoft Advertising SDK を使用したアプリでの広告の表示
 
-Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 広告の収益化プラットフォームでは、さまざまな多くの一般的な広告ネットワークと、アプリとサポートの仲介にシームレスに統合できる広告形式を提供します。 プラットフォームは OpenRTB、膨大な 2.x、MRAID 2、および VPAID 3 標準に準拠していると互換性が堀と IAS します。 
+Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリに広告を配置することで、収益機会を増やせます。 広告収益化プラットフォームでは、さまざまな多くの一般的な広告ネットワークと、アプリとサポートの仲介にシームレスに統合できる広告形式を提供します。 プラットフォームは OpenRTB、膨大な 2.x、MRAID 2、および VPAID 3 標準に準拠していると互換性が堀と IAS します。 
 
 <br/>
 
@@ -31,8 +31,8 @@ Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Win
 <tbody>
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
-<td align="left"><b>概要</b><br/><br/>
-    <a href="http://aka.ms/ads-sdk-uwp">Microsoft Advertising SDK のインストール</a>
+<td align="left"><b>はじめに</b><br/><br/>
+    <a href="https://aka.ms/ads-sdk-uwp">Microsoft Advertising SDK のインストール</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>開発者向けガイド</b><br/><br/>
@@ -56,7 +56,7 @@ Microsoft Advertising SDK を使用して、Windows 10 用ユニバーサル Win
 
 ## <a name="step-1-install-the-microsoft-advertising-sdk"></a>手順 1: Microsoft Advertising SDK をインストールする
 
-まず、アプリの構築に使用する開発用コンピューターに [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
+まず、アプリの構築に使用する開発用コンピューターに [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
 
 ## <a name="step-2-implement-ads-in-your-app"></a>手順 2: アプリで広告を実装する
 
@@ -100,7 +100,7 @@ UWP アプリで広告仲介の使用を開始するには、広告ユニット�
 
 広告を含むアプリの開発が完了したら、ストアで利用できるように、パートナー センターでの[更新されたアプリを提出](https://docs.microsoft.com/windows/uwp/publish/app-submissions)することができます。 広告を表示するアプリは、[Microsoft Store ポリシーの第 10.10 項](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)と、[アプリ開発者契約の追加条項 E](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) で指定されたその他の要件を満たしている必要があります。
 
-アプリがしたら公開されてストアで、パートナー センターで、[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認し、引き続き、広告のパフォーマンスを最適化するために、仲介設定を変更するのにできます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
+後、アプリが公開されて利用可能なストアで、パートナー センターで、[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認し、広告のパフォーマンスを最適化するために、仲介設定を変更するのに続行できます。 広告の収益は[入金状況](../publish/payout-summary.md)に表示されます。
 
 <span id="additional-help" />
 
@@ -111,16 +111,16 @@ Microsoft Advertising SDK の使用に関するその他のヘルプについて
 |  タスク    | リソース |               
 |----------|-------|
 | 広告のバグを報告したり個別のサポートを受けたりする     | [サポート ページ](https://developer.microsoft.com/en-us/windows/support)にアクセスし、**[アプリ内広告]** を選択します。        |
-| コミュニティ サポートを受ける     | [フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)をご覧ください。       |
-| バナーやスポット広告をアプリに追加する方法を説明するサンプル プロジェクトをダウンロードする     | 「[GitHub の広告サンプル](http://aka.ms/githubads)」をご覧ください。       |
+| コミュニティ サポートを受ける     | [フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=401266)をご覧ください。       |
+| バナーやスポット広告をアプリに追加する方法を説明するサンプル プロジェクトをダウンロードする     | 「[GitHub の広告サンプル](https://aka.ms/githubads)」をご覧ください。       |
 | Windows アプリの最新の収益機会について学ぶ     | 「[アプリの収益の獲得](https://developer.microsoft.com/store/monetize)」をご覧ください。        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows8.1 と Windows Phone 8.x のアプリ
 
-Windows 8.1 および Windows Phone 8.x 用のアプリについては、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](http://aka.ms/store-8-sdk) を提供しています。 Windows 8.1 または Windows Phone 8.x アプリでこの SDK を使用して広告を表示する方法について詳しくは、[この記事](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))をご覧ください。
+Windows 8.1 および Windows Phone 8.x 用のアプリについては、[Windows および Windows Phone 8.x 用の Microsoft Advertising SDK](https://aka.ms/store-8-sdk) を提供しています。 Windows 8.1 または Windows Phone 8.x アプリでこの SDK を使用して広告を表示する方法について詳しくは、[この記事](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [[広告パフォーマンス] レポート](../publish/advertising-performance-report.md)
 * [Windows Premium Ads Publishers Program](windows-premium-ads-publishers-program.md)

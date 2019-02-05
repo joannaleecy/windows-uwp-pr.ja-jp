@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 入金状況, ステートメントの, 支払い額, 売り上げ, 入金い, 支払い, 収益
 ms.localizationpriority: medium
-ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919882"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046242"
 ---
 # <a name="payout-summary"></a>入金状況
 
@@ -20,7 +20,7 @@ ms.locfileid: "8919882"
 
 広告を使って収益を上げた場合、広告の収益の支払い情報は **[入金状況]** に表示されます。 これらの収益が達成されたアプリや、複数のアプリで利用される広告ユニットの「マップされていない」収益、またはその他の理由で特定のアプリにマップできない収益が表示されます。 
 
-Azure Marketplace で製品を販売する場合、**[入金状況]** に正常に行われた支払いに関する情報も表示されます。 Azure Marketplace での支払いについて詳しくは、[Microsoft Azure Marketplace への参加ポリシーに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=722436)と [Microsoft Azure Marketplace の発行元契約に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=699560 )をご覧ください。 Azure Marketplace の支払いレポートについては、[こちら](http://go.microsoft.com/fwlink/p/?LinkID=722439)をご覧ください。
+Azure Marketplace で製品を販売する場合、**[入金状況]** に正常に行われた支払いに関する情報も表示されます。 Azure Marketplace での支払いについて詳しくは、[Microsoft Azure Marketplace への参加ポリシーに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=722436)と [Microsoft Azure Marketplace の発行元契約に関するページ](https://go.microsoft.com/fwlink/p/?LinkID=699560 )をご覧ください。 Azure Marketplace の支払いレポートについては、[こちら](https://go.microsoft.com/fwlink/p/?LinkID=722439)をご覧ください。
 
 > [!NOTE]
 > 支払いを受けるには、収益が[規定の額](payment-thresholds-methods-and-timeframes.md)に達する必要があります。 支払しきい値未満の収益は、しきい値が満たされるまで **[処理待ち]** カテゴリに残ります。 アプリ収益の支払しきい値について詳しくは、「[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」をご覧ください。 広告収益に関する支払しきい値は、50 米国ドル (または現地通貨で同等額) です。 

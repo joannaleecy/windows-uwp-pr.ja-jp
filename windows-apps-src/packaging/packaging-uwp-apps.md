@@ -9,12 +9,12 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: dc5f033737e36bd5a891543fbad6b3eba933f052
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991628"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045956"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>Visual Studio で UWP アプリをパッケージ化する
 
@@ -46,7 +46,7 @@ Windows 10 では、アプリ パッケージ、アプリ バンドル、また�
 
 1.  **アプリをテストする。** パートナー センターへの申請用にアプリをパッケージ化する前に、サポートを予定しているすべてのデバイス ファミリに期待どおりに動作を確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、Xbox、IoT デバイスなどが含まれる場合があります。 展開して、Visual Studio を使ってアプリのテストについて詳しくは、[展開と UWP アプリのデバッグ](../debug-test-perf/deploying-and-debugging-uwp-apps.md)を参照してください。
 2.  **アプリを最適化する。** Visual Studio のプロファイリングおよびデバッグ ツールを使って、UWP アプリのパフォーマンスを最適化できます。 たとえば、UI 応答のタイムライン ツール、メモリ使用率のツール、CPU 使用率のツールを使えます。 これらのコマンド ライン ツールについて詳しくは、[プロファイリング機能ツアーに関するページ](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)をご覧ください。
-3.  **.NET ネイティブ互換性を確認する (VB と C# のアプリの場合)。** ユニバーサル Windows プラットフォームには、アプリの実行時のパフォーマンスを向上させるネイティブ コンパイラがあります。 この変更により、新しいコンパイル環境でアプリをテストする必要があります。 既定では、**リリース** ビルド構成により、.NET ネイティブ ツール チェーンが可能であるため、重要なのは、この**リリース**構成でアプリをテストし、想定どおりにアプリが動作することを確認することです。 .NET ネイティブで発生する可能性のあるいくつかの一般的なデバッグの問題について詳しくは、[.NET Native Windows ユニバーサル アプリのデバッグ](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)に関するブログをご覧ください。
+3.  **.NET ネイティブ互換性を確認する (VB と C# のアプリの場合)。** ユニバーサル Windows プラットフォームには、アプリの実行時のパフォーマンスを向上させるネイティブ コンパイラがあります。 この変更により、新しいコンパイル環境でアプリをテストする必要があります。 既定では、**リリース** ビルド構成により、.NET ネイティブ ツール チェーンが可能であるため、重要なのは、この**リリース**構成でアプリをテストし、想定どおりにアプリが動作することを確認することです。 .NET ネイティブで発生する可能性のあるいくつかの一般的なデバッグの問題について詳しくは、[.NET Native Windows ユニバーサル アプリのデバッグ](https://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)に関するブログをご覧ください。
 
 ## <a name="configure-an-app-package"></a>アプリ パッケージを構成する
 
@@ -131,7 +131,7 @@ Microsoft Store を通じてアプリを配布するには、アプリ パッケ
     >[!IMPORTANT]
     > Windows 10 のリモート ARM デバイスでアプリ パッケージを検証することはできません。
 2.  Visual Studio のリモート ツールをダウンロードしてインストールします。 これらのツールを使って Windows アプリ認定キットをリモートで実行します。 これらのツールについてダウンロード場所など詳しくは、[リモート コンピューターでの UWP アプリの実行](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)に関するページをご覧ください。
-3.  必要な[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)をダウンロードし、リモート windows 10 デバイスでインストールします。
+3.  必要な[Windows アプリ認定キット](https://go.microsoft.com/fwlink/p/?LinkID=309666)をダウンロードし、リモート windows 10 デバイスでインストールします。
 4.  **パッケージの作成が完了しました**ウィザードのページで、[**リモート コンピューター**] オプション ボタンを選び、[**テスト接続**] ボタンの横にある省略記号ボタンをクリックします。
     >[!NOTE]
     > **リモート コンピューター** ] オプション ボタンは、検証をサポートするソリューション構成を少なくとも 1 つを選択した場合にのみ使用します。 WACK でアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。

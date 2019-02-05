@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c525c79287a81421c68fca5bed3393b4d230d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942686"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046655"
 ---
 # <a name="international-fonts"></a>国際フォント
 
 このトピックでは、米国英語以外の言語にローカライズされる UWP アプリで使用できるフォントの一覧を示します。
 
-次の表の "言語タグ" 列は、言語の [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302) を示します。 特に Microsoft Store でサポートされる言語タグの一覧については、「[サポートされている言語](../../publish/supported-languages.md)」をご覧ください。
+次の表の "言語タグ" 列は、言語の [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302) を示します。 特に Microsoft Store でサポートされる言語タグの一覧については、「[サポートされている言語](../../publish/supported-languages.md)」をご覧ください。
 
 | 言語 | 言語タグ | Windows で使用されているフォント |
 | --------- | ----------- | -------------------- |
@@ -135,5 +135,5 @@ Windows では Meiryo UI フォントが使用されます。 Windows には、�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [サポートされている言語](../../publish/supported-languages.md)

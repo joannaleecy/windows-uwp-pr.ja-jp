@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, デバッグ, テスト, パフォーマンス
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 606ab4489b86b1fbba7346b4a503339c4c19f7d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940674"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048319"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>UWP アプリの展開とデバッグ
 
@@ -30,7 +30,7 @@ Microsoft Visual Studio を使用すると、展開して、さまざまな wind
 -   **[ローカル コンピューター]** は、現在の開発コンピューターにアプリを展開します。 このオプションは、アプリの **[ターゲット プラットフォームの最小バージョン]** が開発コンピューターのオペレーティング システム以下である場合にのみ使用できます。
 -   **[リモート コンピューター]** では、アプリを展開するリモート ターゲットを指定できます。 リモート コンピューターへの展開について詳しくは、「[リモート デバイスの指定](#specifying-a-remote-device)」をご覧ください。
 -   **[デバイス]** は、USB 接続のデバイスにアプリを展開します。 デバイスが開発者によりロック解除され、画面がロック解除されている必要があります。
--   **[エミュレーター]** ターゲットが起動し、名前で指定された構成のエミュレーターにアプリが展開されます。 エミュレーターは、HYPER-V で利用可能な対応 Windows8.1 を実行しているコンピューターのみ以降です。
+-   **[エミュレーター]** ターゲットが起動し、名前で指定された構成のエミュレーターにアプリが展開されます。 エミュレーターは、HYPER-V で利用可能な対応 windows 8.1 を実行しているコンピューターのみ以降です。
 
 
 ## <a name="debugging-deployed-apps"></a>展開されているアプリのデバッグ
@@ -123,7 +123,7 @@ C++ と JS の UWP プロジェクトでは、**[デバッグ プロパティ]**
 - **[なし]**: この認証モードは、Visual Studio リモート ツールを実行中のリモート PC (デスクトップまたはノート PC) にのみ使うように想定されています。 テスト アカウントがサインインしていて資格情報を入力できない環境にテスト コンピューターがセットアップされている場合は、この認証モードを使用します。 リモート デバッガーの設定が、認証を受け入れないように設定されていることを確認してください。
 
 ## <a name="advanced-remote-deployment-options"></a>リモート展開の詳細オプション
-Visual Studio 2015 Update 3 と Windows 10 Anniversary Update のリリースでは、新しいリモート展開の詳細オプション特定の Windows 10 デバイスがあります。 リモート展開の詳細オプションは、プロジェクト プロパティの **[デバッグ]** メニューにあります。
+Visual Studio 2015 Update 3、および Windows 10 Anniversary Update のリリースでは、新しいリモート展開の詳細オプション特定の Windows 10 デバイスにします。 リモート展開の詳細オプションは、プロジェクト プロパティの **[デバッグ]** メニューにあります。
 
 新しいプロパティには、次のものが含まれています。
 * 展開の種類
@@ -132,7 +132,7 @@ Visual Studio 2015 Update 3 と Windows 10 Anniversary Update のリリースで
 
 ### <a name="requirements"></a>要件
 リモート展開の詳細オプションを利用するには、次の要件を満たす必要があります。
-* Visual Studio 2015 Update 3 または一部以降 Visual Studio のリリースと Windows 10 ツール 1.4.1 のインストールされた以降 (を Windows 10 Anniversary Update SDK を含む) があるすべてを得るために更新プログラムが最新バージョンの Visual Studio を使用することをお勧めします最新の開発およびセキュリティ機能があります。
+* Visual Studio 2015 Update 3 または一部以降 Visual Studio のリリースと Windows 10 ツール 1.4.1 のインストールされた以降 (を Windows 10 Anniversary Update SDK を含む) があるすべてを得るために、更新プログラムが最新バージョンの Visual Studio を使用することをお勧めします最新の開発およびセキュリティ機能があります。
 * Windows 10 Anniversary Update の Xbox リモート デバイスまたは Windows 10 Creators Update の PC をターゲットにする 
 * ユニバーサル認証モードを使う
 
@@ -182,9 +182,9 @@ C++ UWP アプリでは、[プロパティ] ページは、次のようになり
 
 ## <a name="debugging-options"></a>デバッグのオプション
 
-、Windows 10 では、事前に起動し、[事前起動](https://msdn.microsoft.com/library/windows/apps/Mt593297)と呼ばれる手法でアプリを中断 UWP アプリの起動時のパフォーマンスが向上します。 多くのアプリはこのモードで動作するために特別に何もする必要はありませんが、一部のアプリでは動作を調整する必要があります。 これらのコード パスの問題をデバッグするために、事前起動モードで Visual Studio からアプリのデバッグを開始できます。
+Windows 10 で事前に起動し、[事前起動](https://msdn.microsoft.com/library/windows/apps/Mt593297)と呼ばれる手法でアプリを中断して UWP アプリの起動時のパフォーマンスが向上しました。 多くのアプリはこのモードで動作するために特別に何もする必要はありませんが、一部のアプリでは動作を調整する必要があります。 これらのコード パスの問題をデバッグするために、事前起動モードで Visual Studio からアプリのデバッグを開始できます。
 
-デバッグは、Visual Studio プロジェクト (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[ユニバーサル Windows アプリ事前起動のデバッグ]**)、および既にコンピューターにインストールされているアプリ (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[インストールされているアプリケーション パッケージのデバッグ]**、**[事前起動を使用してアプリをアクティブ化]** のチェック ボックスをオンにする) の両方でサポートされます。 詳しくは、「[事前起動 UWP をデバッグする](http://go.microsoft.com/fwlink/p/?LinkId=717245)」をご覧ください。
+デバッグは、Visual Studio プロジェクト (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[ユニバーサル Windows アプリ事前起動のデバッグ]**)、および既にコンピューターにインストールされているアプリ (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[インストールされているアプリケーション パッケージのデバッグ]**、**[事前起動を使用してアプリをアクティブ化]** のチェック ボックスをオンにする) の両方でサポートされます。 詳しくは、「[事前起動 UWP をデバッグする](https://go.microsoft.com/fwlink/p/?LinkId=717245)」をご覧ください。
 
 スタートアップ プロジェクトの **[デバッグ]** プロパティ ページで、次の展開オプションを設定できます。
 
@@ -206,7 +206,7 @@ C++ UWP アプリでは、[プロパティ] ページは、次のようになり
 
 ## <a name="symbols"></a>シンボル
 
-シンボル ファイルには、変数、関数名、エントリ ポイントのアドレスなど、コードをデバッグするときに非常に便利な値が格納されており、例外とコールスタックの実行順序を把握することができます。 ほとんどの種類の Windows のシンボルは、[Microsoft シンボル サーバー](http://msdl.microsoft.com/download/symbols)から利用することも、高速にオフラインで参照できるように [Windows シンボル パッケージのダウンロード サイト](http://aka.ms/winsymbols)からダウンロードすることもできます。
+シンボル ファイルには、変数、関数名、エントリ ポイントのアドレスなど、コードをデバッグするときに非常に便利な値が格納されており、例外とコールスタックの実行順序を把握することができます。 ほとんどの種類の Windows のシンボルは、[Microsoft シンボル サーバー](https://msdl.microsoft.com/download/symbols)から利用することも、高速にオフラインで参照できるように [Windows シンボル パッケージのダウンロード サイト](https://aka.ms/winsymbols)からダウンロードすることもできます。
 
 Visual Studio のシンボル オプションを設定するには、**[ツール] の [オプション]** を選択し、ダイアログ ウィンドウで **[デバッグ]、[シンボル]** の順に移動します。
 
@@ -223,7 +223,7 @@ Visual Studio のシンボル オプションを設定するには、**[ツー�
 
 ## <a name="windbg"></a>WinDbg
 
-WinDbg は、[Windows SDK](http://go.microsoft.com/fwlink/p/?LinkID=271979) に含まれる、Debugging Tools for Windows の一部として出荷される強力なデバッガーです。 Windows SDK のインストールでは、スタンドアロン製品として Debugging Tools for Windows をインストールすることができます。 ネイティブ コードのデバッグには非常に便利ですが、マネージ コードや HTML5 で記述されたアプリについては WinDbg の使用をお勧めできません。
+WinDbg は、[Windows SDK](https://go.microsoft.com/fwlink/p/?LinkID=271979) に含まれる、Debugging Tools for Windows の一部として出荷される強力なデバッガーです。 Windows SDK のインストールでは、スタンドアロン製品として Debugging Tools for Windows をインストールすることができます。 ネイティブ コードのデバッグには非常に便利ですが、マネージ コードや HTML5 で記述されたアプリについては WinDbg の使用をお勧めできません。
 
 UWP アプリで WinDbg を使用するには、まず PLMDebug を使用して、アプリ パッケージのプロセス ライフタイム管理 (PLM) を無効にする必要があります。これについては [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md) で説明されています。
 

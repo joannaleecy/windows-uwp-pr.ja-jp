@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920584"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046495"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 名前空間と名前空間マッピング
 
@@ -65,7 +65,7 @@ XAML 言語では、特定の言語要素を指定します。これらの各要
 
 -   **d:DataContext 属性:** ページ ルートまたはコントロールでこの属性を設定すると、そうでない場合にはオブジェクトに含まれる明示的または継承された [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を上書きします。
 -   **d:DesignSource 属性:** 設計時の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) のデータ ソースを指定して、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209835) を上書きします。
--   **d:DesignInstance マークアップ拡張と d:DesignData マークアップ拡張:** この 2 つのマークアップ拡張は、**d:DataContext** または **d:DesignSource** の設計時のデータ リソースを提供するために使われます。 設計時のデータ リソースの使い方は、ここで説明した内容がすべてではありません。 詳しくは、「[デザイン時属性](http://go.microsoft.com/fwlink/p/?LinkId=272504)」をご覧ください。 使用例については、「[デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](https://msdn.microsoft.com/library/windows/apps/mt517866)」をご覧ください。
+-   **d:DesignInstance マークアップ拡張と d:DesignData マークアップ拡張:** この 2 つのマークアップ拡張は、**d:DataContext** または **d:DesignSource** の設計時のデータ リソースを提供するために使われます。 設計時のデータ リソースの使い方は、ここで説明した内容がすべてではありません。 詳しくは、「[デザイン時属性](https://go.microsoft.com/fwlink/p/?LinkId=272504)」をご覧ください。 使用例については、「[デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](https://msdn.microsoft.com/library/windows/apps/mt517866)」をご覧ください。
 
 ### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

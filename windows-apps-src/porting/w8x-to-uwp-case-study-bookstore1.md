@@ -1,34 +1,34 @@
 ---
 title: Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: このトピックでは、windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。
+description: このトピックでは、非常に単純なユニバーサル 8.1 アプリを windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリを移植するケース スタディを示します。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920066"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048119"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 
 
-このトピックでは、Windows10Universal Windows プラットフォーム (UWP) アプリに非常に単純なユニバーサル 8.1 アプリを移植するケース スタディを示します。 ユニバーサル 8.1 アプリは、Windows8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 では、作成できます単一のアプリ パッケージを多様なデバイスにインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+このトピックでは、非常に単純なユニバーサル 8.1 アプリを Windows10Universal Windows プラットフォーム (UWP) アプリの移植のケース スタディを示します。 ユニバーサル 8.1 アプリは、windows 8.1、1 つのアプリ パッケージと Windows Phone 8.1 のさまざまなアプリ パッケージをビルドします。 Windows 10 ではできるパッケージを作成する 1 つのアプリをさまざまなデバイス、ユーザーがインストールできるし、このケース スタディで行うことです。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 移植するアプリは、ビュー モデルにバインドされた **ListBox** で構成されます。 ビュー モデルにはタイトル、著者、表紙を示す書籍の一覧が含まれます。 表紙画像では、**[ビルド アクション]** が **[コンテンツ]** に設定され、**[出力ディレクトリにコピー]** が **[コピーしない]** に設定されています。
 
 このセクションの前のトピックでは、プラットフォーム間の違いについて説明し、ビュー モデルへのバインドを通じて、データへのアクセスに至るまで、XAML マークアップからのアプリのさまざまな要素に対する移植プロセスの詳細とガイダンスを提供しました。 ケース スタディでは、実際の例が動作するようすを示すことにより、このガイダンスを補足することを目的としています。 ケース スタディは、ガイダンスを読み終わっていることを前提としているため、繰り返し説明することはありません。
 
-**注:** と Visual Studio で bookstore1universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージを表示し、手順に従います[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)します。
+**注:** とき、Visual Studio で bookstore1universal \_10 を開く「Visual Studio 更新プログラムが必要」、メッセージを表示し、手順に従います[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)します。
 
 ## <a name="downloads"></a>ダウンロード
 
-[Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532946)。
+[Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](https://go.microsoft.com/fwlink/?linkid=532946)。
 
-[Windows 10 アプリをダウンロード、bookstore1universal \_10](http://go.microsoft.com/fwlink/?linkid=532950)します。
+[Windows 10 アプリをダウンロード、bookstore1universal \_10](https://go.microsoft.com/fwlink/?linkid=532950)します。
 
 ## <a name="the-universal-81-app"></a>ユニバーサル 8.1 アプリ
 
@@ -46,11 +46,11 @@ Windows Phone での Bookstore1\_81
 
 Bookstore1\_81 ソリューションは、8.1 ユニバーサル アプリ プロジェクトであり、次のプロジェクトを含んでいます。
 
--   Bookstore1\_81.Windows。 これは、Windows8.1 用アプリ パッケージを構築するプロジェクトです。
+-   Bookstore1\_81.Windows。 これは、windows 8.1 用アプリ パッケージを構築するプロジェクトです。
 -   Bookstore1\_81.WindowsPhone。 これは、Windows Phone 8.1 用アプリ パッケージを構築するプロジェクトです。
 -   Bookstore1\_81.Shared。 これは、他の 2 つのプロジェクトの両方で使われるソース コード、マークアップ ファイル、および他のアセットやリソースを含むプロジェクトです。
 
-このケース スタディでは、サポートするデバイスに関して、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」で説明した通常のオプションを使います。 意思決定をここでは、単純なもの: このアプリは、同じ機能と Windows8.1 と Windows Phone 8.1 の両方の形式で、同じコードで、ほとんどの場合。 そのためを移植します (とその他のプロジェクトから必要なもの) を共有プロジェクトの内容を (1 つは多様なデバイスにインストールすることができます)、ユニバーサル デバイス ファミリを対象とした windows 10。
+このケース スタディでは、サポートするデバイスに関して、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md)」で説明した通常のオプションを使います。 意思決定をここでは、単純なもの: このアプリが、同じ機能とは、ほとんどの場合、windows 8.1 と Windows Phone 8.1 の両方の形式で、同じコード。 そのため、移植します (とその他のプロジェクトから必要なもの) を共有プロジェクトの内容を (1 つは多様なデバイスにインストールすることができます)、ユニバーサル デバイス ファミリを対象とした windows 10 にします。
 
 Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\_81 からファイルをコピーし、コピーしたファイルを新しいプロジェクトに含めるという作業は、非常に短時間で実行できます。 最初に、"新しいアプリケーション (Windows ユニバーサル)" プロジェクトを新規作成します。 そして、"Bookstore1Universal\_10" という名前を付けます。 Bookstore1\_81 から Bookstore1Universal\_10 にコピーするファイルを、以下に示します。
 
@@ -62,7 +62,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 **Windows プロジェクトから**
 
--   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として 1 つ使用しますいくつかのと同じ WindowsPhone ファイル内にあるのではありません。
+-   BookstoreStyles.xaml をコピーします。 このファイル内のすべてのリソース キーは、windows 10 アプリで解決されるため、適切な開始点として、この 1 つ使用しますいくつかのと同じ WindowsPhone ファイル内にあるのではありません。
 
 コピーしたソース コードとマークアップ ファイルを編集し、Bookstore1\_81 名前空間への参照をすべて、Bookstore1Universal\_10 に変更します。 これをすばやく行うには、**[フォルダーを指定して置換]** 機能を使います。 ビュー モデルでも、その他の命令型コードでも、コードを変更する必要はありません。 ただし、どのバージョンのアプリが実行されているかをわかりやすくするために、**Bookstore1Universal\_10.BookstoreViewModel.AppName** プロパティによって返される値を、"BOOKSTORE1\_81" から "BOOKSTORE1UNIVERSAL\_10" に変更します。
 
@@ -80,7 +80,7 @@ Visual Studio で新しいプロジェクトを作成し、そこへ Bookstore1\
 
 ## <a name="universal-styling"></a>ユニバーサル スタイル設定
 
-Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確が含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
+Bookstore1 \_81 アプリでは、windows 8.1 および Windows Phone 8.1 のオペレーティング システムには、そのスタイルを調整するのに 2 つの異なるリソース ディクショナリ (BookstoreStyles.xaml) を使用します。 これら 2 つの BookstoreStyles.xaml ファイルのどちらも、windows 10 アプリに必要なスタイル正確には含まれています。 ただし、さいわいなことに、目的としているのは、そのどちらよりもはるかに単純なスタイルです。 したがって、以降の手順で行うのはほとんど、プロジェクト ファイルとマークアップの削除と簡素化の作業です。 手順は次のとおりです。 このトピックの上部にあるリンクを使用して、プロジェクトをダウンロードし、この時点とケース スタディの終了時の間のすべての変更の結果を参照できます。
 
 -   項目間のスペースを縮めるために、MainPage.xaml で `BookTemplate` データ テンプレートを探し、`Margin="0,0,0,8"` をルートの **Grid** から削除します。
 -   また、`BookTemplate` には、`BookTemplateTitleTextBlockStyle` と `BookTemplateAuthorTextBlockStyle` への参照があります。 Bookstore1\_81 は、それらのキーを間接参照として使うため、2 つのアプリで 1 つのキーの実装が異なります。 その間接参照は、必要ではなくなりました。システム スタイルを直接参照できます。 そこで、これらの参照をそれぞれ、`TitleTextBlockStyle` と `SubtitleTextBlockStyle` で置き換えます。
@@ -93,11 +93,11 @@ Bookstore1 \_81 アプリでは、Windows8.1 と Windows Phone 8.1 のオペレ�
 
 ![ほとんどの移植が行われた Windows 10 アプリ](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
-デスクトップ デバイスで実行されている、ほとんどの移植が行われた windows 10 アプリ
+デスクトップ デバイスで実行されているほとんどの移植が行われた windows 10 アプリ
 
 ![ほとんどの移植が行われた Windows 10 アプリ](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
-モバイル デバイスで実行されている、ほとんどの移植が行われた windows 10 アプリ
+モバイル デバイスで実行されているほとんどの移植が行われた windows 10 アプリ
 
 ## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>モバイル デバイス向けのリスト ボックスの調整 (オプション)
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921566"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050765"
 ---
 # <a name="planning-for-performance"></a>パフォーマンスの計画
 
@@ -104,7 +104,7 @@ ms.locfileid: "8921566"
 
 **アプリの起動と再開**
 
--   アプリのスプラッシュ画面の表示を遅らせ、必要ない場合は拡張しません。 詳しくは、「[高速で滑らかな起動エクスペリエンスを作り上げる](http://go.microsoft.com/fwlink/p/?LinkId=317595)」と「[スプラッシュ画面の表示時間の延長](https://msdn.microsoft.com/library/windows/apps/Mt187309)」をご覧ください。
+-   アプリのスプラッシュ画面の表示を遅らせ、必要ない場合は拡張しません。 詳しくは、「[高速で滑らかな起動エクスペリエンスを作り上げる](https://go.microsoft.com/fwlink/p/?LinkId=317595)」と「[スプラッシュ画面の表示時間の延長](https://msdn.microsoft.com/library/windows/apps/Mt187309)」をご覧ください。
 -   スプラッシュ画面が消えた直後に発生するアニメーションは無効にします。アプリの起動が遅くなるように感じられるためです。
 
 **アダプティブ UI と向き**
@@ -152,7 +152,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-「[ログの例](http://go.microsoft.com/fwlink/p/?LinkId=529576)」もご覧ください。
+「[ログの例](https://go.microsoft.com/fwlink/p/?LinkId=529576)」もご覧ください。
 
 アプリをインストルメント化したら、アプリのパフォーマンスのテストと測定を実行できます。
 
@@ -171,7 +171,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   一貫性のある測定結果が得られるように、アプリを複数回実行して、テストのランダム要素を排除します。
 -   低電力での利用可能性をテストします。 ユーザーのデバイスは、開発用のコンピューターに比べ、大幅に低電力である可能性があります。 Windows は、モバイル デバイスなどの低電力デバイスでの動作を考慮して設計されています。 プラットフォームで動作するアプリが、これらのデバイスでも高いパフォーマンスを発揮できるようにする必要があります。 経験則として、低電力デバイスでの実行速度はデスクトップ コンピューターの約 1/4 であると考えられるため、これに応じて目標を設定します。
 -   アプリのパフォーマンスを測定するには、Microsoft Visual Studio や Windows Performance Analyzer のようなツールを組み合わせて使います。 Visual Studio は、ソース コードのリンク設定など、アプリに焦点を当てた分析を行うように設計されています。 Windows Performance Analyzer は、システム情報、タッチ操作イベントに関する情報、ディスクの入出力 (I/O) に関する情報、グラフィックス処理ユニット (GPU) のコストに関する情報の提供など、システムに焦点を当てた分析を行うように設計されています。 どちらのツールでも、トレースをキャプチャしてエクスポートし、共有トレースと事後検証トレースを再開することができます。
--   認定のストアにアプリを提出する前に、 [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)の「パフォーマンス テスト」セクションで説明されて、パフォーマンスに関連するテスト_ケースをテスト プランに組み込むことを確認して、"パフォーマンスと[UWP アプリのテスト_ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の安定性"セクションです。
+-   認定用に、ストアにアプリを提出する前に、 [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)の「パフォーマンス テスト」セクションで説明されて、パフォーマンスに関連するテスト_ケースをテスト プランに組み込むことを確認して、"パフォーマンスと[UWP アプリのテスト_ケース](https://msdn.microsoft.com/library/windows/apps/Dn275879)の安定性"セクションです。
 
 詳しくは、次のリソースとプロファイリング ツールをご覧ください。
 

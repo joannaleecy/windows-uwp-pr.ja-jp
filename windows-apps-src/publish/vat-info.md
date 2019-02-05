@@ -1,27 +1,27 @@
 ---
 Description: If you’re required to provide a VAT ID number during the Partner Center registration process, here’s some info to get you started.
-title: VAT 情報
+title: 付加価値税情報
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 90447f63cf28660eaffc0dff4e28524f8ef4372a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d8b11815d7762179ad982edaf3985c06f9f54e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928061"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051085"
 ---
-# <a name="vat-info"></a>VAT 情報
+# <a name="vat-info"></a>付加価値税情報
 
 
-パートナー センターの登録プロセス中に VAT ID 番号を提供する必要がある場合は、開始するいくつかの情報を次に示します。
+パートナー センターの登録プロセス中に VAT ID 番号を提供する場合、開始するいくつかの情報を次に示します。
 
 ## <a name="understanding-vat-numbers"></a>VAT 番号について
 
 
-付加価値税 (VAT) 番号は、欧州連合の国と地域に使用されている識別番号です。 詳しくは、欧州連合の公式 [VIES サイト](http://go.microsoft.com/fwlink/p/?LinkId=258372)をご覧ください。
+付加価値税 (VAT) 番号は、欧州連合の国と地域に使用されている識別番号です。 詳しくは、欧州連合の公式 [VIES サイト](https://go.microsoft.com/fwlink/p/?LinkId=258372)をご覧ください。
 
 ## <a name="accepted-formats-for-vat-numbers"></a>VAT 番号で使用される形式
 

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925203"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045368"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} マークアップ拡張
 
 **注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
 
-**{X:bind}** マークアップ拡張機能: windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
+**{X:bind}** マークアップ拡張-windows 10 の新機能: **{Binding}** に代わます。 **{X:bind}** は、および少ないメモリ **{Binding}** して適切なデバッグをサポートするよりも短い時間で実行されます。
 
 XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロパティから値を取得してマークアップで指定されたプロパティに設定するコードに変換されます。 必要な場合、バインディング オブジェクトは、データ ソース プロパティの値の変化を監視し、その変化に基づいて自分自身を更新するように構成できます (`Mode="OneWay"`)。 また、その独自の値の変化をソース プロパティにプッシュするように構成することもできます (`Mode="TwoWay"`)。
 
@@ -28,9 +28,9 @@ XAML のコンパイル時に、**{x:Bind}** は、データ ソースのプロ�
 
 **{x:Bind} の使い方を示すサンプル アプリ**
 
--   [{x:Bind} のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619989)
+-   [{x:Bind} のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619989)
 -   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)
--   [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619992)
+-   [XAML UI の基本のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619992)
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
@@ -143,7 +143,7 @@ Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスの�
 | **Mode** | "OneTime"、"OneWay"、"TwoWay" のいずれかの文字列として、バインド モードを指定します。 既定は "OneTime" です。 これは、**{Binding}** の既定値 (ほとんどの場合は "OneWay") とは異なる点に注意してください。 |
 | **TargetNullValue** | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | **BindBack** | 双方向バインディングの逆方向に使う関数を指定します。 |
-| **UpdateSourceTrigger** | コントロールから双方向バインディングのモデルに変更を戻すタイミングを指定します。 TextBox.Text を除くすべてのプロパティの既定値は PropertyChanged です。値は、lostfocus です。|
+| **UpdateSourceTrigger** | コントロールから双方向バインディングのモデルに変更を戻すタイミングを指定します。 TextBox.Text を除くすべてのプロパティの既定値は PropertyChanged です。値は lostfocus です。|
 
 > [!NOTE]
 > マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。

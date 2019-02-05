@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ab12f79670428fa2b6affa91240787f75bc51bc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e5b273df8120d982f263c4411012baa715b2820c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921264"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044243"
 ---
 # <a name="getting-started-what-next"></a>はじめに: 次の手順
 
@@ -24,7 +24,7 @@ ms.locfileid: "8921264"
 -   「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」: タイルを作る方法、タイルとバッジを更新する方法、トースト通知を送信する方法、ロック画面上のタイルとバッジの更新を表示および更新する方法。
 -   「[起動、再開、マルチタスク](https://msdn.microsoft.com/library/windows/apps/hh770837)」: アプリを自動起動、アクティブ化、中断、再開する方法、バックグラウンド タスクを操作する方法。
 -   「[アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094)」: 職場では PC、自宅ではタブレットのように複数のデバイスを活用するエンド ユーザーに快適なアプリのエクスペリエンスを提供する方法。
--   [C# または Visual Basic を使った初めての Windows ランタイム アプリの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=394138): Windows Phone 開発に重点を置いたトピックを説明します。
+-   [C# または Visual Basic を使った初めての Windows ランタイム アプリの作成に関するページ](https://go.microsoft.com/fwlink/p/?LinkID=394138): Windows Phone 開発に重点を置いたトピックを説明します。
 -   「[iOS と Android 開発者向けビデオ](https://msdn.microsoft.com/library/windows/apps/dn393982)」: その他のヘルプをビデオで説明します。
 
 さらに、[コミュニティ リソースに関するページ](https://developer.microsoft.com/en-us/windows/support)にアクセスすることもお勧めします。開発者フォーラム、ブログ、開発者キャンプとワークショップ、地域の Microsoft イベントや担当者を通じて情報を入手または交換できます。

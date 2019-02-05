@@ -8,12 +8,12 @@ keywords: スピーチ, 音声, 音声認識, 自然言語, ディクテーシ�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942181"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047557"
 ---
 # <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
 
@@ -144,7 +144,7 @@ SRGS 文法は、アプリの複雑な音声操作を構築するときに役立
 -   セマンティクスを使って、音声認識がアプリにもたらす意味を定義します。
 -   文法内で、または用語集へのリンクを通じて発音を指定する
 
-SRGS の要素と属性について詳しくは、[XML 文法の SRGS リファレンス](http://go.microsoft.com/fwlink/p/?LinkID=269886)に関するページをご覧ください。 SRGS 文法の作成を開始するには、[基本的な XML 文法の作成方法](http://go.microsoft.com/fwlink/p/?LinkID=269887)に関するページをご覧ください。
+SRGS の要素と属性について詳しくは、[XML 文法の SRGS リファレンス](https://go.microsoft.com/fwlink/p/?LinkID=269886)に関するページをご覧ください。 SRGS 文法の作成を開始するには、[基本的な XML 文法の作成方法](https://go.microsoft.com/fwlink/p/?LinkID=269887)に関するページをご覧ください。
 
 次の点に留意してください。
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠している必要があります。
+この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠している必要があります。
 
 以下では、"yes" と "no" のバリエーションをリッスンします。
 
@@ -236,7 +236,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 * [音声操作](speech-interactions.md)
 
 **サンプル**
-* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

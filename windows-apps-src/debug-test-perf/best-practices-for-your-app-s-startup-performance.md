@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947042"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051105"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>アプリ起動時のパフォーマンスのベスト プラクティス
 
@@ -103,7 +103,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 -   UserControl とコントロール テンプレートが展開されるため、これらも考慮する必要があります。
 -   画面に表示されない任意の XAML を作成する場合、XAML のそれらの部分を起動時に作成する必要があるかどうかを判断する必要があります。
 
-[Visual Studio のライブ ビジュアル ツリー](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) には、ツリー内の各ノードの子要素数が示されます。
+[Visual Studio のライブ ビジュアル ツリー](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) には、ツリー内の各ノードの子要素数が示されます。
 
 ![ライブ ビジュアル ツリー。](images/live-visual-tree.png)
 
@@ -323,7 +323,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 > End Class
 > ```
 
-追加スプラッシュ画面の使用例については、[スプラッシュ画面のサンプル](http://go.microsoft.com/fwlink/p/?linkid=234889)をご覧ください。
+追加スプラッシュ画面の使用例については、[スプラッシュ画面のサンプル](https://go.microsoft.com/fwlink/p/?linkid=234889)をご覧ください。
 
 ### <a name="phase-3"></a>フェーズ 3
 
@@ -339,7 +339,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 多くの場合、再利用可能なコードは、プロジェクトに含まれるモジュール (DLL) の形で提供されます。 こうしたモジュールを読み込むには、ディスクにアクセスする必要があります。それには、当然負荷が発生します。 これにより、コールド起動に大きな影響が及びますが、ウォーム起動にも影響が及ぶ場合があります。 C# と Visual Basic の場合、CLR はアセンブリをオンデマンドで読み込むことで、その負荷の発生をできるだけ遅らせようとします。 つまり、モジュールは実行されたメソッドによって参照されるまで読み込まれません。 そのため、CLR によって不要なモジュールが読み込まれないように、スタートアップ コードではアプリの起動に必要なアセンブリだけを参照するようにします。 スタートアップ パス内の使われないコード パスに不必要な参照が含まれている場合は、それらのコード パスを別のメソッドに移動すると、不必要な読み込みを回避できます。
 
-また、アプリ モジュールを結合して、モジュールの読み込みを減らすこともできます。 一般的に、2 つの小さなアセンブリよりも、1 つの大きなアセンブリの方が短い時間で読み込むことができます。 常に短くなるわけではないため、開発者の生産性やコードの再利用性に実質的な違いがない場合にのみ、モジュールを結合してください。 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) や [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) などのツールを使うと、起動時に読み込まれるモジュールを調べることができます。
+また、アプリ モジュールを結合して、モジュールの読み込みを減らすこともできます。 一般的に、2 つの小さなアセンブリよりも、1 つの大きなアセンブリの方が短い時間で読み込むことができます。 常に短くなるわけではないため、開発者の生産性やコードの再利用性に実質的な違いがない場合にのみ、モジュールを結合してください。 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) や [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx) などのツールを使うと、起動時に読み込まれるモジュールを調べることができます。
 
 ### <a name="make-smart-web-requests"></a>効率的に Web 要求を行う
 

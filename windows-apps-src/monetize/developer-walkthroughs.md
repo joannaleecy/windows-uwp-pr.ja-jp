@@ -6,16 +6,16 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
-ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919706"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050715"
 ---
 # <a name="implement-ads-in-your-app"></a>アプリでの広告の実装
 
-このセクションの記事では、Microsoft Advertising SDK を使ってアプリにバナー広告、スポット広告、ネイティブ広告を追加する方法について説明します。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
+このセクションの記事では、Microsoft Advertising SDK を使ってアプリにバナー広告、スポット広告、ネイティブ広告を追加する方法について説明します。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads)をご覧ください。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

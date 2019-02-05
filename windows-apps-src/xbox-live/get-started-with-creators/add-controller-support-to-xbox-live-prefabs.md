@@ -6,12 +6,12 @@ ms.date: 07/14/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, コントローラー サポート
 ms.localizationpriority: medium
-ms.openlocfilehash: 20defe8598b8360787454134eab3b2daaf244441
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4d32ec62b8beec10256ed9a695866c2fd9bdd03e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927036"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044205"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>コントローラー サポートを Xbox Live プレハブに追加する
 
@@ -48,4 +48,4 @@ Xbox Live Unity プラグインのすべてのプレハブでは、インスペ�
 
 ## <a name="xbox-controller-button-mappings"></a>Xbox コントローラー ボタンのマッピング
 
-Unity での Xbox コントローラー ボタンのマッピングについては、[Unity コントローラーに関する Wiki ページ](http://wiki.unity3d.com/index.php?title=Xbox360Controller)をご覧ください。
+Unity での Xbox コントローラー ボタンのマッピングについては、[Unity コントローラーに関する Wiki ページ](https://wiki.unity3d.com/index.php?title=Xbox360Controller)をご覧ください。

@@ -6,18 +6,18 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, マップ コントロール, マップ ビュー
 ms.localizationpriority: medium
-ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 03c864a6e8bc6191f63a2b6fd55d8eb23ad965e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924364"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046991"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>2D、3D、Streetside ビューでの地図の表示
 
 地図を表示するには、マップ *プレースカード*と呼ばれる簡易非表示に対応したウィンドウか、フル機能を備えたマップ コントロールを使うことができます。
 
-[地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードして、このガイドで説明されている機能のいくつかを試してみてください。
+[地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードして、このガイドで説明されている機能のいくつかを試してみてください。
 
 <a id="placecard" />
 
@@ -323,7 +323,7 @@ Streetside ビューを表示するには
 
 次の例は、前掲の画像に似た Streetside ビューを表示する方法を示しています。
 
-**注:** マップ コントロールのサイズが小さすぎる場合の概要の地図は表示されません。
+**注:** 概要マップは、マップ コントロールのサイズが小さすぎる場合は表示されません。
 
  
 
@@ -455,10 +455,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP の地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [現在の位置情報の取得](get-location.md)
 * [位置認識アプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)
 * [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP の交通情報アプリのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

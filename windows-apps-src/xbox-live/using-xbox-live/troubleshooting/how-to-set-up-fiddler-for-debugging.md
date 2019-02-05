@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: d1dfc240e4545c7ab7002cedfba7621cfc397345
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52660fa90b9771d956ff710cb1b5295d4d8fa975
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936828"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050377"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>Fiddler を使用した Xbox Live のトラブルシューティング
 
@@ -20,7 +20,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 ## <a name="for-windows-uwp-pc-apps"></a>Windows UWP PC アプリの場合
 
 1. 現在のユーザーが、PC の Administrator グループのメンバーであることを確認します
-1. Fiddler からのダウンロードします。[http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
+1. Fiddler からのダウンロードします。[http://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. "Built for .NET 4" のバージョンを選択します
 1. インストールが済んだら、[Tools] の [Fiddler Options] で、[Capture HTTPS CONNECTs] と [Decrypt HTTPS traffic] を有効にします。  ランタイムと Xbox Live サービスの間の通信はすべて、SSL で暗号化されます。  このオプションを指定しないと、役に立つ情報は何も得られません。  Fiddler のすべてのポップアップ ダイアログを受け入れます (UAC を含めて 5 個のダイアログが表示されるはずです)。
 1. [WinConfig]、[Exempt All]、[Save Changes] の順に移動します。  このようにしないと、Fiddler はストア アプリで動作しません。
@@ -45,7 +45,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 
 通常の操作では、プロキシ経由で通信するコンソールは、プロキシによって通信内容が変更されるリスクがあり、プレイヤーによる不適切な行為が発生する可能性があります。 そのため、コンソールはプロキシ経由の通信を許可しないように設計されています。 Xbox One 開発機で Fiddler を使うには、Fiddler プロキシの使用を許可するように、開発機で特別な構成手順を実行する必要があります。
 
-Fiddler はフリーウェアであり、[Fiddler の Web サイト](http://www.telerik.com/fiddler/)からダウンロードできます。
+Fiddler はフリーウェアであり、[Fiddler の Web サイト](https://www.telerik.com/fiddler/)からダウンロードできます。
 
 Fiddler は、コンソールで報告されるネットワーク ステータスに影響を与える場合があります。 Fiddler を実行しているコンピューターからのアップストリーム接続が無効になっている場合、コンソールの認証の有効期限が切れるまで、コンソールでこの切断が検出されない可能性があります。 Fiddler を使っている場合、Fiddler を使って切断をシミュレートするのではなく、必ずコンソールと Fiddler を実行しているコンピューターとの接続を切断してください。 もっと良いのは、ネットワーク負荷ツールを使用して、テストのために切断をシミュレートすることです。
 
@@ -53,7 +53,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 
 Fiddler をインストールして有効化し、開発キットからのトラフィックを監視するには、以下の手順に従います。
 
-1. [Fiddler の Web サイト](http://www.telerik.com/fiddler/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。
+1. [Fiddler の Web サイト](https://www.telerik.com/fiddler/)に示されている手順に従って、開発用 PC に Fiddler をインストールします。
 1. Fiddler を起動し、[Tools] メニューの [Fiddler Options] を選択します。
 1. [Connections] タブを選択し、[Allow remote computers to connect] チェック ボックスがオンになっていることを確認します。
 1. [OK] をクリックして設定の変更を確認します。 ダイアログ ボックスが表示され、変更を有効にするには Fiddler を再起動する必要があり、ファイアウォールを手動で構成することが必要になる可能性があるというメッセージが表示されます。 このダイアログ ボックスで [OK] をクリックしますが、まだ Fiddler を再起動しないでください。

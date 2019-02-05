@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
-ms.openlocfilehash: b317ba9280baef885bf6487d4bc0745112575dce
-ms.sourcegitcommit: 061de8e92935b5e438aa26ef63a6fac4acc4109d
+ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009909"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049449"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -19,7 +19,7 @@ ms.locfileid: "9009909"
 
 この記事では、アプリの開発に焦点を当てていることに注意してください。 Windows Hello のアーキテクチャおよび実装について詳しくは、「[TechNet の Windows Hello ガイド](https://technet.microsoft.com/library/mt589441.aspx)」をご覧ください。
 
-完全なコード サンプルについては、「[GitHub の Windows Hello コード サンプル](http://go.microsoft.com/fwlink/?LinkID=717812)」をご覧ください。
+完全なコード サンプルについては、「[GitHub の Windows Hello コード サンプル](https://go.microsoft.com/fwlink/?LinkID=717812)」をご覧ください。
 
 Windows Hello と背後の認証サービスを使って UWP アプリを作成する具体的な手順については、「[Windows Hello ログイン アプリ](microsoft-passport-login.md)」と「[Windows Hello ログイン サービス](microsoft-passport-login-auth-service.md)」をご覧ください。
 
@@ -275,7 +275,7 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 
 ![Windows Hello のチャレンジ応答](images/passport-challenge-response.png)
 
-次に、サーバーは署名を検証する必要があります。 公開キーの要求を将来の検証に使用するサーバーに送信すると、これは、ASN.1 でエンコードされた publicKeyInfo blob に。 [Windows こんにちはコード サンプル github](http://go.microsoft.com/fwlink/?LinkID=717812)の場合、よく使われる CNG blob に ASN.1 でエンコードされた blob を翻訳する Crypt32 の関数をラップしてヘルパー クラスがあることが表示されます。 この BLOB には、RSA と RSA 公開キーに関する公開キー アルゴリズムが格納されています。
+次に、サーバーは署名を検証する必要があります。 公開キーの要求を将来の検証に使用するサーバーに送信すると、これは、ASN.1 でエンコードされた publicKeyInfo blob に。 [Windows こんにちはコード サンプル github](https://go.microsoft.com/fwlink/?LinkID=717812)の場合、よく使われる CNG blob に ASN.1 でエンコードされた blob を翻訳する Crypt32 の関数をラップしてヘルパー クラスがあることが表示されます。 この BLOB には、RSA と RSA 公開キーに関する公開キー アルゴリズムが格納されています。
 
 CNG で使用する (/windows/デスクトップ/SecCNG/cng ポータル) できるようにサンプルでは、ASN.1 でエンコードされた blob を CNG blob に変換する理由は、および BCrypt API です。 CNG blob を検索する場合は、関連[BCRYPT_KEY_BLOB 構造](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)を指しているされます。 この API サーフェスを認証し、Windows アプリケーションでの暗号化に使用できます。 ASN.1 は、シリアル化できるデータ構造体との通信用の文書化された標準、公開キーの暗号化と証明書を使用してよく使用されます。 その理由はこの方法で公開キーの情報が返されます。 公開キーが RSA キーです。Windows こんにちはを使用するアルゴリズム データがサインインしたときです。
 
@@ -407,9 +407,9 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 
 ### <a name="61-articles-and-sample-code"></a>6.1 記事とサンプル コード
 
-- [Windows Hello の概要](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Windows Hello の概要](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 - [Windows Hello の実装の詳細](https://msdn.microsoft.com/library/mt589441)
-- [GitHub の Windows Hello コード サンプル](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [GitHub の Windows Hello コード サンプル](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 用語
 

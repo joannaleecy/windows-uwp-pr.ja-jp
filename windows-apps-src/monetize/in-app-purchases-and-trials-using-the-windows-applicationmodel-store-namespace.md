@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: UWP, アプリ内購入, IAP, アドオン, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946127"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046981"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Windows.ApplicationModel.Store 名前空間を使用するアプリ内購入と試用版
 
@@ -20,7 +20,7 @@ ms.locfileid: "8946127"
 このセクションの記事では、いくつかの一般的なシナリオにおいて **Windows.ApplicationModel.Store** 名前空間のメンバーを使用するための詳しいガイダンスとコード例を示します。 UWP アプリのアプリ内での購入に関する基本概念の概要については、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。 **Windows.ApplicationModel.Store** 名前空間を使用した試用版とアプリ内購入の実装方法を示す完全なサンプルについては、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)をご覧ください。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されません。 Visual Studio でプロジェクトのターゲットを **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースに設定している (つまり、Windows 10 Version 1607 以降をターゲットとしている) 場合は、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使うことをお勧めします。 詳しくは、「[アプリ内購入と試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)」をご覧ください。 [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用する Windows デスクトップ アプリケーションで、またはアプリまたはパートナー センターで開発サンド ボックスを使用するゲーム、 **Windows.ApplicationModel.Store**名前空間がサポートされていません (たとえば、このような場合にゲームのいずれかのXbox Live と統合)。 このような製品では、**Windows.Services.Store** 名前空間を使ってアプリ内購入と試用版を実装する必要があります。
+> **Windows.ApplicationModel.Store** 名前空間は今後更新されず、新機能も追加されません。 Visual Studio でプロジェクトのターゲットを **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースに設定している (つまり、Windows 10 Version 1607 以降をターゲットとしている) 場合は、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使うことをお勧めします。 詳しくは、「[アプリ内購入と試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)」をご覧ください。 **Windows.ApplicationModel.Store**名前空間を[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用して Windows デスクトップ アプリケーションで、またはアプリまたはパートナー センターで開発サンド ボックスを使用しているゲームはサポートされていません (たとえば、このような場合にゲームのいずれかのXbox Live と統合)。 このような製品では、**Windows.Services.Store** 名前空間を使ってアプリ内購入と試用版を実装する必要があります。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>CurrentApp クラスと CurrentAppSimulator クラスの概要
 
@@ -155,7 +155,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 5. Visual Studio で、この WindowsStoreProxy.xml ファイルに切り替えます。
 6. **[XML]** メニューで **[スキーマ]** をクリックし、一覧から WindowsStoreProxy.xsd ファイルの行を探します。 ファイルの場所が適切でない場合 (たとえば、一時ファイルがまだ表示されている場合) は、**[追加]** をクリックします。 適切なファイルに移動し、**[OK]** をクリックします。 一覧にそのファイルが表示されます。 そのスキーマの **[使用] ** 列にチェックマークが入っていることを確認します。
 
-この操作を完了すると、WindowsStoreProxy.xml に加えた変更内容がスキーマに適用されます。 詳しくは、「[方法: 使用する XML スキーマを選択する](http://go.microsoft.com/fwlink/p/?LinkId=403014)」をご覧ください。
+この操作を完了すると、WindowsStoreProxy.xml に加えた変更内容がスキーマに適用されます。 詳しくは、「[方法: 使用する XML スキーマを選択する](https://go.microsoft.com/fwlink/p/?LinkId=403014)」をご覧ください。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -389,7 +389,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **LinkUri**  |    必須  |  1   |    ストアの登録情報ページの URI です。 テストでは任意の有効な URI を使用できます。         |
 |  **CurrentMarket**  |    必須  |  1   |    顧客の国/地域です。         |
 |  **AgeRating**  |    必須  |  1   |     アプリの年齢区分の下限を表す整数です。 これは、同じアプリの提出時にパートナー センターで指定する値です。 ストアで使われる値は、3、7、12、および 16 です。 これらの年齢区分について詳しくは、「[年齢区分](../publish/age-ratings.md)」をご覧ください。        |
-|  [MarketData](#marketdata-child-of-app)  |    必須  |  1 以上      |    アプリに関する特定の国/地域向けの情報が含まれています。 アプリが掲載される国/地域ごとに、**MarketData**要素を含める必要があります。       |    |
+|  [MarketData](#marketdata-child-of-app)  |    はい  |  1 以上      |    アプリに関する特定の国/地域向けの情報が含まれています。 アプリが掲載される国/地域ごとに、**MarketData**要素を含める必要があります。       |    |
 
 <span id="marketdata-child-of-app"/>
 
@@ -405,13 +405,13 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **Description**  |    必須  |  1   |      この国/地域向けのアプリの説明です。       |
 |  **Price**  |    必須  |  1   |     この国/地域でのアプリの価格です。        |
 |  **CurrencySymbol**  |    必須  |  1   |     この国/地域で使われている通貨記号です。        |
-|  **CurrencyCode**  |    必須ではない  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  |
+|  **CurrencyCode**  |    いいえ  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  |
 
 **MarketData** には次の属性があります。
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    必須        |     市場データ情報を適用する国/地域を指定します。          |  |
+|  **xml:lang**  |    はい        |     市場データ情報を適用する国/地域を指定します。          |  |
 
 <span id="product-child-of-listinginformation"/>
 
@@ -424,7 +424,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    必須        |    アプリがこのアドオンを特定するために使う文字列が含まれています。           |
-|  **LicenseDuration**  |    必須ではない        |    アイテム購入後、ライセンスが有効な日数を示します。 製品の購入によって作成される新しいライセンスの有効期限は、購入日にライセンス期間を加算した日付です。 この属性は、**ProductType** 属性が **Durable** の場合のみ使用され、コンシューマブルなアドオンの場合には無視されます。           |
+|  **LicenseDuration**  |    いいえ        |    アイテム購入後、ライセンスが有効な日数を示します。 製品の購入によって作成される新しいライセンスの有効期限は、購入日にライセンス期間を加算した日付です。 この属性は、**ProductType** 属性が **Durable** の場合のみ使用され、コンシューマブルなアドオンの場合には無視されます。           |
 |  **ProductType**  |    必須ではない        |    アプリ内製品が永続的かどうかを識別する値が含まれています。 サポートされている値は、**Durable** (既定) と **Consumable** です。 永続的なアドオンについて詳しくは、[LicenseInformation](#licenseinformation) の下の [Product](#product-child-of-licenseinformation)要素をご覧ください。コンシューマブルなアドオンについて詳しくは、[ConsumableInformation](#consumableinformation) の [Product](#product-child-of-consumableinformation) 要素をご覧ください。           |  |
 
 <span id="marketdata-child-of-product"/>
@@ -440,17 +440,17 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 |  **Name**  |    必須   |  1   |   この国/地域でのアドオンの名前です。        |
 |  **Price**  |    必須  |  1   |     この国/地域でのアドオンの価格です。        |
 |  **CurrencySymbol**  |    必須  |  1   |     この国/地域で使われている通貨記号です。        |
-|  **CurrencyCode**  |    必須ではない  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  
-|  **説明**  |    必須ではない  |   0 または 1   |      この国/地域向けのアドオンの説明です。       |
-|  **Tag**  |    必須ではない  |   0 または 1   |      アドオンの[カスタム開発者データ](../publish/enter-add-on-properties.md#custom-developer-data) (タグとも呼ばれます) です。       |
-|  **Keywords**  |    必須ではない  |   0 または 1   |      アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)が含まれた最大 10 個の **Keyword** 要素を含みます。       |
-|  **ImageUri**  |    必須ではない  |   0 または 1   |      アドオンの登録情報に表示する[画像の URI](../publish/create-add-on-store-listings.md#icon) です。           |  |
+|  **CurrencyCode**  |    いいえ  |  0 または 1      |      この国/地域で使われている通貨コードです。         |  
+|  **説明**  |    いいえ  |   0 または 1   |      この国/地域向けのアドオンの説明です。       |
+|  **Tag**  |    いいえ  |   0 または 1   |      アドオンの[カスタム開発者データ](../publish/enter-add-on-properties.md#custom-developer-data) (タグとも呼ばれます) です。       |
+|  **Keywords**  |    いいえ  |   0 または 1   |      アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)が含まれた最大 10 個の **Keyword** 要素を含みます。       |
+|  **ImageUri**  |    いいえ  |   0 または 1   |      アドオンの登録情報に表示する[画像の URI](../publish/create-add-on-store-listings.md#icon) です。           |  |
 
 **MarketData** には次の属性があります。
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    必須        |     市場データ情報を適用する国/地域を指定します。          |  |
+|  **xml:lang**  |    はい        |     市場データ情報を適用する国/地域を指定します。          |  |
 
 <span id="licenseinformation"/>
 
@@ -505,8 +505,8 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **ProductId**  |    必須        |   アプリがこのアドオンを特定するために使う文字列が含まれています。            |
-|  **OfferId**  |     必須ではない       |   アプリが、このアドオンが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
+|  **ProductId**  |    はい        |   アプリがこのアドオンを特定するために使う文字列が含まれています。            |
+|  **OfferId**  |     いいえ       |   アプリが、このアドオンが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
 
 <span id="simulation"/>
 
@@ -518,7 +518,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **SimulationMode**  |    必須ではない        |      値は **Interactive** か **Automatic** のいずれかです。 この属性を **Automatic** に設定すると、指定した HRESULT エラー コードがメソッドによって自動的に返されます。 これは自動化されたテスト ケースを実行する場合に使用できます。       |
+|  **SimulationMode**  |    いいえ        |      値は **Interactive** か **Automatic** のいずれかです。 この属性を **Automatic** に設定すると、指定した HRESULT エラー コードがメソッドによって自動的に返されます。 これは自動化されたテスト ケースを実行する場合に使用できます。       |
 
 <span id="defaultresponse"/>
 
@@ -530,8 +530,8 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **MethodName**  |    必須        |   この属性は、[スキーマ](#schema) の **StoreMethodName** 型で表示される列挙値のいずれかに割り当てます。 これらの各列挙値は、テストのときにアプリでエラー コードの戻り値をシミュレートする **CurrentAppSimulator** メソッドを表します。 たとえば、値 **RequestAppPurchaseAsync_GetResult** は、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) メソッドのエラー コードの戻り値をシミュレートすることを示します。            |
-|  **HResult**  |     必須       |   この属性は、[スキーマ](#schema) の **ResponseCodes** 型で表示される列挙値のいずれかに割り当てます。 これらの各列挙値は、この **DefaultResponse** 要素の **MethodName** 属性に割り当てるメソッドに対して返すエラーコードを表します。           |
+|  **MethodName**  |    はい        |   この属性は、[スキーマ](#schema) の **StoreMethodName** 型で表示される列挙値のいずれかに割り当てます。 これらの各列挙値は、テストのときにアプリでエラー コードの戻り値をシミュレートする **CurrentAppSimulator** メソッドを表します。 たとえば、値 **RequestAppPurchaseAsync_GetResult** は、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) メソッドのエラー コードの戻り値をシミュレートすることを示します。            |
+|  **HResult**  |     はい       |   この属性は、[スキーマ](#schema) の **ResponseCodes** 型で表示される列挙値のいずれかに割り当てます。 これらの各列挙値は、この **DefaultResponse** 要素の **MethodName** 属性に割り当てるメソッドに対して返すエラーコードを表します。           |
 
 <span id="consumableinformation"/>
 
@@ -549,7 +549,7 @@ WindowsStoreProxy.xml ファイルは、既定で %UserProfile%\AppData\Local\Pa
 
 |  属性  |  必須かどうか  |  説明   |
 |-------------|------------|----------------|
-|  **ProductId**  |    必須        |   アプリがこのコンシューマブルなアドオンを特定するために使う文字列が含まれています。            |
-|  **TransactionId**  |     必須       |   アプリが、フルフィルメントのプロセス全体を通じ、コンシューマブルの購入トランザクションを追跡するために使用する GUID (文字列) が含まれています。 詳しくは、「[コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)」をご覧ください。            |
+|  **ProductId**  |    はい        |   アプリがこのコンシューマブルなアドオンを特定するために使う文字列が含まれています。            |
+|  **TransactionId**  |     はい       |   アプリが、フルフィルメントのプロセス全体を通じ、コンシューマブルの購入トランザクションを追跡するために使用する GUID (文字列) が含まれています。 詳しくは、「[コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)」をご覧ください。            |
 |  **Status**  |      必須      |  アプリが、コンシューマブルのフルフィルメントの状態を示すために使う文字列が含まれています。 値は、**Active**、**PurchaseReverted**、**PurchasePending**、または **ServerError** です。             |
-|  **OfferId**  |     必須ではない       |    アプリが、このコンシューマブルが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
+|  **OfferId**  |     いいえ       |    アプリが、このコンシューマブルが属するカテゴリを特定するために使う文字列が含まれています。 これを使うことで、「[アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)」で説明されている大規模なアイテムのカタログに対応できます。           |
