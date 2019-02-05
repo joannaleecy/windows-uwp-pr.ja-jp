@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
+ms.sourcegitcommit: f01e7abae23b91bbaa007055942e93587c0ec137
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050935"
+ms.locfileid: "9059014"
 ---
 # <a name="supported-point-of-service-peripherals"></a>サポートされている POS 周辺機器
 
@@ -61,13 +61,15 @@ ms.locfileid: "9050935"
 | Socket Mobile | SocketScan S740                | 2 D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
 | Socket Mobile | SocketScan S800                | 1D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
 | Socket Mobile | SocketScan S850                | 2 D         | Bluetooth    | ハンドヘルド     | シリアル ポート プロファイル (SPP) |
+| Zebra         | DS2208²                        | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 | Zebra         | DS2278                         | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
-| Zebra         | DS8108²                        | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
+| Zebra         | DS8108³                        | 2 D         | USB          | ハンドヘルド     | HID POS スキャナー           |
 |
 
 
 Honeywell でバーコードを 2D をサポートするために ¹ Upgradable <br/>
-² 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](https://www.zebra.com/123Scan)を使用します。 
+² 最小ファームウェア 009 (2018.07.09) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。<br/>
+³ 最小ファームウェア 016 (2018.01.18) が必要です。 アップグレード可能 Zebra [123 scan](http://www.zebra.com/123Scan)を使用します。 
 
 
 <hr>
