@@ -8,30 +8,30 @@ keywords: デバイス, デジタイザー, 入力, 操作
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932941"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048499"
 ---
-# <a name="identify-input-devices"></a><span data-ttu-id="d0ad8-103">入力デバイスの識別</span><span class="sxs-lookup"><span data-stu-id="d0ad8-103">Identify input devices</span></span>
+# <a name="identify-input-devices"></a><span data-ttu-id="6efaf-103">入力デバイスの識別</span><span class="sxs-lookup"><span data-stu-id="6efaf-103">Identify input devices</span></span>
 
 
-<span data-ttu-id="d0ad8-104">ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-104">Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.</span></span>
+<span data-ttu-id="6efaf-104">ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。</span><span class="sxs-lookup"><span data-stu-id="6efaf-104">Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.</span></span>
 
-> <span data-ttu-id="d0ad8-105">**重要な API**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</span><span class="sxs-lookup"><span data-stu-id="d0ad8-105">**Important APIs**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</span></span>
+> <span data-ttu-id="6efaf-105">**重要な API**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</span><span class="sxs-lookup"><span data-stu-id="6efaf-105">**Important APIs**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</span></span>
 
-## <a name="retrieve-mouse-properties"></a><span data-ttu-id="d0ad8-106">マウスのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="d0ad8-106">Retrieve mouse properties</span></span>
+## <a name="retrieve-mouse-properties"></a><span data-ttu-id="6efaf-106">マウスのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="6efaf-106">Retrieve mouse properties</span></span>
 
 
-<span data-ttu-id="d0ad8-107">接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-107">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) class used to retrieve the properties exposed by one or more connected mice.</span></span> <span data-ttu-id="d0ad8-108">新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-108">Just create a new **MouseCapabilities** object and get the properties you're interested in.</span></span>
+<span data-ttu-id="6efaf-107">接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="6efaf-107">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) class used to retrieve the properties exposed by one or more connected mice.</span></span> <span data-ttu-id="6efaf-108">新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="6efaf-108">Just create a new **MouseCapabilities** object and get the properties you're interested in.</span></span>
 
-<span data-ttu-id="d0ad8-109">**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのマウスが特定の機能をサポートし、数値プロパティは、いずれかによって公開されている最大値を返します。マウスします。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-109">**Note**The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.</span></span>
+<span data-ttu-id="6efaf-109">**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのマウスが特定の機能をサポートしていると、数値プロパティは、いずれかによって公開されている最大値を返します。マウスします。</span><span class="sxs-lookup"><span data-stu-id="6efaf-109">**Note**The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.</span></span>
 
  
 
-<span data-ttu-id="d0ad8-110">次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、個別のマウスのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-110">The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the individual mouse properties and values.</span></span>
+<span data-ttu-id="6efaf-110">次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、個別のマウスのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="6efaf-110">The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the individual mouse properties and values.</span></span>
 
 ```CSharp
 private void GetMouseProperties()
@@ -45,12 +45,12 @@ private void GetMouseProperties()
 }
 ```
 
-## <a name="retrieve-keyboard-properties"></a><span data-ttu-id="d0ad8-111">キーボードのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="d0ad8-111">Retrieve keyboard properties</span></span>
+## <a name="retrieve-keyboard-properties"></a><span data-ttu-id="6efaf-111">キーボードのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="6efaf-111">Retrieve keyboard properties</span></span>
 
 
-<span data-ttu-id="d0ad8-112">キーボードが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-112">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) class used to retrieve whether a keyboard is connected.</span></span> <span data-ttu-id="d0ad8-113">新しい **KeyboardCapabilities** オブジェクトを作成し、[**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) プロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-113">Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) property.</span></span>
+<span data-ttu-id="6efaf-112">キーボードが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="6efaf-112">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) class used to retrieve whether a keyboard is connected.</span></span> <span data-ttu-id="6efaf-113">新しい **KeyboardCapabilities** オブジェクトを作成し、[**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) プロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="6efaf-113">Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) property.</span></span>
 
-<span data-ttu-id="d0ad8-114">次のコードでは、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、キーボードのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-114">The following code uses a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element to display the keyboard property and value.</span></span>
+<span data-ttu-id="6efaf-114">次のコードでは、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、キーボードのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="6efaf-114">The following code uses a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element to display the keyboard property and value.</span></span>
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -60,16 +60,16 @@ private void GetKeyboardProperties()
 }
 ```
 
-## <a name="retrieve-touch-properties"></a><span data-ttu-id="d0ad8-115">タッチのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="d0ad8-115">Retrieve touch properties</span></span>
+## <a name="retrieve-touch-properties"></a><span data-ttu-id="6efaf-115">タッチのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="6efaf-115">Retrieve touch properties</span></span>
 
 
-<span data-ttu-id="d0ad8-116">タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-116">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) class used to retrieve whether any touch digitizers are connected.</span></span> <span data-ttu-id="d0ad8-117">新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-117">Just create a new **TouchCapabilities** object and get the properties you're interested in.</span></span>
+<span data-ttu-id="6efaf-116">タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="6efaf-116">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) class used to retrieve whether any touch digitizers are connected.</span></span> <span data-ttu-id="6efaf-117">新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="6efaf-117">Just create a new **TouchCapabilities** object and get the properties you're interested in.</span></span>
 
-<span data-ttu-id="d0ad8-118">**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートしていると、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-118">**Note**The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.</span></span>
+<span data-ttu-id="6efaf-118">**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートしていると、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。</span><span class="sxs-lookup"><span data-stu-id="6efaf-118">**Note**The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.</span></span>
 
  
 
-<span data-ttu-id="d0ad8-119">次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、タッチのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-119">The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the touch properties and values.</span></span>
+<span data-ttu-id="6efaf-119">次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、タッチのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="6efaf-119">The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the touch properties and values.</span></span>
 
 ```CSharp
 private void GetTouchProperties()
@@ -80,14 +80,14 @@ private void GetTouchProperties()
 }
 ```
 
-## <a name="retrieve-pointer-properties"></a><span data-ttu-id="d0ad8-120">ポインターのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="d0ad8-120">Retrieve pointer properties</span></span>
+## <a name="retrieve-pointer-properties"></a><span data-ttu-id="6efaf-120">ポインターのプロパティの取得</span><span class="sxs-lookup"><span data-stu-id="6efaf-120">Retrieve pointer properties</span></span>
 
 
-<span data-ttu-id="d0ad8-121">検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-121">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen).</span></span> <span data-ttu-id="d0ad8-122">新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-122">Just create a new **PointerDevice** object and get the properties you're interested in.</span></span>
+<span data-ttu-id="6efaf-121">検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。</span><span class="sxs-lookup"><span data-stu-id="6efaf-121">The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen).</span></span> <span data-ttu-id="6efaf-122">新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。</span><span class="sxs-lookup"><span data-stu-id="6efaf-122">Just create a new **PointerDevice** object and get the properties you're interested in.</span></span>
 
-<span data-ttu-id="d0ad8-123">**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートし、数値プロパティが公開されている最大値を返します。によって任意の 1 つのポインター デバイス。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-123">**Note**The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.</span></span>
+<span data-ttu-id="6efaf-123">**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートしていると、数値プロパティが公開されている最大値を返します。によって、1 つのポインター デバイスです。</span><span class="sxs-lookup"><span data-stu-id="6efaf-123">**Note**The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.</span></span>
 
-<span data-ttu-id="d0ad8-124">次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="d0ad8-124">The following code uses a table to display the properties and values for each pointer device.</span></span>
+<span data-ttu-id="6efaf-124">次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。</span><span class="sxs-lookup"><span data-stu-id="6efaf-124">The following code uses a table to display the properties and values for each pointer device.</span></span>
 
 ```CSharp
 private void GetPointerDevices()
@@ -174,16 +174,16 @@ private void GetPointerDevices()
     }
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="d0ad8-125">関連記事</span><span class="sxs-lookup"><span data-stu-id="d0ad8-125">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="6efaf-125">関連記事</span><span class="sxs-lookup"><span data-stu-id="6efaf-125">Related articles</span></span>
 
 
-**<span data-ttu-id="d0ad8-126">サンプル</span><span class="sxs-lookup"><span data-stu-id="d0ad8-126">Samples</span></span>**
-* [<span data-ttu-id="d0ad8-127">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="d0ad8-127">Basic input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [<span data-ttu-id="d0ad8-128">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="d0ad8-128">Low latency input sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [<span data-ttu-id="d0ad8-129">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="d0ad8-129">User interaction mode sample</span></span>](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+**<span data-ttu-id="6efaf-126">サンプル</span><span class="sxs-lookup"><span data-stu-id="6efaf-126">Samples</span></span>**
+* [<span data-ttu-id="6efaf-127">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="6efaf-127">Basic input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [<span data-ttu-id="6efaf-128">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="6efaf-128">Low latency input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [<span data-ttu-id="6efaf-129">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="6efaf-129">User interaction mode sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
-**<span data-ttu-id="d0ad8-130">サンプルのアーカイブ</span><span class="sxs-lookup"><span data-stu-id="d0ad8-130">Archive samples</span></span>**
-* [<span data-ttu-id="d0ad8-131">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="d0ad8-131">Input: Device capabilities sample</span></span>](http://go.microsoft.com/fwlink/p/?linkid=231530)
+**<span data-ttu-id="6efaf-130">サンプルのアーカイブ</span><span class="sxs-lookup"><span data-stu-id="6efaf-130">Archive samples</span></span>**
+* [<span data-ttu-id="6efaf-131">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="6efaf-131">Input: Device capabilities sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

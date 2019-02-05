@@ -6,22 +6,22 @@ keywords: 連絡先, SMS, 送信
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 427eb1b895269727d82e42d5abc3ae1f1da1a35d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc9ca7d6c3d6e7120cfc5ede4f10a4dfd5a7c1f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944993"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050695"
 ---
-# <a name="send-an-sms-message"></a><span data-ttu-id="805f3-106">SMS メッセージの送信</span><span class="sxs-lookup"><span data-stu-id="805f3-106">Send an SMS message</span></span>
+# <a name="send-an-sms-message"></a><span data-ttu-id="76aab-106">SMS メッセージの送信</span><span class="sxs-lookup"><span data-stu-id="76aab-106">Send an SMS message</span></span>
 
-<span data-ttu-id="805f3-107">このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="805f3-107">This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message.</span></span> <span data-ttu-id="805f3-108">ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="805f3-108">You can pre-populate the fields of the SMS with data before showing the dialog.</span></span> <span data-ttu-id="805f3-109">メッセージは、ユーザーが送信ボタンをタップするまで送信されません。</span><span class="sxs-lookup"><span data-stu-id="805f3-109">The message will not be sent until the user taps the send button.</span></span>
+<span data-ttu-id="76aab-107">このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="76aab-107">This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message.</span></span> <span data-ttu-id="76aab-108">ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="76aab-108">You can pre-populate the fields of the SMS with data before showing the dialog.</span></span> <span data-ttu-id="76aab-109">メッセージは、ユーザーが送信ボタンをタップするまで送信されません。</span><span class="sxs-lookup"><span data-stu-id="76aab-109">The message will not be sent until the user taps the send button.</span></span>
 
-<span data-ttu-id="805f3-110">このコードを呼び出すと、パッケージ マニフェスト内**チャット**、 **smsSend**、および**chatSystem**機能を宣言します。</span><span class="sxs-lookup"><span data-stu-id="805f3-110">To call this code, declare the **chat**, **smsSend**, and **chatSystem** capabilities in your package manifest.</span></span> <span data-ttu-id="805f3-111">これらは、[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)がアプリで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="805f3-111">These are [restricted capabilities](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) but you can use them in your app.</span></span> <span data-ttu-id="805f3-112">ストアにアプリを公開する場合は、承認を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="805f3-112">You need approval only if you intend to publish your app to the Store.</span></span> <span data-ttu-id="805f3-113">[アカウントの種類、場所、および料金](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="805f3-113">See [Account types, locations, and fees](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).</span></span>
+<span data-ttu-id="76aab-110">このコードを呼び出すと、パッケージ マニフェスト内**チャット**、 **smsSend**、および**chatSystem**機能を宣言します。</span><span class="sxs-lookup"><span data-stu-id="76aab-110">To call this code, declare the **chat**, **smsSend**, and **chatSystem** capabilities in your package manifest.</span></span> <span data-ttu-id="76aab-111">これらは、[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)がアプリで使うことができます。</span><span class="sxs-lookup"><span data-stu-id="76aab-111">These are [restricted capabilities](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) but you can use them in your app.</span></span> <span data-ttu-id="76aab-112">ストアにアプリを公開する場合は、承認を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="76aab-112">You need approval only if you intend to publish your app to the Store.</span></span> <span data-ttu-id="76aab-113">[アカウントの種類、場所、および料金](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="76aab-113">See [Account types, locations, and fees](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees).</span></span>
 
-## <a name="launch-the-compose-sms-dialog"></a><span data-ttu-id="805f3-114">SMS の作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="805f3-114">Launch the compose SMS dialog</span></span>
+## <a name="launch-the-compose-sms-dialog"></a><span data-ttu-id="76aab-114">SMS の作成ダイアログの起動</span><span class="sxs-lookup"><span data-stu-id="76aab-114">Launch the compose SMS dialog</span></span>
 
-<span data-ttu-id="805f3-115">新しい [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。</span><span class="sxs-lookup"><span data-stu-id="805f3-115">Create a new [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) object and set the data that you want to be pre-populated in the compose email dialog.</span></span> <span data-ttu-id="805f3-116">ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="805f3-116">Call [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) to show the dialog.</span></span>
+<span data-ttu-id="76aab-115">新しい [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。</span><span class="sxs-lookup"><span data-stu-id="76aab-115">Create a new [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) object and set the data that you want to be pre-populated in the compose email dialog.</span></span> <span data-ttu-id="76aab-116">ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="76aab-116">Call [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) to show the dialog.</span></span>
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -52,7 +52,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-<span data-ttu-id="805f3-117">次のコードを使用して、アプリを実行しているデバイスが SMS メッセージを送信できるかどうかを判断することができます。</span><span class="sxs-lookup"><span data-stu-id="805f3-117">You can use the following code to determine whether the device that is running your app is able to send SMS messages.</span></span>
+<span data-ttu-id="76aab-117">次のコードを使用して、アプリを実行しているデバイスが SMS メッセージを送信できるかどうかを判断することができます。</span><span class="sxs-lookup"><span data-stu-id="76aab-117">You can use the following code to determine whether the device that is running your app is able to send SMS messages.</span></span>
 
 ```csharp
 if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.ApplicationModel.Chat"))
@@ -61,10 +61,10 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 }
 ```
 
-## <a name="summary-and-next-steps"></a><span data-ttu-id="805f3-118">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="805f3-118">Summary and next steps</span></span>
+## <a name="summary-and-next-steps"></a><span data-ttu-id="76aab-118">要約と次のステップ</span><span class="sxs-lookup"><span data-stu-id="76aab-118">Summary and next steps</span></span>
 
-<span data-ttu-id="805f3-119">このトピックでは、SMS の作成ダイアログの起動方法を示しました。</span><span class="sxs-lookup"><span data-stu-id="805f3-119">This topic has shown you how to launch the compose SMS dialog.</span></span> <span data-ttu-id="805f3-120">SMS メッセージの受信者として使う連絡先を選ぶ方法については、「[連絡先の選択](selecting-contacts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="805f3-120">For information on selecting contacts to use as recipients for an SMS message, see [Select contacts](selecting-contacts.md).</span></span> <span data-ttu-id="805f3-121">バックグラウンド タスクを使用して SMS メッセージを送受信する方法の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="805f3-121">Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to send and receive SMS messages by using a background task.</span></span>
+<span data-ttu-id="76aab-119">このトピックでは、SMS の作成ダイアログの起動方法を示しました。</span><span class="sxs-lookup"><span data-stu-id="76aab-119">This topic has shown you how to launch the compose SMS dialog.</span></span> <span data-ttu-id="76aab-120">SMS メッセージの受信者として使う連絡先を選ぶ方法については、「[連絡先の選択](selecting-contacts.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="76aab-120">For information on selecting contacts to use as recipients for an SMS message, see [Select contacts](selecting-contacts.md).</span></span> <span data-ttu-id="76aab-121">バックグラウンド タスクを使用して SMS メッセージを送受信する方法の例については、GitHub から [ユニバーサル Windows アプリのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。</span><span class="sxs-lookup"><span data-stu-id="76aab-121">Download the [Universal Windows app samples](https://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to send and receive SMS messages by using a background task.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="805f3-122">関連トピック</span><span class="sxs-lookup"><span data-stu-id="805f3-122">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="76aab-122">関連トピック</span><span class="sxs-lookup"><span data-stu-id="76aab-122">Related topics</span></span>
 
-* [<span data-ttu-id="805f3-123">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="805f3-123">Select contacts</span></span>](selecting-contacts.md)
+* [<span data-ttu-id="76aab-123">連絡先の選択</span><span class="sxs-lookup"><span data-stu-id="76aab-123">Select contacts</span></span>](selecting-contacts.md)
