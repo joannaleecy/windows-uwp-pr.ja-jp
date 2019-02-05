@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10、UWP、サンプル コード、コード サンプル
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946297"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049719"
 ---
 # <a name="get-uwp-app-samples"></a>UWP アプリのサンプルを取得する
 
@@ -28,7 +28,7 @@ zip ファイルには、常に最新のサンプルが含まれています。 
 
 
 > [!NOTE]
-> UWP のサンプルを開いたり、作成や実行したりする場合は、Visual Studio 2015 以降と Windows SDK が必要になります。 UWP アプリの構築をサポートする Visual Studio Community の無料コピーは[こちら](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads")から入手できます。  
+> UWP のサンプルを開いたり、作成や実行したりする場合は、Visual Studio 2015 以降と Windows SDK が必要になります。 UWP アプリの構築をサポートする Visual Studio Community の無料コピーは[こちら](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads")から入手できます。  
 >
 > また、個々のサンプルだけではなく、アーカイブ全体を解凍してください。 すべてのサンプルは、アーカイブ内の SharedContent フォルダーに依存しているためです。 UWP 機能のサンプルは、Visual Studio のリンク ファイルを使用して、共通ファイル (サンプルのテンプレート ファイルや画像アセットなど) の重複を減らします。 これらの共通ファイルは、リポジトリのルートにある SharedContent フォルダーに格納され、リンクを使用するプロジェクト ファイル内で参照されます。
 

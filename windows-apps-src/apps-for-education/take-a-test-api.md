@@ -6,16 +6,16 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f308e42e1dbb1d3654d3fc557a9d5e29ef6f6b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933130"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049369"
 ---
 # <a name="take-a-test-javascript-api"></a>テスト JavaScript API
 
-[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)はテストは、厳正なオンライン評価をロック ダウンをレンダリングするブラウザー ベースの UWP アプリ評価に集中する教育者のセキュリティで保護されたテスト環境を提供する方法ではなくコンテンツを許可します。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
+[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)はテストは、厳正なオンライン評価をロック ダウンをレンダリングするブラウザー ベースの UWP アプリ評価に集中する教育者のセキュリティで保護されたテスト環境を提供する方法ではなくコンテンツを許可します。 これを実現するには、任意の Web アプリケーションで利用できる JavaScript API を使用します。 テスト API は、重要な共通学力テストの [SBAC ブラウザー API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)に対応しています。
 
 アプリ自体の詳細については、「[テスト アプリ技術リファレンス](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)」を参照してください。 トラブルシューティングについては、「[イベント ビューアーを使用して、Microsoft テストをトラブルシューティングする](troubleshooting.md)」を参照してください。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8933130"
 
 ### <a name="security-namespace"></a>セキュリティ名前空間
 
-セキュリティ名前空間では、デバイスのロックダウン、ユーザーとシステム プロセスの一覧の確認、MAC および IP アドレスの取得およびキャッシュされている web リソースのクリアを行うことができます。
+セキュリティ名前空間を使用すると、デバイスをロックダウン、ユーザーとシステム プロセスの一覧の確認、MAC および IP アドレスの取得およびキャッシュされている web リソースをオフにできます。
 
 | メソッド | 説明   |
 |--------|---------------|
@@ -63,7 +63,7 @@ ms.locfileid: "8933130"
 * `onError` - [オプション] ロックダウン操作に失敗した場合に呼び出す関数です。 `Function(Boolean currentlockdownstate)` という形式にする必要があります。  
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -86,7 +86,7 @@ Windows 10 バージョン 1709
 ```
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -126,7 +126,7 @@ Windows 10 バージョン 1709
 **解説** 一覧にはシステム プロセスは含まれません。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -144,7 +144,7 @@ Windows 10 バージョン 1709
 **解説** Windows 10 バージョン 1607 では、最初にデバイスをロックダウンする必要があります。 以降のバージョンでは、このメソッドは、デバイスがロックダウンされているかどうかに関係なく、ブラウザーを閉じます。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -160,7 +160,7 @@ Windows 10 バージョン 1709
 * `callback` - この呼び出しが完了したときに呼び出す関数です。 `Function(Boolean permissiveMode)` という形式にする必要があります。ここでは、`permissiveMode` はブラウザーが現在、制限解除モードであるかどうかを示します。 定義されていないか null の場合は、Get 操作でエラーが発生しました。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -177,7 +177,7 @@ Windows 10 バージョン 1709
 * `callback` - この呼び出しが完了したときに呼び出す関数です。 `Function(Boolean permissiveMode)` という形式にする必要があります。ここでは、`permissiveMode` はブラウザーが現在、制限解除モードであるかどうかを示します。 定義されていないか null の場合は、Set 操作でエラーが発生しました。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -190,7 +190,7 @@ Windows 10 バージョン 1709
 `void SecureBrowser.security.emptyClipBoard();`
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -205,11 +205,11 @@ Windows 10 バージョン 1709
 **パラメーター**  
 * `callback` - この呼び出しが完了したときに呼び出す関数です。 `Function(String addressArray)` という形式にする必要があります。ここでは、`addressArray` は `"['00:11:22:33:44:55','etc']"` という形式です。
 
-**コメント**  
+**注釈**  
 ファイアウォール/NAT/プロキシは通常、学校で使用されるため、テスト サーバー内でエンド ユーザーのコンピューターを区別するために、ソース IP アドレスに依存するのは困難です。 MAC アドレスは、診断のために、一般的なファイアウォールの背後にあるエンド クライアント コンピューターをアプリが区別できるようにします。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 
@@ -225,7 +225,7 @@ Windows 10 バージョン 1709
 テスト アプリが開始された日時を示す DateTime オブジェクト。
 
 **要件**  
-Windows 10 バージョン 1709
+Windows 10 Version 1709
 
 ---
 

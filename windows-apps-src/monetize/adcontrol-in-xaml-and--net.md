@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, 広告コントロール, XAML, .NET, チュートリアル
 ms.localizationpriority: medium
-ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920410"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050189"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML および .NET の AdControl
 
@@ -19,11 +19,11 @@ ms.locfileid: "8920410"
 このチュートリアルでは、C# を使用して実装された Windows 10 用のユニバーサル Windows プラットフォーム (UWP) XAML アプリで、[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) クラスを使ってバナー広告を表示する方法について説明します。
 
 > [!NOTE]
-> Microsoft Advertising SDK は、C++ で実装された XAML アプリもサポートしています。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](http://aka.ms/githubads)をご覧ください。
+> Microsoft Advertising SDK は、C++ で実装された XAML アプリもサポートしています。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads)をご覧ください。
 
 ## <a name="prerequisites"></a>前提条件
 
-* Visual Studio 2015 以降の Visual Studio のリリースと共に [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
+* Visual Studio 2015 以降の Visual Studio のリリースと共に [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をインストールします。 インストール手順については、[この記事](install-the-microsoft-advertising-libraries.md)をご覧ください。
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>バナー広告をアプリに統合する
 
@@ -130,7 +130,7 @@ ms.locfileid: "8920410"
 
 3. 必要に応じて、[[アプリ内広告]](../publish/in-app-ads.md) ページの [[仲介設定]](../publish/in-app-ads.md#mediation) セクションで設定を構成することで、**AdControl** の広告仲介を有効にできます。 広告仲介を使うと、複数の広告ネットワークから広告を表示して、広告収益とアプリ プロモーションの機能を最大限に引き出すことができます。表示される広告には、Taboola や Smaato などの他の有料広告ネットワークからの広告や、Microsoft のアプリ プロモーション キャンペーン用の広告などが含まれます。
 
-4.  コードで、テスト用の広告ユニット値 (**ApplicationId**と**AdUnitId**) をパートナー センターで生成した実際の値に置き換えます。
+4.  コードで、テスト広告ユニット値 (**ApplicationId**と**AdUnitId**) をパートナー センターで生成した実際の値に置き換えます。
 
 5.  パートナー センターを使用してストアに[アプリを提出](../publish/app-submissions.md)します。
 
@@ -149,5 +149,5 @@ ms.locfileid: "8920410"
 
 * [バナー広告のガイドライン](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [XAML/C# ウォークスルーでのエラー処理](error-handling-in-xamlc-walkthrough.md)
-* [GitHub の広告サンプル](http://aka.ms/githubads)
+* [GitHub の広告サンプル](https://aka.ms/githubads)
 * [アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md)

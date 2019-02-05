@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, セキュリティ
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: e2c1be80ada3e337a4bf7353b854ae4cbe5bd99a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990330"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050985"
 ---
 # <a name="web-account-manager"></a>Web アカウント マネージャー
 
 この記事では、Windows 10 Web アカウント マネージャー API を使い、**[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** を利用して、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft や Facebook など) に接続する方法について説明します。 ユーザーの Microsoft アカウントを使用するためにユーザーの許可を求める方法、アクセス トークンを取得する方法、アクセス トークンを使って基本的な操作 (プロファイル データの取得や OneDrive アカウントへのファイルのアップロードなど) を実行する方法を学習してください。 この手順は、ユーザーの許可を得て、Web アカウント マネージャーをサポートする ID プロバイダーにアクセスするための手順と似ています。
 
 > [!NOTE]
-> 完全なコード サンプルについては、[GitHub の WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)をご覧ください。
+> 完全なコード サンプルについては、[GitHub の WebAccountManagement サンプル](https://go.microsoft.com/fwlink/p/?LinkId=620621)をご覧ください。
 
 ## <a name="get-set-up"></a>準備
 
@@ -430,6 +430,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 認証ブローカー](web-authentication-broker.md)
 
-[Web アカウント管理のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web アカウント管理のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 [ランチ スケジューラ アプリ](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

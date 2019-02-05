@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997397"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049479"
 ---
 # <a name="app-management-and-services"></a>アプリの管理とサービス
 
@@ -25,7 +25,7 @@ ms.locfileid: "8997397"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-ゲームを公開している場合は、このページで、 [Xbox Live クリエーターズ プログラム](http://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
+ゲームを公開している場合は、このページで、 [Xbox Live クリエーターズ プログラム](https://xbox.com/developers/creators-program)を有効にすることができます。 これにより、構成すると、テスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを公開することができます。
 
 詳しくは、 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と、[新しい Xbox Live クリエーターズ プログラム タイトルを作成しテスト環境に公開する](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)を参照してください。
 
@@ -37,9 +37,9 @@ ms.locfileid: "8997397"
 
 ## <a name="maps"></a>マップ
 
-Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
+Windows 10 または Windows 8.x を対象としたアプリでマップ サービスを使うには、[Bing 地図デベロッパー センター](https://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 Bing Maps Developer Center から、マップ認証キーを要求し、アプリに追加する方法について詳しくは、詳しくは[、マップ認証キーの要求](../maps-and-location/authentication-key.md)を参照してください。 
 
-Windows Phone 8.1 と以前公開したアプリのみの**マップ**ページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
+Windows Phone 8.1 と以前公開したアプリのみの**マップ**ページを使用します。 これらのアプリでマップ サービスを使用するには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンを要求する必要があります。 **トークンを取得する**] をクリックすると、マップ サービス アプリケーション ID (**ApplicationID**) を生成し、アプリの認証トークン (**AuthenticationToken**) サービスをマップしますがします。 必ずをパッケージ化する前に、コードにこれらの値を追加し、アプリを提出してください。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](https://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
 ## <a name="product-collections-and-purchases"></a>製品のコレクションと購入
 
@@ -91,9 +91,9 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
 
 -   **Windows プッシュ通知サービス (WNS)** を使うと、独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)」をご覧ください。
 
--   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
+-   **Microsoft Azure Mobile Apps** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル アプリに関するドキュメント](https://go.microsoft.com/fwlink/p/?LinkId=221116)をご覧ください。
 
--   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap を以前に公開されたパッケージで使用できます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
+-   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap を以前に公開されたパッケージで使用できます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使用している場合は、 **WNS/MPNS** ] ページで提供されるフィールドに証明書をアップロードする必要があります。 詳しくは、「[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](https://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
  
 
  

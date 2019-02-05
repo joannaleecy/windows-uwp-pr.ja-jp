@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037354"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049117"
 ---
 # <a name="reveal-focus"></a>表示フォーカス
 
@@ -163,7 +163,7 @@ ms.locfileid: "9037354"
 
 ## <a name="use-your-own-focus-visuals"></a>独自のフォーカス視覚効果を使用する
 
-独自の表示状態を使って描画することによって、システム提供のフォーカスの視覚効果をオプトアウトする別の方法で表示効果のフォーカスをカスタマイズすることです。 詳しくは、「[フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)」をご覧ください。
+独自の表示状態を使って描画することによって、システム提供のフォーカスの視覚効果をオプトアウトする別の方法で表示効果のフォーカスをカスタマイズすることです。 詳しくは、「[フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)」をご覧ください。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>表示フォーカスと Fluent Design System
@@ -175,7 +175,7 @@ ms.locfileid: "9037354"
 - [表示ハイライト](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [Xbox およびテレビ向け設計](/windows/uwp/design/devices/designing-for-tv)
 - [ゲームパッドとリモコンの操作](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [コンポジションの効果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [システムの科学: Fluent Design と奥行き](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [システムの科学: Fluent Design と明るさ](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

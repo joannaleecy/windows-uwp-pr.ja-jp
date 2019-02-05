@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 待機時間, DXGI, スワップ チェーン, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: ec315cc9ed59a4b3272151f2ee1bb4bde8d9df10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942809"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047171"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>DXGI 1.3 スワップ チェーンによる遅延の減少
 
@@ -35,7 +35,7 @@ DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレ�
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注:** いくつかのフラグとこのフラグを追加できませんまたは[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)を使用して削除します。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
+> **注:** 一部フラグとこのフラグを追加できませんまたは[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)を使用して削除します。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
 
  
 
@@ -147,7 +147,7 @@ Windows でのマルチスレッド プログラミングについて詳しく�
 ## <a name="related-topics"></a>関連トピック
 
 
-* [DirectXLatency のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)

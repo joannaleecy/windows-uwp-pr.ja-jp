@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939380"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049180"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
@@ -40,7 +40,7 @@ ms.locfileid: "8939380"
 
 広告が表示されない場合、ネットワーク エラーを含むさまざまな理由があります。 次の理由も考えられます。
 
-* パートナー センターで大きいまたはアプリのコードで**AdControl**のサイズより小さいサイズの広告ユニットを選択します。
+* パートナー センターでが大きいまたはアプリのコードで**AdControl**のサイズより小さいサイズの広告ユニットを選択します。
 
 * 広告ユニット ID に[テスト モードの値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってライブ アプリを実行した場合、広告は表示されません。
 
@@ -48,7 +48,7 @@ ms.locfileid: "8939380"
 
 アプリにテスト広告が表示される場合は、コードが正常に動作していて広告を表示できることを示します。 問題が発生した場合は、[製品サポート](https://developer.microsoft.com/en-us/windows/support)にお問い合わせください。 ページで、**お問い合わせ**を選択します。
 
-[フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)に質問を投稿することもできます。
+[フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=401266)に質問を投稿することもできます。
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>ライブ広告ではなくテスト広告がアプリに表示される
 
@@ -58,7 +58,7 @@ ms.locfileid: "8939380"
 
 * サイドローディングされたアプリやエミュレーターで実行されているアプリには、ライブ広告は表示されません。
 
-ライブ広告ユニットがテスト広告を提供すると、広告ユニットの状態はパートナー センターで**アクティブなサービスのテストの広告**表示されます。 現時点で、これは、電話アプリには適用されません。
+ライブ広告ユニットがテスト広告を提供すると、広告ユニットのステータスはパートナー センターで**アクティブとサービスのテスト広告**表示されます。 現時点で、これは、電話アプリには適用されません。
 
 
 <span id="reference_errors"/>
@@ -91,7 +91,7 @@ JavaScript/HTML アプリでは、z オーダーの予約済みの MAX-10 の範
 
 ## <a name="more-information"></a>詳細情報
 
-最新の既知の問題についての詳細を調べたり、Microsoft Advertising SDK に関連する質問を投稿したりするには、[フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=401266)をご利用ください。
+最新の既知の問題についての詳細を調べたり、Microsoft Advertising SDK に関連する質問を投稿したりするには、[フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=401266)をご利用ください。
 
  
 

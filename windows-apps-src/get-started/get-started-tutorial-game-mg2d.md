@@ -1,17 +1,17 @@
 ---
 title: MonoGame 2D で UWP ゲームを作成する
-description: C# と MonoGame で記述された Microsoft Store のゲームのシンプルな UWP
+description: ゲームは、c# と MonoGame で記述された、Microsoft Store 向けのシンプルな UWP
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939327"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050655"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -31,19 +31,19 @@ MonoGame は、軽量のゲーム開発フレームワークです。 このチ�
 +   オプションとして、クラス、メソッド、変数など、基本的なコンピューター サイエンスの概念に関する知識。
 
 ## <a name="why-monogame"></a>MonoGame を使用する理由
-ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 大切な MonoGame のアプリは純粋な c# で記述され、Microsoft ストアやその他の同様の配布プラットフォームを通じて迅速に配布することができます。
+ゲームの開発環境には、今や十分すぎるほどの選択肢が存在します。 Unity などフル機能を備えたエンジンから DirectX など包括的で複雑なマルチメディア API まで、どこから始めるべきか迷います。 MonoGame は、複雑さのレベルがゲーム エンジンと DirectX などの基本 API の中間に分類されるツールのセットです。 MonoGame では、使いやすいコンテンツ パイプラインと、多様なプラットフォームで動作する軽量のゲームを作成するために必要なすべての機能が提供されています。 MonoGame のアプリは純粋な c# で記述してに配布できる迅速に、Microsoft Store やその他の同様の配布プラットフォームを通じて、すべての最適なします。
 
 ## <a name="get-the-code"></a>コードを入手する
 段階を追ってチュートリアルを進めるのではなく、MonoGame の動作を確認するには、[こちらをクリックして完成したアプリを入手してください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
 
-Visual Studio 2017 で、プロジェクトを開き、サンプルを実行する、 **F5**キーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
+Visual Studio 2017 でプロジェクトを開き、 **f5 キーを押して**サンプルを実行するキーを押します。 初めての実行時には、インストールに含まれていない NuGet パッケージを Visual Studio が取得する必要があるため、少し時間がかかることがあります。
 
 これを行った場合は、MonoGame のセットアップに関する次のセクションをスキップして、順を追ったコードのウォークスルーに進むことができます。
 
-**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 そのだけを目的では、MonoGame での 2D 開発のすべての主要な概念を示します。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
+**注:** このサンプルで作成するゲームは、完全なゲームではなく、おもしろい内容でもありません。 MonoGame での 2D 開発のすべての主要な概念を示すにはそのだけを目的です。 このコードを基にして、より優れたゲームを作成することも、基礎を習得して 1 から始めることもできます。
 
 ## <a name="set-up-monogame-project"></a>MonoGame プロジェクトのセットアップ
-1. [MonoGame.net](http://www.monogame.net/) から、**MonoGame 3.6** for Visual Studio をインストールします。
+1. [MonoGame.net](https://www.monogame.net/) から、**MonoGame 3.6** for Visual Studio をインストールします。
 
 2. Visual Studio 2017 を起動します。
 
@@ -379,7 +379,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7. キーボード入力を処理します。
-次に、キーボード経由でのユーザー入力を処理する新しいメソッドが必要です。 **Game1.cs**には、以下のメソッドを追加します。
+次に、キーボード経由でのユーザー入力を処理する新しいメソッドが必要です。 **Game1.cs**に以下のメソッドを追加します。
 
 ```CSharp
 void KeyboardHandler()
@@ -482,7 +482,7 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、dino スプライトとブロッコリの両方が、決して非表示にする背後にあるの位置に関係なくために、既存の grass スプライトが描画されます。
+MonoGame では、**spriteBatch.Draw** を新しく呼び出すと、その時点までの呼び出しを上書きして描画されます。 つまり、broccoli と dino スプライトの両方が、決して非表示にする背後にあるの位置に関係なくために、既存の grass スプライト経由で描画されます。
 
 ここでゲームを実行し、方向キーと Space キーを使用して、恐竜を動かしてみてください。 上記の手順を実行している場合は、アバター ゲームのウィンドウ内を移動できる必要があり、ブロッコリが増え速度で起動する必要があります。
 
@@ -600,7 +600,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-このメソッドでは、2 つの四角形オブジェクトが衝突したかどうかを検出します。 アルゴリズムは、四角形の辺の間のギャップがないかどうかをテストして動作します。 隙間があれば、衝突していません。隙間がなければ、衝突しているということになります。
+このメソッドでは、2 つの四角形オブジェクトが衝突したかどうかを検出します。 アルゴリズムは、長方形の辺の間のギャップがないかどうかをテストして動作します。 隙間があれば、衝突していません。隙間がなければ、衝突しているということになります。
 
 ### <a name="2-load-new-textures"></a>2. 新しいテクスチャを読み込む
 
@@ -648,7 +648,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 これにより、**SpriteClass** で作成した **RectangleCollision** メソッドが呼び出され、true が返された場合は、ゲーム オーバーのフラグが設定されます。
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. ゲームをリセットするためのユーザー入力を追加する
-ユーザーが Enter キーを押している場合は、ゲームをリセットできるように**KeyboardHandler**メソッドには、このコードを追加します。
+このコードをユーザーが Enter キーを押している場合は、ゲームをリセットできるようにする、 **KeyboardHandler**メソッドに追加します。
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

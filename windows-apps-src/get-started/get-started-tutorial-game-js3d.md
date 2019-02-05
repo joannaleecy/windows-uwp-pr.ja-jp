@@ -1,17 +1,17 @@
 ---
 title: 入門チュートリアル - 3D UWP ゲーム (JavaScript)
-description: JavaScript と three.js で記述された Microsoft Store 向けの UWP ゲーム
+description: JavaScript と three.js で記述、Microsoft Store 向けの UWP ゲーム
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942789"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047776"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>hree.js を使用して 3D JavaScript ゲームを作成する
 
@@ -28,14 +28,14 @@ Web 開発者や JavaScript 作者にとって、JavaScript で UWP アプリを
 </iframe>
 
 > [!NOTE] 
-> ない、完全なゲームです。JavaScript やサード パーティ製ライブラリを使用してアプリを Microsoft Store に公開する準備が方法を示すために設計されています。
+> ない、完全なゲームです。アプリようにする、Microsoft Store に公開する準備が JavaScript やサード パーティのライブラリを使用する方法を示すために設計されています。
 
 
 ## <a name="requirements"></a>要件
 
 このプロジェクトを操作するには、以下が必要になります。
 -   現在のバージョンの Windows 10 を実行する Windows コンピューター (または仮想マシン)。
--   Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](http://visualstudio.com/)からダウンロードできます。
+-   Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](https://visualstudio.com/)からダウンロードできます。
 このプロジェクトでは、**three.js** という JavaScript ライブラリを使用します。 **three.js** は、MIT ライセンスの下でリリースされています。 このライブラリは、プロジェクト内に既に存在します (ソリューション エクスプローラー ビューで `js/libs` を探してください)。 このライブラリについて詳しくは、[**three.js**](https://threejs.org/) のホーム ページをご覧ください。
 
 ## <a name="getting-started"></a>はじめに
@@ -256,7 +256,7 @@ ___
 
 問題が発生した場合や、光源の調整または色の変更を行う場合は、この CodePen で提供されている JavaScript をすべてコピーして貼り付けることで、対処できます。 
 
-<iframe height='300' scrolling='no' title='ライト、カメラ、立方体です。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペンを参照してください<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>ライト、カメラ、立方体!</a> 。 Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
+<iframe height='300' scrolling='no' title='ライト、カメラ、立方体です。' src='//codepen.io/MicrosoftEdgeDocumentation/embed/YZWygZ/?height=300&theme-id=23761&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>ペンを参照してください<a href='https://codepen.io/MicrosoftEdgeDocumentation/pen/YZWygZ/'>ライト、カメラ、立方体!</a> Microsoft Edge Docs (<a href='https://codepen.io/MicrosoftEdgeDocumentation'>@MicrosoftEdgeDocumentation</a>) <a href='https://codepen.io'>CodePen</a>でします。
 </iframe>
 
 

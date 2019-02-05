@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
-ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923971"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049054"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>文字列リソースをローカライズする
 1. 別の言語用にリソース ファイル (.resw) のコピーを作成します。
     1. "Strings" の下に新しいサブフォルダーを作成し、Deutsch (Deutschland) を表す "de-DE" という名前を付けます。
-   <br>**注:** フォルダー名には、任意の[bcp-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)を使用することができます。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
+   <br>**注:** フォルダー名には、任意の[bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)を使用することができます。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
    2. `Strings/de-DE` フォルダー内に `Strings/en-US/Resources.resw` のコピーを作成します。
 2. 文字列に変換します。
     1. `Strings/de-DE/Resources.resw` を開き、[値] 列の値を翻訳します。 コメントを翻訳する必要はありません。
@@ -171,7 +171,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイルの名前がセグメント化されている場合 (が含まれている"."の文字) を参照するときに名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイル名がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -264,13 +264,13 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間を分割する場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
+Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化されている場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合は、 [MakePri.exe](makepri-exe-command-options.md)を使用して、コンポーネントまたはライブラリの PRI ファイルをダンプことができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合に、コンポーネントまたはライブラリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -291,6 +291,6 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 * [x:Uid ディレクティブ](../xaml-platform/x-uid-directive.md)
 * [アタッチされるプロパティ](../xaml-platform/attached-properties-overview.md)
 * [マニフェストのローカライズ可能な項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 言語タグ](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
 * [文字列リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

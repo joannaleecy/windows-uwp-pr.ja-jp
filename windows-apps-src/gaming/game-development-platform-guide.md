@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テクノロジ, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 53616e572be6051d096c095f9587c498b769a6af
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942967"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048529"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>UWP アプリのゲーム テクノロジ
 
@@ -22,7 +22,7 @@ ms.locfileid: "8942967"
 ##  <a name="benefits-of-windows10-for-game-development"></a>ゲーム開発向けの windows 10 のメリット
 
 
-Windows 10 で UWP の導入により、windows 10 のタイトルはすべての Microsoft プラットフォームに対応することになります。 以前のバージョンの Windows から無料で移行は、windows 10 クライアント数が徐々 に増加します。 これら 2 つの組み合わせは、windows 10 のタイトルが膨大な数の Microsoft Store を通じて顧客に到達できることを意味します。
+Windows 10 で UWP の導入により、windows 10 のタイトルはすべての Microsoft プラットフォームに対応することになります。 以前のバージョンの Windows から無料で移行は、windows 10 クライアント数が徐々 に増加します。 これら 2 つの組み合わせは、windows 10 のタイトルが、Microsoft Store 経由でお客様の膨大な数に到達できることを意味します。
 
 さらに、windows 10 には、ゲームに特に便利な多くの新しい機能が用意されています。
 
@@ -37,7 +37,7 @@ Windows 10 で UWP の導入により、windows 10 のタイトルはすべて�
 ## <a name="development-environment"></a>開発環境
 
 
-Uwp ゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境をセットアップする必要があります。 お勧めします、Visual Studio の最新バージョンをインストールする最新の開発とセキュリティ更新プログラムにアクセスを提供します。 Visual Studio では、UWP アプリを作成することができ、ゲームの開発ツールを提供します。
+Uwp ゲームを作成するには、Visual Studio 2015 以降をインストールして開発環境を設定する必要があります。 お勧めします、Visual Studio の最新バージョンをインストールする最新の開発とセキュリティ更新プログラムにアクセスを提供します。 Visual Studio では、UWP アプリを作成することができ、ゲームの開発ツールを提供します。
 
 -   Visual Studio の DX ゲームのプログラミング用ツール: Visual Studio には、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするためのツールが用意されています。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。 詳しくは、「[ゲーム プログラミング用の Visual Studio ツールの使用](set-up-visual-studio-for-game-development.md)」をご覧ください。
 -   Visual Studio グラフィックス診断機能: オプション機能として、グラフィックス診断ツールを Windows 内から利用できるようになりました。 診断ツールを使って、グラフィックス デバッグやグラフィックス フレーム分析を実行し、リアルタイムで GPU 使用率を監視できます。 詳しくは、「[DirectX ランタイムと Visual Studio グラフィックス診断機能の使用](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)」をご覧ください。
@@ -75,7 +75,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">Direct3D 12</td>
     <td align="left"><p>Direct3D 12 では、DirectX の核となる 3D グラフィックス API である Direct3D の次期バージョンが導入されます。 このバージョンの Direct3D は、以前のバージョンの Direct3D よりも高速かつ効率的になるように設計されています。 Direct3D 12 の速度の向上のトレードオフは、より下位レベルで動作することであり、グラフィックス リソースを自分で管理する必要があることです。また、速度の向上を実現するには、広範なグラフィックスのプログラミングの経験が必要です。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>Direct3D 12 は、ゲームのパフォーマンスを最大化する必要があり、ゲームが CPU バウンドである場合に使います。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/dn899121">Direct3d 12</a> に関連するドキュメントをご覧ください。</p></td>
@@ -83,7 +83,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="even">
     <td align="left">Direct3D 11</td>
     <td align="left"><p>Direct3D 11 は、以前のバージョンの Direct3D であり、D3D 12 より上位レベルのハードウェア アブストラクションを使用して 3D グラフィックスを作成できます。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>Direct3D 11 のコードが既にある場合、ゲームが CPU バウンドではない場合、またはリソースが自動的に管理されるメリットが必要な場合は、Direct3D 11 を使います。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11</a> に関連するドキュメントをご覧ください。</p></td>
@@ -110,7 +110,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">Direct2D</td>
     <td align="left"><p>Direct2D は、2D ジオメトリ、ビットマップ、テキストの高パフォーマンスかつ高品質のレンダリングを実現する、ハードウェア アクセラレータによる、即時モードの 2D グラフィックス API です。 Direct2D API は Direct3D を基にして構築されており、GDI、GDI+、Direct3D とも適切に相互運用できるように設計されています。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>Direct2D は、横スクロール ゲームやボード ゲームなどの純粋な 2D ゲーム用のグラフィックスを提供するために、Direct3D の代わりに使うことができます。また、ユーザー インターフェイスやヘッドアップ ディスプレイなど、3D ゲーム内での 2D グラフィックスの作成を簡素化するために Direct3D と共に使うこともできます。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/dd370990">Direct2D</a> に関連するドキュメントをご覧ください。</p></td>
@@ -118,7 +118,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="even">
     <td align="left">DirectWrite</td>
     <td align="left"><p>DirectWrite は、テキストを操作するための追加の機能を提供します。Direct3D や Direct2D と共に使用して、ユーザー インターフェイスや、テキストが必要なその他の領域にテキスト出力を提供できます。 DirectWrite は、複数形式のテキストの測定、描画、ヒット テストをサポートします。 DirectWrite は、グローバル アプリケーションとローカライズされたアプリケーションで、サポートされているすべての言語のテキストを処理します。 DirectWrite は、独自のレイアウトと Unicode からグリフへの処理を実行する必要がある開発者に、下位レベルのグリフ レンダリング API も提供します。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p></p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/dd368038">DirectWrite</a> に関連するドキュメントをご覧ください。</p></td>
@@ -126,7 +126,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">DirectComposition</td>
     <td align="left"><p>DirectComposition は、変換、効果、アニメーションを使って、高パフォーマンスのビットマップ合成を実現できる Windows コンポーネントです。 アプリケーション開発者は、DirectComposition API によって、ビジュアル要素間で機能豊富で柔軟な切り替えのアニメーションを使った、視覚的に魅力のあるユーザー インターフェイスを作成できます。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>DirectComposition は、視覚要素を合成し、切り替えのアニメーションを作成するプロセスを簡略化するように設計されています。 複雑なユーザー インターフェイスがゲームに必要な場合、DirectComposition を使って、簡単に UI を作成および管理できます。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/hh437371">DirectComposition</a> に関連するドキュメントをご覧ください。</p></td>
@@ -153,7 +153,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">XAudio2</td>
     <td align="left"><p>XAudio2 は、信号処理とミキシングの基礎を提供する下位レベルのオーディオ API です。 XAudio は、カスタム オーディオ エフェクトや、オーディオ エフェクトとフィルターの複雑なチェーンを作成する機能を維持しながら、ゲーム オーディオ エンジンに対する応答性が高くなるように設計されています。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>ゲームでオーバーヘッドと遅延を最小限に抑えながらサウンドを再生する必要がある場合、XAudio2 を使用します。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/hh405049">XAudio2</a> に関連するドキュメントをご覧ください。</p></td>
@@ -188,7 +188,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">XInput</td>
     <td align="left"><p>XInput ゲーム コント ローラー API によって、アプリケーションでゲーム コントローラーからの入力を受信できます。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>ゲームでゲームパッドからの入力をサポートする必要がある場合や、XInput のコードが既にある場合は、引き続き XInput を利用できます。 UWP の場合、XInput は Windows.Gaming.Input に置き換えられたため、新しい入力コードを記述する場合は、XInput ではなく Windows.Gaming.Input を使う必要があります。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/hh405053">XInput</a> に関連するドキュメントをご覧ください。</p></td>
@@ -204,7 +204,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <li>コントローラー接続/切断をポーリングではなくイベントで通知する機能</li>
     <li>入力を特定のユーザー (Windows.System.User) に関連付ける機能</li>
     </ul>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>ゲームでゲームパッド入力をサポートする必要があるが、XInput の既存のコードを使っていない場合や、上に示したメリットのいずれかが必要である場合は、Windows.Gaming.Input を使う必要があります。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/apps/dn707817">Windows.Gaming.Input</a> に関連するドキュメントをご覧ください。</p></td>
@@ -212,7 +212,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
     <td align="left"><p>Windows.UI.Core.CoreWindow クラスは、ポインターのボタンの押下や移動を追跡するためのイベント、キーの押下やリリースのイベントを提供します。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>ゲームでマウスやキーの押下を追跡する必要がある場合、Windows.UI.Core.CoreWindows のイベントを使います。</p>
     <p><strong>詳細情報</strong></p>
     <p>ゲームでマウスやキーボードを使う方法について詳しくは、「<a href="https://docs.microsoft.com/windows/uwp/gaming/tutorial--adding-move-look-controls-to-your-directx-game">ゲームのムーブ/ルック コントロール</a>」をご覧ください。</p></td>
@@ -239,7 +239,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">DirectXMath</td>
     <td align="left"><p>DirectXMath API は、ゲームで一般的な線形代数およびグラフィックスの数値演算用の SIMD フレンドリな C++ の型および関数を提供します。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>DirectXMath の使用はオプションであり、一般的な数値演算を簡素化します。</p>
     <p><strong>詳細情報</strong></p>
     <p><a href="https://msdn.microsoft.com/library/windows/desktop/hh437833">DirectXMath</a> に関連するドキュメントをご覧ください。</p></td>
@@ -266,7 +266,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">Windows.Networking.Sockets</td>
     <td align="left"><p>Windows.Networking.Sockets 名前空間は、信頼性の高いまたは信頼性の低いネットワーク通信を実現する TCP および UDP ソケットを提供します。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>Windows.Networking.Sockets は、ゲームがネットワーク経由で他のコンピューターやデバイスと通信する必要がある場合に使用します。</p>
     <p><strong>詳細情報</strong></p>
     <p>「<a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">ゲームでのネットワークの使用</a>」をご覧ください。</p></td>
@@ -274,7 +274,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="even">
     <td align="left">Windows.Web.HTTP</td>
     <td align="left"><p>Windows.Web.HTTP 名前空間では、Web サイトへのアクセスに利用できる、HTTP サーバーへの信頼性の高い接続を実現できます。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>ゲームで Web サイトにアクセスして情報を取得または保存する必要がある場合に、Windows.Web.HTTP を使います。</p>
     <p><strong>詳細情報</strong></p>
     <p>「<a href="https://docs.microsoft.com/windows/uwp/gaming/work-with-networking-in-your-directx-game">ゲームでのネットワークの使用</a>」をご覧ください。</p></td>
@@ -301,7 +301,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <tr class="odd">
     <td align="left">DirectX ツール キット</td>
     <td align="left"><p>DirectX ツール キット (DirectXTK) は、C++ で DirectX 11.x コードを作成するためのヘルパー クラスのコレクションです。</p>
-    <p><strong>使う状況</strong></p>
+    <p><strong>用途</strong></p>
     <p>C++ を使っている開発者がレガシ D3DX ユーティリティ コードに代わる最新のユーティリティを探している場合や、XNA Game Studio を使っている開発者がネイティブ C++ に移行する場合に、DirectX ツール キットを使います。</p>
     <p><strong>詳細情報</strong></p>
     <p>DirectX ツール キットのプロジェクト ページ <a href="https://github.com/Microsoft/DirectXTK">https://github.com/Microsoft/DirectXTK</a> を参照してください。</p></td>
@@ -323,7 +323,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
 
 [Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)には、自分の UWP ゲームに Xbox Live を統合して、Xbox One と windows 10 に公開するすべての開発者ができます。 最小限の開発時間で、サインイン、プレゼンス、ランキングなどの Xbox Live ソーシャル エクスペリエンスをタイトルに統合できます。 Xbox Live のソーシャル機能では、5,500 万人以上のアクティブ ゲーマーに情報を発信して、オーディエンスを自然に増やすことができます。
 
-Xbox Live の他の機能にアクセスしたり、マーケティングと開発に関する専用のサポートを受けたり、Xbox One ストアのメイン ページで取り上げられたりすることを希望する場合は、[ID@Xbox](http://www.xbox.com/developers/id) プログラムへの登録を申し込んでください。 Xbox Live クリエーターズ プログラム、および ID@Xbox プログラムで利用できる機能については、[機能表](../xbox-live/developer-program-overview.md#feature-table)をご覧ください。
+Xbox Live の他の機能にアクセスしたり、マーケティングと開発に関する専用のサポートを受けたり、Xbox One ストアのメイン ページで取り上げられたりすることを希望する場合は、[ID@Xbox](https://www.xbox.com/developers/id) プログラムへの登録を申し込んでください。 Xbox Live クリエーターズ プログラム、および ID@Xbox プログラムで利用できる機能については、[機能表](../xbox-live/developer-program-overview.md#feature-table)をご覧ください。
 
 詳しくは、「[ゲームへの Xbox Live の追加](e2e.md#adding-xbox-live-to-your-game)」をご覧ください。
 
@@ -332,7 +332,7 @@ Xbox Live の他の機能にアクセスしたり、マーケティングと開�
 
 ### <a name="uwp-games-without-directx"></a>DirectX を使わない UWP ゲーム
 
-カード ゲームやボード ゲームなど、最低限のパフォーマンスの要件を満たす単純なゲームは、DirectX を使わずに作成でき、必ずしも C++ で記述されている必要はありません。 このような種類のゲームでは、C#、Visual Basic、C++、HTML/JavaScript など、UWP でサポートされている言語のいずれかを利用できます。 パフォーマンスと負荷の高いグラフィックスがゲームで必要な場合は、[JavaScript と HTML5 のタッチ ゲームのサンプル](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)を参考にしてください。
+カード ゲームやボード ゲームなど、最低限のパフォーマンスの要件を満たす単純なゲームは、DirectX を使わずに作成でき、必ずしも C++ で記述されている必要はありません。 このような種類のゲームでは、C#、Visual Basic、C++、HTML/JavaScript など、UWP でサポートされている言語のいずれかを利用できます。 パフォーマンスと負荷の高いグラフィックスがゲームで必要な場合は、[JavaScript と HTML5 のタッチ ゲームのサンプル](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)を参考にしてください。
 
 ### <a name="game-engines"></a>ゲーム エンジン
 

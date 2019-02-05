@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Live クリエーターズ, Visual Studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e52555afd94edda3fc7cefe7a46e51be175b26d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 854d6cf138d1c2d5ef8d68cdf7033e40ba900120
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918127"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049162"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-visual-studio"></a>Visual Studio を使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する
 
@@ -77,7 +77,7 @@ Xbox Services API には、C++ に使用できるものと WinRT に使用でき
 
 #### <a name="optionally-include-xsapi-header-in-your-project"></a>必要に応じて、XSAPI ヘッダーをプロジェクトにインクルードする
 
-Microsoft.Xbox.Live.SDK.Cpp.* ベースのプロジェクトの場合は、`xsapi\\services.h` を C++ プロジェクトにインクルードして、Xbox Live Service API (XSAPI) NuGet パッケージのヘッダーを取り込む必要があります。 XSAPI ヘッダーをインクルードする前に、`XBOX_LIVE_CREATORS_SDK` を定義する必要があります。 これにより、Xbox Live クリエーターズ プログラムの開発者が使用できる API のみに、API サーフェス領域が制限されます。 次に、例を示します。
+Microsoft.Xbox.Live.SDK.Cpp.* ベースのプロジェクトの場合は、`xsapi\\services.h` を C++ プロジェクトにインクルードして、Xbox Live Service API (XSAPI) NuGet パッケージのヘッダーを取り込む必要があります。 XSAPI ヘッダーをインクルードする前に、`XBOX_LIVE_CREATORS_SDK` を定義する必要があります。 これにより、Xbox Live クリエーターズ プログラムの開発者が使用できる API のみに、API サーフェス領域が制限されます。 例:
 
 ```c++
 #define XBOX_LIVE_CREATORS_SDK
@@ -89,7 +89,7 @@ Microsoft.Xbox.Live.SDK.Cpp.* ベースのプロジェクトの場合は、`xsap
 #### <a name="windows-10-sdk-version-10015063-or-lower"></a>Windows 10 SDK バージョン 10.0.15063 以下
 接続ストレージを使用する場合は、プロジェクトに参照を追加する前に、Xbox Live Platform Extensions SDK をインストールする必要があります。 そのためには、次のようにします。
 
-1. [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) をダウンロードして抽出します。
+1. [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk) をダウンロードして抽出します。
 2. 抽出されたら、使っている Windows 10 SDK バージョンに対応するインクルード MSI ファイルを実行します。
 
 Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio で参照を追加する必要があります。 そのためには、次のようにします。

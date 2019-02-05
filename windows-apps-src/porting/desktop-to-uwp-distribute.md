@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8968864a0ff4bcf9e27f75a44a0a500736bb54b8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928772"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049190"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>デスクトップ アプリケーションのパッケージの配布します。
 
@@ -36,13 +36,13 @@ Microsoft Store への公開を計画している場合は、申請プロセス�
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずにアプリを配布します。
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>Microsoft Store に掲載せずに、アプリケーションを配布します。
 
 配布するアプリのストアを使用せず場合、は、1 つまたは複数のデバイスにアプリを手動で配布できます。
 
 この方法は、配布エクスペリエンスをきめ細かく制御する必要がある場合や、Microsoft Store の認定プロセスへの関与が望ましくない場合などに有効です。
 
-ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイス上にアプリケーションを使用してその証明書、サイドローディングによって、アプリケーションに署名する必要があります。
+ストアに掲載せずには、他のデバイスにアプリを配布するには、証明書を取得して、それらのデバイス上にアプリケーションを使用してその証明書、サイドローディングによってアプリに署名する必要があります。
 
 [証明書を作成](../packaging/create-certificate-package-signing.md)することも、[Verisign](https://www.verisign.com/) などのポピュラーなベンダーから取得することもできます。
 
@@ -53,7 +53,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 > [!IMPORTANT]
 > 証明書の発行元名がアプリの発行者名と一致することを確認してください。
 
-証明書を使って、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
+証明書を使用して、アプリケーションの署名、 [SignTool を使用する記号アプリケーション パッケージ](../packaging/sign-app-package-using-signtool.md)を参照してください。
 
 サイドローディングは、他のデバイスに、アプリケーションには、 [LOB アプリのサイドローディングでは、Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)が参照してください。
 
@@ -71,7 +71,7 @@ Windows 10 S を実行しているデバイスにアプリを配布する場合�
 
 * 既存のスタート タイルとタスク バー ボタンの参照先をパッケージ アプリに設定する。
 * パッケージ アプリを一連のファイルの種類に関連付けます。
-* 既定では、特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
+* 既定では特定の種類のファイルを開き、パッケージ化されたアプリケーションを作成します。
 
 拡張機能の完全な一覧と使用方法のガイダンスについては、「[アプリにユーザーを移行する](desktop-to-uwp-extensions.md#transition-users-to-your-app)」を参照してください。
 
@@ -175,7 +175,7 @@ private void RemoveDesktopApp()
 
 **質問に対する回答を見つける**
 
-ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
+ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
 Microsoft Store へのアプリの公開で問題が発生した場合は、この[ブログ投稿](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/)で役に立つヒントを参照できます。
 

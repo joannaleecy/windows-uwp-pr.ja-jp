@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, デベロッパー センター, アカウント設定, プロファイル, アカウント プロファイル, 開発者アカウント, 開発者アカウントの設定
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f7bd6d7aa085c3d5066d3b486583c5b3f37182
-ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
+ms.openlocfilehash: 25e18956900a873c22ec95858e72f02e74aa7370
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992606"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049339"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>アカウントの設定とプロファイル情報の管理
 
@@ -51,6 +51,6 @@ ms.locfileid: "8992606"
 - **テナント**: Azure AD テナントの関連付けを管理します。 詳しくは、 [Azure AD をパートナー センター アカウントの関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
 - **[プログラム]**: 参加しているプログラムについての詳細を確認したり、関心のあるその他のプログラムについて情報を得ることができます。
 - **[契約]**: お使いのアカウントで承認している契約を表示します。
-- **デベロッパー デバイス**: 表示と管理[をテストするためのロックを解除した Windows Phone 8.x デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)と[Xbox One 本体](../xbox-apps/devkit-activation.md)が開発用に有効にします。 
+- **デベロッパー デバイス**: 表示と管理[をテストするためのロックを解除した Windows Phone 8.x デバイス](https://go.microsoft.com/fwlink/p/?LinkId=533897)と[Xbox One 本体](../xbox-apps/devkit-activation.md)が開発用に有効にします。 
 
 

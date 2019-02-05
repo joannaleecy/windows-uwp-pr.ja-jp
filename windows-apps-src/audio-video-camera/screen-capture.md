@@ -6,12 +6,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
-ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946503"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049979"
 ---
 # <a name="screen-capture"></a>画面キャプチャ
 
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のように、アプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合は、強制的に実行できます次のコードで、UI スレッドで実行されるが。
+これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のようなアプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合は、強制的に実行できます次のコードで、UI スレッドで実行されるが。
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -163,10 +163,10 @@ UI スレッドで **FrameArrived** を使用することはできれば避け�
 
 ## <a name="putting-it-all-together"></a>完成したコードの例
 
-次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルで、フロント エンドにボタンがある、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
+次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルでは、フロント エンドにボタンがあるが、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
 
 > [!NOTE]
-> このスニペットでは、 [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
+> このスニペットでは、 [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -386,7 +386,7 @@ namespace WindowsGraphicsCapture
 
 ## <a name="record-a-video"></a>ビデオを録画します。
 
-アプリケーションのビデオを記録する場合より簡単に[Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)で実行できます。 これは、デスクトップでのみ動作するようのデスクトップ拡張 SDK の一部と、プロジェクトからへの参照を追加する必要があります。 詳細については、[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
+アプリケーションのビデオを記録する場合より簡単に[Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)で実行できます。 これは、デスクトップでのみ動作するようのデスクトップ拡張 SDK の一部と、プロジェクトからへの参照を追加する必要があります。 詳細については、[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

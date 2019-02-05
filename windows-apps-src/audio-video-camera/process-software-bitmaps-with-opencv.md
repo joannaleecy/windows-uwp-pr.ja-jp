@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, OpenCV, SoftwareBitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f76744070a7557939d1d7f2307113852737072
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ccc3f22d0485faa0df01828f1a6f807d2a1ce555
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938570"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046901"
 ---
 # <a name="process-bitmaps-with-opencv"></a>OpenCV でのビットマップの処理
 
@@ -20,7 +20,7 @@ ms.locfileid: "8938570"
 この記事の例は、C# を使用して作成されるアプリを含め、UWP アプリから使用できるネイティブ コードの Windows ランタイム コンポーネントを作成するチュートリアルです。 このヘルパー コンポーネントは、OpenCV の blur 画像処理関数を使用する 1 つのメソッド **Blur** を公開します。 このコンポーネントは、OpenCV ライブラリから直接使用できる、基になる画像データ バッファーへのポインターを取得するプライベート メソッドを実装します。これにより、ヘルパー コンポーネントを拡張して他の OpenCV 処理機能を実装することが容易になります。 
 
 * **SoftwareBitmap** の使用方法の概要については、「[ビットマップ画像の作成、編集、保存](imaging.md)」をご覧ください。 
-* OpenCV ライブラリーを使用する方法については、[http://opencv.org](http://opencv.org) をご覧ください。
+* OpenCV ライブラリーを使用する方法については、[http://opencv.org](https://opencv.org) をご覧ください。
 * この記事で説明する OpenCV ヘルパー コンポーネントを **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)** と共に使用して、カメラからのフレームのリアルタイムの画像処理を実現する方法については、「[OpenCV と MediaFrameReader の使用](use-opencv-with-mediaframereader.md)」をご覧ください。
 * 複数の効果を実装する完全なコード例については、Windows ユニバーサル サンプル GitHub リポジトリにある[カメラ フレームと OpenCV のサンプル](https://go.microsoft.com/fwlink/?linkid=854003)をご覧ください。
 

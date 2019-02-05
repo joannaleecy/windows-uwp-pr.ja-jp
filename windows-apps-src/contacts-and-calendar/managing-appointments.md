@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 予定, カレンダー
 ms.localizationpriority: medium
-ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ece137fafc2fdcca7ce41839aa4614456973cf40
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938782"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049519"
 ---
 # <a name="manage-appointments"></a>予定の管理
 
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 
-これで、予定を管理する方法の基本について理解できました。 予定を管理する方法のその他の例については、GitHub から[ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979)をダウンロードしてください。
+これで、予定を管理する方法の基本について理解できました。 予定を管理する方法のその他の例については、GitHub から[ユニバーサル Windows アプリのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619979)をダウンロードしてください。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [予定 API のサンプル](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [予定 API のサンプル](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

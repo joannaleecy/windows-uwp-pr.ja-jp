@@ -1,17 +1,17 @@
 ---
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) の相当する WindowsPhone Silverlight Api の包括的なマッピングを提供します。
-title: UWP の名前空間とクラス マッピングを WindowsPhone Silverlight
+title: WindowsPhone Silverlight は、UWP の名前空間とクラス マッピング
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9acd42f57117fb01eef4ba8f87d35664be21cf32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926212"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048822"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight UWP API へのマッピングから
 
@@ -28,7 +28,7 @@ UWP プロジェクトで作業しているし、WindowsPhone Silverlight プロ
 | WindowsPhone Silverlight | Windows ランタイム |
 | ------------------------- | --------------- |
 | 広告 | |
-| **Microsoft.Advertising.Mobile.UI.AdControl** クラス | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) クラス |
+| **Microsoft.Advertising.Mobile.UI.AdControl** クラス | [AdControl](https://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) クラス |
 | アラーム、リマインダー、バックグラウンド エージェント | |
 | **Microsoft.Phone.BackgroundAgent** クラス | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラス |
 | **Microsoft.Phone.Scheduler** 名前空間 | [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) 名前空間 |
@@ -52,11 +52,11 @@ UWP プロジェクトで作業しているし、WindowsPhone Silverlight プロ
 | (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** クラス | [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) クラス |
 | Blend for Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** クラス | 直接相当する要素はなし |
-| **Microsoft.Expression.Interactivity** 名前空間 | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) 名前空間 |
-| **Microsoft.Expression.Interactivity.Core** 名前空間 | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) 名前空間 |
+| **Microsoft.Expression.Interactivity** 名前空間 | [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) 名前空間 |
+| **Microsoft.Expression.Interactivity.Core** 名前空間 | [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) 名前空間 |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** クラス | 直接相当する要素はなし |
 | **Microsoft.Expression.Interactivity.Input** 名前空間 | 直接相当する要素はなし |
-| **Microsoft.Expression.Interactivity.Media** 名前空間 | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) 名前空間 |
+| **Microsoft.Expression.Interactivity.Media** 名前空間 | [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) 名前空間 |
 | **Microsoft.Expression.Shapes** 名前空間 | 直接相当する要素はなし |
 | (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** インターフェイス | 直接相当する要素はなし |
 | 連絡先とカレンダーのデータ | |
@@ -109,7 +109,7 @@ UWP プロジェクトで作業しているし、WindowsPhone Silverlight プロ
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** クラス | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラス。 また [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) クラス (Windows のみ)。 |
 | **Microsoft.Devices.CameraButtons** クラス | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) クラス |
 | **Microsoft.Devices.CameraVideoBrushExtensions** クラス | [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) クラス |
-| **Microsoft.Devices.Environment** クラス | 直接相当する要素はなし。 回避策として、条件付きコンパイルを使って、カスタム シンボルを定義します。 または、[IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx) プロパティを使って回避策を作成できます。 |
+| **Microsoft.Devices.Environment** クラス | 直接相当する要素はなし。 回避策として、条件付きコンパイルを使って、カスタム シンボルを定義します。 または、[IsAttached](https://msdn.microsoft.com/library/e299w87h.aspx) プロパティを使って回避策を作成できます。 |
 | **Microsoft.Devices.MediaHistory** クラス | 直接相当する要素はなし |
 | **Microsoft.Devices.VibrateController** クラス | [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) クラス |
 | **Microsoft.Devices.Radio.FMRadio** クラス | 直接相当する要素はなし |
@@ -121,7 +121,7 @@ UWP プロジェクトで作業しているし、WindowsPhone Silverlight プロ
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** プロパティ | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** プロパティ |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** プロパティ | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** プロパティ |
 | グラフィックスとアニメーション | |
-| **Microsoft.Xna.Framework.\*** 名前空間、[XNA Framework クラス ライブラリ](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline クラス ライブラリ](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 直接相当する要素はなし。 一般的に、C++ と共に [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) を使います。 「[ゲームの開発](https://msdn.microsoft.com/library/windows/apps/hh452744)」と「[DirectX と XAML の相互運用機能](https://msdn.microsoft.com/library/windows/apps/hh825871)」をご覧ください。 |
+| **Microsoft.Xna.Framework.\*** 名前空間、[XNA Framework クラス ライブラリ](https://go.microsoft.com/fwlink/p/?LinkId=263769)、[Content Pipeline クラス ライブラリ](https://go.microsoft.com/fwlink/p/?LinkId=263770) | 直接相当する要素はなし。 一般的に、C++ と共に [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) を使います。 「[ゲームの開発](https://msdn.microsoft.com/library/windows/apps/hh452744)」と「[DirectX と XAML の相互運用機能](https://msdn.microsoft.com/library/windows/apps/hh825871)」をご覧ください。 |
 | **Microsoft.Xna.Framework.Audio.Microphone** クラス | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラス |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** クラス | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) クラス |
 | **Microsoft.Xna.Framework.GamerServices** 名前空間 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 名前空間 |

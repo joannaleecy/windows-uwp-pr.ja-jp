@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Windows 情報保護, 企業データ, エンタープライズ データ保護, EDP, 対応アプリ
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: b65da20c8931f74800f817ecba0139b14d0447ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946104"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049499"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
 
@@ -67,7 +67,7 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
 **C++ を使用して作成するデスクトップ アプリの場合**
 
-[Windows 情報保護 (WIP) 開発者向けガイド (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
+[Windows 情報保護 (WIP) 開発者向けガイド (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>エンタープライズ非対応アプリの作成

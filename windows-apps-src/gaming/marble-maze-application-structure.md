@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サンプル, DirectX, 構造
 ms.localizationpriority: medium
-ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936175"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049879"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze のアプリケーション構造
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936175"
 DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの構造は、従来のデスクトップ アプリケーションとは異なります。 [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751) などのハンドル型や [CreateWindow](https://msdn.microsoft.com/library/windows/desktop/ms632679) などの関数は使いません。それよりも新しい、オブジェクト指向に沿った方法で UWP アプリを開発できるように、Windows ランタイムには [Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/apps/br208296) をはじめとするインターフェイスが用意されています。 ここでは、Marble Maze アプリ コードがどのように構成されているかを確認します。
 
 > [!NOTE]
-> このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
+> このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](https://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ## 

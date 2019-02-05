@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921709"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047537"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>XAML でのビジュアル レイヤーの使用
 
@@ -284,7 +284,7 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 
 ### <a name="frosted-glass"></a>すりガラス
 
-背景コンテンツをぼかしたり、濃淡を付けたりする効果を作成します。 開発者は、効果を使用するために Win2D NuGet パッケージをインストールする必要があります。 インストール手順については、[Win2D のホームページ](http://microsoft.github.io/Win2D/html/Introduction.htm) をご覧ください。
+背景コンテンツをぼかしたり、濃淡を付けたりする効果を作成します。 開発者は、効果を使用するために Win2D NuGet パッケージをインストールする必要があります。 インストール手順については、[Win2D のホームページ](https://microsoft.github.io/Win2D/html/Introduction.htm) をご覧ください。
 
 #### <a name="implementation-overview"></a>実装の概要
 

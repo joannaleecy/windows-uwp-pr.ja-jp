@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e68242647204dfbf8ba23c45d881066c88900b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3849ccf0f129b65dc44f549a37859fe38ac71562
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918897"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048689"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>テンプレートとパターンを使った日付と時刻の書式設定
 
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` は、リソース ファイル (.resw) でローカライズ可能なリソースを参照するリソース識別子です。 この、英語 (米国) の既定の言語の値を設定が"{0} |{1}"ことを示すコメントを"{0}"は、日付と"{1}"は時間です。 このようにして、翻訳者は必要に応じて書式項目を調整できます。 たとえば、時刻を日付より前に配置する方が一部の言語や地域では自然であると思われる場合は、項目の順序を変更できます。 また、"|" を別の区切り文字に置き換えることもできます。
+`CustomDateTimeFormatString` は、リソース ファイル (.resw) でローカライズ可能なリソースを参照するリソース識別子です。 この、英語 (米国) の既定の言語の値を設定が"{0} |{1}"ことを示すコメントを"{0}"日付は、および"{1}"は時間です。 このようにして、翻訳者は必要に応じて書式項目を調整できます。 たとえば、時刻を日付より前に配置する方が一部の言語や地域では自然であると思われる場合は、項目の順序を変更できます。 また、"|" を別の区切り文字に置き換えることもできます。
 
 また、この例を実装する別の方法として、2 つのフォーマッタを照会して書式パターンを検索し、それらの書式パターンを連結して、結果として生成される書式パターンから 3 つ目のフォーマッタを構築することができます。
 
@@ -141,4 +141,4 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="related-topics"></a>関連トピック
 
-* [日付と時刻の書式設定のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [日付と時刻の書式設定のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=231618)

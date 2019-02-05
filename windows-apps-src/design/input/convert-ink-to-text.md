@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows の手書き入力, DirectInk, InkPresenter, InkC
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ed74af3ebe558c6a82cd799cb6aa1efa035e46
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980380"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048985"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>Windows Ink のストロークをテキストおよび図形として認識する
 
@@ -475,7 +475,7 @@ Windows のインク プラットフォームに組み込まれている手書�
 
 アプリでは、インストール済みの一連の手書き認識エンジンを照会し、それらのいずれかを使うか、ユーザーが好きな言語を選べるようにできます。
 
-**注:** に移動してユーザーがインストールされている言語の一覧を表示できます**設定] -&gt;時刻と言語**します。 インストール済みの言語の一覧は **[言語]** に表示されます。
+**注:** に移動してユーザーがインストールされている言語の一覧を表示できます**設定] -&gt;時間 & 言語**します。 インストール済みの言語の一覧は **[言語]** に表示されます。
 
 新しい言語パックをインストールし、その言語の手書き認識を有効にするには、次の手順に従ってください。
 
@@ -862,9 +862,9 @@ string str = "Recognition result\n";
 * [インクの手書き認識のサンプル (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 **その他のサンプル**
-* [単純なインクのサンプル (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雑なインクのサンプル (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [インクのサンプル (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [単純なインクのサンプル (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雑なインクのサンプル (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [インクのサンプル (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入門チュートリアル: UWP アプリでのインクのサポート](https://aka.ms/appsample-ink)
 * [塗り絵帳のサンプル](https://aka.ms/cpubsample-coloringbook)
 * [Family Notes のサンプル](https://aka.ms/cpubsample-familynotessample)

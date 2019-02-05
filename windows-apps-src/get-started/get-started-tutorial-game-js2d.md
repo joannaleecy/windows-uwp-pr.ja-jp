@@ -1,17 +1,17 @@
 ---
 title: JavaScript で UWP ゲームを作成する
-description: JavaScript と CreateJS で記述された Microsoft Store のゲームのシンプルな UWP
+description: JavaScript と CreateJS で記述された Microsoft ストアのゲームのシンプルな UWP
 ms.date: 02/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923816"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050149"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>JavaScript で UWP ゲームを作成する
 
@@ -24,13 +24,13 @@ ms.locfileid: "8923816"
 ## <a name="introduction"></a>はじめに
 
 
-Microsoft Store にアプリを公開することができます共有 (または販売!) 何百万もの多くの異なるデバイス上のユーザーとします。  
+Microsoft Store にアプリを公開することができます共有 (または販売!) 何百万人、多くの異なるデバイス上にします。  
 
-Microsoft Store にアプリを公開するために、UWP (ユニバーサル Windows プラットフォーム) アプリとして記述する必要があります。 ただし、UWP はきわめて柔軟であり、多様な言語およびフレームワークをサポートしています。 これを証明するために、いくつかの CreateJS ライブラリを活用して JavaScript で記述されたシンプルなゲームをサンプルとして紹介します。このサンプルでは、スプライトの記述、ゲーム ループの作成、キーボードとマウスのサポート、さまざまな画面サイズへの調整の方法を示します。
+Microsoft Store にアプリを公開するために UWP (ユニバーサル Windows プラットフォーム) アプリとして記述する必要があります。 ただし、UWP はきわめて柔軟であり、多様な言語およびフレームワークをサポートしています。 これを証明するために、いくつかの CreateJS ライブラリを活用して JavaScript で記述されたシンプルなゲームをサンプルとして紹介します。このサンプルでは、スプライトの記述、ゲーム ループの作成、キーボードとマウスのサポート、さまざまな画面サイズへの調整の方法を示します。
 
 このプロジェクトは、Visual Studio を使って JavaScript で構築します。 少し変更を加えると、Web サイトでホスティングすることも、他のプラットフォームに合わせることもできます。 
 
-**注:** ない完了 (または適切な) のゲームJavaScript やサード パーティのライブラリを使用してアプリを Microsoft Store に公開する準備が方法を示すために設計されています。
+**注:** ない完了 (または適切な) のゲームアプリようにする、Microsoft Store に公開する準備が JavaScript やサード パーティのライブラリを使用する方法を示すために設計されています。
 
 
 ## <a name="requirements"></a>要件
@@ -38,9 +38,9 @@ Microsoft Store にアプリを公開するために、UWP (ユニバーサル W
 このプロジェクトを操作するには、以下が必要になります。
 
 * 現在のバージョンの Windows 10 を実行する Windows コンピューター (または仮想マシン)。
-* Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](http://visualstudio.com)からダウンロードできます。
+* Visual Studio。 無料の Visual Studio Community Edition は、[Visual Studio ホームページ](https://visualstudio.com)からダウンロードできます。
 
-このプロジェクトでは、CreateJS という JavaScript フレームワークを使用します。 CreateJS は、MIT ライセンスの下にリリースされる無料のツールであり、スプライト ベースのゲームを簡単に作成できるように設計されています。 CreateJS ライブラリは、既にプロジェクトに含まれています (ソリューション エクスプローラー ビューで *js/easeljs-0.8.2.min.js* および *js/preloadjs-0.6.2.min.js* を探してください)。 CreateJS について詳しくは、[CreateJS ホーム ページ](http://www.createjs.com)をご覧ください。
+このプロジェクトでは、CreateJS という JavaScript フレームワークを使用します。 CreateJS は、MIT ライセンスの下にリリースされる無料のツールであり、スプライト ベースのゲームを簡単に作成できるように設計されています。 CreateJS ライブラリは、既にプロジェクトに含まれています (ソリューション エクスプローラー ビューで *js/easeljs-0.8.2.min.js* および *js/preloadjs-0.6.2.min.js* を探してください)。 CreateJS について詳しくは、[CreateJS ホーム ページ](https://www.createjs.com)をご覧ください。
 
 
 ## <a name="getting-started"></a>はじめに
@@ -134,7 +134,7 @@ EaselJS では、数種類のグラフィック オブジェクトが提供さ�
     ];
 ```
 
-画像などのリソースを読み込むには JavaScript を少し補助する必要があるため、画像をプリロードするための [LoadQueue](http://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) という CreateJS ライブラリの機能を使用します。 画像の読み込みにどの程度の時間がかかるか予測できないため、LoadQueue を使用して処理します。 これにより、画像の準備ができると、キューによる通知を受けることができます。 そのためにはまず、すべての画像をリストした新しいオブジェクトを作成してから、LoadQueue オブジェクトを作成します。 下のコードに示すように、このオブジェクトは、すべての準備が整ったら **loadingComplete()** という関数が呼び出されるようにセットアップされています。
+画像などのリソースを読み込むには JavaScript を少し補助する必要があるため、画像をプリロードするための [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html) という CreateJS ライブラリの機能を使用します。 画像の読み込みにどの程度の時間がかかるか予測できないため、LoadQueue を使用して処理します。 これにより、画像の準備ができると、キューによる通知を受けることができます。 そのためにはまず、すべての画像をリストした新しいオブジェクトを作成してから、LoadQueue オブジェクトを作成します。 下のコードに示すように、このオブジェクトは、すべての準備が整ったら **loadingComplete()** という関数が呼び出されるようにセットアップされています。
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -162,9 +162,9 @@ EaselJS では、数種類のグラフィック オブジェクトが提供さ�
 
 ### <a name="3-moving-the-clouds"></a>3. 雲を動かす
 
-次は、雲が動くようにします。 雲を (または、あらゆる物を) を動かすための秘策は、1 秒に何度も呼び出される [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) 関数をセットアップすることです。 この関数が呼び出されるたびに、少し位置を変えてグラフィックスが再描画されます。
+次は、雲が動くようにします。 雲を (または、あらゆる物を) を動かすための秘策は、1 秒に何度も呼び出される [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 関数をセットアップすることです。 この関数が呼び出されるたびに、少し位置を変えてグラフィックスが再描画されます。
 
-<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen"><a href="http://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a>) をご覧ください。</p>
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen"><a href="https://codepen.io">CodePen</a> で、Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) による Pen (<a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a>) をご覧ください。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 そのためのコードは既に **main.js** に含まれ、CreateJS ライブラリの EaselJS から提供されています。 次のような内容です。
@@ -217,7 +217,7 @@ function animate_clouds()
 
 これで、プレイヤーがキーを押すかマウスをクリックしたときに呼び出される 2 つの関数を使用できます。 どちらのイベントでも **userDidSomething()** が呼び出されます。この関数では gamestate 変数を調べて、今ゲームで何が行われているかを判断し、その結果、次に何が必要かを決定します。
 
-Gamestate は、ゲームで一般的に使用される設計パターンです。 発生する動作はすべて、ticker タイマーによって呼び出される **gameLoop()** 関数の中で実行されます。 gameLoop() では、変数を使用して、ゲームがプレイ中か、"ゲーム オーバー状態"、"プレイ準備完了状態、または作者が定義した他の状態であるかを追跡します。 この状態の変数は、switch ステートメント内でテストされ、その結果によって他のどの関数を呼び出すかが決まります。 状態が "playing" に設定されている場合は、恐竜にジャンプさせ、樽を動かす関数が呼び出されます。 一方、何らかの手段で恐竜が倒されると、gamestate 変数が "ゲーム オーバー状態" に設定され、"Game over!"  というメッセージが表示されます。 ゲームの設計パターンに興味がある場合は、「[Game Programming Patterns](http://gameprogrammingpatterns.com/)」(ゲーム プログラミングのパターン) という書籍が役立ちます。
+Gamestate は、ゲームで一般的に使用される設計パターンです。 発生する動作はすべて、ticker タイマーによって呼び出される **gameLoop()** 関数の中で実行されます。 gameLoop() では、変数を使用して、ゲームがプレイ中か、"ゲーム オーバー状態"、"プレイ準備完了状態、または作者が定義した他の状態であるかを追跡します。 この状態の変数は、switch ステートメント内でテストされ、その結果によって他のどの関数を呼び出すかが決まります。 状態が "playing" に設定されている場合は、恐竜にジャンプさせ、樽を動かす関数が呼び出されます。 一方、何らかの手段で恐竜が倒されると、gamestate 変数が "ゲーム オーバー状態" に設定され、"Game over!"  というメッセージが表示されます。 ゲームの設計パターンに興味がある場合は、「[Game Programming Patterns](https://gameprogrammingpatterns.com/)」(ゲーム プログラミングのパターン) という書籍が役立ちます。
 
 アプリをもう一度実行すると、ついにプレイを開始できます。 Space キーを押す (または、マウスをクリックするか画面をタップする) と、ゲームが始まります。 
 
@@ -271,7 +271,7 @@ UWP アプリがある場合は、ここでは、(もう少し改善がまず!)�
 
 次にすること アプリの質を高めるために追加をお勧めする機能を以下に示します。
 
-1. 音響効果。 CreateJS ライブラリには、[SoundJS](http://www.createjs.com/soundjs) というライブラリによるサウンドのサポートが含まれています。
+1. 音響効果。 CreateJS ライブラリには、[SoundJS](https://www.createjs.com/soundjs) というライブラリによるサウンドのサポートが含まれています。
 2. ゲームパッドのサポート。 [利用できる API](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345) があります。
 3. もっともっとすばらしいゲームにしてください。 この部分はあなた次第ですが、オンラインで利用可能なリソースも多数あります。 
 

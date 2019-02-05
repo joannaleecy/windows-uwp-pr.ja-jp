@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e0516e3de4085e9ad2f3b67cb5ed497d907f5c
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: c0eb2b6e668baec9f5ad1ef859b7213f20748beb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980370"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049579"
 ---
 # <a name="track-recently-used-files-and-folders"></a>最近使ったファイルやフォルダーの追跡
 
@@ -25,7 +25,7 @@ ms.locfileid: "8980370"
 お使いのアプリの MRU は、静的な [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) プロパティから取得する [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) クラスによって表されます。 MRU の項目は [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) オブジェクトとして格納されます。つまり、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクト (ファイルを表すオブジェクト) と [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト (フォルダーを表すオブジェクト) は、どちらも MRU に追加できます。
 
 > [!NOTE]
-> 完全なサンプルは、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
+> 完全なサンプルは、[ファイル ピッカーのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセスのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

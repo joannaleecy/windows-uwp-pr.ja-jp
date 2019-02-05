@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 5278a845e56f1df76cc663bbb0c517b589a23524
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e04b3a764c170fa3e3e0ce1372e72b73795b5b12
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921965"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049329"
 ---
 # <a name="custom-audio-effects"></a>カスタムのオーディオ特殊効果
 
@@ -147,7 +147,7 @@ TimeIndependent [**TimeIndependent**](https://msdn.microsoft.com/library/windows
 ## <a name="related-topics"></a>関連トピック
 * [シンプルなカメラ プレビューへのアクセス](simple-camera-preview-access.md)
 * [メディアのコンポジションと編集](media-compositions-and-editing.md)
-* [Win2D ドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D ドキュメント](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [メディア再生](media-playback.md)
 
  

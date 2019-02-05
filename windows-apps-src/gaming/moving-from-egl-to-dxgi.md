@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, EGL, DXGI, Direct3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19c857ae5274be70d19a14d5bbf47adb595b5676
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929827"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049699"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL コードと DXGI および Direct3D の比較
 
@@ -28,7 +28,7 @@ DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同
 
 DXGI と Direct3D は EGL に似ており、グラフィックス リソースを構成するためのメソッドや、シェーダーの描画先となり、ウィンドウに結果を表示するために使われるレンダリング コンテキストを取得するためのメソッドがあります。 ただし、DXGI と Direct3D にはかなりのオプションがあるため、EGL からの移植の際には、適切に設定するための余分な作業が必要です。
 
-> **注:** このガイダンスは、Khronos Group の EGL 1.4 のオープンな仕様に基づく: [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011年) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)します。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
+> **注:** このガイダンスは、Khronos Group の EGL 1.4 のオープンな仕様に基づく: [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011年) \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)します。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
 
  
 

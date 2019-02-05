@@ -7,18 +7,18 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 703b0750dabfdad55d55534bbe7a66a69d988f53
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c46557e3fb837bebccbb1039fb416f3e9787af2a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921074"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049218"
 ---
 # <a name="javascript-object-notation-json-object-reference"></a>JavaScript Object Notation (JSON) オブジェクト リファレンス
  
 JavaScript Object Notation (JSON) では、web 上のデータをカプセル化するための軽量な標準ベース、オブジェクト指向の表記です。
  
-Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 このセクションでは、JSON オブジェクトが Xbox Live サービスで使用される各に関するリファレンス情報を提供します。
+Xbox Live サービスは、要求をし、サービスからの応答で使われる JSON オブジェクトを定義します。 このセクションでは、Xbox Live サービスで使用される各 JSON オブジェクトに関するリファレンス情報を提供します。
  
 <a id="ID4EHB"></a>
 
@@ -39,7 +39,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [AggregateSessionsResponse (JSON)](json-aggregatesessionsresponse.md)
 
-&nbsp;&nbsp;ユーザーの適合性のセッションは、集計されたデータが含まれています。
+&nbsp;&nbsp;ユーザーの適合性のセッションは、集計データが含まれています。
 
 [BatchRequest (JSON)](json-batchrequest.md)
 
@@ -49,7 +49,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [DeviceRecord (JSON)](json-devicerecord.md)
 
-&nbsp;&nbsp;、その種類と、タイトルでアクティブななど、デバイスに関する情報。
+&nbsp;&nbsp;その型にアクティブなタイトルなど、デバイスに関する情報。
 
 [Feedback (JSON)](json-feedback.md)
 
@@ -99,11 +99,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [inventoryItem (JSON)](json-inventoryitem.md)
 
-&nbsp;&nbsp;コアのインベントリ項目の権利を付与できる標準の項目を表します。
+&nbsp;&nbsp;コア インベントリ項目の権利を付与できる標準の項目を表します。
 
 [LastSeenRecord (JSON)](json-lastseenrecord.md)
 
-&nbsp;&nbsp;ユーザーには、有効な DeviceRecord があるないときに使用できる、ユーザーが最後、システムに表示されていた場合について説明します。
+&nbsp;&nbsp;ユーザーには、有効な DeviceRecord があるないときに使用できる、ユーザーが最後システムに表示されていた場合について説明します。
 
 [MatchTicket (JSON)](json-matchticket.md)
 
@@ -151,7 +151,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [PermissionCheckBatchUserResponse (JSON)](json-permissioncheckbatchuserresponse.md)
 
-&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つの対象ユーザーのアクセス権の値の一覧を確認します。
+&nbsp;&nbsp;バッチのアクセス許可の理由は、1 つのターゲット ユーザーのアクセス許可の値の一覧を確認します。
 
 [PermissionCheckResponse (JSON)](json-permissioncheckresponse.md)
 
@@ -183,11 +183,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Progression (JSON)](json-progression.md)
 
-&nbsp;&nbsp;実績をロック解除に向けたユーザーの進行します。
+&nbsp;&nbsp;実績をロック解除に向けたユーザーの進行状況。
 
 [Property (JSON)](json-property.md)
 
-&nbsp;&nbsp;マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。
+&nbsp;&nbsp;マッチメイ キング要求条件のクライアントによって提供されるプロパティのデータが含まれています。
 
 [QueryClipsResponse (JSON)](json-queryclipsresponse.md)
 
@@ -199,7 +199,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [Requirement (JSON)](json-requirement.md)
 
-&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。
+&nbsp;&nbsp;実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件します。
 
 [ResetReputation (JSON)](json-resetreputation.md)
 
@@ -215,11 +215,11 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [ServiceError (JSON)](json-serviceerror.md)
 
-&nbsp;&nbsp;サービスに呼び出しが失敗したときに返されるエラーに関する情報が含まれています。
+&nbsp;&nbsp;サービスへの呼び出しが失敗したときに返されるエラーに関する情報が含まれています。
 
 [ServiceErrorResponse (JSON)](json-serviceerrorresponse.md)
 
-&nbsp;&nbsp;サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下で定義されています。 運用環境での低いデータを含めることができます。
+&nbsp;&nbsp;サービスのエラーが発生したときは、適切な HTTP エラー コードが返されます。 必要に応じて、サービスもあります ServiceErrorResponse オブジェクトの下に定義されています。 運用環境での低いデータが含まれている可能性があります。
 
 [SessionEntry (JSON)](json-sessionentry.md)
 
@@ -235,7 +235,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [TitleRecord (JSON)](json-titlerecord.md)
 
-&nbsp;&nbsp;その名前と最終変更日のタイムスタンプを含む、タイトルに関する情報。
+&nbsp;&nbsp;最終更新タイムスタンプとその名前を含む、タイトルに関する情報。
 
 [TitleRequest (JSON)](json-titlerequest.md)
 
@@ -243,7 +243,7 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 
 [UpdateMetadataRequest (JSON)](json-updatemetadatarequest.md)
 
-&nbsp;&nbsp;このメタデータ クリップを更新する必要があります。
+&nbsp;&nbsp;このメタデータは、クリップを更新する必要があります。
 
 [User (JSON)](json-user.md)
 
@@ -289,6 +289,6 @@ Xbox Live サービスは、要求をし、サービスからの応答で使わ�
 <a id="ID4EZH"></a>
 
  
-##### <a name="external-links-ecma-international-standard-262-ecmascript-language-specificationhttpwwwecma-internationalorgpublicationsfilesecma-stecma-262pdf"></a>外部リンク[ECMA 国際標準 262: ECMAScript 言語仕様](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
+##### <a name="external-links-ecma-international-standard-262-ecmascript-language-specificationhttpswwwecma-internationalorgpublicationsfilesecma-stecma-262pdf"></a>外部リンク[ECMA 国際標準 262: ECMAScript 言語仕様](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf)
 
    

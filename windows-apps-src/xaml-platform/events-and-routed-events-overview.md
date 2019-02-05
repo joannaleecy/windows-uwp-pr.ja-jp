@@ -6,12 +6,12 @@ ms.date: 07/12/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cf84846fc34a7b93f168abc1dfa31e9f743be209
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.openlocfilehash: 33814efca80bd4ad6348f730242d2edab1edda97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999925"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050199"
 ---
 # <a name="events-and-routed-events-overview"></a>イベントとルーティング イベントの概要
 
@@ -300,7 +300,7 @@ Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では
     - イベント ハンドラーには、Windows ランタイムの汎用イベント デリゲート [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577) への組み込みの変換がある [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) を使うことをお勧めします。
     - Windows ランタイムに変換されないため、イベント データ クラスが [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) に基づくことのないようにしてください。 既にあるイベント データ クラスを使うか、基底クラスをまったく使わないかのいずれかにします。
     - カスタム アクセサーを使う場合は、「[Windows ランタイム コンポーネントのカスタム イベントとイベント アクセサー](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)」をご覧ください。
-    - 標準の .NET イベントのパターンがよくわからない場合には、「[Silverlight のカスタム クラスのイベントの定義](http://msdn.microsoft.com/library/dd833067.aspx)」をご覧ください。 これは、Microsoft Silverlight 向けに書かれたものですが、.NET イベントのパターンのコードと概念がよくまとまっています。
+    - 標準の .NET イベントのパターンがよくわからない場合には、「[Silverlight のカスタム クラスのイベントの定義](https://msdn.microsoft.com/library/dd833067.aspx)」をご覧ください。 これは、Microsoft Silverlight 向けに書かれたものですが、.NET イベントのパターンのコードと概念がよくまとまっています。
 - C++/CX については、「[イベント (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)」をご覧ください。
     - カスタム イベントを自ら使う場合であっても、名前付き参照を使ってください。 カスタム イベントにラムダは使えません。ラムダを使うと、循環参照が作られることになります。
 
@@ -313,6 +313,6 @@ Windows ランタイムでカスタム ルーティング イベントは宣言�
 * [XAML の概要](xaml-overview.md)
 * [クイック スタート: タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
 * [キーボード操作](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [.NET イベントとデリゲート](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [.NET イベントとデリゲート](https://go.microsoft.com/fwlink/p/?linkid=214364)
 * [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)

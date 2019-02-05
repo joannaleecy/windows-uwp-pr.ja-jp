@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c75a6c487fe4a7f7cb56deff869b36309a4b9c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921765"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050845"
 ---
 # <a name="conditional-xaml"></a>条件付き XAML
 
@@ -59,7 +59,7 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 この例では、アプリが Fall Creators Update 以降で実行されている場合に、テキスト ブロックのコンテンツとして "Hello, Conditional XAML" と表示します。以前のバージョンで実行されている場合、コンテンツは何も表示されません。
 
-まず、"contract5Present" というプレフィックスのカスタム名前空間を定義し、[TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) プロパティを含むスキーマとして、既定の XAML 名前空間 (http://schemas.microsoft.com/winfx/2006/xaml/presentation) を使います。 これを条件付き名前空間にするために、スキーマの後に区切り文字 '?'  を追加します。
+まず、"contract5Present" というプレフィックスのカスタム名前空間を定義し、[TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) プロパティを含むスキーマとして、既定の XAML 名前空間 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) を使います。 これを条件付き名前空間にするために、スキーマの後に区切り文字 '?'  を追加します。
 
 次に、Fall Creators Update 以降を実行しているデバイスで **true** を返す条件を定義します。 ApiInformation の **IsApiContractPresent** メソッドを使って、UniversalApiContract の 5 番目のバージョンをチェックします。 バージョン 5 の UniversalApiContract は Fall Creators Update (SDK 16299) でリリースされました。
 

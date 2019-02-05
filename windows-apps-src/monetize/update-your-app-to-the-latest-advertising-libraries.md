@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920169"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048679"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>バナー広告用の最新の Advertising ライブラリを使用するようにアプリを更新する
 
@@ -19,7 +19,7 @@ ms.locfileid: "8920169"
 
 ## <a name="overview"></a>概要
 
-バナー広告を表示する UWP アプリでは、[Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) で配布されている Advertising ライブラリの **AdControl** を使用する必要があります。 この SDK では、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じた HTML5 リッチ メディアの提供機能など、最小限の広告機能セットがサポートされています。 多くの広告主様がこれらの機能を必要とされており、Microsoft ではアプリ開発者にこれらのいずれかの SDK リリースの使用を求めることで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
+バナー広告を表示する UWP アプリでは、[Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) で配布されている Advertising ライブラリの **AdControl** を使用する必要があります。 この SDK では、Interactive Advertising Bureau (IAB) の [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 仕様](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)を通じた HTML5 リッチ メディアの提供機能など、最小限の広告機能セットがサポートされています。 多くの広告主様がこれらの機能を必要とされており、Microsoft ではアプリ開発者にこれらのいずれかの SDK リリースの使用を求めることで、より魅力的なアプリのエコシステムを広告主様に提供し、開発者様の収益アップを図ります。
 
 この SDK をリリースする前に、いくつかの古い広告 SDK リリースで **AdControl** クラスを提供していました。 これらの以前の広告 SDK リリースは、上記で説明した最小限の広告機能をサポートしていないため、サポートされなくなりました。 2017 年 4 月 1 日の時点で、サポートされていない広告 SDK リリースを使うアプリにはバナー広告が提供されなくなりました。 サポートされていない広告 SDK リリースを使うアプリがまだある場合、次の動作が発生します。
 
@@ -27,14 +27,14 @@ ms.locfileid: "8920169"
 
 * アプリ内の **AdControl** から新しい広告が要求されると、コントロールの **ErrorOccurred** イベントが発生し、イベント引数の **ErrorCode** プロパティに **NoAdAvailable** という値が設定されます。
 
-* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 これらの非アクティブ化された広告ユニットは、DePartnerv センター アカウントから削除することはできません。 アプリを更新して [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
+* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 これらの非アクティブ化された広告ユニットは、DePartnerv センター アカウントから削除することはできません。 アプリを更新して [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
 
 * 複数のアプリで使われている広告ユニットにも、バナー広告が提供されなくなりました。 広告ユニットがそれぞれ 1 つのアプリだけで使われるようにしてください。
 
-**AdControl** を使ってバナーを表示するアプリ (Microsoft Store に公開済みまたは開発中) が既にあり、アプリにより使われている広告 SDK がわからない場合は、この記事の手順に従って、アプリをサポートされている SDK に更新する必要があるかどうかを判断してください。 問題が発生した場合やサポートが必要な場合は、[サポートにお問い合わせください](http://go.microsoft.com/fwlink/?LinkId=393643)。
+**AdControl** を使ってバナーを表示するアプリ (Microsoft Store に公開済みまたは開発中) が既にあり、アプリにより使われている広告 SDK がわからない場合は、この記事の手順に従って、アプリをサポートされている SDK に更新する必要があるかどうかを判断してください。 問題が発生した場合やサポートが必要な場合は、[サポートにお問い合わせください](https://go.microsoft.com/fwlink/?LinkId=393643)。
 
 > [!NOTE]
-> アプリが既に [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (UWP アプリ用) を使用している場合、アプリをさらに変更を加える必要はありません。
+> アプリが既に [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (UWP アプリ用) を使用している場合、アプリをさらに変更を加える必要はありません。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -76,7 +76,7 @@ ms.locfileid: "8920169"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) をインストールします。
+3.  [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をインストールします。
 
 ## <a name="part-3-update-your-project"></a>パート 3: プロジェクトを更新する
 
