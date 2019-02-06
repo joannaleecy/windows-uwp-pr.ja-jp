@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, UI, ナビゲーション
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc879ba89dc3c70ebc08d948b25f31bc30a3c6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ec5ba9d893a622e256030601cca204abab35045f
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926457"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059713"
 ---
 # <a name="ui-navigation-controller"></a>UI ナビゲーション コントローラー
 
@@ -35,7 +35,7 @@ UI ナビゲーション コントローラーは_論理_入力デバイスで�
 
 ナビゲーション デバイスは_必須セット_内のナビゲーション コマンドをすべてサポートする必要があります。これには、方向 (UP、Down、Left、Right)、View、Menu、Accept、および Cancel のコマンドが該当します。
 
-方向コマンドは、単一の UI 要素間におけるプライマリ [XY フォーカス ナビゲーション](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction)を目的としています。 View コマンドおよび Menu コマンドは、ゲームプレイ情報を (多くの場合は一時的に、場合によってはモーダルに) 表示することと、ゲームプレイとメニューのコンテキストを切り替えることをそれぞれ目的としています。 Accept および Cancel コマンドは、肯定的 (はい) および否定的 (いいえ) に応答することをそれぞれ意図しています。
+方向コマンドは、単一の UI 要素間におけるプライマリ [XY フォーカス ナビゲーション](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)を目的としています。 View コマンドおよび Menu コマンドは、ゲームプレイ情報を (多くの場合は一時的に、場合によってはモーダルに) 表示することと、ゲームプレイとメニューのコンテキストを切り替えることをそれぞれ目的としています。 Accept および Cancel コマンドは、肯定的 (はい) および否定的 (いいえ) に応答することをそれぞれ意図しています。
 
 次の表は、これらのコマンドとその使用目的を例と共にまとめたものです。
 | コマンド | 使用目的
@@ -86,7 +86,7 @@ Windows.Gaming.Input 名前空間でサポートされている入力デバイ�
 |               Down | 左スティックを下/方向パッドを下   | スティックを下         | 方向パッドを下         |
 |               Left | 左スティックを左/方向パッドを左   | スティックを左         | 方向パッドを左         |
 |              Right | 左スティックを右/方向パッドを右 | スティックを右        | 方向パッドを右        |
-|               View | 表示ボタン                         | 表示ボタン        | 表示ボタン        |
+|               View | ビュー ボタン                         | 表示ボタン        | 表示ボタン        |
 |               Menu | メニュー ボタン                         | メニュー ボタン        | メニュー ボタン        |
 |             Accept | A ボタン                            | アクション 1 ボタン    | A ボタン           |
 |             Cancel | B ボタン                            | アクション 2 ボタン    | B ボタン           |

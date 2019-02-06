@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
-ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
+ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "9041050"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059703"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション
 
@@ -425,7 +425,7 @@ B3 (方向領域内) がフォーカスを取得すると、スコープが変�
 
 このセクションでは、お勧めのナビゲーション方法をどのように指定するかについて説明します。また、フォーカス ベースである非ポインターの入力タイプすべてをサポートする一連のナビゲーション方法のプロパティを使用して、アプリケーション内でのフォーカス ナビゲーションを細かく調整する方法についても説明します。
 
-Xbox/テレビ用にアプリとエクスペリエンスを構築する方法の一般的な情報については、「[キーボード操作](keyboard-interactions.md)」と「[Xbox およびテレビ向け設計](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction)」をご覧ください。
+Xbox/テレビ用のアプリとエクスペリエンスの構築により一般的な情報は、[キーボード操作](keyboard-interactions.md)、 [Xbox およびテレビ向け設計](../devices/designing-for-tv.md)、および[ゲームパッドとリモコンの操作](gamepad-and-remote-interactions.md)を参照してください。
 
 ### <a name="navigation-strategies"></a>ナビゲーション方法
 

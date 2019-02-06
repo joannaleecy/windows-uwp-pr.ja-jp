@@ -6,12 +6,12 @@ ms.date: 3/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c5d2c1b112b96dc86d1dfef3015f9b52f43cb83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cc0af4cba5d4d14c862724cd199c9e6ab221a24d
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942423"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059723"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design System の Windows アプリの作成者
 
@@ -19,13 +19,13 @@ ms.locfileid: "8942423"
 
 ## <a name="introduction"></a>はじめに
 
-Fluent Design System では、アダプティブ、親近感を作成し、優れた美しさを持つユーザー インターフェイスのシステムです。
+Fluent Design System では、アダプティブ、高く、親近感を作成し、優れた美しさを持つユーザー インターフェイスのシステムです。
 
 ## <a name="principles"></a>原則
 
 **順応性: 各デバイスで自然な Fluent エクスペリエンスを得られる**
 
-Fluent エクスペリエンスは環境に適応します。 Fluent エクスペリエンスは、タブレット、デスクトップ PC、Xbox で快適な感じられ、その動作も優れています、Mixed Reality ヘッドセットでします。 PC の追加モニターなど、多くのハードウェアを追加しても、Fluent エクスペリエンスでそれらを活用できます。
+Fluent エクスペリエンスは環境に適応します。 タブレット、デスクトップ PC、Xbox で快適な Fluent エクスペリエンスを得-その動作も優れています Mixed Reality ヘッドセットにします。 PC の追加モニターなど、多くのハードウェアを追加しても、Fluent エクスペリエンスでそれらを活用できます。
 
 **親近感: Fluent エクスペリエンスは直感的で、強力である**
 
@@ -40,7 +40,7 @@ Fluent エクスペリエンスは動作と意図を読み取ります。すな�
 
 ![Fluent design のロゴ](images/fluentdesign_header.png)
 
-設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 アプリの種類ですか。 ガイドラインの多くは、すべてのプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするために作成します。
+設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 アプリの種類ですか。 ガイドラインの多くは、任意のプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするためには作成します。
 
 Fluent Design 機能は UWP に組み込まれています。 これらの機能のいくつか (有効ピクセルやユニバーサル入力システムなど) は、自動的に取り込まれます。 これらの機能を利用するために追加のコードを記述する必要はありません。 他の機能 (アクリル効果など) はオプションであり、それらの機能をアプリに取り込むには、機能を追加するためのコードを記述します。
 
@@ -52,7 +52,7 @@ Fluent Design 機能は UWP に組み込まれています。 これらの機能
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
-    <TextBox Text="Design with XAML" Margin="20" Padding="24,16"/>
+    <TextBox Text="Design with XAML" Margin="20" Padding="16,24"/>
 </Grid>
 ```
 
@@ -115,7 +115,7 @@ Fluent Design 機能は UWP に組み込まれています。 これらの機能
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>直感的なこと
+## <a name="make-it-intuitive"></a>直感的なように
 
 ユーザーの期待に動作するとき、エクスペリエンスは直感的な操作できます。 アクセシビリティとグローバリゼーションを実現するためにコントロールとパターンを確立し、プラットフォーム サポートを活用することで、操作の手間が省け、生産性が向上します。
 
