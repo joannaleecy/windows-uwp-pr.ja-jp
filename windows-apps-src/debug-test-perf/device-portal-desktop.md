@@ -2,20 +2,18 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows デスクトップ用 Device Portal
 description: Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。
-ms.date: 03/15/2018
+ms.date: 2/6/2019
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be8dfd11e68dc8e6382f98e08e6c23f2a4d6be6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3dcf35a1bd43930e616edc6d1e7180c9cea31560
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938832"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060046"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows デスクトップ用 Device Portal
-
-
 
 Windows Device Portal では、診断情報を表示し、ブラウザー ウィンドウから HTTP 経由でデスクトップを操作することができます。 Device Portal を使用すると、次の操作を実行できます。
 - 実行されているプロセスの一覧を確認して操作する
@@ -77,6 +75,7 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 - スクラッチ
 
 ## <a name="more-device-portal-options"></a>Device Portal のその他のオプション
+
 ### <a name="registry-based-configuration-for-device-portal"></a>Device Portal のレジストリ ベースの構成
 
 デバイス ポータルのポート番号 (80、443 など) を選択する場合は、次のレジストリ キーを設定することができます。
@@ -105,6 +104,30 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 特定の構成と視覚的なデバッグ メッセージを使用して、Device Portal のスタンドアロン バージョンを実行します。 これは、[パッケージ プラグイン](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)を構築するときに最も役立ちます。 
     - これをシステムとして実行して、パッケージ プラグインを完全にテストする方法について詳しくは、[MSDN Magazine の記事](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)をご覧ください。
+
+## <a name="common-errors-and-issues"></a>一般的なエラーとの問題
+
+Device Portal をセットアップするときに発生する可能性のあるいくつかの一般的なエラーを以下に示します。
+
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch が無効な数の更新プログラムを返します (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+
+Windows 10 のプレリリース版ビルドに開発者パッケージをインストールしようとするときは、このエラーを発生する可能性があります。 これらの機能オン デマンド (FoD) パッケージが Windows Update でホストされているし、プレリリース版ビルドをダウンロードするには、フライティングにオプトインすることが必要です。 インストールが適切なビルドとリングの組み合わせのフライティングにオプトアウトいない、ペイロードは、ダウンロード可能なはできません。 次のことを再確認してください。
+
+1. **設定 _gt 更新 & セキュリティ _gt Windows Insider Program**に移動し、 **Windows Insider アカウント**] セクションに、適切なアカウントの情報がいることを確認します。 **Windows Insider アカウントをリンク**を選択して、そのセクションが表示されない場合のメール アカウントを追加し、ことに表示されます (する必要がありますをもう一度選択**Windows Insider アカウントをリンク**する**Windows Insider アカウント**見出しの下のことを確認します。実際には、新しく追加されたアカウントをリンク)。
+ 
+2. **コンテンツの種類を聴きますが表示されるかどうか。**、 **Windows のアクティブな開発**が選択されているかどうかを確認します。
+ 
+3. **新しいビルドを取得するどのようなペース?**、 **Windows Insider Fast**が選択されているかどうかを確認します。
+ 
+4. Fod をインストールできるようになりましたにします。 お使いであることを確認した場合 Windows Insider Fast してもことはできません Fod のインストール、フィードバックを提供してください**C:\Windows\Logs\CBS**下のログ ファイルを添付します。
+
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService: ユーザー FAILED 1060: 指定されたサービスがインストールされているサービスとして存在しません。
+
+このエラーは、開発者パッケージがインストールされていない場合に発生する可能性があります。 開発者のパッケージを使用しなければ web 管理サービスはありません。 開発者のパッケージをもう一度インストールしてください。
+
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>システムが従量制課金ネットワーク (CBS_E_METERED_NETWORK) 上にあるために、CBS はダウンロードを開始できません。
+
+このエラーは、従量制課金インターネット接続を開いている場合に発生する可能性があります。 従量制課金接続で開発者パッケージをダウンロードすることはできません。
 
 ## <a name="see-also"></a>関連項目
 

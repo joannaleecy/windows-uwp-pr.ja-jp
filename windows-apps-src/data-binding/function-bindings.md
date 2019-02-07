@@ -1,20 +1,21 @@
 ---
 description: XBind マークアップ拡張は、マークアップで使用する機能を許可します。
 title: x:Bind の関数
-ms.date: 04/26/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 38573bf4602c88d2e04d4bf29b39191045eddec8
-ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
+ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024219"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060036"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
-**注:** データの使用についての一般的な情報は、 **{** x:bind} (および **{X:bind}** と **{Binding}** の間の全体的な比較)、アプリでのバインディングは、[データ バインディング](https://msdn.microsoft.com/library/windows/apps/mt210946)を参照してください。
+> [!NOTE]
+> **{** X:bind} アプリでデータ バインディングの使用に関する一般的な情報 (および **{X:bind}** と **{Binding}** の間の全体的な比較)、[データ バインディング](data-binding-in-depth.md)を参照してください。
 
 Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより。
 
@@ -54,7 +55,7 @@ class ColorEntry
 
 ## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法
 
-``` syntax
+```xaml
 <object property="{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}" ... />
 ```
 
@@ -75,6 +76,7 @@ class ColorEntry
     </StackPanel>
 </Page>
 ```
+
 ```csharp
 namespace MyNamespace
 {
@@ -86,6 +88,7 @@ namespace MyNamespace
 ```
 
 たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
+
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -105,9 +108,9 @@ namespace MyNamespace
 - 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
-次回のメジャー アップデートから Windows 10 以降、バインディング エンジンは、関数の名前で発生したプロパティ変更通知に対応し、必要に応じて、バインディングが再評価します。 例: 
+バインド エンジンは、プロパティ変更通知、関数の名前と発生し、必要に応じて、バインディングが再評価に反応します。 例:
 
-```XAML
+```xaml
 <DataTemplate x:DataType="local:Person">
    <StackPanel>
       <TextBlock Text="{x:Bind FullName}" />
@@ -115,6 +118,7 @@ namespace MyNamespace
    </StackPanel>
 </DataTemplate>
 ```
+
 ```csharp
 public class Person:INotifyPropertyChanged
 {
@@ -148,7 +152,7 @@ public class Person:INotifyPropertyChanged
     public string FullName
     {
         get { return this.fullName; }
-        set 
+        set
         {
             this.fullName = value;
             this.OnPropertyChanged ();
@@ -175,6 +179,7 @@ public class Person:INotifyPropertyChanged
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
 双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

@@ -1,16 +1,16 @@
 ---
 title: UWP でファイルのプロパティにすばやくアクセスする
 description: UWP アプリで使用するために、ライブラリからファイルとそのプロパティの一覧を効率的に収集します。
-ms.date: 03/22/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: Windows 10, UWP, ファイル, プロパティ
 ms.localizationpriority: medium
-ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926537"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060056"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>UWP でファイルのプロパティにすばやくアクセスする 
 
@@ -18,7 +18,7 @@ ms.locfileid: "8926537"
 
 前提条件 
 - **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミング** c# または Visual Basic での非同期アプリの作成、 [c# または Visual Basic での非同期 Api の呼び出し](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)を表示する方法について説明することができます。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
-- **ライブラリへのアクセス許可**これらの例のコードには、 **picturesLibrary**機能が必要ですが、ファイルの場所がまったく必要としない別の機能や機能がないです。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
+- **ライブラリへのアクセス許可**これらの例のコードで、 **picturesLibrary**機能が必要ですが、ファイルの場所がまったく必要としない別の機能や機能がないです。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
 - **単純なファイルの列挙**この例では、 [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)を使用して、いくつかの高度な列挙プロパティを設定します。 小さいディレクトリを対象としてファイルの簡単な一覧を取得する方法について詳しくは、「[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)」をご覧ください。 
 
 ## <a name="usage"></a>使用方法  
@@ -118,6 +118,5 @@ while (images.Count != 0 || index < 10000) 
 [QueryOptions API リファレンス](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
-[プロパティにすばやくアクセスするためのチュートリアル](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  
