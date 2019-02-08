@@ -4,6 +4,7 @@ title: ツリー ビュー
 label: Tree view
 template: detail.hbs
 ms.date: 01/03/2019
+ms.topic: article
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv
@@ -13,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5
-ms.openlocfilehash: da8abfc32dcddabe5c5d72d1d04cb752dc3f9bba
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 7c666d417fb980cab72165681583ac83e9eaca00
+ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037294"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "9062474"
 ---
 # <a name="treeview"></a>TreeView
 
