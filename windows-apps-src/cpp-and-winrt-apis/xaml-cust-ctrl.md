@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、XAML で、テンプレート化された、カスタム コントロール
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 24739e79b3999309aef9c1c6b35afd9ef2bbc9ab
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: ce4f7eea074233c625a2cc92ef773f0b06c2be9f
+ms.sourcegitcommit: ec4087c5203d2d4a68bcfa612c1fe8f16d8ef255
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036994"
+ms.lasthandoff: 02/11/2019
+ms.locfileid: "9063477"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>C++/WinRT による XAML カスタム (テンプレート化) コントロール
 
 > [!IMPORTANT]
 > 基本的な概念と用語を使用およびでランタイム クラスを作成する方法についての理解をサポートする[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)を参照してください[、C++ での Api の/WinRT](consume-apis.md)と[において、C++ Api の作成/WinRT](author-apis.md)します。
 
-ユニバーサル Windows プラットフォーム (UWP) の最も強力な機能の 1 つは、XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいてカスタム コントロールを作成するユーザー インターフェイス (UI) スタックを提供する柔軟性です。 XAML UI フレームワークでは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と添付プロパティ、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)では、機能が豊富でカスタマイズ可能なコントロールを作成しやすくなどの機能を提供します。 このトピックで説明した c++ カスタム (テンプレート化) コントロールを作成する手順/WinRT します。
+ユニバーサル Windows プラットフォーム (UWP) の最も強力な機能の 1 つは、XAML[**コントロール**](/uwp/api/windows.ui.xaml.controls.control)の種類に基づいてカスタム コントロールを作成するユーザー インターフェイス (UI) スタックを提供する柔軟性です。 XAML UI フレームワークでは、[カスタム依存関係プロパティ](/windows/uwp/xaml-platform/custom-dependency-properties)と[添付プロパティ](/windows/uwp/xaml-platform/custom-attached-properties)を、および[コントロール テンプレート](/windows/uwp/design/controls-and-patterns/control-templates)、豊富な機能でカスタマイズ可能なコントロールを作成しやすくなるなどの機能を提供します。 このトピックで説明した c++ カスタム (テンプレート化) コントロールを作成する手順/WinRT します。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>空白のアプリ (BgLabelControlApp) の作成します。
 まず、Microsoft Visual Studio で、新しいプロジェクトを作ります。 **Visual C**を作成 > **Windows ユニバーサル** > **空白のアプリ (、C++/WinRT)** プロジェクト、および*BgLabelControlApp*名前を付けます。 このトピックの後のセクションでが表示されます、プロジェクトをビルドする (それまでは、ビルドしないでください)。
@@ -40,7 +40,7 @@ namespace BgLabelControlApp
 }
 ```
 
-上記の登録情報は、依存関係プロパティ (DP) を宣言するときに従うパターンを示しています。 各 DP に 2 つがあります。 最初に、 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty)の種類の読み取り専用の静的プロパティを宣言します。 DP と*プロパティ*の名前があります。 実装では、この静的プロパティを使用します。 次に、種類と、DP の名前を使ってインスタンスの読み取り/書き込みプロパティを宣言します。
+上記の登録情報は、依存関係プロパティ (DP) を宣言するときに従うパターンを示しています。 各 DP に 2 つがあります。 最初に、 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty)の種類の読み取り専用の静的プロパティを宣言します。 DP と*プロパティ*の名前があります。 実装では、この静的プロパティを使用します。 次に、種類と、DP の名前を使ってインスタンスの読み取り/書き込みプロパティを宣言します。 *添付プロパティ*(ではなく、DP) を作成する場合は、し、[カスタム添付プロパティ](/windows/uwp/xaml-platform/custom-attached-properties)のコード例を参照してください。
 
 > [!NOTE]
 > する場合は、DP 浮動小数点型と、しやすく`double`(`Double` [MIDL](/uwp/midl-3/)3.0)。 宣言して、実装型の DP `float` (`Single` MIDL で)、エラーの結果の XAML マークアップで、その DP 値を設定および*テキストから 'Windows.Foundation.Single' を作成できませんでした '<NUMBER>'* します。
