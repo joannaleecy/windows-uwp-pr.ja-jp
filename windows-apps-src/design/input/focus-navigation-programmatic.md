@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 64a15526b32be52b0fc667dc6f8b549d6faae8f1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927730"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075135"
 ---
 # <a name="programmatic-focus-navigation"></a>プログラムによるフォーカス ナビゲーション
 
@@ -90,7 +90,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
     var options = new FindNextElementOptions ()
     {
         SearchRoot = TicTacToeGrid,
-        NavigationStrategy = NavigationStrategyMode.Heuristic
+        XYFocusNavigationStrategyOverride = XYFocusNavigationStrategyOverride.Projection
     };
 
     switch (e.Key)

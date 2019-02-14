@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, UWP, SQLite, データベース
 ms.localizationpriority: medium
-ms.openlocfilehash: 3780423b0c2fc2bbe1ebc81054e13997d5ebde7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934597"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075145"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>UWP アプリでの SQLite データベースの使用
 SQLite を使用すると、ユーザー デバイス上の軽量なデータベースにデータを保存し、取得することができます。 このガイドでその方法を示します。
@@ -83,7 +83,7 @@ UWP プロジェクトの最小バージョンを Fall Creators Update に上げ
 
 まず、標準のクラス ライブラリの代わりに、.NET Standard 2.0 ライブラリを使用できます。 これによって、データ アクセス コードを WPF、Windows フォーム、Android、iOS、ASP.NET アプリなど、他の .NET ベースのアプリと共有することができます。
 
-2 つ目に、アプリにはパッケージの SQLite ライブラリは含まれません。 代わりに、アプリは Windows と共にインストールされるバージョンの SQLite を使用することができます。 これにより、次のような利点が得られます。
+次に、アプリは、SQLite ライブラリをパッケージ化にはありません。 代わりに、アプリは Windows と共にインストールされるバージョンの SQLite を使用することができます。 これにより、次のような利点が得られます。
 
 :heavy_check_mark: SQLite バイナリをダウンロードして、アプリの一部としてパッケージ化する必要がないため、アプリケーションのサイズが小さくなります。
 
