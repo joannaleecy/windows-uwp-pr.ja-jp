@@ -1,213 +1,220 @@
+items:
 - name: 概要
   href: ../publish/index.md
 - name: 開発者アカウントを開く
   href: ../publish/opening-a-developer-account.md
   items:
-    - name: アカウントの種類、場所、料金
-      href: ../publish/account-types-locations-and-fees.md
-    - name: アカウントの設定とプロファイル情報の管理
-      href: ../publish/manage-account-settings-and-profile.md
-    - name: 商標と著作権の保護
-      href: ../publish/trademark-and-copyright-protection.md
+  - name: アカウントの種類、場所、料金
+    href: ../publish/account-types-locations-and-fees.md
+  - name: アカウントの設定とプロファイル情報の管理
+    href: ../publish/manage-account-settings-and-profile.md
+  - name: 商標と著作権の保護
+    href: ../publish/trademark-and-copyright-protection.md
 - name: アカウント ユーザーの管理
   href: ../publish/manage-account-users.md
   items:
-    - name: Azure AD とパートナー センター アカウントの関連付け
-      href: ../publish/associate-azure-ad-with-partner-center.md
-    - name: ユーザー、グループ、および Azure AD アプリケーションの追加
-      href: ../publish/add-users-groups-and-azure-ad-applications.md
-    - name: 役割とカスタムのアクセス許可の設定
-      href: ../publish/set-custom-permissions-for-account-users.md
+  - name: Azure AD とパートナー センター アカウントの関連付け
+    href: ../publish/associate-azure-ad-with-partner-center.md
+  - name: ユーザー、グループ、および Azure AD アプリケーションの追加
+    href: ../publish/add-users-groups-and-azure-ad-applications.md
+  - name: 役割とカスタムのアクセス許可の設定
+    href: ../publish/set-custom-permissions-for-account-users.md
 - name: 名前の予約によるアプリの作成
   href: ../publish/create-your-app-by-reserving-a-name.md
 - name: アプリの申請
   href: ../publish/app-submissions.md
   items:
-    - name: アプリの価格と使用可能状況の設定
-      href: ../publish/set-app-pricing-and-availability.md
-      items:
-        - name: 市場の選択の定義
-          href: ../publish/define-market-selection.md
-        - name: 表示オプションを選択する
-          href: ../publish/choose-visibility-options.md
-        - name: 正確なリリース スケジュールの構成
-          href: ../publish/configure-precise-release-scheduling.md
-        - name: アプリの価格の設定とスケジュール
-          href: ../publish/set-and-schedule-app-pricing.md
-        - name: 組織のライセンス オプション
-          href: ../publish/organizational-licensing.md
-    - name: アプリのプロパティの入力
-      href: ../publish/enter-app-properties.md
-      items:
-        - name: カテゴリとサブカテゴリの一覧
-          href: ../publish/category-and-subcategory-table.md
-        - name: 製品の宣言
-          href: ../publish/product-declarations.md
-    - name: 年齢区分
-      href: ../publish/age-ratings.md
-    - name: アプリ パッケージのアップロード
-      href: ../publish/upload-app-packages.md
-      items:
-        - name: デバイス ファミリの利用可否
-          href: ../publish/device-family-availability.md
-        - name: アプリ パッケージの要件
-          href: ../publish/app-package-requirements.md
-        - name: パッケージ バージョンの番号付け
-          href: ../publish/package-version-numbering.md
-        - name: サポートされている言語
-          href: ../publish/supported-languages.md
-        - name: アプリ パッケージ管理のガイダンス
-          href: ../publish/guidance-for-app-package-management.md
-    - name: アプリの Microsoft Store 登録情報の作成
-      href: ../publish/create-app-store-listings.md
-      items:
-        - name: 人の心をつかむアプリの説明を書く
-          href: ../publish/write-a-great-app-description.md
-        - name: アプリのスクリーンショット、画像、トレーラー
-          href: ../publish/app-screenshots-and-images.md
-        - name: ストア登録情報のインポートとエクスポート
-          href: ../publish/import-and-export-store-listings.md
-        - name: プラットフォーム固有の Store 登録情報の作成
-          href: ../publish/create-platform-specific-store-listings.md
-    - name: 申請オプションの管理
-      href: ../publish/manage-submission-options.md
-      items:
-        - name: 認定の注意書き
-          href: ../publish/notes-for-certification.md
-    - name: アプリの認定プロセス
-      href: ../publish/the-app-certification-process.md
-      items:
-        - name: 申請エラーの解決
-          href: ../publish/resolve-submission-errors.md
-        - name: 一般的な認定エラーの回避
-          href: ../publish/avoid-common-certification-failures.md
-    - name: パッケージ フライト
-      href: ../publish/package-flights.md
-    - name: 段階的なパッケージのロールアウト
-      href: ../publish/gradual-package-rollout.md
-    - name: ベータ テストとターゲット配布
-      href: ../publish/beta-testing-and-targeted-distribution.md
-    - name: LOB アプリの企業への配布
-      href: ../publish/distribute-lob-apps-to-enterprises.md
+  - name: アプリの価格と使用可能状況の設定
+    href: ../publish/set-app-pricing-and-availability.md
+    items:
+    - name: 市場の選択の定義
+      href: ../publish/define-market-selection.md
+    - name: 表示オプションを選択する
+      href: ../publish/choose-visibility-options.md
+    - name: 正確なリリース スケジュールの構成
+      href: ../publish/configure-precise-release-scheduling.md
+    - name: アプリの価格の設定とスケジュール
+      href: ../publish/set-and-schedule-app-pricing.md
+    - name: 組織のライセンス オプション
+      href: ../publish/organizational-licensing.md
+  - name: アプリのプロパティの入力
+    href: ../publish/enter-app-properties.md
+    items:
+    - name: カテゴリとサブカテゴリの一覧
+      href: ../publish/category-and-subcategory-table.md
+    - name: 製品の宣言
+      href: ../publish/product-declarations.md
+  - name: 年齢区分
+    href: ../publish/age-ratings.md
+  - name: アプリ パッケージのアップロード
+    href: ../publish/upload-app-packages.md
+    items:
+    - name: デバイス ファミリの利用可否
+      href: ../publish/device-family-availability.md
+    - name: アプリ パッケージの要件
+      href: ../publish/app-package-requirements.md
+    - name: パッケージ バージョンの番号付け
+      href: ../publish/package-version-numbering.md
+    - name: サポートされている言語
+      href: ../publish/supported-languages.md
+    - name: アプリ パッケージ管理のガイダンス
+      href: ../publish/guidance-for-app-package-management.md
+  - name: アプリの Microsoft Store 登録情報の作成
+    href: ../publish/create-app-store-listings.md
+    items:
+    - name: 人の心をつかむアプリの説明を書く
+      href: ../publish/write-a-great-app-description.md
+    - name: アプリのスクリーンショット、画像、トレーラー
+      href: ../publish/app-screenshots-and-images.md
+    - name: ストア登録情報のインポートとエクスポート
+      href: ../publish/import-and-export-store-listings.md
+    - name: プラットフォーム固有の Store 登録情報の作成
+      href: ../publish/create-platform-specific-store-listings.md
+  - name: 申請オプションの管理
+    href: ../publish/manage-submission-options.md
+    items:
+    - name: 認定の注意書き
+      href: ../publish/notes-for-certification.md
+  - name: アプリの認定プロセス
+    href: ../publish/the-app-certification-process.md
+    items:
+    - name: 申請エラーの解決
+      href: ../publish/resolve-submission-errors.md
+    - name: 一般的な認定エラーの回避
+      href: ../publish/avoid-common-certification-failures.md
+  - name: パッケージ フライト
+    href: ../publish/package-flights.md
+  - name: 段階的なパッケージのロールアウト
+    href: ../publish/gradual-package-rollout.md
+  - name: ベータ テストとターゲット配布
+    href: ../publish/beta-testing-and-targeted-distribution.md
+  - name: LOB アプリの企業への配布
+    href: ../publish/distribute-lob-apps-to-enterprises.md
 - name: アドオンの申請
   href: ../publish/add-on-submissions.md
   items:
-    - name: アドオンの製品の種類と製品 ID を設定する
-      href: ../publish/set-your-add-on-product-id.md
-    - name: アドオン プロパティの入力
-      href: ../publish/enter-add-on-properties.md
-    - name: アドオンの価格と使用可能状況の設定
-      href: ../publish/set-add-on-pricing-and-availability.md
-    - name: アドオンの Store 登録情報の作成
-      href: ../publish/create-add-on-store-listings.md
+  - name: アドオンの製品の種類と製品 ID を設定する
+    href: ../publish/set-your-add-on-product-id.md
+  - name: アドオン プロパティの入力
+    href: ../publish/enter-add-on-properties.md
+  - name: アドオンの価格と使用可能状況の設定
+    href: ../publish/set-add-on-pricing-and-availability.md
+  - name: アドオンの Store 登録情報の作成
+    href: ../publish/create-add-on-store-listings.md
 - name: アプリ内広告
   href: ../publish/in-app-ads.md
 - name: アプリの管理とサービス
   href: ../publish/app-management-and-services.md
   items:
-    - name: アプリ ID の詳細の表示
-      href: ../publish/view-app-identity-details.md
-    - name: アプリ名の管理
-      href: ../publish/manage-app-names.md
-    - name: OEM 向けのプレインストール パッケージの生成
-      href: ../publish/generate-preinstall-packages-for-oems.md
+  - name: アプリ ID の詳細の表示
+    href: ../publish/view-app-identity-details.md
+  - name: アプリ名の管理
+    href: ../publish/manage-app-names.md
+  - name: OEM 向けのプレインストール パッケージの生成
+    href: ../publish/generate-preinstall-packages-for-oems.md
 - name: 関心の獲得とプロモーション
   href: ../publish/attract-customers-and-promote-your-apps.md
   items:
-    - name: プロモーション コードを生成する
-      href: ../publish/generate-promotional-codes.md
-    - name: アプリの広告キャンペーンの作成
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: 広告キャンペーンの管理
-          href: ../publish/managing-your-ad-campaign.md
-        - name: 自社広告について
-          href: ../publish/about-house-ads.md
-        - name: コミュニティ広告について
-          href: ../publish/about-community-ads.md
-        - name: 広告キャンペーンに関してよく寄せられる質問
-          href: ../publish/common-questions.md
-    - name: カスタム アプリ プロモーション キャンペーンの作成
-      href: ../publish/create-a-custom-app-promotion-campaign.md
-    - name: アプリとアドオンの販売
-      href: ../publish/put-apps-and-add-ons-on-sale.md
-    - name: アプリのマーケティング ガイドライン
-      href: ../publish/app-marketing-guidelines.md
-    - name: アプリへのリンク
-      href: ../publish/link-to-your-app.md
-    - name: アプリの販売促進を容易にする
-      href: ../publish/make-your-app-easier-to-promote.md
+  - name: プロモーション コードを生成する
+    href: ../publish/generate-promotional-codes.md
+  - name: アプリの広告キャンペーンの作成
+    href: ../publish/create-an-ad-campaign-for-your-app.md
+    items:
+    - name: 広告キャンペーンの管理
+      href: ../publish/managing-your-ad-campaign.md
+    - name: 自社広告について
+      href: ../publish/about-house-ads.md
+    - name: コミュニティ広告について
+      href: ../publish/about-community-ads.md
+    - name: 広告キャンペーンに関してよく寄せられる質問
+      href: ../publish/common-questions.md
+  - name: カスタム アプリ プロモーション キャンペーンの作成
+    href: ../publish/create-a-custom-app-promotion-campaign.md
+  - name: アプリとアドオンの販売
+    href: ../publish/put-apps-and-add-ons-on-sale.md
+  - name: アプリのマーケティング ガイドライン
+    href: ../publish/app-marketing-guidelines.md
+  - name: アプリへのリンク
+    href: ../publish/link-to-your-app.md
+  - name: アプリの販売促進を容易にする
+    href: ../publish/make-your-app-easier-to-promote.md
 - name: ユーザーとの関係を深める
   href: ../publish/engage-with-your-customers.md
   items:
-    - name: ユーザー グループを作成する
-      href: ../publish/create-customer-groups.md
-      items:
-        - name: ユーザー セグメントを作成する
-          href: ../publish/create-customer-segments.md
-        - name: 既知のユーザー グループを作成する
-          href: ../publish/create-known-user-groups.md
-    - name: 顧客のレビューに返信する
-      href: ../publish/respond-to-customer-reviews.md
-    - name: 顧客のフィードバックに返信する
-      href: ../publish/respond-to-customer-feedback.md
-    - name: アプリのユーザーに通知を送信する
-      href: ../publish/send-push-notifications-to-your-apps-customers.md
-    - name: ターゲット オファーを使用する
-      href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+  - name: ユーザー グループを作成する
+    href: ../publish/create-customer-groups.md
+    items:
+    - name: ユーザー セグメントを作成する
+      href: ../publish/create-customer-segments.md
+    - name: 既知のユーザー グループを作成する
+      href: ../publish/create-known-user-groups.md
+  - name: 顧客のレビューに返信する
+    href: ../publish/respond-to-customer-reviews.md
+  - name: 顧客のフィードバックに返信する
+    href: ../publish/respond-to-customer-feedback.md
+  - name: アプリのユーザーに通知を送信する
+    href: ../publish/send-push-notifications-to-your-apps-customers.md
+  - name: ターゲット オファーを使用する
+    href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
 - name: アプリのパフォーマンスの分析
   href: ../publish/analytics.md
   items:
-    - name: 取得レポート
-      href: ../publish/acquisitions-report.md
-    - name: '[アドオン取得] レポート'
-      href: ../publish/add-on-acquisitions-report.md
-    - name: '[使用状況] レポート'
-      href: ../publish/usage-report.md
-    - name: 状態レポート
-      href: ../publish/health-report.md
-    - name: 評価レポート
-      href: ../publish/ratings-report.md
-    - name: レビュー レポート
-      href: ../publish/reviews-report.md
-    - name: フィードバック レポート
-      href: ../publish/feedback-report.md
-    - name: Xbox 分析レポート
-      href: ../publish/xbox-analytics-report.md
-    - name: インサイト レポート
-      href: ../publish/insights-report.md
-    - name: 広告パフォーマンス レポート
-      href: ../publish/advertising-performance-report.md
-    - name: 広告キャンペーン レポート
-      href: ../publish/ad-campaign-report.md
-    - name: 分析レポートのダウンロード
-      href: ../publish/download-analytic-reports.md
+  - name: 取得レポート
+    href: ../publish/acquisitions-report.md
+  - name: '[アドオン取得] レポート'
+    href: ../publish/add-on-acquisitions-report.md
+  - name: '[使用状況] レポート'
+    href: ../publish/usage-report.md
+  - name: 状態レポート
+    href: ../publish/health-report.md
+  - name: 評価レポート
+    href: ../publish/ratings-report.md
+  - name: レビュー レポート
+    href: ../publish/reviews-report.md
+  - name: フィードバック レポート
+    href: ../publish/feedback-report.md
+  - name: Xbox 分析レポート
+    href: ../publish/xbox-analytics-report.md
+  - name: インサイト レポート
+    href: ../publish/insights-report.md
+  - name: 広告パフォーマンス レポート
+    href: ../publish/advertising-performance-report.md
+  - name: 広告キャンペーン レポート
+    href: ../publish/ad-campaign-report.md
+  - name: 分析レポートのダウンロード
+    href: ../publish/download-analytic-reports.md
 - name: 支払いの受け取り
   href: ../publish/getting-paid-apps.md
   items:
-    - name: 受取りアカウントの設定と税関連の書類
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: 受け取りしきい値、方法、期間
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: 入金状況
-      href: ../publish/payout-summary.md
-    - name: 有料アプリの税の詳細
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: IRS の税関連の書類について
-      href: ../publish/understand-irs-tax-forms.md
-    - name: 通信事業者の請求
-      href: ../publish/mobile-operator-billing.md
-    - name: 付加価値税情報
-      href: ../publish/vat-info.md
+  - name: 受取りアカウントの設定と税関連の書類
+    href: ../publish/setting-up-your-payout-account-and-tax-forms.md
+  - name: 受け取りしきい値、方法、期間
+    href: ../publish/payment-thresholds-methods-and-timeframes.md
+  - name: 支払いの概要
+    href: ../publish/payout-summary.md
+  - name: 税の詳細
+    href: ../publish/tax-details-for-paid-apps.md
+  - name: IRS の税関連の書類について
+    href: ../publish/understand-irs-tax-forms.md
+  - name: 通信事業者の請求
+    href: ../publish/mobile-operator-billing.md
+  - name: 付加価値税情報
+    href: ../publish/vat-info.md
 - name: Microsoft Store のポリシーと倫理規定
-  href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct'
+  href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
   items:
-    - name: Microsoft Store ポリシー
-      href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies'
-      items:
-        - name: 変更履歴
-          href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history'
-    - name: アプリの品質
-      href: 'https://docs.microsoft.com/legal/windows/agreements/store-app-quality'
-    - name: 開発者倫理規定
-      href: 'https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct'
+  - name: Microsoft Store ポリシー
+    href: https://docs.microsoft.com/legal/windows/agreements/store-policies
+    items:
+    - name: 変更履歴
+      href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
+  - name: アプリの品質
+    href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
+  - name: 開発者倫理規定
+    href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
+ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
+ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042472"
