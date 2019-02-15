@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 概要
 ms.localizationpriority: medium
-ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
-ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
+ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042606"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079220"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT の概要
 &nbsp;
@@ -111,6 +111,8 @@ VSIX 拡張機能の最新のバージョンでことはできませんが、プ
 前述した、C + + WinRT プロジェクトが NuGet パッケージがインストールされていることを今すぐ必要があります。
 
 `<CppWinRTEnabled>`要素は廃止されました、必要に応じてを編集できます、 `.vcxproj`、要素を削除します。 厳密に必要はありませんが、これは、オプション。
+
+また場合、`.vcxproj`が含まれています`<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`、c++ を必要とせずに構築するために削除することができます/WinRT VSIX の拡張機能をインストールします。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT プロジェクションにおけるカスタム型
 C++//winrt プログラミングでは、標準 C++ 言語機能を使用して[標準的な C++ データ型と C++/WinRT](std-cpp-data-types.md)&mdash;一部の C++ 標準ライブラリのデータ型を含みます。 ただし、プロジェクションでいくつかのカスタム データ型を認識するようになり、それらを使用することもできます。 たとえば、[C++/WinRT の概要](get-started.md) のクイックスタートのコード例では [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) を使用しています。

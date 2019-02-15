@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e0b2a2370acd3571b48eecdf13e44cadc3879c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050475"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079210"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,12 +158,16 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>HTTP 経由でデータをポスト バイナリ
 
-[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)少量の[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)クラスを使用して、POST 要求とバイナリ データを送信する次のコード例を示しています。 (次のコード例に示す) よう、**取得**を呼び出すことが適切でない UI スレッドにします。 その場合に使用する、適切な手法では、次を参照してください。[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。
+[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)フォーム データと POST 要求を使用して、web サーバーへのファイルのアップロードとして少量のバイナリ データを送信する次のコード例を示しています。 コードでは、バイナリのデータを表す[**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent)クラスとマルチパート フォーム データを表す[**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent)クラスを使用します。
+
+> [!NOTE]
+> (次のコード例に示す) よう、**取得**を呼び出すことが適切でない UI スレッドにします。 その場合に使用する、適切な手法では、次を参照してください。[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。
 
 ```cppwinrt
 // pch.h
 #pragma once
 #include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Security.Cryptography.h>
 #include <winrt/Windows.Storage.Streams.h>
 #include <winrt/Windows.Web.Http.Headers.h>
 
@@ -171,7 +175,6 @@ int main()
 #include "pch.h"
 #include <iostream>
 #include <sstream>
-#include <winrt/Windows.Security.Cryptography.h>
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
@@ -180,18 +183,31 @@ int main()
 {
     init_apartment();
 
-    // Create an HttpClient object.
     Windows::Web::Http::HttpClient httpClient;
 
-    Uri requestUri{ L"http://www.contoso.com/post" };
+    Uri requestUri{ L"https://www.contoso.com/post" };
+
+    Windows::Web::Http::HttpMultipartFormDataContent postContent;
+    Windows::Web::Http::Headers::HttpContentDispositionHeaderValue disposition{ L"form-data" };
+    postContent.Headers().ContentDisposition(disposition);
+    // The 'name' directive contains the name of the form field representing the data.
+    disposition.Name(L"fileForUpload");
+    // Here, the 'filename' directive is used to indicate to the server a file name
+    // to use to save the uploaded data.
+    disposition.FileName(L"file.dat");
 
     auto buffer{
-    Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
-        L"A sentence of text by way of sample data",
-        Windows::Security::Cryptography::BinaryStringEncoding::Utf8)
+        Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(
+            L"A sentence of text to encode into binary to serve as sample data.",
+            Windows::Security::Cryptography::BinaryStringEncoding::Utf8
+        )
     };
-    Windows::Web::Http::HttpBufferContent postContent{ buffer };
-    postContent.Headers().Append(L"Content-Type", L"image/jpeg");
+    Windows::Web::Http::HttpBufferContent binaryContent{ buffer };
+    // You can use the 'image/jpeg' content type to represent any binary data;
+    // it's not necessarily an image file.
+    binaryContent.Headers().Append(L"Content-Type", L"image/jpeg");
+
+    postContent.Add(binaryContent); // Add the binary data content as a part of the form data content.
 
     // Send the POST request asynchronously, and retrieve the response as a string.
     Windows::Web::Http::HttpResponseMessage httpResponseMessage;
@@ -212,9 +228,9 @@ int main()
 }
 ```
 
-バイナリ ファイルの内容を投稿するを確認して[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)オブジェクトを使いやすくします。 1 つを作成して、そのコンス トラクターの引数として渡す[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)への呼び出しから返される値。 そのメソッドは、バイナリ ファイル内のデータのストリームを返します。
+(上記で使用する明示的なバイナリ データではなく) 実際のバイナリ ファイルの内容を投稿するを確認して[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)オブジェクトを使いやすくします。 1 つを作成して、そのコンス トラクターの引数として渡す[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)への呼び出しから返される値。 そのメソッドは、バイナリ ファイル内のデータのストリームを返します。
 
-また、(約 10 MB を超える) の大きなファイルをアップロードしている場合、お勧めします Windows ランタイムの[バック グラウンド転送](/uwp/api/windows.networking.backgroundtransfer)Api を使用することです。
+お勧めします (約 10 MB を超える) 場合は、大きなファイルをアップロードしている場合は、[Windows ランタイムの[バック グラウンド転送](/uwp/api/windows.networking.backgroundtransfer)Api を使います。
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http の例外
 
