@@ -2,30 +2,30 @@
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: サポートされている言語
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 10/25/2018
+ms.date: 02/20/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
+ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938022"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083710"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 
 
-100 個以上の言語で Microsoft ストアにアプリを提出することができます。
+100 を超える言語で Microsoft ストアにアプリを提出することができます。
 
 アプリでの言語の構成について詳しくは、[理解するユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
 
 ## <a name="supported-languages"></a>サポートされている言語
 
 
-これらは、Microsoft ストアでサポートされている言語です。 アプリは、少なくとも 1 つの言語をサポートする必要があります。 
+これらは、Microsoft ストアがサポートされる言語です。 アプリは、これらの言語の 1 つ以上をサポートする必要があります。 
 
-ここでは含まれていません言語コードでは、ストアでサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、ユーザーには配布されないと、認定の遅延またはエラーが発生する可能性があります。
+ここでは含まれていません言語コードでは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、顧客には配布されないと、認定の遅延またはエラーが発生する可能性があります。
 
 | 言語名         | サポートされる言語コード                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ ms.locfileid: "8938022"
 | ブルガリア語             | bg、bg-bg                                                                                                                                                                                             |
 | カタルニア語               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | チェロキー語              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 簡体字中国語  | zh、zh-Hans、zh-cn、zh-hans-cn、zh-sg、zh-hans-sg                                                                                                                                                     |
+| 簡体字中国語  | Zh-hans、zh-cn、zh-cn hans、zh sg、zh hans-sg                                                                                                                                                     |
 | 繁体字中国語 | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | クロアチア語              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | チェコ語                 | cs、cs-cz                                                                                                                                                                                             |
