@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dbd2c6c9f5e3cf2200f9b260687f05718178868a
+ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050655"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9082885"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>MonoGame 2D で UWP ゲームを作成する
 
@@ -67,6 +67,7 @@ Visual Studio 2017 でプロジェクトを開き、 **f5 キーを押して**�
 **protected override void UnloadContent()** このメソッドは、非コンテンツ マネージャーのコンテンツをアンロードするために使用されます。 ここでは使用しません。
 
 **保護されたオーバーライド (GameTime gameTime) の更新を無効にします。** このメソッドは、ゲーム ループのすべてのサイクルに 1 回呼び出されます。 ここでは、ゲームで使用するあらゆるオブジェクトや変数の状態を更新します。 これには、オブジェクトの位置、速度、色などが含まれます。 これは、ユーザー入力が処理されます。 つまりこのメソッドでは、画面へのオブジェクトの描画を除いて、ゲーム ロジックのすべての部分が処理されます。
+
 **protected override void Draw(GameTime gameTime)** ここでは、Update メソッドで指定された位置を使用して、オブジェクトが画面に描画されます。
 
 ## <a name="draw-a-sprite"></a>スプライトの描画
@@ -254,7 +255,7 @@ SpriteClass の **Update** メソッドは、Game1.cs の **Update** メソッ�
 **Draw** メソッドは、Game1.cs の **Draw** メソッドで呼び出され、ゲーム ウィンドウにスプライトを描画するために使用されます。
 
 ## <a name="user-input-and-animation"></a>ユーザー入力とアニメーション
-これで SpriteClass を構築できたため、これを使用して 2 つの新しいゲーム オブジェクトを作成します。1 つ目は、プレイヤーが方向キーと Space キーで制御できるアバターです。 2 つ目は、プレイヤーが回避する必要があるオブジェクトです。
+これで SpriteClass を構築できたため、これを使用して 2 つの新しいゲーム オブジェクトを作成します。1 つ目は、プレイヤーが方向キーと Space キーで制御できるアバターです。 2 つ目は、プレイヤーが避ける必要がありますオブジェクトです。
 
 ### <a name="1-get-the-textures"></a>1. テクスチャを入手する
 プレイヤーのアバターには、Microsoft 独自のニンジャ キャットを使用します。ニンジャ キャットは、信頼できるティラノサウルスに乗っています。 [画像をダウンロードするには、こちらをクリックしてください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png)。
@@ -565,7 +566,7 @@ if (!gameStarted)
 
 まず、描画するテキスト行に対して 1 つずつ、合計 2 つの String を作成します。 次に、**SpriteFont.MeasureString(String)** メソッドを使用して、各行の出力時の幅と高さを計測します。 これにより、サイズを **Vector2** オブジェクトとして取得できます。**X** プロパティには幅、**Y** プロパティには高さが格納されます。
 
-最後に、1 行ずつ描画しています。 テキストを水平方向で中央揃えにするために、位置ベクトルの **X** 値として **screenWidth / 2 - textSize.X / 2** を指定しています。
+最後に、1 行ずつ描画しています。 テキストを水平方向で中央に行い位置ベクトルの**X**値に等しい**screenWidth/2 - textSize.X/2**します。
 
 **課題:** テキストを水平方向だけでなく垂直方向でも中央揃えにするには、上の手順をどのように変更しますか?
 
@@ -576,7 +577,12 @@ if (!gameStarted)
 ## <a name="collision-detection"></a>衝突の検出
 これで、プレイヤーを追随するブロッコリをセットアップし、新しいブロッコリが生成されるたびに加算されるスコアも用意できました。ただ、このままでは、実際にゲームに負ける方法がありません。 dino スプライトと broccoli スプライトが衝突したかどうかを知り、衝突した場合はゲーム オーバーを宣言する手段が必要です。
 
-### <a name="1-rectangular-collision"></a>1. 四角形の衝突
+### <a name="1-get-the-textures"></a>1. テクスチャを入手する
+必要があります、最後のイメージは、「ゲーム オーバー」のいずれかです。 [画像をダウンロードするには、こちらをクリックしてください](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png)。
+
+同様の前に緑色の四角形ニンジャ cat とブロッコリの画像では、このイメージを追加**Content.mgcb** **MonoGame パイプライン**、名前を付け、"ゲーム over.png"経由でします。
+
+### <a name="2-rectangular-collision"></a>2. 四角形の衝突
 ゲーム内での衝突を検出するためには、多くの場合、オブジェクトを単純化して数学的な複雑さを軽減します。 ここでは、プレイヤーのアバターとブロッコリの障害物の衝突を検出する目的で、これらをどちらも四角形として扱います。
 
 **SpriteClass.cs** を開き、新しいクラス変数を追加します。
@@ -602,7 +608,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 
 このメソッドでは、2 つの四角形オブジェクトが衝突したかどうかを検出します。 アルゴリズムは、長方形の辺の間のギャップがないかどうかをテストして動作します。 隙間があれば、衝突していません。隙間がなければ、衝突しているということになります。
 
-### <a name="2-load-new-textures"></a>2. 新しいテクスチャを読み込む
+### <a name="3-load-new-textures"></a>3. 新しいテクスチャを読み込む
 
 次は、**Game1.cs** を開き、2 つの新しいクラス変数を追加します。1 つはゲーム オーバーのスプライト テクスチャを格納し、もう 1 つはゲームの状態を追跡するためのブール値を格納します。
 
@@ -623,7 +629,7 @@ gameOver = false;
 gameOverTexture = Content.Load<Texture2D>("game-over");
 ```
 
-### <a name="3-implement-game-over-logic"></a>3."ゲーム オーバー" のロジックを実装する
+### <a name="4-implement-game-over-logic"></a>4.「ゲーム オーバー」のロジックを実装します。
 以下のコードを **Update** メソッド (**KeyboardHandler** メソッドの呼び出し直後) に追加します。
 
 ```CSharp
@@ -647,7 +653,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 
 これにより、**SpriteClass** で作成した **RectangleCollision** メソッドが呼び出され、true が返された場合は、ゲーム オーバーのフラグが設定されます。
 
-### <a name="4-add-user-input-for-resetting-the-game"></a>4. ゲームをリセットするためのユーザー入力を追加する
+### <a name="5-add-user-input-for-resetting-the-game"></a>5. ゲームをリセットするためのユーザー入力を追加します。
 このコードをユーザーが Enter キーを押している場合は、ゲームをリセットできるようにする、 **KeyboardHandler**メソッドに追加します。
 
 ```CSharp
@@ -658,7 +664,7 @@ if (gameOver && state.IsKeyDown(Keys.Enter))
 }
 ```
 
-### <a name="5-draw-game-over-splash-and-text"></a>5. ゲーム オーバーのスプラッシュとテキストを描画する
+### <a name="6-draw-game-over-splash-and-text"></a>6. 描画ゲーム オーバーのスプラッシュとテキスト
 最後に、以下のコードを Draw メソッド内の **spriteBatch.Draw** の呼び出し (grass テクスチャを描画する) の直後に追加します。
 
 ```CSharp
