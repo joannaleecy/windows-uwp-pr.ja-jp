@@ -6,12 +6,12 @@ ms.date: 1/8/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
-ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
+ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8996077"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086660"
 ---
 # <a name="launch-the-windows-settings-app"></a>Windows 設定アプリの起動
 
@@ -75,7 +75,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="accounts"></a>アカウント
 
-|［設定］ページ| URI |
+|[設定] ページ| URI |
 |-------------|-----|
 | 職場または学校にアクセスする | ms-settings:workplace |
 | メール & アプリのアカウント  | ms-settings:emailandaccounts |
@@ -103,7 +103,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 |[設定] ページ| URI |
 |-------------|-----|
-| アクセス許可と履歴 | ms-settings:cortana-permissions |
+| アクセス許可 & 履歴 | ms-settings:cortana-permissions |
 | 詳細 | ms-settings:cortana-moredetails |
 | 自分のデバイス間での Cortana | ms-settings:cortana-notifications |
 | Cortana に話す | ms-settings:cortana-language<br/>ms-cortana の設定。<br/>ms-設定: cortana-talktocortana |
@@ -131,12 +131,12 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="ease-of-access"></a>コンピューターの簡単操作
 
-|［設定］ページ| URI |
+|[設定] ページ| URI |
 |-------------|-----|
 | オーディオ | ms-settings:easeofaccess-audio |
 | クローズド キャプション | ms-settings:easeofaccess-closedcaptioning |
 | カラー フィルター | ms-設定: easeofaccess-colorfilter |
-| カーソルとポインターのサイズ | ms-設定: easeofaccess-cursorandpointersize |
+| カーソル & ポインターのサイズ | ms-設定: easeofaccess-cursorandpointersize |
 | Display | ms-settings:easeofaccess-display |
 | 視線制御 | ms-settings:easeofaccess-eyecontrol |
 | フォント | ms-settings:fonts |
@@ -157,7 +157,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 ## <a name="gaming"></a>ゲーム
 
-|［設定］ページ| URI |
+|[設定] ページ| URI |
 |-------------|-----|
 | ブロードキャスト | ms-settings:gaming-broadcasting |
 | ゲーム バー | ms-settings:gaming-gamebar |
@@ -214,7 +214,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |-------------|-----|
 | 同期電話 | ms-settings:mobile-devices<br/>ms-設定: mobile のデバイスの addphone<br/>ms-設定: mobile のデバイスの addphone-ダイレクト (開きます**同期電話**アプリ) |
 
-## <a name="privacy"></a>プライバシー
+## <a name="privacy"></a>Privacy
 
 |[設定] ページ| URI |
 |-------------|-----|
@@ -288,8 +288,8 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | リモート デスクトップ | ms-settings:remotedesktop |
 | Phone | ms-設定: 電話 (**Windows 10、バージョン 1809 以降では非推奨**) |
 | 電源とスリープ | ms-settings:powersleep |
-| サウンド | ms-settings:sounds |
-| ストレージ | ms-settings:storagesense |
+| サウンド | ms-設定: サウンド |
+| 記憶域 | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
 
 ## <a name="time-and-language"></a>時刻と言語
