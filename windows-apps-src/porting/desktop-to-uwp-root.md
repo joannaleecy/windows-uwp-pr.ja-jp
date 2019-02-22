@@ -8,12 +8,12 @@ keywords: Windows 10, UWP
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5442dacb5c01bc6e22460e9d772ad73ba06b54e2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 70a9b6046e3b7be9ac84678ac21c0c9f89a4a7b2
+ms.sourcegitcommit: 1a4bbfb8495e2f414deac5ee050ab679a78b1717
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049939"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9089754"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)
 
@@ -127,13 +127,13 @@ Auto Packager では、インストール/キャプチャおよび実行時分�
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant Appx 拡張機能](https://www.firegiant.com/products/wix-expansion-pack/appx)を使用すると、同一の WiX ソース コードから Windows アプリ パッケージと MSI パッケージを同時に作成できます。 ビルドするたびに、Windows アプリ パッケージと MSI による Windows の以前のバージョンを使った Windows 10 をターゲットことができます。
+[FireGiant MSIX 拡張機能](https://www.firegiant.com/products/wix-expansion-pack/msix)を使用して、同一の WiX ソース コードから Windows アプリ パッケージと MSI パッケージを同時に作成できます。 ビルドするたびに、Windows アプリ パッケージと MSI による Windows の以前のバージョンを使った Windows 10 をターゲットことができます。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
-FireGiant Appx 拡張機能では、WiX プロジェクトの静的分析とインテリジェント エミュレーションを使用して、コンテナーや仮想マシンによるディスク領域や実行時のオーバーヘッドが生じることなく、Windows アプリ パッケージを作成します。
+FireGiant MSIX 拡張機能は、コンテナーまたは仮想マシンのディスク領域や実行時のオーバーヘッドなしの Windows アプリ パッケージを作成するのに静的分析とインテリジェント エミュレーション、WiX プロジェクトを使用します。
 
-FireGiant Appx 拡張機能は、実行することでインストーラーを変換するわけではありません。そのため、インストーラーを繰り返し Windows アプリ パッケージに変換する必要はなく、WiX インストーラーをそのまま維持できます。 さまざまな Windows バージョンのユーザーはすべて、最新の機能強化を入手できます。MSI と Windows アプリ パッケージが同期していないことを開発者が心配する必要はありません。
+FireGiant MSIX 拡張機能は、実行することにより、インストーラーを変換しない、ために、繰り返し Windows アプリ パッケージに変換することがなく、WiX インストーラーを維持できます。 さまざまな Windows バージョンのユーザーはすべて、最新の機能強化を入手できます。MSI と Windows アプリ パッケージが同期していないことを開発者が心配する必要はありません。
 
 この[ビデオ](https://www.youtube.com/watch?v=AFBpdBiAYQE)をチェックし、作成する方法はいくつか数行のコードで FireGiant CEO の Rob Mensching 人気のあるオープン ソース 7-zip 圧縮ツールの Appx (Windows アプリ パッケージ) バージョンとし、Windows アプリケーションと MSI パッケージの両方が向上した方法をご覧ください。同じ WiX ソース コードに変更します。
 
