@@ -6,12 +6,12 @@ ms.date: 01/28/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, XIM, チャット
 ms.localizationpriority: medium
-ms.openlocfilehash: 217517031c230cfca98bf4420d1f5b9876afbdc1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab7aca94ca491cd986fcff050e17da5fed1f2ea9
+ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942322"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "9099311"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>帯域外予約を介した専用チャット ソリューションとしての XIM の使用
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942322"
 
 帯域外予約の使用を開始するには、このモードで作成された新しい XIM ネットワークに、集まった参加者の 1 人を移動する必要があります。 参加しているピア デバイスはどれを選択してもかまいません。 このプロセスを開始するための自然な選択として、ゲーム ホストやサーバーの使用が考えられますが、これは必須ではありません。 接続セットアップの時間を最短にするために、"Open" ネットワーク アクセス タイプであるデバイスを選ぶことをお勧めします。 詳しくは、`Windows::Networking::XboxLive` プラットフォームのドキュメントをご覧ください。
 
-帯域外予約を通じて管理されているネットワークへの移動は、XIM を初期化し、標準の XIM 使用のチュートリアルで示されているように、特定のローカル Xbox ユーザー ID を宣言することによって行われます。`xim::move_to_new_network()` のようなメソッドを呼び出すのではなく、`xim::move_to_network_using_out_of_band_reservation()` を予約文字列に null を設定して呼び出します。 次に、例を示します。
+帯域外予約を通じて管理されているネットワークへの移動は、XIM を初期化し、標準の XIM 使用のチュートリアルで示されているように、特定のローカル Xbox ユーザー ID を宣言することによって行われます。`xim::move_to_new_network()` のようなメソッドを呼び出すのではなく、`xim::move_to_network_using_out_of_band_reservation()` を予約文字列に null を設定して呼び出します。 例:
 
 ```cpp
  xim::singleton_instance().initialize(myServiceConfigurationId, myTitleId);
@@ -43,7 +43,7 @@ ms.locfileid: "8942322"
  xim::singleton_instance().move_to_network_using_out_of_band_reservation(nullptr);
 ```
 
-標準的な `xim_move_to_network_starting_state_change`、`xim_player_joined_state_change`、および `xim_move_to_network_succeeded_state_change` は、通常の `xim::start_processing_state_changes()` と `xim::finish_processing_state_changes()` の間で状態変化を処理中に、時間の経過と共に提供されます。 次に、例を示します。
+標準的な `xim_move_to_network_starting_state_change`、`xim_player_joined_state_change`、および `xim_move_to_network_succeeded_state_change` は、通常の `xim::start_processing_state_changes()` と `xim::finish_processing_state_changes()` の間で状態変化を処理中に、時間の経過と共に提供されます。 例:
 
 ```cpp
  uint32_t stateChangeCount;
@@ -84,9 +84,9 @@ ms.locfileid: "8942322"
 
 これにより、指定された Xbox ユーザー ID に対して予約を作成するための非同期プロセスが開始されます。 操作が完了すると、XIM は成功または失敗を報告する `xim_create_out_of_band_reservation_completed_state_change` を生成します。 成功した場合、システムで予約文字列を使って、操作に提供される Xbox ユーザー ID を生成できるようになります。 正常に作成された予約文字列は、一定の時間のみ有効です。 その時間は `xim_create_out_of_band_reservation_completed_state_change` 内で返されます。
 
-有効な予約文字列を使うと、XIM の外部でプレイヤーの収集に使用される "帯域外" 外部メカニズムを使って、文字列をそれらの列挙に分散できます。 たとえば、マルチプレイヤー セッション ディレクトリ (MPSD) の Xbox Live サービスを使っている場合、この文字列をセッション ドキュメント内のカスタム プロパティとして書き込めます (注: 予約文字列には、エスケープまたは Base64 エンコードなしで、JSON で安全に使えるように、限られた文字セットを使用)。
+有効な予約文字列を使うと、XIM の外部でプレイヤーの収集に使用される "帯域外" 外部メカニズムを使って、文字列をそれらの列挙に分散できます。 たとえば、Xbox Live のマルチプレイヤー セッション ディレクトリ (MPSD) サービスを使用している場合を作成この文字列セッション ドキュメント内の共有セッションのカスタム プロパティとして (注: 予約文字列にのみである文字セットに制限は常に安全なエスケープまたは Base64 エンコードしなくて JSON で使用するため)。
 
-他のユーザーも、`xim::move_to_network_using_out_of_band_reservation()` に渡すパラメーターとして予約文字列を使用すると、XIM ネットワークへの移行を開始できます。 次の例では、予約文字列を 'reservationString' という変数に抽出したものと想定しています。
+パラメーターとして使用する XIM ネットワークへの移動を開始できます他のユーザーが取得した後、予約文字列の共有セッション ドキュメントのプロパティから`xim::move_to_network_using_out_of_band_reservation()`します。 次の例では、予約文字列を 'reservationString' という変数に抽出したものと想定しています。
 
 ```cpp
 xim::singleton_instance().move_to_network_using_out_of_band_reservation(reservationString);
