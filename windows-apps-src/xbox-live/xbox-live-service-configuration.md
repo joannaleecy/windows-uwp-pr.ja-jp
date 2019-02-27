@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス構成
 ms.localizationpriority: medium
-ms.openlocfilehash: eb086333518fb8ec57c3030a858662f74f755c76
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d12c66e61a189c13ddbcd96dd99caa351206ecf6
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049033"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114427"
 ---
 # <a name="xbox-live-service-configuration"></a>Xbox Live サービス構成
 
@@ -31,7 +31,7 @@ ID@Xbox の開発者である場合、または Microsoft パートナーのパ�
 
 ## <a name="choose-your-development-portal"></a>開発ポータルを選択する
 
-前述のとおり、Xbox Live サービスの構成には、異なる 2 つのポータルを使用できます。 パートナー センターで[https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard)と Xbox デベロッパー ポータル (XDP) で[http://xdp.xboxlive.com](https://xdp.xboxlive.com)します。
+前述のとおり、Xbox Live サービスの構成には、異なる 2 つのポータルを使用できます。 パートナー センターで[https://partner.microsoft.com/dashboard](https://partner.microsoft.com/dashboard)と Xbox デベロッパー ポータル (XDP) で[https://xdp.xboxlive.com](https://xdp.xboxlive.com)します。
 
 今後は、すべてのタイトルのパートナー センターが推奨される特定の機能、可能性がある場合でも、XDP を使用します。 このセクションでは、どこでタイトルを構成したらよいかを説明します。
 

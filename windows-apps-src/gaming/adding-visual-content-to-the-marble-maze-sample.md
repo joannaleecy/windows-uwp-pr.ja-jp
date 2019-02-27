@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、サンプル、DirectX、グラフィックス
 ms.localizationpriority: medium
-ms.openlocfilehash: b8ad6b9a46993dc1121703e820c924b113120e51
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 5cde3738c6fd30433ad6137bf151cad0b811aa8d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046475"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114638"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>Marble Maze サンプルへの視覚的なコンテンツの追加
 
@@ -196,7 +196,7 @@ if (FAILED(hr))
 {
     // If the initialization fails, fall back to the WARP device.
     // For more information on WARP, see:
-    // http://go.microsoft.com/fwlink/?LinkId=286690
+    // https://go.microsoft.com/fwlink/?LinkId=286690
     DX::ThrowIfFailed(
         D3D11CreateDevice(
             nullptr,

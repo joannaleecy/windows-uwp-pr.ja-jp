@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: bec5b694d86f41f3a4b1f5e7fb3119b4945d14f9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4a9efeec63399916444de9ba33d4e587a914f2a7
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049020"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114424"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---november-2016"></a>Xbox Live SDK の新規事項 - November 2016
 
@@ -61,5 +61,5 @@ August 2016 リリースで追加された内容については、「[新規事�
 * 「[Xbox Live introduction](../get-started-with-partner/get-started-with-xbox-live-partner.md)」セクションが書き換えられました。  Xbox Live が有効な新しいタイトルを作成しているか、他の Xbox Live 機能をゲームに組み込むことに興味がある場合は、[ここ](../get-started-with-partner/get-started-with-xbox-live-partner.md)で新しいドキュメントを参照してください。
 
 ## <a name="tools"></a>ツール
-* Xbox Live Trace Analyzer に表示できる[http://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools)CERT モードようになりました。  
+* Xbox Live Trace Analyzer に表示できる[https://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools)CERT モードようになりました。  
 * また、Xbox Live Trace Analyzer に複数の本体のサポートも追加されました。  複数の本体の HTTP 要求が含まれる Fiddler トレースを渡すと、それぞれの独立したレポートが生成されます。

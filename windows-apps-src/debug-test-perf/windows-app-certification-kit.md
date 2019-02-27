@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, アプリの認定
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048872"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114468"
 ---
 # <a name="windows-app-certification-kit"></a>Windows アプリ認定キット
 
@@ -24,13 +24,13 @@ ms.locfileid: "9048872"
 ユニバーサル Windows アプリのテストの前提条件:
 
 -   インストールし、windows 10 を実行する必要があります。
--   [Windows アプリ認定キットのバージョン 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666)、windows 10 用 Windows ソフトウェア開発キット (SDK) に含まれるをインストールする必要があります。
+-   [Windows アプリ認定キットのバージョン 10]( https://go.microsoft.com/fwlink/p/?LinkID=309666)、windows 10 用 Windows ソフトウェア開発キット (SDK) に含まれるをインストールする必要があります。
 -   [開発用にデバイスを有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)必要があります。
 -   テストする Windows アプリをコンピューターに展開する必要があります。
 
 **一括アップグレードに関する注意事項**
 
-最新の [Windows アプリ認定キット]( http://go.microsoft.com/fwlink/p/?LinkID=309666)をインストールすると、コンピューターにインストールされているキットの以前のバージョンが置き換えられます。
+最新の [Windows アプリ認定キット]( https://go.microsoft.com/fwlink/p/?LinkID=309666)をインストールすると、コンピューターにインストールされているキットの以前のバージョンが置き換えられます。
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>Windows アプリ認定キットを使った Windows アプリをインタラクティブに検証する
 

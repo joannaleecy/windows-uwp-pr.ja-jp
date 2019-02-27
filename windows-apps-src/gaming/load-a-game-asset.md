@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソースの読み込み
 ms.localizationpriority: medium
-ms.openlocfilehash: ca16dd6115bbbe84529928ca58ee0d3074498728
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937211"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114588"
 ---
 # <a name="load-resources-in-your-directx-game"></a>DirectX ゲームでのリソースの読み込み
 
@@ -690,7 +690,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 このコードでは、頂点シェーダーの CSO ファイルのバイト データを読み取ってから、[**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出して頂点シェーダーを作成しています。 その後で、同じラムダでシェーダーの入力レイアウトを作成しています。
 
-ハル シェーダーやジオメトリ シェーダーなどの他の種類のシェーダーでは、特別な構成が必要になる場合もあります。 さまざまなシェーダー読み込みメソッドのコード一式については、「[BasicLoader のコード一式](complete-code-for-basicloader.md)」と [Direct3D リソース読み込みのサンプル]( http://go.microsoft.com/fwlink/p/?LinkID=265132)をご覧ください。
+ハル シェーダーやジオメトリ シェーダーなどの他の種類のシェーダーでは、特別な構成が必要になる場合もあります。 さまざまなシェーダー読み込みメソッドのコード一式については、「[BasicLoader のコード一式](complete-code-for-basicloader.md)」と [Direct3D リソース読み込みのサンプル]( https://go.microsoft.com/fwlink/p/?LinkID=265132)をご覧ください。
 
 ## <a name="remarks"></a>注釈
 
@@ -698,7 +698,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Direct3D リソース読み込みのサンプルに関するページ]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [Direct3D リソース読み込みのサンプルに関するページ]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [BasicLoader のコード一式](complete-code-for-basicloader.md)
 * [BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)

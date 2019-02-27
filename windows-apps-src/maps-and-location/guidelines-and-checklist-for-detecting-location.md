@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地図, 位置情報
 ms.localizationpriority: medium
-ms.openlocfilehash: d7004f579bb8bb60b1f9585e49319e278770700a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 723b1b12a6bbfb572c9aaacf66c97541bf70f72d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048159"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114528"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>位置認識アプリのガイドライン
 
@@ -155,7 +155,7 @@ ms.locfileid: "9048159"
 
 ユーザーの地理的な位置情報は、個人を特定できる情報 (PII) に当たります。 ユーザーのプライバシーの保護に関するガイダンスについては、次の Web サイトをご覧ください。
 
--   [Microsoft のプライバシー]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft のプライバシー]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 

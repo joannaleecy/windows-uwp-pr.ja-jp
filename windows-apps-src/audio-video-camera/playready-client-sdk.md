@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 181568d705f24c97af0d62f951a88102d3d008db
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 40df746d89757b481a47cefeaeda3f8a34091014
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049170"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114608"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -77,7 +77,7 @@ PlayReady DRM に、次の新しいインターフェイス、クラス、列挙
 -   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) クラス
 -   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙子
 
-PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 サンプルは、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
+PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 サンプルは、[https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
 
 ## <a name="things-to-consider"></a>考慮事項
 
@@ -507,7 +507,7 @@ Windows 10 Version 1703 以降では、デコード コーデック、解像度�
 -   コンテンツの最後に達したか、ユーザーがメディア プレゼンテーションを途中で停止したため、メディア プレゼンテーションが停止した場合。
 -   (システムまたはアプリのクラッシュなどにより) 前回のセッションが予期せずに終了した場合。 アプリは、起動時またはシャットダウン時に、未処理のセキュア ストップ セッションについて照会し、その他のメディア再生とは別にチャレンジを送信する必要があります。
 
-セキュア ストップのサンプル実装については、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) にある PlayReady サンプルの securestop.cs ファイルをご覧ください。
+セキュア ストップのサンプル実装については、[https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) にある PlayReady サンプルの securestop.cs ファイルをご覧ください。
 
 ## <a name="use-playready-drm-on-xbox-one"></a>Xbox One での PlayReady DRM の使用
 

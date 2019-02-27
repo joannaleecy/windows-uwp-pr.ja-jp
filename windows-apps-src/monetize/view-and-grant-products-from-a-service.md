@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, 製品の表示, 製品の付与
 ms.localizationpriority: medium
-ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050262"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114508"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>サービスから製品の権利を管理する
 
@@ -253,5 +253,5 @@ Microsoft Store ID キーは、ユーザーの製品所有権情報にアクセ�
 * [ユーザーのサブスクリプションに関する請求の状態を変更する](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Microsoft Store ID キーの更新](renew-a-windows-store-id-key.md)
 * [Azure Active Directory とアプリケーションの統合](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [Azure Active Directory アプリケーション マニフェストの概要]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Azure Active Directory アプリケーション マニフェストの概要]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [サポートされているトークンと要求の種類](https://go.microsoft.com/fwlink/?LinkId=722501)

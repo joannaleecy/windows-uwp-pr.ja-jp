@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050149"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114558"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>JavaScript で UWP ゲームを作成する
 
@@ -88,7 +88,7 @@ EaselJS では、*stage* と呼ばれる新しいオブジェクトが提供さ�
 
 ### <a name="2-loading-the-bitmaps"></a>2. ビットマップを読み込む
 
-EaselJS では、数種類のグラフィック オブジェクトが提供されます。 単純な図形 (空に使用する青色の長方形など)、ビットマップ (後で追加する雲など)、テキスト オブジェクト、ストライプを作成できます。 スプライト (SpriteSheet) を使用して [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 複数の画像を含む単一ビットマップです。 たとえば、この SpriteSheet を使用して、共有アニメーションの複数フレームを格納することができます。
+EaselJS では、数種類のグラフィック オブジェクトが提供されます。 単純な図形 (空に使用する青色の長方形など)、ビットマップ (後で追加する雲など)、テキスト オブジェクト、ストライプを作成できます。 スプライト (SpriteSheet) を使用して [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 複数の画像を含む単一ビットマップです。 たとえば、この SpriteSheet を使用して、共有アニメーションの複数フレームを格納することができます。
 
 ![Walking Dino スプライト シート](images/JS2D_4.png)
 

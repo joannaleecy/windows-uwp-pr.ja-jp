@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 1feffac4d9b616c2fadff0080c3282e4200f3be7
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044476"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114438"
 ---
 # <a name="handle-a-cancelled-background-task"></a>取り消されたバックグラウンド タスクの処理
 
@@ -85,7 +85,7 @@ private:
 
 手順 1 で作成した**OnCanceled**メソッドでフラグ変数**\_CancelRequested**を**true**に設定します。
 
-完全な[バック グラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力に書き込みます。
+完全な[バック グラウンド タスクのサンプル]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**メソッドでは、 **\_CancelRequested**を**true**に設定し、可能性のある有用なデバッグ出力に書き込みます。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)

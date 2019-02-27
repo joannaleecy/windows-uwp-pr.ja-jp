@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 16d1ea6186cc8ccabacd1751db61e752a97930f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921942"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114618"
 ---
 # <a name="use-the-orientation-sensor"></a>方位センサーの使用
 
@@ -76,7 +76,7 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
     using Windows.UI.Core;
     using Windows.Devices.Sensors;
 
-    // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?linkid=234238
+    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
 
     namespace App1
     {
@@ -237,7 +237,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
     using Windows.UI.Core;
     using Windows.Devices.Sensors;
-    // The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?linkid=234238
+    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
 
     namespace App1
     {

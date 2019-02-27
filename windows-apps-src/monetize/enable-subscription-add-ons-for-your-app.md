@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, サブスクリプション, アドオン, アプリ�
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 44553d2a772dcfe3b46ea196d6f6bb7c20fdfec0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046688"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114478"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -27,7 +27,7 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 * サブスクリプションに 1 週間または 1 か月の無料試用期間を追加できます。
 * Windows SDK では、アプリで利用可能なサブスクリプション アドオンに関する情報を入手したり、サブスクリプション アドオンを購入できるようにしたりするためにアプリで利用できる [API を提供](#code-examples)しています。 また、サービスから呼び出して[ユーザーのサブスクリプションを管理](#manage-subscriptions)できる REST API も提供しています。
 * サブスクリプションの取得数、アクティブなサブスクリプション会員数、および特定の期間中に取り消されたサブスクリプション数を表示する分析レポートを確認できます。
-* ユーザーは、自分の Microsoft アカウントの [http://account.microsoft.com/services](https://account.microsoft.com/services) ページでサブスクリプションを管理できます。 ユーザーはこのページを使用して、取得したサブスクリプションすべての表示、サブスクリプションの取り消し、およびサブスクリプションに関連付けられた支払方法の変更ができます。
+* ユーザーは、自分の Microsoft アカウントの [https://account.microsoft.com/services](https://account.microsoft.com/services) ページでサブスクリプションを管理できます。 ユーザーはこのページを使用して、取得したサブスクリプションすべての表示、サブスクリプションの取り消し、およびサブスクリプションに関連付けられた支払方法の変更ができます。
 
 ## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>アプリのサブスクリプション アドオンを有効化する手順
 
@@ -109,7 +109,7 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 ## <a name="cancellations"></a>取り消し
 
-ユーザーは、Microsoft アカウントの [http://account.microsoft.com/services](https://account.microsoft.com/services) ページを使って、取得したすべてのサブスクリプションの表示、サブスクリプションの取り消し、サブスクリプションに関連付けられている支払い方法の変更ができます。 ユーザーがこのページを使ってサブスクリプションを取り消した場合でも、現在の請求期間中はサブスクリプションを引き続き利用できます。 現在の請求期間に対する払い戻しは一切行われません。 現在の請求期間の終了時に、サブスクリプションが無効になります。
+ユーザーは、Microsoft アカウントの [https://account.microsoft.com/services](https://account.microsoft.com/services) ページを使って、取得したすべてのサブスクリプションの表示、サブスクリプションの取り消し、サブスクリプションに関連付けられている支払い方法の変更ができます。 ユーザーがこのページを使ってサブスクリプションを取り消した場合でも、現在の請求期間中はサブスクリプションを引き続き利用できます。 現在の請求期間に対する払い戻しは一切行われません。 現在の請求期間の終了時に、サブスクリプションが無効になります。
 
 REST API を使用して、ユーザーの代わりにサブスクリプションを取り消して、[特定のユーザーのサブスクリプションに関する請求の状態を変更](change-the-billing-state-of-a-subscription-for-a-user.md)することもできます。
 
@@ -124,7 +124,7 @@ REST API を使用して、ユーザーの代わりにサブスクリプショ�
 次のシナリオは、サブスクリプション アドオンで現在サポートされていません。
 
 * 現時点では、ストアを通じたユーザーへのサブスクリプションの直接販売はサポートされていません。 サブスクリプションはデジタル製品のアプリ内購入でのみ利用可能です。
-* ユーザーが Microsoft アカウントの [http://account.microsoft.com/services](https://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 別のサブスクリプション期間に切り替えると、ユーザーは、現在のサブスクリプションをキャンセルをアプリから別のサブスクリプション期間のサブスクリプションを購入し、必要があります。
+* ユーザーが Microsoft アカウントの [https://account.microsoft.com/services](https://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 別のサブスクリプション期間に切り替えると、ユーザーは、現在のサブスクリプションをキャンセルをアプリから別のサブスクリプション期間のサブスクリプションを購入し、必要があります。
 * サブスクリプション アドオンでは現在、サブスクリプション レベルの切り替えはサポートされていません (たとえば、ユーザーをベーシック サブスクリプションから機能の多いプレミアム サブスクリプションに切り替えるなど)。
 * サブスクリプション アドオンでは現在、[セール](../publish/put-apps-and-add-ons-on-sale.md)と[プロモーション コード](../publish/generate-promotional-codes.md)はサポートされていません。
 

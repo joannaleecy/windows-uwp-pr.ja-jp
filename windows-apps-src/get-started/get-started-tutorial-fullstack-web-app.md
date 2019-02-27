@@ -5,12 +5,12 @@ keywords: ホストされた Web アプリ、HWA、REST API、単一ページ �
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049549"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114578"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 
@@ -209,7 +209,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 ]
 ```
 
-F5 キーを押してブラウザーを開き、[http://localhost:8000](https://localhost:8000) に移動します。 メモリ ゲーム API の Swagger UI のページが開きます。詳細を展開して、各メソッドのフィールドを入力します。 API の呼び出しを試すこともできますが、応答には ([Swagmock](https://www.npmjs.com/package/swagmock) モジュールが提供する) モックアップ データのみが含まれています。 次に、API が実際に動作するように、ゲーム ロジックを追加します。
+F5 キーを押してブラウザーを開き、[https://localhost:8000](https://localhost:8000) に移動します。 メモリ ゲーム API の Swagger UI のページが開きます。詳細を展開して、各メソッドのフィールドを入力します。 API の呼び出しを試すこともできますが、応答には ([Swagmock](https://www.npmjs.com/package/swagmock) モジュールが提供する) モックアップ データのみが含まれています。 次に、API が実際に動作するように、ゲーム ロジックを追加します。
 
 ### <a name="3-set-up-your-route-handlers"></a>3. ルート ハンドラーを設定する
 
@@ -235,7 +235,7 @@ Swagger ファイル (config\swagger.json) では、定義されている各 URL
 
 ここでは簡単のため、ゲーム ボードを Node サーバーのグローバル変数 (`global.board`) に保存します。 同時に複数のプレイヤーによる複数のゲームをサポートする、実際に使えるメモリ ゲーム API サービスとするためには、クラウド ストレージ (Google [Cloud Datastore](https://cloud.google.com/datastore/) や Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/) など) を使用します。
 
-VS Code ですべての変更を保存したことを確認し、サーバーを再度起動 (VS Code で F5 キーを押すか、またはシェルから `npm start` を実行して、次に [http://localhost:8000](https://localhost:8000) に移動する) して、ゲームの API をテストします。
+VS Code ですべての変更を保存したことを確認し、サーバーを再度起動 (VS Code で F5 キーを押すか、またはシェルから `npm start` を実行して、次に [https://localhost:8000](https://localhost:8000) に移動する) して、ゲームの API をテストします。
 
 **Try it out!** ボタンを **/game**、**/guess**、**/new** のいずれかで押して、下の **Response Body** および **Response Code** の結果を確認し、予想どおりに動作していることを確認します。
 
@@ -333,7 +333,7 @@ for (var i=0; i < board.length; i++){
     npm start
     ```
 
-5. [http://localhost:3000/](https://localhost:3000/) に移動してアプリケーションを表示します。
+5. [https://localhost:3000/](https://localhost:3000/) に移動してアプリケーションを表示します。
 
     ![http://localhost:3000/ のスクリーンショット](./images/express.png)
 
@@ -620,7 +620,7 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
 
 1. memory ディレクトリでコマンド プロンプトを開き、次のコマンドを入力します。 `npm start`
 
-2. ブラウザーで [http://localhost:3000/](https://localhost:3000/) に移動して、ゲームをプレイします。
+2. ブラウザーで [https://localhost:3000/](https://localhost:3000/) に移動して、ゲームをプレイします。
 
 3. エラーが発生した場合は、キーボードで F5 キーを押して、`Node.js` と入力すると、Visual Studio Code の Node.js デバッグ ツールを使用できます。 Visual Studio Code でのデバッグについて詳しくは、この[記事](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)をご覧ください。 
 

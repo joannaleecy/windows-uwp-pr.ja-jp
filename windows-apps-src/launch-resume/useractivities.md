@@ -5,12 +5,12 @@ keywords: ユーザー アクティビティ、ユーザー アクティビテ�
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046202"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114548"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 
@@ -34,7 +34,7 @@ ms.locfileid: "9046202"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) は、特定のコンテキストでアプリケーションを再開するために使用します。 通常、このリンクは、スキームのプロトコル ハンドラー (例: “my-app://page2?action=edit”) または AppUriHandler (例: http://constoso.com/page2?action=edit) のフォームをとります。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) は、タイトル、説明、またはアダプティブ カード要素でアクティビティを視覚的に識別できるようにするクラスを公開します。
-3. 最後に、[コンテンツ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) は、特定のコンテキストでアクティビティをグループ化したり取得したりするために使用できるアクティビティのメタデータを格納できます。 多くの場合、これは [http://schema.org](https://schema.org) データのフォームとなります。
+3. 最後に、[コンテンツ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) は、特定のコンテキストでアクティビティをグループ化したり取得したりするために使用できるアクティビティのメタデータを格納できます。 多くの場合、これは [https://schema.org](https://schema.org) データのフォームとなります。
 
 **UserActivity** をアプリに追加するには:
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8334a99fc27d96214a73d0ad01ec8ece791fd90f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049659"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114668"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>iOS と UWP のアプリ開発方法の選択
 
@@ -64,7 +64,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     ゲーム作成環境。
 
--   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     ゲーム作成環境。
 

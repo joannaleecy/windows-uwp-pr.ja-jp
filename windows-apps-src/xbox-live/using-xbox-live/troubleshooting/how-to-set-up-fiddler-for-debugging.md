@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: 52660fa90b9771d956ff710cb1b5295d4d8fa975
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 84c6717a4f9f5aff9fd3ff1f68c870fdd9174865
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050377"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114430"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>Fiddler を使用した Xbox Live のトラブルシューティング
 
@@ -20,7 +20,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 ## <a name="for-windows-uwp-pc-apps"></a>Windows UWP PC アプリの場合
 
 1. 現在のユーザーが、PC の Administrator グループのメンバーであることを確認します
-1. Fiddler からのダウンロードします。[http://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
+1. Fiddler からのダウンロードします。[https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. "Built for .NET 4" のバージョンを選択します
 1. インストールが済んだら、[Tools] の [Fiddler Options] で、[Capture HTTPS CONNECTs] と [Decrypt HTTPS traffic] を有効にします。  ランタイムと Xbox Live サービスの間の通信はすべて、SSL で暗号化されます。  このオプションを指定しないと、役に立つ情報は何も得られません。  Fiddler のすべてのポップアップ ダイアログを受け入れます (UAC を含めて 5 個のダイアログが表示されるはずです)。
 1. [WinConfig]、[Exempt All]、[Save Changes] の順に移動します。  このようにしないと、Fiddler はストア アプリで動作しません。

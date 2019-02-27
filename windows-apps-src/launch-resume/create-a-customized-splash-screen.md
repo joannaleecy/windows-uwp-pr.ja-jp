@@ -6,12 +6,12 @@ ms.date: 2/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e3566d272a903aa0a387ad05767d49f1f14834cb
-ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
+ms.openlocfilehash: 44b455088a210dd6211cf25111e4c04ba2e4e0db
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9082875"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114498"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>スプラッシュ スクリーンの表示時間の延長
 
@@ -313,7 +313,7 @@ using Windows.ApplicationModel.Activation;
 using SplashScreenExample.Common;
 using Windows.UI.Core;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace SplashScreenExample
 {
@@ -441,7 +441,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234227
+// The Blank Application template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234227
 
 namespace SplashScreenExample
 {

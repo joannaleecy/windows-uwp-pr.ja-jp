@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10、UWP、ゲーム、プログラミング
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c69d317f920e5b829eb5dea796b7930cc387203
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 84d5068c2f474af22d789dea6428f911087f9ff0
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044323"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114448"
 ---
 # <a name="game-programming-resources"></a>ゲーム プログラミング リソース
 
@@ -34,15 +34,15 @@ Windows でのゲーム プログラミングについて詳しくは、次の�
 ## <a name="blogs"></a>ブログ
 
 
--   [Windows と DirectX SDK 向けのゲームに関するブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
--   [DirectX 開発者ブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
--   [Shawn Hargreaves のブログ]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA のゲームの情報)
+-   [Windows と DirectX SDK 向けのゲームに関するブログ]( https://go.microsoft.com/fwlink/p/?LinkID=288873)
+-   [DirectX 開発者ブログ]( https://go.microsoft.com/fwlink/p/?LinkID=288874)
+-   [Shawn Hargreaves のブログ]( https://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA のゲームの情報)
 
 ## <a name="toolkits"></a>ツールキット
 
 
--   [DirectX ツール キットに関するページ](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
--   [DirectXTex テクスチャ処理ライブラリに関するページ](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
+-   [DirectX ツール キットに関するページ](  https://go.microsoft.com/fwlink/p/?LinkID=248929)
+-   [DirectXTex テクスチャ処理ライブラリに関するページ](  https://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio [ グラフィックス診断](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx) に関するページ
 -   [Win2D](https://github.com/Microsoft/Win2D) - GPU アクセラレーションを使った即時モードの 2D グラフィックス レンダリング用の、使いやすい Windows ランタイム API です。
 -   [Microsoft Store 用の ANGLE](https://go.microsoft.com/fwlink/p/?linkid=618387) - OpenGL ES コンテンツを実行 Windows で OpenGL ES API 呼び出しを DirectX 11 API 呼び出しを変換することによってします。

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: バック グラウンド タスクの windows 10, uwp,
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d987eac76c13b8ceb34a8779903a8067ed6a607
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048699"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114518"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -107,7 +107,7 @@ ms.locfileid: "9048699"
 
 アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
 
-次に、[バックグラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
+次に、[バックグラウンド タスク サンプル]( https://go.microsoft.com/fwlink/p/?linkid=227509)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
 
 ```xml
 <Applications>
