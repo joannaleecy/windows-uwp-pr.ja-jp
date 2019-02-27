@@ -1,25 +1,25 @@
 ---
 title: パートナー センター サービスの構成
 description: パートナー センターで Xbox Live サービスを構成する方法について詳しく説明するトピックへのリンクを示します。
-ms.date: 7/30/2018
+ms.date: 07/30/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
-ms.openlocfilehash: dc081925e1a3bd671c01794dca5e432e957a7809
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 83874add42f0a7656c249890857aa018028474a1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946711"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115407"
 ---
 # <a name="partner-center-service-configuration"></a>パートナー センター サービスの構成
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で公開され、Xbox Live の機能の完全なセットを使用するゲームでは、パートナー センターで、Xbox Live サービスを構成できます。
+[パートナー センター](https://partner.microsoft.com/dashboard)で公開され、Xbox Live の機能の完全なセットを使用しているゲームは、パートナー センターで、Xbox Live サービスを構成できます。
 
 > [!IMPORTANT]
 > これらのトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
-ゲームは、設定ページにアクセスするために Xbox Live のフル アクセス用に有効にする必要があります。
+ゲームは、設定ページにアクセスするために Xbox Live のフル アクセスを有効にする必要があります。
 
 Xbox Live 構成にアクセスするページでは、[パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択した後に移動**サービス** > **Xbox Live**します。
 

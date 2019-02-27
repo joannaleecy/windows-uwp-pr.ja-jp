@@ -2,16 +2,16 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: HoloLens 用 Device Portal
 description: HoloLens 用 Windows Device Portal を使って、リモートから HoloLens デバイスの構成と管理を行う方法について説明します。
-ms.date: 1/3/2019
+ms.date: 01/3/2019
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d02f9eac43687974ed76ef25e53f654783956a9
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991618"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116091"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 用 Device Portal
 
@@ -34,7 +34,7 @@ ms.locfileid: "8991618"
 #### <a name="connect-over-wi-fi"></a>Wi-Fi 経由で接続する 
 
 1. HoloLens を Wi-Fi に接続します。
-2. デバイスの IP アドレスを検索します。 [デバイス上の IP アドレスの検索**設定 > ネットワークとインターネット > Wi ‑ Fi > ハードウェア プロパティ**します。 または、「Hey Cortana, what is my IP address?」 (コルタナさん、IP アドレスを教えて) のようにたずねることもできます。
+2. デバイスの IP アドレスを検索します。 **設定 _gt ネットワーク & インターネット _gt Wi ‑ Fi _gt ハードウェア プロパティ**の下のデバイス上の IP アドレスを検索します。 または、「Hey Cortana, what is my IP address?」 (コルタナさん、IP アドレスを教えて) のようにたずねることもできます。
 
 3. PC 上の Web ブラウザーから、 にアクセスします。 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - ブラウザーから、"この Web サイトのセキュリティ証明書に問題があります" というメッセージが表示されます。 これは、Device Portal に発行された証明書がテスト証明書であるためです。 ここでは、この証明書エラーを無視して続行できます。

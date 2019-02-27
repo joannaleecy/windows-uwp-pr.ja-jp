@@ -1,16 +1,16 @@
 ---
 title: カメラ バーコード スキャナーのシンボル体系
 description: カメラ バーコード スキャナーでサポートされるシンボル体系
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb40528ee0104a2e25b5e95499c4404057eba1f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 14cb42e0bd0f1bac307a9dfc1ac188d8b11d8cb8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928018"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115799"
 ---
 # <a name="symbologies"></a>シンボル体系
 このトピックでは、Windows 10 に付属しているソフトウェア バーコード デコーダーでサポートされている各シンボル体系のサンプル バーコードを示します。UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR コード、GS1DWCode などが含まれます。

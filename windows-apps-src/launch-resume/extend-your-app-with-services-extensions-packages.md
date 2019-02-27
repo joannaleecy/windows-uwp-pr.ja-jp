@@ -1,16 +1,16 @@
 ---
 title: サービス、拡張機能、パッケージでアプリを拡張する
 description: ユニバーサル Windows プラットフォーム (UWP) アプリが更新されたときに実行されるバック グラウンド タスクを作成する方法について説明します。
-ms.date: 05/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, UWP, 拡張, コンポーネント化, アプリ サービス, パッケージ, 拡張機能
 ms.localizationpriority: medium
-ms.openlocfilehash: fd14ce6248f7017160a0c6b222e31ba55e9d2977
-ms.sourcegitcommit: f35480718452a8d95b1862581449a038b63184de
+ms.openlocfilehash: 47ab6491d09775bf86f0f484fc96d85bd07f53a4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015100"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116184"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>サービス、拡張機能、パッケージでアプリを拡張する
 

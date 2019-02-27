@@ -1,17 +1,17 @@
 ---
 title: 画面切り取りの起動
 description: このトピックでは、ms screenclip と ms screensketch URI スキームについて説明します。 アプリは、これらの URI スキームを使用して、切り取り領域 & スケッチ アプリを起動したり、新しい切り取り領域を開いたりすることができます。
-ms.date: 8/1/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10、uwp、uri、切り取り領域、スケッチ
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bddea1dd2b5f21a145bde789f1ad760bb5e556a
-ms.sourcegitcommit: b126940932935ebd2965ea68078798fb6e876b23
+ms.openlocfilehash: 06e988387f574b74d511b14a2ebca24b0a149158
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "9065989"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116174"
 ---
 # <a name="launch-screen-snipping"></a>画面切り取りの起動
 

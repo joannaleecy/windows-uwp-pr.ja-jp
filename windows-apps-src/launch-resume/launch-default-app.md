@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919037"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116464"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>URI に応じた既定のアプリの起動
 
@@ -46,7 +46,7 @@ URI スキームでは、ハイパーリンクをクリックしてアプリを�
 <br>
 たとえば、次の URI は既定のブラウザーを開き、Bing の Web サイトを表示します。
 
-`http://bing.com`
+`https://bing.com`
 
 カスタム URI スキームを起動することもできます。 その URI を処理するアプリがインストールされていない場合は、ユーザーにインストールするアプリを推奨することができます。 詳しくは、「[URI を処理するアプリがない場合にアプリを推奨](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)」をご覧ください。
 
@@ -206,7 +206,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="photos-app-uri-scheme"></a>フォト アプリの URI スキーム
 
-**ms-photos:** URI スキームを使ってフォト アプリを起動し、イメージを表示したり、ビデオを編集したりします。 次に、例を示します。  
+**ms-photos:** URI スキームを使ってフォト アプリを起動し、イメージを表示したり、ビデオを編集したりします。 例:  
 イメージを表示するには: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
 または、ビデオを編集するには: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
 
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI スキーム | 結果 |
 |------------|---------|
-| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 場所の地理的な座標に基づく予測ページで、天気予報アプリを起動します。<br>`latitude` 場所の緯度を指します。<br> `longitude` 場所の経度を指します。<br> |
+| msnweather://forecast?la= \[latitude\]&lo=\[longitude\] | 場所の地理的な座標に基づく予測ページの天気予報アプリを起動します。<br>`latitude` 場所の緯度を指します。<br> `longitude` 場所の経度を指します。<br> |

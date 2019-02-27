@@ -1,16 +1,16 @@
 ---
-title: 実行可能コードを使用したオプション パッケージ
+title: 実行可能コードによるオプション パッケージ
 description: Visual Studio を使用して、実行可能コードでオプション パッケージを作成する方法について説明します。
-ms.date: 9/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 44e32438034cf09695f313d24055b6ed3c82df0b
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927701"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115889"
 ---
 # <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
  
@@ -27,7 +27,7 @@ ms.locfileid: "8927701"
 > オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 オプション パッケージや関連セットは、ストアに提出しない場合に、パートナー センターのアクセス許可のない基幹業務 (LOB) や企業のアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
 
 > [!NOTE]
-> 実行可能コードが含まれているオプション パッケージは、[関連セット](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)の一部である必要があります。 関連セットの一部である場合を除き、オプション パッケージからコードを実行することはできません。
+> 実行可能コードを含むオプション パッケージは、[関連セット](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)の一部である必要があります。 関連セットの一部である場合を除き、オプション パッケージからコードを実行することはできません。
 
 ## <a name="c-optional-packages-with-executable-code"></a>実行可能コードを使用した C++ オプション パッケージ
 

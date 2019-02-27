@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5182981483069d42339ad71a5347dc9c6c36ed58
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058743"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115949"
 ---
 # <a name="using-lights-in-windows-ui"></a>Windows UI でのライトの使用
 
@@ -22,7 +22,7 @@ Windows.UI.Composition Api を使用すると、リアルタイムのアニメ�
 コンポジションの照明を使用することを許可する UI を興味深いを作成することができます。
 
 - 音楽再生シーンのようなイマーシブのシナリオを実現するシーン内の他のオブジェクトのライトに依存しないの変換します。
-- 一緒に移動できるように、ライトを持つオブジェクトをペアリングする機能を強調表示の Fluent を[表示](/design/style/reveal)するようなシナリオを有効にするシーンの残りの部分に依存しません。
+- 一緒に移動できるように、ライトを持つオブジェクトをペアリングする機能を強調表示の Fluent を[表示](/windows/uwp/design/style/reveal)するようなシナリオを有効にするシーンの残りの部分に依存しません。
 - 素材と深度を作成するグループとして光とシーン全体の変換します。
 
 コンポジションの照明は次の 3 つの主要な概念をサポートしています。**ライト**、**ターゲット**、および**SceneLightingEffect**します。
@@ -74,7 +74,7 @@ CompositionLight によって照らさ コンテンツを決定する際に考�
 **環境光** | シーンに非アンビエント照明を追加することにより、既存の光をすべてオフにします。  非環境光が対象としないアイテムは黒く表示されます。  自然な方法でライトによって発信周囲の視覚効果を照射するには、他のライトと連携して、環境光を使用します。
 **ライトの数** | 任意の組み合わせで、2 つの非アンビエント コンポジション ライトを使用すると、UI をターゲットにする可能性があります。 アンビエント照明ではありません。スポット、点、および離れた場所にあるライトがします。
 **有効期間** | CompositionLight 有効期間の条件が発生する可能性があります (例: が使用する前に、ガーベジ コレクターはライト オブジェクトをリサイクル可能性があります)。  アプリケーションの有効期間を管理できるようにするにはメンバーとしてライトを追加することで、ライトへの参照を保持することをお勧めします。
-**変換** | ライトは、ノードでは、[視点の変換](/design/layout/3-d-perspective-effects)のような効果、視覚的構造を適切に描画する UI の上に配置する必要があります。
+**変換** | ライトは、ノードでは、[視点の変換](/windows/uwp/design/layout/3-d-perspective-effects)のような効果、視覚的構造を適切に描画する UI の上に配置する必要があります。
 **ターゲットと座標空間** | CoordinateSpace は、ビジュアルの領域のすべてのライトのプロパティを設定する必要があります。 CompositionLight.Targets は CoordinateSpace ツリー内である必要があります。
 
 ## <a name="lighting-properties"></a>光源のプロパティ

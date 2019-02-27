@@ -1,16 +1,16 @@
 ---
 title: PointOfService デバイス機能
 description: PointOfService 機能は、Windows.Devices.PointOfService 名前空間の使用に必要です。
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 832881919a3ed1f44c0912703ede5948c5b10d11
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945473"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115756"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService デバイス機能
 アプリケーション パッケージのマニフェストで機能を宣言することで、PointOfService API へのアクセスを要求します。Microsoft Visual Studio のマニフェスト デザイナーを使用することで、ほとんどの機能を宣言することができます。または、手動で追加することもできます。  

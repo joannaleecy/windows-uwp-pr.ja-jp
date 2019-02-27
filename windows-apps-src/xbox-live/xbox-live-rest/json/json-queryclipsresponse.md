@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 23955d311d57fa3454bdb84df67ddae07a0c8548
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a0369de617fd60fcc71e7d69b46ced6b499e8de5
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918108"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115352"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
 一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。 
@@ -21,7 +21,7 @@ ms.locfileid: "8918108"
  
 ## <a name="queryclipsresponse"></a>QueryClipsResponse
  
-QueryClipsResponse オブジェクトには、次仕様があります。
+QueryClipsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
@@ -55,7 +55,7 @@ QueryClipsResponse オブジェクトには、次仕様があります。
      "views": 5,
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -63,7 +63,7 @@ QueryClipsResponse オブジェクトには、次仕様があります。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
@@ -90,7 +90,7 @@ QueryClipsResponse オブジェクトには、次仕様があります。
      "systemProperties": "{ 'Id': '123456', 'Location': 'C:\\videos\\123456.mp4' }",
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -98,13 +98,13 @@ QueryClipsResponse オブジェクトには、次仕様があります。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234567,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"
        },
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/manifest",
          "fileSize": 0,
          "uriType": "SmoothStreaming",
          "expiration": "2013-01-18T11:25:51.6522794Z"

@@ -2,7 +2,7 @@
 description: 半透明のテクスチャを作成するブラシの種類。
 title: アクリル素材
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: yulikl
@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 85579ac0dcc6f64a87c37c92ae46a8f42162af08
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 0600e66c672a28683befdb7b0090f5455a28c948
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037334"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116324"
 ---
 # <a name="acrylic-material"></a>アクリル素材
 

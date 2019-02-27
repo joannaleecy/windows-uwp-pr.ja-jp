@@ -3,15 +3,9 @@ description: UWP アプリの開発方法を説明します。
 title: UWP アプリの開発
 layout: LandingPage
 keywords: uwp アプリ 開発 スレッディング 非同期 プラットフォーム 概要 ポータル 開発 開発者
-ms.date: 3/29/2018
+ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926378"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>
@@ -26,7 +20,7 @@ ms.locfileid: "8926378"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -45,7 +39,7 @@ ms.locfileid: "8926378"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">
@@ -264,7 +258,7 @@ ms.locfileid: "8926378"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -283,7 +277,7 @@ ms.locfileid: "8926378"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">

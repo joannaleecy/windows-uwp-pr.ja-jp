@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923412"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116344"
 ---
 # <a name="adaptive-streaming"></a>アダプティブ ストリーミング
 
@@ -95,7 +95,7 @@ UWP アプリでアダプティブ ストリーミング メディアを再生�
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
 ## <a name="gather-adaptive-streaming-telemetry-data-with-adaptivemediasourcediagnostics"></a>AdaptiveMediaSourceDiagnostics によってアダプティブ ストリーミングの利用統計情報を収集する
-**AdaptiveMediaSource** は、[**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics) オブジェクトを返す [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource?branch=master.Diagnostics) プロパティを公開します。 このオブジェクトを使って、[**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) イベントを登録します。 このイベントは、利用統計情報の収集に使用することを目的としており、実行時にアプリの動作を変更するために使用することはできません。 この診断イベントは、さまざまな理由で発生します。 イベントが発生した理由を特定するには、イベントに渡される [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) オブジェクトの [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) プロパティを確認します。 潜在的な理由には、要求されたリソースへのアクセス時のエラーや、ストリーミング マニフェスト ファイルの解析時のエラーが含まれます。 診断イベントをトリガーできる状況の一覧については、[**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype) を参照してください。 他のアダプティブ ストリーミング イベントの引数と同様に、**AdaptiveMediaSourceDiagnosticAvailableEventArgs** は、さまざまなイベントの間で要求情報を関連付けるための **RequestId** プロパティを提供します。
+**AdaptiveMediaSource** は、[**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics) オブジェクトを返す [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) プロパティを公開します。 このオブジェクトを使って、[**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) イベントを登録します。 このイベントは、利用統計情報の収集に使用することを目的としており、実行時にアプリの動作を変更するために使用することはできません。 この診断イベントは、さまざまな理由で発生します。 イベントが発生した理由を特定するには、イベントに渡される [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) オブジェクトの [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) プロパティを確認します。 潜在的な理由には、要求されたリソースへのアクセス時のエラーや、ストリーミング マニフェスト ファイルの解析時のエラーが含まれます。 診断イベントをトリガーできる状況の一覧については、[**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype) を参照してください。 他のアダプティブ ストリーミング イベントの引数と同様に、**AdaptiveMediaSourceDiagnosticAvailableEventArgs** は、さまざまなイベントの間で要求情報を関連付けるための **RequestId** プロパティを提供します。
 
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 

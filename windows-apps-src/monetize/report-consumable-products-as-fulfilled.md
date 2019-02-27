@@ -1,17 +1,17 @@
 ---
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: 特定のユーザーについてコンシューマブルな製品をフルフィルメント完了として報告するには、Microsoft Store コレクション API の以下のメソッドを使います。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスが、そのユーザーについてコンシューマブルな製品をフルフィルメント完了と報告している必要があります。
-title: コンシューマブルな製品のフルフィルメント完了の報告
-ms.date: 03/16/2018
+description: 特定のユーザーについてコンシューマブルな製品をフルフィルメント完了として報告するには、Microsoft Store コレクション API の以下のメソッドを使います。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。
+title: コンシューマブルな製品をフルフィルメント完了として報告する
+ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, フルフィルメント, コンシューマブル
 ms.localizationpriority: medium
-ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935663"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116028"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>コンシューマブルな製品のフルフィルメント完了の報告
 
@@ -44,9 +44,9 @@ ms.locfileid: "8935663"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー         | 型   | 説明                                                                                           |
+| ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | 文字列 | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -67,8 +67,8 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 
 | パラメーター            | 型   | 説明       | 必須かどうか |
 |----------------------|--------|-------------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。    | 必須      |
-| identityValue        | string | コンシューマブルな製品をフルフィルメント完了として報告するユーザーの ID を表す [Microsoft Store ID キー](view-and-grant-products-from-a-service.md#step-4)。      | 必須      |
+| identityType         | string | 文字列値 **b2b** を指定します。    | はい      |
+| identityValue        | string | コンシューマブルな製品をフルフィルメント完了として報告するユーザーの ID を表す [Microsoft Store ID キー](view-and-grant-products-from-a-service.md#step-4)。      | はい      |
 | localTicketReference | string | 返された応答で必要な識別子。 Microsoft Store ID キーの *userId* [要求](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)と同じ値を使用することをお勧めします。 | 必須      |
 
 

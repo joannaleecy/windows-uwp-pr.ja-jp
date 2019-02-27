@@ -3,7 +3,7 @@ Description: A button gives the user a way to trigger an immediate action.
 title: ボタン
 label: Buttons
 template: detail.hbs
-ms.date: 10/2/2018
+ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ac5e7b19ee3e825c7757fed124f0fcf5c594429a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: f585d278d9420865c895d4e20fa1730196d9f0cd
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037074"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116374"
 ---
 # <a name="buttons"></a>ボタン
 

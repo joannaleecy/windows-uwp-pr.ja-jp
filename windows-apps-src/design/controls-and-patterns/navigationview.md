@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037094"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116454"
 ---
 # <a name="navigation-view"></a>ナビゲーション ビュー
 
@@ -143,7 +143,7 @@ PaneDisplayMode プロパティを使用して、コンテンツの上または�
 NavigationView ウィンドウを含めることができます。
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)オブジェクトです。 特定のページに移動するためのナビゲーション項目。
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクトです。 ナビゲーション項目をグループ化するための区切り記号です。 [不透明度](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。
+- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)オブジェクトです。 ナビゲーション項目をグループ化するための区切り記号です。 [不透明度](/uwp/api/windows.ui.xaml.uielement.opacity)のプロパティを領域としての区切り記号をレンダリングする場合は 0 に設定します。
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)オブジェクトです。 項目のグループにラベルを付けるためのヘッダー。
 - アプリ レベルの検索を許可するオプションの[AutoSuggestBox](auto-suggest-box.md)コントロール。 [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)プロパティにコントロールを割り当てます。
 - [アプリ設定](../app-settings/app-settings-and-data.md)のエントリ ポイント (オプション) 設定項目を非表示に[IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)プロパティを**false**に設定します。

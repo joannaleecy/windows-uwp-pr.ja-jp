@@ -2,16 +2,16 @@
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: ソース コンテンツ グループ マップの作成と変換
 description: ユニバーサル Windows プラットフォーム (UWP) アプリを UWP アプリ ストリーミング インストールに対応させるには、コンテンツ グループ マップを作成する必要があります。 この記事では、コンテンツ グループ マップの作成と変換に関する詳細情報と、それに伴うヒントやコツを示します。
-ms.date: 9/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP, コンテンツ グループ マップ, ストリーミング インストール, UWP アプリ ストリーミング インストール, ソース コンテンツ グループ マップ
 ms.localizationpriority: medium
-ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 882db0a6a97c5ee203a072156ca3eb82615607bb
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924659"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115869"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>ソース コンテンツ グループ マップの作成と変換
 
@@ -166,4 +166,4 @@ MakeAppx convertCGM /s MyApp\SourceAppxContentGroupMap.xml /f MyApp\AppxContentG
 MakeAppx convertCGM /?
 ```
 
-これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 アプリが Microsoft Store の準備が整いますする前に行うには引き続き詳細があります。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。
+これで、アプリ用に最終的な `AppxContentGroupMap.xml` を準備できました。 ありませんがまだアプリが Microsoft Store の準備が整います前に実行します。 UWP アプリ ストリーミング インストールをアプリに追加する完全なプロセスについては、[こちらのブログ記事](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)をご覧ください。

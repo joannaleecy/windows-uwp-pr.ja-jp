@@ -6,19 +6,19 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality、Hololens、拡張現実、視線、音声、コントローラー
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: e6aebac45dc32933f55d917c0b1153cba952d819
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b988859422a80b31d94a133e36631b078ac7c14e
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932565"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116214"
 ---
 # <a name="designing-for-mixed-reality"></a>Mixed Reality 向けの設計
 
@@ -84,7 +84,7 @@ Mixed Reality 専用のいくつかの新しい入力方法が設計されまし
 * [クリッカー デバイス](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens のみ)
 * [モーション コントローラー](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (Mixed Reality デバイスのみ、上述のとおり)
 
-これらのコントローラーにより、仮想オブジェクトの操作が自然かつ正確になります。 いくつかの操作は無料で利用できます。 たとえば、HoloLens の選択ジェスチャまたはモーション コント ローラーの Windows キーやトリガーをクリックするとは、予想される、ここでも、ユーザー側でコーディングしなくて入力応答が生成されます。
+これらのコントローラーにより、仮想オブジェクトの操作が自然かつ正確になります。 いくつかの操作は無料で利用できます。 たとえば、HoloLens の選択ジェスチャまたはモーション コント ローラーの Windows キーやトリガーをクリックするとは、予想される、もう一度、ユーザー側でコーディングしなくて入力応答が生成されます。
 
 それ以外の場合は、追加情報と利用可能な入力情報を活用するコードを追加します。 たとえば、位置とボタン操作を考慮するコードを作成する場合、モーション コントローラーを使用すると、オブジェクトを細かく操作できます。
 

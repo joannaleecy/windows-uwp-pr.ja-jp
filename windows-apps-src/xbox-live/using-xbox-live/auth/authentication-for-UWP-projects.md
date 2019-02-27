@@ -4,16 +4,16 @@ author: aablackm
 description: ユニバーサル Windows プラットフォーム (UWP) タイトルで Xbox Live ユーザーをサインインする方法について説明します。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
 ms.author: aablackm
-ms.date: 03/14/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: adea0d0e964c994c74ccb14b55907a152858f35e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5473b7ede7731d7d07b7e5bfd72857fdb64f1c89
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929565"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115477"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP プロジェクトの認証
 
@@ -21,7 +21,7 @@ ms.locfileid: "8929565"
 
 特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。  ゲームでは、認証プロセスを開始する Xbox Live Api を呼び出すことができます。  追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。
 
-認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。  (すべて Xbox Live のゲームに対する) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。
+認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。  (すべて Xbox Live ゲームの) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。
 
 ## <a name="steps-to-sign-in"></a>サインイン手順
 

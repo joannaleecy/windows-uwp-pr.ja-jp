@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9f846c9335a3c8213b7e213b354f71fdd855e4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cfc2ac0a635e4aacdc9eeefb5097c6bd946a518
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933313"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115391"
 ---
 # <a name="gameclip-json"></a>GameClip (JSON)
  
@@ -21,29 +21,29 @@ ms.locfileid: "8933313"
  
 ## <a name="gameclip"></a>GameClip
  
-GameClip オブジェクトには、次仕様があります。
+GameClip オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | <b>gameClipId</b>| string| ゲーム クリップに割り当てられている ID。| 
 | <b>状態</b>| GameClipState| システムでゲーム クリップの状態。| 
 | <b>dateRecorded</b>| DateTime| 日付と UTC (ISO 8601 形式) で、録画が開始された時刻。| 
-| <b>lastModified</b>| DateTime| 最後に修正されたゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時刻。| 
-| <b>userCaption</b>| string| ユーザーが入力した以外にローカライズされた文字列ゲーム クリップの。| 
+| <b>lastModified</b>| DateTime| 最後に修正されたゲーム クリップまたは UTC (ISO 8601 形式) で、メタデータの時間。| 
+| <b>userCaption</b>| string| ユーザーが入力したローカライズ文字列ゲーム クリップのします。| 
 | <b>type</b>| GameClipTypes| クリップの種類です。 そうである場合をコンマで区切られたことが、複数の値ができます。| 
-| <b>ソース</b>| GameClipSource| クリップが作成された方法です。| 
+| <b>ソース</b>| GameClipSource| 方法クリップされたデータを取得します。| 
 | <b>visibility</b>| GameClipVisibility| システムでの公開後に、ゲーム クリップの可視性です。| 
-| <b>durationInSeconds</b>| 32 ビットの符号なし整数| 秒単位でゲーム クリップの期間です。| 
+| <b>durationInSeconds</b>| 32 ビット符号なし整数| 秒単位でゲーム クリップの期間です。| 
 | <b>scid</b>| string| ゲームのクリップが関連付けられている SCID です。| 
-| <b>rating</b>| 倍精度浮動小数点数| ゲームのクリップ, 0.0 に 5.0 の範囲内に関連付けられている評価です。| 
-| <b>ratingCount</b>| 32 ビットの符号なし整数| このクリップが評価された回数。| 
-| <b>表示モード</b>| 32 ビットの符号なし整数| ゲーム クリップに関連付けられているビューの数。| 
+| <b>rating</b>| 倍精度浮動小数点数| ゲーム クリップ, 0.0 に 5.0 の範囲内に関連付けられている評価します。| 
+| <b>ratingCount</b>| 32 ビット符号なし整数| このクリップが評価された回数。| 
+| <b>表示モード</b>| 32 ビット符号なし整数| ゲーム クリップに関連付けられたビューの数。| 
 | <b>titleData</b>| string| タイトルに固有のプロパティ バッグです。| 
 | <b>titleData</b>| string| コンソールに固有のプロパティ バッグです。| 
-| <b>サムネイル</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
+| <b>縮小表示</b>| GameClipThumbnail の配列| GameClipThumbnail オブジェクトの配列です。| 
 | <b>gameClipUris</b>| GameClipUri の配列| GameClipUri オブジェクトの配列です。| 
 | <b>xuid</b>| string| 文字列としてマーシャ リング、ゲーム クリップの所有者の XUID です。| 
-| <b>clipName</b>| string| タイトルの管理システムから検索要求の入力のロケールに基づいて、クリップの名前のローカライズされたバージョンです。| 
+| <b>clipName</b>| string| タイトルの管理システムから検索要求の入力のロケールに基づいて、クリップの名前のローカライズされたバージョン。| 
   
 <a id="ID4ERH"></a>
 
@@ -69,7 +69,7 @@ GameClip オブジェクトには、次仕様があります。
      "views": 5,
      "thumbnails": [
        {
-         "uri": "http://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
+         "uri": "https://gameclips.xbox.com/thumbnails/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/small.jpg",
          "fileSize": 123,
          "width": 120,
          "height": 250
@@ -77,7 +77,7 @@ GameClip オブジェクトには、次仕様があります。
      ],
      "gameClipUris": [
        {
-         "uri": "http://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
+         "uri": "https://gameclips.xbox.com/clips/7ce5c1a7-1255-46d3-a90e-34a0e2dfab06/clip.mp4",
          "fileSize": 1234565,
          "uriType": "Download",
          "expiration": "9999-12-31T23:59:59.9999999"

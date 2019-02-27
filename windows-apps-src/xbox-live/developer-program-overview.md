@@ -2,16 +2,16 @@
 title: 開発者プログラムの概要
 description: Xbox Live を使うために利用できる、さまざまな開発者プログラムについて説明します。
 ms.assetid: 1166308a-4079-41b4-8550-ce04b82b4f72
-ms.date: 5/30/2018
+ms.date: 05/30/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: medium
-ms.openlocfilehash: 0335711c210588142bf3d4f86acaee9705648373
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 05abd3f28328f4418f5a8a772049b3869b488ffc
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047705"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115506"
 ---
 # <a name="developer-program-overview"></a>開発者プログラムの概要
 

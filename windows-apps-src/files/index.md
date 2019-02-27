@@ -4,14 +4,8 @@ title: ファイル、フォルダー、およびライブラリ
 description: アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別なサンドボックス化された場所について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 517302b7db1e7b65ca7a181a8c766ce1e71737ac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044546"
 ---
  # <a name="files-folders-and-libraries"></a>ファイル、フォルダー、およびライブラリ
 
@@ -22,6 +16,7 @@ ms.locfileid: "9044546"
 |-------|--------------|
 | [ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md) | フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。 |
 | [ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。 |
+| [ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md) | [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio)と[PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスのメソッドを記述するさまざまなファイルを使用するためのベスト プラクティスについて説明します。 |
 | [ファイルのプロパティの取得](quickstart-getting-file-properties.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。 |
 | [ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md) | ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 フォルダーへのアクセスには [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。 |
 | [ピッカーによるファイルの保存](quickstart-save-a-file-with-a-picker.md) | [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、アプリで保存するファイルの名前とその保存場所をユーザーが指定できるようにします。 |

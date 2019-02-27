@@ -2,16 +2,16 @@
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 初めてのアプリの作成
 description: 好みのプログラミング言語を使用して windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
-ms.date: 1/25/2017
+ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 初めてのアプリ, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6e364f8c6c88400d2d47a0591d4b7432c33215
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4627a3cfd2bad5f3c9740a1345b5e020ce7981fc
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048019"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115849"
 ---
 # <a name="create-your-first-app"></a>初めてのアプリの作成
 

@@ -1,16 +1,16 @@
 ---
 title: アプリ インストーラー ファイルを使用して関連セットをインストールする
 description: このセクションでは、アプリ インストーラーによる関連セットのインストールを許可するために必要な手順を確認します。 また、関連セットを定義する *.appinstaller ファイルの作成手順も確認します。
-ms.date: 1/4/2018
+ms.date: 01/04/2018
 ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
-ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944034"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116164"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>アプリ インストーラー ファイルを使用して関連セットをインストールする
 
@@ -87,7 +87,7 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>手順 3: メイン パッケージ情報の追加 
-使用して、メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合、`<MainBundle>`の下に表示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合は使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペットではします。 
+メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合を使用し、`<MainBundle>`次に示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合を使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペットにします。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

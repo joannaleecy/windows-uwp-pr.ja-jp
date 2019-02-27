@@ -5,17 +5,17 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 7/16/2018
+ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10、UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944688"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116244"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -55,7 +55,7 @@ ms.locfileid: "8944688"
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準的なコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -191,7 +191,7 @@ ms.locfileid: "8944688"
         ときにタブを使用します。
 
         - ナビゲーション履歴とページの状態を保持します。
-        - ユーザーがタブを頻繁に切り替えることが予想されます。
+        - ユーザーがタブ頻繁に切り替えることが予想されます。
 
 :::row-end:::
 

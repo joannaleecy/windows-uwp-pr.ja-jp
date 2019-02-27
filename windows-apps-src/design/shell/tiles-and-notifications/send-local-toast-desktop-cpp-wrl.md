@@ -3,16 +3,16 @@ Description: Learn how Win32 C++ WRL apps can send local toast notifications and
 title: デスクトップ C++ WRL アプリからのローカル トースト通知の送信
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, トーストの送信, ローカル トーストの送信, デスクトップ ブリッジ, C++, cpp, c プラスプラス, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b7dbe75b06e264eed67d9f08b1e12a42ecb890
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82de349009350c970fce923a2aa503df0801c3b7
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926820"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116264"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>デスクトップ C++ WRL アプリからのローカル トースト通知の送信
 
@@ -395,7 +395,7 @@ if (SUCCEEDED(hr))
 
 ## <a name="step-10-deploying-and-debugging"></a>手順 10: 展開とデバッグ
 
-デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/porting/desktop-to-uwp-debug.md)」をご覧ください。
+デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/windows/uwp/porting/desktop-to-uwp-debug)」をご覧ください。
 
 従来の Win32 アプリを展開およびデバッグするには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。 スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。
 
@@ -420,9 +420,9 @@ Windows 8.1 以下をサポートする場合は、実行時に Windows 10 を�
 
 | OS | ToastGeneric | COM アクティベーター | レガシ トースト テンプレート |
 | -- | ------------ | ------------- | ---------------------- |
-| Windows 10 | サポート対象 | サポート対象 | サポート対象 (ただし COM サーバーをアクティブ化しない) |
-| Windows 8.1 / 8 | 該当せず | 該当せず | サポート対象 |
-| Windows 7 以下 | 該当せず | 該当なし | 該当せず |
+| Windows 10 | サポートされる | サポートされる | サポート対象 (ただし COM サーバーをアクティブ化しない) |
+| Windows 8.1 / 8 | なし | なし | サポート対象 |
+| Windows 7 以下 | なし | なし | なし |
 
 Windows 10 で実行しているかどうかを確認するには、`<VersionHelpers.h>` ヘッダーをインクルードし、**IsWindows10OrGreater** メソッドを確認します。 これが true を返す場合は、続いてこのドキュメントで説明されているすべてのメソッドを呼び出してください。 
 

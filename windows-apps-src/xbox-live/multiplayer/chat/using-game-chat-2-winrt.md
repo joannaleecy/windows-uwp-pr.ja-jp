@@ -1,16 +1,16 @@
 ---
 title: ゲーム チャット 2 WinRT プロジェクションの使用
 description: WinRT プロジェクションと共に Xbox Live ゲーム チャット 2 を使用して、ゲームに音声通信を追加する方法について説明します。
-ms.date: 4/11/2018
+ms.date: 04/11/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f39328ee2f77833dfecb484346b7f543ba17348
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c06ee8610273273f234dbf3c7cb9fbd3a17eaa76
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933694"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115578"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>ゲーム チャット 2 (WinRT プロジェクション) の使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "8933694"
 4. [データ フレームの処理](#data)
 5. [状態変更の処理](#state)
 6. [テキスト チャット](#text)
-7. [ユーザー補助](#access)
+7. [アクセシビリティ](#access)
 8. [UI](#UI)
 9. [ミュート](#mute)
 10. [悪い評判の自動ミュート](#automute)
@@ -198,7 +198,7 @@ foreach (IGameChat2StateChange stateChange in stateChanges)
 
 ## <a name="text-chat-a-nametext"></a>テキスト チャット <a name="text">
 
-テキスト チャットを送信するには、`GameChat2ChatUserLocal.SendChatText()` を使用します。 次に、例を示します。
+テキスト チャットを送信するには、`GameChat2ChatUserLocal.SendChatText()` を使用します。 例:
 
 ```cs
 localUserA.SendChatText("Hello");
@@ -214,7 +214,7 @@ localUserA.SendChatText("Hello");
 
 ### <a name="text-to-speech"></a>音声合成
 
-ユーザーが音声合成を有効にしていると、`GameChat2ChatUserLocal.TextToSpeechConversionPreferenceEnabled` は 'true' になります。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `GameChat2ChatUserLocal.SynthesizeTextToSpeech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 次に、例を示します。
+ユーザーが音声合成を有効にしていると、`GameChat2ChatUserLocal.TextToSpeechConversionPreferenceEnabled` は 'true' になります。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `GameChat2ChatUserLocal.SynthesizeTextToSpeech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 例:
 
 ```cs
 localUserA.SynthesizeTextToSpeech("Hello");

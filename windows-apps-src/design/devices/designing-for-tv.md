@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a5285c39e46019275b3dd6fb3843d932b53901
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059753"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116494"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
@@ -434,7 +434,7 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 ![ピボットの下線](images/designing-for-tv/pivot-underline.png)
 
-[Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](../controls-and-patterns/tabs-pivot.md)」をご覧ください。
+[Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) プロパティを `true` に設定すると、選択したピボット ヘッダーが常に最初の位置に移動する代わりに、ピボットが常に同じ位置に固定されます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 すべてのピボット ヘッダーが同時に画面に収まらない場合、ユーザーは表示されるスクロール バーを使って他のヘッダーを表示できますが、最良のエクスペリエンスを提供するためには、すべてのピボット ヘッダーが画面に収まることを確認する必要があります。 詳しくは、「[タブとピボット](/windows/uwp/design/controls-and-patterns/pivot)」をご覧ください。
 
 ### <a name="navigation-pane-a-namenavigation-pane-"></a>ナビゲーション ウィンドウ <a name="navigation-pane" />
 

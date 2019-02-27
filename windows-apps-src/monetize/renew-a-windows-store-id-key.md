@@ -2,16 +2,16 @@
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Microsoft Store のキーを更新するには、以下のメソッドを使います。
 title: Microsoft Store ID キーの更新
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1c6248b2d87a68b77cad6f1bdc7cce0fae587e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939093"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116038"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Microsoft Store ID キーの更新
 
@@ -40,7 +40,7 @@ Microsoft Store のキーを更新するには、以下のメソッドを使い�
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー         | 型   | 説明                                                                                           |
+| ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | Host           | string | **collections.mp.microsoft.com** または **purchase.mp.microsoft.com** の値に設定する必要があります。           |
 | Content-Length | number | 要求の本文の長さ。                                                                       |

@@ -2,15 +2,15 @@
 title: Windows 10 ビルド 17134 の API の変更
 description: 開発者は、次の一覧を使用して、Windows 10 ビルド 17134 での新しい名前空間や変更された名前空間を確認できます。
 keywords: 新着情報, 新機能, 更新プログラム, Windows 10, 最新, api, 17134
-ms.date: 4/10/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ed4682b6deac68d74d40576d0eb9cbafc6bfdd1d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4b0860021386c52ead3defb17c1b3ba56d65f224
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925213"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116414"
 ---
 # <a name="new-apis-in-windows-10-build-17134"></a>Windows 10 ビルド 17134 の新しい API
 

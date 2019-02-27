@@ -2,7 +2,7 @@
 description: 表示は発光効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。
 title: 表示ハイライト
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: kisai
@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5647d60cc043e167f8e2962680a88c750cc2eb1
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037264"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116404"
 ---
 # <a name="reveal-highlight"></a>表示ハイライト
 

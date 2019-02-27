@@ -1,16 +1,16 @@
 ---
 title: ゲーム チャット 2 への移行
 description: 既存のゲーム チャット コードをゲーム チャット 2 を使用するように移行する方法について説明します。
-ms.date: 5/2/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e4e96738f0b37342ea3e166706a7cafa4e6f185
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b21544744f4bbe7954bd6eb29787b144bd693cd6
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981368"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116010"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
@@ -175,7 +175,7 @@ chatManager->ProcessIncomingChatMessage(packetBuffer, remoteIdentifier);
 
 同様に、ゲーム チャット 2 には独自のトランスポート層はありません。トランスポート層はアプリで提供する必要があります。 送信パケットは、アプリによる `chat_manager::start_processing_data_frames()` メソッドと `chat_manager::finish_processing_data_frames()` メソッドの定期的かつ頻繁な呼び出しによって処理されます。 これらのメソッドを使用して、ゲーム チャット 2 は発信データをアプリに提供します。 これらは専用のネットワーク スレッドで頻繁にポーリングできるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべてのデータを取得できます。
 
-`chat_manager::start_processing_data_frames()` を呼び出すと、キューに入っているすべてのデータが `game_chat_data_frame` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、ターゲット "エンドポイント" を検査し、アプリのネットワーク層を使用してデータを適切なリモート アプリ インスタンスに配信する必要があります。 すべての `game_chat_data_frame` 構造体が終了した後は、`chat_manager:finish_processing_data_frames()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 次に、例を示します。
+`chat_manager::start_processing_data_frames()` を呼び出すと、キューに入っているすべてのデータが `game_chat_data_frame` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、ターゲット "エンドポイント" を検査し、アプリのネットワーク層を使用してデータを適切なリモート アプリ インスタンスに配信する必要があります。 すべての `game_chat_data_frame` 構造体が終了した後は、`chat_manager:finish_processing_data_frames()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 例:
 
 ```cpp
 uint32_t dataFrameCount;
@@ -233,7 +233,7 @@ auto token = chatManager->OnTextMessageReceived +=
 
 ゲーム チャット 2 では、アプリによる `chat_manager::start_processing_state_changes()` メソッドと `chat_manager::finish_processing_state_changes()` メソッドの定期的かつ頻繁な呼び出しを通じて、受信したテキスト メッセージなどの更新をアプリに提供します。 これらのメソッドは、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。
 
-`chat_manager::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `game_chat_state_change` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、より具体的な型の基本構造を検査して、基本的な構造体を対応する詳細な型にキャストしてから、その更新を適切に処理する必要があります。 現在使用可能なすべての `game_chat_state_change` オブジェクトが終了した後は、`chat_manager::finish_processing_state_changes()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 次に、例を示します。
+`chat_manager::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `game_chat_state_change` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、より具体的な型の基本構造を検査して、基本的な構造体を対応する詳細な型にキャストしてから、その更新を適切に処理する必要があります。 現在使用可能なすべての `game_chat_state_change` オブジェクトが終了した後は、`chat_manager::finish_processing_state_changes()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 例:
 
 ```cpp
 uint32_t stateChangeCount;
@@ -304,7 +304,7 @@ chatUser->GenerateTextMessage(L"Hello", true);
 
 ### <a name="text-to-speech---game-chat-2"></a>音声合成 - ゲーム チャット 2
 
-ユーザーが音声合成を有効にしていると、`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` は 'true' を返します。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `chat_user::chat_user_local::synthesize_text_to_speech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 次に、例を示します。
+ユーザーが音声合成を有効にしていると、`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` は 'true' を返します。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `chat_user::chat_user_local::synthesize_text_to_speech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 例:
 
 ```cpp
 chat_userA->local()->synthesize_text_to_speech(L"Hello");
