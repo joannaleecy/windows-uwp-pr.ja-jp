@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 770896f467ff3a2c24fff65fdf16f1e13c83b688
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933550"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117612"
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
@@ -430,7 +430,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ## <a name="troubleshooting-theme-resources"></a>テーマ リソースのトラブルシューティング
 
-[テーマ リソースの使用に関するガイドライン](#guidelines-for-using-theme-resources)に従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。
+[テーマ リソースの使用に関するガイドライン](#guidelines-for-custom-theme-resources)に従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。
 
 たとえば、淡色テーマのポップアップを開いたときに、濃色テーマのアプリの部分まで淡色テーマのように変更される場合があります。 または、淡色テーマのページに移動してから戻ってくると、元の濃色テーマのページ (またはその部分) が淡色テーマのように表示される場合もあります。
 

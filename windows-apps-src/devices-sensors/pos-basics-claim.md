@@ -5,21 +5,21 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924948"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117652"
 ---
-# <a name="point-of-service-device-claim-and-enable-model"></a>ポイントのサービスのデバイスを要求し、モデルを有効にします。
+# <a name="point-of-service-device-claim-and-enable-model"></a>サービス ポイントのデバイスの要求し、モデルを有効にします。
 
 ## <a name="claiming-for-exclusive-use"></a>排他的使用のための要求
 
 PointOfService デバイス オブジェクトを正常に作成したら、入出力にデバイスを使用する前に、デバイスの種類に適切な要求方法を使用して要求する必要があります。  要求により、多くのデバイスの機能に対する排他的アクセスがアプリケーションに付与され、あるアプリケーションが別のアプリケーションによるデバイスの使用を妨げないようにします。  排他的使用のために一度に PointOfService デバイスを要求できるアプリケーションは 1 つだけです。 
 
 > [!Note]
-> 要求アクションは、デバイスにロックを確立していますが、操作の状態には配置されません。  詳細については、 [I/O 操作用のデバイスを有効にする](#Enable-device-for-I/O-operations)を参照してください。
+> 要求アクションは、デバイスを排他的にロックを確立していますが、操作の状態には配置されません。  詳細については、 [I/O 操作用のデバイスを有効にする](#enable-device-for-io-operations)を参照してください。
 
 ### <a name="apis-used-to-claim--release"></a>要求/リリースに使用する Api
 
@@ -42,7 +42,7 @@ PointOfService デバイス オブジェクトを正常に作成したら、入�
 |-|:-|:-|:-|
 |ClaimedBarcodeScanner | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isenabled) | 
 |ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
-|ClaimedLineDisplay | Applicable¹ しません。 | Applicable¹ しません。 | Applicable¹ しません。 | 
+|ClaimedLineDisplay | Applicable¹ されません。 | Applicable¹ されません。 | Applicable¹ されません。 | 
 |ClaimedMagneticStripeReader | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
@@ -107,7 +107,7 @@ Windows はマルチタスク環境であるため、同じコンピューター
     }
 ```
 
-要求されたデバイスとの関連付け、イベント ハンドラーを登録します。
+要求されたデバイスとの関連付けのイベント ハンドラーを登録します。
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

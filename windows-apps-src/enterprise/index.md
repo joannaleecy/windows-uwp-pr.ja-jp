@@ -4,32 +4,12 @@ description: このロードマップは、windows 10 とユニバーサル Wind
 title: Enterprise
 ms.date: 08/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'Windows 10, UWP'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058583"
 ---
 # <a name="enterprise"></a>Enterprise
 
-この記事では、Windows 10 のアプリにユニバーサル Windows プラットフォーム (UWP) によって提供される主要なエンタープライズ機能の概要を示します。
-
-## <a name="whats-new-and-recent-for-enterprise-applications"></a>新機能および最近のエンタープライズ アプリケーション
-
-> [!div class="checklist"]
-> * [Windows Template Studio](#template-studio)
-> * [コントロールをデスクトップ スタイルの Ui を作成するには](#desktop-style-UI)
-> * [エンタープライズ シナリオをサポートするコントロール](#enterprise)
-> * [Windows UI ライブラリ](#UI-library)
-> * [デスクトップ アプリケーションの UWP コントロール](#xaml-islands)
-> * [.NET Standard 2.0](#standard)
-> * [SQL Server の接続](#sql-server)
-> * [MSIX 展開](#MSIX)
-
-これらの機能の詳細のいくつか示しますビデオ、[迅速に構築 LOB アプリケーション](https://channel9.msdn.com/Events/Build/2018/BRK3502)を参照してください。
+この記事では、Windows 10 のアプリにユニバーサル Windows プラットフォーム (UWP) によって提供される主要なエンタープライズ機能の概要を示します。 これらの機能の詳細のいくつか示しますビデオ、[迅速に構築 LOB アプリケーション](https://channel9.msdn.com/Events/Build/2018/BRK3502)を参照してください。
 
 <a id="template-studio" />
 

@@ -6,12 +6,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
 ms.localizationpriority: medium
-ms.openlocfilehash: 118c451bb4e015d578620647f09ff23724701da0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1f52e379b524952c3361b432a577a7137b02155b
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920694"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117539"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
@@ -42,7 +42,7 @@ Xbox Live Services API (**XSAPI**) を使用する方法には、以下のよう
 Xbox Live Services API (**XSAPI**) は、次の 3 つのセットのクライアント側のさまざまなユーザー シナリオをサポートする Api を公開します。
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
-- [XSAPI C++11 ベース API](#xsapi-c++11-based-api)
+- [XSAPI C++11 ベース API](#xsapi-c11-based-api)
 - [XSAPI C ベース API](#xsapi-c-based-api)(**2018 6 月時点で新しい**)
 
 Api を比較します。
@@ -80,7 +80,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - エラーは std::error_code を使用して処理されます。
 - パフォーマンスとデバッグの向上のため、C++ のゲーム エンジンを使用する場合は C++11 ベースの API が推奨されます。
-- Xbox Live クリエーターズ プログラムに参加している場合、XSAPI ヘッダーをインクルードする前に XBOX_LIVE_CREATORS_SDK を定義します。 これによって、API サーフェイス領域は Xbox Live Creators Program の開発者が使用できるもののみに制限されます。また、Xbox Live クリエーターズ プログラムのタイトルで機能するサインイン メソッドが変更されます。  次に、例を示します。
+- Xbox Live クリエーターズ プログラムに参加している場合、XSAPI ヘッダーをインクルードする前に XBOX_LIVE_CREATORS_SDK を定義します。 これによって、API サーフェイス領域は Xbox Live Creators Program の開発者が使用できるもののみに制限されます。また、Xbox Live クリエーターズ プログラムのタイトルで機能するサインイン メソッドが変更されます。  例:
 
 ```c++
 #define XBOX_LIVE_CREATORS_SDK
@@ -105,7 +105,7 @@ std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_s
 
 ### <a name="xsapi-c-based-api"></a>XSAPI C ベース API
 
-- タイトルを XSAPI を呼び出すと、メモリ割り当てを制御できます。
+- タイトルを XSAPI を呼び出すときにメモリ割り当てを制御できます。
 - により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
 - 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 869ab9994f10070797fb4b803b1189127d84eadf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049689"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117712"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>WindowsPhone Silverlight XAML と UI の UWP への移植
 
@@ -205,7 +205,7 @@ UWP のコントロールについて詳しくは、「[機能別コントロー
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 でのデザイン言語
 
-WindowsPhone Silverlight アプリと windows 10 アプリのデザイン言語でいくつかの違いがあります。 詳しくは、「[Design](https://dev.windows.com/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
+WindowsPhone Silverlight アプリと windows 10 アプリのデザイン言語でいくつかの違いがあります。 詳しくは、「[Design](https://developer.microsoft.com/en-us/windows/apps/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
 
 ## <a name="localization-and-globalization"></a>ローカリゼーションとグローバリゼーション
 
@@ -313,7 +313,7 @@ URI マッピングとフラグメント ナビゲーションは URI ナビゲ�
 
 Windows 10 アプリのシステム TextBlock スタイル
 
-WindowsPhone Silverlight アプリでは、既定のフォント ファミリは Segoe wp です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 WindowsPhone Silverlight のテキストの外観を再現する場合は、 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 、 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)などのプロパティを使用して独自のメトリックを設定することができます。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://dev.windows.com/design)」をご覧ください。
+WindowsPhone Silverlight アプリでは、既定のフォント ファミリは Segoe wp です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 WindowsPhone Silverlight のテキストの外観を再現する場合は、 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 、 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)などのプロパティを使用して独自のメトリックを設定することができます。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://developer.microsoft.com/en-us/windows/apps/design)」をご覧ください。
 
 ## <a name="theme-changes"></a>テーマの変更
 

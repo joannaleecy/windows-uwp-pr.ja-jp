@@ -2,15 +2,15 @@
 title: Windows ドキュメントの最新情報で新 2018 年 5 月 - UWP アプリの開発
 description: 2018 年 5 月の Windows 10 開発者向けドキュメントと Microsoft Build カンファレンスに、新しい機能、ビデオ、および開発者向けガイダンスが追加されました。
 keywords: 新着情報, 更新, 機能, 開発者向けガイダンス, Windows 10、月、ビルド
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048669"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116224"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>新機能、Windows 開発者向けドキュメントの 2018 年 5 月
 
@@ -99,7 +99,7 @@ Sets 機能は、Windows Insider preview ビルドで利用できます。 Sets 
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
-### <a name="get-started"></a>はじめに
+### <a name="get-started"></a>使ってみる
 
 当社 Get します revitalized した新しい学習トラックでコンテンツを開始します。 これらの新しいトピックをいくつかの一般的なタスクを実行するための情報が新しい Windows 10 開発者を提供するようにしてください。 ハンドヘルド チュートリアルが提供されないとが代わりに既存のドキュメントが存在してその使用方法を指摘がいるチュートリアルではありません。 チェック アウト改良[コーディングを開始](../get-started/create-uwp-apps.md)ページ、または個々 の学習、各トラックについて説明します。
 

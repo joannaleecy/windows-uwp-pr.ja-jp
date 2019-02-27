@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, サウンド
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ceef2da582f5d825949afdf2e116862c990165c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 8d5a976ef65bee5efc3329afc98bf198d094b037
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981386"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117842"
 ---
 # <a name="add-sound"></a>サウンドの追加
 
@@ -22,7 +22,7 @@ ms.locfileid: "8981386"
 
 ## <a name="objective"></a>目標
 
-[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813)を使って、サンプル ゲームにサウンドを追加します。
+[XAudio2](/windows/desktop/xaudio2/xaudio2-introduction)を使って、サンプル ゲームにサウンドを追加します。
 
 ## <a name="define-the-audio-engine"></a>オーディオ エンジンを定義します。
 
@@ -51,7 +51,7 @@ __Simple3DGame::Initialize__、場所__m\_controller__と__m\_renderer__は初�
  * [オーディオ](#audioh)クラスのインスタンスである__m\_audioController__を作成します。
  * [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)メソッドを使用するために必要なオーディオ リソースを作成します。 ここでは、2 つの__XAudio2__オブジェクト&mdash;音楽エンジン オブジェクトとサウンド エンジン オブジェクトでは、それぞれのマスタリング ボイスを作成します。 ゲームのバック グラウンド音楽を再生する音楽エンジン オブジェクトを使用できます。 ゲームでサウンド効果を再生するサウンドのエンジンを使用できます。 詳しくは、次を参照してください。[作成し、オーディオ リソースを初期化](#create-and-initialize-the-audio-resources)します。
  * [MediaReader](#mediareaderh)クラスのインスタンスである__mediaReader__を作成します。 [MediaReader](#mediareaderh)、 [SoundEffect](#soundeffecth)クラスのヘルパー クラスでは、ファイルの場所から同期的に小さなオーディオ ファイルを読み取り、バイト配列としてサウンド データを返します。
- * その場所からサウンド ファイルを読み込んで、読み込まれた .wav サウンド データを保持する__targetHitSound__変数を作成するには、 [mediareader:](#mediareaderloadmedia-method)を使用します。 詳しくは、[オーディオ ファイルの読み込み](#load-audio)を参照してください。 
+ * その場所からサウンド ファイルを読み込んで、読み込まれた .wav サウンド データを保持する__targetHitSound__変数を作成するには、 [mediareader:](#mediareaderloadmedia-method)を使用します。 詳しくは、[オーディオ ファイルの読み込み](#load-audio-file)を参照してください。 
 
 サウンド効果は、ゲーム オブジェクトに関連付けられます。 したがって、衝突がそのゲーム オブジェクトで発生すると、再生するサウンドの効果がトリガーされます。 このゲーム サンプルでは、サウンド効果 (どのようなします使用とターゲットを撮影する)、弾に使うと、ターゲットがあります。 
     
@@ -469,11 +469,11 @@ XAudio2 のボイス オブジェクトの 3 種類が: ソース、サブミッ
 * サブミックス ボイスとマスタリング ボイスは、それぞれに送られるすべてのボイスからオーディオをミキシングし、その結果に対して作用します。 
 * マスタリング ボイスは、ソース ボイスとサブミックス ボイスからデータを受信し、オーディオ ハードウェアにそのデータを送信します。
 
-詳しくは、 [XAudio2 のボイス](https://msdn.microsoft.com/library/windows/desktop/ee415824.aspx)に移動します。
+詳しくは、 [XAudio2 のボイス](/windows/desktop/xaudio2/xaudio2-voices)に移動します。
 
 ### <a name="audio-graph"></a>オーディオ グラフ
 
-オーディオ グラフは、 [XAudio2 のボイス](#xaudio2-voice-objects)のコレクションです。 オーディオは、ソース ボイスのオーディオ グラフの一方の側から開始するには、必要に応じて、1 つ以上のサブミックス ボイスを通過およびマスター リング ボイスに終了します。 オーディオ グラフは、現在再生中、0 個以上のサブミックス ボイス、各サウンドのソース ボイスとマスタリング ボイスを 1 つに含まれます。 最も簡単なのオーディオ グラフと XAudio2 での音の作成に必要な最小値は、マスター リング ボイスに直接出力する 1 つのソース ボイスです。 詳しくは、[オーディオ グラフ](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx)に移動します。
+オーディオ グラフは、 [XAudio2 のボイス](/windows/desktop/xaudio2/xaudio2-voices)のコレクションです。 オーディオは、ソース ボイスのオーディオ グラフの一方の側から開始するには、必要に応じて、1 つ以上のサブミックス ボイスを通過およびマスター リング ボイスに終了します。 オーディオ グラフは、現在再生中、0 個以上のサブミックス ボイス、各サウンドのソース ボイスとマスタリング ボイスを 1 つに含まれます。 最も簡単なのオーディオ グラフと XAudio2 での音の作成に必要な最小値は、マスター リング ボイスに直接出力する 1 つのソース ボイスです。 詳しくは、[オーディオ グラフ](https://msdn.microsoft.com/library/windows/desktop/ee415739.aspx)に移動します。
 
 ### <a name="additional-reading"></a>追加の読み取り
 

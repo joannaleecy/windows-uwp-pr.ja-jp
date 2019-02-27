@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
-ms.openlocfilehash: 42a2a6e62494bd8fd5872e7664da8ac71cccbf57
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 308a65b7c049a6aba0405865bab63fb9d28b8506
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944568"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115468"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
 実績やそのリワードに関連付けられているメディア アセット。
@@ -21,11 +21,11 @@ ms.locfileid: "8944568"
 
 ## <a name="mediaasset"></a>MediaAsset
 
-MediaAsset オブジェクトには、次仕様があります。
+MediaAsset オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| name| string| "Tile01"など、MediaAsset の名前です。|
+| name| string| "Tile01"など、MediaAsset の名前。|
 | type| MediaAssetType 列挙型| メディア アセットの種類。 <ul><li>アイコン (0): 実績アイコンです。</li><li>アート (1): デジタル アート アセット。</li></ul> | 
 | url| string| MediaAsset の URL。|
 
@@ -39,7 +39,7 @@ MediaAsset オブジェクトには、次仕様があります。
 {
   "name":"Icon Name",
   "type":"Icon",
-  "url":"http://www.xbox.com"
+  "url":"https://www.xbox.com"
 }
 
 ```

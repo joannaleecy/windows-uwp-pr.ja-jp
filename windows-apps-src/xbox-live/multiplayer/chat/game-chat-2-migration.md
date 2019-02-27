@@ -5,33 +5,16 @@ ms.date: 05/02/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: b21544744f4bbe7954bd6eb29787b144bd693cd6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: e963210091694a07114f10d5a3dc531a353621df
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116010"
+ms.locfileid: "9117542"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
-このドキュメントでは、ゲーム チャットとゲーム チャット 2 の類似点と、ゲーム チャットからゲーム チャット 2 に移行する方法について説明します。 そのため、ゲーム チャット 2 への移行を検討している、既存のゲーム チャットの実装を含むタイトルを対象としています。 既存のゲーム チャットの実装がない場合は、「[ゲーム チャット 2 の使用](using-game-chat-2.md)」から開始することをお勧めします。 ここでは、以下のトピックについて説明します。
-
-1. [はじめに](#preface)
-2. [前提条件](#prerequisites)
-3. [初期化](#initialization)
-4. [ユーザーの構成](#configuring-users)
-5. [データの処理](#processing-data)
-6. [イベントの処理](#processing-events)
-7. [テキスト チャット](#text-chat)
-8. [ユーザー補助](#accessibility)
-9. [UI](#UI)
-10. [ミュート](#muting)
-11. [悪い評判の自動ミュート](#bad-reputation-auto-mute)
-12. [権限とプライバシー](#privilege-and-privacy)
-13. [クリーンアップ](#cleanup)
-14. [エラー モデルとデバッグ](#failure-model-and-debugging)
-15. [一般的なシナリオの構成方法](#how-to-configure-popular-scenarios)
-16. [プリエンコードおよびポストデコード オーディオ操作](#pre-encode-and-post-decode-audio-manipulation)
+このドキュメントでは、ゲーム チャットとゲーム チャット 2 の類似点と、ゲーム チャットからゲーム チャット 2 に移行する方法について説明します。 そのため、ゲーム チャット 2 への移行を検討している、既存のゲーム チャットの実装を含むタイトルを対象としています。 既存のゲーム チャットの実装がない場合は、「[ゲーム チャット 2 の使用](using-game-chat-2.md)」から開始することをお勧めします。 
 
 ## <a name="preface"></a>はじめに
 
@@ -65,7 +48,7 @@ ms.locfileid: "9116010"
 
 ゲーム チャット 2 をコンパイルするには、プライマリ ヘッダー GameChat2.h を含める必要があります。 適切にリンクするには、プロジェクト内の 1 つ以上のコンパイル ユニットにも GameChat2Impl.h を含める必要があります (スタブ関数実装は小さく、コンパイラーで "インライン" として生成しやすいため、一般的なプリコンパイル済みヘッダーをお勧めします)。
 
-ゲーム チャット 2 インターフェイスでは、プロジェクトのコンパイルにおいて、C++/CX と従来の C++ のいずれかを選択する必要がなく、どちらも使用できます。 また、この実装では、致命的ではないエラーの報告手段として例外をスローしないため、必要な場合には、例外が発生しないプロジェクトから簡単に使用できます。 ただし、この実装は、致命的なエラーの報告を手段として例外をスローします (詳しくは「[エラー モデル](#failure)」を参照)。
+ゲーム チャット 2 インターフェイスでは、プロジェクトのコンパイルにおいて、C++/CX と従来の C++ のいずれかを選択する必要がなく、どちらも使用できます。 また、この実装では、致命的ではないエラーの報告手段として例外をスローしないため、必要な場合には、例外が発生しないプロジェクトから簡単に使用できます。 ただし、この実装は、致命的なエラーの報告を手段として例外をスローします (詳しくは「[エラー モデル](#failure-model-and-debugging)」を参照)。
 
 ## <a name="initialization"></a>初期化
 
@@ -175,7 +158,7 @@ chatManager->ProcessIncomingChatMessage(packetBuffer, remoteIdentifier);
 
 同様に、ゲーム チャット 2 には独自のトランスポート層はありません。トランスポート層はアプリで提供する必要があります。 送信パケットは、アプリによる `chat_manager::start_processing_data_frames()` メソッドと `chat_manager::finish_processing_data_frames()` メソッドの定期的かつ頻繁な呼び出しによって処理されます。 これらのメソッドを使用して、ゲーム チャット 2 は発信データをアプリに提供します。 これらは専用のネットワーク スレッドで頻繁にポーリングできるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべてのデータを取得できます。
 
-`chat_manager::start_processing_data_frames()` を呼び出すと、キューに入っているすべてのデータが `game_chat_data_frame` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、ターゲット "エンドポイント" を検査し、アプリのネットワーク層を使用してデータを適切なリモート アプリ インスタンスに配信する必要があります。 すべての `game_chat_data_frame` 構造体が終了した後は、`chat_manager:finish_processing_data_frames()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 例:
+`chat_manager::start_processing_data_frames()` を呼び出すと、キューに入っているすべてのデータが `game_chat_data_frame` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、ターゲット "エンドポイント" を検査し、アプリのネットワーク層を使用してデータを適切なリモート アプリ インスタンスに配信する必要があります。 すべての `game_chat_data_frame` 構造体が終了した後は、`chat_manager:finish_processing_data_frames()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 次に、例を示します。
 
 ```cpp
 uint32_t dataFrameCount;

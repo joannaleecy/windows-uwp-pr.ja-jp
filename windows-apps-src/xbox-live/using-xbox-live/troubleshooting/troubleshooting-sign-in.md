@@ -6,12 +6,12 @@ ms.date: 04/04/2017
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, サインイン, トラブルシューティング
 ms.localizationpriority: medium
-ms.openlocfilehash: becff46ce8fc186ff615c9f66eaed014f036f971
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: ff8d66105d8a1a44708bf23a681767a3044cb654
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046114"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117536"
 ---
 # <a name="troubleshooting-xbox-live-sign-in"></a>Xbox Live サインインのトラブルシューティング
 
@@ -102,7 +102,7 @@ XDP で [Application ID Setup] と [Dev Center Binding] を再確認します。
 
 ### <a name="0x87dd000e-title-not-authorized"></a>0x87DD000E タイトルが承認されていない
 
-デバイスが適切な開発サンドボックスに設定されていること、およびそのサンドボックスに対するアクセス権をユーザーが持っていることを確認します。 Xbox アプリでこれらを確認する方法の詳細については、「[Xbox アプリを使用したテスト](#test-xbox-app)」セクションを参照してください。
+デバイスが適切な開発サンドボックスに設定されていること、およびそのサンドボックスに対するアクセス権をユーザーが持っていることを確認します。 Xbox アプリでこれらを確認する方法の詳細については、「[Xbox アプリを使用したテスト](#test-using-the-xbox-app)」セクションを参照してください。
 
 それでも問題が解決しない場合は、前に説明したようにデベロッパー センターのバインディングとアプリ ID の設定も確認してください。
 

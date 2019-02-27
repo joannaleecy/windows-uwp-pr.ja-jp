@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116494"
+ms.locfileid: "9117582"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
@@ -122,7 +122,7 @@ Xbox 用の設計では、1 つの解像度 (1920 x 1080) だけを考慮すれ�
 
 #### <a name="number-of-clicks"></a>クリックの回数
 
-UI を簡略化するために、ユーザーがテレビ画面の端から端まで移動するときに、**クリックは 6 回**以内になるようにします。 ここでも**簡潔さ**の原則が重要です。 詳しくは、「[最小回数のクリック数](#path-of-least-clicks)」をご覧ください。
+UI を簡略化するために、ユーザーがテレビ画面の端から端まで移動するときに、**クリックは 6 回**以内になるようにします。 ここでも**簡潔さ**の原則が重要です。 
 
 ![6 つのアイコン分の幅](images/designing-for-tv/six-clicks.png)
 
@@ -462,7 +462,7 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 入れ子になった UI は、コンテナー UI 要素内部に囲まれた、操作できる入れ子になったアイテムを公開します。入れ子になったアイテムとコンテナー アイテムはどちらも互いに、個別のフォーカスを取得することが可能です。
 
-入れ子になった UI がうまく機能する入力の種類もありますが、XY ナビゲーションに依存するゲームパッドやリモコンでは、うまく機能するとは限りません。 このトピックのガイダンスに従い、UI が 10 フィート環境に最適化され、ユーザーが対話可能なすべての要素に容易にアクセスできるようにしてください。 よく使用される解決策の 1 つは、`ContextFlyout` に入れ子になった UI 要素を配置することです ([CommandBarとContextFlyout](#commandbar-and-contextflyout) をご覧ください)。
+入れ子になった UI がうまく機能する入力の種類もありますが、XY ナビゲーションに依存するゲームパッドやリモコンでは、うまく機能するとは限りません。 このトピックのガイダンスに従い、UI が 10 フィート環境に最適化され、ユーザーが対話可能なすべての要素に容易にアクセスできるようにしてください。 1 つの一般的なソリューションは、入れ子になった UI 要素を配置する、`ContextFlyout`します。
 
 入れ子になった UI について詳しくは、「[リスト項目の入れ子になった UI](../controls-and-patterns/nested-ui.md)」をご覧ください。
 
@@ -558,7 +558,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
                     "Windows.Xbox");
 ```
 
-次に、このチェックに続くコード ブロックで、UI に適切な調整を行うことができます。 この例については、「[UWP 色のサンプル](#uwp-color-sample)」をご覧ください。
+次に、このチェックに続くコード ブロックで、UI に適切な調整を行うことができます。 
 
 ## <a name="summary"></a>まとめ
 

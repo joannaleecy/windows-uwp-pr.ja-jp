@@ -5,12 +5,12 @@ keywords: ホストされた Web アプリ、HWA、REST API、単一ページ �
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114578"
+ms.locfileid: "9117722"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 
@@ -40,7 +40,7 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 最初に、簡単なメモリ ゲームの Web アプリを実現するための、メモリ ゲームの API を構築します。 [Swagger](https://swagger.io/) を使って API を定義し、手動テストのためのスキャフォールディング コードと Web UI を生成します。
 
-このパートを省略して、[パート 2: 単一ページの Web アプリを構築する](#part-ii-build-a-single-page-web-appl)に直接進む場合には、[パート 1 の完成コード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)を利用できます。*README* の指示に沿って、ローカルでコードを実行するか、または *5. API サービスを Azure でホストして CORS を有効化する*を参照して Azure で実行します。
+このパートを省略して、[パート 2: 単一ページの Web アプリを構築する](#part-ii-build-a-single-page-web-application)に直接進む場合には、[パート 1 の完成コード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)を利用できます。*README* の指示に沿って、ローカルでコードを実行するか、または *5. API サービスを Azure でホストして CORS を有効化する*を参照して Azure で実行します。
 
 ### <a name="game-overview"></a>ゲームの概要
 

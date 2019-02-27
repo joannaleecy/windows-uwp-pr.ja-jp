@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948024"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117822"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>Android と iOS 開発者向けの Windows アプリ概念マッピング
 
@@ -43,7 +43,7 @@ ms.locfileid: "8948024"
 <td align="left"><strong>デザイン言語。</strong><br><br>プラットフォーム上のアプリの外観と動作方法を規定する規則のセット。</td>
 <td align="left"><strong>Android のマテリアル デザイン</strong> ガイドラインに、Android の設計者や開発者が従う視覚言語が示されています。</td>
 <td align="left"><strong>ヒューマン インターフェイス ガイドライン</strong>に、iOS の設計者や開発者向けのアドバイスが示されています。</td>
-<td align="left">「<a href="https://dev.windows.com/design"><strong>UWP アプリのデザイン</strong></a>」で、すべての Windows 10 デバイスで優れた外観を持つアプリを作成する方法について説明しています。 ユーザー インターフェイス (UI) デザインの基本、レスポンシブ デザイン テクニック、詳細なガイドラインの完全な一覧が示されています。<br/></td>
+<td align="left">「<a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP アプリのデザイン</strong></a>」で、すべての Windows 10 デバイスで優れた外観を持つアプリを作成する方法について説明しています。 ユーザー インターフェイス (UI) デザインの基本、レスポンシブ デザイン テクニック、詳細なガイドラインの完全な一覧が示されています。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>ユーザー インターフェイス マークアップ言語。</strong> <br><br>UI とそのコンポーネントをレンダリングし、記述するマークアップ言語。 プラットフォームごとに、ビジュアル編集とマークアップ編集のためのエディターが提供されています。<br/></td>
@@ -298,7 +298,7 @@ ms.locfileid: "8948024"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>アプリのライフサイクル。</strong> <br><br>アプリの起動時、中断時、再開時、終了時にイベントを処理し、アプリケーションの状態を保存/復元したり他のタスクを実行したりする機会を提供します。</td>
-<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong>OnResume</strong>など<strong>のライフ サイクル コールバック</strong>は、<strong>アクティビティ クラス</strong>に実装されています。</td>
+<td align="left">アクティビティのそれぞれに、<strong>再開</strong>などの状態を持つ独自の<strong>アクティビティ ライフサイクル</strong>があります。 <strong>OnResume</strong>など<strong>のライフ サイクル コールバック</strong>は、<strong>アクティビティ クラス</strong>に実装されます。</td>
 <td align="left"><strong>アプリケーションのライフサイクル</strong>には<strong>中断</strong>などの状態があります。 <strong>applicationDidEnterBackground:</strong> などのメソッドを<strong>アプリケーションのデリゲート オブジェクト</strong>に実装して、状態が変わったときにコードを実行できます。</td>
 <td align="left">アプリケーションには<strong>アプリの実行状態</strong> NotRunning、Activated、Running、Suspending、Suspended、Resuming があります。<br/><br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application クラス</a></strong>のメソッド OnLaunched、OnActivated、Suspending、Resuming をアプリに実装して、状態が変わったときにコードを実行できます。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">アプリのライフサイクル</a></td>
 </tr>

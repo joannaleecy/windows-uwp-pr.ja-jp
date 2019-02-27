@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 16af4bcabbc21c60a5dc0006da51f5bd23eef791
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 175009773f7969adbaf36a036e733443f593467f
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941995"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117772"
 ---
 #  <a name="define-the-uwp-app-framework"></a>UWP アプリ フレームワークの定義
 
@@ -23,7 +23,7 @@ ms.locfileid: "8941995"
 
 アプリ シングルトンが呼び出す次の 5 つのメソッドを実装する必要があります。
 * [__Initialize__](#initialize-the-view-provider)
-* [__SetWindow__](#configure-the-window-and-display-behavior)
+* [__SetWindow__](#configure-the-window-and-display-behaviors)
 * [__Load__](#load-method-of-the-view-provider)
 * [__Run__](#run-method-of-the-view-provider)
 * [__Uninitialize__](#uninitialize-method-of-the-view-provider)
@@ -384,7 +384,7 @@ void GameMain::Run()
 
 ユーザー最終的にゲーム セッションを終了したら、クリーンアップする必要があります。 **Uninitialize** はまさにそのような用途に使います。
 
-Windows 10 では、アプリ ウィンドウを閉じても強制アプリのプロセスが代わりに、アプリ シングルトンの状態をメモリに書き込まれます。 システムでこのメモリの再利用が必要になった際に、リソースの特別なクリーンアップなどの特別な処理が必要な場合は、そのクリーンアップ用のコードをこのメソッドに入れてください。
+Windows 10 のアプリのプロセスを強制終了しないアプリ ウィンドウを閉じてが代わりに、アプリ シングルトンの状態をメモリに書き込まれます。 システムでこのメモリの再利用が必要になった際に、リソースの特別なクリーンアップなどの特別な処理が必要な場合は、そのクリーンアップ用のコードをこのメソッドに入れてください。
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

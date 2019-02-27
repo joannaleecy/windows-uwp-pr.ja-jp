@@ -6,12 +6,12 @@ ms.date: 01/28/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer, XIM, チャット
 ms.localizationpriority: medium
-ms.openlocfilehash: ab7aca94ca491cd986fcff050e17da5fed1f2ea9
-ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
+ms.openlocfilehash: 82b38b8d0d94e4cccf501a101faee0e28a6b43c0
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099311"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117545"
 ---
 # <a name="using-xim-as-a-dedicated-chat-solution-via-out-of-band-reservations"></a>帯域外予約を介した専用チャット ソリューションとしての XIM の使用
 
@@ -23,13 +23,6 @@ ms.locfileid: "9099311"
 
 以降のトピックでは、XIM で帯域外予約を活用する方法について説明します。 "標準的な" XIM の使用方法は前のセクションで説明されているものとほとんど変わりがないため、説明は一部省略されています。 詳しくは、「[XIM の使用](using-xim.md)」をご覧ください。
 
-トピック:
-
-1. [新しい帯域外予約による XIM ネットワークへの移行](#moving)
-1. [帯域外予約を使用して管理される XIM ネットワークへのプレーヤーの追加](#adding)
-1. [帯域外予約を使用して管理される XIM ネットワークでのチャット ターゲットの構成](#targets)
-1. [帯域外予約を使用して管理される XIM ネットワークからのプレイヤーの削除](#remove)
-1. [帯域外予約を使用して管理される XIM ネットワークのクリーンアップ](#clean)
 
 ## <a name="moving-to-a-new-out-of-band-reservation-xim-network"></a>新しい帯域外予約による XIM ネットワークへの移行 
 

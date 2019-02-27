@@ -6,12 +6,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a189dd127c38f9408041f08f3d395e80fa0243
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 891fa8da1ca6e26128e0a33d28a505a18e99662a
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929526"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117564"
 ---
 # <a name="arena-title-integration-guide"></a>アリーナ タイトル統合ガイド
 
@@ -32,7 +32,7 @@ Xbox アリーナでは、Xbox のマルチプレイヤー ゲーム開発で一
 ![](../../images/arena/tournament-flow.png)
 
 
-アリーナ プロトコルのアクティブ化 URI には、トーナメントや、マッチのセッション、マッチ終了時にタイトルが起動できるディープ リンクに関する情報が含まれています。 ディープ リンクは、ユーザーを Xbox アリーナ UI に戻すためのリンクです。 これらの URI のコンポーネントについて詳しくは、「[アリーナ統合の基本的要件](#basic-requirements-for-arena-integration)」の「[プロトコルのアクティブ化](#protocol-activation)」のセクションをご覧ください。
+アリーナ プロトコルのアクティブ化 URI には、トーナメントや、マッチのセッション、マッチ終了時にタイトルが起動できるディープ リンクに関する情報が含まれています。 ディープ リンクは、ユーザーを Xbox アリーナ UI に戻すためのリンクです。 これらの URI のコンポーネントについて詳しくは、「[アリーナ統合の基本的要件](#basic-requirements-for-arena-integration)」の「[プロトコルのアクティブ化](#1protocol-activation)」のセクションをご覧ください。
 
 ## <a name="basic-requirements-for-arena-integration"></a>アリーナ統合の基本的要件
 
@@ -93,7 +93,7 @@ ms-xbl-{titleIdHex}://
 **organizerId、tournamentId** | **organizerId** と **tournamentId** の組み合わせは、マッチが関連付けられているトーナメントの一意の識別子となります。 トーナメントに関する詳細な情報をタイトルに表示する場合は、この識別子を使ってトーナメント ハブから情報を取得できます。
 **teamId** | **teamId** は、トーナメントのコンテキストで、(**joinerXuid** パラメーターで指定された) ユーザーの所属チームを示す一意の識別子です。 **organizerId** パラメーターと **tournamentId** パラメーターの組み合わせと同様、必要に応じて、**teamId** を使ってトーナメント ハブからチームに関する情報を取得できます。
 **scid、templateName、name** | 組み合わせて使用して、セッションを識別できます。 セッションへの MPSD URI パスで指定されているのと同じ 3 つのパラメーターです。</br> </br>`https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templateName}/sessions{name}`.</br></br>XSAPI では、これらは `multiplayer_session_reference ` コンストラクターを指す 3 つのパラメーターです。
-**returnUri、returnPfn** | **returnUri** は、ユーザーを Xbox アリーナ UI に戻すためのプロトコルのアクティブ化 URI です。 **returnPfn** パラメーターは、指定されていない場合もあります。 指定されている場合は、**returnUri** を処理するためのアプリの製品ファミリ名 (PFN) です。 これらの値の使用方法を示すサンプル コードについては、「[Xbox アリーナ UI への復帰](#returning-to-the-xbox-arena-ui)」をご覧ください。
+**returnUri、returnPfn** | **returnUri** は、ユーザーを Xbox アリーナ UI に戻すためのプロトコルのアクティブ化 URI です。 **returnPfn** パラメーターは、指定されていない場合もあります。 指定されている場合は、**returnUri** を処理するためのアプリの製品ファミリ名 (PFN) です。 これらの値の使用方法を示すサンプル コードについては、「[Xbox アリーナ UI への復帰](#4returning-to-the-xbox-arena-ui)」をご覧ください。
 
 ### <a name="2--playing-the-match"></a>2. マッチの実行
 
@@ -324,7 +324,7 @@ void Sample::LaunchReturnUi(Uri ^returnUri, String ^returnPfn, User ^currentUser
 
 ## <a name="configuring-a-title-for-arena"></a>タイトルをアリーナ対応として構成する手順
 
-タイトルをアリーナを有効にするには、いくつか追加の手順は、Xbox デベロッパー ポータル (XDP) または[パートナー センター](https://partner.microsoft.com/dashboard)で構成するとき必要です。
+アリーナでタイトルを有効にするのには、Xbox デベロッパー ポータル (XDP) または[パートナー センター](https://partner.microsoft.com/dashboard)で構成するときでいくつか追加の手順は必要。
 
 ### <a name="enabling-arena-for-your-title"></a>タイトルでのアリーナの有効化
 

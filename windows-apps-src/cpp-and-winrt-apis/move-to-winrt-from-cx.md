@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, 移植, 移行, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f60576962d9e69d8ec7ba80918fdbdfe96f070
-ms.sourcegitcommit: 9b0f9c8854277d2e786e9294af3a2b559aa457a8
+ms.openlocfilehash: fe988bffbf024308fb5d43da7ed538e5330b58de
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "9099319"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117642"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>C++/CX から C++/WinRT への移行
 
@@ -371,7 +371,7 @@ C++/CX では、[**Platform::String::Data**](https://docs.microsoft.com/en-us/cp
 auto var{ titleRecord->TitleName->Data() };
 ```
 
-C++/WinRT で同じ操作を行うには、[**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 関数を使用して null で終了する C スタイルの文字列バージョンを取得します。これは **std::wstring** から取得する場合と同様です。
+C++/WinRT で同じ操作を行うには、[**hstring::c_str**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) 関数を使用して null で終了する C スタイルの文字列バージョンを取得します。これは **std::wstring** から取得する場合と同様です。
 
 ```cppwinrt
 auto var{ titleRecord.TitleName().c_str() };

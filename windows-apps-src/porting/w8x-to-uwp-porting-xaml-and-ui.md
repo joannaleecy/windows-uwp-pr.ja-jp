@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7b8bb652c3d8b978d631da2e529662a455310458
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046036"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117852"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>Windows ランタイム 8.x の XAML と UI の UWP への移植
 
@@ -86,7 +86,7 @@ ms.locfileid: "9046036"
 
 ## <a name="controls-and-control-styles-and-templates"></a>コントロールとコントロール スタイルおよびテンプレート
 
-8.1 の外観と動作コントロールに関して、windows 10 で実行されているユニバーサル 8.1 アプリが保持されます。 ただし、そのアプリを windows 10 アプリを移植するときは、外観と動作注意すべきいくつかの違いがあります。 アーキテクチャとコントロールの設計は、変更はありません本質的には、windows 10 アプリのため、変更は、[デザイン言語](#design-language-in-windows-10)、簡素化、操作性の向上に関するほとんどの場合はします。
+8.1 の外観と動作コントロールに関して、windows 10 で実行されているユニバーサル 8.1 アプリが保持されます。 ただし、そのアプリを windows 10 アプリを移植するときは、外観と動作注意すべきいくつかの違いがあります。 アーキテクチャとコントロールの設計は、変更はありません本質的には、windows 10 アプリのため、変更は、デザイン言語、簡素化、および操作性の機能強化に関するほとんどの場合はします。
 
 **注:**  PointerOver 表示状態は、カスタム スタイル/テンプレートで、Windows ランタイム 8.x アプリと Windows Phone ストア アプリではなく windows 10 アプリに関連します。 このため、windows 10 アプリでサポートされているシステム リソース キーがあるため) ことを再利用、カスタム スタイル/テンプレート、Windows ランタイム 8.x アプリから windows 10 にアプリを移植するときをお勧めします。
 確実にする場合、カスタム スタイル/テンプレートの表示状態は、最新のセットを使用していると、既定のスタイル/テンプレートに対するパフォーマンスの向上を活用するには、新しい windows 10 既定のテンプレートのコピーを編集し、再適用します。カスタマイズをします。 パフォーマンス向上の 1 つの例として、以前に **ContentPresenter** または Panel を囲んでいた **Border** が削除され、子要素が境界線を表示するようになりました。
@@ -122,7 +122,7 @@ UWP アプリのコントロールについて詳しくは、「[機能別コン
 
 ##  <a name="design-language-in-windows10"></a>Windows 10 でのデザイン言語
 
-ユニバーサル 8.1 アプリと windows 10 アプリの間でデザイン言語に小さなが重要な違いがあります。 詳しくは、「[Design](https://dev.windows.com/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
+ユニバーサル 8.1 アプリと windows 10 アプリの間でデザイン言語に小さなが重要な違いがあります。 詳しくは、「[Design](https://developer.microsoft.com/en-us/windows/apps/design)」(UWP アプリの設計) をご覧ください。 デザイン言語に変更が加えられていますが、設計原則は維持されています。細部にまで注意を払いながら、簡潔さを追求しています。そのために、クロムよりもコンテンツを優先し、視覚要素を大幅に減らし、真のデジタル領域を常に意識しています。また、視覚的な階層の利用 (特に文字体裁に対して)、グリッド内でのデザイン、滑らかなアニメーションを使ったエクスペリエンスの実現も行っています。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有効ピクセル、視聴距離、スケール ファクター
 
@@ -247,7 +247,7 @@ UWP アプリ プロジェクトで、ユニバーサル 8.1 プロジェクト�
 
 それ以外の場合、リソース キーはサポートされなくなりました。 Visual Studio の XAML マークアップ エディターでは、解決できないリソース キーへの参照が強調表示されます。 たとえば XAML マークアップ エディターでは、スタイル キー `ListViewItemTextBlockStyle` への参照の下に赤い波線が引かれます。 これを修正しない場合、エミュレーターかデバイスに展開しようとしたときにアプリが直ちに終了します。 したがって、XAML マークアップの正確性に関する作業に着手することが重要です。 また、そのような問題を検出するために Visual Studio が優れたツールであることがわかります。
 
-まだサポートされているキーに関して、デザイン言語の変更は、一部のスタイルによって設定されるプロパティが変更されたことを意味します。 たとえば、 `TitleTextBlockStyle` Windows ランタイム 8.x アプリでは 14.667 と Windows Phone ストア アプリで 18.14 px に設定する**フォント サイズ**を設定します。 同じスタイルは、windows 10 アプリで非常に大きい 24px に**FontSize**を設定します。 デザインとレイアウトを確認し、適切なスタイルを適切な場所で使ってください。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://dev.windows.com/design)」をご覧ください。
+まだサポートされているキーに関して、デザイン言語の変更は、一部のスタイルによって設定されるプロパティが変更されたことを意味します。 たとえば、 `TitleTextBlockStyle` Windows ランタイム 8.x アプリでは 14.667 と Windows Phone ストア アプリで 18.14 px に設定する**フォント サイズ**を設定します。 同じスタイルは、windows 10 アプリで非常に大きい 24px に**FontSize**を設定します。 デザインとレイアウトを確認し、適切なスタイルを適切な場所で使ってください。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](https://developer.microsoft.com/en-us/windows/apps/design)」をご覧ください。
 
 サポートされなくなったキーの完全な一覧を次に示します。
 

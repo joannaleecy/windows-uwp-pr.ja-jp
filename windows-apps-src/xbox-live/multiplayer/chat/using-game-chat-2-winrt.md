@@ -5,30 +5,16 @@ ms.date: 04/11/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
-ms.openlocfilehash: c06ee8610273273f234dbf3c7cb9fbd3a17eaa76
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 1cb0578151d4262d61f5fbc078bebab721fb3bfe
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115578"
+ms.locfileid: "9117548"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>ゲーム チャット 2 (WinRT プロジェクション) の使用
 
 ここでは、ゲーム チャット 2 の C# API の使用方法について概要を紹介します。 C++ を通じたゲーム チャット 2 へのアクセスを予定しているゲーム開発者は、「[ゲーム チャット 2 の使用](using-game-chat-2.md)」をご覧ください。
-
-1. [前提条件](#prereq)
-2. [初期化](#init)
-3. [ユーザーの構成](#config)
-4. [データ フレームの処理](#data)
-5. [状態変更の処理](#state)
-6. [テキスト チャット](#text)
-7. [アクセシビリティ](#access)
-8. [UI](#UI)
-9. [ミュート](#mute)
-10. [悪い評判の自動ミュート](#automute)
-11. [権限とプライバシー](#priv)
-12. [クリーンアップ](#cleanup)
-13. [一般的なシナリオの構成方法](#how-to-configure-popular-scenarios)
 
 ## <a name="prerequisites-a-nameprereq"></a>前提条件<a name="prereq">
 

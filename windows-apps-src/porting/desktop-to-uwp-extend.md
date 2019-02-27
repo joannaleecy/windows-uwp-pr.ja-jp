@@ -6,21 +6,21 @@ ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941099"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117812"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張
 
 一部の Windows 10 エクスペリエンス (タッチ対応 UI ページなど) は、最新のアプリ コンテナー内で実行する必要があります。 こうしたエクスペリエンスを追加するには、UWP プロジェクトと Windows ランタイム コンポーネントを使ってデスクトップ アプリケーションを拡張します。
 
-多くの場合、デスクトップ アプリケーションから直接 Windows ランタイム Api を呼び出して、ため、このガイドを確認する前に[強化 for Windows 10](desktop-to-uwp-enhance.md)を表示できます。
+多くの場合、デスクトップ アプリケーションから直接 Windows ランタイム Api を呼び出す、そのため、このガイドを確認する前に参照してください[for Windows 10 に強化](desktop-to-uwp-enhance.md)できます。
 
 >[!NOTE]
->このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 まだ行っていない場合、は、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
+>このガイドでは、デスクトップ アプリケーションの Windows アプリ パッケージを作成したことを前提としています。 いないまだ行っていない場合、[デスクトップ アプリケーションのパッケージ](desktop-to-uwp-root.md)を参照してください。
 
 準備ができたら始めましょう。
 
@@ -42,7 +42,7 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 
 デスクトップ アプリケーションを Windows ランタイム Api を呼び出す必要があるファイルへの参照があることを確認してください。
 
-これを行うには、 [Windows 10 のデスクトップ アプリケーションの効果を高める](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)トピックの[最初に、プロジェクトのセットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)」セクションを参照してください。
+これを行うには、 [Windows 10 のデスクトップ アプリケーションの効果を高める](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)トピックの[最初に、プロジェクトをセットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)セクションをご覧ください。
 
 ### <a name="add-a-uwp-project"></a>UWP プロジェクトを追加する
 
@@ -93,7 +93,7 @@ UWP プロジェクトとランタイム コンポーネントで行うことが
 ![アダプティブ デザイン](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされているアプローチです。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 それらプロトタイプ コードで今すぐ試すをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、今後の Windows リリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
+>この例では、UWP プロジェクトをソリューションに追加することで、XAML UI を示しています。 デスクトップ アプリケーションでの XAML Ui の表示を安定したサポートされているアプローチです。 代わりに、この方法では、XAML 島を使用して、デスクトップ アプリケーションに直接 UWP XAML コントロールを追加します。 XAML 諸島現在利用可能な開発者プレビューとしてします。 試すことに、独自のプロトタイプ コードのようになりましたをお勧めしますがない使用することに運用コードでこの時点でお勧めしますしないでください。 これらの Api とコントロールは引き続き成熟して、将来の Windows リリースに安定します。 XAML 諸島について詳しくは、[デスクトップ アプリケーションで UWP コントロール](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
 
 ### <a name="the-design-pattern"></a>設計パターン
 
@@ -103,7 +103,7 @@ XAML ベースの UI を表示するには、以下の手順を実行します�
 
 2: [XAML UI を作成する](#xaml-UI)
 
-3: [プロトコル拡張機能を UWP プロジェクトに追加する](#protocol)
+3: [プロトコル拡張機能を UWP プロジェクトに追加する](#add-a-protocol-extension)
 
 4: [デスクトップ アプリから UWP アプリを起動する](#start)
 
@@ -219,7 +219,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-コードでは、XAML ページの背後にある、オーバーライド、``OnNavigatedTo``ページに渡されるパラメーターを使用する方法。 この場合、このページに渡された緯度と経度を使用してマップに場所を表示します。
+コードでは、XAML ページの背後にある、オーバーライド、``OnNavigatedTo``ページに渡されたパラメーターを使用する方法。 この場合、このページに渡された緯度と経度を使用してマップに場所を表示します。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -250,7 +250,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 デスクトップ アプリケーションを共有ターゲットにすることで、共有をサポートしている他のアプリのデータ (画像など) をユーザーが簡単に共有できるようになります。
 
-たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 その機能を備えている WPF サンプル アプリケーションを次に示します。
+たとえば、ユーザーは、Microsoft Edge、フォト アプリから画像を共有するアプリケーションを選択できます。 その機能のある WPF サンプル アプリケーションを次に示します。
 
 ![共有ターゲット](images/desktop-to-uwp/share-target.png).
 
@@ -262,7 +262,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 :1: [共有ターゲットの拡張機能を追加する](#share-extension)
 
-: 2: [OnShareTargetActivated イベントのハンドラーをオーバーライド](#override)
+: 2: [OnShareTargetActivated イベント ハンドラーをオーバーライド](#override)
 
 : 3:[デスクトップ拡張機能を UWP プロジェクトに追加](#desktop-extensions)
 
@@ -296,11 +296,11 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 UWP プロジェクトによって生成された実行可能ファイルの名前と、エントリ ポイント クラスの名前を指定します。 このマークアップは、UWP アプリの実行可能ファイルの名前が前提としています。`ShareTarget.exe`します。
 
-アプリとの間で共有できるようにするファイルの種類を指定することも必要です。 この例でを行う[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを共有ターゲット ビットマップ画像を指定するための`Bitmap`のサポートされているファイルの種類。
+アプリとの間で共有できるようにするファイルの種類を指定することも必要です。 この例ではここを行う[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを共有ターゲット ビットマップ画像を指定するための`Bitmap`のサポートされているファイルの種類。
 
 <a id="override" />
 
-### <a name="override-the-onsharetargetactivated-event-handler"></a>OnShareTargetActivated イベントのハンドラーをオーバーライドします。
+### <a name="override-the-onsharetargetactivated-event-handler"></a>OnShareTargetActivated イベント ハンドラーをオーバーライドします。
 
 UWP プロジェクトの**アプリ**のクラスで**OnShareTargetActivated**イベント ハンドラーをオーバーライドします。
 
@@ -329,7 +329,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-このコードでは、アプリのローカル ストレージ フォルダーに、ユーザーが共有されているイメージを保存します。 その後、その同じフォルダーからのイメージをプルするデスクトップ アプリケーションを変更します。 UWP アプリとして、同じパッケージに含まれているために、デスクトップ アプリケーションを実行できます。
+このコードは、アプリのローカル ストレージ フォルダーに、ユーザーが共有されているイメージを保存します。 その後、その同じフォルダーからイメージをプルするデスクトップ アプリケーションを変更します。 UWP アプリとして、同じパッケージに含まれているために、デスクトップ アプリケーションはことで実現できます。
 
 <a id="desktop-extensions" />
 
@@ -359,7 +359,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>共有ファイルを取得するデスクトップ アプリケーションを変更します。
 
-共有ファイルを処理を検索するデスクトップ アプリケーションを変更します。 この例では、UWP アプリには、ローカル アプリ データ フォルダーに共有ファイルが格納されます。 そのため、そのフォルダーからプル写真に[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを変更しますします。
+検索し、共有ファイルを処理するデスクトップ アプリケーションを変更します。 この例では、UWP アプリには、共有、ローカル アプリ データ フォルダーにファイルが格納されます。 そのため、そのフォルダーからプル写真に[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)デスクトップ アプリケーションを変更しますします。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;

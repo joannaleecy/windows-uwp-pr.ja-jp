@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
-ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934647"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117752"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>レンダリング フレームワーク II: ゲームのレンダリング
 
@@ -42,7 +42,7 @@ ms.locfileid: "8934647"
     * GPU に送信するデータの 1 フレームあたりの量を減らすために、更新頻度の異なる複数の定数バッファーを使用します。 このサンプルでは、更新する必要のある頻度に基づいて定数を異なるバッファーに分けています。 Direct3D プログラミングでは、このような処理をお勧めします。 
     * このゲームのサンプルでは、4 つの定数バッファーを定義します。
         1. __m\_constantBufferNeverChanges__ には照明パラメーターが含まれます。 これは、__FinalizeCreateGameDeviceResources__ メソッドで一度設定されると、再び変更されることはありません。
-        2. __m\_constantBufferChangeOnResize__ にはプロジェクション マトリックスが含まれます。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 これは、[__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) で設定され、[__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) メソッドでリソースが読み込まれた後で更新されます。 3D でレンダリングする場合は、フレームごとに 2 回変更されます。
+        2. __m\_constantBufferChangeOnResize__ にはプロジェクション マトリックスが含まれます。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 これは、[__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) で設定され、[__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) メソッドでリソースが読み込まれた後で更新されます。 3D でレンダリングする場合は、フレームごとに 2 回変更されます。
         3. __m\_constantBufferChangesEveryFrame__ にはビュー マトリックスが含まれます。 このマトリックスは、カメラ位置とルック方向 (標準はプロジェクション方向) に依存し、__Render__ メソッドで 1 フレームあたり 1 回変更されます。 これについては、「__レンダリング フレームワーク I: レンダリングの概要__」の「[__GameRenderer::Render__ メソッド](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)」で既に説明しました。
         4. __m\_constantBufferChangesEveryPrim__ には各プリミティブのモデル マトリックスとマテリアル プロパティが含まれます。 モデル マトリックスは、頂点をローカル座標からワールド座標に変換します。 これらの定数は各プリミティブに固有で、描画呼び出しのたびに更新されます。 これについては、「__レンダリング フレームワーク I: レンダリングの概要__」の「[プリミティブのレンダリング](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)」で既に説明しました。
 * プリミティブのテクスチャを保持するシェーダー リソース オブジェクトも、このクラスで定義されます。
@@ -158,7 +158,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 ゲーム サンプル (および Visual Studio の __DirectX 11 アプリ (ユニバーサル Windows)__ テンプレート) では、ゲームのリソースの作成と読み込みは、__GameRenderer__ コンス トラクターから呼び出される次の 2 つのメソッドを使用して実装されます。
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>CreateDeviceDependentResources メソッド
 
@@ -581,7 +581,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource メソッド
 
-CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプル ゲームでは、 __ConstantBufferChangeOnResize__でプロジェクション マトリックスを更新します。
+CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプル ゲームで__ConstantBufferChangeOnResize__でプロジェクション マトリックスを更新します。
 
 ウィンドウ サイズのリソースは、次の方法で更新されます。 
 * アプリ フレームワークが、ウィンドウの状態の変更を表すいくつかの考えられるイベントのいずれかを取得します。 
@@ -590,7 +590,7 @@ CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ
 
 このゲーム サンプルでは、多くのメソッド呼び出しが [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) メソッドと同じです。 コード チュートリアルについては、前のセクションを参照してください。
 
-ゲームの HUD とオーバーレイ ウィンドウ サイズのレンダリングの調整については、「[ユーザー インターフェイスの追加](#tutorial--adding-a-user-interface)」を参照してください。
+ゲームの HUD とオーバーレイ ウィンドウ サイズのレンダリングの調整については、「[ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md)」を参照してください。
 
 ```cpp
 // Initializes view parameters when the window size changes.

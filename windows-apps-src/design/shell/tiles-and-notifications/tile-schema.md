@@ -8,12 +8,12 @@ ms.date: 07/28/2017
 ms.topic: article
 keywords: Windows 10, UWP, タイル, タイル通知, タイルのコンテンツ, スキーマ, タイルのペイロード
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ac975ae3893b1d3d591133862d0ff3733cca6b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f12f1c2b6ac158b6f8e837fd3d6a64f96939ed99
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925140"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117732"
 ---
 # <a name="tile-content-schema"></a>タイルのコンテンツのスキーマ
 
@@ -67,12 +67,12 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 | プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
 | **Content** | [ITileBindingContent](#itilebindingcontent) | false | タイルに表示される視覚的なコンテンツです。 [TileBindingContentAdaptive](#tilebindingcontentadaptive)、[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople)、または [TileBindingContentPhotos](#TileBindingContentPhotos) のいずれかです。 |
-| **Branding** | [TileBranding](#tilebranding) | false | アプリのブランドを表示するためにタイルで使用されるフォームです。 既定では、既定のタイルからブランド化を継承します。 |
+| **Branding** | TileBranding | false | アプリのブランドを表示するためにタイルで使用されるフォームです。 既定では、既定のタイルからブランド化を継承します。 |
 | **DisplayName** | string | false | このタイルのサイズに対応したタイルの表示名を上書きする文字列です (オプション)。 |
 | **Arguments** | string | false | Anniversary Update の新機能: アプリで定義されたデータです。ユーザーがライブ タイルからアプリを起動したときに、LaunchActivatedEventArgs の TileActivatedInfo プロパティを使用してアプリに戻されます。 これにより、ユーザーがライブ タイルをタップしたときに表示されたタイル通知がどれであるかがわかります。 Anniversary Update が適用されていないデバイスでは、このプロパティは無視されるだけです。 |
 | **BaseUri** | Uri | false | 画像ソースの属性において相対 URL と組み合わされる、既定のベース URL です。 |
 | **AddImageQuery** | bool? | false | true に設定すると、トースト通知で指定された画像 URL に Windows がクエリ文字列を追加できるようになります。 この属性は、サーバーが画像をホストしていてクエリ文字列を処理できる場合に使用します。サーバーがこのために、クエリ文字列に基づいて画像の変化形を取得しているか、またはクエリ文字列を無視して使わずに指定の画像を返しているかどうかは問いません。 このクエリ文字列は、スケール、コントラスト設定、および言語を指定するものです。たとえば、通知で指定されている値 "www.website.com/images/hello.png" は "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" になります。 |
-| **Language**| string | false | ローカライズされたリソースを使用する際の視覚的なペイロードの対象ロケールです。"en-US" や "fr-FR" のように BCP-47 言語タグとして指定されます。 このロケールは、バインディングかテキストで指定されるあらゆるロケールによって上書きされます。 未指定の場合は、システム ロケールが代わりに使用されます。 |
+| **言語**| string | false | ローカライズされたリソースを使用する際の視覚的なペイロードの対象ロケールです。"en-US" や "fr-FR" のように BCP-47 言語タグとして指定されます。 このロケールは、バインディングかテキストで指定されるあらゆるロケールによって上書きされます。 未指定の場合は、システム ロケールが代わりに使用されます。 |
 
 
 ## <a name="itilebindingcontent"></a>ITileBindingContent
@@ -92,7 +92,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 
 | プロパティ | 型 | 必須かどうか | 説明 |
 |---|---|---|---|
-| **Children** | IList<[ITileBindingContentAdaptiveChild](#ITileBindingContentAdaptiveChild)> | false | インラインの視覚要素です。 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage)、および [AdaptiveGroup](#adaptivegroup) の各オブジェクトを追加することができます。 子は、垂直方向の StackPanel 形式で表示されます。 |
+| **Children** | IList<ITileBindingContentAdaptiveChild> | false | インラインの視覚要素です。 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage)、および [AdaptiveGroup](#adaptivegroup) の各オブジェクトを追加することができます。 子は、垂直方向の StackPanel 形式で表示されます。 |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | すべてのタイルのコンテンツの後ろに表示される背景画像です (オプション)。フルブリードで表示されます。 |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | タイルでアニメーション化されるプレビュー画像です (オプション)。 |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | 子のコンテンツ全体を対象としたテキストの積み重ね (縦方向の配置) を制御します。 |
@@ -115,7 +115,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
 テキスト スタイルは、フォント サイズ、太さ、および不透明度を制御します。 "Subtle" の不透明度は 60% の不透明度になります。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 スタイルがレンダラーによって決定されます。 |
 | **Caption** | 段落のフォント サイズより小さいサイズです。 |
@@ -140,7 +140,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ### <a name="adaptivetextalign"></a>AdaptiveTextAlign
 テキストの水平方向の配置を制御します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 配置がレンダラーによって自動的に決定されます。 |
 | **Auto** | 配置が現在の言語とカルチャによって決定されます。 |
@@ -175,7 +175,7 @@ TileContent は、視覚効果などのタイル通知のコンテンツを説�
 ### <a name="adaptiveimagealign"></a>AdaptiveImageAlign
 画像の水平方向の配置を指定します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | 既定値です。 配置の動作がレンダラーによって決定されます。 |
 | **Stretch** | 利用可能な幅いっぱいに画像が拡大されます (また同時に、画像が配置される位置に応じて、利用可能な高さいっぱいに拡大されることもあります)。 |
@@ -237,7 +237,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ### <a name="tilebackgroundimagecrop"></a>TileBackgroundImageCrop
 背景画像のトリミングを制御します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | トリミングがレンダラーの既定の動作を使用します。 |
 | **None** | 画像がトリミングされず、正方形で表示されます。 |
@@ -259,7 +259,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 ### <a name="tilepeekimagecrop"></a>TilePeekImageCrop
 プレビュー画像のトリミングを制御します。
 
-| 値 | 意味 |
+| Value | 意味 |
 |---|---|
 | **Default** | トリミングがレンダラーの既定の動作を使用します。 |
 | **None** | 画像がトリミングされず、正方形で表示されます。 |
@@ -271,7 +271,7 @@ TextStacking は、コンテンツの垂直方向の配置を指定します。
 
 | 値 | 意味 |
 |---|---|
-| **Default** | 既定値です。 レンダラーが既定の垂直方向の配置を自動的に選択します。 |
+| **既定値** | 既定値です。 レンダラーが既定の垂直方向の配置を自動的に選択します。 |
 | **Top** | 上に合わせて垂直に配置されます。 |
 | **Center** | 中央に合わせて垂直に配置されます。 |
 | **Bottom** | 下に合わせて垂直に配置されます。 |
