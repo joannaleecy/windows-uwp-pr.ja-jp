@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: d60dcb60d8628822d7597ad25268aae5e7a7ae6a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 6ff7b37eee4f2b9228a635a117e164d7d9859629
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044579"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116068"
 ---
 # <a name="create-write-and-read-a-file"></a>ファイルの作成、書き込み、および読み取り
 
@@ -328,6 +328,10 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await dataWriter.StoreAsync()
     Await outputStream.FlushAsync()
     ```
+
+**ファイルに書き込むためのベスト プラクティス**
+
+追加の詳細、ベスト プラクティスのガイダンスについては、[ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)を参照してください。
     
 ## <a name="reading-from-a-file"></a>ファイルからの読み取り
 
@@ -549,3 +553,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
+
+## <a name="see-also"></a>関連項目
+
+- [ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)
