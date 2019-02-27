@@ -6,14 +6,14 @@ ms.topic: article
 layout: LandingPage
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live, ポリシー
 ms.localizationpriority: medium
-ms.openlocfilehash: dae8ce84e791406a78252c231cb2cdc60caa07fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f4ccabd72f16a402eecce53328393425c416d36
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947496"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115368"
 ---
-## <a name="xbox-live-policies"></a>Xbox Live ポリシー
+# <a name="xbox-live-policies"></a>Xbox Live ポリシー
 
 **ドキュメントのバージョン: 2.0**
 

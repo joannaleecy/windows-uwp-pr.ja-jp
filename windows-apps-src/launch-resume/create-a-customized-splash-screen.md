@@ -2,16 +2,16 @@
 title: スプラッシュ画面の表示時間の延長
 description: アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.date: 2/19/2019
+ms.date: 02/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e3566d272a903aa0a387ad05767d49f1f14834cb
-ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
+ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9082875"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116334"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a><span data-ttu-id="1b8d9-105">スプラッシュ スクリーンの表示時間の延長</span><span class="sxs-lookup"><span data-stu-id="1b8d9-105">Display a splash screen for more time</span></span>
 
@@ -313,7 +313,7 @@ using Windows.ApplicationModel.Activation;
 using SplashScreenExample.Common;
 using Windows.UI.Core;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace SplashScreenExample
 {
@@ -441,7 +441,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Application template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234227
+// The Blank Application template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234227
 
 namespace SplashScreenExample
 {

@@ -3,16 +3,16 @@ description: マップ スタイル シートのエントリとプロパティ
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: マップ スタイル シート リファレンス
-ms.date: 03/16/2017
+ms.date: 03/19/2017
 ms.topic: article
 keywords: Windows 10, UWP, マップ, マップ スタイル シート
 ms.localizationpriority: medium
-ms.openlocfilehash: a02dee15173ea8ec2bf98ddf0ad3dbca2fdfc041
-ms.sourcegitcommit: bbec71985647fa81d3e0995875d8406ad4004af1
+ms.openlocfilehash: f199e08f74ace4e6c8b123a701af19469b029aed
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "9063252"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116444"
 ---
 # <a name="map-style-sheet-reference"></a><span data-ttu-id="cba65-104">マップ スタイル シート リファレンス</span><span class="sxs-lookup"><span data-stu-id="cba65-104">Map style sheet reference</span></span>
 

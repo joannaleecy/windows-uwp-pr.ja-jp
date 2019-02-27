@@ -2,16 +2,16 @@
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal の概要
 description: Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。
-ms.date: 2/19/2019
+ms.date: 02/19/2019
 ms.topic: article
 keywords: windows 10, uwp, デバイス ポータル
 ms.localizationpriority: medium
-ms.openlocfilehash: 372524b5a5f002e68c02a8f298703cb7ef99bfdf
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.openlocfilehash: ba3c0a393cc5eb536de43539df48f43bb98d8ef1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083720"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116354"
 ---
 # <a name="windows-device-portal-overview"></a><span data-ttu-id="330af-104">Windows Device Portal の概要</span><span class="sxs-lookup"><span data-stu-id="330af-104">Windows Device Portal overview</span></span>
 

@@ -2,15 +2,15 @@
 title: Windows ドキュメントの最新情報で新 2018 7 月 - UWP アプリの開発
 description: 2018 7 月の Windows 10 開発者向けドキュメントに、新しい機能、ビデオ、サンプル、および開発者向けガイダンスが追加されました。
 keywords: 新機能, 更新, 機能, 開発者向けガイダンス, Windows 10 年 7 月
-ms.date: 7/11/2018
+ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d890983cfe32aaf1204b21552a7d72d89d9675
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 22a3a9614a4488791a36f81a3d4dedac572111b4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049639"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115879"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a><span data-ttu-id="2df0b-104">新機能、Windows 開発者向けドキュメントの 2018 7 月</span><span class="sxs-lookup"><span data-stu-id="2df0b-104">What's New in the Windows Developer Docs in July 2018</span></span>
 

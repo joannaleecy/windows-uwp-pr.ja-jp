@@ -4,160 +4,160 @@ author: aablackm
 description: ユニバーサル Windows プラットフォーム (UWP) タイトルで Xbox Live ユーザーをサインインする方法について説明します。
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
 ms.author: aablackm
-ms.date: 03/14/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
-ms.openlocfilehash: adea0d0e964c994c74ccb14b55907a152858f35e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5473b7ede7731d7d07b7e5bfd72857fdb64f1c89
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929565"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115477"
 ---
-# <a name="authentication-for-uwp-projects"></a><span data-ttu-id="d5851-104">UWP プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="d5851-104">Authentication for UWP projects</span></span>
+# <a name="authentication-for-uwp-projects"></a><span data-ttu-id="bae6d-104">UWP プロジェクトの認証</span><span class="sxs-lookup"><span data-stu-id="bae6d-104">Authentication for UWP projects</span></span>
 
-<span data-ttu-id="d5851-105">ゲームで Xbox Live の機能を利用するために、ユーザーは Xbox Live プロフィールを作成し、Xbox Live コミュニティで自らの身元を明らかにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-105">To take advantage of Xbox Live features in games, a user needs to create an Xbox Live profile to identify themselves in the Xbox Live community.</span></span>  <span data-ttu-id="d5851-106">Xbox Live サービスは、ユーザーの Xbox Live プロフィール (ユーザーのゲーマータグやゲーマーアイコン、ユーザーが一緒にゲームをするフレンド、ユーザーがプレイしたゲーム、ユーザーがロック解除した実績、特定のゲームにおけるユーザーのランキング順位など) を使用してゲーム関連のアクティビティを追跡します。</span><span class="sxs-lookup"><span data-stu-id="d5851-106">Xbox Live services keep track of game related activities using that Xbox Live profile, such as the user's gamertag and gamer picture, who the user's gaming friends are, what games the user has played, what achievements the user has unlocked, where the user stands on the leaderboard for a particular game, etc.</span></span>
+<span data-ttu-id="bae6d-105">ゲームで Xbox Live の機能を利用するために、ユーザーは Xbox Live プロフィールを作成し、Xbox Live コミュニティで自らの身元を明らかにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-105">To take advantage of Xbox Live features in games, a user needs to create an Xbox Live profile to identify themselves in the Xbox Live community.</span></span>  <span data-ttu-id="bae6d-106">Xbox Live サービスは、ユーザーの Xbox Live プロフィール (ユーザーのゲーマータグやゲーマーアイコン、ユーザーが一緒にゲームをするフレンド、ユーザーがプレイしたゲーム、ユーザーがロック解除した実績、特定のゲームにおけるユーザーのランキング順位など) を使用してゲーム関連のアクティビティを追跡します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-106">Xbox Live services keep track of game related activities using that Xbox Live profile, such as the user's gamertag and gamer picture, who the user's gaming friends are, what games the user has played, what achievements the user has unlocked, where the user stands on the leaderboard for a particular game, etc.</span></span>
 
-<span data-ttu-id="d5851-107">特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-107">When a user wants to access Xbox Live services in a particular game on a particular device, the user needs to authenticate first.</span></span>  <span data-ttu-id="d5851-108">ゲームでは、認証プロセスを開始する Xbox Live Api を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="d5851-108">The game can call Xbox Live APIs to initiate the authentication process.</span></span>  <span data-ttu-id="d5851-109">追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。</span><span class="sxs-lookup"><span data-stu-id="d5851-109">In some cases, the user will be presented with an interface to provide additional information, such as entering the username and password of the Microsoft Account to use, giving permission consent to the game, resolving account issues, accepting new terms of use, etc.</span></span>
+<span data-ttu-id="bae6d-107">特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-107">When a user wants to access Xbox Live services in a particular game on a particular device, the user needs to authenticate first.</span></span>  <span data-ttu-id="bae6d-108">ゲームでは、認証プロセスを開始する Xbox Live Api を呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-108">The game can call Xbox Live APIs to initiate the authentication process.</span></span>  <span data-ttu-id="bae6d-109">追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。</span><span class="sxs-lookup"><span data-stu-id="bae6d-109">In some cases, the user will be presented with an interface to provide additional information, such as entering the username and password of the Microsoft Account to use, giving permission consent to the game, resolving account issues, accepting new terms of use, etc.</span></span>
 
-<span data-ttu-id="d5851-110">認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="d5851-110">Once authenticated, the user is associated with that device until they explicitly sign out of Xbox Live from the Xbox app.</span></span>  <span data-ttu-id="d5851-111">(すべて Xbox Live のゲームに対する) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。</span><span class="sxs-lookup"><span data-stu-id="d5851-111">Only one player is allowed to be authenticated on a non-console device at a time (for all Xbox Live games);  for a new player to be authenticated on a non-console device, the existing authenticated player must sign out first.</span></span>
+<span data-ttu-id="bae6d-110">認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="bae6d-110">Once authenticated, the user is associated with that device until they explicitly sign out of Xbox Live from the Xbox app.</span></span>  <span data-ttu-id="bae6d-111">(すべて Xbox Live ゲームの) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。</span><span class="sxs-lookup"><span data-stu-id="bae6d-111">Only one player is allowed to be authenticated on a non-console device at a time (for all Xbox Live games);  for a new player to be authenticated on a non-console device, the existing authenticated player must sign out first.</span></span>
 
-## <a name="steps-to-sign-in"></a><span data-ttu-id="d5851-112">サインイン手順</span><span class="sxs-lookup"><span data-stu-id="d5851-112">Steps To Sign-In</span></span>
+## <a name="steps-to-sign-in"></a><span data-ttu-id="bae6d-112">サインイン手順</span><span class="sxs-lookup"><span data-stu-id="bae6d-112">Steps To Sign-In</span></span>
 
-<span data-ttu-id="d5851-113">大まかには、以下の手順に従って Xbox Live API を使用します。</span><span class="sxs-lookup"><span data-stu-id="d5851-113">At a high level, you use the Xbox Live APIs by following these steps:</span></span>
+<span data-ttu-id="bae6d-113">大まかには、以下の手順に従って Xbox Live API を使用します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-113">At a high level, you use the Xbox Live APIs by following these steps:</span></span>
 
-1. <span data-ttu-id="d5851-114">そのユーザーを表す XboxLiveUser オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="d5851-114">Create an XboxLiveUser object to represent the user</span></span>
-2. <span data-ttu-id="d5851-115">起動時に暗黙的に Xbox Live にサインインする</span><span class="sxs-lookup"><span data-stu-id="d5851-115">Sign-in silently to Xbox Live at startup</span></span>
-3. <span data-ttu-id="d5851-116">必要に応じて、UX を使用したサインインを試みる</span><span class="sxs-lookup"><span data-stu-id="d5851-116">Attempt to sign-in with UX if required</span></span>
-4. <span data-ttu-id="d5851-117">対話しているユーザーに基づいて Xbox Live コンテキストを作成する</span><span class="sxs-lookup"><span data-stu-id="d5851-117">Create an Xbox Live context based on the interacting user</span></span>
-5. <span data-ttu-id="d5851-118">作成した Xbox Live コンテキストを使用して Xbox Live サービスにアクセスする</span><span class="sxs-lookup"><span data-stu-id="d5851-118">Use the Xbox Live context to access Xbox Live services</span></span>
-6. <span data-ttu-id="d5851-119">ゲームが終了またはユーザーがサインアウトしたら、XboxLiveUser オブジェクトと XboxLiveContext オブジェクトを null に設定して解放する</span><span class="sxs-lookup"><span data-stu-id="d5851-119">When the game exits or the user signs-out, release the XboxLiveUser object and XboxLiveContext object by setting them to null</span></span>
+1. <span data-ttu-id="bae6d-114">そのユーザーを表す XboxLiveUser オブジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="bae6d-114">Create an XboxLiveUser object to represent the user</span></span>
+2. <span data-ttu-id="bae6d-115">起動時に暗黙的に Xbox Live にサインインする</span><span class="sxs-lookup"><span data-stu-id="bae6d-115">Sign-in silently to Xbox Live at startup</span></span>
+3. <span data-ttu-id="bae6d-116">必要に応じて、UX を使用したサインインを試みる</span><span class="sxs-lookup"><span data-stu-id="bae6d-116">Attempt to sign-in with UX if required</span></span>
+4. <span data-ttu-id="bae6d-117">対話しているユーザーに基づいて Xbox Live コンテキストを作成する</span><span class="sxs-lookup"><span data-stu-id="bae6d-117">Create an Xbox Live context based on the interacting user</span></span>
+5. <span data-ttu-id="bae6d-118">作成した Xbox Live コンテキストを使用して Xbox Live サービスにアクセスする</span><span class="sxs-lookup"><span data-stu-id="bae6d-118">Use the Xbox Live context to access Xbox Live services</span></span>
+6. <span data-ttu-id="bae6d-119">ゲームが終了またはユーザーがサインアウトしたら、XboxLiveUser オブジェクトと XboxLiveContext オブジェクトを null に設定して解放する</span><span class="sxs-lookup"><span data-stu-id="bae6d-119">When the game exits or the user signs-out, release the XboxLiveUser object and XboxLiveContext object by setting them to null</span></span>
 
-### <a name="creating-an-xboxliveuser-object"></a><span data-ttu-id="d5851-120">XboxLiveUser オブジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="d5851-120">Creating an XboxLiveUser object</span></span>
+### <a name="creating-an-xboxliveuser-object"></a><span data-ttu-id="bae6d-120">XboxLiveUser オブジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="bae6d-120">Creating an XboxLiveUser object</span></span>
 
-<span data-ttu-id="d5851-121">ほとんどの Xbox Live アクティビティに関連する Xbox Live ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="d5851-121">Most of the Xbox Live activities are related to the Xbox Live User.</span></span>  <span data-ttu-id="d5851-122">ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-122">As a game developer, you need to first create an XboxLiveUser object to represent the local user.</span></span>
+<span data-ttu-id="bae6d-121">ほとんどの Xbox Live アクティビティに関連する Xbox Live ユーザーです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-121">Most of the Xbox Live activities are related to the Xbox Live User.</span></span>  <span data-ttu-id="bae6d-122">ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-122">As a game developer, you need to first create an XboxLiveUser object to represent the local user.</span></span>
 
-<span data-ttu-id="d5851-123">C++:</span><span class="sxs-lookup"><span data-stu-id="d5851-123">C++:</span></span>
+<span data-ttu-id="bae6d-123">C++:</span><span class="sxs-lookup"><span data-stu-id="bae6d-123">C++:</span></span>
 
 ```cpp
 auto xboxUser = std::make_shared<xbox_live_user>(Windows::System::User^ windowsSystemUser);
 ```
 
-<span data-ttu-id="d5851-124">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-124">C++/CX (WinRT):</span></span>
+<span data-ttu-id="bae6d-124">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-124">C++/CX (WinRT):</span></span>
 
 ```cpp
 XboxLiveUser xboxUser = ref new XboxLiveUser(Windows::System::User^ windowsSystemUser);
 ```
 
-<span data-ttu-id="d5851-125">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-125">C# (WinRT):</span></span>
+<span data-ttu-id="bae6d-125">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-125">C# (WinRT):</span></span>
 
 ```csharp
 XboxLiveUser xboxUser = new XboxLiveUser(Windows.System.User windowsSystemUser);
 ```
 
-* <span data-ttu-id="d5851-126">**windowsSystemUser** Xbox Live ユーザーとの関連付けに使う Windows システム ユーザー オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="d5851-126">**windowsSystemUser** The windows system user object to be used to associate with xbox live user.</span></span> <span data-ttu-id="d5851-127">アプリがシングル ユーザー アプリケーション (SUA) の場合は nullptr になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-127">Could be nullptr if the app is a single user application(SUA).</span></span>
-  * <span data-ttu-id="d5851-128">シングル ユーザー アプリケーション (SUA) とマルチ ユーザー アプリケーション (MUA) について詳しくは、「[マルチ ユーザー アプリケーションの概要](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d5851-128">For more information about Single User Application(SUA) and Multi User Application(MUA), please check [Introduction to multi-user applications](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)</span></span>
-  * <span data-ttu-id="d5851-129">Windows から Windows::System::User^ を取得する方法について詳しくは、「[UWP での Windows システム ユーザーの取得](retrieving-windows-system-user-on-UWP.md)」を確認してください</span><span class="sxs-lookup"><span data-stu-id="d5851-129">For more information about how to get Windows::System::User^ from Windows, please check [retrieving windows system user on UWP](retrieving-windows-system-user-on-UWP.md)</span></span>
+* <span data-ttu-id="bae6d-126">**windowsSystemUser** Xbox Live ユーザーとの関連付けに使う Windows システム ユーザー オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="bae6d-126">**windowsSystemUser** The windows system user object to be used to associate with xbox live user.</span></span> <span data-ttu-id="bae6d-127">アプリがシングル ユーザー アプリケーション (SUA) の場合は nullptr になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-127">Could be nullptr if the app is a single user application(SUA).</span></span>
+  * <span data-ttu-id="bae6d-128">シングル ユーザー アプリケーション (SUA) とマルチ ユーザー アプリケーション (MUA) について詳しくは、「[マルチ ユーザー アプリケーションの概要](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bae6d-128">For more information about Single User Application(SUA) and Multi User Application(MUA), please check [Introduction to multi-user applications](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/multi-user-applications#single-user-applications)</span></span>
+  * <span data-ttu-id="bae6d-129">Windows から Windows::System::User^ を取得する方法について詳しくは、「[UWP での Windows システム ユーザーの取得](retrieving-windows-system-user-on-UWP.md)」を確認してください</span><span class="sxs-lookup"><span data-stu-id="bae6d-129">For more information about how to get Windows::System::User^ from Windows, please check [retrieving windows system user on UWP](retrieving-windows-system-user-on-UWP.md)</span></span>
 
-### <a name="sign-in-silently-to-xbox-live-at-startup"></a><span data-ttu-id="d5851-130">起動時に暗黙的に Xbox Live にサインインする</span><span class="sxs-lookup"><span data-stu-id="d5851-130">Sign-in silently to Xbox Live at startup</span></span> ###
+### <a name="sign-in-silently-to-xbox-live-at-startup"></a><span data-ttu-id="bae6d-130">起動時に暗黙的に Xbox Live にサインインする</span><span class="sxs-lookup"><span data-stu-id="bae6d-130">Sign-in silently to Xbox Live at startup</span></span> ###
 
-<span data-ttu-id="d5851-131">ゲームでは、Xbox Live サービスからデータをプリフェッチするために、起動後できるだけ早く、ユーザー インターフェイスを表示する前に、ユーザーの Xbox Live 認証を開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-131">Your game should start to authenticate the user to Xbox Live as early as possible after launching, even before you present the user interface, to pre-fetch data from Xbox Live services.</span></span>
+<span data-ttu-id="bae6d-131">ゲームでは、Xbox Live サービスからデータをプリフェッチするために、起動後できるだけ早く、ユーザー インターフェイスを表示する前に、ユーザーの Xbox Live 認証を開始する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-131">Your game should start to authenticate the user to Xbox Live as early as possible after launching, even before you present the user interface, to pre-fetch data from Xbox Live services.</span></span>
 
-<span data-ttu-id="d5851-132">ローカル ユーザーを暗黙的に認証するには、次の呼び出しを行います。</span><span class="sxs-lookup"><span data-stu-id="d5851-132">To authenticate the local user silently, call</span></span>
+<span data-ttu-id="bae6d-132">ローカル ユーザーを暗黙的に認証するには、次の呼び出しを行います。</span><span class="sxs-lookup"><span data-stu-id="bae6d-132">To authenticate the local user silently, call</span></span>
 
-<span data-ttu-id="d5851-133">C++:</span><span class="sxs-lookup"><span data-stu-id="d5851-133">C++:</span></span>
+<span data-ttu-id="bae6d-133">C++:</span><span class="sxs-lookup"><span data-stu-id="bae6d-133">C++:</span></span>
 
 ```cpp
 pplx::task<xbox_live_result<sign_in_result>> xbox_live_user::signin_silently(Platform::Object^ coreDispatcher)
 ```
 
-<span data-ttu-id="d5851-134">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-134">C++/CX (WinRT):</span></span>
+<span data-ttu-id="bae6d-134">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-134">C++/CX (WinRT):</span></span>
 
 ```cpp
 Windows::Foundation::IAsyncOperation<SignInResult^>^ XboxLiveUser::SignInSilentlyAsync(Platform::Object^ coreDispatcher)
 ```
 
-<span data-ttu-id="d5851-135">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-135">C# (WinRT):</span></span>
+<span data-ttu-id="bae6d-135">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-135">C# (WinRT):</span></span>
 
 ```csharp
 Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Windows.UI.Core.CoreDispatcher coreDispatcher);
 ```
 
-* **<span data-ttu-id="d5851-136">coreDispatcher</span><span class="sxs-lookup"><span data-stu-id="d5851-136">coreDispatcher</span></span>**
+* **<span data-ttu-id="bae6d-136">coreDispatcher</span><span class="sxs-lookup"><span data-stu-id="bae6d-136">coreDispatcher</span></span>**
 
-  <span data-ttu-id="d5851-137">Thread Dispatcher は、スレッド間の通信に使用されます。</span><span class="sxs-lookup"><span data-stu-id="d5851-137">Thread Dispatcher is used to communication between threads.</span></span> <span data-ttu-id="d5851-138">サイレント サインイン API が任意の UI を表示する予定はありませんが、XSAPI 必要 UI スレッド ディスパッチャ appx のロケールについての情報を取得するためです。</span><span class="sxs-lookup"><span data-stu-id="d5851-138">Although the silent sign-in API is not going to show any UI, XSAPI still needs the UI thread dispatcher for getting the information about your appx's locale.</span></span> <span data-ttu-id="d5851-139">静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。</span><span class="sxs-lookup"><span data-stu-id="d5851-139">You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread.</span></span> <span data-ttu-id="d5851-140">または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。</span><span class="sxs-lookup"><span data-stu-id="d5851-140">Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).</span></span>
+  <span data-ttu-id="bae6d-137">Thread Dispatcher は、スレッド間の通信に使用されます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-137">Thread Dispatcher is used to communication between threads.</span></span> <span data-ttu-id="bae6d-138">サイレント サインイン API が任意の UI を表示する予定はありませんが、XSAPI 必要 UI スレッド ディスパッチャ appx のロケールについての情報を取得するためです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-138">Although the silent sign-in API is not going to show any UI, XSAPI still needs the UI thread dispatcher for getting the information about your appx's locale.</span></span> <span data-ttu-id="bae6d-139">静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-139">You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread.</span></span> <span data-ttu-id="bae6d-140">または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。</span><span class="sxs-lookup"><span data-stu-id="bae6d-140">Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).</span></span>
 
 
-<span data-ttu-id="d5851-141">暗黙的サインイン試行の結果には 3 つの可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-141">There are 3 possible outcomes from the silent sign-in attempt</span></span>
+<span data-ttu-id="bae6d-141">暗黙的サインイン試行の結果には 3 つの可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-141">There are 3 possible outcomes from the silent sign-in attempt</span></span>
 
-* **<span data-ttu-id="d5851-142">成功</span><span class="sxs-lookup"><span data-stu-id="d5851-142">Success</span></span>**
+* **<span data-ttu-id="bae6d-142">成功</span><span class="sxs-lookup"><span data-stu-id="bae6d-142">Success</span></span>**
 
-  <span data-ttu-id="d5851-143">デバイスがオンラインの場合、これはユーザーが Xbox Live に正しく認証され、有効なトークンを取得できたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d5851-143">If the device is online, this means the user authenticated to Xbox Live successfully, and we were able to get a valid token.</span></span>
+  <span data-ttu-id="bae6d-143">デバイスがオンラインの場合、これはユーザーが Xbox Live に正しく認証され、有効なトークンを取得できたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-143">If the device is online, this means the user authenticated to Xbox Live successfully, and we were able to get a valid token.</span></span>
 
-  <span data-ttu-id="d5851-144">デバイスがオフラインの場合、これは、ユーザーが以前に Xbox Live に正しく認証されており、このタイトルから明示的にサインアウトしていないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d5851-144">if the device is offline, This means the user has previously authenticated to Xbox Live successfully, and has not explicitly signed-out from this title.</span></span>  <span data-ttu-id="d5851-145">この場合、タイトルが有効なトークンにアクセスできる保証はないことに注意してください。保証されるのはユーザーの身元が既知であり検証済みであることだけです。</span><span class="sxs-lookup"><span data-stu-id="d5851-145">Note in this case there is no guarantee that title has access to a valid token, it is only guaranteed that the user’s identity is known and has been verified.</span></span>    <span data-ttu-id="d5851-146">タイトルは、ユーザーの身元を Xbox ユーザー ID (xuid) とゲーマータグによって認識しています。</span><span class="sxs-lookup"><span data-stu-id="d5851-146">The identity of the user is known to the title via their xbox user id (xuid) and gamertag.</span></span>
+  <span data-ttu-id="bae6d-144">デバイスがオフラインの場合、これは、ユーザーが以前に Xbox Live に正しく認証されており、このタイトルから明示的にサインアウトしていないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-144">if the device is offline, This means the user has previously authenticated to Xbox Live successfully, and has not explicitly signed-out from this title.</span></span>  <span data-ttu-id="bae6d-145">この場合、タイトルが有効なトークンにアクセスできる保証はないことに注意してください。保証されるのはユーザーの身元が既知であり検証済みであることだけです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-145">Note in this case there is no guarantee that title has access to a valid token, it is only guaranteed that the user’s identity is known and has been verified.</span></span>    <span data-ttu-id="bae6d-146">タイトルは、ユーザーの身元を Xbox ユーザー ID (xuid) とゲーマータグによって認識しています。</span><span class="sxs-lookup"><span data-stu-id="bae6d-146">The identity of the user is known to the title via their xbox user id (xuid) and gamertag.</span></span>
 
-* **<span data-ttu-id="d5851-147">UserInteractionRequired</span><span class="sxs-lookup"><span data-stu-id="d5851-147">UserInteractionRequired</span></span>**
+* **<span data-ttu-id="bae6d-147">UserInteractionRequired</span><span class="sxs-lookup"><span data-stu-id="bae6d-147">UserInteractionRequired</span></span>**
 
-  <span data-ttu-id="d5851-148">ランタイムでユーザーの暗黙的サインインができませんでした。</span><span class="sxs-lookup"><span data-stu-id="d5851-148">This means the runtime was unable to sign-in the user silently.</span></span>  <span data-ttu-id="d5851-149">ゲームでは、ユーザーがサインアップ/サインインするために必要な UX フローを表示する Xbox Identity Provider を呼び出す `xbox_live_user::sign_in` を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-149">The game should call `xbox_live_user::sign_in` which invokes the Xbox Identity Provider to show the necessary UX flow for the user to sign-up/sign-in.</span></span>  <span data-ttu-id="d5851-150">一般的な問題は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d5851-150">Common issues are:</span></span>
+  <span data-ttu-id="bae6d-148">ランタイムでユーザーの暗黙的サインインができませんでした。</span><span class="sxs-lookup"><span data-stu-id="bae6d-148">This means the runtime was unable to sign-in the user silently.</span></span>  <span data-ttu-id="bae6d-149">ゲームでは、ユーザーがサインアップ/サインインするために必要な UX フローを表示する Xbox Identity Provider を呼び出す `xbox_live_user::sign_in` を呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-149">The game should call `xbox_live_user::sign_in` which invokes the Xbox Identity Provider to show the necessary UX flow for the user to sign-up/sign-in.</span></span>  <span data-ttu-id="bae6d-150">一般的な問題は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-150">Common issues are:</span></span>
 
-  * <span data-ttu-id="d5851-151">ユーザーが Microsoft アカウントを持っていない</span><span class="sxs-lookup"><span data-stu-id="d5851-151">User does not have a Microsoft Account</span></span>
-  * <span data-ttu-id="d5851-152">ユーザーがゲーム用の優先 Microsoft アカウントを設定していない</span><span class="sxs-lookup"><span data-stu-id="d5851-152">User has not set a preferred Microsoft Account for gaming</span></span>
-  * <span data-ttu-id="d5851-153">選択された Microsoft アカウントに Xbox Live プロフィールがない</span><span class="sxs-lookup"><span data-stu-id="d5851-153">The selected Microsoft Account doesn’t have an Xbox Live profile</span></span>
-  * <span data-ttu-id="d5851-154">Microsoft アカウントの規約にユーザーが同意する必要がある</span><span class="sxs-lookup"><span data-stu-id="d5851-154">User needs to accept Microsoft Account consent</span></span>
+  * <span data-ttu-id="bae6d-151">ユーザーが Microsoft アカウントを持っていない</span><span class="sxs-lookup"><span data-stu-id="bae6d-151">User does not have a Microsoft Account</span></span>
+  * <span data-ttu-id="bae6d-152">ユーザーがゲーム用の優先 Microsoft アカウントを設定していない</span><span class="sxs-lookup"><span data-stu-id="bae6d-152">User has not set a preferred Microsoft Account for gaming</span></span>
+  * <span data-ttu-id="bae6d-153">選択された Microsoft アカウントに Xbox Live プロフィールがない</span><span class="sxs-lookup"><span data-stu-id="bae6d-153">The selected Microsoft Account doesn’t have an Xbox Live profile</span></span>
+  * <span data-ttu-id="bae6d-154">Microsoft アカウントの規約にユーザーが同意する必要がある</span><span class="sxs-lookup"><span data-stu-id="bae6d-154">User needs to accept Microsoft Account consent</span></span>
 
-* **<span data-ttu-id="d5851-155">その他のエラー</span><span class="sxs-lookup"><span data-stu-id="d5851-155">Other errors</span></span>**
+* **<span data-ttu-id="bae6d-155">その他のエラー</span><span class="sxs-lookup"><span data-stu-id="bae6d-155">Other errors</span></span>**
 
-  <span data-ttu-id="d5851-156">ランタイムはその他の理由によりサインインできませんでした。</span><span class="sxs-lookup"><span data-stu-id="d5851-156">The runtime was unable to sign-in due to other reasons.</span></span>  <span data-ttu-id="d5851-157">通常、ゲームまたはユーザーではこれらの問題に対処できません。</span><span class="sxs-lookup"><span data-stu-id="d5851-157">Typically these issues are not actionable by the game or the user.</span></span> <span data-ttu-id="d5851-158">c++ API を使う場合、WinRT で xbox_live_result<>.err(); を確認してエラーをチェックし、Platform::Exception^ をキャッチする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-158">When using c++ API, you would need to check error by checking xbox_live_result<>.err(); on WinRT, you would need to catch Platform::Exception^.</span></span>
+  <span data-ttu-id="bae6d-156">ランタイムはその他の理由によりサインインできませんでした。</span><span class="sxs-lookup"><span data-stu-id="bae6d-156">The runtime was unable to sign-in due to other reasons.</span></span>  <span data-ttu-id="bae6d-157">通常、ゲームまたはユーザーではこれらの問題に対処できません。</span><span class="sxs-lookup"><span data-stu-id="bae6d-157">Typically these issues are not actionable by the game or the user.</span></span> <span data-ttu-id="bae6d-158">c++ API を使う場合、WinRT で xbox_live_result<>.err(); を確認してエラーをチェックし、Platform::Exception^ をキャッチする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-158">When using c++ API, you would need to check error by checking xbox_live_result<>.err(); on WinRT, you would need to catch Platform::Exception^.</span></span>
 
-### <a name="attempt-to-sign-in-with-ux-if-required"></a><span data-ttu-id="d5851-159">必要に応じて、UX を使用したサインインを試みる</span><span class="sxs-lookup"><span data-stu-id="d5851-159">Attempt to sign-in with UX if required</span></span> ###
+### <a name="attempt-to-sign-in-with-ux-if-required"></a><span data-ttu-id="bae6d-159">必要に応じて、UX を使用したサインインを試みる</span><span class="sxs-lookup"><span data-stu-id="bae6d-159">Attempt to sign-in with UX if required</span></span> ###
 
-<span data-ttu-id="d5851-160">暗黙的サインインに失敗し、ユーザー インターフェイスを表示する準備ができている場合、ゲームは UX を有効にしてユーザーを Xbox Live に対して認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-160">Your game should authenticate the user to Xbox Live with UX enabled when silent sign-in was unsuccessful, and you are ready to present the user interface.</span></span>
+<span data-ttu-id="bae6d-160">暗黙的サインインに失敗し、ユーザー インターフェイスを表示する準備ができている場合、ゲームは UX を有効にしてユーザーを Xbox Live に対して認証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-160">Your game should authenticate the user to Xbox Live with UX enabled when silent sign-in was unsuccessful, and you are ready to present the user interface.</span></span>
 
-<span data-ttu-id="d5851-161">UX を使用してローカル ユーザーを認証するには、次の呼び出しを行います。</span><span class="sxs-lookup"><span data-stu-id="d5851-161">To authenticate the local user with UX, call</span></span>
+<span data-ttu-id="bae6d-161">UX を使用してローカル ユーザーを認証するには、次の呼び出しを行います。</span><span class="sxs-lookup"><span data-stu-id="bae6d-161">To authenticate the local user with UX, call</span></span>
 
-<span data-ttu-id="d5851-162">C++:</span><span class="sxs-lookup"><span data-stu-id="d5851-162">C++:</span></span>
+<span data-ttu-id="bae6d-162">C++:</span><span class="sxs-lookup"><span data-stu-id="bae6d-162">C++:</span></span>
 
 ```cpp
 pplx::task<xbox_live_result<sign_in_result>> xbox_live_user::signin(Platform::Object^ coreDispatcher)
 ```
 
 
-<span data-ttu-id="d5851-163">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-163">C++/CX (WinRT):</span></span>
+<span data-ttu-id="bae6d-163">C++/CX (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-163">C++/CX (WinRT):</span></span>
 
 ```cpp
 Windows::Foundation::IAsyncOperation<SignInResult^>^ XboxLiveUser::SignInAsync(Platform::Object^ coreDispatcher)
 ```
 
-<span data-ttu-id="d5851-164">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="d5851-164">C# (WinRT):</span></span>
+<span data-ttu-id="bae6d-164">C# (WinRT):</span><span class="sxs-lookup"><span data-stu-id="bae6d-164">C# (WinRT):</span></span>
 
 ```csharp
 Microsoft.Xbox.Services.System.SignInResult  XboxLiveUser.SignInAsync(Windows.UI.Core.CoreDispatcher coreDispatcher);
 ```
 
-* **<span data-ttu-id="d5851-165">coreDispatcher</span><span class="sxs-lookup"><span data-stu-id="d5851-165">coreDispatcher</span></span>**
+* **<span data-ttu-id="bae6d-165">coreDispatcher</span><span class="sxs-lookup"><span data-stu-id="bae6d-165">coreDispatcher</span></span>**
 
-  <span data-ttu-id="d5851-166">Thread Dispatcher は、スレッド間の通信に使用されます。</span><span class="sxs-lookup"><span data-stu-id="d5851-166">Thread Dispatcher is used to communication between threads.</span></span> <span data-ttu-id="d5851-167">サインイン API には、サインイン UI を表示して appx のロケールについての情報を取得するために UI ディスパッチャが必要です。</span><span class="sxs-lookup"><span data-stu-id="d5851-167">Sign in API requires the UI dispatcher so that it can show the sign in UI and get the information about your appx's locale.</span></span> <span data-ttu-id="d5851-168">静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。</span><span class="sxs-lookup"><span data-stu-id="d5851-168">You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread.</span></span> <span data-ttu-id="d5851-169">または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。</span><span class="sxs-lookup"><span data-stu-id="d5851-169">Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).</span></span>
+  <span data-ttu-id="bae6d-166">Thread Dispatcher は、スレッド間の通信に使用されます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-166">Thread Dispatcher is used to communication between threads.</span></span> <span data-ttu-id="bae6d-167">サインイン API には、サインイン UI を表示して appx のロケールについての情報を取得するために UI ディスパッチャが必要です。</span><span class="sxs-lookup"><span data-stu-id="bae6d-167">Sign in API requires the UI dispatcher so that it can show the sign in UI and get the information about your appx's locale.</span></span> <span data-ttu-id="bae6d-168">静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-168">You can get the static UI thread dispatcher by calling Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher in the UI thread.</span></span> <span data-ttu-id="bae6d-169">または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。</span><span class="sxs-lookup"><span data-stu-id="bae6d-169">Or if you're certain that this API is being called on the UI thread, you can pass in nullptr(for example on JS UWA).</span></span>
 
-<span data-ttu-id="d5851-170">UX を使用したサインイン試行の結果には 3 つの可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-170">There are 3 possible outcomes from the sign-in attempt with UX:</span></span>
+<span data-ttu-id="bae6d-170">UX を使用したサインイン試行の結果には 3 つの可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-170">There are 3 possible outcomes from the sign-in attempt with UX:</span></span>
 
-* **<span data-ttu-id="d5851-171">成功</span><span class="sxs-lookup"><span data-stu-id="d5851-171">Success</span></span>**
+* **<span data-ttu-id="bae6d-171">成功</span><span class="sxs-lookup"><span data-stu-id="bae6d-171">Success</span></span>**
 
-  <span data-ttu-id="d5851-172">デバイスがオンラインの場合、これはユーザーが Xbox Live に正しく認証され、有効なトークンを取得できたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d5851-172">If the device is online, this means the user authenticated to Xbox Live successfully, and we were able to get a valid token.</span></span>
+  <span data-ttu-id="bae6d-172">デバイスがオンラインの場合、これはユーザーが Xbox Live に正しく認証され、有効なトークンを取得できたことを意味します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-172">If the device is online, this means the user authenticated to Xbox Live successfully, and we were able to get a valid token.</span></span>
 
-  <span data-ttu-id="d5851-173">デバイスがオフラインの場合、これは、ユーザーが以前に Xbox Live に正しく認証されており、このタイトルから明示的にサインアウトしていないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d5851-173">if the device is offline, This means the user has previously authenticated to Xbox Live successfully, and has not explicitly signed-out from this title.</span></span>  <span data-ttu-id="d5851-174">この場合、タイトルが有効なトークンにアクセスできる保証はないことに注意してください。保証されるのはユーザーの身元が既知であり検証済みであることだけです。</span><span class="sxs-lookup"><span data-stu-id="d5851-174">Note in this case there is no guarantee that title has access to a valid token, it is only guaranteed that the user’s identity is known and has been verified.</span></span>    <span data-ttu-id="d5851-175">ユーザーの身元は、Xbox ユーザー ID (xuid) とゲーマータグによってタイトルに知られます。</span><span class="sxs-lookup"><span data-stu-id="d5851-175">The identity of the user is known to the title xbox user id (xuid) and gamertag.</span></span>
+  <span data-ttu-id="bae6d-173">デバイスがオフラインの場合、これは、ユーザーが以前に Xbox Live に正しく認証されており、このタイトルから明示的にサインアウトしていないことを意味します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-173">if the device is offline, This means the user has previously authenticated to Xbox Live successfully, and has not explicitly signed-out from this title.</span></span>  <span data-ttu-id="bae6d-174">この場合、タイトルが有効なトークンにアクセスできる保証はないことに注意してください。保証されるのはユーザーの身元が既知であり検証済みであることだけです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-174">Note in this case there is no guarantee that title has access to a valid token, it is only guaranteed that the user’s identity is known and has been verified.</span></span>    <span data-ttu-id="bae6d-175">ユーザーの身元は、Xbox ユーザー ID (xuid) とゲーマータグによってタイトルに知られます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-175">The identity of the user is known to the title xbox user id (xuid) and gamertag.</span></span>
 
-* **<span data-ttu-id="d5851-176">UserCancel</span><span class="sxs-lookup"><span data-stu-id="d5851-176">UserCancel</span></span>**
+* **<span data-ttu-id="bae6d-176">UserCancel</span><span class="sxs-lookup"><span data-stu-id="bae6d-176">UserCancel</span></span>**
 
-  <span data-ttu-id="d5851-177">サインイン操作が完了する前にユーザーが操作をキャンセルしました。</span><span class="sxs-lookup"><span data-stu-id="d5851-177">This means that the user cancelled the sign-in operation before completion.</span></span>  <span data-ttu-id="d5851-178">このとき、ゲームでは UX を使用したサインインを自動的に再試行しないでください。</span><span class="sxs-lookup"><span data-stu-id="d5851-178">When this happens, the game should NOT automatically retry sign-in with UX.</span></span>  <span data-ttu-id="d5851-179">代わりに、ユーザーがサインイン操作を再試行できるゲーム内 UX を表示してください。</span><span class="sxs-lookup"><span data-stu-id="d5851-179">Instead, it should present in-game UX that allows the user to retry the sign-in operation.</span></span>  <span data-ttu-id="d5851-180">(例: サインイン ボタン)</span><span class="sxs-lookup"><span data-stu-id="d5851-180">(For example, a sign-in button)</span></span>
+  <span data-ttu-id="bae6d-177">サインイン操作が完了する前にユーザーが操作をキャンセルしました。</span><span class="sxs-lookup"><span data-stu-id="bae6d-177">This means that the user cancelled the sign-in operation before completion.</span></span>  <span data-ttu-id="bae6d-178">このとき、ゲームでは UX を使用したサインインを自動的に再試行しないでください。</span><span class="sxs-lookup"><span data-stu-id="bae6d-178">When this happens, the game should NOT automatically retry sign-in with UX.</span></span>  <span data-ttu-id="bae6d-179">代わりに、ユーザーがサインイン操作を再試行できるゲーム内 UX を表示してください。</span><span class="sxs-lookup"><span data-stu-id="bae6d-179">Instead, it should present in-game UX that allows the user to retry the sign-in operation.</span></span>  <span data-ttu-id="bae6d-180">(例: サインイン ボタン)</span><span class="sxs-lookup"><span data-stu-id="bae6d-180">(For example, a sign-in button)</span></span>
 
-* **<span data-ttu-id="d5851-181">その他のエラー</span><span class="sxs-lookup"><span data-stu-id="d5851-181">Other errors</span></span>**
+* **<span data-ttu-id="bae6d-181">その他のエラー</span><span class="sxs-lookup"><span data-stu-id="bae6d-181">Other errors</span></span>**
 
-  <span data-ttu-id="d5851-182">ランタイムはその他の理由によりサインインできませんでした。</span><span class="sxs-lookup"><span data-stu-id="d5851-182">The runtime was unable to sign-in due to other reasons.</span></span>  <span data-ttu-id="d5851-183">通常、ゲームまたはユーザーではこれらの問題に対処できません。</span><span class="sxs-lookup"><span data-stu-id="d5851-183">Typically these issues are not actionable by the game or the user.</span></span> <span data-ttu-id="d5851-184">c++ API を使う場合、WinRT で xbox_live_result<>.err(); を確認してエラーをチェックし、Platform::Exception^ をキャッチする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-184">When using c++ API, you would need to check error by checking xbox_live_result<>.err(); on WinRT, you would need to catch Platform::Exception^.</span></span>
+  <span data-ttu-id="bae6d-182">ランタイムはその他の理由によりサインインできませんでした。</span><span class="sxs-lookup"><span data-stu-id="bae6d-182">The runtime was unable to sign-in due to other reasons.</span></span>  <span data-ttu-id="bae6d-183">通常、ゲームまたはユーザーではこれらの問題に対処できません。</span><span class="sxs-lookup"><span data-stu-id="bae6d-183">Typically these issues are not actionable by the game or the user.</span></span> <span data-ttu-id="bae6d-184">c++ API を使う場合、WinRT で xbox_live_result<>.err(); を確認してエラーをチェックし、Platform::Exception^ をキャッチする必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-184">When using c++ API, you would need to check error by checking xbox_live_result<>.err(); on WinRT, you would need to catch Platform::Exception^.</span></span>
 
-## <a name="sign-in-code-examples"></a><span data-ttu-id="d5851-185">サインイン コードの例</span><span class="sxs-lookup"><span data-stu-id="d5851-185">Sign-In Code Examples</span></span>
+## <a name="sign-in-code-examples"></a><span data-ttu-id="bae6d-185">サインイン コードの例</span><span class="sxs-lookup"><span data-stu-id="bae6d-185">Sign-In Code Examples</span></span>
 
-### <a name="c"></a><span data-ttu-id="d5851-186">C++</span><span class="sxs-lookup"><span data-stu-id="d5851-186">C++</span></span>
+### <a name="c"></a><span data-ttu-id="bae6d-186">C++</span><span class="sxs-lookup"><span data-stu-id="bae6d-186">C++</span></span>
 
 ```cpp
 
@@ -236,7 +236,7 @@ void SignInSample::AddSignOut()
 
 ```
 
-### <a name="c-winrt"></a><span data-ttu-id="d5851-187">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="d5851-187">C# (WinRT)</span></span>
+### <a name="c-winrt"></a><span data-ttu-id="bae6d-187">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="bae6d-187">C# (WinRT)</span></span>
 
 ```csharp
 
@@ -308,24 +308,24 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
     }
 ```
 
-## <a name="sign-out"></a><span data-ttu-id="d5851-188">サインアウト</span><span class="sxs-lookup"><span data-stu-id="d5851-188">Sign Out</span></span>
+## <a name="sign-out"></a><span data-ttu-id="bae6d-188">サインアウト</span><span class="sxs-lookup"><span data-stu-id="bae6d-188">Sign Out</span></span>
 
-### <a name="handling-user-sign-out-completed-event"></a><span data-ttu-id="d5851-189">ユーザーのサインアウト完了イベントの処理</span><span class="sxs-lookup"><span data-stu-id="d5851-189">Handling user sign-out completed event</span></span>
+### <a name="handling-user-sign-out-completed-event"></a><span data-ttu-id="bae6d-189">ユーザーのサインアウト完了イベントの処理</span><span class="sxs-lookup"><span data-stu-id="bae6d-189">Handling user sign-out completed event</span></span>
 
-<span data-ttu-id="d5851-190">以下のいずれかが発生した場合、ユーザーはタイトルからサインアウトします。</span><span class="sxs-lookup"><span data-stu-id="d5851-190">The user will sign-out from a title if one of the following happens:</span></span>
+<span data-ttu-id="bae6d-190">以下のいずれかが発生した場合、ユーザーはタイトルからサインアウトします。</span><span class="sxs-lookup"><span data-stu-id="bae6d-190">The user will sign-out from a title if one of the following happens:</span></span>
 
-1. <span data-ttu-id="d5851-191">ユーザーが Xbox アプリ (Windows 10) または本体シェル (Xbox One) からサインアウトした。</span><span class="sxs-lookup"><span data-stu-id="d5851-191">The user signed-out from the Xbox App (Windows 10) or console shell (Xbox One).</span></span> <span data-ttu-id="d5851-192">サインアウトすることは、このユーザー用にインストールされたすべての Xbox Live 対応アプリに影響します。</span><span class="sxs-lookup"><span data-stu-id="d5851-192">Signing out will affect all Xbox Live enabled apps installed for this user.</span></span>
-2. <span data-ttu-id="d5851-193">ユーザーが別の Microsoft アカウントに切り替えた</span><span class="sxs-lookup"><span data-stu-id="d5851-193">The user switched to a different Microsoft Account</span></span>
-3. <span data-ttu-id="d5851-194">ユーザーが別のデバイスから同じタイトルにサインインした</span><span class="sxs-lookup"><span data-stu-id="d5851-194">The user signed into the same title from a different device</span></span>
+1. <span data-ttu-id="bae6d-191">ユーザーが Xbox アプリ (Windows 10) または本体シェル (Xbox One) からサインアウトした。</span><span class="sxs-lookup"><span data-stu-id="bae6d-191">The user signed-out from the Xbox App (Windows 10) or console shell (Xbox One).</span></span> <span data-ttu-id="bae6d-192">サインアウトすることは、このユーザー用にインストールされたすべての Xbox Live 対応アプリに影響します。</span><span class="sxs-lookup"><span data-stu-id="bae6d-192">Signing out will affect all Xbox Live enabled apps installed for this user.</span></span>
+2. <span data-ttu-id="bae6d-193">ユーザーが別の Microsoft アカウントに切り替えた</span><span class="sxs-lookup"><span data-stu-id="bae6d-193">The user switched to a different Microsoft Account</span></span>
+3. <span data-ttu-id="bae6d-194">ユーザーが別のデバイスから同じタイトルにサインインした</span><span class="sxs-lookup"><span data-stu-id="bae6d-194">The user signed into the same title from a different device</span></span>
 
-<span data-ttu-id="d5851-195">以上すべてのケースで、タイトルは `xbox_live_user::add_sign_out_completed_handler` または `XboxLiveUser::SignOutCompleted` ハンドラーからイベントを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d5851-195">In all these cases, the title will receive an event from the `xbox_live_user::add_sign_out_completed_handler` or `XboxLiveUser::SignOutCompleted` handlers.</span></span>  <span data-ttu-id="d5851-196">ゲームではサインアウト完了イベントを適切に処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-196">The game must handle the sign out completed event appropriately:</span></span>
+<span data-ttu-id="bae6d-195">以上すべてのケースで、タイトルは `xbox_live_user::add_sign_out_completed_handler` または `XboxLiveUser::SignOutCompleted` ハンドラーからイベントを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-195">In all these cases, the title will receive an event from the `xbox_live_user::add_sign_out_completed_handler` or `XboxLiveUser::SignOutCompleted` handlers.</span></span>  <span data-ttu-id="bae6d-196">ゲームではサインアウト完了イベントを適切に処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-196">The game must handle the sign out completed event appropriately:</span></span>
 
-1. <span data-ttu-id="d5851-197">ゲームでは、ユーザーが Xbox Live からサインアウトしたことを視覚的にユーザーに明示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d5851-197">The game should display clear visual indication to the user that she/he has signed-out from Xbox Live.</span></span>
-2. <span data-ttu-id="d5851-198">ユーザーが既にサインアウトしており、利用可能な承認トークンがないため、ゲームはイベント ハンドラーでいかなる Xbox Live サービス API も呼び出すことができません。</span><span class="sxs-lookup"><span data-stu-id="d5851-198">The game cannot call any Xbox Live service APIs in the event handler, because the user has already signed-out and there is no authorization token available.</span></span>
+1. <span data-ttu-id="bae6d-197">ゲームでは、ユーザーが Xbox Live からサインアウトしたことを視覚的にユーザーに明示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bae6d-197">The game should display clear visual indication to the user that she/he has signed-out from Xbox Live.</span></span>
+2. <span data-ttu-id="bae6d-198">ユーザーが既にサインアウトしており、利用可能な承認トークンがないため、ゲームはイベント ハンドラーでいかなる Xbox Live サービス API も呼び出すことができません。</span><span class="sxs-lookup"><span data-stu-id="bae6d-198">The game cannot call any Xbox Live service APIs in the event handler, because the user has already signed-out and there is no authorization token available.</span></span>
 
-## <a name="sign-out-handler-code-samples"></a><span data-ttu-id="d5851-199">サインアウト ハンドラー コードのサンプル</span><span class="sxs-lookup"><span data-stu-id="d5851-199">Sign Out Handler Code Samples</span></span>
+## <a name="sign-out-handler-code-samples"></a><span data-ttu-id="bae6d-199">サインアウト ハンドラー コードのサンプル</span><span class="sxs-lookup"><span data-stu-id="bae6d-199">Sign Out Handler Code Samples</span></span>
 
-### <a name="c"></a><span data-ttu-id="d5851-200">C++</span><span class="sxs-lookup"><span data-stu-id="d5851-200">C++</span></span>
+### <a name="c"></a><span data-ttu-id="bae6d-200">C++</span><span class="sxs-lookup"><span data-stu-id="bae6d-200">C++</span></span>
 
 ```cpp
 
@@ -340,7 +340,7 @@ xbox::services::system::xbox_live_user::add_sign_out_completed_handler(
 
 ```
 
-### <a name="c-winrt"></a><span data-ttu-id="d5851-201">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="d5851-201">C# (WinRT)</span></span>
+### <a name="c-winrt"></a><span data-ttu-id="bae6d-201">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="bae6d-201">C# (WinRT)</span></span>
 
 ```csharp
 XboxLiveUser.SignOutCompleted += OnUserSignOut;
@@ -353,19 +353,19 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
         }
 ```
 
-## <a name="determining-if-the-device-is-offline"></a><span data-ttu-id="d5851-202">デバイスがオフラインかどうかの判定</span><span class="sxs-lookup"><span data-stu-id="d5851-202">Determining if the device is offline</span></span>
+## <a name="determining-if-the-device-is-offline"></a><span data-ttu-id="bae6d-202">デバイスがオフラインかどうかの判定</span><span class="sxs-lookup"><span data-stu-id="bae6d-202">Determining if the device is offline</span></span>
 
-<span data-ttu-id="d5851-203">サインイン Api でもが成功したとオフライン場合は、ユーザーがサインインしたら、され、最後にサインインしたアカウントが返されます。</span><span class="sxs-lookup"><span data-stu-id="d5851-203">Sign in APIs will still be successful when offline if the user has signed in once, and the last signed in account will be returned.</span></span>  
+<span data-ttu-id="bae6d-203">サインイン Api でもが成功したとオフライン場合は、ユーザーがサインインしたら、され、最後にサインインしたアカウントが返されます。</span><span class="sxs-lookup"><span data-stu-id="bae6d-203">Sign in APIs will still be successful when offline if the user has signed in once, and the last signed in account will be returned.</span></span>  
 
-<span data-ttu-id="d5851-204">ユーザーが存在しない場合は、前に、オフライン サインインしないすることが可能署名されています。</span><span class="sxs-lookup"><span data-stu-id="d5851-204">If no user has been signed in before, offline sign-in will not be achievable.</span></span>
+<span data-ttu-id="bae6d-204">ユーザーが存在しない場合は、前に、オフライン サインインしないすることが可能署名されています。</span><span class="sxs-lookup"><span data-stu-id="bae6d-204">If no user has been signed in before, offline sign-in will not be achievable.</span></span>
 
-<span data-ttu-id="d5851-205">タイトルがオフラインでプレイできる場合 (キャンペーン モードなど)、タイトルはユーザーがプレイを許可することができ、WriteInGameEvent API と接続ストレージ API によって記録ゲーム進行状況、それらの両方で正しく動作、デバイスがオフラインです。</span><span class="sxs-lookup"><span data-stu-id="d5851-205">If the title can be played offline (Campaign mode, etc.), the title can allow the user to play and record game progress via WriteInGameEvent API and Connected Storage API, both of them work properly while the device is offline.</span></span>
+<span data-ttu-id="bae6d-205">タイトルがオフラインでプレイできる場合 (キャンペーン モードなど)、タイトルはユーザーがプレイを許可することができ、WriteInGameEvent API と接続ストレージ API によって記録ゲーム進行状況、それらの両方で正しく動作、デバイスがオフラインです。</span><span class="sxs-lookup"><span data-stu-id="bae6d-205">If the title can be played offline (Campaign mode, etc.), the title can allow the user to play and record game progress via WriteInGameEvent API and Connected Storage API, both of them work properly while the device is offline.</span></span>
 
-<span data-ttu-id="d5851-206">タイトルがオフラインでプレイできない場合 (マルチプレイヤー ゲームまたはサーバー ベースのゲームなど)、タイトルは、デバイスがオフラインであり、状態と解決策についてユーザーに知らせるかどうかを確認する GetNetworkConnectivityLevel API を呼び出す必要があります (たとえば、' する必要がありますインターネットに接続して、引き続き…")。</span><span class="sxs-lookup"><span data-stu-id="d5851-206">If the title cannot be played offline (Multiplayer game or Server based game, etc.) the title should call the GetNetworkConnectivityLevel API to find out if the device is offline, and inform the user about the status and possible solutions (for example, ‘You need to connect to Internet to continue…’).</span></span>
+<span data-ttu-id="bae6d-206">タイトルがオフラインでプレイできない場合 (マルチプレイヤー ゲームまたはサーバー ベースのゲームなど)、タイトルは、デバイスがオフラインであり、状態と解決策についてユーザーに知らせるかどうかを確認する GetNetworkConnectivityLevel API を呼び出す必要があります (たとえば、' する必要がありますインターネットに接続して、引き続き…")。</span><span class="sxs-lookup"><span data-stu-id="bae6d-206">If the title cannot be played offline (Multiplayer game or Server based game, etc.) the title should call the GetNetworkConnectivityLevel API to find out if the device is offline, and inform the user about the status and possible solutions (for example, ‘You need to connect to Internet to continue…’).</span></span>
 
-## <a name="online-status-code-samples"></a><span data-ttu-id="d5851-207">オンライン状態コードのサンプル</span><span class="sxs-lookup"><span data-stu-id="d5851-207">Online Status Code Samples</span></span>
+## <a name="online-status-code-samples"></a><span data-ttu-id="bae6d-207">オンライン状態コードのサンプル</span><span class="sxs-lookup"><span data-stu-id="bae6d-207">Online Status Code Samples</span></span>
 
-### <a name="c"></a><span data-ttu-id="d5851-208">C++</span><span class="sxs-lookup"><span data-stu-id="d5851-208">C++</span></span>
+### <a name="c"></a><span data-ttu-id="bae6d-208">C++</span><span class="sxs-lookup"><span data-stu-id="bae6d-208">C++</span></span>
 
 ```cpp
 
@@ -392,7 +392,7 @@ default:
 
 ```
 
-### <a name="c-winrt"></a><span data-ttu-id="d5851-209">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="d5851-209">C# (WinRT)</span></span>
+### <a name="c-winrt"></a><span data-ttu-id="bae6d-209">C# (WinRT)</span><span class="sxs-lookup"><span data-stu-id="bae6d-209">C# (WinRT)</span></span>
 
 ```csharp
 using Windows.Networking.Connectivity;
