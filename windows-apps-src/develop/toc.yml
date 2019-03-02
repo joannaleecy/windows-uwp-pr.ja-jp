@@ -245,6 +245,8 @@ items:
       href: ../files/quickstart-listing-files-and-folders.md
     - name: ファイルの作成、書き込み、および読み取り
       href: ../files/quickstart-reading-and-writing-files.md
+    - name: ファイルに書き込むためのベスト プラクティス
+      href: ../files/best-practices-for-writing-to-files.md
     - name: ファイルのプロパティの取得
       href: ../files/quickstart-getting-file-properties.md
     - name: ピッカーでファイルやフォルダーを開く
@@ -1513,9 +1515,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 30584a90fbfaf39ed66cf90fd27575ff055ef69e
-ms.sourcegitcommit: a774dac901ad6ad3a85520ef75ee9a1029aa9792
+ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070382"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115939"
