@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b4322d002747145c3b09e0f3cd7eb03874380b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935348"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623347"
 ---
-# <a name="userclaims-json"></a><span data-ttu-id="d5b11-104">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="d5b11-104">UserClaims (JSON)</span></span>
-<span data-ttu-id="d5b11-105">現在の認証されたユーザーに関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="d5b11-105">Returns information about the current authenticated user.</span></span> 
+# <a name="userclaims-json"></a><span data-ttu-id="5e641-104">UserClaims (JSON)</span><span class="sxs-lookup"><span data-stu-id="5e641-104">UserClaims (JSON)</span></span>
+<span data-ttu-id="5e641-105">現在の認証済みユーザーに関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="5e641-105">Returns information about the current authenticated user.</span></span> 
 <a id="ID4EN"></a>
 
  
-## <a name="userclaims"></a><span data-ttu-id="d5b11-106">UserClaims</span><span class="sxs-lookup"><span data-stu-id="d5b11-106">UserClaims</span></span>
+## <a name="userclaims"></a><span data-ttu-id="5e641-106">UserClaims</span><span class="sxs-lookup"><span data-stu-id="5e641-106">UserClaims</span></span>
  
-<span data-ttu-id="d5b11-107">UserClaims オブジェクトには、次仕様があります。</span><span class="sxs-lookup"><span data-stu-id="d5b11-107">The UserClaims object has the following specification.</span></span>
+<span data-ttu-id="5e641-107">UserClaims オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="5e641-107">The UserClaims object has the following specification.</span></span>
  
-| <span data-ttu-id="d5b11-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="d5b11-108">Member</span></span>| <span data-ttu-id="d5b11-109">種類</span><span class="sxs-lookup"><span data-stu-id="d5b11-109">Type</span></span>| <span data-ttu-id="d5b11-110">説明</span><span class="sxs-lookup"><span data-stu-id="d5b11-110">Description</span></span>| 
+| <span data-ttu-id="5e641-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="5e641-108">Member</span></span>| <span data-ttu-id="5e641-109">種類</span><span class="sxs-lookup"><span data-stu-id="5e641-109">Type</span></span>| <span data-ttu-id="5e641-110">説明</span><span class="sxs-lookup"><span data-stu-id="5e641-110">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="d5b11-111">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="d5b11-111">gamertag</span></span>| <span data-ttu-id="d5b11-112">string</span><span class="sxs-lookup"><span data-stu-id="d5b11-112">string</span></span>| <span data-ttu-id="d5b11-113">ユーザーのゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="d5b11-113">gamertag of the user.</span></span>| 
-| <span data-ttu-id="d5b11-114">xuid</span><span class="sxs-lookup"><span data-stu-id="d5b11-114">xuid</span></span>| <span data-ttu-id="d5b11-115">64 ビットの符号なし整数</span><span class="sxs-lookup"><span data-stu-id="d5b11-115">64-bit unsigned integer</span></span>| <span data-ttu-id="d5b11-116">Xbox ユーザー ID (XUID) ユーザーのします。</span><span class="sxs-lookup"><span data-stu-id="d5b11-116">The Xbox User ID (XUID) of the user.</span></span>| 
+| <span data-ttu-id="5e641-111">ゲーマータグ</span><span class="sxs-lookup"><span data-stu-id="5e641-111">gamertag</span></span>| <span data-ttu-id="5e641-112">string</span><span class="sxs-lookup"><span data-stu-id="5e641-112">string</span></span>| <span data-ttu-id="5e641-113">ユーザーのゲーマータグです。</span><span class="sxs-lookup"><span data-stu-id="5e641-113">gamertag of the user.</span></span>| 
+| <span data-ttu-id="5e641-114">xuid</span><span class="sxs-lookup"><span data-stu-id="5e641-114">xuid</span></span>| <span data-ttu-id="5e641-115">64 ビット符号なし整数</span><span class="sxs-lookup"><span data-stu-id="5e641-115">64-bit unsigned integer</span></span>| <span data-ttu-id="5e641-116">Xbox ユーザー ID (XUID) のユーザー。</span><span class="sxs-lookup"><span data-stu-id="5e641-116">The Xbox User ID (XUID) of the user.</span></span>| 
   
 <a id="ID4EZB"></a>
 
  
-## <a name="sample-json-syntax"></a><span data-ttu-id="d5b11-117">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="d5b11-117">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="5e641-117">サンプルの JSON の構文</span><span class="sxs-lookup"><span data-stu-id="5e641-117">Sample JSON syntax</span></span>
  
 
 ```json
@@ -47,13 +47,13 @@ ms.locfileid: "8935348"
 <a id="ID4ECC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="d5b11-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="d5b11-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5e641-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="5e641-118">See also</span></span>
  
 <a id="ID4EEC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="d5b11-119">Parent</span><span class="sxs-lookup"><span data-stu-id="d5b11-119">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="5e641-119">Parent</span><span class="sxs-lookup"><span data-stu-id="5e641-119">Parent</span></span> 
 
-[<span data-ttu-id="d5b11-120">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="d5b11-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="5e641-120">JavaScript Object Notation (JSON) オブジェクトの参照</span><span class="sxs-lookup"><span data-stu-id="5e641-120">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
    

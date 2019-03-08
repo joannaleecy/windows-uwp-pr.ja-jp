@@ -8,24 +8,24 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b154191e58b1c419947afea988cacc8638b73d0f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616637"
 ---
-# <a name="gameclipsource-enumeration"></a><span data-ttu-id="e4a83-104">GameClipSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="e4a83-104">GameClipSource Enumeration</span></span>
-<span data-ttu-id="e4a83-105">GameClipSource 列挙型をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e4a83-105">Details the GameClipSource enumeration.</span></span> 
+# <a name="gameclipsource-enumeration"></a><span data-ttu-id="e6fcc-104">GameClipSource 列挙型</span><span class="sxs-lookup"><span data-stu-id="e6fcc-104">GameClipSource Enumeration</span></span>
+<span data-ttu-id="e6fcc-105">GameClipSource 列挙体をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-105">Details the GameClipSource enumeration.</span></span> 
 <a id="ID4ET"></a>
 
  
-## <a name="gameclipsource"></a><span data-ttu-id="e4a83-106">GameClipSource</span><span class="sxs-lookup"><span data-stu-id="e4a83-106">GameClipSource</span></span>
+## <a name="gameclipsource"></a><span data-ttu-id="e6fcc-106">GameClipSource</span><span class="sxs-lookup"><span data-stu-id="e6fcc-106">GameClipSource</span></span>
  
-| <b><span data-ttu-id="e4a83-107">列挙子</span><span class="sxs-lookup"><span data-stu-id="e4a83-107">Enumerator</span></span></b>| <b><span data-ttu-id="e4a83-108">説明</span><span class="sxs-lookup"><span data-stu-id="e4a83-108">Description</span></span></b>| 
+| <span data-ttu-id="e6fcc-107"><b>列挙子</b></span><span class="sxs-lookup"><span data-stu-id="e6fcc-107"><b>Enumerator</b></span></span>| <span data-ttu-id="e6fcc-108"><b>説明</b></span><span class="sxs-lookup"><span data-stu-id="e6fcc-108"><b>Description</b></span></span>| 
 | --- | --- | 
-| <span data-ttu-id="e4a83-109">None</span><span class="sxs-lookup"><span data-stu-id="e4a83-109">None</span></span>| <span data-ttu-id="e4a83-110">ゲーム クリップ ソースは、不明なまたは設定されていないです。</span><span class="sxs-lookup"><span data-stu-id="e4a83-110">Game clip source is unknown or not set.</span></span> <span data-ttu-id="e4a83-111">(アップロードでは無効です)</span><span class="sxs-lookup"><span data-stu-id="e4a83-111">(not valid for upload)</span></span>| 
-| <span data-ttu-id="e4a83-112">Console</span><span class="sxs-lookup"><span data-stu-id="e4a83-112">Console</span></span>| <span data-ttu-id="e4a83-113">Xbox 本体のプラットフォームによって作成されたゲーム クリップされます。</span><span class="sxs-lookup"><span data-stu-id="e4a83-113">Game clip originated by the Xbox console platform.</span></span>| 
-| <span data-ttu-id="e4a83-114">TitleDirect</span><span class="sxs-lookup"><span data-stu-id="e4a83-114">TitleDirect</span></span>| <span data-ttu-id="e4a83-115">タイトルによって作成されたゲーム クリップされます。</span><span class="sxs-lookup"><span data-stu-id="e4a83-115">Game clip originated by a title.</span></span>| 
-| <span data-ttu-id="e4a83-116">中間</span><span class="sxs-lookup"><span data-stu-id="e4a83-116">Intermediate</span></span> | <span data-ttu-id="e4a83-117">ゲーム クリップは、種類の実績を示します。</span><span class="sxs-lookup"><span data-stu-id="e4a83-117">Game clip is an achievement type.</span></span>| 
-| <span data-ttu-id="e4a83-118">UserInitiated</span><span class="sxs-lookup"><span data-stu-id="e4a83-118">UserInitiated</span></span> | <span data-ttu-id="e4a83-119">ゲーム クリップは、このようなエディター中間アプリからです。</span><span class="sxs-lookup"><span data-stu-id="e4a83-119">Game clip is from an intermediate app like an editor.</span></span>| 
+| <span data-ttu-id="e6fcc-109">なし</span><span class="sxs-lookup"><span data-stu-id="e6fcc-109">None</span></span>| <span data-ttu-id="e6fcc-110">ゲームのクリップ ソースは、不明なか設定されていません。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-110">Game clip source is unknown or not set.</span></span> <span data-ttu-id="e6fcc-111">(アップロードに対しては無効)</span><span class="sxs-lookup"><span data-stu-id="e6fcc-111">(not valid for upload)</span></span>| 
+| <span data-ttu-id="e6fcc-112">Console</span><span class="sxs-lookup"><span data-stu-id="e6fcc-112">Console</span></span>| <span data-ttu-id="e6fcc-113">ゲームのクリップ、Xbox コンソール プラットフォームによって発生しました。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-113">Game clip originated by the Xbox console platform.</span></span>| 
+| <span data-ttu-id="e6fcc-114">TitleDirect</span><span class="sxs-lookup"><span data-stu-id="e6fcc-114">TitleDirect</span></span>| <span data-ttu-id="e6fcc-115">ゲームのクリップ、タイトルで発生しました。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-115">Game clip originated by a title.</span></span>| 
+| <span data-ttu-id="e6fcc-116">［中間］</span><span class="sxs-lookup"><span data-stu-id="e6fcc-116">Intermediate</span></span> | <span data-ttu-id="e6fcc-117">ゲームのクリップとは、実績の一種です。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-117">Game clip is an achievement type.</span></span>| 
+| <span data-ttu-id="e6fcc-118">UserInitiated</span><span class="sxs-lookup"><span data-stu-id="e6fcc-118">UserInitiated</span></span> | <span data-ttu-id="e6fcc-119">ゲームのクリップでは、エディターなどの中間のアプリからです。</span><span class="sxs-lookup"><span data-stu-id="e6fcc-119">Game clip is from an intermediate app like an editor.</span></span>| 
   

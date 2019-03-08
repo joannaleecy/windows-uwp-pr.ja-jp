@@ -6,76 +6,76 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ed5a76791bebfb1b82afaf12c699bfdd7c7437
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632517"
 ---
-# <a name="xbox-live-resources"></a><span data-ttu-id="c7ce4-104">Xbox Live リソース</span><span class="sxs-lookup"><span data-stu-id="c7ce4-104">Xbox Live resources</span></span>
+# <a name="xbox-live-resources"></a><span data-ttu-id="df8d8-104">Xbox Live リソース</span><span class="sxs-lookup"><span data-stu-id="df8d8-104">Xbox Live resources</span></span>
 
-<span data-ttu-id="c7ce4-105">このトピックでは、Xbox Live ゲーム開発に役立つリソースを紹介します。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-105">This topic contains links to useful resources for developing Xbox Live games.</span></span>
+<span data-ttu-id="df8d8-105">このトピックでは、Xbox Live ゲーム開発に役立つリソースを紹介します。</span><span class="sxs-lookup"><span data-stu-id="df8d8-105">This topic contains links to useful resources for developing Xbox Live games.</span></span>
 
-## <a name="api-reference"></a><span data-ttu-id="c7ce4-106">API リファレンス</span><span class="sxs-lookup"><span data-stu-id="c7ce4-106">API reference</span></span>
+## <a name="api-reference"></a><span data-ttu-id="df8d8-106">API リファレンス</span><span class="sxs-lookup"><span data-stu-id="df8d8-106">API reference</span></span>
 
-<span data-ttu-id="c7ce4-107">WinRT SDK API リファレンスを参照してオンラインください。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-107">The WinRT SDK API reference can be found online here:</span></span>
+<span data-ttu-id="df8d8-107">WinRT SDK の API リファレンスはオンライン。</span><span class="sxs-lookup"><span data-stu-id="df8d8-107">The WinRT SDK API reference can be found online here:</span></span>
 
-* [<span data-ttu-id="c7ce4-108">Xbox Live WinRT SDK</span><span class="sxs-lookup"><span data-stu-id="c7ce4-108">Xbox Live WinRT SDK</span></span>](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
+* [<span data-ttu-id="df8d8-108">Xbox Live WinRT SDK</span><span class="sxs-lookup"><span data-stu-id="df8d8-108">Xbox Live WinRT SDK</span></span>](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-<span data-ttu-id="c7ce4-109">C++ SDK は、現在オフライン形式で利用可能なのみです。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-109">The C++ SDK is currently only available in offline format.</span></span>
+<span data-ttu-id="df8d8-109">C++ SDK は、現在オフライン形式の使用のみ。</span><span class="sxs-lookup"><span data-stu-id="df8d8-109">The C++ SDK is currently only available in offline format.</span></span>
 
-<span data-ttu-id="c7ce4-110">完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-110">You can download the full API reference documentation (which includes C++ as well as WinRT) at:</span></span>
+<span data-ttu-id="df8d8-110">(を C++ と WinRT を含む) 完全な API リファレンス ドキュメントをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-110">You can download the full API reference documentation (which includes C++ as well as WinRT) at:</span></span>
 
-* [<span data-ttu-id="c7ce4-111">Xbox Live API リファレンス</span><span class="sxs-lookup"><span data-stu-id="c7ce4-111">Xbox Live API reference</span></span>](https://aka.ms/xboxliveuwpdocs)
+* [<span data-ttu-id="df8d8-111">Xbox Live API リファレンス</span><span class="sxs-lookup"><span data-stu-id="df8d8-111">Xbox Live API reference</span></span>](https://aka.ms/xboxliveuwpdocs)
 
-<span data-ttu-id="c7ce4-112">REST API の情報は、次の場所からご覧いただけます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-112">You can find the REST API information at:</span></span>
+<span data-ttu-id="df8d8-112">REST API の情報は、次の場所からご覧いただけます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-112">You can find the REST API information at:</span></span>
 
-* [<span data-ttu-id="c7ce4-113">Xbox Live RESTful リファレンス</span><span class="sxs-lookup"><span data-stu-id="c7ce4-113">Xbox Live RESTful reference</span></span>](xbox-live-rest/atoc-xboxlivews-reference.md)
+* [<span data-ttu-id="df8d8-113">Xbox Live RESTful の参照</span><span class="sxs-lookup"><span data-stu-id="df8d8-113">Xbox Live RESTful reference</span></span>](xbox-live-rest/atoc-xboxlivews-reference.md)
 
 
-## <a name="xbox-live-api-source-code"></a><span data-ttu-id="c7ce4-114">Xbox Live API ソース コード</span><span class="sxs-lookup"><span data-stu-id="c7ce4-114">Xbox Live API source code</span></span>
+## <a name="xbox-live-api-source-code"></a><span data-ttu-id="df8d8-114">Xbox Live API ソース コード</span><span class="sxs-lookup"><span data-stu-id="df8d8-114">Xbox Live API source code</span></span>
 
-<span data-ttu-id="c7ce4-115">Xbox Live API ソース コードは、GitHub に公開されています。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-115">The Xbox Live API source code is publicly available on GitHub at:</span></span>
+<span data-ttu-id="df8d8-115">Xbox Live API ソース コードは、GitHub に公開されています。</span><span class="sxs-lookup"><span data-stu-id="df8d8-115">The Xbox Live API source code is publicly available on GitHub at:</span></span>
 
-* [<span data-ttu-id="c7ce4-116">Xbox Live API ソース</span><span class="sxs-lookup"><span data-stu-id="c7ce4-116">Xbox Live API source</span></span>](https://github.com/Microsoft/xbox-live-api)
+* [<span data-ttu-id="df8d8-116">Xbox Live API ソース</span><span class="sxs-lookup"><span data-stu-id="df8d8-116">Xbox Live API source</span></span>](https://github.com/Microsoft/xbox-live-api)
 
-## <a name="xbox-live-unity-plug-in"></a><span data-ttu-id="c7ce4-117">Xbox Live Unity プラグイン</span><span class="sxs-lookup"><span data-stu-id="c7ce4-117">Xbox Live Unity plug-in</span></span>
+## <a name="xbox-live-unity-plug-in"></a><span data-ttu-id="df8d8-117">Xbox Live Unity プラグイン</span><span class="sxs-lookup"><span data-stu-id="df8d8-117">Xbox Live Unity plug-in</span></span>
 
-<span data-ttu-id="c7ce4-118">Unity を使ってゲームを開発している Xbox Live クリエーターズ プログラムの開発者は、次の場所で GitHub から Xbox Live Unity プラグインを入手できます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-118">For developers in the Xbox Live Creators Program that are using Unity to develop their game, the Xbox Live Unity plug-in is available on GitHub at:</span></span>
+<span data-ttu-id="df8d8-118">Unity を使ってゲームを開発している Xbox Live クリエーターズ プログラムの開発者は、次の場所で GitHub から Xbox Live Unity プラグインを入手できます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-118">For developers in the Xbox Live Creators Program that are using Unity to develop their game, the Xbox Live Unity plug-in is available on GitHub at:</span></span>
 
-* [<span data-ttu-id="c7ce4-119">Xbox Live Unity プラグイン</span><span class="sxs-lookup"><span data-stu-id="c7ce4-119">Xbox Live Unity plug-in</span></span>](https://github.com/Microsoft/xbox-live-unity-plugin)
+* [<span data-ttu-id="df8d8-119">Xbox Live Unity プラグイン</span><span class="sxs-lookup"><span data-stu-id="df8d8-119">Xbox Live Unity plug-in</span></span>](https://github.com/Microsoft/xbox-live-unity-plugin)
 
 > [!WARNING]
-> <span data-ttu-id="c7ce4-120">これは、Xbox Live クリエーターズ プログラム ツールであるため、Xbox Live Unity プラグインには包括的な Xbox Live の機能は用意されていません。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-120">Because this is an Xbox Live Creators Program tool, the Xbox Live Unity plug-in will not provide the full suite of Xbox Live features.</span></span> <span data-ttu-id="c7ce4-121">提供される Xbox Live サービスについては、[開発者プログラムの概要の機能表](developer-program-overview.md#feature-table)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-121">Refer to the [developer program overview feature table](developer-program-overview.md#feature-table) to see what Xbox Live services will be available.</span></span>
+> <span data-ttu-id="df8d8-120">これは、Xbox Live クリエーターズ プログラム ツールであるため、Xbox Live Unity プラグインには包括的な Xbox Live の機能は用意されていません。</span><span class="sxs-lookup"><span data-stu-id="df8d8-120">Because this is an Xbox Live Creators Program tool, the Xbox Live Unity plug-in will not provide the full suite of Xbox Live features.</span></span> <span data-ttu-id="df8d8-121">提供される Xbox Live サービスについては、[開発者プログラムの概要の機能表](developer-program-overview.md#feature-table)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df8d8-121">Refer to the [developer program overview feature table](developer-program-overview.md#feature-table) to see what Xbox Live services will be available.</span></span>
 
-## <a name="xbox-live-platform-extensions-sdk"></a><span data-ttu-id="c7ce4-122">Xbox Live Platform Extensions SDK</span><span class="sxs-lookup"><span data-stu-id="c7ce4-122">Xbox Live Platform Extensions SDK</span></span>
+## <a name="xbox-live-platform-extensions-sdk"></a><span data-ttu-id="df8d8-122">Xbox Live Platform Extensions SDK</span><span class="sxs-lookup"><span data-stu-id="df8d8-122">Xbox Live Platform Extensions SDK</span></span>
 
-<span data-ttu-id="c7ce4-123">このパッケージには、UWP プラットフォーム用のネットワークのセキュリティ保護機能および接続ストレージ機能に関する winmd ファイルとドキュメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-123">This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.</span></span> <span data-ttu-id="c7ce4-124">この拡張機能では、Windows.Gaming.XboxLive.Storage 名前空間を使うことにより UWP タイトルで接続ストレージを使えるようになります。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-124">This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.</span></span>
+<span data-ttu-id="df8d8-123">このパッケージには、UWP プラットフォーム用のネットワークのセキュリティ保護機能および接続ストレージ機能に関する winmd ファイルとドキュメントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="df8d8-123">This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.</span></span> <span data-ttu-id="df8d8-124">この拡張機能では、Windows.Gaming.XboxLive.Storage 名前空間を使うことにより UWP タイトルで接続ストレージを使えるようになります。</span><span class="sxs-lookup"><span data-stu-id="df8d8-124">This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.</span></span>
 
-* [<span data-ttu-id="c7ce4-125">Xbox Live Platform Extensions SDK</span><span class="sxs-lookup"><span data-stu-id="c7ce4-125">Xbox Live Platform Extensions SDK</span></span>](https://aka.ms/xblextsdk)
+* [<span data-ttu-id="df8d8-125">Xbox Live プラットフォーム拡張機能 SDK</span><span class="sxs-lookup"><span data-stu-id="df8d8-125">Xbox Live Platform Extensions SDK</span></span>](https://aka.ms/xblextsdk)
 
 > [!NOTE]
-> - <span data-ttu-id="c7ce4-126">開発者環境で Windows 10 Fall Creators Update SDK 以降を使っている場合、このダウンロードは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-126">This download is not required if your developer environment is using the Windows 10 Fall Creators Update SDK or later.</span></span>
-> - <span data-ttu-id="c7ce4-127">セキュア ソケットは、Xbox Live クリエーターズ プログラムの開発者にはご利用いただけません。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-127">Secure Sockets are not available to developers in the Xbox Live Creators Program.</span></span>
+> - <span data-ttu-id="df8d8-126">開発者環境で Windows 10 Fall Creators Update SDK 以降を使っている場合、このダウンロードは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="df8d8-126">This download is not required if your developer environment is using the Windows 10 Fall Creators Update SDK or later.</span></span>
+> - <span data-ttu-id="df8d8-127">セキュア ソケットは、Xbox Live クリエーターズ プログラムの開発者にはご利用いただけません。</span><span class="sxs-lookup"><span data-stu-id="df8d8-127">Secure Sockets are not available to developers in the Xbox Live Creators Program.</span></span>
 
-## <a name="xbox-live-tools"></a><span data-ttu-id="c7ce4-128">Xbox Live ツール</span><span class="sxs-lookup"><span data-stu-id="c7ce4-128">Xbox Live tools</span></span>
+## <a name="xbox-live-tools"></a><span data-ttu-id="df8d8-128">Xbox Live ツール</span><span class="sxs-lookup"><span data-stu-id="df8d8-128">Xbox Live tools</span></span>
 
-<span data-ttu-id="c7ce4-129">Xbox Live の開発に役立ついくつかの便利なツールがあります。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-129">There are several useful tools that you use to help you develop for Xbox Live.</span></span> <span data-ttu-id="c7ce4-130">詳しくは以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-130">Find more information at:</span></span>
+<span data-ttu-id="df8d8-129">Xbox Live の開発に役立ついくつかの便利なツールがあります。</span><span class="sxs-lookup"><span data-stu-id="df8d8-129">There are several useful tools that you use to help you develop for Xbox Live.</span></span> <span data-ttu-id="df8d8-130">詳しくは以下をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df8d8-130">Find more information at:</span></span>
 
-* [<span data-ttu-id="c7ce4-131">Xbox Live の開発ツール</span><span class="sxs-lookup"><span data-stu-id="c7ce4-131">Development tools for Xbox Live</span></span>](tools/tools.md)
+* [<span data-ttu-id="df8d8-131">Xbox Live 向けの開発ツール</span><span class="sxs-lookup"><span data-stu-id="df8d8-131">Development tools for Xbox Live</span></span>](tools/tools.md)
 
-## <a name="xbox-live-code-samples"></a><span data-ttu-id="c7ce4-132">Xbox Live のコード サンプル</span><span class="sxs-lookup"><span data-stu-id="c7ce4-132">Xbox Live code samples</span></span>
+## <a name="xbox-live-code-samples"></a><span data-ttu-id="df8d8-132">Xbox Live のコード サンプル</span><span class="sxs-lookup"><span data-stu-id="df8d8-132">Xbox Live code samples</span></span>
 
-<span data-ttu-id="c7ce4-133">Xbox Live の公開コード サンプルは、GitHub で入手できます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-133">Public Xbox Live code samples are available on GitHub.</span></span>
+<span data-ttu-id="df8d8-133">Xbox Live の公開コード サンプルは、GitHub で入手できます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-133">Public Xbox Live code samples are available on GitHub.</span></span>
 
-* [<span data-ttu-id="c7ce4-134">Xbox Live クリエーターズ プログラム向けサンプル</span><span class="sxs-lookup"><span data-stu-id="c7ce4-134">Samples for Xbox Live Creators Program</span></span>](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
+* [<span data-ttu-id="df8d8-134">Xbox Live クリエーターズ プログラム用のサンプル</span><span class="sxs-lookup"><span data-stu-id="df8d8-134">Samples for Xbox Live Creators Program</span></span>](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
 
-* [<span data-ttu-id="c7ce4-135">ID@Xbox 向けサンプル</span><span class="sxs-lookup"><span data-stu-id="c7ce4-135">Samples for ID@Xbox</span></span>](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
+* [<span data-ttu-id="df8d8-135">用のサンプル ID@Xbox</span><span class="sxs-lookup"><span data-stu-id="df8d8-135">Samples for ID@Xbox</span></span>](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
 
-<span data-ttu-id="c7ce4-136">マネージ パートナー限定のサンプルは、Games Developer Network ポータルにあります。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-136">Samples that are restricted to managed partners can be found on the Games Developer Network Portal.</span></span>
+<span data-ttu-id="df8d8-136">マネージ パートナー限定のサンプルは、Games Developer Network ポータルにあります。</span><span class="sxs-lookup"><span data-stu-id="df8d8-136">Samples that are restricted to managed partners can be found on the Games Developer Network Portal.</span></span>
 
-## <a name="xbox-live-managed-partner-only-content"></a><span data-ttu-id="c7ce4-137">Xbox Live マネージ パートナー限定コンテンツ</span><span class="sxs-lookup"><span data-stu-id="c7ce4-137">Xbox Live managed partner only content</span></span>
+## <a name="xbox-live-managed-partner-only-content"></a><span data-ttu-id="df8d8-137">Xbox Live マネージ パートナー限定コンテンツ</span><span class="sxs-lookup"><span data-stu-id="df8d8-137">Xbox Live managed partner only content</span></span>
 
-<span data-ttu-id="c7ce4-138">Xbox Live の一部のドキュメントは、マネージ パートナーのみが利用できます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-138">Some documentation for Xbox Live is available only to managed partners.</span></span> <span data-ttu-id="c7ce4-139">この情報にアクセスするには、Xbox Live のフル アクセスが有効な Microsoft アカウント (MSA) が必要です。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-139">To access this information, you must have a Microsoft Account (MSA) that has been enabled for full Xbox Live access.</span></span>
+<span data-ttu-id="df8d8-138">Xbox Live の一部のドキュメントは、マネージ パートナーのみが利用できます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-138">Some documentation for Xbox Live is available only to managed partners.</span></span> <span data-ttu-id="df8d8-139">この情報にアクセスするには、Xbox Live のフル アクセスが有効な Microsoft アカウント (MSA) が必要です。</span><span class="sxs-lookup"><span data-stu-id="df8d8-139">To access this information, you must have a Microsoft Account (MSA) that has been enabled for full Xbox Live access.</span></span>
 
-<span data-ttu-id="c7ce4-140">承認済みの MSA をお持ちの場合は、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content) でパートナー限定コンテンツを入手できます。</span><span class="sxs-lookup"><span data-stu-id="c7ce4-140">If you have an authorized MSA, you can find the partner only content at [Xbox Live partner content](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content).</span></span>
+<span data-ttu-id="df8d8-140">承認済みの MSA をお持ちの場合は、[Xbox Live パートナー コンテンツ](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content) でパートナー限定コンテンツを入手できます。</span><span class="sxs-lookup"><span data-stu-id="df8d8-140">If you have an authorized MSA, you can find the partner only content at [Xbox Live partner content](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/partner-content).</span></span>
