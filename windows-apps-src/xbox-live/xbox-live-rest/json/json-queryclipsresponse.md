@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a0369de617fd60fcc71e7d69b46ced6b499e8de5
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115352"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650507"
 ---
 # <a name="queryclipsresponse-json"></a>QueryClipsResponse (JSON)
-一覧のページング情報と共にゲーム クリップの戻り値の一覧をラップします。 
+ゲームの一覧のページング情報と共にクリップの戻り値の一覧をラップします。 
 <a id="ID4EN"></a>
 
  
@@ -25,13 +25,13 @@ QueryClipsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>ゲーム クリップ</b>| GameClip の配列| 要求の制限 (<b>maxItems</b>) までクエリが満たされるゲーム クリップの配列です。| 
-| <b>pagingInfo</b>| PagingInfo| 必要な継続とリストの後続の呼び出しのページングする要求の制限を超える (<b>maxItems</b>) の情報が含まれています。| 
+| <b>gameClips</b>| ゲーム クリップだったの配列| 要求の上限に達するまで、クエリを満たすゲームのクリップの配列 (<b>maxItems</b>)。| 
+| <b>pagingInfo</b>| PagingInfo| 必要な継続と後続の呼び出しリストのページングを上限を超える要求情報が含まれています (<b>maxItems</b>)。| 
   
 <a id="ID4E2B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -131,7 +131,7 @@ QueryClipsResponse オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4ESC"></a>

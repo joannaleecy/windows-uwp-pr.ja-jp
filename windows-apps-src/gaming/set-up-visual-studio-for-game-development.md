@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, Visual Studio, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3938f486d52942031944b1184a711ddbc579db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653477"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>ゲーム プログラミング用の Visual Studio ツール
 
@@ -19,7 +19,7 @@ ms.locfileid: "8924646"
 
 **要約**
 
--   [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
+-   [テンプレートから DirectX ゲーム プロジェクトを作成します。](user-interface.md)
 -   DirectX ゲーム プログラミング用の Visual Studio ツールの使用
 
 
@@ -45,7 +45,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 詳しくは、「[テクスチャおよびイメージの使用](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)」をご覧ください。
 
-> **注:** イメージ エディターは、フル機能イメージを編集アプリを置き換えるものではありませんが多くの簡単な表示や編集シナリオに適しています。
+> **注**  イメージ エディターは、アプリの編集機能の完全なイメージの置換をするものではありませんが、多くの単純な表示やシナリオの編集に適しています。
 
  
 
@@ -64,7 +64,7 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 詳しくは、「[3-D モデルの操作](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)」をご覧ください。
 
-> **注:** モデル エディターは、フル機能モデル編集アプリを置き換えるものではありませんが、多くの簡単な表示や編集シナリオに適しています。
+> **注**  モデル エディターのアプリを編集する完全な機能モデルに代わるものではありませんが、多くの単純な表示やシナリオの編集に適しています。
 
  
 
@@ -116,7 +116,7 @@ float3 LambertLighting(
 
 プロジェクトにビルドのカスタマイズを追加して、リソースを Visual Studio で利用できる形式に変換できます。 その後で、アプリにアセットを読み込み、他の DirectX アプリと同じように DirectX リソースを作成し、設定して、アセットを使うことができます。
 
-ビルドのカスタマイズを追加するには、**ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**ビルドのカスタマイズ]** を選択します。次の種類のビルドのカスタマイズは、プロジェクトに追加できます。
+ビルド カスタマイズを追加するには、**ソリューション エクスプローラー**でプロジェクトを右クリックし、**[ビルドのカスタマイズ]** をクリックします。プロジェクトには次の種類のビルドのカスタマイズを追加できます。
 
 -   入力として画像ファイルを受け取り、DirectDraw Surface (.dds) ファイルを出力するイメージ コンテンツ パイプライン。
 -   メッシュ ファイル (.fbx など) を受け取り、.cmo メッシュ ファイルを出力するメッシュ コンテンツ パイプライン。
