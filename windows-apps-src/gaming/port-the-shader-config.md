@@ -7,38 +7,38 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL
 ms.localizationpriority: medium
 ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935956"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618747"
 ---
-# <a name="port-the-shader-objects"></a><span data-ttu-id="8e71b-104">シェーダー オブジェクトの移植</span><span class="sxs-lookup"><span data-stu-id="8e71b-104">Port the shader objects</span></span>
+# <a name="port-the-shader-objects"></a><span data-ttu-id="0c04b-104">シェーダー オブジェクトの移植</span><span class="sxs-lookup"><span data-stu-id="0c04b-104">Port the shader objects</span></span>
 
 
 
 
-**<span data-ttu-id="8e71b-105">重要な API</span><span class="sxs-lookup"><span data-stu-id="8e71b-105">Important APIs</span></span>**
+<span data-ttu-id="0c04b-105">**重要な API**</span><span class="sxs-lookup"><span data-stu-id="0c04b-105">**Important APIs**</span></span>
 
--   [**<span data-ttu-id="8e71b-106">ID3D11Device</span><span class="sxs-lookup"><span data-stu-id="8e71b-106">ID3D11Device</span></span>**](https://msdn.microsoft.com/library/windows/desktop/ff476379)
--   [**<span data-ttu-id="8e71b-107">ID3D11DeviceContext</span><span class="sxs-lookup"><span data-stu-id="8e71b-107">ID3D11DeviceContext</span></span>**](https://msdn.microsoft.com/library/windows/desktop/ff476385)
+-   [<span data-ttu-id="0c04b-106">**ID3D11Device**</span><span class="sxs-lookup"><span data-stu-id="0c04b-106">**ID3D11Device**</span></span>](https://msdn.microsoft.com/library/windows/desktop/ff476379)
+-   [<span data-ttu-id="0c04b-107">**ID3D11DeviceContext**</span><span class="sxs-lookup"><span data-stu-id="0c04b-107">**ID3D11DeviceContext**</span></span>](https://msdn.microsoft.com/library/windows/desktop/ff476385)
 
-<span data-ttu-id="8e71b-108">OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="8e71b-108">When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</span></span>
+<span data-ttu-id="0c04b-108">OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-108">When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</span></span>
 
-> <span data-ttu-id="8e71b-109">**注:** 新しい Direct3D プロジェクトを作成するかどうか。</span><span class="sxs-lookup"><span data-stu-id="8e71b-109">**Note** Have you created a new Direct3D project?</span></span> <span data-ttu-id="8e71b-110">作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="8e71b-110">If not, follow the instructions in [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).</span></span> <span data-ttu-id="8e71b-111">このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-111">This walkthrough assumes that you have the created the DXGI and Direct3D resources for drawing to the screen, and which are provided in the template.</span></span>
+> <span data-ttu-id="0c04b-109">**注**  新しい Direct3D プロジェクトを作成しましたか?</span><span class="sxs-lookup"><span data-stu-id="0c04b-109">**Note**   Have you created a new Direct3D project?</span></span> <span data-ttu-id="0c04b-110">作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。</span><span class="sxs-lookup"><span data-stu-id="0c04b-110">If not, follow the instructions in [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).</span></span> <span data-ttu-id="0c04b-111">このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-111">This walkthrough assumes that you have the created the DXGI and Direct3D resources for drawing to the screen, and which are provided in the template.</span></span>
 
  
 
-<span data-ttu-id="8e71b-112">OpenGL ES 2.0 と同じように、Direct3D のコンパイル済みシェーダーは描画コンテキストに関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-112">Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context.</span></span> <span data-ttu-id="8e71b-113">ただし、Direct3D にはもともとシェーダー プログラム オブジェクトという概念がありません。そのため、代わりに、シェーダーを [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に直接割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-113">However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385).</span></span> <span data-ttu-id="8e71b-114">この手順では、OpenGL ES 2.0 のシェーダー オブジェクトを作成してバインドするプロセスに従い、Direct3D で対応する API の動作を実現します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-114">This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.</span></span>
+<span data-ttu-id="0c04b-112">OpenGL ES 2.0 と同じように、Direct3D のコンパイル済みシェーダーは描画コンテキストに関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-112">Much like OpenGL ES 2.0, the compiled shaders in Direct3D must be associated with a drawing context.</span></span> <span data-ttu-id="0c04b-113">ただし、Direct3D にはもともとシェーダー プログラム オブジェクトという概念がありません。そのため、代わりに、シェーダーを [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に直接割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-113">However, Direct3D does not have the concept of a shader program object per se; instead, you must assign the shaders directly to a [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385).</span></span> <span data-ttu-id="0c04b-114">この手順では、OpenGL ES 2.0 のシェーダー オブジェクトを作成してバインドするプロセスに従い、Direct3D で対応する API の動作を実現します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-114">This step follows the OpenGL ES 2.0 process for creating and binding shader objects, and provides you with the corresponding API behaviors in Direct3D.</span></span>
 
-<a name="instructions"></a><span data-ttu-id="8e71b-115">手順</span><span class="sxs-lookup"><span data-stu-id="8e71b-115">Instructions</span></span>
+<a name="instructions"></a><span data-ttu-id="0c04b-115">手順</span><span class="sxs-lookup"><span data-stu-id="0c04b-115">Instructions</span></span>
 ------------
 
-### <a name="step-1-compile-the-shaders"></a><span data-ttu-id="8e71b-116">手順 1: シェーダーのコンパイル</span><span class="sxs-lookup"><span data-stu-id="8e71b-116">Step 1: Compile the shaders</span></span>
+### <a name="step-1-compile-the-shaders"></a><span data-ttu-id="0c04b-116">手順 1:シェーダーをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-116">Step 1: Compile the shaders</span></span>
 
-<span data-ttu-id="8e71b-117">この簡単な OpenGL ES 2.0 のサンプルでは、シェーダーをテキスト ファイルとして保存し、実行時コンパイルのために文字列データとして読み込みます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-117">In this simple OpenGL ES 2.0 sample, the shaders are stored as text files and loaded as string data for run-time compilation.</span></span>
+<span data-ttu-id="0c04b-117">この簡単な OpenGL ES 2.0 のサンプルでは、シェーダーをテキスト ファイルとして保存し、実行時コンパイルのために文字列データとして読み込みます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-117">In this simple OpenGL ES 2.0 sample, the shaders are stored as text files and loaded as string data for run-time compilation.</span></span>
 
-<span data-ttu-id="8e71b-118">OpenGL ES 2.0: シェーダーのコンパイル</span><span class="sxs-lookup"><span data-stu-id="8e71b-118">OpenGL ES 2.0: Compile a shader</span></span>
+<span data-ttu-id="0c04b-118">OpenGL ES 2.0:シェーダーをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-118">OpenGL ES 2.0: Compile a shader</span></span>
 
 ``` syntax
 GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
@@ -76,13 +76,13 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 }
 ```
 
-<span data-ttu-id="8e71b-119">Direct3D では、シェーダーは実行時にコンパイルされず、常に、プログラムの他の部分をコンパイルしたときに、CSO ファイルにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-119">In Direct3D, shaders are not compiled during run-time; they are always compiled to CSO files when the rest of the program is compiled.</span></span> <span data-ttu-id="8e71b-120">Microsoft Visual Studio でアプリをコンパイルすると、HLSL ファイルは、アプリで読み込む必要がある CSO (.cso) ファイルにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-120">When you compile your app with Microsoft Visual Studio, the HLSL files are compiled to CSO (.cso) files that your app must load.</span></span> <span data-ttu-id="8e71b-121">アプリをパッケージ化するときは、これらの CSO ファイルを必ず含めてください。</span><span class="sxs-lookup"><span data-stu-id="8e71b-121">Make sure you include these CSO files with your app when you package it!</span></span>
+<span data-ttu-id="0c04b-119">Direct3D では、シェーダーは実行時にコンパイルされず、常に、プログラムの他の部分をコンパイルしたときに、CSO ファイルにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-119">In Direct3D, shaders are not compiled during run-time; they are always compiled to CSO files when the rest of the program is compiled.</span></span> <span data-ttu-id="0c04b-120">Microsoft Visual Studio でアプリをコンパイルすると、HLSL ファイルは、アプリで読み込む必要がある CSO (.cso) ファイルにコンパイルされます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-120">When you compile your app with Microsoft Visual Studio, the HLSL files are compiled to CSO (.cso) files that your app must load.</span></span> <span data-ttu-id="0c04b-121">アプリをパッケージ化するときは、これらの CSO ファイルを必ず含めてください。</span><span class="sxs-lookup"><span data-stu-id="0c04b-121">Make sure you include these CSO files with your app when you package it!</span></span>
 
-> <span data-ttu-id="8e71b-122">**注:** 次の例は、シェーダーの読み込みと**auto**キーワードとラムダ構文を使用して非同期でコンパイルを実行します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-122">**Note** The following example performs the shader loading and compilation asynchronously using the **auto** keyword and lambda syntax.</span></span> <span data-ttu-id="8e71b-123">ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-123">ReadDataAsync() is a method implemented for the template that reads in a CSO file as an array of byte data (fileData).</span></span>
+> <span data-ttu-id="0c04b-122">**注**  シェーダーの読み込みおよびコンパイルを使用して非同期的に次の例では、**自動**キーワードとラムダ構文です。</span><span class="sxs-lookup"><span data-stu-id="0c04b-122">**Note**   The following example performs the shader loading and compilation asynchronously using the **auto** keyword and lambda syntax.</span></span> <span data-ttu-id="0c04b-123">ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-123">ReadDataAsync() is a method implemented for the template that reads in a CSO file as an array of byte data (fileData).</span></span>
 
  
 
-<span data-ttu-id="8e71b-124">Direct3D 11: シェーダーのコンパイル</span><span class="sxs-lookup"><span data-stu-id="8e71b-124">Direct3D 11: Compile a shader</span></span>
+<span data-ttu-id="0c04b-124">Direct3D 11。シェーダーをコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-124">Direct3D 11: Compile a shader</span></span>
 
 ``` syntax
 auto loadVSTask = DX::ReadDataAsync(m_projectDir + "SimpleVertexShader.cso");
@@ -105,11 +105,11 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a><span data-ttu-id="8e71b-125">手順 2: 頂点シェーダーとフラグメント (ピクセル) シェーダーの作成と読み込み</span><span class="sxs-lookup"><span data-stu-id="8e71b-125">Step 2: Create and load the vertex and fragment (pixel) shaders</span></span>
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a><span data-ttu-id="0c04b-125">手順 2:フラグメントの (ピクセル) シェーダーを作成し、頂点の読み込み</span><span class="sxs-lookup"><span data-stu-id="0c04b-125">Step 2: Create and load the vertex and fragment (pixel) shaders</span></span>
 
-<span data-ttu-id="8e71b-126">OpenGL ES 2.0 にはシェーダー "プログラム" という概念があります。この概念は、CPU で実行されるメイン プログラムと GPU で実行されるシェーダーの間のインターフェイスとして機能します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-126">OpenGL ES 2.0 has the notion of a shader "program", which serves as the interface between the main program running on the CPU and the shaders, which are executed on the GPU.</span></span> <span data-ttu-id="8e71b-127">シェーダーはコンパイルされ (またはコンパイル済みのソースから読み込まれ)、プログラムに関連付けられることで、GPU で実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-127">Shaders are compiled (or loaded from compiled sources) and associated with a program, which enables execution on the GPU.</span></span>
+<span data-ttu-id="0c04b-126">OpenGL ES 2.0 にはシェーダー "プログラム" という概念があります。この概念は、CPU で実行されるメイン プログラムと GPU で実行されるシェーダーの間のインターフェイスとして機能します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-126">OpenGL ES 2.0 has the notion of a shader "program", which serves as the interface between the main program running on the CPU and the shaders, which are executed on the GPU.</span></span> <span data-ttu-id="0c04b-127">シェーダーはコンパイルされ (またはコンパイル済みのソースから読み込まれ)、プログラムに関連付けられることで、GPU で実行できるようになります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-127">Shaders are compiled (or loaded from compiled sources) and associated with a program, which enables execution on the GPU.</span></span>
 
-<span data-ttu-id="8e71b-128">OpenGL ES 2.0: シェーダー プログラムへの頂点シェーダーとフラグメント シェーダーの読み込み</span><span class="sxs-lookup"><span data-stu-id="8e71b-128">OpenGL ES 2.0: Loading the vertex and fragment shaders into a shading program</span></span>
+<span data-ttu-id="0c04b-128">OpenGL ES 2.0:網掛けプログラムへの頂点とフラグメントのシェーダーの読み込み</span><span class="sxs-lookup"><span data-stu-id="0c04b-128">OpenGL ES 2.0: Loading the vertex and fragment shaders into a shading program</span></span>
 
 ``` syntax
 GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *fragShaderSrcStr)
@@ -168,9 +168,9 @@ GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *frag
 glUseProgram(renderer->programObject);
 ```
 
-<span data-ttu-id="8e71b-129">Direct3D には、シェーダー プログラム オブジェクトという概念がありません。</span><span class="sxs-lookup"><span data-stu-id="8e71b-129">Direct3D does not have the concept of a shader program object.</span></span> <span data-ttu-id="8e71b-130">そのため、シェーダーは、[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) インターフェイスでいずれかのシェーダー作成メソッド ([**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) や [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) など) が呼び出されたときに作成されます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-130">Rather, the shaders are created when one of the shader creation methods on the [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) interface (such as [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) or [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) is called.</span></span> <span data-ttu-id="8e71b-131">現在の描画コンテキストのシェーダーを設定するには、シェーダー設定メソッド (頂点シェーダーの [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) やフラグメント シェーダーの [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) など) を使って、シェーダーを対応する [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に渡します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-131">To set the shaders for the current drawing context, we provide them to corresponding [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) with a set shader method, such as [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) for the vertex shader or [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) for the fragment shader.</span></span>
+<span data-ttu-id="0c04b-129">Direct3D には、シェーダー プログラム オブジェクトという概念がありません。</span><span class="sxs-lookup"><span data-stu-id="0c04b-129">Direct3D does not have the concept of a shader program object.</span></span> <span data-ttu-id="0c04b-130">そのため、シェーダーは、[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) インターフェイスでいずれかのシェーダー作成メソッド ([**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) や [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) など) が呼び出されたときに作成されます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-130">Rather, the shaders are created when one of the shader creation methods on the [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) interface (such as [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) or [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) is called.</span></span> <span data-ttu-id="0c04b-131">現在の描画コンテキストのシェーダーを設定するには、シェーダー設定メソッド (頂点シェーダーの [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) やフラグメント シェーダーの [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) など) を使って、シェーダーを対応する [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に渡します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-131">To set the shaders for the current drawing context, we provide them to corresponding [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) with a set shader method, such as [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) for the vertex shader or [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) for the fragment shader.</span></span>
 
-<span data-ttu-id="8e71b-132">Direct3D 11: グラフィックス デバイスの描画コンテキストのシェーダーの設定</span><span class="sxs-lookup"><span data-stu-id="8e71b-132">Direct3D 11: Set the shaders for the graphics device drawing context.</span></span>
+<span data-ttu-id="0c04b-132">Direct3D 11。グラフィックス デバイスの描画コンテキストのシェーダーを設定します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-132">Direct3D 11: Set the shaders for the graphics device drawing context.</span></span>
 
 ``` syntax
 m_d3dContext->VSSetShader(
@@ -184,18 +184,18 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a><span data-ttu-id="8e71b-133">手順 3: シェーダーに渡すデータの定義</span><span class="sxs-lookup"><span data-stu-id="8e71b-133">Step 3: Define the data to supply to the shaders</span></span>
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a><span data-ttu-id="0c04b-133">手順 3:シェーダーに提供するデータを定義します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-133">Step 3: Define the data to supply to the shaders</span></span>
 
-<span data-ttu-id="8e71b-134">OpenGL ES 2.0 の例では、シェーダー パイプラインに対して宣言する次の **uniform** が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-134">In our OpenGL ES 2.0 example, we have one **uniform** to declare for the shader pipeline:</span></span>
+<span data-ttu-id="0c04b-134">OpenGL ES 2.0 の例では、シェーダー パイプラインに対して宣言する次の **uniform** が 1 つあります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-134">In our OpenGL ES 2.0 example, we have one **uniform** to declare for the shader pipeline:</span></span>
 
--   <span data-ttu-id="8e71b-135">**u\_mvpMatrix**: 立方体のモデル座標を受け取り、それをスキャン変換のために 2D プロジェクション座標に変換する最終的なモデル ビュー プロジェクション変換マトリックスを表す浮動小数点値の 4x4 配列。</span><span class="sxs-lookup"><span data-stu-id="8e71b-135">**u\_mvpMatrix**: a 4x4 array of floats that represents the final model-view-projection transformation matrix that takes the model coordinates for the cube and transforms them into 2D projection coordinates for scan conversion.</span></span>
+-   <span data-ttu-id="0c04b-135">**u\_mvpMatrix**: モデルを最終的なモデル-ビュー-射影変換行列を表す浮動小数点数の 4 x 4 配列は、キューブの調整し、スキャンの変換の投影が 2D 座標に変換します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-135">**u\_mvpMatrix**: a 4x4 array of floats that represents the final model-view-projection transformation matrix that takes the model coordinates for the cube and transforms them into 2D projection coordinates for scan conversion.</span></span>
 
-<span data-ttu-id="8e71b-136">さらに、頂点データ用の次の **attribute** 値が 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-136">And two **attribute** values for the vertex data:</span></span>
+<span data-ttu-id="0c04b-136">さらに、頂点データ用の次の **attribute** 値が 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-136">And two **attribute** values for the vertex data:</span></span>
 
--   <span data-ttu-id="8e71b-137">**a\_position**: 頂点のモデル座標の 4 つの浮動小数点値で構成されたベクトル。</span><span class="sxs-lookup"><span data-stu-id="8e71b-137">**a\_position**: a 4-float vector for the model coordinates of a vertex.</span></span>
--   <span data-ttu-id="8e71b-138">**a\_color**: 頂点に関連付けられている RGBA カラー値の 4 つの浮動小数点値で構成されたベクトル。</span><span class="sxs-lookup"><span data-stu-id="8e71b-138">**a\_color**: A 4-float vector for the RGBA color value associated with the vertex.</span></span>
+-   <span data-ttu-id="0c04b-137">**\_位置**: 頂点のモデルの座標を表す 4 float ベクトル。</span><span class="sxs-lookup"><span data-stu-id="0c04b-137">**a\_position**: a 4-float vector for the model coordinates of a vertex.</span></span>
+-   <span data-ttu-id="0c04b-138">**\_色**:頂点に関連付けられている RGBA 色の値を 4 float ベクトル。</span><span class="sxs-lookup"><span data-stu-id="0c04b-138">**a\_color**: A 4-float vector for the RGBA color value associated with the vertex.</span></span>
 
-<span data-ttu-id="8e71b-139">OpenGL ES 2.0: GLSL での uniform と attribute の定義</span><span class="sxs-lookup"><span data-stu-id="8e71b-139">Open GL ES 2.0: GLSL definitions for the uniforms and attributes</span></span>
+<span data-ttu-id="0c04b-139">Opengl ES 2.0:GLSL 定義制服と属性</span><span class="sxs-lookup"><span data-stu-id="0c04b-139">Open GL ES 2.0: GLSL definitions for the uniforms and attributes</span></span>
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -203,9 +203,9 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-<span data-ttu-id="8e71b-140">この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します </span><span class="sxs-lookup"><span data-stu-id="8e71b-140">The corresponding main program variables are defined as fields on the renderer object, in this case.</span></span> <span data-ttu-id="8e71b-141">(「[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)」の見出しをご覧ください)。定義したら、メイン プログラムでシェーダー パイプラインにこれらの値を渡すメモリ内の場所を指定する必要があります。これは、通常、描画呼び出しの直前に行います。</span><span class="sxs-lookup"><span data-stu-id="8e71b-141">(Refer to the header in [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Once we've done that, we need to specify the locations in memory where the main program will supply these values for the shader pipeline, which we typically do right before a draw call:</span></span>
+<span data-ttu-id="0c04b-140">この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します </span><span class="sxs-lookup"><span data-stu-id="0c04b-140">The corresponding main program variables are defined as fields on the renderer object, in this case.</span></span> <span data-ttu-id="0c04b-141">(でヘッダーを参照してください[方法: direct3d11 を単純な OpenGL ES 2.0 レンダラーをポート](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md))。処理が完了したら、メインのプログラムが通常の方法で描画呼び出しの直前、シェーダー パイプラインのこれらの値を提供するためのメモリ内の場所を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-141">(Refer to the header in [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md).) Once we've done that, we need to specify the locations in memory where the main program will supply these values for the shader pipeline, which we typically do right before a draw call:</span></span>
 
-<span data-ttu-id="8e71b-142">OpenGL ES 2.0: uniform データと attribute データの場所のマーキング</span><span class="sxs-lookup"><span data-stu-id="8e71b-142">OpenGL ES 2.0: Marking the location of the uniform and attribute data</span></span>
+<span data-ttu-id="0c04b-142">OpenGL ES 2.0:一様と属性データの場所をマークします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-142">OpenGL ES 2.0: Marking the location of the uniform and attribute data</span></span>
 
 ``` syntax
 
@@ -225,11 +225,11 @@ glEnableVertexAttribArray(loc);
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 ```
 
-<span data-ttu-id="8e71b-143">Direct3D には、同じ意味での "attribute" と "uniform" の概念がありません (または、少なくともこの構文を共有しません)。</span><span class="sxs-lookup"><span data-stu-id="8e71b-143">Direct3D does not have the concept of an "attribute" or a "uniform" in the same sense (or, at least, it does not share this syntax).</span></span> <span data-ttu-id="8e71b-144">その代わり、Direct3D サブリソースとして表される定数バッファーがあります。これは、メイン プログラムとシェーダー プログラムの間で共有されるリソースです。</span><span class="sxs-lookup"><span data-stu-id="8e71b-144">Rather, it has constant buffers, represented as Direct3D subresources -- resources that are shared between the main program and the shader programs.</span></span> <span data-ttu-id="8e71b-145">頂点の位置や色など、これらのサブリソースの一部は HLSL セマンティクスと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-145">Some of these subresources, such as vertex positions and colors, are described as HLSL semantics.</span></span> <span data-ttu-id="8e71b-146">OpenGL ES 2.0 の概念に関連する定数バッファーと HLSL セマンティクスについて詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8e71b-146">For more info on constant buffers and HLSL semantics as they relate to OpenGL ES 2.0 concepts, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).</span></span>
+<span data-ttu-id="0c04b-143">Direct3D には、同じ意味での "attribute" と "uniform" の概念がありません (または、少なくともこの構文を共有しません)。</span><span class="sxs-lookup"><span data-stu-id="0c04b-143">Direct3D does not have the concept of an "attribute" or a "uniform" in the same sense (or, at least, it does not share this syntax).</span></span> <span data-ttu-id="0c04b-144">その代わり、Direct3D サブリソースとして表される定数バッファーがあります。これは、メイン プログラムとシェーダー プログラムの間で共有されるリソースです。</span><span class="sxs-lookup"><span data-stu-id="0c04b-144">Rather, it has constant buffers, represented as Direct3D subresources -- resources that are shared between the main program and the shader programs.</span></span> <span data-ttu-id="0c04b-145">頂点の位置や色など、これらのサブリソースの一部は HLSL セマンティクスと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-145">Some of these subresources, such as vertex positions and colors, are described as HLSL semantics.</span></span> <span data-ttu-id="0c04b-146">OpenGL ES 2.0 の概念に関連する定数バッファーと HLSL セマンティクスについて詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0c04b-146">For more info on constant buffers and HLSL semantics as they relate to OpenGL ES 2.0 concepts, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).</span></span>
 
-<span data-ttu-id="8e71b-147">このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-147">When moving this process to Direct3D, we convert the uniform to a Direct3D constant buffer (cbuffer) and assign it a register for lookup with the **register** HLSL semantic.</span></span> <span data-ttu-id="8e71b-148">2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-148">The two vertex attributes are handled as input elements to the shader pipeline stages, and are also assigned [HLSL semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION and COLOR0) that inform the shaders.</span></span> <span data-ttu-id="8e71b-149">ピクセル シェーダーは、GPU によって生成されたシステム値であることを示す SV\_ プレフィックスが付いている SV\_POSITION を受け取ります </span><span class="sxs-lookup"><span data-stu-id="8e71b-149">The pixel shader takes an SV\_POSITION, with the SV\_ prefix indicating that it is a system value generated by the GPU.</span></span> <span data-ttu-id="8e71b-150">(この場合は、スキャン変換時に生成されたピクセルの位置です)。VertexShaderInput と PixelShaderInput は定数バッファーとして宣言しません。これは、VertexShaderInput は頂点バッファーを定義するために使い (「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」をご覧ください)、PixelShaderInput のデータはパイプラインの前のステージ (この場合は頂点シェーダー) の結果として生成されるためです。</span><span class="sxs-lookup"><span data-stu-id="8e71b-150">(In this case, it is a pixel position generated during scan conversion.) VertexShaderInput and PixelShaderInput are not declared as constant buffers because the former will be used to define the vertex buffer (see [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)), and the data for the latter is generated as the result of a previous stage in the pipeline, which in this case is the vertex shader.</span></span>
+<span data-ttu-id="0c04b-147">このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-147">When moving this process to Direct3D, we convert the uniform to a Direct3D constant buffer (cbuffer) and assign it a register for lookup with the **register** HLSL semantic.</span></span> <span data-ttu-id="0c04b-148">2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="0c04b-148">The two vertex attributes are handled as input elements to the shader pipeline stages, and are also assigned [HLSL semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION and COLOR0) that inform the shaders.</span></span> <span data-ttu-id="0c04b-149">ピクセル シェーダーは、SV\_位置を SV\_ GPU によって生成されたシステムの値であることを示すプレフィックス。</span><span class="sxs-lookup"><span data-stu-id="0c04b-149">The pixel shader takes an SV\_POSITION, with the SV\_ prefix indicating that it is a system value generated by the GPU.</span></span> <span data-ttu-id="0c04b-150">(この場合、これはスキャンの変換中に生成されたピクセル位置) です。VertexShaderInput と PixelShaderInput 定数前者を頂点バッファーの定義に使用するためのバッファーとしてを宣言されていない (を参照してください[頂点バッファーとデータをポート](port-the-vertex-buffers-and-data-config.md))、後者の場合、データがの結果として生成されると、頂点シェーダーをここでは、パイプラインの前のステージ。</span><span class="sxs-lookup"><span data-stu-id="0c04b-150">(In this case, it is a pixel position generated during scan conversion.) VertexShaderInput and PixelShaderInput are not declared as constant buffers because the former will be used to define the vertex buffer (see [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)), and the data for the latter is generated as the result of a previous stage in the pipeline, which in this case is the vertex shader.</span></span>
 
-<span data-ttu-id="8e71b-151">Direct3D: HLSL での定数バッファーと頂点データの定義</span><span class="sxs-lookup"><span data-stu-id="8e71b-151">Direct3D: HLSL definitions for the constant buffers and vertex data</span></span>
+<span data-ttu-id="0c04b-151">Direct3D:定数バッファーと頂点データの HLSL の定義</span><span class="sxs-lookup"><span data-stu-id="0c04b-151">Direct3D: HLSL definitions for the constant buffers and vertex data</span></span>
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -252,11 +252,11 @@ struct PixelShaderInput
 };
 ```
 
-<span data-ttu-id="8e71b-152">定数バッファーへの移植と HLSL セマンティクスの利用について詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8e71b-152">For more info on porting to constant buffers and the application of HLSL semantics, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).</span></span>
+<span data-ttu-id="0c04b-152">定数バッファーへの移植と HLSL セマンティクスの利用について詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0c04b-152">For more info on porting to constant buffers and the application of HLSL semantics, read [Port frame buffer objects, uniforms, and attributes](porting-uniforms-and-attributes.md).</span></span>
 
-<span data-ttu-id="8e71b-153">定数バッファーまたは頂点バッファーを使ってシェーダー パイプラインに渡されるデータのレイアウトの構造体を次に示します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-153">Here are the structures for the layout of the data passed to the shader pipeline with a constant or vertex buffer.</span></span>
+<span data-ttu-id="0c04b-153">定数バッファーまたは頂点バッファーを使ってシェーダー パイプラインに渡されるデータのレイアウトの構造体を次に示します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-153">Here are the structures for the layout of the data passed to the shader pipeline with a constant or vertex buffer.</span></span>
 
-<span data-ttu-id="8e71b-154">Direct3D 11: 定数バッファーと頂点バッファーのレイアウトの宣言</span><span class="sxs-lookup"><span data-stu-id="8e71b-154">Direct3D 11: Declaring the constant and vertex buffers layout</span></span>
+<span data-ttu-id="0c04b-154">Direct3D 11。定数と頂点バッファー レイアウトを宣言します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-154">Direct3D 11: Declaring the constant and vertex buffers layout</span></span>
 
 ``` syntax
 // Constant buffer used to send MVP matrices to the vertex shader.
@@ -273,11 +273,11 @@ struct VertexPositionColor
 };
 ```
 
-<span data-ttu-id="8e71b-155">定数バッファー要素には DirectXMath XM\* 型を使っています。これにより、シェーダー パイプラインに送信する際に、コンテンツのパッキングとアラインメントが適切に行われます。</span><span class="sxs-lookup"><span data-stu-id="8e71b-155">Use the DirectXMath XM\* types for your constant buffer elements, since they provide proper packing and alignment for the contents when they are sent to the shader pipeline.</span></span> <span data-ttu-id="8e71b-156">Windows プラットフォームの標準の浮動小数点型と配列を使う場合は、手動でパッキングとアラインメントを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8e71b-156">If you use standard Windows platform float types and arrays, you must perform the packing and alignment yourself.</span></span>
+<span data-ttu-id="0c04b-155">使用して、DirectXMath XM\*シェーダー パイプラインに送信されるときに適切なパッキングと内容の配置を提供するために、定数の型が、要素をバッファーします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-155">Use the DirectXMath XM\* types for your constant buffer elements, since they provide proper packing and alignment for the contents when they are sent to the shader pipeline.</span></span> <span data-ttu-id="0c04b-156">Windows プラットフォームの標準の浮動小数点型と配列を使う場合は、手動でパッキングとアラインメントを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0c04b-156">If you use standard Windows platform float types and arrays, you must perform the packing and alignment yourself.</span></span>
 
-<span data-ttu-id="8e71b-157">定数バッファーをバインドするために、レイアウトの記述を [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) 構造体として作成し、[**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-157">To bind a constant buffer, create a layout description as a [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) structure, and pass it to [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).</span></span> <span data-ttu-id="8e71b-158">次に、レンダリング メソッドで、定数バッファーを [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) に渡してから、描画します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-158">Then, in your render method, pass the constant buffer to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) before drawing.</span></span>
+<span data-ttu-id="0c04b-157">定数バッファーをバインドするとしてレイアウトの説明を作成、 [ **CD3D11\_バッファー\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620)構造体に渡すと[ **ID3DDevice:。CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-157">To bind a constant buffer, create a layout description as a [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) structure, and pass it to [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501).</span></span> <span data-ttu-id="0c04b-158">次に、レンダリング メソッドで、定数バッファーを [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) に渡してから、描画します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-158">Then, in your render method, pass the constant buffer to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) before drawing.</span></span>
 
-<span data-ttu-id="8e71b-159">Direct3D 11: 定数バッファーのバインド</span><span class="sxs-lookup"><span data-stu-id="8e71b-159">Direct3D 11: Bind the constant buffer</span></span>
+<span data-ttu-id="0c04b-159">Direct3D 11。定数バッファーをバインドします。</span><span class="sxs-lookup"><span data-stu-id="0c04b-159">Direct3D 11: Bind the constant buffer</span></span>
 
 ``` syntax
 CD3D11_BUFFER_DESC constantBufferDesc(sizeof(ModelViewProjectionConstantBuffer), D3D11_BIND_CONSTANT_BUFFER);
@@ -299,22 +299,22 @@ m_d3dContext->UpdateSubresource(
   0);
 ```
 
-<span data-ttu-id="8e71b-160">同じように頂点バッファーを作成して更新します。これについては、次の手順の「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」で説明します。</span><span class="sxs-lookup"><span data-stu-id="8e71b-160">The vertex buffer is created and updated similarly, and is discussed in the next step, [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md).</span></span>
+<span data-ttu-id="0c04b-160">同じように頂点バッファーを作成して更新します。これについては、次の手順の「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」で説明します。</span><span class="sxs-lookup"><span data-stu-id="0c04b-160">The vertex buffer is created and updated similarly, and is discussed in the next step, [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md).</span></span>
 
-<a name="next-step"></a><span data-ttu-id="8e71b-161">次の手順</span><span class="sxs-lookup"><span data-stu-id="8e71b-161">Next step</span></span>
+<a name="next-step"></a><span data-ttu-id="0c04b-161">次の手順</span><span class="sxs-lookup"><span data-stu-id="0c04b-161">Next step</span></span>
 ---------
 
-[<span data-ttu-id="8e71b-162">頂点バッファーと頂点データの移植</span><span class="sxs-lookup"><span data-stu-id="8e71b-162">Port the vertex buffers and data</span></span>](port-the-vertex-buffers-and-data-config.md)
-## <a name="related-topics"></a><span data-ttu-id="8e71b-163">関連トピック</span><span class="sxs-lookup"><span data-stu-id="8e71b-163">Related topics</span></span>
+[<span data-ttu-id="0c04b-162">頂点バッファーと頂点データの移植</span><span class="sxs-lookup"><span data-stu-id="0c04b-162">Port the vertex buffers and data</span></span>](port-the-vertex-buffers-and-data-config.md)
+## <a name="related-topics"></a><span data-ttu-id="0c04b-163">関連トピック</span><span class="sxs-lookup"><span data-stu-id="0c04b-163">Related topics</span></span>
 
 
-[<span data-ttu-id="8e71b-164">簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法</span><span class="sxs-lookup"><span data-stu-id="8e71b-164">How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11</span></span>](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[<span data-ttu-id="0c04b-164">方法: direct3d11 を単純な OpenGL ES 2.0 レンダラーのポート</span><span class="sxs-lookup"><span data-stu-id="0c04b-164">How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11</span></span>](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[<span data-ttu-id="8e71b-165">頂点バッファーと頂点データの移植</span><span class="sxs-lookup"><span data-stu-id="8e71b-165">Port the vertex buffers and data</span></span>](port-the-vertex-buffers-and-data-config.md)
+[<span data-ttu-id="0c04b-165">頂点バッファーと頂点データの移植</span><span class="sxs-lookup"><span data-stu-id="0c04b-165">Port the vertex buffers and data</span></span>](port-the-vertex-buffers-and-data-config.md)
 
-[<span data-ttu-id="8e71b-166">GLSL の移植</span><span class="sxs-lookup"><span data-stu-id="8e71b-166">Port the GLSL</span></span>](port-the-glsl.md)
+[<span data-ttu-id="0c04b-166">GLSL の移植</span><span class="sxs-lookup"><span data-stu-id="0c04b-166">Port the GLSL</span></span>](port-the-glsl.md)
 
-[<span data-ttu-id="8e71b-167">画面への描画</span><span class="sxs-lookup"><span data-stu-id="8e71b-167">Draw to the screen</span></span>](draw-to-the-screen.md)
+[<span data-ttu-id="0c04b-167">画面への描画</span><span class="sxs-lookup"><span data-stu-id="0c04b-167">Draw to the screen</span></span>](draw-to-the-screen.md)
 
  
 

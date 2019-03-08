@@ -1,63 +1,63 @@
 ---
-Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more.
+Description: '[スタート] メニューのアプリ タイル、タスク バー、Microsoft Store、および複数のアプリを表すアプリ アイコン/ロゴを作成する方法。'
 title: アプリのアイコンとロゴ
 template: detail.hbs
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: b755e8d165d58ce4303d9fefe6d051abce6c9765
-ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "8973943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622457"
 ---
-# <a name="app-icons-and-logos"></a><span data-ttu-id="30dd2-103">アプリのアイコンとロゴ</span><span class="sxs-lookup"><span data-stu-id="30dd2-103">App icons and logos</span></span> 
+# <a name="app-icons-and-logos"></a><span data-ttu-id="5f4c8-104">アプリのアイコンとロゴ</span><span class="sxs-lookup"><span data-stu-id="5f4c8-104">App icons and logos</span></span> 
 
-<span data-ttu-id="30dd2-104">すべてのアプリが、それを表す、アイコン/ロゴし、Windows シェルの複数の場所にそのアイコンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-104">Every app has an icon/logo that represents it, and that icon appears in multiple locations in the Windows shell:</span></span> 
+<span data-ttu-id="5f4c8-105">すべてのアプリは、それを表す、アイコンやロゴを備え、Windows シェルで複数の場所にそのアイコンが表示されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-105">Every app has an icon/logo that represents it, and that icon appears in multiple locations in the Windows shell:</span></span> 
 
 :::row:::
     :::column:::
-        * <span data-ttu-id="30dd2-105">アプリ ウィンドウのタイトル バー</span><span class="sxs-lookup"><span data-stu-id="30dd2-105">The title bar of your app window</span></span>
-        * <span data-ttu-id="30dd2-106">[スタート] メニューで、アプリの一覧</span><span class="sxs-lookup"><span data-stu-id="30dd2-106">The app list in the start menu</span></span>
-        * <span data-ttu-id="30dd2-107">タスク バーとタスク マネージャー</span><span class="sxs-lookup"><span data-stu-id="30dd2-107">The taskbar and task manager</span></span>
-        * <span data-ttu-id="30dd2-108">アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-108">Your app's tiles</span></span>
-        * <span data-ttu-id="30dd2-109">アプリのスプラッシュ画面</span><span class="sxs-lookup"><span data-stu-id="30dd2-109">Your app's splash screen</span></span>
-        * <span data-ttu-id="30dd2-110">Microsoft Store で</span><span class="sxs-lookup"><span data-stu-id="30dd2-110">In the Microsoft Store</span></span>
+        * <span data-ttu-id="5f4c8-106">アプリのウィンドウのタイトル バー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-106">The title bar of your app window</span></span>
+        * <span data-ttu-id="5f4c8-107">[スタート] メニューで、アプリの一覧</span><span class="sxs-lookup"><span data-stu-id="5f4c8-107">The app list in the start menu</span></span>
+        * <span data-ttu-id="5f4c8-108">タスク バーと タスク マネージャー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-108">The taskbar and task manager</span></span>
+        * <span data-ttu-id="5f4c8-109">アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-109">Your app's tiles</span></span>
+        * <span data-ttu-id="5f4c8-110">アプリのスプラッシュ スクリーン</span><span class="sxs-lookup"><span data-stu-id="5f4c8-110">Your app's splash screen</span></span>
+        * <span data-ttu-id="5f4c8-111">Microsoft Store で</span><span class="sxs-lookup"><span data-stu-id="5f4c8-111">In the Microsoft Store</span></span>
     :::column-end:::
     :::column:::
         ![windows 10 start and tiles](images/assetguidance01.jpg)
     :::column-end:::
 :::row-end:::
 
-<span data-ttu-id="30dd2-111">この記事では、アプリのアイコンの作成の基本を説明する必要がありますが、それらを管理し、それらを手動で管理する方法を Visual Studio を使用する方法。</span><span class="sxs-lookup"><span data-stu-id="30dd2-111">This article covers the basics of creating app icons, how to use Visual Studio to manage them, and how manage them manually, should you need to.</span></span>
+<span data-ttu-id="5f4c8-112">この記事には、アプリのアイコンの作成の基礎に必要となる Visual Studio をそれらを管理し、それらを手動で管理する方法を使用する方法。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-112">This article covers the basics of creating app icons, how to use Visual Studio to manage them, and how manage them manually, should you need to.</span></span>
  
-<span data-ttu-id="30dd2-112">(この記事は、具体的にはアイコンをアプリ自体を表すアイコンの一般的なガイダンスについては、[アイコン](icons.md)に関する記事を参照してください。)</span><span class="sxs-lookup"><span data-stu-id="30dd2-112">(This article is specifically for icons that represent the app itself; for general icon guidance, see the [Icons](icons.md) article.)</span></span>
+<span data-ttu-id="5f4c8-113">(この記事はアイコンが、アプリ自体を表す一般的なアイコンのガイダンスについては、次を参照してください。 具体的には、[アイコン](icons.md)記事です。)。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-113">(This article is specifically for icons that represent the app itself; for general icon guidance, see the [Icons](icons.md) article.)</span></span>
 
-## <a name="icon-types-locations-and-scale-factors"></a><span data-ttu-id="30dd2-113">アイコンの種類、場所、およびスケール ファクター</span><span class="sxs-lookup"><span data-stu-id="30dd2-113">Icon types, locations, and scale factors</span></span>
+## <a name="icon-types-locations-and-scale-factors"></a><span data-ttu-id="5f4c8-114">アイコンの種類、場所、およびスケール ファクター</span><span class="sxs-lookup"><span data-stu-id="5f4c8-114">Icon types, locations, and scale factors</span></span>
 
-<span data-ttu-id="30dd2-114">既定では、Visual Studio は、アセットのサブディレクトリに、アイコン アセットを格納します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-114">By default, Visual Studio stores your icon assets in an assets subdirectory.</span></span> <span data-ttu-id="30dd2-115">呼び出されたいるアイコン、表示される場所のさまざまな種類の一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-115">Here's a list of the different types of icons, where they appear, and what they're called.</span></span> 
+<span data-ttu-id="5f4c8-115">既定では、Visual Studio は、資産のサブディレクトリに、アイコンのアセットを格納します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-115">By default, Visual Studio stores your icon assets in an assets subdirectory.</span></span> <span data-ttu-id="5f4c8-116">アイコン、表示される場所などと呼ばれるさまざまな種類の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-116">Here's a list of the different types of icons, where they appear, and what they're called.</span></span> 
 
-| <span data-ttu-id="30dd2-116">アイコン名</span><span class="sxs-lookup"><span data-stu-id="30dd2-116">Icon name</span></span> | <span data-ttu-id="30dd2-117">表示されます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-117">Appears in</span></span> | <span data-ttu-id="30dd2-118">アセット ファイル名</span><span class="sxs-lookup"><span data-stu-id="30dd2-118">Asset file name</span></span> |
+| <span data-ttu-id="5f4c8-117">アイコン名</span><span class="sxs-lookup"><span data-stu-id="5f4c8-117">Icon name</span></span> | <span data-ttu-id="5f4c8-118">表示されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-118">Appears in</span></span> | <span data-ttu-id="5f4c8-119">資産ファイルの名前</span><span class="sxs-lookup"><span data-stu-id="5f4c8-119">Asset file name</span></span> |
 | ---      | ---        | --- |
-| <span data-ttu-id="30dd2-119">小さいタイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-119">Small tile</span></span> | <span data-ttu-id="30dd2-120">スタート メニュー</span><span class="sxs-lookup"><span data-stu-id="30dd2-120">Start menu</span></span> |  <span data-ttu-id="30dd2-121">SmallTile.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-121">SmallTile.png</span></span>  |
-| <span data-ttu-id="30dd2-122">普通サイズのタイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-122">Medium tile</span></span> |<span data-ttu-id="30dd2-123">スタート メニューで、Microsoft Store listing\ \*</span><span class="sxs-lookup"><span data-stu-id="30dd2-123">Start menu,  Microsoft Store listing\*</span></span>  |  <span data-ttu-id="30dd2-124">Square150x150Logo.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-124">Square150x150Logo.png</span></span> |
-| <span data-ttu-id="30dd2-125">ワイド タイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-125">Wide tile</span></span>  | <span data-ttu-id="30dd2-126">スタート メニュー</span><span class="sxs-lookup"><span data-stu-id="30dd2-126">Start menu</span></span>   | <span data-ttu-id="30dd2-127">Wide310x150Logo.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-127">Wide310x150Logo.png</span></span> |
-| <span data-ttu-id="30dd2-128">大きいタイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-128">Large tile</span></span>   | <span data-ttu-id="30dd2-129">スタート メニューで、Microsoft Store listing\ \*</span><span class="sxs-lookup"><span data-stu-id="30dd2-129">Start menu,  Microsoft Store listing\*</span></span> |  <span data-ttu-id="30dd2-130">LargeTile.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-130">LargeTile.png</span></span>  |
-| <span data-ttu-id="30dd2-131">アプリのアイコン</span><span class="sxs-lookup"><span data-stu-id="30dd2-131">App icon</span></span> | <span data-ttu-id="30dd2-132">[スタート] メニューのタスク バー、タスク マネージャーでのアプリの一覧</span><span class="sxs-lookup"><span data-stu-id="30dd2-132">App list in start menu, task bar, task manager</span></span> | <span data-ttu-id="30dd2-133">Square44x44Logo.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-133">Square44x44Logo.png</span></span> |
-| <span data-ttu-id="30dd2-134">スプラッシュ画面</span><span class="sxs-lookup"><span data-stu-id="30dd2-134">Splash screen</span></span> | <span data-ttu-id="30dd2-135">アプリのスプラッシュ画面</span><span class="sxs-lookup"><span data-stu-id="30dd2-135">The app's splash screen</span></span> | <span data-ttu-id="30dd2-136">SplashScreen.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-136">SplashScreen.png</span></span>  |
-| <span data-ttu-id="30dd2-137">バッジ ロゴ</span><span class="sxs-lookup"><span data-stu-id="30dd2-137">Badge logo</span></span> | <span data-ttu-id="30dd2-138">アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="30dd2-138">Your app's tiles</span></span> | <span data-ttu-id="30dd2-139">BadgeLogo.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-139">BadgeLogo.png</span></span>  |
-| <span data-ttu-id="30dd2-140">パッケージのロゴ/ストア ロゴ</span><span class="sxs-lookup"><span data-stu-id="30dd2-140">Package logo/Store logo</span></span> | <span data-ttu-id="30dd2-141">アプリ インストーラーの場合、パートナー センターで、ストアでは、ストアで「レビューの書き込み」オプション「アプリを報告」オプション</span><span class="sxs-lookup"><span data-stu-id="30dd2-141">App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store</span></span> | <span data-ttu-id="30dd2-142">StoreLogo.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-142">StoreLogo.png</span></span>  |
+| <span data-ttu-id="5f4c8-120">小さなタイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-120">Small tile</span></span> | <span data-ttu-id="5f4c8-121">スタート メニュー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-121">Start menu</span></span> |  <span data-ttu-id="5f4c8-122">SmallTile.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-122">SmallTile.png</span></span>  |
+| <span data-ttu-id="5f4c8-123">中規模のタイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-123">Medium tile</span></span> |<span data-ttu-id="5f4c8-124">[スタート] メニューには、Microsoft Store の一覧\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-124">Start menu,  Microsoft Store listing\*</span></span>  |  <span data-ttu-id="5f4c8-125">Square150x150Logo.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-125">Square150x150Logo.png</span></span> |
+| <span data-ttu-id="5f4c8-126">ワイド タイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-126">Wide tile</span></span>  | <span data-ttu-id="5f4c8-127">スタート メニュー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-127">Start menu</span></span>   | <span data-ttu-id="5f4c8-128">Wide310x150Logo.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-128">Wide310x150Logo.png</span></span> |
+| <span data-ttu-id="5f4c8-129">大きいタイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-129">Large tile</span></span>   | <span data-ttu-id="5f4c8-130">[スタート] メニューには、Microsoft Store の一覧\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-130">Start menu,  Microsoft Store listing\*</span></span> |  <span data-ttu-id="5f4c8-131">LargeTile.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-131">LargeTile.png</span></span>  |
+| <span data-ttu-id="5f4c8-132">アプリ アイコン</span><span class="sxs-lookup"><span data-stu-id="5f4c8-132">App icon</span></span> | <span data-ttu-id="5f4c8-133">[スタート] メニューのタスク バー、タスク マネージャーでのアプリの一覧</span><span class="sxs-lookup"><span data-stu-id="5f4c8-133">App list in start menu, task bar, task manager</span></span> | <span data-ttu-id="5f4c8-134">Square44x44Logo.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-134">Square44x44Logo.png</span></span> |
+| <span data-ttu-id="5f4c8-135">スプラッシュ画面</span><span class="sxs-lookup"><span data-stu-id="5f4c8-135">Splash screen</span></span> | <span data-ttu-id="5f4c8-136">アプリのスプラッシュ スクリーン</span><span class="sxs-lookup"><span data-stu-id="5f4c8-136">The app's splash screen</span></span> | <span data-ttu-id="5f4c8-137">SplashScreen.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-137">SplashScreen.png</span></span>  |
+| <span data-ttu-id="5f4c8-138">バッジ ロゴ</span><span class="sxs-lookup"><span data-stu-id="5f4c8-138">Badge logo</span></span> | <span data-ttu-id="5f4c8-139">アプリのタイル</span><span class="sxs-lookup"><span data-stu-id="5f4c8-139">Your app's tiles</span></span> | <span data-ttu-id="5f4c8-140">BadgeLogo.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-140">BadgeLogo.png</span></span>  |
+| <span data-ttu-id="5f4c8-141">パッケージ ロゴ/ストア ロゴ</span><span class="sxs-lookup"><span data-stu-id="5f4c8-141">Package logo/Store logo</span></span> | <span data-ttu-id="5f4c8-142">アプリのインストーラー、パートナー センターで、ストアでは、ストア内の「レビューを書く」オプションで「レポート、アプリ」のオプション</span><span class="sxs-lookup"><span data-stu-id="5f4c8-142">App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store</span></span> | <span data-ttu-id="5f4c8-143">StoreLogo.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-143">StoreLogo.png</span></span>  |
 
-<span data-ttu-id="30dd2-143">\ \* しない場合[のみアップロードしたストア内の画像を表示](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)するために使用します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-143">\* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).</span></span> 
+<span data-ttu-id="5f4c8-144">\* 使用を選択しない限り[表示は、ストア内のイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-144">\* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).</span></span> 
 
-<span data-ttu-id="30dd2-144">これらのアイコンに鮮明にすべての画面で表示ためには、さまざまな表示スケール ファクターの同じアイコンの複数のバージョンを作成できます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-144">To ensure these icons look sharp on every screen, you can create multiple versions of the same icon for different display scale factors.</span></span> 
+<span data-ttu-id="5f4c8-145">これらのアイコンがすべての画面に鮮明させるには、別のディスプレイのスケール ファクターの同じアイコンの複数のバージョンを作成できます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-145">To ensure these icons look sharp on every screen, you can create multiple versions of the same icon for different display scale factors.</span></span> 
 
-<span data-ttu-id="30dd2-145">スケール ファクターは、テキストなどの UI 要素のサイズを決定します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-145">The  scale factor determines the size of UI elements, such as text.</span></span> <span data-ttu-id="30dd2-146">スケール ファクター範囲から 100% 400% です。</span><span class="sxs-lookup"><span data-stu-id="30dd2-146">Scale factors range from 100% to 400%.</span></span> <span data-ttu-id="30dd2-147">値を大きくやすく高 DPI ディスプレイに表示するためより大きな UI 要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-147">Larger values create larger UI elements, making them easier to see on high-DPI displays.</span></span> 
+<span data-ttu-id="5f4c8-146">スケール ファクターは、テキストなどの UI 要素のサイズを決定します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-146">The  scale factor determines the size of UI elements, such as text.</span></span> <span data-ttu-id="5f4c8-147">スケールは、100% ~ 400% の範囲を考慮します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-147">Scale factors range from 100% to 400%.</span></span> <span data-ttu-id="5f4c8-148">大きな値は、高解像度ディスプレイに表示しやすくより大きなの UI 要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-148">Larger values create larger UI elements, making them easier to see on high-DPI displays.</span></span> 
 
 :::row:::
     :::column:::
@@ -71,19 +71,19 @@ ms.locfileid: "8973943"
 :::row-end:::  
 
 
-<span data-ttu-id="30dd2-148">アプリ アイコン アセットはビットマップのビットマップが適切に拡大縮小されないため、お勧めしますバージョン各アイコン アセットの各スケール ファクター: 100%、125%、150%、200%、400% です。</span><span class="sxs-lookup"><span data-stu-id="30dd2-148">Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%.</span></span> <span data-ttu-id="30dd2-149">多くのアイコンは正常です。</span><span class="sxs-lookup"><span data-stu-id="30dd2-149">That's a lot of icons!</span></span> <span data-ttu-id="30dd2-150">さいわい、Visual Studio には、簡単に生成し、これらのアイコンを更新するツールが用意されています。</span><span class="sxs-lookup"><span data-stu-id="30dd2-150">Fortunately, Visual Studio provides a tool that makes it easy to generate and update these icons.</span></span> 
+<span data-ttu-id="5f4c8-149">アプリ アイコンのアセットはビットマップ ビットマップは適切にスケーリングしないため、各スケール ファクターのバージョンを各アイコンの資産を提供するをお勧めします。100%、125%、150%、200%、400% です。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-149">Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%.</span></span> <span data-ttu-id="5f4c8-150">多くのアイコンです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-150">That's a lot of icons!</span></span> <span data-ttu-id="5f4c8-151">さいわい、Visual Studio は、簡単に生成し、これらのアイコンの更新ツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-151">Fortunately, Visual Studio provides a tool that makes it easy to generate and update these icons.</span></span> 
 
-## <a name="microsoft-store-listing-image"></a><span data-ttu-id="30dd2-151">Microsoft Store 登録情報の画像</span><span class="sxs-lookup"><span data-stu-id="30dd2-151">Microsoft Store listing image</span></span>
+## <a name="microsoft-store-listing-image"></a><span data-ttu-id="5f4c8-152">Microsoft Store の一覧の画像</span><span class="sxs-lookup"><span data-stu-id="5f4c8-152">Microsoft Store listing image</span></span>
 
-<span data-ttu-id="30dd2-152">「をどのように指定自分のアプリの登録情報の画像、Microsoft Store でですか?」</span><span class="sxs-lookup"><span data-stu-id="30dd2-152">"How do I specify images for my app's listing in the Microsoft Store?"</span></span>
+<span data-ttu-id="5f4c8-153">「の指定方法を自分のアプリの一覧については、イメージ、Microsoft Store ででしょうか。」</span><span class="sxs-lookup"><span data-stu-id="5f4c8-153">"How do I specify images for my app's listing in the Microsoft Store?"</span></span>
 
-<span data-ttu-id="30dd2-153">既定では、パッケージの画像の一部で使います、ストアでは、(その他の[申請プロセス中に提供するイメージ](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)) と共にこのページの上部にある表で説明。</span><span class="sxs-lookup"><span data-stu-id="30dd2-153">By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)).</span></span> <span data-ttu-id="30dd2-154">ただし、Windows 10 (Xbox を含む) のユーザーに、登録情報を表示するときに、アプリのパッケージのロゴ画像を使用してから、ストアを防ぐため、代わりにアップロードした画像のみを使用して、ストア オプションがあります。</span><span class="sxs-lookup"><span data-stu-id="30dd2-154">However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload.</span></span> <span data-ttu-id="30dd2-155">これにより、アプリの外観を詳しく制御、Store 全体でさまざまな表示にします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-155">This gives you more control over your app’s appearance in various displays throughout the Store.</span></span> <span data-ttu-id="30dd2-156">(メモことのある製品は、以前の OS バージョンをサポートする場合それらのユーザーもについて、パッケージからの画像は、このオプションを使用する場合でも)。申請プロセスの**Store 登録情報**のステップの**ストア ロゴ**のセクションで、これを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-156">(Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.</span></span>
+<span data-ttu-id="5f4c8-154">既定では、使用して、パッケージからのイメージの一部、ストア内のこのページの上部にある表に示す (とその他の[送信処理中に指定したイメージ](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images))。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-154">By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)).</span></span> <span data-ttu-id="5f4c8-155">ただし、ストアが (Xbox を含む)、Windows 10 でのお客様に、一覧を表示するときに、アプリのパッケージでロゴのイメージを使用するを防ぐを代わりに、ストアにアップロードするイメージのみを使用して、オプションがあります。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-155">However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload.</span></span> <span data-ttu-id="5f4c8-156">これにより、ストアのさまざまな画面でアプリがどのように表示されるかをさらに細かく制御できます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-156">This gives you more control over your app’s appearance in various displays throughout the Store.</span></span> <span data-ttu-id="5f4c8-157">(注ことのある製品は、以前の OS バージョンをサポートする場合顧客もについて、パッケージからのイメージ場合でも、このオプションを使用する)これを行う、**ロゴを格納**のセクション、**ストア一覧**送信処理の手順。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-157">(Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.</span></span>
 
-![アプリの申請プロセス中にストア ロゴを指定します。](images/app-icons/storelogodisplay.png)
+![アプリの提出プロセス中にストア ロゴを指定します。](images/app-icons/storelogodisplay.png)
 
-<span data-ttu-id="30dd2-158">このボックスをオンにすると、**ストアで表示する画像**と呼ばれる新しいセクションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-158">When you check this box, a new section called **Store display images** appears.</span></span> <span data-ttu-id="30dd2-159">ここでは、代わりに、アプリのパッケージからのロゴ画像がストアを使用する 3 つの画像サイズをアップロードすることができます: 300 x 300 ピクセル、150 x 150、71 x 71 ピクセル ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-159">Here, you can upload 3 image sizes that the Store will use in place of logo images from your app’s packages: 300 x 300, 150 x 150, and 71 x 71 pixels.</span></span> <span data-ttu-id="30dd2-160">300 x 300 のサイズだけが必要な場合は、すべての 3 つのサイズを提供することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-160">Only the 300 x 300 size is required, although we recommend providing all 3 sizes.</span></span>
+<span data-ttu-id="5f4c8-159">このボックスをオンにすると、新しいセクションと呼ばれる**ストア イメージを表示**が表示されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-159">When you check this box, a new section called **Store display images** appears.</span></span> <span data-ttu-id="5f4c8-160">ここでは、アプリのパッケージからロゴのイメージの代わりに、ストアが使用する 3 つのイメージ サイズをアップロードできます。300 x 300、150 x 150、および 71 x 71 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-160">Here, you can upload 3 image sizes that the Store will use in place of logo images from your app’s packages: 300 x 300, 150 x 150, and 71 x 71 pixels.</span></span> <span data-ttu-id="5f4c8-161">すべての 3 つのサイズを提供することをお勧めします。 300 x 300 サイズのみが必要です。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-161">Only the 300 x 300 size is required, although we recommend providing all 3 sizes.</span></span>
 
-<span data-ttu-id="30dd2-161">詳しくは、[ディスプレイがストアでのロゴ画像をアップロードのみ](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-161">For more info, see [Display only uploaded logo images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).</span></span>
+<span data-ttu-id="5f4c8-162">詳細については、次を参照してください。[表示は、ストア ロゴのイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-162">For more info, see [Display only uploaded logo images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store).</span></span>
 
 <!-- ### Fallback images for the Store
 
@@ -101,14 +101,14 @@ The Store may also use your app's tile and other images that you include in your
 For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
 
 
-## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a><span data-ttu-id="30dd2-162">Visual Studio マニフェスト デザイナーを使用してアプリのアイコンを管理します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-162">Managing app icons with the Visual Studio Manifest Designer</span></span>
+## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a><span data-ttu-id="5f4c8-163">Visual Studio のマニフェスト デザイナーでのアプリ アイコンの管理</span><span class="sxs-lookup"><span data-stu-id="5f4c8-163">Managing app icons with the Visual Studio Manifest Designer</span></span>
 
-<span data-ttu-id="30dd2-163">Visual Studio では、**マニフェスト デザイナー**と呼ばれる、アプリのアイコンを管理するために非常に便利なツールを提供します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-163">Visual Studio provides a very useful tool for managing your app icons called the **Manifest Designer**.</span></span> 
+<span data-ttu-id="5f4c8-164">Visual Studio と呼ばれる、アプリ アイコンの管理に非常に便利なツールを提供します、**マニフェスト デザイナー**します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-164">Visual Studio provides a very useful tool for managing your app icons called the **Manifest Designer**.</span></span> 
 
-> <span data-ttu-id="30dd2-164">Visual Studio 2017 がまだしていない場合は、無料のバージョンを (Visual Studio 2017 Community Edition) を含め、利用可能ないくつかのバージョンと無料試用版を提供するその他のバージョン。</span><span class="sxs-lookup"><span data-stu-id="30dd2-164">If you don't already have Visual Studio 2017, there are several versions available, including a free version, (Visual Studio 2017 Community Edition), and the other versions offer free trials.</span></span> <span data-ttu-id="30dd2-165">ここでダウンロードすることができます。[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)</span><span class="sxs-lookup"><span data-stu-id="30dd2-165">You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)</span></span>
+> <span data-ttu-id="5f4c8-165">まだ Visual Studio 2017 を持っていない場合、いくつかのバージョンがあるなどの無料バージョンである (Visual Studio 2017 Community Edition) と他のバージョンは、無料試用版を提供します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-165">If you don't already have Visual Studio 2017, there are several versions available, including a free version, (Visual Studio 2017 Community Edition), and the other versions offer free trials.</span></span> <span data-ttu-id="5f4c8-166">ここでダウンロードすることができます。 [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-166">You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)</span></span>
 
 
-<span data-ttu-id="30dd2-166">マニフェスト デザイナーを起動します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-166">To launch the Manifest Designer:</span></span>
+<span data-ttu-id="5f4c8-167">マニフェスト デザイナーを起動するには。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-167">To launch the Manifest Designer:</span></span>
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
@@ -124,7 +124,7 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 :::row:::
     :::column:::
-        1. <span data-ttu-id="30dd2-167">Visual Studio を使用して、UWP プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-167">Use Visual Studio to open a UWP project.</span></span>
+        1. <span data-ttu-id="5f4c8-168">Visual Studio を使用して、UWP プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-168">Use Visual Studio to open a UWP project.</span></span>
     :::column-end:::
     :::column:::
         
@@ -132,7 +132,7 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 :::row-end:::
 :::row:::
     :::column:::
-        2. <span data-ttu-id="30dd2-168">**ソリューション エクスプ ローラー**で、Package.appmxanifest ファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-168">In the **Solution Explorer**, double-click the Package.appmxanifest file.</span></span>
+        2. <span data-ttu-id="5f4c8-169">**ソリューション エクスプ ローラー**、Package.appmxanifest ファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-169">In the **Solution Explorer**, double-click the Package.appmxanifest file.</span></span>
     :::column-end:::
     :::column:::
         ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
@@ -148,160 +148,160 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 :::row-end:::    
 :::row:::
     :::column:::
-        3. <span data-ttu-id="30dd2-169">[**ビジュアル資産**] タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-169">Click the **Visual Assets** tab.</span></span>
+        3. <span data-ttu-id="5f4c8-170">をクリックして、**のビジュアル アセット**タブ。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-170">Click the **Visual Assets** tab.</span></span>
     :::column-end:::
     :::column:::
         ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
-## <a name="generating-all-assets-at-once"></a><span data-ttu-id="30dd2-170">一度にすべてのアセットの生成</span><span class="sxs-lookup"><span data-stu-id="30dd2-170">Generating all assets at once</span></span>
+## <a name="generating-all-assets-at-once"></a><span data-ttu-id="5f4c8-171">すべての資産を一度に作成します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-171">Generating all assets at once</span></span>
 
-<span data-ttu-id="30dd2-171">**ビジュアル資産**] タブで、**すべてのビジュアル アセット**、最初のメニュー項目はその名前が示す内容正確: ボタンを押すと、アプリが必要なすべてのビジュアル アセットを生成します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-171">The first menu item in the **Visual Assets** tab, **All Visual Assets**, does exactly what its name suggests: generates every visual asset your app needs with the press of a button.</span></span>
+<span data-ttu-id="5f4c8-172">内の最初のメニュー項目、**のビジュアル アセット** タブで、**すべてのビジュアル資産**は正確にその名前のとおり: ボタンを押すと、アプリが必要なすべてのビジュアル資産が生成されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-172">The first menu item in the **Visual Assets** tab, **All Visual Assets**, does exactly what its name suggests: generates every visual asset your app needs with the press of a button.</span></span>
 
 ![Visual Studio ですべてのビジュアル資産を生成します。](images/app-icons/all-visual-assets.png)
 
-<span data-ttu-id="30dd2-173">1 つの画像を提供を行うには必要なすべてと Visual Studio は小さいタイル、普通サイズのタイル、大きいタイル、ワイド タイル、大きいタイル、アプリのアイコン、スプラッシュ画面を生成し、すべての倍率のアセットをロゴをパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-173">All you need to do is supply a single image, and Visual Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.</span></span>
+<span data-ttu-id="5f4c8-174">1 つのイメージを指定が行う必要があるすべてと、Visual Studio は小さなタイル、中」のタイル、大、ワイド タイル、大規模なタイル、アプリ アイコン、スプラッシュ スクリーンを生成し、すべてのスケール ファクターのロゴの資産をパッケージ化します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-174">All you need to do is supply a single image, and Visual Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.</span></span>
 
-<span data-ttu-id="30dd2-174">すべてのアセットを一度に生成するには。</span><span class="sxs-lookup"><span data-stu-id="30dd2-174">To generate all assets at once:</span></span>
-1. <span data-ttu-id="30dd2-175">**ソース**フィールドの横にある **...** ] をクリックし、使用するイメージを選択します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-175">Click the **...** next to the **Source** field and select the image you want to use.</span></span> <span data-ttu-id="30dd2-176">ビットマップ画像を使用している場合は、鋭い結果を取得するため、400 ピクセル以上 400 を確認します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-176">If you're using a bitmap image, make sure it's at least 400 by 400 pixels so that you get sharp results.</span></span> <span data-ttu-id="30dd2-177">ベクター ベースのイメージが最適です。Visual Studio では、AI (Adobe Illustrator) と PDF ファイルを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-177">Vector-based images work best; Visual Studio lets you use AI (Adobe Illustrator) and PDF files.</span></span> 
-2. <span data-ttu-id="30dd2-178">(省略可能)**ディスプレイの設定**] セクションでは、これらのオプションを構成します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-178">(Optional.) In the **Display Settings** section, configure these options:</span></span>
+<span data-ttu-id="5f4c8-175">すべての資産を一度に生成。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-175">To generate all assets at once:</span></span>
+1. <span data-ttu-id="5f4c8-176">をクリックして、 **.** 横に、**ソース**フィールドし、使用するイメージを選択します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-176">Click the **...** next to the **Source** field and select the image you want to use.</span></span> <span data-ttu-id="5f4c8-177">ビットマップ イメージを使用している場合は、シャープな結果を取得することが 400 ピクセルの 400 以上を確認します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-177">If you're using a bitmap image, make sure it's at least 400 by 400 pixels so that you get sharp results.</span></span> <span data-ttu-id="5f4c8-178">ベクター ベースのイメージが最適です。Visual Studio を使用して、AI (Adobe Illustrator) や PDF ファイルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-178">Vector-based images work best; Visual Studio lets you use AI (Adobe Illustrator) and PDF files.</span></span> 
+2. <span data-ttu-id="5f4c8-179">(省略可能)**表示設定**セクションで、これらのオプションを構成します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-179">(Optional.) In the **Display Settings** section, configure these options:</span></span>
 
-    <span data-ttu-id="30dd2-179">a.</span><span class="sxs-lookup"><span data-stu-id="30dd2-179">a.</span></span>  <span data-ttu-id="30dd2-180">**短い名前**: アプリの短い名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-180">**Short name**:  Specify a short name for your app.</span></span>
+    <span data-ttu-id="5f4c8-180">a. </span><span class="sxs-lookup"><span data-stu-id="5f4c8-180">a.</span></span>  <span data-ttu-id="5f4c8-181">**短い名前**:アプリの短い名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-181">**Short name**:  Specify a short name for your app.</span></span>
 
-    <span data-ttu-id="30dd2-181">b.</span><span class="sxs-lookup"><span data-stu-id="30dd2-181">b.</span></span>  <span data-ttu-id="30dd2-182">**表示名**: 普通、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-182">**Show name**: Indicate whether you want to display the short name on medium, wide, or large tiles.</span></span> 
+    <span data-ttu-id="5f4c8-182">b. </span><span class="sxs-lookup"><span data-stu-id="5f4c8-182">b.</span></span>  <span data-ttu-id="5f4c8-183">**名前を表示する**:短い名前を中、または大規模なタイルに表示するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-183">**Show name**: Indicate whether you want to display the short name on medium, wide, or large tiles.</span></span> 
 
-    <span data-ttu-id="30dd2-183">c.</span><span class="sxs-lookup"><span data-stu-id="30dd2-183">c.</span></span> <span data-ttu-id="30dd2-184">**バック グラウンドのタイル**: 16 進値またはタイルの背景色の色の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-184">**Tile background**: Specify the hex value or a color name for the tile background color.</span></span> <span data-ttu-id="30dd2-185">たとえば、`#464646` と記述します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-185">For example, `#464646`.</span></span> <span data-ttu-id="30dd2-186">既定値は、`transparent` です。</span><span class="sxs-lookup"><span data-stu-id="30dd2-186">The default value is `transparent`.</span></span>
+    <span data-ttu-id="5f4c8-184">c.</span><span class="sxs-lookup"><span data-stu-id="5f4c8-184">c.</span></span> <span data-ttu-id="5f4c8-185">**タイルのバック グラウンド**:16 進数の値またはタイルの背景色を色の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-185">**Tile background**: Specify the hex value or a color name for the tile background color.</span></span> <span data-ttu-id="5f4c8-186">たとえば、`#464646` と記述します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-186">For example, `#464646`.</span></span> <span data-ttu-id="5f4c8-187">既定値は、`transparent` です。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-187">The default value is `transparent`.</span></span>
 
-    <span data-ttu-id="30dd2-187">d.</span><span class="sxs-lookup"><span data-stu-id="30dd2-187">d.</span></span> <span data-ttu-id="30dd2-188">**Spash 画面の背景**: spash 画面の背景の 16 進値または色の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-188">**Spash screen background**: Specify the hex value or color name for the spash screen background.</span></span> 
+    <span data-ttu-id="5f4c8-188">d.</span><span class="sxs-lookup"><span data-stu-id="5f4c8-188">d.</span></span> <span data-ttu-id="5f4c8-189">**スプラッシュ画面の背景**:スプラッシュ画面の背景色の 16 進値または色の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-189">**Spash screen background**: Specify the hex value or color name for the spash screen background.</span></span> 
 
-3. <span data-ttu-id="30dd2-189">[**生成**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-189">Click **Generate**.</span></span> 
+3. <span data-ttu-id="5f4c8-190">クリックして**生成**します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-190">Click **Generate**.</span></span> 
 
-<span data-ttu-id="30dd2-190">Visual Studio は、イメージ ファイルを生成し、プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-190">Visual Studio generates your image files and adds them to project.</span></span> <span data-ttu-id="30dd2-191">アセットを変更する場合は、単にプロセスを繰り返します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-191">If you want to change your assets, simply repeat the process.</span></span> 
+<span data-ttu-id="5f4c8-191">Visual Studio は、イメージ ファイルを生成し、プロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-191">Visual Studio generates your image files and adds them to project.</span></span> <span data-ttu-id="5f4c8-192">資産を変更する場合は、プロセスを繰り返します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-192">If you want to change your assets, simply repeat the process.</span></span> 
 
-<span data-ttu-id="30dd2-192">拡大/縮小されたアイコン アセットは、このファイルの名前付け規則に従います。</span><span class="sxs-lookup"><span data-stu-id="30dd2-192">Scaled icon assets follow this file naming convention:</span></span>
+<span data-ttu-id="5f4c8-193">アイコンがスケーリングされた資産は、このファイルの名前付け規則に従います。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-193">Scaled icon assets follow this file naming convention:</span></span>
 
-<span data-ttu-id="30dd2-193">*ファイル名*規模の*拡大縮小率*.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-193">*filename*-scale-*scale factor*.png</span></span>
+<span data-ttu-id="5f4c8-194">*filename*-scale-*scale factor*.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-194">*filename*-scale-*scale factor*.png</span></span>
 
-<span data-ttu-id="30dd2-194">例:</span><span class="sxs-lookup"><span data-stu-id="30dd2-194">For example,</span></span>
+<span data-ttu-id="5f4c8-195">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-195">For example,</span></span>
 
-<span data-ttu-id="30dd2-195">Square150x150Logo-スケール-100.png、Square150x150Logo-スケール-200.png、Square150x150Logo-スケール-400.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-195">Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png</span></span>
+<span data-ttu-id="5f4c8-196">Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-196">Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png</span></span>
 
-<span data-ttu-id="30dd2-196">Visual Studio が既定ではバッジ ロゴを生成しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-196">Notice that Visual Studio doesn't generate a badge logo by default.</span></span> <span data-ttu-id="30dd2-197">バッジ ロゴは一意であり、その他のアプリ アイコンと一致しないようにおそらくためにです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-197">That's because your badge logo is unique and probably shouldn't match your other app icons.</span></span> <span data-ttu-id="30dd2-198">詳しくは、 [UWP アプリの資料のバッジ通知](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-198">For more info, see the  [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges).</span></span> 
-
-
-## <a name="more-about-app-icon-assets"></a><span data-ttu-id="30dd2-199">アプリ アイコン アセットの詳細</span><span class="sxs-lookup"><span data-stu-id="30dd2-199">More about app icon assets</span></span>
-<span data-ttu-id="30dd2-200">Visual Studio プロジェクトに必要なすべてのアプリ アイコン アセットが生成されますが、いるその他のアプリのアセットを異なる方法を理解して、それらをカスタマイズする場合は、できます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-200">Visual Studio will generate all the app icon assets required by your project, but if you'd like to customize them, it helps to understand how they're different from other app assets.</span></span> 
-
-<span data-ttu-id="30dd2-201">アプリ アイコン アセットは、多くの場所に表示されます。 Windows タスク バー、タスク ビュー、ALT + TAB、およびスタート画面のタイルの右下隅します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-201">The app icon asset appears in a lot of places: the Windows taskbar, the task view, ALT+TAB, and the lower-right corner of Start tiles.</span></span> <span data-ttu-id="30dd2-202">いくつか追加のサイズ変更とその他の資産を持たないオプションを plating があるため、非常に多くの場所でアプリ アイコン アセットが表示されたら、:「ターゲット サイズ」アセットと「プレートなし」のアセットです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-202">Because the app icon asset appears in so many places, it has some additional sizing and plating options the other assets don't have: "target-size" assets and "unplated" assets.</span></span> 
-
-### <a name="target-size-app-icon-assets"></a><span data-ttu-id="30dd2-203">ターゲット サイズのアプリ アイコン アセット</span><span class="sxs-lookup"><span data-stu-id="30dd2-203">Target-size app icon assets</span></span>
-<span data-ttu-id="30dd2-204">だけでなく、標準的なスケール ファクター サイズ ("Square44x44Logo.scale 400.png") もお勧めします「ターゲット サイズ」アセットを作成します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-204">In addition to the standard scale factor sizes ("Square44x44Logo.scale-400.png"), we also recommend creating "target-size" assets.</span></span> <span data-ttu-id="30dd2-205">400 などの特定のスケール ファクターではなく、16 ピクセルなど、特定のサイズを対象にするため、これらのアセットのターゲットのサイズを呼んでいます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-205">We call these assets target-size because they target specific sizes, such as 16 pixels, rather than specific scale factors, such as 400.</span></span> <span data-ttu-id="30dd2-206">ターゲット サイズのアセットは、スケール プラトー システムを使用していないサーフェスのことです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-206">Target-size assets are for surfaces that don't use the scaling plateau system:</span></span>
-
-* <span data-ttu-id="30dd2-207">スタート画面のジャンプ リスト (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="30dd2-207">Start jump list (desktop)</span></span>
-* <span data-ttu-id="30dd2-208">スタート画面のタイルの下隅 (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="30dd2-208">Start lower corner of tile (desktop)</span></span>
-* <span data-ttu-id="30dd2-209">ショートカット (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="30dd2-209">Shortcuts (desktop)</span></span>
-* <span data-ttu-id="30dd2-210">コントロール パネル (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="30dd2-210">Control Panel (desktop)</span></span>
-
-<span data-ttu-id="30dd2-211">ターゲット サイズのアセットの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-211">Here's the list of target-size assets:</span></span>
+<span data-ttu-id="5f4c8-197">Visual Studio が既定でバッジ ロゴを生成しないことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-197">Notice that Visual Studio doesn't generate a badge logo by default.</span></span> <span data-ttu-id="5f4c8-198">バッジ ロゴは一意であり、その他のアプリ アイコンが一致しないためにです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-198">That's because your badge logo is unique and probably shouldn't match your other app icons.</span></span> <span data-ttu-id="5f4c8-199">詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-199">For more info, see the  [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges).</span></span> 
 
 
-| <span data-ttu-id="30dd2-212">アセットのサイズ</span><span class="sxs-lookup"><span data-stu-id="30dd2-212">Asset size</span></span> | <span data-ttu-id="30dd2-213">ファイル名の例</span><span class="sxs-lookup"><span data-stu-id="30dd2-213">File name example</span></span>                  |
+## <a name="more-about-app-icon-assets"></a><span data-ttu-id="5f4c8-200">アプリ アイコンの資産の詳細情報</span><span class="sxs-lookup"><span data-stu-id="5f4c8-200">More about app icon assets</span></span>
+<span data-ttu-id="5f4c8-201">Visual Studio プロジェクトで必要なすべてのアプリ アイコンのアセットが生成されますが、その他のアプリの資産から相違を理解することによってそれらをカスタマイズしたい場合。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-201">Visual Studio will generate all the app icon assets required by your project, but if you'd like to customize them, it helps to understand how they're different from other app assets.</span></span> 
+
+<span data-ttu-id="5f4c8-202">アプリ アイコンの資産がさまざまな場所に表示されます。 Windows タスク バー、タスクの表示、ALT + TAB キー、およびスタート タイルの右上隅にあります。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-202">The app icon asset appears in a lot of places: the Windows taskbar, the task view, ALT+TAB, and the lower-right corner of Start tiles.</span></span> <span data-ttu-id="5f4c8-203">いくつか追加のサイズとオプションがないその他の資産を plating がアプリ アイコンの資産は、非常に多くの場所に表示される、ため: 資産の「ターゲット サイズ」と「プレートなし」の資産。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-203">Because the app icon asset appears in so many places, it has some additional sizing and plating options the other assets don't have: "target-size" assets and "unplated" assets.</span></span> 
+
+### <a name="target-size-app-icon-assets"></a><span data-ttu-id="5f4c8-204">ターゲット サイズのアプリ アイコンの資産</span><span class="sxs-lookup"><span data-stu-id="5f4c8-204">Target-size app icon assets</span></span>
+<span data-ttu-id="5f4c8-205">標準的なスケール要素サイズ ("Square44x44Logo.scale 400.png") だけでなくもをお勧め「ターゲット サイズ」の資産を作成します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-205">In addition to the standard scale factor sizes ("Square44x44Logo.scale-400.png"), we also recommend creating "target-size" assets.</span></span> <span data-ttu-id="5f4c8-206">400 などの特定のスケール ファクターではなく、16 ピクセルなどの特定のサイズを対象にできるので、これらの資産ターゲットのサイズを呼んでいます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-206">We call these assets target-size because they target specific sizes, such as 16 pixels, rather than specific scale factors, such as 400.</span></span> <span data-ttu-id="5f4c8-207">ターゲット サイズの資産は、スケーリングの頭打ちシステムを使用していないサーフェスのことです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-207">Target-size assets are for surfaces that don't use the scaling plateau system:</span></span>
+
+* <span data-ttu-id="5f4c8-208">スタート画面のジャンプ リスト (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-208">Start jump list (desktop)</span></span>
+* <span data-ttu-id="5f4c8-209">スタート画面のタイルの下隅 (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-209">Start lower corner of tile (desktop)</span></span>
+* <span data-ttu-id="5f4c8-210">ショートカット (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-210">Shortcuts (desktop)</span></span>
+* <span data-ttu-id="5f4c8-211">コントロール パネル (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-211">Control Panel (desktop)</span></span>
+
+<span data-ttu-id="5f4c8-212">ターゲット サイズの資産の一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-212">Here's the list of target-size assets:</span></span>
+
+
+| <span data-ttu-id="5f4c8-213">アセットのサイズ</span><span class="sxs-lookup"><span data-stu-id="5f4c8-213">Asset size</span></span> | <span data-ttu-id="5f4c8-214">ファイル名の例</span><span class="sxs-lookup"><span data-stu-id="5f4c8-214">File name example</span></span>                  |
 |------------|------------------------------------|
-| <span data-ttu-id="30dd2-214">16 x 16\*</span><span class="sxs-lookup"><span data-stu-id="30dd2-214">16x16\*</span></span>    | <span data-ttu-id="30dd2-215">Square44x44Logo.targetsize-16.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-215">Square44x44Logo.targetsize-16.png</span></span>  |
-| <span data-ttu-id="30dd2-216">24 x 24\*</span><span class="sxs-lookup"><span data-stu-id="30dd2-216">24x24\*</span></span>    | <span data-ttu-id="30dd2-217">Square44x44Logo.targetsize-24.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-217">Square44x44Logo.targetsize-24.png</span></span>  |
-| <span data-ttu-id="30dd2-218">32 x 32\*</span><span class="sxs-lookup"><span data-stu-id="30dd2-218">32x32\*</span></span>    | <span data-ttu-id="30dd2-219">Square44x44Logo.targetsize-32.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-219">Square44x44Logo.targetsize-32.png</span></span>  |
-| <span data-ttu-id="30dd2-220">48 x 48\*</span><span class="sxs-lookup"><span data-stu-id="30dd2-220">48x48\*</span></span>    | <span data-ttu-id="30dd2-221">Square44x44Logo.targetsize-48.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-221">Square44x44Logo.targetsize-48.png</span></span>  |
-| <span data-ttu-id="30dd2-222">256 x 256\*</span><span class="sxs-lookup"><span data-stu-id="30dd2-222">256x256\*</span></span>  | <span data-ttu-id="30dd2-223">Square44x44Logo.targetsize-256.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-223">Square44x44Logo.targetsize-256.png</span></span> |
-| <span data-ttu-id="30dd2-224">20 x 20</span><span class="sxs-lookup"><span data-stu-id="30dd2-224">20x20</span></span>      | <span data-ttu-id="30dd2-225">Square44x44Logo.targetsize-20.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-225">Square44x44Logo.targetsize-20.png</span></span>  |
-| <span data-ttu-id="30dd2-226">30 x 30</span><span class="sxs-lookup"><span data-stu-id="30dd2-226">30x30</span></span>      | <span data-ttu-id="30dd2-227">Square44x44Logo.targetsize-30.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-227">Square44x44Logo.targetsize-30.png</span></span>  |
-| <span data-ttu-id="30dd2-228">36 x 36</span><span class="sxs-lookup"><span data-stu-id="30dd2-228">36x36</span></span>      | <span data-ttu-id="30dd2-229">Square44x44Logo.targetsize-36.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-229">Square44x44Logo.targetsize-36.png</span></span>  |
-| <span data-ttu-id="30dd2-230">40 x 40</span><span class="sxs-lookup"><span data-stu-id="30dd2-230">40x40</span></span>      | <span data-ttu-id="30dd2-231">Square44x44Logo.targetsize-40.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-231">Square44x44Logo.targetsize-40.png</span></span>  |
-| <span data-ttu-id="30dd2-232">60 x 60</span><span class="sxs-lookup"><span data-stu-id="30dd2-232">60x60</span></span>      | <span data-ttu-id="30dd2-233">Square44x44Logo.targetsize-60.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-233">Square44x44Logo.targetsize-60.png</span></span>  |
-| <span data-ttu-id="30dd2-234">64 x 64</span><span class="sxs-lookup"><span data-stu-id="30dd2-234">64x64</span></span>      | <span data-ttu-id="30dd2-235">Square44x44Logo.targetsize-64.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-235">Square44x44Logo.targetsize-64.png</span></span>  |
-| <span data-ttu-id="30dd2-236">72 x 72</span><span class="sxs-lookup"><span data-stu-id="30dd2-236">72x72</span></span>      | <span data-ttu-id="30dd2-237">Square44x44Logo.targetsize-72.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-237">Square44x44Logo.targetsize-72.png</span></span>  |
-| <span data-ttu-id="30dd2-238">80 x 80</span><span class="sxs-lookup"><span data-stu-id="30dd2-238">80x80</span></span>      | <span data-ttu-id="30dd2-239">Square44x44Logo.targetsize-80.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-239">Square44x44Logo.targetsize-80.png</span></span>  |
-| <span data-ttu-id="30dd2-240">96 x 96</span><span class="sxs-lookup"><span data-stu-id="30dd2-240">96x96</span></span>      | <span data-ttu-id="30dd2-241">Square44x44Logo.targetsize-96.png</span><span class="sxs-lookup"><span data-stu-id="30dd2-241">Square44x44Logo.targetsize-96.png</span></span>  |
+| <span data-ttu-id="5f4c8-215">16 x 16\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-215">16x16\*</span></span>    | <span data-ttu-id="5f4c8-216">Square44x44Logo.targetsize-16.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-216">Square44x44Logo.targetsize-16.png</span></span>  |
+| <span data-ttu-id="5f4c8-217">24 x 24\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-217">24x24\*</span></span>    | <span data-ttu-id="5f4c8-218">Square44x44Logo.targetsize-24.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-218">Square44x44Logo.targetsize-24.png</span></span>  |
+| <span data-ttu-id="5f4c8-219">32x32\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-219">32x32\*</span></span>    | <span data-ttu-id="5f4c8-220">Square44x44Logo.targetsize-32.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-220">Square44x44Logo.targetsize-32.png</span></span>  |
+| <span data-ttu-id="5f4c8-221">48 x 48\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-221">48x48\*</span></span>    | <span data-ttu-id="5f4c8-222">Square44x44Logo.targetsize-48.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-222">Square44x44Logo.targetsize-48.png</span></span>  |
+| <span data-ttu-id="5f4c8-223">256x256\*</span><span class="sxs-lookup"><span data-stu-id="5f4c8-223">256x256\*</span></span>  | <span data-ttu-id="5f4c8-224">Square44x44Logo.targetsize-256.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-224">Square44x44Logo.targetsize-256.png</span></span> |
+| <span data-ttu-id="5f4c8-225">20 x 20</span><span class="sxs-lookup"><span data-stu-id="5f4c8-225">20x20</span></span>      | <span data-ttu-id="5f4c8-226">Square44x44Logo.targetsize-20.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-226">Square44x44Logo.targetsize-20.png</span></span>  |
+| <span data-ttu-id="5f4c8-227">30 x 30</span><span class="sxs-lookup"><span data-stu-id="5f4c8-227">30x30</span></span>      | <span data-ttu-id="5f4c8-228">Square44x44Logo.targetsize-30.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-228">Square44x44Logo.targetsize-30.png</span></span>  |
+| <span data-ttu-id="5f4c8-229">36 x 36</span><span class="sxs-lookup"><span data-stu-id="5f4c8-229">36x36</span></span>      | <span data-ttu-id="5f4c8-230">Square44x44Logo.targetsize-36.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-230">Square44x44Logo.targetsize-36.png</span></span>  |
+| <span data-ttu-id="5f4c8-231">40 x 40</span><span class="sxs-lookup"><span data-stu-id="5f4c8-231">40x40</span></span>      | <span data-ttu-id="5f4c8-232">Square44x44Logo.targetsize-40.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-232">Square44x44Logo.targetsize-40.png</span></span>  |
+| <span data-ttu-id="5f4c8-233">60 x 60</span><span class="sxs-lookup"><span data-stu-id="5f4c8-233">60x60</span></span>      | <span data-ttu-id="5f4c8-234">Square44x44Logo.targetsize-60.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-234">Square44x44Logo.targetsize-60.png</span></span>  |
+| <span data-ttu-id="5f4c8-235">64 x 64</span><span class="sxs-lookup"><span data-stu-id="5f4c8-235">64x64</span></span>      | <span data-ttu-id="5f4c8-236">Square44x44Logo.targetsize-64.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-236">Square44x44Logo.targetsize-64.png</span></span>  |
+| <span data-ttu-id="5f4c8-237">72 x 72</span><span class="sxs-lookup"><span data-stu-id="5f4c8-237">72x72</span></span>      | <span data-ttu-id="5f4c8-238">Square44x44Logo.targetsize-72.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-238">Square44x44Logo.targetsize-72.png</span></span>  |
+| <span data-ttu-id="5f4c8-239">80 x 80</span><span class="sxs-lookup"><span data-stu-id="5f4c8-239">80x80</span></span>      | <span data-ttu-id="5f4c8-240">Square44x44Logo.targetsize-80.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-240">Square44x44Logo.targetsize-80.png</span></span>  |
+| <span data-ttu-id="5f4c8-241">96 x 96</span><span class="sxs-lookup"><span data-stu-id="5f4c8-241">96x96</span></span>      | <span data-ttu-id="5f4c8-242">Square44x44Logo.targetsize-96.png</span><span class="sxs-lookup"><span data-stu-id="5f4c8-242">Square44x44Logo.targetsize-96.png</span></span>  |
 
-<span data-ttu-id="30dd2-242">\ \* 少なくとも、お勧めしますこれらのサイズを提供します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-242">\* At a minimum, we recommend providing these sizes.</span></span> 
+<span data-ttu-id="5f4c8-243">\* 少なくとも、これらのサイズを提供することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-243">\* At a minimum, we recommend providing these sizes.</span></span> 
 
-<span data-ttu-id="30dd2-243">これらのアセットにパディングを追加する必要はありません。パディングは、必要に応じて Windows によって追加されます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-243">You don't have to add padding to these assets; Windows adds padding if needed.</span></span> <span data-ttu-id="30dd2-244">これらのアセットは、16 ピクセルの最小面積を占めている必要があります。</span><span class="sxs-lookup"><span data-stu-id="30dd2-244">These assets should account for a minimum footprint of 16 pixels.</span></span> 
+<span data-ttu-id="5f4c8-244">これらのアセットにパディングを追加する必要はありません。パディングは、必要に応じて Windows によって追加されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-244">You don't have to add padding to these assets; Windows adds padding if needed.</span></span> <span data-ttu-id="5f4c8-245">これらのアセットは、16 ピクセルの最小面積を占めている必要があります。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-245">These assets should account for a minimum footprint of 16 pixels.</span></span> 
 
-<span data-ttu-id="30dd2-245">Windows タスク バーのアイコンに表示される、このようなアセットの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-245">Here's an example of these assets as they appear in icons on the Windows taskbar:</span></span>
+<span data-ttu-id="5f4c8-246">Windows タスク バーのアイコンに表示される、このようなアセットの例を以下に示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-246">Here's an example of these assets as they appear in icons on the Windows taskbar:</span></span>
 
 ![Windows タスク バーのアセット](images/assetguidance21.png)
 
-### <a name="unplated-assets"></a><span data-ttu-id="30dd2-247">プレートなしのアセット</span><span class="sxs-lookup"><span data-stu-id="30dd2-247">Unplated assets</span></span>
-<span data-ttu-id="30dd2-248">既定では、Windows は、既定で色付きバック プレート上のターゲット ベースのアセットを使用します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-248">By default, Windows uses a target-based asset on top of a colored backplate by default.</span></span> <span data-ttu-id="30dd2-249">する場合は、ターゲット ベースのプレートなしのアセットを提供することができます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-249">If you want, you can provide a target-based unplated asset.</span></span> <span data-ttu-id="30dd2-250">「プレートなし」は、透明な背景に表示されるアセットを意味します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-250">"Unplated" means the asset will be displayed on a transparent background.</span></span> <span data-ttu-id="30dd2-251">これらのアセットは、さまざまな背景色で表示されることに留意してください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-251">Keep in mind that these assets will appear over a variety of background colors.</span></span> 
+### <a name="unplated-assets"></a><span data-ttu-id="5f4c8-248">プレートなしの資産</span><span class="sxs-lookup"><span data-stu-id="5f4c8-248">Unplated assets</span></span>
+<span data-ttu-id="5f4c8-249">既定では、Windows は、既定で色付き backplate 上にターゲット ベースの資産を使用します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-249">By default, Windows uses a target-based asset on top of a colored backplate by default.</span></span> <span data-ttu-id="5f4c8-250">する場合は、ターゲットのプレートなし資産を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-250">If you want, you can provide a target-based unplated asset.</span></span> <span data-ttu-id="5f4c8-251">資産が透明な背景に表示されます「プレートなし」を意味します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-251">"Unplated" means the asset will be displayed on a transparent background.</span></span> <span data-ttu-id="5f4c8-252">これらの資産は、さまざまな背景の色で表示されることに留意してください。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-252">Keep in mind that these assets will appear over a variety of background colors.</span></span> 
 
 ![プレートなしのアセットとプレート付きのアセット](images/assetguidance22.png)
 
-<span data-ttu-id="30dd2-253">プレートなしのアプリ アイコン アセットを使用するサーフェスを以下に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-253">Here are the surfaces that use unplated app icon assets:</span></span>
-* <span data-ttu-id="30dd2-254">タスク バーとタスク バー サムネイル (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="30dd2-254">Taskbar and taskbar thumbnail (desktop)</span></span>
-* <span data-ttu-id="30dd2-255">タスク バーのジャンプ リスト</span><span class="sxs-lookup"><span data-stu-id="30dd2-255">Taskbar jumplist</span></span>
-* <span data-ttu-id="30dd2-256">タスク ビュー</span><span class="sxs-lookup"><span data-stu-id="30dd2-256">Task view</span></span>
-* <span data-ttu-id="30dd2-257">Alt + Tab キー</span><span class="sxs-lookup"><span data-stu-id="30dd2-257">ALT+TAB</span></span>
+<span data-ttu-id="5f4c8-254">プレートなしのアプリ アイコンのアセットを使用する画面を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-254">Here are the surfaces that use unplated app icon assets:</span></span>
+* <span data-ttu-id="5f4c8-255">タスク バーとタスク バー サムネイル (デスクトップ)</span><span class="sxs-lookup"><span data-stu-id="5f4c8-255">Taskbar and taskbar thumbnail (desktop)</span></span>
+* <span data-ttu-id="5f4c8-256">タスク バーのジャンプ リスト</span><span class="sxs-lookup"><span data-stu-id="5f4c8-256">Taskbar jumplist</span></span>
+* <span data-ttu-id="5f4c8-257">タスク ビュー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-257">Task view</span></span>
+* <span data-ttu-id="5f4c8-258">Alt + Tab キー</span><span class="sxs-lookup"><span data-stu-id="5f4c8-258">ALT+TAB</span></span>
 
 
-### <a name="target-and-unplated-sizing"></a><span data-ttu-id="30dd2-258">ターゲットとプレートなしのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="30dd2-258">Target and unplated sizing</span></span>
+### <a name="target-and-unplated-sizing"></a><span data-ttu-id="5f4c8-259">ターゲットおよびプレートなしのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="5f4c8-259">Target and unplated sizing</span></span>
 
-<span data-ttu-id="30dd2-259">100% の倍率でのターゲット ベースのアセットのサイズの推奨事項を次に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-259">Here are the size recommendations for target-based assets, at 100% scale:</span></span>
+<span data-ttu-id="5f4c8-260">100% スケールで、ターゲット ベースの資産のサイズの推奨事項を次に示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-260">Here are the size recommendations for target-based assets, at 100% scale:</span></span>
 
 ![100% の倍率でのターゲット ベースのアセットのサイズ調整](images/assetguidance23.png)
 
 
-## <a name="more-about-splash-screen-assets"></a><span data-ttu-id="30dd2-261">スプラッシュ画面のアセットの詳細</span><span class="sxs-lookup"><span data-stu-id="30dd2-261">More about splash screen assets</span></span>
-<span data-ttu-id="30dd2-262">スプラッシュ画面について詳しくは、 [UWP スプラッシュ画面の記事](/windows/uwp/launch-resume/splash-screens)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-262">For more info about splash screens, see the [UWP splash screens article](/windows/uwp/launch-resume/splash-screens).</span></span>
+## <a name="more-about-splash-screen-assets"></a><span data-ttu-id="5f4c8-262">スプラッシュ画面の資産の詳細情報</span><span class="sxs-lookup"><span data-stu-id="5f4c8-262">More about splash screen assets</span></span>
+<span data-ttu-id="5f4c8-263">スプラッシュ スクリーンの詳細については、次を参照してください。、 [UWP スプラッシュ画面記事](/windows/uwp/launch-resume/splash-screens)します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-263">For more info about splash screens, see the [UWP splash screens article](/windows/uwp/launch-resume/splash-screens).</span></span>
 
-## <a name="more-about-badge-logo-assets"></a><span data-ttu-id="30dd2-263">バッジ ロゴの資産の詳細</span><span class="sxs-lookup"><span data-stu-id="30dd2-263">More about badge logo assets</span></span>
+## <a name="more-about-badge-logo-assets"></a><span data-ttu-id="5f4c8-264">バッジ ロゴの資産の詳細情報</span><span class="sxs-lookup"><span data-stu-id="5f4c8-264">More about badge logo assets</span></span>
 
-<span data-ttu-id="30dd2-264">必要となるすべてのアセットを生成するアセット ジェネレーターを使用する場合は、既定ではバッジ ロゴを理由生成しない理由があります: している他のアプリのアセットとは大きく異なります。</span><span class="sxs-lookup"><span data-stu-id="30dd2-264">When you use the asset generator to generate all the assets you need, there's a reason why it doesn't generate badge logos by default: they're very different from other app assets.</span></span> <span data-ttu-id="30dd2-265">バッジ ロゴは、通知であり、アプリのタイルに表示されるステータス イメージです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-265">The badge logo is a status image that appears in notifications and on the app's tiles.</span></span> 
+<span data-ttu-id="5f4c8-265">なぜバッジ ロゴが既定で生成されない理由がある必要があるすべての資産を生成する資産ジェネレーターを使用する場合: その他のアプリの資産から非常に異なる場合します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-265">When you use the asset generator to generate all the assets you need, there's a reason why it doesn't generate badge logos by default: they're very different from other app assets.</span></span> <span data-ttu-id="5f4c8-266">バッジ ロゴは、通知とアプリのタイルに表示される状態のイメージです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-266">The badge logo is a status image that appears in notifications and on the app's tiles.</span></span> 
 
-<span data-ttu-id="30dd2-266">詳細については、 [UWP アプリの資料のバッジ通知](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="30dd2-266">For more information, see the [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges).</span></span>
+<span data-ttu-id="5f4c8-267">詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-267">For more information, see the [Badge notifications for UWP apps article](/windows/uwp/design/shell/tiles-and-notifications/badges).</span></span>
 
 
-## <a name="customizing-asset-padding"></a><span data-ttu-id="30dd2-267">アセットのパディングをカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-267">Customizing asset padding</span></span>
+## <a name="customizing-asset-padding"></a><span data-ttu-id="5f4c8-268">資産の余白をカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-268">Customizing asset padding</span></span>
 
-<span data-ttu-id="30dd2-268">既定では、Visual Studio アセット ジェネレーターには、任意のイメージに推奨されるパディングが適用されます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-268">By default, Visual Studio asset generator applies recommended padding to whatever image.</span></span> <span data-ttu-id="30dd2-269">場合は、イメージにパディングが既に含まれている、またはタイルの終わりに拡張フルブリード イメージ、オフにするこの機能によって、**適用パディングを推奨**] チェック ボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-269">If your images already contain padding or you want full bleed images that extend to the end of the tile, you can turn this feature off by unchecking the **Apply recommended padding** check box.</span></span> 
+<span data-ttu-id="5f4c8-269">既定では、Visual Studio 資産ジェネレーターには、どのようなイメージに推奨される埋め込みが適用されます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-269">By default, Visual Studio asset generator applies recommended padding to whatever image.</span></span> <span data-ttu-id="5f4c8-270">イメージの余白では、既にまたは、フルブリード イメージ タイルの末尾に拡張する場合場合、オフにできますこの機能をオフにして、**パディングをお勧めします。 適用**チェック ボックスをオンします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-270">If your images already contain padding or you want full bleed images that extend to the end of the tile, you can turn this feature off by unchecking the **Apply recommended padding** check box.</span></span> 
 
-### <a name="tile-padding-recommendations"></a><span data-ttu-id="30dd2-270">タイル パディングの推奨事項</span><span class="sxs-lookup"><span data-stu-id="30dd2-270">Tile padding recommendations</span></span>
-<span data-ttu-id="30dd2-271">独自のパディングを提供する場合は、タイルの推奨事項を次に示します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-271">If you want to provide your own padding, here are our recommendations for tiles.</span></span> 
+### <a name="tile-padding-recommendations"></a><span data-ttu-id="5f4c8-271">タイルの埋め込みに関する推奨事項</span><span class="sxs-lookup"><span data-stu-id="5f4c8-271">Tile padding recommendations</span></span>
+<span data-ttu-id="5f4c8-272">独自の埋め込みを指定する場合は、タイルの推奨事項を示します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-272">If you want to provide your own padding, here are our recommendations for tiles.</span></span> 
 
-<span data-ttu-id="30dd2-272">ある 4 つのタイル サイズ: 小 (71 x 71)、メディア (150 x 150)、全体 (150 x 310)、大規模な (310 x 310)。</span><span class="sxs-lookup"><span data-stu-id="30dd2-272">There are 4 tile sizes: small (71 x 71), medium (150 x 150), wide (310 x 150), and large (310 x 310).</span></span> 
+<span data-ttu-id="5f4c8-273">4 つのタイル サイズがある: small (71 x 71)、medium (150 x 150)、ワイド (150 x 310)、大規模な (310 x 310)。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-273">There are 4 tile sizes: small (71 x 71), medium (150 x 150), wide (310 x 150), and large (310 x 310).</span></span> 
 
-<span data-ttu-id="30dd2-273">各タイル アセットは、配置されるタイルと同じサイズです。</span><span class="sxs-lookup"><span data-stu-id="30dd2-273">Each tile asset is the same size as the tile on which it is placed.</span></span>
+<span data-ttu-id="5f4c8-274">各タイル アセットは、配置されるタイルと同じサイズです。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-274">Each tile asset is the same size as the tile on which it is placed.</span></span>
 
-![タイル表示フルブリード](images/app-icons/tile-assets1.png)
+![タイルが表示されたフルブリード](images/app-icons/tile-assets1.png)
 
-<span data-ttu-id="30dd2-275">タイルの端まで拡張するアイコンを必要がない場合は、パディングの作成に、アセットで透明のピクセルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-275">If you don't want your icon to extend to the edge of the tile, you can use transparent pixels in your asset to create padding.</span></span> 
+<span data-ttu-id="5f4c8-276">タイルのエッジに拡張する、アイコンをしたくない場合は、パディングの作成に、資産の透明なピクセルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-276">If you don't want your icon to extend to the edge of the tile, you can use transparent pixels in your asset to create padding.</span></span> 
 
 ![タイルとバック プレート](images/assetguidance05.png)
 
-<span data-ttu-id="30dd2-277">小さいタイルでは、アイコンの幅と高さをタイル サイズの 66% に制限します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-277">For small tiles, limit the icon width and height to 66% of the tile size:</span></span>
+<span data-ttu-id="5f4c8-278">小さいタイルでは、アイコンの幅と高さをタイル サイズの 66% に制限します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-278">For small tiles, limit the icon width and height to 66% of the tile size:</span></span>
 
 ![小さいタイルのサイズの比率](images/assetguidance09.png)
 
-<span data-ttu-id="30dd2-279">普通サイズのタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-279">For medium tiles, limit the icon width to 66% and height to 50% of tile size.</span></span> <span data-ttu-id="30dd2-280">これによって、ブランド バー内の要素と重ならないようにします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-280">This prevents overlapping of elements in the branding bar:</span></span>
+<span data-ttu-id="5f4c8-280">普通サイズのタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-280">For medium tiles, limit the icon width to 66% and height to 50% of tile size.</span></span> <span data-ttu-id="5f4c8-281">これによって、ブランド バー内の要素と重ならないようにします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-281">This prevents overlapping of elements in the branding bar:</span></span>
 
 ![普通サイズのタイルのサイズの比率](images/assetguidance10.png)
 
-<span data-ttu-id="30dd2-282">ワイド タイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-282">For wide tiles, limit the icon width to 66% and height to 50% of tile size.</span></span> <span data-ttu-id="30dd2-283">これによって、ブランド バー内の要素と重ならないようにします。</span><span class="sxs-lookup"><span data-stu-id="30dd2-283">This prevents overlapping of elements in the branding bar:</span></span>
+<span data-ttu-id="5f4c8-283">ワイド タイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-283">For wide tiles, limit the icon width to 66% and height to 50% of tile size.</span></span> <span data-ttu-id="5f4c8-284">これによって、ブランド バー内の要素と重ならないようにします。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-284">This prevents overlapping of elements in the branding bar:</span></span>
 
 ![ワイド タイルのサイズの比率](images/assetguidance11.png)
 
-<span data-ttu-id="30dd2-285">大きいタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-285">For large tiles, limit the icon width to 66% and height to 50% of tile size:</span></span>
+<span data-ttu-id="5f4c8-286">大きいタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-286">For large tiles, limit the icon width to 66% and height to 50% of tile size:</span></span>
 
 ![大きいタイルのサイズの比率](images/assetguidance12.png)
 
-<span data-ttu-id="30dd2-287">水平方向または垂直方向にデザインされたアイコンがある一方で、ターゲット サイズの正方形に収まらない、より複雑な形状のアイコンもあります。</span><span class="sxs-lookup"><span data-stu-id="30dd2-287">Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions.</span></span> <span data-ttu-id="30dd2-288">中央に配置されるアイコンの一方の辺に重みを付けることができます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-288">Icons that appear to be centered can be weighted to one side.</span></span> <span data-ttu-id="30dd2-289">この場合、アイコンの視覚的な重みが正方形に収まるアイコンと同じであれば、アイコンの一部が推奨される面積の外側にはみ出していてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="30dd2-289">In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:</span></span>
+<span data-ttu-id="5f4c8-288">水平方向または垂直方向にデザインされたアイコンがある一方で、ターゲット サイズの正方形に収まらない、より複雑な形状のアイコンもあります。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-288">Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions.</span></span> <span data-ttu-id="5f4c8-289">中央に配置されるアイコンの一方の辺に重みを付けることができます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-289">Icons that appear to be centered can be weighted to one side.</span></span> <span data-ttu-id="5f4c8-290">この場合、アイコンの視覚的な重みが正方形に収まるアイコンと同じであれば、アイコンの一部が推奨される面積の外側にはみ出していてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-290">In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:</span></span>
 
 ![中央に配置された 3 つのアイコン](images/assetguidance13.png)
 
-<span data-ttu-id="30dd2-291">フルブリード アセットでは、要素が余白およびタイルの端の内側に接するように考慮します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-291">With full-bleed assets, take into account elements that interact within the margins and edges of the tiles.</span></span> <span data-ttu-id="30dd2-292">タイルの高さまたは幅の 16% 以上の余白を維持します。</span><span class="sxs-lookup"><span data-stu-id="30dd2-292">Maintain margins of at least 16% of the height or width of the tile.</span></span> <span data-ttu-id="30dd2-293">この割合は、最小タイル サイズでの余白の幅の 2 倍を表しています。</span><span class="sxs-lookup"><span data-stu-id="30dd2-293">This percentage represents double the width of the margins at the smallest tile sizes:</span></span>
+<span data-ttu-id="5f4c8-292">フルブリード アセットでは、要素が余白およびタイルの端の内側に接するように考慮します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-292">With full-bleed assets, take into account elements that interact within the margins and edges of the tiles.</span></span> <span data-ttu-id="5f4c8-293">タイルの高さまたは幅の 16% 以上の余白を維持します。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-293">Maintain margins of at least 16% of the height or width of the tile.</span></span> <span data-ttu-id="5f4c8-294">この割合は、最小タイル サイズでの余白の幅の 2 倍を表しています。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-294">This percentage represents double the width of the margins at the smallest tile sizes:</span></span>
 
 ![余白のあるフルブリード タイル](images/assetguidance14.png)
 
-<span data-ttu-id="30dd2-295">次の例では、余白が狭すぎます。</span><span class="sxs-lookup"><span data-stu-id="30dd2-295">In this example, margins are too tight:</span></span>
+<span data-ttu-id="5f4c8-296">次の例では、余白が狭すぎます。</span><span class="sxs-lookup"><span data-stu-id="5f4c8-296">In this example, margins are too tight:</span></span>
 
 ![余白が小さすぎるフルブリード タイル](images/assetguidance15.png)
 
