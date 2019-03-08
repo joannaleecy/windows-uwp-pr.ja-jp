@@ -1,19 +1,19 @@
 ---
-Description: This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.
+Description: このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: アクセシビリティに対応したテキストの要件
 label: Accessible text requirements
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050745"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653337"
 ---
 # <a name="accessible-text-requirements"></a>アクセシビリティに対応したテキストの要件  
 
@@ -28,7 +28,7 @@ ms.locfileid: "9050745"
 ## <a name="contrast-ratios"></a>コントラスト比  
 ユーザーはハイ コントラスト モードにいつでも切り替えることができますが、テキスト用のアプリ設計ではこのオプションを最後の手段にする必要があります。 これよりも、アプリのテキストが、テキストと背景とのコントラストのレベルに関して確立されているガイドラインに準拠するようにすることをお勧めします。 コントラストのレベルは、色合いを考慮しない確定的な方法に基づいて評価されます。 たとえば、緑の背景の上に赤のテキストを配置すると、色覚に障碍があるユーザーはそのテキストを読み取ることができない場合があります。 コントラスト比を確認して修正することで、このようなアクセシビリティの問題を防ぐことができます。
 
-ここで説明するテキストのコントラストに関する推奨事項は、「[G18: テキスト (および画像化された文字) とテキストの背景のコントラスト比を 4.5:1 以上にする](https://go.microsoft.com/fwlink/p/?linkid=221823)」という Web アクセシビリティ標準に基づいています。 このガイドラインは、*W3C Techniques for WCAG 2.0* 仕様に含まれています。
+Standard、web アクセシビリティのテキストのコントラストがここに記載の推奨事項は[G18:確認する、コントラスト比を少なくとも 4.5: 1 がテキスト (とテキストのイメージ) の間に存在して、テキストの背景](https://go.microsoft.com/fwlink/p/?linkid=221823)します。 このガイドラインは、*W3C Techniques for WCAG 2.0* 仕様に含まれています。
 
 表示テキストがアクセシビリティに対応していると見なされるためには、背景に対する明暗のコントラスト比が最低でも 4.5:1 以上であることが必要です。 ただし、ロゴや、非アクティブな UI コンポーネントの一部のテキストなどの付随テキストは、例外です。
 
@@ -46,10 +46,10 @@ ms.locfileid: "9050745"
 ## <a name="text-element-roles"></a>テキスト要素の役割  
 UWP アプリでは、次の既定の要素 (一般に*テキスト要素*または*テキスト編集コントロール*と呼ばれる) を使うことができます。
 
-* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): 役割は [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683): 役割は [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) (とオーバーフロー クラス [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): 役割は [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
-* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): 役割は [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652): 役割は、 [**テキスト**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**テキスト ボックス**](https://msdn.microsoft.com/library/windows/apps/BR209683): 役割は、 [**編集**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichTextBlock** ](https://msdn.microsoft.com/library/windows/apps/BR227565) (とクラスを overflow [ **RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): 役割は、 [**テキスト**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+* [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/BR227548): 役割は、 [**編集**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 
 コントロールから [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182) の役割があることが報告されると、支援技術では、ユーザーが値を変更できると想定します。 このため、静的テキストを [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) に配置すると、役割が誤って報告され、この結果、アクセシビリティ対応を必要とするユーザーにアプリの構造が誤って報告されます。
 
@@ -70,8 +70,8 @@ XAML のテキスト モデルでは、静的なテキスト、[**TextBlock**](h
 * ナレーターのフォーカスを一覧に移動できる
 * 他のすべての閲覧モードで候補内を移動できる
 
-![候補一覧](images/autosuggest-list.png)<br/>
-_候補一覧の例_
+![候補リスト](images/autosuggest-list.png)<br/>
+_候補リストの例_
 
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
@@ -85,17 +85,17 @@ _候補一覧の例_
 **既定の選択**  
 一覧で既定の選択が行われる場合、ナレーターは、デスクトップ アプリでは [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) イベント、UWP アプリでは [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントの発生を検索します。 選択項目が変更されるたび、つまりユーザーが別の文字を入力して候補が更新されたときや、ユーザーが一覧内を移動したときに、**ElementSelected** イベントが発生する必要があります。
 
-![既定の選択を含む一覧](images/autosuggest-default-selection.png)<br/>
-_既定の選択がある場合の例_
+![既定値を選択した場合、ボックスの一覧します。](images/autosuggest-default-selection.png)<br/>
+_例が、既定の選択_
 
-**既定の選択がない**  
+**既定の選択がありません。**  
 天気予報アプリの場所のボックスなど、既定の選択がない場合、ナレーターはデスクトップの [**UIA_LayoutInvalidatedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223 ) イベントまたは UWP の [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントの発生を検索します。
 
-![既定の選択がない一覧](images/autosuggest-no-default-selection.png)<br/>
-_既定の選択がない場合の例_
+![既定値も選択されていないを一覧表示します。](images/autosuggest-no-default-selection.png)<br/>
+_例を既定の選択が存在しません。_
 
 ### <a name="xaml-implementation"></a>XAML の実装  
-XAML の既定の [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) を使用している場合、既にすべての準備が完了しています。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) と一覧を使って独自の自動提案エクスペリエンスを作成している場合は、**TextBox** で一覧を [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) として設定する必要があります。 [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) プロパティを追加または削除するたびに、このプロパティの **AutomationPropertyChanged** イベントを発生させる必要があります。また、この記事で既に説明したシナリオのタイプに応じて、独自の [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントまたは [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントを発生させる必要があります。
+XAML の既定の [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) を使用している場合、既にすべての準備が完了しています。 [  **TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) と一覧を使って独自の自動提案エクスペリエンスを作成している場合は、**TextBox** で一覧を [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) として設定する必要があります。 [  **ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) プロパティを追加または削除するたびに、このプロパティの **AutomationPropertyChanged** イベントを発生させる必要があります。また、この記事で既に説明したシナリオのタイプに応じて、独自の [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントまたは [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) イベントを発生させる必要があります。
 
 ### <a name="html-implementation"></a>HTML の実装  
 HTML で組み込みのコントロールを使っている場合は、UIA 実装が既にマップされています。 既に準備されている実装の例を次に示します。
@@ -124,21 +124,21 @@ HTML で組み込みのコントロールを使っている場合は、UIA 実�
 
 ## <a name="text-font-size-and-scale"></a>テキストのフォント サイズとスケール
 
-ユーザーが困難なフォントは単に、アプリでテキストを読むことができますが小さすぎるように、アプリケーション内のテキストは、適切なサイズが、最初に確認してください。
+ユーザーと、このフォントの用途は、単にアプリ内のテキストを読みづらくなってしまうことができますが小さすぎるように、アプリケーションで任意のテキストが妥当なサイズが最初に確認してください。
 
-操作が完了したら、明確な Windows には、さまざまなアクセシビリティ ツールとユーザーを活用して、独自のニーズとテキストを読むための基本設定を調整することができる設定が含まれます。 たとえば、次のような場合です。
+完了すると、明確な Windows にはさまざまなアクセシビリティ ツールとユーザーが活用し、独自のニーズとテキストを読み取るための基本設定を調整する設定が含まれます。 次のようなクラスがあります。
 
-* 拡大鏡ツール、UI の選択領域を拡大します。 アプリ内のテキストのレイアウトが難しくなるに関して、拡大鏡を使用して行う必要があります。
-* **設定 >System >Display >Scale とレイアウト**でグローバル スケールと解像度設定します。 正確にどのサイズ変更のオプションが利用可能なと、これは、ディスプレイ デバイスの機能に依存とは異なることができます。
-* **アクセス >Display の設定->Ease**でテキスト サイズ設定します。 すべてのアプリケーションと (すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングするテキストをサポート) 画面でコントロールをサポートでテキストのサイズだけを指定する**テキストがより大きくする**設定を調整します。 
+* 拡大鏡ツール、UI の選択範囲を拡大します。 アプリ内のテキストのレイアウトが困難に拡大鏡を使用して、読み取り用に行う必要があります。
+* スケールと解像度の設定をグローバル**設定]、[システムの表示]-> [-> スケールとレイアウト**します。 正確にサイズ変更オプションが使用可能なディスプレイ デバイスの機能に依存とは異なります。
+* テキスト サイズ設定**設定、アクセスの容易さの表示-> **します。 調整、**テキストを大きく**すべてのアプリケーションと画面 (すべての UWP テキスト コントロールは、テキストをカスタマイズまたはテンプレートなしのエクスペリエンスをスケーリングをサポート) 間でのサポート コントロールでテキストのサイズだけを指定する設定。 
 > [!NOTE]
-> **すべてのものを大きく**設定では、ユーザーがプライマリ画面のみで一般的にテキストとアプリの推奨サイズを指定します。
+> **すべての大きな**設定により、ユーザーのプライマリ画面のみに一般にテキストとアプリの推奨サイズを指定します。
 
-さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 場合**は true**、その要素のテキストのサイズ拡張できます。 スケーリングがある大規模な**FontSize**テキストに影響を与えるよりも高いに小さな**FontSize**テキストに影響します。 要素の**IsTextScaleFactorEnabled**のプロパティを**false**に設定して、自動サイズ変更を無効にすることができます。 
+さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 ときに**true**、その要素内のテキストのサイズをスケールできます。 スケーリングが小規模のテキストに影響を与えます**FontSize**が大規模なテキストに影響を与えるよりも高いに**FontSize**します。 要素の設定の自動サイズ変更を無効にした**IsTextScaleFactorEnabled**プロパティを**false**します。 
 
-詳細については、[テキストの拡大縮小](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)を参照してください。
+参照してください[テキスト スケーリング](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)の詳細。
 
-次のマークアップをアプリに追加し、それを実行します。 **テキストのサイズ**の設定を調整し、各**TextBlock**に何が起きるを参照してください。
+次のマークアップをアプリに追加し、それを実行します。 調整、**テキスト サイズ**を設定して、それぞれに何が起こるか見て**TextBlock**します。
 
 XAML
 ```xml
@@ -149,9 +149,9 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-すべてのアプリ間でユニバーサル スケーリングの UI テキストは、重要なアクセシビリティ エクスペリエンスのユーザーとテキストの拡大縮小を無効にすることはお勧めしません。
+テキストのすべてのアプリ間で汎用的スケーリングの UI テキストがユーザーにとっては重要なユーザー補助のスケーリングを無効にすることをお勧めします。
 
-[**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) イベントと [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) プロパティを使って、電話の **[テキスト サイズ]** 設定の変更に関する情報を確認することもできます。 その方法を次に紹介します。
+[  **TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) イベントと [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) プロパティを使って、電話の **[テキスト サイズ]** 設定の変更に関する情報を確認することもできます。 方法は次のとおりです。
 
 C#
 ```csharp
@@ -169,23 +169,23 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor**の値が範囲 \[1,2.25\ 倍] です。 最も小さい文字がこの大きさまで拡大されます。 たとえば、この値を使ってテキストに合わせてグラフィックスを拡大縮小できます。 ただし、すべてのテキストが同じ倍率で拡大縮小されるわけではないことに注意してください。 一般に、最初の状態のテキストのサイズが大きいほど、拡大縮小の影響は小さくなります。
+値**TextScaleFactor**が範囲内の二重\[1,2.25\]します。 最も小さい文字がこの大きさまで拡大されます。 たとえば、この値を使ってテキストに合わせてグラフィックスを拡大縮小できます。 ただし、すべてのテキストが同じ倍率で拡大縮小されるわけではないことに注意してください。 一般に、最初の状態のテキストのサイズが大きいほど、拡大縮小の影響は小さくなります。
 
 次の型に **IsTextScaleFactorEnabled** プロパティがあります。  
 * [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378)
-* [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) クラスと派生クラス
+* [**コントロール**](https://msdn.microsoft.com/library/windows/apps/BR209390)と派生クラス
 * [**FontIcon**](https://msdn.microsoft.com/library/windows/apps/Dn279514)
 * [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
-* [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) クラスと派生クラス
+* [**TextElement** ](https://msdn.microsoft.com/library/windows/apps/BR209967)と派生クラス
 
 <span id="related_topics"/>
 
 ## <a name="related-topics"></a>関連トピック  
 
-* [テキストの拡大縮小](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
+* [テキストのスケーリング](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [アクセシビリティ](accessibility.md)
-* [基本的なアクセシビリティ情報](basic-accessibility-information.md)
+* [基本的なユーザー補助情報](basic-accessibility-information.md)
 * [XAML テキスト表示のサンプル](https://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML テキスト編集のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML テキスト編集のサンプル](https://go.microsoft.com/fwlink/p/?linkid=251417)
+* [XAML のアクセシビリティのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238570) 

@@ -1,5 +1,5 @@
 ---
-title: 評判
+title: 評価
 description: Xbox Live が評判サービスを使って前向きなゲームプレイを推進している方法について説明します。
 ms.assetid: f8966184-5db7-4cab-93ca-9a0250a6077d
 ms.date: 04/04/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 評判, ソーシャル プラットフォーム
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e7763294458f19509d5b797a6fa10e03678abee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932287"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641817"
 ---
-# <a name="reputation"></a>評判
+# <a name="reputation"></a>評価
 
 評判は、他と同じようにユーザー統計であり、すべてのユーザー統計を取得し、それらをレポートや追跡で使用するための呼び出しに含まれます。 評判自体は **Reputation クラス**によって表されます。 **ReputationService クラス**は、評判サービスを表します。 対応する URI については、「**評判 URI**」を参照してください。
 

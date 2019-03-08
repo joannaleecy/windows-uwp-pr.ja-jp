@@ -4,30 +4,30 @@ title: NFC スマート カード アプリの作成
 description: Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981426"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644587"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>NFC スマート カード アプリの作成
 
 
-**重要な**このトピックでは windows 10 Mobile にのみ適用されます。
+**重要な**  このトピックでは Windows 10 Mobile にのみ適用されます。
 
-Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。 このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。 Windows 10 Mobile では、ホスト カード エミュレーション (HCE) と呼ばれる新しいカード エミュレーション テクノロジを導入しましたがします。 HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。 このトピックでは、windows 10 Mobile のデバイスでのホスト カード エミュレーション (HCE) のしくみし、顧客がアクセスできるように、サービスを通じて、物理的なカードではなく自分の電話を MNO と連携せず、HCE アプリを開発する方法を示しています。
+Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。 このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。 Windows 10 Mobile で呼び出されると、ホスト カード エミュレーション (HCE)、新しいカード エミュレーション テクノロジを導入しました。 HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。 このトピックでは、Windows 10 Mobile デバイスでのホスト カード エミュレーション (HCE) のしくみし、お客様は、物理カードではなく電話サービスを MNO で共同作業を行うことがなくアクセスできるように、HCE アプリを開発する方法を示しています。
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>HCE アプリの開発に必要な要素
 
 
-Windows 10 mobile では、HCE ベースのカード エミュレーション アプリを開発するには、開発環境のセットアップを取得する必要があります。 Windows 開発者ツールと、windows 10 Mobile エミュレーター NFC エミュレーションがサポートを含む Microsoft Visual Studio2015 をインストールすることによって設定を取得することができます。 セットアップの詳細については、「[準備](https://msdn.microsoft.com/library/windows/apps/Dn726766)」を参照してください。
+Windows 10 Mobile の HCE ベースのカードのエミュレーション アプリを開発するには、開発環境のセットアップを取得する必要があります。 Microsoft Visual Studio 2015 を含む、Windows 開発者ツールと NFC エミュレーションのサポートを Windows 10 Mobile エミュレーターをインストールすることで設定を取得できます。 セットアップの詳細については、「[準備](https://msdn.microsoft.com/library/windows/apps/Dn726766)」を参照してください。
 
-必要に応じて、windows 10 Mobile エミュレーターではなく実際の windows 10 Mobile デバイスを使用してテストする場合は、次の項目も必要があります。
+必要に応じて、含まれる、Windows 10 Mobile エミュレーターではなく実際の Windows 10 Mobile デバイスでテストする場合は、次のものも必要があります。
 
--   NFC HCE サポートを持つ windows 10 Mobile デバイス。 現時点で、NFC HCE アプリをサポートするハードウェアは Lumia 730、830、640、640 XL に搭載されています。
+-   NFC HCE サポートで Windows 10 Mobile デバイスです。 現時点で、NFC HCE アプリをサポートするハードウェアは Lumia 730、830、640、640 XL に搭載されています。
 -   プロトコルとして ISO/IEC 14443-4 および ISO/IEC 7816-4 をサポートするリーダー端末。
 
 Windows 10 Mobile では、次の機能を提供する HCE サービスを実装します。
@@ -36,9 +36,9 @@ Windows 10 Mobile では、次の機能を提供する HCE サービスを実装
 -   外部リーダー カードの選択とユーザー設定に基づいて、アプリケーション プロトコル データ ユニット (APDU) のコマンドと応答のペアをいずれかの登録済みアプリにルーティングし、競合を解決する。
 -   ユーザー操作の結果としてイベントとアプリへの通知を処理する。
 
-Windows 10 には、ISO DEP に基づくスマート カードのエミュレーションがサポートしています (ISO-IEC 14443-4) で定義されている ISO-IEC 7816-4 仕様の Apdu を使用した通信とします。 Windows 10 では、HCE アプリ用 ISO/IEC 14443-4 Type A テクノロジをサポートします。 Type B、Type F、非 ISO-DEP (MIFARE など) のテクノロジは、既定では SIM にルーティングされます。
+Windows 10 は、ISO DEP に基づくスマート カードのエミュレーションをサポートしています (ISO/IEC 14443-4) Apdu で定義されている ISO IEC 7816 4 仕様を使用して通信とします。 Windows 10 では、HCE アプリの ISO/IEC 14443 4 種類 A のテクノロジをサポートします。 Type B、Type F、非 ISO-DEP (MIFARE など) のテクノロジは、既定では SIM にルーティングされます。
 
-カード エミュレーション機能では、windows 10 Mobile デバイスのみが有効になります。 SIM ベースおよび HCE ベースのカード エミュレーションは、他のバージョンの windows 10 では使用できません。
+カードのエミュレーション機能では、Windows 10 Mobile デバイスのみが有効になります。 SIM および HCE ベースのカードのエミュレーションでは、その他のバージョンの Windows 10 で使用できません。
 
 HCE および SIM ベースのカード エミュレーションのサポートのアーキテクチャを、次の図に示します。
 
@@ -46,9 +46,9 @@ HCE および SIM ベースのカード エミュレーションのサポート�
 
 ## <a name="app-selection-and-aid-routing"></a>アプリの選択と AID ルーティング
 
-HCE アプリを開発するには、windows 10 Mobile デバイス Aid ルーティングされるしくみ、特定のアプリにユーザーが複数のさまざまな HCE アプリをインストールできるためを理解する必要があります。 各アプリは、HCE ベースおよび SIM ベースのカードを複数登録できます。 SIM ベースである従来の Windows Phone 8.1 アプリは引き続き、ユーザーが NFC 設定メニューで、既定の支払い用カードとして「SIM カード」オプションを選んだ場合に限り、windows 10 Mobile で動作します。 これは、初めてデバイスに電源を入れると既定で設定される構成です。
+HCE アプリを開発するには、ユーザーは、複数の異なる HCE アプリをインストールできるため、Windows 10 Mobile デバイスで補助、特定のアプリにルーティングする方法を理解する必要があります。 各アプリは、HCE ベースおよび SIM ベースのカードを複数登録できます。 ユーザーは、NFC の設定 メニューがペイメント カードの既定値として「SIM カード」オプションを選択している限り、Windows 10 Mobile で動作する SIM ベースである従来の Windows Phone 8.1 アプリを続けます。 これは、初めてデバイスに電源を入れると既定で設定される構成です。
 
-ユーザーが、windows 10 Mobile デバイスを端末にタップとデータがデバイスにインストールされている適切なアプリを自動的にルーティングします。 このルーティングは、5 ～ 16 バイトの識別子であるアプレット ID (AID) に基づいています。 タップが発生すると、外部端末は SELECT コマンドの APDU を送出し、後続のすべての APDU コマンドのルーティング先とする AID を指定します。 後続の SELECT コマンドでは、ルーティング先を再度変更できます。 アプリとユーザー設定によって登録されている AID に基づいて、APDU トラフィックが特定のアプリにルーティングされます。ルーティング先のアプリは、応答の APDU を送信します。 端末側では同じタップで異なる複数のアプリとの通信を必要としている場合もあるので注意してください。 このため、別のアプリのバックグラウンド タスクが APDU に応答する余地ができるように、アプリのバックグラウンド タスクは、非アクティブ化されたらできる限り早く終了する必要があります。 バックグラウンド タスクについては、後で説明します。
+ユーザーがターミナルに、Windows 10 Mobile デバイスをタップしたときに、データはデバイスにインストールされている適切なアプリに自動的にルーティングされます。 このルーティングは、5 ～ 16 バイトの識別子であるアプレット ID (AID) に基づいています。 タップが発生すると、外部端末は SELECT コマンドの APDU を送出し、後続のすべての APDU コマンドのルーティング先とする AID を指定します。 後続の SELECT コマンドでは、ルーティング先を再度変更できます。 アプリとユーザー設定によって登録されている AID に基づいて、APDU トラフィックが特定のアプリにルーティングされます。ルーティング先のアプリは、応答の APDU を送信します。 端末側では同じタップで異なる複数のアプリとの通信を必要としている場合もあるので注意してください。 このため、別のアプリのバックグラウンド タスクが APDU に応答する余地ができるように、アプリのバックグラウンド タスクは、非アクティブ化されたらできる限り早く終了する必要があります。 バックグラウンド タスクについては、後で説明します。
 
 HCE アプリは、AID の APDU を受信できるように、対応が可能な特定の AID に自身を登録する必要があります。 アプリは、AID グループを使用して AID を宣言します。 AID グループは、概念的には個々の物理カードに相当します。 たとえば、2 枚のカードの AID が同じであっても、1 枚目のクレジット カードは 1 つ目の AID グループ、別の銀行から発行された 2 枚目のクレジット カードは 2 つ目の AID グループで登録されます。
 
@@ -70,9 +70,9 @@ HCE アプリは、AID の APDU を受信できるように、対応が可能な
 
 アプリでは、支払い AID グループと同じ方法で、支払い用以外の AID グループを作成、登録、有効化することができます。 主な違いは、支払い用以外の AID グループについてはエミュレーション カテゴリを "Payment" ではなく "Other" に設定する点です。 AID グループをシステムに登録した後は、AID グループが NFC トラフィックを受信できるようにする必要があります。 支払い用以外の AID グループについてトラフィックの受信を有効化する場合、別のアプリによって既にシステムに登録されている AID との競合がない限り、ユーザーに対する確認プロンプトは表示されません。 競合が存在すると、新しく登録された AID グループの有効化をユーザーが選択した場合に、どのカードと関連するアプリが無効になるかを示す情報と共にユーザーへの確認メッセージが表示されます。
 
-**SIM ベースの NFC アプリケーションとの共存**
+**SIM との共存ベースの NFC アプリケーション**
 
-Windows 10 Mobile では、システムは、コント ローラー レイヤーでルーティングの決定に使用される NFC コント ローラー ルーティング テーブルを設定します。 このテーブルには、ルーティング情報として次のアイテムが含まれています。
+Windows 10 Mobile のでは、システムは、コント ローラーの層のルーティングを決定するために使用する NFC コント ローラー ルーティング テーブルを設定します。 このテーブルには、ルーティング情報として次のアイテムが含まれています。
 
 -   個別の AID ルート。
 -   プロトコルに基づくルート (ISO DEP)。
@@ -80,9 +80,9 @@ Windows 10 Mobile では、システムは、コント ローラー レイヤー
 
 外部リーダーにより "SELECT AID" コマンドが送信されると、NFC コントローラーはまずルーティング テーブルに一致する AID ルートがないか確認します。 一致がない場合、ISO-DEP (14443-4-A) トラフィックに対する既定のルートとしては、プロトコル ベースのルートが使用されます。 その他、非 ISO-DEP のトラフィックについては、テクノロジ ベースのルーティングが使用されます。
 
-Windows 10 Mobile では、引き続きレガシ Windows Phone 8.1 SIM ベース アプリは登録しないで、Aid システムを使用する NFC 設定ページのメニュー オプション「SIM カード」を提供します。 ユーザーが既定の支払い用カードとして "SIM カード" を選択すると、ISO-DEP ルートが UICC に設定されます (ドロップダウン メニュー内の他の選択肢ではすべて、ISO-DEP ルート先はホスト)。
+Windows 10 Mobile では、引き続きレガシ Windows Phone 8.1 SIM に基づくアプリケーション、システムでの補助を登録しないでを使用する、NFC の設定 ページでメニュー オプション「SIM カード」を提供します。 ユーザーが既定の支払い用カードとして "SIM カード" を選択すると、ISO-DEP ルートが UICC に設定されます (ドロップダウン メニュー内の他の選択肢ではすべて、ISO-DEP ルート先はホスト)。
 
-SE 対応の SIM カード デバイスが windows 10 Mobile で初めて起動したときのデバイスの「SIM カード」に、ISO-DEP ルートが設定されます。 ユーザーが HCE 対応のアプリをインストールし、そのアプリでなんらかの HCE AID グループ登録が有効になった場合は、ISO-DEP ルート先がホストになります。 新しい SIM ベースのアプリケーションでは、特定の AID ルートがコントローラーのルーティング テーブルに設定されるように、AID を SIM に登録する必要があります。
+ISO DEP ルートが SE 有効になっている SIM カードで、デバイスが Windows 10 Mobile を初めて起動したとき、デバイスの「SIM カード」に設定されます。 ユーザーが HCE 対応のアプリをインストールし、そのアプリでなんらかの HCE AID グループ登録が有効になった場合は、ISO-DEP ルート先がホストになります。 新しい SIM ベースのアプリケーションでは、特定の AID ルートがコントローラーのルーティング テーブルに設定されるように、AID を SIM に登録する必要があります。
 
 ## <a name="creating-an-hce-based-app"></a>HCE ベース アプリの作成
 
@@ -261,7 +261,7 @@ reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-[**GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) メソッドを使用すると、OS に対してアプリの登録済み AID グループを照会し、アクティブ化ポリシーを確認できます。
+[  **GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) メソッドを使用すると、OS に対してアプリの登録済み AID グループを照会し、アクティブ化ポリシーを確認できます。
 
 支払い用カードのアクティブ化ポリシーを **Disabled** から **Enabled** に変更する場合にユーザーに確認が求められるのは、アプリがまだ既定の支払いアプリになっていない場合のみです。 支払い用以外のカードのアクティブ化ポリシーを **Disabled** から **Enabled** に変更する場合にユーザーに確認が求められるのは、AID の競合が存在する場合のみです。
 
@@ -273,7 +273,7 @@ registration.RequestActivationPolicyChangeAsync (AppletIdGroupActivationPolicy.E
     }
 ```
 
-**アクティブ化ポリシー変更時のイベント通知**
+**アクティブ化ポリシーを変更するときにイベント通知**
 
 バックグラウンド タスクでは、アプリの外でいずれかの AID グループ登録のアクティブ化ポリシーが変更された場合に備えてイベントを受信できるように登録できます。 たとえばユーザーは、NFC 設定メニューで既定の支払いアプリを元のカードから、別のアプリでホストされている別のカードに変更することができます。 ライブ タイルの更新など、内部セットアップ用にこの変更をアプリで認識する必要がある場合は、この変更のイベント通知を受信し、その通知に応じてアプリ内で対処することができます。
 
@@ -287,7 +287,7 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>フォアグラウンドのオーバーライド動作
 
-アプリがフォアグラウンドになっている間は、ユーザーに確認することなく AID グループ登録の [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) を **ForegroundOverride** に変更することができます。 アプリがフォアグラウンドになっている間にユーザーがデバイスで端末をタップすると、ユーザーがいずれの支払い用カードも既定の支払い用カードとして選択していなくても、トラフィックはアプリにルーティングされます。 カードのアクティブ化ポリシーを **ForegroundOverride** に変更した場合、この変更はアプリがフォアグラウンドから移行するまでの一時的なものであり、ユーザーによって設定された現在の既定支払い用カードは変更されません。 支払い用カードまたは支払い用以外のカードの **ActivationPolicy** は、フォアグラウンド アプリから次のように変更できます。 [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) メソッドを呼び出すことができるのはフォアグラウンド アプリからのみであり、バックグラウンド タスクから呼び出すことはできない点に注意してください。
+アプリがフォアグラウンドになっている間は、ユーザーに確認することなく AID グループ登録の [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) を **ForegroundOverride** に変更することができます。 アプリがフォアグラウンドになっている間にユーザーがデバイスで端末をタップすると、ユーザーがいずれの支払い用カードも既定の支払い用カードとして選択していなくても、トラフィックはアプリにルーティングされます。 カードのアクティブ化ポリシーを **ForegroundOverride** に変更した場合、この変更はアプリがフォアグラウンドから移行するまでの一時的なものであり、ユーザーによって設定された現在の既定支払い用カードは変更されません。 支払い用カードまたは支払い用以外のカードの **ActivationPolicy** は、フォアグラウンド アプリから次のように変更できます。 [  **RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) メソッドを呼び出すことができるのはフォアグラウンド アプリからのみであり、バックグラウンド タスクから呼び出すことはできない点に注意してください。
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
@@ -312,7 +312,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 アプリでは、デバイスに NFC ハードウェアがあるかどうか、カード エミュレーション機能がサポートされているかどうか、これらの機能をユーザーに提供する前にホスト カード エミュレーションがサポートされるかどうかを確認する必要があります。
 
-NFC スマート カード エミュレーション機能は、windows 10 Mobile、windows 10 の他のバージョンでスマート カード エミュレーター Api を使用しようとするためにのみ有効には、エラーが発生します。 次のコード スニペットでは、スマート カード API のサポートを確認することができます。
+NFC スマート カードのエミュレーション機能は、他のバージョンの Windows 10 のスマート カード エミュレーター Api を使用するようにしようとして、Windows 10 Mobile でのみ有効、エラーが発生します。 次のコード スニペットでは、スマート カード API のサポートを確認することができます。
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -324,7 +324,7 @@ Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartC
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-HCE ベースおよび AID ベースの UICC ルーティングは、Lumia 730、830、640、640 XL など最近発売されたデバイスでのみサポートされます。 Windows 10 Mobile を実行している新しい NFC 対応デバイスとした後、HCE をサポートする必要があります。 アプリでは、次のようにして HCE サポートを確認できます。
+HCE ベースおよび AID ベースの UICC ルーティングは、Lumia 730、830、640、640 XL など最近発売されたデバイスでのみサポートされます。 Windows 10 Mobile を実行している新しい NFC 対応デバイスおよび後 HCE をサポートする必要があります。 アプリでは、次のようにして HCE サポートを確認できます。
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
@@ -332,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>ロック画面と画面オフの動作
 
-Windows 10 Mobile は、デバイス レベルでのカード エミュレーション設定は、携帯電話会社またはデバイスの製造元によって設定できます。 既定では、"タップして支払い" のトグルがオフになっており "デバイス レベルでの有効化ポリシー" が "常時" に設定されています (通信事業者または OEM パートナーによってこれらの値が上書きされていない場合)。
+Windows 10 Mobile は、デバイス レベルのカード エミュレーション設定は、携帯電話会社またはデバイスの製造元によって設定できます。 既定では、"タップして支払い" のトグルがオフになっており "デバイス レベルでの有効化ポリシー" が "常時" に設定されています (通信事業者または OEM パートナーによってこれらの値が上書きされていない場合)。
 
 アプリケーションでは、デバイス レベルで [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) の値を照会し、それぞれの状態で望ましいアプリの動作に基づいて、各ケースに対処することができます。
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-<b>重要な</b>に証明書利用者従来の Windows Phone 8.1 アプリは、新しい windows 10 Mobile SMS を使用する更新する必要がありますが、Windows Phone 8.1 のレガシ バイナリ SMS インターセプト サポートは廃止され、windows 10 Mobile では新しい広範な SMS サポートに置き換えられますApi です。
+<b>重要な</b>   、新しい依存するすべてのレガシ Windows Phone 8.1 アプリを更新する必要がありますが、Windows Phone 8.1 でサポートされているバイナリ SMS のレガシ切片を削除しで Windows 10 Mobile より広範な SMS のサポートを新しいに置き換えられますWindows 10 Mobile の SMS Api。

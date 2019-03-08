@@ -4,16 +4,16 @@ title: Visual Studio の操作方法
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 82cb45dae1a4b9b1a9db8fabc044edf8157f1eb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920446"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646337"
 ---
-# <a name="getting-started-getting-around-in-visual-studio"></a>はじめに: Visual Studio の操作方法
+# <a name="getting-started-getting-around-in-visual-studio"></a>はじめに。Visual Studio の操作方法
 
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Microsoft Visual Studio の操作方法
@@ -70,7 +70,7 @@ Visual Studio の操作も似ています。 **[プロパティ]** の右上隅�
 
 ![Visual Studio でのボタンのイベントの一覧](images/ios-to-uwp/vs-button-event.png)
 
-ボタンのクリック イベントにコードを追加するには、**[デザイン]** ウィンドウで、まずそのボタンを選択します。 次に、稲妻ボタンをクリックし、**[Click]** という名前の横の空のボックスをダブルクリックします。 その後、Visual Studio によってイベント "myButton\_Click" が **[Click]** ボックスに追加されます。さらに、次のように、対応するイベント ハンドラーが MainPage.xaml.cs ファイルに追加され、表示されます。
+ボタンのクリック イベントにコードを追加するには、**[デザイン]** ウィンドウで、まずそのボタンを選択します。 次に、稲妻ボタンをクリックし、**[Click]** という名前の横の空のボックスをダブルクリックします。 Visual Studio は、イベントを追加します"myButton\_ をクリックして"に、**クリックして**ボックスし、追加し、次のように、MainPage.xaml.cs ファイルで、対応するイベント ハンドラーを表示します。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -98,7 +98,7 @@ Visual Studio では、これは常に実行されるため、コントロール
 
 ![Visual Studio の [ラベルのプロパティ] ウィンドウ](images/ios-to-uwp/vs-label-properties.png)
 
-次に、ボタンのクリック イベントにコードを追加してみましょう。 このためには、MainPage.xaml.cs ファイルをタップし、次のコードを myButton\_Click イベント ハンドラーに追加します。
+次に、ボタンのクリック イベントにコードを追加してみましょう。 これを行うには、MainPage.xaml.cs ファイル をタップし、myButton に次のコードを追加\_イベント ハンドラーをクリックします。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -122,7 +122,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 アプリを中止するには、Visual Studio に戻り、**[デバッグ]** メニュー、**[デバッグの停止]** の順にタップします (または、単に Shift キーを押しながら F5 キーを押します)。 Visual Studio では、多数の異なるデバイスでアプリを試して、各デバイスでの動作を確認してみてください。
 
-## <a name="next-step"></a>次のステップ
+## <a name="next-step"></a>次の手順
 
-[はじめに: コモン コントロール](getting-started-common-controls.md)
+[はじめに。コモン コントロール](getting-started-common-controls.md)
 

@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom timestamps on your toast notifications.
+Description: トースト通知でカスタムのタイムスタンプを使用する方法について説明します。
 title: トーストでのカスタム タイムスタンプの表示
 label: Custom timestamps on toasts
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, カスタム タイムスタンプ, タイムスタンプ, 通知, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944491"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625817"
 ---
 # <a name="custom-timestamps-on-toasts"></a>トーストでのカスタム タイムスタンプの表示
 
@@ -23,7 +23,7 @@ ms.locfileid: "8944491"
 開発者は、必要に応じてこのタイムスタンプを上書きし、通知の送信時刻ではなく、メッセージ、情報、コンテンツが実際に作成された時刻を表示することができます。 これにより、アクション センター内で通知が正しい順序 (時間順) で表示されます。 ほとんどのアプリでは、カスタム タイムスタンプを指定することが適切です。
 
 > [!IMPORTANT]
-> **Creators Update と Notifications ライブラリ 1.4.0 が必要**: カスタム タイムスタンプを表示するには、ビルド 15063 以上を実行している必要があります。 トーストのコンテンツにタイムスタンプを割り当てるには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。
+> **Creators Update と通知ライブラリの 1.4.0 必要**:15063 以降に、カスタムのタイムスタンプを参照してください。 現在のビルドを実行する必要があります。 トーストのコンテンツにタイムスタンプを割り当てるには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。
 
 カスタム タイムスタンプは、**DisplayTimestamp** プロパティを **ToastContent** に割り当てるだけで使用できます。
 
@@ -67,5 +67,5 @@ WNS 経由でプッシュ通知を送信した場合は、WNS サーバーが通
 
 ## <a name="related-topics"></a>関連トピック
 
-- [ローカル トーストの送信](send-local-toast.md)
-- [トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)
+- [ローカルのトーストを送信します。](send-local-toast.md)
+- [トーストのコンテンツのドキュメント](adaptive-interactive-toasts.md)

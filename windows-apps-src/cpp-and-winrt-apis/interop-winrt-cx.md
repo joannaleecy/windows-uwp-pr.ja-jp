@@ -6,20 +6,20 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、ポート、移行、相互運用、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 558f3fa75e7dd599927a9d2ace256bf1feb98e77
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042304"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621647"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT と C++/CX 間の相互運用
 
-内のコードを徐々 に移植するための戦略、 [、C++/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)プロジェクトを[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)で説明[C + への移行/C + から WinRT/CX](move-to-winrt-from-cx.md)します。
+内のコードを徐々 に移植するための戦略、 [C +/cli CX](/cpp/cppcx/visual-c-language-reference-c-cx)プロジェクトを[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)は、後ほど[移動 C +/cli C + から WinRT/cli CX](move-to-winrt-from-cx.md)。
 
-このトピックでは、C++ 間の変換に使用できる 2 つのヘルパー関数 +/CX と C++/cli 同じプロジェクト内の WinRT オブジェクト。 それらを使用するには、2 つの言語プロジェクションを使用するコード間で相互運用機能または関数を使用するには、C + からコードを移植するよう/CX を C++/WinRT します。
+このトピックでは、C + 間の変換を使用できる 2 つのヘルパー関数を示しています。/cli/CX および C++/cli、同じプロジェクト内の WinRT オブジェクト。 それらを使用するには、2 つの言語プロジェクションを使用するコードの間の相互運用または関数を使用するには、C + からコードを移植すると/cli CX c++/cli WinRT します。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx and to_cx 関数
-以下のヘルパー関数では、C++/CX オブジェクトを同等の C++/WinRT オブジェクトに変換します。 この関数は、C++/CX オブジェクトを基礎となる [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) インターフェイス ポインターにキャストします。 次に、このポインター上で [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を呼び出し、C++/WinRT オブジェクトの既定のインターフェイスを照会します。 **QueryInterface**は、C++/CX safe_cast 拡張と同等の Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) です。 [**winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 関数は、別の値に設定できるように C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイス ポインターのアドレスを取得します。
+以下のヘルパー関数では、C++/CX オブジェクトを同等の C++/WinRT オブジェクトに変換します。 この関数は、C++/CX オブジェクトを基礎となる [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) インターフェイス ポインターにキャストします。 次に、このポインター上で [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を呼び出し、C++/WinRT オブジェクトの既定のインターフェイスを照会します。 **QueryInterface**は、C++/CX safe_cast 拡張と同等の Windows ランタイム アプリケーション バイナリ インターフェイス (ABI) です。 [  **winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 関数は、別の値に設定できるように C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイス ポインターのアドレスを取得します。
 
 ```cppwinrt
 template <typename T>
@@ -35,7 +35,7 @@ T from_cx(Platform::Object^ from)
 }
 ```
 
-以下のヘルパー関数では、C++/WinRT オブジェクトを同等の C++/CX オブジェクトに変換します。 [**winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi) 関数は、C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイスのポインターを取得します。 この関数は、C++/CX safe_cast 拡張を使用して要求された C++/CX 型を照会する前に、このポインターを C++/CX オブジェクトにキャストします。
+以下のヘルパー関数では、C++/WinRT オブジェクトを同等の C++/CX オブジェクトに変換します。 [  **winrt::get_abi**](/uwp/cpp-ref-for-winrt/get-abi) 関数は、C++/WinRT オブジェクトの基礎となる **IUnknown** インターフェイスのポインターを取得します。 この関数は、C++/CX safe_cast 拡張を使用して要求された C++/CX 型を照会する前に、このポインターを C++/CX オブジェクトにキャストします。
 
 ```cppwinrt
 template <typename T>
@@ -45,15 +45,15 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中の 2 つのヘルパー関数を示す例のプロジェクト
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中の 2 つのヘルパー関数を示すサンプル プロジェクト
 
-簡単な方法での c++ コードを徐々 に移植するシナリオを再現するには + を C++ プロジェクトを CX +/winrt では、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/WinRT プロジェクト テンプレート (を参照してください[、C++、Visual Studio サポート/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。
+単純な方法で、段階的に c++ のコードの移植のシナリオを再現する/cli C + CX プロジェクト/cli WinRT、c++ のいずれかを使用して Visual Studio で新しいプロジェクトを作成して開始することができます/cli WinRT プロジェクト テンプレート (を参照してください[Visual Studio のサポートの C +/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
 
-この例のプロジェクトも、C++ の間それ以外の場合の潜在的な名前空間の競合を処理するために、コードの異なる断片の名前空間のエイリアスを使用する方法を示しています/WinRT プロジェクションと c++/cli/CX プロジェクション。
+この例のプロジェクトも c++ の間でそれ以外の場合の潜在的な名前空間の競合に対処するために、コードの別の島を名前空間エイリアスを使用する方法を示しています/cli WinRT 投影および c++/cli CX 投影します。
 
-- **Visual C**を作成 \> **Windows ユニバーサル** > **コア アプリ (、C++/WinRT)** プロジェクトです。
-- プロジェクトのプロパティで**C/C++** \> **一般的な** \> **Windows ランタイム拡張機能の使用** \> **[はい (/ZW)**。 C++ プロジェクトのサポートを有効にしますこの/CX します。
-- 内容を置き換える`App.cpp`以下に示すコードに置き換えます。
+- 作成、 **Visual C** \> **Windows ユニバーサル** > **Core アプリ (C +/cli WinRT)** プロジェクト。
+- プロジェクトのプロパティで**C/C++** \> **全般** \> **Windows ランタイム拡張機能の使用** \> **はい (/ZW)**. C++ プロジェクトのサポートをオンにこの/cli CX します。
+- 内容を置き換える`App.cpp`をコードの下に一覧表示します。
 
 ```cppwinrt
 // App.cpp
@@ -260,4 +260,4 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="related-topics"></a>関連トピック
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md)
+* [移動する C +/cli WinRT C +/cli CX](move-to-winrt-from-cx.md)

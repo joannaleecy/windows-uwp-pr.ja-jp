@@ -1,19 +1,19 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+Description: タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。
 title: UWP アプリ向けのバッジ通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920287"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649087"
 ---
 # <a name="badge-notifications-for-uwp-apps"></a>UWP アプリ向けのバッジ通知
 
@@ -34,7 +34,7 @@ ms.locfileid: "8920287"
 
 <table>
     <tr>
-        <th>値</th>
+        <th>Value</th>
         <th>バッジ</th>
         <th>XML</th>
     </tr>
@@ -55,7 +55,7 @@ ms.locfileid: "8920287"
 
 <table>
 <tr>
-    <th>状態</th>
+    <th>状況</th>
     <th>グリフ</th>
     <th>XML</th>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "8920287"
 
 ## <a name="create-a-badge"></a>バッジの作成
 
-これらの例では、バッジの更新プログラムを作成する方法を説明します。
+これらの例では、バッジの更新プログラムを作成する方法を示します。
 
 ### <a name="create-a-numeric-badge"></a>数値バッジの作成
 

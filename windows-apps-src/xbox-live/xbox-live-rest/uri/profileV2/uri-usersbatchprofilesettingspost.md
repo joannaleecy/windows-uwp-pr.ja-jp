@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f859a58e32624223d59d918d46f6230a3abd6db
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115436"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662227"
 ---
 # <a name="post-usersbatchprofilesettings"></a>POST (/users/batch/profile/settings)
 ユーザーまたはユーザーのプロファイルを取得します。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [注釈](#ID4EV)
-  * [Authorization](#ID4EFB)
+  * [承認](#ID4EFB)
   * [必要な要求ヘッダー](#ID4EOB)
   * [要求本文](#ID4EZC)
   * [応答本文](#ID4EJD)
@@ -28,23 +28,23 @@ ms.locfileid: "9115436"
  
 ## <a name="remarks"></a>注釈
  
-これで許可されているのみ完全修飾プロファイル URL です。 クライアントからその他のすべてのプロファイル Api がブロックされます。
+許可されているのみ完全修飾のプロファイル URL です。 クライアントからその他のすべてのプロファイル Api はブロックされます。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-プロファイルにアクセスするに通常の認証トークンと要求のみが必要です。
+プロファイルにアクセスするには、通常の認証トークンとクレームだけが必要です。
   
 <a id="ID4EOB"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビット符号なし整数| コントラクト バージョンは、Xbox 360 API からこの呼び出しを区別するために 2 に設定する必要があります。| 
+| x-xbl-contract-version| 32 ビット符号なし整数| コントラクトのバージョンは、Xbox 360 の API からのこの呼び出しを区別するために、2 に設定する必要があります。| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4EZC"></a>
@@ -55,7 +55,7 @@ ms.locfileid: "9115436"
 <a id="ID4E6C"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -83,7 +83,7 @@ POST /users/batch/profile/settings
 <a id="ID4EPD"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp
@@ -134,6 +134,6 @@ POST /users/batch/profile/settings
  
 ##### <a name="reference"></a>リファレンス 
 
-[Profile (JSON)](../../json/json-profile.md)
+[プロファイル (JSON)](../../json/json-profile.md)
 
    

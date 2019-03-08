@@ -1,32 +1,32 @@
 ---
 description: 表示は発光効果の 1 つで、アプリの対話型要素に奥行きを与え、焦点を当てるために役立ちます。
-title: 表示ハイライト
+title: 強調表示を表示します。
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116404"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628667"
 ---
-# <a name="reveal-highlight"></a>表示ハイライト
+# <a name="reveal-highlight"></a>強調表示を表示します。
 
 ![ヒーロー イメージ](images/header-reveal-highlight.svg)
 
-表示ハイライトは、ユーザーがポインターを近付けたときに、コマンド バーなどの対話型要素を強調表示する発光効果。 
+強調表示は、ユーザーが近くにポインターを移動すると、コマンド バーなどの対話型の要素を強調表示する照明効果を表示します。 
 
-> **重要な API**: [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState クラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要な Api**:[RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、 [RevealBackgroundBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、 [RevealBorderBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、 [RevealBrushHelper クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、 [VisualStateクラス](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
-## <a name="how-it-works"></a>動作の仕組み
-表示ハイライト注意が対話型要素にによって、ポインターが近くにある、次の図に示す場合は、要素のコンテナーを公開します。
+## <a name="how-it-works"></a>方法
+ポインターがこの図で示すように、近くにある要素のコンテナーを公開してが明らかに強調表示の呼び出しの対話型要素に注意してください。
 
 ![表示のビジュアル効果](images/Nav_Reveal_Animation.gif)
 
@@ -41,33 +41,33 @@ ms.locfileid: "9116404"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/Reveal">アプリを開き、表示効果の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-## <a name="video-summary"></a>概要 (ビデオ)
+## <a name="video-summary"></a>ビデオの概要
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev013/player]
 
 ## <a name="how-to-use-it"></a>使用方法
 
-表示効果は、一部のコントロールでは自動的に動作します。 この記事の[他のコントロールで表示効果を有効にして](#enabling-reveal-on-other-controls)、[カスタム コントロールで表示効果を有効にすると](#enabling-reveal-on-custom-controls)セクションで説明するよう、他のコントロールは、コントロールに特別なスタイルを割り当てることにより表示効果を有効にできます。
+表示は、一部のコントロールでは自動的に動作します。 他のコントロールを有効にできます表示コントロールに特殊なスタイルを割り当てることで」の説明に従って、[他のコントロールの表示を有効にする](#enabling-reveal-on-other-controls)と[カスタム コントロールの表示を有効にする](#enabling-reveal-on-custom-controls)のこのセクションではアーティクルです。
 
-## <a name="controls-that-automatically-use-reveal"></a>表示効果が自動的に使用されるコントロール
+## <a name="controls-that-automatically-use-reveal"></a>表示を自動的に使用するコントロール
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**GridView**](../controls-and-patterns/lists.md)
-- [**TreeView**](../controls-and-patterns/tree-view.md)
+- [**ツリー ビュー**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
-- [**CommandBar**](../controls-and-patterns/app-bars.md)
+- [**コマンド バー**](../controls-and-patterns/app-bars.md)
 
-強調表示効果を表示するいくつかの異なるコントロールに次の図。
+強調表示を表示するいくつかの異なるコントロールにこれらの例。
 
-![表示効果の例](images/RevealExamples_Collage.png)
+![表示の例](images/RevealExamples_Collage.png)
 
 
 ## <a name="enabling-reveal-on-other-controls"></a>他のコントロールで表示効果を有効にする
@@ -113,7 +113,7 @@ ms.locfileid: "9116404"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>カスタム コントロールで表示効果を有効にする
 
-表示効果は、カスタム コントロールにも追加できます。 実行する前に、表示効果の動作についてもう少し詳しく知っておくと便利です。 表示効果は、2 つの独立した効果 (**表示効果の境界線**と**表示効果のホバー**) で構成されています。
+表示効果は、カスタム コントロールにも追加できます。 実行する前に、表示効果のしくみについて少し詳しく知ることをお勧めします。 表示は、2 つの独立した効果で構成されています。**境界線を表示**と**ホバー表示**します。
 
 - **表示効果の境界線**では、ポインターが近付くと、対話型要素の境界線が表示されます。 この効果では、現在フォーカスが置かれているオブジェクトと類似したアクションを、近くにある他のオブジェクトでも実行できることが示されます。
 - **表示効果のホバー**では、ホバーされた (フォーカスが置かれた) 項目の周囲に淡く発光する図形が描画され、クリック時には押下操作のアニメーションが再生されます。 
@@ -130,8 +130,8 @@ ms.locfileid: "9116404"
 
 
 これらの効果は、次の 2 つのブラシによって定義されます。 
-* 境界線による表示は、 **RevealBorderBrush**によって定義します。
-* ホバーによる表示は**RevealBackgroundBrush**によって定義されます。
+* 境界線の表示が規定**RevealBorderBrush**
+* ポイント時の表示がによって定義されている**RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -162,7 +162,7 @@ ms.locfileid: "9116404"
 </VisualState>
 ```
 
-表示効果が正しく機能するためには、VisualState 内にブラシと setter の両方が必要である点に注意してください。 コントロールのブラシをいずれかの表示ブラシ リソースに設定するだけでは、そのコントロールに対して表示効果は有効になりません。 逆に、ターゲットまたは設定があっても表示ブラシを指定する値がなければ、表示効果は有効になりません。
+表示効果が正しく機能するためには、VisualState 内にブラシと setter の両方が必要である点に注意してください。 コントロールのブラシをいずれかの表示ブラシ リソースに設定するだけでは、そのコントロールの表示が有効になりません。 反対に、表示ブラシとなる値がないターゲットまたは設定だけでも表示は有効になりません。
 
 コントロール テンプレートの変更について詳しくは、[XAML コントロール テンプレート](../controls-and-patterns/control-templates.md)に関する記事をご覧ください。
 
@@ -255,11 +255,11 @@ ms.locfileid: "9116404"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>カスタム コントロールに対する表示効果を微調整する 
 
-カスタムまたは再テンプレート化されたコントロールや、カスタム コマンド実行サーフェスで表示効果を有効にすると次のヒント、効果を最適化できます。
+カスタムまたは再テンプレート化されたコントロールまたはカスタム コマンド実行の画面で表示を有効にするとこれらのヒントの影響を最適化できます。
  
-* 隣接する項目の高さまたは幅が一致しない場合 (特に、リスト内): 境界線のアプローチ動作を削除し、ホバー時のみ境界線を表示しておきます。
-* 無効状態への移行と解除が頻繁に発生するコマンド実行項目の場合: 境界線アプローチのブラシを要素のバックプレートとバックプレートの境界線に配置して、状態を強調します。
-* 隣接するコマンド実行要素の間隔が狭すぎて接触する場合: 2 つの要素間に 1 px の余白を追加します。 
+* サイズが隣接する項目の高さまたは幅 (特にでリスト) のいずれかの整列は行いません。境界線のアプローチの動作を削除して、ホバーのみに表示される枠線を保持します。
+* コマンド実行の項目を頻繁に参照してください、サインアウトの無効の状態。要素の backplates とその状態を強調するために、境界線の境界線のアプローチのブラシを配置します。
+* タッチを閉じるようにいるコマンド要素を隣接するのには。2 つの要素間、1 px の余白を追加します。 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 ### <a name="do"></a>操作を行います。
@@ -272,15 +272,15 @@ ms.locfileid: "9116404"
 - 静的コンテンツ (背景、テキスト) では表示効果を使わない
 - ポップアップやドロップダウンでは表示効果を使わない
 - 1 回限りの個別の状況では表示効果を使わない
-- 非常に多くの項目 (500 epx 超) では表示効果を使わない
-- セキュリティ上の決定を行う場面では表示効果を使わない (ユーザーに提供する必要があるメッセージから注意がそれる可能性があるため)
+- 非常に多くの項目 (500 epx 超) では表示を使わない
+- セキュリティ上の決定を行う場合には表示を使わない (ユーザーに提供する必要があるメッセージから注意がそれる可能性があるため)
 
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
-## <a name="reveal-and-the-fluent-design-system"></a>表示効果と Fluent Design System
+## <a name="reveal-and-the-fluent-design-system"></a>表示と Fluent Design System
 
  Fluent Design System では、ライト、深度、モーション、マテリアル、スケールを取り入れた、モダンで目を引く UI を作成できます。 表示は、アプリに発光効果を加える Fluent Design System コンポーネントです。 詳しくは、[UWP 用の Fluent Design の概要に関するページ](../fluent-design-system/index.md)をご覧ください。
 
@@ -288,7 +288,7 @@ ms.locfileid: "9116404"
 
 - [RevealBrush クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 - [アクリル](acrylic.md)
-- [コンポジションの効果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [UWP の Fluent Design](../fluent-design-system/index.md)
-- [システムの科学: Fluent Design と奥行き](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [システムの科学: Fluent Design と明るさ](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [合成効果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [UWP 用 Fluent デザイン](../fluent-design-system/index.md)
+- [システムで科学:Fluent デザインと深さ](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [システムで科学:Fluent デザインおよびライト](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

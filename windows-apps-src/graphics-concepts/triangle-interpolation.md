@@ -1,20 +1,20 @@
 ---
-title: 三角形の補間
-description: レンダリング中、パイプラインは各三角形の間の頂点データを補間します。
+title: 三角形補間
+description: レンダリング中、パイプラインは各三角形で頂点データを補間します。
 ms.assetid: 1A76DD78-CED7-42BE-BA81-B9050CD3AF9B
 keywords:
-- 三角形の補間
+- 三角形補間
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e8017cd75ed3dfd4129d6c15d668648792cc8d0a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919268"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592907"
 ---
-# <a name="triangle-interpolation"></a>三角形の補間
+# <a name="triangle-interpolation"></a>三角形補間
 
 
 レンダリング中、パイプラインは各三角形で頂点データを補間します。 頂点データにはさまざまなデータがあり、拡散色、反射色、拡散色アルファ (三角形の不透明度)、反射色アルファ、フォグ係数などを含めることができます。 プログラム可能な頂点パイプラインの場合、フォグ係数はフォグ レジスタから取得されます。 固定機能頂点パイプラインの場合、フォグ係数は反射色アルファから取得されます。

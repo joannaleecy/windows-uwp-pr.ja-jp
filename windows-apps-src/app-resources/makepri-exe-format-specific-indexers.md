@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+Description: このトピックでは、リソースのインデックスを生成するために MakePri.exe ツールによって使われる形式に固有のインデクサーについて説明します。
 title: MakePri.exe の形式に固有のインデクサー
 template: detail.hbs
 ms.date: 10/18/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a245c4ec0280f687cf34e85123960e64fe36a57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044629"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645877"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe の形式に固有のインデクサー
 
 このトピックでは、リソースのインデックスを生成するために [MakePri.exe](compile-resources-manually-with-makepri.md) ツールによって使われる形式に固有のインデクサーについて説明します。
 
 > [!NOTE]
-> MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
+> チェックするときに MakePri.exe がインストールされている、**管理されているアプリの UWP 用 Windows SDK** Windows ソフトウェア開発キットのインストール中にオプション。 パスにインストールされて`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャのという名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
 MakePri.exe は、通常、`new`、`versioned`、`resourcepack` コマンドと共に使用されます。 「[MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)」をご覧ください。 これらのオプションを使うと、ソース ファイルがインデックス化され、リソースのインデックスが生成されます。 MakePri.exe は、さまざまな別個のインデクサーを使って異なるソース リソース ファイルまたはリソースのコンテナーを読み取ります。 最も単純なインデクサーは、`.jpg` 画像 や `.png` 画像などのフォルダーの内容をインデックス化するフォルダー インデクサーです。
 
@@ -28,7 +28,7 @@ MakePri.exe は、通常、`new`、`versioned`、`resourcepack` コマンドと�
 
 通常、フォルダーや `.resw` ファイルなどのコンテナー エンティティで検出された修飾子は、コンテナー エンティティ内のすべてのリソース (フォルダー内のファイルや `.resw` ファイル内の文字列など) に適用されます。
 
-## <a name="folder"></a>フォルダー
+## <a name="folder"></a>Folder
 
 フォルダー インデクサーは、`type` 属性 FOLDER で識別されます。 フォルダーの内容をインデックス化し、フォルダー名とファイル名からリソース修飾子を決定します。 このインデクサーの構成要素は、次のスキーマに準拠します。
 
@@ -397,7 +397,7 @@ ResW インデクサーは、`type` 属性 RESW で識別されます。 文字�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
+* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
 * [MakePri.exe のコマンド ライン オプション](makepri-exe-command-options.md)
 * [MakePri.exe 構成ファイル](makepri-exe-configuration.md)
-* [JavaScript Object Notation (JSON) の application/json メディア型に関するページ](https://www.ietf.org/rfc/rfc4627.txt)
+* [Application/json メディアの種類の JavaScript Object Notation (JSON)](https://www.ietf.org/rfc/rfc4627.txt)
