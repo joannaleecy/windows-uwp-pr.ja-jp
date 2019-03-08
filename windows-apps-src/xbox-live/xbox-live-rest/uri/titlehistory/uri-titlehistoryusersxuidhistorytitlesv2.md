@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bb528f139e9db97f886f57fb98461ce15e77a42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928745"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645687"
 ---
 # <a name="usersxuidxuidhistorytitles"></a>/users/xuid({xuid})/history/titles
  
-このユニバーサル リソース識別子 (URI) は、ユーザーの実績に関連するタイトル履歴へのアクセスを提供します。
+この Universal Resource Identifier (URI) は、ユーザーのタイトルの達成に関連する履歴へのアクセスを提供します。
  
 これらの Uri のドメインが`achievements.xboxlive.com`します。
  
@@ -25,18 +25,18 @@ ms.locfileid: "8928745"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) がタイトル履歴にアクセスしているユーザー。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがタイトル履歴にアクセスしているのです。| 
   
 <a id="ID4EAC"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
+[取得](uri-titlehistoryusersxuidhistorytitlesgetv2.md)
 
-&nbsp;&nbsp;タイトルは、ユーザーがロックを解除またはに対するその実績の進行状況の一覧を取得します。 この API では、タイトルのプレイまたは起動のユーザーのすべての履歴は返されません。
+&nbsp;&nbsp;ユーザーがロックを解除またはその成績の進歩をタイトルの一覧を取得します。 この API では、タイトルの再生または起動のユーザーの完全な履歴は返されません。
  
 <a id="ID4EKC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8928745"
  
 ##### <a name="parent"></a>Parent 
 
-[実績タイトル履歴 URI](atoc-reference-titlehistoryv2.md)
+[アチーブメントのタイトルの履歴の Uri](atoc-reference-titlehistoryv2.md)
 
    

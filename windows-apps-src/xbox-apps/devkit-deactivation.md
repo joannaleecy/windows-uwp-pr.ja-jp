@@ -3,15 +3,15 @@ title: Xbox One 開発者モードの非アクティブ化
 description: 開発者モードを非アクティブ化する方法を説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
 ms.openlocfilehash: 5606a8fa6db5b439aa71f5d72b34c0f519d7eea9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947303"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651777"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>Xbox One 開発者モードの非アクティブ化
 
@@ -70,11 +70,11 @@ ms.locfileid: "8947303"
    
     ![すべてを削除してリセット](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-partner-center"></a>パートナー センターを使用して、本体を非アクティブ化します。
+## <a name="deactivate-your-console-using-partner-center"></a>パートナー センターを使用して、コンソールを非アクティブ化します。
 
-何らかの理由で本体にアクセスできない場合は、パートナー センターを使用して、本体で開発者モードを無効にできますもします。
+何らかの理由で、コンソールにアクセスされない場合は、パートナー センターを使用して、コンソールで開発者モードを無効にできますも。
 
-1. パートナー センターで[Xbox One 本体の管理](https://partner.microsoft.com/xboxdevices)ページに移動します。 サインインを求めことがあります。
+1. 移動し、 [Xbox One の管理コンソール](https://partner.microsoft.com/xboxdevices)パートナー センターでのページ。 サインインを求められる可能性があります。
 
 2. 本体の一覧で、シリアル番号、本体の ID、またはデバイス ID を照らし合わせて、非アクティブ化する本体を見つけます。  
 
@@ -85,5 +85,5 @@ ms.locfileid: "8947303"
 事前に Xbox One 本体をリテール モードに戻していない場合は、「[リテール モードに切り替える](#switch-to-retail-mode)」の説明に従ってここで戻してください。
 
 ## <a name="see-also"></a>関連項目
-- [Xbox One 開発者モードのアクティブ化](devkit-activation.md)
+- [Xbox 開発者モードは 1 つのアクティブ化](devkit-activation.md)
 - [Xbox One の UWP](index.md)

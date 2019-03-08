@@ -1,25 +1,25 @@
 ---
 title: デバイス ポータル Xbox 情報 API リファレンス
-description: Xbox デバイス情報にアクセスする方法をについて説明します。
+description: Xbox デバイス情報にアクセスする方法について説明します。
 ms.date: 11/072017
 ms.topic: article
-keywords: windows 10, uwp, xbox, デバイス ポータル
+keywords: windows 10、uwp、xbox、デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115982"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617497"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 情報 API リファレンス   
-この API を使用して Xbox One のデバイス情報にアクセスすることができます。
+この API を使うと、Xbox One デバイス情報にアクセスすることができます。
 
-## <a name="get-xbox-one-device-information"></a>Xbox One デバイス情報を取得します。
+## <a name="get-xbox-one-device-information"></a>Xbox One デバイス情報を取得する
 
 **要求**
 
-Xbox One については、デバイスの情報を取得できます。
+Xbox One に関するデバイス情報を取得できます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -40,14 +40,14 @@ GET | /ext/xbox/info
 **応答**   
 次のフィールドを含む JSON オブジェクト。
 
-* OsVersion - (文字列)、OS のバージョン。
-* OsEdition - (文字列)、OS のエディションなど「2017 年 3 月」または"2017 年 3 月 1 日"QFE します。
-* ConsoleId - (String) 本体の id。
-* DeviceId - (String) 本体の Xbox Live デバイス id。
-* SerialNumber - (String) 本体のシリアル番号。
-* DevMode - (String) 本体の現在の開発者モード、"None"など、または「市販」します。
-* ConsoleType - (String) 本体の種類、"Xbox One"または"Xbox One S"などです。
-* DevkitCertificateExpirationTime - (数値)、UTC 時間 (秒)、本体の開発者キットの証明書の期限が切れるします。
+* OsVersion - (文字列) OS のバージョン。
+* OsEdition - (文字列) OS のエディション ("March 2017" や "March 2017 QFE 1" など)。
+* ConsoleId - (文字列) コンソールの ID。
+* DeviceId - (文字列) コンソールの Xbox Live デバイス ID。
+* SerialNumber - (文字列) コンソールのシリアル番号。
+* DevMode - (文字列) コンソールの現在の開発者モード ("None" や "Retail" など)。
+* ConsoleType - (文字列) コンソールの種類 ("Xbox One" や "Xbox One S" など)。
+* DevkitCertificateExpirationTime - (数値) コンソールの開発者キット証明書の有効期限が切れる UTC 時刻 (秒単位)。
 
 **状態コード**
 
@@ -60,6 +60,6 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox

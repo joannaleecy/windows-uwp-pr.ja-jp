@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager
 ms.localizationpriority: medium
 ms.openlocfilehash: 7838de6845bc6c49acf649c0e859cd0d7020490f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628027"
 ---
 # <a name="multiplayer-manager-api-overview"></a>Multiplayer Manager API の概要
 
@@ -27,11 +27,11 @@ Multiplayer Manager クラスは、次に示す名前空間に含まれていま
 
 以下の一覧は、理解しておく必要のある主なクラスです。
 
-* [Multiplayer Manager クラス](#multiplayer-manager-class)
-* [Multiplayer Event クラス](#multiplayer-event-class)
-* [Multiplayer Member クラス](#multiplayer-member-class)
-* [Multiplayer Lobby Session クラス](#multiplayer-lobby-session-class)
-* [Multiplayer Game Session クラス](#multiplayer-game-session-class)
+* [マルチ プレーヤーの Manager クラス](#multiplayer-manager-class)
+* [マルチ プレーヤー イベント クラス](#multiplayer-event-class)
+* [マルチ プレーヤー メンバー クラス](#multiplayer-member-class)
+* [マルチ プレーヤー ロビー セッション クラス](#multiplayer-lobby-session-class)
+* [マルチ プレーヤー ゲーム セッション クラス](#multiplayer-game-session-class)
 
 ## <a name="multiplayer-manager-class-a-namemultiplayer-manager-class"></a>Multiplayer Manager クラス <a name="multiplayer-manager-class">
 
@@ -57,7 +57,7 @@ Multiplayer Manager が機能するためには、少なくとも、このクラ
 | JoinGame() | join_game() | 通常はサードパーティーのマッチメイキング サービスによって見つかるグローバルに一意なセッション名を指定して、既存のゲーム セッションに参加します。 ゲームに参加させる Xbox ユーザー ID のリストを渡すことができます。|
 | FindMatch() | find_match() | Xbox Live マッチメイキングを使用してゲームを見つけ、参加します。 |
 | LeaveGame() | leave_game() | ゲームから退出し、メンバーとすべてのローカル メンバーをロビーに返します。 |
-| **プロパティ** | | |
+| **[プロパティ]** | | |
 | LobbySession | lobby_session() | ロビー セッションを表すオブジェクトへのハンドル。 |
 | GameSession |  game_session() | ゲーム セッションを表すオブジェクトへのハンドル。 |
 
@@ -109,10 +109,10 @@ Multiplayer Manager が機能するためには、少なくとも、このクラ
 | SetProperties() / SetSynchronizedProperties() | set_properties() / set_synchronized_properties() | ロビー セッションのカスタム プロパティを設定します。 このプロパティは JSON 文字列で保存されます。 プロパティがデバイス間で共有され、複数のデバイスによって同時に更新される場合は、同期されるバージョンのメソッドを使用します。 |
 | IsHost() | is_host() | 現在のデバイスがロビー ホストとして動作しているかどうかを示します。 |
 | SetSynchronizedHost() | set_synchronized_host() | ロビーのホストを設定します。 |
-| **プロパティ** | | |
+| **[プロパティ]** | | |
 | LocalMembers | local_members() | ローカル デバイスにサインインしているメンバーのコレクション。 |
 | Members | members() | ロビー セッション内にいるメンバーのコレクション。 |
-| Properties | properties() | ロビー セッションのプロパティのコレクションを表す JSON オブジェクト。 |
+| プロパティ | properties() | ロビー セッションのプロパティのコレクションを表す JSON オブジェクト。 |
 | Host | host() | ロビーのホスト メンバー。 |
 
 
@@ -135,7 +135,7 @@ Multiplayer Manager が機能するためには、少なくとも、このクラ
 | SetProperties() / SetSynchronizedProperties() | set_properties() / set_synchronized_properties() | ゲーム セッションのカスタム プロパティを設定します。 このプロパティは JSON 文字列で保存されます。 プロパティがデバイス間で共有され、複数のデバイスによって同時に更新される場合は、同期されるバージョンのメソッドを使用します。 |
 | IsHost() | is_host() | 現在のデバイスがゲーム ホストとして動作しているかどうかを示します。 |
 | SetSynchronizedHost() | set_synchronized_host() | ゲームのホストを設定します。 |
-| **プロパティ** | | |
+| **[プロパティ]** | | |
 | Members | members() | ゲーム セッション内にいるメンバーのコレクション。 |
-| Properties | properties() | ゲーム セッションのプロパティのコレクションを表す JSON オブジェクト。 |
+| プロパティ | properties() | ゲーム セッションのプロパティのコレクションを表す JSON オブジェクト。 |
 | Host | host() | ゲームのホスト メンバー。 |

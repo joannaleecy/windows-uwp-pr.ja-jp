@@ -4,44 +4,44 @@ description: このトピックでは、FaceDetector を使って画像内の顔
 title: 画像やビデオでの顔の検出
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045933"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640837"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>画像やビデオでの顔の検出
 
 
 
-\[一部の情報はリリース前の製品に関する事項であり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
+\[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
 
-このトピックでは、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) を使って画像内の顔を検出する方法について説明します。 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
+このトピックでは、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) を使って画像内の顔を検出する方法について説明します。 [  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
 
-[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使った顔を追跡する別の方法については、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。
+[  **FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使った顔を追跡する別の方法については、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。
 
 この記事のコードは、[基本的な顔検出](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)と[基本的な顔追跡](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)のサンプルを基にしています。 これらのサンプルをダウンロードし、該当するコンテキストで使われているコードを確認することも、サンプルを独自のアプリの開始点として使うこともできます。
 
 ## <a name="detect-faces-in-a-single-image"></a>1 つの画像内の顔を検出する
 
-[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) クラスを使うと、静止画像内の 1 つまたは複数の顔を検出できます。
+[  **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) クラスを使うと、静止画像内の 1 つまたは複数の顔を検出できます。
 
 この例では、次の名前空間の API を使っています。
 
 [!code-cs[FaceDetectionUsing](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) オブジェクト用と、画像から検出される [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧用に、クラス メンバー変数を宣言しています。
+[  **FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) オブジェクト用と、画像から検出される [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧用に、クラス メンバー変数を宣言しています。
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-顔検出は、さまざまな方法で作成できる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに対して可能です。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、顔が検出される画像ファイルをユーザーが選べるようにしています。 ソフトウェア ビットマップの操作の詳細については、「[イメージング](imaging.md)」を参照してください。
+顔検出は、さまざまな方法で作成できる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに対して可能です。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、顔が検出される画像ファイルをユーザーが選べるようにしています。 ソフトウェア ビットマップの操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
 [!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
-[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。 顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。 デコード中にこれを行うには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。
+[  **BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。 顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。 デコード中にこれを行うには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。
 
 [!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "9045933"
 
 [!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
-[**CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
+[  **CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
 
 [!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
@@ -87,19 +87,19 @@ ms.locfileid: "9045933"
 
 **ProcessCurrentVideoFrame** ヘルパー メソッドはタイマーによって非同期的に呼び出されるため、このメソッドはまず、セマフォの **Wait** メソッドを呼び出して、追跡処理が進行中であるかどうかを調べて、そうであれば、顔を検出しようとせずに戻ります。 このメソッドの最後で、セマフォの **Release** メソッドが呼び出され、後続の **ProcessCurrentVideoFrame** が呼び出されて、処理が続行されます。
 
-[**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスは [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトに対して使えます。 **VideoFrame** を取得するには、複数の方法があります。たとえば、実行中の [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトからプレビュー フレームをキャプチャします。または、[**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) の [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) メソッドを実装します。 この例では、ビデオ フレームを返す未定義のヘルパー メソッド **GetLatestFrame** をこの処理のプレースホルダーとして使っています。 実行中のメディア キャプチャ デバイスのプレビュー ストリームからビデオ フレームを取得する方法について詳しくは、「[プレビュー フレームの取得](get-a-preview-frame.md)」をご覧ください。
+[  **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) クラスは [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトに対して使えます。 **VideoFrame** を取得するには、複数の方法があります。たとえば、実行中の [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトからプレビュー フレームをキャプチャします。または、[**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) の [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764784) メソッドを実装します。 この例では、ビデオ フレームを返す未定義のヘルパー メソッド **GetLatestFrame** をこの処理のプレースホルダーとして使っています。 実行中のメディア キャプチャ デバイスのプレビュー ストリームからビデオ フレームを取得する方法について詳しくは、「[プレビュー フレームの取得](get-a-preview-frame.md)」をご覧ください。
 
 **FaceDetector** と同様、**FaceTracker** でも、サポートされていないピクセル形式があります。 この例では、渡されたフレームが Nv12 形式でない場合は顔検出を破棄します。
 
-[**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) を呼び出して、フレーム内の顔を表す [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を取得します。 顔の一覧を取得したら、顔検出について先ほど説明した同じ方法でそれらの顔を表示できます。 顔追跡ヘルパー メソッドは UI スレッドで呼び出されないため、[**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で UI の更新をすべて行う必要があります。
+[  **ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) を呼び出して、フレーム内の顔を表す [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を取得します。 顔の一覧を取得したら、顔検出について先ほど説明した同じ方法でそれらの顔を表示できます。 顔追跡ヘルパー メソッドは UI スレッドで呼び出されないため、[**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で UI の更新をすべて行う必要があります。
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
 ## <a name="related-topics"></a>関連トピック
 
-* [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
-* [基本的な顔検出のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本的な顔追跡のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [メディアのキャプチャのシーンの分析](scene-analysis-for-media-capture.md)
+* [顔検出の基本的なサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本的な面の追跡のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [メディア再生](media-playback.md)

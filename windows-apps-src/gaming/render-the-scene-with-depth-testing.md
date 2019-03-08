@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、レンダリング、シーン、深度のテスト、Direct3D、シャドウ
 ms.localizationpriority: medium
 ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924521"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630457"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>深度のテストを使ったシーンのレンダリング
 
 
 
 
-シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 3 です。
+シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。 パート 3 の[チュートリアル。Direct3d11 の深度バッファーを使用してボリュームをシャドウ実装](implementing-depth-buffers-for-shadow-mapping.md)します。
 
 ## <a name="include-transformation-for-light-frustum"></a>ライトの視錐台の変換の追加
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>位置がライトの視錐台内かどうかのテスト
 
 
-最初に、X 座標と Y 座標を正規化して、ピクセルがライトの視錐台内かどうかをチェックします。 両方が範囲 \[0, 1\] 内の場合は、ピクセルがシャドウ内にある可能性があります。 それ以外の場合は、深度のテストをスキップできます。 シェーダーでは、[Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) を呼び出し、結果を元の値と比較することで、これをすばやくテストできます。
+最初に、X 座標と Y 座標を正規化して、ピクセルがライトの視錐台内かどうかをチェックします。 場合は、範囲内でどちらも\[0, 1\]でシャドウするピクセルの可能性があります。 それ以外の場合は、深度のテストをスキップできます。 シェーダーでは、[Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) を呼び出し、結果を元の値と比較することで、これをすばやくテストできます。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.

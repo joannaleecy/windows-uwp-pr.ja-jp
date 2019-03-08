@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f9e51910e921c7efaa92dfd063e9d37975fda18f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637117"
 ---
 # <a name="usersxuidxuidlistspinslistnamecontainsitems"></a>/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems
-全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
+全体の一覧を取得せず、(itemId で指定された) 項目のセットが一覧で含まれるかどうかを判断します。 これらの Uri のドメインが`eplists.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,19 +24,19 @@ ms.locfileid: "8919678"
  
 ## <a name="uri-parameters"></a>URI パラメーター 
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
 | XUID| string| ユーザーの XUID です。| 
-| リスト| string| 操作をするリストの名前。| 
+| listname| string| 操作するリストの名前。| 
   
 <a id="ID4E5B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST](uri-usersxuidlistspinslistnamecontainsitemspost.md)
+[投稿](uri-usersxuidlistspinslistnamecontainsitemspost.md)
 
-&nbsp;&nbsp;全体の一覧を取得することがなく、一連項目 (itemId により指定) にはが一覧に含まれて かどうかを決定します。
+&nbsp;&nbsp;全体の一覧を取得せず、(itemId で指定された) 項目のセットが一覧に含まれて かどうかを判断します。
  
 <a id="ID4EIC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8919678"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

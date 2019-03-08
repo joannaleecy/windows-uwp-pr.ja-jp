@@ -4,14 +4,14 @@ description: この記事では、CameraCaptureUI クラスを使用して、Win
 title: Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18ea6af70d4c0be068ecd79b925bff69ff149a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947459"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617857"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
 
@@ -22,7 +22,7 @@ ms.locfileid: "8947459"
 独自のカメラ用 UI を用意する場合、またはキャプチャ操作に対してより堅牢で低レベルな制御が必要な場合は、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトを使用して、独自のキャプチャ操作を実装する必要があります。 詳しくは、「[MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)」をご覧ください。
 
 > [!NOTE]
-> アプリが CameraCaptureUI のみ使用している場合、アプリのマニフェスト ファイルで**web カメラ**または**マイク**機能を指定する必要がありますできません。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリには、Windows アプリケーション認定キットの証明書ストアに提出する場合は、写真のキャプチャの唯一のメカニズムとして CameraCaptureUI を使用するときに、web カメラまたはマイク機能を指定するときが失敗する可能性があります。
+> 指定しないで、 **web カメラ**または**マイク**マニフェスト ファイルをアプリでは、CameraCaptureUI のみで使用する場合、アプリで機能します。 指定すると、アプリはデバイスのカメラのプライバシー設定に表示されますが、ユーザーがアプリからのカメラへのアクセスを拒否しても、CameraCaptureUI はメディアをキャプチャできます。 これは、Windows の組み込みのカメラ アプリが、写真、音声、ビデオのキャプチャをボタンを押して開始する必要がある、信頼されているファースト パーティ アプリであるためです。 アプリには、Windows アプリケーションの認定キットの認定、唯一の写真キャプチャ メカニズムとして CameraCaptureUI を使用する場合に、web カメラまたはマイク機能を指定する場合は、ストアに送信されたときに失敗します。
 > MediaCapture を使用して、音声、写真、またはビデオをプログラムによってキャプチャする場合は、アプリのマニフェスト ファイルで Web カメラまたはマイク機能を指定する必要があります。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>CameraCaptureUI を使った写真のキャプチャ
@@ -44,7 +44,7 @@ ms.locfileid: "8947459"
 
 [!code-cs[CopyAndDeletePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCopyAndDeletePhoto)]
 
-アプリで写真を使用するために、[ **SoftwareBitmap** ](https://msdn.microsoft.com/library/windows/apps/dn887358)オブジェクトを作成できます。このオブジェクトは、ユニバーサル Windows アプリのさまざまな機能で使用できます。
+アプリで写真を使用するために、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358)オブジェクトを作成できます。このオブジェクトは、ユニバーサル Windows アプリのさまざまな機能で使用できます。
 
 まず、プロジェクトに [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) 名前空間を含める必要があります。
 
@@ -89,7 +89,7 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 

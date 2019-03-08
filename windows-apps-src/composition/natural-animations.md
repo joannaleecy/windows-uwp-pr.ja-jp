@@ -3,14 +3,14 @@ title: 自然な動作のアニメーション
 description: 自然な動作のアニメーション、およびそれらをアプリの UI で使用する方法について説明します。
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10、UWP、アニメーション
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937165"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630377"
 ---
 # <a name="natural-motion-animations"></a>自然な動作のアニメーション
 
@@ -22,9 +22,9 @@ ms.locfileid: "8937165"
 
 モーションを利用してこの関係を構築するための 1 つの方法として、ユーザーにとって親しみやすい外観を提供するエクスペリエンスの作成があります。 ユーザーは、モーションが実生活での経験にどの程度基づいているかということを無意識に想定しています。 物体が床を横切って移動する動作、テーブルから落ちる動作、物体同士が跳ね返る動作、ばねによる振動などは、多くの人が理解し、想定できる動作です。 実際の物理法則に基づいて、こうした動作の想定を活用するモーションは、目で見たときに自然な感じがします。 モーションはより自然で対話的になりますが、さらに重要なことは、エクスペリエンス全体が覚えやすく、魅力的になるということです。
 
-![アニメーションを使用しない拡大/縮小モーション](images/animation/scale-no-animation.gif)
-![3 次ベジエを使用した拡大/縮小モーション](images/animation/scale-cubic-bezier.gif)
-![ばねアニメーションを使用した拡大/縮小モーション](images/animation/scale-spring.gif)
+![モーション アニメーションを使用せずにスケール](images/animation/scale-no-animation.gif)
+![3 次ベジエでモーションをスケール](images/animation/scale-cubic-bezier.gif)
+![spring アニメーションでモーションをスケール](images/animation/scale-spring.gif)
 
 最終的には、アプリに対するユーザー エンゲージメントとユーザーの維持率が高まります。
 

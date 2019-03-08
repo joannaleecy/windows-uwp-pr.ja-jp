@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, AdControl, トラブルシューティング, XAML, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d92795ac7de2ab09fd0b3b86e05aa33669c54dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941389"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615917"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML と C# のトラブルシューティング ガイド
 
 このトピックでは、XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。
 
 * [XAML](#xaml)
-  * [AdControl が表示されない](#xaml-notappearing)
-  * [ブラック ボックスが点滅し、表示されなくなる](#xaml-blackboxblinksdisappears)
-  * [広告が更新されない](#xaml-adsnotrefreshing)
+  * [表示されない AdControl](#xaml-notappearing)
+  * [黒いボックスの点滅し、非表示になります](#xaml-blackboxblinksdisappears)
+  * [広告を更新しません。](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl が表示されない](#csharp-adcontrolnotappearing)
-  * [ブラック ボックスが点滅し、表示されなくなる](#csharp-blackboxblinksdisappears)
-  * [広告が更新されない](#csharp-adsnotrefreshing)
+  * [表示されない AdControl](#csharp-adcontrolnotappearing)
+  * [黒いボックスの点滅し、非表示になります](#csharp-blackboxblinksdisappears)
+  * [広告を更新しません。](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -115,7 +115,7 @@ ms.locfileid: "8941389"
 
 3.  [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) は正常に動作しています。
 
-    既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたんだ **AdControl** の隙間を埋めるように移動し、次の要求がなされたときに展開することがあります。
+    既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたまれた **AdControl** の隙間を埋めるように移動し、次の要求が行われたときに展開できます。
 
 <span id="xaml-adsnotrefreshing"/>
 

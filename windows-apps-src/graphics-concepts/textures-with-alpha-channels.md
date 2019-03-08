@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651477"
 ---
 # <a name="textures-with-alpha-channels"></a>アルファ チャネルを含むテクスチャ
 
 
-複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。 いずれの場合も、既に説明した 64 ビットのブロックの前に、透明度を記述したブロックを配置します。 透明度は、1 ピクセルあたり 4 ビットの 4 x 4 ビットマップ (明示的エンコード)、またはこれよりも少ないビット数およびカラー エンコードで使用されるものに類似した線形補間で表現されます。
+複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。 いずれの場合も、既に説明した 64 ビットのブロックの前に、透明度を記述したブロックを配置します。 透明度は、1 ピクセルあたり 4 ビットの 4 x 4 ビットマップ (明示的エンコード)、またはこれよりも少ないビット数およびカラー エンコードで使用されるものに類似した線形補完で表現します。
 
 透明度ブロックと色ブロックは、次の表に示すように配置されます。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8934006"
 
  
 
-## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明示的なテクスチャ エンコード
+## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明示的なテクスチャのエンコード
 
 
 明示的なテクスチャ エンコード (BC2 形式) の場合、透明度を記述するテクセルのアルファ成分は、テクセルあたり 4 ビットの 4 x 4 のビットマップでエンコードされます。 これらの 4 ビットは、ディザリングなどのさまざまな手法によるか、アルファ データの 4 つの最上位ビットを使用して取得できます。 ただし、これらは生成されると、どのような補間もされずに、そのままの状態で使用されます。
@@ -37,7 +37,7 @@ ms.locfileid: "8934006"
 
 ![64 ビットの透明度ブロックの図](images/colors4.png)
 
-**注:**  Direct3D の圧縮方法は、4 つの最上位ビットを使用します。
+**注**   Direct3D の圧縮方法は 4 つの最上位ビットを使用します。
 
  
 
@@ -50,7 +50,7 @@ ms.locfileid: "8934006"
 | 3:0 (LSB\*)   | \[0\]\[0\] |
 | 7:4           | \[0\]\[1\] |
 | 11:8          | \[0\]\[2\] |
-| 15:12 (MSB\*) | \[0\]\[3\] |
+| 15時 12分 (MSB\*) | \[0\]\[3\] |
 
  
 
@@ -94,7 +94,7 @@ BC1 でテクセルが透明かどうかを判断するために使われる色�
 ## <a name="span-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanspan-idthree-bit-linear-alpha-interpolationspanthree-bit-linear-alpha-interpolation"></a><span id="Three-Bit-Linear-Alpha-Interpolation"></span><span id="three-bit-linear-alpha-interpolation"></span><span id="THREE-BIT-LINEAR-ALPHA-INTERPOLATION"></span>3 ビット線形アルファ補間
 
 
-BC3 形式での透明度のエンコーディングは、色に使用される線形エンコーディングと同様の概念に基づいています。 2 つの 8 ビット アルファ値、およびピクセルあたり 3 ビットの 4 x 4 ビットマップが、ブロックの最初の 8 バイトに格納されます。 代表的なアルファ値を使用して、中間アルファ値が補間されます。 追加の情報は、2 つのアルファ値を格納する方法で利用できます。 alpha\_0 が alpha\_1 より大きい場合は、6 つの中間アルファ値が補間によって作成されます。 それ以外の場合、4 つの中間アルファ値が指定したアルファの極値の間で補間されます。 その他 2 つの暗黙のアルファ値は、0 (完全に透明) と 255 (完全に不透明) です。
+BC3 形式での透明度のエンコーディングは、色に使用される線形エンコーディングと同様の概念に基づいています。 2 つの 8 ビット アルファ値、およびピクセルあたり 3 ビットの 4 x 4 ビットマップが、ブロックの最初の 8 バイトに格納されます。 代表的なアルファ値を使用して、中間アルファ値が補間されます。 追加の情報は、2 つのアルファ値を格納する方法で利用できます。 アルファ場合\_0 がアルファよりも大きい\_1 の場合、その 6 つの中間のアルファ値が補間によって作成されます。 それ以外の場合、4 つの中間アルファ値が指定したアルファの極値の間で補間されます。 その他 2 つの暗黙のアルファ値は、0 (完全に透明) と 255 (完全に不透明) です。
 
 次のコード例に、このアルゴリズムを示します。
 
@@ -126,14 +126,14 @@ else {
 
 | バイト | アルファ                                                          |
 |------|----------------------------------------------------------------|
-| 0    | Alpha\_0                                                       |
-| 1    | Alpha\_1                                                       |
-| 2    | \[0\]\[2\] (2 つの MSB)、\[0\]\[1\]、\[0\]\[0\]                    |
-| 3    | \[1\]\[1\] (1 つの MSB)、\[1\]\[0\]、\[0\]\[3\]、\[0\]\[2\] (1 つの LSB) |
-| 4    | \[1\]\[3\]、\[1\]\[2\]、\[1\]\[1\] (2 つの LSB)                    |
-| 5    | \[2\]\[2\] (2 つの MSB)、\[2\]\[1\]、\[2\]\[0\]                    |
-| 6    | \[3\]\[1\] (1 つの MSB)、\[3\]\[0\]、\[2\]\[3\]、\[2\]\[2\] (1 つの LSB) |
-| 7    | \[3\]\[3\]、\[3\]\[2\]、\[3\]\[1\] (2 つの LSB)                    |
+| 0    | アルファ\_0                                                       |
+| 1    | アルファ\_1                                                       |
+| 2    | \[0\]\[2\] (2 MSBs) \[0\]\[1\]、 \[0\]\[0\]                    |
+| 3    | \[1\]\[1\] (1 MSB) \[1\]\[0\]、 \[0\]\[3\]、 \[0\]\[2\] (1 LSB) |
+| 4    | \[1\]\[3\]、 \[1\]\[2\]、 \[1\]\[1\] (2 LSBs)                    |
+| 5    | \[2\]\[2\] (2 MSBs) \[2\]\[1\]、 \[2\]\[0\]                    |
+| 6    | \[3\]\[1\] (1 MSB) \[3\]\[0\]、 \[2\]\[3\]、 \[2\]\[2\] (1 LSB) |
+| 7    | \[3\]\[3\]、 \[3\]\[2\]、 \[3\]\[1\] (2 LSBs)                    |
 
  
 
@@ -142,7 +142,7 @@ BC1 でテクセルが透明かどうかを判断するために使われる色�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[圧縮テクスチャ リソース](compressed-texture-resources.md)
+[圧縮されたテクスチャのリソース](compressed-texture-resources.md)
 
  
 

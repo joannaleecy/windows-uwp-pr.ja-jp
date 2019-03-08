@@ -1,32 +1,32 @@
 ---
-Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+Description: 適応型タイル テンプレートは、さまざまな画面密度に適応できる簡単かつ柔軟なマークアップ言語を使用して、独自のタイル通知の内容をデザインできますが、Windows 10 の新機能です。
 title: アダプティブ タイルの作成
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 524cc15dbb7a3264d8476210f727508ea41ace87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945529"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639607"
 ---
 # <a name="create-adaptive-tiles"></a>アダプティブ タイルの作成
 
-アダプティブ タイル テンプレートは、さまざまな画面密度に合わせて変化するシンプルで柔軟なマークアップ言語を使用して、独自のタイル通知コンテンツをデザインすることができるように、windows 10 の新機能です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
+適応型タイル テンプレートは、さまざまな画面密度に適応できる簡単かつ柔軟なマークアップ言語を使用して、独自のタイル通知の内容をデザインできますが、Windows 10 の新機能です。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](../tiles-and-notifications/tile-schema.md)」をご覧ください 
 
-(必要な場合でも使用できます[Windows8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)からプリセット テンプレート windows 10 の通知を設計するとき。)
+(から既定のテンプレートを使用できます引き続き希望される場合、 [Windows 8 のタイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)Windows 10 用の通知を設計するときにします)。
 
 
 ## <a name="getting-started"></a>概要
 
-**Notifications ライブラリをインストールします。** XML の代わりに C# を使って通知を生成する場合は、[Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) という名前の NuGet パッケージをインストールします (「notifications uwp」を検索してください)。 この記事で示している C# のサンプルでは、NuGet パッケージの Version 1.0.0 を使っています。
+**通知ライブラリをインストールします。** XML の代わりに C# を使って通知を生成する場合は、[Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) という名前の NuGet パッケージをインストールします (「notifications uwp」を検索してください)。 この記事で示している C# のサンプルでは、NuGet パッケージの Version 1.0.0 を使っています。
 
-**Notifications Visualizer をインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、タイルの編集時に視覚的なプレビューが即座に表示されるため、アダプティブ ライブ タイルのデザインに便利です。 詳しくは、「[Notifications Visualizer](notifications-visualizer.md)」をご覧になるか、[Notifications Visualizer を Microsoft Store からダウンロード](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)してください。
+**通知のビジュアライザーをインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、タイルの編集時に視覚的なプレビューが即座に表示されるため、アダプティブ ライブ タイルのデザインに便利です。 詳しくは、「[Notifications Visualizer](notifications-visualizer.md)」をご覧になるか、[Notifications Visualizer を Microsoft Store からダウンロード](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)してください。
 
 
 ## <a name="how-to-send-a-tile-notification"></a>タイル通知を送信する方法
@@ -203,12 +203,12 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイル サイズ: 小、中、ワイド、大](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>ブランディング
+## <a name="branding"></a>ブランド設定
 
 
 通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
 
-**注:** Windows Mobile Mobile でコーナー ロゴ、その"logo"と"nameAndLogo"既定"name"をサポートしません。
+**注**  Windows Mobile がモバイルで上隅のロゴ、その「のロゴ」および"nameAndLogo"の既定値は"name"をサポートしません。
 
  
 
@@ -274,13 +274,13 @@ TileContent content = new TileContent()
 };
 ```
 
-**既定のブランディングの結果:**
+**既定のブランド化の結果。**
 
 ![タイル上の既定のブランディング](images/adaptive-tiles-defaultbranding.png)
 
 通知ペイロード内でブランディングを指定しない場合は、ベース タイルのプロパティによってブランディングが決まります。 ベース タイルに表示名が表示される場合、ブランディングは既定で "name" に設定されます。 表示名が表示されない場合、ブランディングは既定で "none" に設定されます。
 
-**注:** ですが、既定のブランディングが"logo あった"の Windows8.x からの変更。
+**注**  これは、Windows からの変更を既定のブランド化されたで「ロゴです」8.x。
 
  
 
@@ -335,10 +335,10 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイルの表示名](images/adaptive-tiles-displayname.png)
 
-## <a name="text"></a>テキスト
+## <a name="text"></a>Text
 
 
-テキストの表示には、[AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) 要素を使用します。 ヒントを使用して、テキストの表示方法を変更できます。
+テキストの表示には、[AdaptiveText](../tiles-and-notifications/tile-schema.md#adaptivetext) 要素を使用します。 hint を使うと、テキストの表示方法を変更できます。
 
 ```xml
 <text>This is a line of text</text>
@@ -406,26 +406,26 @@ new AdaptiveText()
 
 ![アダプティブ タイルのテキスト スタイル](images/adaptive-tiles-textstyles.png)
 
-**注:** ヒントのスタイルが指定されていない場合、スタイルは既定で caption にします。
+**注**  ヒント スタイルが指定されていない場合、スタイルのキャプションを既定値します。
 
  
 
-**基本的なテキスト スタイル**
+**基本的なテキストのスタイル**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
 | &lt;text hint-style="\*" /&gt; | フォントの高さ               | フォントの太さ |
-| caption                        | 12 epx (有効ピクセル) | Regular     |
-| body                           | 15 epx                    | Regular     |
+| caption                        | 12 epx (有効ピクセル) | 標準     |
+| body                           | 15 epx                    | 標準     |
 | base                           | 15 epx                    | Semibold    |
-| subtitle                       | 20 epx                    | Regular     |
+| subtitle                       | 20 epx                    | 標準     |
 | title                          | 24 epx                    | Semilight   |
-| subheader                      | 34 epx                    | Light       |
-| header                         | 46 epx                    | Light       |
+| subheader                      | 34 epx                    | 明るい       |
+| header                         | 46 epx                    | 明るい       |
 
  
 
-**テキスト スタイルの Numeral バリエーション**
+**数字のテキストのスタイルのバリエーション**
 
 次のバリエーションでは、テキストに上下のコンテンツが近づくように、行の高さを減らすことができます。
 
@@ -437,7 +437,7 @@ new AdaptiveText()
 
  
 
-**テキスト スタイルの Subtle バリエーション**
+**微妙なテキストのスタイルのバリエーション**
 
 各スタイルの "Subtle" バリエーションでは、テキストの不透明度を 60% に設定して、テキストの色を淡い灰色で暗くすることができます。
 
@@ -485,7 +485,7 @@ new AdaptiveText()
 
 デバイスや画面間でのエクスペリエンスを最大限に高めるには、複数のグループを用意します。 複数のグループを使うと、タイルをより大きい画面に合わせて調整できます。
 
-**注:** グループの有効な子はサブグループです。
+**注**  グループの唯一の有効な子がサブグループ。
 
  
 
@@ -607,7 +607,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">重み合計: 4</td>
+<td align="left">合計加重:4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -638,7 +638,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">重み合計: 3</td>
+<td align="left">合計加重:3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -669,7 +669,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 <td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">重み合計: 100</td>
+<td align="left">合計加重:100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -679,7 +679,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ![サブグループ、重み合計が 100](images/adaptive-tiles-subgroups03.png)
 
-**注:** 8 ピクセルの余白が列の間で自動的に追加します。
+**注**  8 ピクセルの余白は、列の間で自動的に追加します。
 
  
 
@@ -787,7 +787,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ![天気タイルの例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>画像
+## <a name="images"></a>イメージ
 
 
 &lt;image&gt; 要素を使って、タイル通知に画像を表示します。 画像はタイル コンテンツ (既定) 内に、背景画像としてか、タイルでアニメーション化されるプレビュー画像として、インラインで配置できます。
@@ -797,7 +797,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
  
 
-特に動作が指定されていない場合、幅に合わせて縦横比を保ったまま拡大縮小されます。 次のサンプルでは、2 列とインライン画像を使用したタイルを示しています。 インライン画像は列幅に合わせて拡大されます。
+特に動作が指定されていないと、画像は一様に拡大縮小されて、空いている幅が埋められます。 次のサンプルでは、2 列とインライン画像を使用したタイルを示しています。 インライン画像は列幅に合わせて拡大されます。
 
 ```xml
 <binding template="TileMedium" displayName="Seattle" branding="name">
@@ -1179,7 +1179,7 @@ TileWide = new TileBinding()
 
 ![プレビュー画像の例](images/adaptive-tiles-imagepeeking.png)
 
-**プレビュー画像と背景画像の円トリミング**
+**ピークと背景イメージの円のトリミング**
 
 円トリミングを行うには、プレビュー画像と背景画像で hint-crop 属性を使用します。
 
@@ -1199,7 +1199,7 @@ new TilePeekImage()
 
 ![プレビュー画像と背景画像の円トリミング](images/circlecrop-image.png)
 
-**プレビュー画像と背景画像の両方を使用**
+**ピークとバック グラウンドの両方のイメージを使用します。**
 
 タイル通知でプレビュー画像と背景画像の両方を使用するには、通知ペイロードでプレビュー画像と背景画像の両方を指定します。
 
@@ -1212,7 +1212,7 @@ new TilePeekImage()
 
 **hint-overlay** を使って、背景画像とプレビュー画像上に黒のオーバーレイを設定できます。この属性は 0 ～ 100 の整数を受け取ります。0 はオーバーレイなし、100 は完全な黒のオーバーレイを表します。 オーバーレイを使うことで、タイル上のテキストを読みやすく表示できます。
 
-**背景画像での hint-overlay の使用**
+**背景画像でヒント オーバーレイを使用します。**
 
 ペイロードにテキスト要素が含まれている場合、背景画像のオーバーレイは既定で 20% です (そうでない場合、既定のオーバーレイは 0% です)。
 
@@ -1239,11 +1239,11 @@ TileWide = new TileBinding()
 }
 ```
 
-**結果:**
+**ヒント オーバーレイ結果:**
 
 ![画像のオーバーレイの例](images/adaptive-tiles-image-hintoverlay.png)
 
-**プレビュー画像での hint-overlay の使用**
+**ヒント オーバーレイを使用して、ピーク イメージ上**
 
 Windows 10 Version 1511 では、背景画像と同様、プレビュー画像のオーバーレイもサポートされています。 プレビュー画像要素の hint-overlay には、0 ～ 100 の整数を指定します。 プレビュー画像の既定のオーバーレイは、0 (オーバーレイなし) です。
 
@@ -1390,11 +1390,11 @@ TileWide = new TileBinding()
 ```
 
 ## <a name="related-topics"></a>関連トピック
-* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
+* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
 * [特別なタイル テンプレート](special-tile-templates-catalog.md)
-* [UWP コミュニティ ツールキット - Notifications](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [GitHub の Windows Notifications](https://github.com/WindowsNotifications)
+* [UWP Community Toolkit の通知](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub の Windows の通知](https://github.com/WindowsNotifications)
 
  
 

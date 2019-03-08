@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: adac175675230e107b3066d1d8f955e660bdbd00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925494"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645637"
 ---
 # <a name="inventoryitemid"></a>/inventory/{itemID}
-特定のインベントリ項目の詳細情報の完全なセットにアクセスします。 これらの Uri のドメインが`inventory.xboxlive.com`します。
+特定のインベントリ項目の詳細の完全なセットにアクセスします。 これらの Uri のドメインが`inventory.xboxlive.com`します。
  
 <a id="ID4ET"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID| 
+| アイテム Id| string| 単数形のインベントリ項目のユーザーごとに一意の ID| 
   
 <a id="ID4EPB"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "8925494"
 
 [GET (/inventory/{itemID})](uri-inventoryitemurlget.md)
 
-&nbsp;&nbsp;特定のインベントリ項目の詳細の完全なセットを提供します。
+&nbsp;&nbsp;特定のインベントリ項目の詳細情報の完全なセットを提供します。
  
 <a id="ID4EZB"></a>
 
@@ -45,7 +45,7 @@ ms.locfileid: "8925494"
  
 ##### <a name="parent"></a>Parent 
 
-[マーケットプレース URI](atoc-reference-marketplace.md)
+[Marketplace の Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EFC"></a>
@@ -53,12 +53,12 @@ ms.locfileid: "8925494"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

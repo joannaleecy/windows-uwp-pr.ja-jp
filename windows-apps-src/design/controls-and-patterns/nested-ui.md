@@ -1,22 +1,22 @@
 ---
-Description: Use nested UI to enable multiple actions on a list item
+Description: 入れ子になった UI を使用してリスト項目に対する複数の操作を有効にする
 title: リスト項目の入れ子になった UI
 label: Nested UI in list items
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8edb38b8ae91d836e283a8eb37830850bf504db4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929105"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661307"
 ---
 # <a name="nested-ui-in-list-items"></a>リスト項目の入れ子になった UI
 
@@ -26,7 +26,7 @@ ms.locfileid: "8929105"
 
 入れ子になった UI を使用することで、重要な操作をスムーズに行うことができるようになる追加のオプションをユーザーに提供できます。 ただし、公開する操作の数が増えるにつれて、UI は複雑になります。 この UI パターンの使用を決めた場合は十分に注意することが必要です。 この記事では、特定の UI に最適な一連の操作の判断に役立つガイドラインを提供します。
 
-> **重要な API**: [ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **重要な Api**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 この記事では、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 項目および [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目の入れ子になった UI の作成について説明します。 このセクションでは、入れ子になった UI の他の例については取り上げませんが、これらの概念は他でも利用できます。 始める前に、UI における ListView コントロールまたは GridView コントロールの使用について、一般的なガイダンスを理解している必要があります。この一般的なガイダンスについては、「[リスト](lists.md)」と「[リスト ビューとグリッド ビュー](listview-and-gridview.md)」の記事をご覧ください。
 
@@ -109,7 +109,7 @@ UWP でサポートされているすべての入力にアプリが対応して�
 
 ![入れ子になった UI 部](images/nested-ui-navigation.png)
 
-**ゲームパッド**
+**Gamepad**
 
 ゲームパッドで入力された場合、次のユーザー エクスペリエンスを提供します。
 
@@ -167,7 +167,7 @@ UWP でサポートされているすべての入力にアプリが対応して�
 
 リスト項目で操作が実行されない場合は、次のガイダンスに従ってゲームパッドまたはキーボードによる移動を処理することをお勧めします。
 
-**ゲームパッド**
+**Gamepad**
 
 ゲームパッドで入力された場合、次のユーザー エクスペリエンスを提供します。
 

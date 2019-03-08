@@ -1,21 +1,21 @@
 ---
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: アプリの現在のユーザーが利用できるターゲット オファーを取得するには、Microsoft Store ターゲット オファー API を使います。
-title: ストア サービスを使ってターゲット オファーを管理する
+title: Store サービスを使ってターゲット オファーを管理する
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store ターゲット オファー API, ターゲット オファー
 ms.localizationpriority: medium
 ms.openlocfilehash: bcf270bd56d17936ef404adbc3663034b58e7a2c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615687"
 ---
-# <a name="manage-targeted-offers-using-store-services"></a>ストア サービスを使ってターゲット オファーを管理する
+# <a name="manage-targeted-offers-using-store-services"></a>Store サービスを使ってターゲット オファーを管理する
 
-*対象のプラン*では、パートナー センターを使用して、 *Microsoft Store ターゲット オファー API*をするために役立つ情報を取得するアプリのコードでのアプリ内エクスペリエンスの実装でアプリの**対象のプランとの連携 _gt**ページを作成する場合、ターゲット オファーします。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
+作成する場合、*対象となるプラン*で、**エンゲージ > プランの対象となる**パートナー センターの使用、アプリのページ、*対象となる Microsoft Store API を提供する*でアプリのコードを対象となるプランのアプリ内エクスペリエンスを実装するのに役立つ情報を取得します。 ターゲット オファーについてとダッシュボードで作成する方法について詳しくは、「[ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)」をご覧ください。
 
 ターゲット オファー API はシンプルな REST API で、これを使用すると、ユーザーがターゲット オファーの顧客セグメントに属しているかどうかに基づいて、現在のユーザーに適用されるターゲット オファーを取得できます。 アプリのコードでこの API を使うには、次の手順に従います。
 
@@ -31,7 +31,7 @@ ms.locfileid: "9045025"
 
 アプリのコードで、現在サインインしているユーザーの Microsoft アカウント (MSA) トークンを取得します。 このトークンを Microsoft Store ターゲット オファー API の ```Authorization``` 要求ヘッダーに渡す必要があります。 このトークンは、現在のユーザーが利用できるターゲット オファーを取得するために Store によって使用されます。
 
-MSA トークンを取得するには、[WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) クラスを使い、スコープ ```devcenter_implicit.basic,wl.basic``` を設定してトークンを要求します。 次の例は、この処理を実行する方法を示しています。 この例は[完全な例](#code-example)からの抜粋で、完全な例に示されている **using** ステートメントが必要です。
+MSA トークンを取得するには、[WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) クラスを使い、スコープ ```devcenter_implicit.basic,wl.basic``` を設定してトークンを要求します。 次の例は、この処理を実行する方法を示しています。 この例は、[完全な例](#code-example)からの抜粋です。また、完全な例で提供されている **using** ステートメントが必要です。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
@@ -43,9 +43,9 @@ MSA トークンの取得について詳しくは、「[Web アカウント マ�
 
 現在のユーザーの MSA トークンがある場合、```https://manage.devcenter.microsoft.com/v2.0/my/storeoffers/user``` URI の GET メソッドを呼び出して、現在のユーザーの利用可能なターゲット オファーを取得します。 この REST メソッドについて詳しくは、「[ターゲット オファーを取得する](get-targeted-offers.md)」をご覧ください。
 
-このメソッドは、現在のユーザーが利用可能なターゲット オファーに関連付けられているアドオンの製品 ID を返します。 この情報を使って、1 つ以上のターゲット オファーをアプリ内購入としてユーザーに提供できます。
+このメソッドは、現在のユーザーが利用可能なターゲット オファーに関連付けられているアドオンの製品 ID を返します。 この情報を使って、1 つ以上のターゲット オファーをアプリ内での購入としてユーザーに提供できます。
 
-次の例は、現在のユーザーのターゲット オファーを取得する方法を示しています。 この例は、[完全な例](#code-example)からの抜粋です。 Newtonsoft の [Json.NET](https://www.newtonsoft.com/json) ライブラリと、完全な例に示されている追加クラスおよび **using** ステートメントが必要です。
+次の例は、現在のユーザーのターゲット オファーを取得する方法を示しています。 この例は、[完全な例](#code-example)からの抜粋です。 また、Newtonsoft の [Json.NET](https://www.newtonsoft.com/json) ライブラリ、および完全な例で提供されている追加クラスと **using** ステートメントが必要です。
 
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
@@ -65,5 +65,5 @@ MSA トークンの取得について詳しくは、「[Web アカウント マ�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ターゲット オファーによるエンゲージメントとコンバージョンの最大化](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
-* [ターゲット オファーを取得する](get-targeted-offers.md)
+* [Engagement と変換を最大化するのに対象となるプランを使用します。](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [対象となるプランを取得します。](get-targeted-offers.md)

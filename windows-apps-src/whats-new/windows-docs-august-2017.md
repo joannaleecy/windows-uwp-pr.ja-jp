@@ -6,11 +6,11 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: edf81f0474855c868ea1fb50afa683523aedcd07
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050785"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614867"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 8 月
 
@@ -43,7 +43,7 @@ Visual Studio 2017 用の新しい [Windows Template Studio](https://aka.ms/wtsi
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
-### <a name="data-schemas-for-store-products"></a>ストア製品のデータ スキーマ
+### <a name="data-schemas-for-store-products"></a>Store 製品のデータ スキーマ
 
 記事「[ストア製品のデータ スキーマ](../monetize/data-schemas-for-store-products.md)」が追加されました。 この記事では、[StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) や [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense) など、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間のいくつかのオブジェクトで利用できるストア関連のデータ用のスキーマを示します。
 

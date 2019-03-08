@@ -1,25 +1,25 @@
 ---
-title: ステンシルの書式はストリーミング リソースでサポートされない
+title: ストリーミング リソースでサポートされていないステンシルの書式
 description: ステンシルを含む書式は、ストリーミング リソースではサポートされません。
 ms.assetid: 90A572A4-3C76-4795-BAE9-FCC72B5F07AD
 keywords:
-- ステンシルの書式はストリーミング リソースでサポートされない
+- ストリーミング リソースでサポートされていないステンシルの書式
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d35813a6242abd555e87329c25a413285d1d948
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945122"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660987"
 ---
-# <a name="stencil-formats-not-supported-with-streaming-resources"></a>ステンシルの書式はストリーミング リソースでサポートされない
+# <a name="stencil-formats-not-supported-with-streaming-resources"></a>ストリーミング リソースでサポートされていないステンシルの書式
 
 
 ステンシルを含む書式は、ストリーミング リソースではサポートされません。
 
-ステンシルを含む書式には、DXGI\_FORMAT\_D24\_UNORM\_S8\_UINT (および R24G8 ファミリーの関連書式) と DXGI\_FORMAT\_D32\_FLOAT\_S8X24\_UINT (および R32G8X24 ファミリーの関連書式) が含まれます。
+ステンシルが含まれている形式は、DXGI\_形式\_D24\_UNORM\_S8\_UINT (および関連 R24G8 ファミリの形式) と DXGI\_形式\_D32\_FLOAT\_S8X24\_UINT (および関連 R32G8X24 ファミリの形式)。
 
 深度とステンシルを別々の割り当てに保存する実装もあれば、一緒に保存する実装もあります。 これら 2 つのスキーマ間でタイルの管理方法を変える必要がありますが、違いを抽象化または合理化できる単一の API はありません。 今後のハードウェアでは、深度とステンシルで個別のサーフェスをサポートし、それぞれにタイルを用意することをお勧めします。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8945122"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースのプロセスとデバイス間での共有](streaming-resource-cross-process-and-device-sharing.md)
+[ストリーミング プロセス間のリソースとデバイスの共有](streaming-resource-cross-process-and-device-sharing.md)
 
  
 

@@ -4,14 +4,14 @@ title: Device Portal 用のカスタム プラグインの作成
 description: Windows Device Portal を使用して Web ページをホストし、診断情報を提供する UWP アプリを作成する方法について説明します。
 ms.date: 03/24/2017
 ms.topic: article
-keywords: windows 10, uwp, デバイス ポータル
+keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919328"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644467"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>Device Portal 用のカスタム プラグインの作成
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-イベントには 2 つが要求処理ループを完了するアプリで処理する必要があります:**終了**のたびに、Device Portal サービスがシャット ダウンし、 [**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)、着信 HTTP のサーフェスを要求し、メインの提供Device Portal プロバイダーの機能です。 
+2 つイベント ループを処理する要求を完了するアプリによって処理する必要があります。**閉じられた**のたびに、デバイスのポータル サービスがシャット ダウン、および[ **RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)、サーフェス受信 HTTP 要求し、デバイスのポータルの主な機能を提供しますプロバイダー。 
 
 ## <a name="handle-the-requestreceived-event"></a>RequestReceived イベントを処理する
 **RequestReceived** イベントは、プラグインの指定されたハンドラー ルートで行われる各 HTTP 要求について 1 回生成されます。 Device Portal プロバイダーの要求処理ループは、NodeJS Express での要求処理ループと似ています。イベントと共に要求と応答のオブジェクトが提供され、ハンドラーは応答オブジェクトを入力することで応答します。 Device Portal プロバイダーでは、**RequestReceived** イベントとそのハンドラーが [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) オブジェクトと [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage) オブジェクトを使用します。   
@@ -188,7 +188,7 @@ Device Portal プロバイダーによって提供される静的コンテンツ
 2.  [デバッグ] タブの [開始動作] で、[起動しないが、開始時にマイ コードをデバッグする] を選択します。  
 ![プラグインをデバッグ モードにする](images/device-portal/plugin-debug-mode.png)
 3.  RequestReceived ハンドラー関数にブレークポイントを設定します。
-![RequestReceived ハンドラーでのブレークポイント](images/device-portal/plugin-requestreceived-breakpoint.png)
+![requestreceived ハンドラーの位置にブレークポイント](images/device-portal/plugin-requestreceived-breakpoint.png)
 > [!NOTE] 
 > ビルドのアーキテクチャがターゲットのアーキテクチャと正確に一致することを確認してください。 64 ビット PC を使用している場合は、AMD64 ビルドを使って展開する必要があります。 
 4.  F5 キーを押してアプリを展開します。
@@ -197,6 +197,6 @@ Device Portal プロバイダーによって提供される静的コンテンツ
 
 ## <a name="related-topics"></a>関連トピック
 * [Windows Device Portal の概要](device-portal.md)
-* [アプリ サービスの作成と利用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [App Service の作成と利用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

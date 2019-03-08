@@ -1,35 +1,35 @@
 ---
 ms.assetid: e04ebe3f-479c-4b48-99d8-3dd4bb9bfaf4
-title: カスタムの SSL 証明書で Device Portal をプロビジョニングする
+title: カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
 description: TBD
 ms.date: 07/11/2017
 ms.topic: article
-keywords: windows 10, uwp, デバイス ポータル
+keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921228"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616697"
 ---
-# <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal をプロビジョニングする
-Windows 10 の Creators Update では、Windows Device Portal には、デバイスの管理者 HTTPS 通信で使われるカスタム証明書をインストールするための方法が追加されました。 
+# <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
+Windows 10 Creators Update では、Windows Device Portal によって、デバイス管理者が HTTPS 通信で使用できるカスタム証明書のインストール手段が追加されています。 
 
-これを行うには、独自の PC で中の場所で既存の証明書のインフラストラクチャを保有している企業のこの機能は、ほとんどの場合。  
+自身の PC で行うこともできますが、この機能は主に、既存の証明書インフラストラクチャを使用している企業を対象としています。  
 
-たとえば、企業には、HTTPS 経由で提供されたイントラネット web サイト用の証明書の署名に使われる証明書機関 (CA) があります。 この機能は、インフラストラクチャで一緒にします。 
+たとえば、HTTPS で使用するイントラネット Web サイト用の証明書に署名するために、企業で証明機関 (CA) を保有している場合があります。 この機能は、そのようなインフラストラクチャ上で使用します。 
 
 ## <a name="overview"></a>概要
-既定では、Device Portal は、自己署名されたルート CA を生成しを待機しているすべてのエンドポイントの SSL 証明書に署名を使用しています。 ここでは`localhost`、 `127.0.0.1`、および`::1`(IPv6 localhost)。
+既定では、Device Portal は自己署名ルート CA を生成し、これを使用して、リッスン対象のすべてのエンドポイント用に SSL 証明書への署名を行います。 これには、`localhost`、`127.0.0.1`、`::1` (IPv6 localhost) が含まれます。
 
-デバイスのホスト名も含まれています (たとえば、 `https://LivingRoomPC`) と、デバイスに割り当てられている各リンク ローカル IP アドレス (最大で 2 つ [IPv4] IPv6 ネットワーク アダプターあたり)。 Device Portal でのネットワーク ツールを見ているによって、デバイスのリンク ローカル IP アドレスを確認できます。 作業を始めますが`10.`または`192.`ipv4、または`fe80:`IPv6 用です。 
+また、デバイスのホスト名 (`https://LivingRoomPC` など) と、デバイスに割り当てられた各リンク ローカル IP アドレス (ネットワーク アダプターごとに最大 2 つの [IPv4, IPv6]) も含まれます。 デバイスのリンク ローカル IP アドレスは、Device Portal のネットワーク ツールで確認できます。 アドレスの先頭は、IPv4 の場合は `10.` または `192.`、IPv6 の場合は `fe80:` になります。 
 
-既定の設定、信頼されていないルート CA のためのブラウザーで証明書の警告が表示されます。 具体的には、Device Portal によって提供される SSL 証明書は、ルートのブラウザーまたは PC が信頼できない CA によって署名されています。 これは、新しい信頼されたルート CA を作成して修正できます。
+既定のセットアップの場合、信頼されていないルート CA が原因で、証明書警告がブラウザーに表示されることがあります。 具体的には、Device Portal によって提供される SSL 証明書は、ブラウザーまたは PC が信頼していないルート CA によって署名されています。 この問題は、新しい信頼されたルート CA を作成することで対処できます。
 
-## <a name="create-a-root-ca"></a>ルート CA を作成します。
+## <a name="create-a-root-ca"></a>ルート CA を作成する
 
-これにより、会社 (またはホーム) には、セットアップ、証明書のインフラストラクチャを持っていない場合にのみ実行され、1 回だけ実行する必要があります。 次の PowerShell スクリプトでは、ルート CA _WdpTestCA.cer_と呼ばれるを作成します。 ローカル コンピューターの信頼されたルート証明機関にこのファイルをインストールすると、このルート CA によって署名されている SSL 証明書を信頼するデバイスが発生します。 できます (および必要があります) をインストールする各 PC に Windows Device Portal に接続するのには、この .cer ファイル。  
+この処理は、会社 (または家庭) に証明書インフラストラクチャがセットアップされていない場合にのみ、1 回だけ実行してください。 次の PowerShell スクリプトでは、_WdpTestCA.cer_ というルート CA を作成します。 このファイルをローカル コンピューターの [信頼されたルート証明機関] にインストールすると、このルート CA で署名した SSL 証明書がデバイスによって信頼されるようになります。 この .cer ファイルは、Windows Device Portal に接続する予定のある各 PC にインストールできます (また、その必要があります)。  
 
 ```PowerShell
 $CN = "PickAName"
@@ -42,13 +42,13 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-これが作成されると、SSL 証明書の署名に_WdpTestCA.cer_ファイルを使用することができます。 
+_WdpTestCA.cer_ の作成後は、このファイルを使用して SSL 証明書に署名することができます。 
 
-## <a name="create-an-ssl-certificate-with-the-root-ca"></a>ルート CA と SSL 証明書を作成します。
+## <a name="create-an-ssl-certificate-with-the-root-ca"></a>ルート CA で SSL 証明書を作成する
 
-SSL 証明書がある 2 つの重要な機能: 安全な接続を暗号化を使用して、ブラウザーのバーに表示されるアドレスとの通信に実際にはの検証 (Bing.com、192.168.1.37 など) と悪意のあるサード パーティではありません。
+SSL 証明書には 2 つの重要な機能があります。1 つは、暗号化による接続の保護、もう 1 つは、悪意のあるサード パーティではなくブラウザー バーに表示されているアドレス (Bing.com、192.168.1.37 など) が実際の通信先であることの確認です。
 
-次の PowerShell スクリプトの SSL 証明書を作成する、`localhost`エンドポイントです。 Device Portal がリッスンする各エンドポイントには、独自の証明書が必要があります。置き換えることが、`$IssuedTo`お使いのデバイスのさまざまなエンドポイントのそれぞれで、スクリプト内の引数: ホスト名、ローカル ホスト、および IP アドレスします。
+次の PowerShell スクリプトでは、`localhost` エンドポイントの SSL 証明書を作成します。 Device Portal がリッスンする各エンドポイントには、それぞれの証明書が必要です。スクリプトの `$IssuedTo` 引数は、デバイスの各エンドポイント (ホスト名、ローカルホスト、IP アドレス) に置き換えることができます。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -64,26 +64,26 @@ $cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subj
 $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (ConvertTo-SecureString -String $Password -Force -AsPlainText)
 ```
 
-複数のデバイスがある場合、localhost .pfx ファイルを再利用することができますが、個別に各デバイスの IP アドレスやホスト名の証明書を作成する必要があります。
+複数のデバイスを使用している場合はローカルホストの .pfx ファイルを再利用できますが、これとは別に、各デバイスの IP アドレスとホスト名の証明書を作成する必要があります。
 
-.Pfx ファイルのバンドルが生成されると、Windows Device Portal に読み込む必要があります。 
+.pfx ファイルのバンドルが生成されたら、これらを Windows Device Portal に読み込む必要があります。 
 
-## <a name="provision-device-portal-with-the-certifications"></a>Device Portal の認定をプロビジョニング
+## <a name="provision-device-portal-with-the-certifications"></a>証明書で Device Portal のプロビジョニングを行う
 
-各 .pfx ファイルの作成したデバイスの場合、管理者特権のコマンド プロンプトから次のコマンドを実行する必要があります。
+デバイス用に作成した各 .pfx ファイルについて、管理者特権のコマンド プロンプトから、次のコマンドを実行する必要があります。
 
 ```
 WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
 ```
 
-使用例を以下をご覧ください。
+以下の使用例をご覧ください。
 ```
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 ```
 
-証明書をインストールした後、サービスを再起動するだけで、変更を反映するようにします。
+証明書をインストールしたら、変更を反映するためにサービスを再起動します。
 
 ```
 sc stop webmanagement
@@ -91,5 +91,5 @@ sc start webmanagement
 ```
 
 > [!TIP]
-> IP アドレスは、時間の経過と共に変更できます。
-多くのネットワークでは、DHCP を使用して、デバイスは、以前あったが同じ IP アドレスを取得常にしないように、IP アドレスを入力します。 場合は、デバイスの IP アドレス用の証明書を作成したら、デバイスのアドレスが変更されている Windows Device Portal は既存の自己署名証明書を使用して、新しい証明書を生成し、作成した 1 つの使用を停止します。 お使いのブラウザーにもう一度表示する証明書の警告ページになります。 このため、Device Portal で設定することができますが、ホスト名をデバイスへの接続をお勧めします。 IP アドレスに関係なく同じこれらが残ります。
+> IP アドレスは、時間の経過に伴って変わることがあります。
+多くのネットワークでは、各デバイスに常に以前と同じ IP アドレスが割り当てられることのないように、DHCP によって IP アドレスが提供されています。 デバイス上で IP アドレスに対して証明書を作成した場合、そのデバイスのアドレスが変わると、Windows Device Portal によって既存の自己署名証明書を使用して新しい証明書が生成され、元の証明書の使用が停止されます。 この場合は、ブラウザーに証明書の警告ページがもう一度表示されます。 このため、デバイスにはホスト名で接続することをお勧めします (Device Portal で設定できます)。 IP アドレスが変わっても、ホスト名に変わりはありません。

@@ -1,23 +1,23 @@
 ---
 title: UWP DirectX ゲームの入力待ち時間の最適化
-description: 入力待ち時間は、ゲームの操作性に大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。
+description: 入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 入力待ち時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 537dd6e9d3f300666a0692b66f422ce00dd68460
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934099"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601747"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
 
 
 
-入力待ち時間は、ゲームの操作性に大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な CoreDispatcher 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。
+入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。 また、適切な入力イベントの最適化によってバッテリー残量を節約できます。 適切な CoreDispatcher 入力イベント処理オプションを選択して、ゲームで入力ができる限り滑らかに処理されるようにする方法を説明します。
 
 ## <a name="input-latency"></a>入力待ち時間
 
@@ -60,7 +60,7 @@ DirectX ゲームのコンテンツがレンダリングされて画面に表示
 
 ここでは、単純なジグソー パズル ゲームで反復処理を行うことで、ゲーム ループの実装方法を上記のシナリオごとに説明します。 各実装で説明する決定ポイント、利点、妥協点は、アプリを最適化して入力待ち時間を短縮して電源効率を上げる際のガイドとなります。
 
-## <a name="scenario-1-render-on-demand"></a>シナリオ 1: オンデマンドでレンダリングする
+## <a name="scenario-1-render-on-demand"></a>シナリオ 1:オンデマンドのレンダリングします。
 
 
 ジグソー パズル ゲームの最初の反復処理では、ユーザーがパズルのピースを移動した場合にのみ画面を更新します。 ユーザーは、パズルのピースをドラッグして動かしたり、ピースを選んで適切な移動先をタッチすることではめ込む可能性があります。 2 番目のケースでは、パズルのピースはアニメーションやエフェクトなしで移動先にジャンプします。
@@ -91,7 +91,7 @@ void App::Run()
 }
 ```
 
-## <a name="scenario-2-render-on-demand-with-transient-animations"></a>シナリオ 2: 必要に応じてレンダリングし、一時的なアニメーションも表示する
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>例 2:オンデマンドで一時的なアニメーションをレンダリングします。
 
 
 2 番目の反復処理では、ユーザーがパズルのピースを選んでそのピースの適切な移動先をタッチする際、移動先に到達するまで画面にアニメーションが表示されるようにゲームが変更されます。
@@ -139,7 +139,7 @@ void App::Run()
 
 **ProcessOneAndAllPending** と **ProcessAllIfPresent** の切り替えをサポートするため、アプリは状態を追跡してアニメーション中かどうかを認識する必要があります。 ジグソー パズルのアプリでは、GameState クラスでのゲーム ループ中に呼び出すことができる新しいメソッドを追加することでこれを行います。 ゲーム ループのアニメーション ブランチは、GameState の新しい Update メソッドを呼び出してアニメーションの状態を更新します。
 
-## <a name="scenario-3-render-60-frames-per-second"></a>シナリオ 3: 1 秒あたり 60 フレームをレンダリングする
+## <a name="scenario-3-render-60-frames-per-second"></a>例 3:1 秒あたり 60 フレームをレンダリングします。
 
 
 3 番目の反復処理では、ユーザーがパズルに取り組んだ時間の長さを示すタイマーがアプリに表示されます。 ミリ秒まで経過時間が表示されるため、表示を最新の状態に維持するには 1 秒あたりの 60 フレームをレンダリングする必要があります。
@@ -177,7 +177,7 @@ void App::Run()
 
 ただし、簡単に開発できる代わりにコストが高くなります。 1 秒あたり 60 フレームのレンダリングには、必要に応じたレンダリングより多くの電力が使われます。 ゲームによりフレームごとに表示内容が変更される場合は、**ProcessAllIfPresent** を使うのが最適です。 さらに、**ProcessEvents** ではなくディスプレイの同期間隔でゲーム ループがブロックされるようになるため、入力待ち時間が最大 16.7 ミリ秒長くなります。 キューがフレームごとに 1 回しか処理されない (60 Hz) ため、一部の入力イベントが破棄される可能性があります。
 
-## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>シナリオ 4: 1 秒あたり 60 フレームをレンダリングし、入力待ち時間を最小限に抑える
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>シナリオ 4:1 秒あたり 60 フレームをレンダリングし、最下位の可能な入力の待機時間を実現
 
 
 ゲームによっては、シナリオ 3 で見られる入力待ち時間を無視するか、相殺することができます。 ただし、ゲームのエクスペリエンスとプレーヤー フィードバックの感覚にとって短い入力待ち時間が重要な場合、1 秒あたり 60 フレームをレンダリングするゲームは別個のスレッドで入力を処理する必要があります。
@@ -233,7 +233,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio2015 で**DirectX 11 および XAML アプリ (ユニバーサル Windows)** テンプレートでは、ゲーム ループを同様の方法で複数のスレッドに分割します。 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
+**DirectX 11 および XAML アプリ (ユニバーサル Windows)** Microsoft Visual Studio 2015 でのテンプレートが同様の方法で複数のスレッドにゲーム ループを分割します。 [  **Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) オブジェクトを使って、入力処理専用のスレッドが開始され、XAML UI スレッドとは独立したレンダリング スレッドも作成されます。 これらのテンプレートについて詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>入力待ち時間を短縮する他の方法
 
@@ -246,13 +246,13 @@ DirectX ゲームは、画面上に見える内容を更新することでユー
 
 ![図 1 Directx における入力待ち時間 ](images/input-latency1.png)
 
-Windows8.1、DXGI にスワップ チェーンのアプリを簡単にキュー空のままにするためにヒューリスティックを実装することがなくこの待機時間を減らすことができますが、 **dxgi \_swap\_chain\_flag\_frame\_latency\_waitable\_object**フラグが導入されました。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
+Windows 8.1、DXGI 導入、 **DXGI\_スワップ\_チェーン\_フラグ\_フレーム\_待機時間\_WAITABLE\_オブジェクト**スワップのフラグチェーンは、アプリを簡単に存在するキュー空のままにするためのヒューリスティックを実装する必要がないこの待機時間を短縮します。 このフラグによって作成されたスワップ チェーンは、waitable スワップ チェーンと呼ばれます。 図 2 は、waitable スワップ チェーンを使った場合のおおよそのライフサイクルと入力イベントに対する応答を示しています。
 
 図 2
 
 ![図 2 Directx waitable における入力待ち時間](images/input-latency2.png)
 
-これらの図からわかるのは、ディスプレイの更新速度により決まる 16.7 ミリ秒という割り当て時間内にゲームが各フレームをレンダリングして表示できる場合、2 つのフル フレームによって入力待ち時間を短縮できる可能性があるということです。 ジグソー パズルのサンプルでは、waitable スワップ チェーンを使い、 を呼び出して現在のキューの制限を制御します。` m_deviceResources->SetMaximumFrameLatency(1);`
+これらの図からわかるのは、ディスプレイの更新速度により決まる 16.7 ミリ秒という割り当て時間内にゲームが各フレームをレンダリングして表示できる場合、2 つのフル フレームによって入力待ち時間を短縮できる可能性があるということです。 ジグソー パズルのサンプルでは、waitable スワップ チェーンを使い、` m_deviceResources->SetMaximumFrameLatency(1);` を呼び出して現在のキューの制限を制御します。
 
  
 

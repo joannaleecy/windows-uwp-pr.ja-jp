@@ -1,5 +1,5 @@
 ---
-Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
+Description: アプリを設計する双方向のテキストのサポート (BiDi) を提供して、左から右 (LTR) と右から左 (RTL) には、通常のアルファベットのさまざまな種類のシステムを記述からスクリプトを組み合わせることができます。
 title: 双方向テキストに対応したアプリを設計する
 template: detail.hbs
 ms.date: 11/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ, RTL, LTR
 ms.localizationpriority: medium
 ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641127"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>双方向テキストに対応したアプリを設計する
 
@@ -42,8 +42,8 @@ Windows は、4 つの BiDi 対応の設計要素をサポートしています�
 
 Windows では文字体裁グリッドの方向が右から左の順序になるように調整します。つまり、グリッド上の最初のタイルは右上隅に配置され、最後のタイルは左下隅に配置されます。 これは、本や雑誌などの刊行物の RTL パターンに一致します。読み取りパターンは常に右上隅から始まり、左に向かって進んでいくことになります。
 
-![BiDi スタート メニュー](images/56283_BIDI_01_startscreen_resized.png)
-![チャーム付き BiDi スタート メニュー](images/56283_BIDI_02_startscreen_charm_resized.png)
+![[スタート] メニューの BiDi](images/56283_BIDI_01_startscreen_resized.png)
+![BiDi チャームに [スタート] メニュー](images/56283_BIDI_02_startscreen_charm_resized.png)
 
 一貫性のある UI のフローを維持するために、タイルのコンテンツは常に右から左のレイアウトが保持されます。つまり、アプリの UI 言語に関係なく、アプリ名とロゴはタイルの右下隅に配置されます。
 
@@ -65,11 +65,11 @@ Windows では文字体裁グリッドの方向が右から左の順序になる
 
 Windows UI のすべての要素は、RTL の読み取り方向に適合します。 チャームとポップアップは画面の左端に配置されているため、検索結果に重ならず、快適なタッチ操作の邪魔になることもありません。 親指で簡単に操作できます。
 
-![BiDi のスクリーンショット](images/56286_BIDI_05_search_flyout_resized.png)
-![BiDi のスクリーンショット](images/56286_BIDI_06_print_flyout_resized.png)
+![双方向のスクリーン ショット](images/56286_BIDI_05_search_flyout_resized.png)
+![双方向のスクリーン ショット](images/56286_BIDI_06_print_flyout_resized.png)
 
-![BiDi のスクリーンショット](images/56286_BIDI_07_settings_flyout_resized.png)
-![BiDi のスクリーンショット](images/56286_BIDI_08_app_bars_resized.png)
+![双方向のスクリーン ショット](images/56286_BIDI_07_settings_flyout_resized.png)
+![双方向のスクリーン ショット](images/56286_BIDI_08_app_bars_resized.png)
 
 ### <a name="text-input-in-any-direction"></a>任意の方向へのテキスト入力
 
@@ -99,10 +99,10 @@ BiDi Parenthesis Algorithm (BPA) を導入すると、言語やテキスト配�
 
 Windows では、Segoe UI フォントを使ってすべての BiDi 言語に対応しています。 このフォントは、Windows UI に応じた外観と大きさになっています。
 
-![BiDi 言語用の Segoe UI フォント](images/56290_BIDI_13_start_screen_segoe.png)
-![BiDi 言語用の Segoe UI フォント](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![双方向言語の Segoe UI フォント](images/56290_BIDI_13_start_screen_segoe.png)
+![双方向言語の Segoe UI フォント](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
-## <a name="case-study-1-a-bidi-music-app"></a>ケース スタディ #1: BiDi 対応のミュージック アプリ
+## <a name="case-study-1-a-bidi-music-app"></a>ケース スタディ 1:双方向のミュージック アプリ
 
 ### <a name="overview"></a>概要
 
@@ -182,7 +182,7 @@ string NormalizeTextDirection(string data)
 
 追加される Unicode 文字は幅が 0 であるため、文字列の間隔に影響を与えることはありません。 文字列の方向の検出は、ニュートラル以外の文字が検出されるまで文字列全体を対象に続ける必要があるため、このコードによってパフォーマンスの低下を招く可能性があります。 また、ニュートラル文字であるかどうかの確認対象となるそれぞれの文字については、最初に複数の Unicode の範囲との照合も行われるため、これは単純なチェックではありません。
 
-## <a name="case-study-2-a-bidi-mail-app"></a>ケース スタディ #2: BiDi 対応のメール アプリ
+## <a name="case-study-2-a-bidi-mail-app"></a>ケース スタディ 2:双方向のメール アプリ
 
 ### <a name="overview"></a>概要
 

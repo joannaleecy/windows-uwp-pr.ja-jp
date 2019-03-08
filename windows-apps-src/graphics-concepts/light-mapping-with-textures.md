@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944678"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660027"
 ---
 # <a name="light-mapping-with-textures"></a>テクスチャでのライト マッピング
 
 
-ライト マップは、3D シーンの照明に関する情報が含まれるテクスチャまたはテクスチャのグループです。 ライト マップは、ライトおよびシャドウの領域をプリミティブにマップします。 マルチパスおよび複数テクスチャ ブレンドにより、アプリケーションがシェーディング手法より現実的な外観によってシーンをレンダリングできるようになります。
+ライト マップは、3D シーン内の照明に関する情報を含むテクスチャまたはテクスチャのグループです。 ライト マップは、ライトおよびシャドウの領域をプリミティブにマップします。 マルチパスおよび複数テクスチャ ブレンドにより、アプリケーションがシェーディング手法より現実的な外観によってシーンをレンダリングできるようになります。
 
 アプリケーションが 3D シーンを現実的にレンダリングするには、光源がシーンの外観に与える効果を考慮に入れる必要があります。 フラットおよびグロー シェーディングなどの手法は、この点においては貴重なツールですが、ニーズを満たすのには不十分な可能性があります。 Direct3D は、マルチパスおよび複数テクスチャ ブレンドをサポートします。 これらの機能により、アプリケーションがシェーディング手法だけを使ってレンダリングされたシーンより現実的な外観によってシーンをレンダリングできるようになります。 1 つ以上のライト マップを適用することにより、アプリケーションは光と影の領域をそのプリミティブにマップできます。
 
@@ -47,19 +47,19 @@ Direct3D のテクスチャ ブレンドを使ってライト マップを実行
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="monochrome-light-maps.md">モノクロ ライト マップ</a></p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">モノクロのライトをマップします。</a></p></td>
 <td align="left"><p>モノクロ ライト マップを使うと、古い 3D アクセラレータ ボードが宛先ピクセルのアルファ値を使ったテクスチャ ブレンドをサポートしていない場合に、古いアダプターでもマルチパス テクスチャ ブレンドを実行できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="color-light-maps.md">カラー ライト マップ</a></p></td>
+<td align="left"><p><a href="color-light-maps.md">ライトのマップの色</a></p></td>
 <td align="left"><p>色の付いたライト マップは、そのライト情報にライト マップの RGB データを使用します。 アプリケーションは通常、カラー ライト マップを使う場合の方が現実的に 3D シーンをレンダリングします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-light-maps.md">反射ライト マップ</a></p></td>
+<td align="left"><p><a href="specular-light-maps.md">スペキュラ ライトをマップします。</a></p></td>
 <td align="left"><p>光源から照射されると、反射率の高いマテリアルを使用している光沢のあるオブジェクトには反射光が適用されます。 照明モジュールによって生成された鏡面ハイライトを使用するのではなく、反射ライト マップをプリミティブに適用した方が、より正確なハイライトが得られる場合があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="diffuse-light-maps.md">拡散ライト マップ</a></p></td>
+<td align="left"><p><a href="diffuse-light-maps.md">ディフューズ ライトをマップします。</a></p></td>
 <td align="left"><p>マット サーフェスには、拡散光の反射があります。 拡散光の明るさは、光源からの距離と、サーフェスの法線および光源方向ベクトルの角度によって決まります。 テクスチャ ライト マップは、複雑な拡散光をシミュレートできます。</p></td>
 </tr>
 </tbody>

@@ -4,14 +4,14 @@ description: Xbox Live SDK の新規事項 - September 2015
 ms.assetid: 84b82fde-f6f3-4dc2-b2df-c7c7313a2cc3
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c618a738dc2670d3d3de1fa2f4c4108c24130eb0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945498"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602277"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---september-2015"></a>Xbox Live SDK の新規事項 - September 2015
 
@@ -39,7 +39,7 @@ Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual St
 
 ## <a name="logging"></a>ログ記録
 * service_call_logging_config in xbox::services::experimental
-* 起動し、本体で xbTrace.exe を通じてトレースを停止して、theservice_call_logging_config クラスで register_for_protocol_activation を呼び出すがあります。  この呼び出しは、ゲームの初期化中に 1 回行います。
+* 開始し、コンソールで xbTrace.exe を使用してトレースを停止を service_call_logging_config クラス register_for_protocol_activation を呼び出す必要があります。  この呼び出しは、ゲームの初期化中に 1 回行います。
 
 ## <a name="resync-for-rta"></a>RTA の再同期
 * ユーザー情報が古い可能性があると RTA サービスが判断した場合、再同期が行われることがあります。

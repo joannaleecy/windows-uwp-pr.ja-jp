@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932825"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660867"
 ---
 # <a name="rasterization-rules"></a>ラスター化ルール
 
@@ -21,7 +21,7 @@ ms.locfileid: "8932825"
 
 マップするプリミティブ タイプや、エイリアスを減らすためにデータでマルチサンプリングが使用されているかどうかに応じて、さまざまな種類のルールがあります。 次の図は、コーナーの処理方法を示したものです。
 
-## <a name="span-idtrianglespanspan-idtrianglespanspan-idtrianglespantriangle-rasterization-rules-without-multisampling"></a><span id="Triangle"></span><span id="triangle"></span><span id="TRIANGLE"></span>三角形のラスター化ルール (マルチサンプリングなし)
+## <a name="span-idtrianglespanspan-idtrianglespanspan-idtrianglespantriangle-rasterization-rules-without-multisampling"></a><span id="Triangle"></span><span id="triangle"></span><span id="TRIANGLE"></span>マルチ サンプリング) (なしの三角形のラスタライズ ルール
 
 
 三角形の内部にあるピクセルの中心はすべて描画されます。左上ルールに適合すると、ピクセルは内部にあると見なされます。 左上ルールでは、ピクセルの中心が三角形の上のエッジまたは左のエッジにある場合に、三角形の内部にあると定義されます。
@@ -39,7 +39,7 @@ ms.locfileid: "8932825"
 
 薄い灰色と濃い灰色はピクセルのグループです。ピクセルがどの三角形の内部にあるのかを示しています。
 
-## <a name="span-idline1spanspan-idline1spanspan-idline1spanline-rasterization-rules-aliased-without-multisampling"></a><span id="Line_1"></span><span id="line_1"></span><span id="LINE_1"></span>線のラスター化ルール (エイリアス、マルチサンプリングなし)
+## <a name="span-idline1spanspan-idline1spanspan-idline1spanline-rasterization-rules-aliased-without-multisampling"></a><span id="Line_1"></span><span id="line_1"></span><span id="LINE_1"></span>線のラスター化ルール (別名、マルチ サンプリングなし)
 
 
 線のラスター化ルールでは、ひし形テスト領域を使用して、線がピクセルをカバーするかどうかを決定します。 x メジャー ライン (-1 &lt;= 勾配&lt;= +1 の線) の場合、ひし形テスト領域には、左下のエッジ、右下のエッジ、および下隅 (実線で表示) が含まれます。左上のエッジ、右上のエッジ、上隅、左隅、および右隅 (破線で表示) は除外されます。 y メジャー ラインは、x メジャー ライン以外の線です。ひし形テスト領域は x メジャー ラインについて説明したとおりですが、右隅も含まれる点が異なります。
@@ -50,7 +50,7 @@ ms.locfileid: "8932825"
 
 ![エイリアスが適用された線のラスター化の例](images/d3d10-rasterrulesline.png)
 
-## <a name="span-idline2spanspan-idline2spanspan-idline2spanline-rasterization-rules-antialiased-without-multisampling"></a><span id="Line_2"></span><span id="line_2"></span><span id="LINE_2"></span>線のラスター化ルール (アンチエイリアス、マルチサンプリングなし)
+## <a name="span-idline2spanspan-idline2spanspan-idline2spanline-rasterization-rules-antialiased-without-multisampling"></a><span id="Line_2"></span><span id="line_2"></span><span id="LINE_2"></span>線のラスター化ルール (なしのマルチ サンプリング アンチエイリアシング)
 
 
 アンチエイリアスが適用された線は、矩形 (幅 = 1) のようにラスター化されます。 矩形は、ピクセル シェーダー出力のアルファ成分に乗算されるピクセル単位のカバレッジ値を生成するレンダー ターゲットと交差します。 マルチサンプリング レンダー ターゲットに線を描画する場合、アンチエイリアシングは実行されません。
@@ -67,7 +67,7 @@ ms.locfileid: "8932825"
 
 srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
-## <a name="span-idpointspanspan-idpointspanspan-idpointspanpoint-rasterization-rules-without-multisampling"></a><span id="Point"></span><span id="point"></span><span id="POINT"></span>点のラスター化ルール (マルチサンプリングなし)
+## <a name="span-idpointspanspan-idpointspanspan-idpointspanpoint-rasterization-rules-without-multisampling"></a><span id="Point"></span><span id="point"></span><span id="POINT"></span>マルチ サンプリング) (なし、ポイント ラスター規則
 
 
 点は、三角形のラスター化ルールを使用する Z パターンの 2 つの三角形で構成されているものとして解釈されます。 座標は、1 つのピクセル幅の正方形の中心を示します。 点のカリングはありません。
@@ -76,7 +76,7 @@ srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
 ![点のラスター化の例](images/d3d10-rasterrulespoint.png)
 
-## <a name="span-idmultisamplespanspan-idmultisamplespanspan-idmultisamplespanmultisample-anti-aliasing-rasterization-rules"></a><span id="Multisample"></span><span id="multisample"></span><span id="MULTISAMPLE"></span>マルチサンプル アンチエイリアシングのラスター化ルール
+## <a name="span-idmultisamplespanspan-idmultisamplespanspan-idmultisamplespanmultisample-anti-aliasing-rasterization-rules"></a><span id="Multisample"></span><span id="multisample"></span><span id="MULTISAMPLE"></span>マルチ サンプリング アンチエイリアシング ラスタライズ ルール
 
 
 マルチサンプル アンチエイリアシング (MSAA) は、複数のサブサンプリング位置でピクセルのカバレッジおよび深度/ステンシル テストを使用してジオメトリのエイリアスを低減します。 パフォーマンスを向上させるために、カバーされたサブピクセル間でシェーダー出力を共有することで、カバーされたピクセルごとに 1 回ずつピクセル単位の計算が実行されます。 マルチサンプル アンチエイリアシングでは、サーフェスのエイリアスは低減されません。 サンプリング位置や再構築関数は、ハードウェアの実装によって異なります。
@@ -99,16 +99,16 @@ srcColor \* srcAlpha + destColor \* (1-srcAlpha)
 
 マルチサンプリング フォーマットは、「[Load](https://msdn.microsoft.com/library/windows/desktop/bb509694)」を使用してシェーダーに読み戻すことができるレンダー ターゲットで使用することができます。これは、シェーダーがアクセスする個々のサンプルには解決が不要なためです。 深度フォーマットは、マルチサンプル リソースではサポートされていないため、レンダー ターゲットのみに制限されます。
 
-型なしフォーマットではマルチサンプリングがサポートされており、リソース ビューで異なる方法でデータを解釈できます。 たとえば、R8G8B8A8\_TYPELESS を使用してマルチサンプル リソースを作成し、レンダー ターゲット ビュー リソースを使用して R8G8B8A8\_UINT フォーマットでマルチサンプル リソースにレンダリングして、R8G8B8A8\_UNORM データ フォーマットで内容を別のリソースに解決することができます。
+型なしフォーマットではマルチサンプリングがサポートされており、リソース ビューで異なる方法でデータを解釈できます。 マルチ サンプリングを R8G8B8A8 を使用してリソースを作成する、\_TYPELESS、R8G8B8A8 のレンダー ターゲット ビュー リソースを使用してレンダリング\_UINT、書式を設定し、R8G8B8A8 で別のリソースへの内容を解決する\_UNORM データ形式。
 
-### <a name="span-idhardwaresupportspanspan-idhardwaresupportspanspan-idhardwaresupportspanhardware-support"></a><span id="Hardware_Support"></span><span id="hardware_support"></span><span id="HARDWARE_SUPPORT"></span>ハードウェア サポート
+### <a name="span-idhardwaresupportspanspan-idhardwaresupportspanspan-idhardwaresupportspanhardware-support"></a><span id="Hardware_Support"></span><span id="hardware_support"></span><span id="HARDWARE_SUPPORT"></span>ハードウェアのサポート
 
 API は、品質レベルの数によってマルチサンプリングのハードウェア サポートをレポートします。 たとえば、品質レベルが 0 の場合、ハードウェアにおいて (特定のフォーマットおよび品質レベルで) マルチサンプリングがサポートされていないことを意味します。 品質レベルが 3 の場合は、ハードウェアで 3 つの異なるサンプル レイアウトや解決アルゴリズムがサポートされていることを意味します。 次のように仮定することもできます。
 
 -   マルチサンプリングをサポートするフォーマットは、同じファミリー内のすべてのフォーマットについて同じ数の品質レベルをサポートします。
--   マルチサンプリングをサポートし、\_UNORM、\_SRGB、\_SNORM、または \_FLOAT フォーマットがあるフォーマットはすべて、解決もサポートします。
+-   マルチ サンプリングをサポートしていますが、すべての形式、 \_UNORM、 \_SRGB、 \_SNORM または\_FLOAT 形式も解決をサポートしています。
 
-### <a name="span-idcentroidsamplingspanspan-idcentroidsamplingspanspan-idcentroidsamplingspancentroid-sampling-of-attributes-when-multisample-antialiasing"></a><span id="Centroid_Sampling"></span><span id="centroid_sampling"></span><span id="CENTROID_SAMPLING"></span>マルチサンプル アンチエイリアシング時の属性の重心サンプリング
+### <a name="span-idcentroidsamplingspanspan-idcentroidsamplingspanspan-idcentroidsamplingspancentroid-sampling-of-attributes-when-multisample-antialiasing"></a><span id="Centroid_Sampling"></span><span id="centroid_sampling"></span><span id="CENTROID_SAMPLING"></span>マルチ サンプリング時に属性の重心サンプリング アンチエイリアシング
 
 既定では、頂点属性は、マルチサンプル アンチエイリアシング時にピクセルの中心に補間されます。ピクセルの中心がカバーされていない場合、属性はピクセルの中心に対して補外されます。 (ピクセルが完全にはカバーされていないと仮定すると) 重心セマンティクスを含むピクセル シェーダー入力は、ピクセルのカバーされている領域内のいずれかの場所、おそらく、カバーされたサンプリング位置のいずれかでサンプリングされます。 サンプル マスク (ラスタライザー ステートで指定) は、重心計算の前に適用されます。 そのため、マスク アウトされたサンプルは重心位置として使用されません。
 
@@ -117,7 +117,7 @@ API は、品質レベルの数によってマルチサンプリングのハー�
 -   サンプル マスクは、すべてのサンプルに指定可能です。 ピクセルがカバーされている場合、またはいずれのサンプルもカバーされていない場合は、ピクセルの中心を使用します。 それ以外の場合は、カバーされている最初のサンプルが選択され、ピクセルの中心から始まって外側に移動していきます。
 -   サンプル マスクは、1 つを除くすべてのサンプルをオフにします (一般的なシナリオ)。 アプリケーションでは、1 ビットのサンプル マスク値を順番に繰り返し、重心サンプリングを使用してサンプルごとにシーンを再レンダリングすることで、マルチパス スーパーサンプリングを実装できます。 このためには、より詳細なテクスチャー ミップを適切に選択して、より高いテクスチャー サンプリング密度を実現できるように、アプリケーションで微分を調整することが必要です。
 
-### <a name="span-idderivativecalculationsspanspan-idderivativecalculationsspanspan-idderivativecalculationsspanderivative-calculations-when-multisampling"></a><span id="Derivative_Calculations"></span><span id="derivative_calculations"></span><span id="DERIVATIVE_CALCULATIONS"></span>マルチサンプリング時の微分計算
+### <a name="span-idderivativecalculationsspanspan-idderivativecalculationsspanspan-idderivativecalculationsspanderivative-calculations-when-multisampling"></a><span id="Derivative_Calculations"></span><span id="derivative_calculations"></span><span id="DERIVATIVE_CALCULATIONS"></span>マルチ サンプリングの場合、派生の計算
 
 ピクセル シェーダーは、微分計算 (隣接したピクセルのデータ間のデルタを取得して計算する) をサポートするために、常に 2x2 以上のピクセル領域を使用して実行されます (各ピクセル内のデータが、水平方向または垂直方向に単位間隔でサンプリングされていると仮定します)。 これは、マルチサンプリングに影響されることはありません。
 
@@ -130,7 +130,7 @@ API は、品質レベルの数によってマルチサンプリングのハー�
 
 [付録](appendix.md)
 
-[ラスタライザー (RS) ステージ](rasterizer-stage--rs-.md)
+[ラスタライザー (RS) のステージ](rasterizer-stage--rs-.md)
 
  
 

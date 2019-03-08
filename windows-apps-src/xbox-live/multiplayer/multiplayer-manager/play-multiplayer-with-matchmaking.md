@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, SmartMatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c0ba897f23eb690c3044b00cdb4ce3bea975e71
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933342"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655957"
 ---
 # <a name="find-a-multiplayer-game-by-using-smartmatch"></a>SmartMatch を使用してマルチプレイヤー ゲームを検索する
 
@@ -23,21 +23,21 @@ ms.locfileid: "8933342"
 
 Multiplayer Manager を使用してユーザーのフレンドに招待を送信し、そのフレンドがゲームに途中参加するときの処理は 4 つのステップからなります。
 
-1. [Multiplayer Manager を初期化する](#initialize-multiplayer-manager)
-2. [ローカル ユーザーを追加することでロビー セッションを作成する](#create-lobby)
-3. [フレンドに招待を送信する](#send-invites)
+1. [マルチ プレーヤーのマネージャーを初期化します。](#initialize-multiplayer-manager)
+2. [ローカル ユーザーを追加することで、ロビー セッションを作成します。](#create-lobby)
+3. [友人を招待を送信します。](#send-invites)
 4. [招待を受け入れる](#accept-invites)
-5. [マッチを探す](#find-match)
+5. [一致を見つける](#find-match)
 
 手順 1、2、3、5 は、招待を実行したデバイス上で行います。  手順 4 は通常、プロトコルのアクティブ化によるアプリ起動の後、招待されたユーザーのマシンで開始されます。
 
-プロセスのフローチャートについては、「[フローチャート - SmartMatch マッチメイキングを使用してマルチプレイヤー ゲームをプレイする](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)」を参照してください。
+ここで、プロセスのフローチャートを確認できます。[フローチャート - SmartMatch マッチメイ キングを使用して、マルチプレイヤー ゲームをプレイ](mpm-flowcharts/mpm-play-with-smartmatch-matchmaking.md)します。
 
 ### <a name="1-initialize-multiplayer-manager-a-nameinitialize-multiplayer-manager"></a>1) Multiplayer Manager を初期化する <a name="initialize-multiplayer-manager">
 
 | 呼び出し | トリガーされるイベント |
 |-----|----------------|
-| `multiplayer_manager::initialize(lobbySessionTemplateName)` | 該当なし |
+| `multiplayer_manager::initialize(lobbySessionTemplateName)` | なし |
 
 (サービス構成で構成される) 有効なセッション テンプレート名が指定されていることを前提に、Multiplayer Manager の初期化時にロビー セッション オブジェクトが自動的に作成されます。 このとき、サービスでロビー セッション インスタンスが作成されるわけではないことに注意してください。
 
@@ -64,7 +64,7 @@ mpInstance->initialize(lobbySessionTemplateName);
 
 ローカルにサインインしたすべてのユーザーに対して、このプロセスを繰り返す必要があります。
 
-**例: (1 人のローカル ユーザー)**
+**例: (1 つのローカル ユーザー)**
 
 ```cpp
 auto mpInstance = multiplayer_manager::get_singleton_instance();
@@ -115,7 +115,7 @@ for (User^ user : User::Users)
 変更は次回の `do_work()` 呼び出しでバッチ処理されます。  
 Multiplayer Manager は、ユーザーがロビー セッションに追加されるたびに `user_added` イベントを生成します。 イベントのエラー コードを調べて、そのユーザーが正常に追加されたかどうかを確認することをお勧めします。 障害が発生した場合は、障害の詳細な理由がエラー メッセージで提供されます。
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * リアルタイム アクティビティおよびマルチプレイヤーのサブスクリプションを Xbox Live マルチプレイヤー サービスに登録する
 * ロビー セッションを作成する
@@ -146,7 +146,7 @@ if (result.err())
 }
 ```
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * Xbox ストックのタイトルが呼び出せる UI (TCUI) を表示する
 * 選択されたプレイヤーに直接、招待を送信する
@@ -182,7 +182,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 
 エラー/成功は `join_lobby_completed` イベントを介して処理されます。
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * RTA およびマルチプレイヤーのサブスクリプションを登録する
 * ロビー セッションに参加する
@@ -216,7 +216,7 @@ if (result.err())
 }
 ```
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * マッチ チケットを作成する
 * すべての QoS ステージを処理する

@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b29a0bc796712d7b7c44a1fe8512f99bf09eb4fc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649527"
 ---
 # <a name="post-usersxuidxuiddevicescurrenttitlescurrent"></a>POST (/users/xuid({xuid})/devices/current/titles/current)
-ユーザーのプレゼンスでは、タイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+ユーザーのプレゼンスとタイトルを更新します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EEB)
-  * [Authorization](#ID4EPB)
+  * [承認](#ID4EPB)
   * [必要な要求ヘッダー](#ID4ENE)
-  * [オプションの要求ヘッダー](#ID4ERG)
+  * [省略可能な要求ヘッダー](#ID4ERG)
   * [要求本文](#ID4ERH)
   * [応答本文](#ID4EKAAC)
  
@@ -30,65 +30,65 @@ ms.locfileid: "8925974"
  
 ## <a name="remarks"></a>注釈
  
-この URI は、追加およびプレゼンス、リッチ プレゼンス、およびタイトルのメディアのプレゼンス データを更新するコンソール以外のプラットフォームですべてのタイトルで使用できます。
+この URI は、追加およびプレゼンス、機能豊富なプレゼンス、およびタイトルのメディアの状態データを更新するコンソール以外のプラットフォームでのすべてのタイトルで使用できます。
  
-**SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。
+**SandboxId**今すぐ、XToken 内の要求から取得され、適用します。 場合、 **SandboxId**エンターテイメント検出サービス (EDS) は 400 Bad request エラーをスローしが存在しません。
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) の対象ユーザーです。| 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-| 型| 必須かどうか| 説明| 不足している場合、応答| 
+| 種類| 必須| 説明| 不足している場合の応答| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| はい| 呼び出し元の Xbox ユーザー ID (XUID)| 403 Forbidden| 
-| titleId| はい| タイトルの titleId| 403 Forbidden| 
-| deviceId| Windows と Web 以外のすべての [はい] します。| 呼び出し元の deviceId| 403 Forbidden| 
-| deviceType| Web 以外のすべての [はい]| 呼び出し元の deviceType| 403 Forbidden| 
-| sandboxId| 呼び出しの [はい] | 呼び出し元のサンド ボックス| 403 Forbidden| 
+| XUID| 〇| 呼び出し元の Xbox ユーザー ID (XUID)| 403 許可されていません| 
+| titleId| 〇| タイトルのタイトルの Id| 403 許可されていません| 
+| deviceId| Windows と Web 以外のすべての場合ははい| 呼び出し元の deviceId| 403 許可されていません| 
+| deviceType| Web 以外のすべての場合ははい| 呼び出し元の deviceType| 403 許可されていません| 
+| sandboxId| 呼び出しの場合ははい | 呼び出し元のサンド ボックス| 403 許可されていません| 
   
 <a id="ID4ENE"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
-| Content-Type| string| 値の例の要求の本文の mime タイプ: アプリケーション/json します。| 
-| Content-Length| string| 要求の本文の長さ。 値の例: 312 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。| 
+| x-xbl-contract-version| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 値の例:3、vnext。| 
+| Content-Type| string| 要求の値の例の本文の mime の種類: アプリケーション/json します。| 
+| Content-Length| string| 要求の本文の長さ。 値の例:312.| 
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。| 
   
 <a id="ID4ERG"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 ［既定値］:1. | 
   
 <a id="ID4ERH"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、 [TitleRequest](../../json/json-titlerequest.md)です。 本体で実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではないが、上に存在するサーバーは変更されません。
+要求オブジェクトが、 [TitleRequest](../../json/json-titlerequest.md)します。 本文に実際に存在するプロパティのみが更新されます。 任意のプロパティは、本文の一部ではありませんが上に存在するサーバーは変更されません。
  
 <a id="ID4EAAAC"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -106,9 +106,9 @@ ms.locfileid: "8925974"
  
 ## <a name="response-body"></a>応答本文
  
-成功した場合、発生 200 または 201 Created の HTTP ステータス コードが返されますで適切なします。
+成功した場合の場合は、200 または 201 作成済みの HTTP ステータス コードは、に応じて、返されたは。
  
-エラー (4 xx の HTTP または 5 xx) の場合は、適切なエラー情報は、応答本文で返されます。
+エラー (HTTP 4 xx または 5 xx) の場合は、適切なエラー情報は、応答本文で返されます。
   
 <a id="ID4EVAAC"></a>
 
@@ -128,8 +128,8 @@ ms.locfileid: "8925974"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[マーケットプレース URI](../marketplace/atoc-reference-marketplace.md)
+[Marketplace の Uri](../marketplace/atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

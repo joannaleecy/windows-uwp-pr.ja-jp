@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7689f8b43cffad3bb7dd0acdcb8b525cada0bf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939104"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628197"
 ---
 # <a name="gameclipuritype-enumeration"></a>GameClipUriType 列挙型
-GameClipUriType 列挙型をについて説明します。 
+GameClipUriType 列挙体をについて説明します。 
 <a id="ID4ET"></a>
 
  
@@ -23,9 +23,9 @@ GameClipUriType 列挙型をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| URI の種類のゲーム クリップが不明または設定されていません。| 
-| 翻訳元| ゲーム クリップ URI は、未処理の形式での元のゲーム クリップの場所です。| 
-| ダウンロード| ゲーム クリップ URI は、ダウンロード可能なクリップの場所です。| 
-| SmoothStreaming| ゲーム クリップ URI は、IIS スムーズ ストリーミング URL (マニフェスト ポインター) です。| 
-| Ahls| ゲーム クリップの URL には、Http Live Apple ストリーミング URL です。| 
+| なし| ゲームのクリップ URI の種類が不明または、設定されていません。| 
+| 翻訳元| ゲームのクリップの URI は、未処理の形式で、元のゲームのクリップの場所です。| 
+| ダウンロード| ゲームのクリップ URI では、ダウンロード可能なクリップの場所です。| 
+| SmoothStreaming| ゲームのクリップの URI は、IIS Smooth Streaming URL (マニフェストのポインターです)。| 
+| Ahls| ゲームのクリップの URL は、Apple Http ライブ ストリーミングの URL です。| 
   

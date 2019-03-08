@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: caeedd11d18474721f291e14f5db1697cf650db7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941944"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599847"
 ---
 # <a name="get-started-developing-an-xbox-live-creators-program-title-with-the-unity-game-engine"></a>Unity ゲーム エンジンを使用して、Xbox Live クリエーターズ プログラムのタイトルの開発を開始する
 
@@ -19,24 +19,24 @@ ms.locfileid: "8941944"
 
 ## <a name="knowledge"></a>ナレッジ
 
-[Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト用に公開する](create-and-test-a-new-creators-title.md)
+[作成してテスト Xbox Live Creators プログラム タイトルの発行](create-and-test-a-new-creators-title.md)
 
-[Unity で Xbox Live を構成する](configure-xbox-live-in-unity.md)
+[構成の Xbox Live Unity で](configure-xbox-live-in-unity.md)
 
-[Xbox Live アカウントを承認する](authorize-xbox-live-accounts.md)
+[Xbox Live アカウントを承認します。](authorize-xbox-live-accounts.md)
 
 [Unity で Xbox Live にサインインする](unity-prefabs-and-sign-in.md) 1804 以前の Unity プラグイン リリース
 
 [PlayerAuthentication プレハブを使用してサインインする](playerauthentication-prefab-sign-in.md) 1804 以降の Unity プラグイン リリース
 
-[SignInManager を使用してサインインする](sign-in-manager.md)
+[SignInManager サインイン](sign-in-manager.md)
 
-[Unity プロジェクトにプレイヤーの統計とランキングを追加する](add-stats-and-leaderboards-in-unity.md)
+[プレイヤーの統計およびスコアボードを Unity プロジェクトに追加します。](add-stats-and-leaderboards-in-unity.md)
 
-[ランキングのサンプル シーン](setup-leaderboard-example-scene.md)
+[ランキング例シーン](setup-leaderboard-example-scene.md)
 
-[ランキングのスクリプト作成](unity-leaderboard-from-scratch.md)
+[スクリプトのランキング](unity-leaderboard-from-scratch.md)
 
-[マルチユーザー サポートを Unity プロジェクトに追加する](add-multi-user-support.md)
+[マルチ ユーザー サポートを Unity プロジェクトに追加します。](add-multi-user-support.md)
 
-[コントローラー サポートを Xbox Live プレハブに追加する](add-controller-support-to-xbox-live-prefabs.md)
+[Xbox Live のプレハブをコント ローラーのサポートを追加します。](add-controller-support-to-xbox-live-prefabs.md)

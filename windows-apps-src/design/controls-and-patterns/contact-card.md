@@ -1,26 +1,26 @@
 ---
-Description: A button gives the user a way to trigger an immediate action.
+Description: ボタンは、特定の操作を直ちに実行する手段をユーザーに提供します。
 title: 連絡先カード
 ms.date: 03/07/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117602"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638827"
 ---
 # <a name="contact-card"></a>連絡先カード
 
 連絡先カードには、[Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) の名前、電話番号、住所などの連絡先情報が表示されます (個人や企業を表すためにメカニズム UWP によって使用される)。  連絡先カードを使用して、ユーザーは連絡先情報を編集することもできます。 コンパクトな連絡先カードを表示するか、追加の情報を含む完全な連絡先カードを表示することができます。
 
-> **重要な API**: [ShowContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard),   [ShowFullContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_),  [IsShowContactCardSupported メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported),  [Contact クラス](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要な Api**:[ShowContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、 [ShowFullContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、 [IsShowContactCardSupported メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[クラスにお問い合わせください](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 連絡先カードを表示する方法は 2 つあります。  
 * 簡易非表示に対応したポップアップに表示される標準的な連絡先カード -- ユーザーが連作先カードの外部をクリックすると、連絡先カードは消えます。 
@@ -182,4 +182,4 @@ private void onUserClickShowContactCard()
 ## <a name="related-articles"></a>関連記事
 - [連絡先とカレンダー](/windows/uwp/contacts-and-calendar/)
 - [連絡先カードのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=624040)
-- [ユーザー画像コントロール](/windows/uwp/controls-and-patterns/person-picture/)
+- [ユーザー描画コントロール](/windows/uwp/controls-and-patterns/person-picture/)

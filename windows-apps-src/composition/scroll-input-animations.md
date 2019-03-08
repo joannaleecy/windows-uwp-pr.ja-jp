@@ -3,14 +3,14 @@ title: 既存の ScrollViewer エクスペリエンスを強化する
 description: XAML の ScrollViewer と ExpressionAnimations を使用して、動的な入力駆動型のモーション エクスペリエンスを作成する方法ついて説明します。
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10、UWP、アニメーション
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 118b3f6e306e60d1d8d569f0d58f2d77ea30d9a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932691"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635067"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>既存の ScrollViewer エクスペリエンスを強化する
 
@@ -20,8 +20,8 @@ ms.locfileid: "8932691"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [入力駆動型アニメーション](input-driven-animations.md)
-- [関係ベース アニメーション](relation-animations.md)
+- [入力に基づくアニメーション](input-driven-animations.md)
+- [ベースのリレーションのアニメーション](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>ScrollViewer の最上位に構築する理由
 

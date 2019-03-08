@@ -1,23 +1,23 @@
 ---
-Description: A progress control provides feedback to the user that a long-running operation is underway.
+Description: プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。
 title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: a162d992390e8fc7d05d52303ec292fcf8e920a9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044396"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634427"
 ---
 # <a name="progress-controls"></a>プログレス コントロール
 
@@ -25,7 +25,7 @@ ms.locfileid: "9044396"
 
 プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。 使用されているインジケーターに応じて、進行状況インジケーターが表示されているときはユーザーはアプリを操作できないことを知らせたり、待ち時間の長さを示したりできます。
 
-> **重要な API**: [ProgressBar クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)、[IsIndeterminate プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)、[ProgressRing クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)、[IsActive プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **重要な Api**:[ProgressBar クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)、 [IsIndeterminate プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)、 [ProgressRing クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)、 [IsActive プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## <a name="types-of-progress"></a>プログレス コントロールの種類
 
@@ -39,11 +39,11 @@ ms.locfileid: "9044396"
 
 ![ProgressBar 状態](images/ProgressBar_TwoStates.png)
 
-*上から下へ、不確定 ProgressBar と確定 ProgressBar*
+*上から下、不確定な ProgressBar と不確定の ProgressBar*
 
 ![ProgressRing 状態](images/ProgressRing_SingleState.png)
 
-*不確定の ProgressRing*
+*中間の ProgressRing*
 
 ## <a name="examples"></a>例
 
@@ -54,8 +54,8 @@ ms.locfileid: "9044396"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ProgressBar">ProgressBar</a> または <a href="xamlcontrolsgallery:/item/ProgressRing">ProgressRing</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -66,11 +66,11 @@ ms.locfileid: "9044396"
 何が起こっているかを表示するとき、どのコントロールを使うか、どの状態 (確定または不確定) を使うかが明白でない場合があります。 タスクの内容が明らかでプログレス コントロールを使う必要がないときもあり、プログレス コントロールを使う場合でも、どういう操作が進行中かをユーザーに説明するために 1 行のテキストが必要なときもあります。
 
 ### <a name="progressbar"></a>ProgressBar
--   **コントロールには定義された期間や予測可能な終了時期があるか?**
+-   **コントロールは、定義された期間または予測可能な終了にありますか。**
 
     確定 ProgressBar を使用し、パーセンテージや値を適宜更新します。
 
--   **ユーザーは操作の進行状況を監視しなくても操作を続けることができるか?**
+-   **ユーザーは、操作の進行状況を監視することがなく続行しますか。**
 
     ProgressBar の使用中、やり取りは非モーダルであり、通常はその操作が完了するまでユーザーがブロックされることはありません。操作が完了するまで、その他の方法でアプリを使い続けることができます。
 
@@ -78,17 +78,17 @@ ms.locfileid: "9044396"
 
     操作で次のようなキーワードが表示される場合、または進行状況の処理と同時にこれらのキーワードと一致するテキストを表示する場合は、ProgressBar の使用を検討してください。
 
-    - *読み込んでいます...*
-    - *取得しています*
-    - *処理しています...*
+    - *読み込んでいます.*
+    - *取得します。*
+    - *作業しています.*
 
 ### <a name="progressring"></a>ProgressRing
 
--   **この操作によってユーザーは続行できるまで待つことになるか?**
+-   **操作が原因がユーザーに続行を待機するでしょうか。**
 
     操作によって、操作が完了するまでアプリとのすべて (または大部分) のやり取りを待つことが必要になる場合は、ProgressRing の方が適しています。 ProgressRing コントロールはモーダル操作向けに使われます。つまり、ProgressRing が消えるまでユーザーはブロックされます。
 
--   **アプリはユーザーがタスクを完了するのを待っているか?**
+-   **アプリがタスクを実行するユーザーを待機しているでしょうか。**
 
     待っている場合は、ProgressRing を使って不明の待ち時間をユーザーに示します。
 
@@ -96,20 +96,20 @@ ms.locfileid: "9044396"
 
     操作で次のようなキーワードが表示される場合、または進行状況の処理と同時にこれらのキーワードと一致するテキストを表示する場合は、ProgressRing の使用を検討してください。
 
-    - *更新しています*
-    - *サインインしています...*
-    - *接続しています...*
+    - *更新します。*
+    - *サインインしています.*
+    - *接続しています.*
 
 ### <a name="no-progress-indication-necessary"></a>進行状況を示す必要なし
--   **何かが行われていることをユーザーが知る必要があるか?**
+-   **ユーザーは、何かが発生していることを把握する必要がありますか。**
 
     たとえば、アプリがバックグラウンドで何かをダウンロードしていて、ダウンロードを開始したのがユーザーでない場合、ユーザーは必ずしもそのことを知る必要がありません。
 
--   **操作が、ユーザーのアクティビティをブロックしないバックグラウンド アクティビティであり、ユーザーにはほとんど関与しない (少しだけ関与する) か?**
+-   **操作内のユーザーに (ただし、まだいくつかの) 最小限の関心のある、ユーザー アクティビティをブロックしないバック グラウンド アクティビティとは**
 
     アプリが、常に見えている必要はないものの、進行状況を表示する必要はあるタスクを実行している場合は、テキストを使います。
 
--   **ユーザーは操作の完了だけを気にしているか?**
+-   **ユーザーのみに注意、操作を完了しますか。**
 
     操作が完了したときだけ通知を表示するか、操作がすぐに完了したというビジュアルを表示し、最後の仕上げをバック グラウンドで実行することが最良のときがあります。
 
@@ -117,19 +117,19 @@ ms.locfileid: "9044396"
 
 これらのさまざまなプログレス コントロールを使用する状況と場所の視覚的な表現をいくつか表示することが最良のときがあります。
 
-**ProgressBar - 確定**
+**ProgressBar の不確定です。**
 
 ![ProgressBar の確定状態の例](images/PB_DeterminateExample.png)
 
 最初の例は確定 ProgressBar です。 操作の期間がわかっていて、インストール、ダウンロード、設定などを行うときは、確定 ProgressBar が最良です。
 
-**ProgressBar - 不確定**
+**ProgressBar の不確定**
 
 ![ProgressBar の不確定状態の例](images/PB_IndeterminateExample.png)
 
 操作にどの程度の時間がかかるかがわからないときは、不確定 ProgressBar を使います。 不確定 ProgressBar は、仮想化されたリストに入力し、不確定 ProgressBar から確定 ProgressBar への滑らかな視覚的な遷移を作成するときにも適切です。
 
--   **仮想化されたコレクション内の操作か?**
+-   **操作は、仮想化されたコレクション内にあるでしょうか。**
 
     その場合は、各リスト項目に進行状況インジケーターを配置しないでください。 代わりに ProgressBar を使い、読み込まれている項目のコレクションの一番上にそれを配置して、項目が取得されていることを示します。
 
@@ -143,7 +143,7 @@ ms.locfileid: "9044396"
 
 両方のプログレス コントロールはかなりシンプルですが、コントロールの視覚的な機能の一部はカスタマイズの方法が明白ではありません。
 
-**ProgressRing のサイズの設定**
+**ProgressRing をサイズ変更**
 
 ProgressRing は必要なサイズに変更できますが、20 x 20 epx までしか縮小できません。 ProgressRing のサイズを変更するには、高さと幅を設定する必要があります。 高さまたは幅だけが設定された場合、最小サイズ (20 x 20 epx) が想定されます。逆に高さと幅が 2 つの異なるサイズに設定された場合、小さい方のサイズが想定されます。
 ProgressRing を必要な大きさにするには、高さと幅を同じ値に設定してください。
@@ -162,7 +162,7 @@ ProgressRing を表示してアニメーション化するには、IsActive プ�
 progressRing.IsActive = true;
 ```
 
-**プログレス コントロールの色の設定**
+**進行状況コントロールを色分け表示**
 
 既定では、プログレス コントロールのメインの色はシステムのアクセント カラーに設定されます。 このブラシを上書きするには、どちらかのコントロールの foreground プロパティを変更します。
 
@@ -173,7 +173,7 @@ progressRing.IsActive = true;
 
 ProgressRing の前景色を変更すると、ドットの色が変更されます。 ProgressBar の foreground プロパティを変更すると、バーの塗りつぶしの色が変更されます。バーの塗りつぶされない部分を変更するには、background プロパティを上書きします。
 
-**待機カーソルの表示**
+**待機カーソルを表示**
 
 アプリまたは操作で処理に少し時間がかかり、待機カーソルが表示されているアプリまたは領域では待機カーソルが消えるまでやり取りできないことをユーザーに示す必要があるときは、簡潔な待機カーソルを表示することをお勧めします。
 
@@ -191,5 +191,5 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 - [ProgressRing クラス](https://msdn.microsoft.com/library/windows/apps/br227538)
 
 **開発者向け (XAML)**
-- [プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
-- [Windows Phone 向けのカスタム進行状況不定バーを作成する方法](https://go.microsoft.com/fwlink/p/?LinkID=392426)
+- [進行状況コントロールを追加します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Windows Phone のカスタムの不確定な進行状況バーを作成する方法](https://go.microsoft.com/fwlink/p/?LinkID=392426)

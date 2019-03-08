@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e06de31cabaedb68ed57d3d4f2ff30614ceb6317
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933054"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613377"
 ---
 # <a name="lastseenrecord-json"></a>LastSeenRecord (JSON)
-ユーザーには、有効な DeviceRecord があるないときに使用できる、ユーザーが最後、システムに表示されていた場合について説明します。 
+システムが最終ユーザー、ユーザーが有効な DeviceRecord を持たないときに使用できるを見た場合について説明します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="lastseenrecord"></a>LastSeenRecord
  
-LastSeenRecord オブジェクトには、次仕様があります。
+LastSeenRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| deviceType| string| ユーザーが最後の存在をでしたデバイスの種類。| 
-| titleId| 32 ビットの符号なし整数| ユーザーが最後の存在をでしたタイトルの識別子です。| 
-| titleName| string| ユーザーが最後の存在をでしたタイトルの名前です。| 
-| タイムスタンプ| DateTime| Utc 形式のユーザーが過去の存在を示すタイムスタンプ。| 
+| deviceType| string| ユーザーが最後にあるデバイスの種類。| 
+| titleId| 32 ビット符号なし整数| ユーザーが最後の現在のタイトルの識別子です。| 
+| titleName| string| ユーザーが最後の現在のタイトルの名前。| 
+| タイムスタンプ| DateTime| ユーザーが最後の存在を示す UTC タイムスタンプ。| 
   
 <a id="ID4EHC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,7 +57,7 @@ LastSeenRecord オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E5C"></a>

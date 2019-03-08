@@ -4,14 +4,14 @@ description: この記事では、可変の写真シーケンスをキャプチ�
 title: 可変の写真シーケンス
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 208a61b565c0522d3e9ce88f3938f57dfa1fbddd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945197"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644847"
 ---
 # <a name="variable-photo-sequence"></a>可変の写真シーケンス
 
@@ -40,12 +40,12 @@ HDR 画像をキャプチャするときに、独自の処理アルゴリズム�
 
 [!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-可変の写真シーケンスのコントローラーから [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) オブジェクトを取得します。 このオブジェクトには、写真シーケンスのフレームごとに構成できるすべての設定のプロパティが含まれています。 次のようなプロパティが含まれています。
+可変の写真シーケンスのコントローラーから [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) オブジェクトを取得します。 このオブジェクトには、写真シーケンスのフレームごとに構成できるすべての設定のプロパティが含まれています。 次のようなクラスがあります。
 
--   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**公開**](https://msdn.microsoft.com/library/windows/apps/dn652552)
 -   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
--   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
--   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
+-   [**フラッシュ**](https://msdn.microsoft.com/library/windows/apps/dn652566)
+-   [**フォーカス**](https://msdn.microsoft.com/library/windows/apps/dn652570)
 -   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
 -   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
@@ -69,19 +69,19 @@ HDR 画像をキャプチャするときに、独自の処理アルゴリズム�
 
 ## <a name="receive-the-captured-frames"></a>キャプチャされたフレームを受け取る
 
-[**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) イベントは、キャプチャされたフレームごとに発生します。 フレーム コントロールの値とフレームのキャプチャされた画像を保存してから、現在のフレームのインデックスを増分します。 次の例は、各フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現を取得する方法を示しています。 **SoftwareBitmap** の使用方法について詳しくは、「[イメージング](imaging.md)」をご覧ください。
+[  **PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) イベントは、キャプチャされたフレームごとに発生します。 フレーム コントロールの値とフレームのキャプチャされた画像を保存してから、現在のフレームのインデックスを増分します。 次の例は、各フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現を取得する方法を示しています。 **SoftwareBitmap** の使用方法について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
 ## <a name="handle-the-completion-of-the-variable-photo-sequence-capture"></a>可変の写真シーケンスのキャプチャの完了を処理する
 
-[**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) イベントは、シーケンス内のすべてのフレームがキャプチャされると発生します。 アプリの記録状態を更新し、ユーザーが新しいキャプチャを開始できるように UI を更新します。 この時点で、キャプチャされた画像とフレーム コントロールの値を画像処理コードに渡すことができます。
+[  **Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) イベントは、シーケンス内のすべてのフレームがキャプチャされると発生します。 アプリの記録状態を更新し、ユーザーが新しいキャプチャを開始できるように UI を更新します。 この時点で、キャプチャされた画像とフレーム コントロールの値を画像処理コードに渡すことができます。
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
 ## <a name="update-frame-controllers"></a>フレーム コントローラーを更新する
 
-フレームごとの設定を変更して、可変の写真シーケンス キャプチャを新たに実行する場合、**VariablePhotoSequenceCapture** を完全に再初期化する必要はありません。 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) コレクションをクリアして新しいフレーム コントローラーを追加するか、または既存のフレーム コントローラーの値を変更できます。 次の例では、[**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) オブジェクトを調べて、現在のデバイスが可変の写真シーケンス フレームに対してフラッシュとフラッシュの電源をサポートしているかどうかを確認します。 サポートしている場合は、100% の電力でフラッシュを有効にするよう各フレームが更新されます。 各フレームに対して前の手順で設定した露出補正の値は、引き続き有効です。
+フレームごとの設定を変更して、可変の写真シーケンス キャプチャを新たに実行する場合、**VariablePhotoSequenceCapture** を完全に再初期化する必要はありません。 [  **DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) コレクションをクリアして新しいフレーム コントローラーを追加するか、または既存のフレーム コントローラーの値を変更できます。 次の例では、[**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) オブジェクトを調べて、現在のデバイスが可変の写真シーケンス フレームに対してフラッシュとフラッシュの電源をサポートしているかどうかを確認します。 サポートしている場合は、100% の電力でフラッシュを有効にするよう各フレームが更新されます。 各フレームに対して前の手順で設定した露出補正の値は、引き続き有効です。
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
@@ -94,7 +94,7 @@ HDR 画像をキャプチャするときに、独自の処理アルゴリズム�
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

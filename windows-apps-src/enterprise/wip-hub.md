@@ -1,5 +1,5 @@
 ---
-Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
+Description: ここでは、Windows 情報保護 (WIP) と、ファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに全体像を説明します。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -10,11 +10,11 @@ keywords: Windows 10, UWP, Windows 情報保護, 企業データ, エンター�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: f6938118b3a9041eea27367c3916e94ce34d468e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049499"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595477"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 情報保護 (WIP)
 
@@ -41,9 +41,9 @@ MDM または MAM を利用すると、管理者は、組織に属している�
 
 ![WIP のライフサイクル](images/wip-lifecycle.png)
 
-> **WIP について詳しくは、以下をご覧ください。** <br>
-* [Introducing Windows Information Protection (Windows 情報保護の概要)](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Windows 情報保護 (WIP) を使用した企業データの保護](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+> **WIP についてもっと読む** <br>
+* [Windows Information Protection の概要](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
+* [Windows 情報保護 (WIP) を使用したエンタープライズ データを保護します。](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
 
 アプリが許可リストに登録されている場合、アプリによって生成されたすべてのデータにはポリシーの制限が適用されます。 つまり、管理者が企業データへのユーザー アクセスを無効にすると、それらのユーザーは、アプリによって生成されたすべてのデータへアクセスできなくなります。
 
@@ -61,11 +61,11 @@ WIP API を使用してアプリを対応させてから、アプリをエンタ
 
 アプリを対応させる準備ができたら、以下のガイドのいずれかをご覧ください。
 
-**ユニバーサル Windows プラットフォーム (UWP) アプリは、c# を使用してビルドします。**
+**ユニバーサル Windows プラットフォーム (UWP) アプリを使用して作成します。C#**
 
 [Windows 情報保護 (WIP) 開発者向けガイド](wip-dev-guide.md)。
 
-**C++ を使用して作成するデスクトップ アプリの場合**
+**C++ を使用してビルドするデスクトップ アプリ**
 
 [Windows 情報保護 (WIP) 開発者向けガイド (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 

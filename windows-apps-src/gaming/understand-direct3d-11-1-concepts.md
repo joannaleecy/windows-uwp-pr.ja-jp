@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, Direct3D 9, Direct3D 11, 変更
 ms.localizationpriority: medium
 ms.openlocfilehash: ecdd8591efb3920d2cfe333aa8ec02c65c1a1465
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947994"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638967"
 ---
 # <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>Direct3D 9 と Direct3D 11 の間の重要な変更点
 
@@ -19,7 +19,7 @@ ms.locfileid: "8947994"
 
 **要約**
 
--   [DirectX の移植の計画](plan-your-directx-port.md)
+-   [DirectX、ポートを計画します。](plan-your-directx-port.md)
 -   Direct3D 9 と Direct3D 11 の間の重要な変更点
 -   [機能のマッピング](feature-mapping.md)
 
@@ -47,18 +47,18 @@ Direct3D 11 では、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/
 
 Direct3D 11 では、[**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) と [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM インターフェイスを使って、DirectX Graphic Infrastructure (DXGI) API でデバイス アダプターとハードウェア構成を設定します。 特定の DXGI インターフェイスでバッファーなどのウィンドウ リソース (表示またはオフ スクリーン) を作成し、構成します。[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) ファクトリ パターンの実装では、フレーム バッファーなどの DXGI リソースを取得します。 DXGI がスワップ チェーンを所有するため、画面にフレームを表示するために DXGI インターフェイスが使われます (「[**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)」をご覧ください)。
 
-[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) を使って、ゲームと互換性のあるスワップ チェーンを作成します。 HWND のスワップ チェーンを作成する代わりに、コア ウィンドウ (コンポジション (XAML の相互運用機能)) のスワップ チェーンを作成する必要があります。
+[  **IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) を使って、ゲームと互換性のあるスワップ チェーンを作成します。 HWND のスワップ チェーンを作成する代わりに、コア ウィンドウ (コンポジション (XAML の相互運用機能)) のスワップ チェーンを作成する必要があります。
 
 ## <a name="device-resources-and-resource-views"></a>デバイス リソースとリソース ビュー
 
 
 Direct3D 11 では、ビューと呼ばれるビデオ メモリ リソースに対する追加のポリモーフィズム レベルをサポートしています。 基本的には、テクスチャに対する Direct3D 9 オブジェクトは以前は 1 つでしたが、それが 2 つになりました。1 つはデータを保持するテクスチャ リソースで、もう 1 つはレンダリングにビューを使う方法を示すリソース ビューです。 リソースに基づくビューでは、特定の目的にそのリソースを使うことができます。 たとえば、2D テクスチャ リソースを [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) として作成し、それをシェーダーのテクスチャとして使うことができるように、2D テクスチャ リソースに対してシェーダー リソース ビュー ([**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628)) を作成します。 また、描画面として使うことができるように、同じ 2D テクスチャ リソースに対してレンダー ターゲット ビュー ([**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)) を作成することもできます。 別の例として、1 つのテクスチャ リソースに対して 2 つの異なるビューを使うと、同じピクセル データが 2 つの異なるピクセル形式で表されます。
 
-基になるリソースは、そのリソースから作成されるビューの種類と互換性のあるプロパティを使って作成する必要があります。 たとえば、[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) をサーフェスに適用する場合は、[**D3D11\_BIND\_RENDER\_TARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476085) フラグを使って、そのサーフェイスを作成します。 また、サーフェスは、レンダリングと互換性のある DXGI サーフェス形式にする必要があります (「[**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)」をご覧ください)。
+基になるリソースは、そのリソースから作成されるビューの種類と互換性のあるプロパティを使って作成する必要があります。 たとえば場合、 [ **ID3D11RenderTargetView** ](https://msdn.microsoft.com/library/windows/desktop/ff476582)が適用されるでその画面を作成、画面に、 [ **D3D11\_バインド\_レンダー\_ターゲット**](https://msdn.microsoft.com/library/windows/desktop/ff476085)フラグ。 レンダリングと互換性のある DXGI サーフェス形式にも、画面があります (を参照してください[ **DXGI\_形式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
 
 レンダリングに使うリソースのほとんどは、[**ID3D11Resource**](https://msdn.microsoft.com/library/windows/desktop/ff476584) インターフェイスから継承します。このインターフェイスは、[**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380) から継承します。 頂点バッファー、インデックス バッファー、定数バッファー、シェーダーはすべて Direct3D 11 リソースです。 入力レイアウトとサンプラーの状態は [**ID3D11DeviceChild**](https://msdn.microsoft.com/library/windows/desktop/ff476380) から直接継承します。
 
-リソース ビューでは、DXGI\_FORMAT 列挙値を使って、ピクセル形式を指定します。 すべての D3DFMT が DXGI\_FORMAT としてサポートされているわけではありません。 たとえば、DXGI には、D3DFMT\_R8G8B8 に相当する 24bpp RGB 形式がありません。 また、すべての RGB 形式に相当する BGR があるわけでもありません (DXGI\_FORMAT\_R10G10B10A2\_UNORM は D3DFMT\_A2B10G10R10 に相当しますが、D3DFMT\_A2R10G10B10 に直接相当する形式はありません)。 これらの従来の形式のコンテンツをビルド時にサポートされている形式に変換する必要があります。 DXGI 形式の全一覧については、「[**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)」をご覧ください。
+リソース ビューの使用、DXGI\_ピクセル形式を示す列挙値を書式設定します。 常にではなく D3DFMT は、DXGI としてサポートされている\_形式。 たとえば、形式はありません 24 bpp RGB D3DFMT に相当する DXGI で\_R8G8B8 します。 いないすべての RGB 形式に対応する BGR も (DXGI\_形式\_R10G10B10A2\_UNORM は D3DFMT\_A2B10G10R10、D3DFMT に直接相当するものはありませんが、\_A2R10G10B10)。 これらの従来の形式のコンテンツをビルド時にサポートされている形式に変換する必要があります。 DXGI の完全な一覧形式を参照してください、 [ **DXGI\_形式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)列挙体。
 
 Direct3D デバイス リソース (とリソース ビュー) は、シーンをレンダリングする前に作成します。 デバイス コンテキストは、後で説明するように、レンダリング チェーンを設定するために使われます。
 
@@ -74,23 +74,23 @@ Direct3D 9 と Direct3D 10.x には、リソースの作成、状態、描画を
 -   ピクセル シェーダーへのテクスチャ ビューとサンプラーのバインド
 -   シーンの描画
 
-[**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) メソッドの 1 つを呼び出すと、レンダー ターゲット ビューにシーンが描画されます。 すべての描画が完了したら、[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) を呼び出し、DXGI アダプターを使って、完成したフレームを表示します。
+[  **ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) メソッドの 1 つを呼び出すと、レンダー ターゲット ビューにシーンが描画されます。 すべての描画が完了したら、[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) を呼び出し、DXGI アダプターを使って、完成したフレームを表示します。
 
 ## <a name="state-management"></a>状態の管理
 
 
 Direct3D 9 では、SetRenderState、SetSamplerState、SetTextureStageState メソッドで設定された多数の個々のトグルを使って状態の設定を管理しました。 Direct3D 11 では、従来の固定関数パイプラインがサポートされないため、SetTextureStageState の代わりに、ピクセル シェーダー (PS) を記述します。 Direct3D 9 の状態ブロックに相当するものはありません。 代わりに、Direct3D 11 では、レンダリングの状態をグループ化する合理化的な方法を提供する 4 種類の状態オブジェクトを使って状態を管理します。
 
-たとえば、SetRenderState と D3DRS\_ZENABLE を使う代わりに、そうした関連する状態の設定を含む DepthStencilState オブジェクトを作成し、それを使ってレンダリング中に状態を変更します。
+D3DRS をサニティを使用する代わりに、たとえば、\_ZENABLE、この DepthStencilState オブジェクトを作成して、他の関連設定の状態し、レンダリング時に、状態を変更します。
 
 Direct3D 9 アプリケーションを状態オブジェクトに移植する際は、さまざまな状態の組み合わせが、変更できない状態オブジェクトとして表されることに注意してください。 それらは一度作成し、有効な限り再利用する必要があります。
 
 ## <a name="direct3d-feature-levels"></a>Direct3D の機能レベル
 
 
-Direct3D には、機能レベルと呼ばれるハードウェア サポートを確認するための新しいメカニズムが用意されています。 機能レベルにより、明確に定義された一連の GPU 機能を要求できるようになるため、グラフィックス アダプターが実行できる操作を簡単に判断できます。 たとえば、9\_1 機能レベルでは、シェーダー モデル 2.x など、Direct3D 9 グラフィックス アダプターで提供される機能が実装されます。 9\_1 は最も低い機能レベルであるため、すべてのデバイスで頂点シェーダーとピクセル シェーダーがサポートされると考えることができます。これらは、Direct3D 9 のプログラム可能なシェーダー モデルでサポートされているのと同じステージです。
+Direct3D には、機能レベルと呼ばれるハードウェア サポートを確認するための新しいメカニズムが用意されています。 機能レベルにより、明確に定義された一連の GPU 機能を要求できるようになるため、グラフィックス アダプターが実行できる操作を簡単に判断できます。 9 など\_機能は、シェーダーを含む、Direct3D 9 グラフィックス アダプターによって提供される機能の 1 レベルの実装が 2.x をモデル化します。 9 以降\_1 は最も低い機能レベル、9 の Direct3D のプログラミング可能なシェーダー モデルでサポートされている同じステージされた頂点シェーダーとピクセル シェーダーをサポートするすべてのデバイスを期待できます。
 
-ゲームでは [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) を使って、Direct3D デバイスとデバイス コンテキストを作成します。 この関数を呼び出す際に、ゲームでサポートできる機能レベルの一覧を指定します。 この関数は、その一覧からサポートされる最高の機能レベルを返します。 たとえば、ゲームで BC4/BC5 テクスチャ (DirectX 10 ハードウェアの機能) を使うことができる場合は、サポートされる機能レベルの一覧に少なくとも 9\_1 と 10\_0 を含めます。 ゲームが DirectX 9 ハードウェアで実行されており、BC4/BC5 テクスチャを使うことができない場合、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) は 9\_1 を返します。 その場合は、別のテクスチャ形式 (とより小さいテクスチャ) にフォールバックできます。
+ゲームでは [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) を使って、Direct3D デバイスとデバイス コンテキストを作成します。 この関数を呼び出す際に、ゲームでサポートできる機能レベルの一覧を指定します。 この関数は、その一覧からサポートされる最高の機能レベルを返します。 たとえば、ゲームが 9 以上を含めるように対する BC4/BC5 テクスチャ (DirectX 10 ハードウェアの機能) を使用できる場合\_1 から 10\_サポートされている機能レベルの一覧では 0。 ゲームが DirectX 9 ハードウェア上で実行し、に対する BC4/BC5 テクスチャを使用できない、 [ **D3D11CreateDevice** ](https://msdn.microsoft.com/library/windows/desktop/ff476082) 9 が返されます\_1。 その場合は、別のテクスチャ形式 (とより小さいテクスチャ) にフォールバックできます。
 
 Direct3D 9 ゲームを拡張して、より高い Direct3D 機能レベルをサポートする場合は、まず、既にある Direct3D 9 グラフィックス コードの移行を完了させることをお勧めします。 ゲームが Direct3D 11 で動作するようにすると、拡張グラフィックスを使った追加のレンダリング パスの追加が簡単になります。
 
@@ -99,13 +99,13 @@ Direct3D 9 ゲームを拡張して、より高い Direct3D 機能レベルを�
 ## <a name="feature-levels-and-the-programmable-pipeline"></a>機能レベルとプログラム可能なパイプライン
 
 
-ハードウェアは Direct3D 9 から進化を続けており、いくつかの新しいオプション ステージがプログラム可能なグラフィックス パイプラインに追加されています。 グラフィックス パイプラインの一連のオプションは、Direct3D 機能レベルによって異なります。 機能レベル 10.0 には、GPU でのマルチパス レンダリング用のオプションのストリーム アウトがあるジオメトリ シェーダー ステージが含まれています。 機能レベル 11\_0 には、ハードウェア テセレーションで使うハル シェーダーとドメイン シェーダーが含まれています。 また、DirectCompute シェーダーの完全なサポートも含まれています。一方、機能レベル 10.x には DirectCompute の限定された形式のサポートだけが含まれています。
+ハードウェアは Direct3D 9 から進化を続けており、いくつかの新しいオプション ステージがプログラム可能なグラフィックス パイプラインに追加されています。 グラフィックス パイプラインの一連のオプションは、Direct3D 機能レベルによって異なります。 機能レベル 10.0 には、GPU でのマルチパス レンダリング用のオプションのストリーム アウトがあるジオメトリ シェーダー ステージが含まれています。 機能レベル 11\_ハードウェア テセレーションで使用するためのドメイン シェーダー、ハル シェーダー、0 が含まれます。 機能レベル 11\_10.x のみを含める機能レベルが DirectCompute の制限付き形式のサポートに 0 が DirectCompute のシェーダーの完全なサポートにも含まれます。
 
-すべてのシェーダーは、Direct3D 機能レベルに対応するシェーダー プロファイルを使って HLSL で記述します。 シェーダー プロファイルには上位互換性があるため、vs\_4\_0\_level\_9\_1 または ps\_4\_0\_level\_9\_1 を使ってコンパイルした HLSL シェーダーはすべてのデバイスで動作します。 ただし、下位互換性がないため、vs\_4\_1 を使ってコンパイルしたシェーダーは機能レベル 10\_1、11\_0、または 11\_1 のデバイスでしか動作しません。
+すべてのシェーダーは、Direct3D 機能レベルに対応するシェーダー プロファイルを使って HLSL で記述します。 シェーダー プロファイルは、vs を使用してをコンパイルする HLSL シェーダーのため、互換性のある上向き、\_4\_0\_レベル\_9\_1 または ps\_4\_0\_レベル\_9\_1 はすべてのデバイスで動作します。 シェーダーのプロファイルはない下位互換性があるため vs を使用して、シェーダーのコンパイル\_4\_1 は 10 の機能レベルでのみ動作\_1, 11\_0、または 11\_1 デバイス。
 
 Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixelShaderConstant を使ってシェーダーの定数を管理していました。 Direct3D 11 では、頂点バッファーやインデックス バッファーと同じようなリソースである定数バッファーを使います。 定数バッファーは、効率的に更新できるように設計されています。 すべてのシェーダー定数を 1 つのグローバル配列にまとめる代わりに、定数を論理グループに整理し、1 つ以上の定数バッファーを使って管理します。 Direct3D 9 ゲームを Direct3D 11 に移植する場合は、定数バッファーを適切に更新できるように整理してください。 たとえば、フレームごとに更新されないシェーダーの定数は別の定数バッファーにグループ化します。そうすると、より動的なシェーダーの定数と一緒にそのデータをグラフィックス アダプターに絶えずアップロードする必要がなくなります。
 
-> **注:** ほとんどの direct3d9 アプリケーション、シェーダーの広範な使用が使用する従来の固定関数の動作で混在場合があります。 Direct3D 11 では、プログラム可能なシェーダー モデルしか使わないことに注意してください。 Direct3D 9 の従来の固定関数機能は推奨されなくなりました。
+> **注**  最も Direct3D 9 アプリケーション、シェーダーの広範な使用が従来の固定機能の動作の使用に混在場合があります。 Direct3D 11 では、プログラム可能なシェーダー モデルしか使わないことに注意してください。 Direct3D 9 の従来の固定関数機能は推奨されなくなりました。
 
  
 

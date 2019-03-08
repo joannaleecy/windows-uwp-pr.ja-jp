@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+Description: 実用的な位置情報追跡に役立つ強力なビジット追跡機能を使用する方法について説明します。
 title: ビジット追跡の使用ガイドライン
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, マップ, 位置情報, geovisit, ジオビジット
 ms.localizationpriority: medium
 ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927541"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640777"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>ビジット追跡の使用ガイドライン
 
@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 これで、アプリはビジット処理のバックグラウンド タスクを登録できるようになります。また、このタスクはビジット関連の状態変化がデバイスによってログ記録されるたびにアクティブ化されます。 この状態変化情報に対する処理を決定するには、バックグラウンド タスク クラスにロジックを指定する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
-* [アウトプロセス バックグラウンド タスクの作成と登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [作成して、プロセス外のバック グラウンド タスクの登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [ユーザーの位置情報の取得](get-location.md)
 * [Windows.Devices.Geolocation 名前空間](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

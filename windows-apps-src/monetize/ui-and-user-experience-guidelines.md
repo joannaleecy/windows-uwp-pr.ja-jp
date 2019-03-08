@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, ガイドライン, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 78f044890e49f4631abf710764bc2f9746a1306f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930753"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639147"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>広告の UI とユーザー エクスペリエンスのガイドライン
 
@@ -47,7 +47,7 @@ ms.locfileid: "8930753"
 
   さまざまなサイズの広告が、開発およびテスト段階でアプリ内でどのように表示され、どのように機能するかを確認するには、[テスト広告ユニット](set-up-ad-units-in-your-app.md#test-ad-units) を利用できます。 テストが完了したら、認定を受けるためにアプリを提出する前に、[ライブ広告ユニットでアプリを更新する](set-up-ad-units-in-your-app.md#live-ad-units)ことを忘れないでください。
 
-* 広告を利用できない場合の対応を計画します。 広告がアプリに送信されないタイミングがあります。 ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。 詳しくは、「[広告のエラー処理](error-handling-with-advertising-libraries.md)」をご覧ください。
+* 広告が利用できない場合の対応を計画します。 広告がアプリに送信されないタイミングがあります。 ページに広告が表示される場合も、表示されない場合も、適切に表示されるようにページをレイアウトします。 詳しくは、「[広告のエラー処理](error-handling-with-advertising-libraries.md)」をご覧ください。
 
 * オーバーレイを使って最も効果的に対応できるユーザーへの通知シナリオがある場合、オーバーレイを表示しながら [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend) を呼び出し、通知シナリオが完了したら [AdControl.Resume](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume) を呼び出します。
 
@@ -59,7 +59,7 @@ ms.locfileid: "8930753"
 
 * 多くの広告を表示してアプリを飽和状態にしないでください。 アプリに表示する広告が多すぎると、アプリの外観と操作性を損ねます。 広告を使って収入を得ることは望んでも、アプリ自体を犠牲にしないでください。
 
-* ユーザーが中心的なタスクに集中するのを妨げないでください。 主要項目は常にアプリに表示されている必要があります。 広告スペースは 2 次的な項目として組み込まれている必要があります。
+* ユーザーが中心的なタスクに集中するのを妨げないでください。 主要な項目は常にアプリに表示されている必要があります。 広告スペースは 2 次的な項目として組み込まれている必要があります。
 
 ### <a name="examples-of-policy-violations"></a>ポリシー違反の例
 
@@ -71,7 +71,7 @@ ms.locfileid: "8930753"
 
 * [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) オブジェクトのスワップ、またはユーザー操作を伴わない強制的なページ更新など、任意の手段でバナー広告の組み込み最短更新タイマーを回避する。
 
-* ライブ広告ユニット (つまり、パートナー センターから取得する広告ユニット) を使用して、開発およびテスト中、またはエミュレーターでします。
+* ライブ広告ユニット (つまり、パートナー センターから入手する ad 単位) を使用して、開発およびテスト中に、またはエミュレーターでします。
 
 * アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
 
@@ -81,7 +81,7 @@ ms.locfileid: "8930753"
 
 ## <a name="guidelines-for-interstitial-ads"></a>スポット広告のガイドライン
 
-洗練された方法で[スポット広告](interstitial-ads.md)を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切だと、スポット広告は逆効果になる可能性があります。
+洗練された方法で[スポット広告](interstitial-ads.md)を使うと、ユーザー満足度を損なうことなく、アプリの収益を飛躍的に向上させることができます。 使い方が不適切である場合、ビデオ スポット広告が逆効果になる可能性があります。
 
 以下のセクションでは、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) を使ってアプリにビデオ スポット広告やバナー スポット広告を実装する場合の推奨事項と、Microsoft Store ポリシーの[ポリシー 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) に違反する実装の例を紹介します。 ポリシーに関連する問題を除き、アプリについて最もよく理解しているのは開発者の皆様であるため、ベスト プラクティスに関する最終的な判断は開発者の皆様に委ねています。 留意する最も重要な点は、アプリの評価と収益が密接に結びついていることです。
 
@@ -155,7 +155,7 @@ ms.locfileid: "8930753"
 
 * 連鎖的な広告の単なるバックアップとして、スポット広告を要求する。 スポット広告を要求し、[InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) イベントを受信した場合、アプリに表示できる次のスポット広告は、[InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) メソッド経由で表示できる必要があります。
 
-* ライブ広告ユニット (つまり、パートナー センターから取得する広告ユニット) を使用して、開発およびテスト中、またはエミュレーターでします。
+* ライブ広告ユニット (つまり、パートナー センターから入手する ad 単位) を使用して、開発およびテスト中に、またはエミュレーターでします。
 
 * アプリのコンテキストで実行している Microsoft Advertising ライブラリ以外の手段で広告サービスを呼び出すコードを記述または配布する。
 

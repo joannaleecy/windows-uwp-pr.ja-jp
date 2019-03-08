@@ -1,22 +1,22 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+Description: 優れたアイコンは、文字の体裁やその他のデザイン言語と調和するものです。 アイコンは比喩と混用しないようにします。優れたアイコンは、できるだけすばやくシンプルに、必要なことのみを伝えます。
 title: アイコン
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ms.date: 05/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947575"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612447"
 ---
 # <a name="icons-for-uwp-apps"></a>UWP アプリのアイコン
 
@@ -81,7 +81,7 @@ ms.locfileid: "8947575"
 
 ## <a name="using-the-right-type-of-icon"></a>適切な種類のアイコンの使用
 
-アイコンを作成する方法は数多くあります。 Segoe MDL2 アセットなどの記号フォントを使用できます。 独自のベクター ベースのイメージを作成することができます。 ビットマップ画像も使用できますが、お勧めしません。 アプリにアイコンを追加するさまざまな方法の概要を次に示します。 
+アイコンを作成する方法は数多くあります。 Segoe MDL2 アセットなどの記号フォントを使用できます。 ベクトルに基づくイメージを作成できます。 ビットマップ画像も使用できますが、お勧めしません。 アプリにアイコンを追加するさまざまな方法の概要を次に示します。 
 
 ### <a name="use-a-predefined-icon"></a>定義済みのアイコンを使用します。
 :::row:::
@@ -136,7 +136,7 @@ ms.locfileid: "8947575"
 
 ## <a name="make-the-icon-do-something"></a>アイコンで何かを行う
 
-アイコンを作成したら、次の手順は、コマンドやナビゲーション操作に関連付けることで何にすることです。 これを行うには、最善の方法では、ボタンやコマンド バーにアイコンを追加します。 
+アイコンを作成したら、次の手順はコマンドまたはナビゲーション操作に関連付けることで行うようにすることです。 これを行う最善の方法では、ボタンまたはコマンド バーにアイコンを追加します。 
 
 ![コマンド バーのイメージ](images/icons/app-bar-desktop.svg)
 

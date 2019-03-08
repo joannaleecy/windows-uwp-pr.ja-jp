@@ -3,15 +3,15 @@ title: Xbox 開発者モード コンパニオン
 description: Xbox 開発者モード コンパニオン アプリに関する情報を提供します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
 ms.localizationpriority: medium
 ms.openlocfilehash: b04272c99d9062be2eaea27aa5b107e6078872f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940747"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616827"
 ---
 # <a name="xbox-dev-mode-companion"></a>Xbox 開発者モード コンパニオン
 
@@ -40,7 +40,7 @@ Xbox 開発者モード コンパニオンを使用すると、Xbox One 本体�
    
 最後に、テキスト ボックスにキーボード入力してテキストを本体に送信できます。   
 
-## <a name="help"></a>ヘルプ
+## <a name="help"></a>Help
 接続ダイアログまたはコマンド バーにある [?] アイコンをクリックすると、 ヘルプ ページを表示できます。
 
 ## <a name="see-also"></a>関連項目

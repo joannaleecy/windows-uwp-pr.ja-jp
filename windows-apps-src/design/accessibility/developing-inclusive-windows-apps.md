@@ -1,21 +1,21 @@
 ---
-Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+Description: キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 包括性を備えた Windows 10 アプリの開発
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047969"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649727"
 ---
-# <a name="developing-inclusive-windows-apps"></a>包括性を備えた Windows アプリの開発  
+# <a name="developing-inclusive-windows-apps"></a>包括的な Windows アプリの開発  
 
 この記事では、アクセシビリティに対応したユニバーサル Windows プラットフォーム (UWP) アプリを開発する方法について説明します。 特に、この記事では、アプリの論理的な階層を設計する方法を理解していることが前提となっています。 キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。
 
@@ -81,9 +81,9 @@ UWP アプリでは、システム カラーを上書きしない限り、既定
 詳しくは、完全版の「[アクセシビリティ チェックリスト](accessibility-checklist.md)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック  
-* [包括性を備えたソフトウェアの設計](designing-inclusive-software.md)  
-* [包括性を備えた設計](https://design.microsoft.com/inclusive)
-* [アクセシビリティ対応にするために避ける事項](practices-to-avoid.md)
-* [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/download/details.aspx?id=19262)
+* [包括的なソフトウェアの設計](designing-inclusive-software.md)  
+* [包括的なデザイン](https://design.microsoft.com/inclusive)
+* [ユーザー補助のプラクティスを回避するには](practices-to-avoid.md)
+* [ユーザー補助の工学ソフトウェア](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
 * [アクセシビリティ](accessibility.md)

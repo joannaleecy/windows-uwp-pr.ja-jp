@@ -8,34 +8,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc638dfe7735856295ed92f35e244213be7bc1e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923923"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608337"
 ---
 # <a name="matchticket-json"></a>MatchTicket (JSON)
-プレイヤーがマルチプレイヤー セッション ディレクトリ (MPSD) を通じて他のプレイヤーを検索に使用するマッチ チケットを表す JSON オブジェクト。 
+一致するチケット、プレイヤー、マルチ プレーヤーのセッション ディレクトリ (MPSD) を介して他のプレーヤーを見つけたりするために使用を表す JSON オブジェクトです。 
 <a id="ID4EN"></a>
 
   
  
-MatchTicket JSON オブジェクトには、次仕様があります。
+MatchTicket JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| serviceConfig| GUID| セッションのサービス構成 id (SCID)。| 
-| hopperName| string| このチケットを配置する必要があります、ホッパーの名前です。| 
-| giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒の整数)。| 
-| preserveSession| 列挙型| 一致するように、セッションとして、セッションを再利用する必要があるかどうかを示す値。 値は、「しない」または"always"します。 | 
-| ticketSessionRef| MultiplayerSessionReference| これでプレイヤーまたはグループは、現在再生中のセッションの<b>MultiplayerSessionReference</b>オブジェクトです。 このメンバーは必須です。 | 
-| ticketAttributes| オブジェクトの配列| プレイヤーのユーザー指定の属性と値について、チケットのコレクションです。| 
-| プレイヤー| オブジェクトの配列| ユーザー指定の属性のプロパティ バッグに各プレイヤーのオブジェクトのコレクションです。 | 
+| serviceConfig| GUID| セッションのサービス構成識別子 (SCID)。| 
+| hopperName| string| このチケットの配置の hopper の名前です。| 
+| giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒単位の整数)。| 
+| preserveSession| 列挙| 一致するセッションとしてセッションを再利用する必要があるかどうかを示す値。 指定できる値は、"never"または「常に」です。 | 
+| ticketSessionRef| MultiplayerSessionReference| <b>MultiplayerSessionReference</b>プレーヤーまたはグループが現在を再生中のセッションのオブジェクト。 このメンバーが常に必要です。 | 
+| ticketAttributes| オブジェクトの配列| プレイヤーのユーザーが指定した属性と、チケットに関する値のコレクションです。| 
+| プレーヤー| オブジェクトの配列| ユーザーが指定した属性のプロパティ バッグと各プレイヤーのオブジェクトのコレクションです。 | 
   
 <a id="ID4EW"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -85,6 +85,6 @@ MatchTicket JSON オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

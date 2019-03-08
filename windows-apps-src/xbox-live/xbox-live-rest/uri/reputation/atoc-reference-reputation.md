@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 93d6d6e6acfd8fa39bd9d26c87ed99362d2c88d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932310"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614007"
 ---
 # <a name="reputation-uris"></a>評判 URI
  
-このセクションでは、 **Microsoft.Xbox.Services.Social.ReputationService**用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。 評判 Uri ドメインは、reputation.xboxlive.com です。 一般的な URI 形式がありますhttps://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから、 **Microsoft.Xbox.Services.Social.ReputationService**. Uri の評判のドメインとは、reputation.xboxlive.com です。 一般的な URI 形式があります https://reputation.xboxlive.com/users/xuid(2533274790412952)/feedbackします。 
  
-評判サービスで使用してフィードバックを[フィードバック (JSON)](../../json/json-feedback.md)、評判スコアを計算します。 このスコアは、ReputationOverall キーの下で、ユーザーの統計情報の領域に保存されます。 ユーザーの統計情報の取得について詳しくは、以下を参照してください。[を取得する (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。 
+」の説明に従って、reputation service は、フィードバックを使用して[フィードバック (JSON)](../../json/json-feedback.md)、評価スコアを計算します。 このスコアは、ReputationOverall キー下のユーザーの統計情報の領域に保存されます。 ユーザーの統計情報を取得する方法についての詳細については、次を参照してください。[取得 (/users/xuid({xuid})/scids/{scid}/stats)](../userstats/uri-usersxuidscidsscidstatsget.md)します。 
  
-すべてのプラットフォームでのゲームでは、評判サービスを使用できます。
+すべてのプラットフォームでのゲームでは、評価サービスを使用できます。
  
 <a id="ID4EMB"></a>
 
@@ -29,23 +29,23 @@ ms.locfileid: "8932310"
 
 [/users/xuid({xuid})/feedback](uri-reputationusersxuidfeedback.md)
 
-&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。
+&nbsp;&nbsp;シェルを使用するのではなく、ゲームのフィードバックのオプションを追加したい場合、タイトルから使用されます。
 
 [/users/batchfeedback](uri-reputationusersbatchfeedback.md)
 
-&nbsp;&nbsp;タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。
+&nbsp;&nbsp;タイトルのインターフェイスの外部でのバッチの形式でフィードバックを送信するタイトルのサービスで使用します。
 
 [/users/me/resetreputation](uri-usersmeresetreputation.md)
 
-&nbsp;&nbsp;現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。
+&nbsp;&nbsp;現在のユーザーの評価スコアにアクセスする強制チームを有効にします。
 
 [/users/xuid({xuid})/deleteuserdata](uri-usersxuiddeleteuserdata.md)
 
-&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
+&nbsp;&nbsp;テスト ユーザーの評価データを完全にリセットします。 テスト目的専用です。
 
 [/users/xuid({xuid})/resetreputation](uri-usersxuidresetreputation.md)
 
-&nbsp;&nbsp;指定したユーザーの評判スコアにアクセスするに執行チームを使用できます。
+&nbsp;&nbsp;指定したユーザーの評価スコアにアクセスする強制チームを有効にします。
  
 <a id="ID4E5B"></a>
 
@@ -57,6 +57,6 @@ ms.locfileid: "8932310"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

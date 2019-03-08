@@ -8,29 +8,29 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d8172063d40f8df77827ab845c4dfd0c0799811
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946855"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627917"
 ---
 # <a name="xuidlist-json"></a>XuidList (JSON)
-操作を実行するに Xuid のリスト。 
+操作を実行する Xuid の一覧です。 
 <a id="ID4EN"></a>
 
  
 ## <a name="xuidlist"></a>XuidList
  
-XuidList オブジェクトには、次仕様があります。
+XuidList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 文字列の配列| 操作を実行する必要がありますまたは返されるデータの Xbox ユーザー ID (XUID) 値の一覧。| 
+| xuid| 文字列の配列| 操作を実行する必要がありますまたはデータを返す必要がある Xbox ユーザー ID (XUID) 値のリスト。| 
   
 <a id="ID4EMB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -55,7 +55,7 @@ XuidList オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EBC"></a>

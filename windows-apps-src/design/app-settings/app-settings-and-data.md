@@ -1,19 +1,19 @@
 ---
-Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
+Description: このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
 title: アプリの設定とデータ
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5790e9fcd05cb873958e53786e3282094ec0a3d4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938433"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639897"
 ---
 # <a name="app-settings-and-data"></a>アプリの設定とデータ
 
@@ -43,7 +43,7 @@ ms.locfileid: "8938433"
 <td align="left"><p>アプリ設定を作成し表示する際のベスト プラクティス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="store-and-retrieve-app-data.md">アプリ データの保存と取得</a></p></td>
+<td align="left"><p><a href="store-and-retrieve-app-data.md">アプリ データの格納と取得</a></p></td>
 <td align="left"><p>ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法。</p></td>
 </tr>
 </tbody>

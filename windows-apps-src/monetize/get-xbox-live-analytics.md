@@ -6,33 +6,33 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析
 ms.localizationpriority: medium
 ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922673"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637087"
 ---
 # <a name="get-xbox-live-analytics-data"></a>Xbox Live の分析データの取得
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)をプレイしているユーザーに関する過去 30 日間の一般的な分析データを取得するには、Microsoft Store 分析 API の次のメソッドを使います。取得できるデータには、デバイス アクセサリの使用状況、インターネット接続の種類、ゲーマースコアの分布、ゲームの統計情報、フレンドとフォロワーのデータが含まれます。 この情報は、パートナー センターで[Xbox 分析レポート](../publish/xbox-analytics-report.md)で利用可能なもできます。
+[Xbox Live 対応ゲーム](../xbox-live/index.md)をプレイしているユーザーに関する過去 30 日間の一般的な分析データを取得するには、Microsoft Store 分析 API の次のメソッドを使います。取得できるデータには、デバイス アクセサリの使用状況、インターネット接続の種類、ゲーマースコアの分布、ゲームの統計情報、フレンドとフォロワーのデータが含まれます。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
 
 > [!IMPORTANT]
 > このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
 
 Xbox Live 対応ゲームに関するその他の分析データは、次のメソッドを通じて取得できます。
-* [Xbox Live の実績データの取得](get-xbox-live-achievements-data.md)
-* [Xbox Live の正常性データの取得](get-xbox-live-health-data.md)
-* [Xbox Live ゲーム ハブのデータの取得](get-xbox-live-game-hub-data.md)
-* [Xbox Live クラブのデータの取得](get-xbox-live-club-data.md)
-* [Xbox Live のマルチプレイヤー データの取得](get-xbox-live-multiplayer-data.md)
-* [Xbox Live の同時使用状況データの取得](get-xbox-live-concurrent-usage-data.md)
+* [Xbox Live 成績データを取得します。](get-xbox-live-achievements-data.md)
+* [Xbox Live の正常性データを取得します。](get-xbox-live-health-data.md)
+* [Xbox Live Game ハブのデータを取得します。](get-xbox-live-game-hub-data.md)
+* [Xbox Live クラブ活動用のデータを取得します。](get-xbox-live-club-data.md)
+* [Xbox Live のマルチ プレーヤー データを取得します。](get-xbox-live-multiplayer-data.md)
+* [Xbox Live の同時使用状況データを取得します。](get-xbox-live-concurrent-usage-data.md)
 
 ## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -46,17 +46,17 @@ Xbox Live 対応ゲームに関するその他の分析データは、次のメ�
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| パラメーター        | 型   |  説明      |  必須かどうか  
+| パラメーター        | 種類   |  説明      |  必須  
 |---------------|--------|---------------|------|
-| applicationId | string | Xbox Live の分析データを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  必須  |
-| metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **productvalues** を指定します。  |  必須  |
+| applicationId | string | Xbox Live の分析データを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  〇  |
+| metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **productvalues** を指定します。  |  〇  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -82,10 +82,10 @@ Authorization: Bearer <your access token>
 
 このリソースには、過去 30 日間について、対象ゲームに関するデバイス使用状況データ、またはすべての Xbox Live ユーザーを対象とした平均的なデバイス使用状況データが格納されます。
 
-| 値           | 型    | 説明        |
+| Value           | 種類    | 説明        |
 |-----------------|---------|------|
 |  applicationId               |    string     |  分析データを取得したゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。   |
-|  connectionTypeDistribution               |    array     |   Xbox でワイヤード (有線) インターネット接続とワイヤレス インターネット接続を使っているユーザーの数を示すオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**conType**: 接続の種類を指定します。</li><li>**deviceCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、指定の接続の種類を使っているユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定の接続の種類を使っているユーザーの割合を示します。</li></ul>   |     
+|  connectionTypeDistribution               |    array     |   Xbox でワイヤード (有線) インターネット接続とワイヤレス インターネット接続を使っているユーザーの数を示すオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**以下の通り:contype**:接続の種類を指定します。</li><li>**deviceCount**:**ProductData**オブジェクトでは、このフィールドは、接続の種類を使用して、ゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定の接続の種類を使っているユーザーの割合を示します。</li></ul>   |     
 |  deviceCount               |   string      |  **ProductData** オブジェクトの場合、このフィールドは、過去 30 日間に対象ゲームがプレイされたユーザー デバイスの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは常に 1 になり、すべての Xbox Live ユーザーを対象としたデータの開始パーセンテージである 100% を示します。   |     
 |  eliteControllerPresentDeviceCount               |   string      |  **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、Xbox Elite ワイヤレス コントローラーを使っているユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、Xbox Elite ワイヤレス コントローラーを使っているユーザーの割合を示します。  |     
 |  externalDrivePresentDeviceCount               |   string      |  **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、Xbox で外部ハード ドライブを使っているユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、Xbox で外部ハード ドライブを使っているユーザーの割合を示します。  |
@@ -95,22 +95,22 @@ Authorization: Bearer <your access token>
 
 このリソースには、過去 30 日間について、対象ゲームに関するユーザー データ、またはすべての Xbox Live ユーザーを対象とした平均的なユーザー データが格納されます。
 
-| 値           | 型    | 説明        |
+| Value           | 種類    | 説明        |
 |-----------------|---------|------|
 |  applicationId               |    string     |   分析データを取得したゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |
 |  userCount               |    string     |   **ProductData** オブジェクトの場合、このフィールドは、過去 30 日間に対象ゲームをプレイしたユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは常に 1 になり、すべての Xbox Live ユーザーを対象としたデータの開始パーセンテージである 100% を示します。   |     
-|  dvrUsageCounts               |   array      |  ゲーム録画を使ってゲームプレイを録画および表示したユーザーの数を示すオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**dvrName**: 使用されたゲーム録画機能を指定します。 取り得る値は、**gameClipUploads**、**gameClipViews**、**screenshotUploads**、**screenshotViews** です。</li><li>**userCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、指定のゲーム録画機能を使用したユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定のゲーム録画機能を使用したユーザーの割合を示します。</li></ul>   |     
-|  followerCountPercentiles               |   array      |  ユーザーのフォロワー数に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**percentage**: 現在、この値は常に 50 になり、フォロワー データが中央値として提供されることを示します。</li><li>**value**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのフォロワー数の中央値を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのフォロワー数の中央値を示します。</li></ul>  |   
-|  friendCountPercentiles               |   array      |  ユーザーのフレンド数に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**percentage**: 現在、この値は常に 50 になり、フレンド データが中央値として提供されることを示します。</li><li>**value**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのフレンド数の中央値を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのフレンド数の中央値を示します。</li></ul>  |     
-|  gamerScoreRangeDistribution               |   array      |  ユーザーのゲーマースコアの分布に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scoreRange**: 次のフィールドで使用状況データが提供されるゲーマースコアの範囲です。 たとえば、**10K-25K** のように指定されます。</li><li>**userCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、プレイしたすべてのゲームに対するゲーマースコアが指定範囲に含まれているユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、プレイしたすべてのゲームに対するゲーマースコアが指定範囲に含まれているユーザーの割合を示します。</li></ul>  |
-|  titleGamerScoreRangeDistribution               |   array      |  対象ゲームのゲーマースコアの分布に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scoreRange**: 次のフィールドで使用状況データが提供されるゲーマースコアの範囲です。 たとえば、**100-200** のように指定されます。</li><li>**userCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、対象ゲームのゲーマースコアが指定範囲に含まれているユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、対象ゲームのゲーマースコアが指定範囲に含まれているユーザーの割合を示します。</li></ul>   |
-|  socialUsageCounts               |   array      |  ユーザーのソーシャル利用状況に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scName**: ソーシャル利用状況の種類です。 たとえば、**gameInvites** や **textMessages** のように指定されます。</li><li>**userCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、指定の種類のソーシャル利用状況に含まれるユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定の種類のソーシャル利用状況に含まれるユーザーの割合を示します。</li></ul>   |
-|  streamingUsageCounts               |   array      |  ユーザーのストリーミング利用状況に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**stName**: ストリーミング プラットフォームの種類です。 たとえば、**youtubeUsage**、**twitchUsage**、**mixerUsage** のように指定されます。</li><li>**userCount**: **ProductData** オブジェクトの場合、このフィールドは、対象ゲームのユーザーのうち、指定のストリーミング プラットフォームを使用したユーザーの数を示します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定のストリーミング プラットフォームを使用したユーザーの割合を示します。</li></ul>  |
+|  dvrUsageCounts               |   array      |  ゲーム録画を使ってゲームプレイを録画および表示したユーザーの数を示すオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**dvrName**:ゲーム録画を指定する機能を使用します。 取り得る値は、**gameClipUploads**、**gameClipViews**、**screenshotUploads**、**screenshotViews** です。</li><li>**userCount**:**ProductData**オブジェクト、このフィールドで指定したゲーム DVR 機能を使用するゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定のゲーム録画機能を使用したユーザーの割合を示します。</li></ul>   |     
+|  followerCountPercentiles               |   array      |  ユーザーのフォロワー数に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**割合**:現時点では、この値は 50、フォロワーのデータが中央の値として提供されることを示すでは常にします。</li><li>**値**:**ProductData**オブジェクト、このフィールドは、ゲームの顧客のフォロワー数の中央値を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのフォロワー数の中央値を示します。</li></ul>  |   
+|  friendCountPercentiles               |   array      |  ユーザーのフレンド数に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**割合**:現時点では、この値は 50、友人のデータが中央の値として提供されることを示すでは常にします。</li><li>**値**:**ProductData**オブジェクト、このフィールドは、ゲームの顧客の友だちの数の中央値を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのフレンド数の中央値を示します。</li></ul>  |     
+|  gamerScoreRangeDistribution               |   array      |  ユーザーのゲーマースコアの分布に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scoreRange**:次のフィールドの使用状況データを提供するゲーマーの範囲です。 たとえば、**10K-25K** のように指定されます。</li><li>**userCount**:**ProductData**オブジェクトでは、このフィールドをすべてのゲームを再生したコンテンツの指定した範囲内、ゲーマーを持つゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、プレイしたすべてのゲームに対するゲーマースコアが指定範囲に含まれているユーザーの割合を示します。</li></ul>  |
+|  titleGamerScoreRangeDistribution               |   array      |  対象ゲームのゲーマースコアの分布に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scoreRange**:次のフィールドの使用状況データを提供するゲーマーの範囲です。 たとえば、**100-200** のように指定されます。</li><li>**userCount**:**ProductData**オブジェクトでは、このフィールドをゲームの指定した範囲内、ゲーマーを持つゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、対象ゲームのゲーマースコアが指定範囲に含まれているユーザーの割合を示します。</li></ul>   |
+|  socialUsageCounts               |   array      |  ユーザーのソーシャル利用状況に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**scName**:ソーシャルの使用法の種類。 たとえば、**gameInvites** や **textMessages** のように指定されます。</li><li>**userCount**:**ProductData**オブジェクト、このフィールドにソーシャル指定の使用法の種類に参加しているゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定の種類のソーシャル利用状況に含まれるユーザーの割合を示します。</li></ul>   |
+|  streamingUsageCounts               |   array      |  ユーザーのストリーミング利用状況に関する詳細を提供するオブジェクトが含まれます。 各オブジェクトには、次の 2 つの文字列フィールドがあります。 <ul><li>**stName**:ストリーミング プラットフォームの種類。 たとえば、**youtubeUsage**、**twitchUsage**、**mixerUsage** のように指定されます。</li><li>**userCount**:**ProductData**オブジェクトでは、このフィールドで指定されたストリーミング プラットフォームを使用して、ゲームの顧客の数を指定します。 **XboxwideData** オブジェクトの場合、このフィールドは、すべての Xbox Live ユーザーのうち、指定のストリーミング プラットフォームを使用したユーザーの割合を示します。</li></ul>  |
 
 
 ### <a name="response-example"></a>応答の例
 
-この要求の JSON 応答の本文の例を次に示します。
+この要求の JSON 返信の本文の例を次に示します。
 
 ```json
 {
@@ -409,10 +409,10 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [Xbox Live の実績データの取得](get-xbox-live-achievements-data.md)
-* [Xbox Live の正常性データの取得](get-xbox-live-health-data.md)
-* [Xbox Live ゲーム ハブのデータの取得](get-xbox-live-game-hub-data.md)
-* [Xbox Live クラブのデータの取得](get-xbox-live-club-data.md)
-* [Xbox Live のマルチプレイヤー データの取得](get-xbox-live-multiplayer-data.md)
-* [Xbox Live の同時使用状況データの取得](get-xbox-live-concurrent-usage-data.md)
+* [Microsoft Store サービスを使用して分析データにアクセス](access-analytics-data-using-windows-store-services.md)
+* [Xbox Live 成績データを取得します。](get-xbox-live-achievements-data.md)
+* [Xbox Live の正常性データを取得します。](get-xbox-live-health-data.md)
+* [Xbox Live game ハブのデータを取得します。](get-xbox-live-game-hub-data.md)
+* [Xbox Live クラブ活動用のデータを取得します。](get-xbox-live-club-data.md)
+* [Xbox Live のマルチ プレーヤー データを取得します。](get-xbox-live-multiplayer-data.md)
+* [Xbox Live の同時使用状況データを取得します。](get-xbox-live-concurrent-usage-data.md)

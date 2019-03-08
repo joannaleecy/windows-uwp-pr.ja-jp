@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, アクティブ化
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920198"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648847"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>アプリをアクティブ化する方法 (DirectX と C++)
 
@@ -85,8 +85,8 @@ void App::Run()
 ## <a name="related-topics"></a>関連トピック
 
 
-* [アプリを一時停止する方法 (DirectX と C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [(DirectX および C++) アプリを停止する方法](how-to-suspend-an-app-directx-and-cpp.md)
+* [(DirectX および C++) アプリを再開する方法](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

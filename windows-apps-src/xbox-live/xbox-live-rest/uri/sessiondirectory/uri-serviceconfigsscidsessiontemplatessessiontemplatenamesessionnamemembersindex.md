@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8698eabc57577746d32f9ee439d6cd7af4820b5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617477"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnamemembersindex"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index}
-指定されたセッション メンバーを削除する削除操作をサポートしています。
+指定したセッションのメンバーを削除する削除操作をサポートしています。
 <a id="ID4EO"></a>
 
 
@@ -26,11 +26,11 @@ sessiondirectory.xboxlive.com
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
-| セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
+| scid| GUID| サービス構成の識別子 (SCID) です。 パート 1 のセッション識別子。|
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2 のセッション識別子。|
+| セッション名| GUID| セッションの一意の ID。 パート 3 のセッション識別子。|
 
 <a id="ID4EDC"></a>
 
@@ -39,7 +39,7 @@ sessiondirectory.xboxlive.com
 
 [DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/members/{index})](uri-serviceconfigsscidsessiontemplatessessiontemplatenamesessionnamemembersindexdelete.md)
 
-&nbsp;&nbsp;指定されたメンバーをセッションから削除します。
+&nbsp;&nbsp;セッションから、指定したメンバーを削除します。
 
 <a id="ID4ENC"></a>
 
@@ -51,4 +51,4 @@ sessiondirectory.xboxlive.com
 
 ##### <a name="parent"></a>Parent
 
-[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリの Uri](atoc-reference-sessiondirectory.md)

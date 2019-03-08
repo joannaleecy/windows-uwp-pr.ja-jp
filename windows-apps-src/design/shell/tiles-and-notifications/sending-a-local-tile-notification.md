@@ -1,23 +1,23 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+Description: 'この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します '
 title: ローカル タイル通知の送信
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946317"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636107"
 ---
 # <a name="send-a-local-tile-notification"></a>ローカル タイル通知の送信
  
 
-Windows 10 でのアプリのプライマリ タイルは、セカンダリ タイルをプログラムで作成し、アプリ コードで定義されているときに、アプリ マニフェストで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
+Windows 10 での主要なアプリのタイルは、セカンダリ タイルをプログラムで作成され、アプリのコードで定義されているときに、アプリ マニフェストで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
 
 ![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>タイル通知のコンテンツを作成する
 
 
-Windows 10 では、タイルのペイロードは、通知にカスタムの視覚的なレイアウトを作成するため、アダプティブ タイル テンプレートを使用して定義します。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
+Windows 10 でタイルのペイロードは、通知のカスタム ビジュアルのレイアウトを作成するため、適応型タイル テンプレートを使用して定義されます。 (アダプティブ タイルの活用方法について詳しくは、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 
@@ -164,7 +164,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **セカンダリ タイル**
 
-通知をセカンダリ タイルに送信するには、まず、セカンダリ タイルが存在することを確認します。 存在しないセカンダリ タイル (ユーザーがセカンダリ タイルのピン留めを外した場合など) のタイル アップデーターを作成すると、例外がスローされます。 [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) を使ってセカンダリ タイルがピン留めされていることを確認してから、セカンダリ タイルのタイル アップデーターを作成し、通知を送信することができます。
+通知をセカンダリ タイルに送信するには、まず、セカンダリ タイルが存在することを確認します。 存在しないセカンダリ タイル (ユーザーがセカンダリ タイルのピン留めを外した場合など) のタイル アップデーターを作成すると、例外がスローされます。 [  **SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) を使ってセカンダリ タイルがピン留めされていることを確認してから、セカンダリ タイルのタイル アップデーターを作成し、通知を送信することができます。
 
 次のコード例では、通知をセカンダリ タイルに送信します。
 
@@ -199,14 +199,14 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 ![通知を含んだタイルと消去された後のタイル](images/sending-local-tile-03.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 
-**通知キューの使用**
+**通知キューを使用します。**
 
 最初のタイルの更新を実行したので、[通知キュー](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)を有効にしてタイルの機能を拡張できます。
 
-**通知の他の配信方法**
+**その他の通知の配信方法**
 
 この記事では、タイルの更新を通知として送信する方法について説明します。 通知を配信する他の方法 (スケジュール、定期的、プッシュ) を調べるには、「[通知の配信](choosing-a-notification-delivery-method.md)」をご覧ください。
 
@@ -287,12 +287,12 @@ var notification = new TileNotification(doc);
 ## <a name="related-topics"></a>関連トピック
 
 * [アダプティブ タイルの作成](create-adaptive-tiles.md)
-* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
-* [Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
+* [通知ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 名前空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [通知キューの使用方法 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [通知の配信](choosing-a-notification-delivery-method.md)
+* [通知キュー (XAML) を使用する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [通知を配信します。](choosing-a-notification-delivery-method.md)
  
 
  

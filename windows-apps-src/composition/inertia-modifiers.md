@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943933"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639637"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>慣性修飾子を使用したスナップ位置の作成
 
@@ -20,9 +20,9 @@ ms.locfileid: "8943933"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [入力駆動型アニメーション](input-driven-animations.md)
-- [InteractionTracker を使用したカスタム操作エクスペリエンス](interaction-tracker-manipulations.md)
-- [関係ベース アニメーション](relation-animations.md)
+- [入力に基づくアニメーション](input-driven-animations.md)
+- [カスタム操作 InteractionTracker 経験](interaction-tracker-manipulations.md)
+- [ベースのリレーションのアニメーション](relation-animations.md)
 
 ## <a name="what-are-snap-points-and-why-are-they-useful"></a>スナップ位置の説明、およびスナップ位置が便利である理由
 

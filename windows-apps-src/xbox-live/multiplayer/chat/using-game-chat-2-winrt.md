@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb0578151d4262d61f5fbc078bebab721fb3bfe
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117548"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639167"
 ---
 # <a name="using-game-chat-2-winrt-projections"></a>ゲーム チャット 2 (WinRT プロジェクション) の使用
 
@@ -106,14 +106,14 @@ IGameChat2ChatUser remoteUserC = myGameChat2ChatManager.AddRemoteUser(userCXuid,
 IGameChat2ChatUser remoteUserD = myGameChat2ChatManager.AddRemoteUser(userDXuid, myRemoteEndpointTwo);
 ```
 
-これで、各リモート ユーザーとローカル ユーザーとの間の通信リレーションシップが構成されました。 この例では、ユーザー A とユーザー B が同じチームに属しており、双方向通信が許可されていると仮定します。 `GameChat2CommunicationRelationship.SendAndReceiveAll` は、双方向通信を表すように定義されています。 ユーザー A のユーザー B に対するリレーションシップを次のように設定します。
+これで、各リモート ユーザーとローカル ユーザーとの間の通信リレーションシップが構成されました。 この例では、ユーザー A とユーザー B が同じチームに属しており、双方向通信が許可されていると仮定します。 `GameChat2CommunicationRelationship.SendAndReceiveAll` 双方向通信を表すために定義されます。 ユーザー A のユーザー B に対するリレーションシップを次のように設定します。
 
 ```cs
 GameChat2ChatUserLocal localUserA = userA as GameChat2ChatUserLocal;
 localUserA.SetCommunicationRelationship(remoteUserB, GameChat2CommunicationRelationship.SendAndReceiveAll);
 ```
 
-次に、ユーザー C とユーザー D は "観戦者" であり、ユーザー A を一覧に表示することはできますが、会話は許可されていないと仮定します。 `GameChat2CommunicationRelationship.ReceiveAll` は定義されたこの単方向通信です。 リレーションシップを次のように設定します。
+次に、ユーザー C とユーザー D は "観戦者" であり、ユーザー A を一覧に表示することはできますが、会話は許可されていないと仮定します。 `GameChat2CommunicationRelationship.ReceiveAll` 定義されているこの一方向の通信。 リレーションシップを次のように設定します。
 
 ```cs
 localUserA.SetCommunicationRelationship(remoteUserC, GameChat2CommunicationRelationship.ReceiveAll);
@@ -184,7 +184,7 @@ foreach (IGameChat2StateChange stateChange in stateChanges)
 
 ## <a name="text-chat-a-nametext"></a>テキスト チャット <a name="text">
 
-テキスト チャットを送信するには、`GameChat2ChatUserLocal.SendChatText()` を使用します。 例:
+テキスト チャットを送信するには、`GameChat2ChatUserLocal.SendChatText()` を使用します。 次に、例を示します。
 
 ```cs
 localUserA.SendChatText("Hello");
@@ -200,7 +200,7 @@ localUserA.SendChatText("Hello");
 
 ### <a name="text-to-speech"></a>音声合成
 
-ユーザーが音声合成を有効にしていると、`GameChat2ChatUserLocal.TextToSpeechConversionPreferenceEnabled` は 'true' になります。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `GameChat2ChatUserLocal.SynthesizeTextToSpeech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 例:
+ユーザーが音声合成を有効にしていると、`GameChat2ChatUserLocal.TextToSpeechConversionPreferenceEnabled` は 'true' になります。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `GameChat2ChatUserLocal.SynthesizeTextToSpeech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 次に、例を示します。
 
 ```cs
 localUserA.SynthesizeTextToSpeech("Hello");
@@ -261,7 +261,7 @@ switch (userA.ChatIndicator)
 
 ゲームによって構成される通信リレーションシップの上に、ゲーム チャット 2 は権限とプライバシーの制限を強制します。 ゲーム チャット 2 では、ユーザーが最初に追加されると、権限とプライバシーの制限の参照を実行します。この操作が完了するまで、ユーザーの `IGameChat2ChatUser.ChatIndicator` は常に `GameChat2UserChatIndicator.Silent` を返します。 ユーザーの通信が権限またはプライバシーの制限による影響を受ける場合、ユーザーの `IGameChat2ChatUser.ChatIndicator` は `GameChat2UserChatIndicator.PlatformRestricted` を返します。 プラットフォーム通信制限は、音声チャットとテキスト チャットの両方に適用されます。テキスト チャットがプラットフォーム制限によりブロックされて音声チャットが制限されないインスタンスはなく、その逆もありません。
 
-`GameChat2ChatUserLocal.GetEffectiveCommunicationRelationship()` を使用すると、不完全な権限とプライバシーの操作によってユーザーが通信できない場合の区別に役立ちます。 これを使用すると、ゲーム チャット 2 によって強制される通信リレーションシップが `GameChat2CommunicationRelationship` の形式で返されます。また、リレーションシップが構成されたリレーションシップと等しくない理由が `GameChat2CommunicationRelationshipAdjuster` の形式で返されます。 たとえば、参照操作が進行中の場合、`GameChat2CommunicationRelationshipAdjuster` は `GameChat2CommunicationRelationshipAdjuster.Initializing` になります。 この方法は、開発シナリオとデバッグ シナリオで使用することを想定しています。UI に影響を与えるために使用しないでください (「[UI](#UI)」を参照してください)。
+`GameChat2ChatUserLocal.GetEffectiveCommunicationRelationship()` 不完全な権限とプライバシーに関する操作のためにユーザーが通信できない場合に区別するために使用できます。 これを使用すると、ゲーム チャット 2 によって強制される通信リレーションシップが `GameChat2CommunicationRelationship` の形式で返されます。また、リレーションシップが構成されたリレーションシップと等しくない理由が `GameChat2CommunicationRelationshipAdjuster` の形式で返されます。 たとえば、参照操作が進行中の場合、`GameChat2CommunicationRelationshipAdjuster` は `GameChat2CommunicationRelationshipAdjuster.Initializing` になります。 この方法は、開発シナリオとデバッグ シナリオで使用することを想定しています。UI に影響を与えるために使用しないでください (「[UI](#UI)」を参照してください)。
 
 ## <a name="cleanup-a-namecleanup"></a>クリーンアップ <a name="cleanup">
 

@@ -4,14 +4,14 @@ title: 入出力、デバイス、アプリ モデルの Windows ランタイム
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922333"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645187"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植
 
@@ -32,16 +32,16 @@ ms.locfileid: "8922333"
 ## <a name="background-audio"></a>バックグラウンド オーディオ
 
 
-[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)プロパティに、windows 10 アプリの**ForegroundOnlyMedia**と**BackgroundCapableMedia**は推奨されなくなりました。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
+[ **MediaElement.AudioCategory** ](https://msdn.microsoft.com/library/windows/apps/br227352)プロパティ、 **ForegroundOnlyMedia**と**BackgroundCapableMedia**の非推奨とされますWindows 10 アプリ。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>アプリが実行されているプラットフォームの検出
 
 
-Windows 10 でアプリを対象とした変更について考えたりの方法です。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
+Windows 10 でアプリを対象とした変更について考える方法。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
 ユニバーサル 8.1 アプリが実行されているオペレーティング システムを検出するコードがそのアプリに含まれている場合、ロジックによってはそのコードの変更が必要になることがあります。 アプリが値をパススルーし、その値を処理しないとき、場合によっては、オペレーティング システムに関する情報を継続して収集する必要があります。
 
-**注:** 機能の有無を検出するのには、オペレーティング システムやデバイス ファミリをいない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+**注**  機能の存在を検出するためには、オペレーティング システムまたはデバイス ファミリをしない使用することをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
  
 
@@ -66,10 +66,10 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md)」もご覧ください。
 
-## <a name="location"></a>位置情報
+## <a name="location"></a>Location
 
 
-位置情報機能をアプリ パッケージ マニフェストで宣言するアプリは、windows 10 で実行しているシステムに同意をエンドユーザーが求められます。 これは、アプリは、Windows Phone ストア アプリまたは windows 10 アプリかどうかは true。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
+ときに、アプリ パッケージ マニフェストの実行に Windows 10 で位置情報機能を宣言するアプリをエンドユーザーの同意が求められます。 これは、アプリは、Windows Phone ストア アプリまたは Windows 10 アプリかどうかに当てはまります。 アプリが独自の同意プロンプトを表示する場合や、オン/オフ切り替えを提供する場合、エンド ユーザーの確認を 1 回のみにするためにその機能を削除できます。
 
  
 
