@@ -8,39 +8,39 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b9e22b926f01a2020504d4d5c70eba6af9e52afb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613017"
 ---
-# <a name="leaderboards-uris"></a><span data-ttu-id="427e8-104">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="427e8-104">Leaderboards URIs</span></span>
+# <a name="leaderboards-uris"></a><span data-ttu-id="675cd-104">ランキング URI</span><span class="sxs-lookup"><span data-stu-id="675cd-104">Leaderboards URIs</span></span>
 
-<span data-ttu-id="427e8-105">このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。</span><span class="sxs-lookup"><span data-stu-id="427e8-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *leaderboards*.</span></span>
+<span data-ttu-id="675cd-105">このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*ランキング*します。</span><span class="sxs-lookup"><span data-stu-id="675cd-105">This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *leaderboards*.</span></span>
 
-<span data-ttu-id="427e8-106">これらの Uri のドメインは、leaderboards.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="427e8-106">The domain for these URIs is leaderboards.xboxlive.com.</span></span>
+<span data-ttu-id="675cd-106">これらの Uri のドメインとは、leaderboards.xboxlive.com です。</span><span class="sxs-lookup"><span data-stu-id="675cd-106">The domain for these URIs is leaderboards.xboxlive.com.</span></span>
 
 <a id="ID4EDB"></a>
 
 
-## <a name="in-this-section"></a><span data-ttu-id="427e8-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="427e8-107">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="675cd-107">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="675cd-107">In this section</span></span>
 
-[<span data-ttu-id="427e8-108">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="427e8-108">/scids/{scid}/leaderboards/{leaderboardname}</span></span>](uri-scidsscidleaderboardsleaderboardname.md)
+[<span data-ttu-id="675cd-108">/scids/{scid}/leaderboards/{leaderboardname}</span><span class="sxs-lookup"><span data-stu-id="675cd-108">/scids/{scid}/leaderboards/{leaderboardname}</span></span>](uri-scidsscidleaderboardsleaderboardname.md)
 
-<span data-ttu-id="427e8-109">&nbsp;&nbsp;定義済みグローバル ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="427e8-109">&nbsp;&nbsp;Accesses a predefined global leaderboard.</span></span>
+<span data-ttu-id="675cd-109">&nbsp;&nbsp;定義済みのグローバルなランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="675cd-109">&nbsp;&nbsp;Accesses a predefined global leaderboard.</span></span>
 
-[<span data-ttu-id="427e8-110">ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname)/people/{all\ | favorite}</span><span class="sxs-lookup"><span data-stu-id="427e8-110">/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite}</span></span>](uri-usersxuidscidstatnamepeople.md)
+[<span data-ttu-id="675cd-110">/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite}</span><span class="sxs-lookup"><span data-stu-id="675cd-110">/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite}</span></span>](uri-usersxuidscidstatnamepeople.md)
 
-<span data-ttu-id="427e8-111">&nbsp;&nbsp;ソーシャル (ランク付け) ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="427e8-111">&nbsp;&nbsp;Accesses a social (ranked) leaderboard.</span></span>
+<span data-ttu-id="675cd-111">&nbsp;&nbsp;ソーシャル (ランク付け) ランキングにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="675cd-111">&nbsp;&nbsp;Accesses a social (ranked) leaderboard.</span></span>
  
 <a id="ID4EMB"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="427e8-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="427e8-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="675cd-112">関連項目</span><span class="sxs-lookup"><span data-stu-id="675cd-112">See also</span></span>
 
 <a id="ID4EOB"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="427e8-113">Parent</span><span class="sxs-lookup"><span data-stu-id="427e8-113">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="675cd-113">Parent</span><span class="sxs-lookup"><span data-stu-id="675cd-113">Parent</span></span>
 
-[<span data-ttu-id="427e8-114">ユニバーサル リソース識別子 (URI) リファレンス</span><span class="sxs-lookup"><span data-stu-id="427e8-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)
+[<span data-ttu-id="675cd-114">Universal Resource Identifier (URI) のリファレンス</span><span class="sxs-lookup"><span data-stu-id="675cd-114">Universal Resource Identifier (URI) Reference</span></span>](../atoc-xboxlivews-reference-uris.md)

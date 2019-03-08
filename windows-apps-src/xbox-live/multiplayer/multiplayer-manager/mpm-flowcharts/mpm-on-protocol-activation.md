@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, フローチャート
 ms.localizationpriority: medium
 ms.openlocfilehash: dcce4de4c8b0ff79d65223cbca7a48635d0ce0f0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608297"
 ---
-# <a name="flowchart---handle-protocol-activation"></a><span data-ttu-id="40b13-104">フローチャート - プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="40b13-104">Flowchart - Handle protocol activation</span></span>
+# <a name="flowchart---handle-protocol-activation"></a><span data-ttu-id="3c185-104">フローチャート - プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="3c185-104">Flowchart - Handle protocol activation</span></span>
 
-<span data-ttu-id="40b13-105">次のフローチャートでは、ゲームへの招待に応答する場合、またはメンバーのプロフィール カードを通してゲームに参加する場合のフローを示します。</span><span class="sxs-lookup"><span data-stu-id="40b13-105">The following flowcharts show the flow of responding to a game invite, or joining a game via the member's profile card.</span></span>
+<span data-ttu-id="3c185-105">次のフローチャートでは、ゲームへの招待に応答する場合、またはメンバーのプロフィール カードを通してゲームに参加する場合のフローを示します。</span><span class="sxs-lookup"><span data-stu-id="3c185-105">The following flowcharts show the flow of responding to a game invite, or joining a game via the member's profile card.</span></span>
 
-## <a name="handle-protocol-activation"></a><span data-ttu-id="40b13-106">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="40b13-106">Handle protocol activation</span></span>
+## <a name="handle-protocol-activation"></a><span data-ttu-id="3c185-106">プロトコルのアクティブ化を処理する</span><span class="sxs-lookup"><span data-stu-id="3c185-106">Handle protocol activation</span></span>
 
 ![SmartMatch マッチメイキング](../../../images/multiplayer/mpm-on-activation.png)

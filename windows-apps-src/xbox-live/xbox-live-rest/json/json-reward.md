@@ -8,33 +8,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d58d34263e7e0e90091c41c1df4fd5e078f5055
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945501"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607497"
 ---
-# <a name="reward-json"></a><span data-ttu-id="0ed01-104">Reward (JSON)</span><span class="sxs-lookup"><span data-stu-id="0ed01-104">Reward (JSON)</span></span>
-<span data-ttu-id="0ed01-105">実績に関連付けられたリワードです。</span><span class="sxs-lookup"><span data-stu-id="0ed01-105">The reward associated with the achievement.</span></span>
+# <a name="reward-json"></a><span data-ttu-id="9d23a-104">Reward (JSON)</span><span class="sxs-lookup"><span data-stu-id="9d23a-104">Reward (JSON)</span></span>
+<span data-ttu-id="9d23a-105">実績に関連付けられている特典です。</span><span class="sxs-lookup"><span data-stu-id="9d23a-105">The reward associated with the achievement.</span></span>
 <a id="ID4EN"></a>
 
 
-## <a name="reward"></a><span data-ttu-id="0ed01-106">リワード</span><span class="sxs-lookup"><span data-stu-id="0ed01-106">Reward</span></span>
+## <a name="reward"></a><span data-ttu-id="9d23a-106">報酬</span><span class="sxs-lookup"><span data-stu-id="9d23a-106">Reward</span></span>
 
-<span data-ttu-id="0ed01-107">リワード オブジェクトには、次仕様があります。</span><span class="sxs-lookup"><span data-stu-id="0ed01-107">The Reward object has the following specification.</span></span>
+<span data-ttu-id="9d23a-107">Reward オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="9d23a-107">The Reward object has the following specification.</span></span>
 
-| <span data-ttu-id="0ed01-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="0ed01-108">Member</span></span>| <span data-ttu-id="0ed01-109">種類</span><span class="sxs-lookup"><span data-stu-id="0ed01-109">Type</span></span>| <span data-ttu-id="0ed01-110">説明</span><span class="sxs-lookup"><span data-stu-id="0ed01-110">Description</span></span>|
+| <span data-ttu-id="9d23a-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="9d23a-108">Member</span></span>| <span data-ttu-id="9d23a-109">種類</span><span class="sxs-lookup"><span data-stu-id="9d23a-109">Type</span></span>| <span data-ttu-id="9d23a-110">説明</span><span class="sxs-lookup"><span data-stu-id="9d23a-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="0ed01-111">name</span><span class="sxs-lookup"><span data-stu-id="0ed01-111">name</span></span>| <span data-ttu-id="0ed01-112">string</span><span class="sxs-lookup"><span data-stu-id="0ed01-112">string</span></span>| <span data-ttu-id="0ed01-113">リワードのユーザーに表示される名前です。</span><span class="sxs-lookup"><span data-stu-id="0ed01-113">The user-facing name of the Reward.</span></span>|
-| <span data-ttu-id="0ed01-114">description</span><span class="sxs-lookup"><span data-stu-id="0ed01-114">description</span></span>| <span data-ttu-id="0ed01-115">string</span><span class="sxs-lookup"><span data-stu-id="0ed01-115">string</span></span>| <span data-ttu-id="0ed01-116">ユーザーに表示されるリワードの説明です。</span><span class="sxs-lookup"><span data-stu-id="0ed01-116">The user-facing description of the Reward.</span></span>|
-| <span data-ttu-id="0ed01-117">value</span><span class="sxs-lookup"><span data-stu-id="0ed01-117">value</span></span>| <span data-ttu-id="0ed01-118">string</span><span class="sxs-lookup"><span data-stu-id="0ed01-118">string</span></span>| <span data-ttu-id="0ed01-119">リワードの値です。</span><span class="sxs-lookup"><span data-stu-id="0ed01-119">The Reward's value.</span></span>|
-| <span data-ttu-id="0ed01-120">type</span><span class="sxs-lookup"><span data-stu-id="0ed01-120">type</span></span>| <span data-ttu-id="0ed01-121">RewardType 列挙型</span><span class="sxs-lookup"><span data-stu-id="0ed01-121">RewardType enumeration</span></span>| <span data-ttu-id="0ed01-122">リワードの種類:</span><span class="sxs-lookup"><span data-stu-id="0ed01-122">The Reward type:</span></span> <ul><li><span data-ttu-id="0ed01-123">無効 (0): 不明なおよびサポートされていないリワードの種類が構成されています。</span><span class="sxs-lookup"><span data-stu-id="0ed01-123">invalid (0): An unknown and unsupported reward type was configured.</span></span></li><li><span data-ttu-id="0ed01-124">(1): ゲーマー スコア リワードでは、プレイヤーのゲーマー スコアにポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="0ed01-124">Gamerscore (1): The reward adds points to the player's Gamerscore.</span></span></li><li><span data-ttu-id="0ed01-125">inApp (2): リワードが定義されているし、タイトルによって配信します。</span><span class="sxs-lookup"><span data-stu-id="0ed01-125">inApp (2): The reward is defined and delivered by the title.</span></span></li><li><span data-ttu-id="0ed01-126">アート (3): リワードは、デジタル資産です。</span><span class="sxs-lookup"><span data-stu-id="0ed01-126">Art (3): The reward is a digital asset.</span></span></li></ul> | 
-| <span data-ttu-id="0ed01-127">valueType</span><span class="sxs-lookup"><span data-stu-id="0ed01-127">valueType</span></span>| <span data-ttu-id="0ed01-128">ProgressValueDataType 列挙型</span><span class="sxs-lookup"><span data-stu-id="0ed01-128">ProgressValueDataType enumeration</span></span>| <span data-ttu-id="0ed01-129">値の種類です。</span><span class="sxs-lookup"><span data-stu-id="0ed01-129">The type of value.</span></span> <span data-ttu-id="0ed01-130">詳細については、[要件 (JSON)](json-requirement.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0ed01-130">See [Requirement (JSON)](json-requirement.md) for more information.</span></span>|
+| <span data-ttu-id="9d23a-111">name</span><span class="sxs-lookup"><span data-stu-id="9d23a-111">name</span></span>| <span data-ttu-id="9d23a-112">string</span><span class="sxs-lookup"><span data-stu-id="9d23a-112">string</span></span>| <span data-ttu-id="9d23a-113">報酬のユーザーに表示される名前。</span><span class="sxs-lookup"><span data-stu-id="9d23a-113">The user-facing name of the Reward.</span></span>|
+| <span data-ttu-id="9d23a-114">説明</span><span class="sxs-lookup"><span data-stu-id="9d23a-114">description</span></span>| <span data-ttu-id="9d23a-115">string</span><span class="sxs-lookup"><span data-stu-id="9d23a-115">string</span></span>| <span data-ttu-id="9d23a-116">報酬のユーザーに表示される説明です。</span><span class="sxs-lookup"><span data-stu-id="9d23a-116">The user-facing description of the Reward.</span></span>|
+| <span data-ttu-id="9d23a-117">value</span><span class="sxs-lookup"><span data-stu-id="9d23a-117">value</span></span>| <span data-ttu-id="9d23a-118">string</span><span class="sxs-lookup"><span data-stu-id="9d23a-118">string</span></span>| <span data-ttu-id="9d23a-119">報酬の値。</span><span class="sxs-lookup"><span data-stu-id="9d23a-119">The Reward's value.</span></span>|
+| <span data-ttu-id="9d23a-120">type</span><span class="sxs-lookup"><span data-stu-id="9d23a-120">type</span></span>| <span data-ttu-id="9d23a-121">RewardType 列挙型</span><span class="sxs-lookup"><span data-stu-id="9d23a-121">RewardType enumeration</span></span>| <span data-ttu-id="9d23a-122">報酬の種類:</span><span class="sxs-lookup"><span data-stu-id="9d23a-122">The Reward type:</span></span> <ul><li><span data-ttu-id="9d23a-123">(0) が無効です。報酬を不明なサポートされていない型が構成されました。</span><span class="sxs-lookup"><span data-stu-id="9d23a-123">invalid (0): An unknown and unsupported reward type was configured.</span></span></li><li><span data-ttu-id="9d23a-124">ゲーマー (1):報酬は、プレーヤーのゲーマーにポイントを追加します。</span><span class="sxs-lookup"><span data-stu-id="9d23a-124">Gamerscore (1): The reward adds points to the player's Gamerscore.</span></span></li><li><span data-ttu-id="9d23a-125">inApp (2):報酬が定義され、タイトルに配信します。</span><span class="sxs-lookup"><span data-stu-id="9d23a-125">inApp (2): The reward is defined and delivered by the title.</span></span></li><li><span data-ttu-id="9d23a-126">アート (3):報酬は、デジタル資産です。</span><span class="sxs-lookup"><span data-stu-id="9d23a-126">Art (3): The reward is a digital asset.</span></span></li></ul> | 
+| <span data-ttu-id="9d23a-127">ValueType</span><span class="sxs-lookup"><span data-stu-id="9d23a-127">valueType</span></span>| <span data-ttu-id="9d23a-128">ProgressValueDataType 列挙型</span><span class="sxs-lookup"><span data-stu-id="9d23a-128">ProgressValueDataType enumeration</span></span>| <span data-ttu-id="9d23a-129">値の型。</span><span class="sxs-lookup"><span data-stu-id="9d23a-129">The type of value.</span></span> <span data-ttu-id="9d23a-130">参照してください[要件 (JSON)](json-requirement.md)詳細についてはします。</span><span class="sxs-lookup"><span data-stu-id="9d23a-130">See [Requirement (JSON)](json-requirement.md) for more information.</span></span>|
 
 <a id="ID4EBD"></a>
 
 
-## <a name="sample-json-syntax"></a><span data-ttu-id="0ed01-131">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="0ed01-131">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="9d23a-131">サンプルの JSON の構文</span><span class="sxs-lookup"><span data-stu-id="9d23a-131">Sample JSON syntax</span></span>
 
 
 ```json
@@ -52,11 +52,11 @@ ms.locfileid: "8945501"
 <a id="ID4EKD"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="0ed01-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="0ed01-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9d23a-132">関連項目</span><span class="sxs-lookup"><span data-stu-id="9d23a-132">See also</span></span>
 
 <a id="ID4EMD"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="0ed01-133">Parent</span><span class="sxs-lookup"><span data-stu-id="0ed01-133">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="9d23a-133">Parent</span><span class="sxs-lookup"><span data-stu-id="9d23a-133">Parent</span></span>
 
-[<span data-ttu-id="0ed01-134">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="0ed01-134">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="9d23a-134">JavaScript Object Notation (JSON) オブジェクトの参照</span><span class="sxs-lookup"><span data-stu-id="9d23a-134">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
