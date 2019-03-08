@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4364bf9973b69587ae042a809d026b553ee2ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932147"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662317"
 ---
 # <a name="copying-and-accessing-resource-data"></a>リソース データのコピーとアクセス
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932147"
 
 既定のケースは、GPU で使用できるリソースを対象としています。 そのリソース データを CPU が使用する必要がある場合もあります。 パフォーマンスに影響を与えることなく、適切なプロセッサがリソース データにアクセスできるようにリソース データをコピーするには、API メソッドの仕組みに関する知識が必要になります。
 
-## <a name="span-idcopyingspanspan-idcopyingspanspan-idcopyingspancopying-resource-data"></a><span id="Copying"></span><span id="copying"></span><span id="COPYING"></span>リソース データのコピー
+## <a name="span-idcopyingspanspan-idcopyingspanspan-idcopyingspancopying-resource-data"></a><span id="Copying"></span><span id="copying"></span><span id="COPYING"></span>リソースのデータのコピー
 
 
 Direct3D が Create の呼び出しを実行すると、メモリ内にリソースが作成されます。 それらは、ビデオ メモリ、システム メモリ、または他の任意の種類のメモリに作成することができます。 WDDM ドライバー モデルはこのメモリを仮想化するため、アプリケーションはリソースが作成されるメモリの種類を把握する必要がありません。
@@ -42,7 +42,7 @@ Direct3D が Create の呼び出しを実行すると、メモリ内にリソー
 
 使用法が既定のリソースから、使用法がステージングのリソースへデータをコピーしようとする (CPU でデータを読み取ることができるようにするため、つまり GPU のリードバックの問題) アプリケーションは、注意して実行する必要があります。 詳しくは、「[リソース データへのアクセス](#accessing)」をご覧ください。
 
-## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>リソース データへのアクセス
+## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>リソース データにアクセスします。
 
 
 リソースにアクセスするには、リソースをマッピングする必要があります。マッピングとは、基本的には、アプリケーションが CPU からメモリへのアクセスを行おうとすることです。 CPU から基になるメモリへアクセスできるようリソースをマッピングするプロセスでは、何らかのパフォーマンス ボトルネックが発生する場合があります。このため、このタスクをいつどのように実行するかについて、注意を払う必要があります。
@@ -85,7 +85,7 @@ Direct3D の非同期呼び出し (メソッドの大多数の呼び出し、お
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">フレーム</th>
+<th align="left">Frame</th>
 <th align="left">GPU/CPU の状態</th>
 </tr>
 </thead>

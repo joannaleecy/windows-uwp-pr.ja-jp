@@ -1,6 +1,6 @@
 ---
 title: 減衰とスポットライト係数
-description: グローバル照明の計算式に含まれるディフューズ ライティングとスペキュラ ライティングの成分には、ライトの減衰とスポットライト コーンを記述する項があります。
+description: 全体照明の方程式の拡散光および反射光コンポーネントには、光の減衰とスポットライト コーンを表す項が含まれています。
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
 keywords:
 - 減衰とスポットライト係数
@@ -8,25 +8,25 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659297"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>減衰とスポットライト係数
 
 
-グローバル照明の計算式に含まれるディフューズ ライティングとスペキュラ ライティングの成分には、ライトの減衰とスポットライト コーンを記述する項があります。 ここでは、これらの項について説明します。
+全体照明の方程式の拡散光および反射光コンポーネントには、光の減衰とスポットライト コーンを表す項が含まれています。 ここでは、これらの項について説明します。
 
 ## <a name="span-idattenuationspanspan-idattenuationspanspan-idattenuationspanattenuation"></a><span id="Attenuation"></span><span id="attenuation"></span><span id="ATTENUATION"></span>減衰
 
 
 ライトの減衰は、ライトの種類、およびライトと頂点間の距離に依存します。 減衰を計算するには、次の式のいずれかを使用します。
 
-Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
+Atten = 1/(att0<sub>は</sub>+ att1<sub>は</sub> \* d + att2<sub>は</sub> \* d²)
 
-この場合
+各項目の意味は次のとおりです。
 
 | パラメーター        | 既定値 | 種類           | 説明                                     | 範囲          |
 |------------------|---------------|----------------|-------------------------------------------------|----------------|
@@ -42,9 +42,9 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 
 ライトと頂点との距離は常に正の値になります。
 
-d = |L<sub>dir</sub> |
+d = | L<sub>dir</sub> |
 
-この場合
+各項目の意味は次のとおりです。
 
 | パラメーター       | 既定値 | 種類                                             | 説明                                                 |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
@@ -58,7 +58,7 @@ d がライトの範囲を超えると、Direct3D はそれ以上減衰を計算
 
 ライトの最大範囲における減衰は、0.0 ではありません。 ライトがライトの範囲内になったときに突然表示されるのを防ぐために、アプリケーションでライトの範囲を増やすことができます。 また、ライトの範囲で減衰係数が 0.0 に近づくように、アプリケーションで減衰定数を設定することもできます。 減衰値をライトの色の赤、緑、および青の成分で乗算することにより、ライトの強度は、ライトが頂点まで移動する距離の係数として増減されます。
 
-## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>スポットライト係数
+## <a name="span-idspotlight-factorspanspan-idspotlight-factorspanspan-idspotlight-factorspanspotlight-factor"></a><span id="Spotlight-Factor"></span><span id="spotlight-factor"></span><span id="SPOTLIGHT-FACTOR"></span>スポット ライト要素
 
 
 次の式は、スポット ライト係数を指定します。
@@ -68,13 +68,13 @@ d がライトの範囲を超えると、Direct3D はそれ以上減衰を計算
 | パラメーター         | 既定値 | 種類           | 説明                              | 範囲                    |
 |-------------------|---------------|----------------|------------------------------------------|--------------------------|
 | rho<sub>i</sub>   | なし           | 浮動小数点 | スポットライト i のコサイン (角度)            | なし                      |
-| phi<sub>i</sub>   | 0.0           | 浮動小数点 | スポットライトの半影の角度 (ラジアン) | \[theta<sub>i</sub>, pi) |
-| theta<sub>i</sub> | 0.0           | 浮動小数点 | スポットライトの本影の角度 (ラジアン)    | \[0, pi)                 |
+| phi<sub>i</sub>   | 0.0           | 浮動小数点 | スポットライトの半影の角度 (ラジアン) | \[シータ<sub>は</sub>pi) |
+| theta<sub>i</sub> | 0.0           | 浮動小数点 | スポットライトの本影の角度 (ラジアン)    | \[0 の場合、円周率)                 |
 | falloff           | 0.0           | 浮動小数点 | 減衰係数                           | (-infinity, +infinity)   |
 
  
 
-この場合
+各項目の意味は次のとおりです。
 
 rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
@@ -92,7 +92,7 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[光源の計算](mathematics-of-lighting.md)
+[照明の計算](mathematics-of-lighting.md)
 
  
 

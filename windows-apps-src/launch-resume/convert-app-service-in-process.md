@@ -3,15 +3,15 @@ title: ホスト アプリと同じプロセスで実行するようにアプリ
 description: 別のバックグラウンド プロセスで実行されたアプリ サービスのコードを、アプリ サービスのプロバイダーと同じプロセス内で実行されるコードに変換します。
 ms.date: 11/03/2017
 ms.topic: article
-keywords: windows 10, uwp, アプリ サービス
+keywords: windows 10、uwp、アプリ サービス
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a976ac69d289a5582c2f3546227adba707ac5297
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927114"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643417"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する
 
@@ -38,13 +38,13 @@ ms.locfileid: "8927114"
 >   </Applications>
 > ```
 
-削除、`EntryPoint`から属性、`<Extension>`要素[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)はエントリ ポイント、アプリ サービスが呼び出されたときに使用されるためです。
+削除、`EntryPoint`属性を`<Extension>`要素のため、今すぐ[OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) app service が呼び出されたときに使用されるエントリ ポイントです。
 
 2 つ目の変更として、サービス ロジックを別個のバックグラウンド タスク プロジェクトから、**OnBackgroundActivated()** によって呼び出すことができるメソッドに移動します。
 
 これで、アプリケーションがアプリ サービスを直接実行できるようになります。 たとえば、App.xaml.cs: で
 
-[!NOTE] 次のコードでは、1 つの例 1 (アウト プロセス サービス) に使用したよりも異なります。 次のコードは提供のみを目的と (インプロセス サービス) 例 2 の一部としては使用する必要があります。  記事の切り替えの例を続けるには、例 2 (インプロセス サービス) に 1 (アウト プロセス サービス) は、次の例のコードではなく 1 の例のコードを使用に進みます。
+[!NOTE] 次のコードは、例 1 (アウト プロセス サービス) に使用したものと異なる。 次のコードでは、あくまで説明のためは提供されており、例 2 の一部であり、(プロセス内のサービス) としては使用できません。  例からの記事の移行を続行するには、例 2 (プロセス内のサービス) に 1 (アウト プロセス サービス) は、以下の説明のコードではなく、例 1 の提供するコードに進みます。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

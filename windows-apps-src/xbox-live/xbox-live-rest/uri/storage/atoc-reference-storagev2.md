@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e0296eff0937ea5075630db0e049c86e2ea2c8ce
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924111"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622677"
 ---
 # <a name="title-storage-uris"></a>タイトル ストレージ URI
  
-このセクションでは、*タイトル ストレージ*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられたハイパー テキスト トランスポート プロトコル (HTTP) メソッドの詳細を提供します。
+このセクションの Xbox Live サービスから Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) メソッドの詳細については、*タイトルの記憶域*します。
  
 どのプラットフォームで実行されるゲームでも、このサービスを使用できます。
  
-これらの Uri のドメインは、titlestorage.xboxlive.com です。
+これらの Uri のドメインとは、titlestorage.xboxlive.com です。
  
 <a id="ID4EFB"></a>
 
@@ -33,7 +33,7 @@ ms.locfileid: "8924111"
 
 [/global/scids/{scid}/data/{path}](uri-globalscidssciddatapath.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。 
 
 [/global/scids/{scid}/data/{pathAndFileName},{type}](uri-globalscidssciddatapathandfilenametype.md)
 
@@ -49,7 +49,7 @@ ms.locfileid: "8924111"
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{path}](uri-jsonusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。 
 
 [/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json](uri-jsonusersxuidscidssciddatapathandfilenametype.md)
 
@@ -61,7 +61,7 @@ ms.locfileid: "8924111"
 
 [/sessions/{sessionId}/scids/{scid}/data/{path}](uri-sessionssessionidscidssciddatapath.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。 
 
 [/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}](uri-sessionssessionidscidssciddatapathandfilenametype.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "8924111"
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-trustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。 
 
 [/trustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-trustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
@@ -93,7 +93,7 @@ ms.locfileid: "8924111"
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}](uri-untrustedplatformusersxuidscidssciddatapath.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。 
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。 
 
 [/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},{type}](uri-untrustedplatformusersxuidscidssciddatapathandfilenametype.md)
 
@@ -109,6 +109,6 @@ ms.locfileid: "8924111"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

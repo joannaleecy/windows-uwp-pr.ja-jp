@@ -3,15 +3,15 @@ title: Device Portal のフォルダー アップロード API のリファレ�
 description: フォルダー アップロード API にプログラムでアクセスする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617607"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>開発ディレクトリにフォルダーをアップロードする
 
@@ -52,7 +52,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox
 

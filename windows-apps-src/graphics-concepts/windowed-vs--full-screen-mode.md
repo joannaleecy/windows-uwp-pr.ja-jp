@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d84bbebfaf19b756e6abc6c592187b6b0ee92200
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945043"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618467"
 ---
-# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>ウィンドウ モードと全画面表示モード
+# <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>全画面表示モードとウィンドウ
 
 
-Direct3D アプリケーションは、ウィンドウ モードと全画面表示モードのどちらでも実行できます。 *ウィンドウ モード*では、アプリケーションは実行中のすべてのアプリケーションとデスクトップの利用可能な画面領域を共有します。 "全画面表示モード"** では、アプリケーションを実行するウィンドウがデスクトップ全体に表示され、実行中の他のアプリケーションはすべて (開発環境も含めて) 見えなくなります。 通常、ゲームは既定で全画面表示モードになり、実行中のアプリケーションをすべて隠してユーザーがゲームに完全に没頭できるようにするのが一般的です。
+Direct3D アプリケーションは、ウィンドウ モードと全画面表示モードのどちらでも実行できます。 *ウィンドウ モード*では、アプリケーションは実行中のすべてのアプリケーションとデスクトップの利用可能な画面領域を共有します。 *全画面表示モード*では、アプリケーションが実行されるウィンドウがデスクトップ全体に表示され、実行中のすべてのアプリケーション (開発環境を含む) が非表示になります。 通常、ゲームは既定で全画面表示モードになり、実行中のアプリケーションをすべて隠してユーザーがゲームに完全に没頭できるようにするのが一般的です。
 
 全画面表示モードとウィンドウ モードのコードの違いはごくわずかです。
 

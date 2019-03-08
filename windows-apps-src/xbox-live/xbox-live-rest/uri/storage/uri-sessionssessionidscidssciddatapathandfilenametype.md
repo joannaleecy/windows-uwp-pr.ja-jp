@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 402b4589a2812e34792622c253fb4b919d3f9c74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934224"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599667"
 ---
 # <a name="sessionssessionidscidssciddatapathandfilenametype"></a>/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type}
 ファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -24,12 +24,12 @@ ms.locfileid: "8934224"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| sessionId| string| 検索するセッションの ID。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイルの名前です。 パスの部分 (となどを含む最終的なスラッシュ) の有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にすることがありますはいない期間の終了または 2 つの連続するピリオドが含まれてはします。| 
-| type| 文字列| データの形式です。 使用可能な値とは、バイナリまたは json です。| 
+| sessionId| string| 検索する、セッションの ID。| 
+| scid| guid| 検索するサービス構成の ID。| 
+| pathAndFileName| string| アクセスする項目のパスとファイル名。 有効な文字 (最大、および最後のスラッシュを含む) のパス部分に含まれている大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、スラッシュ (/) とします。パスの部分を空にすることがあります。有効な文字の大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、ファイル名の部分 (最後のスラッシュの後の部分すべて) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にする可能性がありますはいない末尾をピリオドまたは 2 つの連続するピリオドを含めることは。| 
+| type| string| データの形式です。 有効値とは、バイナリまたは json です。| 
   
 <a id="ID4EOC"></a>
 
@@ -46,7 +46,7 @@ ms.locfileid: "8934224"
 
 [PUT (/sessions/{sessionId}/scids/{scid}/data/{pathAndFileName},{type})](uri-sessionssessionidscidssciddatapathandfilenametype-put.md)
 
-&nbsp;&nbsp;ファイルをアップロードします。 データやメタデータが送信される 1 つのメッセージで、または一連の小さいブロックのデータやメタデータが送信される複数のブロック アップロードとして完全なアップロードでは、データをアップロードできます。 1 つのメッセージとしては 4 つのメガバイトよりも小さいファイルのみを送信できます。 Json の種類のデータの複数のブロックのアップロードはサポートされていません。 
+&nbsp;&nbsp;ファイルをアップロードします。 データおよびメタデータが送信される一連の小さなブロックのデータとメタデータが送信される複数のブロックのアップロードや 1 つのメッセージで完全なアップロードには、データをアップロードできます。 1 つのメッセージとして 4 メガバイト未満のファイルのみを送信できます。 データ型の json は、複数のブロックのアップロードはサポートされていません。 
  
 <a id="ID4E5C"></a>
 
@@ -58,6 +58,6 @@ ms.locfileid: "8934224"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

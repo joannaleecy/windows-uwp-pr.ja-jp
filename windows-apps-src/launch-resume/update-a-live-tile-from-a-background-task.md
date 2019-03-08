@@ -1,20 +1,20 @@
 ---
-title: バックグラウンド タスクによるライブ タイルの更新
+title: バックグラウンド タスクのライブ タイルの更新
 description: アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114458"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650537"
 ---
-# <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクによるライブ タイルの更新
+# <a name="update-a-live-tile-from-a-background-task"></a>バックグラウンド タスクのライブ タイルの更新
 
 **重要な API**
 
@@ -39,7 +39,7 @@ ms.locfileid: "9114458"
 ## <a name="implement-the-background-task"></a>バックグラウンド タスクの実装
 
 
-[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。 バックグラウンドの作業は、Run メソッドで実行されます。 この場合、タスクによって MSDN ブログの配信フィードが取得されます。 非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。
+[  **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。 バックグラウンドの作業は、Run メソッドで実行されます。 この場合、タスクによって MSDN ブログの配信フィードが取得されます。 非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。
 
 1.  ソリューション エクスプローラーで、自動的に生成されたファイルである Class1.cs の名前を BlogFeedBackgroundTask.cs に変更します。
 2.  BlogFeedBackgroundTask.cs を開き、自動的に生成されたコードを、**BlogFeedBackgroundTask** クラスのスタブ コードに置き換えます。
@@ -152,16 +152,16 @@ namespace BackgroundTasks
 6.  **[アプリケーション UI]** タブをクリックまたはタップします。
 7.  **[ロック画面通知]** を **[バッジとタイル テキスト]** に設定します。
 8.  **[バッジ ロゴ]** フィールドに、24x24 ピクセルのアイコンへのパスを設定します。
-    **重要な**このアイコンは、モノクロで透明のピクセルだけを使う必要があります。
+    **重要な**  このアイコンは、モノクロおよび透明なピクセルのみを使用する必要があります。
 9.  **[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。
 10. **[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。
 
 ## <a name="register-the-background-task"></a>バックグラウンド タスクの登録
 
 
-[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。
+[  **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。
 
-> **注:** 以降 windows 8.1 では、バック グラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。
+> **注**  バック グラウンド タスクの登録パラメーターは Windows 8.1 以降、登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。
  
 
 アプリのメイン ページで、**RegisterBackgroundTask** メソッドを追加し、このメソッドを **OnNavigatedTo** イベント ハンドラーで呼び出します。
@@ -260,7 +260,7 @@ namespace ContosoApp
 * [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
 * [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
-* [タイルとバッジのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [タイルとバッジのガイドラインとチェックリスト](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 

@@ -6,11 +6,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 6f9b424428753529e753c9fd15bbab4321fa05b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922489"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624887"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>OpenGL ES 2.0 からのチュートリアル サンプルの移植
 
@@ -34,7 +34,7 @@ ms.locfileid: "8922489"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">簡単な OpenGL ES 2.0 レンダラーを Direct3D 11.1 に移植する方法</a></p></td>
+<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">方法: ポートの Direct3D 11.1 に単純な OpenGL ES 2.0 レンダラー</a></p></td>
 <td align="left"><p>最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。</p></td>
 </tr>
 </tbody>

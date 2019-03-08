@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, スタック トレース, エラー
 ms.localizationpriority: medium
 ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929373"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627457"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>アプリのエラーに関するスタック トレースの取得
 
-アプリのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したアプリのエラーに関するスタック トレースのみです。 [正常性レポート](../publish/health-report.md)では、パートナー センターの [**エラー** ] セクションでは、スタック トレースを利用できます。
+アプリのエラーに関するスタック トレースを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドでダウンロードできるのは、過去 30 日以内に発生したアプリのエラーに関するスタック トレースのみです。 スタック トレースがでも利用できる、**エラー**のセクション、[正常性レポート](../publish/health-report.md)パートナー センターでします。
 
 このメソッドを使うには、その前にまず「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、スタック トレースを取得するエラーに関連付けられた CAB ファイルの ID を取得する必要があります。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8929373"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 * スタック トレースを取得するエラーに関連付けられた CAB ファイルの ID を取得します。 この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。
 
 ## <a name="request"></a>要求
@@ -40,17 +40,17 @@ ms.locfileid: "8929373"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-| パラメーター        | 型   |  説明      |  必須かどうか  |
+| パラメーター        | 種類   |  説明      |  必須  |
 |---------------|--------|---------------|------|
-| applicationId | string | スタック トレースを取得するアプリのストア ID です。 ストア ID は、パートナー センターでの[アプリ id] ページ](../publish/view-app-identity-details.md)で利用できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  必須  |
-| cabId | string | スタック トレースを取得するエラーに関連付けられた CAB ファイルの一意の ID を取得します。 この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。 |  必須  |
+| applicationId | string | スタック トレースを取得するアプリのストア ID です。 Store ID は、[アプリ id のページ](../publish/view-app-identity-details.md)パートナー センターでします。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。 |  〇  |
+| cabId | string | スタック トレースを取得するエラーに関連付けられた CAB ファイルの一意の ID を取得します。 この ID を取得するには、「[アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)」のメソッドを使って、アプリの特定のエラーに関する詳細情報を取得し、そのメソッドの応答本文で **cabId** 値を使います。 |  〇  |
 
  
 ### <a name="request-example"></a>要求の例
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>応答本文
 
-| 値      | 型    | 説明                  |
+| Value      | 種類    | 説明                  |
 |------------|---------|--------------------------------|
 | Value      | array   | 各オブジェクトにスタック トレース データの 1 つのフレームが格納されたオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[スタック トレースの値](#stack-trace-values)」セクションをご覧ください。 |
 | @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターを 10 に設定した場合、クエリに適合するエラーが 10 行を超えると、この値が返されます。 |
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 
 *Value* 配列の要素には、次の値が含まれます。
 
-| 値           | 型    | 説明      |
+| Value           | 種類    | 説明      |
 |-----------------|---------|----------------|
 | level            | string  |  コール スタックでこの要素が表すフレーム番号です。  |
 | image   | string  |   このスタック フレームで呼び出される関数が含まれている実行可能ファイルまたはライブラリ イメージの名前です。           |
@@ -88,7 +88,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>応答の例
 
-この要求の JSON 応答の本文の例を次に示します。
+この要求の JSON 返信の本文の例を次に示します。
 
 ```json
 {
@@ -120,8 +120,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [[正常性] レポート](../publish/health-report.md)
-* [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [エラー報告データの取得](get-error-reporting-data.md)
-* [アプリのエラーに関する詳細情報の取得](get-details-for-an-error-in-your-app.md)
-* [アプリのエラーの CAB ファイルをダウンロードする](download-the-cab-file-for-an-error-in-your-app.md)
+* [正常性レポート](../publish/health-report.md)
+* [Microsoft Store サービスを使用して分析データにアクセス](access-analytics-data-using-windows-store-services.md)
+* [エラー報告データを取得します。](get-error-reporting-data.md)
+* [アプリでエラーの詳細を取得します。](get-details-for-an-error-in-your-app.md)
+* [アプリでエラー用の CAB ファイルをダウンロードします。](download-the-cab-file-for-an-error-in-your-app.md)

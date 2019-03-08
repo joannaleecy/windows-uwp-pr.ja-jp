@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ca7d0aca0f05a56f51d13f8ae27c1c0ccd6e39e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931385"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591187"
 ---
 # <a name="add-and-compile-the-xbox-live-apis-source-in-your-uwp-project"></a>UWP プロジェクトで Xbox Live API のソースを追加し、コンパイルする
 
-Xbox Live API (XSAPI) のソースが GitHub で利用できるようになりました[https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。 開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。
+Xbox Live API (XSAPI) ソースは、GitHub で公開されています[ https://github.com/Microsoft/xbox-live-api](https://github.com/Microsoft/xbox-live-api)します。 開発者は、次の手順を使用して、ローカル ビルドを使用するようにプロジェクトを更新できます。
 
 次のような場合、XSAPI を自分でビルドする必要があります。
 1. 問題をデバッグしてエラーのあるコードの場所を特定する場合。

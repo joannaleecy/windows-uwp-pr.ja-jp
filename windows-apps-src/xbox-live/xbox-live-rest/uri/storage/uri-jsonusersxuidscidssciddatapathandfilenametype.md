@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ee2f21426f0fad1cdb84adba864aeebd0d8e1edc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936771"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614027"
 ---
 # <a name="jsonusersxuidxuidscidssciddatapathandfilenamejson"></a>/json/users/xuid({xuid})/scids/{scid}/data/{pathAndFileName},json
 ダウンロード、アップロード、またはファイルを削除します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -24,11 +24,11 @@ ms.locfileid: "8936771"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイルの名前です。 パスの部分 (となどを含む最終的なスラッシュ) の有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にすることがありますはいない期間の終了または 2 つの連続するピリオドが含まれてはします。| 
+| xuid| 64 ビット符号なし整数| Xbox のユーザー ID を (XUID)、プレーヤーの要求を行う。| 
+| scid| guid| 検索するサービス構成の ID。| 
+| pathAndFileName| string| アクセスする項目のパスとファイル名。 有効な文字 (最大、および最後のスラッシュを含む) のパス部分に含まれている大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、スラッシュ (/) とします。パスの部分を空にすることがあります。有効な文字の大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、ファイル名の部分 (最後のスラッシュの後の部分すべて) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にする可能性がありますはいない末尾をピリオドまたは 2 つの連続するピリオドを含めることは。| 
   
 <a id="ID4EFC"></a>
 
@@ -39,13 +39,13 @@ ms.locfileid: "8936771"
 
 &nbsp;&nbsp;ファイルを削除します。 
 
-[GET](uri-jsonusersxuidscidssciddatapathandfilenametype-get.md)
+[取得](uri-jsonusersxuidscidssciddatapathandfilenametype-get.md)
 
 &nbsp;&nbsp;ファイルをダウンロードします。
 
 [PUT](uri-jsonusersxuidscidssciddatapathandfilenametype-put.md)
 
-&nbsp;&nbsp;ファイルをアップロードします。 Json の種類のデータの複数のブロックのアップロードはサポートされていません。 
+&nbsp;&nbsp;ファイルをアップロードします。 データ型の json は、複数のブロックのアップロードはサポートされていません。 
  
 <a id="ID4EVC"></a>
 
@@ -57,6 +57,6 @@ ms.locfileid: "8936771"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

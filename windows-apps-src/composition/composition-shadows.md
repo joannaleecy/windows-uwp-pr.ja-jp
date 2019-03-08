@@ -1,24 +1,24 @@
 ---
-title: コンポジションのシャドウ
-description: シャドウ Api を使用して、動的なカスタマイズ可能なシャドウを UI コンテンツを追加できます。
+title: コンポジション シャドウ
+description: シャドウの Api を使用して、UI のコンテンツを動的にカスタマイズ可能なシャドウを追加できます。
 ms.date: 07/16/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926427"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630837"
 ---
-# <a name="shadows-in-windows-ui"></a>Windows UI でのシャドウ
+# <a name="shadows-in-windows-ui"></a>Windows UI のシャドウ
 
-[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)クラスは、 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)または[LayerVisual](/uwp/api/windows.ui.composition.layervisual) (視覚効果のサブツリー) に適用可能な構成可能なシャドウを作成する手段を提供します。 ビジュアル レイヤー内のオブジェクトの慣例では、Compositionanimation を使用して、DropShadow のすべてのプロパティをアニメーション化することができます。
+[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)クラスに適用できる構成可能なシャドウの作成方法を提供する、 [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)または[LayerVisual](/uwp/api/windows.ui.composition.layervisual) (ビジュアルのサブツリー)。 ビジュアル層でオブジェクトの慣習はでは、CompositionAnimations を使用して、DropShadow のすべてのプロパティをアニメーション化することができます。
 
 ## <a name="basic-drop-shadow"></a>基本的なドロップ シャドウ
 
-基本的なシャドウを作成するには、新しい DropShadow を作成し、ビジュアルに関連付けることだけです。 影が既定では四角形です。 シャドウの見た目や操作感を調整する標準的な一連のプロパティを利用できます。
+基本的な影を作成するには、新しい DropShadow を作成し、それをビジュアルに関連付けます。 シャドウは既定では四角形です。 標準的な一連のプロパティをシャドウのルック アンド フィールを調整する利用できます。
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -33,19 +33,19 @@ basicShadow.Offset = new Vector3(20, 20, 20);
 basicRectVisual.Shadow = basicShadow;
 ```
 
-![四角形のビジュアルで基本的な DropShadow](images/rectangular-dropshadow.png)
+![四角形のビジュアルを基本 DropShadow](images/rectangular-dropshadow.png)
 
-## <a name="shaping-the-shadow"></a>シャドウを整える
+## <a name="shaping-the-shadow"></a>影の整形
 
-これには、DropShadow の形状を定義するいくつかの方法があります。
+これには、DropShadow の形を定義するいくつかの方法があります。
 
-- DropShadow 図形を既定では **、既定の使用**- は CompositionDropShadowSourcePolicy の '既定' モードによって定義されます。 SpriteVisual が既定の四角形マスクが提供されている場合を除き、します。 LayerVisual、既定ではビジュアル オブジェクトのブラシのアルファ マスクを継承します。
-- **マスクを設定**、シャドウの不透明度マスクを定義する[マスク](/uwp/api/windows.ui.composition.dropshadow.mask)プロパティを設定することがあります。
-- **継承マスクを使うことを指定する**– では、 [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)を使用する[SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)プロパティを設定します。 ビジュアル オブジェクトのブラシのアルファから生成されたマスクを使用する InheritFromVisualContent します。
+- **既定値を使用して、** - 既定では、DropShadow 図形が CompositionDropShadowSourcePolicy で 'Default' モードで定義されています。 SpriteVisual で、既定値は四角形、マスクを指定しない場合です。 LayerVisual、既定値では、ビジュアルのブラシのアルファを使用してマスクを継承します。
+- **マスクを設定**– を設定することがあります、[マスク](/uwp/api/windows.ui.composition.dropshadow.mask)シャドウの不透明度マスクを定義するプロパティ。
+- **継承されたマスクを使用するように指定**設定 –、 [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)プロパティを使用する[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)します。 InheritFromVisualContent ビジュアルのブラシのアルファから生成されるマスクを使用します。
 
-## <a name="masking-to-match-your-content"></a>コンテンツに合わせてマスク
+## <a name="masking-to-match-your-content"></a>コンテンツの一致するようにマスク
 
-場合は、ビジュアルのコンテンツに合わせて、シャドウ シャドウ マスクのプロパティにビジュアル オブジェクトのブラシを使用するか、自動的にコンテンツをマスクを継承するシャドウを設定します。 LayerVisual を使っている場合、シャドウは既定では、マスクを継承します。
+ビジュアルのコンテンツの一致するように、シャドウする場合、ビジュアルのブラシを使用して、シャドウ マスク プロパティのかコンテンツからマスクを自動的に継承するように影を設定します。 場合は、LayerVisual を使用して、影は既定では、マスクを継承します。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -65,13 +65,13 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![マスク影付き接続されている web 画像](images/ms-brand-web-dropshadow.png)
+![マスクされたドロップ シャドウを伴って接続された web イメージ](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>代替のマスクを使用します。
+## <a name="using-an-alternative-mask"></a>代替のマスクを使用してください。
 
-場合によっては、図形、シャドウのビジュアルのコンテンツをそれと一致しないようにすることがあります。 この効果を実現するためには、ブラシを使用して、アルファ マスク プロパティを明示的に設定する必要があります。
+場合によっては、図形、影のビジュアルのコンテンツと一致しないようにする場合があります。 この効果を実現するには、アルファのブラシを使って、マスク プロパティを明示的に設定する必要があります。
 
-次の例では、2 つのサーフェスに視覚的なコンテンツ用とシャドウ マスク用に 1 つを読み込みます。
+次の例では、2 つのサーフェスのビジュアルのコンテンツのいずれかと、シャドウ マスク用に 1 つを読み込んでいます。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -93,11 +93,11 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![接続されている web 画像の円をマスク ドロップ シャドウ](images/ms-brand-web-masked-dropshadow.png)
+![接続された web イメージ枠で囲まれたマスク ドロップ シャドウ](images/ms-brand-web-masked-dropshadow.png)
 
 ## <a name="animating"></a>アニメーション化
 
-標準のビジュアル レイヤーは、コンポジションのアニメーションを使用して、DropShadow プロパティをアニメーション化することができます。 以下は、上記の影のぼかし半径をアニメーション化する散点サンプルからのコードを変更します。
+ビジュアル層で標準では、合成アニメーションを使用して、DropShadow プロパティをアニメーション化することができます。 次の影のぼかしの半径をアニメーション化するのには、上の結び付けたりサンプルからコードを変更します。
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -109,25 +109,25 @@ blurAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 shadow.StartAnimation("BlurRadius", blurAnimation);
 ```
 
-## <a name="shadows-in-xaml"></a>XAML でのシャドウ
+## <a name="shadows-in-xaml"></a>XAML で影
 
-複雑なフレームワーク要素にシャドウを追加する場合は、XAML とコンポジションのシャドウとの相互運用機能をいくつかの方法があります。
+複雑なフレームワーク要素に影を追加する場合は、XAML と合成の影付きの相互運用機能のいくつかの方法があります。
 
-1. Windows コミュニティ ツールキットで利用可能な[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs)を使用します。 その使用方法の詳細については、 [DropShadowPanel ドキュメント](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)を参照してください。
-1. シャドウのホストとして使用すると、XAML ハンドアウト Visual を関連付けることにビジュアルを作成します。
-1. コンポジションのサンプル ギャラリーの[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon)カスタム CompositionShadow コントロールを使います。 ここでの使用例を参照してください。
+1. 使用して、 [DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) Windows の Community Toolkit で使用できます。 参照してください、 [DropShadowPanel ドキュメント](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)それを使用する方法の詳細について。
+1. シャドウのホストとして使用して、& XAML 配布資料 Visual に関連付けることにビジュアルを作成します。
+1. 使用して、コンポジション サンプル ギャラリーの[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon)カスタム CompositionShadow コントロール。 使用状況の次の例を参照してください。
 
 ## <a name="performance"></a>パフォーマンス
 
-ビジュアル レイヤーは、多くの最適化を効率的で使用可能な効果を作成するには、シャドウを生成するいるとする比較的安価処理にによっては、どのようなオプションを設定することができます。 高レベル '' のコストさまざまな種類のシャドウを以下に示します。 ある特定のシャドウのコストがかかる場合がありますが、可能性があります特定のシナリオで慎重に使用する適切な注意してください。
+ビジュアル層は、多くの最適化を効率的かつ使用可能な効果を設定する場所には、影を生成すると、どのようなオプションを設定するによって比較的高価な操作を指定できます。 高レベル '' のコストの影のさまざまな種類を次に示します。 特定の影が高価な場合がありますが、ある可能性があります特定のシナリオで慎重に使用する適切なに注意してください。
 
-シャドウの特性| 費用
+シャドウの特性| コスト
 ------------- | -------------
 [四角形の領域切り取り]    | 低
 Shadow.Mask      | 高
 CompositionDropShadowSourcePolicy.InheritFromVisualContent | 高
-静的なぼかし Radius | 低
-Radius のぼかしをアニメーション化 | 高
+静的ぼかしの半径 | 低
+ぼかしの半径をアニメーション化 | 高
 
 ## <a name="additional-resources"></a>その他のリソース
 

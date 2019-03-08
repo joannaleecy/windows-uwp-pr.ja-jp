@@ -3,21 +3,21 @@ title: マルチ ユーザー アプリケーションの概要
 description: Xbox のマルチ ユーザー モデルの簡単な概要です。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 ms.localizationpriority: medium
 ms.openlocfilehash: b56140f9a71c8233d2832c2b0da6ed927b5a19ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922247"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607717"
 ---
 # <a name="introduction-to-multi-user-applications"></a>マルチ ユーザー アプリケーションの概要
 
 このトピックは、Xbox のマルチ ユーザー モデルの簡単な概要となるものです。
 
-Xbox One ユーザー モデルは、複数のユーザーが単一のデバイスで互いに協力しながらゲームをプレイできるゲーム機本体の要件に合わせて調整されています。 それぞれが自分のコントローラーを持つ複数のユーザーがサインインして、同時に 1 つの対話型セッションでコンソールを使用できます。 これは、他の Windows デバイスとは異なります。 次に例を示します。
+Xbox One ユーザー モデルは、複数のユーザーが単一のデバイスで互いに協力しながらゲームをプレイできるゲーム機本体の要件に合わせて調整されています。 それぞれが自分のコントローラーを持つ複数のユーザーがサインインして、同時に 1 つの対話型セッションでコンソールを使用できます。 これは、他の Windows デバイスとは異なります。 次に、例を示します。
 * **Windows のデスクトップ PC** では、同じデバイスを使用する複数のユーザーが許可されますが、各ユーザーに独自の対話型セッションがあり、各セッションはデバイス上の他のセッションから完全に独立しています。
 * **Windows Phone** では、デバイスを使用するシングル ユーザーのみを許可します。 OOBE (Out-Of-Box Experience) 中にそのシングル ユーザーが決定され、ユーザーはサインイン後にサインアウトできません。 事実上、別のユーザーがデバイスを使用するにはデバイスをリセットする必要があります。 
 * **Xbox One** では、複数のユーザーがサインインして、単一の対話型セッションで同時にデバイスを使用できます。
@@ -50,5 +50,5 @@ Windows.System.UserDeviceAssociation.FindUserFromDeviceId メソッドを使用�
 ## <a name="guidance-on-which-model-to-choose"></a>モデルの選択に関するガイダンス
 すべての UWP アプリと、シングル ユーザーのゲームの大多数は、SUA として作成できます。 協力型のマルチ プレーヤー ゲームについてのみ、Xbox One のマルチ ユーザー モデルを選ぶことを検討するようお勧めします。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [Xbox One の UWP](index.md)

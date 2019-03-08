@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f868fdf4f3d5cd36000784d9c5a3437fa5d67ffa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943047"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593857"
 ---
 # <a name="get-usersuseridprofilesettingspeopleuserlist"></a>GET (/users/{userId}/profile/settings/people/{userList})
-ユーザーのプロファイルを取得またはユーザー, People モニカーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
+ユーザーのプロファイルを取得またはユーザーのモニカーでのユーザーをサポートします。 これらの Uri のドメインが`profile.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EKB)
@@ -28,35 +28,35 @@ ms.locfileid: "8943047"
  
 ## <a name="remarks"></a>注釈
  
-**userList**と**ユーザー Id**は、相互に排他的なパラメーターです。 いずれかまたは両方が指定されている場合は、 **BadRequest**をもう一度表示されます。 **userList**は、複数の名前付きリストが要求に便利なシナリオで将来の配列です。 **ユーザー Id**は Xuid の 10 進数の文字列の構成 - JSON は 64 ビットの符号なし整数をシリアル化するのには不適切です。 最後に、Xbox One での設定の名前は、通常のわかりやすい名前ではなく 64 ビットの符号なし整数またはあいまいな定数**XONLINE_PROFILE_ASDF**などの設定になります。
+**userList**と**の userid と**は相互に排他的なパラメーターです。 両方またはいずれかが指定されている場合、られます、 **BadRequest**戻ります。 **userList**は複数の名前付きリストが要求する便利なシナリオで将来の配列です。 **userid と**で構成されます - Xuid の 10 進数値の文字列の JSON は、64 ビット符号なし整数のシリアル化に正しくないです。 64 ビット符号なし整数またはあいまいな定数のようにするのではなく、最後に、Xbox One での設定の名前、設定は通常の人間が判読できる名前**XONLINE_PROFILE_ASDF**します。
   
 <a id="ID4EKB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| ユーザー Id| string| 'Xuid(12345)'、'gt(myGamertag)' の 'me' またはいずれかを指定できます。| 
-| userList| string| 名前付きの設定を取得するユーザーの一覧。 現時点では、ユーザーは、サポートされている唯一の一覧を示します。| 
+| userId| string| 'Xuid(12345)'、'gt(myGamertag)' のいずれかまたは 'me' を指定できます。| 
+| userList| string| 設定を取得するユーザーの名前付きのリスト。 現時点では、ユーザーは、サポートされているだけの一覧を示します。| 
   
 <a id="ID4EVB"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| settings| string| 設定名のコンマ区切りリスト。| 
+| settings| string| 設定名のコンマ区切りの一覧。| 
   
 <a id="ID4EQC"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 32 ビット符号付き整数| 値 = 2| 
+| x-xbl-contract-version| 32 ビット符号付き整数| 値 = 2| 
 | コンテンツの種類| string| 値 = <code>application/json</code>| 
   
 <a id="ID4E2D"></a>
@@ -67,7 +67,7 @@ ms.locfileid: "8943047"
 <a id="ID4EBE"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -84,7 +84,7 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
  
 ##### <a name="response-body"></a>応答本文 
-応答は、 **ReadMultiSettingsResponseV2**オブジェクトです。 呼び出し元のユーザーと仮定すると、1 つだけのフレンドがあります。
+応答は、 **ReadMultiSettingsResponseV2**オブジェクト。 呼び出し元のユーザーと仮定した場合に、1 つだけのフレンドがあります。
   
 
 ```cpp
@@ -129,6 +129,6 @@ GET /users/me/profile/settings/people/people?settings=GameDisplayName,GameDispla
 
 [/users/{userId}/profile/settings/people/{userList}?settings={settings}](uri-usersuseridprofilesettingspeopleuserlist.md)
 
- [Profile (JSON)](../../json/json-profile.md)
+ [プロファイル (JSON)](../../json/json-profile.md)
 
    

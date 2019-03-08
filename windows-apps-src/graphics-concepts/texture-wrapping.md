@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6618b7573be7cd39f703299b9418d1575297120e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622627"
 ---
 # <a name="texture-wrapping"></a>テクスチャの折り返し
 
@@ -21,7 +21,7 @@ ms.locfileid: "8928403"
 
 ![2 点間の補間の線の図](images/interp1.png)
 
-この図では、A と B の間の最短距離がテクスチャのほぼ中央を通っています。 u または v のテクスチャ座標の折り返しを有効にした場合、Direct3D で u 方向および v 方向のテクスチャ座標間の最短経路を判定する方法が変わります。 定義では、テクスチャの折り返しによって 0.0 と 1.0 が同じ位置になると仮定され、ラスタライザーがテクスチャ座標間の最短経路を決定します。 これは理解が難しい部分です。次のように考えてみましょう。一方向のテクスチャの折り返しを有効にすると、システムは円柱の周囲に巻き付いているかのようにテクスチャを扱います。 たとえば、次のような図を考えます。
+この図では、A と B の間の最短距離がテクスチャのほぼ中央を通っています。 u または v のテクスチャ座標の折り返しを有効にした場合、Direct3D で u 方向および v 方向のテクスチャ座標間の最短経路を判定する方法が変わります。 定義では、テクスチャの折り返しによって 0.0 と 1.0 が同じ位置になると仮定され、ラスタライザーがテクスチャ座標間の最短経路を決定します。 最後のビットは、手の込んだ部分を示します。一方向での折り返し有効にするとテクスチャが原因でシステム円柱をラップした場合と同様にテクスチャを処理することを想像できます。 たとえば、次のような図を考えます。
 
 ![円柱の周りに巻き付いたテクスチャと 2 つの点の図](images/interp2.png)
 
@@ -41,9 +41,9 @@ u 方向で折り返しが有効になっているので、テクスチャ処理
 
 テクスチャの折り返しが有効でない場合、ラスタライザーは期待される反射イメージの生成に必要な方向には補間しません。 u 座標 0.175 と 0.875 の間のテクセルはテクスチャの中心を通るため、柱の前面の領域には水平方向に圧縮されたテクセルが含まれます。 折り返しの効果は適用されていません。
 
-テクスチャの折り返しを、類似する名前のテクスチャのアドレス指定モードと混同しないでください。 テクスチャの折り返しは、テクスチャのアドレス指定の前に行われます。 テクスチャの折り返しデータに、\[0.0, 1.0\] の範囲外のテクスチャ座標が含まれないようにしてください。このような座標が含まれている場合、定義されていない結果になります。 テクスチャの折り返しについて詳しくは、「[テクスチャのアドレス指定モード](texture-addressing-modes.md)」をご覧ください。
+テクスチャの折り返しを、類似する名前のテクスチャのアドレス指定モードと混同しないでください。 テクスチャの折り返しは、テクスチャのアドレス指定の前に行われます。 データをラップするテクスチャに任意の範囲外のテクスチャ座標が含まれていないかどうかを必ず\[0.0, 1.0\]のため、未定義の結果が生成されます。 テクスチャの折り返しについて詳しくは、「[テクスチャのアドレス指定モード](texture-addressing-modes.md)」をご覧ください。
 
-## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>ディスプレースメント マップの折り返し
+## <a name="span-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspanspan-iddisplacementmapwrappingspandisplacement-map-wrapping"></a><span id="Displacement_Map_Wrapping"></span><span id="displacement_map_wrapping"></span><span id="DISPLACEMENT_MAP_WRAPPING"></span>ラッピング置き換えマップ
 
 
 ディスプレースメント マップは、テセレーション エンジンによって補間されます。 テセレーション エンジンには折り返しモードを指定できないため、ディスプレースメント マップを使ってテクスチャの折り返しを行うことはできません。 アプリケーションは、強制的に補間を行う頂点を使って、任意の方向に折り返すことができます。 また、補間を単純な線形補間として行うように指定することもできます。

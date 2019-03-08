@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, サービス呼び出し, テスト, trace analyzer
 ms.localizationpriority: medium
 ms.openlocfilehash: fa8ca37842edfbeaab0063cd953f3a34358a82da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921747"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623467"
 ---
 # <a name="xbox-live-trace-analyzer"></a>Xbox Live Trace Analyzer
 
-Xbox Live Services API では、タイトル デベロッパーがすべてのサービス呼び出しをキャプチャーし、呼び出しパターンに違反がないかオフラインで分析できるようになりました。 サービス呼び出しトレースをアクティベーションするには、xbtrace コマンド ライン ツールで利用できる新しい機能を使用するか、またはより高度なシナリオ向けのプロトコル アクティベーションを使用します。 また、タイトル コードから直接サービス呼び出しトレースをアクティベーションすることもできます。 Xbox Live ツール パッケージの一部として Xbox Live Trace Analyzer (XBLTraceAnalyzer.exe) と呼ばれるオフライン分析ツールが見つかりません[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)します。
+Xbox Live Services API では、タイトル デベロッパーがすべてのサービス呼び出しをキャプチャーし、呼び出しパターンに違反がないかオフラインで分析できるようになりました。 サービス呼び出しトレースをアクティベーションするには、xbtrace コマンド ライン ツールで利用できる新しい機能を使用するか、またはより高度なシナリオ向けのプロトコル アクティベーションを使用します。 また、タイトル コードから直接サービス呼び出しトレースをアクティベーションすることもできます。 オフライン分析ツール、Xbox Live トレース アナライザー (XBLTraceAnalyzer.exe) と呼ばれることができますから Xbox Live ツール パッケージの一部として見つかりません[ https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)します。
 
 
 ## <a name="gather-logs-and-analyze-the-service-calls"></a>ログの収集とサービス呼び出しの分析
@@ -60,7 +60,7 @@ xbtrace によるトレースの開始と停止はプロトコル アクティ�
     xbtrace stop
 
 
-xbtrace でトレースを開始および停止するには、タイトルが実行されており、プロトコル アクティベーションが初期化されている必要があることを忘れないでください。 トレースの停止後、xbtrace によってトレース ファイルが開発用 PC にコピーされ、"xbtrace" とタイムスタンプを含む名前のディレクトリに配置されます。 このディレクトリの名前は、xbtrace の \[etlfile\] オプションを使用して変更することができます。
+xbtrace でトレースを開始および停止するには、タイトルが実行されており、プロトコル アクティベーションが初期化されている必要があることを忘れないでください。 トレースの停止後、xbtrace によってトレース ファイルが開発用 PC にコピーされ、"xbtrace" とタイムスタンプを含む名前のディレクトリに配置されます。 使用してこのディレクトリの名前をオーバーライドできます\[etlfile\] xbtrace するオプション。
 
 <a name="starting-and-stopping-tracing-by-using-protocol-activation"></a>プロトコル アクティベーションを使用してトレースを開始および停止する
 ----------------------------------------------------------

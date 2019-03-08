@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8425d5349b57cac209e177a9d9c013e28a433647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941534"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618887"
 ---
 # <a name="get-trustedplatformusersxuidxuidscidsscid"></a>GET (/trustedplatform/users/xuid({xuid})/scids/{scid})
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
-  * [Authorization](#ID4ECB)
+  * [承認](#ID4ECB)
   * [必要な要求ヘッダー](#ID4ENB)
   * [要求本文](#ID4EWC)
-  * [HTTP ステータス コード](#ID4EBD)
+  * [HTTP 状態コード](#ID4EBD)
   * [応答本文](#ID4EUAAC)
  
 <a id="ID4EX"></a>
@@ -29,27 +29,27 @@ ms.locfileid: "8941534"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
+| xuid| 64 ビット符号なし整数| Xbox のユーザー ID を (XUID)、プレーヤーの要求を行う。| 
+| scid| guid| 検索するサービス構成の ID。| 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求には、有効な Xbox LIVE の authorization ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可されていない場合、サービスは 403 forbidden」応答を返します。 ヘッダーが無効であるか不足している場合、サービスは、401 を返します。 
   
 <a id="ID4ENB"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
+| x-xbl-contract-version| 1| API コントラクトのバージョン。| 
+| Authorization| XBL3.0 x = [ハッシュ] です。[トークン]| STS の認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得および authorization ヘッダーの作成の詳細については、認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EWC"></a>
 
@@ -61,34 +61,34 @@ ms.locfileid: "8941534"
 <a id="ID4EBD"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード 
+## <a name="http-status-codes"></a>HTTP 状態コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| OK | 要求が成功しました。| 
-| 201| Created | エンティティが作成されました。| 
-| 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 200| OK | 要求が成功します。| 
+| 201| 作成日 | エンティティが作成されました。| 
+| 400| 要求が正しくありません | サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
-| 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
-| 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
-| 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
+| 403| Forbidden | ユーザーまたはサービスは、要求することはできません。| 
+| 404| 検出不可 | 指定されたリソースが見つかりませんでした。| 
+| 406| Not Acceptable | リソースのバージョンがサポートされていません。| 
+| 408| 要求のタイムアウト | 要求がかかり過ぎて、完了します。| 
+| 500| 内部サーバー エラー | サーバーには、要求を満たせませんでした。 予期しない状態が発生しました。| 
+| 503| サービス利用不可 | 要求が調整されて、クライアント再試行値 (秒) (例: 5 秒後) の後にもう一度要求を再試行してください。| 
   
 <a id="ID4EUAAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは[quotaInfo](../../json/json-quota.md)オブジェクトを返します。 
+呼び出しが成功したサービスを返します、 [quotaInfo](../../json/json-quota.md)オブジェクト。 
  
 <a id="ID4ECBAC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

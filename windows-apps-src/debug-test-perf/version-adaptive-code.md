@@ -3,25 +3,25 @@ title: バージョン アダプティブ コード
 description: ApiInformation を使って、以前のバージョンとの互換性を保ちながら新しい API を利用します
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ms.localizationpriority: medium
 ms.openlocfilehash: d62ce9abd84a0769a2393db169b8198d3d9f6cec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616407"
 ---
 # <a name="version-adaptive-code"></a>バージョン アダプティブ コード
 
-アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードの場合、最小の OS バージョンで実行するように基本コードを記述し、新機能が提供されているより高いバージョンでアプリが実行されていることを検出したときに、機能を手動で選んで追加できます。
+アダプティブ コードの記述については、[アダプティブ UI の作成](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)についての考え方と同じように考えることができます。 最小画面で実行するように基本 UI を設計し、より大きな画面でアプリが実行されていることを検出したときに要素を移動または追加できます。 アダプティブ コードの場合、最小の OS バージョンで実行するように基本コードを記述し、新機能が提供されているより高いバージョンでアプリが実行されていることを検出したときに、機能を手動で選んで追加できます。
 
 ApiInformation に関する重要な背景情報、API コントラクト、Visual Studio の構成については、「[バージョン アダプティブ アプリ](version-adaptive-apps.md)」をご覧ください。
 
 ### <a name="runtime-api-checks"></a>ランタイム API チェック
 
-呼び出す API が存在するかどうかをテストするために、コードの条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ **true** と評価され、呼び出しが可能になります。 これにより、特定の OS バージョンでのみ利用できる API を使うアプリを作成するためのバージョン アダプティブ コードを記述できます。
+呼び出す API が存在するかどうかをテストするには、コード内の条件で [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) クラスを使います。 この条件は、アプリがどこで実行された場合でも評価されますが、API が存在して呼び出すことができるデバイスでのみ **true** と評価されます。 これにより、特定の OS バージョンでのみ利用できる API を使うアプリを作成するためのバージョン アダプティブ コードを記述できます。
 
 ここでは、Windows Insider Preview の新機能をターゲットにするための具体的な例を示します。 **ApiInformation** を使う場合の一般的な概要については、[デバイス ファミリの概要に関する記事](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code)と [API コントラクトを使った機能の動的な検出に関するブログの投稿](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)をご覧ください。
 
@@ -42,7 +42,7 @@ ApiInformation に関する重要な背景情報、API コントラクト、Visu
 
 ここで、以下のオプションを比較します。
 
-**アプリケーション コード**
+**アプリのコード**
 
 使う状況:
 - すべてのアダプティブ コード シナリオにお勧めします。ただし、拡張可能なトリガー用に以下に定義されている特定のケースは除きます。
@@ -53,7 +53,7 @@ ApiInformation に関する重要な背景情報、API コントラクト、Visu
 欠点:
 - デザイナーがサポートされていません。
 
-**状態トリガー**
+**状態のトリガー**
 
 使う状況:
 - OS バージョン間で、ロジックを変更する必要のない、表示状態に関連付けられているプロパティまたは列挙値のみに変更がある場合に使います。
@@ -71,9 +71,9 @@ ApiInformation に関する重要な背景情報、API コントラクト、Visu
 
 このセクションでは、Windows 10 バージョン 1607 (Windows Insider Preview) で新しく追加された API を使うアダプティブ コードの例をいくつか示します。
 
-### <a name="example-1-new-enum-value"></a>例 1: 新しい列挙値
+### <a name="example-1-new-enum-value"></a>例 1:新しい列挙値
 
-Windows 10 バージョン 1607 では、[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) 列挙体に新しい値 **ChatWithoutEmoji** が追加されています。 この新しい入力スコープの入力動作は、**Chat** 入力スコープ (スペルチェック、オートコンプリート、大文字の自動設定) と同じですが、絵文字ボタンのないタッチ キーボードにマップされます。 これは、独自の絵文字ピッカーを作成し、タッチ キーボードに組み込まれている絵文字ボタンを無効にする場合に便利です。 
+Windows 10 バージョン 1607 を追加する新しい値を[InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx)列挙体。**ChatWithoutEmoji**します。 この新しい入力スコープの入力動作は、**Chat** 入力スコープ (スペルチェック、オートコンプリート、大文字の自動設定) と同じですが、絵文字ボタンのないタッチ キーボードにマップされます。 これは、独自の絵文字ピッカーを作成し、タッチ キーボードに組み込まれている絵文字ボタンを無効にする場合に便利です。 
 
 次の例は、**ChatWithoutEmoji** 列挙値が存在するかどうかを確認し、存在する場合は **TextBox** の [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) プロパティを設定する方法を示しています。 アプリが実行されているシステムにこの列挙値が存在しない場合、**InputScope** は **Chat** に設定されます。 ここに示されているコードは、Page コンストラクターまたは Page.Loaded イベント ハンドラーに配置できます。
 
@@ -154,13 +154,13 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 
 XAML またはチェックを含まないコードで ChatWithoutEmoji 値を使うと、ChatWithoutEmoji 値がターゲットの OS バージョンに存在するためエラーなしでコンパイルされます。 また、ターゲットの OS バージョンが含まれたシステムで、エラーなしで実行されます。 ただし、アプリが最小バージョンを使っている OS を含むシステムで実行されると、ChatWithoutEmoji 列挙値が存在しないため実行時にクラッシュします。 そのため、コードでのみこの値を使って、この値が現在のシステムでサポートされている場合だけ呼び出されるように、ランタイム API チェックにラップする必要があります。
 
-### <a name="example-2-new-control"></a>例 2: 新しいコントロール
+### <a name="example-2-new-control"></a>例 2:新しいコントロール
 
 通常、新しいバージョンの Windows では、プラットフォームに新機能をもたらす新しいコントロールが UWP API サーフェスに追加されています。 新しいコントロールを活用するには、[ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使います。
 
 Windows 10 バージョン 1607 には、[**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) と呼ばれる新しいメディア コントロールが導入されています。 このコントロールは、[MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) クラスに基づいて作成されているため、バックグラウンド オーディオに簡単に結び付けることができるような機能が追加され、メディア スタックの向上したアーキテクチャを活用しています。
 
-ただし、アプリが Windows 10 バージョン 1607 より古いバージョンを実行しているデバイスで実行される場合、新しい **MediaPlayerElement** コントロールではなく、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) コントロールを使う必要があります。 [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使って実行時に MediaPlayerElement コントロールが存在するかどうかをチェックし、アプリが実行されているシステムに適しているコントロールを読み込むことができます。
+ただし、アプリが Windows 10 バージョン 1607 より古いバージョンを実行しているデバイスで実行される場合、新しい **MediaPlayerElement** コントロールではなく、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) コントロールを使う必要があります。 [  **ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) メソッドを使って実行時に MediaPlayerElement コントロールが存在するかどうかをチェックし、アプリが実行されているシステムに適しているコントロールを読み込むことができます。
 
 この例は、新しい MediaPlayerElement または古い MediaElement を使うアプリを作成する方法を示しています。どちらを使うかは、MediaPlayerElement 型が存在するかどうかによって異なります。 このコードでは、[UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) クラスを使って、コントロール、およびそれに関連する UI とコードをコンポーネント化し、OS バージョンに基づいて切り替えることができるようにしています。 また、このシンプルな例に必要なものよりも機能的でカスタムの動作を提供するカスタム コントロールを使うこともできます。
  
@@ -267,7 +267,7 @@ namespace MediaApp
 > [!NOTE]
 > `MediaElementUserControl` のコード ページには、生成されたコードのみが含まれているため、ここでは示しません。
 
-**IsTypePresent に基づいてコントロールを初期化する**
+**IsTypePresent に基づき、コントロールを初期化します。**
 
 実行時に、**ApiInformation.IsTypePresent** を呼び出して、MediaPlayerElement の有無を確認します。 MediaPlayerElement が存在する場合は `MediaPlayerUserControl` を読み込み、存在しない場合は `MediaElementUserControl` を読み込みます。
 
@@ -303,7 +303,7 @@ public MainPage()
 
 コントロール上のプロパティ値や列挙値の変更など、残りの UI に影響しない、異なる OS バージョン間での小さな UI の変更がある場合のみ、アダプティブ コードに状態トリガーを使ってください。
 
-### <a name="example-1-new-property"></a>例 1: 新しいプロパティ
+### <a name="example-1-new-property"></a>例 1:新しいプロパティ
 
 拡張可能な状態トリガーを設定する最初の手順は、[StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) クラスのサブクラスを作成して、API の有無に基づいてアクティブになるカスタム トリガーを作成することです。 この例は、プロパティの有無が XAML に設定されている `_isPresent` 変数に一致する場合にアクティブ化されるトリガーを示しています。
 
@@ -371,7 +371,7 @@ Windows 10 バージョン 1607 では、ユーザーがコントロールを操
 </Grid>
 ```
 
-### <a name="example-2-new-enum-value"></a>例 2: 新しい列挙値
+### <a name="example-2-new-enum-value"></a>例 2:新しい列挙値
 
 次の例は、値が存在するかどうかに基づいてさまざまな列挙値を設定する方法を示しています。 カスタム状態トリガーを使って、前のチャットの例と同じ結果を実現します。 この例では、デバイスが Windows 10 バージョン 1607 を実行している場合に、新しい ChatWithoutEmoji 入力スコープを使います。それ以外の場合、**Chat** 入力スコープが使われます。 このトリガーを使う表示状態は、新しい列挙値の有無に基づいて入力スコープが選択される *if-else* スタイルで設定されます。
 
@@ -445,5 +445,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## <a name="related-articles"></a>関連記事
 
-- [デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-- [API コントラクトを使った機能の動的な検出](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [デバイスのファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+- [API コントラクトの機能を動的に検出します。](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)

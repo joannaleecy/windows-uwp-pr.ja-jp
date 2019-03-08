@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 開発者プログラム, クリエーター
 ms.localizationpriority: medium
 ms.openlocfilehash: 05abd3f28328f4418f5a8a772049b3869b488ffc
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115506"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603887"
 ---
 # <a name="developer-program-overview"></a>開発者プログラムの概要
 
 Xbox Live 対応のタイトルを開発する場合、いくつかのオプションを利用可能です。 それぞれで、開発者に対する異なるレベルの時間投資、利用可能な機能、およびサポート オプションが提供されます。
 
-## <a name="xbox-live-creators-program"></a>Xbox Live Creators Program
+## <a name="xbox-live-creators-program"></a>Xbox Live クリエーターズ プログラム
 
 Xbox Live 開発を理解するには、Xbox Live クリエーターズ プログラムが Xbox Live の良い出発点になります。 このプログラムへの参加には、マイクロソフトによる承認プロセスは必要ありませんが、最小限の認定要件と公開要件があります。
 
@@ -26,7 +26,7 @@ Xbox Live クリエーターズ プログラムは、[ユニバーサル Windows
 Xbox One では、ゲーマーに選りすぐりのストア エクスペリエンスが提供されます。Xbox Live クリエーターズ プログラムを通じて公開されたゲームは、Xbox の Microsoft Store の新しい [作成者のコレクション] セクションで販売されます。 これにより、だれでもゲームを開発し出荷できるオープンなプラットフォームの確保と、コンソール ゲーマーが知っていて期待する選りすぐりのストア エクスペリエンスとが両立します。 Windows 10 では、タイトルは Microsoft Store で他のすべての Xbox Live ゲームと一緒に公開されます。
 
 ### <a name="publishing-and-certification"></a>公開と認定
-Xbox Live クリエーターズ プログラムの一部としてゲームをリリースする[パートナー センターの開発者プログラム](https://developer.microsoft.com/store/register)に登録されている必要があります。 ゲームが従う必要がある要件が 2 つあります。
+登録する必要があります、[パートナー センター開発者プログラム](https://developer.microsoft.com/store/register)にゲームを Xbox Live クリエーターズ プログラムの一部としてリリースします。 ゲームが従う必要がある要件が 2 つあります。
 
 1. Xbox Live のサインインを統合し、ユーザー ID (ゲーマータグ、ゲーマー アイコンなど) を表示します。 他のすべての Xbox Live サービスはオプションです。
 2. 標準の [Microsoft Store ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)に従います。
@@ -41,9 +41,9 @@ Xbox Live クリエーターズ プログラム タイトルは、さまざま�
 
 Xbox Live クリエーターズ プログラム タイトルは、ゲーム エンジン [Construct (2 & 3)](https://www.scirra.com/construct2) および [GameMaker Studio 2](https://www.yoyogames.com/gamemaker) を使ってビルドすることもできます。 どちらのゲーム エンジンにも Xbox Live サポートが追加されていますが、そのサポートは Microsoft ではなくゲーム エンジンの作成元によって処理されます。 Construct または GameMaker Studio 2 プロジェクトへの Xbox Live の追加に関する詳細とサポートについては、各ゲーム エンジンのドキュメントをご覧ください。
 
-[Xbox Live を Construct プロジェクトに統合する方法について説明します。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
+[Xbox Live、コンストラクトのプロジェクトに統合するについて説明します。](https://www.scirra.com/tutorials/9540/using-xbox-live-in-uwp-apps)
 
-[Xbox Live を GameMaker Studio 2 プロジェクトに統合する方法について説明します。](https://www.yoyogames.com/gamemaker/xblc)
+[Xbox Live、GameMaker Studio 2 プロジェクトに統合するについて説明します。](https://www.yoyogames.com/gamemaker/xblc)
 
 [MonoGame](https://www.monogame.net/) や [Xenko](https://xenko.com/) など、Xbox Live の機能やプラグインが組み込まれていない他のゲーム開発エンジンについては、引き続き Xbox Live API を使って Xbox Live をタイトルに追加できます。 プロジェクトから Xbox Live API を使用するには、NuGet パッケージを使ってバイナリへの参照を追加するか、API ソースを追加します。 NuGet パッケージを追加するとコンパイルが高速になりますが、ソースを追加するとデバッグが簡単になります。
 
@@ -80,7 +80,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 </tr>
 
 <tr>
-<td rowspan="2" class="dev-program-feature-name">ID</td>
+<td rowspan="2" class="dev-program-feature-name">Identity</td>
 <td>サインイン/サインアップ</td>
 <td>プレイヤーがタイトル内で Xbox Live にサインインすること、および必要に応じて新しい Xbox Live アカウントを作成することを許可します。</td>
 <td class="xbl-features-required">必須</td>
@@ -98,7 +98,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 <td rowspan="13" class="dev-program-feature-name">ソーシャル</td>
 
 <td>基本的なプレゼンス</td>
-<td>タイトル内のユーザーのアクティビティを示す基本的なプレゼンス文字列を表示します。  例: "Steve が Minecraft をプレイ中"</td>
+<td>タイトル内のユーザーのアクティビティを示す基本的なプレゼンス文字列を表示します。  例:「Steve"Minecraft を多様です」</td>
 <td class="xbl-features-automatic">自動</td>
 <td class="xbl-features-automatic">自動</td>
 </tr>
@@ -155,65 +155,65 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 <tr>
 <td>リッチ プレゼンス</td>
 <td>タイトルでプレイヤーに関する詳しい情報を表示します。  基本的なプレゼンスの表示は "ユーザーがカー レーシング ゲームをプレイ中" のようなものですが、リッチ プレゼンスでは "ユーザーが RainyForest で SuperCar を運転中" などのより詳細な文字列を指定できます。</td>
-<td class="xbl-features-required">必須かどうか</td>
+<td class="xbl-features-required">必須</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>フレンド</td>
 <td>サインインしているユーザーのフレンド リストを取得して、タイトルでソーシャル ゲームプレイ シナリオを有効にします。</td>
-<td class="xbl-features-required">必須かどうか</td>
+<td class="xbl-features-required">必須</td>
 <td class="xbl-features-limited">オプション/制限あり (タイトルをプレイしたことのあるフレンドのみが表示されます)</td>
 </tr>
 
 <tr>
 <td>プライバシー</td>
 <td>プレイヤーが他のプレイヤーをミュートしたり、ブロックしたりできるようにします。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
+<td class="xbl-features-optional">省略可能</td>
 </tr>
 
 <tr>
-<td>評判</td>
+<td>評価</td>
 <td>プレイヤーの評判は態度を通じて上がったり、下がったりします。 態度は、マッチメイキングで使用されます。タイトルでは、態度を独自の方法で使用できます。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>Social Manager</td>
 <td>プレイヤーのソーシャル グラフに関する情報を効率的に取得します。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-limited">オプション/制限あり (タイトルをプレイしたことのあるフレンドのみが表示されます)</td>
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="4" class="dev-program-feature-name">データ プラットフォーム</td>
+<td rowspan="4" class="dev-program-feature-name">Data Platform</td>
 
-<td>プレイヤーの統計情報</td>
+<td>プレイヤーの統計</td>
 <td>ランキングで使用できるプレイヤーの統計情報をアップロードします。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
 </tr>
 
 <tr>
 <td>注目の統計</td>
 <td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須かどうか</td>
+<td class="xbl-features-required">必須</td>
 <td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
 </tr>
 
 <tr>
-<td>ランキング</td>
+<td>スコアボード</td>
 <td>プレイヤーの統計情報を取得し、並べ替えて表示して、競争を促します。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-optional">オプション (データ プラットフォーム 2017 のみ)</td>
 </tr>
 
 <tr>
 <td>ゲーマースコアと実績</td>
 <td>ゲーム ハブに表示する特定の統計情報を "注目の統計" として指定します。</td>
-<td class="xbl-features-required">必須かどうか</td>
+<td class="xbl-features-required">必須</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
@@ -222,7 +222,7 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 <td>コンテキスト検索</td>
 <td>ゲーム録画クリップにキーワードで注釈を付け、プレイヤーが視聴したい内容に該当するクリップを検索しやすくします。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
@@ -232,15 +232,15 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 <td>接続ストレージ</td>
 <td>Xbox One 本体と PC でローミング ゲームを保存します。</td>
-<td class="xbl-features-required">必須かどうか</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-required">必須</td>
+<td class="xbl-features-optional">省略可能</td>
 </tr>
 
 <tr>
 <td>タイトル ストレージ</td>
 <td>ユーザーごとまたはタイトルごとの大量のデータ用のクラウド ストレージ。</td>
-<td class="xbl-features-optional">オプション</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
+<td class="xbl-features-optional">省略可能</td>
 </tr>
 
 <tr class="dev-program-feature-start">
@@ -248,35 +248,35 @@ Microsoft パートナーであるゲーム パブリッシャーと連携する
 
 <td>マルチプレイヤー セッション ディレクトリ (MPSD)</td>
 <td>プレイヤーの一覧、状態など、マルチプレイヤー セッションに関する情報を保存します。</td>
-<td class="xbl-features-optional">必須かどうか</td>
+<td class="xbl-features-optional">必須</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>マッチメイキング</td>
 <td>Xbox Live ではマルチプレイヤー セッションでさまざまなプレイヤーをまとめてマッチングできます。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>アリーナ</td>
 <td>プレイヤーはトーナメント スタイルで対戦できます。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>ゲーム チャット</td>
 <td>マルチプレイヤー ゲームのプレーヤー ボイス チャット</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 
 <tr>
 <td>Xbox Live エンジン</td>
 <td>タイトルが通信できる実行可能ファイルとアセットを配置して、クライアントの計算を軽減します。</td>
-<td class="xbl-features-optional">オプション</td>
+<td class="xbl-features-optional">省略可能</td>
 <td class="xbl-features-notavailable">サポートされない</td>
 </tr>
 

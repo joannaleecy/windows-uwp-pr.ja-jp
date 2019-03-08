@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, ゲーム オプション, トレーラー, 詳細な登録情報, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044263"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594077"
 ---
-# <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C# のコード例 : ゲーム オプションおよびトレーラーを含むアプリの申請
+# <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\#サンプル: ゲーム オプションとトレーラーでアプリの提出
 
 この記事では、次のタスクで [Microsoft Store 申請 API](create-and-manage-submissions-using-windows-store-services.md) を使用する方法を示す C# コード例を提供します。
 
 * Microsoft Store 申請 API で使用する Azure AD アクセス トークンを取得します。
 * アプリの申請の作成
-* [ゲーム](manage-app-submissions.md#gaming-options-object)と[トレーラー](manage-app-submissions.md#trailer-object)の詳細な登録情報のオプションを含む、アプリの申請用のストア登録情報データを構成します。
+* [ゲーム](manage-app-submissions.md#gaming-options-object)と[トレーラー](manage-app-submissions.md#trailer-object)の高度な登録情報のオプションを含む、アプリの申請用のストア登録情報データを構成します。
 * アプリの申請用のパッケージ、登録情報の画像、トレーラー ファイルが含まれた ZIP ファイルをアップロードします。
 * アプリの申請をコミットします。
 
@@ -37,7 +37,7 @@ ms.locfileid: "9044263"
 
 ```CreateAndSubmitSubmissionExample``` クラスでは、```Execute``` というパブリック メソッドを定義します。このメソッドは、他のサンプル メソッドを呼び出し、Microsoft Store 申請 API を使って、ゲーム オプションとトレーラーを含むアプリの申請を作成およびコミットします。 このコードを採用するには、次の手順を実行してください。
 
-* ```tenantId``` 変数をアプリのテナント ID に割り当てて、```clientId``` 変数と ```clientSecret``` 変数をアプリのクライアント ID とキーに割り当てます。 詳細については、 [Azure AD アプリケーションをパートナー センター アカウントに関連付ける方法](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)をご覧ください。
+* ```tenantId``` 変数をアプリのテナント ID に割り当てて、```clientId``` 変数と ```clientSecret``` 変数をアプリのクライアント ID とキーに割り当てます。 詳細については、次を参照してください[に Azure AD アプリケーションを、パートナー センター アカウントに関連付ける方法。](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * ```applicationId``` 変数を、申請を作成するアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) に割り当てます。
 
 > [!div class="tabbedCodeSnippets"]
@@ -63,4 +63,4 @@ ms.locfileid: "9044263"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)

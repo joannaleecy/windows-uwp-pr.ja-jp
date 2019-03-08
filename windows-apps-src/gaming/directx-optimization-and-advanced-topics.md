@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 最適化, マルチサンプリング, スワップ チェーン
 ms.localizationpriority: medium
 ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595017"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>DirectX ゲームの最適化と高度なトピック
 
@@ -46,19 +46,19 @@ ms.locfileid: "8940391"
 <td align="left"><p>DirectX での非同期プログラミングとスレッド化について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="handling-device-lost-scenarios.md">Direct3D 11 でのデバイス削除シナリオの処理</a></p></td>
+<td align="left"><p><a href="handling-device-lost-scenarios.md">Direct3d11 で削除されたデバイス シナリオを処理します。</a></p></td>
 <td align="left"><p>グラフィックス アダプターの取り外しや再初期化が行われたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">UWP アプリでのマルチサンプリング</a></p></td>
+<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">UWP アプリでのマルチ サンプリング</a></p></td>
 <td align="left"><p>Direct3D を使って構築された UWP ゲームでマルチサンプリングを使用します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md">入力とレンダリング ループの最適化</a></p></td>
+<td align="left"><p><a href="optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md">入力およびレンダリング ループを最適化します。</a></p></td>
 <td align="left"><p>入力待ち時間を短縮し、レンダリング ループを最適化します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">DXGI 1.3 スワップ チェーンによる遅延の減少</a></p></td>
+<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">スワップ チェーンを DXGI 1.3 で待機時間を短縮します。</a></p></td>
 <td align="left"><p>DXGI 1.3を使って、実質的なフレーム待機時間を短縮します。</p></td>
 </tr>
 <tr class="even">

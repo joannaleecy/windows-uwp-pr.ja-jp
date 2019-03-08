@@ -8,34 +8,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 51a0b17a46d1c71ffdf9098d4637ca59d840c90a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929987"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612587"
 ---
 # <a name="titleblob-json"></a>TitleBlob (JSON)
-記憶域からのタイトルに関する情報が含まれています。 
+ストレージから、タイトルに関する情報が含まれています。 
 <a id="ID4EP"></a>
 
  
 ## <a name="titleblob"></a>TitleBlob
  
-TitleBlob オブジェクトには、次仕様があります。
+TitleBlob オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| clientFileTime| DateTime| [オプション]ファイルの最後のアップロードの日時。| 
-| displayName| string| [オプション]ユーザーに表示されているファイルの名前。| 
-| etag| string| タグで使用されるファイルをダウンロードして要求をアップロードします。| 
+| clientFileTime| DateTime| [省略可能]最後に、ファイルのアップロードの日時。| 
+| displayName| string| [省略可能]ユーザーに表示されるファイルの名前。| 
+| Etag| string| タグで使用されるファイルをダウンロードし、要求をアップロードします。| 
 | fileName| string| ファイルの名前。| 
-| size| 64 ビットの符号付き整数| ファイルのバイトのサイズ。| 
-| smartBlobType| string| [オプション]データの種類です。 使用可能な値: config、json、バイナリ。| 
+| size| 64 ビット符号付き整数| バイト単位のファイルのサイズ。| 
+| smartBlobType| string| [省略可能]データの型。 指定できる値は。 構成では、json、バイナリ。| 
   
 <a id="ID4E6C"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -61,6 +61,6 @@ TitleBlob オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

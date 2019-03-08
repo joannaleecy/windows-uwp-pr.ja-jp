@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 709461e75a947cef283e8d35f3b977de39a1ec4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933500"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640757"
 ---
 # <a name="trustedplatformusersxuidxuidscidsscid"></a>/trustedplatform/users/xuid({xuid})/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -24,17 +24,17 @@ ms.locfileid: "8933500"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
+| xuid| 64 ビット符号なし整数| Xbox のユーザー ID を (XUID)、プレーヤーの要求を行う。| 
+| scid| guid| 検索するサービス構成の ID。| 
   
 <a id="ID4E3B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-trustedplatformusersxuidscidsscid-get.md)
+[取得](uri-trustedplatformusersxuidscidsscid-get.md)
 
 &nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。 
  
@@ -48,6 +48,6 @@ ms.locfileid: "8933500"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

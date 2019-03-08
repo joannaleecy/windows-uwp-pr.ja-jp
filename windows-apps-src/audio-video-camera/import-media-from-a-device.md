@@ -4,14 +4,14 @@ description: この記事では、利用可能なメディア ソースの検索
 title: メディアのインポート
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c08612e48eec7989f3b56fba41a17e1c149b2058
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603467"
 ---
 # <a name="import-media-from-a-device"></a>デバイスからのメディアのインポート
 
@@ -79,11 +79,11 @@ ms.locfileid: "8925707"
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-**FindItems** メソッドで、C**CancellationTokenSource** 変数を初期化して、必要に応じて検索操作の取り消しに使用できるようにします。 **try** ブロック内で、ユーザーが選択した [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) オブジェクトで [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) を呼び出して、新しいインポート セッションを作成します。 検索操作の進行状況を表示するためのコールバックを提供するために、新しい [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトを作成します。 次に、**[FindItemsAsync](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession.finditemsasync)** を呼び出して、検索操作を開始します。 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) の値を提供して、写真、ビデオ、またはその両方を返す必要があるかどうかを指定します。 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) の値を提供して、[**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) プロパティが true に設定されているときに、すべてのメディア項目を返すのか、メディア項目を何も返さないのか、新しいメディア項目のみを返すのかを指定します。 このプロパティは、ListBox 項目テンプレートの、各メディア項目のチェック ボックスにバインドされます。
+**FindItems** メソッドで、C**CancellationTokenSource** 変数を初期化して、必要に応じて検索操作の取り消しに使用できるようにします。 **try** ブロック内で、ユーザーが選択した [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) オブジェクトで [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) を呼び出して、新しいインポート セッションを作成します。 検索操作の進行状況を表示するためのコールバックを提供するために、新しい [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトを作成します。 次に、**[FindItemsAsync](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession.finditemsasync)** を呼び出して、検索操作を開始します。 [  **PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) の値を提供して、写真、ビデオ、またはその両方を返す必要があるかどうかを指定します。 [  **PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) の値を提供して、[**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) プロパティが true に設定されているときに、すべてのメディア項目を返すのか、メディア項目を何も返さないのか、新しいメディア項目のみを返すのかを指定します。 このプロパティは、ListBox 項目テンプレートの、各メディア項目のチェック ボックスにバインドされます。
 
 **FindItemsAsync** は [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) を返します。 拡張メソッド [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) は、待機可能で、キャンセル トークンを使用して取り消し可能であり、提供された **Progress** オブジェクトを使用して進行状況を報告するタスクの作成に使用されます。
 
-次に、データ バインディング ヘルパー クラス **GeneratorIncrementalLoadingClass** が初期化されます。 **FindItemsAsync** は、待機から返されると、[**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) オブジェクトを返します。 このオブジェクトには、操作の成功、見つかったさまざまな種類のメディア項目の数など、検索操作の状態情報が含まれます。 [**FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) プロパティには、見つかったメディア項目を表す [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) オブジェクトの一覧が含まれます。 **GeneratorIncrementalLoadingClass** コンストラクターは、段階的に読み込まれる項目の合計数と、必要に応じて読み込まれる新規項目を生成する関数を引数として受け取ります。 この場合、指定されたラムダ式によって、**ImportableItemWrapper** の新しいインスタンスが作成されます。これは、**PhotoImportItem** をラップして各項目のサムネイルを含めます。 段階的読み込みクラスが初期化されたら、それを UI に含まれる **ListView** コントロールの [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) プロパティに設定します。 これで、見つかったメディア項目が段階的に読み込まれ、一覧に表示されます。
+次に、データ バインディング ヘルパー クラス **GeneratorIncrementalLoadingClass** が初期化されます。 **FindItemsAsync** は、待機から返されると、[**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) オブジェクトを返します。 このオブジェクトには、操作の成功、見つかったさまざまな種類のメディア項目の数など、検索操作の状態情報が含まれます。 [  **FoundItems**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.FoundItems) プロパティには、見つかったメディア項目を表す [**PhotoImportItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem) オブジェクトの一覧が含まれます。 **GeneratorIncrementalLoadingClass** コンストラクターは、段階的に読み込まれる項目の合計数と、必要に応じて読み込まれる新規項目を生成する関数を引数として受け取ります。 この場合、指定されたラムダ式によって、**ImportableItemWrapper** の新しいインスタンスが作成されます。これは、**PhotoImportItem** をラップして各項目のサムネイルを含めます。 段階的読み込みクラスが初期化されたら、それを UI に含まれる **ListView** コントロールの [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl.ItemsSource) プロパティに設定します。 これで、見つかったメディア項目が段階的に読み込まれ、一覧に表示されます。
 
 次に、検索操作の状態情報が出力されます。 一般的なアプリでは、この情報が UI でユーザーに表示されます。しかし、この例では、単純に情報をデバッグ コンソールに出力します。 最後に、操作が完了したのでキャンセル トークンを null に設定します。
 
@@ -99,14 +99,14 @@ ms.locfileid: "8925707"
 
 **ListView** コントロールで選択されている項目がない場合、インポートするものはありません。 それ以外の場合は、進行状況バー コントロールを更新する進行状況コールバックを提供するために、[**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトを初期化します。 検索操作によって返される [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) の [**ItemImported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ItemImported) イベント用のハンドラーを登録します。 このイベントは、この例の場合、項目がインポートされ、インポートされた各ファイルの名前がデバッグ コンソールに出力されるときに発生します。
 
-[**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) を呼び出して、インポート操作を開始します。 検索操作と同様に、[**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) 拡張メソッドは、返された操作を、待機可能で、進行状況を報告し、取り消し可能なタスクに変換するために使用されます。
+[  **ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) を呼び出して、インポート操作を開始します。 検索操作と同様に、[**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) 拡張メソッドは、返された操作を、待機可能で、進行状況を報告し、取り消し可能なタスクに変換するために使用されます。
 
 インポート操作が完了したら、[**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) によって返される [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) オブジェクトから操作の状態を取得できます。 この例では、状態情報をデバッグ コンソールに出力して、最後にキャンセル トークンを null に設定します。
 
 [!code-cs[ImportClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetImportClick)]
 
 ## <a name="delete-imported-items"></a>インポートされた項目の削除
-ソースから正常にインポートされた項目をインポート元から削除するには、まず、削除操作を取り消せるようにキャンセル トークンを初期化して、進行状況バーの値を 0 に設定します。 [**ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) から返される [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) が null でないことを確認します。 そうでない場合は、削除操作の進行状況コールバックを提供するために、[**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトをもう一度作成します。 [**DeleteImportedItemsFromSourceAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult.DeleteImportedItemsFromSourceAsync) を呼び出して、インポートされた項目の削除を開始します。 **AsTask** を使用して、進行状況の報告機能と取り消し機能を持った待機可能なタスクに結果を変換します。 待機後、返された [**PhotoImportDeleteImportedItemsFromSourceResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) オブジェクトを使用して、削除操作に関する状態情報を取得および表示できます。
+ソースから正常にインポートされた項目をインポート元から削除するには、まず、削除操作を取り消せるようにキャンセル トークンを初期化して、進行状況バーの値を 0 に設定します。 [  **ImportItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult.ImportItemsAsync) から返される [**PhotoImportImportItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult) が null でないことを確認します。 そうでない場合は、削除操作の進行状況コールバックを提供するために、[**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) オブジェクトをもう一度作成します。 [  **DeleteImportedItemsFromSourceAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportImportItemsResult.DeleteImportedItemsFromSourceAsync) を呼び出して、インポートされた項目の削除を開始します。 **AsTask** を使用して、進行状況の報告機能と取り消し機能を持った待機可能なタスクに結果を変換します。 待機後、返された [**PhotoImportDeleteImportedItemsFromSourceResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult) オブジェクトを使用して、削除操作に関する状態情報を取得および表示できます。
 
 [!code-cs[DeleteClick](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeleteClick)]
 

@@ -4,24 +4,24 @@ title: 階層データをバインドしてマスター/詳細ビューを作る
 description: チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすると、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c2280fd7234fc41ee02dc17909bda8d7af0e1b9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049097"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602077"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>階層データをバインドしてマスター/詳細ビューを作る方法
 
 
 
-> **注:** も、[マスター/詳細のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619991)を参照してください。
+> **注**  も参照してください、[マスター/詳細サンプル](https://go.microsoft.com/fwlink/p/?linkid=619991)します。
 
 チェーン内でバインドされた [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 このトピックでは、できる限り [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用し、必要に応じて、より柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)を使います。
 
-ユニバーサル Windows プラットフォーム (UWP) アプリでよく使われる構造の 1 つに、マスター一覧で項目を選んだらさまざまな詳細ページに移動するという形があります。 これは、階層のすべてのレベルで、各項目をリッチな視覚表現を使って表示する場合に便利です。 また、複数のレベルのデータを 1 ページに表示することもできます。 これは、ユーザーが関心のある項目にすばやくドリルダウンできるように、シンプルな一覧をいくつか表示する場合に便利です。 このトピックでは、この操作を実装する方法について説明します。 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスは、現在の選択を各階層レベルで追跡します。
+ユニバーサル Windows プラットフォーム (UWP) アプリでよく使われる構造の 1 つに、マスター一覧で項目を選んだらさまざまな詳細ページに移動するという形があります。 これは、階層のすべてのレベルで、各項目をリッチな視覚表現を使って表示する場合に便利です。 また、複数のレベルのデータを 1 ページに表示することもできます。 これは、ユーザーが関心のある項目にすばやくドリルダウンできるように、シンプルな一覧をいくつか表示する場合に便利です。 このトピックでは、この操作を実装する方法について説明します。 [  **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスは、現在の選択を各階層レベルで追跡します。
 
 ここでは、リーグ、クラス、チームの一覧に階層化され、チーム詳細のビューを含むスポーツ チーム階層のビューを作ります。 いずれかの一覧で項目を選ぶと、後続するビューが自動的に更新されます。
 
@@ -220,7 +220,7 @@ namespace MasterDetailsBinding
 </Page>
 ```
 
-[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
+[  **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
 
  
 

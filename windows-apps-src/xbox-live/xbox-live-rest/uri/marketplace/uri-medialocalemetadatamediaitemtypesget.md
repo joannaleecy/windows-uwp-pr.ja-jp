@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 936eccd653c6f7ec98d8324701b3ece624c2839a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651427"
 ---
 # <a name="get-mediamarketplaceidmetadatamediaitemtypes"></a>GET (/media/{marketplaceId}/metadata/mediaItemTypes)
-EDS の特定のバージョンのサポートされているすべての mediaItemTypes の一覧を示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+指定した EDS バージョンはサポートされているすべての mediaItemTypes を一覧表示します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,9 +24,9 @@ EDS の特定のバージョンのサポートされているすべての mediaI
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4EAB"></a>
 
@@ -46,14 +46,14 @@ EDS の特定のバージョンのサポートされているすべての mediaI
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

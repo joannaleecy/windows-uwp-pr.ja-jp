@@ -7,11 +7,11 @@ keywords: windows 10 s, 常時接続, 制限事項, ARM 版 windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
 ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058673"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633457"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM でのアプリとエクスペリエンスの制限事項
 ARM 版 Windows 10 には、次の必須の制限事項があります。
@@ -30,7 +30,7 @@ ARM 版 Windows 10 には、次の必須の制限事項があります。
 
 次の表に、いくつかの一般的な問題を示し、問題を解決する方法についての提案を示します。
 
-|問題|解決策|
+|問題|ソリューション|
 |-----|--------|
 | アプリが ARM 用に設計されていないドライバーに依存している。 | x86 ドライバーを ARM64 に再コンパイルします。 「[WDK を使った ARM64 ドライバーのビルド](https://docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers)」をご覧ください。 |
 | アプリが x64 でしか使用できない。 | Microsoft Store 向けに開発する場合、ARM バージョンのアプリを提出します。 詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。 Win32 開発者の場合、x86 バージョンのアプリを配布します。 |

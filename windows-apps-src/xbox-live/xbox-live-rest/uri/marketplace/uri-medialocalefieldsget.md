@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3ae8abfe04b7a0b9728d07b9488f9ed7c27816
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606677"
 ---
 # <a name="get-mediamarketplaceidfields"></a>GET (/media/{marketplaceId}/fields)
-フィールド トークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+フィールドのトークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EGC)
@@ -26,42 +26,42 @@ ms.locfileid: "9058486"
  
 ## <a name="remarks"></a>注釈
  
-エンターテイメント探索サービス (EDS) Api は、既定では、各項目のフィールドの非常に小さい最小セットを返します。
+エンターテイメント検出サービス (EDS) Api は、既定では、各項目のフィールドの場合は、非常に小さい最小セットが返されます。
  
    * メディア項目の種類
-   * メディア グループ
+   * メディアのグループ
    * ID
    * 名前
   
-詳細を取得するのには、Api は、する追加のデータの一部を返すように指定する**フィールド**パラメーターを受け入れます。 多くの使用可能なフィールドがあるため、API 呼び出しごとに完全にその名前を指定することが大幅に膨張要求します。 代わりに、名前は、その他の Api に渡すことができるより小さい値を生成するこの API に渡すことができます。
+詳細情報を表示するには、Api 同意、**フィールド**する追加のデータを返す必要があるかを指定するパラメーターです。 多くの使用可能なフィールドがあるため、各 API 呼び出しの場合は full での名前を指定することは大幅に膨張要求。 代わりに、名前は、他の Api に渡すことができるくらい小さな値を生成するこの API に渡すことができます。
  
-このパラメーターを受け取るいずれかの API、指定された値がすべて指定したメディア項目の種類のすべてのフィールドのスーパー セットである必要があります。 別のメディア項目の種類のフィールドの異なるセットを指定することはできません。 ただし、フィールドは、1 つのメディア項目の種類がない別、それに適用する場合にのみ表示、メディア項目の種類のデータが存在する (への呼び出しで"AvatarBodyType"が含まれている場合に、[を取得する (/media/{marketplaceId}/fields)](uri-medialocalefields.md)、AvatarItems のみがフィールドを含む)。
+このパラメーターを受け取る任意の API、指定された値は指定されたメディアのすべての項目の種類のすべてのフィールドのスーパー セットである必要があります。 場合によっては、別のメディア項目の種類のフィールドのセットを指定することはできません。 ただし、フィールドが 1 つのメディア項目の種類がない別、それに適用される場合にのみ表示されます、メディア項目の種類のデータが存在します (への呼び出しで"AvatarBodyType"が含まれている場合など、[取得 (/media/{marketplaceId} フィールド/)](uri-medialocalefields.md)のみAvatarItems にはフィールドが含まれて、)。
  
-この API から返される値は、実際に強くキャッシュ--、それらは変更されませんを除く EDS の展開の間でします。 キャッシュが必要な場合、キャッシュ最後のユーザーのセッションよりもしなくなったことをお勧めします。
+この API から返される値は、実際にキャッシュ可能 -、EDS のデプロイの間を除く、変更する必要がありますされません。 キャッシュが必要な場合、キャッシュいいえよりも長く、ユーザーのセッションをお勧めします。
  
-実際のフィールド名を受け入れ、だけでなくこの API は、"all"を有効な値として受け取ります。 これにより、指定することは、各フィールドが含まれている値が生成されます。 "All"の値の使用は、開発、デバッグ、テスト目的でに対してのみお勧めします。
+実際のフィールド名を受け入れるだけでなくこの API は、"all"を有効な値として受け取ります。 これにより、指定することは、各フィールドが含まれる値が生成されます。 「すべて」の値の使用は、開発、デバッグ、およびテスト目的でのみ推奨されます。
  
-送信する代わりに、 `desired={list of fields separated by a '.'}` **フィールド**トークンを受け取るいずれかの API にします。
+送信する代わりに、`desired={list of fields separated by a '.'}`を受け入れる任意の API に、**フィールド**トークンです。
  
-一緒**目的**と**フィールド**の両方に渡すことはできません。
+両方に渡すことはできません**目的**と**フィールド**化します。
   
 <a id="ID4EGC"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 文字列<b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値です。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4ERC"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| 目的| string| 必須。 '."-最小セットのほかに返されるフィールドの一覧を分離します。 指定したすべてのフィールドは保証されています (データだけが存在しないの特定の項目の) オブジェクトごとに、返されるが、ここで指定されていない最小セットの外部のフィールドは返されません。 | 
+| 必要な| string| 必須。 '.'-だけでなく、最小セットが返されるフィールドの区切りのリスト。 指定されたすべてのフィールド (データが単に存在しない特定の項目) の各オブジェクトに対して返されることが保証されますが、ここで指定されていない最小セットの範囲外のフィールドは返されません。 | 
   
 <a id="ID4EMD"></a>
 
@@ -81,14 +81,14 @@ ms.locfileid: "9058486"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

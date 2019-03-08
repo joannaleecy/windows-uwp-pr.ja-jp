@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: 55e05ef7de2e2981f9f5af86623a8d8413ce2c99
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946842"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613707"
 ---
 # <a name="best-practices-for-calling-xbox-live"></a>Xbox Live の呼び出しのベスト プラクティス
 
@@ -27,21 +27,21 @@ Xbox Services API に含まれる API の一部は、非べき等エンドポイ
 
 非べき等エンドポイント API の完全な一覧を以下に示します。
 
-* game\_server\_platform\_service::allocate\_cluster()
+* ゲーム\_server\_プラットフォーム\_service::allocate\_cluster()
 <br>
-* game\_server\_platform\_service::allocate\_cluster\_inline()
+* ゲーム\_server\_プラットフォーム\_service::allocate\_クラスター\_inline()
 <br>
-* game\_server\_platform\_service::allocate\_session\_host()
+* ゲーム\_server\_プラットフォーム\_service::allocate\_セッション\_host()
 <br>
-* matchmaking\_service::create\_match\_ticket()
+* マッチメイ キング\_service::create\_一致\_ticket()
 <br>
 * multiplayer\_service::write\_session()
 <br>
-* multiplayer\_service::write\_session\_by\_handle()
+* マルチ プレーヤー\_service::write\_セッション\_によって\_handle()
 <br>
 * multiplayer\_service::send\_invites()
 <br>
-* reputation\_service::submit\_batch\_reputation\_feedback()
+* 評判\_service::submit\_バッチ\_評判\_feedback()
 <br>
 * reputation\_service::submit\_reputation\_feedback()
  
@@ -58,22 +58,22 @@ Xbox Services API に含まれる API の一部は、非べき等エンドポイ
 べき等呼び出しの場合、以下の条件については自動的に再試行してください。
 
 * すべてのネットワーク エラー
-* 401: Unauthorized
-* 408: RequestTimeout
-* 429: Too Many Requests
-* 500: InternalError
-* 502: BadGateway
-* 503: ServiceUnavailable
-* 504: GatewayTimeout
+* 401:権限がありません
+* 408:RequestTimeout
+* 429:要求が多すぎます
+* 500:InternalError
+* 502:BadGateway
+* 503:ServiceUnavailable
+* 504:GatewayTimeout
 
 
-UWP 上では、401: Unauthorized は固有の処理が行われます。 このエラーは Xbox Live 認証トークンの有効期限が切れたことを示すため、Xbox Services API は、OS を呼び出してトークンを更新してから、1 回の再試行として実行されます。
+UWP、401。扱われる特別なは、権限がありません。 このエラーは Xbox Live 認証トークンの有効期限が切れたことを示すため、Xbox Services API は、OS を呼び出してトークンを更新してから、1 回の再試行として実行されます。
 
 再試行が実行される場合のベスト プラクティスは、"Retry-After" ヘッダーの時間に到達するまでサービスを呼び出さないことです。 現状では XSAPI にこのベスト プラクティスが実装されています。 いずれかの API でエラーの HTTP ステータス コードや "Retry-After" ヘッダーが返された場合、Retry-After の時間になる前に同じ API を追加呼び出しすると、サービスに到達することなく直ちに元のエラーが返されます。
 
-呼び出しを再試行するときのベスト プラクティスは、ランダムな小さな変動を加えて指数バックオフを実行し、サービスに対する負荷を拡散させることです。 XSAPI は既定で 2 秒の遅延を適用して開始されます。この時間は、xbox\_live\_context\_settings::set\_http\_retry\_delay() を使用して制御されます。 これは、各再試行では既定で 2 秒、4 秒、8 秒などの指数バックオフが実行され、再試行を試みる一連のデバイス間で負荷をさらに分散させるため、今回と次回のバックオフ値から生じる遅延には、応答時間に基づいた変動が生じることを意味します。
+呼び出しを再試行するときのベスト プラクティスは、ランダムな小さな変動を加えて指数バックオフを実行し、サービスに対する負荷を拡散させることです。 Xbox で制御されている 2 秒の既定の遅延始まります XSAPI\_live\_コンテキスト\_settings::set\_http\_再試行\_として。 これは、各再試行では既定で 2 秒、4 秒、8 秒などの指数バックオフが実行され、再試行を試みる一連のデバイス間で負荷をさらに分散させるため、今回と次回のバックオフ値から生じる遅延には、応答時間に基づいた変動が生じることを意味します。
 
-呼び出しの再試行に費やす時間はタイトル側で制御する必要があります。 デベロッパーは、XSAPI を利用する場合、xbox\_live\_context\_settings::set\_http\_timeout\_window() 関数を使用してこれを直接制御できます。 既定では、これは 20 秒に設定されます。 これを 0 秒に設定すると、事実上、再試行ロジックがオフになります。 XSAPI では、http\_timeout\_window() での残り時間に基づいて、内部の HTTP タイムアウトも動的に調整されます。 内部の HTTP タイムアウトは、OS が HTTP ネットワーク操作を中止するまでに、その操作に費やす時間を制御します。 呼び出しが完了するのに十分妥当な時間が与えられるように、http\_timeout\_window() に少なくとも 5 秒残されていないと、呼び出しは再試行されません。 このルールは最初の呼び出しには適用されないので、http\_timeout\_window() を 0 に設定することも可能で、その場合は 1 回の呼び出しとなります。 このロジックの影響によって、API 呼び出しがいつ返るかに関して、http\_timeout\_window() は大幅に確定的です。 "Retry-After" ヘッダーが返された場合、"Retry-After" の時間に達するまで再試行は行われません。 "Retry-After" の時間が http\_timeout\_window() の後である場合は、http\_timeout\_window() の終わりに呼び出しが返ります。
+呼び出しの再試行に費やす時間はタイトル側で制御する必要があります。 XSAPI を使用して、開発者がある直接制御関数 xbox を使用して\_live\_コンテキスト\_settings::set\_http\_タイムアウト\_window() します。 既定では、これは 20 秒に設定されます。 これを 0 秒に設定すると、事実上、再試行ロジックがオフになります。 今すぐ XSAPI も動的に、どの程度時間の左は http に基づく内部の HTTP タイムアウトを調整\_タイムアウト\_window() します。 内部の HTTP タイムアウトは、OS が HTTP ネットワーク操作を中止するまでに、その操作に費やす時間を制御します。 5 秒以上の http のままにしない限り、呼び出しは再試行されません\_タイムアウト\_window() 呼び出しが完了するための十分な妥当な時間を与えることにします。 そのため、http に設定する最初の呼び出しにこの規則は適用されません\_タイムアウト\_window() を 0 には、および 1 回の呼び出しになります。 このロジックはその http 効果を持ちます\_タイムアウト\_window() は、API の呼び出しが返すときに、もっと決定的です。 "Retry-After" ヘッダーが返された場合、"Retry-After" の時間に達するまで再試行は行われません。 "Retry-after"時間は、http の後に、する場合\_タイムアウト\_window()、呼び出しは、http の末尾に返す\_タイムアウト\_window() します。
 
 
 ## <a name="error-handling"></a>エラー処理
@@ -92,12 +92,12 @@ Xbox Live に対する要求がエラー コードを返す結果になること
 
 これらの状況でゲームが正しく機能するようにするためには、適切なエラー処理が非常に重要です。
 
-XSAPI には 2 種類のエラー処理パターンがあります。 1 つは C++/CX、C\#、または JavaScript から WinRT API を使用しているときのパターンで、もう 1 つは新しい C++ API を使用しているときのパターンです。 エラー処理のベスト プラクティスの詳細については、Xbox Live のドキュメント ページ「Error Handling」を参照してください。また、これに関して説明している動画については、[*Xfest 2015 のビデオ*](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)の「*XSAPI: C++, No Exceptions!*」という講演をご覧ください。
+XSAPI には 2 種類のエラー処理パターンがあります。 C + から WinRT Api を使用する場合、1 つのパターン/cli CX、C\#、または、Javascript と C++ の新しい Api を使用する場合、もう 1 つのパターン。 完全な詳細情報でエラー処理のベスト プラクティスは、「エラーの処理」、Xbox Live ドキュメント ページを参照してくださいし、これをカバーするビデオについては、説明を参照してください[ *Xfest 2015 ビデオ*](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)と呼ばれる*XSAPI:C++ では、例外はありません。*
 
 
 ## <a name="best-calling-patterns"></a>最適な呼び出しパターン
 
-### <a name="usebatching-requests"></a>Usebatching 要求
+### <a name="usebatching-requests"></a>要求をバッチ処理の使用
 
 一部のエンドポイントは、バッチ処理、つまり一連の要求を 1 つの呼び出しに集約することをサポートしています。 たとえば、Xbox Live プロフィール サービスを使用すると、1 人のユーザーのプロフィールまたはユーザー プロフィールのセットを要求できます。 一連のユーザーのユーザー プロフィールが必要な場合、ユーザー プロフィールごとに 1 回エンドポイントや API を呼び出すのは非常に非効率的です。 それぞれの呼び出しで、多くの認証オーバーヘッドが発生します。 そのため何度も API を呼び出すのではなく、情報が必要なすべてのユーザーを一度に API に渡して、エンドポイントがすべてのユーザー プロフィールを同時に処理し、単一の応答を返すことができるようにします。
 
@@ -105,15 +105,15 @@ XSAPI には 2 種類のエラー処理パターンがあります。 1 つは C
 
 別のベスト プラクティスは、定期的にポーリングする代わりに、リアルタイム アクティビティ (RTA) サービスを使用することです。 このサービスは、サービスで対象リソースに変更があったときに、クライアントに通知を送信する WebSocket を公開します。 RTA サービスは、プレゼンスの変更、統計情報の変更、マルチプレイヤー セッション ドキュメントの変更、およびソーシャル関係の変更についての通知を提供します。 クライアントがどのような情報を必要としているかを認識させるために、クライアントが最初に、WebSocket を介してアイテムにサブスクライブする必要があります。 これにより、アイテムの変更があると適切に通知されるため、変更の検出のためにサービスにポーリングする必要がなくなります。
 
-XSAPI は RTA サービスを、クライアントが使用できるサブスクライブ API のセットとして公開しています。 これらの API それぞれに、アイテムの変更時に呼び出されるコールバック関数を引数に取る、対応する \*\_changed\_handler API があります。
+XSAPI は RTA サービスを、クライアントが使用できるサブスクライブ API のセットとして公開しています。 これらの各 Api がある対応する\*\_変更\_ハンドラー Api 項目が変更されたときに呼び出されるコールバック関数を取得します。
 
-* presence\_service::subscribe\_to\_device\_presence\_change
+* プレゼンス\_service::subscribe\_に\_デバイス\_プレゼンス\_を変更します。
 <br>
-* presence\_service::subscribe\_to\_title\_presence\_change
+* プレゼンス\_service::subscribe\_に\_タイトル\_プレゼンス\_を変更します。
 <br>
-* user\_statistics\_service::subscribe\_to\_statistic\_change
+* ユーザー\_統計\_service::subscribe\_に\_統計\_を変更します。
 <br>
-* social\_service::subscribe\_to\_social\_relationship\_change<br>
+* ソーシャル\_service::subscribe\_に\_ソーシャル\_リレーションシップ\_を変更します。<br>
  
 
 ## <a name="use-xbox-live-client-side-managers"></a>Xbox Live クライアント側マネージャーを使用する
@@ -149,14 +149,14 @@ Fiddler を使用して、HTTP ステータス コード 429 が返されたか�
 }
 ```
 
-XSAPI を使用している場合、API は http\_status\_429\_too\_many\_requests エラーを返し、API がどのようにスロットリングされたかに関する詳細なエラー メッセージを設定します。
+Api は、http を返します XSAPI を使用している場合\_状態\_429\_すぎる\_多く\_エラーを要求し、エラー メッセージを API の調整方法の詳細を設定します。
 
 ### <a name="debug-asserts"></a>デバッグのアサート
 
 XSAPI の使用時には、デベロッパー サンドボックス内でタイトルのデバッグ ビルドを使用しているときに呼び出しがスロットリングされると、スロットリングが発生したことを直ちにデベロッパーに知らせるため、アサートが発生します。 これは、コードが正しく記述されていないために 429 スロットリング エラーを意図せず見逃すということがないようにするためです。 これらのアサートを無効にして、問題のコードを修正せずに作業を続けたい場合は、次の API を呼び出します。
 
 
-> xboxLiveContext-&gt;settings()-&gt;disable\_asserts\_for\_xbox\_live\_throttling\_in\_dev\_sandboxes( xbox\_live\_context\_throttle\_setting::this\_code\_needs\_to\_be\_changed\_to\_avoid\_throttling );
+> xboxLiveContext -&gt;settings() -&gt;を無効にする\_アサート\_の\_xbox\_live\_調整\_で\_dev\_サンド ボックス (xbox\_live\_コンテキスト\_スロットル\_setting::this\_コード\_必要がある\_に\_する\_の変更\_に\_回避\_調整)。
 
 ただし、この API によってタイトルのスロットリングが回避されるわけではないことに注意してください。 タイトルは、変わらずスロットリングされます。 この API は、デベロッパー サンドボックス内でデバッグ ビルドを使用するときにアサートを無効にするだけです。 
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、DirectX、リソースの読み込み
 ms.localizationpriority: medium
 ms.openlocfilehash: 478c61713dfcf5bc8a420aa71b0dced81ed6a169
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114588"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633357"
 ---
 # <a name="load-resources-in-your-directx-game"></a>DirectX ゲームでのリソースの読み込み
 
@@ -55,15 +55,15 @@ ms.locfileid: "9114588"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="complete-code-for-basicloader.md">BasicLoader のコード一式</a></p></td>
+<td align="left"><p><a href="complete-code-for-basicloader.md">BasicLoader の完全なコード</a></p></td>
 <td align="left"><p>グラフィックス メッシュ オブジェクトを変換してメモリに読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="complete-code-for-basicreaderwriter.md">BasicReaderWriter のコード一式</a></p></td>
+<td align="left"><p><a href="complete-code-for-basicreaderwriter.md">BasicReaderWriter の完全なコード</a></p></td>
 <td align="left"><p>バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 <a href="complete-code-for-basicloader.md">BasicLoader</a> クラスで使われます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="complete-code-for-ddstextureloader.md">DDSTextureLoader のコード一式</a></p></td>
+<td align="left"><p><a href="complete-code-for-ddstextureloader.md">DDSTextureLoader の完全なコード</a></p></td>
 <td align="left"><p>メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 </tbody>
@@ -77,7 +77,7 @@ ms.locfileid: "9114588"
 
 非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです: 
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });` の順にクリックします。
 
 タスクは、**.then()** 構文を使って連結できます。したがって、ある操作の完了後、その操作の結果に依存する別の非同期操作を実行できます。 このように、プレイヤーにはほぼ見えない方法で、個別のスレッドで複雑なアセットの読み込み、変換、管理を行うことができます。
 
@@ -130,7 +130,7 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
 
 しかし、すべての非同期読み込みが完了するまではゲーム本体を開始したくありません。 そこで、読み込みが完了したら通知するメソッド (特定のフィールドなど) を作成し、読み込みメソッドでラムダを使って、完了時に通知を設定します。 この読み込まれたリソースを使うコンポーネントを開始する前に、変数を確認します。
 
-次に示すのは、BasicLoader.cpp に定義された非同期メソッドを使って、ゲーム起動時にシェーダー、メッシュ、テクスチャを読み込む例です。 すべての読み込みメソッドが完了したときに、ゲーム オブジェクト **m\_loadingComplete** に特定のフィールドが設定されている点に注目してください。
+次に示すのは、BasicLoader.cpp に定義された非同期メソッドを使って、ゲーム起動時にシェーダー、メッシュ、テクスチャを読み込む例です。 ゲームのオブジェクトで、特定のフィールドを設定したことを確認**m\_loadingComplete**、すべての読み込みメソッドが完了します。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -205,14 +205,14 @@ void ResourceLoading::CreateDeviceResources()
 
 (常に、できるだけ内部表現に近い形式でアセット データをパッケージ化するようにする必要があります。 こうすることでリソースの使用率が下がり、時間が短縮されます。)
 
-メッシュのファイルからバイト データを取得してみましょう。 この例では、ファイルの形式がサンプル固有の形式 (名前の最後が .vbo) であるとします (繰り返しますが、この形式は OpenGL の VBO 形式とは異なります)。頂点自体はそれぞれ **BasicVertex** 型 (obj2vbo コンバーター ツールのコードで定義されている構造体) にマップされます。 .vbo ファイルの頂点データのレイアウトは次のようになります。
+メッシュのファイルからバイト データを取得してみましょう。 この例では、ファイルの形式がサンプル固有の形式 (名前の最後が .vbo) であるとします (ここでも、この形式は OpenGL の VBO 形式と同じです。)各頂点自体にマップ、 **BasicVertex** obj2vbo コンバーター ツールのコードで定義されている構造体である型。 .vbo ファイルの頂点データのレイアウトは次のようになります。
 
 -   データ ストリームの最初の 32 ビット (4 バイト) には、uint32 値として表されたメッシュの頂点の数 (numVertices) が含まれています。
 -   データ ストリームの次の 32 ビット (4 バイト) には、uint32 値として表されたメッシュのインデックスの数 (numIndices) が含まれています。
--   それ以降の (numVertices \* sizeof(**BasicVertex**)) ビットには頂点データが含まれています。
--   データの最後の (numIndices \* 16) ビットには、一連の uint16 値として表されたインデックス データが含まれています。
+-   その後、それに続く (numVertices \* sizeof (**BasicVertex**)) ビットには頂点データが含まれます。
+-   最後の (numIndices \* 16) データのビットに uint16 値のシーケンスとして表される、インデックス データが含まれます。
 
-要するに、読み込んだメッシュ データのビット レベルのレイアウトを把握するということです。 また、エンディアンが一致するようにします。 Windows8 プラットフォームはすべてリトル エンディアンです。
+要するに、読み込んだメッシュ データのビット レベルのレイアウトを把握するということです。 また、エンディアンが一致するようにします。 すべての Windows 8 プラットフォームは、リトル エンディアンです。
 
 この例では、**LoadMeshAsync** メソッドから CreateMesh メソッドを呼び出して、ビット レベルの解釈を行っています。
 
@@ -239,7 +239,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** は、ファイルから読み込まれたバイト データを解釈します。そして、頂点リストとインデックス リストをそれぞれ [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡し、D3D11\_BIND\_VERTEX\_BUFFER または D3D11\_BIND\_INDEX\_BUFFER を指定することによって、メッシュの頂点バッファーとインデックス バッファーを作成します。 **BasicLoader** で使われるコードは次のとおりです。
+**CreateMesh** 、ファイルから読み込まれたバイトのデータを解釈し、頂点およびインデックスのリストを渡すことによって、頂点バッファーとインデックス バッファーのメッシュを作成しますそれぞれ、 [ **ID3D11Device::CreateBuffer**。 ](https://msdn.microsoft.com/library/windows/desktop/ff476501) D3D11 のいずれかを指定して\_バインド\_頂点\_バッファーまたは D3D11\_バインド\_インデックス\_バッファー。 **BasicLoader** で使われるコードは次のとおりです。
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -320,14 +320,14 @@ DDS ファイルは、次の情報が含まれるバイナリ ファイルです
 
 -   ファイル内のデータの説明。
 
-    データは、[**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) を使ってヘッダーの説明と一緒に説明されます。ピクセル形式は、[**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) を使って定義されます。 **DDS\_HEADER** 構造体と **DDS\_PIXELFORMAT** 構造体は、推奨されなくなった DirectDraw 7 の DDSURFACEDESC2 構造体、DDSCAPS2 構造体、および DDPIXELFORMAT 構造体の代わりに使います。 **DDS\_HEADER** は、DDSURFACEDESC2 と DDSCAPS2 の機能をバイナリで実現します。 **DDS\_PIXELFORMAT** は、DDPIXELFORMAT の機能をバイナリで実現します。
+    使用してヘッダーの説明と、データが説明されている[ **DDS\_ヘッダー**](https://msdn.microsoft.com/library/windows/desktop/bb943982); を使用してピクセル形式を定義[ **DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984). なお、 **DDS\_ヘッダー**と**DDS\_PIXELFORMAT**構造は非推奨の DDSURFACEDESC2、DDSCAPS2 および DDPIXELFORMAT DirectDraw 7 構造体を置き換えます。 **DDS\_ヘッダー** DDSURFACEDESC2 と DDSCAPS2 のバイナリと同じです。 **DDS\_PIXELFORMAT** DDPIXELFORMAT のバイナリと同じです。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) の **dwFlags** の値を DDPF\_FOURCC に設定し、**dwFourCC** を "DX10" に設定していると、[**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 構造体が追加で生成され、浮動小数点形式や sRGB 形式などの RGB ピクセル形式では表現できない DXGI 形式やテクスチャ配列がこの構造体に格納されます。この **DDS\_HEADER\_DXT10** 構造体が存在する場合、データ記述の全体は次のようになります。
+    場合の値**dwFlags**で[ **DDS\_PIXELFORMAT** ](https://msdn.microsoft.com/library/windows/desktop/bb943984) DDPF に設定されている\_FOURCC と**dwFourCC**に設定されています。追加するには、"DX10" [ **DDS\_ヘッダー\_DXT10** ](https://msdn.microsoft.com/library/windows/desktop/bb943983)構造体は、テクスチャ配列または RGB として表現できない DXGI 形式に対応するためには浮動小数点の形式、sRGB など形式などのピクセル形式します。ときに、 **DDS\_ヘッダー\_DXT10**構造が存在する、データ全体の説明は次のようです。
 
     ```cpp
     DWORD               dwMagic;
@@ -551,7 +551,7 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-この例では、**BasicReaderWriter** インスタンス (**m\_basicReaderWriter**) を使って、指定されたコンパイル済みシェーダー オブジェクト (.cso) ファイルをバイト ストリームとして読み取っています。 このタスクが完了すると、ラムダは、ファイルから読み込まれたバイト データを使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出します。 また、コールバックによって、読み込みの成功を示すフラグを設定する必要があります。コードでは、シェーダーの実行前にこのフラグを確認する必要があります。
+この例では使用して、 **BasicReaderWriter**インスタンス (**m\_basicReaderWriter**) バイト ストリームとして指定されたコンパイル済みシェーダー オブジェクト (.cso) ファイルを読み取るようにします。 このタスクが完了すると、ラムダは、ファイルから読み込まれたバイト データを使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出します。 また、コールバックによって、読み込みの成功を示すフラグを設定する必要があります。コードでは、シェーダーの実行前にこのフラグを確認する必要があります。
 
 頂点シェーダーはもう少し複雑になります。 頂点シェーダーの場合は、頂点データを定義する別個の入力レイアウトも読み込みます。 次のコードを使うことで、頂点シェーダーと一緒にカスタムの頂点入力レイアウトを非同期的に読み込むことができます。 メッシュから読み込まれた頂点情報は、この入力レイアウトによって適切に表せるようになります。
 
@@ -698,10 +698,10 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Direct3D リソース読み込みのサンプルに関するページ]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
-* [BasicLoader のコード一式](complete-code-for-basicloader.md)
-* [BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)
-* [DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)
+* [Direct3D リソース読み込みのサンプル]( https://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [BasicLoader の完全なコード](complete-code-for-basicloader.md)
+* [BasicReaderWriter の完全なコード](complete-code-for-basicreaderwriter.md)
+* [DDSTextureLoader の完全なコード](complete-code-for-ddstextureloader.md)
 
  
 

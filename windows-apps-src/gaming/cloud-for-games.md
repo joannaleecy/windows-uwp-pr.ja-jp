@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、クラウド サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045591"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637687"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>UWP ゲーム用のクラウド サービスの使用
 
@@ -50,7 +50,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     <tr class="header" align="left">
         <th>開発者</th>
         <th>説明</th>
-        <th>主なゲームのシナリオ</th>
+        <th>主なゲーム シナリオ</th>
         <th>詳細</th>
     </tr>
     <tr>
@@ -62,42 +62,42 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
         <td>
             <ul>
-                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games と Microsoft によるクラウド ゲーム ソリューションの構築</a>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">Service Fabric によるゲームの構築: Tencent の実装に関する詳細 (ビデオ)</a>
+                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games は、Microsoft クラウド ゲーム ソリューションを構築しました</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=38m33s">Service Fabric を使用したゲームの構築:Tencent の実装 (ビデオ) の詳細について</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
-        <td><b>Halo 5: Guardians</b> では、Azure Cosmos DB を (DocumentDB API 経由で) 使うことにより、ソーシャル ゲームプレイ プラットフォームとして <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> を実装しました。Azure Cosmos DB が選択された理由は、自動インデックス作成機能による速度と柔軟性です。</td>
+        <td><a href="https://www.halowaypoint.com/">343 industries</a></td>
+        <td><b>Halo 5:Guardians</b>実装<a href="https://www.halowaypoint.com/spartan-companies">Halo:Spartan 企業</a>に対してその速度と自動インデックス作成機能のための柔軟性が選択されました (DocumentDB API) を使用して Azure Cosmos DB を使用して、ソーシャル ゲームをプラットフォームとして。</td>
         <td>
             <ul>
-                <li>マルチ プレイヤー ゲームプレイでグループの作成/管理を処理するスケーラブルなデータ層 <li>ゲームとソーシャル メディアの統合 <li>複数の属性を使った、リアルタイムのデータ クエリ <li>ゲームプレイの実績や統計情報の同期 </ul>
+                <li>マルチ プレイヤー ゲームプレイでグループの作成/管理を処理するスケーラブルなデータ層 <li>ゲームとソーシャル メディアの統合 <li>複数の属性を使った、リアルタイムのデータ クエリ <li>ゲームプレイの達成度や統計情報の同期 </ul>
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">Azure Cosmos DB を使って (DocumentDB API 経由で) 実装されるソーシャル ゲームプレイ</a>
+                <li><a href="https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/">実装 (DocumentDB API) を使用して Azure Cosmos DB を使用してソーシャル ゲーム</a>
             </ul>
         </td>
     </tr>
     <tr>
         <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
-        <td>Illyriad Games は <b>Age of Ascent</b> を開発した企業です。このゲームは、壮大な 3D 空間を舞台にした大規模マルチプレイヤー オンライン (MMO) ゲームであり、最新のブラウザーを備えたデバイスでプレイできます。 したがって、このゲームは、プラグインなしで、PC、ノート PC、スマートフォン、その他のモバイル デバイスでプレイできます。このゲームでは、ASP.NET Core、HTML5、WebGL、Azure が使用されています。</td>
+        <td>Illyriad Games は <b>Age of Ascent</b> を開発した企業です。このゲームは、壮大な 3D 空間を舞台にした大規模マルチプレイヤー オンライン (MMO) ゲームであり、最新のブラウザーを備えたデバイスでプレイできます。 したがって、このゲームは、プラグインなしで、PC、ノート PC、スマートフォン、その他のモバイル デバイスでプレイできます。ゲームでは、ASP.NET Core、HTML5、WebGL、および Azure を使用します。</td>
         <td>
             <ul>
                 <li>クロスプラットフォーム、ブラウザー ベースのゲーム <li>1 つの大規模かつ永続的でオープンな世界 <li>負荷の高いリアルタイムのゲームプレイの計算を処理 <li>プレイヤー数に応じたスケーリング </ul>
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Service Fabric によるゲームの構築: Age of Ascent MMO ゲーム (ビデオ)</a>
-                <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Azure Service Fabric を使用したマイクロサービスとしてのゲーム コンポーネントの管理 (ビデオ)</a> 
-                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Age of Ascent 開発者のインタビュー (ビデオ)</a>
+                <li><a href="https://channel9.msdn.com/Shows/Cloud+Cover/Episode-228-Building-Games-with-Service-Fabric#time=06m52s">Service Fabric を使用したゲームの構築:アセント MMO ゲーム (ビデオ) の有効期間</a>
+                <li><a href="https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s">Azure Service Fabric (ビデオ) を使用してマイクロ サービスとしてのゲーム コンポーネントを管理します。</a> 
+                <li><a href="https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET">Age of Ascent 開発者 (ビデオ) へのインタビューします。</a>
             </ul>
         </td>
     </tr>
     <tr>
         <td><a href="https://www.nextgames.com/">Next Games</a></td>
-        <td>Next Games は、AMC のオリジナル シリーズをベースにしたビデオ ゲーム <b>The Walking Dead: No Man's Land</b> の開発元です。 Walking Dead ゲームでは、バックエンドとして Azure を使用しています。 公開後の最初の週末にダウンロード数は 1,000,000 回に達し、最初の 1 週間で、このゲームは、米国 App Store で iPhone と iPad の無料アプリ第 1 位、12 か国で無料アプリ第 1 位、13 か国で無料ゲーム第 1 に成りました。
+        <td>Next games 社の作成者は、 <b>The Walking Dead:No の Land</b>ビデオ ゲーム AMC の元の系列に基づいています。 Walking Dead ゲームでは、バックエンドとして Azure を使用しています。 1,000,000 ダウンロード開始週末と最初の週が、ゲームが 1 の iPhone と iPad Free、米国でのアプリApp Store では、1、12 か国で無料のアプリと 1 13 か国の無料のゲームです。
         </td>
         <td>
             <ul>
@@ -105,13 +105,13 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
         <td>
             <ul>
-                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">構築方法: Next Games による Azure 上のグローバル オンライン ゲーム プラットフォーム (ブログとビデオ)</a>
-                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">Walking Dead では、開発サイクルの高速化とより魅力的なゲームプレイのために Azure Cosmos DB (DocumentDB API 経由) を使用</a>
+                <li><a href="https://azure.microsoft.com/blog/how-we-built-it-next-games-global-online-gaming-platform-on-azure/">どのようにして作成しました。次のゲーム グローバル オンライン ゲーム プラットフォーム on Azure (ビデオのブログ)</a>
+                <li><a href="https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/">開発サイクルの高速化しより魅力的なゲーム プレイの (DocumentDB API) を使用して Azure Cosmos DB を使用する配信不能のウォーク</a>
             </ul>
         </td>
     </tr>
     <tr>
-        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">ピクセル大学の強豪</a></td>
         <td>Pixel Squad では、Unity ゲーム エンジンと Azure を使って <b>Crime Coast</b> を開発しました。 <b>Crime Coast</b> は、Android、iOS、Windows プラットフォームでプレイできるソーシャル戦略ゲームです。 このゲームでは、Azure BLOB ストレージ、Managed Azure Redis Cache、負荷分散された IIS VM アレイ、Microsoft 通知ハブが使用されています。 同社のスケーリングの管理方法や、同時接続プレイヤー数が 5,000 人にもなるプレイヤーの急増の処理方法を参考にしてください。
         </td>
         <td>
@@ -120,7 +120,7 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
         </td>
         <td>
             <ul>
-                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">Crime Coast MMO ゲームでの Azure Cloud Services の使用方法</a>
+                <li><a href="https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te">犯罪 Coast MMO ゲームが Azure Cloud Services を使用する方法</a>
             </ul>
         </td>
     </tr> 
@@ -129,9 +129,9 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     
 ### <a name="other-links"></a>その他のリンク
 
-* [Hitman と Azure: ゲーム機能の作成 (クラウドの使用によってのみ可能となるエルーシブ ターゲットなど)](https://channel9.msdn.com/Series/Hitman)
-* [Hitcents、Game Troopers、InnoSpark の秘密のソースとしての Azure](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [Bizspark プログラムで Azure を使用しているゲーム関連新興企業](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
+* [Hitman と Azure:クラウドを使用しているターゲットを見つけにくいようなゲーム機能を作成します。](https://channel9.msdn.com/Series/Hitman)
+* [Hitcents、ゲーム Troopers および InnoSpark 秘密のソースとして azure に](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Azure を使用して、Bizspark プログラムにゲームのスタートアップ](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
 ## <a name="how-to-design-your-cloud-backend"></a>クラウド バックエンドを設計する方法
@@ -142,15 +142,15 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 
 まず、ゲームに最適なサービスのレベルについて検討する必要があります。 次の 3 つのサービスの相違点を把握することにより、バックエンドを構築に必要なアプローチを決定できます。
 
-* [サービスとしてのインフラストラクチャ (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
+* [Infrastructure as a Service (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
 
     サービスとしてのインフラストラクチャ (IaaS) は、インターネット経由でプロビジョニングおよび管理される、インスタント コンピューティング インフラストラクチャです。 需要に応じてすばやくスケールアップおよびスケールダウンできるように、多くのコンピューターが用意されている可能性を想像してみてください。 IaaS によって、自社で物理サーバーやその他のデータ センターのインフラストラクチャを購入および管理するためのコストや面倒を避けることができます。
 
-* [サービスとしてのプラットフォーム (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
+* [Platform as a Service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
 
     サービスとしてプラットフォーム (PaaS) は IaaS と同様ですが、サーバー、ストレージ、ネットワークなどのインフラストラクチャの管理も含まれています。 物理サーバーやデータ センターのインフラストラクチャを購入しなくてもよいことに加えて、ソフトウェア ライセンス、基盤となるアプリケーション インフラストラクチャ、ミドルウェア、開発ツール、その他のリソースを購入して管理する必要もありません。
 
-* [サービスとしてのソフトウェア (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
+* [Software as a Service (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
 
     サービスとしてのソフトウェア (SaaS) では、ユーザーがインターネット経由でクラウド ベースのアプリに接続し、そのアプリを使用できます。 これによって、クラウド サービス プロバイダーから従量課金制で購入する完全なソフトウェア ソリューションが完成します。  一般的な例としては、メール、予定表作成、オフィス ツール (Microsoft Office 365) などがあります。 組織用アプリをレンタルで使用し、ユーザーはインターネット経由 (通常は Web ブラウザーを使用) で接続します。 基盤となるインフラストラクチャ、ミドルウェア、アプリ ソフトウェア、アプリ データはすべて、サービス プロバイダーのデータ センターにあります。 サービス プロバイダーはハードウェアとソフトウェアを管理し、適切なサービス契約で、ゲームとデータの可用性およびセキュリティの確保も行います。 SaaS を使用すると、初期費用を最小限に抑え、アプリの利用を迅速に開始できます。
 
@@ -163,7 +163,7 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | クラウドでのドメインのホスティング     | 効率的に DNS クエリに応答する            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 高パフォーマンスと高可用性を備えたドメインのホスティング  |
 | サインイン、本人確認      | ゲーマーがサインインし、ゲーマーの ID が認証される  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 多要素認証を備えた、あらゆるクラウドとオンプレミス Web アプリへのシングル サインオン            | 
-| サービスとしてのインフラストラクチャ モデル (IaaS) を使用したゲーム      | ゲームがクラウド内の仮想マシンでホストされる       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 組み込みの仮想ネットワークと負荷分散の機能や、オンプレミス システムとのハイブリッド整合性機能を備えたゲーム サーバーとして、1 から数千台の仮想マシンのインスタンスにスケーリング           |
+| サービスとしてのインフラストラクチャ モデル (IaaS) を使用したゲーム      | ゲームがクラウド内の仮想マシンでホストされる       | [Azure Vm](https://azure.microsoft.com/services/virtual-machines/) | 組み込みの仮想ネットワークと負荷分散の機能や、オンプレミス システムとのハイブリッド整合性機能を備えたゲーム サーバーとして、1 から数千台の仮想マシンのインスタンスにスケーリング           |
 | サービスとしてのプラットフォーム モデル (PaaS) を使用した Web ゲームやモバイル ゲーム            | ゲームが管理対象のプラットフォームでホストされる                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | Web サイトやモバイル ゲーム用の PaaS (つまり Azure VMs とミドルウェア/開発ツール/BI/DB 管理)   |
 | OS をさらに制御でき、可用性が高くスケーラブルな n 層クラウド ゲーム (PaaS)        | ゲームが管理対象のプラットフォームでホストされる                | [Azure クラウド サービス](https://azure.microsoft.com/services/app-service/) | PaaS の設計は、拡張性、信頼性、運用コスト効率に優れたアプリケーションのサポートに対応   |
 | リージョン間での負荷分散によるパフォーマンスと可用性の向上 | 着信したゲーム要求をルーティング。 最初のレベルの負荷分散として使用できる。       | [Azure Traffic Manager](https://azure.microsoft.com/en-us/services/traffic-manager/) | 複数の自動フェールオーバー オプションと、均等または加重値に基づくトラフィック分散機能を提供。 オンプレミスとクラウド システムのシームレスな組み合わせが可能。 |
@@ -176,13 +176,13 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 | 大量のデータ チャンクの転送| Azure CDN により、ゲームの画像、オーディオ、ビデオなどの大きなファイルを、ユーザーに最も近いコンテンツ配信ネットワーク (CDN) の POP の場所から送信できる    | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Azure CDN は、集中管理された大規模なノードの最新ネットワーク トポロジをベースに構築されており、突然のトラフィック スパイクや大きな負荷を処理することにより処理速度と可用性が大幅に向上し、ユーザー エクスペリエンスの向上につながる  |
 | 短い待機時間               | より細かい制御とデータの分離の保証により、高速でスケーラブルなゲームを構築するためのキャッシュを実行する。ゲームのマッチメイキング機能の向上にも利用できる | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | 高速でスケーラブルな Azure アプリケーションを実現するための高スループットで、一貫性のある低待機時間のデータ アクセス  |
 | 高スケーラビリティ、低待機時間 | 待機時間の短い読み取りと書き込みによりゲーム ユーザー数の変動を処理する | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 複雑で待機時間が短く、データを多用するシナリオを実現し、一度により多くのユーザーを処理できるように拡張できる。 Service Fabric により、ステートレス アプリケーションで必要な、独立したストアやキャッシュを作成することなくゲームを構築できる |
-| デバイスから 1 秒あたり数百万件のイベントを収集する機能                         | デバイスから 1 秒あたり数百万件のイベントをログに記録する | [Azure イベント ハブ](https://azure.microsoft.com/services/event-hubs/) | ゲーム、Web サイト、アプリ、デバイスからのクラウド規模の利用統計情報の取り込み  |
+| デバイスから 1 秒あたり数百万件のイベントを収集する機能                         | デバイスから 1 秒あたり数百万件のイベントをログに記録する | [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) | ゲーム、Web サイト、アプリ、デバイスからのクラウド規模の利用統計情報の取り込み  |
 | リアルタイムのゲーム データの処理  | ゲームプレイを向上させるためにゲーム データのリアルタイム分析を実行する| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | クラウドでのリアルタイムのストリーム処理  |
 | 予測的なゲームプレイの開発         | ゲーマーのデータに基づいてカスタマイズされた動的なゲームプレイを作成する  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全に管理されているクラウド サービスにより、簡単に予測分析ソリューションを構築、展開、共有できる  |
 | ゲーム データの収集と分析| リレーショナル データベースと非リレーショナル データベースからのデータの大規模な並列処理 | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| エンタープライズ クラスの機能を備えたサービスとしての柔軟なデータ ウェアハウス   |
 | ユーザー エンゲージメントにより使用と顧客維持を促進| あらゆるバック エンドからあらゆるプラットフォームにターゲット プッシュ通知を送信し、関心を引き出して特定のゲーム操作を促進する | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| 高速ブロードキャスト プッシュで、あらゆる主要プラットフォーム (iOS、Android、Windows、Kindle、Baidu) の無数のモバイル デバイスに到達。 ゲームはあらゆるバックエンド (クラウドまたはオンプレミス) でホスティング可能。|
 | コンテンツを保護しながら、ローカルおよび世界中の対象ユーザーにメディア コンテンツをストリーミング| すべてのデバイスから視聴可能な高品質のゲーム トレーラーや動画クリップをブロードキャスト| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| 組み込まれている Content Delivery Network 機能によるオンデマンドおよびライブのビデオ ストリーミング。 単一のプレーヤーで、コンテンツの保護と暗号化を含めたすべての再生ニーズに対応。| 
-| モバイル アプリの開発、配布、ベータ テスト | モバイル アプリをテストして配布する。 アプリ パフォーマンスとユーザー エクスペリエンスを管理する。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| クラッシュ レポートとユーザー メトリックをアプリの配布とユーザー フィードバック プラットフォームに統合。 Android、Cordova、iOS、OS X、Unity、Windows、Xamarin のアプリをサポート。 また、[Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) によるアプリのミッション管理もご検討ください。豊富な分析、クラッシュ レポート、プッシュ通知、アプリの配布などの機能が用意されています。 |
+| モバイル アプリの開発、配布、ベータ テスト | モバイル アプリをテストして配布する。 アプリ パフォーマンスとユーザー エクスペリエンスを管理する。 | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| クラッシュ レポートとユーザー メトリックをアプリの配布とユーザー フィードバック プラットフォームに統合。 Android、Cordova、iOS、OS X、Unity、Windows、Xamarin のアプリをサポート。 また、検討[Visual Studio Mobile Center](https://www.visualstudio.com/vs/mobile-center/) &mdash;ミッション コントロールの豊富な分析を結合するアプリのクラッシュ レポート、プッシュ通知、アプリの配布。 |
 | 使用と顧客維持を促進するマーケティング キャンペーンの作成  | データ分析に基づいて対象となるプレイヤーにプッシュ通知を送信し、特定のゲーム操作に対する関心を引き出して利用を促進する | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) (現在は既存のお客様のみに提供中であり、2018 年 3 月に廃止) |  すべての主要なプラットフォーム (iOS、Android、Windows、Windows Phone) でのゲームプレイ時間とユーザー維持率を向上させる |
 
 
@@ -198,16 +198,16 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
 ## <a name="learning-resources"></a>学習リソース
 
-* //build 2016: [CodeLabs &mdash; Microsoft Azure App Service と Microsoft SQL Azure バックエンドを使ってゲームのスコアを Unity に保存する](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //build 2017:[配信できる世界最高クラスのゲーム エクスペリエンスを Microsoft Azure を使用する: Halo、Hitman、WalkingDead (ビデオ) などのタイトルから得た教訓](https://channel9.msdn.com/Events/Build/2017/P4062)
-* Azure 使用の共通ゲーミング ワークロードをサポートするために設計された、再利用可能な構成要素、プロジェクト、サービス、ベスト プラクティス (GitHub): [Azure 上のゲーム用構成要素](https://github.com/MicrosoftDX/nether)
-* [Azure 上のゲーミング サービス (ビデオ)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
+* //build 2016:[CodeLabs &mdash; Unity でゲームのスコアを保存するバックエンドを使用して Microsoft Azure App Service と Microsoft SQL Azure](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
+* //build 2017:[提供する世界クラスのゲームでは、Microsoft Azure を使用した操作性します。Halo、Hitman、Walking Dead (ビデオ) などのタイトルから学んだ教訓](https://channel9.msdn.com/Events/Build/2017/P4062)
+* 構成要素、プロジェクト、サービス、および GitHub の Azure を使用して一般的なゲームのワークロードをサポートするためのベスト プラクティスの再利用可能なセット。[Azure でのゲームのための構成要素](https://github.com/MicrosoftDX/nether)
+* [ゲーム サービス on Azure (ビデオ)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
 ## <a name="tools-and-other-useful-links"></a>ツールとその他の役立つリンク
 
-* [MSDN フォーラム&mdash; Azure プラットフォーム](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
-* [クラウド ベースの負荷テスト ツール](https://www.visualstudio.com/team-services/cloud-load-testing/)
-* [SDK とコマンド ライン ツール](https://azure.microsoft.com/downloads/)
+* [MSDN フォーラム&mdash;Azure プラットフォーム](https://social.msdn.microsoft.com/Forums/azure/home?category=windowsazureplatform)
+* [クラウド ベースのロード テスト ツール](https://www.visualstudio.com/team-services/cloud-load-testing/)
+* [Sdk とコマンド ライン ツール](https://azure.microsoft.com/downloads/)
     
 ## <a name="software-as-a-service-for-game-backend"></a>ゲームのバックエンド向けのサービスとしてのソフトウェア
 
@@ -222,7 +222,7 @@ SDK を使用して、このソリューションを、モバイル、PC、ま�
 ## <a name="related-links"></a>関連リンク
 
 * [Windows 10 ゲーム開発ガイド](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [ゲームのための Azure](https://azure.microsoft.com/solutions/gaming/)
+* [ゲーム用の azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)
 * [ID@Xbox](https://www.xbox.com/Developers/id)

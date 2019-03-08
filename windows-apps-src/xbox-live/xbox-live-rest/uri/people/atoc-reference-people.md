@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b52d0db46fe53d46dc831769c73c948d18d9c2c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922036"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641497"
 ---
 # <a name="people-uris"></a>People URI
  
-このセクションでは、 *people*システムの Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションの Xbox Live サービスから Universal Resource Identifier (URI) アドレスおよび関連付けられているハイパー テキスト転送プロトコル (HTTP) メソッドの詳細を提供する、*人*システム。
  
-Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームのみでは、このサービスを使用できます。
+Xbox 360、Windows Phone デバイス、または Xbox.com を実行しているゲームだけでは、このサービスを使用できます。
  
-これらの Uri のドメインは、social.xboxlive.com です。
+これらの Uri のドメインとは、social.xboxlive.com です。
  
 <a id="ID4EPB"></a>
 
@@ -29,19 +29,19 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
 
 [/users/{ownerId}/people](uri-usersowneridpeople.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーのコレクションにアクセスします。
+&nbsp;&nbsp;呼び出し元のユーザー コレクションにアクセスします。
 
 [/users/{ownerId}/people/{targetid}](uri-usersowneridpeopletargetid.md)
 
-&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲット ID でユーザーにアクセスします。
+&nbsp;&nbsp;呼び出し元のユーザーのコレクションからターゲットの ID でユーザーにアクセスします。
 
 [/users/{ownerId}/people/xuids](uri-usersowneridpeoplexuids.md)
 
-&nbsp;&nbsp;XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスします。
+&nbsp;&nbsp;XUID によってユーザーを呼び出し元のユーザーのコレクションからアクセスされます。
 
 [/users/{ownerId}/summary](uri-usersowneridsummary.md)
 
-&nbsp;&nbsp;呼び出し元の観点から所有者に関する集計データにアクセスします。
+&nbsp;&nbsp;呼び出し元の観点から、所有者に関するデータの概要にアクセスします。
  
 <a id="ID4E5B"></a>
 
@@ -53,6 +53,6 @@ Xbox 360、Windows Phone デバイス、または Xbox.com を実行している
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

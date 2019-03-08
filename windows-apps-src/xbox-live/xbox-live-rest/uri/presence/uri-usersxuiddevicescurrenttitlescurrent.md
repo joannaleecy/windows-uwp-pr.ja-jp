@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5c17f1791d69ca8a4c902b6c37736c4da28a31
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928246"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645667"
 ---
 # <a name="usersxuidxuiddevicescurrenttitlescurrent"></a>/users/xuid({xuid})/devices/current/titles/current
-タイトルまたはタイトルのユーザーのプレゼンスにアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+タイトルまたはタイトルのユーザーの存在にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8928246"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) の対象ユーザーです。| 
   
 <a id="ID4EUB"></a>
 
@@ -35,11 +35,11 @@ ms.locfileid: "8928246"
 
 [DELETE (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 
-&nbsp;&nbsp;[PresenceRecord](../../json/json-presencerecord.md)有効期限が切れるのを待っているではなく、終了のタイトルのプレゼンスを削除します。
+&nbsp;&nbsp;待つのではなく、終了のタイトルのプレゼンスを削除、 [PresenceRecord](../../json/json-presencerecord.md)期限切れにします。
 
 [POST (/users/xuid({xuid})/devices/current/titles/current)](uri-usersxuiddevicescurrenttitlescurrentpost.md)
 
-&nbsp;&nbsp;ユーザーのプレゼンスでは、タイトルを更新します。
+&nbsp;&nbsp;ユーザーのプレゼンスとタイトルを更新します。
  
 <a id="ID4EBC"></a>
 
@@ -51,6 +51,6 @@ ms.locfileid: "8928246"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス URI](atoc-reference-presence.md)
+[プレゼンスの Uri](atoc-reference-presence.md)
 
    

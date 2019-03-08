@@ -1,16 +1,16 @@
 ---
 title: Bluetooth GATT クライアント
-description: この記事では、一般的な用途のサンプル コードでと一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリのクライアントの Bluetooth 汎用属性プロファイル (GATT) の概要を示します。
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth 汎用属性プロファイル (GATT) クライアントの概要と、一般的な使用事例のサンプル コードについて説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635087"
 ---
 # <a name="bluetooth-gatt-client"></a>Bluetooth GATT クライアント
 
@@ -20,40 +20,40 @@ ms.locfileid: "8928294"
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
-この記事では、一般的な GATT クライアント タスクのサンプル コードでと一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth Generic Attribute (GATT) のクライアント Api の使用方法を示しています。
-- 近くにあるデバイスの照会
-- デバイスへの接続します。
-- サポートされているサービスとデバイスの特性を列挙します。
-- 読み取りし、書き込み特性
-- 通知の特性と値の変更をサブスクライブします。
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth 汎用属性 (GATT) クライアント API の使用方法を、一般的な GATT クライアント タスクのサンプル コードを使って示します。
+- 近くのデバイスの照会
+- デバイスへの接続
+- デバイスでサポートされているサービスやデバイスの特性の列挙
+- 特性の読み取りと書き込み
+- 特性値が変化したときの通知の受信登録
 
 ## <a name="overview"></a>概要
-開発者は、Bluetooth LE デバイスにアクセスするのに[**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)名前空間で Api を使用できます。 Bluetooth LE デバイスは、その機能をコレクションを通じて公開します。コレクションには次の情報が含まれています。
+開発者は、[**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 名前空間の API を使って Bluetooth LE デバイスにアクセスすることができます。 Bluetooth LE デバイスは、その機能をコレクションを通じて公開します。コレクションには次の情報が含まれています。
 
 -   サービス
 -   特性
 -   記述子
 
-サービスは、LE デバイスの機能的なコントラクトを定義し、サービスを定義する特性のコレクションを含めます。 これらの特性はさらに、その特性を表す記述子を含みます。 これら 3 つの用語は、一般的なデバイスの属性と呼ばれます。
+サービスは、LE デバイスの機能的なコントラクトを定義するもので、サービスを定義する特性のコレクションを含みます。 これらの特性はさらに、その特性を表す記述子を含みます。 これら 3 つの用語は、一般的に、デバイスの属性と呼ばれます。
 
-Bluetooth LE GATT Api は、生のトランスポートへのアクセスではなく、オブジェクトと関数を公開します。 GATT Api では、次のタスクを実行する機能で Bluetooth LE デバイスと連携する開発者も有効にします。
+Bluetooth LE GATT API は、生のトランスポートにアクセスするのではなく、オブジェクトと関数を公開します。 また、GATT API で Bluetooth LE デバイスと連携することによって、次のことが可能となります。
 
--   属性の検出を実行します。
--   読み取りと書き込みの属性の値
--   特性の ValueChanged イベントのコールバックを登録します。
+-   属性の検出の実行
+-   属性値の読み取りと書き込み
+-   特性の ValueChanged イベントで呼び出されるコールバックの登録
 
-開発者は便利な実装を作成するには、必要があります予備知識を処理し、GATT のサービスと特性を使用しようとするアプリケーションの特定の特性値は、API によって提供されるバイナリ データに変換するようユーザーに提示する前に有用なデータ。 Bluetooth GATT API が公開するのは、Bluetooth LE デバイスとの通信に必要な基本的なプリミティブだけです。 データを解釈するためには、Bluetooth SIG の標準のプロファイルか、デバイスのベンダーが実装したカスタム プロファイルによって、アプリケーション プロファイルを定義する必要があります。 プロファイルは、交換されるデータが表す内容や、その解釈の方法に関して、アプリケーションとデバイスとの間で交わされるバインド コントラクトを形成します。
+実用的なアプリケーションを作成するためには、利用する GATT のサービスと特性についての予備知識が開発者に求められます。実際に必要な特性値を処理し、API から提供されるバイナリ データを実用的なデータに変換したうえで、ユーザーに提示しなければなりません。 Bluetooth GATT API が公開するのは、Bluetooth LE デバイスとの通信に必要な基本的なプリミティブだけです。 データを解釈するためには、Bluetooth SIG の標準のプロファイルか、デバイスのベンダーが実装したカスタム プロファイルによって、アプリケーション プロファイルを定義する必要があります。 プロファイルは、交換されるデータが表す内容や、その解釈の方法に関して、アプリケーションとデバイスとの間で交わされるバインド コントラクトを形成します。
 
 Bluetooth SIG は、利便性向上のため、[一連のプロファイル](https://www.bluetooth.com/specifications/adopted-specifications#gattspec)を一般公開しています。
 
-## <a name="query-for-nearby-devices"></a>近くにあるデバイスの照会
-近くのデバイスを照会する主な方法は 2 つです。
-- Windows.Devices.Enumeration で DeviceWatcher
-- Windows.Devices.Bluetooth.Advertisement で AdvertisementWatcher
+## <a name="query-for-nearby-devices"></a>近くのデバイスの照会
+近くのデバイスを照会するための主なメソッドは 2 つあります。
+- Windows.Devices.Enumeration の DeviceWatcher
+- Windows.Devices.Bluetooth.Advertisement の AdvertisementWatcher
 
-2 番目の方法が説明されているで[アドバタイズ](ble-beacon.md)のドキュメントに、説明しませんが多くここでは、基本的な概念が特定の[アドバタイズ フィルター](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx)を満たす近くにあるデバイスの Bluetooth アドレスを確認します。 アドレスを作成したら、デバイスへの参照を取得するのには、 [BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx)を呼び出すことができます。 
+2 つ目のメソッドについては、[アドバタイズ](ble-beacon.md)に関するドキュメントで詳しく説明されているため、ここでは簡単に説明します。基本的な考え方は、特定の[アドバタイズ フィルター](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter.aspx)の条件を満たす、近くにあるデバイスの Bluetooth アドレスを検出するということです。 アドレスを検出したら、[BluetoothLEDevice.FromBluetoothAddressAsync](https://msdn.microsoft.com/en-us/library/windows/apps/mt608819.aspx) を呼び出して、デバイスへの参照を取得します。 
 
-これで、DeviceWatcher メソッドに戻ります。 Bluetooth LE デバイスは、他のデバイスで Windows と同様、[列挙 Api](https://msdn.microsoft.com/library/windows/apps/BR225459)を使用して照会できます。 [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher)クラスを使用して検索するデバイスを指定するクエリ文字列を渡します。 
+DeviceWatcher メソッドの説明に戻ります。 Bluetooth LE デバイスは、Windows の他のデバイスと同じように[列挙 API](https://msdn.microsoft.com/library/windows/apps/BR225459) を使って照会できます。 [DeviceWatcher](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher) クラスを使用して、検索するデバイスを指定するクエリ文字列を渡します。 
 
 ```csharp
 // Query for extra properties you want returned
@@ -78,10 +78,10 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 // Start the watcher.
 deviceWatcher.Start();
 ```
-DeviceWatcher を開始した後は、対象のデバイスの[追加された](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added)イベントのハンドラーで、クエリに適合するデバイスごとに[DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393)が表示されます。 DeviceWatcher の詳細については、完全な[github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing)サンプルを参照してください。 
+DeviceWatcher を開始すると、対象のデバイスの [Added](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.devicewatcher.added) イベントのハンドラーで、クエリを満たすデバイスごとに [DeviceInformation](https://msdn.microsoft.com/library/windows/apps/br225393) を受信します。 DeviceWatcher について詳しくは、[Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) にある完全なサンプルをご覧ください。 
 
-## <a name="connecting-to-the-device"></a>デバイスに接続します。
-目的のデバイスを検出すると、対象のデバイスの Bluetooth LE デバイス オブジェクトを取得するのに[DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id)を使用します。 
+## <a name="connecting-to-the-device"></a>デバイスへの接続
+目的のデバイスが検出されたら、[DeviceInformation.Id](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.id) を使用して、対象のデバイスの Bluetooth LE デバイス オブジェクトを取得します。 
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -91,15 +91,15 @@ async void ConnectDevice(DeviceInformation deviceInfo)
     // ...
 }
 ```
-その一方で、破棄、BluetoothLEDevice に対するすべての参照デバイス オブジェクト (と、システムでは、その他のアプリに、デバイスへの参照がないかどうか) をトリガーする自動短いタイムアウト期間後に切断されます。 
+一方、デバイスの BluetoothLEDevice オブジェクトへのすべての参照を破棄すると (システム上の他のアプリがそのデバイスを参照していない場合)、短いタイムアウト期間後に自動切断がトリガーされます。 
 
 ```csharp
 bluetoothLeDevice.Dispose();
 ```
-アプリは、デバイスに再度アクセスする必要がある場合は、単に、デバイス オブジェクトを再作成して、(次のセクションで説明します) の特性へのアクセスと再ときの接続に必要な OS がトリガーされます。 デバイスが近くにある場合は、それ以外のデバイスで DeviceUnreachable エラーが返されますへのアクセスが表示されます。  
+アプリが再びデバイスにアクセスする必要がある場合は、単にデバイス オブジェクトを再作成して特性にアクセスする (次のセクションで説明します) と、必要に応じて、OS による再接続がトリガーされます。 デバイスが近くにある場合は、デバイスへのアクセスが取得されます。近くにない場合は、DeviceUnreachable エラーと共に制御が戻ります。  
 
-## <a name="enumerating-supported-services-and-characteristics"></a>サポートされているサービスと特性を列挙します。
-BluetoothLEDevice オブジェクトがある場合は、これで、次の手順が、デバイスを公開するどのようなデータを検出します。 これを行うには、最初の手順が、サービスを照会します。 
+## <a name="enumerating-supported-services-and-characteristics"></a>サポートされているサービスと特性の列挙
+BluetoothLEDevice オブジェクトが取得されたので、次の手順はデバイスが公開するデータを検出することです。 これを行うための最初の手順は、サービスの照会です。 
 
 ```csharp
 GattDeviceServicesResult result = await bluetoothLeDevice.GetGattServicesAsync();
@@ -110,7 +110,7 @@ if (result.Status == GattCommunicationStatus.Success)
     // ...
 }
 ```
-次の手順で、関心のあるサービスが識別されると、特性を照会します。 
+対象のサービスが識別されたら、次の手順は特性の照会です。 
 
 ```csharp
 GattCharacteristicsResult result = await service.GetCharacteristicsAsync();
@@ -121,13 +121,13 @@ if (result.Status == GattCommunicationStatus.Success)
     // ...
 }
 ```  
-GattCharacteristic の読み取り専用リスト オブジェクトの操作を実行できますし、OS が返されます。
+OS は、操作を実行できる対象の GattCharacteristic オブジェクトの読み取り専用のリストを返します。
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>特性で読み取り/書き込み操作を実行します。
+## <a name="perform-readwrite-operations-on-a-characteristic"></a>特性の読み取り/書き込み操作の実行
 
-特性は、GATT の基本単位ベースの通信です。 デバイス上のデータの異なる部分を表す値が含まれています。 たとえば、バッテリ レベルの特性では、デバイスのバッテリ レベルを表す値があります。
+特性は、GATT ベースの通信の基本単位です。 これには、デバイス上の各種データを表す値が含まれています。 たとえば、バッテリ レベル特性には、デバイスのバッテリ レベルを表す値が含まれます。
 
-特性のプロパティを調べて、どのような操作がサポートされているを参照してください。
+特性のプロパティを読み取って、どのような操作がサポートされているかを特定します。
 ```csharp
 GattCharacteristicProperties properties = characteristic.CharacteristicProperties
 
@@ -168,18 +168,18 @@ if (result.Status == GattCommunicationStatus.Success)
     // Successfully wrote to device
 }
 ```
-> **ヒント**: [DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx)と[DataWriter](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx)を使ってに慣れてを取得します。 Bluetooth Api の多くはから取得した raw バッファーを使用する場合、それらの機能は不可欠なできません。 
-## <a name="subscribing-for-notifications"></a>通知のサブスクライブ
+> **ヒント**:使用してに慣れます[DataReader](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datareader.aspx)と[datawriter の各](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.streams.datawriter.aspx)します。 多くの Bluetooth API から取得した未加工バッファーを操作するときは、これらの機能が不可欠です。 
+## <a name="subscribing-for-notifications"></a>通知の受信登録
 
-特性を示すまたは通知のサポートを確認 (チェック特性のプロパティを確認します)。 
+特性が Indicate または Notify をサポートしているかどうかを確認します (確認するには特性のプロパティを調べます)。 
 
-> **確保**: を示す値が変化したイベントごとに、クライアント デバイスからの応答と組み合わされるためにより信頼性が高い。 通知が GATT 取引のほとんどはではなく電力を節約ではなく非常に信頼性が高くなるためにより一般的です。 いずれの場合でも、アプリは関与しないために、コント ローラー レイヤーで処理、そのすべてされます。 単に"notifications"としてそれらをまとめて呼びますがわかっているようになりました。 
+> **確保**:示す各値が変更されたイベントは、クライアント デバイスからの受信確認と組み合わせて使用するためのより信頼性が高い。 多くの GATT トランザクションでは、非常に高い信頼性よりも電力の節約が重視されるため、Notify の方が一般的です。 いずれの場合も、そのすべてがコントローラー レイヤーで処理されるため、アプリは関与しません。 これらを総称して単に「通知」と呼びますが、覚えておいてください。 
 
-これには通知を取得する前に処理する次の 2 つがあります。
-- クライアント特性構成記述子 (CCCD) への書き込み
-- Characteristic.ValueChanged イベントを処理します。
+通知を取得する前に処理することが 2 つあります。
+- Client Characteristic Configuration Descriptor (CCCD) への書き込み
+- Characteristic.ValueChanged イベントの処理
 
-CCCD への書き込みは、このクライアントがその特定の特性値の変更を毎回に知っておく必要があることをサーバー デバイスに指示します。 これには、次の手順を実行します。 
+CCCD への書き込みによって、特定の特性値が変化するたびに、このクライアントでその変化を把握する必要があることを、サーバー デバイスに指示します。 これには、次の手順を実行します。 
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
@@ -189,7 +189,7 @@ if(status == GattCommunicationStatus.Success)
     // Server has been informed of clients interest.
 }
 ```
-これで、GattCharacteristic の ValueChanged イベントを取得するたびに呼び出さ値は、リモート デバイスで変更を取得します。 ハンドラーを実装するだけです。 
+これで、リモート デバイスで値が変更されるたび、GattCharacteristic の ValueChanged イベントが呼び出されます。 あとはハンドラーを実装するだけです。 
 
 ```csharp
 characteristic.ValueChanged += Characteristic_ValueChanged;

@@ -4,14 +4,14 @@ description: これは、Windows 10 UWP (ユニバーサル Windows プラット
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: de4d8fc797efe2a0dde7340f42208a97bccf0b10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927988"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645107"
 ---
 # <a name="create-a-windows-hello-login-service"></a>Windows Hello ログイン サービスの作成
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927988"
 
 このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Windows 10 コンピューターで Visual Studio 2015 (Community Edition 以上) を使う必要もあります。
 
-## <a name="exercise-1-server-side-logic"></a>演習 1: サーバー側のロジック
+## <a name="exercise-1-server-side-logic"></a>手順 1:サーバー側ロジック
 
 
 この演習では、最初のタブに組み込まれた Windows Hello アプリケーションを使って作業を開始し、ローカルのモック サーバーとモック データベースを作成します。 このハンズオン ラボの目的は、Windows Hello を既存のシステムに統合する方法を説明することです。 モック サーバーとモック データベースを使うと、関係のない多くの設定が省略されます。 実際のアプリケーションでは、モック オブジェクトを実際のサービスとデータベースに置き換える必要があります。
@@ -182,7 +182,7 @@ ms.locfileid: "8927988"
     }
 ```
 
--   読み込みメソッドでは、InitializeSampleUserAccounts メソッドがコメント アウトされている点に注目してください。このメソッドは、MockStore.cs で作成する必要があります。 このメソッドによりユーザー アカウントの一覧が入力され、ログインできるようになります。 実際には、ユーザー データベースには情報が既に入力されています。 この手順では、ユーザーの一覧を初期化し、load を呼び出すコンストラクターも作成します。
+-   load メソッドでは、InitializeSampleUserAccounts メソッドがコメント アウトされている点に注目してください。このメソッドは、MockStore.cs で作成する必要があります。 このメソッドによりユーザー アカウントの一覧が入力され、ログインできるようになります。 実際には、ユーザー データベースには情報が既に入力されています。 この手順では、ユーザーの一覧を初期化し、読み込みメソッドを呼び出すコンストラクターも作成します。
 
     ```cs
     namespace PassportLogin.AuthService
@@ -535,7 +535,7 @@ ms.locfileid: "8927988"
     }
     ```
 
-## <a name="exercise-2-client-side-logic"></a>演習 2: クライアント側のロジック
+## <a name="exercise-2-client-side-logic"></a>手順 2:クライアント側ロジック
 
 この演習では、最初のラボのクライアント側ビューとヘルパー クラスを変更して、AuthService クラスを使います。 実際には、AuthService が認証サーバーとなり、Web API を使ってサーバーとの間でデータを送受信する必要があります。 このハンズオン ラボでは、わかりやすいようにクライアントとサーバーはすべてローカルになっています。 目的は、Windows Hello API を使う方法を学習することです。
 
@@ -804,7 +804,7 @@ ms.locfileid: "8927988"
     }
     ```
 
--   アカウントの削除に AuthService を使うとき、Button\_Forget\_User\_Click メソッド内の AccountHelper への参照は削除できます。 この結果、メソッドは次のようになります。
+-   使用する場合は、AuthService ボタンで、アカウント、AccountHelper への参照を削除するときに、\_破棄\_ユーザー\_メソッドを削除する をクリックします。 この結果、メソッドは次のようになります。
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -1060,7 +1060,7 @@ ms.locfileid: "8927988"
     }
     ```
 
--   先ほど追加した GetKeyAttestationAsync メソッドでは、最後の行がコメント アウトされている点に注目してください。新しいメソッドとして作成するのはこの最後の行であり、すべての Windows Hello 情報を AuthService に送信します。 実際の環境では、Web API を使って実際のサーバーにこれを送信する必要があります。
+-   先ほど追加した GetKeyAttestationAsync メソッドでは、最後の行がコメント アウトされています。新しいメソッドとして作成するのはこの最後の行であり、すべての Windows Hello 情報を AuthService に送信します。 実際の環境では、Web API を使って実際のサーバーにこれを送信する必要があります。
 
     ```cs
     using System.Runtime.InteropServices.WindowsRuntime;
@@ -1174,4 +1174,4 @@ ms.locfileid: "8927988"
 ## <a name="related-topics"></a>関連トピック
 
 * [Windows Hello](microsoft-passport.md)
-* [Windows Hello ログイン アプリ](microsoft-passport-login.md)
+* [Windows こんにちはの アプリのログイン](microsoft-passport-login.md)

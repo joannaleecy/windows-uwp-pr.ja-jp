@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, 広告, パフォーマンス
 ms.localizationpriority: medium
 ms.openlocfilehash: c6bec86929284e49e4e882597422d316276c0a33
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627887"
 ---
 # <a name="get-ad-performance-data"></a>広告のパフォーマンス データの取得
 
 
 日付範囲やその他のオプション フィルターを指定して、アプリケーションの広告のパフォーマンスに関する集計データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
-このメソッドは、パートナー センターで[の広告パフォーマンス レポート](../publish/advertising-performance-report.md)で提供される同じデータを返します。
+このメソッドが用意されている同じデータを返します、[パフォーマンス レポートをアドバタイズ](../publish/advertising-performance-report.md)パートナー センターでします。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -26,7 +26,7 @@ ms.locfileid: "8933452"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 詳しくは、「[Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)」をご覧ください。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8933452"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明           |
+| Header        | 種類   | 説明           |
 |---------------|--------|--------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -51,17 +51,17 @@ ms.locfileid: "8933452"
 
 特定のアプリに関する広告のパフォーマンス データを取得するには、*applicationId* パラメーターを使用します。 開発者アカウントに関連付けられているすべてのアプリに関する広告パフォーマンス データを取得するには、*applicationId* パラメーターは省略します。
 
-| パラメーター     | 型   | 説明     | 必須かどうか |
+| パラメーター     | 種類   | 説明     | 必須 |
 |---------------|--------|-----------------|----------|
-| applicationId   | string    | 広告のパフォーマンス データを取得するアプリの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |    必須ではない      |
-| startDate   | date    | 広告のパフォーマンス データを取得する日付範囲の開始日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 30 日を差し引いた日付になります。 |    必須ではない      |
-| endDate   | date    | 広告のパフォーマンス データを取得する日付範囲の終了日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 1 日を差し引いた日付になります。 |    必須ではない      |
-| top   | int    | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |    必須ではない      |
-| skip   | int    | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |    必須ではない      |
-| filter   | string    | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 |    必須ではない      |
-| aggregationLevel   | string    | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定されていない場合、既定値は <strong>day</strong> です。 |    必須ではない      |
-| orderby   | string    | 結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。<em>field</em> パラメーターは次のいずれかの文字列になります。<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitId</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |    必須ではない      |
-| groupby   | string    | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。</p><ul><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>date</strong></li><li><strong>accountCurrencyCode</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitName</strong></li><li><strong>adUnitId</strong></li><li><strong>pubCenterAppName</strong></li><li><strong>adProvider</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p> |    必須ではない      |
+| applicationId   | string    | 広告のパフォーマンス データを取得するアプリの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |    X      |
+| startDate   | date    | 広告のパフォーマンス データを取得する日付範囲の開始日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 30 日を差し引いた日付になります。 |    X      |
+| endDate   | date    | 広告のパフォーマンス データを取得する日付範囲の終了日です。YYYY/MM/DD の形式で指定します。 既定値は、現在の日付から 1 日を差し引いた日付になります。 |    X      |
+| top   | int    | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |    X      |
+| skip   | int    | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |    X      |
+| filter   | string    | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 |    X      |
+| aggregationLevel   | string    | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定しない場合、既定値は <strong>day</strong> です。 |    X      |
+| orderby   | string    | 結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。<em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitId</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |    X      |
+| groupby   | string    | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。</p><ul><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>date</strong></li><li><strong>accountCurrencyCode</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitName</strong></li><li><strong>adUnitId</strong></li><li><strong>pubCenterAppName</strong></li><li><strong>adProvider</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p> |    X      |
 
 
 ### <a name="filter-fields"></a>フィルター フィールド
@@ -70,12 +70,12 @@ ms.locfileid: "8933452"
 
 -   *filter=market eq 'US' and deviceType eq 'phone'*
 
-サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値は単一引用符で囲む必要があります。
+サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。
 
 | フィールド | 説明                                                              |
 |--------|--------------------------------------------------------------------------|
 | market    | 広告が提供された市場の ISO 3166 国コードを含む文字列です。 |
-| deviceType    | <strong>PC/Tablet</strong> または <strong>Phone</strong> のどちらかの文字列になります。 |
+| deviceType    | 次のいずれかの文字列です。<strong>PC やタブレット</strong>または<strong>Phone</strong>します。 |
 | adUnitId    | フィルターに適用する広告ユニット ID を指定する文字列です。 |
 | pubCenterAppName    | フィルターに適用する、現在のアプリの pubCenter 名を指定する文字列です。 |
 | adProvider    | フィルターに適用する広告プロバイダー名を指定する文字列です。 |
@@ -99,7 +99,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>応答本文
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                            |
+| Value      | 種類   | 説明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Value      | array  | 広告のパフォーマンスに関する集計データが含まれるオブジェクトの配列です。 各オブジェクトのデータについて詳しくは、次の「[広告のパフォーマンスの値](#ad-performance-values)」セクションをご覧ください。                                                                                                                      |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 5 に設定されたが、クエリに対するデータに 5 個を超える項目が含まれている場合に、この値が返されます。 |
@@ -110,18 +110,18 @@ Authorization: Bearer <your access token>
 
 *Value* 配列の要素には、次の値が含まれます。
 
-| 値               | 型   | 説明                                                                                                                                                                                                                              |
+| Value               | 種類   | 説明                                                                                                                                                                                                                              |
 |---------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | string | 広告のパフォーマンス データの対象となる日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | applicationId       | string | 広告のパフォーマンス データを取得するアプリのストア ID です。     |
 | applicationName     | string | アプリの表示名です。                         |
 | adUnitId           | string | 広告ユニットの ID です。        |
-| adUnitName           | string | パートナー センターで開発者によって指定されている、広告ユニットの名前です。              |
+| adUnitName           | string | パートナー センターの開発者によって指定された、ad ユニットの名前。              |
 | adProvider           |  string  |  広告プロバイダーの名前です。   |
 | deviceType          | string | 広告が提供されたデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                              |
 | market              | string | 広告が提供された市場の ISO 3166 国コードです。             |
 | accountCurrencyCode     | string | アカウントの通貨コードです。        |
-| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている、pubCenter アプリの名前です。   |
+| pubCenterAppName       |  string  |   パートナー センターでアプリに関連付けられている pubCenter アプリの名前。   |
 | adProviderRequests        | int | 指定した広告プロバイダーに対する広告要求の数です。                 |
 | impressions           | int | 広告インプレッションの数です。        |
 | clicks            | int | クリックの数です。       |
@@ -131,7 +131,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>応答の例
 
-この要求の JSON 応答の本文の例を次に示します。
+この要求の JSON 返信の本文の例を次に示します。
 
 ```json
 {
@@ -173,5 +173,5 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [[広告パフォーマンス] レポート](../publish/advertising-performance-report.md)
-* [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
+* [広告パフォーマンス レポート](../publish/advertising-performance-report.md)
+* [Microsoft Store サービスを使用して分析データにアクセス](access-analytics-data-using-windows-store-services.md)

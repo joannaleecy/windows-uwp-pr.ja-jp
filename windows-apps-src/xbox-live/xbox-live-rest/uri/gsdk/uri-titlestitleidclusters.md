@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 821b346958846b56a55c0ec5920d71f4b3cc13c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659857"
 ---
 # <a name="titlestitleidclusters"></a>/titles/{titleId}/clusters
-により、クライアントは、タイトルの Xbox Live Compute サーバー インスタンスを作成する URI。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+により、クライアントはタイトルの Xbox Live コンピューティング サーバー インスタンスを作成する URI。 これらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EU)
   * [ホスト名](#ID4EIB)
@@ -28,7 +28,7 @@ ms.locfileid: "8931879"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| titleId| 要求の操作のタイトルの ID です。| 
+| titleId| 要求の操作対象のタイトルの ID。| 
   
 <a id="ID4EIB"></a>
 
@@ -42,7 +42,7 @@ gameserverms.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
   
-[POST](uri-titlestitleidclusters-post.md)
+[投稿](uri-titlestitleidclusters-post.md)
  
-&nbsp;&nbsp;クライアントが Xbox Live Compute サーバー インスタンスを作成することができる URI。
+&nbsp;&nbsp;により、クライアントは Xbox Live コンピューティング サーバー インスタンスを作成する URI。
    

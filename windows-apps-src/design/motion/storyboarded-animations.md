@@ -4,14 +4,14 @@ title: ストーリーボードに設定されたアニメーション
 description: ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。
 ms.date: 07/13/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
-ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059993"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627077"
 ---
 # <a name="storyboarded-animations"></a>ストーリーボードに設定されたアニメーション
 
@@ -74,7 +74,7 @@ Microsoft Silverlight または Windows Presentation Foundation (WPF) に慣れ�
 
 ターゲット オブジェクトの直接のプロパティではないプロパティをターゲットにする必要があることもありますが、オブジェクトとプロパティの関係の中でより深い入れ子の状態になります。 アニメーション化できるプロパティの型 ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)) を参照できるまで、関係する一連のオブジェクトとプロパティの値をドリルダウンするために、これが必要になることがよくあります。 この概念を *"間接的なターゲット設定"* と呼び、この方法でアニメーションの対象プロパティを設定する構文を *"プロパティ パス"* と呼びます。
 
-次に例を示します。 ストーリーボードに設定されたアニメーションの一般的なシナリオの 1 つに、コントロールが特定の状態にあることを表すためにアプリ UI やコントロールの一部の色を変更するというものがあります。 たとえば、赤から緑に変化するように [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) をアニメーション化するとします。 [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) の呼び出しが必要と思われるでしょう。それは正しいものの、 オブジェクトの色に影響する UI 要素のプロパティは、実際には [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではなく、 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 型です。 そのため、アニメーションのターゲット設定に実際に必要なのは、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) クラスの [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) プロパティです。これは、これらの色関連の UI プロパティに一般的に使われる **Brush** 派生型です。 アニメーションのプロパティのターゲット設定に使うプロパティ パスの作成という点に注目すると、次のようになります。
+次に例を示します。 ストーリーボードに設定されたアニメーションの一般的なシナリオの 1 つに、コントロールが特定の状態にあることを表すためにアプリ UI やコントロールの一部の色を変更するというシナリオがあります。 たとえば、赤から緑に変化するように [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) をアニメーション化するとします。 [  **ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) の呼び出しが必要と思われるでしょう。それは正しいものの、 オブジェクトの色に影響する UI 要素のプロパティは、実際には [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではなく、 [  **Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 型です。 そのため、アニメーションのターゲット設定に実際に必要なのは、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) クラスの [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) プロパティです。これは、これらの色関連の UI プロパティに一般的に使われる **Brush** 派生型です。 アニメーションのプロパティのターゲット設定に使うプロパティ パスの作成という点に注目すると、次のようになります。
 
 ```xaml
 <Storyboard x:Name="myStoryboard">
@@ -93,9 +93,9 @@ Microsoft Silverlight または Windows Presentation Foundation (WPF) に慣れ�
 
 次に、アニメーションのターゲット設定のシナリオを示します。おそらくこうしたシナリオでは、間接的なプロパティのターゲット設定と、使う構文に似たプロパティ パス文字列を使うことになります。
 
-- [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) に適用される、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 値のアニメーション化:  `(UIElement.RenderTransform).(TranslateTransform.X)`
-- [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) に適用される、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) の [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 内の [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) のアニメーション化:  `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
-- [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) に適用される、[**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022) における 4 つの変換の 1 つである [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 値のアニメーション化: `(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+- [  **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) に適用される、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 値のアニメーション化: `(UIElement.RenderTransform).(TranslateTransform.X)`
+- [  **Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) に適用される、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) の [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 内の [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) のアニメーション化: `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+- [  **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) に適用される、[**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022) における 4 つの変換の 1 つである [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) 値のアニメーション化: `(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 これらの例の一部では、数を囲む角かっこが使われていることがわかります。 これはインデクサーです。 前のプロパティ名に値としてコレクションが含まれており、そのコレクション内からの項目 (0 から始まるインデックスで識別される) が必要であることを示しています。
 
@@ -107,9 +107,9 @@ XAML 添付プロパティをアニメーション化することもできます
 
 Windows ランタイムのアニメーション システムには、ストーリーボードに設定されたアニメーションを適用できる 3 つの型があります。
 
--   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx): 任意の [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) でアニメーション化できる
--   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870): 任意の [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) でアニメーション化できる
--   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723): 任意の [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) でアニメーション化できる
+-   [**二重**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、いずれかでアニメーション化できる[ **DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
+-   [**ポイント**](https://msdn.microsoft.com/library/windows/apps/BR225870)、いずれかでアニメーション化できる[ **PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346)
+-   [**色**](https://msdn.microsoft.com/library/windows/apps/Hh673723)、いずれかでアニメーション化できる[ **ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066)
 
 また、後ほど説明するオブジェクトの参照値に使える汎用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) アニメーション型もあります。
 
@@ -127,7 +127,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 前の XAML の例に戻り、**From** 値と **To** 値、それに **Duration** をもう一度見てみましょう。 この例では [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) プロパティをアニメーション化します。**Opacity** のプロパティ型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) です。 そのため、ここで使うアニメーションは [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) です。
 
-`From="1.0" To="0.0"` アニメーションを実行するときに、[**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) プロパティの初期値が 1 で、これが 0 になるまでアニメーション化することを示します。 つまり、これらの [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値が **Opacity** プロパティに与える効果は、当初不透明な状態のオブジェクトを徐々に透明にするというものです。
+`From="1.0" To="0.0"` は、アニメーション開始時の [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) プロパティの初期値が 1 で、これが 0 になるまでアニメーション化することを示します。 つまり、これらの [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値が **Opacity** プロパティに与える効果は、当初不透明な状態のオブジェクトを徐々に透明にするというものです。
 
 ```xaml
 ...
@@ -140,56 +140,56 @@ Windows ランタイムのアニメーション システムには、ストー�
 ...
 ```
 
-`Duration="0:0:1"`  アニメーションの継続期間、つまり四角形が消える速さを指定します。 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) プロパティは、*時間*:*分*:*秒*という形式で指定します。 この例のアニメーションの継続時間は 1 秒ということになります。
+`Duration="0:0:1"` は、アニメーションの継続期間、つまり四角形が消える速さを指定します。 [  **Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) プロパティは、*時間*:*分*:*秒*という形式で指定します。 この例のアニメーションの継続時間は 1 秒ということになります。
 
-[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値と XAML 構文について詳しくは、「[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)」をご覧ください。
+[  **Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値と XAML 構文について詳しくは、「[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)」をご覧ください。
 
 > [!NOTE]
 > 紹介した例の場合、アニメーション化するオブジェクトの開始状態の [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) が既定値か明示的な設定かを問わず常に 1 である場合は、**From** 値を省略できます。そのときアニメーションでは暗黙的な開始値が使われ、同じ結果になります。
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By では null が許容される
 
-**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 VisualC ではコンポーネント拡張機能 (、C++/cli CX)、 **Nullable**型ない[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)を代わりに使用します。
+**From**、**To**、または **By** は省略でき、省略した値の代わりにアニメーション化されない現在の値を使うことができると説明しました。 アニメーションの **From**、**To**、**By** の各プロパティは、想定した型ではない場合があります。 たとえば、[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) プロパティの型は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) ではなく、 **Double** に対しては [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) です。 既定値は 0 ではなく **null** です。 **null** 値により、アニメーション システムは、**From**、**To**、または **By** プロパティの値が明示的に設定されていないことを識別します。 Visual C コンポーネント拡張 (C +/cli CX) がない、 **Nullable**型であるため、使用して[ **IReference** ](https://msdn.microsoft.com/library/windows/apps/BR225864)代わりにします。
 
 ### <a name="other-properties-of-an-animation"></a>アニメーションのその他のプロパティ
 
 次のセクションで説明するプロパティはいずれも省略可能であり、ほとんどのアニメーションに適した既定値を持ちます。
 
-### **<a name="autoreverse"></a>AutoReverse**
+### <a name="autoreverse"></a>**AutoReverse**
 
 アニメーションで [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) または [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) を指定しなかった場合、そのアニメーションは 1 回実行され、さらに [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) で指定された期間実行されます。
 
-[**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) プロパティは、[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の最後に達した後で逆にタイムラインを再生するかどうかを指定します。 これを **true** に設定すると、アニメーションは宣言済みの [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の最後に達した後で逆に再生され、値がその終了値 (**To**) から開始値 (**From**) に変更されます。 これは、アニメーションが実質的に [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の倍の時間実行されることを表します。
+[  **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) プロパティは、[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の最後に達した後で逆にタイムラインを再生するかどうかを指定します。 これを **true** に設定すると、アニメーションは宣言済みの [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の最後に達した後で逆に再生され、値がその終了値 (**To**) から開始値 (**From**) に変更されます。 これは、アニメーションが実質的に [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の倍の時間実行されることを表します。
 
-### **<a name="repeatbehavior"></a>RepeatBehavior**
+### <a name="repeatbehavior"></a>**RepeatBehavior**
 
-[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) プロパティは、タイムラインの再生回数か、タイムラインを繰り返すより長い期間を指定します。 既定では、タイムラインの反復回数は "1x" であり、その [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の間に 1 回再生され、繰り返されません。
+[  **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) プロパティは、タイムラインの再生回数か、タイムラインを繰り返すより長い期間を指定します。 既定では、タイムラインの反復回数は "1x" であり、その [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の間に 1 回再生され、繰り返されません。
 
 アニメーションが複数回反復して実行されるようにすることができます。 たとえば、値 "3x" により、アニメーションは 3 回実行されます。 また、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) に別の [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) を指定することもできます。 その **Duration** は、アニメーション自体の **Duration** よりも長くしてください。 たとえば、[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) が "0:0:2" のアニメーションに対して **RepeatBehavior** を "0:0:10" に指定した場合、アニメーションは 5 回繰り返されます。 この値が割り切れない場合、**RepeatBehavior** の時間に達した時点でアニメーションは途切れてしまいます。 最後に、特別な "Forever" という値を指定することもできます。この値を指定すると、アニメーションは意図的に停止されるまで無限に実行されます。
 
-[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 値と XAML 構文について詳しくは、「[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)」をご覧ください。
+[  **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) 値と XAML 構文について詳しくは、「[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411)」をご覧ください。
 
-### **<a name="fillbehaviorstop"></a>FillBehavior="Stop"**
+### <a name="fillbehaviorstop"></a>**FillBehavior ="Stop"**
 
 既定では、アニメーションが終了すると、その継続期間を超過した後も、プロパティ値は最終的な **To** か、**By** で変更された値で維持されます。 ただし、[**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) プロパティの値を [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306) に設定した場合、アニメーション化された値はアニメーションが適用される前の値か、より正確には、依存関係プロパティ システムによって特定された現在の有効な値に戻ります (この違いについて詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください)。
 
-### **<a name="begintime"></a>BeginTime**
+### <a name="begintime"></a>**BeginTime**
 
 既定では、アニメーションの [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) は "0:0:0" であるため、上位の [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行と同時に開始されます。 この動作は、**Storyboard** に複数のアニメーションが含まれており、アニメーションどうしの開始のタイミングをずらしたり、開始のタイミングを意図的に少し遅らせたりする場合には、変更できます。
 
-### **<a name="speedratio"></a>SpeedRatio**
+### <a name="speedratio"></a>**SpeedRatio**
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) に複数のアニメーションがある場合は、**Storyboard** を基準に 1 つ以上のアニメーションのタイム レートを変更できます。 これは、アニメーションの実行中に経過する [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 時間を最終的に制御する親 **Storyboard** です。 このプロパティはあまり利用されません。 詳しくは、「[**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213)」をご覧ください。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) に複数のアニメーションがある場合は、**Storyboard** を基準に 1 つ以上のアニメーションのタイム レートを変更できます。 これは、アニメーションの実行中に経過する [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 時間を最終的に制御する親 **Storyboard** です。 このプロパティはあまり利用されません。 詳しくは、「[**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213)」をご覧ください。
 
 ## <a name="defining-more-than-one-animation-in-a-storyboard"></a>**Storyboard** での複数のアニメーションの定義
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) のコンテンツとして、複数のアニメーション定義を設定できます。 同じターゲット オブジェクトの 2 種類のプロパティに関連のアニメーションを適用している場合は、複数のアニメーションが存在する可能性があります。 たとえば、UI 要素の [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) として使われる [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) プロパティと  [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) プロパティを両方とも変更する必要がある場合は、要素は対角線状に変換されます。 そのためには 2 つのアニメーションが必要ですが、それらを常に一緒に実行するために、同じ **Storyboard** に設定したい場合もあります。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) のコンテンツとして、複数のアニメーション定義を設定できます。 同じターゲット オブジェクトの 2 種類のプロパティに関連のアニメーションを適用している場合は、複数のアニメーションが存在する可能性があります。 たとえば、UI 要素の [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) として使われる [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) の [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) プロパティと  [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) プロパティを両方とも変更する必要がある場合は、要素は対角線状に変換されます。 そのためには 2 つのアニメーションが必要ですが、それらを常に一緒に実行するために、同じ **Storyboard** に設定したい場合もあります。
 
 これらのアニメーションは同じ型でなくてもよく、同じオブジェクトをターゲットにする必要もありません。 継続時間が違っていてもかまわず、プロパティ値を共有する必要はありません。
 
 親 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) が実行されると、その中の各アニメーションも実行されます。
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) クラスには、実際にはアニメーション型と同様に多数の同じアニメーション プロパティがあります。どちらも [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底クラスを共有しているためです。 そのため、**Storyboard** には [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) か [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) を設定できます。 通常は、含まれるすべてのアニメーションにその動作を持たせる場合を除いて、これらを **Storyboard** に設定することはありません。 一般に、**Storyboard** に設定されている **Timeline** プロパティはそのすべての子アニメーションに適用されます。 非設定の場合、**Storyboard** には、含まれるアニメーションの最も長い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値から計算された暗黙的な継続時間が使われます。 子アニメーションのいずれかよりも短い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) を **Storyboard** に明示的に設定すると、そのアニメーションは途中で途切れてしまいます。これは、通常は望ましくありません。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) クラスには、実際にはアニメーション型と同様に多数の同じアニメーション プロパティがあります。どちらも [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底クラスを共有しているためです。 そのため、**Storyboard** には [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) か [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) を設定できます。 通常は、含まれるすべてのアニメーションにその動作を持たせる場合を除いて、これらを **Storyboard** に設定することはありません。 一般に、**Storyboard** に設定されている **Timeline** プロパティはそのすべての子アニメーションに適用されます。 非設定の場合、**Storyboard** には、含まれるアニメーションの最も長い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値から計算された暗黙的な継続時間が使われます。 子アニメーションのいずれかよりも短い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) を **Storyboard** に明示的に設定すると、そのアニメーションは途中で途切れてしまいます。これは、通常は望ましくありません。
 
 ストーリーボードには、同じオブジェクトの同じプロパティをターゲットにしてアニメーション化する 2 つのアニメーションを含めることはできません。 これを試みると、ストーリーボードの実行を試みたときにランタイム エラーが発生します。 この制限は、[**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 値と継続時間が意図的に異なる設定になっているためにアニメーションが時間的に重ならない場合でも適用されます。 実際に 1 つのストーリーボードで同じプロパティにより複雑なアニメーション タイムラインを適用する場合は、キー フレーム アニメーションを使います。 「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
 
@@ -197,7 +197,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 ## <a name="defining-a-storyboard-as-a-resource"></a>リソースとしてのストーリーボードの定義
 
-[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) は、アニメーション オブジェクトを入れるコンテナーです。 **Storyboard** は、ページ レベルの [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) または [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) で、アニメーション化の対象となるオブジェクトから利用できるリソースとして定義するのが一般的です。
+[  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) は、アニメーション オブジェクトを入れるコンテナーです。 **Storyboard** は、ページ レベルの [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) または [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338) で、アニメーション化の対象となるオブジェクトから利用できるリソースとして定義するのが一般的です。
 
 次の例は、前の例の [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) がページ レベルの [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) の定義にどのように含まれているかを示しており、**Storyboard** は、ルート [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503) のキーを持つリソースです。 [x:Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)に注目してください。 この属性は、コードだけでなく XAML の他の要素でも後から **Storyboard** を参照できるように、**Storyboard** に対して変数名を定義する方法を示しています。
 
@@ -223,7 +223,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 リソースを XAML ファイル (page.xaml や app.xaml など) の XAML ルートで定義する方法は、キーを持つリソースを XAML で編成する場合の一般的な方法です。 リソースを別個のファイルに分け、アプリやパッケージにマージすることもできます。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/Mt187273)」をご覧ください。
 
 > [!NOTE]
-> Windows ランタイムの XAML は [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)か [x: Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)を使ったリソースの識別をサポートします。 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) では x: Name 属性を使う方が一般的です。これを変数名を使って参照することになるためで、その [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) メソッドを後で呼び出してアニメーションを実行できるようにする目的があります。 [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)を使う場合は、[**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) インデクサーなどの [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) メソッドを使ってキーを持つリソースとしてそれを取得し、取得したオブジェクトを **Storyboard** にキャストして、**Storyboard** メソッドを使う必要があります。
+> Windows ランタイムの XAML は [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)か [x: Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)を使ったリソースの識別をサポートします。 [  **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) では x: Name 属性を使う方が一般的です。これを変数名を使って参照することになるためで、その [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) メソッドを後で呼び出してアニメーションを実行できるようにする目的があります。 [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)を使う場合は、[**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) インデクサーなどの [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) メソッドを使ってキーを持つリソースとしてそれを取得し、取得したオブジェクトを **Storyboard** にキャストして、**Storyboard** メソッドを使う必要があります。
 
 ### <a name="storyboards-for-visual-states"></a>表示状態用のストーリーボード
 
@@ -239,7 +239,7 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 
 -   アニメーションの [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) が 0 秒である (「警告」をご覧ください)
 -   アニメーションのターゲットが [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) である
--   アニメーションのターゲットが [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) プロパティ ([**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)、[**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)、[**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)、[**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)) のサブプロパティ値である
+-   これらのサブプロパティ値、アニメーションのターゲット[ **UIElement** ](https://msdn.microsoft.com/library/windows/apps/BR208911)プロパティ。[**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)、 [ **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980)、 [**プロジェクション**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx)、 [ **クリップ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 -   アニメーションのターゲットが [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) または [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772)
 -   アニメーションのターゲットが [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 値であり、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を使い、その [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) をアニメーション化する
 -   アニメーションが [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) である
@@ -265,7 +265,7 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 アプリ開発者は、**EnableDependentAnimation** が **true** でも、依存型アニメーションを常に無効にするアプリ全体の設定を適用することもできます。 「[**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)」をご覧ください。
 
 > [!TIP]
-> 表示状態プロパティに依存型アニメーションを適用しようとするたびに、Blend for Visual Studio 2017 で、アニメーションのウィンドウを使用している、デザイナーでの警告が表示されます。 ビルド出力またはエラー一覧での警告は表示されません。 XAML を手動で、編集する場合、デザイナーでは、警告が表示されません。 出力ウィンドウのデバッグ出力時にデバッグするとき、警告が表示されるアニメーションが独立型でないし、はスキップされます。
+> Blend for Visual Studio 2017 では、アニメーション ウィンドウを使用しているは、visual state プロパティに依存するアニメーションを適用しようとしたときに場合、は、デザイナーで警告が表示されます。 ビルド出力またはエラーの一覧で、警告は表示されません。 XAML を手動で、編集する場合、デザイナーでは、警告が表示されません。 出力ウィンドウのデバッグ出力時のデバッグ時に、警告が表示されます、アニメーションは独立していないはスキップされます。
 
 
 ## <a name="starting-and-controlling-an-animation"></a>アニメーションの開始と制御
@@ -327,16 +327,16 @@ XAML で完全に宣言できるアニメーションをある方法で開始で
 
 ## <a name="more-animation-types-and-next-steps-for-learning-about-animating-your-ui"></a>その他のアニメーションの種類、UI のアニメーション化に関する次の学習ステップ
 
-ここまで、2 つの値の間をアニメーション化し、アニメーションの実行中に必要に応じて値を線形補間するカスタム アニメーションについて説明してきました。 これらは、**From**/**To**/**By** アニメーションと呼ばれています。 これ以外に、開始から終了までの間の中間値を宣言できるタイプのアニメーションもあります。 これらは*キー フレーム アニメーション*と呼ばれます。 **From**/**To**/**By** アニメーションまたはキー フレーム アニメーションの補間ロジックを変更する方法もあります。 それには、イージング関数を適用する必要があります。 これらの概念について詳しくは、「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
+ここまで、2 つの値の間をアニメーション化し、アニメーションの実行中に必要に応じて値を線形補間するカスタム アニメーションについて見てきました。 これらは、**From**/**To**/**By** アニメーションと呼ばれています。 これ以外に、開始から終了までの間の中間値を宣言できるタイプのアニメーションもあります。 これらは*キー フレーム アニメーション*と呼ばれます。 **From**/**To**/**By** アニメーションまたはキー フレーム アニメーションの補間ロジックを変更する方法もあります。 それには、イージング関数を適用する必要があります。 これらの概念について詳しくは、「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [プロパティ パスの構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [キー フレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)
-* [表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [キー フレームと関数のアニメーションにイージング](key-frame-and-easing-function-animations.md)
+* [表示状態のアニメーションを再検討](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
 * [コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/Mt210948)
-* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**ストーリー ボード**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
  
 

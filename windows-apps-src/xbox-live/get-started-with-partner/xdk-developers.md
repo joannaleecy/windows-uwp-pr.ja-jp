@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: c197115bf7c71c8e794c0009d5f3435ea77f592a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941071"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655087"
 ---
 # <a name="get-started-with-using-visual-studio-for-xdk-based-games"></a>XDK ベースのゲームで Visual Studio を使用する際の概要
 
@@ -21,12 +21,12 @@ ms.locfileid: "8941071"
 
 [XDK の入手先](where-to-get-xdk.md)
 
-[開発機本体を構成する](configure-your-development-console.md)
+[開発コンソールを構成します。](configure-your-development-console.md)
 
-[新規または既存の XDK プロジェクトに Xbox Live を追加する](add-xbox-live-to-an-xdk-project.md)
+[Xbox Live を新規または既存の XDK プロジェクトに追加します。](add-xbox-live-to-an-xdk-project.md)
 
-[Xbox 開発キット (XDK) に付属している Xbox Live API を使用する](using-xbox-live-apis-built-into-the-xdk.md)
+[Xbox 開発キット (XDK) に同梱されている Xbox Live Api を使用して、](using-xbox-live-apis-built-into-the-xdk.md)
 
-[Xbox Live API NuGet パッケージを使用して XDK タイトルを開発する](use-xbox-live-nuget-with-xdk.md)
+[Xbox Live API NuGet パッケージを使用して、XDK タイトルを開発するには](use-xbox-live-nuget-with-xdk.md)
 
-[XDK に付属している Xbox Live のソースをコンパイルする](compile-the-xdk-xbox-live-api-source.md)
+[Xbox Live の XDK に付属するソースをコンパイルします。](compile-the-xdk-xbox-live-api-source.md)

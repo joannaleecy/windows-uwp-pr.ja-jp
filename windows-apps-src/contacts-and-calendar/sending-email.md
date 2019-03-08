@@ -7,20 +7,20 @@ ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927406"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626487"
 ---
 # <a name="send-email"></a>メールの送信
 
 メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 
-**この記事の内容**
+**この記事では**
 
--   [メールの作成ダイアログの起動](#launch-the-compose-email-dialog)
--   [要約と次のステップ](#summary-and-next-steps)
+-   [電子メールの作成 ダイアログを起動します。](#launch-the-compose-email-dialog)
+-   [概要と次の手順](#summary-and-next-steps)
 -   [関連トピック](#related-topics)
 
 ## <a name="launch-the-compose-email-dialog"></a>メールの作成ダイアログの起動
@@ -47,7 +47,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)クラスを使用して、メールに追加する添付ファイルは、メール アプリにのみ表示されます。 ユーザーが、既定のプログラムとして構成されているその他のメール プログラムを使用している場合、添付することがなく作成ウィンドウが表示されます。 これは、既知の問題です。
+> 添付ファイルを使用して電子メールに追加する、 [EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)クラスは、メール アプリでのみ表示されます。 ユーザーがその既定のプログラムとして構成されているその他のメール プログラムを使用している場合、添付ファイルなし、compose ウィンドウが表示されます。 これは既知の問題です。
 
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 
@@ -55,8 +55,8 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 ## <a name="related-topics"></a>関連トピック
 
-* [連絡先の選択](selecting-contacts.md)
-* [ファイル ピッカーの呼び出し後に Windows Phone アプリを続行する方法](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [連絡先を選択](selecting-contacts.md)
+* [ファイル ピッカーを呼び出した後、Windows Phone アプリを継続する方法](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

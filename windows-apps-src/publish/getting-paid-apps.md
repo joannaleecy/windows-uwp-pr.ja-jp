@@ -1,5 +1,5 @@
 ---
-Description: Learn about receiving payments for your apps, add-ons (in-app products), and advertising earnings.
+Description: アプリ、アドオン (アプリ内製品) の料金を支払うを受け取って、収益を広告について説明します。
 title: 支払いの受け取り
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.date: 10/31/2018
@@ -7,19 +7,19 @@ ms.topic: article
 keywords: windows 10, uwp, 支払い, アプリの販売, アプリの収益, 受け取り, Microsoft Store の手数料, 支払い保留, パーセント
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044363"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596497"
 ---
 # <a name="getting-paid"></a>支払いの受け取り
-次に、アプリ、アドオン、および advertising による収益の支払の受け取りについての重要な情報を示します。
+次に、アプリ、アドオン、および広告収入の支払いの受信に関するいくつかの重要な情報を示します。
 
 > [!IMPORTANT]
-> Microsoft Store でアプリの売上から収益を受け取ることができます、[受取りアカウントを設定](setting-up-your-payout-account-and-tax-forms.md)し、税関連の必要があります。
+> Microsoft Store でアプリの販売数からお金を受け取ることができます、前にする必要があります[支払いアカウントを設定し、必要な税フォームに記入](setting-up-your-payout-account-and-tax-forms.md)します。
 
-## <a name="store-fee"></a>Windows ストアの手数料
+## <a name="store-fee"></a>Microsoft Store の手数料
 
 [開発者アカウントを登録する](https://go.microsoft.com/fwlink/p/?LinkID=615100)際に、開発者は[アプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)に同意します。 この契約には、Microsoft Store でのアプリ販売に関する、開発者と Microsoft との関係が説明されています。これには、Microsoft がすべての販売に対して課金する Microsoft Store の手数料に関する規定も含まれています。
 
@@ -46,7 +46,7 @@ Microsoft Store の手数料は、アドオンも含めて、Microsoft Store で
 
 ## <a name="payout-reporting"></a>支払いレポート
 
-[パートナー センター](https://partner.microsoft.com/dashboard)の**入金状況**でレポートをダウンロードし、支払い情報に関する詳細情報にアクセスできます。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+支払い情報に関する詳細情報にアクセスできでのレポートのダウンロード、**入金**の[パートナー センター](https://partner.microsoft.com/dashboard)します。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
 
 
 ## <a name="payout-timeframe"></a>支払いの時期
@@ -63,7 +63,7 @@ Microsoft Store の手数料は、アドオンも含めて、Microsoft Store で
 支払い保留状態を**オン**に設定すると、スライダーを**オフ**に戻すまで、すべての支払いは保留されます。 スライダーをオフに戻すと、次の月の支払いサイクルに含まれます (支払いのしきい値に達している場合)。 たとえば、支払いを保留にしたが、6 月に支払いを受けたい場合には、5 月末以前に支払い保留状態を**オフ**に戻すようにします。
 
 > [!NOTE]
-> **支払い保留状態**の選択内容は、パートナー センター (Microsoft Store、広告、Azure Marketplace などです。) で、Windows 開発者プログラムを通じて支払われる**すべて**の収益源に適用されます。 収益源ごとに異なる保留状態を選択することはできません。
+> **支払い状態を保持する**選択に適用されます**すべて**パートナー センター (Microsoft Store、広告、Azure Marketplace など。) で Windows 開発者プログラムを通じて支払われる収益源。 収益源ごとに異なる保留状態を選択することはできません。
 
 
  

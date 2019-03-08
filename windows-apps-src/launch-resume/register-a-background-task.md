@@ -4,14 +4,14 @@ description: ほとんどのバックグラウンド タスクを安全に登録
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660787"
 ---
 # <a name="register-a-background-task"></a>バックグラウンド タスクの登録
 
@@ -39,7 +39,7 @@ ms.locfileid: "9048719"
 このメソッドは、タスクのエントリ ポイント、タスク名、構築済みのバックグラウンド タスク トリガーのほか、(必要に応じて) バックグラウンド タスクの [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) を引数として受け取ります。 このメソッドは、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトを返します。
 
 > [!Important]
-> `taskEntryPoint` - アウトプロセスで実行するバックグラウンド タスクの場合、名前空間名、"."、バックグラウンド クラスを含むクラス名という形式で構築する必要があります。 この文字列では、大文字と小文字を区別します。  たとえば、名前空間 "MyBackgroundTasks" と、バックグラウンド クラス コードを含むクラス "BackgroundTask1" がある場合、`taskEntryPoint` 用の文字列は "MyBackgroundTasks.BackgroundTask1" となります。
+> `taskEntryPoint` -このする必要があります名前空間の名前として構築するバック グラウンド タスクをアウト プロセスで実行されるの '.'、およびバック グラウンド クラスを含むクラスの名前。 この文字列では、大文字と小文字を区別します。  たとえば、名前空間 "MyBackgroundTasks" と、バックグラウンド クラス コードを含むクラス "BackgroundTask1" がある場合、`taskEntryPoint` 用の文字列は "MyBackgroundTasks.BackgroundTask1" となります。
 > バックグラウンド タスクをアプリと同じプロセスで実行する (インプロセスのバックグラウンド タスク) 場合、`taskEntryPoint` を設定する必要はありません。
 
 > [!div class="tabbedCodeSnippets"]
@@ -74,7 +74,7 @@ ms.locfileid: "9048719"
 
 同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。
 
-> **注:** アプリに固有のものであるバック グラウンド タスクの名前を使用します。 各バックグラウンド タスクには一意の名前が付いている必要があります。
+> **注**  アプリに固有のバック グラウンド タスクの名前を使用します。 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
 次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 
@@ -147,7 +147,7 @@ ms.locfileid: "9048719"
 
 登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。 このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。
 
-> **注:** バック グラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+> **注**  バック グラウンド タスクの登録パラメーターは、登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 > **注** アプリと同じプロセスで実行されるバックグラウンド タスクを登録する場合、`String.Empty` または `null` を `taskEntryPoint` パラメーターに送信します。
 
 次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。
@@ -375,16 +375,16 @@ ms.locfileid: "9048719"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [作成して、プロセス内のバック グラウンド タスクの登録](create-and-register-an-inproc-background-task.md)
+* [アプリケーション マニフェストでバック グラウンド タスクを宣言します。](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)
+* [バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
+* [バック グラウンド タスクでシステム イベントに応答します。](respond-to-system-events-with-background-tasks.md)
+* [バック グラウンド タスクを実行するための条件を設定します。](set-conditions-for-running-a-background-task.md)
+* [バック グラウンド タスクからのライブ タイルを更新します。](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーを使用します。](use-a-maintenance-trigger.md)
+* [タイマーでバック グラウンド タスクを実行します。](run-a-background-task-on-a-timer-.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
+* [トリガーする方法を中断、再開、および (デバッグ) 場合は、UWP アプリでイベントをバック グラウンド](https://go.microsoft.com/fwlink/p/?linkid=254345)

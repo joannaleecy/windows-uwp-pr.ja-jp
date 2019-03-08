@@ -8,22 +8,22 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 757d84c9ad5a005e042b42d699ada08504dc57ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919979"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650617"
 ---
 # <a name="get-uri"></a>GET (/{uri})
-ゲーム クリップをダウンロードします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ゲームのクリップをダウンロードします。 これらの Uri のドメインが`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`、対象の URI の機能によって異なります。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EDB)
   * [必要な要求ヘッダー](#ID4EEC)
-  * [オプションの要求ヘッダー](#ID4EQE)
+  * [省略可能な要求ヘッダー](#ID4EQE)
   * [要求本文](#ID4EZF)
   * [必要な応答ヘッダー](#ID4EEG)
-  * [HTTP ステータス コード](#ID4EYAAC)
+  * [HTTP 状態コード](#ID4EYAAC)
   * [省略可能な応答ヘッダー](#ID4EOFAC)
   * [応答本文](#ID4EOGAC)
  
@@ -32,39 +32,39 @@ ms.locfileid: "8919979"
  
 ## <a name="remarks"></a>注釈
  
-クライアントには、任意のクリップまたは発行された状態に達したと**GameClipUri**オブジェクトで指定されている、ダウンロード可能な型のサムネイルをダウンロードできます。 ユーザーやパブリック クリップの一覧を取得するときに、応答本文で、ファイルを要求の URI が含まれています。
+クリップまたは縮小表示が発行済み状態に達するし、ダウンロード可能な型で指定されているは、クライアントがダウンロードできる、 **GameClipUri**オブジェクト。 ユーザーまたはパブリックのクリップの一覧を取得するときに、応答本文で、ファイルを要求するための URI が含まれます。
   
 <a id="ID4EDB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| <b>uri</b>| string| <b>GameClipUri</b>オブジェクト内で<b>uri</b>フィールド。| 
+| <b>Uri</b>| string| <b>Uri</b>内でフィールド、 <b>GameClipUri</b>オブジェクト。| 
   
 <a id="ID4EEC"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:<b>Xauth=&lt;authtoken></b>| 
+| X RequestedServiceVersion| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。例:1、vnext。| 
+| Content-Type| string| 応答本文の MIME の種類。 例: <b>、application/json</b>します。| 
+| OK| string| コンテンツの種類の許容される値。 例: <b>、application/json</b>します。| 
+| キャッシュ制御| string| キャッシュの動作を指定する正常な要求です。| 
   
 <a id="ID4EQE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
-| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"します。| 
+| Accept-Encoding| string| 許容される圧縮エンコーディング。 値の例: gzip、deflate の id。| 
+| ETag| string| キャッシュの最適化に使用されます。 値の例:"686897696a7c876b7e"。| 
   
 <a id="ID4EZF"></a>
 
@@ -78,43 +78,43 @@ ms.locfileid: "8919979"
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| Retry-after| string| クライアントが利用できないサーバーの場合、後で再試行するように指示します。| 
-| 異なる| string| 下位のプロキシの応答をキャッシュする方法を指示します。| 
+| X RequestedServiceVersion| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。例:1、vnext。| 
+| Content-Type| string| 応答本文の MIME の種類。 例: <b>、application/json</b>します。| 
+| キャッシュ制御| string| キャッシュの動作を指定する正常な要求です。| 
+| OK| string| コンテンツの種類の許容される値。 例: <b>、application/json</b>します。| 
+| 再試行後| string| 後でもう一度お試しください利用不可のサーバーの場合にクライアントに指示します。| 
+| 異なる| string| ダウン ストリーム プロキシ応答をキャッシュする方法を指示します。| 
   
 <a id="ID4EYAAC"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| OK| セッションが正常に取得されました。| 
-| 301| 完全に移動| サービスは、さまざまな URI に移動しました。| 
-| 307| 一時的なリダイレクト| サービスは、さまざまな URI に移動しました。| 
-| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 200| OK| セッションが正常に取得します。| 
+| 301| 完全に移動| サービスが別の URI に移動します。| 
+| 307| 一時的なリダイレクト| サービスが別の URI に移動します。| 
+| 400| 要求が正しくありません| サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
-| 406| 許容できません。| リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
-| 410| なった| 要求されたリソースが利用可能ではなくなりました。| 
+| 403| Forbidden| ユーザーまたはサービスは、要求することはできません。| 
+| 404| 検出不可| 指定されたリソースが見つかりませんでした。| 
+| 406| Not Acceptable| リソースのバージョンがサポートされていません。| 
+| 408| 要求のタイムアウト| 要求がかかり過ぎて、完了します。| 
+| 410| なった| 要求されたリソースは使用できなくします。| 
   
 <a id="ID4EOFAC"></a>
 
  
 ## <a name="optional-response-headers"></a>省略可能な応答ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"します。| 
+| Etag| string| キャッシュの最適化に使用されます。 以下に例を示します。"686897696a7c876b7e"。| 
   
 <a id="ID4EOGAC"></a>
 
@@ -125,7 +125,7 @@ ms.locfileid: "8919979"
 
   
  
-成功した場合、サーバーはおそらく範囲要求ヘッダーに従って切り詰められている、ビデオ クリップを返します。 切り捨てられたクリップでは、応答は部分的なコンテンツ (206) になります。 サーバーがファイル全体を返す場合、[ok] (200) を応答します。 エラーが発生した**GameClipsServiceErrorResponse**オブジェクトを適切な HTTP ステータス コード (たとえば、416、要求された範囲が満たされていません) と共に返される可能性があります。
+成功した場合、サーバーは範囲の要求ヘッダーに従って切り捨てられる可能性があります、ビデオ クリップを返します。 切り捨てられたクリップ、応答を Partial Content (206) になります。 サーバーは、ファイル全体を返します、これは OK (200) が応答します。 エラーの場合、 **GameClipsServiceErrorResponse**オブジェクトは、適切な HTTP ステータス コード (例: 416、Requested Range Not Satisfiable) と共に返される可能性があります。
    
 <a id="ID4E4GAC"></a>
 

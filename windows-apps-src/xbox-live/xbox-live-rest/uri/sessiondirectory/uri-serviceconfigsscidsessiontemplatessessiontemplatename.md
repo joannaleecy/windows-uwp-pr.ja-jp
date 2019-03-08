@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 36b4034607fc6b5011491424551ed60bc3da5fa7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933200"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599267"
 ---
 # <a name="serviceconfigsscidsessiontemplatessessiontemplatename"></a>/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}
-セッション テンプレート名のセットを取得する GET 操作をサポートしています。 
+セッションのテンプレート名のセットを取得する GET 操作をサポートしています。 
 <a id="ID4EO"></a>
 
  
@@ -26,10 +26,10 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| GUID| サービス構成の識別子 (SCID)。 パート 1 セッションの id。| 
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2、セッションの id。 | 
+| scid| GUID| サービス構成の識別子 (SCID)。 セッションの第 1 部 id。| 
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッションの第 2 部 id。 | 
   
 <a id="ID4EYB"></a>
 
@@ -38,7 +38,7 @@ sessiondirectory.xboxlive.com
 
 [GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})](uri-serviceconfigsscidsessiontemplatessessiontemplatenameget.md)
 
-&nbsp;&nbsp;一連のセッション テンプレート名を取得します。
+&nbsp;&nbsp;セッションのテンプレート名のセットを取得します。
  
 <a id="ID4ECC"></a>
 
@@ -50,6 +50,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリの Uri](atoc-reference-sessiondirectory.md)
 
    

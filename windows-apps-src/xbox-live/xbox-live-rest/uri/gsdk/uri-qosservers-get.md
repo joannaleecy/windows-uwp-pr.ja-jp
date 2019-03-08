@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d24dbf1d189b759784dbbfa7052e2c218ec27e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632067"
 ---
 # <a name="get-qosservers"></a>GET (/qosservers)
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+Xbox Live コンピューティングで使用するために使用できる QoS サーバーの一覧を取得するクライアントから呼び出す URI。 これらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4EBB)
   * [必要な応答ヘッダー](#ID4EUC)
@@ -33,25 +33,25 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは必要です。
+要求を行う場合は、次の表に示されているヘッダーが必要です。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | 
-| Content-Type| application/json| 送信されたデータの種類です。| 
+| Content-Type| application/json| 送信されるデータの型。| 
 | Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
+| Content-Length|  | 要求オブジェクトの長さ。| 
+| x-xbl-contract-version| 1| API コントラクトのバージョン。| 
   
 <a id="ID4EUC"></a>
 
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答は常に、次の表に示すようにヘッダーを含めます。
+応答には、常に、次の表に示すようにヘッダーが含まれます。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Content-Type| application/json| 応答本文内のデータの種類です。| 
+| Content-Type| application/json| 応答本文でデータの型。| 
 | Content-Length|  | 応答本文の長さ。| 
   
 <a id="ID4EVD"></a>
@@ -59,19 +59,19 @@ gameserverds.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを持つ JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| qosservers| サーバーの情報の配列です。| 
+| qosservers| サーバー情報の配列。| 
 | serverFqdn| サーバーの完全修飾ドメイン名。| 
-| serverSecureDeviceAddress| サーバーのセキュア デバイス アドレス。| 
-| targetLocation| サーバーの地理的な場所です。| 
+| serverSecureDeviceAddress| サーバーのセキュリティで保護されたデバイスのアドレス。| 
+| TargetLocation| サーバーの地理的な場所。| 
  
 <a id="ID4EUE"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

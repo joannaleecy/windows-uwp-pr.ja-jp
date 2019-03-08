@@ -4,7 +4,7 @@ title: ファイルとフォルダーの列挙と照会
 description: フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,11 +12,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045098"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613927"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>ファイルとフォルダーの列挙と照会
 
@@ -25,13 +25,13 @@ ms.locfileid: "9045098"
 ユニバーサル Windows プラットフォーム アプリのデータを保存する方法について詳しくは、[ApplicationData](/uwp/api/windows.storage.applicationdata) クラスをご覧ください。
 
 > [!NOTE]
-> 完全なサンプルについては、[フォルダーの列挙のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619993)を参照してください。
+> 完全なサンプルを参照してください、[フォルダーの列挙サンプル](https://go.microsoft.com/fwlink/p/?linkid=619993)します。
 
 ## <a name="prerequisites"></a>前提条件
 
--   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**
 
-    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C++ 非同期アプリの作成する方法について/WinRT を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。 C++ で非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。 C + で非同期アプリを作成する方法について/cli WinRT を参照してください[同時実行と非同期操作を C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。 C + で非同期アプリを作成する方法について/cli CX を参照してください[非同期プログラミングの C +/cli CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。
 
 -   **場所へのアクセス許可**
 
@@ -40,9 +40,9 @@ ms.locfileid: "9045098"
 ## <a name="enumerate-files-and-folders-in-a-location"></a>ある場所のファイルやフォルダーを列挙する
 
 > [!NOTE]
-> 必ず **picturesLibrary** 機能を宣言してください。
+> 忘れずに宣言する、 **picturesLibrary**機能します。
 
-この例ではまずメソッドを使用して、 [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) (サブフォルダーは除く) ではなく[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)のルート フォルダー内のすべてのファイルを取得して、各ファイルの名前を一覧表示します。 次に、メソッドを使用して、 [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) **PicturesLibrary**内のすべてのサブフォルダーを取得し、各サブフォルダーの名前を一覧表示します。
+この例ではまず使用して、 [ **StorageFolder.GetFilesAsync** ](/uwp/api/windows.storage.storagefolder.getfilesasync)のルート フォルダー内のすべてのファイルを取得するメソッド、 [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (サブフォルダー) ではなくおよび各ファイルの名前を一覧表示します。 次に、使用、 [ **StorageFolder.GetFoldersAsync** ](/uwp/api/windows.storage.storagefolder.getfoldersasync)のすべてのサブフォルダーを取得するメソッド、 **PicturesLibrary**および各サブフォルダーの名前を一覧表示します。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -177,7 +177,7 @@ Next folder
 > [!NOTE]
 > C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。
 
-また、特定の場所ですべての項目 (ファイルとサブフォルダーの両方) を取得するのに[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)メソッドを使用することができます。 次の例では、 **GetItemsAsync**メソッドを使用して、(サブフォルダーは除く) ではなく、すべてのファイルと[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)のルート フォルダーにサブフォルダーを取得します。 その後、各ファイルとサブフォルダーの名前を一覧表示します。 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
+また、使用することができます、 [ **StorageFolder.GetItemsAsync** ](/uwp/api/windows.storage.storagefolder.getitemsasync)特定の場所ですべての項目 (ファイルとサブフォルダー) を取得します。 次の例では、 **GetItemsAsync**すべてのファイルとサブフォルダーのルート フォルダーを取得するメソッド、 [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (サブフォルダー) ではないです。 その後、各ファイルとサブフォルダーの名前を一覧表示します。 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -280,7 +280,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>ある場所に保存されているファイルを照会して、一致するファイルを列挙する
 
-この例では、月、この時点でグループ化された[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)内のすべてのファイルの照会の例のサブフォルダーに再帰の回数します。 まず、[**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) を呼び出し、[**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) オブジェクトが取得されます。
+この例ではクエリ内のすべてのファイルの[ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) 、月単位でグループ化され、今回は例のサブフォルダーを再帰的に検索します。 まず、[**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) を呼び出し、[**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) オブジェクトが取得されます。
 
 次に、仮想フォルダーを表す [**StorageFolder**](/uwp/api/windows.storage.storagefolder) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) を呼び出します。 ここでは月でグループ化されているため、各仮想フォルダーは同じ月にあるファイルのグループを表します。
 

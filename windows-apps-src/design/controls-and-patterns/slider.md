@@ -1,23 +1,23 @@
 ---
-Description: Lets the user set a value in a given range.
+Description: ユーザーが有効な範囲から値を設定できます。
 title: スライダー
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f01aec2a0dc6010eab53122d69e64c57fe4f5c3d
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037084"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589927"
 ---
 # <a name="sliders"></a>スライダー
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037084"
 
 スライダーはユーザーがトラックに沿って thumb コントロールを動かすことで値の範囲から選択できるようにするコントロールです。
 
-> **重要な API**: [Slider クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)、[Value プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)、[ValueChanged イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+> **重要な Api**:[Slider クラスは](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)、 [Value プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)、 [ValueChanged イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
 ![スライダー コントロール](images/controls/slider.png)
 
@@ -40,11 +40,11 @@ ms.locfileid: "9037084"
 
 スライダーを使うかどうかを決める際には、他にも次のような点を考慮します。
 
--   **設定が相対的な量のように見えるか?** 見えない場合は、[ラジオ ボタン](radio-button.md)または[リスト ボックス](lists.md)を使います。
--   **設定は正確な既知の数値か?** その場合は、数値[テキスト ボックス](text-box.md)を使います。
--   **設定の変更による効果をすぐに確認できると、ユーザーにとって便利か?** 便利である場合は、スライダーを使います。 たとえば、色合い、鮮やかさ、明度の値を変更した場合の効果をすぐに確認できると、ユーザーは色をより簡単に選べるようになります。
--   **設定に 4 つ以上の値の範囲があるか?** ない場合は、[ラジオ ボタン](radio-button.md)を使います。
--   **ユーザーが値を変えられるか?** スライダーは、ユーザーの操作用です。 ユーザーが値を変えられない場合は、代わりに読み取り専用のテキストを使います。
+-   **設定は、相対的な数量のように見えるでしょうか。** 見えない場合は、[ラジオ ボタン](radio-button.md)または[リスト ボックス](lists.md)を使います。
+-   **既知の数値の設定、正確なですか。** その場合は、数値[テキスト ボックス](text-box.md)を使います。
+-   **ユーザーは、設定の変更の影響に関する即時フィードバックから特典は教えてください。** 便利である場合は、スライダーを使います。 たとえば、色合い、鮮やかさ、明度の値を変更した場合の効果をすぐに確認できると、ユーザーは色をより簡単に選べるようになります。
+-   **設定には 4 つ以上の値の範囲がありますか。** ない場合は、[ラジオ ボタン](radio-button.md)を使います。
+-   **ユーザーが値を変更できますか。** スライダーは、ユーザーの操作用です。 ユーザーが値を変えられない場合は、代わりに読み取り専用のテキストを使います。
 
 スライダーと数値テキスト ボックスのどちらを使うかを決める際に、次の場合には数値テキスト ボックスを使います。
 
@@ -64,8 +64,8 @@ ms.locfileid: "9037084"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/Slider">アプリを開き、Slider の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -117,7 +117,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 -   コントロールのサイズは、ユーザーが値を簡単に設定できる大きさにします。 個別の値を設定する場合は、ユーザーがマウスを使って値を簡単に選べるようにします。 スライダーのエンドポイントが、常にビューの境界内にあることを確認します。
 -   ユーザーが選んでいるときまたは選んだ後で、すぐに結果が確認できるようにします (それが実際的な場合)。 たとえば、Windows のボリューム コントロールは、選ばれたオーディオ音量を示すためにビープ音を鳴らします。
--   値の範囲を示すためにラベルを使います。 例外: スライダーが垂直方向で、上部のラベルが最大、高、多などの場合、下部の意味は明らかであるため、ラベルを省略できます。
+-   値の範囲を示すためにラベルを使います。 例外:スライダーは、垂直方向、上のラベルを高、最大値は、詳細、またはそれと同等を省略できますは他のラベル、意味が明確であるため。
 -   スライダーを無効にする場合は、関連するすべてのラベルまたはフィードバックの視覚効果も無効にします。
 -   スライダーのフロー方向や向きを設定するときには、テキストの方向を考慮してください。 言語によって、左から右に書く場合と、右から左に書く場合があります。
 -   スライダーは、進行状況インジケーターとしては使いません。
@@ -154,7 +154,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ### <a name="labels"></a>ラベル
 
--   **スライダー ラベル**
+-   **スライダーのラベル**
 
     スライダー ラベルは、スライダーの使用目的を示します。
 
@@ -162,15 +162,15 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
     -   スライダーのあるフォームで、ほとんどのラベルがコントロールの上にある場合は、ラベルをスライダーの上に配置します。
     -   スライダーのあるフォームで、ほとんどのラベルがコントロールの横にある場合は、ラベルをスライダーの横に配置します。
     -   ユーザーがスライダーにタッチするときに、指でラベルが見えなくなる場合があるので、ラベルをスライダーの下には配置しません。
--   **範囲ラベル**
+-   **範囲のラベル**
 
     範囲 (容量) ラベルは、スライダーの最小値と最大値を示します。
 
     -   垂直方向であることによって明白である場合以外は、スライダーの範囲の両端をラベルに表示します。
     -   各ラベルは、できれば 1 ワードだけにします。
     -   末尾に句点を付けません。
-    -   これらのラベルは、説明的で対比的なものにします。 例: 最大/最小、多/少、低/高、小/大
--   **値ラベル**
+    -   これらのラベルは、説明的で対比的なものにします。 例:最大/最小より少なく、低/高、ソフト/はっきりします。
+-   **値のラベル**
 
     値ラベルは、スライダーの現在の値を表示します。
 
@@ -188,7 +188,7 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 ## <a name="related-topics"></a>関連トピック
 - [トグル スイッチ](toggles.md)

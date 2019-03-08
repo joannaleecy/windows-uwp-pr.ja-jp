@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 308a65b7c049a6aba0405865bab63fb9d28b8506
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115468"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623477"
 ---
 # <a name="mediaasset-json"></a>MediaAsset (JSON)
-実績やそのリワードに関連付けられているメディア アセット。
+実績またはその報酬に関連付けられたメディア資産。
 <a id="ID4EN"></a>
 
 
@@ -26,13 +26,13 @@ MediaAsset オブジェクトには、次の仕様があります。
 | メンバー| 種類| 説明|
 | --- | --- | --- |
 | name| string| "Tile01"など、MediaAsset の名前。|
-| type| MediaAssetType 列挙型| メディア アセットの種類。 <ul><li>アイコン (0): 実績アイコンです。</li><li>アート (1): デジタル アート アセット。</li></ul> | 
+| type| MediaAssetType 列挙型| メディア資産の種類: <ul><li>アイコン (0):アチーブメントのアイコン。</li><li>アート (1):デジタル アート資産。</li></ul> | 
 | url| string| MediaAsset の URL。|
 
 <a id="ID4EFC"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
 
 
 ```json
@@ -55,4 +55,4 @@ MediaAsset オブジェクトには、次の仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)

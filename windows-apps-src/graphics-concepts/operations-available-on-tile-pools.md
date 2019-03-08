@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b8b0c6f4fa578e4ec483492b320dc9bc346ab66
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929738"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593597"
 ---
 # <a name="operations-available-on-tile-pools"></a>タイル プールで利用可能な操作
 
@@ -29,7 +29,7 @@ ms.locfileid: "8929738"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースの作成](creating-streaming-resources.md)
+[ストリーミングのリソースを作成します。](creating-streaming-resources.md)
 
  
 

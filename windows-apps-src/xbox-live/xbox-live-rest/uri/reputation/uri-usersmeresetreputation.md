@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f43244e39d825e75d6c6cd71fd9633ca158a7a16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947627"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590447"
 ---
 # <a name="usersmeresetreputation"></a>/users/me/resetreputation
-現在のユーザーの評判スコアにアクセスするに執行チームを使用できます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+現在のユーザーの評価スコアにアクセスする強制チームを有効にします。 これらの Uri のドメインが`reputation.xboxlive.com`します。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/users/me/resetreputation)](uri-usersmeresetreputationpost.md)
+[POST (/ユーザー/me/resetreputation)](uri-usersmeresetreputationpost.md)
 
-&nbsp;&nbsp;により、実施チームは、アカウント ハイジャック (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定します。
+&nbsp;&nbsp;強制チーム アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評価スコアをいくつかの任意の値に設定を有効にします。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8947627"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 URI](atoc-reference-reputation.md)
+[評価の Uri](atoc-reference-reputation.md)
 
    

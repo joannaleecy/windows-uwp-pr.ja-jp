@@ -1,90 +1,90 @@
 ---
-title: IIS サーバーから UWP アプリをインストールする
-description: このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリのパッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。
+title: IIS サーバーからの UWP アプリのインストール
+description: このチュートリアルは、IIS サーバーを設定することを確認、web アプリできますアプリのパッケージをホストと呼び出すアプリのインストーラーを効果的に使用する方法を示します。
 ms.date: 05/30/2018
 ms.topic: article
-keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング、関連セット, オプション パッケージ、IIS サーバー
+keywords: windows 10、uwp アプリのインストーラー、AppInstaller、サイドローディングを行う、関連の設定、省略可能なパッケージ、IIS サーバー
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932108"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623567"
 ---
-# <a name="install-a-uwp-app-from-an-iis-server"></a>IIS サーバーから UWP アプリをインストールする
+# <a name="install-a-uwp-app-from-an-iis-server"></a>IIS サーバーからの UWP アプリのインストール
 
-このチュートリアルでは、IIS サーバーをセットアップとことを確認、web アプリをアプリのパッケージをホストを呼び出すアプリ インストーラーを効果的に使用する方法を示します。
+このチュートリアルは、IIS サーバーを設定することを確認、web アプリできますアプリのパッケージをホストと呼び出すアプリのインストーラーを効果的に使用する方法を示します。
 
 アプリ インストーラー アプリは、開発者と IT 担当者が、Windows 10 アプリを独自の Content Delivery Network (CDN) でホストすることで配布できるようにします。 これは Microsoft Store にアプリを公開しない、または公開する必要がないが、Windows 10 のパッケージおよび展開のプラットフォームを利用したい企業に役立ちます。 
 
 ## <a name="setup"></a>セットアップ
 
-正常に実行するこのチュートリアルで、以下が必要は。
+このチュートリアルで正常に移動に、以下の手順が必要されます。
 
 1. Visual Studio 2017  
 2. Web 開発ツールと IIS 
 3. UWP アプリ パッケージ - 配布するアプリ パッケージ
 
-オプション: GitHub での[スターター プロジェクト](https://github.com/AppInstaller/MySampleWebApp) これは、アプリ パッケージと併用する必要はありませんをこの機能を使用する方法について説明したい場合に役立ちます。
+省略可能: [スタート プロジェクト](https://github.com/AppInstaller/MySampleWebApp)GitHub でします。 これは、機能は、アプリ パッケージを使用すると、動作はありませんが、この機能を使用する方法を説明する場合に便利です。
 
-## <a name="step-1---install-iis-and-aspnet"></a>手順 1 - IIS と ASP.NET をインストールします。 
+## <a name="step-1---install-iis-and-aspnet"></a>手順 1 - IIS と ASP.NET のインストール 
 
-[インターネット インフォメーション サービス](https://www.iis.net/)は、[スタート] メニュー経由でインストールできる Windows 機能です。 **[スタート] メニュー**検索の対象に**有効にする Windows の機能のオンまたはオフに**します。
+[インターネット インフォメーション サービス](https://www.iis.net/)は [スタート] メニューを使用してインストールできる Windows の機能です。 **[スタート] メニュー**検索**オンまたはオフにする Windows 機能**します。
 
-検索し、**インターネット インフォメーション サービス**を IIS のインストールを選択します。
+検索して選択**インターネット インフォメーション サービス**IIS をインストールします。
 
 > [!NOTE]
-> [インターネット インフォメーション サービスのすべてのチェック ボックスをオンにする必要はありません。 **インターネット インフォメーション サービス**をチェックすると、選択されているだけで十分です。
+> インターネット インフォメーション サービスのすべてのチェック ボックスをオンにする必要はありません。 チェックするときに選択したもののみ**インターネット インフォメーション サービス**で十分です。
 
-また、ASP.NET 4.5 以上をインストールする必要があります。 インストールするには、検索**インターネット インフォメーション サービス] の [World Wide Web サービス アプリケーション開発機能]-> [** します。 ASP.NET 4.5 以上 ASP.NET のバージョンを選択します。
+ASP.NET 4.5 以上をインストールする必要があります。 これをインストールするには、検索**インターネット インフォメーション サービス Web サイト]-> [サービス]、[アプリケーション開発機能**します。 ASP.NET 4.5 以上である ASP.NET のバージョンを選択します。
 
 ![ASP.NET をインストールします。](images/install-asp.png)
 
 ## <a name="step-2---install-visual-studio-2017-and-web-development-tools"></a>手順 2 - Visual Studio 2017 をインストールし、Web 開発ツール 
 
-[Visual Studio 2017 のインストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を既にインストールしていない場合。 Visual Studio 2017 を既にある場合は、以下のワークロードがインストールされていることを確認します。 ワークロードがない場合、インストールに存在する、([スタート] メニューからが見つかりません) Visual Studio インストーラーを使ってに従ってください。  
+[Visual Studio 2017 インストール](https://docs.microsoft.com/visualstudio/install/install-visual-studio)を既にインストールしていない場合。 Visual Studio 2017 が既にあるを場合は、次のワークロードがインストールされていることを確認します。 ワークロードがインストールに存在しない場合は、([スタート] メニューから検出)、Visual Studio インストーラーを使用して作業を進めるにします。  
 
-インストール中には、 **ASP.NET と Web 開発**と興味のあるその他のワークロードを選択します。 
+インストール中に、次のように選択します。 **ASP.NET および Web 開発**と興味のあるその他の任意のワークロード。 
 
-インストールが完了したら、Visual Studio を起動し、新しいプロジェクトを作成する (**ファイル** -> **新しいプロジェクト**)。
+インストールが完了すると Visual Studio を起動し、新しいプロジェクトを作成 (**ファイル** -> **新しいプロジェクト**)。
 
-## <a name="step-3---build-a-web-app"></a>手順 3 - Web アプリを構築
+## <a name="step-3---build-a-web-app"></a>手順 3 - Web アプリの構築
 
-**管理者**として Visual Studio 2017 を起動し、**空**のプロジェクト テンプレートを使って新しい**Visual c# Web アプリケーション**プロジェクトを作成します。 
+として Visual Studio 2017 を起動**管理者**され、新しい作成**Visual C# Web アプリケーション**でプロジェクトを**空**プロジェクト テンプレート。 
 
 ![新しいプロジェクト](images/sample-web-app.png)
 
-## <a name="step-4---configure-iis-with-our-web-app"></a>手順 4 -、Web アプリでの IIS の構成 
+## <a name="step-4---configure-iis-with-our-web-app"></a>手順 4 - Web アプリでの IIS の構成 
 
-ソリューション エクスプ ローラーからルート プロジェクトを右クリックし、[**プロパティ**] を選択します。
+ソリューション エクスプ ローラーで、ルート プロジェクトを右クリックし、選択**プロパティ**します。
 
-Web アプリのプロパティでは、 **Web** ] タブを選択します。**サーバー**のセクションでは、ドロップダウン メニューから**ローカル IIS**を選択し、**仮想ディレクトリの作成**] をクリックします。 
+Web アプリのプロパティで、選択、 **Web**タブ。**サーバー**セクションで、選択**ローカル IIS**をクリックして、ドロップダウンから**仮想ディレクトリの作成**です。 
 
 ![[web] タブ](images/web-tab.png)
 
-## <a name="step-5---add-an-app-package-to-a-web-application"></a>手順 5: web アプリケーションに、アプリ パッケージを追加します。 
+## <a name="step-5---add-an-app-package-to-a-web-application"></a>手順 5 - web アプリケーションにアプリ パッケージを追加 
 
-Web アプリケーションに配布する予定のアプリ パッケージを追加します。 利用可能なアプリ パッケージがない場合、GitHub 上に提供されている[スターター プロジェクトのパッケージ](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)の一部であるアプリのパッケージを使用することができます。 パッケージの署名に使用された証明書 (MySampleApp.cer) も GitHub のサンプルに含まれています。 (手順 9) アプリをインストールする前に、デバイスにインストールされている証明書が必要です。
+Web アプリケーションに配布する予定のアプリ パッケージを追加します。 アプリ パッケージの一部であるを使用して[スターター プロジェクト パッケージ](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)github アプリ パッケージを使用していない場合。 パッケージの署名に使用された証明書 (MySampleApp.cer) も GitHub のサンプルに含まれています。 (手順 9)、アプリをインストールする前に、デバイスにインストールされている証明書が必要です。
 
-スターター プロジェクトの web アプリケーションに新しいフォルダーと呼ばれる web アプリに追加された`packages`配布するアプリ パッケージが含まれています。 Visual Studio で、フォルダーを作成するには、ソリューション エクスプ ローラーのルート右クリックし、**追加**] を選択 -> **新しいフォルダー**と名前を付けます`packages`します。 アプリ パッケージをフォルダーを追加するを右クリックして、`packages`フォルダーと [ **Add** -> 、アプリを参照し、**既存の項目**の場所をパッケージ化します。 
+スタート プロジェクトの web アプリケーションで新しいフォルダーがという名前の web アプリケーションに追加された`packages`配布するアプリ パッケージを格納しています。 Visual Studio で、フォルダーを作成するソリューション エクスプ ローラー、選択のルートを右クリックして**追加** -> **新しいフォルダー**名前を付けます`packages`します。 アプリ パッケージをフォルダーに追加する右クリック、`packages`フォルダーと選択**追加** -> **既存の項目.** し、アプリ パッケージの場所を参照します。 
 
-![パッケージに追加します。](images/add-package.png)
+![パッケージを追加します。](images/add-package.png)
 
-## <a name="step-6---create-a-web-page"></a>手順 6 - Web ページを作成します。
+## <a name="step-6---create-a-web-page"></a>手順 6 - Web ページの作成
 
-このサンプルの web アプリでは、単純な HTML を使用します。 自由にお客様のニーズごとに必要に応じて、web アプリを構築します。 
+このサンプル web アプリでは、単純な HTML を使用します。 ニーズに合わせて必要に応じて、web アプリをビルドしてかまいません。 
 
-ソリューション エクスプ ローラーのルート プロジェクトを右クリックしてで、**追加**の選択 -> **新しい項目**では、 **Web**セクションから新しい**HTML ページ**を追加します。
+ソリューション エクスプ ローラーのルート プロジェクトを右クリックして**追加** -> **新しい項目の**、し、新しい追加**HTML ページ**から、 **Web**セクション。
 
-HTML ページを作成した後は、ソリューション エクスプ ローラーでの HTML ページを右クリックし、**スタート ページに設定**を選択します。  
+HTML ページが作成されると、ソリューション エクスプ ローラーで HTML ページを右クリックし、選択**スタート ページとして設定**します。  
 
-コード エディター ウィンドウで開く HTML ファイルをダブルクリックします。 このチュートリアルでは、必要な Windows 10 アプリをインストールするには、正常にアプリ インストーラー アプリを起動する web ページ内で要素のみが使用されます。 
+コード エディター ウィンドウで開く、HTML ファイルをダブルクリックします。 このチュートリアルでは、Windows 10 アプリをインストールするには、正常にアプリ インストーラー アプリを起動する web ページで、必要な内の要素のみが使用されます。 
 
-次の HTML コードは、web ページに含めます。 アプリ インストーラーを正常に実行するキーは、アプリ インストーラーが OS に登録されるカスタム スキームを使用する:`ms-appinstaller:?source=`します。 詳細については、次のコード例を参照してください。
+Web ページでは、次の HTML コードを追加します。 キーが正常に呼び出すアプリのインストーラーは、アプリのインストーラーは、OS を登録するカスタムのスキームを使用する:`ms-appinstaller:?source=`します。 詳細については、次のコード例を参照してください。
 
 > [!NOTE]
-> カスタム スキームが VS ソリューションの web] タブで、プロジェクトの Url と一致する後に指定された URL パスを確認します。
+> カスタムのスキームに一致するプロジェクトの Url、VS ソリューションの [web] タブで後に指定された URL パスを確認します。
  
 ```HTML
 <html>
@@ -98,9 +98,9 @@ HTML ページを作成した後は、ソリューション エクスプ ロー�
 </html>
 ```
 
-## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>手順 7: アプリ パッケージの MIME タイプ用の web アプリを構成します。
+## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>手順 7 - アプリ パッケージの MIME の種類の web アプリの構成
 
-ソリューション エクスプ ローラーから、 **Web.config**ファイルを開き、内で、次の行を追加、`<configuration>`要素です。 
+開く、 **Web.config**ソリューション エクスプ ローラーからファイルを開き内で次の行を追加、`<configuration>`要素。 
 
 ```xml
 <system.webServer>
@@ -115,11 +115,11 @@ HTML ページを作成した後は、ソリューション エクスプ ロー�
 </system.webServer>
 ```
 
-## <a name="step-8---add-loopback-exemption-for-app-installer"></a>手順 8 のアプリ インストーラーのループバックに関する除外を追加します。
+## <a name="step-8---add-loopback-exemption-for-app-installer"></a>手順 8 - アプリのインストーラーのループバックの免除を追加
 
-ネットワークの分離のためアプリ インストーラーなどの UWP アプリは制限などの IP ループバック アドレスを使用するhttp://localhost/します。 ローカル IIS サーバーを使用して、アプリ インストーラーがループバックの除外一覧に追加する必要があります。 
+ネットワークの分離によりアプリのインストーラーのような UWP アプリはなど、IP ループバック アドレスの使用に制限 http://localhost/します。 ローカル IIS サーバーを使用する場合、アプリのインストーラーはループバックの除外リストに追加する必要があります。 
 
-これを行うには、**管理者**として**コマンド プロンプト**を開き、次を入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
+これを行うには、開く**コマンド プロンプト**として、**管理者**」と入力します: '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-a-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -129,7 +129,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 検索する必要があります`microsoft.desktopappinstaller_8wekyb3d8bbwe`一覧にします。
 
-アプリ インストーラーでアプリのインストールのローカルの検証が完了したら後でこの手順で追加した、ループバックに関する除外を削除できます。
+アプリのインストーラーを使用してアプリのインストールのローカルな検証が完了すると、この手順で追加したループバックの免除を削除できます。
 
 '' コマンド ライン CheckNetIsolation.exe LoopbackExempt-d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
 ```

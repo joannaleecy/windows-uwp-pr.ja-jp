@@ -7,19 +7,19 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c1893f09e6d56682b4e718ee8b905ce72c7ad8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919557"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631717"
 ---
 # <a name="connected-storage-loading-on-demand"></a>接続ストレージのオンデマンド読み込み
 
-`GetSyncOnDemandForUserAsync` を使用すると、クラウド バックアップ データを接続ストレージ領域から、一度にまとめてではなく、"オンデマンド" で読み込むことができます。 これにより、保存ファイルが特に大きい場合は、`GetForUserAsync` を使用するよりもパフォーマンスを向上させることができます。
+`GetSyncOnDemandForUserAsync` 一度にすべてではなく"オンデマンドで"接続された記憶域スペースからのクラウド バックアップ データをロードすることができます。 これにより、保存ファイルが特に大きい場合は、`GetForUserAsync` を使用するよりもパフォーマンスを向上させることができます。
 
 ## <a name="to-load-data-from-a-connected-storage-space-on-demand"></a>オンデマンドで接続ストレージ領域からデータを読み込むには
 
-### <a name="1--call-getsyncondemandforuserasync"></a>1: `GetSyncOnDemandForUserAsync` を呼び出します。
+### <a name="1--call-getsyncondemandforuserasync"></a>1:呼び出し `GetSyncOnDemandForUserAsync`
 
 これにより、コンテナーの内容ではなく、コンテナーのリストとメタデータをクラウドからダウンロードする部分的な同期がトリガーされます。 この操作は高速なので、適切なネットワーク条件下では、ユーザーには読み込み中の UI は表示されません。
 
@@ -62,13 +62,13 @@ if(gameSaveTask.Status == GameSaveErrorStatus.Ok)
 ```
 
 
-### <a name="2--perform-a-container-query-using-getcontainerinfo2async"></a>2: `GetContainerInfo2Async` を使用してコンテナー クエリを実行します。
+### <a name="2--perform-a-container-query-using-getcontainerinfo2async"></a>2:使用してコンテナーのクエリを実行します。 `GetContainerInfo2Async`
 
 これにより、3 つの新しいメタデータ フィールドを含む `ContainerInfo2` のコレクションが返されます。
 
-    -   `DisplayName`: 表示名の文字列をパラメーターとして受け取る `SubmitUpdatesAsync` のオーバーロードを使用して作成した表示名。 常にこのフィールドを使用して、ユーザーにわかりやすい名前を格納することをお勧めします。
-    -   `LastModifiedTime`: このコンテナーが最後に変更された時刻。 ローカルとリモートのタイムスタンプが競合する場合は、リモートのタイムスタンプが使用されます。
-    -   `NeedsSync`: このコンテナーのデータをクラウドからダウンロードする必要があるかどうかを示すブール値。
+    -   `DisplayName`:オーバー ロードを使用して作成したすべての表示名`SubmitUpdatesAsync`をパラメーターとして表示名文字列を取得します。 常にこのフィールドを使用して、ユーザーにわかりやすい名前を格納することをお勧めします。
+    -   `LastModifiedTime`:最後にこのコンテナーが変更されました。 ローカルとリモートのタイムスタンプが競合する場合は、リモートのタイムスタンプが使用されます。
+    -   `NeedsSync`:このコンテナーにデータがある場合、ブール値を示す、クラウドからダウンロードする必要があります。
 
     この追加のメタデータを使用することで、実際にはクラウドからの完全ダウンロードを実行せずに、セーブ データについての主要な情報 (名前、最後に使用された時刻、選択した場合にダウンロードが必要かどうかなど) をユーザーに表示できます。
 
@@ -106,7 +106,7 @@ if(containerInfoResult.Status == GameSaveErrorStatus.Ok)
 // Use the containerInfoList to inform further actions or display container data to user. 
 ```
 
-### <a name="3--trigger-a-sync"></a>3: 同期トリガー
+### <a name="3--trigger-a-sync"></a>3:同期を開始します。
 
 接続ストレージの同期は、次のいずれかの既存の接続ストレージ API を呼び出すことによってトリガーされます。
 
@@ -130,12 +130,12 @@ if(containerInfoResult.Status == GameSaveErrorStatus.Ok)
 
 オンデマンドによる同期のコンテキストでこれらの API を呼び出すと、それらの操作のすべてで、以下の新しいエラー コードが生成されます。
 
--   `ConnectedStorageErrorStatus::ContainerSyncFailed`(UWP C# API の `GameSaveErrorStatus.ContainerSyncFailed`): このエラーは、操作が失敗し、コンテナーをクラウドと同期できなかったことを示します。 ほとんどの場合、同期に失敗するのはユーザーのネットワークの状態が原因です。 その場合、ユーザーはネットワークを調整した後にもう一度やり直すか、または同期を必要としないコンテナーを使用することを選択できます。これらのオプションのいずれかを UI で選択できる必要があります。 システム UI の再試行のダイアログ ボックスはユーザーに既に表示されているので、再試行のダイアログ ボックスは必要ありません。
+-   `ConnectedStorageErrorStatus::ContainerSyncFailed`(`GameSaveErrorStatus.ContainerSyncFailed` UWP でC#API)。このエラーを示します操作に失敗したコンテナーをクラウドと同期できませんでした。 ほとんどの場合、同期に失敗するのはユーザーのネットワークの状態が原因です。 その場合、ユーザーはネットワークを調整した後にもう一度やり直すか、または同期を必要としないコンテナーを使用することを選択できます。これらのオプションのいずれかを UI で選択できる必要があります。 システム UI の再試行のダイアログ ボックスはユーザーに既に表示されているので、再試行のダイアログ ボックスは必要ありません。
 
--   `ConnectedStorageErrorStatus::ContainerNotInSync`(UWP C# API の `GameSaveErrorStatus.ContainerNotInSync`): このエラーは、同期されていないコンテナーへの書き込みをタイトルが誤って実行しようとしたことを示します。 NeedsSync フラグが true に設定されているコンテナーに対して `ConnectedStorageContainer::SubmitUpdatesAsync`(UWP C# API の `GameSaveContainer.SubmitUpdatesAsync`) を呼び出すことはできません。 コンテナーに書き込む前に、まず、同期をトリガーするためにそのコンテナーを読み取る必要があります。 コンテナーの読み取りを行わずにそこに書き込む場合、そのタイトルは、ユーザーの進行状況を失うかもしれないという欠陥を持つ可能性があります。
+-   `ConnectedStorageErrorStatus::ContainerNotInSync`(`GameSaveErrorStatus.ContainerNotInSync` UWP でC#API)。このエラーは、こと、title 誤って試行されて同期されていないコンテナーに書き込むことを示します。 NeedsSync フラグが true に設定されているコンテナーに対して `ConnectedStorageContainer::SubmitUpdatesAsync`(UWP C# API の `GameSaveContainer.SubmitUpdatesAsync`) を呼び出すことはできません。 コンテナーに書き込む前に、まず、同期をトリガーするためにそのコンテナーを読み取る必要があります。 コンテナーの読み取りを行わずにそこに書き込む場合、そのタイトルは、ユーザーの進行状況を失うかもしれないという欠陥を持つ可能性があります。
 
 この動作は、ユーザーがオフラインでプレイする場合とは異なります。 オフライン時は、コンテナーが同期されているかどうかは示されないので、後で競合を解決するのはユーザーの責任となります。 ただし、この場合、システムはユーザーが同期を必要としていることを把握しているので、ユーザーが古いコンテナーを使用して間違った状態にすることは許可されません (ただし、ユーザーが希望する場合は、タイトルを再起動してオフラインでプレイすることもできます)。
 
-### <a name="4--use-the-rest-of-the-connected-storage-api-as-normal"></a>4: 接続ストレージ API の残り部分を通常どおりに使用します。
+### <a name="4--use-the-rest-of-the-connected-storage-api-as-normal"></a>4:接続されているストレージ API の残りの部分を使用して、通常どおり
 
 接続ストレージの動作は、オンデマンドで同期するときもそのままです。

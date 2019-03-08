@@ -1,5 +1,5 @@
 ---
-Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
+Description: セカンダリ タイルを使うと、ユーザーは特定のコンテンツやディープ リンクをアプリからスタート メニューにピン留めできます。これにより、その後はアプリ内の特定のコンテンツに簡単にアクセスできます。
 title: セカンダリ タイル
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, セカンダリ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940621"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653187"
 ---
 # <a name="secondary-tiles"></a>セカンダリ タイル
 
@@ -31,9 +31,9 @@ ms.locfileid: "8940621"
 
 | 記事 | 説明 |
 | --- | --- |
-| [セカンダリ タイルのガイダンス](secondary-tiles-guidance.md) | セカンダリ タイルを使用する必要がある場合について説明します。 |
-| [セカンダリ タイルをピン留めする](secondary-tiles-pinning.md) | セカンダリ タイルをピン留めする方法について説明します。 |
-| [デスクトップ アプリケーションからピン留めする](secondary-tiles-desktop-pinning.md) | Windows デスクトップ アプリケーションでは、デスクトップ ブリッジを利用して、セカンダリ タイルをピン留めできます。 |
+| [セカンダリ タイルに関するガイダンス](secondary-tiles-guidance.md) | セカンダリ タイルを使用する必要がある場合について説明します。 |
+| [セカンダリ タイルをピン留め](secondary-tiles-pinning.md) | セカンダリ タイルをピン留めする方法について説明します。 |
+| [デスクトップ アプリケーションからピン留めします。](secondary-tiles-desktop-pinning.md) | Windows デスクトップ アプリケーションでは、デスクトップ ブリッジを利用して、セカンダリ タイルをピン留めできます。 |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>セカンダリ タイルとプライマリ タイルの関係
@@ -66,9 +66,9 @@ ms.locfileid: "8940621"
 * ユーザーは親アプリを削除することなくいつでもセカンダリ タイルを削除できます。
 * セカンダリ タイルは実行時に作成できます。 アプリ タイルはインストール時にしか作成できません。
 * セカンダリ タイルを追加する前に、ポップアップでユーザーへの確認が行われます。
-* プログラムでユーザーへの要求を使ってロック画面にセカンダリ タイルを選択することはできません。 ユーザーは、PC の設定でパーソナル設定] ページで、セカンダリ タイルを手動で追加する必要があります。
+* プログラムでユーザーへの要求を使ってロック画面にセカンダリ タイルを選択することはできません。 ユーザーは、[PC 設定の個人用設定] ページを使用して、セカンダリ タイルを手動で追加する必要があります。
 
-通知の送信のため、セカンダリ タイルで使われるタイル/バッジ アップデーターとプッシュ通知チャネル用に特定のメソッドが用意されています。 これらは、プライマリ タイルで使われるバージョンと似ています。 たとえば、CreateBadgeUpdaterForApplication に対して CreateBadgeUpdaterForSecondaryTile があります。
+通知の送信のため、セカンダリ タイルで使われるタイル/バッジ アップデーターとプッシュ通知チャネル用に特定のメソッドが用意されています。 これらは、プライマリ タイルで使われるバージョンと似ています。 たとえば、CreateBadgeUpdaterForApplication vs します。CreateBadgeUpdaterForSecondaryTile します。
 
 
 ## <a name="guidance-on-secondary-tiles"></a>セカンダリ タイルのガイダンス

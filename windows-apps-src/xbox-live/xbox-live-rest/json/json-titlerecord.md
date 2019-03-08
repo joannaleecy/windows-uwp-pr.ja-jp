@@ -8,36 +8,36 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 89baf7e9a737428d492246f1647a561a4a8170cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936844"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603987"
 ---
 # <a name="titlerecord-json"></a>TitleRecord (JSON)
-その名前と最終変更日のタイムスタンプを含む、タイトルに関する情報。 
+タイトル、名前、最終変更タイムスタンプなどについて説明します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="titlerecord"></a>TitleRecord
  
-TitleRecord、DeviceRecord や、LastSeenRecord を含める必要がありますが、両方を含めない場合があります。
+TitleRecord DeviceRecord、または、LastSeenRecord、含める必要がありますは含まれません。
  
-TitleRecord オブジェクトには、次仕様があります。
+TitleRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| レコードのタイトル Id。| 
+| id| 32 ビット符号なし整数| レコードのタイトルの Id。| 
 | name| string| ローカライズされたタイトルの名前。| 
-| activity (アクティビティ)| [ActivityRecord](json-activityrecord.md)| タイトルでのユーザーのアクティビティ。 のみ深度"all"が返されます。| 
-| lastModified| DateTime| レコードが最後に更新されたときにタイムスタンプを UTC です。| 
-| 配置| string| ユーザー インターフェイス内でアプリの場所です。 可能性には、"fill"、「完全」、「スナップ」または"background"が含まれます。 既定値は、アプリを配置することができないデバイスの「完全」です。| 
-| 状態| string| タイトルの状態。 「アクティブ」や「非アクティブ」にすることができます (既定)。 タイトルでは、アクティビティと非アクティブの独自の条件に基づいて状態を設定します。| 
+| activity (アクティビティ)| [ActivityRecord](json-activityrecord.md)| タイトル内のユーザーのアクティビティ。 深さが"all"かどうかにのみ返されます。| 
+| lastModified| DateTime| レコードが最後に更新されたときの UTC タイムスタンプ。| 
+| 配置| string| ユーザー インターフェイス内でアプリの場所。 可能性には、"fill"、"full"、「スナップ」または"background"が含まれます。 既定では「完全」のデバイス アプリを配置することはできません。| 
+| 状態| string| タイトルの状態。 "Active"または「非アクティブ」にすることができます (既定)。 タイトルは、アクティビティおよび非アクティブ状態の基準に基づいて状態を設定します。| 
   
 <a id="ID4E6C"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -66,7 +66,7 @@ TitleRecord オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUD"></a>

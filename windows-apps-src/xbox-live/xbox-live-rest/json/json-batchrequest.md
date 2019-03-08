@@ -8,33 +8,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 51073c71700613edcd7c22e18cc0c00a9222d7e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654157"
 ---
 # <a name="batchrequest-json"></a>BatchRequest (JSON)
-ユーザー、デバイス、およびタイトルなどのプレゼンス情報をフィルター処理するためのプロパティの配列です。
+ユーザー、デバイス、およびタイトルなどのプレゼンス情報をフィルター処理に使用するプロパティの配列。
 <a id="ID4EN"></a>
 
 
 ## <a name="batchrequest"></a>BatchRequest
 
-BatchRequest オブジェクトには、次仕様があります。
+BatchRequest オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| ユーザー| 文字列の配列| については、1100 Xuid、一度に最大プレゼンスがユーザーの Xuid をリストします。|
-| deviceTypes| 文字列の配列| について知りたいユーザーに使用されるデバイスの種類の一覧です。 空の配列の場合、既定値はすべての可能なデバイスの種類 (つまり、none が除外されます)。|
-| タイトル| 32 ビットの符号なし整数の配列| デバイスの一覧について理解していることをユーザーを種類します。 空の配列の場合、既定値はすべての可能なタイトル (つまり、none が除外されます)。|
-| level| string| 設定可能な値: <ul><li>ユーザーのユーザーのノードを入手します。</li><li>デバイスの取得ユーザーとデバイス ノード</li><li>タイトルのタイトルの基本的なレベルの情報の取得</li><li>リッチ プレゼンス情報やメディアについては、すべてを取得します。</li></ul>既定値は、「タイトル」です。| 
-| ガジェットの onlineOnly| ブール値| このプロパティが true の場合は、バッチ操作はオフラインのユーザーが (回答が決まるものを含む) のレコードをフィルター処理します。 指定されていない場合は、オンラインとオフライン両方のユーザーが返されます。|
+| ユーザー| 文字列の配列| ユーザーについては、1100 Xuid、一度に最大でプレゼンスが Xuid をリストします。|
+| deviceTypes| 文字列の配列| について知りたいユーザーによって使用されるデバイスの種類の一覧です。 配列が空のまま場合、すべての可能なデバイスの種類に既定値 (つまり、none、フィルターで除外)。|
+| タイトル| 32 ビット符号なし整数の配列| デバイスの一覧について知りたいユーザーを種類します。 配列が空のまま場合、すべての可能なタイトルを既定値 (つまり、none、フィルターで除外)。|
+| level| string| 設定可能な値: <ul><li>ユーザー - ユーザー ノードの取得</li><li>デバイスのユーザーを取得し、デバイス ノード</li><li>タイトル-タイトルの基本的なレベルの情報を取得します。</li><li>豊富なプレゼンス情報、メディア情報、またはその両方の取得 - すべて</li></ul>既定では"title です"。| 
+| ガジェットの onlineOnly| ブール値| このプロパティが true の場合、バッチ操作はユーザーがオフライン (クロークされているものを含む) でレコードが除外されます。 指定されていない場合は、オンラインとオフラインの両方のユーザーが返されます。|
 
 <a id="ID4EAD"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
 
 
 ```json
@@ -61,7 +61,7 @@ BatchRequest オブジェクトには、次仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>

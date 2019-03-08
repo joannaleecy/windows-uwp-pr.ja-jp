@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cbe2d2c996b466fd94287129f1add0868f05b05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933395"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661777"
 ---
 # <a name="usersmescidsscidclipsgameclipid"></a>/users/me/scids/{scid}/clips/{gameClipId}
-ゲーム クリップ データへのアクセスとメタデータ。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ゲームのクリップのデータ アクセスとメタデータ。 これらの Uri のドメインが`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`、対象の URI の機能によって異なります。
  
   * [URI パラメーター](#ID4EX)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8933395"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
-| gameClipId| string| GameClip にアクセスしているリソースの ID です。| 
+| scid| string| サービス アクセスされているリソースの ID を構成します。 認証されたユーザーの SCID に一致する必要があります。| 
+| gameClipId| string| アクセスされているリソースの ID をゲーム クリップだった。| 
   
 <a id="ID4E3B"></a>
 
@@ -36,11 +36,11 @@ ms.locfileid: "8933395"
 
 [DELETE (/users/me/scids/{scid}/clips/{gameClipId})](uri-usersmescidclipsgameclipiddelete.md)
 
-&nbsp;&nbsp;ゲーム クリップを削除します。
+&nbsp;&nbsp;ゲームのクリップを削除します。
 
 [POST (/users/me/scids/{scid}/clips/{gameClipId})](uri-usersmescidclipsgameclipidpost.md)
 
-&nbsp;&nbsp;ユーザーのデータのゲーム クリップ メタデータを更新します。
+&nbsp;&nbsp;ユーザーのデータのゲームのクリップのメタデータを更新します。
  
 <a id="ID4EJC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "8933395"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR URI](atoc-reference-dvr.md)
+[ゲーム録画 Uri](atoc-reference-dvr.md)
 
    
