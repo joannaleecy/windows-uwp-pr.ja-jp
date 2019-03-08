@@ -7,23 +7,23 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: 3084c72d32967d691054b452f5f5f2e903bedd5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931920"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657597"
 ---
-# <a name="best-practices-for-ads-in-apps"></a><span data-ttu-id="3ad7e-104">アプリ内の広告のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="3ad7e-104">Best practices for ads in apps</span></span>
+# <a name="best-practices-for-ads-in-apps"></a><span data-ttu-id="30d90-104">アプリ内の広告のベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="30d90-104">Best practices for ads in apps</span></span>
 
-<span data-ttu-id="3ad7e-105">このセクションの記事では、UWP アプリ内のバナー広告、スポット広告、ネイティブ広告に関するユーザー エクスペリエンスのガイドラインとエラー処理のガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="3ad7e-105">The articles in this section provide user experience guidelines and error handling guidance for banner ads, interstitial ads, and native ads in your UWP apps.</span></span>
+<span data-ttu-id="30d90-105">このセクションの記事では、UWP アプリ内のバナー広告、スポット広告、ネイティブ広告に関するユーザー エクスペリエンスのガイドラインとエラー処理のガイダンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="30d90-105">The articles in this section provide user experience guidelines and error handling guidance for banner ads, interstitial ads, and native ads in your UWP apps.</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="3ad7e-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="3ad7e-106">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="30d90-106">このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="30d90-106">In this section</span></span>
 
-|  <span data-ttu-id="3ad7e-107">トピック</span><span class="sxs-lookup"><span data-stu-id="3ad7e-107">Topic</span></span>    | <span data-ttu-id="3ad7e-108">説明</span><span class="sxs-lookup"><span data-stu-id="3ad7e-108">Description</span></span> |               
+|  <span data-ttu-id="30d90-107">トピック</span><span class="sxs-lookup"><span data-stu-id="30d90-107">Topic</span></span>    | <span data-ttu-id="30d90-108">説明</span><span class="sxs-lookup"><span data-stu-id="30d90-108">Description</span></span> |               
 |----------|-------|
-| [<span data-ttu-id="3ad7e-109">UI とユーザー エクスペリエンス ガイドライン</span><span class="sxs-lookup"><span data-stu-id="3ad7e-109">UI and user experience guidelines</span></span>](ui-and-user-experience-guidelines.md) | <span data-ttu-id="3ad7e-110">アプリ内のバナー広告とスポット広告を使って優れたユーザー エクスペリエンスを提供するためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="3ad7e-110">Provides guidelines for providing great user experiences with banner ads and interstitial ads in your apps.</span></span> |
-| [<span data-ttu-id="3ad7e-111">広告ユニットの視認性の最適化</span><span class="sxs-lookup"><span data-stu-id="3ad7e-111">Optimize the viewability of your ad units</span></span>](optimize-ad-unit-viewability.md) | <span data-ttu-id="3ad7e-112">広告ユニットの見やすいインプレッションを最適化するためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="3ad7e-112">Provides guidelines for optimizing the viewable impressions for your ad units.</span></span> |
-| [<span data-ttu-id="3ad7e-113">広告のエラー処理</span><span class="sxs-lookup"><span data-stu-id="3ad7e-113">Handle ad errors</span></span>](error-handling-with-advertising-libraries.md)     |  <span data-ttu-id="3ad7e-114">アプリ内のバナー広告、スポット広告、ネイティブ広告のエラーを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="3ad7e-114">Learn how to handle errors for banner ads, interstitial ads, and native ads in your apps.</span></span>          |
+| [<span data-ttu-id="30d90-109">UI とユーザー エクスペリエンスのガイドライン</span><span class="sxs-lookup"><span data-stu-id="30d90-109">UI and user experience guidelines</span></span>](ui-and-user-experience-guidelines.md) | <span data-ttu-id="30d90-110">アプリ内のバナー広告とスポット広告を使って優れたユーザー エクスペリエンスを提供するためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="30d90-110">Provides guidelines for providing great user experiences with banner ads and interstitial ads in your apps.</span></span> |
+| [<span data-ttu-id="30d90-111">お使いの ad 単位の見やすさを最適化します。</span><span class="sxs-lookup"><span data-stu-id="30d90-111">Optimize the viewability of your ad units</span></span>](optimize-ad-unit-viewability.md) | <span data-ttu-id="30d90-112">広告ユニットの見やすいインプレッションを最適化するためのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="30d90-112">Provides guidelines for optimizing the viewable impressions for your ad units.</span></span> |
+| [<span data-ttu-id="30d90-113">Ad エラーの処理</span><span class="sxs-lookup"><span data-stu-id="30d90-113">Handle ad errors</span></span>](error-handling-with-advertising-libraries.md)     |  <span data-ttu-id="30d90-114">アプリ内のバナー広告、スポット広告、ネイティブ広告のエラーを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="30d90-114">Learn how to handle errors for banner ads, interstitial ads, and native ads in your apps.</span></span>          |
 
 
 

@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 019899df18831167f0744d5274aa120cc7dd2096
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934677"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603317"
 ---
-# <a name="tier-3"></a><span data-ttu-id="46e31-104">階層 3</span><span class="sxs-lookup"><span data-stu-id="46e31-104">Tier 3</span></span>
+# <a name="tier-3"></a><span data-ttu-id="1f733-104">階層 3</span><span class="sxs-lookup"><span data-stu-id="1f733-104">Tier 3</span></span>
 
 
-<span data-ttu-id="46e31-105">階層 3 では、[階層 2](tier-2.md) の機能に加えて、ストリーミング リソース向けの Texture3D のサポートが追加されます。</span><span class="sxs-lookup"><span data-stu-id="46e31-105">Tier 3 adds support for Texture3D for streaming resources, in addition to the [Tier 2](tier-2.md) capabilities.</span></span>
+<span data-ttu-id="1f733-105">階層 3 では、[階層 2](tier-2.md) の機能に加えて、ストリーミング リソース向けの Texture3D のサポートが追加されます。</span><span class="sxs-lookup"><span data-stu-id="1f733-105">Tier 3 adds support for Texture3D for streaming resources, in addition to the [Tier 2](tier-2.md) capabilities.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="46e31-106"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="46e31-106"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="1f733-106"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="1f733-106"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="46e31-107">ストリーミング リソース機能の階層</span><span class="sxs-lookup"><span data-stu-id="46e31-107">Streaming resources features tiers</span></span>](streaming-resources-features-tiers.md)
+[<span data-ttu-id="1f733-107">リソースの機能レベルのストリーミング</span><span class="sxs-lookup"><span data-stu-id="1f733-107">Streaming resources features tiers</span></span>](streaming-resources-features-tiers.md)
 
  
 
