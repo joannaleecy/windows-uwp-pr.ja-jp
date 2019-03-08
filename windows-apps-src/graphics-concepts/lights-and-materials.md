@@ -1,29 +1,29 @@
 ---
-title: 光源
+title: 照明
 description: 光源は、シーン内のオブジェクトを照射するのに使われます。 各オブジェクト頂点の色は、現在のテクスチャ マップ、頂点の色、光源に基づきます。
 ms.assetid: AB16CF5B-47CE-455C-A8BD-36305E54BEA9
 keywords:
-- 光源
+- 照明
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 012b0bae7c0abdacba352a3e8f60bcfd0aa1dd54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935213"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646327"
 ---
-# <a name="lighting"></a><span data-ttu-id="6c8aa-105">光源</span><span class="sxs-lookup"><span data-stu-id="6c8aa-105">Lighting</span></span>
+# <a name="lighting"></a><span data-ttu-id="7442a-105">照明</span><span class="sxs-lookup"><span data-stu-id="7442a-105">Lighting</span></span>
 
 
-<span data-ttu-id="6c8aa-106">光源は、シーン内のオブジェクトを照射するのに使われます。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-106">Lights are used to illuminate objects in a scene.</span></span> <span data-ttu-id="6c8aa-107">各オブジェクト頂点の色は、現在のテクスチャ マップ、頂点の色、光源に基づきます。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-107">The color of each object vertex is based on the current texture map, vertex colors, and light sources.</span></span>
+<span data-ttu-id="7442a-106">光源は、シーン内のオブジェクトを照射するのに使われます。</span><span class="sxs-lookup"><span data-stu-id="7442a-106">Lights are used to illuminate objects in a scene.</span></span> <span data-ttu-id="7442a-107">各オブジェクト頂点の色は、現在のテクスチャ マップ、頂点の色、光源に基づきます。</span><span class="sxs-lookup"><span data-stu-id="7442a-107">The color of each object vertex is based on the current texture map, vertex colors, and light sources.</span></span>
 
-<span data-ttu-id="6c8aa-108">**注:** このセクションは、固定関数パイプラインのみです。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-108">**Note** This section is only for the fixed-function pipeline.</span></span> <span data-ttu-id="6c8aa-109">プログラム可能なシェーダーは、すべての光源を明示的に実行します。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-109">Programmable shaders perform all lighting explicitly.</span></span>
+<span data-ttu-id="7442a-108">**注**  このセクションは、固定関数のパイプラインのみです。</span><span class="sxs-lookup"><span data-stu-id="7442a-108">**Note**   This section is only for the fixed-function pipeline.</span></span> <span data-ttu-id="7442a-109">プログラム可能なシェーダーは、すべての光源を明示的に実行します。</span><span class="sxs-lookup"><span data-stu-id="7442a-109">Programmable shaders perform all lighting explicitly.</span></span>
 
  
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="6c8aa-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="6c8aa-110"><span id="in-this-section"></span>In this section</span></span>
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="7442a-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="7442a-110"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -33,36 +33,36 @@ ms.locfileid: "8935213"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="6c8aa-111">トピック</span><span class="sxs-lookup"><span data-stu-id="6c8aa-111">Topic</span></span></th>
-<th align="left"><span data-ttu-id="6c8aa-112">説明</span><span class="sxs-lookup"><span data-stu-id="6c8aa-112">Description</span></span></th>
+<th align="left"><span data-ttu-id="7442a-111">トピック</span><span class="sxs-lookup"><span data-stu-id="7442a-111">Topic</span></span></th>
+<th align="left"><span data-ttu-id="7442a-112">説明</span><span class="sxs-lookup"><span data-stu-id="7442a-112">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="lighting-overview.md"><span data-ttu-id="6c8aa-113">光源の概要</span><span class="sxs-lookup"><span data-stu-id="6c8aa-113">Lighting overview</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="6c8aa-114">Direct3D の光源を使うときは、Direct3D が照明のディテールを自動的に処理できるようにします。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-114">When you use Direct3D lighting, you allow Direct3D to handle the details of illumination for you.</span></span> <span data-ttu-id="6c8aa-115">詳しい知識のあるユーザーは、必要に応じて自分で光源を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-115">Advanced users can perform lighting on their own, if desired.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-113"><a href="lighting-overview.md">照明の概要</a></span><span class="sxs-lookup"><span data-stu-id="7442a-113"><a href="lighting-overview.md">Lighting overview</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-114">Direct3D の光源を使うときは、Direct3D が照明のディテールを自動的に処理できるようにします。</span><span class="sxs-lookup"><span data-stu-id="7442a-114">When you use Direct3D lighting, you allow Direct3D to handle the details of illumination for you.</span></span> <span data-ttu-id="7442a-115">詳しい知識のあるユーザーは、必要に応じて自分で光源を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="7442a-115">Advanced users can perform lighting on their own, if desired.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="light-types.md"><span data-ttu-id="6c8aa-116">光源の種類</span><span class="sxs-lookup"><span data-stu-id="6c8aa-116">Light types</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="6c8aa-117">光源の種類プロパティは、使う光源の種類を定義します。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-117">The light type property defines which type of light source you're using.</span></span> <span data-ttu-id="6c8aa-118">Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-118">There are three types of lights in Direct3D - point lights, spotlights, and directional lights.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-116"><a href="light-types.md">ライトの種類</a></span><span class="sxs-lookup"><span data-stu-id="7442a-116"><a href="light-types.md">Light types</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-117">光源の種類プロパティは、使う光源の種類を定義します。</span><span class="sxs-lookup"><span data-stu-id="7442a-117">The light type property defines which type of light source you're using.</span></span> <span data-ttu-id="7442a-118">Direct3D には 3 種類の光源 (ポイント ライト、スポットライト、指向性ライト) があります。</span><span class="sxs-lookup"><span data-stu-id="7442a-118">There are three types of lights in Direct3D - point lights, spotlights, and directional lights.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="light-properties.md"><span data-ttu-id="6c8aa-119">光源のプロパティ</span><span class="sxs-lookup"><span data-stu-id="6c8aa-119">Light properties</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="6c8aa-120">光源のプロパティは、光源の種類 (ポイント、指向性、スポットライト)、減衰、色、方向、位置、範囲を表します。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-120">Light properties describe a light source's type (point, directional, spotlight), attenuation, color, direction, position, and range.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-119"><a href="light-properties.md">ライトのプロパティ</a></span><span class="sxs-lookup"><span data-stu-id="7442a-119"><a href="light-properties.md">Light properties</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-120">光源のプロパティは、光源の種類 (ポイント、指向性、スポットライト)、減衰、色、方向、位置、範囲を表します。</span><span class="sxs-lookup"><span data-stu-id="7442a-120">Light properties describe a light source's type (point, directional, spotlight), attenuation, color, direction, position, and range.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mathematics-of-lighting.md"><span data-ttu-id="6c8aa-121">光源の計算</span><span class="sxs-lookup"><span data-stu-id="6c8aa-121">Mathematics of lighting</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="6c8aa-122">Direct3D の照明モデルは、環境光、拡散光、反射光、放射光を扱います。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-122">The Direct3D Light Model covers ambient, diffuse, specular, and emissive lighting.</span></span> <span data-ttu-id="6c8aa-123">これにより、さまざまな照明の状況に十分対応することができます。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-123">This is enough flexibility to solve a wide range of lighting situations.</span></span> <span data-ttu-id="6c8aa-124">シーン内の照明の合計量は、<em>全体照明</em>と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="6c8aa-124">The total amount of light in a scene is called the <em>global illumination</em>.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-121"><a href="mathematics-of-lighting.md">照明の計算</a></span><span class="sxs-lookup"><span data-stu-id="7442a-121"><a href="mathematics-of-lighting.md">Mathematics of lighting</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="7442a-122">Direct3D の照明モデルは、環境光、拡散光、反射光、放射光を扱います。</span><span class="sxs-lookup"><span data-stu-id="7442a-122">The Direct3D Light Model covers ambient, diffuse, specular, and emissive lighting.</span></span> <span data-ttu-id="7442a-123">これにより、さまざまな照明の状況に十分対応することができます。</span><span class="sxs-lookup"><span data-stu-id="7442a-123">This is enough flexibility to solve a wide range of lighting situations.</span></span> <span data-ttu-id="7442a-124">シーン内の照明の合計量は、<em>全体照明</em>と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="7442a-124">The total amount of light in a scene is called the <em>global illumination</em>.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="6c8aa-125"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="6c8aa-125"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="7442a-125"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="7442a-125"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="6c8aa-126">Direct3D グラフィックスの学習ガイド</span><span class="sxs-lookup"><span data-stu-id="6c8aa-126">Direct3D Graphics Learning Guide</span></span>](index.md)
+[<span data-ttu-id="7442a-126">Direct3D グラフィックス学習ガイド</span><span class="sxs-lookup"><span data-stu-id="7442a-126">Direct3D Graphics Learning Guide</span></span>](index.md)
 
  
 

@@ -1,27 +1,27 @@
 ---
-Description: Here are the elements and attributes you use to create adaptive tiles.
+Description: アダプティブ タイルの作成に使う要素と属性を次に示します。
 title: アダプティブ タイル スキーマとテンプレート
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942696"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611017"
 ---
-# <a name="adaptive-tile-templates-schema-and-guidance"></a><span data-ttu-id="4ef71-103">アダプティブ タイル テンプレート: スキーマとガイダンス</span><span class="sxs-lookup"><span data-stu-id="4ef71-103">Adaptive tile templates: schema and guidance</span></span>
+# <a name="adaptive-tile-templates-schema-and-guidance"></a><span data-ttu-id="4af10-104">アダプティブ タイル テンプレート: スキーマとガイダンス</span><span class="sxs-lookup"><span data-stu-id="4af10-104">Adaptive tile templates: schema and guidance</span></span>
 
  
 
-<span data-ttu-id="4ef71-104">アダプティブ タイルの作成に使う要素と属性を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4ef71-104">Here are the elements and attributes you use to create adaptive tiles.</span></span> <span data-ttu-id="4ef71-105">手順と例については、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4ef71-105">For instructions and examples, see [Create adaptive tiles](create-adaptive-tiles.md).</span></span>
+<span data-ttu-id="4af10-105">アダプティブ タイルの作成に使う要素と属性を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4af10-105">Here are the elements and attributes you use to create adaptive tiles.</span></span> <span data-ttu-id="4af10-106">手順と例については、「[アダプティブ タイルの作成](create-adaptive-tiles.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4af10-106">For instructions and examples, see [Create adaptive tiles](create-adaptive-tiles.md).</span></span>
 
-## <a name="tile-element"></a><span data-ttu-id="4ef71-106">tile 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-106">tile element</span></span>
+## <a name="tile-element"></a><span data-ttu-id="4af10-107">tile 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-107">tile element</span></span>
 
 
 ``` xml
@@ -33,7 +33,7 @@ ms.locfileid: "8942696"
 </tile>
 ```
 
-## <a name="visual-element"></a><span data-ttu-id="4ef71-107">visual 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-107">visual element</span></span>
+## <a name="visual-element"></a><span data-ttu-id="4af10-108">visual 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-108">visual element</span></span>
 
 
 ``` xml
@@ -52,7 +52,7 @@ ms.locfileid: "8942696"
 </visual>
 ```
 
-## <a name="binding-element"></a><span data-ttu-id="4ef71-108">binding 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-108">binding element</span></span>
+## <a name="binding-element"></a><span data-ttu-id="4af10-109">binding 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-109">binding element</span></span>
 
 
 ``` xml
@@ -77,7 +77,7 @@ ms.locfileid: "8942696"
 </binding>
 ```
 
-## <a name="image-element"></a><span data-ttu-id="4ef71-109">image 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-109">image element</span></span>
+## <a name="image-element"></a><span data-ttu-id="4af10-110">image 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-110">image element</span></span>
 
 
 ``` xml
@@ -91,7 +91,7 @@ ms.locfileid: "8942696"
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <a name="text-element"></a><span data-ttu-id="4ef71-110">text 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-110">text element</span></span>
+## <a name="text-element"></a><span data-ttu-id="4af10-111">text 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-111">text element</span></span>
 
 
 ``` xml
@@ -108,9 +108,9 @@ ms.locfileid: "8942696"
 </text>
 ```
 
-<span data-ttu-id="4ef71-111">textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span><span class="sxs-lookup"><span data-stu-id="4ef71-111">textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span></span>
+<span data-ttu-id="4af10-112">textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span><span class="sxs-lookup"><span data-stu-id="4af10-112">textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumeral</span></span>
 
-## <a name="group-element"></a><span data-ttu-id="4ef71-112">group 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-112">group element</span></span>
+## <a name="group-element"></a><span data-ttu-id="4af10-113">group 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-113">group element</span></span>
 
 
 ``` xml
@@ -122,7 +122,7 @@ ms.locfileid: "8942696"
 </group>
 ```
 
-## <a name="subgroup-element"></a><span data-ttu-id="4ef71-113">subgroup 要素</span><span class="sxs-lookup"><span data-stu-id="4ef71-113">subgroup element</span></span>
+## <a name="subgroup-element"></a><span data-ttu-id="4af10-114">subgroup 要素</span><span class="sxs-lookup"><span data-stu-id="4af10-114">subgroup element</span></span>
 
 
 ``` xml
@@ -138,10 +138,10 @@ ms.locfileid: "8942696"
 </subgroup>
 ```
 
-## <a name="related-topics"></a><span data-ttu-id="4ef71-114">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4ef71-114">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="4af10-115">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4af10-115">Related topics</span></span>
 
 
-* [<span data-ttu-id="4ef71-115">アダプティブ タイルの作成</span><span class="sxs-lookup"><span data-stu-id="4ef71-115">Create adaptive tiles</span></span>](create-adaptive-tiles.md)
+* [<span data-ttu-id="4af10-116">アダプティブ タイルの作成</span><span class="sxs-lookup"><span data-stu-id="4af10-116">Create adaptive tiles</span></span>](create-adaptive-tiles.md)
  
 
  

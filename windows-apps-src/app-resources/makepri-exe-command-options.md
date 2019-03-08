@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+Description: MakePri.exe には、createconfig、dump、new、resourcepack、versioned コマンドのセットが含まれます。 このトピックでは、その使用方法について説明します。
 title: MakePri.exe のコマンド ライン オプション
 template: detail.hbs
 ms.date: 04/10/2018
@@ -7,24 +7,24 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: bc08376dafec8aad9d65ef5acd8d19943d242eed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943416"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603397"
 ---
-# <a name="makepriexe-command-line-options"></a><span data-ttu-id="dc116-103">MakePri.exe のコマンド ライン オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-103">MakePri.exe command-line options</span></span>
+# <a name="makepriexe-command-line-options"></a><span data-ttu-id="55ae7-105">MakePri.exe のコマンド ライン オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-105">MakePri.exe command-line options</span></span>
 
-<span data-ttu-id="dc116-104">[MakePri.exe](compile-resources-manually-with-makepri.md) には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。</span><span class="sxs-lookup"><span data-stu-id="dc116-104">[MakePri.exe](compile-resources-manually-with-makepri.md) has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`.</span></span> <span data-ttu-id="dc116-105">このトピックでは、コマンド ライン オプションの使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="dc116-105">This topic details the command-line options for their use.</span></span>
+<span data-ttu-id="55ae7-106">[MakePri.exe](compile-resources-manually-with-makepri.md) には、`createconfig`、`dump`、`new`、`resourcepack`、`versioned` コマンドのセットが含まれます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-106">[MakePri.exe](compile-resources-manually-with-makepri.md) has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`.</span></span> <span data-ttu-id="55ae7-107">このトピックでは、コマンド ライン オプションの使用について説明します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-107">This topic details the command-line options for their use.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="dc116-106">MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="dc116-106">MakePri.exe is installed when you check the **Windows SDK for UWP Managed Apps** option while installing the Windows Software Development Kit.</span></span> <span data-ttu-id="dc116-107">パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。</span><span class="sxs-lookup"><span data-stu-id="dc116-107">It is installed to the path `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (as well as in folders named for the other architectures).</span></span> <span data-ttu-id="dc116-108">たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。</span><span class="sxs-lookup"><span data-stu-id="dc116-108">For example, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.</span></span>
+> <span data-ttu-id="55ae7-108">チェックするときに MakePri.exe がインストールされている、**管理されているアプリの UWP 用 Windows SDK** Windows ソフトウェア開発キットのインストール中にオプション。</span><span class="sxs-lookup"><span data-stu-id="55ae7-108">MakePri.exe is installed when you check the **Windows SDK for UWP Managed Apps** option while installing the Windows Software Development Kit.</span></span> <span data-ttu-id="55ae7-109">パスにインストールされて`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャのという名前のフォルダーの)。</span><span class="sxs-lookup"><span data-stu-id="55ae7-109">It is installed to the path `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (as well as in folders named for the other architectures).</span></span> <span data-ttu-id="55ae7-110">たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-110">For example, `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`.</span></span>
 
-## <a name="getting-help-from-the-command-line"></a><span data-ttu-id="dc116-109">コマンドラインからのヘルプの取得</span><span class="sxs-lookup"><span data-stu-id="dc116-109">Getting help from the command-line</span></span>
+## <a name="getting-help-from-the-command-line"></a><span data-ttu-id="55ae7-111">コマンドラインからのヘルプ</span><span class="sxs-lookup"><span data-stu-id="55ae7-111">Getting help from the command-line</span></span>
 
-<span data-ttu-id="dc116-110">実行できる`MakePri.exe help`または`MakePri.exe /?`MakePri.exe を使用して使用できるコマンドを表示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-110">You can run `MakePri.exe help` or `MakePri.exe /?` to see the commands that you can use with MakePri.exe.</span></span> <span data-ttu-id="dc116-111">発行することも`MakePri.exe <command> /?`コマンドについてと、非常にまれなケースで詳細を表示する場合でも`MakePri.exe <command> <option>`オプションの詳細を確認します。</span><span class="sxs-lookup"><span data-stu-id="dc116-111">You can also issue `MakePri.exe <command> /?` to see specifics about a command and, in very rare cases, even `MakePri.exe <command> <option>` to see specifics about an option.</span></span>
+<span data-ttu-id="55ae7-112">実行することができます`MakePri.exe help`または`MakePri.exe /?`MakePri.exe で使用できるコマンドを表示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-112">You can run `MakePri.exe help` or `MakePri.exe /?` to see the commands that you can use with MakePri.exe.</span></span> <span data-ttu-id="55ae7-113">発行することもできます`MakePri.exe <command> /?`コマンドに関すると非常にまれなケースの詳細を表示するには、偶数`MakePri.exe <command> <option>`オプションの詳細を確認します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-113">You can also issue `MakePri.exe <command> /?` to see specifics about a command and, in very rare cases, even `MakePri.exe <command> <option>` to see specifics about an option.</span></span>
 
-## <a name="makepri-commands"></a><span data-ttu-id="dc116-112">MakePri のコマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-112">MakePri commands</span></span>
+## <a name="makepri-commands"></a><span data-ttu-id="55ae7-114">MakePri のコマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-114">MakePri commands</span></span>
 
 ```console
 C:\>makepri help
@@ -61,9 +61,9 @@ Help:
     MakePri.exe createconfig /?
 ```
 
-## <a name="createconfig-command"></a><span data-ttu-id="dc116-113">Createconfig コマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-113">Createconfig command</span></span>
+## <a name="createconfig-command"></a><span data-ttu-id="55ae7-115">Createconfig コマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-115">Createconfig command</span></span>
 
-<span data-ttu-id="dc116-114">`createconfig` コマンドは、指定した修飾子の既定値を定義する、新しい、初期化された PRI 構成ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-114">The `createconfig` command creates a new, initialized PRI config file defining the qualifier defaults that you specify.</span></span> <span data-ttu-id="dc116-115">`MakePri.exe createconfig /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-115">Run `MakePri.exe createconfig /?` to see detailed help for this command.</span></span>
+<span data-ttu-id="55ae7-116">`createconfig` コマンドは、指定した修飾子の既定値を定義する、新しい、初期化された PRI 構成ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-116">The `createconfig` command creates a new, initialized PRI config file defining the qualifier defaults that you specify.</span></span> <span data-ttu-id="55ae7-117">`MakePri.exe createconfig /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-117">Run `MakePri.exe createconfig /?` to see detailed help for this command.</span></span>
 
 ```console
 C:\>makepri createconfig /?
@@ -110,12 +110,12 @@ Help:
     /Help(h, ?)       : Display the usage help text
 ```
 
-## <a name="dump-command"></a><span data-ttu-id="dc116-116">Dump コマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-116">Dump command</span></span>
+## <a name="dump-command"></a><span data-ttu-id="55ae7-118">Dump コマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-118">Dump command</span></span>
 
-<span data-ttu-id="dc116-117">`dump` コマンドは、指定された PRI ファイル内のすべてのリソースの一覧を含む、ダンプされた xml ファイルを出力します。</span><span class="sxs-lookup"><span data-stu-id="dc116-117">The `dump` command outputs a dumped xml file containing a list of all resources in a specified PRI file.</span></span> <span data-ttu-id="dc116-118">`MakePri.exe dump /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-118">Run `MakePri.exe dump /?` to see detailed help for this command.</span></span>
+<span data-ttu-id="55ae7-119">`dump` コマンドは、指定された PRI ファイル内のすべてのリソースの一覧を含む、ダンプされた xml ファイルを出力します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-119">The `dump` command outputs a dumped xml file containing a list of all resources in a specified PRI file.</span></span> <span data-ttu-id="55ae7-120">`MakePri.exe dump /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-120">Run `MakePri.exe dump /?` to see detailed help for this command.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="dc116-119">スキーマのないリソース パックは、PRI 構成ファイルで *omitSchemaFromResourcePacks* スイッチを使用して作成されたものです。</span><span class="sxs-lookup"><span data-stu-id="dc116-119">A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file.</span></span> <span data-ttu-id="dc116-120">スキーマのないリソース パックを出力するには、`/es <main_package_PRI_file>` スイッチを使用します。</span><span class="sxs-lookup"><span data-stu-id="dc116-120">To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`.</span></span> <span data-ttu-id="dc116-121">メイン ファイルを指定しない場合、"*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*" (パッケージ内の resources.pri が破損していたため、暗号化できませんでした (エラー PRI222: 0xdef0000f - 特定できないエラーが発生しました)。</span><span class="sxs-lookup"><span data-stu-id="dc116-121">If you don't specify the main file then you'll see the error message "*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*".</span></span>
+> <span data-ttu-id="55ae7-121">スキーマのないリソース パックは、PRI 構成ファイルで *omitSchemaFromResourcePacks* スイッチを使用して作成されたものです。</span><span class="sxs-lookup"><span data-stu-id="55ae7-121">A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file.</span></span> <span data-ttu-id="55ae7-122">スキーマのないリソース パックを出力するには、`/es <main_package_PRI_file>` スイッチを使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-122">To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`.</span></span> <span data-ttu-id="55ae7-123">メイン ファイルを指定しない場合、エラー メッセージが表示されます"*パッケージ resources.pri が破損していたため、暗号化に失敗しました (エラー PRI222:0xdef0000f - 特定できないエラーが発生しました)*"。</span><span class="sxs-lookup"><span data-stu-id="55ae7-123">If you don't specify the main file then you'll see the error message "*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*".</span></span>
 
 ```console
 C:\>makepri dump /?
@@ -162,9 +162,9 @@ Help:
     /Help(h, ?)         : Display the usage help text
 ```
 
-## <a name="new-command"></a><span data-ttu-id="dc116-122">New コマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-122">New command</span></span>
+## <a name="new-command"></a><span data-ttu-id="55ae7-124">New コマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-124">New command</span></span>
 
-<span data-ttu-id="dc116-123">`new` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、新しい PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-123">The `new` command creates a new PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="dc116-124">`MakePri.exe new /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-124">Run `MakePri.exe new /?` to see detailed help for this command.</span></span>
+<span data-ttu-id="55ae7-125">`new` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、新しい PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-125">The `new` command creates a new PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="55ae7-126">`MakePri.exe new /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-126">Run `MakePri.exe new /?` to see detailed help for this command.</span></span>
 
 ```console
 C:\>makepri new /?
@@ -234,9 +234,9 @@ Help:
     /Help(h, ?)        : Display the usage help text
 ```
 
-## <a name="resourcepack-command"></a><span data-ttu-id="dc116-125">ResourcePack コマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-125">ResourcePack command</span></span>
+## <a name="resourcepack-command"></a><span data-ttu-id="55ae7-127">ResourcePack コマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-127">ResourcePack command</span></span>
 
-<span data-ttu-id="dc116-126">`resourcepack` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、新しい PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-126">The `resourcepack` command creates a new PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="dc116-127">リソース パック PRI ファイルには、既存の PRI ファイルで既に指定されているリソースの追加バリエーションのみが含まれます。</span><span class="sxs-lookup"><span data-stu-id="dc116-127">A resource pack PRI file contains only additional variants of resources already specified in an existing PRI file.</span></span> <span data-ttu-id="dc116-128">`MakePri.exe resourcepack /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-128">Run `MakePri.exe resourcepack /?` to see detailed help for this command.</span></span>
+<span data-ttu-id="55ae7-128">`resourcepack` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、新しい PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-128">The `resourcepack` command creates a new PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="55ae7-129">リソース パック PRI ファイルには、既存の PRI ファイルで既に指定されているリソースの追加バリエーションのみが含まれます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-129">A resource pack PRI file contains only additional variants of resources already specified in an existing PRI file.</span></span> <span data-ttu-id="55ae7-130">`MakePri.exe resourcepack /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-130">Run `MakePri.exe resourcepack /?` to see detailed help for this command.</span></span>
 
 ```console
 C:\>makepri resourcepack /?
@@ -301,9 +301,9 @@ Help:
     /Help(h, ?)        : Display the usage help text
 ```
 
-## <a name="versioned-command"></a><span data-ttu-id="dc116-129">Versioned コマンド</span><span class="sxs-lookup"><span data-stu-id="dc116-129">Versioned command</span></span>
+## <a name="versioned-command"></a><span data-ttu-id="55ae7-131">Versioned コマンド</span><span class="sxs-lookup"><span data-stu-id="55ae7-131">Versioned command</span></span>
 
-<span data-ttu-id="dc116-130">`versioned` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、バージョン管理された PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-130">The `versioned` command creates a versioned PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="dc116-131">`MakePri.exe versioned /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-131">Run `MakePri.exe versioned /?` to see detailed help for this command.</span></span>
+<span data-ttu-id="55ae7-132">`versioned` コマンドは、構成ファイルの指示に従ってプロジェクト内のファイルのインデックスを作成することにより、バージョン管理された PRI ファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-132">The `versioned` command creates a versioned PRI file by indexing the files in your project as directed by your configuration file.</span></span> <span data-ttu-id="55ae7-133">`MakePri.exe versioned /?` を実行すると、このコマンドの詳しいヘルプが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-133">Run `MakePri.exe versioned /?` to see detailed help for this command.</span></span>
 
 ```console
 C:\>makepri versioned /?
@@ -366,13 +366,13 @@ Help:
     /Help(h, ?)        : Display the usage help text
 ```
 
-## <a name="47extensiondllex"></a><span data-ttu-id="dc116-132">&#47;ExtensionDll(ex)</span><span class="sxs-lookup"><span data-stu-id="dc116-132">&#47;ExtensionDll(ex)</span></span>
+## <a name="47extensiondllex"></a><span data-ttu-id="55ae7-134">&#47;ExtensionDll(ex)</span><span class="sxs-lookup"><span data-stu-id="55ae7-134">&#47;ExtensionDll(ex)</span></span>
 
-<span data-ttu-id="dc116-133">拡張 DLL オプション (/ex) を `createconfig`、`dump`、`new`、`resourcepack`、`versioned` と共に使用して、リソース管理システム環境拡張 DLL の場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="dc116-133">You use the extension DLL option (/ex) with `createconfig`, `dump`, `new`, `resourcepack`, and `versioned` to specify the location of the Resource Management System environment extension DLL.</span></span>
+<span data-ttu-id="55ae7-135">拡張 DLL オプション (/ex) を `createconfig`、`dump`、`new`、`resourcepack`、`versioned` と共に使用して、リソース管理システム環境拡張 DLL の場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-135">You use the extension DLL option (/ex) with `createconfig`, `dump`, `new`, `resourcepack`, and `versioned` to specify the location of the Resource Management System environment extension DLL.</span></span>
 
-## <a name="logging47metadata-file"></a><span data-ttu-id="dc116-134">ログ記録&#47;メタデータ ファイル</span><span class="sxs-lookup"><span data-stu-id="dc116-134">Logging&#47;metadata file</span></span>
+## <a name="logging47metadata-file"></a><span data-ttu-id="55ae7-136">ログ記録&#47;メタデータ ファイル</span><span class="sxs-lookup"><span data-stu-id="55ae7-136">Logging&#47;metadata file</span></span>
 
-<span data-ttu-id="dc116-135">MakePri は、インデクサーのメタデータ ファイルにリソース パックに固有の情報を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="dc116-135">MakePri can include info specific to a resource pack in the indexer metadata file.</span></span> <span data-ttu-id="dc116-136">`resources.pri` のログ ファイルと、リソース PRI ファイル `german.pri` と `highresolution.pri` の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-136">Here is an example of a log file for `resources.pri` with resource PRI files `german.pri` and `highresolution.pri`.</span></span>
+<span data-ttu-id="55ae7-137">MakePri は、インデクサーのメタデータ ファイルにリソース パックに固有の情報を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-137">MakePri can include info specific to a resource pack in the indexer metadata file.</span></span> <span data-ttu-id="55ae7-138">`resources.pri` のログ ファイルと、リソース PRI ファイル `german.pri` と `highresolution.pri` の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-138">Here is an example of a log file for `resources.pri` with resource PRI files `german.pri` and `highresolution.pri`.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -404,61 +404,61 @@ Help:
 </root>
 ```
 
-## <a name="47indexfileif-option"></a><span data-ttu-id="dc116-137">& #47;IndexFile(if) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-137">&#47;IndexFile(if) option</span></span>
+## <a name="47indexfileif-option"></a><span data-ttu-id="55ae7-139">& #47;IndexFile(if) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-139">&#47;IndexFile(if) option</span></span>
 
-<span data-ttu-id="dc116-138">インデックス ファイルのオプション (/if) を、`dump`、`resourcepack`、`versioned` と共に使用して、入力 PRI ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="dc116-138">You use the index file option (/if) with `dump`, `resourcepack`, and `versioned` to specify an input PRI file.</span></span>
+<span data-ttu-id="55ae7-140">インデックス ファイルのオプション (/if) を、`dump`、`resourcepack`、`versioned` と共に使用して、入力 PRI ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-140">You use the index file option (/if) with `dump`, `resourcepack`, and `versioned` to specify an input PRI file.</span></span>
 
-<span data-ttu-id="dc116-139">`resourcepack` と `versioned` の場合、/IndexFile(if) の入力パラメーターとして PRI ファイルを指定する代わりに、スキーマ ファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="dc116-139">For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.</span></span>
+<span data-ttu-id="55ae7-141">`resourcepack` と `versioned` の場合、/IndexFile(if) の入力パラメーターとして PRI ファイルを指定する代わりに、スキーマ ファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-141">For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.</span></span>
 
 ```console
 /IndexFile(if) <FILEPATH>
 ```
 
-<span data-ttu-id="dc116-140">**FILEPATH** は、入力 PRI ファイルまたは PRI スキーマ ファイルの場所を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="dc116-140">**FILEPATH** is a token that that specifies the location of the input PRI file or PRI schema file.</span></span>
+<span data-ttu-id="55ae7-142">**FILEPATH** は、入力 PRI ファイルまたは PRI スキーマ ファイルの場所を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="55ae7-142">**FILEPATH** is a token that that specifies the location of the input PRI file or PRI schema file.</span></span>
 
-## <a name="47indexoptionsio-option"></a><span data-ttu-id="dc116-141">& #47;IndexOptions(io) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-141">&#47;IndexOptions(io) option</span></span>
+## <a name="47indexoptionsio-option"></a><span data-ttu-id="55ae7-143">&#47;IndexOptions(io) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-143">&#47;IndexOptions(io) option</span></span>
 
-<span data-ttu-id="dc116-142">インデックスのオプションを使用する (/io) と`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作の詳細に制御を提供するオプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="dc116-142">You use the index options option (/io) with `new`, `resourcepack`, and `versioned` to specify options that provide detailed control over the behavior of resource indexers.</span></span> <span data-ttu-id="dc116-143">既定では、インデックスのオプションが無効になります。</span><span class="sxs-lookup"><span data-stu-id="dc116-143">Index options are disabled by default.</span></span>
+<span data-ttu-id="55ae7-144">インデックス オプションのオプションを使用する (/io) と`new`、 `resourcepack`、および`versioned`リソース インデクサーの動作をより詳細な制御を提供するオプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-144">You use the index options option (/io) with `new`, `resourcepack`, and `versioned` to specify options that provide detailed control over the behavior of resource indexers.</span></span> <span data-ttu-id="55ae7-145">既定では、インデックス オプションが無効になります。</span><span class="sxs-lookup"><span data-stu-id="55ae7-145">Index options are disabled by default.</span></span>
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-<span data-ttu-id="dc116-144">**オプション**では、次のオプションの構成、コンマ区切りの一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-144">**OPTIONS** is a comma-separated list comprised of the following options.</span></span>
+<span data-ttu-id="55ae7-146">**オプション**は、次のオプションから構成されるコンマ区切りのリスト。</span><span class="sxs-lookup"><span data-stu-id="55ae7-146">**OPTIONS** is a comma-separated list comprised of the following options.</span></span>
 
-- <span data-ttu-id="dc116-145">HiddenFiles(hf) +/。</span><span class="sxs-lookup"><span data-stu-id="dc116-145">+/-HiddenFiles(hf).</span></span> <span data-ttu-id="dc116-146">インデックス (+) または (-) を無視するファイルとフォルダーの非表示になります。</span><span class="sxs-lookup"><span data-stu-id="dc116-146">Index (+) or ignore (-) hidden files and folders.</span></span>
-- <span data-ttu-id="dc116-147">LinkedFiles(lf) +/。</span><span class="sxs-lookup"><span data-stu-id="dc116-147">+/-LinkedFiles(lf).</span></span> <span data-ttu-id="dc116-148">インデックス (+) または (-) を無視するファイルやフォルダーをリンクします。</span><span class="sxs-lookup"><span data-stu-id="dc116-148">Index (+) or ignore (-) linked files and folders.</span></span>
+- <span data-ttu-id="55ae7-147">HiddenFiles(hf) +/。</span><span class="sxs-lookup"><span data-stu-id="55ae7-147">+/-HiddenFiles(hf).</span></span> <span data-ttu-id="55ae7-148">(+) をインデックスまたは (-) を無視するファイルとフォルダーを非表示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-148">Index (+) or ignore (-) hidden files and folders.</span></span>
+- <span data-ttu-id="55ae7-149">LinkedFiles(lf) +/。</span><span class="sxs-lookup"><span data-stu-id="55ae7-149">+/-LinkedFiles(lf).</span></span> <span data-ttu-id="55ae7-150">(+) をインデックスまたは (-) を無視するファイルとフォルダーをリンクします。</span><span class="sxs-lookup"><span data-stu-id="55ae7-150">Index (+) or ignore (-) linked files and folders.</span></span>
 
-## <a name="47mappingfilemf-option"></a><span data-ttu-id="dc116-149">&#47;MappingFile(mf) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-149">&#47;MappingFile(mf) option</span></span>
+## <a name="47mappingfilemf-option"></a><span data-ttu-id="55ae7-151">&#47;MappingFile(mf) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-151">&#47;MappingFile(mf) option</span></span>
 
-<span data-ttu-id="dc116-150">マッピング ファイル オプション (/mf) を、`new`、`resourcepack`、`versioned` と共に使用して、マッピング ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-150">You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file.</span></span> <span data-ttu-id="dc116-151">[MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) は、マッピング ファイルを使ってアプリ パッケージを生成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-151">[MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) uses the mapping file to generate app packages.</span></span>
+<span data-ttu-id="55ae7-152">マッピング ファイル オプション (/mf) を、`new`、`resourcepack`、`versioned` と共に使用して、マッピング ファイルを生成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-152">You use the mapping file option (/mf) with `new`, `resourcepack`, and `versioned` to generate a mapping file.</span></span> <span data-ttu-id="55ae7-153">[MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) は、マッピング ファイルを使ってアプリ パッケージを生成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-153">[MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) uses the mapping file to generate app packages.</span></span>
 
 ```console
 /MappingFile(mf) <MAPPINGFILETYPE>
 ```
 
-<span data-ttu-id="dc116-152">**MAPPINGFILETYPE** は、マッピング ファイルの形式を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="dc116-152">**MAPPINGFILETYPE** is a token that specifies the format of the mapping file.</span></span> <span data-ttu-id="dc116-153">サポートされる有効な形式は `appx` のみです。</span><span class="sxs-lookup"><span data-stu-id="dc116-153">The only valid supported format is `appx`.</span></span>
+<span data-ttu-id="55ae7-154">**MAPPINGFILETYPE** は、マッピング ファイルの形式を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="55ae7-154">**MAPPINGFILETYPE** is a token that specifies the format of the mapping file.</span></span> <span data-ttu-id="55ae7-155">サポートされる有効な形式は `appx` のみです。</span><span class="sxs-lookup"><span data-stu-id="55ae7-155">The only valid supported format is `appx`.</span></span>
 
 ```console
 /mf appx
 ```
 
-<span data-ttu-id="dc116-154">これは、メインのマッピング ファイルの内容の例です。</span><span class="sxs-lookup"><span data-stu-id="dc116-154">This is an example contents of a main mapping file.</span></span>
+<span data-ttu-id="55ae7-156">これは、メインのマッピング ファイルの内容の例です。</span><span class="sxs-lookup"><span data-stu-id="55ae7-156">This is an example contents of a main mapping file.</span></span>
 
 ```console
 "ResourceDimensions"                   "language-de-de"
 ```
 
-<span data-ttu-id="dc116-155">また、これは、リソース パックのマッピング ファイルの内容の例です。</span><span class="sxs-lookup"><span data-stu-id="dc116-155">And this is an example contents of a resource pack mapping file.</span></span>
+<span data-ttu-id="55ae7-157">また、これは、リソース パックのマッピング ファイルの内容の例です。</span><span class="sxs-lookup"><span data-stu-id="55ae7-157">And this is an example contents of a resource pack mapping file.</span></span>
 
 ```console
 "ResourceId"                           "Resources184.la5decaf08"
 "ResourceDimensions"                   "language-de-de"
 ```
 
-## <a name="output-summary"></a><span data-ttu-id="dc116-156">出力の概要</span><span class="sxs-lookup"><span data-stu-id="dc116-156">Output summary</span></span>
+## <a name="output-summary"></a><span data-ttu-id="55ae7-158">出力の概要</span><span class="sxs-lookup"><span data-stu-id="55ae7-158">Output summary</span></span>
 
-<span data-ttu-id="dc116-157">リソース パックが作成される場合、MakePRI.exe からの出力の概要は、より詳細な形式です。</span><span class="sxs-lookup"><span data-stu-id="dc116-157">If resource packs are created, the output summary from MakePRI.exe is of more verbose form.</span></span> <span data-ttu-id="dc116-158">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-158">Here's an example.</span></span>
+<span data-ttu-id="55ae7-159">リソース パックが作成される場合、MakePRI.exe からの出力の概要は、より詳細な形式です。</span><span class="sxs-lookup"><span data-stu-id="55ae7-159">If resource packs are created, the output summary from MakePRI.exe is of more verbose form.</span></span> <span data-ttu-id="55ae7-160">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-160">Here's an example.</span></span>
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -483,9 +483,9 @@ Output File(s) at TempTestResults
 Successfully Completed
 ```
 
-## <a name="47overwriteo-option"></a><span data-ttu-id="dc116-159">&#47;Overwrite(o) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-159">&#47;Overwrite(o) option</span></span>
+## <a name="47overwriteo-option"></a><span data-ttu-id="55ae7-161">&#47;Overwrite(o) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-161">&#47;Overwrite(o) option</span></span>
 
-<span data-ttu-id="dc116-160">上書きオプション (/o) が指定されておらず、指定した出力ファイルが既に存在する場合、MakePri.exe は上書きする前に確認を求めます。</span><span class="sxs-lookup"><span data-stu-id="dc116-160">If the over-write option (/o) is not provided, and the specified output file(s) already exist(s), then MakePri.exe requires a confirmation before overwriting.</span></span>
+<span data-ttu-id="55ae7-162">上書きオプション (/o) が指定されておらず、指定した出力ファイルが既に存在する場合、MakePri.exe は上書きする前に確認を求めます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-162">If the over-write option (/o) is not provided, and the specified output file(s) already exist(s), then MakePri.exe requires a confirmation before overwriting.</span></span>
 
 ```console
 Following file(s) already exist at output location:
@@ -493,33 +493,33 @@ Following file(s) already exist at output location:
 Overwrite these file(s)? [Y]es (any other key to cancel):
 ```
 
-## <a name="47outputfileof-option"></a><span data-ttu-id="dc116-161">&#47;OutputFile(of) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-161">&#47;OutputFile(of) option</span></span>
+## <a name="47outputfileof-option"></a><span data-ttu-id="55ae7-163">&#47;OutputFile(of) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-163">&#47;OutputFile(of) option</span></span>
 
-<span data-ttu-id="dc116-162">出力ファイル オプション (/of) を、`dump`、`new`、`resourcepack`、`versioned` と共に使用して、出力場所と生成される PRI ファイルの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="dc116-162">You use the output file option (/of) with `dump`, `new`, `resourcepack`, and `versioned` to specify the output location and name of the PRI file to be generated.</span></span> <span data-ttu-id="dc116-163">MakePri.exe で複数のリソース PRI ファイルを生成する場合、ファイルはターゲット ファイルの親フォルダーに格納されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-163">If MakePri.exe generates more than one resource PRI file, it places them in the parent folder of the target file.</span></span> <span data-ttu-id="dc116-164">たとえば、`/of MyParentFolder\TargetFile.pri` を指定した場合、MakePri.exe は `TargetFile.language-en.pri` と `TargetFile.scale-100.pri` を、`TargetFile.pri` と共に、`ParentFolder` に生成します。</span><span class="sxs-lookup"><span data-stu-id="dc116-164">For example, if you specify `/of MyParentFolder\TargetFile.pri` then MakePri.exe generates `TargetFile.language-en.pri` and `TargetFile.scale-100.pri` alongside `TargetFile.pri` under `ParentFolder`.</span></span>
+<span data-ttu-id="55ae7-164">出力ファイル オプション (/of) を、`dump`、`new`、`resourcepack`、`versioned` と共に使用して、出力場所と生成される PRI ファイルの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-164">You use the output file option (/of) with `dump`, `new`, `resourcepack`, and `versioned` to specify the output location and name of the PRI file to be generated.</span></span> <span data-ttu-id="55ae7-165">MakePri.exe で複数のリソース PRI ファイルを生成する場合、ファイルはターゲット ファイルの親フォルダーに格納されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-165">If MakePri.exe generates more than one resource PRI file, it places them in the parent folder of the target file.</span></span> <span data-ttu-id="55ae7-166">たとえば、`/of MyParentFolder\TargetFile.pri` を指定した場合、MakePri.exe は `TargetFile.language-en.pri` と `TargetFile.scale-100.pri` を、`TargetFile.pri` と共に、`ParentFolder` に生成します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-166">For example, if you specify `/of MyParentFolder\TargetFile.pri` then MakePri.exe generates `TargetFile.language-en.pri` and `TargetFile.scale-100.pri` alongside `TargetFile.pri` under `ParentFolder`.</span></span>
 
-<span data-ttu-id="dc116-165">エラー状況の例と対応するエラー メッセージを次に示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-165">Here is an example error condition and the corresponding error message.</span></span>
+<span data-ttu-id="55ae7-167">エラー状況の例と対応するエラー メッセージを次に示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-167">Here is an example error condition and the corresponding error message.</span></span>
 
-| <span data-ttu-id="dc116-166">エラー状況</span><span class="sxs-lookup"><span data-stu-id="dc116-166">Error condition</span></span> | <span data-ttu-id="dc116-167">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="dc116-167">Error message</span></span> |
+| <span data-ttu-id="55ae7-168">エラー状況</span><span class="sxs-lookup"><span data-stu-id="55ae7-168">Error condition</span></span> | <span data-ttu-id="55ae7-169">エラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="55ae7-169">Error message</span></span> |
 | --------------- | ------------- |
-| <span data-ttu-id="dc116-168">構成に含まれるリソース パック名の 1 つと同じ出力ファイル名が指定された。</span><span class="sxs-lookup"><span data-stu-id="dc116-168">The output file name is the same as one of the resource pack names in the configuration.</span></span> | <span data-ttu-id="dc116-169">無効な構成: リソース パック名 <resource pack name> を出力ファイル <outputfilename.pri> と同じにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="dc116-169">Invalid Configuration: Resource Pack name <resource pack name> cannot be the same as the output file <outputfilename.pri>.</span></span> |
+| <span data-ttu-id="55ae7-170">構成に含まれるリソース パック名の 1 つと同じ出力ファイル名が指定された。</span><span class="sxs-lookup"><span data-stu-id="55ae7-170">The output file name is the same as one of the resource pack names in the configuration.</span></span> | <span data-ttu-id="55ae7-171">構成が無効です。リソース パック名<resource pack name>< outputfilename.pri > 出力ファイルと同じにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="55ae7-171">Invalid Configuration: Resource Pack name <resource pack name> cannot be the same as the output file <outputfilename.pri>.</span></span> |
 
-## <a name="reversemaprm-option"></a><span data-ttu-id="dc116-170">/ReverseMap(rm) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-170">/ReverseMap(rm) option</span></span>
+## <a name="reversemaprm-option"></a><span data-ttu-id="55ae7-172">/ReverseMap(rm) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-172">/ReverseMap(rm) option</span></span>
 
-<span data-ttu-id="dc116-171">逆マップ オプション (/rm) を、`new`、`resourcepack`、`versioned` と共に使用して、PRI ファイルに逆マッピング セクションを生成し、デバッグに利用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="dc116-171">You use the reverse map option (/rm) with `new`, `resourcepack`, and `versioned` to generate a reverse-mapping section in the PRI file, which can be used for debugging.</span></span>
+<span data-ttu-id="55ae7-173">逆マップ オプション (/rm) を、`new`、`resourcepack`、`versioned` と共に使用して、PRI ファイルに逆マッピング セクションを生成し、デバッグに利用できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="55ae7-173">You use the reverse map option (/rm) with `new`, `resourcepack`, and `versioned` to generate a reverse-mapping section in the PRI file, which can be used for debugging.</span></span>
 
-## <a name="47schemafilesf-option"></a><span data-ttu-id="dc116-172">&#47;SchemaFile(sf) オプション</span><span class="sxs-lookup"><span data-stu-id="dc116-172">&#47;SchemaFile(sf) option</span></span>
+## <a name="47schemafilesf-option"></a><span data-ttu-id="55ae7-174">&#47;SchemaFile(sf) オプション</span><span class="sxs-lookup"><span data-stu-id="55ae7-174">&#47;SchemaFile(sf) option</span></span>
 
-<span data-ttu-id="dc116-173">スキーマ ファイル オプション (/sf) を、`new`、`resourcepack`、`versioned` と共に使用して、指定された場所にスキーマ ファイルを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="dc116-173">You use the schema file option (/sf) with `new`, `resourcepack`, and `versioned` to write a schema file at the specified location.</span></span>
+<span data-ttu-id="55ae7-175">スキーマ ファイル オプション (/sf) を、`new`、`resourcepack`、`versioned` と共に使用して、指定された場所にスキーマ ファイルを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-175">You use the schema file option (/sf) with `new`, `resourcepack`, and `versioned` to write a schema file at the specified location.</span></span>
 
-<span data-ttu-id="dc116-174">`resourcepack` と `versioned` の場合、/IndexFile(if) の入力パラメーターとして PRI ファイルを指定する代わりに、スキーマ ファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="dc116-174">For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.</span></span>
+<span data-ttu-id="55ae7-176">`resourcepack` と `versioned` の場合、/IndexFile(if) の入力パラメーターとして PRI ファイルを指定する代わりに、スキーマ ファイルを指定できます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-176">For `resourcepack` and `versioned`, instead of providing a PRI file as the input parameter for /IndexFile(if), you can instead provide a schema file.</span></span>
 
 ```console
 /SchemaFile(sf) <FILEPATH>
 ```
 
-<span data-ttu-id="dc116-175">**FILEPATH** は、スキーマ ファイルを書き込む場所を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="dc116-175">**FILEPATH** is a token that that specifies where to write the schema file.</span></span>
+<span data-ttu-id="55ae7-177">**FILEPATH** は、スキーマ ファイルを書き込む場所を指定するトークンです。</span><span class="sxs-lookup"><span data-stu-id="55ae7-177">**FILEPATH** is a token that that specifies where to write the schema file.</span></span>
 
-<span data-ttu-id="dc116-176">スキーマ ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="dc116-176">This is an example of a schema file.</span></span>
+<span data-ttu-id="55ae7-178">スキーマ ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-178">This is an example of a schema file.</span></span>
 
 ```xml
 <PriInfo>
@@ -539,16 +539,16 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 </PriInfo>
 ```
 
-## <a name="47versionmajorvma-is-deprecated"></a><span data-ttu-id="dc116-177">&#47;VersionMajor(vma) は非推奨</span><span class="sxs-lookup"><span data-stu-id="dc116-177">&#47;VersionMajor(vma) is deprecated</span></span>
+## <a name="47versionmajorvma-is-deprecated"></a><span data-ttu-id="55ae7-179">&#47;VersionMajor(vma) は非推奨</span><span class="sxs-lookup"><span data-stu-id="55ae7-179">&#47;VersionMajor(vma) is deprecated</span></span>
 
-<span data-ttu-id="dc116-178">メジャー バージョン (/vma) オプション (`new` コマンド用) は推奨されなくなり、これを使用すると次の警告メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="dc116-178">The major version (/vma) option (for the `new` command) is deprecated, and using it results in this warning message.</span></span>
+<span data-ttu-id="55ae7-180">メジャー バージョン (/vma) オプション (`new` コマンド用) は推奨されなくなり、これを使用すると次の警告メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae7-180">The major version (/vma) option (for the `new` command) is deprecated, and using it results in this warning message.</span></span>
 
 ```console
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 
-<span data-ttu-id="dc116-179">メジャー バージョン番号を指定するには、構成ファイルで [resources@majorVersion](makepri-exe-configuration.md) 属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="dc116-179">To provide the major version number, use the [resources@majorVersion](makepri-exe-configuration.md) attribute in your configuration file.</span></span>
+<span data-ttu-id="55ae7-181">メジャー バージョン番号を指定するには、構成ファイルで [resources@majorVersion](makepri-exe-configuration.md) 属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae7-181">To provide the major version number, use the [resources@majorVersion](makepri-exe-configuration.md) attribute in your configuration file.</span></span>
 
-## <a name="related-topics"></a><span data-ttu-id="dc116-180">関連トピック</span><span class="sxs-lookup"><span data-stu-id="dc116-180">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="55ae7-182">関連トピック</span><span class="sxs-lookup"><span data-stu-id="55ae7-182">Related topics</span></span>
 
-* [<span data-ttu-id="dc116-181">MakePri.exe</span><span class="sxs-lookup"><span data-stu-id="dc116-181">MakePri.exe</span></span>](compile-resources-manually-with-makepri.md)
+* [<span data-ttu-id="55ae7-183">MakePri.exe</span><span class="sxs-lookup"><span data-stu-id="55ae7-183">MakePri.exe</span></span>](compile-resources-manually-with-makepri.md)
