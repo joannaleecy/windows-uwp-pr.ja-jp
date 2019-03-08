@@ -8,26 +8,26 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 01db596d7cb866d568000eff85254c3f5d668398
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927585"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655817"
 ---
 # <a name="gameclipsserviceerrorresponse-json"></a>GameClipsServiceErrorResponse (JSON)
-/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答のオプションの一部/uri 形式/{gameClipUriType} API です。 
+/Users/{ownerId} {scid}/scids//clips/{gameClipId} への応答のオプションの一部と uri の形式/{gameClipUriType} API。 
 <a id="ID4EN"></a>
 
  
 ## <a name="gameclipsserviceerrorresponse"></a>GameClipsServiceErrorResponse
  
-GameClipsServiceErrorResponse オブジェクトでは、次仕様があります。
+GameClipsServiceErrorResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>errorSource</b>| string| エラーの発生元です。| 
-| <b>errorResponseCode</b>| 32 ビット符号付き整数| (Null にすることができます) エラーに関連付けられたコードです。| 
-| <b>エラー メッセージ</b>| string| エラーに関する詳細を追加します。| 
+| <b>errorSource</b>| string| エラーのソース。| 
+| <b>errorResponseCode</b>| 32 ビット符号付き整数| (Null にすることができます)、エラーに関連付けられているコードです。| 
+| <b>errorMessage</b>| string| エラーの詳細を追加します。| 
   
 <a id="ID4ECC"></a>
 
@@ -39,6 +39,6 @@ GameClipsServiceErrorResponse オブジェクトでは、次仕様がありま�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

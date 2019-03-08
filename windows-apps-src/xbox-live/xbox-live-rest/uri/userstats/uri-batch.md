@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e8ea66b8d59ad7bd415626f218e0b7f49093f00
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945663"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655057"
 ---
 # <a name="batch"></a>/batch
-複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
+プレーヤーの統計情報を複数の複雑なバッチ要求を複数のタイトルにアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
   
 <a id="ID4EV"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST](uri-batchpost.md)
+[投稿](uri-batchpost.md)
 
-&nbsp;&nbsp;POST メソッドは、複数のタイトルに複数のプレイヤーの統計情報の複雑なバッチ要求の GET メソッドとして機能します。
+&nbsp;&nbsp;複数のタイトル、プレーヤーの統計情報を複数の複雑なバッチ要求の GET メソッドとして機能するメソッドを投稿します。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8945663"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー統計 URI](atoc-reference-userstats.md)
+[ユーザーの統計情報の Uri](atoc-reference-userstats.md)
 
    

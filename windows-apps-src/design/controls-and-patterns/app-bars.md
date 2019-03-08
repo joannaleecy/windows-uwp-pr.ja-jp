@@ -1,12 +1,12 @@
 ---
-Description: Command bars give users easy access to your app's most common tasks.
+Description: コマンド バーを使うと、ユーザーはアプリの最も一般的なタスクに簡単にアクセスできます。
 title: コマンド バー
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 pm-contact: yulikl
 design-contact: ksulliv
@@ -14,17 +14,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d2a7d34f00d40429863f08ffe6a9c34222daa32
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050029"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649307"
 ---
 # <a name="command-bar"></a>コマンド バー
 
 コマンド バーを使うと、ユーザーはアプリの最も一般的なタスクに簡単にアクセスできます。 コマンド バーを使うと、アプリ レベルまたはページに固有のコマンドにアクセスできます。これは、ナビゲーション パターンと共に使用することもできます。
 
-> **重要な API**: [CommandBar クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)、[AppBarButton クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)、[AppBarSeparator クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+> **重要な Api**:[コマンド バー クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)、 [AppBarButton クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、 [AppBarToggleButton クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)、 [AppBarSeparator クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ![アイコンを含むコマンド バーの例](images/controls_appbar_icons.png)
 
@@ -44,8 +44,8 @@ CommandBar コントロールは、汎用的で柔軟、軽量なコントロー
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/CommandBar">アプリを開き、CommandBar の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -61,7 +61,7 @@ Windows Phone の Outlook カレンダーのコマンド バーです。
 
 ## <a name="anatomy"></a>構造
 
-既定では、コマンド バーには、一連のアイコン ボタンとオプションの [その他] ボタン (省略記号の \[•••\]) が表示されます。 後で示すコード例を使って作成されたコマンド バーを次に示します。 コマンド バーは、閉じたコンパクトな状態で表示されます。
+既定で、コマンド バーにアイコンのボタンと、省略可能な「詳細」ボタンの省略記号によって表される行が表示されます\[•\]します。 後で示すコード例を使って作成されたコマンド バーを次に示します。 コマンド バーは、閉じたコンパクトな状態で表示されます。
 
 ![閉じたコマンド バー](images/command-bar-compact.png)
 
@@ -76,7 +76,7 @@ Windows Phone の Outlook カレンダーのコマンド バーです。
 コマンド バーは、4 つの主な領域に分かれています。
 - コンテンツ領域はバーの左側に配置されます。 これは、[Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティが指定されている場合に表示されます。
 - 基本コマンド領域はバーの右側に配置されます。 これは、[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) プロパティが指定されている場合に表示されます。  
-- [その他] （\[•••\]） ボタンはバーの右側に表示されます。 [その他] （\[•••\]） ボタンを押すと、プライマリ コマンドのラベルが表示され、セカンダリ コマンドが存在する場合はオーバーフロー メニューが開きます。 このボタンは、プライマリ コマンド ラベルもセカンダリ ラベルもない場合には表示されません。 既定の動作を変更するには、[OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) プロパティを使います。
+- See 以上" \[•\]ボタン バーの右側に表示します。 See 以上"キーを押して\[•\] primary コマンドのラベルし、セカンダリ コマンドがある場合は、オーバーフロー メニューを開き、ボタンが表示されます。 このボタンは、プライマリ コマンド ラベルもセカンダリ ラベルもない場合には表示されません。 既定の動作を変更するには、[OverflowButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) プロパティを使います。
 - オーバーフロー メニューは、コマンド バーが開いていて、[SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) プロパティが指定されている場合にのみ表示されます。 スペースが限られている場合に、プライマリ コマンドは SecondaryCommands 領域に移動されます。 既定の動作を変更するには、[IsDynamicOverflowEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.isdynamicoverflowenabled.aspx) プロパティを使います。
 
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.flowdirection.aspx) が **RightToLeft** のときは、レイアウトが逆になります。
@@ -106,7 +106,7 @@ Windows Phone の Outlook カレンダーのコマンド バーです。
 ```
 
 ## <a name="commands-and-content"></a>コマンドとコンテンツ
-CommandBar コントロールには [PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)、[SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)、[Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) の 3 つのプロパティがあり、コマンドとコンテンツを追加するために使うことができます。
+コマンド バー コントロールには、コマンドとコンテンツを追加する際、3 つのプロパティがあります。[PrimaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)、 [SecondaryCommands](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)、および[コンテンツ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)します。
 
 
 ### <a name="commands"></a>コマンド
@@ -121,8 +121,8 @@ CommandBar コントロールには [PrimaryCommands](https://msdn.microsoft.com
 
 必要に応じて、プログラムを使って PrimaryCommands と SecondaryCommands の間でコマンドを移動できます。
 
-- *複数のページで一貫して表示されるコマンドがある場合は、一貫した場所にそのコマンドを配置することをお勧めします。*
-- *また、[Accept] （承諾）、[Yes] （はい）、[OK] （OK） コマンドは、[Reject] （拒否）、[No] （いいえ）、[Cancel] （キャンセル） コマンドの左に配置することをお勧めします。 一貫性があることで、ユーザーは安心してシステム内を移動でき、アプリのナビゲーションに関する知識をさまざまなアプリで利用することができます。*
+- *ページ全体で一貫して表示されるコマンドがある場合は、一貫性のある場所にそのコマンドを保持することをお勧めします。*
+- *はい、承諾を配置することをお勧めし、左側に [ok] コマンドの拒否、いいえ、およびキャンセルします。一貫性は、システム内を移動できるという確信をユーザーに付与され、アプリへのアプリのナビゲーションの知識を転送できます。*
 
 ### <a name="app-bar-buttons"></a>アプリ バーのボタン
 
@@ -179,7 +179,7 @@ XAML 要素をコンテンツ領域に追加するには、**Content** プロパ
 
 コマンド バーは、開いたり閉じたりできます。 開いた状態の場合、プライマリ コマンド ボタンはテキスト ラベル付きで表示され、セカンダリ コマンドが存在するときはオーバーフロー メニューが開きます。
 
-ユーザーは、[その他] （\[•••\]） ボタンを押して状態を切り替えることができます。 プログラムで切り替えるには、[IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) プロパティを設定します。 
+ユーザーは、キーを押して、「参照」これらの状態を切り替えることができます\[•\]ボタンをクリックします。 プログラムで切り替えるには、[IsOpen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) プロパティを設定します。 
 
 [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[Opened](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[Closing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx)、[Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) の各イベントを使うと、コマンド バーの開閉に対応できます。  
 - Opening イベントと Closing イベントが発生するのは、切り替えアニメーションの開始前です。
@@ -214,16 +214,16 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="issticky"></a>IsSticky
 
-コマンド バーが開いているときにユーザーがアプリの他の部分とやり取りすると、コマンド バーは自動的に閉じます。 これは*簡易非表示*と呼ばれます。 簡易非表示動作を制御するには、[IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) プロパティを設定します。 `IsSticky="true"` の場合、ユーザーが [その他] （\[•••\]） ボタンを押すか、オーバーフロー メニューから項目を選ぶまで、バーは開いたままになります。 
+コマンド バーが開いているときにユーザーがアプリの他の部分とやり取りすると、コマンド バーは自動的に閉じます。 これは*簡易非表示*と呼ばれます。 簡易非表示動作を制御するには、[IsSticky](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) プロパティを設定します。 ときに`IsSticky="true"`、ユーザーは、「参照」を押すまで、バーが開いたまま\[•\]ボタンまたはオーバーフロー メニューから項目を選択します。 
 
-固定のコマンド バーは、簡易非表示に関してユーザーが期待する動作と一致しないため、使わないことをお勧めします。
+固定のコマンド バーは、簡易非表示に関してユーザーが期待する動作と一致しないため、使わないようにすることをお勧めします。
 
 ### <a name="display-mode"></a>表示モード
 
 コマンド バーが閉じた状態でどのように表示されるか制御するには、[ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) プロパティを設定します。 3 つのクローズド表示モードから選ぶことができます。
-- **Compact**: 既定のモードです。 コンテンツ、プライマリ コマンドのアイコン (ラベルなし)、[その他] （\[•••\]） ボタンが表示されます。
-- **Minimal**: [その他] （\[•••\]） ボタンとして機能する細いバーのみが表示されます。 ユーザーはバーの任意の場所を押してバーを開くことができます。
-- **Hidden**: コマンド バーを閉じたとき、コマンド バーは表示されません。 このモードは、インライン コマンド バーでコンテキスト依存コマンドを表示するときに便利な場合があります。 この場合は、コマンド バーをプログラムで開く必要があります。この操作を行うには、**IsOpen** プロパティを設定するか、ClosedDisplayMode を **Minimal** または **Compact** に変更します。
+- **Compact**:既定のモード。 コンテンツ、primary コマンド アイコン、ラベルがない場合、「参照」が詳細を示しています。 \[•\]ボタンをクリックします。
+- **最小**:示していますが、「詳細」としてのみ、細いバーを動作\[•\]ボタンをクリックします。 ユーザーはバーの任意の場所を押してバーを開くことができます。
+- **非表示に**:閉じているときは、コマンド バーは表示されません。 このモードは、インライン コマンド バーでコンテキスト依存コマンドを表示するときに便利な場合があります。 この場合は、コマンド バーをプログラムで開く必要があります。この操作を行うには、**IsOpen** プロパティを設定するか、ClosedDisplayMode を **Minimal** または **Compact** に変更します。
 
 以下では、コマンド バーを使って [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) に単純な書式設定コマンドを保持しています。 編集ボックスにフォーカスがないときには、書式設定コマンドが煩わしくないように非表示にします。 編集ボックスを使っているときは、コマンド バーの ClosedDisplayMode を Compact に変更して書式設定コマンドを表示します。
 
@@ -272,14 +272,14 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 
 ![アプリ バーの配置の例 2](images/AppbarGuidelines_Placement2.png)
 
->**タッチ デバイス**: タッチ キーボード、つまりソフト入力パネル (SIP) が表示されているときに、コマンド バーをユーザーに対して表示したままにする必要がある場合、コマンド バーをページの [BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx) プロパティに割り当てると、SIP の表示中はコマンド バーが移動して表示されたままになります。 それ以外の場合は、コマンド バーをインラインおよびアプリのコンテンツに対して相対的に配置します。
+>**デバイスのタッチ**:かどうかは、コマンド バーがユーザーに表示する必要がありますままタッチ キーボード、またはソフト入力パネル (SIP) は、コマンド バーを割り当てることが表示されたら、[は BottomAppBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.bottomappbar.aspx)ページとそのプロパティは、SIP が存在する場合に表示されたままに移動. それ以外の場合は、コマンド バーをインラインおよびアプリのコンテンツに対して相対的に配置します。
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
-- [XAML コマンド実行のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
+- [コマンド実行の XAML サンプル](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>関連記事
 
 * [UWP アプリのコマンド設計の基本](../basics/commanding-basics.md)
-* [CommandBar クラス](https://msdn.microsoft.com/library/windows/apps/dn279427)
+* [コマンド バー クラス](https://msdn.microsoft.com/library/windows/apps/dn279427)

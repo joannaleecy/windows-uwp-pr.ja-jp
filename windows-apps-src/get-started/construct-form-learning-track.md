@@ -7,15 +7,15 @@ keywords: 概要, uwp, windows 10, 学習トラック, レイアウト, フォ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058533"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656447"
 ---
 # <a name="create-and-customize-a-form"></a>フォームを作成してカスタマイズする
 
-ユーザーが大量の情報を入力する必要のあるアプリを作成している場合は、ユーザーが入力するフォームが必要になる可能性があります。この記事では、利便性と信頼性の高いフォームを作成するために知っておく必要のあることについて説明します。
+ユーザーは大量の情報の入力を必要とするアプリを作成する場合は、記入するフォームを作成する必要あります可能性があります。この記事が表示されますが便利で堅牢なフォームを作成するために把握する必要があります。
 
 これはチュートリアルではありません。 チュートリアルが必要な場合は、「[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)」を参照してください。このチュートリアルでは、手順を説明したガイド付きのエクスペリエンスが提供されます。
 
@@ -45,9 +45,9 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="what-goes-in-a-form"></a>フォームに含めるもの
 
-各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、追加のオプションの基本的なリスト – 外観やしくみを理解するために十分なに関するすべての情報を読み取る必要はありません。
+各種の [XAML コントロール](../design/controls-and-patterns/controls-and-events-intro.md) を使用してフォームに入力する必要があります。 XAML コントロールは使い慣れているかもしれませんが、思い出す必要がある場合は、自由に目を通してください。 特に、ユーザーがテキストを入力するか、または値の一覧から選択できるようにするコントロールが必要になります。 これは、追加のオプションの基本のリスト: に関すること、すべて、外観し、そのしくみを理解するために十分なだけを読み取る必要はありません。
 
-* [TextBox](../design/controls-and-patterns/text-box.md)では、アプリにユーザーがテキストを入力できます。
+* [テキスト ボックス](../design/controls-and-patterns/text-box.md)により、アプリにユーザーがテキストを入力します。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) では、ユーザーが 2 つのオプションから選択できます。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) では、ユーザーが日付値を選択できます。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) では、ユーザーが時刻値を選択できます。
@@ -133,7 +133,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 ## <a name="going-further"></a>追加情報
 
-ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻ってがある場合、新しい UI 機能を追加して、ユーザー エクスペリエンスを絞り込むフォームの実験し、リンクしたドキュメントです。 詳細なレイアウト機能を使ってステップ バイ ステップのガイダンスを設定する場合、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)をご覧ください。
+ここではフォームを作成しましたが、レイアウトとコントロールの概念は、作成する可能性のあるすべての XAML UI で適用可能です。 自由に戻って、ドキュメントをリンクしたし、フォームが新しい UI 機能を追加して、ユーザー エクスペリエンスをさらに改良を実験できます。 ステップ バイ ステップ ガイドを通じてより詳細なレイアウト機能を実行する場合を参照してください、[アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md)
 
 また、フォームは真空に存在する必要はありません。一歩進んで、自分のフォームを[マスター/詳細パターン](../design/controls-and-patterns/master-details.md)または[ピボット コントロール](../design/controls-and-patterns/pivot.md)に組み込むことができます。 または、自分のフォームで分離コードを使用する場合は、[イベントの概要](../xaml-platform/events-and-routed-events-overview.md)を参照して作業を開始することをお勧めします。
 
@@ -145,7 +145,7 @@ UWP には、アプリに追加して構成することができる明示的な�
 
 | API | 説明 |
 |------|---------------|
-| [フォームに役立つコントロール](../design/controls-and-patterns/forms.md#input-controls) | フォームを作成するために役立つ入力コントロールの一覧と、それを使用する場所に関する基本的なガイダンスです。 |
+| [コントロールがフォームに役立ちます](../design/controls-and-patterns/forms.md#input-controls) | フォームを作成するために役立つ入力コントロールの一覧と、それを使用する場所に関する基本的なガイダンスです。 |
 | [グリッド](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 複数行および段組レイアウトで要素を配置するためのパネルです。 |
 | [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | その他の要素とパネルの境界を基準にして項目を配置するためのパネルです。 |
 | [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | 単一の水平線または垂直線に要素を配置するためのパネルです。 |
@@ -156,14 +156,14 @@ UWP には、アプリに追加して構成することができる明示的な�
 | トピック | 説明 |
 |-------|----------------|
 | [アクセシビリティの概要](../design/accessibility/accessibility-overview.md) | アプリでのアクセシビリティ オプションの広範囲にわたる概要です。 |
-| [アクセシビリティのチェック リスト](../design/accessibility/accessibility-checklist.md) | アプリがアクセシビリティの基準を満たしていることを確認するための実用的なチェックリストです。 |
+| [ユーザー補助のチェックリスト](../design/accessibility/accessibility-checklist.md) | アプリがアクセシビリティの基準を満たしていることを確認するための実用的なチェックリストです。 |
 | [イベントの概要](../xaml-platform/events-and-routed-events-overview.md) | UI 操作を処理するイベントの追加と構築に関する詳細です。 |
 | [フォーム](../design/controls-and-patterns/forms.md) | フォームを作成するための全体的なガイダンスです。 |
 | [レイアウト パネル](../design/layout/layout-panels.md) | レイアウト パネルの種類とそれらを使用する場所に関する概要を示します。 |
 | [マスター/詳細パターン](../design/controls-and-patterns/master-details.md) | 1 つまたは複数のフォームの周囲に実装できる設計パターンです。 |
-| [ピボット コントロール](../design/controls-and-patterns/pivot.md) | 1 つまたは複数のフォームを含めることができるコントロールです。 |
+| [Pivot コントロール](../design/controls-and-patterns/pivot.md) | 1 つまたは複数のフォームを含めることができるコントロールです。 |
 | [レスポンシブ デザイン](../design/layout/responsive-design.md) | 大規模なレスポンシブ デザインの原則の概要です。 | 
-| [XAML でのレスポンシブ レイアウト](../design/layout/layouts-with-xaml.md) | レスポンシブ デザインの表示状態とその他の実装に関する具体的な情報です。 |
+| [XAML で応答性の高いレイアウト](../design/layout/layouts-with-xaml.md) | レスポンシブ デザインの表示状態とその他の実装に関する具体的な情報です。 |
 | [レスポンシブ デザインの画面サイズ](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | レスポンシブ レイアウトの対象とする画面サイズに関するガイダンスです。 |
 
 ## <a name="useful-code-samples"></a>役立つコード サンプル
@@ -173,4 +173,4 @@ UWP には、アプリに追加して構成することができる明示的な�
 | [アダプティブ レイアウトのチュートリアル](../design/basics/xaml-basics-adaptive-layout.md) | アダプティブ レイアウトやレスポンシブ デザインの手順を説明したガイド付きエクスペリエンスです。 | 
 | [顧客注文データベース](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | マルチページのエンタープライズのサンプルで、レイアウトとフォームの動作を確認してください。 |
 | [XAML コントロール ギャラリー](https://github.com/Microsoft/Xaml-Controls-Gallery) | 一部の XAML コントロール、およびそれらの実装方法を参照してください。 |
-| [その他のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで **[コントロール、レイアウト、テキスト]** を選択し、関連するコード サンプルを参照してください。 |
+| [追加のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで **[コントロール、レイアウト、テキスト]** を選択し、関連するコード サンプルを参照してください。 |

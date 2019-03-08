@@ -1,19 +1,19 @@
 ---
-title: UWP を開発するときに Xbox One で Fiddler を使用する方法
+title: UWP を開発するときに、Xbox One で Fiddler を使用する方法
 description: フリーウェアの Fiddler ツールを使って、UWP Xbox One 開発機でのネットワーク トラフィックを確認する方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
 ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046728"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652227"
 ---
-# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに Xbox One で Fiddler を使用する方法
+# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>UWP を開発するときに、Xbox One で Fiddler を使用する方法
 
 Fiddler は、Xbox One 開発機とインターネットの間のすべての HTTP および HTTPS トラフィックをログに記録する Web デバッグ プロキシです。 Fiddler を使って、Xbox サービスと証明書利用者 Web サービスとの間のトラフィックをログに記録し、Web サービスの呼び出しを確認してデバッグします。 
 
@@ -35,11 +35,11 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
   | 設定           | 推奨値                |
   | ----              | ----                           |
   | 名前              | FiddlerProxy                   |
-  | グループ             | *値なし* |
-  | プロファイル           | すべて                            |
-  | 有効           | はい                            |
-  | 操作            | 許可                          |
-  | 優先          | いいえ                             |
+  | グループ             | *値はありません。* |
+  | Profile           | すべての                            |
+  | 有効           | 〇                            |
+  | アクション            | 許可                          |
+  | 優先          | X                             |
   | プログラム           | *Fiddler.exe へのパス*          |
   | ローカル アドレス      | 任意                            |
   | リモート アドレス     | 任意                            |
@@ -63,7 +63,7 @@ Fiddler は、コンソールで報告されるネットワーク ステータ�
 2. デスクトップにエクスポートした Fiddler のルート証明書を参照します。 
 3. Fiddler を実行している開発用 PC の IP アドレスまたはホスト名を入力します。
 4. Fiddler がリッスンしているポート番号 (既定では、Fiddler はポート 8888 を使用) を入力します。 
-5. **[Enable]** をクリックします。 これにより、開発キットが再起動します。
+5. **[有効]** をクリックします。 これにより、開発キットが再起動します。
 
 ### <a name="to-stop-using-fiddler"></a>Fiddler の使用を停止するには
 インターネットへのプロキシとしての Fiddler の使用を停止 (し、Fiddler による開発機のすべてのネットワーク トラフィックのトレースを停止) するには、次の操作を行います。

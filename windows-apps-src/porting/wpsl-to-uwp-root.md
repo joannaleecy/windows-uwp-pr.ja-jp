@@ -1,37 +1,37 @@
 ---
-description: WindowsPhone Silverlight アプリの開発者にいる場合は、windows 10 へに、移行でのスキル セットとソース コードの優れた使用を活用できます。
-title: WindowsPhone Silverlight から UWP への移行
+description: 場合は、開発者、Windows Phone Silverlight アプリである Windows 10 への移行で、スキル セットと、ソース コードの優れた使用を行うことができます。
+title: Windows Phone Silverlight から UWP への移行します。
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c644e53ec0126edf418ead573e50653e8cb1cf0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045215"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649937"
 ---
-#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>WindowsPhone Silverlight から UWP への移行
+#  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Windows Phone Silverlight から UWP への移行します。
 
 
-WindowsPhone Silverlight アプリの開発者にいる場合は、windows 10 へに、移行でのスキル セットとソース コードの優れた使用を活用できます。 Windows 10 では、ユニバーサル Windows プラットフォーム (UWP) アプリは、これは、お客様がすべての種類のデバイスにインストールできる 1 つのアプリ パッケージを作成できます。 Windows 10 の詳細については、UWP アプリ、およびアダプティブ コードとアダプティブ UI でこの移植ガイドでは、およびこの概念には、[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)が参照してください。
+場合は、開発者、Windows Phone Silverlight アプリである Windows 10 への移行で、スキル セットと、ソース コードの優れた使用を行うことができます。 Windows 10 で、ユニバーサル Windows プラットフォーム (UWP) アプリは、これは、顧客がすべての種類のデバイスにインストールできる 1 つのアプリ パッケージを作成できます。 Windows 10、UWP アプリ、およびアダプティブ コードとこの移植のガイドで説明アダプティブ UI の概念の詳細については、次を参照してください。、[ユニバーサル Windows プラットフォーム (UWP) アプリに関するガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)します。
 
-Windows 10 アプリに WindowsPhone Silverlight アプリを移植するときことができますいた[Windows Phone 8.1 で導入された](https://msdn.microsoft.com/library/windows/apps/dn632424)、モバイル機能キャッチし、留まらないアプリ モデルや UI フレームワークは、ユニバーサル Windows プラットフォーム (UWP) を使用します。すべての windows 10 デバイス間では、ユニバーサルです。 これにより、1 つのコード ベースから、1 つのアプリ パッケージで、PC、タブレット、電話、その他の多くの種類のデバイスをサポートできます。 また、これによりアプリの潜在顧客が増加し、共有データ、購入コンシューマブルなどの可能性が高まります。 新機能について詳しくは、[新しい windows 10 の開発者向け新機能](https://dev.windows.com/getstarted/whats-new-windows-10)を参照してください。
+Windows 10 アプリを Windows Phone Silverlight アプリを移植するときに、遅れされてモバイル機能ができます[Windows Phone 8.1 で導入された](https://msdn.microsoft.com/library/windows/apps/dn632424)を画していますユニバーサル Windows プラットフォーム (UWP) を使用するようにアプリが、モデルと UI フレームワークは、すべての Windows 10 デバイスでユニバーサル。 これにより、1 つのコード ベースから、1 つのアプリ パッケージで、PC、タブレット、電話、その他の多くの種類のデバイスをサポートできます。 また、これによりアプリの潜在顧客が増加し、共有データ、購入コンシューマブルなどの可能性が高まります。 新機能に関する詳細については、次を参照してください。 [Windows 10 の開発者向け新機能については](https://dev.windows.com/getstarted/whats-new-windows-10)します。
 
-場合は、WindowsPhone Silverlight バージョンのアプリと windows 10 バージョンの両方できるユーザーに同時にします。
+場合は、Windows Phone の Silverlight バージョンのアプリと Windows 10 バージョンの両方が使用可能顧客と同時にします。
 
-**注:** このガイドは windows 10 に WindowsPhone Silverlight アプリを手動で移植するために設計されています。 このガイドの情報を使って、アプリを移植できるだけではありません。移植プロセス自動化支援用に提供された **Mobilize.NET の Silverlight Bridge** の開発者プレビューを試すこともできます。 このツールは、アプリのソース コードを分析し、UWP の相当する Api と WindowsPhone Silverlight コントロールへの参照を変換します。 このツールは、まだ開発者プレビューの段階にあるため、すべての変換シナリオを扱えるとは限りません。 ただし、ほとんどの開発者はこのツールを使い始めることで、時間と労力をいくらかは節約できます。 開発者プレビューを試すには、[Mobilize.NET の Web サイト](https://go.microsoft.com/fwlink/p/?LinkId=624546)をご覧ください。
+**注**  このガイドを手動で Windows 10、Windows Phone Silverlight アプリを移植するように設計されています。 このガイドの情報を使って、アプリを移植できるだけではありません。移植プロセス自動化支援用に提供された **Mobilize.NET の Silverlight Bridge** の開発者プレビューを試すこともできます。 このツールは、アプリのソース コードを分析し、UWP の対応する Windows Phone の Silverlight コントロールへの参照と Api を変換します。 このツールは、まだ開発者プレビューの段階にあるため、すべての変換シナリオを扱えるとは限りません。 ただし、ほとんどの開発者はこのツールを使い始めることで、時間と労力をいくらかは節約できます。 開発者プレビューを試すには、[Mobilize.NET の Web サイト](https://go.microsoft.com/fwlink/p/?LinkId=624546)をご覧ください。
 
 ## <a name="xaml-and-net-or-html"></a>XAML と .NET、または HTML
 
-WindowsPhone Silverlight には、Silverlight 4.0 では、.NET Framework のバージョンと UWP Api の小さなサブセットに対してプログラミングに基づく XAML UI フレームワークがあります。 WindowsPhone Silverlight アプリで Extensible Application Markup Language (XAML) を使用したため可能性は高く、ソース コードの大半は、ほとんどの知識と経験を転送するために XAML で、windows 10 のバージョンの好みがされることとソフトウェアのパターンを使用します。 UI のマークアップと設計であっても容易に移植できます。 マネージ API、XAML マークアップ、UI フレームワーク、ツールはすべて使い慣れたものであり、UWP アプリでは、XAML と共に C++、C#、Visual Basic を使うことができます。 若干の課題が発生するとしても、そのプロセスの相対的な容易さに驚くはずです。
+Windows Phone Silverlight では、Silverlight 4.0 と .NET Framework のバージョンと UWP Api の小さなサブセットに対してプログラムに基づいて XAML の UI フレームワークがあります。 XAML は、Windows 10 バージョンを選択したのでする知識と経験のほとんどは転送が、ソース コードの多くは高くなりますので、Windows Phone Silverlight アプリでは、Extensible Application Markup Language (XAML) を使用してソフトウェア パターンを使用します。 UI のマークアップと設計であっても容易に移植できます。 マネージ API、XAML マークアップ、UI フレームワーク、ツールはすべて使い慣れたものであり、UWP アプリでは、XAML と共に C++、C#、Visual Basic を使うことができます。 若干の課題が発生するとしても、そのプロセスの相対的な容易さに驚くはずです。
 
 「[C# または Visual Basic を使ったユニバーサル Windows プラットフォーム (UWP) アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/br229583)」をご覧ください。
 
-**注:** と .NET Framework より多く、Windows Phone ストア アプリは windows 10 をサポートします。 たとえば、windows 10 にはいくつかの System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、および system.net.sockets があります。 したがって、WindowsPhone Silverlight を移植し、.NET コードを単にコンパイルして、新しいプラットフォームで動作するにはできるようになりました。 「[名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」をご覧ください。
-Windows 10 アプリに、既にある .NET ソース コードを再コンパイルする別の優れた理由はことのメリットは .NET ネイティブを MSIL をネイティブに実行可能なマシン コードに変換する事前コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。
+**注**  Windows 10 を補って余りの .NET Framework、Windows Phone ストア アプリはサポートしています。 たとえば、Windows 10 では、いくつかの System.ServiceModel があります。\*名前空間と、System.Net、System.Net.NetworkInformation、および System.Net.Sockets です。 そのため、.NET コードをコンパイルして、新しいプラットフォームで動作だけであり、Windows Phone Silverlight に移植する絶好はようになりました。 「[名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」をご覧ください。
+Windows 10 アプリに既存の .NET ソース コードを再コンパイルするもう 1 つ優れている理由は、.NET ネイティブ コードから利点が得られますことを MSIL をネイティブ実行可能なマシン語コードに変換する先行コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。
 
 この移植ガイドでは XAML に重点を置いていますが、JavaScript 用 Windows ライブラリと共に、JavaScript、カスケード スタイル シート (CSS)、HTML5 を使って、同じ UWP API の多くを呼び出す機能的に同等のアプリを構築できます。 XAML と HTML の Windows ランタイム UI フレームワークは相互に異なりますが、いずれを選んでも一連のさまざまな Windows デバイスで汎用的に動作します。
 
@@ -55,9 +55,9 @@ Windows 10 アプリに、既にある .NET ソース コードを再コンパ�
 
 この移植ガイドでは、「[名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」も随時ご覧ください。 非常に簡単なマッピングが一般的な規則ですが、名前空間とクラス マッピング表にすべての例外が示されています。
 
-機能レベルでは、さいわいなことに、UWP でサポートされないものは非常にわずかです。 この移植ガイドの以降の部分では、自身のスキル セットとソース コードの大半を UWP アプリで有効に活用できます。 ただし、ここでは、使用して WindowsPhone Silverlight 機能のいくつかありますは UWP の相当要素です。
+機能レベルでは、さいわいなことに、UWP でサポートされないものは非常にわずかです。 この移植ガイドの以降の部分では、自身のスキル セットとソース コードの大半を UWP アプリで有効に活用できます。 しかし、ここではいくつかの Windows Phone Silverlight 機能可能性がありますを使用しているの UWP 相当するものはありません。
 
-| UWP に相当要素がない機能 | 機能に関する WindowsPhone Silverlight ドキュメント |
+| UWP に相当要素がない機能 | Windows Phone の Silverlight 機能のドキュメント |
 |----------------------------------------------|---------------------------------------------------------|
 | Microsoft XNA。 一般に、C++ を使った [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) に置き換えられます。 「[ゲームの開発](https://msdn.microsoft.com/library/windows/apps/hh452744)」と「[DirectX と XAML の相互運用機能](https://msdn.microsoft.com/library/windows/apps/hh825871)」をご覧ください。 | [XNA Framework クラス ライブラリ](https://msdn.microsoft.com/library/bb203940.aspx) | 
 |レンズ アプリ | [Windows Phone 8 のレンズ](https://msdn.microsoft.com/library/windows/apps/jj206990.aspx) |
@@ -66,28 +66,28 @@ Windows 10 アプリに、既にある .NET ソース コードを再コンパ�
 
 | トピック| 説明|
 |------|------------| 
-| [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md) | このトピックでは、UWP の相当する WindowsPhone Silverlight Api の包括的なマッピングを提供します。 |
-| [プロジェクトの移植](wpsl-to-uwp-porting-to-a-uwp-project.md) | 移植プロセスを始めるには、Visual Studio で新しい windows 10 プロジェクトを作成し、ファイルをコピーします。 |
+| [Namespace およびクラスのマッピング](wpsl-to-uwp-namespace-and-class-mappings.md) | このトピックでは、同等の UWP に Windows Phone Silverlight Api の包括的なマッピングを提供します。 |
+| [プロジェクトの移植](wpsl-to-uwp-porting-to-a-uwp-project.md) | 移植プロセスを始めるには、Visual Studio で新しい Windows 10 プロジェクトを作成し、ファイルをコピーします。 |
 | [トラブルシューティング](wpsl-to-uwp-troubleshooting.md) | この移植ガイドは最後まで読むことを強くお勧めしますが、早く先へ進んで、プロジェクトのビルドと実行の段階まで到達したいと思われるのも無理のないことです。 このために、重要でないコードに対してコメント アウトやスタブの挿入を行って一時的に先に進み、後でその部分に戻って対応することもできます。 このトピックには、トラブルシューティングの現象とその対処法を示す表が記載されており、以降のいくつかのトピックに示されている情報に代わるものではありませんが、この段階での作業に役立ちます。 以降のトピックを読み進む中で、いつでもこの表に戻って参考にすることができます。 |
-| [XAML と UI の移植](wpsl-to-uwp-porting-xaml-and-ui.md) | UWP アプリに非常に適切 WindowsPhone Silverlight からの宣言型 XAML マークアップの形式で UI を定義に変換されます。 システムのリソース キーの参照の更新、いくつかの要素型名の変更、"clr-namespace" から "using" への変更を行うことによって、大きなマークアップ セクションで互換性が得られることがわかります。 |
-| [入出力、デバイス、アプリ モデルの移植](wpsl-to-uwp-input-and-sensors.md) | デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。 また、データ処理を含むこともあります。 ただしこのコードは一般には、UI レイヤーまたはデータ レイヤーのいずれにも見なされません。 このコードには、振動コントローラー、加速度計、ジャイロスコープ、マイクとスピーカー (音声認識と音声合成で使います)、地理位置情報、およびタッチ、マウス、キーボード、ペンなどの入力モダリティとの統合が含まれます。 |
-| [ビジネス レイヤーとデータ レイヤーの移植](wpsl-to-uwp-business-and-data.md) | UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。 こうしたレイヤーのコードでは、オペレーティング システムと .NET Framework API (たとえば、バックグラウンド処理、場所、カメラ、ファイル システム、ネットワーク、その他のデータ アクセスなど) を呼び出します。 このようなコードの大半が [UWP アプリで利用可能であり](https://msdn.microsoft.com/library/windows/apps/br211369)、したがって変更なくコードの大半を移植できると考えられます。 |
+| [XAML と UI の移植](wpsl-to-uwp-porting-xaml-and-ui.md) | UWP アプリを Windows Phone Silverlight から非常に優れた UI を定義する宣言型の XAML マークアップの形式での実践に変換します。 システムのリソース キーの参照の更新、いくつかの要素型名の変更、"clr-namespace" から "using" への変更を行うことによって、大きなマークアップ セクションで互換性が得られることがわかります。 |
+| [I/O、デバイス、およびアプリのモデルの移植](wpsl-to-uwp-input-and-sensors.md) | デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。 また、データ処理を含むこともあります。 ただしこのコードは一般には、UI レイヤーまたはデータ レイヤーのいずれにも見なされません。 このコードには、振動コントローラー、加速度計、ジャイロスコープ、マイクとスピーカー (音声認識と音声合成で使います)、地理位置情報、およびタッチ、マウス、キーボード、ペンなどの入力モダリティとの統合が含まれます。 |
+| [ビジネス データおよびデータ層の移植](wpsl-to-uwp-business-and-data.md) | UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。 こうしたレイヤーのコードでは、オペレーティング システムと .NET Framework API (たとえば、バックグラウンド処理、場所、カメラ、ファイル システム、ネットワーク、その他のデータ アクセスなど) を呼び出します。 このようなコードの大半が [UWP アプリで利用可能であり](https://msdn.microsoft.com/library/windows/apps/br211369)、したがって変更なくコードの大半を移植できると考えられます。 |
 | [フォーム ファクターと UX の移植](wpsl-to-uwp-form-factors-and-ux.md) | Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。|
-|[ケース スタディ: Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | このトピックでは、非常に単純な WindowsPhone Silverlight アプリを Windows10UWP アプリの移植のケース スタディを示します。 Windows 10 ではできるパッケージを作成する 1 つのアプリをさまざまなデバイス、ユーザーがインストールできるし、このケース スタディで行うことです。 |
-| [ケース スタディ: Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | このケース スタディ- [bookstore1](wpsl-to-uwp-case-study-bookstore1.md)情報に基づいて作成: グループ化された**LongListSelector**内のデータを表示する WindowsPhone Silverlight アプリから始まります。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 |
+|[ケース スタディ:Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | このトピックでは、Windows 10 UWP アプリへの非常に単純な Windows Phone Silverlight アプリの移植のケース スタディを表示します。 Windows 10 ではパッケージを作成する 1 つのアプリをさまざまなデバイス、上に顧客をインストールし、このケース スタディでは何です。 |
+| [ケース スタディ:Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | このケース スタディ: 提供された情報に基づく[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md): グループ化されたデータを表示するアプリを Windows Phone Silverlight で始まる、 **LongListSelector**します。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 |
 
 ## <a name="related-topics"></a>関連トピック
 
 **ドキュメント**
-* [Windows 10 の開発者向けの最新情報](https://dev.windows.com/getstarted/whats-new-windows-10)
+* [Windows 10 の開発者向け新機能については](https://dev.windows.com/getstarted/whats-new-windows-10)
 * [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)
-* [C# または Visual Basic を使ったユニバーサル Windows プラットフォーム (UWP) アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/br229583)
+* [使用してユニバーサル Windows プラットフォーム (UWP) アプリのためのロードマップC#または Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
 * [Windows Phone 8 開発者にとっての選択肢](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
 
 **MSDN マガジンの記事**
-* [Visual Studio Magazine の「Windows Phone 8.1 における集約への大きな前進」に関する記事](https://go.microsoft.com/fwlink/p/?LinkID=398541)
+* [Visual Studio Magazine:Windows Phone 8.1:飛躍的に収束に進む](https://go.microsoft.com/fwlink/p/?LinkID=398541)
 
 **プレゼンテーション**
-* [Windows Phone から Windows8 へ Nokia 音楽の移行のストーリー](https://go.microsoft.com/fwlink/p/?LinkId=321521)
+* [Windows Phone から Windows 8 を Nokia 音楽を取り込むのストーリー](https://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 

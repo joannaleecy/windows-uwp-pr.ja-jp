@@ -4,14 +4,14 @@ title: iOS と UWP のアプリ開発方法の選択
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114668"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655787"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>iOS と UWP のアプリ開発方法の選択
 
@@ -46,7 +46,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
 既存の iOS アプリを使う場合、オプションが少し制限されます。 ただし、何も失われません。
 
--   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [iOS 用 Windows ブリッジ](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
     Project Islandwood とも呼ばれます。これはまだ開発中のツールで、Xcode プロジェクトを Visual Studio に直接インポートできます。 Objective-C コードは Visual Studio からビルドおよびデバッグできます。 プロジェクトでグラフィックス用に Cocos などのライブラリを使用している場合、これはアプリを迅速に移植するための便利な方法です。
 
@@ -54,7 +54,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     主要なビジネス ロジックが、Objective-C や Swift ではなく C++ で作成されている場合、そのコードを少し変更するだけでプロジェクトで使用できます。 そして、他の Windows でアプリと同様に、XAML を使って UI を定義し、必要に応じて C++ コードを呼び出すことができます。
 
--   [ANGLE を使った Windows での OpenGL ES の実行](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [角度を使用して、Windows での OpenGL ES の実行](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
     OpenGL ES 2.0 プロジェクトを移植する中間の手順で ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。
 
@@ -68,11 +68,11 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
     ゲーム作成環境。
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [チタン Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     クロスプラットフォームの作成環境。
 
--   [Cocos2D-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2d-x](https://go.microsoft.com/fwlink/p/?LinkID=320485)
 
     スプライト処理と物理モデリング用のクロスプラットフォームのコード ライブラリ。
 

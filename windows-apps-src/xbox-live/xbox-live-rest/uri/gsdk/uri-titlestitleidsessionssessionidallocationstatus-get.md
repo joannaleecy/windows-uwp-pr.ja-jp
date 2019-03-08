@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 793d634bc1e3dc431b3797759751afb6dfd9c00a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927722"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650857"
 ---
 # <a name="get-titlestitleidsessionssessionidallocationstatus"></a>GET (/titles/{titleId}/sessions/{sessionId}/allocationStatus)
-その sessionId で識別される sessionhost の割り当ての状態を返します。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+そのセッション Id で識別される sessionhost の割り当て状態を返します。 これらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [必要な要求ヘッダー](#ID4E4)
   * [必要な応答ヘッダー](#ID4EEB)
@@ -40,26 +40,26 @@ ms.locfileid: "8927722"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを持つ JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | 
-| description| 空の文字列 (左での下位互換性) を返します。| 
-| clusterId| 空の文字列 (左での下位互換性) を返します。| 
+| 説明| 空の文字列 (に対する、残りの下位互換性) を返します。| 
+| clusterId| 空の文字列 (に対する、残りの下位互換性) を返します。| 
 | ホスト名| セッション ホストの URL。| 
-| status| キューに入れ、満たされると、または中止されたことを示します。| 
+| status| キューに置かれた、満たされると、または中止されたいずれかを示します。| 
 | sessionHostId| セッション ホストの id。| 
-| sessionId| (割り当て時) に提供されるクライアント セッション id。| 
-| secureContext| セキュア デバイス アドレスです。| 
-| portMappings| インスタンスのポート マッピングします。| 
-| 地域| インスタンスの場所です。| 
-| ticketId| (左での下位互換性) の現在のセッション ID。| 
-| gameHostId| (左での下位互換性) 現在 sessionHostId します。| 
+| sessionId| (割り当て時) 提供されたクライアント セッション id です。| 
+| secureContext| セキュリティで保護されたデバイスのアドレス。| 
+| portMappings| インスタンスのポートのマッピング。| 
+| リージョン| インスタンスの場所。| 
+| TicketId| (左の下位互換性) 現在のセッション ID。| 
+| gameHostId| (左の下位互換性) 現在 sessionHostId します。| 
  
 <a id="ID4EGD"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp
@@ -100,11 +100,11 @@ ms.locfileid: "8927722"
  
 ### <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+タイトルがサービスへの呼び出しを再試行する必要がありますは、次の応答コードが受信したときにのみ。
  
    * 200-成功 
-   * 400-要求が無効なパラメーターが含まれています 
-   * 401: Unauthorized 
-   * 404-チケット ID、タイトル ID が無効であるか、または見つかりません。 
-   * 500-サーバーの予期しないエラー。 
+   * 400-無効なパラメーターが要求に含まれています 
+   * 401-権限がありません 
+   * 404-タイトル ID またはチケット ID が無効または見つかりません。 
+   * 500-予期しないサーバー エラー。 
     

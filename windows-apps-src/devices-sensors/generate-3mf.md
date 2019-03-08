@@ -1,5 +1,5 @@
 ---
-Description: Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API.
+Description: 3D Manufacturing Format (3MF) のファイルの種類の構造について説明し、その作成方法と Windows.Graphics.Printing3D API による操作について説明します。
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -7,14 +7,14 @@ title: 3MF パッケージの生成
 ms.assetid: 968d918e-ec02-42b5-b50f-7c175cc7921b
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048439"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653397"
 ---
 # <a name="generate-a-3mf-package"></a>3MF パッケージの生成
 
@@ -28,7 +28,7 @@ ms.locfileid: "9048439"
 
 3D Manufacturing Format (3MF) は、製造 (3D 印刷) 目的のために、XML を使って 3D モデルの外観と構造を記述するための規則のセットです。 3MF ではパーツ (必須なパーツとオプションのパーツがあります) のセットとそのリレーションシップを定義しています。そのねらいは 3D 製造デバイスのために必要なすべての情報を提供することです。 3MF に準拠したデータセットは .3mf 拡張子を持つファイルとして保存できます。
 
-Windows 10 の[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)クラス**Windows.Graphics.Printing3D**名前空間では、1 つの .3mf ファイルに似ています、その他のクラス ファイル内の特定の XML 要素にマップします。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、**Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](https://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
+Windows 10 で、 [ **Printing3D3MFPackage** ](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)クラス、 **Windows.Graphics.Printing3D**名前空間は、1 つ .3mf ファイルとする他のクラスのマップに似ています、ファイルの XML 要素を特定します。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、**Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](https://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -41,7 +41,7 @@ Windows 10 の[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/wind
 
 <!-- >**Note** We do not yet associate the **Printing3D3MFPackage** with its corresponding **Printing3DModel** object. Only after fleshing out the **Printing3DModel** with all of the information we wish to specify will we make that association (see [link]). -->
 
-## <a name="metadata"></a>Metadata
+## <a name="metadata"></a>メタデータ
 
 3MF ドキュメントのモデル パーツは、**Metadata** プロパティに保存される文字列のキー/値ペアの形式でメタデータを保持できます。 さまざまな定義済みの名前のメタデータがありますが、他のペアをパーツの拡張として追加することも可能です (詳しくは、「[3MF の仕様](https://3mf.io/what-is-3mf/3mf-specification/)」に記載されています)。 メタデータの処理方法の決定はパッケージの受信者 (3D 製造デバイス) に依存しますが、できるだけ多くの基本情報を 3MF パッケージに含めることが望ましい方法です。
 
@@ -78,16 +78,16 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 
 ### <a name="base-materials"></a>Base materials
 
-既定の素材の種類は **Base Material** です。これは **Color Material** 値 (下記を参照) と名前属性を持ちます。これは使う素材の*種類*を指定するために使います。
+既定の素材の種類は **Base Material** です。これは **Color Material** 値 (下記を参照) と名前属性を持ちます。これは使用する素材の*種類*を指定するために使用します。
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> 3D 製造デバイスは、利用可能な物理素材と、3MF に保存されている仮想素材要素のマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
+> 3D の製造デバイスでは、仮想の数量単価型の要素が、3MF に保存されている、使用可能な物理マテリアルのマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
 
 ### <a name="color-materials"></a>Color Materials
 
-**Color Materials** は **Base Materials** に似ていますが、名前は含まれません。 そのため、マシンが使用する素材の種類を指定できません。 色のデータのみを保持し、マシンが素材の種類を選択します (マシンがユーザーに選択を求める場合もあります)。 次のコードでは、以前のメソッドからの `colrMat` オブジェクトが使われています。
+**Color Materials** は **Base Materials** に似ていますが、名前は含まれません。 そのため、マシンが使用する素材の種類を指定できません。 色のデータのみを保持し、マシンが素材の種類を選択します (マシンがユーザーに選択を求める場合もあります)。 次のコードでは、以前のメソッドからの `colrMat` オブジェクトが使用されています。
 
 [!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
 
@@ -118,7 +118,7 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 
 ## <a name="components-and-build"></a>Component とビルド
 
-Component 構造体により、ユーザーは印刷可能な 3D モデルに複数のメッシュ オブジェクトを配置できます。 [**Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) オブジェクトには、1 つのメッシュと他のコンポーネントへの参照のリストが含まれています。 これは実際には、[**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) オブジェクトのリストです。 各 **Printing3DComponentWithMatrix** オブジェクトには **Printing3DComponent** が含まれ、また重要なことに、メッシュと **Printing3DComponent** に含まれるコンポーネントに適用される変換マトリックスが含まれます。
+Component 構造体により、ユーザーは印刷可能な 3D モデルに複数のメッシュ オブジェクトを配置できます。 [  **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) オブジェクトには、1 つのメッシュと他のコンポーネントへの参照のリストが含まれています。 これは実際には、[**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) オブジェクトのリストです。 各 **Printing3DComponentWithMatrix** オブジェクトには **Printing3DComponent** が含まれ、また重要なことに、メッシュと **Printing3DComponent** に含まれるコンポーネントに適用される変換マトリックスが含まれます。
 
 たとえば、自動車のモデルは、車のボディのメッシュを保持する、1 つの "ボディ" **Printing3DComponent** から構成されることができます。 この場合、"ボディ" コンポーネントには、4 つの異なる **Printing3DComponentWithMatrix** オブジェクトへの参照が含まれ、そのすべてが、"車輪" メッシュを持つ、同じ **Printing3DComponent** を参照し、4 つの異なる変換マトリックスを含みます (これにより、車輪を車のボディの 4 つの異なる位置にマッピングします)。 このシナリオでは、最終製品には合計 5 つのメッシュが含まれる場合でも、"ボディ" メッシュと "車輪" メッシュはそれぞれ 1 度だけ保存される必要があります。
 
@@ -139,8 +139,8 @@ Component 構造体により、ユーザーは印刷可能な 3D モデルに複
 
 ## <a name="related-topics"></a>関連トピック
 
-[アプリからの 3D 印刷](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
-[3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[アプリの 3D 印刷](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[3D 印刷 UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  

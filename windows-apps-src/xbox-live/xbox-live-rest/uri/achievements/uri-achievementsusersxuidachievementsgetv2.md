@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 720170e88808db7ef95b88896fbca4f1cda4a091
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115445"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655267"
 ---
 # <a name="get-usersxuidxuidachievements"></a>GET (/users/xuid({xuid})/achievements)
-タイトル、進行中のユーザーが持っているまたは、ユーザーがロックを解除するもので定義されている実績の一覧を取得します。 これらの Uri のドメインが`achievements.xboxlive.com`します。
+タイトル、進行中のユーザーがまたは、ユーザーがロックを解除するもので定義された実績の一覧を取得します。 これらの Uri のドメインが`achievements.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [クエリ文字列パラメーター](#ID4ECB)
-  * [Authorization](#ID4ENF)
+  * [承認](#ID4ENF)
   * [必要な要求ヘッダー](#ID4ESG)
-  * [オプションの要求ヘッダー](#ID4ESH)
+  * [省略可能な要求ヘッダー](#ID4ESH)
   * [要求本文](#ID4EIBAC)
   * [応答本文](#ID4ETBAC)
  
@@ -30,25 +30,25 @@ ms.locfileid: "9115445"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) が (リソース) にアクセスしているユーザーのです。 認証されたユーザーの XUID に一致する必要があります。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID)、ユーザーが (リソース) がアクセスされているのです。 認証されたユーザーの XUID に一致する必要があります。| 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-| パラメーター| 必須かどうか| 種類| 説明| 
+| パラメーター| 必須| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| <b>skipItems</b>| いいえ| 32 ビット符号付き整数| 特定の項目数後以降の項目を返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降では、4 番目の項目を取得します。 | 
-| <b>continuationToken</b>| いいえ| string| 特定の継続トークンから始まる項目を返します。 | 
-| <b>maxItems</b>| いいえ| 32 ビット符号付き整数| <b>SkipItems</b>と項目の範囲を返す<b>continuationToken</b>と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは<b>maxItems</b>が存在しないと、 <b>maxItems</b>より少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
-| <b>titleId</b>| いいえ| string| 返される結果のフィルター。 1 つまたは複数のコンマで区切られた、10 進数のタイトル id を受け取ります。| 
-| <b>unlockedOnly</b>| いいえ| ブール値| 返された結果をフィルター処理します。 場合は<b>true</b>に設定、ユーザーのロック解除した実績をのみが返さになります。 既定値は<b>false</b>。| 
-| <b>possibleOnly</b>| いいえ| ブール値| 返された結果をフィルター処理します。 場合<b>は true</b>に設定、使用可能なすべての結果がないロックされていないメタデータ - XMS から実績情報のみが返されます。 既定値は<b>false</b>。| 
-| <b>種類</b>| いいえ| string| 返される結果のフィルター。 「固定」または"Challenge"できます。 既定ではサポートされているすべての種類です。| 
-| <b>orderBy</b>| いいえ| string| 結果が返される順序を指定します。 「順序指定されていない」、「タイトル」、"UnlockTime"または"EndingSoon"を指定できます。 既定値は「順序なし」します。| 
+| <b>skipItems</b>| X| 32 ビット符号付き整数| 指定されたアイテム数の後に開始アイテムを返します。 たとえば、 <b>skipItems =「3」</b>項目を取得以降の 4 番目の項目を取得します。 | 
+| <b>continuationToken</b>| X| string| 指定された継続トークンで始まる項目を返します。 | 
+| <b>maxItems</b>| X| 32 ビット符号付き整数| 組み合わせて使用できるコレクションから返されるアイテムの最大数<b>skipItems</b>と<b>continuationToken</b>を項目の範囲を返します。 場合、サービスは、既定値を指定可能性があります<b>maxItems</b>が存在しないより少ないを返すことが<b>maxItems</b>結果の最後のページが返されていない場合でも、します。 | 
+| <b>titleId</b>| X| string| 返される結果をフィルターします。 1 つまたは複数のタイトルをコンマ区切りの 10 進識別子を受け取ります。| 
+| <b>unlockedOnly</b>| X| ブール値| 返される結果を返すフィルター。 場合設定<b>true</b>ユーザーのロックを解除する実績をのみを返すには。 既定値は<b>false</b>します。| 
+| <b>possibleOnly</b>| X| ブール値| 返される結果を返すフィルター。 場合に設定<b>true</b>、すべての可能な結果が返されますが、いないだけのメタデータのロックを解除 XMS から情報アチーブメントが獲得されました。 既定値は<b>false</b>します。| 
+| <b>型</b>| X| string| 返される結果をフィルターします。 "Persistent"または「チャレンジ」を指定できます。 既定ではサポートされているすべての型です。| 
+| <b>OrderBy</b>| X| string| 結果が返される順序を指定します。 「順不同」、"Title""UnlockTime"または"EndingSoon"を指定できます。 既定値は「順不同」。| 
   
 <a id="ID4ENF"></a>
 
@@ -57,27 +57,27 @@ ms.locfileid: "9115445"
  
 | 要求| 必須?| 説明| 不足している場合の動作| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| ユーザー| 呼び出し元が、承認された Xbox LIVE ユーザーです。| 呼び出し元は、Xbox LIVE で有効なユーザーをする必要があります。| 403 Forbidden| 
+| ユーザー| 呼び出し元は、Xbox LIVE 権限を持つユーザーです。| 呼び出し元は、Xbox LIVE の有効なユーザーである必要があります。| 403 許可されていません| 
   
 <a id="ID4ESG"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| タイプ| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash> です。&lt;token>"します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。| 
   
 <a id="ID4ESH"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| タイプ| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| <b>X RequestedServiceVersion</b>| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| <b>x xbl コントラクト バージョン</b>| 32 ビット符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
-| <b>同意言語</b>| string| 目的のロケールとフォールバック (FR-FR, fr、EN-GB、en 世界、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで、実績サービスは、一覧で動作します。 見つからない場合は、ユーザーの IP アドレスに由来するユーザー トークンで定義されている場所と一致しようとします。 まだ一致するローカライズされた文字列はありません。 が見つかった場合、タイトル開発者/発行元によって提供される既定の文字列を使用します。 | 
+| <b>X RequestedServiceVersion</b>| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。［既定値］:1. | 
+| <b>x-xbl-contract-version</b>| 32 ビット符号なし整数| 存在する場合、2 に設定すると、この API の V2 バージョンが使用されます。 それ以外の場合、V1 します。| 
+| <b>Accept-Language</b>| string| 目的のロケールとフォールバック (FR-FR、fr、EN-GB、en WW、EN-US など) の一覧です。 ローカライズされた文字列の一致が見つかるまで一覧をアチーブメント サービスの動作します。 見つからない場合、ユーザーの IP アドレスから付属しているユーザー トークンで定義されている場所を照合しようと試みます。 いない対応するローカライズされた文字列もが見つかった場合は、タイトルの開発者/発行元によって提供される既定の文字列を使用します。 | 
   
 <a id="ID4EIBAC"></a>
 
@@ -91,12 +91,12 @@ ms.locfileid: "9115445"
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、[実績 (JSON)](../../json/json-achievementv2.md)オブジェクトと[PagingInfo (JSON)](../../json/json-paginginfo.md)オブジェクトの配列を返します。
+呼び出しが成功した場合、サービスは、の配列を返します[アチーブメントが獲得されました (JSON)](../../json/json-achievementv2.md)オブジェクトと[PagingInfo (JSON)](../../json/json-paginginfo.md)オブジェクト。
  
 <a id="ID4ECCAC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp
@@ -184,10 +184,10 @@ ms.locfileid: "9115445"
  
 ##### <a name="reference"></a>リファレンス 
 
-[Achievement (JSON)](../../json/json-achievementv2.md)
+[アチーブメントが獲得されました (JSON)](../../json/json-achievementv2.md)
 
  [PagingInfo (JSON)](../../json/json-paginginfo.md)
 
- [ページング パラメーター](../../additional/pagingparameters.md)
+ [ページングのパラメーター](../../additional/pagingparameters.md)
 
    

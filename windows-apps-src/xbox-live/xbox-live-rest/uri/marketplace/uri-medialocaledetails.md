@@ -8,60 +8,60 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f58e5247c3fd52e84a3a9bab28c6926f74e864e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918130"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655707"
 ---
 # <a name="mediamarketplaceiddetails"></a>/media/{marketplaceId}/details
-返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 これらの Uri のドメインが`eds.xboxlive.com`します。
+プランの詳細、メタデータを返しますについて 1 つまたは複数の項目。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
-API は、関連する API と参照 API によって異なります詳細 (とき、ID で passin) 詳細 API には、追加の情報が返されますが、それらの Api は、暗黙的または明示的に fiven ID に関連付けられているその他の項目に関する情報を返すよう。同じ項目。
+API は、関連する API と参照 API によって異なります詳細 (と ID で passin) 詳細 API には、追加情報が返されますが、これらの Api が明示的または暗黙的に、fiven ID に関連付けられているその他の項目に関する情報を返すよう。同じ項目。
  
-別のメディア項目の種類の複数の Id は、1 つに渡すことができます (限り ProviderContentID - 以下を参照型のわからない)、呼び出しが同じメディア グループに属するすべてする必要があります。 ただし、これには、呼び出し元がメディアのグループを認識しないクライアントのシナリオのいくつかがあります。 API は、次のような状況でのメディアのグループには、"Unknown"の特殊値を許可することでこれをサポートします。
+1 つに、別のメディア項目の種類の複数の Id を渡すことができます (限り ProviderContentID - 以下を参照型のない)、呼び出しが同じメディア グループに属している必要がありますすべて。 ただし、呼び出し元がメディアのグループを認識しないクライアント シナリオをいくつかがあります。 API は、media group の「不明」の次の状況での特殊値を許可することでこれをサポートします。
  
-   * idType = XboxHexTitle で、AppType またはゲームの種類のいずれかの項目が生成されます
-   * idType = ProviderContentId で、MovieType または TVType 項目が生成されます
+   * idType = XboxHexTitle、AppType またはゲームの種類のいずれかの項目が得られます
+   * idType = ProviderContentId、MovieType または TVType 項目が得られます
   
-次の図は、どのメディア グループと ID の種類を指定できます全体のマッピングをまとめたものです。
+次の図は、ID の型に提供できるメディア グループ全体のマッピングをまとめたものです。
  
-| ID の種類| AppType| ゲームの種類| MovieType| MusicArtistType| MusicType| TVType| WebVideoType| Unknown| 
+| ID の種類| appType| ゲームの種類| MovieType| MusicArtistType| MusicType| TVType| WebVideoType| Unknown| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 正規| Y| Y| Y| Y| Y| Y| Y| N| 
+| Canonical| Y| Y| Y| Y| Y| Y| Y| N| 
 | ZuneCatalog| N| N| Y| Y| Y| Y| N| N| 
 | ZuneMediaInstance| N| N| Y| N| Y| Y| N| N| 
-| 提案| Y| Y| Y| N| Y| Y| N| N| 
+| プラン| Y| Y| Y| N| Y| Y| N| N| 
 | AMG| N| N| N| N| Y| N| N| N| 
 | MediaNet| N| N| N| N| Y| N| N| N| 
 | XboxHexTitle| Y| Y| N| N| N| N| N| Y| 
 | ProviderContentId| N| N| Y| N| N| Y| N| Y| 
  
-  * [パラメーターの注意事項](#ID4EEH)
+  * [パラメーターのノート](#ID4EEH)
   * [URI パラメーター](#ID4EUH)
  
 <a id="ID4EEH"></a>
 
  
-## <a name="parameter-notes"></a>パラメーターの注意事項
+## <a name="parameter-notes"></a>パラメーターのノート
  
 <a id="ID4EIH"></a>
 
  
 ### <a name="providercontentid"></a>ProviderContentId
  
-これは、検索プロバイダーを使用特定 id。 例。 Netflix Id または Hulu id。
+これは、使用する検索プロバイダー固有の id。例: Netflix Id または Hulu id
  
-IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds は種類の ID が含まれるだけであるため、'.' 文字です。 '.' 文字はする Id 間の区切り文字でも、新機能、delimieter Id 間の間にあいまいさがおよび新機能自体 ID の一部です。 API の残りの部分一括検索機能を除く、ProviderContentIds の同じように動作します。
+IdType ProviderContentId がある場合は、1 つの値のみが受け入れられます。 これは、ProviderContentIds が唯一の種類の ID を含めることができるため、'.' 文字。 '.' 文字が Id 間で使用される区切り記号でも、新機能、delimieter Id 間の間であいまいさがあるし、新機能、ID 自体の一部です。 API の rest 一括ルックアップ機能を除く、ProviderContentIds の同じように動作します。
    
 <a id="ID4EUH"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4EWAAC"></a>
 
@@ -70,7 +70,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
 
 [GET (/media/{marketplaceId}/details)](uri-medialocaledetailsget.md)
 
-&nbsp;&nbsp;返します提供の詳細とメタデータについての 1 つまたは複数の項目です。 
+&nbsp;&nbsp;プランの詳細、メタデータを返しますについて 1 つまたは複数の項目。 
  
 <a id="ID4EABAC"></a>
 
@@ -82,7 +82,7 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
  
 ##### <a name="parent"></a>Parent 
 
-[マーケットプレース URI](atoc-reference-marketplace.md)
+[Marketplace の Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EMBAC"></a>
@@ -90,12 +90,12 @@ IdType ProviderContentId がある場合は、1 つの値のみが受け入れ�
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

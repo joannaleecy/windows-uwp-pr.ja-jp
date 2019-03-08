@@ -4,18 +4,18 @@ description: この記事では、Windows 10 オペレーティング システ�
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049449"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651547"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-この記事では、新しい Windows こんにちはテクノロジを Windows 10 オペレーティング システムの一部として収録されていて、開発者が、ユニバーサル Windows プラットフォーム (UWP) アプリやバックエンド サービスを保護するには、このテクノロジを実装する方法について説明について説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。
+この記事では、新しい Windows こんにちはテクノロジは、Windows 10 オペレーティング システムの一部として付属し、開発者が、ユニバーサル Windows プラットフォーム (UWP) アプリとバックエンド サービスを保護するには、このテクノロジを実装する方法について説明しますがについて説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。
 
 この記事では、アプリの開発に焦点を当てていることに注意してください。 Windows Hello のアーキテクチャおよび実装について詳しくは、「[TechNet の Windows Hello ガイド](https://technet.microsoft.com/library/mt589441.aspx)」をご覧ください。
 
@@ -58,7 +58,7 @@ Windows Hello 認証システムは、Hello と呼ばれています。 Hello �
 
 Windows Hello は、個々のユーザーを認識するための堅牢な方法をデバイスに提供します。これにより、ユーザーと要求されたサービス (またはデータ項目) との間のパスの最初の部分が処理されます。 デバイスがユーザーを認識しても、要求されたリソースへのアクセス権を与えるかどうかを決める前に、ユーザーをまだ認証する必要があります。 Windows Hello は強力な 2FA で、Windows に完全に組み込まれています。これにより、再利用可能なパスワードが、特定のデバイスと生体認証ジェスチャや PIN の組み合わせに置き換わります。
 
-Windows Hello は、従来の 2FA システムの単なる代替機能ではありません。 概念的にはスマート カードと似ています。Windows Hello では、文字列比較ではなく、暗号化プリミティブを使って認証が行われます。また、ユーザーのキー マテリアルは、改ざんされにくいハードウェア内でセキュリティ保護されています。 Windows Hello ではスマート カード展開に必要なインフラストラクチャ コンポーネントも追加する必要がありません。 具体的には、現在、公開キー基盤 (PKI) を所持していない場合は、証明書を管理するための PKI は必要ありません。 Windows Hello では、スマート カードの主な利点である、仮想スマート カードの展開の柔軟性と物理スマート カードの堅牢なセキュリティを組み合わせ、それぞれの欠点を排除しています。
+Windows Hello は、従来の 2FA システムの単なる代替機能ではありません。 概念的にはスマート カードと似ています。Microsoft Passport では、文字列比較ではなく、暗号化プリミティブを使って認証が行われます。また、ユーザーのキー マテリアルは、改ざんされにくいハードウェア内でセキュリティ保護されています。 Windows Hello ではスマート カード展開に必要なインフラストラクチャ コンポーネントも追加する必要がありません。 具体的には、現在、公開キー基盤 (PKI) を所持していない場合は、証明書を管理するための PKI は必要ありません。 Windows Hello では、スマート カードの主な利点である、仮想スマート カードの展開の柔軟性と物理スマート カードの堅牢なセキュリティを組み合わせ、それぞれの欠点を排除しています。
 
 ### <a name="22-how-windows-hello-works"></a>2.2 Windows Hello のしくみ
 
@@ -117,14 +117,14 @@ if (!keyCredentialAvailable)
 
 ユーザーが自分の PIN をセットアップすると、アプリはユーザーの [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成します。 また、アプリは、オプションでキーの構成証明情報も取得して、キーが TPM で生成されたことを示す暗号証明を入手します。 生成された公開キーと、キーの構成証明 (任意に指定) をバックエンド サーバーに送信して、使われているデバイスを登録します。 各デバイスで生成されたすべてのキーのペアは一意になります。
 
-[**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成するコードは、次のようになります。
+[  **KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成するコードは、次のようになります。
 
 ```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) では、公開キーと秘密キーの作成を行います。 デバイスに適切な TPM チップが搭載されている場合、API は、秘密キーと公開キーの作成およびその結果の保存を TPM チップに要求します。TPM チップが利用できない場合は、OS によって、コードでキーのペアが作成されます。 作成した秘密キーにアプリが直接アクセスする方法はありません。 キーのペアを作成する処理によって、構成証明情報も生成されます。 (構成証明について詳しくは、次のセクションをご覧ください。)
+[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) では、公開キーと秘密キーの作成を行います。 デバイスに適切な TPM チップが搭載されている場合、API は、秘密キーと公開キーの作成およびその結果の保存を TPM チップに要求します。TPM チップが利用できない場合は、OS によって、コードでキーのペアが作成されます。 作成した秘密キーにアプリが直接アクセスする方法はありません。 キーのペアを作成する処理によって、構成証明情報も生成されます。 (構成証明について詳しくは、次のセクションをご覧ください。)
 
 デバイスでキーのペアと構成証明情報が作成されたら、公開キー、オプションの構成証明情報、および一意の識別子 (メール アドレスなど) をバックエンドの登録サービスに送信し、バックエンドに保存する必要があります。
 
@@ -208,8 +208,8 @@ static async void RegisterUser(string AccountId)
 - AIK 証明書の期間が有効であること。
 - チェーンに含まれている発行元の CA の証明書がすべて有効期間内にあり、失効していないこと。
 - 構成証明ステートメントが正しい形式になっていること。
-- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB の署名は、AIK 公開キーを使います。
-- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB に含まれる公開キーは、クライアントが構成証明ステートメントと共に送信した公開 RSA キーと一致します。
+- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB の署名は、AIK 公開キーを使います。
+- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB に含まれる公開キーは、クライアントが構成証明ステートメントと共に送信した公開 RSA キーと一致します。
 
 アプリは、これらの条件によって、さまざまな認証レベルをユーザーに割り当てる場合があります。 たとえば、これらの確認項目のいずれかが適切でない場合、ユーザーを登録しない、またはユーザーが実行できる操作を制限することがあります。
 
@@ -219,7 +219,7 @@ static async void RegisterUser(string AccountId)
 
 ### <a name="33-force-the-user-to-sign-in-again"></a>3.3 もう一度サインインするようにユーザーに強制する
 
-いくつかのシナリオでは、ユーザーが、アプリにアクセスする前、または場合によってはアプリ内の特定の操作を実行する前に、そのユーザーが現在サインインしている人であることの証明を必要とすることがあります。 たとえば、バンキング アプリが送金のコマンドをサーバーに送信する前に、使用者がユーザー本人であり、ログインされたデバイスを見つけて取引を行おうとしている他の人物ではないことを確認する必要があります。 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って、アプリにもう一度サインインするようにユーザーに強制することができます。 次のコード行では、資格情報の入力をユーザーに強制します。
+いくつかのシナリオでは、ユーザーが、アプリにアクセスする前、または場合によってはアプリ内の特定の操作を実行する前に、そのユーザーが現在サインインしている人であることの証明を必要とすることがあります。 たとえば、バンキング アプリが送金のコマンドをサーバーに送信する前に、使用者がユーザー本人であり、ログインされたデバイスを見つけて取引を行おうとしている他の人物ではないことを確認する必要があります。 [  **UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って、アプリにもう一度サインインするようにユーザーに強制することができます。 次のコード行では、資格情報の入力をユーザーに強制します。
 
 次のコード行では、資格情報の入力をユーザーに強制します。
 
@@ -275,9 +275,9 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 
 ![Windows Hello のチャレンジ応答](images/passport-challenge-response.png)
 
-次に、サーバーは署名を検証する必要があります。 公開キーの要求を将来の検証に使用するサーバーに送信すると、これは、ASN.1 でエンコードされた publicKeyInfo blob に。 [Windows こんにちはコード サンプル github](https://go.microsoft.com/fwlink/?LinkID=717812)の場合、よく使われる CNG blob に ASN.1 でエンコードされた blob を翻訳する Crypt32 の関数をラップしてヘルパー クラスがあることが表示されます。 この BLOB には、RSA と RSA 公開キーに関する公開キー アルゴリズムが格納されています。
+次に、サーバーは署名を検証する必要があります。 公開キーを要求し、将来の検証に使用するサーバーに送信すると、publicKeyInfo の ASN.1 エンコードされた blob になります。 確認する場合、 [Windows こんにちは GitHub コード サンプル](https://go.microsoft.com/fwlink/?LinkID=717812)より一般的な使用は、CNG の blob への ASN.1 エンコードされた blob を変換する Crypt32 関数をラップするヘルパー クラスがあることが表示されます。 この BLOB には、RSA と RSA 公開キーに関する公開キー アルゴリズムが格納されています。
 
-CNG で使用する (/windows/デスクトップ/SecCNG/cng ポータル) できるようにサンプルでは、ASN.1 でエンコードされた blob を CNG blob に変換する理由は、および BCrypt API です。 CNG blob を検索する場合は、関連[BCRYPT_KEY_BLOB 構造](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)を指しているされます。 この API サーフェスを認証し、Windows アプリケーションでの暗号化に使用できます。 ASN.1 は、シリアル化できるデータ構造体との通信用の文書化された標準、公開キーの暗号化と証明書を使用してよく使用されます。 その理由はこの方法で公開キーの情報が返されます。 公開キーが RSA キーです。Windows こんにちはを使用するアルゴリズム データがサインインしたときです。
+サンプルでは、ASN.1 エンコードされた blob を CNG blob に変換する理由は、CNG で使用する (/windows/デスクトップ/SecCNG/cng-ポータル) できるように、BCrypt API。 CNG の blob を探す場合これを利用して、関連する[BCRYPT_KEY_BLOB 構造](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)します。 この API サーフェスは認証と Windows アプリケーションでの暗号化に使用できます。 ASN.1 は、シリアル化できるデータ構造を通信するために文書化されている標準と証明書を使用して公開キー暗号化でよく使用されます。 その理由はこの方法で公開キー情報が返されます。 公開キーは RSA キーです。Windows こんにちはを使用するアルゴリズムのデータを署名することです。
 
 CNG BLOB を作成したら、署名されたチャレンジをユーザーの公開キーに対して検証する必要があります。 各ユーザーは独自のシステムまたはバックエンド テクノロジを使うので、このロジックを実装する汎用的な方法はありません。 ハッシュ アルゴリズムとして SHA256 が使われ、また SignaturePadding の Pkcs1 も使われているので、クライアントからの署名済み応答を検証するときに何を使うかを確認してください。 また、.NET 4.6 でサーバー側のこのロジックを実装するための方法に関するサンプルが示されていますが、一般的には次のようになります。
 
@@ -407,9 +407,9 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 
 ### <a name="61-articles-and-sample-code"></a>6.1 記事とサンプル コード
 
-- [Windows Hello の概要](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [Windows Hello の実装の詳細](https://msdn.microsoft.com/library/mt589441)
-- [GitHub の Windows Hello コード サンプル](https://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows こんにちはの概要](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Windows こんにちはの実装の詳細](https://msdn.microsoft.com/library/mt589441)
+- [Windows こんにちは GitHub コード サンプル](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 用語
 
@@ -424,5 +424,5 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Windows Hello ログイン アプリ](microsoft-passport-login.md)
-* [Windows Hello ログイン サービス](microsoft-passport-login-auth-service.md)
+* [Windows こんにちはの アプリのログイン](microsoft-passport-login.md)
+* [Windows こんにちはログイン サービス](microsoft-passport-login-auth-service.md)

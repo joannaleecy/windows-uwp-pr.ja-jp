@@ -3,7 +3,7 @@ title: XAML の照明
 description: Light オブジェクトは、動的な照明と反射をシミュレートするために SceneLightingEffect と共に使用されます。
 ms.date: 06/28/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -11,30 +11,30 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 7d66eaa77f86deffd59ebc81360ccb8183afd7d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929649"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654537"
 ---
 # <a name="xaml-lighting"></a>XAML の照明
 
-[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) オブジェクトは、動的な照明と反射をシミュレートするために [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) と共に使用されます。
+[**CompositionLight** ](/uwp/api/Windows.UI.Composition.CompositionLight)オブジェクトは、組み合わせて使用[ **SceneLightingEffect** ](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect)動的なライティングと反射をシミュレートします。
 
-[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。
+[  **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) と XAML [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) にライトを適用できます。
 
 ## <a name="applying-lights-to-xaml-uielements"></a>XAML UIElement へのライトの適用
 
-XAML UIElement に動的なライトを適用するには、[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) オブジェクトを使用して [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) を適用します。 XamlLight は Uielement または XAML ブラシ、Uielement のツリーにライトを適用することをターゲットとするメソッドを提供し、CompositionLight の有効期間を管理するために現在いるかどうかに基づいてリソースを使用します。
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight)オブジェクトを使用して、適用[ **CompositionLights** ](/uwp/api/Windows.UI.Composition.CompositionLight) XAML Uielement を動的に光をします。 XamlLight が Uielement または XAML ブラシ、uielement では、ツリーにライトを適用する対象とするためのメソッドを提供し、現在いるかどうかに基づいて、リソースを使用して、CompositionLight の有効期間の管理を支援します。
 
 - XamlLight で **Brush** をターゲットにする場合、その Brush 使用している任意の UIElement の部分がライトによって照らされます。
 - XamlLight で **UIElement** をターゲットにする場合、UIElement 全体とその子 UIElement がライトによって照らされます。
 
 ## <a name="creating-and-using-a-xamllight"></a>XamlLight の作成と使用
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) は、カスタム ライトを作成するために使用できる基底クラスです。
+[**XamlLight** ](/uwp/api/windows.ui.xaml.media.xamllight)カスタム ライトを作成するために使用する基本クラスです。
 
-この例では、ターゲットの Uielement とブラシに色付きのスポット ライトを適用するカスタム XamlLight の定義を示します。
+この例では、色付きのスポット ライトを対象となる Uielement とブラシに適用されるカスタム XamlLight の定義を示します。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -457,10 +457,10 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-この光は、任意の XAML UIElement またはブラシに光を適用できます。 この例では、さまざまな潜在的な使用法を示します。
+XAML UIElement またはブラシに光を当てるにこの光を適用することができます。 この例では、別の潜在的な使用法を示します。
 
 > [!Important]
-> [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、削除が 2 回`local:OrangeSpotLight.IsTarget="True"`次のマークアップからです。 添付プロパティは、コード ビハインドで既に設定されます。
+> [C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、2 つの出現を削除`local:OrangeSpotLight.IsTarget="True"`次のマークアップから。 添付プロパティは既に、分離コードで設定します。
 
 ```xaml
 <StackPanel Width="100">
@@ -489,9 +489,9 @@ Platform::String^ OrangeSpotLight::GetId()
 </StackPanel>
 ```
 
-この XAML の結果を次に示します。
+この XAML の結果は、次のようになります。
 
-![Xaml ライトによって照らさ要素の例](images/orange-spot-light.png)
+![Xaml のライトが点灯している要素の例](images/orange-spot-light.png)
 
 > [!Important]
 > 上の例で示しているような、マークアップでの UIElement.Lights の設定は、最小バージョンが Windows 10 Creators Update 以降であるアプリでのみサポートされています。 それ以前のバージョンをターゲットとするアプリでは、分離コードでライトを作成する必要があります。

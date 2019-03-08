@@ -4,14 +4,14 @@ description: バックグラウンド タスクをデバッグする方法につ
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: e0ae12bbb2bad1fbcd663f5be8f26656d640afc8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944201"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599207"
 ---
 # <a name="debug-a-background-task"></a>バックグラウンド タスクのデバッグ
 
@@ -29,8 +29,8 @@ ms.locfileid: "8944201"
 このトピックは、デバッグ対象のバックグラウンド タスクを備えたアプリが既に手元にあることを前提としています。 以下の内容は、アウトプロセスで実行されるバックグラウンド タスクに固有の内容であり、インプロセス バックグラウンド タスクには適用されません。
 
 -   C# と C++ の場合、メイン プロジェクトがバックグラウンド タスク プロジェクトを参照していることを確認します。 この参照が行われない場合、アプリ パッケージにバックグラウンド タスクが含まれていない可能性があります。
--   C# と C++ の場合、バックグラウンド タスク プロジェクトの **Output type** が "Windows ランタイム コンポーネント" になっていることを確認します。
--   バック グラウンド クラスは、パッケージ マニフェストのエントリ ポイント属性で宣言する必要があります。
+-   C# と C++ の場合、バックグラウンド タスク プロジェクトの **[出力の種類]** が "Windows ランタイム コンポーネント" になっていることを確認します。
+-   バックグラウンド クラスは、パッケージ マニフェストのエントリ ポイント属性で宣言されている必要があります。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー
 
@@ -45,10 +45,10 @@ ms.locfileid: "8944201"
     この機能を使うには、バックグラウンド タスクが既に登録されていて、トリガーを待機する状態になっていることが必要です。 たとえば、1 回限りの TimeTrigger に対してバックグラウンド タスクを登録した場合、そのトリガーが起動された後に Visual Studio からそのタスクを起動しても何も起こりません。
 
 > [!Note]
-> 次のトリガーを使ったバックグラウンド タスクを、[**アプリケーション トリガー**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、[**MediaProcessing トリガー**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) トリガー型の [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ったバックグラウンド タスク、という方法でアクティブ化することはできません。  
+> 次のトリガーを使用してバック グラウンド タスクは、この方法でアクティブにできません。[**アプリケーション トリガー**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、 [ **MediaProcessing トリガー**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、 [ **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、およびバック グラウンド タスクを使用して、 [ **SystemTrigger** ](https://msdn.microsoft.com/library/windows/apps/br224838)で、 [ **SmsReceived** ](https://msdn.microsoft.com/library/windows/apps/br224839)の種類をトリガーします。  
 > **Application trigger** と **MediaProcessingTrigger** は、`trigger.RequestAsync()` を使ってコードで手動通知できます。
 
-![バック グラウンド タスクのデバッグ](images/debugging-activation.png)
+![バックグラウンド タスクのデバッグ](images/debugging-activation.png)
 
 3.  バックグラウンド タスクがアクティブになると、デバッガーがアタッチされて、デバッグ出力が VS に表示されます。
 
@@ -69,17 +69,17 @@ ms.locfileid: "8944201"
 
 2.  マニフェスト デザイナーを使い、バックグラウンド タスクがパッケージ マニフェストで正しく宣言されているかどうかを確認します。
 
-    -   C# と C++ の場合、エントリ ポイント属性が、クラス名の前のバックグラウンド タスク名前空間と一致している必要があります。 たとえば、RuntimeComponent1.MyBackgroundTask のようになります。
+    -   C# と C++ の場合、エントリ ポイント属性が、クラス名の前のバックグラウンド タスク名前空間と一致している必要があります。 次に、例を示します。RuntimeComponent1.MyBackgroundTask します。
     -   タスクと共に使われるトリガー タイプがすべて指定されている必要があります。
-    -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) を使う場合以外、実行可能ファイルを指定しないでください。
+    -   [  **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) を使う場合以外、実行可能ファイルを指定しないでください。
 
 3.  Windows のみ。 バックグラウンド タスクをアクティブ化するために Windows で使われるエントリ ポイントを確認するには、デバッグ トレースを有効にして Windows イベント ログを使います。
 
     この手順を実行し、その結果イベント ログにバックグラウンド タスクの間違ったエントリ ポイントまたはトリガーが表示される場合は、アプリにバックグラウンド タスクが正しく登録されていません。 このタスクのヘルプが必要な場合は、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
 
     1.  スタート画面に移動して eventvwr.exe を検索し、イベント ビューアーを開きます。
-    2.  **アプリケーションとサービス ログ**に移動 -&gt; **Microsoft**  - &gt; **Windows**  - &gt;イベント ビューアーで**BackgroundTaskInfrastructure**します。
-    3.  [操作] ウィンドウ**のビュー**を選択 -&gt; **を表示する分析およびデバッグ ログ**診断ログを有効にします。
+    2.  移動して**アプリケーションとサービス ログ** - &gt; **Microsoft**  - &gt; **Windows**  - &gt;**BackgroundTaskInfrastructure**イベント ビューアでします。
+    3.  操作 ウィンドウで、次のように選択します。**ビュー**  - &gt; **分析およびデバッグ ログ**診断ログを有効にします。
     4.  **診断ログ**を選び、**[ログの有効化]** をクリックします。
     5.  次に、アプリを使ってバックグラウンド タスクの登録とアクティブ化をもう一度試します。
     6.  診断ログで、詳しいエラー情報を確認します。 このログには、バックグラウンド タスクに登録されたエントリ ポイントが含まれます。
@@ -101,17 +101,17 @@ ms.locfileid: "8944201"
 -   バックグラウンド タスクがロック画面へのアクセスを必要とする場合は、バックグラウンド タスクをデバッグする前にロック画面にアプリを配置してください。 ロック画面対応アプリのマニフェスト オプションを指定する方法については、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
 -   バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-VS を使ってバック グラウンド タスクのデバッグについて詳しくは、以下を参照してください。[をトリガーする方法を中断、再開、および UWP アプリでイベントをバック グラウンド](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)します。
+VS を使用したバック グラウンド タスクのデバッグの詳細についてを参照してください。[をトリガーする方法を中断、再開、およびバック グラウンド イベントを UWP アプリ](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)します。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [作成して、プロセス内のバック グラウンド タスクの登録](create-and-register-an-inproc-background-task.md)
+* [バック グラウンド タスクを登録します。](register-a-background-task.md)
+* [アプリケーション マニフェストでバック グラウンド タスクを宣言します。](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [トリガーする方法を中断、再開、および UWP アプリでイベントをバック グラウンド](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Visual Studio のコード分析による UWP アプリのコードの品質の分析](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [トリガーする方法を中断、再開、およびバック グラウンド イベントを UWP アプリ](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Visual Studio code 分析による UWP アプリのコード品質の分析](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  
 

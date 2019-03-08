@@ -3,15 +3,15 @@ title: リモート デバイスでのアプリの起動
 description: "\"Rome\" プロジェクトを使って、リモート デバイスでアプリを起動する方法について説明します。"
 ms.date: 02/12/2018
 ms.topic: article
-keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト
+keywords: windows 10、uwp、接続されているデバイス、リモート システム、ローマ、プロジェクトのローマ
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930783"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658417"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>リモート デバイスでのアプリの起動
 
@@ -35,7 +35,7 @@ Windows 10 Version 1607 以降で実行される UWP アプリは、同じく Wi
 
 ### <a name="enable-cross-device-sharing"></a>クロスデバイス共有を実現
 
-さらに、クライアントデバイスは、デバイス間の共有を許可するように設定する必要があります。 この設定には **[設定]** : **[システム]** > **[共有エクスペリエンス]** > **[デバイス間で共有します]** でアクセスできます。既定で有効になっています。 
+さらに、クライアントデバイスは、デバイス間の共有を許可するように設定する必要があります。 この設定でアクセスされる**設定**:**システム** > **エクスペリエンスを共有** > **デバイス間で共有**既定で有効です。 
 
 ![[共有エクスペリエンス] 設定ページ](images/shared-experiences-settings.png)
 
@@ -74,7 +74,7 @@ Windows 10 Version 1607 以降で実行される UWP アプリは、同じく Wi
 
 ## <a name="related-topics"></a>関連トピック
 
-[リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[接続されるアプリやデバイス ("Rome" プロジェクト) の概要](connected-apps-and-devices.md)  
-[リモート デバイスの検出](discover-remote-devices.md)  
+[リモート システムの API のリファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[接続されているアプリとデバイス (プロジェクト ローマ) の概要](connected-apps-and-devices.md)  
+[リモート デバイスを検出します。](discover-remote-devices.md)  
 [リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。

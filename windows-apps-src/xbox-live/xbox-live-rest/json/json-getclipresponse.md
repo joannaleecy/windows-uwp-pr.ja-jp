@@ -8,29 +8,29 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef6875bfecfe7ee90fb1794164240116fd39ed91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929789"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649497"
 ---
 # <a name="getclipresponse-json"></a>GetClipResponse (JSON)
-ゲーム クリップをラップします。 
+ゲームのクリップをラップします。 
 <a id="ID4EN"></a>
 
  
 ## <a name="getclipresponse"></a>GetClipResponse
  
-GetClipResponse オブジェクトには、次仕様があります。
+GetClipResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| gameClip| [GameClip](json-gameclip.md)| 問題がなければ、クエリを 1 つのゲーム クリップ。| 
+| ゲーム クリップだった| [GameClip](json-gameclip.md)| クエリを満たす 1 つのゲーム クリップします。| 
   
 <a id="ID4ELB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -92,6 +92,6 @@ GetClipResponse オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,6 +1,6 @@
 ---
 title: カメラの空間変換
-description: カメラ空間の頂点は、オブジェクトの頂点をワールド ビュー行列で変換することによって計算します。
+description: カメラ空間内の頂点は、ワールド ビュー マトリックスによってオブジェクト頂点を変換することにより計算されます。
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
 keywords:
 - カメラの空間変換
@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945974"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655737"
 ---
 # <a name="camera-space-transformations"></a>カメラの空間変換
 
 
-カメラ空間の頂点は、オブジェクトの頂点をワールド ビュー行列で変換することによって計算します。
+カメラ空間内の頂点は、ワールド ビュー マトリックスによってオブジェクト頂点を変換することにより計算されます。
 
 V = V \* wvMatrix
 
@@ -37,27 +37,27 @@ Lₚ = Lₚ \* vMatrix
 
 指向性ライトの場合、カメラ空間でのライトへの方向は、光源の方向をビュー行列で乗算し、その結果を正規化して正負を反転することによって計算します。
 
-L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
+L<sub>dir</sub> = - norm (L<sub>dir</sub> \* wvMatrix)
 
 ポイント ライトとスポット ライトの場合は、ライトへの方向は次のように計算します。
 
-L<sub>dir</sub> = norm(V \* Lₚ) これらのパラメータの定義を次の表に示します。
+L<sub>dir</sub> = norm (V \* Lₚ)、パラメーターが次の表に定義されます。
 
 | パラメーター       | 既定値 | 種類                                          | 説明                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
-| L<sub>dir</sub> | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
+| L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | オブジェクトの頂点からライトへの方向ベクトル          |
 | V               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間での頂点の位置                           |
-| wvMatrix        | ID      | 浮動小数点値の 4 x 4 マトリックス           | ワールドとビューの変換を含む合成行列 |
-| N               | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
+| wvMatrix        | Identity      | 浮動小数点値の 4 x 4 マトリックス           | ワールドとビューの変換を含む合成行列 |
+| N               | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点法線                                             |
 | Lₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラ空間でのライトの位置                            |
-| vMatrix         | ID      | 浮動小数点値の 4 x 4 マトリックス           | ビュー変換を含む行列                      |
+| vMatrix         | Identity      | 浮動小数点値の 4 x 4 マトリックス           | ビュー変換を含む行列                      |
 
  
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[光源の計算](mathematics-of-lighting.md)
+[照明の計算](mathematics-of-lighting.md)
 
  
 

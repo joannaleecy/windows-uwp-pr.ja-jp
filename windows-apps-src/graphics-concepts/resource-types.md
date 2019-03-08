@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942928"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661987"
 ---
 # <a name="resource-types"></a>リソースの種類
 
@@ -34,11 +34,11 @@ ms.locfileid: "8942928"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>型指定あり</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>型指定されました。</p></td>
 <td align="left"><p>リソース作成時に型を完全に指定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>型指定なし</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>型指定されていません。</p></td>
 <td align="left"><p>リソースをパイプラインにバインドするときに型を完全に指定します。</p></td>
 </tr>
 </tbody>
@@ -112,27 +112,27 @@ Direct3D には、シェーダー定数バッファーまたは単に定数バ�
 
 シェーダーで定数バッファーを宣言する例については、「[シェーダー定数 (DirectX HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。
 
-## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>テクスチャ リソース
+## <a name="span-idtextureresourcesspanspan-idtextureresourcesspanspan-idtextureresourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>テクスチャのリソース
 
 
-テクスチャ リソースは、テクセルを格納するように設計された、データの構造化されたコレクションです。 バッファーと異なり、テクスチャは、シェーダー ユニットに読み取られる際にテクスチャ サンプラーでフィルターを適用することができます。 テクスチャへのフィルター処理の適用方法はテクスチャの種類に影響されます。 テクセルは、パイプラインで読み取ったり、書き込んだりすることができるテクスチャの最小単位を表します。 各テクセルは 1 ～ 4 つの成分を含み、いずれかの DXGI 形式で配置されます (「[**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)」をご覧ください)。
+テクスチャ リソースは、テクセルを格納するように設計された、データの構造化されたコレクションです。 バッファーと異なり、テクスチャは、シェーダー ユニットに読み取られる際にテクスチャ サンプラーでフィルターを適用することができます。 テクスチャへのフィルター処理の適用方法はテクスチャの種類に影響されます。 テクセルは、パイプラインで読み取ったり、書き込んだりすることができるテクスチャの最小単位を表します。 各テクセルには DXGI 形式のいずれかに配置された、1 ~ 4 のコンポーネントが含まれています (を参照してください[ **DXGI\_形式**](https://msdn.microsoft.com/library/windows/desktop/bb173059))。
 
 テクスチャは構造化されたリソースとして作成されるため、そのサイズがわかります。 ただし、各テクスチャはリソース作成時に型指定される場合もありますが、テクスチャをパイプラインにバインドするときにビューを使用して型を完全に指定するという条件で、リソース作成時に型指定されない場合もあります。
 
 -   [テクスチャの種類](#texture-types)
 -   [サブリソース](#subresources)
--   [強い型指定と弱い型指定](#typed)
+-   [強力な vs します。弱い型指定](#typed)
 
 ### <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspanspan-idtexture-typesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span><span id="texture-types"></span>テクスチャの種類
 
-テクスチャの種類には 1D、2D、および 3D があり、それぞれミップマップ付きまたはミップマップなしで作成できます。 Direct3D では、テクスチャ配列とマルチサンプリングされたテクスチャもサポートされています。
+テクスチャのいくつかの種類があります。1 D、2 D、3 D、mipmap の有無をそれぞれ作成できます。 Direct3D では、テクスチャ配列とマルチサンプリングされたテクスチャもサポートされています。
 
--   [1D テクスチャ](#texture1d-resource)
--   [1D テクスチャ配列](#texture1d-array-resource)
+-   [1 D のテクスチャ](#texture1d-resource)
+-   [テクスチャ 1d の配列](#texture1d-array-resource)
 -   [2D テクスチャと 2D テクスチャ配列](#texture2d-resource)
 -   [3D テクスチャ](#texture3d-resource)
 
-### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D テクスチャ
+### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1 D のテクスチャ
 
 最も単純な形式の 1D テクスチャには、1 つのテクスチャ座標で処理できるテクスチャ データが格納されます。これをテクセルの配列として視覚化すると次の図のようになります。
 
@@ -144,7 +144,7 @@ Direct3D には、シェーダー定数バッファーまたは単に定数バ�
 
 ミップマップ レベルは、上のレベルよりも 2 の累乗だけ小さいテクスチャです。 最上位レベルが最も詳細で (大きく)、レベルが下がるほど小さくなります。1D ミップマップの最小レベルはテクセルを 1 つだけ含みます。 各レベルの識別には詳細レベル (LOD) と呼ばれるインデックスを使用します。カメラにそれほど近くないジオメトリをレンダリングする場合は、LOD を使って小さいテクスチャにアクセスできます。
 
-### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D テクスチャ配列
+### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>テクスチャ 1d の配列
 
 Direct3D 10 には、テクスチャの配列用の新しいデータ構造も用意されています。 1D テクスチャの配列は概念的に次の図のようになります。
 
@@ -168,7 +168,7 @@ Texture2DArray リソースは 2D テクスチャの同次配列であるため�
 
 このテクスチャ配列には 3 つのテクスチャが含まれています。各テクスチャは 3x5 で、2 つのミップマップ レベルを持ちます。
 
-### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>テクスチャ キューブとしての Texture2DArray の使用
+### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>テクスチャ キューブとして、Texture2DArray を使用します。
 
 テクスチャ キューブは、6 つのテクスチャ (キューブの各面に 1 つずつ) が含まれた 2D テクスチャ配列です。 すべてのデータが設定されたテクスチャ キューブは次の図のようになります。
 
@@ -216,19 +216,19 @@ API の中にはリソース全体にアクセスするものもあれば、リ�
 
 ![配列スライスの図](images/d3d10-resource-array-slice.png)
 
-### <a name="span-idmipslicespanspan-idmipslicespanspan-idmipslicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>ミップ スライス
+### <a name="span-idmipslicespanspan-idmipslicespanspan-idmipslicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>Mip スライス
 
 次の図に示すように、(白い長方形で表されている) ミップ スライスには配列内のすべてのテクスチャのミップマップ レベルが 1 つ含まれます。
 
 ![ミップ スライスの図](images/d3d10-resource-mip-slice.png)
 
-### <a name="span-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>単一サブリソースの選択
+### <a name="span-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanspan-idselectingasinglesubresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>1 つのサブ リソースを選択します。
 
 次の図に示すように、単一のリソースを選択するには、前述の 2 種類のスライスを使用します。
 
 ![配列スライスとミップ スライスを使用してサブリソースを選択した場合の図](images/d3d10-resource-subresources-1.png)
 
-### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>複数のサブリソースの選択
+### <a name="span-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanspan-idselectingmultiplesubresourcesspanselecting-multiple-subresources"></a><span id="Selecting_Multiple_Subresources"></span><span id="selecting_multiple_subresources"></span><span id="SELECTING_MULTIPLE_SUBRESOURCES"></span>複数のサブリソースを選択します。
 
 また、複数のサブリソースを選択するには、ミップマップ レベル数やテクスチャ数を指定して、前述の 2 種類のスライスを使用します。
 
@@ -236,7 +236,7 @@ API の中にはリソース全体にアクセスするものもあれば、リ�
 
 たいていの場合、使用するテクスチャの種類、ミップマップの有無、およびテクスチャ配列の有無にかかわらず、特定のサブリソースのインデックスを計算できるように用意されたヘルパー関数があります。
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>強い型指定と弱い型指定
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>強力な vs します。弱い型指定
 
 完全に型指定されたリソースを作成すると、そのリソースの形式はそのリソースを作成したときの形式に制限されます。 これによりランタイムによるアクセスが最適化されます。特に、アプリケーションでマップできないことを示すフラグを使ってリソースを作成する場合は有効です。 型を指定して作成したリソースは、ビュー機構を使って再解釈することができません。
 

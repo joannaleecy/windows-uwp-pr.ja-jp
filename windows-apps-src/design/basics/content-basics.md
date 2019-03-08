@@ -1,5 +1,5 @@
 ---
-Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
+Description: ページの一般的なパターンと、UWP アプリでコンテンツを表示するための UI 要素の概要。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのコンテンツ デザインの基本
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
@@ -7,14 +7,14 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 12/1/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004608"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594587"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP アプリのコンテンツ デザインの基本
 
@@ -80,7 +80,7 @@ ms.locfileid: "9004608"
 <tr class="odd">
 <td align="left">オーディオとビデオ<br/><br/>
     <img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left"><a href="../controls-and-patterns/media-playback.md">メディア再生コントロールとメディア トランスポート コントロール</a></td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">メディアの再生コントロール</a></td>
 <td align="left">オーディオとビデオを再生します。</td>
 </tr>
 <tr class="even">
@@ -92,7 +92,7 @@ ms.locfileid: "9004608"
 <tr class="odd">
 <td align="left">コレクション <br/><br/>
     <img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left"><a href="../controls-and-patterns/lists.md">リスト ビューとグリッド ビュー</a></td>
+<td align="left"><a href="../controls-and-patterns/lists.md">リスト ビューおよびグリッド ビュー</a></td>
 <td align="left">対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。</td>
 </tr>
 <tr class="even">

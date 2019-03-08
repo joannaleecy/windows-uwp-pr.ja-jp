@@ -4,21 +4,21 @@ title: 中断/再開の最適化
 description: プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947430"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653657"
 ---
 # <a name="optimize-suspendresume"></a>中断/再開の最適化
 
 
 プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## <a name="launch"></a>起動
+## <a name="launch"></a>Launch
 
 中断/終了の後、アプリを再アクティブ化するときは、長い時間が経過したかどうかを確認します。 長時間経過している場合は、ユーザーの古いデータを表示する代わりに、アプリのメイン ランディング ページに戻ることを検討してください。 これにより、起動時間も短縮されます。
 
@@ -64,7 +64,7 @@ UWP のプロセス継続時間システムは、さまざまな理由でアプ�
 
 パフォーマンスの観点から、[**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) クラスを使うことをお勧めします。 **XmlSerializer** は、シリアル化と逆シリアル化の処理時間が最も短く、メモリ使用量も低く抑えられます。 **XmlSerializer** と .NET Framework の間には依存関係が少ないため、他のシリアル化技術と比較して、**XmlSerializer** を使うためにアプリに読み込む必要があるモジュールが少なくて済みます。
 
-**XmlSerializer** と比べて、[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) は、カスタム クラスを比較的容易にシリアル化できる反面、パフォーマンスへの影響は大きくなります。 より高いパフォーマンスが必要な場合は、切り替えを検討してください。 通常、複数のシリアライザーを読み込むことは避け、できれば **XmlSerializer** を使うようにしてください (他のシリアライザーの機能を必要とする場合を除く)。
+[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx)よりも大きい、パフォーマンスに影響がありますが、カスタムのクラスをシリアル化しやすくなります**XmlSerializer**します。 より高いパフォーマンスが必要な場合は、切り替えを検討してください。 通常、複数のシリアライザーを読み込むことは避け、できれば **XmlSerializer** を使うようにしてください (他のシリアライザーの機能を必要とする場合を除く)。
 
 ### <a name="reduce-memory-footprint"></a>メモリ使用量の削減
 
@@ -85,7 +85,7 @@ UWP のプロセス継続時間システムは、さまざまな理由でアプ�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [アプリに関するガイドラインの中断し、再開](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  

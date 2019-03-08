@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ef026fd5096d047b2014faaf95a667c69827e043
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947371"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608307"
 ---
 # <a name="aggregatesessionsresponse-json"></a>AggregateSessionsResponse (JSON)
-ユーザーの適合性のセッションは、集計されたデータが含まれています。 
+ユーザーのフィットネス セッションの集計データが含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="aggregatesessionsresponse"></a>AggregateSessionsResponse
  
-AggregateSessionsResponse オブジェクトには、次仕様があります。
+AggregateSessionsResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| totalDurationInSeconds| 64 ビットの符号付き整数| 集計期間を秒単位でセッションの合計期間です。| 
-| totalJoules| 64 ビットの符号付き整数| 消費電力の書き込みの合計-コンセントで-集計期間中です。 | 
-| totalSessions| 64 ビットの符号付き整数| 集計期間中のセッションの合計数。| 
-| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝と同等の結果、集計期間中のタスク (MET) の値。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個人の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
+| totalDurationInSeconds| 64 ビット符号付き整数| 集計期間 (秒) のセッションの合計継続時間。| 
+| totalJoules| 64 ビット符号付き整数| 燃焼されるエネルギーの合計: の単位はジュール: 集計期間にわたるします。 | 
+| totalSessions| 64 ビット符号付き整数| 集計期間にわたるセッションの合計数。| 
+| weightedAverageMets| 単精度浮動小数点数 | 加重平均代謝値と等価のタスク (MET) 集計期間。 MET 値は、保存時の個々 の代謝率の基準としたアクティビティの中に、個々 の代謝レートの比率です。 代謝のレートを置くは、個々 の重みに関係なく 1.0 MET 値は、個々 の配置されている代謝率の基準としたためは、さまざまな重みの個人によって実行されるアクティビティの強度を比較に使用できます。| 
   
 <a id="ID4ESC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -58,6 +58,6 @@ AggregateSessionsResponse オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

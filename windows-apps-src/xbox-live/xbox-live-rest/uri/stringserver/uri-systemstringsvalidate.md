@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cf13b8d28de1c6f9ba3e17bc5c3d8914d68aacc8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933238"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655507"
 ---
 # <a name="systemstringsvalidate"></a>/system/strings/validate
 検証のための文字列の配列にアクセスします。 これらの Uri のドメインが`client-strings.xboxlive.com`します。
@@ -24,7 +24,7 @@ ms.locfileid: "8933238"
 
 [POST (/system/strings/validate)](uri-systemstringsvalidatepost.md)
 
-&nbsp;&nbsp;検証のための文字列の配列を受け取り、同じサイズの結果の配列を返します。
+&nbsp;&nbsp;検証のための文字列の配列を受け取り、等しいサイズの結果の配列を返します。
  
 <a id="ID4E6"></a>
 
@@ -36,6 +36,6 @@ ms.locfileid: "8933238"
  
 ##### <a name="parent"></a>Parent 
 
-[システム文字列の検証 URI](atoc-reference-systemstringsvalidate.md)
+[システムが検証の Uri を文字列します。](atoc-reference-systemstringsvalidate.md)
 
    

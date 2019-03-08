@@ -4,14 +4,14 @@ description: ユーザー ID とパスワードの組み合わせよりも安全
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921450"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654777"
 ---
 # <a name="share-certificates-between-apps"></a>アプリ間での証明書の共有
 
@@ -35,7 +35,7 @@ ms.locfileid: "8921450"
 ## <a name="create-and-publish-a-secured-web-service"></a>セキュリティで保護された Web サービスの作成と発行
 
 
-1.  管理者として Microsoft Visual Studio を実行し、スタート ページで **[新しいプロジェクト]** を選びます。 Web サービスを IIS サーバーに発行するには、管理者のアクセス権が必要です。 [新しいプロジェクト] ダイアログで、フレームワークを **[.NET Framework 3.5]** に変更します。 **[Visual C#]** -&gt; **[Web]** -&gt; **[Visual Studio]** -&gt; **[ASP.NET Web サービス アプリケーション]** の順に選びます。 アプリケーションに "FirstContosoBank" という名前を付けます。 **[OK]** をクリックしてプロジェクトを作ります。
+1.  管理者として Microsoft Visual Studio を実行し、スタート ページで **[新しいプロジェクト]** を選びます。 Web サービスを IIS サーバーに発行するには、管理者のアクセス権が必要です。 [新しいプロジェクト] ダイアログで、フレームワークを **[.NET Framework 3.5]** に変更します。 選択**Visual C#**   - &gt; **Web**  - &gt; **Visual Studio**  - &gt; **ASP.NET Web サービス アプリケーション**します。 アプリケーションに "FirstContosoBank" という名前を付けます。 **[OK]** をクリックしてプロジェクトを作ります。
 2.  **Service1.asmx.cs** ファイルで、既定の **HelloWorld** Web メソッドを次の "Login" メソッドに置き換えます。
     ```cs
             [WebMethod]
@@ -60,21 +60,21 @@ ms.locfileid: "8921450"
 1.  **インターネット インフォメーション サービス (IIS) マネージャー**を実行します。
 2.  IIS サーバーのサイトを展開します。 **[Default Web Site]** で、新しい "FirstContosoBank" Web サービスを選びます。 **[操作]** セクションで、**[詳細設定]** を選びます。
 3.  **[アプリケーション プール]** を **[.NET v2.0]** に設定し、**[OK]** をクリックします。
-4.  **インターネット インフォメーション サービス (IIS) マネージャー**で、IIS サーバーを選んで **[サーバー証明書]** をダブルクリックします。 **[操作]** セクションで、**[自己署名入り証明書の作成...]** を選びます。証明書のフレンドリ名として "ContosoBank" と入力し、**[OK]** をクリックします。 これにより、IIS サーバーで使われる新しい証明書が "&lt;サーバー名&gt;.&lt;ドメイン名&gt;" の形式で作成されます。
+4.  **インターネット インフォメーション サービス (IIS) マネージャー**で、IIS サーバーを選んで **[サーバー証明書]** をダブルクリックします。 **[操作]** セクションで、**[自己署名入り証明書の作成]** を選びます。証明書のフレンドリ名として "ContosoBank" と入力し、**[OK]** をクリックします。 これにより、IIS サーバーで使われる新しい証明書が "&lt;サーバー名&gt;.&lt;ドメイン名&gt;" の形式で作成されます。
 5.  **インターネット インフォメーション サービス (IIS) マネージャー**で、既定の Web サイトを選びます。 **[操作]** セクションで **[バインド]** を選び、**[追加]** をクリックします。種類として "https" を選び、ポートを "443" に設定して、IIS サーバーの完全なホスト名 ("&lt;サーバー名&gt;.&lt;ドメイン名&gt;") を入力します。 SSL 証明書を "ContosoBank" に設定します。 **[OK]** をクリックします。 **[サイト バインド]** ウィンドウの **[閉じる]** をクリックします。
 6.  **インターネット インフォメーション サービス (IIS) マネージャー**で、"FirstContosoBank" Web サービスを選びます。 **[SSL 設定]** をダブルクリックします。 **[SSL が必要]** をオンにします。 **[クライアント証明書]** で **[必要]** を選びます。 **[操作]** セクションで、**[適用]** をクリックします。
-7.  Web サービスが正しく構成されたことを確認するには、Web ブラウザーを開き、Web アドレスとして「https://&lt;サーバー名&gt;.&lt;ドメイン名&gt;/FirstContosoBank/Service1.asmx」を入力します。 たとえば、"https://myserver.example.com/FirstContosoBank/Service1.asmx" などです。 Web サービスが正しく構成されていれば、Web サービスにアクセスするためのクライアント証明書を選ぶように求められます。
+7.  Web サービスが正しく構成されたことを確認するには、Web ブラウザーを開き、Web アドレスとして「 https://&lt;サーバー名&gt;.&lt;ドメイン名&gt;/FirstContosoBank/Service1.asmx」を入力します。 たとえば、"https://myserver.example.com/FirstContosoBank/Service1.asmx" などです。 Web サービスが正しく構成されていれば、Web サービスにアクセスするためのクライアント証明書を選ぶように求められます。
 
 前の手順を繰り返すことで、同じクライアント証明書を使ってアクセスできる複数の Web サービスを作成できます。
 
 ## <a name="create-a-uwp-app-that-uses-certificate-authentication"></a>証明書認証を使う UWP アプリの作成
 
 
-これでセキュリティで保護された Web サービスが 1 つ以上できたので、証明書を使ってこれらの Web サービスから認証を受けるアプリを作成できます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) オブジェクトを使って認証 Web サービスへの要求を作成する場合、最初の要求にはクライアント証明書が含まれません。 認証 Web サービスは、応答としてクライアント認証を要求します。 この応答を受け取ると、Windows クライアントは自動的に証明書ストアを照会して、使用できるクライアント証明書を取得します。 ユーザーは、これらの証明書の中から Web サービスへの認証に使うものを選ぶことができます。 証明書によってはパスワードで保護されていることがあるので、証明書のパスワードを入力するための手段をユーザーに提供する必要があります。
+これでセキュリティで保護された Web サービスが 1 つ以上できたので、証明書を使ってこれらの Web サービスから認証を受けるアプリを作成できます。 [  **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) オブジェクトを使って認証 Web サービスへの要求を作成する場合、最初の要求にはクライアント証明書が含まれません。 認証 Web サービスは、応答としてクライアント認証を要求します。 この応答を受け取ると、Windows クライアントは自動的に証明書ストアを照会して、使用できるクライアント証明書を取得します。 ユーザーは、これらの証明書の中から Web サービスへの認証に使うものを選ぶことができます。 証明書によってはパスワードで保護されていることがあるので、証明書のパスワードを入力するための手段をユーザーに提供する必要があります。
 
 使用できるクライアント証明書がない場合は、ユーザーが証明書ストアに証明書を追加する必要があります。 そこで、クライアント証明書の PFX ファイルをユーザーに選んでもらい、その証明書をクライアント証明書ストアにインポートするコードをアプリに含めることができます。
 
-**ヒント:** makecert.exe を使用してこのクイック スタートで使用する PFX ファイルを作成することができます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
+**ヒント:**  makecert.exe を使用して、このクイック スタートで使用する PFX ファイルを作成することができます。 makecert.exe の使い方の詳細については、「[MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)」を参照してください。
 
  
 

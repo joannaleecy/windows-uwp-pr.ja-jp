@@ -7,22 +7,22 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: d69aaadaa1f64d1cb6eb40b52016a330d924b9b9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930955"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590477"
 ---
 # <a name="rich-presence-configuration"></a>リッチ プレゼンスの構成
 
 Xbox デベロッパー ポータル (XDP: Xbox Developer Portal) で、リッチ プレゼンス文字列の構成サービスが提供される予定です。 XDP で提供が開始されるまでは、手動構成を使用する必要があります。 手動構成では、担当のデベロッパー アカウント マネージャーから提供されたスプレッドシート テンプレートで文字列を定義し、その定義を担当のデベロッパー アカウント マネージャーに送信して、環境への取り込みを依頼します。
 
 -   **文字列**
--   **列挙**
--   **取り込み**
--   **サンプル ゲーム**
--   **リッチ プレゼンスの統計情報の構成**
--   **列挙の構成例**
+-   **列挙型**
+-   **インジェスト**
+-   **ゲームの例**
+-   **豊富なプレゼンスの統計情報を構成します。**
+-   **列挙型の構成例**
 -   **文字列の構成例**
 
 
@@ -30,7 +30,7 @@ Xbox デベロッパー ポータル (XDP: Xbox Developer Portal) で、リッ�
 
 リッチ プレゼンス文字列用に、文字列セットを定義する必要があります。 各文字列セットには、識別子として使用されるフレンドリ名を指定する必要があります。 作成される各文字列セットには、タイトルがリリースされるロケール用に適切にローカライズされた文字列のグループが含まれている必要があります。 ローカライズされた文字列に加え、カルチャーに依存しない文字列も提供する必要があります。 この文字列は、指定されていないロケールに対する要求が行われた場合に使用されます。
 
-各文字列セットでは、文字列をパラメーター化してゲーム内データを利用し、文字列の質を向上させることもできます。 文字列セットには、結果として生成される文字列が文字の制限を超えない限り、必要なだけのパラメーターを含めることができます。 詳細については、「[リッチ プレゼンス文字列: ポリシーと制限](rich-presence-strings-policies-and-limitations.md)」を参照してください。
+各文字列セットでは、文字列をパラメーター化してゲーム内データを利用し、文字列の質を向上させることもできます。 文字列セットには、結果として生成される文字列が文字の制限を超えない限り、必要なだけのパラメーターを含めることができます。 参照してください[豊富なプレゼンス文字列します。ポリシーと制限事項](rich-presence-strings-policies-and-limitations.md)の詳細。
 
 
 ## <a name="enumerations"></a>列挙
@@ -94,16 +94,16 @@ Map | CurrentMap | Map_Mountains | 既定 | Mountains
  ||    |  | en-GB | Beach
  ||    |  | de | Strand
  | |   |  | など |
-Boot | CurrentWeapon | Boot_Light | 既定 | Light
- |  ||  |  en | Light
- |  ||  |   en-US | Light
- |  ||  |   en-GB | Light
+Boot | CurrentWeapon | Boot_Light | 既定 | 明るい
+ |  ||  |  en | 明るい
+ |  ||  |   en-US | 明るい
+ |  ||  |   en-GB | 明るい
  |  ||  |   de | Leicht
  |  ||  |   など  |
- |  | |  Boot_Medium | 既定 | Medium
- |  |  |  | en | Medium
- |  |  |  | en-US | Medium
- |  |  |  | en-GB | Medium
+ |  | |  Boot_Medium | 既定 | 中
+ |  |  |  | en | 中
+ |  |  |  | en-US | 中
+ |  |  |  | en-GB | 中
  |  |  |  | de | Mittel
  |  |  |  | など |
  |  | |  Boot_Strong | 既定 | Strong
@@ -125,15 +125,15 @@ Boot | CurrentWeapon | Boot_Light | 既定 | Light
 
 以下の例では、1 つ目の文字列では統計情報によって生成される現在のマップを使用し、2 つ目の文字列では BucketsKicked 統計情報を使用します。 3 つ目の例にはパラメーターが含まれていない点に注目してください。 文字列は独自に定義されています。 統計情報は参照しません。
 
-フレンドリ名 | ロケール | String | Parameters
+フレンドリ名 | ロケール | String | パラメーター
 --- | --- | --- | ---
-playingMap | 既定値 | Playing on map:{0} | CurrentMap
+playingMap | 既定 | Playing on map:{0} | CurrentMap
  |  | en | Playing on map:{0} |
  |  | en-US | Playing on map:{0} |
  |  | en-GB | Playing on map:{0} |
  |  | de | Spielt auf Karte: {0} |
  |  | など | |
-totalKicked | 既定値 | Kicked {0} Buckets! | BucketsKicked
+totalKicked | 既定 | Kicked {0} Buckets! | BucketsKicked
  |  | en | Kicked {0} Buckets! |
  |  | en-US | Kicked {0} Buckets! |
  |  | en-GB | Kicked {0} Buckets! |

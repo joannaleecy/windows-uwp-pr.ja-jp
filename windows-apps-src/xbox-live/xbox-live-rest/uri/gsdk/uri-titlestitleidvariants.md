@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a0a0df14b442babec363dfebc96a0c33935563e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933770"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658547"
 ---
 # <a name="titlestitleidvariants"></a>/titles/{titleId}/variants
-URI は、タイトルの利用可能な言語バリアントを取得するのには、クライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+タイトルの使用可能なバリエーションを取得するクライアントから呼び出す URI。 これらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EU)
   * [ホスト名](#ID4EIB)
@@ -28,7 +28,7 @@ URI は、タイトルの利用可能な言語バリアントを取得するの�
  
 | パラメーター| 説明| 
 | --- | --- | 
-| タイトル id| 要求の操作のタイトルの ID です。| 
+| タイトル id| 要求の操作対象のタイトルの ID。| 
   
 <a id="ID4EIB"></a>
 
@@ -42,7 +42,7 @@ gameserverds.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
   
-[POST](uri-titlestitleidvariants-post.md)
+[投稿](uri-titlestitleidvariants-post.md)
  
-&nbsp;&nbsp;指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URI
+&nbsp;&nbsp;URI の id。 指定したタイトルのゲームのバリアントのリストを取得するクライアントによって呼び出されます
    

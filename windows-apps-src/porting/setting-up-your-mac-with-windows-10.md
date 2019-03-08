@@ -4,14 +4,14 @@ title: Windows 10 を使用するための Mac のセットアップ
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4f7b0469ae8c50e6da40fb248678a69a2827931
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051025"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663827"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>Windows 10 を使用するための Mac のセットアップ
 
@@ -20,17 +20,17 @@ ms.locfileid: "9051025"
 
 ## <a name="run-windows-on-your-mac-and-use-visual-studio"></a>Mac で Windows を実行し、Visual Studio を使う
 
-ユニバーサル Windows アプリの開発を始める準備は整っているのに、PC が手元にない、そういう方でも 大丈夫です。Mac を使うことができます。 Apple Boot Camp や Oracle VirtualBox、VMware Fusion、Parallels Desktop のような人気のサードパーティ ソリューションは、windows 10 と Microsoft Visual Studio を Apple コンピューターにインストールできます。
+ユニバーサル Windows アプリの開発を始める準備は整っているのに、PC が手元にない、そういう方でも 大丈夫です。Mac を使うことができます。 Apple Boot Camp、Oracle VirtualBox、VMware Fusion の場合は、Parallels Desktop などの人気のあるサード パーティ製のソリューションを Apple コンピューターに Windows 10 および Microsoft Visual Studio をインストールすることができます。
 
-**注:** ディスクまたは USB フラッシュ ドライブ上の windows 10 のブート イメージが必要になります。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 サブスクライバーでない場合は、 [Microsoft Store](https://apps.microsoft.com/windows/app)からインストーラーを購入できます。 [この場所](https://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
+**注**  ディスクまたは USB フラッシュ ドライブに Windows 10 の起動可能なイメージが必要です。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 インストーラーから購入できる、サブスクライバーでない場合、 [Microsoft Store](https://apps.microsoft.com/windows/app)します。 [この場所](https://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
 
-Windows を実行しているが、[開発者が windows 10 のダウンロード](https://developer.microsoft.com/en-us/windows/downloads)から Visual Studio の最新リリースをインストールし、アプリの作成を開始!
+Visual Studio からの最新リリースをインストールできますし、Windows 実行したら、 [Windows 10 用の開発者向けダウンロード](https://developer.microsoft.com/en-us/windows/downloads)アプリの作成を開始!
 
-**注:** Visual Studio のデバイスのエミュレーターを使用する場合は、64 ビット (x64) バージョンの windows 10 Pro 以上をインストール**する必要があります**。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](https://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
+**注**  Visual Studio のデバイス エミュレーターを使用する場合を**する必要があります**64 ビット (x64) バージョンの Windows 10 Pro 以降をインストールします。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](https://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 
-Boot Camp アシスタント アプリは最近のすべての Mac にプリインストールされてし、起動はプロセスを説明する windows 10 をインストールします。 必要なのもは、上記のソースからダウンロードした Windows のコピーと 30 Gb 以上の空きディスク領域だけです。 インストールしたら、Mac OSX と Windows 10 のどちらを起動するかを選択できます。 詳しくは、Apple の [Boot Camp に関するページ](https://go.microsoft.com/fwlink/?LinkId=623912)をご覧ください。
+Boot Camp のアシスタントのアプリがすべて最新の Mac で事前にインストールされているし、起動プロセスを説明する、Windows 10 をインストールします。 必要なのもは、上記のソースからダウンロードした Windows のコピーと 30 Gb 以上の空きディスク領域だけです。 インストールしたら、Mac OSX と Windows 10 のどちらを起動するかを選択できます。 詳しくは、Apple の [Boot Camp に関するページ](https://go.microsoft.com/fwlink/?LinkId=623912)をご覧ください。
 
 ## <a name="parallels-desktop"></a>Parallels Desktop
 

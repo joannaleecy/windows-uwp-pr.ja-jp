@@ -1,25 +1,25 @@
 ---
 title: 計算パイプライン
-description: Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。
+description: Direct3D 計算パイプラインは、大部分がグラフィックス パイプラインと並行して実行可能な計算を処理できるように設計されています。
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929705"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651117"
 ---
 # <a name="compute-pipeline"></a>計算パイプライン
 
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
+\[いくつかの情報は、リリース版の発売までに著しく変更される可能性がありますが、リリース前の製品に関連します。 Microsoft では、一切の保証、明示または黙示にかかわらず、ここで提供される情報はありません。\]
 
 
-Direct3D 計算パイプラインは、グラフィックス パイプラインとほぼ並行して実行できる計算を処理するように設計されています。 計算パイプラインには、プログラム可能な計算シェーダー ステージを介して入力から出力へデータが流れる、わずかなステップしかありません。
+Direct3D 計算パイプラインは、大部分がグラフィックス パイプラインと並行して実行可能な計算を処理できるように設計されています。 計算パイプラインには、プログラム可能な計算シェーダー ステージを介して入力から出力へデータが流れる、わずかなステップしかありません。
 
 | | |
 |-|-|
@@ -57,7 +57,7 @@ Direct3D 計算パイプラインは、グラフィックス パイプライン�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D グラフィックスの学習ガイド](index.md)
+[Direct3D グラフィックス学習ガイド](index.md)
 
  
 

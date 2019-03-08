@@ -1,19 +1,19 @@
 ---
-title: 実績
-description: 実績
+title: 成績
+description: 成績
 ms.assetid: 35e055c2-3c84-4d73-bb86-fc776327d901
 ms.date: 04/04/2017
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4283369ea01e9b8ff06d57cb48867c97782591e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922870"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589707"
 ---
-# <a name="achievements"></a>実績
+# <a name="achievements"></a>成績
 
 2005 年に、Xbox LIVE はゲーム業界に実績の概念を導入しました。これは、すべてのゲームにわたって、一貫性のある方法で、ユーザーのゲーム内アクションを管理してリワードを与えるためのシステム規模のメカニズムです。
 

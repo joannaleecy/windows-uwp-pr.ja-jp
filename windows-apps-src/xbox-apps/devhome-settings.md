@@ -1,33 +1,33 @@
 ---
 ms.assetid: ec3945e7-cfb1-b91a-7ae6-e767a7227f8a
 title: '[設定] ページ (Dev Home)'
-description: Xbox one Dev Home アプリの設定ページについて説明します。
+description: Xbox One 用の Dev Home アプリの [設定] ページに関する情報を提供します。
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-settings.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a0a94a7a8e22ee63cb126bb50ad1c74837c4f55
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942158"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654207"
 ---
 # <a name="settings-page-dev-home"></a>[設定] ページ (Dev Home)
    
   
-Dev Home の**設定**] ページでは、開発機本体のさまざまな設定をへのアクセスを提供します。   
- ![Dev Home の設定] ページ](images/devhome_settings.png)   
+Dev Home の **[設定]** ページでは、開発コンソールのさまざまな設定にアクセスできます。   
+ ![開発用のホームの設定 ページ](images/devhome_settings.png)   
   
-**[設定**] ページには、次のウィンドウが含まれています。   
+**[設定]** ページには次のウィンドウがあります。   
  
-   *  [本体の設定](#ID4EEB)  
-   *  [OS 回復設定の更新](#ID4EOB)  
+   *  [コンソールの設定](#ID4EEB)  
+   *  [回復の OS の更新設定](#ID4EOB)  
    *  [Visual Studio](#ID4EYB)  
    *  [デバッグの設定](#ID4ECC)  
-   *  [無人インストール スクリプトの構成](#ID4EMC)  
-   *  [既定のホーム エクスペリエンス](#ID4E3C)  
+   *  [無人インストール用スクリプトの構成](#ID4EMC)  
+   *  [既定のホームのエクスペリエンス](#ID4E3C)  
 
  
 <a id="ID4EEB"></a>
@@ -37,16 +37,16 @@ Dev Home の**設定**] ページでは、開発機本体のさまざまな設�
 ## <a name="console-settings"></a>本体の設定  
    
   
-**コンソールの設定**ウィンドウでは、"概要"ビューのコンソールの設定と情報を提供します。 これらのツールを使用して、表示して、本体のホスト名、サンド ボックス、およびセキュリティへのアクセス キーの設定を編集することができます。   
+**[コンソールの設定]** ウィンドウには、コンソールの設定と情報の "概要" ビューが表示されます。 これらのツールを使って、コンソールのホスト名、サンドボックス、セキュリティ アクセス キーの設定を表示および編集することができます。   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="os-recovery-update-settings"></a>OS 回復設定の更新  
+## <a name="os-recovery-update-settings"></a>OS 回復の更新設定  
    
   
-**OS 回復設定を更新する**ウィンドウは、コンソールの設定の自動更新を構成します。 これらの設定を変更することに注意を有効にするには、最大 24 時間がかかることができます。   
+**[OS 回復の更新設定]** ウィンドウでは、コンソールの自動更新設定を構成します。 これらの設定の変更が反映されるまで最大 24 時間かかることがある点に注意してください。   
   
 <a id="ID4EYB"></a>
 
@@ -55,7 +55,7 @@ Dev Home の**設定**] ページでは、開発機本体のさまざまな設�
 ## <a name="visual-studio"></a>Visual Studio  
    
   
-**Visual Studio**のウィンドウを使用して、本体を Visual Studio をペアリングします。 すべてのペアリングされた Visual Studio のインスタンスを削除することもできます。   
+**[Visual Studio]** ウィンドウは、Visual Studio とコンソールをペアリングするために使います。 ペアリングされたすべての Visual Studio インスタンスを削除することもできます。   
   
 <a id="ID4ECC"></a>
 
@@ -64,16 +64,16 @@ Dev Home の**設定**] ページでは、開発機本体のさまざまな設�
 ## <a name="debug-settings"></a>デバッグの設定  
    
   
-一般的なトグルを表示および**デバッグの設定**ウィンドウが使用される設定をデバッグします。   
+**[デバッグの設定]** ウィンドウは、一般的なデバッグ設定を表示および切り替えるために使います。   
   
 <a id="ID4EMC"></a>
 
    
 
-## <a name="unattended-script-configuration"></a>無人インストール スクリプトの構成  
+## <a name="unattended-script-configuration"></a>無人スクリプトの構成  
    
   
-**無人設定のスクリプト**ウィンドウは、Xbox One 本体のセットアップ スクリプトを管理します。   
+**[無人スクリプトの構成]** ウィンドウでは、Xbox One コンソールのセットアップ スクリプトを管理します。   
   
 <a id="ID4E3C"></a>
 
@@ -82,13 +82,13 @@ Dev Home の**設定**] ページでは、開発機本体のさまざまな設�
 ## <a name="default-home-experience"></a>既定のホーム エクスペリエンス  
    
   
-**ホーム エクスペリエンスを既定の**ウィンドウでは、コンソールの起動時に、製品版ホーム画面または[コンソール (Dev Home) における開発者ホーム](dev-home.md)画面を表示するかどうかを決定します。   
+**[既定のホーム エクスペリエンス]** ウィンドウでは、コンソールの起動時に、製品版のホーム画面と、[コンソールの開発者ホーム (Dev Home)](dev-home.md) 画面のどちらが表示されるかを決定します。   
   
 <a id="ID4EJD"></a>
 
    
 
 ## <a name="see-also"></a>関連項目  
- [コンソール (Dev Home) における開発者ホーム](dev-home.md)
+ [コンソール (Dev ホーム) 開発者ホーム](dev-home.md)
 
   

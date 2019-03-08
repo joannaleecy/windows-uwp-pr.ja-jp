@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 計画, アクセシビリティ, クラウド, 収益化, パッケージ化, テクノロジ, 概念, 承認
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653777"
 ---
 # <a name="planning-for-uwp-games"></a>UWP ゲームの計画
 
@@ -30,15 +30,15 @@ ms.locfileid: "8946004"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="game-development-platform-guide.md">ゲーム テクノロジ</a></p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">ゲームのテクノロジ</a></p></td>
 <td align="left"><p>ゲームの開発に役立つテクノロジを紹介します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="accessibility-for-games.md">ゲームのアクセシビリティ</a></p></td>
+<td align="left"><p><a href="accessibility-for-games.md">ゲームのユーザー補助機能</a></p></td>
 <td align="left"><p>ゲームのアクセシビリティを強化する方法について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="cloud-for-games.md">ゲーム用のクラウド</a></p></td>
+<td align="left"><p><a href="cloud-for-games.md">クラウド ゲーム</a></p></td>
 <td align="left"><p>ゲーム用のクラウドを使用します。</p></td>
 </tr>
 <tr class="even">
@@ -46,11 +46,11 @@ ms.locfileid: "8946004"
 <td align="left"><p>ゲームで収益を得る方法について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="package-your-windows-store-directx-game.md">ゲームのパッケージ化</a></p></td>
+<td align="left"><p><a href="package-your-windows-store-directx-game.md">ゲームをパッケージ化します。</a></p></td>
 <td align="left"><p>Microsoft Store 用にゲーム パッケージを準備します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="concept-approval.md">概念の承認</a></p></td>
+<td align="left"><p><a href="concept-approval.md">コンセプトの承認</a></p></td>
 <td align="left"><p>ゲームの概念について承認を受けます。</p></td>
 </tr>
 </tbody>

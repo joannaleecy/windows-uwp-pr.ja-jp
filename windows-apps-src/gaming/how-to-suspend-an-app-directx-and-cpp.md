@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 一時停止, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945714"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656037"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>アプリを一時停止する方法 (DirectX と C++)
 
@@ -19,7 +19,7 @@ ms.locfileid: "8945714"
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 
-## <a name="register-the-suspending-event-handler"></a>suspending イベント ハンドラーに登録する
+## <a name="register-the-suspending-event-handler"></a>中断イベント ハンドラーを登録する
 
 
 まず、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理するための登録を行います。このイベントは、ユーザーまたはシステムの動作によってアプリが一時停止の状態に移ったときに発生します。
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>Trim() を呼び出す
 
 
-以降 Windows8.1 では、すべての DirectX UWP アプリ呼び出す必要があります[**idxgidevice 3::trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)中断時にします。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 これは、Windows8.1 の認定要件です。
+すべての DirectX の UWP アプリを呼び出す必要があります Windows 8.1 以降、 [ **IDXGIDevice3::Trim** ](https://msdn.microsoft.com/library/windows/desktop/dn280346)サスペンド時にします。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 これは、Windows 8.1 の認定要件です。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -137,7 +137,7 @@ void DX::DeviceResources::Trim()
 ## <a name="remarks"></a>注釈
 
 
-ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
+ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に中断前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
 
 システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 一時停止されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、**CoreApplicationView::Activated** イベントのハンドラーでアプリケーション データを復元する必要があります。
 
@@ -145,8 +145,8 @@ void DX::DeviceResources::Trim()
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
-* [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
+* [(DirectX および C++) アプリを再開する方法](how-to-resume-an-app-directx-and-cpp.md)
+* [(DirectX および C++) アプリをアクティブ化する方法](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

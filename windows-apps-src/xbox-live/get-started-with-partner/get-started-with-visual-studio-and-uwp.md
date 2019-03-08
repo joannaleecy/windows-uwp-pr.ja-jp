@@ -7,27 +7,27 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 314d5e937bb8680dc26b7dfdfa15ff90f8f26c81
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044847"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651407"
 ---
 # <a name="get-started-using-visual-studio-for-uwp-games"></a>UWP ゲーム用 Visual Studio の使用に関する概要
 
 ## <a name="requirements"></a>要件
 
-1. **[パートナー センターの開発者プログラム](https://developer.microsoft.com/store/register)** に登録します。
-2. **[Windows 10](https://microsoft.com/windows)**。
-3. **[Visual Studio](https://www.visualstudio.com/)** の**ユニバーサル Windows アプリ開発ツール**を使用します。 UWP アプリのバージョン番号は Visual Studio 2015 Update 3 を最低限に必要です。 開発者とセキュリティ更新プログラムの最新リリースの Visual Studio を使用することをお勧めします。 
-4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** 以降。
+1. 登録、 **[パートナー センター開発者プログラム](https://developer.microsoft.com/store/register)** します。
+2. **[Windows 10](https://microsoft.com/windows)** します。
+3. **[Visual Studio](https://www.visualstudio.com/)** で、**ユニバーサル Windows アプリ開発ツール**します。 UWP アプリのバージョンは Visual Studio 2015 Update 3 に必要な最小です。 開発者とセキュリティ更新プログラムの最新リリースの Visual Studio を使用することをお勧めします。 
+4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0**またはそれ以降。
 
 > [!IMPORTANT]
 > Windows 10 SDK バージョン 10.0.15063.0 (Creators Update とも呼ばれます) 以降を使っている場合は、Visual Studio 2017 が必要です。
 
-## <a name="create-a-new-product-in-partner-center"></a>パートナー センターで新しい製品を作成します。
+## <a name="create-a-new-product-in-partner-center"></a>パートナー センターで新しい成果物を作成します。
 
-すべての Xbox Live タイトルにサインインし、Xbox Live サービスを呼び出すことができます前に、[パートナー センター](https://partner.microsoft.com/dashboard)で作成された製品が必要です。 詳しくは、[UDC でのタイトルの作成に関するページ](create-a-new-title.md)をご覧ください。
+すべての Xbox Live タイトルで作成した製品をいる必要があります[パートナー センター](https://partner.microsoft.com/dashboard)前に、サインインし、Xbox Live サービスを呼び出すことができます。 詳しくは、[UDC でのタイトルの作成に関するページ](create-a-new-title.md)をご覧ください。
 
 ## <a name="configuring-your-development-device"></a>開発用デバイスの構成
 
@@ -60,7 +60,7 @@ ms.locfileid: "9044847"
 > [!NOTE]
 > Xbox Live API (XSAPI) は、バージョン 10.0.10586.0 以上でなければなりません。
 
-### <a name="2-add-references-to-the-xbox-live-api-xsapi-in-your-project"></a>2. プロジェクトで Xbox Live API (XSAPI) への参照を追加する
+### <a name="2-add-references-to-the-xbox-live-api-xsapi-in-your-project"></a>2. Xbox Live API (XSAPI) への参照をプロジェクトに追加します。
 
 Xbox Services API には、UWP と XDK の両方で使用できるものと、C++ で使用できるもの、WinRT で使用できるものがあり名前空間の構造は **Microsoft.Xbox.Live.SDK.*.UWP** と **Microsoft.Xbox.Live.SDK.*.XboxOneXDK** です。
 
@@ -85,7 +85,7 @@ Xbox Services API には、UWP と XDK の両方で使用できるものと、C+
 > [!IMPORTANT]
 > `Microsoft.Xbox.Live.SDK.Cpp.*` ベースのプロジェクトの場合、必ずプロジェクトのソースにヘッダー `#include <xsapi\services.h>` を含めてください。
 
-### <a name="3-optional-using-connected-storage-andor-secure-sockets"></a>3. (省略可能) 接続ストレージやセキュア ソケットを使う
+### <a name="3-optional-using-connected-storage-andor-secure-sockets"></a>3.(省略可能)接続された記憶域やセキュリティで保護されたソケットを使用してください。
 使う Windows SDK のバージョンによっては、Xbox Live の[接続ストレージ](../storage-platform/connected-storage/connected-storage-technical-overview.md)やセキュア ソケットを使うために、追加のコンテンツをインストールしたり、プロジェクトに参照を手動で追加したりする必要があります。 接続ストレージ機能を使う場合、`Windows.Gaming.XboxLive.Storage` 名前空間にアクセスする必要があります。 セキュア ソケットを使う場合、`Windows.Networking.XboxLive` にアクセスする必要があります。
 
 #### <a name="windows-10-sdk-version-10016299-or-higher"></a>Windows 10 SDK バージョン 10.0.16299 以降
@@ -111,17 +111,17 @@ Xbox Live Platform Extensions SDK をインストールしたら、Visual Studio
 3. 表示される一覧で、**[Windows Desktop Extensions for UWP]** を検索し、使っている Windows 10 SDK に一致するバージョンの横のチェック ボックスをオンにします。
 4. **[OK]** をクリックします。
 
-### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4. Visual Studio のプロジェクトと UWP アプリを関連付ける
+### <a name="4-associate-your-visual-studio-project-with-your-uwp-app"></a>4。Visual Studio プロジェクトを UWP アプリに関連付ける
 
 できるゲームのサインイン、パートナー センターで作成した製品に関連付けられている場合があります。 ゲームは、Visual Studio で Microsoft Store 関連付けウィザードを使って関連付けることができます。 Visual Studio で、次のようにします。
 
-1.  プライマリー プロジェクト (スタートアップ プロジェクト) を右クリックし、**[Microsoft Store]** > **[アプリケーションを Microsoft Store と関連付ける...]** の順にクリックします
+1.  プライマリー プロジェクト (スタートアップ プロジェクト) を右クリックし、**[ストア]** > **[アプリケーションをストアと関連付ける...]** の順にクリックします
 2.  要求されたら、アプリの作成に使用した **Windows デベロッパー アカウント**でサインインし、画面の指示に従います。
 
 > [!TIP]
 > Microsoft Store 用のゲームの準備について詳しくは、「[アプリのパッケージ化](https://docs.microsoft.com/windows/uwp/packaging/)」をご覧ください。
 
-### <a name="5-add-internet-capabilities-to-your-visual-studio-project"></a>5. インターネット機能を Visual Studio のプロジェクトに追加する
+### <a name="5-add-internet-capabilities-to-your-visual-studio-project"></a>5。Visual Studio プロジェクトにインターネット機能を追加します。
 UWP プロジェクトが Xbox Live と通信するにはインターネット機能を指定する必要があります。 これらのプロパティは、次の方法で設定できます。
 
 1. Visual Studio で **package.appxmanifest** ファイルをダブルクリックして、**マニフェスト デザイナー**を開きます。
@@ -129,7 +129,7 @@ UWP プロジェクトが Xbox Live と通信するにはインターネット�
 
 ![VS での新しい参照の追加](../images/getting_started/get-started-vs-add-capability.png)
 
-### <a name="6-associate-your-visual-studio-project-with-your-xbox-live-enabled-title"></a>6. Visual Studio のプロジェクトと Xbox Live 対応のタイトルを関連付ける
+### <a name="6-associate-your-visual-studio-project-with-your-xbox-live-enabled-title"></a>6。Xbox Live の有効なタイトルと、Visual Studio プロジェクトを関連付ける
 
 Xbox Live サービスと通信するには、プロジェクトにサービス構成ファイルを追加する必要があります。 次の方法で行うと簡単です。
 
@@ -138,7 +138,7 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
 3. ファイルを右クリックして **[プロパティ]** を選び、以下の点を確認します。
     1. **[ビルド アクション]** が **[コンテンツ]** に設定されている。  
     2. **[出力ディレクトリにコピー]** が **[常にコピーする]** に設定されている。
-5.  次のテンプレートを使用して構成ファイルを編集し、**TitleId** と **PrimaryServiceConfigId** をタイトルに適用される値に置き換えます。 パートナー センターで、ルートの Xbox Live ページから適切な値を取得できます。 **PrimaryServiceConfigId**は、パートナー センターで**SCID**として表示されます。
+5.  次のテンプレートを使用して構成ファイルを編集し、**TitleId** と **PrimaryServiceConfigId** をタイトルに適用される値に置き換えます。 パートナー センターで、ルートの Xbox Live ページから適切な値を取得できます。 **PrimaryServiceConfigId**としてパートナー センターで表示される**SCID**します。
 
 ```json
     {
@@ -147,7 +147,7 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
     }
 ```
 
-例:
+次に、例を示します。
 
 ```json
     {
@@ -159,7 +159,7 @@ Xbox Live サービスと通信するには、プロジェクトにサービス�
 > [!TIP]
 > xboxservices.config 内のすべての値で大文字と小文字が区別されます。 TitleID と PrimaryServiceConfigId の取得について詳しくは、「[サービス構成](../xbox-live-service-configuration.md)」をご覧ください。
 
-### <a name="7-optional-add-multiplayer-capabilities"></a>7. (省略可能) マルチプレイヤー機能を追加する
+### <a name="7-optional-add-multiplayer-capabilities"></a>7.(省略可能)マルチ プレーヤーの機能を追加します。
 
 マルチプレイヤーのサポートをタイトルに追加する予定があり、プレイヤーが他のユーザーをマルチプレイヤー ゲームに招待する機能を実装する場合は、別のフィールドを AppXManifest ファイルに追加する必要があります。 詳しくは、「[マルチプレイヤー用に AppXManifest を構成する](../multiplayer/service-configuration/configure-your-appxmanifest-for-multiplayer.md)」をご覧ください。
 

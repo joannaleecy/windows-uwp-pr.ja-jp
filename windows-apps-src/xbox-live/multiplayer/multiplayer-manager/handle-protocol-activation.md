@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Multiplayer Manager, プロトコルのアクティブ化
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b5dead742e18bbf5f3e9c271109352ae48e8fef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655837"
 ---
 # <a name="handle-protocol-activation"></a>プロトコルのアクティブ化を処理する
 
@@ -24,7 +24,7 @@ ms.locfileid: "8926943"
 
 このシナリオでは、タイトルが起動されてロビーおよびゲーム (存在する場合) に参加したときにプロトコルのアクティブ化を処理する方法について説明します。
 
-プロセスのフローチャートについては、「[フローチャート - プロトコルのアクティブ化を処理する](mpm-flowcharts/mpm-on-protocol-activation.md)」を参照してください。
+ここで、プロセスのフローチャートを確認できます。[フローチャート - ハンドル プロトコルのアクティブ化 player](mpm-flowcharts/mpm-on-protocol-activation.md)します。
 
 | メソッド | トリガーされるイベント |
 | -----|----------------|
@@ -55,7 +55,7 @@ mpInstance->lobby_session()->set_local_member_connection_address(
 
 エラー/成功は `join_lobby_completed` イベントを介して処理されます。
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * RTA およびマルチプレイヤーのサブスクリプションを登録する
 * ロビー セッションに参加する

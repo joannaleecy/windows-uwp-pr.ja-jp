@@ -8,33 +8,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e63e4ee6789e4ffb292608aa446138109e00e05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937971"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649427"
 ---
 # <a name="xbox-live-services-restful-reference"></a>Xbox Live サービス RESTful リファレンス
 
-Xbox Live サービスでは、一連のゲームとプレイヤーの情報を管理するためのサービスです。 これらのサービスをサポートして**Xbox.Services** API 可能であればために使用する必要があります。 まだ**Xbox.Services**に追加されていない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用します。
+Xbox Live サービスは、一連のゲーム プレイヤーの情報を管理するためのサービスです。 これらのサービスのサポート、 **Xbox.Services** API 可能な場合に使用する必要があります。 追加されていない新しい方法は、このセクションで説明されている RESTful インターフェイスを使用して**Xbox.Services**まだします。
 
 <a id="ID4E5"></a>
 
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[ユニバーサル リソース識別子 (URI) リファレンス](uri/atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](uri/atoc-xboxlivews-reference-uris.md)
 
-&nbsp;&nbsp;リソースと Xbox Live サービスで使用できるメソッドのリファレンスを提供します。
+&nbsp;&nbsp;リソースおよび Xbox Live サービスで使用できるメソッドについてのリファレンス資料を提供します。
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](json/atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](json/atoc-xboxlivews-reference-json.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトのリファレンスを提供します。
+&nbsp;&nbsp;Xbox Live サービスと使用する JavaScript Object Notation (JSON) オブジェクトの参照資料を提供します。
 
-[JavaScript Object Notation (JSON) オブジェクトで使用される列挙型](enums/atoc-xboxlivews-reference-enums.md)
+[JavaScript Object Notation (JSON) オブジェクトに使用される列挙体](enums/atoc-xboxlivews-reference-enums.md)
 
-&nbsp;&nbsp;Xbox Live サービスで使われる JavaScript Object Notation (JSON) オブジェクトで使用する列挙体に関するリファレンス情報を提供します。
+&nbsp;&nbsp;Xbox Live サービスと使用する JavaScript Object Notation (JSON) オブジェクトで使用される列挙型のリファレンスを提供します。
 
-[その他の参照情報](additional/atoc-xboxlivews-reference-additional.md)
+[その他の参照](additional/atoc-xboxlivews-reference-additional.md)
 
-&nbsp;&nbsp;Xbox Live サービスの補助リファレンスです。 これには、承認のタイプ、データ型、標準の HTTP ステータス コードとヘッダー、ページング パラメーター、およびエンターテイメント探索サービス (EDS) に関する情報が含まれます。
+&nbsp;&nbsp;Xbox Live サービスの提供品のリファレンス資料。 これには、承認の種類、データ型、標準 HTTP ステータス コードとヘッダー、ページングのパラメーター、およびエンターテイメント検出サービス (EDS) に関する情報が含まれます。

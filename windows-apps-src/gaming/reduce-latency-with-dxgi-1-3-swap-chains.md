@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 待機時間, DXGI, スワップ チェーン, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: acb5c58eebafa53fe140442550356f7eb7534efe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047171"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594917"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>DXGI 1.3 スワップ チェーンによる遅延の減少
 
@@ -24,18 +24,18 @@ DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレ�
 
 フリップ モデルのスワップ チェーンでは、ゲームが [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出すたびにバック バッファーの "フリップ" がキューに入れられます。 レンダリング ループによって Present() が呼び出されると、前のフレームの表示が完了するまでスレッドがブロックされ、新しいフレームが実際に表示されるまでキューに入れておくための領域を確保します。 これにより、ゲームによってフレームを描画した時点から、そのフレームが表示できるようになる時点まで、追加の待機時間が生まれます。 多くの場合、各フレームのレンダリングが開始されてから表示されるまでの間にほぼ 1 フレーム分の追加待機時間が常に発生するという、安定した状態に到達します。 新しいフレームを許可する準備が整うまで待機してから、現在のデータに基づいてフレームをレンダリングし、即座にキューに入れることをお勧めします。
 
-[**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) フラグを使って待機可能スワップ チェーンを作成します。 この方法で作成されたスワップ チェーンでは、システムが実際に新しいフレームを許可する準備ができたことをレンダリング ループに通知できます。 これにより、現在のデータに基づいてレンダリングした結果を即座に現在のキューに入れることができます。
+待機可能なスワップ チェーンを作成、 [ **DXGI\_スワップ\_チェーン\_フラグ\_フレーム\_待機時間\_WAITABLE\_オブジェクト**](https://msdn.microsoft.com/library/windows/desktop/bb173076)フラグ。 この方法で作成されたスワップ チェーンでは、システムが実際に新しいフレームを許可する準備ができたことをレンダリング ループに通知できます。 これにより、現在のデータに基づいてレンダリングした結果を即座に現在のキューに入れることができます。
 
-## <a name="step-1-create-a-waitable-swap-chain"></a>手順 1: 待機可能スワップ チェーンを作成する
+## <a name="step-1-create-a-waitable-swap-chain"></a>手順 1:待機可能なスワップ チェーンを作成します。
 
 
-[**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を呼び出すときに [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) フラグを指定します。
+指定、 [ **DXGI\_スワップ\_チェーン\_フラグ\_フレーム\_待機時間\_WAITABLE\_オブジェクト**](https://msdn.microsoft.com/library/windows/desktop/bb173076)呼び出すときにフラグを付ける[ **CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559)します。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注:** 一部フラグとこのフラグを追加できませんまたは[**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)を使用して削除します。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
+> **注**  いくつかのフラグとは異なりこのフラグを追加できませんまたはを使用して削除[ **ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577)します。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
 
  
 
@@ -50,7 +50,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>手順 2: フレーム待機時間を設定する
+## <a name="step-2-set-the-frame-latency"></a>手順 2:フレームの待機時間を設定します。
 
 
 フレーム待機時間は、[**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) を呼び出すのではなく [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API を使って設定します。
@@ -68,10 +68,10 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>手順 3: スワップ チェーンから待機可能オブジェクトを取得する
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>手順 3:スワップ チェーンから待機可能オブジェクトを取得します。
 
 
-[**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) を呼び出して待機ハンドルを取得します。 待機ハンドルは、待機可能オブジェクトへのポインターです。 レンダリング ループで使うために、このハンドルを格納します。
+[  **IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) を呼び出して待機ハンドルを取得します。 待機ハンドルは、待機可能オブジェクトへのポインターです。 レンダリング ループで使うために、このハンドルを格納します。
 
 ```cpp
 // Get the frame latency waitable object, which is used by the WaitOnSwapChain method. This
@@ -80,10 +80,10 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>手順 4: 各フレームをレンダリングする前に待機する
+## <a name="step-4-wait-before-rendering-each-frame"></a>手順 4:各フレームをレンダリングする前に待機します。
 
 
-レンダリング ループでは、各フレームのレンダリングを開始する前に、待機可能オブジェクトを利用してスワップ チェーンによる通知を待機する必要があります。 これには、スワップ チェーンでレンダリングされた最初のフレームが含まれます。 [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036) を使い、手順 2. で取得した待機ハンドルを提供して各フレームの開始を通知します。
+レンダリング ループでは、各フレームのレンダリングを開始する前に、待機可能オブジェクトを利用してスワップ チェーンによる通知を待機する必要があります。 これには、スワップ チェーンでレンダリングされた最初のフレームが含まれます。 [  **WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036) を使い、手順 2. で取得した待機ハンドルを提供して各フレームの開始を通知します。
 
 次の例は、DirectXLatency サンプルからのレンダー ループを示しています。
 
@@ -147,14 +147,14 @@ Windows でのマルチスレッド プログラミングについて詳しく�
 ## <a name="related-topics"></a>関連トピック
 
 
-* [DirectXLatency のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency サンプル](https://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
 * [C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)
 * [プロセスとスレッド](https://msdn.microsoft.com/library/windows/desktop/ms684841)
 * [同期](https://msdn.microsoft.com/library/windows/desktop/ms686353)
-* [イベント オブジェクトの使用 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
+* [イベント オブジェクト (Windows) を使用します。](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
  
 

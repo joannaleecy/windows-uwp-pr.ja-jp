@@ -4,14 +4,14 @@ title: ネットワークの基本
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.date: 06/01/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffc2f31b52e7913905c7d64ab797b2939cfb313d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045225"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651657"
 ---
 # <a name="networking-basics"></a>ネットワークの基本
 ネットワーク対応アプリで実行する必要がある事柄について説明します。
@@ -32,11 +32,11 @@ ms.locfileid: "9045225"
 | 機能 | 説明 |
 |------------|-------------|
 | **enterpriseAuthentication** | ドメイン資格情報を必要とするネットワーク リソースにアプリが接続できるようにします。 この機能を使う場合、すべてのアプリの機能をドメイン管理者が有効にする必要があります。 たとえば、プライベート イントラネットの SharePoint サーバーからデータを取得するアプリが該当します。 <br/> この機能を使うと、資格情報を必要とするネットワーク上のリソースに、自分の資格情報を使ってアクセスすることができます。 この機能を持ったアプリは、ネットワーク上でユーザーを偽装することができます。 <br/> この機能を使う場合、認証プロキシ経由でのインターネットへのアクセスをアプリに許可する必要はありません。 |
-| **proximity** | コンピューターときわめて近い場所にあるデバイスとの近距離近接通信で必要となります。 近距離近接通信は、近くのデバイス上のアプリケーションに接続したりデータを送ったりするときに使われます。 <br/> この機能を有効にすると、アプリは、ユーザーの同意に基づいて相手を招待したり招待に応じたりしながら、ネットワークにアクセスし、きわめて近い場所にあるデバイスに接続することができます。 |
+| **近接** | コンピューターときわめて近い場所にあるデバイスとの近距離近接通信で必要となります。 近距離近接通信は、近くのデバイス上のアプリケーションに接続したりデータを送ったりするときに使われます。 <br/> この機能を有効にすると、アプリは、ユーザーの同意に基づいて相手を招待したり招待に応じたりしながら、ネットワークにアクセスし、きわめて近い場所にあるデバイスに接続することができます。 |
 | **sharedUserCertificates** | ソフトウェア証明書とハードウェア証明書 (スマート カード証明書など) にアプリがアクセスできるようにします。 この機能が実行時に呼び出されると、ユーザーは、カードの挿入や証明書の選択などの行動をとる必要があります。 <br/> この機能では、ソフトウェア証明書やハードウェア証明書、スマート カードが、アプリでの身分証明に使われます。 この機能は、企業や銀行、行政サービスで身分証明に使うことができます。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>アプリがフォア グラウンドにないときの通信
-「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 この目的で Windows8、コントロール チャネル トリガーを使用して、windows 10 ではまだサポートされています。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでプッシュ対応ストリーム ソケットなどのいくつかのシナリオのオーバーヘッドが小さい優れた機能を提供します。 ソケット ブローカーとソケット アクティビティ トリガーします。
+「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、この目的のコントロール チャネルのトリガーを使用して、Windows 10 で引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジがプッシュが有効なストリーム ソケットなどのシナリオのオーバーヘッドを軽減の優れた機能を提供します。 ソケット ブローカーとソケット アクティビティ トリガーします。
 
 アプリで [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) を使っている場合は、開いているソケットの所有権をシステムが提供するソケット ブローカーに移譲した後、フォアグラウンドから離れるか、アプリを終了できます。 移譲されたソケットで接続が行われるか、そのソケットでトラフィックが到着すると、アプリまたは指定されたバックグラウンド タスクがアクティブ化します。 アプリが実行されていない場合は、開始されます。 その後、ソケット ブローカーは、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使って、新しいトラフィックが到着していることをアプリに通知します。 アプリは、ソケット ブローカーからソケットを取り戻し、そのソケットのトラフィックを処理します。 つまり、アプリがネットワーク トラフィックをアクティブに処理していないときに消費するシステム リソースが非常に少なくなります。
 
@@ -45,7 +45,7 @@ ms.locfileid: "9045225"
 ### <a name="choosing-a-network-trigger"></a>ネットワーク トリガーの選択
 どちらの種類のトリガーが適しているかを判断するいくつかのシナリオがあります。 アプリで使うトリガーの種類を選択するときは、次のアドバイスを検討してください。
 
--   [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638) を使う場合は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う必要があります。
+-   [  **IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または [System.Net.Http.HttpClientHandler](https://go.microsoft.com/fwlink/p/?linkid=241638) を使う場合は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う必要があります。
 -   プッシュ対応 **StreamSockets** を使っている場合、コントロール チャネル トリガーを使うことができますが、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) をお勧めします。 後者を選ぶと、接続がアクティブに使われていない場合は、システムによってメモリが解放され、電力要件が低減されます。
 -   アプリがネットワーク要求をアクティブに処理していないときのメモリ使用量をできる限り少なくする場合は、可能な限り [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) をお勧めします。
 -   システムがコネクト スタンバイ モードにあるときにアプリがデータを受信できるようにする場合は、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使います。
@@ -56,12 +56,12 @@ ms.locfileid: "9045225"
 Secure Sockets Layer (SSL) とより新しいトランスポート層セキュリティ (TLS) は、ネットワーク通信の認証と暗号化を実現するように設計された暗号化プロトコルです。 これらのプロトコルは、ネットワーク データの送受信時に傍受や改ざんを防ぐように設計されています。 これらのプロトコルでは、クライアント/サーバー モデルを使ってプロトコル交換が行われます。 また、デジタル証明書と証明機関を使って、サーバーが本物であることが確認されます。
 
 ### <a name="creating-secure-socket-connections"></a>セキュリティが確保されたソケット接続の作成
-[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトは、クライアントとサーバー間の通信に SSL/TLS を使うように構成できます。 この SSL/TLS のサポートは、SSL/TLS ネゴシエーションで **StreamSocket** オブジェクトをクライアントとして使うことに制限されます。 サーバーとしての SSL/TLS ネゴシエーションは **StreamSocket** クラスで実装されていないため、着信接続を受信したときに [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) によって作成された **StreamSocket** と共に SSL/TLS を使うことはできません。
+[  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトは、クライアントとサーバー間の通信に SSL/TLS を使うように構成できます。 この SSL/TLS のサポートは、SSL/TLS ネゴシエーションで **StreamSocket** オブジェクトをクライアントとして使うことに制限されます。 サーバーとしての SSL/TLS ネゴシエーションは **StreamSocket** クラスで実装されていないため、着信接続を受信したときに [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) によって作成された **StreamSocket** と共に SSL/TLS を使うことはできません。
 
-[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 接続のセキュリティを確保するには 2 つの方法があります。
+[  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 接続のセキュリティを確保するには 2 つの方法があります。
 
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - ネットワーク サービスへの最初の接続を確立してすぐに、すべての通信で SSL/TLS を使うようにネゴシエートします。
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - 最初に暗号化なしでネットワーク サービスに接続します。 アプリでデータが送受信される場合があります。 その後、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
+-   [**ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701504) - ネットワーク サービスに最初に接続し、すべての通信に SSL や TLS を使用する、すぐにネゴシエートします。
+-   [**UpgradeToSslAsync** ](https://msdn.microsoft.com/library/windows/apps/br226922) -暗号化なしのネットワーク サービスに最初に接続します。 アプリでデータが送受信される場合があります。 その後、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
 
 SocketProtectionLevel は、アプリが接続を確立またはアップグレードする際に必要なソケット保護レベルを指定します。 ただし、確立される接続の最終的な保護レベルは接続の両方のエンドポイント間のネゴシエーション プロセスで決まります。 指定した保護レベルは、相手のエンドポイントでより低いレベルが要求されている場合、より低くなることがあります。 
 
@@ -71,19 +71,19 @@ SocketProtectionLevel は、アプリが接続を確立またはアップグレ�
 > コードでは、特定の保護レベルの使用に暗黙的に依存しないように、つまり特定のセキュリティ レベルの既定での使用を前提にしないようにしてください。 セキュリティ環境は変わり続けており、プロトコルと既定の保護レベルは、既知の弱点のあるプロトコルの使用を避けるように、刻々と変更されています。 既定値は、個々のコンピューターの構成、つまりインストールされているソフトウェアや適用されているパッチによって異なることがあります。 アプリが特定のセキュリティ レベルの使用に依存する場合は、明示的にそのレベルを指定したうえで、実際にそのレベルを使って接続が確立されたことを確認する必要があります。
 
 ### <a name="use-connectasync"></a>ConnectAsync の使用
-[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504)ネットワーク サービスへの最初の接続を確立してすぐに、すべての通信で SSL/TLS を使うようにネゴシエートするのに使えます。 *protectionLevel* パラメーターを渡すことができる **ConnectAsync** メソッドは 2 つあります。
+[**ConnectAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701504)のネットワーク サービスに最初の接続を確立するために使用でき、すべての通信に SSL や TLS を使用する、すぐにネゴシエートします。 *protectionLevel* パラメーターを渡すことができる **ConnectAsync** メソッドは 2 つあります。
 
--   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、[**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) オブジェクトと [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモート ネットワークの宛先に接続する非同期操作を開始します。
--   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、リモート ホスト名、リモート サービス名、[**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモートの宛先に接続する非同期操作を開始します。
+-   [**ConnectAsync (EndpointPair、SocketProtectionLevel)** ](https://msdn.microsoft.com/library/windows/apps/hh701511) -で、非同期操作を開始、 [ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)リモート ネットワークの宛先に接続するオブジェクトとして指定された、 [ **EndpointPair** ](https://msdn.microsoft.com/library/windows/apps/hh700953)オブジェクトと[ **SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880)します。
+-   [**ConnectAsync (ホスト名、文字列、SocketProtectionLevel)** ](https://msdn.microsoft.com/library/windows/apps/br226916) -で、非同期操作を開始、 [ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)リモート宛先に接続するオブジェクトリモートのホスト名、リモート サービス名で指定された、 [ **SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880)します。
 
 先ほどのいずれかの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドを呼び出すときに *protectionLevel* パラメーターが **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
 
 これらの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドで使う一般的な手順は同じです。
 
--   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
+-   [  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
 -   ソケットの詳細オプションが必要な場合は、[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) プロパティを使って、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトに関連付けられている [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) インスタンスを取得します。 **StreamSocketControl** のプロパティを設定します。
 -   上記のいずれかの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドを呼び出し、リモートの宛先に接続する操作を開始してすぐに、SSL/TLS の使用をネゴシエートします。
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
+-   [  **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
 
 次の例では、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作り、ネットワーク サービスへの接続を確立してすぐに、SSL/TLS を使うようにネゴシエートします。 ネゴシエーションに成功すると、クライアントとネットワーク サーバー間で **StreamSocket** を使うすべてのネットワーク通信が暗号化されます。
 
@@ -191,15 +191,15 @@ using Windows::Networking::Sockets;
 ### <a name="use-upgradetosslasync"></a>UpgradeToSslAsync の使用
 コードで [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使うときは、ネットワーク サービスへの最初の接続を暗号化なしで確立します。 アプリでデータが送受信される可能性があるため、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
 
-[**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドは 2 つのパラメーターを受け取ります。 *protectionLevel* パラメーターは、目的の保護レベルを示します。 *validationHostName* パラメーターは、SSL へのアップグレード時の検証に使われるリモート ネットワークの宛先のホスト名です。 通常、*validationHostName* は、アプリが最初に接続を確立するときに使ったホスト名と同じです。 **UpgradeToSslAsync** を呼び出すときに *protectionLevel* パラメーターが **Windows.System.Socket.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による以降の通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
+[  **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドは 2 つのパラメーターを受け取ります。 *protectionLevel* パラメーターは、目的の保護レベルを示します。 *validationHostName* パラメーターは、SSL へのアップグレード時の検証に使われるリモート ネットワークの宛先のホスト名です。 通常、*validationHostName* は、アプリが最初に接続を確立するときに使ったホスト名と同じです。 **UpgradeToSslAsync** を呼び出すときに *protectionLevel* パラメーターが **Windows.System.Socket.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による以降の通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
 
-[**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドで使う一般的な手順は次のとおりです。
+[  **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドで使う一般的な手順は次のとおりです。
 
--   [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
+-   [  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
 -   ソケットの詳細オプションが必要な場合は、[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) プロパティを使って、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトに関連付けられている [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) インスタンスを取得します。 **StreamSocketControl** のプロパティを設定します。
 -   データを暗号化せずに送受信する必要がある場合は、ここで送信します。
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドを呼び出して、SSL/TLS を使うように接続をアップグレードする操作を開始します。
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
+-   [  **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドを呼び出して、SSL/TLS を使うように接続をアップグレードする操作を開始します。
+-   [  **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
 
 次の例では、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作り、ネットワーク サービスへの接続を確立して最初のデータを送って、SSL/TLS を使うようにネゴシエートします。 ネゴシエーションに成功すると、クライアントとネットワーク サーバー間で **StreamSocket** を使うすべてのネットワーク通信が暗号化されます。
 
@@ -464,7 +464,7 @@ using Windows::Storage::Streams;
 ネットワーク経由で接続するときに、認証資格情報を提供する方法。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>StreamSocket クラスによるクライアント証明書の提供
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 の[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (このする必要がありますが設定されるオブジェクトは TLS ハンドシェイクが開始される前に) のクライアント証明書を提供できます。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[  **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を行うことができます、 [ **StreamSocket.Control** ](https://msdn.microsoft.com/library/windows/apps/br226893) (このする必要がありますが設定されるオブジェクト、TLS ハンドシェイクを開始する前に)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 
@@ -478,12 +478,12 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ### <a name="providing-authentication-credentials-to-a-web-service"></a>Web サービスへの認証資格情報の提供
 Networking API は、セキュリティが確保された Web サービスとアプリが連携できるようにします。この API のそれぞれが、サーバーとプロキシの認証資格情報を使ってクライアントの初期化または要求ヘッダーの設定を行う独自のメソッドを提供します。 各メソッドは、[**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを使って設定されます。このオブジェクトは、ユーザー名、パスワード、それぞれの資格情報が使われるリソースを示します。 次の表では、これらの API のマッピングについて説明します。
 
-| **WebSocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **Websocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
-| **バックグラウンド転送** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
+| **バック グラウンド転送サービス** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
@@ -507,4 +507,4 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 -   その他の API には、実際の **HRESULT** 値を取得するメソッドがあります。
 
 ## <a name="related-topics"></a>関連トピック
-* [Windows 10 での Networking API の機能強化](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Windows 10 でのネットワーク API の機能強化](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

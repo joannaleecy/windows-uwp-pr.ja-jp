@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: c6e8a6ebe716f1e062940066184e9f734441371b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940775"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590817"
 ---
 # <a name="porting-xbox-live-code-from-the-xbox-developer-kit-xdk-to-universal-windows-platform-uwp"></a>Xbox 開発キット (XDK) からユニバーサル Windows プラットフォーム (UWP) への Xbox Live コード移植
 
@@ -25,17 +25,17 @@ ms.locfileid: "8940775"
 
 <a name="_Setting_up_and"></a>
 
-## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>設定をセットアップして、パートナー センターおよび XDP でプロジェクトを構成します。
+## <a name="setting-up-and-configuring-your-project-in-partner-center-and-xdp"></a>設定して、パートナー センターと XDP でプロジェクトを構成します。
 
-Xbox Live サービスを使用する UWP タイトルは、[パートナー センター](https://partner.microsoft.com/dashboard)で構成する必要があります。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
+Xbox Live を使用する UWP タイトル サービスで構成する必要がある[パートナー センター](https://partner.microsoft.com/dashboard)します。 最新の情報については、[Xbox Live SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれる『Xbox Live プログラミング ガイド』の「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください。
 
 そのページのトピックには、タイトルで Xbox Live サービスを使用するための、以下の手順が含まれています。
 
--   パートナー センターで UWP アプリ プロジェクトを作成します。
+-   パートナー センターでの UWP アプリ プロジェクトを作成します。
 
 -   XDP を使用して、Xbox Live を使用するためにプロジェクトをセットアップする。
 
--   パートナー センター製品を XDP のプロダクトにリンクします。
+-   XDP 製品、パートナー センターの製品にリンクします。
 
 -   XDP でデベロッパー アカウントを作成する (サンドボックスでの Xbox Live タイトルの実行時に必要)。
 
@@ -55,15 +55,15 @@ XDP でクロス プレイとその構成要件をサポートにすることに
 
 2.  UWP 用にセキュア ソケット API や Game Save API (別名接続ストレージ API) が必要な場合は、[**Xbox Live Platform Extensions SDK** をインストール](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx)します。
 
-3.  Visual Studio で、ユニバーサル Windows アプリ プロジェクトに Xbox Live サポートを追加します。 完全なソースを追加したり、Visual Studio のプロジェクトに NuGet パッケージをインストールしてバイナリを参照することができます。 C++ と WinRT の両方にパッケージが提供されています。 詳細については、「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください
+3.  Visual Studio で、ユニバーサル Windows アプリ プロジェクトに Xbox Live サポートを追加します。 完全のいずれかのソースを追加したり、Visual Studio プロジェクトに NuGet パッケージをインストールすることで、バイナリを参照することができます。 C++ と WinRT の両方にパッケージが提供されています。 詳細については、「[新規または既存の UWP プロジェクトに Xbox Live を追加する方法](../get-started-with-partner/get-started-with-visual-studio-and-uwp.md)」を参照してください
 
-4.  開発用コンピューターを、サンドボックスを使用するように構成します。 Xbox Live SDK の Tools ディレクトリに、管理者のコマンド プロンプトから使用できるコマンド ライン スクリプト (例: SwitchSandbox.cmd XDKS.1) があります。
+4.  開発用コンピューターを、サンドボックスを使用するように構成します。 コマンド ライン スクリプトを管理者のコマンド プロンプトから使用できる Xbox Live SDK の Tools ディレクトリがあります (例。SwitchSandbox.cmd XDKS.1)。
 
   **注** Retail サンドボックスに切り替える場合は、スクリプトによって変更されたレジストリ キーを削除しても、RETAIL という名前のサンドボックスに切り替えてもかまいません。
 
 1.  開発用コンピューターにデベロッパー アカウントを追加します。 XDP で作成したデベロッパー アカウントは、割り当てられたサンドボックスでの開発時やサンプルの実行時には、ランタイムで Xbox Live サービスとやり取りする必要があります。 Windows に 1 つまたは複数のアカウントを追加するには、次の操作を行います。
 
-    1.  **[設定]** を開きます (ショートカット: Windows キー + I)。
+    1.  開いている**設定**(ショートカット。Windows キー + I)。
 
     2.  **[アカウント]** を開きます。
 
@@ -75,7 +75,7 @@ XDP でクロス プレイとその構成要件をサポートにすることに
 
 Xbox バージョンの appxmanifest.xml ファイルと、UWP バージョンの appxmanifest.xml ファイルの最も一般的な変更点は次のとおりです。
 
-1. UWP では、開発中であっても Package Identity が問題となります。 ユーザー名と発行元の両方*と一致する必要があります*内容が、UWP アプリのパートナー センターで定義されました。
+1. UWP では、開発中であっても Package Identity が問題となります。 Id の名前とパブリッシャーの両方*と一致する必要があります*パートナー センターでの UWP アプリに対して定義されたものです。
 
 1. Package Dependency セクションが必要です。 次に、例を示します。
 
@@ -127,13 +127,13 @@ Platform::String^ scid = xblConfig->ServiceConfigurationId;
 
 ### <a name="api-namespace-mapping"></a>API 名前空間のマッピング
 
-表 1:  XDK から UWP への名前空間のマッピング
+表 1. XDK から UWP への名前空間のマッピング
 
 <table>
   <tr>
     <td></td>
     <td><b>Xbox One XDK</b></td><td><b>UWP</b></td>
-    <td><b>API の収録先</b></td>
+    <td><b>API は、付属しています.</b></td>
   </tr>
   <tr>
     <td>Xbox サービス API (XSAPI)</td>
@@ -380,7 +380,7 @@ Xbox Live SDK で、**CheckPrivilegeAsync()** と同等のものはまだ利用�
 
 ### <a name="supporting-multiplayer-cross-play-between-xbox-one-and-pc-uwp"></a>Xbox One および PC UWP の間のマルチプレイヤー クロスプレイのサポート
 
-XDP で新しいセッション テンプレートの要件に加えて ([を設定しパートナー センターおよび XDP でプロジェクトを構成する](#_Setting_up_and)を参照)、クロス プレイ セッションへの参加機能に新しい制限が加わっています。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
+XDP で新しいセッション テンプレートの要件だけでなく (を参照してください[を設定して、パートナー センターと XDP でプロジェクトを構成する](#_Setting_up_and))、クロス プレイはセッションの結合機能で新しい制限があります。 セッションへの参加制限として "None" を使用できなくなりました。 "Followed" または "Local" のいずれかを使用する必要があります (既定の制限は "Local")。
 
 また、Windows 10 でのマルチプレイヤーに必要な **userAuthorizationStyle** 機能のために、参加と読み取りの制限は既定で "Local" になります。
 
@@ -392,7 +392,7 @@ XDP で新しいセッション テンプレートの要件に加えて ([を設
 
 ### <a name="sending-and-receiving-invites"></a>招待の送受信
 
-現在では、招待を送信するための UI を表示する API は **Microsoft::Xbox::Services::System::TitleCallableUI::ShowGameInviteUIAsync()** です。 アクティビティ セッション (通常はロビー) の、セッション-&gt; **SessionReference** オブジェクトを渡します。 必要に応じて、XDP のサービス構成で定義されたカスタムの招待文字列 ID を参照する 2 番目のパラメーターを渡すことができます。 そこで定義する文字列は、招待されたプレイヤーに送信されるトースト通知内に表示されます。 このメソッドのパラメーターとして ID 番号を渡すときには、番号がそのサービスにとって適切な形式になっている必要があることに注意してください。 たとえば、文字列 ID "1" は "///1" として渡す必要があります。
+現在では、招待を送信するための UI を表示する API は **Microsoft::Xbox::Services::System::TitleCallableUI::ShowGameInviteUIAsync()** です。 セッションに渡す&gt; **SessionReference**アクティビティ セッション (通常、ロビー) からのオブジェクト。 必要に応じて、XDP のサービス構成で定義されたカスタムの招待文字列 ID を参照する 2 番目のパラメーターを渡すことができます。 そこで定義する文字列は、招待されたプレイヤーに送信されるトースト通知内に表示されます。 このメソッドのパラメーターとして ID 番号を渡すときには、番号がそのサービスにとって適切な形式になっている必要があることに注意してください。 たとえば、文字列 ID "1" は "///1" として渡す必要があります。
 
 マルチプレイヤー サービスを使用して (つまり、どの UI も表示せずに) 招待を直接送信する場合でも、ユーザーの **XboxLiveContext** から他の招待メソッド **Microsoft::Xbox::Services::Multiplayer::MultiplayerService::SendInvitesAsync()** を使用することができます。
 
@@ -418,7 +418,7 @@ UWP 上にゲーマー プロフィール カードを表示するには、**Mic
 
 セキュア ソケット API は、別の [Xbox Live Platform Extensions SDK](https://developer.xboxlive.com/en-us/live/development/Pages/Downloads.aspx) に含まれています。
 
-API の使い方については、フォーラムの投稿「[Setting up SecureDeviceAssociation for cross platform](https://forums.xboxlive.com/answers/45722/view.html)」を参照してください。
+このフォーラムの API 使用量の投稿を参照してください。[クロス プラットフォームの SecureDeviceAssociation セットアップ](https://forums.xboxlive.com/answers/45722/view.html)します。
 
 **注** UWP では、**SocketDescriptions** セクションが、appxmanifest の外部の、独自の [networkmanifest.xml](https://forums.xboxlive.com/storage/attachments/410-networkmanifestxml.txt) に移動されました。 &lt;SocketDescriptions&gt; 要素内の形式は、ほぼ同じで、**mx:** プレフィックスがないだけです。
 
@@ -437,14 +437,14 @@ Xbox および Windows 10 間のクロスプレイについては、2 種類の�
 
 セキュア ソケット API における名前空間の変更に加えて、オブジェクトの名前と値の一部も変更されています。 次の表に、よく使用される測定ステータスのマッピングを示します。
 
-表 2:  よく使用される測定ステータスのマッピング
+表 2. よく使用される測定ステータスのマッピング
 
 | XDK (Windows::Xbox::Networking::QualityOfServiceMeasurementStatus)  | UWP (Windows::Networking::XboxLive::XboxLiveQualityOfServiceMeasurementStatus)  |
 |------------------------------------|--------------------------------------------|
 | HostUnreachable                    | NoCompatibleNetworkPaths                   |
 | MeasurementTimedOut                | TimedOut                                   |
 | PartialResults                     | InProgressWithProvisionalResults           |
-| Success                            | Succeeded                                  |
+| 成功                            | Succeeded                                  |
 
 QoS (サービスの品質) の*測定*と*結果の処理*に必要な手順は、API の XDK バージョンと UWP バージョンを比較すると、基本的に同じです。 ただし、名前の変更といくつかの設計変更のために、一部の場所では結果のコードが異なってきます。
 
@@ -542,7 +542,7 @@ UWP バージョンでその他に注目すべき相違点には以下のもの�
 
 4.  ローカルの "マシン" ストレージはありません (つまり、**GetForMachineAsync()** が削除されました)。 ローミングされないローカル セーブ データの代わりに **Windows::Storage::ApplicationData** を使用することを検討してください。
 
-5.  例外が発生しない \*Result-type オブジェクト (たとえば **GameSaveProviderGetResult**) では非同期の結果が返されます。この結果から、**Status** プロパティをチェックできます。そしてエラーがない場合は、返されたオブジェクトを **Value** プロパティから読み込みます。
+5.  例外フリーで非同期の結果が返されます\*結果型のオブジェクト (たとえば、 **GameSaveProviderGetResult**); からこれを確認できます、**状態**プロパティ、エラーがない場合、返されたオブジェクトを読み取り、**値**プロパティ。
 
 6.  **ConnectedStorageErrorStatus 列挙型**は **GameSaveErrorStatus** に名前が変更され、Result の **Status** プロパティで返されます。 古い値はすべて存在しており、新しい値がいくつか追加されています。
 
@@ -556,9 +556,9 @@ UWP バージョンでその他に注目すべき相違点には以下のもの�
 
 使い方の例については、GameSave サンプルや NetRumble サンプルを参照してください。
 
-**注** Gamesaveutil.exe は xbstorage.exe (XDK 付属のデベロッパー向けコマンド ライン ユーティリティ) と同等です。 Xbox Live Platform Extensions SDK のインストール後、このユーティリティは C:\\Program Files (x86)\\Windows Kits\\10\\Extension SDKs\\XboxLive\\1.0\\Bin\\x64 にあります。
+**注** Gamesaveutil.exe は xbstorage.exe (XDK 付属のデベロッパー向けコマンド ライン ユーティリティ) と同等です。 Xbox Live プラットフォーム拡張機能 SDK をインストールすると、このユーティリティはこちら。C:\\プログラム ファイル (x86)\\Windows キット\\10\\拡張 Sdk\\XboxLive\\1.0\\Bin\\x64
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 このホワイト ペーパーで概要を説明した API の変更と新しい要件は、既存のゲーム コードを Xbox One XDK から新しい UWP に移植するときにかかわる可能性が高いものです。 特に、アプリケーションと環境の設定に加えて、マルチプレイヤーや接続ストレージなど、Xbox Live サービスに関連する機能領域を重点的に取り上げました。 詳細については、このホワイトペーパー全体を通して提供したリンクと、次の参考文献のリンクを利用してください。また、さらに多くの助け、疑問への答え、最新情報については、[デベロッパー フォーラム](https://forums.xboxlive.com)の「Windows 10」セクションにアクセスしてください。
 

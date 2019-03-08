@@ -1,24 +1,24 @@
 ---
-Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
+Description: 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「自社広告」と呼びます。
 title: 自社広告について
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f5a42d6c4a4de15105afdec2bc9bc0b4cb27c94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940991"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649847"
 ---
 # <a name="about-house-ads"></a>自社広告について
 
 
 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「*自社広告*」と呼びます。
 
-自社広告は、Microsoft から広告を[表示](../monetize/display-ads-in-your-app.md)するように構成されたアプリでのみ表示されます。
+家の広告は、構成されているアプリでのみ表示されます。[マイクロソフトから広告を表示](../monetize/display-ads-in-your-app.md)します。
 
 自社広告を設定するには、[広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)時に、**[キャンペーンの種類]** として **[自社広告 (無料)]** を選びます。 広告は、次の条件を満たしている自分のすべてのアプリで、自動的に表示対象になります。
 
@@ -35,5 +35,5 @@ ms.locfileid: "8940991"
 ### <a name="related-topics"></a>関連トピック
 
 
-* [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [アプリの広告キャンペーンを作成します。](create-an-ad-campaign-for-your-app.md)
 * [よく寄せられる質問](common-questions.md)

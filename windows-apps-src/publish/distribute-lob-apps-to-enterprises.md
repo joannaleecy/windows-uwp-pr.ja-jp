@@ -1,5 +1,5 @@
 ---
-Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
+Description: ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアでは、基幹業務 (LOB) アプリを企業に直接公開して、ボリューム取得を可能にすることができます。アプリをストアで一般公開する必要はありません。
 title: LOB アプリの企業への配布
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, LOB, 基幹業務, エンタープライズ アプリ, ビジネス向け Store, 教育機関向け Store, 企業
 ms.localizationpriority: medium
 ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044589"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653017"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>LOB アプリの企業への配布
 
@@ -22,7 +22,7 @@ ms.locfileid: "9044589"
 > 現在、ビジネス向け Microsoft ストアまたは教育機関向け Microsoft ストアを通じて企業に排他的に配布できるのは無料アプリだけです。 有料アプリを LOB として申請しても、企業が利用できるようにはなりません。 
 
 > [!IMPORTANT]
-> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使って、LOB アプリを直接企業に公開することはできません。 パートナー センターで LOB アプリのすべての申請を公開する必要があります。
+> [Microsoft Store 申請 API](../monetize/create-and-manage-submissions-using-windows-store-services.md) を使って、LOB アプリを直接企業に公開することはできません。 LOB アプリのすべての送信は、パートナー センターを通じて公開する必要があります。
 
 
 ## <a name="set-up-the-enterprise-association"></a>企業の関連付けの設定
@@ -63,7 +63,7 @@ LOB アプリを専用アプリとして企業に公開するには、最初に�
 
 ### <a name="age-ratings"></a>年齢区分
 
-LOB アプリでの申請のプロセスの[年齢区分](age-ratings.md)の手順は、販売アプリと同様ですが、アンケートへの回答や既存の IARC 評価 ID のインポートを行わずに、ストアの年齢区分を手動で指定できる追加のオプションもあります。 この手動の区分は、基幹業務 (LOB) 配布のみで使うことができます。そのため、アプリの **[表示]** の設定を **[小売配布] ** に変更する場合には、申請を行う前に、年齢区分のアンケートへの回答を行う必要があります。
+LOB アプリでの申請のプロセスの[年齢区分](age-ratings.md)の手順は、販売アプリと同様ですが、アンケートへの回答や既存の IARC 評価 ID のインポートを行わずに、ストアの年齢区分を手動で指定できる追加のオプションもあります。 この手動の区分は、基幹業務 (LOB) 配布のみで使うことができます。そのため、アプリの **[表示]** の設定を **[小売配布]**  に変更する場合には、申請を行う前に、年齢区分のアンケートへの回答を行う必要があります。
 
 
 ## <a name="enterprise-deployment-of-lob-apps"></a>LOB アプリの企業展開
@@ -92,7 +92,7 @@ LOB として既に公開したアプリに更新プログラムを公開する�
 
 ビジネス向け Microsoft ストアまたは教育向け Microsoft ストアで企業にアプリを提供することで、アプリはストアによって確実に署名され、標準的なストア ポリシーに準拠します。
 
-場合によっては、企業可能性があります (コンプライアンス上の理由やその他の機能を必要とするアプリなど)、パートナー センターを通じて提出するには、その LOB アプリをしません。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
+場合によっては、企業に LOB アプリ (またはその他の機能を必要とするアプリのコンプライアンス上の理由など)、パートナー センターを通じて送信する可能性がありますしません。 このような企業では、ビジネス向け Microsoft ストアや教育向け Microsoft ストアを使わずに、サイドローディングによってアプリをコンピューターに直接展開できます。
 
 詳しくは、「[Windows 10 での LOB アプリのサイドローディング](https://go.microsoft.com/fwlink/p/?LinkId=623433)」をご覧ください。
 

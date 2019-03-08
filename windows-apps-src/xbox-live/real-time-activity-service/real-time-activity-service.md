@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: 36389fac3bd6dea2d2e24c0935087781118d8046
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931991"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592087"
 ---
 # <a name="real-time-activity-service"></a>リアルタイム アクティビティ サービス
 
@@ -63,14 +63,14 @@ RTA の最新バージョンには、プライバシー チェックおよび認
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[プレイヤー統計情報の変更通知の登録](register-for-stat-notifications.md)  
+[プレーヤーの状態変更通知を登録します。](register-for-stat-notifications.md)  
 統計または状態情報のリアルタイム アクティビティ (RTA) を有効にする方法について説明します。
 
-[WinRT API を使用したリアルタイム アクティビティ サービスのプログラミング](programming-the-real-time-activity-service.md)  
+[Winrt api を使用して、リアルタイムのアクティビティ (rta) サービスのプログラミング](programming-the-real-time-activity-service.md)  
 WinRT API を使用してリアルタイム アクティビティ (RTA) サービスをプログラミングする方法について説明します。
 
-[RESTful インターフェイスを使用したリアルタイム アクティビティ (RTA) サービスのプログラミング](programming-the-real-time-activity-service.md)  
+[Restful インターフェイスを使用して、リアルタイムのアクティビティ (rta) サービスのプログラミング](programming-the-real-time-activity-service.md)  
 RESTful インターフェイスを使用してリアルタイム アクティビティ (RTA) サービスをプログラミングする方法について説明します。
 
-[リアルタイム アクティビティ (RTA) のベスト プラクティス](rta-best-practices.md)  
+[リアルタイムのアクティビティ (rta) のベスト プラクティス](rta-best-practices.md)  
 Xbox サービスのリアルタイム アクティビティ (RTA) サービスを使用して Xbox データ プラットフォームから統計情報および状態データをサブスクライブする場合のベスト プラクティスについて説明します。

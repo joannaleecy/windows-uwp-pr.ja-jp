@@ -1,33 +1,33 @@
 ---
 title: 磁気ストライプ データの取得と理解
-description: 取得および磁気ストライプからデータを解釈する方法について説明します。
+description: 取得して、磁気ストライプからのデータを解釈する方法について説明します。
 ms.date: 10/04/2018
 ms.topic: article
-keywords: windows 10, uwp, 店舗販売時点サービス、pos、磁気ストライプ リーダー
+keywords: windows 10、uwp は、サービス、pos、磁気ストライプ リーダーのポイントします。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926667"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651607"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>磁気ストライプ データの取得と理解
 
-[Point of Service の概要](pos-basics.md)で説明する手順を使用して、アプリケーションで、磁気ストライプ リーダーをセットアップした後は、そこからデータを取得するを開始する準備ができました。
+後で説明する手順を使用して、アプリケーションで、磁気ストライプ リーダーを設定した[Point of Service の概要](pos-basics.md)、そこからのデータの取得を開始する準備ができました。
 
-## <a name="subscribe-to-datareceived-events"></a>サブスクライブする * DataReceived イベント
+## <a name="subscribe-to-datareceived-events"></a>購読 * DataReceived イベント
 
-リーダーでは、スワイプ カード、認識されるたびに 3 つのイベントのいずれかが発生します。
+リーダーがいるカードが認識されるたびに 3 つのイベントのいずれかが発生します。
 
-* [AamvaCardDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): 自動車カードがスワイプしたときに発生します。
-* [BankCardDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived): 銀行カードがスワイプしたときに発生します。
-* [VendorSpecificDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived): ベンダー固有のカードのスワイプしたときに発生します。
+* [AamvaCardDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived):車両のカードが読み取られるときに発生します。
+* [BankCardDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.aamvacarddatareceived):銀行のカードが読み取られるときに発生します。
+* [VendorSpecificDataReceived イベント](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.vendorspecificdatareceived):ベンダー固有のカードが読み取られるときに発生します。
 
-のみ、アプリケーションは、磁気ストライプ リーダーでサポートされているイベントをサブスクライブする必要があります。 [MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
-)でサポートされるカードの種類を確認できます。
+のみ、アプリケーションは、磁気ストライプ リーダーでサポートされているイベントをサブスクライブする必要があります。 サポートされるカードの種類を参照してください[MagneticStripeReader.SupportedCardTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.supportedcardtypes
+)します。
 
-次のコードは、3 つのサブスクライブを示しています ***DataReceived**イベント。
+次のコードは、3 つのサブスクライブ ***DataReceived**イベント。
 
 ```cs
 private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, MagneticStripeReader reader)
@@ -50,15 +50,15 @@ private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, Magnet
 }
 ```
 
-イベント ハンドラーは、 [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)と*引数*オブジェクトの型は、イベントによって異なりますが渡されます。
+イベント ハンドラーが渡される、 [ClaimedMagneticStripeReader](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)と*args*オブジェクト、型は、イベントによって異なります。
 
-* **AamvaCardDataReceived**イベント: [MagneticStripeReaderAamvaCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
-* **BankCardDataReceived**イベント: [MagneticStripeReaderBankCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
-* **VendorSpecificDataReceived**イベント: [MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
+* **AamvaCardDataReceived**イベント。[MagneticStripeReaderAamvaCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
+* **BankCardDataReceived**イベント。[MagneticStripeReaderBankCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)
+* **VendorSpecificDataReceived**イベント。[MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs クラス](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadervendorspecificcarddatareceivedeventargs)
 
 ## <a name="get-the-data"></a>データを取得します。
 
-**AamvaCardDataReceived**と**BankCardDataReceived**イベントは、*引数*オブジェクトから直接、データの一部を取得できます。 次の例では、いくつかのプロパティを取得し、メンバー変数に割り当てることを示します。
+**AamvaCardDataReceived**と**BankCardDataReceived**イベントを取得できますから直接データの一部、 *args*オブジェクト。 次の例では、いくつかのプロパティを取得して、メンバー変数を割り当てることを示しています。
 
 ```cs
 private string _accountNumber;
@@ -76,17 +76,17 @@ private void Reader_BankCardDataReceived(
 }
 ```
 
-ただし、*引数*のパラメーターのプロパティは、**レポート**オブジェクトを通じて、 **VendorSpecificDataReceived**イベントのすべてのデータを含む、いくつかのデータを取得する必要があります。 これは、型[MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)のです。
+ただしのすべてのデータを含む、一部のデータ、 **VendorSpecificDataReceived**を通じてイベントを取得する必要があります、**レポート**プロパティであるオブジェクトの*args*パラメーター。 これは、型の[MagneticStripeReaderReport](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport)します。
 
-[CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype)プロパティを使用して、どの種類のカードがスワイプされたいらいらして、 [Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1)、 [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2)、 [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)、 [Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4)からデータを解釈する方法を通知するために使用していることができます。
+使用することができます、 [CardType](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.cardtype)カードの種類が読み取られると、確認しからのデータを解釈する方法を通知するために使用するプロパティ[Track1](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track1)、 [Track2](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track2)、 [Track3](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track3)、および[Track4](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereaderreport.track4)します。
 
-各トラックのデータは、 [MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)オブジェクトとして表されます。 このクラスでは、次の種類のデータを取得できます。
+各トラックからのデータとして表される[MagneticStripeReaderTrackData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata)オブジェクト。 このクラスから、次の種類のデータを取得できます。
 
-* [データ](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data): raw またはデコードされたデータ。
-* [DiscretionaryData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata): 随意データ。 
-* [EncryptedData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata): 暗号化されたデータ。
+* [データ](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.data):生またはデコードされたデータ。
+* [DiscretionaryData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.discretionarydata):任意のデータ。 
+* [EncryptedData](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereadertrackdata.encrypteddata):暗号化されたデータ。
 
-次のコード スニペットは、レポートと track のデータを取得され、そのカードの種類をチェックします。
+次のコード スニペットでは、レポートと、追跡データを取得し、し、カードの種類を確認します。
 
 ```cs
 private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args)

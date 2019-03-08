@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
 ms.openlocfilehash: e72dfa0b6f98284c240cf6af2dde02439d694b48
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933219"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598637"
 ---
 # <a name="winrt-api-error-handling"></a>WinRT API のエラー処理
 
@@ -75,7 +75,7 @@ msvcr110.dll!Concurrency::details::ThreadProxy::ThreadProxyMain(void * lpParamet
 ntdll.dll!RtlUserThreadStart(long (void *) * StartAddress, void * Argument) Line 822    C++
 ```
 
-上記の呼び出し履歴はとてもわかりにくいですね。  Concurrency があちこちに出現します。  Microsoft::Xbox::Services::Social::XboxUserProfile が呼び出し履歴にあるので、きっとこれが原因に違いない、と思ってしまいます。  実際には、これは無効な Xbox User ID に対する GetUserProfileAsync の呼び出しによって生成された呼び出し履歴です。この呼び出し履歴を生成したサンプル コードは次のようなものです。
+上記の呼び出し履歴はとてもわかりにくいですね。  Concurrency があちこちに出現します。  Microsoft::Xbox::Services::Social::XboxUserProfile が呼び出し履歴にあるので、きっとこれが原因に違いない、と思ってしまいます。  実際には、これは無効な Xbox ユーザー ID に対する GetUserProfileAsync への呼び出しによって生成された呼び出し履歴です。この呼び出し履歴を生成したサンプル コードは次のようなものです。
 
 ```cpp
     auto pAsyncOp = requester->ProfileService->GetUserProfileAsync("abc123"); //passing invalid Xbox User Id;
@@ -96,7 +96,7 @@ PPL はタスクを作成し、他のタスクがそれに続くことがあり�
 
 継続タスクに関しては、実際には 2 つの異なる種類があることに注意してください。  1 番目はタスク ベースの継続であり、前のタスクを入力引数として受け取ります。  このタスクは、先行タスクが例外をスローした場合でも常に実行されます。  先行タスクの結果を取得するには、引数で .get() を呼び出す必要があります。  2 番目は値に基づくもので、前のタスクの出力を直接受け取ります。これは一点を除けばシンタックス シュガーのようなものです。先行タスクが例外をスローした場合、値ベースの継続タスクはまったく実行されません。
 
-推奨事項: クラッシュを防ぐため、継続チェーンの最後にはタスク ベースの継続を使用し、すべての concurrency::task::get() または concurrency::task::wait() 呼び出しを try/catch ブロックで囲んでリカバリー可能なエラーを処理します。
+推奨事項:クラッシュを防ぐためには、ブロックの挿入で同時実行:: task::get() または:: task::wait() 同時実行のすべての呼び出しの try/catch ブロックから回復可能なエラーを処理するために、継続チェーンの最後に、タスク ベースの継続を使用します。
 
 以下に例をいくつか示します。
 
@@ -219,7 +219,7 @@ PPL はタスクを作成し、他のタスクがそれに続くことがあり�
 
 **GetNextAsync() と例外** ページング API を使用していますか。  AchievementResult、LeaderboardResult、InventoryItemResult、TitleStorageBlobMetadataResult などのオブジェクトにはすべて、結果の次のページを要求するための GetNextAsync() メソッドが含まれます。  それ以上データがない特殊なケースがあり、GetNextAsync() を呼び出すと例外をトリガーします。  この例外は、GetNextAsync() の同期実行中にスローされます。  この場合、GetNextAsync メソッドは INET_E_DATA_NOT_AVAILABLE (0x800C0007) をスローします。
 
-推奨事項: GetNextAsync() メソッドの呼び出しを try/catch ブロックで囲んで、INET_E_DATA_NOT_AVAILABLE のケースを適切に処理します。
+推奨事項:GetNextAsync() メソッドは try/catch ブロック内の呼び出しし、INET_E_DATA_NOT_AVAILABLE 大文字と小文字を適切に処理をラップすることを確認します。
 
 ```cpp
     try

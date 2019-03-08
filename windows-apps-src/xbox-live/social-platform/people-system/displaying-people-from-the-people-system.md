@@ -1,19 +1,19 @@
 ---
-title: People システムからの人物の表示
+title: ピープル システムからの人物の表示
 description: Xbox Live People システムを使ってユーザーを表示するコード フローについて説明します。
 ms.assetid: c97b699f-ebc2-4f65-8043-e99cca8cbe0c
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 512de51f2a0e30a9b41a5e49f3dc3ababe30fc4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940511"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658307"
 ---
-# <a name="display-people-from-the-people-system"></a>People システムからの人物の表示
+# <a name="display-people-from-the-people-system"></a>ピープル システムからの人物の表示
 
 Xbox Live を横断するサービスは、そのサービスが保有するデータのみを返し、ユーザーへの XUID 参照のみを返します。たとえば People サービスは、ユーザーの People リストに存在する XUID と、それらの各 XUID に関する一部のごく基本的な情報 (お気に入りの状態など) のみを保有し、また返します。 プレゼンス サービスは XUID のオンライン状態情報に関するデータを保有します。 ランキング サービスは XUID のリストのランキング情報を保有します。 表示名およびゲーマータグの情報はプロフィール サービス以外のどのサービスからも返されないので、エクスペリエンス内の人のリストを表示するには複数のサービスが必要です。
 
@@ -33,7 +33,7 @@ Xbox Live を横断するサービスは、そのサービスが保有するデ�
 
 | タイトルが保持しているもの  | 目標  | 表示するフィールド  | 呼び出しフロー
 |-------------------------------------------------|----------------------------------------------------|--------------------|--------------------------------------|
-| ゲームに参加している他のユーザーのランダムな XUID のリスト | 他の各ユーザーについて最小限の情報を表示する | GameDisplayName  \[プロフィール\] | XUID のリストを使用してプロフィールを呼び出す。 |
+| ゲームに参加している他のユーザーのランダムな XUID のリスト | 他の各ユーザーについて最小限の情報を表示する | GameDisplayName\[プロファイル\] | XUID のリストを使用してプロフィールを呼び出す。 |
 
 
 ## <a name="list-of-the-current-users-people-who-are-online"></a>現在のユーザーの People に含まれるオンライン ユーザーのリスト
@@ -44,7 +44,7 @@ Xbox Live を横断するサービスは、そのサービスが保有するデ�
 ## <a name="goal"></a>目標
 現在のユーザーの People リストに含まれているオンライン ユーザーのリッチ リストを表示する
 
-## <a name="field-to-render-owning-service"></a>表示するフィールド \[保有するサービス\]
+## <a name="field-to-render-owning-service"></a>フィールドをレンダリングする\[サービスを所有しています。\]
 * お気に入りインジケーター [People]
 * 表示用画像 [プロフィール]
 * GameDisplayName [プロフィール]

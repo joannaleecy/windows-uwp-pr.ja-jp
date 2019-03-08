@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: ba8006b235da2ae4beded9a2b559419b126fca44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651317"
 ---
 # <a name="troubleshooting-xbox-live"></a>Xbox Live のトラブルシューティング
 
@@ -19,10 +19,10 @@ ms.locfileid: "8944637"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[Xbox Live API のトラブルシューティング](troubleshooting-the-xbox-live-services-api.md)
+[Xbox Live Api のトラブルシューティング](troubleshooting-the-xbox-live-services-api.md)
 
-[Windows PC での Xbox Live セットアップのトラブルシューティング](troubleshooting-pc-setup.md)
+[Windows pc、Xbox Live のセットアップのトラブルシューティング](troubleshooting-pc-setup.md)
 
-[Xbox Live サインインのトラブルシューティング](troubleshooting-sign-in.md)
+[Xbox Live サインインに関するトラブルシューティング](troubleshooting-sign-in.md)
 
-[Fiddler を使用した Xbox Live のトラブルシューティング](how-to-set-up-fiddler-for-debugging.md)
+[Xbox Live、Fiddler を使用したトラブルシューティング](how-to-set-up-fiddler-for-debugging.md)

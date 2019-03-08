@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use Notification Listener to access all of the user's notifications.
+Description: 通知リスナーを使用して、すべてのユーザーの通知にアクセスする方法について説明します。
 title: 通知リスナー
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tiles
@@ -9,21 +9,21 @@ ms.topic: article
 keywords: Windows 10, UWP, 通知リスナー, usernotificationlistener, ドキュメント, 通知へのアクセス
 ms.localizationpriority: medium
 ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649617"
 ---
-# <a name="notification-listener-access-all-notifications"></a>通知リスナー: すべての通知にアクセスする
+# <a name="notification-listener-access-all-notifications"></a>通知リスナー。すべての通知へのアクセスします。
 
-通知リスナーを使用すると、ユーザーの通知にアクセスすることができます。 スマートウォッチや他のウェアラブルでは、通知リスナーを使用して、電話の通知をウェアラブル デバイスに送信することができます。 ホーム オートメーション アプリでは、呼び出しを受信した場合を点滅するなどの通知を受け取ったときに特定のアクションを実行するのに、通知リスナーを使用できます。 
+通知リスナーを使用すると、ユーザーの通知にアクセスすることができます。 スマートウォッチや他のウェアラブルでは、通知リスナーを使用して、電話の通知をウェアラブル デバイスに送信することができます。 ホーム オートメーション アプリは、通知リスナーを使用して、呼び出しを受信するときに、ライトが点滅するなど、通知が受信したときに、特定のアクションを実行できます。 
 
 > [!IMPORTANT]
-> **Anniversary Update が必要**: 通知リスナーを使用するには、SDK 14393 以降をターゲットとし、ビルド 14393 以降を実行している必要があります。
+> **Anniversary Update が必要です**:SDK 14393 を対象にして、14393 以上通知リスナーを使用するビルドを実行します。
 
 
-> **重要な API**: [UserNotificationListener クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、[UserNotificationChangedTrigger クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要な Api**:[UserNotificationListener クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、 [UserNotificationChangedTrigger クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>ユーザー通知機能を追加して、リスナーを有効にする 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-ユーザーは Windows 設定アプリを使用して、アクセスをいつでも取り消すことができます。 そのため、アプリが、通知リスナーを使用するコードを実行する前に[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)メソッドを使用してアクセス状態を常に確認する必要があります。 ユーザーがアクセスを取り消すと、API は例外をスローせず、警告なしに失敗します (たとえば、すべての通知を取得する API は空のリストを返すだけです)。
+ユーザーは Windows 設定アプリを使用して、アクセスをいつでも取り消すことができます。 そのため、アプリでする必要がありますを使用してアクセスの状態を確認常に、 [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)通知リスナーを使用するコードを実行する前にメソッド。 ユーザーがアクセスを取り消すと、API は例外をスローせず、警告なしに失敗します (たとえば、すべての通知を取得する API は空のリストを返すだけです)。
 
 
 ## <a name="access-the-users-notifications"></a>ユーザーの通知にアクセスする
@@ -138,7 +138,7 @@ await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 
 通知の本文などの通知自体のコンテンツは、[Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification) プロパティに含まれています。 このプロパティには、通知の視覚的な部分が含まれます。 (Windows での通知の送信について詳しく理解している方は、[Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) オブジェクトの [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual) プロパティと [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings) プロパティが、通知が表示されるときに開発者が送信するデータに対応するということにお気づきでしょう)。
 
-トーストのバインディングを調べる必要があります (エラー防止コードのために、バインディングが null でないことを確認する必要があります)。 バインディングから、テキスト要素を取得できます。 テキスト要素は、必要な数だけ表示するように選択できます  (テキスト要素はすべて表示することをお勧めします)。それぞれのテキスト要素を異なる方法で処理することができます。たとえば、最初のテキスト要素をタイトル テキストとして扱い、後続の要素を本文テキストとして扱うことができます。
+トーストのバインディングを調べる必要があります (エラー防止コードのために、バインディングが null でないことを確認する必要があります)。 バインディングから、テキスト要素を取得できます。 テキスト要素は、必要な数だけ表示するように選択できます  (理想的には、する必要があります表示すべて)。テキスト要素を取り扱うことができます。たとえば、本文としてタイトルのテキストとして 1 つ目と後続の要素を処理します。
 
 ```csharp
 // Get the toast binding, if present
@@ -229,7 +229,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 バックグラウンド タスクは単純な "ショルダー タップ" です。追加または削除された特定の通知に関する情報は提供しません。 バックグラウンド タスクがトリガーされたら、プラットフォームでの通知が反映されるように、ウェアラブルの通知を同期する必要があります。 これにより、バックグラウンド タスクが失敗した場合でも、次回バックグラウンド タスクが実行されたときに、ウェアラブルの通知を復旧することができます。
 
-`SyncNotifications` は、実装するメソッドです。次のセクションでその方法を説明します。 
+`SyncNotifications` を実装する方法します。次のセクションの方法を示します。 
 
 
 ## <a name="determining-which-notifications-were-added-and-removed"></a>追加または削除された通知を特定する
@@ -277,9 +277,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>追加/無視される通知のフォアグラウンド イベント
 
 > [!IMPORTANT] 
-> 既知の問題: フォア グラウンド イベントで最新バージョンの Windows では、CPU ループが発生し、以前、その前に機能しませんでした。 フォア グラウンド イベントを使わないでください。 Windows に予定されている更新プログラムでこれを修正しますします。
+> 既知の問題:フォア グラウンドのイベントは、最近のバージョンの Windows では、CPU のループが発生し、前に、その以前動作しなかった。 フォア グラウンド イベントを使用しないでください。 Windows を今後の更新プログラム、この修正する予定です。
 
-フォア グラウンド イベントを使用するのではなく、[シングル プロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)のバック グラウンド タスクの前に示したコードを使用します。 バック グラウンド タスクでは、アプリが終了または実行中に、両方の変更イベント通知を受け取るもできます。
+フォア グラウンド イベントを使用するのではなくの前に示したコードを使用して、 [1 つのプロセス モデル](../../../launch-resume/create-and-register-an-inproc-background-task.md)バック グラウンド タスク。 バック グラウンド タスクでは、アプリが終了または実行中に、両方の変更イベント通知を受信することはも。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクでの文書 fixdelays
+## <a name="howto-fixdelays-in-the-background-task"></a>バック グラウンド タスクの遅延を修正する方法
 
-アプリをテストすると、バック グラウンド タスクが遅延する場合がし、数分間トリガーされないことがわかります可能性があります。 システム設定に対するユーザー トーゴ プロンプト、遅延を解決するにはシステム]-> [バッテリー]-> [アプリによるバッテリーの使用]-> [、一覧にアプリを見つけ、選択し、[バック グラウンドで許可されている常に"に設定してその後にはバック グラウンド タスクが受信されている通知の 2 つ目の周囲内で常にトリガーする必要があります。
+アプリをテストするときにバック グラウンド タスクが遅延される場合があり、数分をトリガーしないことが分かります。 プロンプトでユーザーをシステムの設定を遅延を解決するには、システム-> バッテリ-> アプリによってバッテリの使用量を -> の一覧でアプリを見つけ、選択し、および バック グラウンドで許可されている常に"に設定 その後にするバック グラウンド タスクの通知を受信している 2 つ目の周り内で常にトリガーする必要があります。

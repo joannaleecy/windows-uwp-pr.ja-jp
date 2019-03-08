@@ -4,18 +4,18 @@ description: Xbox Live データ プラットフォームを使ってリッチ �
 ms.assetid: 626c1661-3be9-49e4-a5ce-d3f5abd79a9b
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b59e26431170e933b0b73a09ce8ecbfd360716a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921420"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599337"
 ---
 # <a name="rich-presence-appendix"></a>リッチ プレゼンスの付録
 
-## <a name="data-platform"></a>データ プラットフォーム
+## <a name="data-platform"></a>Data Platform
 
 データ プラットフォームの基本は、サービス イニシアティブとしてのエンターテインメントの一部であることです。 その概念は、ゲームにおけるすべてのことはイベントおよびそれらのイベントに関連付けられた属性として記述できるというものです。 開発者は、サービスにおいて、ゲームのエクスペリエンスにとって重要な統計情報と状態の値を構成できます。
 

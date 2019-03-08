@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, パッケージ化
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928496"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658197"
 ---
 # <a name="manual-app-packaging"></a>手動でのアプリのパッケージ化
 
@@ -26,9 +26,9 @@ ms.locfileid: "8928496"
 
 | トピック | 説明 |
 |-------|-------------|
-| [MakeAppx.exe ツールを使ったアプリ パッケージの作成](create-app-package-with-makeappx-tool.md) | MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。 |
-| [パッケージ署名用証明書を作成する](create-certificate-package-signing.md) | PowerShell ツールを使ってアプリ パッケージ署名用を作成し、エクスポートします。 |
-| [SignTool を使ってアプリ パッケージに署名する](sign-app-package-using-signtool.md) | SignTool を使って手動でアプリ パッケージに証明書による署名を行います。 |
+| [MakeAppx.exe ツールを使用してアプリ パッケージを作成します。](create-app-package-with-makeappx-tool.md) | MakeAppx.exe は、アプリ パッケージとバンドルからのファイルの作成、暗号化、暗号化解除、抽出を行います。 |
+| [パッケージに署名するための証明書を作成します。](create-certificate-package-signing.md) | PowerShell ツールを使ってアプリ パッケージ署名用を作成し、エクスポートします。 |
+| [SignTool を使用して、アプリ パッケージを署名します。](sign-app-package-using-signtool.md) | SignTool を使って手動でアプリ パッケージに証明書による署名を行います。 |
 
 ### <a name="advanced-topics"></a>高度なトピック
 
@@ -41,6 +41,6 @@ ms.locfileid: "8928496"
 | トピック | 説明 |
 |-------|-------------|
 | [アセット パッケージの概要](asset-packages.md) | アセット パッケージは、アプリケーションの共通ファイルの一元的な場所として機能するパッケージの種類です。これにより、そのアーキテクチャ パッケージ全体で重複するファイルが事実上不要になります。 |
-| [アセット パッケージとパッケージ圧縮を使った開発](package-folding.md) | アセット パッケージとパッケージ圧縮を使ってアプリケーションを効率的に整理する方法について説明します。 |
-| [フラット バンドル アプリ パッケージ](flat-bundles.md) | アプリのパッケージ ファイルのフラット バンドルを作成する方法について説明します。 |
-| [パッケージ レイアウトを使ったパッケージの作成](packaging-layout.md) | パッケージ レイアウトは、アプリのパッケージ構造を記述する 1 つのドキュメントです。 アプリのバンドル (プライマリおよびオプション)、バンドル内のパッケージ、パッケージ内のファイルを指定します。 |
+| [アセット パッケージとパッケージの圧縮を使用した開発](package-folding.md) | アセット パッケージとパッケージ圧縮を使ってアプリケーションを効率的に整理する方法について説明します。 |
+| [フラットなバンドルのアプリ パッケージ](flat-bundles.md) | アプリのパッケージ ファイルのフラット バンドルを作成する方法について説明します。 |
+| [パッケージ レイアウトでパッケージの作成](packaging-layout.md) | パッケージ レイアウトは、アプリのパッケージ構造を記述する 1 つのドキュメントです。 アプリのバンドル (プライマリおよびオプション)、バンドル内のパッケージ、パッケージ内のファイルを指定します。 |

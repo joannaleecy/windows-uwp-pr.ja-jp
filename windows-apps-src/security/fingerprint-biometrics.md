@@ -4,14 +4,14 @@ description: この記事では、ユニバーサル Windows プラットフォ�
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919600"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650337"
 ---
 # <a name="fingerprint-biometrics"></a>指紋生体認証
 
@@ -72,7 +72,7 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 
 指紋のスキャンによってユーザーの同意を求めるには、[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) メソッドを呼び出します。 指紋認証を行うには、あらかじめユーザーが指紋データベースに指紋の "署名" を追加している必要があります。
 
-[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) を呼び出すと、ユーザーに指紋のスキャンを求めるモーダル ダイアログが表示されます。 **UserConsentVerifier.RequestVerificationAsync** メソッドには、次の図に示すように、モーダル ダイアログの一部として表示されるメッセージを指定できます。
+[  **UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) を呼び出すと、ユーザーに指紋のスキャンを求めるモーダル ダイアログが表示されます。 **UserConsentVerifier.RequestVerificationAsync** メソッドには、次の図に示すように、モーダル ダイアログの一部として表示されるメッセージを指定できます。
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)

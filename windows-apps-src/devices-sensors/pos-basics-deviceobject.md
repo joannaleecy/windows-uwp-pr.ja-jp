@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934298"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596877"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService デバイス オブジェクト
 
@@ -45,6 +45,6 @@ Windows 8 では、UWP アプリにより新しいアプリケーション モ�
 
 > [!TIP]
 > Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリケーションのライフサイクルの詳細については、次のトピックを参照してください。
-> - [Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル](../launch-resume/app-lifecycle.md)
-> - [アプリの中断の処理](../launch-resume/suspend-an-app.md)
-> - [アプリの再開の処理](../launch-resume/resume-an-app.md)
+> - [Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリのライフ サイクル](../launch-resume/app-lifecycle.md)
+> - [アプリの中断を処理します。](../launch-resume/suspend-an-app.md)
+> - [アプリケーションの再開を処理します。](../launch-resume/resume-an-app.md)

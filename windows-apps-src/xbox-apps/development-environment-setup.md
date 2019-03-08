@@ -3,15 +3,15 @@ title: Xbox の開発環境に UWP を設定する
 description: Xbox の開発環境に UWP を設定してテストする手順
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1d8c6a33bd7d9249b5000767ece154ab7f8776
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046006"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603877"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>Xbox の開発環境に UWP を設定する
 
@@ -44,11 +44,11 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## <a name="setting-up-your-xbox-one"></a>Xbox One の設定
 
-Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
+Xbox One にアプリを展開する前に、ユーザーが本体にサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
 
 ## <a name="create-your-first-app"></a>初めてのアプリの作成
 
-1. 開発用 PC がターゲットの Xbox One 本体と同じローカル ネットワーク上にあることを確認します。 通常、これらは同じルーターを使用し、同じサブネット上にある必要があります。 ワイヤード (有線) ネットワーク接続をお勧めします。
+1. 開発用 PC がターゲットの Xbox One コンソールと同じローカル ネットワーク上にあることを確認します。 通常、これらは同じルーターを使用し、同じサブネット上にある必要があります。 ワイヤード (有線) ネットワーク接続をお勧めします。
 
 2. Xbox One 本体が開発者モードになっていることを確認します。  詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。
 
@@ -72,9 +72,9 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
     c. **[起動オプション]** で、**[ターゲット デバイス]** を **[リモート コンピューター]** に変更します。
 
-    d. **[リモート コンピューター]** で、システムの IP アドレスまたは Xbox One 本体のホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
+    d. **[リモート コンピューター]** で、システムの IP アドレスまたは Xbox One コンソールのホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
-    e. **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
+    e.  **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
     ![C# BlankApp プロパティ ページ](images/vs_remote.jpg)
 
@@ -90,25 +90,25 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
    b.  **[デバッグ]** タブで、**[起動するデバッガー]** を **[リモート コンピューター]** に変更します。
 
-   c. **[コンピューター名]** で、システムの IP アドレスまたは Xbox One 本体のホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
+   c. **[コンピューター名]** で、システムの IP アドレスまたは Xbox One コンソールのホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
    d. **[認証の種類]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
-   e. **[プラットフォーム]** ドロップダウンで、**[x64]** を選びます。
+   e.  **[プラットフォーム]** ドロップダウンで、**[x64]** を選びます。
 
     ![C++ BlankApp プロパティ ページ](images/development-environment-setup-4.png)
 
 ### <a name="pin-pair-your-device-with-visual-studio"></a>PIN を使用してデバイスと Visual Studio をペアリングする
 
-1. 設定を保存し、Xbox One 本体が開発者モードになっていることを確認します。
+1. 設定を保存し、Xbox One コンソールが開発者モードになっていることを確認します。
 
 2. Visual Studio でプロジェクトを開いたまま F5 キーを押します。
 
 3. 初めて展開する場合、Visual Studio に PIN を使用してデバイスとペアリングすることを求めるダイアログ ボックスが表示されます。
 
-    a. PIN を取得するには、Xbox One 本体のホーム画面から **[Dev Home]** を開きます。
+    a.  PIN を取得するには、Xbox One コンソールのホーム画面から **[Dev Home]** を開きます。
 
-    b. **[ホーム]** タブの **[クイック アクション]** で、**[Visual Studio PIN の表示]** を選びます。
+    b.  **[ホーム]** タブの **[クイック アクション]** で、**[Visual Studio PIN の表示]** を選びます。
   
     ![[Pair with Visual Studio] ダイアログ ボックス](images/development-environment-setup-5.png)
 
@@ -120,9 +120,9 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 これで、Xbox に初めての UWP アプリが正しく作成および展開されました。
 
-## <a name="see-also"></a>参照
-- [Xbox One 開発者モードのアクティブ化](devkit-activation.md)  
-- [Windows 10 用のダウンロードとツール](https://dev.windows.com/downloads)  
+## <a name="see-also"></a>関連項目
+- [Xbox 開発者モードは 1 つのアクティブ化](devkit-activation.md)  
+- [ダウンロードと Windows 10 用ツール](https://dev.windows.com/downloads)  
 - [Windows Insider Program](https://go.microsoft.com/fwlink/?LinkId=780552)  
-- [Xbox One ツールの概要](introduction-to-xbox-tools.md) 
+- [Xbox One のツールの概要](introduction-to-xbox-tools.md) 
 - [Xbox One の UWP](index.md)

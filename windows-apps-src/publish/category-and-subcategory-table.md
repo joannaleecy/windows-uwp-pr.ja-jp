@@ -1,5 +1,5 @@
 ---
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+Description: 適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。
 title: カテゴリとサブカテゴリの一覧
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, カテゴリ, サブカテゴリ, ジャンル, 分類, ジャンル
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935816"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653647"
 ---
 # <a name="category-and-subcategory-table"></a>カテゴリとサブカテゴリの一覧
 
@@ -20,7 +20,7 @@ ms.locfileid: "8935816"
 
 アプリに最も適したカテゴリを 1 つ選ぶ必要があります。 利用可能な場合は、サブカテゴリを選ぶこともできます。 どのカテゴリやサブカテゴリを使えばよいかわからない場合、または、ぴったりだと思えるものが見つからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。
 
-カテゴリの**ゲーム**を選択すると、少なくとも 1 つのサブカテゴリ (ゲームの*ジャンル*と呼ばれます) を選択する必要があります。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
+選択した場合**ゲーム**、カテゴリの少なくとも 1 つのサブカテゴリを選択する必要は (と呼ばれる*ジャンル*ゲーム用)。 ゲームに該当するジャンルを必要な数だけ選択できます。 ゲームを Xbox のユーザーに公開するには、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を有効にするか、[概念の承認](../gaming/concept-approval.md)プロセスを通過する必要がある点に注意してください)。 
 
 > [!IMPORTANT] 
 > **ゲーム**カテゴリでアプリを公開する場合、新しい申請で別のカテゴリを選択することはできません。引き続き**ゲーム**カテゴリで公開する必要があります (ただし、新しい申請でジャンルの選択は変更できます)。 同様に、ゲーム以外のカテゴリで公開したアプリを更新するときに、**ゲーム**のカテゴリを選ぶこともできません。
@@ -47,14 +47,14 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
   </tr>
   <tr>
     <td>会社</td>
-    <td>金融 & 会計 <br> コラボレーション <br> CRM <br> データ + 分析 <br> ファイル管理 <br> 在庫 & 物流 <br> 法務 & 人事 <br> プロジェクト管理 <br> リモート デスクトップ <br> 販売 + マーケティング <br> 時間 & 経費</td>
+    <td>金融 & 会計 <br> Collaboration。 <br> CRM <br> データ + 分析 <br> ファイル管理 <br> 在庫 & 物流 <br> 法務 & 人事 <br> プロジェクト管理 <br> リモート デスクトップ <br> 販売 + マーケティング <br> 時間 & 経費</td>
   </tr>
   <tr>
     <td>開発者ツール</td>
-    <td>Database (データベース) <br> デザイン ツール <br> 開発キット <br> ネットワーク <br> リファレンス & トレーニング <br> サーバー <br> ユーティリティ <br> Web ホスティング</td>
+    <td>データベース <br> デザイン ツール <br> 開発キット <br> ネットワーク <br> リファレンス & トレーニング <br> サーバー <br> ユーティリティ <br> Web ホスティング</td>
   </tr>
   <tr>
-    <td>教育</td>
+    <td>Education</td>
     <td>書籍＆参考資料 <br> 就学前教育 <br> 教育ツール <br> 言語 <br> 学習支援</td>
   </tr>
   <tr>
@@ -67,7 +67,7 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
   </tr>
   <tr>
     <td>ゲーム</td>
-    <td>アクション＆アドベンチャー <br> カード＆ボード <br> カジノ <br> クラシック <br> 教育 <br> 家族 & 子供 <br> 格闘 <br> マルチプレーヤー オンライン バトル アリーナ <br> ミュージック <br> その他 <br> プラットフォーマー <br> パズル＆クイズ <br> レーシング＆フライト <br> RPG <br> シューティング <br> シミュレーション <br> スポーツ <br> 戦略 <br> ツール <br> ワード</td>
+    <td>アクション＆アドベンチャー <br> カード＆ボード <br> カジノ <br> クラシック <br> 教育 <br> 家族 & 子供 <br> 格闘 <br> マルチプレーヤー オンライン バトル アリーナ <br> 音楽 <br> その他 <br> プラットフォーマー <br> パズル＆クイズ <br> レーシング＆フライト <br> RPG <br> シューティング <br> シミュレーション <br> スポーツ <br> 戦略 <br> ツール <br> Word</td>
   </tr>
   <tr>
     <td>行政 & 政治</td>
@@ -86,7 +86,7 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
     <td>自動車 <br> DIY <br> 自宅 & ガーデン <br> リレーションシップ <br> 特定の関心事 <br> スタイル＆ファッション</td>
   </tr>
   <tr>
-    <td>医療</td>
+    <td>Medical</td>
     <td>(なし)</td>
   </tr>
   <tr>
@@ -110,7 +110,7 @@ Microsoft Store では、アプリを以下のカテゴリとサブカテゴリ�
     <td>銀行取引 & 投資 <br> 予算 & 税金</td>
   </tr>
   <tr>
-    <td>個人用設定</td>
+    <td>Personalization</td>
     <td>着信音 & サウンド <br> テーマ <br> 壁紙 & ロック画面</td>
   </tr>
   <tr>

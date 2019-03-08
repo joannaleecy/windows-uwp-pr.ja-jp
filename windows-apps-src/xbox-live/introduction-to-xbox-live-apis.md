@@ -4,14 +4,14 @@ description: Xbox Live サービスとのやり取りに使用できる、さま
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
 ms.date: 06/05/2018
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f52e379b524952c3361b432a577a7137b02155b
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117539"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657697"
 ---
 # <a name="introduction-to-xbox-live-apis"></a>Xbox Live API の概要
 
@@ -39,13 +39,13 @@ Xbox Live Services API (**XSAPI**) を使用する方法には、以下のよう
 
 ## <a name="xbox-live-services-api-overview"></a>Xbox Live Services API の概要 ##
 
-Xbox Live Services API (**XSAPI**) は、次の 3 つのセットのクライアント側のさまざまなユーザー シナリオをサポートする Api を公開します。
+Xbox Live サービス API (**XSAPI**) クライアント側でさまざまな顧客シナリオをサポートする Api の 3 つのセットを公開します。
 
 - [XSAPI WinRT API](#xsapi-winrt-based-api)
-- [XSAPI C++11 ベース API](#xsapi-c11-based-api)
-- [XSAPI C ベース API](#xsapi-c-based-api)(**2018 6 月時点で新しい**)
+- [C++ 11 の XSAPI ベースの API](#xsapi-c11-based-api)
+- [XSAPI C ベースの API](#xsapi-c-based-api) (**2018 年 6 月の時点で新規**)
 
-Api を比較します。
+Api の比較。
 
 ### <a name="xsapi-winrt-based-api"></a>XSAPI WinRT ベース API
 
@@ -53,7 +53,7 @@ Api を比較します。
     - C++/CX はマイクロソフトの C++ 拡張であり、^ を WinRT ポインターとして使用するなど、WinRT プログラミングを容易にします。
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - C++/CX を含むすべての言語で、エラーは例外を使用して処理されます。
-- C++/WinRT もサポートされます。  詳細については、C++/WinRT で入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  C + の詳細について/cli WinRT にあります [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT を使用する XSAPI WinRT API の呼び出しの例を次に示します。
 
@@ -80,14 +80,14 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 - Xbox One XDK プラットフォーム、および x86、x64、ARM の各アーキテクチャのユニバーサル Windows プラットフォーム (UWP) をターゲットにしたアプリケーションをサポートします。
 - エラーは std::error_code を使用して処理されます。
 - パフォーマンスとデバッグの向上のため、C++ のゲーム エンジンを使用する場合は C++11 ベースの API が推奨されます。
-- Xbox Live クリエーターズ プログラムに参加している場合、XSAPI ヘッダーをインクルードする前に XBOX_LIVE_CREATORS_SDK を定義します。 これによって、API サーフェイス領域は Xbox Live Creators Program の開発者が使用できるもののみに制限されます。また、Xbox Live クリエーターズ プログラムのタイトルで機能するサインイン メソッドが変更されます。  例:
+- Xbox Live クリエーターズ プログラムに参加している場合、XSAPI ヘッダーをインクルードする前に XBOX_LIVE_CREATORS_SDK を定義します。 これによって、API サーフェイス領域は Xbox Live Creators Program の開発者が使用できるもののみに制限されます。また、Xbox Live クリエーターズ プログラムのタイトルで機能するサインイン メソッドが変更されます。  次に、例を示します。
 
 ```c++
 #define XBOX_LIVE_CREATORS_SDK
 #include "xsapi\services.h"
 ```
 
-- C++/WinRT もサポートされます。  詳細については、C++/WinRT で入手できます[https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
+- C++/WinRT もサポートされます。  C + の詳細について/cli WinRT にあります [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
 C++/WinRT と XSAPI C++ API を使うには、XSAPI ヘッダーをインクルードする前に XSAPI_CPPWINRT を定義します。  次に、例を示します。
 
@@ -103,10 +103,10 @@ winrt::Windows::Xbox::System::User cppWinrtUser = winrt::Windows::Xbox::System::
 std::shared_ptr<xbox::services::xbox_live_context> xboxLiveContext = std::make_shared<xbox::services::xbox_live_context>(cppWinrtUser);
 ```
 
-### <a name="xsapi-c-based-api"></a>XSAPI C ベース API
+### <a name="xsapi-c-based-api"></a>XSAPI C ベースの API
 
-- タイトルを XSAPI を呼び出すときにメモリ割り当てを制御できます。
-- により、タイトルを XSAPI を呼び出すときの処理スレッドの完全な制御を取得します。
-- 新しい HTTP ライブラリ、libHttpClient、ゲーム開発者向けに設計されたを使用します。
+- XSAPI を呼び出すときに、メモリの割り当てを制御するタイトルを使用できます。
+- スレッド処理 XSAPI を呼び出すときに完全に制御するタイトルを使用できます。
+- 新しい HTTP ライブラリを libHttpClient、ゲーム開発者向けに設計を使用します。
 
-詳細については、 [Xbox Live C Api の概要](xsapi-flat-c.md)をご覧ください。
+詳細については、次を参照してください。 [Xbox Live C Api の概要](xsapi-flat-c.md)します。

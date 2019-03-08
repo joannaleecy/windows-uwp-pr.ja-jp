@@ -1,5 +1,5 @@
 ---
-Description: Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.
+Description: アプリで、表示倍率、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像を含む画像リソース ファイルを読み込むことができます。
 title: 表示倍率、テーマ、ハイ コントラスト、その他の設定に合わせた画像とアセットの読み込み
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4749b8560624ed58f43b33fe3373d909919347
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929498"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592027"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>表示倍率、テーマ、ハイ コントラスト、その他の設定に合わせた画像とアセットの読み込み
 アプリで、[表示倍率](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像リソース ファイル (またはその他のアセット ファイル) を読み込むことができます。 これらの画像は、命令型コードや XAML マークアップ (**Image** の **Source** プロパティなど) から参照できます。 また、アプリ パッケージ マニフェスト ソース ファイル (`Package.appxmanifest` ファイル) に (たとえば、Visual Studio マニフェスト デザイナーの [ビジュアル資産] タブでアプリ アイコンの値として) 表示することや、タイルやトースト通知に表示することもできます。 画像のファイル名に修飾子を使用し、必要に応じて [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) を使って動的に読み込むことによって、ユーザーの実行時の表示倍率、テーマ、ハイ コントラスト、言語、その他のコンテキストの設定に最も一致する最適な画像ファイルを読み込むことができます。
@@ -79,11 +79,11 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-これらの例に示されているどのシナリオの場合も、[UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind) を推測する [Uri コンストラクター](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) のオーバーロードを使用します。 スキームと機関を含む有効な絶対 URI を指定するか、上記の例のように、機関の既定をアプリのパッケージに自動的に設定します。
+これらの例に示されているどのシナリオの場合も、[UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind) を推測する [Uri コンストラクター](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)のオーバーロードを使用します。 スキームと機関を含む有効な絶対 URI を指定するか、上記の例のように、機関の既定をアプリのパッケージに自動的に設定します。
 
 これらの URI の例で、スキーム ("`ms-appx`" または "`ms-appx-web`") の後に "`://`" が続き、その後に絶対パスが続くことに注意してください。 絶対パスでは、先頭の "`/`" によって、パスはパッケージのルートからのパスとして解釈されます。
 
-**メモ:** `ms-resource` ([文字列リソース](localize-strings-ui-manifest.md)の場合) および `ms-appx(-web)` (画像やその他のアセットの場合) URI スキームは、自動で修飾子の照合を実行して、現在のコンテキストに最も適切なリソースを見つけます。 `ms-appdata` URI スキーム (アプリ データを読み込むために使用される) は、このような自動的な照合を実行しませんが、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) の内容に応答し、URI の完全な物理ファイル名を使用して、アプリ データから適切なアセットを明示的に読み込むことができます。 アプリ データについては、「[設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)」をご覧ください。 Web URI スキーム (`http`、`https`、`ftp` など) も、自動的な照合を実行しません。 その場合の対処方法については、「[クラウドでの画像のホスティングと読み込み](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)」をご覧ください。
+**メモ:**`ms-resource` ([文字列リソース](localize-strings-ui-manifest.md)の場合) および `ms-appx(-web)` (画像やその他のアセットの場合) URI スキームは、自動で修飾子の照合を実行して、現在のコンテキストに最も適切なリソースを見つけます。 `ms-appdata` URI スキーム (アプリ データを読み込むために使用される) は、このような自動的な照合を実行しませんが、[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) の内容に応答し、URI の完全な物理ファイル名を使用して、アプリ データから適切なアセットを明示的に読み込むことができます。 アプリ データについては、「[設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)」をご覧ください。 Web URI スキーム (`http`、`https`、`ftp` など) も、自動的な照合を実行しません。 その場合の対処方法については、「[クラウドでの画像のホスティングと読み込み](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud)」をご覧ください。
 
 絶対パスは、画像ファイルがプロジェクト構造内で元の場所に残る場合に適切な選択肢です。 画像ファイルを移動できるようにする必要があるが、参照している XAML マークアップ ファイルから相対的に同じ場所に残るように注意している場合は、絶対パスの代わりに、ファイルを格納するマークアップ ファイルからの相対パスを使用できます。 その場合、URI スキームを使用する必要はありません。 この場合も、自動的な修飾子の照合のメリットはありますが、それは XAML マークアップで相対パスを使用していることにのみ起因します。
 
@@ -91,7 +91,7 @@ this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 <Image Source="Assets/Images/logo.png"/>
 ```
 
-「[言語、スケール、ハイ コントラストに合わせたタイルとトーストのサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)」も参照してください。
+「[言語、スケール、ハイ コントラストに合わせたタイルとトーストのサポート](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)」もご覧ください。
 
 ## <a name="qualify-an-image-resource-for-targetsize"></a>ターゲット サイズに合わせて画像リソースを修飾する
 同じ画像リソースの異なるバリエーションでは `scale` 修飾子と `targetsize` 修飾子を別々に使用できますが、リソースの 1 つのバリエーションでその両方を使用することはできません。 また、`TargetSize` 修飾子を持たないバリエーションを少なくとも 1 つ定義する必要があります。 そのバリエーションでは、`scale` の値を定義するか、その既定値を `scale-100` にする必要があります。 したがって、`/Assets/Square44x44Logo.png` リソースのこれら 2 つのバリエーションは有効です。
@@ -195,10 +195,10 @@ private void RefreshUIImages()
 * [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap-2.mapchanged?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
-* [言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
-* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md)
+* [言語、スケール、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](localize-strings-ui-manifest.md)
 * [設定と他のアプリ データを保存して取得する](../design/app-settings/store-and-retrieve-app-data.md)
-* [言語、スケール、ハイ コントラストに合わせたタイルとトーストのサポート](tile-toast-language-scale-contrast.md)
-* [マニフェストのローカライズ可能な項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [画像の左右反転](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
+* [言語、スケール、およびハイ コントラストのタイルとトーストのサポートします。](tile-toast-language-scale-contrast.md)
+* [ローカライズ可能なマニフェスト項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [ミラーリングのイメージ](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
 * [グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)

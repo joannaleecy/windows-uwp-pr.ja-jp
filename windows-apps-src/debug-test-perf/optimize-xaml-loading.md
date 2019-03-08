@@ -4,14 +4,14 @@ title: XAML マークアップの最適化
 description: UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。
 ms.date: 08/10/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ec88af01e46788ea9f24760af7f9a3b81281ba8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921470"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593127"
 ---
 # <a name="optimize-your-xaml-markup"></a>XAML マークアップの最適化
 
@@ -126,7 +126,7 @@ ListView とその子はメモリに読み込まれていません。
 
 レイアウト パネルには [Background](https://msdn.microsoft.com/library/windows/apps/BR227512) プロパティが用意されているため、色を付ける目的でパネルの前面に [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) を配置する必要はありません。
 
-**非効率的**
+**非効率的です**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -135,7 +135,7 @@ ListView とその子はメモリに読み込まれていません。
 </Grid>
 ```
 
-**効率的**
+**効率的です**
 
 ```xaml
 <Grid Background="Black"/>
@@ -155,7 +155,7 @@ ListView とその子はメモリに読み込まれていません。
 
 ### <a name="resources-with-xname"></a>x:Name を含むリソース
 
-リソースを参照するときは、[x:Key 属性](../xaml-platform/x-key-attribute.md)を使います。 [x:Name 属性](../xaml-platform/x-name-attribute.md)を持つリソースは、プラットフォームの最適化のメリットが適用されず、ResourceDictionary が作成されるとすぐにインスタンス化されます。 これは、x: Name がプラットフォームに対し、アプリがこのリソースへのフィールド アクセスを必要としており、プラットフォームは参照を作成するものを何か作成する必要があると指示するからです。
+リソースを参照するときは、[x:Key 属性](../xaml-platform/x-key-attribute.md)を使います。 [x:Name 属性](../xaml-platform/x-name-attribute.md)を持つリソースは、プラットフォームの最適化のメリットが適用されず、ResourceDictionary が作成されるとすぐにインスタンス化されます。 x:Name は、アプリがこのリソースへのフィールド アクセスを必要としていることをプラットフォームに伝達します。その結果、プラットフォームでは参照を作成する何かを作成する必要が生じるため、リソースがインスタンス化されることになります。
 
 ### <a name="resourcedictionary-in-a-usercontrol"></a>UserControl 内の ResourceDictionary
 
@@ -167,7 +167,7 @@ ListView とその子はメモリに読み込まれていません。
 
 次の例では、_InitialPage.xaml_ で _ExampleResourceDictionary.xaml_ のリソースが 1 つ使われているため、起動時に _ExampleResourceDictionary.xaml_ 全体を解析する必要があります。
 
-**InitialPage.xaml**
+**InitialPage.xaml します。**
 
 ```xaml
 <Page x:Class="ExampleNamespace.InitialPage" ...>
@@ -185,7 +185,7 @@ ListView とその子はメモリに読み込まれていません。
 </Page>
 ```
 
-**ExampleResourceDictionary.xaml**
+**ExampleResourceDictionary.xaml します。**
 
 ```xaml
 <ResourceDictionary>
@@ -212,7 +212,7 @@ ListView とその子はメモリに読み込まれていません。
 </Application>
 ```
 
-**InitialPage.xaml**
+**InitialPage.xaml します。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -223,7 +223,7 @@ ListView とその子はメモリに読み込まれていません。
 </Page>
 ```
 
-**SecondPage.xaml**
+**SecondPage.xaml します。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -234,13 +234,13 @@ ListView とその子はメモリに読み込まれていません。
 </Page>
 ```
 
-この例の効率を改善するには、`SecondPageTextBrush` を _SecondPage.xaml_ に移動し、`ThirdPageTextBrush` を _ThirdPage.xaml_ に移動します。 `InitialPageTextBrush`  については、どの場合でもアプリの起動時にアプリケーション リソースを解析する必要があるため、_App.xaml_ 内に残しておくことができます。
+この例の効率を改善するには、`SecondPageTextBrush` を _SecondPage.xaml_ に移動し、`ThirdPageTextBrush` を _ThirdPage.xaml_ に移動します。 `InitialPageTextBrush` 保持できる_App.xaml_アプリケーション リソースをアプリの起動時にどのような場合に解析する必要があるためです。
 
 ### <a name="consolidate-multiple-brushes-that-look-the-same-into-one-resource"></a>同じように見える複数のブラシを 1 つのリソースに統合する
 
 XAML プラットフォームは、よく使われるオブジェクトをキャッシュして、何度も再利用できるようにします。 しかし、あるマークアップで宣言されているブラシが別のマークアップで宣言されているブラシと同じであるかどうかは簡単に判断できません。 ここでは、例として [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962) を使っていますが、より多く使われる可能性があって重要なのは [GradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210068) です。 また、事前定義された色を使うブラシもチェックする必要があります。たとえば、`"Orange"` と `"#FFFFA500"` は同じ色です。
 
-**非効率的**
+**非効率的です。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -262,7 +262,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 重複を除去するには、ブラシをリソースとして定義します。 他のページのコントロールで同じブラシを使う場合は、ブラシを _App.xaml_ に移動します。
 
-**効率的**
+**効率的です。**
 
 ```xaml
 <Page ... >
@@ -291,7 +291,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 複数の要素を重ねて効果を作成する代わりに、複合要素を使います。 次の例では、結果は 2 色の図形になり、上半分は黒 ([Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) の背景)、下半分は灰色 (**Grid** の黒い背景の上にアルファ ブレンドされた半透明の白い [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)) で表示されます。 この場合、結果を得るために必要なピクセルの 150% が塗りつぶされることになります。
 
-**非効率的。**
+**非効率的です。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -304,7 +304,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Grid>
 ```
 
-**効率的**
+**効率的です。**
 
 ```xaml
 <Grid>
@@ -321,7 +321,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 レイアウト パネルには、領域の色指定と、子要素のレイアウトの 2 つの目的があります。 z オーダーの要素の領域が既に塗られている場合は、前面のレイアウト パネルでその領域を塗りつぶす必要はありません。代わりに、パネルではその子を重点的にレイアウトします。 次に例を示します。
 
-**非効率的。**
+**非効率的です。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -334,7 +334,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </GridView>
 ```
 
-**効率的**
+**効率的です。**
 
 ```xaml
 <GridView Background="Blue">
@@ -352,7 +352,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 オブジェクトの周りに境界線を描画するには、[Border](https://msdn.microsoft.com/library/windows/apps/BR209253) 要素を使います。 次の例では、[TextBox](https://msdn.microsoft.com/library/windows/apps/BR209683) を囲む間に合わせの境界線として [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用しています。 この方法では、中央のセル内のすべてのピクセルが複数回描画されます。
 
-**非効率的。**
+**非効率的です。**
 
 ```xaml
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
@@ -371,7 +371,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Grid>
 ```
 
-**効率的**
+**効率的です。**
 
 ```xaml
  <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -387,7 +387,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 過剰な描画の別の原因として、多数の要素を重ね合わせて作成される図形があります。 複合図形を含む [UIElement](https://msdn.microsoft.com/library/windows/apps/BR208911) で [CacheMode](https://msdn.microsoft.com/library/windows/apps/BR228084) を **BitmapCache** に設定すると、プラットフォームによって要素がいったんビットマップにレンダリングされ、何度も描画する代わりに、そのビットマップが各フレームで使われます。
 
-**非効率的**
+**非効率的です。**
 
 ```xaml
 <Canvas Background="White">
@@ -403,7 +403,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 ![重なっている部分がわかるベン図](images/translucentvenn.png)
 
-**効率的**
+**効率的です。**
 
 ```xaml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -421,11 +421,11 @@ XBF2 は、実行時にすべてのテキスト解析コストを回避する XA
 
 フレームワークが提供する XAML の組み込みのコントロールとディクショナリは、既に XBF2 に完全に対応しています。 独自のアプリでは、プロジェクト ファイルで TargetPlatformVersion 8.2 以降を宣言していることを確認します。
 
-XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 です。
+XBF2 があるかどうかを確認するには、バイナリ エディターでアプリを開きます。XBF2 がある場合、12 番目と 13 番目のバイトは 00 02 になります。
 
 ## <a name="related-articles"></a>関連記事
 
-- [アプリ起動時のパフォーマンスのベスト プラクティス](best-practices-for-your-app-s-startup-performance.md)
+- [アプリの起動時のパフォーマンスのベスト プラクティス](best-practices-for-your-app-s-startup-performance.md)
 - [XAML レイアウトの最適化](optimize-your-xaml-layout.md)
 - [ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)
-- [プロファイリングとパフォーマンスに関するツール](tools-for-profiling-and-performance.md)
+- [プロファイリングとパフォーマンスのためのツール](tools-for-profiling-and-performance.md)

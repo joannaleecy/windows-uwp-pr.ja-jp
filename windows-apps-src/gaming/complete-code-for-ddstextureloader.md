@@ -4,14 +4,14 @@ description: メモリから DDS テクスチャを読み込むクラスとメ�
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10、UWP、ゲーム、DDSTextureLoader
+keywords: windows 10, uwp, ゲーム, DDSTextureLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: 1501a13b188a995d591b7348202792dfbfd27ac8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941655"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662447"
 ---
 # <a name="complete-code-for-ddstextureloader"></a>DDSTextureLoader のコード一式
 
@@ -23,8 +23,8 @@ ms.locfileid: "8941655"
 このトピックは次のセクションで構成されます。
 
 -   [テクノロジ](#technologies)
--   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c)
+-   [要件](#requirements)
+-   [コードを表示する (C++)](#view-the-code-c)
 
 
 ## <a name="download-location"></a>ダウンロード場所

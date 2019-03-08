@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932598"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649867"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>ソース修飾子を使用した引っ張って更新
 
@@ -20,9 +20,9 @@ ms.locfileid: "8932598"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [入力駆動型アニメーション](input-driven-animations.md)
-- [InteractionTracker を使用したカスタム操作エクスペリエンス](interaction-tracker-manipulations.md)
-- [関係ベース アニメーション](relation-animations.md)
+- [入力に基づくアニメーション](input-driven-animations.md)
+- [カスタム操作 InteractionTracker 経験](interaction-tracker-manipulations.md)
+- [ベースのリレーションのアニメーション](relation-animations.md)
 
 ## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>SourceModifier の説明、および SourceModifier が便利である理由
 
@@ -67,7 +67,7 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-ListView (`ThumbnailList`) は既にスクロールされる XAML コントロールであるため、一番上の項目に到達し、それ以上スクロールできなくなったときに親の (`ContentPanel`) までチェーンされるスクロールが必要になります  (ContentPanel でソース修飾子を適用します)。そのためには、ListView マークアップで ScrollViewer.IsVerticalScrollChainingEnabled を **true** に設定する必要があります。 また、VisualInteractionSource のチェーン モードを **Always** に設定する必要もあります。
+ListView (`ThumbnailList`) は既にスクロールされる XAML コントロールであるため、一番上の項目に到達し、それ以上スクロールできなくなったときに親の (`ContentPanel`) までチェーンされるスクロールが必要になります  (ContentPanel はソース修飾子が適用されます) です。この ScrollViewer.IsVerticalScrollChainingEnabled に設定する必要があるため**true** ListView マークアップ。 また、VisualInteractionSource のチェーン モードを **Always** に設定する必要もあります。
 
 _handledEventsToo_ パラメーターを使用して、PointerPressedEvent ハンドラーを **true** に設定する必要があります。 このオプションを使用しないと、PointerPressedEvent は ListView コントロールとして ContentPanel にチェーンされず、これらのイベントは処理済みとしてマークされ、これらのイベントはビジュアル チェーンに送信されなくなります。
 

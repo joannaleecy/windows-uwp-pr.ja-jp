@@ -1,31 +1,31 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
+Description: 100 を超える言語で Microsoft Store にアプリを送信することができます。
 title: サポートされている言語
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 02/20/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083710"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657757"
 ---
 # <a name="supported-languages"></a>サポートされている言語
 
 
-100 を超える言語で Microsoft ストアにアプリを提出することができます。
+100 を超える言語で Microsoft Store にアプリを送信することができます。
 
-アプリでの言語の構成について詳しくは、[理解するユーザー プロファイルの言語とアプリ マニフェストの言語](../design/globalizing/manage-language-and-region.md)と[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)を参照してください。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
+アプリでの言語を構成する方法の詳細についてを参照してください。[グローバリゼーションとローカリゼーション](../design/globalizing/globalizing-portal.md)と[言語を理解するユーザー プロファイルの言語とアプリ マニフェスト](../design/globalizing/manage-language-and-region.md)します。 複数の言語をサポートするアプリを作るのに役立つ[多言語アプリ ツールキット](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)も用意されています。
 
 ## <a name="supported-languages"></a>サポートされている言語
 
 
-これらは、Microsoft ストアがサポートされる言語です。 アプリは、これらの言語の 1 つ以上をサポートする必要があります。 
+これらは、Microsoft Store がでサポートされる言語です。 アプリには、これらの言語の 1 つ以上をサポートする必要があります。 
 
-ここでは含まれていません言語コードでは、ストアによってサポートされていません。 以下に示します。 上記以外の言語コードを対象とするパッケージが含まれていないことをお勧めします。このようなパッケージは、顧客には配布されないと、認定の遅延またはエラーが発生する可能性があります。
+これ以外の言語コードは、ストアではサポートされていません。 以下に示します。 記載されている以外の言語コードを対象とするパッケージに含めないことをお勧めします。このようなパッケージは、顧客には配布されず、認証の遅延や障害を引き起こす可能性があります。
 
 | 言語名         | サポートされる言語コード                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,14 +43,14 @@ ms.locfileid: "9083710"
 | ブルガリア語             | bg、bg-bg                                                                                                                                                                                             |
 | カタルニア語               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | チェロキー語              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 簡体字中国語  | Zh-hans、zh-cn、zh-cn hans、zh sg、zh hans-sg                                                                                                                                                     |
+| 中国語 (簡体字)  | Zh-hans、zh cn、hans zh-cn、zh sg、zh hans sg                                                                                                                                                     |
 | 繁体字中国語 | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | クロアチア語              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | チェコ語                 | cs、cs-cz                                                                                                                                                                                             |
 | デンマーク語                | da、da-dk                                                                                                                                                                                             |
 | ダリー語                  | prs、prs-af、prs-arab                                                                                                                                                                                 |
 | オランダ語                 | nl、nl-nl、nl-be                                                                                                                                                                                      |
-| 英語               | en、en-au、en-ca、en-gb、en-ie、en-in、en-nz、en-sg、en-us、en-za、en-bz、en-hk、en-id、en-jm、en-kz、en-mt、en-my、en-ph、en-pk、en-tt、en-vn、en-zw、en-053、en-021、en-029、en-011、en-018、en-014 |
+| 日本語               | en、en-au、en-ca、en-gb、en-ie、en-in、en-nz、en-sg、en-us、en-za、en-bz、en-hk、en-id、en-jm、en-kz、en-mt、en-my、en-ph、en-pk、en-tt、en-vn、en-zw、en-053、en-021、en-029、en-011、en-018、en-014 |
 | エストニア語              | et、et-ee                                                                                                                                                                                             |
 | フィリピノ語              | fil、fil-latn、fil-ph                                                                                                                                                                                 |
 | フィンランド語               | fi、fi-fi                                                                                                                                                                                             |
@@ -72,7 +72,7 @@ ms.locfileid: "9083710"
 | コサ語              | xh、xh-za                                                                                                                                                                                             |
 | ズールー語               | zu、zu-za                                                                                                                                                                                             |
 | イタリア語               | it、it-it、it-ch                                                                                                                                                                                      |
-| 日本語              | ja、ja-jp                                                                                                                                                                                            |
+| Japanese              | ja、ja-jp                                                                                                                                                                                            |
 | カンナダ語               | kn、kn-in                                                                                                                                                                                             |
 | カザフ語                | kk、kk-kz                                                                                                                                                                                             |
 | クメール語                 | km、km-kh                                                                                                                                                                                             |
@@ -93,7 +93,7 @@ ms.locfileid: "9083710"
 | マルタ語               | mt、mt-mt                                                                                                                                                                                             |
 | マオリ語                 | mi、mi-latn、mi-nz                                                                                                                                                                                    |
 | マラーティー語               | mr、mr-in                                                                                                                                                                                             |
-| モンゴル語 (キリル語)  | mn-cyrl、mn-mong、mn-mn、mn-phag                                                                                                                                                                      |
+| モンゴル語 (キリル)  | mn-cyrl、mn-mong、mn-mn、mn-phag                                                                                                                                                                      |
 | ネパール語                | ne、ne-np                                                                                                                                                                                             |
 | ノルウェー語             | nb、nb-no、nn、nn-no、no、no-no                                                                                                                                                                      |
 | オディア語                  | or、or-in                                                                                                                                                                                             |
@@ -101,7 +101,7 @@ ms.locfileid: "9083710"
 | ポーランド語                | pl、pl-pl                                                                                                                                                                                             |
 | ポルトガル語 (ブラジル)   | pt-br                                                                                                                                                                                                 |
 | ポルトガル語 (ポルトガル) | pt、pt-pt                                                                                                                                                                                             |
-| パンジャブ語               | pa、pa-arab、pa-arab-pk、pa-deva、pa-in                                                                                                                                                               |
+| パンジャーブ語               | pa、pa-arab、pa-arab-pk、pa-deva、pa-in                                                                                                                                                               |
 | ケチュア語               | quz、quz-bo、quz-ec、quz-pe                                                                                                                                                                           |
 | ルーマニア語              | ro、ro-ro                                                                                                                                                                                             |
 | ロシア語               | ru、ru-ru                                                                                                                                                                                            |
@@ -125,7 +125,7 @@ ms.locfileid: "9083710"
 | トルコ語               | tr、tr-tr                                                                                                                                                                                             |
 | トルクメン語               | tk-cyrl、tk-latn、tk-tm、tk-latn-tr、tk-cyrl-tr                                                                                                                                                       |
 | ウクライナ語             | uk、uk-ua                                                                                                                                                                                             |
-| ウルドゥー語                  | ur、ur-pk                                                                                                                                                                                             |
+| ウルドゥ語                  | ur、ur-pk                                                                                                                                                                                             |
 | ウイグル語                | ug-arab、ug-cn、ug-cyrl、ug-latn                                                                                                                                                                      |
 | ウズベク語 (ラテン)         | uz、uz-cyrl、uz-latn、uz-latn-uz                                                                                                                                                                      |
 | ベトナム語            | vi、vi-vn                                                                                                                                                                                             |

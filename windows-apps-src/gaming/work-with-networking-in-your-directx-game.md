@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, ネットワーク, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dc77b48feb0c7ceba9fa3cede82c1a44687d0d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114628"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656317"
 ---
 # <a name="networking-for-games"></a>ゲームのネットワーク
 
@@ -45,10 +45,10 @@ DirectX ゲームに使うことのできる Networking API は、多数あり�
 
 ゲームに使うことができる主要なネットワーク API には、次のようなものがあります。
 
--   TCP とソケット - 信頼性の高い接続を実現します。 TCP は、セキュリティを必要としないゲーム操作に使います。 TCP を使うとサーバーの規模変更が容易であるため、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルのゲームでよく使われます。 TCP は、Wi-Fi Direct と Bluetooth を経由したアドホック (ローカル ピア ツー ピア) ゲームでも使うことができます。 TCP は一般的に、ゲーム オブジェクトの動き、文字操作、テキスト チャットなどの操作に使います。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)クラスは、Microsoft Store ゲームで使用できる TCP ソケットを提供します。 **StreamSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   TCP とソケット - 信頼性の高い接続を実現します。 TCP は、セキュリティを必要としないゲーム操作に使います。 TCP を使うとサーバーの規模変更が容易であるため、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルのゲームでよく使われます。 TCP は、Wi-Fi Direct と Bluetooth を経由したアドホック (ローカル ピア ツー ピア) ゲームでも使うことができます。 TCP は一般的に、ゲーム オブジェクトの動き、文字操作、テキスト チャットなどの操作に使います。 [ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)クラスは、Microsoft Store ゲームで使用できる TCP ソケットを提供します。 **StreamSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
 -   SSL を使う TCP とソケット - 信頼性の高い接続を提供して改ざんを防ぎます。 SSL を伴う TCP 接続は、セキュリティを必要とするゲーム操作で使います。 SSL の暗号化とオーバーヘッドにより、待機時間とパフォーマンスのコストが増加するため、セキュリティが必要な場合にのみ使うようにします。 一般的に、SSL を伴う TCP は、ログイン、アセットの購入とトレーディング、ゲーム キャラクターの作成と管理に使います。 SSL をサポートする TCP ソケットは、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスで提供されます。
--   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)クラスは、Microsoft Store ゲームで使用できる UDP ソケットを提供します。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
--   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)クラスは、最新の HTTP クライアント API の使用では、Microsoft Store ゲームを提供します。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
+-   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [**マッピングされています**](https://msdn.microsoft.com/library/windows/apps/br241319)クラスには、Microsoft Store ゲームで使用できる UDP ソケットが用意されています。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [ **HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639)クラスには、最新に対する HTTP クライアント API を使用して Microsoft Store ゲームでが用意されています。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>DirectX ゲームでのネットワーク例外の処理
 
@@ -66,7 +66,7 @@ Networking API を使う場合の例外の理由には、次のようなもの�
 
 ネットワークのエラーによる例外 (たとえば、接続の切断または変更、接続エラー、サーバー エラー) は、いつでも発生する場合があります。 これらのエラーが起きると、例外がスローされます。 例外がアプリによって処理されない場合、ランタイムによってアプリ全体が終了されることがあります。
 
-非同期ネットワーク メソッドの多くは、呼び出す場合、例外を処理するようにコードを記述する必要があります。 例外の発生時に、場合によっては、問題を解決するためにネットワーク メソッドが再試行されることがあります。 また、ネットワーク接続なしで、以前にキャッシュされたデータを使ってアプリを継続するように計画しなければならない場合もあります。
+非同期ネットワーク メソッドの多くは、呼び出すとき、例外を処理するようにコードを記述する必要があります。 例外の発生時に、場合によっては、問題を解決するためにネットワーク メソッドが再試行されることがあります。 また、ネットワーク接続なしで、以前にキャッシュされたデータを使ってアプリを継続するように計画しなければならない場合もあります。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリは、一般に、1 つの例外をスローします。 エラーについてよく理解し、適切な判断ができるように、例外ハンドラーは例外の原因についての詳しい情報を取得できます。
 
@@ -75,7 +75,7 @@ Networking API を使う場合の例外の理由には、次のようなもの�
 Networking API は、例外の原因についての詳しい情報を取得するために、さまざまなメソッドをサポートしています。
 
 -   例外の原因となったエラーの **HRESULT** 値を取得するメソッド。 可能な **HRESULT** 値の一覧はサイズが大きく指定されていません。 Networking API の 1 つを使っている場合は **HRESULT** の値を取得できます。
--   **HRESULT** 値を列挙値に変換するヘルパー メソッド。 可能な列挙値の一覧は指定されていて、比較的小さいサイズです。 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 内のソケット クラスにヘルパー メソッドを使うことができます。
+-   **HRESULT** 値を列挙値に変換するヘルパー メソッド。 可能な列挙値の一覧は指定されていて、比較的小さいサイズです。 [  **Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 内のソケット クラスにヘルパー メソッドを使うことができます。
 
 ### <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets の例外
 
@@ -117,11 +117,11 @@ Networking API は、例外の原因についての詳しい情報を取得す�
     // ... Continue with code to execute with a valid hostname.
 ```
 
-[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットを使う場合のエラー処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
+[  **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットを使う場合のエラー処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-スローされた例外の [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) の操作結果で発生したエラー。 例外の原因は、**HRESULT** として表現されるエラー値です。 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+スローされた例外の [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) の操作結果で発生したエラー。 例外の原因は、**HRESULT** として表現されるエラー値です。 [  **SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-パラメーター検証エラーの場合、アプリは例外からの **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。
+パラメーター検証エラーの場合、アプリは例外からの **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラー、 **HRESULT**が返される**E\_INVALIDARG**します。
 
 ストリーム ソケット接続の実行時に発生する例外を処理するコードの追加
 
@@ -222,7 +222,7 @@ using namespace Windows::Networking::Sockets;
 
 ### <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http の例外
 
-[**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と共に使われる [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) クラスのコンストラクターは、有効な URI ではない (URI に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから **Windows::Foundation::Uri** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知して、新しい URI を要求することができます。
+[  **Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と共に使われる [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) クラスのコンストラクターは、有効な URI ではない (URI に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから **Windows::Foundation::Uri** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知して、新しい URI を要求することができます。
 
 アプリでは、URI 内のスキーマが HTTP または HTTPS であることも確認する必要があります。[**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) では、これらのスキーマしかサポートされていないためです。
 
@@ -269,13 +269,13 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 名前空間には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
+[  **Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 名前空間には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
 
-C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) がエラーを表します。 [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) がエラーを表します。 [  **Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [  **Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。 一部の無効なメソッド呼び出しでは、返される **HRESULT** は **E\_ILLEGAL\_METHOD\_CALL** です。
+ほとんどのパラメーター検証エラー、 **HRESULT**が返される**E\_INVALIDARG**します。 一部の無効なメソッド呼び出しの**HRESULT**が返される**E\_不正な\_メソッド\_呼び出す**。
 
-[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使って HTTP サーバーに接続するときに発生する例外を処理するコードの追加
+[  **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使って HTTP サーバーに接続するときに発生する例外を処理するコードの追加
 
 ```cpp
 using namespace Windows::Foundation;
@@ -370,13 +370,13 @@ using namespace Windows::Web::Http;
 
 **その他のリソース**
 
-* [データグラム ソケットを使った接続](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
-* [ストリーム ソケットによるネットワーク リソースへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
-* [ネットワーク サービスへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
-* [Web サービスへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+* [データグラム ソケットで接続します。](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
+* [ストリーム ソケットでのネットワーク リソースに接続します。](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
+* [ネットワーク サービスに接続します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+* [Web サービスに接続します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
 * [ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)
 * [ネットワーク分離機能を構成する方法](https://msdn.microsoft.com/library/windows/apps/hh770532)
-* [ループバックを有効にする方法とネットワーク分離のトラブルシューティングを行う方法](https://msdn.microsoft.com/library/windows/apps/hh780593)
+* [ループバックを有効にして、ネットワークの分離をデバッグする方法](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
 **リファレンス**
 
@@ -388,7 +388,7 @@ using namespace Windows::Web::Http;
 
 **サンプル**
 
-* [DatagramSocket のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [サンプルのマッピングされています](https://go.microsoft.com/fwlink/p/?LinkID=243037)
 * [HttpClient のサンプル]( https://go.microsoft.com/fwlink/p/?linkid=242550)
-* [近接通信のサンプル](https://go.microsoft.com/fwlink/p/?linkid=245082)
-* [StreamSocket のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=243037)
+* [近接通信サンプル](https://go.microsoft.com/fwlink/p/?linkid=245082)
+* [StreamSocket サンプル](https://go.microsoft.com/fwlink/p/?linkid=243037)

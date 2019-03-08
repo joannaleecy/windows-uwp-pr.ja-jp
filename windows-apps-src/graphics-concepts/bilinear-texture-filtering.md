@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932931"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651257"
 ---
 # <a name="bilinear-texture-filtering"></a>バイリニア テクスチャ フィルタリング
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932931"
 
 ![カラーのソリッド ブロックの 4 x 4 テクスチャを示す図](images/bilinear-fig7a.png)
 
-テクスチャは通常、単色のカラー ブロックで構成されているように表されますが、実際には、ラスター表示の概念と同様にテクスチャについても考えるとより正確です。各テクセルは、下の図のように、グリッド セルのちょうど中心で定義されます。
+色の実線のブロックで構成されていましたが、実際には、テクスチャのラスター表示を考える必要があります、同じ方法を検討する間違いがないことは、通常はテクスチャが表されます。各テクセルは次の図に示すように、グリッド セルの中央に定義されます。
 
 ![グリッド セルの中心にテクセルが定義された 4 x 4 テクスチャを示す図](images/bilinear-fig7b.png)
 
@@ -89,7 +89,7 @@ UV: (0.375, 0.375)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[テクスチャ フィルタリング](texture-filtering.md)
+[テクスチャ フィルタ リング](texture-filtering.md)
 
  
 

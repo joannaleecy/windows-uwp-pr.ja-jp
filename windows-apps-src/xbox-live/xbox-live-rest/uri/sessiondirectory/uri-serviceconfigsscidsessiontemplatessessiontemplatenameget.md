@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e70c2412728eafe76e520e871fbe106c4b1a8ea3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918102"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590747"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatename"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName})
-一連のセッション テンプレート名を取得します。
+セッションのテンプレート名のセットを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドでは、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [URI パラメーター](#ID4ET)
-  * [HTTP ステータス コード](#ID4E5)
+  * [HTTP 状態コード](#ID4E5)
   * [要求本文](#ID4EFB)
   * [応答本文](#ID4EQB)
 
@@ -30,16 +30,16 @@ ms.locfileid: "8918102"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成の識別子 (SCID)。 パート 1 セッションの id。|
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2、セッションの id。 |
+| scid| GUID| サービス構成の識別子 (SCID)。 セッションの第 1 部 id。|
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッションの第 2 部 id。 |
 
 <a id="ID4E5"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EFB"></a>
 
 

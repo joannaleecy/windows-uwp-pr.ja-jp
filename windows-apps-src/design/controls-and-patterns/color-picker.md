@@ -1,28 +1,28 @@
 ---
-Description: A color picker lets a user browse through and select colors.
+Description: カラー ピッカーは、ユーザーが色を参照して選ぶためのしくみです。
 title: カラー ピッカー
 label: Color Picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654477"
 ---
 # <a name="color-picker"></a>カラー ピッカー
 
 カラー ピッカーは、色を参照し、選ぶために使用します。 既定では、ユーザーはカラー ピッカーを使って、カラー スペクトルで色を参照するか、Red-Green-Blue (RGB)、Hue-Saturation-Value (HSV)、または 16 進数のテキスト ボックスのいずれかで色を指定できます。
 
-> **重要な API**: [ColorPicker クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要な Api**:[ColorPicker クラス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、 [Color プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、 [ColorChanged イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![既定のカラー ピッカー](images/color-picker-default.png)
 
@@ -42,8 +42,8 @@ ms.locfileid: "9047101"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ColorPicker">アプリを開き、ColorPicker の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -213,8 +213,8 @@ ColorPicker コントロールの構成に使うことができるすべての�
 
 ## <a name="related-articles"></a>関連記事
 
-- [UWP アプリのペン操作とスタイラス操作](../input/pen-and-stylus-interactions.md)
-- [インク操作](inking-controls.md)
+- [UWP アプリでのペン、スタイラスの相互作用](../input/pen-and-stylus-interactions.md)
+- [手描き入力機能](inking-controls.md)
 
 <!--
 <div class=”microsoft-internal-note”>

@@ -1,5 +1,5 @@
 ---
-Description: Use the ParallaxView control to add depth and movement to your app.
+Description: ParallaxView コントロールを使用して、アプリに奥行きと動きを追加します。
 title: ParallaxView コントロールを使用して、アプリに奥行きと動きを追加する方法
 ms.assetid: ''
 label: Parallax View
@@ -13,17 +13,17 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115809"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590687"
 ---
 # <a name="parallax"></a>視差
 
 視差は、アプリの閲覧者の近くにある項目を背景にある項目よりも速く動かすという視覚効果です。 視差によって、奥行き、遠近感、および動きといった感覚が引き起こされます。 UWP アプリでは、ParallaxView コントロールを使用して、視差効果を作成できます。  
 
-> **重要な API**: [ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、[VerticalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、[HorizontalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **重要な Api**:[ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、 [VerticalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [HorizontalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>例
 
@@ -34,8 +34,8 @@ ms.locfileid: "9115809"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ParallaxView">アプリを開き、ParallaxView の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -47,7 +47,7 @@ ms.locfileid: "9115809"
 
 ## <a name="how-it-works-in-a-user-interface"></a>ユーザー インターフェイスでのしくみ
 
-UI では、UI のスクロールやパンを行うときに、さまざまなオブジェクトをさまざまな速度で動かすことによって視差効果を作成できます。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> その実例として、コンテンツの 2 つのレイヤー (リストと背景画像) を見てみましょう。  リストは背景画像の上に配置されており、リストがアプリの閲覧者の近くに表示されているという錯覚を既に与えています。  次に、視差効果を実現するために、最も近くに表示されているオブジェクトを、遠くに表示されているオブジェクトよりも "速く" 動かします。  ユーザーがインターフェイスをスクロールすると、リストは背景画像よりも速い速度で動作し、奥行きがあるような錯覚を与えます。
+UI では、UI のスクロールやパンを行うときに、さまざまなオブジェクトをさまざまな速度で動かすことによって、視差効果を作成できます。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 示すには、コンテンツ、リスト、および背景画像の 2 つのレイヤーを見てみましょう。  リストは背景画像の上に配置されており、リストがアプリの閲覧者の近くに表示されているという錯覚を既に与えています。  次に、視差効果を実現するために、最も近くに表示されているオブジェクトを、遠くに表示されているオブジェクトよりも "速く" 動かします。  ユーザーがインターフェイスをスクロールすると、リストは背景画像よりも速い速度で動作し、奥行きがあるような錯覚を与えます。
 
  ![リストと背景画像を使用した視差の例](images/_Parallax_v2.gif)
 
@@ -106,8 +106,8 @@ ParallaxView では、視差効果の操作で適切に動作するように、�
 
 VerticalShift プロパティと HorizontalShift プロパティでは、視差効果の程度を制御できます。
 
-* VerticalShift プロパティでは、視差効果の操作全体を通じて、背景をどの程度垂直方向に動かすかを指定します。 値 0 は、背景はまったく動きません。
-* HorizontalShift プロパティでは、視差効果の操作全体を通じて、背景をどの程度水平方向に動かすかを指定します。 値 0 は、背景はまったく動きません。
+* VerticalShift プロパティでは、視差効果の操作全体を通じて、背景をどの程度垂直方向に動かすかを指定します。 値が 0 の場合、バック グラウンドはまったく移動しません。
+* HorizontalShift プロパティでは、視差効果の操作全体を通じて、背景をどの程度水平方向に動かすかを指定します。 値が 0 の場合、バック グラウンドはまったく移動しません。
 
 値を大きくすると、劇的な効果が発生します。 
 
@@ -126,5 +126,5 @@ VerticalShift プロパティと HorizontalShift プロパティでは、視差�
 ## <a name="related-articles"></a>関連記事
 
 - [ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
-- [UWP の Fluent Design](../fluent-design-system/index.md)
-- [システムの科学: Fluent Design と奥行き](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [UWP 用 Fluent デザイン](../fluent-design-system/index.md)
+- [システムで科学:Fluent デザインと深さ](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)

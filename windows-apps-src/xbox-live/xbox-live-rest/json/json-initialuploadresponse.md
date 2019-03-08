@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dab59fefb389cf550a1bc4fc6429f6b0970f50ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942814"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589837"
 ---
 # <a name="initialuploadresponse-json"></a>InitialUploadResponse (JSON)
  
@@ -21,19 +21,19 @@ ms.locfileid: "8942814"
  
 ## <a name="initialuploadresponse"></a>InitialUploadResponse
  
-InitialUploadResponse オブジェクトには、次仕様があります。
+InitialUploadResponse オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>gameClipId</b>| string| アップロードのデータ要求に割り当てられている ID。| 
-| <b>uploadUri</b>| URI| 場所は、ゲーム クリップをアップロードする必要があります。| 
-| <b>largeThumbnailUri</b>| URI| 省略可能。 場所は、大きなサムネイルをアップロードする必要があります。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
-| <b>smallThumbnailUri</b>| URI| 省略可能。 小さなサムネイルのアップロード場所です。 このフィールドの有無については、(存在するは、アップロードが指定されているときになります) <b>InitialUploadRequest</b> [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)の値によって決まります。| 
+| <b>gameClipId</b>| string| データ要求のアップロードに割り当てられた ID。| 
+| <b>uploadUri</b>| URI| ゲームのクリップのアップロード先となる場所です。| 
+| <b>largeThumbnailUri</b>| URI| (省略可能)。 場所は、大規模なサムネイルをアップロードする必要があります。 このフィールドの存在が続く、 [ThumbnailSource 列挙](../enums/gvr-enum-thumbnailsource.md)値、 <b>InitialUploadRequest</b> (存在するが、アップロードが指定されている場合になります)。| 
+| <b>smallThumbnailUri</b>| URI| (省略可能)。 小規模のサムネイルのアップロード先となる場所です。 このフィールドの存在が続く、 [ThumbnailSource 列挙](../enums/gvr-enum-thumbnailsource.md)値、 <b>InitialUploadRequest</b> (存在するが、アップロードが指定されている場合になります)。| 
   
 <a id="ID4EYC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,6 +57,6 @@ InitialUploadResponse オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

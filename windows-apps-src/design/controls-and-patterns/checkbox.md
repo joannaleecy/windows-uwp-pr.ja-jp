@@ -1,23 +1,23 @@
 ---
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
+Description: アクション項目の選択や選択解除を行うときに使います。 単一のリスト項目や複数のリスト項目に対して使うことができます。
 title: チェック ボックス
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a13c0c3d0e91a3932b4f9a26e564fbf364e5551
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037124"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648897"
 ---
 # <a name="check-boxes"></a>チェック ボックス
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037124"
 
 チェック ボックスは、アクション項目の選択や選択解除を行うときに使います。 また、チェック ボックスはユーザーが選択する単一の項目や複数の項目の一覧に対して使うことができます。 コントロールには 3 つの選択状態 (選択されていない、選択されている、不確定) があります。 不確定状態は、選択されていない状態と選択されている状態の両方がサブ選択肢のコレクションに含まれている場合に使います。
 
-> **重要な API**: [CheckBox クラス](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **重要な Api**:[チェック ボックスをオン クラス](https://msdn.microsoft.com/library/windows/apps/br209316)、[チェック イベント](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、 [IsChecked プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![チェック ボックスの状態の例](images/templates-checkbox-states-default.png)
 
@@ -58,14 +58,14 @@ ms.locfileid: "9037124"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/CheckBox">アプリを開き、CheckBox の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-## <a name="create-a-checkbox"></a>チェック ボックスを作成する
+## <a name="create-a-checkbox"></a>チェック ボックスの作成
 
 チェック ボックスにラベルを割り当てるには、[Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティを設定します。 ラベルはチェック ボックスの横に表示されます。
 
@@ -185,7 +185,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 
 CheckBox コントロールは [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) を継承します。また、このコントロールには 3 つの状態を指定できます。 
 
-状態 | プロパティ | 値
+状態 | プロパティ | Value
 ------|----------|------
 オン | IsChecked | **true** 
 オフ | IsChecked | **false** 
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![不確定状態のチェック ボックス](images/checkbox4_spicy.png)
 
-    このような場合は、[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループを使います。
+    代わりに、3 つのオプションがあるラジオ ボタン グループを使用します。いないスパイシー、スパイシー、および追加スパイシーします。
 
-    ![[Not spicy]、[Spicy]、[Extra spicy] という 3 つのオプションがあるラジオ ボタン グループ](images/spicyoptions.png)
+    ![3 つのオプションのラジオ ボタン グループ:いないスパイシー、スパイシー、および追加スパイシー](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>関連記事
 
-- [CheckBox クラス](https://msdn.microsoft.com/library/windows/apps/br209316) 
-- [ラジオ ボタン](radio-button.md)
+- [チェック ボックス クラス](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [オプション ボタン](radio-button.md)
 - [トグル スイッチ](toggles.md)

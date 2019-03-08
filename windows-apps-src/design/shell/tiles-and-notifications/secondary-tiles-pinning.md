@@ -1,6 +1,6 @@
 ---
-Description: Learn how to pin a secondary tile to Start from your UWP app.
-title: スタート画面にセカンダリ タイルをピン留め
+Description: UWP アプリから開始するセカンダリ タイルをピン留めする方法について説明します。
+title: 開始するセカンダリ タイルをピン留め
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ピン留め、クイック スタート、コード サンプル、例
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939668"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653157"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>スタート画面にセカンダリ タイルをピン留め
+# <a name="pin-secondary-tiles-to-start"></a>開始するセカンダリ タイルをピン留め
 
 
 このトピックでは、UWP アプリのセカンダリ タイルを作り、スタート メニューにピン留めする手順について説明します。
@@ -37,10 +37,10 @@ using Windows.UI.StartScreen;
 
 セカンダリ タイルは、いくつかの主要なコンポーネントで構成されます。
 
-* **TileId**: 他のセカンダリ タイルからタイルを識別する一意の識別子。
-* **DisplayName**: タイルに表示される名前。
-* **Arguments**: ユーザーがタイルをクリックしたときにアプリに戻される引数。
-* **Square150x150Logo**: 中サイズのタイルで表示される、必須のロゴ (小サイズのロゴが提供されない場合には、小サイズにサイズ変更されます)。
+* **TileId**:一意の識別子、その他のセカンダリ タイル間でのタイルを識別することができます。
+* **DisplayName**:タイルを表示名前です。
+* **引数**:指定する引数渡されたアプリに戻り、ユーザーがタイルをクリックするとします。
+* **Square150x150Logo**:中程度のサイズに表示される、必要なロゴはタイル (および、小さなサイズのタイルにサイズを変更しない小さいロゴが提供されている場合)。
 
 上記のすべてのプロパティに初期化された値を提供する**必要があります**。提供されない場合には、例外がスローされます。
 
@@ -67,7 +67,7 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>オプション: より大きいタイル サイズのサポートを追加します。
+## <a name="optional-add-support-for-larger-tile-sizes"></a>省略可能: 大きいタイル サイズのサポートを追加します。
 
 セカンダリ タイルにリッチなタイル通知を表示する場合、ユーザーがタイルのサイズをワイド サイズや大サイズに変更して、より多くのコンテンツを表示できるようにすることが望まれます。
 
@@ -88,7 +88,7 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a>オプション: 表示名の表示を有効にする
+## <a name="optional-enable-showing-the-display-name"></a>省略可能: 表示名の表示を有効にします。
 
 既定では、表示名は表示されません。 中サイズ、ワイド サイズ、大サイズで表示名を表示するには、次のコードを追加します。
 
@@ -100,7 +100,7 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a>オプション: 3D セカンダリ タイル
+## <a name="optional-3d-secondary-tiles"></a>省略可能: 3D のセカンダリ タイル
 3D アセットを追加して、Windows Mixed Reality に対応することで、さらに高度なセカンダリ タイルを作成できます。 アプリを Mixed Reality 環境で使用すると、ユーザーは 3D タイルをスタート メニューではなく、Windows Mixed Reality ホームに直接配置できます。 たとえば、360° フォト ビューアー アプリに直接リンクした 360° フォトスフィアを作成したり、ユーザーが家具のカタログから椅子の 3D モデルを配置して、選択するとそのオブジェクトの価格やカラー展開に関する詳細ページが開くようにしたりすることができます。 この機能を使い始めるには、[Mixed Reality の開発者向けドキュメント](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home)をご覧ください。
 
 
@@ -181,6 +181,6 @@ var tiles = await SecondaryTile.FindAllAsync();
 
 * [セカンダリ タイルの概要](secondary-tiles.md)
 * [セカンダリ タイルのガイダンス](secondary-tiles-guidance.md)
-* [タイル アセット](app-assets.md)
-* [タイル コンテンツのドキュメント](create-adaptive-tiles.md)
+* [タイルの資産](app-assets.md)
+* [タイルのコンテンツのドキュメント](create-adaptive-tiles.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)

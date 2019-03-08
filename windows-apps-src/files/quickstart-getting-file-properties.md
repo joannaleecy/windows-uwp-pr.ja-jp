@@ -1,17 +1,17 @@
 ---
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: ファイルのプロパティの取得
-description: StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
+description: プロパティの取得 (& a)\#8212。 最上位レベル、basic、および拡張 &\#8212; StorageFile で表されるファイルのオブジェクト。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cde9d8753248614603ee49fb1415ec18ec4669b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044190"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596997"
 ---
 # <a name="get-file-properties"></a>ファイルのプロパティの取得
 
@@ -21,14 +21,14 @@ ms.locfileid: "9044190"
 -   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
 -   [**StorageItemContentProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770652)
 
-[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
+[  **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
 
 > [!NOTE]
-> 完全なサンプルについては、[ファイル アクセスのサンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
+> 完全なサンプルを参照してください、[ファイル アクセス サンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)します。
 
 ## <a name="prerequisites"></a>前提条件
 
--   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**
 
     C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
@@ -88,7 +88,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>ファイルの拡張プロパティの取得
 
-最上位と基本ファイル プロパティのほかに、ファイルの内容に関連付けられている多くのプロパティがあります。 これらの拡張プロパティは、[**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) メソッドを呼び出してアクセスします  ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) オブジェクトは、[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) プロパティを呼び出して取得します)。最上位と基本ファイル プロパティは、クラス (それぞれ [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) と **BasicProperties**) のプロパティとしてアクセスできます。拡張プロパティは、取得するプロパティの名前を表す [String](https://go.microsoft.com/fwlink/p/?LinkID=325032) オブジェクトの [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) コレクションを **BasicProperties.RetrievePropertiesAsync** メソッドに渡して取得します。 このメソッドは、[IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) コレクションを返します。 各拡張プロパティは、コレクションから名前またはインデックスで取得します。
+最上位と基本ファイル プロパティのほかに、ファイルの内容に関連付けられている多くのプロパティがあります。 これらの拡張プロパティは、[**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) メソッドを呼び出してアクセスします  (A [ **BasicProperties** ](https://msdn.microsoft.com/library/windows/apps/br212113)オブジェクトを呼び出すことによって取得、 [ **StorageFile.Properties** ](https://msdn.microsoft.com/library/windows/apps/br227225)プロパティです)。最上位と基本的なファイルのプロパティは、クラスのプロパティとしてアクセスできるように、[**StorageFile** ](https://msdn.microsoft.com/library/windows/apps/br227171)と**BasicProperties**、それぞれ: 拡張プロパティは、渡すことによって取得した、 [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091)のコレクション[文字列](https://go.microsoft.com/fwlink/p/?LinkID=325032)オブジェクトを取得するプロパティの名前を表す、 **BasicProperties.RetrievePropertiesAsync**メソッド。 このメソッドは、[IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) コレクションを返します。 各拡張プロパティは、コレクションから名前またはインデックスで取得します。
 
 この例では、画像ライブラリ内のすべてのファイルを列挙し、[List](https://go.microsoft.com/fwlink/p/?LinkID=325246) オブジェクトで目的のプロパティの名前 (**DataAccessed** と **FileOwner**) を指定して、その [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) オブジェクトを [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) に渡すことでそれらのプロパティを取得します。その後、返された [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) オブジェクトから名前でそれらのプロパティを取得します。
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2605c55b9b73ccd3376f9c812da31339caedc
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050715"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662667"
 ---
 # <a name="implement-ads-in-your-app"></a>アプリでの広告の実装
 
@@ -24,7 +24,7 @@ ms.locfileid: "9050715"
 | [バナー広告](banner-ads.md)     | Microsoft Advertising SDK の [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) クラスを使用して、UWP アプリにバナー広告を追加する手順について説明します。        |
 | [スポット広告](interstitial-ads.md)    | Microsoft Advertising SDK の [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) クラスを使用して、UWP アプリにスポット広告を追加する手順について説明します。       |
 | [ネイティブ広告](native-ads.md)       | Microsoft Advertising SDK の [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) クラスと [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) クラスを使用して、UWP アプリにネイティブ広告を追加する手順について説明します。  |
-| [ビデオ コンテンツに広告を表示する](add-advertisements-to-video-content.md)     |  UWP アプリでビデオ コンテンツに広告を表示するための手順について説明します (この機能は現在、JavaScript と HTML を使って記述されているアプリについてのみサポートされています)。 |
+| [ビデオ コンテンツで広告を表示します。](add-advertisements-to-video-content.md)     |  UWP アプリでビデオ コンテンツに広告を表示するための手順について説明します (この機能は現在、JavaScript と HTML を使って記述されているアプリについてのみサポートされています)。 |
 
 
 

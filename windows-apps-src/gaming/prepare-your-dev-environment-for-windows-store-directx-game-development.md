@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, テンプレート, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: a272c579fb3ead676fe76f16c33b70f557de4ed8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941175"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653767"
 ---
 # <a name="project-templates-and-tools-for-games"></a>ゲームのプロジェクト テンプレートとツール
 
@@ -25,7 +25,7 @@ ms.locfileid: "8941175"
 ## <a name="get-visual-studio"></a>Visual Studio の入手
 
 
-[ダウンロードし、Microsoft Visual Studio2015 をインストール](https://www.visualstudio.com/vs-2015-product-editions)します。
+[Microsoft Visual Studio 2015 のインストールをダウンロードして](https://www.visualstudio.com/vs-2015-product-editions)します。
 
 <table>
 <colgroup>
@@ -44,7 +44,7 @@ ms.locfileid: "8941175"
 <td align="left"><p>UWP と DirectX ゲームを作成するためのテンプレートについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">ゲーム プログラミング用の Visual Studio ツール</a></p></td>
+<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">ゲーム プログラミング用の visual Studio tools</a></p></td>
 <td align="left"><p>Visual Studio で利用できる DirectX 固有のツールの概要。</p></td>
 </tr>
 <tr class="odd">
@@ -56,7 +56,7 @@ ms.locfileid: "8941175"
 
  
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 
 既にあるゲームを移植する場合は、次のトピックをご覧ください。
@@ -67,7 +67,7 @@ ms.locfileid: "8941175"
 新しい DirectX ゲームを作成する場合は、次のトピックをご覧ください。
 
 -   [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-uwp-directx-game.md)
--   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Marble Maze、C++ および DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f3499fdba972d6e953813fc490d080910921698e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918395"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654117"
 ---
 # <a name="quotainfo-json"></a>quotaInfo (JSON)
-クォータ タイトル グループについてを説明します。 
+タイトルのグループのクォータについてを説明します。 
 <a id="ID4EN"></a>
 
  
-## <a name="quotainfo"></a>quotaInfo
+## <a name="quotainfo"></a>QuotaInfo
  
 QuotaInfo オブジェクトには、次の仕様があります。
  
@@ -27,15 +27,15 @@ QuotaInfo オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| quotaBytes| 32 ビット符号付き整数 | タイトルで使用可能なバイトの最大数。| 
-| usedBytes| 32 ビット符号付き整数 | タイトルで使用されるバイト数。| 
+| quotaBytes| 32 ビット符号付き整数 | タイトルに使用できるバイトの最大数。| 
+| usedBytes| 32 ビット符号付き整数 | タイトルに使用されるバイト数。| 
   
 <a id="ID4EXB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
-次の例は、グローバル ストレージへの応答を示しています。
+次の例では、グローバル ストレージの応答を示します。
  
 
 ```json
@@ -60,6 +60,6 @@ QuotaInfo オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

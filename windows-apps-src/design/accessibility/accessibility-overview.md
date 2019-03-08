@@ -1,19 +1,19 @@
 ---
-Description: This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
+Description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: アクセシビリティの概要
 label: Accessibility overview
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046575"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649737"
 ---
 # <a name="accessibility-overview"></a>アクセシビリティの概要  
 
@@ -121,7 +121,7 @@ UI コントロールでは、テーマの XAML リソース ディクショナ�
 
 多くの場合、幅広いユーザーが利用できるようにするために、重要な情報を複数の方法で伝えることができます。 たとえば、アイコンと色の両方を使って情報を目立つようにすると、色覚に障碍があるユーザーが確認しやすくなります。また、効果音と一緒に視覚的な警告も表示すると、聴覚障碍があるユーザーに便利です。
 
-必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、1 つの [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスを表示して、ユーザー設定に応じて UserControl の別のインスタンスを表示する方法を示しています。
+必要に応じて、不要な要素やアニメーションがまったくないアクセシビリティ対応のユーザー インターフェイス要素を代わりに使えるようにしたり、ユーザー操作が効率的になるように簡略化したりできます。 次のコード例は、1 つの [**UserControl**](https://msdn.microsoft.com/library/windows/apps/BR227647) インスタンスを表示して、ユーザー設定に依存する別のインスタンスの代わりに使う方法を示しています。
 
 XAML
 ```xml
@@ -192,7 +192,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-topics"></a>関連トピック  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [ユーザー補助のための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [XAML のアクセシビリティのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [アクセシビリティ](accessibility.md)
-* [ナレーターの概要](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
+* [ナレーターを概要します。](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

@@ -8,31 +8,31 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d09c8bbc1130f91dfea3d4c35e391dcf9adcf127
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922992"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649417"
 ---
 # <a name="resetreputation-json"></a>ResetReputation (JSON)
-ユーザーの既存のスコアを変更する必要があります新しい基本評判スコアが含まれています。 
+ユーザーの既存のスコアを変更する必要があります新しい基本評価スコアが含まれています。 
 <a id="ID4EN"></a>
 
  
 ## <a name="resetreputation"></a>ResetReputation
  
-ResetReputation オブジェクトには、次仕様があります。
+ResetReputation オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| fairplayReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーのフェアプレイ評判スコア。| 
-| commsReputation| number| 目的の基本 (有効な範囲 0 ~ 75) のユーザーの通信の評判スコア。| 
-| userContentReputation| number| 必要な基本 UserContent 評判スコアのユーザー (有効な範囲 0 ~ 75)。| 
+| fairplayReputation| number| 必要な基本ユーザー (有効な範囲 0 ~ 75) の Fairplay 評価スコア。| 
+| commsReputation| number| 必要な基本ユーザー (有効な範囲 0 ~ 75) の通信の評価スコア。| 
+| userContentReputation| number| 必要な基本のユーザー (有効な範囲 0 ~ 75) UserContent 評価スコア。| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -55,6 +55,6 @@ ResetReputation オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: edc81ff7c692c4789855d341917c54acf4d24594
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919966"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598357"
 ---
 # <a name="match-engagement"></a>マッチの交戦
 
@@ -24,13 +24,13 @@ ms.locfileid: "8919966"
 > [!NOTE]  
 > "プレイ" は 4 つのステージの中で、唯一、アリーナ UI でサポートされていないステージです。 タイトルでは、少なくとも、各マッチの終了時 (プレイのステージの完了時) に参加者が結果を確認できるように、アリーナ UI にリダイレクトする必要があります。
 
-###### <a name="diagram-the-four-stages-of-participant-progression-after-check-in"></a>図: 参加者の進行に伴う、チェックイン後の 4 つのステージ
+###### <a name="diagram-the-four-stages-of-participant-progression-after-check-in"></a>ダイアグラム:チェックインした後、参加者の進行の 4 つの段階です。
 
 ![マッチの交戦フロー図](../../images/arena/arena-ux-match-flow.png)
 
 ![マッチの交戦フローのバー](../../images/arena/arena-ux-match-flow-bar.png)
 
-## <a name="1-ready-waiting-for-match"></a>1. 準備完了 ("マッチ開始待ち")
+## <a name="1-ready-waiting-for-match"></a>1. 待機 ("一致")
 
 ![マッチ開始待ちの図](../../images/arena/arena-ux-flow-ready.png)
 
@@ -54,19 +54,19 @@ ms.locfileid: "8919966"
 
 準備完了ステージでは、参加者は次の場所でステータスを確認できます。
 
-* アリーナ UI: トーナメントの詳細ページ
-* ゲーム内: トーナメントの一覧、宣伝、マッチ ロビー
+* 競技場 UI:トーナメントの詳細ページ
+* ゲームの場合。トーナメントの一覧、プロモーション、一致のロビー
 
 > [!TIP]  
-> **推奨される UX**  
-> プレイヤーがイベントの次のマッチを待っている状態であることを明確に表示します。 例: "マッチが保留中です"、"不戦勝です" などの通知を表示します。  
+> **UX の推奨事項**  
+> プレイヤーがイベントの次のマッチを待っている状態であることを明確に表示します。 例:「保留中と一致」または「bye が表示されている」通知します。  
 >
 > このステージをサポートする場合は、トーナメントの詳細ページに戻る方法を提供します。  
 >
-> イベントの情報として、トーナメント名、状態、スタイル、説明、開始時刻や終了日時などを表示します。
+> イベントのコンテキストを提供します。トーナメントの名前、状態、スタイル、説明、開始時刻/終了時間など。
 
 
-###### <a name="ui-example-in-game-multiplayer-lobby"></a>UI の例: ゲーム内のマルチプレイヤー ロビー
+###### <a name="ui-example-in-game-multiplayer-lobby"></a>UI の例:ゲームでマルチ プレーヤーのロビー
 
 ![トーナメント ロビーのスクリーンショット](../../images/arena/arena-ux-tournament-lobby.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "8919966"
 タイトルでこのステージをサポートする場合は、マッチの準備ができた時点で、プレイのステージに進みます。
 
  
-## <a name="2-playing"></a>2. プレイ
+## <a name="2-playing"></a>2. 再生
 
 ![マッチのプレイの図](../../images/arena/arena-ux-flow-play.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "8919966"
 * アリーナのトーナメントの詳細ページ: 参加者は **[Play]** (プレイ) を選択して、ゲームを起動し、マッチに移動します。
  
 > [!TIP]  
-> **推奨される UX:** マッチへの移動について、ユーザーに確認を求めます。  
+> **UX の推奨事項:** 一致するエントリを確認します。  
 > マッチ ロビーに直接移動しようとしていることを参加者に通知するか、参加者の確認を求める (またはその両方を行う) UI を表示します。
 
 ###### <a name="ui-example-match-entry-confirmation-dialog-box"></a>UI の例: マッチへの移動を確認するダイアログ ボックス
@@ -110,7 +110,7 @@ ms.locfileid: "8919966"
 参加者がゲーム以外の場所からトーナメントに移動することを選択した場合に、この UI を表示します。 ゲームの起動後、マッチ ロビーへの移動前にこれを表示します。
 
 > [!TIP]  
-> **推奨される UX:** キャンセルするオプションを提供します。
+> **UX の推奨事項:** キャンセルするオプションを提供します。
 
 参加者は、トーナメントに向けた準備作業の必要性に気付くことがあります。 参加者の気が変わったときに対応できる柔軟性が必要です。 タイトルでは、次のような追加のオプションを提供できます。
 
@@ -134,7 +134,7 @@ ms.locfileid: "8919966"
 
 トーナメントのマッチ ロビーでは、それがトーナメントであり、通常のマルチプレイヤー マッチとは異なることを明確に示す詳細情報を表示する必要があります。 このような詳細情報では、たとえば、タイマー、関係するチーム、一連のラウンド番号やステージ番号などを表示します。 マッチが終了した時点で、ステージ 3 (結果待ち) に進むか、アリーナ UI にプレイヤーを戻します。
 
-###### <a name="ui-example-match-lobby-details"></a>UI の例: マッチ ロビーの詳細情報
+###### <a name="ui-example-match-lobby-details"></a>UI の例:一致のロビー詳細
 
 ![マッチ ロビーの詳細情報画面](../../images/arena/arena-ux-match-lobby-details.png)
 
@@ -174,7 +174,7 @@ ms.locfileid: "8919966"
 
 失効時刻 (開始時刻に失効タイムアウト時間を加えた時刻) の前に、セッション内で少なくとも 1 人のプレイヤーがアクティブである必要があります (「プレイ」の図を参照してください)。 失効時刻までに参加済みのアクティブなプレイヤーがいない場合、マッチはキャンセルされ、アリーナの判定によって両方のチームが敗者となります。
  
-## <a name="3-results"></a>3. 結果
+## <a name="3-results"></a>3.結果
 
 ![マッチの結果の図](../../images/arena/arena-ux-flow-results.png)
 
@@ -202,7 +202,7 @@ ms.locfileid: "8919966"
 判定は、最初のクライアントが Xbox Live に結果を報告するとすぐに自動的に開始され、 すべてのクライアントが結果を報告すると直ちに終了します。 参加者がセッション テンプレートで指定された判定時間を超えてプレイすることがあります。 この場合、参加者の準備が完了する前に、マッチが強制的に終了するおそれがあります。
 
 > [!TIP]  
-> **推奨される UX:** マッチセッションに固定の時間枠を設定します。
+> **UX の推奨事項:** 一致するセッションの固定の時間枠を指定します。
 >
 > マッチ セッションの時間制限を事前に定義することで、判定タイムアウトの問題が発生する可能性が減少します。
 
@@ -218,7 +218,7 @@ ms.locfileid: "8919966"
 タイトルがゲーム内でトーナメントの結果やステージの進行状況を表示しない場合は、これらの情報を提供する UI に戻るための方法を参加者に提供することをお勧めします。 戻り先は、アリーナ UI か、サードパーティのトーナメント主催者アプリが考えられます。 このアフォーダンスは、マッチ終了後、またはプレイヤーがマッチの途中で終了を要求した場合の対応として表示することが適切です。 これは、ゲームの終了レポートの画面から実行できます。
 
 > [!TIP]  
-> **推奨される UX**  
+> **UX の推奨事項**  
 > Xbox ダッシュボードに、ゲーマーがアリーナ ハブへ即座に戻るための専用のコントローラー ボタンを用意します。  
 >
 > ![アリーナ ハブのコントローラー ボタン](../../images/arena/arena-ux-arena-hub-button.png)
@@ -228,7 +228,7 @@ ms.locfileid: "8919966"
 参加者がマッチを終了した時点で、次のステップを明確に示すことが重要です。 これには、トーナメント ラウンドやステージの結果を確認する方法を示すことが含まれます (ゲーム内で提示されない場合)。
 
 > [!TIP]  
-> **推奨される UX:** ポップアップ オーバーレイを使用します。
+> **UX の推奨事項:** ポップアップのオーバーレイを使用します。
 >
 > この UI は、トーナメント結果が存在し、ゲーム終了エクスペリエンスが完了したときに表示されます。
 
@@ -246,15 +246,15 @@ ms.locfileid: "8919966"
 
 アリーナ UI を呼び出した後、タイトルは (おそらくは同じ画面で) 引き続き実行され、別のプロトコルのアクティブ化イベントが発生するまで待機する必要があります。 これにより、プレイヤーが別のマッチをプレイする場合に、タイトルがすぐに対応できます。 プレイヤーがタイトルとアリーナ UI を切り替えて、マッチ間をスピーディに移動でき、迅速なユーザー エクスペリエンスが実現します。
 
-###### <a name="ui-example-tournament-arbitrated-resultswinning-team"></a>UI の例: トーナメント判定結果 — 勝利チーム
+###### <a name="ui-example-tournament-arbitrated-resultswinning-team"></a>UI の例:トーナメント調停結果、チームが勝利
 
 ![勝利を伝える画面](../../images/arena/arena-ux-won-game-redirect.png)
 
-###### <a name="ui-example-end-of-tournament-resultsmatch-ended"></a>UI の例: トーナメント終了結果 — マッチ終了 
+###### <a name="ui-example-end-of-tournament-resultsmatch-ended"></a>UI の例:終了-トーナメントの結果、一致が終了しました 
 
 ![敗退を伝える画面](../../images/arena/arena-ux-lost-game-redirect.png)
 
-## <a name="4-end"></a>4. 終了
+## <a name="4-end"></a>4。[終了]
 
 ![マッチの終了の図](../../images/arena/arena-ux-flow-end.png)
 
@@ -276,7 +276,7 @@ ms.locfileid: "8919966"
 * トーナメント閲覧機能の **[My Tournaments]** (マイ トーナメント) の下に表示。
 
 
-###### <a name="ui-example-end-of-tournament-resultstournament-ended"></a>UI の例: トーナメント終了結果 — トーナメント終了
+###### <a name="ui-example-end-of-tournament-resultstournament-ended"></a>UI の例:トーナメントの結果の最後-トーナメントの終了
 
 ![トーナメント終了画面](../../images/arena/arena-ux-tournament-completed.png)
 

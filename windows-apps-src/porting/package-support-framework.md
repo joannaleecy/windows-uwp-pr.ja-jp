@@ -1,79 +1,79 @@
 ---
-Description: Fix issues that prevent your desktop application from running in an MSIX container
+Description: デスクトップ アプリケーションの MSIX コンテナーで実行を妨げる問題を修正します。
 Search.Product: eADQiWindows 10XVcnh
-title: デスクトップ アプリケーション、MSIX コンテナーでの実行を妨げている問題を修正します。
+title: デスクトップ アプリケーションの MSIX コンテナーで実行を妨げる問題を修正します。
 ms.date: 07/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058663"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590727"
 ---
-# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>MSIX パッケージにパッケージのサポートのフレームワークを使用して、ランタイムの修正プログラムを適用します。
+# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>MSIX パッケージにパッケージのサポートのフレームワークを使用してランタイム修正プログラムを適用します。
 
-パッケージのサポート フレームワークでは、修正プログラムの適用、既存の win32 アプリケーションをソース コードにアクセスできない場合、MSIX コンテナーで実行できるようにするために役立つオープン ソースのキットです。 パッケージのサポート フレームワークには、最新のランタイム環境のベスト プラクティスに従って、アプリケーションが役立ちます。
+パッケージのサポート、フレームワークは、修正プログラムを適用、既存の win32 アプリケーションに、ソース コードへのアクセス権がないときに、MSIX コンテナーで実行できるようにするのに役立つオープン ソース キット。 パッケージのサポート、フレームワークには、最新のランタイム環境のベスト プラクティスに従って、アプリケーションが役立ちます。
 
-詳細についてはを[パッケージのサポートのフレームワーク](https://docs.microsoft.com/windows/msix/package-support-framework-overview)を参照してください。
+詳細についてを参照してください。[パッケージ サポート フレームワーク](https://docs.microsoft.com/windows/msix/package-support-framework-overview)します。
 
-このガイドには、アプリケーションの互換性の問題を識別するため、検索が適用され、ランタイムを拡張するには、それらに対処するを修正します。
+このガイドを利用するアプリケーションの互換性の問題を特定して、検索、適用、およびランタイムを拡張するには、それらに対処するを修正します。
 
 <a id="identify" />
 
 ## <a name="identify-packaged-application-compatibility-issues"></a>パッケージ化されたアプリケーションの互換性の問題を特定します。
 
-最初に、アプリケーションのパッケージを作成します。 次に、インストール、実行し、その動作を確認します。 互換性の問題を識別するのに役立ちますエラー メッセージを表示される可能性があります。 問題を特定するのに[プロセスのモニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)を使用することもできます。  一般的な問題は、作業ディレクトリとプログラムのパスのアクセス許可に関する前提条件をアプリケーションに関連します。
+最初に、アプリケーションのパッケージを作成します。 その後、インストール、実行、およびその動作を確認します。 互換性に関する問題の特定に役立つエラー メッセージを表示可能性があります。 使用することも[プロセス モニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)の問題を特定します。  一般的な問題は、作業ディレクトリとプログラムのパスのアクセス許可に関する前提条件をアプリケーションに関連します。
 
-### <a name="using-process-monitor-to-identify-an-issue"></a>プロセスのモニターを使用して、問題を特定するには
+### <a name="using-process-monitor-to-identify-an-issue"></a>Process Monitor を使用して、問題を識別するには
 
-[プロセス モニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)は、アプリのファイルとレジストリ操作、およびその結果を観察するための強力なユーティリティです。  アプリケーションの互換性の問題について理解することができます。  プロセスのモニターを開いたら、アプリケーションの実行可能ファイルからのイベントのみを含めるフィルター (フィルター _gt フィルター…) を追加します。
+[プロセス モニター](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)はアプリのファイルとレジストリの操作とその結果を監視するための強力なユーティリティです。  アプリケーション互換性の問題を理解することができます。  Process Monitor を開いた後、フィルターの追加 (フィルター > フィルター...) アプリケーションの実行可能ファイルからのイベントのみを含めます。
 
-![ProcMon アプリ フィルター](images/desktop-to-uwp/procmon_app_filter.png)
+![ProcMon アプリのフィルター](images/desktop-to-uwp/procmon_app_filter.png)
 
-イベントの一覧が表示されます。 これらのイベントの多くに、単語**成功**を**結果**の列に表示してされます。
+イベントの一覧が表示されます。 これらのイベントでは、単語の多くの**成功**に表示されます、**結果**列。
 
 ![ProcMon イベント](images/desktop-to-uwp/procmon_events.png)
 
 必要に応じて、のみエラーのみを表示するイベントをフィルター処理することができます。
 
-![ProcMon 除外の成功](images/desktop-to-uwp/procmon_exclude_success.png)
+![ProcMon 除外成功](images/desktop-to-uwp/procmon_exclude_success.png)
 
-ファイルシステムへアクセスの失敗が疑われる場合は、System32/SysWOW64 またはパッケージのファイル パスのいずれかの下にある障害が発生したイベントを検索します。 フィルターを使っても役立ちますここでは、すぎます。 この一覧の下部に起動し、上方向にスクロールします。 この一覧の下部に表示されるエラーが発生した最新します。 「アクセス拒否」などの文字列が含まれているエラーや"パス/名前が見つかりません"、ほとんどの注意を払うし、疑わしい外観がないことを無視します。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)には、2 つの問題があります。 次の図に表示される一覧でそれらの問題を確認できます。
+ファイル システム アクセスの失敗を疑いがある場合は、System32/SysWOW64 またはパッケージのファイル パスのいずれかの下にある失敗したイベントを検索します。 フィルターも役立ちますここでは、すぎます。 この一覧の下部にある開始し、上方向にスクロールします。 この一覧の下部に表示されるエラーが発生した最も最近です。 "パス/名前 not found"、「アクセスが拒否されると、」などの文字列が含まれているエラーをほとんど注意し、不審な外観がないことを無視します。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)は 2 つの問題があります。 次の図に表示される一覧でこれらの問題が発生することができます。
 
 ![ProcMon Config.txt](images/desktop-to-uwp/procmon_config_txt.png)
 
-この画像に表示される最初の問題、アプリケーションは、"C:\Windows\SysWOW64"パスにある"Config.txt"ファイルからの読み取りに失敗しています。 アプリケーションがそのパスを直接参照しようとしている可能性が高いことはできません。 ほとんどの場合、相対パスを使用して、そのファイルから読み取るしようと、既定で"System32/SysWOW64"は、アプリケーションの作業ディレクトリ。 これは、アプリケーションでは、パッケージのどこかに設定する現在の作業ディレクトリを想定を示しています。 Appx 内で見ると、実行可能ファイルと同じディレクトリにファイルが存在することを確認できます。
+このイメージに表示される最初の問題では"C:\Windows\SysWOW64"パスにある"Config.txt"ファイルを読み取るアプリケーションが失敗します。 可能性の高いアプリケーションがそのパスを直接参照しようとしていることはできません。 相対パスを使用してそのファイルから読み取るしようとして、"System32/SysWOW64"は、アプリケーションの作業ディレクトリを既定では、ほとんどの場合。 これは、アプリケーションがパッケージにどこかに設定する現在の作業ディレクトリを期待していたを示しています。 Appx、内部で見ると、実行可能ファイルと同じディレクトリにファイルが存在することを確認できます。
 
-![アプリの Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
+![アプリ Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
 
-2 番目の問題は、次の図が表示されます。
+2 つ目の問題は、次の図に表示されます。
 
 ![ProcMon ログ ファイル](images/desktop-to-uwp/procmon_logfile.png)
 
-この問題は、アプリケーションは、そのパッケージのパスに .log ファイルを書き込むに失敗しています。 これにより、ファイルのリダイレクト修正が役立つ場合がありますがお勧めします。
+今月号では、そのパッケージのパスを .log ファイルを記述するアプリケーションが失敗します。 これにより、ファイル リダイレクト フィックス アップに役立つことが提案します。
 
 <a id="find" />
 
-## <a name="find-a-runtime-fix"></a>ランタイムの修正プログラムを検索します。
+## <a name="find-a-runtime-fix"></a>ランタイム修正プログラムを検索します。
 
-PSF には、ファイルのリダイレクト修正など、今すぐに使用できるランタイムの修正プログラムが含まれています。
+PSF には、ファイルのリダイレクトの修正など、現時点で使用できるランタイム修正プログラムが含まれています。
 
 ### <a name="file-redirection-fixup"></a>ファイルのリダイレクトの修正
 
-[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)を使用すると、書き込みまたは MSIX コンテナー内で実行されるアプリケーションからアクセス可能ではないディレクトリ内のデータを読み取るしようとするたびにリダイレクトします。
+使用することができます、[ファイル リダイレクト Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)しようとして書き込みまたは読み取り MSIX コンテナーで実行されるアプリケーションからアクセスできないディレクトリ内のデータをリダイレクトします。
 
-たとえば、アプリケーションが、アプリケーションの実行可能ファイルと同じディレクトリで公開されているログ ファイルに書き込む場合、は、ローカル アプリ データ ストアなどの別の場所にそのログ ファイルを作成する[ファイルのリダイレクトの修正](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)を使用できます。
+などの場合は、アプリケーションの実行可能ファイルと同じディレクトリ内にあるログ ファイルに書き込むと、アプリケーション、しを使用できます、[ファイル リダイレクト Fixup](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)ローカル アプリのデータ ストアなどの別の場所にそのログ ファイルを作成します。
 
-### <a name="runtime-fixes-from-the-community"></a>コミュニティからランタイムの修正プログラム
+### <a name="runtime-fixes-from-the-community"></a>コミュニティからのランタイムの修正
 
-当社の[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework)ページにコミュニティの投稿を確認してください。 他の開発者が自分のような問題を解決してされ、実行時の修正プログラムと共有できます。
+コミュニティの貢献を検討してください、 [GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework)ページ。 他の開発者が自分とよく似た問題が解決し、ランタイム修正プログラムを共有していることができます。
 
-## <a name="apply-a-runtime-fix"></a>ランタイムの修正プログラムを適用します。
+## <a name="apply-a-runtime-fix"></a>ランタイム修正プログラムを適用します。
 
-Windows SDK と次の手順では、いくつかの単純なツールを使用して既存のランタイムの修正を適用できます。
+Windows SDK から、次の手順では、いくつかの簡単なツールでの既存のランタイム修正プログラムを適用できます。
 
 > [!div class="checklist"]
 > * パッケージ レイアウト フォルダーを作成します。
@@ -86,40 +86,40 @@ Windows SDK と次の手順では、いくつかの単純なツールを使用�
 
 ### <a name="create-the-package-layout-folder"></a>パッケージ レイアウト フォルダーを作成します。
 
-.Msix (.appx) ファイルが既にある場合は、その内容をパッケージのステージング領域として使用されるレイアウト フォルダーに展開できます。 SDK のインストール パスに基づき、MakeAppx ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC 上の makeappx.exe ツールの検索場所: x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
+.Msix (または .appx) ファイルが既にがある場合は、パッケージのステージング領域として機能するレイアウト フォルダーにその内容をアンパックすることができます。 SDK のインストール パスに基づく MakeAppx ツールを使用してコマンド プロンプトから実行することが、これは、Windows 10 PC で makeappx.exe ツールを表示します x86:。C:\Program Files (x86)\Windows Kits\10\bin\x86\makeappx.exe x64:C:\Program Files (x86)\Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
-これにより、次のようになります。
+これが表示されます、次のようになります。
 
 ![パッケージのレイアウト](images/desktop-to-uwp/package_contents.png)
 
-があるない .msix (.appx) ファイルから始める場合は、最初から、パッケージのフォルダーとファイルを作成できます。
+を持っていない .msix (または .appx) ファイルから始める場合は、最初からパッケージ フォルダーとファイルを作成できます。
 
 ### <a name="get-the-package-support-framework-files"></a>パッケージのサポート フレームワーク ファイルを取得します。
 
-スタンドアロン Nuget コマンド ライン ツールを使用して、または Visual Studio によって PSF Nuget パッケージを取得できます。
+PSF Nuget パッケージは、スタンドアロンの Nuget コマンド ライン ツールを使用して、または Visual Studio を使用して取得できます。
 
-#### <a name="get-the-package-by-using-the-command-line-tool"></a>コマンド ライン ツールを使用して、パッケージを取得します。
+#### <a name="get-the-package-by-using-the-command-line-tool"></a>コマンド ライン ツールを使用してパッケージを取得します。
 
-この場所から Nuget コマンド ライン ツールをインストール:https://www.nuget.org/downloadsします。 次に、Nuget コマンドラインからこのコマンドを実行します。
+この場所からの Nuget コマンド ライン ツールのインストール:https://www.nuget.org/downloadsします。 次に、Nuget コマンドラインからこのコマンドを実行します。
 
 ```ps
 nuget install Microsoft.PackageSupportFramework
 ```
 
-#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使用して、パッケージを取得します。
+#### <a name="get-the-package-by-using-visual-studio"></a>Visual Studio を使用してパッケージを取得します。
 
-Visual Studio で、ソリューションまたはプロジェクト ノードを右クリックし、Nuget パッケージの管理コマンドのいずれかを選択します。  検索**Microsoft.PackageSupportFramework** **PSF**上 Nuget.org パッケージを検索します。次に、インストールします。
+Visual Studio で、ソリューションまたはプロジェクト ノードを右クリックし、Nuget パッケージの管理コマンドのいずれかを選択します。  検索**Microsoft.PackageSupportFramework**または**PSF** Nuget.org でパッケージを検索します。次に、インストールします。
 
-### <a name="add-the-package-support-framework-files-to-your-package"></a>サポート フレームワークのパッケージ ファイルをパッケージに追加します。
+### <a name="add-the-package-support-framework-files-to-your-package"></a>パッケージのサポート フレームワーク ファイルをパッケージに追加します。
 
-パッケージのディレクトリに必要な 32 ビットと 64 ビット PSF Dll と実行可能ファイルを追加します。 次の表をガイドとして使用してください。 必要な任意のランタイム修正が含まれてしたいもします。 ここでは、ファイルのリダイレクトのランタイムの修正プログラムが必要です。
+パッケージ ディレクトリに必要な 32 ビットおよび 64 ビット PSF Dll と実行可能ファイルを追加します。 次の表をガイドとして使用してください。 含める必要があるランタイム修正する必要もあります。 この例では、ファイル リダイレクト ランタイム修正プログラムが必要です。
 
-| アプリケーションの実行可能ファイルは、x64 | アプリケーションの実行可能ファイルは、x86 |
+| アプリケーション実行可能ファイルは、x64 | アプリケーション実行可能ファイルは、x86 |
 |-------------------------------|-----------|
 | [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
 | [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
@@ -131,7 +131,7 @@ Visual Studio で、ソリューションまたはプロジェクト ノード�
 
 ### <a name="modify-the-package-manifest"></a>パッケージ マニフェストの変更
 
-テキスト エディターで、パッケージ マニフェストを開き、設定し、`Executable`の属性、`Application`要素 PSF ランチャーの実行可能ファイルの名前にします。  対象のアプリケーションのアーキテクチャがわかっている場合は、PSFLauncher32.exe または PSFLauncher64.exe は、適切なバージョンを選択します。  必要でない場合は、PSFLauncher32.exe は、すべてのケースで動作します。  次に例を示します。
+テキスト エディターで、パッケージ マニフェストを開き、設定し、`Executable`の属性、`Application`要素 PSF 起動ツールの実行可能ファイルの名前にします。  ターゲット アプリケーションのアーキテクチャがわかっている場合は、PSFLauncher32.exe または PSFLauncher64.exe は、適切なバージョンを選択します。  ない場合は、PSFLauncher32.exe は常に動作します。  次に例を示します。
 
 ```xml
 <Package ...>
@@ -148,7 +148,7 @@ Visual Studio で、ソリューションまたはプロジェクト ノード�
 
 ### <a name="create-a-configuration-file"></a>構成ファイルを作成します。
 
-ファイル名を作成``config.json``、そのファイルをパッケージのルート フォルダーに保存します。 交換した実行可能ファイルをポイントする config.json ファイルの宣言されているアプリの ID を変更します。 プロセスのモニターを使用してから得られる情報を使用して、したりすることできますも作業ディレクトリを設定として"PSFSampleApp"ディレクトリにパッケージ相対 .log ファイルへの読み取り/書き込みをリダイレクトするファイルのリダイレクトの修正を使用します。
+ファイル名を作成``config.json``パッケージのルート フォルダーにそのファイルを保存します。 交換した実行可能ファイルをポイントする config.json ファイルの宣言されたアプリ ID を変更します。 Process Monitor を使用してから、獲得した知識を使用して、することができますも作業ディレクトリの設定だけでなくファイル リダイレクト フィックス アップを使用してパッケージ相対"PSFSampleApp"ディレクトリの下の .log ファイルに読み取り/書き込みをリダイレクトします。
 
 ```json
 {
@@ -184,20 +184,20 @@ Visual Studio で、ソリューションまたはプロジェクト ノード�
 }
 ```
 
-次に示します。 config.json スキーマのためのガイド
+Config.json スキーマのためのガイドを次に示します。
 
 | 配列 | key | Value |
 |-------|-----------|-------|
-| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェスト内の要素です。 |
-| applications | 実行可能 | 起動する実行可能ファイルへのパッケージ相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値であること、`Executable`の属性、`Application`要素です。 |
-| applications | workingDirectory | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 この値を設定しない場合、オペレーティング システムを使用して、`System32`アプリケーションの作業ディレクトリとしてディレクトリ。 |
-| プロセス | 実行可能 | ほとんどの場合の名前になります、`executable`削除パスとファイルの拡張子を持つ上に構成されています。 |
-| fixup | dll | 修正を読み込む.msix/.appx パッケージ相対パス。 |
-| fixup | config | (省略可能)修正配布リストの動作を制御します。 この値の正確な形式は、各修正が解釈できるようにこの"blob"必要があるように修正の修正によってごとに異なります。 |
+| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェスト内の要素。 |
+| applications | 実行可能ファイル | 開始する実行可能ファイルへのパッケージの相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値は、`Executable`の属性、`Application`要素。 |
+| applications | WorkingDirectory | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 オペレーティング システムを使用して、この値を設定しない場合、`System32`ディレクトリをアプリケーションの作業ディレクトリ。 |
+| プロセス | 実行可能ファイル | ほとんどの場合、対象になりますの名前、`executable`削除パスとファイル拡張子で上に構成されています。 |
+| フィックス アップ | dll | 修正、.msix/.appx を読み込むパッケージの相対パス。 |
+| フィックス アップ | 構成 | (省略可能)フィックス アップ dl の動作を制御します。 この値の正確な形式は、各フィックス アップが必要があると"blob"を解釈できるよう、フィックス アップの修正によってごとに異なります。 |
 
-`applications`、 `processes`、および`fixups`キーは、配列です。 つまり、1 つ以上のアプリケーション、プロセス、および修正 DLL を指定する config.json ファイルを使用することができます。
+`applications`、 `processes`、および`fixups`キーは配列です。 つまり、1 つ以上のアプリケーション、プロセス、および DLL のフィックス アップを指定する config.json ファイルを使用することができます。
 
-### <a name="package-and-test-the-app"></a>パッケージと、アプリのテスト
+### <a name="package-and-test-the-app"></a>パッケージとアプリをテストします
 
 次に、パッケージを作成します。
 
@@ -211,22 +211,22 @@ makeappx pack /d PackageContents /p PSFSamplePackageFixup.msix
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
-詳細については、[パッケージが署名証明書を作成する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)および[signtool を使ってパッケージに署名する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)をご覧ください。
+詳細については、次を参照してください[署名証明書パッケージを作成する方法](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-create-a-package-signing-certificate)と[signtool を使用してパッケージに署名する方法。](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/how-to-sign-a-package-using-signtool)
 
-PowerShell を使用して、パッケージをインストールします。
+PowerShell を使用してパッケージをインストールします。
 
 >[!NOTE]
-> 最初にパッケージをアンインストールしてください。
+> まず、パッケージをアンインストールしてください。
 
 ```ps
 powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
-アプリケーションを実行し、ランタイムの修正プログラムが適用されると動作を確認します。  診断と必要に応じて、パッケージの手順を繰り返します。
+アプリケーションを実行し、ランタイムの修正プログラムが適用されると、動作を確認します。  診断および必要に応じて、パッケージ化の手順を繰り返します。
 
-### <a name="use-the-trace-fixup"></a>トレース修正を使用します。
+### <a name="use-the-trace-fixup"></a>トレースのフィックス アップを使用して、
 
-パッケージ化されたアプリケーションの互換性の問題を診断するために別の手法では、トレース修正を使用します。 この DLL は、PSF に付属であり、プロセスの監視と同様、アプリの動作の詳細な診断ビューを提供します。  アプリケーションの互換性の問題を表示するように設計します。  トレース修正を使用して、DLL、パッケージを追加、config.json に次のフラグメントを追加し、パッケージ化し、およびインストールするアプリケーション。
+パッケージ化されたアプリケーション互換性の問題を診断するために別の手法では、トレースのフィックス アップを使用します。 この DLL は、PSF に含まれているし、プロセス モニターと類似した、アプリの動作の詳細な診断ビューを提供します。  アプリケーション互換性の問題を表示するように設計します。  トレース フィックス アップ、DLL、パッケージを追加するの config.json に次のフラグメントを追加しパッケージ化をし使用するアプリケーションをインストールします。
 
 ```json
 {
@@ -239,58 +239,58 @@ powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 }
 ```
 
-既定では、トレース修正「期待」と考えられるエラーが除外されます。  たとえば、アプリケーションは無条件に既に存在するかどうか、結果を無視して確認することがなく、ファイルを削除しよう可能性があります。 これになりました残念ながら、いくつかの予期しないエラーをフィルター処理を取得する可能性がありますので、上記の例では、ファイルシステム関数からすべてのエラーを受信するオプトインします。 これは前に、その Config.txt ファイルから読み取る失敗すると、メッセージ「ファイルが見つかりません」でからわかっているためです。 これは、頻繁に確認されたでは、一般に予想するものと想定したエラーです。 実際には、のみに予期しないエラーをフィルタ リングとその後にフォールバックするすべてのエラーでも識別できない問題がある場合は、最初に可能性の最適なを勧めします。
+既定では、トレースのフィックス アップ「が必要です」と見なされてエラーが除外されます。  たとえば、アプリケーションは、無条件でファイルを削除するかどうかは、既に存在する、結果を無視して確認せずにしようと可能性があります。 これは、上記の例では、ことを選択します filesystem 関数からすべてのエラーを受信するためのいくつかの予期しないエラーが取得除外された、残念な結果です。 そうため、その前に、Config.txt ファイルから読み取りを試みるは、メッセージ「ファイルが見つかりません」で失敗からわかるようにします。 これは、障害が頻繁に観察しは、一般に、予期できないと見なされます。 実際には予期しない故障にのみフィルター処理し、フォールバックしてエラーをすべてまだ識別できない問題がある場合を開始する可能性の高い最適になります。
 
-既定では、トレース修正からの出力を取得、アタッチされたデバッガーに送信されます。 この例では、します、デバッガーをアタッチすることは、代わりにプログラムを使用して[デバッグ表示](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)SysInternals から出力を表示します。 アプリを実行すると、わかります同じエラー前とに、同じランタイムの修正プログラムから、マイクロソフトをポイントするとします。
+既定では、トレースの修正から出力を取得、アタッチされたデバッガーに送信されます。 この例では、デバッガーをアタッチしようとしています。 おは代わりに使用、 [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview) sysinternals 出力を表示するプログラム。 アプリを実行した後には、ことがわかります同じ障害と同様に、同じランタイム修正プログラムにごポイントします。
 
 ![TraceShim ファイルが見つかりません](images/desktop-to-uwp/traceshim_filenotfound.png)
 
 ![TraceShim アクセスが拒否されました](images/desktop-to-uwp/traceshim_accessdenied.png)
 
-## <a name="debug-extend-or-create-a-runtime-fix"></a>デバッグ、延長、または実行時の修正プログラムの作成
+## <a name="debug-extend-or-create-a-runtime-fix"></a>デバッグ、拡張、またはランタイム修正プログラムの作成
 
-ランタイムの修正プログラムのデバッグ、拡張ランタイムの修正プログラムを最初から作成に Visual Studio を使用することができます。 これらの操作を成功させる必要があります。
+Visual Studio を使用して、ランタイム修正プログラムをデバッグ、実行時の修正プログラムを拡張または最初から作成することができます。 成功するこれらの作業を行う必要があります。
 
 > [!div class="checklist"]
-> * パッケージ プロジェクトを追加します。
-> * ランタイムの修正プログラムのプロジェクトを追加します。
-> * プロジェクトを追加する実行可能ファイルの PSF ランチャーを起動します。
+> * パッケージのプロジェクトを追加します。
+> * プロジェクト ランタイム修正プログラムを追加します。
+> * 実行可能ファイルの PSF ランチャーを起動するプロジェクトを追加します。
 > * パッケージ プロジェクトを構成します。
 
-完了したら、ソリューションにはこのようになります。
+完了すると、ソリューションは次のようになります。
 
 ![完成したソリューション](images/desktop-to-uwp/runtime-fix-project-structure.png)
 
 この例では、各プロジェクトを見てみましょう。
 
-| プロジェクト | 目的 |
+| Project | 目的 |
 |-------|-----------|
-| DesktopApplicationPackage | このプロジェクトは、 [Windows アプリケーション パッケージ プロジェクト](desktop-to-uwp-packaging-dot-net.md)に基づいており、MSIX パッケージを出力します。 |
-| Runtimefix | これは、ランタイムの修正プログラムとして機能する 1 つまたは複数の代替関数が含まれている C++ Dynamic-Linked ライブラリ プロジェクトです。 |
-| PSFLauncher | これは、C++ 空のプロジェクトです。 このプロジェクトは、パッケージのサポート フレームワークのランタイム配布可能なファイルを収集する場所です。 実行可能ファイルを出力します。 その実行可能ファイルは、ソリューションを起動するときに実行する最初のものです。 |
+| DesktopApplicationPackage | このプロジェクトがに基づいて、 [Windows アプリケーション パッケージ プロジェクト](desktop-to-uwp-packaging-dot-net.md)MSIX パッケージを出力します。 |
+| Runtimefix | これは、ランタイム修正プログラムとして機能する 1 つまたは複数の置換関数を含む C++ Dynamic-Linked ライブラリ プロジェクトです。 |
+| PSFLauncher | これは、C++ の空のプロジェクトです。 このプロジェクトは、パッケージのサポート、フレームワークのランタイム再頒布可能ファイルを収集する場所です。 実行可能ファイルを出力します。 この実行可能ファイルとは、ソリューションを開始するときに実行される最初のことです。 |
 | WinFormsDesktopApplication | このプロジェクトには、デスクトップ アプリケーションのソース コードが含まれています。 |
 
-これらの種類のプロジェクトのすべてを含む完全なサンプルを見ると、 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)を参照してください。
+これらの種類のプロジェクトのすべてを含む完全なサンプルを見るを参照してください。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)します。
 
-作成して、ソリューション内の各プロジェクトを構成する手順を見てみましょう。
+作成し、ソリューションでこれらの各プロジェクトを構成する手順を見てみましょう。
 
-### <a name="create-a-package-solution"></a>パッケージのソリューションを作成します。
+### <a name="create-a-package-solution"></a>パッケージ ソリューションを作成します。
 
-デスクトップ アプリケーションのソリューションがない場合は、Visual Studio で新しい**空のソリューション**を作成します。
+デスクトップ アプリケーションのソリューションがいない場合は、新しい作成**空のソリューション**Visual Studio でします。
 
 ![空のソリューション](images/desktop-to-uwp/blank-solution.png)
 
-あるすべてのアプリケーション プロジェクトに追加することもできます。
+持つ任意のアプリケーション プロジェクトを追加することもできます。
 
-### <a name="add-a-packaging-project"></a>パッケージ プロジェクトを追加します。
+### <a name="add-a-packaging-project"></a>パッケージのプロジェクトを追加します。
 
-**Windows アプリケーション パッケージ プロジェクト**がまだしていない場合は、1 つを作成し、ソリューションに追加します。
+まだ持っていない場合、 **Windows アプリケーション パッケージ プロジェクト**、1 つを作成し、ソリューションに追加します。
 
 ![パッケージ プロジェクト テンプレート](images/desktop-to-uwp/package-project-template.png)
 
-Windows アプリケーション パッケージ プロジェクトについて詳しくは、 [Visual Studio を使用して、アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
+Windows アプリケーション パッケージ プロジェクトの詳細については、次を参照してください。 [Visual Studio を使用して、アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)します。
 
-**ソリューション エクスプ ローラー**、パッケージ プロジェクトを右クリックし、選択**を編集**、およびこれをプロジェクト ファイルの下部に追加。
+**ソリューション エクスプ ローラー**をパッケージ プロジェクトを右クリックして選択**編集**、し、これをプロジェクト ファイルの末尾に追加します。
 
 ```xml
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
@@ -304,54 +304,54 @@ Windows アプリケーション パッケージ プロジェクトについて�
 </Target>
 ```
 
-### <a name="add-project-for-the-runtime-fix"></a>ランタイムの修正プログラムのプロジェクトを追加します。
+### <a name="add-project-for-the-runtime-fix"></a>プロジェクト ランタイム修正プログラムを追加します。
 
-**ダイナミック リンク ライブラリ (DLL)** の C++ プロジェクトをソリューションに追加します。
+C++ の追加**ダイナミック リンク ライブラリ (DLL)** プロジェクトがソリューションにします。
 
-![ランタイム ライブラリの修正](images/desktop-to-uwp/runtime-fix-library.png)
+![修正プログラムのランタイム ライブラリ](images/desktop-to-uwp/runtime-fix-library.png)
 
-[プロジェクト]、[**プロパティ**を右クリックします。
+クリックして、プロジェクトを右クリックして**プロパティ**します。
 
-プロパティ ページで、**標準的な C++ 言語**のフィールドを探します選び、そのフィールドの横にあるドロップダウン リストで、 **ISO C 17 標準 (//std:c では 17)** オプションです。
+プロパティ ページで、 **C 言語標準**フィールド、およびそのフィールドの横にあるドロップダウン リストを選択します、 **ISO c++ 17 標準 (//std:c + + 17)** オプション。
 
-![ISO 17 オプション](images/desktop-to-uwp/iso-option.png)
+![17 の ISO オプション](images/desktop-to-uwp/iso-option.png)
 
-そのプロジェクトを右クリックし、コンテキスト メニューで、 **Nuget パッケージの管理**オプションを選択します。 **すべて**のまたは**nuget.org****パッケージ ソース**オプションが設定されていることを確認します。
+そのプロジェクトを右クリックし、コンテキスト メニューを選択、 **Nuget パッケージの管理**オプション。 いることを確認、**パッケージ ソース**にオプションが設定されている**すべて**または**nuget.org**します。
 
-次にそのフィールドの設定アイコンをクリックします。
+次にそのフィールドの設定 アイコンをクリックします。
 
-*PSF*の検索 * Nuget パッケージをし、このプロジェクトにインストールします。
+検索、 *PSF** Nuget をパッケージ化し、このプロジェクトにインストールします。
 
 ![nuget パッケージ](images/desktop-to-uwp/psf-package.png)
 
-デバッグや、既存のランタイム修正プログラムを拡張する場合は、このガイドの[ランタイムの修正プログラムの検索](#find)のセクションで説明したガイダンスを使用して、取得したランタイムの修正プログラム ファイルを追加します。
+デバッグまたは既存のランタイム修正プログラムを拡張する場合は、追加で説明されているガイダンスを使用して取得したランタイム修正プログラム ファイル、[ランタイム修正プログラムを見つける](#find)このガイドの「します。
 
-新しい修正プログラムを作成する場合は、追加しないでください何もこのプロジェクトにまだだけです。 このガイドの後半では、このプロジェクトに適切なファイルを追加するをお手伝いします。 ここでは、ソリューションの設定が引き続きされます。
+新しい修正プログラムを作成する場合は、何も追加しないこのプロジェクトにまだだけです。 このガイドの後半では、このプロジェクトに適切なファイルを追加する手伝いします。 ここでは、ソリューションの設定がいく予定です。
 
-### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>プロジェクトを追加する実行可能ファイルの PSF ランチャーを起動します。
+### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>実行可能ファイルの PSF ランチャーを起動するプロジェクトを追加します。
 
-C**空のプロジェクト**のプロジェクトをソリューションに追加します。
+C++ の追加**空のプロジェクト**プロジェクトがソリューションにします。
 
 ![空のプロジェクト](images/desktop-to-uwp/blank-app.png)
 
-前のセクションで説明されている同じガイダンスを使用して、このプロジェクトに**PSF** Nuget パッケージを追加します。
+追加、 **PSF**前のセクションで説明されている同じガイダンスを使用してこのプロジェクトに Nuget パッケージ。
 
-開いている、**全般**設定] ページで、プロジェクトのプロパティ ページ**ターゲット名**プロパティに設定``PSFLauncher32``または``PSFLauncher64``によっては、アプリケーションのアーキテクチャ。
+で、プロジェクトのプロパティ ページを開く、**全般**設定ページで、設定、**ターゲット名**プロパティを``PSFLauncher32``または``PSFLauncher64``アプリケーションのアーキテクチャに応じて。
 
-![PSF ランチャー リファレンス](images/desktop-to-uwp/shim-exe-reference.png)
+![PSF ランチャー参照](images/desktop-to-uwp/shim-exe-reference.png)
 
-ランタイム修正プロジェクトへの参照をプロジェクトをソリューションに追加します。
+ランタイム修正プログラムのプロジェクトへの参照をプロジェクトをソリューションに追加します。
 
-![ランタイムの修正プログラムのリファレンス](images/desktop-to-uwp/reference-fix.png)
+![ランタイム修正プログラムのリファレンス](images/desktop-to-uwp/reference-fix.png)
 
-参照を右クリックし、[**プロパティ**] ウィンドウで、これらの値を適用します。
+参照を右クリックし、**プロパティ**ウィンドウで、これらの値を適用します。
 
-| プロパティ | 値 |
+| プロパティ | Value |
 |-------|-----------|
-| ローカル コピーします。 | True |
+| ローカルのコピーします。 | True |
 | ローカル サテライト アセンブリをコピーします。 | True |
 | 参照アセンブリの出力 | True |
-| リンク ライブラリの依存関係 | False |
+| ライブラリ依存関係のリンク | False |
 | リンク ライブラリの依存関係の入力 | False |
 
 ### <a name="configure-the-packaging-project"></a>パッケージ プロジェクトを構成します。
@@ -360,18 +360,18 @@ C**空のプロジェクト**のプロジェクトをソリューションに追
 
 ![プロジェクト参照の追加](images/desktop-to-uwp/add-reference-packaging-project.png)
 
-PSF ランチャー プロジェクトとデスクトップ アプリケーション プロジェクトを選択し、 **[ok]** ボタンをクリックします。
+PSF ランチャー プロジェクトと、デスクトップ アプリケーション プロジェクトを選択し、選択、 **OK**ボタンをクリックします。
 
 ![デスクトップ プロジェクト](images/desktop-to-uwp/package-project-references.png)
 
 >[!NOTE]
-> アプリケーションにソース コードがあるない場合は、PSF ランチャー プロジェクトを選ぶだけです。 構成ファイルを作成するときに、実行可能ファイルを参照する方法紹介します。
+> アプリケーション ソース コードを持っていない場合は、PSF ランチャー プロジェクトを選択します。 構成ファイルを作成するときに、実行可能ファイルを参照する方法について説明します。
 
-**アプリケーション**ノードで、PSF ランチャー アプリケーションを右クリックし、**エントリ ポイントとして設定**します。
+**アプリケーション**ノード、PSF ランチャー アプリケーションを右クリックし、**エントリ ポイントとして設定**します。
 
 ![エントリ ポイントの設定](images/desktop-to-uwp/set-startup-project.png)
 
-という名前のファイルを追加``config.json``、パッケージ プロジェクトにコピーし、ファイルに次の json テキストを貼り付けます。 **コンテンツ**に**パッケージ アクション**プロパティを設定します。
+という名前のファイルを追加``config.json``をパッケージ化プロジェクトにコピーし、次の json テキストをファイルに貼り付けます。 設定、**パッケージ アクション**プロパティを**コンテンツ**します。
 
 ```json
 {
@@ -397,18 +397,18 @@ PSF ランチャー プロジェクトとデスクトップ アプリケーシ�
 }
 ```
 
-各キーの値を指定します。 次の表をガイドとして使用します。
+各キーの値を指定します。 このテーブルをガイドとして使用します。
 
 | 配列 | key | Value |
 |-------|-----------|-------|
-| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェスト内の要素です。 |
-| applications | 実行可能 | 起動する実行可能ファイルへのパッケージ相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値であること、`Executable`の属性、`Application`要素です。 |
-| applications | workingDirectory | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 この値を設定しない場合、オペレーティング システムを使用して、`System32`アプリケーションの作業ディレクトリとしてディレクトリ。 |
-| プロセス | 実行可能 | ほとんどの場合の名前になります、`executable`削除パスとファイルの拡張子を持つ上に構成されています。 |
-| fixup | dll | パッケージの相対パスを読み込む DLL の修正します。 |
-| fixup | config | (省略可能)修正 DLL の動作を制御します。 この値の正確な形式は、各修正が解釈できるようにこの"blob"必要があるように修正の修正によってごとに異なります。 |
+| applications | id |  値を使用して、`Id`の属性、`Application`パッケージ マニフェスト内の要素。 |
+| applications | 実行可能ファイル | 開始する実行可能ファイルへのパッケージの相対パス。 ほとんどの場合、変更する前に、パッケージ マニフェスト ファイルからこの値を取得できます。 値は、`Executable`の属性、`Application`要素。 |
+| applications | WorkingDirectory | (省略可能)起動するアプリケーションの作業ディレクトリとして使用するパッケージの相対パス。 オペレーティング システムを使用して、この値を設定しない場合、`System32`ディレクトリをアプリケーションの作業ディレクトリ。 |
+| プロセス | 実行可能ファイル | ほとんどの場合、対象になりますの名前、`executable`削除パスとファイル拡張子で上に構成されています。 |
+| フィックス アップ | dll | フィックス アップを読み込む DLL にパッケージの相対パス。 |
+| フィックス アップ | 構成 | (省略可能)フィックス アップ DLL の動作を制御します。 この値の正確な形式は、各フィックス アップが必要があると"blob"を解釈できるよう、フィックス アップの修正によってごとに異なります。 |
 
-完了したら、``config.json``ファイルは次のようになります。
+完了すると、``config.json``ファイルは次のようになります。
 
 ```json
 {
@@ -430,28 +430,28 @@ PSF ランチャー プロジェクトとデスクトップ アプリケーシ�
 ```
 
 >[!NOTE]
-> `applications`、 `processes`、および`fixups`キーは、配列です。 つまり、1 つ以上のアプリケーション、プロセス、および修正 DLL を指定する config.json ファイルを使用することができます。
+> `applications`、 `processes`、および`fixups`キーは配列です。 つまり、1 つ以上のアプリケーション、プロセス、および DLL のフィックス アップを指定する config.json ファイルを使用することができます。
 
-### <a name="debug-a-runtime-fix"></a>ランタイムの修正プログラムをデバッグします。
+### <a name="debug-a-runtime-fix"></a>ランタイム修正プログラムをデバッグします。
 
-Visual Studio で f5 キーを押してデバッガーを起動します。  開始する最初のものは、次に、ターゲット デスクトップ アプリケーションを起動する PSF ランチャー アプリケーションです。  ターゲットのデスクトップ アプリケーションをデバッグするには、手動で**デバッグ**を選択してデスクトップ アプリケーションのプロセスにアタッチする必要があります->**プロセスにアタッチ**し、アプリケーションのプロセスを選択します。 ネイティブのランタイム修正 DLL を持つ .NET アプリケーションのデバッグを許可するには、マネージとネイティブ コードの種類 (混在モードのデバッグ) を選択します。  
+Visual Studio で f5 キーを押してデバッガーを起動します。  最初に起動するとは、さらに、ターゲット デスクトップ アプリケーションを起動する PSF のランチャー アプリケーションです。  対象のデスクトップ アプリケーションをデバッグするには、手動で選択してデスクトップ アプリケーションのプロセスにアタッチする必要があります**デバッグ**->**プロセスにアタッチ**、アプリケーションを選択プロセスです。 ネイティブ ランタイム修正プログラムを DLL と .NET アプリケーションのデバッグを許可するには、(混在モードのデバッグ) のマネージ コードとネイティブ コードの種類を選択します。  
 
-これ設定したら、デスクトップ アプリケーション コードとランタイムの修正プログラム プロジェクトで数行のコードの横にブレークポイントを設定できます。 アプリケーションにソース コードがあるない場合、ランタイムの修正プログラムのプロジェクトで数行のコードの横にあるブレークポイントを設定することができます。
+これを設定したらとは、デスクトップ アプリケーションのコードでランタイム修正プログラムのプロジェクトのコード行の横にあるブレークポイントを設定できます。 アプリケーション ソース コードを持っていない場合、ランタイム修正プログラムのプロジェクトでのコード行の横にあるブレークポイントを設定することができます。
 
 >[!NOTE]
-> Visual Studio を使用する最も簡単な開発エクスペリエンスをデバッグするには、いくつかの制限があるときは、このガイドの後で説明適用できるその他のデバッグ手法します。
+> Visual Studio では、最も簡単な開発エクスペリエンスをデバッグするには、いくつかの制限があると、このガイドの後で取り上げます他のデバッグ手法を適用することができます。
 
-## <a name="create-a-runtime-fix"></a>ランタイムの修正プログラムを作成します。
+## <a name="create-a-runtime-fix"></a>ランタイム修正プログラムを作成します。
 
-ない場合、ランタイムを解決する場合、代替関数を作成し、構成データを含む新しいランタイムの修正プログラムを作成すること、問題の修正を意味します。 各部分を見てみましょう。
+ない場合、ランタイムを解決することは、置換関数を作成し、構成データを含む新しいランタイム修正プログラムを作成することができます、問題の修正は合理的です。 各部分を見てみましょう。
 
-### <a name="replacement-functions"></a>代替機能
+### <a name="replacement-functions"></a>置換関数
 
-最初に、どの関数の呼び出しは失敗 MSIX コンテナー内で、アプリケーションが実行されている場合を特定します。 次に、代わりに、ランタイム マネージャーを希望する代替関数を作成できます。 これにより、関数の実装を最新のランタイム環境の規則に準拠している動作に置き換えることです。
+まず、MSIX コンテナーで、アプリケーションの実行時に呼び出しが失敗する関数を特定します。 次に、代わりに、ランタイム マネージャーを置換関数を作成できます。 これにより、最新のランタイム環境の規則に準拠した動作で、関数の実装を置き換えることです。
 
-Visual Studio では、このガイドで既に作成したランタイム修正プロジェクトを開きます。
+Visual Studio で、このガイドの前半で作成したランタイム修正プロジェクトを開きます。
 
-宣言、``FIXUP_DEFINE_EXPORTS``マクロし、追加のインクルード ステートメント、`fixup_framework.h`それぞれの上部にあります。CPP ファイルが、ランタイムの修正プログラムの関数を追加します。
+宣言、``FIXUP_DEFINE_EXPORTS``マクロの include ステートメントを追加し、`fixup_framework.h`それぞれの上部にあります。CPP ファイルは、ランタイム修正プログラムの機能を追加します。
 
 ```c++
 #define FIXUP_DEFINE_EXPORTS
@@ -459,9 +459,9 @@ Visual Studio では、このガイドで既に作成したランタイム修正
 ```
 
 >[!IMPORTANT]
->確認、`FIXUP_DEFINE_EXPORTS`マクロがインクルード ステートメントの前に表示されます。
+>必ず、 `FIXUP_DEFINE_EXPORTS` include ステートメントの前にマクロが表示されます。
 
-同じ関数のシグネチャを持つ関数を作成しているが動作を変更します。 置換する関数の例を次に示します、`MessageBoxW`関数です。
+同じ関数のシグネチャを持つ関数を作成したが動作を変更します。 置換する関数の例を次に示します、`MessageBoxW`関数。
 
 ```c++
 auto MessageBoxWImpl = &::MessageBoxW;
@@ -477,19 +477,19 @@ int WINAPI MessageBoxWFixup(
 DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 ```
 
-呼び出し`DECLARE_FIXUP`マップ、`MessageBoxW`新しい代替関数に機能します。 アプリが呼び出すしようとしたとき、`MessageBoxW`関数を呼び出して置き換え関数代わりにします。
+呼び出し`DECLARE_FIXUP`マップ、`MessageBoxW`関数を新しい置換する関数。 アプリケーションが呼び出すしようとしたときに、`MessageBoxW`関数を置換する関数を代わりに呼び出すことがされます。
 
-#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>ランタイムの修正プログラムの関数を再帰的な呼び出しからの保護します。
+#### <a name="protect-against-recursive-calls-to-functions-in-runtime-fixes"></a>修正をランタイムに関数への再帰呼び出しから保護します。
 
-適用することが必要に応じて、`reentrancy_guard`を再帰的なランタイムの修正プログラムでの関数の呼び出しを保護する関数の種類。
+必要に応じて適用することができます、`reentrancy_guard`修正をランタイムに関数への再帰呼び出しから保護する、関数への型。
 
-代替の関数を作成するなど、`CreateFile`関数です。 実装を呼び出すことがあります、`CopyFile`関数がの実装、`CopyFile`関数を呼び出すことがあります、`CreateFile`関数です。 これは、無限再帰サイクルへの呼び出しのする可能性があります、`CreateFile`関数です。
+たとえば、置換するための関数を生じる可能性があります、`CreateFile`関数。 実装を呼び出すことができます、`CopyFile`関数がの実装、`CopyFile`関数を呼び出すことができます、`CreateFile`関数。 呼び出しの無限の再帰的なサイクルが生じる、`CreateFile`関数。
 
-詳細について`reentrancy_guard` [authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)を参照してください。
+詳細については`reentrancy_guard`を参照してください[authoring.md](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/Authoring.md)
 
 ### <a name="configuration-data"></a>構成データ
 
-構成データ、ランタイムの修正プログラムを追加する場合は、追加することを検討してください、``config.json``します。 そのにより使用でき、`FixupQueryCurrentDllConfig`にそのデータを簡単に解析します。 この例では、その構成ファイルから、ブール値と文字列の値を解析します。
+構成データ、ランタイム修正プログラムを追加する場合に追加することを検討してください、``config.json``します。 これでが使用できる、`FixupQueryCurrentDllConfig`を簡単にそのデータを解析します。 この例では、その構成ファイルからのブール値、および文字列の値を解析します。
 
 ```c++
 if (auto configRoot = ::FixupQueryCurrentDllConfig())
@@ -508,17 +508,17 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 }
 ```
 
-## <a name="other-debugging-techniques"></a>その他のデバッグ手法
+## <a name="other-debugging-techniques"></a>その他のデバッグ技術
 
-Visual Studio を使用すると、最も簡単な開発およびエクスペリエンスをデバッグ、ときに制限があります。
+Visual Studio は、最も簡単な開発およびデバッグ エクスペリエンスをでは、中にいくつかの制限があります。
 
-.Msix からインストールするのではなく、パッケージのレイアウト フォルダー パスからルーズ ファイルを展開することによって、アプリケーションを最初に、f5 キーを押してデバッグ実行/.appx パッケージ。  レイアウト フォルダー通常ありません同じセキュリティの制限、インストールされているパッケージのフォルダーとして。 その結果、にくいかもしれませんランタイムの修正プログラムを適用する前にパッケージのパス アクセス拒否エラーを再現することもできます。
+.Msix からインストールするのではなく、パッケージ レイアウト フォルダーのパスから圧縮しないファイルを展開して、アプリケーションを最初に、F5 デバッグ実行/.appx パッケージ。  レイアウト フォルダー通常が同じセキュリティ制限として、インストールされているパッケージのフォルダー。 その結果、ランタイム修正プログラムを適用する前にパッケージのパスへのアクセス拒否エラーを再現できないこと可能性があります。
 
-この問題に対処する使用 .msix f5 キーではなく、.appx パッケージの展開が失われるファイルの展開/します。  .Msix を作成する .appx パッケージ ファイル、/前述のように、Windows SDK から[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)ユーティリティを使用します。 またはから、Visual Studio 内アプリケーション プロジェクト ノードを右クリックし、**ストア**を選択して->**アプリ パッケージの作成**します。
+この問題に対処 .msix を使用して、f5 キーではなく、.appx パッケージの配置は、ファイルの配置を疎/。  .Msix を作成する/.appx パッケージ ファイルを使用して、 [MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)前述のように、Windows SDK のユーティリティ。 またはから、Visual Studio 内で、アプリケーションのプロジェクト ノードを右クリックし、選択**ストア**->**アプリ パッケージの作成**です。
 
-Visual Studio の別の問題は、デバッガーを起動したすべての子プロセスにアタッチするための組み込みサポートがないことです。   Visual Studio によって起動後が手動で接続され、ターゲット アプリケーションのスタートアップ パス内のロジックをデバッグが困難になります。
+Visual Studio の別の問題は、デバッガーによって起動されたすべての子プロセスにアタッチするための組み込みサポートがないことです。   デバッグ対象のアプリケーションでは、関連付ける必要があります手動で Visual Studio によって起動した後の起動パス内のロジックを困難になります。
 
-この問題に対処するには、使用子プロセスをサポートしているデバッガーをアタッチします。  一般に、ターゲット アプリケーションにジャスト イン タイム (JIT) デバッガーをアタッチすることに注意してください。  これは、ほとんど JIT 技法 ImageFileExecutionOptions レジストリ キーを使用して、ターゲット アプリの代わりにデバッガーを起動するためです。  ターゲット アプリに FixupRuntime.dll を挿入するために使用 PSFLauncher.exe detouring メカニズムが損なわれるためです。  WinDbg、 [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)に含まれているし、 [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)から取得したサポート子プロセスをアタッチします。  サポート直接[起動して UWP アプリをデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)します。
+この問題に対処するには、子プロセスのアタッチをサポートする、デバッガーを使用します。  一般に、ターゲット アプリケーションへのジャストイン タイム (JIT) デバッガーをアタッチすることに注意してください。  これは、ほとんどの JIT 手法では、ImageFileExecutionOptions のレジストリ キーを使用して、対象とするアプリケーションの代わりにデバッガーを起動するが含まれるためにです。  これには、PSFLauncher.exe FixupRuntime.dll を対象となるアプリに挿入するための detouring メカニズムが果たせなくなります。  含まれる、WinDbg、[ツールを Windows のデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)から取得し、 [Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)、サポートする子プロセスのアタッチします。  また、直接サポート[を起動して、UWP アプリのデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)します。
 
 子プロセスとしてターゲット アプリケーションの起動をデバッグするには、開始``WinDbg``します。
 
@@ -526,31 +526,31 @@ Visual Studio の別の問題は、デバッガーを起動したすべての子
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
-``WinDbg``プロンプト、子のデバッグを有効にして適切なブレークポイントを設定します。
+``WinDbg``と表示されたら、子のデバッグを有効にする、適切なブレークポイントを設定します。
 
 ```ps
 .childdbg 1
 g
 ```
 
-(ターゲット アプリケーションが開始され、デバッガーにするまで実行)
+(対象のアプリケーションが開始され、デバッガーを中断するまで実行)
 
 ```ps
 sxe ld fixup.dll
 g
 ```
 
-(修正の DLL が読み込まれるまで実行されません)
+(フィックス アップ DLL が読み込まれるまで実行)
 
 ```ps
 bp ...
 ```
 
 >[!NOTE]
-> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)では、起動時には、アプリにデバッガーをアタッチするも使用できるされ、 [Debugging Tools for Windows](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)にも含まれています。  ただし、WinDbg によって提供されるようになりました直接サポートよりも複雑です。
+> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)を起動すると、アプリにデバッガーをアタッチすることも使用できにも含まれますが、[ツールを Windows のデバッグ](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)します。  ただし、WinDbg によって提供されるようになりました direct サポートよりも複雑です。
 
 ## <a name="support-and-feedback"></a>サポートとフィードバック
 
-**質問に対する回答を見つける**
+**質問の回答を検索**
 
 ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。

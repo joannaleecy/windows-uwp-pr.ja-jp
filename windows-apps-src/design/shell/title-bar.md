@@ -8,11 +8,11 @@ keywords: windows 10, uwp, タイトル バー
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648817"
 ---
 # <a name="title-bar-customization"></a>タイトル バーのカスタマイズ
 
@@ -20,7 +20,7 @@ ms.locfileid: "8923452"
 
 アプリをデスクトップ ウィンドウで実行する場合は、アプリの個性に合わせてタイトル バーをカスタマイズできます。 タイトル バーのカスタマイズ用 API を使用すると、タイトル バーの要素に色を指定することも、アプリ コンテンツをタイトル バーの領域に拡張して完全に制御することもできます。
 
-> **重要な API**: [ApplicationView.TitleBar プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、[ApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、[CoreApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
+> **重要な Api**:[ApplicationView.TitleBar プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview)、 [ApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)、 [CoreApplicationViewTitleBar クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar)
 
 ## <a name="how-much-to-customize-the-title-bar"></a>タイトル バーのカスタマイズ レベル
 
@@ -166,7 +166,7 @@ SetTitleBar を呼び出すと、アプリの実行中に新しいタイトル �
 
 タイトル ボタンのサイズ変化に応答するには、[LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) イベントを処理します。 たとえば、システムの [戻る] ボタンが表示または非表示になったときなどに、このイベントが発生します。 このイベントを処理し、タイトル バーのサイズに基づく UI 要素の位置を確認および更新します。
 
-以下の例では、システムの [戻る] ボタンの表示や非表示などの変化に対応して、タイトル バーのレイアウトを調整する方法を示します。 `AppTitleBar`、`LeftPaddingColumn`、および `RightPaddingColumn` は、前に示した XAML で宣言されています。
+以下の例では、システムの [戻る] ボタンの表示や非表示などの変化に対応して、タイトル バーのレイアウトを調整する方法を示します。 `AppTitleBar`、 `LeftPaddingColumn`、および`RightPaddingColumn`前に示した XAML で宣言されます。
 
 ```csharp
 private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
@@ -275,7 +275,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_全画面表示_モードは、アプリでサポートされている場合にのみ使用できます。 詳しくは、[ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) をご覧ください。 [_タブレット モード_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)は、サポートされているハードウェア上のユーザー オプションであり、ユーザーは任意のアプリをタブレット モードで実行できます。
+>_全画面表示_モードは、アプリでサポートされている場合にのみ使用できます。 詳しくは、[ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) をご覧ください。 [_タブレット モード_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) 、サポートされているハードウェア上のユーザー オプションは、すべてのアプリをタブレット モードで実行するユーザーが選択できるようにします。
 
 ## <a name="full-customization-example"></a>全面的なカスタマイズの例
 

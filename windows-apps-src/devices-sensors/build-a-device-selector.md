@@ -4,14 +4,14 @@ title: デバイス セレクターのビルド
 description: デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921755"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652497"
 ---
 # <a name="build-a-device-selector"></a>デバイス セレクターのビルド
 
@@ -32,11 +32,11 @@ ms.locfileid: "8921755"
 -   目的のプロパティ。 使用可能なプロパティは [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) によって異なります。 詳しくは、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 -   照会で経由するプロトコル。 ワイヤレスまたはワイヤード ネットワーク経由でデバイスを検索する場合にのみ必要です。 そのための方法について詳しくは、「[ネットワーク経由でデバイスを列挙する](enumerate-devices-over-a-network.md)」をご覧ください。
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うときは、多くの場合、デバイス セレクターを目的のデバイスの種類と組み合わせます。 利用可能なデバイスの種類の一覧は、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 列挙値で定義されています。 この組み合わせは、利用可能なデバイスを目的のデバイスの種類に限定するために役立ちます。 **DeviceInformationKind** を指定しない場合、つまり、使うメソッドに **DeviceInformationKind** パラメーターを渡さない場合、既定の種類は **DeviceInterface** です。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うときは、多くの場合、デバイス セレクターを目的のデバイスの種類と組み合わせます。 利用可能なデバイスの種類の一覧は、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 列挙値で定義されています。 この組み合わせは、利用可能なデバイスを目的のデバイスの種類に限定するために役立ちます。 **DeviceInformationKind** を指定しない場合、つまり、使うメソッドに **DeviceInformationKind** パラメーターを渡さない場合、既定の種類は **DeviceInterface** です。
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API では、AQS の標準的な構文が使われますが、一部の演算子はサポートされていません。 フィルター文字列の作成に使えるプロパティの一覧については、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API では、AQS の標準的な構文が使われますが、一部の演算子はサポートされていません。 フィルター文字列の作成に使えるプロパティの一覧については、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 
-**注意:** カスタム プロパティを使用して定義されている、 `{GUID} PID` 、AQS フィルター文字列を構築するときは、形式を使用することはできません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
+**注意**  カスタム プロパティを使用して定義されている、 `{GUID} PID` AQS フィルター文字列を構築するときに、形式は使用できません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
 
  
 
@@ -44,25 +44,25 @@ ms.locfileid: "8921755"
 
 | 演算子                       | サポートされる型                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | 文字列、ブール値、GUID、UInt16、UInt32                                       |
+| **COP\_と等しい**                 | 文字列、ブール値、GUID、UInt16、UInt32                                       |
 | **COP\_NOTEQUAL**              | 文字列、ブール値、GUID、UInt16、UInt32                                       |
 | **COP\_LESSTHAN**              | UInt16、UInt32                                                              |
 | **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
 | **COP\_LESSTHANOREQUAL**       | UInt16、UInt32                                                              |
 | **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
-| **COP\_VALUE\_NOTCONTAINS**    | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
-| **COP\_VALUE\_STARTSWITH**     | 文字列                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | 文字列                                                                      |
-| **COP\_DOSWILDCARDS**          | サポートされていません                                                               |
-| **COP\_WORD\_EQUAL**           | サポートされていません                                                               |
-| **COP\_WORD\_STARTSWITH**      | サポートされていません                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | サポートされていません                                                               |
+| **COP\_値\_CONTAINS**       | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
+| **COP\_値\_NOTCONTAINS**    | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
+| **COP\_値\_STARTSWITH**     | String                                                                      |
+| **COP\_値\_ENDSWITH**       | String                                                                      |
+| **COP\_DOSWILDCARDS**          | サポートされない                                                               |
+| **COP\_WORD\_と等しい**           | サポートされない                                                               |
+| **COP\_WORD\_STARTSWITH**      | サポートされない                                                               |
+| **COP\_アプリケーション\_特定** | サポートされない                                                               |
 
 
-> **ヒント:** **cop \_notequal**または**COP\_NOTEQUAL** **NULL**を指定することができます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
+> **ヒント:**  を指定できます**NULL**の**COP\_等しい**または**COP\_NOTEQUAL**します。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS で指定する**NULL**空のかっこを使用して\[\]します。
 
-> **重要な**文字列と文字列の配列で異なる動作を**cop \_value\_contains**と**\_value\_notcontains**演算子を使用する場合。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
+> **重要な**  を使用する場合、 **COP\_値\_CONTAINS**と**COP\_値\_NOTCONTAINS**演算子文字列および文字列配列で動作が異なります。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
 
 1 つの AQS フィルター文字列により結果を適切に絞り込むことができない場合は、受け取った結果をさらにフィルター処理できます。 ただしその場合は、最初の AQS フィルター文字列によりできる限り結果を絞り込んでから、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API に渡すことをお勧めします。 これにより、アプリのパフォーマンスを向上させることができます。
 
@@ -70,42 +70,38 @@ ms.locfileid: "8921755"
 
 ここで示している例では、AQS 構文を使って、列挙するデバイスを制限する方法を説明しています。 以下のフィルター文字列はすべて、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングされており、完全なフィルターを作成できます。 どの種類も指定しない場合、既定の種類は **DeviceInterface** になります。
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **=
-              ** は **COP\_EQUALS** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **=** 変換されます**COP\_EQUALS**します。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **~~
-              ** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **~~** 変換されます**COP\_値\_CONTAINS**します。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **~~
-              ** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **~~** 変換されます**COP\_値\_CONTAINS**します。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **~&lt;
-              ** は **COP\_STARTSWITH** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **~&lt;** 変換されます**COP\_STARTSWITH**します。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **&lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **&lt;&gt;\[\]** 変換されます**COP\_NOTEQUALS**と組み合わせて、 **NULL**値。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持たないオブジェクトがすべて列挙されます。 **=\[\]** は、**NULL** 値を組み合わせた **COP\_EQUALS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持たないオブジェクトがすべて列挙されます。 **=\[\]** 変換されます**COP\_EQUALS**と組み合わせて、 **NULL**値。
 
 ``` syntax
 System.Devices.IpAddress:=[]

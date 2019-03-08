@@ -4,18 +4,18 @@ title: コンポジション効果
 description: 効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045315"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653827"
 ---
 # <a name="composition-effects"></a>コンポジション効果
 
-[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
+[  **Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
 
 アプリケーションの効果を記述する開発者に対して [ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) との整合性をサポートするには、コンポジション効果で Win2D の IGraphicsEffect インターフェイスを活用し、[Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間を介して効果記述子を使用します。
 
@@ -23,15 +23,15 @@ ms.locfileid: "9045315"
 
 効果ブラシは、コンテンツが効果グラフの出力に基づくコンポジション ツリー ビジュアルで使用されます。 効果は既存のサーフェスとテクスチャを参照できますが、他のコンポジション ツリーの出力は参照できません。
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) で効果ブラシを使って、XAML UIElement に効果を適用することもできます。
+[  **XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) で効果ブラシを使って、XAML UIElement に効果を適用することもできます。
 
 ## <a name="effect-features"></a>効果機能
 
 - [効果ライブラリ](./composition-effects.md#effect-library)
-- [チェーン効果](./composition-effects.md#chaining-effects)
+- [チェーンの効果](./composition-effects.md#chaining-effects)
 - [アニメーションのサポート](./composition-effects.md#animation-support)
-- [効果プロパティ: 固定とアニメーション化](./composition-effects.md#constant-vs-animated-effect-properties)
-- [独立したプロパティを持つ複数の効果インスタンス](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [Vs の定数。アニメーションの効果のプロパティ](./composition-effects.md#constant-vs-animated-effect-properties)
+- [独立したプロパティを持つ複数の効果](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>効果ライブラリ
 
@@ -44,17 +44,17 @@ ms.locfileid: "9045315"
 | ブレンド効果         | 2 つの画像を組み合わせるブレンド効果を作成します。 コンポジションでは、Win2D でサポートされている 26 個の [ブレンド モード](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm) のうち 21 個が用意されています。        |
 | カラー ソース         | 単色が含まれている画像を生成します。                                                                                                                                                                               |
 | コンポジット            | 2 つの画像を組み合わせます。 コンポジションでは、Win2D でサポートされている 13 個の [コンポジット モード](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm) がすべて用意されています。                                              |
-| コントラスト             | 画像のコントラストを増減します。                                                                                                                                                                           |
+| Contrast             | 画像のコントラストを増減します。                                                                                                                                                                           |
 | 露出             | 画像の露出を増減します。                                                                                                                                                                           |
 | グレースケール            | 画像を灰色のモノクロ画像に変換します。                                                                                                                                                                                   |
 | ガンマ伝達       | チャネルあたりのガンマ伝達関数を適用することで、画像の色を変更します。                                                                                                                                           |
 | 色相回転           | 色相値を回転することで、画像の色を変更します。                                                                                                                                                                   |
-| 反転               | 画像の色を反転します。                                                                                                                                                                                            |
+| Invert               | 画像の色を反転します。                                                                                                                                                                                            |
 | 彩度             | 画像の彩度を変更します。                                                                                                                                                                                         |
 | セピア                | 画像をセピア調に変換します。                                                                                                                                                                                          |
 | 色温度と濃淡 | 画像の色温度および濃淡を調整します。                                                                                                                                                                           |
 
-詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間をご覧ください。 コンポジションでサポートされていない効果は \[NoComposition\] として示されています。
+詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 名前空間をご覧ください。 効果の合成でサポートされていませんとして示されている\[NoComposition\]します。
 
 ### <a name="chaining-effects"></a>チェーン効果
 
@@ -134,11 +134,11 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 このクイック スタート チュートリアルでは、効果のいくつかの基本機能の使用方法を示します。
 
 - [Visual Studio のインストール](./composition-effects.md#installing-visual-studio)
-- [新しいプロジェクトの作成](./composition-effects.md#creating-a-new-project)
-- [Win2D のインストール](./composition-effects.md#installing-win2d)
-- [コンポジション設定の基本](./composition-effects.md#setting-your-composition-basics)
+- [新しいプロジェクトを作成します。](./composition-effects.md#creating-a-new-project)
+- [Win2D をインストールします。](./composition-effects.md#installing-win2d)
+- [コンポジションの基本を設定](./composition-effects.md#setting-your-composition-basics)
 - [CompositionSurface ブラシの作成](./composition-effects.md#creating-a-compositionsurface-brush)
-- [効果の作成、コンパイル、および適用](./composition-effects.md#creating-compiling-and-applying-effects)
+- [作成、コンパイルおよび効果の適用](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>Visual Studio のインストール
 
@@ -235,14 +235,14 @@ LoadImage(surfaceBrush);
 
 ![彩度を下げた画像](images/composition-cat-desaturated.png)
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明
 
-- [Microsoft - コンポジション GitHub](https://github.com/Microsoft/composition)
+- [Microsoft – コンポジション GitHub](https://github.com/Microsoft/composition)
 - [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-- [Twitter の Windows Composition チーム](https://twitter.com/wincomposition)
-- [コンポジションの概要](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [ビジュアル ツリーの基本](composition-visual-tree.md)
-- [コンポジションのブラシ](composition-brushes.md)
+- [Windows 合成チーム twitter](https://twitter.com/wincomposition)
+- [構成の概要](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [ビジュアル ツリーの基礎](composition-visual-tree.md)
+- [合成ブラシ](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 - [アニメーションの概要](composition-animation.md)
-- [BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用](composition-native-interop.md)
+- [コンポジション ネイティブ DirectX と Direct2D との相互運用 begindraw メソッドと EndDraw](composition-native-interop.md)

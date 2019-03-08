@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 479be2401e0c54801645ad1c0d91b11b7ffb6869
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937134"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649017"
 ---
 # <a name="configure-your-xbox-development-console"></a>Xbox 開発機本体を構成する
 
@@ -30,7 +30,7 @@ ms.locfileid: "8937134"
 
 現在のサンドボックスを確認します。 コマンド プロンプトで「xbconfig sandboxid」と入力します。
 
-想定していたサンドボックスでない場合は、サンドボックス ID を変更します。コマンド プロンプトで、「xbconfig sandboxid=<your sandbox id>」と入力します。
+想定したものでない場合は、サンドボックス ID を変更します。コマンド プロンプトで「xbconfig sandboxid=<your sandbox id>」と入力します。
 
 コマンド プロンプトで Reboot (xbreboot.exe) を使用してコンソールを再起動します。
 
@@ -38,4 +38,4 @@ ms.locfileid: "8937134"
 
 ## <a name="sign-in-with-a-development-account"></a>開発アカウントでサインインする
 
-[Xbox デベロッパー ポータル (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)または[パートナー センター](https://partner.microsoft.com/dashboard)でのサインインに使用する開発アカウントを作成します。
+サインインに使用される開発アカウントを作成する[Xbox 開発者ポータル (XDP)](https://xdp.xboxlive.com/User/Contact/MyAccess?selectedMenu=devaccounts)または[パートナー センター](https://partner.microsoft.com/dashboard)

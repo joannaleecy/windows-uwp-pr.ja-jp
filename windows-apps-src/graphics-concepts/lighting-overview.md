@@ -4,14 +4,14 @@ description: Direct3D の光源を使うときは、Direct3D が照明のディ�
 ms.assetid: FCBF6A92-4EAC-4CCC-A76C-79985AF348AE
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660207"
 ---
 # <a name="lighting-overview"></a>光源の概要
 
@@ -27,7 +27,7 @@ Direct3D の光源を使うときは、Direct3D が照明のディテールを�
 
 シーンをレンダリングするのに照明は必要ありませんが、照明なしでレンダリングされたシーンのディテールは見えません。 照明のないシーンをレンダリングすると、よくてもシーン内のオブジェクトのシルエットが見える程度です。 このディテールはほとんどのケースで不十分です。
 
-## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>直接光および環境光
+## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>周辺光と直接光
 
 
 直接光と環境光はどちらもシーン内のオブジェクトを照射しますが、互いに独立していて効果が大きく異なり、完全に異なる方法で使う必要があります。
@@ -40,7 +40,7 @@ Direct3D の光源を使うときは、Direct3D が照明のディテールを�
 
 赤、緑、青のコンポーネントが組み合わされて、環境光の最終的な色ができあがります。 アルファ コンポーネントは、色の透明度を制御します。 ハードウェア アクセラレーションや RGB エミュレーションを使っている場合、アルファ コンポーネントは無視されます。
 
-## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>Direct3D の照明モデルと自然界
+## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>性質と Direct3D ライティング モデル
 
 
 自然界では、光が光源から放射されると、ユーザーの目に届くまでに、数千～数百万まではいかなくても、数百ものオブジェクトに反射します。 反射するたびに、いくらかの光がサーフェスに吸収されたりランダムな方向に拡散されたりし、残りは別のサーフェスやユーザーの目に届きます。 このプロセスは、光がまったくなくなるか、ユーザーが光と認識するまで続きます。
@@ -57,7 +57,7 @@ Direct3D における環境光は、自然界と同じように実際の方向�
 
 さらに、多角形の素材には、照射された照明を多角形が反射する方法に影響を与えるプロパティがあります。 素材が環境光を反射する方法を表す単一の反射率特性を設定し、個々の特性を設定して素材の反射および拡散の反射率を決定します。
 
-## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>照明および素材の色値
+## <a name="span-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspanspan-idcolorvaluesforlightsandmaterialsspancolor-values-for-lights-and-materials"></a><span id="Color_Values_for_Lights_and_Materials"></span><span id="color_values_for_lights_and_materials"></span><span id="COLOR_VALUES_FOR_LIGHTS_AND_MATERIALS"></span>ライトとマテリアルの色の値
 
 
 Direct3D は、組み合わせることで最終的な色を生み出す 4 つのコンポーネント (赤、緑、青、アルファ) の観点で色を表します。 各コンポーネントの範囲は 0.0 ～ 1.0 です。 照明と素材のどちらも同じ構造を使って色を表しますが、照明と素材では値の使い方が少し異なります。
@@ -73,7 +73,7 @@ Direct3D は、組み合わせることで最終的な色を生み出す 4 つ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[照明および素材](lights-and-materials.md)
+[ライトとマテリアル](lights-and-materials.md)
 
  
 

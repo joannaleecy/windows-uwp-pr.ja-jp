@@ -5,14 +5,14 @@ title: iOS から UWP への移行
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ddcb64aed8205f18b17706e987cbd9981bb8044
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051065"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655467"
 ---
 # <a name="move-from-ios-to-uwp"></a>iOS から UWP への移行
 
@@ -26,12 +26,12 @@ ms.locfileid: "9051065"
 
 | トピック | 説明 |
 |-------|-------------|
-| [iOS と UWP のアプリ開発方法の選択](selecting-an-approach-to-ios-and-uwp-app-development.md) | クロスプラットフォーム アプリを開発するときの選択肢 |
-| [iOS 開発者のための UWP の概要](getting-started-with-uwp-for-ios-developers.md) | この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。 |
-| [Windows 10 を使用するための Mac のセットアップ](setting-up-your-mac-with-windows-10.md) | 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。 |
+| [IOS と UWP アプリの開発方法の選択](selecting-an-approach-to-ios-and-uwp-app-development.md) | クロスプラットフォーム アプリを開発するときの選択肢 |
+| [IOS 開発者向け UWP の概要](getting-started-with-uwp-for-ios-developers.md) | この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。 |
+| [Windows 10 では、Mac のセットアップ](setting-up-your-mac-with-windows-10.md) | 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。 |
 
 ## <a name="related-topics"></a>関連トピック
 
-**設計者と開発者向け**
-* [すべての Windows デバイスを対象としたユニバーサル Windows アプリの構築](https://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [UWP アプリの設計アセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+**設計者および開発者向け**
+* [すべての Windows デバイス用のユニバーサル Windows アプリの構築](https://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [UWP アプリのデザイン資産をダウンロードします。](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)

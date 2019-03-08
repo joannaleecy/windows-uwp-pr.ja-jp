@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, ゲーム チャット 2, ゲーム チャット, 音声通信
 ms.localizationpriority: medium
 ms.openlocfilehash: e963210091694a07114f10d5a3dc531a353621df
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117542"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653587"
 ---
 # <a name="migration-from-game-chat-to-game-chat-2"></a>ゲーム チャットからゲーム チャット 2 への移行
 
@@ -98,7 +98,7 @@ chatManager->HandleNewRemoteConsole(newDeviceIdentifier);
 
 ゲーム チャットは、このデバイスについて通知されると、すべてのローカル ユーザーに関する情報を含むパケットを生成し、リモート デバイスのゲーム チャット インスタンスに送信するために、これらのパケットをタイトルに提供します。 同様に、リモート デバイス上のゲーム チャットは、タイトルがゲーム チャットのローカル インスタンスを送信する先のリモート デバイス上のユーザー関する情報を含むパケットを精製します。 ローカル インスタンスが新しいリモート ユーザーに関する情報を含むパケットを受信すると、新しいリモート ユーザーは、`ChatManager::GetUsers()` 経由で利用可能なローカル インスタンスのユーザーのリストに追加されます。
 
-ゲーム チャットのインスタンスからユーザーの削除は、`ChatManager::RemoveLocalUserFromChatChannelAsync()` と次の呼び出しを通じて実行されます。 `ChatManager::RemoveRemoteConsoleAsync()`
+同様の呼び出しを通じて実行は、ゲームのチャット インスタンスからユーザーを削除する`ChatManager::RemoveLocalUserFromChatChannelAsync()`と `ChatManager::RemoveRemoteConsoleAsync()`
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 
@@ -116,7 +116,7 @@ chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(L"myLoc
 chat_user* chatUserB = chat_manager::singleton_instance().add_remote_user(L"remoteXboxUserId", 1);
 ```
 
-ユーザーがインスタンスに追加されたら、各リモート ユーザーと各ローカル ユーザーの間に「コミュニケーション関係」を構成する必要があります。 この例では、ユーザー A とユーザー B が同じチームに属しており、双方向通信が許可されていると仮定します。 `c_communicationRelationshiSendAndReceiveAll` は、GameChat2.h で定義されている、双方向通信を表す定数です。 この関係は、次のようにして構成できます。
+ユーザーがインスタンスに追加されたら、各リモート ユーザーと各ローカル ユーザーの間に「コミュニケーション関係」を構成する必要があります。 この例では、ユーザー A とユーザー B が同じチームに属しており、双方向通信が許可されていると仮定します。 `c_communicationRelationshiSendAndReceiveAll` GameChat2.h 双方向通信を表すための定数を定義します。 この関係は、次のようにして構成できます。
 
 ```cpp
 chatUserA->local()->set_communication_relationship(chatUserB, c_communicationRelationshipSendAndReceiveAll);
@@ -214,9 +214,9 @@ auto token = chatManager->OnTextMessageReceived +=
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 
-ゲーム チャット 2 では、アプリによる `chat_manager::start_processing_state_changes()` メソッドと `chat_manager::finish_processing_state_changes()` メソッドの定期的かつ頻繁な呼び出しを通じて、受信したテキスト メッセージなどの更新をアプリに提供します。 これらのメソッドは、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。
+ゲーム チャット 2 では、アプリによる `chat_manager::start_processing_state_changes()` メソッドの `chat_manager::finish_processing_state_changes()` 定期的かつ頻繁な呼び出しを通じて、受信したテキスト メッセージなどの更新をアプリに提供します。 これらのメソッドは、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。
 
-`chat_manager::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `game_chat_state_change` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、より具体的な型の基本構造を検査して、基本的な構造体を対応する詳細な型にキャストしてから、その更新を適切に処理する必要があります。 現在使用可能なすべての `game_chat_state_change` オブジェクトが終了した後は、`chat_manager::finish_processing_state_changes()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 例:
+`chat_manager::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `game_chat_state_change` 構造体ポインターの配列で報告されます。 アプリでは、配列を反復処理し、より具体的な型の基本構造を検査して、基本的な構造体を対応する詳細な型にキャストしてから、その更新を適切に処理する必要があります。 現在使用可能なすべての `game_chat_state_change` オブジェクトが終了した後は、`chat_manager::finish_processing_state_changes()` を呼び出すことによってその配列をゲーム チャット 2 に戻してリソースを解放する必要があります。 次に、例を示します。
 
 ```cpp
 uint32_t stateChangeCount;
@@ -257,7 +257,7 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 chatUser->GenerateTextMessage(L"Hello", false);
 ```
 
-2 番目のブール値パラメーターは、音声合成変換を制御します。 詳細については、[アクセシビリティ](#accessibility)を参照してください。 ゲーム チャットは、このメッセージを含むチャット パケットを生成します。 ゲーム チャットのリモート インスタンスには、`OnTextMessageReceived` イベント経由でテキスト メッセージが通知されます。
+2 番目のブール値パラメーターは、音声合成変換を制御します。 詳細については、次を参照してください。[アクセシビリティ](#accessibility)します。 ゲームのチャットでは、このメッセージを格納しているチャット パケットが生成されます。 ゲーム チャットのリモート インスタンスには、`OnTextMessageReceived` イベント経由でテキスト メッセージが通知されます。
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 
@@ -271,7 +271,7 @@ chatUser->local()->send_chat_text(L"Hello");
 
 ユーザー補助のために、テキスト チャットの入力と表示のサポートが必要です (詳細については、「[ユーザー補助](#accessibility)」を参照してください)。
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a>アクセシビリティ
 
 テキスト チャットの入力と表示のサポートは、ゲーム チャットおよびゲーム チャット 2 の両方に必要です。 テキスト入力が必須なのは、従来、物理キーボードを広範的に使用していないプラットフォームやゲーム ジャンルでも、ユーザーはこのシステムで、音声合成の支援技術を使用する場合があるためです。 同様に、ユーザーは音声からテキストの変換を使用できるようにこのシステムを設定する場合があるため、テキスト表示にも対応している必要があります。 ゲーム チャットおよびゲーム チャット 2 はいずれも、ユーザーのユーザー補助の設定を検出して考慮するメソッドを提供します。これらの設定に基づいて、条件付きでテキストのメカニズムを有効にすることができます。
 
@@ -287,7 +287,7 @@ chatUser->GenerateTextMessage(L"Hello", true);
 
 ### <a name="text-to-speech---game-chat-2"></a>音声合成 - ゲーム チャット 2
 
-ユーザーが音声合成を有効にしていると、`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` は 'true' を返します。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `chat_user::chat_user_local::synthesize_text_to_speech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 例:
+ユーザーが音声合成を有効にしていると、`chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` は 'true' を返します。 この状態が検出されると、アプリではテキスト入力の方法を提供する必要があります。 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `chat_user::chat_user_local::synthesize_text_to_speech()` メソッドに渡します。 ゲーム チャット 2 では、文字列を検出し、ユーザーの利用可能な音声設定に基づいてオーディオ データを合成します。 次に、例を示します。
 
 ```cpp
 chat_userA->local()->synthesize_text_to_speech(L"Hello");
@@ -303,7 +303,7 @@ chat_userA->local()->synthesize_text_to_speech(L"Hello");
 
 ユーザーが音声テキスト変換を有効にしていると、`chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` は true を返します。 この状態が検出されると、アプリは変換されたチャット メッセージに関連付けられた UI を提供する準備ができている必要があります。 ゲーム チャット 2 では各リモート ユーザーのオーディオを自動的に変換して、`game_chat_transcribed_chat_received_state_change` を通じて公開します。
 
-> `Windows::Xbox::UI::Accessibility` は、音声テキスト変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
+> `Windows::Xbox::UI::Accessibility` Xbox One クラス専用に作られた音声からテキストへの支援技術に重点を置いて、ゲーム内のテキストのチャットの単純なレンダリングを提供します。
 
 音声テキスト変換のパフォーマンスに関する考慮事項の詳細については、「[ゲーム チャット 2 の使用 - 音声テキスト変換のパフォーマンスに関する考慮事項](using-game-chat-2.md#speech-to-text-performance-considerations)」を参照してください。
 
@@ -368,7 +368,7 @@ switch (chatUser->chat_indicator())
 }
 ```
 
-## <a name="muting"></a>ミュート
+## <a name="muting"></a>ミュート 
 
 ## <a name="game-chat"></a>ゲーム チャット
 
@@ -392,13 +392,13 @@ switch (chatUser->chat_indicator())
 
 ### <a name="game-chat"></a>ゲーム チャット
 
-ゲーム チャットにを通じて、権限とプライバシーの情報が公開されている、`RestrictionMode`プロパティ。 これは、`GameChatUser::RestrictionMode` を調べることによって取得できます。
+ゲームのチャットを通じて特権とプライバシーの情報を公開する、`RestrictionMode`プロパティ。 これは、`GameChatUser::RestrictionMode` を調べることによって取得できます。
 
 ### <a name="game-chat-2"></a>ゲーム チャット 2
 
 ゲーム チャット 2 では、ユーザーが最初に追加されると、権限とプライバシーの制限の参照を実行します。この操作が完了するまで、ユーザーの `chat_user::chat_indicator()` は常に `game_chat_user_chat_indicator::silent` を返します。 ユーザーの通信が権限またはプライバシーの制限による影響を受ける場合、ユーザーの `chat_user::chat_indicator()` は `game_chat_user_chat_indicator::platform_restricted` を返します。 プラットフォーム通信制限は、音声チャットとテキスト チャットの両方に適用されます。テキスト チャットがプラットフォーム制限によりブロックされて音声チャットが制限されないインスタンスはなく、その逆もありません。
 
-`chat_user::chat_user_local::get_effective_communication_relationship()` を使用すると、不完全な権限とプライバシーの操作によってユーザーが通信できない場合の区別に役立ちます。 これを使用すると、ゲーム チャット 2 によって強制される通信リレーションシップが `game_chat_communication_relationship_flags` の形式で返されます。また、リレーションシップが構成されたリレーションシップと等しくない理由が `game_chat_communication_relationship_adjuster` の形式で返されます。 たとえば、参照操作が進行中の場合、`game_chat_communication_relationship_adjuster` は `game_chat_communication_relationship_adjuster::intializing` になります。 この方法は、開発シナリオとデバッグ シナリオで使用することを想定しています。UI に影響を与えるために使用しないでください (「[UI](#UI)」を参照してください)。
+`chat_user::chat_user_local::get_effective_communication_relationship()` 不完全な権限とプライバシーに関する操作のためにユーザーが通信できない場合に区別するために使用できます。 これを使用すると、ゲーム チャット 2 によって強制される通信リレーションシップが `game_chat_communication_relationship_flags` の形式で返されます。また、リレーションシップが構成されたリレーションシップと等しくない理由が `game_chat_communication_relationship_adjuster` の形式で返されます。 たとえば、参照操作が進行中の場合、`game_chat_communication_relationship_adjuster` は `game_chat_communication_relationship_adjuster::intializing` になります。 この方法は、開発シナリオとデバッグ シナリオで使用することを想定しています。UI に影響を与えるために使用しないでください (「[UI](#UI)」を参照してください)。
 
 ## <a name="cleanup"></a>クリーンアップ
 

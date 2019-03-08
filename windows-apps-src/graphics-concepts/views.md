@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: df106a400a7ba8c8f94aa6dd35325aabacd36eca
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920782"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663297"
 ---
 # <a name="views"></a>ビュー
 
@@ -36,14 +36,14 @@ ms.locfileid: "8920782"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="constant-buffer-view--cbv-.md">定数バッファー ビュー (CBV)</a></p></td>
-<td align="left"><p>定数バッファーには、シェーダーの定数データが含まれます。 これらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることにあります。</p></td>
+<td align="left"><p>定数バッファーには、シェーダーの定数データが含まれます。 それらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることです。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="vertex-buffer-view--vbv-.md">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</a></p></td>
 <td align="left"><p>頂点バッファーには、頂点のリストのデータが保持されます。 各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。 インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="shader-resource-view--srv-.md">シェーダー リソース ビュー (SRV) と順序指定されていないアクセス ビュー (UAV)</a></p></td>
+<td align="left"><p><a href="shader-resource-view--srv-.md">シェーダー リソース ビュー (SRV) と順序付けられていないアクセス ビュー (UAV)</a></p></td>
 <td align="left"><p>シェーダー リソース ビューは、通常、シェーダーがアクセスできる形式でテクスチャをラップします。 順序指定されていないアクセス ビューも同様の機能を提供しますが、任意の順序でテクスチャ (またはその他のリソース) の読み取りや書き込みを行うことができます。</p></td>
 </tr>
 <tr class="even">
@@ -56,15 +56,15 @@ ms.locfileid: "8920782"
 </tr>
 <tr class="even">
 <td align="left"><p><a href="depth-stencil-view--dsv-.md">深度ステンシル ビュー (DSV)</a></p></td>
-<td align="left"><p>深度ステンシル ビューは、深度とステンシルの情報を保持するための形式とバッファーを提供します。 深度バッファーは、近くにあるオブジェクトによって視界から遮られる、ビューアーには見えないピクセルの描画を省くために使われます。 ステンシル バッファーを使うと、定義された図形以外のすべての描画を省略することができます。</p></td>
+<td align="left"><p>深度ステンシル ビューは、深度とステンシルの情報を保持するための形式とバッファーを提供します。 深度バッファーは、近くにあるオブジェクトによって視界から遮られる、ビューアーには見えないピクセルの描画を省くために使われます。 ステンシル バッファーを使って、定義した図形以外のすべての描画をカリングすることができます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="stream-output-view--sov-.md">ストリーム出力ビュー (SOV)</a></p></td>
+<td align="left"><p><a href="stream-output-view--sov-.md">Stream 出力ビュー (SOV)</a></p></td>
 <td align="left"><p>ストリーム出力ビューを使うと、頂点、テセレーション、ジオメトリ シェーダーによって生成された頂点情報を、後で利用できるようにアプリケーションに戻すことができます。 たとえば、これらのシェーダーによってゆがめられたオブジェクトをアプリケーションに書き戻して、より正確な入力を物理エンジンや他のエンジンに提供できます。 ただし実際には、ストリーム出力ビューは、グラフィックス パイプラインの機能の中でも使われることが少ない機能です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="rasterizer-ordered-view--rov-.md">ラスタライザー順序指定ビュー (ROV)</a></p></td>
-<td align="left"><p>ラスタライザー順序指定ビューを使うと、深度バッファーの一部の制約に対処できます。特に、透明度を含む複数のテクスチャがあり、それらのすべてを同じピクセルに適用する場合に役立ちます。</p></td>
+<td align="left"><p><a href="rasterizer-ordered-view--rov-.md">ラスタライザー ビュー (ROV) 順序付け</a></p></td>
+<td align="left"><p>ラスタライザー順序指定ビューを使うと、深度バッファーの一部の制約に対処できます。特に、透明度が含まれた複数のテクスチャがあって、それらがすべて同じピクセルに適用される場合に有効です。</p></td>
 </tr>
 </tbody>
 </table>
@@ -74,7 +74,7 @@ ms.locfileid: "8920782"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D グラフィックスの学習ガイド](index.md)
+[Direct3D グラフィックス学習ガイド](index.md)
 
  
 

@@ -8,31 +8,31 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e2a721886509c49c60d663d491f8d49bc3c95e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933232"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659707"
 ---
 # <a name="property-json"></a>Property (JSON)
-マッチメイ キング要求条件のクライアントによって提供されるプロパティ データが含まれています。
+マッチメイ キング要求条件、クライアントによって提供されるプロパティのデータが含まれています。
 <a id="ID4EN"></a>
 
 
 ## <a name="property"></a>プロパティ
 
-プロパティ オブジェクトには、次仕様があります。
+プロパティ オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| id| string| このプロパティの id です。|
-| type| 32 ビット符号付き整数 | プロパティの型です。 サポートされる値は次のとおりです。 <ul><li>0 = 整数</li><li>1 = 文字列</li></ul>| 
+| id| string| このプロパティの id。|
+| type| 32 ビット符号付き整数 | プロパティの型。 サポートされている値は次のとおりです。 <ul><li>0 = 整数</li><li>1 = 文字列</li></ul>| 
 | value| string| このプロパティの値。|
 
 <a id="ID4EGC"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
 
 
 ```json
@@ -55,4 +55,4 @@ ms.locfileid: "8933232"
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)

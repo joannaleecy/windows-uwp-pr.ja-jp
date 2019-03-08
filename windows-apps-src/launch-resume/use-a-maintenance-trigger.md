@@ -4,24 +4,24 @@ description: デバイスが接続されているときに、MaintenanceTrigger 
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 53107ca6add4193737ab0d00497bbe6324bee44f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047011"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661857"
 ---
 # <a name="use-a-maintenance-trigger"></a>メンテナンス トリガーの使用
 
 **重要な API**
 
-- [**メンテナンス トリガー**](https://msdn.microsoft.com/library/windows/apps/hh700517)
+- [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 - [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
@@ -36,9 +36,9 @@ ms.locfileid: "9047011"
 新しい [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) オブジェクトを作成します。 2 つ目のパラメーター (*OneShot*) では、メンテナンス タスクを一度だけ実行するか、定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* でバックグラウンド タスクを実行する間隔を指定します。
 
 > [!NOTE]
-> *FreshnessTime*は 15 分未満に設定されている場合、バック グラウンド タスクを登録する際に、例外がスローされます。
+> 場合*FreshnessTime*がバック グラウンド タスクの登録を試みているときに例外がスローに未満、15 分に設定します。
 
-次のコード例では、1 時間に 1 回実行するトリガーを作成します。
+このコード例では、1 時間に 1 回実行するトリガーを作成します。
 
 ```csharp
 uint waitIntervalMinutes = 60;
@@ -108,7 +108,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 メモリ不足の例外が検出されないか、検出されてもアプリによって処理されない場合、バックグラウンド タスクは、警告や OnCanceled イベントの発生なしに終了します。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
 
 > [!NOTE]
-> ユニバーサル Windows プラットフォーム アプリでは、バック グラウンド トリガーの種類のいずれかを登録する前に、 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)を呼び出す必要があります。
+> ユニバーサル Windows プラットフォーム アプリを呼び出す必要があります[ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485)バック グラウンドのトリガーの種類のいずれかを登録する前にします。
 
 アプリに対する更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
@@ -117,16 +117,16 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="related-topics"></a>関連トピック
 
-* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)。
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクによるライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
+* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでバック グラウンド タスクを宣言します。](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)
+* [バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
+* [バック グラウンド タスクを登録します。](register-a-background-task.md)
+* [バック グラウンド タスクでシステム イベントに応答します。](respond-to-system-events-with-background-tasks.md)
+* [バック グラウンド タスクを実行するための条件を設定します。](set-conditions-for-running-a-background-task.md)
+* [バック グラウンド タスクからのライブ タイルを更新します。](update-a-live-tile-from-a-background-task.md)
+* [タイマーでバック グラウンド タスクを実行します。](run-a-background-task-on-a-timer-.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
+* [トリガーする方法を中断、再開、および (デバッグ) 場合は、UWP アプリでイベントをバック グラウンド](https://go.microsoft.com/fwlink/p/?linkid=254345)

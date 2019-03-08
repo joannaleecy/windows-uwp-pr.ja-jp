@@ -4,14 +4,14 @@ description: ここでは、アプリで利用できない予約済みのファ�
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921860"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650627"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>予約済みのファイルと URI スキーム名
 
@@ -35,7 +35,7 @@ URI の関連付けを使用すると、別のアプリで特定の URI スキ�
 <tr><td>.gif</td><td>.mp3</td><td>.tiff</td><td>.xml</td></tr>
 <tr><td>.hdp</td><td>.mp4</td><td>.txt</td><td>.xsl</td></tr>
 <tr><td>.htm</td><td>.one</td><td>.url</td><td>.zip</td></tr>
-<tr><td>.html</td><td>.onetoc2</td><td>.vcf</td><td></td></tr>
+<tr><td>.html を見ることができます。</td><td>.onetoc2</td><td>.vcf</td><td></td></tr>
 <tr><td>.ico</td><td>.p7b</td><td>.wav</td><td></td></tr>
 </table> 
 
