@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: eaa148972ce1e65056470a6c4082cb4e50de3f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918315"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598567"
 ---
 # <a name="handlesquery"></a>/handles/query
 セッション ハンドルのクエリを作成する POST 操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  
+> この URI は、2015年マルチ プレーヤーによって使用され、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 テンプレートのコントラクト/104 105 またはそれ以降で使用するものでは。  
 
  
 <a id="ID4EQ"></a>
@@ -30,7 +30,7 @@ sessiondirectory.xboxlive.com
 
  
 ## <a name="remarks"></a>注釈
-この URI は、ハンドルのクエリをサポートします。 クエリ文字列とバッチであり、セッション クエリとは異なりは、ハンドルのクエリは、クエリ プロセッサ スタイルを使用します。 最大 100 ハンドルがサポートされています。  
+この URI は、ハンドルのクエリをサポートします。 セッションのクエリは、文字列とバッチのクエリとは異なりは、ハンドルのクエリは、クエリ プロセッサのスタイルを使用します。 最大 100 のハンドルがサポートされます。  
 <a id="ID4E2"></a>
 
  
@@ -44,11 +44,11 @@ sessiondirectory.xboxlive.com
 
 [POST (/handles/query)](uri-handlesquerypost.md)
 
-&nbsp;&nbsp;セッション ハンドルに対するクエリを作成します。
+&nbsp;&nbsp;セッション ハンドルのクエリを作成します。
 
 [POST (/handles/query?include=relatedInfo)](uri-handlesqueryincludepost.md)
 
-&nbsp;&nbsp;関連するセッションの情報が含まれるセッション ハンドルに対するクエリを作成します。
+&nbsp;&nbsp;関連するセッションの情報を含むセッション ハンドルのクエリを作成します。
  
 <a id="ID4EQB"></a>
 
@@ -60,6 +60,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリの Uri](atoc-reference-sessiondirectory.md)
 
    

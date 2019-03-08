@@ -3,14 +3,14 @@ title: ファイルに書き込むためのベスト プラクティス
 description: FileIO と PathIO クラスのメソッドを記述するさまざまなファイルを使用するためのベスト プラクティスについて説明します。
 ms.date: 02/06/2019
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115709"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605837"
 ---
 # <a name="best-practices-for-writing-to-files"></a>ファイルに書き込むためのベスト プラクティス
 
@@ -19,139 +19,139 @@ ms.locfileid: "9115709"
 * [**FileIO クラス**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)
 * [**PathIO クラス**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)
 
-[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスの**書き込み**メソッドを使用して、ファイル システムの I/O 操作を実行する場合、一般的な問題のセットに開発者が実行場合があります。 たとえば、一般的な問題は次のとおりです。
+開発者の一般的な問題のセットに実行を使用する場合、**書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラス ファイル システム I/O 操作を実行します。 たとえば、一般的な問題が含まれます。
 
-• ファイルには、•、アプリは、メソッドのいずれかを呼び出すときに例外を受け取る部分的に書き込まれます。 • の背後にある操作のままにします。ターゲット ファイル名のようなファイル名を持つ TMP ファイルを削除します。
+• ファイルには、メソッドのいずれかを呼び出して例外を受け取った • アプリ部分的に書き込まれます。 • の背後にある操作のままにします。ターゲット ファイル名のようなファイル名を持つ TMP ファイルを削除します。
 
-[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスの**記述**方法を以下に示します。
+**書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスには、次が含まれます。
 
 * **WriteBufferAsync**
 * **WriteBytesAsync**
 * **WriteLinesAsync**
 * **WriteTextAsync**
 
- この記事では、それらを使用する方法とタイミングは開発者のこれらのメソッドのしくみの詳細をより深く理解を提供します。 この記事では、ガイドラインを提供し、すべての考えられるファイル I/O の問題のソリューションを提供しません。 
+ この記事では、それらを使用するタイミングと方法は開発者のこれらのメソッドの動作に関する詳細情報をより深く理解します。 この記事では、ガイドラインを提供し、すべての使用可能なファイル I/O の問題に対するソリューションを提供しようとはしません。 
 
 > [!NOTE]
-> この記事では、例やディスカッションで**FileIO**方法について説明します。 ただし、 **PathIO**メソッドと同様のパターンに従うし、この記事のガイダンスのほとんどはこれらのメソッドにも適用されます。 
+> この記事の重点、 **FileIO**メソッドの例やディスカッション。 ただし、 **PathIO**メソッドと同様のパターンに従うし、この記事のガイダンスのほとんどがもこれらのメソッドに適用されます。 
 
 ## <a name="conveience-vs-control"></a>コントロールと Conveience
 
-[**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)オブジェクトは、Win32 のネイティブのプログラミング モデルのようなファイル ハンドルではありません。 代わりに、 [**StorageFile**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)は、その内容を操作するメソッドを持つファイルの表現です。
+A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)オブジェクトは、ネイティブの Win32 プログラミング モデルのようなファイル ハンドルではありません。 代わりに、 [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)はその内容を操作するメソッドを使用するファイルの表現です。
 
-**StorageFile**と I/O を実行する場合は、この概念を理解すると便利です。 たとえば、[ファイルへの書き込み](quickstart-reading-and-writing-files.md#writing-to-a-file)] セクションでは、ファイルへの書き込みを 3 つの方法が表示されます。
+この概念を理解することは、I/O を実行する場合に役立ちます、 **StorageFile**します。 など、[ファイルへの書き込み](quickstart-reading-and-writing-files.md#writing-to-a-file)ファイルへの書き込みに 3 つの方法について説明します。
 
-* [**FileIO.WriteTextAsync**](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)メソッドを使用します。
-* バッファーを作成し、し[**FileIO.WriteBufferAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync)メソッドを呼び出すことです。
-* ストリームを使用して、4 つのステップ モデルには:
+* 使用して、 [ **FileIO.WriteTextAsync** ](https://docs.microsoft.com/uwp/api/windows.storage.fileio.writetextasync)メソッド。
+* バッファーを作成し、呼び出すことによって、 [ **FileIO.WriteBufferAsync** ](https://docs.microsoft.com/en-us/uwp/api/windows.storage.fileio.writebufferasync)メソッド。
+* ストリームを使用して 4 つのステップ モデル:
   1. [開いている](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.openasync)ファイル ストリームを取得します。
-  2. [取得する](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)出力ストリームをします。
-  3. [**DataWriter**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)オブジェクトを作成し、対応する**書き込み**メソッドを呼び出します。
-  4. [コミット](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync)データ ライターと、出力ストリーム[をフラッシュ](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync)のデータ。
+  2. [取得](https://docs.microsoft.com/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)出力ストリーム。
+  3. 作成、 [ **datawriter の各**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)オブジェクトし、対応する呼び出し**書き込み**メソッド。
+  4. [コミット](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter.storeasync)データ ライターのデータと[フラッシュ](https://docs.microsoft.com/uwp/api/windows.storage.streams.ioutputstream.flushasync)出力ストリーム。
 
-最初の 2 つのシナリオは、アプリで最もよく使用されるものです。 1 つの操作でファイルへの書き込みが容易コードおよび管理するになり、また、アプリの責任ファイル I/O の複雑さの多くを扱うから削除します。 ただし、この利便性はコストがかかる: 制御操作全体や特定の時点でのエラーをキャッチする機能が失われる。
+最初の 2 つのシナリオとは、アプリで最もよく使用されるものです。 1 回の操作でファイルへの書き込みが簡単にコーディングし、保守、およびファイル I/O の複雑さの多くを扱うからアプリの役目が削除されます。 ただし、この便利な機能はコストがかかります。 制御操作全体や特定の時点でエラーをキャッチする機能が失われる。
 
-## <a name="the-transactional-model"></a>トランザクションのモデル
+## <a name="the-transactional-model"></a>トランザクション モデル
 
-[**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスの**書き込み**メソッドは、追加のレイヤーを上記で説明した 3 つ目の書き込みモデルでの手順をラップします。 このレイヤーは、記憶域のトランザクションでカプセル化されます。
+**書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラス、3 番目の書き込み時に、手順をラップします。追加のレイヤーで、上記で説明したモデル。 このレイヤーは、ストレージ トランザクションにカプセル化します。
 
-データの書き込み中に問題が発生する場合に備えて、元のファイルの整合性の保護、**書き込み**メソッドは[**OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync)を使用してファイルを開くことによってトランザクション モデルを使用します。 このプロセスは、 [**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)オブジェクトを作成します。 このトランザクション オブジェクトが作成されたら、Api は、[ファイルへのアクセス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)のサンプルや[**StorageStreamTransaction**](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction) 」の記事のコード例を次の同様の方法データを書き込みます。
+データの書き込み中に問題が発生した場合、元のファイルの整合性を保護する、**書き込み**メソッドを使用してファイルを開くことで、トランザクションのモデルを使用して[ **OpenTransactedWriteAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.opentransactedwriteasync). このプロセスを作成、 [ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)オブジェクト。 Api と同様の方法を次データの書き込みはこのトランザクション オブジェクトの作成後、[ファイル アクセス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)サンプルやコード例で、 [ **StorageStreamTransaction** ](https://docs.microsoft.com/uwp/api/windows.storage.storagestreamtransaction)記事。
 
-次の図は、基になるタスクによって実行される、成功の書き込み操作で**WriteTextAsync**メソッドです。 次の図は、操作の簡素化されたビューを提供します。 たとえば、異なるスレッドでテキストのエンコードと非同期の完了などの手順をスキップします。
+次の図で実行される基になるタスクを示しています。、、 **WriteTextAsync**成功した書き込み操作のメソッド。 この図では、操作の簡略化されたビューを提供します。 たとえば、異なるスレッドでテキストのエンコードと非同期の完了などの手順をスキップします。
 
-![ファイルへの書き込みの UWP API の呼び出しのシーケンス図](images/file-write-call-sequence.svg)
+![ファイルへの書き込みの UWP API 呼び出しのシーケンス図](images/file-write-call-sequence.svg)
 
-ストリームを使用して、複雑な 4 つのステップ モデルではなく、 [**FileIO**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[**PathIO**](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスの**書き込み**メソッドを使用する利点は次のとおりです。
+使用する利点、**書き込み**のメソッド、 [ **FileIO** ](https://docs.microsoft.com/uwp/api/Windows.Storage.FileIO)と[ **PathIO** ](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスの代わりにストリームを使用してより複雑な 4 つのステップのモデルの次のようには。
 
-* 中間すべての手順をエラーを含むを処理する 1 つの API の呼び出しです。
-* 問題が発生した場合、元のファイルが保持されます。
-* システムの状態は、可能な限りクリーンアップを保持するしようとしています。
+* 中間すべてのステップをエラーなどの処理を 1 回の API 呼び出し。
+* 問題が発生した場合、元のファイルは保持されます。
+* システム状態は保持可能な限りクリーンアップしようとします。
 
-ただし、すぎると考えられる中間障害点では、障害が発生した可能性が高くがあります。 エラーが発生した場合は、プロセスが失敗した場所がわかりにくい場合があります。 次のセクションでは、いくつかの**書き込み**メソッドを使用する場合に発生し、可能な解決策を提供する可能性がありますエラーを示します。
+ただし、多く可能な中間一点障害は、障害の可能性が高くがあります。 エラーが発生したときに、プロセスが失敗した場所を理解しにくい場合があります。 次のセクションでは、表示を使用する場合に発生する可能性がエラーのいくつか、**書き込み**メソッドと考えられる解決策を提供します。
 
-## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>FileIO と PathIO クラスの書き込みメソッドの一般的なエラー コード
+## <a name="common-error-codes-for-write-methods-of-the-fileio-and-pathio-classes"></a>FileIO と PathIO クラスの Write メソッドの一般的なエラー コード
 
-この表では、アプリの開発者が**書き込み**メソッドを使用する場合に発生する一般的なエラー コードを示します。 テーブルの手順は、前の図の手順に対応します。
+このテーブルを使用する場合、アプリの開発者が直面する一般的なエラー コードの表示、**書き込み**メソッド。 表の手順は、前の図の手順に対応します。
 
-|  エラーの名前 (value)  |  手順  |  原因  |  解決策  |
+|  エラー名 (値)  |  手順  |  原因  |  解決策  |
 |----------------------|---------|----------|-------------|
-|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  元のファイルは、場合によって、以前の操作の削除対象としてマークする可能性があります。  |  操作を再試行します。</br>ファイルへのアクセスが同期されることを確認します。  |
-|  ERROR_SHARING_VIOLATION (0X80070020)  |  5  |  専用の別の書き込みによっては、元のファイルが開きます。   |  操作を再試行します。</br>ファイルへのアクセスが同期されることを確認します。  |
-|  ERROR_UNABLE_TO_REMOVE_REPLACED (0X80070497)  |  19 20  |  使用されているために、元のファイル (file.txt) を置き換えることができませんでした。 別のプロセスまたは操作は、ファイルへのアクセスを獲得に置き換えることができます。  |  操作を再試行します。</br>ファイルへのアクセスが同期されることを確認します。  |
-|  ERROR_DISK_FULL (0X80070070)  |  7、14、16、20  |  トランザクションのモデル、余分なファイルを作成し、この余分な記憶域を消費します。  |    |
-|  ERROR_OUTOFMEMORY (0X8007000E)  |  14、16  |  これは、問題は、複数の未処理の I/O 操作や大規模なファイル サイズの問題が発生します。  |  ストリームを制御することより詳細なアプローチでは、エラーを解決する可能性があります。  |
-|  E_FAIL (0X80004005) |  任意  |  その他  |  操作を再試行します。 まだに失敗した場合は、プラットフォーム エラー場合があり、不整合な状態であるため、アプリが終了する必要があります。 |
+|  ERROR_ACCESS_DENIED (0X80070005)  |  5  |  場合によって、前の操作からの削除元のファイルをマークする可能性があります。  |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
+|  ERROR_SHARING_VIOLATION (0x80070020)  |  5  |  元のファイルが別の排他的書き込みによって開かれます。   |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
+|  ERROR_UNABLE_TO_REMOVE_REPLACED (0x80070497)  |  19-20  |  使用されているために、元のファイル (file.txt) を置き換えられませんでした。 別のプロセスまたは操作は、ファイルへのアクセスを獲得してから、前に、置き換えることができます。  |  操作を再試行します。</br>ファイルへのアクセスが同期されていることを確認します。  |
+|  ERROR_DISK_FULL (0X80070070)  |  7, 14, 16, 20  |  トランザクション モデルが、余分なファイルを作成し、これは追加の記憶域を消費します。  |    |
+|  ERROR_OUTOFMEMORY (0x8007000E)  |  14, 16  |  これは、複数の未処理の I/O 操作またはより大きなファイル サイズのため発生することができます。  |  ストリームを制御することで詳細な方法は、エラーを解決する可能性があります。  |
+|  E_FAIL (0X80004005) |  任意  |  その他  |  操作を再試行します。 まだ失敗する場合は、プラットフォームのエラーがあり、不整合な状態になっているため、アプリが終了する必要があります。 |
 
 ## <a name="other-considerations-for-file-states-that-might-lead-to-errors"></a>エラーにつながる可能性のあるファイルの状態に関するその他の考慮事項
 
-**書き込み**メソッドによって返されたエラー、またお客様には、ファイルに書き込むときに、アプリに期待のガイドラインをいくつかを次に示します。
+によって返されるエラーとは別に、**書き込み**メソッド、ファイルに書き込むときに、アプリに期待をいくつかのガイドラインを示します。
 
-### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>操作が完了した場合にのみファイルにデータが書き込まれました。
+### <a name="data-was-written-to-the-file-if-and-only-if-operation-completed"></a>操作が完了した場合にのみ、データがファイルに書き込まれました。
 
-アプリしないでくださいデータに関するすべての前提ファイルの書き込み操作が進行中。 一貫性のないデータを招く可能性が操作が完了する前に、ファイルにアクセスしようとしています。 アプリは、未処理の I/o を追跡の担当する必要があります。
+アプリしないでデータに関するすべての前提条件ファイルの書き込み操作の進行中。 操作が完了する前に、ファイルにアクセスしようとしています。 は、データの矛盾を生じる可能性があります。 アプリは、担当の未処理 I/o 数を追跡する必要があります。
 
-### <a name="readers"></a>リーダー
+### <a name="readers"></a>Readers
 
-ファイルに書き込まれてもは、ていねいリーダーで使用されている場合 (つまり、 [**FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)で開くと、後続の読み取りエラーで失敗、ERROR_OPLOCK_HANDLE_CLOSED (0x80070323)。 場合によってアプリでは、**書き込み**操作の進行中に読み取りのファイルをもう一度開く再試行してください。 これにより、競合状態を**記述**する置き換えができないため、元のファイルを上書きしようとしたとき最終的に失敗した可能性があります。
+書き込まれるになっているファイルが正常なリーダーによって使用されている場合 (では、開かれた[ **FileAccessMode.Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode)、それ以降の読み取りは ERROR_OPLOCK_HANDLE_CLOSED (0x80070323) エラーで失敗します。 読み取り中にもう一度ファイルを開くをアプリが再試行することがあります、**書き込み**操作が進行中です。 これを競合状態があります、**書き込み**に置き換えることができませんので、元のファイルを上書きしようとするときは最終的に失敗します。
 
 ### <a name="files-from-knownfolders"></a>KnownFolders からのファイル
 
-アプリは、 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)のいずれかの上にあるファイルにアクセスしようとする唯一のアプリをできない可能性があります。 保証、操作が成功した場合は、アプリがファイルに記述内容が一定のままですが、ファイルを読み取ろうとした、次回はありません。 また、共有またはへのアクセスにこのシナリオで一般的なエラーを拒否されます。
+アプリのいずれかに置かれているファイルへのアクセスを試行している唯一のアプリをできない可能性があります、 [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)します。 操作が成功した場合、アプリがファイルに書き込んだ内容が一定に保つように保証ファイルを読み取ろうとした次の時間はありません。 また、共有またはアクセスには、このシナリオでますます一般的になるエラーが拒否されました。
 
-### <a name="conflicting-io"></a>競合する I/O
+### <a name="conflicting-io"></a>競合している I/O
 
-アプリのローカル データ内のファイルの**書き込み**メソッドを使用していて、いくつか注意が必要、同時実行のエラーの可能性を下げることができます。 複数の**書き込み**操作は、ファイルを同時に送信されるが場合、は、ファイルにどのようなデータが最終的には保証されません。 これを軽減するためには、ファイルへの**書き込み**操作がアプリにシリアル化をお勧めします。
+アプリで使用する場合、同時実行エラーの可能性を下げることができます、**書き込み**メソッドのローカルのデータがいくつか注意が必要でのファイルが必要です。 複数**書き込み**操作に送信される同時に、ファイル、ファイルに最終的にどのようなデータに関する保証はありません。 これを防ぐことをお勧めします、アプリがシリアル化**書き込み**ファイルを操作します。
 
 ### <a name="tmp-files"></a>~ TMP ファイル
 
-場合によっては、(たとえば、するアプリが中断または終了、OS によって場合)、操作が強制的に取り消された場合、トランザクションまたはされていないコミット適切に終了します。 ファイルの背後にあるこのままでかまいません、(. ~ TMP) 拡張機能です。 これらの一時ファイルを削除する (存在する場合、アプリのローカル データ) を検討してください。 アプリのアクティブ化を処理する場合。
+場合によっては場合 (たとえばアプリが中断または、OS によって終了場合)、操作が強制的に取り消された、トランザクションがコミットまたはいない適切に閉じられました。 ファイルを残すこれを (. ~ TMP) 拡張機能。 (アプリのローカル データに存在する) 場合は、これらの一時ファイルを削除を検討してアプリのアクティブ化を処理するときにします。
 
-## <a name="considerations-based-on-file-types"></a>ファイルの種類に基づいてに関する考慮事項
+## <a name="considerations-based-on-file-types"></a>ファイルの種類に基づくに関する考慮事項
 
-いくつかのエラーは、ファイルにアクセス中、頻度と、ファイル サイズの種類に応じてより一般的なになることができます。 一般に、アプリがアクセスできるファイルの 3 つのカテゴリがあります。
+ファイルにアクセス中、頻度や、ファイル サイズの種類に応じてより普及しているいくつかのエラーになります。 一般に、アプリがアクセスできるファイルの 3 つに分類されます。
 
-* ファイルが作成され、アプリのローカル データ フォルダー内のユーザーを編集します。 これらを作成し、アプリを使用している場合にのみを編集し、アプリ内でのみ存在します。
-* アプリのメタデータ。 アプリでは、独自の状態を追跡するのにこれらのファイルを使用します。
-* アプリがアクセスする機能を宣言されているファイル システムの場所にその他のファイル。 これらは、最もよく、 [**KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)のいずれかにあります。
+* ファイルが作成され、アプリのデータをローカル フォルダーにユーザーを編集します。 これらが作成され、アプリを使用している場合にのみ編集して、アプリ内でのみ存在します。
+* アプリのメタデータ。 アプリは、独自の状態を追跡するのにこれらのファイルを使用します。
+* その他のファイル、アプリがアクセスする機能を宣言されているファイル システム内の場所にします。 いずれかでにあるこれらは通常、 [ **KnownFolders**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)します。
 
-アプリでは、アプリのパッケージ ファイルの一部になっているし、は、アプリによってのみアクセスするために、ファイルの最初の 2 つのカテゴリの完全なコントロールがあります。 最後の項目内のファイル、アプリが、他のアプリと OS のサービスがファイルにアクセスする同時に注意してくださいである必要があります。
+アプリは、アプリのパッケージ ファイルの一部であるし、アプリによって排他アクセスがあるため、ファイルの最初の 2 つのカテゴリに対するフル コントロールが。 最後のカテゴリ内のファイル、アプリが、他のアプリと OS のサービスがファイルにアクセスする同時に注意してください必要があります。
 
-アプリによっては、ファイルへのアクセスは頻度の異なることができます。
+アプリによっては、ファイルへのアクセス頻度に変わります。
 
-* 非常に低いします。 これらは、通常、とき、アプリの起動とが保存されると、アプリが中断されたときに開いているファイルです。
-* 低します。 これらは、ユーザーは、具体的には、に対してアクションを実行 (保存または読み込みなど) のファイルです。
-* 中程度またはハイします。 これらは、アプリに更新する必要がありますのデータ (たとえば、自動機能または定数のメタデータを追跡) 常にファイルです。
+* 非常に低いです。 通常、これらは、ファイルを開くときに、アプリの起動とが保存した後、アプリが中断されている場合です。
+* 低。 これらは、ユーザーが (保存または読み込みなど) での作業を行った具体的にはファイルです。
+* 中または高です。 これらは、アプリに更新する必要がありますのデータ (たとえば、自動保存機能または定数のメタデータを追跡) 常にファイルです。
 
-ファイルのサイズ、 **WriteBytesAsync**メソッドでは、次のグラフ内のパフォーマンス データを検討してください。 このグラフでは、10000 操作管理された環境でのファイル サイズごとの平均パフォーマンス経由で操作 vs ファイルのサイズを完了する時間を比較します。
+ファイルのサイズ、パフォーマンス データの次のグラフを検討してください、 **WriteBytesAsync**メソッド。 このグラフは、完全な操作とファイル サイズは、管理された環境でのファイル サイズあたり 10,000 操作の平均のパフォーマンスを時間を比較します。
 
 ![WriteBytesAsync パフォーマンス](images/writebytesasync-performance.png)
 
-Y 軸の時間の値は、さまざまなハードウェアと構成別の絶対時刻の値が生成されますのでこのグラフから意図的に省略されます。 ただし、マイクロソフトによるテストでこれらの傾向を監視していた一貫しています。
+時刻の値、y 軸には、さまざまなハードウェアおよび構成はさまざまな絶対時刻値を生成するためこのグラフから意図的に省略されます。 ただし、マイクロソフトによるテストでこのような傾向を監視していた一貫しています。
 
-* 非常に小さいファイル (_lt _ = 1 MB): 操作を完了するには一貫して高速です。
-* 大きなファイル (_gt 1 MB): 急激に増加する操作を完了する時間を開始します。
+* 非常に小さなファイル (< = 1 MB)。操作を完了に時間が一貫して高速です。
+* 大きなファイル (> 1 MB)。操作を完了するには、指数関数的に増加を開始します。
 
-## <a name="io-during-app-suspension"></a>アプリの中断中の I/O
+## <a name="io-during-app-suspension"></a>アプリの中断中に I/O
 
-アプリは必要がありますの中断の処理する場合の状態情報を保持するまたはメタデータ後のセッションで使用するために設計されています。 アプリの中断に関する背景情報は、[アプリのライフ サイクル](../launch-resume/app-lifecycle.md)と[このブログ記事](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)を参照してください。
+アプリは、状態情報の保持またはメタデータを以降のセッションで使用する場合は、中断を処理するために設計する必要があります。 アプリの中断に関する背景情報は、次を参照してください。[アプリのライフ サイクル](../launch-resume/app-lifecycle.md)と[このブログの投稿](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)します。
 
-OS がアプリでは、延長実行を許可しない限り、そのすべてのリソースを解放し、そのデータを保存するには、5 秒間、アプリが中断されたときがあります。 最適な信頼性とユーザー エクスペリエンス、常に一時停止のタスクを処理する必要が時間が限られていると仮定します。 5 秒間の一時停止のタスクを処理するための期間中に、次のガイドラインを考慮してください。
+OS がアプリに延長実行を許可しない限り、すべてのリソースを解放し、そのデータを保存するには、5 秒間、アプリが中断されている場合があります。 最高の信頼性とユーザー エクスペリエンス、常に中断タスクを処理する必要がある時間は限られて前提としています。 5 秒間中断タスクを処理するための期間中に、次のガイドラインを考慮してください。
 
-* I/O をフラッシュとリリースの操作による競合を回避するために最小限に抑えるしようとしてください。
-* 何百もミリ秒以上を記述するを必要とするファイルの記述しないでください。
-* アプリは、**書き込み**メソッドを使用している場合は、これらのメソッドを必要とするすべての中間手順に留意してください。
+* フラッシュとリリースの操作によって発生する競合状況を回避するために最低限に I/O を維持しようとしてください。
+* 数百ミリ秒以上書き込むに必要なファイルを記述しないでください。
+* アプリで使用する場合、**書き込み**メソッド、留意してこれらのメソッドを必要とするすべての中間手順。
 
-場合は、少量の状態データでは、変換されたアプリは中断された動作、ほとんどの場合できますメソッドを使って**書き込み**データをフラッシュします。 ただし、アプリは、大量の状態データを使用している場合は、直接データを格納するストリームを使用して検討してください。 これは、**書き込み**の方法のトランザクションのモデルで導入された遅延時間を減らすために役立ちます。 
+アプリの動作は、少量の状態データの中断中に場合、ほとんどの場合に使用できます、**書き込み**メソッドは、データをフラッシュします。 ただし、アプリは、大量の状態データを使用している場合は、直接データを格納するストリームを使用して検討してください。 トランザクション モデルでの遅延を減らすこうと、**書き込み**メソッド。 
 
-たとえば、 [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension)サンプルを参照してください。
+例については、次を参照してください。、 [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension)サンプル。
 
 ## <a name="other-examples-and-resources"></a>その他の例とリソース
 
-次に例をいくつかと、特定のシナリオには、その他のリソースを示します。
+いくつかの例とその他のリソースを特定のシナリオを次に示します。
 
 ### <a name="code-example-for-retrying-file-io-example"></a>ファイル I/O の例を再試行するためのコード例
 
-書き込みは、ユーザーが選ぶと、ファイルを保存した後に実行すると想定すると (c#)、書き込みを再試行する方法について擬似コード例を次に示します。
+書き込みを再試行する方法の擬似コードの例を次に示します (C#)、ユーザーは保存するためのファイルを取得した後で行うには、書き込みと仮定した場合します。
 
 ```csharp
 Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
@@ -190,8 +190,8 @@ else
 
 ### <a name="synchronize-access-to-the-file"></a>ファイルへのアクセスを同期します。
 
-[並列プログラミング .NET ブログで](https://blogs.msdn.microsoft.com/pfxteam/)は、並列プログラミングに関するガイダンスについては優れたリソースです。 具体的には、 [AsyncReaderWriterLock に関する投稿](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)するには、読み取りの同時アクセスできるようにすることの書き込みのファイルへの排他的アクセスを管理する方法について説明します。 留意そのシリアル化され、I/O の影響のパフォーマンス。
+[.NET ブログでの並列プログラミング](https://blogs.msdn.microsoft.com/pfxteam/)ガイダンスについては、並列プログラミングに関する優れたリソースです。 具体的には、 [AsyncReaderWriterLock について投稿](https://blogs.msdn.microsoft.com/pfxteam/2012/02/12/building-async-coordination-primitives-part-7-asyncreaderwriterlock/)同時の読み取りアクセスを許可するときに書き込み、ファイルへの排他アクセスを維持する方法について説明します。 留意そのシリアル化は I/O に影響を与えるパフォーマンス。
 
 ## <a name="see-also"></a>関連項目
 
-* [ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md)
+* [作成、書き込み、およびファイルの読み取り](quickstart-reading-and-writing-files.md)

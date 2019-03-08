@@ -1,21 +1,21 @@
 ---
 title: アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
-description: アウト プロセス バック グラウンド タスクを移植する、フォア グラウンド アプリ プロセス内で実行されるインプロセス バック グラウンド タスク。
+description: フォア グラウンド アプリのプロセス内で実行されるプロセス内のバック グラウンド タスクに、プロセス外のバック グラウンド タスクを移植します。
 ms.date: 09/19/2018
 ms.topic: article
-keywords: windows 10、uwp、バック グラウンド タスク、アプリ サービス
+keywords: アプリ サービス、windows 10、uwp、バック グラウンド タスク
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 97dd249165877591743892a136d51e0969dd902a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932088"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601207"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する
 
-インプロセス アクティビティには、アウト プロセス (OOP) バック グラウンド アクティビティを移植する最も簡単な方法では、アプリケーション内で、 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)メソッドのコードと[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)から開始します。 ここで説明されている手法でない shim を OOP のバック グラウンド タスクから、インプロセス バック グラウンド タスクを作成する方法そのについて書き直して (または移植)、プロセス内でのバージョンに OOP のバージョン。
+プロセス アクティビティには、アウト プロセス (OOP) バック グラウンド アクティビティを移植する最も簡単な方法を取り込む、 [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)メソッドは、アプリケーション内のコードし、開始から[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). ここで説明されている手法が、OOP のバック グラウンド タスクから、プロセス内のバック グラウンド タスクに shim を作成する方法について書き換え (または移植) をプロセス内のバージョンに、OOP バージョン。
 
 アプリに複数バックグラウンド タスクがある場合、[バックグラウンドのアクティブ化のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation) に、`BackgroundActivatedEventArgs.TaskInstance.Task.Name` を使って開始されるタスクを識別する方法が示されています。
 
@@ -24,4 +24,4 @@ ms.locfileid: "8932088"
 ## <a name="background-tasks-and-trigger-types-that-cannot-be-converted"></a>変換できないバックグラウンド タスクとトリガーの種類
 
 * インプロセスのバックグラウンド タスクでは、VoIP バックグラウンド タスクのアクティブ化がサポートされていません。
-* インプロセス バックグラウンド タスクでは、[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx)、**IoTStartupTask** の各トリガーがサポートされていません。
+* プロセス内のバック グラウンド タスクは、次のトリガーをサポートしません。[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、 [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx)と**IoTStartupTask**
