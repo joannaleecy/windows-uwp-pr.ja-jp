@@ -1,31 +1,31 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: このセクションでは、以前のバージョンの windows 8.1 から windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
+description: このセクションでは、以前のバージョンの Windows 8.1、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady の web アプリを変更する方法について説明します。
 title: PlayReady の Encrypted Media Extension
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047294"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598617"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension
 
 
 
-このセクションでは、以前のバージョンの windows 8.1 から windows 10 バージョンに加えられた変更をサポートするために、PlayReady web アプリを変更する方法について説明します。
+このセクションでは、以前のバージョンの Windows 8.1、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady の web アプリを変更する方法について説明します。
 
 Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
 
 ## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady の Encrypted Media Extension の新機能
 
-このセクションでは、windows 10 で PlayReady コンテンツ保護を有効にする PlayReady 暗号化メディア拡張機能 (EME) に加えられた変更の一覧を示します。
+このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にする PlayReady Encrypted Media Extension (EME) に加えられた変更の一覧を示します。
 
-次の一覧では、新しい機能と windows 10 の PlayReady Encrypted Media Extension に加えられた変更について説明します。
+次の一覧には、PlayReady 暗号化されたメディア拡張機能の Windows 10 への変更、新しい機能について説明します。
 
 -   追加されたハードウェア デジタル著作権管理 (DRM)。
 
@@ -34,10 +34,10 @@ Internet Explorer で PlayReady メディア要素を使うと、開発者はコ
 -   永続的でないライセンスの事前の取得を提供します。
 -   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    複数のキー識別子 (Keyid)、windows 8.1 のように PlayReady オブジェクトを使用するかと複数の Keyid [content decryption model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)を使用します。
+    Windows 8.1 では、ように複数のキー識別子 (KeyIDs) と PlayReady オブジェクトを使用するかを使用して、[コンテンツ モデル データの復号化 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)複数 KeyIDs とします。
 
     > [!NOTE]
-    > Windows 10 の複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData にします。
+    > Windows 10 で複数のキー識別子がサポートされている&lt;KeyID&gt; CDMData でします。
 
 -   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
@@ -262,13 +262,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 ```
 
 > [!NOTE]
-> 前のセキュア ストップのデータの `<SessionID>B64 encoded session ID</SessionID>` は、アスタリスク (\*) にすることができます。これは、記録されたすべてのセキュア ストップ セッション用のワイルドカードです。 つまり、**SessionID** タグは特定のセッションにするか、すべてのセキュア ストップ セッションを選択するワイルドカード (\*) にすることができます。
+> データのセキュリティで保護された停止の`<SessionID>B64 encoded session ID</SessionID>`上の例では、アスタリスクを指定できます (\*)、記録されたすべての停止をセキュリティで保護されたセッションはワイルド カード。 つまり、 **SessionID**タグは、特定のセッションまたはワイルドカード (\*) をセキュリティで保護された停止のすべてのセッションを選択します。
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>Encrypted Media Extension のプログラミングについての考慮事項
 
-このセクションでは、windows 10 の PlayReady が有効な web アプリを作成するときに考慮プログラミングの考慮事項を示します。
+このセクションでは、Windows 10 用の PlayReady 対応の web アプリを作成するときに考慮するプログラミングの考慮事項を示します。
 
-アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
+アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 たとえば、次の例は、変数を割り当てられます*g\_msMediaKeys*と*g\_mediaKeySession*グローバル変数は、次に割り当てられる、 **。MSMediaKeys**と**MSMediaKeySession**関数内のオブジェクト。
 
 ``` syntax
 var g_msMediaKeys;
@@ -298,7 +298,7 @@ function foo() {
 
 詳しくは、[サンプル アプリケーション](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)をご覧ください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [PlayReady DRM](playready-client-sdk.md)
 
 

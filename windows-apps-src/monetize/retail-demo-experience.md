@@ -1,82 +1,82 @@
 ---
-title: 市販デモ (RDX) 機能をアプリに追加します。
-description: 市販デモ モード、小売販売フロアにアプリを広く告知を支援するには、アプリを準備します。
+title: 小売デモ (RDX) 機能をアプリに追加します。
+description: 小売販売部門でアプリを支援小売デモ モードでアプリを準備します。
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, UWP, 市販デモ アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117672"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596757"
 ---
-# <a name="add-retail-demo-rdx-features-to-your-app"></a>市販デモ (RDX) 機能をアプリに追加します。
+# <a name="add-retail-demo-rdx-features-to-your-app"></a>小売デモ (RDX) 機能をアプリに追加します。
 
-右に進むことが Pc やデバイス販売フロアに試すお客様 Windows アプリで市販デモ モードが含まれます。
+Pc や販売フロアにデバイスを試しているお客様はすぐに開始できるように、Windows アプリで、小売デモ モードが含まれます。
 
-小売店でお客様と、Pc やデバイスのデモを試すことができることを期待します。 多くの場合、[市販デモ エクスペリエンス (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)を通じて、アプリを時間のかなりチャンクが費やされる。
+お客様は、小売店が、Pc とデバイスのデモを試すことができるものと考えます。 利用してアプリでいろいろ試して、時間のかなりのチャンクを割くこと多くの場合、[デモ エクスペリエンス (RDX) の小売](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)します。
 
-_標準_または_リテール_モードでのさまざまなエクスペリエンスを提供するアプリを設定することができます。 たとえば、アプリは、セットアップ プロセスを起動する場合は、リテール モードで飛ばしてをで直接ジャンプできるように、アプリのサンプル データと既定の設定を事前に設定があります。
+アプリをセットアップするには、中にさまざまなエクスペリエンスを提供する_通常_または_小売_モード。 たとえば、アプリは、セットアップ プロセスを起動する場合小売モードでスキップし、ですぐできるようにサンプル データと既定の設定でアプリを事前可能性があります。
 
-お客様の観点から、アプリを 1 つがあります。 区別できるように、2 つのモードをお勧めしますリテール モードでは、アプリが、その表示される単語「市販」目立つように、タイトル バーまたは適切な場所。
+お客様の観点からは、1 つだけのアプリです。 2 つのモードを区別する顧客のため、お勧めしますリテール モードでは、アプリが、表示される、単語"Retail"目立つようタイトル バーで、または適切な場所。
 
-アプリの Microsoft Store の要件に加え RDX 認識アプリの RDX セットアップ、クリーンアップ、および、小売店で、常に肯定的なエクスペリエンスをユーザーがあることを確認する更新プログラムのプロセスとの互換性も場合があります。
+アプリの Microsoft Store の要件だけでなく RDX に対応するアプリの RDX セットアップ、クリーンアップ、および更新プログラムのプロセスを肯定的なエクスペリエンスは、小売店でに顧客との互換性も場合があります。
 
 ## <a name="design-principles"></a>設計原則
 
-* **メリットを提示**します。 ショーケース アプリ岩理由には、市販デモ エクスペリエンスを使用します。 これは、問題は発生初めて顧客のため最適な部分を表示して、アプリが表示されます。
+* **最善の表示**します。 Showcase アプリ rocks 理由に、小売デモ エクスペリエンスを使用します。 最初に、顧客が表示されます、最適なピースをもらうために、アプリを可能性があります。
 
-* **高速に表示**されます。 お客様に見ていただける時間は限られています。アプリの真価がすぐに実感できるように構成してください。
+* **高速表示**します。 お客様に見ていただける時間は限られています。アプリの真価がすぐに実感できるように構成してください。
 
-* **シンプルなストーリー**をします。 市販デモ エクスペリエンスは、アプリの値の真価です。
+* **単純なストーリー**します。 小売デモ操作では、アプリの値、概要です。
 
-* **エクスペリエンスにフォーカス**を移動します。 お客様がコンテンツを理解する時間を設けましょう。 魅力的な部分をすばやく伝えることは重要ですが、適切な空白時間を設けることでエクスペリエンスがさらに向上します。
+* **エクスペリエンスに注目**します。 お客様がコンテンツを理解する時間を設けましょう。 魅力的な部分をすばやく伝えることは重要ですが、適切な空白時間を設けることでエクスペリエンスがさらに向上します。
 
 ## <a name="technical-requirements"></a>技術的要件
 
-認識 RDX アプリは、小売顧客にアプリの来店に置き換わるものは、技術的要件を満たしているし、Microsoft Store にはすべての市販デモ エクスペリエンス アプリのプライバシーに関する規制に準拠している必要があります。
+RDX に対応するアプリは、小売り店へのアプリのベストを紹介するものとは技術的な要件を満たしている必要があります、小売デモ エクスペリエンスのすべてのアプリを Microsoft Store を含むプライバシー規制を遵守します。
 
-テスト プロセスの明確化と、検証プロセスの準備に役立つチェックリストとして使用できます。 これらの要件は、検証プロセスだけでなく、アプリが市販デモ デバイスで実行される限り、市販デモ エクスペリエンス アプリのライフタイム全体にわたって満たす必要があります。
+検証プロセスの準備に役立つとわかりやすくするためのテストのプロセスを提供するチェックリストとして使用できます。 これらの要件は、検証プロセスだけでなく、アプリが市販デモ デバイスで実行される限り、市販デモ エクスペリエンス アプリのライフタイム全体にわたって満たす必要があります。
 
 ### <a name="critical-requirements"></a>重要な要件
 
-これらの必須要件を満たしていない RDX 対応のアプリは、できるだけ早くすべての市販デモ デバイスから削除されます。
+これらの重要な要件を満たしていない RDX に対応するアプリは、できるだけ早く製品デモのすべてのデバイスから削除されます。
 
-* **個人情報 (PII) を求めないように**します。 ここではログイン情報、Microsoft アカウントの情報、または連絡先の詳細です。
+* **個人情報 (PII) のメッセージを表示しない**します。 これはログイン情報、Microsoft アカウント情報、または連絡先が含まれます。 詳細情報。
 
-* **エラーのないが発生**します。 アプリは、エラーなしで動作する必要があります。 また市販デモ デバイスを使うお客様に、エラー ポップアップやエラー通知を表示してはなりません。 エラーは、自体、ブランド、デバイスのブランド、デバイスの製造元のブランド、および Microsoft のブランド、アプリに悪影響を及ぼす反映します。
+* **エラーのない経験**します。 アプリは、エラーなしで動作する必要があります。 また市販デモ デバイスを使うお客様に、エラー ポップアップやエラー通知を表示してはなりません。 エラーは、自体、ブランド、デバイスのブランド、デバイスの製造元のブランド、および Microsoft のブランドに、アプリの悪影響を及ぼす反映されます。
 
-* **有料アプリの試用モード必要があります**。 アプリはか無料または[試用モード](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)を含める必要があります。 お客様は小売店での試用に料金を支払うことは想定していません。
+* **有料のアプリは試用版モードで必要があります**します。 無料または含めるか、アプリで必要な[試用版モード](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)します。 お客様は小売店での試用に料金を支払うことは想定していません。
 
 ### <a name="high-priority-requirements"></a>優先度の高い要件
 
-これらの優先順位の高い要件を満たしていない RDX 対応のアプリは、すぐに修正プログラムを調査する必要があります。 直ちに修正されない場合、このアプリをすべての市販デモ デバイスから削除することがあります。
+これらの優先度の高い要件を満たしていない RDX に対応するアプリは、修正プログラムを直ちに調査する必要があります。 直ちに修正されない場合、このアプリをすべての市販デモ デバイスから削除することがあります。
 
-* **オフライン エクスペリエンス Memorable**します。 アプリは、小売拠点でデバイスの約 50% がオフラインに優れたオフライン エクスペリエンスを示す必要があります。 この要件は、お客様がオフラインでアプリを操作する場合でも、意味のある肯定的なエクスペリエンスを保証することを目的としています。
+* **覚えやすいオフライン エクスペリエンス**します。 アプリを販売店で、デバイスの約 50% がオフライン、優れたオフライン エクスペリエンスを示す必要があります。 この要件は、お客様がオフラインでアプリを操作する場合でも、意味のある肯定的なエクスペリエンスを保証することを目的としています。
 
-* **最新のコンテンツ エクスペリエンス**。 アプリは、オンラインの場合、更新プログラムの入力を求めるしない場合があります。 更新プログラムが必要な場合サイレント モードで実行する必要があります。
+* **更新コンテンツ エクスペリエンス**します。 アプリは、オンラインの場合、更新プログラムの入力を求めるしない場合があります。 更新プログラムが必要な場合、サイレント モードで実行する必要があります。
 
-* **匿名通信の禁止**します。 市販デモ デバイスを使用して顧客は、匿名ユーザーであるため、すべきメッセージやコンテンツの共有をデバイスからします。
+* **匿名の通信がありません**します。 小売デモ デバイスを使用して、顧客は、匿名ユーザーであるため、すべきメッセージまたは共有のコンテンツをデバイスから。
 
-* **クリーンアップ処理を使用して、一貫したエクスペリエンスを提供**します。 市販デモ デバイスは、使用開始にあたってすべてのお客様に同じエクスペリエンスを提供する必要があります。 アプリは、[クリーンアップ処理](#cleanup-process)を使用する必要があります、使用後、同じ既定の状態に戻ります。 次のお客様にどのような最後のお客様をたいしないでください。 これには、スコアボード、達成度、ロック解除が含まれます。
+* **クリーンアップ プロセスを使用して一貫したエクスペリエンスを提供**します。 市販デモ デバイスは、使用開始にあたってすべてのお客様に同じエクスペリエンスを提供する必要があります。 アプリで使用する必要があります[クリーンアップ処理](#cleanup-process)使用後に同じ既定の状態に戻ります。 残されたどのような最終顧客を表示する次の顧客をほしくありません。 これには、スコアボード、達成度、ロック解除が含まれます。
 
-* **年齢に応じた適切なコンテンツ**です。 アプリのすべてのコンテンツをする必要がある、ティーン区分します。 詳細については、[アプリが iarc 評価の取得](https://www.globalratings.com/for-developers.aspx)と[ESRB 評価に関するページ](https://www.esrb.org/ratings/ratings_guide.aspx)を参照してください。
+* **適切なコンテンツの年齢**します。 すべてのアプリ コンテンツがある必要があります楽しむ十代のお子様または低い評価カテゴリに割り当てられます。 詳細についてを参照してください。 [IARC により、規制、アプリを取得する](https://www.globalratings.com/for-developers.aspx)と[ESRB 評価](https://www.esrb.org/ratings/ratings_guide.aspx)します。
 
 ### <a name="medium-priority-requirements"></a>中程度の要件
 
 Windows リテール ストア チームは、これらの問題の修正方法について、直接開発者に連絡して話し合いの場を設けることがあります。
 
-* **多様なデバイスで正常に実行することができます**。 アプリは、ローエンド仕様のデバイスを含むすべてのデバイスで適切に実行する必要があります。 最小要件を満たしていないデバイスでアプリをインストールする場合、アプリをについてユーザーに明確に通知する必要があります。 アプリが常に高いパフォーマンスで動作できるように、最小のデバイス要件を明らかにする必要があります。
+* **さまざまなデバイスで正常に実行するための機能**します。 アプリは、ローエンドの仕様でデバイスを含め、すべてのデバイスで適切に実行する必要があります。 最小要件を満たしていないデバイスでアプリがインストールされている場合、アプリを明らかにこのユーザーに通知する必要があります。 アプリが常に高いパフォーマンスで動作できるように、最小のデバイス要件を明らかにする必要があります。
 
-* **小売店用アプリ サイズ要件を満たしている**ください。 アプリのサイズは、800 MB 未満である必要があります。 RDX 対応アプリは、サイズの要件を満たしていない場合に、Windows リテール ストア チームについてさらに直接お問い合わせください。
+* **小売ストア アプリのサイズ要件を満たす**します。 アプリのサイズは、800 MB 未満である必要があります。 RDX に対応したアプリがサイズ要件を満たしていない場合の議論を直接 Windows 小売店のチームに問い合わせてください。
 
-## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API: デモ モードのコードを準備します。
+## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API:デモ モードのコードを準備します。
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-これは、Windows 10 SDK に[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)名前空間の一部、 [**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)ユーティリティ クラスで[**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)プロパティは - でアプリを実行するコード パスを指定するブール インジケーターとして使用_法線_モードまたは_リテール_モードです。
+[ **IsDemoModeEnabled** ](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)プロパティ、 [ **RetailInfo** ](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)ユーティリティ クラスは、一部の[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile) - でアプリを実行するコード パスを指定する、Windows 10 SDK で名前空間を示すブール値として使用される、_通常_モードまたは_小売_モード。
 
 ``` csharp
 using Windows.Storage;
@@ -129,7 +129,7 @@ if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
 
 ### <a name="retailinfoproperties"></a>RetailInfo.Properties
 
-[**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) から true が返されたら、[**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) を使ってデバイスに関する一連のプロパティを照会することで、さらにカスタマイズした市販デモ エクスペリエンスを構築できます。 これらのプロパティには、[**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) などが含まれます。
+[  **IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) から true が返されたら、[**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) を使ってデバイスに関する一連のプロパティを照会することで、さらにカスタマイズした市販デモ エクスペリエンスを構築できます。 これらのプロパティには、[**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) などが含まれます。
 
 ```csharp
 using Windows.UI.Xaml.Controls;
@@ -227,31 +227,31 @@ namespace Windows.System.Profile
 }
 ```
 
-## <a name="cleanup-process"></a>クリーンアップ処理
+## <a name="cleanup-process"></a>クリーンアップ プロセス
 
-クリーンアップ、買い物では、デバイスとのやり取りが停止したら、2 分が開始されます。 市販デモの再生中、Windows では、連絡先、写真、およびその他のアプリのサンプル データがすべてのリセットが開始されます。 デバイスに応じてが完全にすべての情報を正常にリセットする 1 ~ 5 分間かかります。 これにより、小売店でのすべてのユーザーがデバイスに手順について説明し、デバイスを操作するとき、同じエクスペリエンスがあることができます。
+クリーンアップは、買い物客は、デバイスとのやり取りが停止した後、2 分を開始します。 小売デモを再生し、Windows は、連絡先、写真、およびその他のアプリ内のサンプル データのリセットを開始します。 デバイスによっては、完全にすべてを正常にリセットする 1 ~ 5 分間かかります。 これにより、小売店ですべての顧客がデバイスに方法について説明し、デバイスと対話するときに、同じエクスペリエンスがあることができます。
 
-手順 1: クリーンアップ
+手順 1:クリーンアップ
 * すべての Win32 アプリとストア アプリが終了します
 * __ピクチャ__、__ビデオ__、__ミュージック__、__ドキュメント__、__保存済みの写真__、__カメラロール__、__デスクトップ__、__ダウンロード__フォルダーなどのすべての既知のフォルダーが削除されます
 * 構造化されていないローミング状態と構造化されたローミング状態が削除されます
 * 構造化されたローカル状態が削除されます
 
-手順 2: セットアップ
-* オフライン デバイスの場合: フォルダーは空のままです
-* オンライン デバイスの場合: Microsoft Store から市販デモ アセットがデバイスにプッシュされます
+手順 2:セットアップ
+* オフライン デバイス。フォルダーは空のまま
+* オンライン デバイス。小売デモ資産は、Microsoft Store からデバイスにプッシュできます。
 
-### <a name="store-data-across-user-sessions"></a>ユーザー セッション間でデータを保存します。
+### <a name="store-data-across-user-sessions"></a>ユーザー セッション間でデータの格納
 
-ユーザー セッション間でデータを格納するには、と、既定のクリーンアップ処理がこのフォルダー内のデータを自動的に削除されません__ApplicationData.Current.TemporaryFolder__で情報を格納することができます。 クリーンアップ処理中に*LocalState*を使用して格納されている情報が削除されたことに注意してください。
+ユーザー セッション間でデータを格納するには、情報を格納できる__ApplicationData.Current.TemporaryFolder__既定値としてクリーンアップ プロセスは自動的に削除されませんこのフォルダー内のデータ。 使用して格納されている情報に注意してください*LocalState*クリーンアップ プロセス中に削除されます。
 
-### <a name="customize-the-cleanup-process"></a>クリーンアップ処理をカスタマイズします。
+### <a name="customize-the-cleanup-process"></a>クリーンアップ プロセスをカスタマイズします。
 
-クリーンアップ処理をカスタマイズするには、実装、`Microsoft-RetailDemo-Cleanup`アプリ サービスをアプリにします。
+クリーンアップ プロセスをカスタマイズするには、実装、`Microsoft-RetailDemo-Cleanup`をアプリにアプリ サービス。
 
-カスタムのクリーンアップ ロジックが必要なシナリオには、ダウンロードしキャッシュ データ、またはいない*LocalState*データを削除しようとしている、広範なセットアップの実行が含まれています。
+カスタム クリーンアップ ロジックが必要なシナリオには、ダウンロードし、データをキャッシュまたは突っ立ったの広範なセットアップの実行が含まれています*LocalState*データを削除します。
 
-手順 1: アプリ マニフェストで、 _Microsoft のクリーンアップ RetailDemo_サービスを宣言します。
+手順 1:宣言、 _Microsoft のクリーンアップ RetailDemo_アプリケーション マニフェストでサービス。
 ``` CSharp
   <Applications>
       <Extensions>
@@ -264,7 +264,7 @@ namespace Windows.System.Profile
 
 ```
 
-手順 2: は、以下のサンプル テンプレートを使用して_AppdataCleanup_ケース関数の下にカスタムのクリーンアップ ロジックを実装します。
+手順 2:カスタム クリーンアップ ロジックを実装、 _AppdataCleanup_以下のサンプル テンプレートを使用する大文字と小文字の関数。
 ``` CSharp
 using System;
 using System.IO;
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>関連リンク
 
-* [アプリ データの保存と取得](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [アプリ サービスの作成と利用の方法](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [グローバリゼーションとローカライズ](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [市販デモ エクスペリエンス (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)
+* [アプリ データの格納と取得](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
+* [作成し、app service を使用する方法](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [アプリの内容をローカライズします。](https://msdn.microsoft.com/windows/uwp/globalizing/globalizing-portal)
+* [小売デモ エクスペリエンス (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)

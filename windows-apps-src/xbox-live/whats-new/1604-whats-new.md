@@ -4,14 +4,14 @@ description: Xbox Live SDK の新規事項 - April 2016
 ms.assetid: a6f26ffd-f136-4753-b0cd-92b0da522d93
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce63a0174fa0c4158764b8bca2443d58d0aefd9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944716"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660767"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---april-2016"></a>Xbox Live SDK の新規事項 - April 2016
 
@@ -27,7 +27,7 @@ Xbox Live SDK では、Windows 10 RTM [バージョン 10.0.10240] と Visual St
 
 ## <a name="documentation"></a>ドキュメント
 - 「[サインインのトラブルシューティング](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md)」に、サインインの失敗をデバッグするための一般的な方法と、エラー コード別の手順が示されています。
-- Xbox One デベロッパー向けの[マーケットプレース](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)に関するドキュメントは、プログラミング ガイドだけで提供されるようになりました。  UWP 開発者は、引きドキュメントについては、ストアでパートナー センターを参照してください。
+- Xbox One デベロッパー向けの[マーケットプレース](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-marketplace/marketplace-and-downloadable-content)に関するドキュメントは、プログラミング ガイドだけで提供されるようになりました。  UWP 開発者は、ストアのドキュメントについては、パートナー センターを参照してください続行する必要があります。
 - Xbox One タイトルをユニバーサル Windows プラットフォームに移行する方法については、「[XDK から UWP への Xbox Live コードの移植](../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)」を参照してください。
 - さまざまな Xbox Live サービス エンドポイントとシナリオへのレート制限の適用についての説明、および制限に関する情報については、「[きめ細かなレート制限](../using-xbox-live/best-practices/fine-grained-rate-limiting.md)」を参照してください。
 
@@ -67,11 +67,11 @@ _XSAPIIMP xbox_live_result<void> set_properties(
 
 1.  両方の招待 API (```invite_friends``` & ```invite_users```) が同期するようになりました。 完了すると、invite_sent イベントを返します。
 
-2.  ```write_synchronized_properties_and_commit``` は、名前が ```set_synchronized_properties``` に変更されました。 完了すると、```session_synchronized_property_write_completed``` イベントを返します。
+2.  ```write_synchronized_properties_and_commit``` 名前に変更されました```set_synchronized_properties```します。 完了すると、```session_synchronized_property_write_completed``` イベントを返します。
 
-3.  ```write_synchronized_host_and_commit``` は、名前が ```set_synchronized_host``` に変更されました。 完了すると、```synchronized_host_write_completed``` イベントを返します。
+3.  ```write_synchronized_host_and_commit``` 名前に変更されました```set_synchronized_host```します。 完了すると、```synchronized_host_write_completed``` イベントを返します。
 
-4.  オン ```lobby_session()```
+4.  On ```lobby_session()```
 
   *削除*
 
@@ -85,7 +85,7 @@ _XSAPIIMP const std::unordered_map<string_t, xbox::services:: multiplayer::multi
 _XSAPIIMP const std::unordered_map<string_t, xbox::services::tournaments::tournament_team_result>& tournament_team_results() const;
 ```
 
-5.  オン ```game_session()```
+5.  On ```game_session()```
 
   *削除*
 
@@ -112,6 +112,6 @@ arbitration_property_changed
 
   *名前変更*
 
-  ```write_synchronized_properties_completed``` 変更後の名前 ```session_synchronized_property_write_completed```
+  ```write_synchronized_properties_completed``` 名前に変更 ```session_synchronized_property_write_completed```
 
-  ```write_synchronized_host_completed``` 変更後の名前 ```synchronized_host_write_completed```
+  ```write_synchronized_host_completed``` 名前に変更 ```synchronized_host_write_completed```

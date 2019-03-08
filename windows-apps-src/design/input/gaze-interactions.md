@@ -1,6 +1,6 @@
 ---
 title: 視線の操作
-Description: Learn how to design and optimize your UWP apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.
+Description: 設計および目と head のトラッカーの視線入力に依存しているユーザーに最適なエクスペリエンスを実現を提供する UWP アプリを最適化する方法について説明します。
 label: Gaze interactions
 template: detail.hbs
 keywords: 視線, 視線追跡, 頭の追跡, 視線ポイント, 入力, ユーザーの操作, アクセシビリティ, ユーザビリティ
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604397"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP アプリでの視線の操作と視線追跡
 
@@ -27,7 +27,7 @@ ms.locfileid: "9058543"
 > [!NOTE]
 > [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) での視線入力については、「[視線](https://docs.microsoft.com/windows/mixed-reality/gaze)」を参照してください。
 
-**重要な API**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)、[GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview)、[GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview)、[GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要な Api**:[Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview), [GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概要
 
@@ -36,9 +36,9 @@ ms.locfileid: "9058543"
 さらに、視線入力は、ゲーム (ターゲット把握や追跡を含む) や従来の生産性向上アプリケーション、キオスクだけでなく、従来の入力デバイス (キーボード、マウス、タッチ) が使用できないか、ユーザーの両手を他のタスク (買い袋を持つなど) のために開放することが便利である可能性のあるその他の対話型シナリオで、同様に魅力的な機会をもたらします。
 
 > [!NOTE]
-> 視線追跡ハードウェアのサポートは、**Windows 10 Fall Creators Update** で[視線制御](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)と共に導入されました。視線制御は、ユーザーが目を使用して画面上のポインターを制御し、スクリーン キーボードで入力し、音声合成を使用して人々とやり取りすることができる組み込み機能です。 視線追跡ハードウェアと対話できるアプリケーションを構築するためには、UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) のセットがで利用可能な**Windows 10 April 2018 Update (バージョン 1803、ビルド 17134)** 以降。
+> 視線追跡ハードウェアのサポートは、**Windows 10 Fall Creators Update** で[視線制御](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control)と共に導入されました。視線制御は、ユーザーが目を使用して画面上のポインターを制御し、スクリーン キーボードで入力し、音声合成を使用して人々とやり取りすることができる組み込み機能です。 UWP Api のセット ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 目と対話できるアプリケーションを構築するハードウェアを追跡は**Windows 10 April 2018 Update (バージョン 1803 でビルド 17134)** 以降。
 
-## <a name="privacy"></a>Privacy
+## <a name="privacy"></a>プライバシー
 
 視線追跡デバイスで収集された機密性が高い可能性のある個人データのために、UWP アプリケーションのアプリ マニフェストで `gazeInput` 機能を宣言することが必要になります (次の「**セットアップ**」セクションを参照してください)。 宣言すると、アプリが最初に実行されたときに Windows によって自動的にユーザーに同意ダイアログ ボックスが表示されます。ここでは、ユーザーはアプリが視線追跡デバイスと通信して、このデータにアクセスできるようにアクセス許可を付与する必要があります。
 
@@ -70,9 +70,9 @@ UWP アプリで視線入力 API を使用するには、次の作業を行う�
 
 ![タイマーのサンプルを使用した視線追跡](images/gaze/gaze-input-timed2.gif)
 
-*タイマーのサンプルを使用した視線追跡*
+*タイマーのサンプルを使用して追跡された様子を確認します。*
 
-**このサンプルは、「[視線入力のサンプル (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)」でダウンロードしてください。**
+**このサンプルをからダウンロード[視線の先の入力サンプル (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. まず、UI を設定します (MainPage.xaml)。
 
@@ -499,9 +499,9 @@ UWP アプリで視線入力 API を使用するには、次の作業を行う�
     ```
 6. 最後に、このアプリの視線フォーカス タイマーを管理するために使用する方法を示します。
 
-    `DoesElementContainPoint` は、視線ポインターが進行状況バーを超えているかどうかを確認します。 超えている場合は、視線タイマーを開始し、それぞれの視線タイマー ティックで進行状況バーをインクリメントします。
+    `DoesElementContainPoint` 視線入力ポインターの進行状況バーの上を確認します。 超えている場合は、視線タイマーを開始し、それぞれの視線タイマー ティックで進行状況バーをインクリメントします。
 
-    `SetGazeTargetLocation` は、進行状況バーの最初の場所を設定し、進行状況バーが (視線フォーカス タイマーに応じて) 完了すると、進行状況バーを任意の場所に移動します。
+    `SetGazeTargetLocation` 進行状況バーの最初の場所を設定し、進行状況バーは、(視線入力フォーカス タイマー) によって異なりますが完了すると、進行状況バーをランダムな場所に移動します。
 
     ```csharp
     /// <summary>
@@ -598,10 +598,10 @@ UWP アプリで視線入力 API を使用するには、次の作業を行う�
 
 ## <a name="see-also"></a>関連項目
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
-- [Windows コミュニティ ツールキットの視線ライブラリ](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows コミュニティ Toolkit 視線ライブラリ](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>トピックのサンプル
 
-- [視線のサンプル (基本) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
+- [視線のサンプル (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)

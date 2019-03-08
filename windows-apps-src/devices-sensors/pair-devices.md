@@ -4,14 +4,14 @@ title: デバイスのペアリング
 description: 一部のデバイスは、使う前にペアリングする必要があります。 Windows.Devices.Enumeration 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050435"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653387"
 ---
 # <a name="pair-devices"></a>デバイスのペアリング
 
@@ -21,13 +21,13 @@ ms.locfileid: "9050435"
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-一部のデバイスは、使う前にペアリングする必要があります。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。
+一部のデバイスは、使う前にペアリングする必要があります。 [  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。
 
 -   自動ペアリング
 -   基本ペアリング
 -   カスタム ペアリング
 
-**ヒント:** 一部のデバイスを使用するためにペアリングする必要はありません。 これについては、自動ペアリングに関するセクションで説明します。
+**ヒント:**  一部のデバイスを使用するためにはペアにする必要はありません。 これについては、自動ペアリングに関するセクションで説明します。
 
  
 
@@ -68,7 +68,7 @@ ms.locfileid: "9050435"
 ## <a name="sample"></a>サンプル
 
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API の使い方を示すサンプルをダウンロードするには、[ここ](https://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API の使い方を示すサンプルをダウンロードするには、[ここ](https://go.microsoft.com/fwlink/?LinkID=620536)をクリックしてください。
 
  
 

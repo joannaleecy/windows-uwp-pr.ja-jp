@@ -3,15 +3,15 @@ title: Xbox One 開発者モードのアクティブ化
 description: 開発者モードをアクティブ化して、リテール モードと開発者モードを切り替えることができるようにする方法を説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
 ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
-ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083264"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590537"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>Xbox One 開発者モードのアクティブ化
 
@@ -38,13 +38,13 @@ Xbox One には、*リテール* モード (**1**) と*開発者*モード (**2*
 
     ![アクティブ化手順 5](images/activation-step-5.png)  
     
-5.  [パートナー センターでのアプリの開発者アカウントを登録](https://developer.microsoft.com/store/register)します。  これは、ゲームの公開に向けての最初の手順。
+5.  [パートナー センターでアプリの開発者アカウントを登録](https://developer.microsoft.com/store/register)します。  ゲームの発行への第一歩です。
 
-6.  現在、有効なパートナー センター アプリの開発者アカウントを[パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。  左側のナビゲーション ウィンドウで、複数のオプションが表示されないか、[**概要**] セクションで、次の手順とアクティブ化のリンク_は機能しません_。**アプリを作成する新しい**オプションが表示されない場合前の手順で、アプリの開発者アカウントが完全に登録されていることを確認します。
+6.  サインインする[パートナー センター](https://partner.microsoft.com/dashboard) 、現在の有効なパートナー センター アプリ開発者アカウントに関するします。  左側のナビゲーション ウィンドウで複数のオプションが表示されないか、表示されない場合、**新しいアプリを作成**オプション、**概要**セクションでは、次の手順およびアクティブ化リンク_は機能しません_; 前の手順から、アプリの開発者アカウントが完全に登録されていることを確認します。
 
-7.  [Partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)に移動します。
+7.  移動して[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)します。
 
-8.  開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。 アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードをアクティブ化後、パートナー センターは、アカウントに関連付けられているライセンス認証のいずれかを使用したを示します。
+8.  開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。 アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードを有効にしたら、アカウントに関連付けられているライセンス認証のいずれかを使用したパートナー センターが示されます。
 
     ![アクティブ化手順 8](images/activation-step-8-rs2.png)    
     
@@ -67,6 +67,6 @@ Xbox One には、*リテール* モード (**1**) と*開発者*モード (**2*
 
   ![アクティブ化手順 14](images/activation-step-12.png)  
 
-## <a name="see-also"></a>参照
-- [Xbox One 開発者モードの非アクティブ化](devkit-deactivation.md)
+## <a name="see-also"></a>関連項目
+- [Xbox 開発者モードは 1 つの非アクティブ化](devkit-deactivation.md)
 - [Xbox One の UWP](index.md)

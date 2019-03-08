@@ -1,21 +1,21 @@
 ---
-Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
+Description: コンテンツ切り替えアニメーションを使うと、コンテナーや背景はそのままに、画面のある領域のコンテンツを変更できます。 新しいコンテンツはフェード インします。 既にあるコンテンツを差し替える場合、そのコンテンツはフェード アウトします。
 title: コンテンツ切り替えアニメーションのガイドライン
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 096cc0aaa9b0580eb6b45328a3243ba75d82f202
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940571"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649807"
 ---
 # <a name="content-transition-animations"></a>コンテンツ切り替えアニメーション
 
@@ -23,7 +23,7 @@ ms.locfileid: "8940571"
 
 コンテンツ切り替えアニメーションを使うと、コンテナーや背景はそのままに、画面のある領域のコンテンツを変更できます。 新しいコンテンツはフェード インします。 既にあるコンテンツを差し替える場合、そのコンテンツはフェード アウトします。
 
-> **重要な API**: [**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **重要な Api**:[**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 
@@ -42,8 +42,8 @@ ms.locfileid: "8940571"
 
 **開発者向け (XAML)**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [コンテンツ切り替えのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [コンテンツの切り替えをアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
+* [クイック スタート:Library のアニメーションを使用して、UI をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**ContentThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  

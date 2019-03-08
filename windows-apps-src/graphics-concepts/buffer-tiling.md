@@ -1,20 +1,20 @@
 ---
-title: バッファーのタイリング
+title: バッファーのタイル表示
 description: バッファー リソースは 64 KB のタイルに分割されます。サイズが 64 KB の倍数でない場合は、最後のタイルに空きが生じます。
 ms.assetid: 577DC6B0-F373-4748-AD80-2784C597C366
 keywords:
-- バッファーのタイリング
+- バッファーのタイル表示
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e5e117e05cef478ede508240a6b1d1022dea70
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920742"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655727"
 ---
-# <a name="buffer-tiling"></a>バッファーのタイリング
+# <a name="buffer-tiling"></a>バッファーのタイル表示
 
 
 [バッファー ](introduction-to-buffers.md) リソースは 64 KB のタイルに分割されます。サイズが 64 KB の倍数でない場合は、最後のタイルに空きが生じます。
@@ -24,7 +24,7 @@ ms.locfileid: "8920742"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースの領域をタイル表示する方法](how-a-streaming-resource-s-area-is-tiled.md)
+[ストリーミングのリソースの領域は並べて表示する方法](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 

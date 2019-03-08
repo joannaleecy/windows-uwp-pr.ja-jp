@@ -1,5 +1,5 @@
 ---
-title: セットアップ
+title: 設定
 description: グラフィックスを表示するレンダリング パイプラインをアセンブルする方法について説明します。 ゲームのレンダリング、データのセットアップと準備。
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
 ms.date: 10/24/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117752"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610507"
 ---
-# <a name="rendering-framework-ii-game-rendering"></a>レンダリング フレームワーク II: ゲームのレンダリング
+# <a name="rendering-framework-ii-game-rendering"></a>レンダリングのフレームワーク II:ゲームのレンダリング
 
 「[レンダリング フレームワーク I](tutorial--assembling-the-rendering-pipeline.md)」では、シーン情報を取得し、ディスプレイの画面に表示する方法を説明しました。 ここでは、一歩戻って、レンダリングのためのデータを準備する方法について説明します。
 
@@ -25,10 +25,10 @@ ms.locfileid: "9117752"
 目標について簡単に要約します。 基本的なレンダリング フレームワークを設定して、UWP DirectX ゲームのグラフィックス出力を表示する方法を理解することです。 これらはおおまかに 3 つの手順にグループ分けすることができます。
 
  1. グラフィックス インターフェイスへの接続を確立する
- 2. 準備: グラフィックスを描画するために必要なリソースを作成する
- 3. グラフィックの表示: フレームをレンダリングする
+ 2. Preparation (準備): グラフィックスを描画する必要があります。 リソースを作成します。
+ 3. グラフィックが表示されます。フレームをレンダリングします。
 
-「[レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)」では、手順 1 と 3 を含む、グラフィックスをレンダリングする方法について説明しました。 
+[レンダリングのフレームワーク i:レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)グラフィックスのレンダリング方法を説明する、手順 1. と 3. をカバーします。 
 
 この記事では、このフレームワークの他の部分を設定し、レンダリングの前に必要なデータを準備する方法 (プロセスの手順 2 に相当) について説明します。
 
@@ -41,15 +41,15 @@ ms.locfileid: "9117752"
 * 定数バッファーは、レンダリングに必要なさまざまなデータを保持するために、このクラスで定義されます。
     * GPU に送信するデータの 1 フレームあたりの量を減らすために、更新頻度の異なる複数の定数バッファーを使用します。 このサンプルでは、更新する必要のある頻度に基づいて定数を異なるバッファーに分けています。 Direct3D プログラミングでは、このような処理をお勧めします。 
     * このゲームのサンプルでは、4 つの定数バッファーを定義します。
-        1. __m\_constantBufferNeverChanges__ には照明パラメーターが含まれます。 これは、__FinalizeCreateGameDeviceResources__ メソッドで一度設定されると、再び変更されることはありません。
-        2. __m\_constantBufferChangeOnResize__ にはプロジェクション マトリックスが含まれます。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 これは、[__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) で設定され、[__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) メソッドでリソースが読み込まれた後で更新されます。 3D でレンダリングする場合は、フレームごとに 2 回変更されます。
-        3. __m\_constantBufferChangesEveryFrame__ にはビュー マトリックスが含まれます。 このマトリックスは、カメラ位置とルック方向 (標準はプロジェクション方向) に依存し、__Render__ メソッドで 1 フレームあたり 1 回変更されます。 これについては、「__レンダリング フレームワーク I: レンダリングの概要__」の「[__GameRenderer::Render__ メソッド](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)」で既に説明しました。
-        4. __m\_constantBufferChangesEveryPrim__ には各プリミティブのモデル マトリックスとマテリアル プロパティが含まれます。 モデル マトリックスは、頂点をローカル座標からワールド座標に変換します。 これらの定数は各プリミティブに固有で、描画呼び出しのたびに更新されます。 これについては、「__レンダリング フレームワーク I: レンダリングの概要__」の「[プリミティブのレンダリング](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)」で既に説明しました。
+        1. __m\_constantBufferNeverChanges__ライティング パラメーターが含まれています。 これは、__FinalizeCreateGameDeviceResources__ メソッドで一度設定されると、再び変更されることはありません。
+        2. __m\_constantBufferChangeOnResize__射影行列が含まれています。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 これは、[__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) で設定され、[__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) メソッドでリソースが読み込まれた後で更新されます。 3D でレンダリングする場合は、フレームごとに 2 回変更されます。
+        3. __m\_constantBufferChangesEveryFrame__ view 行列が含まれています。 このマトリックスは、カメラ位置とルック方向 (標準はプロジェクション方向) に依存し、__Render__ メソッドで 1 フレームあたり 1 回変更されます。 先ほど説明したこの__レンダリング framework i:レンダリングの概要__下で、 [ __GameRenderer::Render__メソッド](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)します。
+        4. __m\_constantBufferChangesEveryPrim__各プリミティブのモデルのマトリックスと素材のプロパティが含まれています。 モデル マトリックスは、頂点をローカル座標からワールド座標に変換します。 これらの定数は各プリミティブに固有で、描画呼び出しのたびに更新されます。 先ほど説明したこの__レンダリング framework i:レンダリングの概要__下で、[プリミティブのレンダリング](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering)します。
 * プリミティブのテクスチャを保持するシェーダー リソース オブジェクトも、このクラスで定義されます。
     * 一部のテクスチャは事前に定義されています ([DDS](https://msdn.microsoft.com/library/windows/desktop/bb943991.aspx) は、圧縮および非圧縮テクスチャを格納するために使用されるファイル形式です。 DDS テクスチャは、ワールドの壁や床、弾薬の球体に使用されます)。
-    * このゲームのサンプルで、シェーダー リソース オブジェクトは、__m\_sphereTexture__、__m\_cylinderTexture__、__m\_ceilingTexture__、__m\_floorTexture__、__m\_wallsTexture__ です。
+    * シェーダー リソース オブジェクトは、このゲームのサンプル: __m\_sphereTexture__、 __m\_cylinderTexture__、 __m\_ceilingTexture__、 __m\_floorTexture__、 __m\_wallsTexture__します。
 * シェーダー オブジェクトは、プリミティブやテクスチャを計算するために、このクラスで定義されます。 
-    * このゲームのサンプルで、シェーダー オブジェクトは、__m\_vertexShader__、__m\_vertexShaderFlat__、__m\_pixelShader__、__m\_pixelShaderFlat__ です。
+    * このゲームのサンプルでは、シェーダー オブジェクトは__m\_vertexShader__、 __m\_vertexShaderFlat__、および__m\_pixelShader__、__m\_pixelShaderFlat__します。
     * 頂点シェーダーはプリミティブと基本的な照明を処理し、ピクセル シェーダー (フラグメント シェーダーとも呼ばれます) はテクスチャとピクセルごとの効果を処理します。
     * これらのシェーダーには、異なるプリミティブをレンダリングするための 2 つのバージョン (標準とフラット) があります。 異なるバージョンを用意しているでは、フラット バージョンは、標準と比べるときわめて単純であり、鏡面ハイライトやピクセル単位の照明効果が一切実行されないためです。 壁に使われ、低電力デバイスでレンダリングを高速化します。
 
@@ -168,7 +168,7 @@ DirectX 11 アプリ テンプレートでは、このメソッドを使用し�
 
 このゲームのサンプルでは、このメソッドに何が含まれているでしょうか。
 
-* リソースを非同期的に読み込んでいるため、レンダリングに進む前にリソースが読み込まれているかどうかを示す、インスタンス化された変数 (__m\_gameResourcesLoaded__ = false と__m\_levelResourcesLoaded__ = false)。 
+* 変数をインスタンス化 (__m\_gameResourcesLoaded__ = false と__m\_levelResourcesLoaded__ = false) のリソースを移動する前に読み込まれているかどうかを示す今回の読み込みに非同期的にあるため、表示するために転送します。 
 * HUD とオーバーレイのレンダリングは別のクラスのオブジェクトで行われるため、ここでは __GameHud::CreateDeviceDependentResources__ メソッドと __GameInfoOverlay::CreateDeviceDependentResources__ メソッドを呼び出します。
 
 __GameRenderer::CreateDeviceDependentResources__ のコードは次のとおりです。
@@ -241,7 +241,7 @@ GameMain::GameMain(const std::shared_ptr<DX::DeviceResources>& deviceResources) 
 
 ## <a name="creategamedeviceresourcesasync-method"></a>CreateGameDeviceResourcesAsync メソッド
 
-ゲームのリソースを非同期的に読み込んでいるため、__create\_task__ ループで __GameMain__コンストラクター メソッドから __CreateGameDeviceResourcesAsync__ を呼び出します。
+__CreateGameDeviceResourcesAsync__から呼び出される、 __GameMain__コンス トラクター メソッドで、__作成\_タスク__ループにゲームのリソースを非同期的に読み込むしているためです。
         
 __CreateDeviceResourcesAsync__ は、ゲームのリソースを読み込むための一連の非同期タスクとして別個に実行されるメソッドです。 個別のスレッドで実行されると想定されるので、Direct3D 11 デバイス メソッド (__ID3D11Device__ で定義されているメソッド) にのみアクセスでき、デバイス コンテキスト メソッド (__ID3D11DeviceContext__ で定義されているメソッド) にはアクセスできないため、レンダリングは実行されません。
 
@@ -254,13 +254,13 @@ __FinalizeCreateGameDeviceResources__ メソッドはメイン スレッドで�
 * テクスチャ (.dds ファイルなど) やシェーダー情報 (.cso ファイルなど) を、[シェーダー](tutorial--assembling-the-rendering-pipeline.md#shaders)に読み込むには、このメソッドを使用します。
 
 このメソッドを使用して、次の処理を行います。
-* 4 つの[定数バッファー](tutorial--assembling-the-rendering-pipeline.md#buffer) (__m\_constantBufferNeverChanges__、__m\_constantBufferChangeOnResize__、__m\_constantBufferChangesEveryFrame__、__m\_constantBufferChangesEveryPrim__) を作成します。
+* 作成、4[定数バッファー](tutorial--assembling-the-rendering-pipeline.md#buffer): __m\_constantBufferNeverChanges__、 __m\_constantBufferChangeOnResize__、 __m\_constantBufferChangesEveryFrame__、 __m\_constantBufferChangesEveryPrim__
 * テクスチャーのサンプリング情報をカプセル化する[サンプラー ステート](tutorial--assembling-the-rendering-pipeline.md#sampler-state) オブジェクトを作成します。
 * メソッドで作成されたすべての非同期タスクを含むタスク グループを作成します。 メソッドは、これらすべての非同期タスクが完了するまで待機してから __FinalizeCreateGameDeviceResources__ を呼び出します。
 * [Basic Loader](tutorial--assembling-the-rendering-pipeline.md#basicloader) を使用してローダーを作成します。 前の手順で作成したタスク グループに、ローダーの非同期読み込み操作をタスクとして追加します。
 * __BasicLoader::LoadShaderAsync__ や __BasicLoader::LoadTextureAsync__ などのメソッドは、以下を読み込むために使用されます。
     * コンパイル済みのシェーダー オブジェクト (VertextShader.cso、VertexShaderFlat.cso、PixelShader.cso、PixelShaderFlat.cso)。 詳細については、「[さまざまなシェーダー ファイル形式](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats)」を参照してください。
-    * ゲーム固有のテクスチャ (Assets\\seafloor.dds metal_texture.dds、cellceiling.dds、cellfloor.dds、cellwall.dds)。
+    * ゲームのテクスチャの特定 (資産\\seafloor.dds、metal_texture.dds、cellceiling.dds、cellfloor.dds cellwall.dds)。
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -363,8 +363,8 @@ __FinalizeCreateGameDeviceResources__メソッドは、__CreateGameDeviceResourc
 __FinalizeCreateGameDeviceResources__ と [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) は、以下について、コードの同様の部分を共有します。
 * __SetProjParams__ を使用して、カメラのプロジェクション マトリックスが適切になるように設定します。 詳しくは、「[カメラと座標空間](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space)」をご覧ください。
 * カメラのプロジェクション マトリックスに 3D 回転マトリックスを乗算することにより、画面の向きを処理します。 結果として得られるプロジェクション マトリックスを使って、__ConstantBufferChangeOnResize__ 定数バッファーを更新します。
-* __ブール型__の __m\_gameResourcesLoaded__ グローバル変数を設定し、リソースがバッファーに読み込まれ、次の手順の準備ができたことを示します。 最初に __GameRenderer__ のコンストラクター メソッドで、__GameRenderer::CreateDeviceDependentResources__ メソッドを使用して、この変数を __FALSE__ として初期化したことを思い出してください。 
-* この __m\_gameResourcesLoaded__ が __TRUE__ である場合、シーン オブジェクトのレンダリングを実行できます。 これについては、「__レンダリング フレームワーク I: レンダリングの概要__」の「[__GameRenderer::Render メソッド__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)」で説明しました。
+* 設定、 __m\_gameResourcesLoaded__ __ブール__グローバル変数を示すリソースは次の手順の準備として、バッファーに読み込まれています。 最初に __GameRenderer__ のコンストラクター メソッドで、__GameRenderer::CreateDeviceDependentResources__ メソッドを使用して、この変数を __FALSE__ として初期化したことを思い出してください。 
+* ときにこの__m\_gameResourcesLoaded__は__TRUE__シーンのオブジェクトのレンダリングが行うことができます。 これについては、__レンダリング framework i:レンダリングの概要__記事  [ __GameRenderer::Render メソッド__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method)します。
 
 ```cpp
 // When creating this sample game using the DirectX 11 App template, this method needs to be created.
@@ -581,7 +581,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource メソッド
 
-CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプル ゲームで__ConstantBufferChangeOnResize__でプロジェクション マトリックスを更新します。
+CreateWindowSizeDependentResources メソッドは、ウィンドウのサイズ、向き、ステレオに対応したレンダリング、解像度を変更するたびに呼び出されます。 サンプルのゲームの更新で射影行列__ConstantBufferChangeOnResize__します。
 
 ウィンドウ サイズのリソースは、次の方法で更新されます。 
 * アプリ フレームワークが、ウィンドウの状態の変更を表すいくつかの考えられるイベントのいずれかを取得します。 

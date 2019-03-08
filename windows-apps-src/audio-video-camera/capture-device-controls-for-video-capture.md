@@ -4,14 +4,14 @@ description: この記事では、ビデオ キャプチャの拡張シナリオ
 title: ビデオ キャプチャのための手動カメラ制御
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607657"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>ビデオ キャプチャのための手動カメラ制御
 
@@ -40,9 +40,9 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 ## <a name="exposure-priority"></a>露出の優先順位
 
-[**ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、ローライト シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
+[  **ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、ローライト シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
 
-[**ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647) プロパティをチェックして、現在のデバイスで露出の優先順位コントロールがサポートされているかどうかを確認してください。
+[  **ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647) プロパティをチェックして、現在のデバイスで露出の優先順位コントロールがサポートされているかどうかを確認してください。
 
 露出の優先順位コントロールを有効または無効にするには、[**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) を目的のモードに設定します。
 
@@ -51,7 +51,7 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 ## <a name="temporal-denoising"></a>一時的なノイズ除去
 Windows 10、バージョン 1803 以降では、デバイスでサポートされている場合、そのデバイスのビデオに対して一時的なノイズ除去を有効できます。 この機能では、隣接する複数のフレームの画像データがリアル タイムで融合されて、画像ノイズの少ないビデオ フレームが生成されます。
 
-アプリは、[**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) によって、一時的なノイズ除去が現在のデバイスでサポートされているかどうか、またサポートされている場合は、サポートされている一時的なノイズ除去のモードを判定します。 利用可能な一時的なノイズ除去モードは、[**Off**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**On**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**Auto**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode) です。デバイスはすべてのモードをサポートする必要はありませんが、すべてのデバイスは、**Auto** または **On** と **Off** をサポートする必要があります。
+アプリは、[**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) によって、一時的なノイズ除去が現在のデバイスでサポートされているかどうか、またサポートされている場合は、サポートされている一時的なノイズ除去のモードを判定します。 利用できるノイズ削除モードは[**オフ**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、 [**で**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)、および[**自動**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode).デバイスが、すべてのモードをサポートしていませんが、すべてのデバイスは、いずれかをサポートする必要があります**自動**または**で**と**オフ**します。
 
 次の例では、シンプルな UI を使用して、ユーザーが一時的なノイズ除去の複数モードを切り替えられるラジオ ボタンを配置します。
 
@@ -87,8 +87,8 @@ Windows 10、バージョン 1803 以降では、デバイスでサポートさ�
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [プロセスのメディア MediaFrameReader フレーム](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
 

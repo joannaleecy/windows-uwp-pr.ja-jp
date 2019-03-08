@@ -1,22 +1,22 @@
 ---
 title: ユニバーサル Windows プラットフォームを使用してアプリを作成する
-description: Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。
+description: Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成に思っているよりも簡単です。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 概要
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f45bf66854fbf51fc6f5b42418e0faa107eb2f6
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116304"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658237"
 ---
 # <a name="start-coding"></a>コーディングの開始
 
 ![アプリの構築](images/build-your-app.png)
 
-[UWP プラットフォーム](universal-application-platform-guide.md)へようこそ。 このページで、おあります位置する適切な情報を作成する Windows 10 アプリのコーディングを開始する必要があります。
+[UWP プラットフォーム](universal-application-platform-guide.md)へようこそ。 このページで、ごします紹介で適切な情報を作成する Windows 10 アプリのコーディングを開始する必要があります。
 
 開発を始める前に、必ず[セットアップする](get-set-up.md)必要があります。
 
@@ -26,10 +26,10 @@ ms.locfileid: "9116304"
 
 | タスク | 説明 |
 | --- | --- |
-| [フォームの作成](construct-form-learning-track.md) | 使いやすく、画面サイズに関係なく適切な外観になるフォームを作成する方法について説明します。 | 
-| [一覧での顧客の表示](display-customers-in-list-learning-track.md) | UI でデータを表示して編集する方法について説明します。 | 
-| [保存と読み込みの設定](settings-learning-track.md) | 設定を保存して取得する方法と場所について説明します。 |
-| [ファイルの操作](fileio-learning-track.md) | ファイルに対する読み取りと書き込みの方法、およびアクセス権のあるフォルダーとアクセス権のないフォルダーについて説明します。 | 
+| [フォームを作成します。](construct-form-learning-track.md) | 使いやすく、画面サイズに関係なく適切な外観になるフォームを作成する方法について説明します。 | 
+| [一覧で顧客を表示](display-customers-in-list-learning-track.md) | UI でデータを表示して編集する方法について説明します。 | 
+| [保存し、読み込みの設定](settings-learning-track.md) | 設定を保存して取得する方法と場所について説明します。 |
+| [ファイルを使用します。](fileio-learning-track.md) | ファイルに対する読み取りと書き込みの方法、およびアクセス権のあるフォルダーとアクセス権のないフォルダーについて説明します。 | 
 
 すべての学習トラックは、Windows 10 に慣れようとしている経験豊富な開発者を対象としています。 始めたばかりである場合は、[新しい開発者](#For-new-developers)のためのコンテンツから始めてください。
 
@@ -37,19 +37,19 @@ ms.locfileid: "9116304"
 
 新しい開発者の場合は、Windows 10 の開発に必要になるコードとツールの使用方法の基本について説明する多くのリソースが用意されています。 
 
-* ["Hello World" アプリを作成する](your-first-app.md)
+* ["Hello World"アプリを作成します。](your-first-app.md)
 
 コーディングの基本、C# 言語、Visual Studio、またはユニバーサル Windows プラットフォームの機能に関する詳細なチュートリアルが必要な場合は、次のリソースを確認してください。
 
 **ドキュメント:**
 
-* [C# の概要](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# クイック スタート](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
-* [Visual Studio の概要](https://docs.microsoft.com/visualstudio/ide/)
+* [を概要します。C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
+* [C#クイック スタート](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [Visual Studio を概要します。](https://docs.microsoft.com/visualstudio/ide/)
 
-**ビデオ**
+**動画**
 
-* [Microsoft Virtual Academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
+* [Microsoft virtual academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
 * [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
 ## <a name="using-the-docs"></a>ドキュメントの使用
@@ -58,11 +58,11 @@ ms.locfileid: "9116304"
 
 | エリア | 説明 |
 | --- | --- |
-| **新機能** | Windows 10 の各メジャー アップデートでは、ドキュメントが新しいガイダンスで拡張されています。 これらのドキュメントには、すべてのリリースで追加した機能と開発者向けガイダンスだけでなく、新しい API の一覧に関する情報が含まれます。 </br>   [最新の Windows 10 リリースでの開発者向け新機能](../whats-new/windows-10-version-latest.md) </br> ただし、ドキュメントを更新するのはメジャー リリースのときだけではありません。 常に開発者が参照するための新しい情報が追加されています。次の最新のドキュメントで最新情報を提供します。 </br>   [ドキュメントの新着情報](../whats-new/windows-docs-latest.md) |
-| **設計と UI** | アプリの外観と UI に関するすべての情報がドキュメントのこのエリアに含まれています。XAML マークアップ言語の特定の情報に興味がある場合、または自分のドキュメント用に独自の外観を作成したい場合は、ここから始めてください。 </br>   [UWP アプリの設計の基本](../design/basics/index.md) |
-| **アプリを開発する** | Windows 10 の特定の機能に関する詳細情報が必要である場合、または UWP 開発で行うことができる内容を確認することにのみ関心がある場合は、ドキュメントのこのエリアを確認してください。 </br>   [UWP アプリの機能](../develop/index.md) </br> Windows 10 アプリの API リファレンスは、関連する一連のドキュメントでホストされており、以下で参照できます。 </br>   [Windows UWP 名前空間](https://docs.microsoft.com/en-us/uwp/api/) </br>   [ファイルおよび XML スキーマ](https://docs.microsoft.com/uwp/schemas/) |
-| **ゲームの開発** | これらのドキュメントには、Windows または Xbox でゲームを開発する方法に関する情報が含まれます。 これには、セットアップ手順、開発者プログラム、および DirectX または Xbox の機能を使用したプログラミングに関する手順が含まれます。 </br>   [ゲーム開発の概要](../gaming/getting-started.md) |
-| **公開** | これらのドキュメントには、アプリの申請から価格の設定、販売促進と顧客エンゲージメントまで、Windows ストアにアプリを公開する方法に関する情報が含まれます。 </br>   [Windows ストアでのアプリの公開](../publish/index.md) |
+| **新機能** | Windows 10 の各メジャー アップデートでは、ドキュメントが新しいガイダンスで拡張されています。 これらのドキュメントには、すべてのリリースで追加した機能と開発者向けガイダンスだけでなく、新しい API の一覧に関する情報が含まれます。 </br>   [本拠地、最新の Windows 10 リリースでは新機能](../whats-new/windows-10-version-latest.md) </br> ただし、ドキュメントを更新するのはメジャー リリースのときだけではありません。 常に開発者が参照するための新しい情報が追加されています。次の最新のドキュメントで最新情報を提供します。 </br>   [新機能については、docs です。](../whats-new/windows-docs-latest.md) |
+| **設計と UI** | ビジュアルのプレゼンテーションや、アプリの UI のすべての情報は、ドキュメントのこの領域に含まれます。XAML のマークアップ言語の詳細に関心がドキュメントの一意の外観を作成するか、ここから開始します。 </br>   [UWP アプリのデザインの基礎](../design/basics/index.md) |
+| **アプリを開発します。** | Windows 10 の特定の機能に関する詳細情報が必要である場合、または UWP 開発で行うことができる内容を確認することにのみ関心がある場合は、ドキュメントのこのエリアを確認してください。 </br>   [UWP アプリの機能](../develop/index.md) </br> Windows 10 アプリの API リファレンスは、関連する一連のドキュメントでホストされており、以下で参照できます。 </br>   [Windows UWP 名前空間](https://docs.microsoft.com/en-us/uwp/api/) </br>   [ファイルと XML スキーマ](https://docs.microsoft.com/uwp/schemas/) |
+| **ゲームを開発します。** | これらのドキュメントには、Windows または Xbox でゲームを開発する方法に関する情報が含まれます。 これには、セットアップ手順、開発者プログラム、および DirectX または Xbox の機能を使用したプログラミングに関する手順が含まれます。 </br>   [ゲーム開発の概要](../gaming/getting-started.md) |
+| **公開** | これらのドキュメントには、アプリの申請から価格の設定、販売促進と顧客エンゲージメントまで、Windows ストアにアプリを公開する方法に関する情報が含まれます。 </br>   [Windows ストア アプリに発行します。](../publish/index.md) |
 
 ## <a name="other-docs"></a>その他のドキュメント
 

@@ -5,15 +5,15 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
 ms.openlocfilehash: fb68b4bbd1b751591e9f336efe5dad3c22b3bf92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937201"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618307"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>Windows 10 UWP アプリの自動起動
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 開発者はいくつかの方法でユニバーサル Windows プラットフォーム (UWP) アプリの自動起動を実現できます。 ここでは、プロトコルのアクティブ化と起動アクティブ化を使ってアプリを起動する方法を説明します。
 
@@ -207,7 +207,7 @@ void OnActivated(IActivatedEventArgs^ args)
 }
 ```
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>概要
 以上のように、UWP アプリはさまざまな方法で起動することができます。 要件や用途に応じて、適切な方法を利用してください。 
 
 ## <a name="see-also"></a>関連項目

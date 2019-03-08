@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a98af637c8c60449cd2005c4fc6f83f9b0719cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938454"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660997"
 ---
 # <a name="compile-the-xbox-developer-kit-xdk-xbox-live-api-source"></a>Xbox 開発キット (XDK) に付属する Xbox Live API のソースをコンパイルする
 
@@ -24,11 +24,11 @@ Xbox 開発キット (XDK) には、Microsoft.Xbox.Services.dll (XSAPI) をビ�
 ## <a name="to-compile-the-xdk-c-xsapi-project-for-yourself"></a>XDK C++ XSAPI プロジェクトを自分でコンパイルするには
 
 <ol>
-  <li> Microsoft.Xbox.Services ソースを取得します。 これを行うには、すべてのファイルを抽出"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"以外の書き込み可能なフォルダーにソースを複製できます<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
+  <li> Microsoft.Xbox.Services ソースを取得します。 これを行うには、すべてのファイルを抽出"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"の外部で書き込み可能なフォルダーからソースを複製できます <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> プロジェクトがビルド済み DLL を参照している場合は、参照を削除する必要があります。</li>
     <ul>
-      <li> Visual Studio 2012 の場合: Visual Studio で、[プロジェクト] の [参照...] を選択します。 Xbox Services API が参照として一覧に表示されている場合は、それを選択し、[参照の削除] をクリックします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
-      <li> Visual Studio 2015 または 2017 の場合: Visual Studio で、[プロジェクト] -> [参照の追加...] の順に 選択します。 Xbox Services API がオンになっている場合、オフにします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
+      <li> Visual Studio 2012 の場合:「プロジェクト]、[参照...」を選択します。Visual studio。 Xbox Services API が参照として一覧に表示されている場合は、それを選択し、[参照の削除] をクリックします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
+      <li> Visual Studio 2015 または 2017。選択"プロジェクト]、[参照を追加しています..." Visual Studio で作ることができます。 Xbox Services API がオンになっている場合、オフにします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
     </ul>
   <li> XDK でビルドする場合は、Visual Studio で、[ファイル] -> [追加] -> [既存のプロジェクト...] の順に選択して、 次の 2 つのプロジェクトをアプリケーションのソリューションに追加します。 vcxproj ファイルは、ソースの抽出先のフォルダーに配置されます。</li>
 Visual Studio 2017 の場合: <ul>
@@ -50,11 +50,11 @@ Visual Studio 2012 の場合: <ul>
 ## <a name="to-compile-the-xdk-winrt-xsapi-project-for-yourself"></a>XDK WinRT XSAPI プロジェクトを自分でコンパイルするには
 
 <ol>
-  <li> Microsoft.Xbox.Services ソースを取得します。 これを行うには、すべてのファイルを抽出する"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"以外の書き込み可能なフォルダーにソースを複製できます<a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
+  <li> Microsoft.Xbox.Services ソースを取得します。 すべてのファイルを抽出するには、"%XboxOneExtensionSDKLatest%\ExtensionSDKs\Xbox サービス API\8.0\SourceDist\Xbox.Services.zip"または"C:\Program Files (x86)"の外部で書き込み可能なフォルダーからソースを複製できます <a href ="https://github.com/Microsoft/xbox-live-api">https://github.com/Microsoft/xbox-live-api</a></li>
   <li> プロジェクトがビルド済み DLL を参照している場合は、参照を削除する必要があります。</li>
     <ul>
-      <li> Visual Studio 2012 の場合: Visual Studio で、[プロジェクト] の [参照...] を選択します。 Xbox Services API が参照として一覧に表示されている場合は、それを選択し、[参照の削除] をクリックします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
-      <li> Visual Studio 2015 または 2017 の場合: Visual Studio で、[プロジェクト] -> [参照の追加...] の順に 選択します。 Xbox Services API がオンになっている場合、オフにします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
+      <li> Visual Studio 2012 の場合:「プロジェクト]、[参照...」を選択します。Visual studio。 Xbox Services API が参照として一覧に表示されている場合は、それを選択し、[参照の削除] をクリックします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
+      <li> Visual Studio 2015 または 2017。選択"プロジェクト]、[参照を追加しています..." Visual Studio で作ることができます。 Xbox Services API がオンになっている場合、オフにします。 [OK] をクリックしてプロジェクト ファイルを保存します。</li>
     </ul>
   <li> XDK でビルドする場合は、Visual Studio で、[ファイル] -> [追加] -> [既存のプロジェクト...] の順に選択して、 次の 2 つのプロジェクトをアプリケーションのソリューションに追加します。 vcxproj ファイルは、ソースの抽出先のフォルダーに配置されます。  Visual Studio 2015 の場合、プロジェクトは、VS2015 形式に自動的にアップグレードされます。</li>
     <ul>
@@ -62,8 +62,8 @@ Visual Studio 2012 の場合: <ul>
     </ul>
   <li> Visual Studio で参照を追加します。</li>
     <ul>
-      <li> Visual Studio 2012 の場合: Visual Studio で、[プロジェクト] の [参照...] を選択し、[参照の追加] を選択します。 次に、[ソリューション] -> [プロジェクト] で、上記 2 つのプロジェクトのエントリをどちらもオンにして、[OK] をクリックします。</li>
-      <li> Visual Studio 2015 または 2017 の場合: Visual Studio で、[プロジェクト] -> [参照の追加...] の順に 選択します。 次に、[プロジェクト] で、上記 2 つのプロジェクトのエントリをどちらもオンにして、[OK] をクリックします。</li>
+      <li> Visual Studio 2012 の場合:「プロジェクト、参照...」を選択します。Visual Studio での参照の追加 を選択します。 次に、[ソリューション] -> [プロジェクト] で、上記 2 つのプロジェクトのエントリをどちらもオンにして、[OK] をクリックします。</li>
+      <li> Visual Studio 2015 または 2017。選択"プロジェクト]、[参照を追加しています..." Visual Studio で作ることができます。 次に、[プロジェクト] で、上記 2 つのプロジェクトのエントリをどちらもオンにして、[OK] をクリックします。</li>
     </ul>
   <li> "出力フォルダー" がアプリケーション プロジェクトと Xbox サービス プロジェクトで同じであることを確認します。 この設定は、Visual Studio プロジェクトの [プロパティ] -> [構成プロパティ] -> [全般] -> [出力ディレクトリ] で確認できます。</li>
   <li> Visual Studio ソリューションをリビルドします。</li>

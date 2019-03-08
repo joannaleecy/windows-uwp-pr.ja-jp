@@ -7,11 +7,11 @@ keywords: Windows 10、UWP、広告ネットワーク、アプリのメタデー
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049429"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621137"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>広告ネットワーク用のアプリのメタデータ API
 
@@ -67,7 +67,7 @@ ms.locfileid: "9049429"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Ocp-Apim-Subscription-Key | string | 必須。 [アプリのメタデータ API ポータルから取得した](#get-key)サブスクリプション キー。  |
 
@@ -126,24 +126,24 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 応答本文の値について詳しくは、次の表をご覧ください。
 
-| 値      | 型   | 説明    |
+| Value      | 種類   | 説明    |
 |------------|--------|--------------------|
-| storeId           | string  | アプリのストア ID。 ストア ID の例は 9NBLGGH29DM8 です。     |  
+| storeId           | string  | アプリケーションのストア ID です。 ストア ID の例は 9NBLGGH29DM8 です。     |  
 | name           | string  | アプリの名前。   |
-| description           | string  | アプリのストア登録情報にある説明。  |
+| 説明           | string  | アプリのストア登録情報にある説明。  |
 | phoneStoreGuid           | string  | アプリの製品 ID (Windows Phone 8.x)。 これは GUID です。  |
 | windowsStoreGuid           | string  | アプリの製品 ID (Windows 8.x)。 これは GUID です。 |
 | storeCategory           | string  | ストアでのアプリのカテゴリ。 サポートされる値については、ストア内のアプリの[カテゴリとサブカテゴリの一覧](../publish/category-and-subcategory-table.md)をご覧ください。  |
 | iabCategory           | string  | Interactive Advertising Bureau (IAB) によって定義されているアプリのコンテンツのカテゴリ。 たとえば、**News** や **Sports** です。 コンテンツのカテゴリの一覧については、IAB の Web サイトで [IAB Tech Lab のコンテンツ分類](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy)のページをご覧ください。   |
-| iabCategoryId           | 文字列  | アプリのコンテンツ カテゴリの ID。 たとえば、**IAB12** はニュース カテゴリの ID で、**IAB17** はスポーツ カテゴリの ID です。 コンテンツ カテゴリ ID の一覧については、[OpenRTB API 仕様](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)のセクション 5.1 をご覧ください。 |
+| iabCategoryId           | string  | アプリのコンテンツ カテゴリの ID。 たとえば、**IAB12** はニュース カテゴリの ID で、**IAB17** はスポーツ カテゴリの ID です。 コンテンツ カテゴリ ID の一覧については、[OpenRTB API 仕様](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf)のセクション 5.1 をご覧ください。 |
 | coppa           | ブール値  | アプリが 13 歳未満の子供を対象しており、児童オンライン プライバシー保護法 (COPPA) の義務がある場合は true。それ以外の場合は false です。  |
-| downloadUrl           | 文字列  | ストア内のアプリの登録情報へのリンク。 このリンクは、```https://www.microsoft.com/store/apps/<Store ID>``` の形式で示されます。  |
+| downloadUrl           | string  | ストア内のアプリの登録情報へのリンク。 このリンクは、```https://www.microsoft.com/store/apps/<Store ID>``` の形式で示されます。  |
 | isLive           | ブール値  | アプリが現在ストアで利用可能な場合は true。それ以外の場合は false。  |
 | iconUrls           | array  |  アプリに関連付けられたアイコン URL への相対パスを含む 1 つ以上の文字列の配列。 アイコンを取得するには、URL の先頭に *http* または *https* を付けます。  |
-| type           | 文字列  | **App** または **Game** のいずれかの文字列。  |
-| devices           |  array  | アプリがサポートするデバイスの種類を指定する次の 1 つ以上の文字列の配列: **PC**、**Phone**、**Xbox**、**IoT**、**Server**、**Holographic**。  |
-| platformVersions           | array  |  アプリがサポートするプラットフォームを指定する次の 1 つ以上の文字列の配列: **Windows.Universal**、**Windows.Windows8x**、**Windows.WindowsPhone8x**。  |
-| screenshotUrls           | 配列  | このアプリのスクリーンショット URL への相対パスを含む 1 つ以上の文字列の配列。 スクリーンショットを取得するには、URL の先頭に *http* または *https* を付けます。  |
+| type           | string  | 次のいずれかの文字列です。**アプリ**または**ゲーム**します。  |
+| デバイス           |  array  | アプリをサポートするデバイスの種類を指定する次の文字列の 1 つ以上の配列。**PC**、 **Phone**、 **Xbox**、 **IoT**、 **Server**、および**Holographic**します。  |
+| platformVersions           | array  |  アプリをサポートするプラットフォームを指定する次の文字列の 1 つ以上の配列。**Windows.Universal**、 **Windows.Windows8x**、および**Windows.WindowsPhone8x**します。  |
+| screenshotUrls           | array  | このアプリのスクリーンショット URL への相対パスを含む 1 つ以上の文字列の配列。 スクリーンショットを取得するには、URL の先頭に *http* または *https* を付けます。  |
 
 <span/>
 
