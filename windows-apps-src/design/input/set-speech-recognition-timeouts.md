@@ -1,5 +1,5 @@
 ---
-Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+Description: 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
 title: 音声認識のタイムアウトの設定
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 679c2632fd5793ae083b2a79e29de3a3e9da04cf
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627167"
 ---
 # <a name="set-speech-recognition-timeouts"></a>音声認識のタイムアウトの設定
 
 
 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
 
-> **重要な API**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)、[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+> **重要な Api**:[**タイムアウト**](https://msdn.microsoft.com/library/windows/apps/dn653253)、 [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## <a name="set-a-timeout"></a>タイムアウトの設定
 
@@ -31,7 +31,7 @@ ms.locfileid: "9044925"
 -   BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。
 -   EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。
 
-**注:** タイムアウトは認識エンジンごとに設定できます。
+**注**  あたり認識エンジンごとにタイムアウトを設定することができます。
 
  
 

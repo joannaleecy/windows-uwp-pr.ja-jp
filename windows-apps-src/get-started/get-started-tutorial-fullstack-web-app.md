@@ -6,15 +6,15 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117722"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624627"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>REST API のバックエンドを使った単一ページの Web アプリを作成する
 
-**よく使われるフルスタックの Web テクノロジを使用して Microsoft Store 用のホストされた Web アプリを構築する**
+**Web テクノロジの人気のある fullstack Microsoft Store のホストされている Web アプリの構築します。**
 
 ![単一ページの Web アプリである、簡単なメモリ ゲーム](images/fullstack.png)
 
@@ -28,7 +28,7 @@ ms.locfileid: "9117722"
 
  - [Node.js](https://nodejs.org/en/download/) - Node を PATH に追加するオプションを必ず選択してください。
 
- - [Express ジェネレーター](https://expressjs.com/en/starter/generator.html)- Node のインストール後に、次のコマンドを実行して Express をインストールします。 `npm install express-generator -g`
+ - [Express ジェネレーター](https://expressjs.com/en/starter/generator.html)- ノードのインストール後に、Express のインストールを実行して `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -36,11 +36,11 @@ ms.locfileid: "9117722"
 
 Azure の部分を行わない (または後で行う) 場合には、Azure のホスティングと、Microsoft Store 用のアプリのパッケージングについて説明している、パート 1 の最後のセクションとパート 2 を省略してください。 その場合には、構築した API サービスと Webアプリをローカル コンピューター上で実行できます (それぞれ `http://localhost:8000`、`http://localhost:3000` から実行できます)。
 
-## <a name="part-i-build-a-rest-api-backend"></a>パート 1: REST API バックエンドの構築
+## <a name="part-i-build-a-rest-api-backend"></a>パート 1:REST API バックエンドを構築します。
 
 最初に、簡単なメモリ ゲームの Web アプリを実現するための、メモリ ゲームの API を構築します。 [Swagger](https://swagger.io/) を使って API を定義し、手動テストのためのスキャフォールディング コードと Web UI を生成します。
 
-このパートを省略して、[パート 2: 単一ページの Web アプリを構築する](#part-ii-build-a-single-page-web-application)に直接進む場合には、[パート 1 の完成コード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)を利用できます。*README* の指示に沿って、ローカルでコードを実行するか、または *5. API サービスを Azure でホストして CORS を有効化する*を参照して Azure で実行します。
+この部分をスキップし、まっすぐに移動したい場合[パート II:単一ページの web アプリケーションをビルド](#part-ii-build-a-single-page-web-application)、ここでは、[第 1 部のコードが完了した](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)します。に従って、 *README*をコードし、ローカルで実行を取得または表示する指示*5。Azure で API サービスをホストし、CORS を有効にする*Azure から実行します。
 
 ### <a name="game-overview"></a>ゲームの概要
 
@@ -91,7 +91,7 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 #### <a name="get-game"></a>GET /game
 メモリ ゲーム ボードの現在の状態を取得します。
 
-*パラメーター: なし*
+*パラメーターなし*
 
 | 応答 | 説明 |
 |----------|-------------|
@@ -106,10 +106,10 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
 
 | 応答 | 説明 |
 |----------|-------------|
-| 200 OK | 指定されたカードの **id** と **value** を持つ JSON を返します。 例:  `[{"id":0,"value":1}]`|
+| 200 OK | 指定されたカードの **id** と **value** を持つ JSON を返します。 例: `[{"id":0,"value":1}]`|
 | 400 BAD REQUEST |  指定されたカードでエラーが発生しました。 詳細は HTTP 応答の本文を参照してください。|
 
-### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. API を指定して、コード スタブを生成する
+### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. Api の仕様し、コード スタブを生成します。
 
 [Swagger](https://swagger.io/) を使って、メモリ ゲームの API の設計を、動作する Node.js サーバー コードに変換します。 次のようにして、[メモリ ゲーム API を Swagger メタデータとして](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)定義できます。 これを使って、サーバー コードのスタブを生成します。
 
@@ -142,9 +142,9 @@ Azure の部分を行わない (または後で行う) 場合には、Azure の�
     npm install swaggerize-ui
     ```
 
-    VS Code を開始し、[**ファイル**]  >  [**フォルダーを開く**] と選び、MemoryGameAPI ディレクトリに移動します。 これは、先ほど作成した Node.js API サーバーです。 これは、よく使われる [ExpressJS](https://expressjs.com/en/4x/api.html) Web アプリケーション フレームワークを使って、プロジェクトを構造化して実行します。
+    VS Code を開始し、**[ファイル]**  >  **[フォルダーを開く]** と選び、MemoryGameAPI ディレクトリに移動します。 これは、先ほど作成した Node.js API サーバーです。 これは、よく使われる [ExpressJS](https://expressjs.com/en/4x/api.html) Web アプリケーション フレームワークを使って、プロジェクトを構造化して実行します。
 
-### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. サーバー コードのカスタマイズとデバッグのセットアップ
+### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. サーバー コードとデバッグのセットアップをカスタマイズします。
 
 プロジェクト ルートの *server.js* ファイルが、サーバーの「メイン」の機能を果たします。 そのファイルを VS Code で開き、そこに次のコードをコピーします。 生成されたコードを変更した行には、詳しい説明のコメントが入っています。
 
@@ -211,7 +211,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 
 F5 キーを押してブラウザーを開き、[https://localhost:8000](https://localhost:8000) に移動します。 メモリ ゲーム API の Swagger UI のページが開きます。詳細を展開して、各メソッドのフィールドを入力します。 API の呼び出しを試すこともできますが、応答には ([Swagmock](https://www.npmjs.com/package/swagmock) モジュールが提供する) モックアップ データのみが含まれています。 次に、API が実際に動作するように、ゲーム ロジックを追加します。
 
-### <a name="3-set-up-your-route-handlers"></a>3. ルート ハンドラーを設定する
+### <a name="3-set-up-your-route-handlers"></a>3.ルート ハンドラーを設定します。
 
 Swagger ファイル (config\swagger.json) では、定義されている各 URL パスを (\handlers にある) ハンドラー ファイルにマッピングし、さらにそのパスに定義された各メソッド (**GET**、**POST** など) をハンドラー ファイル内の `operationId` (機能) にマッピングして、サーバーに対して、さまざまなクライアントの HTTP 要求を処理する方法を指示します。
 
@@ -223,7 +223,7 @@ Swagger ファイル (config\swagger.json) では、定義されている各 URL
 
  それぞれの変更の詳細については、ファイル内のコメントを確認してください。ここでは、基本的な入力エラーの確認 (たとえば、新しいゲームのクライアント要求でペアの数が 1 より少ないなど) を行い、必要に応じてエラーメッセージを送信しています。 またハンドラーは、有効なクライアント要求を、(\data にある) 対応するデータ ファイルにルーティングして、さらに処理を行うようにします。 これらは次で行います。
 
-### <a name="4-set-up-your-data-model"></a>4. データ モデルをセットアップする
+### <a name="4-set-up-your-data-model"></a>4。データ モデルを設定します。
 
 プレースホルダーのモックデータ サービスを、実際のメモリ ゲーム ボードのデータ モデルに置き換えます。
 
@@ -270,17 +270,17 @@ for (var i=0; i < board.length; i++){
 
 この変更により、**GET /game** メソッドは (クリアされていないものも含めて) すべてのカードの値を返します。 これは、メモリ ゲームのフロント エンドを構築する際のデバッグに役立ちます。
 
-### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5. (省略可能) API サービスを Azure でホストして CORS を有効化する
+### <a name="5-optional-host-your-api-service-on-azure-and-enable-cors"></a>5。(省略可能)Azure で API サービスをホストし、CORS を有効にします。
 
 次の Azure ドキュメントを参照して作業を行います。
 
- - [Azure Portal を使って、新しい *API アプリ*を登録する](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [新しい登録*API アプリ*Azure Portal を使用](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
  - [API アプリの Git デプロイを設定する](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
- - [API アプリ コードを Azure にデプロイする](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [API アプリのコードを Azure に展開します。](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 アプリを登録する場合、*アプリ名*を他と異なるものにするようにします (*http://memorygameapi.azurewebsites.net* URL のバリエーションを要求する、他のアプリと名前が競合しないようにします)。
 
-ここまでの作業を行って、Azure と Swagger UI が機能している場合、メモリ ゲームのバックエンドに必要な最後の手順が 1 つあります。 [Azure Portal](https://portal.azure.com) から、新しく作成した*アプリ サービス*を選び、**CORS** (クロス オリジン リソース共有) オプションを選択または検索します。 [**許可されたオリジン**] の下で、アスタリスク (`*`) を追加して、[**保存**] をクリックします。 これにより、ローカル マシンで開発を行いながら、メモリ ゲームのフロントエンドから、作成した API サービスへのクロス オリジンの呼び出しが可能となります。 メモリ ゲームのフロント エンドが完成し、Azure にデプロイしたら、このエントリを Web アプリの特定の URL で置き換えることができます。
+ここまでの作業を行って、Azure と Swagger UI が機能している場合、メモリ ゲームのバックエンドに必要な最後の手順が 1 つあります。 [Azure Portal](https://portal.azure.com) から、新しく作成した*アプリ サービス*を選び、**CORS** (クロス オリジン リソース共有) オプションを選択または検索します。 **[許可されたオリジン]** の下で、アスタリスク (`*`) を追加して、**[保存]** をクリックします。 これにより、ローカル マシンで開発を行いながら、メモリ ゲームのフロントエンドから、作成した API サービスへのクロス オリジンの呼び出しが可能となります。 メモリ ゲームのフロント エンドが完成し、Azure にデプロイしたら、このエントリを Web アプリの特定の URL で置き換えることができます。
 
 ### <a name="going-further"></a>追加情報
 
@@ -288,13 +288,13 @@ for (var i=0; i < board.length; i++){
 
 そのために役立つ追加情報を次に示します。
 
- - [Visual Studio Code を使った Node.js の高度なデバッグ](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+ - [高度な Node.js の Visual Studio Code のデバッグ](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + モバイル ドキュメント](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
+ - [Azure の Web + モバイル docs](https://docs.microsoft.com/en-us/azure/#pivot=services&panel=web)
 
- - [Azure DocumentDB ドキュメント](https://docs.microsoft.com/en-us/azure/documentdb/index)
+ - [Azure DocumentDB のドキュメント](https://docs.microsoft.com/en-us/azure/documentdb/index)
 
-## <a name="part-ii-build-a-single-page-web-application"></a>パート 2: 単一ページの web アプリケーションを構築します。
+## <a name="part-ii-build-a-single-page-web-application"></a>第 2 部:単一ページの web アプリケーションを作成します。
 
 パート 1 では、[REST API バックエンド](#part-i-build-a-rest-api-backend)を構築 (または[ダウンロード](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) しました。次に、[Node](https://nodejs.org/en/)、[Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) を使って、単一ページのメモリ ゲームのフロントエンドを作成します。
 
@@ -307,7 +307,7 @@ for (var i=0; i < board.length; i++){
 * [Bootstrap](https://getbootstrap.com/): レスポンシブ レイアウト
 * [Visual Studio Code](https://code.visualstudio.com/): コードの作成、マークダウン表示、デバッグ
 
-### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Express を使って Node.js アプリケーションを作成する
+### <a name="1-create-a-nodejs-application-by-using-express"></a>1. Express を使用して Node.js アプリケーションを作成します。
 
 まず、Express を使って Node.js プロジェクトを作成します。
 
@@ -333,7 +333,7 @@ for (var i=0; i < board.length; i++){
     npm start
     ```
 
-5. [https://localhost:3000/](https://localhost:3000/) に移動してアプリケーションを表示します。
+5. [https://localhost:3000/  ](https://localhost:3000/) に移動してアプリケーションを表示します。
 
     ![http://localhost:3000/ のスクリーンショット](./images/express.png)
 
@@ -345,7 +345,7 @@ for (var i=0; i < board.length; i++){
 
 7. 新しいタイトルを表示するためアプリを更新するには、コマンド プロンプトで **Ctrl + C**、**Y** の順に押してアプリを停止し、`npm start` で再起動します。
 
-### <a name="2-add-client-side-game-logic-code"></a>2. クライアント側のゲーム ロジック コードを追加する
+### <a name="2-add-client-side-game-logic-code"></a>2. クライアント側のゲーム ロジックのコードを追加します。
 チュートリアルのこの後半に必要なファイルは、[Start](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start) フォルダーに含まれています。 途中で迷った場合には、[Final](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Final) フォルダーに完成したコードが含まれています。 
 
 1. [Start](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/frontend/Start) フォルダー内の scripts.js ファイルをコピーして、それを memory\public\javascripts に貼り付けます。 このファイルには、次のような、ゲームを実行するために必要なすべてのゲーム ロジックが含まれています。
@@ -371,7 +371,7 @@ for (var i=0; i < board.length; i++){
     size = parseInt(size, 10);
     ```
 
-    このコードは、`id="selectGameSize"` (これは後で作成します) を使って、ドロップダウン メニューから値を取得し、それを変数 (`size`) に保存します。  [`parseInt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) 関数を使って、ドロップダウンからの文字列の値を解析して整数を返します。要求されたゲーム ボードの `size` をサーバーに渡します。 
+    このコードは、`id="selectGameSize"` (これは後で作成します) を使って、ドロップダウン メニューから値を取得し、それを変数 (`size`) に保存します。  [`parseInt()`  ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) 関数を使って、ドロップダウンからの文字列の値を解析して整数を返します。要求されたゲーム ボードの `size` をサーバーに渡します。 
 
     このチュートリアルのパート 1 で作成した [`/new`](#part-i-build-a-rest-api-backend) メソッドを使って、選択されたゲーム ボードのサイズをサーバーに投稿します。 このメソッドは、カードおよびカードが一致したかどうかを示す `true/false` 値を含む、単一の JSON 配列を返します。 
 
@@ -402,7 +402,7 @@ for (var i=0; i < board.length; i++){
     * HTML でカードを生成します。
     * カードをページに追加します。
 
-    次のコードをコピーして、*scripts.js * の `drawGameBoard()` 関数に貼り付けます。
+    次のコードをコピーして、*scripts.js*  の `drawGameBoard()` 関数に貼り付けます。
 
     ``` javascript
     // create output
@@ -464,14 +464,14 @@ for (var i=0; i < board.length; i++){
 > [!TIP] 
 > Visual Studio Code を使っている場合は、コメントを解除するコードのすべての行を選択して、Crtl + K、U キーの順に押します。
 
-次に、[`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) と、パート 1 で作成した **PUT** [`/guess`](#part-i-build-a-rest-api-backend) メソッドを使用します。 
+ここでは使用[ `jQuery.ajax()` ](https://api.jquery.com/jQuery.ajax/)と**配置** [ `/guess` ](#part-i-build-a-rest-api-backend)パート I で作成したメソッド。 
 
 このコードは、次の順序で実行されます。
 
-* ユーザーが選択した最初のカードの `id` が、selectedCards[] 配列の最初の値として追加されます":  `selectedCards[0]` 
+* `id`最初のカードは、最初の値として選択したユーザーを追加 selectedCards 配列にします。 `selectedCards[0]` 
 * `selectedCards[0]` の値 (`id`) が [`/guess`](#part-i-build-a-rest-api-backend) メソッドを使ってサーバーに投稿されます
 * サーバーが、そのカードの `value` (整数) を応答します
-* `id` が次の値であるカードの裏に [Bootstrap glyphicon](https://getbootstrap.com/components/) が追加されます:  `selectedCards[0]`
+* A [Bootstrap の glyphicon](https://getbootstrap.com/components/)カードの背面に追加の`id`は `selectedCards[0]`
 * (サーバーからの) 最初のカードの `value` が `selectedCardsValues[]` 配列: `selectedCardsValues[0]` に保存されます 
 
 ユーザーの 2 回目の推測も同じロジックに従います。 ユーザーが選択したカードが同じ ID である場合 (たとえば `selectedCards[0] == selectedCards[1]`)、カードは一致します。 一致したペアには CSS クラス `.matched` が追加され (緑色に変わり)、カードは反転されたまま残ります。
@@ -489,7 +489,7 @@ if (cardsFlipped == gameBoardSize) {
 
 反転して一致したカードの数が、ゲーム ボードのサイズと等しい場合 (たとえば、`cardsFlipped == gameBoardSize`)、それ以上反転できるカードはなく、ゲームは終了です。 `div` に `id="game-board"` を使って簡単な HTML を追加して、ユーザーにゲームが終了したことと、もう一度プレイできることを伝えます。  
 
-### <a name="3-create-the-user-interface"></a>3. ユーザー インターフェイスを作成する 
+### <a name="3-create-the-user-interface"></a>3.ユーザー インターフェイスを作成します。 
 次に、すべてのコードを確認して、ユーザー インターフェイスを作成します。 このチュートリアルでは、テンプレート エンジン [Pug](https://pugjs.org/) (旧 Jade) を使用します。  *Pug* では HTML の記述時に、空白が意味を持つ、クリーンな構文を使います。 次に例を示します。 
 
 ```
@@ -537,13 +537,13 @@ body
     ```
 
 > [!TIP] 
-> Pug では空白が意味を持つことに注意してください。 すべてのインデントが正しいことを確認します。
+> 注意してください。Pug は、機密性の高い空白です。 すべてのインデントが正しいことを確認します。
 
-### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. Bootstrap のグリッドのシステムを使ってレスポンシブ レイアウトを作成する
+### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4。ブートス トラップのグリッド システムを使用して、レスポンシブ レイアウトを作成するには
 Bootstrap の[グリッド システム](https://getbootstrap.com/css/#grid)は、デバイスのビューポートの変化にしたがって拡大縮小する、柔軟なグリッド システムです。 このゲームのカードは、次のような Bootstrap の定義済みのグリッド システム クラスをレイアウトに使用しています。
-* `.container-fluid`柔軟なグリッド コンテナーを指定します
-* `.row-fluid`: 柔軟な行を指定します
-* `.col-xs-3`: 列数を指定します
+* `.container-fluid`: グリッドの滑らかなコンテナーを指定します
+* `.row-fluid`: 滑らかな行を指定します
+* `.col-xs-3`: 列の数を指定します
 
 Bootstrap のグリッド システムを使うと、モバイル デバイスのナビゲーション メニューに表示されるように、グリッド システムを 1 つの垂直列に折りたたむことができます。  しかし、このゲームでは常に列を保持するため、定義済みのクラス `.col-xs-3` を使い、常に横方向のグリッドを保持するようにします。 
 
@@ -572,7 +572,7 @@ Bootstrap のグリッド システムを使うと、モバイル デバイス�
                 script restoreGame();
     ```
 
-### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5. CSS 変換を使ってカードの反転のアニメーションを追加する
+### <a name="5-add-a-card-flip-animation-with-css-transforms"></a>5。CSS の変換とカード フリップ アニメーションを追加します。
 memory\public\stylesheets の style.css ファイルを、Start フォルダーの style.css ファイルで置き換えます。
 
 [CSS 変換](https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/css/transforms)を使って、反転モーションを追加し、カードにリアルな 3D の反転モーションを追加します。 ゲームのカードは次の HTML 構造を使用して作成され、(先述の `drawGameBoard()`関数により) プログラムによってゲーム ボードに追加されています。
@@ -592,16 +592,16 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
     perspective: 1000px; 
     ```
 
-2. 次に、style.css の `.cards` クラスに以下のプロパティを追加します。 `.cards``div` は、カードの表または裏を示して、実際に反転アニメーションを行う要素です。 
+2. 次に、style.css の `.cards` クラスに以下のプロパティを追加します。 `.cards` `div`前面またはカードの背面のいずれかを示す、反転、アニメーションを実際に行う要素です。 
 
     ``` css
     transform-style: preserve-3d;
     transition-duration: 1s;
     ```
 
-    [`transform-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) プロパティは 3D レンダリングのコンテキストを確立します。`.cards` クラスの子 (`.front` および `.back`) は 3D 空間のメンバーです。 [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) プロパティを追加して、アニメーションを完了する時間を秒数で指定します。 
+    [`transform-style`  ](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style) プロパティは 3D レンダリングのコンテキストを確立します。`.cards` クラスの子 (`.front` および `.back`) は 3D 空間のメンバーです。 [`transition-duration`  ](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) プロパティを追加して、アニメーションを完了する時間を秒数で指定します。 
 
-3.  [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) プロパティを使って、カードを Y 軸周りで回転させることができます。  次の CSS を `cards.flip` に追加します。
+3.  [`transform`  ](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) プロパティを使って、カードを Y 軸周りで回転させることができます。  次の CSS を `cards.flip` に追加します。
 
     ``` css
     transform: rotateY(180deg);
@@ -615,10 +615,10 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
 
     これにより、ユーザーがカードをクリックすると、カードは 180° 回転します。
 
-### <a name="6-test-and-play"></a>6. テストしてプレイする
-いよいよ完成です。 Web アプリの作成が完了しました。 ではテストを行いましょう。 
+### <a name="6-test-and-play"></a>6。テストと再生
+これで終了です。 Web アプリの作成が完了しました。 ではテストを行いましょう。 
 
-1. memory ディレクトリでコマンド プロンプトを開き、次のコマンドを入力します。 `npm start`
+1. メモリ ディレクトリにコマンド プロンプトを開き、次のコマンドを入力します。 `npm start`
 
 2. ブラウザーで [https://localhost:3000/](https://localhost:3000/) に移動して、ゲームをプレイします。
 
@@ -626,22 +626,22 @@ memory\public\stylesheets の style.css ファイルを、Start フォルダー�
 
     コードを Final フォルダーに含まれているコードと比較することもできます。
 
-4. ゲームを停止するには、コマンド プロンプトで、**Ctrl + C**、**Y** の順に入力します。 
+4. コマンド プロンプトで、ゲームを停止します。**Ctrl + C**、 **Y**します。 
 
 ### <a name="going-further"></a>追加情報
 
-これで、作成したアプリを Azure (またはその他のクラウド ホスティング サービス) にデプロイして、モバイル、タブレット、デスクトップなどの、さまざまなフォーム ファクターのデバイスにわたってテストを行う準備ができました。 (さまざまなブラウザーでも忘れずにテストを行ってください) 実稼働のための準備ができたら、*ユニバーサル Windows プラットフォーム* (UWP) のための*ホストされた Web アプリ* (HWA) として、容易にパッケージ化し、Microsoft Store から配布することができます。
+これで、作成したアプリを Azure (またはその他のクラウド ホスティング サービス) にデプロイして、モバイル、タブレット、デスクトップなどの、さまざまなフォーム ファクターのデバイスにわたってテストを行う準備ができました。 (しないすぎるのさまざまなブラウザーでテストしていません)。としては簡単にパッケージ化、アプリが運用環境を*Web アプリのホストされている*(HWA) の*ユニバーサル Windows プラットフォーム*(UWP) して、Microsoft Store から配布します。
 
 Microsoft Store に公開するための基本的な手順は次のとおりです。
 
- 1. [Windows 開発者](https://developer.microsoft.com/en-us/store/register)アカウントを作成します。
+ 1. [Windows デベロッパー](https://developer.microsoft.com/en-us/store/register) アカウントを作成します。
  2. アプリの申請の[チェックリスト](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)を使用します。
  3. アプリを申請して[認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けます。
 
 そのために役立つ追加情報を次に示します。
 
- - [アプリケーション開発プロジェクトを Azure Websites にデプロイする](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [アプリケーション開発プロジェクトを Azure Websites にデプロイします。](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [Web アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
+ - [ユニバーサル Windows プラットフォーム (UWP) アプリに web アプリケーションを変換します。](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 
- - [Windows アプリを公開する](https://developer.microsoft.com/en-us/store/publish-apps)
+ - [Windows アプリを発行します。](https://developer.microsoft.com/en-us/store/publish-apps)

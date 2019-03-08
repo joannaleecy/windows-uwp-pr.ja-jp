@@ -4,14 +4,14 @@ description: Xbox Live SDK の新規事項 - June 2015
 ms.assetid: 354bcd47-2564-4dd5-89e3-242bca462b35
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a42d0fb0a3cb457a60a0542bfc5966893d00f18b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944167"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627877"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---june-2015"></a>Xbox Live SDK の新規事項 - June 2015
 
@@ -52,7 +52,7 @@ XboxLiveUser (WinRT) クラスと xbox_live_user (C++) クラスを使ってユ�
 |------|
 | このセクションは、UWP タイトルにのみ適用されます。  XDK 開発者の方は、[ゲーム イベント](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/event-driven-data-platform/game-events)に関する記事で XDK 固有の詳細をご覧ください  |
 
-新しい EventsService (WinRT) クラスと events_service (C++) クラスを使うと、ユーザーの統計情報、実績、ランキングなどを更新できるゲーム内イベントを書き込むことができます。これらの新しいクラスは UWP アプリでのみ使うことができます。
+新しい EventsService (WinRT) と events_service (C++) クラスは、ユーザーの統計、実績、ランキングなどを更新できるゲーム内イベントを記述できます。これらの新しいクラスでは、UWP アプリのみです。
 
 ## <a name="breaking-change-to-event-handlers"></a>イベント ハンドラーの重要な変更 ##
 C++ SDK のすべてのイベント ハンドラーが単一の `void set_*_handler()` メソッドから `function_context add_*_handler()` メソッドと `void remove_*_handler(function_context context)` メソッドのペアに変更されました。

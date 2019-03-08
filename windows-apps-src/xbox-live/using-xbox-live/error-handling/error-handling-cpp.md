@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, エラー処理
 ms.localizationpriority: medium
 ms.openlocfilehash: 90fd816f8d44b27c1df0ded9bee6473f642478a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935566"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636527"
 ---
 # <a name="c-api-error-handling"></a>C++ API のエラー処理
 
@@ -89,4 +89,4 @@ else if (achievementResult.err() == xbox_live_error_condition::auth)
 
 ただし、このような方法ではなく、エラーのクラス全体に対してテストする方が効率的です。  そこで、```xbox_live_error_condition``` クラスで使用できる列挙値を使用してエラーのクラスに対してテストします。  多数のエラー コードに対するテストを自動化する等値演算子のオーバーロードが実装されています。  ```auth``` に加えて、```rta``` and ```http``` などのカテゴリーがあります。  完全なリストは、*errors.h* または *xblsdk_cpp.chm* で確認できます。
 
-これに関して説明している動画、および C++ Xbox Service API のその他の機能については、[Xfest 2015 のビデオ](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx)の「*XSAPI:C++, No Exceptions!*」にある Xfest の講演をご覧ください。
+および Xbox サービス API の他のいくつかの機能について説明するビデオをご覧ください、XFest 通信[Xfest 2015 ビデオ](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2015.aspx) *XSAPI:C++ では、例外はありません。*

@@ -8,33 +8,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 33901a5bde25fd17072c2b45d587a33209424378
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918136"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623027"
 ---
 # <a name="usertitle-json"></a>UserTitle (JSON)
-ユーザーのタイトル データが含まれています。 
+ユーザーのタイトルのデータが含まれています。 
 <a id="ID4EN"></a>
 
  
-## <a name="usertitle"></a>UserTitle
+## <a name="usertitle"></a>ユーザー タイトル
  
-UserTitle オブジェクトには、次仕様があります。 すべてのプロパティは、必要があります。
+ユーザー タイトル オブジェクトには、次の仕様があります。 すべてのプロパティが必要です。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| lastUnlock| DateTime| 実績を獲得した最後の時刻。| 
-| titleId| 32 ビットの符号なし整数| タイトルの一意の識別子。| 
-| titleVersion| string| タイトルのバージョンです。| 
-| serviceConfigId| string| タイトルに関連付けられているプライマリ サービス構成のセットの ID です。| 
+| lastUnlock| DateTime| アチーブメントが獲得された最終時刻。| 
+| titleId| 32 ビット符号なし整数| タイトルの一意の識別子。| 
+| titleVersion| string| タイトルのバージョン。| 
+| serviceConfigId| string| タイトルに関連付けられているプライマリ サービスの構成セットの ID。| 
 | タイトル| string| タイトルの種類。| 
-| プラットフォーム| string| サポートされているプラットフォームです。| 
+| プラットフォーム| string| サポートされているプラットフォーム。| 
 | name| string| このタイトルのテキストの名前。 最大長 22 です。| 
-| earnedAchievements| 32 ビットの符号なし整数| 実績の数は、ロック解除した実績を含む、タイトルの獲得し、課題が正常に完了します。| 
-| currentGamerscore| 32 ビットの符号なし整数| このユーザーがこのタイトルでの原因の合計ゲーマー スコア。| 
-| maxGamerscore| 32 ビットの符号なし整数| このタイトルの合計のゲーマー スコアを可能です。| 
+| earnedAchievements| 32 ビット符号なし整数| アチーブメントの数は、タイトルなどのロック解除のアチーブメントの獲得し、課題を正常に完了しました。| 
+| currentGamerscore| 32 ビット符号なし整数| 合計のゲーマーこのタイトルでこのユーザーを獲得しました。| 
+| maxGamerscore| 32 ビット符号なし整数| このタイトルの可能な合計ゲーマーします。| 
   
 <a id="ID4EFE"></a>
 
@@ -46,6 +46,6 @@ UserTitle オブジェクトには、次仕様があります。 すべてのプ
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

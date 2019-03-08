@@ -4,18 +4,18 @@ description: このチュートリアルでは、JavaScript、C#、または Vis
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ms.date: 05/14/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: fce4ed3f32c0207e55b37a765b4d48d234343e38
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981436"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625037"
 ---
-# <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>チュートリアル: C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し
+# <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>チュートリアル:C++/CX での Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し
 > [!NOTE]
-> このトピックは、C++/CX アプリケーションの管理ができるようにすることを目的としています。 ただし、新しいアプリケーションには [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) を使用することをお勧めします。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C + を使用して Windows ランタイム コンポーネントを作成する方法について/WinRT を参照してください[、C++ でのイベントの作成/WinRT](../cpp-and-winrt-apis/author-events.md)します。
+> このトピックは、C++/CX アプリケーションの管理ができるようにすることを目的としています。 ただし、新しいアプリケーションには [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) を使用することをお勧めします。 C++/WinRT は Windows ランタイム (WinRT) API の標準的な最新の C++17 言語プロジェクションで、ヘッダー ファイル ベースのライブラリとして実装され、最新の Windows API への最上位アクセス権を提供するように設計されています。 C + を使用して、Windows ランタイム コンポーネントを作成する方法について/cli WinRT を参照してください[C + でのイベントを作成/cli WinRT](../cpp-and-winrt-apis/author-events.md)します。
 
 このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。 このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。 詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
 
@@ -24,19 +24,19 @@ ms.locfileid: "8981436"
 
 コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。 これらは方法を示すことだけを目的に用意されており、 必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。
 
-### **<a name="to-create-the-c-component-project"></a>C++ コンポーネント プロジェクトを作成するには**
+### <a name="to-create-the-c-component-project"></a>**C++ コンポーネント プロジェクトを作成するには**
 1. Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
 
 2. **[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。
 
-3. 中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。
+3. 中央のウィンドウで次のように選択します。 **Windows ランタイム コンポーネント**し名前をプロジェクト WinRT\_CPP します。
 
-4. **[OK]** をクリックします。
+4. **[OK]** ボタンをクリックします。
 
-## **<a name="to-add-an-activatable-class-to-the-component"></a>コンポーネントにアクティブ化可能なクラスを追加するには**
+## <a name="to-add-an-activatable-class-to-the-component"></a>**コンポーネントに、アクティブ化可能なクラスを追加するには**
 アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。 コンポーネントでは、**public ref class sealed** として宣言します。 実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。 名前を変更することはできますが、この例では既定の名前 (Class1) を使います。 必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。 ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
 
-次の \#include ディレクティブを Class1.h に追加します。
+次の追加\#ディレクティブを Class1.h に。
 
 ```cpp
 #include <collection.h>
@@ -479,7 +479,7 @@ MainPage.xaml 内の Grid 要素に次のコードをコピーします。
 ```
 
 ## <a name="to-add-the-event-handlers-for-the-buttons"></a>ボタンのイベント ハンドラーを追加するには
-ソリューション エクスプローラーで、MainPage.xaml.cs を開きます  (このファイルは MainPage.xaml の下に入れ子になっていることがあります)。System.Text の using ディレクティブを追加し、MainPage クラスに対数計算用のイベント ハンドラーを追加します。
+ソリューション エクスプローラーで、MainPage.xaml.cs を開きます  (ファイルは MainPage.xaml の下で入れ子に可能性があります)。使用して、追加、System.Text のディレクティブを MainPage クラスで、対数の計算のイベント ハンドラーを追加します。
 
 ```csharp
 private void Button1_Click_1(object sender, RoutedEventArgs e)
@@ -579,20 +579,20 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>アプリの実行
-ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** をクリックして、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選択します。 デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。
+ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** を選んで、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選びます。 デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。
 
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
 オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。 これには、Platform 名前空間と既定の名前空間の型が含まれます。 ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。
 
-### **<a name="to-inspect-a-component"></a>コンポーネントを検査するには**
+### <a name="to-inspect-a-component"></a>**コンポーネントを検査するには**
 1. メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
 
-2. オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
+2. オブジェクト ブラウザーの左側のウィンドウで、展開、WinRT\_CPP ノード、コンポーネントで定義されているメソッドや型を表示します。
 
 ## <a name="debugging-tips"></a>デバッグのヒント
 デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。
 
-### **<a name="to-download-debugging-symbols"></a>デバッグ シンボルをダウンロードするには**
+### <a name="to-download-debugging-symbols"></a>**デバッグ シンボルをダウンロードするには**
 1. メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
 
 2. **[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。
@@ -603,11 +603,11 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 
 コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。 設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードのショートカット メニューを開き、**[プロパティ]、[デバッグ]、[デバッガーの種類]** の順にクリックします。
 
-パッケージ デザイナーで必ず適切な機能を選択してください。 パッケージ デザイナーを開くには、Package.appxmanifest ファイルを開きます。 たとえば、プログラムを使ってピクチャ フォルダーのファイルにアクセスする場合は、パッケージ デザイナーの **[機能]** ペインで **[画像ライブラリ]** チェック ボックスをオンにしてください。
+パッケージ デザイナーで必ず適切な機能を選んでください。 パッケージ デザイナーを開くには、Package.appxmanifest ファイルを開きます。 たとえば、プログラムを使ってピクチャ フォルダーのファイルにアクセスする場合は、パッケージ デザイナーの **[機能]** ペインで **[画像ライブラリ]** チェック ボックスをオンにしてください。
 
 JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しない場合は、JavaScript で camel 規約を使っていることを確認します。 たとえば、`ComputeResult` C++ メソッドは、JavaScript で `computeResult` として参照する必要があります。
 
 C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
 
 ## <a name="related-topics"></a>関連トピック
-* [C++/CX での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)
+* [Windows ランタイム コンポーネントを作成する c++/cli CX](creating-windows-runtime-components-in-cpp.md)

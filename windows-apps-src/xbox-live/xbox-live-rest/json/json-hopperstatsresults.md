@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 38e345fc20e92cdf6446c6ae1100e347fe634eff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646207"
 ---
 # <a name="hopperstatsresults-json"></a>HopperStatsResults (JSON)
-ホッパーの統計情報を表す JSON オブジェクト。 
+Hopper の統計情報を表す JSON オブジェクトです。 
 <a id="ID4EN"></a>
 
   
  
-HopperStatsResults JSON オブジェクトには、次仕様があります。
+HopperStatsResults JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| hopperName| string| 選択したホッパーの名前です。| 
-| 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 | 
-| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。| 
+| hopperName| string| 選択した hopper の名前。| 
+| 待機時間| 32 ビット符号付き整数| 平均時間 (秒単位の整数) hopper の一致します。 | 
+| カタログの作成| 32 ビット符号付き整数| 一致するもの、hopper で待機しているユーザーの数。| 
   
 <a id="ID4EW"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例 
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文 
  
 
 ```json
@@ -55,7 +55,7 @@ HopperStatsResults JSON オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EUB"></a>

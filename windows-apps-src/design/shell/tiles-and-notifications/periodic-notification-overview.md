@@ -1,18 +1,18 @@
 ---
-Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+Description: 定期的な通知 (ポーリング通知とも呼ばれます) では、クラウド サービスから直接コンテンツをダウンロードして、一定の間隔でタイルやバッジを更新します。
 title: 定期的な通知の概要
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050515"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624857"
 ---
 # <a name="periodic-notification-overview"></a>定期的な通知の概要
  
@@ -25,11 +25,11 @@ ms.locfileid: "9050515"
 
 定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 定期的な通知は、同じコンテンツを多数のユーザーに配信する優れた方法です。
 
-**注:**  windows 8.1 用[プッシュ通知と定期的な通知のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、windows 10 アプリでソース コードを再使用の詳細については、します。
+**注**  をダウンロードして詳細を確認できます、[プッシュおよび定期的な通知のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231476)Windows 8.1 および Windows 10 アプリでそのソース コードを再利用します。
 
  
 
-## <a name="how-it-works"></a>しくみ
+## <a name="how-it-works"></a>方法
 
 
 定期的な通知では、アプリでクラウド サービスをホストする必要があります。 このサービスは、アプリをインストールしているすべてのユーザーによって定期的にポーリングされます。 Windows では、ポーリング間隔 (1 時間に 1 回など) に従って URI に HTTP GET 要求を送り、この要求に対する応答として提供される要求したタイルまたはバッジのコンテンツ (XML 形式) をダウンロードして、アプリのタイルにそのコンテンツを表示します。
@@ -48,9 +48,9 @@ ms.locfileid: "9050515"
 
 ポーリングを開始するには次のメソッドのいずれかを呼び出します。
 
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (タイル)
--   [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (バッジ)
--   [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (タイル)
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (タイル)
+-   [**StartPeriodicUpdate** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater#Windows_UI_Notifications_BadgeUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (バッジ)
+-   [**StartPeriodicUpdateBatch** ](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) (タイル)
 
 これらのいずれかのメソッドを呼び出すと、URI がすぐにポーリングされて、受け取ったコンテンツでタイルやバッジが更新されます。 この最初のポーリングの後は、要求した間隔で更新が提供されます。 ポーリングは、明示的に停止するか ([**TileUpdater.StopPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater.StopPeriodicUpdate) を使用)、アプリをアンインストールするか、(セカンダリ タイルの場合は) タイルを削除するまで続けられます。 それまでの間は、アプリが起動されなくても、タイルやバッジの更新がないかどうかを調べるために継続的にポーリングが行われます。
 
@@ -92,13 +92,13 @@ URI がポーリングされるのは、デバイスがオンラインになっ�
 
 詳しくは、「[通知キューの使用](https://msdn.microsoft.com/library/windows/apps/hh781199)」をご覧ください。
 
-### <a name="enabling-the-notification-queue"></a>通知キューを有効にする
+### <a name="enabling-the-notification-queue"></a>通知キューの有効化
 
 通知キューを実装するには、最初に、タイルに対してキューを有効にする必要があります (「[ローカル通知で通知キューを使用する方法](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/01/05/quickstart-how-to-use-the-tile-notification-queue-with-local-notifications/)」を参照)。 キューを有効にする呼び出しはアプリの存続期間で 1 回だけ実行する必要がありますが、アプリが起動されるたびに呼び出しても問題はありません。
 
 ### <a name="polling-for-more-than-one-notification-at-a-time"></a>一度に複数の通知をポーリングする
 
-Windows でダウンロードを行うタイルの通知ごとに、一意の URI を指定する必要があります。 [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) メソッドを使うと、通知キューで使う URI を一度に 5 つまで指定できます。 各 URI がポーリングされ、ほぼ同じ時間にそれぞれ 1 つの通知ペイロードが返されます。 ポーリングされる各 URI からは、それぞれ固有の有効期限とタグ値を返すこともできます。
+Windows でダウンロードを行うタイルの通知ごとに、一意の URI を指定する必要があります。 [  **StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_) メソッドを使うと、通知キューで使う URI を一度に 5 つまで指定できます。 各 URI がポーリングされ、ほぼ同じ時間にそれぞれ 1 つの通知ペイロードが返されます。 ポーリングされる各 URI からは、それぞれ固有の有効期限とタグ値を返すこともできます。
 
 ## <a name="related-topics"></a>関連トピック
 

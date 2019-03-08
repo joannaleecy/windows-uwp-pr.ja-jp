@@ -1,5 +1,5 @@
 ---
-Description: Follow these best practices for geofencing in your app.
+Description: アプリのジオフェンスについては、次のベスト プラクティスに従ってください。
 title: ジオフェンス アプリのガイドライン
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地図, 位置情報, ジオフェンス
 ms.localizationpriority: medium
 ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047407"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622477"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>ジオフェンス アプリのガイドライン
 
@@ -23,12 +23,12 @@ ms.locfileid: "9047407"
 -   [**Geofence クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
 -   [**Geolocator クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-アプリの [** ジオフェンス **](https://msdn.microsoft.com/library/windows/apps/dn263744) については、次のベスト プラクティスに従ってください。
+アプリの [**ジオフェンス**](https://msdn.microsoft.com/library/windows/apps/dn263744) については、次のベスト プラクティスに従ってください。
 
 ## <a name="recommendations"></a>推奨事項
 
 
--   [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) イベントが発生したときにインターネット アクセスが必要な場合は、ジオフェンスを作成する前にインターネット アクセスを確認します。
+-   [  **Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) イベントが発生したときにインターネット アクセスが必要な場合は、ジオフェンスを作成する前にインターネット アクセスを確認します。
     -   アプリで現在インターネットにアクセスできない場合、ジオフェンスをセットアップする前にユーザーに対してインターネットに接続するようメッセージを表示することができます。
     -   インターネット アクセスが不可能である場合は、ジオフェンスの位置確認に必要な電力を消費しないようにしてください。
 -   ジオフェンス イベントが [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 状態または **Exited** 状態に対する変更を示す場合、タイム スタンプと現在の位置をチェックしてジオフェンス通知の関連性を確認します。 詳しくは、次の「**タイム スタンプと現在位置の確認**」をご覧ください。
@@ -36,7 +36,7 @@ ms.locfileid: "9047407"
 -   デバイスで位置情報にアクセスできない場合は、ケースを管理する例外を作成し、必要に応じてユーザーに通知します。 アクセス許可がオフになっている、デバイスに GPS 機能が付いていない、GPS 信号がブロックされている、Wi-Fi 信号が弱いなどの理由で、位置情報が利用できない場合があります。
 -   一般に、フォアグラウンドとバックグラウンドの両方で同時にジオフェンス イベントをリッスンする必要はありません。 ただし、アプリがフォアグラウンドとバックグラウンドの両方で同時にジオフェンス イベントをリッスンする必要がある場合は、次の手順を行います。
 
-    -   [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) メソッドを呼び出して、イベントが発生したかどうかを確認します。
+    -   [  **ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) メソッドを呼び出して、イベントが発生したかどうかを確認します。
     -   ユーザーからアプリが見えなくなったときはフォアグラウンド イベント リスナーの登録を解除し、再び見えるようになったときにもう一度登録します。
 
     コード例と詳しい情報については、「[バックグラウンドとフォアグラウンドのリスナー](#background-and-foreground-listeners)」をご覧ください。
@@ -128,8 +128,8 @@ GPS を使うと最も正確な位置情報が得られますが、ジオフェ�
 
 
 * [ジオフェンスのセットアップ](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [UWP の位置情報サンプル (Geolocation)](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [現在の場所を取得します。](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [UWP の場所のサンプル (地理的位置情報)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

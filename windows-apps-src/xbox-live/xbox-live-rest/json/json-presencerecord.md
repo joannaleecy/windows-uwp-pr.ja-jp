@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d531352c4336e00c93a91e7c945602ab69695f2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918414"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622587"
 ---
 # <a name="presencerecord-json"></a>PresenceRecord (JSON)
-1 人のユーザーのオンライン プレゼンスに関するデータ。
+1 人のユーザーのオンラインかどうかに関するデータ。
 <a id="ID4EN"></a>
 
 
 ## <a name="presencerecord"></a>PresenceRecord
 
-PresenceRecord オブジェクトには、次仕様があります。
+PresenceRecord オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| xuid| string| Xbox ユーザー ID (XUID) 対象ユーザーのします。 提供されるプレゼンス データは、このユーザーによってです。|
-| devices| [DeviceRecord](json-devicerecord.md)の配列| ユーザーのデバイスのレコードの一覧です。|
-| 状態| string| Xbox live ユーザーのアクティビティ。 設定可能な値: <ul><li>オンライン: ユーザーは、少なくとも 1 つのデバイスのレコードを持っています。</li><li>離れた: ユーザーが Xbox LIVE にサインインした任意のタイトルでアクティブではありません。</li><li>オフライン: ユーザーは任意のデバイスに存在するではありません。</li></ul> | 
-| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 最後に検出された情報を利用可能なは、ユーザーには、有効な DeviceRecords があるない場合だけです。 オブジェクトは、キャッシュから削除された場合、データが返されません、永続的なストアがないためです。|
+| xuid| string| Xbox ユーザー ID (XUID) の対象ユーザー。 指定されたプレゼンス データは、このユーザーがいます。|
+| デバイス| 配列[DeviceRecord](json-devicerecord.md)| ユーザーのデバイス レコードの一覧。|
+| 状態| string| Xbox LIVE 上のユーザーのアクティビティ。 設定可能な値: <ul><li>オンライン：ユーザーは、少なくとも 1 つのデバイス レコードを持っています。</li><li>破棄。ユーザーは、Xbox LIVE にサインインしたが、任意のタイトルでアクティブではありません。</li><li>オフライン。ユーザーでは、任意のデバイスに存在しません。</li></ul> | 
+| lastSeen| [LastSeenRecord](json-lastseenrecord.md)| 最後に検出された情報は、ユーザーが有効な DeviceRecords を持たない場合にのみ使用できます。 オブジェクトは、キャッシュから削除された場合、データは、永続的なストアが存在しないためは、返されないする可能性があります。|
 
 <a id="ID4E2C"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
 
 
 ```json
@@ -97,7 +97,7 @@ PresenceRecord オブジェクトには、次仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EQD"></a>

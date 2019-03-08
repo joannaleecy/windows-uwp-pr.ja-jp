@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: a2f7498e8063e290dc506de72b34d2c77d29b26e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931073"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637137"
 ---
 # <a name="use-connected-storage-to-load-data"></a>接続ストレージを使ったデータの読み込み
 
@@ -24,7 +24,7 @@ ms.locfileid: "8931073"
     XDK の例では、複数のユーザーの `ConnectedStorageSpace` オブジェクトの管理を容易にするために、返される `ConnectedStorageSpace` がマップに追加されています。
 
 2.  `ConnectedStorageContainer` を作成するには、`ConnectedStorageSpace` で `CreateContainer` を呼び出します。
-3.  `ConnectedStorageContainer` で `ReadAsync` または `GetAsync` を呼び出して、データを取得します。 `ReadAsync` ではバッファーを渡す必要があります。一方、`GetAsync` は、読み取られるデータを格納するための新しいバッファーを割り当てます。
+3.  `ConnectedStorageContainer` で `ReadAsync` または `GetAsync` を呼び出して、データを取得します。 `ReadAsync` 中にバッファーに渡す必要があります`GetAsync`は読み取り専用データを格納する新しいバッファーを割り当てます。
 
 ## <a name="c-xdk-sample"></a>C++ XDK のサンプル
 
@@ -99,7 +99,7 @@ void OnLoadCompleted(IAsyncAction^ action, Windows::Foundation::AsyncStatus stat
 }
 ```
 
-XDK .chm ファイルで説明されている XDK 接続ストレージ API は、パス **Xbox ONE XDK >> API リファレンス >> プラットフォーム API リファレンス >> システム API リファレンス >> Windows.Xbox.Storage** にあります。
+パスの下の XDK .chm ファイルに記載されている XDK 接続されている Storage Api を確認できます。**1 つの XDK Xbox >> API リファレンス >> プラットフォーム API のリファレンス >> システム API リファレンス >> Windows.Xbox.Storage**します。
 XDK API については、[developer.microsoft.com サイト](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)でも説明されています。
 XDK API へのリンクを開くには、Xbox 開発キット (XDK) へのアクセスが有効になっている Microsoft アカウント (MSA) が必要です。
 Windows.Xbox.Storage は、Xbox One 本体の接続ストレージ名前空間の名前です。

@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fc770673ac7e4034004f58032c7fa66cb28413e7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928780"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632687"
 ---
 # <a name="post-usersmeresetreputation"></a>POST (/users/me/resetreputation)
-により、実施チームは、アカウント ハイジャック (たとえば) 後、現在のユーザーの評判スコアをいくつかの任意の値に設定します。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+強制チーム アカウント ハイジャックでは (たとえば) 後、現在のユーザーの評価スコアをいくつかの任意の値に設定を有効にします。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [注釈](#ID4EV)
-  * [Authorization](#ID4E5)
+  * [承認](#ID4E5)
   * [必要な要求ヘッダー](#ID4ETB)
   * [要求本文](#ID4END)
-  * [HTTP ステータス コード](#ID4EDE)
+  * [HTTP 状態コード](#ID4EDE)
   * [応答本文](#ID4EFH)
  
 <a id="ID4EV"></a>
@@ -29,32 +29,32 @@ ms.locfileid: "8928780"
  
 ## <a name="remarks"></a>注釈
  
-このメソッドは、Retail を除くすべてのサンド ボックスの他のパートナー様とテストのために、Retail を除くすべてのサンド ボックス内のユーザーによっても呼び出すことがあります。 この要求は、「基本」評判スコアをユーザーに設定し、肯定的なフィードバック良い評価の彼は重みをすべて消去アウトことに注意してください。この呼び出しを行った後、ユーザーの実際の評判は、この基本スコアと自分のアンバサダー ボーナスと自分のフォロワー ボーナスになります。
+テスト目的で、製品版を除くすべてのサンド ボックス内のユーザーと他のパートナーの製品版を除くすべてのサンド ボックスによって、このメソッドを呼び出すことも可能性があります。 この要求設定、ユーザーの「基本」評判のスコア、建設的なフィードバックの重み付けがすべてゼロ化ことに注意してください。この呼び出しを行った後、ユーザーの実際の評価は、これらの基本スコアと、アンバサダー ボーナスと自分のフォロワー ボーナスになります。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-パートナーから: **PartnerClaim**実施チームから、市販のサンド ボックスすべての他のサンド ボックスに対して、 **PartnerClaim**します。
+パートナー: から小売サンド ボックスの**PartnerClaim**強制チームからは他のすべてのサンド ボックス**PartnerClaim**します。
  
-ユーザーから: 製品版、 **XuidClaim** **TitleClaim**を除くすべてのサンド ボックスにします。
+ユーザー: から製品版を除くすべてのサンド ボックスの**XuidClaim**と**TitleClaim**します。
   
 <a id="ID4ETB"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-すべてから:**コンテンツの種類: アプリケーション/json**します。
+All: から**コンテンツの種類: アプリケーション/json**します。
  
-パートナーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)、 **X の Xbl のサンド ボックス**です。
+パートナー: から**X Xbl コントラクト バージョン**(現在のバージョンが 101)、 **X-Xbl-サンド ボックス**します。
  
-ユーザーから: **X Xbl コントラクト バージョン**(現在のバージョンは 101)。
+ユーザー: から**X Xbl コントラクト バージョン**(現在のバージョンでは 101 です)。
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。| 
+| X RequestedServiceVersion|  | この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 ［既定値］:101.| 
   
 <a id="ID4END"></a>
 
@@ -64,9 +64,9 @@ ms.locfileid: "8928780"
 <a id="ID4ETD"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
-要求本文は、単純な[ResetReputation (JSON)](../../json/json-resetreputation.md)ドキュメントです。
+要求本文は、単純な[ResetReputation (JSON)](../../json/json-resetreputation.md)ドキュメント。
  
 
 ```cpp
@@ -82,30 +82,30 @@ ms.locfileid: "8928780"
 <a id="ID4EDE"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | 
 | 200| OK| OK。| 
-| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 400| 要求が正しくありません| サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
-| 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
+| 404| 検出不可| 指定されたリソースが見つかりませんでした。| 
+| 500| 内部サーバー エラー| サーバーには、要求を満たせませんでした。 予期しない状態が発生しました。| 
+| 503| サービス利用不可| 要求が調整されて、クライアント再試行値 (秒) (例: 5 秒後) の後にもう一度要求を再試行してください。| 
   
 <a id="ID4EFH"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-成功した場合、応答本文は空です。 失敗した場合、 [ServiceError (JSON)](../../json/json-serviceerror.md)ドキュメントが返されます。
+成功した場合、応答本文が空です。 失敗した場合、[サービス エラー (JSON)](../../json/json-serviceerror.md)ドキュメントが返されます。
  
 <a id="ID4ERH"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

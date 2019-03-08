@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627737"
 ---
 # <a name="diffuse-light-maps"></a>拡散ライト マップ
 
@@ -24,7 +24,7 @@ ms.locfileid: "8940863"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[テクスチャでのライト マッピング](light-mapping-with-textures.md)
+[テクスチャのライトのマッピング](light-mapping-with-textures.md)
 
  
 

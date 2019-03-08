@@ -1,17 +1,17 @@
 ---
 title: パートナー センターでシングル サインオンを構成します。
-description: タイトルでの Xbox Live ID を使用して、ユーザーをサービスにサインインできるようにするパートナー センターでシングル サインオンを構成する方法について説明します。
+description: パートナー センター、Xbox Live ID を使用して、サービスにユーザーがサインインするタイトルを許可するシングル サインオンを構成する方法について説明します。
 ms.assetid: ''
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター, シングル サインオン
 ms.openlocfilehash: 32f06edd407d8c1fa74795d0a230c7d56ba8e838
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941788"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632877"
 ---
 # <a name="configure-single-sign-on-in-partner-center"></a>パートナー センターでシングル サインオンを構成します。
 
@@ -30,13 +30,13 @@ Xbox Live とは別のアカウントを作成することをサービスがユ�
 
 次の手順に従って、構成を追加します。
 
-1. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択すると、**サービス**に移動します。 > **Xbox Live**します。
+1. タイトルを選択した後は[パートナー センター](https://partner.microsoft.com/dashboard)に移動します**サービス** > **Xbox Live**します。
 
 2. **Xbox Live シングル サインオン**へのリンクをクリックします。
 
 3. **[URL の追加]** をクリックし、新しいシングル サインオン エントリを作成します。 構成の一覧の最後に新しい行が追加されます。
 
-4. [URL] ボックスに、完全修飾ドメイン名を使ってサービスの URL を入力します。 最下位レベルのサブドメインは、ワイルドカード文字 ('\*') に置き換えることができます。 これは、同じ上位レベルのドメインを持つあらゆる URL にマッチングします。 たとえば、"*.example.com&quot; は "bar.example.com" や "foo.bar.example.com" にマッチングします。
+4. [URL] ボックスに、完全修飾ドメイン名を使ってサービスの URL を入力します。 最下位レベルのサブドメインをワイルドカード文字で置き換えることができます ('\*')。 これは、同じ上位レベルのドメインを持つあらゆる URL にマッチングします。 たとえば、"*.example.com&quot; は "bar.example.com" や "foo.bar.example.com" にマッチングします。
 
 5. [証明書利用者] ボックスで、XSTS トークンをエンコードする方法を指定する証明書利用者構成を選択します。
 

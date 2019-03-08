@@ -1,5 +1,5 @@
 ---
-Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
+Description: アドオンを提出するとき、[プロパティ] ページのオプションは、ユーザーに提供される場合のアドオン動作を決めるのに役立ちます。
 title: アドオン プロパティの入力
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.date: 10/31/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, アドオン, プロパティ, サブスクリプション期間, 製品の有効期間, コンテンツの種類, iap, アプリ内購入, アプリ内製品
 ms.localizationpriority: medium
 ms.openlocfilehash: 17025282aec18da01f14431996a3942ffdd90312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925826"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629677"
 ---
 # <a name="enter-add-on-properties"></a>アドオン プロパティの入力
 
@@ -29,7 +29,7 @@ ms.locfileid: "8925826"
 
 ## <a name="product-lifetime"></a>製品の有効期限
 
-製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 場合は、(1 から 365 日間のオプション) と期間を設定した後、アドオンの有効期限が切れるように**製品の有効期限**を変更することができます。
+製品の種類として **[永続的]** を選んだ場合、**[製品の有効期限]** がここに表示されます。 永続的なアドオンの **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、アドオンの期限は切れません。 変更することができる場合は、**製品の有効期間**アドオンは、(1 ~ 365 日のオプション) で設定された期間の後に有効期限が切れるようにします。
 
 
 ## <a name="quantity"></a>数量
@@ -39,7 +39,7 @@ ms.locfileid: "8925826"
 
 ## <a name="subscription-period"></a>サブスクリプション期間
 
-製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションが**毎月**には、 **3 か月**、 **6 か月**、**年**、または**24 か月間**を選択することもできます。
+製品の種類として **[サブスクリプション]** を選んだ場合、**[サブスクリプション期間]** がここに表示されます。 サブスクリプション料を課金する頻度を指定するオプションを選びす。 既定のオプションは**毎月**、選択することもできますが、 **3 か月間**、 **6 か月間**、**年間**、または**24か月間**.
 
 > [!IMPORTANT]
 > アドオンが公開されると、**[サブスクリプション期間]** の指定は変更できません。
@@ -84,7 +84,7 @@ ms.locfileid: "8925826"
 このフィールドを照会するには、[Windows.Services.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)の [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)を使用している場合は、[ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) プロパティを使用します)。
 
 > [!NOTE]
-> Windows8 と Windows8.1 を対象とするパッケージで使用するためのキーワードが利用できません。
+> Windows 8 および Windows 8.1 を対象とするパッケージで使用するためのキーワードが利用できません。
 
 <span id="custom-developer-data" />
 
@@ -97,7 +97,7 @@ ms.locfileid: "8925826"
 このフィールドを照会するには、[Windows.Services.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)の [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) プロパティを使用します  (または、[Windows.ApplicationModel.Store 名前空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)を使用している場合は、[ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) プロパティを使用します)。
 
 > [!NOTE]
-> **カスタムの開発者データ**フィールドでは、大文字と小文字が Windows8 と Windows8.1 を対象とするパッケージで使用できません。
+> **カスタム開発者データ**フィールドは Windows 8 および Windows 8.1 を対象とするパッケージで使用するために使用できません。
 
  
 

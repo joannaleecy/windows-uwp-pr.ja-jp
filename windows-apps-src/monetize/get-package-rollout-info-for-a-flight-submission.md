@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, パッケージのロー�
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e60ecfccecda850a5c83e5840626e1b789a068d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931545"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637427"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>パッケージ フライトの申請に関するロールアウトの情報を取得する
 
@@ -23,8 +23,8 @@ ms.locfileid: "8931545"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリのいずれかのパッケージ フライトの申請を作成します。 パートナー センターで、これを行うか、[パッケージ フライトの申請を作成する](create-a-flight-submission.md)方法を使用して、これを行うことができます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* アプリのいずれかのパッケージのフライトの送信を作成します。 パートナー センターでこれを行うかを使用してこれを行う、[パッケージ フライトの提出の作成](create-a-flight-submission.md)メソッド。
 
 ## <a name="request"></a>要求
 
@@ -37,7 +37,7 @@ ms.locfileid: "8931545"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -47,8 +47,8 @@ ms.locfileid: "8931545"
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | 必須。 取得するパッケージのロールアウトの情報を持つパッケージ フライトの申請が含まれているアプリのストア ID です。 ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。  |
-| flightId | string | 必須。 取得するパッケージのロールアウトの情報を持つ申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライトはこの ID はパートナー センターでのフライト ページの URL で利用可能なもします。    |
-| submissionId | string | 必須。 取得するパッケージのロールアウトの情報を持つ申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。   |
+| flightId | string | 必須。 取得するパッケージのロールアウトの情報を持つ申請が含まれているパッケージ フライトの ID です。 この ID は、[パッケージ フライトの作成](create-a-flight.md)要求と[アプリのパッケージ フライトの取得](get-flights-for-an-app.md)要求の応答データで確認できます。 パートナー センターで作成されたフライトはこの ID はパートナー センターでのフライトのページの URL で使用できるも。    |
+| submissionId | string | 必須。 取得するパッケージのロールアウトの情報を持つ申請の ID です。 この ID は、[パッケージ フライトの申請の作成](create-a-flight-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。   |
 
 
 ### <a name="request-body"></a>要求本文
@@ -95,11 +95,11 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | パッケージ フライトの申請は見つかりませんでした。 |
-| 409  | 指定したパッケージ フライトにパッケージ フライトの申請が属していないか、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | パッケージのフライトの送信は、指定したパッケージの航空券に属していませんまたはアプリであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [段階的なパッケージのロールアウト](../publish/gradual-package-rollout.md)
-* [Microsoft Store 申請 API を使用したパッケージ フライトの申請の管理](manage-flight-submissions.md)
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージの段階的なロールアウト](../publish/gradual-package-rollout.md)
+* [Microsoft Store 送信 API を使用してパッケージのフライトの送信を管理します。](manage-flight-submissions.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)

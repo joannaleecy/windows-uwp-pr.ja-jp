@@ -4,14 +4,14 @@ title: 加速度計の使用
 description: 加速度計を使ってユーザーの動きに応答する方法を説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 77ee3191bc41fca672a055a708523578390860b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919148"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623707"
 ---
 # <a name="use-the-accelerometer"></a>加速度計の使用
 
@@ -19,7 +19,7 @@ ms.locfileid: "8919148"
 **重要な API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**加速度計**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
 **サンプル**
 
@@ -31,7 +31,7 @@ ms.locfileid: "8919148"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターが加速度計をサポートしている必要があります。
 
@@ -134,13 +134,13 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
     </Page>
 ```
 
-元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **AccelerometerCS** である場合、`x:Class="App1.MainPage"` を `x:Class="AccelerometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:AccelerometerCS"` に置き換える必要があります。
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **AccelerometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="AccelerometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:AccelerometerCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** &gt; **[デバッグの開始]** の順にクリックします。
+-   F5 キーを押すか、選択**デバッグ** &gt; **デバッグの開始**をビルドするには、展開、およびアプリを実行します。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、加速度計の値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** &gt; **[デバッグの停止]** の順にクリックします。
+-   Visual Studio に戻ると、shift キーを押しながら f5 キーを押してアプリを停止または選択**デバッグ** &gt; **デバッグの停止**アプリを停止します。
 
 ### <a name="explanation"></a>説明
 

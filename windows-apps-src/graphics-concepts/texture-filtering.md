@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 449a31d92235efc50119bcd0db11b3532f523cd2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930871"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633727"
 ---
 # <a name="texture-filtering"></a>テクスチャ フィルタリング
 
@@ -27,7 +27,7 @@ Direct3D によって、テクスチャ フィルタリングの複雑なプロ�
 
 それぞれのテクスチャ フィルタリングには、長所と短所があります。 たとえば、線形テクスチャ フィルタリングでは、最終イメージでエッジがギザギザになったり、外観が粗くなったりすることがあります。 ただし、このテクスチャ フィルタリングは計算処理のオーバーヘッドが少ない方法です。 ミップマップによるフィルタリングでは、通常、適切な結果が生成されます。特に、異方性フィルタリングと組み合わせた場合に結果がよくなります。 ただし、Direct3D でサポートされる方法の中で最も多くのメモリを必要とします。
 
-## <a name="span-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspantypes-of-texture-filtering"></a><span id="Types-of-texture-filtering"></span><span id="types-of-texture-filtering"></span><span id="TYPES-OF-TEXTURE-FILTERING"></span>テクスチャ フィルタリングの種類
+## <a name="span-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspanspan-idtypes-of-texture-filteringspantypes-of-texture-filtering"></a><span id="Types-of-texture-filtering"></span><span id="types-of-texture-filtering"></span><span id="TYPES-OF-TEXTURE-FILTERING"></span>テクスチャ フィルタ リングの種類
 
 
 Direct3D は、次のテクスチャ フィルタリング手法をサポートします。
@@ -48,19 +48,19 @@ Direct3D は、次のテクスチャ フィルタリング手法をサポート�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="nearest-point-sampling.md">最近点サンプリング</a></p></td>
-<td align="left"><p>アプリケーションでは、必ずしもテクスチャ フィルタリングを使用する必要はありません。 Direct3D の設定により、テクセル アドレスを計算したり (これは多くの場合、整数として評価されません)、最も近い整数アドレスを持つテクセルのカラーをコピーさせたりすることができます。 このプロセスは、<em>最近点サンプリング</em>と呼ばれます。</p></td>
+<td align="left"><p><a href="nearest-point-sampling.md">最も近いポイント サンプリング</a></p></td>
+<td align="left"><p>アプリケーションでは、必ずしもテクスチャ フィルタリングを使用する必要はありません。 Direct3D は、テクセル アドレスを計算するように設定できます。この場合、整数に評価されることはあまりなく、最も近い整数アドレスを持つテクセルの色がコピーされます。 このプロセスは、<em>最近点サンプリング</em>と呼ばれます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="bilinear-texture-filtering.md">バイリニア テクスチャ フィルタリング</a></p></td>
+<td align="left"><p><a href="bilinear-texture-filtering.md">バイリニア テクスチャ フィルタ リング</a></p></td>
 <td align="left"><p><em>バイリニア フィルタリング</em>は、サンプリング ポイントに最も近い 4 つのテクセルの加重平均を計算します。 このフィルタリング手法は、最近点フィルタリングよりも正確で一般的です。 このアプローチは最新のグラフィックス ハードウェアに実装されているため、効率的です。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="anisotropic-texture-filtering.md">異方性テクスチャ フィルタ リング</a></p></td>
+<td align="left"><p><a href="anisotropic-texture-filtering.md">アニソトロ ピック テクスチャ フィルタ リング</a></p></td>
 <td align="left"><p>サーフェスがスクリーンの平面に対して角度をなして配置されている 3D オブジェクトのテクセルに見られるゆがみを<em>異方性</em>と呼びます。 異方性プリミティブのピクセルをテクセルにマッピングすると、形状がゆがみます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="texture-filtering-with-mipmaps.md">ミップマップでのテクスチャ フィルタリング</a></p></td>
+<td align="left"><p><a href="texture-filtering-with-mipmaps.md">テクスチャの mipmap をフィルタ リング</a></p></td>
 <td align="left"><p><em>ミップマップ</em>は連続したテクスチャで、各テクスチャは同じイメージを徐々に低い解像度で表したものです。 ミップマップでの各イメージの高さと幅、つまりレベルは、直前のレベルを 2 の累乗で割った値になります。</p></td>
 </tr>
 </tbody>

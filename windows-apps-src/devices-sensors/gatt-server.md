@@ -1,16 +1,16 @@
 ---
 title: Bluetooth GATT サーバー
-description: この記事では、一般的な用途のサンプル コードでと一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリの Bluetooth 汎用属性プロファイル (GATT) サーバーの概要を示します。
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth 汎用属性プロファイル (GATT) サーバーの概要と、一般的な使用事例のサンプル コードについて説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930723"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635137"
 ---
 # <a name="bluetooth-gatt-server"></a>Bluetooth GATT サーバー
 
@@ -20,56 +20,56 @@ ms.locfileid: "8930723"
 - [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
 
-この記事では、一般的な GATT サーバー タスクのサンプル コードでと一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth Generic Attribute (GATT) サーバーの Api を示しています。 
-- サポートされているサービスを定義します。
-- リモート クライアントが検出できるように、サーバーを公開します。
-- サービスのサポートを提供します。
-- 読み取りし、書き込み要求に応答するには
-- サブスクライブしているクライアントに通知を送信します。
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth 汎用属性 (GATT) サーバー API を、一般的な GATT サーバー タスクのサンプル コードを使って示します。 
+- サポートされるサービスの定義
+- リモート クライアントで検出できるようにするためのサーバーの公開
+- サービスのサポートのアドバタイズ
+- 読み取り要求や書き込み要求への応答
+- 受信登録しているクライアントへの通知の送信
 
 ## <a name="overview"></a>概要
-Windows は、通常、クライアントの役割で動作します。 それでも、Bluetooth LE GATT サーバーもとして機能する Windows 不要となる多くのシナリオが発生します。 IoT デバイスでは、ほとんどのクロス プラットフォーム BLE 通信と共に、ほぼすべてのシナリオは、Windows GATT サーバーを指定する必要があります。 さらに、近くにあるウェアラブル デバイスへの通知の送信にも、このテクノロジを必要とする一般的なシナリオとなっています。  
-> [GATT クライアント ドキュメント](gatt-client.md)の最新情報のすべての概念が先に進む前にオフにすることを確認します。  
+Windows は、通常、クライアントの役割で動作します。 ただし、Windows を Bluetooth LE GATT サーバーとして動作させることが必要なシナリオが数多く発生します。 多くのクロスプラットフォーム BLE 通信と共に、IoT デバイス向けのほとんどすべてのシナリオでは、Windows が GATT サーバーとして機能する必要があります。 さらに、近くのウェアラブル デバイスに通知を送信することも、このテクノロジを必要とする一般的なシナリオになっています。  
+> 先に進む前に、[GATT クライアント ドキュメント](gatt-client.md)で説明されているすべての概念を理解していることを確認してください。  
 
-サーバーの運用は、サービス プロバイダーと、GattLocalCharacteristic によって中心です。 これら 2 つのクラスを宣言し、実装し、リモート デバイスへのデータの階層を公開するために必要な機能が提供されます。
+サーバーの処理は、サービス プロバイダーと GattLocalCharacteristic を中心に実行されます。 これら 2 つのクラス宣言、実装、およびリモート デバイスへのデータの階層を公開するために必要な機能が提供されます。
 
-## <a name="define-the-supported-services"></a>サポートされているサービスを定義します。
-アプリが Windows によって公開される 1 つまたは複数のサービスを宣言できます。 各サービスは、UUID を一意に識別します。 
+## <a name="define-the-supported-services"></a>サポートされるサービスの定義
+アプリでは、Windows によって公開される 1 つまたは複数のサービスを宣言できます。 各サービスは、UUID によって一意に識別されます。 
 
-### <a name="attributes-and-uuids"></a>属性と Uuid
-各サービス、特性、記述子が定義されているが、独自の一意の 128 ビット UUID します。
-> GUID、という用語を使用してすべての Windows Api が Bluetooth 標準は Uuid としてこれらを定義します。 今回は、これら 2 つの用語は入れ替え可能であるが引き続き UUID 用語を使用するようにします。 
+### <a name="attributes-and-uuids"></a>属性と UUID
+各サービス、特性、記述子は、それぞれ一意の 128 ビット UUID によって定義されます。
+> すべての Windows API では GUID という用語を使用しますが、Bluetooth の標準では、これらを UUID と定義しています。 このドキュメントの説明では、これら 2 つの用語は入れ替え可能であるため、ここでは UUID という用語を使用します。 
 
-属性が標準および Bluetooth SIG 定義で定義されている場合は、対応する 16 ビットの短い ID がありますも (例: 0000**2A19**は、バッテリ レベル UUID-0000-1000-8000-00805F9B34FB と短い ID は 0x2A19)。 これらの標準的な Uuid は、 [GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx)と[GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx)で確認できます。
+属性が標準であり、Bluetooth SIG によって定義されている属性の場合は、対応する 16 ビットの短い ID もあります (たとえば、バッテリ レベル UUID は 0000**2A19**-0000-1000-8000-00805F9B34FB で、短い ID は 0x2A19 です)。 これらの標準的な UUID については、[GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx) と [GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx) に関するページをご覧ください。
 
-アプリを実装する場合は、独自のカスタム サービスは、カスタム UUID が生成する必要があります。 これは、簡単に行うツールを使って Visual Studio で]-> [CreateGuid (使用オプション 5"xxxx」という-xxxx-."の形式で入手する)。 この uuid は、新しいローカル サービス、特性、記述子を宣言するようになりました使用できます。
+アプリで独自のカスタム サービスを実装している場合は、カスタム UUID を生成する必要があります。 これは、Visual Studio で [ツール] の [GUID の作成] を選択して簡単に作成できます ("xxxxxxxx-xxxx-...xxxx" 形式で取得するにはオプション 5 を使用します)。 この UUID を使用して、新しいローカル サービス、特性、記述子を宣言できます。
 
-#### <a name="restricted-services"></a>制限付きのサービス
-次のサービスは、システムによって予約されており、この時点で公開されることはできません。
-1. デバイス情報サービス (無効)
+#### <a name="restricted-services"></a>制限されているサービス
+次のサービスは、システムによって予約されており、現時点で公開することはできません。
+1. デバイス情報サービス (DIS)
 2. 汎用属性プロファイル サービス (GATT)
-3. 汎用的なアクセス Profile サービス (ギャップ)
+3. 汎用アクセス プロファイル サービス (GAP)
 4. ヒューマン インターフェイス デバイス サービス (HOGP)
 5. スキャン パラメーター サービス (SCP)
 
-> ブロックされているサービスを作成しようとすると、CreateAsync への呼び出しから返される BluetoothError.DisabledByPolicy が発生します。
+> ブロックされているサービスを作成しようとすると、CreateAsync への呼び出しから BluetoothError.DisabledByPolicy が返されます。
 
-#### <a name="generated-attributes"></a>生成された属性
-次の記述子は、特性の作成時に提供される GattLocalCharacteristicParameters に基づいて、システムによって自動的に生成します。
-1. クライアントの特性の構成 (indicatable または通知用として、特性が付いている) 場合。
-2. 特性ユーザー説明 (場合いることのプロパティが設定されます)。 詳しくは、GattLocalCharacteristicParameters.UserDescription プロパティを参照してください。
-3. 特性の形式 (指定されている各プレゼンテーション形式の 1 つの記述子)。  詳しくは、GattLocalCharacteristicParameters.PresentationFormats プロパティを参照してください。
-4. 特性集計形式 (1 つ以上の形式が指定されます)。  詳しくは GattLocalCharacteristicParameters.See PresentationFormats プロパティです。
-5. (特性には、拡張プロパティのビットが付いている) 場合、特性のことに拡張プロパティ。
+#### <a name="generated-attributes"></a>生成される属性
+次の記述子は、特性の作成時に指定した GattLocalCharacteristicParameters に基づいて、システムによって自動的に生成されます。
+1. Client Characteristic Configuration (特性が指示可能または通知可能とマークされている場合)。
+2. Characteristic User Description (UserDescription プロパティが設定されている場合)。 詳しくは、GattLocalCharacteristicParameters.UserDescription プロパティをご覧ください。
+3. Characteristic Format (指定されたプレゼンテーション形式ごとに 1 つの記述子)。  詳しくは、GattLocalCharacteristicParameters.PresentationFormats プロパティをご覧ください。
+4. Characteristic Aggregate Format (複数の形式を指定した場合)。  詳しくは、GattLocalCharacteristicParameters.PresentationFormats プロパティをご覧ください。
+5. Characteristic Extended Properties (特性が拡張プロパティ ビットでマークされている場合)。
 
-> 拡張プロパティ記述子の値は ReliableWrites と WritableAuxiliaries 特性プロパティによって決まります。
+> Extended Properties 記述子の値は、ReliableWrites および WritableAuxiliaries 特性プロパティによって決まります。
 
 > 予約済みの記述子を作成しようとすると、例外が発生します。
 
-> この時点では、ブロードキャストの注はサポートされていません。  ブロードキャスト GattCharacteristicProperty を指定すると、例外が発生します。
+> 現時点では、ブロードキャストはサポートされていないことに注意してください。  GattCharacteristicProperty のブロードキャストを指定すると、例外が発生します。
 
-### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>サービスと特性についての階層を作成します。
-GattServiceProvider を使用して、作成して、ルートの主要なサービスの定義を提供します。  各サービスでは、GUID では、独自のサービス プロバイダー オブジェクトである必要があります。 
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>サービスと特性の階層を構築します。
+ルート プライマリ サービスの定義を作成してアドバタイズするには、GattServiceProvider を使用します。  各サービスでは、GUID を受け取る独自の ServiceProvider オブジェクトが必要です。 
 
 ```csharp
 GattServiceProviderResult result = await GattServiceProvider.CreateAsync(uuid);
@@ -80,9 +80,9 @@ if (result.Error == BluetoothError.Success)
     // 
 }
 ```
-> プライマリ サービスは、GATT ツリーの最上位レベルです。 プライマリ サービスには、('含める' またはセカンダリのサービスと呼ばれます)、その他のサービスと特性が含まれます。 
+> プライマリ サービスは、GATT ツリーの最上位レベルです。 プライマリ サービスには、特性とその他のサービス (含まれるサービスまたはセカンダリ サービスと呼ばれます) が含まれます。 
 
-必要な特性、記述子とサービスを読み込みます。
+次に、サービスに、必要な特性と記述子を設定します。
 
 ```csharp
 GattLocalCharacteristicResult characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid1, ReadParameters);
@@ -112,10 +112,10 @@ if (characteristicResult.Error != BluetoothError.Success)
 _notifyCharacteristic = characteristicResult.Characteristic;
 _notifyCharacteristic.SubscribedClientsChanged += SubscribedClientsChanged;
 ```
-上記のように、このもそれぞれの特性がサポートする操作用のイベント ハンドラーを宣言するに適しています。  アプリの必要が正常に要求に応答する定義され、属性は、サポート要求の種類ごとにイベント ハンドラーを設定します。  ハンドラーを登録に失敗すると、システムで*UnlikelyError*をすぐに完了する要求が発生します。
+上記のように、これは、それぞれの特性がサポートしている操作のイベント ハンドラーを宣言する場所としても適しています。  要求に正しく応答するには、属性がサポートしている各種の要求について、アプリがイベント ハンドラーを設定している必要があります。  ハンドラーを登録できない場合、システムによって *UnlikelyError* が生成され、要求はすぐに完了します。
 
 ### <a name="constant-characteristics"></a>定数の特性
-場合によっては、これには、アプリの有効期間中は変更されません特性値があります。 その場合は、不要なアプリのアクティブ化を防ぐために定数の特性を宣言することをお勧めします。 
+場合によって、アプリの有効期間中に変更されない特性値があります。 その場合、不要なアプリのアクティブ化を防ぐために、定数の特性を宣言することをお勧めします。 
 
 ```csharp
 byte[] value = new byte[] {0x21};
@@ -133,8 +133,8 @@ if (characteristicResult.Error != BluetoothError.Success)
     return;
 }
 ```
-## <a name="publish-the-service"></a>サービスを公開します。
-サービスが完全に定義した後、次の手順では、サービスのサポートを公開します。 リモート デバイス サービス検出を実行するときに、サービスが返されることを OS に通知されます。  -IsDiscoverable と IsConnectable の 2 つのプロパティを設定する必要があります。  
+## <a name="publish-the-service"></a>サービスの公開
+サービスが完全に定義されたら、次の手順は、サービスのサポートを公開することです。 これにより、リモート デバイスがサービスの検出を実行するときに、サービスが返されることを OS に通知します。  IsDiscoverable と IsConnectable の 2 つのプロパティを設定する必要があります。  
 
 ```csharp
 GattServiceProviderAdvertisingParameters advParameters = new GattServiceProviderAdvertisingParameters
@@ -144,18 +144,18 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**: にデバイスを検出する、アドバタイズにリモート デバイスのフレンドリ名をアドバタイズします。
-- **IsConnectable**: 周辺機器ロールで使用するための接続可能な広告をアドバタイズします。
+- **IsDiscoverable**:リモート デバイスでデバイスを探索可能にする提供情報のフレンドリ名をアドバタイズします。
+- **IsConnectable**:周辺のロールで使用するための接続可能な提供情報を通知します。
 
-> サービスは、検出可能と Connectable の両方が、システムは、広告のパケットをサービス Uuid を追加します。  アドバタイズ パケットに 31 バイトのみがあり、それらの 16 占有 128 ビット UUID!
+> サービスが検出可能で、接続可能である場合、システムはサービス UUID をアドバタイズ パケットに追加します。  アドバタイズ パケットは 31 バイトだけであり、128 ビットの UUID はそのうちの 16 バイトを使用します。
 
-> いるサービスがフォア グラウンドで公開されると、アプリケーション呼び出す必要があります StopAdvertising アプリケーションが中断するときに注意してください。
+> あるサービスがフォアグラウンドで公開されている場合、アプリケーションが中断するときに、アプリケーションは StopAdvertising を呼び出す必要があります。
 
-## <a name="respond-to-read-and-write-requests"></a>読み取りし、書き込み要求に応答するには
-必要な特性を宣言するときに、上で見た、として GattLocalCharacteristics はイベント - ReadRequested、WriteRequested および SubscribedClientsChanged の 3 種類があります。
+## <a name="respond-to-read-and-write-requests"></a>読み取り要求や書き込み要求への応答
+上で見たように、必要な特性を宣言するときに、GattLocalCharacteristics では 3 種類のイベント ReadRequested、WriteRequested、SubscribedClientsChanged が発生します。
 
 ### <a name="read"></a>Read
-リモート デバイス特性から値を読み取るしようとする (および定数値ではない)、ReadRequested イベントが呼び出されます。 (リモート デバイスに関する情報を含む) の引数およびに対して読み取りが呼び出された特性は、デリゲートに渡されます。 
+リモート デバイスが特性から値を読み取る場合 (また、その値が定数値ではない場合)、ReadRequested イベントが呼び出されます。 読み取りが呼び出された特性が、引数 (リモート デバイスに関する情報を含む) と共に、デリゲートに渡されます。 
 
 ```csharp
 characteristic.ReadRequested += Characteristic_ReadRequested;
@@ -178,7 +178,7 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 ``` 
 
 ### <a name="write"></a>書き込み
-リモート デバイスは、特性に値を記述する際に、どの特性を記述して、値そのもの、リモート デバイスに関する詳細を WriteRequested イベントが呼び出されます。 
+リモート デバイスが特性に値を書き込む場合、リモート デバイスに関する詳細、書き込み先の特性、書き込む値自体を使用して WriteRequested イベントが呼び出されます。 
 
 ```csharp
 characteristic.ReadRequested += Characteristic_ReadRequested;
@@ -200,10 +200,10 @@ async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, Ga
     deferral.Complete();
 }
 ```
--の書き込みと応答がない場合の 2 種類があります。 GattWriteOption (GattWriteRequest オブジェクトのプロパティ) を使用して、リモート デバイスを実行する書き込みの種類を理解します。 
+書き込みには、応答がある書き込みと応答がない書き込みの 2 種類があります。 リモート デバイスが実行している書き込みの種類を特定するには、GattWriteOption (GattWriteRequest オブジェクトのプロパティ) を使用します。 
 
-## <a name="send-notifications-to-subscribed-clients"></a>サブスクライブしているクライアントに通知を送信します。
-GATT サーバーの運用、通知の中で最も頻繁にデータをリモート デバイスにプッシュの重要な機能を実行します。 場合によっては、すべてのサブスクライブしているクライアントが othertimes に新しい値を送信するには、どのデバイスを選択することを通知する必要があります。 
+## <a name="send-notifications-to-subscribed-clients"></a>受信登録しているクライアントへの通知の送信
+最も一般的な GATT サーバーの操作である通知によって、データをリモート デバイスにプッシュする重要な機能を実行します。 受信登録しているすべてのクライアントに通知する場合もあれば、新しい値の送信先のデバイスを選択することが必要な場合もあります。 
 
 ```csharp
 async void NotifyValue()
@@ -216,7 +216,7 @@ async void NotifyValue()
 }
 ```
 
-サブスクライブすると、新しいデバイスの通知、SubscribedClientsChanged イベントに呼び出されます。 
+新しいデバイスが通知を受信登録する場合、SubscribedClientsChanged イベントが呼び出されます。 
 
 ```csharp
 characteristic.SubscribedClientsChanged += SubscribedClientsChanged;
@@ -232,4 +232,4 @@ void _notifyCharacteristic_SubscribedClientsChanged(GattLocalCharacteristic send
 }
 
 ```
-> アプリケーションが、通知の最大サイズを取得 MaxNotificationSize プロパティを使用して特定のクライアントのことに注意してください。  最大サイズよりも大きいすべてのデータは、システムによって切り捨てられます。
+> アプリケーションは、MaxNotificationSize プロパティを使用して、特定のクライアントの通知の最大サイズを取得できることに注意してください。  最大サイズを超えるすべてのデータは、システムによって切り詰められます。

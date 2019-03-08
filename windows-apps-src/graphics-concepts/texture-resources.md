@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933334"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591387"
 ---
 # <a name="texture-resources"></a>テクスチャ リソース
 
 
 テクスチャは、レンダリングに使われるリソースの一種です。
 
-## <a name="span-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanrendering-with-texture-resources"></a><span id="Rendering_with_Texture_Resources"></span><span id="rendering_with_texture_resources"></span><span id="RENDERING_WITH_TEXTURE_RESOURCES"></span>テクスチャ リソースを使ったレンダリング
+## <a name="span-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanspan-idrenderingwithtextureresourcesspanrendering-with-texture-resources"></a><span id="Rendering_with_Texture_Resources"></span><span id="rendering_with_texture_resources"></span><span id="RENDERING_WITH_TEXTURE_RESOURCES"></span>テクスチャのリソースとレンダリング
 
 
 Direct3D は、テクスチャ ステージの概念による複数のテクスチャ ブレンドをサポートしています。 各テクスチャ ステージには、テクスチャとそのテクスチャに対して実行できる操作が含まれています。 テクスチャ ステージ内のテクスチャが現在のテクスチャのセットを構成します。 「[テクスチャ ブレンド](texture-blending.md)」をご覧ください。 各テクスチャの状態は、そのテクスチャ ステージにカプセル化されます。

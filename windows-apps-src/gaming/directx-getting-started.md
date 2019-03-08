@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929145"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660227"
 ---
-# <a name="directx-getting-started"></a>DirectX: 概要
+# <a name="directx-getting-started"></a>DirectX:概要
 
 このセクションでは、DirectX を使用した UWP ゲームの開発を始めるときに役立つ情報について説明します。 
 
@@ -36,7 +36,7 @@ ms.locfileid: "8929145"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">アプリ オブジェクトと DirectX</a></p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">アプリケーション オブジェクトと DirectX</a></p></td>
 <td align="left"><p>アプリ オブジェクトに直接アクセスして、相互運用します。</p></td>
 </tr>
 <tr class="even">
@@ -44,7 +44,7 @@ ms.locfileid: "8929145"
 <td align="left"><p>UWP DirectX ゲームを開発するための開発環境を準備します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">アプリの起動と再開</a></p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">起動して、アプリの再開</a></p></td>
 <td align="left"><p>UWP DirectX ゲームの起動、中断、再開を行います。</p></td>
 </tr>
 </tbody>

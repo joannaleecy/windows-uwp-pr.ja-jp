@@ -4,14 +4,14 @@ description: この記事では、ユニバーサル Windows アプリからリ�
 title: メディアのキャスト
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619947"
 ---
 # <a name="media-casting"></a>メディアのキャスト
 
@@ -37,7 +37,7 @@ ms.locfileid: "8930543"
 
 このボタンの [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベント ハンドラーで [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) の新しいインスタンスを作成し、ビデオ ファイルの種類を [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) コレクションに追加して、開始位置をユーザーのビデオ ライブラリに設定します。
 
-[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカー ダイアログを起動します。 このメソッドからは、ビデオ ファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが返されます。 ファイル選択操作をユーザーが取り消した場合は null が返されます。返されたファイルが null ではないことを確認してください。 ファイルの [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を取得するには、そのファイルの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) メソッドを呼び出します。 最後に、[**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) を呼び出して選択したファイルから新しい **MediaSource** オブジェクトを作成し、そのオブジェクトを **MediaPlayerElement** オブジェクトの [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) プロパティに割り当てて、そのビデオ ファイルをコントロールのビデオ ソースに設定します。
+[  **PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカー ダイアログを起動します。 このメソッドからは、ビデオ ファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが返されます。 ファイル選択操作をユーザーが取り消した場合は null が返されます。返されたファイルが null ではないことを確認してください。 ファイルの [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を取得するには、そのファイルの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) メソッドを呼び出します。 最後に、[**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) を呼び出して選択したファイルから新しい **MediaSource** オブジェクトを作成し、そのオブジェクトを **MediaPlayerElement** オブジェクトの [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) プロパティに割り当てて、そのビデオ ファイルをコントロールのビデオ ソースに設定します。
 
 [!code-cs[OpenButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
 
@@ -58,7 +58,7 @@ ms.locfileid: "8930543"
 
 [!code-cs[DeclareCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
 
-対象のページが初期化されたタイミングで CastingDevicePicker の新しいインスタンスを作成します。さらに、ビデオをサポートするデバイスだけをキャスト先としてピッカーに一覧表示するために、[**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) を [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) プロパティに設定します。 [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) イベントのハンドラーを登録します。これは、ユーザーがキャスト先のデバイスを選んだときに発生するイベントです。
+対象のページが初期化されたタイミングで CastingDevicePicker の新しいインスタンスを作成します。さらに、ビデオをサポートするデバイスだけをキャスト先としてピッカーに一覧表示するために、[**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) を [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) プロパティに設定します。 [  **CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) イベントのハンドラーを登録します。これは、ユーザーがキャスト先のデバイスを選んだときに発生するイベントです。
 
 [!code-cs[InitCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
 
@@ -66,11 +66,11 @@ ms.locfileid: "8930543"
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-ボタンの **Click** イベント ハンドラーで [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) を呼び出し、別の要素を基準とした UI 要素の変換を取得します。 この例の変換は、アプリケーション ウィンドウの表示ルートを基準としたキャスト ピッカー ボタンの位置です。 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) オブジェクトの [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) メソッドを呼び出して、キャスト先の選択ダイアログを起動します。 ユーザーによって押されたボタンから飛び出すようにダイアログを表示させるため、キャスト ピッカー ボタンの位置とサイズを指定します。
+ボタンの **Click** イベント ハンドラーで [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) を呼び出し、別の要素を基準とした UI 要素の変換を取得します。 この例の変換は、アプリケーション ウィンドウの表示ルートを基準としたキャスト ピッカー ボタンの位置です。 [  **CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) オブジェクトの [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) メソッドを呼び出して、キャスト先の選択ダイアログを起動します。 ユーザーによって押されたボタンから飛び出すようにダイアログを表示させるため、キャスト ピッカー ボタンの位置とサイズを指定します。
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-**CastingDeviceSelected** イベント ハンドラーで、イベント引数の [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) プロパティ (ユーザーが選択したキャスト先デバイスを表す) の [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) メソッドを呼び出します。 [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントと [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントのハンドラーを登録します。 最後に、[**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) を呼び出すとキャストが開始されます。キャストするメディアが **MediaPlayerElement** に関連付けられた **MediaPlayer** のコンテンツであることを指定するために、このメソッドの引数には、**MediaPlayerElement** コントロールの **MediaPlayer** オブジェクトの [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) メソッドの結果を渡します。
+**CastingDeviceSelected** イベント ハンドラーで、イベント引数の [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) プロパティ (ユーザーが選択したキャスト先デバイスを表す) の [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) メソッドを呼び出します。 [  **ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントと [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントのハンドラーを登録します。 最後に、[**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) を呼び出すとキャストが開始されます。キャストするメディアが **MediaPlayerElement** に関連付けられた **MediaPlayer** のコンテンツであることを指定するために、このメソッドの引数には、**MediaPlayerElement** コントロールの **MediaPlayer** オブジェクトの [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) メソッドの結果を渡します。
 
 > [!NOTE] 
 > キャスト接続は UI スレッドで開始する必要があります。 **CastingDeviceSelected** は UI スレッドでは呼び出されないため、上に挙げた一連の呼び出しを、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出しの中に置いて、UI スレッドで呼び出されるようにする必要があります。
@@ -130,7 +130,7 @@ ms.locfileid: "8930543"
 
 リスト ボックスからいずれかのキャスト先デバイスをユーザーが選択すると、[**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) イベントが発生します。 このハンドラーの中でキャスト接続を作成し、キャストを開始することになります。
 
-まず、デバイスの列挙処理がメディアのキャスト処理に干渉しないよう、デバイス ウォッチャーが停止していることを確認します。 キャスト接続を作成するには、ユーザーが選択した **CastingDevice** オブジェクトの [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) を呼び出します。 [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントおよび [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントに対応するイベント ハンドラーを追加します。
+まず、デバイスの列挙処理がメディアのキャスト処理に干渉しないよう、デバイス ウォッチャーが停止していることを確認します。 キャスト接続を作成するには、ユーザーが選択した **CastingDevice** オブジェクトの [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) を呼び出します。 [  **StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントおよび [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントに対応するイベント ハンドラーを追加します。
 
 メディアのキャストを開始するには、[**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) を呼び出します。その際、引数には、**MediaPlayer** の [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) メソッドを呼び出して取得したキャスト ソースを指定します。 最後に、メディアのキャストをユーザーが停止するための切断ボタンを表示状態にします。
 

@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968576"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593167"
 ---
 # <a name="time-based-animations"></a>時間ベース アニメーション
 
-コンポーネントが使用中である場合や、ユーザー エクスペリエンス全体が変更される場合、こうした状況はエンド ユーザーに対して 2 つの方法で提示されることがあります。1 つは時間の経過と共に提示する方法、もう一つは即座に提示する方法です。 Windows プラットフォームで、前者が優先される後者の方法より - ユーザー エクスペリエンスが即座に頻繁に変化と混同しないでエンドユーザーを感じてしまうことはないためです。 このような場合、エンド ユーザーはエクスペリエンスを不快でありと不自然なものとして認識します。
+コンポーネントが使用中である場合や、ユーザー エクスペリエンス全体が変更される場合、こうした状況はエンド ユーザーに対して 2 つの方法で提示されることがあります。1 つは時間の経過と共に提示する方法、もう一つは即座に提示する方法です。 Windows プラットフォームで、前者は優先、後者を瞬時に変更する多くの場合、ユーザー エクスペリエンスと混同しての変更点を理解することはないために、エンドユーザーを驚くような。 このような場合、エンド ユーザーはエクスペリエンスを不快でありと不自然なものとして認識します。
 
 ユーザー エクスペリエンスを即座に変更するのではなく、時間の経過と共に UI を変更してエンド ユーザーをガイドしたり、エクスペリエンスの変更をエンド ユーザーに通知したりすることができます。 Windows プラットフォームでは、これを時間ベース アニメーション (KeyFrameAnimation とも呼ばれます) を使用して行います。 KeyFrameAnimation を使用すると、時間の経過と共に UI を変更し、アニメーションの各側面 (アニメーションの開始方法や開始のタイミング、アニメーションがどのようにして終了状態になるかなど) を制御することができます。 たとえば、オブジェクトが新しい位置に 300 ミリ秒かけて移動するアニメーションは、即座にその位置に "テレポート" する方法よりも快適なエクスペリエンスとなります。 即座に変更するのではなく、アニメーションを使用すると、最終的にはより快適で魅力的なエクスペリエンスが実現されます。
 
@@ -45,11 +45,11 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
 - KeyFrameAnimation プロパティ – UI の要件を満たすために適用できるカスタマイズ オプションです。
   - DelayTime – StartAnimation が呼び出されてからアニメーションが開始されるまでの時間。
   - Duration: アニメーションの継続時間。
-  - IterationBehavior – アニメーションの繰り返し動作の回数または無制限。
+  - IterationBehavior: アニメーションの繰り返し動作の回数または無制限。
   - IterationCount – キー フレーム アニメーションが繰り返される有限の回数。
   - KeyFrame Count – 特定のキー フレーム アニメーションのキー フレームの数。
-  - StopBehavior – StopAnimation が呼び出されたときのアニメーションのプロパティ値の動作を指定します。
-  - Direction – アニメーションの再生方向を指定します。
+  - StopBehavior: StopAnimation が呼び出されたときのアニメーションのプロパティ値の動作を指定します。
+  - Direction: アニメーションの再生方向を指定する。
 - アニメーション グループ – 同時に複数のアニメーションを開始します。
   - 多くの場合、複数のプロパティを同時にアニメーション化するときに使用します。
 
@@ -62,10 +62,10 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
 1. アニメーション テンプレートを使用して、KeyFrame の追加とアニメーションのプロパティの定義を開始します。
     - 1 つ以上の KeyFrame が必要です (100% または 1f KeyFrame)。
     - また、継続時間を定義することもお勧めします。
-1. 1 回、このアニメーションを実行し、アニメーション化するプロパティをターゲットとして CompositionObject で startanimation (…) を呼び出してする準備ができたらします。 具体的には、次のとおりです。
+1. 1 回のアニメーション化するプロパティを対象とする、CompositionObject StartAnimation(...) を呼び出してこのアニメーションを実行する準備が整ったらします。 具体的には、次のとおりです。
     - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
     - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 実行中のアニメーションがあり、アニメーションまたはアニメーション グループを停止する場合は、これらの Api を使用できます。
+1. 実行中のアニメーションがあり、アニメーションまたはアニメーションのグループを停止する場合は、これらの Api を使用できます。
     - `visual.StopAnimation("targetProperty");`
     - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
@@ -73,7 +73,7 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
 
 ## <a name="example"></a>例
 
-この例では、1 秒を超える < 200,0,0 > ~ < 0,0,0 > のビジュアルのオフセットをアニメーション化するします。 また、ビジュアルがこれらの位置の間を 10 回アニメーション化されるようにします。
+1 秒 < 200,0,0 > を < 0,0,0 > からビジュアルのオフセットをアニメーション化するこの例では、します。 また、ビジュアルがこれらの位置の間を 10 回アニメーション化されるようにします。
 
 ![キーフレーム アニメーション](images/animation/animated-rectangle.gif)
 
@@ -86,7 +86,7 @@ KeyFrameAnimation を使用した明示的な時間ベース アニメーショ�
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-その後の間で 2 つの位置 (現在と < 200,0,0 >) 10 回アニメーション化される動作と共に期間を記述する KeyFrameAnimation のプロパティを定義します。
+2 つの位置 (現在および < 200,0,0 >) の 10 倍の間をアニメーション化する動作と期間を記述する KeyFrameAnimation のプロパティを定義します。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);

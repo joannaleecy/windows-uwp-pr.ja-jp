@@ -6,20 +6,20 @@ ms.topic: article
 keywords: Windows 10, UWP, ファイル, プロパティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060056"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630237"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>UWP でファイルのプロパティにすばやくアクセスする 
 
 ライブラリからファイルとそのプロパティの一覧をすばやく収集し、アプリでそれらのプロパティを使用する方法について説明します。  
 
 前提条件 
-- **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミング** c# または Visual Basic での非同期アプリの作成、 [c# または Visual Basic での非同期 Api の呼び出し](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)を表示する方法について説明することができます。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
-- **ライブラリへのアクセス許可**これらの例のコードで、 **picturesLibrary**機能が必要ですが、ファイルの場所がまったく必要としない別の機能や機能がないです。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
-- **単純なファイルの列挙**この例では、 [QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)を使用して、いくつかの高度な列挙プロパティを設定します。 小さいディレクトリを対象としてファイルの簡単な一覧を取得する方法について詳しくは、「[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)」をご覧ください。 
+- **非同期プログラミングのユニバーサル Windows プラットフォーム (UWP) アプリ** で非同期アプリを記述する方法を学習できますC#または Visual Basic では、「[で非同期 Api を呼び出すC#または Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)します。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
+- **ライブラリへのアクセス許可** これらの例でコードが必要です、 **picturesLibrary**機能が、ファイルの場所があります別の機能または機能がないすべての。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
+- **単純なファイルの列挙体**  この例では[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)をいくつかの高度な列挙型プロパティを設定します。 小さいディレクトリを対象としてファイルの簡単な一覧を取得する方法について詳しくは、「[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)」をご覧ください。 
 
 ## <a name="usage"></a>使用方法  
 多くのアプリでは、ファイルのグループのプロパティを一覧表示する必要がありますが、常にファイルと直接やり取りする必要はありません。 たとえば、音楽アプリは一度に 1 つのファイルを再生します (開きます) が、アプリで曲のキューを表示したり、ユーザーが再生可能なファイルを選択したりする場合には、フォルダー内にあるすべてのファイルのプロパティが必要になります。 
@@ -109,14 +109,14 @@ while (images.Count != 0 || index < 10000) 
 ```
 
 ### <a name="results"></a>結果 
-結果として生成される StorageFile ファイルには要求したプロパティのみが含まれますが、他の IndexerOptions と比較して、10 倍速く結果が返されます。アプリでは、クエリにまだ含まれていないプロパティへのアクセスを要求できますが、ファイルを開き、それらのプロパティを取得するとパフォーマンス ペナルティが発生します。  
+結果として生成される StorageFile ファイルには要求したプロパティのみが含まれますが、他の IndexerOptions と比較して、10 倍速く結果が返されます。 アプリでは、クエリにまだ含まれていないプロパティへのアクセスを要求できますが、ファイルを開き、それらのプロパティを取得するとパフォーマンス ペナルティが発生します。  
 
 ## <a name="adding-folders-to-libraries"></a>フォルダーをライブラリに追加する 
 アプリでは、[StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync) を使用して、ファイルの場所をインデックスに追加するよう、ユーザーに対して要求することができます。 場所が追加されると、自動的にインデックスが作成されます。アプリはこの方法を使用してファイルを列挙することができます。
  
 ## <a name="see-also"></a>関連項目
 [QueryOptions API リファレンス](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+[列挙し、ファイルとフォルダーのクエリ](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+[ファイルのアクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

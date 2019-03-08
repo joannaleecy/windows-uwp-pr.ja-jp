@@ -8,15 +8,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c98e4d5581355510e349a48e797dfbfc959e9577
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932044"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632567"
 ---
 # <a name="usersbatchfeedback"></a>/users/batchfeedback
  
-これらの Uri のドメインとポート番号を`reputation.xboxlive.com:10443`します。
+これらの Uri のドメインとポート番号が`reputation.xboxlive.com:10443`します。
  
 <a id="ID4EW"></a>
 
@@ -30,9 +30,9 @@ ms.locfileid: "8932044"
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST](uri-reputationusersbatchfeedbackpost.md)
+[投稿](uri-reputationusersbatchfeedbackpost.md)
 
-&nbsp;&nbsp;タイトルのサービスによってタイトルのインターフェイスの外部のバッチ形式でフィードバックを送信するために使用します。
+&nbsp;&nbsp;タイトルのインターフェイスの外部でのバッチの形式でフィードバックを送信するタイトルのサービスで使用します。
  
 <a id="ID4EJB"></a>
 
@@ -44,6 +44,6 @@ ms.locfileid: "8932044"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 URI](atoc-reference-reputation.md)
+[評価の Uri](atoc-reference-reputation.md)
 
    

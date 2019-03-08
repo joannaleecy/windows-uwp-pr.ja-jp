@@ -1,17 +1,17 @@
 ---
-Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages so that an OEM can include your app in their OS image.
+Description: 開発者アカウントに適切なアクセス許可が付与されている場合、OEM が OS イメージにアプリを組み込めるプレインストール パッケージを生成してダウンロードできます。
 title: OEM 向けのプレインストール パッケージの生成
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ab17adc80a643c04ac7793945486c3ff975fde5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947382"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643137"
 ---
 # <a name="generate-preinstall-packages-for-oems"></a>OEM 向けのプレインストール パッケージの生成
 
@@ -20,7 +20,7 @@ ms.locfileid: "8947382"
 
 ## <a name="important-preinstall-policy--limitations"></a>重要なプレインストールに関するポリシーと制限事項
 
-プレインストール アプリをストアに接続し、アプリの更新プログラムを受信することができるように、最新のストア ライセンスが[パートナー センター](https://partner.microsoft.com/dashboard)を通じて認定を受ける必要があります。
+を通じてプレインストール アプリの認定を受ける必要があります[パートナー センター](https://partner.microsoft.com/dashboard)をストアに接続し、アプリの更新プログラムを受け取ることができるように、最新のストア ライセンスを持っています。
 
 プレインストールされているアプリは、すべての市場で、現在も将来も無料である必要があります。
 
@@ -29,7 +29,7 @@ ms.locfileid: "8947382"
 
 プレインストールのアクセス許可を持つアカウントが有効になったら、次の手順を実行します。
 
-1.  パートナー センターで、プレインストールするアプリに移動します。
+1.  パートナー センターでは、プレインストールされるアプリに移動します。
 2.  左側のナビゲーション メニューで、**[アプリ管理]** を展開し、**[現在のパッケージ]** を選びます。
 3.  **[OS プレインストール用パッケージの要求]** で、**[ダウンロード可能なパッケージを有効にする]** を選びます。
 4.  確認のダイアログ ボックスで、**[有効化]** を選びます。
@@ -45,7 +45,7 @@ ms.locfileid: "8947382"
 
 ## <a name="support"></a>サポート
 
-プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問い合わせください。
+プレインストールのパッケージの生成について質問があるさらに場合、電子メール<partnerops@microsoft.com>します。
 
  
 

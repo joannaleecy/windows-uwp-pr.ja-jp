@@ -4,14 +4,14 @@ description: この記事では、ユニバーサル Windows プラットフォ�
 title: カメラ プレビューの表示
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938534"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644877"
 ---
 # <a name="display-the-camera-preview"></a>カメラ プレビューの表示
 
@@ -22,17 +22,17 @@ ms.locfileid: "8938534"
 
 ## <a name="add-capability-declarations-to-the-app-manifest"></a>アプリ マニフェストに機能宣言を追加する
 
-アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 ( *webcam* と *microphone* ) の使用を宣言する必要があります。 
+アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 (*webcam* と *microphone*) の使用を宣言する必要があります。 
 
-**アプリ マニフェストに機能を追加する**
+**アプリケーション マニフェストに機能を追加します。**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
+1.  Microsoft Visual Studio の**ソリューション エクスプローラー**で、**package.appxmanifest** 項目をダブルクリックしてアプリケーション マニフェストのデザイナーを開きます。
 2.  **[機能]** タブをクリックします。
 3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
 
 ## <a name="add-a-captureelement-to-your-page"></a>ページに CaptureElement コントロールを追加する
 
-[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を使って、XAML ページ内にプレビュー ストリームを表示します。
+[  **CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を使って、XAML ページ内にプレビュー ストリームを表示します。
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "8938534"
 
 ## <a name="use-mediacapture-to-start-the-preview-stream"></a>MediaCapture を使ってプレビュー ストリームを開始する
 
-[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトは、デバイスのカメラに対するアプリのインターフェイスです。 このクラスは、Windows.Media.Capture 名前空間のメンバーです。 この記事の例では、既定のプロジェクト テンプレートに含まれている API に加えて、[**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間と [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 名前空間の API も使われます。
+[  **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトは、デバイスのカメラに対するアプリのインターフェイスです。 このクラスは、Windows.Media.Capture 名前空間のメンバーです。 この記事の例では、既定のプロジェクト テンプレートに含まれている API に加えて、[**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間と [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 名前空間の API も使われます。
 
 ページの .cs ファイルに次の名前空間を含めるには using ディレクティブを追加します。
 
@@ -58,11 +58,11 @@ ms.locfileid: "8938534"
 
 **MediaCapture** クラスの新しいインスタンスを作成し、[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出してキャプチャ デバイスを初期化します。 カメラがないデバイスなどではこのメソッドが失敗することがあるため、**try** ブロック内から呼び出してください。 ユーザーがデバイスのプライバシー設定でカメラへのアクセスを無効にしている場合、カメラを初期化しようとすると **UnauthorizedAccessException** がスローされます。 この例外は、開発中、アプリ マニフェストに適切な機能を追加し忘れた場合も表示されます。
 
-**重要:** 一部のデバイス ファミリでは、アプリがデバイスのカメラへのアクセスを許可される前に、ユーザー同意のプロンプトがユーザーに表示されます。 このため、[**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) のみをメイン UI スレッドから呼び出す必要があります。 別のスレッドからカメラを初期化しようとすると、初期化エラーになる可能性があります。
+**重要:** 一部のデバイス ファミリでは、アプリがデバイスのカメラへのアクセスを付与される前に、ユーザー同意のプロンプトがユーザーに表示されます。 このため、[**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) のみをメイン UI スレッドから呼び出す必要があります。 別のスレッドからカメラを初期化しようとすると、初期化エラーになる可能性があります。
 
-[**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを設定して、**MediaCapture** を **CaptureElement** に接続します。 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) を呼び出してプレビューを開始します。 別のアプリがキャプチャ デバイスを排他的に制御している場合、このメソッドは **FileLoadException** をスローします。 排他的制御での変更をリッスンについては、次のセクションを参照してください。
+[  **Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを設定して、**MediaCapture** を **CaptureElement** に接続します。 [  **StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) を呼び出してプレビューを開始します。 別のアプリがキャプチャ デバイスを排他的に制御している場合、このメソッドは **FileLoadException** をスローします。 排他的制御での変更をリッスンについては、次のセクションを参照してください。
 
-[**RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) を呼び出して、プレビューの実行中にデバイスがスリープ状態にならないことを確認します。 最後に、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) プロパティを [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) に設定して、ユーザーがデバイスの向きを変更したときに UI と **CaptureElement** が回転することを防ぎます。 デバイスの向きの変更処理について詳しくは、「[**MediaCapture を使ってデバイスの向きを処理する**](handle-device-orientation-with-mediacapture.md)」をご覧ください。  
+[  **RequestActive**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestActive) を呼び出して、プレビューの実行中にデバイスがスリープ状態にならないことを確認します。 最後に、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) プロパティを [**Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) に設定して、ユーザーがデバイスの向きを変更したときに UI と **CaptureElement** が回転することを防ぎます。 デバイスの向きの変更処理について詳しくは、「[**MediaCapture を使ってデバイスの向きを処理する**](handle-device-orientation-with-mediacapture.md)」をご覧ください。  
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
@@ -75,15 +75,15 @@ ms.locfileid: "8938534"
 
 プレビュー ストリームを使い終わったら、必ずストリームをシャットダウンして関連するリソースを適切に破棄し、デバイスで他のアプリがカメラを使うことができるようにしてください。 プレビュー ストリームをシャットダウンするために必要な手順は次のとおりです。
 
--   現在、カメラがプレビューを表示中の場合は、[**StopPreviewAsync** ](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出してプレビュー ストリームを停止します。 プレビューが実行されていないときに **StopPreviewAsync** を呼び出すと、例外がスローされます。
--   **CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを null に設定します。 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
+-   現在、カメラがプレビューを表示中の場合は、[**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出してプレビュー ストリームを停止します。 プレビューが実行されていないときに **StopPreviewAsync** を呼び出すと、例外がスローされます。
+-   **CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを null に設定します。 [  **CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
 -   **MediaCapture** オブジェクトの [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) メソッドを呼び出してオブジェクトを解放します。 再度、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) を使用して、この呼び出しが UI スレッドで実行されることを確認します。
 -   **MediaCapture** メンバー変数を null に設定します。
--   [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) を呼び出して、アクティブでないときに画面をオフにできるようにします。
+-   [  **RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) を呼び出して、アクティブでないときに画面をオフにできるようにします。
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-[**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) メソッドをオーバーライドすることで、ユーザーがページから離れるときにプレビュー ストリームをシャットダウンする必要があります。
+[  **OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) メソッドをオーバーライドすることで、ユーザーがページから離れるときにプレビュー ストリームをシャットダウンする必要があります。
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -99,5 +99,5 @@ ms.locfileid: "8938534"
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [プレビュー フレームの取得](get-a-preview-frame.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [プレビュー フレームを取得します。](get-a-preview-frame.md)

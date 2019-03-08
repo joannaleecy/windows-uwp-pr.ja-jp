@@ -6,15 +6,15 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox Live 分析, クラブ
 ms.localizationpriority: medium
 ms.openlocfilehash: dbf9d06f96632237c10de0fe3b6c4723a2501254
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929946"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633177"
 ---
 # <a name="get-xbox-live-club-data"></a>Xbox Live クラブのデータの取得
 
-[Xbox Live 対応ゲーム](../xbox-live/index.md)のクラブ データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報は、パートナー センターで[Xbox 分析レポート](../publish/xbox-analytics-report.md)で利用可能なもできます。
+[Xbox Live 対応ゲーム](../xbox-live/index.md)のクラブ データを取得するには、Microsoft Store 分析 API の以下のメソッドを使います。 この情報も記載されて、 [Xbox analytics レポート](../publish/xbox-analytics-report.md)パートナー センターでします。
 
 > [!IMPORTANT]
 > このメソッドは、Xbox のゲームまたは Xbox Live サービスを使用するゲームのみサポートします。 これらのゲームは、[概念の承認プロセス](../gaming/concept-approval.md)を完了する必要があります。これには、[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)が発行したゲームと [ID@Xbox プログラム](../xbox-live/developer-program-overview.md#id)を介して申請されたゲームが含まれます。 このメソッドでは、[Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を介して発行されたゲームは現在サポートされていません。
@@ -24,7 +24,7 @@ ms.locfileid: "8929946"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 分析 API に関するすべての[前提条件](access-analytics-data-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -38,7 +38,7 @@ ms.locfileid: "8929946"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -46,14 +46,14 @@ ms.locfileid: "8929946"
 ### <a name="request-parameters"></a>要求パラメーター
 
 
-| パラメーター        | 型   |  説明      |  必須かどうか  
+| パラメーター        | 種類   |  説明      |  必須  
 |---------------|--------|---------------|------|
-| applicationId | string | Xbox Live クラブのデータを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  必須  |
-| metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **communitymanagerclub** を指定します。  |  必須  |
-| startDate | date | 取得するクラブ データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  必須ではない  |
-| endDate | date | 取得するクラブ データの日付範囲の終了日です。 既定値は現在の日付です。 |  必須ではない  |
-| top | int | 要求で返すデータの行数です。 指定されない場合の既定値は、最大値でもある 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  必須ではない  |
-| skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  必須ではない  |
+| applicationId | string | Xbox Live クラブのデータを取得するゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。  |  〇  |
+| metricType | string | 取得する Xbox Live 分析データの種類を指定する文字列です。 このメソッドでは、値 **communitymanagerclub** を指定します。  |  〇  |
+| startDate | date | 取得するクラブ データの日付範囲の開始日です。 既定値は、現在の日付の 30 日前です。 |  X  |
+| endDate | date | 取得するクラブ データの日付範囲の終了日です。 既定値は現在の日付です。 |  X  |
+| top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
+| skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-| 値      | 型   | 説明                  |
+| Value      | 種類   | 説明                  |
 |------------|--------|-------------------------------------------------------|
 | Value      | array  | 対象ゲームに関連するクラブのデータを含む 1 つの [ProductData](#productdata) オブジェクトと、すべての Xbox Live ユーザーに関するクラブ データを含む 1 つの [XboxwideData](#xboxwidedata) オブジェクトを格納する配列です。 このデータは、対象ゲームのデータとの比較のために用意されています。  |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されていたとき、クエリに対して 10000 行を超えるデータが一致すると、この値が返されます。 |
@@ -78,7 +78,7 @@ Authorization: Bearer <your access token>
 
 このリソースには、対象ゲームのクラブ データが含まれます。
 
-| 値           | 型    | 説明        |
+| Value           | 種類    | 説明        |
 |-----------------|---------|------|
 | date            |  string |   クラブ データの日付です。   |
 |  applicationId               |    string     |  クラブ データを取得したゲームの [Store ID](in-app-purchases-and-trials.md#store-ids) です。   |
@@ -91,30 +91,30 @@ Authorization: Bearer <your access token>
 
 このリソースには、すべての Xbox Live ユーザーを対象とした平均的なクラブ データが含まれます。
 
-| 値           | 型    | 説明        |
+| Value           | 種類    | 説明        |
 |-----------------|---------|------|
 | date            |  string |   クラブ データの日付です。   |
 |  applicationId  |    string     |   **XboxwideData** オブジェクトの場合、この文字列は常に値 **XBOXWIDE** になります。  |
 |  clubsWithTitleActivity               |   int     |  Xbox Live 対応ゲームにソーシャルに関与しているユーザーのいるクラブの平均数です。    |     
 |  clubsExclusiveToGame               |   int      |  1 つの Xbox Live 対応ゲームだけにソーシャルに関与しているクラブの平均数です。   |     
-|  clubFacts               |   object      |  1 つの [ClubFacts](#clubfacts) オブジェクトが含まれます。 このオブジェクトは、**XboxwideData** オブジェクトのコンテキストでは意味を持たず、既定値が設定されます。  |
+|  clubFacts               |   オブジェクト      |  1 つの [ClubFacts](#clubfacts) オブジェクトが含まれます。 このオブジェクトは、**XboxwideData** オブジェクトのコンテキストでは意味を持たず、既定値が設定されます。  |
 
 
 ### <a name="clubfacts"></a>ClubFacts
 
 **ProductData** オブジェクトの場合、このオブジェクトには、対象ゲームに関連するアクティビティのある特定のクラブのデータが含まれます。 **XboxwideData** オブジェクトの場合、このオブジェクトは意味を持たず、既定値が含まれます。
 
-| 値           | 型    | 説明        |
+| Value           | 種類    | 説明        |
 |-----------------|---------|--------------------|
 |  name            |  string  |   **ProductData** オブジェクトの場合、これはクラブの名前です。 **XboxwideData** オブジェクトの場合、これは常に値 **XBOXWIDE** になります。           |
 |  memberCount               |    int     | **ProductData** オブジェクトの場合、これはクラブ内のメンバーの数です。クラブを参照しただけの非メンバーは除外されます。 **XboxwideData** オブジェクトの場合、これは常に 0 になります。    |
 |  titleSocialActionsCount               |    int     |  **ProductData** オブジェクトの場合、これはクラブ内のメンバーが実行した、対象ゲームに関連するソーシャル活動の数です。 **XboxwideData** オブジェクトの場合、これは常に 0 になります。   |
-|  isExclusiveToGame               |    Boolean     |  **ProductData** オブジェクトの場合、これは現在のクラブが対象ゲームにソーシャルに関与しているかどうかを示します。 **XboxwideData** オブジェクトの場合、これは常に true になります。  |
+|  isExclusiveToGame               |    ブール値     |  **ProductData** オブジェクトの場合、これは現在のクラブが対象ゲームにソーシャルに関与しているかどうかを示します。 **XboxwideData** オブジェクトの場合、これは常に true になります。  |
 
 
 ### <a name="response-example"></a>応答の例
 
-この要求の JSON 応答の本文の例を次に示します。
+この要求の JSON 返信の本文の例を次に示します。
 
 ```json
 {
@@ -173,9 +173,9 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使った分析データへのアクセス](access-analytics-data-using-windows-store-services.md)
-* [Xbox Live の分析データの取得](get-xbox-live-analytics.md)
-* [Xbox Live の実績データの取得](get-xbox-live-achievements-data.md)
-* [Xbox Live の正常性データの取得](get-xbox-live-health-data.md)
-* [Xbox Live ゲーム ハブのデータの取得](get-xbox-live-game-hub-data.md)
-* [Xbox Live のマルチプレイヤー データの取得](get-xbox-live-multiplayer-data.md)
+* [Microsoft Store サービスを使用して分析データにアクセス](access-analytics-data-using-windows-store-services.md)
+* [Xbox Live analytics データを取得します。](get-xbox-live-analytics.md)
+* [Xbox Live 成績データを取得します。](get-xbox-live-achievements-data.md)
+* [Xbox Live の正常性データを取得します。](get-xbox-live-health-data.md)
+* [Xbox Live game ハブのデータを取得します。](get-xbox-live-game-hub-data.md)
+* [Xbox Live のマルチ プレーヤー データを取得します。](get-xbox-live-multiplayer-data.md)

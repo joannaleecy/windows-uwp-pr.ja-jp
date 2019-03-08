@@ -6,11 +6,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, システム ユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: c46f7e98c2dea3b23beb2cec80816067d4c4e341
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940543"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632757"
 ---
 # <a name="retrieving-the-windows-system-user-in-a-universal-windows-platform-uwp-title"></a>ユニバーサル Windows プラットフォーム (UWP) での Windows システム ユーザーの取得
 
@@ -20,7 +20,7 @@ ms.locfileid: "8940543"
 
 ## <a name="ways-to-retrieve-windows-system-user"></a>Windows システム ユーザーの取得方法
 
-* **[Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user) クラスの静的メソッドを使う。**
+* **静的メソッドを使用して[Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user)クラス。**
 
   [Windows.System.User](https://docs.microsoft.com/en-us/uwp/api/windows.system.user) クラスには、Windows.System.User オブジェクトを取得するための一連の静的メソッドが用意されています。 たとえば、FindAllAsync を呼び出してアクティブな Windows ユーザーをすべて取得できます。
 

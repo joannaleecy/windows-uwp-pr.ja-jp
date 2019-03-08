@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 92ac7b9897b57de42fa56126b477f4db5b9b74dd
-ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8992078"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619437"
 ---
 # <a name="using-xim-c"></a>XIM (C#) の使用
 
@@ -19,27 +19,27 @@ ms.locfileid: "8992078"
 > - [C#](using-xim-cs.md)
 
 ここでは、XIM の C# API の使用方法について概要を紹介します。 ゲーム開発者が C++ 経由で XIM にアクセスする場合は、「[XIM (C++) の使用](using-xim.md)」をご覧ください。
-- [XIM (C#) の使用](#using-xim-c)
+- [XIM を使用して (C#)](#using-xim-c)
     - [前提条件](#prerequisites)
-    - [初期化および起動](#initialization-and-startup)
+    - [初期化と起動](#initialization-and-startup)
     - [非同期操作および状態変更の処理](#asynchronous-operations-and-processing-state-changes)
-    - [IXimPlayer の基本的な処理](#basic-iximplayer-handling)
-    - [フレンド参加の有効化とフレンドの招待](#enabling-friends-to-join-and-inviting-them)
-    - [マッチメイキングの概要および別の XIM ネットワークへの移動](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
-    - [デバッグ目的でのマッチメイキング NAT 規則の無効化](#disabling-matchmaking-nat-rule-for-debugging-purposes)
-    - [XIM ネットワークの退出およびクリーンアップ](#leaving-a-xim-network-and-cleaning-up)
-    - [メッセージの送信と受信](#sending-and-receiving-messages)
-    - [データ経路の品質の評価](#assessing-data-pathway-quality)
-    - [プレイヤーのカスタム プロパティを使ったデータの共有](#sharing-data-using-player-custom-properties)
-    - [ネットワークのカスタム プロパティを使ったデータの共有](#sharing-data-using-network-custom-properties)
-    - [プレイヤーごとのスキルによるマッチメイキング](#matchmaking-using-per-player-skill)
-    - [プレイヤーごとのロールによるマッチメイキング](#matchmaking-using-per-player-role)
-    - [XIM とプレイヤー チームの連携について](#how-xim-works-with-player-teams)
+    - [基本的な IXimPlayer 処理](#basic-iximplayer-handling)
+    - [友人を有効にして、ように招待](#enabling-friends-to-join-and-inviting-them)
+    - [基本のマッチメイ キングと他のユーザーと別の XIM ネットワークへの移行](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
+    - [デバッグのための NAT 規則をマッチメイ キングを無効にします。](#disabling-matchmaking-nat-rule-for-debugging-purposes)
+    - [XIM ネットワークをクリーンアップします。](#leaving-a-xim-network-and-cleaning-up)
+    - [メッセージの送受信](#sending-and-receiving-messages)
+    - [データの経路の品質を評価します。](#assessing-data-pathway-quality)
+    - [プレーヤーのカスタム プロパティを使用してデータを共有します。](#sharing-data-using-player-custom-properties)
+    - [ネットワークのカスタム プロパティを使用してデータを共有します。](#sharing-data-using-network-custom-properties)
+    - [プレイヤーのスキルを使用してのマッチメイ キング](#matchmaking-using-per-player-skill)
+    - [プレイヤーのロールを使用してのマッチメイ キング](#matchmaking-using-per-player-role)
+    - [プレーヤーのチームと XIM のしくみ](#how-xim-works-with-player-teams)
     - [チャットの操作](#working-with-chat)
-    - [プレイヤーを消音する](#muting-players)
-    - [プレイヤーのチームを使ったチャット ターゲットの構成](#configuring-chat-targets-using-player-teams)
-    - [プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング)](#automatic-background-filling-of-player-slots-backfill-matchmaking)
-    - [参加可能なネットワークの照会](#querying-joinable-networks)
+    - [プレーヤーのミュート](#muting-players)
+    - [チームのプレーヤーを使用してチャット ターゲットを構成します。](#configuring-chat-targets-using-player-teams)
+    - [Player スロット (「バックフィル」マッチメイ キング) の自動バック グラウンドの塗りつぶし](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [クエリの結合可能なネットワーク](#querying-joinable-networks)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -56,7 +56,7 @@ XIM のコーディングを始めるには、2 つの前提条件がありま�
 
     これらの取得に関する詳細については、マイクロソフトの担当者にお問い合わせください。 これらの情報は、初期化時に使用されます。
 
-## <a name="initialization-and-startup"></a>初期化および起動 
+## <a name="initialization-and-startup"></a>初期化および起動
 
 ライブラリーの操作を開始するには、Xbox Live サービス構成 ID の文字列とタイトル ID 番号を使用して XIM の静的クラスのプロパティを初期化します。 Xbox Services API も使用している場合は、これらを `Microsoft.Xbox.Services.XboxLiveAppConfiguration` から取得すると便利な場合があります。 次の例では、これらの値はそれぞれ "myServiceConfigurationId" および "myTitleId" 変数に既に存在するものと想定しています。
 
@@ -85,7 +85,7 @@ XboxIntegratedMultiplayer.MovetoNewNetwork(8, XimPlayersToMove.BringOnlyLocalPla
 
 ## <a name="asynchronous-operations-and-processing-state-changes"></a>非同期操作および状態変更の処理
 
-XIM の中核的な動作は、アプリによる `XboxIntegratedMultiplayer.GetStateChanges()` メソッドの定期的かつ頻繁な呼び出しです。 これらのメソッドを使用して、XIM はアプリがマルチプレイヤーの状態の更新を処理する準備ができた通知を受け取り、キューに入っているすべての更新が含まれた `XimStateChangeCollection` オブジェクトを返してそれらの更新を提供します。 `XboxIntegratedMultiplayer.GetStateChanges()`  は、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。 XIM API は、このシングル スレッド パターン用に実際に最適化されています。 `XimStateChangeCollection` オブジェクトが処理されていて、破棄されない間は、その状態が変化しないことが保証されます。
+XIM の中核的な動作は、アプリによる `XboxIntegratedMultiplayer.GetStateChanges()` メソッドの定期的かつ頻繁な呼び出しです。 これらのメソッドを使用して、XIM はアプリがマルチプレイヤーの状態の更新を処理する準備ができた通知を受け取り、キューに入っているすべての更新が含まれた `XimStateChangeCollection` オブジェクトを返してそれらの更新を提供します。 `XboxIntegratedMultiplayer.GetStateChanges()` 高速に処理されるよう、呼び出すことができるすべてのグラフィックス フレーム UI レンダリング ループ内に設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。 XIM API は、このシングル スレッド パターン用に実際に最適化されています。 `XimStateChangeCollection` オブジェクトが処理されていて、破棄されない間は、その状態が変化しないことが保証されます。
 
 `XimStateChangeCollection` は、`IXimStateChange` オブジェクトのコレクションです。
 アプリは次の処理を行う必要があります。
@@ -130,7 +130,7 @@ using (var stateChanges = XboxIntegratedMultiplayer.GetStateChanges())
 
 `IXimPlayer` オブジェクトには、多くの役に立つプロパティとメソッドがあります。たとえば、`IXimPlayer.Gamertag()` は、プレイヤーに関連付けられている現在の Xbox Live ゲーマータグ文字列を表示用に取得します。 `IXimPlayer`がデバイスに対してローカルである場合、IXimPlayer.Local は true を返します。 ローカルの `IXimPlayer` は、ローカル プレイヤーだけが使用できる追加のメソッドを持つ `XimLocalPlayer` にキャストできます。
 
-もちろん、プレイヤーにとって最も重要な状態は XIM が知っている共通の情報ではなく、特定のアプリで追跡する必要のある情報です。その追跡情報に対しては独自のコンストラクトがある可能性があるため、`IXimPlayer` オブジェクトを独自のプレイヤー コンストラクト オブジェクトにリンクして、XIM が `IXimPlayer` を報告するときはいつでも、カスタム プレイヤー コンテキスト オブジェクトを設定して検索を実行することなく状態をすばやく取得できます。 次の例では、プライベート状態が入ったオブジェクトが変数 "myPlayerStateObject" 内にあり、新しく追加される `IXimPlayer` オブジェクトが変数 "newXimPlayer" 内にあるものとします。
+もちろん、プレイヤーの最も重要な状態はなく XIM が認識している一般的な情報が追跡する、特定のアプリです。追跡情報を独自のコンス トラクターがある可能性があります、ためにリンクします、 `IXimPlayer` XIM レポートをいつ player コンストラクト オブジェクトにオブジェクトを`IXimPlayer`を実行しなくても、状態をすばやく取得できる、コンテキスト オブジェクトを設定するには、カスタムのプレーヤーで検索します。 次の例では、プライベート状態が入ったオブジェクトが変数 "myPlayerStateObject" 内にあり、新しく追加される `IXimPlayer` オブジェクトが変数 "newXimPlayer" 内にあるものとします。
 
 ```cs
 newXimPlayer.CustomPlayerContext = myPlayerStateObject;
@@ -154,9 +154,9 @@ currentConfiguration.AllowedPlayerJoins = XimAllowedPlayerJoins.Local | XimAllow
 XboxIntegratedMultiplayer.SetNetworkConfiguration(currentConfiguration);
 ```
 
-`XboxIntegratedMultiplayer.SetNetworkConfiguration()` が非同期で実行されます。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `XimAllowedPlayerJoins.None` から変更されたことを通知する `XimNetworkConfigurationChangedStateChange` が生成されます。 その後、新しい値は、`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` の値をチェックして照会できます。
+`XboxIntegratedMultiplayer.SetNetworkConfiguration()` 非同期的に実行します。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `XimAllowedPlayerJoins.None` から変更されたことを通知する `XimNetworkConfigurationChangedStateChange` が生成されます。 その後、新しい値は、`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` の値をチェックして照会できます。
 
-`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` をチェックすることで (デバイスが XIM ネットワーク内にあるとき)、ネットワークの参加可能性を確認できます。
+`XboxIntegratedMultiplayer.NetworkConfiguration.AllowedPlayerJoins` デバイスがネットワークの joinability を決定する XIM ネットワークの間にチェックできます。
 
 いずれかのローカル プレイヤーが、この XIM ネットワークへの参加招待をリモート ユーザーに送信する場合、アプリは `XimLocalPlayer.ShowInviteUI()` を呼び出してシステム招待 UI を起動できます。 ここでは、ローカル ユーザーが招待するユーザーを選択して、招待を送信できます。
 
@@ -420,7 +420,7 @@ XIM ネットワーク内のプレイヤー間の音声およびテキスト チ
 
 必要に応じてテキストのメカニズムを有効にする場合、ローカル プレイヤーのこれらの設定を検出するには、`XimLocalPlayer.ChatTextToSpeechConversionPreferenceEnabled` フィールドと `XimLocalPlayer.ChatSpeechToTextConversionPreferenceEnabled` フィールドにそれぞれアクセスします。必要に応じて、テキストのメカニズムを有効にすることもできます。 ただし、テキスト入力および表示オプションを常に有効にすることを検討することをお勧めします。
 
-`Windows::Xbox::UI::Accessability` は、音声テキスト変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
+`Windows::Xbox::UI::Accessability` Xbox One クラス専用に作られた音声からテキストへの支援技術に重点を置いて、ゲーム内のテキストのチャットの単純なレンダリングを提供します。
 
 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `XimLocalPlayer.SendChatText()` メソッドに渡します。 以下のコードは、'localPlayer' 変数によって指定されたローカルの `IXIMPlayer` オブジェクトからハード コードされたサンプル文字列の送信を示します。
 
@@ -437,11 +437,11 @@ localPlayer.SendChatText(text);
 `IXimPlayer.ChatIndicator` によって報告される値は、プレイヤーの発声開始から終了までを頻繁に変更することを想定しています。 そのため、すべての UI フレームをポーリングできるように設計されています。
 
 > [!NOTE]
-> デバイス設定のためにローカル ユーザーが十分な通信権限を持っていない場合、`XimLocalPlayer.ChatIndicator` は値が `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` の `XboxIntegratedMultiplayer.XimPlayerChatIndicator` を返します。 プラットフォームに期待される要件は、音声チャットやメッセージのプラットフォーム制限を示すアイコンや問題をユーザーに示すメッセージをアプリに表示することです。 推奨されるメッセージの例は、"申し訳ございません。現在チャットは許可されていません" です。
+> デバイス設定のためにローカル ユーザーが十分な通信権限を持っていない場合、`XimLocalPlayer.ChatIndicator` は値が `XIM_PLAYER_CHAT_INDICATOR_PLATFORM_RESTRICTED` の `XboxIntegratedMultiplayer.XimPlayerChatIndicator` を返します。 プラットフォームに期待される要件は、音声チャットやメッセージのプラットフォーム制限を示すアイコンや問題をユーザーに示すメッセージをアプリに表示することです。 お勧め、1 つのメッセージの例に示します。「申し訳ありませんが、いないできます今すぐチャットを。」
 
 ## <a name="muting-players"></a>プレイヤーを消音する
 
-もう 1 つのベスト プラクティスは、プレイヤーのミュートをサポートすることです。 XIM では、ユーザーはプレイヤー カードを使用してシステムを自動的にミュートできますが、`IXimPlayer.ChatMuted` プロパティを経由してゲーム UI 内で実行されるゲーム固有の一時的なミュートをアプリでもサポートしている必要があります。 以下の例では、'remotePlayer 変数でリモートの `IXIMPlayer` オブジェクトを指定し、ミュートを開始します。これにより、ボイス チャットが聞こえず、テキスト チャットを受け取らない状態になります。
+もう 1 つのベスト プラクティスは、プレイヤーをミュートできるようにすることです。 XIM では、ユーザーはプレイヤー カードを使用してシステムを自動的にミュートできますが、`IXimPlayer.ChatMuted` プロパティを経由してゲーム UI 内で実行されるゲーム固有の一時的なミュートをアプリでもサポートしている必要があります。 以下の例では、'remotePlayer 変数でリモートの `IXIMPlayer` オブジェクトを指定し、ミュートを開始します。これにより、ボイス チャットが聞こえず、テキスト チャットを受け取らない状態になります。
 
 ```cs
 remotePlayer.ChatMuted = true;
@@ -457,7 +457,7 @@ remotePlayer.ChatMuted = false;
 
 プレイヤーは、通常、ミュートを解除した状態で開始します。 アプリがゲームプレイ上の理由から、ミュートした状態でプレイヤーを開始する場合は、関連付けられた `PlayerJoinedStateChange` の処理を終了する前に、`IXIMPlayer` オブジェクトに `IXIMPlayer.ChatMuted` を設定します。これにより、XIM では、無期限にプレイヤーから音声オーディオが聞こえなくなります。
 
-リモート プレイヤーが XIM ネットワークに参加すると、プレイヤーの評判に基づいて、自動ミュート チェックが行われます。 プレイヤーに不適切な評判のフラグがある場合、プレイヤーは自動的にミュートされます。 ミュートは、ローカル状態にのみ影響を及ぼすため、プレイヤーがネットワーク間を移動する場合は変更されません。 評判ベースの自動ミュート チェックは 1 度のみ行われ、`IXIMPlayer` が有効である限り、再評価されることはありません。
+リモート プレーヤーが XIM ネットワークに参加すると、プレイヤーの評判に基づいて、自動ミュート チェックが行われます。 プレイヤーに不適切な評判のフラグがある場合、プレイヤーは自動的にミュートされます。 ミュートは、ローカル状態にのみ影響を及ぼすため、プレイヤーがネットワーク間を移動する場合は変更されません。 評判ベースの自動ミュート チェックは 1 度のみ行われ、`IXIMPlayer` が有効である限り、再評価されることはありません。
 
 ## <a name="configuring-chat-targets-using-player-teams"></a>プレイヤーのチームを使ったチャット ターゲットの構成
 
@@ -563,4 +563,4 @@ XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation(selectedN
 2 つ以上のチームを宣言する `XimNetworkConfiguration.TeamConfiguration` を使用してネットワークのクエリを有効にすると、XboxIntegratedMultiplayer.MoveToNetworkUsingJoinableNetworkInformation() を呼び出すことによって参加したプレイヤーの既定のチーム インデックス値は 0 になります。
 
 > [!NOTE]
-> 場合は、アプリは、複数のローカル ユーザーが指定されているし、ローカル ユーザーの数より少なくを持つネットワークに参加させる、参加が成功まだことができます。 ただし、ローカル ユーザーの最大数のみ network に参加することがあります。
+> アプリでは、複数のローカル ユーザーが指定し、ローカル ユーザーの数より少なくてすみを持つネットワークへの参加が場合、結合はまだ成功することができます。 ローカル ユーザーの許可された数だけ、ネットワークに参加することがあります。

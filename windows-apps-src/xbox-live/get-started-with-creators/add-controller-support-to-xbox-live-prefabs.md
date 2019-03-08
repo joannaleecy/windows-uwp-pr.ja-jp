@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, コントローラー サポート
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d32ec62b8beec10256ed9a695866c2fd9bdd03e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044205"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622877"
 ---
 # <a name="add-controller-support-to-xbox-live-prefabs"></a>コントローラー サポートを Xbox Live プレハブに追加する
 
@@ -26,25 +26,25 @@ Xbox Live Unity プラグインのすべてのプレハブでは、インスペ�
 
 ## <a name="all-prefab-controller-input-fields"></a>プレハブのすべてのコントローラー入力フィールド
 ### <a name="userprofile-prefab"></a>UserProfile プレハブ
-- **Input Controller Button (入力コントローラー ボタン):** Xbox Live ユーザーの追加とサインインを行います。
+- **コント ローラーの入力ボタンをクリックします。** 追加し、ユーザーが Xbox Live にサインインします。
 
 ### <a name="social-prefab"></a>Social プレハブ
-- **Toggle Filter Controller Button (フィルターの切り替えコントローラー ボタン):** "すべての" フレンドまたは "オンライン" フレンド のどちらかを表示するためのフィルターを切り替えます。
+- **トグル フィルター コント ローラー ボタン:**'All' の友人、または 'オンライン' 友人を表示するフィルターを切り替えます。
 
 ### <a name="leaderboard-prefab"></a>Leaderboard プレハブ
-- **First Controller Button ("最初へ" コントローラー ボタン):** プレイヤーをランキング エントリの最初のページに移動します。
-- **Last Controller Button ("最後へ" コントローラー ボタン):** プレイヤーをランキング エントリの最後のページに移動します。
-- **Next Controller Button ("次へ" コントローラー ボタン):** プレイヤーをランキング エントリの次のページに移動します。
-- **Prev Controller Button ("前へ" コントローラー ボタン):** プレイヤーをランキング エントリの前のページに移動します。
-- **Refresh Controller Button (更新コントローラー ボタン):** ランキング ビューを更新します。
+- **最初のコント ローラー ボタン:** ランキング エントリの最初のページに player がかかります。
+- **最後のコント ローラー ボタン:** ランキング エントリの最後のページに player がかかります。
+- **コント ローラーの [次へ] ボタン:** ランキング エントリの次のページに player がかかります。
+- **Prev コント ローラー ボタンをクリックします。** ランキング エントリの前のページに player がかかります。
+- **コント ローラーのボタンを更新します。** ランキング ビューを更新します。
 
 
 ### <a name="game-save-ui-prefab"></a>Game Save UI プレハブ
-- **Generate New Controller Button (新規生成コントローラー ボタン):** 新しい整数型のセーブ データを生成します。
-- **Save Data Controller Button (データの保存コントローラー ボタン):** 現在のデータを接続ストレージに保存します。
-- **Load Data Controller Button (データの読み込みコントローラー ボタン):** 接続ストレージに現在保存されているデータを読み込みます。
-- **Get Info Controller Button (情報の取得コントローラー ボタン):** 接続ストレージに保存されているコンテナーに関する情報を取得します。
-- **Delete Container Controller Button (コンテナーの削除コントローラー ボタン):** 保存されているコンテナーを接続ストレージから削除します。
+- **新しいコント ローラーのボタンを生成します。** データを保存する新しい整数が生成されます。
+- **データのコント ローラー ボタンを保存します。** 接続されている記憶域には、現在のデータを保存します。
+- **データのコント ローラー ボタンを読み込みます。** 現在接続されている記憶域に保存されているデータを読み込みます。
+- **コント ローラー [情報] ボタンを取得します。** 接続されている記憶域に保存されているコンテナーに関する情報を取得します。
+- **コンテナーのコント ローラー ボタンを削除します。** 接続されている記憶域から保存されているコンテナーを削除します。
 
 ## <a name="xbox-controller-button-mappings"></a>Xbox コントローラー ボタンのマッピング
 

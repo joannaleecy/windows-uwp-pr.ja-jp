@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1020c9d9c378a95070a7b0bf3faeb9d2c6751d51
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943119"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627477"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessions"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions)
 セッション テンプレートのドキュメントを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドでは、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EKB)
-  * [HTTP ステータス コード](#ID4EXB)
+  * [HTTP 状態コード](#ID4EXB)
   * [要求本文](#ID4EAC)
   * [応答本文](#ID4EKC)
 
@@ -31,16 +31,16 @@ ms.locfileid: "8943119"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、指定されたフィルターのセッション テンプレートの情報を取得します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**でラップすることができます。
+この HTTP/REST メソッドでは、指定されたフィルターのセッションのテンプレート情報を取得します。 このメソッドによってラップできる**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsAsync**します。
 
 
 > [!NOTE] 
-> 2015 マルチプレイヤーでは、このメソッドは<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>によって呼び出されます。  
+> このメソッドを呼び出して 2015年マルチ プレーヤーの<b>Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetSessionsForUsersFilterAsync</b>します。  
 
 
 
 > [!NOTE] 
-> このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID のフィルター、またはその両方を含める必要があります。 呼び出し元が、<i>プライベート</i>と<i>予約</i>のパラメーターの適切なアクセス許可を持たない場合、メソッドは、そのようなセッションが実際に存在するかどうか 403 Forbidden のエラー コードを返します。  
+> このメソッドを呼び出すたびには、キーワード、Xbox ユーザー ID フィルター、またはその両方を含める必要があります。 呼び出し元がの適切なアクセス許可を持たない場合、<i>プライベート</i>と<i>予約</i>パラメーター、メソッドを返すエラー コード 403 Forbidden、実際には、このようなセッションが存在するかどうか。  
 
 
 <a id="ID4EKB"></a>
@@ -48,23 +48,23 @@ ms.locfileid: "8943119"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 パート 1 セッションの id。|
-| キーワード| string| キーワードで文字列を識別するだけでセッションに結果をフィルター処理するために使用します。|
-| xuid| GUID| セッションを取得する対象のユーザーの Xbox ユーザー Id。 ユーザーは、セッション内でアクティブである必要があります。 |
-| 予約| string| 示す値をユーザーが持っていないセッションのリストが含まれている場合は受け入れ。 このパラメーターを設定することのみを true に設定します。 この設定は、呼び出し元が、セッションにサーバー レベルのアクセスを必要と、または Xbox ユーザー ID のフィルターに一致するように、呼び出し元の XUID を要求します。 |
-| 非アクティブです| string| セッションのリストが含まれますをユーザーが受け入れられますがアクティブにプレイしていないかどうかを示す値。 このパラメーターを設定することのみを true に設定します。 |
-| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することのみを true に設定します。 独自のセッションをクエリするときにのみ、またはサーバーからサーバーを照会すると、無効です。 このパラメーターを true に設定、呼び出し元が、セッションにサーバー レベルのアクセスを必要とまたは Xbox ユーザー ID のフィルターに一致するように、呼び出し元の XUID を要求します。 |
-| visibility| string| 結果のフィルタ リングで使われる表示状態を示す列挙値。 現在このパラメーターのみに設定できます開くを開いているセッションを含めます。 <b>MultiplayerSessionVisibility</b>を参照してください。 |
-| version| string| 正の整数を示すセッションのメジャー バージョンまたはセッションの下に含めます。 値は 100 モジュロ要求のコントラクト バージョン以下である必要があります。 |
-| アプリ| string| 正の整数セッションの最大数を示すを取得します。|
+| scid| GUID| サービス構成の識別子 (SCID) です。 セッションの第 1 部 id。|
+| キーワード| string| 結果文字列で識別されるだけでセッションをフィルター処理するために使用するキーワードです。|
+| xuid| GUID| セッションを取得する対象のユーザーの Xbox ユーザー Id。 ユーザーは、セッションでアクティブである必要があります。 |
+| 予約| string| セッションの一覧が、ユーザー同意していないものも含まれますかどうかを示す値。 このパラメーターを設定することができますのみ true に設定します。 この設定は、呼び出し元に、セッションにサーバー レベルのアクセスを要求または呼び出し元の XUID は Xbox のユーザー ID のフィルターに一致する要求。 |
+| 非アクティブ| string| セッションの一覧が、ユーザーが承諾しましたが、積極的に再生しないものを含むかどうかを示す値。 このパラメーターを設定することができますのみ true に設定します。 |
+| プライベート| string| プライベート セッション、セッションの一覧を示す値。 このパラメーターを設定することができますのみ true に設定します。 サーバーからサーバーを照会するときに、または自身のセッションのクエリを実行する場合にのみ有効です。 Xbox のユーザー ID のフィルターに一致する要求の呼び出し元の XUID または、呼び出し元に、セッションにサーバー レベルのアクセスを必要このパラメーターを true に設定します。 |
+| visibility| string| 結果をフィルター処理で使用される表示状態を示す列挙値。 現在このパラメーターのみ設定できます開くを開いているセッションを含める。 参照してください<b>MultiplayerSessionVisibility</b>します。 |
+| version| string| 正の整数バージョンの主要なセッションまたはセッションの下位に含めます。 値は 100 剰余の要求のコントラクトのバージョン以下である必要があります。 |
+| Take| string| 正の整数のセッションの最大数を取得します。|
 
 <a id="ID4EXB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EAC"></a>
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "8943119"
 
 ## <a name="response-body"></a>応答本文
 
-このメソッドからの戻り値は、いくつかのセッション データが含まれているインラインでのセッション参照の JSON 配列です。
+このメソッドからの戻り値は、いくつかのセッションに含まれるデータをインラインでのセッションの参照の JSON 配列です。
 
 
 ```cpp

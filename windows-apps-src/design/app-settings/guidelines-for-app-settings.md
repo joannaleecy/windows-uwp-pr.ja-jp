@@ -1,19 +1,19 @@
 ---
-Description: This article describes best practices for creating and displaying app settings.
+Description: この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。
 title: アプリ設定のガイドライン
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a31464d208e8d9abe68703560552c99e5d957463
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049137"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638237"
 ---
 # <a name="guidelines-for-app-settings"></a>アプリ設定のガイドライン
 
@@ -67,7 +67,7 @@ ms.locfileid: "9049137"
 
 タブやピボットのレイアウトでは、アプリ設定のエントリ ポイントをナビゲーション内のトップレベルのいずれかの項目として配置することはお勧めしません。 代わりに、アプリ設定のエントリ ポイントをアプリ バーの [その他] オーバーフロー メニュー内に配置することをお勧めします。
 
-**マスター/詳細**
+**マスター-詳細**
 
 アプリ設定のエントリをマスター/詳細ウィンドウ内の深い位置に配置するのではなく、マスター ウィンドウのトップ レベルに、最後のピン留めされた項目として配置してください。
 
@@ -90,7 +90,7 @@ ms.locfileid: "9049137"
 アプリでユーザーがアプリのカラー モードを選択できるようにする場合は、"アプリ モードを選ぶ" という見出しを持つ[ラジオ ボタン](../controls-and-patterns/radio-button.md)または[コンボ ボックス](../controls-and-patterns/lists.md#drop-down-lists)を使ってこれらのオプションを表示します。 オプションは次のようになっている必要があります。
 - 明るい
 - 暗い
-- Windows 標準
+- Windows の既定
 
 また、Windows 設定アプリの [色] ページへのハイパーリンクを追加して、ユーザーが現在の既定のアプリ モードにアクセスして変更できるようにすることもお勧めします。 ハイパーリンク テキストには、"Windows の色の設定" という文字列を使用します。
 
@@ -129,13 +129,13 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 -   コンテンツは 1 列で上から下に表示し、必要に応じてスクロールできるようにします。 スクロールの長さは画面の高さの 2 倍までに抑えます。
 -   アプリ設定では次のコントロールを使います。
 
-    -   [トグル スイッチ](../controls-and-patterns/toggles.md): ユーザーが値をオンまたはオフに設定できるようにする場合。
-    -   [ラジオ ボタン](../controls-and-patterns/radio-button.md): ユーザーが相互排他的な関連するオプション (5 個まで) の中から 1 つの項目を選択できるようにする場合。
-    -   [テキスト入力ボックス](../controls-and-patterns/text-block.md): ユーザーがテキストを入力できるようにする場合。 ユーザーから取得するテキストの種類 (メール、パスワードなど) に応じた種類のテキスト入力ボックスを使います。
-    -   [ハイパーリンク](../controls-and-patterns/hyperlinks.md): アプリ内の別のページや外部 Web サイトに移動する場合。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
-    -   [ボタン](../controls-and-patterns/buttons.md): ユーザーが現在の設定ポップアップを閉じることなく即座に操作を開始できるようにする場合。
+    -   [トグル スイッチ](../controls-and-patterns/toggles.md):ユーザーができるようにするには、オンまたはオフ値を設定します。
+    -   [ラジオ ボタン](../controls-and-patterns/radio-button.md):ユーザー 5 相互に排他的では最大のセットから 1 つの項目を選択できるようにするには、オプションに関連します。
+    -   [テキスト入力ボックス](../controls-and-patterns/text-block.md):ユーザーがテキスト入力をできるようにします。 ユーザーから取得するテキストの種類 (メール、パスワードなど) に応じた種類のテキスト入力ボックスを使います。
+    -   [ハイパーリンク](../controls-and-patterns/hyperlinks.md):アプリ内の別のページまたは外部の web サイトには、ユーザーを誘導します。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
+    -   [ボタン](../controls-and-patterns/buttons.md):ユーザーが現在の設定のフライアウトを表示したまま、早急な対応を開始をできるようにします。
 -   使用できないコントロールがある場合は、説明用のメッセージを追加します。 使用できないコントロールの上に、このメッセージを配置します。
--   設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672)  または [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
+-   設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [  **enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) または [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
 -   必要に応じて、コンテンツの整理と明確化の助けになるように、セクション ヘッダー、段落、ラベルを使います。
 -   設定を繰り返し表示する必要がある場合は、UI の階層を追加するか、展開/折りたたみモデルを使います。階層の深さは 2 階層までに抑えます。 たとえば、天気予報アプリの都市別の設定では、都市の一覧を表示し、ユーザーが都市をタップしたときに、新しいポップアップを開くか、展開して設定オプションを表示できるようにします。
 -   コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)」をご覧ください。
@@ -145,7 +145,7 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
 
 ## <a name="related-articles"></a>関連記事
 
-* [コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
+* [コマンドのデザインの基礎](https://msdn.microsoft.com/library/windows/apps/dn958433)
 * [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
-* [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
+* [アプリ データの格納と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)

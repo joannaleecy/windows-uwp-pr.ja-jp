@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c872d289c67161e414671d3d509401f0539a7675
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941478"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631447"
 ---
 # <a name="streaming-resources-features-tiers"></a>ストリーミング リソース機能の階層
 
@@ -43,15 +43,15 @@ Direct3D は、機能の 3 階層でストリーミング リソースをサポ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="tier-1.md">階層 1</a></p></td>
+<td align="left"><p><a href="tier-1.md">第 1 層</a></p></td>
 <td align="left"><p>このセクションでは、階層 1 のサポートについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="tier-2.md">階層 2</a></p></td>
+<td align="left"><p><a href="tier-2.md">第 2 層</a></p></td>
 <td align="left"><p>ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="tier-3.md">階層 3</a></p></td>
+<td align="left"><p><a href="tier-3.md">第 3 層</a></p></td>
 <td align="left"><p>階層 3 では、<a href="tier-2.md">階層 2</a> の機能に加えて、ストリーミング リソース向けの Texture3D のサポートが追加されます。</p></td>
 </tr>
 </tbody>
@@ -62,7 +62,7 @@ Direct3D は、機能の 3 階層でストリーミング リソースをサポ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソース](streaming-resources.md)
+[リソースのストリーミング](streaming-resources.md)
 
  
 

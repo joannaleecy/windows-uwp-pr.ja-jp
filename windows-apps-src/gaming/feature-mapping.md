@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 0cfaa071ea0182ef5fac264e85d919be5744d15d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050675"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619317"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>DirectX 11 API への DirectX 9 の機能のマッピング
 
 
 
-**概要**
+**要約**
 
--   [DirectX の移植の計画](plan-your-directx-port.md)
--   [Direct3D 9 と Direct3D 11 の間の重要な変更点](understand-direct3d-11-1-concepts.md)
+-   [DirectX、ポートを計画します。](plan-your-directx-port.md)
+-   [Direct3d11 Direct3D 9 からの重要な変更](understand-direct3d-11-1-concepts.md)
 -   機能のマッピング
 
 
@@ -66,7 +66,7 @@ Visual Studio は、シェーダー オブジェクトをコンパイルする�
 
 シェーダー リソースの読み込みの概要については、「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」をご覧ください。
 
-Direct3D 11 ではシェーダー モデル 5 が導入されましたが、これには Direct3D 機能レベル 11\_0 以上が必要です。 「[Direct3D 11 の HLSL シェーダー モデル 5 の機能](https://msdn.microsoft.com/library/windows/desktop/ff471419)」をご覧ください。
+Direct3d11 に導入された Direct3D 機能レベル 11 が必要ですが、シェーダー モデル 5\_0 (以上)。 「[Direct3D 11 の HLSL シェーダー モデル 5 の機能](https://msdn.microsoft.com/library/windows/desktop/ff471419)」をご覧ください。
 
 ## <a name="replace-xnamath-and-d3dxmath"></a>XNAMath と D3DXMath の置き換え
 
@@ -101,17 +101,17 @@ DirectShow は DirectX API (または Windows API) にはもう含まれてい�
 
 Microsoft DirectPlay は推奨されなくなりました。 ゲームでネットワーク サービスを使う場合は、UWP の要件に準拠しているネットワーク コードを提供する必要があります。 次の API を使います。
 
--   [UWP アプリの Win32 と COM (ネットワーク) (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
--   [**Windows.Networking 名前空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
+-   [Win32 と COM UWP アプリ (ネットワーク) (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
+-   [**Windows ネットワー キング名前空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
 -   [**Windows.Networking.Sockets 名前空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [**Windows.Networking.Connectivity 名前空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207308)
 -   [**Windows.ApplicationModel.Background 名前空間 (Windows)**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
 次の記事は、ネットワーク機能を追加し、アプリのパッケージ マニフェストでネットワークのサポートを宣言するうえで役立ちます。
 
--   [ソケットを使った接続 (C#/VB/C++ と XAML を使った UWP アプリ) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
--   [WebSocket を使った接続 (C#/VB/C++ と XAML を使った UWP アプリ) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
--   [Web サービスへの接続 (C#/VB/C++ と XAML を使った UWP アプリ) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+-   [ソケットで接続する (を使用して UWP アプリC##/vb/c C++ および XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+-   [Websocket を使用した接続 (を使用して UWP アプリC##/vb/c C++ および XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
+-   [Web サービスへの接続 (を使用して UWP アプリC##/vb/c C++ および XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
 -   [ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 アプリの中断中は、すべての UWP アプリ (ゲームを含む) で特定の種類のバックグラウンド タスクを使って接続を維持します。 中断されている間、ゲームが接続状態を保存する必要がある場合は、「[ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)」をご覧ください。
@@ -342,7 +342,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注:</strong>  direct3d9 の動作を取得するには、その他のコンポーネントを赤を複製するシェーダーで .r スウィズルを使用します。
+<strong>注</strong>   Direct3D 9 動作を取得するには、他のコンポーネントに赤を複製するシェーダーで .r スィズルを使用します。
 </div>
 <div>
  
@@ -352,7 +352,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注:</strong> 赤を複製し、direct3d9 の動作を取得するアルファ成分を緑を移動するシェーダーでスウィズル .rrrg を使用します。
+<strong>注</strong>  赤を複製し、緑を Direct3D 9 動作を取得するアルファ コンポーネントに移動するシェーダーでスィズル .rrrg を使用します。
 </div>
 <div>
  
@@ -398,7 +398,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注:</strong>  direct3d9 でのデータは 255.0f については、スケール アップされましたが、これは、シェーダーで処理できます。
+<strong>注</strong>   255.0f で Direct3D 9 のデータがスケール アップが、これは、シェーダーで処理できます。
 </div>
 <div>
  
@@ -412,7 +412,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注:</strong>  direct3d9 でのデータは 255.0f については、スケール アップされましたが、これは、シェーダーで処理できます。
+<strong>注</strong>   255.0f で Direct3D 9 のデータがスケール アップが、これは、シェーダーで処理できます。
 </div>
 <div>
  
@@ -426,7 +426,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM と DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注:</strong>  DXT1 と DXT2 は、API とハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注</strong>   DXT1 と DXT2、API/ハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
  
@@ -440,7 +440,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM と DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注:</strong>  DXT3 と DXT4 API とハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注</strong>   DXT3 と DXT4、API/ハードウェアの観点から同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
  
@@ -506,7 +506,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注:</strong>  D3D9 の動作を取得するには、その他のコンポーネントを赤を複製するシェーダーで .r スウィズルを使用します。
+<strong>注</strong>   D3D9 動作を取得するには、他のコンポーネントに赤を複製するシェーダーで .r スィズルを使用します。
 </div>
 <div>
  
@@ -580,7 +580,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注:</strong> シェーダーは UINT 値を取得しますが、浮動小数点値が必要な場合は、direct3d9 スタイル (0.0 f、1.0 f.255.f)、UINT をシェーダーで float32 に変換できます。
+<strong>注</strong>  シェーダーが UINT の値を取得しますが、Direct3D 9 スタイルの整数の浮動小数点値が必要 (0.0 f, 1.0 f.255.f)、UINT は、シェーダーの float32 だけに変換できます。
 </div>
 <div>
  
@@ -590,7 +590,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注:</strong> シェーダーは SINT 値を取得しますが、だけ SINT をシェーダーで float32 に変換する、direct3d9 スタイルの integral が必要な場合です。
+<strong>注</strong>  シェーダー シント ・の値を取得しますが、シェーダーの float32 にシント ・ Direct3D 9 スタイル整数の浮動小数点値が必要な場合変換だけことができます。
 </div>
 <div>
  
@@ -600,7 +600,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注:</strong> シェーダーは SINT 値を取得しますが、だけ SINT をシェーダーで float32 に変換する、direct3d9 スタイルの integral が必要な場合です。
+<strong>注</strong>  シェーダー シント ・の値を取得しますが、シェーダーの float32 にシント ・ Direct3D 9 スタイル整数の浮動小数点値が必要な場合変換だけことができます。
 </div>
 <div>
  
@@ -646,7 +646,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注:</strong> 機能レベル 10.0 以降が必要です
+<strong>注</strong>   10.0 以降の機能レベルが必要です
 </div>
 <div>
  
@@ -656,7 +656,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注:</strong> 機能レベル 10.0 以降が必要です
+<strong>注</strong>   10.0 以降の機能レベルが必要です
 </div>
 <div>
  

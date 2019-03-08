@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629467"
 ---
 # <a name="stencil-buffers"></a>ステンシル バッファー
 
@@ -44,18 +44,18 @@ Direct3D は、ステンシル バッファーのコンテンツをピクセル�
 -   StencilBufferValue は、現在のピクセルのステンシル バッファーのコンテンツです。
 -   アンパサンド (&) 記号はビット単位の AND 演算を表します。
 
-ステンシルのテストに合格すると、現在のピクセルは、ターゲット サーフェスに書き込まれます。合格しない場合は、無視されます。 比較の既定の動作では、各演算がわかりました方法に関係なく、ピクセルを作成します。この動作を変更するには、目的の比較関数を識別する列挙型の値を変更します。
+ステンシルのテストに合格すると、現在のピクセルは、ターゲット サーフェスに書き込まれます。合格しない場合は、無視されます。 比較の既定の動作では、ビット単位の各演算がどのような結果になっても、ピクセルが書き込まれます。この動作は、列挙型の値を変更して、目的の比較関数を指定することで、変更できます。
 
 アプリケーションによって、ステンシル バッファーの操作をカスタマイズできます。 比較関数、ステンシル マスク、ステンシル参照値を設定できます。 また、ステンシル テストに合格または不合格になったときに、Direct3D が実行する操作を制御することもできます。
 
 ## <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>合成
 
 
-ステンシル バッファーを使えば、アプリケーションは 2D または 3D 画像を 3D シーンに合成できます。 ステンシル バッファーのマスクを使って、レンダー ターゲット サーフェスの領域をオクルードします。 次に、テキストやビットマップなどの格納 2D 情報をオクルードされた領域に書き込むことができます。 別の方法として、アプリケーションでは追加 3D プリミティブをレンダー ターゲット サーフェスのステンシル マスクされた領域にレンダリングできます。 この場合、シーン全体をレンダリングすることもできます。
+ステンシル バッファーを使えば、アプリケーションは 2D または 3D イメージを 3D シーンに合成できます。 ステンシル バッファーのマスクを使って、レンダー ターゲット サーフェスの領域をオクルードします。 次に、テキストやビットマップなどの格納 2D 情報をオクルードされた領域に書き込むことができます。 別の方法として、アプリケーションでは追加 3D プリミティブをレンダー ターゲット サーフェスのステンシル マスクされた領域にレンダリングできます。 この場合、シーン全体をレンダリングすることもできます。
 
 ゲームでは、複数の 3D シーンを合成することがよくあります。 たとえば、ドライビング ゲームでは通常バックミラーを表示します。 バックミラーには、運転者の背後の 3D シーンの表示が含まれます。 したがって、バックミラーは、本質的には運転者の前方の風景と合成された 第 2 の 3D シーンと言えます。
 
-## <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>デカール
+## <a name="span-iddecalingspanspan-iddecalingspanspan-iddecalingspandecaling"></a><span id="Decaling"></span><span id="decaling"></span><span id="DECALING"></span>Decaling
 
 
 Direct3D アプリケーションでは、デカールを使用して、レンダー ターゲット サーフェスに描画される特定のプリミティブ イメージのピクセルを制御します。 アプリケーションはプリミティブのイメージにデカールを適用して、同一平面上のポリゴンを適切にレンダリングできるようにします。
@@ -66,7 +66,7 @@ Direct3D アプリケーションでは、デカールを使用して、レン�
 
 複数のテクスチャのブレンドを使用することでこの問題を解決できますが、その場合、アプリケーションが生成するその他の特殊効果の数が制限されます。 ステンシル バッファーを使用してデカールを適用すると、他の効果のテクスチャ ブレンド ステージが不要になります。
 
-## <a name="span-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspandissolves-fades-and-swipes"></a><span id="Dissolves__fades__and_swipes"></span><span id="dissolves__fades__and_swipes"></span><span id="DISSOLVES__FADES__AND_SWIPES"></span>ディゾルブ、フェード、およびスワイプ
+## <a name="span-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspanspan-iddissolvesfadesandswipesspandissolves-fades-and-swipes"></a><span id="Dissolves__fades__and_swipes"></span><span id="dissolves__fades__and_swipes"></span><span id="DISSOLVES__FADES__AND_SWIPES"></span>ディゾルブ、フェード、およびカード
 
 
 ディゾルブ、スワイプ、フェードなど、映画やビデオでよく使用される特殊効果が、ますますアプリケーションでも使用されるようになっています。
@@ -83,7 +83,7 @@ Direct3D アプリケーションでは、スワイプに同様の手法を使�
 
 スワイプは、ディゾルブよりもやや複雑で、アプリケーションがスワイプの逆の順序で最後のイメージのピクセルを読み取る必要があります。 つまり、スワイプが左から右に移動する場合、アプリケーションは最初のイメージのピクセルを右から左に読み取る必要があります。
 
-## <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanoutlines-and-silhouettes"></a><span id="Outlines_and_silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span>輪郭とシルエット
+## <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanoutlines-and-silhouettes"></a><span id="Outlines_and_silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span>シルエット、について概説します
 
 
 輪郭処理やシルエット処理など、より抽象的なエフェクトにステンシル バッファーを使用することができます。
@@ -92,19 +92,19 @@ Direct3D アプリケーションでは、スワイプに同様の手法を使�
 
 ステンシル マスクが、レンダリングするプリミティブと同じサイズおよび形状の場合、出力されるイメージではプリミティブの位置が穴になります。 その場合、穴を黒で塗りつぶすことで、プリミティブのシルエットを作成できます。
 
-## <a name="span-idtwo-sidedstencilspanspan-idtwo-sidedstencilspanspan-idtwo-sidedstencilspantwo-sided-stencil"></a><span id="Two-sided_stencil"></span><span id="two-sided_stencil"></span><span id="TWO-SIDED_STENCIL"></span>2 面ステンシル
+## <a name="span-idtwo-sidedstencilspanspan-idtwo-sidedstencilspanspan-idtwo-sidedstencilspantwo-sided-stencil"></a><span id="Two-sided_stencil"></span><span id="two-sided_stencil"></span><span id="TWO-SIDED_STENCIL"></span>両面のステンシル
 
 
 シャドウ ボリュームは、ステンシル バッファーで影を描画するために使用します。 オクルーディング ジオメトリによってキャストされたシャドウ ボリュームは、シルエットの縁を計算し、ライトと反対側の 3D ボリューム セットに押し出すことによって計算されます。 これらのボリュームはその後、ステンシル バッファーに 2 回レンダリングされます。
 
-最初のレンダリングでは、前向きのポリゴンが描画され、ステンシル バッファーの値が増加します。 2 回目のレンダリングでは、シャドウ ボリュームの後ろ向きのポリゴンが描画され、ステンシル バッファーの値が減少します。 通常、増加したり減少のすべての値をキャンセル互いします。ただし、シーンでは、シャドウ ボリュームがレンダリングされる z バッファー テストが失敗するピクセルのいくつかの原因と通常のジオメトリでレンダリングされています。 ステンシル バッファーに残された値は、シャドウのピクセルに対応します。 ステンシル バッファーの残りの内容は、すべてを覆う大きな黒のクワッドをシーンにアルファ ブレンディングするために、マスクとして使用されます。 マスクとして機能するステンシル バッファーを使用すると、シャドウ内のピクセルが暗くなります。
+最初のレンダリングでは、前向きのポリゴンが描画され、ステンシル バッファーの値が増加します。 2 回目のレンダリングでは、シャドウ ボリュームの後ろ向きのポリゴンが描画され、ステンシル バッファーの値が減少します。 通常、増加したり減少したりする値はすべて、他方がない場合はキャンセルされます。ただし、通常のジオメトリでシーンが既にレンダリングされているため、シャドウ ボリュームがレンダリングされるときに、ピクセルのいくつかが Z バッファー テストで不合格になります。 ステンシル バッファーに残された値は、シャドウのピクセルに対応します。 ステンシル バッファーの残りの内容は、すべてを覆う大きな黒のクワッドをシーンにアルファ ブレンディングするために、マスクとして使用されます。 マスクとして機能するステンシル バッファーを使用すると、シャドウ内のピクセルが暗くなります。
 
 これは、シャドウ ジオメトリが光源ごとに 2 回描画されることを意味するため、GPU の頂点処理のスループットに影響します。 2 面ステンシル機能は、この状況を軽減することを目的として設計されています。 この方法には、(次の) 2 組のステンシル ステートがあります。一方は前向きの三角形のそれぞれに設定され、もう一方は後ろ向きの三角形に設定されます。 このようにして、光源ごとにシャドウ ボリューム単位で 1 つのパスのみが描画されます。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[深度バッファーとステンシル バッファー](depth-and-stencil-buffers.md)
+[深度、ステンシル バッファー](depth-and-stencil-buffers.md)
 
  
 

@@ -1,17 +1,17 @@
 ---
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: パートナー センター アカウントに登録されているアプリの新しいパッケージ フライトの申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。
+description: Microsoft Store 送信 API でこのメソッドを使用すると、新しいパッケージのフライトの送信、パートナー センター アカウントに登録されているアプリを作成できます。
 title: パッケージ フライトの申請の作成
 ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請の作成
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e303027aaf3b10260090c500df573f1bf484e20
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946390"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636867"
 ---
 # <a name="create-a-package-flight-submission"></a>パッケージ フライトの申請の作成
 
@@ -27,8 +27,8 @@ ms.locfileid: "8946390"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリのパッケージ フライトを作成します。 パートナー センターで、これを行うか、[パッケージ フライトの作成](create-a-flight.md)方法を使用して、これを行うことができます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* アプリのパッケージのフライトを作成します。 パートナー センターでこれを行うかを使用してこれを行う、[パッケージ フライト](create-a-flight.md)メソッド。
 
 ## <a name="request"></a>要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "8946390"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -69,7 +69,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文の値について詳しくは、[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)を参照してください。
+次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。 応答本文には、新しい申請に関する情報が含まれています。 応答本文の値について詳しくは、「[パッケージ フライトの申請のリソース](manage-flight-submissions.md#flight-submission-object)」を参照してください。
 
 ```json
 {
@@ -117,15 +117,15 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、パッケージ フライトの申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因パッケージ フライトの申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | アプリの現在の状態であるため、パッケージのフライトの送信を作成できませんでしたまたはアプリであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [パッケージ フライトの申請の管理](manage-flight-submissions.md)
-* [パッケージ フライトの申請の取得](get-a-flight-submission.md)
-* [パッケージ フライトの申請のコミット](commit-a-flight-submission.md)
-* [パッケージ フライトの申請の更新](update-a-flight-submission.md)
-* [パッケージ フライトの申請の削除](delete-a-flight-submission.md)
-* [パッケージ フライトの申請の状態の取得](get-status-for-a-flight-submission.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージのフライトの送信を管理します。](manage-flight-submissions.md)
+* [パッケージのフライトの送信を取得します。](get-a-flight-submission.md)
+* [パッケージのフライトの送信をコミットします。](commit-a-flight-submission.md)
+* [更新プログラム パッケージのフライトの送信](update-a-flight-submission.md)
+* [パッケージのフライトの送信を削除します。](delete-a-flight-submission.md)
+* [パッケージのフライトの送信の状態を取得します。](get-status-for-a-flight-submission.md)

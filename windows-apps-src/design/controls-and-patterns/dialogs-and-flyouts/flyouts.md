@@ -1,10 +1,10 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
-title: ポップアップ コントロール
+Description: ダイアログとポップアップは、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。
+title: Flyout コントロール
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -12,11 +12,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 52de0933bf51adaae6b0923868e12eb92ced4a1a
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037134"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625017"
 ---
 # <a name="flyouts"></a>ポップアップ
 
@@ -24,13 +24,13 @@ ms.locfileid: "9037134"
 
 ![ポップアップ内で入れ子になったコンテキスト メニュー](../images/flyout-nested.png)
 
-> **重要な Api**: [Flyout クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要な Api**:[フライアウト クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 * [ヒント](../tooltips.md)や[コンテキスト メニュー](../menus.md)の変わりにポップアップを使用しないようにします。 指定した時間が経過すると非表示になる短い説明を表示するには、ヒントを使います。 UI 要素に関連した状況依存の操作 (コピーや貼り付けなど) には、コンテキスト メニューを使います。
 
-使用する場合の推奨事項については、ポップアップとダイアログ (のようなコントロール) を使用する場合に、[ダイアログとポップアップ](index.md)が参照してください。 
+(のようなコントロール) ダイアログ ボックスを使用する場合とポップアップを使用する場合の推奨事項を参照してください[ダイアログとフライアウト](index.md)します。 
 
 ## <a name="examples"></a>例
 
@@ -41,17 +41,17 @@ ms.locfileid: "9037134"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>ポップアップを作成する方法
+##  <a name="how-to-create-a-flyout"></a>フライアウトを作成する方法
 
 
-ポップアップは、特定のコントロールにアタッチされます。 [Placement](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) プロパティを使って、ポップアップが表示される場所 (上、左、下、右、またはフル) を指定します。 [完全配置モード](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)を選択した場合、アプリはポップアップを拡大し、アプリ ウィンドウ内の中央に配置します。 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)などの一部のコントロールは、ポップアップや[コンテキスト メニュー](../menus.md)を関連付けるために使用できる [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) プロパティを提供します。
+ポップアップは、特定のコントロールにアタッチされます。 使用することができます、[配置](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement)フライアウトが表示される場所を指定するプロパティ。上、左、下、右、または完全な。 [完全配置モード](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)を選択した場合、アプリはポップアップを拡大し、アプリ ウィンドウ内の中央に配置します。 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)などの一部のコントロールは、ポップアップや[コンテキスト メニュー](../menus.md)を関連付けるために使用できる [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) プロパティを提供します。
 
 この例では、ボタンが押されたときに、いくつかのテキストを表示するシンプルなポップアップを作成します。
 ````xaml
@@ -145,7 +145,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## <a name="styling-flyouts-for-10-foot-experiences"></a>10 フィート エクスペリエンス向けのポップアップのスタイル設定
+## <a name="styling-flyouts-for-10-foot-experiences"></a>ある 10 フィート エクスペリエンスのフライアウトをスタイル設定
 
 ポップアップなどの簡易非表示コントロールは、閉じるまでの間、一時的な UI にキーボードのフォーカスやゲームパッドのフォーカスを捕捉します。 この動作に視覚的な合図を提供するために、Xbox の簡易非表示コントロールは、スコープ外の UI を暗く表示するオーバーレイを描画します。 この動作は、[`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) プロパティを使用して変更できます。 既定では、ポップアウトは Xbox で簡易非表示オーバーレイを描画し、他のデバイス ファミリでは描画しませんが、アプリで強制的にオーバーレイを常に**オン**にするか、常に**オフ**にするかを選択できます。
 
@@ -215,5 +215,5 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 ## <a name="related-articles"></a>関連記事
 - [ヒント](../tooltips.md)
 - [メニューとコンテキスト メニュー](../menus.md)
-- [Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [フライアウト クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

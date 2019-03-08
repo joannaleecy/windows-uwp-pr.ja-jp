@@ -1,23 +1,23 @@
 ---
-description: XBind マークアップ拡張は、マークアップで使用する機能を許可します。
+description: XBind マークアップ拡張機能では、マークアップで使用される関数を使用します。
 title: x:Bind の関数
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10, uwp, xBind
+keywords: windows 10、uwp、xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b85777c254c36cc7bf5b156569c7cef267a6c567
-ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9060036"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626217"
 ---
 # <a name="functions-in-xbind"></a>x:Bind の関数
 
 > [!NOTE]
-> **{** X:bind} アプリでデータ バインディングの使用に関する一般的な情報 (および **{X:bind}** と **{Binding}** の間の全体的な比較)、[データ バインディング](data-binding-in-depth.md)を参照してください。
+> 使用してアプリケーションにおけるデータ バインディングの使用に関する一般的な情報 **{X:bind}** (的な比較の詳細についてと **{X:bind}** と **{binding}**) を参照してください[データ深さでバインド](data-binding-in-depth.md)します。
 
-Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより。
+Windows 10 バージョン 1607 以降、**{x:Bind}** はバインド パスのリーフ ステップとしての関数の使用をサポートします。 これにより、できます。
 
 - 値の変換を実現するためのより簡単な方法
 - 複数のパラメーターに依存するようにバインディングする方法
@@ -63,7 +63,7 @@ class ColorEntry
 
 関数へのパスは、他のプロパティ パスと同じように指定され、関数を見つけるためにドット (.)、インデクサー、またはキャストを含めることができます。
 
-静的関数は、XMLNamespace:ClassName.MethodName 構文を使って指定できます。 たとえば、使用して、以下のコード ビハインドで静的関数にバインドするための構文です。
+静的関数は、XMLNamespace:ClassName.MethodName 構文を使って指定できます。 たとえば、使用して、以下のコード ビハインドで静的関数にバインドするための構文。
 
 ```xaml
 <Page 
@@ -87,7 +87,7 @@ namespace MyNamespace
 }
 ```
 
-たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム機能を使用することもできます。
+たとえば日付の書式設定、テキストの書式設定、テキストの連結などのような単純なシナリオを実現するのにマークアップで直接システム関数を使用することもできます。
 
 ```xaml
 <Page 
@@ -108,7 +108,7 @@ namespace MyNamespace
 - 引数の型は渡されるデータと一致する必要があります。縮小変換は行われません。
 - 関数の戻り値の型は、バインディングを使用しているプロパティの型と一致する必要があります。
 
-バインド エンジンは、プロパティ変更通知、関数の名前と発生し、必要に応じて、バインディングが再評価に反応します。 例:
+バインディング エンジンは、通知は、関数名で発生し、必要に応じてバインドを再評価するプロパティの変更に対応します。 次に、例を示します。
 
 ```xaml
 <DataTemplate x:DataType="local:Person">
@@ -164,7 +164,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> コンバーターと wpf MultiBinding によってサポートされたものと同じシナリオを実現するために、X:bind の関数を使用できます。
+> 関数は、コンバーターと WPF で MultiBinding でサポートされていたものと同じシナリオを実現するために X:bind で使用できます。
 
 ## <a name="function-arguments"></a>関数の引数
 
@@ -178,7 +178,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>双方向の関数バインド
 
-双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これは、**バインド バック**バインド プロパティを使用します。 次の例では、関数が、モデルにプッシュ バックする必要がある値が 1 つの引数を受け取る必要があります。
+双方向のバインディング シナリオでは、逆方向のバインドのために第 2 の関数を指定する必要があります。 これを使用して、**バインド バック**プロパティをバインドします。 関数は、次の例では、モデルにプッシュ バックする必要がある値である 1 つの引数を実行する必要があります。
 
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />

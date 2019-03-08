@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eaad3791830086d6b086ac0026523d28d596d1a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933793"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593847"
 ---
 # <a name="system-strings-validatation-uris"></a>システム文字列の検証 URI
  
-このセクションでは、*システム文字列の検証*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*システム文字列検証*です。
  
-永続的な文字列データをアップロードする前に、倫理規定またはの使用条件に違反していないことを確認する検証する必要があります。 この REST リソースは、文字列の配列を取得し、それぞれには、許容できるかどうかと、問題のある語句を含む文字列を示す結果コードを返します。
+永続的な文字列データをアップロードする前に、コードの実行または使用条件に違反していないことを確認する検証する必要があります。 この REST リソースは、文字列の配列を受け取り、1 は、許容されるかどうか、および問題のある用語を含む文字列を示す結果コードを返します。
  
-これらの Uri のドメインは、クライアント strings.xboxlive.com です。
+これらの Uri のドメインとは、クライアント strings.xboxlive.com です。
  
 <a id="ID4EQB"></a>
 
@@ -41,6 +41,6 @@ ms.locfileid: "8933793"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

@@ -1,5 +1,5 @@
 ---
-Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
+Description: SendRequestAsync メソッドを使用すると、Windows SDK で利用できる API がまだない操作のための Microsoft Store に要求を送信します。
 title: Microsoft Store に要求を送信する
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: d492bc7dde990404552689516731850974c31a7c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942098"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589797"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>Microsoft Store に要求を送信する
 
-Windows 10 Version 1607 以降、Windows SDK の [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間には、Store に関連する操作 (アプリ内購入など) のための API が用意されています。 ただし、ストアをサポートするサービスは OS がリリースされるたびに継続的に更新、拡張、強化されていますが、新しい API は通常 OS のメジャー リリース時にのみ Windows SDK に追加されます。
+Windows 10 バージョン 1607 以降、Windows SDK の [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間にはストアに関連する操作 (アプリ内購入など) の API が用意されています。 ただし、ストアをサポートするサービスは OS がリリースされるたびに継続的に更新、拡張、強化されていますが、新しい API は通常 OS のメジャー リリース時にのみ Windows SDK に追加されます。
 
 [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) メソッドは、新しいバージョンの Windows SDK がリリースされる前にユニバーサル Windows プラットフォーム (UWP) アプリで新しいストアの操作を利用できるようにする柔軟な方法として用意されています。 このメソッドを使うと、最新リリースの Windows SDK に対応する API がまだない新しい操作の要求をストアに送信することができます。
 
@@ -77,7 +77,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  デバイスの最も順位の高いフライト グループを返すには 7 を指定し、現在のユーザーとデバイスの最も順位の高いフライト グループを返すには 8 を指定します。 *requestKind* パラメーターには値 8 を使うことをお勧めします。この値は、現在のユーザーおよびデバイスの両方のメンバーシップにおいて最も順位の高いフライト グループを返すためです。  |
 |  *parametersAsJson*                   |  次の例に示すように、データを含む JSON 形式の文字列を渡します。  |
 
-次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *GetRemoteVariables* に割り当てる必要があります。 *ProjectId*フィールドは、パートナー センターでリモート変数を定義したプロジェクトの ID に割り当てます。
+次の例は、JSON 形式のデータを *parametersAsJson* に渡す方法を示しています。 *type* フィールドは、文字列 *GetRemoteVariables* に割り当てる必要があります。 割り当てる、 *projectId*フィールドをパートナー センターでリモート変数が定義されているプロジェクトの ID。
 
 ```json
 { 
@@ -92,7 +92,7 @@ public async Task<bool> AddUserToFlightGroup()
 |----------------------|---------------|
 |  *anonymous*                   |  ブール値。**true** はユーザーまたはデバイス ID が要求に存在していなかったことを示し、**false** はユーザーまたはデバイス ID が要求に存在していたことを示します。  |
 |  *name*                   |  デバイスまたはユーザーが所属する最も順位の高いフライト グループの名前を含む文字列です。  |
-|  *settings*                   |  開発者がフライト グループに構成したリモート変数の名前を値を含むキー/値ペアのディクショナリです。  |
+|  *設定*                   |  開発者がフライト グループに構成したリモート変数の名前を値を含むキー/値ペアのディクショナリです。  |
 
 次の例では、この要求の戻り値を示します。
 
@@ -156,5 +156,5 @@ public async Task<bool> AddUserToFlightGroup()
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリ内での評価とレビュー ダイアログの表示](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
+* [評価を表示して、アプリのダイアログを確認してください。](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

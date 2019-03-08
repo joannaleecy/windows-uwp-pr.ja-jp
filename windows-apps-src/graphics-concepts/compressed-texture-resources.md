@@ -8,34 +8,34 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9318479fffc415e94407166bd1be20a93691a179
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945296"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646217"
 ---
 # <a name="compressed-texture-resources"></a>圧縮テクスチャ リソース
 
 
 テクスチャ マップとは、視覚的な詳細を追加するために 3 次元形状で描画された、デジタル画像です。 テクスチャ マップは、ラスター化時に 3D の形状にマッピングされます。このプロセスではシステム バスとメモリの両方を大量に消費することがあります。 テクスチャによって消費されるメモリ量を減らすために、Direct3D ではテクスチャ サーフェスの圧縮がサポートされています。 Direct3D デバイスの中には、圧縮テクスチャ サーフェスを標準でサポートするものもあります。 このようなデバイスでは、圧縮したサーフェスを作成し、データをロードすると、他のテクスチャ サーフェスと同様に Direct3D でそのサーフェスを使用することができます。 テクスチャが 3D オブジェクトにマッピングされるときに、Direct3D によって圧縮が解除されます。
 
-## <a name="span-idstorage-efficiency-and-texture-compressionspanspan-idstorage-efficiency-and-texture-compressionspanspan-idstorage-efficiency-and-texture-compressionspanstorage-efficiency-and-texture-compression"></a><span id="Storage-Efficiency-and-Texture-Compression"></span><span id="storage-efficiency-and-texture-compression"></span><span id="STORAGE-EFFICIENCY-AND-TEXTURE-COMPRESSION"></span>ストレージの効率とテクスチャ圧縮
+## <a name="span-idstorage-efficiency-and-texture-compressionspanspan-idstorage-efficiency-and-texture-compressionspanspan-idstorage-efficiency-and-texture-compressionspanstorage-efficiency-and-texture-compression"></a><span id="Storage-Efficiency-and-Texture-Compression"></span><span id="storage-efficiency-and-texture-compression"></span><span id="STORAGE-EFFICIENCY-AND-TEXTURE-COMPRESSION"></span>記憶域の効率性とテクスチャの圧縮
 
 
 テクスチャ圧縮形式はすべて 2 の累乗です。 これはテクスチャが必ず正方形であることを意味するのではなく、x と y の両方が 2 の累乗であることを意味します。 たとえば、元のテクスチャが 512 × 128 バイトであった場合、次のミップマップ処理では 256 × 64 というように、1 レベルごとに 2 の累乗ずつ小さくなります。 さらにレベルを下げて、テクスチャを 16 × 2 および 8 × 1 までフィルタリングすると、圧縮ブロックは常に 4 x 4 のテクセル ブロックであるため、無駄なビットが生じます。 ブロックの未使用部分はパディングされます。
 
 低いレベルでは無駄なビットが出ますが、全体的なゲインは重要です。 理論的に最悪のケースは、2K × 1 (2 の 0 乗) のテクスチャです。 この場合、1 ブロックにつき 1 つのピクセル行しかエンコードされず、ブロックの残りの部分は使用されません。
 
-## <a name="span-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanmixing-formats-within-a-single-texture"></a><span id="Mixing-Formats-Within-a-Single-Texture"></span><span id="mixing-formats-within-a-single-texture"></span><span id="MIXING-FORMATS-WITHIN-A-SINGLE-TEXTURE"></span>単一テクスチャ内での形式の組み合わせ
+## <a name="span-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanspan-idmixing-formats-within-a-single-texturespanmixing-formats-within-a-single-texture"></a><span id="Mixing-Formats-Within-a-Single-Texture"></span><span id="mixing-formats-within-a-single-texture"></span><span id="MIXING-FORMATS-WITHIN-A-SINGLE-TEXTURE"></span>1 つのテクスチャの形式を混在させる
 
 
-個々のテクスチャはすべて、16 テクセルのグループごとにデータを 64 ビットまたは 128 ビットで格納するように指定する必要があることに注意してください。 64 ビットのブロック、つまりブロック圧縮形式 BC1 をテクスチャに使用する場合、同一のテクスチャ内にブロック単位で不透明の形式と 1 ビット アルファの形式を混在させることができます。 つまり、color\_0 と color\_1 の符号なし整数の絶対値の比較が、16 テクセルのブロックごとに独立して実行されます。
+個々のテクスチャはすべて、16 テクセルのグループごとにデータを 64 ビットまたは 128 ビットで格納するように指定する必要があることに注意してください。 64 ビットのブロック、つまりブロック圧縮形式 BC1 をテクスチャに使用する場合、同一のテクスチャ内にブロック単位で不透明の形式と 1 ビット アルファの形式を混在させることができます。 つまり、色の符号なし整数の絶対値の比較\_0 と色\_16 テクセルのブロックごとに一意に 1 を実行します。
 
-128 ビット ブロックを使用する場合、テクスチャ全体にアルファ チャネルを明示的モード (BC2 形式) または補間モード (BC3 形式) で指定する必要があります。 カラーの場合と同様に、補間モード (BC3 形式) を選択すると、8 つの補間アルファまたは 6 つの補間アルファのモードをブロック単位で使用することができます。 ここでも、alpha\_0 と alpha\_1 の絶対値の比較がブロックごとに独立して実行されます。
+128 ビット ブロックを使用する場合、テクスチャ全体にアルファ チャネルを明示的モード (BC2 形式) または補間モード (BC3 形式) で指定する必要があります。 カラーの場合と同様に、補間モード (BC3 形式) を選択すると、8 つの補間アルファまたは 6 つの補間アルファのモードをブロック単位で使用することができます。 アルファの強度の比較もう一度\_0 とアルファ\_1 が、ブロックごとに行われます。
 
 Direct3D では、3D モデルのテクスチャに使用する、サーフェスを圧縮するためのサービスが用意されています。 ここでは、圧縮テクスチャ サーフェスのデータの作成および操作について説明します。
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>説明するトピックは次のとおりです。
+## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
 
 
 <table>
@@ -51,11 +51,11 @@ Direct3D では、3D モデルのテクスチャに使用する、サーフェ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="opaque-and-1-bit-alpha-textures.md">不透明なテクスチャと 1 ビットのアルファ テクスチャ</a></p></td>
+<td align="left"><p><a href="opaque-and-1-bit-alpha-textures.md">不透明な直線および 1 ビットのアルファ テクスチャ</a></p></td>
 <td align="left"><p>テクスチャ形式 BC1 は、不透明または単一透明色のテクスチャに使用します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="textures-with-alpha-channels.md">アルファ チャネルを含むテクスチャ</a></p></td>
+<td align="left"><p><a href="textures-with-alpha-channels.md">アルファ チャネルを持つテクスチャ</a></p></td>
 <td align="left"><p>複雑な透明度を表現するテクスチャ マップには 2 つのエンコード方法があります。 いずれの場合も、既に説明した 64 ビットのブロックの前に、透明度を記述したブロックを配置します。 透明度は、1 ピクセルあたり 4 ビットの 4 x 4 ビットマップ (明示的エンコード)、またはこれよりも少ないビット数およびカラー エンコードで使用されるものに類似した線形補完で表現します。</p></td>
 </tr>
 <tr class="odd">

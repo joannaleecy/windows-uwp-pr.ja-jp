@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c74d0831c3b841ad2a1366bd2e03fb8a9b0448d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115365"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623497"
 ---
 # <a name="gameclipuri-json"></a>GameClipUri (JSON)
  
@@ -25,15 +25,15 @@ GameClipUri オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>uri</b>| string| ビデオのアセットの場所への URI。| 
-| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像のファイルの合計サイズ。| 
-| <b>uriType</b>| GameClipUriType| URI の種類です。| 
-| <b>有効期限</b>| DateTime| この応答に含まれている URI の有効期限の時刻。 URL の場合は、空のまたは再生する前に有効期限切れと見なされ、呼び出し元は RefreshUrl API を呼び出す必要があります。| 
+| <b>Uri</b>| string| ビデオ資産の場所の URI。| 
+| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル イメージのファイルの合計サイズ。| 
+| <b>uriType</b>| GameClipUriType| URI の種類。| 
+| <b>expiration</b>| DateTime| この応答に含まれている URI の有効期限。 URL の場合は、空または再生する前に期限切れと見なされるには、呼び出し元は RefreshUrl API を呼び出す必要があります。| 
   
 <a id="ID4EMC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,6 +57,6 @@ GameClipUri オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

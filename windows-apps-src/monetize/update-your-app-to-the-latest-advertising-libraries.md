@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, 広告, 宣伝, AdControl, AdMediatorControl, 移行
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048679"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620467"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>バナー広告用の最新の Advertising ライブラリを使用するようにアプリを更新する
 
@@ -27,7 +27,7 @@ ms.locfileid: "9048679"
 
 * アプリ内の **AdControl** から新しい広告が要求されると、コントロールの **ErrorOccurred** イベントが発生し、イベント引数の **ErrorCode** プロパティに **NoAdAvailable** という値が設定されます。
 
-* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 これらの非アクティブ化された広告ユニットは、DePartnerv センター アカウントから削除することはできません。 アプリを更新して [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
+* そのアプリに関連付けられているすべての広告ユニットが非アクティブ化されます。 DePartnerv Center アカウントからこれらの非アクティブ化された ad ユニットを削除することはできません。 アプリを更新して [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) を使う場合、これらの広告ユニットを無視して新しい広告ユニットを作成します。
 
 * 複数のアプリで使われている広告ユニットにも、バナー広告が提供されなくなりました。 広告ユニットがそれぞれ 1 つのアプリだけで使われるようにしてください。
 
@@ -46,7 +46,7 @@ ms.locfileid: "9048679"
 
 <span id="part-1" />
 
-## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>パート 1: UWP アプリを更新する必要があるかどうかを決定する
+## <a name="part-1-determine-whether-you-need-to-update-your-uwp-app"></a>第 1 部:UWP アプリを更新する必要があるかどうかを判断します。
 
 以下のセクションの手順に従い、アプリの更新が必要かどうかを調べます。
 
@@ -59,7 +59,7 @@ ms.locfileid: "9048679"
 
 <span id="part-2" />
 
-## <a name="part-2-install-the-latest-sdk"></a>パート 2: 最新の SDK をインストールする
+## <a name="part-2-install-the-latest-sdk"></a>パート 2:最新の SDK をインストールします。
 
 アプリで以前の SDK リリースが使用されている場合は、次の手順に従って、開発用コンピューターに最新の SDK がインストールされているかどうかを確認します。
 
@@ -78,12 +78,12 @@ ms.locfileid: "9048679"
 
 3.  [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) をインストールします。
 
-## <a name="part-3-update-your-project"></a>パート 3: プロジェクトを更新する
+## <a name="part-3-update-your-project"></a>パート 3:プロジェクトを更新します。
 
 プロジェクトから Microsoft Advertising ライブラリへの既存の参照をすべて削除し、[これらの手順](install-the-microsoft-advertising-libraries.md#reference)に従って、必要な参照を追加します。 これにより、プロジェクトで適切なライブラリが確実に使用されるようになります。 既存のマークアップとコードを保持することもできます。
 
-## <a name="part-4-test-and-republish-your-app"></a>パート 4: アプリのテストと再公開を行う
+## <a name="part-4-test-and-republish-your-app"></a>パート 4:テストし、アプリを再発行
 
 アプリをテストし、バナーが正常に提供されることを確認します。
 
-アプリの以前のバージョンがある場合既にストアにアプリを再公開するパートナー センターで、更新されたアプリの[新しい申請を作成](../publish/app-submissions.md)します。
+ストア アプリの以前のバージョンは既に使用可能な場合[新しい提出の作成](../publish/app-submissions.md)アプリを再発行するパートナー センターで、更新されたアプリ。

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fc878b5d759d7cbaefd92eedadfe38702c56baf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938562"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628277"
 ---
 # <a name="mediarequest-json"></a>MediaRequest (JSON)
  
@@ -21,12 +21,12 @@ ms.locfileid: "8938562"
  
 ## <a name="mediarequest"></a>MediaRequest
  
-MediaRequest オブジェクトには、次仕様があります。
+MediaRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| string| Bing カタログまたはプロバイダー カタログで使われるメディアの識別子です。| 
-| idType| string| <b>Id</b>を解釈する方法。使用可能な値には、"bing"および「プロバイダー」が含まれます。| 
+| id| string| Bing カタログまたはプロバイダーのカタログで使用するメディアの識別子。| 
+| idType| string| 解釈する方法<b>id</b>します。使用可能な値には、"bing"および"provider"が含まれます。| 
   
 <a id="ID4E2B"></a>
 
@@ -38,7 +38,7 @@ MediaRequest オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EJC"></a>

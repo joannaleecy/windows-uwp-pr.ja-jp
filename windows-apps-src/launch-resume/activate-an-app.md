@@ -4,7 +4,7 @@ description: OnLaunched メソッドをオーバーライドすることで、�
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,21 +12,21 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929353"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626597"
 ---
 # <a name="handle-app-activation"></a>アプリのアクティブ化の処理
 
-[**Application.OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)メソッドをオーバーライドして、アプリのアクティブ化を処理する方法について説明します。
+アプリのアクティブ化をオーバーライドすることで処理する方法について説明します、 [ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched)メソッド。
 
 ## <a name="override-the-launch-handler"></a>起動ハンドラーを上書きする
 
-何らかの理由で、アプリがアクティブ化されるとき、システムは[**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)イベントを送信します。 アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。
+何らかの理由で、アプリがアクティブになったときに、システムが送信、 [ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)イベント。 アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。
 
-[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。 それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。
+[  **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。 それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。
 
 アプリのクラスを定義します。
 
@@ -37,10 +37,10 @@ ms.locfileid: "8929353"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
+[  **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [  **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
 
 > [!NOTE]
-> Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動します。 このメソッドを呼び出すしません。
+> 、Windows の開始のタイルまたはアプリの一覧から中断されているアプリを起動するこのメソッドを呼び出すしません。
 
 ```csharp
 using System;
@@ -259,19 +259,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。
+[  **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>注釈
 
 > [!NOTE]
-> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 プライマリまたはセカンダリ タイルから、アプリが起動されたかどうかを判断し、新しいを表示またはアプリのエクスペリエンスを再開する必要があるかどうか、その情報に基づいて決定[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティを確認することができます。
+> 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 チェックすることができます、 [ **LaunchActivatedEventArgs.TileId** ](https://msdn.microsoft.com/library/windows/apps/br224736)プロパティかどうか、アプリが、プライマリやセカンダリ タイルから起動して、その情報に基づいて判断する必要があるかどうかを決定します。新しいやアプリのエクスペリエンスを再開します。
 
 ## <a name="important-apis"></a>重要な API
 * [Windows.ApplicationModel.Activation](https://msdn.microsoft.com/library/windows/apps/br224766)
 * [Windows.UI.Xaml.Application](https://msdn.microsoft.com/library/windows/apps/br242324)
 
 ## <a name="related-topics"></a>関連トピック
-* [アプリの中断の処理](suspend-an-app.md)
-* [アプリの再開の処理](resume-an-app.md)
-* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [ハンドルのアプリを中断します。](suspend-an-app.md)
+* [アプリケーションの再開を処理します。](resume-an-app.md)
+* [アプリに関するガイドラインの中断し、再開](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [アプリのライフサイクル](app-lifecycle.md)

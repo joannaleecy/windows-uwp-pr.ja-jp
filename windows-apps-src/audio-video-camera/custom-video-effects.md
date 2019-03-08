@@ -1,20 +1,20 @@
 ---
-Description: This article describes how to create a Windows Runtime component that implements the IBasicVideoEffect interface to allow you to create custom effects for video streams.
+Description: この記事では、ビデオ ストリームのカスタム効果を作成するための IBasicVideoEffect インターフェイスを実装する Windows ランタイム コンポーネントを作成する方法について説明します。
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: カスタムのビデオ特殊効果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045571"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623087"
 ---
 # <a name="custom-video-effects"></a>カスタムのビデオ特殊効果
 
@@ -28,7 +28,7 @@ ms.locfileid: "9045571"
 
 カスタムのビデオ特殊効果は、[**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) インターフェイスを実装するクラスで定義します。 このクラスは、アプリのプロジェクトに直接含めることはできません。 代わりに、Windows ランタイム コンポーネントを使ってビデオ特殊効果のクラスをホストする必要があります。
 
-**ビデオ特殊効果用の Windows ランタイム コンポーネントの追加**
+**Windows ランタイム コンポーネント、ビデオ特殊効果の追加します。**
 
 1.  Microsoft Visual Studio で、ソリューションを開き、**[ファイル]** メニューから **[追加]、[新しいプロジェクト]** の順にクリックします。
 2.  プロジェクトの種類として **[Windows ランタイム コンポーネント (ユニバーサル Windows)]** を選びます。
@@ -53,14 +53,14 @@ ms.locfileid: "9045571"
 
 ### <a name="close-method"></a>Close メソッド
 
-[**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) メソッドは、クラスで効果をシャットダウンする必要があるときに呼び出されます。 このメソッドを使って、作成したすべてのリソースを破棄する必要があります。 このメソッドの [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason) 引数により、効果が正常に終了されたかどうかがわかります。エラーが発生したり、必要なエンコード形式が効果でサポートされていないと、この引数で通知されます。
+[  **Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) メソッドは、クラスで効果をシャットダウンする必要があるときに呼び出されます。 このメソッドを使って、作成したすべてのリソースを破棄する必要があります。 このメソッドの [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason) 引数により、効果が正常に終了されたかどうかがわかります。エラーが発生したり、必要なエンコード形式が効果でサポートされていないと、この引数で通知されます。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames メソッド
 
-[**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) メソッドは、効果をリセットする必要があるときに呼び出されます。 典型的なシナリオとしては、現在のフレームの処理で使うために前に処理したフレームを保存している場合などが挙げられます。 このメソッドが呼び出されたときは、保存した一連のフレームを破棄する必要があります。 このメソッドでは、蓄積されたビデオ フレームだけでなく、前のフレームに関連するすべての状態をリセットできます。
+[  **DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) メソッドは、効果をリセットする必要があるときに呼び出されます。 典型的なシナリオとしては、現在のフレームの処理で使うために前に処理したフレームを保存している場合などが挙げられます。 このメソッドが呼び出されたときは、保存した一連のフレームを破棄する必要があります。 このメソッドでは、蓄積されたビデオ フレームだけでなく、前のフレームに関連するすべての状態をリセットできます。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -69,24 +69,24 @@ ms.locfileid: "9045571"
 
 ### <a name="isreadonly-property"></a>IsReadOnly プロパティ
 
-[**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) プロパティは、効果の出力への書き込みを行うかどうかを示します。 アプリでビデオ フレームを変更しない場合 (ビデオ フレームの分析のみを行う場合など) は、このプロパティを true に設定します。これにより、フレーム入力がフレーム出力に効率的にコピーされるようになります。
+[  **IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) プロパティは、効果の出力への書き込みを行うかどうかを示します。 アプリでビデオ フレームを変更しない場合 (ビデオ フレームの分析のみを行う場合など) は、このプロパティを true に設定します。これにより、フレーム入力がフレーム出力に効率的にコピーされるようになります。
 
 > [!TIP]
-> [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) プロパティを true に設定すると、入力フレームが出力フレームにコピーされてから [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) が呼び出されます。 **IsReadOnly** プロパティを true に設定しても、**ProcessFrame** での効果の出力フレームに対する書き込みは制限されません。
+> [  **IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) プロパティを true に設定すると、入力フレームが出力フレームにコピーされてから [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) が呼び出されます。 **IsReadOnly** プロパティを true に設定しても、**ProcessFrame** での効果の出力フレームに対する書き込みは制限されません。
 
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties メソッド
 
-[**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) は、効果の対象となるビデオ ストリームのエンコード プロパティを示すために呼び出されます。 このメソッドは、ハードウェア レンダリングに使う Direct3D デバイスへの参照も提供します。 このデバイスの用途については、この後のハードウェア処理の例で説明します。
+[  **SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) は、効果の対象となるビデオ ストリームのエンコード プロパティを示すために呼び出されます。 このメソッドは、ハードウェア レンダリングに使う Direct3D デバイスへの参照も提供します。 このデバイスの用途については、この後のハードウェア処理の例で説明します。
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties プロパティ
 
-[**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) プロパティは、効果でサポートされるエンコード プロパティを確認するためにシステムでチェックされます。 効果で指定したプロパティを使ってビデオをエンコードできない場合、[**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) が呼び出され、効果がビデオ パイプラインから削除されます。
+[  **SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) プロパティは、効果でサポートされるエンコード プロパティを確認するためにシステムでチェックされます。 効果で指定したプロパティを使ってビデオをエンコードできない場合、[**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) が呼び出され、効果がビデオ パイプラインから削除されます。
 
 
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
@@ -99,25 +99,25 @@ ms.locfileid: "9045571"
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes プロパティ
 
-[**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) プロパティは、ソフトウェア メモリとハードウェア (GPU) メモリのどちらのビデオ フレームにアクセスするかを確認するためにシステムでチェックされます。 [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) を指定すると、画像データを [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに格納する入力フレームと出力フレームが渡されます。 **MediaMemoryTypes.Gpu** を指定すると、画像データを [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) オブジェクトに格納する入力フレームと出力フレームが渡されます。
+[  **SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) プロパティは、ソフトウェア メモリとハードウェア (GPU) メモリのどちらのビデオ フレームにアクセスするかを確認するためにシステムでチェックされます。 [  **MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) を指定すると、画像データを [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに格納する入力フレームと出力フレームが渡されます。 **MediaMemoryTypes.Gpu** を指定すると、画像データを [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) オブジェクトに格納する入力フレームと出力フレームが渡されます。
 
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
 > [!NOTE]
-> [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) を指定すると、GPU とシステム メモリのどちらを使うかがパイプラインの効率に基づいて判断されます。 この値を使う場合は、[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) メソッドで [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) と [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) のどちらにデータが格納されたかをチェックし、それに応じてフレームを処理する必要があります。
+> [  **MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822) を指定すると、GPU とシステム メモリのどちらを使うかがパイプラインの効率に基づいて判断されます。 この値を使う場合は、[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) メソッドで [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) と [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) のどちらにデータが格納されたかをチェックし、それに応じてフレームを処理する必要があります。
 
  
 
 ### <a name="timeindependent-property"></a>TimeIndependent プロパティ
 
-[**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) プロパティは、効果のタイミングを合わせる必要がないかどうかを示します。 true に設定すると、効果のパフォーマンスを高めるために最適化を使用できるようになります。
+[  **TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) プロパティは、効果のタイミングを合わせる必要がないかどうかを示します。 true に設定すると、効果のパフォーマンスを高めるために最適化を使用できるようになります。
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
 ### <a name="setproperties-method"></a>SetProperties メソッド
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) メソッドは、呼び出し元のアプリで効果のパラメーターを調整するために使われます。 プロパティは、プロパティ名と値の [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) マップとして渡されます。
+[  **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) メソッドは、呼び出し元のアプリで効果のパラメーターを調整するために使われます。 プロパティは、プロパティ名と値の [**IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) マップとして渡されます。
 
 
 [!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
@@ -130,9 +130,9 @@ ms.locfileid: "9045571"
 
 ### <a name="processframe-method"></a>ProcessFrame メソッド
 
-[**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) メソッドは、ビデオの画像データを変更するためのメソッドです。 このメソッドはフレームごとに 1 回呼び出され、[**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) オブジェクトが渡されます。 このオブジェクトには、処理対象の着信フレームを格納する入力 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトと、ビデオ パイプラインの残りの部分に渡す画像データを書き込む出力 **VideoFrame** オブジェクトが含まれています。 それらの **VideoFrame** オブジェクトのそれぞれに [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティと [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) プロパティがありますが、どちらを使用できるかは [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) で指定した値で決まります。
+[  **ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) メソッドは、ビデオの画像データを変更するためのメソッドです。 このメソッドはフレームごとに 1 回呼び出され、[**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) オブジェクトが渡されます。 このオブジェクトには、処理対象の着信フレームを格納する入力 [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトと、ビデオ パイプラインの残りの部分に渡す画像データを書き込む出力 **VideoFrame** オブジェクトが含まれています。 それらの **VideoFrame** オブジェクトのそれぞれに [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティと [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) プロパティがありますが、どちらを使用できるかは [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) で指定した値で決まります。
 
-ここでは、ソフトウェア処理を使用した **ProcessFrame** メソッドの簡単な実装例を示します。 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトの操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。 ハードウェア処理を使用した **ProcessFrame** の実装例については、この記事の後半で紹介します。
+ここでは、ソフトウェア処理を使用した **ProcessFrame** メソッドの簡単な実装例を示します。 [  **SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトの操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。 ハードウェア処理を使用した **ProcessFrame** の実装例については、この記事の後半で紹介します。
 
 **SoftwareBitmap** のデータ バッファーにアクセスするには COM 相互運用機能が必要になるため、効果のクラス ファイルに **System.Runtime.InteropServices** 名前空間を含める必要があります。
 
@@ -154,7 +154,7 @@ ms.locfileid: "9045571"
 
 これで、**ProcessFrame** メソッドの実装を追加できます。 最初に、入力と出力の両方のソフトウェア ビットマップから [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) オブジェクトを取得します。 出力フレームが書き込み用で、入力フレームが読み取り用です。 次に、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) を呼び出して、各バッファーの [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671) を取得します。 その後、実際のデータ バッファーを取得するために、先ほど定義した COM 相互運用機能のインターフェイス (**IMemoryByteAccess**) として **IMemoryBufferReference** オブジェクトをキャストし、**GetBuffer** を呼び出します。
 
-これで、データ バッファーが取得され、入力バッファーからの読み取りと出力バッファーへの書き込みが可能になります。 [**GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) を呼び出して、バッファーのレイアウトを取得します。バッファーの幅、ストライド、初期オフセットについての情報が提供されます。 ピクセルあたりのビット数は、[**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) メソッドで既に設定したエンコード プロパティで決まります。 バッファーの形式情報を使って、各ピクセルのバッファーへのインデックスを特定します。 ソース バッファーのピクセル値をターゲット バッファーにコピーし、そのカラー値にこの効果の FadeValue プロパティで定義した値を掛けます。これで、指定した値に応じてピクセルが暗くなります。
+これで、データ バッファーが取得され、入力バッファーからの読み取りと出力バッファーへの書き込みが可能になります。 [  **GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) を呼び出して、バッファーのレイアウトを取得します。バッファーの幅、ストライド、初期オフセットについての情報が提供されます。 ピクセルあたりのビット数は、[**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) メソッドで既に設定したエンコード プロパティで決まります。 バッファーの形式情報を使って、各ピクセルのバッファーへのインデックスを特定します。 ソース バッファーのピクセル値をターゲット バッファーにコピーし、そのカラー値にこの効果の FadeValue プロパティで定義した値を掛けます。これで、指定した値に応じてピクセルが暗くなります。
 
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
@@ -166,7 +166,7 @@ ms.locfileid: "9045571"
 
 次の手順に従って、この記事の最初に「**アプリへのカスタム効果の追加**」で作成したプロジェクトに Win2D NuGet パッケージを追加します。
 
-**効果のプロジェクトへの Win2D NuGet パッケージの追加するには**
+**効果プロジェクトに Win2D NuGet パッケージを追加するには**
 
 1.  **ソリューション エクスプローラー**で、**VideoEffectComponent** プロジェクトを右クリックし、**[NuGet パッケージの管理]** をクリックします。
 2.  ウィンドウの上部で **[参照]** タブをクリックします。
@@ -190,12 +190,12 @@ ms.locfileid: "9045571"
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
 
-[**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) メソッドを使って、メソッドに渡される [**IDirect3DDevice**](https://msdn.microsoft.com/library/windows/apps/dn895092) から新しい Win2D **CanvasDevice** オブジェクトを作成します。
+[  **SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) メソッドを使って、メソッドに渡される [**IDirect3DDevice**](https://msdn.microsoft.com/library/windows/apps/dn895092) から新しい Win2D **CanvasDevice** オブジェクトを作成します。
 
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-[**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) の実装は前述のソフトウェア処理の例と同じです。 この例では、**BlurAmount** プロパティを使って Win2D のぼかし効果を設定します。
+[  **SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) の実装は前述のソフトウェア処理の例と同じです。 この例では、**BlurAmount** プロパティを使って Win2D のぼかし効果を設定します。
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -232,14 +232,14 @@ Win2D API を使って、入力フレームの [**Direct3DSurface**](https://msd
 
 ### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>MediaComposition のクリップへのカスタム効果の追加
 
-ビデオ クリップからメディア コンポジションを作成する一般的なガイダンスについては、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。 次のコード スニペットは、カスタムのビデオ特殊効果を使ってシンプルなメディア コンポジションを作成する例を示しています。 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) を呼び出して [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) オブジェクトを作成し、ユーザーが [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) で選択したビデオ ファイルを渡して新しい [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) にクリップを追加します。 次に、新しい [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) オブジェクトを作成し、効果の名前空間とクラスの名前を渡します。 最後に、**MediaClip** オブジェクトの [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) コレクションに効果の定義を追加します。
+ビデオ クリップからメディア コンポジションを作成する一般的なガイダンスについては、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。 次のコード スニペットは、カスタムのビデオ特殊効果を使ってシンプルなメディア コンポジションを作成する例を示しています。 [  **CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) を呼び出して [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) オブジェクトを作成し、ユーザーが [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) で選択したビデオ ファイルを渡して新しい [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) にクリップを追加します。 次に、新しい [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) オブジェクトを作成し、効果の名前空間とクラスの名前を渡します。 最後に、**MediaClip** オブジェクトの [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) コレクションに効果の定義を追加します。
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
 ## <a name="related-topics"></a>関連トピック
-* [シンプルなカメラ プレビューへのアクセス](simple-camera-preview-access.md)
-* [メディアのコンポジションと編集](media-compositions-and-editing.md)
+* [単純なカメラのプレビューへのアクセス](simple-camera-preview-access.md)
+* [メディア コンポジションと編集](media-compositions-and-editing.md)
 * [Win2D ドキュメント](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [メディア再生](media-playback.md)

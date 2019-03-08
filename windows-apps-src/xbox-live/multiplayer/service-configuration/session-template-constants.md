@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, セッション テンプレート
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb4c6f39bab8779b5675a7b9c81b883965676c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918274"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646907"
 ---
 # <a name="session-template-constants"></a>セッション テンプレートの定数
 
@@ -23,22 +23,22 @@ ms.locfileid: "8918274"
 --|-- | -- | --
 version | セッション テンプレートのバージョン。 | 1 から n | なし
 maxMembersCount | マルチプレイヤー アクティビティでサポートされるセッション メンバー スロットの合計数。 | 通常のセッションの場合は 1 から 100、大規模なセッションの場合は 101 以上 | 100
-visibility | 他のユーザーによるセッションの表示や参加が可能かどうかを示すセッションの可視性の状態。 | private、visible、open | open
+visibility | 他のユーザーによるセッションの表示や参加が可能かどうかを示すセッションの可視性の状態。 | private、visible、open | 開く
 inviteProtocol | この定数を "game" に設定すると、招待されたユーザーはセッションに招待されたときにトースト通知を受け取ることができます。 | game、tournamentgame、chat、gameparty | なし
 reservedRemovalTimeout  | メンバー予約のタイムアウト (ミリ秒単位)。 値 0 は、即時タイムアウトを示します。 タイムアウトが null の場合は、無限と見なされます。 | 0 から n、null | 30000
 inactiveRemovalTimeout  | メンバーが非アクティブと見なされるタイムアウト (ミリ秒単位)。 値 0 は、即時タイムアウトを示します。 タイムアウトが null の場合は、無限と見なされます。 | 0 から n、null | 0
 readyRemovalTimeout | メンバーが準備完了と見なされるタイムアウト (ミリ秒単位)。 値 0 は、即時タイムアウトを示します。 タイムアウトが null の場合は、無限と見なされます。 | 0 から n、null | 180000
 sessionEmptyTimeout | 空のセッションのタイムアウト (ミリ秒単位)。 値 0 は、即時タイムアウトを示します。 タイムアウトが null の場合は、無限と見なされます。 | 0 から n、null | 0
-[**capabilities**](#capabilities) | セッションの機能を指定します。 後の「capabilities」セクションを参照してください。 | 該当なし | 該当なし
-[**metrics**](#metrics) | セッションのメンバーが満たす必要のある、遅延や帯域幅速度などの、タイトルで定義されているサービス品質要件のセットを指定します。  | 該当なし | 該当なし
-[**memberInitialization**](#memberInitialization) | 新しいメンバーがセッションの参加するときに適用されるタイムアウトと初期化の要件を指定します。 後の「memberInitialization」セクションを参照してください。 | 該当なし | 該当なし
-[**peerToPeerRequirements**](#peerToPeerRequirements) | ピア ツー ピア メッシュ接続のサービス要件のネットワーク品質を指定します。 後の「peerToPeerRequirements」セクションを参照してください。 |該当なし | 該当なし
-[**peerToHostRequirements**](#peerToHostRequirements) | ピア ツー ホスト接続のサービス要件のネットワーク品質を指定します。 後の「peerToHostRequirements」セクションを参照してください。 | 該当なし | 該当なし
-[**measurementServerAddresses**](#measurementserveraddresses) | QoS 測定の決定に使用される可能性のあるデータセンターのコレクションを指定します。 後の「measurementServerAddresses」セクションを参照してください。 | 該当なし | 該当なし
-[**cloudComputePackage**](#cloudComputePackage) | ? | 該当なし | 該当なし
-[**arbitration**](#arbitration) | トーナメントで調停結果を送信するためのメンバーのタイムアウトを指定します。 後の「cloudComputePackage」セクションを参照してください。 | 該当なし | 該当なし
-[**broadcastViewerTitleIds**](#broadcastViewerTitleIds) | セッションの読み取りアクセス権を常に持つ必要があるタイトル ID のリストを指定します。 後の「broadcastViewerTitleIds」セクションを参照してください。 | 該当なし | 該当なし
-[**ownershipPolicies**](#ownershipPolicies) | セッションの所有権に関連するポリシーを指定します。 後の「OwnershipPolicies」セクションを参照してください。 | 該当なし | 該当なし
+[**機能**](#capabilities) | セッションの機能を指定します。 後の「capabilities」セクションを参照してください。 | なし | なし
+[**メトリック**](#metrics) | セッションのメンバーが満たす必要のある、遅延や帯域幅速度などの、タイトルで定義されているサービス品質要件のセットを指定します。  | なし | なし
+[**memberInitialization**](#memberInitialization) | 新しいメンバーがセッションの参加するときに適用されるタイムアウトと初期化の要件を指定します。 後の「memberInitialization」セクションを参照してください。 | なし | なし
+[**peerToPeerRequirements**](#peerToPeerRequirements) | ピア ツー ピア メッシュ接続のサービス要件のネットワーク品質を指定します。 後の「peerToPeerRequirements」セクションを参照してください。 |なし | なし
+[**peerToHostRequirements**](#peerToHostRequirements) | ピア ツー ホスト接続のサービス要件のネットワーク品質を指定します。 後の「peerToHostRequirements」セクションを参照してください。 | なし | なし
+[**measurementServerAddresses**](#measurementserveraddresses) | QoS 測定の決定に使用される可能性のあるデータセンターのコレクションを指定します。 後の「measurementServerAddresses」セクションを参照してください。 | なし | なし
+[**cloudComputePackage**](#cloudComputePackage) | ? | なし | なし
+[**調停**](#arbitration) | トーナメントで調停結果を送信するためのメンバーのタイムアウトを指定します。 後の「cloudComputePackage」セクションを参照してください。 | なし | なし
+[**broadcastViewerTitleIds**](#broadcastViewerTitleIds) | セッションの読み取りアクセス権を常に持つ必要があるタイトル ID のリストを指定します。 後の「broadcastViewerTitleIds」セクションを参照してください。 | なし | なし
+[**ownershipPolicies**](#ownershipPolicies) | セッションの所有権に関連するポリシーを指定します。 後の「OwnershipPolicies」セクションを参照してください。 | なし | なし
 
 
 ## <a name="capabilities"></a>capabilities
@@ -49,7 +49,7 @@ capabilities は、必要に応じてセッション テンプレートに設定
 connectivity | セッションがピア接続をサポートするかどうかを示します。 この値が false の場合、セッションはメトリックを有効にできず、セッション メンバーはその SecureDeviceAddress を設定できません。 大規模なセッションでは設定できません。 | true、false | false
 suppressPresenceActivityCheck | true の場合、プレゼンス チェックを無効にします。 | true、false | false
 gameplay | ロビーやマッチメイキングなどのセットアップ/メニュー時間ではなく実際のゲームプレイをセッションが表しているかどうかを示します。 true の場合、セッションはゲームプレイ モードです。 | true、false | false
-large | セッションが大規模なセッション (100 メンバーより多い) かどうかを示します。 Multiplayer Manager では大規模なセッションの使用はサポートされていません。 | true、false | false
+大 | セッションが大規模なセッション (100 メンバーより多い) かどうかを示します。 Multiplayer Manager では大規模なセッションの使用はサポートされていません。 | true、false | false
 connectionRequiredForActiveMembers | メンバーがアクティブになるために接続が必要かどうかを示します。 | true、false | false
 cloudCompute | クライアントがセッションに代わってクラウド コンピューティング インスタンスの割り当てを要求できるようにします。 | true、false | false
 autoPopulateServerCandidates | 'serverMeasurements' から 'serverConnectionStringCandidates' を自動的に計算して設定します。 この機能は大きなセッションには設定できません。 | true、false | false
@@ -61,7 +61,7 @@ arbitration | "arbitration" サーバー エントリを追加するサービス
 hasOwners | 特定のメンバーが所有者であることに基づくセキュリティ ポリシーがセッションにあることを示します。 | true、false | false
 searchable | セッションを検索ハンドルのターゲット セッションにできることを示します。 "userAuthorizationStyle" 機能が設定されていて "hasOwners" 機能が設定されていない場合は、"searchable" 機能を設定できません。 | true、false | false
 
-例:
+以下に例を示します。
 
 ```json
 "capabilities": {
@@ -94,7 +94,7 @@ bandwidthDown | | true、false | 「説明」を参照
 bandwidthUp | | true、false | 「説明」を参照
 custom | | true、false | 「説明」を参照
 
-例:
+以下に例を示します。
 ```json
 "metrics": {
     "latency": true,
@@ -112,13 +112,13 @@ custom | | true、false | 「説明」を参照
 
 要素  | 説明 | 有効値 | 既定値
 -- | -- | -- | --
-joinTimeout | メンバーがセッションに参加するまでに使用できるミリ秒数を示します。 参加に失敗したユーザーの予約は削除されます。</br>**注:** 既定の時間は通常のタイトル実行には十分ですが、MPSD フローでタイトルがデバッグ中である場合には参加タイムアウトになる可能性があります。 このような場合、セッションのこの既定値をオーバーライドし、値を増やしてください。| 0 から n | 10000
+joinTimeout | メンバーがセッションに参加するまでに使用できるミリ秒数を示します。 参加に失敗したユーザーの予約は削除されます。</br>**注:** 既定の期間は、通常のタイトルを実行するためだけで十分ですが、MPSD フロー中にタイトルがデバッグされている場合は、タイムアウトを結合になる可能性があります。 このような場合、セッションのこの既定値をオーバーライドし、値を増やしてください。| 0 から n | 10000
 measurementTimeout | セッション メンバーが測定値をアップロードするまでに使用できるミリ秒数を示します。 測定値のアップロードに失敗したメンバーには、失敗理由として "タイムアウト" が設定されます。  | 0 から n | 30000
 evaluationTimeout | 外部評価が測定値をアップロードするまでに使用できるミリ秒数を示します。 | 0 から n | 5000
 externalEvaluation | true の場合は、QoS の測定値に基づいて参加するメンバーの評価をタイトル コードが実行することを示します。 マルチプレイヤー サービスはどのような QoS ロジックも実行せず、初期化ステージを進める責任はタイトルにあります。 通常、タイトルはこれを行う必要はありません。 | true、false | false
 membersNeededToStart | セッションを開始するために必要なメンバーの数 (初期化エピソードの場合は 0 のみ)。 | 1 - maxMembersCount | 1
 
-例:
+以下に例を示します。
 ```json
 "memberInitialization": {
     "joinTimeout": 10000,  
@@ -137,7 +137,7 @@ membersNeededToStart | セッションを開始するために必要なメンバ
 latencyMaximum | 2 つのクライアント間の最大遅延 (ミリ秒単位)。 | 250
 bandwidthMinimum | 2 つのクライアント間の最小帯域幅 (kbps 単位)。 | 10000
 
-例:
+以下に例を示します。
 ```json
 "peerToPeerRequirements": {
     "latencyMaximum": 250,  
@@ -155,7 +155,7 @@ bandwidthDownMinimum | ホストからピアに送信される情報の最小帯
 bandwidthUpMinimum | ピアからホストに送信される情報の最小帯域幅 (kbps 単位)。 | | 1000
 hostSelectionMetric | ホストを選択するのにどのメトリックが使用されるかを示します。ホストを選択するために使用されるメトリックの種類を示します。 | bandwidthup、bandwidthdown、bandwidth、latency | latency
 
-例:
+以下に例を示します。
 ```json
 "peerToHostRequirements": {
     "latencyMaximum": 250,
@@ -179,7 +179,7 @@ hostSelectionMetric | ホストを選択するのにどのメトリックが使�
 -- | --
 secureDeviceAddress | サーバーの base-64 でエンコードされたセキュア デバイス アドレス
 
-例:
+以下に例を示します。
 ```json
 "measurementServerAddresses": {
     "server farm a": {
@@ -200,7 +200,7 @@ titleId | 割り当てるクラウド コンピューティング パッケー�
 gsiSet | 割り当てるクラウド コンピューティング パッケージの GSI セットを示します。
 variant | 割り当てるクラウド コンピューティング パッケージのバリアントを示します。
 
-例:
+以下に例を示します。
 ```json
 "cloudComputePackage": {
     "titleId": "4567",
@@ -212,12 +212,12 @@ variant | 割り当てるクラウド コンピューティング パッケー�
 ## <a name="arbitration"></a>arbitration
 判定プロセスのタイムアウトを指定します。 `arbitration` 機能が設定されている必要があります。 判定の開始時刻は、セッションの */servers/arbitration/constants/system/startTime* 要素で定義されています。
 
-タイムアウト | 説明 | 有効値 | 既定値
+タイムアウト | 説明 | 有効値 | 既定
 -- | -- | -- | --
 forfeitTimeout | 判定開始時刻 (TBD) からの時間を示します (ミリ秒単位)。 | 0 から n | 60000
-arbitrationTimeout | 判定結果がタイムアウトするまでの判定開始時刻からの時間を示します (ミリ秒単位)。この値を `forfeitTimeout` の値より小さくすることはできません。 | 0 から n | 300000
+arbitrationTimeout | 判定結果がタイムアウトする、判定開始時刻からの時間を示します (ミリ秒単位)。この値を `forfeitTimeout` 値より小さくすることはできません。 | 0 から n | 300000
 
-例:
+以下に例を示します。
 ```json
 "arbitration": {
     "forfeitTimeout": 60000,
@@ -229,7 +229,7 @@ arbitrationTimeout | 判定結果がタイムアウトするまでの判定開�
 
 ブロードキャスト セッションの読み取りアクセス権を常に持つ必要があるタイトルのタイトル ID の配列を指定します。
 
-例:
+以下に例を示します。
 ```json
 "broadcastViewerTitleIds" : ["34567", "8910"],
 ```
@@ -237,11 +237,11 @@ arbitrationTimeout | 判定結果がタイムアウトするまでの判定開�
 ## <a name="ownershippolicies"></a>ownershipPolicies
 最後の所有者がセッションを離れたときのセッションの処理方法を指定します。 `hasOwners` 機能が設定されている必要があります。
 
-所有権ポリシー | 説明 | 有効値 | 既定値
+所有権ポリシー | 説明 | 有効値 | 既定
 -- | -- | -- | --
 Migration | 最後の所有者がセッションを離れたときに発生する動作を示します。 移行ポリシーが "endsession" に設定されている場合、セッションは期限切れになります。 移行ポリシーが "oldest" に設定されている場合、参加時刻が最も古いメンバーがセッションの新しい所有者になります。 | "oldest"、"endsession" | "endsession"
 
-例:
+以下に例を示します。
 ```json
 "ownershipPolicies": {
      "migration": "oldest"
