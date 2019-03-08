@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 3df95e4807e8d3457143e67eebfb62011bf365cc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595027"
 ---
 # <a name="working-with-connected-storage-buffers"></a>接続ストレージのバッファーの操作
 
@@ -19,7 +19,7 @@ ms.locfileid: "8945443"
 
 ### <a name="to-get-a-pointer-to-a-buffer-instances-data"></a>Buffer インスタンスのデータへのポインターを取得するには
 
-1.  **reinterpret\_cast** を使用して Buffer インスタンスを **IUnknown** にキャストします。
+1.  使用**再解釈\_キャスト**バッファー インスタンスとしてキャストする**IUnknown**します。
 
 ```cpp
         IUnknown* unknown = reinterpret_cast<IUnknown*>(buffer);

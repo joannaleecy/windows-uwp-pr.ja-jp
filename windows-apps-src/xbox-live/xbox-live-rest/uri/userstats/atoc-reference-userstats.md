@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aadbf1a59f67dfdb55843002d1a4f534fc411bd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920873"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657817"
 ---
 # <a name="user-statistics-uris"></a>ユーザー統計 URI
  
-このセクションでは、*ユーザーの統計情報*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*ユーザーの統計情報*します。
  
-これらの Uri のドメインは、userstats.xboxlive.com です。
+これらの Uri のドメインとは、userstats.xboxlive.com です。
  
 <a id="ID4EDB"></a>
 
@@ -27,11 +27,11 @@ ms.locfileid: "8920873"
 
 [/batch](uri-batch.md)
 
-&nbsp;&nbsp;複数のプレイヤーの統計情報の複雑なバッチ要求は、複数のタイトルにアクセスします。
+&nbsp;&nbsp;プレーヤーの統計情報を複数の複雑なバッチ要求を複数のタイトルにアクセスします。
 
 [/users/xuid({xuid})/scids/{scid}/stats](uri-usersxuidscidsscidstats.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。
+&nbsp;&nbsp;サービス構成を指定したユーザーに代わってユーザー統計名のコンマ区切りリストによってスコープにアクセスします。
  
 <a id="ID4EMB"></a>
 
@@ -43,6 +43,6 @@ ms.locfileid: "8920873"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

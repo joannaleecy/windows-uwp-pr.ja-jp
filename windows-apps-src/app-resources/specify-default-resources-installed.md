@@ -1,5 +1,5 @@
 ---
-Description: If your app doesn't have resources that match the particular settings of a customer device, then the app's default resources are used. This topic explains how to specify what those default resources are.
+Description: アプリにユーザーのデバイスの特定の設定に一致するリソースがない場合、アプリの既定のリソースが使用されます。 このトピックでは、これらの既定のリソースの内容を指定する方法について説明します。
 title: アプリで使用する既定のリソースを指定する
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048905"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593987"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>アプリで使用する既定のリソースを指定する
 
@@ -28,8 +28,8 @@ ms.locfileid: "9048905"
 ## <a name="option-1-use-priconfigdefaultxml-to-specify-default-qualifier-values"></a>オプション 1. priconfig.default.xml を使用して、既定の修飾子の値を指定する
 
 1. Visual Studio で、新しい項目をプロジェクトに追加します。 XML ファイルを選択し、ファイルに `priconfig.default.xml` という名前を付けます。
-2. ソリューション エクスプローラーで、`priconfig.default.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
-3. ファイルの内容をこの XML に置き換えます
+2. ソリューション エクスプ ローラーで、`priconfig.default.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
+3. ファイルの内容をこの XML に置き換えます。
    ```xml
    <default>
       <qualifier name="Language" value="LANGUAGE-TAG(S)" />
@@ -68,7 +68,7 @@ ms.locfileid: "9048905"
 
 バックグラウンドで、Visual Studio は `MakePri.exe` というツールを起動し、パッケージ リソース インデックス (PRI) と呼ばれるファイルを生成します。このファイルには、既定のリソースを示すなど、アプリのすべてのリソースについての情報を記述しています。 このツールの詳細については、「[MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)」を参照してください。 Visual Studio は、構成ファイルを `MakePri.exe` に渡します。 `priconfig.default.xml` ファイルの内容が、その構成ファイルの `<default>` 要素として使用されます。この要素は、既定値と見なされる修飾子の値のセットを指定する部分です。 そのため、最終的には `priconfig.default.xml` を追加および編集すると、Visual Studio がアプリに対して生成し、そのアプリ パッケージに含めるパッケージ リソース インデックス ファイルの内容に影響します。
 
-**メモ** `<qualifier name="Language" ... />` 要素の値を変更するときは、その変更をアプリの既定の言語で同期する必要があります。 これは、アプリの PRI ファイルでインデックスが作成された言語リソースがアプリのマニフェストの既定の言語に一致するようにするためです。 `<qualifier name="Language" ... />` 要素の値は、`<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml` の内容に関してマニフェストの値を上書きしますが、そのファイルとアプリのマニフェストは一致する必要があります。
+**メモ**`<qualifier name="Language" ... />` 要素の値を変更するときは、その変更をアプリの既定の言語で同期する必要があります。 これは、アプリの PRI ファイルでインデックスが作成された言語リソースがアプリのマニフェストの既定の言語に一致するようにするためです。 `<qualifier name="Language" ... />` 要素の値は、`<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml` の内容に関してマニフェストの値を上書きしますが、そのファイルとアプリのマニフェストは一致する必要があります。
 
 ### <a name="using-a-different-file-name-than-priconfigdefaultxml"></a>`priconfig.default.xml` とは異なるファイル名の使用
 
@@ -98,10 +98,10 @@ ms.locfileid: "9048905"
 
 ファイルを保存して閉じ、プロジェクトをリビルドします。
 
-**メモ** `Language=` 値を変更するときは、マニフェスト デザイナーで (`Package.appxmanifest` を開いて) その変更をアプリの既定の言語に同期する必要があります)。
+**メモ**`Language=` 値を変更するときは、マニフェスト デザイナーで (`Package.appxmanifest` を開いて) その変更をアプリの既定の言語に同期する必要があります)。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
+* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)

@@ -8,23 +8,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 08c6dda8759a6e1452daf7cf0a3cd3e5db9ea1e6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930523"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590577"
 ---
 # <a name="data-type-conversion"></a>データ型の変換
 
 
 次のセクションでは、Direct3D がデータ型の間の変換を処理する方法について説明します。
 
-## <a name="span-iddatatypeterminologyspanspan-iddatatypeterminologyspanspan-iddatatypeterminologyspandata-type-terminology"></a><span id="Data_Type_Terminology"></span><span id="data_type_terminology"></span><span id="DATA_TYPE_TERMINOLOGY"></span>データ型に関する用語
+## <a name="span-iddatatypeterminologyspanspan-iddatatypeterminologyspanspan-iddatatypeterminologyspandata-type-terminology"></a><span id="Data_Type_Terminology"></span><span id="data_type_terminology"></span><span id="DATA_TYPE_TERMINOLOGY"></span>データ型の用語
 
 
 次に示す用語は、さまざまな形式の変換の特性を説明するために後で使用されます。
 
-| 用語  | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| 用語  | 定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | SNORM | 符号付き正規化整数。n ビットの 2 の補数をとり、最大値は 1.0f で (たとえば、5 ビット値 01111 は 1.0f にマップされます)、最小値は -1.0f です (たとえば、5 ビット値 10000 は -1.0f にマップされます)。 さらに、2 番目に小さい数値も -1.0f にマップされます (たとえば、5 ビット値 10001 は -1.0f にマップされます)。 したがって、-1.0f には 2 つの整数表現があります。 0.0f の整数表現は 1 つで、1.0f の整数表現も 1 つです。 その結果、-1.0f ～ 0.0f の範囲の均等間隔の浮動小数点値に対する整数表現のセットと、同様に 0.0f ～ 1.0f の範囲の数値表現の補集合が存在することになります。 |
 | UNORM | 符号なし正規化整数。n ビットの数値では、すべての桁が 0 の場合は 0.0f、すべての桁が 1 の場合は 1.0f を表します。 0.0f ～ 1.0f の均等な間隔の一連の浮動小数点値が表されます。 たとえば、2 ビットの UNORM は、0.0f、1/3、2/3、および 1.0f を表します。                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -37,12 +37,12 @@ ms.locfileid: "8930523"
 
 前述の各用語は、通常、"形式名修飾子" として使用されます。これらは、メモリ内のデータのレイアウト方法と、メモリからまたはシェーダーなどのパイプライン ユニットからのトランスポート パス (潜在的にフィルター処理を含む) で実行される変換の両方を表します。
 
-## <a name="span-idfloatingpointconversionspanspan-idfloatingpointconversionspanspan-idfloatingpointconversionspanfloating-point-conversion"></a><span id="Floating_Point_Conversion"></span><span id="floating_point_conversion"></span><span id="FLOATING_POINT_CONVERSION"></span>浮動小数点の変換
+## <a name="span-idfloatingpointconversionspanspan-idfloatingpointconversionspanspan-idfloatingpointconversionspanfloating-point-conversion"></a><span id="Floating_Point_Conversion"></span><span id="floating_point_conversion"></span><span id="FLOATING_POINT_CONVERSION"></span>ポイント変換を浮動小数点
 
 
 浮動小数点以外の表現との変換を含め、さまざまな表現間で浮動小数点の変換が発生する場合、必ず以下の規則を適用します。
 
-### <a name="span-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanconververting-from-a-higher-range-representation-to-a-lower-range-representation"></a><span id="Conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="CONVERVERTING_FROM_A_HIGHER_RANGE_REPRESENTATION_TO_A_LOWER_RANGE_REPRESENTATION"></span>範囲が広い表現から範囲が狭い表現への変換
+### <a name="span-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanspan-idconververtingfromahigherrangerepresentationtoalowerrangerepresentationspanconververting-from-a-higher-range-representation-to-a-lower-range-representation"></a><span id="Conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="conververting_from_a_higher_range_representation_to_a_lower_range_representation"></span><span id="CONVERVERTING_FROM_A_HIGHER_RANGE_REPRESENTATION_TO_A_LOWER_RANGE_REPRESENTATION"></span>低い範囲表現より高い範囲表記から Conververting
 
 -   別の浮動小数点形式への変換時には、ゼロへの丸めを使用します。 変換先が整数または固定小数点形式の場合、最も近い偶数への丸めを使用します。ただし、FLOAT から SNORM、FLOAT から UNORM、FLOAT から SRGB の各変換で使用する最も近い値への丸めなどのように、別の丸め動作を使用した変換が明示されている場合は除きます。 その他の例外としてシェーダー命令の ftoi と ftou があります。この場合は、ゼロへの丸めを使用します。 最後に、テクスチャーのサンプラーとラスタライザーで使用する浮動小数点から固定小数点への変換では、無限に理想的な精度に対する指定の許容誤差があります。この許容誤差は、ULP (Unit-Last-Place) で表します。
 -   変換元の値のうち、変換先のダイナミック レンジより大きいものは (たとえば、 大きな 32 ビットの浮動小数点値を 16 ビットの浮動小数点型 RenderTarget に書き込む場合)、表現可能な最大の値 (適切な符号付き) に変換されます。ただし、前述のゼロへの丸めにより、符号付きの無限大にはなりません。
@@ -50,13 +50,13 @@ ms.locfileid: "8930523"
 -   範囲が広い形式にある INF を範囲が狭い形式に変換する場合、範囲が狭い変換先の形式に該当の INF があればその INF に変換されます。 範囲が狭い変換先の形式に INF 表現がない場合、表現可能な最大の値に変換されます。 変換先の形式で利用可能な場合、符号は保持されます。
 -   範囲が広い形式にある非正規化数を範囲が狭い形式に変換する場合、その変換先の形式に非正規化表現があり、その表現への変換が可能であれば、該当の非正規化表現に変換されます。それ以外の場合、結果は 0 になります。 変換先の形式で利用可能な場合、符号ビットは保持されます。
 
-### <a name="span-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>範囲が狭い表現から範囲が広い表現への変換
+### <a name="span-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanspan-idconvertingfromalowerrangerepresentationtoahigherrangerepresentationspanconverting-from-a-lower-range-representation-to-a-higher-range-representation"></a><span id="Converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="converting_from_a_lower_range_representation_to_a_higher_range_representation"></span><span id="CONVERTING_FROM_A_LOWER_RANGE_REPRESENTATION_TO_A_HIGHER_RANGE_REPRESENTATION"></span>低い範囲表現から高い範囲表現に変換します。
 
 -   範囲が狭い形式にある NaN を範囲の広い形式に変換する場合、範囲が広い変換先の形式で利用可能であれば該当する NaN 表現に変換されます。 範囲が広い形式に NaN 表現がない場合は、0 に変換されます。
--   範囲が狭い形式にある INF を範囲の広い形式に変換する場合、範囲が広い変換先の形式で利用可能であれば該当する INF 表現に変換されます。 範囲が広い形式に INF 表現がない場合、表現可能な最大の値 (その形式の MAX\_FLOAT) に変換されます。 変換先の形式で利用可能な場合、符号は保持されます。
+-   範囲が狭い形式にある INF を範囲の広い形式に変換する場合、範囲が広い変換先の形式で利用可能であれば該当する INF 表現に変換されます。 高い形式は、INF 表現を持たない場合表現可能な最大値に変換されます (最大\_FLOAT 形式に)。 変換先の形式で利用可能な場合、符号は保持されます。
 -   範囲が狭い形式にある非正規化数を範囲が広い形式に変換する場合、変換先の形式の正規化表現に変換可能であれば、その表現に変換されます。変換が不可能な場合、範囲が広い形式に該当の非正規化表現があれば、その表現に変換されます。 範囲が広い形式に非正規化表現がなければ、0 に変換されます。 変換先の形式で利用可能な場合、符号は保持されます。 32 ビット浮動小数点型の数値は、非正規化表現のない形式として扱います (32 ビット浮動小数点型の演算における非正規化数を、符号が保持された 0 にフラッシュする必要があるからです)。
 
-## <a name="span-idintegerconversionspanspan-idintegerconversionspanspan-idintegerconversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>整数の変換
+## <a name="span-idintegerconversionspanspan-idintegerconversionspanspan-idintegerconversionspaninteger-conversion"></a><span id="Integer_Conversion"></span><span id="integer_conversion"></span><span id="INTEGER_CONVERSION"></span>整数型の変換
 
 
 次の表で、前述のさまざまな表現から別の表現への変換について説明します。 ここでは、Direct3D で実際に発生する変換のみを示します。
@@ -170,7 +170,7 @@ ms.locfileid: "8930523"
 <tr class="odd">
 <td align="left">SINT</td>
 <td align="left">よりビット数が多い UINT</td>
-<td align="left"><p>SINT からそれよりもビット数が多い UINTに変換する場合、負の値は 0 にクランプされます。 それ以外の数値は変換先の形式の LSB 側にコピーされ、余った MSB 側が 0 で埋められます。</p></td>
+<td align="left"><p>ビット数をシント ・から UINT に変換します。負の場合は、値が 0 に固定されます。 それ以外の数値は変換先の形式の LSB 側にコピーされ、余った MSB 側が 0 で埋められます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">UINT</td>
@@ -187,7 +187,7 @@ ms.locfileid: "8930523"
 
  
 
-## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定小数点整数の変換
+## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定のポイントの整数型の変換
 
 
 固定小数点整数とは単に、暗黙の小数点が固定位置にある一定のビット長の整数です。
@@ -234,8 +234,8 @@ Direct3D では、次の 2 つの状況で固定小数点整数表現を使用�
 <td align="left">固定小数点整数</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>浮動小数点型に変換する固定小数点表現があり、その合計ビット数は 24 ビット以下で、うち小数部は 23 ビット以下であるとします。 特定の固定小数点数 fxp を i.f の形式とします (i ビットの整数、f ビットの小数)。 浮動小数点型への変換は次に示す疑似コードのようになります。</p>
-<p>float result = (float) (fxp &gt; &gt; f) +///整数を抽出</p>
-((float) (fxp &amp; (2<sup>f</sup> - 1))/(2<sup>f</sup>));小数を抽出します。</td>
+<p>float result = (float)(fxp &gt;&gt; f) + // 整数を抽出する</p>
+((float) (fxp &amp; (2<sup>f</sup> - 1))/(2<sup>f</sup>));//extract 分数</td>
 </tr>
 </tbody>
 </table>

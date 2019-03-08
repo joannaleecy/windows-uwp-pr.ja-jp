@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、OpenGL、Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: b17f18876ebc2faead08d8c777c7502e937aef86
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944011"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662757"
 ---
 # <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>OpenGL ES 2.0 から Direct3D への移植の計画
 
@@ -21,7 +21,7 @@ ms.locfileid: "8944011"
 **重要な API**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
+-   [Visual C](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
 
@@ -36,7 +36,7 @@ OpenGL ES 2.0 から Direct3D 11 にグラフィックスを移植する際に�
 
 このドキュメントでは、OpenGL ES のコードと参照に 2.0 仕様の API のみを使います。 OpenGL ES 1.1 または 3.0 から移植する場合もこのコンテンツは有用ですが、OpenGL ES 2.0 のコード例とコンテキストの一部に馴染みがない可能性があります。
 
-これらのトピックの Direct3D 11 のサンプルでは、Microsoft Windows C++ とコンポーネント拡張 (CX) を使います。 このバージョンの C++ の構文について詳しくは、「[Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)」、「[ランタイム プラットフォーム向けのコンポーネント拡張](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)」、「[クイック リファレンス (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)」をご覧ください。
+これらのトピックの Direct3D 11 のサンプルでは、Microsoft Windows C++ とコンポーネント拡張 (CX) を使います。 このバージョンの C++ 構文の詳細については、読み取る[Visual C](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)、 [Component Extensions for Runtime Platforms](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)、および[クイック リファレンス (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)します。
 
 ## <a name="understand-your-hardware-requirements-and-resources"></a>ハードウェア要件とリソースについて
 
@@ -48,7 +48,7 @@ OpenGL ES 2.0 でサポートされる一連のグラフィックス処理機能
 ## <a name="understand-direct3d-feature-levels"></a>Direct3D の機能レベルについて
 
 
-Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能レベル" をサポートしています。 これらの機能レベルは、特定のグラフィックス機能とリソースの可用性を示します。 通常、ほとんどの OpenGL ES 2.0 プラットフォームで Direct3D 9.1 (機能レベル 9\_1) の機能セットがサポートされています。
+Direct3d11 では、ハードウェア「の機能レベル」9 から\_11 を 1 (Direct3D 9.1)\_1。 これらの機能レベルは、特定のグラフィックス機能とリソースの可用性を示します。 通常、ほとんどの OpenGL ES 2.0 プラットフォームは Direct3D 9.1 をサポート (機能レベル 9\_1) 機能のセット。
 
 ## <a name="review-directx-graphics-features-and-apis"></a>DirectX のグラフィックス機能と API の確認
 
@@ -56,7 +56,7 @@ Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能
 | API ファミリ                                                | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | DirectX Graphic Infrastructure (DXGI) は、グラフィックス ハードウェアと Direct3D の間のインターフェイスを提供します。 これは [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) と [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) の COM インターフェイスを使ってデバイス アダプターとハードウェア構成を設定します。 バッファーなどのウィンドウ リソースを作成および構成する場合に使います。 特に、[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) ファクトリ パターンは、スワップ チェーン (フレーム バッファーのセット) などのグラフィックス リソースを取得するために使われます。 DXGI がスワップ チェーンを所有するため、画面にフレームを表示するために [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) インターフェイスが使われます。 |
-| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D は API のセットであり、グラフィックス インターフェイスの仮想表示を提供し、それを使ってグラフィックスを描画できるようにします。 バージョン 11 は、機能的に OpenGL 4.3 とほぼ同等です  (一方、OpenGL ES 2.0 は機能的に DirectX9 および OpenGL 2.0 と似ていますが、OpenGL 3.0 の統合シェーダー パイプラインがあります)。重要な作業の大半は、個々のリソースとサブリソースへのアクセスを提供する ID3D11Device1 インターフェイスと、レンダリング コンテキストを提供する ID3D11DeviceContext1 インターフェイスで行われます。                                                                                                                                          |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D は API のセットであり、グラフィックス インターフェイスの仮想表示を提供し、それを使ってグラフィックスを描画できるようにします。 バージョン 11 は、機能的に OpenGL 4.3 とほぼ同等です  (OpenGL ES 2.0 では、その一方に似ています DirectX9、その代わり、および OpenGL 2.0 では、シェーダーのパイプラインを統合が OpenGL 3.0 の)面倒な作業のほとんどは、それぞれ個々 のリソースおよびサブリソース、レンダリングのコンテキストへのアクセスを提供する ID3D11Device1 と ID3D11DeviceContext1 インターフェイスで実行されます。                                                                                                                                          |
 | [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D は、GPU アクセラレーションが活用された 2D レンダリング用の API のセットです。 用途は OpenVG と似ています。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite は、GPU アクセラレーションが活用された高品質なフォント レンダリング用の API のセットです。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath は、一般的な線形代数と三角法の種類、値、関数を処理するための API とマクロのセットを提供します。 これらの型と関数は、Direct3D とそのシェーダーの操作に対応しています。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -86,7 +86,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 -   三角形の頂点の順序を逆にし、Direct3D が前から時計回りにそれらをスキャンするようにします。 たとえば、頂点のインデックスが OpenGL パイプラインで 0、1、2 のとき、Direct3D に 0、2、1 として渡します。
 -   効果的に z 軸座標を反転させるために、ビュー マトリックスを使って z 方向に -1.0f だけワールド空間を拡大します。 そのためには、ビュー マトリックスの位置 M31、M32、M33 にある値の符号を逆にします ([**Matrix**](https://msdn.microsoft.com/library/windows/desktop/bb147180) 型に移植するとき)。 M34 が 0 でない場合は、その符号を同様に逆にします。
 
-ただし、Direct3D は右手による座標系をサポートできます。 DirectXMath は、左手による座標系と右手による座標系を操作するさまざまな関数を提供します。 元のメッシュ データおよびマトリックスの処理の一部を維持するために使うことができます。 これには次のものがあります。
+ただし、Direct3D は右手による座標系をサポートできます。 DirectXMath は、左手による座標系と右手による座標系を操作するさまざまな関数を提供します。 元のメッシュ データおよびマトリックスの処理の一部を維持するために使うことができます。 具体的な内容を次に示します。
 
 | DirectXMath のマトリックス関数                                                   | 説明                                                                                                                 |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -94,7 +94,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 | [**XMMatrixLookAtRH**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | カメラの位置、上方向、焦点を使って、右手による座標系のビュー マトリックスを作成します。      |
 | [**XMMatrixLookToLH**](https://msdn.microsoft.com/library/windows/desktop/ee419971)                               | カメラの位置、上方向、カメラの向きを使って、左手による座標系のビュー マトリックスを作成します。  |
 | [**XMMatrixLookToRH**](https://msdn.microsoft.com/library/windows/desktop/ee419972)                               | カメラの位置、上方向、カメラの向きを使って、右手による座標系のビュー マトリックスを作成します。 |
-| [**XMMatrixOrthographicLH**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | 左手による座標系の正投影マトリックスを作成します。                                                 |
+| [**Xmmatrixorthographiclh 関数**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | 左手による座標系の正投影マトリックスを作成します。                                                 |
 | [**XMMatrixOrthographicOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | 左手による座標系のカスタム正投影マトリックスを作成します。                                           |
 | [**XMMatrixOrthographicOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | 右手による座標系のカスタム正投影マトリックスを作成します。                                          |
 | [**XMMatrixOrthographicRH**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | 右手による座標系の正投影マトリックスを作成します。                                                |
@@ -110,8 +110,8 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 ## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 から Direct3D 11 への移植についてよく寄せられる質問
 
 
--   質問: "通常、自分の OpenGL コードで特定の文字列やパターンを検索し、それを対応する Direct3D の要素と置き換えることはできますか"
--   回答: いいえ。 OpenGL ES 2.0 と Direct3D 11 は、グラフィックス パイプライン モデルの異なる世代に基づいています。 レンダリング コンテキストやシェーダーのインスタンス化など、概念と API の間に表面的な類似点はありますが、このガイダンスと Direct3D 11 のリファレンスを調べて、1 対 1 のマッピングを試みる代わりに、パイプラインを再作成するときに最適な選択ができるようにしてください。 ただし、GLSL から HLSL に移植する場合、GLSL の変数、組み込みメソッド、関数の一連の共通エイリアスを作成すると、移植が容易になるだけでなく、1 ペアのシェーダー コード ファイルだけを維持することができます。
+-   質問:「一般は検索特定の文字列またはパターン OpenGL コードにして、Direct3D を置き換えることでしょうか。」
+-   回答:いいえ。 OpenGL ES 2.0 と Direct3D 11 は、グラフィックス パイプライン モデルの異なる世代に基づいています。 レンダリング コンテキストやシェーダーのインスタンス化など、概念と API の間に表面的な類似点はありますが、このガイダンスと Direct3D 11 のリファレンスを調べて、1 対 1 のマッピングを試みる代わりに、パイプラインを再作成するときに最適な選択ができるようにしてください。 ただし、GLSL から HLSL に移植する場合、GLSL の変数、組み込みメソッド、関数の一連の共通エイリアスを作成すると、移植が容易になるだけでなく、1 ペアのシェーダー コード ファイルだけを維持することができます。
 
  
 

@@ -4,7 +4,7 @@ description: システムがアプリを中断するときに重要なアプリ�
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,23 +12,23 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: e440812861cf853810f9fee597c807b439dda426
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044147"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599047"
 ---
 # <a name="handle-app-suspend"></a>アプリの中断の処理
 
 **重要な API**
 
-- [**中断**](https://msdn.microsoft.com/library/windows/apps/br242341)
+- [**中断します。**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
 システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。 このトピックの例では、[**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントのイベント ハンドラーを登録して文字列をファイルに保存します。
 
 ## <a name="register-the-suspending-event-handler"></a>中断イベント ハンドラーを登録する
 
-[**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントを処理するために登録します。このイベントは、システムがアプリを中断する前にアプリでアプリケーション データを保存する必要があることを示します。
+[  **Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントを処理するために登録します。このイベントは、システムがアプリを中断する前にアプリでアプリケーション データを保存する必要があることを示します。
 
 ```csharp
 using System;
@@ -131,7 +131,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 ## <a name="remarks"></a>注釈
 
-ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
+ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に中断前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
 
 システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 中断されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドでアプリケーション データを復元する必要があります。
 
@@ -139,19 +139,19 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 ハンドラー内で非同期呼び出しを行う場合、制御はその非同期呼び出しからすぐに戻ります。 つまり、非同期呼び出しがまだ完了していない場合でも、イベント ハンドラーから制御が戻り、アプリを次の状態に移行できます。 イベント ハンドラーに渡される [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) オブジェクトの [**GetDeferral**](https://aka.ms/Kt66iv) メソッドを使用して、[**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) オブジェクトの [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) メソッドを呼び出した後まで中断を延期することができます。
 
-遅延では、アプリが終了する前に、実行する必要があるコードの量を増やす必要はありません。 遅延の *Complete* メソッドが呼び出されるか、または期限になるか、*どちらか早い方*まで、終了が延期されるだけです。 Suspending 状態使用[**ExtendedExecutionSession**時間を延長するには](run-minimized-with-extended-execution.md)
+遅延では、アプリが終了する前に、実行する必要があるコードの量を増やす必要はありません。 遅延の *Complete* メソッドが呼び出されるか、または期限になるか、*どちらか早い方*まで、終了が延期されるだけです。 Suspending 状態のときに延長するには、[**ExtendedExecutionSession**](run-minimized-with-extended-execution.md) を使用します
 
 > [!NOTE]
-> Windows 8.1 でシステムの応答性を高めるためには、アプリは中断した後、リソースに優先順位の低いアクセスを与えられます。 この新しい優先度をサポートするために、中断操作のタイムアウトが延長され、アプリには通常の優先度と同程度のタイムアウト (Windows では 5 秒、Windows Phone では 1 ～ 10 秒) が与えられます。 このタイムアウトの時間枠を延長したり、変更したりすることはできません。
+> Windows 8.1 でシステムの応答性を高めるためには、アプリは一時停止している後に、リソースに低優先度へのアクセスを与えられます。 この新しい優先度をサポートするために、中断操作のタイムアウトが延長され、アプリには通常の優先度と同程度のタイムアウト (Windows では 5 秒、Windows Phone では 1 ～ 10 秒) が与えられます。 このタイムアウトの時間枠を延長したり、変更したりすることはできません。
 
-**Visual Studio によるデバッグに関する注意事項:** Visual Studio は、Visual Studio デバッガーにアタッチされているアプリを Windows が中断するのを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。 アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。
+**Visual Studio を使用したデバッグに関する注意事項:** Visual Studio では、Windows がデバッガーにアタッチされているアプリを中断することを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。 アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリのライフサイクル](app-lifecycle.md)
-* [アプリのアクティブ化の処理](activate-an-app.md)
-* [アプリの再開の処理](resume-an-app.md)
-* [起動、中断、再開の UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [アプリのアクティブ化を処理します。](activate-an-app.md)
+* [アプリケーションの再開を処理します。](resume-an-app.md)
+* [UX ガイドラインに起動、中断、および再開](https://msdn.microsoft.com/library/windows/apps/dn611862)
 * [延長実行](run-minimized-with-extended-execution.md)
 
  

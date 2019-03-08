@@ -1,21 +1,21 @@
 ---
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。
+description: Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリの新規サブミッションを作成できます。
 title: アプリの申請の作成
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請の作成
 ms.localizationpriority: medium
 ms.openlocfilehash: a90be116a9d85eeae7cb7c44c2bbfe96da472f65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943956"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594447"
 ---
 # <a name="create-an-app-submission"></a>アプリの申請の作成
 
-パートナー センター アカウントに登録されているアプリの新しい申請を作成する、Microsoft Store 申請 API でこのメソッドを使います。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
+Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリの新規サブミッションを作成できます。 このメソッドを使って新しい申請を正常に作成したら、[申請を更新](update-an-app-submission.md)して申請データに必要な変更を加え、取り込んで公開するために[申請をコミット](commit-an-app-submission.md)します。
 
 このメソッドが Microsoft Store 申請 API を使ったアプリの申請の作成プロセスにどのように適合するかについては、「[アプリの申請の管理](manage-app-submissions.md)」をご覧ください。
 
@@ -39,7 +39,7 @@ ms.locfileid: "8943956"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -186,14 +186,14 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を作成できませんでした。 |
-| 409  | アプリの現在の状態が原因、申請を作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | アプリの現在の状態であるため、送信を作成できませんでしたまたはアプリであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アプリの申請の取得](get-an-app-submission.md)
-* [アプリの申請のコミット](commit-an-app-submission.md)
-* [アプリの申請の更新](update-an-app-submission.md)
-* [アプリの申請の削除](delete-an-app-submission.md)
-* [アプリの申請の状態の取得](get-status-for-an-app-submission.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アプリの提出を取得します。](get-an-app-submission.md)
+* [アプリの提出をコミットします。](commit-an-app-submission.md)
+* [アプリの提出を更新します。](update-an-app-submission.md)
+* [アプリの提出を削除します。](delete-an-app-submission.md)
+* [アプリの送信の状態を取得します。](get-status-for-an-app-submission.md)

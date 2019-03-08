@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, social manager, 例
 ms.localizationpriority: medium
 ms.openlocfilehash: 5039d9ed205cadfee3b2e64527a1f58f1624accc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942959"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592057"
 ---
 # <a name="programming-social-services"></a>ソーシャル サービスのプログラミング
 

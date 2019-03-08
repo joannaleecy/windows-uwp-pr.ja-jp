@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a0bff43cfd26c43bb5f75f37a66c55e556429470
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936132"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593667"
 ---
-# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>ストリーミング リソースのプロセスとデバイス間での共有
+# <a name="span-iddirect3dconceptsstreaming-resource-cross-process-and-device-sharingspanstreaming-resource-cross-process-and-device-sharing"></a><span id="direct3dconcepts.streaming-resource-cross-process-and-device-sharing"></span>ストリーミング プロセス間のリソースとデバイスの共有
 
 
 タイル プールは、従来のリソースと同様に、他のプロセスと共有することができます。 タイル プールを参照するストリーミング リソースは、デバイスやプロセス間で共有できません。 ただし、個々のプロセスで独自のストリーミング リソースを作成し、これらのストリーミング リソース間で共有されるタイル プールにマップできます。
@@ -37,7 +37,7 @@ ms.locfileid: "8936132"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">ステンシルの書式はストリーミング リソースでサポートされない</a></p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">ステンシル形式のストリームのリソースではサポートされていません</a></p></td>
 <td align="left"><p>ステンシルを含む書式は、ストリーミング リソースではサポートされません。</p></td>
 </tr>
 </tbody>
@@ -48,7 +48,7 @@ ms.locfileid: "8936132"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースの作成](creating-streaming-resources.md)
+[ストリーミングのリソースを作成します。](creating-streaming-resources.md)
 
  
 

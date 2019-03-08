@@ -1,24 +1,24 @@
 ---
-title: Device Portal ネットワーク資格情報 API リファレンス
-description: 追加、削除、またはネットワーク資格情報をプログラムで更新する方法について説明します。
+title: デバイス ポータル ネットワーク資格情報 API リファレンス
+description: ネットワーク資格情報をプログラムにより追加、削除、更新する方法について説明します。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: ac30d8db830c51ee40653feb49b443ed44502617
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934687"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659217"
 ---
 # <a name="network-credentials-api-reference"></a>ネットワーク資格情報 API リファレンス
-追加、削除、またはこの REST API を使用して、開発機で保存されているネットワーク資格情報を更新することができます。
+この REST API を使って、開発キットで保存されているネットワーク資格情報を追加、削除、更新することができます。
 
-## <a name="get-existing-credentials"></a>既存の資格情報を取得します。
+## <a name="get-existing-credentials"></a>既存の資格情報を取得する
 
 **要求**
 
-そのネットワーク共有の資格情報を持っているユーザーのユーザー名と共に保存されている共有の一覧を取得できます。
+そのネットワーク共有の資格情報を持っているユーザーのユーザー名と共に、保存されている共有フォルダーの一覧を取得することができます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -40,8 +40,8 @@ GET | /ext/networkcredential
 
 - 次の形式の JSON 配列。
 * 資格情報
-  * ネットワーク パスのネットワーク共有へのパス。
-  * ユーザー名の資格情報を保存しているユーザー名。
+  * ネットワーク パス - ネットワーク共有へのパス。
+  * ユーザー名 - 資格情報を保存しているユーザー名。
 
 **状態コード**
 
@@ -53,7 +53,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## <a name="add-or-update-stored-credentials-for-a-user"></a>追加またはユーザーの資格情報を更新します。
+## <a name="add-or-update-stored-credentials-for-a-user"></a>保存されたユーザーの資格情報を追加または更新する
 
 **要求**
 
@@ -67,7 +67,7 @@ POST | /ext/networkcredential
 
 | URI パラメーター      | 説明     | 
 | ------------------ |-----------------|
-| ネットワーク パス        | 共有へのネットワーク パスにアクセスする資格情報が追加されます。 |
+| ネットワーク パス        | アクセスするために資格情報を追加する共有へのネットワーク パス。 |
 <br>
 
 **要求ヘッダー**
@@ -76,10 +76,10 @@ POST | /ext/networkcredential
 
 **要求本文**
 
-- 次の JSON 要素:
-* ネットワーク パスのネットワーク共有へのパス。
-* Username: 下の資格情報を格納するユーザー名。
-* このユーザーの新規または更新されたパスワードのパスワード。
+- 次の JSON 要素
+* ネットワーク パス - ネットワーク共有へのパス。
+* ユーザー名 - 資格情報を保存するユーザー名。
+* パスワード - このユーザーの新規または更新されたパスワード。
 
 **応答**   
 
@@ -95,7 +95,7 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 
-## <a name="remove-stored-credentials-for-a-share"></a>共有に保存された資格情報を削除します。
+## <a name="remove-stored-credentials-for-a-share"></a>共有の保存された資格情報を削除します。
 
 **要求**
 
@@ -109,7 +109,7 @@ DELETE | /ext/networkcredential
 
 | URI パラメーター      | 説明     | 
 | ------------------ |-----------------|
-| ネットワーク パス        | 保存された資格情報を削除する共有へのネットワーク パス。 |
+| ネットワーク パス        | 保存された資格情報の削除元の共有へのネットワーク パス。 |
 <br>
 
 **要求ヘッダー**
@@ -130,12 +130,12 @@ DELETE | /ext/networkcredential
 
 HTTP 状態コード      | 説明
 :------     | :-----
-204 | 資格情報を要求が成功しました。
+204 | 資格情報への要求が成功しました。
 4XX | エラー コード
 5XX | エラー コード
 
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox
 

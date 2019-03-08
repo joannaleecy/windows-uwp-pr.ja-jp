@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d88989be04704395c056f1bae058e2aefd1a2a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940434"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591287"
 ---
 # <a name="specular-light-maps"></a>反射ライト マップ
 
@@ -24,7 +24,7 @@ ms.locfileid: "8940434"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[テクスチャでのライト マッピング](light-mapping-with-textures.md)
+[テクスチャのライトのマッピング](light-mapping-with-textures.md)
 
  
 

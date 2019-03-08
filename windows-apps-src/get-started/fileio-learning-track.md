@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, ファイル, ファイ�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045531"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662507"
 ---
 # <a name="work-with-files"></a>ファイルの操作
 
@@ -53,15 +53,15 @@ var listOfStrings = new List<string> { "line1", "line2", "line3" };
 await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entry in the list is written to the file on its own line.
 ```
 
-まず、ファイルがある場所を特定します。 `Windows.Storage.ApplicationData.Current.LocalFolder`  は、アプリのインストール時にアプリ用に作成されるローカル データ フォルダーへのアクセスを提供します。 アプリでアクセスできるフォルダーの詳細については、「[ファイル システムへのアクセス](#access-the-file-system)」を参照してください。
+まず、ファイルがある場所を特定します。 `Windows.Storage.ApplicationData.Current.LocalFolder` インストールされているときに、アプリの作成は、ローカル データ フォルダーへのアクセスを提供します。 アプリでアクセスできるフォルダーの詳細については、「[ファイル システムへのアクセス](#access-the-file-system)」を参照してください。
 
 次に、**StorageFolder** を使用してファイルを作成します (またはファイルが既に存在する場合は開きます)。
 
-**FileIO** クラスは、ファイルにテキストを書き込むための便利な方法です。 `FileIO.WriteTextAsync()`  は、ファイルのすべての内容を指定されたテキストで置き換えます。 `FileIO.AppendLinesAsync()`  は、文字列のコレクションをファイルに追加します。1 つの文字列が 1 行に書き込まれます。
+**FileIO** クラスは、ファイルにテキストを書き込むための便利な方法です。 `FileIO.WriteTextAsync()` 指定されたテキスト ファイルの内容全体を置き換えます。 `FileIO.AppendLinesAsync()` ファイルの 1 行につき 1 つの文字列を書き込むには、文字列のコレクションを追加します。
 
 ## <a name="read-text-from-a-file"></a>ファイルからのテキストの読み取り
 
-ファイルの書き込みと同様に、ファイルの読み取りは、ファイルの場所を指定することから始めます。 上の例と同じ場所を使用します。 その内容を読み取る**FileIO**クラスを使用します。
+ファイルの書き込みと同様に、ファイルの読み取りは、ファイルの場所を指定することから始めます。 上の例と同じ場所を使用します。 使用し、 **FileIO**クラスをその内容を読み取る。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -70,7 +70,7 @@ Windows.Storage.StorageFile file = await storageFolder.GetFileAsync("test.txt");
 string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-ファイルの各行を以下を含むコレクション内の個々の文字列に読み取ることもできます。 `IList<string> contents = await Windows.Storage.FileIO.ReadLinesAsync(sampleFile);`
+持つコレクション内の個々 の文字列に、ファイルの各行を参照することもできます。 `IList<string> contents = await Windows.Storage.FileIO.ReadLinesAsync(sampleFile);`
 
 ## <a name="access-the-file-system"></a>ファイル システムへのアクセス
 
@@ -78,15 +78,15 @@ UWP プラットフォームでは、フォルダー アクセスは、ユーザ
 
 ### <a name="app-folders"></a>アプリのフォルダー
 
-UWP アプリがインストールされると、特にアプリのローカル ファイル、移動ファイル、一時ファイルを格納するための複数のフォルダーが c:\users\<user name>\AppData\Local\Packages\<app package identifier>\ に作成されます。 アプリは、これらのフォルダーにアクセスするためにすべての機能を宣言する必要はありません。また、これらのフォルダーは他のアプリがアクセスすることはできません。 アプリがアンインストールされると、これらのフォルダーも削除されます。
+UWP アプリがインストールされているときにいくつかのフォルダー c:\users 下に作成\<ユーザー名 > \AppData\Local\Packages\<アプリのパッケージ id > \ その他のものをアプリのローカル、移動、および一時ファイルを格納します。 アプリは、これらのフォルダーにアクセスするためにすべての機能を宣言する必要はありません。また、これらのフォルダーは他のアプリがアクセスすることはできません。 アプリがアンインストールされると、これらのフォルダーも削除されます。
 
 よく使用されるアプリ フォルダーをいくつか次に示します。
 
-- **LocalState**: 現在のデバイスに対してローカルなデータ用です。 デバイスがバックアップされると、このディレクトリ内のデータは OneDrive のバックアップ イメージに保存されます。 ユーザーがデバイスをリセットするか、置き換えると、データは復元されます。 `Windows.Storage.ApplicationData.Current.LocalFolder.` でこのフォルダーにアクセスします。OneDrive にバックアップしないローカル データを **LocalCacheFolder** に保存します。このフォルダーには `Windows.Storage.ApplicationData.Current.LocalCacheFolder` でアクセスできます。
+- **LocalState**:データの現在のデバイスに対してローカルです。 デバイスがバックアップされると、このディレクトリ内のデータは OneDrive のバックアップ イメージに保存されます。 ユーザーがデバイスをリセットするか、置き換えると、データは復元されます。 `Windows.Storage.ApplicationData.Current.LocalFolder.` でこのフォルダーにアクセスします。OneDrive にバックアップしないローカル データを **LocalCacheFolder** に保存します。このフォルダーには `Windows.Storage.ApplicationData.Current.LocalCacheFolder` でアクセスできます。
 
-- **RoamingState**: アプリがインストールされているすべてのデバイスでレプリケートされる必要があるデータ用です。 Windows では、ローミングされるデータの量を制限しているため、ここにはユーザー設定と小さなファイルのみ保存します。 `Windows.Storage.ApplicationData.Current.RoamingFolder` で移動フォルダーにアクセスします。
+- **RoamingState**:データのアプリがインストールされているすべてのデバイスでレプリケートする必要があります。 Windows では、ローミングされるデータの量を制限しているため、ここにはユーザー設定と小さなファイルのみ保存します。 `Windows.Storage.ApplicationData.Current.RoamingFolder` で移動フォルダーにアクセスします。
 
-- **TempState**: アプリが実行されていないときに削除される可能性があるデータ用です。 `Windows.Storage.ApplicationData.Current.TemporaryFolder` でこのフォルダーにアクセスします。
+- **TempState**:アプリが実行されていないときに削除する可能性のあるデータです。 `Windows.Storage.ApplicationData.Current.TemporaryFolder` でこのフォルダーにアクセスします。
 
 ### <a name="access-the-rest-of-the-file-system"></a>残りのファイル システムへのアクセス
 
@@ -119,7 +119,7 @@ API の簡単な概要と、ファイルやフォルダーの使用を開始す�
 | [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) |  ユーザーがフォルダーを選択できるようにし、そのフォルダーの **StorageFolder** を返します。 このようにして、既定ではアプリがアクセスできない場所にアクセスします。 |
 | [Windows.Storage.Pickers.FileOpenPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker) | ユーザーが開くファイルを選択できるようにし、そのファイルの **StorageFile** を返します。 このようにして、既定ではアプリがアクセスできないファイルにアクセスします。 |
 | [Windows.Storage.Pickers.FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker) | ユーザーがファイルのファイル名、拡張子、および記憶域の場所を選択できるようにします。 **StorageFile** を返します。 このようにして、既定ではアプリがアクセスできない場所にファイルを保存します。 |
-|  [Windows.Storage.Streams namespace](https://docs.microsoft.com/uwp/api/windows.storage.streams) | ストリームの読み取りと書き込みについて説明します。 特に、[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) クラスと [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) クラスに注目します。これらのクラスはバッファー、バイト、整数、GUID、TimeSpans などの読み取りと書き込みを行います。 |
+|  [Windows.Storage.Streams 名前空間](https://docs.microsoft.com/uwp/api/windows.storage.streams) | ストリームの読み取りと書き込みについて説明します。 特に、[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) クラスと [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) クラスに注目します。これらのクラスはバッファー、バイト、整数、GUID、TimeSpans などの読み取りと書き込みを行います。 |
 
 ### <a name="useful-docs"></a>役立つドキュメント
 
@@ -127,22 +127,22 @@ API の簡単な概要と、ファイルやフォルダーの使用を開始す�
 |-------|----------------|
 | [Windows.Storage Namespace](https://docs.microsoft.com/uwp/api/windows.storage) | API リファレンス ドキュメントです。 |
 | [ファイル、フォルダー、およびライブラリ](https://docs.microsoft.com/windows/uwp/files/) | 概念に関するドキュメントです。 |
-| [ファイルの作成、書き込み、および読み取り](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | テキスト、バイナリ データ、およびストリームの作成、読み取り、書き込みについて説明します。 |
-| [アプリ データのローカルへの保存に関する概要](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | ローカル データを保存するためのベスト プラクティスだけでなく、LocalSettings および LocalCache フォルダーの目的について説明します。 |
-| [アプリのデータのローミングの概要](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | アプリのデータのローミングを使用する方法に関する 2 部で構成される資料です。 |
-| [アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094) | アプリの設計時にはデータ ローミングのガイドラインに従ってください。 |
+| [作成、書き込み、およびファイルの読み取り](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | テキスト、バイナリ データ、およびストリームの作成、読み取り、書き込みについて説明します。 |
+| [開始されたファイルを格納するアプリ データをローカルでの取得](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | ローカル データを保存するためのベスト プラクティスだけでなく、LocalSettings および LocalCache フォルダーの目的について説明します。 |
+| [ローミング アプリ データの概要](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | アプリのデータのローミングを使用する方法に関する 2 部で構成される資料です。 |
+| [アプリケーション データを移動するためのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094) | アプリの設計時にはデータ ローミングのガイドラインに従ってください。 |
 | [設定と他のアプリ データを保存して取得する](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | ローカル フォルダー、移動フォルダー、および一時フォルダーなど、さまざまなアプリのデータ ストアの概要を示します。 「[ローミング データ](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)」セクションで、デバイス間でローミングされるデータの書き込みに関する追加の情報とガイドラインを参照してください。 |
-| [ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | アプリでアクセスできるファイル システムの場所に関する情報です。 |
-| [ピッカーでファイルやフォルダーを開く](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | ピッカーの UI を介してユーザーが決定できるようにすることでファイルやフォルダーにアクセスする方法を示します。 |
+| [ファイルのアクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | アプリでアクセスできるファイル システムの場所に関する情報です。 |
+| [ピッカーを使用してファイルとフォルダーを開く](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | ピッカーの UI を介してユーザーが決定できるようにすることでファイルやフォルダーにアクセスする方法を示します。 |
 | [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | ストリームの読み取りと書き込みに使用される型です。 |
-| [ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオを検索したりする方法について説明します。 |
+| [ファイルとフォルダー、音楽、画像、およびビデオ ライブラリ](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオを検索したりする方法について説明します。 |
 
 ## <a name="useful-code-samples"></a>役立つコード サンプル
 
 | コード サンプル | 説明 |
 |-----------------|---------------|
-| [アプリケーション データ サンプル](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | アプリケーション データ API を使って、ユーザーごとに特有のデータを保存、取得する方法を示します。 |
+| [アプリケーション データのサンプル](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | アプリケーション データ API を使って、ユーザーごとに特有のデータを保存、取得する方法を示します。 |
 | [ファイル アクセスのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | ファイルを作成、読み取り、書き込み、コピー、および削除する方法を示します。 |
 | [ファイル ピッカーのサンプル](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | ユーザーが UI で選択できるようにしてファイルやフォルダーにアクセスする方法、ユーザーが保存するファイルの名前、ファイルの種類、場所を指定できるようにファイルを保存する方法を示します。 |
-| [JSON サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | [Windows.Data.Json namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json) を使用して、JavaScript Object Notation (JSON) オブジェクト、配列、文字列、数値、ブール値をエンコードおよびデコードする方法を示します。 |
-| [その他のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで、**[Files, folder, and libraries] (ファイル、フォルダー、およびライブラリ)** を選択します。 |
+| [JSON のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | [Windows.Data.Json namespace](https://docs.microsoft.com/uwp/api/Windows.Data.Json) を使用して、JavaScript Object Notation (JSON) オブジェクト、配列、文字列、数値、ブール値をエンコードおよびデコードする方法を示します。 |
+| [追加のコード サンプル](https://developer.microsoft.com//windows/samples) | [カテゴリ] ドロップダウン リストで、**[Files, folder, and libraries] (ファイル、フォルダー、およびライブラリ)** を選択します。 |

@@ -1,23 +1,23 @@
 ---
-title: トライアングル ストリップ
-description: トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしがつながっているため、アプリケーションでは、各三角形の 3 つの頂点すべてを繰り返し指定する必要がありません。
+title: 三角形ストリップ
+description: トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしは接続されているため、アプリケーションは三角形ごとに 3 つすべての頂点を繰り返し指定する必要がありません。
 ms.assetid: BACC74C5-14E5-4ECC-9139-C2FD1808DB82
 keywords:
-- トライアングル ストリップ
+- 三角形ストリップ
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a420ed5ed8f498eb9c900cbacb1b766c4a01214
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945904"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599287"
 ---
-# <a name="triangle-strips"></a>トライアングル ストリップ
+# <a name="triangle-strips"></a>三角形ストリップ
 
 
-トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしがつながっているため、アプリケーションでは、各三角形の 3 つの頂点すべてを繰り返し指定する必要がありません。 たとえば、次のトライアングル ストリップの定義に必要な頂点は 7 個だけです。
+トライアングル ストリップとは、接続された一連の三角形を指します。 三角形どうしは接続されているため、アプリケーションは三角形ごとに 3 つすべての頂点を繰り返し指定する必要がありません。 たとえば、次のトライアングル ストリップの定義に必要な頂点は 7 個だけです。
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
 
@@ -61,7 +61,7 @@ CUSTOMVERTEX Vertices[] =
 d3dDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP, 0, 4);
 ```
 
-## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>ポリゴン
+## <a name="span-idpolygonsspanspan-idpolygonsspanspan-idpolygonsspanpolygons"></a><span id="Polygons"></span><span id="polygons"></span><span id="POLYGONS"></span>多角形
 
 
 多くの場合、トライアングル ストリップはポリゴンの構築に使われます。 ポリゴンとは、3 つ以上の頂点を結んで描かれる閉じた 3D 図形です。 最も単純なポリゴンは三角形です。 三角形の 3 つの頂点はすべて同一平面にあることが保障されるため、Microsoft Direct3D では、ほとんどのポリゴンが三角形を使って構成されます。 非平面の頂点のレンダリングは効率的ではありません。 複数の三角形を結合することで、大きい複雑なポリゴンやメッシュを形成できます。

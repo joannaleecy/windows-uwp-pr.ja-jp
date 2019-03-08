@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d8a6e118811203fd34c310840e8688c2255c6beb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936936"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660047"
 ---
 # <a name="post-usersxuidxuidfeedback"></a>POST (/users/xuid({xuid})/feedback)
-シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
+シェルを使用するのではなく、ゲームのフィードバックのオプションを追加したい場合、タイトルから使用されます。 これらの Uri のドメインが`reputation.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EEB)
   * [要求本文](#ID4ENC)
   * [必要なヘッダー](#ID4EDE)
-  * [Authorization](#ID4EXF)
-  * [HTTP ステータス コード](#ID4EEG)
+  * [承認](#ID4EXF)
+  * [HTTP 状態コード](#ID4EEG)
   * [応答本文](#ID4EZH)
  
 <a id="ID4EZ"></a>
@@ -30,19 +30,19 @@ ms.locfileid: "8936936"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
+| xuid| ulong| Xbox ユーザー ID (XUID)、ユーザーが報告されているのです。| 
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 101 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。| 
+| X RequestedServiceVersion|  | この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 ［既定値］:101.| 
   
 <a id="ID4ENC"></a>
 
@@ -52,9 +52,9 @@ ms.locfileid: "8936936"
 <a id="ID4EVC"></a>
 
  
-### <a name="required-members"></a>必要なメンバー 
+### <a name="required-members"></a>必須メンバー 
  
-要求は、[フィードバック](../../json/json-feedback.md)のオブジェクトを含める必要があります。 
+要求に含める必要があります、[フィードバック](../../json/json-feedback.md)オブジェクト。 
   
 <a id="ID4EED"></a>
 
@@ -66,7 +66,7 @@ ms.locfileid: "8936936"
 <a id="ID4ETD"></a>
 
  
-### <a name="sample-request"></a>要求の例 
+### <a name="sample-request"></a>要求のサンプル 
  
 
 ```cpp
@@ -92,45 +92,45 @@ ms.locfileid: "8936936"
  
 ## <a name="required-headers"></a>必要なヘッダー
  
-次のヘッダーは、Xbox Live サービス要求を行ったとき必要があります。
+Xbox Live サービス要求を行うときに、次のヘッダーが必要です。
  
 | <b>ヘッダー</b>| <b>値</b>| <b>Deacription</b>| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 101| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。| 
+| x-xbl-contract-version| 101| API コントラクトのバージョン。| 
+| Authorization| XBL3.0 x = [ハッシュ] です。[トークン]| STS の認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。| 
 Content-Type| 
 application/json| 
-送信されたデータの種類です。| 
+送信されるデータの型。| 
   
 <a id="ID4EXF"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden コードを返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていないコードを返します。
+要求には、有効な Xbox Live の authorization ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可されていない場合、サービスは 403 Forbidden コードを返します。 ヘッダーが無効であるか不足している場合、サービスは、401 未承認のコードを返します。
   
 <a id="ID4EEG"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 204| No Content| 要求では、完了しましたが、コンテンツを返すことはありません。| 
+| 204| コンテンツはありません| 要求が完了したらが、コンテンツを返すことはありません。| 
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。| 
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。| 
-| 406| 許容できません。| リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト| 要求にかかった時間が長すぎます。| 
-| 409| Conflict| 継続トークンが無効になった。| 
+| 404| 検出不可| 指定されたリソースが見つかりませんでした。| 
+| 406| Not Acceptable| リソースのバージョンがサポートされていません。| 
+| 408| 要求のタイムアウト| 要求がかかり過ぎて、完了します。| 
+| 409| Conflict| 継続トークンが無効になりました。| 
   
 <a id="ID4EZH"></a>
 
  
 ## <a name="response-body"></a>応答本文 
  
-呼び出しが成功した場合は、この応答からのオブジェクトは返されません。 それ以外の場合、サービスは、 [ServiceError](../../json/json-serviceerror.md)オブジェクトを返します。
+呼び出しが成功した場合、この応答からのオブジェクトは返されません。 サービスを返しますそれ以外の場合、[サービス エラー](../../json/json-serviceerror.md)オブジェクト。
   
 <a id="ID4EOAAC"></a>
 
@@ -150,8 +150,8 @@ application/json|
  
 ##### <a name="reference"></a>リファレンス 
 
-[Feedback (JSON)](../../json/json-feedback.md)
+[フィードバック (JSON)](../../json/json-feedback.md)
 
- [ServiceError (JSON)](../../json/json-serviceerror.md)
+ [サービス エラー (JSON)](../../json/json-serviceerror.md)
 
    

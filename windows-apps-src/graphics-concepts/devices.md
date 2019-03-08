@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e49a9dcaa2638065946f01797cbea084a1432a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602307"
 ---
 # <a name="devices"></a>デバイス
 
@@ -58,11 +58,11 @@ Direct3D 9 で提供されるソフトウェア デバイスと参照デバイ�
 <td align="left"><p>Direct3D デバイスの種類には、ハードウェア アブストラクション レイヤー (HAL) デバイスとリファレンス ラスタライザーがあります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="windowed-vs--full-screen-mode.md">ウィンドウ モードと全画面表示モード</a></p></td>
+<td align="left"><p><a href="windowed-vs--full-screen-mode.md">全画面表示モードとウィンドウ</a></p></td>
 <td align="left"><p>Direct3D アプリケーションは、ウィンドウ モードと全画面表示モードのどちらでも実行できます。 <em>ウィンドウ モード</em>では、アプリケーションは実行中のすべてのアプリケーションとデスクトップの利用可能な画面領域を共有します。 <em>全画面表示モード</em>では、アプリケーションが実行されるウィンドウがデスクトップ全体に表示され、実行中のすべてのアプリケーション (開発環境を含む) が非表示になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="lost-devices.md">失われたデバイス</a></p></td>
+<td align="left"><p><a href="lost-devices.md">紛失したデバイス</a></p></td>
 <td align="left"><p>Direct3D デバイスは、稼働状態または喪失状態に設定できます。 <em>稼働</em>状態は、デバイスが実行され、期待どおりにすべてのレンダリングが表示される、デバイスの通常の状態です。 全画面表示のアプリケーションでキーボード フォーカスが失われるなどのイベントによって、レンダリングが不可能になると、デバイスは<em>喪失</em>状態に移行します。</p></td>
 </tr>
 <tr class="even">
@@ -70,8 +70,8 @@ Direct3D 9 で提供されるソフトウェア デバイスと参照デバイ�
 <td align="left"><p>スワップ チェーンは、ユーザーにフレームを表示するために使用されるバッファーのコレクションです。 アプリケーションが表示する新しいフレームを提供するたびに、スワップ チェーンの最初のバッファーが、表示されているバッファーの場所を取得します。 このプロセスは、<em>スワップ</em>または<em>フリップ</em>と呼ばれます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="introduction-to-rasterization-rules.md">ラスター化規則の概要</a></p></td>
-<td align="left"><p>多くの場合、頂点として指定される点は、画面上のピクセルと正確には一致しません。 この場合、Direct3D は、三角形ラスタライズ規則を適用して、どのピクセルを特定の三角形に適用するかを決定します。</p></td>
+<td align="left"><p><a href="introduction-to-rasterization-rules.md">ラスタライズ規則の概要</a></p></td>
+<td align="left"><p>多くの場合、頂点として指定される点は、画面上のピクセルと正確には一致しません。 この場合、Direct3D は三角形のラスター化ルールを適用し、指定された三角形に適用するピクセルを決定します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -81,7 +81,7 @@ Direct3D 9 で提供されるソフトウェア デバイスと参照デバイ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[Direct3D グラフィックスの学習ガイド](index.md)
+[Direct3D グラフィックス学習ガイド](index.md)
 
  
 

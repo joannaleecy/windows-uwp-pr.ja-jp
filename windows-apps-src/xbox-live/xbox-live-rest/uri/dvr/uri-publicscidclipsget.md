@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bce1dd261e0ad1172068a0287519cd0480da85f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918133"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589807"
 ---
 # <a name="get-publicscidsscidclips"></a>GET (/public/scids/{scid}/clips)
-パブリック クリップを一覧表示します。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
+パブリックのクリップを一覧表示します。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4ECB)
@@ -26,32 +26,32 @@ ms.locfileid: "8918133"
  
 ## <a name="remarks"></a>注釈
  
-この API は、さまざまな方法は、パブリック一覧クリップにできます。 クリップの一覧に基づいて返されたプライバシー チェックと要求元の XUID に対してコンテンツの分離チェックします。
+この API は、パブリックであるリスト クリップするさまざまな方法を使用できます。 クリップの一覧がプライバシーに関する確認と要求元 XUID に対してコンテンツの分離のチェックをベースに返されます。
  
-クエリは、サービス構成 id (SCID) ごとに最適化されます。 さらにフィルターを使ってまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるに戻ります。 これは、ビデオのセットの大規模なより明確です。 クエリは昇順の並べ替え順序を指定できません。
+クエリは、サービス構成の識別子 (SCID) ごとに最適化されます。 さらにフィルターまたは以下に示す既定値以外の並べ替え順序を指定するいくつかの状況で長い時間がかかるを返します。 ビデオのより大きなセットをより明らかになります。 クエリでは、昇順の並べ替え順序を指定できません。
  
-修飾子は、公開のクリップを特定のコレクションを取得する必要があります。 要求元のユーザーには、要求された SCID へのアクセスが必要、そうしないと http/403 が返されます。
+公開のクリップを特定のコレクションを取得するには、修飾子が必要です。 要求元のユーザーは、要求された SCID にアクセスする必要があります、それ以外の場合 HTTP 403 が返されます。
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| string| パブリック クリップをプライマリー サービス構成の識別子です。| 
-| タイトル id| string| パブリック クリップのタイトル Id。 SCID と同じ URI で指定することはできません。 指定した場合はプライマリー SCID を検索するために使用されます。| 
+| scid| string| パブリックのクリップをプライマリ サービスの構成の識別子です。| 
+| タイトル id| string| パブリックのクリップのタイトル Id。 同じ URI、SCID としてでは指定できません。 指定した場合は、プライマリ SCID 検索に使用されます。| 
   
 <a id="ID4ENB"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| <b>? achievementId = {achievementId}</b>| 最新のクリップが指定した<b>achievementId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>? greatestMomentId = {greatestMomentId}</b>| 最新のクリップが指定した<b>greatestMomentId</b>に一致します。| 追加の並べ替え/フィルタ リングはサポートされていません。| 
-| <b>? 修飾子 = 作成 </b>| Most Recent| 必須。| 
+| <b>?achievementId={achievementId}</b>| 指定された一致する最新のクリップ<b>achievementId</b>します。| 追加の並べ替え/フィルターはサポートされていません。| 
+| <b>?greatestMomentId={greatestMomentId}</b>| 指定された一致する最新のクリップ<b>greatestMomentId</b>します。| 追加の並べ替え/フィルターはサポートされていません。| 
+| <b>?qualifier=created </b>| 最新| 必須。| 
   
 <a id="ID4EDD"></a>
 

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 019899df18831167f0744d5274aa120cc7dd2096
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934677"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603317"
 ---
 # <a name="tier-3"></a>階層 3
 
@@ -22,7 +22,7 @@ ms.locfileid: "8934677"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソース機能の階層](streaming-resources-features-tiers.md)
+[リソースの機能レベルのストリーミング](streaming-resources-features-tiers.md)
 
  
 

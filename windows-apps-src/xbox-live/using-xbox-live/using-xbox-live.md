@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47d18f7f4f71b3bbeee3e50712550fafe09b57f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933555"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662117"
 ---
 # <a name="using-xbox-live"></a>Xbox Live を使用する
 
@@ -19,12 +19,12 @@ ms.locfileid: "8933555"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[認証](auth/authentication.md)
+[[認証](auth/authentication.md)]
 
-[Xbox Live の呼び出しのベスト プラクティス](best-practices/best-practices-for-calling-xbox-live.md)
+[Xbox Live の呼び出しに関するベスト プラクティス](best-practices/best-practices-for-calling-xbox-live.md)
 
-[エラー処理](error-handling/error-handling.md)
+[エラーの処理](error-handling/error-handling.md)
 
 [Xbox Live のトラブルシューティング](troubleshooting/troubleshooting.md)
 
-[XDK から UWP への Xbox Live コードの移植](porting-xbox-live-code-from-xdk-to-uwp.md)
+[Xbox Live コードを XDK から UWP に移植](porting-xbox-live-code-from-xdk-to-uwp.md)

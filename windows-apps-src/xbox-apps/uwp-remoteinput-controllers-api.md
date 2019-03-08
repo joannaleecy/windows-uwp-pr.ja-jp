@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929837"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657007"
 ---
 # <a name="controller-api-reference"></a>コントローラー API のリファレンス   
 接続された物理コントローラーの数を取得し、REST API を使用してオフにすることができます。
@@ -88,6 +88,6 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox

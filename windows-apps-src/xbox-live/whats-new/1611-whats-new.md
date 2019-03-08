@@ -4,14 +4,14 @@ description: Xbox Live SDK の新規事項 - November 2016
 ms.assetid: 5cf9ba9d-5a15-4e62-bc1f-45ff8b8bf3b0
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a9efeec63399916444de9ba33d4e587a914f2a7
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114424"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658567"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---november-2016"></a>Xbox Live SDK の新規事項 - November 2016
 
@@ -36,16 +36,16 @@ August 2016 リリースで追加された内容については、「[新規事�
 * さまざまな [Social Manager](../social-platform/intro-to-social-manager.md) API の変更点:
     * Social Manager により、実験的な名前空間が残されました。 早期に導入され、フィードバックをくださった方々に深く感謝します。
     * `xbox_social_user`
-        * `string_t` オブジェクトが `char*` オブジェクトに変更されました
-        * 6 個の `social_manager_presence_title_record` までのカスタム プレゼンス レコード (各:  `social_manager_presence_record`
+        * `string_t` オブジェクトに変更されました`char*`オブジェクト
+        * カスタムのプレゼンスのレコードの数が 6 つの`social_manager_presence_title_record`ごと `social_manager_presence_record`
     * `social_event`
-        * 次の代わりに `std::vector<xbox_user_id_container>` を返します。 `std::vector<xbox_social_user>`
+        * 返します、`std::vector<xbox_user_id_container>`の代わりに `std::vector<xbox_social_user>`
         * このベクトルは、新しい API に渡すことができます。 `xbox_social_user_group::get_users_from_xbox_user_ids()`
     * `xbox_social_user_group`
-        * `users()` API が `std::vector<xbox_social_user*>` 返すようになりました。 これらのポインターは、次の呼び出しで無効になります。 `social_manager::do_work()`
-        * `get_copy_of_users` は、social_user_group 内の現在のユーザーのコピーとして `std::vector<xbox_social_user>` を呼び出し元に返します。 この関数を呼び出すと、`do_work` の完了時間に影響を与える可能性があります。
+        * `users()` API の返すようになりました、`std::vector<xbox_social_user*>`します。 これらのポインターは、次の呼び出しに無効になります。 `social_manager::do_work()`
+        * `get_copy_of_users` 返す、`std::vector<xbox_social_user>`として呼び出し元に social_user_group 内の現在のユーザーのコピー。 この関数を呼び出すと、`do_work` の完了時間に影響を与える可能性があります。
 * Social Manager が初期化後に失敗しなくなりました。 Social Manager は切断時に自動的に RTA を再試行します。 `error` イベントと `rta_disconnect_error` イベントが推奨されなくなったため、削除されました。
-* タイトルでカスタム メモリー アロケーターを指定できます。 新しいドキュメント「[Social Manager のメモリーとパフォーマンス](../social-platform/social-manager-memory-and-performance-overview.md)」を参照してください
+* タイトルでカスタム メモリー アロケーターを指定できます。 新しいドキュメントを参照してください。[ソーシャル マネージャーのメモリとパフォーマンス](../social-platform/social-manager-memory-and-performance-overview.md)
 
 ### <a name="xbox-one-uwp"></a>Xbox One UWP
 * TCUI API に、Xbox One UWP アプリのマルチ ユーザー向けのサポートが追加されました。  XSAPI C++ にユーザーを指定する新しい Windows::System::User^ パラメーターが追加され、XSAPI WinRT API に ForUserAsync API が追加されました。
@@ -61,5 +61,5 @@ August 2016 リリースで追加された内容については、「[新規事�
 * 「[Xbox Live introduction](../get-started-with-partner/get-started-with-xbox-live-partner.md)」セクションが書き換えられました。  Xbox Live が有効な新しいタイトルを作成しているか、他の Xbox Live 機能をゲームに組み込むことに興味がある場合は、[ここ](../get-started-with-partner/get-started-with-xbox-live-partner.md)で新しいドキュメントを参照してください。
 
 ## <a name="tools"></a>ツール
-* Xbox Live Trace Analyzer に表示できる[https://aka.ms/XboxLiveTools](https://aka.ms/XboxLiveTools)CERT モードようになりました。  
+* Xbox Live トレース アナライザーに表示できる[ https://aka.ms/XboxLiveTools ](https://aka.ms/XboxLiveTools) CERT モードになりました。  
 * また、Xbox Live Trace Analyzer に複数の本体のサポートも追加されました。  複数の本体の HTTP 要求が含まれる Fiddler トレースを渡すと、それぞれの独立したレポートが生成されます。

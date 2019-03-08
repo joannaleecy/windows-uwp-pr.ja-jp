@@ -8,25 +8,25 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 62932a921d51a988a5533d7ee08f4968bb67a29d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944088"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659657"
 ---
 # <a name="data-type-overview"></a>データ型の概要
  
-Xbox Live サービスは、さまざまな id と認証に関連するデータ型を使用します。 このトピックでは、それらの型の概要を示します。
+Xbox Live サービスには、さまざまな id と認証に関連するデータ型が使用されます。 このトピックでは、これらの種類の概要を示します。
  
 | 種類| 説明| 
 | --- | --- | 
-| ゲーマータグ| ユーザーの人間が判読できる一意の画面の名前。| 
-| プレイヤー| ユーザーの XUID と、プレイヤーがまだセッションとカスタム データの小さな blob に参加しているかどうか、セッション (または「シート」) に、プレイヤーのインデックスを適切にゲーマータグを含む JSON オブジェクト。| 
-| profile| ユーザー プロファイルの URI アドレスと HTTP メソッドでは、通常、ユーザーの UserSettings、を通じてアクセスが、ゲーマー カード、ゲーマータグ、XUID などの可能性もなどについて説明します。| 
-| 設定| UserSettings オブジェクトでタイトルに固有の設定のいずれか。| 
-| UserClaims| ユーザーの XUID とゲーマータグを含むシンプルな JSON オブジェクト。| 
-| UserSettings| タイトルに固有の設定、または現在の認証されたユーザーの基本設定のコレクションを含む JSON オブジェクト。 ユーザーは、ゲーム内のアクティビティに関連する可能性があります、任意のデータを含めることができます。| 
-| XUID| ユーザーの Xbox ユーザー ID、ユニークな署名されていない長の整数です。 人間が判読できるものはありません。| 
+| ゲーマータグ| ユーザーの一意な人間が判読できる画面名。| 
+| プレイヤー| ユーザーの XUID とゲーマータグ、だけでなく、プレイヤーのインデックス、セッション (または「座席」) で、プレーヤーが、セッション、およびカスタム データの小さな blob にまだ参加しているかどうかを含む JSON オブジェクト。| 
+| プロファイル| ユーザーはプロファイルの URI アドレスと、ユーザーのユーザーは、通常の HTTP メソッドを使用してアクセス ゲーマー、ゲーマータグ、XUID、具合のもおそらくなどに関する情報。| 
+| 設定| UserSettings オブジェクトのタイトルに固有の設定の 1 つ。| 
+| UserClaims| ユーザーの XUID とゲーマータグを含む単純な JSON オブジェクト。| 
+| UserSettings| タイトルに固有の設定や現在の認証済みユーザーの設定のコレクションを含む JSON オブジェクト。 ユーザーは、ゲーム内のアクティビティに関連する可能性がある任意のデータを含めることができます。| 
+| XUID| ユーザーの Xbox ユーザー ID、一意の符号なし long 整数。 人間が判読できるものではありません。| 
  
 <a id="ID4E6D"></a>
 
@@ -38,7 +38,7 @@ Xbox Live サービスは、さまざまな id と認証に関連するデータ
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照情報](atoc-xboxlivews-reference-additional.md)
+[その他の参照](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ENE"></a>

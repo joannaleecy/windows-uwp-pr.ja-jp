@@ -8,16 +8,16 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aedc7cbd8366c9cb8d3a60e2cb1f5e843b24a8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926614"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661657"
 ---
 # <a name="put-usersmegamerpic"></a>PUT (/users/me/gamerpic)
-1080 x 1080 ゲーマー アイコンをアップロードします。 
+1080 x 1080 gamerpic をアップロードします。 
   * [要求本文](#ID4EQ)
-  * [HTTP ステータス コード](#ID4EZ)
+  * [HTTP 状態コード](#ID4EZ)
   * [応答本文](#ID4EXC)
  
 <a id="ID4EQ"></a>
@@ -25,20 +25,20 @@ ms.locfileid: "8926614"
  
 ## <a name="request-body"></a>要求本文
  
-要求本文には、ゲーマー アイコン (1080 x 1080 PNG ファイル) です。
+要求本文は、gamerpic (1080 x 1080 の PNG ファイルです)。
   
 <a id="ID4EZ"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | 
-| 200| OK| 成功した取得します。| 
+| 200| OK| 正常に取得します。| 
 | 201| 作成されます。| アップロードが正常に完了しました。| 
-| 403| Forbidden| 特権は失効されます。| 
+| 403| Forbidden| 特権は失効します。| 
 | 500| エラー| 問題が発生しました。| 
   
 <a id="ID4EXC"></a>
@@ -46,7 +46,7 @@ ms.locfileid: "8926614"
  
 ## <a name="response-body"></a>応答本文
  
-応答の本文には、オブジェクトは送信されません。
+応答の本文では、オブジェクトは送信されません。
   
 <a id="ID4ECD"></a>
 

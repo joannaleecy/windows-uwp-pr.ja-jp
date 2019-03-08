@@ -1,59 +1,59 @@
 ---
-Description: Build UWP apps and custom/templated controls that support platform text scaling.
+Description: UWP アプリとプラットフォーム テキスト scaling をサポートするカスタム/テンプレートのコントロールをビルドします。
 title: テキストの拡大縮小
 label: Text scaling
 template: detail.hbs
-keywords: UWP, テキスト、スケーリング、アクセシビリティ、「簡単」、表示、「するテキストがより大きく」, ユーザーの操作, 入力
+keywords: 「Make テキストがより大きな」、ユーザーの操作、入力、UWP、テキスト、スケーリング、アクセシビリティ、「のアクセスの容易さ」を表示します。
 ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 22ad7a1ac6160fd8b1cfb70c69f299c5d89192d3
-ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/26/2018
-ms.locfileid: "8988241"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600817"
 ---
 # <a name="text-scaling"></a>テキストの拡大縮小
 
-![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-news-hero-small.png)  
-*Windows 10 (100% に 225%) でスケーリング テキストの例*
+![100 ~ 225% に拡大縮小テキストの例](images/coretext/text-scaling-news-hero-small.png)  
+*Windows 10 (225% を 100%) でのスケーリングのテキストの例*
 
 ## <a name="overview"></a>概要
 
-(モバイル デバイスから Surface Hub の大きな画面にデスクトップのモニターにラップトップ) コンピューターの画面上のテキストの読み取りは、多くの人にとって困難なことができます。 逆に、一部のユーザーは、必要以上にするアプリや web サイトで使用されるフォント サイズを検索します。
+(ラップトップ、Surface Hub の巨大な画面にデスクトップ モニターをモバイル デバイス) からコンピューター画面上のテキストを読み取るは、多くの人にとって難しいことができます。 逆に、一部のユーザーは、必要以上にするアプリや web サイトで使用されるフォント サイズを検索します。
 
-テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが OS と個々 のアプリケーションの両方の間での相対的なフォント サイズを変更する機能が用意されています。 拡大鏡アプリ (これ通常だけ、画面の領域内のすべてを拡大し、独自の操作性の問題が導入されています) を使って、ディスプレイの解像度を変更または DPI スケーリングのサイズを変更の表示と一般的な表示に基づくすべての証明書利用者ではなく距離)、ユーザーは、テキストだけで、100% (既定のサイズ) からの範囲のサイズを変更する設定にすばやくアクセスできる最大 225% です。
+テキストはを幅広いユーザーできるだけ読みやすいことを確認するには、Windows には、ユーザーが、OS と個々 のアプリケーション間での相対的なフォント サイズを変更する機能が用意されています。 拡大鏡アプリ (を通常だけ、画面の領域内のすべてを拡大し、独自の使いやすさの問題が発生する) を使用して、ディスプレイの解像度を変更または DPI スケール (を表示し、一般的な表示に基づくすべてのサイズ変更に依存する代わりに距離)、ユーザーがテキストだけで、100% (既定のサイズ) の範囲のサイズを変更する設定をすばやくアクセス 225% です。
 
 ## <a name="support"></a>サポート
 
-ユニバーサル Windows アプリケーション (両方の標準と PWA)、既定でスケーリング テキストをサポートします。
+ユニバーサル Windows アプリケーション (標準の PWA と)、テキストが既定ではスケーリングをサポートします。
 
-UWP アプリケーションには、カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワークは、またはサード パーティのフレームワークが含まれている場合可能性を加えることがユーザーに一貫性があり、便利なエクスペリエンスを確認するいくつかの更新します。  
+UWP アプリケーションには、カスタム コントロール、カスタム テキスト サーフェス、ハード コードされたコントロールの高さ、古いフレームワーク、またはサード パーティ製のフレームワークが含まれている場合は、ユーザーのエクスペリエンスを一貫した有用なことを確認するには、いくつか更新がある可能性があります。  
 
-DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポートしませんテキストの拡大縮小、Win32 のサポートはメニューのアイコン、およびツールバーに制限されています。  
+DirectWrite、GDI、および XAML SwapChainPanels ネイティブでサポートしないテキストのスケーリング、Win32 のサポートは、メニューのアイコン、およびツールバーに制限されます。  
 
 <!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
 
-## <a name="user-experience"></a>ユーザーによるインストール
+## <a name="user-experience"></a>ユーザー エクスペリエンス
 
-ユーザーがテキストの倍率を調整できるテキストに]-> [設定のスライダーを大きくすると簡単ビジョン/ディスプレイの画面]-> [します。
+ユーザーがテキストのスケールを調整できるコンピューターの簡単操作]-> [設定のスライダーをより大きなテキストにするにはビジョン/ディスプレイの画面]-> [です。
 
-![テキストの 100% に 225% のスケーリングの例](images/coretext/text-scaling-settings-100-small.png)  
-*設定の設定からテキスト スケール簡単]-> [ビジョン/ディスプレイの画面]-> [*
+![100 ~ 225% に拡大縮小テキストの例](images/coretext/text-scaling-settings-100-small.png)  
+*テキストのスケール設定の設定からコンピューターの簡単操作]-> [Vision/ディスプレイの画面を ->*
 
 ## <a name="ux-guidance"></a>UX ガイダンス
 
-テキストのサイズが変更されたコントロールとコンテナーする必要がありますもサイズを変更して、テキストとその新しいレイアウトに対応するために再配置されます。 によって、アプリ、フレームワーク、およびプラットフォーム、以前は、既に説明したようこの作業の大半に行われます。 次の UX ガイダンスでは、このようなことがない場合について説明します。
+テキストのサイズを調整コントロールとコンテナーする必要がありますものサイズを変更し、テキストと新しいレイアウトに合わせて調整します。 アプリ、フレームワーク、プラットフォームによって、以前に説明したように、この作業の多くが行われます。 次の UX ガイドでは、このような場合がについて説明します。
 
-### <a name="use-the-platform-controls"></a>プラットフォーム コントロールを使う
+### <a name="use-the-platform-controls"></a>プラットフォーム コントロールを使用します。
 
-言ったこの既にかどうか。 繰り返しますが: 最小限の作業するときに、最も包括的なユーザー エクスペリエンスを実現するためにさまざまな Windows アプリのフレームワークで提供される組み込みのコントロールが常に使用可能な限り、します。
+言ったのこの既にでしょうか。 繰り返す価値があります。可能であれば、常に最小限の作業の最も包括的なユーザー エクスペリエンスを実現するため、さまざまな Windows アプリ フレームワークで提供される組み込みのコントロールを使用します。
 
-たとえば、すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングする完全なテキストをサポートします。
+たとえば、UWP のすべてのテキスト コントロールは、フルテキスト エクスペリエンスのカスタマイズやテンプレートなしのスケーリングをサポートします。
 
-基本的な UWP アプリを含む、いくつかの標準的なテキスト コントロールのスニペットを次に示します。
+標準のテキスト コントロールをいくつかを含む基本的な UWP アプリからのスニペットを次に示します。
 
 ``` xaml
 <Grid>
@@ -93,14 +93,14 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポー�
 </Grid>
 ```
 
-![アニメーション化されたテキストが 100% に 225% のスケーリング](images/coretext/text-scaling.gif)  
-*アニメーション化されたテキストの拡大縮小*
+![アニメーション化されたテキストが 100% ~ 225% のスケーリング](images/coretext/text-scaling.gif)  
+*アニメーション化されたテキストのスケーリング*
 
-### <a name="use-auto-sizing"></a>自動サイズ変更を使用します。
+### <a name="use-auto-sizing"></a>自動サイズ調整を使用します。
 
-コントロールの絶対サイズを指定しないでください。 可能であれば、[プラットフォームのユーザーとデバイスの設定に基づいて自動的に、コントロールのサイズを変更することができます。  
+コントロールの絶対サイズを指定しないでください。 可能であれば、ユーザーとデバイスの設定に基づいて自動的にコントロールのサイズを変更するプラットフォームを使用できます。  
 
-前の例からのこのスニペットで使用して、`Auto`と`*`一連のグリッドの列とできるように、プラットフォームの幅の値は、グリッド内に含まれる要素のサイズに基づくアプリのレイアウトを調整します。
+このスニペットが、前の例では使用して、`Auto`と`*`一連の let プラットフォームとグリッド列の幅の値がグリッド内に含まれる要素のサイズに基づいてアプリのレイアウトを調整します。
 
 ``` xaml
 <Grid.ColumnDefinitions>
@@ -112,28 +112,28 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポー�
 
 ### <a name="use-text-wrapping"></a>テキストの折り返し
 
-アプリのレイアウトは柔軟性および適応可能なことを確認するには、(多くのコントロールでサポートされないテキストの折り返し既定ではテキストが含まれているすべてのコントロールでテキストの折り返しを有効にします。
+アプリのレイアウトはを柔軟で可能な限り適応性のあることを確認するには、(多くのコントロールによってサポートしていないテキストの折り返し既定値) のテキストを含む任意のコントロールのテキストの折り返しを有効にします。
 
-プラットフォームで他のメソッドを使用して、クリッピングを含む、レイアウトを調整するテキストの折り返しを指定しない場合 (前の例を参照してください)。
+プラットフォームが、クリッピングなど、レイアウトを調整するその他のメソッドを使用してテキストの折り返しを指定しない場合 (前の例を参照してください)。
 
-ここでは、使用、`AcceptsReturn`と`TextWrapping`、レイアウトを確認するテキスト ボックスのプロパティは、できる限り柔軟なします。
+ここで、使用、`AcceptsReturn`と`TextWrapping`レイアウトを確認するテキスト ボックスのプロパティは、柔軟性を備えています。
 
 ``` xaml
 <TextBox PlaceholderText="Type something here" 
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![テキストとテキストの折り返し 225% に 100% のスケーリングをアニメーション化](images/coretext/text-scaling-textwrap.gif)  
-*テキストの折り返しをスケーリング アニメーション化されたテキスト*
+![100 ~ 225% 自動スケールでテキストの折り返しテキストをアニメーション化](images/coretext/text-scaling-textwrap.gif)  
+*アニメーション化されたテキストがテキストの折り返しを使用したスケール*
 
-### <a name="specify-text-trimming-behavior"></a>テキストのトリミングの動作を指定します。
+### <a name="specify-text-trimming-behavior"></a>テキストのトリミング動作を指定します。
 
-テキストの折り返しが優先される動作でない場合は、ほとんどのテキスト コントロールでは、テキストをクリップまたはテキスト トリミングの動作の省略記号を指定することができます。 クリッピングは、省略記号領域を占有自体と省略記号を優先します。
+テキストの折り返しが優先動作でない場合は、ほとんどのテキスト コントロールを使用するテキストをクリップするか、テキストのトリミング動作の省略記号を指定できます。 省略記号が自身の領域を占有クリッピングは楕円に優先されます。
 
 > [!NOTE]
-> テキストをクリップする必要がある場合は、開始しない、文字列の末尾をクリップできます。
+> テキストをクリップする必要がある場合は、先頭ではない、文字列の末尾をクリップします。
 
-この例で方法を示します TextBlock のテキストをクリップ[TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)プロパティを使用します。
+この例でを使用して、TextBlock のテキストをクリップする方法を説明します、 [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)プロパティ。
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -141,14 +141,14 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポー�
 </TextBlock>
 ```
 
-![テキストとテキストがクリッピングされて 225% に 100% のスケーリング](images/coretext/text-scaling-clipping-small.png)  
-*テキストとテキストがクリッピングされてスケーリング*
+![テキストがテキスト領域で 100 ~ 225% のスケーリング](images/coretext/text-scaling-clipping-small.png)  
+*テキストのテキストのクリッピングを使用したスケール*
 
-### <a name="use-a-tooltip"></a>Tooltip します。
+### <a name="use-a-tooltip"></a>ツールヒントを使用して、
 
-テキストをクリップする場合は、完全なテキストをユーザーに提供するヒントを使用します。
+テキストをクリップする場合は、ツールヒントを使用して、ユーザーに完全なテキストを提供します。
 
-ここでは、ヒントは、テキストの折り返しがサポートされていない TextBlock を追加します。
+ここでは、テキストの折り返しをサポートしていない TextBlock にツールヒントを追加します。
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -159,19 +159,19 @@ DirectWrite、GDI、および XAML SwapChainPanels ネイティブにサポー�
 </TextBlock>
 ```
 
-### <a name="dont-scale-font-based-icons-or-symbols"></a>フォント ベースのアイコンや記号、拡大縮小されません。
+### <a name="dont-scale-font-based-icons-or-symbols"></a>フォント ベースのアイコンまたはシンボルのスケール変更はありません。
 
-フォント ベースのアイコンを強調または装飾を使用する場合は、これらの文字でのスケーリングを無効にします。
+フォント ベースのアイコンを強調または装飾を使用する場合は、これらの文字のスケーリングを無効にします。
 
-[IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを設定する`false`ほとんどの XAML コントロールです。
+設定、 [IsTextScaleFactorEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)プロパティを`false`XAML のほとんどを制御します。
 
-### <a name="support-text-scaling-natively"></a>スケーリングをネイティブにサポート テキスト
+### <a name="support-text-scaling-natively"></a>ネイティブのスケーリング サポート テキスト
 
-コントロール、カスタムのフレームワークで[TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings システム イベントを処理します。 このイベントは、ユーザーがシステムにテキストの倍率を設定するたびにします。
+処理、 [TextScaleFactorChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)カスタムのフレームワークとコントロールで UISettings システム イベント。 このイベントには、ユーザーがシステムにテキストの倍率を設定するたびが発生します。
 
 ## <a name="summary"></a>概要
 
-このトピックでは、Windows でのサポートをスケーリングするテキストの概要を説明し、ユーザー エクスペリエンスをカスタマイズする方法についての UX と開発者向けガイダンスが含まれます。
+このトピックでは、Windows でのサポートを拡大縮小テキストの概要を説明し、ユーザー エクスペリエンスをカスタマイズする方法の UX や開発者向けのガイダンスが含まれます。
 
 ## <a name="related-articles"></a>関連記事
 

@@ -1,17 +1,17 @@
 ---
 title: Xbox での HTML ゲーム開発
-description: Xbox での HTML UWP ゲーム開発。
+description: Xbox での HTML UWP ゲーム開発です。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 019db8c93b61f84dde400f7be9f98bf82b1466e8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048579"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660327"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>HTML ゲームの Xbox での UWP への移行
 Xbox One は HTML 5 ゲーム用の優れたプラットフォームです。 HTML 5 ゲームは、[Microsoft Edge](https://developer.microsoft.com/microsoft-edge/) ブラウザー エンジンで実行されます。 Microsoft Edge は高速で、WebGL やキャンバスなど、HTML 5 と CSS 3 の機能を完全にサポートしています。
@@ -32,5 +32,5 @@ Xbox One はユニバーサル Windows プラットフォームで実行され�
 最初に、好みのエンジンをダウンロードし、Windows 10 アプリの手順を確認します。 また、コンソールを開発キットとして使用する方法と Visual Studio から展開する方法については、「[ファースト ステップ ガイド](getting-started.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
-- [既存のゲームの Xbox への移行](development-lanes-landing.md)
+- [既存のゲームを Xbox に取り込む](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)

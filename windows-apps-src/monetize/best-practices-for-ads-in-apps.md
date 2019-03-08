@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, チュートリアル
 ms.localizationpriority: medium
 ms.openlocfilehash: 3084c72d32967d691054b452f5f5f2e903bedd5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931920"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657597"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>アプリ内の広告のベスト プラクティス
 
@@ -21,9 +21,9 @@ ms.locfileid: "8931920"
 
 |  トピック    | 説明 |               
 |----------|-------|
-| [UI とユーザー エクスペリエンス ガイドライン](ui-and-user-experience-guidelines.md) | アプリ内のバナー広告とスポット広告を使って優れたユーザー エクスペリエンスを提供するためのガイドラインを示します。 |
-| [広告ユニットの視認性の最適化](optimize-ad-unit-viewability.md) | 広告ユニットの見やすいインプレッションを最適化するためのガイドラインを示します。 |
-| [広告のエラー処理](error-handling-with-advertising-libraries.md)     |  アプリ内のバナー広告、スポット広告、ネイティブ広告のエラーを処理する方法について説明します。          |
+| [UI とユーザー エクスペリエンスのガイドライン](ui-and-user-experience-guidelines.md) | アプリ内のバナー広告とスポット広告を使って優れたユーザー エクスペリエンスを提供するためのガイドラインを示します。 |
+| [お使いの ad 単位の見やすさを最適化します。](optimize-ad-unit-viewability.md) | 広告ユニットの見やすいインプレッションを最適化するためのガイドラインを示します。 |
+| [Ad エラーの処理](error-handling-with-advertising-libraries.md)     |  アプリ内のバナー広告、スポット広告、ネイティブ広告のエラーを処理する方法について説明します。          |
 
 
 

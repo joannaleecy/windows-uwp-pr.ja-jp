@@ -6,18 +6,18 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d520f811c9929721bfcb9d1c83fbff6a4891091
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925614"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658597"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>コレクションとリストのコンテキスト コマンドの実行
 
@@ -25,7 +25,7 @@ ms.locfileid: "8925614"
 
 多くのアプリに、リスト、グリッド、ツリーの形で、ユーザーが操作できるコンテンツのコレクションが含まれています。 たとえば、ユーザーは、項目の削除、名前の変更、フラグ付け、更新ができる可能性があります。 この記事では、どのような種類の入力でも、最善のエクスペリエンスが得られるように、そのような操作をコンテキスト コマンドを使って実装する方法を説明します。  
 
-> **Important API**: [ICommand インターフェイス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged インターフェイス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要な Api**:[ICommand インターフェイス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、 [UIElement.ContextFlyout プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、 [INotifyPropertyChanged インターフェイス](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![各種入力方法で、お気に入りのコマンドを実行する](images/ContextualCommand_AddFavorites.png)
 
@@ -37,15 +37,15 @@ ms.locfileid: "8925614"
 
 | コマンド          | 入力方法を問わない | マウス アクセラレータ | キーボード アクセラレータ | タッチ アクセラレータ |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
-| 項目の削除      | コンテキスト メニュー   | ホバー ボタン      | DEL キー              | スワイプして削除   |
-| フラグの設定        | コンテキスト メニュー   | ホバー ボタン      | Ctrl + Shift + G         | スワイプしてフラグを設定     |
-| データの更新     | コンテキスト メニュー   | なし               | F5 キー               | 引っ張って更新   |
-| お気に入りに追加 | コンテキスト メニュー   | ホバー ボタン      | F、Ctrl + S            | スワイプしてお気に入りに追加 |
+| 項目の削除      | ショートカット メニュー   | ホバー ボタン      | DEL キー              | スワイプして削除   |
+| フラグの設定        | ショートカット メニュー   | ホバー ボタン      | Ctrl + Shift + G         | スワイプしてフラグを設定     |
+| データの更新     | ショートカット メニュー   | なし               | F5 キー               | 引っ張って更新   |
+| お気に入りに追加 | ショートカット メニュー   | ホバー ボタン      | F、Ctrl + S            | スワイプしてお気に入りに追加 |
 
 
-* **通常は、特定の項目に対するすべてのコマンドをその項目の[コンテキスト メニュー](menus.md)から利用できるようにします。** コンテキスト メニューには、入力の種類にかかわらず、ユーザーがアクセスでき、ユーザーが実行できるコンテキスト コマンドの全部を含めてください。
+* **一般に、する必要があります項目のすべてのコマンドで使用できるように、項目の[コンテキスト メニュー](menus.md)します。** コンテキスト メニューには、入力の種類にかかわらず、ユーザーがアクセスでき、ユーザーが実行できるコンテキスト コマンドの全部を含めてください。
 
-* **頻繁にアクセスするコマンドについては、入力アクセラレータを使うことを検討してください。** 入力アクセラレータを使うと、ユーザーの入力デバイスに応じて、すばやく操作を実行できます。 次のような入力アクセラレータがあります。
+* **頻繁にアクセスされるコマンドは、入力のアクセラレータの使用を検討してください。** 入力アクセラレータを使うと、ユーザーの入力デバイスに応じて、すばやく操作を実行できます。 次のような入力アクセラレータがあります。
     - スワイプして操作 (タッチ アクセラレータ)
     - 引っ張ってデータを更新 (タッチ アクセラレータ)
     - キーボード ショートカット (キーボード アクセラレータ)
@@ -55,7 +55,7 @@ ms.locfileid: "8925614"
 > [!NOTE]
 > ユーザーは、どの種類のデバイスからでも、すべてのコマンドにアクセスできる必要があります。 たとえば、アプリのコマンドがホバー ボタン ポインター アクセラレータでしか公開されない場合、タッチ ユーザーはコマンドにアクセスできません。 少なくとも、すべてのコマンドにアクセスできるコンテキスト メニューを使います。  
 
-## <a name="example-the-podcastobject-data-model"></a>例: PodcastObject データ モデル
+## <a name="example-the-podcastobject-data-model"></a>以下に例を示します。PodcastObject データ モデル
 
 推奨されるコマンド実行のデモとして、この記事では、ポッドキャスト アプリ用のポッドキャスト リストを作成します。 コード例では、ユーザーがリストから特定のポッドキャストを "お気に入り" に追加できるようにする方法を示しています。
 
@@ -242,7 +242,7 @@ public sealed partial class PodcastUserControl : UserControl
 | ペン      | バレル ボタンを押す、項目を長押し |
 | ゲームパッド  | メニュー ボタン                             |
 
-**ユーザーはさまざまな種類の入力方法でコンテキスト メニューを開く可能性があるため、リストの項目に対して実行できるコンテキスト コマンドの全部をコンテキスト メニューに含めてください。**
+**入力の種類に関係なく、コンテキスト メニューを開くことがあるため、コンテキスト メニューはすべてのリスト項目に使用できるコンテキスト コマンドを含める必要があります。**
 
 ### <a name="contextflyout"></a>ContextFlyout
 
@@ -376,7 +376,7 @@ protected override void OnPointerExited(PointerRoutedEventArgs e)
 
 スワイプによるコマンド実行は、タッチ デバイスを操作しているユーザーが、よく使われるセカンダリ操作をタッチを使って実行できるようにするタッチ アクセラレータです。 スワイプはタッチ ユーザーが、スワイプして削除やスワイプして呼び出すなどの一般的な操作を使って、コンテンツをすばやく自然に操作することを可能にします。 詳しくは、[スワイプによるコマンドの実行](swipe.md)についての記事をご覧ください。
 
-コレクションにスワイプを組み込むには、コマンドをホストする SwipeItems と、項目をラップしてスワイプにより操作できるようにする SwipeControl の 2 つのコンポーネントが必要です。
+コレクションにスワイプを統合するためには、2 つのコンポーネントが必要です。SwipeItems のコマンドをホストします。SwipeControl には、項目をラップし、スワイプ操作では、これを選択します。
 
 SwipeItems は、PodcastUserControl 内の Resource として定義できます。 次の例では、SwipeItems に、項目をお気に入りに追加するコマンドが含まれています。
 
@@ -452,8 +452,8 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 ## <a name="related-topics"></a>関連トピック
 * [ICommand インターフェイス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
-* [メニューとコンテキスト メニュー](menus.md)
+* [メニューおよびコンテキスト メニュー](menus.md)
 * [スワイプ](swipe.md)
 * [引っ張って更新](pull-to-refresh.md)
-* [ペン操作とスタイラス操作](../input/pen-and-stylus-interactions.md)
-* [ゲームパッドと Xbox 向けにアプリを調整する](../devices/designing-for-tv.md)
+* [ペン、スタイラスの相互作用](../input/pen-and-stylus-interactions.md)
+* [ゲームパッドと Xbox アプリを調整します。](../devices/designing-for-tv.md)

@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 80ec2a462648177cc6bfc846b9c84278821b0e5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925417"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594107"
 ---
 # <a name="delete-usersxuidxuidinboxmessageid"></a>DELETE (/users/xuid({xuid})/inbox/{messageId})
-ユーザーの受信トレイでユーザーのメッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
+ユーザーの受信トレイ内のユーザー メッセージを削除します。 これらの Uri のドメインが`msg.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4ECB)
-  * [Authorization](#ID4EPB)
+  * [承認](#ID4EPB)
   * [要求本文](#ID4E1B)
-  * [HTTP ステータス コード](#ID4EHC)
+  * [HTTP 状態コード](#ID4EHC)
   * [JavaScript Object Notation (JSON) の応答](#ID4EAE)
   * [リソースのプライバシーの設定の効果](#ID4EYF)
  
@@ -30,26 +30,26 @@ ms.locfileid: "8925417"
  
 ## <a name="remarks"></a>注釈 
  
-削除操作では、等です。
+削除操作は、べき等です。
  
-この API はサポートのみのコンテンツの種類は、"アプリケーション/json"、呼び出しごとの HTTP ヘッダーのために必要です。 
+この API はサポートのみコンテンツの種類は、"application/json"に必要な各呼び出しの HTTP ヘッダーが。 
   
 <a id="ID4ECB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター 
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
-| メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
+| xuid | 64 ビット符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレーヤー。 | 
+| メッセージ Id | string[50] | メッセージの取得中または削除の ID。 | 
   
 <a id="ID4EPB"></a>
 
  
 ## <a name="authorization"></a>Authorization 
  
-独自のユーザーがユーザーのメッセージを削除する要求が必要です。
+要求のユーザー メッセージを削除して、独自のユーザーが必要です。
   
 <a id="ID4E1B"></a>
 
@@ -61,29 +61,29 @@ ms.locfileid: "8925417"
 <a id="ID4EHC"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード 
+## <a name="http-status-codes"></a>HTTP 状態コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
 | コード| 説明| 
 | --- | --- | --- | --- | --- | 
-| 204| 成功します。| 
-| 403| XUID に変換することはできませんか、有効な XUID クレームが見つかったことはできません。| 
-| 404| URI のメッセージ ID を解析できませんまたは、XUID が URI ではありません。| 
-| 500| サーバー側の一般的なエラーです。| 
+| 204| 成功しました。| 
+| 403| XUID を変換することはできませんまたは有効な XUID 要求が見つかりません。| 
+| 404| URI にメッセージ ID を解析できないか、XUID が URI ではありません。| 
+| 500| サーバー側の一般エラーです。| 
   
 <a id="ID4EAE"></a>
 
  
 ## <a name="javascript-object-notation-json-response"></a>JavaScript Object Notation (JSON) の応答 
  
-エラーの場合、サービスはサービスの環境から値を含めることができますが、全て、errorResponse オブジェクトを返すことがあります。
+エラーが発生した場合、サービスはサービスの環境から値を含むことができる、存在する errorResponse オブジェクトを返す可能性があります。
  
-| プロパティ| 型| 説明| 
+| プロパティ| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| errorSource| string| エラーが発生した場所を指定します。| 
-| errorCode| int| (Null にすることができます) エラーに関連付けられている数値コードです。| 
-| エラー メッセージ| string| 詳細を表示するように構成する場合のエラーの説明します。| 
+| errorSource| string| エラーの発生元を示します。| 
+| エラー コード| int| (Null にすることができます)、エラーに関連付けられている数値コードです。| 
+| エラー メッセージ| string| 詳細を表示するように構成してある場合、エラーの詳細です。| 
   
 <a id="ID4EYF"></a>
 
@@ -108,6 +108,6 @@ ms.locfileid: "8925417"
 <a id="ID4ETG"></a>
 
  
-##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参照[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)
+##### <a name="reference--standard-http-status-codesadditionalhttpstatuscodesmd"></a>参照[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)
 
    

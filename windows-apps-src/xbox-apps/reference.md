@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fdcf01d7d1f72624d73acf2d10ce28dfb75e04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656997"
 ---
 # <a name="xbox-device-portal-rest-api"></a>Xbox Device Portal REST API
 
@@ -35,7 +35,7 @@ ms.locfileid: "8945834"
 |[/ext/xbox/info](wdp-xboxinfo-api.md)| Xbox One デバイスに関する情報を提供します。 |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Xbox Live サンド ボックスを管理します。 |
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Xbox One の UWP](index.md)
-- [Windows デバイス ポータル](../debug-test-perf/device-portal.md)
+- [Windows Device Portal](../debug-test-perf/device-portal.md)

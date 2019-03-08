@@ -8,33 +8,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a76e4b12e0ffadb112913775b500ac0d39d413d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929588"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597767"
 ---
 # <a name="updatemetadatarequest-json"></a>UpdateMetadataRequest (JSON)
-このメタデータ クリップを更新する必要があります。 
+このメタデータは、クリップを更新する必要があります。 
 <a id="ID4EN"></a>
 
  
 ## <a name="updatemetadatarequest"></a>UpdateMetadataRequest
  
-UpdateMetadataRequest オブジェクトには、次仕様があります。
+UpdateMetadataRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| userCaption| string| ゲーム クリップのユーザーが入力した以外にローカライズされた文字列を変更します。| 
-| visibility| [GameClipVisibility 列挙型](../enums/gvr-enum-gameclipvisibility.md)| これは、システムで公開されるゲーム クリップの可視性を変更します。| 
-| titleData| string| タイトルに固有のプロパティ バッグです。 最大サイズ: 10 kb です。| 
+| userCaption| string| ゲームのクリップをユーザーが入力した非ローカライズ文字列を変更します。| 
+| visibility| [GameClipVisibility 列挙型](../enums/gvr-enum-gameclipvisibility.md)| システムでパブリッシュされるゲームのクリップの可視性を変更します。| 
+| titleData| string| タイトルに固有のプロパティ バッグ。 最大サイズ:10 KB。| 
   
 <a id="ID4EBC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
-ユーザーのクリップの名前を変更して表示します。
+ユーザーのクリップの名前を変更して、可視性:
  
 
 ```json
@@ -46,7 +46,7 @@ UpdateMetadataRequest オブジェクトには、次仕様があります。
 ```
 
  
-タイトルのプロパティ (これは単なる例、このフィールドのスキーマは、呼び出し元であるため) だけを変更するには。
+(これはほんの一例であるため、このフィールドのスキーマは、呼び出し元) のタイトルのプロパティだけを変更するには。
  
 
 ```json
@@ -67,7 +67,7 @@ UpdateMetadataRequest オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E3C"></a>

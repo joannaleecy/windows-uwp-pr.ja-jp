@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a9273c33dd45904e2050af02fd52ddeaedb7e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940010"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658227"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行
 
@@ -32,15 +32,15 @@ ms.locfileid: "8940010"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="plan-your-directx-port.md">DirectX の移植の計画</a></p></td>
-<td align="left"><p>DirectX 9 から DirectX 11 と UWP へ、ゲーム移植プロジェクトを計画しましょう。グラフィックス コードをアップグレードして、ゲームを Windows ランタイム環境に置くことが必要になります。</p></td>
+<td align="left"><p><a href="plan-your-directx-port.md">DirectX、ポートを計画します。</a></p></td>
+<td align="left"><p>DirectX 9 から DirectX 11 と UWP へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="understand-direct3d-11-1-concepts.md">Direct3D 9 と Direct3D 11.1 の間の重要な変更点</a></p></td>
+<td align="left"><p><a href="understand-direct3d-11-1-concepts.md">Direct3D 11.1 Direct3D 9 からの重要な変更</a></p></td>
 <td align="left"><p>このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="feature-mapping.md">DirectX 11.1 API への DirectX 9 の機能のマッピング</a></p></td>
+<td align="left"><p><a href="feature-mapping.md">DirectX 9 の機能を DirectX 11.1 Api にマップします。</a></p></td>
 <td align="left"><p>Direct3D 9 ゲームで使う機能が Direct3D 11 と UWP にどのように変換されるかについて説明します。</p></td>
 </tr>
 </tbody>

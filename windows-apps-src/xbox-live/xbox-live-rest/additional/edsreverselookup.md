@@ -8,39 +8,39 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d535dec8a95eba4d486bfc6946e187e2da66ae49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943323"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598437"
 ---
 # <a name="eds-reverse-lookup-for-video"></a>ビデオの EDS 逆引き参照
  
-  * [逆の検索手順](#ID4EQ)
+  * [逆引き参照手順](#ID4EQ)
  
 <a id="ID4EQ"></a>
 
  
-## <a name="reverse-lookup-steps"></a>逆の検索手順
+## <a name="reverse-lookup-steps"></a>逆引き参照手順
  
-すべてのビデオ メディアの種類 (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**エンターテイメント探索サービス (EDS) の逆引き参照がサポートされています。MediaItemType.TVShow**)、および**MediaItemType.Unknown**します。
+すべてのビデオ メディアの種類のエンターテイメント検出サービス (EDS) の逆引き参照がサポートされています (**MediaItemType.Movie**、 **MediaItemType.TVSeries**、 **MediaItemType.TVEpisode**、 **MediaItemType.TVSeason**、および**MediaItemType.TVShow**)、および**MediaItemType.Unknown**します。
  
-逆引き参照では、4 つのパラメーターを渡すことが必要です。 
+逆引き参照では、渡される 4 つのパラメーターが必要です。 
    * `idType=ScopedMediaId`
    * `ids=` プロバイダーのメディア ID
    * `ScopeIdType=Title`
-   * `ScopeId=` プロバイダーのタイトル ID
+   * `ScopeId=` プロバイダー ID のタイトル
  
  
-通常の逆引き参照では、2 つの手順が必要です。 
-   * 利用できない場合 (たとえば、詳細呼び出し) からプロバイダー メディアの id を取得します。 
+通常、逆引き参照では、2 つの手順が必要です。 
+   * 使用できない場合 (たとえば、詳細の呼び出し) からプロバイダー メディア id を取得します。 
 
 ```cpp
 GET /media/en-us/details?ids=4eeaf5b4-9af2-56e4-a738-68b48e954494&desiredMediaItemTypes=Movie&desired=Providers
 ```
 
  
-   * 以前の応答から**ProviderMediaId**フィールドを使用して逆引き参照の呼び出しを発行します。 
+   * 逆引き参照を使用するための呼び出しを発行、 **ProviderMediaId**前の応答からフィールド。 
 
 ```cpp
 GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedMediaId&desiredMediaItemTypes=Movie&fields=all&ScopeIdType=Title&ScopeId=0x5848085B
@@ -49,7 +49,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
   
  
-**ProviderMediaId**フィールドが EDS から取得されていない場合、フィールドは、EDS に正しく渡される URL エンコードである必要があります。
+場合、 **ProviderMediaId** EDS からフィールドが取得されていないし、フィールドは、EDS に正しく渡す URL エンコードする必要があります。
   
 <a id="ID4EOC"></a>
 
@@ -61,7 +61,7 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照情報](atoc-xboxlivews-reference-additional.md)
+[その他の参照](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4E3C"></a>
@@ -69,6 +69,6 @@ GET /media/en-us/details?ids=047d19ca-3a7d-462c-bdbb-163543125583&idType=ScopedM
  
 ##### <a name="further-information"></a>詳細情報 
 
-[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace の Uri](../uri/marketplace/atoc-reference-marketplace.md)
 
    

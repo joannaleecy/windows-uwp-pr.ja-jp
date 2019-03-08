@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7682b92ec61c98679904825e360d73318e9fee90
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115522"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659837"
 ---
 # <a name="post-serviceconfigsscidhoppershoppername"></a>POST (/serviceconfigs/{scid}/hoppers/{hoppername})
 
-指定したマッチ チケットを作成します。
+指定した一致のチケットを作成します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するためのものがし、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
-  * [Authorization](#ID4EJB)
-  * [HTTP ステータス コード](#ID4E3C)
+  * [承認](#ID4EJB)
+  * [HTTP 状態コード](#ID4E3C)
   * [要求本文](#ID4EFD)
   * [応答本文](#ID4E3G)
 
@@ -33,33 +33,33 @@ ms.locfileid: "9115522"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルで特定の名前をホッパーのマッチ チケットを作成します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**メソッドでラップすることができます。  
+この HTTP/REST メソッドでは、サービス構成の ID (SCID) レベルで特定の名前を hopper の一致のチケットを作成します。 このメソッドをラップすることができます、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.CreateMatchTicketAsync**メソッド。  
 <a id="ID4E5"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| タイプ| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| hoppername | string | ホッパーの名前。 |
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| hoppername | string | Hopper の名前。 |
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-| 型| 必須かどうか| 説明| 不足している場合、応答|
+| 種類| 必須| 説明| 不足している場合の応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 特権とデバイスの種類| 必須| 設定すると、ユーザーの deviceType は、コンソール、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
-| デバイスの種類| 必須| とき、ユーザーの deviceType が省略されてか以外のコンソールに一致するタイトルに設定する必要がありますないコンソール専用のタイトル。 | 403|
-| タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
+| 特権とデバイスの種類| ○| ユーザーの deviceType は、コンソールに設定されている場合は、それぞれのクレームでマルチ プレーヤーの特権を持つユーザーのみがマッチメイ キング サービスを呼び出すことが許可されます。 | 403|
+| デバイスの種類| ○| ときに、ユーザーの deviceType が存在しないまたはコンソール以外でに一致するタイトルに設定するには、コンソールのみのタイトルがすることはできません。 | 403|
+| タイトルの購入/デバイスの種類 ID/実証| ○| 一致するタイトルは、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EFD"></a>
 
 
@@ -68,16 +68,16 @@ ms.locfileid: "9115522"
 <a id="ID4ELD"></a>
 
 
-### <a name="required-members"></a>必要なメンバー
+### <a name="required-members"></a>必須メンバー
 
 | メンバー| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| serviceConfig| GUID| セッションの SCID です。|
-| hopperName| string| ホッパーの名前です。|
-| giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒の整数)。|
-| preserveSession| 列挙型| かどうかには、セッションに一致するセッションとして再利用を示す値。 値は、「しない」と"always"します。 |
-| ticketSessionRef| MultiplayerSessionReference| いるプレイヤーまたはグループは、現在再生中のセッションの MultiplayerSessionReference オブジェクトです。 |
-| ticketAttributes| オブジェクトのコレクション| 属性とプレイヤーのグループのユーザーが指定した値です。|
+| serviceConfig| GUID| セッションの SCID します。|
+| hopperName| string| Hopper の名前です。|
+| giveUpDuration| 32 ビット符号付き整数| 最大待機時間 (秒単位の整数)。|
+| preserveSession| 列挙| かどうかに一致するセッションとセッションは再利用を示す値。 指定できる値は、"never"と「常に」です。 |
+| ticketSessionRef| MultiplayerSessionReference| プレーヤーまたはグループが現在を再生中のセッションの MultiplayerSessionReference オブジェクト。 |
+| ticketAttributes| オブジェクトのコレクション| 属性とプレイヤーのグループについて、ユーザーによって提供される値。|
 
 <a id="ID4EXF"></a>
 
@@ -89,11 +89,11 @@ ms.locfileid: "9115522"
 <a id="ID4ECG"></a>
 
 
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
 
-マッチ チケットを作成して、セッションは、そのプレイヤー固有の属性と共に、一致するプレイヤーを含める必要があります前に、 **ticketSessionRef**オブジェクトによって参照されるセッションを作成する必要があります。 各プレイヤーは、作成またはセッションにマッチが関連付けられている属性の追加、MPSD からセッションに参加する必要があります。 マッチの属性は、プレイヤーごとに matchAttrs と呼ばれるカスタム プロパティのフィールドに配置されます。
+によって参照される、セッション、 **ticketSessionRef**一致チケットを作成して、セッションは、プレーヤーに固有の属性と、一致するプレーヤーを含める必要があります前に、オブジェクトを作成する必要があります。 各プレーヤーは、作成またはセッションに関連する一致属性を追加、MPSD に対してセッションに参加する必要があります。 一致する属性は、各プレーヤーの matchAttrs をという名前のカスタム プロパティ フィールドに配置されます。
 
-作成または参加要求を提出する**https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** し、次のようになります。
+作成または参加要求が送信される**https://sessiondirectory.xboxlive.com/serviceconfigs/{scid}/sessiontemplates/{templatename}/sessions/{sessionname}** し、次のようになります。
 
 
 ```cpp
@@ -120,11 +120,11 @@ ms.locfileid: "9115522"
 ```
 
 
-セッションが作成されたら、タイトルはそのセッションのチケットを作成するマッチメイ キング サービスを呼び出すことができます。
+セッションが作成されたら、タイトルは、そのセッションのチケットを作成するマッチメイ キング サービスを呼び出すことができます。
 
 
 > [!NOTE] 
-> タイトルは、この呼び出しを再試行するユーザーを有効にすることができますが、再試行しないでください。 が自動的にデータが失敗した場合。  
+> タイトルは、この呼び出しを再試行するユーザーを有効にできますが、再試行できませんに自動的にデータが失敗した場合。  
 
 
 
@@ -155,8 +155,8 @@ POST /serviceconfigs/{scid}/hoppers/{hoppername}
 
 | メンバー| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ticketId| GUID| チケットの作成中の ID。|
-| 待機時間| 32 ビット符号付き整数| 平均の待機時間 (秒の整数)、ホッパー。|
+| TicketId| GUID| 作成されるチケットの ID。|
+| 待機時間| 32 ビット符号付き整数| 平均の待機時間 (秒単位の整数) hopper。|
 
 
 ```cpp

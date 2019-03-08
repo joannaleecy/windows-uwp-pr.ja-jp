@@ -1,5 +1,5 @@
 ---
-Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
+Description: シミュレートし、キーボード、マウス、タッチ、ペン、および UWP アプリでのゲーム パッドなどのデバイスからの入力を自動化します。
 title: 入力の挿入によるユーザー入力のシミュレート
 label: Input injection
 template: detail.hbs
@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: de3f0b1377d4f4209dc012ff56adb2de9c68625f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933976"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602327"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>入力の挿入によるユーザー入力のシミュレート
 
 UWP アプリケーションで、キーボード、マウス、タッチ、ペン、ゲームパッドなどのデバイスからユーザー入力をシミュレートし、自動化します。
 
-> **Important APIs**: [**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
+> **重要な Api**:[**Windows.UI.Input.Preview.Injection**](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>概要
 
@@ -41,11 +41,11 @@ UWP アプリで入力の挿入 API を使用するには、次のコードを�
 
 | ![タッチ入力の挿入のサンプル](images/injection/touch-input-injection.gif) | 
 |:--:|
-| *タッチ入力の挿入のサンプル* |
+| *タッチ入力インジェクション サンプル* |
 
 この例では、入力の挿入の API ([Windows.UI.Input.Preview.Injection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection)) を使用してアプリの 1 つの領域でマウス入力のイベントをリッスンし、別の領域で対応するタッチ入力のイベントをシミュレートする方法を示します。
 
-**[入力の挿入のサンプル (マウスからタッチ)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip) からこのサンプルをダウンロードする**
+**このサンプルをからダウンロード[インジェクション サンプルの入力 (タッチをマウスの場合)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. まず、UI を設定します (MainPage.xaml)。
 
@@ -364,4 +364,4 @@ UWP アプリで入力の挿入 API を使用するには、次のコードを�
 
 ### <a name="topic-samples"></a>トピックのサンプル
 
-- [入力の挿入のサンプル (マウスからタッチ)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)
+- [入力のインジェクション サンプル (タッチをマウスの場合)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)

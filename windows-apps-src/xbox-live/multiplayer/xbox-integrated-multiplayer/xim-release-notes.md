@@ -1,5 +1,5 @@
 ---
-title: Xbox Integrated Multiplayer リリース ノート
+title: Xbox Integrated Multiplayer のリリース ノート
 description: Xbox Integrated Multiplayer に関するリリース ノートが含まれています。
 ms.assetid: 38df7a49-71b9-4d86-9c49-683ffa7308d6
 ms.date: 04/04/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7bef69d9a14455d10af3745533c26e5fb54332
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924464"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658117"
 ---
-# <a name="xbox-integrated-multiplayer-release-notes"></a>Xbox Integrated Multiplayer リリース ノート
+# <a name="xbox-integrated-multiplayer-release-notes"></a>Xbox Integrated Multiplayer のリリース ノート
 
 更新日: 2016 年 12 月 14 日
 

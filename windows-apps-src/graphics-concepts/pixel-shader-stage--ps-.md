@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941452"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603067"
 ---
 # <a name="pixel-shader-ps-stage"></a>ピクセル シェーダー (PS) ステージ
 
@@ -36,14 +36,14 @@ ms.locfileid: "8941452"
 
 頂点属性は、ピクセル シェーダーの中心位置で補間 (または評価) されます。 ピクセル シェーダーの属性補間モードは、入力レジスタ宣言において、[引数](https://msdn.microsoft.com/library/windows/desktop/bb509606)または[入力構造体](https://msdn.microsoft.com/library/windows/desktop/bb509668)の要素単位で宣言します。 属性は、線形補間することも、重心サンプリングによって補間することもできます。 「[ラスター化ルール](rasterization-rules.md)」の「マルチサンプル アンチエイリアシング時の属性の重心サンプリング」セクションをご覧ください。 重心評価はマルチサンプリング時のみに関連し、ピクセルがプリミティブによってカバーされているが、ピクセルの重心はカバーされていない場合に対応するためのものです。重心評価は、(カバーされていない) ピクセルの重心のできるだけ近くで行われます。
 
-入力はシステム値セマンティクスで宣言することもできます。[システム値セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)は、他のパイプライン ステージで使用されるパラメーターをマークします。 たとえば、ピクセルの位置は、SV\_Position セマンティクスでマークします。 [入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)で、(SV\_PrimitiveID を使用して) ピクセル シェーダーのスカラーを 1 つ生成できます。また、[ラスタライザー (RS) ステージ](rasterizer-stage--rs-.md)でも、(SV\_IsFrontFace を使用して) ピクセル シェーダーのスカラーを 1 つ生成することができます。
+入力はシステム値セマンティクスで宣言することもできます。[システム値セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)は、他のパイプライン ステージで使用されるパラメーターをマークします。 たとえば、SV でピクセルの位置をマークする必要があります\_セマンティックの位置。 [入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)ピクセル シェーダーの 1 つのスカラーを生成することができます (SV を使用して\_PrimitiveID)、 [(RS) ラスタライザー ステージ](rasterizer-stage--rs-.md)(SVを使用してピクセルシェーダーのも、1つのスカラーを生成できます\_IsFrontFace)。
 
 ## <a name="span-idoutputsspanspan-idoutputsspanspan-idoutputsspanoutputs"></a><span id="Outputs"></span><span id="outputs"></span><span id="OUTPUTS"></span>出力
 
 
 ピクセル シェーダーは、32 ビット、4 成分の色を 8 つまで出力できます。ピクセルが破棄された場合は色を出力することはできません。 ピクセル シェーダーの出力レジスタの成分は、使用前に宣言する必要があります。レジスタごとに異なる出力書き込みマスクを使用できます。
 
-深度バッファーに深度データを書き込むかどうかは、([出力結合 (OM) ステージ](output-merger-stage--om-.md)で) 深度書き込みの有効化ステートを使用して制御します (または、破棄命令を使用して、そのピクセルのデータを破棄します)。 ピクセル シェーダーは、深度テスト用にオプションで 32 ビット、1 成分、浮動小数点の深度値を出力することもできます (SV\_Depth セマンティクスを使用します)。 深度値は、oDepth レジスタに出力され、深度テスト用の補間された深度値と置き換えられます (深度テストが有効化されていると想定しています)。 固定関数深度またはシェーダー oDepth の使用を動的に変更することはできません。
+深度バッファーに深度データを書き込むかどうかは、([出力結合 (OM) ステージ](output-merger-stage--om-.md)で) 深度書き込みの有効化ステートを使用して制御します (または、破棄命令を使用して、そのピクセルのデータを破棄します)。 ピクセル シェーダーに綿密にテストの省略可能な 32 ビット、1 コンポーネント、浮動小数点、深さの値を出力もできます (SV を使用して\_セマンティックの深さ)。 深度値は、oDepth レジスタに出力され、深度テスト用の補間された深度値と置き換えられます (深度テストが有効化されていると想定しています)。 固定関数深度またはシェーダー oDepth の使用を動的に変更することはできません。
 
 ピクセル シェーダーはステンシル値を出力できません。
 

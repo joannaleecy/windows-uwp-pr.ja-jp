@@ -7,17 +7,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: abc9ca7d6c3d6e7120cfc5ede4f10a4dfd5a7c1f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050695"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597657"
 ---
 # <a name="send-an-sms-message"></a>SMS メッセージの送信
 
 このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 
-このコードを呼び出すと、パッケージ マニフェスト内**チャット**、 **smsSend**、および**chatSystem**機能を宣言します。 これらは、[制限付き機能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)がアプリで使うことができます。 ストアにアプリを公開する場合は、承認を作成する必要があります。 [アカウントの種類、場所、および料金](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)を参照してください。
+このコードを呼び出すには、宣言、**チャット**、 **smsSend**、および**chatSystem**パッケージ マニフェストで機能します。 これらは、[機能に限定](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)しますが、アプリで使用することができます。 アプリをストアに発行する場合は、承認を作成する必要があります。 参照してください[アカウントの種類、場所、料金](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)します。
 
 ## <a name="launch-the-compose-sms-dialog"></a>SMS の作成ダイアログの起動
 
@@ -67,4 +67,4 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 
 ## <a name="related-topics"></a>関連トピック
 
-* [連絡先の選択](selecting-contacts.md)
+* [連絡先を選択します。](selecting-contacts.md)

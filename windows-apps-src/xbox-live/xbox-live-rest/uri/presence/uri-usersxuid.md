@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 827bdd417377856dcd70fd42d00febdf908ef339
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919087"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661797"
 ---
 # <a name="usersxuidxuid"></a>/users/xuid({xuid})
-別のユーザーまたはクライアントの有無にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+別のユーザーまたはクライアントの存在にアクセスします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8919087"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) の対象ユーザーです。| 
   
 <a id="ID4EUB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8919087"
 
 [GET (/users/xuid({xuid}))](uri-usersxuidget.md)
 
-&nbsp;&nbsp;別のユーザーまたはクライアントの有無を検出します。
+&nbsp;&nbsp;別のユーザーまたはクライアントのプレゼンスを検出します。
  
 <a id="ID4E5B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8919087"
  
 ##### <a name="parent"></a>Parent 
 
-[プレゼンス URI](atoc-reference-presence.md)
+[プレゼンスの Uri](atoc-reference-presence.md)
 
    

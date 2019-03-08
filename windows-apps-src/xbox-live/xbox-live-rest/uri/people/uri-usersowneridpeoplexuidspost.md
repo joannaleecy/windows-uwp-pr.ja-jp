@@ -8,22 +8,22 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cb160f3276d215e3aba5dfd671c67fa17d883b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926416"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589867"
 ---
 # <a name="post-usersowneridpeoplexuids"></a>POST (/users/{ownerId}/people/xuids)
-呼び出し元のユーザーからコレクションに対応する XUID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
+呼び出し元のユーザーからコレクションの XUID によってユーザーを取得します。 これらの Uri のドメインが`social.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4E5)
-  * [Authorization](#ID4EJB)
+  * [承認](#ID4EJB)
   * [必要な要求ヘッダー](#ID4ERC)
-  * [オプションの要求ヘッダー](#ID4EBE)
+  * [省略可能な要求ヘッダー](#ID4EBE)
   * [要求本文](#ID4EHF)
-  * [HTTP ステータス コード](#ID4EKH)
+  * [HTTP 状態コード](#ID4EKH)
   * [必要な応答ヘッダー](#ID4ENBAC)
   * [応答本文](#ID4EZCAC)
  
@@ -32,46 +32,46 @@ ms.locfileid: "8926416"
  
 ## <a name="remarks"></a>注釈
  
-POST ので、これと同じ結果に 1 回または複数回実行している場合、操作はすべてのリソースを変更しません。
+POST 操作はすべてのリソースを変更するはありませんので、この 1 回または複数回実行された場合、同じ結果が生成されます。
   
 <a id="ID4E5"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 認証されたユーザーに一致する必要があります。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。| 
+| ownerId| string| リソースがアクセスされているユーザーの識別子。 認証されたユーザーに一致する必要があります。 使用可能な値は、"me"、xuid({xuid})、または gt({gamertag}) です。| 
   
 <a id="ID4EJB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-| 型| 必須かどうか| 説明| 不足している場合、応答| 
+| 種類| 必須| 説明| 不足している場合の応答| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| 必須| 呼び出し元が、ユーザーの Xbox ユーザー ID (XUID)。| 401 承認されていません。| 
+| XUID| ○| 呼び出し元が、ユーザーの Xbox ユーザー ID (XUID)。| 401 許可されていません| 
   
 <a id="ID4ERC"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 説明| 
+| Header| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| [String]。 Xbox LIVE のデータを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x =&lt;userhash >;&lt;トークン ></b>します。| 
-| Content-Length| 32 ビットの符号なし整数。 、バイトで、要求の本文の長さ。 値の例: 22 します。| 
-| Content-Type| [String]。 要求本文の MIME タイプ。 これは、<b>アプリケーション/json</b>でなければなりません。| 
+| Authorization| [String]。 Xbox LIVE の承認データです。 これは、通常、暗号化された XSTS トークンです。 値の例:<b>XBL3.0 x =&lt;userhash >;&lt;トークン ></b>します。| 
+| Content-Length| 32 ビット符号なし整数。 、(バイト単位)、要求本文の長さ。 値の例:22.| 
+| Content-Type| [String]。 要求本文の MIME の種類。 これでなければなりません<b>、application/json</b>します。| 
   
 <a id="ID4EBE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 説明| 
+| Header| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。既定値: 1 です。| 
-| Accept| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は、<b>アプリケーション/json</b>です。| 
+| X RequestedServiceVersion| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。［既定値］:1. | 
+| OK| [String]。 コンテンツ タイプを呼び出し元が応答で受け取る。 すべての応答は<b>、application/json</b>します。| 
   
 <a id="ID4EHF"></a>
 
@@ -81,18 +81,18 @@ POST ので、これと同じ結果に 1 回または複数回実行している
 <a id="ID4ENF"></a>
 
  
-### <a name="required-members"></a>必要なメンバー
+### <a name="required-members"></a>必須メンバー
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| XuidList| 呼び出し元のユーザーのコレクションから返される人を識別する Xuid の配列です。 [XuidList (JSON)](../../json/json-xuidlist.md)を参照してください。| 
+| XuidList| 呼び出し元のユーザーのコレクションから返されるユーザーを識別する Xuid の配列。 参照してください[XuidList (JSON)](../../json/json-xuidlist.md)します。| 
   
 <a id="ID4EKG"></a>
 
  
 ### <a name="optional-members"></a>省略可能なメンバー
  
-この要求の省略可能なメンバーはありません。
+この要求のオプションのメンバーはありません。
   
 <a id="ID4EVG"></a>
 
@@ -104,7 +104,7 @@ POST ので、これと同じ結果に 1 回または複数回実行している
 <a id="ID4EAH"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -122,40 +122,40 @@ POST ので、これと同じ結果に 1 回または複数回実行している
 <a id="ID4EKH"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| OK| メソッドは、「取得」するときに成功します。| 
-| 204| No Content| 成功の方法が「追加」または「削除」します。| 
-| 400| Bad Request| メソッドのパラメーターが不足しているか、正しくないか、ユーザー Id が正しくありません。| 
-| 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。| 
+| 200| OK| メソッドは"get"時に成功しました。| 
+| 204| コンテンツはありません| 成功メソッドが「追加」または"remove"します。| 
+| 400| 要求が正しくありません| メソッドのパラメーターがないか、形式が正しくない、またはユーザー Id が正しくありません。| 
+| 403| Forbidden| Authorization ヘッダーから XUID 要求を解析できませんでした。| 
   
 <a id="ID4ENBAC"></a>
 
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Content-Length| 32 ビットの符号なし整数| バイト単位の長さ、応答本文。 値の例: 22 します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 これにより、<b>アプリケーション/json</b>は常になります。| 
+| Content-Length| 32 ビット符号なし整数| 長さをバイト単位で、応答本文。 値の例:22.| 
+| Content-Type| string| 応答本文の MIME の種類。 常に<b>、application/json</b>します。| 
   
 <a id="ID4EZCAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-応答本文は要求メソッドは、「取得」するときにのみ送信されます。 「追加」または「削除」の応答の本文はありません。
+要求メソッドは"get"と応答本文はのみ送信されます。 「追加」または「削除」の応答本文はありません。
  
-「取得」メソッドの呼び出しが成功した場合は、サービスはコレクション、および呼び出し元のユーザーのコレクションが含まれた配列で、呼び出し元のユーザーのユーザーの合計数を返します。 「追加」と「削除」メソッドの応答は返されません。 [PeopleList (JSON)](../../json/json-peoplelist.md)を参照してください。
+"Get"メソッドの呼び出しが成功した場合、サービスはコレクション、および呼び出し元のユーザー コレクションを格納する配列、呼び出し元のユーザーのユーザーの合計数を返します。 "Add"および"remove"メソッドの応答は返されません。 参照してください[PeopleList (JSON)](../../json/json-peoplelist.md)します。
  
 <a id="ID4EHDAC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

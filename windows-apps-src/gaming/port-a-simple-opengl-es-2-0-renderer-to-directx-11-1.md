@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b6d06ff168f778c87e46fa399775492a3cebcaa
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047680"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594217"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>簡単な OpenGL ES 2.0 レンダラーの Direct3D 11 への移植
 
@@ -80,7 +80,7 @@ typedef struct
 
 この構造体には、インスタンスが 1 つあり、頂点シェーディングされた非常に簡単なメッシュをレンダリングするために必要なコンポーネントがすべて含まれています。
 
-> **注:** このトピックの OpenGL ES 2.0 コードは、Khronos Group によって提供される Windows API の実装に基づいており、Windows C プログラミング構文を使用します。
+> **注**  Any OpenGL ES 2.0 コードでは、このトピックでは、Khronos グループによって提供される Windows API の実装に基づいており、Windows C のプログラミング構文を使用します。
 
  
 
@@ -89,14 +89,14 @@ typedef struct
 
 ### <a name="technologies"></a>テクノロジ
 
--   [Microsoft Visual C++](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
+-   [Microsoft Visual C](https://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
 ### <a name="prerequisites"></a>前提条件
 
--   省略可能です。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
+-   (省略可能)。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
 
-## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>ステップ
+## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>手順
 
 
 <table>
@@ -132,12 +132,12 @@ typedef struct
 
  
 
-## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他の情報
+## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>その他のリソース
 
 
--   [UWP DirectX ゲーム プログラミング環境の準備](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
--   [Direct3D 11 への OpenGL ES 2.0 のマッピング](map-concepts-and-infrastructure.md)
+-   [UWP の DirectX ゲーム開発の開発環境を準備します。](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [UWP の DirectX 11 の新しいプロジェクトを作成します。](user-interface.md)
+-   [Direct3d11 に OpenGL ES 2.0 の概念とインフラストラクチャをマップします。](map-concepts-and-infrastructure.md)
 
  
 

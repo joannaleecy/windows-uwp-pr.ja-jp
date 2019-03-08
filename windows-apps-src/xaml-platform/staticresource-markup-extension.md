@@ -4,14 +4,14 @@ title: StaticResource マークアップ拡張
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f8c723dee8e943351d268ac678c8acc77efcbf4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051135"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659557"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} マークアップ拡張
 
@@ -38,7 +38,7 @@ ms.locfileid: "9051135"
 
 **StaticResource** がリソース ディクショナリの項目に解決される規則は、このトピックでは説明していません。 そのような規則は、参照とリソースがいずれもテンプレートに存在するかどうかや、マージされたリソース ディクショナリを使うかどうかなどによって異なります。 リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-**重要な** **StaticResource**が定義されているリソースへの前方参照をしようとする必要があります、XAML ファイル内で辞書的にします。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
+**重要な**   A **StaticResource**定義されているリソースへの前方参照を読み取ろうとしないで XAML ファイル内で構文的に追加します。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
 
 解決できないキーに **StaticResource** を指定しようとすると、実行時に XAML の解析で例外が発生します。 デザイン ツールでも、警告やエラーが通知されることがあります。
 
@@ -46,7 +46,7 @@ Windows ランタイム XAML プロセッサの実装では、**StaticResource**
 
 [{ThemeResource} マークアップ拡張](themeresource-markup-extension.md)は、別の場所の名前付きリソースを参照する同様のマークアップ拡張です。 違いは、{ThemeResource} マークアップ拡張ではアクティブなシステム テーマに応じて異なるリソースを返すことができるという点です。 詳しくは、「[{ThemeResource} マークアップ拡張](themeresource-markup-extension.md)」をご覧ください。
 
-**StaticResource** は、マークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "\{" と "\}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
+**StaticResource** は、マークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML の使用中のすべてのマークアップ拡張機能、"\{「と」\}"XAML プロセッサがマークアップ拡張機能が、属性を処理する必要がありますを認識する規則は、それぞれの属性構文内の文字。
 
 ### <a name="an-example-staticresource-usage"></a>{StaticResource} の使用例
 
@@ -75,14 +75,14 @@ XAML でもう少し先に進むと、リソースが要求されています。
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>設計時ツールの **{StaticResource}** マークアップ拡張のサポート
 
-Microsoft Visual Studio2013 は、XAML ページで、 **{StaticResource}** マークアップ拡張機能を使用する場合、Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
+Microsoft Visual Studio 2013 は、使用する場合に、Microsoft IntelliSense ドロップダウン リストでの使用可能なキー値を含めることができます、 **{StaticResource}** XAML ページのマークアップ拡張機能。 たとえば、"{StaticResource" と入力するとすぐに、現在の検索範囲のリソース キーが IntelliSense のドロップダウンに表示されます。 ページ レベル ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) とアプリ レベル ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) で持つ一般的なリソースに加えて、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)と、プロジェクトで使っている拡張機能のリソースも表示されます。
 
 **{StaticResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、リソースが定義されているディクショナリを表示できます。 テーマ リソースの場合は、設計時の generic.xaml に移動します。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [ResourceDictionary と XAML のリソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key 属性](x-key-attribute.md)
-* [{ThemeResource} マークアップ拡張](themeresource-markup-extension.md)
+* [X:key 属性](x-key-attribute.md)
+* [{ThemeResource} マークアップ拡張機能](themeresource-markup-extension.md)
 

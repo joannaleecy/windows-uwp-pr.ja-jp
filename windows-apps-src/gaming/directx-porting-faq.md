@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044456"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662617"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 の移植に関する FAQ
 
@@ -28,12 +28,12 @@ Direct3D 11 は Direct3D 9 からの大幅なアップグレードです。 仮�
 ## <a name="what-is-the-new-device-context-for-am-i-supposed-to-replace-my-direct3d-9-device-with-the-direct3d-11-device-the-device-context-or-both"></a>新しいデバイス コンテキストの用途は何ですか。 自分の Direct3D 9 デバイスを Direct3D 11 デバイスに置き換えたり、Direct3D 9 デバイス コンテキストを Direct3D 11 デバイス コンテキストに置き換えたりする必要はありますか。その両方が必要でしょうか。
 
 
-Direct3D デバイスは、ビデオ メモリにリソースを作成するために使われます。一方、デバイス コンテキストは、パイプラインの状態を設定し、レンダリング コマンドを生成するために使われます。 詳しくは、「[Direct3D 9 と Direct3D 11 の間の重要な変更点](understand-direct3d-11-1-concepts.md)」をご覧ください。
+Direct3D デバイスは、ビデオ メモリにリソースを作成するために使われます。一方、デバイス コンテキストは、パイプラインの状態を設定し、レンダリング コマンドを生成するために使われます。 詳しくは、次のトピックをご覧ください。[Direct3D 9 以降最も重要な変更は?](understand-direct3d-11-1-concepts.md)
 
 ##  <a name="do-i-have-to-update-my-game-timer-for-uwp"></a>UWP 向けのゲーム タイマーを更新する必要はありますか。
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) と [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) は、引き続き UWP アプリのゲーム タイマーを実装する最適な手段です。
+[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904)、と共に[ **QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905)、UWP アプリ用のゲーム タイマーを実装する最善の方法ではまだします。
 
 タイマーと UWP アプリのライフサイクルのニュアンスに注意する必要があります。 中断と再開は、プレーヤーによるデスクトップ ゲームの再起動とは異なります。ゲームでは、最後にプレイされていた時点のスナップショットを再開します。 数週間など、長時間経過した場合は、ゲーム タイマーの実装は適切に動作しない可能性があります。 ゲームの再開時にアプリのライフサイクル イベントを使ってタイマーをリセットできます。
 
@@ -44,10 +44,10 @@ Direct3D デバイスは、ビデオ メモリにリソースを作成するた�
 
 [DirectX ツール キット (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) コミュニティのプロジェクトには、Direct3D 11 で利用できるヘルパー クラスが用意されています。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>デスクトップと Microsoft Store のコード パスを維持する方法
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>デスクトップと Microsoft Store のコード パスを維持する方法は?
 
 
-Chuck Walbourn の記事シリーズで[ゲームの二重用途のコーディング手法](https://go.microsoft.com/fwlink/p/?LinkID=286210)では、デスクトップと Microsoft Store のコード パスの間でコードを共有に関するガイダンスを提供します。
+Chuck Walbourn の記事シリーズの「[ゲームの二重用途のコーディング手法](https://go.microsoft.com/fwlink/p/?LinkID=286210)デスクトップと Microsoft Store のコード パス間コードの共有に関するガイダンスを示します。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>DirectX UWP アプリの画像リソースを読み込む方法を教えてください。
 
@@ -83,7 +83,7 @@ Win32 デスクトップ アプリケーションは引き続き DirectSetup を
 
 -   「[Direct3D 9 への変換](https://msdn.microsoft.com/library/windows/desktop/bb204851)」をご覧ください。
 -   ゲームに固定パイプラインが残っていないことを確かめます。「[推奨されなくなった機能](https://msdn.microsoft.com/library/windows/desktop/cc308047)」をご覧ください。
--   次に、DirectX 9 移植パスに従います。「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」をご覧ください。
+-   DirectX 9 への移植のパスを実行します。[ポート D3D から UWP への 9](walkthrough--simple-port-from-direct3d-9-to-11-1.md)します。
 
 ##  <a name="can-i-port-my-directx-10-or-11-game-to-uwp"></a>UWP に DirectX 10 または 11 ゲームを移植することはできますか。
 
@@ -98,7 +98,7 @@ DirectX 10.x と 11 のデスクトップ ゲームは、UWP に簡単に移植�
 ## <a name="how-do-i-turn-on-antialiasing"></a>アンチエイリアシングをオンにするにはどうすればよいですか。
 
 
-Direct3D デバイスを作成するとアンチエイリアシング (マルチサンプリング) が有効になります。 [**CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) を呼び出してマルチサンプリングのサポートを列挙し、[**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530) を呼び出すときに [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) でマルチサンプリングのオプションを設定します。
+Direct3D デバイスを作成するとアンチエイリアシング (マルチサンプリング) が有効になります。 マルチ サンプリング サポートを呼び出すことによって列挙[ **CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499)、マルチ サンプリング オプションを設定し、 [ **DXGI\_サンプル\_DESC 構造**](https://msdn.microsoft.com/library/windows/desktop/bb173072)を呼び出すと[ **CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530)します。
 
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>自分のゲームでは、マルチスレッドや遅延レンダリングを使ってレンダリングを行います。 Direct3D 11 向けに何を把握しておく必要がありますか。
 
@@ -110,8 +110,8 @@ Direct3D デバイスを作成するとアンチエイリアシング (マルチ
 
 次のトピックをご覧ください。
 
--   [HLSL 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb509635)
--   [Direct3D 10 のよく寄せられる質問](https://msdn.microsoft.com/library/windows/desktop/ee416643)
+-   [HLSL のプログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb509635)
+-   [Direct3D 10 についてよく寄せられる質問](https://msdn.microsoft.com/library/windows/desktop/ee416643)
 
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>モデルには .x ファイル形式の代わりに何を使えばよいですか。
 
@@ -121,14 +121,14 @@ Direct3D デバイスを作成するとアンチエイリアシング (マルチ
 ## <a name="how-do-i-debug-my-shaders"></a>シェーダーをデバッグするにはどうしたらよいですか。
 
 
-Microsoft Visual Studio2015 には、DirectX グラフィックスの診断ツールが含まれています。 「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
+Microsoft Visual Studio 2015 には、DirectX のグラフィックス診断ツールが含まれています。 「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 関数に相当する Direct3D 11 の要素は何ですか。
 
 
 「DirectX 11 API への DirectX 9 の機能のマッピング」の「[関数のマッピング](feature-mapping.md#function-mapping)」をご覧ください。
 
-##  <a name="what-is-the-dxgiformat-equivalent-of-y-surface-format"></a>*y* サーフェス形式に相当する DXGI_FORMAT の要素は何ですか。
+##  <a name="what-is-the-dxgiformat-equivalent-of-y-surface-format"></a>新機能、DXGI\_形式と等価の*y*サーフェス フォーマットしますか?
 
 
 「DirectX 11 API への DirectX 9 の機能のマッピング」の「[サーフェス形式のマッピング](feature-mapping.md#surface-format-mapping)」をご覧ください。

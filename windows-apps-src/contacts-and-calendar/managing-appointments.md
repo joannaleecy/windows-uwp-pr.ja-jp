@@ -7,21 +7,21 @@ ms.topic: article
 keywords: Windows 10, UWP, 予定, カレンダー
 ms.localizationpriority: medium
 ms.openlocfilehash: ece137fafc2fdcca7ce41839aa4614456973cf40
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602087"
 ---
 # <a name="manage-appointments"></a>予定の管理
 
 
 
-[**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 さらに、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。
+[  **Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 また、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。
 
 ## <a name="create-an-appointment-and-apply-data-to-it"></a>予定を作成してデータを適用する
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した予定のプロパティを **Appointment** に適用します。
+[  **Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した予定のプロパティを **Appointment** に適用します。
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -255,7 +255,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-an-appointment-to-the-users-calendar"></a>予定をユーザーのカレンダーに追加する
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、[**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) メソッドを呼び出して、既定の予定プロバイダーの予定追加 UI を表示し、ユーザーが予定を追加できるようにします。 ユーザーが **[追加]** をクリックした場合、このサンプルは **ShowAddAppointmentAsync** によって返された予定識別子を出力します。
+[  **Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、[**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) メソッドを呼び出して、既定の予定プロバイダーの予定追加 UI を表示し、ユーザーが予定を追加できるようにします。 ユーザーが **[追加]** をクリックした場合、このサンプルは **ShowAddAppointmentAsync** によって返された予定識別子を出力します。
 
 ```cs
 private async void Add-Click(object sender, RoutedEventArgs e)
@@ -282,11 +282,11 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注:** 用 Windows Phone ストア アプリ、 [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)関数と同様に[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)予定を追加するために表示されるダイアログが編集可能なことにします。
+**注**  Windows Phone ストアのアプリ、 [ **ShowAddAppointment** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)同様に機能[ **ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)予定を追加するために表示されるダイアログ ボックスが編集可能にします。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>ユーザーのカレンダーで予定を置換する
 
-[**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、該当する [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定置換 UI を表示し、ユーザーが予定を置換できるようにします。 ユーザーは、置換する予定識別子も指定します。 この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。 ユーザーが **[置換]** をクリックした場合、このサンプルは更新されたその予定識別子を出力します。
+[  **Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) オブジェクトを作成し、変数に割り当てます。 次に、該当する [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) メソッドを呼び出して、既定の予定プロバイダーの予定置換 UI を表示し、ユーザーが予定を置換できるようにします。 ユーザーは、置換する予定識別子も指定します。 この識別子は、[**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) から返されたものです。 ユーザーが **[置換]** をクリックした場合、このサンプルは更新されたその予定識別子を出力します。
 
 ```cs
 private async void Replace-Click(object sender, RoutedEventArgs e)
@@ -404,7 +404,7 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a>予定の繰り返しオブジェクトを作成してデータを適用する
 
-[**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した繰り返しのプロパティを **AppointmentRecurrence** に適用します。
+[  **Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) オブジェクトを作成し、変数に割り当てます。 次に、ユーザーが UI を通じて提供した繰り返しのプロパティを **AppointmentRecurrence** に適用します。
 
 ```cs
 private void Create-Click(object sender, RoutedEventArgs e)
@@ -507,7 +507,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 
 ## <a name="add-a-new-editable-appointment"></a>新しい編集可能な予定を追加する
 
-[**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) の動作は、基本的には [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) と同じです。異なるのは、予定を追加するためのダイアログが編集可能である点です。ユーザーは、予定のデータを変更したうえで保存することができます。
+[**ShowEditNewAppointmentAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)同様の機能[ **ShowAddAppointmentAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)ユーザーが変更できるように、予定を追加するためのダイアログ ボックスが編集可能ながある点が保存する前に、予定データ。
 
 ``` cs
 private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
@@ -542,7 +542,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 
 ## <a name="show-appointment-details"></a>予定の詳しい情報を表示する
 
-[**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) は、指定された予定の詳しい情報を表示するようにシステムに働きかけます。 カレンダーを実装するアプリでは、所有下にあるカレンダー内の予定について詳しい情報を表示するときに、そのアプリをアクティブにするかどうかを選ぶことができます。 それ以外の場合、予定の詳しい情報がシステムによって表示されます。 開始日を引数として受け取るメソッドのオーバーロードが用意されており、定期的に発生する予定について、詳しい情報をいつから表示するかを指定することができます。
+[**ShowAppointmentDetailsAsync** ](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync)により、システムが指定された予定の詳細を表示します。 カレンダーを実装するアプリでは、所有下にあるカレンダー内の予定について詳しい情報を表示するときに、そのアプリをアクティブにするかどうかを選ぶことができます。 それ以外の場合、予定の詳しい情報がシステムによって表示されます。 開始日を引数として受け取るメソッドのオーバーロードが用意されており、定期的に発生する予定について、詳しい情報をいつから表示するかを指定することができます。
 
 ```cs
 private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e)
@@ -569,7 +569,7 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="related-topics"></a>関連トピック
 
-* [予定 API のサンプル](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [予定 API サンプル](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

@@ -4,14 +4,14 @@ title: ミュージック、画像、およびビデオ ライブラリのファ
 description: 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。
 ms.date: 06/18/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927001"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661437"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
 
@@ -22,7 +22,7 @@ ms.locfileid: "8927001"
 ## <a name="prerequisites"></a>前提条件
 
 
--   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**
 
     C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
@@ -31,7 +31,7 @@ ms.locfileid: "8927001"
     Visual Studio のマニフェスト デザイナーで、アプリ マニフェスト ファイルを開きます。 **[機能]** ページで、アプリで管理するライブラリを選択します。
 
     -   **音楽ライブラリ**
-    -   **画像ライブラリ**
+    -   **ピクチャ ライブラリ**
     -   **ビデオ ライブラリ**
 
     詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
@@ -42,7 +42,7 @@ ms.locfileid: "8927001"
 > 必ず適切な機能を宣言してください。 詳しくは、「[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)」をご覧ください。
  
 
-ユーザーの音楽、画像、またはビデオ ライブラリへの参照を取得するには、[**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) メソッドを呼び出します。 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列挙体の対応する値を指定します。
+ユーザーの音楽、画像、またはビデオ ライブラリへの参照を取得するには、[**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) メソッドを呼び出します。 [  **KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列挙体の対応する値を指定します。
 
 -   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
 -   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
@@ -82,9 +82,9 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>フォルダーをライブラリから削除する
 
-フォルダーをライブラリから削除するには、[**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) メソッドを呼び出して、削除するフォルダーを指定します。 [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) と [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロール (または同様のコントロール) を使って、ユーザーが削除するフォルダーを選べるようにすることができます。
+フォルダーをライブラリから削除するには、[**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) メソッドを呼び出して、削除するフォルダーを指定します。 [  **StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) と [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロール (または同様のコントロール) を使って、ユーザーが削除するフォルダーを選べるようにすることができます。
 
-[**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) を呼び出すと、フォルダーが "ピクチャに表示されなくなるが、削除されない" ことを示す確認ダイアログがユーザーに表示されます。 これは、フォルダーがディスク上の元の場所に残るが、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティから削除され、組み込みのフォト アプリには含まれなくなることを意味します。
+[  **StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) を呼び出すと、フォルダーが "ピクチャに表示されなくなるが、削除されない" ことを示す確認ダイアログがユーザーに表示されます。 これは、フォルダーがディスク上の元の場所に残るが、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティから削除され、組み込みのフォト アプリには含まれなくなることを意味します。
 
 次の例では、ユーザーが削除するフォルダーを **lvPictureFolders** という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールから選んだことを前提としています。
 
@@ -173,7 +173,7 @@ private async void getSongs()
 
 [カメラ ロール] フォルダーと [保存済みの写真] フォルダーでは、深いクエリがサポートされていません。
 
-**撮影に使ったアプリで写真を開く**
+**写真をキャプチャしているアプリで開く**
 
 ユーザーが撮影に使ったアプリで後から再び写真を表示できるようにするには、写真のメタデータと一緒に **CreatorAppId** を保存します。次のコード例を参考にしてください。 この例では、**testPhoto** は [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) です。
 

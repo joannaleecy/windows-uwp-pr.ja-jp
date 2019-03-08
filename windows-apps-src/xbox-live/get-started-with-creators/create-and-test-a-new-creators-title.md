@@ -7,48 +7,48 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, クリエーター, テスト
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b39a2ed67d2fe77fa8904408b81a329125d73c7
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997389"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594597"
 ---
 # <a name="create-a-new-xbox-live-creators-program-title-and-publish-to-the-test-environment"></a>新しい Xbox Live クリエーターズ プログラム向けのタイトルを作成し、テスト環境に公開する
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 Xbox Live コードを記述する前に、サービス構成ポータルで、新しいタイトルをセットアップする必要があります。  サービス構成について詳しくは、「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」をご覧ください。
 
-この記事では、[パートナー センター](https://partner.microsoft.com/dashboard)で構成されているタイトル、新しいプロジェクトの作成、および Xbox Live のテストの準備に必要なすべての手順について説明します。 この記事では、以下を前提としています。
+この記事では説明で構成されているタイトルを取得するために必要なすべて[パートナー センター](https://partner.microsoft.com/dashboard)、新しいプロジェクトが作成され、Xbox Live をテストするために準備します。 この記事では、以下を前提としています。
 
 1. Xbox Live クリエーターズ プログラムを使用している。
 2. ユニバーサル Windows プラットフォーム (UWP) のタイトルを開発している。  UWPのタイトルは、Xbox One、Windows 10 デスクトップ PC、およびモバイルで実行できるタイトルです。
-3. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを構成しています。
-4. 開発用コンピュータが Windows 10 を実行している。
+3. タイトルを構成している[パートナー センター](https://partner.microsoft.com/dashboard)します。
+4. 開発用コンピュータは Windows 10 を実行している。
 
 > [!NOTE]
 > Xbox Live クリエーターズ プログラムに参加している場合は、上記の前提条件が適用されますので、この記事に従ってください。
 
 ## <a name="partner-center-setup"></a>パートナー センターのセットアップ
 
-Xbox Live 対応のタイトルの Xbox Live の機能を使うための前提として、[パートナー センター](https://partner.microsoft.com/dashboard)で作成する必要があります。
+Xbox Live、有効になっているタイトルで作成する必要がある[パートナー センター](https://partner.microsoft.com/dashboard)の Xbox Live 機能を使用する前提条件として。
 
 ### <a name="create-a-microsoft-account"></a>Microsoft アカウントを作成する
 Microsoft アカウント (MSA とも呼ばれます) をお持ちでない場合は、最初に [Microsoft アカウントのサインイン ページ](https://go.microsoft.com/fwlink/p/?LinkID=254486)でアカウントを作成する必要があります。 Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
 
 ### <a name="register-as-an-app-developer"></a>アプリ開発者として登録する
-パートナー センターで新しいタイトルを作成する前に、アプリ開発者として登録する必要があります。
+パートナー センターで、新しいタイトルを作成する前に、アプリ開発者として登録する必要があります。
 
 登録するには、[アプリ開発者として登録](https://developer.microsoft.com/store/register)し、サインアップ プロセスに従ってください。
 
 ### <a name="create-a-new-uwp-title"></a>新しい UWP タイトルを作成する
-UWP タイトルがパートナー センターで定義されている必要があります。 行うには最初の移動[のパートナー センター](https://partner.microsoft.com/dashboard)にします。
+UWP タイトルがパートナー センターで定義されている必要があります。 経由してその[パートナー センター](https://partner.microsoft.com/dashboard)します。
 
 次に、新しいタイトルを作成します。 名前を予約する必要があります。
 
 ![](../images/getting_started/first_xbltitle_newapp.png)
 
-次のスクリーンショットは、Xbox Live を構成するための主要なページを開く **[サービス]** >  **[Xbox Live]** メニューを示しています。
+次のスクリーンショットは、Xbox Live を構成するための主要なページを開く **[サービス]** > **[Xbox Live]** メニューを示しています。
 
 ![](../images/creators_udc/creators_udc_xboxlive_page.png)
 
@@ -71,7 +71,7 @@ UWP タイトルがパートナー センターで定義されている必要が
 
 ゲームを一般向けにリリースすると、Xbox Live 構成は自動的に RETAIL サンドボックスに公開されます。
 
-既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスになっています。
+既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスに格納されます。
 
 ### <a name="publish-xbox-live-configuration-to-the-test-environment"></a>Xbox Live 構成をテスト環境に公開する
 
@@ -85,11 +85,11 @@ Xbox Live サービスを有効にした後で Xbox Live サービス構成に�
 
 開発サンドボックス内のゲームの Xbox Live 構成には、承認済みのデバイスとユーザーのみがアクセスできます。
 
-既定では、パートナー センター アカウントに追加したすべての Xbox One 開発コンソールは開発サンド ボックスへのアクセスがあります。  Xbox One 本体を追加するには、[Xbox One 本体の管理のページ](https://partner.microsoft.com/xboxconfig/devices)に移動します。 既にパートナー センター アカウントになっている場合は、**アカウントの設定**に移動できます > **アカウント設定** > **デベロッパー デバイス** > **Xbox One 開発機本体**です。
+既定では、パートナー センター アカウントに追加したすべての Xbox One 開発コンソールは、開発サンド ボックスへのアクセスがあります。  Xbox One 本体を追加するには、[Xbox One 本体の管理のページ](https://partner.microsoft.com/xboxconfig/devices)に移動します。 移動することができます、パートナー センター アカウントで既に場合**アカウント設定** > **アカウント設定** > **Dev のデバイス** >  **Xbox One 開発コンソール**します。
 
 通常の Xbox Live アカウントに開発サンドボックスへのアクセスを承認することもできます。  Xbox Live アカウントに開発サンドボックスへのアクセスを承認するには、[アカウントの管理のページ](https://developer.microsoft.com/xboxtestaccounts/configurecreators)に移動します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 これで新しいタイトルが作成されたので、次はゲーム エンジン、Visual Studio、任意のビルド環境で Xbox Live 対応のタイトルをセットアップできます。
 
 「[Xbox Live を統合するためのステップ バイ ステップ ガイド](creators-step-by-step-guide.md)」をご覧ください
