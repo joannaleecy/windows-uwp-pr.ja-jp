@@ -8,23 +8,23 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940863"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627737"
 ---
-# <a name="diffuse-light-maps"></a><span data-ttu-id="9af5b-104">拡散ライト マップ</span><span class="sxs-lookup"><span data-stu-id="9af5b-104">Diffuse light maps</span></span>
+# <a name="diffuse-light-maps"></a><span data-ttu-id="e01ae-104">拡散ライト マップ</span><span class="sxs-lookup"><span data-stu-id="e01ae-104">Diffuse light maps</span></span>
 
 
-<span data-ttu-id="9af5b-105">マット サーフェスには、拡散光の反射があります。</span><span class="sxs-lookup"><span data-stu-id="9af5b-105">Matte surfaces have diffuse light reflection.</span></span> <span data-ttu-id="9af5b-106">拡散光の明るさは、光源からの距離と、サーフェスの法線および光源方向ベクトルの角度によって決まります。</span><span class="sxs-lookup"><span data-stu-id="9af5b-106">The brightness of diffuse light depends on the distance from the light source and the angle between the surface normal and the light source direction vector.</span></span> <span data-ttu-id="9af5b-107">テクスチャ ライト マップは、複雑な拡散光をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="9af5b-107">Texture light maps can simulate complex diffuse lighting.</span></span>
+<span data-ttu-id="e01ae-105">マット サーフェスには、拡散光の反射があります。</span><span class="sxs-lookup"><span data-stu-id="e01ae-105">Matte surfaces have diffuse light reflection.</span></span> <span data-ttu-id="e01ae-106">拡散光の明るさは、光源からの距離と、サーフェスの法線および光源方向ベクトルの角度によって決まります。</span><span class="sxs-lookup"><span data-stu-id="e01ae-106">The brightness of diffuse light depends on the distance from the light source and the angle between the surface normal and the light source direction vector.</span></span> <span data-ttu-id="e01ae-107">テクスチャ ライト マップは、複雑な拡散光をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="e01ae-107">Texture light maps can simulate complex diffuse lighting.</span></span>
 
-<span data-ttu-id="9af5b-108">照明の計算によってシミュレートされる拡散光の効果は一般的な効果のみです。</span><span class="sxs-lookup"><span data-stu-id="9af5b-108">The diffuse lighting effects simulated by lighting calculations produce only general effects.</span></span> <span data-ttu-id="9af5b-109">アプリケーションでは、テクスチャ ライト マップを使って、より複雑な拡散光をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="9af5b-109">Your application can simulate more complex diffuse lighting with texture light maps.</span></span>
+<span data-ttu-id="e01ae-108">照明の計算によってシミュレートされる拡散光の効果は一般的な効果のみです。</span><span class="sxs-lookup"><span data-stu-id="e01ae-108">The diffuse lighting effects simulated by lighting calculations produce only general effects.</span></span> <span data-ttu-id="e01ae-109">アプリケーションでは、テクスチャ ライト マップを使って、より複雑な拡散光をシミュレートできます。</span><span class="sxs-lookup"><span data-stu-id="e01ae-109">Your application can simulate more complex diffuse lighting with texture light maps.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="9af5b-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="9af5b-110"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="e01ae-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="e01ae-110"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="9af5b-111">テクスチャでのライト マッピング</span><span class="sxs-lookup"><span data-stu-id="9af5b-111">Light mapping with textures</span></span>](light-mapping-with-textures.md)
+[<span data-ttu-id="e01ae-111">テクスチャのライトのマッピング</span><span class="sxs-lookup"><span data-stu-id="e01ae-111">Light mapping with textures</span></span>](light-mapping-with-textures.md)
 
  
 

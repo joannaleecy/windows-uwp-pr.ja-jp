@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d531352c4336e00c93a91e7c945602ab69695f2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918414"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622587"
 ---
-# <a name="presencerecord-json"></a><span data-ttu-id="40b28-104">PresenceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="40b28-104">PresenceRecord (JSON)</span></span>
-<span data-ttu-id="40b28-105">1 人のユーザーのオンライン プレゼンスに関するデータ。</span><span class="sxs-lookup"><span data-stu-id="40b28-105">Data about the online presence of a single user.</span></span>
+# <a name="presencerecord-json"></a><span data-ttu-id="7a80d-104">PresenceRecord (JSON)</span><span class="sxs-lookup"><span data-stu-id="7a80d-104">PresenceRecord (JSON)</span></span>
+<span data-ttu-id="7a80d-105">1 人のユーザーのオンラインかどうかに関するデータ。</span><span class="sxs-lookup"><span data-stu-id="7a80d-105">Data about the online presence of a single user.</span></span>
 <a id="ID4EN"></a>
 
 
-## <a name="presencerecord"></a><span data-ttu-id="40b28-106">PresenceRecord</span><span class="sxs-lookup"><span data-stu-id="40b28-106">PresenceRecord</span></span>
+## <a name="presencerecord"></a><span data-ttu-id="7a80d-106">PresenceRecord</span><span class="sxs-lookup"><span data-stu-id="7a80d-106">PresenceRecord</span></span>
 
-<span data-ttu-id="40b28-107">PresenceRecord オブジェクトには、次仕様があります。</span><span class="sxs-lookup"><span data-stu-id="40b28-107">The PresenceRecord object has the following specification.</span></span>
+<span data-ttu-id="7a80d-107">PresenceRecord オブジェクトには、次の仕様があります。</span><span class="sxs-lookup"><span data-stu-id="7a80d-107">The PresenceRecord object has the following specification.</span></span>
 
-| <span data-ttu-id="40b28-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="40b28-108">Member</span></span>| <span data-ttu-id="40b28-109">種類</span><span class="sxs-lookup"><span data-stu-id="40b28-109">Type</span></span>| <span data-ttu-id="40b28-110">説明</span><span class="sxs-lookup"><span data-stu-id="40b28-110">Description</span></span>|
+| <span data-ttu-id="7a80d-108">メンバー</span><span class="sxs-lookup"><span data-stu-id="7a80d-108">Member</span></span>| <span data-ttu-id="7a80d-109">種類</span><span class="sxs-lookup"><span data-stu-id="7a80d-109">Type</span></span>| <span data-ttu-id="7a80d-110">説明</span><span class="sxs-lookup"><span data-stu-id="7a80d-110">Description</span></span>|
 | --- | --- | --- |
-| <span data-ttu-id="40b28-111">xuid</span><span class="sxs-lookup"><span data-stu-id="40b28-111">xuid</span></span>| <span data-ttu-id="40b28-112">string</span><span class="sxs-lookup"><span data-stu-id="40b28-112">string</span></span>| <span data-ttu-id="40b28-113">Xbox ユーザー ID (XUID) 対象ユーザーのします。</span><span class="sxs-lookup"><span data-stu-id="40b28-113">The Xbox User ID (XUID) of the target user.</span></span> <span data-ttu-id="40b28-114">提供されるプレゼンス データは、このユーザーによってです。</span><span class="sxs-lookup"><span data-stu-id="40b28-114">The presence data provided is for this user.</span></span>|
-| <span data-ttu-id="40b28-115">devices</span><span class="sxs-lookup"><span data-stu-id="40b28-115">devices</span></span>| <span data-ttu-id="40b28-116">[DeviceRecord](json-devicerecord.md)の配列</span><span class="sxs-lookup"><span data-stu-id="40b28-116">array of [DeviceRecord](json-devicerecord.md)</span></span>| <span data-ttu-id="40b28-117">ユーザーのデバイスのレコードの一覧です。</span><span class="sxs-lookup"><span data-stu-id="40b28-117">List of the user's device records.</span></span>|
-| <span data-ttu-id="40b28-118">状態</span><span class="sxs-lookup"><span data-stu-id="40b28-118">state</span></span>| <span data-ttu-id="40b28-119">string</span><span class="sxs-lookup"><span data-stu-id="40b28-119">string</span></span>| <span data-ttu-id="40b28-120">Xbox live ユーザーのアクティビティ。</span><span class="sxs-lookup"><span data-stu-id="40b28-120">User's activity on Xbox LIVE.</span></span> <span data-ttu-id="40b28-121">設定可能な値:</span><span class="sxs-lookup"><span data-stu-id="40b28-121">Possible values:</span></span> <ul><li><span data-ttu-id="40b28-122">オンライン: ユーザーは、少なくとも 1 つのデバイスのレコードを持っています。</span><span class="sxs-lookup"><span data-stu-id="40b28-122">Online: User has at least one device record.</span></span></li><li><span data-ttu-id="40b28-123">離れた: ユーザーが Xbox LIVE にサインインした任意のタイトルでアクティブではありません。</span><span class="sxs-lookup"><span data-stu-id="40b28-123">Away: User is signed into Xbox LIVE but not active in any title.</span></span></li><li><span data-ttu-id="40b28-124">オフライン: ユーザーは任意のデバイスに存在するではありません。</span><span class="sxs-lookup"><span data-stu-id="40b28-124">Offline: User is not present on any device.</span></span></li></ul> | 
-| <span data-ttu-id="40b28-125">lastSeen</span><span class="sxs-lookup"><span data-stu-id="40b28-125">lastSeen</span></span>| [<span data-ttu-id="40b28-126">LastSeenRecord</span><span class="sxs-lookup"><span data-stu-id="40b28-126">LastSeenRecord</span></span>](json-lastseenrecord.md)| <span data-ttu-id="40b28-127">最後に検出された情報を利用可能なは、ユーザーには、有効な DeviceRecords があるない場合だけです。</span><span class="sxs-lookup"><span data-stu-id="40b28-127">The last seen information is only available when the user has no valid DeviceRecords.</span></span> <span data-ttu-id="40b28-128">オブジェクトは、キャッシュから削除された場合、データが返されません、永続的なストアがないためです。</span><span class="sxs-lookup"><span data-stu-id="40b28-128">If the object was removed from the cache, its data might not be returned, because there is no persistent store.</span></span>|
+| <span data-ttu-id="7a80d-111">xuid</span><span class="sxs-lookup"><span data-stu-id="7a80d-111">xuid</span></span>| <span data-ttu-id="7a80d-112">string</span><span class="sxs-lookup"><span data-stu-id="7a80d-112">string</span></span>| <span data-ttu-id="7a80d-113">Xbox ユーザー ID (XUID) の対象ユーザー。</span><span class="sxs-lookup"><span data-stu-id="7a80d-113">The Xbox User ID (XUID) of the target user.</span></span> <span data-ttu-id="7a80d-114">指定されたプレゼンス データは、このユーザーがいます。</span><span class="sxs-lookup"><span data-stu-id="7a80d-114">The presence data provided is for this user.</span></span>|
+| <span data-ttu-id="7a80d-115">デバイス</span><span class="sxs-lookup"><span data-stu-id="7a80d-115">devices</span></span>| <span data-ttu-id="7a80d-116">配列[DeviceRecord](json-devicerecord.md)</span><span class="sxs-lookup"><span data-stu-id="7a80d-116">array of [DeviceRecord](json-devicerecord.md)</span></span>| <span data-ttu-id="7a80d-117">ユーザーのデバイス レコードの一覧。</span><span class="sxs-lookup"><span data-stu-id="7a80d-117">List of the user's device records.</span></span>|
+| <span data-ttu-id="7a80d-118">状態</span><span class="sxs-lookup"><span data-stu-id="7a80d-118">state</span></span>| <span data-ttu-id="7a80d-119">string</span><span class="sxs-lookup"><span data-stu-id="7a80d-119">string</span></span>| <span data-ttu-id="7a80d-120">Xbox LIVE 上のユーザーのアクティビティ。</span><span class="sxs-lookup"><span data-stu-id="7a80d-120">User's activity on Xbox LIVE.</span></span> <span data-ttu-id="7a80d-121">設定可能な値:</span><span class="sxs-lookup"><span data-stu-id="7a80d-121">Possible values:</span></span> <ul><li><span data-ttu-id="7a80d-122">オンライン：ユーザーは、少なくとも 1 つのデバイス レコードを持っています。</span><span class="sxs-lookup"><span data-stu-id="7a80d-122">Online: User has at least one device record.</span></span></li><li><span data-ttu-id="7a80d-123">破棄。ユーザーは、Xbox LIVE にサインインしたが、任意のタイトルでアクティブではありません。</span><span class="sxs-lookup"><span data-stu-id="7a80d-123">Away: User is signed into Xbox LIVE but not active in any title.</span></span></li><li><span data-ttu-id="7a80d-124">オフライン。ユーザーでは、任意のデバイスに存在しません。</span><span class="sxs-lookup"><span data-stu-id="7a80d-124">Offline: User is not present on any device.</span></span></li></ul> | 
+| <span data-ttu-id="7a80d-125">lastSeen</span><span class="sxs-lookup"><span data-stu-id="7a80d-125">lastSeen</span></span>| [<span data-ttu-id="7a80d-126">LastSeenRecord</span><span class="sxs-lookup"><span data-stu-id="7a80d-126">LastSeenRecord</span></span>](json-lastseenrecord.md)| <span data-ttu-id="7a80d-127">最後に検出された情報は、ユーザーが有効な DeviceRecords を持たない場合にのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="7a80d-127">The last seen information is only available when the user has no valid DeviceRecords.</span></span> <span data-ttu-id="7a80d-128">オブジェクトは、キャッシュから削除された場合、データは、永続的なストアが存在しないためは、返されないする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7a80d-128">If the object was removed from the cache, its data might not be returned, because there is no persistent store.</span></span>|
 
 <a id="ID4E2C"></a>
 
 
-## <a name="sample-json-syntax"></a><span data-ttu-id="40b28-129">JSON 構文の例</span><span class="sxs-lookup"><span data-stu-id="40b28-129">Sample JSON syntax</span></span>
+## <a name="sample-json-syntax"></a><span data-ttu-id="7a80d-129">サンプルの JSON の構文</span><span class="sxs-lookup"><span data-stu-id="7a80d-129">Sample JSON syntax</span></span>
 
 
 ```json
@@ -90,25 +90,25 @@ ms.locfileid: "8918414"
 <a id="ID4EED"></a>
 
 
-## <a name="see-also"></a><span data-ttu-id="40b28-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="40b28-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a80d-130">関連項目</span><span class="sxs-lookup"><span data-stu-id="7a80d-130">See also</span></span>
 
 <a id="ID4EGD"></a>
 
 
-##### <a name="parent"></a><span data-ttu-id="40b28-131">Parent</span><span class="sxs-lookup"><span data-stu-id="40b28-131">Parent</span></span>
+##### <a name="parent"></a><span data-ttu-id="7a80d-131">Parent</span><span class="sxs-lookup"><span data-stu-id="7a80d-131">Parent</span></span>
 
-[<span data-ttu-id="40b28-132">JavaScript Object Notation (JSON) オブジェクト リファレンス</span><span class="sxs-lookup"><span data-stu-id="40b28-132">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
+[<span data-ttu-id="7a80d-132">JavaScript Object Notation (JSON) オブジェクトの参照</span><span class="sxs-lookup"><span data-stu-id="7a80d-132">JavaScript Object Notation (JSON) Object Reference</span></span>](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EQD"></a>
 
 
-##### <a name="reference"></a><span data-ttu-id="40b28-133">リファレンス</span><span class="sxs-lookup"><span data-stu-id="40b28-133">Reference</span></span>
+##### <a name="reference"></a><span data-ttu-id="7a80d-133">リファレンス</span><span class="sxs-lookup"><span data-stu-id="7a80d-133">Reference</span></span>
 
-[<span data-ttu-id="40b28-134">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="40b28-134">POST (/users/batch)</span></span>](../uri/presence/uri-usersbatchpost.md)
+[<span data-ttu-id="7a80d-134">POST (/users/batch)</span><span class="sxs-lookup"><span data-stu-id="7a80d-134">POST (/users/batch)</span></span>](../uri/presence/uri-usersbatchpost.md)
 
- [<span data-ttu-id="40b28-135">GET (/users/me)</span><span class="sxs-lookup"><span data-stu-id="40b28-135">GET (/users/me)</span></span>](../uri/presence/uri-usersmeget.md)
+ [<span data-ttu-id="7a80d-135">GET (/users/me)</span><span class="sxs-lookup"><span data-stu-id="7a80d-135">GET (/users/me)</span></span>](../uri/presence/uri-usersmeget.md)
 
- [<span data-ttu-id="40b28-136">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="40b28-136">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span></span>](../uri/presence/uri-usersxuiddevicescurrenttitlescurrentdelete.md)
+ [<span data-ttu-id="7a80d-136">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span><span class="sxs-lookup"><span data-stu-id="7a80d-136">DELETE (/users/xuid({xuid})/devices/current/titles/current)</span></span>](../uri/presence/uri-usersxuiddevicescurrenttitlescurrentdelete.md)
 
- [<span data-ttu-id="40b28-137">GET (/users/xuid({xuid}))</span><span class="sxs-lookup"><span data-stu-id="40b28-137">GET (/users/xuid({xuid}))</span></span>](../uri/presence/uri-usersxuidget.md)
+ [<span data-ttu-id="7a80d-137">GET (/users/xuid({xuid}))</span><span class="sxs-lookup"><span data-stu-id="7a80d-137">GET (/users/xuid({xuid}))</span></span>](../uri/presence/uri-usersxuidget.md)

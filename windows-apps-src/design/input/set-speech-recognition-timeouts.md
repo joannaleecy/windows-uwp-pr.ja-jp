@@ -1,5 +1,5 @@
 ---
-Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+Description: 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
 title: 音声認識のタイムアウトの設定
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
@@ -9,29 +9,29 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 679c2632fd5793ae083b2a79e29de3a3e9da04cf
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627167"
 ---
-# <a name="set-speech-recognition-timeouts"></a><span data-ttu-id="6fa8d-103">音声認識のタイムアウトの設定</span><span class="sxs-lookup"><span data-stu-id="6fa8d-103">Set speech recognition timeouts</span></span>
+# <a name="set-speech-recognition-timeouts"></a><span data-ttu-id="2a85b-104">音声認識のタイムアウトの設定</span><span class="sxs-lookup"><span data-stu-id="2a85b-104">Set speech recognition timeouts</span></span>
 
 
-<span data-ttu-id="6fa8d-104">音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-104">Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.</span></span>
+<span data-ttu-id="2a85b-105">音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。</span><span class="sxs-lookup"><span data-stu-id="2a85b-105">Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.</span></span>
 
-> <span data-ttu-id="6fa8d-105">**重要な API**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)、[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</span><span class="sxs-lookup"><span data-stu-id="6fa8d-105">**Important APIs**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253), [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</span></span>
+> <span data-ttu-id="2a85b-106">**重要な Api**:[**タイムアウト**](https://msdn.microsoft.com/library/windows/apps/dn653253)、 [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</span><span class="sxs-lookup"><span data-stu-id="2a85b-106">**Important APIs**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253), [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</span></span>
 
-## <a name="set-a-timeout"></a><span data-ttu-id="6fa8d-106">タイムアウトの設定</span><span class="sxs-lookup"><span data-stu-id="6fa8d-106">Set a timeout</span></span>
+## <a name="set-a-timeout"></a><span data-ttu-id="2a85b-107">タイムアウトの設定</span><span class="sxs-lookup"><span data-stu-id="2a85b-107">Set a timeout</span></span>
 
 
-<span data-ttu-id="6fa8d-107">ここでは、さまざまな [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 値を指定します。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-107">Here, we specify various [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) values:</span></span>
+<span data-ttu-id="2a85b-108">ここでは、さまざまな [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 値を指定します。</span><span class="sxs-lookup"><span data-stu-id="2a85b-108">Here, we specify various [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) values:</span></span>
 
--   <span data-ttu-id="6fa8d-108">InitialSilenceTimeout: SpeechRecognizer が (認識結果が生成されるまでの) 無音を検出し、音声入力が続かないと見なす時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-108">InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.</span></span>
--   <span data-ttu-id="6fa8d-109">BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-109">BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.</span></span>
--   <span data-ttu-id="6fa8d-110">EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-110">EndSilenceTimeout - The length of time that a SpeechRecognizer detects silence (after recognition results have been generated) and assumes speech input has ended.</span></span>
+-   <span data-ttu-id="2a85b-109">InitialSilenceTimeout: SpeechRecognizer が (認識結果が生成されるまでの) 無音を検出し、音声入力が続かないと見なす時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="2a85b-109">InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.</span></span>
+-   <span data-ttu-id="2a85b-110">BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="2a85b-110">BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.</span></span>
+-   <span data-ttu-id="2a85b-111">EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。</span><span class="sxs-lookup"><span data-stu-id="2a85b-111">EndSilenceTimeout - The length of time that a SpeechRecognizer detects silence (after recognition results have been generated) and assumes speech input has ended.</span></span>
 
-<span data-ttu-id="6fa8d-111">**注:** タイムアウトは認識エンジンごとに設定できます。</span><span class="sxs-lookup"><span data-stu-id="6fa8d-111">**Note**Timeouts can be set on a per-recognizer basis.</span></span>
+<span data-ttu-id="2a85b-112">**注**  あたり認識エンジンごとにタイムアウトを設定することができます。</span><span class="sxs-lookup"><span data-stu-id="2a85b-112">**Note**  Timeouts can be set on a per-recognizer basis.</span></span>
 
  
 
@@ -42,13 +42,13 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## <a name="related-articles"></a><span data-ttu-id="6fa8d-112">関連記事</span><span class="sxs-lookup"><span data-stu-id="6fa8d-112">Related articles</span></span>
+## <a name="related-articles"></a><span data-ttu-id="2a85b-113">関連記事</span><span class="sxs-lookup"><span data-stu-id="2a85b-113">Related articles</span></span>
 
 
-* <span data-ttu-id="6fa8d-113">[音声操作](speech-interactions.md)
-**サンプル**</span><span class="sxs-lookup"><span data-stu-id="6fa8d-113">[Speech interactions](speech-interactions.md)
+* <span data-ttu-id="2a85b-114">[音声操作](speech-interactions.md)
+**サンプル**</span><span class="sxs-lookup"><span data-stu-id="2a85b-114">[Speech interactions](speech-interactions.md)
 **Samples**</span></span>
-* [<span data-ttu-id="6fa8d-114">音声認識と音声合成のサンプル</span><span class="sxs-lookup"><span data-stu-id="6fa8d-114">Speech recognition and speech synthesis sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [<span data-ttu-id="2a85b-115">音声認識と音声合成のサンプル</span><span class="sxs-lookup"><span data-stu-id="2a85b-115">Speech recognition and speech synthesis sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
