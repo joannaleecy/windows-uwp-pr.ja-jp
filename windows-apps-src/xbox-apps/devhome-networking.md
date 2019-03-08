@@ -1,28 +1,28 @@
 ---
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
-title: '[ネットワーク] ページ (Dev Home)'
-description: Xbox one Dev Home アプリのネットワーク ページについて説明します。
+title: '[ネットワーキング] ページ (Dev Home)'
+description: Xbox One 用の Dev Home アプリの [ネットワーキング] ページに関する情報を提供します。
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943677"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646347"
 ---
-# <a name="networking-page-dev-home"></a>[ネットワーク] ページ (Dev Home)
+# <a name="networking-page-dev-home"></a>[ネットワーキング] ページ (Dev Home)
    
   
-Dev Home の [**ネットワーク**] ページでは、トラブルシューティングのためにさまざまなネットワーク条件をシミュレートします。 ネットワーク パケットのトレースを開始することもできます。   
- ![Dev Home のネットワーク ページ](images/devhome_networking.png)   
+Dev Home の **[ネットワーキング]** ページでは、トラブルシューティング目的でさまざまなネットワークの状態がシミュレートされます。 また、ネットワーク パケットのトレースを開始することもできます。   
+ ![開発の自宅のネットワーク ページ](images/devhome_networking.png)   
   
-**ネットワーク**ページには、次のウィンドウが含まれています。   
+**[ネットワーキング]** ページには、次のウィンドウがあります。   
  
-   *  [ネットワーク シミュレーション](#ID4EEB)  
+   *  [ネットワークのシミュレーション](#ID4EEB)  
    *  [XBTrace (netcap)](#ID4EOB)  
 
  
@@ -33,7 +33,7 @@ Dev Home の [**ネットワーク**] ページでは、トラブルシューテ
 ## <a name="network-simulation"></a>ネットワーク シミュレーション  
    
   
-**ネットワーク シミュレーション**ウィンドウは、さまざまな帯域幅のプロファイルに対してテストするネットワーク シミュレーションを実行します。   
+**[ネットワーク シミュレーション]** ウィンドウでは、さまざまな帯域幅プロファイルをテストするためにネットワーク シミュレーションが実行されます。   
   
 <a id="ID4EOB"></a>
 
@@ -42,13 +42,13 @@ Dev Home の [**ネットワーク**] ページでは、トラブルシューテ
 ## <a name="xbtrace-netcap"></a>XBTrace (netcap)  
    
   
-**XBTrace (netcap)** ウィンドウを開始またはネットワーク パケットのトレースを停止します。   
+**[XBTrace (netcap)]** ウィンドウでは、ネットワーク パケットのトレースが開始または停止されます。   
   
 <a id="ID4E2B"></a>
 
    
 
 ## <a name="see-also"></a>関連項目  
- [コンソール (Dev Home) における開発者ホーム](dev-home.md)
+ [コンソール (Dev ホーム) 開発者ホーム](dev-home.md)
 
   

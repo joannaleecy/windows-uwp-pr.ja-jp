@@ -1,19 +1,19 @@
 ---
-Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+Description: アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。
 title: マウス操作
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
-ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999915"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622357"
 ---
 # <a name="mouse-interactions"></a>マウス操作
 
@@ -59,7 +59,7 @@ ms.locfileid: "8999915"
 <td align="left"><p>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
-<strong>注:</strong>の選択やアプリ バーのコマンドが適切な UI 動作ではない場合は、コンテキスト メニューを表示するを右クリックします。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
+<strong>注</strong>  選択またはアプリ バーのコマンドが適切な UI の動作ではない場合は、コンテキスト メニューを表示するを右クリックします。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
 </div>
 <div>
  
@@ -86,7 +86,7 @@ ms.locfileid: "8999915"
 
 ## <a name="mouse-input-events"></a>マウス入力イベント
 
-マウス入力がほとんどは、 [**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)のすべてのオブジェクトでサポートされている一般的なルーティング入力イベントによって処理されることができます。 たとえば、次のような場合です。
+ほとんどのマウス入力がすべてでサポートされている共通のルーティングの入力イベントを処理できる[ **UIElement** ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)オブジェクト。 次のようなクラスがあります。
 
 - [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
@@ -97,11 +97,11 @@ ms.locfileid: "8999915"
 - [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
 - [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
 - [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
-- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**ドロップ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
 - [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
 - [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
 - [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
-- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**保持します。**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
 - [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
 - [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
 - [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
@@ -120,15 +120,15 @@ ms.locfileid: "8999915"
 - [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
 - [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
-- [**Previewkeydown イベント**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
 - [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
 - [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
-- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
+- [**タップ**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-ただし、 [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)でと、ポインター、ジェスチャ、操作イベントを使用して各デバイス (マウス ホイール イベントなど) の特定の機能の利用を実行できます。
+ただし、ポインター、ジェスチャ、および操作のイベントを使用して (マウス ホイール イベント) などの各デバイスの特定の機能を活用を行う[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)します。
 
-**サンプル:** この[BasicInput サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)をご覧ください。
+**サンプル:** 参照してください、 [BasicInput サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)の。
 
 ## <a name="guidelines-for-visual-feedback"></a>視覚的なフィードバックのガイドライン
 
@@ -163,7 +163,7 @@ ms.locfileid: "8999915"
 
 ### <a name="samples"></a>サンプル
 
-- [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-- [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [基本的な入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低待機時間の入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 - [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 - [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)

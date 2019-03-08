@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Store サービス, Microsoft Store レビュー API, アドオンの入手数
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919510"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623837"
 ---
 # <a name="submit-responses-to-reviews"></a>レビューに対する返信の送信
 
@@ -21,14 +21,14 @@ ms.locfileid: "8919510"
 顧客はレビューを送信するときに、レビューへの返信を受け取らないことを選択できます。 顧客が返信を受け取らないように指定しているレビューに返信すると、このメソッドの返信の本文には、返信ができなかったことが示されます。 このメソッドを呼び出す前に、任意で、[アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)メソッドを使用して、特定のレビューへの返信が許可されているかどうかを確認できます。
 
 > [!NOTE]
-> プログラムでレビューに返信するには、このメソッドを使って、返信またはレビューを[パートナー センターを使用](../publish/respond-to-customer-reviews.md)する返信できます。
+> に加えて、このメソッドを使用してプログラムでのレビューに応答する、またはに対応できるレビュー[パートナー センターを使用して](../publish/respond-to-customer-reviews.md)します。
 
 ## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store レビュー API に関するすべての[前提条件](respond-to-reviews-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 * 返信するレビューの ID を取得します。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。
 
 ## <a name="request"></a>要求
@@ -42,7 +42,7 @@ ms.locfileid: "8919510"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -56,20 +56,20 @@ ms.locfileid: "8919510"
 
 要求本文には次の値が含まれます。
 
-| 値        | 型   | 説明                                                                 |
+| Value        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------|
 | Responses | array | 提出する返信を含むオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。 |
 
 
 *Responses* 配列内の各オブジェクトには、次の値が保持されています。
 
-| 値        | 型   | 説明           |  必須かどうか  |
+| Value        | 種類   | 説明           |  必須  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 ストア ID は、パートナー センターの[アプリ id] ページ](../publish/view-app-identity-details.md)で利用できます。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |  ○  |
-| ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  ○  |
-| ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  ○  |
-| SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  ○  |
-| IsPublic | Boolean |  **True**を指定する場合、返信は、アプリのストア登録情報を顧客のレビューのすぐ下に表示され、すべてのユーザーに表示されます。 メールへの返信**false**と、ユーザーが選択されている、指定した場合、返信がメールで顧客に送信され、アプリのストア登録情報で他のユーザーに表示されません。 メールへの返信**false**と、ユーザーが選択されている、指定した場合は、エラーが返されます。   |  はい  |
+| ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 Store ID は、[アプリ id のページ](../publish/view-app-identity-details.md)パートナー センターの。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |  〇  |
+| ReviewId | string |  返信するレビューの ID です (これは GUID です)。 レビュー ID は、Microsoft Store 分析 API の[アプリのレビューの取得](get-app-reviews.md)メソッドの応答データ、および[レビュー レポート](../publish/reviews-report.md)の[オフライン ダウンロード](../publish/download-analytic-reports.md)で取得できます。   |  〇  |
+| ResponseText | string | 提出する返信です。 返信は、[こちらのガイドライン](../publish/respond-to-customer-reviews.md#guidelines-for-responses)に従う必要があります。   |  〇  |
+| SupportEmail | string | アプリのサポート メール アドレスです。顧客はこのアドレスを使用して、直接連絡できます。 したがって、有効なメール アドレスである必要があります。     |  〇  |
+| IsPublic | ブール値 |  指定した場合**true**応答、アプリのストアの一覧から、顧客のレビューのすぐ下に表示され、は、すべてのお客様に表示されます。 指定した場合**false**と、ユーザーが電子メールの応答を受信しないことを選択、応答は、電子メールや顧客に送信され、アプリのストアの一覧で他のユーザーに表示されません。 指定した場合**false**され、ユーザーが電子メールの応答を受信しないことを選択、エラーが返されます。   |  〇  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -100,18 +100,18 @@ Content-Type: application/json
 }
 ```
 
-## <a name="response"></a>返信
+## <a name="response"></a>応答
 
 ### <a name="response-body"></a>応答本文
 
-| 値        | 型   | 説明            |
+| Value        | 種類   | 説明            |
 |---------------|--------|---------------------|
-| Result | array | 提出した各返信についてのデータを保持するオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。  |
+| 結果 | array | 提出した各返信についてのデータを保持するオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。  |
 
 
 *Result* 配列内の各オブジェクトには、次の値が保持されています。
 
-| 値        | 型   | 説明                                                                 |
+| Value        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------|
 | ApplicationId | string |  返信対象のレビューがあるアプリのストア ID です。 ストア ID は、たとえば 9WZDNCRFJ3Q8 のような文字列です。   |
 | ReviewId | string |  返信するレビューの ID です。 これは GUID です。   |
@@ -119,9 +119,9 @@ Content-Type: application/json
 | FailureReason | string | **Successful** が **false** の場合、この値には失敗の理由が含まれます。 **Successful** が **true** の場合、この値は空です。      |
 
 
-### <a name="response-example"></a>返信の例
+### <a name="response-example"></a>応答の例
 
-この要求の JSON 応答の本文の例を次に示します。
+この要求の JSON 返信の本文の例を次に示します。
 
 ```json
 {
@@ -144,7 +144,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>関連トピック
 
-* [パートナー センターを使用して顧客のレビューに返信するには](../publish/respond-to-customer-reviews.md)
-* [Microsoft Store サービスを使ってレビューに返信する](respond-to-reviews-using-windows-store-services.md)
-* [アプリのレビューへの返信情報の取得](get-response-info-for-app-reviews.md)
-* [アプリのレビューの取得](get-app-reviews.md)
+* [パートナー センターを使用して顧客レビューに応答します。](../publish/respond-to-customer-reviews.md)
+* [Microsoft Store サービスを使用してレビューに応答します。](respond-to-reviews-using-windows-store-services.md)
+* [アプリのレビューの応答情報を取得します。](get-response-info-for-app-reviews.md)
+* [アプリのレビューを取得します。](get-app-reviews.md)

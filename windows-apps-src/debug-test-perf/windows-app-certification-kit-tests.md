@@ -1,34 +1,34 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows アプリ認定キットのテスト
-description: Windows アプリ認定キットには、多くアプリが Microsoft Store に公開する準備ができていることを確認できるテストにはが含まれています。
+description: Windows アプリ認定キット使用するにはには、多数アプリが Microsoft Store に発行する準備ができていることを確認するのに役立つテストにはが含まれています。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, アプリの認定
+keywords: windows 10 は、uwp アプリの認定
 ms.localizationpriority: medium
 ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645087"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows アプリ認定キットのテスト
 
 
-[Windows アプリ認定キット](windows-app-certification-kit.md)には、Microsoft Store に公開する準備ができたらを保証するためのテストの数が含まれています。 テストは、条件の詳細については、次の一覧し、アクションが失敗した場合の推奨します。
+[Windows アプリ認定キット](windows-app-certification-kit.md)多数アプリが Microsoft Store に発行する準備ができての確保に役立つテストにはが含まれています。 テストでは、独自の条件の詳細は、次の一覧し、失敗した場合のアクションを提案します。
 
 ## <a name="deployment-and-launch-tests"></a>展開と起動のテスト
 
 認証テスト中にアプリを監視して、アプリがクラッシュやハングを起こしたタイミングを記録します。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 応答しなくなったアプリやクラッシュしたアプリは、データが失われたり操作性が低下したりする原因になることがあります。
 
 アプリは、Windows の互換モードや AppHelp メッセージ、互換性修正プログラムを使わずにフル機能することが求められています。
 
-アプリは、HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs レジストリ キーに読み込む DLL を一覧する必要はありません。
+アプリが、HKEY で読み込みする Dll の一覧表示する必要があります\-ローカル\-マシン\\ソフトウェア\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-Dll レジストリ キー。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -44,8 +44,8 @@ Windows アプリ認定キットで [**IApplicationActivationManager::ActivateAp
 
 テスト プラットフォームが [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) の前提条件を満たしているにもかかわらずアプリの起動に失敗する場合は、アクティブ化イベント ログを確認して問題のトラブルシューティングを行うことができます。 イベント ログでこのようなエントリを見つけるには、次の手順を実行します。
 
-1.  eventvwr.exe を開き、アプリケーションとサービス ログ\\Microsoft\\Windows\\Immersive-Shell フォルダーに移動します。
-2.  ビューをフィルター処理してイベント ID 5900 ～ 6000 を表示します。
+1.  Eventvwr.exe を開き、アプリケーションとサービス ログに移動します\\Microsoft\\Windows\\Immersive シェル フォルダー。
+2.  イベント Id を表示するビューをフィルター処理します。5900-6000.
 3.  アプリが起動しなかった理由を説明している可能性のある情報のログ エントリを確認します。
 
 問題のあるファイルをトラブルシューティングして問題を特定し、修正します。 アプリをリビルドして再テストします。 また、ダンプ ファイルが Windows アプリ認定キットのログ フォルダーに生成されたかどうかを確認します。ダンプ ファイルもアプリのデバッグに使用できます。
@@ -54,9 +54,9 @@ Windows アプリ認定キットで [**IApplicationActivationManager::ActivateAp
 
 Windows アプリを将来のバージョンの OS で実行できることを確認します。 これまで、このテストはデスクトップ アプリ ワークフローにのみ適用されてきましたが、ストアおよびユニバーサル Windows プラットフォーム (UWP) のワークフローに有効になりました。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
-オペレーティング システムのバージョン情報は、Microsoft ストアの使用量を制限されています。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
+オペレーティング システムのバージョン情報は、Microsoft Store の使用量を制限されています。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -70,7 +70,7 @@ Windows アプリ認定キットは、HighVersionLie を使って、アプリが
 
 宣言されているバックグラウンド タスクの取り消しハンドラーがアプリにあることを確認します。 タスクが取り消されたときに呼び出される専用の関数が必要です。 このテストは、展開済みのアプリにのみ適用されます。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 ストア アプリは、バック グラウンドで実行されるプロセスを登録できます。 たとえば、メール アプリはときどき ping を実行することがあります。 しかし、OS がこれらのリソースを必要とする場合は、バックグラウンド タスクが取り消され、アプリはこの取り消しを適切に処理する必要があります。 取り消しハンドラーがないアプリはクラッシュする可能性や、ユーザーがアプリを閉じようとしても終了しない可能性があります。
 
@@ -86,7 +86,7 @@ Windows アプリ認定キットは、HighVersionLie を使って、アプリが
 
 アプリ パッケージ (APPX、アプリ バンドル) に 1 つのアプリケーションが含まれていることを確認します。 これは、キットでスタンドアロン テストに変更されました。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 このテストは、ストア ポリシーに従って実装されていました。
 
@@ -104,7 +104,7 @@ Windows 10 アプリの場合は、テストでは、バンドルのバージョ
 
 アプリ マニフェストのコンテンツをテストし、コンテンツが正しいかどうかを確認します。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 アプリ マニフェストは正しい形式でなければならない
 
@@ -116,15 +116,15 @@ Windows 10 アプリの場合は、テストでは、バンドルのバージョ
 
     アプリは、関連付ける必要があるファイル拡張子を宣言できます。 ただし不当に使用されると、アプリは大量のファイル拡張子 (しかも大半が使うことのない拡張子) を宣言することがあり、ユーザー エクスペリエンスが低下する可能性があります。 このテストで追加されるチェックにより、アプリに関連付けることができるファイル拡張子の数を制限できます。
 
--   **フレームワークの依存関係規則**
+-   **フレームワーク依存関係の規則**
 
     このテストは、アプリと UWP の依存関係が適切かどうかをチェックします。 不適切な依存関係がある場合は、このテストは失敗します。
 
     アプリが動作する OS のバージョンと依存関係のあるフレームワークとの間に不整合がある場合は、テストは失敗します。 アプリがフレーム ワーク DLL の Preview 版を参照している場合にも、テストは失敗します。
 
--   **プロセス間通信 (IPC) の確認**
+-   **プロセス間通信 (IPC) 検証**
 
-    このテストでは、UWP アプリがデスクトップ コンポーネントとアプリ コンテナーの外側に通信しない要件が適用されます。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
+    このテストでは、UWP アプリはデスクトップのコンポーネントにアプリ コンテナーの外部通信しない要件を強制します。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
 
 ### <a name="corrective-action"></a>問題への対応
 
@@ -149,27 +149,26 @@ BinScope Binary Analyzer テストは、次のセキュリティ関連の機能�
 
 ### <a name="binscope-binary-analyzer-tests"></a>BinScope Binary Analyzer テスト
 
-
 [BinScope Binary Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44995) テストは、アプリのバイナリ ファイルを検査して、攻撃や悪用からアプリを守るコーディングとビルドの手法をチェックします。
 
 BinScope Binary Analyzer テストは、次のセキュリティ関連機能が適切に使われているかをチェックします。
 
 -   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/SafeSEH 例外処理の保護](#binscope-2)
+-   [/Safeseh 例外処理の保護](#binscope-2)
 -   [データ実行防止](#binscope-3)
--   [アドレス空間レイアウトのランダム化](#binscope-4)
--   [共有されている PE セクションの読み取り/書き込み](#binscope-5)
+-   [Address Space Layout Randomization](#binscope-4)
+-   [読み取り/書き込み共有 PE セクション](#binscope-5)
 -   [AppContainerCheck](#appcontainercheck)
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
 ### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** APTCACheck テストに失敗しました
 
 AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名されたアセンブリで、部分的に信頼されたコードから完全に信頼されたコードにアクセスできます。 アセンブリに APTCA 属性を適用すると、アセンブリが有効な間は、部分的に信頼された呼び出し元からそのアセンブリにアクセスできます。これにより、セキュリティが侵害されるおそれがあります。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 プロジェクトに必要で、リスクをよく認識している場合を除いて、厳密な名前の付いたアセンブリでは APTCA 属性を使わないでください。 APTCA 属性を使う必要がある場合は、すべての API が適切なコード アクセス セキュリティ要求によって保護されていることを確認します。 アセンブリがユニバーサル Windows プラットフォーム (UWP) アプリの一部となっている場合は、APTCA の影響はありません。
 
@@ -177,13 +176,13 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名され�
 
 このテストは、マネージ コード (C#、.NET など) でのみ実行されます。
 
-### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SafeSEH 例外処理の保護
+### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/Safeseh 例外処理の保護
 
-**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck テストに失敗しました
 
 例外ハンドラーは、アプリがゼロ除算エラーなどの例外的な状況に陥った場合に実行されます。 関数が呼び出されると例外ハンドラーのアドレスがスタックに格納されるため、悪意のあるソフトウェアがスタックを上書きしようとした場合は、バッファー オーバーフローによる攻撃を受けやすくなることがあります。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 アプリをビルドするときに、リンカー コマンドの /SAFESEH オプションを有効にします。 Visual Studio のリリース構成では、既定で、このオプションが有効になっています。 このオプションが、アプリのすべての実行可能モジュールに対するビルド手順で有効になっていることを確認します。
 
@@ -193,11 +192,11 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名され�
 
 ### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>データ実行防止
 
-**Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** NXCheck テストに失敗しました
 
 このテストでは、データ セグメントに格納されたコードが、アプリで実行されないことを確認します。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 アプリをビルドするときに、リンカー コマンドの /NXCOMPAT オプションを有効にします。 Data Execution Prevention (DEP) をサポートするリンカー バージョンでは、既定で、このオプションが有効になっています。
 
@@ -205,13 +204,13 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名され�
 
 DEP 対応の CPU でアプリをテストし、DEP の結果として見つかったエラーをすべて修正することをお勧めします。
 
-### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>アドレス空間レイアウトのランダム化
+### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>Address Space Layout Randomization
 
-**Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** いませんテストに失敗しました
 
 アドレス空間レイアウトのランダム化 (ASLR) を使うと、実行可能なイメージがメモリの予測不可能な場所に読み込まれます。これにより、特定の仮想アドレスにプログラムを読み込むことを想定している悪意のあるソフトウェアは、計画どおりに動作しにくくなります。 アプリとアプリで使うすべてのコンポーネントは、ASLR をサポートする必要があります。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 アプリをビルドするときに、リンカー コマンドの /DYNAMICBASE オプションを有効にします。 アプリで使うすべてのモジュールでも、このリンカー オプションを使っていることを確認します。
 
@@ -221,13 +220,13 @@ DEP 対応の CPU でアプリをテストし、DEP の結果として見つか�
 
 このテストは、C や C++ などのアンマネージ言語で記述されたアプリでのみ実行されます。
 
-### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>共有されている PE セクションの読み取り/書き込み
+### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>読み取り/書き込み共有 PE セクション
 
-**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck テストに失敗しました。
 
-共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。 共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。 [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。
+共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。 共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。 [  **CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 アプリからすべての共有セクションを削除し、適切なセキュリティ属性を指定した [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を呼び出して共有メモリ オブジェクトを作成し、アプリをリビルドします。
 
@@ -237,15 +236,15 @@ DEP 対応の CPU でアプリをテストし、DEP の結果として見つか�
 
 ### <a name="appcontainercheck"></a>AppContainerCheck
 
-**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck テストに失敗しました。
 
 AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) ヘッダーに **appcontainer** ビットが設定されているかを検証します。 すべての .exe ファイルとすべてのアンマネージ DLL で **appcontainer** ビットが設定されていないと、アプリは正しく動作しません。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
 
-マネージ実行可能ファイルには、テストが失敗した場合、最新のコンパイラとリンカー、Microsoft Visual Studio などを使用した UWP アプリを構築することを確認します。
+マネージ実行可能ファイルには、テストが失敗した場合、最新のコンパイラとリンカーは、Microsoft Visual Studio などを使用した UWP アプリをビルドすることを確認します。
 
 **注釈**
 
@@ -253,11 +252,11 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>ExecutableImportsCheck
 
-**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck テストに失敗しました。
 
 移植可能な実行可能ファイル (PE) イメージで、実行可能コード セクションにインポート テーブルが置かれていると、このテストが不合格になります。 これは、Visual C++ リンカーの */merge* フラグを "*/merge:.rdata=.text*" に設定して、PE イメージの .rdata マージを有効にすると生じることがあります。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
 インポート テーブルを実行可能コード セクションにマージしないでください。 Visual C++ リンカーの */merge* フラグをチェックして、.rdata セクションがコード セクションにマージされる設定になっていないことを確認します。
 
@@ -267,13 +266,13 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>WXCheck
 
-**Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** WXCheck テストに失敗しました。
 
-このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。 これが不合格になるのは、書き込み可能または実行可能なセクションがバイナリに含まれている場合と、バイナリの *SectionAlignment* が *PAGE\-SIZE* よりも小さい場合です。
+このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。 これは、またはバイナリに書き込み可能なと実行可能ファイルのセクションがある場合に発生することがバイナリの*SectionAlignment*がより小さい*ページ\-サイズ*します。
 
-**アプリがこのテストに合格しなかった場合の対処方法**
+**アプリには、このテストが失敗した場合の対処方法**
 
-書き込み可能または実行可能なセクションがバイナリに含まれていないこと、バイナリの *SectionAlignment* の値が *PAGE\-SIZE* の値以上であることを確認します。
+書き込み可能または実行可能ファイルのセクションとに、バイナリがないことを確認バイナリの*SectionAlignment*値は、少なくともその*ページ\-サイズ*。
 
 **注釈**
 
@@ -281,7 +280,7 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 書き込み可能または実行可能なセクションは、エディット コンティニュ (/ZI) を有効にしてビルドした実行可能ファイルに含まれることがあります。 エディット コンティニュを無効にすると、無効なセクションは含まれなくなります。
 
-*PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。
+*ページ\-サイズ*既定*SectionAlignment*の実行可能ファイルです。
 
 ### <a name="private-code-signing"></a>プライベート コードの署名
 
@@ -305,22 +304,22 @@ AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) 
 
 ### <a name="background"></a>背景
 
-アプリでは、UWP アプリ (Windows ランタイムまたはサポートされている Win32 Api)、Microsoft Store の認定を受けるの Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
+アプリは、(Windows ランタイムまたは Win32 Api がサポートされている)、Microsoft Store 用に認定する UWP アプリ用 Api を使用する必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
 
 ### <a name="test-details"></a>テストの詳細
 
--   で、アプリ パッケージ内の各バイナリ依存していないバイナリのインポート アドレス テーブルをチェックすることによって、UWP アプリの開発のサポートされていない Win32 api を確認します。
+-   アプリ パッケージ内の各バイナリがバイナリのインポート アドレス テーブルを調べて、UWP アプリ開発のサポートされていない Win32 API に依存関係がないことを確認します。
 -   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
 
 ### <a name="corrective-actions"></a>問題への対応
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **注:** デバッグ用ビルドのアプリは、アプリが[UWP アプリ用の Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)のみを使っている場合でもこのテストに合格しません。
+> **注**  アプリのデバッグ ビルドは、アプリのみ使用する場合でも、このテストは失敗[UWP アプリ用 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)します。
 
-[UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)ではないアプリを使用して、API を識別するエラー メッセージを確認します。
+API を識別するために、エラー メッセージを確認するには、アプリではない、 [UWP アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)します。
 
-> **注:** デバッグ構成で構築された C++ アプリは、構成が UWP アプリのみ Windows SDK の Api を使っている場合でもこのテストに合格しません。 詳細情報の[UWP アプリでの Windows api の代替手段](https://go.microsoft.com/fwlink/p/?LinkID=244022)を表示します。
+> **注**  C アプリのデバッグ構成で構築されたは、構成は、UWP アプリ用 Windows SDK からの Api を使用するだけ場合でも、このテストは失敗します。 参照してください、 [UWP アプリでの Windows Api の代替](https://go.microsoft.com/fwlink/p/?LinkID=244022)の詳細。
 
 ## <a name="performance-tests"></a>パフォーマンスのテスト
 
@@ -430,7 +429,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store を通じて配布する予定のアプリをお勧めしません。 Microsoft Store を通じて配布するアプリの resources.pri は、アプリのパッケージのルートであるをアプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Microsoft Store から配布するアプリをお勧めしません。 Microsoft Store を通じて配布されるアプリの resources.pri は、アプリのパッケージのルート内にあり、アプリをサポートする言語のすべての参照を含めることが必要があります。</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
@@ -462,17 +461,17 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 <p>resources.pri でアプリ マニフェストの有効なリソースが定義されていることを確認します。</p>
 </td></tr>
 <tr><td>
-<p>The image file {filename} must be smaller than 204800 bytes.\*\* (イメージ ファイル {filename} は、204,800 バイト未満である必要があります。)</p>
+<p>イメージ ファイル {filename} は 204800 バイト未満である必要があります。\*\*</p>
 </td><td>
 <p>指定の画像のサイズを小さくします。</p>
 </td></tr>
 <tr><td>
-<p>The {filename} file must not contain a reverse map section.\*\* ({filename} ファイルには、リバース マップ セクションを含めることはできません。)</p>
+<p>{Filename} ファイルでは、リバース マップ セクションを含めることはできません。\*\*</p>
 </td><td>
 <p>逆マップは Visual Studio の F5 デバッグ時に makepri.exe を呼び出すと生成されますが、pri ファイルの生成時に /m パラメーターなしで makepri.exe を実行すると削除することができます。</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Windows 8.1 用の Windows アプリ認定キット 3.3 に追加されたテストであり、そのバージョン以降のキットを使う場合にのみ適用されます。</p>
+<p>\*\* テストは、Windows 8.1 用 Windows アプリ認定キット 3.3 で追加されたされは場合にのみ適用を使用していることを示します、キットの以降のバージョン。</p>
 </td></tr>
 </table>
 
@@ -482,7 +481,7 @@ WinJS.Binding.optimizeBindingReferences の値を確認します。
 
 ### <a name="branding-validation"></a>ブランドの検証
 
-UWP アプリは、完成していて完全に機能するされる予定です。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
+UWP アプリが完成し完全に機能する必要があります。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -496,9 +495,9 @@ UWP アプリは、完成していて完全に機能するされる予定です�
 
 アプリをテストして、デバッグ用のビルドでないことを確認します。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
-Microsoft Store の認定を受けるアプリする必要がありますいないにコンパイル デバッグのされ実行可能ファイルのデバッグ バージョンを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
+Microsoft Store の認定する場合にアプリする必要がありますがコンパイルされずデバッグ用、いない実行可能ファイルのデバッグ バージョンを参照する必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
@@ -506,7 +505,7 @@ Microsoft Store の認定を受けるアプリする必要がありますいな�
 
 ### <a name="corrective-actions"></a>問題への対応
 
--   Microsoft Store に提出する前に、リリース用ビルドとして、アプリをビルドします。
+-   Microsoft Store に提出する前に、リリース ビルドとして、アプリをビルドします。
 -   適切なバージョンの .NET フレームワークがインストールされていることを確認します。
 -   アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
 
@@ -514,7 +513,7 @@ Microsoft Store の認定を受けるアプリする必要がありますいな�
 
 ### <a name="utf-8-file-encoding"></a>UTF-8 ファイル エンコード
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 バイトコード キャッシュを活用して特定の実行時エラー状態を避けるには、HTML、CSS、JavaScript の各ファイルが、対応するバイト オーダー マーク (BOM) を持つ UTF-8 形式でエンコードされている必要があります。
 
@@ -532,25 +531,25 @@ Visual Studio で、影響を受けるファイルを開き、**[ファイル]**
 
 Microsoft Direct3D アプリをテストして、以前のグラフィックス ハードウェアを搭載したデバイスでクラッシュしないことを確認します。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
-Microsoft Store では、すべてのアプリケーションが Direct3D を使用して正しくレンダリングされるか、機能レベル 9 \-1 グラフィックス カードで適切に失敗する必要があります。
+Microsoft Store では、正しくレンダリングまたはで適切に失敗する Direct3D を使用してすべてのアプリケーションの機能レベル 9 必要があります\-1 グラフィックス カード。
 
-アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
+ユーザー変更できるので、デバイスでグラフィックス ハードウェア後、アプリがインストールされている場合、9 よりも高い最小機能レベルを選択した場合\-1、アプリ検出しなければ起動時に現在のハードウェア最小要件を満たしているかどうか。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 
 ### <a name="test-details"></a>テストの詳細
 
-このテストは、アプリが機能レベル 9\-1 で正確にレンダリングされるかどうかを検証します。
+9 の機能レベルでアプリを正確にレンダリングする場合は、テストを検証\-1。
 
 ### <a name="corrective-action"></a>問題への対応
 
-高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。 詳しくは、「[機能レベルが異なる Direct3D の開発](https://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
+アプリが Direct3D 機能レベル 9 を正常に表示されることを確認\-1、高い機能レベルで実行する場合でもです。 詳しくは、「[機能レベルが異なる Direct3D の開発](https://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
 
 ### <a name="direct3d-trim-after-suspend"></a>中断後の Direct3D トリミング
 
-> **注:** このテストは、UWP アプリ開発された windows 8.1 以降にのみ適用されます。
+> **注**  このテストは、Windows 8.1 の開発およびそれ以降の UWP アプリにのみ適用されます。
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 アプリが Direct3D デバイスで [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) を呼び出さない場合は、アプリは前の 3D 作業に割り当てられたメモリを解放しません。 この結果、システムのメモリ不足のためにアプリが終了するリスクが増加します。
 
@@ -566,7 +565,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="special-use-capabilities"></a>特殊な用途の機能
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 特殊な用途の機能は、特殊なシナリオ向けの機能です。 会社アカウントだけがこれらの機能を使うことができます。
 
@@ -586,7 +585,7 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ## <a name="windows-runtime-metadata-validation"></a>Windows ランタイム メタデータ検証
 
-### <a name="background"></a>Background
+### <a name="background"></a>背景
 
 アプリに付属するコンポーネントが、UWP 型システムに準拠していることを確認します。
 
@@ -596,11 +595,11 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="corrective-actions"></a>問題への対応
 
--   **ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。
--   **型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間対応の名前を持つ winmd ファイルにあることを確認します。
+-   **ExclusiveTo 属性のテスト:** UWP のクラスが別のクラス ExclusiveTo としてマークされているインターフェイスを実装しないことを確認します。
+-   **型の場所のテスト:** Winmd ファイルをアプリ パッケージに最も長い名前空間に一致する名前を持つすべての UWP の種類のメタデータが配置されることを確認します。
 -   **型名の大文字小文字の区別のテスト:** すべての UWP 型のアプリ パッケージ内に大文字と小文字が区別されない一意の名前が存在することを確認します。 また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。
--   **型名の正確性のテスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。
--   **一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。
+-   **型名の正確性テスト:** グローバル名前空間または Windows の最上位名前空間に UWP 型がないことを確認します。
+-   **一般的なメタデータの正確性テスト:** 型の生成に使用するコンパイラが UWP の仕様を最新の状態であることを確認します。
 -   **プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。 UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。
 
 ## <a name="package-sanity-tests"></a>パッケージ サニティ テスト
@@ -633,15 +632,15 @@ Microsoft Store では、すべてのアプリケーションが Direct3D を使
 
 ### <a name="supported-directory-structure-test"></a>サポートされるディレクトリ構造のテスト
 
-アプリケーションがインストールの一部として MAX\-PATH より長いサブディレクトリを作成しないことを検証します。
+アプリケーションが、最大値よりも長くはインストールの一部としてサブディレクトリを作成しないことを検証します\-パス。
 
 ### <a name="background"></a>背景
 
-OS コンポーネント (Trident、WWAHost など) は、ファイル システム パスの MAX\-PATH に内部的に制限され、長いパスでは正しく機能しません。
+OS のコンポーネント (Trident、WWAHost などを含む) が最大に内部的に制限されます\-パスのファイル システム パスより長いパスを正しく動作しません。
 
 ### <a name="test-details"></a>テストの詳細
 
-アプリのインストール ディレクトリ内のどのパスも MAX\-PATH を超えていないことを確認します。
+アプリのインストール ディレクトリ内のパスに最大値がないことを確認します。\-パス。
 
 ### <a name="corrective-action"></a>問題への対応
 

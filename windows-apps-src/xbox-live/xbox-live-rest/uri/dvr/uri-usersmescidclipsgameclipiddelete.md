@@ -8,22 +8,22 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 391e4d79a389c358dea83509b52782d086201ffc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935309"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622837"
 ---
 # <a name="delete-usersmescidsscidclipsgameclipid"></a>DELETE (/users/me/scids/{scid}/clips/{gameClipId})
-これらの Uri のドメインは、ゲーム クリップを削除`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+これらの Uri のドメインは削除ゲーム クリップ`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`対象の URI の機能に応じて、します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4ECB)
-  * [Authorization](#ID4ENB)
+  * [承認](#ID4ENB)
   * [必要な要求ヘッダー](#ID4EYB)
-  * [オプションの要求ヘッダー](#ID4EEE)
+  * [省略可能な要求ヘッダー](#ID4EEE)
   * [要求本文](#ID4ENF)
-  * [HTTP ステータス コード](#ID4EYF)
+  * [HTTP 状態コード](#ID4EYF)
   * [必要な応答ヘッダー](#ID4EIAAC)
   * [省略可能な応答ヘッダー](#ID4E2CAC)
   * [応答本文](#ID4E2DAC)
@@ -33,10 +33,10 @@ ms.locfileid: "8935309"
  
 ## <a name="remarks"></a>注釈
  
-GameClips サービスからユーザーのビデオを削除するためのメカニズムを提供します。 削除、時にすべてのメタデータと実際のビデオ アセット (生成されると元) は、システムから削除されます。 これは、永続的な操作です。 
+ゲーム クリップ サービスからユーザーのビデオを削除するためのメカニズムを提供します。 Delete、時にすべてのメタデータと (生成されたと元) は、実際のビデオ資産がシステムから削除されます。 これは、永続的な操作です。 
 
 > [!NOTE] 
-> 指定された所有者 ID は、削除が成功する要求の承認トークンで呼び出し元と一致する必要があります。 
+> 指定された所有者 ID を正常に削除要求の承認トークンで呼び出し元と一致する必要があります。 
 
 
   
@@ -45,40 +45,40 @@ GameClips サービスからユーザーのビデオを削除するためのメ�
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
-| gameClipId| string| GameClip にアクセスしているリソースの ID です。| 
+| scid| string| サービス アクセスされているリソースの ID を構成します。 認証されたユーザーの SCID に一致する必要があります。| 
+| gameClipId| string| アクセスされているリソースの ID をゲーム クリップだった。| 
   
 <a id="ID4ENB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-Xuid クレームだけでは、このメソッドでは必要があります。
+Xuid 要求だけでは、このメソッドに必要です。
   
 <a id="ID4EYB"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:<b>Xauth=&lt;authtoken></b>| 
+| X RequestedServiceVersion| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。例:1、vnext。| 
+| Content-Type| string| 応答本文の MIME の種類。 例: <b>、application/json</b>します。| 
+| OK| string| コンテンツの種類の許容される値。 例: <b>、application/json</b>します。| 
+| キャッシュ制御| string| キャッシュの動作を指定する正常な要求です。| 
   
 <a id="ID4EEE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
-| ETag| string| キャッシュの最適化のために使用します。 値の例:"686897696a7c876b7e"します。| 
+| Accept-Encoding| string| 許容される圧縮エンコーディング。 値の例: gzip、deflate の id。| 
+| ETag| string| キャッシュの最適化に使用されます。 値の例:"686897696a7c876b7e"。| 
   
 <a id="ID4ENF"></a>
 
@@ -90,47 +90,47 @@ Xuid クレームだけでは、このメソッドでは必要があります。
 <a id="ID4EYF"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 204| OK| クリップが正常に削除します。| 
-| 401| 権限がありません| 要求の認証トークンの形式で問題があります。| 
-| 403| Forbidden| 一部の必須の要求は含まれていません。| 
-| 404| Not Found します。| URL で指定されているクリップが存在しませんでした (または 2 つ目の時間が削除されました)。| 
-| 503| 許容できません。| サービスまたは一部ダウン ストリームの依存関係ダウンしています。 標準的なバックオフ動作を指定して再試行します。| 
+| 401| 権限がありません| 要求の認証トークンの形式に問題があります。| 
+| 403| Forbidden| 一部の必須の要求が見つかりません。| 
+| 404| 検出不可| URL で指定したクリップが存在しなかった (または、2 回目に削除された)。| 
+| 503| Not Acceptable| サービスまたはいくつかのダウン ストリームの依存関係がダウンします。 標準的なバックオフ動作で再試行してください。| 
   
 <a id="ID4EIAAC"></a>
 
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| キャッシュ コントロール| string| キャッシュ動作を指定するていねい要求します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
-| Retry-after| string| クライアントが利用できないサーバーの場合、後で再試行するように指示します。| 
-| 異なる| string| 下位のプロキシの応答をキャッシュする方法を指示します。| 
+| X RequestedServiceVersion| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。例:1、vnext。| 
+| Content-Type| string| 応答本文の MIME の種類。 例: <b>、application/json</b>します。| 
+| キャッシュ制御| string| キャッシュの動作を指定する正常な要求です。| 
+| OK| string| コンテンツの種類の許容される値。 例: <b>、application/json</b>します。| 
+| 再試行後| string| 後でもう一度お試しください利用不可のサーバーの場合にクライアントに指示します。| 
+| 異なる| string| ダウン ストリーム プロキシ応答をキャッシュする方法を指示します。| 
   
 <a id="ID4E2CAC"></a>
 
  
 ## <a name="optional-response-headers"></a>省略可能な応答ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Etag| string| キャッシュの最適化のために使用します。 例:"686897696a7c876b7e"します。| 
+| Etag| string| キャッシュの最適化に使用されます。 以下に例を示します。"686897696a7c876b7e"。| 
   
 <a id="ID4E2DAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-サービスが 204 (内容なし)、成功時の HTTP ステータス コードを使って応答します。 しようとして、同じオブジェクトを削除するか、存在しないオブジェクトには、404 が返されます。
+サービスは、HTTP 状態コード 204 (コンテンツなし) 正常に完了するので応答します。 しようとして、同じオブジェクトを削除するか、存在しないオブジェクトは 404 を返します。
  
 エラーが発生した場合、 **ServiceErrorResponse**オブジェクトが返されます。
   

@@ -1,5 +1,5 @@
 ---
-Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
+Description: アプリの申請プロセスの [年齢区分] ページでは、アプリに関する情報を提供して、International Age Ratings Coalition (IARC) から適切な年齢区分を受け取ることができるようにすることができます。
 title: 年齢区分
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.date: 05/08/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 年齢区分, ゲームの評価, iarc, 評価, アンケート, レーティング機関, コンテンツ区分
 ms.localizationpriority: medium
 ms.openlocfilehash: 3582328a0f013c2f7b4ccc9affb5b61ca643761c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049084"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643447"
 ---
 # <a name="age-ratings"></a>年齢区分
 
@@ -26,7 +26,7 @@ ms.locfileid: "9049084"
 
 正確に質問に回答する必要があります。 質問の詳細情報を確認するには、質問の横に表示される情報アイコンをクリックします。 このプロセスにおいて、弊社は発行者の表示名とメール アドレスを IARC と共有します。 質問票に記入した後、回答に基づいて年齢区分とコンテンツ区分の情報が IARC 評価システムから提供されます。 弊社は、この評価情報をさまざまな市場の顧客にアプリを表示するときに使います。 また、アプリの公開後、アプリの区分を確認するメールを IARC から受信します。
 
-最初の質問では、アプリ (およびそのメタデータ) の説明として最適なカテゴリを選択します。 選択すると、他の質問が表示されます。 表示される個別の質問は、前の回答によって異なります。 すべての質問に回答する方法を理解するのに役立つの詳細を取得するには、この質問の横にある情報アイコンをクリックします。 間違った場合は、正しい回答を指定するために質問表の前に戻ってもう一度やり直すことができます。
+最初の質問では、アプリ (およびそのメタデータ) の説明として最適なカテゴリを選択します。 選択すると、他の質問が表示されます。 表示される個別の質問は、前の回答によって異なります。 すべての質問に回答する方法を理解するのに役立つ詳細を取得するには、その質問の横にある情報アイコンをクリックします。 間違った場合は、正しい回答を指定するために質問表の前に戻ってもう一度やり直すことができます。
 
 質問への回答が完了したら、**[保存して生成]** をクリックします。 アプリに割り当てられている区分がすべて表示され、申請を続行できます。 また **[編集]** をクリックして質問票の回答を訂正することもできます。
 
@@ -38,7 +38,7 @@ ms.locfileid: "9049084"
 > 韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](https://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 韓国で提供する可能性のあるゲームを提出する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
 
 > [!NOTE]
-> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
+> 台湾での利用が可能になるゲームを提出する場合は、提供された CSRR レーティングを[こちらのフォーム](https://go.microsoft.com/fwlink/?linkid=867281)で登録することが法律で義務付けられています。 
 
 <span id="appeal" />
 

@@ -1,19 +1,19 @@
 ---
-Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+Description: フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 title: UWP アプリでのフェード アニメーション
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d3fee78f3608466f588a79d2811f1464e27a0ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940141"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620417"
 ---
 # <a name="fade-animations"></a>フェード アニメーション
 
@@ -21,7 +21,7 @@ ms.locfileid: "8940141"
 
 フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 
-> **重要な API**: [**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)、[**FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **重要な Api**:[**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)、 [ **FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
@@ -35,8 +35,8 @@ ms.locfileid: "8940141"
 ## <a name="related-articles"></a>関連記事
 
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [フェードのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [フェード アニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [クイック スタート:Library のアニメーションを使用して、UI をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)
 * [**FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
 

@@ -4,21 +4,21 @@ description: アプリから Windows マップ アプリを起動する方法に
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 021e3142a4e94f762cc48dbc86905dcf0b658772
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045701"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645237"
 ---
 # <a name="launch-the-windows-maps-app"></a>Windows マップ アプリの起動
 
 
 
 
-アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:、*ms-drive-to:、ms-walk-to:**、**ms-settings:** の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
+アプリから Windows マップ アプリを起動する方法について説明します。 このトピックで説明、**bingmaps: *ms でドライブを:、ms-チュートリアル-を:** と**ms 設定。** Uniform Resource Identifier (URI) スキーム。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
 
 **ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 
@@ -26,9 +26,9 @@ ms.locfileid: "9045701"
 
 URI スキームを使うと、ハイパーリンクのクリックによって (またはアプリでプログラム的に) アプリを開くことができます。 **mailto:** を使って新しいメールの作成を開始したり、**http:** を使って既定の Web ブラウザーを開いたりできるのと同様に、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:** を使って Windows マップ アプリを開くことができます。
 
--   **bingmaps:** URI は、位置情報、検索結果、ルート案内、交通情報用の地図を提供します。
--   **ms-drive-to:** URI は、現在の場所からのターン バイ ターン方式の自動車ルート案内を提供します。
--   **ms-walk-to:** URI は、現在の場所からのターン バイ ターン方式の徒歩ルート案内を提供します。
+-   **Bingmaps:** URI は、場所、検索結果、方向、およびトラフィックのマップを提供します。
+-   **Ms-ドライブ-します。** URI は、現在の場所から有効にする-めくり、道案内情報を提供します。
+-   **Ms-チュートリアル-します。** URI、現在の場所から有効にする-めくり、徒歩方法をについて説明します。
 
 たとえば、次の URI は、Windows マップ アプリを開き、ニューヨークを中心とした地図を表示します。
 
@@ -44,14 +44,14 @@ URI スキームについて次に説明します。
 
 この URI スキームでは、*query* は、次のようなパラメーター名と値の一連のペアを示します。
 
-**&param1=value1&param2=value2 …**
+**& param1 = value1 & param2 = value2.**
 
 使用可能なパラメーターの一覧については、[bingmaps:](#bingmaps-param-reference)、[ms-drive-to:](#ms-drive-to-param-reference)、[ms-walk-to:](#ms-walk-to-param-reference) のパラメーター リファレンスをご覧ください。 このトピックでも後で例を示します。
 
 ## <a name="launch-a-uri-from-your-app"></a>アプリからの URI の起動
 
 
-アプリから Windows マップ アプリを起動するには、**bingmaps:**、**ms-drive-to:**、または **ms-walk-to:** URI を指定して [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出します。 次の例では、前の例と同じ URI を起動します。 URI によるアプリの起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
+アプリから Windows マップ アプリを起動するには、呼び出し、 [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476)メソッドを**bingmaps:**、 **ms でドライブを:**、または**ms-チュートリアル-します。** URI。 次の例では、前の例と同じ URI を起動します。 URI によるアプリの起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
 
 ```cs
 // Center on New York City
@@ -77,10 +77,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?                                                                 | マップ アプリを開きます。                                                                                                                                                                            |
 | bingmaps:?cp=40.726966~-74.006076                                          | ニューヨークを中心とした地図を表示します。                                                                                                                                                    |
 | bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | ズーム レベル 10 でニューヨークを中心とした地図を表示します。                                                                                                                            |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | **bb** 引数で指定された領域に基づいてニューヨーク市の地図を表示します。                                                                                                           |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | 境界ボックスの引数で指定された領域に基づいてニューヨークの地図を表示します。 *bb* が指定されているため、**cp** 引数で指定されたシアトルの中心点は無視されます。 |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | シーザーズ パレス (ラスベガス) という名前のポイントを使って地図を表示します。ズーム レベルは 16 に設定されます。                                                                                                 |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Some\_Business (ラスベガス) という名前のポイントを使って地図を表示します。                                                                                                                               |
+| bingmaps:? bb = 39.719\_-74.52 ~ 41.71\_-73.5                                   | **bb** 引数で指定された領域に基づいてニューヨーク市の地図を表示します。                                                                                                           |
+| bingmaps:? bb = 39.719\_-74.52 ~ 41.71\_-73.5 & cp = 47 ~-122                        | 境界ボックスの引数で指定された領域に基づいてニューヨークの地図を表示します。 *bb* が指定されているため、**cp** 引数で指定されたシアトルの中心点は無視されます。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars %20palace & lvl = 16 | シーザーズ パレス (ラスベガス) という名前のポイントを使って地図を表示します。ズーム レベルは 16 に設定されます。                                                                                                 |
+| bingmaps:?collection=point.40.726966\_-74.006076\_一部 %255fbusiness        | いくつかという点でマップを表示\_ラスベガス) の「ビジネスです。                                                                                                                               |
 | bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | 航空写真の地図形式を使い、交通情報を有効にして、ニューヨーク市の地図を表示します。                                                                                                                          |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | スペース ニードルの 3D ビューを表示します。                                                                                                                                                        |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | 半径 200 m、ピッチ 75 度、方位 165 度で、スペース ニードルの 3D ビューを表示します。                                                                             |
@@ -97,7 +97,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | 地図を表示し、ワシントンD.C. のホワイト ハウスの住所を検索します。 |
 | bingmaps:?q=coffee&where=Seattle                              | シアトルでコーヒーを検索します。                                                    |
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 指定した中心点の近くのニューヨークを検索します。                             |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 指定した境界ボックス (ニューヨーク市) の中でピザを検索します。      |
+| bingmaps:? bb = 39.719\_-74.52 ~ 41.71\_-73.5 (& q) ピザを =              | 指定した境界ボックス (ニューヨーク市) の中でピザを検索します。      |
 
  
 ## <a name="display-multiple-points"></a>複数のポイントの表示
@@ -107,11 +107,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | サンプル URI | 結果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | ラスベガスのシーザーズ パレスを検索し、その結果を地図に表示します (最適な地図のビューで表示されます)。                         |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | ラスベガスにあるシーザーズ パレスという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。                                               |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | ラスベガスにあるシーザーズ パレスおよびベラジオという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Fake\_Business\_with\_Underscore という名前のプッシュピンと共にニューヨークを表示します。                                                  |
-| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Hotel List という名前の一覧、およびラスベガスにあるシーザーズ パレスとベラジオの 2 つのプッシュピンを表示し、ズーム レベルを 16 に設定します。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars %20palace                                                                                                | ラスベガスのシーザーズ パレスを検索し、その結果を地図に表示します (最適な地図のビューで表示されます)。                         |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars %20palace & lvl = 16                                                                                         | ラスベガスにあるシーザーズ パレスという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。                                               |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_%20bellagio & lvl = 16 & cp = 36.114902 ~-115.176669                   | ラスベガスにあるシーザーズ パレスおよびベラジオという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。              |
+| bingmaps:?collection=point.40.726966\_-74.006076\_偽の % 255fbusiness% 255Fwith %255funderscore                                                                        | ニューヨークをフェイクをという名前のプッシュピンが表示されます\_ビジネス\_で\_アンダー スコアします。                                                  |
+| bingmaps: でしょうか。 コレクション名を = です。Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_%20bellagio & lvl = 16 & cp = 36.114902 ~-115.176669 | Hotel List という名前の一覧、およびラスベガスにあるシーザーズ パレスとベラジオの 2 つのプッシュピンを表示し、ズーム レベルを 16 に設定します。 |
 
  
 
@@ -124,10 +124,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | サンプル URI                                                                                                              | 結果                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | ポイント ツー ポイントのルート案内と共に地図を表示します。 *mode* が指定されていないため、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 |
+| bingmaps:?rtp=pos.44.9160\_-110.4158 ~ pos. 45 0475\_-109.4187。                                                             | ポイント ツー ポイントのルート案内と共に地図を表示します。 *mode* が指定されていないため、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 |
 | bingmaps:?cp=43.0332~-87.9167&trfc=1                                                                                    | ウィスコンシン州のミルウォーキーを中心とした地図と交通情報を表示します。                                                                                                        |
-| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | 指定した住所から指定した場所までのルート案内と共に地図を表示します。                                                                            |
-| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | 1 Microsoft Way, Redmond, WA、98052 からグランドキャニオンの北端までのルート案内を表示します。                                                                |
+| bingmaps: でしょうか。 rtp adr を = です。1 つ Microsoft 方法, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | 指定した住所から指定した場所までのルート案内と共に地図を表示します。                                                                            |
+| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_総計 % 20canyon% 20northern %20rim | 1 Microsoft Way, Redmond, WA、98052 からグランドキャニオンの北端までのルート案内を表示します。                                                                |
 | bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | 指定した場所から指定したランドマークまでの自動車ルート案内と共に地図を表示します。                                                                   |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=d                      | カリフォルニア州のマウンテンビューからカリフォルニア州のサンフランシスコ国際空港までの自動車ルート案内を表示します。                                                                  |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=w                      | カリフォルニア州のマウンテンビューからカリフォルニア州のサンフランシスコ国際空港までの徒歩ルート案内を表示します。                                                                  |
@@ -136,9 +136,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## <a name="display-turn-by-turn-directions"></a>ターン バイ ターン方式のルート案内の表示
 
 
-**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **bingmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#ms-drive-to-param-reference) と [ms-walk-to:](#ms-walk-to-param-reference) のパラメーター リファレンスをご覧ください。
+**Ms でドライブを:** と**ms-チュートリアル-します。** URI スキームを使用して、ルートを有効にする-めくりによってビューに直接起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 場合は、ユーザーの現在の場所が含まれていない点の間の方向を指定する必要がありますを使用して、 **bingmaps:** URI のスキーム、前のセクションで説明されているとします。 これらの URI スキームについて詳しくは、[ms-drive-to:](#ms-drive-to-param-reference) と [ms-walk-to:](#ms-walk-to-param-reference) のパラメーター リファレンスをご覧ください。
 
-> **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」で説明したルートの概要を表示します。
+> **重要な**ときに、 **ms でドライブを:** または**ms-チュートリアル-します。** URI スキームを開始すると、マップ アプリは、かどうか、デバイスが修正 GPS の位置をしたかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#display-directions-and-traffic)」で説明したルートの概要を表示します。
 
 ![ターン バイ ターン方式のルート案内の例](images/windowsmapsappdirections.png)
 
@@ -150,7 +150,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="download-offline-maps"></a>オフライン マップのダウンロード
 
-**ms-settings:** URI スキームでは、設定アプリで特定のページを直接起動することができます。 **ms-settings:** URI スキームでは、マップ アプリが起動されませんが、設定アプリでオフライン マップ ページを直接起動し、マップ アプリが使用するオフライン マップをダウンロードするための確認ダイアログ ボックスを表示することができます。 URI スキームは、緯度と経度で指定されたポイントを受け取り、そのポイントが含まれる地域のオフライン マップが利用できるかどうかを自動的に判定します。  渡された緯度と経度が複数のダウンロード地域内にある場合、ユーザーは、確認ダイアログ ボックスでダウンロードする地域を選択できます。 そのポイントが含まれる地域のオフライン マップが利用できない場合、設定アプリのオフライン マップ ページがエラー ダイアログと共に表示されます。
+**Ms 設定。** URI スキームでは、設定アプリで特定のページに直接起動することができます。 中に、 **ms 設定。** URI スキームのマップ アプリに起動しない、設定アプリでオフライン マップ ページに直接起動することは、マップ アプリによって使用されるオフライン マップをダウンロードする確認のダイアログ ボックスが表示されます。 URI スキームは、緯度と経度で指定されたポイントを受け取り、そのポイントが含まれる地域のオフライン マップが利用できるかどうかを自動的に判定します。  渡された緯度と経度が複数のダウンロード地域内にある場合、ユーザーは、確認ダイアログ ボックスでダウンロードする地域を選択できます。 そのポイントが含まれる地域のオフライン マップが利用できない場合、設定アプリのオフライン マップ ページがエラー ダイアログと共に表示されます。
 
 | サンプル URI  | 結果 |
 |-------------|---------|
@@ -183,9 +183,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>中心点</p></td>
 <td align="left"><p>cp = "cp=" cpval</p>
 <p>cpval = degreeslat "~" degreeslon</p>
-<p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
-<p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
-<p>例:</p>
+<p>degreeslat = ["-"] 1*3DIGIT ["."1*7DIGIT]</p>
+<p>degreeslon = ["-"] 1*2DIGIT ["."1*7DIGIT]</p>
+<p>以下に例を示します。</p>
 <p>cp=40.726966~-74.006076</p></td>
 <td align="left"><p>どちらの値も、10 進角で表し、チルダ (<b>~</b>) で区切る必要があります。</p>
 <p>有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。</p>
@@ -199,9 +199,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>northlatitude = degreeslat</p>
 <p>westlongitude = degreeslon</p>
 <p>eastlongitude = degreeslon</p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
-<p>例:</p>
+<p>degreeslat = ["-"] 13DIGIT ["."17DIGIT]</p>
+<p>degreeslon = ["-"] 12DIGIT ["."17DIGIT]</p>
+<p>以下に例を示します。</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
 <td align="left"><p>境界ボックスを指定する四角形の領域。10 進角で表し、左下隅と右上隅を区別するためにチルダ (<b>~</b>) を使います。 それぞれの緯度と経度は、アンダー スコア (<b>_</b>) で区切られます。</p>
 <p>有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。</p>
@@ -209,7 +209,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="odd">
 <td align="left"><p><b>where</b></p></td>
-<td align="left"><p>位置情報</p></td>
+<td align="left"><p>Location</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1 *( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 <p>以下に例を示します。</p>
@@ -221,33 +221,33 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>クエリ語句</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>q=mexican%20restaurants</p></td>
 <td align="left"><p>各地のビジネスや業種を検索するための語句。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><b>lvl</b></p></td>
 <td align="left"><p>ズーム レベル</p></td>
-<td align="left"><p>lvl = "lvl=" 1<i>2DIGIT ["." 1</i>2DIGIT]</p>
-<p>例:</p>
+<td align="left"><p>lvl ="lvl ="1<i>2DIGIT ["."1</i>2DIGIT]</p>
+<p>以下に例を示します。</p>
 <p>lvl=10.50</p></td>
 <td align="left"><p>地図ビューのズーム レベルを定義します。 有効な値は 1 ～ 20 です。1 は、最も縮小された状態で表示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><b>sty</b></p></td>
-<td align="left"><p>形式</p></td>
+<td align="left"><p>スタイル</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>sty=a</p></td>
 <td align="left"><p>地図の形式を定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>**a**: 地図の航空写真を表示します。</li>
-<li>**r**: 地図の道路図を表示します。</li>
-<li>**3d**: 地図を 3D で表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
+<li>**A**:マップの航空写真のビューを表示します。</li>
+<li>**R**:道路マップのビューを表示します。</li>
+<li>**3d**:3D マップのビューを表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
 </ul>
 <p>Windows 10 では、航空写真表示と 3D ビューのスタイルは同じです。</p>
 <div class="alert">
-**注:** **sty**パラメーターを省略することも同じ結果として sty = r します。
+**注**  Omitting、 **sty** sty と同じ結果が生成される r を = です。
 </div>
 <div>
  
@@ -257,23 +257,23 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>rad</b></p></td>
 <td align="left"><p>半径</p></td>
 <td align="left"><p>rad = "rad=" 1*8DIGIT</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>rad=1000</p></td>
 <td align="left"><p>目的の地図ビューを表す円形領域です。 半径の値はメートル単位で指定します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><b>pit</b></p></td>
-<td align="left"><p>ピッチ</p></td>
+<td align="left"><p>Pitch</p></td>
 <td align="left"><p>pit = "pit=" pitch</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>pit=60</p></td>
 <td align="left"><p>地図を表示する角度を指定します。90 は水平方向を見ること (最大) を表し、0 は真下を見下ろすこと (最小) を表します。</p><p>有効なピッチの値の範囲は 0 ～ 90 です (両端の値を含む)。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p><b>hdg</b></p></td>
-<td align="left"><p>方位</p></td>
+<td align="left"><p>見出し</p></td>
 <td align="left"><p>hdg = "hdg=" heading</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>hdg=180</p></td>
 <td align="left"><p>地図の向いている方位を角度で指定します。0 または 360 は北、90 は東、180 は南、270 は西を表します。</p></td>
 </tr>
@@ -281,11 +281,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>ss</b></p></td>
 <td align="left"><p>Streetside</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
-<p>例: </p>
+<p>以下に例を示します。</p>
 <p>ss=1</p></td>
 <td align="left"><p><code>ss=1</code> の場合は、ストリート レベルの画像が表示されることを示します。 <b>ss</b> パラメーターを省略すると、<code>ss=0</code> と同じ結果が表示されます。 <b>cp</b> パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
 <div class="alert">
-**注:** ストリート レベルの画像は、すべての地域では利用可能なではありません。
+**注**  すべてのリージョンでは番地レベル画像は利用できません。
 </div>
 <div>
  
@@ -293,13 +293,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 <tr class="odd">
 <td align="left"><p><b>trfc</b></p></td>
-<td align="left"><p>交通情報</p></td>
+<td align="left"><p>トラフィック</p></td>
 <td align="left"><p>trfc = "trfc=" BIT</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>trfc=1</p></td>
 <td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、<code>trfc=0</code> と同じ結果が表示されます。</p>
 <div class="alert">
-**注:** すべての地域でトラフィックのデータは使用できません。
+**注**  すべてのリージョンではトラフィックのデータは利用できません。
 </div>
 <div>
  
@@ -312,8 +312,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>waypoint = ("pos." point ) / ("adr." whereval)</p>
 <p>point = "point." pointval ["_" title]</p>
 <p>pointval = degreeslat "" degreeslon</p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
+<p>degreeslat = ["-"] 13DIGIT ["."17DIGIT]</p>
+<p>degreeslon = ["-"] 12DIGIT ["."17DIGIT]</p>
 <p>title = whereval</p>
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
@@ -328,7 +328,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
 <p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
 <div class="alert">
-**注:** **pos**パラメーターの値によって場所が指定されている場合は、場所に対してタイトルを使うことができます。 緯度と経度が表示される代わりに、タイトルが表示されます。
+**注**  によって場所が指定されている場合、場所のタイトルを使用できます、 **pos**パラメーターの値。 緯度と経度が表示される代わりに、タイトルが表示されます。
 </div>
 <div>
  
@@ -338,13 +338,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p><b>mode</b></p></td>
 <td align="left"><p>交通手段モード</p></td>
 <td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>mode=d</p></td>
 <td align="left"><p>交通手段モードを定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>**d**: 自動車ルート案内のルートの概要を表示します。</li>
-<li>**t**: 乗り換え案内のルートの概要を表示します。</li>
-<li>**w**: 徒歩ルート案内のルートの概要を表示します。</li>
+<li>**d**:ルートの道案内情報の概要を表示</li>
+<li>**t**:ルートの転送中の手順の概要を表示</li>
+<li>**w**:ルート徒歩によるルートの概要を表示</li>
 </ul>
 <p>交通手段案内の **rtp** パラメーターと組み合わせて使います。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 現在の位置情報からこのモード用のルート案内に入力するルート パラメーターなしに、**mode** を提供することができます。</p></td>
 </tr>
@@ -357,12 +357,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
 <p>point = "point." pointval ["_" title] </p>
 <p>pointval = degreeslat "" degreeslon </p>
-<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT] </p>
-<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT] </p>
+<p>degreeslat = ["-"] 13DIGIT ["."17DIGIT] </p>
+<p>degreeslon = ["-"] 12DIGIT ["."17DIGIT] </p>
 <p>title = whereval</p>
 
 
-<p>例:</p>
+<p>以下に例を示します。</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>地図と一覧に追加されるポイントのコレクションです。 name パラメーターを使用して、ポイントのコレクションに名前を付けることができます。 ポイントは、緯度、経度、およびオプションのタイトルを使用して指定されます。</p>
 <p>名前と複数のポイントをチルダ (**~**) で区切ります。</p>
@@ -410,7 +410,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: のパラメーター リファレンス
 
-**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。 
+構文は、アプリの特定のパラメーターのマップ、 **ms 設定。** URI スキームは、以下に定義されます。 **マップ downloadmaps**と共に指定、 **ms 設定。** URI の形式で**ms-設定: マップ-downloadmaps でしょうか。** をオフライン マップの設定 ページを示します。 
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|

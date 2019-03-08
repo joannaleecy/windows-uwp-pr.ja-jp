@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ea92e89d54df17e8d82084d840a7ee9ef7d032
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943477"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658337"
 ---
 # <a name="usersowneridscidsscidclipsgameclipid"></a>/users/{ownerId}/scids/{scid}/clips/{gameClipId}
-すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+特定するすべての Id がわかっている場合は、ゲームの 1 つのクリップをシステムからアクセスします。 これらの Uri のドメインが`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`、対象の URI の機能によって異なります。
  
   * [URI パラメーター](#ID4EX)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8943477"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"します。 最大長: 16 します。| 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
-| gameClipId| string| GameClip にアクセスしているリソースの ID です。| 
+| ownerId| string| リソースがアクセスされているユーザーのユーザー id。 サポートされている形式:"xuid(123456789)"または"me"。 最大長:16.| 
+| scid| string| サービス アクセスされているリソースの ID を構成します。 認証されたユーザーの SCID に一致する必要があります。| 
+| gameClipId| string| アクセスされているリソースの ID をゲーム クリップだった。| 
   
 <a id="ID4EFC"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "8943477"
 
 [GET (/users/{ownerId}/scids/{scid}/clips/{gameClipId})](uri-usersowneridscidclipsgameclipidget.md)
 
-&nbsp;&nbsp;すべての Id を見つけることがわかっている場合は、システムから 1 つのゲーム クリップを取得します。
+&nbsp;&nbsp;指定することのすべての Id がわかっている場合は、システムからゲームの 1 つのクリップを取得します。
  
 <a id="ID4EPC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8943477"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR URI](atoc-reference-dvr.md)
+[ゲーム録画 Uri](atoc-reference-dvr.md)
 
    

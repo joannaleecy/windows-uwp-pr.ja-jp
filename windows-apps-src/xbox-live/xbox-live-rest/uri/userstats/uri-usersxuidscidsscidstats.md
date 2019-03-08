@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 53a6c7bb0e7390b024b01e221d8061316a80509e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933277"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650417"
 ---
 # <a name="usersxuidxuidscidsscidstats"></a>/users/xuid({xuid})/scids/{scid}/stats
-スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成にアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
+サービス構成を指定したユーザーに代わってユーザー統計名のコンマ区切りリストによってスコープにアクセスします。 これらの Uri のドメインが`userstats.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,23 +24,23 @@ ms.locfileid: "8933277"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのします。| 
-| scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。| 
+| xuid| GUID| Xbox ユーザー ID (XUID) の対象サービスの構成にアクセスするユーザーです。| 
+| scid| GUID| アクセスされるリソースを含むサービス構成の識別子です。| 
   
 <a id="ID4E4B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-usersxuidscidsscidstatsget.md)
+[取得](uri-usersxuidscidsscidstatsget.md)
 
-&nbsp;&nbsp;スコープ指定されたユーザーに代わってユーザー統計情報名のコンマ区切りのリストでサービス構成を取得します。
+&nbsp;&nbsp;指定したユーザーに代わってユーザー統計名のコンマ区切りリストによってスコープ サービス構成を取得します。
 
 [値のメタデータを取得します。](uri-usersxuidscidsscidstatsgetvaluemetadata.md)
 
-&nbsp;&nbsp;指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
+&nbsp;&nbsp;指定したサービス構成内のユーザーに対して、統計情報の値に関連付けられているメタデータを含む、指定した統計情報の一覧を取得します。
  
 <a id="ID4EKC"></a>
 
@@ -52,6 +52,6 @@ ms.locfileid: "8933277"
  
 ##### <a name="parent"></a>Parent 
 
-[ユーザー統計 URI](atoc-reference-userstats.md)
+[ユーザーの統計情報の Uri](atoc-reference-userstats.md)
 
    

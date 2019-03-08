@@ -1,20 +1,20 @@
 ---
-Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
+Description: パッケージ デスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、パッケージ アプリが使うことができるクラスについて説明します。
 Search.Product: eADQiWindows 10XVcnh
 title: パッケージ デスクトップ アプリで利用可能な UWP API (デスクトップ ブリッジ)
 ms.date: 10/27/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048852"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644717"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>パッケージ デスクトップ アプリを利用可能な UWP Api
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>パッケージ化されたデスクトップ アプリに利用可能な UWP Api
 
 パッケージ デスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、パッケージ アプリが使うことができるクラスについて説明します。
 
@@ -26,8 +26,8 @@ ms.locfileid: "9048852"
 <tr><td>バックグラウンド タスク</td><td>パッケージ アプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク<i>として</i>実行できます。 詳しくは、<a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub のバックグラウンド タスク サンプル</a>をご覧ください。</td></tr>
 <tr><td>Bluetooth</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>チャットと電話</td><td>パッケージ アプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
-<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化ことができます。</td></tr>
-<tr><td>Cryptography</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
+<tr><td>コントラクトによるアクティブ化</td><td>コントラクトでは、完全な UWP アプリのみをアクティブにできます。</td></tr>
+<tr><td>暗号化</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>位置情報</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
 <tr><td>ファイルおよびフォルダー ピッカー</td><td>パッケージ アプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>
 <tr><td>メディア</td><td>現在のところ、すべての API がパッケージ アプリでサポートされているわけではありません。</td></tr>
@@ -1048,10 +1048,10 @@ WinRT API の使用方法を示した例については、GitHub で[デスク�
 
 ## <a name="next-steps"></a>次のステップ
 
-**質問に対する回答を見つける**
+**質問の回答を検索**
 
 ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
-**フィードバックの提供または機能の提案を行う**
+**ご意見や機能を提案します。**
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。

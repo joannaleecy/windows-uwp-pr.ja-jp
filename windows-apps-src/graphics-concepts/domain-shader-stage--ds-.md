@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: bbde90d848d3bc8fb18a5ecf370c85121adc02f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934667"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620497"
 ---
 # <a name="domain-shader-ds-stage"></a>ドメイン シェーダー (DS) ステージ
 
 
 ドメイン シェーダー (DS) ステージでは、パッチ内の細分化されたポイントの頂点の位置を計算します。つまり、各ドメイン サンプルに対応する頂点の位置を計算します。 ドメイン シェーダーは、テッセレータ ステージの出力ポイントごとに 1 回実行され、ハル シェーダーの出力パッチや出力パッチ定数、およびテッセレータ ステージの出力 UV 座標への読み取り専用アクセスが可能です。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と用途
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と使用
 
 
 ドメイン シェーダー (DS) ステージは、[ハル シェーダー (HS) ステージ](hull-shader-stage--hs-.md)と[テッセレータ (TS) ステージ](tessellator-stage--ts-.md)からの入力に基づいて、出力パッチ内の細分化されたポイントの頂点の位置を出力します。

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fbb2417f743d97b487ad16abd241fcb5eea62bb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047901"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646637"
 ---
 # <a name="initialuploadrequest-json"></a>InitialUploadRequest (JSON)
-POST GameClip の本文は、要求をアップロードします。 
+要求の POST ゲームのクリップだったの本文にアップロードします。 
 <a id="ID4EN"></a>
 
  
@@ -25,28 +25,28 @@ InitialUploadRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>greatestMomentId</b>| string| クリップの名として使用するテキストの文字列 ID。 これの管理し、タイトルの開発者によってタイトルの構成ファイルにローカライズされます。| 
-| <b>userCaption</b>| string| 省略可能。 ユーザー入力の代替名最大 250 文字の最大長のゲーム クリップされます。| 
-| <b>sessionRef</b>| string| 省略可能。 レコーディングの実行中になるゲーム セッションの参照です。| 
-| <b>dateRecorded</b>| DateTime| UTC で、レコーディングを開始した時刻。 ISO 8601 形式の文字列としてマーシャ リング (詳細については、<a href="https://www.w3.org/TR/NOTE-datetime">日付と時刻の形式</a>を参照) の書式を設定します。| 
-| <b>durationInSeconds</b>| 32 ビット符号なし整数| 秒単位でクリップの長さ。| 
-| <b>expectedBlocks</b>| 32 ビット符号なし整数| 省略可能。 ファイルを分類するブロックの数。 省略ファイルは、1 つの要求で送信されます。| 
-| <b>fileSize</b>| 32 ビット符号なし整数| ファイル サイズのアップロードされるビデオのバイト数。| 
-| <b>type</b>| [GameClipType 列挙型](../enums/gvr-enum-gamecliptypes.md)| コンマ区切りで列挙型の文字列値としてマーシャ リング、クリップの種類です。| 
-| <b>ソース</b>| [GameClipSource 列挙型](../enums/gvr-enum-gameclipsource.md)| クリップの元の指定、列挙体の文字列値としてマーシャ リングします。| 
-| <b>visibility</b>| [GameClipVisibility 列挙型](../enums/gvr-enum-gameclipvisibility.md)| システムでの公開後に、ゲーム クリップの可視性を指定します。| 
-| <b>titleData</b>| string| 省略可能。 このクリップに関連付けられているタイトル固有のプロパティのプロパティ バッグです。 格納され、として返された-です。 タイトル デベロッパーは、クリップに関するメタデータを保持するため、このフィールドを使用できます。| 
-| <b>titleData</b>| string| 省略可能。 このクリップに関連付けられているコンソールに固有のプロパティのプロパティ バッグです。 格納され、として返された-です。 本体のプラットフォームでは、クリップに関するメタデータを保持するため、このフィールドを使用できます。| 
-| <b>systemProperties</b>| string| 省略可能。 このクリップに関連付けられているコンソールに固有のプロパティのプロパティ バッグです。 格納され、として返されます。 本体のプラットフォームでは、クリップに関するメタデータを保持するため、このフィールドを使用できます。| 
-| <b>usersInSession</b>| 文字列の配列| 省略可能。 現在のセッション内のユーザーの一覧。| 
-| <b>thumbnailSource</b>| [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)| 省略可能。 サムネイルのソース。| 
-| <b>thumbnailOffsetMillseconds</b>| 32 ビット符号付き整数| 生成されたオフセットのサムネイルを (ミリ秒単位) のオフセットを指定します。 <b>ThumbnailSource</b>をオフセットを設定するときに指定だけです。| 
-| <b>savedByUser</b>| ブール値| 省略可能。 FIFO 記憶域ではなく、ユーザーのクォータに保存するクリップを設定します。 既定値は false。| 
+| <b>greatestMomentId</b>| string| クリップの名前として使用するテキストの文字列 ID。 これの管理し、開発者のタイトルのタイトルの構成ファイルでローカライズされました。| 
+| <b>userCaption</b>| string| (省略可能)。 ユーザー入力の代替名 250 文字の最大長までゲームにクリップします。| 
+| <b>sessionRef</b>| string| (省略可能)。 ゲーム セッションの記録の実行を参照。| 
+| <b>dateRecorded</b>| DateTime| (Utc)、記録の開始時刻。 ISO 8601 形式の文字列としてマーシャ リング (を参照してください<a href="https://www.w3.org/TR/NOTE-datetime">日付および時刻書式</a>詳細については)。| 
+| <b>durationInSeconds</b>| 32 ビット符号なし整数| 秒単位で、クリップの長さ。| 
+| <b>expectedBlocks</b>| 32 ビット符号なし整数| (省略可能)。 ファイルの分割にするブロックの数。 ファイルが 1 つの要求で送信される場合は省略します。| 
+| <b>fileSize</b>| 32 ビット符号なし整数| アップロードされるビデオのバイト単位のサイズ。| 
+| <b>型</b>| [GameClipType 列挙型](../enums/gvr-enum-gamecliptypes.md)| コンマ区切りである列挙体の文字列値としてマーシャ リング、クリップの種類。| 
+| <b>ソース</b>| [GameClipSource 列挙型](../enums/gvr-enum-gameclipsource.md)| クリップの元を示す列挙体の文字列値としてマーシャ リングします。| 
+| <b>可視性</b>| [GameClipVisibility 列挙型](../enums/gvr-enum-gameclipvisibility.md)| システムで発行されたが、ゲームのクリップの可視性を指定します。| 
+| <b>titleData</b>| string| (省略可能)。 このクリップに関連付けられているタイトルに固有のプロパティのプロパティ バッグ。 格納されているし、として返されるは。 タイトル開発者は、このフィールドを使用して、クリップに関するメタデータを保持することができます。| 
+| <b>titleData</b>| string| (省略可能)。 このクリップに関連付けられているコンソールに固有のプロパティのプロパティ バッグ。 格納されているし、として返されるは。 コンソールのプラットフォームでは、クリップに関するメタデータを保持するのに、このフィールドを使用できます。| 
+| <b>systemProperties</b>| string| (省略可能)。 このクリップに関連付けられているコンソールに固有のプロパティのプロパティ バッグ。 格納されているしが返されます。 コンソールのプラットフォームでは、クリップに関するメタデータを保持するのに、このフィールドを使用できます。| 
+| <b>usersInSession</b>| 文字列の配列| (省略可能)。 現在のセッションでのユーザーの一覧。| 
+| <b>thumbnailSource</b>| [ThumbnailSource 列挙型](../enums/gvr-enum-thumbnailsource.md)| (省略可能)。 サムネイルのソース。| 
+| <b>thumbnailOffsetMillseconds</b>| 32 ビット符号付き整数| 生成されたサムネイルのオフセットをミリ秒単位のオフセットを指定します。 指定した場合にのみ<b>thumbnailSource</b>オフセットを設定します。| 
+| <b>savedByUser</b>| ブール値| (省略可能)。 FIFO storage ではなく、ユーザーのクォータに保存するクリップを設定します。 既定値は false。| 
   
 <a id="ID4ERH"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -81,6 +81,6 @@ InitialUploadRequest オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 363f7034d7e353d9ee110637971e7b848dbca1bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932196"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625637"
 ---
 # <a name="manage-delivery-lines"></a>配信ラインの管理
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932196"
 
 配信ラインと広告キャンペーン、ターゲット プロファイル、クリエイティブとの関係について詳しくは、「[Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
 
->**注:**&nbsp;&nbsp;を前に、この API を使用して広告キャンペーンの配信ラインを正しく作成するは、最初は[パートナー センターでの**広告キャンペーン**のページを使用して 1 つの有料の広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)する必要があります 1 つ以上の支払いを追加する必要があります。このページで機器です。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 API を使用して作成した広告キャンペーンでは、パートナー センターでの**広告キャンペーン**] ページで選んだ既定の支払い方法を自動的に請求されます。
+>**注**&nbsp;&nbsp;まずこの API を使用して広告キャンペーンの配信の行を正常に作成できますが、前に[有料広告キャンペーンを使用して作成、**広告キャンペーン**ページパートナー センター](../publish/create-an-ad-campaign-for-your-app.md)、し、このページで、少なくとも 1 つの支払い方法を追加する必要があります。 これを行うと、この API を使用して、広告キャンペーンの請求可能な配信ラインを正しく作成することができます。 選択した既定の支払いは自動的に課金を広告キャンペーンの API を使用して作成する、**広告キャンペーン**パートナー センターでのページ。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -28,9 +28,9 @@ ms.locfileid: "8932196"
 * Microsoft Store プロモーション API に関するすべての[前提条件](run-ad-campaigns-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
 
   > [!NOTE]
-  > 前提条件の一部として、そのする[パートナー センターで、少なくとも 1 つの有料の広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)していることを確認する追加、広告キャンペーンの支払い方法を少なくとも 1 つパートナー センターでします。 この API を使用して作成した配信ラインでは、パートナー センターでの**広告キャンペーン**] ページで選んだ既定の支払い方法を自動的に請求されます。
+  > 前提条件の一環としてすることを確認した[パートナー センターで少なくとも 1 つの有料広告キャンペーンを作成](../publish/create-an-ad-campaign-for-your-app.md)パートナー センターでの広告キャンペーンの少なくとも 1 つの支払い方法を追加するとします。 選択した既定の支払い方法は自動的に課金をこの API を使用して作成した配信行、**広告キャンペーン**パートナー センターでのページ。
 
-* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* これらのメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -43,12 +43,12 @@ ms.locfileid: "8932196"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  *lineId* により指定された配信ラインを取得します。  |
 
 
-### <a name="header"></a>ヘッダー
+### <a name="header"></a>Header
 
-| ヘッダー        | 型   | 説明         |
+| Header        | 種類   | 説明         |
 |---------------|--------|---------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
-| 追跡 ID   | GUID   | 省略可能。 呼び出しフローを追跡する ID。                                  |
+| 追跡 ID   | GUID   | (省略可能)。 呼び出しフローを追跡する ID。                                  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -135,32 +135,32 @@ Authorization: Bearer <your access token>
 
 これらのメソッドの要求本文と応答本文には、次のフィールドが含まれています。 この表は、読み取り専用のフィールド (つまり、PUT メソッドで変更できない) と POST メソッドまたは PUT メソッドの要求本文で必須のフィールドを示しています。
 
-| フィールド        | 型   |  説明      |  読み取り専用かどうか  | 既定値  | POST/PUT に必須かどうか |   
+| フィールド        | 種類   |  説明      |  読み取り専用かどうか  | Default  | POST/PUT に必須かどうか |   
 |--------------|--------|---------------|------|-------------|------------|
-|  id   |  整数   |  配信ラインの ID です。     |   ○    |      |  ×      |    
-|  name   |  文字列   |   配信ラインの名前です。    |    ×   |      |  POST     |     
-|  configuredStatus   |  文字列   |  開発者により指定された配信ラインのステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**Inactive**</li></ul>     |  ×     |      |   POST    |       
-|  effectiveStatus   |  文字列   |   システム検証に基づいて配信ラインの有効ステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**Inactive**</li><li>**Processing**</li><li>**Failed**</li></ul>    |    ○   |      |  ×      |      
-|  effectiveStatusReasons   |  配列   |  配信ラインの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  ○     |     |    ×    |           
-|  startDatetime   |  文字列   |  配信ラインの開始日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |    ×   |      |    POST、PUT     |
-|  endDatetime   |  文字列   |  配信ラインの終了日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |   ×    |      |  POST、PUT     |
-|  createdDatetime   |  文字列   |  配信ラインが作成された日時 (ISO 8601 形式)。      |    ○   |      |  ×      |
-|  bidType   |  文字列   |  配信ラインの入札の種類を指定する値です。 現時点では、サポートされている唯一の値は **CPM** です。      |    ×   |  CPM    |  ×     |
-|  bidAmount   |  10 進数   |  広告要求の入札に使う入札額です。      |    ×   |  対象市場に基づく平均 CPM 値です (この値は定期的に変更されます)。    |    ×    |  
-|  dailyBudget   |  10 進数   |  配信ラインの 1 日あたりの予算です。 *dailyBudget* または *lifetimeBudget* を設定する必要があります。      |    ×   |      |   POST、PUT (*lifetimeBudget* が設定されていない場合)       |
-|  lifetimeBudget   |  10 進数   |   配信ラインの全体予算です。 lifetimeBudget* または *dailyBudget* を設定する必要があります。      |    ×   |      |   POST、PUT (*dailyBudget* が設定されていない場合)    |
-|  targetingProfileId   |  オブジェクト   |  この配信ラインを対象にするユーザー、地域、およびインベントリの種類を指定する[対象プロファイル](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)を識別するオブジェクトです。 このオブジェクトは、対象プロファイルの ID を指定する単一の *id* フィールドで構成されます。     |    ×   |      |  ×      |  
-|  creatives   |  配列   |  配信ラインに関連づけられた[クリエイティブ](manage-creatives-for-ad-campaigns.md#creative)を表す 1 つ以上のオブジェクトです。 このフィールド内の各オブジェクトは、クリエイティブの ID を指定する単一の *id* フィールドで構成されます。      |    ×   |      |   ×     |  
-|  campaignId   |  整数   |  親広告キャンペーンの ID です。      |    ×   |      |   ×     |  
-|  minMinutesPerImp   |  整数   |  この配信ラインから同じユーザーに表示される 2 つのインプレッション間の間隔 (分単位) を指定します。      |    ×   |  4000    |  ×      |  
-|  pacingType   |  文字列   |  ペーシングの種類を指定する次のいずれかの値です。 <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    ×   |  SpendEvenly    |  ×      |
-|  currencyId   |  整数   |  キャンペーンの通貨の ID です。      |    ○   |  開発者アカウントの通貨 (POST または PUT 呼び出しではこのフィールドを指定する必要はありません)    |   ×     |      |
+|  id   |  整数   |  配信ラインの ID です。     |   〇    |      |  X      |    
+|  name   |  string   |   配信ラインの名前です。    |    X   |      |  POST     |     
+|  configuredStatus   |  string   |  開発者により指定された配信ラインのステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li></ul>     |  X     |      |   POST    |       
+|  effectiveStatus   |  string   |   システム検証に基づいて配信ラインの有効ステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li><li>**処理**</li><li>**失敗しました**</li></ul>    |    〇   |      |  X      |      
+|  effectiveStatusReasons   |  array   |  配信ラインの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  〇     |     |    X    |           
+|  startDatetime   |  string   |  配信ラインの開始日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |    X   |      |    POST、PUT     |
+|  endDatetime   |  string   |  配信ラインの終了日時です (ISO 8601 形式)。 日時が過去の場合、この値を変更できません。     |   X    |      |  POST、PUT     |
+|  createdDatetime   |  string   |  配信ラインが作成された日時 (ISO 8601 形式)。      |    〇   |      |  X      |
+|  bidType   |  string   |  配信ラインの入札の種類を指定する値です。 現時点では、サポートされている唯一の値は **CPM** です。      |    X   |  CPM    |  X     |
+|  bidAmount   |  decimal   |  広告要求の入札に使う入札額です。      |    X   |  対象市場に基づく平均 CPM 値です (この値は定期的に変更されます)。    |    X    |  
+|  dailyBudget   |  decimal   |  配信ラインの 1 日あたりの予算です。 *dailyBudget* または *lifetimeBudget* を設定する必要があります。      |    X   |      |   POST、PUT (*lifetimeBudget* が設定されていない場合)       |
+|  lifetimeBudget   |  decimal   |   配信ラインの全体予算です。 lifetimeBudget* または *dailyBudget* を設定する必要があります。      |    X   |      |   POST、PUT (*dailyBudget* が設定されていない場合)    |
+|  targetingProfileId   |  オブジェクト   |  この配信ラインを対象にするユーザー、地域、およびインベントリの種類を指定する[ターゲット プロファイル](manage-targeting-profiles-for-ad-campaigns.md#targeting-profile)を識別するオブジェクトです。 このオブジェクトは、ターゲット プロファイルの ID を指定する単一の *id* フィールドで構成されます。     |    X   |      |  X      |  
+|  creatives   |  array   |  配信ラインに関連づけられた[クリエイティブ](manage-creatives-for-ad-campaigns.md#creative)を表す 1 つ以上のオブジェクトです。 このフィールド内の各オブジェクトは、クリエイティブの ID を指定する単一の *id* フィールドで構成されます。      |    X   |      |   X     |  
+|  campaignId   |  整数   |  親広告キャンペーンの ID です。      |    X   |      |   X     |  
+|  minMinutesPerImp   |  整数   |  この配信ラインから同じユーザーに表示される 2 つのインプレッション間の間隔 (分単位) を指定します。      |    X   |  4000    |  X      |  
+|  pacingType   |  string   |  ペーシングの種類を指定する次のいずれかの値です。 <ul><li>**SpendEvenly**</li><li>**SpendAsFastAsPossible**</li></ul>      |    X   |  SpendEvenly    |  X      |
+|  currencyId   |  整数   |  キャンペーンの通貨の ID です。      |    〇   |  開発者アカウントの通貨 (POST または PUT 呼び出しではこのフィールドを指定する必要はありません)    |   X     |      |
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md)
-* [広告キャンペーンの管理](manage-ad-campaigns.md)
-* [広告キャンペーンの対象プロファイルの管理](manage-targeting-profiles-for-ad-campaigns.md)
-* [広告キャンペーンのクリエイティブの管理](manage-creatives-for-ad-campaigns.md)
-* [広告キャンペーンのパフォーマンス データの取得](get-ad-campaign-performance-data.md)
+* [Microsoft ストアのサービスを使用して広告キャンペーンを実行します。](run-ad-campaigns-using-windows-store-services.md)
+* [広告キャンペーンを管理します。](manage-ad-campaigns.md)
+* [広告キャンペーンの対象とするプロファイルを管理します。](manage-targeting-profiles-for-ad-campaigns.md)
+* [広告キャンペーンのクリエイティブを管理します。](manage-creatives-for-ad-campaigns.md)
+* [広告キャンペーンのパフォーマンス データを取得します。](get-ad-campaign-performance-data.md)

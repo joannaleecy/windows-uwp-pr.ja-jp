@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use page transitions in your UWP apps.
+Description: UWP アプリでページの切り替え効果を使用する方法について説明します。
 title: UWP アプリのページ切り替え効果
 template: detail.hbs
 ms.date: 04/08/2018
@@ -9,11 +9,11 @@ pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 38fe6b92828459f91ba6ea2f836d274c2cc8d761
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942244"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646457"
 ---
 # <a name="page-transitions"></a>ページ切り替え効果
 
@@ -37,7 +37,7 @@ myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**注**: [**フレーム**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)は自動的に [**NavigationThemeTransition**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) を使用して 2 つのページ間のナビゲーションをアニメーション化します。 既定では、アニメーションはページの更新です。
+**注意**:A [**フレーム**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame)自動的に使用して[ **NavigationThemeTransition** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)を 2 つのページ間のナビゲーションをアニメーション化します。 既定では、アニメーションはページの更新です。
 
 ## <a name="drill"></a>ドリル
 
@@ -56,9 +56,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平方向のスライド
 
-水平方向のスライドを使用して、兄弟のページに並べて表示されることを示します。 [NavigationView](../controls-and-patterns/navigationview.md)コントロールは自動的に、上部のナビゲーションのこのアニメーションを使用が水平方向のナビゲーション エクスペリエンスを構築する場合するを実装できます SlideNavigationTransitionInfo と水平方向にスライドします。
+水平方向のスライドを使用して、互いの横にある兄弟のページが表示されることを示します。 [NavigationView](../controls-and-patterns/navigationview.md)コントロールでは、上部のナビゲーションでのこのアニメーションを自動的に使用しますが、独自の水平方向のナビゲーション エクスペリエンスを構築する場合するを実装できます SlideNavigationTransitionInfo で水平方向にスライドします。
 
-持てるでは、ユーザーが互いの横にあるページ間で移動することです。 
+必要な感情は、ユーザーが互いの横にあるページ間で移動することです。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage
@@ -87,5 +87,5 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 ## <a name="related-topics"></a>関連トピック
 
-- [2 つのページ間の移動](../basics/navigate-between-two-pages.md)
-- [UWP アプリのモーション](index.md)
+- [2 つのページ間を移動します。](../basics/navigate-between-two-pages.md)
+- [UWP アプリでのモーション](index.md)

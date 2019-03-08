@@ -1,21 +1,21 @@
 ---
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
-title: Hello, world アプリを作成する (JS)
-description: このチュートリアルでは、対象を JavaScript と HTML を使って単純な & \#0034; を作成する方法こんにちは, world & \#0034;windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象とするアプリです。
+title: "\"Hello, world\" アプリを作成する (JS)"
+description: このチュートリアルには、JavaScript と HTML を使用して、単純なを作成する方法が説明します (& a)\#0034;こんにちは, world &\#0034; Windows 10 ユニバーサル Windows プラットフォーム (UWP) を対象とするアプリです。
 ms.date: 03/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928241"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620427"
 ---
-# <a name="create-a-hello-world-app-js"></a>Hello, world アプリを作成する (JS)
+# <a name="create-a-hello-world-app-js"></a>"Hello, world" アプリを作成する (JS)
 
-このチュートリアルは、JavaScript と HTML を使って、シンプルなを作成する方法を教えて「こんにちは, world」アプリを windows 10 のユニバーサル Windows プラットフォーム (UWP) をターゲットとします。 Microsoft Visual Studio でプロジェクトを 1 つは、任意の windows 10 デバイスで実行されるアプリをビルドすることができます。
+このチュートリアルには、JavaScript と HTML を使用して、単純なを作成する方法が説明します「こんにちは, world」Windows 10 ユニバーサル Windows プラットフォーム (UWP) を対象とするアプリです。 Microsoft Visual Studio での 1 つのプロジェクトでは、任意の Windows 10 デバイスで実行されているアプリを構築できます。
 
 > [!NOTE]
 > このチュートリアルでは、Visual Studio Community 2017 を使います。 異なるバージョンの Visual Studio を使っている場合には、見た目が多少異なることがあります。
@@ -23,21 +23,21 @@ ms.locfileid: "8928241"
 
 ここでは、次の方法について説明します。
 
--   **Windows 10**と**UWP**を対象とする新しい**Visual Studio 2017**プロジェクトを作成します。
+-   新規作成**Visual Studio 2017**を対象とするプロジェクト**Windows 10**と**UWP**します。
 -   HTML と JavaScript のコンテンツを追加する
 -   Visual Studio のローカル デスクトップでプロジェクトを実行する
 
 ## <a name="before-you-start"></a>はじめに...
 
 -   [UWP アプリとは](universal-application-platform-guide.md)。
--   このチュートリアルを完了するには、windows 10 と Visual Studio2017 が必要です。 [準備してください](get-set-up.md)。
+-   このチュートリアルを完了するには、Windows 10 と Visual Studio 2017 が必要です。 [準備してください](get-set-up.md)。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1. Visual Studio で新しいプロジェクトを作る
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>手順 1:Visual Studio で新しいプロジェクトを作成します。
 
 1.  Visual Studio 2017 を起動します。
 
-2.  **[ファイル]** メニューの **[新規作成] > [プロジェクト]** を選択し、*[新しいプロジェクト]* ダイアログを開きます。
+2.  **[ファイル]** メニューの **[新規作成]、[プロジェクト]** の順にクリックし、*[新しいプロジェクト]* ダイアログを開きます。
 
 3.  左側のテンプレートの一覧で、**[インストール済み] > [テンプレート] > [JavaScript]** の順に開いた後、**[Windows ユニバーサル]** を選択して UWP プロジェクト テンプレートの一覧を表示します。
 
@@ -79,12 +79,12 @@ ms.locfileid: "8928241"
 
 - アプリの Web ページです。アプリの起動時に読み込まれ、表示されます。
 
-*一連のロゴ イメージ*
+*ロゴのイメージのセット*
 -   Assets/Square150x150Logo.scale-200.png は、スタート メニュー内のアプリを表します。
 -   Assets/StoreLogo.png は、Microsoft Store 内のアプリを表します。
 -   Assets/SplashScreen.scale-200.png は、アプリが起動したときに表示するスプラッシュ画面です。
 
-## <a name="step-2-adding-a-button"></a>手順 2. ボタンを追加する
+## <a name="step-2-adding-a-button"></a>手順 2:ボタンの追加
 
 エディターで *index.html* をクリックして選択し、含まれている HTML を次のように変更します。
 
@@ -107,14 +107,14 @@ ms.locfileid: "8928241"
 </html>
 ```
 
-次のようになります。
+これは次のようになります。
 
  ![プロジェクトの HTML](images/win10-js-03.png)
 
 この HTML では、JavaScript が含まれた *main.js* を参照し、Web ページの本文に 1 行のテキストと単一のボタンを追加します。 ボタンには、JavaScript が参照できるように *ID* が設定されます。
 
 
-## <a name="step-3-adding-some-javascript"></a>手順 3: JavaScript を追加する
+## <a name="step-3-adding-some-javascript"></a>手順 3:何らかの JavaScript を追加します。
 
 次は、JavaScript を追加します。 *main.js* をクリックして選択し、以下を追加します。
 
@@ -135,7 +135,7 @@ function sayHello() {
 
 ```
 
-次のようになります。
+これは次のようになります。
 
  ![プロジェクトの JavaScript](images/win10-js-04.png)
 
@@ -144,7 +144,7 @@ function sayHello() {
 2 番目の関数 *sayHello()* では、ダイアログを作成して表示します。 これは、前の JavaScript 開発で使用した *Alert()* 関数とよく似ています。
 
 
-## <a name="step-4-run-the-app"></a>手順 4: アプリを実行する
+## <a name="step-4-run-the-app"></a>手順 4:アプリを実行します。
 
 ここで F5 キーを押すと、アプリを実行できます。 アプリが読み込まれ、Web ページが表示されます。 ボタンをクリックすると、メッセージ ダイアログ ボックスが表示されます。
 
@@ -152,12 +152,12 @@ function sayHello() {
 
 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 
-これで、windows 10 と UWP の JavaScript アプリを作成しました。 これは極端にシンプルな例ですが、これに好きな JavaScript ライブラリやフレームワークを追加して、独自のアプリを作成することができます。 また、これは UWP アプリなので、ストアに公開できます。 サード パーティのフレームワークを追加する方法の例については、以下のプロジェクトをご覧ください。
+これで、Windows 10 と UWP の JavaScript アプリを作成しました。 これは極端にシンプルな例ですが、これに好きな JavaScript ライブラリやフレームワークを追加して、独自のアプリを作成することができます。 また、これは UWP アプリなので、ストアに公開できます。 サード パーティのフレームワークを追加する方法の例については、以下のプロジェクトをご覧ください。
 
-* [JavaScript と CreateJS で記述された Microsoft Store 向けのシンプルな 2D UWP ゲーム](get-started-tutorial-game-js2d.md)
-* [JavaScript と threeJS で記述された Microsoft Store 向けの 3D UWP ゲーム](get-started-tutorial-game-js3d.md)
+* [JavaScript および CreateJS で記述された、Microsoft Store のゲームを単純な 2D UWP](get-started-tutorial-game-js2d.md)
+* [JavaScript および threeJS で記述された、Microsoft Store のゲームの 3D の UWP](get-started-tutorial-game-js3d.md)
 
 

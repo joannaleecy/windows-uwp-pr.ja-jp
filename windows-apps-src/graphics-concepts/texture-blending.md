@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c40c7d3bd080bd927fc52cb7f740e1dc4a6358c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948004"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620807"
 ---
 # <a name="texture-blending"></a>テクスチャ ブレンド
 
@@ -21,7 +21,7 @@ Direct3D では、1 つのパスでプリミティブに 8 個までのテクス
 
 テクスチャ ブレンドを使用するには、最初にアプリケーションでユーザーのハードウェアがテクスチャ ブレンドをサポートしているかどうかを確認する必要があります。
 
-## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>テクスチャ ステージとテクスチャ ブレンディング カスケード
+## <a name="span-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespanspan-idtexture-stages-and-the-texture-blending-cascadespantexture-stages-and-the-texture-blending-cascade"></a><span id="Texture-Stages-and-the-Texture-Blending-Cascade"></span><span id="texture-stages-and-the-texture-blending-cascade"></span><span id="TEXTURE-STAGES-AND-THE-TEXTURE-BLENDING-CASCADE"></span>テクスチャのステージおよびテクスチャのブレンド cascade
 
 
 Direct3D では、テクスチャ ステージの使用によって、単一パスでの複数のテクスチャ ブレンドがサポートされます。 テクスチャ ステージは 2 つの引数を受け取り、それらに対してブレンド処理を実行して、その後の処理またはラスター化に結果を渡します。 テクスチャ ステージを具体的に表すと、次の図のようになります。
@@ -30,7 +30,7 @@ Direct3D では、テクスチャ ステージの使用によって、単一パ�
 
 上の図のように、テクスチャ ステージは、指定された演算子を使用して、2 つの引数をブレンドします。 一般的な演算には、引数のカラーまたはアルファ成分の単純な乗算や加算がありますが、実際にサポートされている演算は 24 を超えます。 ステージの引数には、関連付けられたテクスチャ、反復処理されるカラーまたはアルファ (グーロー シェーディング時に反復処理)、任意のカラーとアルファ、以前のテクスチャ ステージの結果などがあります。
 
-**注:**  Direct3D は、色のアルファ ブレンドのブレンドを区別します。 アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。
+**注**   Direct3D には色のアルファ ブレンドのブレンドが区別されます。 アプリケーションでは、カラーとアルファについて個々にブレンドの演算と引数を設定し、これらの設定の結果は互いに独立しています。
 
  
 
@@ -60,12 +60,12 @@ Direct3D では、テクスチャ ステージの使用によって、単一パ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="blending-stages.md">ブレンド ステージ</a></p></td>
+<td align="left"><p><a href="blending-stages.md">ステージのブレンド</a></p></td>
 <td align="left"><p>ブレンド ステージは、テクスチャ操作のセットと、テクスチャのブレンド方法を定義する引数です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multipass-texture-blending.md">マルチパス テクスチャ ブレンド</a></p></td>
-<td align="left"><p>Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。 これを表す一般的な用語が<em>マルチパス テクスチャ ブレンド</em>です。 通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。 このようなアプリケーションを<em>ライト マッピング</em>と呼びます。</p></td>
+<td align="left"><p><a href="multipass-texture-blending.md">マルチパスのテクスチャのブレンド</a></p></td>
+<td align="left"><p>Direct3D アプリケーションでは、複数のレンダリング パスでさまざまなテクスチャを 1 つのプリミティブに適用することで、多彩な特殊効果を実現することができます。 これは、一般に<em>マルチパス テクスチャ ブレンド</em>と呼ばれます。 通常、マルチパス テクスチャ ブレンドは、さまざまなテクスチャから複数のカラーを適用して、複雑なライティング モデルやシェーディング モデルの効果をエミュレートするために使用されます。 このような適用は<em>ライト マッピング</em>と呼ばれます。</p></td>
 </tr>
 </tbody>
 </table>

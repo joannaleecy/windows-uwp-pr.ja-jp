@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, シェーダー, Direct3D, OpenGL
 ms.localizationpriority: medium
 ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935956"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618747"
 ---
 # <a name="port-the-shader-objects"></a>シェーダー オブジェクトの移植
 
@@ -25,7 +25,7 @@ ms.locfileid: "8935956"
 
 OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。
 
-> **注:** 新しい Direct3D プロジェクトを作成するかどうか。 作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
+> **注**  新しい Direct3D プロジェクトを作成しましたか? 作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
 
  
 
@@ -34,11 +34,11 @@ OpenGL ES 2.0 と同じように、Direct3D のコンパイル済みシェーダ
 <a name="instructions"></a>手順
 ------------
 
-### <a name="step-1-compile-the-shaders"></a>手順 1: シェーダーのコンパイル
+### <a name="step-1-compile-the-shaders"></a>手順 1:シェーダーをコンパイルします。
 
 この簡単な OpenGL ES 2.0 のサンプルでは、シェーダーをテキスト ファイルとして保存し、実行時コンパイルのために文字列データとして読み込みます。
 
-OpenGL ES 2.0: シェーダーのコンパイル
+OpenGL ES 2.0:シェーダーをコンパイルします。
 
 ``` syntax
 GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
@@ -78,11 +78,11 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Direct3D では、シェーダーは実行時にコンパイルされず、常に、プログラムの他の部分をコンパイルしたときに、CSO ファイルにコンパイルされます。 Microsoft Visual Studio でアプリをコンパイルすると、HLSL ファイルは、アプリで読み込む必要がある CSO (.cso) ファイルにコンパイルされます。 アプリをパッケージ化するときは、これらの CSO ファイルを必ず含めてください。
 
-> **注:** 次の例は、シェーダーの読み込みと**auto**キーワードとラムダ構文を使用して非同期でコンパイルを実行します。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
+> **注**  シェーダーの読み込みおよびコンパイルを使用して非同期的に次の例では、**自動**キーワードとラムダ構文です。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
 
  
 
-Direct3D 11: シェーダーのコンパイル
+Direct3D 11。シェーダーをコンパイルします。
 
 ``` syntax
 auto loadVSTask = DX::ReadDataAsync(m_projectDir + "SimpleVertexShader.cso");
@@ -105,11 +105,11 @@ auto createPSTask = loadPSTask.then([this](Platform::Array<byte>^ fileData) {
 };
 ```
 
-### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>手順 2: 頂点シェーダーとフラグメント (ピクセル) シェーダーの作成と読み込み
+### <a name="step-2-create-and-load-the-vertex-and-fragment-pixel-shaders"></a>手順 2:フラグメントの (ピクセル) シェーダーを作成し、頂点の読み込み
 
 OpenGL ES 2.0 にはシェーダー "プログラム" という概念があります。この概念は、CPU で実行されるメイン プログラムと GPU で実行されるシェーダーの間のインターフェイスとして機能します。 シェーダーはコンパイルされ (またはコンパイル済みのソースから読み込まれ)、プログラムに関連付けられることで、GPU で実行できるようになります。
 
-OpenGL ES 2.0: シェーダー プログラムへの頂点シェーダーとフラグメント シェーダーの読み込み
+OpenGL ES 2.0:網掛けプログラムへの頂点とフラグメントのシェーダーの読み込み
 
 ``` syntax
 GLuint __cdecl LoadShaderProgram (const char *vertShaderSrcStr, const char *fragShaderSrcStr)
@@ -170,7 +170,7 @@ glUseProgram(renderer->programObject);
 
 Direct3D には、シェーダー プログラム オブジェクトという概念がありません。 そのため、シェーダーは、[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) インターフェイスでいずれかのシェーダー作成メソッド ([**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) や [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) など) が呼び出されたときに作成されます。 現在の描画コンテキストのシェーダーを設定するには、シェーダー設定メソッド (頂点シェーダーの [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) やフラグメント シェーダーの [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) など) を使って、シェーダーを対応する [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) に渡します。
 
-Direct3D 11: グラフィックス デバイスの描画コンテキストのシェーダーの設定
+Direct3D 11。グラフィックス デバイスの描画コンテキストのシェーダーを設定します。
 
 ``` syntax
 m_d3dContext->VSSetShader(
@@ -184,18 +184,18 @@ m_d3dContext->PSSetShader(
   0);
 ```
 
-### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>手順 3: シェーダーに渡すデータの定義
+### <a name="step-3-define-the-data-to-supply-to-the-shaders"></a>手順 3:シェーダーに提供するデータを定義します。
 
 OpenGL ES 2.0 の例では、シェーダー パイプラインに対して宣言する次の **uniform** が 1 つあります。
 
--   **u\_mvpMatrix**: 立方体のモデル座標を受け取り、それをスキャン変換のために 2D プロジェクション座標に変換する最終的なモデル ビュー プロジェクション変換マトリックスを表す浮動小数点値の 4x4 配列。
+-   **u\_mvpMatrix**: モデルを最終的なモデル-ビュー-射影変換行列を表す浮動小数点数の 4 x 4 配列は、キューブの調整し、スキャンの変換の投影が 2D 座標に変換します。
 
 さらに、頂点データ用の次の **attribute** 値が 2 つあります。
 
--   **a\_position**: 頂点のモデル座標の 4 つの浮動小数点値で構成されたベクトル。
--   **a\_color**: 頂点に関連付けられている RGBA カラー値の 4 つの浮動小数点値で構成されたベクトル。
+-   **\_位置**: 頂点のモデルの座標を表す 4 float ベクトル。
+-   **\_色**:頂点に関連付けられている RGBA 色の値を 4 float ベクトル。
 
-OpenGL ES 2.0: GLSL での uniform と attribute の定義
+Opengl ES 2.0:GLSL 定義制服と属性
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
@@ -203,9 +203,9 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します  (「[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)」の見出しをご覧ください)。定義したら、メイン プログラムでシェーダー パイプラインにこれらの値を渡すメモリ内の場所を指定する必要があります。これは、通常、描画呼び出しの直前に行います。
+この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します  (でヘッダーを参照してください[方法: direct3d11 を単純な OpenGL ES 2.0 レンダラーをポート](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md))。処理が完了したら、メインのプログラムが通常の方法で描画呼び出しの直前、シェーダー パイプラインのこれらの値を提供するためのメモリ内の場所を指定する必要があります。
 
-OpenGL ES 2.0: uniform データと attribute データの場所のマーキング
+OpenGL ES 2.0:一様と属性データの場所をマークします。
 
 ``` syntax
 
@@ -227,9 +227,9 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D には、同じ意味での "attribute" と "uniform" の概念がありません (または、少なくともこの構文を共有しません)。 その代わり、Direct3D サブリソースとして表される定数バッファーがあります。これは、メイン プログラムとシェーダー プログラムの間で共有されるリソースです。 頂点の位置や色など、これらのサブリソースの一部は HLSL セマンティクスと呼ばれます。 OpenGL ES 2.0 の概念に関連する定数バッファーと HLSL セマンティクスについて詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」を参照してください。
 
-このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。 2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。 ピクセル シェーダーは、GPU によって生成されたシステム値であることを示す SV\_ プレフィックスが付いている SV\_POSITION を受け取ります  (この場合は、スキャン変換時に生成されたピクセルの位置です)。VertexShaderInput と PixelShaderInput は定数バッファーとして宣言しません。これは、VertexShaderInput は頂点バッファーを定義するために使い (「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」をご覧ください)、PixelShaderInput のデータはパイプラインの前のステージ (この場合は頂点シェーダー) の結果として生成されるためです。
+このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。 2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。 ピクセル シェーダーは、SV\_位置を SV\_ GPU によって生成されたシステムの値であることを示すプレフィックス。 (この場合、これはスキャンの変換中に生成されたピクセル位置) です。VertexShaderInput と PixelShaderInput 定数前者を頂点バッファーの定義に使用するためのバッファーとしてを宣言されていない (を参照してください[頂点バッファーとデータをポート](port-the-vertex-buffers-and-data-config.md))、後者の場合、データがの結果として生成されると、頂点シェーダーをここでは、パイプラインの前のステージ。
 
-Direct3D: HLSL での定数バッファーと頂点データの定義
+Direct3D:定数バッファーと頂点データの HLSL の定義
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -256,7 +256,7 @@ struct PixelShaderInput
 
 定数バッファーまたは頂点バッファーを使ってシェーダー パイプラインに渡されるデータのレイアウトの構造体を次に示します。
 
-Direct3D 11: 定数バッファーと頂点バッファーのレイアウトの宣言
+Direct3D 11。定数と頂点バッファー レイアウトを宣言します。
 
 ``` syntax
 // Constant buffer used to send MVP matrices to the vertex shader.
@@ -273,11 +273,11 @@ struct VertexPositionColor
 };
 ```
 
-定数バッファー要素には DirectXMath XM\* 型を使っています。これにより、シェーダー パイプラインに送信する際に、コンテンツのパッキングとアラインメントが適切に行われます。 Windows プラットフォームの標準の浮動小数点型と配列を使う場合は、手動でパッキングとアラインメントを実行する必要があります。
+使用して、DirectXMath XM\*シェーダー パイプラインに送信されるときに適切なパッキングと内容の配置を提供するために、定数の型が、要素をバッファーします。 Windows プラットフォームの標準の浮動小数点型と配列を使う場合は、手動でパッキングとアラインメントを実行する必要があります。
 
-定数バッファーをバインドするために、レイアウトの記述を [**CD3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/jj151620) 構造体として作成し、[**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡します。 次に、レンダリング メソッドで、定数バッファーを [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) に渡してから、描画します。
+定数バッファーをバインドするとしてレイアウトの説明を作成、 [ **CD3D11\_バッファー\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/jj151620)構造体に渡すと[ **ID3DDevice:。CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)します。 次に、レンダリング メソッドで、定数バッファーを [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) に渡してから、描画します。
 
-Direct3D 11: 定数バッファーのバインド
+Direct3D 11。定数バッファーをバインドします。
 
 ``` syntax
 CD3D11_BUFFER_DESC constantBufferDesc(sizeof(ModelViewProjectionConstantBuffer), D3D11_BIND_CONSTANT_BUFFER);
@@ -308,7 +308,7 @@ m_d3dContext->UpdateSubresource(
 ## <a name="related-topics"></a>関連トピック
 
 
-[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[方法: direct3d11 を単純な OpenGL ES 2.0 レンダラーのポート](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
 [頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
 

@@ -1,5 +1,5 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: 追跡可能なタイル通知を使用すると、ユーザーがライブ タイルをクリックしたときに、アプリによってそのタイルに何が表示されるかを調べることができます。
 title: 追跡可能なタイル通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 追跡可能なタイル, ライブ タイル, 追跡可能なタイル通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592647"
 ---
 # <a name="chaseable-tile-notifications"></a>追跡可能なタイル通知
 
@@ -21,13 +21,13 @@ ms.locfileid: "8938002"
 たとえば、新しいアプリでこの機能を使用して、ユーザーがライブ タイルを起動したときにそのタイルに表示される新しいストーリーを特定することができます。これにより、ユーザーが見つけることができるように、ストーリーを目立たせて表示することができます。 
 
 > [!IMPORTANT]
-> **Anniversary Update が必要**: C#、C++、または VB ベースの UWP アプリで追跡可能なタイル通知を使用するには、SDK 14393 以降をターゲットとし、ビルド 14393 以降を実行している必要があります。 JavaScript ベースの UWP アプリの場合は、SDK 17134 以降をターゲットとし、ビルド 17134 以降を実行している必要があります。 
+> **Anniversary Update が必要です**:使用した chaseable タイル通知を使用するC#、C++、または VB ベースの UWP アプリ、14393 SDK をターゲットする必要があり、実行しているビルド 14393 またはそれ以降。 JavaScript ベースの UWP アプリの場合は、SDK 17134 以降をターゲットとし、ビルド 17134 以降を実行している必要があります。 
 
 
-> **重要な API**: [LaunchActivatedEventArgs.TileActivatedInfo プロパティ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要な Api**:[LaunchActivatedEventArgs.TileActivatedInfo プロパティ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、 [TileActivatedInfo クラス](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
-## <a name="how-it-works"></a>動作のしくみ
+## <a name="how-it-works"></a>方法
 
 追跡可能なタイル通知を有効にするには、タイル通知ペイロードで **Arguments** プロパティ (トースト通知ペイロードの起動プロパティに類似) を使用して、タイル通知のコンテンツに関する情報を埋め込みます。
 
@@ -40,7 +40,7 @@ ms.locfileid: "8938002"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>追跡可能なタイル通知で実行できること
 
-注意が必要な最も重要なことは、ほとんどのシナリオでは、ユーザーがクリックしたときにタイルに表示されていた**特定の通知に直接移動しない**ということです。 ライブ タイルは、アプリケーションへのエントリ ポイントとして使用されます。 ユーザーがライブ タイルをクリックする場合は、次の 2 つのシナリオが考えられます。(1) アプリを通常どおりに起動する場合、(2) ライブ タイルに表示されていた特定の通知についてさらに詳しい情報を表示する場合。 必要な動作をユーザーが明示的に指定する方法がないため、理想的なエクスペリエンスは、**ユーザーに表示されていた通知を簡単に検出できるようにしながら、アプリを通常どおりに起動する**というものになります。
+注意が必要な最も重要なことは、ほとんどのシナリオでは、ユーザーがクリックしたときにタイルに表示されていた**特定の通知に直接移動しない**ということです。 ライブ タイルは、アプリケーションへのエントリ ポイントとして使用されます。 ユーザーは、ライブ タイルをクリックした 2 つのシナリオがあります。(通常、アプリを起動したいと 1)、またはライブ タイルには、特定の通知の詳細についてを参照してください (2) するつもりでした。 必要な動作をユーザーが明示的に指定する方法がないため、理想的なエクスペリエンスは、**ユーザーに表示されていた通知を簡単に検出できるようにしながら、アプリを通常どおりに起動する**というものになります。
 
 たとえば、MSN ニュース アプリのライブ タイルをクリックしてアプリを通常どおりに起動したときに、ホーム ページを表示するか、またはユーザーが前に読んでいたいずれかの記事を表示するようにします。 ただしホーム ページを表示した場合は、アプリでライブ タイルのストーリーを簡単に検出できるようにします。 これにより、両方のシナリオ (単純にアプリを起動/再開するシナリオと特定のストーリーを表示するシナリオ) がサポートされます。
 
@@ -111,7 +111,7 @@ LaunchActivatedEventArgs オブジェクトには、追跡可能な通知を有�
 
 [TileActivatedInfo オブジェクト](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)には [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) と呼ばれるプロパティが含まれています。このプロパティは、過去 15 分以内にタイルに表示されていた通知の一覧を保持しています。 一覧の最初の項目はタイルの現在の通知を表しており、それ以降の項目は現在の通知よりも前に表示されていた通知を表しています。 タイルがクリアされた場合、この一覧は空になります。
 
-各 ShownTileNotificationhas、Argumentsproperty します。 Argumentsproperty は、タイル通知ペイロードから argumentsstring に初期化または、ペイロードには、argumentsstring が含まれていない場合は null になります。
+各 ShownTileNotification では、引数プロパティがあります。 Arguments プロパティは、ペイロードには、引数文字列が含まれていなかった場合、タイル通知のペイロードまたは null の引数文字列で初期化されます。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)

@@ -1,5 +1,5 @@
 ---
-Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
+Description: パートナー センターで、またはその他のメソッドを使用して、Windows アプリの詳細な分析を取得します。
 title: アプリのパフォーマンスの分析
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
@@ -7,17 +7,17 @@ ms.topic: article
 keywords: windows 10、uwp、分析、レポート、ダッシュ ボード、アプリ、データ、メトリック
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f76b1f897c345fb71beec8e37e592165922b2ed
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625447"
 ---
 # <a name="analyze-app-performance"></a>アプリのパフォーマンスの分析
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で、アプリの詳細な分析を表示することができます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関するメトリックも確認できます。
+詳細な分析を表示するには、アプリで[パートナー センター](https://partner.microsoft.com/dashboard)します。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関するメトリックも確認できます。
 
-分析レポートを表示するデータをオフラインで分析するパートナー センターまたは[必要なレポートのダウンロード](download-analytic-reports.md)で直接します。 用意していますいくつかの方法のパートナー センター外部にも、分析データに[アクセス](#outside)します。
+分析レポートを表示するパートナー センターで直接または[必要があるレポートのダウンロード](download-analytic-reports.md)オフライン データを分析します。 ためのいくつかの方法も提供[パートナー センターの外部での分析データにアクセス](#outside)します。
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>すべてのアプリについての主要な分析を表示する
 
@@ -28,16 +28,16 @@ ms.locfileid: "9047713"
 ここでは、次の各レポートに表示される情報の詳細情報を示します。
 
 -   [取得レポート](acquisitions-report.md)
--   [[アドオン取得] レポート](add-on-acquisitions-report.md)
--   [[使用状況] レポート](usage-report.md)
--   [状態レポート](health-report.md)
+-   [アドオン取得レポート](add-on-acquisitions-report.md)
+-   [使用状況レポート](usage-report.md)
+-   [正常性レポート](health-report.md)
 -   [評価レポート](ratings-report.md)
 -   [レビュー レポート](reviews-report.md)
 -   [フィードバック レポート](feedback-report.md)
--   [Xbox 分析レポート](xbox-analytics-report.md)
--   [インサイト レポート](insights-report.md)
+-   [Xbox の分析レポート](xbox-analytics-report.md)
+-   [Insights のレポート](insights-report.md)
 -   [広告パフォーマンス レポート](advertising-performance-report.md)
--   [[広告キャンペーン] レポート](promote-your-app-report.md)
+-   [広告キャンペーン レポート](promote-your-app-report.md)
 
 
 > [!NOTE]
@@ -45,9 +45,9 @@ ms.locfileid: "9047713"
 
 <span id="outside"/>
 
-## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センター外部分析データにアクセス
+## <a name="access-analytics-data-outside-of-partner-center"></a>パートナー センターの外部で分析データにアクセス
 
-パートナー センターでレポートを表示する、だけでなく他の方法でアプリ分析にアクセスできます。
+パートナー センターでレポートを表示する以外には、他の方法でアプリの分析を利用できます。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -55,13 +55,13 @@ ms.locfileid: "9047713"
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>Power BI 用 Windows デベロッパー センター コンテンツ パック
 
-調査し、Power BI でパートナー センター分析データを監視するには、 [Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)を使用します。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
+使用して、 [Power BI 用 Windows デベロッパー センター コンテンツ パック](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)に探索、Power BI では、パートナー センター アナリティクスのデータを監視します。 Power BI とは、ビジネス データの 1 つのビューを提供するクラウド ベースのビジネス分析サービスです。
 
 Power BI を使って分析データにアクセスするには、まず、次のリソースをご覧ください。
 
-* [Power BI のサインアップ](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
-* [Power BI の使い方](https://powerbi.microsoft.com/guided-learning/)
-* [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
+* [Power BI にサインアップします。](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
+* [Power BI を使用する方法について説明します](https://powerbi.microsoft.com/guided-learning/)
+* [Power BI 用 Windows デベロッパー センター コンテンツ パックを使用して、分析データに接続する方法について説明します](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続するには、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](https://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 関連付けをセットアップについて詳しくは、 [Azure Active Directory の関連付け](associate-azure-ad-with-dev-center.md)を参照してください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する場合、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](https://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 アソシエーションの設定に関する詳細については、次を参照してください。[関連付ける Azure Active Directory と、パートナー センター アカウント](associate-azure-ad-with-dev-center.md)します。

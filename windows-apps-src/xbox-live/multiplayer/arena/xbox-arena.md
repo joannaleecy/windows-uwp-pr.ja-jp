@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: b08da01323d05c961005d562b70667dbbdf85437
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926194"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643767"
 ---
 # <a name="xbox-arena"></a>Xbox アリーナ
 
@@ -60,7 +60,7 @@ Xbox アリーナは、より幅広いユーザーが対戦ゲームを楽しめ
 トーナメントのステージが進行すると、ゲームとの間の切り替えがユーザーにとって複雑になることがあります。 特にプレイするゲームごとにプロセスが異なる場合、移動先やゲームの動作をすべて記憶するのは困難です。
 
 > [!TIP]
-> **推奨される UX**  
+> **UX の推奨事項**  
 >
 > ゲームと Xbox アリーナ UI の機能上の役割分担をユーザーが容易に理解できるように、それらを常に明確に区分します。 たとえば、管理に関連するタスクはすべてアリーナで行い、ゲームのプレイに関連するタスクはすべてゲーム内で行います。
 
@@ -72,21 +72,21 @@ Xbox アリーナの役割 (トーナメントの設定)   | タイトルの役�
 
 記事 | 説明
 --- | ---
-[アリーナ タイトル統合ガイド](arena-title-integration.md) | Xbox アリーナのサポートをタイトルに統合する方法について説明します。
+[競技場のタイトルの統合](arena-title-integration.md) | Xbox アリーナのサポートをタイトルに統合する方法について説明します。
 
-## <a name="operations-guidance"></a>運用ガイド
+## <a name="operations-guidance"></a>操作ガイド
 
-記事 | description
+記事 | 説明
 --- | ---
-[Xbox アリーナ操作ポータル](operations-portal.md) | 操作ポータルを作成および Xbox アリーナと統合されているタイトルのトーナメントを公式の管理に使用できるについて説明します。
+[Xbox Arena 操作ポータル](operations-portal.md) | 作成し、管理の Xbox 競技場と統合されているソフトウェア タイトルの公式のトーナメントを使用できる operations ポータルについて説明します。
 
 ## <a name="user-experience-guidance"></a>ユーザー エクスペリエンス ガイダンス
 
 記事 | 説明
 --- | ---
-[Xbox のトーナメント情報の提供](discovering-xbox-tournaments.md) | 既存のトーナメントの情報を提供するための優れたユーザー エクスペリエンスの作成についてヒントと推奨事項を説明します。
-[トーナメントへの参加](arena-ux-join-tournament.md)  |  トーナメントに登録して参加するための優れたユーザー エクスペリエンスの作成についてヒントと推奨事項を説明します。
-[マッチの交戦](arena-ux-match-engagement.md) | トーナメントでのプレイヤーの進行に伴うユーザー エクスペリエンスの各ステージについて説明します。
-[アリーナ API の UI メタデータ](arena-apis-metadata.md)  | アリーナ API によって返されて、トーナメントの現在の状態に関する情報をゲーム内で表示するために使用できるメタデータについて説明します。
-[アリーナによる通知](arena-notifications.md)  | Xbox アリーナが、トーナメント参加者に通知を送信する各条件を説明します。
-[アリーナのユーザー シナリオ](arena-user-scenarios.md)  | ゲーマーがゲームをプレイする一般的な動機別に、ゲーマーがアリーナを使用するシナリオについて説明します。
+[Xbox トーナメントの検出](discovering-xbox-tournaments.md) | 既存のトーナメントの情報を提供するための優れたユーザー エクスペリエンスの作成についてヒントと推奨事項を説明します。
+[トーナメントに参加します。](arena-ux-join-tournament.md)  |  トーナメントに登録して参加するための優れたユーザー エクスペリエンスの作成についてヒントと推奨事項を説明します。
+[Engagement を一致します。](arena-ux-match-engagement.md) | トーナメントでのプレイヤーの進行に伴うユーザー エクスペリエンスの各ステージについて説明します。
+[競技場 API UI メタデータ](arena-apis-metadata.md)  | アリーナ API によって返されて、トーナメントの現在の状態に関する情報をゲーム内で表示するために使用できるメタデータについて説明します。
+[競技場の通知](arena-notifications.md)  | Xbox アリーナが、トーナメント参加者に通知を送信する各条件を説明します。
+[競技場ユーザー シナリオ](arena-user-scenarios.md)  | ゲーマーがゲームをプレイする一般的な動機別に、ゲーマーがアリーナを使用するシナリオについて説明します。

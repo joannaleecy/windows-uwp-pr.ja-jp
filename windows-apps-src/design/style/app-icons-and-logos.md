@@ -1,32 +1,32 @@
 ---
-Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more.
+Description: '[スタート] メニューのアプリ タイル、タスク バー、Microsoft Store、および複数のアプリを表すアプリ アイコン/ロゴを作成する方法。'
 title: アプリのアイコンとロゴ
 template: detail.hbs
 ms.date: 04/17/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: b755e8d165d58ce4303d9fefe6d051abce6c9765
-ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "8973943"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622457"
 ---
 # <a name="app-icons-and-logos"></a>アプリのアイコンとロゴ 
 
-すべてのアプリが、それを表す、アイコン/ロゴし、Windows シェルの複数の場所にそのアイコンが表示されます。 
+すべてのアプリは、それを表す、アイコンやロゴを備え、Windows シェルで複数の場所にそのアイコンが表示されます。 
 
 :::row:::
     :::column:::
-        * アプリ ウィンドウのタイトル バー
+        * アプリのウィンドウのタイトル バー
         * [スタート] メニューで、アプリの一覧
-        * タスク バーとタスク マネージャー
+        * タスク バーと タスク マネージャー
         * アプリのタイル
-        * アプリのスプラッシュ画面
+        * アプリのスプラッシュ スクリーン
         * Microsoft Store で
     :::column-end:::
     :::column:::
@@ -34,30 +34,30 @@ ms.locfileid: "8973943"
     :::column-end:::
 :::row-end:::
 
-この記事では、アプリのアイコンの作成の基本を説明する必要がありますが、それらを管理し、それらを手動で管理する方法を Visual Studio を使用する方法。
+この記事には、アプリのアイコンの作成の基礎に必要となる Visual Studio をそれらを管理し、それらを手動で管理する方法を使用する方法。
  
-(この記事は、具体的にはアイコンをアプリ自体を表すアイコンの一般的なガイダンスについては、[アイコン](icons.md)に関する記事を参照してください。)
+(この記事はアイコンが、アプリ自体を表す一般的なアイコンのガイダンスについては、次を参照してください。 具体的には、[アイコン](icons.md)記事です。)。
 
 ## <a name="icon-types-locations-and-scale-factors"></a>アイコンの種類、場所、およびスケール ファクター
 
-既定では、Visual Studio は、アセットのサブディレクトリに、アイコン アセットを格納します。 呼び出されたいるアイコン、表示される場所のさまざまな種類の一覧を次に示します。 
+既定では、Visual Studio は、資産のサブディレクトリに、アイコンのアセットを格納します。 アイコン、表示される場所などと呼ばれるさまざまな種類の一覧を示します。 
 
-| アイコン名 | 表示されます。 | アセット ファイル名 |
+| アイコン名 | 表示されます。 | 資産ファイルの名前 |
 | ---      | ---        | --- |
-| 小さいタイル | スタート メニュー |  SmallTile.png  |
-| 普通サイズのタイル |スタート メニューで、Microsoft Store listing\ *  |  Square150x150Logo.png |
+| 小さなタイル | スタート メニュー |  SmallTile.png  |
+| 中規模のタイル |[スタート] メニューには、Microsoft Store の一覧\*  |  Square150x150Logo.png |
 | ワイド タイル  | スタート メニュー   | Wide310x150Logo.png |
-| 大きいタイル   | スタート メニューで、Microsoft Store listing\ * |  LargeTile.png  |
-| アプリのアイコン | [スタート] メニューのタスク バー、タスク マネージャーでのアプリの一覧 | Square44x44Logo.png |
-| スプラッシュ画面 | アプリのスプラッシュ画面 | SplashScreen.png  |
+| 大きいタイル   | [スタート] メニューには、Microsoft Store の一覧\* |  LargeTile.png  |
+| アプリ アイコン | [スタート] メニューのタスク バー、タスク マネージャーでのアプリの一覧 | Square44x44Logo.png |
+| スプラッシュ画面 | アプリのスプラッシュ スクリーン | SplashScreen.png  |
 | バッジ ロゴ | アプリのタイル | BadgeLogo.png  |
-| パッケージのロゴ/ストア ロゴ | アプリ インストーラーの場合、パートナー センターで、ストアでは、ストアで「レビューの書き込み」オプション「アプリを報告」オプション | StoreLogo.png  |
+| パッケージ ロゴ/ストア ロゴ | アプリのインストーラー、パートナー センターで、ストアでは、ストア内の「レビューを書く」オプションで「レポート、アプリ」のオプション | StoreLogo.png  |
 
-\ * しない場合[のみアップロードしたストア内の画像を表示](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)するために使用します。 
+\* 使用を選択しない限り[表示は、ストア内のイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)します。 
 
-これらのアイコンに鮮明にすべての画面で表示ためには、さまざまな表示スケール ファクターの同じアイコンの複数のバージョンを作成できます。 
+これらのアイコンがすべての画面に鮮明させるには、別のディスプレイのスケール ファクターの同じアイコンの複数のバージョンを作成できます。 
 
-スケール ファクターは、テキストなどの UI 要素のサイズを決定します。 スケール ファクター範囲から 100% 400% です。 値を大きくやすく高 DPI ディスプレイに表示するためより大きな UI 要素を作成します。 
+スケール ファクターは、テキストなどの UI 要素のサイズを決定します。 スケールは、100% ~ 400% の範囲を考慮します。 大きな値は、高解像度ディスプレイに表示しやすくより大きなの UI 要素を作成します。 
 
 :::row:::
     :::column:::
@@ -71,19 +71,19 @@ ms.locfileid: "8973943"
 :::row-end:::  
 
 
-アプリ アイコン アセットはビットマップのビットマップが適切に拡大縮小されないため、お勧めしますバージョン各アイコン アセットの各スケール ファクター: 100%、125%、150%、200%、400% です。 多くのアイコンは正常です。 さいわい、Visual Studio には、簡単に生成し、これらのアイコンを更新するツールが用意されています。 
+アプリ アイコンのアセットはビットマップ ビットマップは適切にスケーリングしないため、各スケール ファクターのバージョンを各アイコンの資産を提供するをお勧めします。100%、125%、150%、200%、400% です。 多くのアイコンです。 さいわい、Visual Studio は、簡単に生成し、これらのアイコンの更新ツールを提供します。 
 
-## <a name="microsoft-store-listing-image"></a>Microsoft Store 登録情報の画像
+## <a name="microsoft-store-listing-image"></a>Microsoft Store の一覧の画像
 
-「をどのように指定自分のアプリの登録情報の画像、Microsoft Store でですか?」
+「の指定方法を自分のアプリの一覧については、イメージ、Microsoft Store ででしょうか。」
 
-既定では、パッケージの画像の一部で使います、ストアでは、(その他の[申請プロセス中に提供するイメージ](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)) と共にこのページの上部にある表で説明。 ただし、Windows 10 (Xbox を含む) のユーザーに、登録情報を表示するときに、アプリのパッケージのロゴ画像を使用してから、ストアを防ぐため、代わりにアップロードした画像のみを使用して、ストア オプションがあります。 これにより、アプリの外観を詳しく制御、Store 全体でさまざまな表示にします。 (メモことのある製品は、以前の OS バージョンをサポートする場合それらのユーザーもについて、パッケージからの画像は、このオプションを使用する場合でも)。申請プロセスの**Store 登録情報**のステップの**ストア ロゴ**のセクションで、これを行うことができます。
+既定では、使用して、パッケージからのイメージの一部、ストア内のこのページの上部にある表に示す (とその他の[送信処理中に指定したイメージ](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images))。 ただし、ストアが (Xbox を含む)、Windows 10 でのお客様に、一覧を表示するときに、アプリのパッケージでロゴのイメージを使用するを防ぐを代わりに、ストアにアップロードするイメージのみを使用して、オプションがあります。 これにより、ストアのさまざまな画面でアプリがどのように表示されるかをさらに細かく制御できます。 (注ことのある製品は、以前の OS バージョンをサポートする場合顧客もについて、パッケージからのイメージ場合でも、このオプションを使用する)これを行う、**ロゴを格納**のセクション、**ストア一覧**送信処理の手順。
 
-![アプリの申請プロセス中にストア ロゴを指定します。](images/app-icons/storelogodisplay.png)
+![アプリの提出プロセス中にストア ロゴを指定します。](images/app-icons/storelogodisplay.png)
 
-このボックスをオンにすると、**ストアで表示する画像**と呼ばれる新しいセクションが表示されます。 ここでは、代わりに、アプリのパッケージからのロゴ画像がストアを使用する 3 つの画像サイズをアップロードすることができます: 300 x 300 ピクセル、150 x 150、71 x 71 ピクセル ピクセルです。 300 x 300 のサイズだけが必要な場合は、すべての 3 つのサイズを提供することをお勧めします。
+このボックスをオンにすると、新しいセクションと呼ばれる**ストア イメージを表示**が表示されます。 ここでは、アプリのパッケージからロゴのイメージの代わりに、ストアが使用する 3 つのイメージ サイズをアップロードできます。300 x 300、150 x 150、および 71 x 71 ピクセルです。 すべての 3 つのサイズを提供することをお勧めします。 300 x 300 サイズのみが必要です。
 
-詳しくは、[ディスプレイがストアでのロゴ画像をアップロードのみ](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)を参照してください。
+詳細については、次を参照してください。[表示は、ストア ロゴのイメージのみアップロード](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)します。
 
 <!-- ### Fallback images for the Store
 
@@ -101,14 +101,14 @@ The Store may also use your app's tile and other images that you include in your
 For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
 
 
-## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>Visual Studio マニフェスト デザイナーを使用してアプリのアイコンを管理します。
+## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>Visual Studio のマニフェスト デザイナーでのアプリ アイコンの管理
 
-Visual Studio では、**マニフェスト デザイナー**と呼ばれる、アプリのアイコンを管理するために非常に便利なツールを提供します。 
+Visual Studio と呼ばれる、アプリ アイコンの管理に非常に便利なツールを提供します、**マニフェスト デザイナー**します。 
 
-> Visual Studio 2017 がまだしていない場合は、無料のバージョンを (Visual Studio 2017 Community Edition) を含め、利用可能ないくつかのバージョンと無料試用版を提供するその他のバージョン。 ここでダウンロードすることができます。[https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> まだ Visual Studio 2017 を持っていない場合、いくつかのバージョンがあるなどの無料バージョンである (Visual Studio 2017 Community Edition) と他のバージョンは、無料試用版を提供します。 ここでダウンロードすることができます。 [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
-マニフェスト デザイナーを起動します。
+マニフェスト デザイナーを起動するには。
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
@@ -132,7 +132,7 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 :::row-end:::
 :::row:::
     :::column:::
-        2. **ソリューション エクスプ ローラー**で、Package.appmxanifest ファイルをダブルクリックします。
+        2. **ソリューション エクスプ ローラー**、Package.appmxanifest ファイルをダブルクリックします。
     :::column-end:::
     :::column:::
         ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
@@ -148,71 +148,71 @@ Visual Studio では、**マニフェスト デザイナー**と呼ばれる、�
 :::row-end:::    
 :::row:::
     :::column:::
-        3. [**ビジュアル資産**] タブをクリックします。
+        3. をクリックして、**のビジュアル アセット**タブ。
     :::column-end:::
     :::column:::
         ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 
-## <a name="generating-all-assets-at-once"></a>一度にすべてのアセットの生成
+## <a name="generating-all-assets-at-once"></a>すべての資産を一度に作成します。
 
-**ビジュアル資産**] タブで、**すべてのビジュアル アセット**、最初のメニュー項目はその名前が示す内容正確: ボタンを押すと、アプリが必要なすべてのビジュアル アセットを生成します。
+内の最初のメニュー項目、**のビジュアル アセット** タブで、**すべてのビジュアル資産**は正確にその名前のとおり: ボタンを押すと、アプリが必要なすべてのビジュアル資産が生成されます。
 
 ![Visual Studio ですべてのビジュアル資産を生成します。](images/app-icons/all-visual-assets.png)
 
-1 つの画像を提供を行うには必要なすべてと Visual Studio は小さいタイル、普通サイズのタイル、大きいタイル、ワイド タイル、大きいタイル、アプリのアイコン、スプラッシュ画面を生成し、すべての倍率のアセットをロゴをパッケージ化します。
+1 つのイメージを指定が行う必要があるすべてと、Visual Studio は小さなタイル、中」のタイル、大、ワイド タイル、大規模なタイル、アプリ アイコン、スプラッシュ スクリーンを生成し、すべてのスケール ファクターのロゴの資産をパッケージ化します。
 
-すべてのアセットを一度に生成するには。
-1. **ソース**フィールドの横にある **...** ] をクリックし、使用するイメージを選択します。 ビットマップ画像を使用している場合は、鋭い結果を取得するため、400 ピクセル以上 400 を確認します。 ベクター ベースのイメージが最適です。Visual Studio では、AI (Adobe Illustrator) と PDF ファイルを使用することができます。 
-2. (省略可能)**ディスプレイの設定**] セクションでは、これらのオプションを構成します。
+すべての資産を一度に生成。
+1. をクリックして、 **.** 横に、**ソース**フィールドし、使用するイメージを選択します。 ビットマップ イメージを使用している場合は、シャープな結果を取得することが 400 ピクセルの 400 以上を確認します。 ベクター ベースのイメージが最適です。Visual Studio を使用して、AI (Adobe Illustrator) や PDF ファイルを使用できます。 
+2. (省略可能)**表示設定**セクションで、これらのオプションを構成します。
 
-    a.  **短い名前**: アプリの短い名前を指定します。
+    a.   **短い名前**:アプリの短い名前を指定します。
 
-    b.  **表示名**: 普通、ワイド、または大きいタイルの短い名前を表示するかどうかを示します。 
+    b.   **名前を表示する**:短い名前を中、または大規模なタイルに表示するかどうかを示します。 
 
-    c. **バック グラウンドのタイル**: 16 進値またはタイルの背景色の色の名前を指定します。 たとえば、`#464646` と記述します。 既定値は、`transparent` です。
+    c. **タイルのバック グラウンド**:16 進数の値またはタイルの背景色を色の名前を指定します。 たとえば、`#464646` と記述します。 既定値は、`transparent` です。
 
-    d. **Spash 画面の背景**: spash 画面の背景の 16 進値または色の名前を指定します。 
+    d. **スプラッシュ画面の背景**:スプラッシュ画面の背景色の 16 進値または色の名前を指定します。 
 
-3. [**生成**] をクリックします。 
+3. クリックして**生成**します。 
 
-Visual Studio は、イメージ ファイルを生成し、プロジェクトに追加します。 アセットを変更する場合は、単にプロセスを繰り返します。 
+Visual Studio は、イメージ ファイルを生成し、プロジェクトに追加します。 資産を変更する場合は、プロセスを繰り返します。 
 
-拡大/縮小されたアイコン アセットは、このファイルの名前付け規則に従います。
+アイコンがスケーリングされた資産は、このファイルの名前付け規則に従います。
 
-*ファイル名*規模の*拡大縮小率*.png
+*filename*-scale-*scale factor*.png
 
-例:
+以下に例を示します。
 
-Square150x150Logo-スケール-100.png、Square150x150Logo-スケール-200.png、Square150x150Logo-スケール-400.png
+Square150x150Logo-scale-100.png, Square150x150Logo-scale-200.png, Square150x150Logo-scale-400.png
 
-Visual Studio が既定ではバッジ ロゴを生成しないことに注意してください。 バッジ ロゴは一意であり、その他のアプリ アイコンと一致しないようにおそらくためにです。 詳しくは、 [UWP アプリの資料のバッジ通知](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。 
+Visual Studio が既定でバッジ ロゴを生成しないことに注意してください。 バッジ ロゴは一意であり、その他のアプリ アイコンが一致しないためにです。 詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。 
 
 
-## <a name="more-about-app-icon-assets"></a>アプリ アイコン アセットの詳細
-Visual Studio プロジェクトに必要なすべてのアプリ アイコン アセットが生成されますが、いるその他のアプリのアセットを異なる方法を理解して、それらをカスタマイズする場合は、できます。 
+## <a name="more-about-app-icon-assets"></a>アプリ アイコンの資産の詳細情報
+Visual Studio プロジェクトで必要なすべてのアプリ アイコンのアセットが生成されますが、その他のアプリの資産から相違を理解することによってそれらをカスタマイズしたい場合。 
 
-アプリ アイコン アセットは、多くの場所に表示されます。 Windows タスク バー、タスク ビュー、ALT + TAB、およびスタート画面のタイルの右下隅します。 いくつか追加のサイズ変更とその他の資産を持たないオプションを plating があるため、非常に多くの場所でアプリ アイコン アセットが表示されたら、:「ターゲット サイズ」アセットと「プレートなし」のアセットです。 
+アプリ アイコンの資産がさまざまな場所に表示されます。 Windows タスク バー、タスクの表示、ALT + TAB キー、およびスタート タイルの右上隅にあります。 いくつか追加のサイズとオプションがないその他の資産を plating がアプリ アイコンの資産は、非常に多くの場所に表示される、ため: 資産の「ターゲット サイズ」と「プレートなし」の資産。 
 
-### <a name="target-size-app-icon-assets"></a>ターゲット サイズのアプリ アイコン アセット
-だけでなく、標準的なスケール ファクター サイズ ("Square44x44Logo.scale 400.png") もお勧めします「ターゲット サイズ」アセットを作成します。 400 などの特定のスケール ファクターではなく、16 ピクセルなど、特定のサイズを対象にするため、これらのアセットのターゲットのサイズを呼んでいます。 ターゲット サイズのアセットは、スケール プラトー システムを使用していないサーフェスのことです。
+### <a name="target-size-app-icon-assets"></a>ターゲット サイズのアプリ アイコンの資産
+標準的なスケール要素サイズ ("Square44x44Logo.scale 400.png") だけでなくもをお勧め「ターゲット サイズ」の資産を作成します。 400 などの特定のスケール ファクターではなく、16 ピクセルなどの特定のサイズを対象にできるので、これらの資産ターゲットのサイズを呼んでいます。 ターゲット サイズの資産は、スケーリングの頭打ちシステムを使用していないサーフェスのことです。
 
 * スタート画面のジャンプ リスト (デスクトップ)
 * スタート画面のタイルの下隅 (デスクトップ)
 * ショートカット (デスクトップ)
 * コントロール パネル (デスクトップ)
 
-ターゲット サイズのアセットの一覧を次に示します。
+ターゲット サイズの資産の一覧を次に示します。
 
 
 | アセットのサイズ | ファイル名の例                  |
 |------------|------------------------------------|
 | 16 x 16\*    | Square44x44Logo.targetsize-16.png  |
 | 24 x 24\*    | Square44x44Logo.targetsize-24.png  |
-| 32 x 32\*    | Square44x44Logo.targetsize-32.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
 | 48 x 48\*    | Square44x44Logo.targetsize-48.png  |
-| 256 x 256\*  | Square44x44Logo.targetsize-256.png |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
 | 20 x 20      | Square44x44Logo.targetsize-20.png  |
 | 30 x 30      | Square44x44Logo.targetsize-30.png  |
 | 36 x 36      | Square44x44Logo.targetsize-36.png  |
@@ -223,7 +223,7 @@ Visual Studio プロジェクトに必要なすべてのアプリ アイコン �
 | 80 x 80      | Square44x44Logo.targetsize-80.png  |
 | 96 x 96      | Square44x44Logo.targetsize-96.png  |
 
-\ * 少なくとも、お勧めしますこれらのサイズを提供します。 
+\* 少なくとも、これらのサイズを提供することをお勧めします。 
 
 これらのアセットにパディングを追加する必要はありません。パディングは、必要に応じて Windows によって追加されます。 これらのアセットは、16 ピクセルの最小面積を占めている必要があります。 
 
@@ -231,49 +231,49 @@ Windows タスク バーのアイコンに表示される、このようなア�
 
 ![Windows タスク バーのアセット](images/assetguidance21.png)
 
-### <a name="unplated-assets"></a>プレートなしのアセット
-既定では、Windows は、既定で色付きバック プレート上のターゲット ベースのアセットを使用します。 する場合は、ターゲット ベースのプレートなしのアセットを提供することができます。 「プレートなし」は、透明な背景に表示されるアセットを意味します。 これらのアセットは、さまざまな背景色で表示されることに留意してください。 
+### <a name="unplated-assets"></a>プレートなしの資産
+既定では、Windows は、既定で色付き backplate 上にターゲット ベースの資産を使用します。 する場合は、ターゲットのプレートなし資産を行うことができます。 資産が透明な背景に表示されます「プレートなし」を意味します。 これらの資産は、さまざまな背景の色で表示されることに留意してください。 
 
 ![プレートなしのアセットとプレート付きのアセット](images/assetguidance22.png)
 
-プレートなしのアプリ アイコン アセットを使用するサーフェスを以下に示します。
+プレートなしのアプリ アイコンのアセットを使用する画面を次に示します。
 * タスク バーとタスク バー サムネイル (デスクトップ)
 * タスク バーのジャンプ リスト
 * タスク ビュー
 * Alt + Tab キー
 
 
-### <a name="target-and-unplated-sizing"></a>ターゲットとプレートなしのサイズ変更
+### <a name="target-and-unplated-sizing"></a>ターゲットおよびプレートなしのサイズ変更
 
-100% の倍率でのターゲット ベースのアセットのサイズの推奨事項を次に示します。
+100% スケールで、ターゲット ベースの資産のサイズの推奨事項を次に示します。
 
 ![100% の倍率でのターゲット ベースのアセットのサイズ調整](images/assetguidance23.png)
 
 
-## <a name="more-about-splash-screen-assets"></a>スプラッシュ画面のアセットの詳細
-スプラッシュ画面について詳しくは、 [UWP スプラッシュ画面の記事](/windows/uwp/launch-resume/splash-screens)をご覧ください。
+## <a name="more-about-splash-screen-assets"></a>スプラッシュ画面の資産の詳細情報
+スプラッシュ スクリーンの詳細については、次を参照してください。、 [UWP スプラッシュ画面記事](/windows/uwp/launch-resume/splash-screens)します。
 
-## <a name="more-about-badge-logo-assets"></a>バッジ ロゴの資産の詳細
+## <a name="more-about-badge-logo-assets"></a>バッジ ロゴの資産の詳細情報
 
-必要となるすべてのアセットを生成するアセット ジェネレーターを使用する場合は、既定ではバッジ ロゴを理由生成しない理由があります: している他のアプリのアセットとは大きく異なります。 バッジ ロゴは、通知であり、アプリのタイルに表示されるステータス イメージです。 
+なぜバッジ ロゴが既定で生成されない理由がある必要があるすべての資産を生成する資産ジェネレーターを使用する場合: その他のアプリの資産から非常に異なる場合します。 バッジ ロゴは、通知とアプリのタイルに表示される状態のイメージです。 
 
-詳細については、 [UWP アプリの資料のバッジ通知](/windows/uwp/design/shell/tiles-and-notifications/badges)を参照してください。
+詳細については、次を参照してください。、 [UWP アプリのアーティクルの通知のバッジ](/windows/uwp/design/shell/tiles-and-notifications/badges)します。
 
 
-## <a name="customizing-asset-padding"></a>アセットのパディングをカスタマイズします。
+## <a name="customizing-asset-padding"></a>資産の余白をカスタマイズします。
 
-既定では、Visual Studio アセット ジェネレーターには、任意のイメージに推奨されるパディングが適用されます。 場合は、イメージにパディングが既に含まれている、またはタイルの終わりに拡張フルブリード イメージ、オフにするこの機能によって、**適用パディングを推奨**] チェック ボックスをオフにします。 
+既定では、Visual Studio 資産ジェネレーターには、どのようなイメージに推奨される埋め込みが適用されます。 イメージの余白では、既にまたは、フルブリード イメージ タイルの末尾に拡張する場合場合、オフにできますこの機能をオフにして、**パディングをお勧めします。 適用**チェック ボックスをオンします。 
 
-### <a name="tile-padding-recommendations"></a>タイル パディングの推奨事項
-独自のパディングを提供する場合は、タイルの推奨事項を次に示します。 
+### <a name="tile-padding-recommendations"></a>タイルの埋め込みに関する推奨事項
+独自の埋め込みを指定する場合は、タイルの推奨事項を示します。 
 
-ある 4 つのタイル サイズ: 小 (71 x 71)、メディア (150 x 150)、全体 (150 x 310)、大規模な (310 x 310)。 
+4 つのタイル サイズがある: small (71 x 71)、medium (150 x 150)、ワイド (150 x 310)、大規模な (310 x 310)。 
 
 各タイル アセットは、配置されるタイルと同じサイズです。
 
-![タイル表示フルブリード](images/app-icons/tile-assets1.png)
+![タイルが表示されたフルブリード](images/app-icons/tile-assets1.png)
 
-タイルの端まで拡張するアイコンを必要がない場合は、パディングの作成に、アセットで透明のピクセルを使用できます。 
+タイルのエッジに拡張する、アイコンをしたくない場合は、パディングの作成に、資産の透明なピクセルを使用できます。 
 
 ![タイルとバック プレート](images/assetguidance05.png)
 

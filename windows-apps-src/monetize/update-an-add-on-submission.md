@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, 更新, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: fd0bb8df9b9fc36216da72e4ad01ebd2e650ad1a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939060"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620617"
 ---
 # <a name="update-an-add-on-submission"></a>アドオンの申請の更新
 
@@ -25,8 +25,8 @@ ms.locfileid: "8939060"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
-* アプリのいずれかのアドオンの申請を作成します。 パートナー センターで、これを行うか、[アドオンの申請を作成する](create-an-add-on-submission.md)方法を使用して、これを行うことができます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
+* アプリのいずれかのアドオン送信を作成します。 パートナー センターでこれを行うかを使用してこれを行う、 [、アドオンの提出の作成](create-an-add-on-submission.md)メソッド。
 
 ## <a name="request"></a>要求
 
@@ -39,7 +39,7 @@ ms.locfileid: "8939060"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -48,25 +48,25 @@ ms.locfileid: "8939060"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 申請を更新するアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なとを[作成するアドオン](create-an-add-on.md)または[アドオンの詳細を取得](get-all-add-ons.md)する要求の応答データに含まれています。  |
-| submissionId | string | 必須。 更新する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| inAppProductId | string | 必須。 申請を更新するアドオンのストア ID です。 Store ID は、パートナー センターで利用できるとするための要求応答のデータに含まれる[アドオンを作成](create-an-add-on.md)または[アドオンの詳細の取得](get-all-add-ons.md)します。  |
+| submissionId | string | 必須。 更新する申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。  |
 
 
 ### <a name="request-body"></a>要求本文
 
 要求本文には次のパラメーターがあります。
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| Value      | 種類   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | アドオンの[キーワード](../publish/enter-add-on-properties.md#keywords)の文字列を最大 10 個含む配列です。 アプリでは、これらのキーワードを使ってアドオンを照会できます。   |
 | lifetime           | string  |  アドオンの有効期間です。 次のいずれかの値を使用できます。 <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | object  | アドオンの表示内容を含むオブジェクトです。 詳しくは、「[表示リソース](manage-add-on-submissions.md#listing-object)」をご覧ください。  |
-| pricing           | object  | アドオンの価格情報を含むオブジェクトです。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。  |
-| targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| listings           | オブジェクト  | アドオンの表示内容を含むオブジェクトです。 詳しくは、「[表示リソース](manage-add-on-submissions.md#listing-object)」をご覧ください。  |
+| pricing           | オブジェクト  | アドオンの価格情報を含むオブジェクトです。 詳しくは、「[価格リソース](manage-add-on-submissions.md#pricing-object)」をご覧ください。  |
+| targetPublishMode           | string  | 申請の公開モードです。 次のいずれかの値を使用できます。 <ul><li>即時</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | *targetPublishMode* が SpecificDate に設定されている場合、ISO 8601 形式での申請の公開日です。  |
 | tag           | string  |  アドオンの[カスタムの開発者データ](../publish/enter-add-on-properties.md#custom-developer-data)(この情報は従来*タグ*と呼ばれていました)。   |
-| visibility  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| visibility  | string  |  アドオンの可視性です。 次のいずれかの値を使用できます。 <ul><li>Hidden</li><li>パブリック</li><li>Private</li><li>NotSet</li></ul>  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -189,15 +189,15 @@ Content-Type: application/json
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効なため、申請を更新できませんでした。 |
-| 409  | アドオンの現在の状態が原因、申請を更新できませんでしたまたはアドオンが[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能を使用します。 |   
+| 409  | アドオンでは、現在の状態であるため、送信を更新できませんでしたまたはアドオンであるパートナー センターの機能を使用して[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの申請の管理](manage-add-on-submissions.md)
-* [アドオンの申請の取得](get-an-add-on-submission.md)
-* [アドオンの申請の作成](create-an-add-on-submission.md)
-* [アドオンの申請のコミット](commit-an-add-on-submission.md)
-* [アドオンの申請の削除](delete-an-add-on-submission.md)
-* [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アドオンの送信を管理します。](manage-add-on-submissions.md)
+* [取得するアドオンの送信](get-an-add-on-submission.md)
+* [アドオンを提出を作成します。](create-an-add-on-submission.md)
+* [コミット、アドオンの送信](commit-an-add-on-submission.md)
+* [削除するアドオンの送信](delete-an-add-on-submission.md)
+* [アドオンの提出パッケージのステータスを取得します。](get-status-for-an-add-on-submission.md)

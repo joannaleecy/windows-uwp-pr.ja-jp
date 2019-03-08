@@ -1,18 +1,18 @@
 ---
-title: XIM (Unity と IL2CPP) の使用
+title: XIM の使用 (Unity と IL2CPP)
 description: UWP 用の Unity と IL2CPP スクリプト バックエンドと共に Xbox Integrated Multiplayer を使用する
 ms.date: 04/03/2018
 ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: a600fd253efae1daca34241b105a69514561e01d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921061"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646447"
 ---
-# <a name="use-xim-unity-with-il2cpp"></a>XIM (Unity と IL2CPP) の使用
+# <a name="use-xim-unity-with-il2cpp"></a>XIM の使用 (Unity と IL2CPP)
 
 ## <a name="overview"></a>概要
 
@@ -29,25 +29,25 @@ Unity 5.6f3 のリリースでは、エンジンに新しい機能が組み込�
 
 Unity 5.6 以上をインストールし、インストール時には **[Windows Store Il2CPP scripting backend]** を必ず選択してください。
 
-### <a name="2-install-visual-studio-tools-for-unity-version-31-and-above-for-intellisense-support-when-using-winmds"></a>2. WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。
+### <a name="2-install-visual-studio-tools-for-unity-version-31-and-above-for-intellisense-support-when-using-winmds"></a>2. Visual Studio Tools for Unity バージョン 3.1 をインストールし、上記の IntelliSense サポート Winmd を使用する場合
 
 Visual Studio 2015 の場合、このツールは [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity) で入手できます。 Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。
 
-### <a name="3-open-a-new-or-existing-unity-project"></a>3. 新規または既存の Unity プロジェクトを開きます。
+### <a name="3-open-a-new-or-existing-unity-project"></a>3.新規または既存の Unity プロジェクトを開く
 
-### <a name="4-switch-the-platform-to-universal-windows-platform-in-the-unity-build-settings-menu"></a>4. Unity の [Build Settings] メニューで、プラットフォームをユニバーサル Windows プラットフォームに切り替えます。
+### <a name="4-switch-the-platform-to-universal-windows-platform-in-the-unity-build-settings-menu"></a>4。ユニバーサル Windows プラットフォームに Unity ビルド設定 メニューで、プラットフォームを切り替える
 
 ![Unity の [Build Settings] メニューでユニバーサル Windows プラットフォームのビルド設定を選択した状態](../../images/xboxintegratedmultiplayer/xim-unity-build.png)
 
-### <a name="5-enable-il2cpp-scripting-backend-in-the-unity-player-settings-and-set-api-compatibility-to-net-46"></a>5. Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。
+### <a name="5-enable-il2cpp-scripting-backend-in-the-unity-player-settings-and-set-api-compatibility-to-net-46"></a>5。Unity プレーヤーの設定でスクリプトのバックエンドを il2cpp バック エンドを有効にして、API の互換性を .NET 4.6 に設定
 
 ![Unity の [Player Settings] メニューの [Configuration] セクションで、[Api Compatibility] を [.NET 4.6] に設定した状態](../../images/unity/unity-il2cpp-1.png)
 
-### <a name="6-import-the-latest-version-of-the-xbox-integrated-multiplayer-winrt-unity-asset-package"></a>6. 最新バージョンの Xbox Integrated Multiplayer WinRT Unity アセット パッケージをインポートします。
+### <a name="6-import-the-latest-version-of-the-xbox-integrated-multiplayer-winrt-unity-asset-package"></a>6。Xbox 統合マルチ プレーヤー WinRT Unity asset のパッケージの最新バージョンをインポートします。
 
 このパッケージは https://github.com/Microsoft/xbox-integrated-multiplayer-unity-plugin/releases で入手できます。
 
-### <a name="7-you-can-now-use-xim-in-your-scripts"></a>7. スクリプトで XIM を使用できるようになりました。
+### <a name="7-you-can-now-use-xim-in-your-scripts"></a>7.スクリプトで XIM を使用できるようになりました
 
 C# で XIM を使用する方法の詳細なガイダンスについては、「[XIM の使用 (C#)](using-xim-cs.md)」を参照してください。
 
@@ -101,15 +101,15 @@ public class XimScript
 
 `ENABLE_WINMD_SUPPORT` の #define ディレクティブの詳細については、[Windows ランタイムのサポート](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)に関する Unity のドキュメントを参照してください。
 
-### <a name="8-required-capability-content"></a>8. 必要な機能の内容
+### <a name="8-required-capability-content"></a>8.必要な機能のコンテンツ
 
 本質的に XIM を使用するアプリケーションでは、インターネット経由とローカル ネットワーク経由の両方でネットワーク リソースに接続し、ネットワーク リソースからの接続を受け入れる必要があります。 また、ボイス チャットをサポートするマイク デバイスへのアクセスも必要です。 そのため、アプリのプレイヤー設定にある公開設定では、"InternetClientServer" 機能、"PrivateNetworkClientServer" 機能、"Microphone" デバイス機能を宣言する必要があります。
 
 ![Unity の [Capabilities] メニューで "InternetClientServer"、"PrivateNetworkClientServer"、"Microphone" 機能が選択された状態](../../images/xboxintegratedmultiplayer/xim-unity-capability.png)
 
-### <a name="9-build-the-project-in-unity"></a>9. Unity でプロジェクトを ビルドします。
+### <a name="9-build-the-project-in-unity"></a>9.Unity でプロジェクトをビルドします。
 
-1. [File]、[Build Settings] の順に移動し、**[ユニバーサル Windows プラットフォーム]** をクリックして、**[Switch Platform]** をクリックします。
+1. ファイルに移動して\|ビルド設定 をクリックして**ユニバーサル Windows プラットフォーム**をクリックするかどうかを確認して**スイッチ プラットフォーム**
 
 2. [Add Open Scenes] をクリックして、現在のシーンをビルドに追加します。
 
@@ -133,6 +133,6 @@ public class XimScript
 
 これにより、通常の UWP アプリのようにアプリが起動し、動作のために UWP アプリ コンテナーが必要なときに Xbox Live 呼び出しが可能になります。
 
-### <a name="10-rebuild-if-you-make-changes-to-anything-in-unity"></a>10. Unity で変更を加えた場合はリビルドします。
+### <a name="10-rebuild-if-you-make-changes-to-anything-in-unity"></a>10.Unity 内のあらゆるものに変更を加える場合は再構築します。
 
 Unity で変更を加えた場合、UWP プロジェクトをリビルドする必要があります。

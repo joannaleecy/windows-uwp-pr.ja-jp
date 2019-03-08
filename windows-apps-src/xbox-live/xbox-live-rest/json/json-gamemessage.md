@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a2bddd9e26b4716fd1e33c4b5bbde56672b5d3f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923880"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651297"
 ---
 # <a name="gamemessage-json"></a>GameMessage (JSON)
-ゲーム セッションのメッセージ キューにメッセージのデータを定義する JSON オブジェクト。 
+ゲーム セッションのメッセージ キューでメッセージのデータを定義する JSON オブジェクト。 
 <a id="ID4EN"></a>
 
   
  
-GameMessage JSON オブジェクトには、次仕様があります。
+GameMessage JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| data| 8 ビットの符号なし整数の配列| ゲームのクライアントが他のゲームのクライアントに送信する必要がある Base64 でエンコードされたデータ。 この値は、サーバーに不透明です。 | 
-| senderXuid| 64 ビットの符号なし整数| メッセージを送信するプレイヤーの Xbox ユーザー ID です。 | 
-| シーケンス番号| 32 ビット符号付き整数| ゲームのメッセージのシーケンス番号。 この値は、サーバーによって割り当てられます。 シーケンス番号を単調に増加することが保証連続することができない可能性があります。 シーケンス番号が一意がメッセージ キュー間ではなく、メッセージ キュー内でします。 | 
-| queueIndex| 32 ビット符号付き整数| メッセージのセッション メッセージ キューのインデックス。 使用可能な値は、0 ~ 3 です。| 
-| タイムスタンプ| DateTime| 時刻は UTC で、サーバーによって、ゲームのメッセージをキューに作成されたときです。 | 
+| データ| 8 ビット符号なし整数の配列| ゲームのクライアントが他のゲームのクライアントに送信する必要がある Base64 でエンコードされたデータ。 この値は、サーバーに対して非透過的です。 | 
+| senderXuid| 64 ビット符号なし整数| メッセージを送信する、プレーヤーの Xbox ユーザー ID。 | 
+| SequenceNumber| 32 ビット符号付き整数| ゲームのメッセージのシーケンス番号。 この値は、サーバーによって割り当てられます。 シーケンス番号を単調に増加することが保証されますが、連続することができない可能性があります。 シーケンス番号が一意のメッセージ キュー間ではなくが、メッセージ キュー内で。 | 
+| queueIndex| 32 ビット符号付き整数| メッセージのセッションのメッセージ キューのインデックス。 使用可能な値は、0 ~ 3 です。| 
+| タイムスタンプ| DateTime| 時刻 (utc)、サーバーによって、ゲームのメッセージのキューの作成時にします。 | 
   
 <a id="ID4ERC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -58,7 +58,7 @@ GameMessage JSON オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EGD"></a>

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eaa21072ebf14b6f6d959ff40af34724a45522f
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115433"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618877"
 ---
 # <a name="deviceendpoint-json"></a>DeviceEndpoint (JSON)
  
@@ -25,18 +25,18 @@ DeviceEndpoint オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| deviceName| string| 省略可能。 該当する場合は、デバイスのフレンドリ名。 現在、この値は使用しません。| 
-| endpointUri| string| 必須。 クライアント プラットフォーム (Windows または Windows Phone) が、プッシュ通知サービス (WNS または MPNS) から入手した URL です。| 
-| locale| string| 必須。 このエンドポイントに送信される通知の目的の言語です。 優先順位の値をコンマ区切りのリストであることができます。 例:「DE-DE, EN-US, en」します。| 
-| プラットフォーム| string| 省略可能。 現在サポートされている値は、"WindowsPhone"および"Windows"です。 指定しない場合、デバイス トークンから導出されます。| 
-| platformVersion| string| 省略可能。 この文字列の形式は、それぞれのプラットフォームに特定します。 現在、この値は使用しません。| 
-| systemId| GUID| 必須。 「アプリ インスタンス」の一意の識別子 (デバイス/ユーザーの組み合わせ)。 ベスト プラクティスの実装では、アプリのインストール/最初の実行時にランダムな GUID を生成するのには、し、アプリの以降の実行時にその値を使用してに進みます。| 
-| titleId| 32 ビット符号なし整数| 必須。 サービスに呼び出しを発行するゲームのタイトル ID。| 
+| deviceName| string| (省略可能)。 該当する場合は、デバイスのフレンドリ名。 現在、この値は使用されません。| 
+| endpointUri| string| 必須。 クライアントのプラットフォーム (Windows または Windows Phone) は、プッシュ通知サービス (WNS または MPNS) から取得する URL です。| 
+| locale| string| 必須。 このエンドポイントに送信される通知の目的の言語。 優先順位の値をコンマ区切りのリストであることができます。 例:「DE-DE、EN-US, en」です。| 
+| プラットフォーム| string| (省略可能)。 現在サポートされている値は"WindowsPhone"および"Windows です"。 指定しない場合、デバイス トークンから派生します。| 
+| platformVersion| string| (省略可能)。 この文字列の形式は、各プラットフォームに固有です。 現在、この値は使用されません。| 
+| systemId| GUID| 必須。 「アプリのインスタンス」の一意識別子 (デバイス/ユーザーの組み合わせ)。 ベスト プラクティスの実装はインストール/最初の実行時にランダムな GUID を生成するアプリをその値を使用して、アプリの後続実行を続行します。| 
+| titleId| 32 ビット符号なし整数| 必須。 サービスへの呼び出しを発行するゲームのタイトルの ID。| 
   
 <a id="ID4EGD"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -64,7 +64,7 @@ DeviceEndpoint オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

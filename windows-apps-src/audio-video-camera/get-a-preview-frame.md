@@ -4,14 +4,14 @@ description: このトピックでは、メディア キャプチャのプレビ
 title: プレビュー フレームの取得
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7faa018dad336b6e22dd236e57585cade38f8a94
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921932"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622517"
 ---
 # <a name="get-a-preview-frame"></a>プレビュー フレームの取得
 
@@ -29,11 +29,11 @@ ms.locfileid: "8921932"
 
 [!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
 
-[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトが初期化されていてアクティブなプレビュー ストリームが存在する場合、[**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) を呼び出してプレビュー ストリームを取得します。 引数には、最後のステップで作成したビデオ フレームを渡し、取得するフレームの形式を指定します。
+[  **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトが初期化されていてアクティブなプレビュー ストリームが存在する場合、[**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) を呼び出してプレビュー ストリームを取得します。 引数には、最後のステップで作成したビデオ フレームを渡し、取得するフレームの形式を指定します。
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
-プレビュー フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現は、[**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティにアクセスして取得します。 ソフトウェア ビットマップの保存、読み込み、変更については、「[イメージング](imaging.md)」を参照してください。
+プレビュー フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現は、[**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティにアクセスして取得します。 ソフトウェア ビットマップの保存、読み込み、変更については、「[イメージング](imaging.md)」をご覧ください。
 
 [!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
 
@@ -57,7 +57,7 @@ Direct3D API で画像を扱う場合は、プレビュー フレームの [**ID
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

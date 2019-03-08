@@ -4,14 +4,14 @@ description: この記事では、UWP アプリでサポートされる Dynamic 
 title: Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポート
 ms.date: 02/15/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926062"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627207"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>Dynamic Adaptive Streaming over HTTP (DASH) プロファイルのサポート
 
@@ -19,11 +19,11 @@ ms.locfileid: "8926062"
 ## <a name="supported-dash-profiles"></a>サポートされている DASH プロファイル
 次の表では、UWP アプリでサポートされている DASH プロファイルを示します。
 
-|タグ | マニフェストの種類 | 説明|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1607 |Windows 10 バージョン 1607 |Windows 10 Version 1703|
+|Tag | マニフェストの種類 | 説明|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1607 |Windows 10 バージョン 1607 |Windows 10 バージョン 1703|
 |----------------|------|-------|-----------|--------------|---------|-------|--------|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | 静的 |     |サポートされる            |  サポートされる              | サポートされる        |サポートされる| サポートされる|
-|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | ベスト エフォート | サポートされる            |  サポートされる              | サポートされる        |サポートされる| サポートされる|
-|urn:mpeg&#58;dash:profile:isoff-live:2011 | 動的 | セグメント テンプレートで $Time$ はサポートされていますが、$Number$ はサポートされていません。 | サポートされない            | サポートされない              | サポートされない        |サポートされない| サポートされる|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | 静的 |     |サポート対象            |  サポート対象              | サポート対象        |サポート対象| サポート対象|
+|urn:mpeg&#58;dash:profile:isoff-main:2011 |        | ベスト エフォート | サポート対象            |  サポート対象              | サポート対象        |サポート対象| サポート対象|
+|urn:mpeg&#58;dash:profile:isoff-live:2011 | 動的 | セグメント テンプレートで $Time$ はサポートされていますが、$Number$ はサポートされていません。 | サポートされない            | サポートされない              | サポートされない        |サポートされない| サポート対象|
 
 
 ## <a name="unsupported-dash-profiles"></a>サポートされていない DASH プロファイル

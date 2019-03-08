@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d6c16ecaa64abf7d83154fdb864671dbff3eae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643487"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL ストリーミング リソースの露出
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936284"
 
 シェーダー モデル 5 の HLSL 構文は、ストリーミング リソースのサポートを備えたデバイスでのみ使用できます。 次の表のストリーミング リソース用の関連する各 HLSL メソッドでは、1 つ (フィードバック) または 2 つ (クランプとフィードバックをこの順序で) の追加の省略可能なパラメーターを指定できます。 **Sample** メソッドの例を示します。
 
-**Sample(sampler, location \[, offset \[, clamp \[, feedback\] \] \])**
+**サンプル (サンプラー、場所\[、オフセット\[、クランプ\[、フィードバック\] \] \])**
 
 **Sample** メソッドの例は、[**Texture2D.Sample(S,float,int,float,uint)**](https://msdn.microsoft.com/library/windows/desktop/dn393787) のようになります。
 
@@ -31,11 +31,11 @@ clamp パラメーターは、浮動小数点のスカラー値です。 リテ�
 
 feedback パラメーターは **uint** 変数で、メモリ アクセス照会の組み込み関数 [**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) に対して指定できます。 feedback パラメーターの値を変更または解釈しないでください。コンパイラでは、値を変更したかどうかを検出するための高度な分析と診断の機能は提供されません。
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) の構文は次のとおりです。
+[  **CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) の構文は次のとおりです。
 
 **bool CheckAccessFullyMapped(in uint FeedbackVar);**
 
-[**CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) は、*FeedbackVar* の値を解釈し、アクセスされているすべてのデータがリソースにマップされていた場合は true を返します。それ以外の場合、**CheckAccessFullyMapped** は false を返します。
+[**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)の値を解釈*FeedbackVar*アクセスされているすべてのデータがリソースにマップされているそれ以外の場合は true を返します**CheckAccessFullyMapped**。false を返します。
 
 clamp と feedback のいずれかのパラメーターが存在する場合、コンパイラは、基本的な命令のバリアントを出力します。 たとえば、ストリーミング リソースのサンプルは、`sample_cl_s` 命令を生成します。
 
@@ -113,7 +113,7 @@ HLSL コンパイラは、クランプが 0.0f であり、フィードバック
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースへのパイプライン アクセス](pipeline-access-to-streaming-resources.md)
+[リソースのストリーミング パイプラインへのアクセス](pipeline-access-to-streaming-resources.md)
 
  
 

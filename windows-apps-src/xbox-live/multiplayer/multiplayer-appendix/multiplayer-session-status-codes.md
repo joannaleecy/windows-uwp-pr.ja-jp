@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015, ステータス コード, セッション
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fbddd0070eb24d6fc050c59fa2a0197f98ee08c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941486"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646307"
 ---
 # <a name="multiplayer-session-status-codes"></a>マルチプレイヤー セッション ステータス コード
 
 ここでは、セッションに関するマルチプレイヤー ステータス コードを示します。
 
-| 注意                                                                                                         |
+| 注                                                                                                         |
 |---------------------------------------------------------------------------------------------------------------------------|
 | URI がセッションの要素を指す場合でも、セッションを返す 4xx ステータス コードは常にセッション全体を返します。 |
 
 
-| ステータス コード | 文字列              | Content-Type     | 本文    | 説明 |
+| 状態コード | String              | Content-Type     | Body    | 説明 |
 |----|
 | 200         | OK                  | application/json | セッション | 読み取り (GET) または更新 (PUT) に成功しました。                                                                                                                                                                                                                                                                                                             |
-| 201         | Created             | application/json | セッション | 正常に作成されました。                                                                                                                                                                                                                                                                                                                                 |
+| 201         | 作成日             | application/json | セッション | 正常に作成されました。                                                                                                                                                                                                                                                                                                                                 |
 | 202         | Accepted            | text/plain       | なし    | 要求は受け入れられましたが、まだ完了していません。                                                                                                                                                                                                                                                                                             |
 | 204         | No content          |                  |         | セッションに対する GET の実行時に、セッションが存在しません。 セッション要素に対する GET の実行時に、セッションは存在しますが、要素が存在しません。 セッションに対する PUT の実行時に、PUT 操作の結果としてセッションが削除されました。 セッション要素に対する PUT または DELETE の実行時に、操作の開始時点ではセッションが存在していましたが、セッションまたは要素のどちらかがもう存在しません。 |
 | 304         | Not modified        |                  |         | If-None-Match ヘッダーを伴った GET の実行時に、セッションは変化していません。                                                                                                                                                                                                                                                                                        |

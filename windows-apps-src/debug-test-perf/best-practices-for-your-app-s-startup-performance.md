@@ -4,14 +4,14 @@ title: アプリ起動時のパフォーマンスのベスト プラクティス
 description: 起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051105"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644537"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>アプリ起動時のパフォーマンスのベスト プラクティス
 
@@ -152,7 +152,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 ### <a name="phase-2"></a>フェーズ 2
 
-アプリはさまざまな理由でアクティブ化され、それぞれの対応を変えることが必要になる場合があります。 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) メソッドを上書きして、さまざまなアクティブ化の理由に対応することができます。 アプリがこれらのメソッドで実行する必要がある作業の 1 つが UI を作成して [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051) に割り当て、[**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) を呼び出すことです。 この時点で、スプラッシュ画面が、アプリによって作成された UI に置き換えられます。 ここで表示するものは、読み込み画面でも、アクティブ化時に実際の UI を作成するための十分な情報を利用できる場合は、アプリの実際の UI でもかまいません。
+アプリはさまざまな理由でアクティブ化され、それぞれの対応を変えることが必要になる場合があります。 [  **OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) メソッドを上書きして、さまざまなアクティブ化の理由に対応することができます。 アプリがこれらのメソッドで実行する必要がある作業の 1 つが UI を作成して [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051) に割り当て、[**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) を呼び出すことです。 この時点で、スプラッシュ画面が、アプリによって作成された UI に置き換えられます。 ここで表示するものは、読み込み画面でも、アクティブ化時に実際の UI を作成するための十分な情報を利用できる場合は、アプリの実際の UI でもかまいません。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp

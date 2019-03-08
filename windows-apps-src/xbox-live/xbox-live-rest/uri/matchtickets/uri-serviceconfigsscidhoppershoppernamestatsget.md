@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 95de95b35de496331dd3fe0a4c69f18e047c1020
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943855"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621697"
 ---
 # <a name="get-serviceconfigsscidhoppersnamestats"></a>GET (/serviceconfigs/{scid}/hoppers/{name}/stats)
 
-ホッパーの統計情報を取得します。
+Hopper の統計情報を取得します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するためのものがし、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E5)
-  * [Authorization](#ID4EJB)
-  * [HTTP ステータス コード](#ID4E3C)
+  * [承認](#ID4EJB)
+  * [HTTP 状態コード](#ID4E3C)
   * [要求本文](#ID4EFD)
   * [応答本文](#ID4EQD)
 
@@ -32,33 +32,33 @@ ms.locfileid: "8943855"
 
 
 ## <a name="remarks"></a>注釈
-この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルで名前付きのホッパーからの統計情報を取得します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API でラップすることができます。  
+この HTTP/REST メソッドは、サービス構成の ID (SCID) レベルで名前付き hopper から統計を取得します。 このメソッドをラップすることができます、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.GetHopperStatisticsAsync** API。  
 <a id="ID4E5"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| name| string| Hopper の名前。|
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-| 型| 必須かどうか| 説明| 不足している場合、応答|
+| 種類| 必須| 説明| 不足している場合の応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。 | 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。 | 403|
-| タイトル ID/実証購入/デバイスの種類| 必須| タイトルに一致するには、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
+| XUID (ユーザー ID)| ○| 要求を行うユーザーは、チケットによって参照されるチケット セッションのメンバーである必要があります。 | 403|
+| 特権とデバイスの種類| ○| ユーザーの deviceType は、コンソールに設定されている場合は、それぞれのクレームでマルチ プレーヤーの特権を持つユーザーのみがマッチメイ キング サービスを呼び出すことが許可されます。 | 403|
+| タイトルの購入/デバイスの種類 ID/実証| ○| 一致するタイトルは、指定されたタイトルの要求、デバイスの種類の組み合わせのマッチメイ キングを許可する必要があります。 | 403|
 
 <a id="ID4E3C"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EFD"></a>
 
 
@@ -73,14 +73,14 @@ ms.locfileid: "8943855"
 
 | メンバー| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| hopperName| string| 選択したホッパーの名前です。|
-| 待機時間| 32 ビット符号付き整数| 照合時間 (秒の整数)、ホッパーの平均です。 |
-| カタログの作成| 32 ビット符号付き整数| 一致するものをホッパーで待機しているユーザーの数。|
+| hopperName| string| 選択した hopper の名前。|
+| 待機時間| 32 ビット符号付き整数| 平均時間 (秒単位の整数) hopper の一致します。 |
+| カタログの作成| 32 ビット符号付き整数| 一致するもの、hopper で待機しているユーザーの数。|
 
 <a id="ID4E1D"></a>
 
 
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
 
 
 ```cpp

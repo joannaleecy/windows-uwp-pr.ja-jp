@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd28cb94b31102d9af98aa95afde45424dadce9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919541"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589667"
 ---
 # <a name="delete-serviceconfigsscidhoppershoppernameticketsticketid"></a>DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})
 
-マッチ チケットを削除します。
+一致のチケットを削除します。
 
 > [!IMPORTANT]
-> このメソッドはコントラクト 103 以降で使用するものでは、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> このメソッドは、コントラクト 103 以降で使用するためのものがし、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4E2)
-  * [Authorization](#ID4EGB)
-  * [HTTP ステータス コード](#ID4EOC)
+  * [承認](#ID4EGB)
+  * [HTTP 状態コード](#ID4EOC)
   * [要求本文](#ID4EXC)
   * [応答本文](#ID4ECD)
 
@@ -33,34 +33,34 @@ ms.locfileid: "8919541"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、サービス構成 ID (SCID) レベルで名前付きのホッパーから、指定されたチケット ID を削除します。 このメソッドは、 **Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**でラップすることができます。  
+この HTTP/REST メソッドでは、サービス構成の ID (SCID) レベルで名前付き hopper から指定したチケット ID を削除します。 このメソッドによってラップできる**Microsoft.Xbox.Services.Matchmaking.MatchmakingService.DeleteMatchTicketAsync**します。  
 <a id="ID4E2"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
-| ticketId| GUID| チケットの id。|
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| name| string| Hopper の名前。|
+| TicketId| GUID| チケット id。|
 
 <a id="ID4EGB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-| 型| 必須かどうか| 説明| 不足している場合、応答|
+| 種類| 必須| 説明| 不足している場合の応答|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID (ユーザーの ID)| 必須| 要求を行っているユーザーは、チケットによって参照される、チケット セッションのメンバーである必要があります。| 403|
-| 特権とデバイスの種類| 必須| ユーザーの deviceType がコンソールに設定されている場合、マッチメイ キング サービスへの呼び出しには、要求のマルチプレイヤー権限を持つユーザーのみが許可されています。| 403|
+| XUID (ユーザー ID)| ○| 要求を行うユーザーは、チケットによって参照されるチケット セッションのメンバーである必要があります。| 403|
+| 特権とデバイスの種類| ○| ユーザーの deviceType は、コンソールに設定されている場合は、それぞれのクレームでマルチ プレーヤーの特権を持つユーザーのみがマッチメイ キング サービスを呼び出すことが許可されます。| 403|
 
 <a id="ID4EOC"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
 
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EXC"></a>
 
 
@@ -73,7 +73,7 @@ ms.locfileid: "8919541"
 
 ## <a name="response-body"></a>応答本文
 
-応答の本文には、オブジェクトは送信されません。
+応答の本文では、オブジェクトは送信されません。
 
 <a id="ID4EPD"></a>
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: ca72f9570c5ecef4a93b03f297ecb1d5064c5bef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927157"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623327"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>アプリ インストーラーで UWP アプリをインストールする
 
@@ -21,11 +21,11 @@ ms.locfileid: "8927157"
 
 | トピック | 説明 |
 |-------|-------------|
-| [Visual Studio を使ったアプリ インストーラー ファイルの作成](create-appinstallerfile-vs.md)| Visual Studio を使い、.appinstaller ファイルを使って自動更新を有効にする方法について説明します。 |
-| [Web ページから UWP アプリをインストールする](installing-UWP-apps-web.md) | このセクションでは、ユーザーが直接 Web ページからアプリをインストールできるようにするために必要な手順を確認します。 |
-| [アプリ インストーラー ファイルを使用して関連セットをインストールする](install-related-set.md) | このセクションでは、アプリ インストーラーで関連セットをインストールできるようにする方法を説明します。 関連セットを定義するアプリ インストーラー ファイルを作成する手順についても確認します。 |
-| [アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング](troubleshoot-appinstaller-issues.md) | アプリ インストーラー ファイルを使ってアプリケーションをサイドローディングするときの一般的な問題と解決策。 |
-| [アプリ インストーラー ファイル (.appinstaller) リファレンス](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file) | アプリ インストーラー ファイルの完全な XML スキーマを確認できます。 |
+| [Visual Studio でのアプリのインストーラー ファイルを作成します。](create-appinstallerfile-vs.md)| Visual Studio を使い、.appinstaller ファイルを使って自動更新を有効にする方法について説明します。 |
+| [Web ページからの UWP アプリをインストールします。](installing-UWP-apps-web.md) | このセクションでは、ユーザーが直接 Web ページからアプリをインストールできるようにするために必要な手順を確認します。 |
+| [アプリのインストーラー ファイルを使用して、関連する一連をインストールします。](install-related-set.md) | このセクションでは、アプリ インストーラーで関連セットをインストールできるようにする方法を説明します。 関連セットを定義するアプリ インストーラー ファイルを作成する手順についても確認します。 |
+| [アプリのインストーラー ファイルのインストールに関する問題をトラブルシューティングします。](troubleshoot-appinstaller-issues.md) | アプリ インストーラー ファイルを使ってアプリケーションをサイドローディングするときの一般的な問題と解決策。 |
+| [アプリのインストーラー ファイル (.appinstaller) リファレンス](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file) | アプリ インストーラー ファイルの完全な XML スキーマを確認できます。 |
 
 ## <a name="tutorials"></a>チュートリアル 
 
@@ -33,7 +33,7 @@ ms.locfileid: "8927157"
 
 | チュートリアル | 説明 |
 |----------|-------------|
-| [Azure Web アプリからの UWP アプリのインストール](web-install-azure.md) | Azure Web アプリを作成し、それを使用して UWP アプリ パッケージをホストして配布します。 |
-| [IIS サーバーからの UWP アプリのインストール](web-install-IIS.md) | IIS サーバーをセットアップし、Web アプリがアプリ パッケージをホストできることを確認して、アプリ インストーラーを効果的に使用します。 |
-| [Web インストールのための UWP アプリ パッケージの AWS へのホスト](web-install-aws.md) | Web サイトから、UWP アプリ パッケージをホストする、Amazon Simple Storage Service をセットアップする方法について説明します。 |
+| [Azure Web アプリからの UWP アプリをインストールします。](web-install-azure.md) | Azure Web アプリを作成し、それを使用して UWP アプリ パッケージをホストして配布します。 |
+| [IIS サーバーからの UWP アプリをインストールします。](web-install-IIS.md) | IIS サーバーをセットアップし、Web アプリがアプリ パッケージをホストできることを確認して、アプリ インストーラーを効果的に使用します。 |
+| [UWP をホストしている web 用に AWS アプリ パッケージのインストールします。](web-install-aws.md) | Web サイトから、UWP アプリ パッケージをホストする、Amazon Simple Storage Service をセットアップする方法について説明します。 |
 

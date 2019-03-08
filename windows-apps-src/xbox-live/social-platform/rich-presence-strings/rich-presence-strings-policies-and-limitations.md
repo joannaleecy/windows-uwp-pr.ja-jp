@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス, ポリシー
 ms.localizationpriority: medium
 ms.openlocfilehash: f85974c0ccb38f3c33fb214ddaf24b98dd8dcdd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919650"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643597"
 ---
 # <a name="rich-presence-policies-and-limitations"></a>リッチ プレゼンスのポリシーと制限
 
@@ -24,7 +24,7 @@ ms.locfileid: "8919650"
 -   合計 44 文字 (パラメーターの値を含む) の 1 つの行を使用できます。 これは、Xbox 360 のリッチ プレゼンスの制限と同様です。 クライアントと協力して、文字列の長さを増やすことができるかどうかを検討中です。 文字列を長くできる場合は発表します。
     -   Unicode 文字が必須であり、UTF-8 エンコーディングで表示できる必要があります。
 -   フレンドリ名は以下の規則に従う必要があります。
-    -   使用できる文字は、'A' ～ 'Z'、'a' ～ 'z'、アンダー スコア ('\_')、および '0' ～ '9' です。
+    -   使用できる文字は 'A' から 'Z'、'a' ~ 'z'、アンダー スコア ('\_')、' 0 '~' 9'。
 
         文字数の制限はありません。
 

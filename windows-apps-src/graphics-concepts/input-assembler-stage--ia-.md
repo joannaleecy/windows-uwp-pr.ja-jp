@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942944"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646287"
 ---
 # <a name="input-assembler-ia-stage"></a>入力アセンブラー (IA) ステージ
 
 
 入力アセンブラー (IA) ステージは、三角形、線、点などのパイプラインにプリミティブ データと隣接性データを提供し (セマンティクス ID など)、まだ処理されていないプリミティブの処理を減らすことでシェーダーの効率を高めます。
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>目的と用途
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>目的と使用
 
 
 入力アセンブラー (IA) ステージの目的は、ユーザーが入力したバッファーからプリミティブ データ (点、線、三角形) を読み取って、他のパイプライン ステージにより使われるプリミティブにデータをアセンブルし、[システムにより生成された値](https://msdn.microsoft.com/library/windows/desktop/bb509647)をアタッチしてシェーダーの効率を高めることです。 システムにより生成された値は、セマンティクスとも呼ばれるテキスト文字列です。 プログラミング可能なシェーダー ステージは、システムにより生成された値 (プリミティブ ID、インスタンス ID、頂点 ID など) を使うコマンド シェーダー コアから作成されます。これにより、シェーダー ステージは、まだ処理されていないそれらのプリミティブ、インスタンス、または頂点のみに処理を減らすことができます。
@@ -60,7 +60,7 @@ IA ステージは、データをプリミティブにアセンブルして、�
 <td align="left"><p>Direct3D では、ポイントの一覧、線の一覧、三角形ストリップなどのいくつかのプリミティブ トポロジがサポートされており、パイプラインにより頂点がどのように解釈され、レンダリングされるかを定義します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="using-system-generated-values.md">システムで生成される値の使用</a></p></td>
+<td align="left"><p><a href="using-system-generated-values.md">システムによって生成された値を使用してください。</a></p></td>
 <td align="left"><p>システムにより生成された値は、入力アセンブラー (IA) ステージにより生成され (ユーザーが提供した入力<a href="https://msdn.microsoft.com/library/windows/desktop/bb509647">セマンティクス</a>に基づく)、シェーダー操作で一定の効率を実現します。 インスタンス ID (<a href="vertex-shader-stage--vs-.md">頂点シェーダー (VS) ステージ</a>で参照可能)、頂点 ID (VS で参照可能)、またはプリミティブ ID (<a href="geometry-shader-stage--gs-.md">ジオメトリ シェーダー (GS) ステージ</a>/<a href="pixel-shader-stage--ps-.md">ピクセル シェーダー (PS) ステージ</a>で参照可能) などのデータをアタッチするとにより、その後のシェーダー ストレージがそれらのシステム値を探して、そのステージでの処理を最適化できるようになります。</p></td>
 </tr>
 </tbody>

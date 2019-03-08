@@ -1,11 +1,11 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: ダイアログとポップアップは、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。
 title: ダイアログ コントロール
 label: Dialogs
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
@@ -13,26 +13,26 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: bee954cba446ac7dc7eb41622d9275b3b73af6ee
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621837"
 ---
 # <a name="dialog-controls"></a>ダイアログ コントロール
 
-ダイアログ コントロールは、アプリのコンテキスト情報を提供するモーダル UI オーバーレイです。 明示的に閉じられるまでアプリ ウィンドウとのやり取りがブロックされています。 多くの場合、ユーザーに何らかの操作を要求します。
+ダイアログ コントロールは、アプリのコンテキスト情報を提供するモーダル UI オーバーレイです。 明示的に破棄されるまで、アプリ ウィンドウとの対話をブロックします。 多くの場合、ユーザーに何らかの操作を要求します。
 
 ![ダイアログの例](../images/dialogs/dialog_RS2_delete_file.png)
 
 
-> **重要な Api**: [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> **重要な Api**:[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
 重要な情報をユーザーに通知したり、アクションが完了する前に確認や追加情報を要求したりするには、ダイアログを使用します。
 
-使用する場合の推奨事項については、ダイアログとポップアップ (のようなコントロール) を使用する場合に、[ダイアログとポップアップ](index.md)が参照してください。 
+フライアウト (のようなコントロール) を使用する場合と、ダイアログ ボックスを使用する場合の推奨事項を参照してください[ダイアログとフライアウト](index.md)します。 
 
 ## <a name="examples"></a>例
 
@@ -43,8 +43,8 @@ ms.locfileid: "9116101"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -87,7 +87,7 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-ユーザーがダイアログのボタンをクリックすると、[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync)メソッドは [ContentDialogResult](/uwp/api/Windows.UI.Xaml.Controls.ContentDialogResult) を返して、ユーザーがクリックしたボタンを伝えます。
+ユーザーがダイアログのボタンをクリックすると、[ShowAsync](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog.ShowAsync) メソッドは [ContentDialogResult](/uwp/api/Windows.UI.Xaml.Controls.ContentDialogResult) を返して、ユーザーがクリックしたボタンを伝えます。
 
 この例でのダイアログは、質問を行い、[ContentDialogResult](/uwp/api/Windows.UI.Xaml.Controls.ContentDialogResult) の戻り値を使用してユーザーの応答を確認します。
 
@@ -118,8 +118,8 @@ private async void DisplayDeleteFileDialog()
 }
 ```
 
-## <a name="provide-a-safe-action"></a>安全なアクションを提供します。
-ダイアログでユーザー操作がブロックされたとき、ユーザーがダイアログを閉じる主な方法はボタンであるため、ダイアログに "閉じる" や "OK" などの安全で非破壊的なボタンが少なくとも 1 つは含まれるようにします。 **すべてのダイアログには、ダイアログを閉じるための少なくとも 1 つの安全なアクション ボタンを含める必要があります。** これにより、ユーザーはアクションを実行することなく安心してダイアログを閉じることができます。<br>![ボタンを 1 つ備えたダイアログ](../images/dialogs/dialog_RS2_one_button.png)
+## <a name="provide-a-safe-action"></a>安全な操作を提供します。
+ダイアログでユーザー操作がブロックされたとき、ユーザーがダイアログを閉じる主な方法はボタンであるため、ダイアログに "閉じる" や "OK" などの安全で非破壊的なボタンが少なくとも 1 つは含まれるようにします。 **すべてのダイアログ ボックスでは、ダイアログ ボックスを閉じますの少なくとも 1 つの安全なアクション ボタンを含める必要があります。** これにより、ユーザーはアクションを実行することなく安心してダイアログを閉じることができます。<br>![1 つのボタンの ダイアログ](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -261,5 +261,5 @@ private async void DisplaySubscribeDialog()
 ## <a name="related-articles"></a>関連記事
 - [ヒント](../tooltips.md)
 - [メニューとコンテキスト メニュー](../menus.md)
-- [Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+- [フライアウト クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 - [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)

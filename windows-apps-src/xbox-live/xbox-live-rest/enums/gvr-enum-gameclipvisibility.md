@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ff0c6fe694bf889632561de056d9405f02d31d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935277"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594647"
 ---
 # <a name="gameclipvisibility-enumeration"></a>GameClipVisibility 列挙型
-GameClipVisibility 列挙型をについて説明します。 
+GameClipVisibility 列挙体をについて説明します。 
 <a id="ID4ER"></a>
 
  
@@ -23,9 +23,9 @@ GameClipVisibility 列挙型をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| 可視性が指定されていません。 これは、ほとんどの場合、無効な値です。| 
-| 既定値| ゲーム クリップの可視性が Xbox LIVE プライバシー設定によって決まります。| 
-| オーナー| ゲーム クリップには、それを作成した元の XUID をできるだけです。| 
-| Title (タイトル)| 作成した元のタイトルがゲーム クリップにのみです。| 
-| Public| ゲーム クリップは、だれでも Xbox LIVE で利用できます。| 
+| なし| 可視性が指定されていません。 これは、ほとんどの場合に無効な値です。| 
+| Default| ゲームのクリップの可視性が Xbox LIVE のプライバシー設定によって決まります。| 
+| 所有者| ゲームのクリップには、それを作成した元の XUID をできるだけです。| 
+| タイトル| ゲームのクリップには、それを作成した元のタイトルのできるだけです。| 
+| パブリック| ゲームのクリップでは、Xbox LIVE 内のだれも使用できます。| 
   

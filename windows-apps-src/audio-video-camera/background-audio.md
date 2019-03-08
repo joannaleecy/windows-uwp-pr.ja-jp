@@ -4,23 +4,23 @@ description: この記事では、アプリがバックグラウンドで実行�
 title: バックグラウンドでのメディアの再生
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f5fe7cad12193b409c4923f876b47cae0852aa9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045561"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645817"
 ---
 # <a name="play-media-in-the-background"></a>バックグラウンドでのメディアの再生
 この記事では、アプリをフォアグラウンドからバックグラウンドに移動してもメディアの再生を続行できるように、アプリを構成する方法について説明します。 バックグラウンドでの再生とは、ユーザーがアプリを最小化してホーム画面に戻った後や、それ以外の方法でアプリから離れた後も、アプリでオーディオの再生を続行できることを意味します。 
 
 バックグラウンド オーディオ再生のシナリオには次のものがあります。
 
--   **長時間にわたって実行されるプレイリスト:** ユーザーは、フォアグラウンド アプリを一時的に表示し、プレイリストを選んで再生を開始します。その後、プレイリストはバックグラウンドで再生を続行します。
+-   **実行時間の長い再生リスト:** ユーザーを選択し、その後、ユーザーを引き続きバック グラウンドで再生する再生リストが必要ですが、再生リストを起動するフォア グラウンド アプリを簡単に説明が表示されます。
 
--   **タスク スイッチャーの使用:** ユーザーは、オーディオの再生を開始するためにフォアグラウンド アプリを一時的に表示した後、タスク スイッチャーを使って別の開いているアプリに切り替えます。 ユーザーは、バックグラウンドでオーディオの再生が継続することを期待します。
+-   **タスク スイッチャーを使用します。** ユーザーは簡単に、オーディオ再生を開始するフォア グラウンド アプリが起動し、タスク スイッチャーを使用してアプリを開くもう 1 つに切り替えます。 ユーザーは、バックグラウンドでオーディオの再生が継続することを期待します。
 
 この記事で説明されているバックグラウンド オーディオの実装を使うと、モバイル、デスクトップ、Xbox を含むすべての Windows デバイスで、アプリをユニバーサルに実行できます。
 
@@ -42,9 +42,9 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 ## <a name="background-media-playback-manifest-capability"></a>バックグラウンド メディア再生のマニフェストの機能
 バックグラウンド オーディオを有効には、バックグラウンド メディア再生機能をアプリ マニフェスト ファイル (Package.appxmanifest) に追加する必要があります。 
 
-**マニフェスト デザイナーを使って、アプリ マニフェストに機能を追加するには**
+**マニフェスト デザイナーを使用して、アプリ マニフェストに機能を追加するには**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
+1.  Microsoft Visual Studio の**ソリューション エクスプローラー**で、**package.appxmanifest** 項目をダブルクリックしてアプリケーション マニフェストのデザイナーを開きます。
 2.  **[機能]** タブをクリックします。
 3.  **[バックグラウンド メディア再生]** チェック ボックスをオンにします。
 
@@ -74,11 +74,11 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 
 [!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
 
-[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生したときに、現在バックグラウンドで実行していることを示す追跡変数を設定します。 **EnteredBackground** イベントで長時間のタスクは実行しないでください。ユーザーに対して、バックグラウンドへの移行が遅いように見える可能性があります。
+[  **EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) イベントが発生したときに、現在バックグラウンドで実行していることを示す追跡変数を設定します。 **EnteredBackground** イベントで長時間のタスクは実行しないでください。ユーザーに対して、バックグラウンドへの移行が遅いように見える可能性があります。
 
 [!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
 
-[**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベント ハンドラーで、アプリがバックグラウンドで実行されなくなったことを示すために追跡変数を設定する必要があります。
+[  **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) イベント ハンドラーで、アプリがバックグラウンドで実行されなくなったことを示すために追跡変数を設定する必要があります。
 
 [!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
 
@@ -86,15 +86,15 @@ Windows 10 バージョン 1607 では、新しいシングル プロセス モ�
 フォアグラウンドとバックグラウンドの間の移行処理で最も重要な部分は、アプリが使うメモリの管理です。 バックグラウンドで実行すると、システムによってアプリが保持することを許可されているメモリ リソースが減少するため、[**AppMemoryUsageIncreased**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageIncreased) と [**AppMemoryUsageLimitChanging**](https://msdn.microsoft.com/library/windows/apps/Windows.System.MemoryManager.AppMemoryUsageLimitChanging) イベントについても登録する必要があります。 これらのイベントが発生したとき、アプリの現在のメモリ使用量と、現在の制限を確認し、必要に応じて、メモリ使用量を減らしてください。 バックグラウンドで実行中にメモリ使用量を減らす方法については、[アプリがバックグラウンドに移動したときにメモリを解放する方法に関するページ](../launch-resume/reduce-memory-usage.md)をご覧ください。
 
 ## <a name="network-availability-for-background-media-apps"></a>バックグラウンド メディア アプリのネットワークの可用性
-すべてのネットワーク対応メディア ソース (ストリームやファイルから作成されないソース) は、リモート コンテンツの取得中はアクティブなネットワーク接続を維持し、リモート コンテンツを取得していないときはネットワーク接続を解放します。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) は、具体的には、アプリケーションを利用して、[**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762) を使用して適切にバッファー処理された範囲をプラットフォームに適切に報告します。 コンテンツ全体が完全にバッファー処理されると、ネットワークはアプリ用に予約されなくなります。
+すべてのネットワーク対応メディア ソース (ストリームやファイルから作成されないソース) は、リモート コンテンツの取得中はアクティブなネットワーク接続を維持し、リモート コンテンツを取得していないときはネットワーク接続を解放します。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource)、具体的には、プラットフォームを使用して、バッファー内の正しい範囲に正しく報告するアプリケーションに依存[ **SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)します。 コンテンツ全体が完全にバッファー処理されると、ネットワークはアプリ用に予約されなくなります。
 
 メディアをダウンロードしていないときに、バックグラウンドでネットワーク呼び出しを行う必要がある場合は、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) や [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger) などの適切なタスクでこれらの呼び出しをラップする必要があります。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
-* [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
-* [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md)
-* [バックグラウンド オーディオのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
+* [Media Player とオーディオとビデオの再生します。](play-audio-and-video-with-mediaplayer.md)
+* [トランスポート コントロールをシステムのメディアと統合します。](integrate-with-systemmediatransportcontrols.md)
+* [バック グラウンド オーディオ サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
  
 

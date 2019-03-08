@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6efe7aa27721f519ba93052abf2d0e8189f58941
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933722"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622317"
 ---
-# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>システム生成値の使用
+# <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>システムによって生成された値を使用してください。
 
 
-システム生成値は、シェーダー操作で一定の効率を実現するために、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)で (ユーザー指定の入力[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)に基づいて) 生成されます。 インスタンス ID ([頂点シェーダー (VS) ステージ](vertex-shader-stage--vs-.md)で可視)、頂点 ID (VS で可視)、プリミティブ ID ([ジオメトリ シェーダー (GS) ステージ](geometry-shader-stage--gs-.md)/[ピクセル シェーダー (PS) ステージ](pixel-shader-stage--ps-.md) で可視) などのデータをアタッチすることにより、後続のシェーダー ステージでこれらのシステム値を参照して、そのステージの処理を最適化できます。
+システム生成値は、シェーダー操作で一定の効率を実現するために、[入力アセンブラー (IA) ステージ](input-assembler-stage--ia-.md)で (ユーザー指定の入力[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)に基づいて) 生成されます。 インスタンス ID ([頂点シェーダー (VS) ステージ](vertex-shader-stage--vs-.md)で参照可能)、頂点 ID (VS で参照可能)、またはプリミティブ ID ([ジオメトリ シェーダー (GS) ステージ](geometry-shader-stage--gs-.md)/[ピクセル シェーダー (PS) ステージ](pixel-shader-stage--ps-.md)で参照可能) などのデータをアタッチするとにより、その後のシェーダー ストレージがそれらのシステム値を探して、そのステージでの処理を最適化できるようになります。
 
 たとえば、VS ステージでは、インスタンス ID を参照してシェーダー用の頂点ごとの追加データを取得したり、その他の操作を実行したりできます。GS ステージや PS ステージでは、プリミティブ ID を使ってプリミティブごとのデータを同じように取得できます。
 

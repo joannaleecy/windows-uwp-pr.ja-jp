@@ -1,24 +1,24 @@
 ---
-Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
+Description: 提出の更新を公開するときには、Windows 10 で特定の割合のアプリ ユーザーに対して、更新されたパッケージを段階的にロール アウトすることを選択できます。
 title: 段階的なパッケージのロールアウト
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: cada2da4b587340f38901f9a4ec5504d9d3c57de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927809"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645127"
 ---
 # <a name="gradual-package-rollout"></a>段階的なパッケージのロールアウト
 
-申請を更新プログラムを公開するときは、段階的にロールアウトの更新されたパッケージ アプリのユーザーの割合を Windows 10 (Xbox を含む) を選択できます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 この割合は、新しい申請を作成することなく、いつでも増やす (または更新を停止する) ことができます。 
+送信へ更新を発行するときに、段階的にロールアウトする更新したパッケージ アプリの顧客の割合が (Xbox を含む)、Windows 10 で選択できます。 これにより、更新に確信が持てるよう、特定のパッケージのフィードバックと分析データを監視してから、より広くロールアウトできます。 この割合は、新しい申請を作成することなく、いつでも増やす (または更新を停止する) ことができます。 
 
 > [!IMPORTANT]
-> ロールアウトの選択はすべてのパッケージに適用されますが、適用対象となるユーザーはパッケージ フライトをサポートする OS バージョン (Windows.Desktop ビルド 10586 以降、Windows.Mobile ビルド 10586.63 以降、Xbox) を実行しているユーザーだけです。これには、[ビジネス向け Microsoft ストア](https://businessstore.microsoft.com/store)または[教育機関向け Microsoft ストア](https://educationstore.microsoft.com/store)を通じて、[ストアで管理される (オンライン) ライセンス](organizational-licensing.md)によりアプリを入手するユーザーも含まれます。 段階的なパッケージのロールアウトを使用する場合、次の説明に従ってパッケージのロールアウトを完了するまでは、古い OS バージョンを使用しているユーザーは最新の提出からパッケージを入手できません。
+> ロールアウトの選択はすべてのパッケージに適用されますが、適用対象となるユーザーはパッケージ フライトをサポートする OS バージョン (Windows.Desktop ビルド 10586 以降、Windows.Mobile ビルド 10586.63 以降、Xbox) を実行しているユーザーだけです。これには、[ビジネス向け Microsoft ストア](https://businessstore.microsoft.com/store)または[教育機関向け Microsoft ストア](https://educationstore.microsoft.com/store)を通じて、[ストアで管理される (オンライン) ライセンス](organizational-licensing.md)によりアプリを入手するユーザーも含まれます。 段階的なパッケージのロールアウトを使用する場合、次の説明に従ってパッケージのロールアウトを完了するまで、古い OS バージョンを使っているユーザーが最新の申請のパッケージを入手することはできません。
 
 最後の提出で入力したストア登録情報の詳細がすべてのユーザーに表示されることにご注意ください。 新しく入手する場合でも、既存ユーザーの更新の場合でも、ロールアウト設定は、ユーザーが受け取るパッケージだけに適用されます。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8927809"
 
 ## <a name="setting-the-rollout-percentage"></a>ロールアウトの割合の設定
 
-更新した提出の [**パッケージ**] ページでロールアウトを選択できます。 このためには、**[この提出の公開後 (Windows 10 のお客様のみが対象)、ロールアウトの更新は段階的に行われます]** ボックスをオンにします。 次に、提出を最初に公開する時点で更新を取得するユーザーの割合を入力します。 たとえば、最初に少ない割合のアプリ ユーザーに対してのみアップデートをロールアウトする場合は、5 と入力できます。
+更新した提出の **[パッケージ]** ページでロールアウトを選択できます。 このためには、**[この提出の公開後 (Windows 10 のお客様のみが対象)、ロールアウトの更新は段階的に行われます]** ボックスをオンにします。 次に、提出を最初に公開する時点で更新を取得するユーザーの割合を入力します。 たとえば、最初に少ない割合のアプリ ユーザーに対してのみアップデートをロールアウトする場合は、5 と入力できます。
 
 **[更新]** をクリックして選択内容を保存します。 新しく入手する場合でも、既存ユーザーの更新の場合でも、アプリの認定プロセスが完了すると、指定した割合に基づいてユーザーにパッケージが配布されます。
 

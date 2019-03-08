@@ -7,11 +7,11 @@ ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934607"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642867"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>DirectX を使った単純なユニバーサル Windows プラットフォーム (UWP) ゲームの作成
 
@@ -37,7 +37,7 @@ UWP DirectX ゲームの基本的な概念とコンポーネントを使い、Di
 ##  <a name="direct3d-uwp-shooting-game-sample"></a>Direct3D UWP シューティング ゲームのサンプル
 
 
-このサンプルは、プレイヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。 標的に命中するたびにポイントが与えられ、プレーヤーは難度が上がっていく 6 つのレベルを進むことができます。 レベルの最後に、ポイントが集計されて、プレーヤーに最終スコアが与えられます。
+このサンプルは、プレイヤーが動く標的に弾を撃つ、簡単なファーストパーソン シューティング ギャラリーを実装しています。 標的に命中するたびにポイントが与えられ、プレイヤーは難度が上がっていく 6 つのレベルを進むことができます。 レベルの最後に、ポイントが集計されて、プレイヤーに最終スコアが与えられます。
 
 サンプルで示されているゲームの概念は、次のとおりです。
 
@@ -49,17 +49,17 @@ UWP DirectX ゲームの基本的な概念とコンポーネントを使い、Di
 -   オーディオ ミキシングおよび再生
 -   基本的なゲームのステート マシン
 
-![ゲーム サンプルの動作](images/simple-dx-game-overview.png)
+![実行中のゲーム サンプル](images/simple-dx-game-overview.png)
 
 | トピック | 説明 |
 |-------|-------------|
-|[ゲーム プロジェクトのセットアップ](tutorial--setting-up-the-games-infrastructure.md) | ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。 適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。 シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。 |
-| [ゲームの UWP アプリ フレームワークの定義](tutorial--building-the-games-uwp-app-framework.md) | UWP DirectX ゲーム オブジェクトで Windows と対話するためのフレームワークを構築します。 これには、中断/再開イベントの処理、ウィンドウのフォーカス、スナップなどの Windows ランタイム プロパティが含まれます。  |
-| [ゲームのフロー管理](tutorial-game-flow-management.md) | プレイヤーとシステムとの対話を有効にする高度なステート マシンを定義します。 UI で全体的なゲームのステート マシンを操作する方法および UWP ゲーム用のイベント ハンドラーを作成する方法について説明します。 |
-| [メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md) | ルールを作成することでゲームをプレイする方法を定義します。 |
-| [レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md) | グラフィックスを表示するレンダリング フレームワークを作成します。 このトピックは 2 部構成となっています。 レンダリングの概要では、画面に表示するシーンのオブジェクトを表示する方法について説明します。 |
-| [レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md) | レンダリング トピックの第 2 部では、レンダリングが発生する前に必要なデータを準備する方法について説明します。 |
-| [ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md) | 単純なメニュー オプションとヘッドアップ ディスプレイ コンポーネントを追加し、プレイヤーにフィードバックを提供します。 |
-| [コントロールの追加](tutorial--adding-controls.md) | ゲームにムーブ/ルック コントロール (基本的なタッチ、マウス、およびゲーム コントローラーのコントロール) を追加します。 |
-| [サウンドの追加](tutorial--adding-sound.md) | [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API を使用して、ゲームのサウンドを作成する方法について説明します。 |
-| [ゲーム サンプルの紹介](tutorial-resources.md) | XAML を使用したオーバーレイの作成など、DirectX ゲーム開発の知識をさらに深めるためのリソースです。 |
+|[ゲームのプロジェクトを設定します。](tutorial--setting-up-the-games-infrastructure.md) | ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。 適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。 シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。 |
+| [ゲームの UWP アプリのフレームワークを定義します。](tutorial--building-the-games-uwp-app-framework.md) | UWP DirectX ゲーム オブジェクトで Windows と対話するためのフレームワークを構築します。 これには、中断/再開イベントの処理、ウィンドウのフォーカス、スナップなどの Windows ランタイム プロパティが含まれます。  |
+| [ゲームの流れの管理](tutorial-game-flow-management.md) | プレイヤーとシステムとの対話を有効にする高度なステート マシンを定義します。 UI で全体的なゲームのステート マシンを操作する方法および UWP ゲーム用のイベント ハンドラーを作成する方法について説明します。 |
+| [メイン ゲーム オブジェクトを定義します。](tutorial--defining-the-main-game-loop.md) | ルールを作成することでゲームをプレイする方法を定義します。 |
+| [レンダリングのフレームワーク i:レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md) | グラフィックスを表示するレンダリング フレームワークを作成します。 このトピックは 2 部構成となっています。 レンダリングの概要では、画面に表示するシーンのオブジェクトを表示する方法について説明します。 |
+| [レンダリングのフレームワーク II:ゲームのレンダリング](tutorial-game-rendering.md) | レンダリング トピックの第 2 部では、レンダリングが発生する前に必要なデータを準備する方法について説明します。 |
+| [ユーザー インターフェイスを追加します。](tutorial--adding-a-user-interface.md) | 単純なメニュー オプションとヘッドアップ ディスプレイ コンポーネントを追加し、プレイヤーにフィードバックを提供します。 |
+| [コントロールを追加します。](tutorial--adding-controls.md) | ゲームにムーブ/ルック コントロール (基本的なタッチ、マウス、およびゲーム コントローラーのコントロール) を追加します。 |
+| [サウンドを追加します。](tutorial--adding-sound.md) | [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API を使用して、ゲームのサウンドを作成する方法について説明します。 |
+| [ゲームのサンプルを拡張します。](tutorial-resources.md) | XAML を使用したオーバーレイの作成など、DirectX ゲーム開発の知識をさらに深めるためのリソースです。 |

@@ -7,55 +7,55 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 703e48c0f200c59fa6f9181905756ef834aabe4a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922550"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643387"
 ---
 # <a name="multiplayer-appendix"></a>マルチプレイヤーの付録
 
 Xbox One のマルチプレイヤー システムにより、ゲーム プレイやゲーム プレイヤーをグループにまとめることができます。 このシステムは、安全で、使いやすく、柔軟であるため、シンプルな機能をすばやく作成できるだけでなく、さらに複雑な機能を作成し、独自のサービスを組み込むこともできます。
 
-> **注意**  
+> **注:**  
 ここでは、API の高度な使用方法を示します。  まず最初に、開発が大幅に簡素化される [Multiplayer Manager API](../multiplayer-manager.md) を参照してください。  Multiplayer Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。
 
 マルチプレイヤー システムの現在のバージョンは 2015 マルチプレイヤーです。 このバージョンは、"ゲーム パーティー" の概念を抽象化し、マルチプレイヤー セッション ディレクトリ (MPSD) を使用してゲーム セッションを制御します。
 
-> **注意**  
+> **注:**  
 マルチプレイヤー システムの以前のバージョンは 2014 マルチプレイヤーです。 このバージョンは、ゲーム パーティーの概念およびパーティーを通じてのゲームへの参加に基づいています。 このバージョンは、ソース コードが XDK で提供されていますが、現在は非推奨となっています。 2014 マルチプレイヤーのマニュアルは、XDK に付属しなくなりました。 このドキュメントを使用する場合は、2014 年のリリースの XDK を使用してください。
 
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[概要](introduction-to-the-multiplayer-system.md)  
+[はじめに](introduction-to-the-multiplayer-system.md)  
 マルチプレイヤー システムについて説明します。
 
-[マルチプレイヤー セッション ディレクトリ (MPSD)](multiplayer-session-directory.md)  
+[マルチ プレーヤーのセッション ディレクトリ (mpsd)](multiplayer-session-directory.md)  
 すべてのタイトルにわたってゲームのマルチプレイヤー API メタデータを一元化し、ゲーム セッションを管理するマルチプレイヤー セッション ディレクトリ (MPSD) について説明します。
 
 [MPSD セッションの詳細](mpsd-session-details.md)  
 MPSD セッションの詳細について説明します。
 
-[タイトルを 2015 マルチプレイヤーに適合させるときの一般的な問題](common-issues-when-adapting-multiplayer.md)  
+[2015 マルチ プレーヤーのタイトルを適用するときの一般的な問題](common-issues-when-adapting-multiplayer.md)  
 2015 マルチプレイヤーで動作するようにタイトルを適合させるときに考慮する一般的な問題について説明します。
 
-[SmartMatch マッチメイキング](smartmatch-matchmaking.md)  
+[SmartMatch マッチメイ キング](smartmatch-matchmaking.md)  
 Xbox Live によって使用されるマッチメイキング システムについて説明します。
 
-[アービターの移行](migrating-an-arbiter.md)  
+[アービターを移行します。](migrating-an-arbiter.md)  
 MPSD のアービター移行プロセスについて説明します。
 
-[SmartMatch マッチメイキングの使用](using-smartmatch-matchmaking.md)  
+[SmartMatch マッチメイ キングを使用します。](using-smartmatch-matchmaking.md)  
 SmartMatch マッチメイキングを使用する方法について説明します。
 
-[マルチプレイヤーの実行方法](multiplayer-how-tos.md)  
+[マルチ プレーヤーの方法の](multiplayer-how-tos.md)  
 タイトルで 2015 マルチプレイヤーを使用するための手順を説明します。
 
-[マルチプレイヤー セッション ステータス コード](multiplayer-session-status-codes.md)  
+[マルチ プレーヤーのセッション状態コード](multiplayer-session-status-codes.md)  
 Xbox One のマルチプレイヤー セッション ステータス コードを定義します。
 
-[2015 マルチプレイヤーの FAQ とトラブルシューティング](multiplayer-2015-faq.md)  
+[2015 マルチプレイヤーよく寄せられる質問とトラブルシューティング](multiplayer-2015-faq.md)  
 マルチプレイヤーの FAQ とトラブルシューティングを定義します。
 
 [Xbox One マルチプレイヤー セッション ディレクトリ](xbox-one-multiplayer-session-directory.md): 新しい Xbox One マルチプレイヤー セッション ディレクトリ (MPSD) サービスを使用するマルチプレイヤー セッション作成の概要を示します。

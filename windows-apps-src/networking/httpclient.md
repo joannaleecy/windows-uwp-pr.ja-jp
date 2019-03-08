@@ -4,14 +4,14 @@ title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4b8c137d65339701b40027bb3230162e2c2456
-ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "9079210"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620477"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -25,7 +25,7 @@ HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受�
 
 ## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>HttpClient と Windows.Web.Http 名前空間の概要
 
-[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間、関連する [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間、[**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 名前空間のクラスには、基本的な GET 要求を実行したり、次のようなさらに高度な HTTP 機能を実装したりするための HTTP クライアントとして動作する、ユニバーサル Windows プラットフォーム (UWP) アプリ用のプログラミング インターフェイスが用意されています。
+[  **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間、関連する [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間、[**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 名前空間のクラスには、基本的な GET 要求を実行したり、次のようなさらに高度な HTTP 機能を実装したりするための HTTP クライアントとして動作する、ユニバーサル Windows プラットフォーム (UWP) アプリ用のプログラミング インターフェイスが用意されています。
 
 -   一般的な動詞 (**DELETE**、**GET**、**PUT**、**POST**) に対応するメソッド。 これらの各要求は、非同期操作として送られます。
 
@@ -39,25 +39,25 @@ HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受�
 
 -   非同期メソッドで利用可能な HTTP 要求の進行状況情報。
 
-[**Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) クラスは、[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) から送られた HTTP 要求メッセージを表します。 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) クラスは、HTTP 要求から受け取った HTTP 応答メッセージを表します。 HTTP メッセージは、IETF によって [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) で規定されています。
+[  **Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) クラスは、[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) から送られた HTTP 要求メッセージを表します。 [  **Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) クラスは、HTTP 要求から受け取った HTTP 応答メッセージを表します。 HTTP メッセージは、IETF によって [RFC 2616](https://go.microsoft.com/fwlink/p/?linkid=241642) で規定されています。
 
-[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、クッキーを含む HTTP エンティティ ボディおよびヘッダーとして HTTP コンテンツを表します。 HTTP コンテンツは、HTTP 要求または HTTP 応答に関連付けることができます。 **Windows.Web.Http** 名前空間には、HTTP コンテンツを表す多数のさまざまなクラスが用意されています。
+[  **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、クッキーを含む HTTP エンティティ ボディおよびヘッダーとして HTTP コンテンツを表します。 HTTP コンテンツは、HTTP 要求または HTTP 応答に関連付けることができます。 **Windows.Web.Http** 名前空間には、HTTP コンテンツを表す多数のさまざまなクラスが用意されています。
 
--   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 バッファーとしてのコンテンツ。
--   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 **application/x-www-form-urlencoded** MIME タイプでエンコードされた名前と値の組としてのコンテンツ。
--   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 **multipart/\*** MIME タイプ形式のコンテンツ。
--   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 **multipart/form-data** MIME タイプとしてエンコードされているコンテンツ。
--   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 ストリームとしてのコンテンツ (この内部タイプは、HTTP GET メソッドでのデータの受信、および HTTP POST メソッドでのデータのアップロードに使われます)。
--   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 文字列としてのコンテンツ。
--   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 開発者が独自のコンテンツ オブジェクトを作成するための基本インターフェイス
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)します。 バッファーとしてのコンテンツ。
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)します。 **application/x-www-form-urlencoded** MIME タイプでエンコードされた名前と値の組としてのコンテンツ。
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)します。 コンテンツの形式で、**マルチパート/\***  MIME の種類。
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)します。 **multipart/form-data** MIME タイプとしてエンコードされているコンテンツ。
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)します。 ストリームとしてのコンテンツ (この内部タイプは、HTTP GET メソッドでのデータの受信、および HTTP POST メソッドでのデータのアップロードに使われます)。
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)します。 文字列としてのコンテンツ。
+-   [**IHttpContent** ](https://msdn.microsoft.com/library/windows/apps/dn279684) -独自のコンテンツ オブジェクトを作成する開発者向けの基本インターフェイス
 
 「HTTP 経由でシンプルな GET 要求を送信する」セクションのコード スニペットでは、[**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) クラスを使って、HTTP GET 要求からの HTTP 応答を文字列として表しています。
 
-[**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間では、HTTP ヘッダーと Cookie の作成がサポートされます。これらはプロパティとして、[**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) オブジェクトと [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) オブジェクトに関連付けられます。
+[  **Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間では、HTTP ヘッダーと Cookie の作成がサポートされます。これらはプロパティとして、[**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) オブジェクトと [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) オブジェクトに関連付けられます。
 
 ## <a name="send-a-simple-get-request-over-http"></a>HTTP 経由でシンプルな GET 要求を送信する
 
-この記事の中で既に説明したように、[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、UWP アプリで GET 要求を送信できるようにします。 次のコード スニペットは、GET 要求を送信する方法を示しています。 http://www.contoso.com GET 要求から応答を読み取る[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)クラスと[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)クラスを使用します。
+この記事の中で既に説明したように、[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、UWP アプリで GET 要求を送信できるようにします。 次のコード スニペットは、GET 要求を送信する方法を示します http://www.contoso.comを使用して、 [ **Windows.Web.Http.HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639)クラスおよび[ **Windows.Web.Http.HttpResponseMessage** ](https://msdn.microsoft.com/library/windows/apps/dn279631) GET 要求から応答を読み取るクラス。
 
 ```csharp
 //Create an HTTP client object
@@ -156,12 +156,12 @@ int main()
 }
 ```
 
-## <a name="post-binary-data-over-http"></a>HTTP 経由でデータをポスト バイナリ
+## <a name="post-binary-data-over-http"></a>HTTP 経由で投稿のバイナリ データ
 
-[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis)フォーム データと POST 要求を使用して、web サーバーへのファイルのアップロードとして少量のバイナリ データを送信する次のコード例を示しています。 コードでは、バイナリのデータを表す[**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent)クラスとマルチパート フォーム データを表す[**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent)クラスを使用します。
+[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis)フォーム データと POST 要求を使用して、web サーバーにファイルのアップロードと少量のバイナリ データを送信する次のコード例を示しています。 コードを使用して、 [ **HttpBufferContent** ](/uwp/api/windows.web.http.httpbuffercontent)バイナリのデータを表すクラスと[ **HttpMultipartFormDataContent** ](/uwp/api/windows.web.http.httpmultipartformdatacontent)クラスマルチパート フォーム データを表します。
 
 > [!NOTE]
-> (次のコード例に示す) よう、**取得**を呼び出すことが適切でない UI スレッドにします。 その場合に使用する、適切な手法では、次を参照してください。[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。
+> 呼び出す**取得**(として次のコード例でわかる) が適切でない UI スレッドにします。 その場合に使用する正しい方法を参照してください。[同時実行と非同期操作を C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。
 
 ```cppwinrt
 // pch.h
@@ -228,25 +228,25 @@ int main()
 }
 ```
 
-(上記で使用する明示的なバイナリ データではなく) 実際のバイナリ ファイルの内容を投稿するを確認して[HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)オブジェクトを使いやすくします。 1 つを作成して、そのコンス トラクターの引数として渡す[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)への呼び出しから返される値。 そのメソッドは、バイナリ ファイル内のデータのストリームを返します。
+(上記で使用する明示的なバイナリ データではなく) 実際のバイナリ ファイルの内容を投稿することがわかりますが使いやすく、 [HttpStreamContent](/uwp/api/windows.web.http.httpstreamcontent)オブジェクト。 構築して、そのコンス トラクターに引数として渡す呼び出しから返される値[StorageFile.OpenReadAsync](/uwp/api/windows.storage.storagefile.openreadasync)します。 そのメソッドは、バイナリ ファイル内のデータのストリームを返します。
 
-お勧めします (約 10 MB を超える) 場合は、大きなファイルをアップロードしている場合は、[Windows ランタイムの[バック グラウンド転送](/uwp/api/windows.networking.backgroundtransfer)Api を使います。
+また、大きなファイル (約 10 MB より大きい) をアップロードしている場合をお勧め、Windows ランタイムを使用すること[バック グラウンド転送](/uwp/api/windows.networking.backgroundtransfer)Api。
 
 ## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http の例外
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.NET:** [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)形式では、c# と VB. [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)として表示されます
+**.NET:**  、 [ **Windows.Foundation.Uri** ](https://msdn.microsoft.com/library/windows/apps/br225998)種類[ **System.Uri** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)でC#とVB.
 
 C# や Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、[**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドの 1 つを使って、URI が作成される前にユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
+[  **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
 
-アプリでは、c#、VB.NET、 [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 を使用してエラーを表しますアプリの実行中に例外が発生した場合。 [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) プロパティは、例外を説明するメッセージを返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+.NET Framework 4.5 を使用してアプリC#、VB.NET、 [System.Exception](https://msdn.microsoft.com/library/system.exception.aspx)例外が発生したときに、アプリの実行中にエラーを表します。 [System.Exception.HResult](https://msdn.microsoft.com/library/system.exception.hresult.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [System.Exception.Message](https://msdn.microsoft.com/library/system.exception.message.aspx) プロパティは、例外を説明するメッセージを返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
 Managed C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[Platform::Exception](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) がエラーを表します。 [Platform::Exception::HResult](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [Platform::Exception::Message](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。 一部の無効なメソッド呼び出しでは、返される **HRESULT** は **E\_ILLEGAL\_METHOD\_CALL** です。
+ほとんどのパラメーター検証エラー、 **HRESULT**が返される**E\_INVALIDARG**します。 一部の無効なメソッド呼び出しの**HRESULT**が返される**E\_不正な\_メソッド\_呼び出す**。
 

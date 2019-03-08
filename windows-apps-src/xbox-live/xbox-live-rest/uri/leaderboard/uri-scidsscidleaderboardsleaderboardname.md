@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b73ffc2d6d6b80159651a90aabbf5595b146560d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929477"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645627"
 ---
 # <a name="scidsscidleaderboardsleaderboardname"></a>/scids/{scid}/leaderboards/{leaderboardname}
-定義済みグローバル ランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
+定義済みのグローバルなランキングにアクセスします。 これらの Uri のドメインが`leaderboards.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,24 +24,24 @@ ms.locfileid: "8929477"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。| 
-| leaderboardname| string| アクセス対象の定義済みのランキング リソースの一意の識別子。| 
+| scid| GUID| アクセスされるリソースを含むサービス構成の識別子です。| 
+| leaderboardname| string| アクセスされる定義済みのランキング リソースの一意の識別子。| 
   
 <a id="ID4E3B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-scidsscidleaderboardsleaderboardnameget.md)
+[取得](uri-scidsscidleaderboardsleaderboardnameget.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;定義済みグローバル ランキングを取得します。
+&nbsp;&nbsp; &nbsp;&nbsp;定義済みのグローバルなランキングを取得します。
 
 
 [値のメタデータを取得します。](uri-scidsscidleaderboardsleaderboardnamegetvaluemetadata.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みグローバル ランキングを取得します。
+&nbsp;&nbsp; &nbsp;&nbsp;ランキングの値に関連付けられたメタデータと共に定義済みのグローバルなランキングを取得します。
 
  
 <a id="ID4EJC"></a>
@@ -54,6 +54,6 @@ ms.locfileid: "8929477"
  
 ##### <a name="parent"></a>Parent 
 
-[ランキング URI](atoc-reference-leaderboard.md)
+[Uri のランキング](atoc-reference-leaderboard.md)
 
    

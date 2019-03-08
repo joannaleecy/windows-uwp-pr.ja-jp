@@ -1,5 +1,5 @@
 ---
-title: 画面キャプチャ
+title: 画面の取り込み
 description: Windows.Graphics.Capture 名前空間 には、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、コラボレーティブでインタラクティブなエクスペリエンスを構築できます。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.date: 11/30/2018
@@ -7,30 +7,30 @@ ms.topic: article
 keywords: Windows 10, UWP, 画面キャプチャ
 ms.localizationpriority: medium
 ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049979"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592967"
 ---
-# <a name="screen-capture"></a>画面キャプチャ
+# <a name="screen-capture"></a>画面の取り込み
 
 Windows 10、バージョン 1803 以降では、[Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) に、ディスプレイまたはアプリケーション ウィンドウからフレームを取得する API が用意されています。これにより、ビデオ ストリームやスナップショットを作成して、共同作業に対応したインタラクティブなエクスペリエンスを構築できます。
 
 画面キャプチャでは、開発者がセキュリティで保護されたシステム UI を起動し、エンド ユーザーがこれを使ってキャプチャ対象のディスプレイまたはアプリケーション ウィンドウを選択すると、アクティブにキャプチャされた項目の周囲に、それを通知する黄色の枠線がシステムによって描画されます。 複数の同時キャプチャ セッションの場合は、キャプチャされる各項目が黄色の枠線で囲まれます。
 
 > [!NOTE]
-> 画面キャプチャ Api は、デスクトップと Windows Mixed Reality のイマーシブ ヘッドセットでのみサポートされます。
+> 画面キャプチャ Api は、デスクトップと Windows Mixed Reality イマーシブ ヘッドセットでのみサポートされます。
 
 ## <a name="add-the-screen-capture-capability"></a>画面キャプチャ機能を追加する
 
-**Windows.Graphics.Capture**名前空間の Api では、アプリケーションのマニフェストで宣言する一般的な機能が必要です。
+Api にある、 **Windows.Graphics.Capture**名前空間には、アプリケーションのマニフェストで宣言する一般的な機能が必要があります。
     
-1. **ソリューション エクスプ ローラー**で、 **Package.appxmanifest**を開きます。
+1. 開いている**Package.appxmanifest**で、**ソリューション エクスプ ローラー**します。
 2. **[機能]** タブをクリックします。
-3. **グラフィックスのキャプチャ**を確認します。
+3. 確認**グラフィックス キャプチャ**します。
 
-![グラフィックスのキャプチャ](images/screen-capture-1.png)
+![グラフィックス キャプチャ](images/screen-capture-1.png)
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>システム UI を起動して画面キャプチャを開始する
 
@@ -68,7 +68,7 @@ public async Task StartCaptureAsync()
 }
 ```
 
-これは UI コードであるため、UI スレッドで呼び出される必要があります。 ( **MainPage.xaml.cs**) のようなアプリケーションのページの分離コードから呼び出すしている場合これを自動的に場合は、強制的に実行できます次のコードで、UI スレッドで実行されるが。
+UI コードであるため、UI スレッドで呼び出される必要があります。 アプリケーションのページの分離コードから呼び出している場合 (など**MainPage.xaml.cs**) が自動的には、この操作実行されますが、そうでない場合、次のコードで UI スレッドで実行することを強制できます。
 
 ```cs
 CoreWindow window = CoreApplication.MainView.CoreWindow;
@@ -81,7 +81,7 @@ await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>キャプチャ フレーム プールとキャプチャ セッションを作成する
 
-**GraphicsCaptureItem** を使用し、対象の D3D デバイス、サポートされるピクセル形式 (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**)、目的のフレーム数 (任意の整数)、フレーム サイズを指定して、[Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) を作成します。 **GraphicsCaptureItem** クラスの **ContentSize** プロパティをフレーム サイズとして使用できます。
+使用して、 **GraphicsCaptureItem**、作成、 [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、D3D デバイスのピクセル形式をサポートします (**DXGI\_形式\_B8G8R8A8\_UNORM**)、(任意の整数を指定できます) が目的のフレームとフレームの数、サイズ。 **GraphicsCaptureItem** クラスの **ContentSize** プロパティをフレーム サイズとして使用できます。
 
 ```cs
 private GraphicsCaptureItem _item;
@@ -163,10 +163,10 @@ UI スレッドで **FrameArrived** を使用することはできれば避け�
 
 ## <a name="putting-it-all-together"></a>完成したコードの例
 
-次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例を示します。 このサンプルでは、フロント エンドにボタンがあるが、クリックすると、 **Button_ClickAsync**メソッドを呼び出します。
+次のコード スニペットは、UWP アプリケーションで画面キャプチャを実装する方法のエンド ツー エンド例です。 このサンプルで、フロント エンドにボタンがあるをクリックすると、呼び出し、 **Button_ClickAsync**メソッド。
 
 > [!NOTE]
-> このスニペットでは、 [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)を 2D グラフィックス レンダリング用のライブラリを使用します。 プロジェクトを設定する方法については、ドキュメントをご覧ください。
+> このスニペットを使用して[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)、2D グラフィックス レンダリングのライブラリです。 プロジェクト用に設定する方法については、マニュアルを参照してください。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -384,10 +384,10 @@ namespace WindowsGraphicsCapture
 }
 ```
 
-## <a name="record-a-video"></a>ビデオを録画します。
+## <a name="record-a-video"></a>ビデオを記録します。
 
-アプリケーションのビデオを記録する場合より簡単に[Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)で実行できます。 これは、デスクトップでのみ動作するようのデスクトップ拡張 SDK の一部と、プロジェクトからへの参照を追加する必要があります。 詳細については、[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)を参照してください。
+より簡単に実行できるアプリケーションのビデオを記録する場合、 [Windows.Media.AppRecording 名前空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)します。 これは、デスクトップでのみ機能するためのデスクトップ拡張機能 SDK の一部、プロジェクトからへの参照を追加する必要があります。 参照してください[デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)詳細についてはします。
 
 ## <a name="see-also"></a>関連項目
 
-* [Windows.Graphics.Capture 名前空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture Namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture)

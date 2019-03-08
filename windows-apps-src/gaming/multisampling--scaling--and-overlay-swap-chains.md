@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, スワップ チェーン スケーリング, オーバーレイ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943787"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644197"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>スワップ チェーンのスケーリングとオーバーレイ
 
@@ -148,15 +148,15 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **注:**  、DXGI アダプターでは、オーバーレイをサポートする場合、次の手順に進みます。 デバイスがオーバーレイをサポートしない場合は、複数のスワップ チェーンを使ったレンダリングは効率的ではありません。 代わりに、リアルタイムのゲーム コンテンツと同じスワップ チェーンで解像度を下げて UI をレンダリングします。
+    > **注**   DXGI アダプターでは、オーバーレイをサポートする場合は、[次へ] の手順に進みます。 デバイスがオーバーレイをサポートしない場合は、複数のスワップ チェーンを使ったレンダリングは効率的ではありません。 代わりに、リアルタイムのゲーム コンテンツと同じスワップ チェーンで解像度を下げて UI をレンダリングします。
 
      
 
-2.  [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を使って前景スワップ チェーンを作成します。 次のオプションを [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定し、*pDesc* パラメーターに提供する必要があります。
+2.  [  **IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を使って前景スワップ チェーンを作成します。 次のオプションを設定する必要があります、 [ **DXGI\_スワップ\_チェーン\_DESC1** ](https://msdn.microsoft.com/library/windows/desktop/hh404528)に指定された、 *pDesc*パラメーター。
 
-    -   前景スワップ チェーンを示す [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) スワップ チェーン フラグを指定します。
-    -   [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) アルファ モード フラグを使います。 前景スワップ チェーンは常にプリマルチプライ済みです。
-    -   [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) フラグを設定します。 前景スワップ チェーンは、常にネイティブの解像度で実行されます。
+    -   指定、 [ **DXGI\_スワップ\_チェーン\_フラグ\_フォア グラウンド\_レイヤー** ](https://msdn.microsoft.com/library/windows/desktop/bb173076)スワップ チェーン スワップ チェーンの前景色を示すフラグ。
+    -   使用して、 [ **DXGI\_アルファ\_モード\_合成チャンネル**](https://msdn.microsoft.com/library/windows/desktop/hh404496)アルファ モード フラグ。 前景スワップ チェーンは常にプリマルチプライ済みです。
+    -   設定、 [ **DXGI\_スケーリング\_NONE** ](https://msdn.microsoft.com/library/windows/desktop/hh404526)フラグ。 前景スワップ チェーンは、常にネイティブの解像度で実行されます。
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **注:** スワップ チェーンのサイズが変更されるたびに、 [**dxgi \_swap\_chain\_flag\_foreground\_layer**](https://msdn.microsoft.com/library/windows/desktop/bb173076)をもう一度設定します。
+    > **注**  設定、 [ **DXGI\_スワップ\_チェーン\_フラグ\_フォア グラウンド\_レイヤー** ](https://msdn.microsoft.com/library/windows/desktop/bb173076)もう一度すべてスワップ チェーンのサイズが変更された時刻。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -199,7 +199,7 @@ Direct3D 11.2 には、フリップ モデルのスワップ チェーンで待�
 
 4.  前景スワップ チェーンでは、プリマルチプライ アルファ値が必ず使われます。 各ピクセルのカラー値は、フレームが表示される前にアルファ値が乗算されることが前提となります。 たとえば、アルファ値 50% の場合、100% 白の BGRA ピクセルは (0.5, 0.5, 0.5, 0.5) に設定されます。
 
-    アルファ値のプリマルチプライの手順は、アプリのブレンド状態を適用することにより、出力マージャー ステージで実行できます ([**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349) をご覧ください)。それには、[**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 構造の **SrcBlend** フィールドを **D3D11\_SRC\_ALPHA** に設定します。 プリマルチプライ アルファ値を含むアセットを使うこともできます。
+    アルファ premultiplication 手順は、アプリ ブレンドの状態を適用することで、出力マージャー ステージで実行できます (を参照してください[ **ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) で、 [ **D3D11\_レンダリング\_ターゲット\_BLEND\_DESC** ](https://msdn.microsoft.com/library/windows/desktop/ff476200)構造体の**SrcBlend**フィールドに設定**D3D11\_SRC\_アルファ**します。 プリマルチプライ アルファ値を含むアセットを使うこともできます。
 
     アルファ値のプリマルチプライの手順が実行されていない場合、前景スワップ チェーンのカラーは想定よりも明るくなります。
 

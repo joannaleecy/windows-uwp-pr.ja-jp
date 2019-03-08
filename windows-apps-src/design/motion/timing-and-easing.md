@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: どの Fluent のモーションはタイミングと、イージング関数について説明します。
 title: タイミングとイージング - UWP アプリでのアニメーション
 label: Timing and easing
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645267"
 ---
 # <a name="timing-and-easing"></a>タイミングとイージング
 
@@ -204,5 +204,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>関連記事
 
-- [モーションの概要](index.md)
+- [アニメーションの概要](index.md)
 - [方向性と重力](directionality-and-gravity.md)

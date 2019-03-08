@@ -1,43 +1,43 @@
 ---
-Description: Learn how to pin secondary tiles to taskbar.
-title: タスク バーにセカンダリ タイルをピン留め
+Description: タスク バーに、セカンダリ タイルをピン留めする方法について説明します。
+title: タスク バーに、セカンダリ タイルをピン留め
 label: Pin secondary tiles to taskbar
 template: detail.hbs
 ms.date: 11/28/2018
 ms.topic: article
-keywords: windows 10, uwp, セカンダリ タイルは、タスク バーに暗証番号 (pin)、タスク バーにセカンダリ タイルをピン留めショートカット
+keywords: windows 10、uwp、タスク バーで、セカンダリ タイルにピン留めするには、タスク バーで、セカンダリ タイルをピン留めショートカット
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad322fe371b0e1f3605ffb4c29108a15bb28e0c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933176"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591977"
 ---
-# <a name="pin-secondary-tiles-to-taskbar"></a>タスク バーにセカンダリ タイルをピン留め
+# <a name="pin-secondary-tiles-to-taskbar"></a>タスク バーに、セカンダリ タイルをピン留め
 
-スタート画面にセカンダリ タイルをピン留めと同様には、クイック アクセス許可を与えるコンテンツに、アプリ内でセカンダリ タイル、タスク バーに固定できます。
+開始するセカンダリ タイルをピン留めと同じようには、アプリ内でコンテンツをユーザー クイック アクセスを付与セカンダリ タイル、タスク バーに固定できます。
 
 <img alt="Taskbar pinning" src="../images/taskbar/pin-secondary-ui.png" width="972"/>
 
 > [!IMPORTANT]
-> **制限付きのアクセス API**: この API は、制限されたアクセス機能です。 この API を使用するお問い合わせください[taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar)します。
+> **API のアクセス制限**:この API は、制限付きアクセス機能です。 この API を使用する連絡[ taskbarsecondarytile@microsoft.com](mailto:taskbarsecondarytile@microsoft.com?Subject=Limited%20Access%20permission%20to%20use%20secondary%20tiles%20on%20taskbar)します。
 
-> **年 2018年 10 月を必要と更新**: が実行されているビルド 17763 以上をタスク バーにピン留めして 17763 SDK をターゲットにする必要があります。
+> **2018 の年 10 月の更新プログラムが必要**:17763 SDK をターゲットする必要があり、ビルド 17763 以降を実行してあるタスクバーにピン留めします。
 
 
 ## <a name="guidance"></a>ガイダンス
 
-セカンダリ タイルは、アプリ内の特定の領域に直接アクセスするユーザーの一貫性があり、効率的な方法を提供します。 ただし、ユーザーがタスク バーにセカンダリ タイルを「ピン留め」するかどうかと、アプリのピン留めできる場合の領域は開発者によって決まります。 詳細なガイダンスについては、[セカンダリ タイルのガイダンス](secondary-tiles-guidance.md)を参照してください。
+セカンダリ タイルは、アプリ内の特定の領域に直接アクセスするユーザーの一貫性があり、効率的な方法を提供します。 ユーザーがタスク バーにセカンダリ タイルを「ピン留め」するかどうかを選択、ですが、アプリ内で固定できる領域は、開発者によって決まります。 詳細なガイダンスについては、次を参照してください。[セカンダリ タイル ガイダンス](secondary-tiles-guidance.md)します。
 
 
-## <a name="1-determine-if-api-exists-and-unlock-limited-access"></a>1. API の存在を確認し、制限付きアクセスをロック解除
+## <a name="1-determine-if-api-exists-and-unlock-limited-access"></a>1. API が存在するかどうかを判断し、制限付きアクセスのロックを解除
 
-古いデバイス (Windows 10 の以前のバージョンをターゲットとしている) 場合は、Api をピン留めタスク バーはありません。 したがって、ピン留めできるはこれらのデバイスで、暗証番号 (pin) ボタンを表示しないでください。
+古いデバイスは、(以前のバージョンの Windows 10 を対象としている) 場合は、Api をピン留め、タスク バーに必要はありません。 そのため、これらのピン留め対応ではないデバイスに暗証番号 (pin) ボタンを表示しないでください。
 
-さらに、この機能は、アクセスが制限された [ロックされています。 アクセスを取得するには、Microsoft にお問い合わせください。 **[TaskbarManager.RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、 **[TaskbarManager.IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**、および**[TaskbarManager.TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** API 呼び出しは、アクセス拒否例外で失敗します。 アプリは、アクセス許可することがなく、この API を使用して許可されず、API の定義は、いつでもでも変更可能性があります。
+さらに、この機能は、制限付きアクセスでロックされています。 アクセスを取得するには、Microsoft にお問い合わせください。 API の呼び出しに **[TaskbarManager.RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、  **[TaskbarManager.IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)**、および**[TaskbarManager.TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** はアクセス拒否例外で失敗します。 アプリが、アクセス許可なしには、この API を使用して許可されていませんし、API の定義は、いつでもでも変更可能性があります。
 
-Api が存在するかを判断するには、 [ApiInformation.IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_)メソッドを使います。 **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API を使用して、API のロックを解除してみてください。
+使用して、 [ApiInformation.IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) Api が存在するかどうかを判断するメソッド。 クリックして、 **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** API を API のロックを解除してください。
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -70,9 +70,9 @@ else
 
 ## <a name="2-get-the-taskbarmanager-instance"></a>2. TaskbarManager インスタンスを取得します。
 
-UWP アプリはさまざまなデバイスで実行できます。それらのすべてがタスク バーをサポートするとは限りません。 現時点では、デスクトップ デバイスのみがタスク バーをサポートしています。 さらに、タスク バーのプレゼンスは、付属し、移動します。 タスク バーが現在存在するかどうかを確認、 **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** メソッドを呼び出して、返されるインスタンスを確認して、が null でないです。 タスク バーが存在していない場合、暗証番号 (pin) ボタンを表示しないでください。
+UWP アプリはさまざまなデバイスで実行できます。それらのすべてがタスク バーをサポートするとは限りません。 現時点では、デスクトップ デバイスのみがタスク バーをサポートしています。 さらに、タスク バーのプレゼンスは、付属し、移動します。 タスク バーが現在存在するかどうかを確認するには、呼び出し、 **[TaskbarManager.GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** メソッドとインスタンスが返されることを確認が null でないです。 タスク バーが存在しない場合は、ピン留めする ボタンを表示しません。
 
-ピン留めすると、次回の別の操作を実行する必要がある新しいインスタンスを取得しなどの 1 つの操作の期間中のインスタンスを保持することをお勧めします。
+など、ピン留めすると、次回の別の操作を行う必要がある新しいインスタンスを取得し、1 つの操作の実行中のインスタンス上に保持することをお勧めします。
 
 ```csharp
 TaskbarManager taskbarManager = TaskbarManager.GetDefault();
@@ -88,9 +88,9 @@ else
 ```
 
 
-## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3.、タイルが現在タスク バーにピン留めされているかどうかを確認します。
+## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3.タイルがタスク バーに現在固定されているかどうかを確認します。
 
-タイルが既にピン留めした場合は、代わりに、ピン留めを外す] ボタンを表示する必要があります。 **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** メソッドを使用して、タイルが現在ピン留めされているかどうかを確認することができます (ユーザーをピン留めを外すにいつでもでも)。 知りたいタイルの**TileId**を渡すことで、このメソッドは、ピン留めされています。
+タイルが既に固定されている場合は、代わりをピン解除 ボタンを表示する必要があります。 使用することができます、 **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** タイルが現在固定されているかどうかを確認する方法 (ユーザーはピン留めを外すこと、いつでも)。 この方法で渡す、 **TileId**を知りたいタイルのピン留めします。
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -105,11 +105,11 @@ else
 ```
 
 
-## <a name="4-check-whether-pinning-is-allowed"></a>4. ピン留めが許可されているかどうかを確認します。
+## <a name="4-check-whether-pinning-is-allowed"></a>4。ピン留めが許可されているかどうか確認します。
 
-グループ ポリシーによって、タスク バーにピン留めを無効にすることができます。 [TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)プロパティを使用して、ピン留めが許可されているかどうかを確認できます。
+タスク バーにピン留めは、グループ ポリシーによって無効にできます。 [TaskbarManager.IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)プロパティでは、ピン留めが許可されているかどうか確認することができます。
 
-このプロパティをチェックする必要があります、ユーザーが、暗証番号 (pin) ボタンをクリックしが false の場合は、このコンピューターにピン留めが許可されていないユーザーに知らせるメッセージ ダイアログを表示する必要があります。
+このプロパティを確認する必要があります、ユーザーは、暗証番号 (pin) ボタンをクリックすると、およびが false の場合は、ピン留めは、このコンピューターでは許可されていないユーザーに通知メッセージ ダイアログ ボックスを表示する必要があります。
 
 ```csharp
 TaskbarManager taskbarManager = TaskbarManager.GetDefault();
@@ -130,13 +130,13 @@ else
 ```
 
 
-## <a name="5-construct-and-pin-your-tile"></a>5. を構築し、タイルをピン留め
+## <a name="5-construct-and-pin-your-tile"></a>5。構築し、タイルをピン留め
 
-ユーザーが、暗証番号 (pin) ボタンをクリックして、Api が存在すること、タスク バーが存在して、ピン留めを許可する] を決定した暗証番号 (pin) までの時間です。
+ユーザーが、ピン留めする ボタンをクリックして、Api が存在する、タスク バーが存在する場合は、およびピン留めが許可されていることを確認しています.ピン留めする時間します。
 
-最初に、スタート画面にピン留めした場合と同様に、セカンダリ タイルを作成します。 セカンダリ タイルのプロパティについて詳しくは、[スタート画面にセカンダリ タイルをピン留め](secondary-tiles-pinning.md)を読み取ること知ることができます。 ただし、以前の必須のプロパティだけでなく、タスク バーにピン留めした場合 (これは、タスク バーで使われるロゴ) Square44x44Logo も必要です。 それ以外の場合、例外がスローされます。
+最初に、スタートにピン留めしたときと同様に、セカンダリ タイルを構築します。 読み取ることによってセカンダリ タイルのプロパティについて説明できる[開始するセカンダリ タイルをピン留め](secondary-tiles-pinning.md)します。 ただし、以前の必須プロパティだけでなく、タスク バーにピン留めするときに (これは、タスク バーで使用されるロゴ) Square44x44Logo も必要です。 それ以外の場合、例外がスローされます。
 
-次に、タイルを**[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** メソッドに渡します。 これは、制限付きアクセスの下であるためこれによって確認のダイアログ ボックスが表示されなくされ、UI スレッドは必要ありません。 ただし、今後このを開いたときアクセス制限されたを超えて呼び出し元の制限付きアクセスを利用していないダイアログ ボックスが表示され、UI スレッドを使用する必要があります。
+次に、タイルを渡す、 **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** メソッド。 これは、制限付きアクセスであるためこの確認のダイアログ ボックスは表示されませんし、UI スレッドは必要ありません。 今後これが開かれたときを超えて、アクセスが制限された呼び出し元の制限付きアクセスを利用していないが、ダイアログを受信し、UI スレッドを使用する必要があります。
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -150,12 +150,12 @@ tile.VisualElements.Square150x150Logo = new Uri("ms-appdata:///AppIcons/PowerPoi
 bool isPinned = await taskbarManager.RequestPinSecondaryTileAsync(tile);
 ```
 
-このメソッドは、タイルがタスク バーにピン留めできるようになりましたかどうかを示すブール値を返します。 タイルが既にピン留めされている場合、このメソッドは、既存のタイルを更新し、true を返します。 ピン留めが許可されている、またはタスク バーがサポートされていない、このメソッドは false を返します。
+このメソッドは、タスク バーに、タイルがピン留めされたようになりましたかどうかを示すブール値を返します。 タイルが既にピン留めされた場合、このメソッドは既存のタイルを更新し、true を返します。 ピン留めが許可されていない、またはタスク バーはサポートされていません、このメソッドは false を返します。
 
 
 ## <a name="enumerate-tiles"></a>タイルを列挙します。
 
-作成し、まだはどこかにピン留めされているすべてのタイルを参照してください (スタート画面、タスク バー、またはその両方)、 **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)** を使用します。 その後、これらのタイルがスタート画面やタスク バーにピン留めされているかどうかを確認できます。 サーフェスがサポートされていない場合は、これらのメソッドは false を返します。
+すべてのタイルを作成してはまだピン留めどこか (開始、タスク バーで、またはその両方) を参照してくださいを使用して、  **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)** します。 その後、これらのタイルがスタートやタスク バーにピン留めされているかどうかを確認できます。 サーフェスがサポートされていない場合は、これらのメソッドは false を返します。
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -179,16 +179,16 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 
 ## <a name="update-a-tile"></a>タイルを更新します。
 
-[セカンダリ タイルを更新](secondary-tiles-pinning.md#updating-a-secondary-tile)」の説明に従って、既にピン留めしたタイルを更新して、 [**SecondaryTile.UpdateAsync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync)メソッドを使用できます。
+使用することができます、既にピン留めされたタイルを更新する、 [ **SecondaryTile.UpdateAsync** ](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync)メソッド」の説明に従って[セカンダリ タイルの更新](secondary-tiles-pinning.md#updating-a-secondary-tile)します。
 
 
-## <a name="unpin-a-tile"></a>タイルのピン留めを外す
+## <a name="unpin-a-tile"></a>タイルをピン留めを外す
 
-タイルが現在ピン留めした場合、アプリは、ピン留めを外す] ボタンを用意する必要があります。 タイルをピン留めを外すを**[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** を渡して外したするセカンダリ タイルの**TileId**を呼び出すだけです。
+アプリは、タイルが現在固定されている場合、[ピン解除] ボタンを提供します。 タイルをピン解除だけ呼び出す **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** で渡し、 **TileId** unpinned するセカンダリ タイルの。
 
-このメソッドは、タイルがタスク バーにピン留めできなくするかどうかを示すブール値を返します。 場合は、タイルがピン留めされている、最初に、これも true を返します。 外したりが許可された場合、これは false を返します。
+このメソッドは、タイルが不要になったタスク バーにピン留めされたかどうかを示すブール値を返します。 タイルは、最初に固定されている場合も、true を返します。 外す許可されていない場合これは false を返します。
 
-タイルがタスク バーにピン留めのみと、タイルを任意の場所にピン留めされなくなったためこの削除されます。
+場合は、タイルは、タスク バーにピン留めのみが、これが任意の場所に固定されて不要になったため、タイルが削除されます。
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -201,9 +201,9 @@ if (taskbarManager != null)
 
 ## <a name="delete-a-tile"></a>タイルを削除します。
 
-すべての場所 (スタート画面、タスク バー) からのタイルのピン留めを外すする場合は、 **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** メソッドを使用します。
+Everywhere (開始、タスク バー) からタイルの固定を解除する場合は、使用、 **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** メソッド。
 
-これは、ユーザーがピン留めされている内容が適用されるしなくなった場合に適しています。 たとえば、アプリでは、スタート画面とタスク バーにノートブックをピン留めすることができ、ユーザーがノートブックを削除し場合、は、ノートブックに関連付けられているタイルを単に削除する必要があります。
+これは、コンテンツをピン留めされたユーザーは適用できなくする場合に適してします。 たとえば、アプリでは、開始、タスク バーで、ノートブックをピン留めすることができ、ユーザーが、notebook を削除し場合、は、ノートブックに関連付けられたタイルを簡単に削除する必要があります。
 
 ```csharp
 // Initialize a secondary tile with the same tile ID you want removed.
@@ -215,18 +215,18 @@ await toBeDeleted.RequestDeleteAsync();
 ```
 
 
-## <a name="unpin-only-from-start"></a>スタート画面からのみピン留めを外す
+## <a name="unpin-only-from-start"></a>開始のみからピン留めを外す
 
-タスク バーのまま、セカンダリ タイルをスタートからピン留めを外す場合は、 **[StartScreenManager.TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** メソッドを呼び出すことができます。 同様に他の任意のサーフェスになったピン留めした場合、タイルが削除されます。
+タスク バーのまま開始からのセカンダリ タイルの固定を解除する場合を呼び出すことができます、 **[StartScreenManager.TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** メソッド。 不要になった他のサーフェスに固定されている場合、タイル同様に削除されます。
 
-このメソッドは、タイルがスタート画面にピン留めできなくするかどうかを示すブール値を返します。 場合は、タイルがピン留めされている、最初に、これも true を返します。 外したり許可されない、またはスタート画面はサポートされていません、これは false を返します。
+このメソッドは、タイルがスタートにピン留め不要になったかどうかを示すブール値を返します。 タイルは、最初に固定されている場合も、true を返します。 外すが許可されていないか、開始はサポートされていません、この false を返します。
 
 ```csharp
 await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 ```
 
 
-## <a name="resources"></a>リソース
+## <a name="resources"></a>参考資料
 
 * [TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [スタート画面にセカンダリ タイルをピン留め](secondary-tiles-pinning.md)
+* [開始するセカンダリ タイルをピン留め](secondary-tiles-pinning.md)

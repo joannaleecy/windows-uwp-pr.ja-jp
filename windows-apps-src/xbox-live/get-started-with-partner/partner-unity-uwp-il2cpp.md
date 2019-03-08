@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: ace950dec6a57a9550ea7b3fbe6c52b53855e2e0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935553"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622917"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 
@@ -31,21 +31,21 @@ Unity 5.6 以上をインストールし、インストール時には **[Window
 
 **2) WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。** Visual Studio 2015 の場合、このツールは https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity で入手できます。  Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。
 
-**3) 新規または既存の Unity プロジェクトを開きます。**
+**3) 新しいまたは既存の Unity プロジェクトを開く**
 
-**4) Unity の [Build Settings] メニューで、プラットフォームをユニバーサル Windows プラットフォームに切り替えます。**
+**4) スイッチ Unity ビルド設定 メニューでユニバーサル Windows プラットフォームのプラットフォーム**
 
-**5) Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。**
+**5) il2cpp バック エンドのスクリプト バックエンド Unity player の設定を有効にし、.NET 4.6 に API の互換性を設定**
 
 ![](../images/unity/unity-il2cpp-1.png)
 
 **6) 最新バージョンの Xbox Live WinRT Unity アセット パッケージをインポートします。** このパッケージは https://github.com/Microsoft/xbox-live-api/releases で入手できます。
 
-**7) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。**
+**7) を追加し、新しい C をアタッチ\#Unity オブジェクトへのスクリプト。**
 
-たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。 ゲーム オブジェクトの種類は問いません。
+たとえば、「メイン カメラ」などの Unity オブジェクトをクリックして、"コンポーネントの追加 をクリックします。 \| "新しいスクリプト" \| C\#スクリプト\|"XboxLiveScript"名前を付けます。 ゲーム オブジェクトの種類は問いません。
 
-**8) Visual Studio (VSTU 3.1+ がインストールされていること) でスクリプトを開きます。**
+**8) (VSTU) 3.1 + がインストールされた Visual Studio でスクリプトを開きます。**
 
 2 つのプロジェクトを確認し、VSTU によって生成された "Player" プロジェクト内のゲーム スクリプト XboxLiveTest.cs を開きます。
 
@@ -54,7 +54,7 @@ Unity 5.6 以上をインストールし、インストール時には **[Window
 このプロジェクトは UWP 用に生成された特別なプロジェクトであり、アセットに配置した winmd ファイルへの参照が含まれています。
 また、"#if ENABLE_WINMD_SUPPORT" 定義が自動的に設定されるため、IntelliSense と構文の強調表示が適切に機能します。
 
-**9) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。**
+**9) XboxLiveTest.cs ソース ファイルに次の Xbox Live のコードを追加します。**
 
 ```csharp
 
@@ -105,13 +105,13 @@ public class XboxLiveTest : MonoBehaviour
 
 ```
 
-**10) プレイヤーの設定内にある公開の設定で、"InternetClient" 機能が選択されていることを確認します。**
+**Player の設定については、発行の設定で選択されている 'InternetClient' 機能がある 10) ことを確認します**
 
 ![](../images/unity/unity-il2cpp-3.png)
 
-**11) Unity でプロジェクトを ビルドします。**
+**11) で Unity プロジェクトをビルドします。**
 
-1.  [File]、[Build Settings] の順に移動し、**[ユニバーサル Windows プラットフォーム]** をクリックして、**[Switch Platform]** をクリックします。
+1.  ファイルに移動して\|ビルド設定 をクリックして**ユニバーサル Windows プラットフォーム**をクリックするかどうかを確認して**スイッチ プラットフォーム**
 
 2.  [Add Open Scenes] をクリックして、現在のシーンをビルドに追加します。
 
@@ -121,7 +121,7 @@ public class XboxLiveTest : MonoBehaviour
 
 5.  Unity の [Build] をクリックして、UWP アプリケーション内に Unity ゲームをラップする UWP Visual Studio プロジェクトを生成します。 新しいファイルが多数作成されるため、場所を指定するときは、混乱を避けるために新しいフォルダーを作成します。 フォルダーの名前を "Build" にすることをお勧めします。フォルダーに名前を付けたら、そのフォルダーを選択します。
 
-**12) Xbox Live 構成をプロジェクトに追加します。**
+**12) Xbox Live の構成をプロジェクトに追加します。**
 
 xboxservices.config ファイルを追加します。
 
@@ -132,17 +132,16 @@ xboxservices.config ファイルを追加します。
 > [!NOTE]
 > xboxservices.config 内のすべての値で大文字と小文字が区別されます。
 
-**13) Visual Studio から UWP アプリをコンパイルして実行します。**
+**13) をコンパイルし、Visual Studio から UWP アプリの実行**
 
 これにより、通常の UWP アプリのようにアプリが起動し、動作のために UWP アプリ コンテナーが必要なときに Xbox Live 呼び出しが可能になります。
 
-**14) Unity で変更を加えた場合はリビルドします。**
-  
+**Unity 内のあらゆるものに変更を加える場合 14) リビルド**  
 Unity で変更を加えた場合、UWP プロジェクトをリビルドする必要があります。
 
 再コンパイル時に Unity が pfx ファイルを置き換えることによって Xbox Live へのサインインが失敗することに注意してください。この問題を避けるために Unity プロジェクト内でファイルを更新する必要があります。
 
-これを行うには、[File]、[Build Settings] の順に移動し、**ユニバーサル Windows プラットフォーム** プレイヤー上で [Build Settings] をクリックしてから、[PFX] ボタンをクリックして、PFX ファイルを前の手順で取得したファイルに置き換えます。 別の方法として、Unity 内でプロジェクトをリビルドするたびに PFX ファイルを削除することもできます。
+ファイルに移動するのには、\|ビルドの設定は、"Build Settings"でクリックして、**ユニバーサル Windows プラットフォーム**プレーヤーと PFX を置換する PFX ボタンが上から取得した 1 つのファイル をクリックします。 別の方法として、Unity 内でプロジェクトをリビルドするたびに PFX ファイルを削除することもできます。
 
 ## <a name="troubleshooting-common-issues"></a>一般的な問題のトラブルシューティング
 
@@ -168,6 +167,6 @@ a) コンピューターがデベロッパー サンドボックスに設定さ�
 
 b) デベロッパー サンドボックスにアクセスできる Xbox Live アカウントでサインインしていること。  通常のリテール Xbox Live アカウントにはそのようなアクセス権がありません。  XDP またはパートナー センターを使用して、テスト アカウントを作成することができます。
 
-c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これは手動で編集できますが、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択するのが最も簡単な修正方法です。
+c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これを手動で編集できますが、これを解決する最も簡単な方法は、Visual Studio でプロジェクトを右クリックし、"Store"を選択する\|「、ストアでアプリを関連付ける」。
 
-d) Unity によって提供されるストック .pfx ファイルは Identity が正しくないため、そのファイルをディスクから削除し、そのファイルを参照する行を .csproj から削除します。または、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択すれば、適切な .pfx ファイルが配置されます。  その後、Unity に戻って **ユニバーサル Windows プラットフォーム** プレイヤー上で [Build Settings] をクリックし、[PFX] ボタンをクリックして、.pfx ファイルを Visual Studio での [アプリケーションを Microsoft Store と関連付ける] 操作により取得したファイルに置き換えます。
+d) Unity によって提供されるストックの .pfx ファイルは、適切な id を必要はありませんので、いずれか、ディスクから削除し、それを参照する .csproj に行を削除または、右が Visual Studio でプロジェクトをクリックし、"Store"を選択\|"に関連付けるアプリ ストアと"これを適切な .pfx ファイルを配置します。  その後、Unity に戻って **ユニバーサル Windows プラットフォーム** プレイヤー上で [Build Settings] をクリックし、[PFX] ボタンをクリックして、.pfx ファイルを Visual Studio での [アプリケーションを Microsoft Store と関連付ける] 操作により取得したファイルに置き換えます。
