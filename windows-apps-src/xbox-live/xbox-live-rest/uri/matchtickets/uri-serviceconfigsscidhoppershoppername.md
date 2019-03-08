@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db069f59eeba565a257531907d6be0b1dcd189d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925990"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598427"
 ---
 # <a name="serviceconfigsscidhoppershoppername"></a>/serviceconfigs/{scid}/hoppers/{hoppername}
 
-マッチ チケットを作成する POST 操作をサポートしています。
+一致のチケットを作成する POST 操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> この URI は、コントラクト 103 以降で使用するためのものがおり、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
 <a id="ID4ER"></a>
 
@@ -31,10 +31,10 @@ momatch.xboxlive.com
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| hoppername | string | ホッパーの名前です。 |
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| hoppername | string | Hopper の名前。 |
 
 <a id="ID4E2B"></a>
 
@@ -43,7 +43,7 @@ momatch.xboxlive.com
 
 [POST (/serviceconfigs/{scid}/hoppers/{hoppername})](uri-serviceconfigsscidhoppershoppernamepost.md)
 
-&nbsp;&nbsp;指定したマッチ チケットを作成します。
+&nbsp;&nbsp;指定した一致のチケットを作成します。
 
 <a id="ID4EFC"></a>
 
@@ -55,4 +55,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent  
 
-[マッチメイキング URI](atoc-reference-matchtickets.md)
+[Uri のマッチメイ キング](atoc-reference-matchtickets.md)

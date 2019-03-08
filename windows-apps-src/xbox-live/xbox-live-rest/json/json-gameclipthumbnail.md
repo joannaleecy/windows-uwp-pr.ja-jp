@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ad2d35431cb4c40690978f4f3920f2e47f2b9bc0
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115410"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606567"
 ---
 # <a name="gameclipthumbnail-json"></a>GameClipThumbnail (JSON)
-個々 のサムネイルに関連する情報が含まれています。 1 つのクリップを複数のサイズが存在することができ、表示用の適切なものを選択するクライアントがします。 
+個々 のサムネイルに関連する情報が含まれています。 1 つのクリップ、複数のサイズがあり、表示するための適切な 1 つを選択するクライアントの責任です。 
 <a id="ID4EN"></a>
 
  
@@ -25,14 +25,14 @@ GameClipThumbnail オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| <b>uri</b>| string| サムネイル画像の URI。| 
-| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル画像のファイルの合計サイズ。| 
-| <b>thumbnailType</b>| ThumbnailType| サムネイル画像の種類です。| 
+| <b>Uri</b>| string| サムネイル イメージの URI。| 
+| <b>fileSize</b>| 32 ビット符号なし整数| サムネイル イメージのファイルの合計サイズ。| 
+| <b>thumbnailType</b>| ThumbnailType| サムネイル イメージの種類。| 
   
 <a id="ID4EAC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -56,6 +56,6 @@ GameClipThumbnail オブジェクトには、次の仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

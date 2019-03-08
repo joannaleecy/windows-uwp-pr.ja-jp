@@ -7,24 +7,24 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 移植, ゲーム ループ, Direct3D 9, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627987"
 ---
 # <a name="port-the-game-loop"></a>ゲーム ループの移植
 
 
 
-**概要**
+**要約**
 
--   [パート 1: Direct3D 11 の初期化](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   [パート 2: レンダリング フレームワークの変換](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   パート 3: ゲーム ループの移植
+-   [第 1 部:Direct3D の初期化 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [パート 2:レンダリングのフレームワークを変換します。](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   パート 3:ゲーム ループの移植
 
 
-[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を作成して、全画面表示の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 3 です。
+[  **IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を作成して、全画面表示の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 3 です。
 
 ## <a name="create-a-window"></a>ウィンドウの作成
 
@@ -33,11 +33,11 @@ Direct3D 9 のビューポートを使ってデスクトップ ウィンドウ�
 
 UWP 環境には、はるかに簡単なシステムが用意されています。 DirectX を使った Microsoft Store ゲームでは、従来のウィンドウを設定する代わりに、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装します。 このインターフェイスは、アプリ コンテナー内の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) で直接 DirectX アプリやゲームを実行するために存在します。
 
-> **注:**  Windows は、ソース アプリケーション オブジェクトや[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)などのリソースへの管理ポインターを提供します。 [**オブジェクト演算子 (^) へのハンドル**を] を参照してください。https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspxします。
+> **注**   Windows がソース アプリケーション オブジェクトなどのリソースへのマネージ ポインターを提供し、 [ **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)します。 参照してください **[オブジェクト演算子 (^) へのハンドル]**https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspxします。
 
  
 
-"main" クラスには、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) から継承し、5 つの **IFrameworkView** メソッド ([**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)、[**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)) を実装する必要があります。 (実質的に) ゲームが存在する場所となる **IFrameworkView** の作成に加えて、**IFrameworkView** のインスタンスを作成するファクトリ クラスを実装する必要があります。 ゲームにはこれまでどおり **main()** と呼ばれるメソッドを含む実行可能ファイルが存在しますが、main で実行できる操作は、ファクトリを使って、**IFrameworkView** のインスタンスを作成することだけです。
+"Main"クラスから継承する必要は[ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700478) 、5 つの実装と**IFrameworkView**メソッド。[**初期化**](https://msdn.microsoft.com/library/windows/apps/hh700495)、 [ **SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、 [**ロード**](https://msdn.microsoft.com/library/windows/apps/hh700501)、 [ **の実行**](https://msdn.microsoft.com/library/windows/apps/hh700505)、および[**初期化**](https://msdn.microsoft.com/library/windows/apps/hh700523)します。 (実質的に) ゲームが存在する場所となる **IFrameworkView** の作成に加えて、**IFrameworkView** のインスタンスを作成するファクトリ クラスを実装する必要があります。 ゲームにはこれまでどおり **main()** と呼ばれるメソッドを含む実行可能ファイルが存在しますが、main で実行できる操作は、ファクトリを使って、**IFrameworkView** のインスタンスを作成することだけです。
 
 main 関数
 
@@ -124,18 +124,18 @@ while (true)
 
 これで、DirectX 9 の例と同じように、基本的なグラフィックス インフラストラクチャをセットアップし、同じカラフルな立方体をレンダリングする UWP アプリが完成しました。
 
-## <a name="where-do-i-go-from-here"></a>次の段階
+## <a name="where-do-i-go-from-here"></a>今後の進め方について
 
 
 「[DirectX 11 の移植に関する FAQ](directx-porting-faq.md)」をブックマークに追加してください。
 
 DirectX UWP テンプレートには、ゲームですぐに使うことができる堅牢な Direct3D デバイス インフラストラクチャが含まれています。 適切なテンプレートを選ぶためのガイダンスについては、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
-次の詳細な Microsoft Store ゲーム開発に関する記事をご覧ください。
+次の Microsoft Store の詳細なゲーム開発記事を参照してください。
 
--   [チュートリアル: DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-uwp-directx-game.md)
--   [ゲームのオーディオ](working-with-audio-in-your-directx-game.md)
--   [ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)
+-   [チュートリアル: 簡単な UWP ゲームを DirectX で](tutorial--create-your-first-uwp-directx-game.md)
+-   [ゲームにオーディオ](working-with-audio-in-your-directx-game.md)
+-   [ゲームの移動検索コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
  
 

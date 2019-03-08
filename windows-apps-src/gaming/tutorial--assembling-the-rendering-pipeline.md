@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レンダリング
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117782"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604857"
 ---
-# <a name="rendering-framework-i-intro-to-rendering"></a>レンダリング フレームワーク I: レンダリングの概要
+# <a name="rendering-framework-i-intro-to-rendering"></a>レンダリングのフレームワーク i:レンダリングの概要
 
-これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプル ゲームで Direct3D11 (通常は DirectX 11 と呼ばれます) を使用してゲームのシーンをレンダリングする方法を見てみましょう。
+これまでのトピックでは、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について説明してきました。 ここでは、レンダリング フレームワークをアセンブルする方法について説明します。 サンプルのゲームで direct3d11 (DirectX 11 とよく呼ばれます) を使用してゲームのシーンをレンダリングする方法を見てみましょう。
 
 >[!Note]
 >このサンプルの最新ゲーム コードをダウンロードしていない場合は、[Direct3D ゲーム サンプルのページ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)に移動してください。 このサンプルは、UWP 機能のサンプルの大規模なコレクションの一部です。 サンプルをダウンロードする手順については、「[GitHub から UWP のサンプルを取得する](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)」をご覧ください。
@@ -36,9 +36,9 @@ Direct3D 11 には、ゲームなどのグラフィックス負荷の高いア�
 
 この記事では、手順 1 と 3 を取り上げて、グラフィックスをレンダリングする方法について説明します。
 
-「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」では手順 2 を取り上げて、レンダリング フレームワークを設定する方法と、レンダリングの前にデータを準備する方法について説明します。
+[レンダリングのフレームワーク II:ゲームのレンダリング](tutorial-game-rendering.md)手順 2 は、レンダリングのフレームワークを設定する方法とレンダリングが発生することが前にデータを準備する方法について説明します。
 
-## <a name="get-started"></a>概要
+## <a name="get-started"></a>はじめに
 
 作業を開始する前に、基本的なグラフィックスとレンダリングの概念を理解しておく必要があります。 Direct3D とレンダリングを使用して初めて開発を行う場合は、この記事で使用するグラフィックスとレンダリング用語の簡単な説明については、「[用語と概念](#terms-and-concepts)」を参照してください。
 
@@ -50,7 +50,7 @@ Direct3D 11 には、ゲームなどのグラフィックス負荷の高いア�
 
 レンダリング用のハードウェアにアクセスする方法については、UWP フレームワークの記事にある [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method) の説明を参照してください。
 
-__make\_shared 関数__は ([以下](#appinitialize-method)に示すように) [__DX::DeviceResources__](#dxdeviceresources) への __shared\_ptr__ を作成するために使用されます。これもデバイスへのアクセスを提供します。 
+__こと\_関数を共有__に示すように、[下](#appinitialize-method)、作成するために使用、__共有\_ptr__に[ __DX::DeviceResources__](#dxdeviceresources)デバイスへのアクセスを提供することもできます。 
 
 Direct3D 11 では、[デバイス](#device)を使用して、オブジェクトの割り当てと破棄、プリミティブのレンダリング、グラフィックス ドライバー経由のグラフィックス カードとの通信を行います。
 
@@ -74,9 +74,9 @@ void App::Initialize(
 ゲームのシーンは、ゲームが起動したときにレンダリングされる必要があります。 レンダリングのための手順は、以下に示すように、[__GameMain::Run__](#gamemainrun-method) メソッド内で始まります。
 
 単純なフローは次のとおりです。
-1. __Update__
-2. __Render__
-3. __Present__
+1. __更新プログラム__
+2. __レンダリング__
+3. __存在します。__
 
 ### <a name="gamemainrun-method"></a>GameMain::Run メソッド
 
@@ -124,13 +124,13 @@ void GameMain::Run()
 
 ### <a name="update"></a>Update
 
-[__App::Update__ および __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method) メソッドで、ゲームの状態がどのように更新される化については、「[ゲームのフロー管理](tutorial-game-flow-management.md)」の記事を参照してください。
+[  __App::Update__ および __GameMain::Update__](tutorial-game-flow-management.md#appupdate-method) メソッドで、ゲームの状態がどのように更新される化については、「[ゲームのフロー管理](tutorial-game-flow-management.md)」の記事を参照してください。
 
 ### <a name="render"></a>Render
 
 レンダリングは、__GameMain::Run__ で [__GameRenderer::Render__](#gamerendererrender-method) メソッドを呼び出すことによって実装されます。
 
-[ステレオ レンダリング](#stereo-rendering) が有効な場合、右目用と左目用の 2 つのレンダリング パスがあります。 各レンダリング パスで、レンダー ターゲットと深度ステンシル ビューをデバイスにバインドします。 後で深度ステンシル ビューをクリアします。
+[ステレオ レンダリング](#stereo-rendering) が有効な場合、右目用と左目用の 2 つのレンダリング パスがあります。 各描画パスでは、レンダー ターゲットと深度ステンシル ビューをデバイス バインドします。 後で深度ステンシル ビューをクリアします。
 
 > [!Note]
 > ステレオ レンダリングは、頂点のインスタンス化やジオメトリ シェーダーを使用する単一パス ステレオなど、他の方法で実現することもできます。 2 つのレンダリング パスを使用する方法は時間がかかりますが、ステレオ レンダリングを実現するのに便利な方法です。
@@ -146,10 +146,10 @@ void GameMain::Run()
 
 入力頂点レイアウトを使用する Direct3D コンテキストを設定します。 入力レイアウト オブジェクトは、頂点バッファー データを[レンダリング パイプライン](#rendering-pipeline)にストリーミングする方法を記述します。 
 
-次に、以前に定義した定数バッファーを使用する Direct3D コンテキストを設定します。この定数バッファーは、[頂点シェーダー](#vertex-shaders-and-pixel-shaders)のパイプライン ステージと[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)のパイプライン ステージで使用されます。 
+次で使用される、以前に定義した定数バッファーを使用する Direct3D コンテキストを設定します、[頂点シェーダー](#vertex-shaders-and-pixel-shaders)パイプライン ステージ、[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)パイプライン ステージ。 
 
 > [!Note]
-> 定数バッファーの定義の詳細については、「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」を参照してください。
+> 参照してください[レンダリング framework II:ゲームのレンダリング](tutorial-game-rendering.md)定数バッファーの定義の詳細についてはします。
 
 同じ入力レイアウトと一連の定数バッファーが、パイプライン内のすべてのシェーダーで使用されるため、設定はフレームごとに 1 回です。
 
@@ -334,14 +334,14 @@ void GameRenderer::Render()
 
 シーンをレンダリングする場合は、レンダリングする必要があるすべてのオブジェクトをループ処理します。 次の手順は、オブジェクト (プリミティブ) ごとに繰り返されます。
 
-* モデルの[ワールド変換行列](#world-transform-matrix)とマテリアルの情報を使用して定数バッファー (__m\_constantBufferChangesEveryPrim__) を更新します。
-* __m\_constantBufferChangesEveryPrim__ には、各オブジェクトのパラメーターが格納されます。  ワールド変換行列に渡されるオブジェクトや、照明の計算の色と鏡面反射指数などのマテリアルのプロパティが含まれます。
+* 定数バッファーを更新 (__m\_constantBufferChangesEveryPrim__) で、モデルの[ワールド変換行列](#world-transform-matrix)と素材の情報。
+* __M\_constantBufferChangesEveryPrim__各オブジェクトのパラメーターが含まれています。  ワールド変換行列に渡されるオブジェクトや、照明の計算の色と鏡面反射指数などのマテリアルのプロパティが含まれます。
 * [レンダリング パイプライン](#rendering-pipeline)の入力アセンブラー (IA) ステージにストリーミングされるメッシュ オブジェクトのデータ用に入力頂点レイアウトを使用する Direct3D コンテキストを設定します。
 * IA ステージで[インデックス バッファー](#index-buffer)を使用する Direct3D コンテキストを設定します。 プリミティブの情報 (型、データの順序) を提供します。
-* インデックス付きの、インスタンス化されていないプリミティブを描画する描画呼び出しを送信します。 __GameObject::Render__ メソッドは、特定のプリミティブに固有のデータでプリミティブ[定数バッファー](#constant-buffer-or-shader-constant-buffer)を更新します。 これにより、各プリミティブのジオメトリを描画するコンテキストで __DrawIndexed__ 呼び出しが行われます。 特に、この描画呼び出しは、定数バッファー データによってパラメーター化されたとおり、コマンドとデータをグラフィックス処理装置 (GPU) のキューに入れます。 各描画呼び出しでは、プリミティブの頂点シェーダーごとに 1 回頂点、し、[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)の各三角形のピクセルごとに 1 回を実行します。 テクスチャは、ピクセル シェーダーがレンダリングの実行に使う状態の一部です。
+* インデックス付きの、インスタンス化されていないプリミティブを描画する描画呼び出しを送信します。 __GameObject::Render__ メソッドは、特定のプリミティブに固有のデータでプリミティブ[定数バッファー](#constant-buffer-or-shader-constant-buffer)を更新します。 これにより、各プリミティブのジオメトリを描画するコンテキストで __DrawIndexed__ 呼び出しが行われます。 特に、この描画呼び出しは、定数バッファー データによってパラメーター化されたとおり、コマンドとデータをグラフィックス処理装置 (GPU) のキューに入れます。 各描画呼び出しは、頂点ごとに 1 回、頂点シェーダーを実行し、[ピクセル シェーダー](#vertex-shaders-and-pixel-shaders)プリミティブで各三角形の各ピクセルの 1 つの時間。 テクスチャは、ピクセル シェーダーがレンダリングの実行に使う状態の一部です。
 
 複数の定数バッファーを使用する理由は次のとおりです。
-    * ゲームでは複数の定数バッファーが使われますが、これらのバッファーはプリミティブごとに 1 回更新するだけで済みます。 前述のように、定数バッファーは、プリミティブごとに実行されるシェーダーに対する入力のようなものです。 静的なデータ (__m\_constantBufferNeverChanges__) もあれば、カメラの位置のようにフレームで一定のデータ (__m\_constantBufferChangesEveryFrame__) もあれば、色やテクスチャなどのようにプリミティブに固有のデータ (__m\_constantBufferChangesEveryPrim__) もあります。
+    * ゲームでは複数の定数バッファーが使われますが、これらのバッファーはプリミティブごとに 1 回更新するだけで済みます。 前述のように、定数バッファーは、プリミティブごとに実行されるシェーダーに対する入力のようなものです。 一部のデータは静的 (__m\_constantBufferNeverChanges__); フレーム経由でデータの一部が定数 (__m\_constantBufferChangesEveryFrame__) などのカメラの位置一部のデータは、色やテクスチャなど、プリミティブ型に固有と (__m\_constantBufferChangesEveryPrim__)
     * ゲーム レンダラーはこれらの入力を別個の定数バッファーに分けて、CPU や GPU が使うメモリ帯域幅を最適化します。 この方法は、GPU が追跡する必要のあるデータ量を最小限に抑えるのにも役立ちます。 GPU にはコマンドの大きいキューがあり、ゲームが __Draw__ を呼び出すたびに、そのコマンドは関連するデータと共にキューに入れられます。 ゲームがプリミティブ定数バッファーを更新して、次の __Draw__ コマンドを発行すると、グラフィックス ドライバーはこの次のコマンドと関連するデータをキューに追加します。 ゲームで 100 のプリミティブを描画する場合、キューに定数バッファー データの 100 のコピーが存在する可能性があります。 ゲームから GPU に送るデータ量を最小限に抑えるために、ゲームでは、各プリミティブの更新情報のみを含む個別のプリミティブ定数バッファーを使用します。
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render メソッド
@@ -471,9 +471,9 @@ void DX::DeviceResources::Present()
 }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-この記事では、ディスプレイにグラフィックスをレンダリングする方法を説明し、使用されるレンダリング用語の一部について簡単に説明しました。 「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」では、レンダリングの詳細や、レンダリングする前に必要なデータを準備する方法について説明します。
+この記事では、ディスプレイにグラフィックスをレンダリングする方法を説明し、使用されるレンダリング用語の一部について簡単に説明しました。 詳細の表示については、[レンダリング framework II:ゲームのレンダリング](tutorial-game-rendering.md)に関する記事を参照し、レンダリングの前に必要なデータを準備する方法について説明します。
 
 ## <a name="terms-and-concepts"></a>用語と概念
 
@@ -493,8 +493,8 @@ void DX::DeviceResources::Present()
 * [HLSL](#HLSL)。 UWP DirectX ゲームでは、HLSL シェーダー モデル 5.1 以上を使用することをお勧めします。
 * [シェーダー](#Shaders)
 * [頂点シェーダーとピクセル シェーダー](#vertext-shaders-pixel-shaders)
-* [シェーダー ステージ](#shader-stages)
-* [さまざまなシェーダー ファイル形式](#various-shader-file-formats)
+* [シェーダーのステージ](#shader-stages)
+* [さまざまなシェーダー ファイルの形式](#various-shader-file-formats)
 
 詳細については、[Direct3D 11 のレンダリング パイプラインに関するページ](https://msdn.microsoft.com/library/windows/desktop/dn643746.aspx)と[グラフィックス パイプラインに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476882.aspx)を参照してください。
 
@@ -549,7 +549,7 @@ Direct3D 11 は、ゲームなどのグラフィックスを多用するアプ�
 
 深度情報は、ビューから隠すのではなくレンダリングする多角形の領域を示します。 ステンシル情報は、マスクするピクセルを示します。 ステンシル情報は、ピクセルを描画するかどうかを決定する (ビットを 1 または 0 に設定する) ため、特殊効果を生成するために使用できます。 
 
-詳細については、「[深度ステンシル ビュー](../graphics-concepts/depth-stencil-view--dsv-.md)」、「[深度バッファー](../graphics-concepts/depth-buffers.md)」、「[ステンシル バッファー](../graphics-concepts/stencil-buffers.md)」を参照してください。
+詳しくは、次のトピックをご覧ください。[深度ステンシル ビュー](../graphics-concepts/depth-stencil-view--dsv-.md)、[深度バッファー](../graphics-concepts/depth-buffers.md)、および[ステンシル バッファー](../graphics-concepts/stencil-buffers.md)します。
 
 #### <a name="render-target"></a>レンダー ターゲット
 
@@ -567,7 +567,7 @@ Direct3D 11 の使用経験が浅い場合は、デバイスは、オブジェ�
 
 ID3D11Device には複数のバージョンがあり、[ID3D11Device5](https://msdn.microsoft.com/library/windows/desktop/mt492478.aspx) が最新バージョンで、ID3D11Device4 に新しいメソッドが追加されています。 Direct3D が基になるハードウェアと通信する方法の詳細については、[Windows Device Driver Model (WDDM) アーキテクチャに関するページ](https://docs.microsoft.com/windows-hardware/drivers/display/windows-vista-and-later-display-driver-model-architecture)を参照してください。
 
-各アプリケーションには少なくとも 1 つのデバイスが必要であり、ほとんどのアプリケーションは 1 つだけデバイスを作成します。 コンピューターにインストールされているいずれかのハードウェア ドライバーについてデバイスを作成するには、__D3D11CreateDevice__ または __D3D11CreateDeviceAndSwapChain__ を呼び出して、D3D\_DRIVER\_TYPE フラグでドライバーの種類を指定します。 各デバイスでは、必要な機能に応じて、1 つまたは複数のデバイス コンテキストを使用できます。 詳細については、[D3D11CreateDevice 関数に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)を参照してください。
+各アプリケーションには少なくとも 1 つのデバイスが必要であり、ほとんどのアプリケーションは 1 つだけデバイスを作成します。 呼び出すことによって、コンピューターにインストールされているハードウェアのドライバーのいずれかのデバイスを作成__D3D11CreateDevice__または__D3D11CreateDeviceAndSwapChain__ D3D でドライバーの種類を指定して\_ドライバー\_型フラグ。 各デバイスでは、必要な機能に応じて、1 つまたは複数のデバイス コンテキストを使用できます。 詳細については、[D3D11CreateDevice 関数に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476082.aspx)を参照してください。
 
 #### <a name="device-context"></a>デバイス コンテキスト
 
@@ -577,7 +577,7 @@ Direct3D 11 は 2 種類のデバイス コンテキストを実装します。1
 
 __ID3D11DeviceContext__ インターフェイスには複数のバージョンがあり、__ID3D11DeviceContext4__ は __ID3D11DeviceContext3__ に新しいメソッドを追加します。
 
-注: __ID3D11DeviceContext4__ は Windows 10 Creators Update で導入され、__ID3D11DeviceContext__ インターフェイスの最新バージョンです。 Windows 10 Creators Update を対象とするアプリケーションでは、以前のバージョンではなく、このインターフェイスを使用する必要があります。 詳しくは、[ID3D11DeviceContext4 に関するページ](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)を参照してください。
+注:__ID3D11DeviceContext4__の最新バージョンであり、Windows 10 Creators Update で導入された、 __ID3D11DeviceContext__インターフェイス。 Windows 10 Creators Update を対象とするアプリケーションでは、以前のバージョンではなく、このインターフェイスを使用する必要があります。 詳しくは、[ID3D11DeviceContext4 に関するページ](https://msdn.microsoft.com/library/windows/desktop/mt492481.aspx)を参照してください。
 
 #### <a name="dxdeviceresources"></a>DX::DeviceResources
 
@@ -587,11 +587,11 @@ __DX::DeviceResources__ クラスは、__DeviceResources.cpp__/__.h__ ファイ�
 
 バッファー リソースは完全に型指定されたデータのコレクションであり、複数の要素にグループ化されます。 バッファーを使用して、さまざまなデータを格納できます。たとえば、位置ベクトル、法線ベクトル、頂点バッファー内のテクスチャ座標、インデックス バッファー内のインデックス、デバイスの状態などのデータが格納されます。 バッファー要素には、圧縮済みデータ値 (R8G8B8A8 サーフェス値)、単一の 8 ビット整数、または 4 つの 32 ビット浮動小数点値を含めることができます。
 
-利用可能なバッファーには、頂点バッファー、インデックス バッファー、定数バッファーの 3 つの種類があります。
+バッファーの次の 3 つの種類を使用できるがあります。頂点バッファー、インデックス バッファー、および定数バッファー。
 
 #### <a name="vertex-buffer"></a>頂点バッファー
 
-ジオメトリの定義に使われる頂点データが格納されます。 頂点データには、位置座標、色データ、テクスチャ座標データ、法線データなどが含まれます。 
+ジオメトリの定義に使われる頂点データが格納されます。 頂点データには、位置座標、色データ、テクスチャ座標データ、法線データなどが格納されます。 
 
 #### <a name="index-buffer"></a>インデックス バッファー
 
@@ -616,7 +616,7 @@ __DX::DeviceResources__ クラスは、__DeviceResources.cpp__/__.h__ ファイ�
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX グラフィックス インフラストラクチャ (DXGI) は、direct3d10 で必要とされる低レベルのタスクの一部をカプセル化 WindowsVista で導入された新しいサブシステム 10.1、11、11.1 します。 マルチスレッド アプリケーションで DXGI を使用する場合、デッドロックが発生しないように特に注意する必要があります。 詳細については、[DirectX グラフィックス インフラストラクチャ (DXGI): ベスト プラクティスのマルチスレッドに関する説明](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)を参照してください。
+Microsoft DirectX Graphics Infrastructure (DXGI) は、direct3d10 で必要な低レベルのタスクの一部をカプセル化する Windows Vista で導入された新しいサブシステム 10.1、11、および 11.1 します。 マルチスレッド アプリケーションで DXGI を使用する場合、デッドロックが発生しないように特に注意する必要があります。 詳細については、次を参照してください。 [DirectX Graphics Infrastructure (DXGI)。ベスト プラクティス-マルチ スレッド](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>機能レベル
 
@@ -624,9 +624,9 @@ Microsoft DirectX グラフィックス インフラストラクチャ (DXGI) �
 
 各ビデオ カードは、インストールされている GPU に応じて、特定のレベルの DirectX の機能を実装します。 以前のバージョンの Microsoft Direct3D では、ビデオ カードが実装しているバージョンを検出し、それに応じてアプリケーションをプログラミングすることができました。 
 
-機能レベルを使用すると、デバイスを作成するときに、必要な機能レベルのデバイスを作成してみることができます。 デバイスの作成に成功した場合は、その機能レベルが存在します。失敗した場合は、ハードウェアはその機能レベルをサポートしていません。 低い機能レベルでデバイスを再作成してみることも、アプリケーションの終了を選択することもできます。 たとえば、12\_0 機能レベルでは、Direct3D 11.3 や Direct3D 12、およびシェーダー モデル 5.1 が必要です。 詳細については、[Direct3D の各機能レベルの概要に関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)を参照してください。
+機能レベルを使用すると、デバイスを作成するときに、必要な機能レベルのデバイスを作成してみることができます。 デバイスの作成に成功した場合は、その機能レベルが存在します。失敗した場合は、ハードウェアはその機能レベルをサポートしていません。 低い機能レベルでデバイスを再作成してみることも、アプリケーションの終了を選択することもできます。 たとえば、12\_Direct3D 11.3 や direct3d12、シェーダー モデル 5.1 0 の機能レベルが必要です。 詳細については、次を参照してください。 [Direct3D 機能レベル。各機能レベルの概要](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)します。
 
-機能レベルを使用して、Direct3D9 や Microsoft Direct3D10、Direct3D11 では、アプリケーションを開発し、9、10 または 11 のハードウェア (一部例外あり) で実行できます。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
+機能レベルを使用して、Direct3D 9、Microsoft の direct3d10 または direct3d11、アプリケーションを開発し、9、10、または 11 のハードウェア (一部の例外) を実行できます。 詳細については、[Direct3D の機能レベルに関するページ](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)を参照してください。
 
 ### <a name="stereo-rendering"></a>ステレオ レンダリング
 
@@ -647,13 +647,13 @@ Microsoft DirectX グラフィックス インフラストラクチャ (DXGI) �
 V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)。
 
 この場合 
-* M(model-to-world) はモデル座標からワールド座標への変換行列であり、[ワールド変換行列](#world-transform-matrix)とも呼ばれます。 これは、プリミティブによって提供されます。
+* M(model-to-world) はモデル座標からワールド座標への変換行列であり、[ワールド変換行列](#world-transform-matrix)とも呼ばれます。 このマトリックスは、プリミティブによって提供されます。
 * M(world-to-view) はワールド座標からビュー座標への変換行列であり、[ビュー変換行列](#view-transform-matrix)とも呼ばれます。
     * これは、カメラのビュー行列によって提供されます。 これは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によって定義されます。
-    * サンプル ゲームでは、__m\_viewMatrix__ はビュー変換行列であり、__Camera::SetViewParams__ を使用して計算されます。 
+    * サンプルのゲームで__m\_viewMatrix__ビュー変換行列を使用して計算され__Camera::SetViewParams__ 
 * M(view-to-device) はビュー座標からデバイス座標への変換行列であり、[射影変換行列](#projection-transform-matrix)とも呼ばれます。
-    * これは、カメラの射影によって提供されます。 その空間のどれくらいの量が実際に最終的なシーンに表示されるかについての情報を提供します。 視野 (FoV)、縦横比、クリッピング面によって、射影変換行列が定義されます。
-    * サンプル ゲームでは、__m\_projectionMatrix__ は、__Camera::SetProjParams__ を使用して計算された、射影座標への変換を定義します (ステレオ射影の場合は、それぞれの目のビューに 1 つずつ、2 つの射影行列を使用します)。 
+    * このマトリックスは、カメラのプロジェクションによって提供されます。 その空間のどれくらいの量が実際に最終的なシーンに表示されるかについての情報を提供します。 視野 (FoV)、縦横比、クリッピング面によって、射影変換行列が定義されます。
+    * サンプルのゲームで__m\_projectionMatrix__計算を使用して、射影の座標に変換を定義します__Camera::SetProjParams__ (ステレオのプロジェクションを使用する 2 つ。projection 行列: それぞれの目のビューのいずれかです)。 
 
 VertexShader.hlsl のシェーダー コードがこれらのベクターや行列と共に定数バッファーから読み込まれ、各頂点に対してこの変換を実行します。
 

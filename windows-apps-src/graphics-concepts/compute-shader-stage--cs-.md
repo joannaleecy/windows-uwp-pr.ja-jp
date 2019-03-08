@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 29645500f8a3d1b953c24921c32a59f283bd5db3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048762"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613277"
 ---
 # <a name="compute-shader-cs-stage"></a>計算シェーダー (CS) ステージ
 
@@ -26,7 +26,7 @@ ms.locfileid: "9048762"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[計算パイプライン](compute-pipeline.md)
+[パイプラインを計算します。](compute-pipeline.md)
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 

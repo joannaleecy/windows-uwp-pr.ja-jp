@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 877986ce9d48269295a68dbfd644f14785916b88
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938184"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640857"
 ---
 # <a name="post-itemid"></a>POST ({itemID})
-または、コンシューマブルなインベントリ項目の一部が使用されていることを示しますとデクリメント、要求された時間の長さによって、コンシューマブルの数量。
+または使用できるインベントリ項目の一部が使用されていることを示しますおよびデクリメントの要求の量で使用できる数量。
 これらの Uri のドメインが`inventory.xboxlive.com`します。
 
   * [注釈](#ID4EX)
@@ -28,15 +28,15 @@ ms.locfileid: "8938184"
 
 ## <a name="remarks"></a>注釈
 
-   * 呼び出し元が利用するよう求め数量は、項目の残りのサプライを超えている場合、呼び出しが拒否されます。
-   * 呼び出し元が利用するよう求め数量は 0 上の正の整数である必要があります。 消費量の値を 0 または小さい呼び出しが拒否されます。
-   * 呼び出し元では、空のトランザクション ID を提供する場合は、要求が拒否されます。
-   * 利用可能な場合は、どのタイトルによって報告されている使用量を判断することができるように、タイトル クレームが記録されます。
-   * いくつかの期間は、同じ transactionId で追加の投稿が無視されます。
+   * 呼び出し元が使用するように求められる数量が、項目の残りの提供を超えている場合、呼び出しは拒否されます。
+   * 呼び出し元が使用するように求められる数量は 0 より大きい正の整数である必要があります。 消費値は 0 以下の呼び出しは拒否されます。
+   * 呼び出し元は、空のトランザクション ID を提供する場合は、要求は拒否されます。
+   * 使用可能な場合は、消費量を報告するタイトルを特定することができるように、タイトルの要求が記録されます。
+   * 一定の期間には、同じ transactionId の他の投稿が無視されます。
 
 
 > [!NOTE]
-> この API の<b>x xbl コントラクト バージョン ヘッダー</b>は「4」です。
+> <b>X xbl コントラクト バージョン ヘッダー</b>この API は、「4」にします。
 
 
 <a id="ID4EQB"></a>
@@ -44,9 +44,9 @@ ms.locfileid: "8938184"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID|
+| アイテム Id| string| 単数形のインベントリ項目のユーザーごとに一意の ID|
 
 <a id="ID4E2B"></a>
 
@@ -56,7 +56,7 @@ ms.locfileid: "8938184"
 <a id="ID4EBC"></a>
 
 
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
 
 
 ```cpp
@@ -68,19 +68,19 @@ ms.locfileid: "8938184"
 ```
 
 
-削除の数量フィールドには、コンシューマブルの残りの数量から削除するコンシューマブルの数量を示すために、呼び出し元ことができます。 トランザクション ID] フィールドでは、同じの使用状況を 2 回にカウントのリスクを軽減しながらコンシューマブルなコンテンツの操作を使用して再試行する手段を呼び出し元を提供します。
+削除の quantity フィールドを使用できる、消耗品の残りの数量から削除するの数量を示すために、呼び出し元を使用できます。 トランザクション ID フィールドには、同じ使用状況を 2 回カウントのリスクを制限しながら使用できるコンテンツの操作を使用して再試行するための手段を呼び出し元が提供します。
 
 <a id="ID4ENC"></a>
 
 
 ## <a name="response-body"></a>応答本文
 
-認証に合格して適切な承認コンテキストが割り当てられていると想定すると、POST への応答は、POST 要求、コンシューマブルの項目の URL、および項目は新しいでサービスに渡すことと同じ transactionId 受領通知の acknolodgement数量の値。
+認証を渡し、適切な承認コンテキストが割り当てられていると仮定した場合、POST に対する応答は、POST 要求、使用できる項目の URL、および項目は新しいサービスに渡される、acknolodgement の同じ transactionId を含む受信数量の値。
 
 <a id="ID4EVC"></a>
 
 
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
 
 
 ```cpp
@@ -111,12 +111,12 @@ ms.locfileid: "8938184"
 
 ##### <a name="further-information"></a>詳細情報
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)

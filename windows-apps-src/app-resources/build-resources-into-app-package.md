@@ -1,5 +1,5 @@
 ---
-Description: Some kinds of apps (multilingual dictionaries, translation tools, etc.) need to override the default behavior of an app bundle, and build resources into the app package instead of having them in separate resource packages. This topic explains how to do that.
+Description: 一部の種類のアプリ (多言語の辞書、翻訳ツールなど) は、アプリ バンドルの既定の動作をオーバーライドし、別のリソース パッケージではなくアプリ パッケージにリソースを組み込む必要があります。 このトピックでは、その方法について説明します。
 title: リソースをリソース パックではなくアプリ パッケージに組み込む
 template: detail.hbs
 ms.date: 11/14/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf2d34bc3dae20750f66c9116499a17444b798c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938495"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627287"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>リソースをリソース パックではなくアプリ パッケージに組み込む
 
@@ -28,7 +28,7 @@ Visual Studio を構成して、2 つの方法のいずれかでアプリ パッ
 ## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>オプション 1. priconfig.packaging.xml を使用して、アプリ パッケージにリソースを組み込む
 
 1. Visual Studio で、新しい項目をプロジェクトに追加します。 XML ファイルを選択し、ファイルに `priconfig.packaging.xml` という名前を付けます。
-2. ソリューション エクスプローラーで、`priconfig.packaging.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
+2. ソリューション エクスプ ローラーで、`priconfig.packaging.xml` を選択し、[プロパティ] ウィンドウを確認します。 ファイルの [ビルド アクション] を [なし] に設定し、[出力ディレクトリにコピー] を [コピーしない] に設定します。
 3. ファイルの内容をこの XML に置き換えます。
    ```xml
    <packaging>
@@ -59,7 +59,7 @@ Visual Studio を構成して、2 つの方法のいずれかでアプリ パッ
 
 ### <a name="how-does-this-work"></a>この処理のしくみ
 
-バックグラウンドで、Visual Studio は `MakePri.exe` というツールを起動し、パッケージ リソース インデックスと呼ばれるファイルを生成します。このファイルには、自動分割するリソース修飾子名を示すなど、アプリのすべてのリソースについての情報を記述しています。 このツールの詳細については、「[MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)」を参照してください。 Visual Studio は構成ファイルを `MakePri.exe` に渡します。 `priconfig.packaging.xml` ファイルの内容はその構成ファイルの `<packaging>` 要素として使用され、これが自動分割を指定する部分となります。 そのため、最終的には `priconfig.packaging.xml` を追加および編集すると、Visual Studio がアプリに対して生成するパッケージ リソース インデックス ファイルの内容だけでなく、アプリ バンドルのパッケージの内容に影響します。
+バックグラウンドで、Visual Studio は `MakePri.exe` というツールを起動し、パッケージ リソース インデックスと呼ばれるファイルを生成します。このファイルには、自動分割するリソース修飾子名を示すなど、アプリのすべてのリソースについての情報を記述しています。 このツールの詳細については、「[MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)」を参照してください。 Visual Studio は、構成ファイルを `MakePri.exe` に渡します。 `priconfig.packaging.xml` ファイルの内容はその構成ファイルの `<packaging>` 要素として使用され、これが自動分割を指定する部分となります。 そのため、最終的には `priconfig.packaging.xml` を追加および編集すると、Visual Studio がアプリに対して生成するパッケージ リソース インデックス ファイルの内容だけでなく、アプリ バンドルのパッケージの内容に影響します。
 
 ### <a name="using-a-different-file-name-than-priconfigpackagingxml"></a>`priconfig.packaging.xml` とは異なるファイル名の使用
 
@@ -97,6 +97,6 @@ Visual Studio を構成して、2 つの方法のいずれかでアプリ パッ
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Visual Studio で UWP アプリをパッケージ化する](../packaging/packaging-uwp-apps.md)
-* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
-* [アプリで使用する既定のリソースを指定する](specify-default-resources-installed.md)
+* [Visual Studio で UWP アプリのパッケージ](../packaging/packaging-uwp-apps.md)
+* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [アプリを使用する既定のリソースを指定します。](specify-default-resources-installed.md)

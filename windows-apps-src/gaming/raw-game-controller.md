@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, 未加工のゲーム コントローラー
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946798"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644627"
 ---
 # <a name="raw-game-controller"></a>未加工のゲーム コントローラー
 
 このページでは、[Windows.Gaming.Input.RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った、ほとんどすべての種類のゲーム コントローラー向けプログラミングの基礎について説明します。
 
-このページでは、次のことを解説します。
+ここでは、次の項目について紹介します。
 
 * 接続されている未加工のゲーム コントローラーとそのユーザーの一覧を収集する方法
 * 未加工のゲーム コントローラーが追加または削除されたことを検出する方法
@@ -233,8 +233,8 @@ The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use r
 
 ## <a name="see-also"></a>関連項目
 
-* [ゲームの入力](input-for-games.md)
-* [ゲームの入力プラクティス](input-practices-for-games.md)
+* [ゲームを入力します。](input-for-games.md)
+* [ゲームの入力のプラクティス](input-practices-for-games.md)
 * [Windows.Gaming.Input 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.RawGameController クラス](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Windows.Gaming.Input.IGameController インターフェイス](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

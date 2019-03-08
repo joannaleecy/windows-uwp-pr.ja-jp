@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ee284550a9b508a8d46556bf0353bd75d55014f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933806"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599477"
 ---
 # <a name="xbox-live-sandboxes-intro"></a>Xbox Live のサンドボックスの概要
 
-[Xbox Live サービス構成](xbox-live-service-configuration.md)では、された必要がありますで構成することはオンラインで、タイトルに関する通常[パートナー センター](https://partner.microsoft.com/dashboard)について説明します。  この情報には、タイトルで表示するランキングなどの項目、プレイヤーが解除できる実績、マッチメイキング構成などが含まれます。
+[Xbox Live サービス構成](xbox-live-service-configuration.md)、通常、オンラインでのタイトルに関する情報を構成する必要がありますに説明した[パートナー センター](https://partner.microsoft.com/dashboard)します。  この情報には、タイトルで表示するランキングなどの項目、プレイヤーが解除できる実績、マッチメイキング構成などが含まれます。
 
-サービス構成を変更するときは、変更が Xbox Live の残りの部分によって取得されてタイトルで表示されるようにするにはパートナー センターから公開これら必要があります。
+サービス構成に変更を行ったこれら変更 Xbox Live の残りの部分によって取り出され、表示するタイトルを前に、パートナー センターから公開する必要があります。
 
 この公開先は、開発サンドボックスと呼ばれています。  これらにより、分離された環境でタイトルに対して変更作業を行うことができます。  これには、以下のセクションで説明するようにいくつかの利点があります。
 
@@ -31,7 +31,7 @@ ms.locfileid: "8933806"
 1. 現在利用可能なバージョンに影響を与えずに、タイトルの更新への変更を反復処理できます。
 2. 一部のツールは、セキュリティ上の理由から開発サンドボックス内でのみ動作します。
 3. チーム内の一部の開発者は、開発中の主要なサービス構成に影響を与えずに、サービス構成の変更を「分岐」させてテストできます。
-4. 他の公開元は、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。
+4. 他のパブリッシャーは、サンドボックスへのアクセス権が付与されない限り、その内部での作業内容を閲覧できません。
 
 **必要に応じて**テスト アカウントを作成することもできます。  タイトルのテストに通常の Xbox Live アカウントを使用したくない場合や、ソーシャルな交流 (例: 友人の統計情報の表示) やマルチプレイヤーなどのシナリオをテストするために複数のアカウントが必要である場合に、テスト アカウントを使用できます。
 
@@ -41,17 +41,13 @@ ms.locfileid: "8933806"
 
 開発者の大部分は、サンドボックスを 1 つだけ必要とします。  幸いなことに、タイトルを作成するときにサンドボックスが作成されます。
 
-1. 次に、パートナー センターに移動して、サンド ボックスについて調べること。
-![](images/getting_started/first_xbltitle_dashboard.png)
+1. ここで、パートナー センターに移動して、サンド ボックスの詳細について確認します。 ![](images/getting_started/first_xbltitle_dashboard.png)
 
-1. 次に、タイトルをクリックします。
-![](images/getting_started/first_xbltitle_dashboard_overview.png)
+1. [タイトル] をクリックします。 ![](images/getting_started/first_xbltitle_dashboard_overview.png)
 
-1. 最後に、左側のメニューで [サービス] -> [Xbox Live] をクリックします。
-![](images/getting_started/first_xbltitle_leftnav.png)
+1. 最後にサービスをクリックします]-> [Xbox Live、左側のメニュー ![](images/getting_started/first_xbltitle_leftnav.png)
 
-1. これにより、次に示すようにサンドボックスが表示されます。
-![](images/getting_started/devcenter_sandbox_id.png)
+1. 以下のとおり、サンド ボックスが表示されます。 ![](images/getting_started/devcenter_sandbox_id.png)
 
 ## <a name="how-your-sandbox-impacts-your-workflow"></a>サンドボックスがワークフローに与える影響
 
@@ -70,7 +66,7 @@ PC の開発サンドボックスを切り替える場合、推奨される方�
 
 ### <a name="windows-device-portal"></a>Windows Device Portal
 
-お使いの PC で WDP を有効にしていない場合は、次の手順に従ってください。 [Windows デスクトップで Device Portal をセットアップする](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
+お使いの PC で WDP を有効にしていない場合は、次の手順に従ってください。 [Windows デスクトップ上のデバイスのポータルをセットアップします。](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop)
 
 この作業が終わったら、上記の記事で説明したように Web ブラウザーで Windows デベロッパー ポータルに接続してポータルを開きます。
 
@@ -78,7 +74,7 @@ PC の開発サンドボックスを切り替える場合、推奨される方�
 
 ![](images/getting_started/wdp_switch_sandbox.png)
 
-さらに、*「サンドボックスを調べる」* の手順で表示されたサンドボックスを入力し、[変更] をクリックします。
+ここで、*「サンドボックスを調べる」* の手順で表示されたサンドボックスを入力し、[変更] をクリックします。
 
 RETAIL に戻るには、ここで「RETAIL」と入力します。
 
@@ -87,25 +83,25 @@ RETAIL に戻るには、ここで「RETAIL」と入力します。
 [Xbox Live PowerShell モジュール](https://github.com/Microsoft/xbox-live-powershell-module/blob/master/docs/XboxLivePsModule.md)XboxlivePSModule には、PC または本体でサンドボックスを変更する機能など、Xbox Live の開発のためのさまざまなユーティリティが含まれています。
 
 * [PowerShell ギャラリー](https://www.powershellgallery.com/packages/XboxlivePSModule)からこのモジュールを使うには、PowerShell ウィンドウを開きます。
-    1. 次のコマンドを実行して、モジュールをダウンロードしてインストールします。 `Install-Module XboxlivePSModule -Scope CurrentUser`
-    2. 次のコマンドを実行して使用を開始します。 `Import-Module XboxlivePSModule`
+    1. ダウンロードして、モジュールをインストールします。 `Install-Module XboxlivePSModule -Scope CurrentUser`
+    2. 実行して使用を開始します。 `Import-Module XboxlivePSModule`
     3. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
-* ある zip ファイルから使用する[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開きます
-    1. 実行 `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1`
+* Zip ファイルから使用する[ https://aka.ms/xboxliveuwptools ](https://aka.ms/xboxliveuwptools)、PowerShell ウィンドウを開く
+    1. `Import-Module <path to unzipped folder>\XboxLivePsModule\XboxLivePsModule.psd1` を実行します。
     2. コマンドレット Set-XblSandbox XDKS.1 または Get-XblSandbox を実行します。
 
 ### <a name="command-prompt-script"></a>コマンド プロンプト スクリプト
 
-[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools) で Xbox Live ツール パッケージをダウンロードし、解凍します。  中には SwitchSandbox.cmd バッチ ファイルがあります。
+[https://aka.ms/xboxliveuwptools  ](https://aka.ms/xboxliveuwptools) で Xbox Live ツール パッケージをダウンロードし、解凍します。  中には SwitchSandbox.cmd バッチ ファイルがあります。
 
-サンドボックスを切り替えるには、管理者モードでこのバッチ ファイルを実行します。  最初の引数がサンドボックスです。  たとえば、XDKS.1 サンドボックスに切り替える場合は、次のコマンドを実行します。
+サンドボックスを切り替えるには、管理者モードでこのファイルを実行します。  最初の引数がサンドボックスです。  たとえば、XDKS.1 サンドボックスに切り替える場合は、次のコマンドを実行します。
 
 ```
 SwitchSandbox.cmd XDKS.1
 ```
 
-RETAIL に戻るには、2 番目の引数として RETAIL を指定するだけです。
+RETAIL に戻るには、単に 2 番目の引数として RETAIL を指定します。
 
 ```
 SwitchSandbox.cmd RETAIL
@@ -146,19 +142,19 @@ Xbox One Manager を使用して、本体の特定の側面を PC から管理�
 ### <a name="examples"></a>例
 以下に、複数のサンドボックスを使用する利点を理解するのに役立つ例をいくつか示します。
 
-> **注**: Xbox クリエーターズ プログラムに参加している場合は、1 つのサンドボックスのみを使用できます。  複数のサンドボックスを作成する必要がある場合は、ID@Xbox プログラムにご登録ください。
+> **注意**:Xbox クリエイターズ プログラムでは場合、は、サンド ボックスの 1 つだけがあります。  複数のサンドボックスを作成する必要がある場合は、ID@Xbox プログラムにご登録ください。
 
 #### <a name="service-config-isolation"></a>サービス構成の分離
 前述したように、サービス構成はサンドボックスに固有です。  そのため、たとえば *Development* サンドボックスと *Testing* サンドボックスを併用できます。  タイトルのビルドをテスターに提供する場合は、[サービス構成](xbox-live-service-configuration.md)を *Testing* サンドボックスに公開します。
 
 その一方で、テスターに対して表示されているサービス構成に影響を与えずに、実績や異なるマルチプレイヤー セッションの種類を *Development* サンドボックスに追加できます。
 
-#### <a name="multiplayer"></a>マルチ プレーヤー
+#### <a name="multiplayer"></a>マルチプレイヤー
 上記の例のように、*Development* と *Testing* のサンドボックスを使用しているとします。  サービス構成はどちらのサンドボックスも同じかもしれませんが、開発者はマルチプレイヤー機能を作成しており、相互にマッチメイキングをテストしたいと考えています。  テスターもマルチプレイヤーをテストしています。
 
 このような場合、テスターは個別に問題をデバッグしているため、開発者は Xbox Live マッチメイキング サービスでテスターをマッチング対象にしたくないと考えている可能性があります。  これを防止する効果的な方法として、開発者向けに *Development* サンドボックスを、テスター向けに別個の *Testing* サンドボックスを使用できます。  これにより、両方のグループを分離します。
 
-## <a name="advanced"></a>高度な設定
+## <a name="advanced"></a>詳細
 
 開発プロセスを簡潔にするには、既定のサンドボックスで開始し、新しいサンドボックスを慎重に追加します。
 

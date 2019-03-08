@@ -8,52 +8,52 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a8973390ccbf5dd9980410f60f03a7edd78c134
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918073"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608787"
 ---
 # <a name="post-usersmescidsscidclips"></a>POST (/users/me/scids/{scid}/clips)
-初期のアップロード要求を実行します。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+初期アップロード要求を行います。 これらの Uri のドメインが`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`、対象の URI の機能によって異なります。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EFB)
-  * [Authorization](#ID4EQB)
+  * [承認](#ID4EQB)
   * [必要な要求ヘッダー](#ID4EKC)
-  * [オプションの要求ヘッダー](#ID4ENE)
+  * [省略可能な要求ヘッダー](#ID4ENE)
   * [要求本文](#ID4ENF)
-  * [要求の例](#ID4E1F)
-  * [HTTP ステータス コード](#ID4EDG)
+  * [要求のサンプル](#ID4E1F)
+  * [HTTP 状態コード](#ID4EDG)
   * [応答本文](#ID4EVAAC)
-  * [応答の例](#ID4EFBAC)
+  * [応答のサンプル](#ID4EFBAC)
  
 <a id="ID4EX"></a>
 
  
 ## <a name="remarks"></a>注釈
  
-これは、GameClip アップロード プロセスの最初の部分です。 ビデオのキャプチャ時にサービスを呼び出して、GameClips のビット、アップロードの ID と URI を取得するには、すぐをすぐに開始アップロードがスケジュールされていない場合でも、お勧めします。 この呼び出しは、ユーザー クォータ チェックやその他のチェックにして、ビデオがする必要があります、クライアントによってアップロードもスケジュールするかどうか、プライバシー、コンテンツの分離を通じて実行されます。 この呼び出しからの正の応答では、サービスが許容アップロード用のビデオ クリップを示します。 アップロードされたすべてのクリップを承諾するのには、システムと、(SCID) を通じて、特定のタイトルに関連付けられたする必要があります。
+これは、ゲーム クリップだったアップロード プロセスの最初の部分です。 ビデオのキャプチャ時をすぐに開始、アップロードがスケジュールされていない場合でも、bits のアップロードの ID と URI を取得するには、すぐにゲーム クリップ サービスを呼び出すことが推奨されます。 この呼び出しはユーザーのクォータ チェックとビデオがする必要があります、クライアントによってアップロードもスケジュールされるかどうかを参照してください、という具合に、プライバシー、コンテンツの分離によるその他のチェックを実行します。 この呼び出しから肯定応答では、サービスがアップロードのビデオ クリップを許容できることを示します。 承諾するのには、システムには、(、SCID) を通じて特定のタイトルのアップロードのすべてのクリップが関連付けられている必要があります。
  
-この呼び出しでない等です。後続の呼び出しには、別の Id と Uri が発行されるが発生します。 エラー発生時における再試行は、標準的なクライアント側バックオフ動作に従う必要があります。
+この呼び出しはべき等です。後続の呼び出しは、別の Id と Uri を発行できるになります。 エラー発生時の再試行は、標準的なクライアント側、バックオフ動作に従う必要があります。
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| string| アクセスされているリソースのサービス構成 ID。 認証されたユーザーの SCID に一致する必要があります。| 
+| scid| string| サービス アクセスされているリソースの ID を構成します。 認証されたユーザーの SCID に一致する必要があります。| 
   
 <a id="ID4EQB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-次の要求は、このメソッドでは必要があります。
+次の要求は、このメソッドに必要です。
  
-   * Xuid
+   * xuid
    * DeviceType - デバイスをアップロードする必要があります。
    * DeviceId
    * TitleId
@@ -64,33 +64,33 @@ ms.locfileid: "8918073"
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例: <b>Xauth =&lt;authtoken ></b>| 
-| X RequestedServiceVersion| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。例: 1 の場合、vnext します。| 
-| Content-Type| string| 応答本文の MIME タイプ。 例:<b>アプリケーション/json</b>します。| 
-| Accept| string| コンテンツの種類の利用可能な値です。 例:<b>アプリケーション/json</b>します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:<b>Xauth=&lt;authtoken></b>| 
+| X RequestedServiceVersion| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。例:1、vnext。| 
+| Content-Type| string| 応答本文の MIME の種類。 例: <b>、application/json</b>します。| 
+| OK| string| コンテンツの種類の許容される値。 例: <b>、application/json</b>します。| 
   
 <a id="ID4ENE"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Accept-Encoding| string| 受け入れ可能な圧縮エンコードします。 値の例: gzip、身元を圧縮します。| 
+| Accept-Encoding| string| 許容される圧縮エンコーディング。 値の例: gzip、deflate の id。| 
   
 <a id="ID4ENF"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求の本文には、JSON 形式で[InitialUploadRequest](../../json/json-initialuploadrequest.md)オブジェクトを使う必要があります。
+要求の本文にする必要があります、 [InitialUploadRequest](../../json/json-initialuploadrequest.md) JSON 形式のオブジェクト。
   
 <a id="ID4E1F"></a>
 
  
-## <a name="sample-request"></a>要求の例
+## <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -118,29 +118,29 @@ ms.locfileid: "8918073"
 <a id="ID4EDG"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| OK| セッションが正常に取得されました。| 
-| 400| Bad Request| 要求本文でエラーが発生しましたまたはユーザーがそのクォータを超えています。| 
-| 401| 権限がありません| 要求の認証トークンの形式で問題があります。| 
+| 200| OK| セッションが正常に取得します。| 
+| 400| 要求が正しくありません| 要求の本文にエラーが発生しました。 または、ユーザーは、そのクォータを超えて。| 
+| 401| 権限がありません| 要求の認証トークンの形式に問題があります。| 
 | 403| Forbidden| 一部の必須の要求がないか、または DeviceType はありません。| 
-| 503| 許容できません。| サービスまたは一部ダウン ストリームの依存関係ダウンしています。 標準的なバックオフ動作を指定して再試行します。| 
+| 503| Not Acceptable| サービスまたはいくつかのダウン ストリームの依存関係がダウンします。 標準的なバックオフ動作で再試行してください。| 
   
 <a id="ID4EVAAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-応答には、 [InitialUploadResponse](../../json/json-initialuploadresponse.md)オブジェクト、または JSON 形式で[ServiceErrorResponse](../../json/json-serviceerrorresponse.md)オブジェクトを指定します。
+応答ができます、 [InitialUploadResponse](../../json/json-initialuploadresponse.md)オブジェクトまたは[ServiceErrorResponse](../../json/json-serviceerrorresponse.md) JSON 形式のオブジェクト。
   
 <a id="ID4EFBAC"></a>
 
  
-## <a name="sample-response"></a>応答の例
+## <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

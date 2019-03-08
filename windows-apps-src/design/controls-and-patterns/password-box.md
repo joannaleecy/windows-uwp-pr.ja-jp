@@ -1,5 +1,5 @@
 ---
-Description: A password box is a text input box that conceals the characters typed into it for the purpose of privacy.
+Description: パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。
 title: パスワード ボックスのガイドライン
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
@@ -7,17 +7,17 @@ label: Password box
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 43639ac22c07501da89e29419a226a8a3ce8af48
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036914"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613067"
 ---
 # <a name="password-box"></a>パスワード ボックス
 
@@ -25,13 +25,13 @@ ms.locfileid: "9036914"
 
 パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。 パスワード ボックスは、入力されたテキストの代わりに代替文字が表示される点を除けば、テキスト ボックスに似ています。 この代替文字は、構成できます。
 
-> **重要な API**: [PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[Password プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)、[PasswordChar プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)、[PasswordRevealMode プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)、[PasswordChanged イベント](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+> **重要な Api**:[PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[パスワード プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)、 [PasswordChar プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)、 [PasswordRevealMode プロパティ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)、 [PasswordChanged イベント](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
 既定では、ユーザーは表示ボタンを押すことによってパスワード ボックスでパスワードを表示できます。 表示ボタンを無効にしたり、別の方法でパスワードを表示できるようにしたりすることもできます (チェック ボックスなど)。
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
-**PasswordBox** コントロールを使用して、社会保障番号などその他の機密データも収集できます。
+**PasswordBox** コントロールを使用して、パスワードや、社会保障番号などの機密データを収集できます。
 
 適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
@@ -44,8 +44,8 @@ ms.locfileid: "9036914"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/PasswordBox">アプリを開き、PasswordBox の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -198,9 +198,9 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 [テキスト コントロール](text-controls.md)
 
-- [スペル チェックのガイドライン](text-controls.md)
+- [スペル チェックするためのガイドライン](text-controls.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [テキスト入力のガイドライン](text-controls.md)
+- [テキスト入力するためのガイドライン](text-controls.md)
 - [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
 ms.openlocfilehash: 6fd94a8fbe759655b495feed8df4dad689936c4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918287"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618437"
 ---
 # <a name="authentication"></a>認証
 
@@ -21,8 +21,8 @@ ms.locfileid: "8918287"
 
 [ユニバーサル Windows プラットフォーム (UWP) プロジェクトの認証](authentication-for-UWP-projects.md)
 
-[Xbox Developer Kit (XDK) プロジェクトの認証](authentication-for-XDK-projects.md)
+[Xbox 開発者キット (XDK) プロジェクトの認証](authentication-for-XDK-projects.md)
 
-[Single Point of Presence (SPOP)](single-point-of-presence.md)
+[シングル ポイント オブ プレゼンス (SPOP)](single-point-of-presence.md)
 
-[UWP での Windows システム ユーザーの取得](retrieving-windows-system-user-on-UWP.md)
+[UWP の Windows システムのユーザーを取得します。](retrieving-windows-system-user-on-UWP.md)

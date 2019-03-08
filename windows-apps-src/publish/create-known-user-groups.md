@@ -1,16 +1,16 @@
 ---
-Description: Learn how to create known user groups to use for package flighting and more.
+Description: パッケージ フライトなどに使う既知のユーザー グループの作成方法を説明します。
 title: 既知のユーザー グループを作成する
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 対象グループ, ユーザー, フライト グループ, ユーザー グループ, 既知のユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fcb111121511553bba22cef55f94125d47e9f21
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938267"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605287"
 ---
 # <a name="create-known-user-groups"></a>既知のユーザー グループを作成する
 
@@ -20,7 +20,7 @@ ms.locfileid: "8938267"
 
 ## <a name="to-create-a-known-user-group"></a>既知のユーザー グループを作成するには
 
-1. [パートナー センター](https://partner.microsoft.com/dashboard)では、左側のナビゲーション メニューで**利用率の引き上げ**を展開し、**ユーザー グループ**を選択します。 
+1. [パートナー センター](https://partner.microsoft.com/dashboard)、展開**エンゲージ**を選択し、左側のナビゲーション メニューで**顧客グループ**します。 
 2. **[自分のユーザー グループ]** セクションで、**[新しいグループの作成]** を選びます。
 3. 次のページで、**[グループ名]** にグループの名前を入力します。
 4. **[既知のユーザー グループ]** ラジオ ボタンがオンになっていることを確認します。
@@ -36,7 +36,7 @@ ms.locfileid: "8938267"
 
 ## <a name="to-edit-a-known-user-group"></a>既知のユーザー グループを編集するには
 
-パートナー センターからの既知のユーザー グループを削除する (またはその名前を変更する) ことはできません、作成した後、いつでもでも、メンバーシップを編集することができます。
+パートナー センターから既知のユーザー グループを削除 (またはその名前を変更する) ことはできません、作成したが、いつでもそのメンバーシップを編集することができます。
 
 既知のユーザー グループを確認および編集するには、左側のナビゲーション メニューの **[Engage] (関心を引く)** メニューを展開し、ダッシュボードの上部付近の **[ユーザー グループ]** を選びます。 **[自分のユーザー グループ]** で、編集するグループの名前を選びます。 また、パッケージ フライトの作成ページで新しいフライトの作成時に **[既存のグループを表示および管理]** を選ぶか、パッケージ フライトの概要ページでグループの名前を選んでも、既知のユーザー グループを編集できます。 
 

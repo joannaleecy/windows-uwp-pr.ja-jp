@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, タイトル ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a0be72142a3e11c7c680cfc998287f396c2afc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921983"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641657"
 ---
 # <a name="reading-a-binary-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージ内のバイナリ BLOB の読み取り
 
@@ -29,6 +29,6 @@ ms.locfileid: "8921983"
 
 -   STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。
 
-#### <a name="reference"></a>参照先
+#### <a name="reference"></a>リファレンス
 
 **/global/scids/{scid}/data/{pathAndFileName},{type}**

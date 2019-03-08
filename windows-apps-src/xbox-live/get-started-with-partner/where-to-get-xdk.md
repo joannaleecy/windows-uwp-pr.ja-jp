@@ -1,5 +1,5 @@
 ---
-title: XDK の入手方法
+title: XDK を取得する方法
 description: 対象パートナーとしてアクセスし、Xbox 開発キット (XDK) を入手する方法について説明します。
 ms.assetid: 5e7abfb7-5d68-4e77-a941-13dd081268ac
 ms.date: 04/04/2017
@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, XDK
 ms.localizationpriority: medium
 ms.openlocfilehash: bcb9d5ffe3bcc691d92f56c570432c3bdca48353
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920022"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627697"
 ---
 # <a name="how-to-get-the-xbox-development-kit-xdk"></a>Xbox 開発キット (XDK) を取得する方法
 
-Xbox 開発キット (XDK) はパブリックではないです。 2 つのグループでは、対象パートナーとID@Xbox、開発者は、XDK へのアクセスを許可し、開発に関するリソースのドキュメントとミドルウェア ツールと同様に関連付けられています。 XDK は、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)で、developer.microsoft.com サイトからダウンロードできます。
+Xbox 開発キット (XDK) には公開されていません。 2 つのグループ、管理対象のパートナーとID@Xbox開発者にとって XDK へのアクセスが許可され、関連付けられているドキュメントとミドルウェアのツールと同様に開発リソース。 XDK からダウンロードできます、[ソフトウェアのダウンロード ページ](https://developer.microsoft.com/en-us/games/xbox/partner/resources-softwaredownloads)developer.microsoft.com サイト。
 
-サイトにアクセスできない場合、ダウンロードまたは XDK を使用することはできません。 お持ちでないでない場合へのアクセスには、担当のアカウント マネージャーがお問い合わせください。
+サイトにアクセスできない場合、XDK を使用して、ダウンロードしたりできなきます。 アカウント マネージャーに問い合わせてアクセスしない場合は。
 
-XDK のアクセスを実行できます条件を満たすために[申し込む、ID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
-[ここをクリックして](../developer-program-overview.md)について詳しくはして、ID@Xboxプログラムとその他の開発者層します。
+できます XDK アクセスの対象にするには[への応募をID@Xbox開発者](https://www.xbox.com/en-us/Developers/id)します。
+[ここをクリックして](../developer-program-overview.md)について詳しくは、ID@Xboxプログラムと他の開発者レベル。
 
 ## <a name="software-requirements"></a>ソフトウェア要件
 
@@ -33,17 +33,17 @@ XDK のアクセスを実行できます条件を満たすために[申し込む
 - Xbox One 開発キット
 - Xbox One XDK
 - Visual Studio
-    - Visual Studio 2012 の場合、Visual Studio 2015、Visual Studio 2017 または Visual Studio の最新リリースします。 最新の更新プログラムとセキュリティの開発に最新バージョンの Visual Studio アクセス可能になります。
+    - Visual Studio 2012、Visual Studio 2015、Visual Studio 2017 または Visual Studio の最新リリース。 最新バージョンの Visual Studio 開発およびセキュリティの最新の更新プログラムにアクセスは許可されます。
 
 ## <a name="use"></a>使用
 
-XDK へのアクセスはの指示に従って、その使用されているリソースへのアクセスを与えます。 これらのリソースが公開されないし、のみが利用 XDK と同様にID@Xboxマネージ パートナー開発者とします。
+XDK へのアクセスの使用で役立つリソースへのアクセスも与えます。 同様にこれらのリソースがパブリックでないし、可能なだけの XDKID@Xboxおよび開発パートナーを管理します。
 
-- Xbox Live 開発キットを使用して、 [XDK ドキュメント](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)の最新情報の詳細を表示します。
-- 追加のヘルプのコミュニティの詳細については、[開発者フォーラム](https://forums.xboxlive.com/index.html)を参照してください。 またはアカウント マネージャーに連絡できます。
+- Xbox Live 開発キットの使用方法について、 [XDK Docs](https://developer.microsoft.com/en-us/games/xbox/partner/development-documentation)します。
+- 追加のヘルプを参照してください、[デベロッパー フォーラム](https://forums.xboxlive.com/index.html)コミュニティのサポート、または、アカウント マネージャーにお問い合わせください。
 
 ## <a name="install-the-xdk"></a>XDK のインストール
 
 XDK をダウンロードしインストールすると、Xbox Live をプロジェクトに統合できます。  次のいずれかをご覧ください。
-- [XDK に付属する Xbox Live API のソースをコンパイルする](compile-the-xdk-xbox-live-api-source.md)
-- [XDK に組み込まれている Xbox Live API を使用する](using-xbox-live-apis-built-into-the-xdk.md)
+- [Xbox Live Api ソースをコンパイルする XDK に付属](compile-the-xdk-xbox-live-api-source.md)
+- [Xbox Live Api を使用して、XDK に組み込まれています。](using-xbox-live-apis-built-into-the-xdk.md)

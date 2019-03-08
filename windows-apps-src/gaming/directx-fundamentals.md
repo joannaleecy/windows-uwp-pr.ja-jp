@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, 読み込み, ラスタライズ, メッシュ, ビットマップ, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: afd08d62182bd0980f43ce1c4578c1181f8a6d2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925153"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613747"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX プログラミングの基本
 
@@ -38,19 +38,19 @@ ms.locfileid: "8925153"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="working-with-2d-graphics-in-your-directx-game.md">DirectX ゲームの 2D グラフィックス</a></p></td>
+<td align="left"><p><a href="working-with-2d-graphics-in-your-directx-game.md">DirectX ゲームの 2D グラフィック</a></p></td>
 <td align="left"><p>DirectX を使用して 2D グラフィックスを作成します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D グラフィックスの学習ガイド</a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D グラフィックス学習ガイド</a></p></td>
 <td align="left"><p>Direct3D でのグラフィックスの概念について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">DirectX ゲームの基本的な 3D グラフィックス</a></p></td>
+<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">DirectX ゲーム用の基本的な 3D グラフィック</a></p></td>
 <td align="left"><p>DirectX の基本的な 3D グラフィックスを作成します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">DirectX ゲームでのリソースの読み込み</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">DirectX ゲームでリソースを読み込む</a></p></td>
 <td align="left"><p>DirectX ゲームでメッシュを読み込みます。</p></td>
 </tr>
 </tbody>

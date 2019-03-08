@@ -1,18 +1,18 @@
 ---
 description: フォト エディターは、C++/WinRT 言語プロジェクションでの開発を紹介する UWP のサンプル アプリケーションです。 サンプル アプリケーションを使用すると、画像ライブラリから写真を取得し、関連する写真効果で選択したイメージを編集できます。
-title: フォト エディター C++/WinRT サンプル アプリケーション
+title: Photo Editor C++/WinRT サンプル アプリケーション
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, サンプル, アプリケーション, フォト, エディター
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606707"
 ---
-# <a name="photo-editor-cwinrt-sample-application"></a>フォト エディター C++/WinRT サンプル アプリケーション
+# <a name="photo-editor-cwinrt-sample-application"></a>Photo Editor C++/WinRT サンプル アプリケーション
 [フォト エディター C++/WinRT サンプル アプリケーション](https://github.com/Microsoft/Windows-appsample-photo-editor)の GitHub リポジトリからサンプル アプリケーションを複製またはダウンロードできます。
 
 フォト エディター アプリケーションは、[C++/WinRT](intro-to-using-cpp-with-winrt.md) 言語プロジェクションでの開発を紹介するユニバーサル Windows プラットフォーム (UWP) のサンプル アプリケーションです。 サンプル アプリケーションを使用すると、**画像**ライブラリから写真を取得し、関連する写真効果で選択したイメージを編集できます。 サンプルのソース コードには、C++/WinRT プロジェクションを使用して実行された[データ バインディング](binding-property.md)や[非同期アクションと非同期操作](concurrency.md)など多くの一般的な方法が含まれています。 このサンプルで示されている特定の機能の一部を次に示します。

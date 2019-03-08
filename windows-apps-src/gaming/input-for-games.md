@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f1daac8bc94d49c501307728c1e966ba89435f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941260"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631667"
 ---
 # <a name="input-for-games"></a>ゲームの入力
 
@@ -43,17 +43,17 @@ UWP ゲームでのレース ホイールの使用方法について詳しくは
 
 ### <a name="flight-sticks"></a>フライト スティック
 
-フライト スティックは、航空機や宇宙船のコックピットにあるフライト スティックの操作感を再現するゲームの入力デバイスです。 フライトを迅速かつ正確に制御するのに最適な入力デバイスです。
+フライト スティックは、航空機や宇宙船のコックピットにあるフライト スティックの操作感を再現したゲーム用の入力デバイスです。 フライトを迅速かつ正確に制御するのに最適な入力デバイスです。
 
-UWP ゲームでフライト スティックの使用方法の詳細については、[フライト スティック](flight-stick.md)を参照してください。
+UWP ゲームでのフライト スティックの使用方法について詳しくは、「[フライト スティック](flight-stick.md)」をご覧ください。
 
-### <a name="raw-game-controllers"></a>未加工のゲーム コント ローラー
+### <a name="raw-game-controllers"></a>未加工のゲーム コントローラー
 
 未加工のゲーム コントローラーは、さまざまな種類の一般的なゲーム コントローラーの入力を備えた、ゲーム コントローラーの汎用的な表現です。 これらの入力は、名前のないボタン、スイッチ、軸の単純な配列として公開されます。 未加工のゲーム コントローラーを使用すると、ユーザーが使っているコントローラーの種類に関係なく、カスタム入力マッピングを作成することができます。
 
-UWP ゲームで未加工のゲーム コント ローラーを使用する方法の詳細については、[未加工のゲーム コント ローラー](raw-game-controller.md)を参照してください。
+UWP ゲームでの未加工のゲーム コントローラーの使用方法について詳しくは、「[未加工のゲーム コントローラー](raw-game-controller.md)」をご覧ください。
 
-### <a name="ui-navigation-controllers"></a>UI ナビゲーション コント ローラー
+### <a name="ui-navigation-controllers"></a>UI ナビゲーション コントローラー
 
 UI ナビゲーション コントローラーは、UI ナビゲーション コマンドの共通ボキャブラリを提供するために存在する論理入力デバイスです。UI ナビゲーション コマンドは、複数の異なるゲームや物理入力デバイス間に一貫性のあるユーザー エクスペリエンスを生み出します。 ゲームのユーザー インターフェイスには、デバイス固有のインターフェイスではなく、UINavigationController インターフェイスを使用するようにします。
 
@@ -65,14 +65,14 @@ UWP ゲームでの UI ナビゲーション コントローラーの使用方�
 
 UWP ゲームでのヘッドセットの使用方法について詳しくは、「[ヘッドセット](headset.md)」をご覧ください。
 
-### <a name="users"></a>ユーザー
+### <a name="users"></a>Users
 
 各入力デバイスとそこに接続するヘッドセットに特定のユーザーを関連付け、そのユーザーの ID をそのユーザーのゲームプレイにリンクすることができます。 ユーザー ID は、物理入力デバイスからの入力を論理 UI ナビゲーション コント ローラーからの入力に関連付けるための手段でもあります。
 
 ユーザーと入力デバイスの管理方法について詳しくは、「[ユーザーおよびそのデバイスの追跡](input-practices-for-games.md#tracking-users-and-their-devices)」をご覧ください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-* [ゲームの入力プラクティス](input-practices-for-games.md)
+* [ゲームの入力のプラクティス](input-practices-for-games.md)
 * [Windows.Gaming.Input 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.Custom 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)

@@ -4,14 +4,14 @@ title: XAML でのビジュアル レイヤーの使用
 description: ビジュアル レイヤー API を既存の XAML コンテンツと組み合わせて使用し、高度なアニメーションや効果を作成する方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606827"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>XAML でのビジュアル レイヤーの使用
 
@@ -45,12 +45,12 @@ XAML UI 要素の照明など、ライトの使い方について詳しくは、
 
 ## <a name="the-elementcompositionpreview-class"></a>ElementCompositionPreview クラス
 
-[**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) は静的クラスであり、XAML とビジュアル レイヤーの相互運用機能を提供します。 ビジュアル レイヤーとその機能の概要については、「[ビジュアル レイヤー](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)」をご覧ください。 **ElementCompositionPreview** クラスには、次のメソッドが用意されています。
+[**ElementCompositionPreview** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx)は XAML とビジュアル層の相互運用機能を提供する静的クラスです。 ビジュアル レイヤーとその機能の概要については、「[ビジュアル レイヤー](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer)」をご覧ください。 **ElementCompositionPreview** クラスには、次のメソッドが用意されています。
 
--   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx) この要素のレンダリングで使用される "ハンドアウト" Visual を取得します。
--   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): "ハンドイン" Visual を、この要素のビジュアル ツリーの最後の子として設定します。 この Visual は、他の要素の上に描画されます。 
--   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): **SetElementChildVisual** を使用して設定された Visual を取得します。
--   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): **ScrollViewer** のスクロール オフセットに基づいて 60 fps のアニメーションを作成する際に使用できるオブジェクトを取得します。
+-   [**GetElementVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):この要素を表示するために使用される Visual「配布資料」を取得します。
+-   [**SetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx):"Handin"最後の子としてのビジュアルのこの要素のビジュアル ツリーを設定します。 この Visual は、他の要素の上に描画されます。 
+-   [**GetElementChildVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):ビジュアルのセットを使用して取得**SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx):スクロールのオフセットに基づく 60 fps のアニメーションを作成するために使用できるオブジェクトを取得、 **ScrollViewer**
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>ElementCompositionPreview.GetElementVisual の解説
 
@@ -96,7 +96,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** メソッド
 
-[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752)、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)、[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) は、それぞれ、**GetAlphaMask** と呼ばれるメソッドを実装します。このメソッドは、要素の形状を使用したグレースケール画像を表す **CompositionBrush** を返します。 この **CompositionBrush** は、コンポジション **DropShadow** の入力として使用できます。そのため、シャドウでは、四角形ではなく要素の形状を反映することができます。 これにより、テキスト、アルファを含む画像、図形に対して、ピクセル パーフェクトで輪郭ベースのシャドウを使用することができます。 この API の例については、以下の「*ドロップ シャドウ*」をご覧ください。
+[**イメージ**](https://msdn.microsoft.com/library/windows/apps/br242752)、 [ **TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)、および[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)と呼ばれるメソッドを実装する各**GetAlphaMask**を返す、 **CompositionBrush**要素の形状を持つ、グレースケール イメージを表します。 この **CompositionBrush** は、コンポジション **DropShadow** の入力として使用できます。そのため、シャドウでは、四角形ではなく要素の形状を反映することができます。 これにより、テキスト、アルファを含む画像、図形に対して、ピクセル パーフェクトで輪郭ベースのシャドウを使用することができます。 この API の例については、以下の「*ドロップ シャドウ*」をご覧ください。
 
 ## <a name="recipes"></a>レシピ
 
@@ -149,8 +149,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 1. ホスト要素のハンドアウト **Visual** を取得します
 2. Windows.UI.Composition の **DropShadow** を作成します
 3. マスクを使用してターゲット要素から図形を取得するように、**DropShadow** を構成します
-    - 
-              既定では、**DropShadow** は四角形になります。つまり、ターゲットが四角形である場合は、この構成は必要ありません
+    - 既定では、**DropShadow** は四角形になります。つまり、ターゲットが四角形である場合は、この構成は必要ありません
 4. シャドウを新しい **SpriteVisual** にアタッチし、**SpriteVisual** をホスト要素の子として設定します
 5. **ExpressionAnimation** を使用して、**SpriteVisual** のサイズをホストのサイズにバインドします
 
@@ -363,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>その他のリソース
 
-- [ビジュアル レイヤーの概要](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview** クラス](https://msdn.microsoft.com/library/windows/apps/mt608976)
+- [ビジュアル層の概要](https://msdn.microsoft.com/windows/uwp/composition/visual-layer)
+- [**ElementCompositionPreview**クラス](https://msdn.microsoft.com/library/windows/apps/mt608976)
 - [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル
-- [BasicXamlInterop のサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
-- [ParallaxingListItems のサンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)
+- [BasicXamlInterop サンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
+- [ParallaxingListItems サンプル](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

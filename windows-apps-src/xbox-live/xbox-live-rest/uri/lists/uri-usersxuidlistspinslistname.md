@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f9610b400e9530f86e264cea30bfdfdd1b09c8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920592"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627997"
 ---
 # <a name="usersxuidxuidlistspinslistname"></a>/users/xuid(xuid)/lists/PINS/{listname}
-リストの項目にアクセスします。 これらの Uri のドメインが`eplists.xboxlive.com`します。
+リスト内の項目にアクセスします。 これらの Uri のドメインが`eplists.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,11 +24,11 @@ ms.locfileid: "8920592"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| string| Xbox ユーザー ID (XUID) です。| 
-| listtype| string| (その使用方法と動作) の一覧の種類です。 常に「ピン」これらのメソッドに関連します。| 
-| リスト| string| リストの名前 (際に指定された listtype の一覧がどの)。 常に"XBLPins"の項目のピン留めします。| 
+| xuid| string| Xbox のユーザー ID (XUID)。| 
+| listtype| string| (その使用方法およびどのように機能します) のリストの種類。 常に「ピン」これらのメソッドに関連します。| 
+| listname| string| リストの名前 (を操作する特定の listtype のどのリスト)。 常に"XBLPins"の項目のピンです。| 
   
 <a id="ID4EGC"></a>
 
@@ -39,17 +39,17 @@ ms.locfileid: "8920592"
 
 &nbsp;&nbsp;一覧から項目を削除します。
 
-[GET](uri-usersxuidlistspinslistnameget.md)
+[取得](uri-usersxuidlistspinslistnameget.md)
 
-&nbsp;&nbsp;リストの内容を返します。
+&nbsp;&nbsp;一覧の内容を返します。
 
-[POST](uri-usersxuidlistspinslistnamepost.md)
+[投稿](uri-usersxuidlistspinslistnamepost.md)
 
-&nbsp;&nbsp;クエリ文字列パラメーター **insertIndex**に基づいてインデックスの一覧に項目を挿入します。
+&nbsp;&nbsp;クエリ文字列パラメーターに基づいてインデックス位置にある一覧に項目を挿入**insertIndex**します。
 
 [PUT](uri-usersxuidlistspinslistnameput.md)
 
-&nbsp;&nbsp;要求本文内の各項目に指定されたインデックスに従ってリスト内の項目を更新します。
+&nbsp;&nbsp;要求本文内の各項目に指定されたインデックスによってリスト内の項目を更新します。
  
 <a id="ID4EZC"></a>
 
@@ -61,6 +61,6 @@ ms.locfileid: "8920592"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

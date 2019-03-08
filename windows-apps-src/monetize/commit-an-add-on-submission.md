@@ -1,21 +1,21 @@
 ---
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: パートナー センターへの新規または更新されたアドオンの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。
+description: Microsoft Store 送信 API でこのメソッドを使用して、パートナー センターに送信する新しいまたは更新されたアドオンをコミットします。
 title: アドオンの申請のコミット
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請のコミット, アプリ内製品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: efab4412486566ae817eb66e78f5407533a30d5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928284"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608217"
 ---
 # <a name="commit-an-add-on-submission"></a>アドオンの申請のコミット
 
-パートナー センターに (別名アプリ内製品または IAP) の新規または更新されたアドオンの申請をコミットするのに、Microsoft Store 申請 API の以下のメソッドを使用します。 コミット アクション パートナー センターに通知 (関連アイコンを含む)、申請データをアップロードされています。 応答には、パートナー センターは、インジェストと公開の申請のデータへの変更をコミットします。 コミット操作が成功した後、申請に対する変更はパートナー センターで表示されます。
+Microsoft Store 送信 API でこのメソッドを使用して、パートナー センターに送信する新規または更新済みのアドオン (とも呼ばれるアプリ内製品または IAP) をコミットします。 コミット アクション アラート パートナー センター (すべての関連するアイコンを含む) の送信データがアップロードされています。 応答では、パートナー センターは、送信データの取り込みおよび発行に変更をコミットします。 コミット操作が成功すると、パートナー センターで、送信への変更が表示されます。
 
 コミット操作が Microsoft Store 申請 API を使ったアドオンの申請プロセスにどのように適合するかについては、「[アドオンの申請の管理](manage-add-on-submissions.md)」をご覧ください。
 
@@ -38,7 +38,7 @@ ms.locfileid: "8928284"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -47,8 +47,8 @@ ms.locfileid: "8928284"
 
 | 名前        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | string | 必須。 コミットする申請が含まれるアドオンのストア ID です。 パートナー センターで、ストア ID は利用可能なと、[すべてのアドオンを取得](get-all-add-ons.md)し[、アドオンを作成](create-an-add-on.md)する要求の応答データに含まれています。 |
-| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された申請はこの ID はパートナー センターでの申請ページの URL で利用可能なもします。  |
+| inAppProductId | string | 必須。 コミットする申請が含まれるアドオンのストア ID です。 Store ID は、パートナー センターで利用できるとするための要求応答のデータに含まれる[すべてのアドオンを入手する](get-all-add-ons.md)と[アドオンを作成](create-an-add-on.md)です。 |
+| submissionId | string | 必須。 コミットする申請の ID です。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -76,9 +76,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>応答本文
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| Value      | 種類   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | string  | 申請の状態。 次のいずれかの値を使用できます。 <ul><li>なし</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>公開</li><li>公開済み</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>認定</li><li>CertificationFailed</li><li>リリース</li><li>ReleaseFailed</li></ul>  |
 
 
 ## <a name="error-codes"></a>エラー コード
@@ -89,14 +89,14 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求パラメーターが有効ではありません。 |
 | 404  | 指定した申請は見つかりませんでした。 |
-| 409  | 指定した申請は見つかりましたが、現在の状態でコミットできなかった可能性がありますかアドオンは[、Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)パートナー センターの機能を使用しています。 |
+| 409  | 指定した送信が見つかりましたが、現在の状態で、コミットできなかったまたはアドオンであるパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。 |
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アドオンの申請の取得](get-an-add-on-submission.md)
-* [アドオンの申請の作成](create-an-add-on-submission.md)
-* [アドオンの申請の更新](update-an-add-on-submission.md)
-* [アドオンの申請の削除](delete-an-add-on-submission.md)
-* [アドオンの申請の状態の取得](get-status-for-an-add-on-submission.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [取得するアドオンの送信](get-an-add-on-submission.md)
+* [アドオンを提出を作成します。](create-an-add-on-submission.md)
+* [アドオンを申請を更新します。](update-an-add-on-submission.md)
+* [削除するアドオンの送信](delete-an-add-on-submission.md)
+* [アドオンの提出パッケージのステータスを取得します。](get-status-for-an-add-on-submission.md)

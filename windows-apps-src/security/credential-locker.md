@@ -4,14 +4,14 @@ description: この記事では、ユニバーサル Windows プラットフォ�
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: b7ac2a625b3769377ed6c8dddce3ca25177dee5f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941763"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608387"
 ---
 # <a name="credential-locker"></a>資格情報保管ボックス
 
@@ -29,8 +29,8 @@ ms.locfileid: "8941763"
 ## <a name="storing-user-credentials"></a>ユーザー資格情報の格納
 
 
-1.  [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
-2.  [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを作成し、アプリの識別子、ユーザー名、パスワードを含めます。これを [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) メソッドに渡して、資格情報を保管ボックスに追加します。
+1.  [  **Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
+2.  [  **PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを作成し、アプリの識別子、ユーザー名、パスワードを含めます。これを [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) メソッドに渡して、資格情報を保管ボックスに追加します。
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -41,9 +41,9 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
 ## <a name="retrieving-user-credentials"></a>ユーザー資格情報の取得
 
 
-[**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトへの参照を取得した後、資格情報保管ボックスからユーザー資格情報を取得するには、いくつかの方法があります。
+[  **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトへの参照を取得した後、資格情報保管ボックスからユーザー資格情報を取得するには、いくつかの方法があります。
 
--   [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) メソッドを使うと、ユーザーからアプリに提供された保管ボックス内の資格情報をすべて取得できます。
+-   [  **PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) メソッドを使うと、ユーザーからアプリに提供された保管ボックス内の資格情報をすべて取得できます。
 
 -   格納されている資格情報のユーザー名がわかっている場合は、[**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) メソッドを使うことで、そのユーザー名の資格情報をすべて取得できます。
 
@@ -114,7 +114,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 
 資格情報保管ボックスからのユーザー資格情報の削除も、2 段階のプロセスで簡単に行うことができます。
 
-1.  [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
+1.  [  **Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
 
 2.  削除する資格情報を [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) メソッドに渡します。
 

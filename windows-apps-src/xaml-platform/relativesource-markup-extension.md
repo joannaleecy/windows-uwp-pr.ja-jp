@@ -4,14 +4,14 @@ title: RelativeSource マークアップ拡張
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 26cde97f82e6962d530721f1e0230138e5917016
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920531"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617927"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} マークアップ拡張
 
@@ -43,7 +43,7 @@ ms.locfileid: "8920531"
 
 ## <a name="remarks"></a>注釈
 
-[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) では、**Binding** オブジェクト要素の属性または [{Binding} マークアップ拡張](binding-markup-extension.md)内のコンポーネントとして [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) を設定できます。 これが、2 つの異なる XAML 構文が示されている理由です。
+[  **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) では、**Binding** オブジェクト要素の属性または [{Binding} マークアップ拡張](binding-markup-extension.md)内のコンポーネントとして [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) を設定できます。 これが、2 つの異なる XAML 構文が示されている理由です。
 
 **RelativeSource** は [{Binding} マークアップ拡張](binding-markup-extension.md)に似ています。  具体的には、自分自身のインスタンスを返すことができ、基本的に引数をコンストラクターに渡す文字列ベースの構築をサポートできるマークアップ拡張機能であるという点です。 この場合、渡される引数は [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 値になります。
 
@@ -58,15 +58,15 @@ ms.locfileid: "8920531"
 />
 ```
 
-オブジェクトの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を自分自身に設定する方法として `RelativeSource={RelativeSource Self}` を使うこともできます。  たとえば、独自のデータ バインドのために準備の完了したビュー モデルを既に提供しているカスタム プロパティによって [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスが拡張されている SDK のサンプルで、この技法を確認できます。 `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+オブジェクトの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を自分自身に設定する方法として `RelativeSource={RelativeSource Self}` を使うこともできます。  たとえば、いくつかの SDK の例では、この手法が生じる場所、 [**ページ**](https://msdn.microsoft.com/library/windows/apps/br227503)クラスは、独自のデータ バインディングのすぐにビュー モデルを既に提供しているカスタム プロパティを使用して拡張されています例を示します。 `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注:** **RelativeSource**用の XAML の使用方法は対象となる使用方法のみを示しています。 バインド式の一部として XAML で[**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)の値を設定します。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
+**注**  、XAML の使用状況の**RelativeSource**の対象となる使用量のみを示しています: の値を設定[ **Binding.RelativeSource** ](https://msdn.microsoft.com/library/windows/apps/br209831)バインディング式の一部としての XAML でします。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
 
 ## <a name="related-topics"></a>関連トピック
 
 * [XAML の概要](xaml-overview.md)
 * [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [{Binding} マークアップ拡張](binding-markup-extension.md)
-* [**バインディング**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [{0} バインド} マークアップ拡張機能](binding-markup-extension.md)
+* [**バインド**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 

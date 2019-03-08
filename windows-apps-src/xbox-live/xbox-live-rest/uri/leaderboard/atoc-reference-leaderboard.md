@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b9e22b926f01a2020504d4d5c70eba6af9e52afb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613017"
 ---
 # <a name="leaderboards-uris"></a>ランキング URI
 
-このセクションでは、*ランキング*用の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*ランキング*します。
 
-これらの Uri のドメインは、leaderboards.xboxlive.com です。
+これらの Uri のドメインとは、leaderboards.xboxlive.com です。
 
 <a id="ID4EDB"></a>
 
@@ -27,9 +27,9 @@ ms.locfileid: "8932580"
 
 [/scids/{scid}/leaderboards/{leaderboardname}](uri-scidsscidleaderboardsleaderboardname.md)
 
-&nbsp;&nbsp;定義済みグローバル ランキングにアクセスします。
+&nbsp;&nbsp;定義済みのグローバルなランキングにアクセスします。
 
-[ユーザー/xuid ({xuid})/scids/{scid}/stats/{statname)/people/{all\ | favorite}](uri-usersxuidscidstatnamepeople.md)
+[/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite}](uri-usersxuidscidstatnamepeople.md)
 
 &nbsp;&nbsp;ソーシャル (ランク付け) ランキングにアクセスします。
  
@@ -43,4 +43,4 @@ ms.locfileid: "8932580"
 
 ##### <a name="parent"></a>Parent
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)

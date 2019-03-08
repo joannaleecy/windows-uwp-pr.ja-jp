@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ、Azure Web サーバー
 ms.localizationpriority: medium
 ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929689"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608797"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>Azure Web アプリからの UWP アプリのインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "8929689"
 1. Microsoft Azure サブスクリプション 
 2. UWP アプリ パッケージ - 配布するアプリ パッケージ
 
-オプション: GitHub での[スターター プロジェクト](https://github.com/AppInstaller/MySampleWebApp) これは、使用するアプリ パッケージまたは Web ページがないが、この機能を使用する方法を確認したい場合に便利です。
+省略可能: [スタート プロジェクト](https://github.com/AppInstaller/MySampleWebApp)GitHub でします。 これは、使用するアプリ パッケージまたは Web ページがないが、この機能を使用する方法を確認したい場合に便利です。
 
 ### <a name="step-1---get-an-azure-subscription"></a>手順 1 - Azure サブスクリプションの取得
 Azure サブスクリプションを取得するには、[Azure アカウント ページ](https://azure.microsoft.com/free/)にアクセスしてください。 このチュートリアルの目的上、無料のメンバーシップを使用できます。

@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, アドオン, カタログ, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 2335e09253570d09c33422d2f5ba4179697e4ea7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922574"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637357"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>アプリ内製品の大規模なカタログの管理
 
-アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。 Windows 10 より前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。 Windows 10 以降、ストアには、開発者アカウントごとの製品一覧の数に制限がないと、この記事で説明したプロセスは必要はなくなりました。
+アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。 Windows 10 より前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。 Windows 10 以降では、ストアには、開発者アカウントごとの製品一覧の数に制限がありませんし、この記事で説明されているプロセスは必要なくなりました。
 
 > [!IMPORTANT]
-> この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用方法について説明します。 この名前空間は更新されなくなり、新機能も追加されないため、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store**名前空間では、ストアで管理されるコンシューマブルなアドオンやサブスクリプションなどの最新のアドオンの種類をサポートし、今後の製品とパートナー センターとストアでサポートされる機能の種類に対応するのには設計されています。 **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
+> この記事では、[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間のメンバーの使用方法について説明します。 この名前空間は更新されなくなり、新機能も追加されないため、代わりに [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間を使用することをお勧めします。 **Windows.Services.Store**名前空間が消耗アドオンの管理対象の Store や、サブスクリプションなど、最新のアドオン型をサポートしているしは将来の種類の製品とパートナーによってサポートされる機能に対応するように設計されていますCenter とストア。 **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md)」をご覧ください。
 
 この機能を有効にするには、特定の価格帯に対して少数の製品エントリを作成し、個々のエントリで、カタログ内の多数の製品を表します。 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) メソッドのオーバーロードを使って、ストアに掲載されたアプリ内購入製品に関連する、アプリで定義された販売を指定します。 呼び出し中に販売と製品の関連付けを指定することに加えて、アプリでは、大規模なカタログ販売の詳細を格納する [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384) オブジェクトも渡す必要があります。 これらの詳細が指定されていない場合、一覧に掲載された製品の詳細が代わりに使われます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "8922574"
 ## <a name="prerequisites"></a>前提条件
 
 -   このトピックでは、ストアの一覧に表示される 1 つのアプリ内購入製品を使って複数のアプリ内販売を表現することに対する、ストアのサポートについて説明します。 アプリ内購入に詳しくない場合は、「[アプリ内製品購入の有効化](enable-in-app-product-purchases.md)」を読んで、ライセンス情報と、ストアでアプリ内購入を適切に一覧表示する方法を確かめてください。
--   新しいアプリ内販売のコード記述やテストを初めて行うときは、[CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトではなく、[CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) オブジェクトを使う必要があります。 そうすることで、実稼働サーバーを呼び出すのではなく、ライセンス サーバーへのシミュレートされた呼び出しを使って、ライセンス ロジックを検証できます。 そのためには、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData で WindowsStoreProxy.xml という名前のファイルをカスタマイズする必要があります。 このファイルは、アプリを初めて実行するときに Microsoft Visual Studio シミュレーターによって作られます。カスタマイズされたファイルを実行時に読み込むこともできます。 詳しくは、「[CurrentAppSimulator での WindowsStoreProxy.xml ファイルの使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)」をご覧ください。
+-   新しいアプリ内販売のコード記述やテストを初めて行うときは、[CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトではなく、[CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) オブジェクトを使う必要があります。 そうすることで、実稼働サーバーを呼び出すのではなく、ライセンス サーバーへのシミュレートされた呼び出しを使って、ライセンス ロジックを検証できます。 これを行うには、%userprofile% WindowsStoreProxy.xml をという名前のファイルをカスタマイズする必要があります\\AppData\\ローカル\\パッケージ\\&lt;パッケージ名&gt;\\LocalState\\Microsoft\\Windows ストア\\ApiData します。 このファイルは、アプリを初めて実行するときに Microsoft Visual Studio シミュレーターによって作られます。カスタマイズされたファイルを実行時に読み込むこともできます。 詳しくは、「[CurrentAppSimulator での WindowsStoreProxy.xml ファイルの使用](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)」をご覧ください。
 -   このトピックでは、[ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)で提供されているコード例も参照します。 このサンプルを利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリに提供されるさまざまな収益化オプションを体験できます。
 
 ## <a name="make-the-purchase-request-for-the-in-app-product"></a>アプリ内製品に対する購入要求
@@ -50,8 +50,8 @@ ms.locfileid: "8922574"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリ内製品購入の有効化](enable-in-app-product-purchases.md)
-* [コンシューマブルなアプリ内製品購入の有効化](enable-consumable-in-app-product-purchases.md)
-* [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [アプリ内製品購入を有効にする](enable-in-app-product-purchases.md)
+* [コンシューマブルなアプリ内製品購入を有効にする](enable-consumable-in-app-product-purchases.md)
+* [ストアのサンプル (試用版とアプリ内購入のデモンストレーション)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)

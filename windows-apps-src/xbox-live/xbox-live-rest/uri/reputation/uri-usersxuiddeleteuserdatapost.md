@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dab43079dbba3729ff39f3a2116c377c3b73142a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947642"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604067"
 ---
 # <a name="post-usersxuidxuiddeleteuserdata"></a>POST (/users/xuid({xuid})/deleteuserdata)
-テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
+テスト ユーザーの評価データを完全にリセットします。 テスト目的専用です。
 
   * [注釈](#ID4EQ)
   * [URI パラメーター](#ID4E5)
-  * [Authorization](#ID4EJB)
+  * [承認](#ID4EJB)
   * [必要な要求ヘッダー](#ID4E3B)
-  * [HTTP ステータス コード](#ID4EHC)
+  * [HTTP 状態コード](#ID4EHC)
   * [応答本文](#ID4EJF)
 
 <a id="ID4EQ"></a>
@@ -29,57 +29,57 @@ ms.locfileid: "8947642"
 
 ## <a name="remarks"></a>注釈
 
-この API を呼び出すと、ユーザーからすべてのフィードバック項目と評判のデータが削除されます。 パートナーには、Retail を除くすべてのサンド ボックスに対してこの API を呼び出すことがあります。 執行チームは、サンド ボックス ID を持つには、この API を呼び出すことがあります。
+この API を呼び出すと、ユーザーから、すべてのフィードバック項目と評価データの設定が削除されます。 パートナーは、製品版を除く任意のサンド ボックスに対してこの API を呼び出すことができます。 強制チームは、サンド ボックス id には、この API を呼び出すことができます。
 
-これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
+これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は常にポート 10443 で呼び出されます。
 
 <a id="ID4E5"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータを削除しています。|
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) のデータが削除されるユーザーです。|
 
 <a id="ID4EJB"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-Retail サンド ボックスで、執行チームから**PartnerClaim**します。
+小売サンド ボックスの**PartnerClaim**強制チームから。
 
-すべての他のサンド ボックスに対して、 **PartnerClaim**と**SandboxIdClaim**します。
+他のすべてのサンド ボックスの**PartnerClaim**と**SandboxIdClaim**します。
 
 <a id="ID4E3B"></a>
 
 
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
 
-**コンテンツの種類: アプリケーション/json**と**X Xbl コントラクト バージョン**(現在のバージョンは 101)。
+**コンテンツの種類: アプリケーション/json**と**X Xbl コントラクト バージョン**(現在のバージョンでは 101 です)。
 
 <a id="ID4EHC"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
 
-| コード| 理由フレーズ| 説明|
+| コード| 理由語句| 説明|
 | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されました。|
-| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
+| 200| OK| セッションが正常に取得します。|
+| 400| 要求が正しくありません| サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
-| 500| 内部サーバー エラー| サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。|
-| 503| Service Unavailable| 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。|
+| 404| 検出不可| 指定されたリソースが見つかりませんでした。|
+| 500| 内部サーバー エラー| サーバーには、要求を満たせませんでした。 予期しない状態が発生しました。|
+| 503| サービス利用不可| 要求が調整されて、クライアント再試行値 (秒) (例: 5 秒後) の後にもう一度要求を再試行してください。|
 
 <a id="ID4EJF"></a>
 
 
 ## <a name="response-body"></a>応答本文
 
-成功した場合はなしそれ以外の場合、 [ServiceError (JSON)](../../json/json-serviceerror.md)ドキュメントです。
+成功した場合は noneそれ以外の場合、[サービス エラー (JSON)](../../json/json-serviceerror.md)ドキュメント。
 
 <a id="ID4EWF"></a>
 

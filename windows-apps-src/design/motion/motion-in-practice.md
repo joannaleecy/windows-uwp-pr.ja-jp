@@ -1,5 +1,5 @@
 ---
-Description: Learn how Fluent motion fundamentals come together in your app.
+Description: アプリでの基礎は一体どの Fluent モーションをについて説明します。
 title: 実践的なモーション -  UWP アプリのアニメーション
 label: Motion in practice
 template: detail.hbs
@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 6eafbfd965d2783c0f72e75c91a04e5ac1cb119f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058563"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599407"
 ---
 # <a name="bringing-it-together"></a>まとめる
 
@@ -42,7 +42,7 @@ ms.locfileid: "9058563"
     :::column-end:::
 :::row-end:::
 
-**切り替えの例**
+**移行の例**
 
 ![機能的なアニメーション](images/pageRefresh.gif)
 
@@ -80,25 +80,25 @@ ms.locfileid: "9058563"
 
 ## <a name="implicit-animations"></a>暗黙的なアニメーション
 
-> 暗黙的なアニメーションに必要な Windows 10 version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
+> 暗黙的なアニメーションに必要な Windows 10、バージョンは 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。
 
 
-暗黙的なアニメーションは、パラメーターの変更時に古いと新しい値の間で自動的に補間によって Fluent モーションを実現するために簡単な方法です。
+暗黙的なアニメーションは、自動的にパラメーターの変更中に新旧の値の間を補間によって Fluent の動きを実現する簡単な方法です。
 
-暗黙的に、次のプロパティへの変更をアニメーション化することができます。
+暗黙的に次のプロパティを変更をアニメーション化できます。
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
-  - **Opacity**
+  - **不透明度**
   - **回転**
-  - **Scale**
-  - **Translation**
+  - **スケール**
+  - **翻訳**
 
 - [境界線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、または[パネル](/uwp/api/windows.ui.xaml.controls.panel)
-  - **Background**
+  - **バック グラウンド**
 
-暗黙的なアニメーションの変更を持つことができる各プロパティには、対応する_移行_プロパティがあります。 プロパティをアニメーション化するには、対応するの_切り替え効果_プロパティに遷移タイプを割り当てます。 次の表は、_遷移_プロパティとごとに使用する切り替えの種類を示します。
+各プロパティをアニメーション化に暗黙的に変更を持つことができますが、対応する_遷移_プロパティ。 プロパティをアニメーション化するが移行型を割り当て、対応する_遷移_プロパティ。 このテーブルを示しています、_遷移_プロパティとそれぞれに使用する移行型。
 
-| アニメーション化されたプロパティ | 切り替え効果のプロパティ | 暗黙的な遷移の種類 |
+| アニメーション化されたプロパティ | 遷移プロパティ | 暗黙的な移行の種類 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
@@ -108,7 +108,7 @@ ms.locfileid: "9058563"
 | [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 | [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](//uwp/api/windows.ui.xaml.uielement.brushtransition) |
 
-この例では、ボタン コントロールを有効にするフェードイン/無効になっているときに、Opacity プロパティと切り替え効果を使用する方法を示します。
+この例では、ボタン コントロールが有効にすると、フェードインし、フェードアウトを無効にすることに、Opacity プロパティと遷移を使用する方法を示します。
 
 ```xaml
 <Button x:Name="SubmitButton"
@@ -129,6 +129,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## <a name="related-articles"></a>関連記事
 
-- [モーションの概要](index.md)
-- [タイミングとイージング](timing-and-easing.md)
+- [アニメーションの概要](index.md)
+- [タイミングと、簡略化](timing-and-easing.md)
 - [方向性と重力](directionality-and-gravity.md)

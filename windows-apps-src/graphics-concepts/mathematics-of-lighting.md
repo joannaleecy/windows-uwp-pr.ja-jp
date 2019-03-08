@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 38a65a3532fe401f31fbf0da656aff1a141fa71a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940661"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636307"
 ---
 # <a name="mathematics-of-lighting"></a>光源の計算
 
@@ -25,13 +25,13 @@ Direct3D の照明モデルは、環境光、拡散光、反射光、放射光�
 Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive Light 
 ```
 
-[環境光](ambient-lighting.md)は一定の照明です。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 すぐに計算されますが、オブジェクトは平面的で非現実的なままです。
+[環境光](ambient-lighting.md)は一定の照明です。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。
 
 [拡散光](diffuse-lighting.md)は、光の方向とオブジェクト サーフェスの法線の両方によって決まります。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 オブジェクト頂点ごとに変化するため、拡散光の方が計算に時間がかかりますが、オブジェクトに陰影が付き、3 次元 (3D) の奥行きが出るというメリットがあります。
 
 [反射光](specular-lighting.md)では、光がオブジェクトの表面に当たり、カメラに向かって反射する明るい反射光を指定します。 反射光は拡散光よりも強い光で、オブジェクトの表面から短時間で消えます。 反射光の方が拡散光よりも計算に時間がかかりますが、反射光を使用すると、表面の表現力が格段に向上します。
 
-[放射光](emissive-lighting.md)は、オブジェクトにより放射される光 (輝きなど) です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射は、オブジェクトの色に影響を与え、たとえば、暗い素材を明るくしたり、放射される色の一部を引き受けたりすることができます。
+[放射光](emissive-lighting.md)は、オブジェクトにより放射される光 (輝きなど) です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
 
 現実的な光は、これらの種類の光をそれぞれ 3D シーンに適用することによって実現できます。 環境、放射、および拡散コンポーネントに計算される値は、拡散頂点の色として出力されます。鏡面反射コンポーネントの値は、反射頂点の色として出力されます。 環境光、拡散光、反射光の値は、特定の光の減衰とスポットライト要素の影響を受けます。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。
 
@@ -58,26 +58,26 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="ambient-lighting.md">環境光</a></p></td>
-<td align="left"><p>環境光は、シーンに一定のライティングを付加します。 頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 すぐに計算されますが、オブジェクトは平面的で非現実的なままです。</p></td>
+<td align="left"><p>環境光は、シーンに一定の照明を生成します。 頂点法線、光の方向、光の位置、減衰などの他の照明要素に依存していないため、すべてのオブジェクト頂点を同じように照らします。 環境光は、すべての方向において一定であり、オブジェクトのすべてのピクセルが同じように色付けされます。 計算は高速ですが、オブジェクトはフラットに見え、リアル感が劣ります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="diffuse-lighting.md">拡散光</a></p></td>
-<td align="left"><p><em>拡散光</em>は、ライトの方向とオブジェクトのサーフェス法線の両方に依存します。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 オブジェクト頂点ごとに変化するため、拡散光の方が計算に時間がかかりますが、オブジェクトに陰影が付き、3 次元 (3D) の奥行きが出るというメリットがあります。</p></td>
+<td align="left"><p><a href="diffuse-lighting.md">ディフューズ ライト</a></p></td>
+<td align="left"><p><em>拡散光</em>は、光の方向とオブジェクト サーフェスの法線の両方によって決まります。 光の方向を変更し、サーフェスの法線ベクトルを変更すると、拡散光がオブジェクトのサーフェス上で変化します。 オブジェクト頂点ごとに変化するため、拡散光の方が計算に時間がかかりますが、オブジェクトに陰影が付き、3 次元 (3D) の奥行きが出るというメリットがあります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="specular-lighting.md">反射光</a></p></td>
+<td align="left"><p><a href="specular-lighting.md">反射光の効果</a></p></td>
 <td align="left"><p><em>反射光</em>では、光がオブジェクトの表面に当たり、カメラに向かって反射する明るい反射光を指定します。 反射光は拡散光よりも強い光で、オブジェクトの表面から短時間で消えます。 反射光の方が拡散光よりも計算に時間がかかりますが、反射光を使用すると、表面の表現力が格段に向上します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="emissive-lighting.md">放射光</a></p></td>
-<td align="left"><p><em>放射光</em>は、白熱光などオブジェクトによって放射される光です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射は、オブジェクトの色に影響を与え、たとえば、暗い素材を明るくしたり、放射される色の一部を引き受けたりすることができます。</p></td>
+<td align="left"><p><a href="emissive-lighting.md">エミッション ライト</a></p></td>
+<td align="left"><p><em>放射光</em>は、オブジェクトにより放射される光 (輝きなど) です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="camera-space-transformations.md">カメラの空間変換</a></p></td>
+<td align="left"><p><a href="camera-space-transformations.md">カメラの領域の変換</a></p></td>
 <td align="left"><p>カメラ空間内の頂点は、ワールド ビュー マトリックスによってオブジェクト頂点を変換することにより計算されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="attenuation-and-spotlight-factor.md">減衰とスポットライトの要素</a></p></td>
+<td align="left"><p><a href="attenuation-and-spotlight-factor.md">減衰させ、スポット ライトの係数</a></p></td>
 <td align="left"><p>全体照明の方程式の拡散光および反射光コンポーネントには、光の減衰とスポットライト コーンを表す項が含まれています。</p></td>
 </tr>
 </tbody>
@@ -88,7 +88,7 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[照明および素材](lights-and-materials.md)
+[ライトとマテリアル](lights-and-materials.md)
 
  
 

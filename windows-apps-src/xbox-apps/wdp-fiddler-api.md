@@ -3,24 +3,24 @@ title: Device Portal の Fiddler API のリファレンス
 description: プログラムによって Fiddler のトレースを有効または無効にする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937813"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603337"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API のリファレンス   
 この REST API を使って、開発機での Fiddler のネットワーク トレースを有効または無効にすることができます。
 
-## <a name="determine-if-fiddler-tracing-is-enabled"></a>Fiddler のトレースが有効になっているかどうかを決定します。
+## <a name="determine-if-fiddler-tracing-is-enabled"></a>Fiddler トレースが有効になっているかどうかを判断します。
 
 **要求**
 
-Fiddler のトレースが次の要求を使用して、デバイスで有効になっているかどうかを確認することができます。
+次の要求を使って、デバイスで Fiddler トレースが有効になっているかどうかを確認することができます。
 
 メソッド      | 要求 URI
 :------     | :-----
@@ -40,7 +40,7 @@ GET | /ext/fiddler
 
 **応答**   
 
-- JSON bool プロパティ IsProxyEnabled どの指定子かどうかどうか、プロキシを有効にします。
+- プロキシが有効かどうかを指定する JSON ブール プロパティ IsProxyEnabled。
 
 **状態コード**
 
@@ -132,10 +132,10 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox
 
-## <a name="see-also"></a>参照
-- [Xbox の UWP での Fiddler の構成](uwp-fiddler.md)
+## <a name="see-also"></a>関連項目
+- [Xbox で UWP 用 Fiddler を構成します。](uwp-fiddler.md)
 

@@ -7,43 +7,43 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bc835d5980aacc414b173d2ee3896ae14392790
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940071"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627437"
 ---
 # <a name="xbox-live-social-platform---for-games-and-gamers"></a>Xbox Live ソーシャル プラットフォーム - ゲームおよびゲーマー向け
 
 ゲーマーがタイトルを選んで熱心にプレイし続けるには、他のユーザーと一緒にプレイして競争することが重要です。 Xbox Live には、5,000 万人を超えるアクティブなゲーマーを抱え、今なお増加し続けている優れたゲーム ソーシャル ネットワークがあります。 ゲーマーを集めて、これから作るゲームのような斬新で刺激的なゲームに注目してもらうための一連のツールを作成しました。 Xbox Live ソーシャル プラットフォームはタイトルに簡単に統合でき、シングル プレイヤーのカジュアル ゲーム、コンパニオン アプリ、大規模なマルチプレイヤー ゲームのどれを構築しているかにかかわらず、非常に高い投資効果が得られます。
 
 ## <a name="concepts-in-this-article"></a>この記事に含まれている概念
-- [プロフィール](#profile)
-- [ゲーマースコアと実績](#gamerscore-and-achievements)
-- [People システム - Xbox Live のソーシャル ネットワーク](#the-people-system---your-social-network-on-xbox-live)
+- [プロファイル](#profile)
+- [ゲーマーとアチーブメント](#gamerscore-and-achievements)
+- [ユーザーのシステム -、ソーシャル ネットワークで Xbox Live](#the-people-system---your-social-network-on-xbox-live)
 - [クラブ](#clubs)
-- [クリップとスクリーンショット](#clips-and-screenshots)
+- [クリップとスクリーン ショット](#clips-and-screenshots)
 - [アクティビティ フィード](#the-activity-feed)
-- [人気上昇中](#trending)
-- [リッチ プレゼンス](#rich-presence)
-- [ゲーム ハブ](#game-hubs)
-- [Xbox Live ソーシャル API の使用](#use-the-xbox-live-social-apis)
+- [傾向分析](#trending)
+- [豊富なプレゼンス](#rich-presence)
+- [ゲームのハブ](#game-hubs)
+- [Xbox Live ソーシャル Api を使用します。](#use-the-xbox-live-social-apis)
 
 ## <a name="bringing-gamers-together"></a>ゲーマーを集める
 Xbox Live は、ゲーマーのアクティブなコミュニティの構築を目指しています。 ゲーマーが経験を共有する他のゲーマーを見つけ、ゲームをソーシャル アクティビティとするのに役立つ一連のツールが用意されているのはそのためです。 したがって、ゲームをプレイするときにフレンドをサポートできなくても共有することはできます。 
 
-### <a name="profile"></a>プロフィール
+### <a name="profile"></a>Profile
 Xbox Live でそれぞれのゲーマーにプロフィールがあります。 プロフィールには次の情報が記録されます。
 
--   **ゲーマータグ**: ゲーマーの一意のニックネームです。 Xbox Live 上のすべてのユーザーにゲーマータグがあります。
+-   **ゲーマータグ**:ゲーマーの一意のニックネームです。 Xbox Live 上のすべてのユーザーにゲーマータグがあります。
 
--   **氏名**: ゲーマーの名、姓です。 ユーザーがプライバシー設定を通じてリアルタイムを共有しない場合、これは空です。
+-   **実際の名前**:ゲーマーの最初と最後の名前。 ユーザーがプライバシー設定を通じてリアルタイムを共有しない場合、これは空です。
 
--   **ゲーマーアイコン**: ゲーマーが自分を表すものとして選択した画像またはアイコンです。
+-   **Gamerpic**:画像またはアイコンを表す、ゲーマーが選択しました。
 
--   **プレゼンス**: ゲーマーの現在の状態です (オンライン、オフライン、ゲームのプレイ中など)。
+-   **プレゼンス**:現在の状態、ゲーマー (オンライン、オフライン、ゲームなどを再生します。)
 
--   **ゲーマースコア**: ユーザーがプレイしてきたすべての Xbox Live ゲーム間で積み上げてきた実績スコアを総合して 1 つの値にしたものです。
+-   **ゲーマー**:ユーザーが、Xbox Live のゲームを再生したコンテンツのすべての蓄積された合計アチーブメント スコアを表す 1 つの値。
 
 ### <a name="gamerscore-and-achievements"></a>ゲーマースコアと実績
 ゲームでの[実績](../achievements-2017/achievements.md)をロック解除した後に各ゲーマーが、ゲーマースコアを獲得できます。
@@ -65,7 +65,7 @@ Xbox Live でそれぞれのゲーマーにプロフィールがあります。 
 
 ゲーマーがゲームをプレイしているとき、Xbox Live ソーシャル グラフには、そのゲームをプレイしたことのあるゲーマーのフレンドのみ表示されます。
 
-[People システムの詳細](people-system/xbox-live-people-system.md) 
+[ユーザーのシステムを詳細します。](people-system/xbox-live-people-system.md) 
 
 ### <a name="clubs"></a>クラブ
 ゲーマーは、共通の興味に基づいて任意の規模のソーシャル グループを作成できます。 これらのグループは、クラブと呼ばれます。
@@ -93,13 +93,13 @@ Xbox ソーシャル システムの重要な部分は、アクティビティ�
 ### <a name="the-activity-feed"></a>アクティビティ フィード
 ゲーマーがタイトルをプレイすると、その実績がロック解除され、クリップ、スクリーンショット、その他のアクティビティが他のフレンドと共有されるアクティビティ フィードの一部となるため、ゲームについて知りたいことを確認できるようになります。
 
-### <a name="trending"></a>人気上昇中
+### <a name="trending"></a>トレンド
 Xbox Live で発行された最も人気のあるコンテンツは、Xbox Live のトレンド セクションに表示されます。 ゲーマーが興味深い質問をゲーム ハブに投稿したり、ゲームのすばらしいクリップを共有したりした場合、コンテンツが Xbox Live でトレンドとなることを期待できます。 これはタイトルの認知度を高めるための別の優れた方法です。
 
 ### <a name="rich-presence"></a>リッチ プレゼンス
 プレゼンス (プレイヤーのオンライン ステータス) は、プレイヤーがオンラインかどうかを確認するためだけのものではありません。 プレイヤーが現在使っているアプリやゲームもわかります。 さらに、リッチ プレゼンス文字列では、プレイヤーがゲーム内でしていること、メニューを見ているかどうか、ゲームを待機しているかどうか、プレイの途中かどうかを宣伝することができます。 
 
-[リッチ プレゼンスの詳細](rich-presence-strings/rich-presence-strings-overview.md)
+[詳細については、豊富なプレゼンスは](rich-presence-strings/rich-presence-strings-overview.md)
 
 > [!NOTE]
 > リッチ プレゼンスは、Xbox Live クリエーターズ プログラムで作成されたゲームには使用できません。

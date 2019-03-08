@@ -6,35 +6,35 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 33e5b6afbf0d60679bfce1789be2d965fd881f1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918271"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614117"
 ---
 # <a name="whats-new-for-xbox-live"></a>Xbox Live の新機能
 [Xbox Live API GitHub コミット履歴](https://github.com/Microsoft/xbox-live-api/commits/master)に関するページで、Xbox Live API に最近加えられたすべてのコード変更について確認することもできます。
 
 ## <a name="in-this-article"></a>この記事の内容
 
-* [6 月 2018](#june-2018)
+* [2018 年 6 月](#june-2018)
 * [2017 年 8 月](#august-2017)
 * [2017 年 7 月](#july-2017)
 * [2017 年 6 月](#june-2017)
 * [2017 年 5 月](#may-2017)
 * [2017 年 4 月](#april-2017)
 * [2017 年 3 月](#march-2017)
-* [アーカイブされた記事](#archived)
+* [アーカイブ](#archived)
 
-## <a name="june-2018"></a>6 月 2018
+## <a name="june-2018"></a>2018 年 6 月
 
-### <a name="xbox-live-features"></a>Xbox Live の機能
+### <a name="xbox-live-features"></a>Xbox Live 機能
 
-#### <a name="c-api-layer-for-xsapi"></a>Xsapi C API レイヤー
+#### <a name="c-api-layer-for-xsapi"></a>XSAPI の C# API レイヤー
 
-一部の Xbox Live 機能の C++ Api が利用できるようになりました。 新しい API レイヤーでは、カスタムのメモリ管理、手動のスレッド管理の非同期タスクは、新しい HTTP ライブラリなど、サポートされている機能の多くのメリットを提供します。
+C Api は、Xbox Live の一部の機能の使用可能なようになりました。 新しい API レイヤーは、サポートされている機能は、カスタムのメモリ管理、非同期タスクでは、手動によるスレッド管理、および新しい HTTP ライブラリを含むさまざまな利点を提供します。
 
-詳細については、 [Xbox Live C Api](../xsapi-flat-c.md)を参照してください。
+詳細については、次を参照してください。 [Xbox Live C Api](../xsapi-flat-c.md)します。
 
 ## <a name="august-2017"></a>2017 年 8 月
 
@@ -87,7 +87,7 @@ API を使うと、ゲーム内から直接ゲーム内クラブを作成およ�
 
 #### <a name="multiplayer"></a>マルチプレイヤー
 
-* 検索ハンドルの照会を今すぐには、応答にカスタム セッション プロパティが含まれています。
+* 今すぐ検索ハンドルのクエリを実行するには、応答で、カスタム セッションのプロパティが含まれています。
 
 #### <a name="bug-fixes"></a>バグ修正
 
@@ -119,7 +119,7 @@ Xbox Live API は、ユニバーサル Windows プラットフォーム (UWP) �
 
 #### <a name="data-platform-2017"></a>データ プラットフォーム 2017
 
-簡略化された統計 API が導入されました。  従来 XDP またはパートナー センターで定義された統計の規則に対応するイベントを送信する必要があるし、これらによってクラウドの統計の値を更新します。  このモデルを統計 2013 といいます。
+簡略化された統計 API が導入されました。  従来 XDP またはパートナー センターで定義されている統計の規則に対応するイベントを送信する必要がありましたし、これらは、クラウド内の統計値の更新プログラムします。  このモデルを統計 2013 といいます。
 
 統計 2017 では、タイトルが統計値を制御します。  最新の統計値のある API を呼び出すだけで、統計値がイベントを必要とせずに直接サービスに送信されます。  これは、新しい `StatsManager` API を使用するもので、詳細は「[プレイヤー統計](../leaderboards-and-stats-2017/player-stats.md)」に記載されています。
 
@@ -139,10 +139,10 @@ Xbox Live クリエーターズ プログラムは、幅広い対象デベロッ
 
 | 記事 | 説明 |
 |---------|-------------|
-|[Xbox Live サービス構成](../xbox-live-service-configuration.md) | Xbox Live タイトル用のサービス構成の実行に関する最新情報
-| [Unity で Xbox Live を構成する](../get-started-with-creators/configure-xbox-live-in-unity.md) | Xbox Live クリエーターズ プログラムのデベロッパー向けの Unity セットアップに関する新しい情報 |
-| [Xbox Live のサンドボックス](../xbox-live-sandboxes.md) | Xbox Live サンド ボックスとコンテンツの分離の簡易ガイド |
-| [Xbox Live テスト アカウント](../xbox-live-test-accounts.md) | アカウントの機能とパートナー センターでそれらを作成する方法をテストする方法に関する情報 |
+|[Xbox Live サービスの構成](../xbox-live-service-configuration.md) | Xbox Live タイトル用のサービス構成の実行に関する最新情報
+| [構成の Xbox Live Unity で](../get-started-with-creators/configure-xbox-live-in-unity.md) | Xbox Live クリエーターズ プログラムのデベロッパー向けの Unity セットアップに関する新しい情報 |
+| [Xbox Live のサンド ボックス](../xbox-live-sandboxes.md) | Xbox Live サンド ボックスとコンテンツの分離の簡易ガイド |
+| [Xbox Live のテスト アカウント](../xbox-live-test-accounts.md) | パートナー センターを作成する方法とアカウントの作業をテストする方法については |
 
 ## <a name="archived"></a>アーカイブされた記事
 

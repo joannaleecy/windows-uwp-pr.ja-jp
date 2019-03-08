@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b28b0faad1c321137344455bc7cd471f7cb6eba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936903"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598597"
 ---
 # <a name="jsonusersbatchscidssciddatapathandfilenamejson"></a>/json/users/batch/scids/{scid}/data/{pathAndFileName},json
 同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -24,19 +24,19 @@ ms.locfileid: "8936903"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| guid| ルックアップ サービス構成の ID です。| 
-| pathAndFileName| string| アクセスできる項目のパスとファイルの名前です。 パスの部分 (となどを含む最終的なスラッシュ) の有効な文字は大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9)、アンダー スコア (_) を含めるし、スラッシュ (/)。パス部分を空にすることがあります。有効な文字 (すべての最終的なスラッシュ後) ファイル名の部分には、大文字 (A ~ Z)、(a ~ z) 小文字の英字、数字 (0 ~ 9) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にすることがありますはいない期間の終了または 2 つの連続するピリオドが含まれてはします。| 
+| scid| guid| 検索するサービス構成の ID。| 
+| pathAndFileName| string| アクセスする項目のパスとファイル名。 有効な文字 (最大、および最後のスラッシュを含む) のパス部分に含まれている大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、スラッシュ (/) とします。パスの部分を空にすることがあります。有効な文字の大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、ファイル名の部分 (最後のスラッシュの後の部分すべて) が含まれているアンダー スコア (_)、ピリオド (.)、およびハイフン (-)。 ファイル名を空にする可能性がありますはいない末尾をピリオドまたは 2 つの連続するピリオドを含めることは。| 
   
 <a id="ID4E3B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST](uri-jsonusersbatchscidssciddatapathandfilenametype-post.md)
+[投稿](uri-jsonusersbatchscidssciddatapathandfilenametype-post.md)
 
-&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 ファイルのダウンロードについては、要求の URI によって決まります。 要求の本文には、ダウンロードするファイル持つにはユーザーの Xuid のリストが含まれています。 応答の本文は、各部分を独自のヘッダーのセットを特定のユーザーのファイルを表すと、マルチパート MIME メッセージになります。 成功と失敗の混在する応答の部分のことができます。
+&nbsp;&nbsp;同じファイル名を持つ複数のユーザーからは、複数のファイルをダウンロードします。 ファイルのダウンロードは、要求の URI によって決定されます。 要求の本文には、ダウンロードするファイル持つには Xuid、ユーザーの一覧が含まれています。 応答の本文を各要素は、独自のヘッダーのセットを特定のユーザーのファイルを表す、マルチパート MIME メッセージとなります。 成功と失敗の組み合わせに対する応答の部分のことができます。
  
 <a id="ID4EGC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8936903"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

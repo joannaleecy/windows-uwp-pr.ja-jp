@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a6f1e743542e70ee96ad93ee1cf2a7f2c3ed7158
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920279"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599327"
 ---
 # <a name="lists-uris"></a>リスト URI
  
-このセクションでは、*ピン*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*ピン*します。
  
-ゲームと Xbox 360、Windows Phone デバイスで、SmartGlass、または Xbox.com で実行されているアプリケーションのみには、このサービスを使用できます。
+ゲームと Xbox 360、Windows Phone デバイスで、SmartGlass、または Xbox.com で実行されているアプリケーションのみが、このサービスを使用できます。
  
-これらの Uri のドメインは、eplists.xboxlive.com です。
+これらの Uri のドメインとは、eplists.xboxlive.com です。
  
 <a id="ID4EPB"></a>
 
@@ -29,15 +29,15 @@ ms.locfileid: "8920279"
 
 [/users/xuid(xuid)/lists/PINS/{listname}](uri-usersxuidlistspinslistname.md)
 
-&nbsp;&nbsp;リストの項目にアクセスします。
+&nbsp;&nbsp;リスト内の項目にアクセスします。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/ContainsItems](uri-usersxuidlistspinslistnamecontainsitems.md)
 
-&nbsp;&nbsp;全体の一覧を取得することがなく一連項目 (itemId により指定) にはが一覧に含まれているかどうかを決定します。
+&nbsp;&nbsp;全体の一覧を取得せず、(itemId で指定された) 項目のセットが一覧で含まれるかどうかを判断します。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/index({index})?insertIndex={insertIndex}](uri-usersxuidlistspinslistnameindex.md)
 
-&nbsp;&nbsp;一覧内の項目を移動します。
+&nbsp;&nbsp;一覧内の項目に移動します。
 
 [/users/xuid(xuid)/lists/PINS/{listname}/RemoveItems](uri-usersxuidlistspinslistnameremoveitems.md)
 
@@ -53,6 +53,6 @@ ms.locfileid: "8920279"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

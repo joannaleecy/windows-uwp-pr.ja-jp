@@ -4,14 +4,14 @@ description: アプリ マニフェストでバックグラウンド タスク�
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.date: 02/08/2017
 ms.topic: article
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、バック グラウンド タスク
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114518"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615677"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
@@ -90,7 +90,7 @@ ms.locfileid: "9114518"
 
 2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **注:** トリガーの種類の各リストを使用している、または宣言されていないトリガーの種類 ([**登録**](https://msdn.microsoft.com/library/windows/apps/br224772)メソッドが失敗し、例外がスロー) と、バック グラウンド タスクは登録されないかどうかを確認します。
+    **注**  トリガーの種類の各ボックスの一覧を使用している、またはバック グラウンド タスクが宣言されていないトリガーの種類を登録できないかどうかを確認 (、 [**登録**](https://msdn.microsoft.com/library/windows/apps/br224772)メソッドには失敗、例外をスロー)。
 
     次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 
@@ -209,7 +209,7 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>SupportsMultipleInstances 属性を使用して、トリガーが発生するたびに新しいプロセスで実行
 
-この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するためにはターゲット SDK バージョン '10.0.15063' (Windows 10 Creators Update) 以上。
+この例では、新しいトリガーが発生するたびに独自のリソース制限 (メモリと CPU) を持つ新しいプロセスで実行される、バックグラウンド タスクを宣言します。 `SupportsMultipleInstances` を使っていることに注目してください。この属性がこの動作を実現します。 この属性を使用するには、SDK バージョン '10.0.15063 追加されたため' (Windows 10 Creators Update) をターゲットする必要がありますまたはそれ以降。
 
 ```xml
 <Package
@@ -234,6 +234,6 @@ BackgroundTaskHost.exe プロセスで実行されるが、同じアプリのバ
 
 ## <a name="related-topics"></a>関連トピック
 
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
+* [バック グラウンド タスクを登録します。](register-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)

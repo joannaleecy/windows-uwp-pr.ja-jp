@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, グラフィックス, 診断, ツール, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047919"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608537"
 ---
 # <a name="graphics-diagnostics-tools"></a>グラフィックス診断ツール
 
 
 
-Windows 10 のグラフィックス診断ツールにで Windows 内から利用できるオプション機能として。 DirectX のアプリやゲームを開発するために、ランタイムや Visual Studio で提供されるグラフィックス診断機能を使うには、次の手順に従ってオプションのグラフィックス ツール機能をインストールします。
+Windows 10 でグラフィックス診断ツール整いました Windows 内から利用できるオプション機能として。 DirectX のアプリやゲームを開発するために、ランタイムや Visual Studio で提供されるグラフィックス診断機能を使うには、次の手順に従ってオプションのグラフィックス ツール機能をインストールします。
 
-1.  **設定**に移動し、**アプリ**を選択し、**オプション機能の管理**] をクリックします。
+1.  移動して**設定**を選択します**アプリ**、 をクリックし、**オプション機能の管理**。
 2.  **[機能の追加]** をクリックします。   
 3.  **[オプション機能]** の一覧から **[グラフィックス ツール]** を選び、**[インストール]** をクリックします。
 
@@ -32,7 +32,7 @@ Windows 10 のグラフィックス診断ツールにで Windows 内から利用
 ## <a name="related-topics"></a>関連トピック
 
 
-[Visual Studio でのグラフィックス診断の概要](https://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Visual Studio のグラフィックス診断の概要](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

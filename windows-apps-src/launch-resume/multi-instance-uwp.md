@@ -6,28 +6,28 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
-ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "8990208"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600307"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>マルチインスタンスのユニバーサル Windows アプリの作成
 
 このトピックでは、マルチインスタンスのユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
 
-Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
+Windows 10、バージョン 1803 (10.0; から17134 をビルドする)、UWP アプリは複数のインスタンスをサポートするためにオプトイン以降、します。 マルチインスタンス UWP アプリのインスタンスが実行されていて、後続のライセンス認証要求が行われた場合、既存のインスタンスはアクティブ化されません。 代わりに、別のプロセスで実行される、新しいインスタンスが作成されます。
 
 > [!IMPORTANT]
-> マルチ インスタンスが JavaScript アプリケーションでサポートされているが、マルチ インスタンスのリダイレクトはありません。 マルチ インスタンスのリダイレクトがアプリケーションを JavaScript のサポートされていないため、 [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションの便利ではありません。
+> JavaScript アプリケーションでは、複数インスタンスがサポートされていますが、リダイレクトの複数インスタンスがないです。 JavaScript アプリケーションでは、複数インスタンスのリダイレクトがサポートされていないため、 [ **AppInstance** ](/uwp/api/windows.applicationmodel.appinstance)クラスはこのようなアプリケーションに適していません。
 
-## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作にオプトインします。
+## <a name="opt-in-to-multi-instance-behavior"></a>マルチ インスタンスの動作を選択します。
 
 新しいマルチインスタンス アプリケーションを作成する場合は、[Visual Studio Marketplace](https://aka.ms/E2nzbv) から入手可能な **Multi-Instance App Project Templates.VSIX** をインストールします。 テンプレートをインストールすると、**[Visual C#] > [Windows ユニバーサル]** の **[新しいプロジェクト]** ダイアログ (または **[他の言語] > [Visual C++] > [Windows ユニバーサル]**) で使用可能になります。
 
-2 つのテンプレートがインストールされます。**Multi-Instance UWP app** は、マルチインスタンス アプリを作成するためのテンプレートを提供します。**Multi-Instance Redirection UWP app** は、新しいインスタンスを起動するか、すでに起動されているインスタンスを選択的にアクティブ化するために構築する追加ロジックを提供します。 たとえば、おそらく同じドキュメントの編集時に 1 つのインスタンスのみする、新しいインスタンスを起動するのではなく、フォア グラウンドにそのファイルがあるインスタンスを開く移植するためです。
+2 つのテンプレートがインストールされます。**UWP アプリのマルチ インスタンス**、マルチ インスタンスのアプリを作成するため、テンプレートを提供して**マルチ インスタンスのリダイレクトの UWP アプリ**を起動する新しいインスタンスを作成できる追加のロジックを提供する、または選択的には既に起動しているインスタンスをアクティブにします。 例: おそらく、同じドキュメントの編集時に 1 つのインスタンスのみする、新しいインスタンスを起動するのではなく、フォア グラウンドがそのファイルをあるインスタンスを開くようにします。
 
-どちらのテンプレートの追加`SupportsMultipleInstances`に、`package.appxmanifest`ファイル。 名前空間のプレフィックスに注意してください`desktop4`と`iot2`: デスクトップをターゲットとする唯一のプロジェクトまたはモ ノのインターネット (IoT) プロジェクトでは、マルチ インスタンスをサポートします。
+両方のテンプレートの追加`SupportsMultipleInstances`を`package.appxmanifest`ファイル。 名前空間プレフィックスに注意してください`desktop4`と`iot2`: デスクトップを対象とする唯一のプロジェクトやモ ノのインターネット (IoT) プロジェクトでは、複数インスタンスをサポートします。
 
 ```xml
 <Package
@@ -52,13 +52,13 @@ Windows 10、バージョン 1803 (10.0; からビルド 17134)、UWP アプリ�
 
  UWP アプリのマルチインスタンス化のサポートは、単に複数のアプリ インスタンスを起動することを可能にするだけではありません。 アプリの新しいインスタンスを起動するか、すでに実行しているインスタンスをアクティブにするかを選択する場合に、カスタマイズできます。 たとえば、既に別のインスタンスで編集中のファイルを編集するためにアプリが起動されている場合、そのファイルを編集している別のインスタンスを開くのではなく、そのインスタンスにアクティブ化をリダイレクトすることができます。
 
-アクションの表示は、マルチ インスタンス UWP アプリの作成に関するこのビデオをご覧ください。
+動作の確認、UWP アプリのマルチ インスタンスの作成に関するこのビデオをご覧ください。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 **Program.cs**のテンプレートは、次に示します。
+**Multi-Instance Redirection UWP app** テンプレートは、上記のように `SupportsMultipleInstances` を package.appxmanifest ファイルに追加し、さらに `Main()` 関数を含むプロジェクトに **Program.cs** (または、テンプレートの C++ バージョンを使用している場合は **Program.cpp**) を追加します。 アクティブ化をリダイレクトするためのロジックは `Main` 関数にあります。 テンプレートを**Program.cs**を次に示します。
 
-[**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティが存在する場合、このライセンス認証要求のシェルが提供優先インスタンスを表します (または`null`かどうかではありません)。 シェルは、基本設定を提供する場合は、し、そのインスタンスにアクティブ化をリダイレクトすることができます。 または選択した場合に無視することができます。
+[ **AppInstance.RecommendedInstance** ](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)プロパティは、1 つを使用する必要がある場合、このアクティブ化要求のシェルで提供される優先インスタンスを表します (または`null`かどうかではありません)。 シェルでは、基本設定を提供する場合、このインスタンスのライセンス認証をリダイレクトできます。 または選択した場合は無視できます。
 
 ``` csharp
 public static class Program
@@ -108,9 +108,9 @@ public static class Program
 }
 ```
 
-`Main()` これは実行する最初のものです。 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)と[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)前に実行します。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
+`Main()` 実行する最初のものです。 実行する前に[ **OnLaunched** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)と[ **OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)します。 これにより、アプリの他の初期化コードが実行される前に、これをアクティブ化するか別のインスタンスをアクティブ化するかを決定できます。
 
-上記のコードは、アプリケーションの既存のインスタンスまたは新しいインスタンスがアクティブになっているかどうかを判断します。 キーを使用して、アクティブ化する既存のインスタンスがあるかどうかを判断します。 たとえば、アプリを起動して [ファイルのアクティブ化の処理](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) ができる場合は、ファイル名をキーとして使用できます。 次に、アプリのインスタンスがすでにそのキーに登録されているかどうかを確認し、新しいインスタンスを開く代わりにそれをアクティブにすることができます。 これはコード ビハインド アイデアです。 `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+上記のコードは、アプリケーションの既存のインスタンスまたは新しいインスタンスがアクティブになっているかどうかを判断します。 キーを使用して、アクティブ化する既存のインスタンスがあるかどうかを判断します。 たとえば、アプリを起動して [ファイルのアクティブ化の処理](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation) ができる場合は、ファイル名をキーとして使用できます。 次に、アプリのインスタンスがすでにそのキーに登録されているかどうかを確認し、新しいインスタンスを開く代わりにそれをアクティブにすることができます。 これは、コードの考え方です。 `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 キーに登録されているインスタンスが見つかった場合は、そのインスタンスがアクティブになります。 キーが見つからない場合は、現在のインスタンス (現在 `Main` を実行しているインスタンス) がそのアプリケーション オブジェクトを作成し、実行を開始します。
 
@@ -125,14 +125,14 @@ public static class Program
 ## <a name="additional-considerations"></a>その他の考慮事項
 
 - マルチ インスタンスは、デスクトップやモノのインターネット (IoT) プロジェクトをターゲットとする UWP アプリでサポートされています。
-- 競合状態や競合の問題を避けるため、マルチインスタンス アプリは、設定、アプリ ローカル ストレージ、その他のリソース (ユーザー ファイル、データストアなど) へのアクセスをパーティション化/同期化するための手順を実行する必要があります。これらのリソースは、複数のインスタンス間で共有できます。 ミュー テックス、セマフォ、イベント、およびなどの標準的な同期メカニズムを利用できます。
+- 競合状態や競合の問題を避けるため、マルチインスタンス アプリは、設定、アプリ ローカル ストレージ、その他のリソース (ユーザー ファイル、データストアなど) へのアクセスをパーティション化/同期化するための手順を実行する必要があります。これらのリソースは、複数のインスタンス間で共有できます。 ミュー テックス、セマフォ、イベント、およびなどの標準的な同期機構を利用できます。
 - アプリで、Package.appxmanifest ファイルに `SupportsMultipleInstances` がある場合、その拡張機能は `SupportsMultipleInstances` を宣言する必要はありません。 
 - `SupportsMultipleInstances` をバックグラウンド タスクやアプリ サービス以外の拡張機能に追加し、その拡張機能をホストするアプリが Package.appxmanifest ファイルで `SupportsMultipleInstances` を宣言しない場合は、スキーマ エラーが生成されます。
-- アプリは、同じホストに複数のバック グラウンド タスクをグループ化するのに、マニフェスト[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣言を使用できます。 これはマルチインスタンスと競合し、それぞれのアクティブ化は別々のホストに入ります。 したがって、アプリはマニフェストで `SupportsMultipleInstances` と `ResourceGroup` の両方を宣言することはできません。
+- アプリが使用できる、 [ **ResourceGroup** ](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)同じホストに複数のバック グラウンド タスクをグループ化、マニフェストで宣言します。 これはマルチインスタンスと競合し、それぞれのアクティブ化は別々のホストに入ります。 したがって、アプリはマニフェストで `SupportsMultipleInstances` と `ResourceGroup` の両方を宣言することはできません。
 
 ## <a name="sample"></a>サンプル
 
-マルチ インスタンス化のリダイレクトの例については、[マルチ インスタンスのサンプル](https://aka.ms/Kcrqst)を参照してください。
+参照してください[マルチ インスタンス サンプル](https://aka.ms/Kcrqst)マルチ インスタンスのライセンス認証のリダイレクトの例についてはします。
 
 ## <a name="see-also"></a>関連項目
 

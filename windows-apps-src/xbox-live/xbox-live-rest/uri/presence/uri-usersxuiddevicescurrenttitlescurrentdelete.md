@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: dd916fee5455276d45e4437e4ee90cacbde30bf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921509"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604217"
 ---
 # <a name="delete-usersxuidxuiddevicescurrenttitlescurrent"></a>DELETE (/users/xuid({xuid})/devices/current/titles/current)
-[PresenceRecord](../../json/json-presencerecord.md)有効期限が切れるのを待っているではなく、終了のタイトルのプレゼンスを削除します。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
+待つのではなく、終了のタイトルのプレゼンスを削除、 [PresenceRecord](../../json/json-presencerecord.md)期限切れにします。 これらの Uri のドメインが`userpresence.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
-  * [Authorization](#ID4EEB)
+  * [承認](#ID4EEB)
   * [必要な要求ヘッダー](#ID4ERD)
-  * [オプションの要求ヘッダー](#ID4EVF)
+  * [省略可能な要求ヘッダー](#ID4EVF)
   * [要求本文](#ID4EVG)
   * [応答本文](#ID4EAH)
  
@@ -29,43 +29,43 @@ ms.locfileid: "8921509"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) の対象ユーザーです。| 
   
 <a id="ID4EEB"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-| 型| 必須かどうか| 説明| 不足している場合、応答| 
+| 種類| 必須| 説明| 不足している場合の応答| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| XUID| はい| 呼び出し元の Xbox ユーザー ID (XUID)| 403 Forbidden| 
-| titleId| はい| タイトルの titleId| 403 Forbidden| 
-| deviceId| Windows と Web 以外のすべての [はい] します。| 呼び出し元の deviceId| 403 Forbidden| 
-| deviceType| Web 以外のすべての [はい]| 呼び出し元の deviceType| 403 Forbidden| 
+| XUID| 〇| 呼び出し元の Xbox ユーザー ID (XUID)| 403 許可されていません| 
+| titleId| 〇| タイトルのタイトルの Id| 403 許可されていません| 
+| deviceId| Windows と Web 以外のすべての場合ははい| 呼び出し元の deviceId| 403 許可されていません| 
+| deviceType| Web 以外のすべての場合ははい| 呼び出し元の deviceType| 403 許可されていません| 
   
 <a id="ID4ERD"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。| 
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。| 
-| Content-Type| string| 値の例の要求の本文の mime タイプ: アプリケーション/json します。| 
-| Content-Length| string| 要求の本文の長さ。 値の例: 312 します。| 
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。| 
+| x-xbl-contract-version| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 値の例:3、vnext。| 
+| Content-Type| string| 要求の値の例の本文の mime の種類: アプリケーション/json します。| 
+| Content-Length| string| 要求の本文の長さ。 値の例:312.| 
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。| 
   
 <a id="ID4EVF"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-| ヘッダー| 型| 説明| 
+| Header| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。| 
+| X RequestedServiceVersion|  | この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 ［既定値］:1. | 
   
 <a id="ID4EVG"></a>
 
@@ -79,9 +79,9 @@ ms.locfileid: "8921509"
  
 ## <a name="response-body"></a>応答本文
  
-、成功した場合、応答本文の HTTP ステータス コードが返されません。
+成功した場合が発生した場合、応答本文なしで HTTP ステータス コードが返されます。
  
-エラー (4 xx の HTTP または 5 xx) の場合は、適切なエラー情報は、応答本文で返されます。
+エラー (HTTP 4 xx または 5 xx) が発生した場合は、適切なエラー情報は、応答本文で返されます。
   
 <a id="ID4ELH"></a>
 

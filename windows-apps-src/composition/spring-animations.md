@@ -3,14 +3,14 @@ title: ばねアニメーション
 description: 自然な動作のばねアニメーションを使用する方法について説明します。
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10、UWP、アニメーション
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e00aa383bcce17b7cd6b67514647c2f6137cc32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947666"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601947"
 ---
 # <a name="spring-animations"></a>ばねアニメーション
 
@@ -20,14 +20,14 @@ ms.locfileid: "8947666"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [自然な動作のアニメーション](natural-animations.md)
+- [自然な動きのアニメーション](natural-animations.md)
 
 ## <a name="why-springs"></a>ばねの動きを使用する理由
 
 ばねの動きは、生活の中で人々が経験したことがある一般的なモーション エクスペリエンスです。おもちゃのスリンキーから、ばねでつながれたブロックを使った物理の授業までさまざまなものがあります。 ばねによる振動のモーションは、その動きを見ている人から楽しい感情や愉快な感情の反応を引き起こすことがあります。 このため、ばねのモーションは、躍動感のあるモーション エクスペリエンスの作成を考えているユーザー向けのアプリケーション UI に利用することが適しています。このようなモーション エクスペリエンスは、従来の 3 次ベジエよりもエンド ユーザーに "強い印象" を与えます。 このような場合、ばねのモーションは、躍動感のあるモーション エクスペリエンスを作成するだけでなく、アニメーション化された新しいコンテンツや現在のコンテンツに興味を惹き付ける際にも役立ちます。 アプリケーションのブランド化やモーションの言語によっては、振動をより目立たせ、はっきりと表現する場合がありますが、あまり目立たない表現が必要になることもあります。
 
-![ばねアニメーションを使用したモーション](images/animation/offset-spring.gif)
-![3 次ベジエを使用したモーション](images/animation/offset-cubic-bezier.gif)
+![スプリングのアニメーションでモーションを](images/animation/offset-spring.gif)
+![3 次ベジエ アニメーションでモーションを](images/animation/offset-cubic-bezier.gif)
 
 ## <a name="using-springs-in-your-ui"></a>UI でばねの動きを使用する
 

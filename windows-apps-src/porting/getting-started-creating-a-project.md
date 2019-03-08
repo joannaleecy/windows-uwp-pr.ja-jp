@@ -4,16 +4,16 @@ description: Windows にとっての Microsoft Visual Studio は、iOS や Mac O
 title: Visual Studio でのプロジェクトの作成
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b6ea9fdf2e504e1ceee71658eab308751e1745c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940161"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601447"
 ---
-# <a name="getting-started-creating-a-project"></a>はじめに: プロジェクトの作成
+# <a name="getting-started-creating-a-project"></a>はじめに。プロジェクトの作成
 
 ## <a name="creating-a-project"></a>プロジェクトの作成
 
@@ -25,9 +25,9 @@ Windows にとっての Microsoft Visual Studio は、iOS や Mac OS にとっ�
 
 この [Windows 用アプリ開発ブログの記事](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)も非常に役立ちます。
 
-ストーリー ボードを使って iOS アプリの作成に似ていますが (正式には、ユニバーサル Windows プラットフォーム (UWP) アプリと呼ばれます) を windows 10 用のアプリを作成します。 Windows 10 アプリは、しばしば複数ページは、各ページの web サイトのように、ユーザー インターフェイスの異なる部分が含まれています。 各ページには通常、2 つのソース ファイルが関連付けられています。1 つは [XAML の概要](https://msdn.microsoft.com/library/windows/apps/mt185595)形式のユーザー インターフェイスを格納するファイルで、もう 1 つはソース コードを記述したファイルです (多くの場合 C#)。 ユーザーは、アプリとやり取りするときに、これらのページの間を移動します。 このチュートリアルでは、ページを 2 つ持つアプリを作成します。
+(正式には、ユニバーサル Windows プラットフォーム (UWP) アプリと呼ばれます)、Windows 10 用アプリケーションの作成はストーリー ボードを使用して iOS アプリの作成ではなくと似ています。 Web サイトのように、ユーザー インターフェイスの別の部分を格納している各ページ、Windows 10 アプリは複数のページにわたって多くの場合、構成されます。 各ページには通常、2 つのソース ファイルが関連付けられています。1 つは [XAML の概要](https://msdn.microsoft.com/library/windows/apps/mt185595)形式のユーザー インターフェイスを格納するファイルで、もう 1 つはソース コードを記述したファイルです (多くの場合 C#)。 ユーザーは、アプリとやり取りするときに、これらのページの間を移動します。 このチュートリアルでは、ページを 2 つ持つアプリを作成します。
 
-**注:** windows 10 アプリの重要な機能が、同じソース コードと同じ API セットは、プラットフォームに関係なく利用可能なポイントです。 ご存知のように、iPhone や iPad 向けのユニバーサル iOS アプリを作っている場合、実行時にアプリを実行するプラットフォームを決定して、適切なアクションを実行できます。 同様に、windows 10 アプリ見分けることができます、実行時に、デバイスで実行されています。 UWP アプリでは、電話とデスクトップのビルドを作成するためにソース コードで \#ifdef を使用する必要はありません。 便利なことに、windows 10 アプリは、デバイスによって、ユーザー インターフェイス コントロールもインテリジェントを使用しますたとえば、アプリが日付の選択コントロールを参照し、自動的には、コントロールの表示とがあるかどうかによって異なる動作を。デスクトップまたは電話の画面で実行されています。 ただし、ソース コードは変わりません。
+**注**  Windows 10 アプリの重要な機能は、同じのソース コードと同じ API セットがプラットフォームに関係なく利用可能なことです。 ご存知のように、iPhone や iPad 向けのユニバーサル iOS アプリを作っている場合、実行時にアプリを実行するプラットフォームを決定して、適切なアクションを実行できます。 同様の方法で Windows 10 アプリ分かるように、実行時にで実行されているデバイス。 UWP アプリで使用する必要はありません\#ifdef デスクトップと phone を作成するソース コードでビルドします。 便利なことは、Windows 10 アプリは、デバイスによって、ユーザー インターフェイス コントロールも適切を使用しますたとえば、アプリは、日付の選択コントロールを参照できます、コントロールは自動的に検索しがかどうかによって動作が異なります。デスクトップまたは [電話] 画面で実行されています。 ただし、ソース コードは変わりません。
 
 Windows 10 アプリを作成する方法を見てみましょう。 Visual Studio の実行から始めます。 Visual Studio を初めて起動すると、開発者用ライセンスを取得するように求められます。 開発者用ライセンスでは、UWP アプリを Microsoft Store に提出する前にローカル コンピューター上にインストールしてテストできます。 ライセンスを取得するには、画面の指示に従って、Microsoft アカウントを使ってサインインします。 Microsoft アカウントがない場合は、**[開発者用ライセンス]** ダイアログ ボックスの **[新規登録]** リンクをクリックし、画面の指示に従います。
 
@@ -50,8 +50,8 @@ Xcode で新しいプロジェクトを作るときは、次の図に示すよ�
 
 Visual Studio の場合も、次の図に示すように、いくつかのプロジェクト テンプレートから選択できるようになっています。
 
-![Visual Studio の [新しいプロジェクト] ダイアログ ボックス](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)このチュートリアルでは、**[Visual C#]**、**[Windows]**、**[Windows ユニバーサル]**、**[空のアプリ (Windows ユニバーサル)]** の順にタップします。 **[名前]** ボックスに「MyApp」と入力し、**[OK]** をタップします。 Visual Studio によって初めてのプロジェクトが作成され、表示されます。 これで、アプリの設計を開始して、コードを追加できるようになりました。
+![visual studio の新しいプロジェクト ダイアログ ボックス](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)このチュートリアルでは、タップ**Visual C#** 、 をタップし、 **Windows**、 **Windows ユニバーサル**と**空のアプリ (Windows ユニバーサル)** します。 **[名前]** ボックスに「MyApp」と入力し、**[OK]** をタップします。 Visual Studio によって初めてのプロジェクトが作成され、表示されます。 これで、アプリの設計を開始して、コードを追加できるようになりました。
 
-## <a name="next-step"></a>次のステップ
+## <a name="next-step"></a>次の手順
 
-[はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)
+[はじめに。プログラミング言語の選択](getting-started-choosing-a-programming-language.md)

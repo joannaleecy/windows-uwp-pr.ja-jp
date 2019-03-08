@@ -7,21 +7,21 @@ ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, スポット, C#, サンプルコード
 ms.localizationpriority: medium
 ms.openlocfilehash: 075d98d49ba7e878abc7e800af84984bdb93e3a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045088"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640987"
 ---
-# <a name="interstitial-ad-sample-code-in-c"></a>C\# を使ったスポット広告のサンプル コード #  
+# <a name="interstitial-ad-sample-code-in-c"></a>C のサンプル コードはスポット広告\# #  
 
-このトピックでは、ビデオ スポット広告を表示する基本的な C# と XAML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。 このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads) をご覧ください。
+このトピックでは、ビデオ スポット広告を表示する基本的な C# と XAML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。 このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads)をご覧ください。
 
 ## <a name="code-example"></a>コードの例
 
-このセクションでは、スポット広告を表示する基本的なアプリの MainPage.xaml と MainPage.xaml.cs ファイルの内容を示します。 これらの例を使用するには、コードを Visual Studio の Visual C#** の空白のアプリ (ユニバーサル Windows)** プロジェクトにコピーします。
+このセクションでは、スポット広告を表示する基本的なアプリの MainPage.xaml と MainPage.xaml.cs ファイルの内容を示します。 これらの例を使用するには、コードを Visual Studio の Visual C# **の空白のアプリ (ユニバーサル Windows)** プロジェクトにコピーします。
 
-このサンプル アプリではスポット広告を要求し起動させる 2 つのボタンを使用します。 値に置き換えます、```myAppId```と```myAdUnitId```フィールドをストアにアプリを提出する前にパートナー センターからの実際の値。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+このサンプル アプリでは 2 つのボタンを使用して、スポット広告を要求して起動します。 値を置き換える、```myAppId```と```myAdUnitId```ストアにアプリを送信する前にパートナー センターからライブの値を含むフィールド。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
 > [!NOTE]
 > ビデオ スポット広告ではなくバナー スポット広告を表示するようにこの例を変更するには、[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) メソッドの最初のパラメーターとして、**AdType.Video** の代わりに値 **AdType.Display** を渡します。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。

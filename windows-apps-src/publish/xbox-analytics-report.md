@@ -1,25 +1,25 @@
 ---
-Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: パートナー センターで Xbox 分析レポートには、製品にお客様が Xbox 機能と魅力方法に関する統計が表示されます。
 title: Xbox 分析レポート
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922393"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607447"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析レポート
 
-[パートナー センター](https://partner.microsoft.com/dashboard)で**Xbox 分析**レポートでは、お客様の Xbox 機能をゲームにエンゲージメント状況の統計情報を示しています。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
+**Xbox analytics**レポート[パートナー センター](https://partner.microsoft.com/dashboard)顧客がゲームに Xbox 機能と通信する方法についての統計情報を示します。 また、クライアント エラーの解決に役立つ、サービスの正常性情報も提供されます。
 
 > [!IMPORTANT]
-> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、[概念の承認プロセス](../gaming/concept-approval.md)、 [Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)によって公開されたゲームとゲームの経由で提出が含まれているについて学習する必要があります、[ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id)します。 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)を通じて公開されたゲームは、このレポートに表示されているされません。
+> このレポートは、Xbox 用のゲームまたは Xbox Live サービスを使用するゲームを公開する場合にのみ表示されます。 これを行うには、移動する必要があります、[概念承認プロセス](../gaming/concept-approval.md)、によって公開されたゲームが含まれています[Microsoft パートナー](../xbox-live/developer-program-overview.md#microsoft-partners)やゲームを使用して送信された、 [ ID@Xboxプログラム](../xbox-live/developer-program-overview.md#id). ゲームの発行を使用して、 [Xbox Live クリエーターズ プログラム](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)このレポートに現在表示されていません。
 
-**分析**を展開し、 **Xbox 分析**を選択して、ゲームの左側のナビゲーション メニューから**Xbox 分析**レポートを表示できます。  パートナー センター、または[レポートをダウンロード](download-analytic-reports.md)オフラインで表示するでは、このデータを表示できます。
+表示することができます、 **Xbox analytics**を展開して、ゲームの左側のナビゲーション メニューからレポート**分析**を選択して**Xbox analytics**します。  パートナー センターでこのデータを表示または[レポートをダウンロード](download-analytic-reports.md)オフラインで表示します。
 
 
 ## <a name="overview-tab"></a>[概要] タブ
@@ -89,11 +89,11 @@ ms.locfileid: "8922393"
 タブの上部で、データを表示する期間を選択できます。 既定では **[30 日間]** が選択されていますが、**[7 日間]** のデータや、(30 日を上限として) カスタム指定した期間のデータを表示することもできます。 日数をカスタム指定する場合、入力した日付範囲を提供されるデータの開始日および終了日として、すべてのグラフでグラフの範囲が切り詰められる点に注意してください。
 
 **[フィルター]** を展開して、このページのすべてのデータをパッケージ バージョン、デバイスの種類、サンドボックスを基にフィルター処理できます。
-- **[パッケージ バージョン]**: 既定のフィルターは **[すべてのバージョン]** ですが、サービスの正常性データを特定のパッケージ バージョンに限定することもできます。
-- **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** ですが、サービスの正常性データを特定のデバイスの種類に限定することもできます。
-- **[サンドボックス]**: 既定の設定は **[RETAIL]** (小売) ですが、サービスの正常性データを特定のサンド ボックスに限定することもできます。
+- **パッケージ バージョン**:既定のフィルター**すべてのバージョン**、特定のパッケージのバージョンのサービス正常性データを制限できます。
+- **デバイスの種類**:既定の設定は**すべてのデバイス**、特定のデバイスの種類にサービス正常性データを制限できます。
+- **サンド ボックス**:既定の設定は**小売**、特定のサンド ボックスに、サービス正常性データを制限できます。
 
-以下のすべてのグラフで、指定した期間とフィルターに応じた情報が表示されます。 一部のセクションでは、追加のフィルターを適用できます。
+以下のすべてのグラフで、指定した期間とフィルターに応じた情報が表示されます。 セクションの中には、追加のフィルターを適用できるものもあります。
 
 
 ### <a name="client-errors-by-service"></a>サービス別クライアント エラー

@@ -1,6 +1,6 @@
 ---
 title: 階層 2
-description: ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして 処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。
+description: ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
 keywords:
 - 階層 2
@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9f9a69c0e30459929d1e31084ea88b3f7ebbd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612887"
 ---
 # <a name="tier-2"></a>階層 2
 
 
-ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして 処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。
+ストリーミング リソースの階層 2 のサポートで、サイズが 1 つ以上の標準タイル形状であるときのパックされないテクスチャ ミップマップの保証や、詳細レベル (LOD) をクランプするため、およびシェーダーの操作に関する状態を取得するためのシェーダー命令、サンプリングされた値をゼロとして処理する NULL マッピングされたタイルからの読み取りなど、階層 1 に含まれない機能が追加されます。
 
-## <a name="span-idtier2generalsupportspanspan-idtier2generalsupportspanspan-idtier2generalsupportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>階層 2 の一般的なサポート
+## <a name="span-idtier2generalsupportspanspan-idtier2generalsupportspanspan-idtier2generalsupportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>第 2 層の一般的なサポート
 
 
 階層 2 のサポートには次のものが含まれます。
@@ -30,14 +30,14 @@ ms.locfileid: "8925366"
 
 これらに加えて、次のような特定のサポート問題があります。
 
-## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>マップされていないタイル
+## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>マッピングされていないタイル
 
 
 マップされていないタイルからの読み取りでは、形式の欠落していないすべてのコンポーネントでは 0 を返し、欠落しているコンポーネントには既定値を返します。
 
 マップされていないタイルへの書き込みは、メモリに移動するのは止められますが、最後にはキャッシュに移動する可能性があり、それ以降の同じアドレスへの読み取りは取得されない可能性があります。
 
-## <a name="span-idtexturefilteringspanspan-idtexturefilteringspanspan-idtexturefilteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>テクスチャ フィルタリング
+## <a name="span-idtexturefilteringspanspan-idtexturefilteringspanspan-idtexturefilteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>テクスチャ フィルタ リング
 
 
 **NULL** のタイルと **NULL** でないタイルをまたぐフットプリントを含むテクスチャ フィルタリングでは、**NULL** タイル上のテクセルの場合に全体的なフィルター処理に 0 が送られます (欠落した形式コンポーネントの既定値と共に)。 一部の初期のハードウェアはこの要件を満たしていないため、いずれかのテクセル (0 以外の重み付き) が **NULL** タイルにかかる場合、完全なフィルター処理の結果に対して 0 を返します (欠落した形式コンポーネントの既定値と共に)。 その他のハードウェアには、すべての (0 以外の重み付きの) テクセルをフィルター処理に含めるために要件の欠落は許されません。
@@ -47,9 +47,9 @@ ms.locfileid: "8925366"
 ## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>配置の制約
 
 
-標準のタイル形状の場合の配置の制約: すべての次元で 1 つ以上の標準のタイルを塗りつぶすミップマップは、標準のタイルを使用することが保証され、残りは 1 つの**ユニット**として N 個のタイルにパックされたと見なされます (N はアプリケーションに報告される)。 アプリケーションは、N 個のタイルをタイル プール内の分離された任意の場所にマッピングすることができますが、パックされたタイルのすべてをマッピングするか、すべてをマッピングしないかのいずれかにする必要があります。 ミップ パッキングは、配列スライスごとにパックされたタイルの一意のセットです。
+標準のタイルの図形の配置の制約:すべての次元内の少なくとも 1 つの標準タイルに表示される Mipmap、標準を並べて表示と見なされる残りの部分としてパックを使用することが保証されます、**単位**N のタイル (N のアプリケーションに報告されます) にします。 アプリケーションは、N 個のタイルをタイル プール内の分離された任意の場所にマッピングすることができますが、パックされたタイルのすべてをマッピングするか、すべてをマッピングしないかのいずれかにする必要があります。 ミップ パッキングは、配列スライスごとにパックされたタイルの一意のセットです。
 
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大除去フィルタリング
+## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大削減のフィルター処理
 
 
 最小/最大除去フィルタリングはサポートされます。 「[ストリーミング リソース テクスチャ サンプリング機能](streaming-resources-texture-sampling-features.md)」をご覧ください。
@@ -64,7 +64,7 @@ ms.locfileid: "8925366"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソース機能の階層](streaming-resources-features-tiers.md)
+[リソースの機能レベルのストリーミング](streaming-resources-features-tiers.md)
 
  
 

@@ -1,37 +1,37 @@
 ---
-Description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
+Description: このチュートリアルでは、基本的なアプリケーションのユーザー インターフェイスを作成する方法をについて説明します。 最も一般的な 2 つの XAML 要素 Grid と StackPanel の使用方法を紹介します。
 title: Grid と StackPanel を使った単純な天気予報アプリの作成。
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10、UWP
+keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b221220d417df5b70927984ac65eff93fae54a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931251"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646537"
 ---
-# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>チュートリアル: Grid と StackPanel を使った単純な天気予報アプリの作成
+# <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>チュートリアル:Grid や StackPanel を使用して、簡単な天気予報アプリケーションを作成するには
 
 ここでは、XAML の **Grid** 要素と **StackPanel** 要素を使って単純な天気予報アプリのレイアウトを作成します。 これらのツールを使用すると、Windows 10 が実行されたすべてのデバイスで動作する魅力ある外観のアプリを作成できます。 このチュートリアルの所要時間は 10 ～ 20 分です。
 
-> **重要な API**:[ Grid クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要な Api**:[Grid クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、 [StackPanel クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>前提条件
-- Windows 10 と Microsoft Visual Studio 2015 以降。 (最新の Visual Studio 推奨される現在の開発とセキュリティ更新プログラム)[ここをクリックすると、Visual Studio での設定を取得する方法について説明します](../../get-started/get-set-up.md)して。
+- Windows 10 および Microsoft Visual Studio 2015 またはそれ以降。 (Visual Studio の最新推奨される現在の開発およびセキュリティ更新プログラム)[Visual Studio を使用して設定する方法についてはここをクリックして](../../get-started/get-set-up.md)します。
 - XAML と C# を使って基本的な "Hello World" アプリを作成する方法に関する知識。 必要に応じて[ここをクリックし、"Hello World" アプリの作成方法を学習してください](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
-## <a name="step-1-create-a-blank-app"></a>手順 1: 空のアプリを作成する
+## <a name="step-1-create-a-blank-app"></a>手順 1:空のアプリを作成します。
 1. Visual Studio のメニューで、**[ファイル]** > **[新しいプロジェクト]** を選択します。
 2. **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]** > **[Windows]** > **[ユニバーサル]** を選択するか、**[Visual C++]** > **[Windows]** > **[ユニバーサル]** を選択します。
 3. 中央のウィンドウで、**[空のアプリケーション]** を選択します。
 4. **[名前]** ボックスに「**WeatherPanel**」と入力し、**[OK]** を選択します。
 5. プログラムを実行するには、メニューで **[デバッグ]** > **[デバッグの開始]** を選択するか、F5 を選択します。
 
-## <a name="step-2-define-a-grid"></a>手順 2: Grid を定義する
+## <a name="step-2-define-a-grid"></a>手順 2:グリッドを定義します。
 XAML において、**Grid** は一連の行と列で構成されます。 **Grid** で要素の行と列を指定することで、ユーザー インターフェイス内に要素を配置し、他の要素との間の余白を設定できます。 行と列は、**RowDefinition** 要素と**ColumnDefinition** 要素で定義します。
 
 レイアウトの作成を開始するには、**ソリューション エクスプローラー**を使って **MainPage.xaml** を開き、自動的に生成される **Grid** 要素を以下のコードに置き換えます。
@@ -49,13 +49,13 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 </Grid>
 ```
 
-この新しい **Grid** によって 2 行 x 2 列のセットが作成され、このアプリ インターフェイスのレイアウトが定義されます。 2 つの列は、1 列目の **Width** が "3\*" で、2 列目が "5\*" です。したがって、水平方向の領域は、これら 2 つの列の間で 3:5 の比率で分割されます。 同様に、2 つの行はそれぞれの **Height** が "2\*" と "\*" です。したがって、この **Grid** では、1 行目に対し、2 行目の 2 倍の領域が割り当てられます ("\*" は "1\*" と同じです)。 これらの比率は、ウィンドウのサイズを変更したり、異なるデバイスを使ったりしても変わりません。
+この新しい **Grid** によって 2 行 x 2 列のセットが作成され、このアプリ インターフェイスのレイアウトが定義されます。 最初の列が、**幅**の"3\*"、2 つ目があるときに、"5\*"、3:5 の比率で 2 つの列間の水平方向の領域に分割します。 2 つの行である、同じ方法で、**高さ**の"2\*「と」\*"それぞれため、**グリッド**と 2 つ目の最初の行の 2 倍の領域の割り当て ("\*"と同じでは、"1\*")。 これらの比率は、ウィンドウのサイズを変更したり、異なるデバイスを使ったりしても変わりません。
 
 行や列のサイズを指定するその他の方法については、「[XAML を使ったページ レイアウトの定義](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)」をご覧ください。
 
 この時点では、**Grid** 領域にコンテンツがまったく含まれていないため、アプリケーションを実行しても空白のページが表示されるだけです。 そこで **Grid** を表示するために、色を付けることにします。
 
-## <a name="step-3-color-the-grid"></a>手順 3: Grid に色を付ける
+## <a name="step-3-color-the-grid"></a>手順 3:グリッドの色
 **Grid** に色を付けるために、ここでは異なる背景色を持つ 3 つの **Border** 要素を追加します。 また **Grid.Row** 属性と **Grid.Column** 属性を使って、各要素を親 **Grid** の行と列に割り当てます。 これらの属性は既定値が 0 であるため、最初の **Border** には属性値を割り当てる必要がありません。 **Grid** 要素の行と列の定義の後に、次のコードを追加します。
 
 ```xml
@@ -70,7 +70,7 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 
 ![グリッドの色を付ける](images/grid-weather-1.png)
 
-## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>手順 4: StackPanel 要素を使ってコンテンツを配置する
+## <a name="step-4-organize-content-by-using-stackpanel-elements"></a>手順 4:StackPanel 要素を使用してコンテンツを整理します。
 この天気予報アプリの作成で使用する 2 番目の要素は、**StackPanel** です。 **StackPanel** は多くの基本的なアプリのレイアウトで使われている要素であり、複数の要素を上下または左右にスタックすることができます。
 
 次のコードでは、2 つの **StackPanel** 要素を作成し、それぞれに 3 つの**TextBlocks** を設定しています。 これらの **StackPanel** 要素を、**Grid** の手順 3 で作成した **Border** 要素の下に追加します。 これにより、先ほど作成した色付きの **Grid** の上にこれらの **TextBlock** 要素が表示されます。
@@ -95,7 +95,7 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 
 ![StackPanels を追加する](images/grid-weather-2.png)
 
-## <a name="step-5-add-an-image-icon"></a>手順 5: 画像アイコンを追加する
+## <a name="step-5-add-an-image-icon"></a>手順 5:イメージ アイコンを追加します。
 
 最後にこの **Grid** の空のセクションに、今日の天気である "partially cloudy (晴れ時々曇り)" を表す画像を配置します。
 
@@ -103,7 +103,7 @@ XAML において、**Grid** は一連の行と列で構成されます。 **Gri
 
 ![Partially cloudy](images/partially-cloudy.PNG)
 
-**ソリューション エクスプローラー**で **Assets** フォルダーを右クリックし、**[追加]** -> **[既存の項目...]** を選択します。ポップアップ表示されるブラウザーで partially-cloudy.png を見つけ、選択して **[追加]** を選択します。
+**ソリューション エクスプ ローラー**を右クリックして、**資産**フォルダー、および選択**追加** -> **既存の項目.** ポップアップ表示されるブラウザーで部分的に cloudy.png を検索してを選択し、をクリックして**追加**します。
 
 次に **MainPage.xaml** で、手順 4 で指定した StackPanel の下に次の **Image** 要素を追加します。
 

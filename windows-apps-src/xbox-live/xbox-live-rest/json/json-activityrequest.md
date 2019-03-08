@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 791a566d278b92aeb34ab36d38719b44e9cc6c8f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936583"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628157"
 ---
 # <a name="activityrequest-json"></a>ActivityRequest (JSON)
-1 つまたは複数のユーザーのリッチ プレゼンスに関する情報を要求します。 
+1 つまたは複数のユーザーのプレゼンス情報の要求。 
 <a id="ID4EN"></a>
 
  
 ## <a name="activityrequest"></a>ActivityRequest
  
-ActivityRequest オブジェクトには、次仕様があります。
+ActivityRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| richPresence| [RichPresenceRequest](json-richpresencerequest.md)| ために使用するリッチ プレゼンス文字列のフレンドリ名。| 
-| メディア| MediaRequest| どのようなユーザーのメディアの情報が視聴またはをリッスンします。| 
+| richPresence| [RichPresenceRequest](json-richpresencerequest.md)| 使用する必要がある豊富なプレゼンス文字列のフレンドリ名。| 
+| メディア| MediaRequest| どのようなユーザーのメディア情報が視聴またはリッスンします。| 
   
 <a id="ID4EVB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -56,6 +56,6 @@ ActivityRequest オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

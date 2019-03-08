@@ -8,13 +8,13 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929903"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631887"
 ---
-# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>マップされていないタイルでのラスタライザー動作
+# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>タイルが、マップされていないラスタライザーの動作
 
 
 このセクションでは、マップされていないタイルを使用したラスタライザー動作について説明します。
@@ -26,7 +26,7 @@ ms.locfileid: "8929903"
 
 最適な動作を次に示します。
 
-DepthStencilView でタイルがマップされていない場合、深度の読み取りによる戻り値は 0 です。その後、この値が、深度の読み取り値に対して構成されたすべての処理に渡されます。 存在しない深度タイルへの書き込みは破棄されます。 書き込み処理について、このような最適な定義は[階層 2](tier-2.md) では必要ありません。マップされていないタイルへの書き込みは最終的にキャッシュに格納され、その後の読み取りではこのキャッシュが取得される可能性があります。
+DepthStencilView でタイルがマップされていない場合、深度の読み取りによる戻り値は 0 です。その後、この値が、深度の読み取り値に対して構成されたすべての処理に渡されます。 存在しない深度タイルへの書き込みは破棄されます。 書き込み処理に関するこの理想的な定義は、[階層 2](tier-2.md) では求められません。マップされていないタイルへの書き込みは最終的にキャッシュに格納され、その後の読み取りで取得される可能性があります。
 
 ## <a name="span-idrendertargetviewspanspan-idrendertargetviewspanspan-idrendertargetviewspanrendertargetview"></a><span id="RenderTargetView"></span><span id="rendertargetview"></span><span id="RENDERTARGETVIEW"></span>RenderTargetView
 
@@ -37,12 +37,12 @@ DepthStencilView でタイルがマップされていない場合、深度の読
 
 最適な動作を次に示します。
 
-RTV からの読み取りでは、存在しないタイルにおいては 0 が返され、書き込みが破棄されます。 書き込み処理について、このような最適な定義は[階層 2](tier-2.md) では必要ありません。マップされていないタイルへの書き込みは最終的にキャッシュに格納され、その後の読み取りではこのキャッシュが取得される可能性があります。
+RTV からの読み取りでは、存在しないタイルにおいては 0 が返され、書き込みが破棄されます。 書き込み処理に関するこの理想的な定義は、[階層 2](tier-2.md) では求められません。マップされていないタイルへの書き込みは最終的にキャッシュに格納され、その後の読み取りで取得される可能性があります。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースへのパイプライン アクセス](pipeline-access-to-streaming-resources.md)
+[リソースのストリーミング パイプラインへのアクセス](pipeline-access-to-streaming-resources.md)
 
  
 

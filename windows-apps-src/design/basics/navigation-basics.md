@@ -1,5 +1,5 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
 title: UWP アプリのナビゲーションの基本
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
@@ -7,15 +7,15 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 07/16/2018
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116244"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636097"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP アプリのナビゲーション デザインの基本
 
@@ -49,13 +49,13 @@ ms.locfileid: "9116244"
 
 優れたナビゲーション デザインの基本原則から始めましょう。
 
-- **一貫性:** ユーザーの期待に応えます。
-- **シンプルさ:** 必要以上のことをしないようにします。
-- **明確さ:** 明確なパスとオプションを提供します。
+- **整合性:** ユーザーの期待を満たします。
+- **わかりやすくするため:** 必要があるよりしません。
+- **わかりやすくするため:** 明確なパスとオプションを提供します。
 
 ### <a name="consistency"></a>一貫性
 
-ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 [標準のコントロール](#use-the-right-controls)のユーザーを理解している、アイコンの次の標準的な規則を使用して、場所、およびスタイルができるナビゲーション予測可能な直感的なユーザー向け。
+ナビゲーションは、ユーザーの期待に沿ったものである必要があります。 使用して[標準コントロール](#use-the-right-controls)ユーザーは、アイコン、場所の標準の規則をよく理解し、次をスタイル設定は行うことナビゲーション予測可能で直感的なユーザー。
 
 ![ページ コンポーネントのイメージ](images/nav/page-components.svg)
 
@@ -96,7 +96,7 @@ ms.locfileid: "9116244"
 
 1. ユーザーのことを考えてください。 アプリ使用時のユーザーの一般的な移動パスを追跡し、ページごとに、ユーザーがそのページを表示している理由と、次にどこに移動しようとしているかを考えてください。
 
-2. ナビゲーションの深い階層を避けます。 3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。
+2. 詳細のナビゲーション階層を回避します。 3 レベルを超えるナビゲーションでは、ユーザーは迷ってしまい、深い階層から抜け出せなくなる可能性があります。
 
 3. 「ホッピング」を避けます。 ホッピングとは、関連するコンテンツに移動するために、ユーザーが上のレベルに移動して、それから下のレベルに移動する必要があるナビゲーションを意味します。
 
@@ -116,8 +116,8 @@ ms.locfileid: "9116244"
         We recommend using a flat structure when:
 
         - ページをどのような順序でも表示できる場合。
-        - 各ページはそれぞれ異なるページであり、明確な親/子関係はありません。
-        - グループには、8 個未満のページがあります。 <br>
+        - 各ページはそれぞれ異なるページであり、明確な親/子関係がない場合。
+        - グループには、8 未満のページがあります。 <br>
         (ページ数が 8 ページ以上の場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください。)
 
     :::column-end:::
@@ -184,14 +184,14 @@ ms.locfileid: "9116244"
         
         Use top navigation when:
 
-        - 画面上のすべてのナビゲーション オプションを表示します。
-        - アプリのコンテンツを追加する領域がしたいです。
-        - アイコンは、ナビゲーションのカテゴリを明確に記述ことはできません。
+        - 画面上のすべてのナビゲーション オプションを表示するには。
+        - アプリのコンテンツを追加する領域を必要とします。
+        - アイコンは、ナビゲーションのカテゴリを明確に記述できません。
         
         ときにタブを使用します。
 
-        - ナビゲーション履歴とページの状態を保持します。
-        - ユーザーがタブ頻繁に切り替えることが予想されます。
+        - ナビゲーション履歴とページの状態を保存するには。
+        - 頻繁にタブを切り替えるユーザーを必要とします。
 
 :::row-end:::
 
@@ -205,7 +205,7 @@ ms.locfileid: "9116244"
         Displays a vertical list of links to top-level pages. Use when:
         
         - ページがトップレベルに存在する場合。
-        - 項目が多いナビゲーション (5 個以上)
+        - 多くのナビゲーション項目 (5 以上の場合) があります。
         - ユーザーが頻繁にページ間を切り替えることを前提としていない場合。
         
 :::row-end:::
@@ -235,6 +235,6 @@ ms.locfileid: "9116244"
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::
 
-## <a name="next-add-navigation-code-to-your-app"></a>次の手順: アプリにナビゲーションのコードを追加する
+## <a name="next-add-navigation-code-to-your-app"></a>次に：アプリへのナビゲーションのコードを追加します。
 
 次の記事「[基本的なナビゲーションを実装する](navigate-between-two-pages.md)」では、アプリで 2 つのページ間で基本的なナビゲーションを行うための、Frame コントロールを使用するために必要なコードを示します。

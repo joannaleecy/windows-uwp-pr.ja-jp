@@ -8,37 +8,37 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a787992507405a70185140e879be731d72806eff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921770"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612627"
 ---
 # <a name="personsummary-json"></a>PersonSummary (JSON)
-[ユーザー (JSON)](json-person.md)オブジェクトのコレクションです。 
+コレクション[人 (JSON)](json-person.md)オブジェクト。 
 <a id="ID4ER"></a>
 
  
 ## <a name="personsummary"></a>PersonSummary
  
-PersonSummary オブジェクトには、次仕様があります。
+PersonSummary オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| hasCallerMarkedTargetAsFavorite| ブール値| かどうか、呼び出し元は、お気に入りとしてターゲットをマークします。 値の例: true| 
-| hasCallerMarkedTargetAsKnown| ブール値| かどうか、呼び出し元がターゲット済みとしてマーク呼ばれます。 値の例: true| 
-| isCallerFollowingTarget| ブール値| かどうか、呼び出し元が、ターゲットをフォローします。 値の例: true| 
-| isTargetFollowingCaller| ブール値| かどうか、ターゲットでは、呼び出し元がフォローします。 値の例: true| 
-| legacyFriendStatus| string| 従来のフレンドのように、呼び出し元のターゲット状態です。 "None"、"MutuallyAccepted"、"OutgoingRequest"または"IncomingRequest"をすることができます。 値の例:"MutuallyAccepted"| 
-| recentChangeCount| 32 ビットの符号なし整数| 省略可能。 ターゲットのソーシャル グラフの最新の変更の数です。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
-| targetFollowerCount| > 32 ビットの符号なし整数| 次のターゲットはユーザーの数です。 値の例: 1308| 
-| targetFollowingCount| 32 ビットの符号なし整数| ターゲットが次のユーザーの数です。 値の例: 112| 
-| 透かし| string| 省略可能。 ターゲットの最新の変更透かしします。 この値は、ユーザーが、独自の概要を表示するときにのみ存在します。 値の例: 5| 
+| hasCallerMarkedTargetAsFavorite| ブール値| かどうか、呼び出し元が、ターゲットは、お気に入りとしてマークしました。 例の値: true| 
+| hasCallerMarkedTargetAsKnown| ブール値| かどうか、呼び出し元がマーク ターゲットと呼ばれます。 例の値: true| 
+| isCallerFollowingTarget| ブール値| かどうか、呼び出し元が、ターゲットをフォローします。 例の値: true| 
+| isTargetFollowingCaller| ブール値| かどうか、ターゲットが呼び出し元をフォローします。 例の値: true| 
+| legacyFriendStatus| string| 呼び出し側から見た対象の状態を従来のフレンドです。 "None"、"MutuallyAccepted"、"OutgoingRequest"または"IncomingRequest"を指定できます。 値の例:"MutuallyAccepted"| 
+| recentChangeCount| 32 ビット符号なし整数| (省略可能)。 ターゲットのソーシャル グラフでの最近の変更の数。 この値は、ユーザーが独自の概要を表示するときにのみ存在します。 値の例:5| 
+| targetFollowerCount| > 32 ビット符号なし整数| ターゲットをフォローしているユーザーの数。 値の例:1308| 
+| targetFollowingCount| 32 ビット符号なし整数| ターゲットは、次のユーザーの数。 値の例:112| 
+| 基準値| string| (省略可能)。 ターゲットの最近の変更ウォーターマーク。 この値は、ユーザーが独自の概要を表示するときにのみ存在します。 値の例:5| 
   
 <a id="ID4E4D"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -67,6 +67,6 @@ PersonSummary オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

@@ -1,19 +1,19 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
+Description: エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。
 title: UWP アプリでのエッジに基づく UI アニメーション
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e07ac565fe2e223b2fb33573ad083edfdfbc888a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934847"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610207"
 ---
 # <a name="edge-based-ui-animations"></a>エッジに基づく UI アニメーション
 
@@ -23,7 +23,7 @@ ms.locfileid: "8934847"
 
 エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。 この表示と非表示のアクションは、ユーザーが開始することも、アプリから開始することもできます。 UI は、アプリの手前に表示するか、メイン アプリ サーフェスの一部として表示することができます。 UI をアプリ サーフェスの一部として表示する場合は、UI を表示できるようにアプリの残りの部分のサイズを調整する必要があります。
 
-> **重要な API**: [**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+> **重要な Api**:[**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
@@ -46,12 +46,12 @@ ms.locfileid: "8934847"
 
 **開発者向け**
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [エッジに基づく UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Edge ベースの UI をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [クイック スタート:Library のアニメーションを使用して、UI をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**PaneThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [フェードのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [位置変更のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [フェード アニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [位置を変更をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

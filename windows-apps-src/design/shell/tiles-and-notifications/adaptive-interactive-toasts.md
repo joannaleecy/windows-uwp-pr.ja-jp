@@ -1,5 +1,5 @@
 ---
-Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
+Description: アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。
 title: トーストのコンテンツ
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -9,27 +9,27 @@ ms.topic: article
 keywords: windows 10, uwp, トースト通知, 対話型トースト, アダプティブ トースト, トーストのコンテンツ, トースト ペイロード
 ms.localizationpriority: medium
 ms.openlocfilehash: a75e39dfcddbef5bb5c37c2a253a46a7b9cc9577
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920802"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57596827"
 ---
 # <a name="toast-content"></a>トーストのコンテンツ
 
 アダプティブ トースト通知と対話型トースト通知を使うと、テキスト、画像、ボタンと入力を含む柔軟性のある通知を作成できます。
 
-> **重要な API**: [UWP Community Toolkit Notifications NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要な Api**:[UWP Community Toolkit の通知の nuget パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Windows8.1 と Windows Phone 8.1 の従来のテンプレートについては、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)を参照してください。
+> Windows 8.1 および Windows Phone 8.1 から従来のテンプレートを表示するには、次を参照してください。、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)します。
 
 
 ## <a name="getting-started"></a>概要
 
-**Notifications ライブラリをインストールします。** XML の代わりに C# を使って通知を生成する場合は、[Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) という名前の NuGet パッケージをインストールします (「notifications uwp」を検索してください)。 この記事で示している C# のサンプルでは、NuGet パッケージの Version 1.0.0 を使っています。
+**通知ライブラリをインストールします。** XML の代わりに C# を使って通知を生成する場合は、[Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) という名前の NuGet パッケージをインストールします (「notifications uwp」を検索してください)。 この記事で示している C# のサンプルでは、NuGet パッケージの Version 1.0.0 を使っています。
 
-**Notifications Visualizer をインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、トーストの編集時に視覚的なプレビューが即座に表示されるため、対話型トースト通知のデザインに便利です。 詳しくは、「[Notifications Visualizer](notifications-visualizer.md)」をご覧になるか、[Notifications Visualizer を Microsoft Store からダウンロード](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)してください。
+**通知のビジュアライザーをインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、トーストの編集時に視覚的なプレビューが即座に表示されるため、対話型トースト通知のデザインに便利です。 詳しくは、「[Notifications Visualizer](notifications-visualizer.md)」をご覧になるか、[Notifications Visualizer を Microsoft Store からダウンロード](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)してください。
 
 
 ## <a name="sending-a-toast-notification"></a>トースト通知の送信
@@ -42,10 +42,10 @@ ms.locfileid: "8920802"
 トースト通知は、Tag や Group (通知を識別できます) などのいくつかのデータ プロパティと*トースト コンテンツ*を組み合わせたものです。
 
 トースト通知のコンテンツのコア コンポーネントは次のとおりです。
-* **launch**: ユーザーがトーストをクリックしたときにアプリに渡される引数を定義します。これにより、トーストに表示されていた正しいコンテンツにディープ リンクできます。 詳しくは、「[ローカル トースト通知の送信](send-local-toast.md)」をご覧ください。
-* **visual**: トーストの視覚的な部分 (テキストや画像が含まれている汎用バインディングなど) です。
-* **actions**: トーストの対話的な部分 (入力やアクションなど) です。
-* **audio**: トーストがユーザーに表示されるときに再生されるオーディオを制御します。
+* **起動**:これは、ユーザーが、トーストをディープ リンクを適切なコンテンツ、トーストの表示にできるにそのどのような引数がアプリケーションに渡されるを定義します。 詳しくは、「[ローカル トースト通知の送信](send-local-toast.md)」をご覧ください。
+* **visual**:ビジュアルのトーストの部分では、バインディング、ジェネリックを含む、テキストとイメージが含まれます。
+* **アクション**:入力とアクションを含め、トーストの対話型の部分。
+* **オーディオ**:コントロール、オーディオは、トーストがユーザーに表示されるときに再生されます。
 
 トースト コンテンツは生の XML で定義されますが、トースト コンテンツを作成するために、[NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)を使って C# (または C++) オブジェクト モデルを取得することができます。 この記事では、トースト コンテンツ内に含まれるすべてのものについて説明します。
 
@@ -88,7 +88,7 @@ ToastContent content = new ToastContent()
 ![トースト通知の構造体](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>visual
+## <a name="visual"></a>Visual
 
 各トーストでは visual を指定し、その中に汎用トースト バインディングを設定する必要があります。この汎用トースト バインディングには、テキストや画像などを含めることができます。 これらの要素は、デスクトップ、電話、タブレット、Xbox など、さまざまな Windows デバイスでレンダリングされます。
 
@@ -144,11 +144,11 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>アプリ ロゴの上書き
 
-既定では、トーストにアプリのロゴが表示されます。 ただし、このロゴは独自の [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 画像で上書きできます。 たとえば、これが他のユーザーからの通知である場合は、アプリ ロゴをそのユーザーの写真で上書きすることをお勧めします。
+既定では、トーストにはアプリ ロゴが表示されます。 ただし、このロゴは独自の [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 画像で上書きできます。 たとえば、これがある人からの通知である場合、その人の写真でアプリ ロゴを上書きすることをお勧めします。
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
-画像のトリミングは、**HintCrop** プロパティを使って変更できます。 たとえば、**Circle** を使うと、画像が丸くトリミングされます。 その他の場合、画像は正方形です。 画像サイズは 100% のスケーリングで 48x48 ピクセルです。
+**HintCrop** プロパティを使って、画像のトリミングを変更できます。 たとえば、**Circle** を使うと、画像が丸くトリミングされます。 その他の場合、画像は正方形です。 画像サイズは 100% のスケーリングで 48x48 ピクセルです。
 
 ```csharp
 new ToastBindingGeneric()
@@ -173,7 +173,7 @@ new ToastBindingGeneric()
 
 ## <a name="hero-image"></a>ヒーロー イメージ
 
-**Anniversary Update の新機能**: トーストには、ヒーロー イメージを表示できます。ヒーロー イメージとは、トースト バナー内や、アクション センター内にいるときに、目立つように表示されるメイン ビジュアルの [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) です。 画像サイズは 100% のスケーリングで 364x180 ピクセルです。
+**Anniversary Update で新しい**:トースト通知は、おすすめ、ヒーローのイメージを表示できる[ **ToastGenericHeroImage** ](toast-schema.md#toastgenericheroimage)目立つように表示トースト バナー内およびアクション センターの内部でします。 画像サイズは 100% のスケーリングで 364x180 ピクセルです。
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -245,7 +245,7 @@ http および https のリモート Web 画像では、各画像のファイル
 
 ## <a name="attribution-text"></a>属性テキスト
 
-**Anniversary Update の新機能**: コンテンツのソースを参照する必要がある場合、属性テキストを使うことができます。 このテキストは常に、アプリの ID または通知のタイムスタンプと共に通知の下部に表示されます。
+**Anniversary Update で新しい**:コンテンツのソースを参照する必要がある場合は、属性のテキストを使用できます。 このテキストは常に、アプリの ID または通知のタイムスタンプと共に通知の下部に表示されます。
 
 属性テキストをサポートしていない以前のバージョンの Windows では、テキストは単に別のテキスト要素として表示されます (3 つのテキスト要素を最大限に含めていない場合)。
 
@@ -273,7 +273,7 @@ new ToastBindingGeneric()
 
 ## <a name="custom-timestamp"></a>カスタム タイムスタンプ
 
-**Creators Update の新機能**: システムが提供するタイムスタンプを、メッセージ、情報、コンテンツが生成された時点を正確に表す独自のタイムスタンプで上書きできるようになりました。 このタイムスタンプはアクション センターに表示されます。
+**Creators Update で新しい**:今すぐ、メッセージ、情報、コンテンツが生成されたときを正確に表すタイムスタンプが、独自のシステム指定のタイムスタンプをオーバーライドできます。 このタイムスタンプはアクション センターに表示されます。
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -296,7 +296,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="progress-bar"></a>進行状況バー
 
-**Creators Update の新機能**: トースト通知に進行状況バーを表示して、ダウンロードなどの操作の進行状況をユーザーに示すことができます。
+**Creators Update で新しい**:ユーザーへのダウンロードなどの操作の進行状況の通知を保持する、トースト通知の進行状況バーを行うことができます。
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
@@ -305,7 +305,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="headers"></a>ヘッダー
 
-**Creators Update の新機能**: アクション センターのヘッダーの下で、複数の通知をグループ化することができます。 たとえば、グループ チャットのグループ メッセージをヘッダーの下でグループ化したり、共通のテーマのグループ通知をヘッダーの下でグループ化したりすることができます。
+**Creators Update で新しい**:アクション センター内でヘッダーの下の通知をグループ化することができます。 たとえば、グループ チャットのグループ メッセージをヘッダーの下でグループ化したり、共通のテーマのグループ通知をヘッダーの下でグループ化したりすることができます。
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -314,7 +314,7 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="adaptive-content"></a>アダプティブ コンテンツ
 
-**Anniversary Update の新機能**: 上記で指定したコンテンツ以外に、トーストが展開されたときに表示される追加のアダプティブ コンテンツを表示することもできます。
+**Anniversary Update で新しい**:上記で指定したコンテンツだけでなく、トーストが展開されている場合に表示されているその他のアダプティブ コンテンツを表示することもします。
 
 この追加コンテンツは Adaptive を使って指定されます。詳しくは、[アダプティブ タイルのドキュメント](create-adaptive-tiles.md)をご覧ください。
 
@@ -323,7 +323,7 @@ ToastContent toastContent = new ToastContent()
 
 ### <a name="columns-and-text-elements"></a>列とテキスト要素
 
-列といくつかの詳細なアダプティブ テキスト要素が使われている例を次に示します。 テキスト要素は **AdaptiveGroup **内にあるため、すべてのリッチ アダプティブ スタイル指定プロパティをサポートします。
+列といくつかの詳細なアダプティブ テキスト要素が使われている例を次に示します。 テキスト要素は **AdaptiveGroup** 内にあるため、すべてのリッチ アダプティブ スタイル指定プロパティをサポートします。
 
 <img alt="Toast with additional text" src="images/toast-additionaltext.jpg" width="364"/>
 
@@ -401,12 +401,12 @@ new ToastBindingGeneric()
 
 ボタンのエンドツーエンドの実装について詳しくは、「[ローカル トースト通知の送信](send-local-toast.md)」をご覧ください。
 
-ボタンは次のようなさまざまな操作を実行できます。
+Buttons は次のようなさまざまな操作を実行できます。
 
 -   特定のページやコンテキストへの移動に使うことができる引数を指定して、アプリをフォアグラウンドでアクティブ化します。
 -   クイック返信や同様のシナリオで、アプリのバックグラウンド タスクをアクティブ化します。
 -   プロトコル起動を利用して別のアプリをアクティブ化します。
--   再通知や通知の無視などのシステム操作を実行します。
+-   再通知や通知を閉じるなどのシステム操作を実行します。
 
 > [!NOTE]
 > 設定できるボタン (後述のコンキスト メニュー項目を含む) の数は最大 5 つです。
@@ -488,7 +488,7 @@ new ToastButton("Dismiss", "dismiss")
 
 ### <a name="buttons-with-pending-update-activation"></a>更新の保留アクティブ化機能を備えたボタン
 
-**Fall Creators Update の新機能**: バックグラウンドのアクティブ化ボタンで、**PendingUpdate** のアクティブ化後の動作を使用して、トースト通知で複数ステップの対話を作成できます。 ユーザーがボタンをクリックすると、バックグラウンド タスクがアクティブ化し、トーストが "更新の保留中" 状態になります。トーストは、バックグラウンド タスクによって新しいトーストに置き換えられるまで、表示されたままになります。
+**Fall Creators Update**:後のライセンス認証を使用するバック グラウンドのアクティブ化ボタン、動作の**PendingUpdate**トースト通知で複数のステップの相互作用を作成します。 ユーザーがボタンをクリックすると、バックグラウンド タスクがアクティブ化し、トーストが "更新の保留中" 状態になります。トーストは、バックグラウンド タスクによって新しいトーストに置き換えられるまで、表示されたままになります。
 
 この機能を実装する方法については、[トーストの更新の保留に関するページ](toast-pending-update.md)をご覧ください。
 
@@ -497,7 +497,7 @@ new ToastButton("Dismiss", "dismiss")
 
 ### <a name="context-menu-actions"></a>コンテキスト メニューのアクション
 
-**Anniversary Update の新機能**: ユーザーがアクション センター内でトーストを右クリックしたときに表示される追加のコンテキスト メニュー アクションを既存のコンテキスト メニューに追加できます。 このメニューは、アクション センターで右クリックした場合にのみ表示されることに注意してください。 トーストのポップアップ バナーを右クリックしても表示されません。
+**Anniversary Update で新しい**:ユーザーがアクション センター内からトースト右クリックしたときに表示される既存のコンテキスト メニューには、追加のコンテキスト メニューのアクションを追加できます。 このメニューは、アクション センターで右クリックした場合にのみ表示されることに注意してください。 トーストのポップアップ バナーを右クリックしても表示されません。
 
 > [!NOTE]
 > 従来のデバイスでは、これらの追加のコンテキスト メニュー アクションが、単に通常のボタンとしてトースト上に表示されます。
@@ -847,9 +847,9 @@ ToastContent content = new ToastContent()
 > [!IMPORTANT]
 > リマインダーやアラームを使用する場合、トースト通知に少なくとも 1 つのボタンを含める必要があります。 そうでない場合、トーストは、標準のトーストとして扱われます。
 
-* **Reminder**: 通知は、ユーザーが通知を無視するか、操作を実行するまで画面上に表示されたままになります。 Windows Mobile では、トーストは既に展開された状態で表示されます。 リマインダー音が再生されます。
-* **Alarm**: リマインダーの動作に加えて、アラームは既定のアラーム音を使ってオーディオをループします。
-* **IncomingCall**: 着信呼び出し通知は、Windows Mobile デバイスでは全画面で表示されます。 その他の点では、着信音オーディオを使うことと、ボタンのスタイルが異なることを除き、アラームと同じ動作が実行されます。
+* **アラーム**:ユーザーが閉じるか、アクションを実行するまで画面に通知が残ります。 Windows Mobile では、トーストは既に展開された状態で表示されます。 リマインダー音が再生されます。
+* **アラーム**:リマインダーの動作だけでなくアラームはさらに既定のアラーム音でオーディオをループします。
+* **IncomingCall**:着信呼び出し通知は、Windows Mobile デバイスでは全画面で表示されます。 その他の点では、着信音オーディオを使うことと、ボタンのスタイルが異なることを除き、アラームと同じ動作が実行されます。
 
 ```csharp
 ToastContent content = new ToastContent()
@@ -879,6 +879,6 @@ ToastContent content = new ToastContent()
  
 ## <a name="related-topics"></a>関連トピック
 
-* [ローカル トースト通知の送信](send-local-toast.md)
-* [GitHub の通知ライブラリ (UWP コミュニティ ツールキットの一部)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
-* [言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート](tile-toast-language-scale-contrast.md)
+* [ローカル ハンドルとトーストのアクティブ化を送信します。](send-local-toast.md)
+* [GitHub (UWP Community Toolkit の一部) の通知ライブラリ](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [言語、スケール、およびハイ コントラストのタイルとトースト通知のサポート](tile-toast-language-scale-contrast.md)

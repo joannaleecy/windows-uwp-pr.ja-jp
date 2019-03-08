@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: efcf214c366edb891e13301da0eedbc87627ca79
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936777"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617467"
 ---
 # <a name="usersxuidxuiddeleteuserdata"></a>/users/xuid({xuid})/deleteuserdata
-テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は、常にポート 10443 で呼び出されます。
+テスト ユーザーの評価データを完全にリセットします。 テスト目的専用です。 これらの Uri のドメインが`reputation.xboxlive.com`します。 この URI は常にポート 10443 で呼び出されます。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8936777"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID)、ユーザーがデータを削除しています。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) のデータが削除されるユーザーです。| 
   
 <a id="ID4EYB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8936777"
 
 [POST (/users/xuid({xuid})/deleteuserdata)](uri-usersxuiddeleteuserdatapost.md)
 
-&nbsp;&nbsp;テスト ユーザーの評判のデータを完全にリセットします。 テストのみです。
+&nbsp;&nbsp;テスト ユーザーの評価データを完全にリセットします。 テスト目的専用です。
  
 <a id="ID4ECC"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8936777"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 URI](atoc-reference-reputation.md)
+[評価の Uri](atoc-reference-reputation.md)
 
    

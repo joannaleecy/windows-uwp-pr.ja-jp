@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b8627461251a5d43762facc18c8a414a117fc9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941409"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604127"
 ---
 # <a name="light-properties"></a>光源のプロパティ
 
@@ -24,11 +24,11 @@ ms.locfileid: "8941409"
 ## <a name="span-idlightattenuationspanspan-idlightattenuationspanspan-idlightattenuationspanlight-attenuation"></a><span id="Light_Attenuation"></span><span id="light_attenuation"></span><span id="LIGHT_ATTENUATION"></span>光の減衰
 
 
-減衰は、範囲プロパティによって指定された最大距離にいたるまでに光の強さがどのように弱くなっていくかを制御します。 光の減衰を表すために、浮動小数点値 Attenuation0、Attenuation1、Attenuation2 が使われることがあります。 これらの浮動小数点値の範囲は 0.0 ～無限であり、光の減衰を制御します。 あるアプリケーションが Attenuation1 要素を 1.0 に設定し、他のアプリケーションが 0.0 に設定すると、光の強さは 1 / D に従って変化します。D は、光源から頂点までの距離です。 光が最も強いのは光源で、光の範囲において 1 / (光の範囲) に従って弱くなります。
+減衰は、範囲プロパティによって指定された最大距離にいたるまでに光の強さがどのように弱くなっていくかを制御します。 次の 3 つの光の減衰を表す浮動小数点値が使用される場合があります。Attenuation0、Attenuation1、および Attenuation2 です。 これらの浮動小数点値の範囲は 0.0 ～無限であり、光の減衰を制御します。 あるアプリケーションが Attenuation1 要素を 1.0 に設定し、他のアプリケーションが 0.0 に設定すると、光の強さは 1 / D に従って変化します。D は、光源から頂点までの距離です。 光が最も強いのは光源で、光の範囲において 1 / (光の範囲) に従って弱くなります。
 
 通常、アプリケーションは Attenuation0 を 0.0 に、Attenuation1 を定数値に、Attenuation2 を 0.0 に設定しますが、これを変更することでさまざまな光の効果を実現できます。 減衰値を組み合わせて、さらに複雑な減衰効果を出すこともできます。 または、通常範囲外の値に設定し、さらに強い減衰効果を作り出すこともできます。 ただし、負の減衰値は使うことができません。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。
 
-## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>光の色
+## <a name="span-idlightcolorspanspan-idlightcolorspanspan-idlightcolorspanlight-color"></a><span id="Light_Color"></span><span id="light_color"></span><span id="LIGHT_COLOR"></span>ライトの色
 
 
 Direct3D の光源は、システムの照明計算で独立して使われる 3 つの色 (拡散色、環境色、反射色) を放射します。 それぞれ Direct3D 照明モジュールに組み込まれており、現在の素材の対応部分と相互作用して、レンダリングに使われる最終的な色を生成します。 拡散色は、現在の素材の拡散反射率プロパティ、素材の鏡面反射率プロパティによる反射色などと相互作用します。 Direct3D がこれらの色を適用する方法に関する具体的な情報については、「[光源の計算](mathematics-of-lighting.md)」をご覧ください。
@@ -56,12 +56,12 @@ Direct3D は光に RGBA 値を使いますが、アルファ色コンポーネ�
 
 光の方向ベクトルを正規化する必要はありませんが、常に大きさを設定してください。 言い換えると、方向ベクトル &lt;0,0,0&gt; は使わないでください。
 
-## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>光の位置
+## <a name="span-idlightpositionspanspan-idlightpositionspanspan-idlightpositionspanlight-position"></a><span id="Light_Position"></span><span id="light_position"></span><span id="LIGHT_POSITION"></span>ライトの位置
 
 
 光の位置は、ベクトル構造を使って表されます。 x、y、z 座標がワールド空間にあるという前提です。 位置プロパティを使わない光の種類は、指向性ライトだけです。
 
-## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>光の範囲
+## <a name="span-idlightrangespanspan-idlightrangespanspan-idlightrangespanlight-range"></a><span id="Light_Range"></span><span id="light_range"></span><span id="LIGHT_RANGE"></span>ライトの範囲
 
 
 光の範囲プロパティは、シーン内のメッシュがそのオブジェクトにより放射された光を受け取らなくなる、ワールド空間における距離を決定します。 指向性ライトは範囲プロパティを使いません。
@@ -69,7 +69,7 @@ Direct3D は光に RGBA 値を使いますが、アルファ色コンポーネ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[照明および素材](lights-and-materials.md)
+[ライトとマテリアル](lights-and-materials.md)
 
  
 

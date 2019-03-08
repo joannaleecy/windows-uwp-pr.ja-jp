@@ -3,15 +3,15 @@ title: インプロセス バックグラウンド タスクの作成と登録
 description: フォアグラウンド アプリと同じプロセスで実行されるインプロセスのタスクを作成して登録します。
 ms.date: 11/03/2017
 ms.topic: article
-keywords: バック グラウンド タスクの windows 10, uwp,
+keywords: windows 10、uwp、バック グラウンド タスク
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 50e818059436cf7653bf7ac7b2203b0761b93377
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615797"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>インプロセス バックグラウンド タスクの作成と登録
 
@@ -29,7 +29,7 @@ ms.locfileid: "9045045"
 
 ## <a name="fundamentals"></a>基本事項
 
-インプロセス モデルでは、アプリがフォアグラウンドまたはバックグラウンドで実行されるときの改善された通知によってアプリケーションのライフサイクルが強化されます。 これらの切り替え用に、Application オブジェクトから [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) と [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) という 2 つの新しいイベントを使用できます。 これらのイベントは、アプリケーションの表示状態に基づくアプリケーションのライフサイクルに適合します。これらのイベントの詳細とアプリケーションのライフサイクルに与える影響については、[アプリのライフサイクル](app-lifecycle.md)をご覧ください。
+インプロセス モデルでは、アプリがフォアグラウンドまたはバックグラウンドで実行されるときの改善された通知によってアプリケーションのライフサイクルが強化されます。 2 つの新しいイベントはこれらの遷移のアプリケーション オブジェクトから使用できます。[**EnteredBackground** ](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground)と[ **LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)します。 これらのイベントは、アプリケーションの表示状態に基づくアプリケーションのライフサイクルに適合します。これらのイベントの詳細とアプリケーションのライフサイクルに与える影響については、[アプリのライフサイクル](app-lifecycle.md)をご覧ください。
 
 大まかに言うと、**EnteredBackground** イベントは、アプリがバックグラウンドで実行されている間に実行されるコードを実行します。また、**LeavingBackground** イベントは、アプリがフォアグラウンドに移動したことを知るために処理します。
 
@@ -68,7 +68,7 @@ ms.locfileid: "9045045"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>バックグラウンド アクティビティのコードを OnBackgroundActivated() に配置する
 
-[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)発生したときに、バック グラウンド トリガーに応答するには、バック グラウンド アクティビティのコードを配置します。 **OnBackgroundActivated**は[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)と同じように扱うことができます。 このメソッドでは、 **Run**メソッドを提供するすべての情報が含まれている、 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターがあります。 たとえば、App.xaml.cs: で
+バック グラウンド アクティビティ コードを配置[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)を発生させるときに、バック グラウンドのトリガーに応答します。 **OnBackgroundActivated** は、[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396) と同様に処理することができます。 メソッドには、 [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)パラメーターで、すべてのものが含まれていますが、**実行**メソッドを提供します。 たとえば、App.xaml.cs: で
 
 ``` cs
 using Windows.ApplicationModel.Background;
@@ -88,7 +88,7 @@ sealed partial class App : Application
 }
 ```
 
-豊富な**OnBackgroundActivated**の例では、[アプリ サービスをホスト アプリと同じプロセスで実行する変換](convert-app-service-in-process.md)を参照してください。
+豊富な**OnBackgroundActivated**例を参照してください[ホスト アプリケーションと同じプロセスで実行する app service の変換](convert-app-service-in-process.md)します。
 
 ## <a name="handle-background-task-progress-and-completion"></a>バックグラウンド タスクの進捗状況と完了を処理する
 
@@ -110,25 +110,25 @@ API リファレンス、バックグラウンド タスクの概念的ガイダ
 
 ## <a name="related-topics"></a>関連トピック
 
-**バックグラウンド タスクに関する手順を詳しく説明するトピック**
+**詳細なバック グラウンド タスクの説明のトピック**
 
-* [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクへ変換](convert-out-of-process-background-task.md)
-* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [バックグラウンドでのメディアの再生](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [プロセス内のバック グラウンド タスクに、プロセス外のバック グラウンド タスクを変換します。](convert-out-of-process-background-task.md)
+* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [バック グラウンドでメディアを再生します。](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
+* [バック グラウンド タスクでシステム イベントに応答します。](respond-to-system-events-with-background-tasks.md)
+* [バック グラウンド タスクを登録します。](register-a-background-task.md)
+* [バック グラウンド タスクを実行するための条件を設定します。](set-conditions-for-running-a-background-task.md)
+* [メンテナンス トリガーを使用します。](use-a-maintenance-trigger.md)
+* [取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)
+* [バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
+* [タイマーでバック グラウンド タスクを実行します。](run-a-background-task-on-a-timer-.md)
 
-**バックグラウンド タスクのガイダンス**
+**バック グラウンド タスクのガイダンス**
 
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [UWP アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
+* [トリガーする方法を中断、再開、および (デバッグ) 場合は、UWP アプリでイベントをバック グラウンド](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**バックグラウンド タスクの API リファレンス**
+**バック グラウンド タスクの API リファレンス**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)

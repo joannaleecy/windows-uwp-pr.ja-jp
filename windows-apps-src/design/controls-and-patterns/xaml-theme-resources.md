@@ -1,5 +1,5 @@
 ---
-Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
+Description: XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,20 +9,20 @@ label: XAML theme resources
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117612"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634647"
 ---
 # <a name="xaml-theme-resources"></a>XAML テーマ リソース
 
-XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。 XAML フレームワークがサポートするテーマは "Light"、"Dark"、"HighContrast" の 3 つです。
+XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。 これには、XAML フレームワークをサポートする 3 つのテーマがあります。"Light"、「ダーク」および「ハイコントラスト」。
 
-**前提条件**: このトピックでは、既に「[ResourceDictionary と XAML リソースの参照](resourcedictionary-and-xaml-resource-references.md)」を読んでいることを前提としています。
+**前提条件**:このトピックでは、既に「[ResourceDictionary と XAML リソースの参照](resourcedictionary-and-xaml-resource-references.md)」を読んでいることを前提としています。
 
 ## <a name="theme-resources-v-static-resources"></a>テーマ リソース v 静的なリソース
 
@@ -34,7 +34,7 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
 ## <a name="theme-resources-in-the-resource-dictionary-structure"></a>リソース ディクショナリ構造でのテーマ リソース
 
-各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使うことができます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
+各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計のために、themeresources.xaml が記載されて、 \\(Program Files)\\Windows キット\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\ &lt;SDK バージョン&gt;\\Generic フォルダー、Windows ソフトウェア開発キット (SDK) をインストールからします。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
 
 これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
 
@@ -44,11 +44,11 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
 - "HighContrast" ディクショナリに加えて、"Light" と "Dark" の両方のテーマ ディクショナリを指定します。 "Default" をキーとする [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) を作成することもできますが、明示的に "Light"、"Dark"、"HighContrast" を使うことをお勧めします。
 
-- スタイル、セッター、コントロール テンプレート、プロパティ セッター、アニメーションでは、[{ThemeResource} マークアップ拡張](../../xaml-platform/themeresource-markup-extension.md)を使います。
+- 使用して、 [{ThemeResource} マークアップ拡張機能](../../xaml-platform/themeresource-markup-extension.md)で。スタイル、Setter、テンプレート、プロパティ set アクセス操作子、およびアニメーションを制御します。
 
 - [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) 内のリソース定義では、[{ThemeResource} マークアップ拡張](../../xaml-platform/themeresource-markup-extension.md) を使わないでください。 代わりに、[{StaticResource} マークアップ拡張](../../xaml-platform/staticresource-markup-extension.md)を使います。
 
-    例外: [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../../xaml-platform/themeresource-markup-extension.md)を使うことができます。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
+    例外:使用することができます、 [{ThemeResource} マークアップ拡張機能](../../xaml-platform/themeresource-markup-extension.md)はで、テーマをアプリに依存しないリソースの参照を[ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807)します。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
 
 > [!CAUTION]
 > これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting-theme-resources)」セクションをご覧ください。
@@ -63,9 +63,9 @@ UWP アプリで色を適用する方法の詳細については、「[UWP ア�
 
 XAML フレームワークには、"Light" と "Dark" のテーマに合わせてカスタマイズされた名前付きの [Color](/uwp/api/Windows.UI.Color) リソースのセットが用意されています。 これらを参照するために使うキーは、`System[Simple Light/Dark Name]Color` という名前付け形式に従います。
 
-次の表は、XAML フレームワークで提供される "Light" と "Dark" のリソースについて、それぞれのキー、簡易名、色の文字列表現 (\#aarrggbb 形式) の一覧を示しています。 キーは、アプリでリソースを参照するときに使われます。 "Light/Dark 簡易名" は、後で説明するブラシの名前付け規則の一部として使われます。
+このテーブルには、キー、簡易名、および色の文字列表現が一覧表示されます (を使用して、 \#aarrggbb 書式)、XAML フレームワークによって提供される"Light"と「ダーク」のリソース。 キーは、アプリでリソースを参照するときに使われます。 "Light/Dark 簡易名" は、後で説明するブラシの名前付け規則の一部として使われます。
 
-| キー                             | Light/Dark 簡易名 | Light      | Dark       |
+| Key                             | Light/Dark 簡易名 | 明るい      | 暗い       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -123,7 +123,7 @@ XAML フレームワークには、"Light" と "Dark" のテーマに合わせ�
     :::column-end:::
 :::row-end:::
 
-#### <a name="list"></a>リスト
+#### <a name="list"></a>一覧
 
 :::row:::
     :::column:::
@@ -151,15 +151,15 @@ XAML フレームワークによって提供されるリソースのセットの
 
 次の表は、Windows システム パレットから派生したリソース オブジェクトとして XAML に用意されているシステム全体の色を示します。 "簡単操作での名前" 列は、その色が Windows の設定の UI でどのように表現されるかを示しています。 "HighContrast 簡易名" 列は、その色が XAML コモン コントロールにどのように適用されるかをひとことで表す単語になっています。 これは、後で説明するブラシの名前付け規則の一部として使われます。 "初期既定値" 列は、システムがハイ コントラストで動作していない場合に使われる値を示します。
 
-| キー                           | 簡単操作での名前            | HighContrast 簡易名 | 初期既定値 |
+| Key                           | 簡単操作での名前            | HighContrast 簡易名 | 初期既定値 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **ボタン テキスト** (背景)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonFaceColor    | **ボタン テキスト** (背景)   | 背景               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **ボタン テキスト** (前景)   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **淡色表示のテキスト**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **無効なテキスト**              | 無効                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **選択されたテキスト** (背景) | Highlight                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **選択されたテキスト** (前景) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **ハイパーリンク**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorHotlightColor      | **ハイパーリンク**                 | ハイパーリンク                | \#FF0066CC      |
+| SystemColorWindowColor        | **バック グラウンド**                 | PageBackground           | \#FFFFFFFF      |
 | SystemColorWindowTextColor    | **テキスト**                       | PageText                 | \#FF000000      |
 
 Windows には複数のハイ コントラスト テーマが用意されているほか、次のように、コンピューターの簡単操作を通じて、独自のハイ コントラスト設定で使う特定の色をユーザーが設定することもできます。 このため、ハイ コントラストのカラー値の確定的な一覧を提供することはできません。
@@ -189,11 +189,11 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 
 このブラシが XAML 要素に適用されるとき、その色は、次の表に示すように現在のテーマによって実行時に決定されます。
 
-| テーマ        | 色の簡易名 | カラー リソース             | ランタイム値                                              |
+| Theme        | 色の簡易名 | カラー リソース             | ランタイム値                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
-| Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Background        | SystemColorButtonFaceColor | 設定でボタンの背景として指定された色。 |
+| 明るい        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| 暗い         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| HighContrast | 背景        | SystemColorButtonFaceColor | 設定でボタンの背景として指定された色。 |
 
 独自の XAML 要素に適用するブラシを決めるには、`SystemControl[Simple HighContrast name][Simple light/dark name]Brush` という名前付けスキームを使います。
 
@@ -202,7 +202,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 -->
 
 > [!NOTE]
-> \[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] のすべての組み合わせがブラシ リソースとして提供されるわけではありません。
+> すべての組み合わせ\[*単純なハイコントラスト名前*\]\[*/暗の簡易名*\]ブラシ リソースとして提供されます。
 
 ## <a name="the-xaml-type-ramp"></a>XAML の書体見本
 
@@ -228,7 +228,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**: [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**:[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 他のすべての [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) コンテナー スタイルに対する一般的なプロパティを提供します。
 
@@ -338,7 +338,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**: [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**:[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
 
 他のすべての [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) コンテナー スタイルに対する一般的なプロパティを提供します。
 
@@ -375,7 +375,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-**注**: **RichTextBlock**のブロック ベースのドキュメント オブジェクト モデルでは、簡単に個々 のテキストの属性を設定するために主に、 [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)スタイルは[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、すべてのテキスト見本スタイルがないです。要素です。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+**注意**:  [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)スタイルは、すべてのテキストがないをスタイル設定ごとの傾斜増加[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)は、ブロック ベースのドキュメント オブジェクト モデル化のために主に**RichTextBlock**なります個々 のテキスト要素に属性を設定する簡単にします。 また、XAML コンテンツ プロパティを使って [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## <a name="miscellaneous-named-styles"></a>その他の名前付きスタイル
 
@@ -383,7 +383,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**: [ButtonBase](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**:[ButtonBase](https://msdn.microsoft.com/library/windows/apps/br227736)
 
 ユーザーがクリックしてアクションを実行できるテキストを表示する必要がある場合は、このスタイルを [Button](https://msdn.microsoft.com/library/windows/apps/br209265) に適用します。 このテキストには、対話型であることがわかるように現在のアクセント カラーを使ったスタイルが設定され、テキストに適したフォーカス四角形が表示されます。 [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739) の暗黙的なスタイルとは異なり、**TextBlockButtonStyle** のテキストには下線は付きません。
 
@@ -402,7 +402,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**:[ボタン](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 この [Style](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの戻るボタンとして使うことができる [Button](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 既定の寸法は 40 x 40 ピクセルです。 スタイルを調整するには、**Button** の [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](https://msdn.microsoft.com/library/windows/apps/br209406)、その他のプロパティを明示的に設定するか、[BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852) を使って派生スタイルを作成します。
 
@@ -418,7 +418,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**:[ボタン](https://msdn.microsoft.com/library/windows/apps/br209265)
 
 この [Style](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの戻るボタンとして使うことができる [Button](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 **NavigationBackButtonNormalStyle** と同様ですが、寸法は 30 x 30 ピクセルになります。
 

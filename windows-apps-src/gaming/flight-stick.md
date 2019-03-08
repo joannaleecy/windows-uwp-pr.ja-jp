@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, フライト スティック
 ms.localizationpriority: medium
 ms.openlocfilehash: 5eceb30c62f1e803397aff71d59b560c39736cf9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927975"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609017"
 ---
 # <a name="flight-stick"></a>フライト スティック
 
 このページでは、[Windows.Gaming.Input.FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) とユニバーサル Windows プラットフォーム (UWP) 用の関連 API を使った、Xbox One 認定フライト スティックを対象にしたプログラミングの基礎について説明します。
 
-このページでは、次のことを解説します。
+ここでは、次の項目について紹介します。
 
 * 接続されているフライト スティックとそのユーザーの一覧を収集する方法
 * フライト スティックが追加または削除されたことを検出する方法
@@ -47,14 +47,14 @@ Xbox One のフライト スティックには、次のコントロールが装�
 
 | ナビゲーション コマンド | フライト スティックの入力                  |
 | ------------------:| ----------------------------------- |
-|                 上 | ジョイスティック上                         |
-|               下 | ジョイスティック下                       |
-|               左 | ジョイスティック左                       |
+|                 Up | ジョイスティック上                         |
+|               Down | ジョイスティック下                       |
+|               Left | ジョイスティック左                       |
 |              右 | ジョイスティック右                      |
 |               ビュー | **View** ボタン                     |
 |               Menu | **Menu** ボタン                     |
 |             OK | **FirePrimary** ボタン              |
-|             キャンセル | **FireSecondary** ボタン            |
+|             Cancel | **FireSecondary** ボタン            |
 
 フライト スティックは、ナビゲーション コマンドの[オプション セット](ui-navigation-controller.md#optional-set)はマップしません。
 
@@ -227,4 +227,4 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 
 * [Windows.Gaming.Input.UINavigationController クラス](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController インターフェイス](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [ゲームの入力プラクティス](input-practices-for-games.md)
+* [ゲームの入力のプラクティス](input-practices-for-games.md)

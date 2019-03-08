@@ -1,38 +1,38 @@
 ---
-Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
+Description: '[パッケージ] ページは、すべてのアプリを提出する場合のパッケージ ファイル (.appxupload、.appx、.appxbundle、または .xap) をアップロードします。'
 title: アプリ パッケージのアップロード
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ms.date: 10/02/2018
 ms.topic: article
-keywords: windows 10, uwp, パッケージ, アップロード, パッケージのアップロード
+keywords: windows 10、uwp、パッケージ、アップロード、パッケージのアップロード
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a77cb67891b3cfcb814e66fd14db9e79a0bff1c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935220"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601667"
 ---
 # <a name="upload-app-packages"></a>アプリ パッケージのアップロード
 
-**[パッケージ**] ページでは、すべての提出するアプリのパッケージ ファイル (.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle) をアップロードします。 このページで、同じアプリについて、すべてのパッケージをアップロードして、各ユーザーのデバイスに対して最適に機能するパッケージに、ユーザーがアプリをダウンロードするとき、自動的にストアを提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
+**パッケージ**ページは、すべてのアプリを提出する場合のパッケージ ファイル (.msix、.msixupload、.msixbundle、.appx、.appxupload、または .appxbundle) をアップロードします。 このページで、同じアプリをすべてのパッケージをアップロードして、自分のデバイスの最適なパッケージには、各顧客、顧客がアプリをダウンロードするとき、自動的にストアを提供します。 開発者がパッケージをアップロードした後は、[特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージ](#device-family-availability)をランキング順に示すテーブルが表示されます。
 
 > [!IMPORTANT]
-> 2018 年 10 月 31 日の時点で、新しく作成した製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳しくは、この[ブログ記事](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)を参照してください。
+> 2018 年 10 月 31 日の時点で、新しく作成された製品が Windows 8.x/Windows を対象とするパッケージを含めることはできません Phone 8.x 以前のバージョン。 詳細については、「この[ブログの投稿](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)します。
 
-パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 [特定のユーザーに配信されるパッケージのバージョン番号の影響](package-version-numbering.md)や[さまざまなシナリオのパッケージを管理する方法](guidance-for-app-package-management.md)について説明したいもします。
+パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 について学習したいも[方法バージョン番号への影響されるパッケージが特定の顧客に配信される](package-version-numbering.md)と[さまざまなシナリオ用のパッケージを管理する方法](guidance-for-app-package-management.md)します。
 
 
 ## <a name="uploading-packages-to-your-submission"></a>申請へのパッケージのアップロード
 
-パッケージをアップロードするには、アップロード フィールドにパッケージをドラッグするか、クリックしてファイルを参照します。 **[パッケージ**] ページを使う .msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle ファイルをアップロードできます。
+パッケージをアップロードするには、アップロード フィールドにパッケージをドラッグするか、クリックしてファイルを参照します。 **パッケージ**ページには、.msix、.msixupload、.msixbundle、.appx、.appxupload、または .appxbundle ファイルをアップロードすることができます。
 
 > [!IMPORTANT]
-> Windows 10、.msixupload または .appxupload ファイルは、ここではなく .msix、.appx、.msixbundle、または .appxbundle のアップロードをお勧めします。  ストア用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
+> Windows 10、.msixupload または .appxupload ファイルには、ここではなく .msix、.appx、.msixbundle、または .appxbundle のアップロードをお勧めします。  ストア用の UWP アプリのパッケージ化について詳しくは、「[Visual Studio での UWP アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 
-検証中にパッケージを使用してエラーを検出した場合は問題を把握できるようにするためのメッセージを表示します。 パッケージを削除して、問題を修正してから、もう一度アップロードする必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
+検証中に、パッケージでエラーを検出した場合に、何が悪いことを知らせるメッセージが表示されます。 パッケージを削除して、問題を修正し、もう一度アップロードを再試行する必要があります。 また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
 
 
 ## <a name="device-family-availability"></a>デバイス ファミリの利用可否
@@ -44,7 +44,7 @@ ms.locfileid: "8935220"
 
 ## <a name="package-details"></a>パッケージの詳細
 
-アップロードしたパッケージがここでは、表示対象のオペレーティング システムによってグループ化されます。 パッケージの名前、バージョン、アーキテクチャが表示されます。 各パッケージのサポートされる言語、アプリの機能、ファイル サイズなどの詳しい情報については、**[詳細の表示]** をクリックします。
+アップロードされたパッケージがここでは、表示対象のオペレーティング システム別にグループ化されます。 パッケージの名前、バージョン、アーキテクチャが表示されます。 各パッケージのサポートされる言語、アプリの機能、ファイル サイズなどの詳しい情報については、**[詳細の表示]** をクリックします。
 
 提出からパッケージを削除する必要がある場合は、各パッケージの **[詳細]** セクションの下部にある **[削除]** リンクをクリックします。
 

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: パートナー センター アカウントに登録されているアプリのパッケージ フライトを作成する、Microsoft Store 申請 API でこのメソッドを使います。
+description: Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリのパッケージのフライトを作成できます。
 title: パッケージ フライトの作成
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの作成
 ms.localizationpriority: medium
 ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603457"
 ---
 # <a name="create-a-package-flight"></a>パッケージ フライトの作成
 
-パートナー センター アカウントに登録されているアプリのパッケージ フライトを作成する、Microsoft Store 申請 API でこのメソッドを使います。
+Microsoft Store 送信 API でこのメソッドを使用すると、パートナー センター アカウントに登録されているアプリのパッケージのフライトを作成できます。
 
 > [!NOTE]
 > このメソッドは、申請なしでパッケージ フライトを作成します。 パッケージ フライトの申請を作成するには、「[パッケージ フライト申請の管理](manage-flight-submissions.md)」のメソッドをご覧ください。
@@ -25,7 +25,7 @@ ms.locfileid: "8926398"
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -38,7 +38,7 @@ ms.locfileid: "8926398"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
@@ -54,11 +54,11 @@ ms.locfileid: "8926398"
 
 要求本文には次のパラメーターがあります。
 
-|  パラメーター  |  型  |  説明  |  必須かどうか  |
+|  パラメーター  |  種類  |  説明  |  必須  |
 |------|------|------|------|
-|  friendlyName  |  string  |  開発者によって指定されているパッケージ フライトの名前。  |  いいえ  |
-|  groupIds  |  array  |  パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |  いいえ  |
-|  rankHigherThan  |  string  |  現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 このパラメーターを設定しない場合、新しいパッケージ フライトの順位は、すべてのパッケージ フライトで最も高くなります。 フライト グループの順位について詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。    |  いいえ  |
+|  friendlyName  |  string  |  開発者によって指定されているパッケージ フライトの名前。  |  X  |
+|  groupIds  |  array  |  パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |  X  |
+|  rankHigherThan  |  string  |  現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 このパラメーターを設定しない場合、新しいパッケージ フライトの順位は、すべてのパッケージ フライトで最も高くなります。 フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。    |  X  |
 
 
 ### <a name="request-example"></a>要求の例
@@ -96,12 +96,12 @@ Content-Type: application/json
 
 ### <a name="response-body"></a>応答本文
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| Value      | 種類   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | flightId            | string  | パッケージ フライトの ID。 この値は、パートナー センターによって提供されます。  |
 | friendlyName           | string  | 要求で指定されているパッケージ フライトの名前。   |  
 | groupIds           | array  | 要求で指定されている、パッケージ フライトに関連付けられているフライト グループの ID を含む文字列の配列。 フライト グループについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。   |
-| rankHigherThan           | string  | 要求で指定されている、現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループの順位について詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
+| rankHigherThan           | string  | 要求で指定されている、現在のパッケージ フライトの次に低位のパッケージ フライトのフレンドリ名。 フライト グループのランク付けについて詳しくは、「[パッケージ フライト](https://msdn.microsoft.com/windows/uwp/publish/package-flights)」をご覧ください。  |
 
 
 ## <a name="error-codes"></a>エラー コード
@@ -111,11 +111,11 @@ Content-Type: application/json
 | エラー コード |  説明   |
 |--------|------------------|
 | 400  | 要求が無効です。 |
-| 409  | 現在の状態があるため、パッケージ フライトを作成できませんでしたまたは[Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センター機能、アプリで使用します。 |   
+| 409  | 現在の状態のため、パッケージの航空券を作成できませんでしたまたはアプリであるパートナー センター機能を使用する[いない現在 Microsoft Store 送信 API ではサポートされて](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。 |   
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [パッケージ フライトの取得](get-a-flight.md)
-* [パッケージ フライトの削除](delete-a-flight.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [パッケージのフライトを取得します。](get-a-flight.md)
+* [パッケージのフライトを削除します。](delete-a-flight.md)

@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f28f1f46cfd34ee1aab614c57dc99019dbd6111
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930917"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597977"
 ---
 # <a name="specular-lighting"></a>反射光
 
@@ -23,14 +23,14 @@ ms.locfileid: "8930917"
 
 既定の光源の状態では、反射光は計算されません。
 
-## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射光の方程式
+## <a name="span-idspecularlightingequationspanspan-idspecularlightingequationspanspan-idspecularlightingequationspanspecular-lighting-equation"></a><span id="Specular_Lighting_Equation"></span><span id="specular_lighting_equation"></span><span id="SPECULAR_LIGHTING_EQUATION"></span>反射光の効果の数式
 
 
 反射光は次の方程式で表されます。
 
 |                                                                             |
 |-----------------------------------------------------------------------------|
-| 反射光 = Cₛ \* sum\[Lₛ \* (N · H)<sup>P</sup> \* Atten \* Spot\] |
+| 反射光の効果 = Cₛ\*合計\[Lₛ \* (N 押しH)<sup>P</sup> \* Atten\*スポット\] |
 
  
 
@@ -39,13 +39,13 @@ ms.locfileid: "8930917"
 | パラメーター    | 既定値 | 種類                                                             | 説明                                                                                            |
 |--------------|---------------|------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | Cₛ           | (0,0,0,0)     | 赤、緑、青、およびアルファ透明度 (浮動小数点値) | 反射の色。                                                                                        |
-| sum          | 該当なし           | 該当なし                                                              | 各ライトの鏡面コンポーネントの総和。                                                          |
-| N            | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値)                    | 頂点法線。                                                                                         |
-| H            | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値)                    | 中間ベクトル。 中間ベクトルのセクションを参照してください。                                                |
+| sum          | なし           | なし                                                              | 各ライトの鏡面コンポーネントの総和。                                                          |
+| N            | なし           | 3D ベクトル (x、y、z 浮動小数点値)                    | 頂点法線。                                                                                         |
+| H            | なし           | 3D ベクトル (x、y、z 浮動小数点値)                    | 中間ベクトル。 中間ベクトルのセクションを参照してください。                                                |
 | <sup>P</sup> | 0.0           | 浮動小数点                                                   | 鏡面反射の係数。 範囲は 0 から +infinity です。                                                     |
 | Lₚ           | (0,0,0,0)     | 赤、緑、青、およびアルファ透明度 (浮動小数点値) | 明るい鏡面色。                                                                                  |
-| Atten        | 該当なし           | 浮動小数点                                                   | 光の減衰値。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。 |
-| Spot         | 該当なし           | 浮動小数点                                                   | スポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。        |
+| Atten        | なし           | 浮動小数点                                                   | 光の減衰値。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。 |
+| Spot         | なし           | 浮動小数点                                                   | スポットライト係数。 「[減衰とスポットライト係数](attenuation-and-spotlight-factor.md)」を参照してください。        |
 
  
 
@@ -55,7 +55,7 @@ Cₛ の値は以下のどちらかになります。
 -   頂点の色 2。鏡面マテリアル ソースが反射の頂点の色であり、2 番目の頂点の色が頂点の宣言において指定されている場合。
 -   マテリアルの反射色
 
-**注:** かどうかは、いずれかの鏡面マテリアル ソース オプションが使用されると、頂点の色が指定されていないマテリアルの反射色を使用します。
+**注**  かどうかは、反射素材のソースのいずれかのオプションを使用、および頂点の色を指定しないと、素材の反射色が使用されます。
 
  
 
@@ -74,9 +74,9 @@ Cₛ の値は以下のどちらかになります。
 
 | パラメーター       | 既定値 | 種類                                          | 説明                                                  |
 |-----------------|---------------|-----------------------------------------------|--------------------------------------------------------------|
-| Cₚ              | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラの位置。                                             |
-| Vₚ              | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置。                                             |
-| L<sub>dir</sub> | 該当なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置からライトの位置への方向ベクトル。 |
+| Cₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | カメラの位置。                                             |
+| Vₚ              | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置。                                             |
+| L<sub>dir</sub> | なし           | 3D ベクトル (x、y、z 浮動小数点値) | 頂点の位置からライトの位置への方向ベクトル。 |
 
  
 
@@ -114,7 +114,7 @@ Cₛ の値は以下のどちらかになります。
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[光源の計算](mathematics-of-lighting.md)
+[照明の計算](mathematics-of-lighting.md)
 
  
 

@@ -1,26 +1,26 @@
 ---
-Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+Description: Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
 title: Web ビュー
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7af61b7d442fee7eff6399a7a5d143adb53fb560
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058553"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610637"
 ---
 # <a name="web-view"></a>Web ビュー
  
 
 Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
 
-> **重要な API**: [WebView クラス](https://msdn.microsoft.com/library/windows/apps/br227702)
+> **重要な Api**:[WebView クラス](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -28,7 +28,7 @@ Web ビュー コントロールは、Microsoft Edge レンダリング エン�
 
 ## <a name="create-a-web-view"></a>Web ビューを作成する
 
-**Web ビューの外観を変更する**
+**Web ビューの外観を変更します。**
 
 [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) は、[Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) サブクラスではないため、コントロール テンプレートがありません。 ただし、さまざまなプロパティを設定して、Web ビューのビジュアル要素の一部を制御することはできます。
 - 表示領域を制限するには、[Width](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) プロパティと [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) プロパティを設定します。 
@@ -36,7 +36,7 @@ Web ビュー コントロールは、Microsoft Edge レンダリング エン�
 - Web ビューの不透明度を調整するには、[Opacity](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) プロパティを設定します。
 - HTML コンテンツが色を指定していないときに、Web ページの背景として色を指定するには、[DefaultBackgroundColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) プロパティを設定します。 
 
-**Web ページのタイトルを取得する**
+**Web ページのタイトルを取得します。**
 
 [DocumentTitle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) プロパティを使うと、現在 Web ビューに表示されている HTML ドキュメントのタイトルを取得することができます。 
 
@@ -48,7 +48,7 @@ WebView は Control サブクラスではありませんが、キーボードの
 
 ### <a name="navigating-to-content"></a>コンテンツに移動する
 
-Web ビューには、[GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[Stop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx)、そして [CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx) という基本的な操作用の API が用意されています。 これらの API を使うと、一般的な Web 閲覧機能をアプリに追加できます。 
+Web ビューでは、基本的な操作をいくつかの Api を提供します。[GoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、 [GoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[停止](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[更新](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、 [CanGoBack](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx)、および[CanGoForward](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). これらの API を使うと、一般的な Web 閲覧機能をアプリに追加できます。 
 
 Web ビューの初期コンテンツを設定するには、XAML の [Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) プロパティを使います。 XAML パーサーは文字列を [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx)に自動的に変換します。 
 
@@ -91,7 +91,7 @@ webView1.Navigate("ms-appx-web:///help/about.html");
 
 ### <a name="responding-to-navigation-events"></a>ナビゲーション イベントを処理する
 
-Web ビュー コントロールでは、ナビゲーションやコンテンツの読み込みの状態に対する処理に使うことができるイベントがいくつか用意されています。 ルートとなる Web ビュー コンテンツについて、イベントは次の順番で発生します。[NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+Web ビュー コントロールでは、ナビゲーションやコンテンツの読み込みの状態に対する処理に使うことができるイベントがいくつか用意されています。 イベントは、ルート web ビューのコンテンツの次の順序で発生します。[NavigationStarting](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [ContentLoading](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [DOMContentLoaded](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [NavigationCompleted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
 **NavigationStarting** - Web ビューが新しいコンテンツに移動する前に発生します。 WebViewNavigationStartingEventArgs.Cancel プロパティを "true" に設定することで、このイベントのハンドラーで移動をキャンセルできます。 
@@ -137,7 +137,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** - Web ビューが現在のコンテンツの読み込みを完了したとき、またはナビゲーションに失敗したときに発生します。 ナビゲーションが失敗したかを判断するには、[WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) クラスの [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) プロパティと [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) プロパティを確認します。 
+**NavigationCompleted** - Web view が現在のコンテンツの読み込みを完了したとき、またはナビゲーションに失敗したときに発生します。 ナビゲーションが失敗したかを判断するには、[WebViewNavigationCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) クラスの [IsSuccess](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) プロパティと [WebErrorStatus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) プロパティを確認します。 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -258,13 +258,13 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 Web ビューのコンテンツのスクリプトは、文字列型パラメーターの **window.external.notify** を使えば、情報をアプリに戻せます。 これらのメッセージを受け取るには、[ScriptNotify](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントを処理します。 
 
-外部の Web ページを有効にして、window.external.notify を呼び出した際に **ScriptNotify** イベントを発するには、当該のページの URI をアプリの宣言の **ApplicationContentUriRules** セクションに含める必要があります  (これは、Package.appxmanifest デザイナーの [コンテンツ URI] タブにある Microsoft Visual Studio で可能です)。この一覧にある URI は HTTPS を使う必要があります。また、サブドメインのワイルドカード (たとえば、`https://*.microsoft.com`) を含めることはできますが、ドメインのワイルドカード (たとえば、`https://*.com` や `https://*.*`) を含めることはできません。 マニフェスト要件は、アプリ パッケージから生成されたコンテンツには適用されず、ms-local-stream:// URI を使う、または [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) を使って読み込まれる、のいずれかです。 
+外部の Web ページを有効にして、window.external.notify を呼び出した際に **ScriptNotify** イベントを発するには、当該のページの URI をアプリの宣言の **ApplicationContentUriRules** セクションに含める必要があります  (で実行できるこの Microsoft Visual Studio で Package.appxmanifest デザイナーの [コンテンツ Uri] タブ。)この一覧に Uri が HTTPS を使用する必要があり、サブドメインのワイルドカードを含めることができます (たとえば、 `https://*.microsoft.com`) ドメインのワイルドカードを含めることはできませんが、(たとえば、`https://*.com`と`https://*.*`)。 マニフェスト要件は、アプリ パッケージから生成されたコンテンツには適用されず、ms-local-stream:// URI を使う、または [NavigateToString](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) を使って読み込まれる、のいずれかです。 
 
 ### <a name="accessing-the-windows-runtime-in-a-web-view"></a>Web ビューの Windows ランタイムにアクセスする
 
 [AddWebAllowedObject](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) メソッドを使うと、Windows ランタイム コンポーネントから Web ビューの JavaScript コンテンツにネイティブ クラスのインスタンスを挿入できます。 それにより、その Web ビューの JavaScript コンテンツにあるオブジェクトの、ネイティブのメソッドやプロパティ、イベントにフルにアクセスできるようになります。 クラスは、[AllowForWeb](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 属性で修飾する必要があります。 
 
-たとえば、このコードは、Windows ランタイム コンポーネントから Web ビューにインポートされた `MyClass` のインスタンスを挿入します。
+たとえば、次のコードは、Windows ランタイム コンポーネントからインポートされた `MyClass` のインスタンスを Web ビューに挿入します。
 
 ```csharp
 private void webView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args) 
@@ -317,7 +317,7 @@ UI スレッドから外れてコンテンツをホストしている Web ビュ
 
 -   読み込まれた Web サイトがデバイスに応じて正しく書式設定されており、アプリの他の部分と一貫性のある色、文字体裁、ナビゲーションが使われていることを確認します。
 -   入力フィールドのサイズを適切に調整する必要があります。 テキストを入力する際にズームインできることにユーザーが気付かない場合があります。
--   Web ビューがアプリの他の部分とは異なって見える場合は、関連タスクを実行するための代替のコントロールまたは手段を検討します。 Web ビューがアプリの他の部分にマッチしていると、ユーザーには、すべての部分が 1 つのシームレスなエクスペリエンスとして認識されます。
+-   Web ビューがアプリの他の部分とは異なって見える場合は、関連タスクを実行するための代替のコントロールまたは手段を検討します。 Web ビューがアプリの他の部分にマッチしていると、すべてが 1 つのシームレスなエクスペリエンスとしてユーザーに認識してもらえます。
 
 
 

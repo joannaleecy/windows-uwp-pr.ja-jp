@@ -1,23 +1,23 @@
 ---
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
+Description: ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。
 title: ヒント
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 80591abb1e3130540ea94bc1f8d2602b90edc590
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613667"
 ---
 # <a name="tooltips"></a>ヒント
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037064"
 
 ![ヒント](images/controls/tool-tip.png)
 
-> **重要な API**: [ToolTip クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **重要な Api**:[ツールヒント クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、 [ToolTipService クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -33,25 +33,25 @@ ms.locfileid: "9037064"
 
 ヒントはどのような場合に使えばよいでしょうか。 それを判断するには、以下の質問を考えます。
 
-- **情報はポインターのホバーに基づいて表示すべきですか?**
+- **ポインターのポインターを合わせるとベースの情報が表示される必要がありますか。**
     そうでない場合は、別のコントロールを使います。 ヒントは、ユーザーの操作の結果としてのみ表示します。自動的には表示しません。
 
-- **コントロールにはテキスト ラベルがありますか?**
+- **コントロールには、テキスト ラベルがありますか。**
     ない場合は、ヒントを使ってラベルを表示します。 UX の設計では、ほとんどのコントロールにインラインでラベルを付けることをお勧めします。それらのコントロールには、ヒントは必要ありません。 アイコンだけが表示されるツール バー コントロールとコマンド ボタンには、ヒントが必要です。
 
-- **説明や追加情報がオブジェクトに対して役立ちますか?**
+- **オブジェクトは、これ以上の情報の説明から特典教えてください。**
     そうであれば、ヒントを使います。 ただし、このテキストは、主要なタスクに必須なものではなく、補助的なものである必要があります。 必須なものであれば、直接 UI に配置して、ユーザーが探さなくても済むようにします。
 
-- **表示する補助的な情報は、エラー、警告、または状態ですか?**
+- **補足情報と、エラー、警告、または状態は**
     その場合は、ポップアップなど、他の UI 要素を使います。
 
-- **ユーザーがヒントを操作する必要がありますか?**
+- **ユーザーは、チップと対話する必要がありますか。**
     その場合は、別のコントロールを使います。 ヒントはマウスを動かすと消えるため、ユーザーはヒントを操作できません。
 
-- **ユーザーが補助的な情報を印刷する必要がありますか?**
+- **ユーザーは、補足情報を印刷する必要がありますか。**
     その場合は、別のコントロールを使います。
 
-- **ユーザーがヒントを煩わしいと感じますか?**
+- **ユーザーは増やしたり、いたずらのヒントを検索しますか。**
     その場合は、別の手段を使うことを検討します。何もしない、という選択肢もあります。 煩わしいと感じる可能性があってもヒントを使う場合は、ユーザーがヒントをオフにできるようにします。
 
 ## <a name="example"></a>例
@@ -63,8 +63,8 @@ ms.locfileid: "9037064"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ToolTip">アプリを開き、ToolTip の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -72,7 +72,7 @@ ms.locfileid: "9037064"
 
 Bing 地図アプリのヒントです。
 
-![Bing 地図アプリのヒントです](images/control-examples/tool-tip-maps.png)
+![Bing Maps アプリのヒントです](images/control-examples/tool-tip-maps.png)
 
 ## <a name="create-a-tooltip"></a>ToolTip の作成
 
@@ -112,7 +112,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 既定では、ToolTip はポインターの上部に中央揃えで表示されます。 配置はアプリ ウィンドウによって制約されていないため、ToolTip が部分的に表示されたり、完全にアプリ ウィンドウの境界の外部に表示されたりすることがあります。
 
-広範な調整では、上、左、下、またはポインターの右にヒントを描画する必要があるかどうかを指定するのに、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを使用します。 ポインターと ToolTip 間の距離を変更する[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)のプロパティを設定できます。 2 つのオフセット値の 1 つのみ、最後の位置に配置のままにした場合の配置が上または下、HorizontalOffset VerticalOffset または右に影響します。
+広範な調整は、使用、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティまたは**ToolTipService.Placement**添付プロパティを上、左、下、またはポインターの右にツールヒントを描画する必要があるかどうかを指定します。 設定することができます、 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)または[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)プロパティをポインターと、ツールヒントの間の距離を変更します。 2 つのオフセット値の 1 つだけ配置のままにすると配置は、上部または下部にある HorizontalOffset と verticaloffset があるか、右の最後の位置に影響します。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -125,7 +125,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-ヒントを参照しているコンテンツを覆い隠す、正確に新しい**PlacementRect**プロパティを使用して配置を調整できます。 PlacementRect では、ヒントの位置に固定し、この領域の外側のヒントを描画するための十分な画面領域が提供されるヒントが見えなくは、領域としても機能します。 ヒントの所有者、および高さを基準とした四角形の原点と除外領域の幅を指定することができます。 ヒントは、上、左、下、または、PlacementRect の右を描画する必要がある場合、[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティを定義します。 
+正確に新しいを使用して、配置を調整するには、ツールヒントを参照しているコンテンツが隠れる場合、 **PlacementRect**プロパティ。 PlacementRect は、ツールヒントの位置に固定し、この領域の外側にツールヒントを描画するための十分な画面領域が提供される、ツールヒントがありませんが、領域としても機能します。 ツールヒントの所有者、および高さの相対的な四角形の原点と、排他領域の幅を指定することができます。 [配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)プロパティは、上、左、下、または、PlacementRect の右にツールヒントが描画する場合を定義します。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->
@@ -153,4 +153,4 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 ## <a name="related-articles"></a>関連記事
 
-- [ToolTip クラス](https://msdn.microsoft.com/library/windows/apps/br227608)
+- [ツールヒント クラス](https://msdn.microsoft.com/library/windows/apps/br227608)

@@ -7,19 +7,19 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944724"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610027"
 ---
 # <a name="typography"></a>文字体裁
 
 ![ヒーロー イメージ](images/header-typography.svg)
 
-言語の視覚的表現である文字体裁において、何よりも重要な役割は情報を伝達することです。 スタイルは、その目的を阻害するものであってはなりません。 この記事では、ユーザーが簡単かつ効率的にコンテンツを理解できるように、UWP アプリで文字体裁のスタイルを決定する方法について説明します。
+言語の視覚的表現である文字体裁において、何よりも重要な役割は情報を伝達することです。 スタイルによってその目的が邪魔されてはなりません。 この記事では、ユーザーが簡単かつ効率的にコンテンツを理解できるように、UWP アプリで文字体裁のスタイルを決定する方法について説明します。
 
-## <a name="font"></a>フォント
+## <a name="font"></a>Font
 
 アプリ全体で同じフォントを使用してください。UWP アプリの既定のフォントである **Segoe UI** に統一することをお勧めします。 このフォントは、常に最適な読みやすさが維持されるサイズとピクセル密度を備え、システムのコンテンツを清潔で軽快、かつオープンに美しく表示します。
 
@@ -154,7 +154,7 @@ UWP 書体見本は、ユーザーがコンテンツを読みやすいように�
     :::column-end:::
 :::row-end:::
 
-**注**: 表示領域が不明確な場合 (領域が異なる背景色によって明確に表示されていない場合など)、または詳細テキストへのリンクがある場合は、省略記号を使用します。
+**注意**:コンテナーは適切に定義された場合 (例: 差別化の背景色なし)、またはその他のテキストを表示するリンクがある場合は、省略記号を使用しています。
 
 ## <a name="languages"></a>言語 
 
@@ -162,7 +162,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 
 ### <a name="globalizinglocalizing-fonts"></a>フォントのグローバリゼーション/ローカライズ
 
-特定言語の推奨フォント ファミリー、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[LanguageFont フォント マッピング API](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) を使ってください。 LanguageFont オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。 詳しくは、[グローバリゼーションをサポートするためのレイアウトとフォントの調整に関するページ](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)をご覧ください。
+特定言語の推奨フォント ファミリー、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[LanguageFont フォント マッピング API](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont) を使ってください。 LanguageFont オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。 詳しくは、「[レイアウトとグローバリゼーションをサポートするフォントの調整](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)」をご覧ください。
 
 ### <a name="fonts-for-non-latin-languages"></a>ラテン語以外の言語用のフォント
 
@@ -171,7 +171,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="header">
 <th align="left">フォント ファミリー</th>
 <th align="left">スタイル</th>
-<th align="left">コメント</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -212,7 +212,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Nirmala UI;">Nirmala UI</td>
-<td align="left">標準、中細、太字</td>
+<td align="left">通常、Semilight、太字</td>
 <td align="left">南アジア言語のスクリプト (バングラ文字、デーバナーガリー文字、グジャラート文字、グルムキー文字、カンナダ文字、マラヤーラム文字、オディア文字、オル チキ文字、シンハラ文字、ソラング ソンペング文字、タミール文字、テルグ文字) 用のユーザー インターフェイス フォント</td>
 </tr>
 <tr class="odd">
@@ -244,18 +244,18 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="header">
 <th align="left">フォント ファミリー</th>
 <th align="left">スタイル</th>
-<th align="left">コメント</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left" style="font-family: Arial;">Arial</td>
-<td align="left">標準、斜体、太字、太字斜体、黒</td>
+<td align="left">通常、斜体、太字、太字斜体、黒</td>
 <td align="left">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。極太の太さがサポートされているのはヨーロッパのスクリプトだけです。</td>
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Calibri;">Calibri</td>
-<td align="left">標準、斜体、太字、太字斜体、細字、細字斜体</td>
+<td align="left">通常、斜体、太字、太字斜体、中細、中細斜体</td>
 <td align="left">ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア語、ヘブライ語) をサポートしています。 アラビア語は縦書きでのみ利用できます。</td>
 </tr>
 <td style="font-family: Consolas;">Consolas</td>
@@ -272,7 +272,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">標準、中細、細字、太字、中太</td>
-<td align="left">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。 <a href="https://github.com/Microsoft/Selawik">Selawik は、GitHub で入手できます。</a></td>
+<td align="left">他のプラットフォーム上で動作する Segoe UI をバンドルしないアプリ向けの、Segoe UI と測定上の互換性があるオープン ソース フォント。 <a href="https://github.com/Microsoft/Selawik">GitHub の Selawik を取得します。</a></td>
 </tr>
 
 </tbody>
@@ -287,7 +287,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="header">
 <th align="left">フォント ファミリー</th>
 <th align="left">スタイル</th>
-<th align="left">コメント</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -302,7 +302,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <td align="left">セリフ等幅フォントは、ヨーロッパおよび中東のスクリプト (ラテン文字、ギリシャ文字、キリル文字、アラビア文字、アルメニア文字、ヘブライ文字) をサポートしています。</td>
 </tr>
 <tr class="odd">
-<td style="font-family: Georgia;">Georgia</td>
+<td style="font-family: Georgia;">ジョージア</td>
 <td align="left">標準、斜体、太字、太字斜体</td>
 <td align="left">ヨーロッパのスクリプト (ラテン文字、ギリシャ文字、キリル文字) をサポートしています。</td>
 </tr>
@@ -323,7 +323,7 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 <tr class="header">
 <th align="left">フォント ファミリー</th>
 <th align="left">スタイル</th>
-<th align="left">コメント</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -348,6 +348,6 @@ Segoe UI は、英語、ヨーロッパの各言語、ギリシャ語、ヘブ�
 ## <a name="related-articles"></a>関連記事
 
 * [テキスト コントロール](../controls-and-patterns/text-controls.md)
-* [XAML テーマ リソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
+* [XAML のテーマのリソース](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML スタイル](../controls-and-patterns/xaml-styles.md)
 * [Microsoft の文字体裁](https://docs.microsoft.com/typography/)

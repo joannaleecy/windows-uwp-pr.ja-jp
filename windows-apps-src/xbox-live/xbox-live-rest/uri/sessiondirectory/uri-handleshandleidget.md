@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 501d36f4d1ac079af15d6bb7f35a90d5328fc8db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929776"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598467"
 ---
 # <a name="get-handleshandle-id"></a>GET (/handles/{handle-id})
-ハンドル ID で指定されたハンドルを取得します。
+ハンドルの ID で指定されたハンドルを取得します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチ プレーヤーを使用し、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 104/105 またはそれ以降、テンプレートのコントラクトで使用され、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EDB)
-  * [HTTP ステータス コード](#ID4EOB)
+  * [HTTP 状態コード](#ID4EOB)
   * [要求本文](#ID4EUB)
   * [応答本文](#ID4E5B)
 
@@ -31,24 +31,24 @@ ms.locfileid: "8929776"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、指定したハンドル、セッションでは、ユーザーの現在のアクティビティを取得します。 すべての属性を使用して、セッション オブジェクトを返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**でラップすることができます。
+この HTTP/REST メソッドは、指定したハンドルのため、セッションのユーザーの現在のアクティビティを取得します。 すべての属性を持つ、セッション オブジェクトを返します。 このメソッドによってラップできる**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionByHandleAsync**します。
 
-このメソッドの呼び出し元では、プレイヤーの**MultiplayerActivityDetails**オブジェクトからハンドル ID を取得します。 または、呼び出し元は、ユーザーがゲームへの招待を受け入れた後、プロトコルのアクティブ化から ID を取得します。
+このメソッドの呼び出し元は、プレイヤーからハンドル ID を取得します。 **MultiplayerActivityDetails**オブジェクト。 または、呼び出し元は、ユーザーがゲームへの招待を承諾した後、プロトコルのアクティブ化から ID を取得します。
 
 <a id="ID4EDB"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
+| handleId| GUID| セッションのハンドルの一意の ID。|
 
 <a id="ID4EOB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EUB"></a>
 
 
@@ -60,7 +60,7 @@ ms.locfileid: "8929776"
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
+応答の構造で表示[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)します。  
 <a id="ID4EKC"></a>
 
 

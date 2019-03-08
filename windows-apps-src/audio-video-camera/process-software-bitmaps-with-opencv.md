@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, OpenCV, SoftwareBitmap
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114598"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616967"
 ---
 # <a name="process-bitmaps-with-opencv"></a>OpenCV でのビットマップの処理
 
@@ -29,15 +29,15 @@ ms.locfileid: "9114598"
 
 ## <a name="create-a-helper-windows-runtime-component-for-opencv-interop"></a>OpenCV 相互運用のためのヘルパー Windows ランタイム コンポーネントを作成する
 
-### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. ソリューションに新しいネイティブ コードの Windows ランタイム コンポーネント プロジェクトを追加する
+### <a name="1-add-a-new-native-code-windows-runtime-component-project-to-your-solution"></a>1. 新しいネイティブ コードの Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。
 
 1. ソリューション エクスプローラーで、ソリューションを右クリックして **[追加]、[新しいプロジェクト]** の順に選択し、新しいプロジェクトを Visual Studio のソリューションに追加します。 
 2. **[Visual C++]** カテゴリで、**[Windows ランタイム コンポーネント (ユニバーサル Windows)]** を選択します。 この例では、「OpenCVBridge」というプロジェクト名を入力し、**[OK]** をクリックします。 
 3. **[新しい Windows ユニバーサル プロジェクト]** ダイアログ ボックスで、アプリのターゲットと最小 OS バージョンを選択して **[OK]** をクリックします。
 4. ソリューション エクスプローラーで自動生成された Class1.cpp ファイルを右クリックして **[削除]** を選択し、確認のダイアログ ボックスが表示されたら **[削除]** を選択します。 次に Class1.h ヘッダー ファイルを削除します。
-5. OpenCVBridge プロジェクト アイコンを右クリックし、**[追加]、[クラス]** の順に選択します。**[クラスの追加]** ダイアログ ボックスで、**[クラス名]** フィールドに「OpenCVHelper」と入力し、**[OK]** をクリックします。 コードは、後の手順で作成されるクラス ファイルに追加されます。
+5. OpenCVBridge プロジェクト アイコンを右クリックして **-> クラスを追加しています.**.**クラスの追加**ダイアログ ボックスで、入力"OpenCVHelper"で、**クラス名**フィールドをクリックして**OK**します。 コードは、後の手順で作成されるクラス ファイルに追加されます。
 
-### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. OpenCV NuGet パッケージをコンポーネント プロジェクトに追加する
+### <a name="2-add-the-opencv-nuget-packages-to-your-component-project"></a>2. OpenCV NuGet パッケージをコンポーネント プロジェクトに追加します。
 
 1. ソリューション エクスプローラーで、OpenCVBridge プロジェクト アイコンを右クリックし、**[NuGet パッケージの管理]** をクリックします。
 2. [NuGet パッケージ マネージャー] ダイアログが開いたら、**[参照]** タブを選択し、検索ボックスに「OpenCV.Win」と入力します。
@@ -47,7 +47,7 @@ ms.locfileid: "9114598"
 > [!NOTE]
 > OpenCV.Win.Core と OpenCV.Win.ImgProc は定期的に更新されていませんが、このページの説明に従って OpenCVHelper を作成することをお勧めします。
 
-### <a name="3-implement-the-opencvhelper-class"></a>3. OpenCVHelper クラスを実装する
+### <a name="3-implement-the-opencvhelper-class"></a>3.OpenCVHelper クラスを実装します。
 
 OpenCVHelper.h ヘッダー ファイルに以下のコードを貼り付けます。 このコードには、インストールした *Core* パッケージと *ImgProc* パッケージの OpenCV ヘッダー ファイルが含まれており、以下の手順で示される 3 つのメソッドを宣言しています。
 
@@ -63,7 +63,7 @@ include ディレクティブの後に、以下の **using** ディレクティ�
 
 次に、**GetPointerToPixelData** メソッドを OpenCVHelper.cpp に追加します。 このメソッドは、**[SoftwareBitmap](https://docs.microsoft.com/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** を受け取り、一連の変換を経て、ピクセル データの COM インターフェイス表現を取得します。これにより、基になるデータ バッファーへのポインターを **char** 配列として取得できます。 
 
-最初に、ピクセル データを格納する **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** が、**[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** を呼び出すことによって取得されます。LockBuffer は読み取り/書き込みバッファーを要求し、OpenCV ライブラリはそのピクセル データを変更できるようにします。  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** が呼び出され、**[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** オブジェクトが取得されます。 次に、**IMemoryBufferByteAccess** インターフェイスが、すべての Windows ランタイム クラスの基本インターフェイスである **IInspectable** としてキャストされ、**[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** が呼び出されて **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** COM インターフェイスが取得されます。これにより、ピクセル データ バッファーを **char** 配列として取得できます。 最後に、**[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)** を呼び出して **char** 配列を設定します。 このメソッドの変換手順のいずれかが失敗した場合、メソッドは **false** を返し、処理が続行できないことを示します。
+最初に、ピクセル データを格納する **[BitmapBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer)** が、**[LockBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** を呼び出すことによって取得されます。LockBuffer は読み取り/書き込みバッファーを要求し、OpenCV ライブラリはそのピクセル データを変更できるようにします。  **[CreateReference](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** を取得するために呼び出される、 **[IMemoryBufferReference](https://docs.microsoft.com/uwp/api/windows.foundation.imemorybufferreference)** オブジェクト。 次に、**IMemoryBufferByteAccess** インターフェイスが、すべての Windows ランタイム クラスの基本インターフェイスである **IInspectable** としてキャストされ、**[QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521(v=vs.85).aspx)** が呼び出されて **[IMemoryBufferByteAccess](https://msdn.microsoft.com/library/mt297505(v=vs.85).aspx)** COM インターフェイスが取得されます。これにより、ピクセル データ バッファーを **char** 配列として取得できます。 最後に、**[IMemoryBufferByteAccess::GetBuffer](https://msdn.microsoft.com/library/mt297506(v=vs.85).aspx)** を呼び出して **char** 配列を設定します。 このメソッドの変換手順のいずれかが失敗した場合、メソッドは **false** を返し、処理が続行できないことを示します。
 
 [!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
 
@@ -82,7 +82,7 @@ include ディレクティブの後に、以下の **using** ディレクティ�
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>ヘルパー コンポーネントを使用するシンプルな SoftwareBitmap OpenCV の例
-OpenCVBridge コンポーネントが作成されたので、OpenCV の **blur** メソッドを使用して **SoftwareBitmap** を変更するシンプルな C# アプリを作成できます。 UWP アプリから Windows ランタイム コンポーネントにアクセスするには、最初にコンポーネントへの参照を追加する必要があります。 ソリューション エクスプローラーで、UWP アプリ プロジェクトの下にある **[参照設定] **ノードを右クリックし、**[参照の追加]** を選択します。[参照マネージャー] ダイアログ ボックスで、**[プロジェクト]、[ソリューション]** の順に選択します。 OpenCVBridge プロジェクトの横のボックスをオンにし、**[OK]** をクリックします。
+OpenCVBridge コンポーネントが作成されたので、OpenCV の **blur** メソッドを使用して **SoftwareBitmap** を変更するシンプルな C# アプリを作成できます。 UWP アプリから Windows ランタイム コンポーネントにアクセスするには、最初にコンポーネントへの参照を追加する必要があります。 ソリューション エクスプ ローラーで右クリックし、**参照**ノードの下、UWP アプリ プロジェクトと選択**参照を追加しています.**.参照マネージャー ダイアログ ボックスで、**プロジェクト ソリューション-> **します。 OpenCVBridge プロジェクトの横のボックスをオンにし、**[OK]** をクリックします。
 
 次のコード例では、ユーザーは画像ファイルを選択し、**[BitmapDecoder](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)** を使用して画像の  **SoftwareBitmap** 表現を作成できます。 **SoftwareBitmap** の操作について詳しくは、「[ビットマップ画像の作成、編集、保存](https://docs.microsoft.com/windows/uwp/audio-video-camera/imaging)」をご覧ください。
 
@@ -97,8 +97,8 @@ OpenCVBridge コンポーネントが作成されたので、OpenCV の **blur**
 
 ## <a name="related-topics"></a>関連トピック
 
-* [BitmapEncoder オプション リファレンス](bitmapencoder-options-reference.md)
-* [画像のメタデータ](image-metadata.md)
+* [BitmapEncoder オプションのリファレンス](bitmapencoder-options-reference.md)
+* [イメージのメタデータ](image-metadata.md)
  
 
  

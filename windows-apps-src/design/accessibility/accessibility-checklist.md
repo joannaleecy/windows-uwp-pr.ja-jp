@@ -1,19 +1,19 @@
 ---
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: アクセシビリティのチェック リスト
 label: Accessibility checklist
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c9ff9760b3ae9b852fe1ae1b86d1cc48e49c5dd4
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990485"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602447"
 ---
 # <a name="accessibility-checklist"></a>アクセシビリティのチェック リスト
 
@@ -23,7 +23,7 @@ ms.locfileid: "8990485"
 
 1. コンテンツやアプリの対話型の UI 要素にアクセシビリティ対応の名前 (必須) と説明 (省略可能) を設定します。
 
-    アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) などの一部の UI 要素では、既定のアクセシビリティ対応の名前としてテキスト コンテンツを昇格させるものがあります。「[基本的なアクセシビリティ情報](basic-accessibility-information.md#name_from_inner_text)」をご覧ください。
+    アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 [  **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) などの一部の UI 要素では、既定のアクセシビリティ対応の名前としてテキスト コンテンツを昇格させるものがあります。「[基本的なアクセシビリティ情報](basic-accessibility-information.md#name_from_inner_text)」をご覧ください。
 
     暗黙的なアクセシビリティ対応の名前として内部テキスト コンテンツを昇格させない画像などのコントロールに対し、明示的にアクセシビリティ対応の名前を設定する必要があります。 フォーム要素のラベルのテキストは、ラベルと入力を関連付けるために、Microsoft UI オートメーション モデルの [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) ターゲットとして使うことができるようにする必要があります。 ユーザーに、通常アクセシビリティ対応の名前に含まれているものよりも詳しい UI のガイダンスを提供する場合は、アクセシビリティ対応の説明やヒントを用意すると、UI の内容がわかりやすくなります。
 
@@ -39,14 +39,14 @@ ms.locfileid: "8990485"
 
     詳しくは、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください。
 
-3. テキストが読みやすくサイズであることを確認します。
+3. テキストが読み取り可能なサイズであることを確認します。
 
-    * Windows には、さまざまなアクセシビリティ ツールとユーザーを活用して、独自のニーズとテキストを読むための基本設定を調整することができる設定が含まれています。 たとえば、次のような場合です。
-        * 拡大鏡ツール、UI の選択領域を拡大します。 アプリ内のテキストのレイアウトが難しくなるに関して、拡大鏡を使用して行う必要があります。
-        * スケールと解像度の設定をグローバル**設定には、システムが]-> [表示]-> [拡大縮小とレイアウト]-> [** します。 正確にどのサイズ変更のオプションが利用可能なと、これは、ディスプレイ デバイスの機能に依存とは異なることができます。
-        * [テキスト サイズ設定**設定簡単操作]-> [表示]-> [** します。 すべてのアプリケーションと (すべての UWP テキスト コントロールは、テンプレート化やカスタマイズを加えなくてもエクスペリエンスをスケーリングするテキストをサポート) 画面でコントロールをサポートでテキストのサイズだけを指定する**テキストがより大きくする**設定を調整します。
+    * Windows には、さまざまなアクセシビリティ ツールとユーザーが活用し、独自のニーズとテキストを読み取るための基本設定を調整する設定が含まれています。 次のようなクラスがあります。
+        * 拡大鏡ツール、UI の選択範囲を拡大します。 アプリ内のテキストのレイアウトが困難に拡大鏡を使用して、読み取り用に行う必要があります。
+        * スケールと解像度の設定をグローバル**設定]、[システムの表示]-> [-> スケールとレイアウト**します。 正確にサイズ変更オプションが使用可能なディスプレイ デバイスの機能に依存とは異なります。
+        * テキスト サイズ設定**設定、アクセスの容易さの表示-> **します。 調整、**テキストを大きく**すべてのアプリケーションと画面 (すべての UWP テキスト コントロールは、テキストをカスタマイズまたはテンプレートなしのエクスペリエンスをスケーリングをサポート) 間でのサポート コントロールでテキストのサイズだけを指定する設定。
         > [!NOTE]
-        > **すべてのものを大きく**設定では、ユーザーがプライマリ画面のみで一般的にテキストとアプリの推奨サイズを指定します。
+        > **すべての大きな**設定により、ユーザーのプライマリ画面のみに一般にテキストとアプリの推奨サイズを指定します。
 
 4. テキスト コントラストが適切であること、ハイ コントラスト テーマで要素が正しくレンダリングされること、色が正しく使われていることを確認するため、UI を表示して検証します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "8990485"
 
 5. アクセシビリティ ツールを実行し、報告された問題に対処して、画面の読み上げを確認します。
 
-    [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) などのツールを使ってプログラムによるアクセスを検証し、[**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などの診断ツールを実行して一般的なエラーを見つけます。画面の読み上げの確認には、ナレーターを使います。
+    [  **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) などのツールを使ってプログラムによるアクセスを検証し、[**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などの診断ツールを実行して一般的なエラーを見つけます。画面の読み上げの確認には、ナレーターを使います。
 
     詳しくは、「[アクセシビリティ テスト](accessibility-testing.md)」をご覧ください。
 
@@ -73,7 +73,7 @@ ms.locfileid: "8990485"
 ## <a name="related-topics"></a>関連トピック  
 
 * [アクセシビリティに対応したテキストの要件](accessible-text-requirements.md)
-* [テキストの拡大縮小](../input/text-scaling.md)
+* [テキストのスケーリング](../input/text-scaling.md)
 * [アクセシビリティ](accessibility.md)
-* [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [ユーザー補助のための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [避ける事項](practices-to-avoid.md)

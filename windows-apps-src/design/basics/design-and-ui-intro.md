@@ -1,18 +1,18 @@
 ---
-Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
+Description: さまざまなデバイスで申し分スケール アプリをビルドするすべての UWP アプリのヘルプに含まれるユニバーサル デザイン機能。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要 (Windows アプリ)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 05/05/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 32838e2c3369535928c9e9311f62654eba54e4e0
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058783"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611757"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP アプリ設計の概要
 
@@ -26,11 +26,11 @@ ms.locfileid: "9058783"
 
 ## <a name="effective-pixels-and-scaling"></a>有効ピクセルとスケーリング
 
-UWP アプリでは、タブレット、PC、TV からすべての[Windows 10 デバイス](../devices/index.md)で実行します。 さまざまなデバイスや画面サイズで適切に表示される UI を設計するには、どのように行うかどうか。
+UWP アプリですべて実行[Windows 10 デバイス](../devices/index.md)タブレットや PC をテレビから。 次のさまざまなデバイスや画面サイズで適切な UI を設計するにはどのように必要でしょうか。
 
 ![さまざまなデバイス上にある同じアプリ](images/universal-image-1.jpg)
 
-UWP は、読みやすくしやすいですべてのデバイスや画面サイズとの対話になるように UI 要素を自動的に調整することで役立ちます。
+UWP は、判読しやすいものでは、すべてのデバイスや画面サイズとの対話になるように UI 要素を自動的に調整することで役立ちます。
 
 デバイスでアプリを実行するとき、システムでは、UI 要素を画面に表示する方法を正規化するアルゴリズムを使います。 このスケーリング アルゴリズムでは、視聴距離と画面の密度 (ピクセル/インチ) を考慮して、体感的なサイズを最適化します (物理的なサイズではありません)。 スケーリング アルゴリズムによって、10 フィート離れた Surface Hub における 24 ピクセルのフォントが、数インチ離れた 5 インチ サイズの電話における 24 ピクセルのフォントと同じようにユーザーに読みやすい状態で表示されます。
 
@@ -41,7 +41,7 @@ UWP は、読みやすくしやすいですべてのデバイスや画面サイ�
 設計時には、ピクセル密度と実際の画面解像度を無視できます。 その代わり、サイズ クラスの有効な解像度 (有効ピクセル単位の解像度) が向上するように設計します (詳しくは、「[画面のサイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)」をご覧ください)。
 
 > [!TIP]
-> イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します サイズ クラスと有効な解像度の一覧については、「[画面のサイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)」を参照してください。
+> イメージ編集プログラムで画面のモックアップを作成するときは、DPI を 72 に設定し、画像サイズを、対象のサイズ クラスで有効な解像度に設定します サイズ クラスと有効な解像度の一覧については、「[画面のサイズとブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)」をご覧ください。
 
 ### <a name="multiples-of-four"></a>4 の倍数
 
@@ -102,7 +102,7 @@ UWP の設計プラットフォームには、すべての Windows デバイス�
 
 ![UWP コントロール](../style/images/color/windows-controls.svg)
 
-UWP コントロールとコントロールに基づいて作成できるパターンの全一覧については、「[コントロールとパターン](../controls-and-patterns/index.md)」セクションを参照してください。
+UWP コントロールとコントロールに基づいて作成できるパターンの全一覧については、「[コントロールとパターン](../controls-and-patterns/index.md)」セクションをご覧ください。
 
 ## <a name="style"></a>スタイル
 
@@ -144,11 +144,11 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 同様に、UWP では、さまざまなデバイスに合わせてアプリを自動的にスケーリングしますが、[特定のデバイス向けに UWP アプリを最適化](../devices/index.md)することもできます。
 
-## <a name="usability"></a>使いやすさ
+## <a name="usability"></a>ユーザビリティ
 
 <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
 
-最後に重要な点として、ユーザビリティの目的は、アプリのエクスペリエンスをすべてのユーザーに開かれたものにすることです。 すべての人が、本当に包括的なユーザー エクスペリエンスの恩恵を受けます。すべてのユーザーに対してアプリを使いやすくする方法については、「[UWP アプリの操作性](../usability/index.md)」を参照してください。
+最後に重要な点として、ユーザビリティの目的は、アプリのエクスペリエンスをすべてのユーザーに開かれたものにすることです。 すべての人が、本当に包括的なユーザー エクスペリエンスの恩恵を受けます。すべてのユーザーに対してアプリを使いやすくする方法については、「[UWP アプリの操作性](../usability/index.md)」をご覧ください。
 
 国際的なユーザーを対象に設計している場合は、[グローバリゼーションとローカライズ](../globalizing/globalizing-portal.md)を確認することをお勧めします。
 
@@ -164,15 +164,15 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 - コンピューターを設定して UWP アプリのコードを記述できるようにするには、「[作業の開始と準備](../../get-started/get-set-up.md)」の記事をご覧ください。
 
-- UWP の UI を実装する方法については、エンド ツー エンドの「[サンプル UWP アプリ](https://developer.microsoft.com/windows/samples)」を参照してください。
+- UWP の UI を実装する方法については、エンド ツー エンドの「[サンプル UWP アプリ](https://developer.microsoft.com/windows/samples)」をご覧ください。
 
 ## <a name="video-summary"></a>ビデオの概要
 
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-## <a name="next-fluent-design-system"></a>次: Fluent Design System
+## <a name="next-fluent-design-system"></a>次に：Fluent Design System
 
-Fluent Design (Microsoft のデザイン システム) の背後にある原則や、UWP アプリに組み込むことができる多くの機能について確認する場合は、引き続き「[Fluent Design System](../fluent-design-system/index.md)」を参照してください。
+Fluent Design (Microsoft のデザイン システム) の背後にある原則や、UWP アプリに組み込むことができる多くの機能について確認する場合は、引き続き「[Fluent Design System](../fluent-design-system/index.md)」をご覧ください。
 
 ## <a name="related-articles"></a>関連記事
 

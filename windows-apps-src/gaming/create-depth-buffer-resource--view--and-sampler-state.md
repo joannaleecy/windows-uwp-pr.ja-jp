@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、Direct3D、深度バッファー
 ms.localizationpriority: medium
 ms.openlocfilehash: f5ce1ec522a194111e175e41f82c4275cda4fbf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946745"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613697"
 ---
 # <a name="create-depth-buffer-device-resources"></a>深度バッファーのデバイス リソースの作成
 
 
 
 
-シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 1 です。
+シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。 パート 1 の[チュートリアル。Direct3d11 の深度バッファーを使用してボリュームをシャドウ実装](implementing-depth-buffers-for-shadow-mapping.md)します。
 
 ## <a name="resources-youll-need"></a>必要なリソース
 
@@ -38,7 +38,7 @@ ms.locfileid: "8946745"
 ## <a name="check-feature-support"></a>サポートされている機能
 
 
-深度マップを作成する前に、Direct3D デバイスで [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) メソッドを呼び出し、**D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** を要求して、[**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 構造体を提供します。
+深さのマップを作成する前に呼び出す、 [ **CheckFeatureSupport** ](https://msdn.microsoft.com/library/windows/desktop/ff476497)メソッド、Direct3D デバイスで要求**D3D11\_機能\_D3D9\_シャドウ\_サポート**を提供し、 [ **D3D11\_機能\_データ\_D3D9\_シャドウ\_サポート**](https://msdn.microsoft.com/library/windows/desktop/jj247569)構造体。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -55,14 +55,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-この構造体がサポートされていない場合は、サンプル比較関数を呼び出すシェーダー モデル 4 レベル 9\_x 向けにコンパイルされたシェーダーを読み込まないようにしてください。 この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。 デバイスが機能レベル 10\_0 以上をサポートしている場合は、代わりにシェーダー モデル 4\_0 向けにコンパイルされたサンプル比較を読み込むことができます。
+この機能がサポートされていない場合は 9 のシェーダー モデル 4 レベル用にコンパイルされたシェーダーをロードしてはいけません\_x サンプル比較関数を呼び出すことです。 この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。 デバイスは、少なくとも機能レベル 10 場合\_0 するには、4 のシェーダー モデル用にコンパイルされたサンプル比較シェーダーを読み込むことができます\_0 代わりにします。
 
 ## <a name="create-depth-buffer"></a>深度バッファーの作成
 
 
 まず、高精度深度形式の深度マップを作成してください。 最初に、一致するシェーダー リソース ビュー プロパティを設定します。 デバイス メモリの不足やハードウェアでサポートされない形式などが原因でリソースの作成が失敗した場合は、低精度形式を試して、照合するプロパティを変更してください。
 
-中程度の解像度の Direct3D 機能レベル 9\_1 デバイスでレンダリングする場合など、低精度の深度形式だけが必要な場合は、この手順はオプションです。
+この手順は、たとえば中解像度 Direct3D 機能レベル 9 で表示するときに、低精度の深さの形式のみ必要な場合は省略可能な\_1 デバイス。
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-次に、リソース ビューを作成します。 深度ステンシル ビューで mip スライスを 0 に設定し、シェーダー リソース ビューで mip レベルを 1 に設定します。 両方とも TEXTURE2D のテクスチャ ディメンションを持ち、一致する [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) を使う必要があります。
+次に、リソース ビューを作成します。 深度ステンシル ビューで mip スライスを 0 に設定し、シェーダー リソース ビューで mip レベルを 1 に設定します。 両方の TEXTURE2D、テクスチャのディメンションがあり、照合を使用する必要が両方[ **DXGI\_形式**](https://msdn.microsoft.com/library/windows/desktop/bb173059)します。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,11 +113,11 @@ hr = pD3DDevice->CreateShaderResourceView(
 ## <a name="create-comparison-state"></a>比較の状態の作成
 
 
-ここで、比較サンプラーの状態オブジェクトを作成します。 機能レベル 9\_1 では D3D11\_COMPARISON\_LESS\_EQUAL のみがサポートされます。 フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。
+ここで、比較サンプラーの状態オブジェクトを作成します。 機能レベル 9\_1 は、D3D11 のみがサポートされます。\_比較\_少ない\_と等しい。 フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。
 
-D3D11\_TEXTURE\_ADDRESS\_BORDER アドレス モードを指定できます。これは、機能レベル 9\_1 のデバイスで機能します。 これは、深度のテストの実行前に、ピクセルがライトの視錐台内にあるかどうかをテストしないピクセル シェーダーに適用されます。 各境界線に 0 または 1 を指定することで、ライトの視錐台の外にあるピクセルが深度テストにパスするかどうかを制御できます。結果的に、ライトに照らされているか、シャドウ内にあるかを制御できます。
+D3D11 を指定できることに注意してください\_テクスチャ\_アドレス\_境界線アドレス モードとは 9 の機能レベルで機能\_1 デバイス。 これは、深度のテストの実行前に、ピクセルがライトの視錐台内にあるかどうかをテストしないピクセル シェーダーに適用されます。 各境界線に 0 または 1 を指定することで、ライトの視錐台の外にあるピクセルが深度テストにパスするかどうかを制御できます。結果的に、ライトに照らされているか、シャドウ内にあるかを制御できます。
 
-機能レベル 9\_1 では、**MinLOD** を 0 に設定し、**MaxLOD** を **D3D11\_FLOAT32\_MAX** に設定し、**MaxAnisotropy** を 0 に設定する必要があります。
+機能レベルの 9\_1、次の必須の値を設定する必要があります。**MinLOD**は 0 に設定されている**MaxLOD**に設定されている**D3D11\_FLOAT32\_最大**、および**MaxAnisotropy** 0 に設定されます。
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>レンダリングの状態の作成
 
 
-次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。 機能レベル 9\_1 のデバイスの場合、**DepthClipEnable** を **true** に設定する必要があります。
+次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。 その機能レベル 9 に注意してください\_1 のデバイスが必要です**DepthClipEnable**設定**true**します。
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;

@@ -6,24 +6,24 @@ ms.topic: article
 keywords: windows 10, UWP, SQLite, データベース
 ms.localizationpriority: medium
 ms.openlocfilehash: 552de1ccb8f8e69a4ad716e54557ae0b5cd3a3f4
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075145"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57635667"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>UWP アプリでの SQLite データベースの使用
 SQLite を使用すると、ユーザー デバイス上の軽量なデータベースにデータを保存し、取得することができます。 このガイドでその方法を示します。
 
 ## <a name="some-benefits-of-using-sqlite-for-local-storage"></a>ローカル ストレージに SQLite を使用するメリット
 
-:heavy_check_mark: SQLite は軽量で自己完結型です。 その他の依存関係がないコード ライブラリです。 構成する必要がありません。
+:heavy_check_mark:SQLite は、軽量と自己完結型です。 その他の依存関係がないコード ライブラリです。 構成する必要がありません。
 
-:heavy_check_mark: データベース サーバーがありません。 クライアントとサーバーは、同じプロセスで実行されます。
+:heavy_check_mark:データベース サーバーはありません。 クライアントとサーバーは、同じプロセスで実行されます。
 
-:heavy_check_mark: SQLite はパブリック ドメインにあるため、アプリで自由に使用して配布できます。
+:heavy_check_mark:SQLite は、パブリック ドメインでは自由に使用し、アプリと共に配布できるようにします。
 
-:heavy_check_mark: SQLite はプラットフォームやアーキテクチャにかかわらず動作します。
+:heavy_check_mark:SQLite は、各種プラットフォームとアーキテクチャでは動作します。
 
 SQLite について詳しくは、[こちら](https://sqlite.org/about.html)をご覧ください。
 
@@ -55,7 +55,7 @@ UWP プロジェクトが対象とする Windows SDK の最小バージョンに
 
 ### <a name="the-minimum-version-of-your-project-does-not-target-the-fall-creators-update"></a>プロジェクトの最小バージョンが Fall Creators Update を対象としない場合
 
-Visual Studio 2015 を使用している場合は、**[ヘルプ] **->** [Microsoft Visual Studio のバージョン情報]** の順にクリックします。 インストールされているプログラムの一覧で、NuGet パッケージ マネージャーのバージョンが **3.5** 以降であることを確認します。 バージョン番号がこれより低い場合は、3.5 以降のバージョンの NuGet [こちら](https://www.nuget.org/downloads)をインストールします。 このページで、見出し **[Visual Studio 2015]** の下にすべてのバージョンの Nuget が表示されます。
+Visual Studio 2015 を使用している場合は、**[ヘルプ]** -> **[Microsoft Visual Studio のバージョン情報]** の順にクリックします。 インストールされているプログラムの一覧で、NuGet パッケージ マネージャーのバージョンが **3.5** 以降であることを確認します。 バージョン番号がこれより低い場合は、3.5 以降のバージョンの NuGet [こちら](https://www.nuget.org/downloads)をインストールします。 このページで、見出し **[Visual Studio 2015]** の下にすべてのバージョンの Nuget が表示されます。
 
 次に、クラス ライブラリをソリューションに追加します。 クラス ライブラリを使用してデータ アクセス コードを含める必要はありません。サンプルの 1 つを使用します。 ライブラリに **DataAccessLibrary** という名前を付け、ライブラリ内のクラスに **DataAccess** という名前を付けます。
 
@@ -83,13 +83,13 @@ UWP プロジェクトの最小バージョンを Fall Creators Update に上げ
 
 まず、標準のクラス ライブラリの代わりに、.NET Standard 2.0 ライブラリを使用できます。 これによって、データ アクセス コードを WPF、Windows フォーム、Android、iOS、ASP.NET アプリなど、他の .NET ベースのアプリと共有することができます。
 
-次に、アプリは、SQLite ライブラリをパッケージ化にはありません。 代わりに、アプリは Windows と共にインストールされるバージョンの SQLite を使用することができます。 これにより、次のような利点が得られます。
+次に、アプリは SQLite ライブラリをパッケージ化する必要はありません。 代わりに、アプリは Windows と共にインストールされるバージョンの SQLite を使用することができます。 これにより、次のような利点が得られます。
 
-:heavy_check_mark: SQLite バイナリをダウンロードして、アプリの一部としてパッケージ化する必要がないため、アプリケーションのサイズが小さくなります。
+:heavy_check_mark:SQLite バイナリをダウンロードして、アプリケーションの一部としてパッケージ化する必要がないため、アプリケーションのサイズが減ります。
 
-:heavy_check_mark: SQLite のバグやセキュリティの脆弱性に対する重要な修正プログラムが公開された場合でも、アプリの新しいバージョンをユーザーに勧める必要がありません。 Windows 版の SQLite は、Microsoft が SQLite.org と連携して保守します。
+:heavy_check_mark:SQLite は、バグと SQLite でセキュリティの脆弱性に重要な修正プログラムを公開する、新しいバージョンのアプリをユーザーにプッシュしなくてできなくなります。 Windows 版の SQLite は、Microsoft が SQLite.org と連携して保守します。
 
-:heavy_check_mark: SQLite の SDK バージョンが既にメモリーに読み込まれている可能性が高いため、アプリの読み込み時間が高速になる可能性があります。
+:heavy_check_mark:アプリの読み込み時に、ほとんどの場合、SQLite の SDK のバージョンが既にメモリに読み込むため、高速である可能性があります。
 
 まず、.NET Standard 2.0 クラス ライブラリをソリューションに追加しましょう。 クラス ライブラリを使用してデータ アクセス コードを含める必要はありません。サンプルの 1 つを使用します。 ライブラリに **DataAccessLibrary** という名前を付け、ライブラリ内のクラスに **DataAccess** という名前を付けます。
 
@@ -125,15 +125,15 @@ UWP プロジェクトの最小バージョンを Fall Creators Update に上げ
 
 以下の作業を行います。
 
-:1: データ アクセス クラスを準備します。
+: 1 つ。データ アクセス クラスを準備します。
 
-:2: SQLite データベースを初期化します。
+: 2。SQLite データベースを初期化します。
 
-:3: SQLite データベースにデータを挿入します。
+: 3。データを SQLite データベースに挿入します。
 
-:4: SQLite データベースからデータを取得します。
+: 4。SQLite データベースからデータを取得します。
 
-:5: 基本的なユーザー インターフェイスを追加します。
+: 5。基本的なユーザー インターフェイスを追加します。
 
 ### <a name="prepare-the-data-access-class"></a>データ アクセス クラスを準備する
 
@@ -163,7 +163,7 @@ namespace DataAccessLibrary
 
 ```
 
-次の追加 using ステートメントをこのファイルの先頭にします。
+次の追加をこのファイルの先頭にステートメントを使用します。
 
 ```csharp
 using Microsoft.Data.Sqlite;
@@ -317,14 +317,14 @@ private void AddData(object sender, RoutedEventArgs e)
 
 ## <a name="next-steps"></a>次のステップ
 
-**アプリを SQL Server データベースに直接接続する**
+**SQL Server データベースに直接アプリを接続します。**
 
 「[UWP アプリでの SQL Server データベースの使用](sql-server-databases.md)」をご覧ください。
 
-**異なるプラットフォームにわたる異なるアプリの間でコードを共有する**
+**さまざまなプラットフォームで別のアプリ間でコードを共有します。**
 
 「[デスクトップと UWP でコードを共有する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)」をご覧ください。
 
-**Azure SQL バックエンドでマスター/詳細ページを追加する**
+**Azure SQL バック エンドでマスター詳細ページを追加します。**
 
 「[顧客注文データベースのサンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database)」をご覧ください。

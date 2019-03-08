@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 588d949671c52965549d963e200355dac720d513
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936768"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632147"
 ---
 # <a name="privacy-uris"></a>プライバシー URI
  
-このセクションでは、*プライバシー*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスおよび関連付けられているハイパー テキスト転送プロトコル (HTTP) メソッドの詳細を提供の Xbox Live サービスから*プライバシー*します。
  
-のみ Windows 8 で実行されるゲームでは、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
+のみゲームが Windows 8 で実行されている、Xbox 360、または Windows Phone デバイスこのサービスを使用します。
  
-これらの Uri のドメインは、privacy.xboxlive.com です。
+これらの Uri のドメインとは、privacy.xboxlive.com です。
  
 <a id="ID4EPB"></a>
 
@@ -29,13 +29,13 @@ ms.locfileid: "8936768"
 
 [/users/{ownerId}/people/mute](uri-privacyusersowneridpeoplemute.md)
 
-&nbsp;&nbsp;ユーザーのミュート リストにアクセスします。
+&nbsp;&nbsp;ユーザーのミュートの一覧にアクセスします。
 
 [/users/{requestorId}/permission/validate](uri-privacyusersrequestoridpermissionvalidate.md)
 
 [/users/{ownerId}/people/avoid](uri-privacyusersxuidpeopleavoid.md)
 
-&nbsp;&nbsp;ユーザーの回避一覧にアクセスします。
+&nbsp;&nbsp;ユーザーの避け一覧にアクセスします。
  
 <a id="ID4E2B"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8936768"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

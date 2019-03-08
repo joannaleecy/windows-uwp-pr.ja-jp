@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your UWP app.
+Description: このトピックでは、新しい Windows UI の選択とテキスト、イメージ、およびコントロールの操作を記述し、UWP アプリでこれらの新しい選択と操作メカニズムを使用すると見なす必要があるユーザー エクスペリエンス ガイドラインを提供します。
 title: テキストと画像の選択
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -9,18 +9,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9679e6e658e7fa1eb50b41331e7e59ec2115fc14
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939007"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612507"
 ---
 # <a name="selecting-text-and-images"></a>テキストと画像の選択
 
 
 この記事では、テキスト、画像、コントロールの選択と操作について説明し、アプリでこれらのメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
-> **重要な API**: [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要な Api**:[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)、 [ **Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
  
 
 
@@ -47,20 +47,20 @@ ms.locfileid: "8939007"
 
 **考慮事項と推奨事項**
 
-選択と操作の動作を含む、プラットフォームの完全なユーザー操作エクスペリエンスを提供する Windowsto ビルドのアプリの言語フレームワークによって公開されるビルトイン コントロールを使用します。 ビルトイン コントロールの対話式操作の機能は、大部分の UWP アプリにとって十分なものです。
+Windows の言語フレームワークを通じて公開される組み込みのコントロールを使用すると、選択、および操作の動作を含む、プラットフォームの完全なユーザー操作のエクスペリエンスを提供するアプリを構築できます。 ビルトイン コントロールの対話式操作の機能は、大部分の UWP アプリにとって十分なものです。
 
 標準の UWP テキスト コントロールを使う場合、このトピックで説明した選択の動作と視覚効果はカスタマイズできません。
 
-**テキスト選択**
+**テキストの選択**
 
-アプリでは、カスタムの UI テキストの選択をサポートしている必要がある場合は、ここで説明した Windowsselection 動作に従うことをお勧めします。
+アプリは、テキスト選択をサポートするカスタム UI を必要とする場合は、ここで説明する Windows の選択動作を実行することをお勧めします。
 
-**編集可能なコンテンツと編集不可のコンテンツ**
+**編集可能なとが編集可能なコンテンツ**
 
 
-タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 同様に Windowstouch 他の対話式操作時間制限のある対話式操作に制限は情報 UI を表示するジェスチャを保持します。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
+タッチでは、選択操作は主に挿入カーソルの設定や単語の選択を行うタップ、選択範囲の変更を行うスライドなどのジェスチャを通じて実行されます。 その他の Windows では、タッチの操作と時間指定の相互作用は、キーを押してに制限されます情報 UI を表示するジェスチャを保持します。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Windowsrecognizes 2 つの可能な状態で、選択操作で編集可能なと編集不可し、それに応じて選択 UI、フィードバック、および機能を調整します。
+Windows では、編集可能にし、編集可能な選択範囲の相互作用の 2 つの状態を認識し、UI の選択、フィードバック、および機能を適宜調整されます。
 
 **編集可能なコンテンツ**
 
@@ -78,11 +78,11 @@ Windowsrecognizes 2 つの可能な状態で、選択操作で編集可能なと
 
 ![選択範囲内またはグリッパー上でタップ (または長押し) してコンテキスト メニューを呼び出します。](images/textselection-show-context.png)
 
-**注:** スペル ミスの場合はこのような操作が異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
+**注**  これらのインタラクションは、スペル ミスの単語の場合に、やや異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
 
  
 
-**編集不可のコンテンツ**
+**非編集可能なコンテンツ**
 
 次の図は、単語内でタップして単語を選ぶ方法を示しています (最初の選択にスペースは含まれていません)。
 
@@ -98,11 +98,11 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 ![プログレス グリッパーを備えたメディア プレーヤー](images/gripper-mediaplayer.png)
 
-*調節可能なプログレス バーを備えたメディア プレーヤーです。*
+*調整可能な進行状況バーでメディア プレーヤー。*
 
 ![トリミング グリッパーが表示された図](images/gripper-imagemanip.png)
 
-*トリミング グリッパーが表示された画像エディターです。*
+*イメージ エディター グリッパーをトリミングします。*
 
 ## <a name="related-articles"></a>関連記事
 
@@ -112,20 +112,20 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 * [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
 **サンプル**
-* [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的な入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低待機時間の入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **サンプルのアーカイブ**
-* [入力: XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: タッチのヒット テストのサンプル](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML のスクロール、パン、ズームのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: 簡略化されたインクのサンプル](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [入力: Windows 8 のジェスチャのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX タッチ入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [入力:XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力:デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力:タッチ ヒット テストのサンプル](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプル](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力:簡略化されたインクのサンプル](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力:Windows 8 のジェスチャのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力:操作とジェスチャ (C++) のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX のタッチ入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

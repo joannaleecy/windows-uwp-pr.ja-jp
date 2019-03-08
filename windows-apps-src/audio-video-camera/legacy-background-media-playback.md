@@ -4,14 +4,14 @@ description: この記事では、従来のバックグラウンドでのメデ�
 title: 従来のバックグラウンドでのメディアの再生
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ea8d387becaef171175fd5e91bfc3a1402e79faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927646"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616617"
 ---
 # <a name="legacy-background-media-playback"></a>従来のバックグラウンドでのメディアの再生
 
@@ -19,7 +19,7 @@ ms.locfileid: "8927646"
 この記事では、UWP アプリにバックグラウンド オーディオのサポートを追加できる従来の 2 プロセスのモデルについて説明します。 Windows 10 バージョン 1607 以降では、バックグラウンド オーディオ用に 1 プロセスのモデルが提供されているため、より簡単に実装できます。 バックグラウンド オーディオに対する現在の推奨事項について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。 この記事は、従来の 2 プロセスのモデルを使用して既に開発されたアプリにサポートを提供することを目的としています。
 
 > [!NOTE]
-> **BackgroundMediaPlayer**は、Windows、バージョン 1703 以降では推奨されなくなりましたし、Windows の将来のバージョンで利用可能なことができない可能性があります。
+> Windows、バージョン 1703 以降**BackgroundMediaPlayer**は非推奨し、Windows の将来のバージョンで使用できることができない可能性があります。
 
 ## <a name="background-audio-architecture"></a>バックグラウンド オーディオのアーキテクチャ
 
@@ -30,7 +30,7 @@ ms.locfileid: "8927646"
 ![Windows 10 のバックグラウンド オーディオのアーキテクチャ](images/backround-audio-architecture-win10.png)
 ## <a name="mediaplayer"></a>MediaPlayer
 
-[**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。 再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。 バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。 MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。
+[  **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。 再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。 バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。 MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。
 
 ## <a name="mediaplayer-proxy-and-stub"></a>MediaPlayer プロキシとスタブ
 
@@ -56,7 +56,7 @@ ms.locfileid: "8927646"
 
 バックグラウンド オーディオ アプリの 2 つのプロセス間で通信することが必要になる場合があります。 たとえば、新しいトラックの再生が始まるときにバックグラウンド タスクからフォアグラウンド タスクに通知し、新しい曲のタイトルをフォアグラウンド タスクに送って画面に表示させることがあります。
 
-単純な通信メカニズムにより、フォアグラウンド プロセスとバックグラウンド プロセスの両方でイベントを発生させることができます。 [**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) メソッドと [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) メソッドは、それぞれ対応するプロセスでイベントを呼び出します。 [**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。
+単純な通信メカニズムにより、フォアグラウンド プロセスとバックグラウンド プロセスの両方でイベントを発生させることができます。 [  **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) メソッドと [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) メソッドは、それぞれ対応するプロセスでイベントを呼び出します。 [  **MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。
 
 データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。 データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。 このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。 渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。
 
@@ -64,7 +64,7 @@ ms.locfileid: "8927646"
 
 バックグラウンド タスクの有効期間は、アプリの現在の再生状態に密接に関係します。 たとえば、ユーザーがオーディオ再生を一時停止すると、システムは状況に応じてアプリを終了させたり、取り消したりします。 オーディオが再生されることなく一定の時間が経過すると、システムが自動的にバックグラウンド タスクをシャットダウンします。
 
-[**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出されるのは、初めてアプリがフォアグラウンド アプリで実行中のコードから [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) にアクセスしたときと、[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントに対するハンドラーを登録したときのうち、早い方です。 バックグラウンド プロセスから送信されたメッセージをフォアグラウンド アプリで逃すことのないよう、初めて **BackgroundMediaPlayer.Current** を呼び出す前にメッセージ受信ハンドラーに登録しておくことをお勧めします。
+[  **IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出されるのは、初めてアプリがフォアグラウンド アプリで実行中のコードから [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) にアクセスしたときと、[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントに対するハンドラーを登録したときのうち、早い方です。 バックグラウンド プロセスから送信されたメッセージをフォアグラウンド アプリで逃すことのないよう、初めて **BackgroundMediaPlayer.Current** を呼び出す前にメッセージ受信ハンドラーに登録しておくことをお勧めします。
 
 バックグラウンド タスクを有効な状態に維持するために、アプリでは **Run** メソッドから [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を要求し、タスク インスタンスが [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントまたは [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントを受け取るときに [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出す必要があります。 **Run** メソッドではループ処理または待機を行わないでください。リソースが消費され、アプリのバックグラウンド タスクがシステムによって終了される原因になることがあります。
 
@@ -114,11 +114,11 @@ ms.locfileid: "8927646"
 
 次の表は、デバイスの種類によって適用されるポリシーを示します。
 
-| サブポリシー             | デスクトップ  | モバイル   | その他    |
+| サブポリシー             | Desktop  | モバイル   | その他    |
 |------------------------|----------|----------|----------|
-| **Exclusivity (排他)**        | 無効 | 有効  | 有効  |
-| **無通信タイムアウト** | 無効 | 有効  | 無効 |
-| **Shared Lifetime (共有の有効期間)**    | 有効  | 無効 | 無効 |
+| **排他性**        | 無効 | 有効  | 有効  |
+| **無通信のタイムアウト** | 無効 | 有効  | 無効 |
+| **共有の有効期間**    | 有効  | 無効 | 無効 |
 
 
  

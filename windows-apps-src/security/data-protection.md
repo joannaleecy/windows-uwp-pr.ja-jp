@@ -4,14 +4,14 @@ description: この記事では、Windows.Security.Cryptography.DataProtection �
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, セキュリティ
+keywords: windows 10、uwp、セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c93527a2ee738a3e6b0f4e9b9d2a1343158441b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932351"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608267"
 ---
 # <a name="data-protection"></a>データ保護
 

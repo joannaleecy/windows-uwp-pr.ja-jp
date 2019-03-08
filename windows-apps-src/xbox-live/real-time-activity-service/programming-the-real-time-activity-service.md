@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リアルタイム アクティビティ
 ms.localizationpriority: medium
 ms.openlocfilehash: f8846d57343f4f7262bbeea2cec03465fa23b2ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940465"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629997"
 ---
 # <a name="programming-the-real-time-activity-service-using-c-apis"></a>C++ API を使用したリアルタイム アクティビティ サービスのプログラミング
 
@@ -48,7 +48,7 @@ void Example_RealTimeActivity_ConnectAsync()
 
 ### <a name="creating-a-statistic"></a>統計の作成
 
-XDK デベロッパーである場合やクロスプレイ タイトルの開発を行う場合は、XDP で統計を作成します。  Windows 10 で実行される純粋な UWP を作成している場合は、パートナー センターで統計を作成します。
+XDK デベロッパーである場合やクロスプレイ タイトルの開発を行う場合は、XDP で統計を作成します。  Windows 10 で実行されている、純粋な UWP を行う場合は、パートナー センターで統計を作成します。
 
 #### <a name="xdk-developers"></a>XDK の開発者
 
@@ -56,10 +56,10 @@ XDP で統計を作成する方法については、[XDP のドキュメント](
 
 #### <a name="uwp-developers"></a>UWP の開発者
 
-クロスプレイ タイトルではない Windows 10 での UWP を開発している場合は、[パートナー センター](https://partner.microsoft.com/dashboard)で統計を定義します。 パートナー センターで統計を構成する方法については、[パートナー センターの統計の構成の資料](../leaderboards-and-stats-2017/player-stats-configure-2017.md)を読みます。
+統計情報を定義するクロス play タイトルではない Windows 10 での UWP を開発している場合[パートナー センター](https://partner.microsoft.com/dashboard)します。 読み取り、[パートナー センターの統計情報の構成に関する記事](../leaderboards-and-stats-2017/player-stats-configure-2017.md)をパートナー センターでの統計情報を構成する方法について説明します。
 
 > [!NOTE]
-> 統計 2013年の開発者は、[パートナー センター](https://partner.microsoft.com/dashboard)で[統計 2013年の構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)に関する情報について、担当の DAM に連絡する必要があります。
+> に関する情報をそのダムを要請する必要があります stats 2013 開発者[Stats 2013 構成](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-configure-stats-2013)で[パートナー センター](https://partner.microsoft.com/dashboard)します。
 
 ### <a name="disconnecting-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの切断
 
@@ -76,7 +76,7 @@ void Example_RealTimeActivity_Disconnect()
 
 ## <a name="subscribing-to-a-statistic-from-the-real-time-activity"></a>リアルタイム アクティビティからの統計へのサブスクライブ
 
-アプリケーションをリアルタイム アクティビティ (RTA) Xbox デベロッパー ポータル (XDP) またはパートナー センターで構成された統計情報を変更するときに、更新プログラムを取得するをサブスクライブします。
+アプリケーションをリアルタイムのアクティビティ (RTA) Xbox 開発者ポータル (XDP) またはパートナー センターで構成されている統計を変更するときに、更新プログラムを取得するをサブスクライブします。
 
 ### <a name="subscribing-to-a-statistic-from-the-real-time-activity-service"></a>リアルタイム アクティビティ サービスからの統計へのサブスクライブ
 
@@ -129,6 +129,6 @@ void Example_RealTimeActivity_UnsubscribeFromStatisticChangeAsync()
 ```
 
 > [!IMPORTANT]
-> リアルタイム アクティビティ サービスは、2 つの時間の使用後切断は、コードはこれを検出し、まだ必要な場合は、リアルタイム アクティビティ サービスへの接続を再確立できる必要があります。 これは、主に、認証トークンの有効期限が更新されることを確認します。
+> サービスは、使用の 2 時間後に切断されますリアルタイム アクティビティ、コードはこれを検出し、まだ必要な場合、リアルタイムのアクティビティのサービスへの接続を再確立できる必要があります。 これは主に切れると、認証トークンを更新することです。
 > 
-> クライアントは、マルチプレイヤー セッションは、RTA を使用し、30 秒間の切断された、マルチプレイヤー セッション Directory(MPSD) RTA セッションが閉じられるし、セッションからユーザーが開始を検出します。 RTA クライアントが接続が閉じられたときに検出し、再接続を開始 MPSD セッションを終了する前にサブスクライブすることです。
+> クライアントでは、マルチ プレーヤーのセッションでは、RTA を使用し、30 秒間、切断された、マルチプレイヤー セッション Directory(MPSD) RTA セッションが閉じられるし、ユーザー、セッションからサインアウトを開始を検出します。 RTA クライアントは、接続が閉じられたときに検出し再接続を開始し、MPSD がセッションを終了する前に再登録することです。

@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 354f3563c48139edc5d5cc041e8304998af55620
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933057"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613407"
 ---
 # <a name="delete-handleshandleid"></a>DELETE (/handles/{handleId})
-ハンドル ID で指定されたハンドルを削除します。
+ハンドルの ID で指定されたハンドルを削除します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチ プレーヤーを使用し、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 104/105 またはそれ以降、テンプレートのコントラクトで使用され、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EAB)
-  * [HTTP ステータス コード](#ID4ELB)
+  * [HTTP 状態コード](#ID4ELB)
   * [要求本文](#ID4ESB)
   * [応答本文](#ID4E4B)
 
@@ -30,21 +30,21 @@ ms.locfileid: "8933057"
 
 
 ## <a name="remarks"></a>注釈
-この HTTP/REST メソッドでは、指定された id のハンドルを削除し、セッションのユーザーの現在のアクティビティをクリアします。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**でラップすることができます。  
+この HTTP/REST メソッドは、指定された id ハンドルを削除し、セッションのユーザーの現在のアクティビティをクリアします。 このメソッドによってラップできる**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.ClearActivityAsync**します。  
 <a id="ID4EAB"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。|
+| handleId| GUID| セッションのハンドルの一意の ID。|
 
 <a id="ID4ELB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4ESB"></a>
 
 
@@ -57,7 +57,7 @@ ms.locfileid: "8933057"
 
 ## <a name="response-body"></a>応答本文
 
-応答の本文には、オブジェクトは送信されません。
+応答の本文では、オブジェクトは送信されません。
 
 <a id="ID4EIC"></a>
 

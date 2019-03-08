@@ -1,19 +1,19 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+Description: リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
 title: UWP アプリでの追加と削除のアニメーション
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c7ca332b73aba067c2ae003d458e8d0d97c7a7e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942888"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642837"
 ---
 # <a name="add-and-delete-animations"></a>追加と削除のアニメーション
 
@@ -21,7 +21,7 @@ ms.locfileid: "8942888"
 
 リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
 
-> **重要な API**: [**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
+> **重要な Api**:[**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
@@ -39,8 +39,8 @@ ms.locfileid: "8942888"
 ## <a name="related-articles"></a>関連記事
 
 * [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [リストの追加と削除のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [一覧の追加と削除をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [クイック スタート:Library のアニメーションを使用して、UI をアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  

@@ -1,16 +1,16 @@
 ---
-Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
+Description: パッケージが正しくアップロードされると、特定の Windows 10 デバイス ファミリ (および該当する場合は以前の OS バージョン) に対して提供されるパッケージをランキング順に示すテーブルが表示されます。
 title: デバイス ファミリの利用可否
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, パッケージ, アップロード, デバイス ファミリの利用可否
 ms.localizationpriority: medium
 ms.openlocfilehash: 217a6ab9f25ee533a754138db5cf83c2ac81e3e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929049"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605357"
 ---
 # <a name="device-family-availability"></a>デバイス ファミリの利用可否
 
@@ -48,22 +48,22 @@ Windows.Universal パッケージに対してチェック ボックスが既定�
 
 Windows 10 IoT Core の UWP アプリを申請する場合、パッケージをアップロードした後に既定の選択を変更しないでください。Windows 10 IoT 用の別個のチェック ボックスはありません。 IoT Core UWP アプリの公開について詳しくは、[Microsoft Store による IoT Core UWP アプリのサポートに関する記事](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)をご覧ください。
 
-**Windows 8 または 8.1**で実行できるパッケージが以前に公開したアプリの申請に含まれるかどうかと**Windows Phone 8.x 以前**、それらのパッケージが利用できるこれらの OS バージョンのユーザーにします。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
+以前に発行されたアプリの提出がで実行できるパッケージが含まれるかどうか**Windows 8 または 8.1**と**Windows Phone 8.x 以前**、それらのパッケージが利用できるこれらの OS で顧客にバージョン。 これらのユーザーへのアプリ提供を停止するには、対応するパッケージを申請から削除する必要があります。
 
 > [!IMPORTANT]
-> 申請の取得から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新をサポートするデバイス ファミリのみを対象に、マニフェストで[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)要素 (つまり、Windows.Mobile または Windows.Desktop) ではなくまま Windows.Universal 値 (ユニバーサル デバイス ファミリ用) としてするよりも Microsoft Visual Studio が既定では、マニフェストに含まれます。
+> お客様の提出を作業から完全に特定の Windows 10 デバイス ファミリを防ぐためには、更新、 [ **TargetDeviceFamily** ](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)したいデバイス ファミリのみを対象に、マニフェスト内の要素おくことができます (のユニバーサル デバイス ファミリ) Windows.Universal 値とするのではなく、(つまり、Windows.Mobile または Windows.Desktop) のサポート、既定では、マニフェストに Microsoft Visual Studio が含まれます。
 
-**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージでは、公開されたアプリがある Windows.Universal デバイス ファミリをターゲットと Windows 10 (UWP) パッケージを追加する場合は、Windows 10 モバイル ユーザー、Windows Phone 8.1 パッケージを受け取ってが提供される更新プログラムをこの Windows10 (UWP) パッケージをしている場合でもオフ、 **Windows 10 Mobile**のボックス。
+**[デバイス ファミリの利用可否]** セクションで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 のパッケージを使用した発行されたアプリがあり、Windows.Universal のデバイス ファミリをターゲットとする Windows 10 (UWP) パッケージを追加する場合、Windows Phone 8.1 のパッケージを所持する Windows 10 モバイルの顧客に提供されます更新この Windows10 (UWP) にパッケージ化、している場合でも未チェックのボックス**Windows 10 Mobile**します。
 
 デバイス ファミリについて詳しくは、[**デバイス ファミリの概要に関する記事**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)をご覧ください。
 
 
 ## <a name="understanding-ranking"></a>ランク付けの概要
 
-**デバイス ファミリの利用可否**] セクションでは示さだけでなく Windows 10 デバイス ファミリは、申請をダウンロードできることを示すためが利用できるさまざまなデバイス ファミリに特定のパッケージを示しています。 特定のデバイス ファミリで実行できるパッケージが複数ある場合は、パッケージのバージョン番号に基づくパッケージの提供順序がテーブルに示されます。 ストアがバージョン番号を基にしてパッケージをランク付けする方法について詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。 
+お客様の提出をダウンロードできる Windows 10 デバイスのファミリを指定することを除けば、**デバイス ファミリの可用性**セクションが利用できるさまざまなデバイス ファミリを特定のパッケージを示しています。 特定のデバイス ファミリで実行できるパッケージが複数ある場合は、パッケージのバージョン番号に基づくパッケージの提供順序がテーブルに示されます。 ストアがバージョン番号を基にしてパッケージをランク付けする方法について詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。 
 
-たとえば、2 つのパッケージ Package_A.appxupload と Package_B.appxupload があるものとします。 特定のデバイス ファミリについて、Package_A.appxupload のランクが 1、Package_B.appxupload のランクが 2 であるとすると、そのデバイスの種類を使用するユーザーがアプリを入手するとき、ストアでは最初に Package_A.appxupload が提供されます。 ユーザーのデバイスが Package_A.appxupload を実行できない場合、ストアは Package_B.appxupload を提供します。 ユーザーのデバイスは、そのデバイス ファミリ用のパッケージのいずれかを実行できない場合 (たとえば、 **MinVersion**アプリがサポートされている場合は、ユーザーのデバイス上のバージョンよりも高い) し、顧客がそのデバイスにアプリをダウンロードできません。
+たとえば、2 つのパッケージがあるとします。Package_A.appxupload Package_B.appxupload. 特定のデバイス ファミリについて、Package_A.appxupload のランクが 1、Package_B.appxupload のランクが 2 であるとすると、そのデバイスの種類を使用するユーザーがアプリを入手するとき、ストアでは最初に Package_A.appxupload が提供されます。 ユーザーのデバイスが Package_A.appxupload を実行できない場合、ストアは Package_B.appxupload を提供します。 顧客のデバイスにそのデバイス ファミリ用のパッケージの実行できない場合 (場合など、 **MinVersion**アプリがサポートされますが、顧客のデバイス上のバージョンよりも高い) し、顧客は、アプリをダウンロードできませんそのデバイス。
 
 > [!NOTE]
-> (以前に公開したアプリ用) の .xap パッケージのバージョン番号は、特定の顧客に提供するには、どのパッケージを決定する場合とは見なされません。 このため、同じランクの .xap パッケージが複数ある場合、番号ではなくアスタリスクが表示され、ユーザーはどちらのパッケージでも受け取ることができます。 ユーザーの .xap パッケージを新しいパッケージに更新する場合、新しい申請では必ず以前の .xap を削除してください。
+> 特定の顧客に提供すると、パッケージを決定するときに、.xap パッケージ (の前に発行されたアプリ) のバージョン番号は考慮されません。 このため、同じランクの .xap パッケージが複数ある場合、番号ではなくアスタリスクが表示され、ユーザーはどちらのパッケージでも受け取ることができます。 ユーザーの .xap パッケージを新しいパッケージに更新する場合は、必ず新しい申請で古い .xap を削除してください。
 

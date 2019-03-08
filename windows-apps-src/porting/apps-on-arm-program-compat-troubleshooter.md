@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, 常時接続, 互換性トラブルシューティング ツール, ARM 版 Windows
 ms.localizationpriority: medium
 ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946370"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647617"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>プログラム互換性のトラブルシューティング ツール (ARM)
 x86 アプリが ARM64 上の Windows 10 用に作成された新しい機能をサポートするようにエミュレーションします。 エミュレーションは、最適なエクスペリエンスの結果の最適化を実行することがあります。 プログラム互換性のトラブルシューティング ツールを使って x86 アプリのエミュレーション設定を切り替えることができるため、既定の最適化が減少し、互換性が強化される可能性があります。
@@ -32,7 +32,7 @@ x86 アプリが ARM64 上の Windows 10 用に作成された新しい機能を
 
 エミュレーション設定は、実行可能ファイルを右クリックして **[プロパティ]** を選ぶことで切り替えることができます。
 
-ARM では、**[Windows 10 on ARM]** (ARM 版 Windows 10) というセクションが **[互換性]** タブに表示されます。**[Change emulation settings]** (エミュレーション設定の変更) をクリックし、ここに示すように 2 番目のウィンドウを開きます。
+セクションのタイトル、ARM で**ARM 上の Windows 10**できるは、**互換性** タブ。クリックして**エミュレーションの設定を変更する**こことして 2 つ目のウィンドウを起動します。
 
 ![エミュレーション設定の変更のスクリーンショット](images/arm/Capture.png)
 

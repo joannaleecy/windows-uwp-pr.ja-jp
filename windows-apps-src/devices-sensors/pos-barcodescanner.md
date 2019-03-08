@@ -7,11 +7,11 @@ keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937730"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605947"
 ---
 # <a name="barcode-scanner"></a>バーコード スキャナー
 
@@ -21,10 +21,10 @@ ms.locfileid: "8937730"
 
 |トピック |説明 |
 |------|------------|
-| [バーコード スキャナーの構成](../devices-sensors/pos-barcodescanner-configure.md)  | 目的のアプリケーションのバーコード スキャナーを構成する方法について説明します。 |
-| [ソフトウェア トリガーの使用](../devices-sensors/pos-barcodescanner-software-trigger.md) | ソフトウェアからスキャンの動作を制御する方法について説明します。 |
-| [シンボル体系の操作](pos-barcodescanner-symbologies.md) | バーコード スキャナーがサポートするバーコードの種類を特定し、アプリケーションからバーコード スキャナーで認識されるバーコードの種類を制御する方法について説明します。 |
-| [バーコード データの取得と理解](pos-barcodescanner-scan-data.md) | 取得およびスキャンするバーコード データを解釈する方法について説明します。 |
-| [カメラ バーコード スキャナー](pos-camerabarcode.md) | ユニバーサル Windows プラットフォーム アプリケーションから標準のカメラ レンズでバーコードを読み取ります。 Windows 10 April 2018 Update (ビルド 17134 以降) が必要です。 |
+| [バーコード スキャナーを構成します。](../devices-sensors/pos-barcodescanner-configure.md)  | 目的のアプリケーションのバーコード スキャナーを構成する方法について説明します。 |
+| [ソフトウェアのトリガーを使用します。](../devices-sensors/pos-barcodescanner-software-trigger.md) | ソフトウェアのスキャンの動作を制御する方法について説明します。 |
+| [記号の使用](pos-barcodescanner-symbologies.md) | バーコード スキャナーがサポートするバーコードの種類を特定し、アプリケーションからバーコード スキャナーで認識されるバーコードの種類を制御する方法について説明します。 |
+| [取得し、バーコード データを理解します。](pos-barcodescanner-scan-data.md) | 取得して、スキャンしたバーコード データを解釈する方法について説明します。 |
+| [カメラのバーコード スキャナー](pos-camerabarcode.md) | ユニバーサル Windows プラットフォーム アプリケーションから標準のカメラ レンズでバーコードを読み取ります。 Windows 10 April 2018 Update (ビルド 17134 以降) が必要です。 |
 |
  

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 446197eb20820304088ddac4a6379fa3b2510873
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058483"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606697"
 ---
 # <a name="get-inventoryitemid"></a>GET (/inventory/{itemID})
-特定のインベントリ項目の詳細の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
+特定のインベントリ項目の詳細情報の完全なセットを提供します。 これらの Uri のドメインが`inventory.xboxlive.com`します。
  
   * [注釈](#ID4EX)
   * [URI パラメーター](#ID4EAB)
@@ -26,16 +26,16 @@ ms.locfileid: "9058483"
  
 ## <a name="remarks"></a>注釈
  
-ポリシー チェックを行わない、実施、またはこの呼び出しの一部としてフィルタ リングが発生します。
+ポリシー チェックを行わない、強制、または、この呼び出しの一部としてフィルター処理が発生します。
   
 <a id="ID4EAB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| itemID| string| 単数形インベントリ項目の各ユーザーに一意の ID| 
+| アイテム Id| string| 単数形のインベントリ項目のユーザーごとに一意の ID| 
   
 <a id="ID4ELB"></a>
 
@@ -45,9 +45,9 @@ ms.locfileid: "9058483"
 <a id="ID4ERB"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
-認証に合格して、適切な承認コンテキストが割り当てられていると想定すると、GET 要求に応答は、項目のプロパティの完全なセットを 1 つのインベントリ項目です。
+認証し、適切な承認コンテキストが割り当てられていると仮定すると、GET 要求に対する応答は、アイテムのプロパティの完全なセットを 1 つの在庫アイテムです。
  
 
 ```cpp
@@ -74,14 +74,14 @@ ms.locfileid: "9058483"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

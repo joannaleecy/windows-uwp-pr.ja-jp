@@ -6,21 +6,21 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116164"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637147"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>アプリ インストーラー ファイルを使用して関連セットをインストールする
 
 UWP オプション パッケージまたは関連セットの作業を始めたばかりであれば、開始にあたって参考にするリソースとして以下の記事が適しています。 
 
-1.  [Extend your application using Optional Packages (オプション パッケージを使用してアプリケーションを拡張する)](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
-2.  [Build your first Optional Package (初めてのオプション パッケージを作成する)](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
-3.  [Loading code from an optional package (オプション パッケージからコードを読み込む)](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
-4.  [Tooling to create a Related Set (関連セットを作成するためのツール)](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
-5.  [オプション パッケージと関連セットの作成](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
+1.  [省略可能なパッケージを使用して、アプリケーションを拡張します。](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
+2.  [最初の省略可能なパッケージをビルドします。](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
+3.  [省略可能なパッケージからコードの読み込み](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
+4.  [関連する設定を作成するツール](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
+5.  [省略可能なパッケージと関連する一連の作成](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
 
 Windows 10 Fall Creators Update では、関連セットをアプリ インストーラーでインストールできるようになりました。 これにより、関連セット アプリ パッケージをユーザーに配布および展開することが可能になります。 
 
@@ -72,10 +72,10 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 
 関連セットを 1 つのエンティティとして配布するには、[appinstaller スキーマ](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file)に必要な要素が含まれたアプリ インストーラー ファイルを作成する必要があります。
 
-### <a name="step-1-create-the-appinstaller-file"></a>手順 1: *.appinstaller ファイルの作成
+### <a name="step-1-create-the-appinstaller-file"></a>手順 1:*.Appinstaller ファイルを作成します。
 テキスト エディターを使って、ファイル (XML が格納される) を作成し、&lt;ファイル名&gt;.appinstaller という名前を付けます。 
 
-### <a name="step-2-add-the-basic-template"></a>手順 2: 基本的なテンプレートの追加
+### <a name="step-2-add-the-basic-template"></a>手順 2:基本的なテンプレートを追加します。
 基本的なテンプレートには、アプリ インストーラー ファイルの情報が含まれています。 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -86,8 +86,8 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>手順 3: メイン パッケージ情報の追加 
-メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合を使用し、`<MainBundle>`次に示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合を使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペットにします。 
+### <a name="step-3-add-the-main-package-information"></a>手順 3:メイン パッケージ情報を追加します。 
+メイン アプリ パッケージが .appxbundle または .msixbundle ファイルの場合を使用し、`<MainBundle>`の下に表示します。 メイン アプリ パッケージが .appx または .msix ファイルの場合を使用し、`<MainPackage>`の代わりに`<MainBundle>`スニペット。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +106,7 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 ```
 `<MainBundle>` 属性または `<MainPackage>` 属性に含まれる情報は、それぞれアプリ バンドル マニフェストまたはアプリ パッケージ マニフェストの [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 要素に一致する必要があります。 
 
-### <a name="step-4-add-the-optional-packages"></a>手順 4: オプション パッケージの追加 
+### <a name="step-4-add-the-optional-packages"></a>手順 4:省略可能なパッケージを追加します。 
 メイン アプリ パッケージの属性と同様、オプション パッケージをアプリ パッケージまたはアプリ バンドルにできる場合は、`<OptionalPackages>` 属性内の子要素をそれぞれ `<Package>` または `<Bundle>` にする必要があります。 子要素内のパッケージ情報は、バンドルまたはパッケージのマニフェストの identity 要素と一致する必要があります。 
 
 ``` xml
@@ -146,7 +146,7 @@ Windows 10 Fall Creators Update では、関連セットをアプリ インス�
 </AppInstaller>
 ```
 
-### <a name="step-5-add-dependencies"></a>手順 5: 依存関係の追加 
+### <a name="step-5-add-dependencies"></a>手順 5:依存関係を追加します。 
 dependencies 要素では、メイン パッケージまたはオプション パッケージに必要なフレームワーク パッケージを指定できます。 
 
 ``` xml
@@ -192,8 +192,8 @@ dependencies 要素では、メイン パッケージまたはオプション �
 </AppInstaller>
 ```
 
-### <a name="step-6-add-update-setting"></a>手順 6: 更新設定の追加 
-アプリ インストーラー ファイルでは、新しいアプリ インストーラー ファイルが公開されたときに関連セットを自動的に更新できるように、更新設定を指定することもできます。 **<UpdateSettings>** はオプションの要素です。 **<UpdateSettings>** 内で、OnLaunch オプションはアプリの起動時に更新プログラムのチェックを行うことを指定します。HoursBetweenUpdateChecks="12" は、更新プログラムのチェックを 12 時間おきに行うことを指定します。 HoursBetweenUpdateChecks が指定されていない場合、更新プログラムをチェックするために使用される既定の間隔は 24 時間です。
+### <a name="step-6-add-update-setting"></a>手順 6:更新プログラムの設定を追加します。 
+アプリ インストーラー ファイルでは、新しいアプリ インストーラー ファイルが公開されたときに関連セットを自動的に更新できるように、更新設定を指定することもできます。 **<UpdateSettings>** 省略可能な要素です。 **<UpdateSettings>**  内で、OnLaunch オプションはアプリの起動時に更新プログラムのチェックを行うことを指定します。HoursBetweenUpdateChecks="12" は、更新プログラムのチェックを 12 時間おきに行うことを指定します。 HoursBetweenUpdateChecks が指定されていない場合、更新プログラムをチェックするために使用される既定の間隔は 24 時間です。
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller

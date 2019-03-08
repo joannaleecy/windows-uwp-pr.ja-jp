@@ -1,16 +1,16 @@
 ---
-title: パートナー センターでの特権の構成
-description: パートナー センターで特権を構成する方法を説明します。
+title: パートナー センターで特権の構成
+description: パートナー センターでの権限を構成する方法について説明します
 ms.date: 04/09/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム、uwp、windows 10, Xbox one, 特権, パートナー センター
+keywords: Xbox Live、Xbox、ゲーム、uwp、windows 10 では、1 つ Xbox、特権、パートナー センター
 ms.openlocfilehash: 2036be2a6184909799236b013c52ff4614a158aa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947282"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612477"
 ---
 # <a name="configure-privileges-in-partner-center"></a>パートナー センターでの特権を構成します。
 

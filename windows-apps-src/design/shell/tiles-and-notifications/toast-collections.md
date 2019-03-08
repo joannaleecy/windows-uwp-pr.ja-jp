@@ -1,5 +1,5 @@
 ---
-Description: Learn how to group notifications in Action Center using collections.
+Description: コレクションを使用して、アクション センターの通知をグループ化する方法について説明します。
 title: トースト コレクション
 label: Toast Collections
 template: detail.hbs
@@ -8,20 +8,20 @@ ms.topic: article
 keywords: windows 10, uwp, 通知, コレクション, コレクション, グループの通知, 通知のグループ化, グループ、整理, アクション センター, トースト
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b6818f876c094298a0a6636faa00efa9a192545
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943883"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600687"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>コレクションを使用したトースト通知のグループ化
 コレクションを使用してアクション センターでアプリのトーストを整理します。 コレクションにより、ユーザーはアクション センター内での情報をより簡単に見つけることができ、開発者が通知をより適切に管理できるようになります。  下の API では、通知のコレクションの削除、作成、および更新が可能です。
 
 > [!IMPORTANT]
-> **Creators Update が必要**: トースト コレクションを使用するには、SDK 15063 をターゲットとし、ビルド 15063 以降を実行している必要があります。 関連する API には、[Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) および [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager) が含まれます。
+> **Creators Update が必要です**:SDK 15063 を対象にして、15063 以上トースト コレクションを使用するビルドを実行します。 関連する API には、[Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollection) および [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastcollectionmanager) が含まれます。
 
 以下の例には、チャット グループに基づいた通知を分離するメッセージング アプリがあります。それぞれのタイル (Comp Sci 160A Project Chat、Direct Messages、Lacrosse Team Chat) は別のコレクションです。  すべて同じアプリからの通知である場合でも、別のアプリからの通知であるかのように、通知が明確にグループ化されているのがわかります。  通知を整理するより巧妙な方法を探している場合は、「[トースト ヘッダー](toast-headers.md)」を参照してください。  
-![2 つ異なる通知のグループを持つコレクションの例](images/toast-collection-example.png)
+![コレクションの例を 2 つ異なるグループの通知の使用](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>コレクションの作成
 各コレクションを作成するときは、表示名とアイコンを指定する必要があります。表示名とアイコンは上のイメージに示すように、コレクションのタイトルの一部としてアクション センターの内部に表示されます。 また、ユーザーがコレクションのタイトルをクリックしたときにアプリがアプリ内の適切な場所に移動できるように、コレクションには起動引数が必要です。  
@@ -190,4 +190,4 @@ collectionHistory.Clear();
 
 * [トーストのコンテンツ](adaptive-interactive-toasts.md)
 * [トースト ヘッダー](toast-headers.md)
-* [GitHub の通知ライブラリ (Windows コミュニティ ツールキットの一部)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [GitHub (Windows の Community Toolkit の一部) の通知ライブラリ](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

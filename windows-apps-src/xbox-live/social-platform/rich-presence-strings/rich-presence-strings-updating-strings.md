@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: ac4549301c60eafb935dab0ac9c5b5028452edfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926683"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610397"
 ---
 # <a name="rich-presence-updating-strings"></a>リッチ プレゼンスの文字列の更新
 
@@ -27,7 +27,7 @@ URI は次のように表示されます。
 
 プロパティ | 種類 | 必須 | 説明
 ---|---|---|---
-Activity|ActivityRequest|N|タイトル内情報 (リッチ プレゼンスおよびメディア情報 (使用可能な場合)) を記述するレコード
+アクティビティ|ActivityRequest|N|タイトル内情報 (リッチ プレゼンスおよびメディア情報 (使用可能な場合)) を記述するレコード
 
 ## <a name="activityrequest-object"></a>ActivityRequest オブジェクト
 

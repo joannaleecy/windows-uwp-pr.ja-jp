@@ -1,22 +1,22 @@
 ---
-Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+Description: RichTextBlockOverflow 要素を持つ RichTextBlock を使って、高度なテキスト レイアウトを作成します。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ab83e74dc59b407c15e1a8213540c8954fcd16e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037047"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610897"
 ---
 # <a name="rich-text-block"></a>リッチ テキスト ブロック
 
@@ -24,7 +24,7 @@ ms.locfileid: "9037047"
 
 リッチ テキスト ブロックは、段落、インライン UI 要素、複雑なテキスト レイアウトなどのサポートが必要な場合に使用できる、高度なテキスト レイアウト用のいくつかの機能を提供します。
 
-> **重要な API**: [RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[RichTextBlockOverflow クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)、[Paragraph クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)、[Typography クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
+> **重要な Api**:[RichTextBlock クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [RichTextBlockOverflow クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)、[クラスを段落](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)、[タイポグラフィ クラス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -43,8 +43,8 @@ ms.locfileid: "9037047"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/RichTextBlock">アプリを開き、RichTextBlock の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -158,14 +158,14 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 [テキスト コントロール](text-controls.md)
 
 **デザイナー向け**
-- [スペル チェックのガイドライン](text-controls.md)
+- [スペル チェックするためのガイドライン](text-controls.md)
 - [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [テキスト入力のガイドライン](text-controls.md)
+- [テキスト入力するためのガイドライン](text-controls.md)
 
 **開発者向け (XAML)**
 - [TextBox クラス](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox クラス](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**開発者向け (その他)**
+**(その他) 開発者向け**
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

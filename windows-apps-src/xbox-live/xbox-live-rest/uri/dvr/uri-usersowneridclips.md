@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cd711777bcdf0b073dd0821222049b03aa35a23c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941305"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599517"
 ---
 # <a name="usersowneridclips"></a>/users/{ownerId}/clips
-ユーザーのクリップのアクセスの一覧です。 これらの Uri のドメインは、`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`に対象の URI の機能に依存します。
+ユーザーのクリップのアクセス リスト。 これらの Uri のドメインが`gameclipsmetadata.xboxlive.com`と`gameclipstransfer.xboxlive.com`、対象の URI の機能によって異なります。
  
   * [URI パラメーター](#ID4EX)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8941305"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| ownerId| string| そのリソースにアクセスしているユーザーのユーザー id。 サポートされる形式:"me"または"xuid(123456789)"します。 最大長: 16 します。| 
+| ownerId| string| リソースがアクセスされているユーザーのユーザー id。 サポートされている形式:"xuid(123456789)"または"me"。 最大長:16.| 
   
 <a id="ID4EVB"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8941305"
  
 ##### <a name="parent"></a>Parent 
 
-[ゲーム DVR URI](atoc-reference-dvr.md)
+[ゲーム録画 Uri](atoc-reference-dvr.md)
 
    

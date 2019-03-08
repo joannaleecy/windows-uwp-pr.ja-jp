@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: fdd55e1c4b1d162906dc4480aa7349e4dd734a49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926630"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645617"
 ---
 # <a name="qosservers"></a>/qosservers
-URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。 これらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+Xbox Live コンピューティングで使用するために使用できる QoS サーバーの一覧を取得するクライアントから呼び出す URI。 これらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [ホスト名](#ID4EZ)
  
@@ -31,7 +31,7 @@ gameserverds.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-qosservers-get.md)
+[取得](uri-qosservers-get.md)
 
-&nbsp;&nbsp;URI が利用可能な QoS サーバーの一覧を取得する Xbox Live エンジンで使用するためにクライアントによって呼び出されます。
+&nbsp;&nbsp;Xbox Live コンピューティングで使用するために使用できる QoS サーバーの一覧を取得するクライアントから呼び出す URI。
  

@@ -1,16 +1,16 @@
 ---
 title: カメラ バーコード スキャナーの構成
 description: カメラ バーコード スキャナーの有効化と無効化
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 3db54caa5be88559aa44f9a99273e9d8d5d6a00d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610307"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>Windows に付属するソフトウェア デコーダーを有効または無効にします。
 Windows 10 バージョン 1803 では、ソフトウェア デコーダーがインストールされ、既定で有効になっています。  カメラ バーコード スキャナーを使用しない場合、Windows.Devices.PointOfService.BarcodeScanner API で動作するサード パーティ製のデコーダーを入手した場合、およびそのどちらも使用しない場合は、ソフトウェア デコーダーを無効にすることができます。
@@ -18,7 +18,7 @@ Windows 10 バージョン 1803 では、ソフトウェア デコーダーが�
 ## <a name="enable-or-disable-using-the-system-registry"></a>システム レジストリを使用して有効または無効にする
 システム レジストリを使用して、Windows に付属するソフトウェア デコーダーを有効または無効にするには、*HKLM\Software\Microsoft\PointOfService\BarcodeScanner* の下にレジストリ キー *InboxDecoder* を追加し、*Enable* の値を以下に示すように設定します。
 
-| 値の名前  | 値の種類 | 値 | 状態 |
+| 値の名前  | 値の種類 | Value | 状況 |
 | ----------- | --------- | -------|--------|
 | Enable      | DWORD     | 1 (既定)<br/>0 |  Windows に付属するソフトウェア デコーダーを有効にします。 <br/> Windows に付属するソフトウェア デコーダーを無効にします。 |
 

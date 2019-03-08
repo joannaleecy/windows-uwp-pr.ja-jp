@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 37deaabe2586391b0f0c93359133f10830558539
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981496"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608857"
 ---
 # <a name="game-flow-management"></a>ゲームのフロー管理
 
@@ -39,7 +39,7 @@ ms.locfileid: "8981496"
 
 同様に、再開イベントでは、サンプル ゲームが前回中断または終了された時点から再開されます。 サンプル ゲームが終了後に再起動されると、通常どおり開始され、その後、最後の既知の状態が判断されるため、プレーヤーはゲームの続きを即座に続行できます。
 
-状態に応じて、異なるオプションがプレイヤーに表示されます。 
+状態に応じて、異なるオプションがプレーヤーに表示されます。 
 
 * ゲームは、2 つのレベルの中間から再開された場合、一時停止しているように見え、オーバーレイで続行オプションが表示されます。
 * また、完了状態から再開された場合は、ハイ スコアと、新しいゲームを開始するオプションが表示されます。
@@ -127,13 +127,13 @@ void GameMain::InitializeGameState()
 
 ## <a name="update-game-engine"></a>ゲーム エンジンを更新する
 
-[__App::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L127-L130) メソッドで、[__GameMain::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202) を呼び出します。 このサンプルでは、このメソッド内に、プレイヤーが実行できる主な操作すべてを処理する基本的なステート マシンを実装しています。 このステート マシンの最上位レベルは、ゲームの読み込み、特定のレベルのゲーム プレイ、ゲームが (システムあるいはプレーヤーによって) 一時停止された後のレベルの続行を処理します。
+[  __App::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/App.cpp#L127-L130) メソッドで、[__GameMain::Run__](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L143-L202) を呼び出します。 このサンプルでは、このメソッド内に、プレイヤーが実行できる主な操作すべてを処理する基本的なステート マシンを実装しています。 このステート マシンの最上位レベルは、ゲームの読み込み、特定のレベルのゲーム プレイ、ゲームが (システムあるいはプレーヤーによって) 一時停止された後のレベルの続行を処理します。
 
 このゲーム サンプルには、ゲームの主な状態 (__UpdateEngineState__) として次の 3 つがあります。
 
-1. __Waiting for resources__: ゲーム ループが循環していて、リソース (具体的にはグラフィックス リソース) が使用可能になるまで、移行できません。 リソースを読み込む非同期タスクが完了すると、状態が __ResourcesLoaded__ に更新されます。 これは通常、2 つのレベルの中間で発生します。レベルの中間では、新しいリソースをディスク、ゲーム サーバー、クラウド バックエンドから読み込みます。 このゲーム サンプルでは、その時点ではレベルごとに追加のリソースは必要ないため、この動作はシミュレートされます。
-2. __Waiting for press__: ゲーム ループが循環していて、特定のユーザー入力を待機しています。 この入力は、プレイヤーによるゲームの読み込み、レベルの開始、またはレベルの続行の操作です。 サンプル コードでは、これらの下位状態として、__PressResultState__ 列挙値を使っています。
-3. __Dynamics__: ゲーム ループが実行中で、ユーザーがプレイしています。 ユーザーがプレイ中に、ゲームは移行できる 3 つの条件をチェックします。 
+1. __リソースを待機__:ゲーム ループが循環していて、リソース (具体的にはグラフィックス リソース) が使用可能になるまで、移行はできません。 リソースを読み込む非同期タスクが完了すると、状態が __ResourcesLoaded__ に更新されます。 これは通常、2 つのレベルの中間で発生します。レベルの中間では、新しいリソースをディスク、ゲーム サーバー、クラウド バックエンドから読み込みます。 このゲーム サンプルでは、その時点ではレベルごとに追加のリソースは必要ないため、この動作はシミュレートされます。
+2. __キーを押して待つ__:ゲーム ループが循環していて、特定のユーザー入力を待機しています。 この入力は、プレイヤーによるゲームの読み込み、レベルの開始、またはレベルの続行の操作です。 サンプル コードでは、これらの下位状態として、__PressResultState__ 列挙値を使っています。
+3. __Dynamics__:ゲーム ループが実行中で、ユーザーがゲームをしています。 ユーザーがプレイ中に、ゲームは移行できる 3 つの条件をチェックします。 
     * __TimeExpired__: レベルに設定されている時間の有効期限
     * __LevelComplete__: プレイヤーによるレベルの完了 
     * __GameComplete__: プレイヤーによるすべてのレベルの完了
@@ -216,7 +216,7 @@ void GameMain::Update()
 -   スコアとゲーム プレイの現在の状態に関する情報が含まれている HUD。
 -   一時停止ビットマップ。これは、ゲームの一時停止/中断状態中にテキストがオーバーレイされる黒の四角形です。 これがゲーム オーバーレイです。 これについては、「[ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md)」で詳しく説明します。
 
-当然のことながら、オーバーレイにもステート マシンがあります。 オーバーレイは、レベル開始またはゲーム オーバーのメッセージを表示できます。 これは、ゲームが一時停止または中断されたときに、プレーヤーに表示する必要があるゲームの状態に関する情報を出力するキャンバスのように機能します。
+当然のことながら、オーバーレイにもステート マシンがあります。 オーバーレイは、レベル開始またはゲーム オーバーのメッセージを表示できます。 これは、ゲームが一時停止または中断されたときに、プレイヤーに表示する必要があるゲームの状態に関する情報を出力するキャンバスのように機能します。
 
 オーバーレイのレンダリングには、ゲームの状態に応じて、6 つの画面のいずれかを指定できます。 
 1. ゲームの開始時のリソースの読み込み画面
@@ -283,48 +283,48 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br225018"><strong>CoreApplicationView::Activated</strong></a> を処理します。 ゲーム アプリがフォアグラウンドに表示されているため、メイン ウィンドウがアクティブ化されます。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br225018">  <strong>CoreApplicationView::Activated</strong></a> を処理します。 ゲーム アプリがフォアグラウンドに表示されているため、メイン ウィンドウがアクティブ化されます。</td>
 </tr>
 <tr class="even">
 <td align="left">OnDpiChanged</td>
-<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a> を処理します。 ディスプレイの DPI が変更されていて、それに応じてゲームそのリソースを調整します。
+<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged">  <strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a> を処理します。 ディスプレイの DPI が変更されていて、それに応じてゲームそのリソースを調整します。
 <div class="alert">
-<strong>注:</strong><a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong></a>座標は、 <a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>の Dip (デバイスに依存しないピクセル) でです。 このため、2D アセットまたはプリミティブを正しく表示するには、Direct2D に DPI の変更を通知する必要があります。
+<strong>注</strong> <a href="https://msdn.microsoft.com/library/windows/desktop/hh404559"><strong>CoreWindow</strong> </a>の座標は、Dip (デバイス非依存ピクセル) で<a href="https://msdn.microsoft.com/library/windows/desktop/dd370987">Direct2D</a>します。 このため、2D アセットまたはプリミティブを正しく表示するには、Direct2D に DPI の変更を通知する必要があります。
 </div>
 <div>
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left">OnOrientationChanged</td>
-<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_OrientationChanged"><strong>Graphics::Display::DisplayInformation::OrientationChanged</strong></a> を処理します。 ディスプレイの向きが変更され、レンダリングを更新する必要があります。</td>
+<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_OrientationChanged">  <strong>Graphics::Display::DisplayInformation::OrientationChanged</strong></a> を処理します。 ディスプレイの向きが変更され、レンダリングを更新する必要があります。</td>
 </tr>
 <tr class="even">
 <td align="left">OnDisplayContentsInvalidated</td>
-<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DisplayContentsInvalidated"><strong>Graphics::Display::DisplayInformation::DisplayContentsInvalidated</strong></a> を処理します。 ディスプレイを再描画する必要があり、ゲームをもう一度レンダリングする必要があります。</td>
+<td align="left"><a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DisplayContentsInvalidated">  <strong>Graphics::Display::DisplayInformation::DisplayContentsInvalidated</strong></a> を処理します。 ディスプレイを再描画する必要があり、ゲームをもう一度レンダリングする必要があります。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br205859"><strong>CoreApplication::Resuming</strong></a> を処理します。 ゲーム アプリがゲームを中断状態から復元します。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br205859">  <strong>CoreApplication::Resuming</strong></a> を処理します。 ゲーム アプリがゲームを中断状態から復元します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br205860"><strong>CoreApplication::Suspending</strong></a> を処理します。 ゲーム アプリがその状態をディスクに保存します。 ストレージへの状態の保存に使用できる時間は 5 秒です。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br205860">  <strong>CoreApplication::Suspending</strong></a> を処理します。 ゲーム アプリがその状態をディスクに保存します。 ストレージへの状態の保存に使用できる時間は 5 秒です。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/hh701591"><strong>CoreWindow::VisibilityChanged</strong></a> を処理します。 ゲーム アプリの表示が切り替わり、表示されるようになったか、別のアプリが表示されたために非表示になったことを示します。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/hh701591">  <strong>CoreWindow::VisibilityChanged</strong></a> を処理します。 ゲーム アプリの表示が切り替わり、表示されるようになったか、別のアプリが表示されたために非表示になったことを示します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208255"><strong>CoreWindow::Activated</strong></a> を処理します。 ゲーム アプリのメイン ウィンドウが非アクティブ化またはアクティブ化されたため、フォーカスを動かしてゲームを一時停止するか、フォーカスを再取得する必要があります。 どちらの場合も、ゲームが一時停止されていることがオーバーレイに表示されます。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208255">  <strong>CoreWindow::Activated</strong></a> を処理します。 ゲーム アプリのメイン ウィンドウが非アクティブ化またはアクティブ化されたため、フォーカスを動かしてゲームを一時停止するか、フォーカスを再取得する必要があります。 どちらの場合も、ゲームが一時停止されていることがオーバーレイに表示されます。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208261"><strong>CoreWindow::Closed</strong></a> を処理します。 ゲーム アプリがメイン ウィンドウを閉じ、ゲームを中断します。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208261">  <strong>CoreWindow::Closed</strong></a> を処理します。 ゲーム アプリがメイン ウィンドウを閉じ、ゲームを中断します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208283"><strong>CoreWindow::SizeChanged</strong></a> を処理します。 サイズ変更に応じてゲーム アプリがグラフィックス リソースとオーバーレイを再割り当てし、その後、レンダー ターゲットを更新します。</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/br208283">  <strong>CoreWindow::SizeChanged</strong></a> を処理します。 サイズ変更に応じてゲーム アプリがグラフィックス リソースとオーバーレイを再割り当てし、その後、レンダー ターゲットを更新します。</td>
 </tr>
 </tbody>
 </table>
@@ -334,9 +334,9 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 このトピックでは、ゲームの状態を使用してゲーム フロー全体を管理する方法と、ゲームが複数の異なるステート マシンで構成されていることを説明しました。 また、UI を更新する方法や、主要なアプリのイベント ハンドラーを管理する方法についても説明しました。 これで、レンダリング ループ、ゲーム、そのしくみを解説する準備が整いました。
  
 任意の順序でこのゲームを構成するその他のコンポーネントについて学習することができます。
-* [メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)
-* [レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)
-* [レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)
-* [ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md)
-* [コントロールの追加](tutorial--adding-controls.md)
-* [サウンドの追加](tutorial--adding-sound.md)
+* [メイン ゲーム オブジェクトを定義します。](tutorial--defining-the-main-game-loop.md)
+* [レンダリングのフレームワーク i:レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)
+* [レンダリングのフレームワーク II:ゲームのレンダリング](tutorial-game-rendering.md)
+* [ユーザー インターフェイスを追加します。](tutorial--adding-a-user-interface.md)
+* [コントロールを追加します。](tutorial--adding-controls.md)
+* [サウンドを追加します。](tutorial--adding-sound.md)

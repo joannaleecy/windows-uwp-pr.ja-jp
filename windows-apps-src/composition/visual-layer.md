@@ -4,18 +4,18 @@ title: ビジュアル レイヤー
 description: Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 599c2625bffff40a30f26bfb40f7cce9c97acdd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626407"
 ---
 # <a name="visual-layer"></a>ビジュアル レイヤー
 
-ビジュアル レイヤーは、グラフィックス、効果、アニメーション用の高パフォーマンスの保持モード API を提供し、Windows デバイス間ですべての UI の基盤となります。宣言的な方法で UI を定義すると、ビジュアル レイヤーは、グラフィックス ハードウェア アクセラレータを利用し、アプリの UI スレッドから独立して、エラーのない、なめらかな方法でコンテンツ、効果、アニメーションをレンダリングします。
+ビジュアル レイヤーは、グラフィックス、効果、アニメーション用の高パフォーマンスの保持モード API を提供し、Windows デバイス間ですべての UI の基盤となります。 宣言的な方法で UI を定義すると、ビジュアル レイヤーは、グラフィックス ハードウェア アクセラレータを利用し、アプリの UI スレッドから独立して、エラーのない、なめらかな方法でコンテンツ、効果、アニメーションをレンダリングします。
 
 主な特長は次のとおりです。
 
@@ -32,13 +32,13 @@ Windows UWP アプリは、いずれかの UI フレームワークを介して�
 
 ビジュアル レイヤーの主な機能は次のとおりです。
 
-1. **コンテンツ**: カスタム描画コンテンツの軽量合成
-1. **効果**: 効果をアニメーション化、チェーン化、カスタマイズできる、リアルタイム UI 効果システム
-1. **アニメーション**: UI スレッドから独立して実行される、表現力豊かな、フレームワークに依存しないアニメーション
+1. **[コンテンツ]**:カスタムの描画コンテンツの軽量の複合
+1. **効果**:リアルタイム UI 効果システムが効果をアニメーション化、連鎖してカスタマイズできます。
+1. **アニメーション**:UI スレッドから独立して実行されているアニメーションの表現力豊かな、フレームワークに依存しません。
 
 ### <a name="content"></a>コンテンツ
 
-コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 Visual のサブクラスでは、子コンテンツの視覚効果とが含まれている[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)のツリーを作成できるようにする [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)を含めるし、カスタム描画コンテンツ、視覚効果、単色で塗りつぶすことができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
+コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 ビジュアルのサブ クラスが含まれます  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)子のビジュアル ツリーを作成するために、 [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433)ですコンテンツを含み、いずれかの純色、カスタムの描画コンテンツまたは視覚的効果を描画することができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
 
 詳しくは、[コンポジションのビジュアル](composition-visual-tree.md)の概要をご覧ください。
 
@@ -48,24 +48,24 @@ Windows UWP アプリは、いずれかの UI フレームワークを介して�
 
 ビジュアル レイヤーは、アニメーション化可能な効果のチェーンに加えて、アニメーション化可能なライトに応答することにより、ビジュアルでマテリアル プロパティを模倣できるようにする照明モデルもサポートします。 ビジュアルによって、シャドウを生じさせることもできます。 照明とシャドウを組み合わせて使うことで、奥行きとリアルさを感じられるようにすることができます。
 
-詳しくは、[コンポジション効果](composition-effects.md)の概要をご覧ください。
+詳しくは、「[コンポジションの効果](composition-effects.md)」をご覧ください。
 
 ### <a name="animations"></a>アニメーション
 
-ビジュアル レイヤーのアニメーション システムによって、移動の視覚効果、効果のアニメーション化、変換、クリップ、その他のプロパティの駆動を実現できます。これは、パフォーマンスを考慮して一から設計された、フレームワークに依存しないシステムです。UI スレッドから独立して実行されるため、滑らかさとスケーラビリティが実現されます。使い慣れたキー フレーム アニメーションを使って時間の経過に伴うプロパティの変化を駆動できる一方で、ユーザー入力を含む、さまざまなプロパティ間の数学的な関係を設定して、シームレスな演出エクスペリエンスを直接作成することもできます。
+ビジュアル レイヤーのアニメーション システムによって、移動の視覚効果、効果のアニメーション化、変換、クリップ、その他のプロパティの駆動を実現できます。  これは、パフォーマンスを考慮して一から設計された、フレームワークに依存しないシステムです。  UI スレッドから独立して実行されるため、滑らかさとスケーラビリティが実現されます。  使い慣れたキー フレーム アニメーションを使って時間の経過に伴うプロパティの変化を駆動できる一方で、ユーザー入力を含む、さまざまなプロパティ間の数学的な関係を設定して、シームレスな演出エクスペリエンスを直接作成することもできます。
 
 詳しくは、[コンポジションのアニメーション](composition-animation.md)の概要をご覧ください。
 
 ### <a name="working-with-your-xaml-uwp-app"></a>XAML UWP アプリの操作
 
-[**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) の [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) クラスを使用して、XAML フレームワークによってビジュアルを作成できるようになり、表示可能な FrameworkElement を強化することができます。 フレームワークによって作成されたビジュアルには、カスタマイズに関するいくつかの制限があることに注意してください。 これは、フレームワークがオフセット、変換、有効期間を管理するためです。 ただし、独自のビジュアルを作成し、ElementCompositionPreview によって、またはビジュアル ツリー構造内のどこかに既にある ContainerVisual に追加することにより、既存の XAML 要素にアタッチできます。
+[  **Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) の [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) クラスを使用して、XAML フレームワークによってビジュアルを作成できるようになり、表示可能な FrameworkElement を強化することができます。 フレームワークによって作成されたビジュアルには、カスタマイズに関するいくつかの制限があることに注意してください。 これは、フレームワークがオフセット、変換、有効期間を管理するためです。 ただし、独自のビジュアルを作成し、ElementCompositionPreview によって、またはビジュアル ツリー構造内のどこかに既にある ContainerVisual に追加することにより、既存の XAML 要素にアタッチできます。
 
 詳しくは、[XAML でのビジュアル レイヤーの使用](using-the-visual-layer-with-xaml.md)の概要をご覧ください。
 
 ## <a name="additional-resources"></a>その他の資料
 
-* [**API に関する詳しいリファレンス ドキュメント**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+* [**API の完全なリファレンス ドキュメント**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
 * [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル
 * [Windows.UI.Composition サンプル ギャラリー](https://aka.ms/winuiapp)
 * [@windowsui Twitter フィード ](https://twitter.com/windowsui)
-* この API に関する Kenny Kerr の MSDN 記事:「[グラフィックスとアニメーション - 10 年目を迎える Windows Composition](https://msdn.microsoft.com/magazine/mt590968)」
+* この API の Kenny Kerr の MSDN 記事をご覧ください。[グラフィックスとアニメーション - Windows 合成に 10](https://msdn.microsoft.com/magazine/mt590968)

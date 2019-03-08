@@ -1,20 +1,20 @@
 ---
-title: リソース
+title: 参考資料
 description: リソースは、Direct3D パイプラインからアクセスできるメモリ内の領域です。
 ms.assetid: 2E68E5A8-83DA-4DC8-B7F3-B8988CF8090C
 keywords:
-- リソース
+- 参考資料
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c31dcbcc3019538d769118b018c693174b17b4c7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922924"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631477"
 ---
-# <a name="resources"></a>リソース
+# <a name="resources"></a>参考資料
 
 
 リソースは、Direct3D パイプラインからアクセスできるメモリ内の領域です。 パイプラインでメモリに効率的にアクセスするには、パイプラインに渡すデータ (入力ジオメトリ、シェーダー リソース、テクスチャなど) をリソースに格納する必要があります。 すべての Direct3D リソースの派生元となるリソースは 2 種類あります。バッファーとテクスチャです。 各パイプライン ステージでは最大 128 個のリソースをアクティブにできます。
@@ -47,11 +47,11 @@ ms.locfileid: "8922924"
 <td align="left"><p>リソースの種類によって、レイアウト (またはメモリ使用量) はそれぞれ異なります。 Direct3D パイプラインで使用されるリソースはすべて、2 つの基本的なリソースの種類である<a href="resource-types.md#buffer-resources">バッファー</a>と<a href="resource-types.md#texture-resources">テクスチャ</a>から派生したものです。 バッファーは未加工データ (要素) のコレクションで、テクスチャはテクセル (テクスチャ要素) のコレクションです。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="choosing-a-resource.md">リソースの選択</a></p></td>
+<td align="left"><p><a href="choosing-a-resource.md">リソースを選択します。</a></p></td>
 <td align="left"><p>リソースは、3D パイプラインで使用されるデータのコレクションです。 リソースを作成してその動作を定義することが、アプリケーションをプログラミングするための第一歩になります。 このガイドでは、アプリケーションで必要なリソースの選択に関する基本的なトピックについて説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="copying-and-accessing-resource-data.md">リソース データのコピーとアクセス</a></p></td>
+<td align="left"><p><a href="copying-and-accessing-resource-data.md">コピーと、リソースのデータにアクセスします。</a></p></td>
 <td align="left"><p>使用法フラグは、アプリケーションがリソース データをどのように使用するかを示し、リソースを可能な限りメモリのパフォーマンスの高い領域に配置します。 リソース データはリソース間でコピーされ、CPU または GPU がパフォーマンスに影響を与えることなくリソースにアクセスできるようにします。</p></td>
 </tr>
 <tr class="even">
@@ -68,7 +68,7 @@ ms.locfileid: "8922924"
 
 [座標系](coordinate-systems.md)
 
-[Direct3D グラフィックスの学習ガイド](index.md)
+[Direct3D グラフィックス学習ガイド](index.md)
 
 [浮動小数点の規則](floating-point-rules.md)
 

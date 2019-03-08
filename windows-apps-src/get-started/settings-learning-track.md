@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, 設定, 設定の保存, 
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614637"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>UWP アプリでの設定の保存と読み込み
 
@@ -95,11 +95,11 @@ API の簡単な概要と、アプリの設定の保存と読み込みを開始�
 
 | トピック | 説明 |
 |-------|----------------|
-| [アプリ設定のガイドライン](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | アプリ設定を作成し表示する際のベスト プラクティスについて説明します。 |
+| [アプリの設定に関するガイドライン](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | アプリ設定を作成し表示する際のベスト プラクティスについて説明します。 |
 | [設定と他のアプリ データを保存して取得する](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | ローミング設定など、設定の保存と取得に関するチュートリアルです。 |
 
 ## <a name="useful-code-samples"></a>役立つコード サンプル
 
 | コード サンプル | 説明 |
 |-----------------|---------------|
-| [アプリケーション データ サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | 設定に焦点を当てたシナリオ 2-4 |
+| [アプリケーション データのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) | 設定に焦点を当てたシナリオ 2-4 |

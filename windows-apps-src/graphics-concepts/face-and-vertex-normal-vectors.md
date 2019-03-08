@@ -1,25 +1,25 @@
 ---
-title: 面と頂点の法線ベクトル
+title: 顔と頂点の標準ベクター
 description: メッシュ内の各面には、垂直な単位法線ベクトルがあります。 ベクトルの方向は、頂点が定義された順序によって、また座標系が右手系であるか左手系であるかによって決まります。
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
-- 面と頂点の法線ベクトル
+- 顔と頂点の標準ベクター
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929893"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636557"
 ---
-# <a name="face-and-vertex-normal-vectors"></a>面と頂点の法線ベクトル
+# <a name="face-and-vertex-normal-vectors"></a>顔と頂点の標準ベクター
 
 
 メッシュ内の各面には、垂直な単位法線ベクトルがあります。 ベクトルの方向は、頂点が定義された順序によって、また座標系が右手系であるか左手系であるかによって決まります。
 
-## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>前面対して垂直な単位法線ベクトル
+## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>フロント面の法線ベクトルを垂直単位
 
 
 メッシュ内の各面には、垂直な単位法線ベクトルがあります。 ベクトルの方向は、頂点が定義された順序によって、また座標系が右手系であるか左手系であるかによって決まります。 面の法線の向きは面の前面から離れる方向です。 Direct3D では、面の前面のみが表示されます。 前面は、頂点が時計回りの順序で定義されている面です。
@@ -28,12 +28,12 @@ ms.locfileid: "8929893"
 
 ![前面の法線ベクトル](images/nrmlvect.png)
 
-## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>背面のカリング
+## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>Faces カリング戻る
 
 
 前面ではない面はすべて背面です。 Direct3D では、背面は常にレンダリングされるわけではありません。これを、背面がカリングされているといいます。 背面のカリングは、背面がレンダリングされなくなることを意味します。 必要に応じて、カリング モードを変更し、背面をレンダリングすることもできます。 詳細については、「[カリング ステート](https://msdn.microsoft.com/library/windows/desktop/bb204882)」を参照してください。
 
-## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>頂点の単位法線
+## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>単位の頂点の法線
 
 
 Direct3D では、グーロー シェーディング、光源、テクスチャの効果に頂点の単位法線を使用します。
@@ -44,7 +44,7 @@ Direct3D では、グーロー シェーディング、光源、テクスチャ�
 
 グーロー シェーディングを多角形に適用するとき、Direct3D では、頂点法線を使用して光源とサーフェスの間の角度が計算されます。 頂点の色と明るさの値が計算され、プリミティブのすべてのサーフェスで、すべてのポイントが補間されます。 Direct3D では、角度を使用して光の強さを計算します。 角度が大きいほど、サーフェスでの光の輝きは少なくなります。
 
-## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>平坦なサーフェス
+## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>フラット サーフェス
 
 
 平坦なオブジェクトを作成している場合は、サーフェスに対して垂線になるように頂点法線を設定します。
@@ -53,7 +53,7 @@ Direct3D では、グーロー シェーディング、光源、テクスチャ�
 
 ![頂点法線と 2 つの三角形から成る平坦なサーフェス](images/flatvert.png)
 
-## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>平坦ではないオブジェクト上のスムーズ シェーディング
+## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>フラットでないオブジェクトで滑らかな網掛け
 
 
 オブジェクトは、平坦なオブジェクトではなく、三角形ストリップで構成されており、三角形が同一平面上にないことがほとんどです。 ストリップ内のすべての三角形でスムーズ シェーディングを実現するための最も簡単な方法の 1 つは、まず頂点が関連付けられている多角形の面ごとにサーフェスの法線ベクトルを計算することです。 頂点法線は、各サーフェスの法線と等しい角度になるように設定できます。 ただし、この方法は、複雑なプリミティブには十分に効率的でないことがあります。

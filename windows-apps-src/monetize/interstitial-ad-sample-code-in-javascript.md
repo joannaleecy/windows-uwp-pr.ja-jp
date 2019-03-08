@@ -7,15 +7,15 @@ ms.topic: article
 keywords: windows 10, UWP, 広告, Advertising, スポット, JavaScript, サンプルコード
 ms.localizationpriority: medium
 ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047111"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618557"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>JavaScript を使ったスポット広告のサンプル コード
 
-このトピックでは、スポット広告を表示する基本的な JavaScript と HTML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。 このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads) をご覧ください。
+このトピックでは、スポット広告を表示する基本的な JavaScript と HTML のユニバーサル Windows プラットフォーム (UWP) アプリの完全なサンプル コードを示します。 このコードを使うためのプロジェクトの詳しい構成手順については、「[スポット広告](interstitial-ads.md)」をご覧ください。 完全なサンプル プロジェクトについては、[GitHub の広告サンプル](https://aka.ms/githubads)をご覧ください。
 
 ## <a name="code-example"></a>コードの例
 
@@ -23,7 +23,7 @@ ms.locfileid: "9047111"
 
 このサンプル アプリでは 2 つのボタンを使用して、スポット広告を要求して起動します。 Visual Studio によって生成された main.js ファイルと index.html ファイルは変更されています。これらのファイルを次に示します。 次に示す script.js ファイルには、サンプルのコードの大半が含まれています。このファイルは **js** フォルダーのプロジェクトに追加します。
 
-値に置き換えます、```applicationId```と```adUnitId```変数をパートナー センターから、ストアにアプリを提出する前に実際の値。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
+値を置き換える、```applicationId```と```adUnitId```ストアにアプリを送信する前にパートナー センターからライブの値を持つ変数です。 詳しくは、「[アプリの広告ユニットをセットアップする](set-up-ad-units-in-your-app.md#live-ad-units)」をご覧ください。
 
 > [!NOTE]
 > ビデオ スポット広告ではなくバナー スポット広告を表示するようにこの例を変更するには、[RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) メソッドの最初のパラメーターとして、**InterstitialAdType.video** の代わりに値 **InterstitialAdType.display** を渡します。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。

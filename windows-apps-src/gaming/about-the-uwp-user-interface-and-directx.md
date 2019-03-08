@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、DirectX、アプリ オブジェクト
 ms.localizationpriority: medium
 ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922977"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616977"
 ---
 # <a name="the-app-object-and-directx"></a>アプリ オブジェクトと DirectX
 
@@ -19,7 +19,7 @@ ms.locfileid: "8922977"
 
 DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。 逆に、それらのアプリは Windows ランタイム スタックの下位レベルで実行されることから、アプリ オブジェクトに直接アクセスして相互運用するという基本的な方法でユーザー インターフェイス フレームワークと相互運用する必要があります。 ここでは、この相互運用をいつどのように行うかと、DirectX 開発者が UWP アプリの開発でこのモデルを効果的に使う方法を説明します。
 
-グラフィックスなじみのない用語や読み取り中に発生する概念についての[Direct3D グラフィックスの用語集](../graphics-concepts/index.md)を参照してください。
+参照してください、 [Direct3D グラフィックスの用語集](../graphics-concepts/index.md)についてよく知らないグラフィックス用語や概念の読み取り中に発生します。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要なコア ユーザー インターフェイスの名前空間
 
@@ -32,7 +32,7 @@ DirectX を使ったユニバーサル Windows プラットフォーム (UWP) �
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注:**  UWP アプリを開発していない場合は、JavaScript または XAML 専用のライブラリとこれらの名前空間で提供される型ではなく、名前空間で提供されるユーザー インターフェイス コンポーネントを使用します。
+> **注**   UWP アプリを開発していない場合は、JavaScript または XAML に固有のライブラリと、これらの名前空間で提供される種類ではなく名前空間で提供されるユーザー インターフェイス コンポーネントを使用します。
 
  
 
@@ -43,21 +43,21 @@ UWP アプリでは、ウィンドウとビュー プロバイダーを取得し
 
 コア ユーザー インターフェイス フレームワークを使ってウィンドウを取得する基本的な手順を次に示します。
 
-1.  [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装する型を作成します。 これがビューになります。
+1.  [  **IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装する型を作成します。 これがビューになります。
 
     この型で次のメソッドを定義します。
 
-    -   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッド。[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、[**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) を呼び出します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
-    -   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、新しい [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) インスタンスの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。
-    -   [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) メソッド。エントリ ポイントの文字列を唯一のパラメーターとして使います。 このメソッドを呼び出すと、アプリ オブジェクトからエントリ ポイントの文字列が提供されます。 ここでリソースをセットアップします。 ここでデバイス リソースを作成します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
-    -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトをアクティブ化し、ウィンドウ イベント ディスパッチャーを開始します。 アプリ オブジェクトは、アプリのプロセスが開始されたときにこのメソッドを呼び出します。
-    -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) メソッド。[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)  の呼び出しでセットアップされたリソースをクリーンアップします。 アプリ オブジェクトは、アプリ終了時にこのメソッドを呼び出します。
+    -   [  **Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッド。[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、[**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) を呼び出します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
+    -   [  **SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、新しい [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) インスタンスの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。
+    -   [  **Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) メソッド。エントリ ポイントの文字列を唯一のパラメーターとして使います。 このメソッドを呼び出すと、アプリ オブジェクトからエントリ ポイントの文字列が提供されます。 ここでリソースをセットアップします。 ここでデバイス リソースを作成します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
+    -   [  **Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトをアクティブ化し、ウィンドウ イベント ディスパッチャーを開始します。 アプリ オブジェクトは、アプリのプロセスが開始されたときにこのメソッドを呼び出します。
+    -   [  **Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) メソッド。[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)  の呼び出しでセットアップされたリソースをクリーンアップします。 アプリ オブジェクトは、アプリ終了時にこのメソッドを呼び出します。
 
-2.  [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) を実装する型を作成します。 これがビュー プロバイダーになります。
+2.  [  **IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) を実装する型を作成します。 これがビュー プロバイダーになります。
 
     この型で次のメソッドを定義します。
 
-    -   [**CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) メソッド。手順 1. で作成した [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 実装のインスタンスを返します。
+    -   [  **CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) メソッド。手順 1. で作成した [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 実装のインスタンスを返します。
 
 3.  ビュー プロバイダーのインスタンスを、**main** から [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) に渡します。
 
@@ -87,21 +87,21 @@ Windows ランタイムには、他にも次のような便利なコア ユー�
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView の動作とプロパティ
 
 
-[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) は、現在のアプリ ビューを表します。 アプリ ビューは、初期化時にアプリ シングルトンによって作成されますが、アクティブ化されるまでアクティブになりません。 ビューを表示する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を取得するには、そのビューの [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。また、ビューのアクティブ化イベントと非アクティブ化イベントを処理するには、[**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントにデリゲートを登録します。
+[**CoreApplicationView** ](https://msdn.microsoft.com/library/windows/apps/br225017)アプリの現在のビューを表します。 アプリ ビューは、初期化時にアプリ シングルトンによって作成されますが、アクティブ化されるまでアクティブになりません。 ビューを表示する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を取得するには、そのビューの [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。また、ビューのアクティブ化イベントと非アクティブ化イベントを処理するには、[**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントにデリゲートを登録します。
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow の動作とプロパティ
 
 
 アプリ オブジェクトが初期化されるときに、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスである親ウィンドウが作成され、ビュー プロバイダーに渡されます。 アプリに表示するウィンドウがある場合はそれが表示され、そうでない場合はビューの初期化のみが行われます。
 
-[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) では、入力および基本のウィンドウ動作専用のイベントを多数提供しています。 これらのイベントを処理するには、イベントに自分専用のデリゲートを登録します。
+[**CoreWindow** ](https://msdn.microsoft.com/library/windows/apps/br208225)イベントの数を入力し、基本的な特定のウィンドウの動作を提供します。 これらのイベントを処理するには、イベントに自分専用のデリゲートを登録します。
 
 ウィンドウに使うウィンドウ イベント ディスパッチャーを取得することもできます。そのためには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) のインスタンスを提供する [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) プロパティにアクセスします。
 
 ## <a name="coredispatcher-behaviors-and-properties"></a>CoreDispatcher の動作とプロパティ
 
 
-[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 型のウィンドウに使うイベント ディスパッチのスレッド動作を決定できます。 この型には、ウィンドウ イベント処理を開始する特に重要なメソッド [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) があります。 アプリで間違ったオプションを指定してこのメソッドを呼び出すと、さまざまな予期しないイベント処理動作が発生する可能性があります。
+[  **CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 型のウィンドウに使うイベント ディスパッチのスレッド動作を決定できます。 この型には、ウィンドウ イベント処理を開始する特に重要なメソッド [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) があります。 アプリで間違ったオプションを指定してこのメソッドを呼び出すと、さまざまな予期しないイベント処理動作が発生する可能性があります。
 
 | CoreProcessEventsOption のオプション                                                           | 説明                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +137,7 @@ DirectX を使った UWP アプリのアプリ オブジェクトは、アクテ
 
 ASTA スレッドで実行するために元のコードを移植している場合、これらの考慮事項に注意してください。
 
--   [**CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144) などの待機プリミティブは、STA 内と ASTA 内とで動作が異なります。
+-   [  **CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144) などの待機プリミティブは、STA 内と ASTA 内とで動作が異なります。
 -   COM 呼び出しモーダル ループの動作は ASTA では異なります。 呼び出しの進行中は、無関係な呼び出しを受け取ることができなくなります。 たとえば、次の動作は ASTA からデッドロックを引き起こします (さらに、即座にアプリがクラッシュします)。
     1.  ASTA が MTA オブジェクトを呼び出し、インターフェイス ポインター P1 を渡します。
     2.  その後で、ASTA が同じ MTA オブジェクトを呼び出します。 MTA オブジェクトは、ASTA に制御を返す前に P1 を呼び出します。
