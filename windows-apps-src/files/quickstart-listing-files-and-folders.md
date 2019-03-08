@@ -4,7 +4,7 @@ title: ファイルとフォルダーの列挙と照会
 description: フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
@@ -12,37 +12,37 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045098"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613927"
 ---
-# <a name="enumerate-and-query-files-and-folders"></a><span data-ttu-id="4f251-105">ファイルとフォルダーの列挙と照会</span><span class="sxs-lookup"><span data-stu-id="4f251-105">Enumerate and query files and folders</span></span>
+# <a name="enumerate-and-query-files-and-folders"></a><span data-ttu-id="da747-105">ファイルとフォルダーの列挙と照会</span><span class="sxs-lookup"><span data-stu-id="da747-105">Enumerate and query files and folders</span></span>
 
-<span data-ttu-id="4f251-106">フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4f251-106">Access files and folders in either a folder, library, device, or network location.</span></span> <span data-ttu-id="4f251-107">ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。</span><span class="sxs-lookup"><span data-stu-id="4f251-107">You can also query the files and folders in a location by constructing file and folder queries.</span></span>
+<span data-ttu-id="da747-106">フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="da747-106">Access files and folders in either a folder, library, device, or network location.</span></span> <span data-ttu-id="da747-107">ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。</span><span class="sxs-lookup"><span data-stu-id="da747-107">You can also query the files and folders in a location by constructing file and folder queries.</span></span>
 
-<span data-ttu-id="4f251-108">ユニバーサル Windows プラットフォーム アプリのデータを保存する方法について詳しくは、[ApplicationData](/uwp/api/windows.storage.applicationdata) クラスをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4f251-108">For guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](/uwp/api/windows.storage.applicationdata) class.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="4f251-109">完全なサンプルについては、[フォルダーの列挙のサンプル](https://go.microsoft.com/fwlink/p/?linkid=619993)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4f251-109">For a complete sample, see the [Folder enumeration sample](https://go.microsoft.com/fwlink/p/?linkid=619993).</span></span>
-
-## <a name="prerequisites"></a><span data-ttu-id="4f251-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="4f251-110">Prerequisites</span></span>
-
--   **<span data-ttu-id="4f251-111">ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解</span><span class="sxs-lookup"><span data-stu-id="4f251-111">Understand async programming for Universal Windows Platform (UWP) apps</span></span>**
-
-    <span data-ttu-id="4f251-112">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4f251-112">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).</span></span> <span data-ttu-id="4f251-113">C++ 非同期アプリの作成する方法について/WinRT を参照してください[同時実行と非同期操作において、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。</span><span class="sxs-lookup"><span data-stu-id="4f251-113">To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).</span></span> <span data-ttu-id="4f251-114">C++ で非同期アプリの作成する方法について +/CX を参照してください[、C++ での非同期プログラミング/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。</span><span class="sxs-lookup"><span data-stu-id="4f251-114">To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).</span></span>
-
--   **<span data-ttu-id="4f251-115">場所へのアクセス許可</span><span class="sxs-lookup"><span data-stu-id="4f251-115">Access permissions to the location</span></span>**
-
-    <span data-ttu-id="4f251-116">たとえば、これらの例のコードでは **picturesLibrary** 機能が必要ですが、場所によっては別の機能が必要であったり、機能をまったく必要としない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="4f251-116">For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all.</span></span> <span data-ttu-id="4f251-117">詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4f251-117">To learn more, see [File access permissions](file-access-permissions.md).</span></span>
-
-## <a name="enumerate-files-and-folders-in-a-location"></a><span data-ttu-id="4f251-118">ある場所のファイルやフォルダーを列挙する</span><span class="sxs-lookup"><span data-stu-id="4f251-118">Enumerate files and folders in a location</span></span>
+<span data-ttu-id="da747-108">ユニバーサル Windows プラットフォーム アプリのデータを保存する方法について詳しくは、[ApplicationData](/uwp/api/windows.storage.applicationdata) クラスをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da747-108">For guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](/uwp/api/windows.storage.applicationdata) class.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4f251-119">必ず **picturesLibrary** 機能を宣言してください。</span><span class="sxs-lookup"><span data-stu-id="4f251-119">Remember to declare the **picturesLibrary** capability.</span></span>
+><span data-ttu-id="da747-109"> 完全なサンプルを参照してください、[フォルダーの列挙サンプル](https://go.microsoft.com/fwlink/p/?linkid=619993)します。</span><span class="sxs-lookup"><span data-stu-id="da747-109"> For a complete sample, see the [Folder enumeration sample](https://go.microsoft.com/fwlink/p/?linkid=619993).</span></span>
 
-<span data-ttu-id="4f251-120">この例ではまずメソッドを使用して、 [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) (サブフォルダーは除く) ではなく[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)のルート フォルダー内のすべてのファイルを取得して、各ファイルの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="4f251-120">In this example we first use the [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) method to get all the files in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders) and list the name of each file.</span></span> <span data-ttu-id="4f251-121">次に、メソッドを使用して、 [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) **PicturesLibrary**内のすべてのサブフォルダーを取得し、各サブフォルダーの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="4f251-121">Next, we use the [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="da747-110">前提条件</span><span class="sxs-lookup"><span data-stu-id="da747-110">Prerequisites</span></span>
+
+-   <span data-ttu-id="da747-111">**ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**</span><span class="sxs-lookup"><span data-stu-id="da747-111">**Understand async programming for Universal Windows Platform (UWP) apps**</span></span>
+
+    <span data-ttu-id="da747-112">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da747-112">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).</span></span> <span data-ttu-id="da747-113">C + で非同期アプリを作成する方法について/cli WinRT を参照してください[同時実行と非同期操作を C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。</span><span class="sxs-lookup"><span data-stu-id="da747-113">To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).</span></span> <span data-ttu-id="da747-114">C + で非同期アプリを作成する方法について/cli CX を参照してください[非同期プログラミングの C +/cli CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。</span><span class="sxs-lookup"><span data-stu-id="da747-114">To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).</span></span>
+
+-   <span data-ttu-id="da747-115">**場所へのアクセス許可**</span><span class="sxs-lookup"><span data-stu-id="da747-115">**Access permissions to the location**</span></span>
+
+    <span data-ttu-id="da747-116">たとえば、これらの例のコードでは **picturesLibrary** 機能が必要ですが、場所によっては別の機能が必要であったり、機能をまったく必要としない場合もあります。</span><span class="sxs-lookup"><span data-stu-id="da747-116">For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all.</span></span> <span data-ttu-id="da747-117">詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="da747-117">To learn more, see [File access permissions](file-access-permissions.md).</span></span>
+
+## <a name="enumerate-files-and-folders-in-a-location"></a><span data-ttu-id="da747-118">ある場所のファイルやフォルダーを列挙する</span><span class="sxs-lookup"><span data-stu-id="da747-118">Enumerate files and folders in a location</span></span>
+
+> [!NOTE]
+><span data-ttu-id="da747-119"> 忘れずに宣言する、 *\*picturesLibrary*\*機能します。</span><span class="sxs-lookup"><span data-stu-id="da747-119"> Remember to declare the *\*picturesLibrary** capability.</span></span>
+
+<span data-ttu-id="da747-120">この例ではまず使用して、 [ **StorageFolder.GetFilesAsync** ](/uwp/api/windows.storage.storagefolder.getfilesasync)のルート フォルダー内のすべてのファイルを取得するメソッド、 [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (サブフォルダー) ではなくおよび各ファイルの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="da747-120">In this example we first use the [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) method to get all the files in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders) and list the name of each file.</span></span> <span data-ttu-id="da747-121">次に、使用、 [ **StorageFolder.GetFoldersAsync** ](/uwp/api/windows.storage.storagefolder.getfoldersasync)のすべてのサブフォルダーを取得するメソッド、 **PicturesLibrary**および各サブフォルダーの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="da747-121">Next, we use the [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.</span></span>
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -175,9 +175,9 @@ Next folder
 ```
 
 > [!NOTE]
-> <span data-ttu-id="4f251-122">C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。</span><span class="sxs-lookup"><span data-stu-id="4f251-122">In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.</span></span>
+> <span data-ttu-id="da747-122">C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。</span><span class="sxs-lookup"><span data-stu-id="da747-122">In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.</span></span>
 
-<span data-ttu-id="4f251-123">また、特定の場所ですべての項目 (ファイルとサブフォルダーの両方) を取得するのに[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)メソッドを使用することができます。</span><span class="sxs-lookup"><span data-stu-id="4f251-123">Alternatively, you can use the [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location.</span></span> <span data-ttu-id="4f251-124">次の例では、 **GetItemsAsync**メソッドを使用して、(サブフォルダーは除く) ではなく、すべてのファイルと[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)のルート フォルダーにサブフォルダーを取得します。</span><span class="sxs-lookup"><span data-stu-id="4f251-124">The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders).</span></span> <span data-ttu-id="4f251-125">その後、各ファイルとサブフォルダーの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="4f251-125">Then the example lists the name of each file and subfolder.</span></span> <span data-ttu-id="4f251-126">項目がサブフォルダーの場合は、名前に `"folder"` を追加します。</span><span class="sxs-lookup"><span data-stu-id="4f251-126">If the item is a subfolder, the example appends `"folder"` to the name.</span></span>
+<span data-ttu-id="da747-123">また、使用することができます、 [ **StorageFolder.GetItemsAsync** ](/uwp/api/windows.storage.storagefolder.getitemsasync)特定の場所ですべての項目 (ファイルとサブフォルダー) を取得します。</span><span class="sxs-lookup"><span data-stu-id="da747-123">Alternatively, you can use the [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location.</span></span> <span data-ttu-id="da747-124">次の例では、 **GetItemsAsync**すべてのファイルとサブフォルダーのルート フォルダーを取得するメソッド、 [ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) (サブフォルダー) ではないです。</span><span class="sxs-lookup"><span data-stu-id="da747-124">The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders).</span></span> <span data-ttu-id="da747-125">その後、各ファイルとサブフォルダーの名前を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="da747-125">Then the example lists the name of each file and subfolder.</span></span> <span data-ttu-id="da747-126">項目がサブフォルダーの場合は、名前に `"folder"` を追加します。</span><span class="sxs-lookup"><span data-stu-id="da747-126">If the item is a subfolder, the example appends `"folder"` to the name.</span></span>
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -278,11 +278,11 @@ For Each item In itemsList
 Next item
 ```
 
-## <a name="query-files-in-a-location-and-enumerate-matching-files"></a><span data-ttu-id="4f251-127">ある場所に保存されているファイルを照会して、一致するファイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="4f251-127">Query files in a location and enumerate matching files</span></span>
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a><span data-ttu-id="da747-127">ある場所に保存されているファイルを照会して、一致するファイルを列挙する</span><span class="sxs-lookup"><span data-stu-id="da747-127">Query files in a location and enumerate matching files</span></span>
 
-<span data-ttu-id="4f251-128">この例では、月、この時点でグループ化された[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)内のすべてのファイルの照会の例のサブフォルダーに再帰の回数します。</span><span class="sxs-lookup"><span data-stu-id="4f251-128">In this example we query for all the files in the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) grouped by the month, and this time the example recurses into subfolders.</span></span> <span data-ttu-id="4f251-129">まず、[**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) を呼び出し、[**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) の値をメソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="4f251-129">First, we call [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) and pass the [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) value to the method.</span></span> <span data-ttu-id="4f251-130">これで、[**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) オブジェクトが取得されます。</span><span class="sxs-lookup"><span data-stu-id="4f251-130">That gives us a [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) object.</span></span>
+<span data-ttu-id="da747-128">この例ではクエリ内のすべてのファイルの[ **KnownFolders.PicturesLibrary** ](/uwp/api/windows.storage.knownfolders.pictureslibrary) 、月単位でグループ化され、今回は例のサブフォルダーを再帰的に検索します。</span><span class="sxs-lookup"><span data-stu-id="da747-128">In this example we query for all the files in the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) grouped by the month, and this time the example recurses into subfolders.</span></span> <span data-ttu-id="da747-129">まず、[**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) を呼び出し、[**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) の値をメソッドに渡します。</span><span class="sxs-lookup"><span data-stu-id="da747-129">First, we call [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) and pass the [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) value to the method.</span></span> <span data-ttu-id="da747-130">これで、[**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) オブジェクトが取得されます。</span><span class="sxs-lookup"><span data-stu-id="da747-130">That gives us a [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) object.</span></span>
 
-<span data-ttu-id="4f251-131">次に、仮想フォルダーを表す [**StorageFolder**](/uwp/api/windows.storage.storagefolder) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="4f251-131">Next we call [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) which returns [**StorageFolder**](/uwp/api/windows.storage.storagefolder) objects representing virtual folders.</span></span> <span data-ttu-id="4f251-132">ここでは月でグループ化されているため、各仮想フォルダーは同じ月にあるファイルのグループを表します。</span><span class="sxs-lookup"><span data-stu-id="4f251-132">In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.</span></span>
+<span data-ttu-id="da747-131">次に、仮想フォルダーを表す [**StorageFolder**](/uwp/api/windows.storage.storagefolder) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="da747-131">Next we call [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) which returns [**StorageFolder**](/uwp/api/windows.storage.storagefolder) objects representing virtual folders.</span></span> <span data-ttu-id="da747-132">ここでは月でグループ化されているため、各仮想フォルダーは同じ月にあるファイルのグループを表します。</span><span class="sxs-lookup"><span data-stu-id="da747-132">In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.</span></span>
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -417,7 +417,7 @@ For Each folder As StorageFolder In folderList
 Next folder
 ```
 
-<span data-ttu-id="4f251-133">この例の出力は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="4f251-133">The output of the example looks similar to the following.</span></span>
+<span data-ttu-id="da747-133">この例の出力は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="da747-133">The output of the example looks similar to the following.</span></span>
 
 ```syntax
 July ‎2015 (2)
