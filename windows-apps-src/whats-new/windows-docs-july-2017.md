@@ -6,11 +6,11 @@ ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1875fecbdfa6b97cdc30413c8afa6cc58d3251ef
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045481"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595037"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 7 月
 
@@ -40,7 +40,7 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 次のコントロールは、[Windows Insider](https://insider.windows.com/) を対象に SDK Preview Build で提供されます。これらの新しいコントロールを使うと、優れた外観の UI をすばやく簡単に作成できます。
 
-[カラー ピッカー コントロール](../design/controls-and-patterns/color-picker.md)では、ユーザーが色を自由に確認しながら選択できます。  
+ユーザーは[カラー ピッカー コントロール](../design/controls-and-patterns/color-picker.md)を使って、色を自由に確認し、選択できます。  
 
 ![既定のカラー ピッカー](../design/controls-and-patterns/images/color-picker-default.png)
 
@@ -78,7 +78,7 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 ### <a name="my-people"></a>マイ連絡先
 
-[Windows Insider](https://insider.windows.com/) を対象に SDK Preview Build で提供されるマイ連絡先機能を使うと、アプリケーションからユーザーのタスク バーに連絡先を直接ピン留めすることができます。 [アプリケーションにマイ連絡先のサポートを追加する方法については、こちらをご覧ください。](../contacts-and-calendar/my-people-support.md)
+[Windows Insider](https://insider.windows.com/) を対象に SDK Preview Build で提供されるマイ連絡先機能を使うと、アプリケーションからユーザーのタスク バーに連絡先を直接ピン留めすることができます。 [マイ ユーザー サポート、アプリケーションを追加する方法について説明します。](../contacts-and-calendar/my-people-support.md)
 
 ![マイ連絡先の連絡先パネル](images/my-people.png)
 

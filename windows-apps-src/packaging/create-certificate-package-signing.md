@@ -1,19 +1,19 @@
 ---
-title: パッケージ署名用の証明書を作成する
-description: PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートします。
+title: パッケージ署名用証明書を作成する
+description: PowerShell ツールを使ってアプリ パッケージ署名用を作成し、エクスポートします。
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 ms.localizationpriority: medium
 ms.openlocfilehash: 963c73bb7667ced5bbe9e33fef0cac561fe1183a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928976"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591547"
 ---
-# <a name="create-a-certificate-for-package-signing"></a>パッケージ署名用の証明書を作成する
+# <a name="create-a-certificate-for-package-signing"></a>パッケージ署名用証明書を作成する
 
 
 この記事では、PowerShell ツールを使用して、アプリ パッケージ署名用の証明書を作成してエクスポートする方法について説明します。 Visual Studio を使用して [UWP アプリをパッケージ化する](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)ことをお勧めしますが、Visual Studio を使用してアプリを開発していない場合は、ストア対応アプリを手動でパッケージ化することができます。
@@ -23,10 +23,10 @@ ms.locfileid: "8928976"
 
 ## <a name="prerequisites"></a>前提条件
 
-- **パッケージ化されている、またはパッケージ化されていないアプリ**  
+- **パッケージまたはパッケージ化されていないアプリ**  
 AppxManifest.xml ファイルを含むアプリ。 マニフェスト ファイルを参照して、最終的なアプリ パッケージの署名に使われる証明書を作成する必要があります。 手動でアプリをパッケージ化する方法について詳しくは、「[MakeAppx.exe ツールを使ってアプリ パッケージを作成する](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」をご覧ください。
 
-- **公開キー基盤 (PKI) コマンドレット**  
+- **公開キー基盤 (PKI) のコマンドレット**  
 署名証明書を作成およびエクスポートするには、PKI コマンドレットが必要です。 詳しくは、「[公開キー基盤コマンドレット](https://docs.microsoft.com/powershell/module/pkiclient/)」をご覧ください。
 
 ## <a name="create-a-self-signed-certificate"></a>自己署名証明書を作成する
@@ -54,9 +54,9 @@ PowerShell コマンドレット **New-SelfSignedCertificate** を使用して�
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName <Your Friendly Name> -CertStoreLocation "Cert:\LocalMachine\My"
 ```
 
-このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドの結果には、証明書のサムプリントも生成されます。  
+このコマンドを実行すると、"-CertStoreLocation" パラメーターで指定されたローカル証明書ストアに証明書が追加されます。 コマンドの結果には、証明書の拇印も生成されます。  
 
-**注意**  
+**注:**  
 次のコマンドを使って、PowerShell ウィンドウで証明書を表示できます。
 ```
 Set-Location Cert:\LocalMachine\My
@@ -70,18 +70,18 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
 **Export-PfxCertificate** コマンドレットを使用する場合は、パスワードを作成して使用するか、"-ProtectTo" パラメーターを使用して、パスワードなしでファイルにアクセスできるユーザーまたはグループを指定する必要があります。 "-Password" または "-ProtectTo" パラメーターのいずれかを使用しない場合、エラーが表示されます。
 
-- **Password を使用**
+- **パスワードの使用**
 ```
 $pwd = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\LocalMachine\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $pwd
 ```
 
-- **ProtectTo を使用**
+- **ProtectTo 使用状況**
 ```
 Export-PfxCertificate -cert Cert:\LocalMachine\My\<Certificate Thumbprint> -FilePath <FilePath>.pfx -ProtectTo <Username or group name>
 ```
 
 証明書を作成してエクスポートしたら、**SignTool** を使ってアプリ パッケージに署名する準備が整いました。 手動によるパッケージ化プロセスの次の手順については、「[SignTool を使ったアプリ パッケージの署名](https://msdn.microsoft.com/windows/uwp/packaging/sign-app-package-using-signtool)」をご覧ください。
 
-## <a name="security-considerations"></a>セキュリティの考慮事項 
+## <a name="security-considerations"></a>セキュリティに関する考慮事項 
 [ローカル コンピューターの証明書ストア](https://msdn.microsoft.com/windows/hardware/drivers/install/local-machine-and-current-user-certificate-stores)に証明書を追加することによって、コンピューター上のすべてのユーザーの証明書の信頼に影響します。 システムの信頼性を損なうのを防ぐために、これらの証明書が不要になったときには、削除することをお勧めします。

@@ -4,14 +4,14 @@ title: XAML 名前スコープ
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ffe6119e9cac162486d23472f5d5876924b7ef9e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928423"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589817"
 ---
 # <a name="xaml-namescopes"></a>XAML 名前スコープ
 
@@ -24,13 +24,13 @@ XAML 名前スコープ内で名前を使うと、最初に XAML で定義され
 
 XAML 名前スコープ内の名前の最も一般的な用途は、オブジェクト インスタンスに対する直接参照です。これは、マークアップ コンパイル パスを部分クラス テンプレートに生成された **InitializeComponent** メソッドと組み合わせてプロジェクト ビルド アクションとして使うことで、有効化されます。
 
-[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) ユーティリティ メソッドを実行時に使って、XAML マークアップで名前を定義されているオブジェクトへの参照を返すこともできます。
+[  **FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) ユーティリティ メソッドを実行時に使って、XAML マークアップで名前を定義されているオブジェクトへの参照を返すこともできます。
 
 ### <a name="more-about-build-actions-and-xaml"></a>ビルド アクションと XAML の詳細
 
 技術的には、XAML 自体はマークアップ コンパイラ パスを使います。この際、XAML と、コード ビハインド用に定義した部分クラスがまとめてコンパイルされます。 マークアップで定義された **Name** 属性または [x:Name](x-name-attribute.md) 属性を持つ各オブジェクト要素が、XAML と同名の内部フィールドを生成します。 初期状態では、このフィールドは空です。 続いて、クラスが **InitializeComponent** メソッドを生成します。このメソッドは、すべての XAML が読み込まれた後にのみ呼び出されます。 **InitializeComponent** ロジックにおいて、各内部フィールドには、名前文字列が等しいかどうかを評価した結果を表す [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) の戻り値が設定されます。 このインフラストラクチャは、コンパイル後に Windows ランタイム アプリ プロジェクトの /obj サブフォルダーに XAML ページごとに作成される ".g" (生成) ファイルで確認できます。 リフレクションを実行した場合は、結果として作成されるアセンブリのメンバーとしてのフィールドや **InitializeComponent** メソッドの存在を確認することもできます。それ以外の場合は、インターフェイス言語の内容を調べます。
 
-**注:** VisualC ではコンポーネント拡張機能に具体的には (、C++/cli CX) アプリでは、 **x: Name**参照のバッキング フィールドが、XAML ファイルのルート要素に対して作成されません。 C++/CX のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
+**注**  向けの Visual C コンポーネント拡張 (C +/cli CX) アプリ、バッキング フィールドは、 **X:name** XAML ファイルのルート要素の参照は作成されません。 C++/CX のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>XamlReader.Load を使った実行時におけるオブジェクトの作成
 
@@ -38,7 +38,7 @@ XAML は、初期の XAML ソース解析操作に対して同じように動作
 
 ### <a name="xaml-namescope-implications-of-xamlreaderload"></a>XamlReader.Load が XAML 名前スコープに与える影響
 
-[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された新しいオブジェクト ツリーで定義される暫定的な XAML 名前スコープは、指定された XAML で定義名が一意であるかどうかを評価します。 指定された XAML 内の名前がこの時点で内部的に一意でない場合、**XamlReader.Load** によって例外がスローされます。 切断されたオブジェクト ツリーがメインのアプリ オブジェクト ツリーに接続されている場合、切断されたオブジェクト ツリーの XAML 名前スコープは、メインのアプリ XAML 名前スコープには結合されません。 ツリーの接続後、アプリのオブジェクト ツリーは結合されていますが、そのツリーの XAML 名前スコープは分離されています。 オブジェクト間の接続ポイントでは、分岐が発生します。ここで、**XamlReader.Load** の呼び出しによって返される値をプロパティに設定します。
+[  **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された新しいオブジェクト ツリーで定義される暫定的な XAML 名前スコープは、指定された XAML で定義名が一意であるかどうかを評価します。 指定された XAML 内の名前がこの時点で内部的に一意でない場合、**XamlReader.Load** によって例外がスローされます。 切断されたオブジェクト ツリーがメインのアプリ オブジェクト ツリーに接続されている場合、切断されたオブジェクト ツリーの XAML 名前スコープは、メインのアプリ XAML 名前スコープには結合されません。 ツリーの接続後、アプリのオブジェクト ツリーは結合されていますが、そのツリーの XAML 名前スコープは分離されています。 オブジェクト間の接続ポイントでは、分岐が発生します。ここで、**XamlReader.Load** の呼び出しによって返される値をプロパティに設定します。
 
 切断された異なる XAML 名前スコープを持つことに伴う問題は、マネージ オブジェクトの直接参照と同様に、[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) メソッドの呼び出しが、結合された XAML 名前スコープでは動作しなくなることです。 代わりに、**FindName** の呼び出しの対象となった特定のオブジェクトがスコープを意味し、そのスコープは呼び出し元オブジェクトが存在する XAML 名前スコープになります。 マネージ オブジェクトの直接参照では、スコープは、コードが存在するクラスによって暗黙的に指定されます。 一般に、アプリ コンテンツの "ページ" における実行時の対話に使うコード ビハインドは、ルート "ページ" をサポートする部分クラスに存在するため、XAML 名前スコープはルート XAML 名前スコープになります。
 
@@ -48,10 +48,10 @@ XAML は、初期の XAML ソース解析操作に対して同じように動作
 
 異なる XAML 名前スコープに定義されているオブジェクトを参照するには、次のような手法を使用できます。
 
--   [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) や、オブジェクト ツリー構造内に存在することが判明しているコレクション プロパティ ([**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) によって返されるコレクションなど) を使って、分離されたステップでツリー全体を移動します。
+-   [  **Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) や、オブジェクト ツリー構造内に存在することが判明しているコレクション プロパティ ([**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) によって返されるコレクションなど) を使って、分離されたステップでツリー全体を移動します。
 -   異なる XAML 名前スコープから呼び出していて、ルート XAML 名前スコープを対象とする必要がある場合は、現在表示されているメイン ウィンドウへの参照を取得すると簡単です。 `Window.Current.Content`を呼び出す 1 行のコードを使って、現在のアプリ ウィンドウからの表示ルート (ルート XAML 要素、"コンテンツ ソース" とも呼ばれます) を取得できます。 次に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) にキャストし、このスコープから [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すことができます。
 -   ルート XAML 名前スコープから呼び出していて、異なる XAML 名前スコープ内のオブジェクトを対象とする必要がある場合は、[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) から返されてメイン オブジェクト ツリーに追加されたオブジェクトへの参照を、あらかじめコードに記述して保持しておくことをお勧めします。 これにより、このオブジェクトが、異なる XAML 名前スコープ内で [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すための有効なオブジェクトになります。 このオブジェクトはグローバル変数として保持できるほか、メソッドのパラメーターを使って渡すこともできます。
--   ビジュアル ツリーを走査することにより、名前と XAML 名前スコープの考慮事項を完全に回避できます。 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API を使うと、位置とインデックスだけを基に、親オブジェクトと子コレクションの観点からビジュアル ツリーを走査できます。
+-   ビジュアル ツリーを走査することにより、名前と XAML 名前スコープの考慮事項を完全に回避できます。 [  **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API を使うと、位置とインデックスだけを基に、親オブジェクトと子コレクションの観点からビジュアル ツリーを走査できます。
 
 ## <a name="xaml-namescopes-in-templates"></a>テンプレートにおける XAML 名前スコープ
 
@@ -81,8 +81,8 @@ XAML 名前スコープが複数存在するため、テンプレートが適用
 ## <a name="related-topics"></a>関連トピック
 
 * [XAML の概要](xaml-overview.md)
-* [x:Name 属性](x-name-attribute.md)
-* [クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [X:name 属性](x-name-attribute.md)
+* [クイック スタート:コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
  

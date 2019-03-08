@@ -4,14 +4,14 @@ description: このセクションでは、特定の種類のファイルを開�
 ms.assetid: 62e9b125-f899-4df6-ad96-570fdbcb8bc5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d48cbbf45dc2a09ca8eea3538501cbbe6f07ce02
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925223"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598607"
 ---
 # <a name="launch-an-app-through-file-activation"></a>ファイルのアクティブ化によるアプリの起動
 

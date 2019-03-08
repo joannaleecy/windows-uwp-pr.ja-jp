@@ -4,14 +4,14 @@ description: 次の表は、.NET Framework での、ユニバーサル Windows �
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ef98f3f4a9d20e836d5f9bddbc111a232f864bf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927508"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602617"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>.NET Framework での Windows ランタイム型の対応付け
 
@@ -24,7 +24,7 @@ ms.locfileid: "8927508"
 
 UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の大部分は、構造体です (または列挙体など、構造体に関連付けられている型)。 UWP では、構造体にはフィールド以外にメンバーがなく、.NET Framework では非表示になるヘルパー型が必要です。 これらの構造体の .NET Framework バージョンには、非表示のヘルパー型の機能を提供するプロパティとメソッドがあります。
 
-表 1: UWP 型と .NET Framework 型の対応 (異なる型名と名前空間名を持つ型)
+表 1:UWP は、別の名前や名前空間の .NET Framework 型にマップする型します。
 
 | UWP 型/名前空間                                            | .NET Framework 型/名前空間                                          | .NET Framework アセンブリ                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
@@ -57,14 +57,14 @@ UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の
 
  
 
-表 2: UWP 型と .NET Framework 型の対応 (同じ型名と名前空間名を持つ型)
+表 2:UWP は、同じ名前と名前空間の .NET Framework 型にマップする型します。
 
-| 名前空間                           | 型               | .NET Framework アセンブリ                   |
+| 名前空間                           | 種類               | .NET Framework アセンブリ                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI                          | 色              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | ポイント              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
-| Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | サイズ               | System.Runtime.WindowsRuntime.dll         |
 | Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
 | Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 | Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |

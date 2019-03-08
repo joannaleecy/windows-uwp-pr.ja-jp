@@ -1,19 +1,19 @@
 ---
-Description: Design external help pages for detailed instructions and advice about your app.
+Description: アプリに関する詳細な説明やアドバイスのための、外部ヘルプ ページを設計します。
 title: 外部ヘルプ ページを設計するためのガイドライン
 label: External help
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 56afd553-c520-4a28-b63d-2e1b3c1d3606
 ms.localizationpriority: medium
 ms.openlocfilehash: eaca2af3a497de75beaffe5d3af4a261b24d8ba4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938179"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617177"
 ---
 # <a name="external-help-pages"></a>外部ヘルプ ページ
 
@@ -44,4 +44,4 @@ ms.locfileid: "8938179"
 
 ## <a name="related-articles"></a>関連記事
 
-* [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
+* [アプリのヘルプに関するガイドライン](guidelines-for-app-help.md)

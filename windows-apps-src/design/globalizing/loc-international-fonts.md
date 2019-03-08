@@ -1,21 +1,21 @@
 ---
-Description: This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English.
+Description: このトピックには、米国以外の言語にローカライズされている UWP アプリの使用可能なフォントが表示されます。英語。
 title: 国際フォント
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
-keywords: windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
+keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1d618a111ee207eacfceb52680859c8272e0ed
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046655"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601137"
 ---
 # <a name="international-fonts"></a>国際フォント
 
-このトピックでは、米国英語以外の言語にローカライズされる UWP アプリで使用できるフォントの一覧を示します。
+このトピックには、米国以外の言語にローカライズされている UWP アプリの使用可能なフォントが表示されます。英語。
 
 次の表の "言語タグ" 列は、言語の [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302) を示します。 特に Microsoft Store でサポートされる言語タグの一覧については、「[サポートされている言語](../../publish/supported-languages.md)」をご覧ください。
 
@@ -66,7 +66,7 @@ ms.locfileid: "9046655"
 | コサ語 | xh-ZA | Segoe UI |
 | ズールー語 | zu-ZA | Segoe UI |
 | イタリア語 | it-IT | Segoe UI |
-| 日本語 | ja-JP | Meiryo UI (以下の注釈をご覧ください) |
+| Japanese | ja-JP | Meiryo UI (以下の注釈をご覧ください) |
 | カンナダ語 | kn-IN | Nirmala UI |
 | カザフ語 | kk-KZ | Segoe UI |
 | クメール語 | km-KH | Leelawadee UI |
@@ -135,5 +135,5 @@ Windows では Meiryo UI フォントが使用されます。 Windows には、�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [サポートされている言語](../../publish/supported-languages.md)

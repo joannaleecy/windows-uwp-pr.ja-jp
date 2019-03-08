@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926298"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597717"
 ---
 # <a name="relation-based-animations"></a>関係ベース アニメーション
 
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` は、ExpressionBuilder.ExpressionFunctions を定義する “using” 表記の短縮形です。
+> `EF` ExpressionBuilder.ExpressionFunctions を定義する短縮形"using"表記です。
 
 最後に、これらのコンポーネントを一緒に組み合わせ、赤い円の位置を参照して、数学的な関係を定義します。
 

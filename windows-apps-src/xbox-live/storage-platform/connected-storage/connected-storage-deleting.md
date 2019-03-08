@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 756de46d05cdbf64d85491b4e8c6f783122f2356
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931965"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601317"
 ---
 # <a name="use-connected-storage-to-delete-data"></a>接続ストレージを使ったデータの削除
 
@@ -124,7 +124,7 @@ void DeleteContainer(User^ user)
 }
 ```
 
-XDK .chm ファイルで説明されている XDK 接続ストレージ API は、パス **Xbox ONE XDK >> API リファレンス >> プラットフォーム API リファレンス >> システム API リファレンス >> Windows.Xbox.Storage** にあります。
+パスの下の XDK .chm ファイルに記載されている XDK 接続されている Storage Api を確認できます。**1 つの XDK Xbox >> API リファレンス >> プラットフォーム API のリファレンス >> システム API リファレンス >> Windows.Xbox.Storage**します。
 XDK API については、[developer.microsoft.com サイト](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)でも説明されています。
 XDK API へのリンクを開くには、Xbox 開発キット (XDK) へのアクセスが有効になっている Microsoft アカウント (MSA) が必要です。
 Windows.Xbox.Storage は、Xbox One 本体の接続ストレージ名前空間の名前です。

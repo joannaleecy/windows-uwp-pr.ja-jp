@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、アクセシビリティ、ゲーム
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046335"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592937"
 ---
 #  <a name="making-games-accessible"></a>ゲームをアクセシビリティ対応にする
 
@@ -69,7 +69,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ## <a name="defining-disability"></a>障碍の定義
 
-障碍とは、"個人のニーズと、提供されるサービス、製品、環境との不一致" と定義されます  ([Inclusive ビデオ](https://www.microsoft.com/design/inclusive)、Microsoft.com)。つまり、だれもが障碍を経験する可能性があり、その障碍は短期的または状況による状態を示す場合もあります。 このような状況のゲーマーがゲームをプレイするときに生じる可能性のある問題を想像し、どのようにゲームのデザインを改良できるかを検討しましょう。 考慮が必要な障碍として、次のようなものがあります。
+障碍とは、"個人のニーズと、提供されるサービス、製品、環境との不一致" と定義されます  ([包括的なビデオ](https://www.microsoft.com/design/inclusive)Microsoft.com)。つまり、障害が発生する可能性をすべてのユーザー、または短期的な状況の状態にできます。 このような状況のゲーマーがゲームをプレイするときに生じる可能性のある問題を想像し、どのようにゲームのデザインを改良できるかを検討しましょう。 考慮が必要な障碍として、次のようなものがあります。
 
 ### <a name="vision"></a>視覚
 
@@ -91,7 +91,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 * 難読症、てんかん、注意欠陥多動性障碍 (ADHD)、認知症、健忘症など、長期にわたる医学上の状態
 * 飲酒、睡眠不足や、自宅付近を走る緊急車両のサイレンが原因で一時的に注意力が低下した場合など、短期的な状況による状態
 
-### <a name="speech"></a>発声
+### <a name="speech"></a>音声認識
 
 * 声帯の損傷、構音障碍、失行症など、長期にわたる医学上の状態
 * 歯の治療中や飲食中など、短期的な状況による状態
@@ -99,7 +99,7 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ## <a name="how-to-make-games-more-accessible"></a>ゲームのアクセシビリティを強化する方法
 
-### <a name="design-shift-inclusive-game-design-approach"></a>デザイン シフト: 包括的なゲーム デザイン アプローチ
+### <a name="design-shift-inclusive-game-design-approach"></a>デザインのシフト:包括的なゲームの設計のアプローチ
 
 包括的なデザインでは、製品やサービスのアクセシビリティを強化して、障碍を持つユーザーを含む幅広いコンシューマーが利用できるようにすることに重点が置かれます。
 
@@ -109,31 +109,31 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 ギャップを特定することで、デザイン コンセプトを最適化し、繰り返し検討して、改善することができます。これにより、さらに多くのユーザーがそのビジョンを体験できるようになります。 ゲーム デザインの過程で包括的に考える時間を取り入れれば、最終的にゲームのアクセシビリティが高まります。 すべてのユーザーが満足できるゲームはなく、ゲームの定義では、ある程度のチャレンジが含まれていることが必要とされますが、アクセシビリティを検討することで、ユーザーが不必要に除外されることを回避できます。
 
-### <a name="empower-gamers-give-gamers-options"></a>ゲーマーの自由度: ゲーマーに選択肢を与える
+### <a name="empower-gamers-give-gamers-options"></a>プレイヤーがゲームを強化するには。プレイヤーがゲームのオプションの指定
 
 ほぼすべてのアクセシビリティ ソリューションは、2 つの原則のいずれかに行き着きます。 まず、ゲーマーがゲーム エクスペリエンスをカスタマイズできるオプションを用意することです。 既に大規模なファン ベースが構築されている場合は、エクスペリエンスをまったく変更したくないと考えるユーザーがかなり多く存在する可能性もあります。 それは問題ありません。 ゲーマーが機能をオンまたはオフにするための手段を用意して、各機能を個人的に構成できるようにすることが必要です。 ユーザーが自分のニーズや好みに最適な方法でゲームを体験できるようにする必要があります。
 
-### <a name="reinforce-communicate-information-in-more-than-one-way"></a>補足: 1 つ以上の方法で情報を伝達する
+### <a name="reinforce-communicate-information-in-more-than-one-way"></a>補足します。1 つ以上の方法で情報を通信します。
 
 2 つ目の原則は、ユニバーサル設計の概念が実現されると、1 つのアプローチがプレイヤー数を増やすだけでなく、すべてのユーザーのエクスペリエンスを向上させます。 たとえば、テキストだけでなく画像を使用したり、色だけでなく記号を使用したりします。 マップがさまざまな色のマーカーに基づいている場合、色覚に障碍のあるゲーマーが使用できないだけでなく、他のユーザーもすべてのマーカーが何に相当するかを覚えておく必要があり、フラストレーションを引き起こします。 シンボルを追加することより、すべてのユーザーのエクスペリエンスがこうじょうします。
 
-### <a name="innovate-be-creative"></a>イノベーション: 創造力を発揮する
+### <a name="innovate-be-creative"></a>お客様はイノベーションします。クリエイティブに変える
 
 ゲームのアクセシビリティを強化するには、多くの独創的な方法があります。 創造力を発揮し、アクセシビリティに対応している他のゲームから学習しましょう。 既にゲームが動作している場合は、コアとなるゲーム構造とエクスペリエンスは設計どおりに維持したまま、現在のゲーム機能のどの部分を改善できるかを検討して特定します。 既に説明したように、アクセシビリティとは、ゲーム エクスペリエンスをカスタマイズするオプションをゲーマーに提供することです。 情報を補足する方法や、複数の方法で情報を伝達する方法があります。 
 
 アクセシビリティを考慮することで、他の方法では思いつかなかった新しい角度やアイデアから設計にアプローチすることができます。 設計に対するこのアプローチは、興味深い概念につながっただけでなく、広く普及した、またはマスマーケットで商業的に成功した製品を創造してきました。 たとえば、予測テキスト、音声認識、縁石カット、スピーカー、タイプライター、光学式文字認識 (OCR) があります。 これらの製品のアイデアは、アクセシビリティのためのソリューションを考え始めた人から出てきたものです。
 
-### <a name="adopt-quality-means-accessible-features"></a>採用: 品質とはアクセシビリティ機能
+### <a name="adopt-quality-means-accessible-features"></a>採用します。品質はアクセス可能な機能
 
 アクセシビリティは品質の尺度になります。 それは機能の要件である必要があり、あればうれしいという作業項目ではありません。 たとえば、"色覚に障碍のあるユーザー向けにミニマップを調整する" ことは、時間に余裕があるときに取り掛かる、優先順位の低い作業項目ではありません。 この作業項目が満たされていない場合、ミニマップ機能全体が完成していないことを意味し、出荷することはできません。
 
-### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>啓蒙: ゲーム スタジオでアクセシビリティの優先順位を設定する
+### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>説明します。Game studio でのアクセシビリティを優先をさせる
 
 ゲーム開発は常に厳しいスケジュールで進められるため、アクセシビリティの優先度を設定すると取り組みやすくなります。 1 つの方法は、最初からアクセシビリティを考慮して設計することです。 早くからアクセシビリティを考慮するほど、実現が容易になり、コストも抑えられます。 
 
 アクセシビリティに関する知識をチームで共有し、業務の妥当性を共有してください。これにより、アクセシビリティは、多くのユーザーのメリットにならない、メカニックの負担が増える、実現は困難であり、コストが高いといった、一般的な誤解を解消してください。
 
-### <a name="review-constantly-evaluate-your-game"></a>レビュー: ゲームを定期的に評価する
+### <a name="review-constantly-evaluate-your-game"></a>確認する:常に、ゲームを評価します。
 
 開発中にレビュー プロセスを導入すると、アクセシビリティに関する検討を重ねながら、各段階での決定が妥当かどうかを確認できます。 次のようなチェック リストを作成して、開発中のゲームがアクセシビリティに対応しているかどうかをチームで定期的に評価しましょう。
 
@@ -146,13 +146,13 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 | HUD ディスプレイ                                       | 画面の位置やフォント サイズを調整できる。色覚障碍に対応したオプションが用意されている。                                                  |        
 | コントロール入力                                     | コントロールを入力デバイスにマップできる。カスタム コントローラーがサポートされている。ゲームで簡易入力を使用できる。                               |        
 
-### <a name="playtest-and-iterate-get-gamers-feedback"></a>テストプレイと反復: ゲーマーからフィードバックを入手する
+### <a name="playtest-and-iterate-get-gamers-feedback"></a>プレイテスト、および反復処理します。プレイヤーがゲームのフィードバックを取得します。
 
 テストプレイ セッションを計画するときは、ゲームが対応している障碍を持つテスト プレーヤーを招待し、ゲームをプレイしてもらいます。 ベータ テストのアンケートにアクセシビリティに関するチェック項目を必ず含めます。 地域の障碍者グループは、参加者の優れたソースです。 ゲーマーがどのようにプレイするかを観察し、フィードバックを入手します。 ゲームを改善するために必要な変更を特定します。
 
 ソーシャル メディアやゲームのフォーラムを使用して、どのアクセシビリティ機能が最も大きな問題であり、どのように実装すればよいかについて、意見を集めます。 
 
-### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>宣伝: アクセシビリティ対応のゲームであることを世界に知らせる
+### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>叫ぶ。ゲームがアクセスできることを世界します。
 
 あるゲームについて考えたとき、コンシューマーは、障碍を持つゲーマーがプレイできるかどうかを確認しようとすることがあります。 ゲームの Web サイト、プレス リリース、パッケージにゲームのアクセシビリティ機能を明記して、コンシューマーが購入時に確認できるようにします。 Web サイトやゲームのすべての販売チャネルも、アクセシビリティ対応にする必要があります。 最も重要なのは、アクセシビリティ対応のゲームに関するコミュニティに参加して、ゲームを知ってもらうことです。
 
@@ -166,12 +166,12 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 
 錐状体には 3 種類 (赤、緑、青) があり、これらの働きによって色を適切に認識できるようになっています。 色覚障碍は、3 種類の感光錐体の 1 つ以上が期待どおりに機能しない場合に発生します。 色覚障碍の度合いは、赤色光、緑色光、青色光に対する感受性が低いものの色知覚にはほとんど問題がない状態から、どの色もまったく知覚できない状態までさまざまです。 
 
-青色光に対する感受性が低い症例はあまり多くないため、色覚障碍に対応するデザインでは、赤色覚異常または緑色覚異常のユーザーに合わせて色を選択します。
+青色光に対する感受性が低い症例はあまり多くないため、色覚障碍に対応するデザインでは、赤色覚障碍または緑色覚障碍のユーザーに合わせて色を選択します。
  
   + 赤/緑色覚異常のユーザーが区別できる色の組み合わせを使います。
   
-    * 同じように見える色: さまざまなニュアンスの赤色と緑色 (茶色とオレンジ色を含む)
-    * 目立って見える色: 青色、黄色
+    * 同様に表示される色。赤と緑 brown、オレンジ色などのすべての網掛け
+    * 目立つ色:青色のボタンと黄色
     
   + コミュニケーションやゲーム オブジェクトの区別に色のみを利用することは避けます。 形やパターンも使用します。
   + 色のみに依存する必要がある場合は、プリセットと自由に選択できる色を組み合わせて、必要とするプレイヤーは自由にカスタマイズでき、必要としないプレイヤーは余分な作業をしなくても済むようにします。
@@ -187,8 +187,8 @@ Microsoft では、あらゆるユーザーが楽しめる、おもしろく、�
 *   十分に大きいフォント サイズを選択するか、柔軟性を高めるために、フォント サイズを調整できるオプションを用意することを検討します  (適切なフォント サイズは、画面サイズ、画面から視聴位置までの距離、その他の要因によって異なります)。
 *   背景色とフォントの色のコントラストを高めます。 テキストには強いアウトラインとシャドウを使用します。 キャプションには濃い色の背景オーバーレイを使用し、有効または無効にするオプションを提供します  (詳しくは、[コントラスト比に関する情報](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements)をご覧ください)。
 * 画面には短い文を表示します。1 行あたり最大 38 文字、一度に表示するのは最大 2 ～ 3 行にします  (イベントが発生する前にテキストを表示してゲームを台無しにしないように注意してください)。
-*   サウンドの発生元や話している人物を区別できるようにします  (たとえば、"ダニエル: やあ!" のように表示します)。
-*   クローズド キャプションと字幕をオンまたはオフにするオプションを用意します  (追加機能として、表示されるサウンド情報の量を重要度に応じて選択できるようにすることもお勧めします)。
+*   サウンドの発生元や話している人物を区別できるようにします  (例。"Daniel:こんにちは!")
+*   クローズド キャプションと字幕をオンまたはオフにするオプションを用意します  (追加の機能。サウンド情報の量が表示されるかを選択する機能に基づく重要度。)
 
 ### <a name="game-chat-transcription"></a>ゲーム チャットのテキスト変換
 
@@ -204,7 +204,7 @@ ID@Xbox および対象パートナー向けプログラムの開発者の場合
 
 *   3D オーディオ キューを使って、追加の空間情報を提供します。
 * 音楽、音声、効果音のボリュームを別々に制御できるようにします。
-*   音声は、ゲーマーにとって意味のある情報を提供するように設計します  (たとえば、"敵が近づいています" よりも "背後の扉から敵が入ってきています" の方が適切です)。
+*   音声は、ゲーマーにとって意味のある情報を提供するように設計します  (例。「敵に近づいている」とします。「敵は入力バック ドアから。」)
 *   音声の速度が適切であることを確認し、さらにアクセシビリティを高めるために、速度を制御できるようにします。
 
 ### <a name="fully-mappable-controls"></a>完全にマップ可能なコントロール
@@ -241,7 +241,7 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 * 5 本を超える均等な間隔で繰り返されるハイ コントラスト ストライプ (グリッドやチェッカーボードなどの行または列)。これは、水玉など、小さく規則的な要素で構成される場合があります。
 * 大文字のみで書式設定され、文字間の間隔が狭く、行間が行自体の高さと同じであるため、事実上、ハイ コントラストで均等に繰り返される行に見える、5 行を超えるテキスト。
 
-自動システムを使って、光過敏性発作を引き起こす可能性のある刺激がゲームプレイ中に発生していないかどうかをチェックします  (たとえば、Cambridge Research System Ltd と Graham Harding 教授によって開発された [The Harding Test](https://www.hardingtest.com/index.php?page=test) や [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/) があります)。 
+自動システムを使って、光過敏性発作を引き起こす可能性のある刺激がゲームプレイ中に発生していないかどうかをチェックします  (例。[図表テスト](https://www.hardingtest.com/index.php?page=test)と[図表をフラッシュし、パターン アナライザー (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)ケンブリッジ Research システム Ltd and 教授 Graham 図表が開発した)。 
 
 **点滅オン/オフ**を設定オプションとして含め、**点滅**を既定で**オフ**に設定します。 こうすることで、まだ自分が発作を起こしやすいと知らないプレイヤーを保護します。
 
@@ -252,24 +252,24 @@ Xbox One の標準コントローラーと Xbox Elite コントローラーは�
 以下に、ゲームのアクセシビリティに関する追加情報を入手できる外部サイトへのリンクを紹介します。
 
 ### <a name="game-accessibility-guidelines"></a>ゲームのアクセシビリティに関するガイドライン
-* [ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation のガイドライン](https://www.includification.com/)
-* [すべての人が利用できる (UA: Universally Accessible) ゲームのデザイン](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [ゲームのアクセシビリティのガイドライン](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation ガイドライン](https://www.includification.com/)
+* [汎用アクセス可能な (UA) ゲームを設計します。](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>カスタム入力コントローラー
-* [SpecialEffect](https://www.specialeffect.org.uk/)
-* [Warfighter Engaged](https://www.warfighterengaged.org/)
+* [特殊効果](https://www.specialeffect.org.uk/)
+* [War 戦闘機の進行中](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>参考資料
-* [ゲームのアクセシビリティに関するガイドライン](https://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation のガイドライン](https://www.includification.com/)
-* [コミュニティ利益会社 Color Blind Awareness](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [適切な字幕の作り方 - Ian Hamilton による Gamasutra のブログ記事](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [あらゆるプログラムのための技術革新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [Epilepsy foundation](https://www.epilepsy.com/)
+* [ゲームのアクセシビリティのガイドライン](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation ガイドライン](https://www.includification.com/)
+* [色視覚認識、コミュニティの利息会社](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [実行する方法が字幕 well - Gamasutra によって Ian hamilton 氏のブログ記事](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [すべてのプログラム向けにイノベーション](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [癲癇 foundation](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>関連リンク
 * [包括的なデザイン](https://www.microsoft.com/design/inclusive)
 * [Microsoft アクセシビリティ開発者ハブ](https://developer.microsoft.com/windows/accessible-apps)
-* [アクセシビリティ対応 UWP アプリの設計](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
-* [アクセシビリティ ソフトウェアのエンジニアリング (電子書籍)](https://www.microsoft.com/download/details.aspx?id=19262)
+* [アクセス可能な UWP アプリの開発](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
+* [エンジニア リング ソフトウェアのアクセシビリティの電子ブック](https://www.microsoft.com/download/details.aspx?id=19262)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, 宣伝, ビデオ, スケジューラ, Javascript
 ms.localizationpriority: medium
 ms.openlocfilehash: 69fef2bc5deb21be8685badb0cf18f38769170cb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045075"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603847"
 ---
 # <a name="show-ads-in-video-content"></a>ビデオ コンテンツに広告を表示する
 
@@ -57,7 +57,7 @@ ms.locfileid: "9045075"
 
 4.  AdScheduler.js ファイルをプロジェクトに追加します。
 
-    1. Visual Studio で、**[プロジェクト]**、**[NuGet パッケージの管理]** の順にクリックします。
+    1. Visual Studio で、**[プロジェクト]** と **[NuGet パッケージの管理]** をクリックします。
     2. 検索ボックスに、「**Microsoft.StoreServices.VideoAdScheduler**」と入力し、Microsoft.StoreServices.VideoAdScheduler パッケージをインストールします。 AdScheduler.js ファイルがプロジェクトの ../js サブディレクトリに追加されます。
 
 5.  index.html ファイル (またはプロジェクトに対応するその他の html ファイル) を開きます。 `<head>` セクションで、プロジェクトの default.css と main.js の JavaScript 参照の後に、ad.js と adscheduler.js への参照を追加します。
@@ -89,7 +89,7 @@ ms.locfileid: "9045075"
     > [!NOTE]
     > **MediaPlayer** でメインのビデオ コンテンツの再生を開始する前に、**requestSchedule** または **requestScheduleByUrl** が戻るまで待機する必要があります。 **requestSchedule** が戻る前にメディアの再生を開始すると (プリロール広告の場合)、プリロールによってメインのビデオ コンテンツが中断されます。 関数が失敗した場合でも、**play** を呼び出す必要があります。**AdScheduler** は、広告をスキップしてコンテンツに直接移動するように **MediaPlayer** に通知するためです。 ビジネス要件によっては、広告がリモートで正常に取得できない場合に、ビルトイン広告を挿入するなどの処理を行うこともできます。
 
-8.  再生中に、アプリが進行状況や、最初の広告マッチング プロセス後に発生したエラーを追跡するための追加のイベントを処理できます。 次のコードでは、このようなイベントのうち、**onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete**、**onErrorOccurred** を示します。
+8.  再生中に、アプリが進行状況や、最初の広告マッチング プロセス後に発生したエラーを追跡するための追加のイベントを処理できます。 次のコードでは、これらのイベントのいくつか (**onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete**、および **onErrorOccurred**) を示します。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
 
@@ -142,7 +142,7 @@ ms.locfileid: "9045075"
 
 ### <a name="requesttimeout"></a>requestTimeout
 
-このプロパティは、広告要求の応答がタイムアウトするまでの待ち時間をミリ秒単位で取得または設定します。値 0 は、タイムアウトしないようにシステムに通知します。 既定値は 30000 ミリ秒 (30 秒) です。
+このプロパティを取得またはタイムアウトする前に、ad 要求の応答を待機するミリ秒数を設定します。値 0 は、タイムアウトしないようにシステムに通知します。 既定値は 30000 ミリ秒 (30 秒) です。
 
 ### <a name="schedule"></a>schedule
 
@@ -152,9 +152,9 @@ ms.locfileid: "9045075"
 
 このイベントは、広告の再生が 4 分の 1 ごとのチェックポイントに到達したときに発生します。 イベント ハンドラーの第 2 パラメーター (*eventInfo*) は、次のメンバーを含む JSON オブジェクトです。
 
-* **progress**: 広告の再生状態 (AdScheduler.js に定義されている **MediaProgress** 列挙型の値のいずれか)。
-* **clip**: 再生中のビデオ クリップ。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
-* **adPackage**: 再生中の広告に対応する広告ペイロードの部分を表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
+* **進行状況**:広告の再生状態 (の 1 つ、 **MediaProgress** AdScheduler.js で定義された列挙型の値)。
+* **クリップ**:再生中のビデオ クリップします。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
+* **adPackage**:再生されている広告に対応する ad ペイロードの一部を表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
 
 ### <a name="onallcomplete"></a>onAllComplete  
 
@@ -168,8 +168,8 @@ ms.locfileid: "9045075"
 
 このイベントは、広告の再生中に発生し、現在のポッドの残り時間を通知します。 イベント ハンドラーの第 2 パラメーター (*eventData*) は、次のメンバーを含む JSON オブジェクトです。
 
-* **remainingAdTime**: 現在の広告の残り時間を示す秒数。
-* **remainingPodTime**: 現在のポッドの残り時間を示す秒数。
+* **remainingAdTime**:現在の ad の残りの秒数。
+* **remainingPodTime**:現在のポッドの残りの秒数。
 
 > [!NOTE]
 > ポッドとは、連続して再生される広告のグループです。広告ブレークの間に再生される広告のグループなどがあります。 詳しくは、IAB Digital Video Ad Serving Template (VAST) の仕様をご覧ください。
@@ -178,12 +178,12 @@ ms.locfileid: "9045075"
 
 このイベントは、広告ポッドが終了したときに発生します。 イベント ハンドラーの第 2 パラメーター (*eventData*) は、次のメンバーを含む JSON オブジェクトです。
 
-* **startTime**: ポッドの開始時間 (秒単位)。
-* **pod**: ポッドを表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
+* **startTime**:ポッドの開始時間 (秒)。
+* **ポッド**:ポッドを表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
 
 ### <a name="onpodstart"></a>onPodStart
 
 このイベントは、広告ポッドが開始されたときに発生します。 イベント ハンドラーの第 2 パラメーター (*eventData*) は、次のメンバーを含む JSON オブジェクトです。
 
-* **startTime**: ポッドの開始時間 (秒単位)。
-* **pod**: ポッドを表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。
+* **startTime**:ポッドの開始時間 (秒)。
+* **ポッド**:ポッドを表すオブジェクト。 このオブジェクトは、ユーザーのコードで使用するためのものではありません。

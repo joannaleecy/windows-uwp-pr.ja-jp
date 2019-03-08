@@ -1,5 +1,5 @@
 ---
-Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+Description: 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 title: 音声認識
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
@@ -9,34 +9,34 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048549"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608077"
 ---
 # <a name="speech-recognition"></a>音声認識
 
 
 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 
-> **重要な API**: [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
+> **重要な Api**:[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 音声認識機能は、音声認識ランタイム、ランタイムをプログラミングするための認識 API、ディクテーションと Web 検索のための定義済みの文法、ユーザーが音声認識機能を見つけて使うときに役立つ既定のシステム UI で構成されています。
 
 ## <a name="configure-speech-recognition"></a>音声認識を構成します。
 
-ユーザーが接続する必要があります、アプリで音声認識をサポートするがデバイスにマイクを有効にし、同意を使うには、Microsoft プライバシー ポリシーが、アプリのアクセス許可を付与します。
+ユーザーが接続する必要があります、アプリと音声認識をサポートするには、自分のデバイスのマイクを有効にするし、それを使用するには、Microsoft プライバシー ポリシーがアプリのアクセス許可を付与に同意します。
 
-自動的にアクセスして、マイクを使用するためのアクセス許可を要求しているシステム ダイアログをユーザーに求めるオーディオ フィード ([音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)を次にからなど) が単なるセット**マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)[アプリ パッケージ マニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)にします。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
+自動的にユーザーにアクセスして、マイクのオーディオ フィードを使用するためのアクセス許可を要求するシステム ダイアログを確認する (例から、[音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)次に示す) に設定した、 **マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)で、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)します。 詳細については、次を参照してください。[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)します。
 
-![マイク アクセス用のプライバシー ポリシー](images/speech/privacy.png)
+![マイクへのアクセスのプライバシー ポリシー](images/speech/privacy.png)
 
-設定の承認済みアプリケーションの一覧にアプリを追加する場合は、ユーザーは、マイクのアクセスを許可するには、[はい] をクリックすると、-_gt プライバシー-_gt マイク ページ。 ただし、として、いつでもでもこの設定をオフにするには、ユーザーが選択できる、アプリがそれを使用する前に、マイクへのアクセスを持つを確認する必要があります。
+ユーザーが承認済みのアプリケーションの設定の一覧にアプリを追加、マイクへのアクセスを許可するには、はい をクリックした場合は、プライバシー-> マイクのページ-> です。 ただし、この設定はいつでもオフにするユーザーを選択できるように、アプリが使用する前に、マイクへのアクセスが確認してください。
 
-ディクテーション、Cortana をサポートする、またはその他の音声認識サービスの (など、[定義済みの文法](#predefined-grammars)で定義されたトピック制約)、またことを確認して**オンライン音声認識**(設定の _gt プライバシー-_gt 音声) は、有効になります。
+ディクテーション、Cortana、またはその他の音声認識サービスをサポートする場合 (など、[定義済みの文法](#predefined-grammars)トピック制約で定義されている)、ことを確認する必要があります**オンライン音声認識**(設定]、[プライバシー] メニューの [Speech) を有効にします。
 
-このスニペットでは、アプリがマイクが存在する場合、それを使用するアクセス許可がある場合を確認する方法を示しています。
+このスニペットでは、アプリがマイクが存在する場合、また使用する権限がある場合を確認する方法を示しています。
 
 ```csharp
 public class AudioCapturePermissions
@@ -210,17 +210,17 @@ var AudioCapturePermissions = WinJS.Class.define(
 
 *制約*は、音声入力でアプリが認識する単語と語句 (ボキャブラリ) を定義します。 制約は音声認識の中心であり、アプリの音声認識の精度に大きく影響します。
 
-音声入力を認識するため、次の種類の制約を使用できます。
+音声入力を認識するため、次の種類の制約を使用することができます。
 
 ### <a name="predefined-grammars"></a>定義済みの文法
 
 定義済みのディクテーション文法と Web 検索文法を使うと、文法を作らずにアプリに音声認識を実装できます。 これらの文法を使った場合、音声認識がリモート Web サービスで実行され、結果がデバイスに返されます。
 
-既定のフリーテキストのディクテーション文法では、ユーザーが特定の言語で話すほとんどの単語と語句を認識できます。これは短い語句の認識に最適化されています。 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトに制約を指定しなかった場合は、定義済みのディクテーション文法が使われます。 フリーテキストのディクテーションは、ユーザーが話す内容を限定しない場合に便利です。 一般的な用途としては、メモの作成やメッセージ内容の口述などがあります。
+既定のフリーテキストのディクテーション文法では、ユーザーが特定の言語で話すほとんどの単語と語句を認識できます。これは短い語句の認識に最適化されています。 [  **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトに制約を指定しなかった場合は、定義済みのディクテーション文法が使われます。 フリーテキストのディクテーションは、ユーザーが話す内容を限定しない場合に便利です。 一般的な用途としては、メモの作成やメッセージ内容の口述などがあります。
 
 Web 検索文法は、ユーザーが話す可能性のある多数の単語と語句を含んでいる点でディクテーション文法と似ています ただし、ユーザーが Web 検索で一般的に使う用語の認識に最適化されています。
 
-**注:** 定義済みのディクテーションと web 検索文法は容量が大きく、し、オンラインため (デバイス上の) ではなくパフォーマンスできない可能性があります、カスタム文法をデバイスにインストールされていると同様に高速です。     
+**注**  オンラインでは、定義済みの音声入力と web 検索の文法が大きくなるため、(デバイス) ではなくパフォーマンスできない可能性があります、デバイスにインストールされているカスタムの文法と同様に高速です。     
 
 このような定義済みの文法は、10 秒までの長さの音声入力を認識でき、開発者による作成作業は必要ありません。 ただし、ネットワークへの接続が必要になります。
 
@@ -228,7 +228,7 @@ Web サービスの制約を使用するには、**[設定] -> [プライバシ�
 
 ここでは、音声入力が有効になっているかどうかをテストし、有効になっていない場合は [設定]、[プライバシー] の [音声認識、手描き入力、入力の設定] ページを開く方法を示します。
 
-まず、グローバル変数 (HResultPrivacyStatementDeclined) を HResult 値 0x80045509 に初期化します。 「[C\# または Visual Basic での例外処理](https://msdn.microsoft.com/library/windows/apps/dn532194)」をご覧ください。
+まず、グローバル変数 (HResultPrivacyStatementDeclined) を HResult 値 0x80045509 に初期化します。 参照してください[例外 C での処理\#または Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194)します。
 
 ```csharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;
@@ -257,29 +257,29 @@ catch (Exception exception)
 }
 ```
 
-[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)を参照してください。
+参照してください[ **SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)します。
 
-### <a name="programmatic-list-constraints"></a>プログラムによる一覧の制約 
+### <a name="programmatic-list-constraints"></a>プログラムの一覧の制約 
 
 プログラムによる一覧の制約は、単語や語句の一覧を使って単純な文法を作成する手法で、軽量です。 個別の短い語句を認識するには、一覧の制約が適しています。 文法にすべての単語を明示的に指定すると、音声認識エンジンは音声と単語の一致を確認する際に音声だけを処理すればよいので、認識の精度が向上します。 また、一覧はプログラムで更新することもできます。
 
 一覧の制約は、アプリで認識操作に利用できる音声入力を表した文字列の配列で構成されます。 アプリで一覧の制約を作成するには、音声認識の一覧の制約オブジェクトを作って、文字列の配列を渡します。 次に、そのオブジェクトを認識エンジンの制約コレクションに追加します。 音声認識エンジンが配列内の文字列のどれかを認識したら、認識は成功です。
 
-[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)を参照してください。
+参照してください[ **SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)します。
 
 ### <a name="srgs-grammars"></a>SRGS 文法
 
 Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
 
- [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)を参照してください。
+ 参照してください[ **SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)します。
 
 ### <a name="voice-command-constraints"></a>音声コマンドの制約
 
 音声コマンド定義 (VCD) XML ファイルを使って、アプリをアクティブ化して操作を開始するためにユーザーが発声できる音声コマンドを定義します。 詳しくは、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)」をご覧ください。
 
-[ **SpeechRecognitionVoiceCommandDefinitionConstraint**を参照してください。](https://msdn.microsoft.com/library/windows/apps/dn653220)/
+参照してください[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220)/
 
-**注:** を使用する制約型の型を作成する認識エクスペリエンスの複雑さによって異なります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
+**注**  の制約の種類を使用する型を作成する認識エクスペリエンスの複雑さに依存します。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
 制約を使う場合は、「[カスタム認識の制約の定義](define-custom-recognition-constraints.md)」をご覧ください。
 
 ユニバーサル Windows アプリで定義済みのディクテーション文法によって、言語のほとんどの単語と短い語句が認識されます。 これは、カスタム制約なしで音声認識エンジン オブジェクトをインスタンス化すると既定で有効になります。
@@ -288,7 +288,7 @@ Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメン�
 
 - 音声認識エンジンを作成します。
 - 既定のユニバーサル Windows アプリ制約をコンパイルします (音声認識エンジンの文法セットには文法が追加されていません)。
-- [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドに用意された基本的な認識 UI と TTS フィードバックを使って音声の聞き取りを開始します。 既定の UI が必要でない場合は、[**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドを使います。
+- [  **RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドに用意された基本的な認識 UI と TTS フィードバックを使って音声の聞き取りを開始します。 既定の UI が必要でない場合は、[**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドを使います。
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)

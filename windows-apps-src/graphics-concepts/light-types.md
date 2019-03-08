@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1815f0956fbc175fec5ca892dbeeec92b2f939ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926800"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594697"
 ---
 # <a name="light-types"></a>光源の種類
 
@@ -28,12 +28,12 @@ ms.locfileid: "8926800"
 
 ライト バルブは、ポイント ライトの良い例です。 ポイント ライトは、減衰と範囲の影響を受け、頂点単位でメッシュを照らします。 照射時、Direct3D はワールド空間におけるポイント ライトの位置と照射する頂点の座標を使って、光の方向に関するベクトルと光が移動する距離を引き出します。 頂点法線と共に両方の値を使って、サーフェスの照射に対する光の貢献度を計算します。
 
-## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>指向性ライト
+## <a name="span-iddirectionallightspanspan-iddirectionallightspanspan-iddirectionallightspandirectional-light"></a><span id="Directional_Light"></span><span id="directional_light"></span><span id="DIRECTIONAL_LIGHT"></span>指向性光
 
 
 指向性ライトには位置がなく、色と方向のみです。 平行光を放射します。 つまり指向性ライトにより生成されるすべての光は、シーン内を同じ方向に移動します。 指向性ライトがほぼ無限の距離にある光源 (太陽など) であるとします。 指向性ライトは、減衰または範囲の影響を受けないため、Direct3D が頂点の色を計算する際に考慮される要素は指定した方向と色だけです。 照明要素の数が少ないため、使用時に最も計算の少ないライトです。
 
-## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>スポットライト
+## <a name="span-idspotlightspanspan-idspotlightspanspan-idspotlightspanspotlight"></a><span id="SpotLight"></span><span id="spotlight"></span><span id="SPOTLIGHT"></span>スポット ライト
 
 
 スポットライトには、色、位置、光を放射する方向があります。 次の図に示すように、スポットライトから放射される光は明るい内部コーンと大きい外部コーンで構成されており、2 つのコーンの間で光の強さは弱くなっていきます。
@@ -79,7 +79,7 @@ ms.locfileid: "8926800"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[照明および素材](lights-and-materials.md)
+[ライトとマテリアル](lights-and-materials.md)
 
  
 

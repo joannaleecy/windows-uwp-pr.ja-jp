@@ -4,14 +4,14 @@ description: Xbox Live タイトル ストレージ内の構成 BLOB の読み�
 ms.assetid: ee62d221-69b9-4f52-9b5d-5a44d04de548
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 71607f05f07ee4a98f73a19c28c85dc325041a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599397"
 ---
 # <a name="reading-a-configuration-blob-in-xbox-live-title-storage"></a>Xbox Live タイトル ストレージ内の構成 BLOB の読み取り
 
@@ -31,7 +31,7 @@ ms.locfileid: "8926403"
 -   更新するには、ユーザーはそのセッション内にいなければなりません。
 -   STSTokenString は、簡潔にするためのプレースホルダーであり、認証要求から返されるトークンで置き換える必要があります。
 
-#### <a name="reference"></a>参照先
+#### <a name="reference"></a>リファレンス
 
 **/global/scids/{scid}/data/{pathAndFileName},{type}**
 **GET (/global/scids/{scid}/data/{pathAndFileName},{type})**

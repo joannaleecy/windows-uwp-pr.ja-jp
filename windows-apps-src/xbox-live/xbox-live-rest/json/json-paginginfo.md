@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e773d73499e79fe23f736a536027932ca1a07b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651217"
 ---
 # <a name="paginginfo-json"></a>PagingInfo (JSON)
-データのページで返される結果のページング情報が含まれています。 
+ページのデータで返される結果のページング情報が含まれています。 
 <a id="ID4EN"></a>
 
  
@@ -23,13 +23,13 @@ ms.locfileid: "8943593"
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| continuationToken| string| 結果の次のページにアクセスするために使用する不透明な継続トークンです。 最大 32 文字以下です。呼び出し元では、次のコレクション内の項目のセットを取得するために、 <b>continuationToken</b>クエリ パラメーターでは、この値を指定できます。 このプロパティが<b>null</b>の場合、項目がない追加コレクション内します。 このプロパティは、必要な場合でも、 <b>skipItems</b>でページングされるコレクションが提供されます。| 
-| totalItems| 32 ビット符号付き整数| コレクション内の項目の合計数。 これが指定されていない場合は、サービスは、コレクションのサイズにリアルタイムで表示を提供することはできません。| 
+| continuationToken| string| 結果の次のページにアクセスするために使用する非透過的継続トークンです。 最大 32 文字です。呼び出し元がこの値を指定できます、 <b>continuationToken</b>次の一連のコレクション内の項目を取得するためにクエリ パラメーター。 このプロパティが場合<b>null</b>をコレクションに追加の項目はありません。 このプロパティは必須でありが提供されると、コレクションはページングされている場合でも<b>skipItems</b>します。| 
+| totalItems| 32 ビット符号付き整数| コレクション内の項目の合計数。 これは、サービスは、コレクションのサイズにリアルタイム ビューを提供することがない場合、このレベルは提供されません。| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -51,6 +51,6 @@ ms.locfileid: "8943593"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

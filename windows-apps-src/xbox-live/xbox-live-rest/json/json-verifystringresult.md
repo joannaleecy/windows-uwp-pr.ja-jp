@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b01793222be80efccdca1f24f5226a2e9ff78064
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927424"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599487"
 ---
 # <a name="verifystringresult-json"></a>VerifyStringResult (JSON)
-[/System/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)に送信された各文字列に対応する結果コード。
+送信された各文字列に対応するコードを結果[/system/strings/validate](../uri/stringserver/uri-systemstringsvalidate.md)します。
 <a id="ID4ER"></a>
 
 
 ## <a name="verifystringresult"></a>VerifyStringResult
 
-VerifyStringResult オブジェクトには、次仕様があります。
+VerifyStringResult オブジェクトには、次の仕様があります。
 
 | メンバー| 種類| 説明|
 | --- | --- | --- |
-| resultCode| 32 ビットの符号なし整数| 必須。 HResult コードに対応する文字列を送信します。|
-| offendingString| string| 必須。 拒否する文字列の原因となった文字列値。|
+| 結果コード| 32 ビット符号なし整数| 必須。 対応する HResult コード文字列を送信します。|
+| offendingString| string| 必須。 拒否される文字列の原因となった文字列値。|
 
 <a id="ID4EXB"></a>
 
 
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
 
 
 ```json
@@ -48,9 +48,9 @@ VerifyStringResult オブジェクトには、次仕様があります。
 ```
 
 
-#### <a name="common-hresult-values"></a>一般的な HResult 値
+#### <a name="common-hresult-values"></a>共通 HResult 値
 
-| 値| エラーの名前|
+| Value| エラー名|
 | --- | --- | --- | --- | --- |
 | 0| 成功|
 | 1| 不快感を与える文字列|
@@ -67,7 +67,7 @@ VerifyStringResult オブジェクトには、次仕様があります。
 
 ##### <a name="parent"></a>Parent
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
 
 <a id="ID4EXD"></a>

@@ -7,44 +7,44 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1aa2447a2044bec9b2013b30c05e45342b763fc3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947580"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656567"
 ---
 # <a name="create-a-new-title-for-xbox-live"></a>Xbox Live 用の新しいタイトルを作成する
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 コードを記述する前に、サービス構成ポータルで、新しいタイトルをセットアップする必要があります。  サービス構成について詳しくは、「[Xbox Live サービス構成](../xbox-live-service-configuration.md)」をご覧ください。
 
 この記事では、新しいタイトルをセットアップする手順について説明します。前提条件は以下のとおりです。
 
 1. ユニバーサル Windows プラットフォーム (UWP) のタイトルを開発している。  UWP タイトルは、Xbox One、Windows 10 デスクトップ PC、およびモバイルで動作するタイトルです。
-2. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを構成します。
+2. タイトルを構成している[パートナー センター](https://partner.microsoft.com/dashboard)します。
 3. カスタム ゲーム エンジンを備えた Visual Studio、または Unity のいずれかを使用している。
 4. 開発用コンピュータは Windows 10 を実行している。
 
-上記が true に、この記事の残りの部分は、新しいプロジェクトの作成、および Xbox Live サインイン コードの記述されテストされたパートナー センターで構成されているタイトルを取得するために必要なすべての手順について説明します。
+上記に該当することは、この記事の残りの部分をパートナー センター、新しいプロジェクトの作成、および Xbox Live サインイン コード記述され、テストで構成されているタイトルを取得するために必要なすべて説明します。
 
 > [!NOTE]
 > Xbox Live クリエーターズ プログラムに参加している場合は、上記の前提条件が適用されますので、この記事に従ってください。
 
 ## <a name="partner-center-setup"></a>パートナー センターのセットアップ
 
-Xbox Live 機能が動作する前提条件として、[パートナー センター](https://partner.microsoft.com/dashboard)で作成した Xbox Live 対応のタイトルが必要です。
+Xbox Live、有効になっているタイトルで作成する必要がある[パートナー センター](https://partner.microsoft.com/dashboard) Xbox Live 機能のすべての作業に前提条件として。
 
 ### <a name="create-a-microsoft-account"></a>Microsoft アカウントを作成する
-Microsoft アカウント (MSA とも呼ばれます) があるない場合は、一度に 1 つを最初に作成する必要があります。[https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
+Microsoft アカウント (MSA) を持っていない場合は、最初に 1 つを作成する必要があります。 [ https://go.microsoft.com/fwlink/p/?LinkID=254486](https://go.microsoft.com/fwlink/p/?LinkID=254486)します。  Office 365 アカウントをお持ちの場合は、Outlook.com を使用してください。または Xbox Live アカウントをお持ちの場合は、既に MSA を持っている可能性があります。
 
 ### <a name="register-as-an-app-developer"></a>アプリ開発者として登録する
-パートナー センターで新しいタイトルを作成することが前に、アプリ開発者として登録する必要があります。
+パートナー センターで、新しいタイトルを作成する前に、アプリ開発者として登録する必要があります。
 
-登録するにhttps://developer.microsoft.com/en-us/store/registerし、サインアップ プロセスに従います。
+Go を登録する https://developer.microsoft.com/en-us/store/registerしサインアップのプロセスに従います。
 
 ### <a name="create-a-new-uwp-title"></a>新しい UWP タイトルを作成する
-次に、UWP タイトルがパートナー センターで定義されている必要があります。  これを実行するには、まずダッシュ ボードに移動します
+次に、UWP のタイトルがパートナー センターで定義されている必要があります。  これを実行するには、まずダッシュ ボードに移動します
 
 ![](../images/getting_started/first_xbltitle_dashboard.png)
 
@@ -73,7 +73,7 @@ Xbox Live にサインインするには、Xbox Live アカウントが必要で
 
 ![](../images/getting_started/first_xbltitle_xboxapp.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 これで新しいタイトルが作成されたので、次はゲーム エンジン、Visual Studio、任意のビルド環境で Xbox Live 対応のタイトルをセットアップできます。
 
 「[Xbox Live を統合するためのステップ バイ ステップ ガイド](partners-step-by-step-guide.md)」をご覧ください

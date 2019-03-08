@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 99159b5d126c671b07d37e20f1bcd61452c7d670
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594717"
 ---
 # <a name="multiplayer-manager"></a>Multiplayer Manager
 
@@ -33,16 +33,16 @@ Multiplayer Manager API の主な機能を次に示します。
 
 ## <a name="overview"></a>概要
 Multiplayer Manager には、いくつかの重要な概念があります。
-* `lobby_session` : このデバイスに対してローカルなユーザーと、ゲームに招待したフレンドを管理するために使用する永続的なセッションです。 グループは、ゲームの複数のラウンドやマップ、レベルなどをプレイすることがあり、ロビー セッションがこのフレンドのコア グループ (デバイスにローカルのプレイヤーを含む) を追跡します。 一般に、このグループは、ホストがメニューを移動し、グループ メンバーとチャットしてどのゲーム モードをプレイするかを決めるときに形成されます。
+* `lobby_session` :このデバイスに対してローカルなユーザーと、ゲームに招待したフレンドを管理するために使用する永続的なセッションです。 グループは、ゲームの複数のラウンドやマップ、レベルなどをプレイすることがあり、ロビー セッションがこのフレンドのコア グループ (デバイスにローカルのプレイヤーを含む) を追跡します。 一般に、このグループは、ホストがメニューを移動し、グループ メンバーとチャットしてどのゲーム モードをプレイするかを決めるときに形成されます。
 
-* `game_session` : ゲームの特定のインスタンスをプレイしているプレイヤーを追跡します。 たとえば、レース、マップ、レベルです。 ロビー セッションのメンバーが含まれる `join_game_from_lobby` で新しいゲーム セッションを作成できます。  メンバーが招待を受け入れると、メンバーはロビーおよびゲーム セッションに追加されます (空きがある場合)。 マッチメイキングが有効になっている場合はゲーム セッションに他のプレイヤーを追加できますが、それらの追加プレイヤーはロビー セッションには追加されません。 これは、ゲームが終了すると、ロビー セッション内のプレイヤーはまだ一緒にいますが、マッチメイキングからの追加プレイヤーはそうではないことを意味します。
+* `game_session` :トラック プレイヤーがゲームの特定のインスタンスを実行します。 たとえば、レース、マップ、レベルです。 ロビー セッションのメンバーが含まれる `join_game_from_lobby` で新しいゲーム セッションを作成できます。  メンバーが招待を受け入れると、メンバーはロビーおよびゲーム セッションに追加されます (空きがある場合)。 マッチメイキングが有効になっている場合はゲーム セッションに他のプレイヤーを追加できますが、それらの追加プレイヤーはロビー セッションには追加されません。 これは、ゲームが終了すると、ロビー セッション内のプレイヤーはまだ一緒にいますが、マッチメイキングからの追加プレイヤーはそうではないことを意味します。
 
-* `multiplayer_member` : ローカルまたはリモート デバイスにサインインしている個々のユーザーを表します。
+* `multiplayer_member` :ローカルまたはリモート デバイスでサインインしている個々 のユーザーを表します。
 
-* `do_work` : タイトルと Xbox Live マルチプレイヤー サービスとの間で適切なゲームの状態の更新が維持されるようにします。 最適なパフォーマンスを得るには、do_work() を頻繁に呼び出す必要があります (フレームごとに 1 回 など)。 do_work() は、ゲームで処理する `multiplayer_event` コールバック イベントのリストを提供します。
+* `do_work` :により、適切なゲームの状態の更新プログラムは、タイトルと Xbox Live マルチプレイヤー サービスの間保持されます。 最適なパフォーマンスを得るには、do_work() を頻繁に呼び出す必要があります (フレームごとに 1 回 など)。 do_work() は、ゲームで処理する `multiplayer_event` コールバック イベントのリストを提供します。
 
 ## <a name="state-machine"></a>ステート マシン
-`do_work()` 呼び出しは、状態を最新に維持するために必要です。  Multiplayer Manager が機能するためには、デベロッパーが `do_work()` メソッドを定期的に呼び出す必要があります。 これを行う最も信頼性の高い方法は、フレームごとに少なくとも 1 回呼び出すことです。 `do_work()` で実行する作業がないと迅速に制御が戻るため、呼び出しの頻度が多すぎることについて心配する必要はありません。
+`do_work()` 呼び出しは、状態を最新に維持するために必要です。  Multiplayer Manager が機能するためには、デベロッパーが `do_work()` メソッドを定期的に呼び出す必要があります。 これを行う最も信頼性の高い方法は、フレームごとに少なくとも 1 回呼び出すことです。 `do_work()` ないときに、作業頻度が高すぎる呼び出しに関する問題の原因がないために、すばやくを返します。
 
 Multiplayer Manager API によって返されるすべてのオブジェクトがスレッドセーフであるとは見なさないでください。 ただし、複数のスレッドから呼び出す場合は、スレッドの同期の実行を制御できます。 ライブラリには内部的なマルチスレッド保護機能がありますが、別のスレッドが `do_work()` を呼び出している可能性がある間に、あるスレッドで任意の値にアクセスする必要がある場合は (たとえば、members() リストの処理)、独自のロック処理を実装する必要があります。
 
@@ -81,10 +81,10 @@ for (auto& event : eventQueue)
 
 このセクションでは、いくつかの一般的なシナリオと、各シナリオで呼び出すことがある API を紹介します。  Multiplayer Manager がバックグラウンドで行っていることについても説明しています。
 
-* [フレンドとのプレイ](multiplayer-manager/play-multiplayer-with-friends.md)
-* [マッチを探す](multiplayer-manager/play-multiplayer-with-matchmaking.md)
-* [ゲームへの招待を送信する](multiplayer-manager/send-game-invites.md)
-* [プロトコルのアクティブ化を処理する](multiplayer-manager/handle-protocol-activation.md)
+* [友人と再生します。](multiplayer-manager/play-multiplayer-with-friends.md)
+* [一致を見つける](multiplayer-manager/play-multiplayer-with-matchmaking.md)
+* [ゲームの招待を送信します。](multiplayer-manager/send-game-invites.md)
+* [プロトコルのアクティブ化を処理します。](multiplayer-manager/handle-protocol-activation.md)
 
 API の概要については、「[Multiplayer Manager API の概要](multiplayer-manager/multiplayer-manager-api-overview.md)」をご覧ください。
 
@@ -96,10 +96,10 @@ Multiplayer Manager によってマルチプレイヤー シナリオの実装�
 
 >Multiplayer Manager は特定のネットワーク技術に縛られず、どのネットワーク レイヤーでも機能する必要があります。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 動作する API の例については、C++ または WinRT いずれかの *Multiplayer* サンプルをご覧ください。
 
 API ドキュメントは、Microsoft::Xbox::Services::Multiplayer::Manager 名前空間の C++ ガイドまたは WinRT ガイドにあります。  `multiplayer_manager.h` ヘッダーもご覧ください。
 
-に関する質問やフィードバック、または Multiplayer Manager を使用して問題が発生した場合ください、担当の DAM に問い合わせてまたはフォーラムでサポート スレッドを投稿[https://forums.xboxlive.com](https://forums.xboxlive.com)します。
+ご質問、フィードバック、またはにマルチ プレーヤーのマネージャーを使用して問題が発生した場合してください、ダムにお問い合わせくださいまたはフォーラムでのサポートのスレッドを投稿[ https://forums.xboxlive.com](https://forums.xboxlive.com)します。

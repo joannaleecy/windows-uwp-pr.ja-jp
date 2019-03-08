@@ -3,43 +3,43 @@ title: Xbox One の UWP の新着情報
 description: Xbox One の UWP アプリの新機能について説明します。
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 ms.localizationpriority: medium
 ms.openlocfilehash: aff65e5f1b4771cbb33bc8b8219224042b7bf7e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922706"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660687"
 ---
-# <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Xbox One の UWP の最新の更新プログラムにおける開発者向け新着情報
+# <a name="whats-new-for-developers-in-the-latest-update-of-uwp-on-xbox-one"></a>Xbox One の UWP の最新の更新プログラムでの開発者向けの新機能
 
-最新の更新プログラム ユニバーサル Windows プラットフォーム (UWP) Xbox One でにはは、次の新機能、既存の機能やバグ修正する更新プログラムが含まれます。
+Xbox One のユニバーサル Windows プラットフォーム (UWP) の最新の更新プログラムには、次の新しい機能、既存の機能の更新、バグ修正が含まれています。
 
-## <a name="x86-apps-and-games-are-no-longer-supported-on-xbox"></a>x86 アプリとゲームが Xbox でサポートされていません  
+## <a name="x86-apps-and-games-are-no-longer-supported-on-xbox"></a>x86 アプリおよびゲームの Xbox でのサポート停止  
 Xbox では、x86 アプリの開発または x86 アプリのストアへの申請をサポートしなくなりました。
 
-## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>アプリが以前のアプリに戻る移動をサポートできますできるようになりました 
-アプリが Xbox One の UWP では、前のアプリに戻る移動をサポートできますできるようになりました。 これを行うには、 [**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595)イベントをサブスクライブし、 **false**イベント ハンドラーで**Handled**プロパティを設定します。
+## <a name="apps-can-now-support-navigating-back-to-the-previous-app"></a>アプリは前のアプリに戻る移動をサポート可能に 
+Xbox One アプリの UWP では、前のアプリに戻る移動をサポートできるようになりました。 これを行うには、[**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595) イベントにサブスクライブし、イベント ハンドラーで **Handled** プロパティを **false** に設定します。
 
 > [!NOTE]
-> 互換性の理由から、この機能は、Xbox One の UWP の最新リリースに組み込まれているアプリでのみ利用可能です。 
+> 互換性の理由から、この機能は Xbox One で最新リリースの UWP を使って構築されたアプリでのみ利用できます。 
 
-## <a name="dev-home-is-now-the-default-home-experience-on-development-consoles"></a>Dev Home は開発コンソールで既定のホーム エクスペリエンスができるようになりました。
-今すぐ開発コンソールは既定のホーム エクスペリエンスとして Dev Home を起動します。 これにより、製品版ホーム画面からクリックスルーすることがなく動作する適切なできます。 Dev Home には、製品版ホーム画面を起動するクイック アクションが含まれています。 また、新しい設定には、既定のエクスペリエンスを小売ホームようにすることができます。 
+## <a name="dev-home-is-now-the-default-home-experience-on-development-consoles"></a>Dev Home が開発コンソールにおける既定のホーム エクスペリエンスに
+開発コンソールでは、既定のホーム エクスペリエンスとして Dev Home が起動するようになりました。 これにより、製品版のホーム画面でクリックしなくてもすぐに作業を始めることができるようになりました。 Dev Home には、製品版のホーム画面を起動するクイックアクションが追加されました。 また、新しい設定では製品版のホーム画面を既定のエクスペリエンスにすることができます。 
 
-## <a name="new-dev-home-user-interface"></a>Dev Home の新しいユーザー インターフェイス
-Dev Home のユーザー インターフェイスには、次の生産性の向上にはできるようになりましたが含まれています。
- - 重要なデータなどの IP アドレスと、表示用に、画面の上部に回復のバージョンが表示されるようになりました。 
- - Dev Home は、タブ UI 論理セットにツールをグループ化されているすばやいナビゲーションを許可するようになりました。
- - Dev Home の最初のタブのクイック アクション ボタンは、最もよく使われる操作を高速アクセスを許可します。 
+## <a name="new-dev-home-user-interface"></a>新しい Dev Home ユーザー インターフェイス
+Dev Home のユーザー インターフェイスに、次の生産性強化機能が追加されました。
+ - IP アドレスや回復バージョンなどの重要なデータが、見やすいように画面の上部に表示されるようになりました。 
+ - Dev Home は、ツールが論理セットにグループ化されるタブ付き UI になり、すばやいナビゲーションが可能になりました。
+ - Dev Home の最初のタブにあるクイックアクション ボタンにより、最もよく使われる操作にすばやくアクセスできるようになりました。 
 
-## <a name="wdp-for-xbox-enhancements"></a>Xbox の機能強化 WDP
-Windows Device Portal (WDP) には、コンソールの設定の追加のサポートが含まれています。 
+## <a name="wdp-for-xbox-enhancements"></a>Xbox の機能を強化するための WDP
+Windows Device Portal (WDP) にコンソール設定のサポートが追加されました。 
 
-## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>ここで、"App"と「ゲーム」の間で UWP タイトルの種類を切り替えることができます。
-"App"と「ゲーム」の間で UWP タイトルの種類を切り替えるには、ストアに公開することがなくゲーム シナリオをテストすることができます。 Dev Home で**ゲームとアプリ**のウィンドウで、アプリを選択、コント ローラーのビュー ボタンを押して**アプリの詳細**を選択し、種類を"App"または"Game"に変更します。
+## <a name="you-can-now-switch-the-type-of-your-uwp-title-between-app-and-game"></a>"アプリ" と "ゲーム" の間で、UWP タイトルの種類を切り替えることができるようになりました。
+"アプリ" と "ゲーム" の間で UWP タイトルの種類を切り替えると、ストアに公開しなくてもゲーム シナリオをテストすることができます。 Dev Home の **[アプリ+ゲーム]** ウィンドウでアプリを選んでコントローラーで [表示] ボタンを押し、**[アプリの詳細]** を選んで種類を "アプリ" または "ゲーム" に変更します。
 
 ## <a name="see-also"></a>関連項目
 - [既知の問題](known-issues.md)

@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: ed3482b8e629749d294ed25944db16372cc7fee6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943616"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594747"
 ---
 # <a name="post-handles"></a>POST (/handles)
-ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。
+ユーザーの現在のアクティビティのマルチ プレーヤーのセッションを設定し、必要な場合は、セッションのメンバーを招待します。
 
 > [!IMPORTANT]
-> このメソッドは、2015年マルチプレイヤーで使用し、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です: 104/105 または後ですべての要求します。
+> このメソッドは、2015年マルチ プレーヤーを使用し、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 104/105 またはそれ以降、テンプレートのコントラクトで使用され、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EHB)
-  * [HTTP ステータス コード](#ID4EPB)
+  * [HTTP 状態コード](#ID4EPB)
   * [要求本文](#ID4EVB)
   * [応答本文](#ID4EJC)
 
@@ -31,9 +31,9 @@ ms.locfileid: "8943616"
 
 ## <a name="remarks"></a>注釈
 
-現在のアクティビティのセッションを設定するのには、この HTTP/REST メソッドを使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**でラップすることができます。 要求本文には、「アクティビティ」の種類] フィールドに、JSON ファイルで**sessionRef**オブジェクトを使用して、セッションの参照を定義する必要があります。 応答本文は取得されません。 セッション参照で指定された項目の定義、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**を参照してください。
+現在のアクティビティのセッションを設定するのには、この HTTP/REST メソッドを使用できます。 メソッドをラップしてこの場合、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SetActivityAsync**します。 要求本文は、セッションを定義する必要がありますを使用して、参照、 **sessionRef** 「アクティビティ」の種類 フィールドに、JSON ファイル内のオブジェクト。 応答本文は取得されません。 セッションの参照で指定された項目の定義は、次を参照してください。 **Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference**します。
 
-この POST メソッドは、セッションへのハンドルによって指定されたユーザーを招待するも使用できます。 この場合、メソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**でラップすることができます。 このような POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型のフィールド「招待」に設定します。 応答本文では、招待ハンドルです。
+この POST メソッドがセッションへのハンドルで指定されたユーザーを招待することもできます。 メソッドをラップしてこの場合、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.SendInvitesAsync**します。 この POST メソッドの使用には、セッションの参照を定義する、要求本文が必要ですが、型のフィールド「招待」に設定します。 応答本文はな招待ハンドルです。
 
 <a id="ID4EHB"></a>
 
@@ -45,8 +45,8 @@ ms.locfileid: "8943616"
 <a id="ID4EPB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EVB"></a>
 
 
@@ -55,7 +55,7 @@ ms.locfileid: "8943616"
 <a id="ID4E1B"></a>
 
 
-### <a name="request-body-for-setting-activity"></a>要求本文のアクティビティの設定
+### <a name="request-body-for-setting-activity"></a>要求アクティビティを設定するための本文
 
 
 ```cpp
@@ -116,7 +116,7 @@ ms.locfileid: "8943616"
 
 
 ### <a name="response-body-for-sending-invites"></a>招待を送信するための応答本文
-招待ハンドル。   
+招待のハンドル。   
 <a id="ID4EXC"></a>
 
 

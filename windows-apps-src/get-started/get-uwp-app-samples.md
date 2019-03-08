@@ -7,16 +7,16 @@ keywords: Windows 10、UWP、サンプル コード、コード サンプル
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598537"
 ---
 # <a name="get-uwp-app-samples"></a>UWP アプリのサンプルを取得する
 
 ユニバーサル Windows プラットフォーム (UWP) アプリのサンプルは、GitHub のリポジトリを利用して入手できます。 検索可能な、カテゴリ別の一覧については、[サンプル](https://developer.microsoft.com/windows/samples "デベロッパー センターのサンプル")をご覧ください。または [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "ユニバーサル Windows プラットフォーム アプリのサンプルの GitHub リポジトリ") リポジトリには、UWP 機能のすべてと API の使用パターンを示すサンプルが含まれています。  
-![GitHub の UWP サンプルのリポジトリ](images/GitHubUWPSamplesPage.png)
+![UWP の GitHub サンプル リポジトリ](images/GitHubUWPSamplesPage.png)
 
 ## <a name="download-the-code"></a>コードのダウンロード
 
@@ -45,7 +45,7 @@ zip ファイルをダウンロードしたら、Visual Studio でサンプル�
 
     ![言語フォルダー](images/SamplesUnzip3.png)
 
-4.  使用する言語 (C\# の場合は [CS]) を選ぶと、Visual Studio で開くことができる Visual Studio のソリューション ファイルが表示されます。
+4.  C 用 CS など、使用する言語を選択します。\#、と Visual Studio で開くことができる、Visual Studio のソリューション ファイルが表示されます。
 
     ![VS ソリューション](images/SamplesUnzip4.png)
 

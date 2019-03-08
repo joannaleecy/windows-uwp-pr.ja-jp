@@ -1,5 +1,5 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+Description: タッチパッド向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 title: タッチパッド操作
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046708"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593907"
 ---
 # <a name="touchpad-design-guidelines"></a>タッチパッドの設計ガイドライン
 
@@ -55,11 +55,11 @@ ms.locfileid: "9046708"
 
 ![標準のタッチパッドの設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準の\\タッチパッドの\\設定</sup>
+<sup>標準\\タッチパッド\\設定</sup>
 
 ![Windows 高精度タッチパッドの設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ 高精度\\タッチパッドの\\設定</sup>
+<sup>Windows\\精度\\タッチパッド\\設定</sup>
 
 以下に、一般的なタスクを実行するためのタッチパッドに最適化されたジェスチャの例を示します。
 
@@ -155,15 +155,15 @@ ms.locfileid: "9046708"
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
 **サンプル**
-* [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的な入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低待機時間の入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **サンプルのアーカイブ**
-* [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力:デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力:XAML ユーザー入力イベントのサンプル](https://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML のスクロール、パン、ズームのサンプル](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: GestureRecognizer によるジェスチャと操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [入力:ジェスチャと GestureRecognizer の操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

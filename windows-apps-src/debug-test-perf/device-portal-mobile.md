@@ -4,14 +4,14 @@ title: モバイル用 Device Portal
 description: Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, デバイス ポータル
+keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 879f4b9fd8806565eedeabda95f0c24c5b7931d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925233"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597227"
 ---
 # <a name="device-portal-for-mobile"></a>モバイル用 Device Portal
 
@@ -31,21 +31,21 @@ Device Portal に接続するには、電話の設定でデバイスの検出と
 
 ![開発者モードのデバイス検出設定](images/device-portal/mob-dev-mode-pairing.png)
 
-Device Portal に接続するには、USB、ローカル ホスト、ローカル ネットワーク (VPN やテザリングを含む) の 3 つの方法のいずれかを使うことができます。
+デバイスのポータルに接続する 3 つの方法から選択できます。USB、ローカルのホストとローカル ネットワーク (テザリングと VPN を含む)。
 
-**Device Portal に接続するには**
+**デバイスのポータルに接続するには**
 
 1. ブラウザーで、使っている接続の種類に応じて次のアドレスを入力します。
 
-    - USB:  `http://127.0.0.1:10080`
+    - USB: `http://127.0.0.1:10080`
 
     電話が USB で PC に接続されている場合は、このアドレスを使います。 両方のデバイスに、Windows 10 バージョン 1511 以降が必要です。
     
-    - Localhost:  `http://127.0.0.1`
+    - Localhost: `http://127.0.0.1`
 
     このアドレスは、Windows 10 Mobile の Microsoft Edge で電話上の Device Portal をローカルで表示するときに使います。
     
-    - Local Network:  `https://<The IP address or hostname of the phone>`
+    - Local Network: `https://<The IP address or hostname of the phone>`
 
     このアドレスは、ローカル ネットワーク経由で接続するときに使います。
 
@@ -66,7 +66,7 @@ Windows Phone の開発者設定ページの [Device Portal] セクションを�
 ## <a name="tool-notes"></a>ツールに関する注意事項
 
 ## <a name="device-portal-pages"></a>Device Portal のページ
-### <a name="processes"></a>プロセス
+### <a name="processes"></a>Processes (プロセス)
 
 Windows Mobile Device Portal には、任意のプロセスを強制終了する機能はありません。 
 
@@ -74,7 +74,7 @@ Windows Mobile Device Portal には、任意のプロセスを強制終了する
 
 - アプリ マネージャー
 - アプリのエクスプローラー (分離ストレージ エクスプローラー)
-- プロセス
+- Processes (プロセス)
 - パフォーマンスのグラフ
 - Windows イベント トレーシング (ETW)
 - パフォーマンス トレース (WPR) 
@@ -84,4 +84,4 @@ Windows Mobile Device Portal には、任意のプロセスを強制終了する
 ## <a name="see-also"></a>関連項目
 
 * [Windows Device Portal の概要](device-portal.md)
-* [デバイス ポータル コア API リファレンス](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [デバイス ポータル core API リファレンス](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

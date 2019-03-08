@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, マッチメイキング, SmartMatch
 ms.localizationpriority: medium
 ms.openlocfilehash: 89f33768efcd649987866fd0798c222aa97f7ff8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941492"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592097"
 ---
 # <a name="using-smartmatch-matchmaking"></a>SmartMatch マッチメイキングの使用
 
@@ -23,7 +23,7 @@ ms.locfileid: "8941492"
 
 マッチメイキングを開始する前に、マッチメイキング "スカウト" が、マッチメイキングに一緒に参加することを希望するユーザーのグループを表す、マッチ チケット セッションを設定します。 このグループ内のすべてのユーザーは、**MultiplayerSession.Join メソッド (String, Boolean, Boolean)** を使用してセッションに参加します。
 
-チケット セッションが作成され、プレイヤーが設定されたら、タイトルは **MatchmakingService.CreateMatchTicketAsync メソッド**を使用してセッションをマッチメイキング サービスに送信します。 このメソッドは、チケット セッションを表すマッチ チケットを作成し、チケット セッションの /servers/matchmaking/properties/system/status フィールドを "searching" に更新します。 詳細については、「[方法: マッチ チケットの作成](multiplayer-how-tos.md)」を参照してください。
+チケット セッションが作成され、プレイヤーが設定されたら、タイトルは **MatchmakingService.CreateMatchTicketAsync メソッド**を使用してセッションをマッチメイキング サービスに送信します。 このメソッドは、チケット セッションを表すマッチ チケットを作成し、チケット セッションの /servers/matchmaking/properties/system/status フィールドを "searching" に更新します。 詳細については、次を参照してください。[方法。一致のチケットを作成](multiplayer-how-tos.md)です。
 
 マッチ チケット作成メソッドからの応答は **CreateMatchTicketResponse クラス** オブジェクトです。 この応答には、マッチ チケット ID、チケットの削除によってマッチメイキングをキャンセルするために使用できる GUID が含まれます。 応答にはホッパーの平均待ち時間の情報も含まれ、この情報を使ってユーザーの期待を設定できます。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8941492"
 
 タイトルは、マッチ チケット セッション内の各メンバーでメンバーごとの属性を指定します。 これらは、**MultiplayerSession.SetCurrentUserMemberCustomPropertyJson メソッド**を呼び出し、プロパティ名 "matchAttrs" を使用して設定されます。 この呼び出しは、属性をチケット セッション内の各プレイヤーの /members/{index}/properties/custom/matchAttrs フィールドに配置します。
 
-マッチメイ キング プロセス均一メンバーごとの各ホッパーの Xbox Live 構成でその属性に対して指定した均一化メソッドに基づいて、単一のチケット レベル属性です。 これは、 [XDP](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)で構成できます。
+マッチメイ キング プロセス「フラット化」にメンバーごと、hopper の Xbox Live の構成では、その属性の指定された flatten メソッドに基づいて、単一のチケット レベル属性にします。 これで構成できる[XDP](https://xdp.xboxlive.com)または[パートナー センター](https://partner.microsoft.com/dashboard)します。
 
 
 ## <a name="making-the-match"></a>マッチの実行
@@ -88,13 +88,13 @@ ms.locfileid: "8941492"
 2.  グループに属する他のすべてのクライアントがチケット セッションに参加します。
 3.  グループのすべてのメンバーは、/members/{index}/properties/system/serverMeasurements で定義されているように、チケット セッションの /constants/system オブジェクトから measurementServerAddresses 値をダウンロードし、プラットフォーム API を使用してそれらに ping を実行して、優先するデータセンターの順序付きリストをセッションにアップロードします。
 
-| 注意                                                                                                                                                                                                                                                                                                     |
+| 注                                                                                                                                                                                                                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | タイトルは、セッションの measurementServerAddresses 値を **MultiplayerSession.SetMeasurementServerAddresses** メソッドおよび **MultiplayerSessionConstants.MeasurementServerAddressesJson プロパティ**を使用して設定および取得できます。 |
 
 4.  スカウトは、チケット セッションへの参照を渡して **CreateMatchTicketAsync** を呼び出します。
 
-| 注意                                                                                                                                                                                                         |
+| 注                                                                                                                                                                                                         |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | チケット セッション オブジェクトの定数が一致していない場合、チケット作成メソッドは失敗する可能性があります。 これは、ホッパーに必須ルールを追加し、定数が一致しないプレイヤーのマッチを防止することで回避できます。 |
 
@@ -111,10 +111,10 @@ ms.locfileid: "8941492"
 
 ## <a name="see-also"></a>関連項目
 
-[SmartMatch のランタイム操作](smartmatch-matchmaking.md)
+[SmartMatch ランタイム操作](smartmatch-matchmaking.md)
 
-[SmartMatch マッチメイキング](smartmatch-matchmaking.md)
+[SmartMatch マッチメイ キング](smartmatch-matchmaking.md)
 
-**Microsoft.Xbox.Services.Matchmaking 名前空間**
+**Microsoft.Xbox.Services.Matchmaking Namespace**
 
-**Microsoft.Xbox.Services.Multiplayer 名前空間**
+**Microsoft.Xbox.Services.Multiplayer Namespace**

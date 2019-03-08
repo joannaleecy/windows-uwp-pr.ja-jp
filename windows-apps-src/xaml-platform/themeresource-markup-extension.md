@@ -4,14 +4,14 @@ title: ThemeResource マークアップ拡張
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9466ec598fad090e31768d680b64ffea52688844
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919696"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661147"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} マークアップ拡張
 
@@ -39,7 +39,7 @@ ms.locfileid: "8919696"
 
 リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-**重要** **StaticResource** と同様、**ThemeResource** は、XAML ファイルの中で辞書的に定義されているリソースへの前方参照を行うことはできません。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
+**重要****StaticResource** と同様、**ThemeResource** は、XAML ファイルの中で辞書的に定義されているリソースへの前方参照を行うことはできません。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
 
 解決できないキーに **ThemeResource** を指定しようとすると、実行時に XAML 解析例外がスローされます。 デザイン ツールでも、警告やエラーが通知されることがあります。
 
@@ -67,7 +67,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 **ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) タイプのプロパティです。
 
-**注:** `{ThemeResource}`とテーマ切り替え実行時のリソースの評価が Windows8.1 XAML でサポートされていますが、Windows8 をターゲットとするアプリの XAML でサポートされていません。
+**注**  `{ThemeResource}`テーマの切り替えの評価を実行時のリソースが Windows 8.1 の XAML でサポートされますが、Windows 8 を対象とするアプリの XAML でサポートされていません。
 
 ### <a name="system-resources"></a>システム リソース
 
@@ -136,21 +136,21 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 この [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 値は、システム リソースに対するもう 1 つの **ThemeResource** 参照です。 システム リソースを参照し、テーマの変更に応じてシステム リソースを変更する場合は、**ThemeResource** を使って参照を行う必要があります。
 
-## <a name="windows8-behavior"></a>Windows8 動作
+## <a name="windows8-behavior"></a>Windows 8 の動作
 
-Windows8 **ThemeResource**マークアップ拡張機能をサポートしていませんが、Windows8.1 で利用できます。 また、Windows8 では、Windows ランタイム アプリのテーマに関連するリソースの動的切り替えしなかったできません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは、手順は、優れたユーザー エクスペリエンスのため、アプリは、再コンパイルしてターゲット Windows8.1 を強くお勧めできるように、 **ThemeResource**使用法とスタイルを使用してには、ユーザーがときに、テーマを動的に切り替えることができます。 Windows8 が Windows8.1 で実行されている Windows8 動作を使い続けるためにコンパイルされたアプリ。
+Windows 8 をサポートしていない、 **ThemeResource**マークアップ拡張機能は Windows 8.1 以降から使用できます。 また、Windows 8 では、Windows ランタイム アプリのテーマに関連するリソースを動的に切り替えはできません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 アプリは再コンパイルして、Windows 8.1 を対象のスタイルを使用するよう強くお勧めしますので、優れたユーザー エクスペリエンスをそう**ThemeResource**使用状況、ユーザーが動的に、テーマを切り替えることができます。 Windows 8、Windows 8.1 で実行されている Windows 8 の動作を使用してコンパイルされたアプリです。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
 
-Microsoft Visual Studio2013 は、XAML ページで、 **{ThemeResource}** マークアップ拡張機能を使用する場合、Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
+Microsoft Visual Studio 2013 は、使用する場合に、Microsoft IntelliSense ドロップダウン リストでの使用可能なキー値を含めることができます、 **{ThemeResource}** XAML ページのマークアップ拡張機能。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
 
 **{ThemeResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、テーマ リソースが定義されている設計時の generic.xaml を表示できます。 テーマ リソースを何度も定義されるため (テーマごとに)、**[定義へ移動]** ではファイルで見つかった最初の定義に移動します。これは **Default** の定義です。 他の定義が必要な場合は、ファイル内のキー名を検索して、他のテーマの定義を参照できます。
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
-* [XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
+* [ResourceDictionary と XAML のリソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [XAML のテーマのリソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key 属性](x-key-attribute.md)
+* [X:key 属性](x-key-attribute.md)
  
 

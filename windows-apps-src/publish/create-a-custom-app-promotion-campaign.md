@@ -7,26 +7,26 @@ ms.topic: article
 keywords: Windows 10、UWP、カスタム、アプリ、プロモーション、キャンペーン
 ms.localizationpriority: medium
 ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934169"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653737"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>カスタム アプリ プロモーション キャンペーンの作成
 
 Windows アプリ内で実行される[アプリの広告キャンペーン](create-an-ad-campaign-for-your-app.md)の作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。 たとえば、サード パーティのアプリ マーケティング プロバイダーを使ってアプリを宣伝したり、ソーシャル メディア サイトにアプリのリンクを投稿したりできます。 これらの活動は*カスタム キャンペーン*と呼ばれます。
 
-アプリのカスタム キャンペーンを実行する場合、カスタム キャンペーンごとに異なる*キャンペーン ID* を含んだ異なる URL を作成することによって、各キャンペーンの相対的な成果を追跡できます。 Windows 10 を実行している顧客は、キャンペーン ID が含まれている URL をクリックすると、Microsoft、クリックに対応するカスタム キャンペーンを関連付け、このデータを利用可能なに[パートナー センター](https://partner.microsoft.com/dashboard)でします。
+アプリのカスタム キャンペーンを実行する場合、カスタム キャンペーンごとに異なる*キャンペーン ID* を含んだ異なる URL を作成することによって、各キャンペーンの相対的な成果を追跡できます。 Windows 10 を実行しているお客様は、キャンペーンの ID を含む URL をクリックすると、Microsoft のクリックを対応するカスタム キャンペーンに関連付けられでこのデータを使用できるように[パートナー センター](https://partner.microsoft.com/dashboard)します。
 
 > [!IMPORTANT]
-> このデータは windows 10 のユーザーについてのみ追跡します。 他のオペレーティング システムを使用しているユーザーも、アプリの内容へのリンクをたどることはできますが、それらのユーザーの活動に関するデータは含まれません。
+> このデータは、Windows 10 でのみお客様に追跡されます。 他のオペレーティング システムを使用しているユーザーも、アプリの登録情報へのリンクをたどることはできますが、それらのユーザーの活動に関するデータは含まれません。
 
 カスタム キャンペーンに関連付けられる 2 種類の主要なデータがあります。アプリの Store 登録情報の*ページ ビュー*と*コンバージョン*です。 コンバージョンとは、カスタム キャンペーン ID を含む URL からアプリのストア登録情報ページを閲覧したユーザーが、結果としてアプリを取得することです。 コンバージョンについて詳しくは、このトピックの「[アプリの取得がコンバージョンとして認められるしくみについて](#understanding-how-acquisitions-qualify-as-conversions)」をご覧ください。
 
 次の方法でアプリのカスタム キャンペーンのパフォーマンス データが得られます。
 
-* [取得] レポート](acquisitions-report.md)では、ページ ビューと**アプリ ページ ビューとキャンペーン ID ごとのコンバージョン**と**キャンペーンのコンバージョン合計**グラフから、アプリやアドオンのコンバージョンに関するデータを表示できます。
+* ページ ビューと、アプリやアドオンからの変換に関するデータを表示することができます、**アプリ ページのビューとキャンペーン ID によって変換**と**キャンペーンの変換の合計**でグラフが、[買収レポート](acquisitions-report.md)します。
 * アプリがユニバーサル Windows プラットフォーム (UWP) アプリの場合は、Windows SDK の API を使って、コンバージョンの基となるカスタム キャンペーン ID をプログラムによって取得できます。
 
 ## <a name="example-custom-campaign-scenario"></a>カスタム キャンペーンのシナリオの例
@@ -35,9 +35,9 @@ Windows アプリ内で実行される[アプリの広告キャンペーン](cre
 
 これらの各プロモーション チャネルの成果を追跡するためには、このゲームの Store 登録情報への URL を 2 種類作成します。
 
-* Facebook のページに投稿する URL には、カスタム キャンペーン ID を含めます。 `my-facebook-campaign`
+* 彼女は自分の Facebook ページに投稿が URL にキャンペーンのカスタム ID が含まれています `my-facebook-campaign`
 
-* Twitter に投稿する URL には、カスタム キャンペーン ID を含めます。 `my-twitter-campaign`
+* Twitter に投稿彼女は URL にキャンペーンのカスタム ID が含まれています `my-twitter-campaign`
 
 Facebook や Twitter のフォロワーがその URL をクリックすると、それが記録されて対応するカスタム キャンペーンに関連付けられます。 以降、ゲームおよびアドオンの購入に関して要件を満たすものは、カスタム キャンペーンと関連付けられてコンバージョンとして報告されます。
 
@@ -45,9 +45,9 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>取得がコンバージョンとして認められるしくみについて
 
-カスタム キャンペーンの*コンバージョン*とは、カスタム キャンペーンによって宣伝された URL をクリックしたユーザーが、結果としてアプリを取得することです。 [コンバージョンと認められる条件と、**アプリ ページ ビューとキャンペーン ID ごとのコンバージョン**および**キャンペーンのコンバージョン合計**グラフの[取得] レポート](acquisitions-report.md)でコンバージョンと認められる条件のさまざまなシナリオがあります。プログラムによってキャンペーン ID を取得](#programmatically)します。
+カスタム キャンペーンの*コンバージョン*とは、カスタム キャンペーンによって宣伝された URL をクリックしたユーザーが、結果としてアプリを取得することです。 変換として修飾するさまざまなシナリオがある、**アプリ ページのビューとキャンペーン ID によって変換**と**キャンペーンの変換の合計**でグラフが、[買収レポート](acquisitions-report.md)との変換として修飾[キャンペーン ID をプログラムで取得する](#programmatically)します。
 
-### <a name="qualifying-conversions-in-the-acquisitions-report"></a>[取得] レポートでコンバージョンと認められる条件
+### <a name="qualifying-conversions-in-the-acquisitions-report"></a>修飾買収レポートでの変換
 
 [[取得] レポート](acquisitions-report.md)の **[キャンペーン ID ごとのアプリ ページ ビューとコンバージョン]** グラフと **[キャンペーンのコンバージョン合計]** グラフで、コンバージョンとして認められるシナリオは次のとおりです。
 
@@ -62,9 +62,9 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 アプリに関連付けられているキャンペーン ID をプログラムによって取得するときに、コンバージョンであると認められるには、次の条件を満たす必要があります。
 
-* **Windows 10 バージョン 1607 以降**を実行しているデバイスの場合: ユーザー (認識されている Microsoft アカウントを使ってサインインしているかどうかにかかわらない) が、カスタム キャンペーン ID が含まれている URL をクリックし、アプリのストア登録情報ページにリダイレクトされ、 URL をクリックした結果としてストア登録情報を閲覧している最中にアプリを取得している。
+* 実行しているデバイスで**Windows 10 バージョン 1607、またはそれ以降**:顧客 (かどうか、認識されている Microsoft アカウントにサインイン) かどうかをカスタム キャンペーン ID を含み、アプリのストアの一覧ページにリダイレクト URL をクリックします。 URL をクリックした結果としてストア登録情報を閲覧している最中にアプリを取得している。
 
-* **Windows 10 バージョン 1511 以前**を実行しているデバイスの場合: ユーザー (認識されている Microsoft アカウントを使ってサインインしている) が、カスタム キャンペーン ID が含まれている URL をクリックし、アプリのストア登録情報ページにリダイレクトされ、 URL をクリックした結果としてストア登録情報を閲覧している最中にアプリを取得している。 Windows 10 のこれらのバージョンでは、キャンペーン ID をプログラムによって取得するときに、アプリの取得がコンバージョンであると認められるには、認識されている Microsoft アカウントを使ってユーザーがサインインしている必要があります。
+* 実行しているデバイスで**Windows 10 バージョン 1511、またはそれ以前**:(認識されている Microsoft アカウントを使用して署名する必要があります) を行った顧客をカスタム キャンペーン ID を含み、アプリのストアの一覧ページにリダイレクト URL をクリックします。 URL をクリックした結果としてストア登録情報を閲覧している最中にアプリを取得している。 Windows 10 のこれらのバージョンでは、キャンペーン ID をプログラムによって取得するときに、アプリの取得がコンバージョンであると認められるには、認識されている Microsoft アカウントを使ってユーザーがサインインしている必要があります。
 
 > [!NOTE]
 > ユーザーがストア登録情報ページから離れても、(同じデバイスを使うか、別のデバイスの場合は同じ Microsoft アカウントでサインインした状態で) 24 時間以内にページに再びアクセスし、アプリを取得した場合、これは [[取得] レポート](acquisitions-report.md)の **[キャンペーン ID ごとのアプリ ページ ビューとコンバージョン]** グラフと **[キャンペーンのコンバージョン合計]** グラフでコンバージョンとして**認められます**。 ただし、プログラムによってキャンペーン ID を取得した場合にはコンバージョンとして**認められません**。
@@ -86,9 +86,9 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 3.  アプリの URL の末尾に次の文字列を追加します。
 
-    * HTML 形式の URL の場合は **?cid=`?cid=*my custom campaign ID*`** を追加します。 たとえば、Skype でキャンペーン ID の値が **custom\_campaign** であるキャンペーンを紹介する場合、このキャンペーン ID を含む新しい URL は `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign` になります。
+    * HTML 形式の URL の場合は **?cid=`?cid=*my custom campaign ID*`** を追加します。 たとえば、Skype の紹介、値を持つキャンペーン ID**カスタム\_キャンペーン**、キャンペーンの id を含む新しい URL:`https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign`します。
 
-    * プロトコル形式の URL の場合は **`&cid=*my custom campaign ID*`** を追加します。 たとえば、Skype でキャンペーン ID の値が **custom\_campaign** であるキャンペーンを紹介する場合、このキャンペーン ID を含む新しいプロトコル URL は `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign` になります。
+    * プロトコル形式の URL の場合は **`&cid=*my custom campaign ID*`** を追加します。 たとえば、Skype の紹介、値を持つキャンペーン ID**カスタム\_キャンペーン**、キャンペーンの id を含む新しいプロトコル URL:`ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`します。
 
 <span id="programmatically" />
 
@@ -100,12 +100,12 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 
 アプリが対象とする Windows 10 のバージョンに応じて、異なる API が用意されています。
 
-* Windows 10 バージョン 1607 以降: **Windows.Services.Store** 名前空間の [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスを使います。 この API を使用するときは、認識されている Microsoft アカウントを使ってユーザーがサインインしているかどうかに関係なく、[条件を満たしている取得](#conversions)についてカスタム キャンペーン ID を取得できます。
+* Windows 10 バージョン 1607、またはそれ以降:使用して、 [ **StoreContext** ](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)クラス、 **Windows.Services.Store**名前空間。 この API を使用するときは、認識されている Microsoft アカウントを使ってユーザーがサインインしているかどうかに関係なく、[条件を満たしている取得](#conversions)についてカスタム キャンペーン ID を取得できます。
 
-* Windows 10 バージョン 1511 以前の場合: **Windows.ApplicationModel.Store**名前空間の [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) クラスを使います。 この API を使用するときは、認識されている Microsoft アカウントを使ってユーザーがサインインしている場合にのみ、[条件を満たしている取得](#conversions)についてカスタム キャンペーン ID を取得できます。
+* Windows 10 バージョン 1511、またはそれ以前:使用して、 [ **CurrentApp** ](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)クラス、 **Windows.ApplicationModel.Store**名前空間。 この API を使用するときは、認識されている Microsoft アカウントを使ってユーザーがサインインしている場合にのみ、[条件を満たしている取得](#conversions)についてカスタム キャンペーン ID を取得できます。
 
 > [!NOTE]
-> **Windows.ApplicationModel.Store** 名前空間は、すべてのバージョンの Windows 10 で利用できますが、アプリが Windows 10 バージョン 1607 以降をターゲットにしている場合は、**Windows.Services.Store** 名前空間の API を使うことをお勧めします。 これらの名前空間の違いについて詳しくは、「[アプリ内購入と試用版](../monetize/in-app-purchases-and-trials.md#choose-namespace)」を参照してください。 次のコード例は、同じプロジェクトで両方の API を使用するコードを構築する方法を示しています。
+> **Windows.ApplicationModel.Store** 名前空間は、すべてのバージョンの Windows 10 で利用できますが、アプリが Windows 10 バージョン 1607 以降をターゲットにしている場合は、**Windows.Services.Store** 名前空間の API を使うことをお勧めします。 これらの名前空間の違いについて詳しくは、「[アプリ内購入と試用版](../monetize/in-app-purchases-and-trials.md#choose-namespace)」をご覧ください。 次のコード例は、同じプロジェクトで両方の API を使用するコードを構築する方法を示しています。
 
 ### <a name="code-example"></a>コードの例
 
@@ -165,8 +165,8 @@ public async Task<string> GetCampaignId()
 
 1. まず、現在のデバイスで **Windows.Services.Store** 名前空間の [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスが利用可能かどうか (つまり、デバイスで Windows 10 バージョン1607 以降が実行されているかどうか) を確認します。 利用可能な場合、コードはこのクラスを使って処理を進めます。
 
-2. 次に、現在のユーザーが正式な Microsoft アカウントを持っている場合は、カスタム キャンペーン ID の取得を試行します。 これを行うために、コードは、現在のアプリの SKU を表す [**StoreSku**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreSku) オブジェクトを取得した後、[**CampaignId**](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.CampaignId) プロパティにアクセスしてキャンペーン ID (利用可能な場合) を取得します。
-3. 次に、コードは、現在のユーザーが正式な Microsoft アカウントを持っていない場合のキャンペーン ID の取得を試行します。 この場合、キャンペーン ID はアプリのライセンスに埋め込まれています。 コードは、[**GetAppLicenseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppLicenseAsync) メソッドを使用してライセンスを取得した後、ライセンスの JSON コンテンツを解析して *customPolicyField1* というキーの値を取得します。 この値にキャンペーン ID が含まれています。
+2. 次に、現在のユーザーが認識されている Microsoft アカウントを使っている場合は、カスタム キャンペーン ID の取得を試行します。 これを行うために、コードは、現在のアプリの SKU を表す [**StoreSku**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreSku) オブジェクトを取得した後、[**CampaignId**](https://docs.microsoft.com/uwp/api/windows.services.store.storecollectiondata.CampaignId) プロパティにアクセスしてキャンペーン ID (利用可能な場合) を取得します。
+3. 次に、コードは、現在のユーザーが認識されている Microsoft アカウントを使っていない場合のキャンペーン ID の取得を試行します。 この場合、キャンペーン ID はアプリのライセンスに埋め込まれています。 コードは、[**GetAppLicenseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppLicenseAsync) メソッドを使用してライセンスを取得した後、ライセンスの JSON コンテンツを解析して *customPolicyField1* というキーの値を取得します。 この値にキャンペーン ID が含まれています。
 
 4. **Windows.Services.Store** 名前空間の [**StoreContext**](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) クラスが利用できない場合、コードは、**Windows.ApplicationModel.Store** 名前空間 (この名前空間は、バージョン 1511 以前を含め、Windows 10 のすべてのバージョンで利用できます) の [**GetAppPurchaseCampaignIdAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp#Windows_ApplicationModel_Store_CurrentApp_GetAppPurchaseCampaignIdAsync) メソッドを使用する方法にフォールバックして、カスタム キャンペーン ID を取得します。 このメソッドを使用するときは、ユーザーが正式な Microsoft アカウントを持っている場合にのみ、[条件を満たしている取得](#conversions)についてカスタム キャンペーン ID を取得できることに注意してください。
 
@@ -193,4 +193,4 @@ public async Task<string> GetCampaignId()
 
 3.  さらに URL を数回クリックします。アプリのページに移動した後は、毎回 UWP アプリまたはブラウザーのページを閉じます。 アプリのページに移動した**いずれかのとき**に、アプリを取得してコンバージョンを生成します。 URL をクリックした合計回数を覚えておきます。
 
-4. 予想されたページ ビューとコンバージョンの[取得] レポート](acquisitions-report.md)では、**キャンペーンのコンバージョン合計**と**アプリ ページ ビューとコンバージョン キャンペーン ID ごと**のグラフに表示され、ことができるかどうかを確認するアプリのコードをテストするかどうかを確認します。上記で説明した Api を使用してキャンペーン ID を正常に取得します。
+4. 予想されるページ ビューとの変換で表示されるかどうかを確認、**アプリ ページのビューとキャンペーン ID によって変換**と**キャンペーンの変換の合計**でグラフが、[買収レポート](acquisitions-report.md)、し、上記で説明した Api を使用して、キャンペーンの ID を正常に取得できるかどうかを確認する、アプリのコードをテストします。

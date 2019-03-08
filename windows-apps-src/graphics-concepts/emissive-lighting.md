@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ba112e04518d3e1ee05e7ee8e23e633d4cf59748
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936862"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599177"
 ---
 # <a name="emissive-lighting"></a>放射光
 
 
-*放射光*は、白熱光などオブジェクトによって放射される光です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
+*放射光*は、オブジェクトにより放射される光 (輝きなど) です。 放射によって、レンダリングされるオブジェクトが自己発光しているように見えます。 放射はオブジェクトの色に影響し、暗いマテリアルが明るくなったり、部分的に放射される光の色になったりする場合があります。
 
 放射光は単一の項で表されます。
 
@@ -51,7 +51,7 @@ Cₑ の値は、color 1 または color 2 です。 頂点の色が指定され
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[光源の計算](mathematics-of-lighting.md)
+[照明の計算](mathematics-of-lighting.md)
 
  
 

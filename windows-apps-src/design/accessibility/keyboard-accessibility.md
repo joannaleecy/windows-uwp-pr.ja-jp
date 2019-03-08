@@ -1,19 +1,19 @@
 ---
-Description: If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.
+Description: アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: キーボードのアクセシビリティ
 label: Keyboard accessibility
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045521"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602067"
 ---
 # <a name="keyboard-accessibility"></a>キーボードのアクセシビリティ  
 
@@ -56,11 +56,11 @@ XAML
 
 通常、フォーカスを設定できる要素はすべて、既定でタブ オーダーに含まれています。 例外は、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) などの一部のテキスト表示型です。このような型では、選択中のテキストにクリップボードからアクセスできるように、フォーカスを設定することができます。ただし、静的テキスト要素がタブ オーダーの対象となることは想定されていないため、タブ オーダーには含められません。 通常、これらの要素は対話型ではありません (これらは呼び出すことができず、テキスト入力も必要としませんが、テキスト内の選択ポイントを見つけて調整できる[テキスト コントロール パターン](https://msdn.microsoft.com/library/windows/desktop/Ee671194)はサポートしています)。 テキストに、フォーカスを設定すると操作が可能になるという含みを持たせないでください。 それでも、テキスト要素は、支援技術によって検出され、スクリーン リーダーによって読み上げられますが、これはその要素を実際のタブ オーダーで見つけるのとは異なる技法に依存しています。
 
-[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 値を調整する場合も、既定の順序を使う場合も、次のルールが適用されます。
+[  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 値を調整する場合も、既定の順序を使う場合も、次のルールが適用されます。
 
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 の UI 要素は、XAML または子コレクションでの宣言順序に基づいてタブ オーダーに追加されます。
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 を超える UI 要素は、**TabIndex** 値に基づいてタブ オーダーに追加されます。
-* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 未満の UI 要素はタブ オーダーに追加され、値 0 の UI 要素よりも前に表示されます。 これは、HTML による **tabindex** 属性の処理とは異なる場合があります (古い HTML 仕様では、負の値の **tabindex** がサポートされていませんでした)。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 の UI 要素は、XAML または子コレクションでの宣言順序に基づいてタブ オーダーに追加されます。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 を超える UI 要素は、**TabIndex** 値に基づいてタブ オーダーに追加されます。
+* [  **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 未満の UI 要素はタブ オーダーに追加され、値 0 の UI 要素よりも前に表示されます。 これは、HTML による **tabindex** 属性の処理とは異なる場合があります (古い HTML 仕様では、負の値の **tabindex** がサポートされていませんでした)。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
@@ -77,7 +77,7 @@ XAML
 
 呼び出すことができる UI 要素の場合は、Space キーと Enter キーのキーボード イベント ハンドラーを実装します。 これで、基本のキーボード アクセシビリティのサポートは完全になり、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型の UI 要素にアクセスしたり、既定の機能をアクティブにすることができます。
 
-UI で使う要素がフォーカスを取得できない場合は、独自のカスタム コントロールを作成できます。 [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **true** に設定して入力フォーカスを有効にし、UI にフォーカス インジケーターが示される表示状態を作成して、フォーカスがある状態を視覚的に示す必要があります。 タブ ストップ、フォーカス、Microsoft UI オートメーションのピアとパターンのサポートを、コンテンツを合成するコントロールで処理するよう、コントロールの合成を使うと簡単になることがよくあります。
+UI で使う要素がフォーカスを取得できない場合は、独自のカスタム コントロールを作成できます。 [  **IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **true** に設定して入力フォーカスを有効にし、UI にフォーカス インジケーターが示される表示状態を作成して、フォーカスがある状態を視覚的に示す必要があります。 タブ ストップ、フォーカス、Microsoft UI オートメーションのピアとパターンのサポートを、コンテンツを合成するコントロールで処理するよう、コントロールの合成を使うと簡単になることがよくあります。
 
 たとえば、ポインター入力イベントを [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) で処理するのではなく、その要素を [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) でラップすると、ポインター、キーボード、フォーカスのサポートを取得できます。
 
@@ -144,7 +144,7 @@ XAML
 ```
 
 > [!IMPORTANT]
-> [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) を設定しても、キーボード機能は有効になりません。 使用する必要があるキーなどの情報を支援技術によってユーザーに渡すことができるように、そのような情報が UI オートメーション フレームワークに通知されるだけです。 キー処理の実装は、XAML ではなくコードで行う必要があります。 アプリに対して実際にキーボード ショートカットの動作を実装するには、関連するコントロールに [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/BR208941) イベントや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/BR208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/BR209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
+> [  **AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) を設定しても、キーボード機能は有効になりません。 使用する必要があるキーなどの情報を支援技術によってユーザーに渡すことができるように、そのような情報が UI オートメーション フレームワークに通知されるだけです。 キー処理の実装は、XAML ではなくコードで行う必要があります。 アプリに対して実際にキーボード ショートカットの動作を実装するには、関連するコントロールに [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/BR208941) イベントや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/BR208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/BR209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
 
 わかりやすくするために、上の例では "Ctrl + A" などの文字列に対するリソースは使っていません。 ただし、ローカライズ時にはショートカット キーについても考慮する必要があります。 ショートカット キーとして使うキーは通常、要素の表示テキスト ラベルに基づいて選ぶため、ショートカット キーをローカライズすることは適切な作業です。
 
@@ -175,7 +175,7 @@ Ctrl キーなどの修飾キーのチェックを含むキー イベント ハ�
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>フォーカス インジケーターの表示状態の例  
 これまで説明したように、ユーザーがフォーカスを合わせることができるカスタム コントロールには視覚的なフォーカス インジケーターが必要です。 一般に、フォーカス インジケーターは、コントロールを囲む通常の四角形の境界線のすぐ外側に、四角形を描画するだけの簡単なものです。 視覚的なフォーカスに使う [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) は、コントロール テンプレートにおけるコントロールの合成の他の部分に対するピア要素ですが、最初はコントロールにフォーカスがないため、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) の値には **Collapsed** が設定されています。 コントロールがフォーカスを取得すると、表示状態が呼び出され、フォーカス表示の **Visibility** が **Visible** に設定されます。 フォーカスが別の場所に移動すると、他の表示状態が呼び出され、**Visibility** が **Collapsed** になります。
 
-既定の XAML コントロールはいずれも、フォーカスを設定できるものであれば、フォーカスを受け取ったときに視覚的なフォーカス インジケーターを適切に表示します。 また、ユーザーが選んでいるテーマに応じて (ハイ コントラスト モードを使っている場合は特に)、外観が異なる可能性があります。UI で XAML コントロールを使っており、コントロール テンプレートを置き換えていない場合は、特に何もしなくても、視覚的なフォーカス インジケーターがコントロールに適切に表示され、動作します。 ただし、コントロールを再テンプレート化する必要がある場合、または XAML コントロールで視覚的なフォーカス インジケーターがどのように実現されているかを理解したい場合のために、このセクションの残りの部分では、XAML とコントロール ロジックにおけるフォーカス インジケーターの処理方法について説明します。
+既定の XAML コントロールはいずれも、フォーカスを設定できるものであれば、フォーカスを受け取ったときに視覚的なフォーカス インジケーターを適切に表示します。 ユーザーの選択したテーマに応じて外観が異なる可能性があります (特に、ユーザーが使用してハイ コントラスト モード。)UI コントロール テンプレートを置き換えない場合に、XAML コントロールを使用する場合は、動作し、正しく表示するコントロールのビジュアル フォーカス インジケーターを取得する余分な何もする必要はありません。 ただし、コントロールを再テンプレート化する必要がある場合、または XAML コントロールで視覚的なフォーカス インジケーターがどのように実現されているかを理解したい場合のために、このセクションの残りの部分では、XAML とコントロール ロジックにおけるフォーカス インジケーターの処理方法について説明します。
 
 次に示す XAML の例は、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の既定の XAML テンプレートに含まれています。
 
@@ -247,7 +247,7 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
 
 ## <a name="related-topics"></a>関連トピック  
 * [アクセシビリティ](accessibility.md)
-* [キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)
+* [キーボードの相互作用](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [タッチ キーボードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML アクセシビリティ サンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML のアクセシビリティのサンプル](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

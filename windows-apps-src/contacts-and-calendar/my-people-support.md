@@ -3,14 +3,14 @@ title: アプリケーションにマイ連絡先のサポートを追加する
 description: アプリケーションにマイ連絡先のサポートを追加する方法と、連絡先をピン留めする方法およびピン留めを外す方法について説明します。
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 08acb2972469a84e6a37d7293ed00cae8df94dfb
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044446"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611537"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>アプリケーションにマイ連絡先のサポートを追加する
 
@@ -28,16 +28,16 @@ ms.locfileid: "9044446"
 アプリケーションでマイ連絡先の機能を使えるようにするには、3 つの手順を行う必要があります。
 
 1. [アプリケーション マニフェストで shareTarget アクティブ化コントラクトのサポートを宣言します。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [ユーザーがアプリを使用して共有できる連絡先に注釈を付けます。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+2. [ユーザーがアプリを使用して共有できる連絡先の注釈を付けます。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3.  アプリケーションの複数インスタンスの同時実行をサポートします。 ユーザーは、連絡先パネルでアプリケーションを使いながら、アプリケーションの通常版を操作できる必要があります。  ユーザーは複数の連絡先パネルを同時に使用することもできます。  これをサポートするには、アプリケーションが複数のビューを同時に実行できる必要があります。 これを行う方法については、「["アプリの複数のビューの表示](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)」の記事をご覧ください。
 
 これを行うと、アプリケーションは、注釈付きの連絡先のための、連絡先のパネルに表示されます。
 
 ## <a name="declaring-support-for-the-contract"></a>コントラクトのサポートを宣言する
 
-マイ連絡先のコントラクトのサポートを宣言するには、Visual Studio でアプリケーションを開きます。 **ソリューション エクスプローラー** で **Package.appxmanifest** を右クリックして、[**プログラムから開く**] を選択します。 メニューをから [**XML (テキスト) エディター**] を選び、**[OK]** をクリックします。 マニフェストを次のように変更します。
+マイ連絡先のコントラクトのサポートを宣言するには、Visual Studio でアプリケーションを開きます。 **ソリューション エクスプローラー** で **Package.appxmanifest** を右クリックして、**[プログラムから開く]** を選択します。 メニューをから **[XML (テキスト) エディター]** を選び、**[OK]** をクリックします。 マニフェストを次のように変更します。
 
-**クリック前**
+**以前は**
 
 ```xml
 <Package
@@ -53,7 +53,7 @@ ms.locfileid: "9044446"
 
 ```
 
-**クリック後**
+**後**
 
 ```xml
 <Package
@@ -101,13 +101,13 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を見つけるには、既定のエディターを使って **Package.appxmanifest** を開き、"Packaging" タブを検索します。ここで、"App" は、アプリケーションのスタートアップ ビューに対応する、アクティブ化可能なクラスです。
+“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリー名を見つけるには、既定のエディターを使って **Package.appxmanifest** を開き、“Packaging” タブを検索します。ここで、"App"は、アプリケーションのスタートアップ ビューに対応する、アクティブ化可能なクラスです。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>連絡先が新しい潜在的なユーザーを招待できるようにする
 
 既定では、アプリケーションは、具体的に注釈を付けた連絡先の連絡先パネルのみに表示されます。  これはアプリから操作を行えない連絡先との混同を避けるためです。  アプリケーションが認識していない連絡先にもアプリケーションが表示されるようにする (たとえば、アカウントに連絡先を追加するようにユーザーを招待するためなど) には、マニフェストに以下を追加することができます。
 
-**変更前**
+**以前は**
 
 ```Csharp
 <Applications>
@@ -121,7 +121,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 </Applications>
 ```
 
-**変更後**
+**後**
 
 ```Csharp
 <Applications>
@@ -184,7 +184,7 @@ ContactPanel オブジェクトを使うと、連絡先パネル ヘッダーの
 ![連絡先の通知でのバッジの表示](images/my-people-badging.png)
 
 連絡先にバッジを表示するには、トップ レベルのトースト ノードに hint-people パラメーターを含めて、送信連絡先を指定する必要があります。 このパラメーターには次の値を指定できます。
-+ **メール アドレス** 
++ **電子メール アドレス** 
     + 例: mailto:johndoe@mydomain.com
 + **電話番号** 
     + 例: tel:888-888-8888
@@ -246,13 +246,13 @@ async Task PinMultipleContacts(Contact[] contacts)
 > [!Note]
 > 現時点では、連絡先のピン留めを外すバッチ操作はありません。
 
-**注:** 
+**注:**  
 
 ## <a name="see-also"></a>関連項目
-+ [マイ連絡先の共有](my-people-sharing.md)
-+ [マイ連絡先の通知](my-people-notifications.md)
-+ [アプリケーションへのマイ連絡先のサポートの追加に関する Channel 9 ビデオ](https://channel9.msdn.com/Events/Build/2017/P4056)
-+ [マイ連絡先の統合のサンプル](https://aka.ms/mypeoplebuild2017)
++ [自分のユーザーを共有](my-people-sharing.md)
++ [ユーザー通知](my-people-notifications.md)
++ [Channel 9 ビデオ マイ ユーザーがアプリケーションにサポートを追加する方法](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [ユーザーの統合サンプル](https://aka.ms/mypeoplebuild2017)
 + [連絡先カードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager クラスのドキュメント](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
-+ [アプリを連絡先カードの操作に接続する](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
++ [連絡先カードの操作をアプリを接続します。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)

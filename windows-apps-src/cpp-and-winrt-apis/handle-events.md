@@ -1,23 +1,23 @@
 ---
 description: このトピックでは、C++/WinRT を使用したイベント処理デリゲートの登録方法と取り消し方法について説明します。
-title: C++/WinRT でデリゲートを使用してイベントを処理する
+title: C++/WinRT でのデリゲートを使用したイベントの処理
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、プロジェクション、処理、イベント、デリゲート
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042394"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602427"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>C++/WinRT でのデリゲートを使用したイベントの処理
 
-このトピックでは、登録とを使用したイベント処理デリゲートの取り消し方法を示しています。 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
+このトピックでは、登録しを使用してイベント処理デリゲートを取り消す方法を示しています。 [C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)します。 標準的な C++ 関数のようなオブジェクトを使用してイベントを処理できます。
 
 > [!NOTE]
-> インストールと c++ を使用してについては/WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレート サポートと同様、C++ を提供する//winrt MSBuild プロパティとターゲット) を参照してください[、C++、Visual Studio サポート/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
+> 詳細については、インストールして、C + を使用して/cli WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレートのサポートだけでなく C + を提供する/cli WinRT MSBuild プロパティとターゲット) を参照してください[Visual Studio のサポートの C +/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>デリゲートを登録してイベントを処理する
 
@@ -49,9 +49,9 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> デリゲートを登録するには、上記のコード例は、直接*この*ポインター (現在のオブジェクトを指す) を渡します。 強参照または弱参照を現在のオブジェクトを確立する方法については、[安全に、イベント処理デリゲートを使用して*この*ポインターへのアクセス](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)のセクションで**デリゲートとしてメンバー関数を使用する場合**のサブ セクションを参照してください。
+> デリゲートを登録するには、上記のコード例渡します raw*この*(現在のオブジェクトを指す) ポインター。 強力なまたは現在のオブジェクトへの弱い参照を確立する方法についてを参照してください、**デリゲートとしてメンバー関数を使用する場合**サブセクションに記載[安全にアクセスする、*この*ポインターイベント処理デリゲートをで](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
 
-**RoutedEventHandler** の作成には他の方法もあります。 次に、[**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) のドキュメント内にある構文ブロックを示します (ページの [**言語**] ドロップダウンから [*C++/WinRT*] を選択)。 さまざまなコンストラクターがあることに注意してください。ラムダ、自由関数、メンバー関数へのオブジェクトとポインター (上記で使用したもの) を受け取ります。
+**RoutedEventHandler** の作成には他の方法もあります。 次に、[**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) のドキュメント内にある構文ブロックを示します (ページの **[言語]** ドロップダウンから [*C++/WinRT*] を選択)。 さまざまなコンストラクターがあることに注意してください。ラムダ、自由関数、メンバー関数へのオブジェクトとポインター (上記で使用したもの) を受け取ります。
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -122,9 +122,9 @@ private:
 };
 ```
 
-上記の例のように、強参照ではなく、ボタンへの弱参照を保存することができます (を参照してください[強参照と弱参照 c++/WinRT](weak-references.md))。
+上記の例のように、強力な参照の代わりに、ボタンへの弱い参照を格納できます (を参照してください[強力と脆弱の参照を c++/cli WinRT](weak-references.md))。
 
-または、デリゲートを登録する場合は、(の種類の[**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)) イベント リボーカーを要求する**winrt::auto_revoke** (される型[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)の値) を指定できます。 イベント リボーカーのイベント ソース (イベントを発生させるオブジェクト) への弱参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
+また、デリゲートを登録するときに指定できます**winrt::auto_revoke** (型の値である[ **winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t))、イベント revoker (を要求するには型[ **winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker))。 イベント revoker をイベント ソース (イベントを発生させるオブジェクト) への弱い参照を保持します。 **event_revoker::revoke** メンバー関数を呼び出して手動で取り消すことができますが、イベント リボーカーは参照が範囲外になったときに自動的にその関数自体を呼び出します。 **revoke** 関数は、イベント ソースがまだ存在するかどうかを確認し、存在する場合は、デリケートを取り消します。 次の例では、イベント ソースを格納する必要がないため、デストラクターは必要ありません。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -157,7 +157,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 ```
 
 > [!NOTE]
-> 上記のコード例で`Button::Click_revoker`の種類の別名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`します。 同じようなパターンがすべての C++/WinRT イベントに適用されます。 各 Windows ランタイムのイベントには、取り消し関数オーバー ロード イベント リボーカーを返すし、イベント ソースのメンバーであるリボーカーの型があります。 そのため、別の例を[**corewindow::sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)イベントに**CoreWindow::SizeChanged_revoker**の種類の数値を返します。 登録関数のオーバー ロードがあります。
+> 上記のコード例で`Button::Click_revoker`型エイリアスの`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`します。 同じようなパターンがすべての C++/WinRT イベントに適用されます。 各 Windows ランタイム イベントでは、revoke 関数のオーバー ロードを返す、イベント revoker とイベント ソースのメンバーである revoker の種類があります。 別の例を実行するように、 [ **CoreWindow::SizeChanged** ](/uwp/api/windows.ui.core.corewindow.sizechanged)イベント型の値を返す登録関数のオーバー ロードには、 **CoreWindow::SizeChanged_revoker**.
 
 
 ページのナビゲーションのシナリオでハンドラーの取り消しを検討します。 あるページへの移動を繰り返す場合、そのページから移動する際にハンドラーを取り消すことができます。 または、同じページ インスタンスを再使用しているときは、トークンの値を確認し、(`if (!m_token){ ... }`) がまだ設定されていない場合のみ登録します。 3 番目のオプションでは、ページにイベント リボーカーをデータ メンバーとして格納します。 このトピック後半で紹介する 4 番目のオプションでは、ラムダ関数内の*この*オブジェクトの強参照または弱参照をキャプチャします。
@@ -200,9 +200,9 @@ void ProcessFeedAsync()
 上記の "コルーチン" のコメントからも分かるように、非同期アクションと非同期操作の完了イベントでデリゲートを使用するよりも、コルーチンを使用するほうがより自然です。 詳細とコード例については、「[C++/WinRT を使用した同時実行操作と非同期操作](concurrency.md)」を参照してください。
 
 > [!NOTE]
-> 正しい非同期アクションまたは操作中には、複数の*完了ハンドラー*を実装することはできません。 その完了のイベントの 1 つのデリゲートしたりすることができます`co_await`ことです。 両方がある場合は、2 つ目は失敗します。
+> 1 つ以上実装するために正しくない*完了ハンドラー*非同期アクションまたは操作します。 、Completed イベントの 1 つのデリゲートがあることもできます`co_await`こと。 両方がある場合は、2 つ目は失敗します。
 
-コルーチンではなくデリゲートを使用する場合、単純な構文のオプトアウトすることができます。
+コルーチンではなくデリゲートを読めば場合は、単純な構文を選択できますがします。
 
 ```cppwinrt
 async_op_with_progress.Completed(
@@ -228,9 +228,9 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>イベント処理デリゲートは、*この*ポインターに安全にアクセスします。
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全にアクセスする、*この*イベント処理デリゲートを使用してポインター
 
-オブジェクトのメンバー関数を使用したイベントを処理するからオブジェクトのメンバー関数内にあるラムダ関数しする必要がある場合、イベント受信側 (イベントを処理するオブジェクト) と、イベント ソース (オブジェクトの相対的な有効期間について検討するにはイベントを発生させる)。 詳細とコード例は、「[強参照と弱参照 c++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
+オブジェクトのメンバー関数をイベントを処理するかから、オブジェクトのメンバー関数内のラムダ関数内でする必要があるイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考えるイベントの発生)。 詳細については、およびコード例は、次を参照してください。[強力と脆弱の参照を c++/cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::auto_revoke_t マーカー構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)
@@ -238,6 +238,6 @@ winrt::hstring f(ListView listview)
 * [winrt::implements::get_strong 関数](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 
 ## <a name="related-topics"></a>関連トピック
-* [C++/WinRT でのイベントの作成](author-events.md)
-* [C++/WinRT を使用した同時実行操作と非同期操作](concurrency.md)
-* [強参照と弱参照 c++/WinRT](weak-references.md)
+* [C + でのイベントを作成/cli WinRT](author-events.md)
+* [同時実行と非同期操作を C +/cli WinRT](concurrency.md)
+* [強力と脆弱の参照を c++/cli WinRT](weak-references.md)

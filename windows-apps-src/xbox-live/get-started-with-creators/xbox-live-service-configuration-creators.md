@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 76d25a48caadb908e30e6e1897c19178e2b837e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933509"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662237"
 ---
 # <a name="xbox-live-service-configuration-for-the-creators-program"></a>クリエーターズ プログラムの Xbox Live サービス構成
 
@@ -23,13 +23,13 @@ ms.locfileid: "8933509"
 
 また、これを実現するためには、Xbox Live でランキングを認識できるよう、一度限りの構成を実行する必要があります。 たとえば、値を昇順で並び替えるか、降順で並び替えるか、データのどの部分を並び替えるかなどを構成します。
 
-この構成は Xbox Live クリエーターズ プログラムの[パートナー センター](https://partner.microsoft.com/dashboard)で発生し、 [Xbox Live の概要](get-started-with-xbox-live-creators.md)をセットアップする方法についてを読み取ることができます。
+この構成が発生[パートナー センター](https://partner.microsoft.com/dashboard) 」を参照して、Xbox Live クリエーターズ プログラムの[作業開始の Xbox Live](get-started-with-xbox-live-creators.md)を設定する方法について説明します。
 
 ## <a name="get-your-ids"></a>ID を取得する
 
 Xbox Live サービスを有効にするには、開発環境とタイトルを構成するためのいくつかの ID を取得する必要があります。 これらの ID は、Xbox Live サービスの構成を更新することによって取得できます。
 
-パートナー センターでタイトルがいない場合、ガイダンスを[作成およびテスト新しいクリエーターズ タイトル](create-and-test-a-new-creators-title.md)をご覧ください。
+パートナー センターで、タイトルがいない場合は、次を参照してください。[の作成とテスト、新しい Creators タイトル](create-and-test-a-new-creators-title.md)のガイダンスについてはします。
 
 ### <a name="critical-ids"></a>重要な ID
 
@@ -58,7 +58,7 @@ Xbox One 用のタイトルおよびアプリケーションの開発には、�
 ## <a name="publish-your-xbox-live-service-configuration"></a>Xbox Live サービス構成を公開する
 
 ゲーム用の Xbox Live 構成に変更を加える場合、それらの変更を Xbox Live の残りの部分が取得してゲームに表示されるには、変更を公開する必要があります。 ゲームに対する作業を継続している間は、独自の開発サンドボックスに公開します。 開発サンドボックスでは、分離された環境でゲームへの変更に取り組むことができます。 ゲームを一般向けにリリースすると、Xbox Live 構成は自動的に RETAIL サンドボックスに公開されます。
-既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスになっています。
+既定では、Xbox One 本体と Windows 10 PC は RETAIL サンドボックスに格納されます。
 
 現在の Xbox Live 構成を開発サンドボックスに公開するには、Xbox Live 構成ページで **[テスト]** ボタンをクリックします。
 

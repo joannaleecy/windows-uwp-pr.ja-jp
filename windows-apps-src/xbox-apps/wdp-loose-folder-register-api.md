@@ -3,15 +3,15 @@ title: Device Portal のルース フォルダー登録 API のリファレン�
 description: ルース フォルダー登録 API にプログラムでアクセスする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bf4d62f390a5d324952ef2852a76803f4619fdc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934275"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593807"
 ---
 # <a name="register-an-app-in-a-loose-folder"></a>アプリをルース フォルダーに登録する  
 
@@ -52,13 +52,13 @@ HTTP 状態コード      | 説明
 4XX | エラー コード
 5XX | エラー コード
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox
 
-**コメント**
+**メモ**
 
-目的のフォルダーで本体のルース アプリを入手する方法は少なくとも 3 つあります。 最も簡単な方法は、SMB を通じてファイルを \\<IP アドレス>\DevelopmentFiles\LooseApps にコピーする方法です。 これには、[/ext/smb/developerfolder](wdp-smb-api.md) を使って取得できる UWA キットのユーザー名とパスワードが必要です。 
+目的のフォルダーで本体のルース アプリを入手する方法は少なくとも 3 つあります。 簡単なは単に SMB 経由でファイルをコピーする\\< IP_Address > \DevelopmentFiles\LooseApps します。 これには、[/ext/smb/developerfolder](wdp-smb-api.md) を使って取得できる UWA キットのユーザー名とパスワードが必要です。 
 
 2 つ目の方法は、/api/filesystem/apps/file に対して POST を実行することで、個々のファイルを適切な場所にコピーする方法です。この場合、knownfolderid には DevelopmentFiles を指定し、packagefullname は空にして、ファイル名とパスを適切に提供します (パスは LooseApps で始まっている必要があります)。
 

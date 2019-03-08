@@ -7,11 +7,11 @@ keywords: 概要, uwp, windows 10, 学習トラック, データ バインディ
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947744"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651377"
 ---
 # <a name="display-customers-in-a-list"></a>一覧での顧客の表示
 
@@ -32,8 +32,8 @@ UI 内で実際のデータを表示して操作することは多くのアプ�
 
 データ バインディングを実装するには、バインディングにデータを提供するソースにコードを追加する必要があります。 また、データ ソースのプロパティを指定する、XAML に 2 つのマークアップ拡張のいずれかを追加する必要があります。 2 つの種類の主な違いを次に示します。
 
-* [**x:Bind**](../xaml-platform/x-bind-markup-extension.md) は厳密に型指定され、パフォーマンス向上のためコンパイル時にコードを生成します。 x:Bind は既定では 1 回限りのバインディングが指定され、変更されない読み取り専用のデータの高速表示のために最適化されます。
-* [**バインディング**](../xaml-platform/binding-markup-extension.md)は弱く型指定され、実行時にまとめられます。 その結果、パフォーマンスは x:Bind より低下します。 ほとんどの場合、バインディングではなく x:Bind を使用する必要があります。 ただし、古いコードではこの問題が生じる可能性があります。 バインディングは既定では一方向のデータ転送が指定され、ソースで変更できる読み取り専用のデータのために最適化されます。
+* [**X:bind** ](../xaml-platform/x-bind-markup-extension.md)厳密に型指定し、パフォーマンス向上のためのコンパイル時にコードを生成します。 x:Bind は既定では 1 回限りのバインディングが指定され、変更されない読み取り専用のデータの高速表示のために最適化されます。
+* [**バインド**](../xaml-platform/binding-markup-extension.md)は型指定され、実行時にアセンブリに弱いします。 その結果、パフォーマンスは x:Bind より低下します。 ほとんどの場合、バインディングではなく x:Bind を使用する必要があります。 ただし、古いコードではこの問題が生じる可能性があります。 バインディングは既定では一方向のデータ転送が指定され、ソースで変更できる読み取り専用のデータのために最適化されます。
 
 可能な限り **x:Bind** を使用することをお勧めします。この記事のスニペットで x:Bind について説明します。 相違点の詳細については、「[{x:Bind} と {Binding} の機能の比較](../data-binding/data-binding-in-depth.md#xbind-and-binding-feature-comparison)」を参照してください。
 
@@ -104,9 +104,9 @@ public sealed partial class MainPage : Page
 
 一覧で顧客を表示しましたが、データ B バインディングではより多くのことを行うことができます。 UI から直接データを編集できるとしたらどうでしょうか。 これを行うには、まずデータ バインディングの 3 つのモデルについて説明しましょう。
 
-* *1 回限り*: このデータ バインディングは一度だけアクティブ化され、変更に対応しません。
-* *一方向*: このデータ バインディングは、データ ソースに対して行われた変更で UI を更新します。
-* *双方向*: このデータ バインディングは、データ ソースに対して行われた変更で UI を更新します。また、UI 内で行われた変更でデータを更新します。
+* *1 回限り*:このデータ バインドを使用して、1 回にアクティブ化のみ、変更に反応がないです。
+* *一方向*:このデータ バインドは、データ ソースに加えられた変更で、UI が更新されます。
+* *双方向*:このデータ バインドは、UI、データ ソースに加えられた変更を更新しますをも UI 内で行われた変更データを更新します。
 
 以前のコード スニペットに従った場合、行ったバインディングでは x:Bind を使用し、モードを使用しないため、1 回限りのバインディングになります。 UI から直接 Customers を編集する場合は、データからの変更が Customer オブジェクトに戻されるように、双方向のバインディングに変更する必要があります。 詳細については、「[データ バインディングの詳細](../data-binding/data-binding-in-depth.md)」を参照してください。
 
@@ -166,8 +166,8 @@ public class Customer : INotifyPropertyChanged
 | API | 説明 |
 |------|---------------|
 | [データ テンプレート](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) | UI 内の特定の要素の表示を可能にするデータ オブジェクトの視覚的構造について説明します。 |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 推奨される x:Bind マークアップ拡張に関するドキュメントです。 |
-| [バインディング](../xaml-platform/binding-markup-extension.md) | 以前の Binding マークアップ拡張に関するドキュメントです。 |
+| [x: バインド](../xaml-platform/x-bind-markup-extension.md) | 推奨される x:Bind マークアップ拡張に関するドキュメントです。 |
+| [バインド](../xaml-platform/binding-markup-extension.md) | 以前の Binding マークアップ拡張に関するドキュメントです。 |
 | [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) | データ アイテムの垂直のスタックを表示する UI コントロールです。 |
 | [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) | UI で編集可能なテキスト データを表示するための基本的なテキスト コントロールです。 |
 | [INotifyPropertyChanged](https://msdn.microsoft.com/library/system.componentmodel.inotifypropertychanged(d=robot).aspx) | データを監視可能にし、データ バインディングに提供するインターフェイスです。 |
@@ -179,7 +179,7 @@ public class Customer : INotifyPropertyChanged
 |-------|----------------|
 | [データ バインディングの詳細](../data-binding/data-binding-in-depth.md) | データ バインディングの原則の基本的な概要 |
 | [データ バインディングの概要](../data-binding/data-binding-quickstart.md) | データ バインディングに関する詳細な概念情報です。 |
-| [リスト ビュー](../design/controls-and-patterns/listview-and-gridview.md) |  **DataTemplate** の実装を含む、ListView の作成と構成に関する情報 |
+| [リスト ビュー](../design/controls-and-patterns/listview-and-gridview.md) | **DataTemplate** の実装を含む、ListView の作成と構成に関する情報 |
 
 ## <a name="useful-code-samples"></a>役立つコード サンプル
 

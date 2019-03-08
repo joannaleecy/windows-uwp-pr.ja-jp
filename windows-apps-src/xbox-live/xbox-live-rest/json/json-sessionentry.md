@@ -8,35 +8,35 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 73133f898ff219477cb60f54798cbd81acb87ebe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918376"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589737"
 ---
 # <a name="sessionentry-json"></a>SessionEntry (JSON)
-フィットネス セッションのデータが含まれています。 
+フィットネス セッションにはデータが含まれます。 
 <a id="ID4EN"></a>
 
  
 ## <a name="sessionentry"></a>SessionEntry
  
-SessionEntry オブジェクトには、次仕様があります。
+SessionEntry オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| durationInSeconds| 32 ビット符号付き整数 | 継続時間-秒単位で、セッションのします。 | 
-| コンセント| 32 ビット符号付き整数 | エネルギー-コンセントで-セッションに書き込みます。 | 
-| 満たされています。| 単精度浮動小数点数| 平均では、セッションの期間にわたって値が満たされています。 MET 値は、アクティビティを残りの部分で個人の代謝レートを基準とした時に、個々 の代謝レートの比率です。 静止の代謝レートは、個々 の太さに関係なく 1.0 MET 値は、個人の静止代謝レートを基準としたためは、さまざまな重みの人の従業員が実行しているアクティビティの強さを比較する使用できます。| 
-| serverTimestamp| DateTime| 時間: UTC に基づいて-エントリは、サーバーで入力されたものです。 | 
-| ソース| 8 ビットの符号なし整数| セッションのソース。| 
-| タイムスタンプ| DateTime| 時間: 協定世界時 (UTC) に基づく-エントリが、クライアントで作成します。 | 
-| titleId| 64 ビットの符号なし整数| タイトル: 10 進数で、エントリを作成します。| 
+| durationInSeconds| 32 ビット符号付き整数 | 期間: 秒単位で、セッションのです。 | 
+| コンセント| 32 ビット符号付き整数 | エネルギー —、コンセントで、セッションに書き込みます。 | 
+| 満たされる| 単精度浮動小数点数| 平均では、セッションの期間にわたって値が満たされます。 MET 値は、保存時の個々 の代謝率の基準としたアクティビティの中に、個々 の代謝レートの比率です。 代謝のレートを置くは、個々 の重みに関係なく 1.0 MET 値は、個々 の配置されている代謝率の基準としたためは、さまざまな重みの個人によって実行されるアクティビティの強度を比較に使用できます。| 
+| serverTimestamp| DateTime| 時間: UTC に基づいています: サーバーにエントリが入力されました。 | 
+| ソース| 8 ビット符号なし整数| セッションのソース。| 
+| タイムスタンプ| DateTime| 時間-世界協定時刻 (UTC) に基づいて、クライアントのエントリが作成されました。 | 
+| titleId| 64 ビット符号なし整数| タイトル: 10 進数で、エントリを作成します。| 
   
 <a id="ID4EFE"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -63,6 +63,6 @@ SessionEntry オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

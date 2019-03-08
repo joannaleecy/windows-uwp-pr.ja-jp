@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a062fd417bae37fd66c944e0e534ef7a50de5fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923778"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57599367"
 ---
 # <a name="usersrequestoridpermissionvalidate"></a>/users/{requestorId}/permission/validate
  
@@ -23,9 +23,9 @@ ms.locfileid: "8923778"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| requestorId| string| 必須。 アクションを実行するユーザーの識別子です。 設定可能な値は<code>xuid({xuid})</code>と<code>me</code>します。 これは、ログインしているユーザーでなければなりません。 値の例:<code>xuid(0987654321)</code>します。| 
+| requestorId| string| 必須。 アクションを実行して、ユーザーの識別子。 指定できる値は<code>xuid({xuid})</code>と<code>me</code>します。 これには、ログイン ユーザーがあります。 値の例:<code>xuid(0987654321)</code>します。| 
   
 <a id="ID4ETB"></a>
 
@@ -34,11 +34,11 @@ ms.locfileid: "8923778"
 
 [GET (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidateget.md)
 
-&nbsp;&nbsp;ユーザーをターゲット ユーザーと、指定されたアクションの実行を許可するかどうかに関するはいまたは no 応答を取得します。
+&nbsp;&nbsp;対象ユーザーと指定したアクションを実行するユーザーを許可するかどうかについてはいまたは no 応答を取得します。
 
 [POST (/users/{requestorId}/permission/validate)](uri-privacyusersrequestoridpermissionvalidatepost.md)
 
-&nbsp;&nbsp;一連のユーザーをターゲット ユーザーのセットを指定したアクションを実行できるかどうかに関するはいまたは no 回答を取得します。
+&nbsp;&nbsp;対象ユーザーのセットで指定されたアクションを実行するユーザーを許可するかどうかについての回答をはいまたは no のセットを取得します。
  
 <a id="ID4EAC"></a>
 
@@ -47,7 +47,7 @@ ms.locfileid: "8923778"
  
 <a id="ID4ECC"></a>
 
-   [プライバシー URI](atoc-reference-privacyv2.md)
+   [プライバシーの Uri](atoc-reference-privacyv2.md)
 
  [PermissionId 列挙型](../../enums/privacy-enum-permissionid.md)
 

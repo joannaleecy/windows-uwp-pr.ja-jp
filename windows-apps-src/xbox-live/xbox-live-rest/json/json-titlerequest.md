@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a90f42c2f830ba6f04f77a1acaba067a2746a062
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927421"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593797"
 ---
 # <a name="titlerequest-json"></a>TitleRequest (JSON)
 タイトルに関する情報を要求します。 
@@ -21,19 +21,19 @@ ms.locfileid: "8927421"
  
 ## <a name="titlerequest"></a>TitleRequest
  
-TitleRequest オブジェクトには、次仕様があります。
+TitleRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| タイトルの識別子です。| 
-| activity (アクティビティ)| [ActivityRequest](json-activityrequest.md)| タイトルでの利用可能な場合は、リッチ プレゼンスおよびメディア情報をなどの情報をします。| 
-| 状態| string| かどうか、ユーザーがアクティブか。 ユーザーを非アクティブとしてマークするには、このフィールドが必要です。 既定では「アクティブ」です。| 
-| 配置| string| タイトルの配置モードです。 使用可能な値には、「完全」、「入力と」、「スナップ」または"background"が含まれます。 既定値は、「完全」です。| 
+| id| 32 ビット符号なし整数| タイトルの識別子です。| 
+| activity (アクティビティ)| [ActivityRequest](json-activityrequest.md)| タイトルで - については、使用可能な場合は、豊富なプレゼンスおよびメディア情報を含むです。| 
+| 状態| string| ユーザーがアクティブかどうか。 ユーザーを非アクティブとしてマークするには、このフィールドは必須です。 既定では「アクティブ」です。| 
+| 配置| string| タイトルの配置モードです。 使用可能な値には、"full"、「fill"」、「スナップ」型、または"background"が含まれます。 既定では「完全」です。| 
   
 <a id="ID4EJC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -64,7 +64,7 @@ TitleRequest オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E5C"></a>

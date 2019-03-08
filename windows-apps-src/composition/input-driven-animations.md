@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926328"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597757"
 ---
 # <a name="input-driven-animations"></a>入力駆動型アニメーション
 
@@ -20,7 +20,7 @@ ms.locfileid: "8926328"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [関係ベース アニメーション](relation-animations.md)
+- [ベースのリレーションのアニメーション](relation-animations.md)
 
 ## <a name="smooth-motion-driven-from-user-interactions"></a>ユーザーの操作で駆動するスムーズなモーション
 

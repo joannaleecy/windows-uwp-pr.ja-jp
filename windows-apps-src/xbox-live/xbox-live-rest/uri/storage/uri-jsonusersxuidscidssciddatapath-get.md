@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: f292ca5d1d0968445d91a507384188af1db5cf5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947183"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594047"
 ---
 # <a name="get-jsonusersxuidxuidscidssciddatapath"></a>GET (/json/users/xuid({xuid})/scids/{scid}/data/{path})
-指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+指定されたパスにファイル情報を一覧表示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
-  * [オプションのクエリ文字列パラメーター](#ID4ECB)
-  * [Authorization](#ID4EUC)
+  * [省略可能なクエリ文字列パラメーター](#ID4ECB)
+  * [承認](#ID4EUC)
   * [必要な要求ヘッダー](#ID4EBD)
   * [要求本文](#ID4EKE)
-  * [HTTP ステータス コード](#ID4EXE)
+  * [HTTP 状態コード](#ID4EXE)
   * [応答本文](#ID4EKCAC)
  
 <a id="ID4EX"></a>
@@ -30,39 +30,39 @@ ms.locfileid: "8947183"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
-| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
+| xuid| 64 ビット符号なし整数| Xbox のユーザー ID を (XUID)、プレーヤーの要求を行う。| 
+| scid| guid| 検索するサービス構成の ID。| 
+| パス| string| 返されるデータのアイテムへのパス。 一致するすべてのディレクトリとサブディレクトリが返されるを取得します。 有効な文字には、大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。 空にすることがあります。 最大長は 256 です。| 
   
 <a id="ID4ECB"></a>
 
  
-## <a name="optional-query-string-parameters"></a>オプションのクエリ文字列パラメーター 
+## <a name="optional-query-string-parameters"></a>省略可能なクエリ文字列パラメーター 
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | 
-| skipItems| int| N 個の項目をスキップする n+1、コレクションから項目を返します。| 
-| continuationToken| string| 特定の継続トークンで始まる項目を返します。 ContinuationToken パラメーターは skipItems より優先される場合、両方が提供されます。 つまり、continuationToken パラメーターが存在する場合、skipItems パラメーターは無視されます。| 
-| maxItems| int| SkipItems と項目の範囲を返す continuationToken と組み合わせることができるコレクションから返される項目の最大数。 サービスに結果の最後のページが返されていない場合でもは maxItems が存在しないと、maxItems よりも少ないを返す可能性がある場合、既定値を提供可能性があります。 | 
+| skipItems| int| N 個の項目をスキップする、コレクション内の N + 1 で始まる項目を返します。| 
+| continuationToken| string| 指定された継続トークンで始まる項目を返します。 ContinuationToken パラメーターよりも優先 skipItems 両方を指定しない場合。 つまり、skipItems パラメーターには、continuationToken パラメーターが存在する場合は無視されます。| 
+| maxItems| int| SkipItems と項目の範囲を取得するように continuationToken と組み合わせて使用できるコレクションから返されるアイテムの最大数。 MaxItems が存在しないと、maxItems、未満を返すことが場合の結果の最後のページが返されていない場合でも、サービスに、既定値であると指定可能性があります。 | 
   
 <a id="ID4EUC"></a>
 
  
 ## <a name="authorization"></a>Authorization 
  
-要求は、Xbox LIVE の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは、403 Forbidden 応答を返します。 ヘッダーが見つからないか無効な場合は、サービスは、401 承認されていない応答を返します。 
+要求には、有効な Xbox LIVE の authorization ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可されていない場合、サービスは 403 forbidden」応答を返します。 ヘッダーが無効であるか不足している場合、サービスは、401 を返します。 
   
 <a id="ID4EBD"></a>
 
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| STS 認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得し、承認ヘッダーを作成する方法については、用いた認証と Xbox LIVE サービス要求の承認を参照してください。| 
+| x-xbl-contract-version| 1| API コントラクトのバージョン。| 
+| Authorization| XBL3.0 x = [ハッシュ] です。[トークン]| STS の認証トークンです。 STSTokenString は、認証要求によって返されるトークンに置き換えられます。 STS トークンを取得および authorization ヘッダーの作成の詳細については、認証と Xbox LIVE サービス要求の承認を参照してください。| 
   
 <a id="ID4EKE"></a>
 
@@ -74,34 +74,34 @@ ms.locfileid: "8947183"
 <a id="ID4EXE"></a>
 
  
-## <a name="http-status-codes"></a>HTTP ステータス コード 
+## <a name="http-status-codes"></a>HTTP 状態コード 
  
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
  
-| コード| 理由フレーズ| 説明| 
+| コード| 理由語句| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| 200| OK | 要求が成功しました。| 
-| 201| Created | エンティティが作成されました。| 
-| 400| Bad Request | サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。| 
+| 200| OK | 要求が成功します。| 
+| 201| 作成日 | エンティティが作成されました。| 
+| 400| 要求が正しくありません | サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。| 
 | 401| 権限がありません | 要求には、ユーザー認証が必要です。| 
-| 403| Forbidden | ユーザーまたはサービスの要求は許可されていません。| 
-| 404| Not Found します。 | 指定されたリソースは見つかりませんでした。| 
-| 406| 許容できません。 | リソースのバージョンがサポートされていません。| 
-| 408| 要求のタイムアウト | 要求にかかった時間が長すぎます。| 
-| 500| 内部サーバー エラー | サーバーには、要求を満たすことを禁止する予期しない状態が発生しました。| 
-| 503| Service Unavailable | 要求が調整された、(例: 5 秒後) を秒単位でクライアント再試行値後にもう一度やり直してください。| 
+| 403| Forbidden | ユーザーまたはサービスは、要求することはできません。| 
+| 404| 検出不可 | 指定されたリソースが見つかりませんでした。| 
+| 406| Not Acceptable | リソースのバージョンがサポートされていません。| 
+| 408| 要求のタイムアウト | 要求がかかり過ぎて、完了します。| 
+| 500| 内部サーバー エラー | サーバーには、要求を満たせませんでした。 予期しない状態が発生しました。| 
+| 503| サービス利用不可 | 要求が調整されて、クライアント再試行値 (秒) (例: 5 秒後) の後にもう一度要求を再試行してください。| 
   
 <a id="ID4EKCAC"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは[TitleBlob](../../json/json-titleblob.md)オブジェクトの配列を返します。
+呼び出しが成功した場合、サービスは、の配列を返しますが[TitleBlob](../../json/json-titleblob.md)オブジェクト。
  
 <a id="ID4EYCAC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b26b4c2dc51ef5591480372aa9908a49d2f8cbe2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926720"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661757"
 ---
 # <a name="mediamarketplaceidsinglemediagroupsearch"></a>/media/{marketplaceId}/singleMediaGroupSearch
-1 つのメディア グループ内の項目を検索をできます。 非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできることに注意してください。 この API は、クエリの絞り込み条件を受け取ります。
+1 つのメディアのグループ内の項目を検索をできます。 継続トークンを使用する代わりに非連続的に skipItems パラメーターを使用してこの検索で返されるデータのページにアクセスできることに注意してください。 この API は、クエリの絞り込み条件を受け入れます。
  
 これらの Uri のドメインが`eds.xboxlive.com`します。
  
@@ -26,18 +26,18 @@ ms.locfileid: "8926720"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4EYB"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET (media/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
+[取得 (メディア/{marketplaceId}/singleMediaGroupSearch)](uri-medialocalesinglemediagroupsearchget.md)
 
-&nbsp;&nbsp;1 つのメディア グループ内の項目を検索をできます。 
+&nbsp;&nbsp;1 つのメディアのグループ内の項目を検索をできます。 
  
 <a id="ID4ECC"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "8926720"
  
 ##### <a name="parent"></a>Parent 
 
-[マーケットプレース URI](atoc-reference-marketplace.md)
+[Marketplace の Uri](atoc-reference-marketplace.md)
 
   
 <a id="ID4EOC"></a>
@@ -57,12 +57,12 @@ ms.locfileid: "8926720"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

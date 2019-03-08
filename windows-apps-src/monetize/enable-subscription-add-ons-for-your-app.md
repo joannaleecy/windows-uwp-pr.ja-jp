@@ -6,11 +6,11 @@ ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cda22488f613c508b2c753c6b530b2b34b10909d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114478"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57589987"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>アプリのサブスクリプション アドオンの有効化
 
@@ -33,26 +33,26 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 アプリでサブスクリプション アドオンを購入できるようにするには、次の手順に従います。
 
-1. パートナー センターで、サブスクリプション[アドオンの申請を作成](../publish/add-on-submissions.md)し、申請を公開します。 アドオンの申請プロセスに従い、次のプロパティをよく確認します。
+1. [アドオンの提出の作成](../publish/add-on-submissions.md)のサブスクリプションのパートナー センターと送信を発行します。 アドオンの申請プロセスに従い、次のプロパティをよく確認します。
 
-    * [製品の種類](../publish/set-your-add-on-product-id.md#product-type): **[サブスクリプション]** を選択していることを確認します。
+    * [製品の種類](../publish/set-your-add-on-product-id.md#product-type):選択するかどうかを確認**サブスクリプション**します。
 
-    * [サブスクリプション期間](../publish/enter-add-on-properties.md#subscription-period): サブスクリプションの定期的な課金期間を選択します。 アドオンの公開後にサブスクリプション期間を変更することはできません。
+    * [サブスクリプション期間](../publish/enter-add-on-properties.md#subscription-period):サブスクリプションの場合は、定期的な請求期間を選択します。 アドオンの公開後にサブスクリプション期間を変更することはできません。
 
         各サブスクリプション アドオンがサポートするのは、単一のサブスクリプション期間と試用期間だけです。 アプリで提供するサブスクリプションの種類ごとに異なるサブスクリプション アドオンを作成する必要があります。 たとえば、試用期間のない月間サブスクリプション、1 か月の試用期間のある月間サブスクリプション、試用期間のない年間サブスクリプション、1 か月の試用期間のある年間サブスクリプションを提供する場合、サブスクリプション アドオンを 4 つ作成する必要があります。
 
-    * [試用期間](../publish/enter-add-on-properties.md#free-trial): ユーザーがサブスクリプション コンテンツを購入する前に試すことのできる期間を 1 週間にするか、1 か月にするかを選択することを検討します。 サブスクリプション アドオンの公開後に試用期間を変更または削除することはできません。
+    * [試用期間](../publish/enter-add-on-properties.md#free-trial):サブスクリプションを購入する前に、サブスクリプションのコンテンツを試すユーザーを有効にするための 1 週間、または 1 か月試用期間を選択することを検討してください。 サブスクリプション アドオンの公開後に試用期間を変更または削除することはできません。
 
         サブスクリプションの無料試用版を取得するには、ユーザーは有効な支払方法の設定も含めて標準のアプリ内購入プロセスに従って、サブスクリプションを購入する必要があります。 試用期間中に料金を請求されることはありません。 試用期間の終わりに、サブスクリプションは自動的に完全なサブスクリプションに変わり、有料サブスクリプションの最初の期間の料金がユーザーの支払方法に請求されます。 ユーザーが試用期間中にサブスクリプションを取り消した場合、試用期間が終わるまでサブスクリプションは有効のままです。 一部の試用期間は、すべてのサブスクリプション期間では利用できません。
 
         > [!NOTE]
         > 各ユーザーは、サブスクリプション アドオンの無料試用版を 1 回だけ取得できます。 ユーザーがサブスクリプションの無料試用版を取得したら、Microsoft Store では、同じユーザーが今後同じ無料試用版のサブスクリプションを取得しないようにします。
 
-    * [可視性](../publish/set-add-on-pricing-and-availability.md#visibility): サブスクリプションのアプリ内購入エクスペリエンスのテストだけに使用するテスト用アドオンを作成している場合は、**[ストアに表示しない]** オプションのいずれかを選択することをお勧めします。 それ以外の場合は、シナリオに最適な可視化オプションを選択します。
+    * [可視性](../publish/set-add-on-pricing-and-availability.md#visibility):いずれかを選択することをお勧め、サブスクリプションのアプリ内購入エクスペリエンスをテストにのみ使用するテストのアドオンを作成する場合、 **、ストアで非表示に**オプション。 それ以外の場合は、シナリオに最適な可視化オプションを選択します。
 
-    * [価格](../publish/set-add-on-pricing-and-availability.md?#pricing): このセクションでサブスクリプションの価格を選択します。 アドオンの公開後にサブスクリプションの価格を上げることはできません。 ただし、後で価格を下げることはできます。
+    * [価格](../publish/set-add-on-pricing-and-availability.md?#pricing):このセクションでは、サブスクリプションの価格を選択します。 アドオンの公開後にサブスクリプションの価格を上げることはできません。 ただし、後で価格を下げることはできます。
         > [!IMPORTANT]
-        > アドオンの作成時、既定では、最初の価格は **[無料]** に設定されています。 サブスクリプション アドオンの申請の完了後にアドオンの価格を上げることはできないため、ここで必ずサブスクリプションの価格を選択してください。
+        > アドオンの作成時、既定では、価格は最初 **[無料]** に設定されています。 サブスクリプション アドオンの申請の完了後にアドオンの価格を上げることはできないため、ここで必ずサブスクリプションの価格を選択してください。
 
 2. アプリで [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) 名前空間の API を使用して、現在のユーザーが既にサブスクリプション アドオンを取得しているかどうかを確認し、そのユーザーにアドオンをアプリ内購入として販売するかどうかを決定します。 詳細については、この記事の[コード サンプル](#code-examples)を参照してください。
 
@@ -68,12 +68,12 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 これらの例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* パートナー センター内にある[アプリの申請を作成](https://docs.microsoft.com/windows/uwp/publish/app-submissions)し、このアプリは、ストアで公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
-* パートナー センターで[、アプリのサブスクリプション アドオンを作成](../publish/add-on-submissions.md)あります。
+* ある[アプリの提出を作成した](https://docs.microsoft.com/windows/uwp/publish/app-submissions)パートナー センターでこのアプリがストアで公開されています。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* ある[アプリのサブスクリプションのアドオンを作成した](../publish/add-on-submissions.md)パートナー センターでします。
 
 これらの例のコードは、次の点を前提としています。
 * コード ファイルに **Windows.Services.Store** 名前空間と **System.Threading.Tasks** 名前空間を使うための **using** ステートメントがある。
-* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリである。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
+* アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
 
 > [!NOTE]
 > [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用するデスクトップ アプリケーションがある場合、これらの例には示されていないコードを追加して [**StoreContext**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext) オブジェクトを構成することが必要になることがあります。 詳しくは、「[デスクトップ ブリッジを使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
@@ -92,7 +92,7 @@ UWP アプリのサブスクリプション アドオンでは、次の機能を
 
 ### <a name="get-info-about-subscription-add-ons-for-the-current-app"></a>現在のアプリのサブスクリプション アドオンの情報の取得
 
-このコード例では、アプリで利用可能なすべてのサブスクリプション アドオンの情報を取得する方法を示しています。 この情報を取得するには、まず [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) メソッドを使用して、アプリで利用可能なアドオンそれぞれを表す [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) オブジェクトのコレクションを取得します。 次に、各製品の [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) を取得し、[**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) プロパティと [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) プロパティを使ってサブスクリプション情報にアクセスします。
+このコード例では、アプリで利用可能なすべてのサブスクリプション アドオンの情報を取得する方法を示しています。 この情報を取得するには、まず [**GetAssociatedStoreProductsAsync**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext.GetAssociatedStoreProductsAsync) メソッドを使用して、アプリで利用可能なアドオンそれぞれを表す [**StoreProduct**](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) オブジェクトのコレクションを取得します。 次に、各製品の [**StoreSku**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku) を取得し、[**IsSubscription**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.IsSubscription) プロパティと [**SubscriptionInfo**](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.SubscriptionInfo) プロパティを使用してサブスクリプション情報にアクセスします。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
@@ -124,7 +124,7 @@ REST API を使用して、ユーザーの代わりにサブスクリプショ�
 次のシナリオは、サブスクリプション アドオンで現在サポートされていません。
 
 * 現時点では、ストアを通じたユーザーへのサブスクリプションの直接販売はサポートされていません。 サブスクリプションはデジタル製品のアプリ内購入でのみ利用可能です。
-* ユーザーが Microsoft アカウントの [https://account.microsoft.com/services](https://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 別のサブスクリプション期間に切り替えると、ユーザーは、現在のサブスクリプションをキャンセルをアプリから別のサブスクリプション期間のサブスクリプションを購入し、必要があります。
+* ユーザーが Microsoft アカウントの [https://account.microsoft.com/services](https://account.microsoft.com/services) ページを使ってサブスクリプション期間を切り替えることはできません。 別のサブスクリプション期間に切り替えるには、顧客は、現在のサブスクリプションをキャンセルし、アプリから別のサブスクリプション期間にサブスクリプションを購入する必要があります。
 * サブスクリプション アドオンでは現在、サブスクリプション レベルの切り替えはサポートされていません (たとえば、ユーザーをベーシック サブスクリプションから機能の多いプレミアム サブスクリプションに切り替えるなど)。
 * サブスクリプション アドオンでは現在、[セール](../publish/put-apps-and-add-ons-on-sale.md)と[プロモーション コード](../publish/generate-promotional-codes.md)はサポートされていません。
 
@@ -132,4 +132,4 @@ REST API を使用して、ユーザーの代わりにサブスクリプショ�
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリ内購入と試用版](in-app-purchases-and-trials.md)
-* [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
+* [アプリケーションとアドオンの製品情報を取得します。](get-product-info-for-apps-and-add-ons.md)

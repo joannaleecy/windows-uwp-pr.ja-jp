@@ -1,22 +1,22 @@
 ---
-Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+Description: Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 アプリケーションのニーズに応じて、通知を送信するさまざまな方法があります。
 title: 適切なプッシュ通知チャネルの種類を選択する
 ms.date: 07/07/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 075eaf5c02e5bddb4b87d7e4aaf931cbfde53cdd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944297"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616417"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>適切なプッシュ通知チャネルの種類を選択する
 
 この記事では、アプリのコンテンツの提供に役立つ、3 つの種類の UWP プッシュ通知 (プライマリ、セカンダリ、および代替) について説明します。 
 
-(プッシュ通知を作成する方法について詳しくは、 [Windows プッシュ通知サービス (WNS) の概要](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)を参照してください)。 
+(プッシュ通知を作成する方法の詳細については、次を参照してください、 [Windows プッシュ通知サービス (WNS) の概要](../tiles-and-notifications/windows-push-notification-services--wns--overview.md)。)。 
 
 ## <a name="types-of-push-channels"></a>プッシュ チャネルの種類 
 
@@ -38,10 +38,10 @@ UWP アプリに通知を送信するために使用される、3 種類のプ�
 
 ### <a name="what-do-primary-channels-enable"></a>プライマリ チャネルで可能なこと
 
--   **プライマリ タイルへのタイルやバッジの更新を送信します。** ユーザーがスタート画面にタイルをピン留めした場合、プライマリ チャネルの効果を発揮できます。 アプリ内で、役に立つ情報の更新やエクスペリエンスのリマインダーを送信できます。 
+-   **タイルやバッジの更新プログラムをプライマリ タイルに送信します。** ユーザーがスタート画面にタイルをピン留めした場合、プライマリ チャネルの効果を発揮できます。 アプリ内で、役に立つ情報の更新やエクスペリエンスのリマインダーを送信できます。 
 -   **トースト通知を送信します。** トースト通知を使うと、ユーザーの前に直ちに情報を提供できます。 シェルによりほとんどのアプリの一番上に描画され、さらにアクション センターに残るため、ユーザーは後から参照して操作することができます。 
--   **バックグラウンド タスクをトリガーする直接通知を送信します。** 通知に基づいて、ユーザーに代わって作業を行うことができます。 直接通知を使うと、アプリのバックグラウンド タスクを実行できます。 
--   **Windows は TLS を使用して、転送中のメッセージを暗号化します。** ネットワーク上のメッセージは、WNS の受信メッセージとデバイスへの送信メッセージの両方が暗号化されます。  
+-   **バック グラウンド タスクをトリガーする生の通知を送信します。** 通知に基づいて、ユーザーに代わって作業を行うことができます。 直接通知を使うと、アプリのバックグラウンド タスクを実行できます。 
+-   **TLS を使用して Windows で提供される転送中のメッセージの暗号化。** ネットワーク上のメッセージは、WNS の受信メッセージとデバイスへの送信メッセージの両方が暗号化されます。  
 
 ### <a name="limitations-of-primary-channels"></a>プライマリ チャネルの制限事項
 
@@ -107,26 +107,26 @@ PushNotificationChannel webChannel =
 <table>
 
 <tr class="header">
-<th align="left"><b>種類</b></th>
-<th align="left"><b>トーストをプッシュする</b></th>
-<th align="left"><b>タイルバッジをプッシュする</b></th>
-<th align="left"><b>直接通知をプッシュする</b></th>
-<th align="left"><b>認証</b></th>
+<th align="left"><b>型</b></th>
+<th align="left"><b>トーストをプッシュしますか。</b></th>
+<th align="left"><b>タイルとバッジをプッシュしますか。</b></th>
+<th align="left"><b>生の通知をプッシュしますか。</b></th>
+<th align="left">[<b>認証</b>]</th>
 <th align="left"><b>API</b></th>
-<th align="left"><b>ストアへの登録の必要性</b></th>
+<th align="left"><b>ストアの登録が必要ですか。</b></th>
 <th align="left"><b>チャネル</b></th>
-<th align="left"><b>暗号化</b></th>
+<th align="left">[<b>暗号化</b>]</th>
 </tr>
 
 
 <tr class="odd">
 <td align="left">プライマリ</td>
-<td align="left">はい</td>
+<td align="left">〇</td>
 <td align="left">〇 - プライマリ タイルのみ</td>
-<td align="left">はい</td>
+<td align="left">〇</td>
 <td align="left">OAuth</td>
 <td align="left">WNS REST API</td>
-<td align="left">はい</td>
+<td align="left">〇</td>
 <td align="left">アプリごとに 1 つ</td>
 <td align="left">転送中</td>
 </tr>
@@ -137,15 +137,15 @@ PushNotificationChannel webChannel =
 <td align="left">X</td>
 <td align="left">OAuth</td>
 <td align="left">WNS REST API</td>
-<td align="left">はい</td>
+<td align="left">〇</td>
 <td align="left">セカンダリ タイルごとに 1 つ</td>
 <td align="left">転送中</td>
 </tr>
 <tr class="odd">
 <td align="left">代替</td>
 <td align="left">X</td>
-<td align="left">いいえ</td>
-<td align="left">はい</td>
+<td align="left">X</td>
+<td align="left">〇</td>
 <td align="left">VAPID</td>
 <td align="left">WebPush W3C 標準</td>
 <td align="left">X</td>
@@ -167,11 +167,11 @@ PushNotificationChannel webChannel =
 
 * [ローカル タイル通知の送信](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [アダプティブ トースト通知と対話型トースト通知](../tiles-and-notifications/adaptive-interactive-toasts.md)
-* [クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [プッシュ通知を使用してバッジを更新する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [実行中のアプリの通知を中断する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Windows プッシュ通知サービス (WNS) に対して認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [プッシュ通知のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [クイック スタート:プッシュ通知を送信します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [プッシュ通知でバッジを更新する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [要求、作成、および通知チャネルを保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [アプリケーションを実行するための通知をインターセプトする方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Windows プッシュ通知サービス (WNS) とを認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [プッシュ通知サービスの要求および応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [プッシュ通知のガイドラインとチェックリスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [直接通知](raw-notification-overview.md)
