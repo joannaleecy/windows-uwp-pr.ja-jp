@@ -1,67 +1,67 @@
 ---
-Description: This topic describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+Description: このトピックでは、回転の新しい Windows UI を説明し、UWP アプリでこの新しい相互作用のメカニズムの使用時に考慮すべきユーザー エクスペリエンス ガイドラインを示します。
 title: 回転
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f631f3178b4af4fe1c1d2d8b27e8ae6ac25c6ad1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923796"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617207"
 ---
-# <a name="rotation"></a><span data-ttu-id="4f171-103">回転</span><span class="sxs-lookup"><span data-stu-id="4f171-103">Rotation</span></span>
+# <a name="rotation"></a><span data-ttu-id="43404-104">回転</span><span class="sxs-lookup"><span data-stu-id="43404-104">Rotation</span></span>
 
 
-<span data-ttu-id="4f171-104">この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="4f171-104">This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.</span></span>
+<span data-ttu-id="43404-105">この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。</span><span class="sxs-lookup"><span data-stu-id="43404-105">This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.</span></span>
 
-> <span data-ttu-id="4f171-105">**重要な API**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</span><span class="sxs-lookup"><span data-stu-id="4f171-105">**Important APIs**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</span></span>
+> <span data-ttu-id="43404-106">**重要な Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、 [ **Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</span><span class="sxs-lookup"><span data-stu-id="43404-106">**Important APIs**: [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</span></span>
 
-## <a name="dos-and-donts"></a><span data-ttu-id="4f171-106">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="4f171-106">Dos and don'ts</span></span>
+## <a name="dos-and-donts"></a><span data-ttu-id="43404-107">推奨と非推奨</span><span class="sxs-lookup"><span data-stu-id="43404-107">Dos and don'ts</span></span>
 
--   <span data-ttu-id="4f171-107">ユーザーが直接 UI 要素を回転できるように回転を使います。</span><span class="sxs-lookup"><span data-stu-id="4f171-107">Use rotation to help users directly rotate UI elements.</span></span>
+-   <span data-ttu-id="43404-108">ユーザーが直接 UI 要素を回転できるように回転を使います。</span><span class="sxs-lookup"><span data-stu-id="43404-108">Use rotation to help users directly rotate UI elements.</span></span>
 
-## <a name="additional-usage-guidance"></a><span data-ttu-id="4f171-108">その他の使い方のガイダンス</span><span class="sxs-lookup"><span data-stu-id="4f171-108">Additional usage guidance</span></span>
+## <a name="additional-usage-guidance"></a><span data-ttu-id="43404-109">その他の使い方のガイダンス</span><span class="sxs-lookup"><span data-stu-id="43404-109">Additional usage guidance</span></span>
 
 
-**<span data-ttu-id="4f171-109">回転の概要</span><span class="sxs-lookup"><span data-stu-id="4f171-109">Overview of rotation</span></span>**
+<span data-ttu-id="43404-110">**回転の概要**</span><span class="sxs-lookup"><span data-stu-id="43404-110">**Overview of rotation**</span></span>
 
-<span data-ttu-id="4f171-110">回転は UWP アプリで使われるタッチ操作に最適な手法であり、ユーザーがオブジェクトを回転 (時計回りまたは反時計回り) できるようにします。</span><span class="sxs-lookup"><span data-stu-id="4f171-110">Rotation is the touch-optimized technique used by UWP apps to enable users to turn an object in a circular direction (clockwise or counter-clockwise).</span></span>
+<span data-ttu-id="43404-111">回転は UWP アプリで使われるタッチ操作に最適な手法であり、ユーザーがオブジェクトを回転 (時計回りまたは反時計回り) できるようにします。</span><span class="sxs-lookup"><span data-stu-id="43404-111">Rotation is the touch-optimized technique used by UWP apps to enable users to turn an object in a circular direction (clockwise or counter-clockwise).</span></span>
 
-<span data-ttu-id="4f171-111">入力デバイスに応じて回転操作は次のように実行されます。</span><span class="sxs-lookup"><span data-stu-id="4f171-111">Depending on the input device, the rotation interaction is performed using:</span></span>
+<span data-ttu-id="43404-112">入力デバイスに応じて回転操作は次のように実行されます。</span><span class="sxs-lookup"><span data-stu-id="43404-112">Depending on the input device, the rotation interaction is performed using:</span></span>
 
--   <span data-ttu-id="4f171-112">マウスまたはアクティブなペン/スタイラスを使って、選んだオブジェクトの回転グリッパーを移動する。</span><span class="sxs-lookup"><span data-stu-id="4f171-112">A mouse or active pen/stylus to move the rotation gripper of a selected object.</span></span>
--   <span data-ttu-id="4f171-113">タッチまたはパッシブなペン/スタイラスを使って、回転ジェスチャによって任意の方向にオブジェクトを回転させる。</span><span class="sxs-lookup"><span data-stu-id="4f171-113">Touch or passive pen/stylus to turn the object in the desired direction using the rotate gesture.</span></span>
+-   <span data-ttu-id="43404-113">マウスまたはアクティブなペン/スタイラスを使って、選んだオブジェクトの回転グリッパーを移動する。</span><span class="sxs-lookup"><span data-stu-id="43404-113">A mouse or active pen/stylus to move the rotation gripper of a selected object.</span></span>
+-   <span data-ttu-id="43404-114">タッチまたはパッシブなペン/スタイラスを使って、回転ジェスチャによって任意の方向にオブジェクトを回転させる。</span><span class="sxs-lookup"><span data-stu-id="43404-114">Touch or passive pen/stylus to turn the object in the desired direction using the rotate gesture.</span></span>
 
-**<span data-ttu-id="4f171-114">回転を使う状況</span><span class="sxs-lookup"><span data-stu-id="4f171-114">When to use rotation</span></span>**
+<span data-ttu-id="43404-115">**回転を使用する場合**</span><span class="sxs-lookup"><span data-stu-id="43404-115">**When to use rotation**</span></span>
 
-<span data-ttu-id="4f171-115">ユーザーが直接 UI 要素を回転できるように回転を使います。</span><span class="sxs-lookup"><span data-stu-id="4f171-115">Use rotation to help users directly rotate UI elements.</span></span> <span data-ttu-id="4f171-116">次の図は、サポートされる回転操作の指の配置をいくつか示しています。</span><span class="sxs-lookup"><span data-stu-id="4f171-116">The following diagrams show some of the supported finger positions for the rotation interaction.</span></span>
+<span data-ttu-id="43404-116">ユーザーが直接 UI 要素を回転できるように回転を使います。</span><span class="sxs-lookup"><span data-stu-id="43404-116">Use rotation to help users directly rotate UI elements.</span></span> <span data-ttu-id="43404-117">次の図は、サポートされる回転操作の指の配置をいくつか示しています。</span><span class="sxs-lookup"><span data-stu-id="43404-117">The following diagrams show some of the supported finger positions for the rotation interaction.</span></span>
 
 ![回転がサポートされる異なる指の配置を示す図](images/ux-rotate-positions.png)
 
-<span data-ttu-id="4f171-118">**注:** 直感的とはほとんどの場合、回転の中心点の 2 つのタッチ ポイントのいずれかの場合は、ユーザーが接触点 (例: 描画アプリやレイアウトのアプリケーション) とは無関係な回転の中心点を指定できます。</span><span class="sxs-lookup"><span data-stu-id="4f171-118">**Note** Intuitively, and in most cases, the rotation point is one of the two touch points unless the user can specify a rotation point unrelated to the contact points (for example, in a drawing or layout application).</span></span> <span data-ttu-id="4f171-119">以下の図では、回転の中心点がこのような制約を受けない場合に、どのようにユーザー エクスペリエンスが低下するかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="4f171-119">The following images demonstrate how the user experience can be degraded if the rotation point is not constrained in this way.</span></span>
+<span data-ttu-id="43404-119">**注**  ユーザーが (たとえば、描画またはレイアウトのアプリケーション) に接続ポイントとは無関係な回転ポイントを指定しない限りは直感的とでほとんどの場合、回転ポイントは、2 つのタッチ ポイントの 1 つです。</span><span class="sxs-lookup"><span data-stu-id="43404-119">**Note**   Intuitively, and in most cases, the rotation point is one of the two touch points unless the user can specify a rotation point unrelated to the contact points (for example, in a drawing or layout application).</span></span> <span data-ttu-id="43404-120">以下の図では、回転の中心点がこのような制約を受けない場合に、どのようにユーザー エクスペリエンスが低下するかについて説明します。</span><span class="sxs-lookup"><span data-stu-id="43404-120">The following images demonstrate how the user experience can be degraded if the rotation point is not constrained in this way.</span></span>
 
-<span data-ttu-id="4f171-120">1 番目の図は、最初のタッチ ポイント (親指) と 2 番目のタッチ ポイント (人差し指) を示します。人差し指は木に、親指は丸太にタッチしています。</span><span class="sxs-lookup"><span data-stu-id="4f171-120">This first picture shows the initial (thumb) and secondary (index finger) touch points: the index finger is touching a tree and the thumb is touching a log.</span></span>
+<span data-ttu-id="43404-121">1 番目の図は、最初のタッチ ポイント (親指) と 2 番目のタッチ ポイント (人差し指) を示します。人差し指は木に、親指は丸太にタッチしています。</span><span class="sxs-lookup"><span data-stu-id="43404-121">This first picture shows the initial (thumb) and secondary (index finger) touch points: the index finger is touching a tree and the thumb is touching a log.</span></span>
 
-![回転ジェスチャのための最初の 2 つのタッチ ポイントを示す図](images/ux-rotate-points1.png)
-<span data-ttu-id="4f171-122">2 番目の図では、最初のタッチ ポイント (親指) の周りで回転が行われています。</span><span class="sxs-lookup"><span data-stu-id="4f171-122">In this second picture, rotation is performed around the initial (thumb) touch point.</span></span> <span data-ttu-id="4f171-123">回転の後で、人差し指は相変わらず木の幹にタッチし、親指は相変わらず丸太 (回転の中心点) にタッチしています。</span><span class="sxs-lookup"><span data-stu-id="4f171-123">After the rotation, the index finger is still touching the tree trunk and the thumb is still touching the log (the rotation point).</span></span>
+<span data-ttu-id="43404-122">![イメージの回転のジェスチャの 2 つの初期のタッチ ポイントを表示します。](images/ux-rotate-points1.png)</span><span class="sxs-lookup"><span data-stu-id="43404-122">![image showing the two initial touch points for the rotation gesture.](images/ux-rotate-points1.png)</span></span>
+<span data-ttu-id="43404-123">2 番目の図では、最初のタッチ ポイント (親指) の周りで回転が行われています。</span><span class="sxs-lookup"><span data-stu-id="43404-123">In this second picture, rotation is performed around the initial (thumb) touch point.</span></span> <span data-ttu-id="43404-124">回転の後で、人差し指は相変わらず木の幹にタッチし、親指は相変わらず丸太 (回転の中心点) にタッチしています。</span><span class="sxs-lookup"><span data-stu-id="43404-124">After the rotation, the index finger is still touching the tree trunk and the thumb is still touching the log (the rotation point).</span></span>
 
-![回転の中心点が最初に 2 つタッチした点の 1 つに制約された状態で回転する絵を示す図](images/ux-rotate-points2.png)
-<span data-ttu-id="4f171-125">3 番目の図では、回転の中心がアプリによって絵の中心点に定義されています (またはユーザーによって設定されています)。</span><span class="sxs-lookup"><span data-stu-id="4f171-125">In this third picture, the center of rotation has been defined by the application (or set by the user) to be the center point of the picture.</span></span> <span data-ttu-id="4f171-126">回転の後で、絵が指の 1 つの周りで回転しなかったために、直接操作の画像が失われます (ユーザーがこの設定を選んだ場合を除きます)。</span><span class="sxs-lookup"><span data-stu-id="4f171-126">After the rotation, because the picture did not rotate around one of the fingers, the illusion of direct manipulation is broken (unless the user has chosen this setting).</span></span>
+<span data-ttu-id="43404-125">![回転ポイントで回転した画像を表示するイメージは、2 つの初期のタッチ ポイントの 1 つに制限されます。](images/ux-rotate-points2.png)</span><span class="sxs-lookup"><span data-stu-id="43404-125">![image showing a rotated picture with the rotation point constrained to one of the two initial touch points.](images/ux-rotate-points2.png)</span></span>
+<span data-ttu-id="43404-126">3 番目の図では、回転の中心がアプリによって絵の中心点に定義されています (またはユーザーによって設定されています)。</span><span class="sxs-lookup"><span data-stu-id="43404-126">In this third picture, the center of rotation has been defined by the application (or set by the user) to be the center point of the picture.</span></span> <span data-ttu-id="43404-127">回転の後で、絵が指の 1 つの周りで回転しなかったために、直接操作の画像が失われます (ユーザーがこの設定を選んだ場合を除きます)。</span><span class="sxs-lookup"><span data-stu-id="43404-127">After the rotation, because the picture did not rotate around one of the fingers, the illusion of direct manipulation is broken (unless the user has chosen this setting).</span></span>
 
-![回転の中心点が最初に 2 つタッチした点のどちらでもなく、絵の中心に制約された状態で回転する絵を示す図](images/ux-rotate-points3.png)
-<span data-ttu-id="4f171-128">最後の図では、回転の中心がアプリによって絵の左端の中央の点に定義されています (またはユーザーによって設定されています)。</span><span class="sxs-lookup"><span data-stu-id="4f171-128">In this last picture, the center of rotation has been defined by the application (or set by the user) to be a point in the middle of the left edge of the picture.</span></span> <span data-ttu-id="4f171-129">この場合も、ユーザーがこの設定を選んだ場合を除いて、直接操作の画像が失われます。</span><span class="sxs-lookup"><span data-stu-id="4f171-129">Again, unless the user has chosen this setting, the illusion of direct manipulation is broken in this case.</span></span>
+<span data-ttu-id="43404-128">![回転ポイントで回転した画像を表示するイメージは、2 つの初期のタッチ ポイントのいずれかではなく、画像の中央に制限されます。](images/ux-rotate-points3.png)</span><span class="sxs-lookup"><span data-stu-id="43404-128">![image showing a rotated picture with the rotation point constrained to the center of the picture rather than either of the two initial touch points.](images/ux-rotate-points3.png)</span></span>
+<span data-ttu-id="43404-129">最後の図では、回転の中心がアプリによって絵の左端の中央の点に定義されています (またはユーザーによって設定されています)。</span><span class="sxs-lookup"><span data-stu-id="43404-129">In this last picture, the center of rotation has been defined by the application (or set by the user) to be a point in the middle of the left edge of the picture.</span></span> <span data-ttu-id="43404-130">この場合も、ユーザーがこの設定を選んだ場合を除いて、直接操作の画像が失われます。</span><span class="sxs-lookup"><span data-stu-id="43404-130">Again, unless the user has chosen this setting, the illusion of direct manipulation is broken in this case.</span></span>
 
 ![回転の中心点が最初に 2 つタッチした点のどちらでもなく、絵の左端の中央に制約された状態で回転する絵を示す図](images/ux-rotate-points4.png)
 
  
 
-<span data-ttu-id="4f171-131">Windows8 は 3 種類の回転をサポートしています: 自由、制約付き、および結合します。</span><span class="sxs-lookup"><span data-stu-id="4f171-131">Windows8 supports three types of rotation: free, constrained, and combined.</span></span>
+<span data-ttu-id="43404-132">Windows 8 には、回転の 3 つの種類がサポートしています: 無料、制約、および結合します。</span><span class="sxs-lookup"><span data-stu-id="43404-132">Windows 8 supports three types of rotation: free, constrained, and combined.</span></span>
 
 <table>
 <colgroup>
@@ -70,26 +70,26 @@ ms.locfileid: "8923796"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="4f171-132">種類</span><span class="sxs-lookup"><span data-stu-id="4f171-132">Type</span></span></th>
-<th align="left"><span data-ttu-id="4f171-133">説明</span><span class="sxs-lookup"><span data-stu-id="4f171-133">Description</span></span></th>
+<th align="left"><span data-ttu-id="43404-133">種類</span><span class="sxs-lookup"><span data-stu-id="43404-133">Type</span></span></th>
+<th align="left"><span data-ttu-id="43404-134">説明</span><span class="sxs-lookup"><span data-stu-id="43404-134">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><span data-ttu-id="4f171-134">自由回転</span><span class="sxs-lookup"><span data-stu-id="4f171-134">Free rotation</span></span></td>
-<td align="left"><p><span data-ttu-id="4f171-135">自由回転では、ユーザーはコンテンツを 360°の任意の位置に自由に回転できます。ユーザーがオブジェクトを離すと、オブジェクトは選んだ位置にとどまります。</span><span class="sxs-lookup"><span data-stu-id="4f171-135">Free rotation enables a user to rotate content freely anywhere in a 360 degree arc. When the user releases the object, the object remains in the chosen position.</span></span> <span data-ttu-id="4f171-136">自由回転は、Microsoft PowerPoint、Word、Visio、ペイントと Adobe Photoshop、Illustrator、Flash などの描画アプリやレイアウト アプリで便利です。</span><span class="sxs-lookup"><span data-stu-id="4f171-136">Free rotation is useful for drawing and layout applications such as Microsoft PowerPoint, Word, Visio, and Paint; and Adobe Photoshop, Illustrator, and Flash.</span></span></p></td>
+<td align="left"><span data-ttu-id="43404-135">自由回転</span><span class="sxs-lookup"><span data-stu-id="43404-135">Free rotation</span></span></td>
+<td align="left"><p><span data-ttu-id="43404-136">自由回転では、ユーザーはコンテンツを 360°の任意の位置に自由に回転できます。ユーザーがオブジェクトを離すと、オブジェクトは選んだ位置にとどまります。</span><span class="sxs-lookup"><span data-stu-id="43404-136">Free rotation enables a user to rotate content freely anywhere in a 360 degree arc. When the user releases the object, the object remains in the chosen position.</span></span> <span data-ttu-id="43404-137">自由回転は、Microsoft PowerPoint、Word、Visio、ペイントと Adobe Photoshop、Illustrator、Flash などの描画アプリやレイアウト アプリで便利です。</span><span class="sxs-lookup"><span data-stu-id="43404-137">Free rotation is useful for drawing and layout applications such as Microsoft PowerPoint, Word, Visio, and Paint; and Adobe Photoshop, Illustrator, and Flash.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><span data-ttu-id="4f171-137">制約付き回転</span><span class="sxs-lookup"><span data-stu-id="4f171-137">Constrained rotation</span></span></td>
-<td align="left"><p><span data-ttu-id="4f171-138">制約付き回転は、操作中は自由回転をサポートしますが、離したときに 90°単位のスナップ位置が強制されます (0、90、180、270)。</span><span class="sxs-lookup"><span data-stu-id="4f171-138">Constrained rotation supports free rotation during the manipulation but enforces snap points at 90 degree increments (0, 90, 180, and 270) upon release.</span></span> <span data-ttu-id="4f171-139">ユーザーがオブジェクトを離すと、オブジェクトは自動的に最も近いスナップ位置まで回転します。</span><span class="sxs-lookup"><span data-stu-id="4f171-139">When the user releases the object, the object automatically rotates to the nearest snap point.</span></span></p>
-<p><span data-ttu-id="4f171-140">制約付き回転は回転の最も一般的な方法で、コンテンツのスクロールと同じように機能します。</span><span class="sxs-lookup"><span data-stu-id="4f171-140">Constrained rotation is the most common method of rotation, and it functions in a similar way to scrolling content.</span></span> <span data-ttu-id="4f171-141">スナップ位置があることで、ユーザーは操作が正確でなくても目標の位置に到達できます。</span><span class="sxs-lookup"><span data-stu-id="4f171-141">Snap points let a user be imprecise and still achieve their goal.</span></span> <span data-ttu-id="4f171-142">制約付きの回転は Web ブラウザーやフォト アルバムのようなアプリで便利です。</span><span class="sxs-lookup"><span data-stu-id="4f171-142">Constrained rotation is useful for applications such as web browsers and photo albums.</span></span></p></td>
+<td align="left"><span data-ttu-id="43404-138">制約付き回転</span><span class="sxs-lookup"><span data-stu-id="43404-138">Constrained rotation</span></span></td>
+<td align="left"><p><span data-ttu-id="43404-139">制約付き回転は、操作中は自由回転をサポートしますが、離したときに 90°単位のスナップ位置が強制されます (0、90、180、270)。</span><span class="sxs-lookup"><span data-stu-id="43404-139">Constrained rotation supports free rotation during the manipulation but enforces snap points at 90 degree increments (0, 90, 180, and 270) upon release.</span></span> <span data-ttu-id="43404-140">ユーザーがオブジェクトを離すと、オブジェクトは自動的に最も近いスナップ位置まで回転します。</span><span class="sxs-lookup"><span data-stu-id="43404-140">When the user releases the object, the object automatically rotates to the nearest snap point.</span></span></p>
+<p><span data-ttu-id="43404-141">制約付き回転は回転の最も一般的な方法で、コンテンツのスクロールと同じように機能します。</span><span class="sxs-lookup"><span data-stu-id="43404-141">Constrained rotation is the most common method of rotation, and it functions in a similar way to scrolling content.</span></span> <span data-ttu-id="43404-142">スナップ位置があることで、ユーザーは操作が正確でなくても目標の位置に到達できます。</span><span class="sxs-lookup"><span data-stu-id="43404-142">Snap points let a user be imprecise and still achieve their goal.</span></span> <span data-ttu-id="43404-143">制約付きの回転は Web ブラウザーやフォト アルバムのようなアプリで便利です。</span><span class="sxs-lookup"><span data-stu-id="43404-143">Constrained rotation is useful for applications such as web browsers and photo albums.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><span data-ttu-id="4f171-143">複合回転</span><span class="sxs-lookup"><span data-stu-id="4f171-143">Combined rotation</span></span></td>
-<td align="left"><p><span data-ttu-id="4f171-144">複合回転は自由回転をサポートしますが、(<a href="guidelines-for-panning.md">パン</a>におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。</span><span class="sxs-lookup"><span data-stu-id="4f171-144">Combined rotation supports free rotation with zones (similar to rails in <a href="guidelines-for-panning.md">Guidelines for panning</a>) at each of the 90 degree snap points enforced by constrained rotation.</span></span> <span data-ttu-id="4f171-145">ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</span><span class="sxs-lookup"><span data-stu-id="4f171-145">If the user releases the object outside of one of 90 degree zones, the object remains in that position; otherwise, the object automatically rotates to a snap point.</span></span></p>
-<div class="alert"><span data-ttu-id="4f171-146">
-<strong>注:</strong>ユーザー インターフェイスのレールは、ターゲットの周辺の領域がに向けてする特定の値または場所の選択に影響を与える動き機能します。</span><span class="sxs-lookup"><span data-stu-id="4f171-146">
-<strong>Note</strong>A user interface rail is a feature in which an area around a target constrains movement towards some specific value or location to influence its selection.</span></span>
+<td align="left"><span data-ttu-id="43404-144">複合回転</span><span class="sxs-lookup"><span data-stu-id="43404-144">Combined rotation</span></span></td>
+<td align="left"><p><span data-ttu-id="43404-145">複合回転は自由回転をサポートしますが、(<a href="guidelines-for-panning.md">パン</a>におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。</span><span class="sxs-lookup"><span data-stu-id="43404-145">Combined rotation supports free rotation with zones (similar to rails in <a href="guidelines-for-panning.md">Guidelines for panning</a>) at each of the 90 degree snap points enforced by constrained rotation.</span></span> <span data-ttu-id="43404-146">ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</span><span class="sxs-lookup"><span data-stu-id="43404-146">If the user releases the object outside of one of 90 degree zones, the object remains in that position; otherwise, the object automatically rotates to a snap point.</span></span></p>
+<div class="alert"><span data-ttu-id="43404-147">
+<strong>注</strong>  ユーザー インターフェイスのレールはターゲットの周囲がいくつかの特定の値または場所の選択に影響を与える方に移動を制限する機能です。</span><span class="sxs-lookup"><span data-stu-id="43404-147">
+<strong>Note</strong>  A user interface rail is a feature in which an area around a target constrains movement towards some specific value or location to influence its selection.</span></span>
 </div>
 <div>
  
@@ -100,24 +100,24 @@ ms.locfileid: "8923796"
 
  
 
-## <a name="related-topics"></a><span data-ttu-id="4f171-147">関連トピック</span><span class="sxs-lookup"><span data-stu-id="4f171-147">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="43404-148">関連トピック</span><span class="sxs-lookup"><span data-stu-id="43404-148">Related topics</span></span>
 
 
-**<span data-ttu-id="4f171-148">サンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-148">Samples</span></span>**
-* [<span data-ttu-id="4f171-149">基本的な入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-149">Basic input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [<span data-ttu-id="4f171-150">待機時間が短い入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-150">Low latency input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [<span data-ttu-id="4f171-151">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-151">User interaction mode sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [<span data-ttu-id="4f171-152">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-152">Focus visuals sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+<span data-ttu-id="43404-149">**サンプル**</span><span class="sxs-lookup"><span data-stu-id="43404-149">**Samples**</span></span>
+* [<span data-ttu-id="43404-150">基本的な入力サンプル</span><span class="sxs-lookup"><span data-stu-id="43404-150">Basic input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [<span data-ttu-id="43404-151">低待機時間の入力サンプル</span><span class="sxs-lookup"><span data-stu-id="43404-151">Low latency input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [<span data-ttu-id="43404-152">ユーザー操作モードのサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-152">User interaction mode sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [<span data-ttu-id="43404-153">フォーカスの視覚効果のサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-153">Focus visuals sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**<span data-ttu-id="4f171-153">サンプルのアーカイブ</span><span class="sxs-lookup"><span data-stu-id="4f171-153">Archive samples</span></span>**
-* [<span data-ttu-id="4f171-154">入力: XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-154">Input: XAML user input events sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [<span data-ttu-id="4f171-155">入力: デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-155">Input: Device capabilities sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [<span data-ttu-id="4f171-156">入力: タッチのヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-156">Input: Touch hit testing sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [<span data-ttu-id="4f171-157">XAML のスクロール、パン、ズームのサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="4f171-157">XAML scrolling, panning, and zooming sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [<span data-ttu-id="4f171-158">入力: 簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-158">Input: Simplified ink sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [<span data-ttu-id="4f171-159">入力: GestureRecognizer によるジェスチャと操作</span><span class="sxs-lookup"><span data-stu-id="4f171-159">Input: Gestures and manipulations with GestureRecognizer</span></span>](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [<span data-ttu-id="4f171-160">入力: 操作とジェスチャ (C++) のサンプルに関するページ</span><span class="sxs-lookup"><span data-stu-id="4f171-160">Input: Manipulations and gestures (C++) sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [<span data-ttu-id="4f171-161">DirectX タッチ入力のサンプル</span><span class="sxs-lookup"><span data-stu-id="4f171-161">DirectX touch input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+<span data-ttu-id="43404-154">**サンプルのアーカイブ**</span><span class="sxs-lookup"><span data-stu-id="43404-154">**Archive samples**</span></span>
+* [<span data-ttu-id="43404-155">入力:XAML ユーザー入力イベントのサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-155">Input: XAML user input events sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [<span data-ttu-id="43404-156">入力:デバイス機能のサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-156">Input: Device capabilities sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [<span data-ttu-id="43404-157">入力:タッチ ヒット テストのサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-157">Input: Touch hit testing sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [<span data-ttu-id="43404-158">XAML のスクロール、パン、ズームのサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-158">XAML scrolling, panning, and zooming sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [<span data-ttu-id="43404-159">入力:簡略化されたインクのサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-159">Input: Simplified ink sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [<span data-ttu-id="43404-160">入力:ジェスチャと GestureRecognizer の操作</span><span class="sxs-lookup"><span data-stu-id="43404-160">Input: Gestures and manipulations with GestureRecognizer</span></span>](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [<span data-ttu-id="43404-161">入力:操作とジェスチャ (C++) のサンプル</span><span class="sxs-lookup"><span data-stu-id="43404-161">Input: Manipulations and gestures (C++) sample</span></span>](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [<span data-ttu-id="43404-162">DirectX のタッチ入力サンプル</span><span class="sxs-lookup"><span data-stu-id="43404-162">DirectX touch input sample</span></span>](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
