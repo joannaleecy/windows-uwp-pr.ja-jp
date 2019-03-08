@@ -4,14 +4,14 @@ description: この記事では、画像のメタデータ プロパティを読
 title: 画像のメタデータ
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ab1279a8744d6dc9cddc88abaa064058f1259c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943078"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631807"
 ---
 # <a name="image-metadata"></a>画像のメタデータ
 
@@ -25,7 +25,7 @@ ms.locfileid: "8943078"
 
 [!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-さらに広範なファイル メタデータにアクセスするには、一意の文字列識別子で取得できるファイル メタデータ プロパティが集約された Windows プロパティ システムを使います。 文字列のリストを作成し、取得する必要のある各プロパティの識別子を追加してください。 [**ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) メソッドは、この文字列のリストを引数として受け取ってキー/値ペアのディクショナリを返します。このディクショナリのキーがプロパティ識別子で、ディクショナリの値がそのプロパティの値になります。
+さらに広範なファイル メタデータにアクセスするには、一意の文字列識別子で取得できるファイル メタデータ プロパティが集約された Windows プロパティ システムを使います。 文字列のリストを作成し、取得する必要のある各プロパティの識別子を追加してください。 [  **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) メソッドは、この文字列のリストを引数として受け取ってキー/値ペアのディクショナリを返します。このディクショナリのキーがプロパティ識別子で、ディクショナリの値がそのプロパティの値になります。
 
 [!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 
@@ -43,13 +43,13 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 [!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
 
-デバイスの現在位置を使って位置情報タグ データを設定するには、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを新たに作成し、[**GeotagHelper.SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) に **Geolocator** とタグの設定対象となるファイルを渡して呼び出します。
+デバイスの現在位置を使って位置情報タグ データを設定するには、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを新たに作成し、[**GeotagHelper.SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) の引数に **Geolocator** とタグの設定対象となるファイルとを指定して呼び出します。
 
 [!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
 
--   [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) API を使うには、アプリ マニフェストに**位置情報**デバイス機能を追加する必要があります。
+-   [  **SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) API を使うには、アプリ マニフェストに**位置情報**デバイス機能を追加する必要があります。
 
--   [**SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) を呼び出す前に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出し、ユーザーの位置情報をアプリで使うための許可を得ておく必要があります。
+-   [  **SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) を呼び出す前に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出し、ユーザーの位置情報をアプリで使うための許可を得ておく必要があります。
 
 -   地理位置情報 API について詳しくは、「[マップと位置情報](https://msdn.microsoft.com/library/windows/apps/mt219699)」をご覧ください。
 
@@ -69,7 +69,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 -   WIC メタデータ クエリ言語とサポートされるプロパティについては、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
 
--   メタデータのプロパティの多くは、サポートされる画像の種類に限りがあります。 デコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) はエラー コード 0x88982F41 で失敗します。画像がどのメタデータもサポートしていない場合は、0x88982F81 で失敗します。 この 2 つのエラー コードに関連付けられている定数はそれぞれ WINCODEC\_ERR\_PROPERTYNOTSUPPORTED と WINCODEC\_ERR\_UNSUPPORTEDOPERATION で、winerror.h ヘッダー ファイルに定義されています。
+-   メタデータのプロパティの多くは、サポートされる画像の種類に限りがあります。 [**GetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226250)イメージがメタデータをまったくサポートしない場合は、デコーダーと 0x88982F81 に関連付けられているイメージで要求されたプロパティの 1 つはサポートされていない場合は、エラー コード 0x88982F41 で失敗します。 これらのエラー コードに関連付けられている定数は WINCODEC\_ERR\_PROPERTYNOTSUPPORTED と WINCODEC\_ERR\_UNSUPPORTEDOPERATION とは、winerror.h ヘッダー ファイルで定義します。
 -   特定のプロパティの値が画像に存在するかどうかはわからないので、**IDictionary.ContainsKey** を使って、結果にプロパティが存在するかどうかを確かめたうえでアクセスしてください。
 
 画像のメタデータをストリームに書き込むには、画像の出力ファイルに関連付けられている **BitmapEncoder** が必要です。
@@ -80,7 +80,7 @@ GeotagHelper は、地理データを含んだ画像へのタグ付けを支援�
 
 -   画像ファイルの種類ごとのサポート対象プロパティについて詳しくは、「[Windows プロパティ](https://msdn.microsoft.com/library/windows/desktop/dd561977)」、「[フォト メタデータ ポリシー](https://msdn.microsoft.com/library/windows/desktop/ee872003)」、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
 
--   エンコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) はエラー コード 0x88982F41 で失敗します。
+-   [**SetPropertiesAsync** ](https://msdn.microsoft.com/library/windows/apps/br226252)エンコーダーに関連付けられているイメージで要求されたプロパティの 1 つはサポートされていない場合は、エラー コード 0x88982F41 で失敗します。
 
 ## <a name="related-topics"></a>関連トピック
 

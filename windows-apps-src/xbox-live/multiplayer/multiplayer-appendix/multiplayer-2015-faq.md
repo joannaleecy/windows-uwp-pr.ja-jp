@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー
 ms.localizationpriority: medium
 ms.openlocfilehash: 171d80f4fc925d95d80043f40bb387b045a4fe23
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923091"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625527"
 ---
 # <a name="multiplayer-2015-faq-and-troubleshooting"></a>マルチプレイヤー 2015 の FAQ とトラブルシューティング
 
@@ -81,13 +81,13 @@ Web ソケット接続では、MPSD はクライアントの切断を迅速に�
 
     おそらく可視性がプライベートのセッションにアクセスしようとしているため、セッションを表示できません。 可視性がプライベートに設定されている場合、そのセッションのメンバーだけがセッション ドキュメントを読み取ることができます。
 
-| 注意                                                                                                                                                  |
+| 注                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 新しいセッションに登録するには、ユーザーにゴールド アカウントが必要です。 プレイ中のユーザーにゴールド アカウント権限がない場合、新しいセッションの登録を要求すると HTTP/403 が返されます。 |
 
 -   認証プリンシパルにサーバーが含まれていない場合、要求本文に既存メンバーの参照を含めることはできません。
 
-    ユーザーの代わりに別のユーザーをセッションに参加させることはできません。 招待のみ可能です。 プレイヤーを招待するには、インデックスを"reserve\_&lt;number&gt;" に設定します。
+    ユーザーの代わりに別のユーザーをセッションに参加させることはできません。 招待のみ可能です。 インデックスを設定"予約\_&lt;数&gt;"プレーヤーを招待します。
 
 
 ### <a name="i-am-getting-an-http404-code-when-calling-mpsd"></a>MPSD を呼び出すと HTTP/404 コードを受け取ります。
@@ -149,7 +149,7 @@ Fiddler トレースを収集して情報を取得し、HttpResponse 本文の�
 
 応答エラーの例:
 
-400 - \[ResponseBody\]: This session is configured for managed initialization requiring at least 2 members to start. (このセッションは、開始するために少なくとも 2 人のメンバーが必要な管理された初期化用に構成されています)
+400- \[ResponseBody\]:このセッションは、少なくとも 2 つのメンバーを開始するを必要とするマネージ初期化に対して構成されます。
 
 "initialize" フィールドが true に設定された十分な数のセッション メンバー予約が要求に含まれないため、セッションを作成できません。 コードで **MultiplayerSession.AddMemberReservation** メソッドまたは **MultiplayerSession.Join** メソッドの *initializeRequested* パラメーターを使用してメンバーに対してこのフィールドを設定できます。
 
@@ -165,7 +165,7 @@ Fiddler トレースを収集して情報を取得し、HttpResponse 本文の�
 
 ### <a name="when-should-i-poll-mpsd"></a>どのようなときに MPSD をポーリングする必要がありますか。
 
-タイトルは MPSD のポーリングを避ける必要があります。 タイトルは、MPSD セッションへの変更を検出する必要がある場合は、セッション変更イベントをサブスクライブする必要があります。 詳細については、「[方法: MPSD セッション変更通知のサブスクライブ](multiplayer-how-tos.md)」を参照してください。
+タイトルは MPSD のポーリングを避ける必要があります。 タイトルは、MPSD セッションへの変更を検出する必要がある場合は、セッション変更イベントをサブスクライブする必要があります。 詳細については、次を参照してください。[方法。MPSD セッションの変更通知のサブスクライブ](multiplayer-how-tos.md)します。
 
 
 ### <a name="what-happens-if-a-player-who-was-reserved-or-invited-to-the-session-does-not-join-it"></a>セッションに予約または招待されたプレイヤーがセッションに参加しないとどうなりますか。
@@ -192,7 +192,7 @@ Xbox One では、セッションを作成しただけでは、マッチメイ�
 
 ### <a name="if-a-game-session-is-open-can-a-user-who-has-just-joined-a-game-simply-join-the-session-and-start-playing-without-having-to-wait-for-the-reservation"></a>ゲーム セッションが開いている場合、ゲームに参加したばかりのユーザーは、予約を待つ必要はなく、単にセッションに参加してプレイを開始できますか。
 
-できます。 これは、タイトルで複数のセッションを使用してゲーム セッション内でプレイヤーのサブグループを追跡する場合に特に便利です。 参加ユーザーは自分のグループを表すセッションに参加し、それよりも大きいゲーム セッションに参加する必要がある可能性があります。
+[はい]。 これは、タイトルで複数のセッションを使用してゲーム セッション内でプレイヤーのサブグループを追跡する場合に特に便利です。 参加ユーザーは自分のグループを表すセッションに参加し、それよりも大きいゲーム セッションに参加する必要がある可能性があります。
 
 
 ### <a name="when-large-game-sessions-are-playing-in-my-title-why-arent-all-session-members-seeing-the-game-invite-toast"></a>タイトルで大規模なゲーム セッションをプレイしているときに、ゲーム招待トーストを受け取らないセッション メンバーがいるのはなぜですか。
@@ -209,6 +209,6 @@ Xbox One では、セッションを作成しただけでは、マッチメイ�
 
 MPSD は、クライアントの要求に基づいて、セッション ドキュメント バージョン間の自動変換を実行します。 現在、すべての Xbox Service API は、MPSD への要求に v105 を使用します。 このために、v107 セッション テンプレートと v105 トレースとの間で構文が異なる場合がありますが、それ以外の機能的な影響はありません。 セッション テンプレートは、v107 として構成する必要があります。
 
-© 2015 Microsoft Corporation. All rights reserved. 
+© 2015 Microsoft Corporation. All rights reserved.
 フィードバックは <https://forums.xboxlive.com/spaces/22/index.html> で送信できます。
-バージョン: 2.0.90731.0
+バージョン:2.0.90731.0

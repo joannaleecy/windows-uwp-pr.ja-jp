@@ -4,14 +4,14 @@ description: 入力デバイスを操作するときに留意する必要があ�
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP, ゲーム, 入力, サンプル
+keywords: Windows 10、UWP、ゲーム、入力、サンプル
 ms.localizationpriority: medium
 ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045448"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611817"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>Marble Maze サンプルへの入力と対話機能の追加
 
@@ -186,7 +186,7 @@ Gamepad^ MarbleMaze::MarbleMazeMain::GetLastGamepad()
 
 このメソッドは、単純に最後のゲームパッドを **m_myGamepads** に返します。
 
-1 台の Windows 10 デバイスには最大 4 つの Xbox コントローラーを接続できます。 どのコントローラーがアクティブであるかを特定にすることを回避するために、単に最後に追加されたゲームパッドのみを追跡しています。 複数プレイヤーをサポートするゲームでは、各プレイヤーの入力を個別にトラッキングする必要があります。
+1 台の Windows 10 デバイスには最大 4 つの Xbox コントローラーを接続できます。 どのコントローラーがアクティブであるかを特定にすることを回避するために、単に最後に追加されたゲームパッドのみを追跡しています。 複数プレーヤーをサポートするゲームでは、各プレーヤーの入力を個別にトラッキングする必要があります。
 
 **MarbleMazeMain::Update** メソッドは、ゲームパッドの入力をポーリングします。
 
@@ -324,7 +324,7 @@ case GameState::InGamePaused:
 
 ### <a name="tracking-touch-and-mouse-input"></a>タッチとマウスによる入力のトラッキング
 
-タッチとマウスによる入力では、メニュー項目は、ユーザーがその項目をタッチまたはクリックしたときに選択されます。 次の例は、**MarbleMazeMain::Update** メソッドがポインターの入力を処理してメニュー項目を選択する方法を示します。 **m\_pointQueue** メンバー変数は、ユーザーが画面上でタッチまたはクリックした場所をトラッキングします。 Marble Maze のポインター入力の収集方法については、このドキュメントの「[ポインターの入力の処理](#processing-pointer-input)」で詳しく説明します。
+タッチとマウスによる入力では、メニュー項目は、ユーザーがその項目をタッチまたはクリックしたときに選択されます。 次の例は、**MarbleMazeMain::Update** メソッドがポインターの入力を処理してメニュー項目を選択する方法を示します。 **M\_pointQueue**メンバー変数は、画面に、ユーザーが操作したり、クリックした場所を追跡します。 Marble Maze のポインター入力の収集方法については、このドキュメントの「[ポインターの入力の処理](#processing-pointer-input)」で詳しく説明します。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -541,7 +541,7 @@ if ((oppositeSquared + adjacentSquared) > m_deadzoneSquared)
 
 ###  <a name="applying-input-to-the-game-state"></a>ゲームの状態への入力の適用
 
-デバイスは、さまざまな方法で入力値を報告します。 たとえば、ポインターの入力は通常、画面座標で報告されますが、コントローラーの入力の形式は、それとはまったく異なることが考えられます。 複数のデバイスからの入力を一連の入力値に結合する際の課題の 1 つに、正規化 (共通形式への値の変換) があります。 Marble Maze は、値を範囲 \[-1.0, 1.0\] にスケーリングすることによって正規化します。 このセクションで既に説明した **PointToTouch** 関数は、画面座標をおよそ -1.0 ～ +1.0 の範囲内の正規化された値に変換します。
+デバイスは、さまざまな方法で入力値を報告します。 たとえば、ポインターの入力は通常、画面座標で報告されますが、コントローラーの入力の形式は、それとはまったく異なることが考えられます。 複数のデバイスからの入力を一連の入力値に結合する際の課題の 1 つに、正規化 (共通形式への値の変換) があります。 Marble Maze はそれらの範囲にスケーリングして値を正規化\[-1.0, 1.0\]します。 このセクションで既に説明した **PointToTouch** 関数は、画面座標をおよそ -1.0 ～ +1.0 の範囲内の正規化された値に変換します。
 
 > [!TIP]
 > アプリケーションで用いられる入力方法が 1 つであっても、常に入力値を正規化することをお勧めします。 そうすることで、ゲームの他のコンポーネント (物理シミュレーションなど) が入力を解釈する方法を簡略化でき、さまざまな画面解像度で動作するゲームが作成しやすくなります。
@@ -605,7 +605,7 @@ if (marblePosition.z >= resetDepth)
 
 このセクションでは、物理シミュレーションのしくみについては説明しません。 詳しくは、Marble Maze のソースの **Physics.h** と **Physics.cpp** をご覧ください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 
 オーディオを扱う際の主な手法については、「[Marble Maze サンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)」をご覧ください。 このドキュメントでは、Marble Maze が Microsoft メディア ファンデーションと XAudio2 を使ってオーディオ リソースの読み込み、ミキシング、再生を行う方法について説明しています。
@@ -613,9 +613,9 @@ if (marblePosition.z >= resetDepth)
 ## <a name="related-topics"></a>関連トピック
 
 
-* [Marble Maze のサンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)
-* [Marble Maze サンプルへの視覚的なコンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Marble Maze サンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)
+* [Marble Maze サンプルへのビジュアル コンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)
+* [Marble Maze、C++ および DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

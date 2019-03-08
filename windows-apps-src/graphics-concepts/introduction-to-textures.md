@@ -1,6 +1,6 @@
 ---
 title: テクスチャの概要
-description: テクスチャ リソースはテクセルを保存するデータ構造で、読み書きできるテクスチャの最小単位です。 テクスチャがシェーダーにより読み取られる際、テクスチャ サンプラーでフィルターを適用することができます。
+description: テクスチャ リソースはテクセルを保存するデータ構造で、読み書きできるテクスチャの最小単位です。 テクスチャをシェーダーで読み取るとき、テクスチャ サンプラーでフィルター処理することができます。
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords:
 - テクスチャの概要
@@ -8,34 +8,34 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cd5ca66635b57b79c2fca3e6ff10b8debb43fd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929317"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618167"
 ---
 # <a name="introduction-to-textures"></a>テクスチャの概要
 
 
-テクスチャ リソースはテクセルを保存するデータ構造で、読み書きできるテクスチャの最小単位です。 テクスチャがシェーダーにより読み取られる際、テクスチャ サンプラーでフィルターを適用することができます。
+テクスチャ リソースはテクセルを保存するデータ構造で、読み書きできるテクスチャの最小単位です。 テクスチャをシェーダーで読み取るとき、テクスチャ サンプラーでフィルター処理することができます。
 
-テクスチャ リソースは、テクセルを格納するように設計された、データの構造化されたコレクションです。 テクセルは、パイプラインで読み取ったり、書き込んだりすることができるテクスチャの最小単位を表します。 バッファーと異なり、テクスチャは、シェーダー ユニットに読み取られる際にテクスチャ サンプラーでフィルターを適用することができます。 テクスチャへのフィルター処理の適用方法はテクスチャの種類に影響されます。 各テクセルは 1 ～ 4 つの成分を含み、DXGI\_FORMAT 列挙値により定義された DXGI 形式のいずれかで配置されます。
+テクスチャ リソースは、テクセルを格納するように設計された、データの構造化されたコレクションです。 テクセルは、パイプラインで読み取ったり、書き込んだりすることができるテクスチャの最小単位を表します。 バッファーと異なり、テクスチャは、シェーダー ユニットに読み取られる際にテクスチャ サンプラーでフィルターを適用することができます。 テクスチャへのフィルター処理の適用方法はテクスチャの種類に影響されます。 各テクセルには、DXGI により定義された DXGI 形式のいずれかで配置された、1 ~ 4 のコンポーネントが含まれています\_形式の列挙体。
 
 テクスチャは構造化されたリソースとして、既知のサイズで作成されます。 ただし、各テクスチャはリソースの作成時に型指定される場合もありますが、テクスチャをパイプラインにバインドするときにビューを使用して型を完全に指定するという条件で、リソース作成時に型指定されない場合もあります。
 
 ## <a name="span-idtexturetypesspanspan-idtexturetypesspanspan-idtexturetypesspantexture-types"></a><span id="Texture_Types"></span><span id="texture_types"></span><span id="TEXTURE_TYPES"></span>テクスチャの種類
 
 
-Direct3D は、複数の浮動小数点表現をサポートします。 すべての浮動小数点計算は、IEEE 754 32 ビット単精度浮動小数点ルールの定義済みサブセット下で実行されます。
+Direct3D は、複数の浮動小数点表現をサポートします。 すべての浮動小数点演算は、IEEE 754 32 ビット単精度浮動小数点ルールのサブセットの定義のもとで動作します。
 
-テクスチャの種類には 1D、2D、および 3D があり、それぞれミップマップ付きまたはミップマップなしで作成できます。 Direct3D では、テクスチャ配列とマルチサンプリングされたテクスチャもサポートされています。
+テクスチャのいくつかの種類があります。1 D、2 D、3 D、mipmap の有無をそれぞれ作成できます。 Direct3D では、テクスチャ配列とマルチサンプリングされたテクスチャもサポートされています。
 
--   [1D テクスチャ](#texture1d-resource)
--   [1D テクスチャ配列](#texture1d-array-resource)
+-   [1 D のテクスチャ](#texture1d-resource)
+-   [1 次元テクスチャ配列](#texture1d-array-resource)
 -   [2D テクスチャと 2D テクスチャ配列](#texture2d-resource)
 -   [3D テクスチャ](#texture3d-resource)
 
-### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-textures"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D テクスチャ
+### <a name="span-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1dresourcespanspan-idtexture1d-resourcespan1d-textures"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1 D のテクスチャ
 
 最も単純な形式の 1D テクスチャには、1 つのテクスチャ座標で処理できるテクスチャ データが格納されます。これをテクセルの配列として視覚化すると次の図のようになります。
 
@@ -51,7 +51,7 @@ Direct3D は、複数の浮動小数点表現をサポートします。 すべ�
 
 ミップマップが奇数サイズのテクスチャに生成された場合、1 つ下のレベルは必ず偶数サイズになります (最下位レベルが 1 に達した場合を除く)。 たとえば、この図は次の最下位レベルが 2x1 テクスチャである 5x1 テクスチャを示しており、次の (および最後の) ミップ レベルは 1x1 サイズのテクスチャです。 レベルの識別には詳細レベル (LOD) と呼ばれるインデックスを使用します。LOD は、カメラにそれほど近くないジオメトリをレンダリングする場合に、小さいテクスチャにアクセスするために使用されます。
 
-### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-arrays"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D テクスチャ配列
+### <a name="span-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1darrayresourcespanspan-idtexture1d-array-resourcespan1d-texture-arrays"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1 次元テクスチャ配列
 
 Direct3D は、テクスチャの配列もサポートします。 1D テクスチャの配列は概念的に次の図のようになります。
 
@@ -75,7 +75,7 @@ Texture2D リソースにはテクセルの 2D グリッドが 1 つ含まれて
 
 このテクスチャ配列には 3 つのテクスチャが含まれています。各テクスチャは 3x5 で、2 つのミップマップ レベルを持ちます。
 
-### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-2d-texture-array-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>テクスチャ キューブとしての 2D テクスチャ配列の使用
+### <a name="span-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanspan-idtexture2darrayresourceasatexturecubespanusing-a-2d-texture-array-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>2D テクスチャ配列を使用して、テクスチャ キューブとして
 
 テクスチャ キューブは、6 つのテクスチャ (キューブの各面に 1 つずつ) が含まれた 2D テクスチャ配列です。 すべてのデータが設定されたテクスチャ キューブは次の図のようになります。
 
@@ -95,14 +95,14 @@ Texture2D リソースにはテクセルの 2D グリッドが 1 つ含まれて
 
 Direct3D の座標系は、ピクセルとテクセルで定義されます。
 
-## <a name="span-idpixelspanspan-idpixelspanspan-idpixelspanpixel-coordinate-system"></a><span id="Pixel"></span><span id="pixel"></span><span id="PIXEL"></span>ピクセル座標系
+## <a name="span-idpixelspanspan-idpixelspanspan-idpixelspanpixel-coordinate-system"></a><span id="Pixel"></span><span id="pixel"></span><span id="PIXEL"></span>ピクセル座標システム
 
 
 Direct3D のピクセル座標系は、次の図に示すように、左上隅にあるレンダー ターゲットの原点を定義します。 ピクセルの中心は、整数位置から (0.5f,0.5f) オフセットされます。
 
 ![Direct3D 10 におけるピクセル座標系の図](images/d3d10-coordspix10.png)
 
-## <a name="span-idtexelspanspan-idtexelspanspan-idtexelspantexel-coordinate-system"></a><span id="Texel"></span><span id="texel"></span><span id="TEXEL"></span>テクセル座標系
+## <a name="span-idtexelspanspan-idtexelspanspan-idtexelspantexel-coordinate-system"></a><span id="Texel"></span><span id="texel"></span><span id="TEXEL"></span>テクセルの座標システム
 
 
 テクセル座標系では、次の図に示すように、テクスチャの左上隅に原点があります。 これにより、ピクセル座標権がテクセル座標系に揃えられるため、画面に沿ったテクスチャのレンダリングが簡単になります。
@@ -113,13 +113,13 @@ Direct3D のピクセル座標系は、次の図に示すように、左上隅�
 
 正規化された座標の場合:
 
--   点サンプリング: テクセル \# = フロア(U \* 幅)
--   線サンプリング: 左テクセル \# = フロア(U \* 幅), 右テクセル \# = 左テクセル \# + 1
+-   サンプリングをポイントします。テクセル\#フロアを = (U\*幅)
+-   線形サンプリングします。左のテクセル\#フロアを = (U\*幅)、右のテクセル\#左テクセルを = \# + 1
 
 スケーリングされた座標の場合:
 
--   点サンプリング: テクセル \# = フロア(U)
--   線サンプリング: 左テクセル \# = フロア(U - 0.5), 右テクセル \# = 左テクセル \# + 1
+-   サンプリングをポイントします。テクセル\#floor(U) を =
+-   線形サンプリングします。左のテクセル\#floor (U - 0.5)、右のテクセルを =\#左テクセルを = \# + 1
 
 ここで、幅はテクスチャの幅です (ピクセル単位)。
 

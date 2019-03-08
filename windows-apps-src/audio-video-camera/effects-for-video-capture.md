@@ -4,14 +4,14 @@ description: このトピックでは、カメラのプレビューおよび録�
 title: ビデオ キャプチャの効果
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947514"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636627"
 ---
 # <a name="effects-for-video-capture"></a>ビデオ キャプチャの効果
 
@@ -53,7 +53,7 @@ Windows 10 バージョン 1607 では、**AddVideoEffectAsync** によって返
 
 [!code-cs[VideoStabilizationEffectUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
-[**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) オブジェクトを格納するためのメンバー変数を宣言します。 効果の実装の一部として、キャプチャしたビデオをエンコードするために使うエンコードのプロパティを変更します。 後で効果が無効にされたときに入出力のエンコード プロパティを復元できるよう、初期状態のバックアップ コピーを格納するための 2 つの変数を宣言します。 最後に、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 型のメンバー変数を宣言します。メンバー変数として宣言しているのは、コードのいたるところからこのオブジェクトにアクセスすることになるためです。
+[  **VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) オブジェクトを格納するためのメンバー変数を宣言します。 効果の実装の一部として、キャプチャしたビデオをエンコードするために使うエンコードのプロパティを変更します。 後で効果が無効にされたときに入出力のエンコード プロパティを復元できるよう、初期状態のバックアップ コピーを格納するための 2 つの変数を宣言します。 最後に、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 型のメンバー変数を宣言します。メンバー変数として宣言しているのは、コードのいたるところからこのオブジェクトにアクセスすることになるためです。
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
@@ -63,9 +63,9 @@ Windows 10 バージョン 1607 では、**AddVideoEffectAsync** によって返
 
 ### <a name="initialize-the-video-stabilization-effect"></a>ビデオ手ブレ補正効果を初期化する
 
-**MediaCapture** オブジェクトの初期化後、[**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) オブジェクトの新しいインスタンスを作成します。 効果をビデオ パイプラインに追加し、[**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) クラスのインスタンスを取得するには、[**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出します。 [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定すると、ビデオ レコード ストリームに効果を適用する、という意味になります。
+**MediaCapture** オブジェクトの初期化後、[**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) オブジェクトの新しいインスタンスを作成します。 効果をビデオ パイプラインに追加し、[**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) クラスのインスタンスを取得するには、[**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出します。 [  **MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定すると、ビデオ レコード ストリームに効果を適用する、という意味になります。
 
-[**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) イベントのハンドラーを登録し、ヘルパー メソッド **SetUpVideoStabilizationRecommendationAsync** を呼び出します。詳細については後で説明します。 最後に、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) プロパティを true に設定して効果を有効にします。
+[  **EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) イベントのハンドラーを登録し、ヘルパー メソッド **SetUpVideoStabilizationRecommendationAsync** を呼び出します。詳細については後で説明します。 最後に、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) プロパティを true に設定して効果を有効にします。
 
 [!code-cs[CreateVideoStabilizationEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
@@ -87,7 +87,7 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 ### <a name="handle-the-video-stabilization-effect-being-disabled"></a>ビデオ手ブレ補正効果の無効化イベントを処理する
 
-ピクセル スループットが高すぎて効果の処理が追い付かない場合や、効果の実行に時間がかかっていることをシステムが検出した場合、ビデオ手ブレ補正効果がシステムによって自動的に無効化されます。 このように状態が変化した場合、EnabledChanged イベントが発生します。 最新の効果の状態 (有効または無効) は、*sender* パラメーターに格納された **VideoStabilizationEffect** のインスタンスによって知ることができます。 [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) に格納される [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) の値は、効果が有効または無効にされた理由を示しています。 このイベントは、プログラムから効果を有効または無効にした場合にも発生します。この場合の理由は **Programmatic** になります。
+ピクセル スループットが高すぎて効果の処理が追い付かない場合や、効果の実行に時間がかかっていることをシステムが検出した場合、ビデオ手ブレ補正効果がシステムによって自動的に無効化されます。 このように状態が変化した場合、EnabledChanged イベントが発生します。 最新の効果の状態 (有効または無効) は、*sender* パラメーターに格納された **VideoStabilizationEffect** のインスタンスによって知ることができます。 [  **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) に格納される [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) の値は、効果が有効または無効にされた理由を示しています。 このイベントは、プログラムから効果を有効または無効にした場合にも発生します。この場合の理由は **Programmatic** になります。
 
 通常、このイベントを使ってアプリの UI を調整し、ビデオ手ブレ補正の現在の状態を示します。
 
@@ -102,7 +102,7 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

@@ -1,5 +1,5 @@
 ---
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Description: ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。
 title: 入力デバイスの識別
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
@@ -9,25 +9,25 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048499"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57638527"
 ---
 # <a name="identify-input-devices"></a>入力デバイスの識別
 
 
 ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。
 
-> **重要な API**: [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+> **重要な Api**:[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648), [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383), [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 ## <a name="retrieve-mouse-properties"></a>マウスのプロパティの取得
 
 
 接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。 新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値が検出されたすべてのマウスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのマウスが特定の機能をサポートしていると、数値プロパティは、いずれかによって公開されている最大値を返します。マウスします。
+**注**  ここで説明したプロパティによって返される値が検出されたすべてのマウスに基づきます。ブール型プロパティは、少なくとも 1 つのマウスが特定の機能をサポートしている数値プロパティは、任意の 1 つのマウスによって公開されている最大値を返す場合、0 以外を返します。
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデジタイザーが特定の機能をサポートしていると、数値プロパティは、最大値を返します。任意の 1 つのデジタイザーで公開されます。
+**注**  ここで説明したプロパティによって返される値はすべての検出されたタッチ デジタイザーに基づきます。ブール型プロパティは、デジタイザーの少なくとも 1 つは、特定の機能をサポートしているし、数値プロパティは、任意の 1 つのデジタイザーによって公開されている最大値を返す場合、0 以外を返します。
 
  
 
@@ -85,7 +85,7 @@ private void GetTouchProperties()
 
 検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**注:** ここで説明するプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきますブール型プロパティが 0 以外を返す場合は、少なくとも 1 つのデバイスが特定の機能をサポートしていると、数値プロパティが公開されている最大値を返します。によって、1 つのポインター デバイスです。
+**注**  ここで説明したプロパティによって返される値はすべてのポインターが検出されたデバイスに基づきます。少なくとも 1 つのデバイスが特定の機能をサポートしている数値プロパティは、任意の 1 つのポインター デバイスによって公開されている最大値を返す場合、ブール型プロパティは 0 以外を返します。
 
 次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **サンプル**
-* [基本的な入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的な入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低待機時間の入力サンプル](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **サンプルのアーカイブ**
-* [入力: デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力:デバイス機能のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

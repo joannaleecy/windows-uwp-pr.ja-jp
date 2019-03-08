@@ -1,5 +1,5 @@
 ---
-Description: Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
+Description: 日付、時刻、数値、電話番号、通貨を適切に書式設定することで、グローバル対応のアプリを設計します。 これを行うと、後でアプリを世界市場の他のカルチャ、地域、言語に適応させることができます。
 title: 日付、時刻、数値の形式のグローバル化
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048609"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634137"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>日付、時刻、数値の形式のグローバル化
 
@@ -72,7 +72,7 @@ ms.locfileid: "9048609"
 
 ## <a name="format-numbers-and-currencies-appropriately"></a>数字と通貨を適切に書式設定する
 
-数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [**NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live) 名前空間のクラスを使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、これらのフォーマッタ クラスでユーザー プロファイル用の最適な形式を使う必要があります。 ただし、フォーマッタを使って任意の地域または形式の通貨を表示できます。
+数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [  **NumberFormatting**](/uwp/api/windows.globalization.numberformatting?branch=live) 名前空間のクラスを使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、これらのフォーマッタ クラスでユーザー プロファイル用の最適な形式を使う必要があります。 ただし、フォーマッタを使って任意の地域または形式の通貨を表示できます。
 
 この例では、ユーザー プロファイルに従った通貨、および特定の通貨制度に対応した通貨を表示する方法を示しています。
 
@@ -116,9 +116,9 @@ ms.locfileid: "9048609"
 
 電話番号の書式設定は地域によって異なります。 電話番号の桁数、桁のグループ化、および特定部分の重要性は、国によって異なります。 Windows 10 Version 1607 以降では、[**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) 名前空間のクラスを使って、電話番号を現在の地域に適した書式に設定できます。
 
-[**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) を使うと、数字の文字列を解析して、数字が現在の地域の電話番号として有効かどうかを判定し、2 つの番号が等しいかどうかを比較して、電話番号の国コードや地域コードなどの異なる機能部分を抽出できます。
+[**PhoneNumberInfo** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live)桁の文字列を解析し、することができます数字が現在のリージョンで有効な電話番号であるかどうかを確認; は、等価性と、電話のさまざまな機能の部分を抽出する 2 つの数値の比較。国コードや地理的領域のコードなどの数。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) は、数字の文字列または **PhoneNumberInfo** を表示用に書式設定します。数字の文字列が電話番号の一部だけを表している場合でも使用できます  この部分的な番号の書式設定を使って、ユーザーの番号入力に合わせて番号を書式設定できます。
+[**PhoneNumberFormatter** ](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)形式の数字の文字列または**PhoneNumberInfo**数字の文字列が、部分的な電話番号を表す場合にも、表示のためです。 この部分的な番号の書式設定を使って、ユーザーの番号入力に合わせて番号を書式設定できます。
 
 次の例では、入力されている電話番号を **PhoneNumberFormatter** を使って書式設定する方法を示します。 phoneNumberInputTextBox という名前の **TextBox** のテキストが変わるたびに、現在の既定の地域を使ってテキスト ボックスの内容が書式設定されて、phoneNumberOutputTextBlock という名前の **TextBlock** に表示されます。 デモンストレーション用として、文字列は地域としてニュージーランドを使って書式設定され、phoneNumberOutputTextBlockNZ という名前の TextBlock にも表示されます。
   
@@ -161,19 +161,19 @@ ms.locfileid: "9048609"
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
-* [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
+* [予定表](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
 * [GlobalizationPreferences](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live)
 
 ## <a name="related-topics"></a>関連トピック
 
-* [カレンダー、日付、および時刻コントロール](../controls-and-patterns/date-and-time.md)
-* [ユーザー プロファイルの言語とアプリ マニフェストの言語について](manage-language-and-region.md)
-* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [予定表、日付、およびタイム コントロール](../controls-and-patterns/date-and-time.md)
+* [ユーザー プロファイルの言語とアプリ マニフェストの言語を理解します。](manage-language-and-region.md)
+* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## <a name="samples"></a>サンプル
 
-* [カレンダーの詳細と数値演算のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日付と時刻の書式設定のサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231618)
-* [グローバリゼーション設定サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231608)
-* [数字の書式設定と解析サンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=231620)
+* [予定表の詳細と数式のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日付と時刻のサンプルを書式設定](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [グローバリゼーションの基本設定のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [数値の書式とサンプルの解析](https://go.microsoft.com/fwlink/p/?linkid=231620)

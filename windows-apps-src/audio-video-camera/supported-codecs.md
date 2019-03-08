@@ -1,19 +1,19 @@
 ---
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。
-title: サポートされているコーデック
+title: サポートされるコーデック
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929234"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631357"
 ---
-# <a name="supported-codecs"></a>サポートされているコーデック
+# <a name="supported-codecs"></a>サポートされるコーデック
 
 この記事では、各デバイス ファミリの既定で、UWP アプリで利用可能なオーディオ、ビデオ、イメージのコーデックと形式を示します。 これらの表では、指定のデバイス ファミリの Windows 10 のインストールに含まれているコーデックを示していることに注意してください。 ユーザーやアプリが、利用可能な追加のコーデックをインストールする場合があります。 実行時に、特定のデバイスで現在利用可能なコーデックのセットを照会できます。 詳しくは、「[デバイスにインストールされているコーデックの照会](codec-query.md)」をご覧ください。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8929234"
 
  
 
-### <a name="desktop"></a>デスクトップ
+### <a name="desktop"></a>Desktop
 
 <table>
 <colgroup>
@@ -1593,7 +1593,7 @@ ms.locfileid: "8929234"
 
  
 
-### <a name="desktop"></a>デスクトップ
+### <a name="desktop"></a>Desktop
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "8929234"
 <thead>
 <tr class="header">
 <th align="left">コーデック</th>
-<th align="left">デスクトップ</th>
+<th align="left">Desktop</th>
 <th align="left">他のデバイス ファミリ</th>
 </tr>
 </thead>
@@ -2749,7 +2749,7 @@ ms.locfileid: "8929234"
 <tr class="even">
 <td align="left">RAW 形式のカメラ</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">なし</td>
+<td align="left">X</td>
 </tr>
 </table>
 

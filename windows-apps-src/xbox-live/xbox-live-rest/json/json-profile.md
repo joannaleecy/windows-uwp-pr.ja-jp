@@ -8,44 +8,44 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7299fcb4d375a3fc35ad67306b70f5fa4afde963
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941676"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607517"
 ---
 # <a name="profile-json"></a>Profile (JSON)
-ユーザーの個人用プロファイル設定します。 
+ユーザーの個人プロファイルの設定。 
 <a id="ID4EN"></a>
 
  
-## <a name="profile"></a>プロファイル
+## <a name="profile"></a>Profile
  
-プロファイル オブジェクトには、次仕様があります。
+プロファイル オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| AppDisplayName| string| アプリで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、アプリに表示するために使用するユーザーの id 文字列を表します。| 
-| GameDisplayName| string| ゲームで表示するための名前です。 これにより、ユーザーの「実際の名前」またはプライバシーに応じて、そのユーザーのゲーマータグ可能性があります。 この設定は、ゲームで表示するために使用するユーザーの id 文字列を表します。| 
+| AppDisplayName| string| アプリで表示するための名前。 ユーザーの「実際の名前」またはプライバシーによってそのゲーマータグことが考えられます。 この設定は、アプリでの表示に使用するユーザーの id 文字列を表します。| 
+| GameDisplayName| string| ゲームで表示するための名前。 ユーザーの「実際の名前」またはプライバシーによってそのゲーマータグことが考えられます。 この設定は、ゲームでの表示に使用するユーザーの id 文字列を表します。| 
 | Gamertag| string| ユーザーのゲーマータグです。| 
-| AppDisplayPicRaw| string| アプリを直接表示 pic URL (下記参照)。| 
-| GameDisplayPicRaw| string| 未加工のゲーム表示 pic URL (下記参照)。| 
-| AccountTier| string| ユーザーには、アカウントの種類はありますか。 ゴールド、シルバー、または FamilyGold かどうか。| 
-| TenureLevel| 32 ビットの符号なし整数| 数年間ユーザーされた Xbox Live を使用しますか。| 
-| ゲーマースコア| 32 ビットの符号なし整数| ユーザーのゲーマー スコア。| 
+| AppDisplayPicRaw| string| 未加工のアプリ表示 pic URL (下記参照)。| 
+| GameDisplayPicRaw| string| 未処理のゲーム表示 pic URL (下記参照)。| 
+| AccountTier| string| ユーザーには、アカウントの種類はありますか。 Gold、Silver、または FamilyGold でしょうか。| 
+| TenureLevel| 32 ビット符号なし整数| 数年の Xbox Live、ユーザーがでしたか。| 
+| ゲーマースコア| 32 ビット符号なし整数| ユーザーのゲーマーします。| 
   
 
 
 > [!NOTE] 
-> 画像は、ユーザーの '実際の図' またはプライバシーに応じて、XboxOne ゲーマー アイコンであることができます。 これらの設定では、クライアント上に表示するために使用するユーザーの画像の url を表します。 この画像は、(ユーザーが任意の画像を設定していないことを示す) が空にする可能性があります。 
+> 画像には、ユーザーの '実際の画像' またはプライバシーによってその XboxOne gamerpic を指定できます。 これらの設定は、クライアントの表示に使用するユーザーの画像の url を表します。 このイメージは、(ユーザーが任意の画像を設定していないことを示す) が空にすることがあります。 
 
 
  
-生の URL は、サイズ変更できる URL です。 サイズし、形式を追加して、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`をその URI:
+生の URL は、サイズ変更可能な URL です。 サイズし、形式を使用して追加することで、次のいずれかを指定するために使用できる`&format={format}&w={width}&h={height}`uri:
  
 形式: png
  
-サイズ: 64 x 64、208 x 208、424 x 424
+サイズ:64 x 64、208 x 208、424 x 424
  
 <a id="ID4E2D"></a>
 
@@ -57,6 +57,6 @@ ms.locfileid: "8941676"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

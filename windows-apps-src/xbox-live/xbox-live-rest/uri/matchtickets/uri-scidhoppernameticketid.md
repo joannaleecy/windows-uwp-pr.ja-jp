@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 9722d06af64c5fd24f53485a1bcfe765f89b08cf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920939"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627317"
 ---
 # <a name="serviceconfigsscidhoppershoppernameticketsticketid"></a>/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid}
 
-マッチ チケットの削除操作をサポートしています。
+一致するチケットの削除操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> この URI は、コントラクト 103 以降で使用するためのものがおり、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
 <a id="ID4ER"></a>
 
@@ -30,17 +30,17 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。  
+この URI は、ターゲット ユーザーの構成の所有者の識別子の値 xuid、gt、および私をサポートします。  
 <a id="ID4E2"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
-| ticketId| GUID| チケットの id。|
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| name| string| Hopper の名前。|
+| TicketId| GUID| チケット id。|
 
 <a id="ID4EJC"></a>
 
@@ -49,7 +49,7 @@ momatch.xboxlive.com
 
 [DELETE (/serviceconfigs/{scid}/hoppers/{hoppername}/tickets/{ticketid})](uri-scidhoppernameticketiddelete.md)
 
-&nbsp;&nbsp;マッチ チケットを削除します。
+&nbsp;&nbsp;一致のチケットを削除します。
 
 <a id="ID4ETC"></a>
 
@@ -61,4 +61,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent  
 
-[マッチメイキング URI](atoc-reference-matchtickets.md)
+[Uri のマッチメイ キング](atoc-reference-matchtickets.md)

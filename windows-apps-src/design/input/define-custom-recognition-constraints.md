@@ -1,5 +1,5 @@
 ---
-Description: Learn how to define and use custom constraints for speech recognition.
+Description: 音声認識のカスタム制約を定義して使う方法について説明します。
 title: カスタム認識の制約の定義
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047557"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631727"
 ---
 # <a name="define-custom-recognition-constraints"></a>カスタム認識の制約の定義
 
@@ -21,7 +21,7 @@ ms.locfileid: "9047557"
 
 音声認識のカスタム制約を定義して使う方法について説明します。
 
-> **重要な API**: [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)、[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+> **重要な Api**:[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446), [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421), [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
 音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合、ユニバーサル Windows アプリで定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
@@ -30,13 +30,13 @@ ms.locfileid: "9047557"
 ## <a name="add-constraints"></a>制約の追加
 
 
-[**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) プロパティを使って、音声認識エンジンに制約を追加します。
+[  **SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) プロパティを使って、音声認識エンジンに制約を追加します。
 
 ここでは、アプリ内から使われる 3 種類の音声認識制約について取り上げます。 (音声コマンドの制約については、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)」をご覧ください)。
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—定義済みの文法に基づく制約 (ディクテーションまたは Web 検索)。
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—単語や語句の一覧に基づく制約。
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—音声認識文法仕様 (SRGS) ファイルで定義された制約。
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)-制約が定義済みの文法 (ディクテーションまたは web の検索) に基づいています。
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421): 単語または語句の一覧に基づいて、制約。
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)-Speech Recognition Grammar Specification (SRGS) ファイルで定義された制約。
 
 音声認識エンジンはそれぞれ 1 つの制約コレクションを保持できます。 制約は次の組み合わせのみが有効です。
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C)[の音声認識 (Sisr) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)仕様に準拠している必要があります。
+この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web Consortium (W3C) に準拠する必要があります [意味の解釈の音声認識 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)仕様。
 
 以下では、"yes" と "no" のバリエーションをリッスンします。
 

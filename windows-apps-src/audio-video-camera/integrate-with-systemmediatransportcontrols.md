@@ -4,14 +4,14 @@ description: この記事では、システム メディア トランスポー�
 title: システム メディア トランスポート コントロールとの統合
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c89a1901d15d00c7c102157c8f44d6ab96272ef0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919774"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617907"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>システム メディア トランスポート コントロールとの統合
 
@@ -36,7 +36,7 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 [!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
 ## <a name="use-commandmanager-to-modify-or-override-the-default-smtc-commands"></a>CommandManager を使って既定の SMTC コマンドを変更またはオーバーライドする
-アプリでは、[**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) クラスを使って SMTC コントロールの動作を変更または完全にオーバーライドできます。 [**CommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.CommandManager) プロパティにアクセスすると、**MediaPlayer** クラスのインスタンスごとにコマンド マネージャー インスタンスを取得できます。
+アプリでは、[**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) クラスを使って SMTC コントロールの動作を変更または完全にオーバーライドできます。 [  **CommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.CommandManager) プロパティにアクセスすると、**MediaPlayer** クラスのインスタンスごとにコマンド マネージャー インスタンスを取得できます。
 
 既定では **MediaPlaybackList** の次の項目にスキップする *Next* コマンドなどのすべてのコマンドに、コマンド マネージャーは [**NextReceived**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextReceived) のような受信イベントと、[**NextBehavior**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.NextBehavior) のようにコマンドの動作を管理するオブジェクトを公開します。 
 
@@ -77,9 +77,9 @@ Windows 10 バージョン 1607 以降、メディアの再生に [**MediaPlayer
 
 ## <a name="related-topics"></a>関連トピック
 * [メディア再生](media-playback.md)
-* [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
-* [システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)
-* [github のシステム メディア トランスポート コントロールのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Media Player とオーディオとビデオの再生します。](play-audio-and-video-with-mediaplayer.md)
+* [手動でシステムのメディアのトランスポート コントロールの制御](system-media-transport-controls.md)
+* [Github 上のシステムのメディアの転送コントロール サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
  
 
  

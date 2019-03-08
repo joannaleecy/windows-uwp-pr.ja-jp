@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a8679c96c86754a8b929b44b5bd4eb402d851e90
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930399"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608367"
 ---
 # <a name="activityrecord-json"></a>ActivityRecord (JSON)
-1 つまたは複数のユーザーのリッチ プレゼンスの書式設定されたとローカライズされた文字列です。 
+1 つまたは複数のユーザーのプレゼンスの書式設定とローカライズされた文字列。 
 <a id="ID4EN"></a>
 
  
 ## <a name="activityrecord"></a>ActivityRecord
  
-ActivityRecord オブジェクトには、次仕様があります。
+ActivityRecord オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| richPresence| string| フォーマットされ、ローカライズされたリッチ プレゼンス文字列。| 
-| メディア| MediaRecord| ユーザーの視聴やをリッスンしています。| 
+| richPresence| string| 書式設定され、ローカライズされたプレゼンス文字列。| 
+| メディア| MediaRecord| どのようなユーザーが見ているかをリッスンします。| 
   
 <a id="ID4ETB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -52,6 +52,6 @@ ActivityRecord オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

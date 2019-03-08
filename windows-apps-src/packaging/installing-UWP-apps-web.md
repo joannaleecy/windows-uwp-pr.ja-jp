@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927074"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623557"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>Web ページから UWP アプリをインストールする
 
@@ -28,10 +28,10 @@ ms.locfileid: "8927074"
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>プロトコルのアクティブ化スキームの要件
 
-1. Web サーバーは、バイト範囲要求 (http/1.1) をサポートする必要があります。
-    - Http/1.1 プロトコルをサポートするサーバーはバイト範囲要求のサポートが必要 
-2. Web サーバーが Windows 10 アプリ パッケージのコンテンツの種類について知っておく必要があります。
-    - [Web 構成ファイル](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)の一部として、新しいコンテンツの種類を宣言する方法を示します
+1. Web サーバーがバイト範囲要求 (http/1.1) をサポートする必要があります。
+    - Http/1.1 プロトコルをサポートしているサーバーはバイト範囲要求のサポートが必要 
+2. Web サーバーは Windows 10 アプリ パッケージのコンテンツの種類について知っておく必要があります。
+    - 一部として新しいコンテンツ タイプを宣言する方法を次に示します[web config ファイル](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>Web ページでこの機能を有効にする方法 
 アプリ開発者が独自の Web サイトでアプリ パッケージをホストする場合は、以下の手順を実行する必要があります。

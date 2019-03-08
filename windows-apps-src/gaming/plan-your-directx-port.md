@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, DirectX, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044383"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602127"
 ---
 # <a name="plan-your-directx-port"></a>DirectX の移植の計画
 
@@ -20,7 +20,7 @@ ms.locfileid: "9044383"
 **要約**
 
 -   DirectX の移植の計画
--   [Direct3D 9 と Direct3D 11 の間の重要な変更点](understand-direct3d-11-1-concepts.md)
+-   [Direct3d11 Direct3D 9 からの重要な変更](understand-direct3d-11-1-concepts.md)
 -   [機能のマッピング](feature-mapping.md)
 
 
@@ -35,11 +35,11 @@ Direct3D 9 から Direct3D 11 へのアップグレードは、変更箇所を�
 
 D3DX と DXUT のヘルパー ライブラリは、独自のヘルパー ライブラリか、コミュニティ ツールに置き換える必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
-> **注:**  [DirectX ツール キット](https://go.microsoft.com/fwlink/p/?LinkID=248929)または[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)を使用して一部の機能と、D3DX と DXUT で提供された以前の置換することができます。
+> **注**  を使用することができます、 [DirectX ツール キット](https://go.microsoft.com/fwlink/p/?LinkID=248929)または[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) D3DX と DXUT で以前提供されているいくつかの機能を置き換える。
 
  
 
-アセンブリ言語で記述されたシェーダーは、シェーダー モデル 4 レベル 9\_1 または 9\_3 の機能を使って HLSL にアップグレードする必要があります。また、Effects ライブラリ向けに記述されたシェーダーは、より新しいバージョンの HLSL 構文に更新する必要があります。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
+アセンブリ言語で記述されたシェーダーは、HLSL シェーダー モデル 4 レベル 9 を使用してにアップグレードする必要があります\_1 または 9\_3 つの機能、およびシェーダー効果ライブラリは HLSL の構文のより新しいバージョンに更新する必要があります用に記述します。 詳しくは、「[DirectX 11 API への DirectX 9 の機能のマッピング](feature-mapping.md)」をご覧ください。
 
 さまざまな [Direct3D 機能レベル](https://msdn.microsoft.com/library/windows/desktop/ff476876)について確かめてください。 機能レベルは、既知の機能のセットを定義することで、幅広いビデオ ハードウェアを分類するものです。 各セットは 9.1 ～ 11.2 のバージョンの Direct3D にほぼ対応しています。 すべての機能レベルで DirectX 11 API を使います。
 

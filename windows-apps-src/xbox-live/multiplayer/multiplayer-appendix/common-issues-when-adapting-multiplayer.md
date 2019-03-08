@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: a04370ee2f45534c88467700b9523c5a4ad11094
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931801"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615817"
 ---
 # <a name="common-issues-when-adapting-your-multiplayer-2014-title-to-multiplayer-2015"></a>マルチプレイヤー 2014 のタイトルをマルチプレイヤー 2015 に適合させるときの一般的な問題
 
@@ -34,7 +34,7 @@ inviteProtocol システム定数を追加すると、送信者のタイトル�
 
 ## <a name="runtime-considerations-for-2015-multiplayer"></a>2015 マルチプレイヤーに関する実行時の考慮事項
 
-2015 マルチプレイヤー用のタイトルでは、タイトル コードのマルチプレイヤー エリアに入る前に必ず **MultiplayerService.EnableMultiplayerSubscriptions メソッド**を呼び出す必要があります。 この呼び出しによって、セッション変更のサブスクリプションと切断検出の両方が有効になります。
+2015 のタイトル マルチプレイヤー必要があります。 常に呼び出し、 **MultiplayerService.EnableMultiplayerSubscriptions メソッド**タイトル コードのマルチ プレーヤーの領域を入力する前にします。 この呼び出しによって、セッション変更のサブスクリプションと切断検出の両方が有効になります。
 -   同じユーザーによる呼び出しには必ず同じ **XboxLiveContext クラス**のオブジェクトを使用する必要があります。 このコンテキストには、マルチプレイヤーのサブスクリプションと切断検出で使用される接続の管理に関連する状態が含まれます。
 -   複数のローカル ユーザーが存在する場合は、ユーザーごとに個別の **XboxLiveContext** オブジェクトを使用します。
 
@@ -58,7 +58,7 @@ inviteProtocol システム定数を追加すると、送信者のタイトル�
 
 ### <a name="changes-to-the-constantssystemtimeouts-object"></a>/constants/system/timeouts オブジェクトへの変更
 
-/constants/system/timeouts オブジェクトは削除され、timeouts の名前は変更され、/constants/system に再配置されます。 このオブジェクトの名前/値ペアに行う変更は次のとおりです。予約タイムアウトは reservedRemovalTimeout になります。
+/constants/system/timeouts オブジェクトは削除され、timeouts の名前は変更され、/constants/system に再配置されます。 このオブジェクトの名前と値のペアに対して行う変更を次に示します。 予約済みのタイムアウトでは、reservedRemovalTimeout になります。
 -   非アクティブ タイムアウトは inactiveRemovalTimeout になります。 新しい既定値は 0 (時間単位) です。
 -   ready タイムアウトは readyRemovalTimeout になります。
 -   sessionEmpty タイムアウトは sessionEmptyTimeout になります。

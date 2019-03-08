@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 04376505b76296e052ea431f2a4e5fcfeac7b9e4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940216"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613937"
 ---
 # <a name="serviceconfigsscidhoppersnamestats"></a>/serviceconfigs/{scid}/hoppers/{name}/stats
 
-ホッパーの統計情報を取得するための取得操作をサポートしています。
+Hopper の統計情報を取得するための GET 操作をサポートしています。
 
 > [!IMPORTANT]
-> この URI コントラクト 103 以降で使用するものであり、X Xbl コントラクト バージョンのヘッダーの要素が必要です。 103 または後ですべての要求します。
+> この URI は、コントラクト 103 以降で使用するためのものがおり、X Xbl コントラクト バージョンのヘッダー要素が必要です。要求ごとに 103 で以降。
 
 <a id="ID4ER"></a>
 
@@ -30,16 +30,16 @@ momatch.xboxlive.com
 
 
 ## <a name="remarks"></a>注釈
-この URI は、対象ユーザーの構成では所有者識別子の値の xuid、gt、および me をサポートしています。 チケットの作成者のみでは、チケットを削除したり、URI の状態を取得することができます。  
+この URI は、ターゲット ユーザーの構成の所有者の識別子の値 xuid、gt、および私をサポートします。 チケットの作成者だけでは、チケットを削除したり、URI の状態を取得することができます。  
 <a id="ID4E6"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| セッションのサービス構成 id (SCID)。|
-| name| string| ホッパーの名前です。|
+| scid| GUID| セッションのサービス構成識別子 (SCID)。|
+| name| string| Hopper の名前。|
 
 <a id="ID4EEC"></a>
 
@@ -48,7 +48,7 @@ momatch.xboxlive.com
 
 [GET (/serviceconfigs/{scid}/hoppers/{name}/stats)](uri-serviceconfigsscidhoppershoppernamestatsget.md)
 
-&nbsp;&nbsp;ホッパーの統計情報を取得します。
+&nbsp;&nbsp;Hopper の統計情報を取得します。
 
 <a id="ID4EQC"></a>
 
@@ -60,4 +60,4 @@ momatch.xboxlive.com
 
 ##### <a name="parent"></a>Parent  
 
-[マッチメイキング URI](atoc-reference-matchtickets.md)
+[Uri のマッチメイ キング](atoc-reference-matchtickets.md)

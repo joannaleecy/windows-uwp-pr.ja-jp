@@ -3,15 +3,15 @@ title: よく寄せられる質問
 description: Xbox の UWP についてのよく寄せられる質問。
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
 ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046951"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57614557"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -19,7 +19,7 @@ ms.locfileid: "9046951"
 
 ### <a name="why-arent-my-games-and-apps-working"></a>作成したゲームとアプリが動作しない
 
-ゲームやアプリが動作しない場合、またストアや Live サービスにアクセスできない場合、開発者モードで実行している場合があります。 現在のモードを調べるには、コントローラーの **[ホーム]** ボタンを押します。 製品版ホーム エクスペリエンスではなく Dev Home に移動した場合は、開発者モードです。 ゲームをプレイする場合には、Dev Home を開き、**[Leave developer mode] ** ボタンを使って、リテール モードに切り替えます。
+ゲームやアプリが動作しない場合、またストアや Live サービスにアクセスできない場合、開発者モードで実行している場合があります。 現在のモードを調べるには、コントローラーの **[ホーム]** ボタンを押します。 製品版ホーム エクスペリエンスではなく Dev Home に移動した場合は、開発者モードです。 ゲームをプレイする場合には、Dev Home を開き、**[Leave developer mode]**  ボタンを使って、リテール モードに切り替えます。
 
 ### <a name="why-cant-i-connect-to-my-xbox-one-using-visual-studio"></a>Visual Studio を使って Xbox One に接続できない
 
@@ -49,7 +49,7 @@ ms.locfileid: "9046951"
 ### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>Xbox 用の x86 アプリを開発および公開できますか
 Xbox では、x86 アプリの開発または x86 アプリのストアへの申請をサポートしなくなりました。 
 
-### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>ゲームやアプリ、保存した変更を失うことがありますか
+### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>ゲームやアプリや保存した変更を失うことがありますか
 
 開発者プログラムへの参加を停止しても、インストールしたゲームやアプリは失われません。 またオンラインでプレイした場合には、保存したゲームはすべて Live アカウントのクラウド プロファイルに保存されていますので、それを失うことはありません。
 
@@ -59,15 +59,15 @@ Xbox では、x86 アプリの開発または x86 アプリのストアへの申
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>Xbox One を開発者モードにしたままで売却した場合に、 開発者モードを非アクティブ化する方法
 
-Xbox One にアクセスを不要になったがある場合は、Windows パートナー センターで無効にできます。 詳細については、 [Xbox One 開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-using-partner-center)のトピックで、**パートナー センターを使用して、本体を非アクティブ化**のセクションを参照してください。 
+Xbox One にアクセスを不要になったがある場合は、パートナー センターの Windows で無効にできます。 詳細については、次を参照してください。、**パートナー センターを使用して、コンソールを非アクティブ化**セクション、 [Xbox 1 つの開発者モードの非アクティブ化](devkit-deactivation.md#deactivate-your-console-using-partner-center)トピック。 
 
-### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>まだ開発者モードで停止しますが、パートナー センターを使用して開発者プログラムをまま教えてください。 どうすればよいでしょうか。
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>I に left パートナー センターを使用して開発者プログラムがまだ開発者モードにします。 解決するには、
 
 Dev Home を開始し、**[Leave developer mode]** ボタンを選択します。 コンソールがリテール モードで再起動します。 
 
 ### <a name="can-i-publish-my-app"></a>自分のアプリを公開できますか
 
-[開発者アカウント](https://developer.microsoft.com/store/register)を持っている場合はパートナー センターを使用して[アプリを公開](../publish/index.md)できます。 市販の Xbox One コンソールで作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
+できます[アプリを発行する](../publish/index.md)がある場合、パートナー センターを通じて、[開発者アカウント](https://developer.microsoft.com/store/register)します。 市販の Xbox One コンソールで作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
 
 ### <a name="can-i-publish-my-game"></a>自分のゲームを公開できますか
 
@@ -107,7 +107,7 @@ Visual Studio が Xbox One に接続できない場合:
   > [!NOTE]
   > 展開のパフォーマンスを最大限に引き出すために、本体には、有線接続を使用することをお勧めします。
 
-5. **[デバッグ]** タブの [認証] ドロップダウン リストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
+5. **[デバッグ]** タブの [認証] ドロップダウンリストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
 
 
 ### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>HTML/JavaScript を使用したアプリを構築する場合に、ゲームパッドのナビゲーションを有効にする方法
@@ -117,6 +117,6 @@ TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです�
 詳しくは、「[TVHelpers](https://github.com/Microsoft/TVHelpers) プロジェクトとプロジェクト [wiki](https://github.com/Microsoft/TVHelpers/wiki)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
-- [Xbox One の UWP の既知の問題](known-issues.md)
+- [Xbox One での UWP に関する既知の問題](known-issues.md)
 - [Xbox One の UWP](index.md)
 - [Xbox One の UWP](index.md)

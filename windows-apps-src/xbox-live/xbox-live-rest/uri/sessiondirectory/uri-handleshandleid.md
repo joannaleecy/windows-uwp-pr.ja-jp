@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a312d3744e96755a899d73307a47c01e3dc79fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945101"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632637"
 ---
 # <a name="handleshandleid"></a>/handles/{handleId}
-識別子により指定されたセッション ハンドルの削除と取得の操作をサポートしています。 
+識別子によって指定されたセッション ハンドルの削除と GET 操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  
+> この URI は、2015年マルチ プレーヤーによって使用され、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 テンプレートのコントラクト/104 105 またはそれ以降で使用するものでは。  
 
  
 <a id="ID4EQ"></a>
@@ -31,9 +31,9 @@ sessiondirectory.xboxlive.com
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | 
-| ハンドル id を使用| GUID| セッション ハンドルの一意の ID。| 
+| handleId| GUID| セッションのハンドルの一意の ID。| 
   
 <a id="ID4ERB"></a>
 
@@ -42,11 +42,11 @@ sessiondirectory.xboxlive.com
 
 [DELETE (/handles/{handleId})](uri-handleshandleiddelete.md)
 
-&nbsp;&nbsp;ハンドル ID で指定されたハンドルを削除します。
+&nbsp;&nbsp;ハンドルの ID で指定されたハンドルを削除します。
 
 [GET (/handles/{handle-id})](uri-handleshandleidget.md)
 
-&nbsp;&nbsp;ハンドル ID で指定されたハンドルを取得します。
+&nbsp;&nbsp;ハンドルの ID で指定されたハンドルを取得します。
  
 <a id="ID4E4B"></a>
 
@@ -58,6 +58,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリの Uri](atoc-reference-sessiondirectory.md)
 
    

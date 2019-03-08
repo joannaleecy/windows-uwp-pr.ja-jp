@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 86010d11ff0a7ebe188766f51bc3160a4f2befa4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935488"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641547"
 ---
 # <a name="usersowneridpeoplemute"></a>/users/{ownerId}/people/mute
-ユーザーのミュート リストにアクセスします。
+ユーザーのミュートの一覧にアクセスします。
 
   * [URI パラメーター](#ID4EQ)
 
@@ -24,9 +24,9 @@ ms.locfileid: "8935488"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
-| ownerId| string| 必須。 そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
+| ownerId| string| 必須。 リソースがアクセスされているユーザーの識別子。 使用可能な値は"me" <code>xuid({xuid})</code>、または gt({gamertag}) します。 認証されたユーザーである必要があります。 値の例: <code>xuid(2603643534573581)</code>、<code>gt(SomeGamertag)</code>します。 最大サイズ: なし。 |
 
 <a id="ID4ETB"></a>
 
@@ -47,4 +47,4 @@ ms.locfileid: "8935488"
 
 ##### <a name="parent"></a>Parent
 
-[プライバシー URI](atoc-reference-privacyv2.md)
+[プライバシーの Uri](atoc-reference-privacyv2.md)

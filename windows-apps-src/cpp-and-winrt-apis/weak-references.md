@@ -1,25 +1,25 @@
 ---
-description: Windows ランタイムは、参照カウント システムです。知っておくは、重要性とを区別する重要なシステムで強力なと弱参照します。
+description: Windows ランタイムは、参照カウント システムです。重要性およびの違いについて理解するための重要なシステムでこのような強力と脆弱の参照。
 title: C++/WinRT の弱参照
 ms.date: 10/03/2018
 ms.topic: article
-keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクション、強力な弱、参照
+keywords: windows 10、uwp、標準の c++、cpp、winrt、プロジェクション、strong、弱い参照
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923558"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630817"
 ---
-# <a name="strong-and-weak-references-in-cwinrt"></a>C++ し、強固で弱参照/WinRT
+# <a name="strong-and-weak-references-in-cwinrt"></a>強力と脆弱の参照を c++/cli WinRT
 
-Windows ランタイムは、参照カウント システムです。システムではこのようなことが重要では、厳密なは、重要性とを区別について知っておくことと弱参照 (と参照はどちらも、暗黙的な*この*ポインターなど)。 このトピックでわかるこれらの参照を適切に管理する方法を知ることを意味スムーズに実行される信頼性の高いシステムと役に立ちません障害が発生した 1 つの違いことができます。 言語プロジェクションで高度にサポートされているヘルパー関数を提供することによって[、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)だけと正しくより複雑なシステムの構築の作業で中間が満たしていること。
+Windows ランタイムは、参照カウント システムです。重要性およびの違いについて理解するための重要なシステムでこのような強力と脆弱の参照 (および参照がどちらも、暗黙的ななどを*この*ポインター)。 このトピックで後ほど、これらの参照を正しく管理する方法についての知識とスムーズに実行される信頼性の高いシステムと予期しない障害が発生した 1 つの違いを意味します。 言語プロジェクションの詳細をサポートするヘルパー関数を提供することで[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)簡単かつ正しくより複雑なシステムの構築の作業の半分が満たしていること。
 
-## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>クラス メンバー コルーチンで*この*ポインターを安全にアクセスします。
+## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全にアクセスする、*この*クラス メンバーのコルーチンでのポインター
 
-以下に示すコードは、クラスのメンバー関数は、コルーチンの典型的な例を示します。
+コード リストは、クラスのメンバー関数は、コルーチンの典型的な例を示します。
 
 ```cppwinrt
 // pch.h
@@ -57,18 +57,18 @@ int main()
 }
 ```
 
-**MyClass::RetrieveValueAsync**の間で動作しのコピーを返します、最終的に、`MyClass::m_value`データ メンバーです。 **RetrieveValueAsync**を呼び出すことにより、作成するには、非同期オブジェクトとそのオブジェクトには、暗黙的な*この*ポインター (最終的には、これによって`m_value`へのアクセスが)。
+**MyClass::RetrieveValueAsync**がしばらくの間、機能、最終的に制御が戻るのコピーと、`MyClass::m_value`データ メンバー。 呼び出す**RetrieveValueAsync**非同期オブジェクトを作成し、そのオブジェクトが暗黙的な*この*ポインター (最終的には、これを`m_value`にアクセス)。
 
-イベントの完全な順序を次に示します。
+イベントの完全なシーケンスを次に示します。
 
-1. **メイン**、 **MyClass**のインスタンスを作成 (`myclass_instance`)。
-2. `async`オブジェクトを作成すると、(経由で、*この*) 指す`myclass_instance`します。
-3. **Winrt::Windows::Foundation::IAsyncAction::get**関数は、数秒をブロックし、 **RetrieveValueAsync**の結果を返します。
-4. 値を返します。 **RetrieveValueAsync** `this->m_value`します。
+1. **メイン**のインスタンス**MyClass**が作成されます (`myclass_instance`)。
+2. `async`オブジェクトを作成すると、ポイント (を使用してその*この*) に`myclass_instance`します。
+3. **Winrt::Windows::Foundation::IAsyncAction::get**関数は、数秒間をブロックしの結果を返します**RetrieveValueAsync**します。
+4. **RetrieveValueAsync**の値を返します`this->m_value`します。
 
-手順 4 は、*この*が有効である限りも安全です。
+手順 4 では安全な限り*この*は有効です。
 
-ただし、非同期操作が完了する前に場合、クラスのインスタンスが破棄されるかどうか。 すべての種類の非同期メソッドが完了する前に、クラスのインスタンスがスコープ外なる可能性がある方法があります。 クラスのインスタンスに設定してそれをシミュレートできますが、`nullptr`します。
+しかし、非同期操作が完了する前に、クラスのインスタンスが破棄される場合でしょうか。 これは、すべての種類の方法は、非同期メソッドが完了する前に、クラスのインスタンスはスコープ外に出る可能性があります。 クラスのインスタンスに設定してそれをシミュレートできますが、`nullptr`します。
 
 ```cppwinrt
 int main()
@@ -84,13 +84,13 @@ int main()
 }
 ```
 
-クラスのインスタンスを破棄します以降、ようもう一度を参照しない直接します。 もちろん、非同期のオブジェクトに、*この*ポインターがありを使ってアプリをクラスのインスタンス内に格納されている値をコピーしようとしています。 コルーチンは、メンバー関数と impunity で、*この*ポインターを使用できるようにすることが想定されます。
+クラスのインスタンスを破棄しました後、もう一度を参照しない直接しましたように見えます。 非同期のオブジェクトはもちろん、*この*を使用して、クラスのインスタンス内で格納されている値をコピーしようとしへのポインター。 コルーチンは、メンバー関数と使用できることが必要ですが、*この*impunity のポインター。
 
-このコードに変更を実行問題は、手順 4 でクラスのインスタンスを破棄すると、*この*が無効になるためです。 非同期のオブジェクトは、クラス インスタンス内の変数にアクセスしようとするとすぐにこれがクラッシュ (または何か未定義の完全) です。
+コードにこの変更により問題が発生、手順 4. で、クラスのインスタンスが破棄されたため、および*この*が無効になっています。 非同期のオブジェクトが、クラスのインスタンス内の変数にアクセスしようとすると、すぐにはクラッシュ (または何か完全に定義されていません)。
 
-解決策は、非同期操作を提供する、&mdash;コルーチン&mdash;クラスのインスタンスに、独自の強参照します。 現在書き込まれたとして、コルーチン効果的にポインターを保持 raw*この*クラスのインスタンスないクラスのインスタンスを維持するのに十分な。
+解決する非同期操作を付与するには&mdash;コルーチン&mdash;クラスのインスタンスへの独自の強力な参照です。 現在の記述で、コルーチンを効率的に raw 保持*この*クラスのインスタンスへのポインターが、クラスのインスタンスを維持するのに十分な。
 
-クラスのインスタンスを維持するには、下に表示される**RetrieveValueAsync**の実装を変更します。
+実装を変更すると、クラスのインスタンスを維持する**RetrieveValueAsync**以下に示す。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -101,11 +101,11 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-C++/WinRT オブジェクトから直接的または間接的に派生[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements)テンプレート c++/WinRT オブジェクトは、*この*ポインターへの強参照を取得する[**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)保護されたメンバー関数を呼び出すことができます。 実際に使用する必要がないことに注意してください、`strong_this`変数です。だけ**get_strong**を呼び出し、参照カウントをインクリメントし、有効な暗黙的な*この*ポインターを保持します。
+ため、c++/cli WinRT オブジェクト直接的または間接的に派生から、 [ **winrt::implements** ](/uwp/cpp-ref-for-winrt/implements)テンプレート、C +/cli WinRT オブジェクトを呼び出すことができます、 [ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)プロテクト メンバー関数への強い参照を取得するその*この*ポインター。 実際に使用する必要がないことに注意してください、`strong_this`変数; を呼び出すだけ**get_strong** 、参照カウントをインクリメントし、暗黙的な保持*この*ポインターが無効です。
 
-これは、手順 4 を取得したとき以前の問題を解決します。 クラスのインスタンスを他のすべての参照が非表示になった場合でも、コルーチンはその依存関係は安定したことを保証するための予防措置を実行します。
+これは、手順 4 に移動するときに以前の問題を解決します。 クラスのインスタンスへの他のすべての参照が表示されない場合でも、コルーチンがその依存関係が安定したことを保証する予防措置を取得します。
 
-強参照が適切ながない場合、 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) *この*への弱参照を取得する代わりに呼び出すことができます。 だけ*この*にアクセスする前に強参照を取得することを確認します。
+強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)への弱い参照を取得する*この*します。 アクセスする前に強い参照を取得するにはことを確認して*この*します。
 
 ```cppwinrt
 IAsyncOperation<winrt::hstring> RetrieveValueAsync()
@@ -125,19 +125,19 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 }
 ```
 
-上記の例では弱参照は、強参照が残っていないときに破棄されないクラスのインスタンスを保持しません。 メンバー変数にアクセスする前に強参照を取得できるかどうかを確認する方法を提供します。
+上記の例で、弱い参照は、強い参照が残っていないときに破棄されないクラス インスタンスを保持しません。 ただしをメンバー変数にアクセスする前に強い参照を取得できるかどうかを確認する方法を示します。
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全なイベント処理デリゲートを使用して*この*ポインターへのアクセス
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全にアクセスする、*この*イベント処理デリゲートを使用してポインター
 
 ### <a name="the-scenario"></a>シナリオ
 
-イベント処理に関する一般的な情報を参照してください。 [C + でデリゲートを使用してイベントを処理/WinRT](handle-events.md)します。
+イベント処理に関する一般的な情報は、次を参照してください。 [C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)します。
 
-前のセクションには、コルーチンと同時実行の領域で、有効期間の潜在的な問題が強調表示されます。 ただし、オブジェクトのメンバー関数をして内のラムダ関数が、イベント受信側 (イベントを処理するオブジェクト) と、イベント ソース (オブジェクトの相対的な有効期間を考慮する必要がありますオブジェクトのメンバー関数を使用した、または内からイベントを処理する場合イベントを発生させる)。 コード例をいくつか見てみましょう。
+前のセクションには、コルーチンと同時実行性の面での潜在的な有効期間に関する問題が強調表示されます。 オブジェクトのメンバー関数、または内からイベントを処理する場合してオブジェクトのメンバー関数は、内側のラムダ関数がイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考慮する必要がありますが、イベントの発生)。 コード例をいくつか見てみましょう。
 
-以下のコードは、最初に追加されているすべてのデリゲートによって処理される一般的なイベントを発生させる単純な**EventSource**クラスを定義します。 この例イベントは発生[**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler)デリゲート型を使用するが、問題と解決策を次にすべてのデリゲート型に適用します。
+コード優先リスト定義、単純な**EventSource**クラスに追加された任意のデリゲートによって処理される一般的なイベントを発生させます。 このイベントの例の動作を使用する、 [ **Windows::Foundation::EventHandler** ](/uwp/api/windows.foundation.eventhandler)デリゲートの型が問題と解決策をここでは、すべてのデリゲート型に適用されます。
 
-次に、 **EventRecipient**クラスは、ラムダ関数の形式で**EventSource::Event**イベントのハンドラーを提供します。
+次に、 **EventRecipient**クラスのハンドラーを提供する、 **EventSource::Event**ラムダ関数の形式でイベント。
 
 ```cppwinrt
 // pch.h
@@ -190,16 +190,16 @@ int main()
 }
 ```
 
-パターンは、イベント受信側が、*この*ポインター上に依存ラムダ イベント ハンドラーを持っています。 イベントの受信者が、イベント ソースを失いますたびには、これらの依存関係を失います。 それらの場合は、共通ですが、パターンが適しています。 UI ページでそのページ上にあるコントロールで発生したイベントを処理するときなど、明らかな場合があります。 ページ、ボタンの状態を続ける&mdash;ため、ハンドラーは、ボタンもを失います。 これは、受信側がソースを所有する場合 (データ メンバーとしてなど)、または受信側とソースが兄弟関係にあり、他のオブジェクトによって直接所有されている場合に当てはまります。 ハンドラーが依存する*このオブジェクト*に表示されない場合、有効期間の強弱を気にしなくても、通常どおり*このオブジェクト*をキャプチャできます。
+イベント受信者が上の依存関係を持つラムダ イベント ハンドラーを持っているパターンは、その*この*ポインター。 イベント受信者には、イベントのソースよりも長く保持、たびに、これらの依存関係はよりも長くなります。 その場合は、共通ですが、パターンにも動作します。 UI ページでそのページ上にあるコントロールで発生したイベントを処理するときなど、明らかな場合があります。 ページには、ボタンがよりも長く保持&mdash;ハンドラーもよりも長く保持、ボタンをクリックします。 これは、受信側がソースを所有する場合 (データ メンバーとしてなど)、または受信側とソースが兄弟関係にあり、他のオブジェクトによって直接所有されている場合に当てはまります。 ハンドラーが依存する*このオブジェクト*に表示されない場合、有効期間の強弱を気にしなくても、通常どおり*このオブジェクト*をキャプチャできます。
 
-*この*が自身表示されない (完了と非同期アクションと非同期操作で発生する進行状況イベントのハンドラーを含む) のハンドラーでの使用、対処する方法を理解することが重要である場合はまだあります。
+場合はまだあります、*これ*ハンドラー (非同期アクションおよび操作によって生成される入力候補および進行状況のイベントのハンドラーを含む) での使用がよりも長く保持とその対処方法を理解することが重要とします。
 
 - 非同期メソッドを実装するためにコルーチンを作成する場合は可能です。
 - 特定の XAML UI フレームワーク オブジェクト ([**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) など) を使用するまれなケースで、イベント ソースから登録解除しなくても、受信側が最終処理される場合は可能です。
 
 ### <a name="the-issue"></a>問題
 
-この次のバージョンの**主な**機能が、イベント受信側が破棄されるときの動作をシミュレート (おそらくがスコープ外)、イベント ソースがまだイベントを発生させるときにします。
+次のバージョンの**メイン**関数は、イベントの受信者が破棄されるときの動作をシミュレート (おそらくこれがスコープ外) イベント ソースがイベントを発生させても中にします。
 
 ```cppwinrt
 int main()
@@ -214,14 +214,14 @@ int main()
 }
 ```
 
-イベント受信側が破棄されるが、内にラムダのイベント ハンドラーが**イベント**のイベントをサブスクライブしても。 そのイベントを発生すると、ラムダが正しくないその時点で、*この*ポインターを逆参照しようとします。 そのため、アクセス違反ハンドラー (またはコルーチンが継続する) のコードからそれを使用しようとしています。
+イベント受信者が破棄されるが、内のラムダのイベント ハンドラーがまだサブスクライブしている、**イベント**イベント。 ラムダが逆参照しようとしたそのイベントが発生したときに、*この*ポインターで、その時点では無効です。 コード ハンドラー (または、コルーチンの継続で) からのアクセス違反の結果、それを使用しようとしています。
 
 > [!IMPORTANT]
-> *この*オブジェクトの有効期間を検討する必要があります、このような状況が発生した場合キャプチャされた*この*オブジェクトのキャプチャ状態を続けるかどうか。 しない場合、キャプチャ強参照または弱参照を以下で説明します。
+> 、このような状況が発生した場合の有効期間について考慮する必要があります、*これ*オブジェクトかどうかと、キャプチャされた*これ*オブジェクトには、キャプチャよりも長くなります。 場合は、キャプチャ、強力なまたは弱い参照の場合は、以下をご紹介します。
 >
-> または&mdash;、シナリオに適している場合、およびスレッドの場合の考慮事項を使うとでも&mdash;別のオプションは、ハンドラーを取り消すと、イベント、または受信側のデストラクターで、受信側が完了したら、します。 [登録済みデリゲートの取り消し](handle-events.md#revoke-a-registered-delegate)を参照してください。
+> または&mdash;である場合、シナリオ、スレッドの場合の考慮事項もできるようなります。&mdash;別のオプションは、イベント、または受信者のデストラクターでは、受信者が完了した後、ハンドラーを失効することです。 参照してください[登録されたデリゲートを取り消す](handle-events.md#revoke-a-registered-delegate)します。
 
-これは、どのよう、ハンドラーに登録します。
+これは、ハンドラーを登録する方法です。
 
 ```cppwinrt
 event_source.Event([&](auto&& ...)
@@ -230,7 +230,7 @@ event_source.Event([&](auto&& ...)
 });
 ```
 
-ラムダは、参照によって、ローカル変数を自動的にキャプチャします。 そのため、この例では、お同等も記述できます。
+ラムダは、参照によって任意のローカル変数を自動的にキャプチャします。 そのため、この例で同等にも記述できます。
 
 ```cppwinrt
 event_source.Event([this](auto&& ...)
@@ -239,11 +239,11 @@ event_source.Event([this](auto&& ...)
 });
 ```
 
-どちらの場合も、raw*この*ポインターをキャプチャしますしているだけです。 参照カウントに影響何もはできないように、現在のオブジェクトが破棄されるようにします。
+どちらの場合にのみキャプチャするため、生*この*ポインター。 何も起こりません参照カウント、何も、現在のオブジェクトを妨げてから破棄されるようにします。
 
 ### <a name="the-solution"></a>ソリューション
 
-解決策は、強参照をキャプチャします。 強参照が*は*、参照カウントと増加、キープア ライブの現在のオブジェクト*は*維持します。 キャプチャ変数を宣言するだけです (と呼ばれる`strong_this`この例では)、し[**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)、強参照を*この*ポインターを取得します。 これを呼び出して初期化します。
+このソリューションでは、強い参照をキャプチャします。 強い参照*は*され、参照カウントをインクリメント*は*現在のオブジェクトを維持します。 キャプチャ変数を宣言するだけです (と呼ばれる`strong_this`この例では) への呼び出しで初期化と[ **implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)への強い参照を取得しています、 *この*ポインター。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -252,7 +252,7 @@ event_source.Event([this, strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-現在のオブジェクトの自動キャプチャを省略し、データ メンバーにアクセスする、暗黙的な*この*経由の代わりに、キャプチャ変数もできます。
+でも、現在のオブジェクトの自動的なキャプチャを省略しの代わりに、暗黙の型を使用してキャプチャ変数を通じてデータ メンバーにアクセスできます*この*します。
 
 ```cppwinrt
 event_source.Event([strong_this { get_strong()}](auto&& ...)
@@ -261,7 +261,7 @@ event_source.Event([strong_this { get_strong()}](auto&& ...)
 });
 ```
 
-強参照が適切ながない場合、 [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) *この*への弱参照を取得する代わりに呼び出すことができます。 だけをまだから取得できます強参照がメンバーにアクセスする前に確認します。
+強い参照が、適切でないかどうかは、代わりに呼び出すことができます[ **implements::get_weak** ](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)への弱い参照を取得する*この*します。 だけを引き続き取得できる強い参照からメンバーにアクセスする前に確認します。
 
 ```cppwinrt
 event_source.Event([weak_this{ get_weak() }](auto&& ...)
@@ -273,9 +273,9 @@ event_source.Event([weak_this{ get_weak() }](auto&& ...)
 });
 ```
 
-### <a name="if-you-use-a-member-function-as-a-delegate"></a>デリゲートとしてメンバー関数を使用する場合
+### <a name="if-you-use-a-member-function-as-a-delegate"></a>メンバー関数をデリゲートとして使用する場合
 
-ほか、ラムダ関数では、これらの原則にも適用、デリゲートとしてメンバー関数を使用します。 構文とは異なる、いくつかのコードを見てみましょう。 まず、raw*この*ポインターを使用して、安全でない可能性のあるメンバー関数イベント ハンドラーを次に示します。
+だけでなくラムダ関数の場合は、これらの原則にも適用されます、代理人としてメンバー関数を使用します。 構文は異なります、いくつかのコードを見てみましょう。 最初に、raw を使用して、安全でないメンバー関数イベントのハンドラーをここでは*この*ポインター。
 
 ```cppwinrt
 struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
@@ -294,23 +294,23 @@ struct EventRecipient : winrt::implements<EventRecipient, IInspectable>
 };
 ```
 
-これは、オブジェクトとそのメンバー関数を参照する標準的な従来の方法です。 安全にするには、&mdash;Windows SDK のバージョン 10.0.17763.0 (Windows 10、バージョン 1809) の時点で&mdash;強参照またはハンドラーが登録されている時点で弱参照を確立します。 その時点では、イベントの受信者オブジェクトがまだ有効にする呼ばれます。
+これは、オブジェクトとそのメンバー関数を参照する標準的な従来の方法です。 セーフにするには、するには&mdash;時点では、Windows SDK のバージョン (Windows 10、バージョンは 1809) 10.0.17763.0&mdash;強力なまたはハンドラーが登録されている時点で弱い参照を確立します。 その時点では、イベントの受信者オブジェクトはまだ有効な状態に呼ばれます。
 
-強参照では、代わりに、直接*この*ポインター [**get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)を呼び出すだけです。 C++/WinRT により、結果として得られるデリゲートが現在のオブジェクトへの強参照を保持します。
+強力な参照を呼び出すだけ[ **get_strong** ](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) 、生の代わりに*この*ポインター。 C +/cli WinRT により得られたデリゲートが、現在のオブジェクトへの強い参照を保持しているようになります。
 
 ```cppwinrt
 event_source.Event({ get_strong(), &EventRecipient::OnEvent });
 ```
 
-弱参照を[**get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)を呼び出します。 C++/WinRT により、結果として得られるデリゲートは弱参照を保持します。 、最後に、バック グラウンドでデリゲート解決するには、厳密な 1 への弱参照しようとしてのみが成功した場合、メンバー関数を呼び出します。
+弱い参照の場合は、呼び出す[ **get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)します。 C +/cli WinRT により得られたデリゲートが弱い参照を保持しているようになります。 過去 1 分間にあると、バック グラウンドでデリゲートに厳密な弱い参照を解決しようとして成功した場合のみ、メンバー関数を呼び出します。
 
 ```cppwinrt
 event_source.Event({ get_weak(), &EventRecipient::OnEvent });
 ```
 
-### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>**SwapChainPanel::CompositionScaleChanged**を使用して弱参照例
+### <a name="a-weak-reference-example-using-swapchainpanelcompositionscalechanged"></a>弱い参照の使用例を使用して、 **SwapChainPanel::CompositionScaleChanged**
 
-このコード例では、別の図の弱参照を使用して[**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged)イベントを使用します。 コードでは、受信者への弱参照をキャプチャするラムダを使用して、イベント ハンドラーを登録します。
+このコード例では使用して、 [ **SwapChainPanel::CompositionScaleChanged** ](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged)弱い参照の他の図を使用してイベント。 コードでは、受信者への弱い参照をキャプチャするラムダを使用して、イベント ハンドラーを登録します。
 
 ```cppwinrt
 winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
@@ -340,12 +340,12 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 
 ## <a name="weak-references-in-cwinrt"></a>C++/WinRT の弱参照
 
-上では、弱参照が使われている説明しました。 一般に、循環参照を失わずに適しています。 たとえば、XAML ベース UI フレームワークのネイティブ実装&mdash;フレームワークの歴史的設計&mdash;弱参照メカニズムでは、C++/WinRT は循環参照を処理する必要があります。 XAML 以外では、おそらく必要はありません弱参照を使用する (は何もしない本質的に XAML 固有ユーザーに関する)。 はなく、高く、はず独自 C + を設計する/WinRT Api ははずですし循環参照や弱参照が必要としないでください。 
+上記は、弱い参照が使用されている説明しました。 一般に、循環参照の重大な場合に適しています。 XAML ベースの UI フレームワークのネイティブ実装の例では、&mdash;フレームワークの歴史的な設計により&mdash;弱い参照メカニズム C +/cli WinRT 循環参照を処理する必要があります。 XAML では、外部で、可能性があります必要はありません弱い参照を使用する (not が何も本質的に XAML 固有それらについて)。 はなく、たいてい、はず設計独自 C +/cli WinRT Api の循環参照と弱い参照する必要が生じないようにします。 
 
 宣言するすべての型について、いつどこで弱参照が必要になるかが C++/WinRT に対してすぐに明白になるわけではありません。 したがって、C++/WinRT は構造体テンプレート [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) で弱参照サポートを自動的に提供し、そこから直接的または間接的に独自の C++/WinRT の型を派生します。 利用に応じた料金制度であるため、オブジェクトが [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) で実際に照会されない限り料金はかかりません。 また、[そのサポートを除外する](#opting-out-of-weak-reference-support)ことを明示的に選択することができます。
 
 ### <a name="code-examples"></a>コード例
-[**winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref) 構造体テンプレートは、クラス インスタンスへの弱参照を取得するための 1 つのオプションです。
+[  **winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref) 構造体テンプレートは、クラス インスタンスへの弱参照を取得するための 1 つのオプションです。
 
 ```cppwinrt
 Class c;
@@ -397,4 +397,4 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 * [implements::get_weak 関数](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::make_weak 関数テンプレート](/uwp/cpp-ref-for-winrt/make-weak)
 * [winrt::no_weak_ref マーカー構造体](/uwp/cpp-ref-for-winrt/no-weak-ref)
-* [winrt::weak_ref 構造体テンプレート](/uwp/cpp-ref-for-winrt/weak-ref)
+* [winrt::weak_ref 構造体のテンプレート](/uwp/cpp-ref-for-winrt/weak-ref)

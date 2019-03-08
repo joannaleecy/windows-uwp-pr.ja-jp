@@ -8,18 +8,18 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d7c49628914f887c5d2243942e10e47d47b095
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935228"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608907"
 ---
 # <a name="post-titlestitleidclusters"></a>POST (/titles/{titleId}/clusters)
-クライアントが Xbox Live Compute サーバー インスタンスを作成することができる URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
+により、クライアントは Xbox Live コンピューティング サーバー インスタンスを作成する URI。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [必要な要求ヘッダー](#ID4EGB)
-  * [Authorization](#ID4ELD)
+  * [承認](#ID4ELD)
   * [要求本文](#ID4EWD)
   * [必要な応答ヘッダー](#ID4EZE)
   * [応答本文](#ID4E5G)
@@ -31,7 +31,7 @@ ms.locfileid: "8935228"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| titleId| 要求の操作のタイトルの ID です。| 
+| titleId| 要求の操作対象のタイトルの ID。| 
   
 <a id="ID5EG"></a>
 
@@ -45,40 +45,40 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは必要です。
+要求を行う場合は、次の表に示されているヘッダーが必要です。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | 
-| ユーザー エージェント|  | 要求を行っているユーザー エージェントについて説明します。| 
-| Content-Type| application/json| 送信されたデータの種類です。| 
+| ユーザー エージェント|  | 要求を行うユーザー エージェントに関する情報。| 
+| Content-Type| application/json| 送信されるデータの型。| 
 | Host| gameserverms.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
+| Content-Length|  | 要求オブジェクトの長さ。| 
+| x-xbl-contract-version| 1| API コントラクトのバージョン。| 
+| Authorization| XBL3.0 x = [ハッシュ] です。[トークン]| 認証トークンです。| 
   
 <a id="ID4ELD"></a>
 
  
 ## <a name="authorization"></a>Authorization
  
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求には、有効な Xbox Live の authorization ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可されていない場合、サービスは応答 403 Forbidden を返します。 ヘッダーが無効であるか不足している場合、サービスは応答で 401 Unauthorized を返します。
   
 <a id="ID4EWD"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。
+要求には、次のメンバーを持つ JSON オブジェクトを含める必要があります。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| MPSD からセッション識別子です。| 
-| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定する場合はすぐにフルフィルメントしないことができますが、リソースのこのセッションをキューに入れいない GSMS に指示します。 この値が true であるため、要求が中止されると、応答オブジェクトを含むは<code>"fulfillmentState" : "Aborted"</code>します。 | 
+| sessionId| MPSD からセッション識別子。| 
+| abortIfQueued| 省略可能なパラメーターは、どの場合に true に設定されませんをすぐに実行しないことができます、場合にリソースとして、このセッションをキューに GSMS に指示します。 応答オブジェクトには、要求が中止されたは、この値が true であるため場合、<code>"fulfillmentState" : "Aborted"</code>します。 | 
  
 <a id="ID4ERE"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -96,33 +96,33 @@ gameserverms.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答は常に、次の表に示すようにヘッダーを含めます。
+応答には、常に、次の表に示すようにヘッダーが含まれます。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| キャッシュ コントロール|  | ディレクティブ要求/応答のチェーンに沿ったのすべてのキャッシュ メカニズムによって obeyed する必要があります。| 
-| Content-Type| application/json| 応答には、データの種類です。| 
+| キャッシュ制御|  | 要求/応答のチェーンに沿ってすべてのキャッシュ メカニズムによって obeyed する必要がありますディレクティブ。| 
+| Content-Type| application/json| 応答内のデータの型。| 
 | Content-Length|  | 応答本文の長さ。| 
-| X コンテンツの種類オプション|  |  | 
-| X XblCorrelationId|  | 応答本文の mime タイプ。| 
-| Date|  |  | 
+| X のコンテンツの種類オプション|  |  | 
+| X-XblCorrelationId|  | 応答本文の mime の種類。| 
+| 日付|  |  | 
   
 <a id="ID4E5G"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを持つ JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| pollIntervalMilliseconds| (ミリ秒) の完了をポーリング間隔をお勧めします。 注意がこれには、クラスターが準備ができたらときの推定値ではありませんが、サブスクリプションと要求とフルフィルメントの完了率の現在のプールを指定された状態を更新する頻度、呼び出し元のポーリングを行うための推奨事項ではなく。| 
-| fulfillmentState| 示します提供されているセッションは、リソースをすぐに割り当てられたかどうか「フルフィルメント、」リソースの今後の可用性のキューに追加される「キューに入れ」、または中止され、「中止」、要求を処理することができない原因とすぐに、要求"true"と指定した abortIfQueued します。 | 
+| pollIntervalMilliseconds| (ミリ秒) の完了をポーリングする間隔をお勧めします。 これには、クラスターが準備完了となる場合の推定値ではありませんので注意が、呼び出し元がサブスクリプションと要求と調達の料金の現在のプールを指定された状態の更新をポーリングする頻度の推奨事項ではなく。| 
+| fulfillmentState| 指定されたセッションは、リソースをすぐに割り当てられたかどうか"Fulfilled、"将来のリソースの可用性のためにキューに追加された"Queued"、ことを示しますまたは中止され、「中止」、要求を処理することができないのためすぐに要求"true"として abortIfQueued を指定します。 | 
  
 <a id="ID4EWH"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp
@@ -139,13 +139,13 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+タイトルがサービスへの呼び出しを再試行する必要がありますは、次の応答コードが受信したときにのみ。
  
-   * 408-サーバー タイムアウト
-   * 429: too Many Requests
+   * 408-サーバーのタイムアウト
+   * 429: 要求が多すぎます
    * 500-サーバー エラー
    * 502-無効なゲートウェイ
-   * 503-サービスを利用できません
+   * 503-サービス利用不可
    * 504-ゲートウェイ タイムアウト
    
 <a id="ID4EFBAC"></a>

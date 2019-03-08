@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, シェーダー
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938911"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611167"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL と HLSL の対応を示すリファレンス
 
@@ -19,14 +19,14 @@ ms.locfileid: "8938911"
 
 [グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。 ここで参照される GLSL は OpenGL ES 2.0 とは互換性がありません。HLSL は Direct3D 11 と互換性があります。 Direct3D 11 と以前のバージョンの Direct3D の違いについては、「[機能のマッピング](feature-mapping.md)」をご覧ください。
 
--   [OpenGL ES 2.0 と Direct3D 11 の比較](#comparing-opengl-es-20-with-direct3d-11)
--   [HLSL への GLSL 変数の移植](#porting-glsl-variables-to-hlsl)
--   [HLSL への GLSL の型の移植](#porting-glsl-types-to-hlsl)
--   [HLSL への GLSL の定義済みグローバル変数の移植](#porting-glsl-pre-defined-global-variables-to-hlsl)
--   [HLSL への GLSL 変数の移植の例](#examples-of-porting-glsl-variables-to-hlsl)
-    -   [GLSL での uniform、attribute、および varying](#uniform-attribute-and-varying-in-glsl)
-    -   [HLSL での定数バッファーとデータ転送](#constant-buffers-and-data-transfers-in-hlsl)
--   [Direct3D への OpenGL のレンダリング コードの移植例](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [OpenGL ES 2.0 Direct3D とを比較する 11](#comparing-opengl-es-20-with-direct3d-11)
+-   [GLSL HLSL 変数の移植](#porting-glsl-variables-to-hlsl)
+-   [GLSL HLSL の種類の移植](#porting-glsl-types-to-hlsl)
+-   [HLSL のグローバル変数を事前に定義された GLSL の移植](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [GLSL HLSL 変数への移植の例](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [統一された、属性、および GLSL のさまざまな](#uniform-attribute-and-varying-in-glsl)
+    -   [HLSL の定数バッファーとデータの転送](#constant-buffers-and-data-transfers-in-hlsl)
+-   [Direct3D に OpenGL レンダリング コードの移植の例](#examples-of-porting-opengl-rendering-code-to-direct3d)
 -   [関連トピック](#related-topics)
 
 ## <a name="comparing-opengl-es-20-with-direct3d-11"></a>OpenGL ES 2.0 と Direct3D 11 の比較
@@ -65,7 +65,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">グラフィックス API に統合されたシェーダー コンパイル</td>
 <td align="left">HLSL コンパイラが中間バイナリ表現に<a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">シェーダーをコンパイルし</a>、その後で Direct3D がそれをドライバーに渡します。
 <div class="alert">
-<strong>注:</strong>このバイナリ表現はハードウェアに依存しません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
+<strong>注</strong>  このバイナリ表現はハードウェアに依存しません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
 </div>
 <div>
  
@@ -94,7 +94,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">行優先マトリックス (既定)</td>
 <td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>注:</strong>  <strong>row_major</strong>の種類の修飾子を使用して、1 つの変数のレイアウトを変更します。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
+<strong>注</strong>  使用、 <strong>row_major</strong>型修飾子で 1 つの変数のレイアウトを変更します。 詳しくは、「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">変数の構文</a>」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
  
@@ -109,11 +109,11 @@ GLSL と HLSL は一般に次の点で異なります。
 
  
 
-> **注:** HLSL がテクスチャとサンプラーとして 2 つのオブジェクトです。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
+> **注**  HLSL がテクスチャおよびサンプラーとして 2 つのオブジェクト。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
 
  
 
-GLSL では、事前定義されたグローバル変数として OpenGL の状態の多くを示します。 たとえば、GLSL では、**gl\_Position** 変数を使って頂点の位置を指定し、**gl\_FragColor** 変数を使ってフラグメントの色を指定します。 HLSL では、アプリ コードからシェーダーに Direct3D の状態を明示的に渡します。 たとえば、Direct3D と HLSL を使う場合は、頂点シェーダーへの入力が頂点バッファーのデータ形式に一致し、アプリ コードの定数バッファーの構造がシェーダー コードの定数バッファー ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) の構造と一致する必要があります。
+GLSL では、事前定義されたグローバル変数として OpenGL の状態の多くを示します。 たとえば、GLSL でを使用する、 **gl\_位置**頂点の位置を指定する変数と**gl\_FragColor**フラグメントの色を指定する変数。 HLSL では、アプリ コードからシェーダーに Direct3D の状態を明示的に渡します。 たとえば、Direct3D と HLSL を使う場合は、頂点シェーダーへの入力が頂点バッファーのデータ形式に一致し、アプリ コードの定数バッファーの構造がシェーダー コードの定数バッファー ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) の構造と一致する必要があります。
 
 ## <a name="porting-glsl-variables-to-hlsl"></a>HLSL への GLSL 変数の移植
 
@@ -137,17 +137,17 @@ GLSL では、グローバル シェーダーの変数の宣言に修飾子を�
 <p>アプリ コードから uniform 変数を頂点シェーダーとフラグメント シェーダーのどちらか一方または両方に渡します。 これらのシェーダーを使って三角形を描画する前にすべての uniform の値を設定する必要があります。三角形のメッシュの描画中に値が変わらないようにするためです。 これらの値は変化しません。 フレーム全体に対して設定される uniform もあれば、特定の頂点ピクセル シェーダーのペアに対してのみ設定される uniform もあります。</p>
 <p>uniform 変数はポリゴン単位の変数です。</p></td>
 <td align="left"><p>定数バッファーを使います。</p>
-<p>「<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">定数バッファーを作成する方法</a>」と「<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">シェーダー定数</a>」をご覧ください。</p></td>
+<p>参照してください<a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">方法。定数バッファーを作成</a>と<a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">シェーダー定数</a>します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>varying</strong></p>
+<td align="left"><p><strong>さまざまな</strong></p>
 <p>頂点シェーダー内で varying 変数を初期化し、フラグメント シェーダーの同じ名前の varying 変数に渡します。 頂点シェーダーは各頂点でのみさまざまな変数の値を設定するため、ラスタライザーはその値を (透視補正の方法で) 補間し、フラグメント単位の値を生成してフラグメント シェーダーに渡します。 これらの変数は各三角形で異なります。</p></td>
 <td align="left">頂点シェーダーから取得した構造をピクセル シェーダーへの入力として使います。 セマンティック値が一致することを確かめてください。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>属性</strong></p>
+<td align="left"><p><strong>attribute</strong></p>
 <p>属性は、アプリ コードから頂点シェーダーだけに渡す頂点の記述の一部です。 uniform とは異なり、頂点ごとに各属性の値を設定します。それにより、各頂点が異なる値を持つことができるようになります。 属性変数は頂点単位の変数です。</p></td>
-<td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 「<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">頂点バッファーを作成する方法</a>」と「<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">インデックス バッファーを作成する方法</a>」をご覧ください。</p>
+<td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 参照してください<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">方法。頂点バッファーを作成</a>と<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">方法。インデックス バッファーを作成</a>です。</p>
 <p>Direct3D アプリ コードで入力レイアウトを作成し、セマンティック値を頂点の入力の値と一致させます。 「<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">入力レイアウトの作成</a>」をご覧ください。</p></td>
 </tr>
 <tr class="even">
@@ -213,9 +213,9 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 <tr class="odd">
 <td align="left"><p>マトリックス型</p>
 <ul>
-<li>mat2: 2x2 浮動小数点マトリックス</li>
-<li>mat3: 3x3 浮動小数点マトリックス</li>
-<li>mat4: 4x4 浮動小数点マトリックス</li>
+<li>mat2:float の 2 × 2 の行列</li>
+<li>mat3:float の 3 x 3 行列</li>
+<li>mat4:4 x 4 float マトリックス</li>
 </ul></td>
 <td align="left"><p>マトリックス型</p>
 <ul>
@@ -299,7 +299,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 <p>このセマンティックは <strong>float4</strong> 型です。</p>
 <p>頂点シェーダーの出力</p>
 <p>頂点の位置</p>
-<p>例: float4 vPosition : SV_Position;</p></td>
+<p>たとえば、float4 vPosition:SV_Position;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_PointSize</strong></p>
@@ -321,7 +321,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 <p>このセマンティックは <strong>float4</strong> 型です。</p>
 <p>ピクセル シェーダーの出力</p>
 <p>ピクセルの色</p>
-<p>例: float4 Color[4] : SV_Target;</p></td>
+<p>例 - float4 色 [4]。SV_Target;</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragData[n]</strong></p>
@@ -340,7 +340,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 <p>このセマンティックは <strong>float4</strong> 型です。</p>
 <p>ピクセル シェーダーの入力</p>
 <p>画面領域の座標</p>
-<p>例: float4 screenSpace : SV_Position</p></td>
+<p>例 - float4 スクリーン空間。SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FrontFacing</strong></p>
@@ -363,7 +363,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 <p>VPOS は <strong>float2</strong> 型です。</p>
 <p>ピクセル シェーダーの入力</p>
 <p>画面領域のピクセルまたはサンプルの位置</p>
-<p>例: float4 pos : SV_Position</p></td>
+<p>たとえば、float4 pos:SV_Position</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>gl_FragDepth</strong></p>
@@ -562,7 +562,7 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ## <a name="related-topics"></a>関連トピック
 
 
-* [OpenGL ES 2.0 から Direct3D 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
+* [OpenGL ES 2.0 から Direct3D への移植 11](port-from-opengl-es-2-0-to-directx-11-1.md)
 
  
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c1b3a34ef329696d51e615dd79d57783a132d05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936812"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641357"
 ---
 # <a name="user-json"></a>User (JSON)
 ユーザーのランキング データが含まれています。 
@@ -21,19 +21,19 @@ ms.locfileid: "8936812"
  
 ## <a name="user"></a>ユーザー
  
-ユーザー オブジェクトには、次仕様があります。
+ユーザー オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| ゲーマータグ| string| (最大で 15 文字の) プレイヤーのゲーマータグです。 クライアントは、プレイヤーを識別するために、UI でこの値を使用する必要があります。| 
-| ランク| 32 ビット符号付き整数| ランキング データを要求しているユーザーを基準としたユーザーのランク。| 
-| rating| string| ユーザーの評価です。| 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) ユーザーのします。| 
+| ゲーマータグ| string| Player (15 文字の最大値) のゲーマータグです。 クライアントは、プレーヤーを識別するときに、UI にこの値を使用する必要があります。| 
+| ランク| 32 ビット符号付き整数| ランキング データを要求するユーザーを基準としたユーザーのランク。| 
+| rating| string| ユーザーの評価。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) のユーザー。| 
   
 <a id="ID4EMC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,6 +57,6 @@ ms.locfileid: "8936812"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

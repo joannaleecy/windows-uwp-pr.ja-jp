@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 85a6470a64ceef3b154384d1ca859fb28733aad3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944631"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632577"
 ---
 # <a name="usersxuidxuidscidsscidstatsstatnamepeopleallfavorite"></a>/users/xuid({xuid})/scids/{scid}/stats/{statname}/people/{all|favorite}
 ソーシャル (ランク付け) ランキングにアクセスします。
@@ -25,12 +25,12 @@ ms.locfileid: "8944631"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
 | xuid| string| ユーザーの識別子です。|
-| scid| string| アクセス対象のリソースが含まれているサービス構成の識別子です。|
-| statname| string| アクセス対象のユーザー統計リソースの一意の識別子。|
-| all\ | お気に入り| 列挙型| 現在のユーザーの既知のすべての連絡先や、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) の値、統計をランク付けするかどうか。|
+| scid| string| アクセスされるリソースを含むサービス構成の識別子です。|
+| statname| string| アクセスされているユーザーの統計リソースの一意の識別子。|
+| すべて\|お気に入り| 列挙| 現在のユーザーのすべての既知の連絡先またはお気に入りのユーザーとしてそのユーザーによって指定された連絡先のみ (スコア) の値、stat をランク付けするかどうか。|
 
 <a id="ID4EOC"></a>
 
@@ -39,7 +39,7 @@ ms.locfileid: "8944631"
 
 [GET (/users/xuid({xuid})/scids/{scid}/stats/{statname)/people/{all\|favorite})](uri-usersxuidscidstatnamepeopleget.md)
 
-&nbsp;&nbsp;ランキング、統計値は、すべての既知の連絡先の現在のユーザーや、そのユーザーのお気に入りユーザーとして指定された連絡先のみ (スコア) によって、ソーシャル ランキングを返します。
+&nbsp;&nbsp;順位付け、stat かすべての既知の連絡先、現在のユーザーまたはユーザーのお気に入りとしてそのユーザーによって指定された連絡先のみ (スコア) の値では、ソーシャル ランキングを返します。
 
 <a id="ID4EYC"></a>
 
@@ -51,4 +51,4 @@ ms.locfileid: "8944631"
 
 ##### <a name="parent"></a>Parent
 
-[ランキング URI](atoc-reference-leaderboard.md)
+[Uri のランキング](atoc-reference-leaderboard.md)

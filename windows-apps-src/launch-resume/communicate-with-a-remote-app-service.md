@@ -4,23 +4,23 @@ description: "\"Rome\" プロジェクトを使って、リモート デバイ�
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 接続されているデバイス、リモート システム、"rome"、"rome"プロジェクト、バック グラウンド タスク、アプリ サービス
+keywords: windows 10、uwp、接続されているデバイス、リモート システム、ローマ、プロジェクトのローマ、バック グラウンド タスク、アプリ サービス
 ms.localizationpriority: medium
 ms.openlocfilehash: ddadae05ca3243f9bbd6b53cbb98f234ac560acd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939460"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612937"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>リモート アプリ サービスとの通信
 
 URI を使ってリモート デバイスでアプリを起動するのに加えて、リモート デバイスでも*アプリ サービス*を実行して通信できます。 どの Windows ベースのデバイスでも、クライアント デバイス、またはホスト デバイスのいずれかとして使うことができます。 これにより、アプリをフォアグラウンドにしなくても、接続されているデバイスとやり取りする方法がほぼ無限になります。
 
 ## <a name="set-up-the-app-service-on-the-host-device"></a>ホスト デバイスでアプリ サービスをセットアップする
-リモート デバイスでアプリ サービスを実行するには、アプリ サービスのプロバイダーが既にそのデバイスにインストールされている必要があります。 このガイドでは、[ユニバーサル Windows アプリ サンプルのリポジトリ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)で入手可能な[乱数ジェネレーター アプリ サービス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)の CSharp バージョンを使います。 独自のアプリ サービスを記述する方法については、「[アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)」をご覧ください。
+リモート デバイスでアプリ サービスを実行するには、アプリ サービスのプロバイダーが既にそのデバイスにインストールされている必要があります。 このガイドでは、[ユニバーサル Windows アプリ サンプルのリポジトリ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)で入手可能な[乱数ジェネレーター アプリ サービス](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)の CSharp バージョンを使います。 独自のアプリ サービスを記述する方法については、「[アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)」を参照してください。
 
-既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 メインの**Application**要素内で**Extensions**要素を作ります (または方が既に存在する場合)。 アプリ サービスとして、プロジェクトを定義し、その親プロジェクトを参照する**拡張機能**を作成します。
+既製のアプリ サービスを使うか独自のアプリ サービスを記述するかにかかわらず、リモート システムとの互換性を確保するにはいくらかの編集を行う必要があります。 Visual Studio で、アプリ サービス プロバイダーのプロジェクト (サンプルでは「AppServicesProvider」と呼ばれます) に移動し、その _Package.appxmanifest_ ファイルを選びます。 右クリックして **[コードの表示]** を選び、ファイルの全内容を表示します。 作成、**拡張**、メインの内部要素**アプリケーション**要素 (または方が既に存在する場合)。 作成し、**拡張機能**を app service としてプロジェクトを定義し、その親プロジェクトを参照します。
 
 ``` xml
 ...
@@ -32,7 +32,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-**AppService**要素の横にある**SupportsRemoteSystems**属性を追加します。
+次に、 **AppService**要素を追加、 **SupportsRemoteSystems**属性。
 
 ``` xml
 ...
@@ -40,7 +40,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 ...
 ```
 
-この**uap3**名前空間の要素を使用するためにいない場合があります、マニフェスト ファイルの先頭に名前空間の定義を追加する必要があります。
+この要素を使用するには**uap3**名前空間、する必要があります追加する名前空間定義マニフェスト ファイルの上部にあるない場合。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,7 +53,7 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 </Package>
 ```
 
-アプリ サービス プロバイダー プロジェクトをビルドし、ホスト デバイスに展開します。
+アプリ サービスのプロバイダー プロジェクトをビルドし、ホスト デバイスに展開します。
 
 ## <a name="target-the-app-service-from-the-client-device"></a>クライアント デバイスからアプリ サービスをターゲットにする
 呼び出すリモート アプリ サービスの元となるデバイスには、リモート システム機能を備えたアプリが必要です。 これは、ホスト デバイスでアプリ サービスを提供する同じアプリに追加するか (この場合、両方のデバイスに同じアプリをインストールします)、完全に別のアプリに実装することができます。
@@ -86,8 +86,8 @@ URI を使ってリモート デバイスでアプリを起動するのに加え
 
 ## <a name="related-topics"></a>関連トピック
 
-[接続されるアプリやデバイス ("Rome" プロジェクト) の概要](connected-apps-and-devices.md)  
-[リモート アプリの起動](launch-a-remote-app.md)  
-[アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)  
-[リモート システムの API リファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[接続されているアプリとデバイス (プロジェクト ローマ) の概要](connected-apps-and-devices.md)  
+[リモート アプリを起動します。](launch-a-remote-app.md)  
+[App Service の作成と利用](how-to-create-and-consume-an-app-service.md)  
+[リモート システムの API のリファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)

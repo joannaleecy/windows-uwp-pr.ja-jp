@@ -1,19 +1,19 @@
 ---
-Description: Describes the landmarks and headings features of accessibility.
+Description: ユーザー補助のランドマークと見出しの機能について説明します。
 ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: ランドマークと見出し
 label: Landmarks and Headings
 template: detail.hbs
 ms.date: 01/24/2018
 ms.topic: article
-keywords: windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d81957c379bd948a50d08b980ff20debc6c223c5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927386"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611267"
 ---
 # <a name="landmarks-and-headings"></a>ランドマークと見出し
 

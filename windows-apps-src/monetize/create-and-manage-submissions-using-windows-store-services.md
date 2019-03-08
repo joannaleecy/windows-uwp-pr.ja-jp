@@ -1,22 +1,22 @@
 ---
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
-description: プログラムで作成およびパートナー センター アカウントに登録されているアプリの申請を管理するには、Microsoft Store 申請 API を使用します。
+description: プログラムで作成して、パートナー センター アカウントに登録されているアプリの提出を管理するには、Microsoft Store 送信 API を使用します。
 title: 申請の作成と管理
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049469"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613117"
 ---
 # <a name="create-and-manage-submissions"></a>申請の作成と管理
 
 
-プログラムで照会したり、アプリ、アドオン、および、自分または自分の組織のパートナー センター アカウントのパッケージ フライトの申請を作成するには、 *Microsoft Store 申請 API*を使用します。 この API は、アカウントで多数のアプリやアドオンを管理しており、こうしたアセットの申請プロセスを自動化および最適化する場合に便利です。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
+使用して、 *Microsoft Store 送信 API*または組織のパートナー センター アカウントのフライトをプログラムによってクエリを実行し、アプリ、アドオン、およびパッケージのサブミッションを作成します。 この API は、アカウントで多数のアプリやアドオンを管理していて、それらのアセットの申請プロセスを自動化して最適化する必要がある場合に役立ちます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
 この手順では、Microsoft Store 申請 API を使う場合のプロセスについて詳しく説明します。
 
@@ -27,29 +27,29 @@ ms.locfileid: "9049469"
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> この API を使用してアプリ、パッケージ フライト、アドオンの申請を作成する場合は、パートナー センターではなく、API を使用してのみ、申請にさらを変更することを確認します。 パートナー センターを使用して、API を使用して最初に作成した申請を変更する場合は、変更または API を使用して、その申請をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この問題が発生した場合は、申請を削除して、新しい申請を作成する必要があります。
+> この API を使用して、アプリの提出を作成すると、パッケージ、転送中、またはアドオンのパートナー センターではなく、API の使用によってのみ、送信をこれ以上を変更することを確認してがあります。 パートナー センターを使用して API を使用して作成した元の送信を変更する場合は、変更、または API を使用して送信をコミットすることはできなくなります。 場合によっては、申請がエラー状態のままになり、申請プロセスを進めることができなくなります。 この場合、申請を削除して新しい申請を作成する必要があります。
 
 > [!IMPORTANT]
-> この API を使って、[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開したり、[LOB アプリ](../publish/distribute-lob-apps-to-enterprises.md)の申請を直接企業に発行したりすることはできません。 使用する必要がありますの両方のシナリオには、パートナー センターで、申請を公開します。
+> この API を使って、[ビジネス向け Microsoft Store や教育機関向け Microsoft Store でのボリューム購入](../publish/organizational-licensing.md)の申請を公開したり、[LOB アプリ](../publish/distribute-lob-apps-to-enterprises.md)の申請を直接企業に発行したりすることはできません。 使用する必要がありますの両方のシナリオには、パートナー センターで、送信を発行します。
 
 > [!NOTE]
-> この API は、アプリの必須更新プログラムや Store で管理されるコンシューマブルなアドオンを使うアプリまたはアドオンでは使用できません。 このような機能のいずれかを使用するアプリまたはアドオンで Microsoft Store 申請 API を使うと、API から 409 エラー コードが返されます。 この例では、アプリやアドオンの申請を管理するのにパートナー センターを使用する必要があります。
+> この API は、アプリの必須更新プログラムや Store で管理されるコンシューマブルなアドオンを使うアプリまたはアドオンでは使用できません。 このような機能のいずれかを使用するアプリまたはアドオンで Microsoft Store 申請 API を使うと、API から 409 エラー コードが返されます。 この場合は、パートナー センターを使用して、アプリまたはアドオンの送信を管理する必要があります。
 
 <span id="prerequisites" />
 
-## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-submission-api"></a>手順 1. Microsoft Store 申請 API を使うための前提条件を満たす
+## <a name="step-1-complete-prerequisites-for-using-the-microsoft-store-submission-api"></a>手順 1:Microsoft Store 送信 API を使用するための前提条件
 
 Microsoft Store 申請 API を呼び出すコードの作成を開始する前に、次の前提条件が満たされていることを確認します。
 
-* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](https://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合、追加料金なしの[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)することができます。
+* ユーザー (またはユーザーの組織) は、Azure AD ディレクトリと、そのディレクトリに対する[全体管理者](https://go.microsoft.com/fwlink/?LinkId=746654)のアクセス許可を持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、追加料金なしに[パートナー センターで新しい Azure AD を作成](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)できます。
 
-* [Azure AD アプリケーションをパートナー センター アカウントに関連付ける](#associate-an-azure-ad-application-with-your-windows-partner-center-account)必要があり、ID、クライアント ID およびキー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
+* 必要があります[をパートナー センター アカウントを Azure AD アプリケーションに関連付ける](#associate-an-azure-ad-application-with-your-windows-partner-center-account)し、ID、クライアント ID とキー、テナントを取得します。 これらの値は、Microsoft Store 申請 API の呼び出しで使用する Azure AD アクセス トークンを取得するために必要です。
 
 * Microsoft Store 申請 API で使うアプリを準備します。
 
-  * パートナー センターでも、アプリがまだ存在しない場合は[パートナー センターでその名前を予約してアプリを作成](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)する必要があります。 パートナー センターにアプリを作成する、Microsoft Store 申請 API を使うことはできません。作成して、パートナー センターで作業する必要し、し、その後できる API を使用するアプリへのアクセスをプログラムでの申請を作成します。 ただし、API を使うと、アプリの申請を作成する前に、アドオンとパッケージ フライトをプログラムで作成できます。
+  * パートナー センターでも、アプリがまだ存在しない場合は、まず[パートナー センターで名前を予約して、アプリを作成する](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)します。 Microsoft Store 送信 API を使用して、パートナー センターでアプリを作成することはできません。作成して、パートナー センターで作業する必要がありますし、その後することができます、API を使用してアプリにアクセスし、その申請をプログラムで作成します。 ただし、API を使うと、アプリの申請を作成する前に、アドオンとパッケージ フライトをプログラムで作成できます。
 
-  * この API を使用して、特定のアプリの申請を作成する前にまず[パートナー センターで、アプリの 1 つの申請の作成](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を含む、[年齢区分](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)のアンケートへの回答する必要があります。 この操作の実行後、API を使ってこのアプリの新しい申請をプログラムで作成できるようになります。 アドオンの申請またはパッケージ フライトの申請を作成しなくても、このような申請に API を使うことができます。
+  * この API を使用して、特定のアプリの提出を作成する前にする必要があります[パートナー センターでアプリの 1 つのサブミッションを作成する](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)、応答を含む、[評価期間を表す](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)アンケートです。 この操作の実行後、API を使ってこのアプリの新しい申請をプログラムで作成できるようになります。 アドオンの申請またはパッケージ フライトの申請を作成しなくても、このような申請に API を使うことができます。
 
   * アプリの申請を作成または更新するときにアプリ パッケージを追加する必要がある場合は、[アプリ パッケージを準備](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)します。
 
@@ -61,14 +61,14 @@ Microsoft Store 申請 API を呼び出すコードの作成を開始する前�
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>Azure AD アプリケーションをパートナー センター アカウントに関連付ける方法
 
-Microsoft Store 申請 API を使用する前に、Azure AD アプリケーションをパートナー センター アカウントに関連付けるテナント ID とアプリケーションのクライアント ID を取得、キーを生成およびする必要があります。 Azure AD アプリケーションは、Microsoft Store 申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
+Microsoft Store 送信 API を使用する前に、Azure AD アプリケーションをパートナー センター アカウントに関連付けるテナント ID と、アプリケーションのクライアント ID を取得、キーを生成してください。 Azure AD アプリケーションは、Microsoft Store 申請 API の呼び出し元のアプリまたはサービスを表します。 テナント ID、クライアント ID、およびキーは、API に渡す Azure AD アクセス トークンを取得するために必要です。
 
 > [!NOTE]
 > この作業を行うのは一度だけです。 テナント ID、クライアント ID、キーがあれば、新しい Azure AD アクセス トークンの作成が必要になったときに、いつでもそれらを再利用できます。
 
-1.  パートナー センターで、[組織の Azure AD ディレクトリと、組織のパートナー センター アカウントに関連付けます](../publish/associate-azure-ad-with-partner-center.md)。
+1.  パートナー センターの[、組織の Azure AD ディレクトリと、組織のパートナー センター アカウントを関連付ける](../publish/associate-azure-ad-with-partner-center.md)します。
 
-2.  次に、パートナー センター、 [Azure AD アプリケーションの追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)を表す、アプリまたはサービスのパートナー センター アカウントの申請へのアクセスに使用する**アカウント設定**] セクションで、**ユーザー**ページから。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[新しいパートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。  
+2.  [次へ]、**ユーザー**ページで、**アカウント設定**パートナー センターの「[して Azure AD アプリケーションを追加](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)アプリを使用してサービスを表すパートナー センター アカウント用のサブミッションにアクセスします。 このアプリケーションに必ず**マネージャー** ロールを割り当てます。 アプリケーションが存在しない場合、Azure AD ディレクトリで実行できます[を新規作成パートナー センターで Azure AD アプリケーション](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)します。  
 
 3.  **[ユーザー]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[テナント ID]** と **[クライアント ID]** の値を書き留めます。
 
@@ -76,7 +76,7 @@ Microsoft Store 申請 API を使用する前に、Azure AD アプリケーシ�
 
 <span id="obtain-an-azure-ad-access-token" />
 
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2: Azure AD のアクセス トークンを取得する
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>手順 2:Azure AD アクセス トークンの取得
 
 Microsoft Store 申請 API のいずれかのメソッドを呼び出す前に、まず API の各メソッドの **Authorization** ヘッダーに渡す Azure AD アクセス トークンを取得する必要があります。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、トークンを更新してそれ以降の API 呼び出しで引き続き使用できます。
 
@@ -93,7 +93,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-POST URI と*client \_id*と*client \_secret*パラメーターで*tenant\_id*値、テナント ID、クライアント ID および前のセクションで、パートナー センターから取得したアプリケーションのキーを指定します。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
+*テナント\_id* POST URI の値と*クライアント\_id*と*クライアント\_シークレット*パラメーター、テナントの指定ID、クライアント ID、前のセクションで、パートナー センターから取得したアプリケーションのキー。 *resource* パラメーターには、```https://manage.devcenter.microsoft.com``` を指定します。
 
 アクセス トークンの有効期限が切れた後は、[この](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)手順に従って更新できます。
 
@@ -101,7 +101,7 @@ C#、Java、または Python コードを使ってアクセス トークンを�
 
 <span id="call-the-windows-store-submission-api">
 
-## <a name="step-3-use-the-microsoft-store-submission-api"></a>手順 3. Microsoft Store 申請 API を使用する
+## <a name="step-3-use-the-microsoft-store-submission-api"></a>手順 3:Microsoft Store 送信 API を使用して、
 
 Azure AD アクセス トークンを取得したら、Microsoft Store 申請 API のメソッドを呼び出すことができます。 この API には、アプリ、アドオン、パッケージ フライトのシナリオにグループ化される多くのメソッドが含まれています。 申請を作成または更新するには、通常、Microsoft Store 申請 API の複数のメソッドを特定の順序で呼び出します。 各シナリオと各メソッドの構文について詳しくは、次の表の記事をご覧ください。
 
@@ -110,9 +110,9 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 申請 AP
 
 | シナリオ       | 説明                                                                 |
 |---------------|----------------------------------------------------------------------|
-| アプリ |  パートナー センター アカウントに登録され、アプリの申請を作成するすべてのアプリのデータを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリ データの取得](get-app-data.md)</li><li>[アプリの申請の管理](manage-app-submissions.md)</li></ul> |
-| アドオン | アプリのアドオンを取得、作成、または削除した後、そのアドオンの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アドオンの管理](manage-add-ons.md)</li><li>[アドオンの申請の管理](manage-add-on-submissions.md)</li></ul> |
-| パッケージ フライト | アプリのパッケージ フライトを取得、作成、または削除した後、パッケージ フライトの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[パッケージ フライトの管理](manage-flights.md)</li><li>[パッケージ フライトの申請の管理](manage-flight-submissions.md)</li></ul> |
+| アプリ |  パートナー センター アカウントに登録され、アプリ用のサブミッションを作成するすべてのアプリのデータを取得します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アプリ データを取得します。](get-app-data.md)</li><li>[管理アプリを送信します。](manage-app-submissions.md)</li></ul> |
+| アドオン | アプリのアドオンを取得、作成、または削除した後、そのアドオンの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[アドオンを管理します。](manage-add-ons.md)</li><li>[アドオンの送信を管理します。](manage-add-on-submissions.md)</li></ul> |
+| パッケージ フライト | アプリのパッケージ フライトを取得、作成、または削除した後、パッケージ フライトの申請を取得、作成、または削除します。 これらのメソッドについて詳しくは、次の記事をご覧ください。 <ul><li>[パッケージのフライトを管理します。](manage-flights.md)</li><li>[パッケージのフライトの送信を管理します。](manage-flight-submissions.md)</li></ul> |
 
 <span id="code-samples"/>
 
@@ -120,18 +120,18 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 申請 AP
 
 次の記事では、さまざまなプログラミング言語で Microsoft Store 申請 API を使用する方法を示す詳しいコード例を紹介します。
 
-* [C# のコード例: アプリ、アドオン、およびフライトの申請](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [C# のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](csharp-code-examples-for-submissions-game-options-and-trailers.md)
-* [Java のコード例: アプリ、アドオン、およびフライトの申請](java-code-examples-for-the-windows-store-submission-api.md)
-* [Java のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](java-code-examples-for-submissions-game-options-and-trailers.md)
-* [Python のコード例: アプリ、アドオン、およびフライトの申請](python-code-examples-for-the-windows-store-submission-api.md)
-* [Python のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請](python-code-examples-for-submissions-game-options-and-trailers.md)
+* [C#サンプル: アプリ、アドオン、および便の送信](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C#サンプル: ゲーム オプションとトレーラーでアプリの提出](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java サンプル: アプリ、アドオン、および便の送信](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java サンプル: ゲーム オプションとトレーラーでアプリの提出](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python のサンプル: アプリ、アドオン、および便の送信](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python のサンプル: ゲーム オプションとトレーラーでアプリの提出](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell モジュール
 
 Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコマンド ライン インターフェイスを実装するオープンソースの PowerShell モジュールも用意されています。 このモジュールは、[StoreBroker](https://aka.ms/storebroker) と呼ばれています。 このモジュールを使うと、Microsoft Store 申請 API を直接呼び出さずに、コマンド ラインからアプリ、フライト、アドオンの申請を管理できます。また、ソースを参照して、この API を呼び出す方法の例を確認することもできます。 StoreBroker モジュールは、多くのファースト パーティ アプリケーションをストアに申請する主要な方法として Microsoft 内で積極的に使っています。
 
-詳しくは、[GitHub の StoreBroker のページ](https://aka.ms/storebroker)をご覧ください。
+詳しくは、[GitHub の StoreBroker に関するページ](https://aka.ms/storebroker)をご覧ください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -144,13 +144,13 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 Microsoft Store 申請 API について質問がある場合や、この API を使った申請の管理に関してサポートが必要な場合は、次のリソースを使ってください。
 
 * Microsoft の[フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)で質問します。
-* 当社の[サポート ページ](https://developer.microsoft.com/windows/support)を参照してください。 し、パートナー センターのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
+* 参照してください、[サポート ページ](https://developer.microsoft.com/windows/support)とパートナー センターのサポート オプションのいずれかを要求します。 問題の種類とカテゴリを選択するよう求められた場合は、**[App submission and certification]** (アプリの申請と認定) と **[Submitting an app]** (アプリの申請) をそれぞれ選択します。  
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アプリ データの取得](get-app-data.md)
-* [アプリの申請の管理](manage-app-submissions.md)
-* [アドオンの管理](manage-add-ons.md)
-* [アドオンの申請の管理](manage-add-on-submissions.md)
-* [パッケージ フライトの管理](manage-flights.md)
-* [パッケージ フライトの申請の管理](manage-flight-submissions.md)
+* [アプリ データを取得します。](get-app-data.md)
+* [管理アプリを送信します。](manage-app-submissions.md)
+* [アドオンを管理します。](manage-add-ons.md)
+* [アドオンの送信を管理します。](manage-add-on-submissions.md)
+* [パッケージのフライトを管理します。](manage-flights.md)
+* [パッケージのフライトの送信を管理します。](manage-flight-submissions.md)

@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, プレイヤーの統計, 統計 2017
 ms.localizationpriority: medium
 ms.openlocfilehash: d5b37c008e6aa719b641321c5e5a1c3360b20786
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937131"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631827"
 ---
 # <a name="updating-stats-2017"></a>統計の更新 2017
 
 統計を更新するには、`StatsManager` API (後で説明します) を使用して Xbox Live サービスに最新の値を送信します。
 
-プレイヤーの統計を追跡するかどうかは、タイトルに応じて決めることができます。また、統計を必要に応じて更新するには `StatsManager` を呼び出します。  `StatsManager` は、あらゆる変更をバッファリングして、定期的にサービスにフラッシュします。  タイトルでは、手動でフラッシュすることもできます。
+プレイヤーの統計を追跡するかどうかは、タイトルに応じて決めることができます。また、統計を必要に応じて更新するには `StatsManager` を呼び出します。  `StatsManager` 変更をバッファリングしてから、サービスに定期的にフラッシュされます。  タイトルでは、手動でフラッシュすることもできます。
 
 > [!NOTE]
-> 統計を頻繁にフラッシュ避けてください。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
+> 多くの統計をフラッシュされません。  頻繁にフラッシュすると、タイトルのレートが制限されます。  多くても 5 分に 1 回フラッシュすることが、ベスト プラクティスです。
 
 ### <a name="multiple-devices"></a>複数のデバイス
 
@@ -83,9 +83,9 @@ statEvent = statManager.DoWork();
 
 統計は、関数の `stats_manager::set_stat` ファミリを使用して書き込みます。  この関数には、データ型に応じて次の 3 つのバリエーションがあります。
 
-* `set_stat_number` (浮動小数点型の場合)。
-* `set_stat_integer` (整数型の場合)。
-* `set_stat_string` (文字列型の場合)。
+* `set_stat_number` 浮動小数点数。
+* `set_stat_integer` 整数の場合。
+* `set_stat_string` 文字列。
 
 これらの関数を呼び出すとき、統計の更新はデバイスでローカルにキャッシュされ、  定期的に Xbox Live にフラッシュされます。
 
@@ -107,7 +107,7 @@ statManager.DoWork();
 
 一人称視点のシューティング ゲームをプレイしているとします。  対戦が行われている間、次の統計を蓄積します。
 
-| 統計の名前 | 形式 |
+| 統計の名前 | 表記 |
 |-----------|--------|
 | ラウンドあたりの最高撃墜数 | 整数型 |
 | 全体の時間における撃墜数 | 整数型 |
@@ -119,7 +119,7 @@ statManager.DoWork();
 対戦が終了するときに、以下を実行します。
 1. ラウンドでの撃墜数と前回の最高記録を比較します。  今回の方が値が大きい場合は、`StatsManager` を更新します。
 2. 全体の時間における撃墜数と死亡数を新しい値で更新し、`StatsManager` を更新します。
-3. 撃墜数を死亡数で除算した割合を計算し、次を更新します:  `StatsManager`
+3. 阻害される/せましたを計算および更新 `StatsManager`
 
 手順 1 と 2 では、以前の統計値を知っておく必要があります。  以前の統計値を取得するベスト プラクティスについては、上記のセクションをご覧ください。
 

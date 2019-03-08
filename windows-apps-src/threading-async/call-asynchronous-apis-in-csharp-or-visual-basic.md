@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、UWP、C#、Visual Basic、非同期
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940948"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632617"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>C# または Visual Basic での非同期 API の呼び出し
 
@@ -38,16 +38,16 @@ ms.locfileid: "8940948"
 
 この例には、いくつかの重要なポイントがあります。 まず、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の行では、非同期メソッド [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出す際に、**await** 演算子が使われています。 **await** 演算子は、非同期メソッドを呼び出していることをコンパイラに伝えていると考えることができます。これにより、コンパイラが追加作業を行うようになります。 もう 1 つは、イベント ハンドラーの宣言に **async** というキーワードが含まれている点です。 **await** 演算子を使うメソッドのメソッド宣言には、このキーワードを含める必要があります。
 
-このトピックでは、コンパイラでの **await** 演算子の処理方法については詳しく取り上げませんが、非同期で応答性を保つためにアプリが何を行っているか説明していきます。 同期コードを使った場合はどうなるか考えてみましょう。 たとえば、同期の `SyndicationClient.RetrieveFeed` というメソッドがあるとします  (このようなメソッドは存在しませんが、ここではあると仮定します)。アプリに `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` という行ではなく `SyndicationFeed feed = client.RetrieveFeed(feedUri)` という行が含まれている場合は、`RetrieveFeed` の戻り値が使用可能になるまで、アプリの実行が停止します。 アプリは、このメソッドが完了するのを待機している間、他のイベント (別の [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベントなど) には応答できません。 つまり、`RetrieveFeed` が戻るまで、アプリはブロックされます。
+このトピックでは、コンパイラでの **await** 演算子の処理方法については詳しく取り上げませんが、非同期で応答性を保つためにアプリが何を行っているか説明していきます。 同期コードを使った場合はどうなるか考えてみましょう。 たとえば、同期の `SyndicationClient.RetrieveFeed` というメソッドがあるとします  (このようなメソッドはありませんがあることを想像してください)。アプリには、行が含まれている場合`SyndicationFeed feed = client.RetrieveFeed(feedUri)`の代わりに`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)`、アプリの実行の戻り値まで停止`RetrieveFeed`は使用できます。 アプリは、このメソッドが完了するのを待機している間、他のイベント (別の [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベントなど) には応答できません。 つまり、`RetrieveFeed` が戻るまで、アプリはブロックされます。
 
-しかし、`client.RetrieveFeedAsync` メソッドは、呼び出されると、取得を開始して直ちに戻ります。 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) と一緒に **await** を使うと、アプリが一時的にイベント ハンドラーを終了します。 このとき、**RetrieveFeedAsync** を非同期で実行しながら、他のイベントを処理することができます。 これにより、アプリの応答性が維持されます。 **RetrieveFeedAsync** が完了し、[**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) が使用可能になると、アプリは、実質的に中断したイベント ハンドラーに戻り、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の後の残りのメソッドを完了します。
+しかし、`client.RetrieveFeedAsync` メソッドは、呼び出されると、取得を開始して直ちに戻ります。 [  **RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) と一緒に **await** を使うと、アプリが一時的にイベント ハンドラーを終了します。 このとき、**RetrieveFeedAsync** を非同期で実行しながら、他のイベントを処理することができます。 これにより、アプリの応答性が維持されます。 **RetrieveFeedAsync** が完了し、[**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) が使用可能になると、アプリは、実質的に中断したイベント ハンドラーに戻り、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の後の残りのメソッドを完了します。
 
 **await** 演算子を使うメリットは、架空の `RetrieveFeed` メソッドを使った場合のコードとそれほど違いがないという点です。 C# または Visual Basic で **await** 演算子を使わずに非同期コードを記述する方法もありますが、このようなコードでは、非同期で実行するしくみに重点が置かれる傾向があります。 これにより、非同期コードが記述しづらく、わかりにくく、保守しにくいものになります。 **await** 演算子を使うことによって、コードが複雑になることなく、非同期アプリのメリットを享受できます。
 
 ## <a name="return-types-and-results-of-asynchronous-apis"></a>戻り値の型と非同期 API の結果
 
 
-[**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) へのリンクをたどると、**RetrieveFeedAsync** の戻り値の型が [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) ではないことがわかると思います。 戻り値の型は、`IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>` になります。 構文そのものを見ると、非同期 API は結果を含むオブジェクトを返します。 非同期メソッドが待機可能であると考えることは一般的であり、有用な場合もありますが、**await** 演算子は、実際にはメソッドではなくメソッドの戻り値を制御します。 **await** 演算子を適用すると、メソッドによって返されるオブジェクトの **GetResult** を呼び出した結果が取得されます。 この例では、**SyndicationFeed** は **RetrieveFeedAsync.GetResult()** の結果です。
+[  **RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) へのリンクをたどると、**RetrieveFeedAsync** の戻り値の型が [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) ではないことがわかると思います。 戻り値の型は、`IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>` になります。 構文そのものを見ると、非同期 API は結果を含むオブジェクトを返します。 非同期メソッドが待機可能であると考えることは一般的であり、有用な場合もありますが、**await** 演算子は、実際にはメソッドではなくメソッドの戻り値を制御します。 **await** 演算子を適用すると、メソッドによって返されるオブジェクトの **GetResult** を呼び出した結果が取得されます。 この例では、**SyndicationFeed** は **RetrieveFeedAsync.GetResult()** の結果です。
 
 非同期メソッドを使うと、シグネチャを調べて、メソッドから返される値を待機した後でどのようなデータを取得したかを確認することができます。 UWP の各非同期 API は、次のいずれかの型を返します。
 
@@ -62,11 +62,11 @@ ms.locfileid: "8940948"
 
 | 非同期メソッド                                                                           | 戻り値の型                                                                                                                                        | 結果の型                                       |
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
+| [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed、RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)、カスタムの結果を実装するクラス**IAsyncOperation&lt;UInt32&gt;** | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
@@ -79,7 +79,7 @@ ms.locfileid: "8940948"
 
 非同期メソッドが他の非同期メソッドを呼び出している場合は、例外が発生した非同期メソッドが外側のメソッドに伝達されます。 つまり、最も外側のメソッドで **try/catch** ブロックを使うと、入れ子になっている非同期メソッドのエラーをキャッチできます。 これも、同期メソッドで例外をキャッチする方法と同様です。 ただし、**catch** ブロックで **await** を使うことはできません。
 
-**ヒント:** 以降では、Microsoft Visual Studio2005 c# では、 **await**で使える**catch**ブロックします。
+**ヒント:**  以降C#Microsoft Visual Studio 2005 で使用できます**await**で、**キャッチ**ブロック。
 
 ## <a name="summary-and-next-steps"></a>要約と次のステップ
 

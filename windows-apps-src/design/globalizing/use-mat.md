@@ -1,5 +1,5 @@
 ---
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: Microsoft Visual Studio 2017 には多言語アプリ ツールキット (MAT) 4.0 が統合されています。そのため、UWP アプリで翻訳がサポートされ、翻訳ファイルを管理したり、エディター ツールを利用したりできます。
 title: 多言語アプリ ツールキットの使用
 template: detail.hbs
 ms.date: 01/23/2018
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, グローバリゼーション, ローカライズの可否, ローカライズ
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047617"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610117"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>多言語アプリ ツールキット 4.0 の使用
 
@@ -28,17 +28,17 @@ Microsoft Visual Studio 2017 には多言語アプリ ツールキット (MAT) 4
 
 ### <a name="step-1-design-your-app-for-globalization-and-localization"></a>手順 1. グローバリゼーションとローカライズのためのアプリの設計
 
-多言語アプリ ツールキットを効果的に使用する前に、まずアプリをローカライズする必要があります。 具体的には、プロジェクトには、既定の言語でのアプリの文字列を含む 1 つまたは複数のリソース ファイル (.resw) を含める必要があります。 詳細については、[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md) を参照してください。 処理が完了したら、ツールキットにより、言語を迅速かつ簡単に追加できます。
+多言語アプリ ツールキットを効果的に使用する前に、まずアプリをローカライズする必要があります。 具体的には、プロジェクトには、既定の言語でのアプリの文字列を含む 1 つまたは複数のリソース ファイル (.resw) を含める必要があります。 詳細については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)」を参照してください。 処理が完了したら、ツールキットにより、言語を迅速かつ簡単に追加できます。
 
 グローバリゼーションとローカライズの価値提案のほか、**グローバリゼーション**、**ローカライズの可否**、**ローカライズ** という用語の定義については、「[グローバリゼーションとローカライズ](globalizing-portal.md)」を参照してください。
 
 「[グローバリゼーションのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)」と「[アプリをローカライズ可能にする](prepare-your-app-for-localization.md)」も参照してください。
 
-### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>手順 2. 多言語アプリ ツールキット 4.0 のダウンロードおよびインストール
+### <a name="step-2-download-and-install-the-multilingual-app-toolkit-40"></a>手順 2.  多言語アプリ ツールキット 4.0 のダウンロードおよびインストール
 
 多言語アプリ ツールキット 4.0 (MAT 4.0) は 2 つの部分から構成され、それぞれ独自のインストーラーがあります。
 
-- [Microsoft Visual Studio2017 向け多言語アプリ ツールキット 4.0](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). これにより、.vsix インストーラーの形式で、Visual Studio 2017 の MAT 4.0 の拡張子が含まれます。
+- [Microsoft Visual Studio 2017 向け多言語アプリ ツールキット 4.0](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). これにより、.vsix インストーラーの形式で、Visual Studio 2017 の MAT 4.0 の拡張子が含まれます。
 - [多言語アプリ ツールキット 4.0 エディター](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). これには、.msi インストーラーの形式で、MAT 4.0 のスタンドアロン多言語エディター ツールが含まれています。 Visual Studio 2015 と Visual Studio 2013 の MAT 4.0 拡張機能も含まれます。
 
 Visual Studio 2017 を使用している場合は、両方のインストーラーをダウンロードし、1 つずつ実行します。 Visual Studio 2015 または Visual Studio 2013 を使用している場合は、.msi インストーラーをダウンロードして実行します。
@@ -97,7 +97,7 @@ Visual Studio 2017 を使用している場合は、両方のインストーラ�
 "Hello World" -> "Ĥèĺļõ Ŵòŗłđ" -> "[!!_Ĥèĺļõ Ŵòŗłđ_!!]" -> "[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]"
 ```
 
-### <a name="step-6-translate-your-app-into-selected-languages"></a>手順 6. 選んだ言語へのアプリの翻訳
+### <a name="step-6-translate-your-app-into-selected-languages"></a>手順 6.  選んだ言語へのアプリの翻訳
 
 多言語アプリ ツールキットは、ビルド プロセスに統合されています。 ビルド時に、更新された文字列が各言語の .xlf ファイルに自動で追加されます。
 擬似言語を使ってアプリをテストした後は、アプリをリリース用言語に翻訳します。その方法には 3 種類あります。
@@ -119,9 +119,9 @@ Visual Studio 2017 を使用している場合は、両方のインストーラ�
 
 翻訳と編集の作業をローカライズ業者に委託するには、ソリューション エクスプローラーで必要な .xlf ファイルを選択して右クリックし、**[多言語アプリ ツールキット]** > **[Export translations...]** (翻訳をエクスポート...) をクリックします。
 
-[エクスポート] 文字列リソース ダイアログで **[Output: Mail recipient]** (出力: メール受信者) を選択して [OK] をクリックすると、ファイルが圧縮されて新しいメールに添付されます。 **[Output: File folder location]** (出力: ファイル フォルダーの場所) を選択し、フォルダーを参照して [OK] をクリックします。必要に応じて、圧縮するファイルを選択し、もう一度 [OK] をクリックします。ファイルが圧縮されて、プロジェクトの名前が付いた新しいフォルダー内の選択した場所に保存されます。
+選択**出力。メールの宛先**エクスポート文字列リソースのダイアログ ボックスをクリックして、ok をクリックし、ファイルは圧縮し、新しいメールに添付します。 選択**出力。ファイル フォルダーの場所**、ブラウザー フォルダーとクリックを必要に応じて用に選択ファイルを圧縮するには、[ok] を再度クリックし、ファイル (zip 形式と)、プロジェクトの名前が付いた新しいフォルダーの中に、選択した場所に保存します。
 
-ローカライズ担当者が翻訳作業を完了して翻訳済みの xlf ファイルが送られてきたら、それをプロジェクトにインポートすることができます。 ソリューション エクスプローラーで必要な .xlf ファイルを選択して右クリックし、**[多言語アプリ ツールキット]** > **[Import/recycle translations...]** (翻訳のインポート/再使用) を順にクリックします。**[追加]** をクリックして .xlf または .zip ファイルに移動し、**[インポート]** をクリックします。
+ローカライズ担当者が翻訳作業を完了して翻訳済みの xlf ファイルが送られてきたら、それをプロジェクトにインポートすることができます。 ソリューション エクスプ ローラーで目的の .xlf ファイルを選択し、右クリック、をクリックして**Multilingual App Toolkit** > **翻訳のインポート/リサイクルしています.**.クリックして**追加**、.xlf または .zip ファイルに移動し、クリックして、**インポート**します。
 
 **注** インポート前にはインポート プロセスによって基本事項が検証されます。 これは、インポートするファイル内の対象となるカルチャ情報が現在の .xlf ファイルのカルチャ情報と一致することを確認するためのものです。
 
@@ -152,7 +152,7 @@ Visual Studio 内で翻訳サービスにアクセスするには、ソリュー
 - [Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295) プロバイダーは、Microsoft の製品やサービスのユーザー インターフェイス テキストの翻訳に基づいて、翻訳のリサイクルおよび用語の検索を可能にします。
 - [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) プロバイダーは、オンデマンドの機械翻訳サービスを実現します。
 
-多言語エディターでは、翻訳に確信が持てない箇所を後で確認できるよう、翻訳の状態を管理することができます。 **[プロパティ]** タブで各文字列の状態を設定することができます。状態の値は **[New]** (未翻訳)、**[Needs review]** (要確認)、**[Translated]** (翻訳済み)、**[Final]** (最終版)、**[Signed off]** (承認) です。 行の左にあるインジゲーターに状態が示されます。 多言語エディターですべての行が緑色になれば、翻訳作業は終了となります。
+多言語エディターでは、翻訳に確信が持てない箇所を後で確認できるよう、翻訳の状態を管理することができます。 各文字列の状態を設定することができます、**プロパティ**タブ。状態値は次のとおりです。**新しい**、 **Needs review**、**翻訳**、**最終的な**、および**サインオフ**します。 行の左にあるインジゲーターに状態が示されます。 多言語エディターですべての行が緑色になれば、翻訳作業は終了となります。
 
 翻訳された文字列が、編集した .xlf ファイルに対応するリソース ファイル (.resw) にコピーされるようにプロジェクトをリビルドします。
 
@@ -162,18 +162,18 @@ Microsoft Store の認定プロセスを開始する前に、`<project-name>.qps
 
 ## <a name="related-topics"></a>関連トピック
 
-* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../app-resources/localize-strings-ui-manifest.md)
 * [グローバリゼーションとローカライズ](globalizing-portal.md)
-* [グローバリゼーションのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)
-* [アプリをローカライズ可能にする](prepare-your-app-for-localization.md)
-* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [グローバル化するためのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)
+* [ローカライズ可能なアプリを作成します。](prepare-your-app-for-localization.md)
+* [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>ダウンロード
 
-* [多言語アプリ ツールキット 4.0 .vsix インストーラー](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
-* [多言語アプリ ツールキット 4.0 .msi インストーラー](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
+* [Multilingual App Toolkit 4.0 .vsix インストーラー](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)
+* [Multilingual App Toolkit 4.0 .msi インストーラー](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit)
 
 ## <a name="translation-services"></a>翻訳サービス
 
-* [Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator ](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft ランゲージ ポータル](https://go.microsoft.com/fwlink/p/?LinkId=330295)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)

@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b4bfd6e51efce4c6ec85db99a10a44a776dcb840
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947713"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617847"
 ---
 # <a name="game-dvr-uris"></a>ゲーム DVR URI
  
-このセクションでは、*ゲーム DVR*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスおよび関連付けられているハイパー テキスト転送プロトコル (HTTP) メソッドの詳細を提供の Xbox Live サービスから*ゲーム録画*します。
  
-本体のみが、ゲーム クリップを記録できますにアクセスできる任意のデバイスにクリップを表示できます。
+コンソールのみが、ゲームのクリップを記録できますが、アクセスできる任意のデバイスは、クリップを表示できます。
  
-対象の URI の関数をに応じてにはこれらの Uri のドメインです。
+対象の URI の関数によっては、これらの Uri のドメイン。
  
    *  gameclipsmetadata.xboxlive.com 
    *  gameclipstransfer.xboxlive.com 
@@ -32,27 +32,27 @@ ms.locfileid: "8947713"
 
 [/public/scids/{scid}/clips](uri-publicscidclips.md)
 
-&nbsp;&nbsp;クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。
+&nbsp;&nbsp;クリップをパブリックにアクセスします。 この URI 実際に指定できます 2 つの形式で`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。
 
 [/{uri}](uri-uri.md)
 
-&nbsp;&nbsp;ゲーム クリップ データにアクセスします。
+&nbsp;&nbsp;クリップのゲーム データにアクセスします。
 
 [/users/me/scids/{scid}/clips](uri-usersmescidclips.md)
 
-&nbsp;&nbsp;最初のアクセスは、要求をアップロードします。
+&nbsp;&nbsp;初期のアクセスは、要求をアップロードします。
 
 [/users/me/scids/{scid}/clips/{gameClipId}](uri-usersmescidclipsgameclipid.md)
 
-&nbsp;&nbsp;ゲーム クリップ データへのアクセスとメタデータ。
+&nbsp;&nbsp;ゲームのクリップのデータ アクセスとメタデータ。
 
 [/users/{ownerId}/clips](uri-usersowneridclips.md)
 
-&nbsp;&nbsp;ユーザーのクリップのアクセスの一覧です。
+&nbsp;&nbsp;ユーザーのクリップのアクセス リスト。
 
 [/users/{ownerId}/scids/{scid}/clips/{gameClipId}](uri-usersowneridscidclipsgameclipid.md)
 
-&nbsp;&nbsp;すべての Id を見つけることがわかっている場合はシステムから 1 つのゲーム クリップにアクセスします。
+&nbsp;&nbsp;特定するすべての Id がわかっている場合は、ゲームの 1 つのクリップをシステムからアクセスします。
  
 <a id="ID4EOC"></a>
 
@@ -64,6 +64,6 @@ ms.locfileid: "8947713"
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

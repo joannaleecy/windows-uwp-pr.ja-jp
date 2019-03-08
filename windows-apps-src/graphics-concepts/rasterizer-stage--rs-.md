@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 499d361bddbecef50ee8cdf44b56530a98cfccd1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936122"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627587"
 ---
 # <a name="rasterizer-rs-stage"></a>ラスタライザー (RS) ステージ
 
 
 ラスタライザーは、表示されないプリミティブをトリミングし、[ピクセル シェーダー (PS) ステージ](pixel-shader-stage--ps-.md)用にプリミティブを準備して、ピクセル シェーダーを呼び出す方法を決定します。 ラスター化ステージは、リアルタイム 3D グラフィックスを表示するために、(図形やプリミティブで構成された) ベクター情報を (ピクセルで構成された) ラスター画像に変換します。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と用途
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と使用
 
 
 ラスター化時には、各プリミティブがピクセルに変換され、各プリミティブでは頂点単位の値が補間されます。 ラスター化では、視錘台に対する頂点のクリッピング、パースペクティブを求めるための z での除算、2D ビューポートへのプリミティブのマッピング、およびピクセル シェーダーの呼び出し方法の決定などが行われます。 ピクセル シェーダーの使用は省略できますが、ラスタライザー ステージでは常に、クリッピング、点を同次空間に変換するための透視除算、およびビューポートへの頂点のマッピングが実行されます。
@@ -45,7 +45,7 @@ ms.locfileid: "8936122"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ラスター化ルール](rasterization-rules.md)
+[ラスタライズ ルール](rasterization-rules.md)
 
 [グラフィックス パイプライン](graphics-pipeline.md)
 

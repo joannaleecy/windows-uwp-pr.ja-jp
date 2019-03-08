@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 接続ストレージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 40ad13e46e074154d72d7aad236747c3374110ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920428"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639057"
 ---
 # <a name="connected-storage"></a>接続ストレージ
 接続ストレージは、複数のデバイス間でローミングされる必要があるゲームプレイ データや他の関連するアプリの状態データをタイトルが保存できるように設計されています。 接続ストレージ API を使うと、Xbox One とユニバーサル Windows プラットフォーム (UWP) のタイトルが、ローカルに保存されているタイトル データを保存、読み込み、削除できるようになるだけでなく、Xbox One または UWP タイトルがインターネットに接続されている場合は常にクラウドと同期されます。 保存されたデータは、同期されるとタイトルを実行する他のデバイスで利用できるようになります。 外出中でも最良の形でゲームをプレイできるように、開発者にはタイトルの状態をできる限り正確に保存することをお勧めします。 接続ストレージを利用すると、自宅でゲームのプレイを進めた後、同じゲームをサポートする他のデバイスで、ちょうどゲームを中断した場所から再開できるようになります。
@@ -60,24 +60,24 @@ SubmitUpdatesAsync を使用する個々の保存処理では、一度に 16 MB 
 
 2 つの接続ストレージ API の他の違いについて詳しくは、「[XDK から UWP への Xbox Live コードの移植](../../using-xbox-live/porting-xbox-live-code-from-xdk-to-uwp.md)」の「接続ストレージ」をご覧ください。
 
-XDK .chm ファイルで説明されている XDK 接続ストレージ API は、パス **Xbox ONE XDK >> API リファレンス >> プラットフォーム API リファレンス >> システム API リファレンス >> Windows.Xbox.Storage** にあります。
+パスの下の XDK .chm ファイルに記載されている XDK 接続されている Storage Api を確認できます。**1 つの XDK Xbox >> API リファレンス >> プラットフォーム API のリファレンス >> システム API リファレンス >> Windows.Xbox.Storage**します。
 XDK API については、[developer.microsoft.com サイト](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n)でも説明されています。
 XDK API へのリンクを開くには、Xbox 開発キット (XDK) へのアクセスが有効になっている Microsoft アカウント (MSA) が必要です。
 Windows.Xbox.Storage は、Xbox One 本体の接続ストレージ名前空間の名前です。
 
-Xbox Live SDK .chm ファイルで説明されている UWP 接続ストレージ API は、パス **Xbox Live API >> Xbox Live Platform Extensions SDK API リファレンス >> Windows.Gaming.XboxLive.Storage** にあります。
+UWP 接続されているストレージ Api、Xbox Live SDK の .chm ファイル、パスの下に記載されている可能性があります。**Xbox Live Api >> Xbox Live プラットフォーム拡張機能 SDK の API リファレンス >> Windows.Gaming.XboxLive.Storage**します。
 UWP 接続ストレージ API については、オンラインの [Windows.Gaming.XboxLive.Storage 名前空間参照に関するページ](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage)もご覧ください。
 Windows.Gaming.XboxLive.Storage は、UWP アプリの接続ストレージ名前空間の名前です。
 
-接続ストレージを使い始めるには、接続ストレージ*領域*を取得する必要があります。 接続ストレージ領域は、ユーザーまたはコンピューターに関連付けられ、そのユーザーまたはコンピューターに関連付けられているすべての接続ストレージ データを*コンテナー*および *BLOB* の形式で保持しています。 コンピューターまたはユーザーの接続ストレージ領域を取得すると、そのエンティティが格納されているデータへの読み取り/書き込みアクセスが可能になります。 接続ストレージ領域を取得するため、XDK タイトルと UWP タイトルの両方が `GetForUserAsync` メソッドを呼び出します。XDK タイトルは `GetForMachineAsync` メソッドを呼び出すこともあります。UWP タイトルは `GetForMachineAsync` を呼び出すことができなくなります。 `GetForUserAsync` と `GetForMachineAsync` は、XDK の `ConnectedStorageSpace` クラスに含まれています。 `GetForUserAsync` は、UWP API の `GameSaveProvider` クラスに含まれています。 これらのメソッドは、特にユーザーがあるデバイス上でデータを保存しており、別のデバイス上で初めてゲームプレイを再開する場合に、実行時間が長くなる可能性があります。 `GetForUserAsync` は、ユーザーの接続ストレージ領域を取得します。これを使って、コンテナーの作成、アクセス、削除を実行できます。
+接続ストレージを使い始めるには、接続ストレージ*領域*を取得する必要があります。 接続ストレージ領域は、ユーザーまたはコンピューターに関連付けられ、そのユーザーまたはコンピューターに関連付けられているすべての接続ストレージ データを*コンテナー*および *BLOB* の形式で保持しています。 コンピューターまたはユーザーの接続ストレージ領域を取得すると、そのエンティティが格納されているデータへの読み取り/書き込みアクセスが可能になります。 接続ストレージ領域を取得するため、XDK タイトルと UWP タイトルの両方が `GetForUserAsync` メソッドを呼び出します。XDK タイトルは `GetForMachineAsync` メソッドを呼び出すこともあります。UWP タイトルは `GetForMachineAsync` を呼び出すことができなくなります。 `GetForUserAsync` `GetForMachineAsync`に含まれる、 `ConnectedStorageSpace` xdk クラス。 `GetForUserAsync` 含まれている、 `GameSaveProvider` UWP API のクラス。 これらのメソッドは、特にユーザーがあるデバイス上でデータを保存しており、別のデバイス上で初めてゲームプレイを再開する場合に、実行時間が長くなる可能性があります。 `GetForUserAsync` 接続されている記憶域スペースの作成、アクセス、およびコンテナーを削除し、使用できるユーザーを取得します。
 
 コンテナーを作成したり、以前に作成したコンテナーにアクセスするには、`ConnectedStorageSpace` または `GameSaveProvider` クラスの `CreateContainer` 関数を呼び出します。これにより、コンテナーの作成に使用された `ConnectedStorageSpace` または `GameSaveProvider` に関連付けられているユーザーまたはコンピューターの名前付きコンテナーにアクセスできるようになります。 `ConnectedStorageSpace` クラスと `GameSaveProvider` クラスには、`DeleteContainerAsync` 関数も含まれています。この関数を使うと、削除するコンテナーの名前を指定すればコンテナーを削除できます。
 
-コンテナー内の BLOB を更新するには、XDK の `ConnectedStorageContainer` クラスまたは UWP API の `GameSaveContainer` クラスで `SubmitUpdatesAsync` を呼び出します。 `SubmitUpdatesAsync` を使うと、BLOB に書き込むデータとしての名前とバッファーのリスト、削除する BLOB 名のリスト、呼び出し元セーブ コンテナーの表示名を指定できます。 これは、接続ストレージ領域でデータを更新するために最終的に呼び出す必要のある関数です。
+コンテナー内の BLOB を更新するには、XDK の `ConnectedStorageContainer` クラスまたは UWP API の `GameSaveContainer` クラスで `SubmitUpdatesAsync` を呼び出します。 `SubmitUpdatesAsync` コンテナーは、blob に書き込まれるデータとしての名前とバッファーのリストを提供することができます、削除する blob の名前の一覧と、呼び出し元の表示名から保存します。 これは、接続ストレージ領域でデータを更新するために最終的に呼び出す必要のある関数です。
 
-接続ストレージ API の使用例については、接続ストレージに関する記事 ([データの保存](connected-storage-saving.md)
-[データの読み込み](connected-storage-loading.md)
-[データの削除](connected-storage-deleting.md)) をご覧ください。
+使用中に、接続されているストレージ Api の例を参照して、次の記憶域の接続されている記事を参照してください。[データの保存](connected-storage-saving.md)
+[データを読み込む](connected-storage-loading.md)
+[データの削除](connected-storage-deleting.md)
 
 > [!NOTE]
 > セキュリティ メモ:

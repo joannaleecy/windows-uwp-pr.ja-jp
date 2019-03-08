@@ -4,14 +4,14 @@ description: オンラインのフレンドを追跡する Xbox Live Social Mana
 ms.assetid: d4c6d5aa-e18c-4d59-91f8-63077116eda3
 ms.date: 03/26/2018
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dff3dcfd79fe43ff8af1513a4358bd0ff98b8d1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931722"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609007"
 ---
 # <a name="introduction-to-social-manager"></a>Social Manager の概要
 
@@ -45,17 +45,17 @@ Social Manager は以下の機能を提供します。
 
 ## <a name="core-concepts"></a>核となる概念
 
-**ソーシャル グラフ**: *ソーシャル グラフ*はデバイス上のローカル ユーザーに対して作成されます。 これにより、ユーザーのフレンド全員の情報を最新の状態に保つしくみが作成されます。
+**ソーシャル グラフ**:A*ソーシャル グラフ*デバイス上のローカル ユーザーが作成されます。 これにより、ユーザーのフレンド全員の情報を最新の状態に保つしくみが作成されます。
 
 > [!NOTE]
 > Windows ではローカル ユーザーは 1 人しか存在できません。
 
-**Xbox ソーシャル ユーザー**: *Xbox ソーシャル ユーザー*は、グループのユーザーと関連付けられるソーシャル データの完全なセットです。
+**Xbox 社会ユーザー**:*Xbox ソーシャル ユーザー*グループからのユーザーに関連付けられたソーシャル データの完全なセットは、
 
-**Xbox ソーシャル ユーザー グループ**: グループは、UI への表示などに使用されるユーザーの集団です。 2 種類のグループがあります。
+**Xbox 社会ユーザー グループ**:グループは、UI の作成などに使用されるユーザーのコレクションです。 2 種類のグループがあります。
 
-* **フィルター グループ**: フィルター グループはローカル (呼び出し側) ユーザーの*ソーシャル グラフ*を入力として、指定されたフィルター パラメーターに基づいて、常に最新のユーザー セットを返します。
-* **ユーザー グループ**: ユーザー グループはユーザーのリストをとり、常にそれらのユーザーの最新のビューを返します。 これらのユーザーは、ユーザーのフレンド リストに含まれていなくてもかまいません。
+* **フィルター グループ**:フィルター グループはローカル (呼び出し) のユーザーの*ソーシャル グラフ*一貫して新しいフィルターの指定したパラメーターに基づいてユーザーのセットを返します
+* **ユーザー グループ**:ユーザー グループは、ユーザーの一覧を受け取り、それらのユーザーの一貫した方法に新たなビューを返します。 これらのユーザーは、ユーザーのフレンド リストに含まれていなくてもかまいません。
 
 *ソーシャル ユーザー グループ*を最新に保つためには、フレームごとに `social_manager::do_work()` 関数を呼び出す必要があります。
 
@@ -66,7 +66,7 @@ Social Manager は以下の機能を提供します。
 ### <a name="social-manager"></a>Social Manager
 
 * C++ API クラス名: social_manager
-* WinRT(C#) API クラス名: [SocialManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT (C#) API のクラス名。[SocialManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.socialmanager?view=xboxlive-dotnet-2017.11.20171204.01)
 
 これは、前述したビューである **Xbox social user groups** を取得するために使用できるシングルトン クラスです。
 
@@ -75,14 +75,14 @@ Social Manager は Xbox ソーシャル ユーザー グループを最新の状
 ### <a name="xbox-social-user-group"></a>Xbox のソーシャル ユーザー グループ
 
 * C++ API クラス名: xbox_social_user_group
-* WinRT(C#) API クラス名: [XboxSocialUserGroup](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
+* WinRT (C#) API のクラス名。[XboxSocialUserGroup](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager.xboxsocialusergroup?view=xboxlive-dotnet-2017.11.20171204.01)
 
 前述したような、特定の基準を満たすユーザーのグループ。 Xbox のソーシャル ユーザー グループは、グループのタイプ、追跡中のユーザーまたはグループに設定されているフィルター、および、グループが属するローカル ユーザーを公開します。
 
 Social Manager API の詳しい説明については、「[Xbox Live API リファレンス](https://aka.ms/xboxliveuwpdocs)」をご覧ください。
 WinRT API は、[Microsoft.Xbox.Services.Social.Manager.Namespace のドキュメント](https://docs.microsoft.com/en-us/dotnet/api/microsoft.xbox.services.social.manager?view=xboxlive-dotnet-2017.11.20171204.01)でも説明されています。
 
-## <a name="usage"></a>使い方
+## <a name="usage"></a>使用方法
 
 ### <a name="creating-a-social-user-group-from-filters"></a>フィルターからソーシャル ユーザー グループを作成する
 
@@ -145,11 +145,11 @@ while(true)
 
 #### <a name="events-returned"></a>返されるイベント
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
+`local_user_added`(C++) |`LocalUserAdded`(C#)-ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - ソーシャル ユーザー グループが作成されたときにトリガーします。
+`social_user_group_loaded`(C++) |`SocialUserGroupLoaded`(C#)-ソーシャル ユーザー グループが作成されたときにトリガー
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - ユーザーが読み込まれるときにトリガーします。
+`users_added_to_social_graph`(C++) |`UsersAddedToSocialGraph`(C#)-ユーザーに読み込まれるときにトリガー
 
 #### <a name="additional-details"></a>追加情報
 
@@ -219,11 +219,11 @@ while(true)
 
 #### <a name="events-returned"></a>返されるイベント
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
+`local_user_added`(C++) |`LocalUserAdded`(C#)-ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - ソーシャル ユーザー グループが作成されたときにトリガーします。
+`social_user_group_loaded`(C++) |`SocialUserGroupLoaded`(C#)-ソーシャル ユーザー グループが作成されたときにトリガー
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - ユーザーが読み込まれるときにトリガーします。
+`users_added_to_social_graph`(C++) |`UsersAddedToSocialGraph`(C#)-ユーザーに読み込まれるときにトリガー
 
 ### <a name="updating-social-user-group-from-list"></a>リストからソーシャル ユーザー グループを更新する
 
@@ -267,9 +267,9 @@ while(true)
 
 #### <a name="events-returned"></a>返されるイベント
 
-`social_user_group_updated`(C++) | `SocialUserGroupUpdated`(C#) - ソーシャル ユーザー グループの更新が完了したときにトリガーします。
+`social_user_group_updated`(C++) |`SocialUserGroupUpdated`(C#)-ソーシャル ユーザー グループの更新が完了したときにトリガーします。
 
-`users_added_to_social_graph` | `UsersAddedToSocialGraph`(C#) - ユーザーが読み込まれるときにトリガーします。 リストから追加されるユーザーが既にグラフにいる場合、このイベントはトリガーしません。
+`users_added_to_social_graph` | `UsersAddedToSocialGraph`(C#)-ユーザーに読み込まれるときにトリガーします。 リストから追加されるユーザーが既にグラフにいる場合、このイベントはトリガーしません。
 
 ### <a name="using-social-manager-events"></a>Social Manager イベントの使用
 
@@ -345,15 +345,15 @@ while(true)
 
 #### <a name="events-returned"></a>返されるイベント
 
-`local_user_added`(C++) | `LocalUserAdded`(C#) - ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
+`local_user_added`(C++) |`LocalUserAdded`(C#)-ユーザーのソーシャル グラフの読み込みが完了したときにトリガーします。 初期化中に何らかのエラーが発生した場合、そのことを示します。
 
-`social_user_group_loaded`(C++) | `SocialUserGroupLoaded`(C#) - ソーシャル ユーザー グループが作成されたときにトリガーします。
+`social_user_group_loaded`(C++) |`SocialUserGroupLoaded`(C#)-ソーシャル ユーザー グループが作成されたときにトリガー
 
-`users_added_to_social_graph`(C++) | `UsersAddedToSocialGraph`(C#) - ユーザーが読み込まれるときにトリガーします。
+`users_added_to_social_graph`(C++) |`UsersAddedToSocialGraph`(C#)-ユーザーに読み込まれるときにトリガー
 
 #### <a name="additional-details"></a>追加情報
 
-この例は、提供されている追加制御の一部を示しています。  ゲーム ループの間、ソーシャル ユーザー グループ フィルターに依拠して最新のユーザー リストを取得する代わりに、ゲーム ループの外側でソーシャル グラフを初期化します。  タイトルはその後、`socialManager->do_work()` 関数によって返される `events` に依拠します。  `events` は `social_event` のリストであり、各 `social_event` には、最終フレームの間に発生したソーシャル グラフへの変更が含まれます。  たとえば、`profiles_changed`、`users_added` などです。詳しくは、`social_event` API ドキュメントをご覧ください。
+この例は、提供されている追加制御の一部を示しています。  ゲーム ループの間、ソーシャル ユーザー グループ フィルターに依拠して最新のユーザー リストを取得する代わりに、ゲーム ループの外側でソーシャル グラフを初期化します。  タイトルはその後、`socialManager->do_work()` 関数によって返される `events` に依拠します。  `events` 一覧を示します`social_event`、および各`social_event`最後のフレームの中に発生したソーシャル グラフへの変更が含まれています。  たとえば`profiles_changed`、`users_added`など。詳細についてを参照、 `social_event` API のドキュメント。
 
 ### <a name="cleanup"></a>クリーンアップ
 
@@ -399,4 +399,4 @@ remove_local_user では、読み込まれたユーザーのソーシャル グ�
 
 #### <a name="events-returned"></a>返されるイベント
 
-`local_user_removed`(C++) | `LocalUserRemoved`(C#) - ローカル ユーザーが正常に削除されたときにトリガーします。
+`local_user_removed`(C++) |`LocalUserRemoved`(C#)-ローカル ユーザーが正常に削除されたときにトリガー

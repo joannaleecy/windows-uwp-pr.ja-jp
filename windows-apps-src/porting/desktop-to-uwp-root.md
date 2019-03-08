@@ -1,81 +1,81 @@
 ---
-Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monetization.
+Description: 既存の Windows フォーム、WPF、または Win32 アプリやゲームに対して、最新の Windows アプリ パッケージを作成します。 Windows 10 ユーザー向けの最新のエクスペリエンスを追加し、展開と収益化を簡素化します。
 Search.Product: eADQiWindows 10XVcnh
 title: デスクトップ アプリケーションのパッケージ化
 ms.date: 09/05/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 70a9b6046e3b7be9ac84678ac21c0c9f89a4a7b2
-ms.sourcegitcommit: 1a4bbfb8495e2f414deac5ee050ab679a78b1717
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "9089754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627827"
 ---
-# <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化 (デスクトップ ブリッジ)
+# <a name="package-desktop-applications-desktop-bridge"></a>デスクトップ アプリケーションをパッケージ化する (デスクトップ ブリッジ)
 
-既存のデスクトップ アプリケーションを実行し、Windows 10 ユーザー向けの最新のエクスペリエンスを追加します。 Microsoft Store を通じてアプリを配布し、国際市場でのリーチを拡大します。 多くの簡単な方法でアプリケーションを収益するには、ストアに直接組み込まれている機能を活用します。 もちろん、ストアを使用する必要はありません。 既存のチャンネルを自由に使用してください。
+既存のデスクトップ アプリケーションを実行し、Windows 10 ユーザー向けの最新のエクスペリエンスを追加します。 Microsoft Store を通じてアプリを配布し、国際市場でのリーチを拡大します。 ストアに組み込まれている機能を活用することでくらい簡単な方法でアプリケーションを収益化できます。 もちろん、ストアを使用する必要はありません。 既存のチャンネルを自由に使用してください。
 
 ![デスクトップ ブリッジ](images/desktop-to-uwp/desktop-bridge-4.png)
 
-デスクトップ アプリケーションのパッケージを作成して、アプリケーションが id を取得するデスクトップ アプリケーションがアクセスする Windows ユニバーサル プラットフォーム (UWP) Api をその id を使用。 これを利用して、ライブ タイルや通知など、現代的で魅力的なエクスペリエンスを実現できます。  単純な条件付きコンパイルを使用して、ランタイム チェックを Windows 10 で、アプリケーションが実行されている場合にのみ、UWP コードを実行します。
+デスクトップ アプリケーションのパッケージを作成するときに、アプリケーションが id を取得およびデスクトップ アプリケーションにアクセスする Windows ユニバーサル プラットフォーム (UWP) Api をその id を使用します。 これを利用して、ライブ タイルや通知など、現代的で魅力的なエクスペリエンスを実現できます。  単純な条件付きコンパイルを使用して、Windows 10 で、アプリケーションの実行時にのみ、UWP コードを実行するランタイムを確認します。
 
-Windows 10 エクスペリエンスを実現するために使用するコード、以外は、アプリケーションは変更されず、既存の Windows 7、Windows Vista、または Windows XP のユーザーに配布を続けることができます。 Windows 10 で、アプリケーションは、引き続き完全信頼で実行すると同じようにユーザー モードで現在実行します。
+Windows 10 エクスペリエンスを使用して、コードとは別に、アプリケーションは変更されず、既存の Windows 7、Windows Vista、または Windows XP のユーザーに配布を続行できます。 完全信頼で実行する Windows 10 で、アプリケーションは引き続きことのようなユーザー モードが現在行っています。
 
 >[!IMPORTANT]
->(そうでない場合は、デスクトップ ブリッジと呼ばれます)、デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能は Windows 10 バージョン 1607 で導入され、Windows 10 Anniversary Update (10.0; をターゲットとするプロジェクトでのみ使用できます。ビルド 14393) 以降の Visual Studio でリリースされます。
+>(それ以外の場合は、デスクトップ ブリッジと呼ばれます) デスクトップ アプリケーションの Windows アプリ パッケージを作成する機能は Windows 10 バージョン 1607 で導入され、Windows 10 Anniversary Update (10.0; を対象とするプロジェクトでのみ使用できます。ビルド 14393) または Visual Studio の今後のリリース。
 
 > [!NOTE]
-> Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) の移行の処理全体について説明します。
+> Microsoft Virtual Academy から公開されている、<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">このシリーズ</a>の短いビデオをご覧ください。 これらのビデオでは、お客様のデスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) を取り込んでプロセス全体を説明します。
 
-## <a name="benefits"></a>メリット
+## <a name="benefits"></a>利点
 
 以下に、デスクトップ アプリケーションの Windows アプリ パッケージを作成する理由を示します。
 
-:heavy_check_mark: **スムーズな展開プロセス**。 ブリッジを使用しているアプリやゲームでは、優れた展開エクスペリエンスが提供されます。 このエクスペリエンスは、ユーザーが安心アプリケーションをインストールおよび更新できるようにします。 ユーザーがアプリをアンインストールすると、跡形なく完全に削除されます。 このため、セットアップ エクスペリエンスの設計や、更新プログラムの配信にかかる時間を削減できます。
+:heavy_check_mark:**スムーズな展開プロセス**。 ブリッジを使用しているアプリやゲームでは、優れた展開エクスペリエンスが提供されます。 このエクスペリエンスは、ユーザーが自信を持って、アプリケーションのインストールおよび更新できるようにします。 ユーザーがアプリをアンインストールすると、跡形なく完全に削除されます。 このため、セットアップ エクスペリエンスの設計や、更新プログラムの配信にかかる時間を削減できます。
 
-:heavy_check_mark: **自動更新とライセンス**。 アプリケーションは、Microsoft Store の組み込みライセンスと自動更新機能に参加できます。 自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。
+:heavy_check_mark:**自動更新とライセンス**。 アプリケーションは、Microsoft Store の組み込みのライセンスおよび自動更新機能に参加できます。 自動更新機能は、ファイルの変更された部分だけがダウンロードされるため、非常に信頼性が高く効率的なメカニズムです。
 
-:heavy_check_mark: **リーチの拡大とシンプルな決済。** Microsoft Store からの配布なら、数百万人の Windows 10 ユーザーにリーチを拡大できます。ユーザーは、アプリとゲームの購入や、アプリ内での購入に各地域の支払い方法を使用できます。
+:heavy_check_mark:**リーチの拡大とシンプルな決済**。 Microsoft Store からの配布なら、数百万人の Windows 10 ユーザーにリーチを拡大できます。ユーザーは、アプリとゲームの購入や、アプリ内での購入に各地域の支払い方法を使用できます。
 
-:heavy_check_mark: **UWP 機能の追加**。  自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。
+:heavy_check_mark:**UWP 機能の追加**。  自分のペースで、XAML ユーザー インターフェイス、ライブ タイルの更新、UWP バックグラウンド タスク、アプリ サービスなどの多くの UWP 機能をアプリのパッケージに追加できます。
 
-:heavy_check_mark: **対応デバイスの拡大**。 ブリッジを使用すると、徐々にコードをユニバーサル Windows プラットフォームに移行して、電話、Xbox One、HoloLens など、すべての Windows 10 デバイスを対象にできます。
+:heavy_check_mark:**対応デバイスの拡大**。 ブリッジを使用すると、徐々にコードをユニバーサル Windows プラットフォームに移行して、電話、Xbox One、HoloLens など、すべての Windows 10 デバイスを対象にできます。
 
 利点の完全な一覧については、「[デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)」をご覧ください。
 
 ## <a name="prepare"></a>準備
 
-最初に[、デスクトップ アプリをパッケージ化する環境の準備](desktop-to-uwp-prepare.md)の記事を確認して、Windows アプリ パッケージを作成する前に、アプリケーションに適用される問題のいずれかのアドレスを指定して、アプリケーションを準備します。 パッケージを作成する前に、アプリケーションに多くの変更を加えることはいません。 ただしは状況によっては、パッケージを作成する前に、アプリケーションを調整することが必要な場合があります。
+によって、記事のレビュー、アプリケーションを最初に、準備[デスクトップ アプリをパッケージ化するための準備](desktop-to-uwp-prepare.md)とに、Windows アプリ パッケージを作成する前に、アプリケーションに適用される問題のいずれかのアドレスを指定します。 パッケージを作成する前に、アプリケーションに多くの変更を加えるがありません。 ただしは一部の状況では、パッケージを作成する前に、アプリケーションを調整する必要があります。
 
 <a id="convert" />
 
-## <a name="package"></a>Package
+## <a name="package"></a>パッケージ化
 
 アプリの Windows アプリ パッケージを作成するには、以下のようなツールを使用できます。
 
 ### <a name="desktop-app-converter"></a>Desktop App Converter
 
-このツールの名前には "Converter" という用語が含まれますが、実は、アプリの変換は行いません。 アプリケーションはそのまま残ります。 しかし、Windows アプリ パッケージが生成されます。 アプリケーションが多くのシステム変更や、インストーラーについて不明確な点がある場合はの場合に非常に便利にできます。
+このツールの名前には "Converter" という用語が含まれますが、実は、アプリの変換は行いません。 アプリケーションは変更されません。 しかし、Windows アプリ パッケージが生成されます。 アプリケーションで多数のシステムの変更、または、インストーラーの動作に関する、不明確な点がある場合は場合に非常に便利にできます。
 
-Desktop App Converter は、仮想ファイルとレジストリ システム、アプリケーションのパッケージのバージョンで使用されるにインストーラーの操作を変換します。 また、Desktop App Converter には、変換以外にも役に立つ機能があります。 その一部を次に示します。
+Desktop App Converter のでは、仮想ファイルとレジストリのシステム、アプリケーションのパッケージ化されたバージョンが使用するには、インストーラーのアクションを変換します。 また、Desktop App Converter には、変換以外にも役に立つ機能があります。 その一部を次に示します。
 
-:heavy_check_mark: プレビュー ハンドラー、サムネイル ハンドラー、プロパティ ハンドラー、ファイアウォール規則、URL フラグを自動的に登録する。
+:heavy_check_mark:プレビュー ハンドラー、サムネイル ハンドラー、プロパティ ハンドラー、ファイアウォール規則、URL フラグを自動的に登録する。
 
-:heavy_check_mark: ファイルの種類のマッピングを自動的に登録する。これによりユーザーは、エクスプローラーの **[種類]** 列を使ってファイルをグループ化できるようになります。
+:heavy_check_mark:レジスタを使用してファイルをグループ化するユーザーを有効にされる型のマッピングをファイルに自動的に、**種類**ファイル エクスプ ローラー内の列。
 
-:heavy_check_mark: 公開 COM サーバーを登録する。
+:heavy_check_mark:公開 COM サーバーを登録します。
 
-::heavy_check_mark: アプリの実行に使用できる証明書を生成します。
+:heavy_check_mark:アプリの実行に使用できる証明書を生成します。
 
-::heavy_check_mark: デスクトップ アプリケーションのパッケージと Microsoft Store 要件に照らしてアプリを検証します。
+:heavy_check_mark:パッケージのデスクトップ アプリケーションと Microsoft Store の要件に照らしてアプリケーションを検証します。
 
-Desktop App Converter を使用する別の優れた理由は、Visual Studio 以外の別の開発環境を使用して、アプリケーションを保持するかどうか。 アプリ インストーラーがない場合でも、Desktop App Converter を使用することができます。
+もう 1 つ、Desktop App Converter を利用する理由は、Visual Studio 以外のさまざまな開発環境を使用して、アプリケーションを保持するかどうかです。 アプリケーションは、インストーラーを持っていない場合でも、Desktop App Converter を使用できます。
 
-[Desktop App Converter を使ってデスクトップ アプリケーションのパッケージ](desktop-to-uwp-run-desktop-app-converter.md)を参照してください。
+参照してください[Desktop App Converter を使用してデスクトップ アプリケーションをパッケージ化](desktop-to-uwp-run-desktop-app-converter.md)
 
 ### <a name="visual-studio"></a>Visual Studio
 
@@ -83,23 +83,23 @@ Visual Studio を使ってアプリケーションを管理しており、アプ
 
 Visual Studio を使うと、パッケージをかなり簡単に作成できます。 パッケージ プロジェクトを追加して、デスクトップ プロジェクトを参照し、F5 キーを押してアプリをデバッグします。 手動で調整する必要はありません。 この新しい効率化されたエクスペリエンスは、以前のバージョンの Visual Studio のエクスペリエンスから大幅に向上しています。 他にも以下のような処理を実行できます。
 
-:heavy_check_mark: ビジュアル アセットを自動的に生成する。
+:heavy_check_mark:ビジュアル資産を自動的に生成します。
 
-:heavy_check_mark: ビジュアル デザイナーを使ってマニフェストに変更を加える。
+:heavy_check_mark:ビジュアル デザイナーを使用して、マニフェストに変更を加えます。
 
-:heavy_check_mark: ウィザードを使ってパッケージを生成する。
+:heavy_check_mark:ウィザードを使用して、パッケージを生成します。
 
-::heavy_check_mark:[パートナー センター](https://partner.microsoft.com/dashboard)で既に予約した名前からアプリに id を簡単に割り当てます。
+:heavy_check_mark:既に予約した名前から、アプリケーションに id を簡単に割り当てる[パートナー センター](https://partner.microsoft.com/dashboard)します。
 
-[Visual Studio を使ってデスクトップ アプリケーションのパッケージ](desktop-to-uwp-packaging-dot-net.md)を参照してください。
+参照してください[Visual Studio を使用して、デスクトップ アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)
 
 ### <a name="third-party-installer"></a>サードパーティ インストーラー
 
- いくつかのポピュラーなサード パーティ製品やインストーラーは、デスクトップ アプリケーションをパッケージ化する機能をサポートできるようになりました。 これらを使用すると、わずか数クリックで MSI インストーラーやアプリ パッケージを生成することができます。 これらのツールの使用方法について詳しくは、それぞれの製品の Web サイトをご覧ください。
+ いくつかの人気のサード パーティ製品とインストーラーをデスクトップ アプリケーションをパッケージ化機能に対応します。 これらを使用すると、わずか数クリックで MSI インストーラーやアプリ パッケージを生成することができます。 これらのツールの使用方法について詳しくは、それぞれの製品の Web サイトをご覧ください。
 
 #### <a name="advanced-installer"></a>Advanced Installer
 
-Caphyon は、わずか数回のクリックでアプリケーションの Windows アプリ パッケージを生成できる、GUI ベースのデスクトップ アプリ パッケージ作成ツールを無料で提供しています。 任意のインストーラーを使用できます。サイレント モードで実行し、検証を実行するものもは、アプリケーションがパッケージ化に適しているかどうかを判断することを確認します。
+Caphyon は、わずか数回のクリックでアプリケーションの Windows アプリ パッケージを生成できる、GUI ベースのデスクトップ アプリ パッケージ作成ツールを無料で提供しています。 すべてのインストーラーを使用できます。サイレント モードで実行し、検証を実行するものも含め、アプリケーションがパッケージ化に適しているかどうかを判断するを確認します。
 Desktop App Converter は、Hyper-V および [VMware](https://www.vmware.com/) にも統合できます。 つまり、独自の仮想マシンを使用することができるため、サイズが 3 GB を超える可能性がある [Docker](https://docs.docker.com/) イメージをダウンロードする必要はありません。
 
 <img width="20%" src="images/desktop-to-uwp/Advanced_Installer_Vertical.png">
@@ -119,7 +119,7 @@ Windows 10 および Windows 10 S と互換性のない基幹業務アプリケ�
 
 <img width="20%" src="images/desktop-to-uwp/cloudhouse-container-logo.png">
 
-Cloudhouse が提供する Auto Packager は、アプリケーションが現在実行されているオペレーティング システム (Windows XP など) で、基幹業務アプリケーションをパッケージ化して[互換性コンテナー](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications)を作成し、UWP に[変換できるようにアプリを準備](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905)します。 コンテナーはその後、Microsoft の Desktop App Converter ツールと統合して新しい Windows アプリ パッケージ形式に変換されます。
+Cloudhouse では、ビジネス アプリケーションのパッケージの行の自動パッケー ジャー[互換性コンテナー](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications)で今すぐアプリを実行するオペレーティング システムで (例。Windows XP) をクリックし[、変換用に準備](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905)UWP にします。 コンテナーはその後、Microsoft の Desktop App Converter ツールと統合して新しい Windows アプリ パッケージ形式に変換されます。
 
 Auto Packager では、インストール/キャプチャおよび実行時分析を使用して、アプリケーションを Windows 10 で実行できるようにするために必要なアプリケーションのファイル、レジストリ、ランタイム、依存関係、および互換性とリダイレクト エンジンを含む、アプリケーションのコンテナーを作成します。 コンテナーは、アプリケーションとそのランタイムの分離を実現し、ユーザーのデバイスで実行されている他のアプリケーションへの影響や競合を回避できます。
 
@@ -127,15 +127,15 @@ Auto Packager では、インストール/キャプチャおよび実行時分�
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant MSIX 拡張機能](https://www.firegiant.com/products/wix-expansion-pack/msix)を使用して、同一の WiX ソース コードから Windows アプリ パッケージと MSI パッケージを同時に作成できます。 ビルドするたびに、Windows アプリ パッケージと MSI による Windows の以前のバージョンを使った Windows 10 をターゲットことができます。
+[FireGiant MSIX 拡張子](https://www.firegiant.com/products/wix-expansion-pack/msix)WiX ソース コードから Windows アプリ パッケージと MSI パッケージを同時に作成できます。 ビルドするたびに、Windows アプリ パッケージ、MSI での Windows の以前のバージョンと Windows 10 を対象ことができます。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
-FireGiant MSIX 拡張機能は、コンテナーまたは仮想マシンのディスク領域や実行時のオーバーヘッドなしの Windows アプリ パッケージを作成するのに静的分析とインテリジェント エミュレーション、WiX プロジェクトを使用します。
+FireGiant MSIX 拡張機能は、コンテナーまたは仮想マシンのディスク領域とランタイムのオーバーヘッドなしの Windows アプリ パッケージを作成するのに静的分析と、WiX プロジェクトのインテリジェントなエミュレーションを使用します。
 
-FireGiant MSIX 拡張機能は、実行することにより、インストーラーを変換しない、ために、繰り返し Windows アプリ パッケージに変換することがなく、WiX インストーラーを維持できます。 さまざまな Windows バージョンのユーザーはすべて、最新の機能強化を入手できます。MSI と Windows アプリ パッケージが同期していないことを開発者が心配する必要はありません。
+FireGiant MSIX 拡張機能は、インストーラーを実行することによって変換されない、ため、繰り返し Windows アプリ パッケージに変換することがなく、WiX インストーラを管理できます。 さまざまな Windows バージョンのユーザーはすべて、最新の機能強化を入手できます。MSI と Windows アプリ パッケージが同期していないことを開発者が心配する必要はありません。
 
-この[ビデオ](https://www.youtube.com/watch?v=AFBpdBiAYQE)をチェックし、作成する方法はいくつか数行のコードで FireGiant CEO の Rob Mensching 人気のあるオープン ソース 7-zip 圧縮ツールの Appx (Windows アプリ パッケージ) バージョンとし、Windows アプリケーションと MSI パッケージの両方が向上した方法をご覧ください。同じ WiX ソース コードに変更します。
+この[ビデオ](https://www.youtube.com/watch?v=AFBpdBiAYQE)方法はいくつかの行のコードで FireGiant CEO Rob Mensching Appx (Windows アプリ パッケージ) のバージョンの作成、人気のあるオープン ソース 7-zip で圧縮ツールとし、両方の Windows アプリケーションを向上彼方法を確認し、WiX ソース コードが変更された MSI パッケージ。
 
 #### <a name="installaware"></a>InstallAware
 
@@ -183,7 +183,7 @@ Windows アプリ パッケージの作成とは別に、Windows インストー
 
 #### <a name="raypack-studio"></a>RayPack Studio
 
-Raynet のパッケージ化ソリューションでは、 [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio)では、効率的かつ簡単に構成の変換および再パッケージ化フレームワークのいくつかの可能な結果の 1 つとして、デスクトップ アプリケーションのパッケージの作成をサポートしています。
+Raynet には、ソリューションのパッケージ化[RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio)、効率的かつ簡単に構成の変換のいくつかの考えられる結果の 1 つとして、デスクトップ アプリケーションのパッケージの作成をサポートおよびフレームワークを再パッケージ化します。
 
 <img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
 
@@ -207,25 +207,25 @@ Raynet のエンタープライズ ワークフロー システムである [Ray
 
 ### <a name="manual-packaging"></a>手動でのパッケージ化
 
-最後のオプションとしてこれらのツールを使用せず、アプリケーションを変換することができます。 変換をきめ細かく制御する場合は、マニフェスト ファイルを作成し、**MakeAppx.exe** ツールを実行して Windows アプリ パッケージを作成します。
+最後のオプションとしては、これらのツールを使用せず、アプリケーションを変換できます。 変換をきめ細かく制御する場合は、マニフェスト ファイルを作成し、**MakeAppx.exe** ツールを実行して Windows アプリ パッケージを作成します。
 
-[デスクトップ アプリケーションを手動でパッケージ](desktop-to-uwp-manual-conversion.md)を参照してください。
+参照してください[デスクトップ アプリケーションを手動でパッケージ化](desktop-to-uwp-manual-conversion.md)します。
 
 ## <a name="integrate"></a>統合
 
-アプリケーションは、システムと統合する必要がある場合 (例: ファイアウォール規則を確立)、アプリケーションのパッケージ マニフェストでこれらの要素を記述して、システムは、残りの部分に操作を行います。 これらのタスクのほとんどは、まったくコードを記述する必要がありません。 XML のマニフェスト内のビットを使用して操作を実行できます、ユーザーがログオンしたときに、プロセスを開始、エクスプ ローラーで、アプリケーションに統合し、アプリケーションの追加など他のアプリに表示される印刷先の一覧。
+アプリケーションは、システムと統合する必要がある場合 (例: ファイアウォール規則の確立) と、アプリケーションのパッケージ マニフェストではこの記述、システムが処理してくれます。 これらのタスクのほとんどは、まったくコードを記述する必要がありません。 Xml マニフェスト内のビットを使用して操作を実行できます、ユーザーがログオンしたときにプロセスを開始、ファイル エクスプ ローラーで、アプリケーションに統合およびアプリケーションを追加するように他のアプリに表示される印刷のターゲットの一覧。
 
-[Windows 10 によるパッケージ化されたデスクトップ アプリケーションの統合](desktop-to-uwp-extensions.md)を参照してください。
+参照してください[Windows 10 にパッケージ化されたデスクトップ アプリケーションを統合](desktop-to-uwp-extensions.md)します。
 
 ## <a name="enhance"></a>強化
 
-アプリをパッケージ化すると、ライブ タイルやプッシュ通知などの機能を追加できます。 アプリのエンゲージメント レベルを大幅に向上できる一部の機能と、ほとんど時間を追加します。 もう少しコードの追加が必要になるものもあります。
+アプリをパッケージ化すると、ライブ タイルやプッシュ通知などの機能を追加できます。 これらの機能の一部のアプリケーションに対するエンゲージメント レベルが大幅に向上し、コストを追加するには、ほとんどの時間。 もう少しコードの追加が必要になるものもあります。
 
 「[Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)」をご覧ください。
 
 ## <a name="extend"></a>拡張
 
-一部の Windows 10 エクスペリエンス (タッチ対応 UI ページなど) は、最新のアプリ コンテナー内で実行する必要があります。 一般的に、UWP API を使用して既存のデスクトップ アプリケーションを[強化](desktop-to-uwp-enhance.md)することでエクスペリエンスを追加できるかどうかを最初に判断する必要があります。 エクスペリエンスを実現するために、UWP コンポーネントを使用する場合は、できる UWP プロジェクトをソリューションに追加し、デスクトップ アプリケーションと UWP コンポーネントの間の通信にアプリ サービスを使用します。
+一部の Windows 10 エクスペリエンス (タッチ対応 UI ページなど) は、最新のアプリ コンテナー内で実行する必要があります。 一般的に、UWP API を使用して既存のデスクトップ アプリケーションを[強化](desktop-to-uwp-enhance.md)することでエクスペリエンスを追加できるかどうかを最初に判断する必要があります。 コード型の場合は、エクスペリエンスを実現するために、UWP コンポーネントを使用する必要が UWP プロジェクトをソリューションに追加するアプリ サービスを使用して、お客様のデスクトップ アプリケーションと UWP コンポーネント間の通信し、ことができます。
 
 「[最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)」をご覧ください。
 
@@ -242,18 +242,18 @@ Raynet のエンタープライズ ワークフロー システムである [Ray
 
 ## <a name="test"></a>テスト
 
-配布用に準備する現実的な設定で、アプリケーションをテストするには、アプリケーションに署名し、インストールすることをお勧めします。 「[アプリのテスト](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)」をご覧ください。
+ディストリビューションを準備するときは、現実的な設定で、アプリケーションをテストするには、アプリケーションに署名し、インストールすることをお勧めします。 「[アプリのテスト](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)」をご覧ください。
 
 >[!IMPORTANT]
-> Microsoft Store にアプリを公開する場合は、アプリケーションが S モードで Windows 10 を実行しているデバイスで正しく動作することを確認します。 これは、Microsoft Store 要件です。 「[Windows アプリの S モードの Windows 10 をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
+> Microsoft Store にアプリケーションを発行する場合は、秒の各モードで Windows 10 を実行するデバイスで、アプリケーションが正しく動作することを確認します。 これは、Microsoft Store 要件です。 「[Windows アプリの S モードの Windows 10 をテストする](desktop-to-uwp-test-windows-s.md)」をご覧ください。
 
 ## <a name="validate"></a>検証
 
-アプリケーションに、Microsoft Store で公開されているの最適な機会を提供したり、 [Windows 認定](https://go.microsoft.com/fwlink/p/?LinkID=309666)の検証し認定のために提出する前にローカルでテストします。
+Microsoft Store で公開またはになりつつあるやすければをアプリケーションを提供する[Windows 認定](https://go.microsoft.com/fwlink/p/?LinkID=309666)、検証、および証明書を送信する前にローカルでテストします。
 
-DAC アプリをパッケージ化を使用している場合、新しい使える``-Verify``パッケージのデスクトップ アプリケーションとストア要件に照らしてパッケージを検証するためのフラグ。 「[アプリをパッケージ化し、アプリに署名して、ストアへの提出に備える](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)」をご覧ください。
+新たに使用することができる場合は、DAC を使用してアプリのパッケージ化する``-Verify``デスクトップ アプリケーションをパッケージ化とストアの要件に対して、パッケージを検証するフラグ。 「[アプリをパッケージ化し、アプリに署名して、ストアへの提出に備える](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters)」をご覧ください。
 
-Visual Studio を使用している場合は、**アプリ パッケージの作成**ウィザード] からアプリケーションを検証できます。 [アプリ パッケージ アップロード ファイルの作成に関するページ](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file)をご覧ください。
+Visual Studio を使用している場合からアプリケーションを検証することができます、**アプリ パッケージの作成**ウィザード。 [アプリ パッケージ アップロード ファイルの作成に関するページ](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file)をご覧ください。
 
 ツールを手動で実行する方法については、「[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)」をご覧ください。
 
@@ -261,17 +261,17 @@ Windows アプリ認定でアプリの検証に使用されるテストの一覧
 
 ## <a name="distribute"></a>配布
 
-アプリを配布するには、サイドローディングや、Microsoft Store に公開することによって、他のシステムにします。
+アプリケーションを配布するには、Microsoft Store を発行すること、またはサイドローディングによって他のシステムにします。
 
-[パッケージ デスクトップ アプリの配布](desktop-to-uwp-distribute.md)を参照してください。
+参照してください[パッケージ化されたデスクトップ アプリを配布する](desktop-to-uwp-distribute.md)します。
 
 ## <a name="support-and-feedback"></a>サポートとフィードバック
 
-**質問に対する回答を見つける**
+**質問の回答を検索**
 
 ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
-**フィードバックの提供または機能の提案を行う**
+**ご意見や機能を提案します。**
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。
 
@@ -279,14 +279,14 @@ Windows アプリ認定でアプリの検証に使用されるテストの一覧
 
 | トピック | 説明 |
 |-------|-------------|
-| [アプリのパッケージ化の準備](desktop-to-uwp-prepare.md) | デスクトップ アプリをパッケージ化する前に確認する項目の一覧を示します。 |
-| [Desktop App Converter を使用してアプリをパッケージ化します。](desktop-to-uwp-run-desktop-app-converter.md) | Desktop App Converter を実行する方法が説明されています。 |
+| [アプリをパッケージ化するための準備します。](desktop-to-uwp-prepare.md) | デスクトップ アプリをパッケージ化する前に確認する項目の一覧を示します。 |
+| [Desktop App Converter のを使用してアプリをパッケージ化](desktop-to-uwp-run-desktop-app-converter.md) | Desktop App Converter を実行する方法が説明されています。 |
 | [デスクトップ アプリケーションを手動でパッケージ化します。](desktop-to-uwp-manual-conversion.md) | 手動でアプリ パッケージとマニフェストを作成する方法について説明します。 |
-| [Visual Studio を使ってデスクトップ アプリケーションをパッケージ化します。](desktop-to-uwp-packaging-dot-net.md)| Visual Studio を使ってデスクトップ アプリケーションをパッケージ化する方法を示します。 |
-| [Windows 10 とデスクトップ アプリケーションを統合します。](desktop-to-uwp-extensions.md) | Windows 10 では、アプリケーションをパッケージ プロジェクトのパッケージ マニフェスト ファイル内のタスクを記述することを統合します。 |
-| [Windows 10 向けのデスクトップ アプリを強化する](desktop-to-uwp-enhance.md)| UWP API を使用して、Windows 10 ユーザーの利便性を高める最新のエクスペリエンスを追加します。 |
-| [パッケージ デスクトップ アプリケーションに利用可能な UWP Api](desktop-to-uwp-supported-api.md) | どのような可能な UWP Api を使用するデスクトップ アプリケーション パッケージを参照してください。 |
-| [最新の UWP コンポーネントによるデスクトップ アプリケーションの拡張](desktop-to-uwp-extend.md)| UWP アプリ コンテナー内で実行する必要がある高度なエクスペリエンスを追加します。 アプリ サービスを使用して UWP プロセスとデスクトップ アプリケーションを接続します。|
-| [実行、デバッグ、およびデスクトップ アプリケーションのパッケージのテスト](desktop-to-uwp-debug.md) | パッケージ化されたアプリをデバッグするためのオプションについて説明します。 |
-| [デスクトップ アプリケーションのパッケージの配布します。 ](desktop-to-uwp-distribute.md) | 変換されたアプリケーションをユーザーに配布する方法をご覧ください。  |
-| [既知 Issues(desktop-to-uwp-known-issues.md) | デスクトップ アプリケーションをパッケージ化の既知の問題を一覧表示されます。 |
+| [Visual Studio を使用してデスクトップ アプリケーションをパッケージ化します。](desktop-to-uwp-packaging-dot-net.md)| Visual Studio を使用して、デスクトップ アプリケーションをパッケージ化する方法を示します。 |
+| [Windows 10 のデスクトップ アプリケーションを統合します。](desktop-to-uwp-extensions.md) | Windows 10 では、パッケージ化プロジェクトのパッケージ マニフェスト ファイル内のタスクを記述することでを使用して、アプリケーションを統合します。 |
+| [Windows 10 のデスクトップ アプリケーションを拡張します。](desktop-to-uwp-enhance.md)| UWP API を使用して、Windows 10 ユーザーの利便性を高める最新のエクスペリエンスを追加します。 |
+| [パッケージ化されたデスクトップ アプリケーションに使用可能な UWP Api](desktop-to-uwp-supported-api.md) | どのような UWP Api が使用するパッケージ化されたデスクトップ アプリケーションで使用できるを参照してください。 |
+| [最新の UWP コンポーネントによるデスクトップ アプリケーションを拡張します。](desktop-to-uwp-extend.md)| UWP アプリ コンテナー内で実行する必要がある高度なエクスペリエンスを追加します。 UWP のプロセスとアプリ サービスを使用して、デスクトップ アプリケーションを接続します。|
+| [実行、デバッグ、およびデスクトップ アプリケーションをパッケージ化されたテスト](desktop-to-uwp-debug.md) | パッケージ化されたアプリをデバッグするためのオプションについて説明します。 |
+| [パッケージ化されたデスクトップ アプリケーションを配布します。 ](desktop-to-uwp-distribute.md) | 変換されたアプリケーションをユーザーに配布する方法を参照してください。  |
+| [既知 Issues(desktop-to-uwp-known-issues.md) | デスクトップ アプリケーションをパッケージ化に関する既知の問題を一覧表示されます。 |

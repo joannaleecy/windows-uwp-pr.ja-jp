@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: de9ddb4e9c7babe84b5ab7a7d1563e12b0240520
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924293"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612537"
 ---
 # <a name="handles"></a>/handles
-Xbox One ダッシュ ボードのユーザー エクスペリエンスに表示されると、必要な場合は、セッション メンバーを招待するユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。 
+Xbox One のダッシュ ボード ユーザー エクスペリエンスに表示するために必要な場合は、セッションのメンバーを招待して、ユーザーの現在のアクティビティのセッションを設定する POST 操作をサポートしています。 
 
 > [!NOTE] 
-> この URI は、2015年マルチプレイヤーで使用され、以降そのマルチプレイヤーのバージョンにのみ適用されます。 テンプレート コントラクト 104/105 以降で使用されます。  
+> この URI は、2015年マルチ プレーヤーによって使用され、以降そのマルチ プレーヤーのバージョンにのみ適用されます。 テンプレートのコントラクト/104 105 またはそれ以降で使用するものでは。  
 
  
 <a id="ID4EQ"></a>
@@ -38,9 +38,9 @@ sessiondirectory.xboxlive.com
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST (/handles)](uri-handlespost.md)
+[投稿 (/処理)](uri-handlespost.md)
 
-&nbsp;&nbsp;ユーザーの現在のアクティビティのマルチプレイヤー セッションを設定し、必要な場合は、セッション メンバーを招待します。
+&nbsp;&nbsp;ユーザーの現在のアクティビティのマルチ プレーヤーのセッションを設定し、必要な場合は、セッションのメンバーを招待します。
  
 <a id="ID4EKB"></a>
 
@@ -52,6 +52,6 @@ sessiondirectory.xboxlive.com
  
 ##### <a name="parent"></a>Parent 
 
-[セッション ディレクトリ URI](atoc-reference-sessiondirectory.md)
+[セッション ディレクトリの Uri](atoc-reference-sessiondirectory.md)
 
    

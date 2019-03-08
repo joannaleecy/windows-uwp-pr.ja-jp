@@ -2,16 +2,16 @@
 title: バックグラウンドで無期限に実行する
 description: extendedExecutionUnconstrained 機能を使用すると、バックグラウンドで無期限にバックグラウンド タスクまたは延長実行セッションを実行できます。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: バック グラウンド タスク、延長実行セッション, リソース, 制限, バック グラウンド タスク
-ms.date: 10/3/2017
+keywords: バック グラウンド タスクを実行、リソース、制限、およびバック グラウンド タスクの拡張
+ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aedd948fe58efcc3edc160db971478189d9cb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: faac1d8d47ddcff4e5ec32d35f2e46bab7a3f4aa
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933926"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630247"
 ---
 # <a name="run-in-the-background-indefinitely"></a>バックグラウンドで無期限に実行する
 
@@ -75,7 +75,7 @@ _Package.appxmanifest_
 </Package>
 ```
 
-この機能を使用すると、実行時間の制限とアイドル タスクに対するウォッチドッグが解除されます。 トリガーまたはアプリ サービスの呼び出しによってバックグラウンド タスクが開始され、**Run** メソッドで指定された [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) によって延期されると、そのバックグラウンド タスクは無期限に実行されます。 アプリが **[Windows で管理]** に設定されている場合は、割り当て電力が指定されていることがあり、バッテリー節約機能が有効であればバックグラウンド タスクがアクティブになりません。この動作は OS の設定で変更できます。 詳しくは、「[バックグラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)」をご覧ください。
+この機能を使用すると、実行時間の制限とアイドル タスクに対するウォッチドッグが解除されます。 トリガーまたはアプリ サービスの呼び出しによってバックグラウンド タスクが開始され、**Run** メソッドで指定された [BackgroundTaskInstance](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) によって延期されると、そのバックグラウンド タスクは無期限に実行されます。 アプリが **[Windows で管理]** に設定されている場合は、割り当て電力が指定されていることがあり、バッテリー節約機能が有効であればバックグラウンド タスクがアクティブになりません。 これは、OS の設定を変更できます。 詳しくは、「[バックグラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)」をご覧ください。
 
 ユニバーサル Windows プラットフォームでは、バッテリ寿命を維持し、フォアグラウンド アプリで最適なエクスペリエンスを提供するために、バックグラウンド タスクの実行が監視されます。 ただし、個人用アプリや企業の基幹業務アプリでは、延長実行と **extendedBackgroundTaskTime** 機能を使用して、デバイス リソースの可用性にかかわらず、必要な限り実行されるアプリを作成できます。
 
@@ -83,4 +83,4 @@ _Package.appxmanifest_
 
 ## <a name="see-also"></a>関連項目
 
-[バックグラウンド タスクのリソース制限を解除する](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)
+[バック グラウンド タスクのリソース制限を削除します。](https://docs.microsoft.com/windows/application-management/enterprise-background-activity-controls)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944586"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608707"
 ---
 # <a name="set-up-the-game-project"></a>ゲーム プロジェクトのセットアップ
 
@@ -33,13 +33,13 @@ ms.locfileid: "8944586"
 
 ### <a name="use-directx-template-to-create-a-project"></a>DirectX テンプレートを使用してプロジェクトを作成する
 
-Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual の Studio2017 では多くのゲームやグラフィックス アプリの開発が容易になることが大幅にテンプレートがあります。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
+Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual Studio 2017 では、多数のゲームおよびグラフィックスのアプリ開発が大幅に軽減できるテンプレートがあります。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
 
 このチュートリアルで使用するテンプレートは、**DirectX 11 アプリ (ユニバーサル Windows)** です。 
 
 Visual Studio で DirectX 11 ゲーム プロジェクトを作成する手順を以下に示します。
-1.  **[ファイル]** &gt; **[新規作成]**  &gt; **[プロジェクト]** の順に選択します。
-2.  左側のウィンドウで、**[インストール済み]** &gt; **[テンプレート]** &gt; **[Visual C++]** &gt; **[Windows ユニバーサル]** の順に選択します。
+1.  選択**ファイル.**&gt; **新しい**&gt; **プロジェクト.** 
+2.  左側のウィンドウで次のように選択します**インストール済み** &gt; **テンプレート** &gt; **Visual c** &gt; **Windows ユニバーサル。**
 3.  中央のウィンドウで、**[DirectX 11 アプリ (ユニバーサル Windows)]** テンプレートを選びます。
 4.  ゲーム プロジェクトに名前を付けて、**[OK]** をクリックします。
 
@@ -53,7 +53,7 @@ Visual Studio で DirectX 11 ゲーム プロジェクトを作成する手順�
 
 ### <a name="inspect-apph"></a>**App.h** を調べる
 
-ビュー プロバイダーを定義する [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) インターフェイスを実装する際に使用される、**App.h** の 5 つのメソッド、[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)、[**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) について簡単に説明します。 これらのメソッドはゲームの起動時に作成されるアプリ シングルトンによって実行され、適切なイベント ハンドラーに接続されて、アプリのすべてのリソースが読み込まれます。
+短時間で 5 つの方法を見てみましょう**App.h** &mdash; [**初期化**](https://msdn.microsoft.com/library/windows/apps/hh700495)、 [ **SetWindow** ](https://msdn.microsoft.com/library/windows/apps/hh700509)、 [**ロード**](https://msdn.microsoft.com/library/windows/apps/hh700501)、 [**実行**](https://msdn.microsoft.com/library/windows/apps/hh700505)、および[**初期化**](https://msdn.microsoft.com/library/windows/apps/hh700523)を実装する場合、 [ **IFrameworkView** ](https://msdn.microsoft.com/library/windows/apps/hh700469)ビュー プロバイダーを定義するインターフェイス。 これらのメソッドはゲームの起動時に作成されるアプリ シングルトンによって実行され、適切なイベント ハンドラーに接続されて、アプリのすべてのリソースが読み込まれます。
 
 ```cpp
     // Main entry point for our app. Connects the app with the Windows shell and handle application lifecycle events.
@@ -118,7 +118,7 @@ void App::Run()
 }
 ```
 
-このメソッドでは、ゲームのウィンドウを閉じなければ、すべてのイベントがディスパッチされ、タイマーが更新され、グラフィックス パイプラインの結果がレンダリングされて表示されます。 これについては、「[UWP アプリ フレームワークの定義](tutorial--building-the-games-uwp-app-framework.md)」、「[レンダリング フレームワーク I: レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)」、「[レンダリング フレームワーク II: ゲームのレンダリング](tutorial-game-rendering.md)」で詳しく説明します。 これで、UWP DirectX ゲームのコードの基本構造については理解できました。
+このメソッドの特長。ゲームは、ウィンドウが閉じていない場合、すべてのイベントをディスパッチ、タイマーを更新、をレンダリングおよびグラフィックス パイプラインの結果を提供します。 については、これでさらに詳しく話します[UWP アプリのフレームワークを定義](tutorial--building-the-games-uwp-app-framework.md)、[レンダリング framework i:レンダリングの概要](tutorial--assembling-the-rendering-pipeline.md)、および[レンダリング framework II:ゲームのレンダリング](tutorial-game-rendering.md)します。 これで、UWP DirectX ゲームのコードの基本構造については理解できました。
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>package.appxmanifest ファイルを確認して更新する
 
@@ -143,17 +143,17 @@ void App::Run()
 
 | テンプレート ソース ファイル         | ファイル フォルダー            | 説明 |
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DeviceResources.h/.cpp       | Common                 | すべての DirectX [デバイス リソース](tutorial--assembling-the-rendering-pipeline.md#resource)を制御するクラス オブジェクトを定義します。 デバイスが消失または作成されたときに通知される DeviceResources を所有しているアプリケーションのインターフェイスも含まれています。                                                |
-| DirectXHelper.h              | Common                 | **DX::ThrowIfFailed**、**ReadDataAsync**、**ConvertDipsToPixels などのメソッドを実装します。 **DX::ThrowIfFailed** は、DirectX Win32 API によって返されたエラー HRESULT 値を Windows ランタイム例外に変換します。 このメソッドを使って、DirectX エラーをデバッグするためのブレーク ポイントを配置します。 詳しくは、[ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed) をご覧ください。 **ReadDataAsync** は、バイナリ ファイルから非同期的に読み取ります。 **ConvertDipsToPixels** は、デバイスに依存しないピクセル (DIP) 単位の長さを物理ピクセル単位の長さに変換します。 |
-| StepTimer.h                  | Common                 | ゲーム アプリまたは対話型レンダリング アプリで役に立つ、高分解能タイマーを定義します。   |
-| Sample3DSceneRenderer.h/.cpp | Content                | 基本的なレンダリング パイプラインのインスタンスを作成するクラス オブジェクトを定義します。 DirectX を使った UWP に Direct3D スワップ チェーンとグラフィックス アダプターを接続する基本的なレンダラー実装を作成します。   |
-| SampleFPSTextRenderer.h/.cpp | Content                | Direct2D と DirectWrite を使って画面の右下隅に現在の FPS (1 秒あたりのフレーム数) 値をレンダリングするクラス オブジェクトを定義します。  |
-| SamplePixelShader.hlsl       | Content                | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                            |
-| SampleVertexShader.hlsl      | Content                | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                           |
-| ShaderStructures.h           | Content                | MVP 行列と頂点単位のデータを頂点シェーダーに送信するために使用できるシェーダー構造体が含まれています。  |
-| pch.h/.cpp                   | Main                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。| 
+| DeviceResources.h/.cpp       | 共通                 | すべての DirectX [デバイス リソース](tutorial--assembling-the-rendering-pipeline.md#resource)を制御するクラス オブジェクトを定義します。 デバイスが消失または作成されたときに通知される DeviceResources を所有しているアプリケーションのインターフェイスも含まれています。                                                |
+| DirectXHelper.h              | 共通                 | **DX::ThrowIfFailed**、**ReadDataAsync**、**ConvertDipsToPixels などのメソッドを実装します。 **DX::ThrowIfFailed** は、DirectX Win32 API によって返されたエラー HRESULT 値を Windows ランタイム例外に変換します。 このメソッドを使って、DirectX エラーをデバッグするためのブレーク ポイントを配置します。 詳しくは、[ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed) をご覧ください。 **ReadDataAsync** は、バイナリ ファイルから非同期的に読み取ります。 **ConvertDipsToPixels** は、デバイスに依存しないピクセル (DIP) 単位の長さを物理ピクセル単位の長さに変換します。 |
+| StepTimer.h                  | 共通                 | ゲーム アプリまたは対話型レンダリング アプリで役に立つ、高分解能タイマーを定義します。   |
+| Sample3DSceneRenderer.h/.cpp | コンテンツ                | 基本的なレンダリング パイプラインのインスタンスを作成するクラス オブジェクトを定義します。 DirectX を使った UWP に Direct3D スワップ チェーンとグラフィックス アダプターを接続する基本的なレンダラー実装を作成します。   |
+| SampleFPSTextRenderer.h/.cpp | コンテンツ                | Direct2D と DirectWrite を使って画面の右下隅に現在の FPS (1 秒あたりのフレーム数) 値をレンダリングするクラス オブジェクトを定義します。  |
+| SamplePixelShader.hlsl       | コンテンツ                | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                            |
+| SampleVertexShader.hlsl      | コンテンツ                | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                           |
+| ShaderStructures.h           | コンテンツ                | MVP 行列と頂点単位のデータを頂点シェーダーに送信するために使用できるシェーダー構造体が含まれています。  |
+| pch.h/.cpp                   | メイン                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。| 
 
-### <a name="next-steps"></a>次の手順
+### <a name="next-steps"></a>次のステップ
 
 これで、**DirectX 11 アプリ (ユニバーサル Windows)** テンプレートを使用して UWP DirectX ゲーム プロジェクトを作成する方法と、このプロジェクトで提供されるいくつかのコンポーネントとファイルについての説明が終わりました。
 

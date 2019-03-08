@@ -4,14 +4,14 @@ description: メッシュ オブジェクト、テクスチャ オブジェク�
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10、UWP、ゲーム、BasicLoader
+keywords: Windows 10, UWP, ゲーム, BasicLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: cfcec2550455df8afe5870f9b760e1f7225f847c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930222"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637257"
 ---
 # <a name="complete-code-for-basicloader"></a>BasicLoader のコード一式
 
@@ -22,8 +22,8 @@ ms.locfileid: "8930222"
 このトピックは次のセクションで構成されます。
 
 -   [テクノロジ](#technologies)
--   [必要条件](#requirements)
--   [コードの表示 (C++)](#view-the-code-c)
+-   [要件](#requirements)
+-   [コードを表示する (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
 

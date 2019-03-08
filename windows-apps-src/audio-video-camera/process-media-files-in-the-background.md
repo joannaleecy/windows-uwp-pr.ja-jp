@@ -4,14 +4,14 @@ description: この記事では、MediaProcessingTrigger とバックグラウ�
 title: バックグラウンドでのメディア ファイルの処理
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0194ccba43e2ba5270b9ff8eacf045ca140af6cb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934717"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611907"
 ---
 # <a name="process-media-files-in-the-background"></a>バックグラウンドでのメディア ファイルの処理
 
@@ -19,13 +19,13 @@ ms.locfileid: "8934717"
 
 この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
 
-この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。 次に、バックグラウンド タスクが起動してコード変換操作が実行されます。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。
+この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。 次に、バックグラウンド タスクが起動してコード変換操作が実行されます。 [  **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。
 
 このサンプルで利用されているさまざまなユニバーサル Windows アプリ機能について詳しくは、次をご覧ください。
 
--   [メディア ファイルのコード変換](transcode-media-files.md)
--   [起動、再開、バックグラウンド タスク](https://msdn.microsoft.com/library/windows/apps/mt227652)
--   [タイル、バッジ、および通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
+-   [メディア ファイルをトランス コード](transcode-media-files.md)
+-   [再開して、バック グラウンド タスクを起動します。](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [タイル バッジと通知](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
 ## <a name="create-a-media-processing-background-task"></a>メディア処理のバックグラウンド タスクの作成
 
@@ -48,10 +48,10 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 次のメンバー変数をクラスに追加します。
 
--   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。
--   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。
+-   [  **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。
+-   [  **BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。
 -   **CancellationTokenSource** オブジェクト。非同期コード変換操作を取り消すために使うことができます。
--   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。
+-   [  **MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
@@ -67,7 +67,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 **TranscodeFileAsync** ヘルパー メソッドで、コード変換操作の入力ファイルと出力ファイルのファイル名がアプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) から取得されます。 これらの値は、フォアグラウンド アプリによって設定されます。 入力ファイルと出力ファイルの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを作成し、コード変換に使うエンコード プロファイルを作成します。
 
-入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。 この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。
+入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。 この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。 [  **CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。
 
 **AsTask** メソッドを使うと、非同期操作の進行状況を追跡したり、取り消したりできます。 必要な進行状況の単位と、タスクの現在の進行状況について通知するために呼び出されるメソッドの名前を指定して、新しい **Progress** オブジェクトを作成します。 タスクの取り消しを可能にするキャンセル トークンと共に、**Progress** オブジェクトを **AsTask** メソッドに渡します。
 
@@ -87,7 +87,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 ## <a name="register-and-launch-the-background-task"></a>バックグラウンド タスクの登録と起動
 
-フォアグラウンド アプリからバックグラウンド タスクを起動するには、フォアグラウンド アプリの Package.appmanifest ファイルを更新して、アプリがバックグラウンド タスクを使っていることをシステムに認識させる必要があります。
+フォアグラウンド アプリからバックグラウンド タスクを起動するには、フォアグラウンド アプリの Package.appmanifest ファイルを更新して、アプリがバックグラウンド タスクを使っていることをシステムが認識できるようにする必要があります。
 
 1.  **ソリューション エクスプローラー**で、Package.appmanifest アイコンをダブルクリックしてマニフェスト エディターを開きます。
 2.  **[宣言]** タブをクリックします。
@@ -116,21 +116,21 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 [!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。 後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。 [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。 [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。
+バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。 後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。 [  **TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。 [  **Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。
 
 タスクを登録する前に、[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) コレクションをループ処理し、[**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) プロパティで指定した名前を持つすべてのタスクで [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) を呼び出すことにより、以前に登録したタスクを必ず登録解除してください。
 
-[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。
+[  **Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。 [  **Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-一般的なアプリは、アプリが、 **OnNavigatedTo**イベントなどの最初に起動されたときに、バック グラウンド タスクを登録します。
+アプリがなどで、最初に起動したときに一般的なアプリが、バック グラウンド タスクを登録、 **OnNavigatedTo**イベント。
 
 **MediaProcessingTrigger** オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) メソッドを呼び出してバックグラウンド タスクを起動します。 このメソッドによって返される [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) オブジェクトにより、バックグラウンド タスクが正常に起動されたかどうかを把握することができます。正常に起動されなかった場合は、バックグラウンド タスクが起動しなかった理由を把握できます。 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-UI コントロールの**クリックして**イベントなど、一般的なアプリは、ユーザー操作への応答としてバック グラウンド タスクを起動します。
+一般的なアプリは起動し、ユーザーの操作への応答でバック グラウンド タスクなど、**クリックして**UI コントロールのイベント。
 
 バックグラウンド タスクが操作の進行状況を更新すると、**OnProgress** イベント ハンドラーが呼び出されます。 この機会を使って、進行状況情報によって UI を更新することができます。
 

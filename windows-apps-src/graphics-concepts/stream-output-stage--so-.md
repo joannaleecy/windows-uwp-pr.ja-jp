@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936476"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605047"
 ---
 # <a name="stream-output-so-stage"></a>ストリーム出力 (SO) ステージ
 
 
 ストリーム出力 (SO) ステージでは、直前のアクティブなステージからメモリ内の 1 つ以上のバッファーに、頂点データを連続して出力 (ストリーミング) します。 メモリにストリーミングされたデータは、CPU からの入力データまたはリード バックとして、パイプラインに再循環させることができます。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と用途
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と使用
 
 
 ![パイプライン内のストリーム出力ステージの場所を示す図](images/d3d10-pipeline-stages-so.png)
@@ -41,9 +41,9 @@ ms.locfileid: "8936476"
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>出力
 
 
-ストリーム出力 (SO) ステージでは、ジオメトリ シェーダー (GS) ステージなど、直前のアクティブなステージからメモリ内の 1 つ以上のバッファーに、頂点データを連続して出力 (ストリーミング) します。 ジオメトリ シェーダー (GS) ステージがアクティブでない場合、ストリーム出力 (SO) ステージは、ドメイン シェーダー (DS) ステージからメモリ (または DS もないかどうかは、頂点シェーダー (VS) ステージからのアクティブな) 内のバッファー、頂点データを継続して出力します。
+ストリーム出力 (SO) ステージでは、ジオメトリ シェーダー (GS) ステージなど、直前のアクティブなステージからメモリ内の 1 つ以上のバッファーに、頂点データを連続して出力 (ストリーミング) します。 ジオメトリ シェーダー (GS) のステージがアクティブでない場合、Stream 出力 (SO) 段階は継続的にメモリ (または、DS でないかどうかも、頂点シェーダー (VS) ステージからのアクティブな) 内のバッファーに、ドメイン シェーダー (DS) のステージから頂点データを出力します。
 
-三角形ストリップまたはライン ストリップが入力アセンブラー (IA) ステージにバインドされている場合、ストリーム アウトする前に、各ストリップがリストに変換されます。頂点が常に (たとえば、3 つの頂点の三角形の時点で); の完全なプリミティブとして書き出さ不完全なプリミティブがストリーム出力されることはありません。隣接性を持つプリミティブ型は、データをストリーミングする前に隣接性データを破棄します。
+三角形ストリップまたはライン ストリップが入力アセンブラー (IA) ステージにバインドされているときには、各ストリップがリストに変換されてからストリーム出力されます。頂点は、常に、完全なプリミティブとして書き出されます (たとえば、三角形の場合は 3 つの頂点が一度に出力されます)。不完全なプリミティブがストリーム出力されることはありません。隣接性のあるプリミティブ タイプの場合、データがストリーム出力される前に隣接性データが破棄されます。
 
 ストリーム出力ステージでは、同時に最大 4 つのバッファーまでサポートします。
 

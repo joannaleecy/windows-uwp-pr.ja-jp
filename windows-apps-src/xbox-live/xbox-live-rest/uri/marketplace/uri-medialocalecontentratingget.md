@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d1cb9d09de8671d4cd3d61e96a8335412237e5c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944634"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641587"
 ---
 # <a name="get-mediamarketplaceidcontentrating"></a>GET (/media/{marketplaceId}/contentRating)
-コンテンツの規制のトークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
+コンテンツのレーティング トークンを取得します。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4ELB)
@@ -26,14 +26,14 @@ ms.locfileid: "8944634"
  
 ## <a name="remarks"></a>注釈
  
-保護者子が表示できるコンテンツを適用することは、複雑な作業です。 だけでなく各メディア項目の種類は、独自の評価システムがそれらの評価システムは国によって異なることができます。 これはすべての項目を適切にフィルターを指定する必要があるデータの複数の異なる部分があることを意味します。
+複雑なタスクは、子が参照を許可するコンテンツに対する保護者による制御を適用します。 だけでなくは各メディア項目の種類が、独自の評価システムが、これらの評価システムは、国を変更できます。 これはすべての項目を適切にフィルターを指定する必要があるデータのいくつかの異なる部分があることを意味します。
  
-すべてのパラメーターを指定する、すべての API 呼び出しで、代わりは、この API は、他の Api で**combinedContentRating**パラメーターに渡すし、同じ情報をまだ通信する値を生成します。 これは、この API に渡されるいくつかのパラメーターは、その他の Api の 1 つ、再利用可能な値に折りたたまれたとき、Api を使用し、保守、やすくするために設計されています。
+すべてのパラメーターを指定する、すべての API 呼び出しで、代わりに、この API に渡す値を生成**combinedContentRating**他の Api でのパラメーターと同じ情報を引き続き通信します。 これは、やすく Api を使用して、保守がその他の Api の 1 つの再利用可能な値にこの API に渡されるいくつかのパラメーターが折りたたまれている設計されています。
  
-頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント探索サービス (EDS) の間など)、したがって、長期間のキャッシュ可能性があります。 **CombinedContentRating**パラメーターにより、わかりやすいエラー メッセージで渡した値が有効である場合を受け入れることを意味する API 呼び出し元だけ必要があります、更新された値を取得するには、もう一度この API を呼び出します。 指定されていなければ、API が**combinedContentRating**パラメーターを受け取る場合、コンテンツのフィルター処理は行われません保護者に基づいています。 
+頻繁に変更する必要がありますが、この API によって返される正確な値は変更が最終的に、(リリース エンターテイメント検出サービス (EDS) の間など)、したがって、長期間のキャッシュ可能性があります。 API を受け入れる、 **combinedContentRating**パラメーターに渡された値が有効でない場合は、意味のあるエラー メッセージは、呼び出し元が単なる更新後の値を取得するには、もう一度この API を呼び出す必要がありますを示す値。 API を受け入れる場合、 **combinedContentRating**コンテンツのフィルター処理は行われません保護者による制限に基づいて、指定されたパラメーターが 1 つにはありません。 
 
 > [!NOTE] 
-> これとは限りません。 のみ"安全"コンテンツが返されること - すべてのコンテンツが返されること、明示的な可能性のあるコンテンツを含むことを意味します。 
+> わけでは「安全」のみのコンテンツが返されるか--すべてのコンテンツが返されるか、明示的な可能性のあるコンテンツを含むことを意味します。 
 
 
   
@@ -42,23 +42,23 @@ ms.locfileid: "8944634"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4EWB"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| filterExplicit| ブール値| 省略可能。 明示的な音楽をフィルター処理します。| 
-| filterFamilyOnlyApps| ブール値| 省略可能。 わかりやすいファミリとしてマークいないアプリをフィルター処理します。| 
-| filterUnrated| ブール値| 省略可能。 か、応答に評価されるコンテンツを含めることがかどうかを決定します。| 
-| maxGameRating| 32 ビット符号付き整数| 省略可能。 ゲームをフィルター処理します。| 
-| maxMovieRating| 32 ビット符号付き整数| 省略可能。 特定のレベルを超える映画をフィルター処理します。| 
-| maxTVRating| 32 ビット符号付き整数| 省略可能。 テレビをフィルター処理します。| 
+| filterExplicit| ブール値| (省略可能)。 明示的な音楽をフィルター処理します。| 
+| filterFamilyOnlyApps| ブール値| (省略可能)。 フィルター アプリのわかりやすいファミリとしてマークされません。| 
+| filterUnrated| ブール値| (省略可能)。 かどうか、評価済みでないコンテンツを応答に含める必要があるかどうかを判断します。| 
+| maxGameRating| 32 ビット符号付き整数| (省略可能)。 ゲームをフィルター処理します。| 
+| maxMovieRating| 32 ビット符号付き整数| (省略可能)。 特定のレベルより上の映画をフィルター処理します。| 
+| maxTVRating| 32 ビット符号付き整数| (省略可能)。 テレビをフィルター処理します。| 
   
 <a id="ID4E5D"></a>
 
@@ -78,14 +78,14 @@ ms.locfileid: "8944634"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

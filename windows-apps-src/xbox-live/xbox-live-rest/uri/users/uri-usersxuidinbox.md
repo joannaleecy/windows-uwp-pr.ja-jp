@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ded70b32dfd291d17a43a1741b26710f681a397
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922074"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640897"
 ---
 # <a name="usersxuidxuidinbox"></a>/users/xuid({xuid})/inbox
-ユーザーへのアクセスの Xbox LIVE サービスの受信トレイのメッセージを提供します。 これらの Uri のドメインが`msg.xboxlive.com`します。
+ユーザーへのアクセスには、Xbox LIVE サービスの受信トレイがのメッセージングを提供します。 これらの Uri のドメインが`msg.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8922074"
  
 ## <a name="uri-parameters"></a>URI パラメーター 
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
-| メッセージ Id | 文字列 [50] | 取得または削除されるメッセージの ID です。 | 
+| xuid | 64 ビット符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレーヤー。 | 
+| メッセージ Id | string[50] | メッセージの取得中または削除の ID。 | 
   
 <a id="ID4EDC"></a>
 
@@ -36,15 +36,15 @@ ms.locfileid: "8922074"
 
 [GET (/users/xuid({xuid})/inbox)](uri-usersxuidinboxget.md)
 
-&nbsp;&nbsp;サービスから指定したメッセージの概要をユーザー数を取得します。 
+&nbsp;&nbsp;サービスから、指定された数のユーザー メッセージの概要を取得します。 
 
 [DELETE (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageiddelete.md)
 
-&nbsp;&nbsp;ユーザーの受信トレイでユーザーのメッセージを削除します。
+&nbsp;&nbsp;ユーザーの受信トレイ内のユーザー メッセージを削除します。
 
 [GET (/users/xuid({xuid})/inbox/{messageId})](uri-usersxuidinboxmessageidget.md)
 
-&nbsp;&nbsp;サービスの読み取りとしてマークすること、特定のユーザーのメッセージの詳細なメッセージ テキストを取得します。 
+&nbsp;&nbsp;開封済みにサービスで、特定のユーザー メッセージの詳細なメッセージ テキストを取得します。 
  
 <a id="ID4EVC"></a>
 
@@ -56,6 +56,6 @@ ms.locfileid: "8922074"
  
 ##### <a name="parent"></a>Parent  
 
-[ユーザー URI](atoc-reference-users.md)
+[ユーザーの Uri](atoc-reference-users.md)
 
    

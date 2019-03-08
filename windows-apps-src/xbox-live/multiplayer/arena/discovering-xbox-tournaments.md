@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a065d6d4da290f2ce3345c7da0026d4c116335
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931024"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632477"
 ---
 # <a name="discovering-xbox-tournaments"></a>Xbox のトーナメント情報の提供
 
@@ -29,11 +29,11 @@ ms.locfileid: "8931024"
 ユーザーがトーナメントを観戦するのは、そのタイトルに関心があるからです。 Xbox Games には、ゲーマーが新しいことに挑戦してゲームプレイ体験を広げたいと考えているタイミングを捉えて、ゲーマーを獲得するしくみが用意されています。
 
 > [!TIP]
-> **推奨される UX:** プレイヤーが決断するタイミングでトーナメントを宣伝します。
+> **UX の推奨事項:** 意思決定の瞬間のトーナメントを昇格します。
 >
 > プレイヤーがプレイを続行するか終了するかを決断するタイミングで、トーナメントを宣伝してください (ゲームの起動時、メイン メニュー、マッチ終了時など)。
 
-### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a>1 動的なお知らせ機能の使用 (例: "今日のメッセージ" など)。
+### <a name="1--use-a-dynamic-announcement-feature-example-message-of-the-day"></a>1. 動的なアナウンス機能を使用して (例。1 日のメッセージ)
 
 ゲーム UI にお知らせ機能が組み込まれているタイトルでは、通常、即時更新が可能なコンテンツ管理システムが使用されています。 これを利用すれば、コンテンツを更新したり、ダウンロード コンテンツ リリースを発行したりせずに、新しいコンテンツをゲーマーにプッシュできます。 たとえば、Halo では "今日のメッセージ" 機能を使って、コミュニティのお知らせやヒントを表示しています。 この機能は、トーナメントの宣伝に最適です。
 
@@ -45,11 +45,11 @@ ms.locfileid: "8931024"
 * この機能では、コンテンツを更新せずに情報を設定できます。
 * 宣伝の関連性とタイミングは柔軟性が維持されます。
 
-###### <a name="ui-example-message-of-the-day"></a>UI の例: "今日のメッセージ"
+###### <a name="ui-example-message-of-the-day"></a>UI の例:'、1 日の message'
 
 ![トーナメントの今日のメッセージ](../../images/arena/arena-ux-motd.png)
 
-#### <a name="a-main-heading-ex-play-watch-learn"></a>A. 大見出し。たとえば、"Play, Watch, Learn" (プレイしよう。観戦しよう。スキルを磨こう。) など  
+#### <a name="a-main-heading-ex-play-watch-learn"></a>A. メインの見出し:プレイ、視聴、について説明します  
 
 ゲーマーにすべてのトーナメントについて告知することも、特定のトーナメントについて告知することもできます。
 
@@ -63,19 +63,19 @@ ms.locfileid: "8931024"
 
 A と B の画面要素によって、ユーザーはゲームを終了して Xbox ダッシュボードに移動します。 タイトルの UI によってこれからの動作を予告したうえで、ゲーマーに確認を求めます。
 
-###### <a name="ui-example-exit-game-confirmation"></a>UI の例: ゲームの終了確認
+###### <a name="ui-example-exit-game-confirmation"></a>UI の例:終了のゲームの確認
 ![トーナメントの情報を表示するためのゲーム終了の確認](../../images/arena/arena-ux-exit-confirm.png)
 
-### <a name="2--promote-tournaments-on-the-main-menu"></a>2. メイン メニューでのトーナメントの宣伝
+### <a name="2--promote-tournaments-on-the-main-menu"></a>2. メイン メニューで、トーナメントを昇格します。
 
 この例では、対話型広告を使って開催予定のイベントを告知しています。 この広告では、ゲーマーの関心を引く十分な情報が提供されています。 **[Select]** (選択) を選ぶと、ゲーマーはアリーナ ハブのトーナメントの詳細ページに誘導され、そこでトーナメントに登録できます。
 
-###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a>UI の例: メイン メニューと共に表示されているトーナメントの広告
+###### <a name="ui-example-a-tournament-ad-displayed-alongside-the-main-menu"></a>UI の例:メイン メニューの横に表示トーナメント ad
 
 ![](../../images/arena/arena-ux-promo.png)
 
 > [!TIP]
-> **推奨される UX**  
+> **UX の推奨事項**  
 > お知らせには、ゲーマーが詳細情報を表示するかどうかを決断するために必要な情報のみを表示します。 たとえば、***説明***、***人気***、***タイミング***について記載します。
 
 ## <a name="browsing-tournaments-in-game"></a>ゲーム内でのトーナメント情報の閲覧
@@ -83,11 +83,11 @@ A と B の画面要素によって、ユーザーはゲームを終了して Xb
 アリーナ API からタイトルに提供されるデータを使って、ゲーム内に閲覧エクスペリエンスを作成できます。 閲覧機能を構築する場合は、Multiplayer セクションに **Tournaments** エントリ ポイントを追加します。
 
 > [!TIP]
-> **推奨される UX**  
+> **UX の推奨事項**  
 > トーナメントをマルチプレイヤー ゲーム モードで提示します。  
 > Xbox アリーナは新しい機能であるため、階層 1 または階層 2 レベルで表示できる状態を維持してください。
 
-###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a>UI の例: [Multiplayer] (マルチプレイヤー) セクションに追加のモードとしてトーナメントを表示
+###### <a name="ui-example-tournaments-listed-as-an-additional-mode-in-the-multiplayer-section"></a>UI の例:トーナメントのマルチ プレーヤーのセクションで追加のモードとして一覧表示
 
 ![トーナメント モード](../../images/arena/arena-ux-tournament-mode.png)
 
@@ -107,7 +107,7 @@ A と B の画面要素によって、ユーザーはゲームを終了して Xb
 
 
 > [!TIP]
-> **推奨される UX**  
+> **UX の推奨事項**  
 > UI はサイズ変更できるように作成します。また、一覧に膨大な数のトーナメントが含まれていてもゲーマーが管理できるように、適切な機能を提供します。
 
 ### <a name="filters"></a>フィルター
@@ -176,4 +176,4 @@ A と B の画面要素によって、ユーザーはゲームを終了して Xb
 * キャンセル日時
 
 > [!div class="nextstepaction"]
-> [アリーナ UI を使ってトーナメントに参加する](arena-ux-join-tournament.md)
+> [競技場 UI を使用して、トーナメントに参加します。](arena-ux-join-tournament.md)

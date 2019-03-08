@@ -4,14 +4,14 @@ title: xName 属性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ef1a6047a7c462961f40ae8913881125e2331bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946883"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618267"
 ---
 # <a name="xname-attribute"></a>x:Name 属性
 
@@ -43,9 +43,9 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   文字は下位の ASCII の範囲 (具体的には、英文字の大文字と小文字、数字、アンダースコア (\_) 文字) に制限されています。
+-   文字が ASCII の下の範囲はローマ字の大文字と小文字の英字、数字、およびアンダー スコアを具体的には制限されている (\_) 文字。
 -   Unicode 文字範囲はサポートされていません。
--   名前の先頭を数字にすることはできません。 一部のツールの実装では、ユーザーが数字を先頭文字として指定した場合、文字列の先頭にアンダースコア (\_) 文字が付加されます。または、ツールによって、数字が含まれる他の値に基づいて **x:Name** 値が自動生成されます。
+-   名前の先頭を数字にすることはできません。 いくつかのツールの実装の先頭にアンダー スコア (\_)、ユーザーは最初の文字またはツールによってとして 1 桁の数字を指定する場合、文字列に**X:name**桁の数字が含まれているその他の値に基づいて値。
 
 ## <a name="remarks"></a>注釈
 
@@ -57,17 +57,17 @@ CombiningCharacter::= none
 
 **x:Name** は、XAML プロパティ要素構文で設定することも、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を使うコードで設定することもできません。 **x:Name** は、要素の XAML 属性構文を使うことでのみ設定できます。
 
-**注:** 専用に C + +/CX アプリの場合、 **x: Name**参照のバッキング フィールドが、XAML ファイルまたはページのルート要素に対して作成されません。 C++ のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
+**注**  専用の C +/cli/CX アプリのバッキング フィールドを**X:name** XAML ファイルまたはページのルート要素の参照は作成されません。 C++ のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
 
 ### <a name="xname-and-other-name-properties"></a>x:Name などの Name プロパティ
 
-UWP XAML で使われる一部の型にも、**Name** という名前のプロパティがあります。 [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125) などです。
+UWP XAML で使われる一部の型にも、**Name** という名前のプロパティがあります。 [  **FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125) などです。
 
 要素で設定可能なプロパティとして **Name** が使用できる場合、XAML では **Name** と **x:Name** のどちらも使うことができますが、両方の属性を同じ要素で指定するとエラーが発生します。 また、**Name** プロパティがあるものの、読み取り専用であるという場合もあります ([**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) など)。 そのような場合には、XAML 内の要素に名前を付けるときには常に **x:Name** を使います。読み取り専用の **Name** は、それほど一般的ではないコードのシナリオのために存在します。
 
-**注:**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)は一般には、一般的な規則の例外となるいくつかのシナリオがありますが、 **x: Name**で設定された値を変更する方法として使用されません。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
+**注:**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) は通常、**x:Name** で設定された値を変更するときには使いませんが、この原則の例外となるシナリオもあります。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
 
 ### <a name="xname-and-xkey"></a>x:Name と x:Key
 
-[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の要素に属性として **x:Name** を適用すると、[x:Key 属性](x-key-attribute.md)の代わりとしての役割を果たします (**ResourceDictionary** 内のどの要素にも x:Key または x:Name 属性があるというのが規則です)。これは、[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)によく見られます。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」の各セクションをご覧ください。
+[  **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の要素に属性として **x:Name** を適用すると、[x:Key 属性](x-key-attribute.md)の代わりとしての役割を果たします (ルールをすべての要素を**ResourceDictionary** X:key または X:name 属性を持つ必要があります)。これは[アニメーションを再検討](https://msdn.microsoft.com/library/windows/apps/mt187354)します。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」の各セクションをご覧ください。
 

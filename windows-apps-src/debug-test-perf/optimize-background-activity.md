@@ -4,14 +4,14 @@ title: バックグラウンド アクティビティの最適化
 description: システムと連携して、バッテリー効率の高い方法でバックグラウンド タスクを使用する UWP アプリを作成します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a56bc23b4b727d5be2ed35fb77afae03f0689c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940551"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613227"
 ---
 # <a name="optimize-background-activity"></a>バックグラウンド アクティビティの最適化
 
@@ -52,7 +52,7 @@ Windows 10 Version 1607 以降を実行するデスクトップ デバイスや�
 バックグラウンド タスクを登録する場合に、さらにバッテリー効率を高めるためのその他の手順を次に示します。
 
 ### <a name="use-a-maintenance-trigger"></a>メンテナンス トリガーの使用 
-[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) オブジェクトを [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) オブジェクトの代わりに使用すると、バックグラウンド タスクを開始するタイミングを判断できます。 メンテナンス トリガーを使用するタスクは、デバイスが AC 電源に接続され、長時間実行できる場合のみ実行されます。 使い方については、「[メンテナンス トリガーの使用](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)」をご覧ください。
+[  **MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) オブジェクトを [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) オブジェクトの代わりに使用すると、バックグラウンド タスクを開始するタイミングを判断できます。 メンテナンス トリガーを使用するタスクは、デバイスが AC 電源に接続され、長時間実行できる場合のみ実行されます。 使い方については、「[メンテナンス トリガーの使用](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)」をご覧ください。
 
 ### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>**BackgroundWorkCostNotHigh** システム条件型の使用
 これにより、システム条件が満たされている場合のみバックグラウンド タスクが実行されます (詳しくは、「[バック グラウンド タスクを実行するための条件の設定](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task)」をご覧ください)。 バック グラウンド作業のコストとは、バックグラウンド タスクの実行が消費電力にもたらす*相対的な*影響を示す尺度です。 デバイスが AC 電源に接続されているときに実行されるタスクは、**low**(低。バッテリーへの影響がわずかまたはなし) としてマークされます。 バッテリー電源で稼働していて、画面がオフのときに実行されるタスクは、**high** (高) としてマークされます。そのような場合には、デバイス上でほとんどプログラム アクティビティが行われていないため、バックグラウンド タスクの相対的コストが大きくなります。 バッテリー電源で稼働していて、画面が*オン*のときに実行されるタスクは、**medium** (中) としてマークされます。そのような場合には、おそらく何らかのプログラム アクティビティが既に実行されていて、バックグラウンド タスクはそのエネルギー コストを少し追加する程度であるためです。 **BackgroundWorkCostNotHigh** システム条件は、画面がオンになるか、デバイスが AC 電源に接続されるまで、単純にタスクの実行を遅らせます。
@@ -63,6 +63,6 @@ Windows 10 Version 1607 以降を実行するデスクトップ デバイスや�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [作成して、プロセス外のバック グラウンド タスクの登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [パフォーマンスの計画](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

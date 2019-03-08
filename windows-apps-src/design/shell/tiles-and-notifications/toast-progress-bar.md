@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use a progress bar within your toast notification.
+Description: トースト通知内での進行状況バーを使用する方法について説明します。
 title: トーストの進行状況バーとデータ バインディング
 label: Toast progress bar and data binding
 template: detail.hbs
@@ -8,22 +8,22 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, 進行状況バー, トーストの進行状況バー, 通知, トーストのデータ バインディング
 ms.localizationpriority: medium
 ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
-ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8969059"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624827"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>トーストの進行状況バーとデータ バインディング
 
 トースト通知内に進行状況バーを使用すると、ダウンロード、ビデオ レンダリング、一連の作業など、長い時間を要する処理の進行状況を表示できます。
 
 > [!IMPORTANT]
-> **Creators Update と Notifications ライブラリ 1.4.0 が必要**: トーストで進行状況バーを使用するには、SDK 15063 をターゲットとし、ビルド 15063 以上を実行する必要があります。 トーストのコンテンツ内に進行状況バーを作成するには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。
+> **Creators Update と通知ライブラリの 1.4.0 必要**:SDK 15063 を対象にして、15063 以上トーストで進行状況バーを使用するビルドを実行します。 トーストのコンテンツ内に進行状況バーを作成するには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。
 
-トースト内の進行状況バーできますかできない「確定型」(特定値なしに、アニメーションのドットによって示す操作が行われている)「確定型」(、バーの塗りつぶし、60% など)。
+トースト内での進行状況バーできません「不確定」(特定の値はありません、アニメーション化された点を示します、操作が実行されている) または「不確定」(バーの指定したパーセントが入力されます、60% など)。
 
-> **重要な API**: [NotificationData クラス](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、[ToastNotifier.Update メソッド](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、[ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **重要な Api**:[NotificationData クラス](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、 [ToastNotifier.Update メソッド](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、 [ToastNotification クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > トースト通知での進行状況バーは、デスクトップでのみサポートされています。 他のデバイスでは、進行状況バーが通知から削除されます。
@@ -32,12 +32,12 @@ ms.locfileid: "8969059"
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| プロパティ | 型 | 必須かどうか | 説明 |
+| プロパティ | 種類 | 必須 | 説明 |
 |---|---|---|---|
-| **Title** | string または [BindableString](toast-schema.md#bindablestring) | false | タイトルの文字列 (オプション) を取得または設定します。 データ バインディングをサポートしています。 |
-| **Value** | double または [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) か [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 進行状況バーの値を取得または設定します。 データ バインディングをサポートしています。 既定値は 0 です。 0.0 ～ 1.0 の double 型または `AdaptiveProgressBarValue.Indeterminate` か `new BindableProgressBarValue("myProgressValue")` です。 |
+| **タイトル** | string または [BindableString](toast-schema.md#bindablestring) | false | タイトルの文字列 (オプション) を取得または設定します。 データ バインディングをサポートしています。 |
+| **値** | double または [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) か [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 進行状況バーの値を取得または設定します。 データ バインディングをサポートしています。 既定値は 0 です。 0.0 ～ 1.0 の double 型または `AdaptiveProgressBarValue.Indeterminate` か `new BindableProgressBarValue("myProgressValue")` です。 |
 | **ValueStringOverride** | string または [BindableString](toast-schema.md#bindablestring) | false | 割合を示す既定の文字列に代わって表示される文字列 (オプション) を取得または設定します。 これを指定しない場合は、"70%" などの文字が表示されます。 |
-| **Status** | string または [BindableString](toast-schema.md#bindablestring) | true | 進行状況バーの下の左側に表示されるステータス文字列 (必須) を取得または設定します。 この文字列は、"ダウンロード中..." や "インストール中..." などのように、操作の状態を反映する必要があります。 |
+| **状態** | string または [BindableString](toast-schema.md#bindablestring) | true | 進行状況バーの下の左側に表示されるステータス文字列 (必須) を取得または設定します。 この文字列は、"ダウンロード中..." や "インストール中..." などのように、操作の状態を反映する必要があります。 |
 
 
 以下では、上に示した通知を生成する方法を示します。
@@ -204,10 +204,10 @@ Windows 10 以降では、同じ **Tag** と **Group** を使って新しいト�
 
 | | 置換 | 更新 |
 | -- | -- | --
-| **アクション センター内での位置** | 通知がアクション センターの一番上に移動します。 | アクション センター内の同じ位置に通知が固定されます。 |
+| **アクション センター内の位置** | 通知がアクション センターの一番上に移動します。 | アクション センター内の同じ位置に通知が固定されます。 |
 | **コンテンツの変更** | トーストのすべてのコンテンツやレイアウトを完全に変更できます。 | データ バインディングをサポートするプロパティ (進行状況バーと最上位のテキスト) のみ変更できます。 |
-| **ポップアップとしての再表示** | **SuppressPopup** を `false` に設定したままの場合は、トースト ポップアップとして再表示できます (true に設定するとサイレント モードでアクション センターに送信されます)。 | ポップアップとしては再表示されません。アクション センター内でトーストのデータがサイレント モードで更新されます。 |
-| **ユーザーによる無視** | ユーザーがそれまでの通知を無視しても、置換トーストは常に送信されます。 | ユーザーがトーストを無視すると、トーストの更新は失敗します。 |
+| **ポップアップの遅れ** | **SuppressPopup** を `false` に設定したままの場合は、トースト ポップアップとして再表示できます (true に設定するとサイレント モードでアクション センターに送信されます)。 | ポップアップとしては再表示されません。アクション センター内でトーストのデータがサイレント モードで更新されます。 |
+| **閉じたユーザー** | ユーザーがそれまでの通知を無視しても、置換トーストは常に送信されます。 | ユーザーがトーストを無視すると、トーストの更新は失敗します。 |
 
 一般に、**更新が便利**なのは以下の場合です。
 
@@ -222,5 +222,5 @@ Windows 10 以降では、同じ **Tag** と **Group** を使って新しいト�
 
 ## <a name="related-topics"></a>関連トピック
 
-- [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
-- [トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)
+- [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
+- [トーストのコンテンツのドキュメント](adaptive-interactive-toasts.md)

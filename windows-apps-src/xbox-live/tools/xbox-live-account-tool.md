@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, テスト, テスト アカウント
 ms.localizationpriority: medium
 ms.openlocfilehash: dead4e62e41b7b597ba9a578ee8f174386529937
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935455"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632827"
 ---
 # <a name="xbox-live-account-tool"></a>Xbox Live Account Tool
 
@@ -21,13 +21,13 @@ Xbox Live Account Tool は、タイトル デベロッパーが既存のデベ�
 ## <a name="what-can-i-do-with-xbox-live-account-tool"></a>Xbox Live Account Tool の機能
 以下が可能です。
   1. ユーザーのプロフィール設定、XUID、アクティブな権限を表示する
-  2. フォロワーのリストをテキスト ファイルまたは、Xbox 開発者向けプラットフォーム csv からユーザーのソーシャル グラフに追加します。
+  2. フォロワーの一覧をテキスト ファイル、または、Xbox 開発者プラットフォーム csv のいずれかからユーザーのソーシャル グラフに追加します。
   3. ユーザーのフレンド リストを管理する: フォローしているユーザーのお気に入り登録、お気に入り解除、ブロック、ブロック解除、およびそのユーザーにフォローされているかどうかの確認
   4. 開発ユーザーの評判を変更する (および、未処理の評判統計値をすぐに表示する)
   5. ユーザーのゲーマータグを変更する
 
 ## <a name="where-can-i-find-xbox-live-account-tool"></a>Xbox Live Account Tool の入手方法
-Xbox Live ツール パッケージの一部として Xbox Live Account Tool が見つかりません[https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)します。
+Xbox Live アカウント ツールから Xbox Live ツール パッケージの一部として存在[ https://aka.ms/xboxliveuwptools](https://aka.ms/xboxliveuwptools)します。
 
 ## <a name="how-do-i-log-in"></a>ログイン方法
 管理対象のユーザーの資格情報が必要であり、正しいサンドボックスを指定する必要があります。 デベロッパー アカウントにサンドボックスへのアクセス権があることを確認してください。アクセス権がないとログインできません。 このツールは、サンドボックスを使用するデベロッパー アカウントを想定して設計されています。
@@ -51,7 +51,7 @@ Xbox Live Account Tool を使用してリテール アカウントを管理で�
 [Reputation] タブに移動します。適切な既定値を選択し、[Commit changes] ボタンをクリックして要求を送信します。 要求が成功した場合、評判の統計値が変更されます。
 
 ## <a name="what-do-the-values-in-the-reputation-tab-mean"></a>[Reputation] タブの値の意味
-総合的な評判は、フェアプレイ (マルチプレイヤーでの行動)、ユーザー作成コンテンツ (ビデオ クリップなど)、コミュニケーション (メッセージと音声) という 3 つの下位評判から計算されます。 各カテゴリー未処理の値は 0 ～ 75 の範囲の値で、値が高いほどユーザーの評判が良いことを意味します。 OverallStatIsBad は、ユーザーの評判が "敬遠対象" かどうかを示します。
+全体的な評価は、次の 3 つのサブ評判から計算されます。Fairplay (マルチプレイヤー倫理規定)、ユーザーが生成したコンテンツ (ビデオ クリップおよびなど)、および通信 (メッセージと音声)。 各カテゴリー未処理の値は 0 ～ 75 の範囲の値で、値が高いほどユーザーの評判が良いことを意味します。 OverallStatIsBad は、ユーザーの評判が "敬遠対象" かどうかを示します。
 
 ## <a name="whats-the-black-area-at-the-bottom"></a>下部の黒い領域は何のためにあるのですか?
 情報提供のために、UI にデバッグ出力を表示すると役に立つと考えました。 この領域には、ツールの動作状態および発生したエラーが表示されます。

@@ -1,17 +1,17 @@
 ---
-Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
+Description: 支払の送金にかかる推定時間、支払しきい値、および支払を受けることができる Microsoft マーケットプレースは、お住まいの国/地域および受取りアカウントの種類によって異なる可能性があります。
 title: 支払しきい値、方法、期間
 ms.date: 10/18/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f837674ff9af123c7535e3aea00b632b8b35bfc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932815"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610667"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>支払しきい値、方法、期間
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932815"
 > 以下に示す日数は概算値です。いずれの支払も、より長い日数または短い日数になる可能性があります。
 
 
-| 支払方法     | 受取りアカウントに到着するまでの日数     |
+| 支払い方法     | 受取りアカウントに到着するまでの日数     |
 |--------------------|--------------------------------------------|
 | PayPal             | 1 営業日                             | 
 | ACH/SEPA           | 2 ～ 3 営業日                          |
@@ -42,7 +42,7 @@ ms.locfileid: "8932815"
 > [!NOTE]
 > この支払しきい値は米ドル (USD) で記載されています。 一部の市場では、相当する現地通貨が使用されます。 
 
-- [Microsoft Store](#microsoft-store)
+- [Microsoft ストア](#microsoft-store)
 - [Microsoft Advertising](#microsoft-advertising)
 - [Azure Marketplace](#azure-marketplace)
 - [Office ストア](#office-store)
@@ -57,10 +57,10 @@ ms.locfileid: "8932815"
   </tr>
   <tr>
     <td><strong>国/地域</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
   </tr>
   <tr>
     <td>アフガニスタン</td>
@@ -392,7 +392,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>フィジー</td>
+    <td>フィジー諸島</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -630,7 +630,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -693,7 +693,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>モンゴル国</td>
+    <td>モンゴル</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -1001,7 +1001,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>トリニダード・トバゴ</td>
+    <td>トリニダードトバゴ</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -1050,7 +1050,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英国</td>
+    <td>イギリス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
@@ -1119,10 +1119,10 @@ ms.locfileid: "8932815"
   </tr>
   <tr>
     <td><strong>国/地域</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
   </tr>
   <tr>
     <td>アフガニスタン</td>
@@ -1454,7 +1454,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>フィジー</td>
+    <td>フィジー諸島</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -1692,7 +1692,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -1755,7 +1755,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>モンゴル国</td>
+    <td>モンゴル</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -2063,7 +2063,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>トリニダード・トバゴ</td>
+    <td>トリニダードトバゴ</td>
     <td>50 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -2112,7 +2112,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英国</td>
+    <td>イギリス</td>
     <td>50 USD</td>
     <td>ACH/SEPA</td>
     <td>50 USD</td>
@@ -2181,10 +2181,10 @@ ms.locfileid: "8932815"
   </tr>
   <tr>
     <td><strong>国/地域</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
   </tr>
   <tr>
     <td>アフガニスタン</td>
@@ -2509,7 +2509,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>フィジー</td>
+    <td>フィジー諸島</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -2747,7 +2747,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -2810,7 +2810,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>モンゴル国</td>
+    <td>モンゴル</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -3111,7 +3111,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>トリニダード・トバゴ</td>
+    <td>トリニダードトバゴ</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -3160,7 +3160,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
     <tr>
-    <td>英国</td>
+    <td>イギリス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>
@@ -3228,10 +3228,10 @@ ms.locfileid: "8932815"
   </tr>
   <tr>
     <td><strong>国/地域</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
-    <td><strong>支払しきい値</strong></td>
-    <td><strong>支払方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
+    <td><strong>支払いのしきい値</strong></td>
+    <td><strong>支払い方法</strong></td>
   </tr>
   <tr>
     <td>アルバニア</td>
@@ -3752,7 +3752,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>マケドニア (FYROM)</td>
+    <td>マケドニア (旧ユーゴスラビア共和国)</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -3801,7 +3801,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>モンゴル国</td>
+    <td>モンゴル</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -4088,7 +4088,7 @@ ms.locfileid: "8932815"
     <td>なし</td>
   </tr>
   <tr>
-    <td>トリニダード・トバゴ</td>
+    <td>トリニダードトバゴ</td>
     <td>200 USD</td>
     <td>電信送金</td>
     <td>なし</td>
@@ -4123,7 +4123,7 @@ ms.locfileid: "8932815"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>英国</td>
+    <td>イギリス</td>
     <td>25 USD</td>
     <td>ACH/SEPA</td>
     <td>25 USD</td>

@@ -3,14 +3,14 @@ title: ポインター ベース アニメーション
 description: ポインターの位置を使用して、動的な "カーソル追跡" エクスペリエンスを作成する方法ついて説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10、UWP、アニメーション
+keywords: Windows 10, UWP, アニメーション
 ms.localizationpriority: medium
 ms.openlocfilehash: 3512d47c8b3e689b0baadec26c1d8f0f510e03ef
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931403"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639927"
 ---
 # <a name="pointer-based-animations"></a>ポインター ベース アニメーション
 
@@ -20,8 +20,8 @@ ms.locfileid: "8931403"
 
 ここでは、以下の記事で説明されている概念を理解していることを前提とします。
 
-- [入力駆動型アニメーション](input-driven-animations.md)
-- [関係ベース アニメーション](relation-animations.md)
+- [入力に基づくアニメーション](input-driven-animations.md)
+- [ベースのリレーションのアニメーション](relation-animations.md)
 
 ## <a name="why-create-pointer-position-driven-experiences"></a>ポインターの位置で駆動するエクスペリエンスを作成する理由
 
@@ -43,7 +43,7 @@ Fluent Design 言語では、UI とやり取りする方法はタッチ操作だ
 
 このようなエクスペリエンスは、PointerPositionPropertySet を使用して作成することができます。 この PropertySet が作成されると、UIElement は、UIElement のヒット テストが適切に行われているときにポインターの位置を保持することができます。 位置の値は、UIElement の座標空間を基準とした相対的な値です (位置 <0,0> は UIElement の左上隅を表します)。 このエクスペリエンスが作成されると、このプロパティをアニメーションで利用して、別のプロパティのモーションを駆動することができます。
 
-それぞれのポインター入力方式には、入力時の位置の変化 (ホバー、押下、押下して移動) に応じてさまざまな入力状態があります。 PointerPositionPropertySet では、マウスやペンで "ホバー"、"押下"、"押下して移動" の状態になっているポインターの位置のみを保持します。
+異なるポインター入力の様相のそれぞれについてには、さまざまな入力の状態、入力位置が変更される可能性がありますがあります。押された場合、ポインターを合わせるとは、押された & 移動します。 PointerPositionPropertySet では、マウスやペンで "ホバー"、"押下"、"押下して移動" の状態になっているポインターの位置のみを保持します。
 
 作業を始める際の一般的な手順:
 

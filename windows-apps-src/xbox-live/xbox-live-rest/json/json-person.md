@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 175d66ffc7744ca8203fe7681fcb0167e150f012
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935737"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640867"
 ---
 # <a name="person-json"></a>Person (JSON)
-People システムで 1 人のユーザーに関するメタデータ。 
+ユーザーのシステムで 1 人のユーザーに関するメタデータ。 
 <a id="ID4EN"></a>
 
  
 ## <a name="person"></a>人
  
-ユーザー オブジェクトには、次仕様があります。
+Person オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| string| 必須。 Xbox ユーザー ID (XUID)、10 進数。 値の例: 2603643534573573 します。| 
-| isFavorite| ブール値| 必須。 かどうかこのユーザーは、ユーザーが気詳細です。 ユーザーでは自分のユーザー リストでに非常に多数のユーザーがあるためお気に入りユーザーをエクスペリエンスに優先順位し、する前に [お気に入り] ではない他のユーザーに表示する必要があります。| 
-| isFollowingCaller| ブール値| 省略可能。 このユーザーが、ユーザーをフォローするかどうかを代わりに、API 呼び出ししました。| 
-| socialNetworks| 文字列の配列| 省略可能。 外部ネットワーク内でユーザーがこの人と関係のあります。| 
+| xuid| string| 必須。 Xbox ユーザー ID (XUID)、10 進数です。 値の例:2603643534573573.| 
+| isFavorite| ブール値| 必須。 かどうかこの人は、ユーザーが関心の詳細です。 ユーザーがユーザー一覧にユーザー数が非常に大きいことがあるできます、ため、大好きな人をエクスペリエンスの優先順位し、お気に入りのない他のユーザーの前に表示する必要があります。| 
+| isFollowingCaller| ブール値| (省略可能)。 このユーザーがユーザーをフォローしているかどうかが代わりに API 呼び出しが行われました。| 
+| socialNetworks| 文字列の配列| (省略可能)。 この人と、ユーザーは、外部ネットワーク内でリレーションシップを持ちます。| 
   
 <a id="ID4EHC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,7 +57,7 @@ People システムで 1 人のユーザーに関するメタデータ。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E3C"></a>

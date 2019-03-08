@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 338c6e65846ca0ce1307e1e5843f37fe63ecf70a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946705"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618297"
 ---
 # <a name="multiplayer-scenarios"></a>マルチプレイヤー シナリオ
 マルチプレイヤー シナリオには多くの種類があります。適切なシナリオを選択することで、プレイヤーのエンゲージメントを高め、ゲームのプレイヤー ベースを拡大することができます。これは、ゲームがアクティブにプレイされる期間をできるだけ長くするために有効です。
@@ -34,7 +34,7 @@ ms.locfileid: "8946705"
 * プレゼンス
 * 統計情報
 * Social Manager
-* 実績
+* 成績
 * スコアボード
 * 接続ストレージ
 
@@ -52,7 +52,7 @@ Xbox Live マルチプレイヤー サービスを使用して、ローカル �
 * プレゼンス
 * 統計情報
 * Social Manager
-* 実績
+* 成績
 * スコアボード
 * 接続ストレージ
 
@@ -80,7 +80,7 @@ Xbox Live マルチプレイヤー サービスを使用して、ローカル �
 この種類のマルチプレイヤーでは、前のシナリオと同様のサービスを使用できます。
 
 * Multiplayer Manager
-* [セッション参照](session-browse.md)
+* [セッションの閲覧](session-browse.md)
 * プレゼンス
 * 統計情報
 * Social Manager
@@ -147,8 +147,8 @@ Xbox Live には 2016 年に新機能が追加されていて、タイトルで�
 * プレゼンス
 * 統計情報
 * ソーシャル
-* レピュテーション
-* マルチプレーヤー
+* 評価
+* マルチプレイヤー
 * SmartMatch マッチメイキング
 * トーナメント
 

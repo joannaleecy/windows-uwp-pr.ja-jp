@@ -6,11 +6,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114548"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641157"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>デバイス間でもユーザーのアクティビティを継続する
 
@@ -39,7 +39,7 @@ ms.locfileid: "9114548"
 **UserActivity** をアプリに追加するには:
 
 1. アプリケーション内でユーザーのコンテキスト (ページ ナビゲーション、新しいゲームレベルなど) が変更されたときに **UserActivity** オブジェクトを生成する
-2. **UserActivity** オブジェクトに必要なフィールドの最小セットを入力します。 [ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)、[ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)、および [UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)。
+2. 設定**UserActivity**必須フィールドの最小セットを持つオブジェクト。[ActivityId](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activityid#Windows_ApplicationModel_UserActivities_UserActivity_ActivityId)、 [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri)、および[UserActivity.VisualElements.DisplayText](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.displaytext#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_DisplayText)します。
 3. **UserActivity** によって再アクティブ化できるように、カスタム スキーム ハンドラーをアプリケーションに追加します。
 
 **UserActivity** はわずか数行のコードでアプリに統合できます。 たとえば、MainPage.xaml.cs の MainPage クラス内でこのコードを想像してみてください (注: `using Windows.ApplicationModel.UserActivities;` を前提としています)。
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-このコードは、アプリがプロトコル経由でアクティブ化されたかどうかを検出します。 アクティブ化されていた場合は、アプリがアクティブ化されているタスクを再開するためにアプリが何をすべきかを確認します。 シンプルなアプリ、このアプリが再開する唯一のアクティビティが入れること、セカンダリ ページ、アプリが起動したときです。
+このコードは、アプリがプロトコル経由でアクティブ化されたかどうかを検出します。 アクティブ化されていた場合は、アプリがアクティブ化されているタスクを再開するためにアプリが何をすべきかを確認します。 簡単なアプリであるアクティビティだけがこのアプリを再開しますができるようにすることセカンダリ ページで、アプリが動作するときにします。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>アダプティブ カードを使用して、タイムラインのエクスペリエンスを向上させる
 
@@ -152,10 +152,10 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 アプリがクロスプラットフォーム (Android や iOS など) で稼働している場合や、クラウドにユーザーの状態を保持している場合は、[Microsoft Graph](https://developer.microsoft.com/graph/) で UserActivities を公開できます。
 アプリケーションまたはサービスが Microsoft アカウントで認証されると、上記と同じデータを使用して [アクティビティ](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity) オブジェクトと [履歴](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem) オブジェクトを生成するための 2 回の単純な REST 呼び出しが必要です。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API を使用して、アプリをタイムラインと Cortana に表示させることができます。
-* [ **UserActivity** API について詳しく知る](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* 詳細については、 [ **UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 「[sample code](https://github.com/Microsoft/project-rome)」をご覧ください。
 * 「[more sophisticated Adaptive Cards](https://adaptivecards.io/)」を参照してください。
 * [Microsoft Graph](https://developer.microsoft.com/graph/) を介して、iOS、Android、または Web サービスから **UserActivity** を公開します。
@@ -167,9 +167,9 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="related-topics"></a>関連トピック
 
-* [ユーザー アクティビティ ("rome"プロジェクト ドキュメント)](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [ユーザー アクティビティ (プロジェクト ローマ docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [アダプティブ カード](https://docs.microsoft.com/adaptive-cards/)
 * [アダプティブ カード ビジュアライザー、サンプル](https://adaptivecards.io/)
 * [URI のアクティブ化の処理](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
-* [Microsoft Graph、アクティビティ フィード、およびアダプティブ カードを使用して、どのプラットフォームでも顧客の関心を惹きつける](https://channel9.msdn.com/Events/Connect/2017/B111)
+* [お客様の Microsoft Graph、アクティビティ フィード、および Adaptive Cards を使用して任意のプラットフォームとの連携](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

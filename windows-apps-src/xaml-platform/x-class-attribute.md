@@ -1,17 +1,17 @@
 ---
-description: マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
+description: マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
 title: xClass 属性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943637"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624767"
 ---
 # <a name="xclass-attribute"></a>x:Class 属性
 
@@ -31,7 +31,7 @@ ms.locfileid: "8943637"
 
 | 用語 | 説明 |
 |------|-------------|
-| 名前空間 | 省略可能。 _classname_ で識別される部分クラスが含まれている名前空間を指定します。 _名前空間_を指定すると、_名前空間_と_クラス名_がドット (.) で区切られます。 _名前空間_を省略すると、_クラス名_には名前空間がないものと見なされます。 |
+| 名前空間 | (省略可能)。 _classname_ で識別される部分クラスが含まれている名前空間を指定します。 _名前空間_を指定すると、_名前空間_と_クラス名_がドット (.) で区切られます。 _名前空間_を省略すると、_クラス名_には名前空間がないものと見なされます。 |
 | classname | 必須。 ロードされた XAML とその XAML のコード ビハインドを結び付ける部分クラスの名前を指定します。 | 
 
 ## <a name="remarks"></a>注釈

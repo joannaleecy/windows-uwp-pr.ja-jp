@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 7bf186091eacfcdb39c41bf256000990613d3685
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925488"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613417"
 ---
 # <a name="usersxuidxuidfeedback"></a>/users/xuid({xuid})/feedback
  
@@ -23,18 +23,18 @@ ms.locfileid: "8925488"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| ulong| Xbox ユーザー ID (XUID) のユーザーを報告します。| 
+| xuid| ulong| Xbox ユーザー ID (XUID)、ユーザーが報告されているのです。| 
   
 <a id="ID4EZB"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[POST](uri-reputationusersxuidfeedbackpost.md)
+[投稿](uri-reputationusersxuidfeedbackpost.md)
 
-&nbsp;&nbsp;シェルを使用するのではなく、ゲームでフィードバック オプションを追加したい場合は、タイトルから使用されます。
+&nbsp;&nbsp;シェルを使用するのではなく、ゲームのフィードバックのオプションを追加したい場合、タイトルから使用されます。
  
 <a id="ID4EDC"></a>
 
@@ -46,6 +46,6 @@ ms.locfileid: "8925488"
  
 ##### <a name="parent"></a>Parent 
 
-[評判 URI](atoc-reference-reputation.md)
+[評価の Uri](atoc-reference-reputation.md)
 
    

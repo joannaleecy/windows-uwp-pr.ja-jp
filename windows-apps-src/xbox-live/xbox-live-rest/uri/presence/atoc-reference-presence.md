@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a46ecd48c2b0bf523ab234a5f20cf9ed6669e75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928695"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632607"
 ---
 # <a name="presence-uris"></a>プレゼンス URI
  
-このセクションでは、*プレゼンス*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスおよび関連付けられているハイパー テキスト転送プロトコル (HTTP) メソッドの詳細を提供の Xbox Live サービスから*プレゼンス*します。
  
-Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームのみでは、このサービスを使用できます。
+Xbox 360、Windows Phone デバイス、または Windows を実行しているゲームだけでは、このサービスを使用できます。
  
-これらの Uri のドメインは、userpresence.xboxlive.com です。
+これらの Uri のドメインとは、userpresence.xboxlive.com です。
  
-リアルタイム アクティビティ (RTA) サービスを使用して、ユーザーのプレゼンスの変更をサブスクライブすることができます。
+リアルタイムのアクティビティ (RTA) サービスを使用して、ユーザーのプレゼンスの変更をサブスクライブできます。
  
 <a id="ID4ERB"></a>
 
@@ -31,7 +31,7 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/batch](uri-usersbatch.md)
 
-&nbsp;&nbsp;ユーザーのバッチのプレゼンスをアクセスします。
+&nbsp;&nbsp;ユーザーのバッチのアクセスが存在します。
 
 [/users/me](uri-usersme.md)
 
@@ -39,15 +39,15 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/me/groups/{moniker}](uri-usersmegroupsmoniker.md)
 
-&nbsp;&nbsp;[グループの PresenceRecord にアクセスします。
+&nbsp;&nbsp;自分のグループの PresenceRecord にアクセスします。
 
 [/users/xuid({xuid})](uri-usersxuid.md)
 
-&nbsp;&nbsp;別のユーザーまたはクライアントの有無にアクセスします。
+&nbsp;&nbsp;別のユーザーまたはクライアントの存在にアクセスします。
 
 [/users/xuid({xuid})/devices/current/titles/current](uri-usersxuiddevicescurrenttitlescurrent.md)
 
-&nbsp;&nbsp;タイトルまたはタイトルのユーザーのプレゼンスにアクセスします。
+&nbsp;&nbsp;タイトルまたはタイトルのユーザーの存在にアクセスします。
 
 [/users/xuid({xuid})/groups/{moniker}](uri-usersxuidgroupsmoniker.md)
 
@@ -55,11 +55,11 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting](uri-usersxuidgroupsmonikerbroadcasting.md)
 
-&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。
+&nbsp;&nbsp;アクセス グループ モニカーによって指定されたブロードキャスト ユーザーのプレゼンスのレコードに関連する XUID URI に表示されます。
 
 [/users/xuid({xuid})/groups/{moniker}/broadcasting/count](uri-usersxuidgroupsmonikerbroadcastingcount.md)
 
-&nbsp;&nbsp;アクセス グループ モニカーで指定されているブロードキャスト ユーザーの数は、URI に表示される XUID に関連します。
+&nbsp;&nbsp;アクセス グループ モニカーによって指定されたブロードキャスト ユーザーの数は、URI に表示される XUID に関連します。
  
 <a id="ID4EMC"></a>
 
@@ -71,6 +71,6 @@ Xbox 360、Windows Phone デバイス、または Windows を実行している�
  
 ##### <a name="parent"></a>Parent 
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)
 
    

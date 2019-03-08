@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, オーディオ, 入力, ネットワーク
 ms.localizationpriority: medium
 ms.openlocfilehash: a7cbe5cfbc2146feaefb40cee8ca96ddfa11705c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981406"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629827"
 ---
 # <a name="uwp-programming"></a>UWP プログラミング
 
@@ -31,23 +31,23 @@ ms.locfileid: "8981406"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="working-with-audio-in-your-directx-game.md">ゲームのオーディオ</a></p></td>
+<td align="left"><p><a href="working-with-audio-in-your-directx-game.md">ゲームにオーディオ</a></p></td>
 <td align="left"><p>XAudio2 と Microsoft メディア ファンデーションを使用して、ミュージックとサウンドの効果を DirectX ゲームに組み込む方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="input-for-games.md">ゲームの入力</a></p></td>
+<td align="left"><p><a href="input-for-games.md">ゲームを入力します。</a></p></td>
 <td align="left"><p>UWP ゲームで使用可能なさまざまな種類の入力デバイスと、それらのデバイスの実装方法について説明します。</p></td>
 </tr>
 <tr class="odd">
     <td align="left">
-        <p><a href="missing-dot-net-apis-in-unity-and-uwp.md">Unity や UWP で不足している .NET API</a></p>
+        <p><a href="missing-dot-net-apis-in-unity-and-uwp.md">Unity と UWP での .NET Api がないです。</a></p>
     </td>
     <td align="left">
         <p>Unity で UWP ゲームを作成する際に不足している .NET API と、一般的な問題に対する回避策について説明します。</p>
     </td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="work-with-networking-in-your-directx-game.md">ゲームのネットワーク</a></p></td>
+<td align="left"><p><a href="work-with-networking-in-your-directx-game.md">ゲーム用のネットワーク</a></p></td>
 <td align="left"><p>ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。</p></td>
 </tr>
 </tbody>

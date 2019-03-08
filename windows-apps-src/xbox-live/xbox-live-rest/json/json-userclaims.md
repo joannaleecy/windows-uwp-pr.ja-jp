@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b4322d002747145c3b09e0f3cd7eb03874380b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935348"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623347"
 ---
 # <a name="userclaims-json"></a>UserClaims (JSON)
-現在の認証されたユーザーに関する情報を返します。 
+現在の認証済みユーザーに関する情報を返します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="userclaims"></a>UserClaims
  
-UserClaims オブジェクトには、次仕様があります。
+UserClaims オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
 | ゲーマータグ| string| ユーザーのゲーマータグです。| 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) ユーザーのします。| 
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) のユーザー。| 
   
 <a id="ID4EZB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -54,6 +54,6 @@ UserClaims オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

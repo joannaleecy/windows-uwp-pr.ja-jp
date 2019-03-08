@@ -8,17 +8,17 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: cf8ae4bd06abfb1ea9a4d5fe40c869057b68ad93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932116"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617487"
 ---
 # <a name="achievements-uris"></a>実績 URI
 
-このセクションでは、*実績*の Xbox Live サービスからユニバーサル リソース識別子 (URI) アドレスと関連付けられているハイパー テキスト トランスポート プロトコル (HTTP) 方法に関する詳細を提供します。
+このセクションでは、Universal Resource Identifier (URI) アドレスと関連付けられているハイパー テキスト転送プロトコル (HTTP) のメソッドに関する詳細情報を提供の Xbox Live サービスから*アチーブメント*します。
 
-これらの Uri のドメインは、achievements.xboxlive.com です。
+これらの Uri のドメインとは、achievements.xboxlive.com です。
 
 <a id="ID4EDB"></a>
 
@@ -27,11 +27,11 @@ ms.locfileid: "8932116"
 
 [/users/xuid({xuid})/achievements](uri-achievementsusersxuidachievementsv2.md)
 
-&nbsp;&nbsp;ユーザーの実績へのアクセスを提供します。
+&nbsp;&nbsp;ユーザーのアチーブメントへのアクセスを提供します。
 
 [/users/xuid({xuid})/achievements/{scid}/{achievementid}](uri-usersxuidachievementsscidachievementid.md)
 
-&nbsp;&nbsp;構成済みのメタデータとユーザー固有のデータを含む、実績の詳細を返します。
+&nbsp;&nbsp;その構成済みのメタデータとユーザーに固有のデータを含む、実績に関する詳細を返します。
 
 
 > [!NOTE] 
@@ -49,4 +49,4 @@ ms.locfileid: "8932116"
 
 ##### <a name="parent"></a>Parent
 
-[ユニバーサル リソース識別子 (URI) リファレンス](../atoc-xboxlivews-reference-uris.md)
+[Universal Resource Identifier (URI) のリファレンス](../atoc-xboxlivews-reference-uris.md)

@@ -6,28 +6,28 @@ ms.topic: article
 keywords: windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング, 関連セット, オプション パッケージ
 ms.localizationpriority: medium
 ms.openlocfilehash: 44e32438034cf09695f313d24055b6ed3c82df0b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115889"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637107"
 ---
-# <a name="optional-packages-with-executable-code"></a>実行可能コードを使用したオプション パッケージ
+# <a name="optional-packages-with-executable-code"></a>実行可能コードによるオプション パッケージ
  
 実行可能コードを使用したオプション パッケージは、大規模または複雑なアプリを分割したり、既に公開されたアプリに追加するために役立ちます。 Visual Studio 2017 Version 15.7 および .NET Native 2.1 では、C++ および C# のオプション パッケージから実行可能コードを読み込むことができます。
 
 ## <a name="prerequisites"></a>前提条件
 - Visual Studio 2017 Version 15.7
-- Windows 10 Version 1709
+- Windows 10 バージョン 1709
 - Windows 10 Version 1709 SDK
 
 最新の開発ツールを取得する方法については、「[Windows 10 用のダウンロードとツール](https://developer.microsoft.com/windows/downloads)」を参照してください。 
 
 > [!NOTE]
-> オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 オプション パッケージや関連セットは、ストアに提出しない場合に、パートナー センターのアクセス許可のない基幹業務 (LOB) や企業のアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」を参照してください。
+> オプション パッケージや関連セットを使用するアプリを Microsoft Store に提出するには、許可が必要です。 オプションのパッケージおよび関連する設定は、いないストアに送信する場合に、パートナー センターの許可なく基幹業務 (LOB) またはエンタープライズのアプリ使用できます。 オプション パッケージや関連セットを使用するアプリの提出許可を得る方法については、「[Windows 開発者向けサポート](https://developer.microsoft.com/windows/support)」をご覧ください。
 
 > [!NOTE]
-> 実行可能コードを含むオプション パッケージは、[関連セット](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)の一部である必要があります。 関連セットの一部である場合を除き、オプション パッケージからコードを実行することはできません。
+> 実行可能コードを含む省略可能なパッケージの一部である必要があります、[関連セット](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)します。 関連する一連の一部である場合を除き、省略可能なパッケージからコードを実行することはできません。
 
 ## <a name="c-optional-packages-with-executable-code"></a>実行可能コードを使用した C++ オプション パッケージ
 

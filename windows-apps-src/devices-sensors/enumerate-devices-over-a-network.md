@@ -4,14 +4,14 @@ title: ネットワーク経由でデバイスを列挙する
 description: Windows.Devices.Enumeration API を使うと、ローカル接続されたデバイスの検出だけでなく、ワイヤレス プロトコルおよびネットワーク プロトコル経由でデバイスを列挙できます。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944910"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630417"
 ---
 # <a name="enumerate-devices-over-a-network"></a>ネットワーク経由でデバイスを列挙する
 
@@ -21,7 +21,7 @@ ms.locfileid: "8944910"
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うと、ローカル接続されたデバイスの検出だけでなく、ワイヤレス プロトコルおよびネットワーク プロトコル経由でデバイスを列挙できます。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うと、ローカル接続されたデバイスの検出だけでなく、ワイヤレス プロトコルおよびネットワーク プロトコル経由でデバイスを列挙できます。
 
 ## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>ネットワーク プロトコルまたはワイヤレス プロトコルを経由したデバイスの列挙
 
@@ -39,7 +39,7 @@ ms.locfileid: "8944910"
 | Web Services on Devices (WSD)                | **{782232aa-a2f9-4993-971b-aedc551346b0}** |
 | Wi-Fi Direct                                 | **{0407d24e-53de-4c9a-9ba1-9ced54641188}** |
 | DNS サービス検出 (DNS-SD)               | **{4526e8c1-8aac-4153-9b16-55e86ada0e54}** |
-| Point of Service                             | **{d4bf61b3-442e-4ada-882d-fa7B70c832d9}** |
+| 店舗販売時点管理                             | **{d4bf61b3-442e-4ada-882d-fa7B70c832d9}** |
 | ネットワーク プリンター (Active Directory のプリンター) | **{37aba761-2124-454c-8d82-c42962c2de2b}** |
 | Windows Connect Now (WNC)                    | **{4c1b1ef8-2f62-4b9f-9bc5-b21ab636138f}** |
 | WiGig ドック                                  | **{a277f3a5-8764-4f88-8045-4c5e962640b1}** |

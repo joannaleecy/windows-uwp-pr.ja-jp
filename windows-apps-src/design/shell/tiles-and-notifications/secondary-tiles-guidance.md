@@ -1,5 +1,5 @@
 ---
-Description: Learn about when and where you should use secondary tiles in your UWP app.
+Description: UWP アプリでセカンダリ タイルを使用する必要がある場合について説明します。
 title: セカンダリ タイル
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、UWP、セカンダリ タイル、ガイダンス、ガイドライン、ベスト プラクティス
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943318"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625347"
 ---
 # <a name="secondary-tile-guidance"></a>セカンダリ タイルのガイダンス
 
@@ -32,7 +32,7 @@ ms.locfileid: "8943318"
 * 対象のコンテンツが既にピン留めされている場合は、アプリ バーの [スタートにピン留めする] ボタンを [スタートからピン留めを外す] ボタンに置き換えます。 [スタートからピン留めを外す] ボタンは、既存のセカンダリ タイルを削除する必要があります。
 * 対象のコンテンツがピン留めできない場合は、[スタートにピン留めする] ボタンを表示しません (または、[スタートにピン留めする] ボタンを無効にします)。
 * [スタートにピン留めする] ボタンと [スタートからピン留めを外す] ボタンには、システムが提供するグリフを使います (Windows.UI.Xaml.Controls.Symbol または WinJS.UI.AppBarIcon のピン留めとピン止め解除のメンバーをご覧ください)。
-* ボタンのテキストは標準の "スタートにピン留めする" と "スタートからピン留めを外す" を使います。 システムによって提供されるピン留めとピン留め解除のグリフを使うときは、既定のテキストをオーバーライドする必要があります。
+* 標準のボタンのテキストを使用します。「スタートにピン留めする」および「最初からピン留めを外す」。 システムによって提供されるピン留めとピン留め解除のグリフを使うときは、既定のテキストをオーバーライドする必要があります。
 * "次のトラックにスキップ" タイルのように、親アプリと対話するための、事実上のコマンド ボタンとしてセカンダリ タイルを使わないでください。
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "8943318"
 ## <a name="related"></a>関連
 
 * [セカンダリ タイルの概要](secondary-tiles.md)
-* [セカンダリ タイルをピン留めする](secondary-tiles-pinning.md)
-* [タイル アセット](app-assets.md)
-* [タイル コンテンツのドキュメント](create-adaptive-tiles.md)
+* [セカンダリ タイルをピン留め](secondary-tiles-pinning.md)
+* [タイルの資産](app-assets.md)
+* [タイルのコンテンツのドキュメント](create-adaptive-tiles.md)
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)

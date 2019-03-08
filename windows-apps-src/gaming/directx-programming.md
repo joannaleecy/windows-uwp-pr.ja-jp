@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 概要, プログラミング, Directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923961"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608847"
 ---
 # <a name="directx-programming"></a>DirectX プログラミング
 
@@ -38,11 +38,11 @@ ms.locfileid: "8923961"
 <td align="left"><p>ゲーム サンプルを利用して、DirectX を説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="directx-fundamentals.md">基本事項</a></p></td>
+<td align="left"><p><a href="directx-fundamentals.md">基礎</a></p></td>
 <td align="left"><p>DirectX の基本的なプログラミングの概念について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="directx-add-features.md">機能の追加</a></p></td>
+<td align="left"><p><a href="directx-add-features.md">機能を追加します。</a></p></td>
 <td align="left"><p>さまざまなゲーム機能を DirectX ゲームに追加する方法について説明します。</p></td>
 </tr>
 <tr class="odd">
@@ -50,11 +50,11 @@ ms.locfileid: "8923961"
 <td align="left"><p>最適化およびその他の高度なトピックについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">UWP への DirectX 9 の移植</a></p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">UWP へのポート DirectX 9</a></p></td>
 <td align="left"><p>UWP への DirectX 9 ゲームの移植方法について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Direct3D への OpenGL の移植</a></p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Direct3D にポート OpenGL</a></p></td>
 <td align="left"><p>OpenGL ES 2.0 ゲームを Direct3D 11 に移植する方法について説明します。</p></td>
 </tr>
 </tbody>

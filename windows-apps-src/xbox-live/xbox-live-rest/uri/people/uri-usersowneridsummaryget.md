@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b228adab7b035ec8f4e65fc8b7458228a677987
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941246"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613997"
 ---
 # <a name="get-usersowneridsummary"></a>GET (/users/{ownerId}/summary)
-呼び出し元の観点から、所有者に関する集計データを取得します。
+呼び出し元の観点から、所有者に関する概要データを取得します。
 
   * [URI パラメーター](#ID4EQ)
-  * [Authorization](#ID4E2)
+  * [承認](#ID4E2)
   * [必要な要求ヘッダー](#ID4EBC)
-  * [オプションの要求ヘッダー](#ID4EHD)
+  * [省略可能な要求ヘッダー](#ID4EHD)
   * [要求本文](#ID4EXE)
-  * [HTTP ステータス コード](#ID4ECF)
+  * [HTTP 状態コード](#ID4ECF)
   * [必要な応答ヘッダー](#ID4EZG)
   * [応答本文](#ID4EGAAC)
 
@@ -31,37 +31,37 @@ ms.locfileid: "8941246"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
-| ownerId| string| そのリソースにアクセスしているユーザーの識別子です。 設定可能な値は、"me"xuid({xuid})、または gt({gamertag}) されます。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
+| ownerId| string| リソースがアクセスされているユーザーの識別子。 使用可能な値は、"me"、xuid({xuid})、または gt({gamertag}) です。 値の例: <code>me</code>、 <code>xuid(2603643534573581)</code>、 <code>gt(SomeGamertag)</code>|
 
 <a id="ID4E2"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-| <b>名前</b>| <b>種類</b>| <b>説明</b>|
+| <b>名前</b>| <b>型</b>| <b>説明</b>|
 | --- | --- | --- | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| 必須。 呼び出し元のユーザーの id。 値の例: 2533274790395904|
+| xuid| 64 ビット符号なし整数| 必須。 呼び出し元のユーザー識別子。 値の例:2533274790395904|
 
 <a id="ID4EBC"></a>
 
 
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| データを承認します。 これは、通常、暗号化された XSTS トークンです。 値の例: <b>XBL3.0 x = [ハッシュ]、[トークン]</b>します。|
+| Authorization| string| 承認データです。 これは、通常、暗号化された XSTS トークンです。 値の例:<b>XBL3.0 x=[hash];[token]</b>.|
 
 <a id="ID4EHD"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、サービスの名前/数をビルドします。 要求は、ヘッダー、要求に認証トークンなどの有効性を確認した後、そのサービスにのみルーティングされます。値の例: 1|
-| Accept| string| コンテンツの種類の受け入れられる。 すべての返信はされます<code>application/json</code>します。|
+| x-xbl-contract-version| string| この要求が送られるサービスの名前/番号をビルドします。 要求は、ヘッダー、認証トークンなどの要求の有効性を確認した後、サービスにのみルーティングされます。値の例:1|
+| OK| string| コンテンツ型が許容されます。 すべての応答がなります<code>application/json</code>します。|
 
 <a id="ID4EXE"></a>
 
@@ -73,37 +73,37 @@ ms.locfileid: "8941246"
 <a id="ID4ECF"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
 
-| コード| 理由フレーズ| 説明|
+| コード| 理由語句| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されました。|
-| 400| Bad Request| ユーザー Id が正しくありませんでした。|
-| 403| Forbidden| 承認ヘッダーから XUID クレームを解析できませんでした。|
+| 200| OK| セッションが正常に取得します。|
+| 400| 要求が正しくありません| ユーザー Id は、形式が正しくありませんでした。|
+| 403| Forbidden| Authorization ヘッダーから XUID 要求を解析できませんでした。|
 
 <a id="ID4EZG"></a>
 
 
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Content-Length| string| 応答に送信されるバイト数。 値の例: 232 します。|
-| Content-Type| string| 応答本文の MIME タイプ。 これは、<b>アプリケーション/json</b>でなければなりません。|
+| Content-Length| string| 応答で送信されるバイト数。 値の例:232.|
+| Content-Type| string| 応答本文の MIME の種類。 これでなければなりません<b>、application/json</b>します。|
 
 <a id="ID4EGAAC"></a>
 
 
 ## <a name="response-body"></a>応答本文
 
-[PersonSummary (JSON)](../../json/json-personsummary.md)を参照してください。
+参照してください[PersonSummary (JSON)](../../json/json-personsummary.md)します。
 
 <a id="ID4ESAAC"></a>
 
 
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
 
 
 ```cpp

@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7251d4595a3e87a8629d6e717bb4f52e5b7c35fe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926603"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57615367"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>ストリーミング リソースの領域をタイル表示する方法
 
@@ -23,9 +23,9 @@ ms.locfileid: "8926603"
 
 指定されたサーフェスのサイズと形式要素の幅によって使用されるタイルの数は、次のセクションの表に基づいて定義されており、予測可能です。 ミップマップを含むリソースや、サーフェスのサイズがタイルに満たない場合は、いくつかの制約が存在します。「[ミップマップのパッキング](mipmap-packing.md)」を参照してください。
 
-アプリケーションが、ある形式でのメモリへの書き込みと別の形式での読み取りの結果に依存しない限り、複数のストリーミング リソースがさまざまな形式で同一のメモリを指定できます。 ただし、形式が同じ形式ファミリーである場合 (つまり、型指定なしの親の形式が同じである場合)、アプリケーションは、ある形式でのメモリへの書き込みと別の形式での読み取りの結果に依存する可能性があります。 たとえば、DXGI\_FORMAT\_R8G8B8A8\_UNORM と DXGI\_FORMAT\_R8G8B8A8\_UINT は互換性がありますが、DXGI\_FORMAT\_R16G16\_UNORM とは互換性がありません。
+アプリケーションが、ある形式でのメモリへの書き込みと別の形式での読み取りの結果に依存しない限り、複数のストリーミング リソースがさまざまな形式で同一のメモリを指定できます。 ただし、形式が同じ形式ファミリーである場合 (つまり、型指定なしの親の形式が同じである場合)、アプリケーションは、ある形式でのメモリへの書き込みと別の形式での読み取りの結果に依存する可能性があります。 たとえば、DXGI\_形式\_R8G8B8A8\_UNORM と DXGI\_形式\_R8G8B8A8\_UINT に互換性があるが DXGI ではなく\_形式\_R16G16\_UNORM します。
 
-ある形式のデータが別の形式のエイリアスとして定義されている場合は例外です。タイルのすべてのビットに 0 が含まれている場合、そのタイルは、(メモリ レイアウトに関係なく) メモリの内容が 0 であることを解釈する任意の形式で使用できます。 そのため、DXGI\_FORMAT\_R8\_UNORM 形式でタイルを 0x00 にクリアし、DXGI\_FORMAT\_R32G32\_FLOAT などの形式で使用でき、その内容は引き続き (0.0f,0.0f) と表示されます。
+ある形式のデータが別の形式のエイリアスとして定義されている場合は例外です。タイルのすべてのビットに 0 が含まれている場合、そのタイルは、(メモリ レイアウトに関係なく) メモリの内容が 0 であることを解釈する任意の形式で使用できます。 DXGI 形式を 0x00 にタイルが消去されるように、\_形式\_R8\_UNORM DXGI などの形式を使用し、使用\_形式\_R32G32\_FLOAT 型とその内容を表示はまだ (0.0 f, 0.0 f)。
 
 タイル内でのデータのレイアウトは、タイルがリソース全体に割り当てられているかどうかに依存しません。 そのため、たとえば、サーフェスの複数の場所で同時にタイルを再利用し、すべての場所で一貫性のある動作を実現できます。
 
@@ -45,7 +45,7 @@ ms.locfileid: "8926603"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D と Texture2DArray のサブリソースのタイル表示</a></p></td>
+<td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D と Texture2DArray サブリソースのタイル表示</a></p></td>
 <td align="left"><p>次の表に、<a href="https://msdn.microsoft.com/library/windows/desktop/ff471525"><strong>Texture2D</strong></a> および <a href="https://msdn.microsoft.com/library/windows/desktop/ff471526"><strong>Texture2DArray</strong></a> サブリソースがどのようにタイル表示されるかを示します。</p></td>
 </tr>
 <tr class="even">
@@ -53,12 +53,12 @@ ms.locfileid: "8926603"
 <td align="left"><p>次の表に、<a href="https://msdn.microsoft.com/library/windows/desktop/ff471562"><strong>Texture3D</strong></a> サブリソースがどのようにタイル表示されるかを示します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="buffer-tiling.md">バッファーのタイル表示</a></p></td>
+<td align="left"><p><a href="buffer-tiling.md">バッファーのタイル</a></p></td>
 <td align="left"><p><a href="introduction-to-buffers.md">バッファー </a> リソースは 64 KB のタイルに分割されます。サイズが 64 KB の倍数でない場合は、最後のタイルに空きが生じます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="mipmap-packing.md">ミップマップのパッキング</a></p></td>
-<td align="left"><p>ストリーミング リソースのサイズ、形式、ミップマップの数、配列スライスに応じて、いくつかの mips (配列スライスごと) をいくつかのタイルにパッキングすることができます。</p></td>
+<td align="left"><p><a href="mipmap-packing.md">Mipmap のパッキング</a></p></td>
+<td align="left"><p>ストリーミング リソースの大きさ、形式、ミップマップの数、配列スライスに応じて、一定の数のミップ (配列スライスごとに) を一定の数のタイルにパッキングできます。</p></td>
 </tr>
 </tbody>
 </table>
@@ -68,7 +68,7 @@ ms.locfileid: "8926603"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[ストリーミング リソースの作成](creating-streaming-resources.md)
+[ストリーミングのリソースを作成します。](creating-streaming-resources.md)
 
  
 

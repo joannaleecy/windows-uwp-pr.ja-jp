@@ -9,11 +9,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 認証, サインイン
 ms.localizationpriority: medium
 ms.openlocfilehash: 5473b7ede7731d7d07b7e5bfd72857fdb64f1c89
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115477"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628387"
 ---
 # <a name="authentication-for-uwp-projects"></a>UWP プロジェクトの認証
 
@@ -21,7 +21,7 @@ ms.locfileid: "9115477"
 
 特定のデバイス上の特定のゲームで Xbox Live サービスにアクセスしたいとき、ユーザーはまず認証を行う必要があります。  ゲームでは、認証プロセスを開始する Xbox Live Api を呼び出すことができます。  追加情報を提供するためのインターフェイスがユーザーに提示される場合があります。たとえば、使用する Microsoft アカウントのユーザー名とパスワードを入力したり、ゲームにアクセス許可を付与することに同意したり、アカウントの問題を解決したり、新しい使用条件を承諾したりします。
 
-認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。  (すべて Xbox Live ゲームの) は、一度にコンソール以外のデバイスでの認証にのみ 1 人のプレイヤーを許可します。 コンソール以外のデバイスでの認証に新しいプレイヤーは、既存の認証済みプレイヤーする必要があります最初にサインインします。
+認証されると、Xbox アプリから明示的に Xbox Live からサインアウトするまで、ユーザーがそのデバイスに関連付けられています。  (すべての Xbox Live ゲーム); 一度にコンソール以外のデバイスでの認証に 1 つだけに player が許可されています。 コンソール以外のデバイスでの認証に新しいプレーヤーは、既存の認証済みのプレーヤー最初する必要がありますサインアウトします。
 
 ## <a name="steps-to-sign-in"></a>サインイン手順
 
@@ -36,7 +36,7 @@ ms.locfileid: "9115477"
 
 ### <a name="creating-an-xboxliveuser-object"></a>XboxLiveUser オブジェクトの作成
 
-ほとんどの Xbox Live アクティビティに関連する Xbox Live ユーザーです。  ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。
+Xbox Live アクティビティのほとんどは、Xbox Live ユーザーに関連します。  ゲーム デベロッパーは、まずローカル ユーザーを表す XboxLiveUser オブジェクトを作成する必要があります。
 
 C++:
 
@@ -86,7 +86,7 @@ Microsoft.Xbox.Services.System.SignInResult XboxLiveUser.SignInSilentlyAsync(Win
 
 * **coreDispatcher**
 
-  Thread Dispatcher は、スレッド間の通信に使用されます。 サイレント サインイン API が任意の UI を表示する予定はありませんが、XSAPI 必要 UI スレッド ディスパッチャ appx のロケールについての情報を取得するためです。 静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。 または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。
+  Thread Dispatcher は、スレッド間の通信に使用されます。 サイレント サインイン API には、UI を非表示には立ちませんが XSAPI は appx のロケールに関する情報を取得するため、UI スレッドのディスパッチャーを引き続き必要です。 静的 UI スレッド ディスパッチャは、UI スレッドで Windows::UI::Core::CoreWindow::GetForCurrentThread()->Dispatcher を呼び出すことで取得できます。 または、この API が UI スレッドで呼び出されることがはっきりしている場合、nullptr を渡すことができます (たとえば JS UWA など)。
 
 
 暗黙的サインイン試行の結果には 3 つの可能性があります。
@@ -355,13 +355,13 @@ public void OnSignOut(object sender, SignOutCompletedEventArgs e)
 
 ## <a name="determining-if-the-device-is-offline"></a>デバイスがオフラインかどうかの判定
 
-サインイン Api でもが成功したとオフライン場合は、ユーザーがサインインしたら、され、最後にサインインしたアカウントが返されます。  
+サインイン Api がまだ成功するときにオフライン場合は、ユーザーが 1 回にサインインし、最後のアカウントでサインインが返されます。  
 
-ユーザーが存在しない場合は、前に、オフライン サインインしないすることが可能署名されています。
+ユーザーがいない場合は、前に、オフラインのサインインが実現されない署名されました。
 
-タイトルがオフラインでプレイできる場合 (キャンペーン モードなど)、タイトルはユーザーがプレイを許可することができ、WriteInGameEvent API と接続ストレージ API によって記録ゲーム進行状況、それらの両方で正しく動作、デバイスがオフラインです。
+タイトルは、オフライン再生できる場合 (キャンペーン モードなど)、タイトルが再生するユーザーを許可することができます、ゲームのレコード進行状況を WriteInGameEvent API と接続されているストレージ API を使用して、いずれに正しく動作、デバイスがオフラインのときにします。
 
-タイトルがオフラインでプレイできない場合 (マルチプレイヤー ゲームまたはサーバー ベースのゲームなど)、タイトルは、デバイスがオフラインであり、状態と解決策についてユーザーに知らせるかどうかを確認する GetNetworkConnectivityLevel API を呼び出す必要があります (たとえば、' する必要がありますインターネットに接続して、引き続き…")。
+タイトルは、オフライン再生できない場合、タイトルが、デバイスがオフラインであり、状態と解決策についてユーザーに知らせるかどうかを確認する GetNetworkConnectivityLevel API を呼び出す必要があります (マルチ プレーヤー ゲームまたはサーバー ベースのゲームなど) (たとえば、' する必要がありますインターネットに接続して続行. ')。
 
 ## <a name="online-status-code-samples"></a>オンライン状態コードのサンプル
 

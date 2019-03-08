@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b154191e58b1c419947afea988cacc8638b73d0f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935322"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616637"
 ---
 # <a name="gameclipsource-enumeration"></a>GameClipSource 列挙型
-GameClipSource 列挙型をについて説明します。 
+GameClipSource 列挙体をについて説明します。 
 <a id="ID4ET"></a>
 
  
@@ -23,9 +23,9 @@ GameClipSource 列挙型をについて説明します。
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| None| ゲーム クリップ ソースは、不明なまたは設定されていないです。 (アップロードでは無効です)| 
-| Console| Xbox 本体のプラットフォームによって作成されたゲーム クリップされます。| 
-| TitleDirect| タイトルによって作成されたゲーム クリップされます。| 
-| 中間 | ゲーム クリップは、種類の実績を示します。| 
-| UserInitiated | ゲーム クリップは、このようなエディター中間アプリからです。| 
+| なし| ゲームのクリップ ソースは、不明なか設定されていません。 (アップロードに対しては無効)| 
+| Console| ゲームのクリップ、Xbox コンソール プラットフォームによって発生しました。| 
+| TitleDirect| ゲームのクリップ、タイトルで発生しました。| 
+| ［中間］ | ゲームのクリップとは、実績の一種です。| 
+| UserInitiated | ゲームのクリップでは、エディターなどの中間のアプリからです。| 
   

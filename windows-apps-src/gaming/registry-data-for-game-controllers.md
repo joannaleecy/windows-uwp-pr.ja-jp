@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力, レジストリ, カスタム
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936977"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633607"
 ---
 # <a name="registry-data-for-game-controllers"></a>ゲーム コントローラーのレジストリ データ
 
@@ -32,24 +32,24 @@ ms.locfileid: "8936977"
     <tr>
         <th>名前</th>
         <th>種類</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>無効</td>
         <td>DWORD</td>
-        <td>いいえ</td>
+        <td>X</td>
         <td>
-            <p>この特定のデバイスを無効にすることを示します。</p>
+            <p>この特定のデバイスを無効になっていることを示します。</p>
             <ul>
-                <li><b>0</b>: デバイスは無効ではありません。</li>
-                <li><b>1</b>: デバイスは無効です。</li>
+                <li><b>0</b>:デバイスが無効になっていません。</li>
+                <li><b>1</b>:デバイスが無効です。</li>
             </ul>
         </td>
     </tr>
     <tr>
         <td>説明</td>
-        <td>REG_SZ <td>必須ではない</td>
+        <td>REG_SZ <td>X</td>
         <td>デバイスの簡単な説明です。</td>
     </tr>
 </table>
@@ -58,113 +58,113 @@ ms.locfileid: "8936977"
 
 デバイスのルートの場所の下のサブキーは、次のセクションで詳しく説明します。
 
-### <a name="gamepad"></a>Gamepad
+### <a name="gamepad"></a>ゲームパッド
 
 次の表は **Gamepad** サブキーの下の必須およびオプションのサブキーを示します。
 
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Menu</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="18" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
-        <td>View</td>
-        <td>必須</td>
+        <td>ビュー</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>A</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>B</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>X</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>LeftShoulder</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>RightShoulder</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>LeftThumbstickButton</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>RightThumbstickButton</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Paddle1</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Paddle2</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Paddle3</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Paddle4</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>LeftTrigger</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="6" style="vertical-align: middle;">「<a href="#axis-mapping">軸のマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>RightTrigger</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>LeftThumbstickX</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>LeftThumbstickY</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>RightThumbstickX</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>RightThumbstickY</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
 </table>
 
@@ -178,154 +178,154 @@ ms.locfileid: "8936977"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>PreviousGear</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="30" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>NextGear</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>DPadUp</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadDown</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadLeft</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>DPadRight</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button1</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button2</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button3</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button4</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button5</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button6</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button7</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button8</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button9</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button10</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button11</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button12</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button13</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button14</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button15</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Button16</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>FirstGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ThirdGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>FourthGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>FifthGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SixthGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SeventhGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ReverseGear</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Wheel</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="5" style="vertical-align: middle;">「<a href="#axis-mapping">軸のマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Brake</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Clutch</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Handbrake</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>MaxWheelAngle</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>「<a href="#properties-mapping">プロパティ マッピング</a>」をご覧ください</td>
     </tr>
 </table>
@@ -337,57 +337,57 @@ ms.locfileid: "8936977"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Action1</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="12" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>Action2</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Action3</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Action4</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Action5</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Action6</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Special1</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Special2</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>StickUp</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>StickDown</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>StickLeft</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>StickRight</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
 </table>
 
@@ -398,38 +398,38 @@ ms.locfileid: "8936977"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>FirePrimary</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="2" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>FireSecondary</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Roll</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="4" style="vertical-align: middle;">「<a href="#axis-mapping">軸のマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
         <td>Pitch</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Yaw</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Throttle</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>HatSwitch</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>「<a href="#switch-mapping">スイッチのマッピング</a>」をご覧ください</td>
     </tr>
 </table>
@@ -441,105 +441,105 @@ ms.locfileid: "8936977"
 <table>
     <tr>
         <th>サブキー</th>
-        <th>必須かどうか</th>
-        <th>情報</th>
+        <th>必須?</th>
+        <th>Info</th>
     </tr>
     <tr>
         <td>Menu</td>
-        <td>必須</td>
+        <td>〇</td>
         <td rowspan="24" style="vertical-align: middle;">「<a href="#button-mapping">ボタンのマッピング</a>」をご覧ください</td>
     </tr>
     <tr>
-        <td>View</td>
-        <td>必須</td>
+        <td>ビュー</td>
+        <td>〇</td>
     </tr>
     <tr>
-        <td>Accept</td>
-        <td>必須</td>
+        <td>OK</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Cancel</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>PrimaryUp</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>PrimaryDown</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>PrimaryLeft</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>PrimaryRight</td>
-        <td>必須</td>
+        <td>〇</td>
     </tr>
     <tr>
         <td>Context1</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Context2</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Context3</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>Context4</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>PageUp</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>PageDown</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>PageLeft</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>PageRight</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ScrollUp</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ScrollDown</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ScrollLeft</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>ScrollRight</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondaryUp</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondaryDown</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondaryLeft</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
     <tr>
         <td>SecondaryRight</td>
-        <td>必須ではない</td>
+        <td>X</td>
     </tr>
 </table>
 
@@ -555,42 +555,42 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
 
 <table>
     <tr>
-        <th>Source (ソース)</th>
+        <th>Source</th>
         <th>値の名前</th>
         <th>値の種類</th>
-        <th>必須かどうか</th>
+        <th>必須?</th>
         <th>値の情報</th>
     </tr>
     <tr>
         <td>Button</td>
         <td>ButtonIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td><b>RawGameController</b> ボタンの配列のインデックス。</td>
     </tr>
     <tr>
         <td rowspan="4" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td><b>RawGameController</b> 軸の配列のインデックス。</td>
     </tr>
     <tr>
         <td>Invert</td>
         <td>DWORD</td>
-        <td>必須ではない</td>
+        <td>X</td>
         <td><b>ThresholdPercent</b> と <b>DebouncePercent</b> 要素を適用する前に、軸の値を反転する必要があることを示します。</td>
     </tr>
     <tr>
         <td>ThresholdPercent</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>マッピングされたボタンの値の (押した状態と離した状態の間の) 遷移の軸の位置を示します。 有効な値の範囲は 0 から 100 です。 軸の値がこの値以上の場合、ボタンが押されたと見なされます。</td>
     </tr>
     <tr>
         <td>DebouncePercent</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>
             <p><b>ThresholdPercent</b> 値の周囲のウィンドウのサイズを定義します。報告されたボタンの状態をデバウンスするために使用されます。 有効な値の範囲は 0 から 100 です。 ボタンの状態の遷移は、軸の値がデバウンス ウィンドウの上限または下限を超えたときにのみ発生します。 たとえば、<b>ThresholdPercent</b> が 50 で、<b>DebouncePercent</b> が 10 の場合には、デバウンスの下限と上限は、全範囲の軸の値で 45% と 55% となります。 軸の値が 55% 以上に達すると、ボタンは押された状態に遷移し、軸の値が 45% 以下に達すると、ボタンはリリースされた状態に戻ります。</p>
             <p>計算されるデバウンス ウィンドウの境界は 0% ～ 100% の間でクランプされます。 たとえば、しきい値が 5% で、デバウンス ウィンドウが 20% の場合、デバウンス ウィンドウの境界は 0% と 15% となります。 しきい値とデバウンスの値にかかわらず、軸の値が 0% ～ 100% にあるボタンの状態は常に、押されるか、または離されるかとして報告されます。</p>
@@ -600,19 +600,19 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
         <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td><b>RawGameController</b> スイッチの配列のインデックス。</td>
     </tr>
     <tr>
         <td>SwitchPosition</td>
         <td>REG_SZ</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>
             <p>マッピングされたボタンが押されたことを報告するスイッチの位置を示します。 位置の値には、次の文字列のいずれかを指定できます。</p>
             <ul>
                 <li>Up</li> 
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>右</li>
                 <li>DownRight</li>
                 <li>Down</li>
                 <li>DownLeft</li>
@@ -624,7 +624,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>必須ではない</td>
+        <td>X</td>
         <td>隣接するスイッチの位置も、マッピングされたボタンが押されたことを報告することを示します。</td>
     </tr>
 </table>
@@ -635,17 +635,17 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
 
 <table>
     <tr>
-        <th>Source (ソース)</th>
+        <th>Source</th>
         <th>値の名前</th>
         <th>値の種類</th>
-        <th>必須かどうか</th>
+        <th>必須?</th>
         <th>値の情報</th>
     </tr>
     <tr>
         <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>
             <p>マッピングされた一方向の軸の値に変換される、<b>RawGameController</b> ボタンの配列のインデックス。</p>
             <table>
@@ -667,7 +667,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>MinValueButtonIndex</td>
         <td>DWORD</td>
-        <td>必須ではない</td>
+        <td>X</td>
         <td>
             <p>マッピングされた軸が双方向であることを示します。 <b>MaxButton</b> と <b>MinButton</b> の値は結合され、次に示すように 1 つの双方向の軸となります。</p>
             <table>
@@ -703,32 +703,32 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
         <td rowspan="2" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td><b>RawGameController</b> 軸の配列のインデックス。</td>
     </tr>
     <tr>
         <td>Invert</td>
         <td>DWORD</td>
-        <td>必須ではない</td>
+        <td>X</td>
         <td>マッピングされた軸の値を返す前に反転するかどうかを示します。</td>
     </tr>
     <tr>
         <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
-        <td>必須</td>
+        <td>〇</td>
         <td><b>RawGameController</b> スイッチの配列のインデックス。
     </tr>
     <tr>
         <td>MaxValueSwitchPosition</td>
         <td>REG_SZ</td>
-        <td>必須</td>
+        <td>〇</td>
         <td>
             <p>次のいずれかの文字列です。</p>
             <ul>
                 <li>Up</li>
                 <li>UpRight</li>
-                <li>Right</li>
+                <li>右</li>
                 <li>DownRight</li>
                 <li>Down</li>
                 <li>DownLeft</li>
@@ -759,7 +759,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>IncludeAdjacent</td>
         <td>DWORD</td>
-        <td>必須ではない</td>
+        <td>X</td>
         <td>
             <p>隣接するスイッチの位置も、マッピングされた軸が 1.0 を報告することを示します。 上記の例では、<b>IncludeAdjacent</b> が設定されている場合、軸は次のようになります。</p>
             <table>
@@ -806,7 +806,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
 
 <table>
     <tr>
-        <th>Source (ソース)</th>
+        <th>Source</th>
         <th>値の名前</th>
         <th>値の種類</th>
         <th>値の情報</th>
@@ -820,7 +820,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、<b>FourWay</b>、または<b>EightWay</b>
+        <td><b>TwoWay</b>、 <b>FourWay</b>、または<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -926,7 +926,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>Right</td>
+                    <td>右</td>
                     <td>1</td>
                     <td>2</td>
                 </tr>
@@ -966,7 +966,7 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
 
 #### <a name="buttonindex-values"></a>*ButtonIndex の値
 
-**RawGameController** のボタンの配列への \*ButtonIndex の値のインデックス:
+\*ButtonIndex 値にインデックスを付ける、 **RawGameController**のボタン配列。
 
 <table>
     <tr>
@@ -1045,9 +1045,9 @@ UI ナビゲーション コントローラーと上記のコマンドについ�
     </tr>
 </table>
 
-## <a name="labels"></a>Labels
+## <a name="labels"></a>ラベル
 
-ラベルは、デバイス ルートの下の **Labels** キーの下に存在する必要があります。 **Labels** は 3 つのサブキー: **Buttons**、**Axes**、**Switches** を持つことができます。
+ラベルは、デバイス ルートの下の **Labels** キーの下に存在する必要があります。 **ラベル**3 つのサブキーを持つことができます。**ボタン**、**軸**、および**スイッチ**します。
 
 ### <a name="button-labels"></a>ボタンのラベル
 
@@ -1071,7 +1071,7 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名前</th>
-        <th>値 (種類: REG_SZ)</th>
+        <th>値 (型。REG_SZ)</th>
     </tr>
     <tr>
         <td>Button0</td>
@@ -1079,7 +1079,7 @@ RightBumper         // Index 9
     </tr>
     <tr>
         <td>Button1</td>
-        <td>View</td>
+        <td>ビュー</td>
     </tr>
     <tr>
         <td>Button2</td>
@@ -1137,7 +1137,7 @@ RightBumper         // Index 9
 <table>
     <tr>
         <th>名前</th>
-        <th>値 (種類: REG_SZ)</th>
+        <th>値 (型。REG_SZ)</th>
     </tr>
     <tr>
         <td>Switch0Up</td>
@@ -1347,6 +1347,6 @@ Windows Registry Editor Version 5.00
 
 ## <a name="see-also"></a>関連項目
 
-* [Windows.Gaming.Input 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.Custom 名前空間](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
+* [Windows.Gaming.Input Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom Namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)
 * [INF ファイル](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files)

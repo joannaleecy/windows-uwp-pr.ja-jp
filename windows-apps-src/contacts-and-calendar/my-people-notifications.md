@@ -3,14 +3,14 @@ title: マイ連絡先の通知
 description: 新しい種類のトーストである、マイ連絡先の通知を作成して使用する方法について説明します。
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4657c9dfb651c1e7f6bb4e2cafdc49d0a11237b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058723"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630567"
 ---
 # <a name="my-people-notifications"></a>マイ連絡先の通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "9058723"
 + Windows 10 と Microsoft Visual Studio 2017。 インストールについて詳しくは、「[Visual Studio のセットアップ](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)」をご覧ください。
 + C# またはこれに類似するオブジェクト指向プログラミング言語に関する基本的な知識。 C# で作業を始めるには、「["Hello, world" アプリを作成する](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)」をご覧ください。
 
-## <a name="how-it-works"></a>しくみ
+## <a name="how-it-works"></a>方法
 
 汎用のトースト通知の代わりに、マイ連絡先の機能を使って、通知を送信できます。これによって、さらにパーソナルなエクスペリエンスをユーザーに提供できます。 これは、ユーザーのタスク バーにピン留めされた連絡先からマイ連絡先機能を使用して送信される、新しい種類のトーストです。 通知を受信すると、通知が開始されていることを知らせるため、送信者の連絡先の写真がタスク バー上でアニメーションされ、サウンドが再生されます。 アニメーションまたはペイロードで指定された画像が 5 秒間表示されます (または、ペイロードが 5 秒以下のアニメーションの場合、5 秒までループされます)。
 
@@ -57,9 +57,9 @@ experienceType=”shoulderTap”
     + フレームの高さ (ピクセル単位)。 Spritesheet アニメーションの場合のみ必要です。
 + **spritesheet-fps**
     + 1 秒あたりのフレーム数 (FPS)。 Spritesheet アニメーションの場合のみ必要です。 1 ～ 120 の値のみがサポートされます。
-+ **spritesheet-startingFrame**
++ **spritesheet startingFrame**
     + アニメーションを開始するフレーム番号です。 Spritesheet アニメーションの場合のみ使用されます。指定されていない場合は、既定値は 0 となります。
-+ **alt**
++ **Alt キー**
     + スクリーン リーダー ナレーションに使用されるテキスト文字列。
 
 > [!NOTE]
@@ -67,7 +67,7 @@ experienceType=”shoulderTap”
 
 さらに、トップ レベルのトースト ノードには、**hint-people** パラメーターを含めて、送信連絡先を指定する必要があります。 このパラメーターは次の値を取ることができます。
 
-+ **メール アドレス** 
++ **電子メール アドレス** 
     + 例: mailto:johndoe@mydomain.com
 + **電話番号** 
     + 例: tel:888-888-8888
@@ -151,7 +151,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 マイ連絡先の通知がトーストにフォールバックすると、2 番目のマイ連絡先固有のバインドは無視され、1 番目のバインドのみが使用されて、トーストが表示されます。 これは、最初のトースト バインドでフォールバック ペイロードを指定することが重要である理由です。
 
 ## <a name="see-also"></a>関連項目
-+ [マイ連絡先の通知のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [マイ連絡先のサポートを追加する](my-people-support.md)
-+ [アダプティブ トースト通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [ユーザー通知のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [ユーザーの追加のサポートします。](my-people-support.md)
++ [適応型のトースト通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification クラス](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

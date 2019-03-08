@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, UWP, ゲーム, Xbox, Xbox Live, リソース, API, リファレンス
 ms.localizationpriority: medium
 ms.openlocfilehash: c3ed5a76791bebfb1b82afaf12c699bfdd7c7437
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044080"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632517"
 ---
 # <a name="xbox-live-resources"></a>Xbox Live リソース
 
@@ -18,19 +18,19 @@ ms.locfileid: "9044080"
 
 ## <a name="api-reference"></a>API リファレンス
 
-WinRT SDK API リファレンスを参照してオンラインください。
+WinRT SDK の API リファレンスはオンライン。
 
 * [Xbox Live WinRT SDK](https://docs.microsoft.com/en-us/dotnet/api/?view=xboxlive-dotnet-2017.11.20171204.01)
 
-C++ SDK は、現在オフライン形式で利用可能なのみです。
+C++ SDK は、現在オフライン形式の使用のみ。
 
-完全な API のリファレンス ドキュメント (を C++ と WinRT を含む) をダウンロードできます。
+(を C++ と WinRT を含む) 完全な API リファレンス ドキュメントをダウンロードできます。
 
 * [Xbox Live API リファレンス](https://aka.ms/xboxliveuwpdocs)
 
 REST API の情報は、次の場所からご覧いただけます。
 
-* [Xbox Live RESTful リファレンス](xbox-live-rest/atoc-xboxlivews-reference.md)
+* [Xbox Live RESTful の参照](xbox-live-rest/atoc-xboxlivews-reference.md)
 
 
 ## <a name="xbox-live-api-source-code"></a>Xbox Live API ソース コード
@@ -52,7 +52,7 @@ Unity を使ってゲームを開発している Xbox Live クリエーターズ
 
 このパッケージには、UWP プラットフォーム用のネットワークのセキュリティ保護機能および接続ストレージ機能に関する winmd ファイルとドキュメントが含まれています。 この拡張機能では、Windows.Gaming.XboxLive.Storage 名前空間を使うことにより UWP タイトルで接続ストレージを使えるようになります。
 
-* [Xbox Live Platform Extensions SDK](https://aka.ms/xblextsdk)
+* [Xbox Live プラットフォーム拡張機能 SDK](https://aka.ms/xblextsdk)
 
 > [!NOTE]
 > - 開発者環境で Windows 10 Fall Creators Update SDK 以降を使っている場合、このダウンロードは必要ありません。
@@ -62,15 +62,15 @@ Unity を使ってゲームを開発している Xbox Live クリエーターズ
 
 Xbox Live の開発に役立ついくつかの便利なツールがあります。 詳しくは以下をご覧ください。
 
-* [Xbox Live の開発ツール](tools/tools.md)
+* [Xbox Live 向けの開発ツール](tools/tools.md)
 
 ## <a name="xbox-live-code-samples"></a>Xbox Live のコード サンプル
 
 Xbox Live の公開コード サンプルは、GitHub で入手できます。
 
-* [Xbox Live クリエーターズ プログラム向けサンプル](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
+* [Xbox Live クリエーターズ プログラム用のサンプル](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)
 
-* [ID@Xbox 向けサンプル](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
+* [用のサンプル ID@Xbox](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)
 
 マネージ パートナー限定のサンプルは、Games Developer Network ポータルにあります。
 

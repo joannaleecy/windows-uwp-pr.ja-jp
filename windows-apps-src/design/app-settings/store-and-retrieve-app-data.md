@@ -1,25 +1,25 @@
 ---
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
+Description: ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。
 title: 設定と他のアプリ データを保存して取得する
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
-ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009519"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602677"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>設定と他のアプリ データを保存して取得する
 
 *アプリ データ*とは、特定のアプリに固有の実行可能データです。 ランタイム状態、ユーザー設定、その他の設定などがあります。 アプリ データは*ユーザー データ*とは異なり、アプリを使用しているときに、ユーザーが作成、管理するデータです。 ユーザー データには、ドキュメント ファイル、メディア ファイル、メール トランスクリプト、通信トランスクリプト、ユーザーが作成したコンテンツを保持するデータベース レコードなどがあります。 ユーザー データは複数のアプリで有効な場合があります。 多くの場合、ユーザー データは、ユーザーがアプリ自体とは無関係にエンティティとして操作または転送するデータ (ドキュメントなど) です。
 
-**アプリ データに関する重要な注意:** アプリ データの有効期間は、アプリの有効期間に依存します。 アプリが削除されると、すべてのアプリ データが失われます。 ユーザー データや、ユーザーにとって欠かすことができない重要なデータの保存には、アプリ データを使用しないでください。 そのような情報の保存には、ユーザーのライブラリや Microsoft OneDrive を使用することをお勧めします。 アプリ データは、アプリ固有のユーザー設定、設定、お気に入りを保存するのに適しています。
+**アプリのデータについての重要な注意事項:** アプリ データの有効期間はアプリの有効期間に依存します。 アプリが削除されると、すべてのアプリ データが失われます。 ユーザー データや、ユーザーにとって欠かすことができない重要なデータの保存には、アプリ データを使用しないでください。 そのような情報の保存には、ユーザーのライブラリや Microsoft OneDrive を使用することをお勧めします。 アプリ データは、アプリ固有のユーザー設定、設定、お気に入りを保存するのに適しています。
 
 ## <a name="types-of-app-data"></a>アプリ データの種類
 
@@ -33,11 +33,11 @@ ms.locfileid: "9009519"
     アプリの設定に使用できるデータ型を次に示します。
 
     -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
-    -   **Boolean**
+    -   **ブール値**
     -   **Char16**、**String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)、 [ **TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
     -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): 自動的にシリアル化および逆シリアル化する必要がある一連のアプリの設定。 コンポジット設定を使うと、相互に依存する設定のアトミックな更新が簡単になります。 同時アクセスとローミング時は、システムによってコンポジット設定の整合性が保たれます。 コンポジット設定は少量のデータに適しており、大きなデータ セットに使うとパフォーマンスが低下する場合があります。
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588):一連の関連アプリ設定をシリアル化し、アトミックに逆シリアル化する必要があります。 コンポジット設定を使うと、相互に依存する設定のアトミックな更新が簡単になります。 同時アクセスとローミング時は、システムによってコンポジット設定の整合性が保たれます。 コンポジット設定は少量のデータに適しており、大きなデータ セットに使うとパフォーマンスが低下する場合があります。
 -   **ファイル**
 
     ファイルを使うと、バイナリ データを保存したり、独自にカスタマイズされ、シリアル化された型を有効にできます。
@@ -56,7 +56,7 @@ ms.locfileid: "9009519"
 
 ### <a name="retrieve-the-local-app-data-store"></a>ローカル アプリ データ ストアを取得する
 
-ローカル アプリ データを読み書きする前に、ローカル アプリ データ ストアを取得する必要があります。 ローカル アプリ データ ストアを取得するには、[**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) プロパティを使用して、アプリのローカル設定を [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) オブジェクトとして取得します。 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト内のファイルを取得するには、[**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) プロパティを使用します。 バックアップや復元に含まれていないファイルを保存できるローカル アプリ データ ストア内のフォルダーを取得するには、[**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) プロパティを使用します。
+ローカル アプリ データを読み書きする前に、ローカル アプリ データ ストアを取得する必要があります。 ローカル アプリ データ ストアを取得するには、[**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) プロパティを使用して、アプリのローカル設定を [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) オブジェクトとして取得します。 [  **StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト内のファイルを取得するには、[**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) プロパティを使用します。 バックアップや復元に含まれていないファイルを保存できるローカル アプリ データ ストア内のフォルダーを取得するには、[**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) プロパティを使用します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -117,7 +117,7 @@ else
 
 ### <a name="create-and-read-a-local-file"></a>ローカル ファイルを作成して読み取る
 
-ローカル アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`localFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
+ローカル アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`localFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 ```csharp
 async void WriteTimestamp()
@@ -172,9 +172,9 @@ async void ReadTimestamp()
 
 ### <a name="roaming-pre-requisites"></a>ローミングの前提条件
 
-アプリ データのローミングは、Microsoft アカウントを使ってデバイスにログインするすべてのユーザーに利点をもたらします。 ただし、いつでもデバイスでアプリ データのローミングを切り替えることができるのは、ユーザーとグループ ポリシーの管理者です。 ユーザーが Microsoft アカウントを使わないまたはデータのローミング機能を無効には、彼女は引き続き、アプリを使うことですがアプリ データは各デバイスにローカルになります。
+アプリ データのローミングは、Microsoft アカウントを使ってデバイスにログインするすべてのユーザーに利点をもたらします。 ただし、いつでもデバイスでアプリ データのローミングを切り替えることができるのは、ユーザーとグループ ポリシーの管理者です。 ユーザーは、Microsoft アカウントを使用しないように選択またはローミング データの機能を無効にします。、アプリを使用して、彼女はできますが、アプリ データは、各デバイスにローカルになります。
 
-[**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) に格納されているデータは、ユーザーが "信頼" しているデバイスにしか移行されません。 デバイスが信頼されていない場合、この資格情報コンテナーのセキュリティで確保されているデータはローミングされません。
+[  **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) に格納されているデータは、ユーザーが "信頼" しているデバイスにしか移行されません。 デバイスが信頼されていない場合、この資格情報コンテナーのセキュリティで確保されているデータはローミングされません。
 
 ### <a name="conflict-resolution"></a>競合の解決
 
@@ -209,7 +209,7 @@ async void ReadTimestamp()
 
 1.  ローミング データが変更されたときに通知を受け取るように登録します。
 
-    [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) イベントで、ローミング データが変更されたときに通知します。 この例では、ローミング データの変更のハンドラーとして `DataChangeHandler` を設定します。
+    [  **DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) イベントで、ローミング データが変更されたときに通知します。 この例では、ローミング データの変更のハンドラーとして `DataChangeHandler` を設定します。
 
 ```csharp
 void InitHandlers()
@@ -281,7 +281,7 @@ else
 
 ### <a name="create-and-retrieve-roaming-files"></a>ローミング ファイルを作成して取得する
 
-ローミング アプリ データ ストアでファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`roamingFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
+ローミング アプリ データ ストアでファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`roamingFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 ```csharp
 async void WriteTimestamp()
@@ -329,7 +329,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 
 ### <a name="create-and-read-temporary-files"></a>一時ファイルを作成して読み取る
 
-一時アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`temporaryFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
+一時アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`temporaryFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [  **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 
 ```csharp
@@ -367,7 +367,7 @@ async void ReadTimestamp()
 
 アプリ データの設定とファイルを整理するには、ディレクトリで直接作業するのではなく、コンテナー ([**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) オブジェクトで表されます) を作成します。 コンテナーは、ローカル アプリ データ ストア、ローミング アプリ データ ストア、一時アプリ データ ストアに追加できます。 コンテナーは 32 階層まで入れ子にすることができます。
 
-設定コンテナーを作成するには、[**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) メソッドを呼び出します。 次の例では、`exampleContainer` という名前のローカル設定コンテナーを作成し、`exampleSetting` という名前の設定を追加します。 [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 列挙体の **Always** 値は、コンテナーがまだない場合に作成されることを示します。
+設定コンテナーを作成するには、[**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) メソッドを呼び出します。 次の例では、`exampleContainer` という名前のローカル設定コンテナーを作成し、`exampleSetting` という名前の設定を追加します。 [  **ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 列挙体の **Always** 値は、コンテナーがまだない場合に作成されることを示します。
 
 ```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 

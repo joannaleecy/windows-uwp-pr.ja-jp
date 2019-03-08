@@ -8,27 +8,27 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 18929c060adeae47f0305422dd312e7410f93981
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944144"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628347"
 ---
 # <a name="multiplayersessionrequest-json"></a>MultiplayerSessionRequest (JSON)
-**MultiplayerSession**オブジェクト上の操作に対して要求の JSON オブジェクトが渡されます。 
+操作の要求の JSON オブジェクトが渡される、 **MultiplayerSession**オブジェクト。 
 <a id="ID4EQ"></a>
 
   
  
-MultiplayerSessionRequest JSON オブジェクトには、次仕様があります。
+MultiplayerSessionRequest JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| 定数| object| セッションの定数を生成するセッション テンプレートと結合された読み取り専用の設定。 | 
-| プロパティ | object | セッションのプロパティへの結合を変更します。| 
-| members.me | object| 定数および機能もプロパティなどのトップレベルの相当します。 PUT メソッドでは、ユーザーが、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行っているメンバーがセッションから削除されます。 | 
-| メンバー | object| 0 から始まるインデックスを使用してキーを持つ、セッションに追加するユーザーを表すその他のオブジェクト。 既にセッションには、メンバーが含まれている場合でも、要求のメンバーの数は常に 0 で始まります。 メンバーは、要求で表示される順序でセッションに追加されます。 メンバーのプロパティは、先に属しているユーザーでのみ設定できます。 | 
-| サーバー | object| 関連付けられているサーバーの参加者のセットに更新プログラムと、セッションに追加されたことを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 | 
+| 定数| オブジェクト| セッションの定数を生成するためにセッションのテンプレートとマージする読み取り専用の設定。 | 
+| プロパティ | オブジェクト | セッションのプロパティへの結合を変更します。| 
+| members.me | オブジェクト| 定数とよくプロパティなどの最上位レベルの対応します。 PUT メソッドは、ユーザー、セッションのメンバーである必要があり、必要に応じて、ユーザーを追加します。 "Me"が null として指定されている場合は、要求を行うメンバーが、セッションから削除されます。 | 
+| メンバー | オブジェクト| 0 から始まるインデックスによって識別される、セッションに追加するユーザーを表すその他のオブジェクト。 既にセッションには、メンバーが含まれている場合でも、要求内のメンバーの数は常に 0 を開始します。 メンバーは、要求で表示される順序でセッションに追加されます。 メンバー プロパティは、ユーザーに属しているユーザーによってのみ設定できます。 | 
+| サーバー | オブジェクト| 関連付けられているサーバーの参加要素のセットに更新プログラム、セッションに追加されたものを示す値。 サーバーが null として指定されている場合、そのサーバーのエントリは、セッションから削除されます。 | 
   
 <a id="ID4EZ"></a>
 
@@ -83,7 +83,7 @@ MultiplayerSessionRequest JSON オブジェクトには、次仕様がありま�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EMB"></a>

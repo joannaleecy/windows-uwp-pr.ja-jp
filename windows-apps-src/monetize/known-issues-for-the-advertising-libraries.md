@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, 既知の問題, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049180"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641067"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>アプリ内広告の既知の問題とトラブルシューティング
 
 このトピックでは、Microsoft Advertising SDK の現在のリリースにおける既知の問題を示します。 トラブルシューティングのガイダンスについては、以下のトピックを参照してください。
 
-* [HTML と JavaScript のトラブルシューティング ガイド](html-and-javascript-troubleshooting-guide.md)
-* [XAML と C# のトラブルシューティング ガイド](xaml-and-c-troubleshooting-guide.md)
+* [HTML および JavaScript のトラブルシューティング ガイド](html-and-javascript-troubleshooting-guide.md)
+* [XAML とC#トラブルシューティング ガイド](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>XAML での不明な AdControl インターフェイス
 
@@ -40,13 +40,13 @@ ms.locfileid: "9049180"
 
 広告が表示されない場合、ネットワーク エラーを含むさまざまな理由があります。 次の理由も考えられます。
 
-* パートナー センターでが大きいまたはアプリのコードで**AdControl**のサイズより小さいサイズの広告ユニットを選択します。
+* サイズが大きいか小のサイズであるパートナー センターで、ad 単位を選択すると、 **AdControl**アプリのコードにします。
 
 * 広告ユニット ID に[テスト モードの値](set-up-ad-units-in-your-app.md#test-ad-units)を使ってライブ アプリを実行した場合、広告は表示されません。
 
 * 新しい広告ユニット ID の作成を行ったのがこの 30 分以内の場合、サーバーによってシステムに新しいデータが伝達されるまで、広告は表示されません。 広告が表示されていた既存の ID を使用すると、広告はすぐに表示されます。
 
-アプリにテスト広告が表示される場合は、コードが正常に動作していて広告を表示できることを示します。 問題が発生した場合は、[製品サポート](https://developer.microsoft.com/en-us/windows/support)にお問い合わせください。 ページで、**お問い合わせ**を選択します。
+アプリにテスト広告が表示される場合は、コードが正常に動作していて広告を表示できることを示します。 問題が発生した場合は、[製品サポート](https://developer.microsoft.com/en-us/windows/support)にお問い合わせください。 ページで、次のように選択します。**問い合わせ**します。
 
 [フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=401266)に質問を投稿することもできます。
 
@@ -58,14 +58,14 @@ ms.locfileid: "9049180"
 
 * サイドローディングされたアプリやエミュレーターで実行されているアプリには、ライブ広告は表示されません。
 
-ライブ広告ユニットがテスト広告を提供すると、広告ユニットのステータスはパートナー センターで**アクティブとサービスのテスト広告**表示されます。 現時点で、これは、電話アプリには適用されません。
+ライブ広告ユニットは、テストの広告を提供している、ad ユニットのステータスが表示されます**アクティブ、およびサービスのテスト広告**パートナー センターでします。 現時点で、これは、電話アプリには適用されません。
 
 
 <span id="reference_errors"/>
 
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>プロジェクトのターゲットを "任意の CPU" に設定すると参照エラーが発生する
 
-Microsoft Advertising SDK を使う場合、プロジェクトで**任意の CPU** をターゲットにすることはできません。 プロジェクトのターゲットを**任意の CPU** プラットフォームに設定した場合、次のような参照を追加した後で警告が表示される場合があります。
+Microsoft Advertising SDK を使う場合、プロジェクトで**任意の CPU** をターゲットにすることはできません。 プロジェクトのターゲットを **Any CPU** プラットフォームに設定した場合、次のような参照を追加した後で警告が表示される場合があります。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
@@ -89,7 +89,7 @@ JavaScript/HTML アプリでは、z オーダーの予約済みの MAX-10 の範
 
 **AdControl** によってその親クラスから継承される境界線に関連するプロパティを設定すると、広告の配置に関して問題が発生します。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明
 
 最新の既知の問題についての詳細を調べたり、Microsoft Advertising SDK に関連する質問を投稿したりするには、[フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=401266)をご利用ください。
 

@@ -1,29 +1,29 @@
 ---
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: パートナー センター アカウントに登録されているすべてのアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
-title: すべてのアプリの入手
+description: Microsoft Store 送信 API でこのメソッドを使用して、パートナー センター アカウントに登録されているすべてのアプリに関する情報を取得します。
+title: すべてのアプリの取得
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 267e1d4de3917ae332cdfe15309f3871ef7b6647
-ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "8968566"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641987"
 ---
-# <a name="get-all-apps"></a>すべてのアプリの入手
+# <a name="get-all-apps"></a>すべてのアプリの取得
 
 
-パートナー センター アカウントに登録されているアプリに関するデータを取得、Microsoft Store 申請 API の以下のメソッドを使用します。
+Microsoft Store 送信 API でこのメソッドを使用して、パートナー センター アカウントに登録されているアプリのデータを取得します。
 
 ## <a name="prerequisites"></a>前提条件
 
 このメソッドを使うには、最初に次の作業を行う必要があります。
 
 * Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。
-* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら、新しいトークンを取得できます。
+* このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。 アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れたら新しいトークンを取得できます。
 
 ## <a name="request"></a>要求
 
@@ -36,19 +36,19 @@ ms.locfileid: "8968566"
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー        | 型   | 説明                                                                 |
+| Header        | 種類   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。 |
 
 
 ### <a name="request-parameters"></a>要求パラメーター
 
-このメソッドでは、要求パラメーターはすべてオプションです。 応答には、パラメーターを指定せずには、このメソッドを呼び出す場合は、最初の 10 データが含まれています、アカウントに登録されているアプリ。
+このメソッドでは、要求パラメーターはすべてオプションです。 最初の 10 のデータが応答に含まれるパラメーターを指定せずには、このメソッドを呼び出す場合、アカウントに登録されているアプリ。
 
-|  パラメーター  |  型  |  説明  |  必須かどうか  |
+|  パラメーター  |  種類  |  説明  |  必須  |
 |------|------|------|------|
-|  top  |  int  |  要求で返される項目の数 (つまり、返されるアプリの数)。 クエリで指定した値よりアカウントのアプリの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  必須ではない  |
-|  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  必須ではない  |
+|  top  |  int  |  要求で返される項目の数 (つまり、返されるアプリの数)。 クエリで指定した値よりアカウントのアプリの数が多い場合、応答本文には、データの次のページを要求するためにメソッド URI に追加できる相対 URI パスが含まれます。  |  X  |
+|  skip  |  int  |  残りの項目を返す前にクエリでバイパスする項目の数。 データ セットを操作するには、このパラメーターを使用します。 たとえば、top = 10 と skip = 0 は、1 から 10 の項目を取得し、top=10 と skip=10 は 11 から 20 の項目を取得するという具合です。  |  X  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -64,14 +64,14 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。 最初に、トップ 10 アプリを取得します。
+次の例は、アカウントに登録するすべてのアプリに関する情報を取得する方法を示しています。 最初に、上位 10 個のアプリを取得します。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-再帰的に呼び出します`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`まで`{@nextlink}`が null または応答に存在しません。 例:
+再帰的に呼び出す操作を実行し、`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`まで`{@nextlink}`が null か、応答内に存在しません。 次に、例を示します。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
@@ -88,7 +88,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 H
 Authorization: Bearer <your access token>
 ```
 
-アカウント内にあるアプリの合計数がわかっている場合、すべてのアプリに関する情報を取得する**上部**パラメーターでその数を渡すことができますだけです。
+自分のアカウントにあるアプリの合計数を既に知っている場合だけその数を渡すことができます、**上部**パラメーターすべてのアプリに関する情報を取得します。
 
 ```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
@@ -136,7 +136,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>応答本文
 
-| 値      | 型   | 説明                                                                                                                                                                                                                                                                         |
+| Value      | 種類   | 説明                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | array  | アカウントに登録されている各アプリについての情報が含まれるオブジェクトの配列。 各オブジェクトのデータについて詳しくは、「[アプリケーション リソース](get-app-data.md#application_object)」をご覧ください。                                                                                                                           |
 | @nextLink  | string | データの追加ページが存在する場合、この文字列には、データの次のページを要求するために、ベースとなる `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI に追加できる相対パスが含まれます。 たとえば、最初の要求本文の *top* パラメーターが 10 に設定されていて、アカウントには 20 個のアプリが登録されている場合、応答本文には、`applications?skip=10&top=10` という @nextLink 値が含まれます。これは、次の 10 個のアプリを要求するために、`https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10` を呼び出すことができることを示しています。 |
@@ -150,12 +150,12 @@ Authorization: Bearer <your access token>
 | エラー コード |  説明   |
 |--------|------------------|
 | 404  | アプリが見つかりませんでした。 |
-| 409  | アプリでは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)は、パートナー センターの機能を使用します。  |
+| 409  | アプリはパートナー センターの機能を使用して、[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。  |
 
 
 ## <a name="related-topics"></a>関連トピック
 
-* [Microsoft Store サービスを使用した申請の作成と管理](create-and-manage-submissions-using-windows-store-services.md)
-* [アプリの取得](get-an-app.md)
-* [アプリのパッケージ フライトの入手](get-flights-for-an-app.md)
-* [アプリのアドオンの入手](get-add-ons-for-an-app.md)
+* [作成し、Microsoft Store サービスを使用して送信の管理](create-and-manage-submissions-using-windows-store-services.md)
+* [アプリを取得します。](get-an-app.md)
+* [アプリのパッケージのフライトを取得します。](get-flights-for-an-app.md)
+* [アプリのアドオンを入手します。](get-add-ons-for-an-app.md)

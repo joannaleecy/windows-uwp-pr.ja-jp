@@ -4,14 +4,14 @@ description: この記事では、写真とビデオをキャプチャすると�
 title: MediaCapture を使ってデバイスの向きを処理する
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 866a3b02d67409d03fccf427663de65cc94919b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919761"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618097"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>MediaCapture を使ってデバイスの向きを処理する
 アプリ外での表示を目的とする写真やビデオ (ユーザーのデバイスにファイルを保存する場合や、オンラインで共有する場合など) をアプリでキャプチャする際は、別のアプリやデバイスで画像を表示するときに正しい向きで表示されるよう、適切な向きのメタデータを使って画像をエンコーディングすることが重要です。 メディア ファイルにどの向きのデータを含めれば良いか特定するのは複雑な作業です。これは、デバイス シャーシの向き、ディスプレイの向き、シャーシ上のカメラの位置 (全面カメラか背面カメラか) など、考慮すべき変数が複数あるためです。 
@@ -26,7 +26,7 @@ ms.locfileid: "8919761"
 
 [!code-cs[OrientationUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOrientationUsing)]
 
-アプリに向きのサポートを追加するにはまず、ディスプレイをロックして、デバイスの回転時にディスプレイが自動的に回転しないようにします。 UI の自動回転はほとんどの種類のアプリに適していますが、カメラ プレビューについては、回転するとユーザーが操作しにくくなります。 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) プロパティを [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) に設定してディスプレイの向きをロックします。 
+アプリに向きのサポートを追加するにはまず、ディスプレイをロックして、デバイスの回転時にディスプレイが自動的に回転しないようにします。 UI の自動回転はほとんどの種類のアプリに適していますが、カメラ プレビューについては、回転するとユーザーが操作しにくくなります。 [  **DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) プロパティを [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) に設定してディスプレイの向きをロックします。 
 
 [!code-cs[AutoRotationPreference](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAutoRotationPreference)]
 
@@ -57,7 +57,7 @@ ms.locfileid: "8919761"
 ## <a name="add-orientation-data-to-the-camera-preview-stream"></a>カメラのプレビュー ストリームに向きのデータを追加する
 プレビュー ストリームのメタデータに正しい向きを追加しても、ユーザーに表示されるプレビューには影響しませんが、プレビュー ストリームからキャプチャされるフレームをシステムが正しくエンコーディングしやすくなります。
 
-[**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync) を呼び出してカメラ プレビューを開始します。 その前に、(正面カメラのために) プレビューを左右反転する必要があるかどうか、メンバー変数を確認してください。 左右反転する必要があれば、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement) の [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) プロパティ (この例では *PreviewControl* という名前になっています) を [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection) に設定します。 プレビューを開始したら、**SetPreviewRotationAsync** というヘルパー メソッドを呼び出してプレビューの回転を設定します。 以下に、このメソッドの実装を示します。
+[  **MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync) を呼び出してカメラ プレビューを開始します。 その前に、(正面カメラのために) プレビューを左右反転する必要があるかどうか、メンバー変数を確認してください。 左右反転する必要があれば、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement) の [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) プロパティ (この例では *PreviewControl* という名前になっています) を [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection) に設定します。 プレビューを開始したら、**SetPreviewRotationAsync** というヘルパー メソッドを呼び出してプレビューの回転を設定します。 以下に、このメソッドの実装を示します。
 
 [!code-cs[StartPreviewWithRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewWithRotationAsync)]
 
@@ -89,7 +89,7 @@ ms.locfileid: "8919761"
 ## <a name="capture-a-video-with-orientation-data"></a>向きのデータを使ってビデオをキャプチャする
 基本的なビデオ キャプチャについては、「[**MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ**](basic-photo-video-and-audio-capture-with-mediacapture.md)」で説明しています。 キャプチャしたビデオのエンコーディングに向きのデータを追加するには、向きのデータをプレビュー ストリームに追加するセクションで説明したのと同じ手法を用います。
 
-次の例では、キャプチャしたビデオを書き込むファイルを作成します。 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) という静的メソッドを使用して、MP4 エンコード プロファイルを作成します。 ビデオの正しい向きは、**GetCameraCaptureOrientation** を呼び出すことで **CameraRotationHelper** クラスから取得します。回転プロパティでは、向きを反時計回りの角度で表す必要があるため、**ConvertSimpleOrientationToClockwiseDegrees** ヘルパー メソッドを呼び出して向きの値を変換します。 次に、ビデオ ストリームの回転状態のメディア ファンデーション トランスフォーム (MFT) 属性を表す GUID を作成します。 C++ では [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/library/windows/desktop/hh162880.aspx) 定数を使用できますが、C# では GUID 値を手動で指定する必要があります。 キーに GUID を、値に回転状態を指定して、ストリーム プロパティ オブジェクトにプロパティ値を追加します。 最後に、[**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) を呼び出して、向きのデータによってエンコーディングされたビデオの録画を開始します。
+次の例では、キャプチャしたビデオを書き込むファイルを作成します。 [  **CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) という静的メソッドを使用して、MP4 エンコード プロファイルを作成します。 ビデオの正しい向きは、**GetCameraCaptureOrientation** を呼び出すことで **CameraRotationHelper** クラスから取得します。回転プロパティでは、向きを反時計回りの角度で表す必要があるため、**ConvertSimpleOrientationToClockwiseDegrees** ヘルパー メソッドを呼び出して向きの値を変換します。 次に、ビデオ ストリームの回転状態のメディア ファンデーション トランスフォーム (MFT) 属性を表す GUID を作成します。 C++ では [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/library/windows/desktop/hh162880.aspx) 定数を使用できますが、C# では GUID 値を手動で指定する必要があります。 キーに GUID を、値に回転状態を指定して、ストリーム プロパティ オブジェクトにプロパティ値を追加します。 最後に、[**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) を呼び出して、向きのデータによってエンコーディングされたビデオの録画を開始します。
 
 [!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
 
@@ -111,7 +111,7 @@ ms.locfileid: "8919761"
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  

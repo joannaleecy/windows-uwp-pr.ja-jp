@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 279e650532505467f3c0dbabf3814618b893aedb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927882"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637027"
 ---
 # <a name="depth-buffers"></a>深度バッファー
 
@@ -32,7 +32,7 @@ z バッファーや w バッファーとも呼ばれる、深度バッファー
 
 ![深度値のテストの図](images/zbuffer.png)
 
-## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>バッファー処理の手法
+## <a name="span-idbufferingtechniquesspanspan-idbufferingtechniquesspanspan-idbufferingtechniquesspanbuffering-techniques"></a><span id="Buffering_techniques"></span><span id="buffering_techniques"></span><span id="BUFFERING_TECHNIQUES"></span>バッファリングの手法
 
 
 ほとんどのアプリケーションはこの機能を使用しませんが、深度バッファーに配置し、その後、レンダー ターゲット サーフェスに配置する値を決定するために Direct3D が使用する比較の方法を変更できます。 一部のハードウェアでは、比較関数を変更すると、階層化 z テストが無効になることがあります。
@@ -50,7 +50,7 @@ z バッファーを使うと、レンダリング中にオーバーヘッドが
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[深度バッファーとステンシル バッファー](depth-and-stencil-buffers.md)
+[深度、ステンシル バッファー](depth-and-stencil-buffers.md)
 
  
 

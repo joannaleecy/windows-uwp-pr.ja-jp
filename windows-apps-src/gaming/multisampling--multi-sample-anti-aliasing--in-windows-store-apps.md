@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, マルチサンプリング, Direct3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924918"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57610857"
 ---
-# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
+# <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> マルチ サンプリングでは、ユニバーサル Windows プラットフォーム (UWP) アプリ
 
 
 
@@ -28,11 +28,11 @@ DirectX を使う UWP アプリでは、フリップ モデル スワップ チ�
 
 Direct3D 機能レベルは、特定の最小サンプル数機能のサポートを保証し、マルチサンプリングをサポートする特定のバッファー形式が使用できることを保証します。 グラフィックス デバイスは、多くの場合、最小限必要なものよりも広い範囲の形式とサンプル数をサポートしています。 マルチサンプリング サポートは、特定の DXGI 形式を使うマルチサンプリング機能がサポートされているか確認し、サポートされている形式ごとに使うことのできるサンプル数を確認することで、実行時に判断できます。
 
-1.  [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) を呼び出して、どの DXGI 形式をマルチサンプリングで使うことができるか確認します。 ゲームで使うことのできるレンダー ターゲット形式を指定します。 レンダー ターゲットと解決ターゲットは、どちらも同じ形式を使う必要があるため、[**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) と **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE** の両方を確認します。
+1.  [  **ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) を呼び出して、どの DXGI 形式をマルチサンプリングで使うことができるか確認します。 ゲームで使うことのできるレンダー ターゲット形式を指定します。 レンダー ターゲットおよび解決するターゲットの両方必要があります、同じ形式を使用して、両方のチェック[ **D3D11\_形式\_サポート\_マルチ サンプリング\_レンダリング ターゲット**](https://msdn.microsoft.com/library/windows/desktop/ff476134)と**D3D11\_形式\_サポート\_マルチ サンプリング\_解決**します。
 
-    **機能レベル 9:** 機能レベル 9 のデバイス[のマルチ サンプリングされたレンダー ターゲット形式のサポートを保証](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)が、マルチ サンプル解決ターゲットのサポートは保証されません。 そこで、このトピックで説明するマルチサンプリング技法を使おうとする前に、この確認が必要になります。
+    **9 の機能レベル:  **機能レベルの 9 デバイスが[のマルチ サンプリングされたレンダー ターゲット形式のサポートを保証](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)、multisample 解決ターゲットにサポートが保証されていません。 そこで、このトピックで説明するマルチサンプリング技法を使おうとする前に、この確認が必要になります。
 
-    次のコードは、すべての DXGI\_FORMAT 値についてマルチサンプリング サポートを確認します。
+    次のコードはすべて、DXGI のマルチ サンプリング サポートを確認します。\_形式の値。
 
     ```cpp
     // Determine the format support for multisampling.
@@ -82,11 +82,11 @@ Direct3D 機能レベルは、特定の最小サンプル数機能のサポー�
     }
     ```
 
-    > **注:** 使用[**id3d11device 2::checkmultisamplequalitylevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)代わりのマルチ サンプル サポートを確認する必要がある場合は、タイル リソース バッファー。
+    > **注**  使用[ **ID3D11Device2::CheckMultisampleQualityLevels1** ](https://msdn.microsoft.com/library/windows/desktop/dn280494)代わりに並べて表示されたリソースのバッファーのマルチ サンプリング サポートを確認する必要がある場合。
 
      
 
-3.  目的のサンプル数を使って、バッファーとレンダー ターゲット ビューを作成します。 スワップ チェーンと同じ DXGI\_FORMAT、幅、高さを使いますが、1 より大きなサンプル数を指定してマルチサンプリングされたテクスチャ ディメンション (たとえば、**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**) を使います。 必要な場合、マルチサンプリングに最適な新しい設定を使ってスワップ チェーンを再作成することもできます。
+3.  目的のサンプル数を使って、バッファーとレンダー ターゲット ビューを作成します。 使用して、同じ DXGI\_形式、幅、および、スワップ チェーンと高さが 1 より大きいサンプル数を指定し、マルチ サンプリングされたテクスチャのディメンションを使用して (**D3D11\_RTV\_ディメンション\_TEXTURE2DMS**など)。 必要な場合、マルチサンプリングに最適な新しい設定を使ってスワップ チェーンを再作成することもできます。
 
     次のコードでは、マルチサンプリングされたレンダー ターゲットが作成されます。
 

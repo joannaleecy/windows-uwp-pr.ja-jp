@@ -1,25 +1,25 @@
 ---
-Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
+Description: Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。
 title: Windows プッシュ通知サービス (WNS) の概要
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 267e6e1cf9a004b6703e000b694274b802220f60
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047527"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611927"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows プッシュ通知サービス (WNS) の概要
  
 
 Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。
 
-## <a name="how-it-works"></a>しくみ
+## <a name="how-it-works"></a>方法
 
 
 次の図に、プッシュ通知を送るときの全体のデータ フローを示します。 次の手順で行われます。
@@ -36,7 +36,7 @@ Windows プッシュ通知サービス (WNS) を利用することで、サー�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>アプリの登録とクラウド サービスの資格情報の取得
 
 
-WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を実行するには、[パートナー センター](https://partner.microsoft.com/dashboard)にサインインします。 アプリの作成後、**[アプリの管理 - WNS/MPNS]** のページの手順に従って、認証情報を取得できます。 Live サービス ソリューションを使用する場合は、このページの **Live サービス サイト**のリンクにアクセスします。
+WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を実行するにサインイン[パートナー センター](https://partner.microsoft.com/dashboard)します。 アプリの作成後、**[アプリの管理 - WNS/MPNS]** のページの手順に従って、認証情報を取得できます。 Live サービス ソリューションを使用する場合は、このページの **Live サービス サイト**のリンクにアクセスします。
 
 アプリにはそれぞれ、クラウド サービスの独自の資格情報が割り当てられます。 これらの資格情報を使って他のアプリに通知を送ることはできません。
 
@@ -51,7 +51,7 @@ WNS を使って通知を送るには、アプリをストア ダッシュボー
 
 ### <a name="important-notes"></a>重要な注意
 
--   アプリの通知チャネルの URI は、常に同じであるとは限りません。 アプリを実行するたびに新しいチャネルを要求し、URI が変更されたらサービスを更新することをお勧めします。 チャネルの URI の文字列はブラック ボックスと見なし、変更しないようにしてください。 現時点で、チャネルの URI は 30 日が経過すると有効期限切れになります。 場合は、windows 10 アプリでは、windows 8.1 用[プッシュ通知と定期的な通知のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードして、ソース コードやパターンを示してを再利用することができます、バック グラウンドでそのチャネルに定期的に更新します。
+-   アプリの通知チャネルの URI は、常に同じであるとは限りません。 アプリを実行するたびに新しいチャネルを要求し、URI が変更されたらサービスを更新することをお勧めします。 チャネルの URI の文字列はブラック ボックスと見なし、変更しないようにしてください。 現時点で、チャネルの URI は 30 日が経過すると有効期限切れになります。 Windows 10 アプリは、チャネル、バック グラウンドで定期的に更新し、ダウンロードすることができるかどうか、[プッシュおよび定期的な通知のサンプル](https://go.microsoft.com/fwlink/p/?linkid=231476)Windows 8.1 と再利用のソース コードやパターンを示します。
 -   クラウド サービスとクライアント アプリの間のインターフェイスは開発者が実装します。 独自のサービスに対するアプリの認証プロセスでは、データの送信に HTTPS などのセキュリティで保護されたプロトコルを使うことをお勧めします。
 -   クラウド サービスでは、チャネルの URI で必ず "notify.windows.com" ドメインを使うことが重要です。 他のドメインのチャネルに通知をプッシュしないでください。 アプリのコールバックが侵害された場合、悪意のある攻撃者によってチャネルの URI が送信され、WNS がなりすまされるおそれがあります。 ドメインを調べないと、そのような攻撃者に対して、気付かないうちに情報を開示してしまう可能性があります。
 -   クラウド サービスが期限切れのチャネルに通知を配信しようとすると、WNS は[応答コード 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes) を返します。 このコードを受け取った後、サービスはその URI に対して通知を送らないようにする必要があります。
@@ -70,9 +70,9 @@ WNS の認証方式は、[OAuth 2.0](https://go.microsoft.com/fwlink/p/?linkid=2
 
 ![クラウド サービス認証の WNS の図](images/wns-diagram-02.png)
 
-WNS に対する認証では、クラウド サービスからの HTTP 要求の送信に Secure Sockets Layer (SSL) を使います。 パラメーターの形式は "application/x-www-for-urlencoded" です。 "client\_id" フィールドにパッケージ SID を指定し、"client\_secret" フィールドに秘密鍵を指定します。 構文について詳しくは、[アクセス トークン要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)のリファレンスをご覧ください。
+WNS に対する認証では、クラウド サービスからの HTTP 要求の送信に Secure Sockets Layer (SSL) を使います。 パラメーターの形式は "application/x-www-for-urlencoded" です。 パッケージ SID を指定する、"クライアント\_id"フィールドと自分のシークレット キーので、"クライアント\_シークレット"フィールド。 構文について詳しくは、[アクセス トークン要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)のリファレンスをご覧ください。
 
-**注:** これは、例、独自のコードで使用できる正常にない切り取り、貼り付けコードだけです。
+**注**  これは、例、独自のコードで正しく使用することがないカット アンド ペースト コードだけです。
 
  
 
@@ -119,7 +119,7 @@ WNS はクラウド サービスを認証し、成功した場合、"200 OK" と
 
     要求の例を次に示します。 構文について詳しくは、「[プッシュ通知の応答コード](https://msdn.microsoft.com/library/windows/apps/hh465435)」をご覧ください。
 
-    通知のペイロードの構成について詳しくは、「[クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)」をご覧ください。 タイル、トースト、またはバッジのプッシュ通知のペイロードは、それぞれの定義済み[アダプティブ タイル スキーマ](adaptive-tiles-schema.md)または[レガシ タイル スキーマ](https://msdn.microsoft.com/library/windows/apps/br212853)に準拠した XML コンテンツとして提供されます。 直接通知のペイロードには、指定された構造体はありません。 これは、アプリによって厳密に定義されます。
+    通知ペイロードを作成する方法の詳細については、次を参照してください。[クイック スタート。プッシュ通知を送信する](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)します。 タイル、トースト、またはバッジのプッシュ通知のペイロードは、それぞれの定義済み[アダプティブ タイル スキーマ](adaptive-tiles-schema.md)または[レガシ タイル スキーマ](https://msdn.microsoft.com/library/windows/apps/br212853)に準拠した XML コンテンツとして提供されます。 直接通知のペイロードには、指定された構造体はありません。 これは、アプリによって厳密に定義されます。
 
     ``` http
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -160,20 +160,20 @@ WNS はクラウド サービスを認証し、成功した場合、"200 OK" と
 ## <a name="push-notifications-and-battery-saver"></a>プッシュ通知とバッテリー セーバー
 
 
-バッテリー セーバーは、デバイスでのバックグラウンド アクティビティを制限することでバッテリーの寿命を延ばします。 Windows 10 では、ユーザーが、バッテリーが指定したしきい値を下回ったときに自動的にオンにするバッテリ セーバー設定できるようにします。 バッテリー セーバーがオンのときは、電力を節約するため、プッシュ通知の受信は無効になります。 ただし、これにはいくつかの例外があります。 (**設定**アプリにあります) 次の windows 10 バッテリ セーバー設定では、アプリがバッテリー セーバーがオンにしている場合でも、プッシュ通知を受信できるようにします。
+バッテリー セーバーは、デバイスでのバックグラウンド アクティビティを制限することでバッテリーの寿命を延ばします。 Windows 10 では、ユーザー設定のバッテリー セーバー、バッテリが指定されたしきい値を下回ったときに自動的にオンにすることができます。 バッテリー セーバーがオンのときは、電力を節約するため、プッシュ通知の受信は無効になります。 ただし、これにはいくつかの例外があります。 次の Windows 10 バッテリー セーバーの設定 (で見つかった、**設定**アプリ) アプリをバッテリー セーバーがオンの場合にもプッシュ通知を受信できるようにします。
 
--   **[バッテリー節約機能がオンのときも、すべてのアプリケーションからのプッシュ通知を許可する]**: この設定では、バッテリー節約機能がオンになっているときでも、すべてのアプリがプッシュ通知を受け取ることができます。 この設定が windows 10 デスクトップ エディション (Home、Pro、Enterprise、および Education) にのみ適用されることに注意してください。
--   **[常に許可]**: この設定では、バッテリー節約機能がオンになっているときでも、プッシュ通知の受け取りを含めて、バックグラウンドで特定のアプリを実行できます。 この一覧は、ユーザーによって手動で管理されます。
+-   **バッテリー セーバー中にすべてのアプリからのプッシュ通知を許可する**:この設定では、すべてのアプリをバッテリー セーバーが起動中にプッシュ通知を受け取ることができます。 Windows 10 デスクトップ エディション (Home、Pro、Enterprise、および教育機関向け) の場合にのみこの設定が適用されることに注意してください。
+-   **常に許可**:この設定により、特定のアプリをバッテリー セーバーは、プッシュ通知の受信を含め、バック グラウンドで実行します。 この一覧は、ユーザーによって手動で管理されます。
 
-これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 の[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)プロパティを使用して、バッテリ セーバーの状態を確認します。 アプリでは、[**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
+これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 で使用して、 [ **EnergySaverStatus** ](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)バッテリー セーバー状態を確認するプロパティ。 アプリでは、[**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
 
-アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 Windows 10 では、バッテリ セーバー設定の URI スキームを使用して`ms-settings:batterysaver-settings`、設定アプリへの便利なリンクを提供することができます。
+アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 バッテリー セーバーの設定 URI スキームを使用して、Windows 10 で`ms-settings:batterysaver-settings`、設定アプリへの便利なリンクを行うことができます。
 
-**ヒント:**  、今後このメッセージを抑制する方法を提供することをお勧めしますバッテリ セーバーの設定に関するユーザーに通知するという場合です。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) でユーザーの設定を保持します。
+**ヒント:**   今後このメッセージを抑制する方法を提供することをお勧めバッテリー セーバーの設定に関するユーザーを通知するときにします。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) でユーザーの設定を保持します。
 
  
 
-バッテリー節約機能がオンである windows 10 を確認する方法の例を次に示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
+Windows 10 でバッテリー セーバーになっているかどうかを確認する方法の例を次に示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
 
 ```cs
 using System;
@@ -244,13 +244,13 @@ async public void CheckForEnergySaving()
 
 
 * [ローカル タイル通知の送信](sending-a-local-tile-notification.md)
-* [クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [プッシュ通知を使用してバッジを更新する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [実行中のアプリの通知を中断する方法](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
-* [Windows プッシュ通知サービス (WNS) に対して認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [プッシュ通知のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [クイック スタート:プッシュ通知を送信します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [プッシュ通知でバッジを更新する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [要求、作成、および通知チャネルを保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [アプリケーションを実行するための通知をインターセプトする方法](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
+* [Windows プッシュ通知サービス (WNS) とを認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [プッシュ通知サービスの要求および応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [プッシュ通知のガイドラインとチェックリスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [直接通知](https://msdn.microsoft.com/library/windows/apps/hh761488)
  
 

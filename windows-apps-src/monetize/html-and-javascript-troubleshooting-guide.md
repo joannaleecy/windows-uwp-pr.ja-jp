@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP, 広告, Advertising, AdControl, トラブルシューティング, HTML, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 01e2781b64629e24cba9b4ac02629a79ee4d998b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919632"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633237"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML と JavaScript のトラブルシューティング ガイド
 
 このトピックでは、JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。
 
 * [HTML](#html)
-  * [AdControl が表示されない](#html-notappearing)
-  * [ブラック ボックスが点滅し、表示されなくなる](#html-blackboxblinksdisappears)
-  * [広告が更新されない](#html-adsnotrefreshing)
+  * [表示されない AdControl](#html-notappearing)
+  * [黒いボックスの点滅し、非表示になります](#html-blackboxblinksdisappears)
+  * [広告を更新しません。](#html-adsnotrefreshing)
 
 * [JavaScript](#js)
-  * [AdControl が表示されない](#js-adcontrolnotappearing)
-  * [ブラック ボックスが点滅し、表示されなくなる](#js-blackboxblinksdisappears)
-  * [広告が更新されない](#js-adsnotrefreshing)
+  * [表示されない AdControl](#js-adcontrolnotappearing)
+  * [黒いボックスの点滅し、非表示になります](#js-blackboxblinksdisappears)
+  * [広告を更新しません。](#js-adsnotrefreshing)
 
 ## <a name="html"></a>HTML
 
@@ -163,7 +163,7 @@ ms.locfileid: "8919632"
 
     ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
-3.  **AdControl** は正常に動作しています。 既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたんだ **AdControl** の隙間を埋めるように移動し、次の要求がなされたときに展開することがあります。
+3.  **AdControl** は正常に動作しています。 既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたまれた **AdControl** の隙間を埋めるように移動し、次の要求が行われたときに展開できます。
 
 <span id="html-adsnotrefreshing"/>
 

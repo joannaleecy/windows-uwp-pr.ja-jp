@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー 2015
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a739aaa650a7086dfe58b1b8ca170e15b3b2ef0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933649"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629417"
 ---
 # <a name="introduction-to-the-multiplayer-system"></a>マルチプレイヤー システムの概要
 
-| 注意                                                                                                                                                                                                          |
+| 注                                                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ここでは、API の高度な使用方法を示します。  まず最初に、開発が大幅に簡素化される [Multiplayer Manager API](../multiplayer-manager.md) を参照してください。  Multiplayer Manager でサポートされていないシナリオが見つかった場合は、担当の DAM までご連絡ください。 |
 
@@ -104,7 +104,7 @@ Xbox Live エンジン は、2015 マルチプレイヤーを使用するタイ�
 
 クライアント/サーバーのマルチプレイヤー アーキテクチャでは、タイトルは MPSD および SmartMatch メイキングを使用して専用サーバー アドレスを検出します。 これらは、Xbox セキュア ソケットを使用して専用サーバーへの接続に使用されます。 詳細については、「*Xbox One の Winsock の概要*」を参照してください。
 
-| 注意                                                                         |
+| 注                                                                         |
 |-------------------------------------------------------------------------------------------|
 | Xbox Live エンジン インスタンスは、クライアント/サーバー アーキテクチャでサーバーとして使用できます。 |
 
@@ -114,7 +114,7 @@ Xbox Live エンジン は、2015 マルチプレイヤーを使用するタイ�
 ## <a name="parties-supported-by-2015-multiplayer"></a>2015 マルチプレイヤーでサポートされているパーティー
 Xbox One の 2015 マルチプレイヤーは、"ゲーム パーティー" をシステム レベルのコンストラクトとして公開しません。 ただし、2014 マルチプレイヤーと同様、"チャット パーティー" をシステム レベルでサポートします。
 
-| 注意                                                                                                                    |
+| 注                                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------|
 | タイトルは、MPSD セッションを代わりに使用して、ゲーム パーティーを使用して実装されるのと同様のユーザー エクスペリエンスを実装できます。 |
 
@@ -197,19 +197,19 @@ MPSD では、タイトルが MPSD との Web ソケット接続を維持でき�
 
 *MultiplayerSessionReference クラス*は、**IMultiplayerSessionReference** から継承して名前空間の間の呼び出しをサポートするように変更されています。 このクラスには、新しい URI パス解析メソッドもあります。
 
-| 注意                                                                                                                                                                                                                                                                                                                                                                                   |
+| 注                                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 通知に対するイベントおよびサブスクリプションをサポートするために、2015 マルチプレイヤーは *Microsoft.Xbox.Services.RealTimeActivity 名前空間*に機能を追加します。 また、*SystemUI.ShowSendGameInvitesAsync メソッド*にも新しい機能が含まれていて、2015 マルチプレイヤーのゲーム招待 UI の表示に使用されます。 |
 
 ## <a name="differences-between-xbox-360-and-xbox-one-mpsd-session-functions"></a>Xbox 360 と Xbox One の MPSD セッションの機能の相違点
 
-| 機能 | Xbox 360 | Xbox One |
+| 関数 | Xbox 360 | Xbox One |
 |---|---|---|
-| **ゲーム セッション情報の取得** | XSessionGetDetails、XSessionSearchByID、またはタイトルが追跡を行います。 | タイトルは、MPSD からセッション情報を要求します。 |
-|**ホストの移行** | 必要なときは、タイトルが XSessionMigrateHost を呼び出します。 | タイトルは、移行の原因に応じて、セッションに新しいホストを割り当てるか、新しい MPSD セッションを作成します。 |
-| **複数のプレイヤー セッション** | 同時に複数のセッションを処理するのは困難です (例: XNetReplaceKey と XNetUnregisterKey の比較)。 | サービス ベースのセッションはセッションの管理をわかりやすくし、複数のセッションの処理を簡略化します。 |
-| **サインアウトと切断** | タイトルは切断およびサインアウトを XCloseHandle または XSessionDelete とは異なる方法で処理する必要があります。 | MPSD により、サインアウトと切断の処理は簡略化され、タイムアウトは Game Config で設定されます。 |
-| **マッチメイキング** | クライアント ベースのマッチメイキング クエリ | マッチ品質を向上し、タイトル内のバックグラウンドのマッチメイキングを容易にするサービス ベースのマッチメイキング。 |
+| **ゲーム セッション情報を取得します。** | XSessionGetDetails、XSessionSearchByID、またはタイトルが追跡を行います。 | タイトルは、MPSD からセッション情報を要求します。 |
+|**ホストを移行します。** | 必要なときは、タイトルが XSessionMigrateHost を呼び出します。 | タイトルは、移行の原因に応じて、セッションに新しいホストを割り当てるか、新しい MPSD セッションを作成します。 |
+| **複数のプレーヤー セッション** | 同時に複数のセッションを処理するのは困難です (例: XNetReplaceKey と XNetUnregisterKey の比較)。 | サービス ベースのセッションはセッションの管理をわかりやすくし、複数のセッションの処理を簡略化します。 |
+| **Signouts し、切断** | タイトルは切断およびサインアウトを XCloseHandle または XSessionDelete とは異なる方法で処理する必要があります。 | MPSD により、サインアウトと切断の処理は簡略化され、タイムアウトは Game Config で設定されます。 |
+| **マッチメイ キング** | クライアント ベースのマッチメイキング クエリ | マッチ品質を向上し、タイトル内のバックグラウンドのマッチメイキングを容易にするサービス ベースのマッチメイキング。 |
 
 
 ### <a name="sessions"></a>セッション
@@ -233,12 +233,12 @@ Xbox Live Compute サービスは Xbox One の新しいサービスです。 こ
 
 ## <a name="see-also"></a>関連項目
 
-[マルチプレイヤー セッション ディレクトリ (MPSD)](multiplayer-session-directory.md)
+[マルチ プレーヤーのセッション ディレクトリ (MPSD)](multiplayer-session-directory.md)
 
-[SmartMatch マッチメイキング](smartmatch-matchmaking.md)
+[SmartMatch マッチメイ キング](smartmatch-matchmaking.md)
 
-[リアルタイム アクティビティ (RTA) サービス](../../real-time-activity-service/real-time-activity-service.md)
+[アクティビティをリアルタイムで (RTA) サービス](../../real-time-activity-service/real-time-activity-service.md)
 
-[評判](../../social-platform/people-system/reputation.md)
+[評価](../../social-platform/people-system/reputation.md)
 
-[マルチプレイヤーでの Xbox Live エンジンの使用 (対象パートナーのアクセスが必要)](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-live-compute/using-xbox-live-compute-in-multiplayer)
+[マルチ プレーヤー (管理対象のパートナーへのアクセスが必要) での Xbox Live Compute の使用](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/xbox-live-partners/xbox-live-compute/using-xbox-live-compute-in-multiplayer)

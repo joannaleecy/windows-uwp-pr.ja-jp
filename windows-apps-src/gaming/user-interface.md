@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, DirectX, テンプレート
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a4491fe9a3bb97a73652c40a2968f2f53c377b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933370"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634247"
 ---
 # <a name="directx-game-project-templates"></a>DirectX ゲーム プロジェクト テンプレート
 
@@ -24,12 +24,12 @@ DirectX とユニバーサル Windows プラットフォーム (UWP) のテン�
 
 プロジェクトを作成するには、次の作業が必要です。
 
--   [Microsoft Visual Studio2015 をダウンロード](https://www.visualstudio.com/vs-2015-product-editions)します。 Visual Studio2015 では、グラフィックス プログラミングでは、デバッグ ツールなどのツールがあります。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
+-   [Microsoft Visual Studio 2015 のダウンロード](https://www.visualstudio.com/vs-2015-product-editions)します。 Visual Studio 2015 では、グラフィックスのデバッグ ツールなど、プログラミング ツールがあります。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
 
 ## <a name="choosing-a-template"></a>テンプレートの選択
 
 
-Visual Studio2015 には、次の 3 つの DirectX と UWP のテンプレートが含まれています。
+Visual Studio 2015 には、DirectX および UWP の 3 つのテンプレートが含まれています。
 
 -   DirectX 11 アプリ (ユニバーサル Windows) - DirectX 11 アプリ (ユニバーサル Windows) テンプレートは、DirectX 11 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。
 -   DirectX 12 アプリ (ユニバーサル Windows) - DirectX 12 アプリ (ユニバーサル Windows) テンプレートは、DirectX 12 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。
@@ -44,9 +44,9 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
 
 -   pch.h and pch.cpp - プリコンパイル済みヘッダーのサポートです。
 -   Package.appxmanifest - アプリの展開パッケージのプロパティです。
--   \*.pfx - アプリケーションの証明書です。
+-   \*.pfx のアプリケーション用の証明書。
 -   外部の依存関係 - プロジェクトが使う外部ファイルへのリンクです。
--   \*Main.h と \*Main.cpp - アプリケーション アセットの管理、アプリケーション状態の更新、フレームのレンダリングを行うためのメソッドです。
+-   \*Main.h と\*Main.cpp にアプリケーション資産を管理する、アプリケーションの状態を更新およびフレームのレンダリング方法。
 -   App.h と App.cpp - アプリのメイン エントリ ポイントです。 アプリと Windows シェルを接続し、アプリケーション ライフサイクル イベントを処理します。 これらのファイルは、DirectX 11 アプリ (ユニバーサル Windows) と DirectX 12 アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
 -   App.xaml、App.xaml.cpp、App.xaml.h - アプリのメイン エントリ ポイントです。 アプリと Windows シェルを接続し、アプリケーション ライフサイクル イベントを処理します。 これらのファイルは、DirectX 11 および XAML アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
 -   DirectXPage.xaml、DirectXPage.xaml.cpp、DirectXPage.xaml.h - DirectX SwapChainPanel をホストするページ。 これらのファイルは、DirectX 11 および XAML アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
@@ -63,17 +63,17 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
     -   d3dx12.h - D3DX12 ユーティリティ ライブラリが含まれています。 このファイルは、DirectX 12 アプリ (ユニバーサル Windows) にのみ表示されます。
 -   アセット - アプリケーションが使うロゴとスプラッシュ画面の画像です。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 
 これで、出発点に立つことができました。次は、ゲーム開発の知識と Microsoft Store ゲームの開発スキルを学びます。
 
 既にあるゲームを移植する場合は、次のトピックをご覧ください。
 
--   [OpenGL ES 2.0 から Direct3D 11.1 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [OpenGL ES 2.0 から Direct3D への移植 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
 -   [DirectX 9 からユニバーサル Windows プラットフォームへの移植](porting-your-directx-9-game-to-windows-store.md)
 
 新しい DirectX ゲームを作成する場合は、次のトピックをご覧ください。
 
 -   [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-uwp-directx-game.md)
--   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Marble Maze、C++ および DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

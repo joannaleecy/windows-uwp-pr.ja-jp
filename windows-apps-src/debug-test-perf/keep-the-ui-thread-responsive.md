@@ -4,14 +4,14 @@ title: UI スレッドの応答性の確保
 description: ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0bc555030c2f5202e5c128c1d1a2fe45b5b71b4b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934577"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57639977"
 ---
 # <a name="keep-the-ui-thread-responsive"></a>UI スレッドの応答性の確保
 
@@ -22,7 +22,7 @@ ms.locfileid: "8934577"
 
 UI スレッドを使って、UI スレッドへのほぼすべての変更を行う必要があります。これには、UI の種類の作成、そのメンバーへのアクセスも含まれます。 UI はバックグラウンド スレッドから更新できませんが、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使ってこのスレッドにメッセージを投稿し、コードをそこで実行することができます。
 
-> **注:** 1 つの例外は、入力の処理方法に影響を与える UI の変更を適用できる別のレンダリング スレッドまたは基本的なレイアウトがあることです。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
+> **注**  は入力の処理方法には影響しません、UI の変更を適用できる個別のレンダーのスレッドまたは基本的なレイアウトは、例外です。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
 
 ## <a name="delay-element-instantiation"></a>要素のインスタンス化の遅延
 
@@ -31,7 +31,7 @@ UI スレッドを使って、UI スレッドへのほぼすべての変更を�
 -   [x:Load attribute](../xaml-platform/x-load-attribute.md) または [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) を使って要素のインスタンス化を遅らせます。
 -   プログラムを使って、要素をツリーにオンデマンドで挿入します。
 
-[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) キューにより、UI スレッドはビジーになっていない状態を処理できます。
+[**CoreDispatcher.RunIdleAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh967918)キューがビジー状態でない場合、処理する UI スレッドの動作します。
 
 ## <a name="use-asynchronous-apis"></a>非同期 API の使用
 
@@ -41,11 +41,11 @@ UI スレッドを使って、UI スレッドへのほぼすべての変更を�
 
 すばやく戻るイベント ハンドラーを記述します。 かなりの量の作業を実行する必要がある場合は、バックグラウンド スレッドで実行し、戻るようにスケジュールします。
 
-C# では **await** 演算子、Visual Basic では **Await** 演算子、C++ ではデリゲートを使って、作業を非同期で実行するようスケジュールできます。 ただし、これは、スケジュールした作業がバックグラウンド スレッドで実行されることを保証するものではありません。 ユニバーサル Windows プラットフォーム (UWP) API の多くは、作業をバックグラウンド スレッドで実行するようスケジュールしますが、**await** またはデリゲートのみを使ってアプリのコードを呼び出すと、そのデリゲートまたはメソッドは UI スレッドで実行されます。 アプリのコードをバックグラウンド スレッドで実行する場合は、それを明示的に指定する必要があります。 C# および Visual Basic では[**Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx)にコードを渡すことによってこれを実現できます。
+C# では **await** 演算子、Visual Basic では **Await** 演算子、C++ ではデリゲートを使って、作業を非同期で実行するようスケジュールできます。 ただし、これは、スケジュールした作業がバックグラウンド スレッドで実行されることを保証するものではありません。 ユニバーサル Windows プラットフォーム (UWP) API の多くは、作業をバックグラウンド スレッドで実行するようスケジュールしますが、**await** またはデリゲートのみを使ってアプリのコードを呼び出すと、そのデリゲートまたはメソッドは UI スレッドで実行されます。 アプリのコードをバックグラウンド スレッドで実行する場合は、それを明示的に指定する必要があります。 C#および Visual Basic のコードを渡すことによってこれを実現できます[ **Task.Run**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.run.aspx)します。
 
 UI 要素には UI スレッドからしかアクセスできないことに注意してください。 バックグラウンドの作業を起動する前に、UI スレッドを使って UI 要素にアクセスするか、バックグラウンド スレッドで [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) または [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) を使います。
 
-バックグラウンド スレッドで実行できる作業の例として、ゲームでのコンピューター AI の計算があります。 コンピューターの次の動作を計算するコードは、実行に長い時間がかかる場合があります。
+バックグラウンド スレッドで実行できる作業の例として、ゲームでのコンピューター AI の計算があります。 コンピューターの次の動きを計算するコードは実行に長い時間がかかる場合があります。
 
 ```csharp
 public class AsyncExample
@@ -101,7 +101,7 @@ public class AsyncExample
 
 この例では、UI スレッドの応答性を確保するために、`NextMove_Click` ハンドラーが **await** で戻ります。 ただし、バックグラウンド スレッドで実行される `ComputeNextMove` が完了すると、そのハンドラーで実行が回復します。 ハンドラーの残りのコードにより、UI がその結果で更新されます。
 
-> **注:** も類似したシナリオのために使用すると、UWP 用[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621)と[**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx)の API が含まれます。 詳しくは、「[スレッド化と非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/Mt187340)」をご覧ください。
+> **注**  も、 [ **ThreadPool** ](https://msdn.microsoft.com/library/windows/apps/BR229621)と[ **ThreadPoolTimer** ](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx)可能性があると、UWP の API同様のシナリオに使用されます。 詳しくは、「[スレッド化と非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/Mt187340)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
 

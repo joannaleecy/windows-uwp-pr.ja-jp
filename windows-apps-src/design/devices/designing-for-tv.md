@@ -1,5 +1,5 @@
 ---
-Description: Design your app so that it looks good and functions well on your television.
+Description: テレビで見栄えよく表示され適切に機能するアプリを設計します。
 title: Xbox およびテレビ向け設計
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
@@ -14,17 +14,17 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117582"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616657"
 ---
 # <a name="designing-for-xbox-and-tv"></a>Xbox およびテレビ向け設計
 
 Xbox One とテレビ画面で見栄えよく表示され、適切に機能するようにユニバーサル Windows プラットフォーム (UWP) アプリの設計を行います。
 
-*10 フィート*エクスペリエンスでの UWP アプリケーションで対話式操作エクスペリエンスに関するガイダンスについては、[ゲームパッドとリモコンの操作](../input/gamepad-and-remote-interactions.md)を参照してください。
+参照してください[ゲームパッドとリモート制御の相互作用](../input/gamepad-and-remote-interactions.md)相互作用についての UWP アプリケーションのエクスペリエンス、 *10-foot*が発生します。
 
 ## <a name="overview"></a>概要
 
@@ -40,7 +40,7 @@ Xbox One や、コントローラーを使って入力しテレビ画面に出�
 アプリを 10 フィート エクスペリエンス向けに適切に動作させるためにこの記事のすべての手順が必要なわけではありませんが、手順を理解し、アプリにとって何が適切かを判断することで、アプリ特有のニーズに合わせてカスタマイズされた、優れた 10 フィート エクスペリエンスを提供できます。
 10 フィート環境でアプリを使う場合、次のデザイン原則を検討してください。
 
-### <a name="simple"></a>シンプル
+### <a name="simple"></a>Simple
 
 10 フィート環境向けのデザインには特有の課題があります。 解像度と視聴距離の点から、ユーザーはあまり多くの情報を処理できない可能性があります。
 単純なデザインになるように、ごくシンプルなコンポーネントだけに絞り込むようにしてください。 テレビに表示される情報の量は、デスクトップではなく、携帯電話と同程度にする必要があります。
@@ -54,7 +54,7 @@ Xbox One や、コントローラーを使って入力しテレビ画面に出�
 
 ![Xbox One 映画アプリ](images/designing-for-tv/xbox-movies-app.png)
 
-_**スクリーンショットに示す映画はすべて、Microsoft 映画 & テレビでご利用いただけます。**_  
+_**すべての映画のスクリーン ショットに示すように Microsoft の映画とテレビで利用できます。**_  
 
 ### <a name="captivating"></a>魅力的
 
@@ -68,22 +68,22 @@ _**スクリーンショットに示す映画はすべて、Microsoft 映画 & �
 
 | 機能        | 説明           |
 | -------------------------------------------------------------- |--------------------------------|
-| [UI 要素のサイズ](#ui-element-sizing)  | ユニバーサル Windows プラットフォームは、[スケーリングと有効ピクセル](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)を使い、視聴距離に合わせて UI をスケーリングします。 サイズについて理解し UI 全体に適用すれば、アプリを 10 フィート環境用に最適化するのに役立ちます。  |
-|  [テレビのセーフ エリア](#tv-safe-area) | UWP は既定で、テレビのセーフ エリア以外の領域 (画面の端に近い部分) に UI を表示することを自動的に避けます。 ただし、この場合、アスペクト比が変わり、UI がレターボックス化されてしまいます。 テレビでイマーシブなアプリにするには、サポートしているテレビで、画面の端まで広がるようにアプリを変更します。 |
-| [カラー](#colors)  |  UWP は配色テーマをサポートしています。システム テーマを引き継ぐアプリは、Xbox One では既定で**濃色**になります。 アプリに特定の配色テーマがある場合、テレビではうまく表示されないために一部の色を避ける必要があることに注意してください。 |
+| [UI 要素のサイズ変更](#ui-element-sizing)  | ユニバーサル Windows プラットフォームは、[スケーリングと有効ピクセル](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)を使い、視聴距離に合わせて UI をスケーリングします。 サイズについて理解し UI 全体に適用すれば、アプリを 10 フィート環境用に最適化するのに役立ちます。  |
+|  [テレビの安全な領域](#tv-safe-area) | UWP は既定で、テレビのセーフ エリア以外の領域 (画面の端に近い部分) に UI を表示することを自動的に避けます。 ただし、この場合、アスペクト比が変わり、UI がレターボックス化されてしまいます。 テレビでイマーシブなアプリにするには、サポートしているテレビで、画面の端まで広がるようにアプリを変更します。 |
+| [色](#colors)  |  UWP は配色テーマをサポートしています。システム テーマを引き継ぐアプリは、Xbox One では既定で**濃色**になります。 アプリに特定の配色テーマがある場合、テレビではうまく表示されないために一部の色を避ける必要があることに注意してください。 |
 | [サウンド](../style/sound.md)    | サウンドは、ユーザーを没頭させたりユーザーにフィードバックを提供したりする上で役立ち、10 フィート エクスペリエンスで重要な役割を果たします。 UWP には、アプリが Xbox One で実行されているときは一般的なコントロールのサウンドを自動的に有効にする機能があります。 UWP に組み込まれているサウンド サポートの詳細とその活用方法について説明します。    |
 | [UI コントロールのガイドライン](#guidelines-for-ui-controls)  |  いくつかの UI コントロールは、複数のデバイスで問題なく動作しますが、テレビで使用する場合には特定の考慮事項があります。 10 フィート エクスペリエンスを設計する際にこのようなコントロールを使う場合のベスト プラクティスについて説明します。 |
-| [Xbox のカスタム表示状態トリガー](#custom-visual-state-trigger-for-xbox) | UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、カスタム*表示状態トリガー*を使用して、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 |
+| [Xbox 用のカスタムの表示状態トリガー](#custom-visual-state-trigger-for-xbox) | UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、カスタム*表示状態トリガー*を使用して、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 |
 
-だけでなく、前のデザインとレイアウトに関する考慮事項がいくつかの[ゲームパッドとリモコンの対話式操作](../input/gamepad-and-remote-interactions.md)の最適化がアプリをビルドするときに考慮する必要があります。
+数がある、前のデザインとレイアウトに関する考慮事項に加えて[ゲームパッド、リモート_コントロールの相互作用](../input/gamepad-and-remote-interactions.md)最適化は、アプリを構築するときに検討してください。
 
 | 機能        | 説明           |
 | -------------------------------------------------------------- |--------------------------------|
-| [XY フォーカス ナビゲーションと対話式操作](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY フォーカス ナビゲーション**では、ユーザーがアプリの UI を移動できるようにします。 ただし、ユーザーの移動は上下左右に制限されます。 このセクションでは、この点に対応するための推奨事項とその他の考慮事項について説明します。 |
-| [マウス モード](../input/gamepad-and-remote-interactions.md#mouse-mode)|XY フォーカス ナビゲーションは、実用的なまたはでも可能であれば、マップや描画およびペイント アプリなど、アプリケーションの種類によってはありません。 このような場合では、**マウス モード**は、ユーザーがゲームパッドやリモコン、PC でのマウスと同様に自由に移動を使用できます。|
-| [フォーカス表示](../input/gamepad-and-remote-interactions.md#focus-visual)  | フォーカス表示は、現在フォーカスが置かれた UI 要素を強調表示の境界線です。 これにより、ユーザーが間を移動するかとやり取りする UI をすばやく識別です。  |
-| [フォーカス エンゲージメント](../input/gamepad-and-remote-interactions.md#focus-engagement) | フォーカス エンゲージメントは、ユーザーに UI 要素にフォーカスがある場合は、操作するために、ゲームパッドやリモコンで**A/選択**] ボタンを押す必要があります。 |
-| [ハードウェア ボタン](../input/gamepad-and-remote-interactions.md#hardware-buttons) | ゲームパッドとリモコンは、非常に異なるボタンと構成を提供します。 |
+| [お客様 xy のところフォーカスのナビゲーションと相互作用](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **お客様 xy のところフォーカスのナビゲーション**ユーザーがアプリの UI を移動できるようにします。 ただし、ユーザーの移動は上下左右に制限されます。 このセクションでは、この点に対応するための推奨事項とその他の考慮事項について説明します。 |
+| [マウス モード](../input/gamepad-and-remote-interactions.md#mouse-mode)|お客様 xy のところフォーカスのナビゲーションは、実用的でも、可能性もいくつかの種類のマップまたは描画とペイント アプリなどのアプリケーションがありません。 このような場合は、**マウス モード**ゲームパッドまたはリモート コントロール、ユーザーが自由に移動できますが、PC 上のマウスと同様です。|
+| [フォーカス ビジュアル](../input/gamepad-and-remote-interactions.md#focus-visual)  | フォーカスのビジュアルでは、現在フォーカスがある UI 要素を強調表示する罫線です。 これにより、ユーザーの間の移動またはとの対話は、UI をすばやく識別できます。  |
+| [フォーカス engagement](../input/gamepad-and-remote-interactions.md#focus-engagement) | フォーカス engagement には、キーを押すユーザーが必要があります、**する/選択**ゲームパッドまたは UI 要素にフォーカスがある場合は、対話するために、リモート コントロールのボタン。 |
+| [ハードウェア ボタン](../input/gamepad-and-remote-interactions.md#hardware-buttons) | ゲームパッド、リモート_コントロールは、非常にさまざまなボタンと構成を提供します。 |
 
 > [!NOTE]
 > このトピックで示すコード スニペットはほとんどが XAMLで/c# ですが、基本原則と概念はすべての UWP アプリに共通です。 Xbox 向けの HTML/JavaScript UWP アプリを開発している場合は、GitHub の [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) ライブラリを参照することをお勧めします。
@@ -130,8 +130,8 @@ UI を簡略化するために、ユーザーがテレビ画面の端から端�
 
 UI を離れた位置から見えるようにするために、次の経験則に従ってください。
 
-* メイン テキストと読解コンテンツ: 最小 15 epx
-* 不可欠ではないテキストと補助コンテンツ: 最小 12 epx
+* メイン テキストとコンテンツの読み取り:15 epx の最小値
+* 重大ではない文字列および補助コンテンツ:12 epx の最小値
 
 UI でさらに大きなテキストを使う場合は、画面領域をあまり狭めないサイズを選び、他のコンテンツのためのスペースを圧迫しないようにします。
 
@@ -147,7 +147,7 @@ bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` 無効化に成功したかどうかが通知されます。
+無効化に成功したかどうかは `result` で通知されます。
 
 HTML/JavaScript のサンプル コードなどの詳細情報については、「[スケーリングを無効にする方法](../../xbox-apps/disable-scaling.md)」をご覧ください。
 
@@ -170,7 +170,7 @@ UI 要素の適切なサイズを計算するときに、このトピックで�
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>画像
+### <a name="image"></a>Image
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -205,7 +205,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-このコード行で、アプリ ウィンドウは画面の端まで拡張されます。そのため、前に説明したテレビのセーフ エリアへ、すべての対話型 UI と重要な UI を移動する必要があります。 コンテキスト メニューや開かれた状態の [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) などの一時的な UI は、テレビのセーフ エリア内に自動的に残ります。
+このコード行で、アプリ ウィンドウは画面の端まで拡張されます。そのため、前に説明したテレビのセーフ エリアへ、すべての対話型 UI と重要な UI を移動する必要があります。 コンテキスト メニューや開かれた状態の [ComboBoxes](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) などの一時的な UI は、テレビのセーフ エリア内に自動的に残ります。
 
 ![コア ウィンドウの境界](images/designing-for-tv/core-window-bounds.png)
 
@@ -218,7 +218,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 ![画面の端まで拡張されたナビゲーション ウィンドウ](images/designing-for-tv/tv-safe-areas-2.png)
 
 ここでは、ナビゲーション ウィンドウの背景は画面の端まで拡張され、ナビゲーション項目はテレビのセーフ エリア内に収まっています。
-`SplitView` のコンテンツ (この場合は項目のグリッド) は、途切れずに続いているように見せるために、画面の下部まで拡張されています。一方、グリッドの上部はテレビのセーフ エリア内に収まったままです  (この方法ついて詳しくは、「[リストとグリッドのスクロールの端](#scrolling-ends-of-lists-and-grids)」で説明します)。
+`SplitView` のコンテンツ (この場合は項目のグリッド) は、途切れずに続いているように見せるために、画面の下部まで拡張されています。一方、グリッドの上部はテレビのセーフ エリア内に収まったままです。 (この方法ついて詳しくは、「[リストとグリッドのスクロールの端](#scrolling-ends-of-lists-and-grids)」で説明します)。
 
 次のコード スニペットでは、この効果を実現します。
 
@@ -241,7 +241,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 [CommandBar](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar) も、アプリの 1 つまたは複数の端の近くに置かれることが多いウィンドウの例ですが、そのためにテレビではその背景を画面の端まで拡張する必要があります。 これには通常、**[その他]** ボタンも含まれます。[その他] ボタンは右側に表示する "..." で表し、テレビのセーフ エリア内に収める必要があります。 目的の操作と視覚効果を実現するためのいくつかの異なる方法を次に示します。
 
-**オプション 1**: `CommandBar` の背景色を透明またはページの背景と同じ色に変更します。
+**オプション 1**:変更、`CommandBar`背景色を透明またはページの背景と同じ色。
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 これで、`CommandBar` がページの残りの部分と同じ背景の上にあるように見え、背景が画面の端まで切れ目なく続きます。
 
-**オプション 2**: `CommandBar` の背景と同じ色で塗りつぶした背景の四角形を追加し、その四角形を `CommandBar` の下、ページの残りの部分に配置します。
+**オプション 2**:バック グラウンドの四角形の塗りつぶしが同じ色を追加として、 `CommandBar` 、バック グラウンドしてそれを下にある、`CommandBar`およびページの残りの部分間。
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -333,7 +333,7 @@ UWP にはフォーカス表示を [VisibleBounds](https://docs.microsoft.com/uw
 > [!NOTE]
 > このコード スニペットは `ListView` 専用です。`GridView` のスタイルの場合、[ControlTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) と [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) の両方の [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype) 属性を `GridView` に設定します。
 
-方法をより細かく管理の項目をビューに読み込むは、アプリケーションがバージョン 1803 をターゲットとする[UIElement.BringIntoViewRequested イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)を使用した後で場合。 **ListView**の[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)に配置できる/**GridView**内部**ScrollViewer**は、次のコード スニペットに示すように前に、それをキャッチします。
+アプリケーションの対象バージョン 1803 または後で、使用できる場合にビューに取り込まれます項目の方法よりきめ細かく制御、 [UIElement.BringIntoViewRequested イベント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)します。 配置することができます、 [ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)の**ListView**/**GridView** 、内部の前にそれをキャッチする**ScrollViewer**次のコード スニペットのように実行します。
 
 ```xaml
 <GridView x:Name="gridView">
@@ -381,7 +381,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 }
 ```
 
-## <a name="colors"></a>カラー
+## <a name="colors"></a>Colors (画面の色)
 
 既定では、アプリが適切に表示されるように、ユニバーサル Windows プラットフォームはアプリの色をテレビ セーフの範囲 (詳しくは「[テレビ セーフ カラー](#tv-safe-colors)」を参照) に対応させています。 また、テレビでの視覚エクスペリエンスを向上させるために、アプリで使う色のセットを改善できます。
 
@@ -462,7 +462,7 @@ DirectX 11 または DirectX 12 を使ってアプリを開発し、UI または
 
 入れ子になった UI は、コンテナー UI 要素内部に囲まれた、操作できる入れ子になったアイテムを公開します。入れ子になったアイテムとコンテナー アイテムはどちらも互いに、個別のフォーカスを取得することが可能です。
 
-入れ子になった UI がうまく機能する入力の種類もありますが、XY ナビゲーションに依存するゲームパッドやリモコンでは、うまく機能するとは限りません。 このトピックのガイダンスに従い、UI が 10 フィート環境に最適化され、ユーザーが対話可能なすべての要素に容易にアクセスできるようにしてください。 1 つの一般的なソリューションは、入れ子になった UI 要素を配置する、`ContextFlyout`します。
+入れ子になった UI がうまく機能する入力の種類もありますが、XY ナビゲーションに依存するゲームパッドやリモコンでは、うまく機能するとは限りません。 このトピックのガイダンスに従い、UI が 10 フィート環境に最適化され、ユーザーが対話可能なすべての要素に容易にアクセスできるようにしてください。 1 つの一般的な解決策は、入れ子になった UI 要素を配置する、`ContextFlyout`します。
 
 入れ子になった UI について詳しくは、「[リスト項目の入れ子になった UI](../controls-and-patterns/nested-ui.md)」をご覧ください。
 
@@ -560,12 +560,12 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 次に、このチェックに続くコード ブロックで、UI に適切な調整を行うことができます。 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 10 フィート エクスペリエンスの設計には、他のプラットフォーム向けの設計とは対応を変える必要がある、特別な考慮事項があります。 UWP アプリを Xbox One に単純に移植し、うまく動かすことができたとしも、必ずしも 10 フィート エクスペリエンス向けに最適化されるわけではありません。ユーザーのフラストレーションを招くことさえあります。 この記事のガイドラインに従うと、テレビに組み込まれているかのようなすばらしいアプリにすることができます。
 
 ## <a name="related-articles"></a>関連記事
 
-- [ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報](index.md)
-- [ゲームパッドとリモコンの操作](../input/gamepad-and-remote-interactions.md)
-- [UWP アプリのサウンド](../style/sound.md)
+- [ユニバーサル Windows プラットフォーム (UWP) アプリ向けのデバイス入門](index.md)
+- [ゲームパッドとリモート制御の相互作用](../input/gamepad-and-remote-interactions.md)
+- [UWP アプリでサウンド](../style/sound.md)

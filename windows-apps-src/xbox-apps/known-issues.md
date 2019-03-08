@@ -3,21 +3,21 @@ title: Xbox 開発者プログラムの UWP の既知の問題
 description: Xbox 開発者プログラムの UWP の既知の問題を示します。
 ms.date: 03/29/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046535"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626637"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開発者プログラムの UWP の既知の問題
 
 このトピックでは、Xbox One 開発者プログラムの UWP の既知の問題について説明します。 このプログラムについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。 
 
-\[API リファレンス トピックのリンクからこのページを見つけた、ユニバーサル デバイス ファミリの API の情報を探している方は、「[Xbox でまだサポートされていない UWP 機能](https://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。\]
+\[場合は、API リファレンスのトピックのリンクから来たユニバーサル デバイス ファミリ API の情報を探してを参照してください[Xbox でまだサポートされていない UWP 機能](https://go.microsoft.com/fwlink/?LinkID=760755)します。\]
 
 以下では、発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
 

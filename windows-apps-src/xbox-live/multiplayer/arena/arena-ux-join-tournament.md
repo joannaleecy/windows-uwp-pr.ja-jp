@@ -6,21 +6,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 1cdcfc7243463a35eccfaeb13a3b9b92b616952b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946958"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613507"
 ---
 # <a name="join-a-tournament-by-using-the-arena-ui"></a>アリーナ UI を使ってトーナメントに参加する
 
 アリーナ API は、登録、チェックイン、チームに関する情報をタイトルに提供できますが、それに関する*タスクを実行する機能*は*備えていません*。 タイトルでは、アリーナ UI または第三者のトーナメント主催者 (TO) を使用するか、独自のトーナメント管理サポートを構築する必要があります。
 
-## <a name="xbox-arena-ui-team-formation"></a>Xbox アリーナ UI: チームの編成
+## <a name="xbox-arena-ui-team-formation"></a>Xbox 競技場 UI:チームの編成
 
 アリーナ UI は、ゲーマーがチームを編成したり、チームに参加したりする方法を提供します。 タイトルについての要件はありません。
 
-###### <a name="ui-example-create-a-team"></a>UI の例: チームの作成
+###### <a name="ui-example-create-a-team"></a>UI の例:チームを作成します。
 
 ![チーム編成画面](../../images/arena/arena-ux-create-team.png)
 
@@ -31,11 +31,11 @@ ms.locfileid: "8946958"
 * チームを登録または登録解除する。
 * チームのメンバーを削除する。
 
-## <a name="xbox-arena-ui-registration"></a>Xbox アリーナ UI: 登録
+## <a name="xbox-arena-ui-registration"></a>Xbox 競技場 UI:登録
 
 アリーナ UI は、ゲーマーがチームを登録する方法を提供します。 タイトルについての要件はありません。
 
-###### <a name="ui-example-register-a-team"></a>UI の例: チームの登録
+###### <a name="ui-example-register-a-team"></a>UI の例:チームを登録します。
 
 ![チーム登録画面](../../images/arena/arena-ux-register-team.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "8946958"
 
 * 登録受付の*締め切り前*に、トーナメントへの登録を解除する。
 * チェックイン時またはトーナメント進行中にチームの登録を解除する。
-* チーム全体の登録を解除する。 *個別のユーザーがチームを離脱すると、チーム全体の登録が解除されることに注意してください。*
+* チーム全体の登録を解除する。 *チーム全体の登録を解除する、個々 のユーザーがチームを離れることに注意してください。*
 * キャプテンとして登録する。
 * 登録前に、トーナメントの要件と交戦ルールを確認する。
 * 登録が正常に完了したことの通知を受信する。
@@ -54,4 +54,4 @@ ms.locfileid: "8946958"
 * プレイヤーが登録を禁止されている場合、登録を拒否する。
 
 > [!div class="nextstepaction"]
-> [マッチの交戦](arena-ux-match-engagement.md)
+> [Engagement を一致します。](arena-ux-match-engagement.md)

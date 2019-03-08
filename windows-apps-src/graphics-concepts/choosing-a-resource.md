@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ccc99395dba2f2d1894db81fb48abb59f9a8ba4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613397"
 ---
 # <a name="choosing-a-resource"></a>リソースの選択
 
 
 リソースは、3D パイプラインで使用されるデータのコレクションです。 リソースを作成してその動作を定義することが、アプリケーションをプログラミングするための第一歩になります。 このガイドでは、アプリケーションで必要なリソースの選択に関する基本的なトピックについて説明します。
 
-## <a name="span-ididentifybindingspanspan-ididentifybindingspanspan-ididentifybindingspanidentify-pipeline-stages-that-need-resources"></a><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>リソースを必要とするパイプラインのステージの特定
+## <a name="span-ididentifybindingspanspan-ididentifybindingspanspan-ididentifybindingspanidentify-pipeline-stages-that-need-resources"></a><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>リソースを必要があるパイプライン ステージを識別します。
 
 
 最初の手順は、リソースを使用する[グラフィックス パイプライン](graphics-pipeline.md)のステージの選択です。 このとき、リソースからデータを読み込むステージだけでなく、リソースにデータを書き込むステージも特定します。 リソースを使用するパイプラインのステージを把握できれば、リソースをステージにバインドするために呼び出す API を決定できます。
@@ -32,13 +32,13 @@ ms.locfileid: "8918841"
 | 入力アセンブラー | 入力     | インデックス バッファー           | バッファー                                  |
 | シェーダー ステージ   | 入力     | シェーダー リソース ビュー    | バッファー、Texture1D、Texture2D、Texture3D |
 | シェーダー ステージ   | 入力     | シェーダー定数バッファー | バッファー                                  |
-| ストリーム出力   | 出力    | バッファー                 | バッファー                                  |
-| 出力結合   | 出力    | レンダー ターゲット ビュー     | バッファー、Texture1D、Texture2D、Texture3D |
-| 出力結合   | 出力    | 深度/ステンシル ビュー     | Texture1D、Texture2D                    |
+| ストリーム出力   | 外    | バッファー                 | バッファー                                  |
+| 出力結合   | 外    | レンダー ターゲット ビュー     | バッファー、Texture1D、Texture2D、Texture3D |
+| 出力結合   | 外    | 深度/ステンシル ビュー     | Texture1D、Texture2D                    |
 
  
 
-## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>各リソースの使用方法の特定
+## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>各リソースの使用方法の識別します。
 
 
 アプリケーションが使用するパイプラインのステージ (および各ステージが必要とするリソース) を選択したら、各リソースの使用方法つまりリソースを CPU または GPU からアクセス可能にするかどうかを決定します。
@@ -47,7 +47,7 @@ ms.locfileid: "8918841"
 
 | リソースの使用方法 | 更新の実行                    | 更新頻度 |
 |----------------|--------------------------------------|---------------------|
-| 既定        | GPU                                  | 低頻度        |
+| Default        | GPU                                  | 低頻度        |
 | 動的        | CPU                                  | 高頻度          |
 | ステージング        | GPU                                  | なし                 |
 | 固定      | CPU (リソースの作成時のみ) | なし                 |
@@ -68,14 +68,14 @@ CPU によるリソースの更新が比較的高頻度 (フレームごとに 1
 |---------------------------------------|----------------------|
 | 1 度だけロードし更新しない            | 固定または既定 |
 | アプリケーションが頻繁にリソースに格納する | 動的              |
-| テクスチャへのレンダリング                     | 既定              |
+| テクスチャへのレンダリング                     | Default              |
 | GPU データの CPU アクセス                | ステージング              |
 
  
 
 どの使用法を選択すべきかよくわからない場合は、一般的なほとんどのケースに対応可能な既定の使用方法から始めてください。 シェーダー定数バッファーは、常に既定の使用方法にする必要のあるリソース タイプの 1 つです。
 
-## <a name="span-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanbinding-resources-to-pipeline-stages"></a><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>リソースからパイプラインのステージへのバインド
+## <a name="span-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanbinding-resources-to-pipeline-stages"></a><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>パイプライン ステージへのリソースのバインド
 
 
 リソースは、作成時に指定された制限を満たす限り、同時に複数のパイプラインのステージにバインドすることができます。 これらの制限は、利用フラグ、バインド フラグ、CPU アクセス フラグとして指定されます。 具体的には、リソースの読み取り部分と書き込み部分の同時発生がない場合には、リソースを入力と出力に同時にバインドすることができます。

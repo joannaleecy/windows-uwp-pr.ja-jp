@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, 実績, リワード
 ms.localizationpriority: medium
 ms.openlocfilehash: 0fbbcb06a2aba927301cf982d09fdb55192ec84c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922629"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617697"
 ---
 # <a name="achievement-rewards"></a>実績のリワード
 
@@ -36,7 +36,7 @@ Xbox Live では、次の種類のリワードがサポートされます。
 
 ユーザーがゲーマースコア実績をロック解除すると、Xbox Live は、設定された値をそのユーザーのゲーマースコアに自動的に加算します。
 
-実績に対するリワードとしてゲーマースコアを提供できるタイトルには制限事項があります。 ポリシー ドキュメントの参照がhttps://developer.xboxlive.com/最新の情報。
+実績に対するリワードとしてゲーマースコアを提供できるタイトルには制限事項があります。 ポリシー ドキュメントを参照してください https://developer.xboxlive.com/最新情報についてはします。
 
 #### <a name="art"></a>アート ####
 タイトルの開始段階の初期にデザイナーが描いたおもしろいコンセプト アートがありますか。 プレイヤーがアクセスしたときにハブ アプリケーションを装飾できる美しい高解像度イメージがありますか。 あるいは、アプリで複数のスキンをサポートしていますか。 アートのリワードにより、プレイヤーが獲得せずにはいられない豪華で美しいエクスペリエンスをタイトルで提供できます。
@@ -64,7 +64,7 @@ Xbox Live では、次の種類のリワードがサポートされます。
 
 1. タイトルの起動時またはタイトルが中断から再開するときに実績サービスを照会して、どのロック解除した実績にアプリ内リワードがあるかを確認し、それぞれのリワード コードを取得します。 常にこれを実行して、タイトルが実行されていないときにロック解除された可能性がある実績、または別の本体でロック解除された可能性がある実績をすべて確実に把握する必要があります。  
 
-    クエリを実行するには、Microsoft.Xbox.Services.Achievements Namespace で RESTful の実績 Uri または Api を使用することができます。
+    クエリを実行するには、Microsoft.Xbox.Services.Achievements Namespace で RESTful のアチーブメント Uri または Api を使用できます。
 
 2. 実績のいずれかがロック解除されたときに通知を受け取るように登録します。 これはオプションですが、ほとんどのタイトルにとって好ましい可能性があります。 タイトルは、ロック解除が発生したときにタイトルが実際に実行されている場合にのみ、この通知を受け取ることに注意してください。 これは、前の手順が重要であるもう 1 つの理由です。
 
