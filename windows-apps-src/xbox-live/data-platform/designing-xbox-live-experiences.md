@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, 統計, 実績, ランキング, 設計
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f080593727ec6d7ddd529b2ce976708174250ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924625"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57600787"
 ---
 # <a name="designing-xbox-live-experiences"></a>Xbox Live エクスペリエンスの設計
 
@@ -26,7 +26,7 @@ ms.locfileid: "8924625"
 3. 注目の統計、実績、ランキングを必要に応じて構成する
 
 
-## <a name="1-design-your-xbox-live-experiences"></a>1. Xbox Live エクスペリエンスの設計
+## <a name="1-design-your-xbox-live-experiences"></a>1. Xbox Live エクスペリエンスを設計します。
 ゲームの内容や外観にユーザーの関心を引き付けておくことができるように、_Race 2015_ では Xbox Live を最大限に活用します。 最初に以下のことを確認してください。
 
 1. ゲーム ハブの [実績] タブでのエクスペリエンスはどのようにしたいか。 (注目の統計とソーシャル ランキング)
@@ -52,7 +52,7 @@ ms.locfileid: "8924625"
  * 走行マイル数
 
 
-### <a name="achievements"></a>実績
+### <a name="achievements"></a>成績
 実績は、すべてのゲームにわたって一貫性のある方法でユーザーのゲーム内アクションを管理し報奨を与えるためのシステム規模のメカニズムです。 実績を正しく設計することにより、ユーザーはゲームを十分に体験することができ、ゲームがより長く存続することにもつながります。
 
 _Races 2015_ では、実績の一部は次のように構成されます。
@@ -64,7 +64,7 @@ _Races 2015_ では、実績の一部は次のように構成されます。
 * ...
 
 
-###  <a name="leaderboards"></a>ランキング
+###  <a name="leaderboards"></a>スコアボード
 ランキングは、ゲームで達成できる特定のアクションについて、他のゲーマーと比較して自分を評価する方法をゲーマーに提供します。 ゲーム ハブのソーシャル ランキングだけでなく、ゲームで使用されるグローバル ランキングを構成することもできます。 以下は、すべてのユーザーをランク付けするランキングの一部です。
 
 * 最速ラップ タイム
@@ -74,7 +74,7 @@ _Races 2015_ では、実績の一部は次のように構成されます。
 * 第 1 位での勝利数
 * 車の最大収集数
 
-## <a name="next-steps"></a>次の手順
-ここでは、統計、ランキング、実績を効率的に設計する方法について説明しました。次の手順では、統計、ランキング、実績をタイトルに実装してください。  次のいくつかのセクションでは、パートナー センターでの構成から始まるエンド ツー エンドのプロセスを説明します。
+## <a name="next-steps"></a>次のステップ
+ここでは、統計、ランキング、実績を効率的に設計する方法について説明しました。次の手順では、統計、ランキング、実績をタイトルに実装してください。  次のほとんどのセクションでは、以降では、パートナー センターの構成では、エンド ツー エンド プロセスについて説明しません。
 
 「[プレイヤーの統計](../leaderboards-and-stats-2017/player-stats.md)」をご覧ください。

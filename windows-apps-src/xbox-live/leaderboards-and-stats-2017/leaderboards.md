@@ -1,5 +1,5 @@
 ---
-title: ランキング
+title: スコアボード
 description: Xbox Live のランキングを使用してプレイヤーを比較する方法について説明します。
 ms.assetid: 132604f9-6107-4479-9246-f8f497978db7
 ms.date: 09/28/2018
@@ -7,33 +7,33 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8fd7e30b99418fda614a888d9269548cdc57a88a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944444"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662027"
 ---
-# <a name="leaderboards"></a>ランキング
+# <a name="leaderboards"></a>スコアボード
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 「[データ プラットフォームの概要](../data-platform/data-platform.md)」で説明されているように、ランキングは、プレイヤー間の競争を促し、プレイヤー自身やフレンドが持つベスト スコアの更新に関心を持たせる場合に有効な方法です。
 
-[注目の統計](stats2017.md#configured-stats-and-featured-leaderboards)のランキングは常に、タイトルのゲーム ハブに表示され、ホームページにピン留めされている場合、タイトルの UI の一部として表示される場合があります。 タイトル内でランキングを作成するのに、構成済みの注目の統計を使用することもできます。
+ランキング[機能を備えた Stats](stats2017.md#configured-stats-and-featured-leaderboards)はタイトルのゲームのハブで常に表示されのホームページにピン設定されているときにタイトル用の UI の一部として表示される場合があります。 タイトルの内部でランキングを作成するのに、構成済みの機能を備えた統計を使用することもできます。
 
 ## <a name="choosing-good-leaderboards"></a>適切なランキングの選択
 
 「[プレイヤーの統計](player-stats.md)」で説明したように、ランキングは定義した統計に対応しています。  プレイヤーが上を目指して努力し、達成できる実績に対応したランキングを選んでください。
 
-たとえば、レーシング ゲームでのベスト ラップ_タイムはプレイヤーはベスト ラップ_タイムと努力するため、適切なランキングです。  他の例は、ガン、や最大コンボ サイズの戦闘ゲームでの/死亡の割合です。
+たとえば、レーシング ゲームのベストの膝時間では、プレーヤーは作業の最適な膝の時間を改善するために、適切なランキングがれます。  その他の例は、Kill 生と死の比は、戦闘ゲームでは連発銃、またはコンボの最大サイズです。
 
 ## <a name="when-to-display-leaderboards"></a>ランキングを表示するタイミング
 
-ランキングはいつでもタイトルに表示できます。  ランキングがゲームプレイやタイトルのフローを邪魔しない時間を選択してください。  ラウンドの合間し、後の一致は両方の適切なタイミングです。
+ランキングはいつでもタイトルに表示できます。  ランキングがゲームプレイやタイトルのフローを邪魔しない時間を選択してください。  ラウンド間との一致が両方の良い時間後にします。
 
 ## <a name="how-to-display-leaderboards"></a>ランキングを表示する方法
 
-Xbox Live SDK には、ランキングを表示するためのオプションが多数用意されています。  Xbox Live クリエーターズ プログラムで Unity を使用する場合は、ランキング データを表示するランキング プレハブを使用して開始できます。  詳しくは、「[Unity で Xbox Live を構成する](../get-started-with-creators/configure-xbox-live-in-unity.md)」の記事をご覧ください。
+Xbox Live SDK には、ランキングを表示するためのオプションが多数用意されています。  Xbox Live クリエーターズ プログラムで Unity を使用する場合は、ランキング データを表示、ランキング プレハブを使用して開始できます。  詳しくは、「[Unity で Xbox Live を構成する](../get-started-with-creators/configure-xbox-live-in-unity.md)」の記事をご覧ください。
 
 Xbox Live SDK で直接コードを記述している場合、使用できる API についての説明をお読みください。
 
@@ -45,7 +45,7 @@ Xbox Live SDK で直接コードを記述している場合、使用できる AP
 
 ## <a name="leaderboards-2013-apis"></a>ランキング 2013 Api
 
-ご覧の`leaderboard_service`名前空間のすべての統計 2013年のランキング API についてします。
+確認できます、 `leaderboard_service` Stats 2013 ランキングのすべての API の名前空間。
 
 <table>
 
@@ -83,7 +83,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardAsync
 
 </td>
 
-<td>WinRT の c# コードでは、サービス構成 ID とランキングの名前を指定した 1 つのランキングのランキングを取得します。</td>
+<td>WinRTC#コード - サービス構成の ID とランキングの名前を指定して 1 つのランキングのランキングを取得します。</td>
 
 </tr>
 
@@ -122,7 +122,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardAsync
 
 </td>
 
-<td>WinRT の c# コードの 1 つのランキングのランキングのページが結果を取得、サービス構成 ID とランキング名のランキング結果が"skipToRank"ランクで開始されます。</td>
+<td>WinRTC#コード - 1 つのランキング、サービス構成の ID とランキング名、スコアボードの結果が"skipToRank"ランクの開始のスコアボードの結果のページが表示されます。</td>
 
 </tr>
 
@@ -166,7 +166,7 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardWithS
 
 </td>
 
-<td>WinRT の c# コードのプレイヤーのランクに関係なく、指定されたプレイヤーから始まるランキングを取得するか、スコア、位ランキング順に</td>
+<td>WinRTC#コード - プレーヤーのランクや、プレイヤーのパーセン タイル順位で順序付けのスコアに関係なく、指定したプレーヤーから始まるランキングの取得</td>
 
 </tr>
 
@@ -174,13 +174,13 @@ Windows::Foundation::IAsyncOperation< LeaderboardResult^> ^  GetLeaderboardWithS
 
 ## <a name="2013-c-example"></a>2013 の C++ の例
 
-C++ API レイヤーを使用する場合は、サービスからランキング結果が返されたに呼び出されるコールバックを設定できます。  以下にこの例を示します。
+C++ API レイヤーを使用する場合は、スコアボードの結果は、サービスから返された後に呼び出されるコールバックを設定できます。  以下にこの例を示します。
 
 これらの API から返される `pplx::task` について簡単に説明すると、これは Microsoft 並列プログラミング ライブラリ (PPL) からの非同期タスク オブジェクトです。  詳しくは、[https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks](https://github.com/Microsoft/cpprestsdk/wiki/Programming-with-Tasks) を参照してください。
 
 以下のセクションでは、ランキング結果を取得して使用する方法について説明します。
 
-### <a name="1-create-an-async-task-to-retrieve-leaderboard-results"></a>1. 非同期タスクを作成してランキング結果を取得する
+### <a name="1-create-an-async-task-to-retrieve-leaderboard-results"></a>1. スコアボードの結果を取得する非同期タスクを作成します。
 
 最初の手順として、ランキング サービスを呼び出して特定のランキングの結果を取得します。
 
@@ -191,9 +191,9 @@ auto& leaderboardService = xboxLiveContext->leaderboard_service();
 asyncTask = leaderboardService.get_leaderboard(m_liveResources->GetServiceConfigId(), LeaderboardIdEnemyDefeats);
 ```
 
-### <a name="2-setup-a-callback"></a>2. コールバックをセットアップする
+### <a name="2-setup-a-callback"></a>2. コールバックを設定します。
 
-ランキング結果が返されます後に呼び出される[継続タスク](https://msdn.microsoft.com/en-us/library/dd492427(v=vs.110).aspx#continuations)をセットアップすることができます。  以下のように行います。
+設定することができます、[継続タスク](https://msdn.microsoft.com/en-us/library/dd492427(v=vs.110).aspx#continuations)スコアボードの結果が返された後に呼び出されます。  以下のように行います。
 
 ```cpp
 asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboard::leaderboard_result> result)
@@ -205,7 +205,7 @@ asyncTask.then([this](xbox::services::xbox_live_result<xbox::services::leaderboa
 この継続タスクは、最初に呼び出したオブジェクトのコンテキストで呼び出され、タイトルに合った方法で表示可能な ```leaderboard_result``` を受け取ります。
 
 
-### <a name="3-display-leaderboard"></a>3. ランキングを表示する
+### <a name="3-display-leaderboard"></a>3.ランキングを表示します。
 
 ランキング データは ```leaderboard_result``` に含まれており、フィールドは一目見ただけでその内容がわかります。  以下の例をご覧ください。
 
@@ -225,20 +225,20 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
 
 ```
 
-## <a name="2013-winrt-c-example"></a>2013 WinRT c# の例
+## <a name="2013-winrt-c-example"></a>2013 WinRTC#例
 
-WinRT c# レイヤーを使用する場合は、それぞれ個別のコールバックを使用する必要があるだけをタスクを作成する必要はありません、`await`ランキング サービスを呼び出すときにキーワードです。
+WinRT を使用する場合C#レイヤーのタスクし、は単に使用する必要が別個のコールバックを作成する必要はありません、`await`ランキング サービスを呼び出すときに、キーワード。
 
 ### <a name="1-access-the-leaderboardservice"></a>1. アクセス、LeaderboardService
 
-`LeaderboardService`から取得できる、`XboxLiveContext`をゲームのユーザーにサインインするときに作成、必要になるのランキング データを呼び出します。
+`LeaderboardService`から取得できる、`XboxLiveContext`ゲームにユーザーをサインインするときに作成された、必要になるランキング データを呼び出すためです。
 
 ```csharp
 XboxLiveContext xboxLiveContext = idManager.xboxLiveContext;
 LeaderboardService boardService = xboxLiveContext.LeaderboardService;
 ```
 
-### <a name="2-call-the-leaderboardservice"></a>2. 呼び出し、LeaderboardService
+### <a name="2-call-the-leaderboardservice"></a>2. LeaderboardService を呼び出す
 
 ```csharp
 LeaderboardResult boardResult = await boardService.GetLeaderboardAsync(
@@ -247,24 +247,24 @@ LeaderboardResult boardResult = await boardService.GetLeaderboardAsync(
      );
 ```
 
-### <a name="3-retrieve-leaderboard-data"></a>3. ランキング データを取得します。
+### <a name="3-retrieve-leaderboard-data"></a>3.ランキング データを取得します。
 
-`GetLeaderboardAsync()` 返します、`LeaderboardResult`名前付きのランキングを作成する統計情報が含まれます。
+`GetLeaderboardAsync()` 返します、`LeaderboardResult`これは名前付きのランキングを作成する統計情報が含まれます。
 
-`LeaderboardResult` いくつかの関数とプロパティをランキング データの読み取りを容易にあります。
+`LeaderboardResult` いくつかの関数とランキング データの読み取りを容易にプロパティがあります。
 
 |プロパティ  |説明  |
 |---------|---------|
-|パブリック IAsyncOperation<LeaderboardResult> GetNextAsync (uint maxItems)。     |次の一連の maxItems パラメーターの数までのランクを取得します。 これは、基本的に別の呼び出し `GetLeaderboard()`         |
-|パブリック LeaderboardQuery GetNextQuery() です。     |次の一連のデータを取得するランキングの呼び出しに使われる LeaderboardQuery を取得します。         |
-|パブリック bool HasNext {get;}    |ランキング行が取得するかどうかを指定します。         |
-|パブリック IReadOnlyList<LeaderboardRow>行の {get;}     | ランクごとのランキング データを含む行        |
-|パブリック IReadOnlyList<LeaderboardColumn>列 {get;}     | ランキングを構成する列のリスト        |
-|パブリック uint TotalRowCount {get;}     | ランキングの行の合計金額        |
-|パブリック文字列 DisplayName {get;}     | ランキングを表示する名前       |
+|public IAsyncOperation<LeaderboardResult> GetNextAsync(uint maxItems);     |次の一連の maxItems パラメーターの数までのランクを取得します。 これは、本質的に別の呼び出し `GetLeaderboard()`         |
+|public LeaderboardQuery GetNextQuery();     |次のデータ セットを取得するランキングの呼び出しに使用できる LeaderboardQuery を取得します。         |
+|public bool HasNext { get; }    |ランキング行が取得するかどうかを指定します。         |
+|public IReadOnlyList<LeaderboardRow> Rows { get; }     | ランクあたりランキング データを含む行        |
+|public IReadOnlyList<LeaderboardColumn> Columns { get; }     | スコアボードを構成する列の一覧        |
+|public uint TotalRowCount { get; }     | ランキング内の行の合計金額        |
+|public string DisplayName { get; }     | ランキングに表示される名前       |
 
-ランキング データを一度に 1 つのページを提供されます。 ループする可能性があります、`LeaderboardResult`行と列は、データを取得します。  
-使用して、`HasNext`ブール値と`GetNextAsync()`ランキング データの以降のページを取得します。
+ランキング データを一度に 1 ページを提供されます。 ループすることがあります、`LeaderboardResult`行と列データを取得します。  
+使用して、`HasNext`ブールと`GetNextAsync()`ランキング データの以降のページを取得します。
 
 ```csharp
 if (boardResult != null)
@@ -278,7 +278,7 @@ if (boardResult != null)
 
 ## <a name="leaderboard-2017"></a>ランキング 2017
 
-使用する統計 2017年ランキング サービスへの呼び出しを`StatisticManager`ランキング api の代わりに、`LeaderboardService`ランキング api です。  
+使用する統計 2017年ランキング サービスを呼び出すことに、`StatisticManager`ランキング api の代わりに、`LeaderboardService`ランキング api。  
 
 `xbox::services::stats:manager::stats_manager::get_leaderboard`  
 
@@ -321,30 +321,30 @@ public void GetSocialLeaderboard(
     )
 ```  
 
-## <a name="2017-c-example"></a>2017 C++ の例
+## <a name="2017-c-example"></a>2017 の C++ の例
 
-### <a name="1-get-a-singleton-instance-of-the-statsmanager"></a>1.、stats_manager のシングルトン インスタンスを取得します。
+### <a name="1-get-a-singleton-instance-of-the-statsmanager"></a>1. Stats_manager のシングルトン インスタンスを取得します。
 
-呼び出す前に、`stats_manager`関数はシングルトン インスタンスに変数を設定する必要があります。
+呼び出すには、`stats_manager`関数、変数のシングルトン インスタンスに設定する必要があります。
 
 ```csharp
 m_statsManager = stats_manager::get_singleton_instance();
 ```
 
-### <a name="2-create-a-leaderboardquery"></a>2.、LeaderboardQuery を作成します。
+### <a name="2-create-a-leaderboardquery"></a>2. 作成、LeaderboardQuery
 
-`leaderboard_query`金額、順序を決定し、ランキングの呼び出しから返されるデータのポイントを開始します。
+`leaderboard_query`金額、順を決定し、ランキング呼び出しから返されるデータの出発点です。
 
-A`leaderboard_query`にいくつかの属性に設定できるから返されるデータに影響するがあります。
+A`leaderboard_query`がいくつかの属性に設定できる返されるデータに影響を及ぼすあります。
 
 |プロパティ |説明  |
 |---------|---------|
-|m_skipResultToRank     |この uint 変数を返す場合始まるランキング データをランク付け内容が決定します。 ランキングは、ランク 1 から始まります。         |
-|m_skipResultToMe     |かどうかに設定をこのブール値を true には、開始時刻から返されるランキング データ、`XboxLiveUser`で使用される、`get_leaderboard()`呼び出します。  |
-|m_order     |列挙型の`xbox::services::leaderboard::sort_order`は昇順であり、降順で 2 つの可能な値があります。 この変数は、クエリを設定すると、ランキングの並べ替え順序を決定します。        |
-|m_maxItems     |この uint は、呼び出しごとに返す行の最大数を決定します。`get_leaderboard`または`get_social_leaderboard()`します。         |
+|m_skipResultToRank     |この uint 変数を返すときにで開始されますランキング データを順位付け何かが決まります。 順位付けは、ランク 1 から始まります。         |
+|m_skipResultToMe     |かどうか設定をこのブール値を true には、開始に返されるランキング データ、`XboxLiveUser`で使用される、`get_leaderboard()`呼び出します。  |
+|m_order     |型の列挙型`xbox::services::leaderboard::sort_order`、昇順と降順の 2 つの可能な値を指定します。 クエリには、この変数を設定すると、スコアボードの並べ替え順序を決定します。        |
+|m_maxItems     |この uint への呼び出しごとに返される行の最大数を決定する`get_leaderboard`または`get_social_leaderboard()`します。         |
 
-`leaderboard_query` いくつかのセット関数を使って、これらのプロパティに値を割り当てるがあります。 次のコードでは説明をセットアップする方法、 `leaderboard_query`
+`leaderboard_query` いくつかのセット関数を使って、これらのプロパティに値を代入しています 次のコードでは説明を設定する方法、 `leaderboard_query`
 
 ```cpp
 leaderboard::leaderboard_query leaderboardQuery;
@@ -353,12 +353,12 @@ leaderboardQuery.set_max_items(10);
 leaderboardQuery.set_order(sort_order::descending);
 ```
 
-このクエリ戻ったら、100 から始まるランキングの 10 行がランク付け個々 します。
+このクエリは返しません 10 行、100 から始まる、スコアボードのランク付けされた個人です。
 
 > [!WARNING]
-> ランキング内に含まれるプレイヤー数よりも高い SkipResultToRank が発生 0 行を返すランキング データ。
+> SkipResultToRank プレーヤー、ランキング内に含まれる数よりも大きく設定をする 0 行が返されますランキング データとなります。
 
-### <a name="3-call-getleaderboard"></a>3. get_leaderboard を呼び出す
+### <a name="3-call-getleaderboard"></a>3.Get_leaderboard を呼び出す
 
 ```cpp
 leaderboard::leaderboard_query leaderboardQuery;
@@ -366,11 +366,11 @@ m_statsManager->get_leaderboard(user, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます[パートナー センター](https://partner.microsoft.com/dashboard)でタイトル用に構成された統計の名前と同じである必要があります。
+> `statName`で使用される、`GetLeaderboard()`呼び出しは、タイトル用に構成された状態の名前と同じである必要があります[パートナー センター](https://partner.microsoft.com/dashboard)、これは大文字小文字を区別します。
 
-### <a name="4-read-the-leaderboard-data"></a>4. ランキング データを読み取る
+### <a name="4-read-the-leaderboard-data"></a>4。ランキング データを読み取る
 
-呼び出す必要がありますランキング データを読み取るために、`stats_manager::do_work()`の一覧を返す関数`stat_event`値。 ランキング データは含まれている、`stat_event`型の`stat_event_type::get_leaderboard_complete`します。 この種類の一覧でのイベントが発生したとき`stat_event`s に目を通すことがあります、`leaderboard_result`に含まれている、`stat_event`データにアクセスします。
+呼び出す必要がありますランキング データを読み取るために、`stats_manager::do_work()`関数の一覧が返されます`stat_event`値。 ランキング データが含まれる、`stat_event`型の`stat_event_type::get_leaderboard_complete`します。 この型の一覧でのイベントが発生したときに`stat_event`s に目を通すことがあります、`leaderboard_result`に含まれている、`stat_event`データにアクセスします。
 
 サンプル`do_work()`ハンドラー
 
@@ -415,7 +415,7 @@ void Sample::UpdateStatsManager()
 }
 ```
 
-ランキング結果からランキング データを読み取る  
+スコアボードの結果からランキング データを読み取る  
 
 ```cpp
 void Sample::PrintLeaderboard(const xbox::services::leaderboard::leaderboard_result& leaderboard)
@@ -438,7 +438,7 @@ void Sample::PrintLeaderboard(const xbox::services::leaderboard::leaderboard_res
 }
 ```  
 
-ランキングからさらにページのデータを取得します。  
+スコア_ボードからさらにデータのページを取得します。  
 
 ```cpp
 void Sample::ProcessLeaderboards(
@@ -471,19 +471,19 @@ void Sample::ProcessLeaderboards(
 }
 ```  
 
-## <a name="2017-winrt-c-example"></a>2017 WinRT c# の例
+## <a name="2017-winrt-c-example"></a>2017 WinRTC#例
 
-### <a name="1-get-a-singleton-instance-of-the-statisticmanager"></a>1.、StatisticManager のシングルトン インスタンスを取得します。
+### <a name="1-get-a-singleton-instance-of-the-statisticmanager"></a>1. StatisticManager のシングルトン インスタンスを取得します。
 
-呼び出す前に、`StatisticManager`関数はシングルトン インスタンスに変数を設定する必要があります。
+呼び出すには、`StatisticManager`関数、変数のシングルトン インスタンスに設定する必要があります。
 
 ```csharp
 statManager = StatisticManager.SingletonInstance;
 ```
 
-### <a name="2-create-a-leaderboardquery"></a>2.、LeaderboardQuery を作成します。
+### <a name="2-create-a-leaderboardquery"></a>2. 作成、LeaderboardQuery
 
-`LeaderboardQuery`金額、順序を決定し、ランキングの呼び出しから返されるデータのポイントを開始します。  
+`LeaderboardQuery`金額、順を決定し、ランキング呼び出しから返されるデータの出発点です。  
 
 ```csharp
 public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
@@ -501,16 +501,16 @@ public sealed class LeaderboardQuery : __ILeaderboardQueryPublicNonVirtuals
     }
 ```
 
-A`LeaderboardQuery`にいくつかの属性に設定できるから返されるデータに影響するがあります。
+A`LeaderboardQuery`がいくつかの属性に設定できる返されるデータに影響を及ぼすあります。
 
 |プロパティ |説明  |
 |---------|---------|
-|SkipResultToRank     |この uint 変数を返す場合始まるランキング データをランク付け内容が決定します。 ランキングは、ランク 1 から始まります。         |
-|SkipResultToMe     |かどうかに設定をこのブール値を true には、開始時刻から返されるランキング データ、`XboxLiveUser`で使用される、`GetLeaderboard()`呼び出します。  |
-|Order     |列挙型の`Microsoft.Xbox.Services.Leaderboard.SortOrder`は昇順であり、降順で 2 つの可能な値があります。 この変数は、クエリを設定すると、ランキングの並べ替え順序を決定します。        |
-|MaxItems     |この uint は、呼び出しごとに返す行の最大数を決定します。`GetLeaderboard()`または`GetSocialLeaderboard()`します。         |
+|SkipResultToRank     |この uint 変数を返すときにで開始されますランキング データを順位付け何かが決まります。 順位付けは、ランク 1 から始まります。         |
+|SkipResultToMe     |かどうか設定をこのブール値を true には、開始に返されるランキング データ、`XboxLiveUser`で使用される、`GetLeaderboard()`呼び出します。  |
+|[オーダー]     |型の列挙型`Microsoft.Xbox.Services.Leaderboard.SortOrder`、昇順と降順の 2 つの可能な値を指定します。 クエリには、この変数を設定すると、スコアボードの並べ替え順序を決定します。        |
+|maxItems     |この uint への呼び出しごとに返される行の最大数を決定する`GetLeaderboard()`または`GetSocialLeaderboard()`します。         |
 
-形成、 `LeaderboardQuery` 、次のようになります。
+形成、`LeaderboardQuery`は、次のようになります。
 
 ```csharp
 using Microsoft.Xbox.Services.Leaderboard;
@@ -522,25 +522,25 @@ LeaderboardQuery query = new LeaderboardQuery
         };
 ```
 
-このクエリ戻ったら、5 行、100 から始まるランキングの順位個々 します。
+このクエリは返しません、100 から始まるランキングの 5 つの行のランク付けされた個人です。
 
 > [!WARNING]
-> ランキング内に含まれるプレイヤー数よりも高い SkipResultToRank が発生 0 行を返すランキング データ。
+> SkipResultToRank プレーヤー、ランキング内に含まれる数よりも大きく設定をする 0 行が返されますランキング データとなります。
 
-### <a name="3-call-getleaderboard"></a>3. GetLeaderboard() を呼び出す
+### <a name="3-call-getleaderboard"></a>3.GetLeaderboard() を呼び出す
 
-ここで呼び出すことができます`GetLeaderboard()`で、 `XboxLiveUser`、統計の名前と`LeaderboardQuery`します。
+呼び出せます`GetLeaderboard()`で、`XboxLiveUser`の統計の名前と`LeaderboardQuery`。
 
 ```csharp
 statManager.GetLeaderboard(xboxLiveUser, statName, leaderboardQuery);
 ```
 
 > [!IMPORTANT]
-> `statName`で使用される、`GetLeaderboard()`呼び出しは小文字が区別されます[パートナー センター](https://partner.microsoft.com/dashboard)でタイトル用に構成された統計の名前と同じである必要があります。
+> `statName`で使用される、`GetLeaderboard()`呼び出しは、タイトル用に構成された状態の名前と同じである必要があります[パートナー センター](https://partner.microsoft.com/dashboard)、これは大文字小文字を区別します。
 
-### <a name="4-read-leaderboard-data"></a>4. 読み取りランキング データ
+### <a name="4-read-leaderboard-data"></a>4。データの読み取りのランキング
 
-呼び出す必要がありますランキング データを読み取るために、`StatisticManager.DoWork()`の一覧を返す関数`StatisticEvent`値。 ランキング データは含まれている、`StatisticEvent`型の`GetLeaderboardComplete`します。 この種類の一覧でのイベントが発生したとき`StatisticEvent`s に目を通すことがあります、`LeaderboardResult`に含まれている、`StatisticEvent`データにアクセスします。
+呼び出す必要がありますランキング データを読み取るために、`StatisticManager.DoWork()`関数の一覧が返されます`StatisticEvent`値。 ランキング データが含まれる、`StatisticEvent`型の`GetLeaderboardComplete`します。 この型の一覧でのイベントが発生したときに`StatisticEvent`s に目を通すことがあります、`LeaderboardResult`に含まれている、`StatisticEvent`データにアクセスします。
 
 ```csharp
 IReadOnlyList<StatisticEvent> statEvents = statManager.DoWork(); //In practice this should be called every update frame
@@ -560,12 +560,12 @@ foreach(StatisticEvent statEvent in statEvents)
 }
 ```
 
-タイトル コードで`StatisticManager.DoWork()`統計情報マネージャーのすべての着信イベントを処理し、ランキング用だけではなくするために使用する必要があります。 
+見出しのコードで`StatisticManager.DoWork()`統計 Manager のすべての受信イベントを処理し、スコアボードのだけでなく使用する必要があります。 
 
 > [!NOTE]
-> 取得するために、`LeaderboardResultEventArgs`キャストする必要があります、`StatisticEvent.EventArgs`として、`LeaderboardResultEventArgs`変数です。
+> 取得するために、`LeaderboardResultEventArgs`にキャストする必要があります、`StatisticEvent.EventArgs`として、`LeaderboardResultEventArgs`変数。
 
-### <a name="5-retrieve-more-leaderboard-data"></a>5. より多くのランキング データを取得します。
+### <a name="5-retrieve-more-leaderboard-data"></a>5。多くのランキング データを取得します。
 
 ランキング データを使用する必要がありますの以降のページを取得するために、`LeaderboardResult.HasNext`プロパティと`LeaderboardResult.GetNextQuery()`を取得する関数、`LeaderboardQuery`データの次のページが表示するされます。
 

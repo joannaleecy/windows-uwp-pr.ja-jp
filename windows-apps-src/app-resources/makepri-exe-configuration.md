@@ -1,5 +1,5 @@
 ---
-Description: This topic describes the schema of the MakePri.exe XML configuration file.
+Description: ここでは、MakePri.exe XML 構成ファイルのスキーマについて説明します。
 title: MakePri.exe 構成ファイル
 template: detail.hbs
 ms.date: 10/18/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927127"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607797"
 ---
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 構成ファイル
 
 ここでは、[MakePri.exe](compile-resources-manually-with-makepri.md) XML 構成ファイル (PRI 構成ファイルとも呼ばれる) のスキーマについて説明します。 MakePri.exe ツールには、新しい、初期化された PRI 構成ファイルを作成するために使用できる [createconfig コマンド](makepri-exe-command-options.md#createconfig-command)が含まれています。
 
 > [!NOTE]
-> MakePri.exe は、Windows ソフトウェア開発キットをインストールするときに、 **Windows SDK for UWP アプリの管理**オプションを確認する場合にインストールされます。 パスにインストールされている`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャの名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
+> チェックするときに MakePri.exe がインストールされている、**管理されているアプリの UWP 用 Windows SDK** Windows ソフトウェア開発キットのインストール中にオプション。 パスにインストールされて`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`(およびその他のアーキテクチャのという名前のフォルダーの)。 たとえば、`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` と記述します。
 
 PRI 構成ファイルは、どのリソースをどのようにインデックス化するかを制御します。 構成 XML は、次のスキーマに準拠する必要があります。
 
@@ -241,7 +241,7 @@ Windows 10 をターゲットにする場合、リソース パックの作成�
 
 ターゲット オペレーティング システムのバージョンを指定します。 次の表は、サポートされている値を示しています。既定値は 6.3.0 です。
 
-| 値 | 意味 |
+| Value | 意味 |
 | ----- | ------- |
 | 10.0.0 | Windows 10 |
 | 6.3.0 (既定) | Windows 8.1 |
@@ -278,23 +278,23 @@ Windows 10 をターゲットにする場合、リソース パックの作成�
 
 エラー状況の例と対応するエラー メッセージを次に示します。
 
-| 状況 | 重大度 | メッセージ |
+| 条件 | 重大度 | メッセージ |
 | --------- | -------- | ------- |
-| サポートされる値のいずれか以外の targetOsVersion が指定されている。 | エラー | Invalid Configuration: Invalid targetOsVersion specified. |
-| targetOsVersion "6.2.1" が指定されており、`packaging` 要素が存在する。 | エラー | Invalid Configuration: 'Packaging' node is not supported with this targetOsVersion. |
+| サポートされる値のいずれか以外の targetOsVersion が指定されている。 | エラー | 構成が無効です。無効な targetOsVersion を指定します。 |
+| targetOsVersion "6.2.1" が指定されており、`packaging` 要素が存在する。 | エラー | 構成が無効です。'パッケージ' ノードがこの targetOsVersion でサポートされていません。 |
 | 構成内に複数のモードが見つかった。 たとえば、Manual と AutoResourcePackage が指定されている。 | エラー | Invalid Configuration: 'packaging' node cannot have more than one mode of operation. |
 | 既定の修飾子がリソース パッケージの下にリストされている。 | エラー | Invalid Configuration: <Qualifiername>=<QualifierValue> is a default qualifier and its candidates cannot be added to a resource package. |
-| AutoResourcePackage 修飾子に複数の修飾子が含まれる。 たとえば、language_scale。 | エラー | Invalid Configuration : AutoResourcePackage with multiple qualifiers is not supported. |
-| ResourcePackage QualifierSet に複数の修飾子が含まれる。 たとえば、language-en-us_scale-100。 | エラー | Invalid Configuration : QualifierSet with multiple qualifiers is not supported. |
-| 重複するリソース パック名が見つかる。 | エラー | Invalid Configuration : Duplicate resource pack name <rpname>. |
-| 2 つのリソース パッケージに同じ修飾子セットが定義されている。 | エラー | Invalid Configuration: Multiple instances of QualifierSet "<qualifier tags>" found. |
-| 'ResourcePackage' ノードに対してリストされた QualifierSet の候補が見つからない。 | 警告 | Invalid Configuration: No candidates found for <Resource Package Name>. |
-| 'AutoResourcePackage' ノードの下にリストされた修飾子の候補が見つからない。 | 警告 | Invalid Configuration: No candidates found for qualifier <qualifier name>. Resource Package not generated. |
-| モードが見つからない。 つまり、空の 'packaging' ノードが見つかる。 | 警告 | Invalid Configuration: No packaging mode specified. |
+| AutoResourcePackage 修飾子に複数の修飾子が含まれる。 たとえば、language_scale。 | エラー | 構成が無効です。AutoResourcePackage を複数の修飾子ではサポートされていません。 |
+| ResourcePackage QualifierSet に複数の修飾子が含まれる。 たとえば、language-en-us_scale-100。 | エラー | 構成が無効です。QualifierSet を複数の修飾子ではサポートされていません。 |
+| 重複するリソース パック名が見つかる。 | エラー | 構成が無効です。重複するリソース パック名<rpname>します。 |
+| 2 つのリソース パッケージに同じ修飾子セットが定義されている。 | エラー | 構成が無効です。QualifierSet の複数のインスタンス"<qualifier tags>"が見つかりません。 |
+| 'ResourcePackage' ノードに対してリストされた QualifierSet の候補が見つからない。 | Warning | 構成が無効です。候補が検出されない<Resource Package Name>します。 |
+| 'AutoResourcePackage' ノードの下にリストされた修飾子の候補が見つからない。 | Warning | 構成が無効です。修飾子の候補が検出されない<qualifier name>します。 Resource Package not generated. |
+| モードが見つからない。 つまり、空の 'packaging' ノードが見つかる。 | Warning | 構成が無効です。パッケージ化モードが指定されていません。 |
 
 ## <a name="related-topics"></a>関連トピック
 
-* [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md)
-* [MakePri.exe のコマンド ライン オプション: createconfig コマンド](makepri-exe-command-options.md#createconfig-command)
-* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
-* [リソース管理システム: ResourceContext](resource-management-system.md#resourcecontext)
+* [MakePri.exe で手動でのリソースをコンパイルします。](compile-resources-manually-with-makepri.md)
+* [MakePri.exe のコマンド ライン オプション&mdash;createconfig コマンド](makepri-exe-command-options.md#createconfig-command)
+* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
+* [リソース管理システム&mdash;ResourceContext](resource-management-system.md#resourcecontext)

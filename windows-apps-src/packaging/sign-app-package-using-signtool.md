@@ -3,15 +3,15 @@ title: SignTool を使ってアプリ パッケージに署名する
 description: SignTool を使って手動でアプリ パッケージに証明書による署名を行います。
 ms.date: 09/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a6d39a78ba73dcb598f209ea48c4b131e375ab6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922614"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594807"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>SignTool を使ってアプリ パッケージに署名する
 
@@ -32,8 +32,8 @@ ms.locfileid: "8922614"
 
 - **SignTool.exe**  
     SDK のインストール パスに基づき、**SignTool** は Windows 10 PC の以下の場所にあります。
-    - x86: C:\Program Files (x86)\Windows Kits\10\bin\x86\SignTool.exe
-    - x64: C:\Program Files (x86)\Windows Kits\10\bin\x64\SignTool.exe
+    - x86:C:\Program Files (x86) \Windows Kits\10\bin\x86\SignTool.exe
+    - x64。C:\Program Files (x86) \Windows Kits\10\bin\x64\SignTool.exe
 
 ## <a name="using-signtool"></a>SignTool の使用
 
@@ -119,13 +119,13 @@ SignTool sign /debug [options]
  
 イベント ログで詳細を参照するには、次の手順を実行します。
 - Eventvwr.msc を実行します。
-- イベント ログを開きます。[イベント ビューアー (ローカル)]、[アプリケーションとサービス ログ]、[Microsoft]、[Windows]、[AppxPackagingOM]、[Microsoft-Windows-AppxPackaging/稼働中] の順に展開します。
+- イベント ログを開きます。イベント ビューアー (ローカル) は アプリケーションとサービス ログ Microsoft->-> Windows AppxPackagingOM-> Microsoft Windows-AppxPackaging/運用->
 - 最新のエラー イベントを検索します。
 
 内部エラーの 0x8007000B は、通常、次のいずれかの値に対応しています。
 
-| **イベント ID** | **イベント文字列の例** | **推奨事項** |
+| **イベント ID** | **イベント文字列の例** | **修正候補** |
 |--------------|--------------------------|----------------|
-| 150          | エラー 0x8007000B: アプリ マニフェストの発行元の名前 (CN=Contoso) は、署名証明書のサブジェクト名 (CN=Contoso, C=US) と同じにする必要があります。 | アプリ マニフェストの発行元の名前は、署名のサブジェクト名と完全に一致する必要があります。               |
-| 151          | エラー 0x8007000B: 指定されている署名ハッシュ方式 (SHA512) は、アプリ バンドルのブロック マップで使用されているハッシュ方式 (SHA256) と同じにする必要があります。     | /fd パラメーターに指定されている hashAlgorithm が、正しくありません。 (アプリ パッケージの作成に使用した) アプリ パッケージのブロック マップと一致する hashAlgorithm を使用して **SignTool** を再実行してください。  |
-| 152          | エラー 0x8007000B: アプリ パッケージの内容は、そのブロック マップに対して検証する必要があります。                                                           | アプリ パッケージは破損しています。再ビルドして、新しいブロック マップを生成する必要があります。 アプリ パッケージの作成の詳細については、「[MakeAppx.exe ツールを使ったアプリ パッケージの作成](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」を参照してください。 |
+| 150          | エラー 0x8007000B:アプリ マニフェストの発行者名 (CN = Contoso)、署名証明書のサブジェクト名に一致する必要があります (CN = Contoso, C = u. s.)。 | アプリ マニフェストの発行元の名前は、署名のサブジェクト名と完全に一致する必要があります。               |
+| 151          | エラー 0x8007000B:署名のハッシュ メソッド (SHA512) を指定したアプリ パッケージ ブロック マップ (SHA256) で使用されるハッシュ メソッドと一致する必要があります。     | /fd パラメーターに指定されている hashAlgorithm が、正しくありません。 (アプリ パッケージの作成に使用した) アプリ パッケージのブロック マップと一致する hashAlgorithm を使用して **SignTool** を再実行してください。  |
+| 152          | エラー 0x8007000B:アプリ パッケージの内容は、そのブロック マップに対して検証する必要があります。                                                           | アプリ パッケージは破損しています。再ビルドして、新しいブロック マップを生成する必要があります。 アプリ パッケージの作成の詳細については、「[MakeAppx.exe ツールを使ったアプリ パッケージの作成](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)」を参照してください。 |

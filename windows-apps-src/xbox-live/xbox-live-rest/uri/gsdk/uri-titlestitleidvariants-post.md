@@ -8,19 +8,19 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 17974ddf7dec26abac18ccee9fda5249bc9d656f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928478"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618497"
 ---
 # <a name="post-titlestitleidvariants"></a>POST (/titles/{titleId}/variants)
-指定されたタイトル id。 用のバリアントをゲームの一覧を取得するクライアントによって呼び出される URIこれらの Uri のドメインは、`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
+URI の id。 指定したタイトルのゲームのバリアントのリストを取得するクライアントによって呼び出されますこれらの Uri のドメインが`gameserverds.xboxlive.com`と`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EZ)
   * [必要な要求ヘッダー](#ID4EIB)
-  * [オプションの要求ヘッダー](#ID4EED)
-  * [Authorization](#ID4E3D)
+  * [省略可能な要求ヘッダー](#ID4EED)
+  * [承認](#ID4E3D)
   * [要求本文](#ID4EEE)
   * [必要な応答ヘッダー](#ID4ELF)
   * [省略可能な応答ヘッダー](#ID4EMG)
@@ -33,7 +33,7 @@ ms.locfileid: "8928478"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| タイトル id| 要求の操作のタイトルの ID です。| 
+| タイトル id| 要求の操作対象のタイトルの ID。| 
   
 <a id="ID5EG"></a>
 
@@ -47,52 +47,52 @@ gameserverds.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは必要です。
+要求を行う場合は、次の表に示されているヘッダーが必要です。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | 
-| Content-Type| application/json| 送信されたデータの種類です。| 
+| Content-Type| application/json| 送信されるデータの型。| 
 | Host| gameserverds.xboxlive.com|  | 
-| Content-Length|  | 要求のオブジェクトの長さ。| 
-| x xbl コントラクト バージョン| 1| API コントラクト バージョンです。| 
-| Authorization| XBL3.0 x = [ハッシュ]。[トークン]| 認証トークンです。| 
+| Content-Length|  | 要求オブジェクトの長さ。| 
+| x-xbl-contract-version| 1| API コントラクトのバージョン。| 
+| Authorization| XBL3.0 x = [ハッシュ] です。[トークン]| 認証トークンです。| 
   
 <a id="ID4EED"></a>
 
  
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
  
-要求を行う場合は、次の表に示すようにヘッダーはオプションです。
+要求を行う場合は、次の表に示されているヘッダーを省略できます。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X XblCorrelationId|  | 要求の本文の mime タイプ。| 
+| X-XblCorrelationId|  | 要求の本文の mime の種類。| 
   
 <a id="ID4E3D"></a>
 
  
 ## <a name="authorization"></a>Authorization
 
-要求は、Xbox Live の有効な承認ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセス許可されていない場合、サービスは応答に 403 Forbidden を返します。 ヘッダーが見つからないか無効な場合は、サービスは応答で 401 Unauthorized を返します。
+要求には、有効な Xbox Live の authorization ヘッダーを含める必要があります。 呼び出し元がこのリソースへのアクセスを許可されていない場合、サービスは応答 403 Forbidden を返します。 ヘッダーが無効であるか不足している場合、サービスは応答で 401 Unauthorized を返します。
  
 <a id="ID4EEE"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。
+要求には、次のメンバーを持つ JSON オブジェクトを含める必要があります。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| locale| 返すバリエーションのローカルです。| 
-| maxVariants| 返すバリエーションの最大数。| 
+| locale| 返されるバリアントのローカルです。| 
+| maxVariants| 返されるバリアントの最大数。| 
 | publisherOnly|  | 
 | 制限|  | 
  
 <a id="ID4EDF"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -111,11 +111,11 @@ gameserverds.xboxlive.com
  
 ## <a name="required-response-headers"></a>必要な応答ヘッダー
  
-応答は常に、次の表に示すようにヘッダーを含めます。
+応答には、常に、次の表に示すようにヘッダーが含まれます。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| Content-Type| application/json| 応答本文内のデータの種類です。| 
+| Content-Type| application/json| 応答本文でデータの型。| 
 | Content-Length|  | 応答本文の長さ。| 
   
 <a id="ID4EMG"></a>
@@ -123,43 +123,43 @@ gameserverds.xboxlive.com
  
 ## <a name="optional-response-headers"></a>省略可能な応答ヘッダー
  
-応答には、次に示すようにヘッダー各自が可能性があります。
+応答には、各自では、次に示すようにヘッダーが可能性があります。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| X XblCorrelationId|  | 応答本文の mime タイプ。| 
+| X-XblCorrelationId|  | 応答本文の mime の種類。| 
   
 <a id="ID4EEH"></a>
 
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを持つ JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
-| バリエーション| バリアントの配列です。| 
-| バリエーション| バリアントの Id です。| 
-| name| バリアントの名前です。| 
+| バリアント| Variant の配列。| 
+| バリエーション| バリアント型の Id。| 
+| name| バリアントの名前。| 
 | isPublisher|  | 
 | ランク|  | 
 | gameVariantSchemaId|  | 
-| variantSchemas| バリアントのスキーマの配列です。| 
-| variantSchemaId| スキーマの Id です。| 
+| variantSchemas| バリアント型のスキーマの配列。| 
+| variantSchemaId| スキーマの Id。| 
 | schemaContent| スキーマの内容| 
 | name| スキーマの名前| 
-| gsiSets| GSI セットの配列です。| 
-| minRequiredPlayers| バリアントのプレイヤーの最小数です。| 
+| gsiSets| GSI の配列を設定します。| 
+| minRequiredPlayers| バリアントのプレイヤーの最小数。| 
 | maxAllowedPlayers| バリアントのプレイヤーの最大数。| 
-| は| GSI セットの Id です。| 
-| gsiSetName| GSI セットの名前です。| 
+| gsiSetId| GSI セットの Id。| 
+| gsiSetName| GSI セットの名前。| 
 | selectionOrder|  | 
-| variantSchemaId| セット、GSI で使われる varaint スキーマの id です。| 
+| variantSchemaId| GSI で使用される varaint スキーマの id を設定します。| 
  
 <a id="ID4EYBAC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp

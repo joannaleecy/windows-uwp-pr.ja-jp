@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5986079e1cae3338d8cc24a9e85f6941cf4fbec4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933865"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651247"
 ---
 # <a name="multiplayersessionreference-json"></a>MultiplayerSessionReference (JSON)
-**MultiplayerSessionReference**を表す JSON オブジェクト。 
+表す JSON オブジェクト、 **MultiplayerSessionReference**します。 
 <a id="ID4EQ"></a>
 
   
  
-MultiplayerSessionReference JSON オブジェクトには、次仕様があります。
+MultiplayerSessionReference JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。| 
-| templateName | string | セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。 | 
-| name | string | セッションの名前です。 セッション識別子のパート 3 です。 | 
+| scid| GUID| サービス構成の識別子 (SCID) です。 パート 1 のセッション識別子。| 
+| templateName | string | セッション テンプレートの現在のインスタンスの名前です。 パート 2 のセッション識別子。 | 
+| name | string | セッションの名前。 パート 3 のセッション識別子。 | 
   
 <a id="ID4EZ"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例 
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文 
  
 
 ```json
@@ -55,7 +55,7 @@ MultiplayerSessionReference JSON オブジェクトには、次仕様があり�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4EVB"></a>

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, fiddler, サービス呼び出し, トラブルシューティング
 ms.localizationpriority: medium
 ms.openlocfilehash: 84c6717a4f9f5aff9fd3ff1f68c870fdd9174865
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114430"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606717"
 ---
 # <a name="troubleshooting-xbox-live-using-fiddler"></a>Fiddler を使用した Xbox Live のトラブルシューティング
 
@@ -20,7 +20,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 ## <a name="for-windows-uwp-pc-apps"></a>Windows UWP PC アプリの場合
 
 1. 現在のユーザーが、PC の Administrator グループのメンバーであることを確認します
-1. Fiddler からのダウンロードします。[https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
+1. Fiddler からのダウンロードします。 [https://www.telerik.com/fiddler](https://www.telerik.com/fiddler)
 1. "Built for .NET 4" のバージョンを選択します
 1. インストールが済んだら、[Tools] の [Fiddler Options] で、[Capture HTTPS CONNECTs] と [Decrypt HTTPS traffic] を有効にします。  ランタイムと Xbox Live サービスの間の通信はすべて、SSL で暗号化されます。  このオプションを指定しないと、役に立つ情報は何も得られません。  Fiddler のすべてのポップアップ ダイアログを受け入れます (UAC を含めて 5 個のダイアログが表示されるはずです)。
 1. [WinConfig]、[Exempt All]、[Save Changes] の順に移動します。  このようにしないと、Fiddler はストア アプリで動作しません。
@@ -39,7 +39,7 @@ Fiddler は、デバイスとインターネットの間のすべての HTTP お
 
 ## <a name="for-xbox-one-uwp-based-projects"></a>Xbox One UWP ベースのプロジェクトの場合
 
-次の手順に従います[https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
+次の手順に従います [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## <a name="for-xbox-one-xdk-based-projects"></a>Xbox One XDK ベースのプロジェクトの場合
 
@@ -62,11 +62,11 @@ Fiddler をインストールして有効化し、開発キットからのトラ
 | 設定          | 推奨値                |
 |------------------|--------------------------------|
 | 名前             | FiddlerProxy                   |
-| Group            | (グループの値は設定しない) |
-| Profile          | すべて                            |
-| 有効          | はい                            |
-| 操作           | 許可                          |
-| 優先         | いいえ                             |
+| グループ            | (グループの値は設定しない) |
+| Profile          | すべての                            |
+| 有効          | 〇                            |
+| アクション           | 許可                          |
+| 優先         | X                             |
 | プログラム          | fiddler.exe のパス            |
 | ローカル アドレス     | 任意                            |
 | リモート アドレス    | 任意                            |
@@ -87,8 +87,8 @@ Fiddler をインストールして有効化し、開発キットからのトラ
 ### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>インターネットへのプロキシとして Fiddler を使用するように開発機を構成するには
 開発キットでの Fiddler の構成方法は、以前のリリースで使用されていたものよりも簡素化されています。
 
-1. デスクトップにエクスポートした Fiddler ルート証明書を、開発キットに ``` xs:\Microsoft\Cert\FiddlerRoot.cer``` としてコピーします。  次のコマンドを使用できます。  ```xbcp [local Fiddler Root directory]\FiddlerRoot.cer xs:\Microsoft\Cert\FiddlerRoot.cer```
-1. ```ProxyAddress.txt``` という名前のテキスト ファイルを作成し、そのファイルに、Fiddler を実行する開発用 PC の IP アドレスまたはホスト名と、Fiddler が唯一のコンテンツとしてリッスンするポート番号を記述します。 ホスト名または IP アドレスとポートは "HOST:PORT" の書式にします  (既定では、Fiddler はポート 8888 を使用)。たとえば、"10.124.220.250:8888" や "my_dev_pc.contoso.com:8888" などです。 このファイルを開発キットに xs:\Microsoft\Fiddler\ProxyAddress.txt としてコピーします。  次のコマンドを使用できます。  ```xbcp [local Proxy Address file directory]\ProxyAddress.txt xs:\Microsoft\Fiddler\ProxyAddress.txt```
+1. デスクトップにエクスポートした Fiddler ルート証明書を、開発キットに ``` xs:\Microsoft\Cert\FiddlerRoot.cer``` としてコピーします。  次のコマンドを使用することができます。  ```xbcp [local Fiddler Root directory]\FiddlerRoot.cer xs:\Microsoft\Cert\FiddlerRoot.cer```
+1. ```ProxyAddress.txt``` という名前のテキスト ファイルを作成し、そのファイルに、Fiddler を実行する開発用 PC の IP アドレスまたはホスト名と、Fiddler が唯一のコンテンツとしてリッスンするポート番号を記述します。 次のように、名前または IP アドレスとポートを書式設定します。「ホスト: ポート」。 (既定では、Fiddler を使用してポート 8888。)たとえば、「10.124.220.250:8888」または"my_dev_pc.contoso.com:8888"します。 このファイルを開発キットに xs:\Microsoft\Fiddler\ProxyAddress.txt としてコピーします。  次のコマンドを使用することができます。  ```xbcp [local Proxy Address file directory]\ProxyAddress.txt xs:\Microsoft\Fiddler\ProxyAddress.txt```
 1. コマンド プロンプトで「```xbreboot```」と入力して開発キットを再起動します。
 
 ### <a name="to-stop-using-fiddler"></a>Fiddler の使用を停止するには

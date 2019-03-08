@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047254"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57605727"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>受領通知を使った製品購入の確認
 
@@ -20,7 +20,7 @@ ms.locfileid: "9047254"
 この情報は、ユーザーがアプリを購入したことや、Microsoft Store からアドオン (アプリ内製品または IAP とも呼ばれます) の購入が行われたことをアプリで確認する必要がある場合に役立ちます。 たとえば、ダウンロードしたコンテンツを提供するゲームを想像してください。 ゲーム コンテンツを購入したユーザーが別のデバイスでゲームをする場合、そのユーザーが既にコンテンツを所有していることを確認する必要があります。 以下にその方法を示します。
 
 > [!IMPORTANT]
-> この記事では、[Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 名前空間のメンバーを使って、アプリ内での購入の受領通知を取得および検証する方法について説明します。 アプリ内購入に [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 名前空間 (Windows 10 Version 1607 で導入され、Visual Studio で **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトで利用可能) を使用している場合、この名前空間では、アプリ内購入の購入受領通知を取得するための API が提供されません。 ただし、Microsoft Store コレクション API の REST メソッドを使うと、購入トランザクションのデータを取得することができます。 詳しくは、「[アプリ内購入の受領通知](in-app-purchases-and-trials.md#receipts)」をご覧ください。
+> この記事では、[Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 名前空間のメンバーを使って、アプリ内での購入の受領通知を取得および検証する方法について説明します。 アプリ内購入に [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.Services.Store) 名前空間 (Windows 10 バージョン 1607 で導入され、Visual Studio で **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットにするプロジェクトでも利用できる) を使用している場合、この名前空間では、アプリ内購入の購入受領通知を取得するための API が提供されません。 ただし、Microsoft Store コレクション API の REST メソッドを使うと、購入トランザクションのデータを取得することができます。 詳しくは、「[アプリ内購入の受領通知](in-app-purchases-and-trials.md#receipts)」をご覧ください。
 
 ## <a name="requesting-a-receipt"></a>通知の要求
 
@@ -104,17 +104,17 @@ ms.locfileid: "9047254"
 
 このファイルのルート要素は、**Receipt** 要素です。これには、アプリとアプリ内での購入に関する情報が含まれています。 この要素には、次の子要素が含まれます。
 
-|  要素  |  必須かどうか  |  数量  |  説明   |
+|  要素  |  必須  |  数量  |  説明   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    必須ではない        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
-|  [ProductReceipt](#productreceipt)  |     必須ではない       |  0 以上    |   現在のアプリのアプリ内での購入に関する情報が含まれています。     |
-|  Signature  |      必須      |  1   |   この要素は、標準の [XML-DSIG コンストラクト](https://go.microsoft.com/fwlink/p/?linkid=251093)です。 これには、受領通知の検証に使用する **SignatureValue** 要素に加え、**SignedInfo** 要素が含まれています。      |
+|  [AppReceipt](#appreceipt)  |    X        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
+|  [ProductReceipt](#productreceipt)  |     X       |  0 以上    |   現在のアプリのアプリ内での購入に関する情報が含まれています。     |
+|  署名  |      〇      |  1   |   この要素は、標準の [XML-DSIG コンストラクト](https://go.microsoft.com/fwlink/p/?linkid=251093)です。 これには、受領通知の検証に使用する **SignatureValue** 要素に加え、**SignedInfo** 要素が含まれています。      |
 
 **Receipt** には次の属性があります。
 
 |  属性  |  説明   |
 |-------------|-------------------|
-|  **Version**  |    受領通知のバージョン番号            |
+|  **バージョン**  |    受領通知のバージョン番号            |
 |  **CertificateId**  |     受領通知の署名に使用された証明サムプリント          |
 |  **ReceiptDate**  |    受領通知が署名され、ダウンロードされた日付です。           |  
 |  **ReceiptDeviceId**  |   この受領通知の要求に使用するデバイスを識別します。         |  |
@@ -129,7 +129,7 @@ ms.locfileid: "9047254"
 
 |  属性  |  説明   |
 |-------------|-------------------|
-|  **Id**  |    購入を識別します。           |
+|  **id**  |    購入を識別します。           |
 |  **AppId**  |     OS がアプリに対して使用するパッケージ ファミリ名です。           |
 |  **LicenseType**  |    ユーザーがアプリの通常版を購入した場合は、**Full** です。 ユーザーがアプリの試用版をダウンロードした場合は、**Trial** です。           |  
 |  **PurchaseDate**  |    アプリが取得された日付です。          |  |
@@ -144,9 +144,9 @@ ms.locfileid: "9047254"
 
 |  属性  |  説明   |
 |-------------|-------------------|
-|  **Id**  |    購入を識別します。           |
+|  **id**  |    購入を識別します。           |
 |  **AppId**  |     ユーザーが購入に使ったアプリを識別します。           |
-|  **ProductId**  |     購入した製品を識別します。           |
+|  **productId**  |     購入した製品を識別します。           |
 |  **ProductType**  |    製品の種類を示します。 現在サポートされている値は、**Durable** のみです。          |  
 |  **PurchaseDate**  |    購入した日付です。          |  |
 

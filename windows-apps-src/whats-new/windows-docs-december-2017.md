@@ -6,11 +6,11 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050635"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645317"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>Windows 開発者向けドキュメントの最新情報、2017 年 12 月
 
@@ -20,7 +20,7 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 ## <a name="features"></a>機能
 
-### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality: 技術者向けガイド
+### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality:愛好家のガイド
 
 Mixed Reality の世界に入ろうとしている技術者を対象とした[技術者向けガイド](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)は、Windows Mixed Reality に関してよくある質問の回答を示します。 
 
@@ -46,7 +46,7 @@ Mixed Reality の世界に入ろうとしている技術者を対象とした[�
 
 Microsoft Collaborate ポータルには、エンジニアリング システムの作業項目 (バグ、機能に関するご要望など) の共有とコンテンツ (ビルド、ドキュメント、仕様) の配布を可能にすることで、Microsoft エコシステム内でのエンジニアリング コラボレーションを簡素化するツールとサービスが用意されています。 [詳しくはこちらをご覧ください](https://docs.microsoft.com/en-us/collaborate)。
 
-![パートナー センターで Microsoft の共同作業します。](images/microsoft_collaborate_screenshot.PNG)
+![Microsoft は、パートナー センターで共同作業を行う](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>UWP プロジェクトを使ってデスクトップ アプリケーションをパッケージ化する
 
@@ -58,13 +58,13 @@ UWP プロジェクトをパッケージに追加する方法については、�
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>サブスクリプション アドオンを Windows デベロッパー センター Insider program の開発者が利用できるようになりました
 
-デベロッパー センター Insider program に参加しているすべての開発者は、サブスクリプション アドオンを使うことにより、自動の定期的な課金期間を設定してアプリ内でデジタル製品 (アプリの機能やデジタル コンテンツなど) を販売できるようになりました。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
+Dev Center Insider program に参加したすべての開発者はサブスクリプションのアドオンを使用してくださいようになりました定期的な自動の請求期間で、アプリのアプリ (アプリの機能や、デジタル コンテンツ) でのデジタル製品を販売しています。 詳しくは、「[アプリのサブスクリプション アドオンの有効化](../monetize/enable-subscription-add-ons-for-your-app.md)」をご覧ください。
 
 ## <a name="developer-guidance"></a>開発者向けガイダンス
 
 ### <a name="color"></a>色
 
-最良のユーザー エクスペリエンスを実現するため、アプリで色を使う方法に関する新しいガイダンスが追加されました。 これには、API の使用シナリオに加えて、UI デザインとアクセシビリティに関する一般的なガイダンスが含まれます。 また、Xbox で利用できるユーザー アクセント カラーの一覧も更新されました。 [こちらから更新された「色」の記事をご覧ください。](../design/style/color.md)
+最良のユーザー エクスペリエンスを実現するため、アプリで色を使う方法に関する新しいガイダンスが追加されました。 これには、API の使用シナリオに加えて、UI デザインとアクセシビリティに関する一般的なガイダンスが含まれます。 また、Xbox で利用できるユーザー アクセント カラーの一覧も更新されました。 [更新された色記事をご覧ください。](../design/style/color.md)
 
 ![ユニバーサル windows カラー パレット](../design/basics/images/colors.png)
 
@@ -97,4 +97,4 @@ UWP プロジェクトをパッケージに追加する方法については、�
 
 ### <a name="package-a-net-app-in-visual-studio"></a>Visual Studio で .NET アプリをパッケージ化する
 
-デスクトップ アプリをこれまで以上に簡単にユニバーサル Windows プラットフォームに移行できます。 [ビデオを見て](https://www.youtube.com/watch?v=fJkbYPyd08w)、配布用の .NET アプリをパッケージ化する方法をご覧ください。その後、[このページで詳細情報を確認](../porting/desktop-to-uwp-packaging-dot-net.md)してください。
+デスクトップ アプリをこれまで以上に簡単にユニバーサル Windows プラットフォームに移行できます。 [ビデオ](https://www.youtube.com/watch?v=fJkbYPyd08w)で、配布用の .NET アプリをパッケージ化する方法をご覧ください。その後、[このページで詳細情報を確認](../porting/desktop-to-uwp-packaging-dot-net.md)してください。

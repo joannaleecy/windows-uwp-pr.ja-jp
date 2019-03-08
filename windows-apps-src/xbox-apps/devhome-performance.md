@@ -1,26 +1,26 @@
 ---
 ms.assetid: d40056bc-76bc-c123-4d36-973ec46d11fc
-title: パフォーマンス ページ (Dev Home)
-description: Xbox one Dev Home アプリのパフォーマンス ページについて説明します。
+title: '[パフォーマンス] ページ (Dev Home)'
+description: Xbox One 用の Dev Home アプリの [パフォーマンス] ページに関する情報を提供します。
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-performance.html
 ms.localizationpriority: medium
 ms.openlocfilehash: 589084a7da23b037fe61ea5e4c9e52dffb1c29be
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925846"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646317"
 ---
-# <a name="performance-page-dev-home"></a>パフォーマンス ページ (Dev Home)
+# <a name="performance-page-dev-home"></a>[パフォーマンス] ページ (Dev Home)
    
   
-Dev Home の**パフォーマンス**のページでは、さまざまなディスクのアクティビティやトラブルシューティングのために、CPU 使用条件をシミュレートします。   
- ![Dev Home のパフォーマンス ページ](images/devhome_performance.png)   
+Dev Home の **[パフォーマンス]** ページでは、トラブルシューティング目的で各種ディスクのアクティビティや CPU 使用条件がシミュレートされます。   
+ ![開発用のホームの [パフォーマンス] ページ](images/devhome_performance.png)   
   
-**パフォーマンス**ページには、次のウィンドウが含まれています。   
+**[パフォーマンス]** ページには、次のウィンドウがあります。   
  
    *  [ディスクのシミュレーション](#ID4EEB)  
    *  [CPU のシミュレーション](#ID4EOB)  
@@ -30,25 +30,25 @@ Dev Home の**パフォーマンス**のページでは、さまざまなディ�
 
    
 
-## <a name="disk-simulation"></a>ディスクのシミュレーション  
+## <a name="disk-simulation"></a>ディスク シミュレーション  
    
   
-**ディスクのシミュレーション**ウィンドウは、システムや他のアプリからディスク アクティビティをシミュレートします。   
+**[ディスク シミュレーション]** ウィンドウでは、システムや他のアプリによるディスク アクティビティがシミュレートされます。   
   
 <a id="ID4EOB"></a>
 
    
 
-## <a name="cpu-simulation"></a>CPU のシミュレーション  
+## <a name="cpu-simulation"></a>CPU シミュレーション  
    
   
-**CPU のシミュレーション**ウィンドウ CPU6 でアクティビティをシミュレートする (共有 core)。   
+**[CPU シミュレーション]** ウィンドウでは、CPU6 (共有コア) でのアクティビティがシミュレートされます。   
   
 <a id="ID4EYB"></a>
 
    
 
 ## <a name="see-also"></a>関連項目  
- [コンソール (Dev Home) における開発者ホーム](dev-home.md)
+ [コンソール (Dev ホーム) 開発者ホーム](dev-home.md)
 
   

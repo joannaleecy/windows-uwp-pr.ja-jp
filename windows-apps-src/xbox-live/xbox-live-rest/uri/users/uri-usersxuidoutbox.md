@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 88f3f3753aeac99db0a8a53e0a2ddde21d034ac5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926858"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607547"
 ---
 # <a name="usersxuidxuidoutbox"></a>/users/xuid({xuid})/outbox
-ユーザーに送信専用アクセスが許可のメッセージは、Xbox LIVE サービスに送信トレイします。 これらの Uri のドメインが`msg.xboxlive.com`します。
+ユーザーに送信専用のアクセスのメッセージングを提供します。 Xbox LIVE サービスに送信トレイです。 これらの Uri のドメインが`msg.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,9 +24,9 @@ ms.locfileid: "8926858"
  
 ## <a name="uri-parameters"></a>URI パラメーター 
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid | 64 ビットの符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレイヤーです。 | 
+| xuid | 64 ビット符号なし整数 | Xbox ユーザー ID (XUID) の要求を行っているプレーヤー。 | 
   
 <a id="ID4EXB"></a>
 
@@ -35,7 +35,7 @@ ms.locfileid: "8926858"
 
 [POST (/users/xuid({xuid})/outbox)](uri-usersxuidoutboxpost.md)
 
-&nbsp;&nbsp;受信者の一覧を指定されたメッセージを送信します。 
+&nbsp;&nbsp;受信者の一覧を指定したメッセージを送信します。 
  
 <a id="ID4EFC"></a>
 
@@ -47,6 +47,6 @@ ms.locfileid: "8926858"
  
 ##### <a name="parent"></a>Parent  
 
-[ユーザー URI](atoc-reference-users.md)
+[ユーザーの Uri](atoc-reference-users.md)
 
    

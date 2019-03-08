@@ -1,5 +1,5 @@
 ---
-Description: Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+Description: キーボード、ゲームパッド、UWP アプリでのユーザー補助ツールとフォーカスのナビゲーションをプログラムで管理する方法について説明します。
 title: キーボード、ゲームパッド、アクセシビリティ ツールでのプログラムによるフォーカス ナビゲーション
 label: Programmatic focus navigation
 keywords: キーボード, ゲーム コントローラー, リモコン, ナビゲーション, ナビゲーション方法, 入力, ユーザーの操作, アクセシビリティ, 操作性
@@ -11,11 +11,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 00d25896a490b0a6b1d65075852f44dfb89c2e53
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075135"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662717"
 ---
 # <a name="programmatic-focus-navigation"></a>プログラムによるフォーカス ナビゲーション
 
@@ -143,7 +143,7 @@ private void OnKeyDown(object sender, KeyRoutedEventArgs e)
 
 ![ナビゲーション ヒントを使用したカスタム フォーカス ナビゲーションの動作](images/keyboard/navigation-hints.png)
 
-*ナビゲーション ヒントを使用したカスタム フォーカス ナビゲーションの動作*
+*ナビゲーション ヒントを使用してカスタムのフォーカスのナビゲーション動作*
 
 ## <a name="navigation-focus-events"></a>フォーカスのナビゲーションに関するイベント
 
@@ -211,7 +211,7 @@ private void OnNoFocusCandidateFound (
 
 ![GettingFocus イベントでフォーカス ナビゲーションのターゲットを変更する](images/keyboard/focus-events.png)
 
-*GettingFocus イベントでフォーカス ナビゲーションのターゲットを変更する*
+*GettingFocus イベントでフォーカスのナビゲーション ターゲットを変更します。*
 
 [GettingFocus](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus) イベントを処理し、フォーカスをリダイレクトする方法を次に示します。
 
@@ -327,6 +327,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## <a name="related-articles"></a>関連記事
 
-- [キーボード、ゲームパッド、リモコン、アクセシビリティ ツールのフォーカス ナビゲーション](focus-navigation.md)
-- [キーボード操作](keyboard-interactions.md)
+- [フォーカスのナビゲーションのキーボード、ゲームパッド、リモート制御、およびユーザー補助ツール](focus-navigation.md)
+- [キーボードの相互作用](keyboard-interactions.md)
 - [キーボードのアクセシビリティ](../accessibility/keyboard-accessibility.md)

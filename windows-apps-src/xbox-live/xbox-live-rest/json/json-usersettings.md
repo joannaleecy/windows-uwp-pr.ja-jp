@@ -8,32 +8,32 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5451c59ab608105677a657ade41154bd2b622f5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941009"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655047"
 ---
 # <a name="usersettings-json"></a>UserSettings (JSON)
-現在の認証されたユーザーの設定を返します。 
+現在の認証済みユーザーの設定を返します。 
 <a id="ID4EN"></a>
 
  
 ## <a name="usersettings"></a>UserSettings
  
-UserSettings オブジェクトには、次仕様があります。
+UserSettings オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| 32 ビットの符号なし整数| 設定の識別子です。| 
-| ソース| 32 ビットの符号なし整数| 設定のソースを表します。 | 
-| titleId| 32 ビットの符号なし整数| 設定に関連付けられているタイトルの識別子です。 | 
-| value| 8 ビットの符号なし整数の配列| 設定の値を表します。 クライアント設定を取得してデータを読み取ることができるため表現の書式設定する必要がありますについて説明します。 | 
+| id| 32 ビット符号なし整数| 設定の識別子です。| 
+| ソース| 32 ビット符号なし整数| 設定のソースを表します。 | 
+| titleId| 32 ビット符号なし整数| 設定に関連付けられているタイトルの識別子。 | 
+| value| 8 ビット符号なし整数の配列| 設定の値を表します。 クライアント設定を取得するには、データを読み取ることができる表現形式を理解する必要があります。 | 
   
 <a id="ID4EJC"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -57,6 +57,6 @@ UserSettings オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

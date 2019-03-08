@@ -3,14 +3,14 @@ title: マイ連絡先の共有
 description: マイ連絡先の共有のサポートを追加する方法について説明します。
 ms.date: 06/28/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945398"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57597827"
 ---
 # <a name="my-people-sharing"></a>マイ連絡先の共有
 
@@ -28,7 +28,7 @@ ms.locfileid: "8945398"
 アプリケーションをマイ連絡先の共有ターゲットとするためには、次の 3 つの手順を行う必要があります。
 
 1. [アプリケーション マニフェストで shareTarget アクティブ化コントラクトのサポートを宣言します。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [ユーザーがアプリを使用して共有できる連絡先に注釈を付けます。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
+2. [ユーザーがアプリを使用して共有できる連絡先の注釈を付けます。](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
 3. アプリケーションの複数インスタンスの同時実行をサポートします。  ユーザーは、他のユーザーと共有するためにアプリケーションを使用しながら、アプリケーションの通常版を操作できる必要があります。 ユーザーは複数の共有ウィンドウで同時に使用できます。 これをサポートするには、アプリケーションが複数のビューを同時に実行できる必要があります。 これを行う方法については、「["アプリの複数のビューの表示](https://docs.microsoft.com/en-us/windows/uwp/layout/show-multiple-views)」の記事をご覧ください。
 
 これを行うと、アプリケーションがマイ連絡先の共有ウィンドウで共有ターゲットに表示されます。これは次の 2 つの方法で起動できます。
@@ -37,10 +37,10 @@ ms.locfileid: "8945398"
 
 ## <a name="declaring-support-for-the-share-contract"></a>共有コントラクトのサポートを宣言する
 
-アプリケーションでの共有ターゲットのサポートを宣言するには、まず Visual Studio でアプリケーションを開きます。 **ソリューション エクスプローラー** で **Package.appxmanifest** を右クリックして、[**プログラムから開く**] を選択します。 メニューをから [**XML (テキスト) エディター**] を選び、**[OK]** をクリックします。 マニフェストを次のように変更します。
+アプリケーションでの共有ターゲットのサポートを宣言するには、まず Visual Studio でアプリケーションを開きます。 **ソリューション エクスプローラー** で **Package.appxmanifest** を右クリックして、**[プログラムから開く]** を選択します。 メニューをから **[XML (テキスト) エディター]** を選び、**[OK]** をクリックします。 マニフェストを次のように変更します。
 
 
-**変更前**
+**以前は**
 ```xml
 <Applications>
     <Application Id="MyApp"
@@ -50,7 +50,7 @@ ms.locfileid: "8945398"
 </Applications>
 ```
 
-**変更後**
+**後**
 
 ```xml
 <Applications>
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリ名を検索するには、 **Package.appxmanifest**既定のエディターを使ってを開き、"Packaging"タブします。ここでは、"App"は、共有ターゲット ビューに対応するアクティブ化可能なクラスです。
+“appId” はパッケージ ファミリ名の最後に ‘!’ と アクティブ化可能なクラス ID を付けたものです。 パッケージ ファミリー名を見つけるには、既定のエディターを使って **Package.appxmanifest** を開き、“Packaging” タブを検索します。ここで、"App"は、共有ターゲット ビューに対応する、アクティブ化可能なクラスです。
 
 ## <a name="running-as-a-my-people-share-target"></a>マイ連絡先の共有ターゲットとして実行する
 
@@ -132,6 +132,6 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 ```
 
 ## <a name="see-also"></a>関連項目
-+ [マイ連絡先のサポートを追加する](my-people-support.md)
++ [ユーザーの追加のサポートします。](my-people-support.md)
 + [ShareTarget クラス](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
-+ [連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
++ [連絡先カードの統合サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

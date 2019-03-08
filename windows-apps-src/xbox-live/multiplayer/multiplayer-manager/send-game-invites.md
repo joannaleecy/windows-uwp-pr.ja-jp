@@ -1,5 +1,5 @@
 ---
-title: ゲームへの招待を送信する
+title: ゲームへの招待の送信
 description: Xbox Live Multiplayer Manager を使用して、プレイヤーにゲームの招待の送信を許可する方法について説明します。
 ms.assetid: 8b9a98af-fb78-431b-9a2a-876168e2fd76
 ms.date: 04/04/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, マルチプレイヤー, Multiplayer Manager, フローチャート, ゲームへの招待
 ms.localizationpriority: medium
 ms.openlocfilehash: 85aa45558d1443638ba7dd50dbea8923125ef664
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926759"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645997"
 ---
-# <a name="send-game-invites"></a>ゲームへの招待を送信する
+# <a name="send-game-invites"></a>ゲームへの招待の送信
 
 簡単なマルチプレイヤー シナリオの 1 つは、ゲーマーにフレンドとのオンラインでのゲーム プレイを許可することです。 このシナリオには、ゲームへの参加の招待を別のプレイヤーに送信するために必要な手順が含まれます。
 
@@ -21,10 +21,10 @@ ms.locfileid: "8926759"
 
 招待を送信するには 2 つの方法があります。
 
-1. [Xbox プラットフォームの招待 TCUI](#xbox-platform-invite-tcui)
-2. [タイトルで実装したカスタム UI](#title-implemented-custom-ui)
+1. [Xbox プラットフォームへの招待 TCUI](#xbox-platform-invite-tcui)
+2. [タイトルのカスタム UI を実装します。](#title-implemented-custom-ui)
 
-プロセスのフローチャートについては、「[フローチャート - 別のプレイヤーに招待を送信する](mpm-flowcharts/mpm-send-invites.md)」を参照してください。
+ここで、プロセスのフローチャートを確認できます。[フローチャート - 別のプレーヤーに招待状を送信](mpm-flowcharts/mpm-send-invites.md)します。
 
 ### <a name="1-xbox-platform-invite-tcui-a-namexbox-platform-invite-tcui"></a>1) Xbox プラットフォームの招待 TCUI <a name="xbox-platform-invite-tcui">
 
@@ -44,7 +44,7 @@ if (result.err())
 }
 ```
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * Xbox ストックのタイトルが呼び出せる UI (TCUI) を表示する
 * 選択されたプレイヤーに直接、招待を送信する
@@ -70,6 +70,6 @@ if (result.err())
 }
 ```
 
-**Multiplayer Manager によって実行される機能**
+**マルチ プレーヤー マネージャーによって実行される関数**
 
 * 選択されたプレイヤーに直接、招待を送信する

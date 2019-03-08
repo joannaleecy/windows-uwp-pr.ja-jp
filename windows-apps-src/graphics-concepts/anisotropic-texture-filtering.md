@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: efac0a9454f750d4b9040577b613496d29a30bc3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923674"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57591197"
 ---
 # <a name="anisotropic-texture-filtering"></a>異方性テクスチャ フィルタ リング
 
@@ -24,7 +24,7 @@ ms.locfileid: "8923674"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[テクスチャ フィルタリング](texture-filtering.md)
+[テクスチャ フィルタ リング](texture-filtering.md)
 
  
 

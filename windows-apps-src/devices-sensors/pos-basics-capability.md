@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c09a9093389fc0a917243773eae6803220ed610
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115756"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634687"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService デバイス機能
 アプリケーション パッケージのマニフェストで機能を宣言することで、PointOfService API へのアクセスを要求します。Microsoft Visual Studio のマニフェスト デザイナーを使用することで、ほとんどの機能を宣言することができます。または、手動で追加することもできます。  
@@ -22,7 +22,7 @@ ms.locfileid: "9115756"
 
 1. **ソリューション エクスプローラー**で、UWP アプリケーションのプロジェクト ノードを展開します。
 2. **[Package.appxmanifest]** ファイルをダブルクリックします。  
-*マニフェスト ファイルが既に XML コード ビューで開かれている場合は、ファイルを閉じるよう指示するプロンプトが Visual Studio で表示されます。*
+*マニフェスト ファイルが既に XML コード ビューで開いている場合は、Visual Studio では、ファイルを閉じてするように求められます。*
 3. **[機能]** タブをクリックします。
 4. 機能の一覧で **[店舗販売時点管理 (POS)]** の横にあるチェック ボックスをオンにして、POS デバイスの機能を有効にします。
 

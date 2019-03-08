@@ -1,26 +1,26 @@
 ---
-title: タイトル ストレージの構成では、パートナー センター
-description: パートナー センターでタイトル ストレージを構成する方法を説明します。
+title: パートナー センターでの記憶域の構成をタイトルします。
+description: パートナー センターでタイトルの記憶域を構成する方法について説明します
 ms.date: 04/24/2018
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox Live, Xbox, ゲーム, uwp, windows 10, Xbox one, タイトル ストレージ, パートナー センター
+keywords: Xbox Live、Xbox、ゲーム、uwp、windows 10、Xbox のいずれか、タイトルのストレージ、パートナー センター
 ms.openlocfilehash: d32f9f2f4e003db50ad560acc513511a850d43b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922216"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612097"
 ---
-# <a name="configure-storage-for-you-title-in-partner-center"></a>パートナー センターでのタイトルのストレージを構成します。
+# <a name="configure-storage-for-you-title-in-partner-center"></a>パートナー センターでのタイトルを記憶域を構成します。
 
 Xbox Live では、タイトル ストレージ サービスを通じて、クラウド内のゲームに関連付けられているデータを保存することができます。 タイトル ストレージの構成ページでは、ゲームで許可されるクラウド ストレージ サービスの種類を判別できるだけでなく、グローバル ストレージに使用するファイルをアップロードすることができます。
 
-**Xbox Live**を選択して、Xbox Live タイトル ストレージ[パートナー](https://partner.microsoft.com/dashboard)は、**概要**や**製品**、**サービス**を開いてから、アプリの選択に移動して、構成ページのドロップダウンを見つけることができます。 クリエーターズ プログラムの開発者は、構成ページの **[Cloud saves and storage]** (クラウドのセーブとストレージ) セクションで **[show options]** (オプションの表示) をクリックし、タイトル ストレージの構成オプションを表示する必要があります。 すべての Xbox Live 機能セットを利用できる開発者は、**[タイトル ストレージ]** リンクを見つけてタイトル ストレージの構成ページに移動する必要があります。
+Xbox Live タイトル記憶域の構成ページを検索するに移動して[パートナー](https://partner.microsoft.com/dashboard)からアプリを選択する**概要**または**製品**を開いて、 **サービス**選択し、下のドロップ**Xbox Live**します。 クリエーターズ プログラムの開発者は、構成ページの **[Cloud saves and storage]** (クラウドのセーブとストレージ) セクションで **[show options]** (オプションの表示) をクリックし、タイトル ストレージの構成オプションを表示する必要があります。 すべての Xbox Live 機能セットを利用できる開発者は、**[タイトル ストレージ]** リンクを見つけてタイトル ストレージの構成ページに移動する必要があります。
 
 タイトル ストレージの構成には、2 つの主なセクションがあります。 タイトル ストレージの設定セクションとグローバル ストレージ ファイルの管理セクションです。
 
-## <a name="section-1-title-storage-settings"></a>セクション 1: タイトル ストレージの設定
+## <a name="section-1-title-storage-settings"></a>セクション 1:記憶域の設定をタイトルします。
 
 ![タイトル ストレージの設定のスクリーンショット](../../images/dev-center/title-storage/title-storage-settings.JPG)
 
@@ -30,14 +30,14 @@ Xbox Live では、タイトル ストレージ サービスを通じて、ク�
 
 タイトル ストレージの構成ページでアクティブにできるストレージの種類は 4 つあります。 各ストレージの種類の説明は、各ストレージの種類名の横にある情報アイコンにマウスをポイントするか、以下の表を読むことで確認できます。
 
-|ストレージの種類 |説明 |使用例  |
+|記憶域の種類 |説明 |使用例  |
 |---------|---------|---------|
-|グローバル             |任意のデバイスで読み取ることができるし、すべてのユーザー アクセスをパートナー センターにアップロードされた、データ。 パートナー センターにアップロードした開発者によってにのみ書き込むことができます。 | ゲーム内のニュース フィード経由ですべてのユーザーに更新プログラムを宣伝します。     |
+|グローバル             |パートナー センター内の任意のデバイスで読み取ることができます、すべてのユーザーにアクセスするデータのアップロード。 パートナー センターへのアップロードを開発者にのみ記述できます。 | ゲーム内のニュース フィード経由ですべてのユーザーに更新プログラムを宣伝します。     |
 |接続ストレージ  |XboxOne と Windows 10 ゲームのゲーム データのバックグラウンドでの同期を許可します。 堅牢なフォールト トレラントなゲーム セーブ サービスです。 任意のデバイスで読み取ることができ、Xbox One と Windows 10 デバイスのみ書き込むことができます。    | 個々のユーザーのファイルを保存し、別個の本体でプレイできるようにします。         |
 |ユニバーサル          |Xbox 360 または Windows Phone ではない任意のデバイスへの読み取り/書き込みアクセスを提供するネットワーク アクセス可能な BLOB ストレージ。 Android と iOS デバイスで読み取ることができます。      | 複数の Windows デバイスからアクセス可能なプレイ時間や他の統計を保存します。        |
 |信頼済み            |Xbox One、Xbox 360、Windows Phone によってのみ書き込みできるネットワーク アクセス可能な BLOB ストレージ。 すべてのデバイスから読み取り可能。 Android と iOS で読み取ることができます。     | マルチプレイヤーでのプレイヤーのランク付けを格納します。        |
 
-## <a name="section-2-global-storage-file-management"></a>セクション 2: グローバル ストレージ ファイルの管理
+## <a name="section-2-global-storage-file-management"></a>セクション 2:グローバル ストレージ ファイルの管理
 
 ![グローバル ストレージ ファイルの管理のスクリーンショット](../../images/dev-center/title-storage/global-storage-file-management.JPG)
 
@@ -62,7 +62,7 @@ Xbox Live では、タイトル ストレージ サービスを通じて、ク�
 > [!WARNING]
 > フォルダーをエクスプローラーの表にドラッグすることはできません。この操作を行おうとすると、フォルダーがファイルと同様に扱われ、期待どおりに機能しません。
 
-ファイルの管理アクション: ![ファイルの管理 gif](../../images/dev-center/title-storage/global-storage-management.gif)
+管理アクションをファイル:![管理 gif ファイル](../../images/dev-center/title-storage/global-storage-management.gif)
 
 #### <a name="file-types"></a>ファイルの種類
 

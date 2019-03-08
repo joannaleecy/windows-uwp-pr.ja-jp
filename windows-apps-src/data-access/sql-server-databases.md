@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, UWP, SQL Server, データベース
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe215a593293ff91afb7f71a830512ac365093f
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976929"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621157"
 ---
 # <a name="use-a-sql-server-database-in-a-uwp-app"></a>UWP アプリでの SQL Server データベースの使用
 アプリで [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) 名前空間のクラスを使用して、SQL Server データベースに直接接続し、データを保存および取得することができます。
@@ -29,7 +29,7 @@ ms.locfileid: "8976929"
 
 マニフェスト デザイナーで、UWP プロジェクトの **Package.appxmanifest** ファイルを開きます。
 
-**[機能**] タブでは、SQL Server を認証するために Windows 認証を使用している場合、**エンタープライズ認証**チェック ボックスを選択します。
+**機能**] タブで、[、**エンタープライズ認証**SQL Server の認証に Windows 認証を使用している場合にチェック ボックスをオンします。
 
 ![エンタープライズ認証機能](images/enterprise-authentication.png)
 
@@ -39,15 +39,15 @@ ms.locfileid: "8976929"
 
 このセクションでは、以下のことを行います。
 
-:1: 接続文字列を追加します。
+: 1 つ。接続文字列を追加します。
 
-:2: 製品データを保持するクラスを作成します。
+: 2。製品データを保持するクラスを作成します。
 
-:3: SQL Server データベースから製品を取得します。
+: 3。SQL Server データベースから製品を取得します。
 
-:4: 基本的なユーザー インターフェイスを追加します。
+: 4。基本的なユーザー インターフェイスを追加します。
 
-:5: UI に製品を追加します。
+: 5。製品と UI を設定します。
 
 >[!NOTE]
 > このセクションでは、データ アクセス コードを編成する方法の 1 つを示します。 つまり、[System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) を使用して、SQL Server データベースのデータを保存および取得する方法の例を示すだけです。 アプリケーションの設計に最も適した方法でコードを編成してください。
@@ -236,14 +236,14 @@ public MainPage()
 
 ## <a name="next-steps"></a>次のステップ
 
-**軽量なデータベースを使用して、ユーザー デバイスにデータを保存する**
+**軽量のデータベースを使用して、ユーザーのデバイスでのデータの格納**
 
 「[UWP アプリでの SQLite データベースの使用](sqlite-databases.md)」をご覧ください。
 
-**異なるプラットフォームにわたる異なるアプリの間でコードを共有する**
+**さまざまなプラットフォームで別のアプリ間でコードを共有します。**
 
 「[デスクトップと UWP でコードを共有する](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)」をご覧ください。
 
-**Azure SQL バックエンドでマスター/詳細ページを追加する**
+**Azure SQL バック エンドでマスター詳細ページを追加します。**
 
 「[顧客注文データベースのサンプル](https://github.com/Microsoft/Windows-appsample-customers-orders-database)」をご覧ください。

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, OpenGL, Direct3D 11
 ms.localizationpriority: medium
 ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939307"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644077"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 
@@ -32,7 +32,7 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="glsl-to-hlsl-reference.md">GLSL と HLSL の対応を示すリファレンス</a></p></td>
+<td align="left"><p><a href="glsl-to-hlsl-reference.md">GLSL-HLSL への参照</a></p></td>
 <td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して</a>ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</p></td>
 </tr>
 </tbody>

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, ExtendedJsonData, Store 製品, スキーマ
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937670"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656107"
 ---
 # <a name="data-schemas-for-store-products"></a>Store 製品のデータ スキーマ
 
@@ -72,8 +72,8 @@ ms.locfileid: "8937670"
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリ内購入と試用版](in-app-purchases-and-trials.md)
-* [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのライセンス情報の取得](get-license-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのアプリ内購入の有効化](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
-* [アプリの試用版の実装](implement-a-trial-version-of-your-app.md)
+* [アプリケーションとアドオンの製品情報を取得します。](get-product-info-for-apps-and-add-ons.md)
+* [アプリケーションとアドオンのライセンス情報を取得します。](get-license-info-for-apps-and-add-ons.md)
+* [アプリケーションとアドオンのアプリ内購入を有効にします。](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [使用できるアドオンの購入を有効にします。](enable-consumable-add-on-purchases.md)
+* [アプリの試用版を実装します。](implement-a-trial-version-of-your-app.md)

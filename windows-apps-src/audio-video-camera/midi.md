@@ -4,20 +4,20 @@ description: この記事では、MIDI (Musical Instrument Digital Interface) �
 title: MIDI
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cb210621b74fef5128456d06a7cdf047752f45f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947565"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612747"
 ---
 # <a name="midi"></a>MIDI
 
 
 
-この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。 Windows 10 は、USB (クラス準拠と最も独自のドライバー)、Bluetooth LE 経由で MIDI 経由で MIDI をサポートしています (Windows 10 Anniversary Edition 以降)、およびサード パーティ製品の自由に利用可能なイーサネット上の MIDI、ルーティング MIDI 経由します。
+この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。 Windows 10 (クラスに準拠していませんし、最も独自ドライバー)、MIDI Bluetooth LE 経由での USB 経由で MIDI をサポートしています (Windows 10 Anniversary Edition 以降)、および over Ethernet MIDI とルーティング MIDI、自由に利用できるサード パーティ製品を使用します。
 
 ## <a name="enumerate-midi-devices"></a>MIDI デバイスの列挙
 
@@ -29,7 +29,7 @@ XAML ページに [**ListBox**](https://msdn.microsoft.com/library/windows/apps/
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドの [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスは、Windows によって認識される多くの異なる種類のデバイスを列挙するのに使われます。 メソッドで MIDI 入力デバイスだけを検索するよう指定するには、[**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) によって返されるセレクター文字列を使います。 **FindAllAsync** は、システムに登録されている各 MIDI 入力デバイスの **DeviceInformation** が格納された [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) を返します。 返されたコレクションに項目が含まれていない場合、利用可能な MIDI 入力デバイスはありません。 コレクションに項目が含まれる場合は、**DeviceInformation** オブジェクトのループ処理を行い、各デバイスの名前を MIDI 入力デバイスの **ListBox** に追加します。
+[  **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドの [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスは、Windows によって認識される多くの異なる種類のデバイスを列挙するのに使われます。 メソッドで MIDI 入力デバイスだけを検索するよう指定するには、[**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) によって返されるセレクター文字列を使います。 **FindAllAsync** は、システムに登録されている各 MIDI 入力デバイスの **DeviceInformation** が格納された [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) を返します。 返されたコレクションに項目が含まれていない場合、利用可能な MIDI 入力デバイスはありません。 コレクションに項目が含まれる場合は、**DeviceInformation** オブジェクトのループ処理を行い、各デバイスの名前を MIDI 入力デバイスの **ListBox** に追加します。
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -41,7 +41,7 @@ MIDI 出力デバイスの列挙も入力デバイスの列挙とまったく同
 
 ## <a name="create-a-device-watcher-helper-class"></a>デバイス ウォッチャーのヘルパー クラスを作成する
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間の [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) は、システムにデバイスが追加されるか削除された場合、またはデバイスの情報が更新された場合に、アプリに通知を送信できます。 MIDI 対応アプリでは通常、入力デバイスと出力デバイスの両方に関心があるため、この例では、**DeviceWatcher** パターンを実装するヘルパー クラスを作成して、同じコードを複製することなく MIDI 入力デバイスと MIDI 出力デバイスの両方に使えるようにします。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間の [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) は、システムにデバイスが追加されるか削除された場合、またはデバイスの情報が更新された場合に、アプリに通知を送信できます。 MIDI 対応アプリでは通常、入力デバイスと出力デバイスの両方に関心があるため、この例では、**DeviceWatcher** パターンを実装するヘルパー クラスを作成して、同じコードを複製することなく MIDI 入力デバイスと MIDI 出力デバイスの両方に使えるようにします。
 
 デバイス ウォッチャーとして機能する新しいクラスをプロジェクトに追加します。 この例では、クラスの名前は **MyMidiDeviceWatcher** です。 このセクションのコードの残りの部分は、ヘルパー クラスの実装に使われます。
 
@@ -54,7 +54,7 @@ MIDI 出力デバイスの列挙も入力デバイスの列挙とまったく同
 
 [!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
 
-ヘルパー クラスの外部からのデバイスの現在の一覧にアクセスするのに使われる [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) プロパティを追加します。
+ヘルパー クラスの外部からのデバイスの現在の一覧にアクセスするために使用される [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) プロパティを追加します。
 
 [!code-cs[DeclareDeviceInformationCollection](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetDeclareDeviceInformationCollection)]
 
@@ -68,10 +68,10 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 **DeviceWatcher** には次のイベントがあります。
 
--   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - システムに新しいデバイスが追加されると発生します。
--   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - システムからデバイスが削除されると発生します。
--   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 既存のデバイスに関連付けられた情報が更新されると発生します。
--   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - ウォッチャーで要求されたデバイスの種類の列挙が完了すると発生します。
+-   [**追加**](https://msdn.microsoft.com/library/windows/apps/br225450) -新しいデバイスがシステムに追加されたときに発生します。
+-   [**削除**](https://msdn.microsoft.com/library/windows/apps/br225453) -デバイスがシステムから削除されるときに発生します。
+-   [**更新**](https://msdn.microsoft.com/library/windows/apps/br225458) -既存のデバイスに関連付けられている情報が更新されたときに発生します。
+-   [**EnumerationCompleted** ](https://msdn.microsoft.com/library/windows/apps/br225451) -ウォッチャーには、要求されたデバイスの種類の列挙が完了したときに発生します。
 
 これらの各イベントのイベント ハンドラーで、ヘルパー メソッド **UpdateDevices** が呼び出され、現在のデバイスの一覧で **ListBox** が更新されます。 **UpdateDevices** は UI 要素を更新し、これらのイベント ハンドラーは UI スレッドでは呼び出されないため、各呼び出しを [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出しにラップすることで、指定したコードが UI スレッドで実行されるようにする必要があります。
 
@@ -119,7 +119,7 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 [!code-cs[OutPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetOutPortSelectionChanged)]
 
-出力デバイスが作成されたら、送信するメッセージの種類に対する新しい [**IMidiMessage**](https://msdn.microsoft.com/library/windows/apps/dn911508) を作成して、メッセージを送信できます。 この例では、メッセージは [**NoteOnMessage**](https://msdn.microsoft.com/library/windows/apps/dn894817) です。 [**IMidiOutPort**](https://msdn.microsoft.com/library/windows/apps/dn894727) オブジェクトの [**SendMessage**](https://msdn.microsoft.com/library/windows/apps/dn894730) メソッドが呼び出されて、メッセージを送信します。
+出力デバイスが作成されたら、送信するメッセージの種類に対する新しい [**IMidiMessage**](https://msdn.microsoft.com/library/windows/apps/dn911508) を作成して、メッセージを送信できます。 この例では、メッセージは [**NoteOnMessage**](https://msdn.microsoft.com/library/windows/apps/dn894817) です。 [  **IMidiOutPort**](https://msdn.microsoft.com/library/windows/apps/dn894727) オブジェクトの [**SendMessage**](https://msdn.microsoft.com/library/windows/apps/dn894730) メソッドが呼び出されて、メッセージを送信します。
 
 [!code-cs[SendMessage](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetSendMessage)]
 
@@ -131,7 +131,7 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 上記で説明した手法を使用して MIDI 出力デバイスを列挙すると、アプリは、"Microsoft GS Wavetable Synth" という MIDI デバイスを検出します。 このデバイスは、アプリから使用できる組み込みの General MIDI シンセサイザーです。 ただし、組み込みのシンセサイザーの SDK 拡張機能をプロジェクトに含めていない限り、このデバイスへの MIDI アウトポートを作成しようとすると失敗します。
 
-**General MIDI シンセサイザーの SDK 拡張機能をアプリ プロジェクトに含めるには、次の手順に従います。**
+**汎用 MIDI シンセサイザー SDK 拡張機能をアプリ プロジェクトに含める**
 
 1.  **ソリューション エクスプローラー**で、プロジェクトの下にある **[参照設定]** を右クリックし、**[参照の追加]** を選択します。
 2.  **[Universal Windows]** ノードを展開します。

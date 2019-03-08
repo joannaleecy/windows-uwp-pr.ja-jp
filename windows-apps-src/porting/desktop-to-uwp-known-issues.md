@@ -1,22 +1,22 @@
 ---
-Description: This article contains known issues with the Desktop Bridge.
+Description: この記事では、デスクトップ ブリッジに関する既知の問題について説明します。
 Search.Product: eADQiWindows 10XVcnh
 title: 既知の問題 (デスクトップ ブリッジ)
 ms.date: 06/20/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 9c437e30db7007a6889a822d7d2219f1647bb3d8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051035"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637097"
 ---
-# <a name="known-issues-with-packaged-desktop-applications"></a>パッケージ デスクトップ アプリケーションに関する既知の問題
+# <a name="known-issues-with-packaged-desktop-applications"></a>パッケージのデスクトップ アプリケーションに関する既知の問題
 
-この記事でには、デスクトップ アプリケーションの Windows アプリ パッケージを作成するときに発生する可能性がある既知の問題が含まれています。
+この記事には、お客様のデスクトップ アプリケーションの Windows アプリ パッケージを作成するときに発生する可能性がある既知の問題が含まれています。
 
 <a id="app-converter" />
 
@@ -28,13 +28,13 @@ ms.locfileid: "9051035"
 有効な基本イメージを使っている場合は、コマンドに ``-Cleanup All`` を含めてみてください。
 それでも問題が解決しない場合は、調査用としてログを converter@microsoft.com にお送りください。
 
-### <a name="new-containernetwork-the-object-already-exists-error"></a>"New-ContainerNetwork: オブジェクトは既に存在します" エラー
+### <a name="new-containernetwork-the-object-already-exists-error"></a>New-containernetwork:オブジェクトは既にエラー
 
 新しい基本イメージをセットアップするときは、このエラーが発生する可能性があります。 Desktop App Converter が先にインストールされた開発用コンピューターに Windows Insider フライトがある場合に、このエラーが発生することがあります。
 
 この問題を解決するには、管理者特権で開いたコマンド プロンプトで `Netsh int ipv4 reset` コマンドを実行して、コンピューターを再起動します。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリが"AnyCPU"ビルド オプションでコンパイルし、インストールに失敗します。
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>.NET アプリケーションは、"AnyCPU"ビルド オプションを使用してコンパイルされ、インストールに失敗します。
 
 この問題は、メインの実行可能ファイルまたは何らかの依存ファイルが、**Program Files** または **Windows\System32** のフォルダー階層に配置された場合に発生することがあります。
 
@@ -50,9 +50,9 @@ ms.locfileid: "9051035"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML にエラーが見つかり、 'Executable' 属性が無効 - 'MyApp.EXE' の値がデータ型に対して無効
 
-この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ただし、この拡張機能の大文字小文字の区別しないように、アプリケーションを実行するかどうかに影響を与える、原因にこのエラーを生成するように DAC になります。
+この問題は、アプリケーションに含まれる実行可能ファイルの **.EXE** 拡張子が大文字になっている場合に発生することがあります。 ただし、この拡張機能の大文字小文字の区別は、アプリケーションを実行しているかどうかに影響しません、このエラーを生成する DAC ができます。
 
-この問題を解決するには、パッケージ化を行うときに **-AppExecutable** フラグを指定し、メインの実行可能ファイルの拡張子として小文字の ".exe" を使用してみてください (例: MYAPP.exe)。    代わりに大文字小文字から、アプリケーションのすべての実行可能ファイルの大文字と小文字を変更できます (例: からです。EXE を .exe) します。
+この問題を解決するを指定してください、 **- AppExecutable**フラグをパッケージ化、小文字、メインの実行可能ファイルの拡張子として".exe"を使用すると (例。MYAPP.exe)。    大文字を小文字から、アプリケーションで実行可能ファイルのすべての大文字と小文字を変更する代わりに (例: から。Exe を使用して .exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>Authenticode 署名が破損しているか、形式が正しくない
 
@@ -83,7 +83,7 @@ Microsoft ではこの問題を把握しており、より長期的な解決策�
 
 ## <a name="blue-screen-with-error-code-0x139-kernelsecuritycheckfailure"></a>エラー コード 0x139 のブルー スクリーン (KERNEL_SECURITY_CHECK_FAILURE)
 
-Microsoft Store のアプリをインストールまたは起動した後、予期せず **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)** というエラーでコンピューターの再起動が発生することがあります。
+インストールや、Microsoft Store からの特定のアプリの起動後、コンピューターは、エラーで突然再起動します。**0x139 (カーネル\_セキュリティ\_確認\_障害)** します。
 
 影響を受けることがわかっているアプリには、Kodi、JT2Go、Ear Trumpet、Teslagrad などがあります。
 
@@ -91,7 +91,7 @@ Microsoft Store のアプリをインストールまたは起動した後、予�
 
 更新しても問題が解決しない場合や、PC を回復する方法がわからない場合は、[Microsoft サポート](https://support.microsoft.com/contactus/)にお問い合わせください。
 
-開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 注意アプリをこれにより、更新プログラムをインストールしていないユーザーに利用できなくなります。 この更新プログラムをインストールしているユーザーに、アプリケーションの可用性を制限するため、AppxManifest.xml ファイルに次のように変更します。
+開発者様には、この更新プログラムが含まれていないバージョンの Windows にパッケージ化されたアプリケーションをインストールしないことをお勧めします。 これを行うと、アプリケーションでは、更新プログラムをインストールしていないユーザーには使用できませんに注意してください。 この更新プログラムがインストールされているユーザーにアプリケーションの可用性を制限するには、よう、AppxManifest.xml ファイルに変更します。
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -101,11 +101,11 @@ Windows 更新プログラムについて詳しくは、以下をご覧くださ
 
 ## <a name="common-errors-that-can-appear-when-you-sign-your-app"></a>アプリへのサインインの際に表示される可能性のある一般的なエラー
 
-### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>発行元と証明書の不一致により、Signtool で「エラー: SignerSign() が失敗しました」(-2147024885/0x8007000b) というエラーが発生する
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>発行者と証明書の不一致により Signtool エラー"エラー。SignerSign() に失敗しました"(-2147024885/0x8007000b)
 
 Windows アプリ パッケージ マニフェストの発行元エントリは、署名に使用する証明書のサブジェクトと一致する必要があります。  次の方法のいずれかを使用して、証明書のサブジェクトを表示できます。
 
-**オプション1: Powershell**
+**オプション 1:Powershell**
 
 次の PowerShell コマンドを実行します。 同じ発行元情報を持つ .cer または .pfx のいずれかを証明書ファイルとして使用できます。
 
@@ -113,13 +113,13 @@ Windows アプリ パッケージ マニフェストの発行元エントリは�
 (Get-PfxCertificate <cert_file>).Subject
 ```
 
-**オプション2: エクスプローラー**
+**オプション 2:ファイル エクスプ ローラー**
 
 エクスプローラーで証明書をダブルクリックし、*[詳細]* タブを選び、一覧の *[サブジェクト]* フィールドを選びます。 内容をコピーすることができます。
 
-**オプション3: CertUtil**
+**オプション 3:CertUtil**
 
-**Certutil**をコマンドラインから PFX ファイルを実行し、出力から*の件名*をコピーします。
+実行**certutil** PFX ファイルとコピーをコマンドラインから、*サブジェクト*フィールドを出力します。
 
 ```cmd
 certutil -dump <cert_file.pfx>
@@ -127,31 +127,31 @@ certutil -dump <cert_file.pfx>
 
 <a id="bad-pe-cert" />
 
-### <a name="bad-pe-certificate-0x800700c1"></a>PE 証明書が正しくありません (番号: 0x800700C1)
+### <a name="bad-pe-certificate-0x800700c1"></a>無効な PE 証明書 (番号: 0x800700C1)
 
-これは、パッケージには、破損している証明書を持つバイナリが含まれている場合に発生します。 これは、発生理由理由の一部を次に示します。
+これは、パッケージには、破損した証明書を持つバイナリが含まれている場合に発生します。 これがなぜ発生できる理由の一部を次に示します。
 
-* 証明書のスタート画面は画像の終了時にありません。  
+* 証明書の開始は、イメージの末尾ではありません。  
 
 * 証明書のサイズは正の値はありません。
 
-* 証明書のスタート画面のない後、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造体、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造。
+* 証明書の開始がした後はありません、`IMAGE_NT_HEADERS32`または後に 32 ビット実行可能ファイルの構造、 `IMAGE_NT_HEADERS64` 64 ビット実行可能ファイルの構造体。
 
-* 証明書のポインターがない、正しく WIN_CERTIFICATE 構造体に配置されます。
+* 証明書のポインターがない WIN_CERTIFICATE 構造正しく調整します。
 
-無効な PE 証明書を含むファイルを検索する**コマンド プロンプト**を開き、という名前の環境変数を設定`APPXSIP_LOG`1 の値にします。
+無効な PE 証明書が含まれているファイルを検索するには、開く、**コマンド プロンプト**、という名前の環境変数を設定および`APPXSIP_LOG`値の 1 にします。
 
 ```
 set APPXSIP_LOG=1
 ```
 
-次に、**コマンド プロンプト**で、もう一度アプリケーションに署名します。 例:
+その後から、**コマンド プロンプト**、再度アプリケーションへの署名します。 次に、例を示します。
 
 ```
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-無効な PE 証明書を含むファイルの情報は、**コンソール ウィンドウ**に表示されます。 例:
+無効な PE 証明書が含まれているファイルに関する情報が表示されます、**コンソール ウィンドウ**します。 次に、例を示します。
 
 ```
 ...
@@ -162,10 +162,10 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 ```
 ## <a name="next-steps"></a>次のステップ
 
-**質問に対する回答を見つける**
+**質問の回答を検索**
 
 ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
-**フィードバックの提供または機能の提案を行う**
+**ご意見や機能を提案します。**
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。

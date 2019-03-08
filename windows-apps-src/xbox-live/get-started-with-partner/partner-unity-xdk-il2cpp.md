@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: cfd722ca0d0b080f6395680cd62000cea9b402fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921651"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608467"
 ---
 # <a name="add-xbox-live-support-to-unity-for-xdk-with-il2cpp-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、IL2CPP スクリプト バックエンドを使用して、Xbox Live サポートを XDK 用 Unity に追加する
 
@@ -31,23 +31,23 @@ Unity 5.6 以上をインストールし、Xbox One エディター拡張機能�
 
 **2) WinMDs を使用するときに IntelliSense をサポートするために、Visual Studio Tools for Unity バージョン 3.1 以上をインストールします。** Visual Studio 2015 の場合、このツールは https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity で入手できます。  Visual Studio 2017 の場合、Visual Studio 2017 インストーラー内でこのコンポーネントを追加することができます。
 
-**3) 新規または既存の Unity プロジェクトを開きます。**
+**3) 新しいまたは既存の Unity プロジェクトを開く**
 
-**4) Unity の [Build Settings] メニューで、プラットフォームを Xbox One に切り替えます。**
+**4) スイッチを Xbox One に Unity ビルド設定 メニューのプラットフォーム**
 
-**5) Unity のプレイヤーの設定で IL2CPP スクリプト バックエンドを有効にして、API の互換性を .NET 4.6 に設定します。**
+**5) il2cpp バック エンドのスクリプト バックエンド Unity player の設定を有効にし、.NET 4.6 に API の互換性を設定**
 
 ![](../images/unity/unity-il2cpp-1.png)
 
-**6) スクリプト コンパイラを Roslyn に切り替えます。**
+**6) スクリプト コンパイラを Roslyn に切り替える**
 
-**7) Xbox One の該当するシステム ライブラリがすべて自動的にプロジェクトに追加されます。プラットフォーム バイナリを取り込むための追加の手順は必要ありません。**
+**7)、Xbox One の適切なシステム ライブラリはすべて自動的にプロジェクトに追加する、およびプラットフォームのバイナリを含める追加の手順は必要ありません。**
 
-**8) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。**
+**8) を追加し、新しい C をアタッチ\#Unity オブジェクトへのスクリプト。**
 
-たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。 ゲーム オブジェクトの種類は問いません。
+たとえば、「メイン カメラ」などの Unity オブジェクトをクリックして、"コンポーネントの追加 をクリックします。 \| "新しいスクリプト" \| C\#スクリプト\|"XboxLiveScript"名前を付けます。 ゲーム オブジェクトの種類は問いません。
 
-**9) Visual Studio (VSTU 3.1+ がインストールされていること) でスクリプトを開きます。**
+**9) (VSTU) 3.1 + がインストールされた Visual Studio でスクリプトを開きます。**
 
 2 つのプロジェクトを確認し、VSTU によって生成された "Player" プロジェクト内のゲーム スクリプト XboxLiveTest.cs を開きます。
 
@@ -56,7 +56,7 @@ Unity 5.6 以上をインストールし、Xbox One エディター拡張機能�
 このプロジェクトは XDK 用に生成された特別なプロジェクトであり、アセットに配置した winmd ファイルへの参照が含まれています。
 また、"#if ENABLE_WINMD_SUPPORT" 定義が自動的に設定されるため、IntelliSense と構文の強調表示が適切に機能します。
 
-**10) 次の Xbox Live コードを XboxLiveTest.cs ソース ファイルに追加します。**
+**10) XboxLiveTest.cs ソース ファイルに次の Xbox Live のコードを追加します。**
 
 ```csharp
 
@@ -94,8 +94,8 @@ public class XboxLiveTest : MonoBehaviour
 
 ```
 
-**11) プレイヤーの設定内にある公開の設定で、"InternetClient" 機能が選択されていることを確認します。**
+**Player の設定については、発行の設定で選択されている 'InternetClient' 機能がある 11) ことを確認します**
 
 ![](../images/unity/unity-il2cpp-3.png)
 
-**12) Unity でプロジェクトをビルドします。**
+**12) で Unity プロジェクトをビルドします。**

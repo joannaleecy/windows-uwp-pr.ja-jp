@@ -4,14 +4,14 @@ description: 別のアプリからアプリを起動し、2 つのアプリの�
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f627cf2a897de32aea0e35faf66f5ea70695efd5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930763"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57631077"
 ---
 # <a name="launch-an-app-for-results"></a>結果を取得するためのアプリの起動
 
@@ -25,11 +25,11 @@ ms.locfileid: "8930763"
 
 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"*結果を取得するためのアプリの起動*" と呼ばれます。 この例では、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) を使って、結果を取得するためのアプリの起動方法を示しています。
 
-新しいアプリの通信では、windows 10 Api を使うと Windows アプリ (および Windows Web アプリ) をアプリと exchange のデータとファイルを起動できます。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
+新しいアプリへの通信では、Windows 10 Api を使うと Windows アプリ (および Windows Web アプリ) をアプリと exchange のデータ ファイルとファイルを起動できます。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
 
 結果を得るために起動するアプリは、起動されたアプリと呼ばれます。 アプリを起動するアプリは、呼び出し元アプリと呼ばれます。 この例では、呼び出し元アプリと、起動されたアプリの両方を記述します。
 
-## <a name="step-1-register-the-protocol-to-be-handled-in-the-app-that-youll-launch-for-results"></a>手順 1: 結果を取得するために起動するアプリで処理されるプロトコルを登録する
+## <a name="step-1-register-the-protocol-to-be-handled-in-the-app-that-youll-launch-for-results"></a>手順 1:結果を起動するアプリで処理するためのプロトコルを登録します。
 
 
 起動アプリの Package.appxmanifest ファイルで、プロトコル拡張機能を **&lt;Application&gt;** セクションに追加します。 この例では、**test-app2app** という名前の架空プロトコルを使います。
@@ -58,7 +58,7 @@ ms.locfileid: "8930763"
 </Applications>
 ```
 
-## <a name="step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results"></a>手順 2: 結果を取得するために起動するアプリで Application.OnActivated をオーバーライドする
+## <a name="step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results"></a>手順 2:結果の起動をアプリでの Application.OnActivated をオーバーライドします。
 
 
 このメソッドが起動アプリにまだ存在しない場合は、App.xaml.cs で定義されている `App` クラス内に作成します。
@@ -90,16 +90,16 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 Package.appxmanifest ファイル内のプロトコル拡張機能では **ReturnResults** が **always** と指定されているため、上記のコードでは `args` を [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905) に直接キャストすることができます。このとき、**ProtocolForResultsActivatedEventArgs** のみが、このアプリの **OnActivated** に送信されます。 結果を取得するための起動以外の方法でアプリがアクティブ化される可能性がある場合は、結果を取得するためにアプリが起動されたかどうかを判別するために [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返すかどうかを確認してください。
 
-## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>手順 3: 結果を取得するために起動するアプリに ProtocolForResultsOperation フィールドを追加する
+## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>手順 3:結果を起動するアプリに ProtocolForResultsOperation フィールドを追加します。
 
 
 ```cs
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-[**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) フィールドを使うと、起動されたアプリが呼び出し元のアプリに結果を返すことができるようになった場合に、そのタイミングを通知することができます。 この例では、このフィールドは **LaunchedForResultsPage** クラスに追加されます。これは、結果を取得するための起動処理をそのページから実行し、そのページにアクセスする必要があるためです。
+[  **ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) フィールドを使うと、起動されたアプリが呼び出し元のアプリに結果を返すことができるようになった場合に、そのタイミングを通知することができます。 この例では、このフィールドは **LaunchedForResultsPage** クラスに追加されます。これは、結果を取得するための起動処理をそのページから実行し、そのページにアクセスする必要があるためです。
 
-## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>手順 4: 結果を取得するために起動するアプリで OnNavigatedTo() をオーバーライドする
+## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>手順 4:結果を起動するアプリで OnNavigatedTo() をオーバーライドします。
 
 
 結果を取得するためにアプリを起動するときに表示するページで、[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッドをオーバーライドします。 このメソッドがまだ存在しない場合は、&lt;ページ名&gt;.xaml.cs で定義されているページのクラス内に作成します。 ファイルの先頭に、次の **using** ステートメントが含まれていることを確認します。
@@ -108,7 +108,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッド内の [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) オブジェクトには、呼び出し元アプリから渡されたデータが含まれます。 データは最大で 100 KB になります。また、データは [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトに格納されます。
+[  **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッド内の [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) オブジェクトには、呼び出し元アプリから渡されたデータが含まれます。 データは最大で 100 KB になります。また、データは [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトに格納されます。
 
 次のコード例では、起動されたアプリは、呼び出し元のアプリから送信されたデータが **TestData** というキーで [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) に格納されていることを想定しています。これは、サンプルの呼び出し元アプリで、データを送信するためにそのようにコード化されているためです。
 
@@ -130,7 +130,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>手順 5: 呼び出し元のアプリにデータを返すコードを記述する
+## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>手順 5:呼び出し元のアプリにデータを返すコードを記述します。
 
 
 起動アプリで、[**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) を使って呼び出し元のアプリにデータを返します。 次のコード例では、呼び出し元のアプリに返す値を格納する [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトが作成されます。 その後で、**ProtocolForResultsOperation** フィールドを使って、呼び出し元のアプリに値を送信します。
@@ -141,7 +141,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
     _operation.ReportCompleted(result);
 ```
 
-## <a name="step-6-write-code-to-launch-the-app-for-results-and-get-the-returned-data"></a>手順 6: 結果を取得するためにアプリを起動し、返されたデータを取得するコードを記述する
+## <a name="step-6-write-code-to-launch-the-app-for-results-and-get-the-returned-data"></a>手順 6:結果のアプリを起動し、返されるデータを取得するコードを記述します。
 
 
 次のコード例に示すように、呼び出し元のアプリの非同期メソッド内で、アプリを起動します。 **using** ステートメントは、コードをコンパイルするために必要となります。
@@ -177,7 +177,7 @@ async Task<string> LaunchAppForResults()
 
 結果を取得するために起動するアプリは、呼び出し元アプリを実行する前にビルドし、展開する必要があります。 このように操作しないと、[**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) は **LaunchUriStatus.AppUnavailable** を報告します。
 
-[**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511) を設定するときは、起動アプリのファミリ名が必要です。 ファミリ名を取得する方法の 1 つは、起動アプリ内から、次の呼び出しを行うことです。
+[  **TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511) を設定するときは、起動アプリのファミリ名が必要です。 ファミリ名を取得する方法の 1 つは、起動アプリ内から、次の呼び出しを行うことです。
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;

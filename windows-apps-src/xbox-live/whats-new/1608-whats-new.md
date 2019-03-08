@@ -4,14 +4,14 @@ description: Xbox Live SDK の新規事項 - August 2016
 ms.assetid: fa52e7bd-2c2c-4c25-94ab-761036a7ca79
 ms.date: 04/04/2017
 ms.topic: article
-keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one
+keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a498fea1ed0974935a273c9ee72ba2c95d15959
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926076"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627907"
 ---
 # <a name="whats-new-for-the-xbox-live-sdk---august-2016"></a>Xbox Live SDK の新規事項 - August 2016
 
@@ -49,7 +49,7 @@ AchievementsLeaderboard の Unity バージョンが Samples/AchievementsLeaderb
 
 新しい API を使用すると、タグ、文字列、その他の多くのデータでフィルター処理を行うことができ、ユーザーはプレイしたいセッションをより簡単に検索できます。
 
-数か月以内に詳細なドキュメントが公開されますが、簡単に説明しておくと、```set_search_handle``` を使用して "検索ハンドル" を MPSD セッションと関連付けることができるようになり、タイトルで呼び出すことでユーザーは堅牢なフィルタリング メカニズムを使用してセッションを検索できます。 ```get_search_handles```
+今後数か月より包括的なドキュメントを投稿しましたが、簡単に関連付けることができますようになりました「検索ハンドル」MPSD セッションを使用して、```set_search_handle```し、ユーザーは、タイトルを呼び出すことによって、堅牢なフィルター処理メカニズムを使用してセッションを検索できます ```get_search_handles```
 
 新しい API は次のとおりです。  試してみて、問題がある場合は、[フォーラム](https://forums.xboxlive.com)でサポート スレッドを投稿するか、DAM に連絡してください。  これらの API の使用例を近日中に公開します。
 
@@ -79,7 +79,7 @@ Xbox Integrated Multiplayer (XIM) API のドキュメントが追加されまし
 
 XIM は、Xbox Live サービスの機能を使用してマルチプレイヤー リアルタイム ネットワークおよびチャット コミュニケーションをゲームに簡単に追加できる自己完結型のインターフェイスです。
 
-ユーザーのフィードバックと問い合わせを促進するため、この API のプレビュー ドキュメントが提供されています。 Xfest 2016 では、前の手順では、この API を話しし、アーカイブ[対象パートナー開発者向けのサイトのプレゼンテーション資料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)から、「有効にするキー Multiplayer Networking and Chat」の説明を確認できます。 このプレビュー ドキュメントは C++ API 用だけであることに注意してください。 C# と同等の WinRT および他の言語については今年後半にリリースされます。
+ユーザーのフィードバックと問い合わせを促進するため、この API のプレビュー ドキュメントが提供されています。 Xfest 2016 では、以前にこの API について話しましたし、アーカイブされた表示[、管理対象のパートナー開発者サイトでのプレゼンテーション資料](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2016.aspx)「ターンキー マルチ プレーヤー ネットワークとチャット」の話から。 このプレビュー ドキュメントは C++ API 用だけであることに注意してください。 C# と同等の WinRT および他の言語については今年後半にリリースされます。
 
 XIM の機能に関心がある場合、およびこのプロジェクトについてフィードバックまたは質問がある場合は、[Xbox デベロッパー フォーラム](https://forums.xboxlive.com/)に投稿するか、デベロッパー アカウント マネージャーにお問い合わせください。
 

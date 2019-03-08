@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity, マルチユーザー
 ms.localizationpriority: medium
 ms.openlocfilehash: 483a0e966be756de483bf7e2ab8458647397687b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933431"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613737"
 ---
 # <a name="add-multi-user-support-to-your-unity-game"></a>マルチユーザー サポートを Unity ゲームに追加する
 > [!IMPORTANT]
@@ -46,7 +46,7 @@ ms.locfileid: "8933431"
 このチュートリアルでは、プレイヤー 1 に割り当てられている **UserProfile** で `joystick 1 button 0` を使用し、プレイヤー 2 に割り当てられている 2 番目の **UserProfile** ゲーム オブジェクトでは `joystick 2 button 0` を使用します。 これにより、2 つのコントローラーの `A` ボタンが、**UserProfile** を操作するために割り当てられます。
 
 > [!Note]
-> Xbox Live Unity プラグインでの Xbox コントローラー サポートについて詳しくは、「[コントローラー サポートを Xbox Live プレハブに追加する](add-controller-support-to-xbox-live-prefabs.md)」をご覧ください。
+> Xbox Live の Unity プラグインで Xbox コント ローラーのサポートの詳細については確認してください。[Xbox Live のプレハブをコント ローラーのサポートを追加します。](add-controller-support-to-xbox-live-prefabs.md)
 
 5. エディターでシーンを実行し、各ボタンを押してその実行状況を調べ、すべてが正しく構成されていること確認してください。
 

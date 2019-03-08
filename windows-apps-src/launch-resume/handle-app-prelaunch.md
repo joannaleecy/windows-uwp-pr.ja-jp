@@ -4,24 +4,24 @@ description: OnLaunched メソッドをオーバーライドし、CoreApplicatio
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.date: 07/05/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925806"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658707"
 ---
 # <a name="handle-app-prelaunch"></a>アプリの事前起動の処理
 
-[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
+[  **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
-利用可能なシステム リソースには、事前にバック グラウンドでのユーザーの最も頻繁に使うアプリを起動してデスクトップ デバイス ファミリのデバイス上の UWP アプリの起動時のパフォーマンスが向上します。 事前起動されたアプリは起動直後に中断状態になります。 その後、ユーザーがアプリを呼び出すと、アプリは中断状態から実行状態に移って再開されます。これは、アプリのコールド スタートよりも高速です。 ユーザーのエクスペリエンスとしては、アプリが非常に短時間で起動するように感じられます。
+使用可能なシステム リソースができるように、事前に、バック グラウンドでのユーザーの最もよく使用されるアプリを起動することでデスクトップ デバイス ファミリのデバイスでの UWP アプリの起動時のパフォーマンスが向上しました。 事前起動されたアプリは起動直後に中断状態になります。 その後、ユーザーがアプリを呼び出すと、アプリは中断状態から実行状態に移って再開されます。これは、アプリのコールド スタートよりも高速です。 ユーザーのエクスペリエンスとしては、アプリが非常に短時間で起動するように感じられます。
 
-Windows 10 より前では、アプリは自動的には事前起動を利用しませんでした。 Windows 10 バージョン 1511 では、すべてのユニバーサル Windows プラットフォーム (UWP) アプリが事前起動の候補をでした。 Windows 10 バージョン 1607 では、[CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) を呼び出すことで、事前起動の動作にオプトインする必要があります。 この呼び出しを配置する最適な場所は、`OnLaunched()` 内の `if (e.PrelaunchActivated == false)` チェックが実行される位置の近くです。
+Windows 10 より前では、アプリは自動的には事前起動を利用しませんでした。 Windows 10 バージョン 1511 では、すべてのユニバーサル Windows プラットフォーム (UWP) アプリは、prelaunched 中の候補をでした。 Windows 10 バージョン 1607 では、[CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx) を呼び出すことで、事前起動の動作にオプトインする必要があります。 この呼び出しを配置する最適な場所は、`OnLaunched()` 内の `if (e.PrelaunchActivated == false)` チェックが実行される位置の近くです。
 
 アプリが事前起動されるかどうかは、システム リソースに応じて決まります。 システムのリソースに負荷が掛かっている場合、アプリは事前起動されません。
 
@@ -35,7 +35,7 @@ XAML プロジェクト (C#、VB、C++) と WinJS の既定のテンプレート
 
 ## <a name="detect-and-handle-prelaunch"></a>事前起動の検出と処理
 
-アプリはアクティブ化中に [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを受け取ります。 このフラグを使用する必要がありますのみを実行しているユーザーが明示的に、アプリを起動したとき[**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)変更が次に示すようにコードを実行します。
+アプリはアクティブ化中に [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを受け取ります。 このフラグを使用してのみに実行するユーザーが明示的にアプリケーションを起動する次の変更で示すようにコードを実行する[ **Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)します。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -110,9 +110,9 @@ private void TryEnablePrelaunch()
 }
 ```
 
-注:、`TryEnablePrelaunch()`関数で、上記のします。 理由の呼び出しを`CoreApplication.EnablePrelaunch()`に関しては、この関数には、メソッドが呼び出されたとき (だけでコンパイル) JIT はしようとするとメソッド全体をコンパイルするためです。 アプリがサポートされていない Windows 10 のバージョンで実行されているかどうかは`CoreApplication.EnablePrelaunch()`、JIT は失敗します。 アプリをプラットフォームをサポートしているときにのみ呼び出されるメソッドの呼び出しを考慮することによって`CoreApplication.EnablePrelaunch()`、問題を回避します。
+注、`TryEnablePrelaunch()`関数は、上記の。 理由の呼び出しに`CoreApplication.EnablePrelaunch()`は、JIT (ジャスト イン タイム コンパイル) はメソッド全体をコンパイルしようとして、メソッドが呼び出されると、ため、この関数にします。 アプリがサポートされていない Windows 10 のバージョンで実行されているかどうか`CoreApplication.EnablePrelaunch()`JIT は失敗します。 アプリ プラットフォームをサポートするいると判断した場合にのみ呼び出されるメソッドへの呼び出しを考慮することによって`CoreApplication.EnablePrelaunch()`、この問題を回避します。
 
-アプリがオプトアウト事前起動の Windows 10 バージョン 1511 で実行されているときする必要があるかどうかはコメント解除できる上記の例でもコードがあります。 バージョン 1511 では、すべての UWP アプリはオプトインが自動的に事前起動されるできない可能性があるアプリの適切なします。
+コメントを解除できますをオプトアウト事前起動の Windows 10 バージョン 1511 を実行しているときにアプリで必要なかどうかは上記の例でもコードがあります。 バージョン 1511 では、すべての UWP アプリは選択が自動的に、事前起動する可能性がありますが適切でないアプリ。
 
 ## <a name="use-the-visibilitychanged-event"></a>VisibilityChanged イベントの使用
 
@@ -203,7 +203,7 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     -   パフォーマンスの配慮の一例は、アプリの事前起動時に最新の気象情報を読み込む場合です。ユーザーがアプリに切り替えるまでその読み込みを遅らせて、アプリが表示されたら最新の情報を読み込む必要があります。
 -   アプリが起動時にライブ タイルをクリアする場合、表示の変更イベントが発生するまでこの操作の実行を遅らせてください。
 -   アプリの利用統計情報をタイルの通常のアクティブ化と事前起動時のアクティブ化で区別して、問題が発生する場合のシナリオを容易に絞り込めるようにしてください。
--   Microsoft Visual の Studio2015 Update 1 と windows 10、バージョン 1511 では、ある場合をシミュレートできます事前起動の Visual Studio2015 でアプリの**デバッグ**を選択して&gt;**その他のデバッグ ターゲット** &gt; **Windows ユニバーサル アプリのデバッグ事前起動**します。
+-   Microsoft Visual Studio 2015 Update 1、および Windows 10、バージョン 1511 がある場合をシミュレートできます事前起動用 Visual Studio 2015 でアプリを選択して**デバッグ** &gt; **その他のデバッグ ターゲット**&gt; **Windows ユニバーサル アプリ事前起動をデバッグ**します。
 
 ## <a name="related-topics"></a>関連トピック
 

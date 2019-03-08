@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 65da52284d49d4d9384685d073f13bd93b10a30b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927781"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658317"
 ---
 # <a name="delete-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionnameserversserver-name"></a>DELETE (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName}/servers/{server-name})
-指定されたサーバーは、セッションから削除します。
+セッションから、指定したサーバーを削除します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドでは、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [URI パラメーター](#ID4ET)
-  * [HTTP ステータス コード](#ID4E5)
+  * [HTTP 状態コード](#ID4E5)
   * [要求本文](#ID4EFB)
   * [応答本文](#ID4EOB)
 
@@ -30,27 +30,27 @@ ms.locfileid: "8927781"
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
-| セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
+| scid| GUID| サービス構成の識別子 (SCID) です。 パート 1 のセッション識別子。|
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2 のセッション識別子。|
+| セッション名| GUID| セッションの一意の ID。 パート 3 のセッション識別子。|
 
 <a id="ID4E5"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4EFB"></a>
 
 
 ## <a name="request-body"></a>要求本文
-[MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)の要求の構造を参照してください。  
+要求の構造を参照してください。 [MultiplayerSessionRequest (JSON)](../../json/json-multiplayersessionrequest.md)します。  
 <a id="ID4EOB"></a>
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
+応答の構造で表示[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)します。  
 <a id="ID4E1B"></a>
 
 

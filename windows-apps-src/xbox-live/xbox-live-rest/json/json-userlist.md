@@ -8,29 +8,29 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 46e5323f4eae8e91b61295c4112b5bacfc8a1759
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922295"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598497"
 ---
 # <a name="userlist-json"></a>UserList (JSON)
-[ユーザー](json-user.md)オブジェクトのコレクションです。 
+コレクション[ユーザー](json-user.md)オブジェクト。 
 <a id="ID4ER"></a>
 
  
-## <a name="userlist"></a>UserList
+## <a name="userlist"></a>userList
  
-UserList オブジェクトには、次仕様があります。
+UserList オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| ユーザー| [ユーザー (JSON)](json-user.md)の配列| 次の JSON 例を参照してください。| 
+| ユーザー| 配列の[ユーザー (JSON)](json-user.md)| 次の JSON の例を参照してください。| 
   
 <a id="ID4EPB"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -55,6 +55,6 @@ UserList オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

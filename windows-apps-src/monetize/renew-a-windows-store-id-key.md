@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store コレクション API, Microsoft Store 購入 API, Microsoft Store ID キー, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116038"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620487"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>Microsoft Store ID キーの更新
 
 
-Microsoft Store のキーを更新するには、以下のメソッドを使います。 [Microsoft Store ID キーを生成](view-and-grant-products-from-a-service.md#step-4)する場合、キーは 90 日間有効です。 キーの有効期限が切れたら、有効期限切れのキーとこのメソッドを使って、新しいキーを再ネゴシエートできます。
+Microsoft Store のキーを更新するには、以下のメソッドを使います。 [Microsoft Store ID キーを生成](view-and-grant-products-from-a-service.md#step-4)する場合、キーは 90 日間有効です。 キーの有効期限が切れた後で、有効期限が切れたキーとこのメソッドを使用して新しいキーを再ネゴシエートできます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -40,7 +40,7 @@ Microsoft Store のキーを更新するには、以下のメソッドを使い�
 
 ### <a name="request-header"></a>要求ヘッダー
 
-| ヘッダー         | タイプ   | 説明                                                                                           |
+| Header         | 種類   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | Host           | string | **collections.mp.microsoft.com** または **purchase.mp.microsoft.com** の値に設定する必要があります。           |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
@@ -49,10 +49,10 @@ Microsoft Store のキーを更新するには、以下のメソッドを使い�
 
 ### <a name="request-body"></a>要求本文
 
-| パラメーター     | 型   | 説明                       | 必須かどうか |
+| パラメーター     | 種類   | 説明                       | 必須 |
 |---------------|--------|-----------------------------------|----------|
-| serviceTicket | string | Azure AD アクセス トークン。        | 必須      |
-| key           | string | 有効期限が切れた Microsoft Store ID キー。 | はい       |
+| serviceTicket | string | Azure AD アクセス トークン。        | 〇      |
+| key           | string | 有効期限が切れた Microsoft Store ID キー。 | 〇       |
 
 
 ### <a name="request-example"></a>要求の例
@@ -74,7 +74,7 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>応答本文
 
-| パラメーター | 型   | 説明                                                                                                            |
+| パラメーター | 種類   | 説明                                                                                                            |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|
 | key       | string | 以降の Microsoft Store コレクション API または Microsoft Store 購入 API の呼び出しで使用できる、更新された Microsoft Store のキー。 |
 
@@ -108,7 +108,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="related-topics"></a>関連トピック
 
 
-* [サービスから製品の権利を管理する](view-and-grant-products-from-a-service.md)
-* [製品の照会](query-for-products.md)
-* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
-* [無料の製品の付与](grant-free-products.md)
+* [サービスからの製品の利用資格を管理します。](view-and-grant-products-from-a-service.md)
+* [製品のクエリ](query-for-products.md)
+* [Fulfilled コンシューマブル製品をレポートします。](report-consumable-products-as-fulfilled.md)
+* [無料の製品を付与します。](grant-free-products.md)

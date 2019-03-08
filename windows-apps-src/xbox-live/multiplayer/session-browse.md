@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 579c71ef9266fb9a1ee4ef0538d1beffec0bb4ea
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046287"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660677"
 ---
 # <a name="multiplayer-session-browse"></a>マルチプレイヤー セッション参照
 
@@ -27,7 +27,7 @@ ms.locfileid: "9046287"
 
 セッション参照とマッチメイキングの両方のシナリオをゲームに組み込むのが一般的です。 通常、マッチメイキングは一般的にプレイされるゲーム モードに使用され、セッション参照はカスタム ゲームに使用されます。
 
-**例:** John はヒーロー バトル アリーナ スタイルのマルチプレイヤー ゲームに関心がありますが、すべてのプレイヤーがヒーローをランダムに選択するゲームをプレイしたいと思っています。 彼は、オープン ゲーム セッションのリストを取得し、"ランダム ヒーロー" が説明に含まれるゲームを探すか、ゲーム UI で可能であれば、"ランダム ヒーロー" ゲーム モードを選択して、"RandomHero" ゲームを示すタグ付きのセッションだけを取得することができます。
+**例:** John 競技場スタイルのマルチ プレーヤー ゲーム、ヒーローの戦いの再生に関心がありますヒーローの選択の全プレイヤーにランダムにゲームをプレイする必要しますが、あります。 彼は、オープン ゲーム セッションのリストを取得し、"ランダム ヒーロー" が説明に含まれるゲームを探すか、ゲーム UI で可能であれば、"ランダム ヒーロー" ゲーム モードを選択して、"RandomHero" ゲームを示すタグ付きのセッションだけを取得することができます。
 
 気に入ったゲームが見つかれば、ゲームに参加します。 十分なメンバーがセッションに参加すると、ゲーム セッションのホストはゲームを開始できます。
 
@@ -54,7 +54,7 @@ ms.locfileid: "9046287"
 セッションに空きがない場合、またはそれ以外の理由で参加できない場合は、タイトルは MPSD からの検索ハンドルを削除して、セッション参照クエリにセッションが表示されないようにできます。
 
 >[!NOTE]
-> 検索ハンドルは、ユーザーに表示するセッションの一覧を表示するために使用します。 バック グラウンドのマッチメイ キングの検索ハンドルを使用して有効ではないと、 [SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)を使用する代わりに検討
+> 検索ハンドルは、ユーザーに表示するセッションの一覧を表示するために使用します。 バック グラウンドのマッチメイ キングが無効ですが、検索のハンドルを使用して、代わりに使用を検討して[SmartMatch](multiplayer-manager/play-multiplayer-with-matchmaking.md)
 
 ## <a name="set-up-a-session-for-session-browse"></a>セッション参照用にセッションを設定する
 
@@ -102,18 +102,18 @@ Xbox Live API を使用してセッションの検索ハンドルを作成する
 
 検索属性は、次のコンポーネントで構成されます。
 
-`tags` - タグは、ユーザーがゲーム セッションの分類に使用できる、ハッシュタグのような文字列記述子です。 タグは、文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。
-タグの例: "ProRankOnly"、"norocketlaunchers"、"cityMaps"。
+`tags` -タグとは、ユーザー、ハッシュタグのようなゲームのセッションの分類に使用できる文字列記述子です。 タグは、文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。
+タグの例:"ProRankOnly"、"norocketlaunchers"、"cityMaps"。
 
-`strings` - 文字列は、テキスト変数であり、文字列名は文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。
+`strings` -文字列テキスト変数であり、文字列の名前、先頭が英字で、スペースを含めることはできません、100 文字未満にする必要があります。
 
-文字列メタデータの例: "Weapons"="knives+pistols+rifles"、"MapName"="UrbanCityAssault"、"description"="Fun casual game, new people welcome"。
+文字列のメタデータの例:「武器「=」ナイフ + 拳銃, ピストル + ライフル銃」、"MapName"="UrbanCityAssault"、「カジュアル ゲームで楽しい説明「=」, 新しい人たちにようこそ」。
 
-`numbers` - 数値は、数値変数であり、数値名は文字で始まる必要があり、スペースを含むことはできず、100 文字未満にする必要があります。 Xbox Live API は、float 型として数値を取得します。
+`numbers` 数値は、数値変数と番号の名前、先頭が英字で、スペースを含めることはできません、100 文字未満にする必要があります。 Xbox Live API は、float 型として数値を取得します。
 
-数値メタデータの例: "MinLevel" = 25、"MaxRank" = 10。
+メタデータの数の使用例:"MinLevel"25"MaxRank"= = 10。
 
->**注意:** サービスではタグと文字列値の大文字小文字の区別が維持されますが、タグを照会するときは tolower() 関数を使用する必要があります。 つまり、タグと文字列の値は、現在、大文字が含まれる場合でも、すべて小文字として扱われます。
+>**注:** サービスでは、タグと値の文字列の文字の大文字と小文字は保持されますが、タグを照会すると、tolower() 関数を使用する必要があります。 つまり、タグと文字列の値は、現在、大文字が含まれる場合でも、すべて小文字として扱われます。
 
 Xbox Live API では、`multiplayer_search_handle_request` オブジェクトの `set_tags()` メソッド、`set_stringsmetadata()` メソッド、および `set_numbers_metadata()` メソッドを使用して検索属性を設定できます。
 
@@ -130,7 +130,7 @@ Xbox Live API では、これらの詳細と検索属性は、検索クエリの
 
 Xbox Live API では、`multiplayer_service::clear_search_handle()` メソッドを使用して検索ハンドルを削除できます。
 
-### <a name="example-create-a-search-handle-with-metadata"></a>例: メタデータで検索ハンドルを作成する
+### <a name="example-create-a-search-handle-with-metadata"></a>以下に例を示します。メタデータを含む検索のハンドルを作成します。
 
 次のコードでは、C++ Xbox Live マルチプレイヤー API を使用してセッションの検索ハンドルを作成する方法を示します。
 
@@ -166,8 +166,8 @@ auto result = xboxLiveContext->multiplayer_service().set_search_handle(searchHan
  ge | greater than or equal (次の値以上)
  lt | less than (次の値より小さい)
  le | less than or equal (次の値以下)
- and | 論理 AND
- or | 論理 OR (下の「注」を参照)
+ 、 | 論理積
+ または | 論理 OR (下の「注」を参照)
 
 また、ラムダ式と `tolower` 正規関数も使用できます。 現在、他の OData 関数はサポートされていません。
 
@@ -225,7 +225,7 @@ Multiplayer 2015 API では、`multiplayer_service.get_search_handles()` メソ�
 
  検索の更新が多すぎるとサービスのスロットリングにつながるため、タイトルではクエリの更新頻度を制限する必要があります。
 
- サービス呼び出しのボリュームを減らすためには、検索ハンドルには、保存および急速に変化するセッションの属性を照会するために使用するカスタム セッション プロパティが含まれます。 検索属性に、このような属性を格納されませんする必要があります。
+ サービス呼び出しの量を減らすためには、検索のハンドルに格納およびセッションの急速に変化する属性を照会するために使用できるカスタムのセッションのプロパティが含まれます。 このような属性を属性の検索で格納されませんする必要があります。
 
 ### <a name="example-query-for-search-handles"></a>例: 検索ハンドルの照会
 

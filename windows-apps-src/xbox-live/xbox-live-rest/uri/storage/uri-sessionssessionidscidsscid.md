@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ae3ade71d4b7847d671fe7f01cdc31b0014f766
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947633"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603667"
 ---
 # <a name="sessionssessionidscidsscid"></a>/sessions/{sessionId}/scids/{scid}
 このストレージの種類のクォータ情報を取得します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
@@ -24,17 +24,17 @@ ms.locfileid: "8947633"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| sessionId| string| 検索するセッションの ID。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
+| sessionId| string| 検索する、セッションの ID。| 
+| scid| guid| 検索するサービス構成の ID。| 
   
 <a id="ID4E3B"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-sessionssessionidscidsscid-get.md)
+[取得](uri-sessionssessionidscidsscid-get.md)
 
 &nbsp;&nbsp;このストレージの種類のクォータ情報を取得します。 
  
@@ -48,6 +48,6 @@ ms.locfileid: "8947633"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

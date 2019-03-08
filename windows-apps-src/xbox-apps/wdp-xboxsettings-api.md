@@ -3,15 +3,15 @@ title: Device Portal の Xbox 開発者向け設定 API のリファレンス
 description: Xbox 開発者向け設定にアクセスする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920891"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598647"
 ---
 # <a name="developer-settings-api-reference"></a>開発者向け設定 API のリファレンス   
 この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。
@@ -48,12 +48,12 @@ GET | /ext/settings
 * Category: (文字列) 設定のカテゴリ。
 * Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
-設定が、多くの場合。
-* Min - (数値) このフィールドは、設定の最小限の数値を示します。
-* Max - (数値) このフィールドは、設定の最大の数値を示します。
+設定が数値の場合。
+* Min (Number) このフィールドでは、設定の最小の数値を示します。
+* 最大の (数) このフィールドが設定の最大の数値を示します。
 
-設定を選択します。
-* OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
+場合は、設定を選択します。
+* OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
@@ -75,7 +75,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-GET | /ext/settings/\<設定名\>
+GET | /ext/settings/\<setting name\>
 <br />
 **URI パラメーター**
 
@@ -99,12 +99,12 @@ GET | /ext/settings/\<設定名\>
 * Category: (文字列) 設定のカテゴリ。
 * Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。
 
-設定が、多くの場合。
-* Min - (数値) このフィールドは、設定の最小限の数値を示します。
-* Max - (数値) このフィールドは、設定の最大の数値を示します。
+設定が数値の場合。
+* Min (Number) このフィールドでは、設定の最小の数値を示します。
+* 最大の (数) このフィールドが設定の最大の数値を示します。
 
-設定を選択します。
-* OptionsVariable - ("Yes"|"No") このフィールドを示すかどうか、オプションの設定、変数場合は、再起動しなくても有効なオプションを変更することができます。
+場合は、設定を選択します。
+* OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。
 * Options - 有効な選択オプションを文字列として含む JSON 配列。
 
 **状態コード**
@@ -126,7 +126,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-PUT | /ext/settings/\<設定名\>
+PUT | /ext/settings/\<setting name\>
 <br />
 **URI パラメーター**
 
@@ -155,6 +155,6 @@ HTTP 状態コード      | 説明
 5XX | エラー コード
 
 <br />
-**利用可能なデバイス ファミリ**
+**使用可能なデバイス ファミリ**
 
 * Windows Xbox

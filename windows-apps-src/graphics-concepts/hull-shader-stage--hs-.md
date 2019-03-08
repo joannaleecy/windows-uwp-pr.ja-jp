@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9137f7ef46da1b861976dbac680327febf315dac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946275"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601057"
 ---
 # <a name="hull-shader-hs-stage"></a>ハル シェーダー (HS) ステージ
 
 
 ハル シェーダー (HS) ステージは、モデルの 1 つのサーフェスを効率的に多数の三角形に分割する、テセレーション ステージの 1 つです。 ハル シェーダー (HS) ステージは、各入力パッチ (クワッド、トライアングル、またはライン) に対応するジオメトリ パッチ (およびパッチ定数) を生成します。 ハル シェーダーは、パッチごとに 1 回呼び出され、低次サーフェスを定義する入力制御点を、パッチを構成する制御点に変換します。 また、ハル シェーダーは、いくつかのパッチごとの計算を行い、データを[テッセレータ (TS) ステージ](tessellator-stage--ts-.md)と[ドメイン シェーダー (DS) ステージ](domain-shader-stage--ds-.md)に提供します。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と用途
+## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>目的と使用
 
 
 ![ハル シェーダー ステージの図](images/d3d11-hull-shader.png)
@@ -68,7 +68,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-「[方法: ハル シェーダーの作成](https://msdn.microsoft.com/library/windows/desktop/ff476338)」を参照してください。
+参照してください[方法。ハル シェーダーを作成する](https://msdn.microsoft.com/library/windows/desktop/ff476338)します。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 

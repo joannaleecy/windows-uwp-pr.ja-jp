@@ -8,31 +8,31 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: d15066da96078dcbae290f9edddb772d1963ee25
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935547"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57621667"
 ---
 # <a name="eds-tables"></a>EDS の表
 
-  * [メディア項目のマップにメディア グループ](#ID4EQ)
+  * [メディア項目のマップに Media Group](#ID4EQ)
   * [有効なクライアントの種類の一覧](#ID4EFD)
   * [有効なデバイスの種類の一覧](#ID4EPE)
-  * [入力方法の一覧](#ID4ERF)
+  * [入力メソッドの一覧](#ID4ERF)
 
 <a id="ID4EQ"></a>
 
 
-## <a name="media-group-to-media-item-map"></a>メディア項目のマップにメディア グループ
+## <a name="media-group-to-media-item-map"></a>メディア項目のマップに Media Group
 
-| メディア グループ| メディア項目の種類| 
+| Media Group| メディア項目の種類| 
 | --- | --- |
 | ゲームの種類| Xbox360Game、XboxGameTrial、Xbox360GameContent、Xbox360GameDemo、XboxTheme、XboxOriginalGame、XboxGamerTile、XboxArcadeGame、XboxGameConsumable、XboxGameVideo、XboxGameTrailer、XboxBundle、XboxXnaCommunityGame、XboxMarketplace、AvatarItem、MobileGame、XboxMobilePDLC、XboxMobileConsumable、WebGame、MetroGame、MetroGameContent、MetroGameConsumable、DGame、DGameDemo、DConsumable、DDurable|
-| AppType| XboxApp、DApp|
-| MovieType| 映画|
-| TVType| TVShow (1 回限りのテレビ番組) TVEpisode、TVSeries、TVSeason|
-| MusicType| アルバムのトラックで MusicVideo|
+| appType| XboxApp、DApp|
+| MovieType| ムービー|
+| TVType| TVShow (1 回限りのテレビ番組)、TVEpisode、TVSeries、TVSeason|
+| MusicType| アルバム トラック MusicVideo|
 | MusicArtistType| MusicArtist|
 | WebVideoType| WebVideo、WebVideoCollection|
 | EnhancedContentType| GameLayer、GameActivity、AppActivity、VideoLayer、VideoActivity、DActivity、DNativeApp|
@@ -83,7 +83,7 @@ ms.locfileid: "8935547"
 <a id="ID4ERF"></a>
 
 
-## <a name="input-method-list"></a>入力方法の一覧
+## <a name="input-method-list"></a>入力メソッドの一覧
 
    * 管理者
    * ControllerAutoSuggest
@@ -104,7 +104,7 @@ ms.locfileid: "8935547"
 
 ##### <a name="parent"></a>Parent  
 
-[その他の参照情報](atoc-xboxlivews-reference-additional.md)
+[その他の参照](atoc-xboxlivews-reference-additional.md)
 
 
 <a id="ID4EXG"></a>
@@ -112,4 +112,4 @@ ms.locfileid: "8935547"
 
 ##### <a name="further-information"></a>詳細情報
 
-[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace の Uri](../uri/marketplace/atoc-reference-marketplace.md)

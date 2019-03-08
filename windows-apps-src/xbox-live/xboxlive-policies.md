@@ -7,15 +7,15 @@ layout: LandingPage
 keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live, ポリシー
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f4ccabd72f16a402eecce53328393425c416d36
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115368"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57626327"
 ---
 # <a name="xbox-live-policies"></a>Xbox Live ポリシー
 
-**ドキュメントのバージョン: 2.0**
+**ドキュメントのバージョン:2.0**
 
 Xbox Live を Windows 10 または Xbox One ゲームに追加することをご検討いただき、ありがとうございます。 Xbox Live は Windows 10 および Xbox One ゲームのストーリーの重要な部分であり、このエクスペリエンスについて皆様から寄せられるイノベーションを楽しみにしています。
 

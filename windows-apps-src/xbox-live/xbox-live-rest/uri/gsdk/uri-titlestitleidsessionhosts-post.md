@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 47e3ecbf0a519b92ae467199e5d454523864310a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923308"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655147"
 ---
 # <a name="post-titlestitle-idsessionhosts"></a>POST (/titles/{Title Id}/sessionhosts)
-新しいクラスターの要求を作成します。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
+クラスターの新しい要求を作成します。 これらの Uri のドメインが`gameserverms.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EX)
   * [必要な要求ヘッダー](#ID4EGB)
@@ -30,7 +30,7 @@ ms.locfileid: "8923308"
  
 | パラメーター| 説明| 
 | --- | --- | 
-| titleId| 要求の操作のタイトルの ID です。| 
+| titleId| 要求の操作対象のタイトルの ID。| 
   
 <a id="ID5EG"></a>
 
@@ -44,32 +44,32 @@ gameserverms.xboxlive.com
  
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
  
-要求を行う場合、次の表に示すようにヘッダーは必要です。
+要求を行う場合は、次の表に示されているヘッダーが必要です。
  
-| ヘッダー| 設定値| 説明| 
+| Header| Value| 説明| 
 | --- | --- | --- | --- | --- | 
-| Content-Type| application/json| 送信されたデータの種類です。| 
+| Content-Type| application/json| 送信されるデータの型。| 
   
 <a id="ID4E5B"></a>
 
  
 ## <a name="request-body"></a>要求本文
  
-要求は、次のメンバーを含む JSON オブジェクトを含める必要があります。
+要求には、次のメンバーを持つ JSON オブジェクトを含める必要があります。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | 
-| sessionId| これは、指定した呼び出し元の識別子。 割り当てられ、返されるセッション ホストに割り当てられます。 後でこの識別子を特定 sessionhost を参照できます。 グローバルに一意である必要があります (つまり GUID)。| 
-| SandboxId| サンド ボックスで割り当てられるセッション ホストをします。| 
+| sessionId| これは、指定された呼び出し元の識別子。 割り当てられているされ、返されるセッション ホストに割り当てられます。 後でこの識別子を使用して特定 sessionhost を参照することができます。 グローバルに一意である必要があります (つまり GUID)。| 
+| sandboxId| サンド ボックスで割り当てられるセッション ホストしたいです。| 
 | cloudGameId| クラウド ゲームの識別子です。| 
-| 場所| 優先する場所の順序指定された一覧から割り当てられるセッションたいです。| 
-| sessionCookie| これは、呼び出し元が指定されている不透明な文字列です。 Sessionhost に関連付けられているし、ゲームのコードで参照できます。 このメンバーを使用して、クライアントから少量の情報を (最大サイズは 4 KB) サーバーに渡します。| 
+| 場所| 優先する場所の順序付きリストから割り当てられるセッションたいです。| 
+| sessionCookie| これは、呼び出し元が指定された非透過の文字列。 関連付けられた、sessionhost と、ゲームのコードで参照できます。 このメンバーを使用して、少量の情報をクライアントから (最大サイズは 4 KB) のサーバーに渡します。| 
 | gameModelId| ゲーム モードの識別子です。| 
  
 <a id="ID4EDD"></a>
 
  
-### <a name="sample-request"></a>要求の例
+### <a name="sample-request"></a>要求のサンプル
  
 
 ```cpp
@@ -101,19 +101,19 @@ gameserverms.xboxlive.com
  
 ## <a name="response-body"></a>応答本文
  
-呼び出しが成功した場合は、サービスは、次のメンバーを含む JSON オブジェクトを返します。
+呼び出しが成功した場合、サービスは、次のメンバーを持つ JSON オブジェクトを返します。
  
 | メンバー| 説明| 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | 
 | ホスト名| インスタンスのホスト名。| 
-| portMappings| ポートのマッピングです。| 
-| 地域| 地域のインスタンスがでホストされています。| 
-| secureContext| セキュア デバイス アドレスです。| 
+| portMappings| ポートのマッピング。| 
+| リージョン| リージョン、インスタンスがホストされます。| 
+| secureContext| セキュリティで保護されたデバイスのアドレス。| 
  
 <a id="ID4ESE"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
 
 ```cpp
@@ -147,15 +147,15 @@ gameserverms.xboxlive.com
  
 ## <a name="remarks"></a>注釈
  
-次の応答コードを受け取ったとき、タイトルはサービスに呼び出しをのみ再試行する必要があります。
+タイトルがサービスへの呼び出しを再試行する必要がありますは、次の応答コードが受信したときにのみ。
  
-   * 200、成功の応答が返されます。
-   * 400-無効なパラメーターまたは形式が正しくない要求本文。
-   * 401: Unauthorized
-   * 404-タイトル id を割り当てられているすべてのサブスクリプションはありません。
-   * 409-この応答が可能な場合、同じ要求が同時にほぼで (同じ sessionId) に加えられたします。 セッションのホストが既に指定した sessionId しアクティブになって、割り当て要求が行われた場合はその sessionhost に関する詳細情報が返されます。 セッション ホストただしがない場合アクティブなは、まだ、競合が表示されます。
-   * 500-サーバーの予期しないエラー。
-   * 503-sessionhosts StandingBy しません。 これらのリソースの一部は無料ときは、要求を再試行します。
+   * 200: 成功の応答が返されます。
+   * 400-無効なパラメーターまたは形式が正しくない要求の本文。
+   * 401-権限がありません
+   * 404-タイトル id はそれに割り当てられているすべてのサブスクリプションにありません。
+   * 409 — この応答は同じ要求には、ほぼ同時に (同じ sessionId) が終わったら、します。 場合は、割り当て要求が行われ、セッション ホストが既に指定したセッション Id が既にアクティブには、その sessionhost に関する詳細情報が返されます。 セッション ホストがない場合アクティブなは、まだ、競合が表示されます。
+   * 500-予期しないサーバー エラー。
+   * 503-ありません sessionhosts StandingBy します。 これらのリソースの一部は無料ときは、要求を再試行します。
    
 <a id="ID4EFG"></a>
 

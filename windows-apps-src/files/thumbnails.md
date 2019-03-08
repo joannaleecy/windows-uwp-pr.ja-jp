@@ -1,5 +1,5 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: サムネイル画像を使用して UWP アプリでファイルをプレビューするユーザーを支援する方法。
 title: UWP アプリでのサムネイル画像のガイドライン
 label: Thumbnail images
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980350"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642007"
 ---
 # <a name="thumbnail-images"></a>サムネイル画像
 
@@ -66,16 +66,16 @@ ms.locfileid: "8980350"
 <tr>
 <td> 画像<br /> ビデオ </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>サイズ</b>: 中、190 以上を推奨 (画像サイズが 190 × 130 の場合) <br />
-<b>縦横比</b>: 均一な横長の縦横比 (約 0.7) (サイズが 190 の場合は 190 × 130) <br />
+<td> <b>［サイズ］</b>: 可能であれば少なくとも 190 (イメージのサイズが 190 x 130 の場合)、中 <br />
+<b>縦横比</b>: 約.7 (190 x 130 サイズが 190 の場合) の縦横比を統一された、ワイド <br />
 プレビューの場合はトリミングされます。 <br /> 
 縦横比が統一されているため、画像をグリッド内で揃えるときに便利です。  </td>
 </tr>
 <tr>
 <td> ドキュメント<br />音楽 </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>サイズ</b>: 小、40 × 40 ピクセル以上を推奨 <br />
-<b>縦横比</b>:  均一な正方形の縦横比  <br />
+<td> <b>［サイズ］</b>: 小規模、可能であれば少なくとも 40 x 40 ピクセル <br />
+<b>縦横比</b>:  Uniform、正方形の縦横比  <br />
 縦横比が正方形であるため、アルバム アートのプレビューに最適。 <br /> 
 ドキュメントは、ファイル ピッカーのウィンドウと同じように表示されます (同じアイコンを使用)。 </td>
 </tr>
@@ -83,8 +83,8 @@ ms.locfileid: "8980350"
 <tr>
 <td> 任意の 1 つの項目 (ファイルの種類を考慮しない場合) </td>
 <td> SingleItem </td>
-<td> <b>サイズ</b>: 小、40 × 40 ピクセル以上を推奨 <br />
-<b>縦横比</b>:  均一な正方形の縦横比  <br />
+<td> <b>［サイズ］</b>: 小規模、可能であれば少なくとも 40 x 40 ピクセル <br />
+<b>縦横比</b>:  Uniform、正方形の縦横比  <br />
 縦横比が正方形であるため、アルバム アートのプレビューに最適。 <br /> 
 ドキュメントは、ファイル ピッカーのウィンドウと同じように表示されます (同じアイコンを使用)。 </td>
 </tr>
@@ -109,7 +109,7 @@ ms.locfileid: "8980350"
 <img src="images/thumbnail-pic-single-mode.png" alt="Picture thumbnail in single mode"/> </td>
 </tr>
 <tr>
-<td>ビデオ</td>
+<td>Video</td>
 <td>サムネイルには、画像と区別するためのアイコンが追加されます。 <br />
 <img src="images/thumbnail-vid-picvid-modes.png" alt="Video thumbnail in picture or video mode"/></td>
 <td>サムネイルは縦横比が正方形になるようにトリミングされています。 <br />
@@ -140,7 +140,7 @@ ms.locfileid: "8980350"
 <img src="images/thumbnail-doc2-single-mode.png" alt="Document thumbnail icon in single mode"/></td>
 </tr>
 <tr>
-<td>フォルダー</td>
+<td>Folder</td>
 <td>フォルダーに画像ファイルが含まれる場合は、画像のサムネイルが使われます。  <br />
 <img src="images/thumbnail-dir-picvid-modes.png" alt="Folder thumbnail in picture or video mode"/> <br />
 それ以外の場合、サムネイルは取得されません。</td>
@@ -166,5 +166,5 @@ ms.locfileid: "8980350"
 - [ThumbnailMode 列挙型](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 - [StorageItemThumbnail クラス](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [StorageFile クラス](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
-- [ファイルとフォルダーのサムネイルのサンプル (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [リスト ビューとグリッド ビュー](../design/controls-and-patterns/lists.md)
+- [ファイルとフォルダーのサムネイル サンプル (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [リストとグリッド ビュー](../design/controls-and-patterns/lists.md)

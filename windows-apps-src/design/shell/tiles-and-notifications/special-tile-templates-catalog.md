@@ -1,38 +1,38 @@
 ---
-Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
+Description: 特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。
 title: 特別なタイル テンプレート
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 09647347134463c8dd2d93f6b869796c8def44e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944333"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57619807"
 ---
 # <a name="special-tile-templates"></a>特別なタイル テンプレート
  
 
-特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 各特別なタイル テンプレート具体的には用にビルドした windows 10 では、アイコン タイル テンプレートを除く windows 10 に更新されている従来の特別なテンプレート。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
+特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 各タイルの特殊なテンプレートが向けに作成された Windows 10、象徴的なタイル テンプレートを除く Windows 10 用に更新されている従来の特殊なテンプレートです。 この記事では、次の 3 つの特殊なタイル テンプレートについて説明します。アイコン、写真、およびユーザー。
 
 ## <a name="iconic-tile-template"></a>アイコン タイル テンプレート
 
 
-アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートをサポートしています。
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方で、テンプレートをサポートしています。
 
 ![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>アイコン タイルを作成する方法
 
-次の手順では、windows 10 のアイコン タイルを作成するために必要なすべてについて説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
+次の手順では、Windows 10 のアイコンのタイルを作成するために必要なものすべてについて説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
 
 ![アイコン タイルの開発フロー](images/iconic-template-dev-flow.png)
 
-**手順 1: 画像アセットを PNG 形式で作成する**
+**手順 1: PNG 形式のイメージ アセットを作成します。**
 
 タイルのアイコン アセットを作成し、他のアセットと共にプロジェクト リソースに配置します。 200 x 200 ピクセル以上のアイコンを作成してください。これは最小サイズで、電話やデスクトップ上の小サイズと普通サイズのタイルのどちらにも使うことができます。 最適なユーザー エクスペリエンスを実現するには、各サイズのアイコンを作成します。 これらのアセットにはパディングは必要ありません。 サイズについて詳しくは、次の画像をご覧ください。
 
@@ -54,11 +54,11 @@ ms.locfileid: "8944333"
 
 ![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26b.png)
 
-**手順 2: ベース タイルを作成する**
+**手順 2:基本タイルを作成します。**
 
 アイコン テンプレートは、プライマリ タイルとセカンダリ タイルのどちらでも使うことができます。 セカンダリ タイルで使う場合は、最初にセカンダリ タイルを作成するか、既にピン留めされているセカンダリ タイルを使う必要があります。 プライマリ タイルは暗黙的にピン留めされるので、このタイルに対しては常に通知を送信することができます。
 
-**手順 3: 通知をタイルに送信する**
+**手順 3:タイルに通知を送信します。**
 
 この手順は、通知をローカルで送信するのか、サーバー プッシュを使って送信するのかによって異なります。ただし、送信する XML ペイロードは変わりません。 ローカル タイル通知を送信するには、タイル (プライマリ タイルまたはセカンダリ タイル) に対して [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater) を作成してから、次に示すように、アイコン タイル テンプレートを使うタイルに通知を送信します。 また、[アダプティブ タイル テンプレート](create-adaptive-tiles.md)を使って、ワイド タイルや大きいタイルのバインドを含めることをお勧めします。
 
@@ -82,7 +82,7 @@ XML ペイロードのサンプル コードを次に示します。
 
 このアイコン タイル テンプレートの XML ペイロードでは、手順 1. で作成した画像を示す image 要素を使います。 これで、タイルのアイコンの横にバッジを表示する準備ができました。あとは、バッジ通知を送信するだけです。
 
-**手順 4: バッジ通知をタイルに送信する**
+**手順 4:タイルにバッジ通知を送信します。**
 
 手順 3. と同様に、この手順は、通知をローカルで送信するのか、サーバー プッシュを使って送信するのかによって異なります。ただし、送信する XML ペイロードは変わりません。 ローカル バッジ通知を送信するには、タイル (プライマリ タイルまたはセカンダリ タイル) に対して [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater) を作成してから、目的の値を使ってバッジ通知を送信します (またはバッジをクリアします)。
 
@@ -94,7 +94,7 @@ XML ペイロードのサンプル コードを次に示します。
 
 タイルのバッジは状況に応じて適切に更新されます。
 
-**手順 5: 組み立てる**
+**手順 5:正規表現のまとめ**
 
 次の図は、さまざまな API やペイロードがアイコン タイル テンプレートの各要素とどのように関連しているかを示しています。 [タイル通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (&lt;binding&gt; 要素が含まれています) を使って、アイコン テンプレートと画像アセットを指定します。[バッジ通知](https://msdn.microsoft.com/library/windows/apps/hh779719)では、数値を指定し、タイル プロパティによってタイルの表示名や色などを制御します。
 
@@ -184,7 +184,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>People タイル テンプレート
 
 
-Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートが利用可能な windows 10 ビルド 10572、およびはどなたでも、アプリで使うことです。
+Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートは以来、使用可能な Windows 10 ビルド 10572 とすべてのユーザーが自分のアプリで使用へようこそ。
 
 People タイル テンプレートは、次のサイズのタイルで動作します。
 
@@ -261,9 +261,9 @@ TileContent content = new TileContent()
 
 最適なユーザー エクスペリエンスを実現するには、タイルの各サイズに対して、写真の数を次のように指定することをお勧めします。
 
--   普通サイズのタイル: 9 枚の写真
--   ワイド タイル: 15 枚の写真
--   大きいタイル: 20 枚の写真
+-   中規模のタイル:9 の写真
+-   ワイド タイル:15 の写真
+-   大きいタイル:20 の写真
 
 このように写真の枚数を指定することで、空の円をいくつか使うことができます。これにより、タイルが表示中にビジー状態になりません。 写真の数を自由に調整して、最適な表示状態を確認してください。
 
@@ -272,11 +272,11 @@ TileContent content = new TileContent()
 ## <a name="related-topics"></a>関連トピック
 
 
-* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [Notifications ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [タイル、バッジ、および通知](index.md)
+* [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [通知ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [タイル、バッジ、通知](index.md)
 * [アダプティブ タイルの作成](create-adaptive-tiles.md)
-* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
+* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
  
 
  

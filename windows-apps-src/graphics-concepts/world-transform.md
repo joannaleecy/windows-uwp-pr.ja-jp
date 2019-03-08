@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: af694ed32d845e518f4189f75309f1f371743f90
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920347"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662417"
 ---
 # <a name="world-transform"></a>ワールド変換
 
@@ -28,7 +28,7 @@ ms.locfileid: "8920347"
 
 ワールド変換には、平行移動、回転、スケーリングを任意に組み合わせて含めることができます。
 
-## <a name="span-idsettingupaworldmatrixxmlspansetting-up-a-world-matrix"></a><span id="SETTING_UP_A_WORLD_MATRIX.XML"></span>ワールド行列の設定
+## <a name="span-idsettingupaworldmatrixxmlspansetting-up-a-world-matrix"></a><span id="SETTING_UP_A_WORLD_MATRIX.XML"></span>ワールド行列を設定
 
 
 ワールド変換を作成するには、他の変換と同様に、複数の行列を組み合わせて、それらの効果をすべて含む 1 つの行列に連結します。 最も単純な例として、モデルがワールド原点に位置し、そのローカル座標軸がワールド空間と同じ方向であるとすると、ワールド行列は単位行列になります。 より一般的な例でのワールド行列は、ワールド空間への平行移動と、必要に応じてモデルを回転させる 1 つ以上の回転の組み合わせになります。

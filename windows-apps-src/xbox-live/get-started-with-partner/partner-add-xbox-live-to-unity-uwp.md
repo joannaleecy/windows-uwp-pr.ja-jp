@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c4ca9d58f89e215563adcc7985b978641efdf07
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921354"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594087"
 ---
 # <a name="add-xbox-live-support-to-unity-for-uwp-with-net-scripting-backend-for-idxbox-and-managed-partners"></a>ID@Xbox および対象パートナー向けに、.NET スクリプト バックエンドを使用して、Xbox Live サポートを UWP 用 Unity に追加する
 
@@ -21,19 +21,19 @@ Unity 5.3 以上をインストールします。Unity のインストール プ
 
 ![](../images/unity/unity1-install.png)
 
-**2) 新規または既存の Unity プロジェクトを開きます。**
+**2) 新しいまたは既存の Unity プロジェクトを開く**
 
 このプロジェクトは、3D プロジェクトまたは 2D プロジェクトのいずれかですが、 どちらの種類のプロジェクトも Xbox Live SDK で動作します。
 
-**3) 最新バージョンの Xbox Live WinRT Unity アセット パッケージをインポートします。このパッケージは https://github.com/Microsoft/xbox-live-api/releases で入手できます。**
+**3) で確認できます、Xbox Live WinRT Unity asset パッケージの最新バージョンをインポートします。 https://github.com/Microsoft/xbox-live-api/releases**
 
-**4) 新しい C\# スクリプトを Unity オブジェクトに追加およびアタッチします。**
+**4) を追加し、新しい C をアタッチ\#Unity オブジェクトへのスクリプト。**
 
-たとえば、"Main Camera" などの Unity オブジェクトをクリックし、[Add Component]、[New Script]、[C\# Script] の順にクリックして、"XboxLiveScript" という名前を付けます。 ゲーム オブジェクトの種類は問いません。
+たとえば、「メイン カメラ」などの Unity オブジェクトをクリックして、"コンポーネントの追加 をクリックします。 \| "新しいスクリプト" \| C\#スクリプト\|"XboxLiveScript"名前を付けます。 ゲーム オブジェクトの種類は問いません。
 
-**5) Unity でプロジェクトを ビルドします。**
+**5) で Unity プロジェクトをビルドします。**
 
-1.  [File]、[Build Settings] の順に移動し、[Windows Store] をクリックして、[Switch Platform] をクリックします。
+1.  ファイルに移動して\|ビルド設定では、Windows ストア をクリックし、「スイッチ プラットフォーム」をクリックするかどうかを確認
 
 2.  [Add Open Scenes] をクリックして、現在のシーンをビルドに追加します。
 
@@ -41,14 +41,14 @@ Unity 5.3 以上をインストールします。Unity のインストール プ
 
 4.  UWP ビルド タイプのコンボ ボックスで [D3D] を選択しますが、必要に応じて [XAML] も選択できます。
 
-5.  [Unity C\# Projects] チェック ボックスをオンにして、Assembly-Csharp.dll プロジェクトを生成します。
+5.  をクリックして、"Unity C\#プロジェクト"アセンブリ Csharp.dll プロジェクトを生成する チェック ボックス
 
 6.  Unity の [Build] をクリックして、UWP アプリケーション内に Unity ゲームをラップする UWP Visual Studio プロジェクトを生成します。 新しいファイルが多数作成されるため、場所を指定するときは、混乱を避けるために新しいフォルダーを作成します。 フォルダーの名前を "Build" にすることをお勧めします。フォルダーに名前を付けたら、そのフォルダーを選択します。
 
 ![](../images/unity/unity3-buildsettings.png)
 
 
-**6) 生成した UWP プロジェクトを Visual Studio で開きます。**
+**6) Visual Studio で生成された UWP プロジェクトを開く**
 
 Unity では、エクスプローラーで出力プロジェクト フォルダーが開きます。  フォルダー内の .sln ファイルは無視してください。  代わりに、Build フォルダーに移動し、生成された .sln を Visual Studio で開きます。  
 
@@ -61,11 +61,11 @@ Unity では、エクスプローラーで出力プロジェクト フォルダ�
 3.  プロジェクトの名前に基づいた UWP アプリ。 これは、Unity エンジンをホストする従来の UWP アプリです。 ここでは、従来の UWP アプリに似たいくつかの Xbox Live 構成をセットアップします。
 
 
-**7) Xbox Live 構成を UWP アプリに追加します。**
+**7) 構成の Xbox Live を UWP アプリに追加します。**
 
 「[新規または既存の UWP プロジェクトに Xbox Live を追加する](get-started-with-visual-studio-and-uwp.md)」というドキュメント ページの手順に従います。
 
-**8) Xbox Live コードをスクリプトに追加します。**
+**8)、スクリプトに Xbox Live のコードを追加します。**
 
 以下のサンプルの Xbox Live コードをコピーし、ゲーム オブジェクトにアタッチしたスクリプトに貼り付けます。 このスクリプトは "Assembly-CSharp" プロジェクトに表示されます。 コードは自由に変更できます。
 
@@ -116,17 +116,16 @@ public class XboxLiveScript : MonoBehaviour
 #endif
 ```
 
-**9) Visual Studio から UWP アプリをコンパイルして実行します。**
+**9) をコンパイルし、Visual Studio から UWP アプリの実行**
 
 これにより、通常の UWP アプリのようにアプリが起動し、動作のために UWP アプリ コンテナーが必要なときに Xbox Live 呼び出しが可能になります。
 
-**10) Unity で変更を加えた場合はリビルドします。**
-  
+**Unity 内のあらゆるものに変更を加える場合は 10) リビルド**  
 Unity で変更を加えた場合、UWP プロジェクトをリビルドする必要があります。
 
 再コンパイル時に Unity が pfx ファイルを置き換えることによって Xbox Live へのサインインが失敗することに注意してください。この問題を避けるために Unity プロジェクト内でファイルを更新する必要があります。
 
-これを行うには、[File]、[Build Settings] の順に移動し、Windows Store プレイヤー上で [Build Settings] をクリックしてから、[PFX] ボタンをクリックして、PFX ファイルを前の手順で取得したファイルに置き換えます。 別の方法として、Unity 内でプロジェクトをリビルドするたびに PFX ファイルを削除することもできます。
+ファイルに移動するのには、\|ビルド設定 が Windows ストアのプレーヤーで ビルド設定 をクリックし、上から取得したもので、PFX ファイルを置換する PFX ボタンをクリックします。 別の方法として、Unity 内でプロジェクトをリビルドするたびに PFX ファイルを削除することもできます。
 
 ## <a name="troubleshooting-common-issues"></a>一般的な問題のトラブルシューティング
 
@@ -156,6 +155,6 @@ a) コンピューターがデベロッパー サンドボックスに設定さ�
 
 b) デベロッパー サンドボックスにアクセスできる Xbox Live アカウントでサインインしていること。  通常のリテール Xbox Live アカウントにはそのようなアクセス権がありません。  XDP またはパートナー センターを使用して、テスト アカウントを作成することができます。
 
-c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これは手動で編集できますが、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択するのが最も簡単な修正方法です。
+c) UWP アプリの package.appxmanfiest で正しい Identity が設定されていること。  これを手動で編集できますが、これを解決する最も簡単な方法は、Visual Studio でプロジェクトを右クリックし、"Store"を選択する\|「、ストアでアプリを関連付ける」。
 
-d) Unity によって提供されるストック .pfx ファイルは Identity が正しくないため、そのファイルをディスクから削除し、そのファイルを参照する行を .csproj から削除します。または、Visual Studio でプロジェクトを右クリックし、[ストア] の [アプリケーションをストアと関連付ける] を選択すれば、適切な .pfx ファイルが配置されます。  その後、Unity に戻って Windows Store プレイヤー上で [Build Settings] をクリックし、[PFX] ボタンをクリックして、.pfx ファイルを Visual Studio での [アプリケーションをストアと関連付ける] 操作により取得したファイルに置き換えます。
+d) Unity によって提供されるストックの .pfx ファイルは、適切な id を必要はありませんので、いずれか、ディスクから削除し、それを参照する .csproj に行を削除または、右が Visual Studio でプロジェクトをクリックし、"Store"を選択\|"に関連付けるアプリ ストアと"これを適切な .pfx ファイルを配置します。  その後、Unity に戻って Windows Store プレイヤー上で [Build Settings] をクリックし、[PFX] ボタンをクリックして、.pfx ファイルを Visual Studio での [アプリケーションをストアと関連付ける] 操作により取得したファイルに置き換えます。

@@ -12,36 +12,36 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e263876f414e5683ffc8a5645a12e5031b3d6fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946054"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660187"
 ---
 # <a name="texture-addressing-modes"></a>テクスチャのアドレス指定モード
 
 
 Direct3D アプリケーションは、任意のプリミティブの頂点テクスチャ座標を割り当てることができます。 通常、頂点に割り当てるテクスチャ座標 (u, v) は 0.0 ～ 1.0 (両端含む) の範囲です。 ただし、その範囲外のテクスチャ座標を割り当てることで、テクスチャリングの特殊効果を作成できます。 .
 
-テクスチャのアドレス指定モードを設定すると、\[0.0, 1.0\] の範囲外にあるテクスチャ座標で Direct3D が実行することを制御できます。 たとえば、テクスチャがプリミティブ全体でタイル化されるようにアプリケーションにテクスチャのアドレス指定モードを設定させることができます。
+Direct3D の外部にあるテクスチャ座標を使用して動作を制御する、 \[0.0, 1.0\]範囲テクスチャのアドレス指定モードに設定します。 たとえば、テクスチャがプリミティブ全体でタイル化されるようにアプリケーションにテクスチャのアドレス指定モードを設定させることができます。
 
 Direct3D では、アプリケーションでテクスチャの折り返しを実行できます。 「[テクスチャの折り返し](texture-wrapping.md)」をご覧ください。
 
-テクスチャの折り返しを有効にすると、\[0.0, 1.0\] の範囲外のテクスチャ座標は無効になり、その場合は延滞テクスチャ座標などのラスター化の動作は未定義になります。 テクスチャの折り返しを有効にすると、テクスチャのアドレス指定モードは使用されません。 テクスチャの折り返しが有効なときは、アプリケーションで 0.0 未満または 1.0 を上回るテクスチャ座標を指定しないように気をつけてください。
+外側のテクスチャ座標は、テクスチャを効果的に折り返しを有効にすると、 \[0.0, 1.0\]範囲が無効か、および動作のラスタライズなど滞納テクスチャ座標はここでします。 テクスチャの折り返しを有効にすると、テクスチャのアドレス指定モードは使用されません。 テクスチャの折り返しが有効なときは、アプリケーションで 0.0 未満または 1.0 を上回るテクスチャ座標を指定しないように気をつけてください。
 
-## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>テクスチャのアドレス指定モードの概要
+## <a name="span-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspanspan-idsummaryofthetextureaddressingmodesspansummary-of-the-texture-addressing-modes"></a><span id="Summary_of_the_texture_addressing_modes"></span><span id="summary_of_the_texture_addressing_modes"></span><span id="SUMMARY_OF_THE_TEXTURE_ADDRESSING_MODES"></span>テクスチャのアドレッシング モードの概要
 
 
 | テクスチャのアドレス指定モード | 説明                                                                                                                           |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | Wrap (ラップ)                    | すべての整数接合点でテクスチャを繰り返します。                                                                                        |
 | Mirror (ミラー)                  | すべての整数境界でテクスチャをミラーリングします。                                                                                        |
-| Clamp (クランプ)                   | テクスチャ座標を \[0.0, 1.0\] の範囲にクランプします。テクスチャを一度適用してから、エッジ ピクセルの色を付けます。 |
+| Clamp (クランプ)                   | テクスチャ座標をクランプ、 \[0.0, 1.0\] ; の範囲クランプ モードでは、1 回、テクスチャを適用し、境界のピクセルの色の汚れがあります。 |
 | Border Color (境界線の色)            | *境界線の色*として知られる任意のカラーを、0.0 ～ 1.0 の範囲外のテクスチャ座標に対して使用します。                         |
 
  
 
-## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>ラップ テクスチャ アドレス モード
+## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>テクスチャ アドレス モードをラップします。
 
 
 ラップ テクスチャ アドレス モードでは、Direct3D はすべての整数接合点でテクスチャを繰り返します。
@@ -66,7 +66,7 @@ Direct3D では、アプリケーションでテクスチャの折り返しを�
 ## <a name="span-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanspan-idclamptextureaddressmodespanclamp-texture-address-mode"></a><span id="Clamp_texture_address_mode"></span><span id="clamp_texture_address_mode"></span><span id="CLAMP_TEXTURE_ADDRESS_MODE"></span>クランプ テクスチャ アドレス モード
 
 
-クランプ テクスチャ アドレス モードでは、Direct3D はテクスチャ座標を \[0.0, 1.0\] の範囲にクランプします。テクスチャを一度適用してから、エッジ ピクセルの色を付けます。
+クランプ テクスチャ アドレス モードにより、テクスチャ座標をクランプする Direct3D、 \[0.0, 1.0\] ; の範囲クランプ モードでは、1 回、テクスチャを適用し、境界のピクセルの色の汚れがあります。
 
 たとえば、アプリケーションで正方形のプリミティブを作成し、(0.0,0.0)、(0.0,3.0)、(3.0,3.0)、および (3.0,0.0) のテクスチャ座標をプリミティブの頂点に割り当てるとします。 テクスチャ アドレス指定モードを "Clamp" に設定すると、テクスチャは一度適用されます。 列の最上部と行の最後にあるピクセル カラーが、それぞれプリミティブの上と右に拡張されます。
 
@@ -74,7 +74,7 @@ Direct3D では、アプリケーションでテクスチャの折り返しを�
 
 ![テクスチャとクランプされたテクスチャの図](images/clamp.png)
 
-## <a name="span-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanborder-color-texture-address-mode"></a><span id="Border_Color_texture_address_mode"></span><span id="border_color_texture_address_mode"></span><span id="BORDER_COLOR_TEXTURE_ADDRESS_MODE"></span>境界線の色テクスチャ アドレス モード
+## <a name="span-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanspan-idbordercolortextureaddressmodespanborder-color-texture-address-mode"></a><span id="Border_Color_texture_address_mode"></span><span id="border_color_texture_address_mode"></span><span id="BORDER_COLOR_TEXTURE_ADDRESS_MODE"></span>境界線の色のテクスチャ アドレス モード
 
 
 境界線の色テクスチャ アドレス モードでは、Direct3D は*境界線の色*として知られる任意のカラーを、0.0 ～ 1.0 の範囲外のテクスチャ座標に対して使用します。

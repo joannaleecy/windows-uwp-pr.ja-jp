@@ -1,19 +1,19 @@
 ---
-Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
+Description: 学習方法 Win32C#アプリがローカルのトースト通知を送信し、トーストをクリックすると、ユーザーを処理します。
 title: デスクトップ C# アプリからのローカル トースト通知の送信
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows 10, uwp, win32 では、デスクトップ, トースト通知、トーストを送信ローカル トースト通知の送信, デスクトップ ブリッジ, c# では、c シャープ、トースト通知, wpf
+keywords: windows 10、uwp、win32、デスクトップ、トースト通知、トーストを送信、送信、デスクトップ ブリッジは、ローカルのトーストC#c シャープなトースト通知では、wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058703"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648877"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>デスクトップ C# アプリからのローカル トースト通知の送信
 
@@ -23,7 +23,7 @@ ms.locfileid: "9058703"
 > UWP アプリを作成している場合は、[UWP のドキュメント](send-local-toast.md) をご覧ください。 その他のデスクトップ言語については、[デスクトップ C++ WRLに関するページ](send-local-toast-desktop-cpp-wrl.md) をご覧ください。
 
 
-## <a name="step-1-enable-the-windows-10-sdk"></a>手順 1: Windows 10 SDK を有効にする
+## <a name="step-1-enable-the-windows-10-sdk"></a>手順 1:Windows 10 を有効にする SDK
 
 Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、まず有効にします。
 
@@ -49,7 +49,7 @@ Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、ま�
 ![プロジェクトの再読み込み](images/win32-reload-project.png)
 
 
-## <a name="step-2-reference-the-apis"></a>手順 2: API を参照する
+## <a name="step-2-reference-the-apis"></a>手順 2:Api リファレンス
 
 参照マネージャーを開きます (プロジェクトを右クリックして、**[追加] -> [参照]** を選択)。**[Windows] -> [コア]** を選択し、以下の参照を追加します。
 
@@ -59,14 +59,14 @@ Win32 アプリ向けの Windows 10 SDK がまだ有効でない場合は、ま�
 ![参照マネージャー](images/win32-add-windows-reference.png)
 
 
-## <a name="step-3-copy-compat-library-code"></a>手順 3: compat ライブラリのコードをコピーする
+## <a name="step-3-copy-compat-library-code"></a>手順 3:Compat ライブラリ コードをコピーします。
 
 [DesktopNotificationManagerCompat.cs file from GitHub](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs) をプロジェクトにコピーします。 compat ライブラリを使用することで、デスクトップ通知の複雑な部分の多くが抽象化されます。 次の手順では、compat ライブラリが必要です。
 
 
-## <a name="step-4-implement-the-activator"></a>手順 4: アクティベーターを実装する
+## <a name="step-4-implement-the-activator"></a>手順 4:アクティベーターを実装します。
 
-ユーザーは、トーストをクリックすると、アプリが動作できるトーストのアクティブ化ハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
+アプリが何かを実行できるユーザーは、トーストをクリックすると、ようにトースト アクティブにするためのハンドラーを実装する必要があります。 これは、アクション センターにトーストを継続的に表示するために必要です (トーストは、数日後、アプリが閉じているときにクリックされる可能性があります)。 このクラスは、プロジェクトの任意の位置に指定できます。
 
 **NotificationActivator** クラスを展開し、以下の 3 つの属性を追加します。任意のオンライン GUID ジェネレーターを使用して、アプリ用に一意の GUID CLSID を作成します。 アクション センターは、この CLSID (クラス識別子) に基づいて、COM アクティブ化するクラスを認識します。
 
@@ -85,7 +85,7 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-## <a name="step-5-register-with-notification-platform"></a>手順 5: 通知プラットフォームに登録する
+## <a name="step-5-register-with-notification-platform"></a>手順 5:通知プラットフォームを登録します。
 
 次に、通知プラットフォームに登録します。 デスクトップ ブリッジと従来の Win32 のどちらを使用するかによって、手順が異なります。 両方をサポートする場合は、両方の手順を行う必要があります (コードをフォークする必要はありません。ライブラリがすべて自動的に処理します)。
 
@@ -141,7 +141,7 @@ public class MyNotificationActivator : NotificationActivator
 
 対象の Win32 アプリを識別する一意の AUMID を選択します。 これは通常、[CompanyName].[AppName] の形式です。すべてのアプリを通じて、一意である必要があります (任意の数字を自由に追加できます)。
 
-#### <a name="step-51-wix-installer"></a>手順 5.1: WiX インストーラー
+#### <a name="step-51-wix-installer"></a>手順 5.1:WiX インストーラ
 
 インストーラーに WiX を使用している場合は、以下に示すように **Product.wxs** ファイルを編集して、スタート メニューのショートカットに 2 つのショートカット プロパティを追加します。 下のように、手順 4 の GUID を必ず `{}` で囲みます。
 
@@ -163,7 +163,7 @@ public class MyNotificationActivator : NotificationActivator
 > 実際に通知を使用するためには、通常のデバッグ前に、アプリをインストーラー経由でインストールして、AUMID と CLSID を使用したスタート ショートカットを表示する必要があります。 スタート ショートカットが表示された後は、Visual Studio で F5 キーを使用してデバッグできます。
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>手順 5.2: AUMID と COM サーバーを登録する
+#### <a name="step-52-register-aumid-and-com-server"></a>5.2 の手順:AUMID および COM サーバーを登録します。
 
 次に、どちらのインストーラーを使用する場合も、(通知 API を呼び出す前に) アプリのスタートアップ コード内で、**RegisterAumidAndComServer** メソッドを呼び出して、上記の手順 4 の通知アクティベーター クラスと AUMID を指定します。
 
@@ -177,7 +177,7 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 このメソッドを使用することで、AUMID を常に提供する必要なしに、compat API を呼び出して通知を送信および管理できます。 またこのメソッドによって、COM サーバーの LocalServer32 レジストリ キーが挿入されます。
 
 
-## <a name="step-6-register-com-activator"></a>手順 6: COM サーバーを登録する
+## <a name="step-6-register-com-activator"></a>手順 6:COM のアクティベーターを登録します。
 
 デスクトップ ブリッジと従来の Win32 アプリのいずれを使用する場合も、トーストのアクティブ化を処理するためには、通知アクティベーター タイプを登録する必要があります。
 
@@ -189,7 +189,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 ```
 
 
-## <a name="step-7-send-a-notification"></a>手順 7: 通知を送信する
+## <a name="step-7-send-a-notification"></a>手順 7:通知を送信します。
 
 通知を送信する手順は、**DesktopNotificationManagerCompat** クラスを使用して **ToastNotifier** を作成することを除き、UWP アプリとまったく同じです。 デスクトップ ブリッジと従来の Win32 の間で異なる部分は、compat ライブラリによって自動的に処理されるため、コードをフォークする必要はありません。 従来の Win32 では、**RegisterAumidAndComServer** の呼び出し時に、指定した AUMID が compat ライブラリによってキャッシュされるため、AUMID を指定するタイミングや指定するかどうかを検討する必要はありません。
 
@@ -238,7 +238,7 @@ DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 > 従来の Win32 アプリでは、レガシ トースト テンプレート (ToastText02 など) を使用できません。 COM CLSID を指定すると、レガシ テンプレートのアクティブ化は失敗します。 上記のように Windows 10 ToastGeneric テンプレートを使用する必要があります。
 
 
-## <a name="step-8-handling-activation"></a>手順 8: アクティブ化を処理する
+## <a name="step-8-handling-activation"></a>手順 8:アクティブ化の処理
 
 ユーザーがトーストをクリックすると、**NotificationActivator** クラスの **OnActivated** メソッドが呼び出されます。
 
@@ -371,7 +371,7 @@ WPF の場合、アクティブ化シーケンスは次のとおりです。
 デスクトップ アプリでは、フォア グラウンドとバック グラウンドのアクティブ化はいずれも、COM アクティベーターの呼び出しという同じ手順で処理されます。 ウィンドウを表示するか、ウィンドウを表示せずに作業を行うだけで終了するかは、アプリのコードによって決定されます。 したがって、トーストのコンテンツで **ActivationType** に **Background** を指定しても、動作は変わりません。
 
 
-## <a name="step-9-remove-and-manage-notifications"></a>手順 9: 通知を削除および管理する
+## <a name="step-9-remove-and-manage-notifications"></a>手順 9:削除し、通知の管理
 
 通知を削除および管理する手順は、UWP アプリと同じです。 ただし、compat ライブラリを使用して **DesktopNotificationHistoryCompat** を取得することをお勧めします。これにより、従来の Win32 を使用している場合も、AUMID を提供する必要がなくなります。
 
@@ -384,7 +384,7 @@ DesktopNotificationManagerCompat.History.Clear();
 ```
 
 
-## <a name="step-10-deploying-and-debugging"></a>手順 10: 展開とデバッグ
+## <a name="step-10-deploying-and-debugging"></a>手順 10:配置およびデバッグ
 
 デスクトップ ブリッジ アプリの展開とデバッグについては、「[パッケージ デスクトップ アプリの実行、デバッグ、テスト](/windows/uwp/porting/desktop-to-uwp-debug)」をご覧ください。
 
@@ -399,12 +399,12 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="known-issues"></a>既知の問題
 
-**修正済み: トーストのクリック後、アプリがフォーカスされない**: ビルド 15063 以前では、COM サーバーをアクティブ化したときに、フォアグラウンドの権利がアプリケーションに移転されませんでした。 そのため、アプリをフォアグラウンドに移動しようとしても、点滅するのみで移動できませんでした。 この問題を解決する方法はありませんでした。 この問題は、16299 以降のビルドでは解決済みです。
+**修正済み。アプリがトーストをクリックするとフォーカス**:ビルド 15063 およびそれ以前では、COM サーバーがアクティブになると、フォア グラウンドの権利をアプリケーションに転送されなかったされます。 そのため、アプリをフォアグラウンドに移動しようとしても、点滅するのみで移動できませんでした。 この問題を解決する方法はありませんでした。 この問題は、16299 以降のビルドでは解決済みです。
 
 
-## <a name="resources"></a>リソース
+## <a name="resources"></a>参考資料
 
-* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/desktop-toasts)
+* [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/desktop-toasts)
 * [デスクトップ アプリからのトースト通知](toast-desktop-apps.md)
-* [トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)
+* [トーストのコンテンツのドキュメント](adaptive-interactive-toasts.md)
 

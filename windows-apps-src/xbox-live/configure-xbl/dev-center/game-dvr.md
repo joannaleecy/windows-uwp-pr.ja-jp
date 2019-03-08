@@ -1,23 +1,23 @@
 ---
 title: ゲーム DVR
-description: パートナー センターで Xbox Live ゲーム DVR 文字列を構成する方法を説明します。
+description: パートナー センターで Xbox Live Game DVR 文字列を構成する方法について説明します
 ms.assetid: e0f307d2-ea02-48ea-bcdf-828272a894d4
 ms.date: 10/30/2017
 ms.topic: article
 ms.localizationpriority: medium
-keywords: Xbox live, Xbox, ゲーム, uwp, windows 10, Xbox one, ゲーム DVR, パートナー センター
+keywords: Xbox live、Xbox、ゲーム、uwp、windows 10、1 つ Xbox、ゲームの DVR、パートナー センター
 ms.openlocfilehash: 4e40bbfd18947a99c488dc2b27dc2a23c99643a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928385"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608347"
 ---
-# <a name="configuring-game-dvr-in-partner-center"></a>パートナー センターでのゲーム DVR の構成
+# <a name="configuring-game-dvr-in-partner-center"></a>ゲーム録画をパートナー センターで構成します。
 
 Xbox One で最もよく使われる機能の 1 つにゲーム DVR があります。この機能を使うと、ゲーマーが最高の瞬間を簡単に録画、編集、共有できます。 ゲーム DVR 文字列は、タイトルに開発者が作成した DVR クリップのタイトルとして表示されます。 サービスで文字列を構成すると、そのクリップが取り上げられているアプリに、その文字列の適切なローカライズ バージョンが表示されます。 たとえば、ユーザーがタイトルのラスト ボスを倒したときにクリップを作成する場合、まず "ボス バトル" という文字列を構成します。 タイトル コードで呼び出しを行ってクリップを作成するとき、ID を参照します。
 
-[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、ゲームに関連付けられているゲーム DVR 文字列を構成することができます。 次の手順に従って、構成を追加します。
+使用することができます[パートナー センター](https://partner.microsoft.com/dashboard)ゲームに関連付けられているゲーム録画文字列を構成します。 次の手順に従って、構成を追加します。
 
 1. **[サービス]** > **[Xbox Live]** > **[ゲーム DVR]** の順に選択して、**[ゲーム DVR]** セクションに移動します。
 2. **[新しい文字列の作成]** ボタンをクリックします。

@@ -8,34 +8,34 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dace19404ae7c8b1d1ef296a21c874e4dd14c6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935192"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57613387"
 ---
 # <a name="gamesessionsummary-json"></a>GameSessionSummary (JSON)
-ゲーム セッションの集計データを表す JSON オブジェクト。 
+ゲーム セッションの集計データを表す JSON オブジェクトです。 
 <a id="ID4EN"></a>
 
   
  
-GameSessionSummary JSON オブジェクトには、次仕様があります。
+GameSessionSummary JSON オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| creationTime| DateTime| 日付と時刻とき、セッションが作成された、UTC でします。 | 
-| customData| 8 ビットの符号なし整数の配列| ゲーム固有のセッション データの 1024 バイトです。 この値は、サーバーに不透明です。 | 
-| displayName| string| 表示名ゲームのセッション 128 文字の最大長を持つ。 この値は、サーバーに不透明です。 | 
-| hasEnded| ブール値| セッションが終了した場合は true、それ以外の場合。 さらにデータが、セッションに送信されているように true マーク読み取り専用とゲーム セッションにこのフィールドを設定します。 | 
-| sessionId| 文字列セッション id。 | 
-| titleId| 32 ビットの符号なし整数| ゲーム セッションの作成、タイトルの ID です。| 
-| variant| 32 ビット符号付き整数| ゲームのバリアントです。 この値は、サーバーに不透明です。| 
+| CreationTime| DateTime| 日付と時刻 (utc)、セッションの作成時にします。 | 
+| customData| 8 ビット符号なし整数の配列| ゲームに固有のセッション データの 1024 バイト数。 この値は、サーバーに対して非透過的です。 | 
+| displayName| string| 表示ゲームの名前のセッション、最大長が 128 文字です。 この値は、サーバーに対して非透過的です。 | 
+| hasEnded| ブール値| セッションが終了した場合は true と false それ以外の場合。 さらにデータがセッションに送信されていることを防ぐ場合は true。 マークとして読み取り専用のゲーム セッションにこのフィールドを設定します。 | 
+| sessionId| 文字列、セッション id。 | 
+| titleId| 32 ビット符号なし整数| ゲーム セッションを作成するタイトルの ID。| 
+| variant| 32 ビット符号付き整数| ゲームのバリアント。 この値は、サーバーに対して非透過的です。| 
   
 <a id="ID4EID"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -62,7 +62,7 @@ GameSessionSummary JSON オブジェクトには、次仕様があります。
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
   
 <a id="ID4E4D"></a>

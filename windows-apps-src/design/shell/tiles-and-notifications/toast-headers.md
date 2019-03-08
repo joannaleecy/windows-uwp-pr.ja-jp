@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use headers to visually group your toast notifications in Action Center.
+Description: ヘッダーを使用して、アクション センターで、トースト通知を視覚的にグループ化する方法について説明します。
 title: トースト ヘッダー
 label: Toast headers
 template: detail.hbs
@@ -8,18 +8,18 @@ ms.topic: article
 keywords: windows 10, uwp, トースト, ヘッダー, トースト ヘッダー, 通知, トーストのグループ化, アクション センター
 ms.localizationpriority: medium
 ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946094"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612107"
 ---
 # <a name="toast-headers"></a>トースト ヘッダー
 
 通知に対してトースト ヘッダーを使用して、アクション センター内の互いに関連する複数の通知を視覚的にグループ化することができます。
 
 > [!IMPORTANT]
-> **デスクトップ版の Creators Update と Notifications ライブラリ 1.4.0 が必要**: トースト ヘッダーを表示するには、デスクトップ版ビルド 15063 以上を実行している必要があります。 トーストのコンテンツ内にヘッダーを作成するには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。 ヘッダーはデスクトップでのみサポートされます。
+> **デスクトップ Creators Update と通知ライブラリの 1.4.0 必要**:デスクトップ ビルド 15063 以上トーストを表示するヘッダーを実行する必要があります。 トーストのコンテンツ内にヘッダーを作成するには、[UWP コミュニティ ツールキットの Notifications NuGet ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)、バージョン 1.4.0 以上を使用する必要があります。 ヘッダーはデスクトップでのみサポートされます。
 
 以下に示すように、このグループの会話は "Camping!!" という 1 つのヘッダーの下にまとめられています。 会話内の個々のメッセージは、同じトースト ヘッダーを共有する別個のトースト通知です。
 
@@ -96,7 +96,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ヘッダーは複数の通知を視覚的に分類し、グループ化します。 アプリが保持できる通知の最大数 (20) や、先入れ先出し法による通知の一覧の処理など、その他のしくみはヘッダーを使用しても変わりません。
 
-ヘッダー内で通知が表示される順序は、アプリごとに、そのアプリの最新の通知 (ヘッダーの一部である場合は、ヘッダー グループ全体) が最初に表示されます。
+ヘッダー内の通知の順序は、次のとおりです.特定のアプリのアプリ (およびすべてのヘッダー グループ ヘッダーの一部の場合) から最新の通知は、先頭に表示されます。
 
 **Id** には、任意の文字列を設定できます。 **ToastHeader** のどのプロパティにも、長さや文字の制限はありません。 唯一の制限は、XML トースト コンテンツ全体の上限が 5 KB ということのみです。
 
@@ -107,5 +107,5 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 ## <a name="related-topics"></a>関連トピック
 
-- [ローカル トースト通知の送信](send-local-toast.md)
-- [トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)
+- [ローカル ハンドルとトーストのアクティブ化を送信します。](send-local-toast.md)
+- [トーストのコンテンツのドキュメント](adaptive-interactive-toasts.md)

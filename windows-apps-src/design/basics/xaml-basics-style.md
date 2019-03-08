@@ -6,23 +6,23 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a1eacc42720e7bce4290476676b0864fbd8a3694
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926902"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592957"
 ---
-# <a name="tutorial-create-custom-styles"></a>チュートリアル: カスタム スタイルを作成する
+# <a name="tutorial-create-custom-styles"></a>チュートリアル:カスタム スタイルを作成する
 
 このチュートリアルでは、XAML アプリの UI をカスタマイズする方法を示します。 警告: このチュートリアルにユニコーンが登場するかどうかは保証できません。 (後で登場します!)  
 
 ## <a name="prerequisites"></a>前提条件
-* [Visual Studio 2017、Windows 10 SDK (10.0.15063.468 以降)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2017 と、Windows 10 SDK (10.0.15063.468 またはそれ以降)](https://developer.microsoft.com/windows/downloads)
 
-## <a name="part-0-get-the-code"></a>パート 0: コードを入手する
+## <a name="part-0-get-the-code"></a>Part 0:コードを入手する
 この演習の開始点は、PhotoLab サンプル リポジトリ ([xaml-basics-starting-points/style/ フォルダー](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style)) です。 このリポジトリを複製してダウンロードした後、Visual Studio 2017 で PhotoLab.sln を開くことによって、プロジェクトを編集できます。
 
-PhotoLab アプリには、次の 2 つのプライマリ ページがあります。
+PhotoLab アプリには、2 つのプライマリ ページがあります。
 
 **MainPage.xaml:** フォト ギャラリー ビューが各イメージ ファイルに関する情報と共に表示されます。
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
@@ -30,7 +30,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 **DetailPage.xaml:** 選択された単一の写真が表示されます。 ポップアップの編集メニューにより、写真の編集、名前変更、保存を行うことができます。
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
 
-## <a name="part-1-create-a-fancy-slider-control"></a>パート 1: 装飾的なスライダー コントロールを作成する  
+## <a name="part-1-create-a-fancy-slider-control"></a>第 1 部:手の込んだスライダー コントロールを作成します。  
 
 ユニバーサル Windows プラットフォーム (UWP) には、アプリの外観をカスタマイズするためのさまざまな方法が用意されています。 フォントや文字体裁設定から、色やグラデーション、ぼかし効果まで、多数のオプションがあります。 
 
@@ -38,7 +38,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 
 <figure>
     <img src="../basics/images/xaml-basics/slider-start.png" />
-    <figure>*既定のスタイルによるシンプルなスライダー。*</figure>
+    <figure>*既定のスタイルを humble スライダー。*</figure>
 </figure>
 
 これらのスライダーに問題はなく、スライダーに必要な機能をすべて備えています。ただ、今ひとつ装飾性に欠けます。 これを解決してみましょう。 
@@ -62,7 +62,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
     
     <!-- TODO reduce size --> ![ユニコーン](../basics/images/xaml-basics/unicorn.png)
     
-    > **参考情報:** 「[図形の描画](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)」という記事には、XAML の図形について知っておく必要があるすべての情報が含まれています。 
+    > **これを読み取る。**[図形を描画](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)記事ではすべての XAML の図形について知っておく必要があります。 
     
     ここでは、ステレオのボリューム コントロールのような形をした、三角形のウィジェットを作成します。
     
@@ -79,7 +79,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
     * **Polygon** に、線状グラデーションによる塗りつぶしを適用します。     
     * 露出スライダーでは、多角形が見えるように、**Foreground** プロパティを "Transparent" に設定します。 
 
-    **変更前**
+    **以前は**
     ```xaml
     <Slider Header="Exposure"
         Grid.Row="2"
@@ -87,7 +87,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
         Minimum="-2"
         Maximum="2" />
     ```
-    **変更後**
+    **後**
     ```xaml
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -121,7 +121,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 
     この背景図形用に、先ほどのものと同じ寸法の多角形をもう 1 つ使用します。ただし今回は、白黒ではなく青と黄色のグラデーションで塗りつぶします。 
 
-    **変更前**
+    **以前は**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -134,7 +134,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
             Minimum="-1"
             Maximum="1" />
     ```
-    **変更後**
+    **後**
     ```xaml
     <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -164,7 +164,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 
     ![2 つの装飾的なスライダー](../basics/images/xaml-basics/style-2sliders-done.png)
 
-7. **追加クレジット**
+7. **追加の手順**
 
     グラデーションで緑から赤に変化するティント (Tint) スライダーに、背景の図形を追加します。 
 
@@ -175,7 +175,7 @@ PhotoLab アプリには、次の 2 つのプライマリ ページがありま�
 
  
     
-## <a name="part-2-create-basic-styles"></a>パート 2: 基本スタイルを作成する
+## <a name="part-2-create-basic-styles"></a>パート 2:基本のスタイルを作成します。
 
 XAML スタイルの利点の 1 つは、記述するコードの量を劇的に削減し、アプリの外観を更新する作業がずっと簡単になることです。
 
@@ -244,7 +244,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
     ```
 3. **TextBlock** の **Margin** を "10,8,0,0"、**VerticalAlignment** を "Center"、**Padding** を "0" に設定するスタイルを作成します。
 
-    **変更前**
+    **以前は**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -262,7 +262,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
         </Grid.Resources>
     ```
 
-    **変更後**
+    **後**
     ```XAML
         <Grid.Resources>
             <Style TargetType="Slider">
@@ -290,7 +290,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 4. どの **TextBlock** コントロールに適用するかを指定できるように、これを名前付きスタイルにしましょう。 スタイルの **x:Key** プロパティを "ValueTextBox" に設定します。 
 
-    **変更前**
+    **以前は**
     ```XAML
             <Style TargetType="TextBlock">
                 <Setter Property="Margin"
@@ -302,7 +302,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
             </Style>                            
     ```    
 
-    **変更後**
+    **後**
     ```XAML
             <Style TargetType="TextBlock"
                    x:Key="ValueTextBox">
@@ -317,7 +317,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 5. 各 **TextBlock** について、**Margin**、**VerticalAlignment**、および **Padding** プロパティを削除し、**Style** プロパティを "{StaticResource ValueTextBox}" に設定します。
 
-    **変更前**
+    **以前は**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -325,7 +325,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
                 Text="{x:Bind item.Exposure.ToString('N', culture), Mode=OneWay}" />   
     ```
 
-    **変更後**
+    **後**
     ```XAML
      <TextBlock Grid.Row="2"
                 Grid.Column="1"
@@ -337,11 +337,10 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 6. アプリをコンパイルして実行します。 外観に変わりはないのですが、 効率的で保守性に優れたコードを記述したことによる、すばらしい満足感と達成感をかみしめてください。
 
-<!-- TODO add new start/end points -->
-これで、パート 2 は終わりです。
+<!-- TODO add new start/end points --> これで、第 2 部を完了しました。
 
 
-## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>パート 3: コントロール テンプレートを使用して装飾的なスライダーを作成する
+## <a name="part-3-use-a-control-template-to-make-a-fancy-slider"></a>パート 3:コントロール テンプレートを使用して手の込んだスライダーの作成
 
 パート 1 では、見栄えを良くするために、スライダーの背後に図形を追加しました。
 
@@ -632,7 +631,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 5.  パート 1 で露出スライダー用に作成した多角形と同様の多角形を作成します。 **Grid.RowDefinitions** の終了タグの後に、多角形を追加します。 **Grid.Row** を "0"、**Grid.RowSpan** を "3"、**Grid.ColumnSpan** を "3" に設定します。 
 
-    **変更前**
+    **以前は**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -647,7 +646,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
         </Grid.RowDefinitions>        
     ```
 
-    **変更後**
+    **後**
     ```XAML
     <Grid x:Name="HorizontalTemplate" MinHeight="44">
         <Grid.ColumnDefinitions>
@@ -676,7 +675,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 6. **Polygon.Fill** 設定を削除します。 **Fill** を "{TemplateBinding Background}" に設定します。 これにより、スライダーの **Background** プロパティを設定すると、多角形の **Fill** プロパティが設定されるようになります。 
 
-    **変更前**
+    **以前は**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -692,7 +691,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
         </Polygon>           
     ```
     
-    **変更後**
+    **後**
     ```XAML
         <Polygon Grid.Row="0" Grid.RowSpan="3"  Grid.ColumnSpan="3" Stretch="Fill"
                     Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -703,7 +702,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 7. 作成した多角形の直後に、**HorizontalTrackRect** という名前の四角形があります。 四角形が表示されて多角形図形を遮ることのないように、Rectangle の **Fill** 設定を削除します  (四角形は、コントロール テンプレートでホバーなどの対話操作用ビジュアル項目としても使用されるため、完全には削除しません)。
 
-    **変更前**
+    **以前は**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Fill="{TemplateBinding Background}"
@@ -712,7 +711,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
                     Grid.ColumnSpan="3" />          
     ```
     
-    **変更後**
+    **後**
     ```XAML
         <Rectangle x:Name="HorizontalTrackRect"
                     Height="{ThemeResource SliderTrackThemeHeight}"
@@ -729,7 +728,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
     * スライダーの Background を、黒から白への線形グラデーションに設定します。
     * パート 1 で作成した背景の多角形を削除します。
         
-    **変更前**
+    **以前は**
     ```XAML
     <Polygon Grid.Row="2" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -751,7 +750,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
             Template="{StaticResource FancySliderControlTemplate}"/>    
     ```
     
-    **変更後**
+    **後**
     ```XAML
     <Slider Header="Exposure" 
             Grid.Row="2"  Foreground="Transparent"
@@ -771,7 +770,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
     ```        
 9. 色温度スライダーにも、同じ更新を行います。
 
-    **変更前**
+    **以前は**
     ```XAML
     <Polygon Grid.Row="3" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -792,7 +791,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
             Maximum="1" />
     ```
     
-    **変更後**
+    **後**
     ```XAML
     <Slider Header="Temperature"
             Grid.Row="3" Foreground="Transparent"
@@ -813,7 +812,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
 
 10. ティント スライダーにも、同じ更新を行います。
 
-    **変更前**
+    **以前は**
     ```XAML
     <Polygon Grid.Row="4" Stretch="Fill"
                 Points="0,20 200,20 200,0" HorizontalAlignment="Stretch"  
@@ -834,7 +833,7 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
             Maximum="1" />
     ```
     
-    **変更後**
+    **後**
     ```XAML
     <Slider Header="Tint"
             Grid.Row="4" Foreground="Transparent"
@@ -859,5 +858,4 @@ XAML スタイルの利点の 1 つは、記述するコードの量を劇的に
     
     ここで行った更新により、多角形の配置が改善されました。多角形の下端がスライダーのつまみの下端と揃っています。
     
-<!-- TODO correct folder -->
-これで、チュートリアルは終わりです。 行き詰った場合や最終的なソリューションを確認したい場合は、完成したサンプル コードが [UWP アプリ サンプル リポジトリ](https://github.com/Microsoft/Windows-universal-samples)にあります。
+<!-- TODO correct folder --> これで、チュートリアルを完了しました。 行き詰った場合や最終的なソリューションを確認したい場合は、完成したサンプル コードが [UWP アプリ サンプル リポジトリ](https://github.com/Microsoft/Windows-universal-samples)にあります。

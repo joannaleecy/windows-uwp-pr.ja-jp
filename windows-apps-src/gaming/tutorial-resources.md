@@ -6,11 +6,11 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cb1c9f9cf6cbc6cce0c5d4547ed503bb9a06e56
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941707"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660117"
 ---
 # <a name="extend-the-game-sample"></a>ゲーム サンプルの紹介
 
@@ -18,12 +18,12 @@ ms.locfileid: "8941707"
 
 -   [DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)
 -   [Direct3D 11 の概要](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 のリファレンス](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [Direct3D の参照を 11](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
 ## <a name="using-xaml-for-the-overlay"></a>オーバーレイに XAML を適用
 
 
-ここで詳しく説明していない方法の 1 つとして、オーバーレイに対し [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) に代わり XAML を使う方法があります。 XAML には、Direct2D に比べ、ユーザー インターフェイス要素を描画するときの利点が数多くあります。 最も重要な利点は、windows 10 の見た目や操作感を便利な DirectX ゲームに組み込むことができます。 UWP アプリを定義する共通した要素、スタイル、動作の多くが XAML モデルに緊密に統合されるため、ゲーム開発者による実装作業がはるかに容易になります。 作成するゲームのデザインに複雑なユーザー インターフェイスが含まれる場合は、Direct2D の代わりに XAML の使用を検討してください。
+ここで詳しく説明していない方法の 1 つとして、オーバーレイに対し [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) に代わり XAML を使う方法があります。 XAML には、Direct2D に比べ、ユーザー インターフェイス要素を描画するときの利点が数多くあります。 最も重要な利点は、Windows 10 のルック アンド フィールを組み込むより便利な DirectX ゲームです。 UWP アプリを定義する共通した要素、スタイル、動作の多くが XAML モデルに緊密に統合されるため、ゲーム開発者による実装作業がはるかに容易になります。 作成するゲームのデザインに複雑なユーザー インターフェイスが含まれる場合は、Direct2D の代わりに XAML の使用を検討してください。
 
 XAML を使用して、以前に作成した Direct2D のゲーム インターフェイスに似たインターフェイスを作成できます。
 
@@ -80,7 +80,7 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 
 XAML で定義された [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) パネル インスタンスに、設定済みのスワップ チェーンを結合するには、下層にある固有の [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/dn302143) インターフェイス実装に対するポインターを取得し、これに [**ISwapChainPanelNative::SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) を呼び出して、設定済みのスワップ チェーンを渡す必要があります。 
 
-[**DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) の次のスニペットは、DirectX/XAML の相互運用機能でこの処理を行う場合の詳細を示しています。
+[  **DX::DeviceResources::CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/Common/DeviceResources.cpp#L218-L521) の次のスニペットは、DirectX/XAML の相互運用機能でこの処理を行う場合の詳細を示しています。
 
 ```cpp
         ComPtr<IDXGIDevice3> dxgiDevice;

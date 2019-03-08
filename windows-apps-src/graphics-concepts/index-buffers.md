@@ -1,6 +1,6 @@
 ---
 title: インデックス バッファー
-description: インデックス バッファー は、インデックス データを格納するメモリ バッファーです。インデックス データは頂点バッファーへの整数オフセットで、プリミティブのレンダリングに使われます。
+description: インデックス バッファーは、インデックス データを含むメモリ バッファーであり、プリミティブのレンダリングに使用される、頂点バッファーへの整数オフセットです。
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
 keywords:
 - インデックス バッファー
@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 36d08006fa2f32812f97daef5135a98dce16c4e5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929596"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594617"
 ---
 # <a name="index-buffers"></a>インデックス バッファー
 
@@ -23,7 +23,7 @@ ms.locfileid: "8929596"
 
 頂点バッファーには、頂点が含まれているため、インデックス化されたプリミティブがあってもなくても頂点バッファーを描画できます。 ただし、インデックス バッファーにはインデックスが含まれているため、対応する頂点バッファーがなければインデックス バッファーを使うことができません。
 
-## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>インデックス バッファーの記述
+## <a name="span-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanspan-idindexbufferdescriptionspanindex-buffer-description"></a><span id="Index_Buffer_Description"></span><span id="index_buffer_description"></span><span id="INDEX_BUFFER_DESCRIPTION"></span>インデックス バッファーの説明
 
 
 インデックス バッファーは、メモリ内のどこに存在するか、読み取りと書き込みをサポートするかどうか、含めることができるインデックスの種類と数など、機能の観点から記述されます。

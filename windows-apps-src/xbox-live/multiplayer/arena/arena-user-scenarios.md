@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, アリーナ, トーナメント, UX
 ms.localizationpriority: medium
 ms.openlocfilehash: 03e1cec88b7e6528759501fdc8ab5af0a1753c81
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929064"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607897"
 ---
 # <a name="participant-user-scenarios"></a>参加者のユーザー シナリオ
 
@@ -30,7 +30,7 @@ Xbox アリーナ、Xbox ソーシャル機能、アリーナ API は、トー�
 
 * ランキング、統計、プレイヤーのプロフィールに、過去と現在のトーナメント結果が追加され、参加者の戦績が披露されています。
 
-## <a name="motivation-type-immersion"></a>動機の種類: イマーシブなエクスペリエンス
+## <a name="motivation-type-immersion"></a>目的の種類:Immersion
 
 * ゲームやゲームのストーリーに没入したい。
 
@@ -44,7 +44,7 @@ Xbox アリーナ、Xbox ソーシャル機能、アリーナ API は、トー�
 
 Fernando は、これまで多大な時間を費やして Minecraft の世界を構築し、その限りない制作の可能性を模索しています。 彼は自分の作品を非常に誇りに思い、新しいインスピレーションと、クリエイティブな挑戦の機会を常に求めています。 Minecraft Creative Building トーナメントでは、創造性と一連の制作スキルが試されます。 それは創造性、独創的アイデア、制作スピード、Minecraft に関する知識の戦いです。 Fernando はトーナメントに参加して、制作を競い合い、他のファンが作った世界からインスピレーションを得ることで、このゲームへの興味を新たにしています。
 
-## <a name="motivation-type-mastery"></a>動機の種類: スキルの向上
+## <a name="motivation-type-mastery"></a>目的の種類:ハイレベル
 
 * これまで経験したことのないゲーム内での動き、テクニック、スキルを試したい。
 
@@ -54,7 +54,7 @@ Fernando は、これまで多大な時間を費やして Minecraft の世界を
 
 Katie にとって、Mass Effect Andromeda のオープン ワールド要素は、いくら探索しても飽きることのない興味の対象です。 彼女は、マルチプレイヤーの対戦で、別のプレイヤーと同じキャラクターで戦うことを避けるため、複数のキャラクターをレベル アップしています。 トーナメントでは、彼女のキャラクターのスキルと能力が試されます。 ぶつかる対戦相手は、キャラクターのスキルと能力を独自の組み合わせでレベル アップしているため、 Katie はトーナメントでプレイするたびに、スキルを向上させる新しいアプローチを発見しています。
 
-## <a name="motivation-type-stimulation"></a>動機の種類: 刺激
+## <a name="motivation-type-stimulation"></a>目的の種類:動因
 
 * プレイがもたらすあらゆる感情 (ポジティブな感情やネガティブな感情を含め) を体験したい。
 
@@ -64,7 +64,7 @@ Katie にとって、Mass Effect Andromeda のオープン ワールド要素は
 
 Will は、平日は人事部のマネージャーとして働き、週末は大好きな Gears of War を楽しみます。 月曜から金曜までさまざまな人事の問題に追われる Will にとって、Gears of War のトーナメントでの対戦は待ちに待った息抜きの時間です。 トーナメントはスリルに満ち、一連の対戦がもたらすジェットコースターに乗っているかのような興奮に Will は生きがいを感じています。 彼は、順位表で他のチームを僅差でしのぎ、1 位でシード権を獲得した後、試合を優勢に進め、実力を存分に発揮して決勝まで駒を進めました。
 
-## <a name="motivation-type-social-affiliation"></a>動機の種類: ソーシャル ネットワークを通じた人間関係
+## <a name="motivation-type-social-affiliation"></a>目的の種類:ソーシャルへの関連付け
 
 * 友人や家族などの人々との関係を維持し、時間を共に過ごしたい。
 
@@ -76,7 +76,7 @@ Will は、平日は人事部のマネージャーとして働き、週末は大
 
 Sierra の楽しみは、Minecraft をプレイすること、そしてこのゲームに同じように夢中になっている人々と出会うことです。 トーナメントは、これら両方の世界を最高の形で提供します。 チーム単位の対戦は、ゲーマー同士をこれまでに経験のないような強い絆で結び付けます。 他のプレイヤーと対戦するだけでなく、興奮を共有し協力し合うことで、人間関係とコミュニティの結束が生まれ、彼女にこの上ない充足感をもたらしています。
 
-## <a name="motivation-type-competition"></a>動機の種類: 戦い
+## <a name="motivation-type-competition"></a>目的の種類:コンテスト
 
 * 他のユーザーと戦いたい (勝つかどうかは別として)。
 

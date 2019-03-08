@@ -8,28 +8,28 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e8ccd2d38c6683ef54ad1576f47a8d3e5197d4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943021"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612607"
 ---
 # <a name="requirement-json"></a>Requirement (JSON)
-実績とそれらに対応するため、ユーザーは、どのくらいのロック解除条件。 
+実績とそれらに対応するため、ユーザーは、どの程度のロック解除の条件。 
 <a id="ID4EN"></a>
 
  
 ## <a name="requirement"></a>要件
  
-要件オブジェクトには、次仕様があります。
+要求オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| id| string| 要件の ID です。| 
-| 現在の| string| 要件に向けた進行状況の現在の値。| 
-| ターゲット| string| 要件のターゲットの値。| 
-| 入力| string| 要件の操作の種類。 有効な値は、合計、最小、最大値はします。| 
-| ruleParticipationType| string| 要件の参加の種類。 有効な値は、個人のグループです。| 
+| id| string| 要求の ID。| 
+| 現在の| string| 要件に向けた進行の現在の値。| 
+| target| string| 要求のターゲット値。| 
+| OperationType| string| 要件の操作の種類。 有効な値は、合計、最小、最大値は。| 
+| ruleParticipationType| string| 要件の参加の種類。 有効な値は、個人、グループです。| 
   
 <a id="ID4ETC"></a>
 
@@ -41,6 +41,6 @@ ms.locfileid: "8943021"
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    

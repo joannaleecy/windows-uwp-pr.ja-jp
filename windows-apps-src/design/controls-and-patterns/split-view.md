@@ -6,24 +6,24 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0c709261b08231fa82af615d5398fd66648d4e
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036874"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646467"
 ---
 # <a name="split-view-control"></a>分割ビュー コントロール
 
 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
 
-> **重要な API**: [SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **重要な Api**:[SplitView クラス](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 SplitView を使ってハブを表示する Microsoft Edge アプリの例を次に示します。
 
@@ -63,8 +63,8 @@ SplitView を使ってハブを表示する Microsoft Edge アプリの例を次
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/SplitView">アプリを開き、SplitView の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -95,9 +95,9 @@ SplitView を使ってハブを表示する Microsoft Edge アプリの例を次
 
 ## <a name="get-the-sample-code"></a>サンプル コードを入手する
 
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 ## <a name="related-topics"></a>関連トピック
-- [ナビゲーション ウィンドウ パターン](navigationview.md)
+- [ナビゲーション ウィンドウのパターン](navigationview.md)
 - [リスト ビュー](lists.md)
 - [マスター/詳細](master-details.md)

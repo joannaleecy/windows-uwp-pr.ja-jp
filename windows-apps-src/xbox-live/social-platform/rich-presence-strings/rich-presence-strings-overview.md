@@ -7,11 +7,11 @@ ms.topic: article
 keywords: xbox live, xbox, ゲーム, uwp, windows 10, xbox one, リッチ プレゼンス
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae0d0189954ed8fa9a0bc7651d6a90b9789c388
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604117"
 ---
 # <a name="rich-presence"></a>リッチ プレゼンス
 
@@ -20,10 +20,10 @@ ms.locfileid: "8939832"
 
 ## <a name="definitions"></a>定義
 
-**列挙**  
+**列挙型**  
 列挙は、何らかのゲーム内ディメンションのリストです。 これらのゲーム内ディメンションの例としては、武器、キャラクター クラス、マップなどがあります。 ゲーム内で使用可能な武器のリスト、使用可能なすべてのキャラクター クラスまたはマップのリストなどを表示する必要があります。
 
-**ロケールと文字列のペア**  
+**ロケール文字列のペア**  
 使用可能なすべてのリッチ プレゼンス文字列に、その文字列をどのロケールで使用できるのか/使用する必要があるのかを示すロケールが関連付けられている必要があります。 各列挙も、ロケールと文字列のペアのセットを持ちます。
 
 **文字列セット**  
@@ -32,29 +32,29 @@ ms.locfileid: "8939832"
 **フレンドリ名**  
 2 種類のフレンドリ名があります。
 
-**リッチ プレゼンス文字列**  
+**文字列の豊富なプレゼンス**  
 文字列セットのフレンドリ名は、文字列セットを参照するために使用する文字列形式の一意の識別子です。
 
-**列挙値**  
+**列挙型**  
 これらのフレンドリ名は、武器の列挙やキャラクター クラスの列挙などの特定の列挙を一意に識別するために使用されます。
 
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[リッチ プレゼンスの構成](rich-presence-strings-configuration.md)  
+[豊富なプレゼンスの構成](rich-presence-strings-configuration.md)  
 タイトルで使用するためにリッチ プレゼンスを構成する方法。
 
-[リッチ プレゼンスの文字列の更新](rich-presence-strings-updating-strings.md)  
+[文字列を更新する豊富なプレゼンス](rich-presence-strings-updating-strings.md)  
 タイトルのリッチ プレゼンス文字列を更新する方法。
 
-[リッチ プレゼンスのベスト プラクティス](rich-presence-strings-best-practices.md)  
+[豊富なプレゼンスのベスト プラクティス](rich-presence-strings-best-practices.md)  
 タイトル内でのリッチ プレゼンスの使用に関するベスト プラクティス。
 
-[リッチ プレゼンスのポリシーと制限](rich-presence-strings-policies-and-limitations.md)  
+[豊富なプレゼンス ポリシーと制限事項](rich-presence-strings-policies-and-limitations.md)  
 タイトルでのリッチ プレゼンスの使用に関するポリシー。
 
-[リッチ プレゼンスの付録](rich-presence-strings-appendix.md)  
+[豊富なプレゼンス付録](rich-presence-strings-appendix.md)  
 リッチ プレゼンスに関連するデータ プラットフォームの詳細とサンプル。
 
-[Xbox Live リッチ プレゼンスのプログラミング](programming-rich-presence.md)  
+[プログラミングの Xbox Live の豊富なプレゼンス](programming-rich-presence.md)  
 Xbox Live でリッチ プレゼンスを使用する方法について説明します。

@@ -3,15 +3,15 @@ description: アプリがプロセス ライフタイム管理と連携する方
 title: プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b3e37d4de3a346e0f29909727a46d3b31f9d59d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934547"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608497"
 ---
 # <a name="testing-and-debugging-tools-for-process-lifetime-management-plm"></a>プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール
 
@@ -84,5 +84,5 @@ plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwg
 **/enableDebug** のすべての呼び出しは、後ほど **/disableDebug** スイッチを使って別の PLMDebug の呼び出しに結合する必要があります。 さらに、デバッガーのパスは絶対パスにする必要があります (相対パスはサポートされていません)。
 
 ## <a name="related-topics"></a>関連トピック
-- [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md)
+- [展開して、UWP アプリのデバッグ](deploying-and-debugging-uwp-apps.md)
 - [デバッグ、テスト、パフォーマンス](index.md)

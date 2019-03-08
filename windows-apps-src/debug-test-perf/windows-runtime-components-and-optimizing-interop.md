@@ -4,14 +4,14 @@ title: ユニバーサル Windows プラットフォーム コンポーネント
 description: 相互運用性のパフォーマンス上の問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使うユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 37bcf2ff6eee6c272339fdc997ee7bbb046f85e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946490"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654087"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWPコンポーネントと相互運用性の最適化
 
@@ -22,7 +22,7 @@ ms.locfileid: "8946490"
 
 UWP コンポーネントを使うとアプリのパフォーマンスに大きな影響を与える場合があるので、注意してください。 このセクションでは、UWP コンポーネントを使用するアプリで高パフォーマンスを実現する方法について説明します。
 
-### <a name="introduction"></a>はじめに
+### <a name="introduction"></a>概要
 
 相互運用性はアプリのパフォーマンスに大きな影響を与えますが、その存在を意識せずに利用していることも多いでしょう。 UWP は、開発者に代わって多数の相互運用性を処理し、生産性の向上と、他の言語で記述されたコードの再利用を実現します。 UWP の機能を活用することをお勧めしますが、一方でそれがパフォーマンスに与える影響を認識しておく必要があります。 このセクションでは、相互運用性がアプリのパフォーマンスに与える影響を軽減するためにできることについて説明します。
 
@@ -30,7 +30,7 @@ UWP には、UWP アプリの作成に使用できるすべての言語からア
 
 UWP アプリを C# または Visual Basic で開発する際、最もよく使用される API は、UWP API と UWP アプリ用 .NET API の 2 つです。 一般に、UWP で定義される型は "Windows." で始まる名前空間にあります。 また、.NET 型は "System." で始まる名前空間にあります。 ただし、例外もあります。 UWP アプリ用 .NET に含まれる型は、使う際に相互運用性を必要としません。 UWP を使っている領域のパフォーマンスが低い場合は、代わりに UWP アプリ用 .NET を使うことで良好なパフォーマンスを得られることがあります。
 
-**注:** これらを c# または Visual Basic から使うには、相互運用性の境界を越えるために、windows 10 に同梱されている UWP コンポーネントの大部分は C++ で実装されています。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
+**注**   Windows 10 に同梱されている UWP コンポーネントのほとんどは C++ で実装されるのでからそれらを使用するときに相互運用性の境界をまたぐC#または Visual Basic です。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
 
 このトピックでは、"UWP コンポーネント" とは、C# または Visual Basic 以外の言語で記述されたコンポーネントを指すものとします。
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 店舗販売時点管理, POS
 ms.localizationpriority: medium
 ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661157"
 ---
 # <a name="getting-started-with-point-of-service"></a>POS (店舗販売時点管理) の概要
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>デバイスの再起動
-ネットワークまたは Bluetooth 接続経由で POS デバイスを使っているときに、デバイスをネットワーク上の他のアプリと共有したい場合があります  (これについては「[デバイスの共有](#sharing-a-device-between-apps)」をご覧ください)。また、デバイスを長時間にわたって保持することが必要になる場合もあります。 この例では、他のアプリからデバイスを解放するように要求されても、要求したバーコード スキャナーを保持し続ける方法を示します。
+ネットワークまたは Bluetooth 接続経由で POS デバイスを使っているときに、デバイスをネットワーク上の他のアプリと共有したい場合があります  (これについての詳細については、次を参照してください[共有デバイス](#sharing-a-device-between-apps)。)。その他の場合は、長時間にわたる使用のデバイスに保持します。 この例では、他のアプリからデバイスを解放するように要求されても、要求したバーコード スキャナーを保持し続ける方法を示します。
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -209,8 +209,8 @@ if (claimedBarcodeScanner != null)
 
 ## <a name="see-also"></a>関連項目
 + [バーコード スキャナーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [キャッシュ ドロワーのサンプル]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [ライン ディスプレイのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [現金引き出しサンプル]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [ライン サンプルを表示](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [磁気ストライプ リーダーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POS プリンターのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [POSPrinter サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

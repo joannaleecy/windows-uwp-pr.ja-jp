@@ -1,36 +1,36 @@
 ---
 title: Microsoft Store アプリの起動
-description: ここでは、ms-windows-store URI スキームについて説明します。 アプリは、この URI スキームを使用して、ストア内の特定のページに Microsoft Store アプリを起動することができます。
+description: このトピックでは、ms-windows-store URI スキームについて説明します。 アプリは、この URI スキームを使用して、Microsoft Store アプリ、ストアの特定のページを起動することができます。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981536"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660897"
 ---
 # <a name="launch-the-microsoft-store-app"></a>Microsoft Store アプリの起動
 
 
 
-ここでは、**ms-windows-store:** URI スキームについて説明します。 アプリは、この URI スキームを使用して、 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)メソッドを使用して、ストア内の特定のページに Microsoft Store アプリを起動することができます。
+このトピックで説明します、 **ms-windows ストア。** URI スキーム。 アプリは、この URI スキームを使用して、使用して、ストア内の特定のページに、Microsoft Store アプリを起動する、 [ **LaunchUriAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701476)メソッド。
 
-この例では、ゲームのページにストアを開く方法を示します。
+この例では、Microsoft Store のゲームのページを開く方法を示します。
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI スキーム リファレンス
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows ストア:URI スキームの参照
 
 <table>
 <tr><th>説明</th><th></th><th>URI スキーム</th></tr>
 <tr><td>ストアのホーム ページを起動します。</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>ストア内の最上位レベルのカテゴリを起動します。<p>注: すべてのユーザーがすべてのカテゴリにアクセスできるわけではありません。</p>
+<tr><td>ストア内の最上位レベルのカテゴリを起動します。<p>注:すべてのユーザーでは、すべての業種にアクセスします。</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,11 +40,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">製品の詳細ページ (PDP) を起動します。 <p>ストア ID を使う方法は Windows 10 のユーザー向けに推奨される一方ですべての OS バージョンで動作しますが、以前の方法 (PFN など) も使うことができます。</p>
-<p>これらの値は、<a href="https://partner.microsoft.com/dashboard">パートナー センター</a>で各アプリのアプリ管理] セクションで [<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">アプリ id</a> ] ページで確認できます。</p>
+<td rowspan="4">製品の詳細ページ (PDP) を起動します。 <p>Store ID は、Windows 10 でのお客様をお勧めし、協力してこれ以前の方法がすべての OS バージョン (例。PFN) はまだサポートされています。</p>
+<p>これらの値を確認できる<a href="https://partner.microsoft.com/dashboard">パートナー センター</a>上、<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">アプリ id</a>  ページの各アプリのアプリの管理セクション。</p>
 </td>
 <td>
-ストア ID <p>(推奨)</p>
+Store ID <p>(推奨)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -66,7 +66,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">製品のレビューを書くエクスペリエンスを起動します。</td>
-<td>ストア ID <p>(推奨)</p></td>
+<td>Store ID <p>(推奨)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>

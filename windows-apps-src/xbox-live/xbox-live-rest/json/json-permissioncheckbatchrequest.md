@@ -8,30 +8,30 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 538547c85648970ab3e9fe3ae413e8a03df814ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920045"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623507"
 ---
 # <a name="permissioncheckbatchrequest-json"></a>PermissionCheckBatchRequest (JSON)
-PermissionCheckBatchRequest オブジェクトのコレクションです。 
+PermissionCheckBatchRequest オブジェクトのコレクション。 
 <a id="ID4EP"></a>
 
  
 ## <a name="permissioncheckbatchrequest"></a>PermissionCheckBatchRequest
  
-PermissionCheckBatchRequest オブジェクトには、次仕様があります。
+PermissionCheckBatchRequest オブジェクトには、次の仕様があります。
  
 | メンバー| 種類| 説明| 
 | --- | --- | --- | 
-| Users| ユーザーの配列| 必須。 に対するアクセス許可を確認する対象の配列です。 この配列内の各エントリは、Xbox ユーザー ID (XUID) またはクロス ネットワークのシナリオの匿名のネットワークに接続してユーザーのいずれか (「匿名」:"allUsers")。 | 
-| アクセス許可| [PermissionId 列挙型](../enums/privacy-enum-permissionid.md)の配列| 必須。 各ユーザーに照らしてチェックするアクセス許可します。| 
+| Users| ユーザーの配列| 必須。 に対するアクセス許可を確認するターゲットの配列。 この配列内の各エントリは Xbox ユーザー ID (XUID) またはネットワーク間のシナリオに対する匿名のネットワークに接続してユーザーのいずれか (「匿名」:"allUsers")。 | 
+| アクセス許可| 配列[PermissionId 列挙型](../enums/privacy-enum-permissionid.md)| 必須。 各ユーザーに対して確認するアクセス許可。| 
   
 <a id="ID4E3B"></a>
 
  
-## <a name="sample-json-syntax"></a>JSON 構文の例
+## <a name="sample-json-syntax"></a>サンプルの JSON の構文
  
 
 ```json
@@ -61,6 +61,6 @@ PermissionCheckBatchRequest オブジェクトには、次仕様があります�
  
 ##### <a name="parent"></a>Parent 
 
-[JavaScript Object Notation (JSON) オブジェクト リファレンス](atoc-xboxlivews-reference-json.md)
+[JavaScript Object Notation (JSON) オブジェクトの参照](atoc-xboxlivews-reference-json.md)
 
    
