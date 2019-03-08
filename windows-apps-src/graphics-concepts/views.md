@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: df106a400a7ba8c8f94aa6dd35325aabacd36eca
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920782"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663297"
 ---
-# <a name="views"></a><span data-ttu-id="ad381-106">ビュー</span><span class="sxs-lookup"><span data-stu-id="ad381-106">Views</span></span>
+# <a name="views"></a><span data-ttu-id="ece83-106">ビュー</span><span class="sxs-lookup"><span data-stu-id="ece83-106">Views</span></span>
 
 
-<span data-ttu-id="ad381-107">"ビュー" という用語は、"要求された形式のデータ" という意味で使われます。</span><span class="sxs-lookup"><span data-stu-id="ad381-107">The term "view" is used to mean "data in the required format".</span></span> <span data-ttu-id="ad381-108">たとえば、定数バッファー ビュー (CBV) は、適切な形式の定数バッファー データを表します。</span><span class="sxs-lookup"><span data-stu-id="ad381-108">For example, a Constant Buffer View (CBV) would be constant buffer data correctly formatted.</span></span> <span data-ttu-id="ad381-109">このセクションでは、最もよく使われる便利なビューについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ad381-109">This section describes the most common and useful views.</span></span>
+<span data-ttu-id="ece83-107">"ビュー" という用語は、"要求された形式のデータ" という意味で使われます。</span><span class="sxs-lookup"><span data-stu-id="ece83-107">The term "view" is used to mean "data in the required format".</span></span> <span data-ttu-id="ece83-108">たとえば、定数バッファー ビュー (CBV) は、適切な形式の定数バッファー データを表します。</span><span class="sxs-lookup"><span data-stu-id="ece83-108">For example, a Constant Buffer View (CBV) would be constant buffer data correctly formatted.</span></span> <span data-ttu-id="ece83-109">このセクションでは、最もよく使われる便利なビューについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ece83-109">This section describes the most common and useful views.</span></span>
 
-## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="ad381-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ad381-110"><span id="in-this-section"></span>In this section</span></span>
+## <a name="span-idin-this-sectionspanin-this-section"></a><span data-ttu-id="ece83-110"><span id="in-this-section"></span>このセクションの内容</span><span class="sxs-lookup"><span data-stu-id="ece83-110"><span id="in-this-section"></span>In this section</span></span>
 
 
 <table>
@@ -29,52 +29,52 @@ ms.locfileid: "8920782"
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><span data-ttu-id="ad381-111">トピック</span><span class="sxs-lookup"><span data-stu-id="ad381-111">Topic</span></span></th>
-<th align="left"><span data-ttu-id="ad381-112">説明</span><span class="sxs-lookup"><span data-stu-id="ad381-112">Description</span></span></th>
+<th align="left"><span data-ttu-id="ece83-111">トピック</span><span class="sxs-lookup"><span data-stu-id="ece83-111">Topic</span></span></th>
+<th align="left"><span data-ttu-id="ece83-112">説明</span><span class="sxs-lookup"><span data-stu-id="ece83-112">Description</span></span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="constant-buffer-view--cbv-.md"><span data-ttu-id="ad381-113">定数バッファー ビュー (CBV)</span><span class="sxs-lookup"><span data-stu-id="ad381-113">Constant buffer view (CBV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-114">定数バッファーには、シェーダーの定数データが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ad381-114">Constant buffers contain shader constant data.</span></span> <span data-ttu-id="ad381-115">これらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることにあります。</span><span class="sxs-lookup"><span data-stu-id="ad381-115">The value of them is that the data persists, and can be accessed by any GPU shader, until it is necessary to change the data.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-113"><a href="constant-buffer-view--cbv-.md">定数バッファー ビュー (CBV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-113"><a href="constant-buffer-view--cbv-.md">Constant buffer view (CBV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-114">定数バッファーには、シェーダーの定数データが含まれます。</span><span class="sxs-lookup"><span data-stu-id="ece83-114">Constant buffers contain shader constant data.</span></span> <span data-ttu-id="ece83-115">それらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることです。</span><span class="sxs-lookup"><span data-stu-id="ece83-115">The value of them is that the data persists, and can be accessed by any GPU shader, until it is necessary to change the data.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="vertex-buffer-view--vbv-.md"><span data-ttu-id="ad381-116">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</span><span class="sxs-lookup"><span data-stu-id="ad381-116">Vertex buffer view (VBV) and Index buffer view (IBV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-117">頂点バッファーには、頂点のリストのデータが保持されます。</span><span class="sxs-lookup"><span data-stu-id="ad381-117">A vertex buffer holds data for a list of vertices.</span></span> <span data-ttu-id="ad381-118">各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ad381-118">The data for each vertex can include position, color, normal vector, texture co-ordinates, and so on.</span></span> <span data-ttu-id="ad381-119">インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</span><span class="sxs-lookup"><span data-stu-id="ad381-119">An index buffer holds integer indexes (offsets) into a vertex buffer, and is used to define and render an object made up of a subset of the full list of vertices.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-116"><a href="vertex-buffer-view--vbv-.md">頂点バッファー ビュー (VBV) とインデックス バッファー ビュー (IBV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-116"><a href="vertex-buffer-view--vbv-.md">Vertex buffer view (VBV) and Index buffer view (IBV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-117">頂点バッファーには、頂点のリストのデータが保持されます。</span><span class="sxs-lookup"><span data-stu-id="ece83-117">A vertex buffer holds data for a list of vertices.</span></span> <span data-ttu-id="ece83-118">各頂点のデータには、位置、色、法線ベクトル、テクスチャ座標などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ece83-118">The data for each vertex can include position, color, normal vector, texture co-ordinates, and so on.</span></span> <span data-ttu-id="ece83-119">インデックス バッファーには、頂点バッファーへの整数インデックス (オフセット) が保持されます。インデックス バッファーは、頂点の完全なリストのサブセットから成るオブジェクトを定義してレンダリングするために使われます。</span><span class="sxs-lookup"><span data-stu-id="ece83-119">An index buffer holds integer indexes (offsets) into a vertex buffer, and is used to define and render an object made up of a subset of the full list of vertices.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="shader-resource-view--srv-.md"><span data-ttu-id="ad381-120">シェーダー リソース ビュー (SRV) と順序指定されていないアクセス ビュー (UAV)</span><span class="sxs-lookup"><span data-stu-id="ad381-120">Shader resource view (SRV) and Unordered Access view (UAV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-121">シェーダー リソース ビューは、通常、シェーダーがアクセスできる形式でテクスチャをラップします。</span><span class="sxs-lookup"><span data-stu-id="ad381-121">Shader resource views typically wrap textures in a format that the shaders can access them.</span></span> <span data-ttu-id="ad381-122">順序指定されていないアクセス ビューも同様の機能を提供しますが、任意の順序でテクスチャ (またはその他のリソース) の読み取りや書き込みを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="ad381-122">An unordered access view provides similar functionality, but enables the reading and writing to the texture (or other resource) in any order.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-120"><a href="shader-resource-view--srv-.md">シェーダー リソース ビュー (SRV) と順序付けられていないアクセス ビュー (UAV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-120"><a href="shader-resource-view--srv-.md">Shader resource view (SRV) and Unordered Access view (UAV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-121">シェーダー リソース ビューは、通常、シェーダーがアクセスできる形式でテクスチャをラップします。</span><span class="sxs-lookup"><span data-stu-id="ece83-121">Shader resource views typically wrap textures in a format that the shaders can access them.</span></span> <span data-ttu-id="ece83-122">順序指定されていないアクセス ビューも同様の機能を提供しますが、任意の順序でテクスチャ (またはその他のリソース) の読み取りや書き込みを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="ece83-122">An unordered access view provides similar functionality, but enables the reading and writing to the texture (or other resource) in any order.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="sampler.md"><span data-ttu-id="ad381-123">サンプラー</span><span class="sxs-lookup"><span data-stu-id="ad381-123">Sampler</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-124">テクスチャまたはその他のリソースから入力値を読み取るプロセスをサンプリングと呼びます。</span><span class="sxs-lookup"><span data-stu-id="ad381-124">Sampling is the process of reading input values from a texture, or other resource.</span></span> <span data-ttu-id="ad381-125">&quot;サンプラー&quot; は、リソースからの読み取りを行う任意のオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="ad381-125">A &quot;sampler&quot; is any object that reads from resources.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-123"><a href="sampler.md">サンプラー</a></span><span class="sxs-lookup"><span data-stu-id="ece83-123"><a href="sampler.md">Sampler</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-124">テクスチャまたはその他のリソースから入力値を読み取るプロセスをサンプリングと呼びます。</span><span class="sxs-lookup"><span data-stu-id="ece83-124">Sampling is the process of reading input values from a texture, or other resource.</span></span> <span data-ttu-id="ece83-125">&quot;サンプラー&quot; は、リソースからの読み取りを行う任意のオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="ece83-125">A &quot;sampler&quot; is any object that reads from resources.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="render-target-view--rtv-.md"><span data-ttu-id="ad381-126">レンダー ターゲット ビュー (RTV)</span><span class="sxs-lookup"><span data-stu-id="ad381-126">Render target view (RTV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-127">レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="ad381-127">Render targets enable a scene to be rendered to a temporary intermediate buffer, rather than to the back buffer to be rendered to the screen.</span></span> <span data-ttu-id="ad381-128">この機能を使うと複雑なシーンを実現できます。たとえば、グラフィックス パイプライン内で反射テクスチャなどの用途に使われるシーンをレンダリングしたり、レンダリング前にシーンにピクセル シェーダー効果を追加したりできます。</span><span class="sxs-lookup"><span data-stu-id="ad381-128">This feature enables use of the complex scene that might be rendered, perhaps as a reflection texture or other purpose within the graphics pipeline, or perhaps to add additional pixel shader effects to the scene before rendering.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-126"><a href="render-target-view--rtv-.md">レンダー ターゲット ビュー (RTV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-126"><a href="render-target-view--rtv-.md">Render target view (RTV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-127">レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="ece83-127">Render targets enable a scene to be rendered to a temporary intermediate buffer, rather than to the back buffer to be rendered to the screen.</span></span> <span data-ttu-id="ece83-128">この機能を使うと複雑なシーンを実現できます。たとえば、グラフィックス パイプライン内で反射テクスチャなどの用途に使われるシーンをレンダリングしたり、レンダリング前にシーンにピクセル シェーダー効果を追加したりできます。</span><span class="sxs-lookup"><span data-stu-id="ece83-128">This feature enables use of the complex scene that might be rendered, perhaps as a reflection texture or other purpose within the graphics pipeline, or perhaps to add additional pixel shader effects to the scene before rendering.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="depth-stencil-view--dsv-.md"><span data-ttu-id="ad381-129">深度ステンシル ビュー (DSV)</span><span class="sxs-lookup"><span data-stu-id="ad381-129">Depth stencil view (DSV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-130">深度ステンシル ビューは、深度とステンシルの情報を保持するための形式とバッファーを提供します。</span><span class="sxs-lookup"><span data-stu-id="ad381-130">A depth stencil view provides the format and buffer for holding depth and stencil information.</span></span> <span data-ttu-id="ad381-131">深度バッファーは、近くにあるオブジェクトによって視界から遮られる、ビューアーには見えないピクセルの描画を省くために使われます。</span><span class="sxs-lookup"><span data-stu-id="ad381-131">The depth buffer is used to cull the drawing of pixels that would be invisible to the viewer as they are occluded from view by a closer object.</span></span> <span data-ttu-id="ad381-132">ステンシル バッファーを使うと、定義された図形以外のすべての描画を省略することができます。</span><span class="sxs-lookup"><span data-stu-id="ad381-132">The stencil buffer can be used to cull all drawing outside of a defined shape.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-129"><a href="depth-stencil-view--dsv-.md">深度ステンシル ビュー (DSV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-129"><a href="depth-stencil-view--dsv-.md">Depth stencil view (DSV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-130">深度ステンシル ビューは、深度とステンシルの情報を保持するための形式とバッファーを提供します。</span><span class="sxs-lookup"><span data-stu-id="ece83-130">A depth stencil view provides the format and buffer for holding depth and stencil information.</span></span> <span data-ttu-id="ece83-131">深度バッファーは、近くにあるオブジェクトによって視界から遮られる、ビューアーには見えないピクセルの描画を省くために使われます。</span><span class="sxs-lookup"><span data-stu-id="ece83-131">The depth buffer is used to cull the drawing of pixels that would be invisible to the viewer as they are occluded from view by a closer object.</span></span> <span data-ttu-id="ece83-132">ステンシル バッファーを使って、定義した図形以外のすべての描画をカリングすることができます。</span><span class="sxs-lookup"><span data-stu-id="ece83-132">The stencil buffer can be used to cull all drawing outside of a defined shape.</span></span></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="stream-output-view--sov-.md"><span data-ttu-id="ad381-133">ストリーム出力ビュー (SOV)</span><span class="sxs-lookup"><span data-stu-id="ad381-133">Stream output view (SOV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-134">ストリーム出力ビューを使うと、頂点、テセレーション、ジオメトリ シェーダーによって生成された頂点情報を、後で利用できるようにアプリケーションに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="ad381-134">Stream output views enable the vertex information that the vertex, tessellation and geometry shaders have come up with to be streamed back out to the application for further use.</span></span> <span data-ttu-id="ad381-135">たとえば、これらのシェーダーによってゆがめられたオブジェクトをアプリケーションに書き戻して、より正確な入力を物理エンジンや他のエンジンに提供できます。</span><span class="sxs-lookup"><span data-stu-id="ad381-135">For example, an object that has been distorted by these shaders could be written back to the application to provide more accurate input to a physics or other engine.</span></span> <span data-ttu-id="ad381-136">ただし実際には、ストリーム出力ビューは、グラフィックス パイプラインの機能の中でも使われることが少ない機能です。</span><span class="sxs-lookup"><span data-stu-id="ad381-136">In practice though, stream output views are an infrequently used feature of the graphics pipeline.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-133"><a href="stream-output-view--sov-.md">Stream 出力ビュー (SOV)</a></span><span class="sxs-lookup"><span data-stu-id="ece83-133"><a href="stream-output-view--sov-.md">Stream output view (SOV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-134">ストリーム出力ビューを使うと、頂点、テセレーション、ジオメトリ シェーダーによって生成された頂点情報を、後で利用できるようにアプリケーションに戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="ece83-134">Stream output views enable the vertex information that the vertex, tessellation and geometry shaders have come up with to be streamed back out to the application for further use.</span></span> <span data-ttu-id="ece83-135">たとえば、これらのシェーダーによってゆがめられたオブジェクトをアプリケーションに書き戻して、より正確な入力を物理エンジンや他のエンジンに提供できます。</span><span class="sxs-lookup"><span data-stu-id="ece83-135">For example, an object that has been distorted by these shaders could be written back to the application to provide more accurate input to a physics or other engine.</span></span> <span data-ttu-id="ece83-136">ただし実際には、ストリーム出力ビューは、グラフィックス パイプラインの機能の中でも使われることが少ない機能です。</span><span class="sxs-lookup"><span data-stu-id="ece83-136">In practice though, stream output views are an infrequently used feature of the graphics pipeline.</span></span></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="rasterizer-ordered-view--rov-.md"><span data-ttu-id="ad381-137">ラスタライザー順序指定ビュー (ROV)</span><span class="sxs-lookup"><span data-stu-id="ad381-137">Rasterizer ordered view (ROV)</span></span></a></p></td>
-<td align="left"><p><span data-ttu-id="ad381-138">ラスタライザー順序指定ビューを使うと、深度バッファーの一部の制約に対処できます。特に、透明度を含む複数のテクスチャがあり、それらのすべてを同じピクセルに適用する場合に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="ad381-138">Rasterizer ordered views enable some of the limitations of a depth buffer to be addressed, in particular having multiple textures containing transparency all applying to the same pixels.</span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-137"><a href="rasterizer-ordered-view--rov-.md">ラスタライザー ビュー (ROV) 順序付け</a></span><span class="sxs-lookup"><span data-stu-id="ece83-137"><a href="rasterizer-ordered-view--rov-.md">Rasterizer ordered view (ROV)</a></span></span></p></td>
+<td align="left"><p><span data-ttu-id="ece83-138">ラスタライザー順序指定ビューを使うと、深度バッファーの一部の制約に対処できます。特に、透明度が含まれた複数のテクスチャがあって、それらがすべて同じピクセルに適用される場合に有効です。</span><span class="sxs-lookup"><span data-stu-id="ece83-138">Rasterizer ordered views enable some of the limitations of a depth buffer to be addressed, in particular having multiple textures containing transparency all applying to the same pixels.</span></span></p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="ad381-139"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="ad381-139"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="ece83-139"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="ece83-139"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="ad381-140">Direct3D グラフィックスの学習ガイド</span><span class="sxs-lookup"><span data-stu-id="ad381-140">Direct3D Graphics Learning Guide</span></span>](index.md)
+[<span data-ttu-id="ece83-140">Direct3D グラフィックス学習ガイド</span><span class="sxs-lookup"><span data-stu-id="ece83-140">Direct3D Graphics Learning Guide</span></span>](index.md)
 
  
 

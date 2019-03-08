@@ -1,68 +1,68 @@
 ---
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: パートナー センター アカウントに登録されている特定のアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。
+description: パートナー センター アカウントに登録されている特定のアプリについての情報を取得するのに、Microsoft Store 送信 API でこのメソッドを使用します。
 title: アプリの入手
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941625"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57590517"
 ---
-# <a name="get-an-app"></a><span data-ttu-id="9c454-104">アプリの入手</span><span class="sxs-lookup"><span data-stu-id="9c454-104">Get an app</span></span>
+# <a name="get-an-app"></a><span data-ttu-id="7ef0f-104">アプリの入手</span><span class="sxs-lookup"><span data-stu-id="7ef0f-104">Get an app</span></span>
 
-<span data-ttu-id="9c454-105">パートナー センター アカウントに登録されている特定のアプリに関する情報を取得する、Microsoft Store 申請 API でこのメソッドを使います。</span><span class="sxs-lookup"><span data-stu-id="9c454-105">Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Partner Center account.</span></span>
+<span data-ttu-id="7ef0f-105">パートナー センター アカウントに登録されている特定のアプリについての情報を取得するのに、Microsoft Store 送信 API でこのメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-105">Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Partner Center account.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="9c454-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="9c454-106">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="7ef0f-106">前提条件</span><span class="sxs-lookup"><span data-stu-id="7ef0f-106">Prerequisites</span></span>
 
-<span data-ttu-id="9c454-107">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="9c454-107">To use this method, you need to first do the following:</span></span>
+<span data-ttu-id="7ef0f-107">このメソッドを使うには、最初に次の作業を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-107">To use this method, you need to first do the following:</span></span>
 
-* <span data-ttu-id="9c454-108">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="9c454-108">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
-* <span data-ttu-id="9c454-109">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="9c454-109">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="9c454-110">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="9c454-110">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="9c454-111">トークンの有効期限が切れたら、新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="9c454-111">After the token expires, you can obtain a new one.</span></span>
+* <span data-ttu-id="7ef0f-108">Microsoft Store 申請 API に関するすべての[前提条件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)を満たします (前提条件がまだ満たされていない場合)。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-108">If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.</span></span>
+* <span data-ttu-id="7ef0f-109">このメソッドの要求ヘッダーで使う [Azure AD アクセス トークンを取得](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-109">[Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method.</span></span> <span data-ttu-id="7ef0f-110">アクセス トークンを取得した後、アクセス トークンを使用できるのは、その有効期限が切れるまでの 60 分間です。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-110">After you obtain an access token, you have 60 minutes to use it before it expires.</span></span> <span data-ttu-id="7ef0f-111">トークンの有効期限が切れたら新しいトークンを取得できます。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-111">After the token expires, you can obtain a new one.</span></span>
 
-## <a name="request"></a><span data-ttu-id="9c454-112">要求</span><span class="sxs-lookup"><span data-stu-id="9c454-112">Request</span></span>
+## <a name="request"></a><span data-ttu-id="7ef0f-112">要求</span><span class="sxs-lookup"><span data-stu-id="7ef0f-112">Request</span></span>
 
-<span data-ttu-id="9c454-113">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9c454-113">This method has the following syntax.</span></span> <span data-ttu-id="9c454-114">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9c454-114">See the following sections for usage examples and descriptions of the header and request body.</span></span>
+<span data-ttu-id="7ef0f-113">このメソッドの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-113">This method has the following syntax.</span></span> <span data-ttu-id="7ef0f-114">ヘッダーと要求本文の使用例と説明については、次のセクションをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-114">See the following sections for usage examples and descriptions of the header and request body.</span></span>
 
-| <span data-ttu-id="9c454-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="9c454-115">Method</span></span> | <span data-ttu-id="9c454-116">要求 URI</span><span class="sxs-lookup"><span data-stu-id="9c454-116">Request URI</span></span>                                                      |
+| <span data-ttu-id="7ef0f-115">メソッド</span><span class="sxs-lookup"><span data-stu-id="7ef0f-115">Method</span></span> | <span data-ttu-id="7ef0f-116">要求 URI</span><span class="sxs-lookup"><span data-stu-id="7ef0f-116">Request URI</span></span>                                                      |
 |--------|------------------------------------------------------------------|
-| <span data-ttu-id="9c454-117">GET</span><span class="sxs-lookup"><span data-stu-id="9c454-117">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
+| <span data-ttu-id="7ef0f-117">GET</span><span class="sxs-lookup"><span data-stu-id="7ef0f-117">GET</span></span>    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` |
 
 
-### <a name="request-header"></a><span data-ttu-id="9c454-118">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9c454-118">Request header</span></span>
+### <a name="request-header"></a><span data-ttu-id="7ef0f-118">要求ヘッダー</span><span class="sxs-lookup"><span data-stu-id="7ef0f-118">Request header</span></span>
 
-| <span data-ttu-id="9c454-119">ヘッダー</span><span class="sxs-lookup"><span data-stu-id="9c454-119">Header</span></span>        | <span data-ttu-id="9c454-120">型</span><span class="sxs-lookup"><span data-stu-id="9c454-120">Type</span></span>   | <span data-ttu-id="9c454-121">説明</span><span class="sxs-lookup"><span data-stu-id="9c454-121">Description</span></span>                                                                 |
+| <span data-ttu-id="7ef0f-119">Header</span><span class="sxs-lookup"><span data-stu-id="7ef0f-119">Header</span></span>        | <span data-ttu-id="7ef0f-120">種類</span><span class="sxs-lookup"><span data-stu-id="7ef0f-120">Type</span></span>   | <span data-ttu-id="7ef0f-121">説明</span><span class="sxs-lookup"><span data-stu-id="7ef0f-121">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| <span data-ttu-id="9c454-122">Authorization</span><span class="sxs-lookup"><span data-stu-id="9c454-122">Authorization</span></span> | <span data-ttu-id="9c454-123">string</span><span class="sxs-lookup"><span data-stu-id="9c454-123">string</span></span> | <span data-ttu-id="9c454-124">必須。</span><span class="sxs-lookup"><span data-stu-id="9c454-124">Required.</span></span> <span data-ttu-id="9c454-125">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="9c454-125">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
+| <span data-ttu-id="7ef0f-122">Authorization</span><span class="sxs-lookup"><span data-stu-id="7ef0f-122">Authorization</span></span> | <span data-ttu-id="7ef0f-123">string</span><span class="sxs-lookup"><span data-stu-id="7ef0f-123">string</span></span> | <span data-ttu-id="7ef0f-124">必須。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-124">Required.</span></span> <span data-ttu-id="7ef0f-125">**Bearer** &lt;*トークン*&gt; という形式の Azure AD アクセス トークン。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-125">The Azure AD access token in the form **Bearer** &lt;*token*&gt;.</span></span> |
 
 
-### <a name="request-parameters"></a><span data-ttu-id="9c454-126">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="9c454-126">Request parameters</span></span>
+### <a name="request-parameters"></a><span data-ttu-id="7ef0f-126">要求パラメーター</span><span class="sxs-lookup"><span data-stu-id="7ef0f-126">Request parameters</span></span>
 
-| <span data-ttu-id="9c454-127">名前</span><span class="sxs-lookup"><span data-stu-id="9c454-127">Name</span></span>        | <span data-ttu-id="9c454-128">種類</span><span class="sxs-lookup"><span data-stu-id="9c454-128">Type</span></span>   | <span data-ttu-id="9c454-129">説明</span><span class="sxs-lookup"><span data-stu-id="9c454-129">Description</span></span>                                                                 |
+| <span data-ttu-id="7ef0f-127">名前</span><span class="sxs-lookup"><span data-stu-id="7ef0f-127">Name</span></span>        | <span data-ttu-id="7ef0f-128">種類</span><span class="sxs-lookup"><span data-stu-id="7ef0f-128">Type</span></span>   | <span data-ttu-id="7ef0f-129">説明</span><span class="sxs-lookup"><span data-stu-id="7ef0f-129">Description</span></span>                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| <span data-ttu-id="9c454-130">applicationId</span><span class="sxs-lookup"><span data-stu-id="9c454-130">applicationId</span></span> | <span data-ttu-id="9c454-131">string</span><span class="sxs-lookup"><span data-stu-id="9c454-131">string</span></span> | <span data-ttu-id="9c454-132">必須。</span><span class="sxs-lookup"><span data-stu-id="9c454-132">Required.</span></span> <span data-ttu-id="9c454-133">取得するアプリのストア ID。</span><span class="sxs-lookup"><span data-stu-id="9c454-133">The Store ID of the app to retrieve.</span></span> <span data-ttu-id="9c454-134">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9c454-134">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
+| <span data-ttu-id="7ef0f-130">applicationId</span><span class="sxs-lookup"><span data-stu-id="7ef0f-130">applicationId</span></span> | <span data-ttu-id="7ef0f-131">string</span><span class="sxs-lookup"><span data-stu-id="7ef0f-131">string</span></span> | <span data-ttu-id="7ef0f-132">必須。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-132">Required.</span></span> <span data-ttu-id="7ef0f-133">取得するアプリのストア ID。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-133">The Store ID of the app to retrieve.</span></span> <span data-ttu-id="7ef0f-134">ストア ID について詳しくは、「[アプリ ID の詳細の表示](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-134">For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</span></span>  |
 
 
-### <a name="request-body"></a><span data-ttu-id="9c454-135">要求本文</span><span class="sxs-lookup"><span data-stu-id="9c454-135">Request body</span></span>
+### <a name="request-body"></a><span data-ttu-id="7ef0f-135">要求本文</span><span class="sxs-lookup"><span data-stu-id="7ef0f-135">Request body</span></span>
 
-<span data-ttu-id="9c454-136">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="9c454-136">Do not provide a request body for this method.</span></span>
+<span data-ttu-id="7ef0f-136">このメソッドでは要求本文を指定しないでください。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-136">Do not provide a request body for this method.</span></span>
 
-### <a name="request-example"></a><span data-ttu-id="9c454-137">要求の例</span><span class="sxs-lookup"><span data-stu-id="9c454-137">Request example</span></span>
+### <a name="request-example"></a><span data-ttu-id="7ef0f-137">要求の例</span><span class="sxs-lookup"><span data-stu-id="7ef0f-137">Request example</span></span>
 
-<span data-ttu-id="9c454-138">次の例は、Store ID 値が 9NBLGGH4R315 であるアプリに関する情報を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="9c454-138">The following example demonstrates how to retrieve information about an app with the Store ID value 9NBLGGH4R315.</span></span>
+<span data-ttu-id="7ef0f-138">次の例は、Store ID 値が 9NBLGGH4R315 であるアプリに関する情報を取得する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-138">The following example demonstrates how to retrieve information about an app with the Store ID value 9NBLGGH4R315.</span></span>
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a><span data-ttu-id="9c454-139">応答</span><span class="sxs-lookup"><span data-stu-id="9c454-139">Response</span></span>
+## <a name="response"></a><span data-ttu-id="7ef0f-139">応答</span><span class="sxs-lookup"><span data-stu-id="7ef0f-139">Response</span></span>
 
-<span data-ttu-id="9c454-140">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="9c454-140">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="9c454-141">応答の本文内の値について詳しくは、[アプリケーションのリソース](get-app-data.md#application_object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9c454-141">For more details about the values in the response body, see [Application resource](get-app-data.md#application_object).</span></span>
+<span data-ttu-id="7ef0f-140">次の例は、このメソッドが正常に呼び出された場合の JSON 応答本文を示しています。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-140">The following example demonstrates the JSON response body for a successful call to this method.</span></span> <span data-ttu-id="7ef0f-141">応答の本文内の値について詳しくは、[アプリケーションのリソース](get-app-data.md#application_object)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-141">For more details about the values in the response body, see [Application resource](get-app-data.md#application_object).</span></span>
 
 ```json
 {
@@ -84,19 +84,19 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## <a name="error-codes"></a><span data-ttu-id="9c454-142">エラー コード</span><span class="sxs-lookup"><span data-stu-id="9c454-142">Error codes</span></span>
+## <a name="error-codes"></a><span data-ttu-id="7ef0f-142">エラー コード</span><span class="sxs-lookup"><span data-stu-id="7ef0f-142">Error codes</span></span>
 
-<span data-ttu-id="9c454-143">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="9c454-143">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
+<span data-ttu-id="7ef0f-143">要求を正常に完了できない場合、次の HTTP エラー コードのいずれかが応答に含まれます。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-143">If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.</span></span>
 
-| <span data-ttu-id="9c454-144">エラー コード</span><span class="sxs-lookup"><span data-stu-id="9c454-144">Error code</span></span> |  <span data-ttu-id="9c454-145">説明</span><span class="sxs-lookup"><span data-stu-id="9c454-145">Description</span></span>   |
+| <span data-ttu-id="7ef0f-144">エラー コード</span><span class="sxs-lookup"><span data-stu-id="7ef0f-144">Error code</span></span> |  <span data-ttu-id="7ef0f-145">説明</span><span class="sxs-lookup"><span data-stu-id="7ef0f-145">Description</span></span>   |
 |--------|------------------|
-| <span data-ttu-id="9c454-146">404</span><span class="sxs-lookup"><span data-stu-id="9c454-146">404</span></span>  | <span data-ttu-id="9c454-147">指定したアプリは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="9c454-147">The specified app could not be found.</span></span> |
-| <span data-ttu-id="9c454-148">409</span><span class="sxs-lookup"><span data-stu-id="9c454-148">409</span></span>  | <span data-ttu-id="9c454-149">アプリでは、 [Microsoft Store 申請 API で現在サポートされている](create-and-manage-submissions-using-windows-store-services.md#not_supported)はパートナー センターの機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="9c454-149">The app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span>  |
+| <span data-ttu-id="7ef0f-146">404</span><span class="sxs-lookup"><span data-stu-id="7ef0f-146">404</span></span>  | <span data-ttu-id="7ef0f-147">指定したアプリは見つかりませんでした。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-147">The specified app could not be found.</span></span> |
+| <span data-ttu-id="7ef0f-148">409</span><span class="sxs-lookup"><span data-stu-id="7ef0f-148">409</span></span>  | <span data-ttu-id="7ef0f-149">アプリはパートナー センター機能を使用する[現在サポートされていません、Microsoft Store 送信 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-149">The app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</span></span>  |
 
 
-## <a name="related-topics"></a><span data-ttu-id="9c454-150">関連トピック</span><span class="sxs-lookup"><span data-stu-id="9c454-150">Related topics</span></span>
+## <a name="related-topics"></a><span data-ttu-id="7ef0f-150">関連トピック</span><span class="sxs-lookup"><span data-stu-id="7ef0f-150">Related topics</span></span>
 
-* [<span data-ttu-id="9c454-151">Microsoft Store サービスを使用した申請の作成と管理</span><span class="sxs-lookup"><span data-stu-id="9c454-151">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
-* [<span data-ttu-id="9c454-152">すべてのアプリの取得</span><span class="sxs-lookup"><span data-stu-id="9c454-152">Get all apps</span></span>](get-all-apps.md)
-* [<span data-ttu-id="9c454-153">アプリのパッケージ フライトの入手</span><span class="sxs-lookup"><span data-stu-id="9c454-153">Get package flights for an app</span></span>](get-flights-for-an-app.md)
-* [<span data-ttu-id="9c454-154">アプリのアドオンの入手</span><span class="sxs-lookup"><span data-stu-id="9c454-154">Get add-ons for an app</span></span>](get-add-ons-for-an-app.md)
+* [<span data-ttu-id="7ef0f-151">作成し、Microsoft Store サービスを使用して送信の管理</span><span class="sxs-lookup"><span data-stu-id="7ef0f-151">Create and manage submissions using Microsoft Store services</span></span>](create-and-manage-submissions-using-windows-store-services.md)
+* [<span data-ttu-id="7ef0f-152">すべてのアプリを入手します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-152">Get all apps</span></span>](get-all-apps.md)
+* [<span data-ttu-id="7ef0f-153">アプリのパッケージのフライトを取得します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-153">Get package flights for an app</span></span>](get-flights-for-an-app.md)
+* [<span data-ttu-id="7ef0f-154">アプリのアドオンを入手します。</span><span class="sxs-lookup"><span data-stu-id="7ef0f-154">Get add-ons for an app</span></span>](get-add-ons-for-an-app.md)

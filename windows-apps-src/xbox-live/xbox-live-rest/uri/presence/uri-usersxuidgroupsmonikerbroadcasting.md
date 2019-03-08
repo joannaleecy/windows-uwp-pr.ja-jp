@@ -8,46 +8,46 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 98eaa60204e3c98eb1b09a13372f7b0c084a6608
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941058"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651467"
 ---
-# <a name="usersxuidxuidgroupsmonikerbroadcasting"></a><span data-ttu-id="fdff1-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span><span class="sxs-lookup"><span data-stu-id="fdff1-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span></span>
-<span data-ttu-id="fdff1-105">URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="fdff1-105">Accesses the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span> <span data-ttu-id="fdff1-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="fdff1-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
+# <a name="usersxuidxuidgroupsmonikerbroadcasting"></a><span data-ttu-id="a037f-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span><span class="sxs-lookup"><span data-stu-id="a037f-104">/users/xuid({xuid})/groups/{moniker}/broadcasting</span></span>
+<span data-ttu-id="a037f-105">アクセス グループ モニカーによって指定されたブロードキャスト ユーザーのプレゼンスのレコードに関連する XUID URI に表示されます。</span><span class="sxs-lookup"><span data-stu-id="a037f-105">Accesses the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span> <span data-ttu-id="a037f-106">これらの Uri のドメインが`userpresence.xboxlive.com`します。</span><span class="sxs-lookup"><span data-stu-id="a037f-106">The domain for these URIs is `userpresence.xboxlive.com`.</span></span>
  
-  * [<span data-ttu-id="fdff1-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fdff1-107">URI parameters</span></span>](#ID4EV)
+  * [<span data-ttu-id="a037f-107">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a037f-107">URI parameters</span></span>](#ID4EV)
  
 <a id="ID4EV"></a>
 
  
-## <a name="uri-parameters"></a><span data-ttu-id="fdff1-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="fdff1-108">URI parameters</span></span>
+## <a name="uri-parameters"></a><span data-ttu-id="a037f-108">URI パラメーター</span><span class="sxs-lookup"><span data-stu-id="a037f-108">URI parameters</span></span>
  
-| <span data-ttu-id="fdff1-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fdff1-109">Parameter</span></span>| <span data-ttu-id="fdff1-110">型</span><span class="sxs-lookup"><span data-stu-id="fdff1-110">Type</span></span>| <span data-ttu-id="fdff1-111">説明</span><span class="sxs-lookup"><span data-stu-id="fdff1-111">Description</span></span>| 
+| <span data-ttu-id="a037f-109">パラメーター</span><span class="sxs-lookup"><span data-stu-id="a037f-109">Parameter</span></span>| <span data-ttu-id="a037f-110">種類</span><span class="sxs-lookup"><span data-stu-id="a037f-110">Type</span></span>| <span data-ttu-id="a037f-111">説明</span><span class="sxs-lookup"><span data-stu-id="a037f-111">Description</span></span>| 
 | --- | --- | --- | 
-| <span data-ttu-id="fdff1-112">xuid</span><span class="sxs-lookup"><span data-stu-id="fdff1-112">xuid</span></span>| <span data-ttu-id="fdff1-113">string</span><span class="sxs-lookup"><span data-stu-id="fdff1-113">string</span></span>| <span data-ttu-id="fdff1-114">Xbox ユーザー ID (XUID)、ユーザー、グループ内の Xuid に関連します。</span><span class="sxs-lookup"><span data-stu-id="fdff1-114">Xbox User ID (XUID) of the user related to the XUIDs in the Group.</span></span>| 
-| <span data-ttu-id="fdff1-115">モニカー</span><span class="sxs-lookup"><span data-stu-id="fdff1-115">moniker</span></span>| <span data-ttu-id="fdff1-116">string</span><span class="sxs-lookup"><span data-stu-id="fdff1-116">string</span></span>| <span data-ttu-id="fdff1-117">ユーザーのグループを定義する文字列です。</span><span class="sxs-lookup"><span data-stu-id="fdff1-117">String defining the group of users.</span></span> <span data-ttu-id="fdff1-118">現時点では受け入れられるだけモニカーでは、大文字の 'P'"People"でです。</span><span class="sxs-lookup"><span data-stu-id="fdff1-118">The only accepted moniker at present is "People", with a capital 'P'.</span></span>| 
+| <span data-ttu-id="a037f-112">xuid</span><span class="sxs-lookup"><span data-stu-id="a037f-112">xuid</span></span>| <span data-ttu-id="a037f-113">string</span><span class="sxs-lookup"><span data-stu-id="a037f-113">string</span></span>| <span data-ttu-id="a037f-114">Xbox ユーザー ID (XUID) のグループで Xuid に関連するユーザーです。</span><span class="sxs-lookup"><span data-stu-id="a037f-114">Xbox User ID (XUID) of the user related to the XUIDs in the Group.</span></span>| 
+| <span data-ttu-id="a037f-115">モニカー</span><span class="sxs-lookup"><span data-stu-id="a037f-115">moniker</span></span>| <span data-ttu-id="a037f-116">string</span><span class="sxs-lookup"><span data-stu-id="a037f-116">string</span></span>| <span data-ttu-id="a037f-117">ユーザーのグループを定義する文字列。</span><span class="sxs-lookup"><span data-stu-id="a037f-117">String defining the group of users.</span></span> <span data-ttu-id="a037f-118">現時点ではのみ受け入れられたモニカーでは、"People"が大文字の 'P' です。</span><span class="sxs-lookup"><span data-stu-id="a037f-118">The only accepted moniker at present is "People", with a capital 'P'.</span></span>| 
   
 <a id="ID4E4B"></a>
 
  
-## <a name="valid-methods"></a><span data-ttu-id="fdff1-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="fdff1-119">Valid methods</span></span>
+## <a name="valid-methods"></a><span data-ttu-id="a037f-119">有効なメソッド</span><span class="sxs-lookup"><span data-stu-id="a037f-119">Valid methods</span></span>
 
-[<span data-ttu-id="fdff1-120">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span><span class="sxs-lookup"><span data-stu-id="fdff1-120">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span></span>](uri-usersxuidgroupsmonikerbroadcastingget.md)
+[<span data-ttu-id="a037f-120">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span><span class="sxs-lookup"><span data-stu-id="a037f-120">GET (/users/xuid({xuid})/groups/{moniker}/broadcasting )</span></span>](uri-usersxuidgroupsmonikerbroadcastingget.md)
 
-<span data-ttu-id="fdff1-121">&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーで指定されているブロードキャスト ユーザーのプレゼンス レコードを取得します。</span><span class="sxs-lookup"><span data-stu-id="fdff1-121">&nbsp;&nbsp;Retrieves the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
+<span data-ttu-id="a037f-121">&nbsp;&nbsp;URI に表示される XUID に関連するグループ モニカーによって指定されたブロードキャスト ユーザーのプレゼンスのレコードを取得します。</span><span class="sxs-lookup"><span data-stu-id="a037f-121">&nbsp;&nbsp;Retrieves the presence record of the broadcasting users specified by the groups moniker related to the XUID that appears in the URI.</span></span>
  
 <a id="ID4EHC"></a>
 
  
-## <a name="see-also"></a><span data-ttu-id="fdff1-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="fdff1-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a037f-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="a037f-122">See also</span></span>
  
 <a id="ID4EJC"></a>
 
  
-##### <a name="parent"></a><span data-ttu-id="fdff1-123">Parent</span><span class="sxs-lookup"><span data-stu-id="fdff1-123">Parent</span></span> 
+##### <a name="parent"></a><span data-ttu-id="a037f-123">Parent</span><span class="sxs-lookup"><span data-stu-id="a037f-123">Parent</span></span> 
 
-[<span data-ttu-id="fdff1-124">プレゼンス URI</span><span class="sxs-lookup"><span data-stu-id="fdff1-124">Presence URIs</span></span>](atoc-reference-presence.md)
+[<span data-ttu-id="a037f-124">プレゼンスの Uri</span><span class="sxs-lookup"><span data-stu-id="a037f-124">Presence URIs</span></span>](atoc-reference-presence.md)
 
    
