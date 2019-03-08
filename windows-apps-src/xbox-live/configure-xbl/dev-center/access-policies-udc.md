@@ -1,32 +1,32 @@
 ---
-title: パートナー センターでアクセス ポリシーを構成します。
-description: その他のアプリ、ゲーム、およびサービスが Xbox Live の設定にアクセスできるようにするパートナー センターでアクセス ポリシーを構成する方法について説明します。
+title: パートナー センターでのアクセス ポリシーを構成します。
+description: パートナー センターの他のアプリ、ゲーム、および Xbox Live の設定にアクセスするサービスを許可するアクセス ポリシーを構成する方法について説明します。
 ms.assetid: ''
 ms.date: 02/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One, UDC, ユニバーサル デベロッパー センター
 ms.openlocfilehash: ae26c18abdac30ff988e90ee5c56f178bf14b74a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918446"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658217"
 ---
-# <a name="configure-access-policies-in-partner-center"></a>パートナー センターでアクセス ポリシーを構成します。
+# <a name="configure-access-policies-in-partner-center"></a>パートナー センターでのアクセス ポリシーを構成します。
 
-[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、その他のサービス、ゲーム、およびタイトルの Xbox Live 設定とデータにアクセスするアプリを許可することができます。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
+使用することができます[パートナー センター](https://partner.microsoft.com/dashboard)他のサービス、ゲーム、およびタイトルの Xbox Live の設定とデータにアクセスするアプリを許可します。 たとえば、Web サイトでのランキングを Web サービスに表示したり、ゲームのタイトル ストレージにアクセスしてセーブされたゲーム データを表示または変更できる比較アプリを作成したりすることができます。
 
-既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。 パートナー センターでアクセス ポリシーを構成することによって、これを変更することができます。
+既定では、タイトル自体のみが Xbox Live サービスに保存された設定とデータにアクセスできます。 これは、パートナー センターでアクセス ポリシーを構成することで変更できます。
 
 > [!NOTE]
 > このトピックは、Xbox Live クリエーターズ プログラムのタイトルには適用されません。
 
 次の手順に従って、構成を追加します。
 
-1. [パートナー センター](https://partner.microsoft.com/dashboard)でタイトルを選択すると、**サービス**に移動します。 > **Xbox Live**します。
+1. タイトルを選択した後は[パートナー センター](https://partner.microsoft.com/dashboard)に移動します**サービス** > **Xbox Live**します。
 
-2. **アクセス ポリシー**へのリンクをクリックします。
+2. リンクをクリックして**アクセス ポリシー**します。
 
 3. アクセスを許可する設定をクリックし、アプリ/サービスの追加ボタンをクリックします。 その設定にアクセスできるように構成されたアプリ/サービスの一覧の下に新しい行が追加されます。
 
@@ -38,4 +38,4 @@ ms.locfileid: "8918446"
 
 7. 作業が完了したら、**[保存]** ボタンをクリックして変更を保存します。
 
-![アクセス ポリシーの追加のアプリまたはサービスの画面](../../images/dev-center/data-sharing-2.png)
+![アクセス ポリシーはアプリやサービスの画面を追加します。](../../images/dev-center/data-sharing-2.png)

@@ -1,5 +1,5 @@
 items:
-- name: はじめに
+- name: 概要
   href: ../gaming/getting-started.md
 - name: Windows 10 ゲーム開発ガイド
   href: ../gaming/e2e.md
@@ -136,7 +136,7 @@ items:
       - name: プリミティブ
         href: ../graphics-concepts/primitives.md
         items:
-        - name: ポイント一覧
+        - name: ポイント リスト
           href: ../graphics-concepts/point-lists.md
         - name: 線リスト
           href: ../graphics-concepts/line-lists.md
@@ -148,11 +148,11 @@ items:
           href: ../graphics-concepts/triangle-strips.md
       - name: 顔と頂点の標準ベクター
         href: ../graphics-concepts/face-and-vertex-normal-vectors.md
-      - name: 四角形
+      - name: 矩形
         href: ../graphics-concepts/rectangles.md
       - name: 三角形補間
         href: ../graphics-concepts/triangle-interpolation.md
-      - name: ベクター、頂点、および四元数
+      - name: ベクトル、頂点、および四元数
         href: ../graphics-concepts/vectors--vertices--and-quaternions.md
       - name: 変換
         href: ../graphics-concepts/transforms.md
@@ -163,7 +163,7 @@ items:
           href: ../graphics-concepts/world-transform.md
         - name: ビュー変換
           href: ../graphics-concepts/view-transform.md
-        - name: プロジェクション変換
+        - name: 射影トランスフォーム
           href: ../graphics-concepts/projection-transform.md
       - name: ビューポートとクリッピング
         href: ../graphics-concepts/viewports-and-clipping.md
@@ -179,15 +179,15 @@ items:
       items:
       - name: デバイスの種類
         href: ../graphics-concepts/device-types.md
-      - name: ウィンドウモードと全画面表示モード
+      - name: ウィンドウ モードと全画面表示モード
         href: ../graphics-concepts/windowed-vs--full-screen-mode.md
-      - name: 失われたデバイス
+      - name: 喪失デバイス
         href: ../graphics-concepts/lost-devices.md
       - name: スワップ チェーン
         href: ../graphics-concepts/swap-chains.md
       - name: ラスター化規則の概要
         href: ../graphics-concepts/introduction-to-rasterization-rules.md
-    - name: 光源
+    - name: 照明
       href: ../graphics-concepts/lights-and-materials.md
       items:
       - name: 光源の概要
@@ -209,7 +209,7 @@ items:
           href: ../graphics-concepts/emissive-lighting.md
         - name: カメラの空間変換
           href: ../graphics-concepts/camera-space-transformations.md
-        - name: 減衰とスポットライトの要素
+        - name: 減衰とスポットライト係数
           href: ../graphics-concepts/attenuation-and-spotlight-factor.md
     - name: 深度バッファーとステンシル バッファー
       href: ../graphics-concepts/depth-and-stencil-buffers.md
@@ -254,7 +254,7 @@ items:
         items:
         - name: モノクロ ライト マップ
           href: ../graphics-concepts/monochrome-light-maps.md
-        - name: 色のライト マップ
+        - name: カラー ライト マップ
           href: ../graphics-concepts/color-light-maps.md
         - name: 反射ライト マップ
           href: ../graphics-concepts/specular-light-maps.md
@@ -279,7 +279,7 @@ items:
         items:
         - name: プリミティブ トポロジ
           href: ../graphics-concepts/primitive-topologies.md
-        - name: システムで生成される値の使用
+        - name: システム生成値の使用
           href: ../graphics-concepts/using-system-generated-values.md
       - name: 頂点シェーダー (VS) ステージ
         href: ../graphics-concepts/vertex-shader-stage--vs-.md
@@ -313,7 +313,7 @@ items:
         href: ../graphics-concepts/vertex-buffer-view--vbv-.md
       - name: シェーダー リソース ビュー (SRV) と順序指定されていないアクセス ビュー (UAV)
         href: ../graphics-concepts/shader-resource-view--srv-.md
-      - name: サンプル集
+      - name: サンプラー
         href: ../graphics-concepts/sampler.md
       - name: レンダー ターゲット ビュー (RTV)
         href: ../graphics-concepts/render-target-view--rtv-.md
@@ -328,7 +328,7 @@ items:
       items:
       - name: 計算シェーダー (CS) ステージ
         href: ../graphics-concepts/compute-shader-stage--cs-.md
-    - name: リソース
+    - name: 参考資料
       href: ../graphics-concepts/resources.md
       items:
       - name: リソースの種類
@@ -414,7 +414,7 @@ items:
         href: ../graphics-concepts/floating-point-rules.md
       - name: データ型の変換
         href: ../graphics-concepts/data-type-conversion.md
-      - name: ラスター化の規則
+      - name: ラスター化ルール
         href: ../graphics-concepts/rasterization-rules.md
       - name: テクスチャのブロック圧縮
         href: ../graphics-concepts/texture-block-compression.md
@@ -548,7 +548,7 @@ items:
 - name: Xbox One の UWP
   href: ../xbox-apps/index.md
   items:
-  - name: はじめに
+  - name: 概要
     href: ../xbox-apps/getting-started.md
   - name: 新着情報
     href: ../xbox-apps/whats-new.md
@@ -644,8 +644,8 @@ items:
 - name: Xbox Live
   href: ../xbox-live/TOC.md
 ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962584"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583628"

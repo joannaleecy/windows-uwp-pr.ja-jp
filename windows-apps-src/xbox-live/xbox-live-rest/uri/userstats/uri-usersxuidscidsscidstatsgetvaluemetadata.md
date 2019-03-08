@@ -8,24 +8,24 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 55ad44d4c29a2d7a43c76c4df2a78e08462fa65f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921894"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612717"
 ---
 # <a name="get-usersxuidxuidscidsscidstatsincludevaluemetadata"></a>GET (/users/xuid({xuid})/scids/{scid}/stats?include=valuemetadata)
-指定されたサービス構成でのユーザーに対して、統計情報の値に関連付けられたメタデータを含む、指定された統計情報の一覧を取得します。
+指定したサービス構成内のユーザーに対して、統計情報の値に関連付けられているメタデータを含む、指定した統計情報の一覧を取得します。
 これらの Uri のドメインが`userstats.xboxlive.com`します。
 
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EAB)
   * [クエリ文字列パラメーター](#ID4ELB)
-  * [Authorization](#ID4EWC)
+  * [承認](#ID4EWC)
   * [必要な要求ヘッダー](#ID4ERD)
-  * [オプションの要求ヘッダー](#ID4EDF)
+  * [省略可能な要求ヘッダー](#ID4EDF)
   * [要求本文](#ID4EHG)
-  * [HTTP ステータス コード](#ID4ESG)
+  * [HTTP 状態コード](#ID4ESG)
   * [応答本文](#ID4EJCAC)
 
 <a id="ID4EV"></a>
@@ -33,41 +33,41 @@ ms.locfileid: "8921894"
 
 ## <a name="remarks"></a>注釈
 
-かどうか。 含める = valuemetadata クエリ パラメーターは、モデルとレース トラックの時間を実現するために使用された車の色など、ユーザーの統計値に関連付けられたメタデータを含めるへの応答をことができます。
+でしょうか。 含める valuemetadata = クエリ パラメーターは、ユーザーの統計値など、モデルと競合トラック上の時間を実現するために使用する、車の色に関連付けられたメタデータを含めるへの応答を使用できます。
 
-応答には、値のメタデータを含める、要求の呼び出しが 3 のヘッダー値 X Xbl コントラクト バージョンを設定することもする必要があります。
+値のメタデータを応答に含めるに要求の呼び出しが 3 の X Xbl コントラクト バージョン ヘッダーの値を設定することもあります。
 
 <a id="ID4EAB"></a>
 
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- |
-| xuid| GUID| Xbox ユーザー ID (XUID) がに代わってサービス構成にアクセスするユーザーのします。|
-| scid| GUID| アクセス対象のリソースが含まれているサービス構成の識別子です。|
+| xuid| GUID| Xbox ユーザー ID (XUID) の対象サービスの構成にアクセスするユーザーです。|
+| scid| GUID| アクセスされるリソースを含むサービス構成の識別子です。|
 
 <a id="ID4ELB"></a>
 
 
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- | --- | --- |
-| statNames| string| コンマ区切りの統計情報のユーザー名のリスト。たとえば、次の URI では、サービスが通知 URI で指定されたユーザー id の代理として 4 つの統計情報を要求します。{: nomakrdown}<br/><br/>`https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots?include=valuemetadata`| 
-| 含める = valuemetadata| string| 応答に uset 統計の値に関連付けられた値メタデータが含まれていることを示します。|
+| statNames| string| ユーザー統計名のリストのコンマ区切り。たとえば、次の URI 通知、サービス URI で指定されたユーザー id の代わり、4 つの統計情報が要求したこと。{0}:: nomakrdown}<br/><br/>`https://userstats.xboxlive.com/users/xuid({xuid})/scids/{scid}/stats/wins,kills,kdratio,headshots?include=valuemetadata`| 
+| 含める valuemetadata を =| string| 応答に使用統計値に関連付けられた任意の値のメタデータが含まれていることを示します。|
 
 <a id="ID4EWC"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-コンテンツ分離とアクセス制御のシナリオ向けに実装承認ロジックがあります。
+コンテンツの分離とアクセス制御のシナリオで実装された承認ロジックがあります。
 
-   * ランキング、およびユーザーの両方の統計情報は、呼び出し元が要求に有効な XSTS トークンを送信すること、任意のプラットフォーム上のクライアントから読み取ることができます。 書き込みは、データ プラットフォームでサポートされているクライアントに制限されます。
-   * タイトル デベロッパーは、open または XDP またはパートナー センターで制限付きの統計情報をマークできます。 ランキングは、統計を開くです。 開いている統計情報は、サンド ボックスに、ユーザーが承認されている限り、Smartglass、ほか、iOS、Android、Windows、Windows Phone、および web アプリケーションによってアクセスできます。 サンド ボックスへのユーザーの承認は XDP またはパートナー センターで管理されます。
+   * 呼び出し元の要求に有効な XSTS トークンを送信すること、任意のプラットフォーム上のクライアントからランキングおよびユーザーの両方の統計情報を読み取ることができます。 書き込みは、データ プラットフォームでサポートされているクライアントに制限されます。
+   * タイトルの開発者は、オープンまたは XDP またはパートナー センターで制限付きとして統計をマークできます。 ランキングは、統計を開くです。 統計を開くはサンド ボックスに、ユーザーが承認されている限り、Smartglass、だけでなく iOS、Android、Windows、Windows Phone、および web アプリケーションでアクセスできます。 サンド ボックスにユーザーの承認は、XDP またはパートナー センターで管理されます。
 
-チェックの擬似コードは、このようになります。
+チェックの擬似コードのようになります。
 
 
 ```cpp
@@ -86,19 +86,19 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。|
-| X Xbl コントラクト バージョン| string| 使用する API のバージョンを示します。 この値は、応答に値のメタデータを含めるために、「3」に設定する必要があります。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。|
+| X Xbl コントラクト バージョン| string| 使用する API のバージョンを示します。 この値は、値のメタデータを応答に含めるために、「3」に設定する必要があります。|
 
 <a id="ID4EDF"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求が送られるサービスの名前/番号をビルドします。 要求はのみにルーティング サービスの認証トークンの要求ヘッダーの有効性を確認した後と。 ［既定値］:1. |
 
 <a id="ID4EHG"></a>
 
@@ -110,20 +110,20 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 <a id="ID4ESG"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
+## <a name="http-status-codes"></a>HTTP 状態コード
 
-サービスでは、このリソースには、この方法で行った要求に対する応答としてでは、このセクションで、ステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの一覧は、[標準の HTTP ステータス コード](../../additional/httpstatuscodes.md)を参照してください。
+サービスは、このリソースでは、このメソッドを使用した要求に応答には、このセクションではステータス コードのいずれかを返します。 Xbox Live サービスで使用される標準の HTTP ステータス コードの完全な一覧を参照してください。[標準 HTTP 状態コード](../../additional/httpstatuscodes.md)します。
 
-| コード| 理由フレーズ| 説明|
+| コード| 理由語句| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 200| OK| セッションが正常に取得されました。|
-| 304| Not Modified| リソースされていない以降に変更するように要求します。|
-| 400| Bad Request| サービスは、形式が正しくない要求を理解していない可能性があります。 通常、無効なパラメーターです。|
+| 200| OK| セッションが正常に取得します。|
+| 304| 変更されていません| リソースされていない最後の要求以降に変更します。|
+| 400| 要求が正しくありません| サービスは、形式が正しくない要求を理解できませんでした。 通常、無効なパラメーター。|
 | 401| 権限がありません| 要求には、ユーザー認証が必要です。|
-| 403| Forbidden| ユーザーまたはサービスの要求は許可されていません。|
-| 404| Not Found します。| 指定されたリソースは見つかりませんでした。|
-| 406| 許容できません。| リソースのバージョンがサポートされていません。|
-| 408| 要求のタイムアウト| リソースのバージョンはサポートされていません。MVC レイヤーによって拒否する必要があります。|
+| 403| Forbidden| ユーザーまたはサービスは、要求することはできません。|
+| 404| 検出不可| 指定されたリソースが見つかりませんでした。|
+| 406| Not Acceptable| リソースのバージョンがサポートされていません。|
+| 408| 要求のタイムアウト| リソースのバージョンはサポートされていません。MVC のレイヤーによって拒否されます必要があります。|
 
 <a id="ID4EJCAC"></a>
 
@@ -133,7 +133,7 @@ If (!checkAccess(serviceConfigId, resource, CLAIM[userid, deviceid, titleid]))
 <a id="ID4EPCAC"></a>
 
 
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
 
 
 ```cpp

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: db279d546780ed40158894f73ecb84687ef35ba6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919544"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627977"
 ---
 # <a name="publicscidsscidclips"></a>/public/scids/{scid}/clips
-クリップをパブリックにアクセスします。 この URI に実際にで指定できる 2 つのフォーム`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
+クリップをパブリックにアクセスします。 この URI 実際に指定できます 2 つの形式で`/public/scids/{scid}/clips`と`/public/titles/{titleId}/clips`します。 詳しくは、後のセクションをご覧ください。 この URI のドメインが`gameclipsmetadata.xboxlive.com`します。
  
   * [URI パラメーター](#ID4E1)
  
@@ -24,10 +24,10 @@ ms.locfileid: "8919544"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| scid| string| パブリック クリップをプライマリー サービス構成の識別子です。| 
-| タイトル id| string| パブリック クリップのタイトル Id。 SCID と同じ URI で指定することはできません。 指定した場合はプライマリー SCID を検索するために使用されます。| 
+| scid| string| パブリックのクリップをプライマリ サービスの構成の識別子です。| 
+| タイトル id| string| パブリックのクリップのタイトル Id。 同じ URI、SCID としてでは指定できません。 指定した場合は、プライマリ SCID 検索に使用されます。| 
   
 <a id="ID4E6B"></a>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8919544"
 
 [GET (/public/scids/{scid}/clips)](uri-publicscidclipsget.md)
 
-&nbsp;&nbsp;パブリック クリップを一覧表示します。
+&nbsp;&nbsp;パブリックのクリップを一覧表示します。
  
 <a id="ID4EJC"></a>
 
@@ -48,6 +48,6 @@ ms.locfileid: "8919544"
  
 ##### <a name="parent"></a>Parent 
 
-[マーケットプレース URI](../marketplace/atoc-reference-marketplace.md)
+[Marketplace の Uri](../marketplace/atoc-reference-marketplace.md)
 
    

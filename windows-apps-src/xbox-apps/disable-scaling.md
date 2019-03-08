@@ -3,21 +3,21 @@ title: スケーリングを無効にする方法
 description: 既定の倍率を無効にする方法を説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
 ms.openlocfilehash: 44688ff40792ba2ee72cbd1d96bae1ac59834efa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933946"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604747"
 ---
 # <a name="how-to-turn-off-scaling"></a>スケーリングを無効にする方法   
 アプリケーションは既定で、XAML アプリの場合は 200% に、HTML アプリの場合は 150% に拡大されます。 また、既定の倍率を無効にすることもできます。 これにより、アプリケーションをデバイスの実際のピクセル サイズ (1910 x 1080 ピクセル) で使うことができるようになります。   
    
 ## <a name="html"></a>HTML   
-次のコード スニペットを使って倍率を無効にすることができます。 
+次のコード スニペットを使って拡大縮小率を無効にすることができます。 
    
 ```
 var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayoutScaling(true);
@@ -34,7 +34,7 @@ var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayou
 ```
 
 ## <a name="xaml"></a>XAML
-次のコード スニペットを使って倍率を無効にすることができます。   
+次のコード スニペットを使って拡大縮小率を無効にすることができます。   
    
 ```
 bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);

@@ -1,23 +1,17 @@
 ---
-Description: Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.
+Description: 目的がはっきりとしており、適切にデザインされたモーションは、アプリに強い印象を与え、精巧で完成度の高い操作性を感じさせます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
 title: UWP アプリでのモーションとアニメーション
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'windows 10, uwp'
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2701844ccefdc5a535fa8fc20086c550cb7bc29e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936911"
 ---
 # <a name="motion-for-uwp-apps"></a>UWP アプリのモーション
 
@@ -27,7 +21,7 @@ Fluent モーションはアプリで目的を果たします。 これは、ユ
 
 ## <a name="fluent-motion-principles"></a>Fluent モーションの原則
 
-### <a name="physical"></a>物理
+### <a name="physical"></a>運動能力
 
 動作中のオブジェクトは、現実世界でのオブジェクトの動作を示します。 滑らかで応答性の高い動きによって、自然な操作性を感じさせるエクスペリエンスが実現され、感情面の結び付きが生みだされ、個性が追加されます。
 

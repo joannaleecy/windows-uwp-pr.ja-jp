@@ -4,14 +4,14 @@ title: コンポジションのネイティブ相互運用
 description: Windows.UI.Composition API には、コンテンツをコンポジターに直接移行できるようにするネイティブの相互運用インターフェイスが用意されています。
 ms.date: 06/22/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cab06db098312531a488731fb50bae99d8f2c8f6
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058833"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645067"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>コンポジションでの DirectX と Direct2D のネイティブ相互運用
 
@@ -29,7 +29,7 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 サーフェスにピクセルを読み込むために、アプリケーションは [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) メソッドを呼び出す必要があります。このメソッドが、アプリケーションの要求に応じて、テクスチャや Direct2D のコンテキストを表す DirectX インターフェイスを返します。 アプリケーションはそのテクスチャにピクセルをレンダリングまたはアップロードする必要があります。 その操作が終了したら、アプリケーションは [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) メソッドを呼び出す必要があります。 その時点でのみ新しいピクセルはコンポジションに使えますが、次にビジュアル オブジェクト ツリーへのすべての変更がコミットされるまで、まだ画面には表示されません。 **EndDraw** が呼び出される前に、ビジュアル オブジェクト ツリーがコミットされた場合、進行中の更新は画面に表示されず、サーフェスには引き続き **BeginDraw** の前の内容が表示されます。 **EndDraw** が呼び出されると、BeginDraw によって返されたテクスチャや Direct2D コンテキスト ポインターは無効化されます。 アプリケーションは **EndDraw** の呼び出し後にそのポインターをキャッシュすることはありません。
 
-アプリケーションは、どの [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) に対しても、一度に 1 つのサーフェスでのみ BeginDraw を呼び出すことができます。 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) を呼び出した後、アプリケーションはそのサーフェスで [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を呼び出してから、別のサーフェスで **BeginDraw** を呼び出す必要があります。 API がアジャイルであるため、アプリケーションは、複数のワーカー スレッドからレンダリングを実行する場合、これらの呼び出しの同期を担当します。 アプリケーションが一時的にあるサーフェスのレンダリングを中断し、別のサーフェスに切り替える場合、アプリケーションは [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx) メソッドを使えます。 これにより、別の **BeginDraw** は成功しますが、画面上のコンポジションに対する最初のサーフェスの更新はできなくなります。 これにより、アプリケーションはトランザクション方式で複数の更新を行えます。 サーフェスが中断されたら、アプリケーションは [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) メソッドを呼び出して更新を続けるか、**EndDraw** を呼び出して更新の終了を宣言できます。 つまり、どの **CompositionGraphicsDevice** に対しても、一度に 1 つのサーフェスのみをアクティブに更新できます。 各グラフィックス デバイスはそれぞれ独立してこの状態を保つため、2 つのサーフェスが異なるグラフィックス デバイスに属していれば、アプリケーションはそれらのサーフェスに同時にレンダリングできます。 ただしその結果、これらの 2 つのサーフェス用のビデオ メモリが一緒にプールされなくなるため、メモリの使用効率は下がります。
+アプリケーションは、どの [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) に対しても、一度に 1 つのサーフェスでのみ BeginDraw を呼び出すことができます。 [  **BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) を呼び出した後、アプリケーションはそのサーフェスで [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を呼び出してから、別のサーフェスで **BeginDraw** を呼び出す必要があります。 API がアジャイルであるため、アプリケーションは、複数のワーカー スレッドからレンダリングを実行する場合、これらの呼び出しの同期を担当します。 アプリケーションが一時的にあるサーフェスのレンダリングを中断し、別のサーフェスに切り替える場合、アプリケーションは [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx) メソッドを使えます。 これにより、別の **BeginDraw** は成功しますが、画面上のコンポジションに対する最初のサーフェスの更新はできなくなります。 これにより、アプリケーションはトランザクション方式で複数の更新を行えます。 サーフェスが中断されたら、アプリケーションは [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) メソッドを呼び出して更新を続けるか、**EndDraw** を呼び出して更新の終了を宣言できます。 つまり、どの **CompositionGraphicsDevice** に対しても、一度に 1 つのサーフェスのみをアクティブに更新できます。 各グラフィックス デバイスはそれぞれ独立してこの状態を保つため、2 つのサーフェスが異なるグラフィックス デバイスに属していれば、アプリケーションはそれらのサーフェスに同時にレンダリングできます。 ただしその結果、これらの 2 つのサーフェス用のビデオ メモリが一緒にプールされなくなるため、メモリの使用効率は下がります。
 
 アプリケーションが間違った操作を実行した場合、[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062)、[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の各メソッドはエラーを返します (無効な引数を渡した場合や、あるサーフェスで **EndDraw** を呼び出す前に、別のサーフェスで **BeginDraw** を呼び出した場合など)。 この種のエラーはアプリケーションのバグを表します。たとえば "fail fast" を使って処理される可能性があります。 DirectX デバイスが失われた場合も、**BeginDraw** はエラーを返すことがあります。 アプリケーションが DirectX デバイスを再作成して再試行できるため、このエラーは致命的ではありません。 このように、アプリケーションでは単にレンダリングをスキップすることで、デバイスが失われた場合に対処する必要があります。 **BeginDraw** が失敗した場合、それがどのような理由であっても、アプリケーションが **EndDraw** を呼び出さないようにしてください。最初の時点で失敗した描画開始が成功することはないためです。
 
@@ -39,11 +39,11 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 ## <a name="usage-example"></a>使用例
 
-次のコード例は、相互運用のシナリオを示しています。 この例では、相互運用性のヘッダーと DirectWrite の COM ベースと Direct2D Api を使用してテキストを表示するコードからタイプと共に、Windows のコンポジションの Windows ランタイムに基づくサーフェス領域からの種類を結合します。 この例は、これらのテクノロジの間の相互運用にシームレスに[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)と[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)を使用します。 例では、DirectWrite を使用して、テキストがレイアウトし、Direct2D を使ってレンダリングします。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、アプリケーションを作成して、Direct2D コンテキストを各描画操作で返される ID3D11Texture2D インターフェイスをラップするよりもかなり効率的は**ID2D1DeviceContext**インターフェイス ポインターを返す**BeginDraw**できます。
+次のコード例は、相互運用のシナリオを示しています。 DirectWrite の COM ベースと Direct2D Api を使用してテキストをレンダリングするコードと相互運用機能のヘッダーからの型と共に Windows 合成では、Windows ランタイム ベースのサーフェス領域からの型を組み合わせた例を示します。 この例では[ **BeginDraw** ](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)と[ **EndDraw** ](https://msdn.microsoft.com/library/windows/apps/mt620060)シームレスにこれらのテクノロジ間の相互運用することです。 この例では、DirectWrite を使用して、テキストのレイアウトし、Direct2D のレンダリングを使用しています。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、 **BeginDraw**を返す、 **ID2D1DeviceContext**インターフェイス ポインターは、返されるをラップする Direct2D のコンテキストを作成するアプリケーションよりもかなり効率各描画操作で ID3D11Texture2D インターフェイスです。
 
-次の 2 つのコード例があります。 まず、 [、C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)の例 (これが完了すると)、し、C + + CX のコード例 (の例では、DirectWrite and Direct2D の部分を省略する)。
+以下の 2 つのコード例があります。 まず、 [C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) (これは完全な) 例では、し、c++/cli CX のコード例 (この例では、DirectWrite と Direct2D の部分が省略されます)。
 
-C++ を使用する/WinRT 以下のコード例は最初に、新規作成**コア アプリ (、C++/WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [、C++、Visual Studio サポート/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 プロジェクトの作成中に、ターゲット バージョン**Windows 10、バージョン 1803 (10.0; として選択します。ビルド 17134)** します。 および対象となるこのコードが組み込まれているテストのバージョンです。 内容を置き換える、`App.cpp`し、以下に示すコードをソース コード ファイルをビルドして実行します。 アプリケーションは、文字列を「こんにちは, World!」にレンダリングします。 で透明の背景に黒のテキスト。
+C + を使用する/cli WinRT 以下のコード例は最初を新規作成**Core アプリ (C +/cli WinRT)** Visual Studio でプロジェクト (要件については、次を参照してください。 [Visual Studio のサポートを c++/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 プロジェクトを作成するときに、ターゲット バージョンとして選択**Windows 10、バージョン 1803 (10.0;ビルドする 17134)** します。 対象となる次のコードがビルドおよびテストのバージョンです。 内容を置き換える、`App.cpp`を以下のコードのソース コード ファイルのビルドおよび実行します。 アプリケーションは、文字列の「こんにちは, World!」を表示します で、透明な背景に黒のテキスト。
 
 ```cppwinrt
 // App.cpp

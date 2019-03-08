@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: c00ff971e05003ec88c47d3803e565f6e9406c47
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937002"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611467"
 ---
 # <a name="eds-query-refiners"></a>EDS クエリの絞り込み条件
  
@@ -20,30 +20,30 @@ ms.locfileid: "8937002"
 
   
  
-対象を絞り込む一連の項目をエンターテイメント探索サービス (EDS) クエリを絞り込むは、次のパラメーターを使用できます。 いずれかの API で必要はないと、これらのパラメーターが、クエリの絞り込み条件を受け入れるいずれかの API でこれらを使用しています。
+対象が絞られた一連の項目をエンターテイメント検出サービス (EDS) クエリを絞り込むには、次のパラメーターを使用できます。 これらのパラメーターのいずれもが任意の API で必要ですが、クエリ絞り込みの条件を受け入れる任意の API でこれらを使用しています。
  
-パラメーター名は、その値として"queryRefiners"パラメーターにで渡すことができます。 このその後、要求されたクエリの絞り込み条件を繰り返し発生する場合に返される項目の数が適用されると、クエリの絞り込み条件のそれぞれの値を別の戻り値。
+パラメーター名は"queryRefiners"パラメーターに値としてで渡すことができます。 このは、戻り値が、要求されたクエリの調整を繰り返し表示する場合に返される項目の数が適用される、クエリ絞り込み条件のそれぞれの値によって分類します。
  
-この作業実際にする方法を次に示します。
+この実習で作業する方法を次に示します。
  
-   * 参照 API への呼び出しが行われたなど、パラメーターは、"queryRefiners ジャンルを ="します。
-   * この API は、8 ゲームを返します。 だけでなく、項目の項目を持つ各ジャンルの一覧が返されますと共に、項目の数がそのジャンルに属しています。 ゲームの場合があります"一人称視点のシューティング: 3、パズル: 5"します。
-   * 2 番目のクエリが行われます。 最初のと同じことを除けば"ジャンル一人称視点のシューティング ="が追加されます。
-   * 応答には、「一人称視点のシューティング」カテゴリに属するすべての 3 つのみのゲームにはできるようになりましたが含まれています。
+   * 参照 API への呼び出しが行われるパラメーターを含める"queryRefiners ジャンルを ="。
+   * API は、8 つのゲームを返します。 項目に加えて項目が含まれている各ジャンルの一覧と共に返される、項目の数がそのジャンルに属しています。 この可能性があります、ゲームの"Shooter:3、パズル:5".
+   * 2 番目のクエリが行われます。 1 番目と同じことを除いて"ジャンル Shooter ="が追加されます。
+   * 応答には、"Shooter"カテゴリに属するすべての 3 つだけのゲームが含まれるようになりました。
   
 | パラメーター| データ型| 説明| 
 | --- | --- | --- | 
-| <b>年</b>| string| 10 年間ですべての項目する必要がありますリリースされています。| 
-| <b>ジャンル</b>| 文字列の配列| すべての項目が必要なジャンルの一覧。| 
-| <b>labelOwner</b>| string| アーティスト、アルバム、またはトラックに関連付けられているミュージック ラベル。| 
-| <b>ネットワーク</b>| 文字列の配列| このネットワークは、項目を作成します。| 
-| <b>studio</b>| 文字列の配列| この studio アイテムを作成します。| 
+| <b>10 年間</b>| string| 10 年間ですべての項目する必要がありますがリリースされています。| 
+| <b>genre</b>| 文字列の配列| すべての項目が必要なジャンルのリスト。| 
+| <b>labelOwner</b>| string| アーティスト、アルバム、またはトラックに関連付けられている音楽のラベル。| 
+| <b>network</b>| 文字列の配列| このネットワークは、アイテムを作成します。| 
+| <b>studio</b>| 文字列の配列| アイテムを作成、studio。| 
 | <b>xboxAppCategories</b>| 文字列の配列| すべての Xbox アプリに必要なカテゴリの一覧。| 
-| <b>xboxAvatarClothes</b>| 文字列の配列| 洋服の種類の一覧のすべての Xbox アバター項目が必要です。| 
-| <b>xboxAvatarStores</b>| 文字列の配列| アバター項目が所属する必要があるすべての Xbox にストアの一覧。| 
-| <b>xboxGamePublisherBits</b>| 文字列の配列| すべてのゲームの種類の項目や AppType 項目に対して設定する必要がありますゲーム パブリッシャー ビットの一覧。| 
-| <b>xboxIsBrowsable</b>| ブール値| <b>True</b>を返す場合は、実践的なコンテンツだけでなく、直接操作できる完全なゲームです。 既定値は<b>false</b>。| 
-| <b>xboxHasChildMediaItemTypes</b>| 文字列の配列| ゲームのメディアのグループで返された項目のすべてのメディア項目の種類は、指定された値のいずれかの子が必要です。| 
+| <b>xboxAvatarClothes</b>| 文字列の配列| Clothing の種類の一覧に Xbox アバターのすべての項目が必要です。| 
+| <b>xboxAvatarStores</b>| 文字列の配列| アバターの項目が属する必要がありますすべてを Xbox にストアの一覧。| 
+| <b>xboxGamePublisherBits</b>| 文字列の配列| すべてのゲームの種類の項目または AppType 項目で設定する必要がありますゲームの発行元のビットの一覧。| 
+| <b>xboxIsBrowsable</b>| ブール値| 場合<b>true</b>、実践的なコンテンツだけでなく、直接操作ではない完全なゲームが返されます。 既定値は<b>false</b>します。| 
+| <b>xboxHasChildMediaItemTypes</b>| 文字列の配列| ゲームのメディアのグループにすべての返された項目のメディア項目の種類が指定された値のいずれかの子が必要です。| 
   
 <a id="ID4EEF"></a>
 
@@ -55,7 +55,7 @@ ms.locfileid: "8937002"
  
 ##### <a name="parent"></a>Parent  
 
-[その他の参照情報](atoc-xboxlivews-reference-additional.md)
+[その他の参照](atoc-xboxlivews-reference-additional.md)
 
   
 <a id="ID4ESF"></a>
@@ -63,6 +63,6 @@ ms.locfileid: "8937002"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[マーケットプレース URI](../uri/marketplace/atoc-reference-marketplace.md)
+[Marketplace の Uri](../uri/marketplace/atoc-reference-marketplace.md)
 
    

@@ -4,14 +4,14 @@ description: ユニバーサル Windows アプリに 3D 印刷機能を追加す
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 3dprinting、3d 印刷
+keywords: windows 10、uwp、3dprinting、3d 印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048269"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652247"
 ---
 # <a name="3d-printing-from-your-app"></a>アプリからの 3D 印刷
 
@@ -79,22 +79,22 @@ UI フィードバック用に **TextBlock** を追加します。
 
 .3mf 形式であっても、すべての 3D モデル データが印刷可能なわけではありません。 どこを埋めて何を空洞のままにするかをプリンターに正しく判断させるには、印刷する (各) モデルが 1 つのシームレスなメッシュであること、モデルの面の法線が外側を向いていること、またモデルがマニホールド形状であることが必要条件となります。 これらの問題は、さまざまな形で現れることがあり、図形が複雑な場合は、見つけるのが難しいことがあります。 ただし、最新のソフトウェア ソリューションは、多くの場合、元データの形状を印刷可能な 3D 図形に変換するのに十分な機能を備えています。 これはモデルの*修復*と呼ばれ、`OnFixClick` メソッドで行われます。
 
-[**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を実装し、[**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679) オブジェクトを生成します。これを行うには、3D データ ファイルを変換する必要があります。
+[  **IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を実装し、[**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/mt203679) オブジェクトを生成します。これを行うには、3D データ ファイルを変換する必要があります。
 
 [!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)]
 
-これで、**Printing3DModel** オブジェクトを印刷できる状態に修復できました。 [**SaveModelToPackageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync) を使って、クラスを作成したときに宣言した **Printing3D3MFPackage** オブジェクトにモデルを割り当てます。
+これで、**Printing3DModel** オブジェクトを印刷できる状態に修復できました。 [  **SaveModelToPackageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.savemodeltopackageasync) を使って、クラスを作成したときに宣言した **Printing3D3MFPackage** オブジェクトにモデルを割り当てます。
 
 [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
 
 ## <a name="execute-printing-task-create-a-taskrequested-handler"></a>印刷タスクの実行: TaskRequested ハンドラーの作成
 
 
-3D 印刷ダイアログをユーザーに表示してユーザーが印刷を開始したときに、アプリが目的のパラメーターを 3D 印刷パイプラインに渡す必要があります。 3D 印刷 API によって、**[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** イベントが発生します。 このイベントを適切に処理するメソッドを記述する必要があります。 通常どおり、ハンドラー メソッドはイベントと同じ型である必要があります。**TaskRequested** イベントには、パラメーター [**Print3DManager**](https://msdn.microsoft.com/library/windows/apps/dn998029) (センダー オブジェクトへの参照) と [**Print3DTaskRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn998051) オブジェクト (ほとんどの関連情報を保持するオブジェクト) があります。
+3D 印刷ダイアログをユーザーに表示してユーザーが印刷を開始したときに、アプリが目的のパラメーターを 3D 印刷パイプラインに渡す必要があります。 3D 印刷 API によって、**[TaskRequested](https://docs.microsoft.com/uwp/api/Windows.Graphics.Printing3D.Print3DManager.TaskRequested)** イベントが発生します。 このイベントを適切に処理するメソッドを記述する必要があります。 として常に、そのイベントと同じ型のハンドラー メソッドがあります。**TaskRequested**イベント パラメーターには、 [ **Print3DManager** ](https://msdn.microsoft.com/library/windows/apps/dn998029) (その送信元オブジェクトへの参照)、 [ **Print3DTaskRequestedEventArgs** ](https://msdn.microsoft.com/library/windows/apps/dn998051)オブジェクトで、関連する情報の大部分を保持します。
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-このメソッドの主な目的は、*args* パラメーターを使って、**Printing3D3MFPackage** をパイプラインに送信することです。 **Print3DTaskRequestedEventArgs** 型には、[**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx) という 1 つのプロパティがあります。 その型は [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) で、1 つの印刷ジョブ要求を表します。 そのメソッドである [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) を使って、プログラムは印刷ジョブに関する適切な情報を送信します。このメソッドは、3D 印刷パイプラインに送信された **Print3DTask** オブジェクトへの参照を返します。
+このメソッドの主な目的は、*args* パラメーターを使って、**Printing3D3MFPackage** をパイプラインに送信することです。 **Print3DTaskRequestedEventArgs**型が 1 つのプロパティ。[**要求**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx)します。 その型は [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) で、1 つの印刷ジョブ要求を表します。 そのメソッドである [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) を使って、プログラムは印刷ジョブに関する適切な情報を送信します。このメソッドは、3D 印刷パイプラインに送信された **Print3DTask** オブジェクトへの参照を返します。
 
 **CreateTask** には、印刷ジョブ名を表す string、使うプリンターの ID を表す string、および [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx) デリゲートという入力パラメーターがあります。 このデリゲートは、**3DTaskSourceRequested** イベントが発生したときに自動的に呼び出されます (これは API によって行われます)。 重要なのは、印刷ジョブが開始されたときにこのデリゲートが呼び出され、適切な 3D 印刷パッケージを提供する役割を果たすということです。
 
@@ -133,7 +133,7 @@ UI フィードバック用に **TextBlock** を追加します。
 ## <a name="related-topics"></a>関連トピック
 
 [3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)  
-[3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
+[3D 印刷 UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  

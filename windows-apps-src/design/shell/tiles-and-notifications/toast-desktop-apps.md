@@ -1,5 +1,5 @@
 ---
-Description: Discover the different options desktop Win32 apps have for sending toast notifications
+Description: トースト通知を送信するためのデスクトップの Win32 アプリがさまざまなオプションを検出します。
 title: デスクトップ アプリからのトースト通知
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, win32, デスクトップ, トースト通知, デスクトップ ブリッジ, トーストの送信のオプション, com サーバー, com アクティベーター, com, 偽の com, com なし, com なし, トーストの送信
 ms.localizationpriority: medium
 ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933883"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636087"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>デスクトップ アプリからのトースト通知
 
@@ -28,17 +28,17 @@ ms.locfileid: "8933883"
 
 次の表は、デスクトップ アプリ内のトーストをサポートするためのオプション、および対応するサポートされる機能を示しています。 この表を使用してシナリオに最適なオプションを選択します。<br/><br/>
 
-| オプション | 視覚効果 | アクション | 入力 | プロセス内でのアクティブ化 |
+| 構成方法 | ビジュアル オブジェクト | Actions | 入力 | プロセス内でのアクティブ化 |
 | -- | -- | -- | -- | -- |
-| [COM アクティベーター](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [COM なし / Stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM activator](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [ありません COM/stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>推奨されるオプション - COM アクティベーター
 
 これは、デスクトップ ブリッジと従来の Win32 の両方に対して機能し、すべての通知機能をサポートする推奨されるオプションです。 "COM アクティベーター" について心配することはありません。以前に COM サーバーを記述したことがない場合でも、これを非常に簡単にするライブラリ [C#](send-local-toast-desktop.md) および [C++ アプリ](send-local-toast-desktop-cpp-wrl.md)があります。<br/><br/>
 
-| 視覚効果 | アクション | 入力 | プロセス内でのアクティブ化 |
+| ビジュアル オブジェクト | Actions | 入力 | プロセス内でのアクティブ化 |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ✔️ | ✔️ |
 
@@ -61,7 +61,7 @@ COM アクティベーター オプションでは、アプリで次の通知テ
 
 これは、COM アクティベーターを実装できない場合の代替オプションです。 ただし、入力サポート (トーストでのテキスト ボックス) やプロセス内でのアクティブ化など、いくつかの機能が犠牲になります。<br/><br/>
 
-| 視覚効果 | アクション | 入力 | プロセス内でのアクティブ化 |
+| ビジュアル オブジェクト | Actions | 入力 | プロセス内でのアクティブ化 |
 | -- | -- | -- | -- |
 | ✔️ | ✔️ | ❌ | ❌ |
 
@@ -79,8 +79,8 @@ COM アクティベーター オプションでは、アプリで次の通知テ
 従来の Win32 アプリでは、トースト通知を送信し、ショートカットで CLSID を指定できるように AUMID を設定します。 ランダムな GUID を指定できます。 COM サーバー/アクティベーターを追加しないでください。 "stub" COM CLSID を追加することで、アクション センターで通知が保持されます。 スタブ CLSID は他のトーストのアクティブ化を中断するため、プロトコルのアクティブ化のトーストのみを使用できる点に注意してください。 そのため、プロトコルのアクティブ化をサポートするようにアプリを更新し、トースト プロトコルで各自のアプリをアクティブ化する必要があります。
 
 
-## <a name="resources"></a>リソース
+## <a name="resources"></a>参考資料
 
-* [デスクトップ C# アプリからのローカル トースト通知の送信](send-local-toast-desktop.md)
-* [デスクトップ C++ WRL アプリからのローカル トースト通知の送信](send-local-toast-desktop-cpp-wrl.md)
-* [トースト コンテンツのドキュメント](adaptive-interactive-toasts.md)
+* [デスクトップからローカルのトースト通知を送信C#アプリ](send-local-toast-desktop.md)
+* [デスクトップ C++ WRL からローカルのトースト通知を送信するアプリ](send-local-toast-desktop-cpp-wrl.md)
+* [トーストのコンテンツのドキュメント](adaptive-interactive-toasts.md)

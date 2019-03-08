@@ -1,19 +1,19 @@
 ---
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: Windows.Media.Editing 名前空間の API を使うと、オーディオやビデオのソース ファイルからメディア コンポジションを作成するアプリを簡単に開発できます。
-title: メディアのコンポジションと編集
+title: メディア コンポジションと編集
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e342094509dd5d8fb06657d147ac6468a5f8cd6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926051"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57618107"
 ---
-# <a name="media-compositions-and-editing"></a>メディアのコンポジションと編集
+# <a name="media-compositions-and-editing"></a>メディア コンポジションと編集
 
 
 
@@ -21,7 +21,7 @@ ms.locfileid: "8926051"
 
 ## <a name="create-a-new-media-composition"></a>新しいメディア コンポジションを作成する
 
-[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) クラスは、コンポジションの構成要素となるすべてのメディア クリップのコンテナーで、最終的なコンポジションのレンダリングや、ディスクからの読み込みとディスクへの保存、UI に表示するプレビュー ストリームの提供などの機能を担います。 **MediaComposition** をアプリで使うには、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間に加え、関連する必要な API を含んだ [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間を追加する必要があります。
+[  **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) クラスは、コンポジションの構成要素となるすべてのメディア クリップのコンテナーで、最終的なコンポジションのレンダリングや、ディスクからの読み込みとディスクへの保存、UI に表示するプレビュー ストリームの提供などの機能を担います。 **MediaComposition** をアプリで使うには、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間に加え、関連する必要な API を含んだ [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間を追加する必要があります。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -44,7 +44,7 @@ ms.locfileid: "8926051"
 
 -   **MediaClip** をコンポジションに追加できるのは 1 回だけです。 既にコンポジションで使われている **MediaClip** を追加しようとすると、エラーが発生します。 コンポジションの中でビデオ クリップを複数回にわたって再利用するには、[**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) を呼び出して新しい **MediaClip** オブジェクトを作成し、それをコンポジションに追加してください。
 
--   ユニバーサル Windows アプリには、ファイル システム全体にアクセスする権限がありません。 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) クラスの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティを使うと、ユーザーによって選択されたファイルの記録をアプリで保存し、ファイルにアクセスするための権限を維持することができます。 **FutureAccessList** の最大エントリ数は 1,000 件です。リストがあふれないようアプリ側で管理する必要があります。 過去に作成されたコンポジションの読み込みと変更をサポートする場合は、この点が特に重要となります。
+-   ユニバーサル Windows アプリには、ファイル システム全体にアクセスする権限がありません。 [  **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) クラスの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティを使うと、ユーザーによって選択されたファイルの記録をアプリで保存し、ファイルにアクセスするための権限を維持することができます。 **FutureAccessList** の最大エントリ数は 1,000 件です。リストがあふれないようアプリ側で管理する必要があります。 過去に作成されたコンポジションの読み込みと変更をサポートする場合は、この点が特に重要となります。
 
 -   **MediaComposition** は、MP4 形式のビデオ クリップをサポートしています。
 
@@ -62,7 +62,7 @@ ms.locfileid: "8926051"
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-[**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言します。
+[  **MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言します。
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
@@ -72,9 +72,9 @@ ms.locfileid: "8926051"
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
--   [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) は、**MediaComposition** にメディア クリップが少なくとも 1 つは存在している状態で呼び出す必要があります。まったく存在しない場合、返されるオブジェクトは null になります。
+-   [  **GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) は、**MediaComposition** にメディア クリップが少なくとも 1 つは存在している状態で呼び出す必要があります。まったく存在しない場合、返されるオブジェクトは null になります。
 
--   コンポジションの変更を反映するために **MediaElement** のタイムラインが自動的に更新されることはありません。 コンポジションに一連の変更を行って UI の更新が必要になるたびに、**GeneratePreviewMediaStreamSource** を呼び出し、**MediaPlayerElement**、**Source** プロパティを設定することをお勧めします。
+-   コンポジションの変更を反映するために **MediaElement** のタイムラインが自動的に更新されることはありません。 両方を呼び出すことをお勧め**GeneratePreviewMediaStreamSource**設定と、 **MediaPlayerElement** **ソース**プロパティ セットへの変更を行うたびに、構成と、UI を更新します。
 
 ユーザーがページから離れたときは、**MediaPlayerElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティと **MediaStreamSource** オブジェクトを null に設定して、関連付けられているリソースを解放することをお勧めします。
 
@@ -82,11 +82,11 @@ ms.locfileid: "8926051"
 
 ## <a name="render-the-composition-to-a-video-file"></a>コンポジションをビデオ ファイルにレンダリングする
 
-メディア コンポジションをフラット ビデオ ファイルにレンダリングして他のデバイスで共有したり表示したりするには、[**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) 名前空間の API が必要となります。 また、非同期操作の進行状況に応じて UI を更新するには、[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) 名前空間の API が必要となります。
+メディア コンポジションをフラット ビデオ ファイルにレンダリングして他のデバイスで共有したり表示したりするためには、[**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) 名前空間の API が必要となります。 また、非同期操作の進行状況に応じて UI を更新するには、[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) 名前空間の API が必要となります。
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 以下のコード例の残りの部分は、[**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しているだけです。
+[  **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 以下のコード例の残りの部分は、[**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しているだけです。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
@@ -109,7 +109,7 @@ ms.locfileid: "8926051"
 
 [!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   **MediaComposition** では、MP3、WAV、FLAC の各形式のバックグラウンド オーディオ トラックがサポートされます。
+-   A **MediaComposition**バック グラウンドで、次の形式のオーディオ トラックをサポートしています。MP3、WAV、FLAC
 
 -   バックグラウンド オーディオ トラック。
 
@@ -121,7 +121,7 @@ ms.locfileid: "8926051"
 
 ## <a name="add-an-overlay-to-a-composition"></a>コンポジションにオーバーレイを追加する
 
-オーバーレイを使うと、コンポジションの複数のビデオ レイヤーを重ね合わせることができます。 コンポジションには、複数のオーバーレイ レイヤーを含めることができ、それぞれのオーバーレイ レイヤーには複数のオーバーレイを追加することができます。 [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) オブジェクトは、そのコンストラクターに **MediaClip** を渡すことによって作成します。 オーバーレイの位置と不透明度を設定したら、新しい [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) を作成し、その [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) リストに **MediaOverlay** を追加します。 最後に、その **MediaOverlayLayer** をコンポジションの [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) リストに追加します。
+オーバーレイを使うと、コンポジションの複数のビデオ レイヤーを重ね合わせることができます。 コンポジションには、複数のオーバーレイ レイヤーを含めることができ、それぞれのオーバーレイ レイヤーには複数のオーバーレイを追加することができます。 [  **MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) オブジェクトは、そのコンストラクターに **MediaClip** を渡すことによって作成します。 オーバーレイの位置と不透明度を設定したら、新しい [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) を作成し、その [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) リストに **MediaOverlay** を追加します。 最後に、その **MediaOverlayLayer** をコンポジションの [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) リストに追加します。
 
 [!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
 

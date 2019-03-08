@@ -8,23 +8,23 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 5fcc5d3b6a172eccab0656da39e6896b4df50840
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930069"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650927"
 ---
 # <a name="get-usersxuidxuid"></a>GET (/users/xuid({xuid}))
-別のユーザーまたはクライアントの有無を検出します。
+別のユーザーまたはクライアントのプレゼンスを検出します。
 これらの Uri のドメインが`userpresence.xboxlive.com`します。
 
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EDB)
   * [クエリ文字列パラメーター](#ID4EOB)
-  * [Authorization](#ID4E4C)
+  * [承認](#ID4E4C)
   * [リソースのプライバシーの設定の効果](#ID4EAE)
   * [必要な要求ヘッダー](#ID4EVH)
-  * [オプションの要求ヘッダー](#ID4E1BAC)
+  * [省略可能な要求ヘッダー](#ID4E1BAC)
   * [要求本文](#ID4E1CAC)
   * [応答本文](#ID4EFDAC)
 
@@ -33,7 +33,7 @@ ms.locfileid: "8930069"
 
 ## <a name="remarks"></a>注釈
 
-応答には、コンシューマーは、全体のオブジェクトに興味がない場合は、 [PresenceRecord](../../json/json-presencerecord.md)の一部を提供するフィルターを適用できます。
+一部を提供する応答をフィルター処理すること、 [PresenceRecord](../../json/json-presencerecord.md)コンシューマーはオブジェクト全体に興味がない場合。
 
 > [!NOTE] 
 > 返されるデータは、プライバシーとコンテンツの分離の規則によって制限されます。
@@ -45,69 +45,69 @@ ms.locfileid: "8930069"
  
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID (XUID) 対象ユーザーのします。|
+| xuid| 64 ビット符号なし整数| Xbox ユーザー ID (XUID) の対象ユーザーです。|
 
 <a id="ID4EOB"></a>
 
 
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- |
-| level| string| 省略可能。 <ul><li><b>ユーザー</b>: ユーザー ノードのみを返します。</li><li><b>デバイス</b>: ユーザーのノードとデバイス ノードを返します。</li><li><b>タイトル</b>: 既定値します。 アクティビティを除くツリー全体を返します。</li><li><b>すべて</b>: アクティビティ レベルのプレゼンスを含むツリー全体を返します。</li></ul> |
+| level| string| (省略可能)。 <ul><li><b>ユーザー</b>:ユーザー ノードのみを返します。</li><li><b>デバイス</b>:ノードとデバイスのノードをユーザーに返されます。</li><li><b>タイトル</b>:既定。 アクティビティを除くツリー全体を返します。</li><li><b>すべて</b>:アクティビティ レベルのプレゼンスを含む、ツリー全体を返します。</li></ul> |
 
 <a id="ID4E4C"></a>
 
 
 ## <a name="authorization"></a>Authorization
 
-| 型| 必須かどうか| 説明| 不足している場合、応答|
+| 種類| 必須| 説明| 不足している場合の応答|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| XUID| はい| 呼び出し元の Xbox ユーザー ID (XUID)| 403 Forbidden|
+| XUID| 〇| 呼び出し元の Xbox ユーザー ID (XUID)| 403 許可されていません|
 
 <a id="ID4EAE"></a>
 
 
 ## <a name="effect-of-privacy-settings-on-resource"></a>リソースのプライバシーの設定の効果
 
-このメソッドは常に 200 OK を返します。 がコンテンツを応答本文で返されない可能性があります。
+このメソッドは常に、200 を返しますが、応答本文のコンテンツを返さなかった可能性があります。
 
-| ユーザーの要求| ターゲット ユーザーのプライバシー設定| 動作|
+| 要求元のユーザー| ターゲット ユーザーのプライバシーの設定| 動作|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| me| -| 200 OK|
-| フレンド登録の依頼| すべてのユーザー| 200 OK|
-| フレンド登録の依頼| フレンドのみ| 200 OK|
-| フレンド登録の依頼| ブロック| 200 OK|
+| Me| -| 200 OK|
+| friend| すべてのユーザー| 200 OK|
+| friend| 友達のみ| 200 OK|
+| friend| ブロック済み| 200 OK|
 | フレンド以外のユーザー| すべてのユーザー| 200 OK|
-| フレンド以外のユーザー| フレンドのみ| 200 OK|
-| フレンド以外のユーザー| ブロック| 200 OK|
+| フレンド以外のユーザー| 友達のみ| 200 OK|
+| フレンド以外のユーザー| ブロック済み| 200 OK|
 | サード パーティのサイト| すべてのユーザー| 200 OK|
-| サード パーティのサイト| フレンドのみ| 200 OK|
-| サード パーティのサイト| ブロック| 200 OK|
+| サード パーティのサイト| 友達のみ| 200 OK|
+| サード パーティのサイト| ブロック済み| 200 OK|
 
 <a id="ID4EVH"></a>
 
 
 ## <a name="required-request-headers"></a>必要な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Authorization| string| HTTP の認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash > です。&lt;トークン >"。|
-| x xbl コントラクト バージョン| string| この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 値の例: 3, vnext します。|
-| Accept| string| コンテンツの種類の受け入れられる。 プレゼンスでサポートされている 1 つのみがアプリケーション/json がヘッダーで指定する必要があります。|
-| 同意言語| string| 応答で文字列を許容できるロケールです。 値の例: EN-US にします。|
+| Authorization| string| HTTP 認証の資格情報を認証します。 値の例:"XBL3.0 x =&lt;userhash >;&lt;トークン >"。|
+| x-xbl-contract-version| string| この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 値の例:3、vnext。|
+| OK| string| コンテンツ型が許容されます。 存在することによってサポートされている唯一は、application/json がヘッダーに指定する必要があります。|
+| Accept Language| string| 応答内の文字列に対して許容されるロケール。 値の例: en-us (英語)。|
 | Host| string| サーバーのドメイン名。 値の例: presencebeta.xboxlive.com します。|
 
 <a id="ID4E1BAC"></a>
 
 
-## <a name="optional-request-headers"></a>オプションの要求ヘッダー
+## <a name="optional-request-headers"></a>省略可能な要求ヘッダー
 
-| ヘッダー| 型| 説明|
+| Header| 種類| 説明|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| X RequestedServiceVersion|  | この要求を送信する必要があります、Xbox LIVE サービスの名前/数をビルドします。 要求がのみにルーティングと、サービスの認証トークン内の要求ヘッダーの有効性を確認した後。 既定値: 1 です。|
+| X RequestedServiceVersion|  | この要求が送られる Xbox LIVE サービスの名前/番号をビルドします。 要求はのみにルーティングし、サービスの認証トークンの要求ヘッダーの有効性を確認した後。 ［既定値］:1. |
 
 <a id="ID4E1CAC"></a>
 
@@ -124,9 +124,9 @@ ms.locfileid: "8930069"
 <a id="ID4ELDAC"></a>
 
 
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
 
-ユーザーの既存のレコードがない場合は、デバイスを持つレコードが返されます。
+ユーザーの既存のレコードはありませんが、デバイスのレコードが返されます。
 
 
 ```cpp

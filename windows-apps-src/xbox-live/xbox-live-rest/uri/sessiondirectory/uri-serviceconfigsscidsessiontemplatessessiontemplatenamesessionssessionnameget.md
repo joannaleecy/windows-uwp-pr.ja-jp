@@ -8,21 +8,21 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 21d534d7b55934d7174c925838ed88980acff609
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921348"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655067"
 ---
 # <a name="get-serviceconfigsscidsessiontemplatessessiontemplatenamesessionssessionname"></a>GET (/serviceconfigs/{scid}/sessiontemplates/{sessionTemplateName}/sessions/{sessionName})
 セッション オブジェクトを取得します。
 
 > [!IMPORTANT]
-> この URI メソッドには、X Xbl コントラクト バージョンのヘッダーの要素が必要があります: 104/105 または後ですべての要求します。
+> この URI メソッドでは、X Xbl コントラクト バージョンのヘッダー要素が必要です。104/105 または後ですべての要求。
 
   * [注釈](#ID4ET)
   * [URI パラメーター](#ID4EMB)
-  * [HTTP ステータス コード](#ID4EZB)
+  * [HTTP 状態コード](#ID4EZB)
   * [要求本文](#ID4E6B)
   * [応答本文](#ID4EKC)
 
@@ -31,9 +31,9 @@ ms.locfileid: "8921348"
 
 ## <a name="remarks"></a>注釈
 
-この HTTP/REST メソッドでは、指定した名前のセッション ドキュメントを読み取り、セッションを取得します。 成功した場合、そのすべての属性を使用して、セッション オブジェクトがサーバーから取得を返します。 このメソッドは、 **Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**でラップすることができます。 直接 GET メソッドのパラメーターでは指定されている**MultiplayerSessionReference**オブジェクトで、セッションでは、 **GetCurrentSessionAsync**の*sessionReference*パラメーターで渡されたは似ています。
+この HTTP/REST メソッドは、指定した名前のセッションのドキュメントを読み取って、セッションを取得します。 成功した場合、サーバーから取得して、そのすべての属性を持つ、セッション オブジェクトを返します。 このメソッドによってラップできる**Microsoft.Xbox.Services.Multiplayer.MultiplayerService.GetCurrentSessionAsync**します。 GET メソッドのパラメーターで指定されている並列直接、 **MultiplayerSessionReference**で渡されたセッションのオブジェクト、 *sessionReference*パラメーターの**GetCurrentSessionAsync**します。
 
-GET メソッドのワイヤ形式は、次に示します。
+GET メソッドのワイヤ形式は、以下に示します。
 
 ```cpp
 GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001 HTTP/1.1
@@ -48,17 +48,17 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 ## <a name="uri-parameters"></a>URI パラメーター
 
-| パラメーター| 型| 説明|
+| パラメーター| 種類| 説明|
 | --- | --- | --- | --- |
-| scid| GUID| サービス構成 id (SCID)。 セッション識別子のパート 1 です。|
-| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 セッション識別子のパート 2 です。|
-| セッション名| GUID| セッションの一意の ID。 セッション識別子のパート 3 です。|
+| scid| GUID| サービス構成の識別子 (SCID) です。 パート 1 のセッション識別子。|
+| sessionTemplateName| string| セッション テンプレートの現在のインスタンスの名前です。 パート 2 のセッション識別子。|
+| セッション名| GUID| セッションの一意の ID。 パート 3 のセッション識別子。|
 
 <a id="ID4EZB"></a>
 
 
-## <a name="http-status-codes"></a>HTTP ステータス コード
-サービスは、MPSD に適用される HTTP ステータス コードを返します。  
+## <a name="http-status-codes"></a>HTTP 状態コード
+MPSD に適用される、サービスは、HTTP 状態コードを返します。  
 <a id="ID4E6B"></a>
 
 
@@ -70,7 +70,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 
 
 ## <a name="response-body"></a>応答本文
-[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)で応答構造を参照してください。  
+応答の構造で表示[MultiplayerSession (JSON)](../../json/json-multiplayersession.md)します。  
 <a id="ID4ETC"></a>
 
 

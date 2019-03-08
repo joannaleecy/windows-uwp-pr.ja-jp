@@ -1,31 +1,31 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 準備
-description: 準備は、思っているよりも簡単です。 次の手順に従って、windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
+description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
 ms.date: 05/07/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047939"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658647"
 ---
 # <a name="get-set-up"></a>準備
 
 ![Visual Studio を使用する準備を行う](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-準備は、思っているよりも簡単です。 次の手順に従って、windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
+準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始します。
 
-## <a name="1-download-or-update-visual-studio"></a>1. Visual Studio のダウンロードまたは更新
+## <a name="1-download-or-update-visual-studio"></a>1. ダウンロード、または Visual Studio の更新
 
-Microsoft Visual Studio2017 設計、コード、テスト、およびアプリをデバッグするのに役立ちます。
+Microsoft Visual Studio 2017 を設計、コーディング、テスト、およびアプリをデバッグするのに役立ちます。
 
-Visual Studio2017 がまだしていない場合は、無料 Microsoft Visual Studio Community2017 をインストールできます。 このダウンロードには、アプリのテスト用としてデバイスのシミュレーターが含まれています。
+まだ Visual Studio 2017 を持っていない場合は、無料 Microsoft Visual Studio Community 2017 をインストールすることができます。 このダウンロードには、アプリのテスト用としてデバイスのシミュレーターが含まれています。
 
--   [Windows 10 開発者ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Windows 10 開発者ツールをダウンロードします。](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
 Visual Studio をインストールする場合は、次のように [ユニバーサル Windows アプリ開発ツール] オプションを必ず選択してください。
 
@@ -44,7 +44,7 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 -   詳しい手順については、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。
 
-## <a name="3-register-as-an-app-developer"></a>3. アプリ開発者としての登録
+## <a name="3-register-as-an-app-developer"></a>3.アプリ開発者として登録する
 
 アプリの開発をすぐに開始できますが、ストアへの提出前に開発者アカウントが必要です。
 
@@ -54,20 +54,20 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ツールをインストールして、デバイスを開発用に有効にしたら、Windows 10 アプリの作成を開始する方法に関するガイダンスを確認してください。
 
--   [コーディングの開始](create-uwp-apps.md)
+-   [コーディングを開始します。](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 開発セットアップ スクリプト
 
 デバイスをカスタマイズして、他の機能やパッケージをインストールする場合は、このプロジェクトでシステム セットアップのスクリプトを確認してください。
 
-- [開発者向けセットアップ スクリプト](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [開発者のセットアップ スクリプト](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>その他のツールとダウンロード
 
 ツールとダウンロードの一覧については、[ダウンロード ページ](https://go.microsoft.com/fwlink/p/?linkid=285935)をご覧ください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-* [UWP 開発者向けコード サンプル](https://developer.microsoft.com/windows/samples)
+* [UWP 開発者向けサンプル コード](https://developer.microsoft.com/windows/samples)
 * [UWP アプリとは](universal-application-platform-guide.md)
-* [Windows アカウントのサインアップ](sign-up.md)
+* [Windows アカウントにサインアップします。](sign-up.md)

@@ -4,14 +4,14 @@ title: xUid ディレクティブ
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 03cf647fdb243fd18212ca894f7682e913378907
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943183"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57609637"
 ---
 # <a name="xuid-directive"></a>x:Uid ディレクティブ
 
@@ -38,7 +38,7 @@ XAML でオブジェクト要素を識別するには **x:Uid** を使います�
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-**Go** という表示テキストを置き換えるコンテンツを指定するには、リソース ファイルの新しいリソースを指定する必要があります。 リソース ファイルには "GoButton.Content" という名前のリソースのエントリを含める必要があります。 この場合、[**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) が [**Button**](/uwp/api/windows.ui.xaml.controls.button) クラスに継承される特定のプロパティです。 "GoButton.FlowDirection" にリソースに基づく値を指定するなど、このボタンの他のプロパティにローカライズ値を指定することがあります。 **x:Uid** とリソース ファイルを一緒に使用する方法の詳細については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../app-resources/localize-strings-ui-manifest.md)」を参照してください。
+**Go** という表示テキストを置き換えるコンテンツを指定するには、リソース ファイルの新しいリソースを指定する必要があります。 リソース ファイルには "GoButton.Content" という名前のリソースのエントリを含める必要があります。 [**コンテンツ**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)によって継承される特定のプロパティをここでは、 [**ボタン**](/uwp/api/windows.ui.xaml.controls.button)クラス。 "GoButton.FlowDirection" にリソースに基づく値を指定するなど、このボタンの他のプロパティにローカライズ値を指定することがあります。 **x:Uid** とリソース ファイルを一緒に使用する方法の詳細については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../app-resources/localize-strings-ui-manifest.md)」を参照してください。
 
 **x:Uid** 値に使用可能な文字列の正当性は、リソース ファイル内の識別子やリソース パスとして正当な文字列はどれかという実質的な意味合いにおいて制御されます。
 

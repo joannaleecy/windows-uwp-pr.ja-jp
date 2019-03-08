@@ -8,22 +8,22 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1fa68fcffbca4326ccdb5a65404260f81458c8d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944693"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606597"
 ---
 # <a name="thumbnailsource-enumeration"></a>ThumbnailSource 列挙型
-ThumbnailSource 列挙型をについて説明します。 
+ThumbnailSource 列挙体をについて説明します。 
 <a id="ID4ER"></a>
 
  
-## <a name="thumbnailsource"></a>ThumbnailSource
+## <a name="thumbnailsource"></a>thumbnailSource
  
 | <b>列挙子</b>| <b>説明</b>| 
 | --- | --- | 
-| 既定値| クリップの 3 つの 2 つ目の点から、大とサイズの小さなサムネイルが生成されます。| 
-| Offset| クリップの InitialUploadRequest に指定された値から、大とサイズの小さなサムネイルが生成されます。| 
-| Upload| 縮小表示が生成され、GameClips サービスから独立してアップロードします。| 
+| Default| Large とサイズの縮小は、クリップの 3 つの 2 番目の点から生成されます。| 
+| Offset| Large とサイズの縮小は、クリップの InitialUploadRequest で指定された値から生成されます。| 
+| Upload| サムネイルが生成され、ゲーム クリップ service から独立したアップロードします。| 
   
