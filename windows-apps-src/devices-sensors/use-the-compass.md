@@ -4,14 +4,14 @@ title: コンパスの使用
 description: コンパスを使って現在の方位を検出する方法を説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c1cc6e17d95f55cc97af7695c12b374edcaaa8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936390"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632887"
 ---
 # <a name="use-the-compass"></a>コンパスの使用
 
@@ -31,7 +31,7 @@ ms.locfileid: "8936390"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターがコンパスをサポートしている必要があります。
 
@@ -134,11 +134,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **CompassCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="CompassCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:CompassCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、コンパスの値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ### <a name="explanation"></a>説明
 

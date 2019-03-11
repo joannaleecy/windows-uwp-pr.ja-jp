@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f0806c0aa7a130a080457f4361d17f64451846f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931218"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634547"
 ---
 # <a name="projection-transform"></a>射影トランスフォーム
 
 
-"射影変換"** はカメラの内部を制御します。これは、カメラのレンズを選択することと似ています。 このトランスフォームは、3 種類のトランスフォームの中で最も複雑です。
+*"射影変換"* はカメラの内部を制御します。これは、カメラのレンズを選択することと似ています。 このトランスフォームは、3 種類のトランスフォームの中で最も複雑です。
 
 射影行列とは、通常、スケーリングおよび遠近法による射影です。 射影トランスフォームでは、視錐台を立方体に変換します。 視錐台の近くの端は遠くの端よりも小さいので、このトランスフォームにはカメラの近くのオブジェクトを拡大するという効果があり、これによってシーンに遠近感が生まれます。
 
@@ -29,7 +29,7 @@ ms.locfileid: "8931218"
 
 ![平行移動行列の図](images/projmat2.png)
 
-平行移動行列に射影行列を乗算 (T\*P) すると、それらを合成した射影行列ができます。これは、次のようになります。
+射影行列の平行移動行列を乗算すること (T\*P)、複合投影マトリックスは、次の図に示すようにします。
 
 ![合成した射影行列の図](images/projmat3.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "8931218"
 
 どの式を使用する場合でも、必ず、Zₙ をできるだけ大きな値に設定します。カメラに極端に近い z 値は大幅には変化しないからです。 これにより、16 ビットの z バッファーを使う深度比較は多少複雑になります。
 
-## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>w バッファーに有効な射影行列
+## <a name="span-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspanspan-idawfriendlyprojectionmatrixspana-w-friendly-projection-matrix"></a><span id="A_W_Friendly_Projection_Matrix"></span><span id="a_w_friendly_projection_matrix"></span><span id="A_W_FRIENDLY_PROJECTION_MATRIX"></span>W な射影行列
 
 
 Direct3D では、ワールド行列、ビュー行列、および射影行列によって変換された頂点の ｗ 成分を利用して、深度バッファーまたはフォグ エフェクトの計算を深度をベースに実行できます。 このような計算では、射影行列で w を正規化して、ワールド空間の z と等価にする必要があります。 つまり、射影行列に 1 ではない (3,4) 係数が含まれる場合、(3,4) 係数の逆数を使ってすべての係数をスケーリングすることで、適切な行列を作成しなければなりません。 対応していない行列を使用すると、フォグ エフェクトと深度バッファーが正しく適用されません。

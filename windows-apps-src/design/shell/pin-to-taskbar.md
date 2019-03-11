@@ -1,5 +1,5 @@
 ---
-Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
+Description: プログラムを使って、アプリをタスク バーにピン留めすることができます。また現在ピン留めされているかどうかを確認できます。
 title: アプリをタスク バーにピン留めする
 template: detail.hbs
 ms.date: 02/08/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, タスク バー、タスク バー マネージャー、タスク バーにピン留め、プライマリ タイル
 ms.localizationpriority: medium
 ms.openlocfilehash: 640dc637a1c50718210d87af87cb8b8e706a5ab7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937570"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57604097"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>アプリをタスク バーにピン留めする
 
@@ -20,23 +20,23 @@ ms.locfileid: "8937570"
 ![タスク バー](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **Fall Creators Update が必要**: タスクバー API を使用するには、SDK 16299 以降をターゲットとし、ビルド 16299 以降を実行している必要があります。
+> **Fall Creators Update が必要です**:。SDK 16299 を対象にして、16299 以降、タスク バー Api を使用するビルドを実行します。
 
-> **重要な API**: [TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要な Api**:[TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>アプリのタスク バーへのピン留めをユーザーに確認する 
 
 [TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)を使うと、アプリのタスク バーへのピン留めをユーザーに確認できます。ユーザーは要求を承認する必要があります。 多くの労力をかけて優れたアプリを作成したら、ユーザーにそのアプリをタスク バーにピン留めするように求めることができます。 コードについて詳しく説明する前に、エクスペリエンスを設計するときの注意点を示します。
 
-* "タスク バーへのピン留め" を実行するよう明確に呼びかける、スムーズで簡単に無視できる UX をアプリで作成すること。**** このためには、ダイアログとポップアップを使用しないようにします。 
-* アプリをピン留めするようユーザーに要求する前に、アプリのピン留めの価値について明確に説明すること。****
-* タイルが既にピン留めされているか、デバイスでピン留めがサポートされていない場合、アプリをピン留めするようユーザーに要求しないこと。**** (この記事では、ピン留めがサポートされているかどうかを判別する方法を説明します。)
-* アプリをピン留めするようユーザーに繰り返し要求しないこと (ユーザーが不快になる恐れがあります)。****
-* 明示的なユーザー操作を必要としない場合や、アプリが最小化されているか開いていないときに、ピン留めの API を呼び出さないこと。****
+* "タスク バーへのピン留め" を実行するよう明確に呼びかける、スムーズで簡単に無視できる **UX** をアプリで作成すること。 このためには、ダイアログとポップアップを使用しないようにします。 
+* **アプ**リをピン留めするようユーザーに要求する前に、アプリのピン留めの価値について明確に説明すること。
+* **タイルが**既にピン留めされているか、デバイスでピン留めがサポートされていない場合、アプリをピン留めするようユーザーに要求しないこと。 (この記事では、ピン留めがサポートされているかどうかを判別する方法を説明します。)
+* **アプリをピ**ン留めするようユーザーに繰り返し要求しないこと (ユーザーが不快になる恐れがあります)。
+* **明示的なユ**ーザー操作を必要としない場合や、アプリが最小化されているか開いていないときに、ピン留めの API を呼び出さないこと。
 
 
-## <a name="1-check-whether-the-required-apis-exist"></a>1. 必要な API が存在するかどうかを確認する
+## <a name="1-check-whether-the-required-apis-exist"></a>1. 必要な Api が存在するかどうかを確認します。
 
 アプリで Windows 10 の以前のバージョンをサポートする場合は、TaskbarManager クラスが利用できるかどうかを確認する必要があります。 [ApiInformation.IsTypePresent メソッド](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_)を使ってこの確認を行えます。 TaskbarManager クラスを利用できない場合は、API への呼び出しを実行しないでください。
 
@@ -53,7 +53,7 @@ else
 ```
 
 
-## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. タスク バーが存在し、ピン留めを使用できるかどうかを確認する
+## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. タスク バーが存在し、ピン留めを使用するかどうかを確認してください。
 
 UWP アプリはさまざまなデバイスで実行できます。それらのすべてがタスク バーをサポートするとは限りません。 現時点では、デスクトップ デバイスのみがタスク バーをサポートしています。 
 
@@ -68,7 +68,7 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 > アプリのタスク バーへのピン留めを行わず、タスク バーが利用できるかどうかだけを確認するには、[TaskbarManager.IsSupported プロパティ](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsSupported)を使用します。
 
 
-## <a name="3-check-whether-your-app-is-currently-pinned-to-the-taskbar"></a>3. アプリが現在タスク バーにピン留めされているかどうかを確認する
+## <a name="3-check-whether-your-app-is-currently-pinned-to-the-taskbar"></a>3.アプリがタスク バーに現在固定されているかどうかを確認します。
 
 アプリが既にタスク バーにピン留めされている場合には、アプリのタスク バーへのピン留めをユーザーに求める意味がありません。 ユーザーに要求する前に、[TaskbarManager.IsCurrentAppPinnedAsync メソッド](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsCurrentAppPinnedAsync)を使うと、アプリが既にピン留めされているかどうかを確認できます。
 
@@ -87,7 +87,7 @@ else
 ```
 
 
-##  <a name="4-pin-your-app"></a>4. アプリをピン留めする
+##  <a name="4-pin-your-app"></a>4。アプリをピン留め
 
 タスク バーが存在し、ピン留めが許可されており、アプリが現在ピン留めされていない場合には、ユーザーがアプリをピン留めできることをユーザーに知らせる、控えめなヒントを表示することができます。 たとえば、UI のどこかにピンのアイコンを表示して、ユーザーがクリックできるようにすることができます。 
 
@@ -106,8 +106,8 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 このメソッドは、アプリがタスク バーにピン留めされたかどうかを示す、ブール値を返します。 アプリが既にピン留めされている場合は、このメソッドは、ユーザーにダイアログを表示せずに、すぐに true を返します。 ユーザーがダイアログで [いいえ] をクリックしたか、アプリをタスク バーにピン留めすることが許可されていない場合、メソッドは false を返します。 ユーザーが [はい] をクリックすると、アプリがピン留めされ、API から true が返されます。
 
 
-## <a name="resources"></a>リソース
+## <a name="resources"></a>参考資料
 
-* [GitHub での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
+* [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [TaskbarManager クラス](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [スタート メニューにアプリをピン留めする](tiles-and-notifications/primary-tile-apis.md)
+* [[スタート] メニューにアプリをピン留め](tiles-and-notifications/primary-tile-apis.md)

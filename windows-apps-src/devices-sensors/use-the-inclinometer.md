@@ -4,14 +4,14 @@ title: 傾斜計の使用
 description: 傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bfd617c3c08cdcb7815010648c6036a5f39ee3ab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932661"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623807"
 ---
 # <a name="use-the-inclinometer"></a>傾斜計の使用
 
@@ -19,7 +19,7 @@ ms.locfileid: "8932661"
 **重要な API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**傾斜計**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
 **サンプル**
 
@@ -31,7 +31,7 @@ ms.locfileid: "8932661"
 
  ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターが傾斜計をサポートしている必要があります。
 
@@ -136,11 +136,11 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="InclinometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:InclinometerCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、傾斜計の値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ###  <a name="explanation"></a>説明
 

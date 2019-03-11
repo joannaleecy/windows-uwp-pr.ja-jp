@@ -4,14 +4,14 @@ title: 方位センサーの使用
 description: 方位センサーを使ってデバイスの向きを判断する方法について説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4426cbc2e2d3c6e7d980b0733b6deb5178025abb
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114618"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57624097"
 ---
 # <a name="use-the-orientation-sensor"></a>方位センサーの使用
 
@@ -20,22 +20,22 @@ ms.locfileid: "9114618"
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**取得**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
 **サンプル**
 
--   [方位センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
--   [単純な方位センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
+-   [方向センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [簡易方位センサーのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 方位センサーを使ってデバイスの向きを判断する方法について説明します。
 
-[**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間には、[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) と [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の 2 種類の方位センサー API が含まれています。 これらのセンサーはいずれも方位センサーですが、この用語は多重定義されており、さまざまな目的に使用されます。 ただし、いずれも方位センサーであるため、ここではその両方について説明します。
+方向センサーが含まれる Api の 2 つの種類があります、 [ **Windows.Devices.Sensors** ](https://msdn.microsoft.com/library/windows/apps/BR206408)名前空間。[**OrientationSensor** ](https://msdn.microsoft.com/library/windows/apps/BR206371)と[**取得**](https://msdn.microsoft.com/library/windows/apps/BR206399)します。 これらのセンサーはいずれも方位センサーですが、この用語は多重定義されており、さまざまな目的に使用されます。 ただし、いずれも方位センサーであるため、ここではその両方について説明します。
 
-[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API は、3-D アプリで四元数と回転マトリックスを取得するために使われます。 四元数は、任意の 1 つの軸を中心とした点 \[x,y,z\] の回転と考えるとわかりやすいでしょう (一方、回転マトリックスは 3 軸を中心とした回転を表します)。 四元数の演算には複素数の幾何学的特性と虚数の数学的特性が含まれ、非常に特殊ですが、四元数自体の扱いは簡単であり、DirectX などのフレームワークでもサポートされています。 複雑な 3D アプリでは、Orientation センサーを使ってユーザーの視点を調整する場合があります。 このセンサーでは、加速度計、ジャイロメーター、コンパスからの入力が組み合わされます。
+[  **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API は、3-D アプリで四元数と回転マトリックスを取得するために使われます。 四元数を点の回転として最も簡単に認識できる\[x、y、z\]に関する任意の軸 (3 つの軸を中心に回転を表す回転行列とは対照的)。 四元数の演算には複素数の幾何学的特性と虚数の数学的特性が含まれ、非常に特殊ですが、四元数自体の扱いは簡単であり、DirectX などのフレームワークでもサポートされています。 複雑な 3D アプリでは、Orientation センサーを使ってユーザーの視点を調整する場合があります。 このセンサーでは、加速度計、ジャイロメーター、コンパスからの入力が組み合わされます。
 
-[**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API は、デバイスの現在の向き (上下が正しい縦向き、上下が逆の縦向き、左側を下にした横向き、右側を下にした横向き) を検出するために使用されます。 デバイスの表向き、裏向きも検出できます。 このセンサーは、"上下が正しい縦向き" や "左側を下にした横向き" などのプロパティを返すのではなく、"NotRotated" や "Rotated90DegreesCounterclockwise" などの回転値を返します。 次の表に、一般的な向きのプロパティとセンサーの読み取り値との関係を示します。
+[  **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API は、デバイスの現在の向き (上下が正しい縦向き、上下が逆の縦向き、左側を下にした横向き、右側を下にした横向き) を検出するために使用されます。 デバイスの表向き、裏向きも検出できます。 このセンサーは「を縦」や「左ランドス ケープ」などのプロパティを返すのではなく、回転値を返します。「回転していません」、"Rotated90DegreesCounterclockwise"しにします。 次の表に、一般的な向きのプロパティとセンサーの読み取り値との関係を示します。
 
-| 向き     | 対応するセンサーの読み取り値      |
+| Orientation     | 対応するセンサーの読み取り値      |
 |-----------------|-----------------------------------|
 | 上下が正しい縦向き     | NotRotated                        |
 | 左側を下にした横向き  | Rotated90DegreesCounterclockwise  |
@@ -44,7 +44,7 @@ ms.locfileid: "9114618"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターが方位センサーをサポートしている必要があります。
 
@@ -177,11 +177,11 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **OrientationSensorCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="OrientationSensorCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:OrientationSensorCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、方位センサーの値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ###  <a name="explanation"></a>説明
 
@@ -323,11 +323,11 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **SimpleOrientationCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="SimpleOrientationCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:SimpleOrientationCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、方位センサーの値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ### <a name="explanation"></a>説明
 

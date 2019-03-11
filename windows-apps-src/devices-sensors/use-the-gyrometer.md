@@ -4,14 +4,14 @@ title: ジャイロメーターの使用
 description: ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 940f82e5e4cff30a2756c32c80d2f3ab02ae440a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050505"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660507"
 ---
 # <a name="use-the-gyrometer"></a>ジャイロメーターの使用
 
@@ -19,7 +19,7 @@ ms.locfileid: "9050505"
 **重要な API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+-   [**ジャイロ メーター**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
 **サンプル**
 
@@ -31,7 +31,7 @@ ms.locfileid: "9050505"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターがジャイロメーターをサポートしている必要があります。
 
@@ -134,13 +134,13 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
     </Page>
 ```
 
-元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **GyrometerCS** である場合は、`x:Class="App1.MainPage"` を `x:Class="GyrometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:GyrometerCS"` に置き換える必要があります。
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **GyrometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="GyrometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:GyrometerCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、ジャイロメーターの値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ###  <a name="explanation"></a>説明
 
@@ -167,7 +167,7 @@ _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
+プロジェクトの XAML 内にある TextBlock に、これらの新しい値が書き込まれます。
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
@@ -180,4 +180,4 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
  ## <a name="related-topics"></a>関連トピック
 
-* [ジャイロメーター センサーのサンプルに関するページ](https://go.microsoft.com/fwlink/p/?linkid=241379)
+* [ジャイロ メーターのサンプル](https://go.microsoft.com/fwlink/p/?linkid=241379)

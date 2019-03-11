@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, レーシング ハンドル, フォース フィードバック
 ms.localizationpriority: medium
 ms.openlocfilehash: ab7c5bc15b149d5f469b7fc5e6b6285986569b22
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981556"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608837"
 ---
-# <a name="racing-wheel-and-force-feedback"></a>レーシング ハンドルとフォース フィードバック
+# <a name="racing-wheel-and-force-feedback"></a>レース ホイールとフォース フィードバック
 
-このページには Xbox One レーシング ハンドル[Windows.Gaming.Input.RacingWheel]を使用してプログラミングの基礎について説明します。[racingwheel]とユニバーサル Windows プラットフォーム (UWP) 用の関連 Api です。
+このページを使用して Xbox One racing 車輪のプログラミングの基礎を説明する[Windows.Gaming.Input.RacingWheel] [ racingwheel]および関連するユニバーサル Windows プラットフォーム (UWP) Api です。
 
 ここでは、次の項目について紹介します。
 
@@ -31,21 +31,21 @@ ms.locfileid: "8981556"
 
 Xbox One レーシング ハンドルは、さまざまな価格で提供されています。概して、価格が高いほど、入力とフォース フィードバック機能が優れています。 どのレーシング ハンドルにも、アナログのステアリング ハンドル、アナログのスロットルおよびブレーキのコントロール、ハンドル上のいくつかのボタンを備えています。 一部のレーシング ハンドルには、さらに、アナログのクラッチとハンドブレーキのコントロール、シフト レバー、およびフォース フィードバック機能もあります。 レーシング ハンドルの機能セットはどれも同じではなく、特定の機能のサポート状況も異なる可能性があります &mdash; たとえば、ステアリング ハンドルがサポートする回転の範囲や、シフト レバーがサポートするギア数は異なっている可能性があります。
 
-### <a name="device-capabilities"></a>デバイス機能
+### <a name="device-capabilities"></a>デバイスの機能
 
-別の Xbox One レーシング ハンドルは、さまざまなオプションのデバイス機能のセットとそれらの機能のサポートのさまざまなレベル1 つの種類の入力デバイス間のバリエーションは、このレベルは、 [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API でサポートされているデバイス間で一意です。 さらに、流通しているほとんどのデバイスでは、少なくともいくつかのオプションの機能またはその他のバリエーションをサポートします。 そのため、接続されている各レーシング ハンドルの機能を個別に特定し、ゲームに適した機能のバリエーションをすべてサポートすることが重要です。
+Xbox One レーシング車輪をさまざまな異なる省略可能なデバイス機能のセットとこれらの機能のサポートのさまざまなレベルを提供します。このレベルの 1 つの種類の入力デバイスの間の変動がでサポートされているデバイス間で一意で、 [Windows.Gaming.Input](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input) API。 さらに、流通しているほとんどのデバイスでは、少なくともいくつかのオプションの機能またはその他のバリエーションをサポートします。 そのため、接続されている各レーシング ハンドルの機能を個別に特定し、ゲームに適した機能のバリエーションをすべてサポートすることが重要です。
 
 詳しくは、「[レーシング ハンドル機能の特定](#determining-racing-wheel-capabilities)」をご覧ください。
 
 ### <a name="force-feedback"></a>フォース フィードバック
 
-Some Xbox One racing wheels offer true force feedback&mdash;that is, they can apply actual forces on an axis of control such as their steering wheel&mdash;not just simple vibration. ゲームはこの機能を利用して、一層の没入感を演出し (_クラッシュ ダメージのシミュレーション_、"道路の感覚")、運転をさらに難しくします。
+一部の Xbox One レーシング ハンドルには、単なるバイブレーションではなく、真のフォース フィードバック &mdash; つまり、ハンドルなどのコントロール軸に実際の力を加えることができます &mdash; が備わっています ゲームはこの機能を利用して、一層の没入感を演出し (_クラッシュ ダメージのシミュレーション_、"道路の感覚")、運転をさらに難しくします。
 
 詳しくは、「[フォース フィードバックの概要](#force-feedback-overview)」をご覧ください。
 
 ### <a name="ui-navigation"></a>UI のナビゲーション
 
-ユーザー インターフェイスの操作に異なる入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理__ 入力デバイスは、[UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理__ 入力デバイスとして同時に機能します。 UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。
+ユーザー インターフェイスの操作に異なる入力デバイスをサポートする負担を軽くし、ゲームとデバイス間の整合性を高めるため、ほとんどの物理_入力デバイスは、_ [UI ナビゲーション コントローラー](ui-navigation-controller.md)と呼ばれる個別の論理_入力デバイスとして同時に機能します_。 UI ナビゲーション コントローラーは、各種入力デバイスに共通の UI ナビゲーション コマンドのボキャブラリを提供します。
 
 デバイスによってアナログ制御をどの程度重視しているかは異なり、レーシング ハンドル間のバリエーションが広いことから、通常は、[ゲームパッド](gamepad-and-vibration.md) と同様の、デジタルの方向パッド、**ビュー**、**メニュー**、**A**、**B**、**X**、および **Y** ボタンが搭載されています。これらのボタンはゲームプレイ コマンドのサポートを意図したものではなく、レーシング ハンドル ボタンとしてすぐに利用できるものではありません。
 
@@ -56,28 +56,28 @@ UI ナビゲーション コントローラーとして、レーシング ハン
 |                 Up | 方向パッドを上           |
 |               Down | 方向パッドを下         |
 |               Left | 方向パッドを左         |
-|              Right | 方向パッドを右        |
-|               View | ビュー ボタン        |
+|              右 | 方向パッドを右        |
+|               ビュー | 表示ボタン        |
 |               Menu | メニュー ボタン        |
-|             Accept | A ボタン           |
+|             OK | A ボタン           |
 |             Cancel | B ボタン           |
 
 また、一部のレーシング ハンドルでは、ナビゲーション コマンドの[オプション セット](ui-navigation-controller.md#optional-set)を、サポートする他の入力にマップしますが、コマンドのマッピングはデバイスによって異なる可能性があります。 以下のコマンドもサポートすることを検討してください。ただし、ゲームのインターフェイスのナビゲーションの基本コマンドにはしないでください。
 
 | ナビゲーション コマンド | レーシング ハンドル入力    |
 | ------------------:| --------------------- |
-|            PageUp | _状況により異なる_              |
-|          PageDown | _状況により異なる_              |
-|          Page Left | _状況により異なる_              |
-|         Page Right | _状況により異なる_              |
-|          Scroll Up | _状況により異なる_              |
-|        Scroll Down | _状況により異なる_              |
-|        Scroll Left | _状況により異なる_              |
-|       Scroll Right | _状況により異なる_              |
+|            PageUp | _異なります_              |
+|          PageDown | _異なります_              |
+|          Page Left | _異なります_              |
+|         Page Right | _異なります_              |
+|          Scroll Up | _異なります_              |
+|        Scroll Down | _異なります_              |
+|        Scroll Left | _異なります_              |
+|       Scroll Right | _異なります_              |
 |          Context 1 | X ボタン (_一般的な場合_) |
 |          Context 2 | Y ボタン (_一般的な場合_) |
-|          Context 3 | _状況により異なる_              |
-|          Context 4 | _状況により異なる_              |
+|          Context 3 | _異なります_              |
+|          Context 4 | _異なります_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>レーシング ハンドルの検出と追跡
 
@@ -189,7 +189,7 @@ if (racingwheel->WheelMotor != nullptr)
 }
 ```
 
-フォース フィードバックをサポートするレーシング ハンドルのフォース フィードバック機能の使い方の詳細については、「[フォース フィードバックの概要](#force-feedback-overview)」を参照してください。
+フォース フィードバックをサポートするレーシング ハンドルのフォース フィードバック機能の使い方について詳しくは、「[フォース フィードバックの概要](#force-feedback-overview)」をご覧ください。
 
 ### <a name="reading-the-buttons"></a>ボタンの読み取り
 
@@ -218,7 +218,7 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 }
 ```
 
-場合によっては、ボタンが押された状態から離された状態への移行またはその逆方向への移行のタイミング、複数のボタンが押されているか離されているかの状態、または一連のボタンが特定のパターンの状態になっているかどうか &mdash; (一部が押されていて、一部が押されていない) を特定する必要があります。 これらの状態を検出する方法の詳細については、「[Detecting button transitions (ボタンの移行の検出)](input-practices-for-games.md#detecting-button-transitions)」および「[Detecting complex button arrangements (複雑なボタンのパターンの検出)](input-practices-for-games.md#detecting-complex-button-arrangements)」を参照してください。
+場合によっては、ボタンが押された状態から離された状態への移行またはその逆方向への移行のタイミング、複数のボタンが押されているか離されているかの状態、または一連のボタンが特定のパターンの状態になっているかどうか (一部が押されていて、一部が押されていない) を特定する必要があります。 これらの状態を検出する方法について詳しくは、「[Detecting button transitions (ボタンの移行の検出)](input-practices-for-games.md#detecting-button-transitions)」および「[Detecting complex button arrangements (複雑なボタンのパターンの検出)](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
 
 ### <a name="reading-the-wheel"></a>ハンドルの読み取り
 
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>シフトレバーの読み取り
 
-シフトレバーは、-1 ～ [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) の符号付き整数値として表されたデジタルの読み取り値を提供するオプションのコントロールです。 -1 または 0 は_バック_ ギアと _ニュートラル_ ギアにそれぞれ対応し、正の値が大きくなるほど、高いレベルの前進ギアに対応し、最大のギアは **MaxPatternShifterGear** になります。 シフトレバーの値は、 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)構造体の[PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)プロパティから読み取られます。
+シフトレバーは、-1 ～ [MaxPatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) の符号付き整数値として表されたデジタルの読み取り値を提供するオプションのコントロールです。 -1 または 0 は_バック_ ギアと _ニュートラル_ ギアにそれぞれ対応し、正の値が大きくなるほど、高いレベルの前進ギアに対応し、最大のギアは **MaxPatternShifterGear** になります。 パターンのシフトの値を読み取ったり、 [PatternShifterGear](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)のプロパティ、 [RacingWheelReading](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.racingwheelreading)構造体。
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -278,7 +278,7 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="force-feedback-overview"></a>フォース フィードバックの概要
 
-多くのレーシング ハンドルには、より没入型で、難易度の高いドライブ エクスペリエンスを提供するため、フォース フィードバック機能があります。 フォース フィードバックをサポートするレーシング ハンドルには、通常、単一の軸 (ハンドルの回転軸) に沿ってステアリング ハンドルに力を適用する単一のモーターが搭載されています。 フォース フィードバックは、Windows 10 および Xbox One UWP アプリで[Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)名前空間によってサポートされます。
+多くのレーシング ハンドルには、より没入型で、難易度の高いドライブ エクスペリエンスを提供するため、フォース フィードバック機能があります。 フォース フィードバックをサポートするレーシング ハンドルには、通常、単一の軸 (ハンドルの回転軸) に沿ってステアリング ハンドルに力を適用する単一のモーターが搭載されています。 Windows 10 と Xbox の 1 つの UWP アプリでフォース フィードバックがサポートされている、 [Windows.Gaming.Input.ForceFeedback](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback)名前空間。
 
 > [!NOTE]
 > フォース フィードバック API は、複数軸のフォースをサポートできますが、現時点では、ハンドルの回転軸以外の軸でフィードバックをサポートしている Xbox One レーシング ハンドルはありません。
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>フォース フィードバック効果の読み込み
 
-フォース フィードバック効果は、ゲームのコマンドに対して自律的に "再生" されるフィードバック デバイスに読み込まれます。 基本的な効果の数が提供されます。[IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)インターフェイスを実装するクラスでは、カスタム効果を作成できます。
+フォース フィードバック効果は、ゲームのコマンドに対して自律的に "再生" されるフィードバック デバイスに読み込まれます。 さまざまな基本的な特殊効果が提供されます。カスタム効果を実装するクラスで作成できます、 [IForceFeedbackEffect](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)インターフェイス。
 
 | Effect クラス         | 効果の説明                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -373,7 +373,7 @@ else
 
 * [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.igamecontroller)
-* [ゲームの入力プラクティス](input-practices-for-games.md)
+* [ゲームの入力のプラクティス](input-practices-for-games.md)
 
 [Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
 [Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx

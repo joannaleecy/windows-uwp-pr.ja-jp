@@ -1,5 +1,5 @@
 ---
-Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+Description: このトピックでは、修飾子の一般概念、使用方法、各修飾子名の目的について説明します。
 title: 言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する
 template: detail.hbs
 ms.date: 10/10/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117662"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57608137"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する
 
@@ -29,7 +29,7 @@ ms.locfileid: "9117662"
 | :--------------- | :--------------- | :--------------- |
 | ハイ コントラスト設定 | contrast | standard、high、black、white |
 
-修飾子は、修飾子名と修飾子の値を組み合わせて作成します。 `<qualifier name>-<qualifier value>` は修飾子の形式です。 `contrast-standard` は修飾子の例です。
+修飾子は、修飾子名と修飾子の値を組み合わせて作成します。 `<qualifier name>-<qualifier value>` 修飾子の形式です。 `contrast-standard` 修飾子の例に示します。
 
 ハイ コントラストの場合、修飾子のセットは `contrast-standard`、`contrast-high`、`contrast-black`、`contrast-white` になります。 修飾子名と修飾子の値では、大文字と小文字が区別されません。 たとえば、`contrast-standard` と `Contrast-Standard` は同じ修飾子であると見なされます。
 
@@ -88,7 +88,7 @@ ms.locfileid: "9117662"
 
 ## <a name="multiple-qualifiers"></a>複数の修飾子
 
-修飾子は、フォルダー名とファイル名で組み合わせることができます。 たとえば、ハイ コントラスト モードがオンであり** 表示倍率が 400 のときに、イメージ アセットをアプリに読み込むとします。 これを行う方法の 1 つは、入れ子になったフォルダーの使用です。
+修飾子は、フォルダー名とファイル名で組み合わせることができます。 たとえば、ハイ コントラスト モードがオンであり*表示倍率が* 400 のときに、イメージ アセットをアプリに読み込むとします。 これを行う方法の 1 つは、入れ子になったフォルダーの使用です。
 
 ```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
@@ -102,7 +102,7 @@ ms.locfileid: "9117662"
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
-フォルダー名として、複数の修飾子をアンダー スコアで結合します。 `<qualifier1>[_<qualifier2>...]`  という形式を使用します。
+フォルダー名として、複数の修飾子をアンダー スコアで結合します。 `<qualifier1>[_<qualifier2>...]` 形式です。
 
 同じ形式で、複数の修飾子を結合して 1 つのファイル名にすることもできます。
 
@@ -118,7 +118,7 @@ ms.locfileid: "9117662"
 
 ターゲット システムとアプリのうちいずれかが、`alternateform` 修飾子と一致する値を提供する必要があります。 カスタムの `alternateform` 修飾子の値に `msft-` プレフィックスを使用しないでください。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>構成
 
 `configuration` 修飾子名が必要になる可能性は高くありません。 テストのみのリソースなど、オーサリング時環境にのみ使用されるリソースを指定するために使用できます。
 
@@ -128,7 +128,7 @@ ms.locfileid: "9117662"
 
 `contrast` 修飾子は、ハイ コントラスト設定と最も一致するリソースを提供するために使用します。
 
-## <a name="custom"></a>Custom
+## <a name="custom"></a>カスタム
 
 アプリで `custom` 修飾子の値を設定すると、その値に最も一致するリソースが読み込まれます。 たとえば、アプリのライセンスに基づいてリソースを読み込む必要があるとします。 アプリは、起動するとライセンスを確認し、[SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) を呼び出すことによって、ライセンスを `custom` 修飾子の値として使用します。コード例をご覧ください。
 
@@ -154,7 +154,7 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="devicefamily"></a>DeviceFamily
 
-`devicefamily` という修飾子名が必要になる可能性は高くありません。 他にもっと便利で強力な修飾子を使う手法があるため、この修飾子名の使用はできる限り避けてください。 このような手法については、「[アプリが実行されているプラットフォームの検出](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)」および「[バージョン アダプティブ コード](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」を参照してください。
+`devicefamily` 修飾子名が必要になる可能性は高くありません。 他にもっと便利で強力な修飾子を使う手法があるため、この修飾子名の使用はできる限り避けてください。 このような手法については、「[アプリが実行されているプラットフォームの検出](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)」および「[バージョン アダプティブ コード](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)」を参照してください。
 
 ただし他に方法がなければ、XAML ビュー (XAML ビューは、UI レイアウトとコントロールを含む XAML ファイル) を格納するフォルダーの名前として devicefamily という修飾子を使用することもできます。
 
@@ -187,13 +187,13 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="dxfeaturelevel"></a>DXFeatureLevel
 
-`dxfeaturelevel` という修飾子名が必要になる可能性は高くありません。 これは Direct3D ゲーム アセットで使用し、以前の特定な下位レベル ハードウェア構成に一致するように、下位レベルのリソースを読み込むために用意されたものです。 ただ、このハードウェア構成はあまり普及していないため、この修飾子は使用しないことをお勧めします。
+`dxfeaturelevel` 修飾子名が必要になる可能性は高くありません。 これは Direct3D ゲーム アセットで使用し、以前の特定な下位レベル ハードウェア構成に一致するように、下位レベルのリソースを読み込むために用意されたものです。 ただ、このハードウェア構成はあまり普及していないため、この修飾子は使用しないことをお勧めします。
 
 ## <a name="homeregion"></a>HomeRegion
 
 `homeregion` 修飾子は、国または地域のユーザー設定に対応します。 ユーザーが住んでいる地域の場所を表します。 値には、有効な [BCP-47 region タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)が含まれます。 つまり、**ISO 3166-1 alpha-2** の 2 文字の地域番号に、構成地域用の **ISO 3166-1 numeric** の 3 桁の地域番号のセットを加えた値となります ([国連統計部 M49 地域番号構成に関するページ](https://go.microsoft.com/fwlink/p/?linkid=247929)をご覧ください)。 "Selected economic and other groupings" の番号は有効ではありません。
 
-## <a name="language"></a>Language
+## <a name="language"></a>言語
 
 `language` 修飾子は、表示言語設定に対応します。 値には、有効な [BCP 47 language タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)が含まれます。 言語の一覧については、[IANA 言語サブタグ レジストリに関するページ](https://go.microsoft.com/fwlink/p/?linkid=227303)をご覧ください。
 
@@ -267,13 +267,13 @@ Windows では、ディスプレイの DPI (1 インチあたりのドット数)
 
 ## <a name="related-topics"></a>関連トピック
 
-* [有効ピクセルと倍率](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [有効ピクセルとスケール ファクター](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [リソース管理システム](resource-management-system.md)
-* [ローカライズの準備をする方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
-* [アプリが実行されているプラットフォームの検出](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [デバイス ファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
-* [UI 文字列のローカライズ](localize-strings-ui-manifest.md)
+* [ローカライズを準備する方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
+* [を検出、プラットフォーム、アプリを実行します。](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
+* [デバイスのファミリの概要](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
+* [UI 文字列をローカライズします。](localize-strings-ui-manifest.md)
 * [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [国連統計部 M49 地域番号構成](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [地域コードの United Nations 統計除算 M49 コンポジション](https://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA 言語サブタグ レジストリ](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [レイアウトやフォントの調整と RTL のサポート](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

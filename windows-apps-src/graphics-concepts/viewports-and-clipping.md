@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d2a8953d202cc22729f99a096b5fb62cf1131d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936241"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603287"
 ---
 # <a name="viewports-and-clipping"></a>ビューポートとクリッピング
 
 
-"ビューポート**" とは、3D シーンが投影される 2 次元 (2D) の矩形です。 Direct3D では、この四角形は Direct3D サーフェス内の座標として存在し、システムによってレンダー ターゲットとして使われます。 射影変換は、頂点をビューポートで使われる座標系に変換します。 ビューポートは、シーンがレンダリングされるレンダー ターゲット サーフェス上の深度値の範囲 (通常は 0.0 ～ 1.0) を指定するためにも使われます。
+"*ビューポート*" とは、3D シーンが投影される 2 次元 (2D) の矩形です。 Direct3D では、この四角形は Direct3D サーフェス内の座標として存在し、システムによってレンダー ターゲットとして使われます。 射影変換は、頂点をビューポートで使われる座標系に変換します。 ビューポートは、シーンがレンダリングされるレンダー ターゲット サーフェス上の深度値の範囲 (通常は 0.0 ～ 1.0) を指定するためにも使われます。
 
-## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>視錐台
+## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>錐
 
 
 視錐台とは、ビューポートのカメラに対して相対的に配置された、シーン内の 3D ボリュームです。 カメラ空間から画面にモデルがどのように投影されるかは、このボリュームの形に影響されます。 最も一般的な種類の投影である透視投影では、カメラの近くにあるオブジェクトを、離れた位置のオブジェクトよりも大きく表示します。 透視ビューの場合、視錐台は先端にカメラのある四角錐と考えることができます。これを図で表すと次のようになります。 この四角錐は、前方および後方のクリッピング面と交差します。 四角錐を前方と後方のクリッピング面で切り取ったボリュームが、視錐台です。 オブジェクトは、このボリュームの内部にある場合にのみ表示されます。
@@ -34,7 +34,7 @@ ms.locfileid: "8936241"
 
 この図において変数 D は、カメラから、ジオメトリ パイプラインの直前の部分 (ビュー変換) で定義された空間の原点までの距離を表します。 この空間の周りに視錐台の限界を設定します。 この変数 D が射影行列の構築時にどのように使われるかについては、「[射影変換](projection-transform.md)」をご覧ください。
 
-## <a name="span-idviewportrectanglespanspan-idviewportrectanglespanspan-idviewportrectanglespanviewport-rectangle"></a><span id="Viewport_Rectangle"></span><span id="viewport_rectangle"></span><span id="VIEWPORT_RECTANGLE"></span>ビューポート矩形
+## <a name="span-idviewportrectanglespanspan-idviewportrectanglespanspan-idviewportrectanglespanviewport-rectangle"></a><span id="Viewport_Rectangle"></span><span id="viewport_rectangle"></span><span id="VIEWPORT_RECTANGLE"></span>Viewport の四角形
 
 
 ビューポート構造体には、シーンのレンダリング先となるレンダー ターゲット サーフェスの領域を定義する 4 つのメンバー (X、Y、Width、Height) が含まれています。 これらの値は、次の図に示すように、出力先の四角形、つまりビューポート矩形に対応します。
@@ -45,7 +45,7 @@ X、Y、Width、Height の各メンバーに指定する値は、レンダー �
 
 Direct3D では、ビューポートのクリッピング ボリュームの範囲として、X は -1.0 ～ 1.0、Y は 1.0 ～ -1.0 を想定しています。これらは、過去のアプリケーションで最もよく使われた設定です。 クリッピングの前に[射影変換](projection-transform.md)を使うことで、ビューポートの縦横比を調整できます。
 
-**注:**  MinZ と MaxZ にシーンがレンダリングされる深度範囲を示すし、クリッピングは使われません。 ほとんどのアプリケーションでは、システムが深度バッファー内の深度値の範囲全体をレンダリングできるように、これらの値を 0.0 と 1.0 に設定します。 場合によっては、他の深度範囲を使って特殊効果を実現することもできます。 たとえば、ゲームのヘッドアップ ディスプレイをレンダリングする場合、両方の値を 0.0 に設定すると、シーン内のオブジェクトを強制的に前面にレンダリングできます。または、両方を 1.0 に設定すると、常に背面に置く必要のあるオブジェクトをレンダリングできます。
+**注**  されおよび MaxZ シーンのレンダリング先の深さの範囲を示すためし、クリッピングは使用されません。 ほとんどのアプリケーションでは、システムが深度バッファー内の深度値の範囲全体をレンダリングできるように、これらの値を 0.0 と 1.0 に設定します。 場合によっては、他の深度範囲を使って特殊効果を実現することもできます。 たとえば、ゲームのヘッドアップ ディスプレイをレンダリングする場合、両方の値を 0.0 に設定すると、シーン内のオブジェクトを強制的に前面にレンダリングできます。または、両方を 1.0 に設定すると、常に背面に置く必要のあるオブジェクトをレンダリングできます。
 
  
 
@@ -55,9 +55,9 @@ Direct3D は、ビューポートの位置とサイズを使って頂点をス�
 
 ![各頂点に適用される行列](images/vpscale.png)
 
-この行列は、ビューポートのサイズと指定の深度範囲に従って頂点をスケーリングし、レンダー ターゲット サーフェスの適切な位置に平行移動します。 また、この行列は、左上隅のスクリーン原点から y を下方へ増やした位置を反映するように y 軸を反転します。 この行列が適用された後も、頂点は同次です。つまり、各頂点は引き続き \[x,y,z,w\] 頂点として存在するため、ラスタライザーに送信する前に非同次の座標に変換する必要があります。
+この行列は、ビューポートのサイズと指定の深度範囲に従って頂点をスケーリングし、レンダー ターゲット サーフェスの適切な位置に平行移動します。 また、この行列は、左上隅のスクリーン原点から y を下方へ増やした位置を反映するように y 軸を反転します。 この行列を適用、頂点は同種でも - は、まだ存在するいるとしたら\[x、y、z、w\]頂点 - とそれらはラスタライザーに送信される前に、の非同種の座標に変換する必要があります。
 
-**注:** アプリケーション通常 MinZ と MaxZ を設定 0.0 と 1.0 それぞれに、システムに深度範囲全体をレンダリングします。 ただし、他の値を使って特定の効果を得ることもできます。 たとえば、両方の値を 0.0 に設定してすべてのオブジェクトを強制的に前面に配置したり、両方を 1.0 に設定してすべてのオブジェクトを背面にレンダリングしたりできます。
+**注**  アプリケーション通常に設定されおよび MaxZ 0.0 と 1.0 それぞれに、システム全体の深さの範囲を表示するためにします。 ただし、他の値を使って特定の効果を得ることもできます。 たとえば、両方の値を 0.0 に設定してすべてのオブジェクトを強制的に前面に配置したり、両方を 1.0 に設定してすべてのオブジェクトを背面にレンダリングしたりできます。
 
  
 
@@ -66,7 +66,7 @@ Direct3D は、ビューポートの位置とサイズを使って頂点をス�
 
 ビューポートをクリアすると、レンダー ターゲット サーフェス上のビューポート矩形の内容がリセットされます。 さらに、深度バッファー サーフェスとステンシル バッファー サーフェスの矩形もクリアできます。
 
-## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>ビューポートのクリッピングの設定
+## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>クリッピングのビューポートを設定します。
 
 
 射影行列の結果によって、次のように射影空間のクリッピング ボリュームが決まります。

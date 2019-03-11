@@ -4,14 +4,14 @@ title: 光センサーの使用
 description: 環境光センサーを使って環境光の変化を検出する方法を説明します。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aeb60d67f0cdee77772797816e45fdd9bdc41b4
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114538"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57623617"
 ---
 # <a name="use-the-light-sensor"></a>光センサーの使用
 
@@ -31,7 +31,7 @@ ms.locfileid: "9114538"
 
 ## <a name="prerequisites"></a>前提条件
 
-Extensible Application Markup Language (XAML)、Microsoft VisualC \#、およびイベントを理解する必要があります。
+Extensible Application Markup Language (XAML)、Microsoft Visual 知っておくべきC#、およびイベント。
 
 使うデバイスやエミュレーターが環境光センサーをサポートしている必要があります。
 
@@ -135,11 +135,11 @@ Extensible Application Markup Language (XAML)、Microsoft VisualC \#、および
 
 元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **LightingCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="LightingCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:LightingCS"` に置き換える必要があります。
 
--   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]** > **[デバッグの開始]** の順にクリックします。
 
 アプリを実行した後、センサーに当てる光を変更するか、エミュレーター ツールを使うことによって、光センサーの値を変更できます。
 
--   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]** > **[デバッグの停止]** の順にクリックします。
 
 ###  <a name="explanation"></a>説明
 

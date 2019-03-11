@@ -1,5 +1,5 @@
 ---
-Description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
+Description: アプリで複数の表示言語をサポートする必要があり、コード、XAML マークアップ、アプリ パッケージ マニフェスト内に文字列リテラルが含まれている場合は、その文字列をリソース ファイル (.resw) に移動します。 アプリでサポートする各言語用に、このリソース ファイルを翻訳したコピーを作成することができます。
 title: UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
@@ -9,18 +9,18 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049054"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57630137"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>UI とアプリ パッケージ マニフェスト内の文字列をローカライズする
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../design/globalizing/globalizing-portal.md)」をご覧ください。
 
 アプリで複数の表示言語をサポートする必要があり、コード、XAML マークアップ、アプリ パッケージ マニフェスト内に文字列リテラルが含まれている場合は、その文字列をリソース ファイル (.resw) に移動します。 アプリでサポートする各言語用に、このリソース ファイルを翻訳したコピーを作成することができます。
 
-ハードコードされた文字列リテラルは、命令型コードや XAML マークアップに (たとえば、**TextBlock** の **Text** プロパティとして) 表示できます。 また、アプリ パッケージ マニフェスト ソース ファイル (`Package.appxmanifest` ファイル) に (たとえば、Visual Studio マニフェスト デザイナーの [アプリケーション] タブで表示名の値として) 表示することもできます。 これらの文字列をリソース ファイル (.resw) に移動し、アプリやリソース内のハードコードされた文字列リテラルをリソース識別子への参照に置き換えます。
+ハードコードされた文字列リテラルは、命令型コードや XAML マークアップに (たとえば、**TextBlock** の **Text** プロパティとして)表示できます。 また、アプリ パッケージ マニフェスト ソース ファイル (`Package.appxmanifest` ファイル) に (たとえば、Visual Studio マニフェスト デザイナーの [アプリケーション] タブで表示名の値として) 表示することもできます。 これらの文字列をリソース ファイル (.resw) に移動し、アプリやリソース内のハードコードされた文字列リテラルをリソース識別子への参照に置き換えます。
 
 画像リソース ファイルに画像リソースが 1 つだけ含まれている画像リソースとは異なり、文字列リソース ファイルには*複数の*文字列リソースが含まれています。 文字列リソース ファイルはリソース ファイル (.resw) であり、通常、この種類のリソース ファイルはプロジェクトの \Strings フォルダー内に作成します。 リソース ファイル (.resw) の名前に修飾子を使用する方法の詳細については、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
 
@@ -28,12 +28,12 @@ ms.locfileid: "9049054"
 1. アプリの既定の言語を設定します。
     1. Visual Studio でソリューションを開いた状態で、`Package.appxmanifest` を開きます。
     2. [アプリケーション] タブで、既定の言語が適切に設定されている ("en"や "en-us" など) ことを確認します。 残りの手順では、既定の言語を "en-US" に設定していることを前提としています。
-    <br>**注:** 少なくとも、この既定の言語のローカライズされた文字列リソースを提供する必要があります。 これらは、ユーザーの優先する言語や表示言語の設定に一致するものが見つからない場合に読み込まれるリソースです。
+    <br>**注** には、少なくともこの既定の言語のローカライズされた文字列リソースを提供する必要があります。 これらは、ユーザーの優先する言語や表示言語の設定に一致するものが見つからない場合に読み込まれるリソースです。
 2. 既定の言語のリソース ファイル (.resw) を作成します。
     1. プロジェクト ノードで、新しいフォルダーを作成し、"Strings" という名前を付けます。
     2. `Strings` で、新しいサブフォルダーを作成し、"en-US" という名前を付けます。
     3. `en-US` で、新しいリソース ファイル (.resw) を作成し、その名前が "Resources.resw" になっていることを確認します。
-    <br>**注:**[移植 XAML と UI の](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)移植する .NET リソース ファイル (.resx) を使っている場合を参照してください。
+    <br>**注** .NET リソース ファイル (.resx) ポートにする場合を参照してください。[移植 XAML と UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)します。
 3.  `Resources.resw` を開き、次の文字列リソースを追加します。
 
     `Strings/en-US/Resources.resw`
@@ -53,13 +53,13 @@ ms.locfileid: "9049054"
 <TextBlock x:Uid="Greeting"/>
 ```
 
-実行時に、`\Strings\en-US\Resources.resw` が読み込まれます (現時点では、プロジェクト内の唯一のリソース ファイルであるためです)。 **TextBlock** の **x:Uid** ディレクティブによって、参照が実行され、`Resources.resw` 内の "Greeting" 文字列リソース識別子を含むプロパティ識別子が見つかります。 "Greeting.Text" および "Greeting.Width" プロパティ識別子が見つかり、その値が **TextBlock** に適用され、マークアップでローカルに設定されている値がオーバーライドされます。 "Greeting.Foreground" 値を追加していた場合は、この値も適用されます。 ただし、XAML マークアップ要素でプロパティを設定するための使用されるのはプロパティ識別子のみであるため、この TextBlock で **x:Uid** を "Farewell" に設定しても効果はありません。 `Resources.resw` 文字列リソース識別子 "Farewell" が含まれて*います*が、そのプロパティ識別子はありません。
+実行時に、`\Strings\en-US\Resources.resw` が読み込まれます (現時点では、プロジェクト内の唯一のリソース ファイルであるためです)。 **TextBlock** の **x:Uid** ディレクティブによって、参照が実行され、`Resources.resw` 内の "Greeting" 文字列リソース識別子を含むプロパティ識別子が見つかります。 "Greeting.Text" および "Greeting.Width" プロパティ識別子が見つかり、その値が **TextBlock** に適用され、マークアップでローカルに設定されている値がオーバーライドされます。 "Greeting.Foreground" 値を追加していた場合は、この値も適用されます。 ただし、XAML マークアップ要素でプロパティを設定するための使用されるのはプロパティ識別子のみであるため、この TextBlock で **x:Uid** を "Farewell" に設定しても効果はありません。 `Resources.resw` *文字列* リソース識別子「別れ」が含まれますが、そのプロパティの識別子を含んでいません。
 
 XAML 要素に文字列リソース識別子を割り当てるときには、その識別子の*すべて*のプロパティ識別子が XAML 要素で適切であることを確認します。 たとえば、**TextBlock** で `x:Uid="Greeting"` を設定する場合、**TextBlock**型は Text プロパティを持つため、"Greeting.Text" は解決されます。 **Button** で `x:Uid="Greeting"` を設定する場合、**Button** 型には Text プロパティがないため、"Greeting.Text" によって実行時エラーが発生します。 その場合の解決策の 1 つは、"ButtonGreeting.Content" という名前のプロパティ識別子を作成し、**Button** で `x:Uid="ButtonGreeting"` を設定することです。
 
 リソース ファイルから **Width** を設定する代わりに、コンテンツに合わせてコントロールのサイズを動的に変更できるようにすることが必要になる場合があります。
 
-**注:**[添付プロパティ](../xaml-platform/attached-properties-overview.md)を、.resw ファイルの名前] 列で特別な構文が必要です。 たとえば、"Greeting" 識別子用に [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 添付プロパティの値を設定するには、これが [名前] 列に入力する内容です。
+**注** の[添付プロパティ](../xaml-platform/attached-properties-overview.md)、.resw ファイルの名前 列で特別な構文を作成する必要があります。 たとえば、"Greeting" 識別子用に [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 添付プロパティの値を設定するには、これが [名前] 列に入力する内容です。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -88,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 クラス ライブラリ (ユニバーサル Windows) または[Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) プロジェクト内からこの同じコードを使用することができます。 実行時に、ライブラリをホストしているアプリのリソースが読み込まれます。 アプリはローカライズの度合いが大きくなる可能性があるため、ライブラリでは、ライブラリをホストしているアプリからリソースを読み込むことをお勧めします。 ライブラリがリソースを提供する必要がある場合、ライブラリをホストしているアプリがそれらのリソースを入力に置き換えられるようにするオプションを提供する必要があります。
 
-リソース名がセグメント化されている場合 (が含まれている"."の文字)、し、置換ドットとスラッシュ (「/」) リソース名の文字です。 プロパティの識別子には、ドット; などが含まれます。そのためのコードからそれらのいずれかを読み込むためにこのブロックを行う必要があります。
+リソース名がセグメント化された場合 (が含まれています"."文字)、し、置換がドット フォワード スラッシュ (「/」) でリソース名の文字。 プロパティの識別子にはたとえば、ドット; が含まれています。そのためのコードからは 1 つを読み込むためにこのブロックを実行する必要があります。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+不明なを使用できる場合[MakePri.exe](makepri-exe-command-options.md)アプリの PRI ファイルをダンプします。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>文字列リソースをローカライズする
 1. 別の言語用にリソース ファイル (.resw) のコピーを作成します。
     1. "Strings" の下に新しいサブフォルダーを作成し、Deutsch (Deutschland) を表す "de-DE" という名前を付けます。
-   <br>**注:** フォルダー名には、任意の[bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)を使用することができます。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
+   <br>**注** 、フォルダー名のいずれかを使用できる[bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)します。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)」をご覧ください。
    2. `Strings/de-DE` フォルダー内に `Strings/en-US/Resources.resw` のコピーを作成します。
 2. 文字列に変換します。
     1. `Strings/de-DE/Resources.resw` を開き、[値] 列の値を翻訳します。 コメントを翻訳する必要はありません。
@@ -147,7 +147,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
-`Resources.resw` *以外の*リソース ファイルの場合にのみ、文字列リソース識別子の前に `/<resources-file-name>/` を追加する必要があります。 これは、"Resources.resw" が既定のファイル名であり、(このトピックの前の例で行ったように) ファイル名を省略した場合に既定のファイル名が想定されるためです。
+追加するだけで済みます`/<resources-file-name>/`リソース ファイルの文字列リソースの識別子の前に*以外*`Resources.resw`します。 これは、"Resources.resw" が既定のファイル名であり、(このトピックの前の例で行ったように) ファイル名を省略した場合に既定のファイル名が想定されるためです。
 
 次のコードの例では、`ErrorMessages.resw` にリソースが含まれており、その名前が "MismatchedPasswords" であり、その値がエラーの説明であることを想定しています。
 
@@ -171,13 +171,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 "AppDisplayName" リソースを `Resources.resw` から `ManifestResources.resw` に移動する場合は、アプリ パッケージ マニフェストで `ms-resource:AppDisplayName` を `ms-resource:/ManifestResources/AppDisplayName` に変更します。
 
-リソース ファイル名がセグメント化されている場合 (が含まれている"."の文字) を参照する場合に名前にドットを終了します。 スラッシュ (「/」) 文字、リソース名のと同じようにドットを置き換える**しないでください**。
+リソース ファイル名がセグメント化された場合 (が含まれています"."文字) を参照するとき、名前にドットを終了します。 **しない**フォワード スラッシュ (「/」) でリソース名の場合と同様の文字、ドットを置換します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-迷う場合に、アプリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+不明なを使用できる場合[MakePri.exe](makepri-exe-command-options.md)アプリの PRI ファイルをダンプします。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -257,27 +257,27 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>クラス ライブラリまたは Windows ランタイム ライブラリから文字列を読み込む
 参照されているクラス ライブラリ (ユニバーサル Windows) または [Windows ランタイム ライブラリ (ユニバーサル Windows)](../winrt-components/index.md) の文字列リソースは、通常、構築プロセス中にそれらが含まれているパッケージのサブフォルダーに追加されます。 このような文字列のリソース識別子は、通常、*LibraryName/ResourcesFileName/ResourceIdentifier* という形式になります。
 
-ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードは、ライブラリ、またはそれを参照するアプリが、ライブラリの文字列リソースの ResourceLoader を取得する方法を示します。
+ライブラリは、独自のリソースについて、ResourceLoader を取得できます。 たとえば、次のコードでは、ライブラリまたはそれを参照するアプリのいずれかが、ResourceLoader のライブラリの文字列リソースを取得する方法を示しています。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化されている場合の (が含まれている"."の文字)、リソース マップ名にドットを使用します。
+Windows ランタイム ライブラリ (ユニバーサル Windows)、既定の名前空間がセグメント化された場合 (が含まれています"."文字)、リソース マップ名にドットを使用します。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-そのためには、クラス ライブラリ (ユニバーサル Windows) にする必要はありません。 迷う場合に、コンポーネントまたはライブラリの PRI ファイルをダンプするのに[MakePri.exe](makepri-exe-command-options.md)を使用することができます。 各リソースの`uri`ダンプ ファイルに表示されます。
+クラス ライブラリ (ユニバーサル Windows) に対応する必要はありません。 不明なを使用できる場合[MakePri.exe](makepri-exe-command-options.md)コンポーネントまたはライブラリの PRI ファイルにダンプします。 各リソースの`uri`ダンプ ファイルに表示されます。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>他のパッケージから文字列を読み込む
-アプリ パッケージのためのリソースの管理し、パッケージのを通じてアクセス現在[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)からアクセス可能な最上位[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)を所有します。 各パッケージ内でさまざまなコンポーネントが ownResourceMapsubtrees では、 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)経由でアクセスできることができます。
+リソースのアプリケーション パッケージの管理し、パッケージの経由でアクセスを所有して最上位 [**ResourceMap** ](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)現在からアクセス可能である [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). 各パッケージ内では、さまざまなコンポーネントが経由でアクセスできる、独自の ResourceMap サブツリーを持つことができます[ **ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)します。
 
 フレームワーク パッケージは、絶対リソース識別子 URI を使って独自のリソースにアクセスできます。 「[URI スキーム](uri-schemes.md)」もご覧ください。
 
@@ -288,9 +288,9 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 ## <a name="related-topics"></a>関連トピック
 * [XAML と UI の移植](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
-* [x:Uid ディレクティブ](../xaml-platform/x-uid-directive.md)
-* [アタッチされるプロパティ](../xaml-platform/attached-properties-overview.md)
-* [マニフェストのローカライズ可能な項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
-* [言語、スケール、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md)
+* [X:uid ディレクティブ](../xaml-platform/x-uid-directive.md)
+* [添付プロパティ](../xaml-platform/attached-properties-overview.md)
+* [ローカライズ可能なマニフェスト項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
+* [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [言語、スケール、およびその他の修飾子のためのリソースを調整します。](tailor-resources-lang-scale-contrast.md)
 * [文字列リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

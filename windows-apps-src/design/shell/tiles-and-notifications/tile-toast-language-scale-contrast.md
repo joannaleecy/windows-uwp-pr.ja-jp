@@ -1,5 +1,5 @@
 ---
-Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+Description: タイルやトーストには、表示言語や、表示倍率、ハイ コントラストなど、実行時のコンテキストに合わせた文字列や画像を読み込むことができます。
 title: 言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート
 template: detail.hbs
 ms.date: 10/12/2017
@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
 ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942908"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601477"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート
 
-タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 リソース ファイルの名前に修飾子を使用する方法に関する背景、[言語、スケール、その他の修飾子用にリソースを調整して](../../../app-resources/tailor-resources-lang-scale-contrast.md)、[アプリのアイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。
+タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 背景、リソース ファイルの名前に修飾子を使用する方法については、次を参照してください。[言語、スケール、およびその他の修飾子のためのリソースを調整](../../../app-resources/tailor-resources-lang-scale-contrast.md)と[アプリ アイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)します。
 
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../../globalizing/globalizing-portal.md)」をご覧ください。
 
@@ -29,7 +29,7 @@ ms.locfileid: "8942908"
 <text id="1">ms-resource:Farewell</text>
 ```
 
-`ms-resource` URI スキームを省略した場合、テキスト本文は単なる文字列リテラルとなり、** 識別子への参照にはなりません。
+`ms-resource` URI スキームを省略した場合、テキスト本文は単なる文字列リテラルとなり、*識別子への参照に*はなりません。
 
 ```xml
 <text id="1">Farewell</text>
@@ -73,7 +73,7 @@ URI スキーム `ms-resource` および `ms-appx` が自動で修飾子の照�
 | 修飾子 | クエリ文字列 | 例 |
 | --------- | ------------ | ------- |
 | Scale | ms-scale | ?ms-scale=400 |
-| Language | ms-lang | ?ms-lang=en-US |
+| 言語 | ms-lang | ?ms-lang=en-US |
 | Contrast | ms-contrast | ?ms-contrast=high |
 
 クエリ文字列で使用可能な修飾子の値を網羅したリファレンス テーブルについては、「[ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)」をご覧ください。
@@ -84,12 +84,12 @@ URI スキーム `ms-resource` および `ms-appx` が自動で修飾子の照�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [画面のサイズとレスポンシブ デザインのブレークポイント](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [言語、スケール、その他の修飾子用にリソースを調整する](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [画面サイズとのレスポンシブ デザイン ブレークポイント](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+* [言語、スケール、およびその他の修飾子のためのリソースを調整します。](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [タイルとアイコン アセットのガイドライン](app-assets.md).
 * [グローバリゼーションとローカライズ](../../globalizing/globalizing-portal.md)
-* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../../app-resources/localize-strings-ui-manifest.md)
-* [XAML マークアップとコードから画像やその他のアセットを参照する](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
+* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../../app-resources/localize-strings-ui-manifest.md)
+* [XAML マークアップとコードから、イメージやその他の資産を参照します。](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [タイルのスキーマ](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [トースト スキーマ](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

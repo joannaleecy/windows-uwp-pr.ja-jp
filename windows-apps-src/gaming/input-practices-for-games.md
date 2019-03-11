@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, ゲーム, 入力
 ms.localizationpriority: medium
 ms.openlocfilehash: 73e0ba3e563b57c2e392809097567b7e6739c90d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927832"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634947"
 ---
 # <a name="input-practices-for-games"></a>ゲームの入力プラクティス
 
 このページでは、ユニバーサル Windows プラットフォーム (UWP) ゲームで入力デバイスを効果的に使用するためのパターンと手法について説明します。
 
-このページでは、次のことを解説します。
+ここでは、次の項目について紹介します。
 
 * プレイヤーと、そのプレイヤーが現在使用中の入力デバイスとナビゲーション デバイスを追跡する方法
 * ボタンの状態遷移 (押してから離す、離してから押す) を検出する方法
@@ -227,7 +227,7 @@ bool ButtonJustReleased(GamepadButtons selection)
 }
 ```
 
-上記の 2 つの関数は、まず `newReading` と `oldReading` からボタンの選択状態をブール値で求めています。次に、ブール値の論理演算を実行し、対象となるボタンの状態遷移が発生しているかどうかを判断します。 この 2 つの関数は、新しい読み取り結果が目的の状態 (それぞれ押した状態または離した状態) を含み、** かつ、前回の読み取り結果が目的の状態を含まない場合にのみ **true** を返します。それ以外の場合は **false** を返します。
+上記の 2 つの関数は、まず `newReading` と `oldReading` からボタンの選択状態をブール値で求めています。次に、ブール値の論理演算を実行し、対象となるボタンの状態遷移が発生しているかどうかを判断します。 この 2 つの関数は、新しい読み取り結果が目的の状態 (それぞれ押した状態または離した状態) を含み、*かつ、* 前回の読み取り結果が目的の状態を含まない場合にのみ **true** を返します。それ以外の場合は **false** を返します。
 
 ## <a name="detecting-complex-button-arrangements"></a>ボタンの複雑な配置の検出
 

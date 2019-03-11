@@ -1,5 +1,5 @@
 ---
-Description: Learn how to enable peer-to-peer navigation between two basic pages in an Universal Windows Platform (UWP) app.
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリで基本的な 2 つのページ間のピア ツー ピア ナビゲーションを有効にする方法について説明します。
 title: 2 ページ間でのピア ツー ピアのナビゲーション
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -7,28 +7,28 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 07/13/2018
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: e72dc726143d17f605283fa801f8e286c2c58878
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943055"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616207"
 ---
 # <a name="implement-navigation-between-two-pages"></a>2 ページ間でのナビゲーションを実装する
 
 フレームおよびページを使用した、アプリでの基本的なピア ツー ピアのナビゲーションについて説明します。 
 
-> **重要な APIs**: [**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラス、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラス、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 名前空間
+> **重要な Api**:[**Windows.UI.Xaml.Controls.Frame** ](https://msdn.microsoft.com/library/windows/apps/br242682)クラス、 [ **Windows.UI.Xaml.Controls.Page** ](https://msdn.microsoft.com/library/windows/apps/br227503)クラス、 [ **Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)名前空間
 
 ![ピア ツー ピアのナビゲーション](images/peertopeer.png)
 
-## <a name="1-create-a-blank-app"></a>1. 空のアプリの作成
+## <a name="1-create-a-blank-app"></a>1. 空のアプリを作成します。
 
 1.  Microsoft Visual Studio のメニューで、**[ファイル]** > **[新しいプロジェクト]** の順にクリックします。
 2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]** > **[Windows]** > **[ユニバーサル]** ノード、または **[Visual C++]** > **[Windows]** > **[ユニバーサル]** ノードの順にクリックします。
@@ -44,7 +44,7 @@ ms.locfileid: "8943055"
 次に、プロジェクトにページを 2 つ追加します。
 
 1.  **ソリューション エクスプローラー**で、**[BlankApp]** プロジェクト ノードを右クリックして、ショートカット メニューを開きます。
-2.  ショートカット メニューから **[追加]** > **[新しい項目]** の順にクリックします。
+2.  ショートカット メニューで **[追加]** > **[新しい項目]** の順にクリックします。
 3.  **[新しい項目の追加]** ダイアログ ボックスの中央のウィンドウで、**[空白のページ]** をクリックします。
 4.  **[名前]** ボックスに「**Page1**」(または「**Page2**」) と入力し、**[追加]** をクリックします。
 5. 手順 1 ～ 4 を繰り返して、2 つ目のページを追加します。
@@ -82,12 +82,12 @@ ms.locfileid: "8943055"
 
 Page1.xaml に次のコンテンツを追加します。
 
--   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。
+-   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [  **Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティを `Page 1` に変更します。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素をルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の前後の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [  **HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -119,12 +119,12 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 Page2.xaml に次のコンテンツを追加します。
 
--   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティの値を `Page 2` に変更します。
+-   `pageTitle` という名前を付けた [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として追加します。 [  **Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティの値を `Page 2` に変更します。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)要素をルート[**グリッド**](https://msdn.microsoft.com/library/windows/apps/br242704)の前後の子要素として、 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)要素です。
+-   [  **HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -296,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> コードをここでは、アプリの初期ウィンドウ フレームへのナビゲーションが失敗した場合は、アプリ例外をスローするのに[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)の戻り値を使用します。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
+> 次のコードの戻り値を使用して[ **Navigate** ](https://msdn.microsoft.com/library/windows/apps/br242694)アプリの最初のウィンドウ フレームにナビゲーションが失敗した場合は、アプリケーション例外をスローします。 **Navigate** が **true** を返す場合は、ナビゲーションが行われます。
 
 次に、アプリをビルドして実行します。 "Click to go to page 2" と書かれているリンクをクリックします。 上部に "Page 2" と書かれた 2 番目のページが読み込まれ、フレームに表示される必要があります。
 
@@ -306,19 +306,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 まず、App.xaml 分離コード ファイルの `App.OnLaunched` メソッドで、アプリの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`) が作成されます。 **Frame** クラスは、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) などのさまざまなナビゲーション メソッドと、[**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547)、[**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995) などのプロパティをサポートしています。
  
-[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。 既定では、このメソッドは MainPage.xaml を読み込みます。 この例では、`Page1` が **Navigate** メソッドに渡されるため、メソッドは **Frame** に `Page1` を読み込みます。 
+[  **Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドを使って、この **Frame** にコンテンツが表示されます。 既定では、このメソッドは MainPage.xaml を読み込みます。 この例では、`Page1` が **Navigate** メソッドに渡されるため、メソッドは **Frame** に `Page1` を読み込みます。 
 
-`Page1`  は [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスのサブクラスです。 **Page** クラスには、**Page** が含まれる **Frame** を取得する読み取り専用の **Frame** プロパティがあります。 `Page1` で **HyperlinkButton** の **Click** イベント ハンドラーが `this.Frame.Navigate(typeof(Page2))` を呼び出すと、**Frame** に Page2.xaml のコンテンツが表示されます。
+`Page1` は [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスのサブクラスです。 **Page** クラスには、**Page** が含まれる **Frame** を取得する読み取り専用の **Frame** プロパティがあります。 `Page1` で **HyperlinkButton** の **Click** イベント ハンドラーが `this.Frame.Navigate(typeof(Page2))` を呼び出すと、**Frame** に Page2.xaml のコンテンツが表示されます。
 
 最後に、フレームにページが読み込まれるたびに、そのページが [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) として、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504) の [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) または [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) に追加され、[履歴と前に戻る移動](navigation-history-and-backwards-navigation.md)が可能になります。
 
-## <a name="3-pass-information-between-pages"></a>3. ページ間での情報の受け渡し
+## <a name="3-pass-information-between-pages"></a>3.ページ間での情報の受け渡し
 
 このアプリでは、ページ間の移動は行いますが、実際に何かの処理を行うわけではありません。 多くの場合、アプリに複数のページがあれば、ページ間で情報を共有する必要があります。 最初のページから 2 番目のページへ情報を渡してみましょう。
 
-Page1.xaml、追加した**HyperlinkButton**を次[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)で以前置き換えます。
+Page1.xaml 置き換えます、 **HyperlinkButton** 、次を追加した[ **StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
-次に、テキスト文字列を入力するための [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ラベルと [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` を追加します。
+ここでは、追加、 [ **TextBlock** ](https://msdn.microsoft.com/library/windows/apps/br209652)ラベルと[ **TextBox** ](https://msdn.microsoft.com/library/windows/apps/br209683) `name`テキスト文字列を入力するためです。
 
 ```xaml
 <StackPanel>
@@ -330,7 +330,7 @@ Page1.xaml、追加した**HyperlinkButton**を次[**StackPanel**](https://msdn.
 </StackPanel>
 ```
 
-Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name`**TextBox** の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
+Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` **TextBox** の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -418,13 +418,13 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 
 `Page1` の **HyperlinkButton** の **Click** イベントで `this.Frame.Navigate(typeof(Page2), name.Text)` を呼び出すと、`name.Text` プロパティが `Page2` に渡され、イベント データの値がページに表示されるメッセージに使用されます。
 
-## <a name="4-cache-a-page"></a>4. ページのキャッシュ
+## <a name="4-cache-a-page"></a>4。ページのキャッシュ
 
 ページのコンテンツと状態は既定ではキャッシュされないため、情報をキャッシュする場合は、アプリの各ページでキャッシュを有効にする必要があります。
 
 この基本的なピア ツー ピアの例では、戻るボタンはありませんが (戻るナビゲーションは「[前に戻る移動](navigation-history-and-backwards-navigation.md)」で示しました)、`Page2` で戻るボタンをクリックした場合、`Page1` の **TextBox** (およびその他のすべてのフィールド) は既定の状態に設定されます。 これを回避する方法の 1 つは、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) プロパティを使って、ページがフレームのページ キャッシュに追加されるように指定することです。 
 
-`Page1` のコンストラクターで、**NavigationCacheMode** を **Enabled** に設定して、フレームのページ キャッシュを超えるまでページのすべてのコンテンツと状態の値を保持することができます。 [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) の制限を無視する場合は、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。これで、フレームにキャッシュできる、ナビゲーション履歴内のページ数を指定します。 ただし、キャッシュ サイズの制限は、デバイスのメモリの制限に依存しており、重要である可能性があることに注意してください。
+`Page1` のコンストラクターで、**NavigationCacheMode** を **Enabled** に設定して、フレームのページ キャッシュを超えるまでページのすべてのコンテンツと状態の値を保持することができます。 [  **CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) の制限を無視する場合は、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) を [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) に設定します。これで、フレームにキャッシュできる、ナビゲーション履歴内のページ数を指定します。 ただし、キャッシュ サイズの制限は、デバイスのメモリの制限に依存しており、重要である可能性があることに注意してください。
 
 ```csharp
 public Page1()
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>関連記事
-* [UWP アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
-* [タブとピボットのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997788)
+* [UWP アプリのナビゲーションのデザインの基礎](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [タブおよびピボットするためのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997788)
 * [ナビゲーション ウィンドウのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn997766)
