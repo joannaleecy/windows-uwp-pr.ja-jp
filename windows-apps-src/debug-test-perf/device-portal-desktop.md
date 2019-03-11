@@ -4,14 +4,14 @@ title: Windows デスクトップ用 Device Portal
 description: Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。
 ms.date: 02/6/2019
 ms.topic: article
-keywords: windows 10, uwp, デバイス ポータル
+keywords: windows 10、uwp、デバイス ポータル
 ms.localizationpriority: medium
 ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117802"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654527"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows デスクトップ用 Device Portal
 
@@ -47,8 +47,8 @@ Device Portal が有効になると、セクション下部に Web リンクが�
 
 ローカル ホスト経由で接続するには、ブラウザー ウィンドウを開き、使用している接続の種類に関して次に示すアドレスを入力します。
 
-* ローカルホスト: `http://127.0.0.1:<PORT>` または `http://localhost:<PORT>`
-* ローカル ネットワーク:  `https://<IP address of the desktop>:<PORT>`
+* Localhost:`http://127.0.0.1:<PORT>`または `http://localhost:<PORT>`
+* Local Network: `https://<IP address of the desktop>:<PORT>`
 
 認証とセキュリティで保護された通信には HTTPS が必要です。
 
@@ -71,7 +71,7 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 - 機能
 - Mixed Reality
 - ストリーミング インストール デバッガー
-- 位置情報
+- Location
 - スクラッチ
 
 ## <a name="more-device-portal-options"></a>Device Portal のその他のオプション
@@ -80,17 +80,17 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 
 デバイス ポータルのポート番号 (80、443 など) を選択する場合は、次のレジストリ キーを設定することができます。
 
-- 以下のパスの下 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`: 必須の DWORD。 選択したポート番号を保持するには、これを 0 に設定します。
-    - `HttpPort`: 必須の DWORD。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
-    - `HttpsPort`: 必須の DWORD。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
+-  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
+    - `UseDynamicPorts`:必要な DWORD です。 選択したポート番号を保持するには、これを 0 に設定します。
+    - `HttpPort`:必要な DWORD です。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
+    - `HttpsPort`:必要な DWORD です。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
     
 同じレジストリ キー パスの下で、認証要件をオフにすることもできます。
-- `UseDefaultAuthorizer` - `0` (無効)、`1` (有効)。  
+- `UseDefaultAuthorizer` - `0` 無効の場合、`1`有効になっています。  
     - これによって、各接続の基本認証要件と HTTP から HTTPS へのリダイレクトの両方が制御されます。  
     
 ### <a name="command-line-options-for-device-portal"></a>Device Portal のコマンド ライン オプション
-管理コマンド プロンプトから、Device Portal の各部分を有効にして構成することができます。 ビルドでサポートされている最新のコマンド セットを表示するには、このコマンドを実行することができます。 `webmanagement /?`
+管理コマンド プロンプトから、Device Portal の各部分を有効にして構成することができます。 実行することができます、最新のビルドでサポートされているコマンドのセットを表示するには `webmanagement /?`
 
 - `sc start webmanagement` または `sc stop webmanagement` 
     - サービスをオンまたはオフにします。 ここでも、開発者モードを有効にする必要があります。 
@@ -105,31 +105,31 @@ Windows デスクトップの Device Portal では、標準のページのセッ
     - 特定の構成と視覚的なデバッグ メッセージを使用して、Device Portal のスタンドアロン バージョンを実行します。 これは、[パッケージ プラグイン](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)を構築するときに最も役立ちます。 
     - これをシステムとして実行して、パッケージ プラグインを完全にテストする方法について詳しくは、[MSDN Magazine の記事](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)をご覧ください。
 
-## <a name="common-errors-and-issues"></a>一般的なエラーとの問題
+## <a name="common-errors-and-issues"></a>一般的なエラーと問題
 
-Device Portal をセットアップするときに発生する可能性のあるいくつかの一般的なエラーを以下に示します。
+デバイスのポータルを設定するときに発生する一般的なエラーを次に示します。
 
-### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch が無効な数の更新プログラムを返します (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch が更新プログラムの無効な数を返します (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
 
-Windows 10 のプレリリース版ビルドに開発者パッケージをインストールしようとするときは、このエラーを発生する可能性があります。 これらの機能オン デマンド (FoD) パッケージが Windows Update でホストされているし、プレリリース版ビルドをダウンロードするには、フライティングにオプトインすることが必要です。 インストールが適切なビルドとリングの組み合わせのフライティングにオプトアウトいない、ペイロードは、ダウンロード可能なはできません。 次のことを再確認してください。
+Windows 10 のプレリリース版のビルドに開発者パッケージをインストールしようとするとき、このエラーが発生します。 これらのオンデマンドで機能 (FoD) パッケージは Windows 更新プログラムでホストされ、プレリリース ビルドをダウンロードするには、フライトを選択することが必要です。 フライティング適切なビルドおよびリング組み合わせのために、インストールが選択していない場合、ペイロードはダウンロードされません。 次のことを再確認してください。
 
-1. **設定 _gt 更新 & セキュリティ _gt Windows Insider Program**に移動し、 **Windows Insider アカウント**] セクションに、適切なアカウントの情報がいることを確認します。 **Windows Insider アカウントをリンク**を選択して、そのセクションが表示されない場合のメール アカウントを追加し、ことに表示されます (する必要がありますをもう一度選択**Windows Insider アカウントをリンク**する**Windows Insider アカウント**見出しの下のことを確認します。実際には、新しく追加されたアカウントをリンク)。
+1. 移動します**設定 > 更新とセキュリティ > Windows Insider Program**いることを確認し、 **Windows Insider アカウント**セクションには、正しいアカウント情報。 そのセクションが表示されない場合は、選択**Windows Insider アカウント リンク**、電子メール アカウントを追加し、現れることを確認、 **Windows Insider アカウント**見出し (を選択する必要があります**Windows Insider アカウント リンク**実際にリンクする、新しく追加されたアカウント時間を秒)。
  
-2. **コンテンツの種類を聴きますが表示されるかどうか。**、 **Windows のアクティブな開発**が選択されているかどうかを確認します。
+2. **受信にどのような種類のコンテンツを指定しては?**、ことを確認します**Windows のアクティブな開発**が選択されています。
  
-3. **新しいビルドを取得するどのようなペース?**、 **Windows Insider Fast**が選択されているかどうかを確認します。
+3. **新しいビルドを取得する速度ですか?**、ことを確認します**Windows Insider Fast**が選択されています。
  
-4. Fod をインストールできるようになりましたにします。 お使いであることを確認した場合 Windows Insider Fast してもことはできません Fod のインストール、フィードバックを提供してください**C:\Windows\Logs\CBS**下のログ ファイルを添付します。
+4. 今すぐできる、FoDs をインストールします。 Windows Insider Fast にいるとまだことはできません、FoDs をインストール、くださいフィードバックを提供を下に、ログ ファイルのアタッチを確認したら場合**C:\Windows\Logs\CBS**します。
 
-### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService: ユーザー FAILED 1060: 指定されたサービスがインストールされているサービスとして存在しません。
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService:OpenService FAILED 1060:指定されたサービスがインストールされているサービスとして存在しません
 
-このエラーは、開発者パッケージがインストールされていない場合に発生する可能性があります。 開発者のパッケージを使用しなければ web 管理サービスはありません。 開発者のパッケージをもう一度インストールしてください。
+開発者のパッケージがインストールされていない場合、このエラーが発生します。 せず、開発者のパッケージは、web 管理サービスはありません。 開発者のパッケージをもう一度インストールしてください。
 
-### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>システムが従量制課金ネットワーク (CBS_E_METERED_NETWORK) 上にあるために、CBS はダウンロードを開始できません。
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>システムが従量制課金接続 (CBS_E_METERED_NETWORK) 上にあるために、CBS はダウンロードを開始できません。
 
-このエラーは、従量制課金インターネット接続を開いている場合に発生する可能性があります。 従量制課金接続で開発者パッケージをダウンロードすることはできません。
+従量制インターネット接続の場合、このエラーが発生します。 従量制課金接続で開発者パッケージをダウンロードすることはできません。
 
 ## <a name="see-also"></a>関連項目
 
 * [Windows Device Portal の概要](device-portal.md)
-* [デバイス ポータル コア API リファレンス](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [デバイス ポータル core API リファレンス](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

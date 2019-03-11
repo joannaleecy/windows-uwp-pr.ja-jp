@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: b072c482fba1f36ac425b98c0126b56e735af078
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933197"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57622577"
 ---
 # <a name="get-mediamarketplaceidbrowse"></a>GET (media/{marketplaceId}/browse)
-1 つのメディア グループ内の項目を参照できます。 これらの Uri のドメインが`eds.xboxlive.com`します。
+1 つのメディアのグループ内の項目を参照できます。 これらの Uri のドメインが`eds.xboxlive.com`します。
  
   * [注釈](#ID4EV)
   * [URI パラメーター](#ID4EFB)
@@ -27,27 +27,27 @@ ms.locfileid: "8933197"
  
 ## <a name="remarks"></a>注釈
  
-非連続的に継続トークンを使用するのではなく skipItems パラメーターを使用してこの検索から返されるデータのページにアクセスできます。 この API は、クエリの絞り込み条件を受け取ります。 
+この検索で返されるデータのページは、非連続的に継続トークンを使用する代わりに、skipItems パラメーターを使用してアクセスできます。 この API は、クエリの絞り込み条件を受け入れます。 
  
- **SandboxId**はここで、XToken で要求から取得され、適用されます。 **SandboxId**が存在しない場合は、エンターテインメント探索サービス (EDS) は、400 Bad request エラーをスローします。 
+ **SandboxId**今すぐ、XToken 内の要求から取得され、適用します。 場合、 **SandboxId**エンターテイメント検出サービス (EDS) は 400 Bad request エラーをスローしが存在しません。 
   
 <a id="ID4EFB"></a>
 
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| marketplaceId| string| 必須。 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>から取得した値の文字列を指定します。| 
+| marketplaceId| string| 必須。 文字列から取得した値、 <b>Windows.Xbox.ApplicationModel.Store.Configuration.MarketplaceId</b>します。| 
   
 <a id="ID4EQB"></a>
 
  
 ## <a name="query-string-parameters"></a>クエリ文字列パラメーター
  
-この API は、次のクエリ パラメーターを受け取る: combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly.
+この API は次のクエリ パラメーターを受け取ります combinedContentRating、desiredMediaItemTypes、フィールド、maxItems、preferredProvider、q、queryRefiners、skipItems、firstPartyOnly、freeOnly、hasTrailer、latestOnly、subscriptionLevel、および topRatedOnly.
  
-これらのパラメーターについて詳しくは、 [EDS パラメーター](../../additional/edsparameters.md)を参照してください。
+参照してください[EDS パラメーター](../../additional/edsparameters.md)これらのパラメーターの詳細についてはします。
   
 <a id="ID4E6B"></a>
 
@@ -57,9 +57,9 @@ ms.locfileid: "8933197"
 <a id="ID4EFC"></a>
 
  
-### <a name="sample-response"></a>応答の例
+### <a name="sample-response"></a>応答のサンプル
  
-次の JSON コードは、呼び出しへの応答で`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。
+次の JSON コードが呼び出しへの応答では`/media/en-us/browse?orderBy=releaseDate&desiredMediaItemTypes=DGame&fields=all`します。
  
 
 ```cpp
@@ -226,14 +226,14 @@ ms.locfileid: "8933197"
  
 ##### <a name="further-information"></a>詳細情報 
 
-[EDS 共通ヘッダー](../../additional/edscommonheaders.md)
+[EDS の一般的なヘッダー](../../additional/edscommonheaders.md)
 
  [EDS パラメーター](../../additional/edsparameters.md)
 
- [EDS クエリの絞り込み条件](../../additional/edsqueryrefiners.md)
+ [EDS は、絞り込み条件をクエリします。](../../additional/edsqueryrefiners.md)
 
- [マーケットプレース URI](atoc-reference-marketplace.md)
+ [Marketplace の Uri](atoc-reference-marketplace.md)
 
- [その他の参照情報](../../additional/atoc-xboxlivews-reference-additional.md)
+ [その他の参照](../../additional/atoc-xboxlivews-reference-additional.md)
 
    

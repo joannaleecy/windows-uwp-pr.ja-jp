@@ -7,20 +7,20 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921195"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646167"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>アプリの試用版の実装
 
-場合は[パートナー センターで無料試用版としてアプリを構成](../publish/set-app-pricing-and-availability.md#free-trial)する顧客を使用できるように、アプリを無料試用期間中はお客様を除外または、試用期間中に一部の機能を制限することによって、アプリの通常版にアップグレードするよう促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
+場合する[パートナー センターで無料試用版としてアプリを構成する](../publish/set-app-pricing-and-availability.md#free-trial)顧客を使用できるように、アプリを無料の試用期間中、除外の一部の機能を制限したりすることによって、アプリの完全なバージョンにアップグレードするお客様を引き込むことができます試用期間中。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。
 
 この記事では、[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 名前空間の [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) クラスのメンバーを使用して、アプリの試用ライセンスがユーザーにあるかどうかを判定したり、アプリの実行中にライセンスが変更されたときに通知を受け取る方法を説明します。 
 
 > [!NOTE]
-> **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 アプリが Windows 10 の以前のバージョンをターゲットとする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。 詳しくは、[この記事](exclude-or-limit-features-in-a-trial-version-of-your-app.md)をご覧ください。
+> **Windows.Services.Store** 名前空間は、Windows 10 バージョン 1607 で導入され、Visual Studio で、**Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするプロジェクトでのみ使用できます。 アプリが Windows 10 の以前のバージョンをターゲットする場合、**Windows.Services.Store** 名前空間の代わりに [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 名前空間を使う必要があります。 詳しくは、[こちらの記事](exclude-or-limit-features-in-a-trial-version-of-your-app.md)をご覧ください。
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>試用版を実装するためのガイドライン
 
@@ -32,22 +32,22 @@ ms.locfileid: "8921195"
 
 ゲーム以外の多くのアプリでは、ユーザーにアプリ全体を理解してもらうために、有効期限日を設定するのが適しています。 ここでは、有効期限に関するいくつかの一般的なシナリオと、その処理方法について説明します。
 
--   **アプリの実行中に試用ライセンスが期限切れになった**
+-   **アプリの実行中に試用版ライセンスの有効期限します。**
 
     アプリの実行中に試用ライセンスが期限切れになった場合は、次の対処方法があります。
 
     -   何もしない。
     -   ユーザーにメッセージを表示する。
-    -   閉じる。
+    -    を閉じます。
     -   ユーザーにアプリの購入を促す。
 
     お勧めするのは、アプリの購入を促すメッセージを表示することです。ユーザーがアプリを購入したら、すべての機能を有効にして、そのまま使うことができるようにします。 購入しなかった場合は、アプリを閉じるか、アプリの購入が必要なことを一定の間隔で通知します。
 
--   **アプリの起動前に試用ライセンスが期限切れになった**
+-   **アプリを起動する前に試用版ライセンスの有効期限します。**
 
     ユーザーがアプリを起動する前に試用ライセンスが期限切れになった場合、アプリは起動しません。 ユーザーには、ストアからそのアプリを購入できることを伝えるダイアログ ボックスが表示されます。
 
--   **アプリの実行中にユーザーがアプリを購入した**
+-   **実行中のアプリを購入した顧客**
 
     アプリの実行中にユーザーがアプリを購入した場合は、次の対処方法があります。
 
@@ -61,7 +61,7 @@ ms.locfileid: "8921195"
 
 この例には、次の前提条件があります。
 * **Windows 10 Anniversary Edition (10.0、ビルド 14393)** 以降のリリースをターゲットとするユニバーサル Windows プラットフォーム (UWP) アプリの Visual Studio プロジェクト。
-* 時間制限なしに[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)として構成されているパートナー センターでアプリを作成し、このアプリは、ストアで公開します。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
+* として構成されているパートナー センターでアプリを作成した、[無料試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)時間制限なしでこのアプリがストアで公開されています。 必要に応じで、テスト中にストアでアプリを検索できないようにアプリを構成することも可能です。 詳しくは、[テスト ガイダンス](in-app-purchases-and-trials.md#testing)をご覧ください。
 
 この例のコードは、次の点を前提としています。
 * コードは、```workingProgressRing``` という名前の [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) と ```textBlock``` という名前の [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を含む [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) のコンテキストで実行されます。 これらのオブジェクトは、それぞれ非同期操作が発生していることを示するためと、出力メッセージを表示するために使用されます。
@@ -69,7 +69,7 @@ ms.locfileid: "8921195"
 * アプリは、アプリを起動したユーザーのコンテキストでのみ動作するシングル ユーザー アプリです。 詳しくは、「[アプリ内購入と試用版](in-app-purchases-and-trials.md#api_intro)」をご覧ください。
 
 > [!NOTE]
-> [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用するデスクトップ アプリケーションがある場合、この例には示されていないコードを追加して [StoreContext ](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx)オブジェクトを構成することが必要になることがあります。 詳しくは、「[デスクトップ ブリッジを使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
+> [デスクトップ ブリッジ](https://developer.microsoft.com/windows/bridges/desktop)を使用するデスクトップ アプリケーションがある場合、この例には示されていないコードを追加して [StoreContext ](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) オブジェクトを構成することが必要になることがあります。 詳しくは、「[デスクトップ ブリッジを使用するデスクトップ アプリケーションでの StoreContext クラスの使用](in-app-purchases-and-trials.md#desktop)」をご覧ください。
 
 ## <a name="code-example"></a>コードの例
 
@@ -85,8 +85,8 @@ ms.locfileid: "8921195"
 ## <a name="related-topics"></a>関連トピック
 
 * [アプリ内購入と試用版](in-app-purchases-and-trials.md)
-* [アプリとアドオンの製品情報の取得](get-product-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのライセンス情報の取得](get-license-info-for-apps-and-add-ons.md)
-* [アプリとアドオンのアプリ内購入の有効化](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [コンシューマブルなアドオン購入の有効化](enable-consumable-add-on-purchases.md)
-* [ストア サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [アプリケーションとアドオンの製品情報を取得します。](get-product-info-for-apps-and-add-ons.md)
+* [アプリケーションとアドオンのライセンス情報を取得します。](get-license-info-for-apps-and-add-ons.md)
+* [アプリケーションとアドオンのアプリ内購入を有効にします。](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [使用できるアドオンの購入を有効にします。](enable-consumable-add-on-purchases.md)
+* [ストアのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

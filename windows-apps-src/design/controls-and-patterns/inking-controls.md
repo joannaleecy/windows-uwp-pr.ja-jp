@@ -1,25 +1,25 @@
 ---
-Description: Ink tools described
+Description: インク ツールの説明
 title: インク コントロール
 label: Inking Controls
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047896"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650897"
 ---
 # <a name="inking-controls"></a>インク コントロール
 
 
 
-ユニバーサル Windows プラットフォーム (UWP) アプリでの手書き入力を容易にする、[InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) と [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) という 2 つのコントロールがあります。
+ユニバーサル Windows プラットフォーム (UWP) アプリで手描き入力機能を容易にする 2 つの異なるコントロールがあります。[InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)と[InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)します。
 
 InkCanvas コントロールは、インク ストローク (色と太さの既定の設定を使用) か消去ストロークのいずれかとしてペン入力をレンダリングします。 このコントロールは透明なオーバーレイで、インク ストロークの既定のプロパティを変更するための組み込みの UI は含まれていません。
 
@@ -35,7 +35,7 @@ InkCanvas コントロールにはインク ストロークの既定の設定を
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-> **重要な API**: [InkCanvas クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)、[InkToolbar クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)、[InkPresenter クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、[Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要な Api**:[InkCanvas クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)、 [InkToolbar クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)、 [InkPresenter クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、 [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
@@ -58,8 +58,8 @@ InkCanvas コントロールにはインク ストロークの既定の設定を
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/InkCanvas">アプリを開き、InkCanvas の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
     </ul>
 </td>
 </tr>
@@ -68,12 +68,12 @@ InkCanvas コントロールにはインク ストロークの既定の設定を
 **Microsoft Edge**
 
 Microsoft Edge では、**Web ノート**に InkCanvas と InkToolbar を使います。  
-![InkCanvas は Microsoft Edge で手書き入力するために使います。](images/ink-tools-edge.png)
+![Microsoft Edge のインクを InkCanvas が使用されます。](images/ink-tools-edge.png)
 
 **Windows Ink ワークスペース**
 
 InkCanvas と InkToolbar は、**Windows Ink ワークスペース**の**スケッチパッド**と**画面スケッチ**の両方にも使われます。  
-![Windows Ink ワークスペースの InkToolbar](images/ink-tools-ink-workspace.png)
+![Windows Ink ワークスペースで InkToolbar](images/ink-tools-ink-workspace.png)
 
 ## <a name="create-an-inkcanvas-and-inktoolbar"></a>InkCanvas と InkToolbar を作成する
 
@@ -137,7 +137,7 @@ InkToolbar は、次のような 2 つの異なるボタンの種類のグルー
 - カスタム トグル – アプリで定義された機能の状態をオンまたはオフに設定します。 オンにすると、機能はアクティブなツールと連携して動作します。
 
 > [!NOTE]
-> 組み込みのボタンの表示順序を変更することはできません。 既定の表示順序は、ボールペン、鉛筆、蛍光ペン、消しゴム、ルーラーです。 カスタム ペンは最後の既定のペンに追加され、カスタム ツール ボタンは最後のペン ボタンと消しゴム ボタンの間に追加され、カスタム トグル ボタンはルーラー ボタンの後に追加されます  (カスタム ボタンは、指定されている順序で追加されます)。
+> 組み込みのボタンの表示順序を変更することはできません。 既定の表示順序は次のとおりです。ボールペン、鉛筆、蛍光ペン、消しゴムをルーラー。 カスタム ペンは最後の既定のペンに追加され、カスタム ツール ボタンは最後のペン ボタンと消しゴム ボタンの間に追加され、カスタム トグル ボタンはルーラー ボタンの後に追加されます  (カスタム ボタンは、指定されている順序で追加されます)。
 
 InkToolbar はトップ レベルの項目にすることもできますが、通常は "手書き入力" ボタンまたはコマンドを使って公開されます。 Segoe MLD2 アセット フォントの EE56 グリフをトップ レベルのアイコンとして使うことをお勧めします。
 
@@ -148,7 +148,7 @@ InkToolbar はトップ レベルの項目にすることもできますが、�
 ポップアップは、アクティブなツールのボタンが再選択されたときに表示されます。 色やサイズが変更されると、ポップアップは自動的に閉じられ、手書き入力を再開できます。 カスタム ペンやカスタム ツールでは、既定のポップアップを使うことも、カスタム ポップアップを指定することもできます。
 
 また、消しゴムには **[すべてのインクのデータを消去]** コマンドを提供するポップアップがあります。  
-![消しゴムのポップアップが呼び出された InkToolbar](images/ink-tools-erase-all-ink.png)
+![消しゴム フライアウトが呼び出されると InkToolbar](images/ink-tools-erase-all-ink.png)
 
  カスタマイズと拡張について詳しくは、[SimpleInk のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)をご覧ください。
 
@@ -166,10 +166,10 @@ InkToolbar はトップ レベルの項目にすることもできますが、�
 
 - [SimpleInk のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) - InkCanvas コントロールと InkToolbar コントロールのカスタマイズ機能と拡張機能に関する 8 個のシナリオを示しています。 各シナリオでは、一般的な手書き入力の状況とコントロールの実装に関する基本的なガイダンスが提供されています。
 - [ComplexInk のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) - 高度な手書き入力のシナリオを示しています。
-- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形ですべての XAML コントロールを参照できます。
+- [XAML コントロール ギャラリー サンプル](https://github.com/Microsoft/Xaml-Controls-Gallery) - インタラクティブな形で XAML コントロールのすべてを参照できます。
 
 ## <a name="related-articles"></a>関連記事
 
-- [UWP アプリのペン操作とスタイラス操作](https://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [インク ストロークの認識](https://windowsstyleguide/input/convert-ink-to-text/)
-- [インク ストロークの保存と取得](https://windowsstyleguide/input/save-and-load-ink/)
+- [UWP アプリでのペン、スタイラスの相互作用](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [インク ストロークを認識します。](https://windowsstyleguide/input/convert-ink-to-text/)
+- [インク ストロークを格納および取得](https://windowsstyleguide/input/save-and-load-ink/)

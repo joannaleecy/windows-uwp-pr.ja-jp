@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, OpenCV
 ms.localizationpriority: medium
 ms.openlocfilehash: d72a8d3fcaf337973f585ab19370140cd80f3826
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047467"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640177"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>Open Source Computer Vision Library (OpenCV) と MediaFrameReader の使用
 
@@ -28,14 +28,14 @@ ms.locfileid: "9047467"
 
 これらの記事に加えて、この記事で説明したシナリオの完全でエンド ツー エンドの実用的なサンプルを表示およびダウンロードするには、Windows ユニバーサル サンプル GitHub リポジトリにある[カメラ フレームと OpenCV のサンプル](https://go.microsoft.com/fwlink/?linkid=854003)をご覧ください。
 
-簡単に開発を開始するに含めることができます、OpenCV ライブラリ、UWP アプリ プロジェクトで、NuGet パッケージを使用して、ので、OpenCV をダウンロードすることをお勧めしますが、ストアにアプリを提出するときに、これらのパッケージはアプリ certficication プロセスを通過しない可能性があります。ライブラリは、ソース コードと、アプリを提出する前に自分でバイナリをビルドします。 OpenCV を使った開発に関する情報については、[https://opencv.org](https://opencv.org) をご覧ください。
+迅速に開発を開始する、OpenCV ライブラリに組み込める UWP アプリ プロジェクトを NuGet のパッケージを使用してがため OpenCV をダウンロードすることをお勧め、ストアへのアプリを送信するときに、これらのパッケージはアプリ certficication のプロセスを渡していない可能性があります。ライブラリは、ソース コードと、アプリを送信する前に自分でバイナリをビルドします。 OpenCV を使った開発に関する情報については、[https://opencv.org](https://opencv.org) をご覧ください。
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>OpenCVHelper ネイティブ Windows ランタイム コンポーネントを実装する
 「[OpenCV によるソフトウェア ビットマップの処理](process-software-bitmaps-with-opencv.md)」の手順に従って、OpenCV ヘルパー Windows ランタイム コンポーネントを作成し、UWP アプリのソリューションにコンポーネント プロジェクトへの参照を追加します。
 
 ## <a name="find-available-frame-source-groups"></a>利用可能なフレーム ソース グループを検索する
-最初に、メディア フレームを取得するメディア フレーム ソース グループを見つける必要があります。 **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** を呼び出して、現在のデバイスで利用可能なソース グループの一覧を取得します。 アプリのシナリオに必要なセンサーの種類を指定するソース グループを選択します。 この例では、RGB カメラからのフレームを提供するソース グループのみが必要です。
+最初に、メディア フレームを取得するメディア フレーム ソース グループを見つける必要があります。  **[MediaFrameSourceGroup.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)** を呼び出して、現在のデバイスで利用可能なソース グループの一覧を取得します。 アプリのシナリオに必要なセンサーの種類を指定するソース グループを選択します。 この例では、RGB カメラからのフレームを提供するソース グループのみが必要です。
 
 [!code-cs[OpenCVFrameSourceGroups](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameSourceGroups)]
 
@@ -58,18 +58,18 @@ ms.locfileid: "9047467"
 
 
 ## <a name="handle-the-framearrived-event"></a>FrameArrived イベントを処理する
-フレーム リーダーからの新しいフレームが利用可能になると、**FrameArrived** イベントが発生します。 フレームが存在する場合は、**[TryAcquireLatestFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.TryAcquireLatestFrame)** を呼び出してフレームを取得します。 **[MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)** から **SoftwareBitmap** を取得します。 この例で使用されている **CVHelper** クラスでは、画像がプリマルチプライ済みアルファを含む  BRGA8 ピクセル形式を使用している必要があります。 イベントに渡されたフレームが別の形式である場合は、**SoftwareBitmap** を正しい形式に変換します。 次に、ぼかし操作のターゲットとして使用される **SoftwareBitmap** を作成します。 一致する形式のビットマップを作成するために、ソース画像のプロパティがコンストラクターの引数として使用されます。 ヘルパー クラスの **Blur** メソッドを呼び出してフレームを処理します。 最後に、ぼかし操作の出力画像を **PresentSoftwareBitmap** メソッドに渡します。これは、画像が初期化された XAML **Image** コントロールに画像を表示する **FrameRenderer** ヘルパー クラスのメソッドです。
+フレーム リーダーからの新しいフレームが利用可能になると、**FrameArrived** イベントが発生します。 フレームが存在する場合は、**[TryAcquireLatestFrame](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.TryAcquireLatestFrame)** を呼び出してフレームを取得します。  **[MediaFrameReference](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereference)** から **SoftwareBitmap** を取得します。 この例で使用されている **CVHelper** クラスでは、画像がプリマルチプライ済みアルファを含む  BRGA8 ピクセル形式を使用している必要があります。 イベントに渡されたフレームが別の形式である場合は、**SoftwareBitmap** を正しい形式に変換します。 次に、ぼかし操作のターゲットとして使用される **SoftwareBitmap** を作成します。 一致する形式のビットマップを作成するために、ソース画像のプロパティがコンストラクターの引数として使用されます。 ヘルパー クラスの **Blur** メソッドを呼び出してフレームを処理します。 最後に、ぼかし操作の出力画像を **PresentSoftwareBitmap** メソッドに渡します。これは、画像が初期化された XAML **Image** コントロールに画像を表示する **FrameRenderer** ヘルパー クラスのメソッドです。
 
 [!code-cs[OpenCVFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameArrived)]
 
 ## <a name="related-topics"></a>関連トピック
 
 * [カメラ](camera.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md)
-* [OpenCV でのソフトウェア ビットマップの処理](process-software-bitmaps-with-opencv.md)
-* [カメラ フレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)
-* [カメラ フレームと OpenCV のサンプル](https://go.microsoft.com/fwlink/?linkid=854003)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [プロセスのメディア MediaFrameReader フレーム](process-media-frames-with-mediaframereader.md)
+* [OpenCV プロセス ソフトウェア ビットマップ](process-software-bitmaps-with-opencv.md)
+* [カメラのフレームのサンプル](https://go.microsoft.com/fwlink/?LinkId=823230)
+* [カメラのフレーム + OpenCV サンプル](https://go.microsoft.com/fwlink/?linkid=854003)
  
 
  

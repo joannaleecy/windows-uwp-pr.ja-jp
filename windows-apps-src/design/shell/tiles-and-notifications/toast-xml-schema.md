@@ -1,19 +1,19 @@
 ---
-Description: The following article describes all of the properties and elements within the toast content XML payload.
+Description: この記事では、トースト通知のコンテンツの XML ペイロードにあるすべてのプロパティと要素を説明します。
 title: トースト通知のコンテンツの XML スキーマ
 ms.assetid: AF49EFAC-447E-44C3-93C3-CCBEDCF07D22
 label: Toast content XML schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934391"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57612777"
 ---
 # <a name="toast-content-xml-schema"></a>トースト通知のコンテンツの XML スキーマ
 
@@ -43,7 +43,7 @@ ms.locfileid: "8934391"
 </toast>
 ```
 
-**&lt;toast&gt; 内の属性**
+**属性&lt;トースト&gt;**
 
 launch?
 
@@ -75,7 +75,7 @@ scenario?
 -   シナリオがアラーム、リマインダー、着信呼び出しの表示以外の場合、この属性は必要ありません。
 -   通知を常に画面上に表示することのみを目的とする場合は、この属性を使わないでください。
 
-**&lt;visual&gt; 内の属性**
+**属性&lt;visual&gt;**
 
 lang?
 
@@ -89,11 +89,11 @@ addImageQuery?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;binding&gt; 内の属性**
+**属性&lt;バインド&gt;**
 
 template?
 
--   \[重要\] template?  = "ToastGeneric"
+-   \[重要な\]テンプレートでしょうか。  = "ToastGeneric"
 -   新しいアダプティブ通知と対話型通知の機能を使う場合は、従来のテンプレートではなく、必ず "ToastGeneric" テンプレートを使って作業を始めてください。
 -   新しい操作で従来のテンプレートを使うと、現時点では動作する可能性があります。ただし、この方法は対象となる使用方法ではないため、今後も引き続き動作するかどうかは保証できません。
 
@@ -109,13 +109,13 @@ addImageQuery?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;text&gt; 内の属性**
+**属性&lt;テキスト&gt;**
 
 lang?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;image&gt; 内の属性**
+**属性&lt;イメージ&gt;**
 
 src
 
@@ -144,7 +144,7 @@ hint-crop?
 -   既定値は "none" であり、トリミングされないことを意味します。
 -   "circle" を指定すると、画像が円形にトリミングされます。 連絡先のプロフィール画像、人物の画像などにこの属性を使います。
 
-**&lt;audio&gt; 内の属性**
+**属性&lt;オーディオ&gt;**
 
 src?
 
@@ -177,7 +177,7 @@ silent?
 </toast>
 ```
 
-**&lt;input&gt; 内の属性**
+**属性&lt;入力&gt;**
 
 id
 
@@ -210,7 +210,7 @@ defaultInput?
 -   入力の種類が "text" である場合、この属性は文字列入力として処理されます。
 -   入力の種類が "selection" である場合、この属性は、入力の要素内で利用できるいずれかの選択項目の ID として処理されます。
 
-**&lt;selection&gt; 内の属性**
+**属性&lt;の選択&gt;**
 
 id
 
@@ -220,7 +220,7 @@ content
 
 -   この属性は必須です。 この selection 要素に対して表示する文字列を指定します。
 
-**&lt;action&gt; 内の属性**
+**属性&lt;アクション&gt;**
 
 content
 
@@ -253,9 +253,9 @@ hint-inputId
 ## <a name="attributes-for-system-handled-actions"></a>システムによって処理される操作の属性
 
 
-アプリで再通知や通知の再スケジュールをバックグラウンド タスクとして処理しない場合は、システムで、再通知や通知を閉じるための操作を処理できます。 システムによって処理される操作は、組み合わせることができます (または個別に指定することもできます)。ただし、閉じる操作を使わないで再通知の操作を実装することはお勧めしません。
+アプリで再通知や通知の再スケジュールをバックグラウンド タスクとして処理しない場合は、システムで、再通知や通知を無視するための操作を処理できます。 システムによって処理される操作は、組み合わせることができます (または個別に指定することもできます)。ただし、無視操作を使わないで再通知の操作を実装することはお勧めしません。
 
-システム コマンドの組み合わせ: SnoozeAndDismiss
+システム コマンド コンボ:SnoozeAndDismiss
 
 ```
 <toast>
@@ -285,7 +285,7 @@ hint-inputId
 </toast>
 ```
 
-再通知や閉じる操作を個別に指定するには、次の手順に従います。
+再通知操作や無視操作を個別に指定するには、次の手順に従います。
 
 -   activationType = "system" を指定します。
 -   arguments = "snooze" または arguments = "dismiss" を指定します。

@@ -1,19 +1,19 @@
 ---
-Description: Share code between a desktop application and a UWP app
+Description: デスクトップ アプリケーションおよび UWP アプリ間で共有コード
 Search.Product: eADQiWindows 10XVcnh
-title: デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
+title: デスクトップ アプリケーションおよび UWP アプリ間で共有コード
 ms.date: 10/03/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045741"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644347"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションと UWP アプリの間でコードを共有します。
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>デスクトップ アプリケーションおよび UWP アプリ間で共有コード
 
 お持ちのコードを .NET Standard ライブラリに移行し、ユニバーサル Windows プラットフォーム (UWP) アプリを作成すると、すべての Windows 10 デバイスをターゲットにすることができます。 デスクトップ アプリケーションを UWP アプリに変換できるツールはありませんが、多くの既存コードを再利用できるため、UWP アプリの作成コストを削減できます。 このガイドでは、その方法を示しています。
 
@@ -61,7 +61,7 @@ ms.locfileid: "9045741"
 
 コードの一部はプラットフォーム固有でありデスクトップ アプリケーション プロジェクト内に残す必要があります。
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>例: .NET Standard 2.0 ライブラリにデータ アクセス コードを移行する
+### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>以下に例を示します.NET Standard 2.0 ライブラリへのデータ アクセス コードの移行
 
 Northwind サンプル データベースから顧客を表示する非常に基本的な Windows フォーム アプリケーションがあると仮定します。
 
@@ -268,10 +268,10 @@ Android プロジェクト、iOS プロジェクト、およびクロスプラ�
 
 ## <a name="next-steps"></a>次のステップ
 
-**質問に対する回答を見つける**
+**質問の回答を検索**
 
 ご質問がある場合は、 Stack Overflow でお問い合わせください。 Microsoft のチームでは、これらの[タグ](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)をチェックしています。 [こちら](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)から質問することもできます。
 
-**フィードバックの提供または機能の提案を行う**
+**ご意見や機能を提案します。**
 
 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial) のページをご覧ください。

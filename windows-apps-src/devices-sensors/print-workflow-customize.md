@@ -4,14 +4,14 @@ title: 印刷ワークフローのカスタマイズ
 description: 組織のニーズに合うようにカスタムの印刷ワークフロー エクスペリエンスを作成します。
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10, uwp, 印刷
+keywords: windows 10、uwp、印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927177"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653237"
 ---
 # <a name="customize-the-print-workflow"></a>印刷ワークフローのカスタマイズ
 
@@ -22,7 +22,7 @@ MSDA の場合と同様に、ソース アプリケーションのユーザー�
 
 バックグラウンド コンポーネントとフォアグラウンド コンポーネントが関連しているため、また他のアプリと機能的に組み合わされるため、印刷ワークフロー アプリは、他の種類の UWP アプリと比べると実装が複雑になる可能性があります。 このガイドをお読みになるときは、[ワークフロー アプリのサンプル](https://github.com/Microsoft/print-oem-samples)について調べることをお勧めします。これにより、さまざまな機能の実装方法ついて詳しく理解することができます。 説明を簡単にするために、このガイドでは一部の機能 (さまざまなエラー チェックや UI の管理など) が省略されています。
 
-## <a name="getting-started"></a>はじめに
+## <a name="getting-started"></a>概要
 
 ワークフロー アプリでは、適切なタイミングで起動できるように、印刷システムへのエントリ ポイントを示す必要があります。 これを行うには、UWP プロジェクトの *package.appxmanifest* ファイルの `Application/Extensions` 要素にある以下の宣言を挿入します。 
 
@@ -104,7 +104,7 @@ private void OnSetupRequested(PrintWorkflowBackgroundSession sessionManager, Pri
 
 ## <a name="do-foreground-work-on-the-print-job-optional"></a>印刷ジョブに対するフォアグラウンド処理の実行 (オプション)
 
-**[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** メソッドが呼び出されると、印刷システムによってマニフェスト ファイルが検査され、フォアグラウンド アプリケーションへのエントリ ポイントが調べられます。 *package.appxmanifest* ファイルの `Application/Extensions` 要素には、以下の行が含まれている必要があります。 `EntryPoint` の値は、フォアグラウンド アプリの名前に変更してください。
+ **[SetRequiresUI](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs.SetRequiresUI)** メソッドが呼び出されると、印刷システムによってマニフェスト ファイルが検査され、フォアグラウンド アプリケーションへのエントリ ポイントが調べられます。 *package.appxmanifest* ファイルの `Application/Extensions` 要素には、以下の行が含まれている必要があります。 `EntryPoint` の値は、フォアグラウンド アプリの名前に変更してください。
 
 ```xml
 <uap:Extension Category="windows.printWorkflowForegroundTask"  
@@ -240,9 +240,9 @@ UI で **PrintTaskXpsDataAvailable** イベントの遅延が完了した場合 
 
 ### <a name="set-the-workflow-apps-policy"></a>ワークフロー アプリのポリシーの設定
 ワークフロー アプリのポリシーは、ワークフロー アプリを実行するデバイス上で PowerShell コマンドによって設定されます。 Set-Printer、Add-Printer (既存のポート)、Add-Printer (新しい WSD ポート) の各コマンドを、ワークフロー ポリシーの設定を許可するように変更します。 
-* `Disabled`: ワークフロー アプリはアクティブ化されません。
-* `Uninitialized`: ワークフロー アプリは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷が引き続き実行されます。 
-* `Enabled`: ワークフロー コントラクトは、ワークフロー DCA がシステムにインストールされている場合にアクティブ化されます。 アプリがインストールされていない場合は、印刷は失敗します。 
+* `Disabled`:アプリのワークフローをアクティブにできません。
+* `Uninitialized`:ワークフロー DCA がシステムにインストールされている場合、アプリのワークフローをアクティブ化されます。 アプリがインストールされていない場合は、印刷が引き続き実行されます。 
+* `Enabled`:ワークフロー DCA がシステムにインストールされている場合、ワークフローのコントラクトをアクティブ化されます。 アプリがインストールされていない場合は、印刷は失敗します。 
 
 次のコマンドは、指定されたプリンターでワークフロー アプリを必須のアプリにします。
 ```Powershell
@@ -253,7 +253,7 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 
 ## <a name="see-also"></a>関連項目
 
-[ワークフロー アプリのサンプル](https://github.com/Microsoft/print-oem-samples)
+[アプリのサンプルのワークフロー](https://github.com/Microsoft/print-oem-samples)
 
 [Windows.Graphics.Printing.Workflow 名前空間](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 

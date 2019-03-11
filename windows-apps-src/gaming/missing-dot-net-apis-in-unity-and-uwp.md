@@ -7,19 +7,19 @@ ms.topic: article
 keywords: Windows 10、UWP、ゲーム、.NET、Unity
 ms.localizationpriority: medium
 ms.openlocfilehash: 247761f47b578099bf8672d9e1b2469e6506682e
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641787"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity や UWP で不足している .NET API
 
 .NET を使用して UWP ゲームを作成する場合、Unity エディターで使用できる一部の API やスタンドアロン PC ゲーム用の一部の API が UWP 用に存在しないことがあります。 これは、UWP アプリ用 .NET には、名前空間ごとに、フル バージョンの .NET Framework で提供される型のサブセットが含まれるためです。
 
-さらに、Unity の Mono など一部のゲーム エンジンは、UWP 用の .NET とは完全な互換性のない別の種類の .NET を使用しています。 したがって、ゲームを作成する際に、エディターでは問題なく動作しても、UWP 用にビルドすると、"**型または名前空間の名前 'Formatters' は名前空間 'System.Runtime.Serialization' に存在しません (アセンブリ参照があることを確認してください)**" というエラーが出力される可能性があります。
+さらに、Unity の Mono など一部のゲーム エンジンは、UWP 用の .NET とは完全な互換性のない別の種類の .NET を使用しています。 したがって、ゲームを作成しているときにすべて正常に動作エディターが、UWP のビルドに移動するときにこのようなエラーが発生する可能性があります。**型または名前空間する 'フォーマッタ' が 'System.Runtime.Serialization' 名前空間に存在しません (する、アセンブリ参照が存在しますか?)**
 
-幸いなことに、Unity では、これらの不足している API の一部を拡張メソッドや置換型として提供しています。詳しくは、[ユニバーサル Windows プラットフォームの .NET Scripting Backend で不足している .NET 型に関するページ](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)をご覧ください。 ただし、必要な機能がここにない場合は、「[Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/br230302)」で説明している方法に従って、WinRT または UWP 用 .NET の API を使用するようにコードを変換できます  (このページでは、Windows 8 について説明していますが、Windows 10 の UWP アプリにも適用できます)。
+さいわい、拡張メソッドとで説明されている置換型としての Unity はこれらの不足している Api の一部[ユニバーサル Windows プラットフォーム.NET バックエンドをスクリプトで .NET の種類が見つからない](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)します。 ただし、必要な機能がここにない場合は、「[Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/br230302)」で説明している方法に従って、WinRT または UWP 用 .NET の API を使用するようにコードを変換できます  (このページでは、Windows 8 について説明していますが、Windows 10 の UWP アプリにも適用できます)。
 
 ## <a name="net-standard"></a>.NET Standard
 
@@ -43,7 +43,7 @@ UWP のビルドで問題が発生した場合に最初に行うことは、**[P
 
 一般的に、**[Scripting Runtime Version] (スクリプト ランタイム バージョン)** と **[Api Compatibility Level] (API 互換性レベル)** については、.NET Framework との互換性を高め、より多くの .NET API を使用できるようにするために、利用可能な最新バージョンを選択してください。
 
-![構成: スクリプト ランタイム バージョン、スクリプト バックエンド、API 互換性レベル](images/missing-dot-net-apis-in-unity-1.png)
+![構成:スクリプトのランタイム バージョンです。スクリプトのバックエンドApi の互換性レベル](images/missing-dot-net-apis-in-unity-1.png)
 
 ## <a name="platform-dependent-compilation"></a>プラットフォーム依存のコンパイル
 
@@ -60,7 +60,7 @@ UWP アプリとして実行する場合にのみコードをコンパイルす�
 ```
 
 > [!NOTE]
-> `NETFX_CORE` は、.NET スクリプト バックエンドに対して C# コードをコンパイルしているかどうかを確認することのみを目的としています。 IL2CPP など、他のスクリプト バックエンドを使用している場合は、代わりに `UNITY_WSA_10_0` を使用します。
+> `NETFX_CORE` コンパイルするかどうかにチェックだけを目的とC#.NET スクリプト バックエンドに対してコード。 IL2CPP など、他のスクリプト バックエンドを使用している場合は、代わりに `UNITY_WSA_10_0` を使用します。
 
 プラットフォーム依存のコンパイル ディレクティブの一覧については、[プラットフォーム依存のコンパイルに関するページ](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)をご覧ください。
 
@@ -144,6 +144,6 @@ WinRT セキュリティ API の使用方法の詳細については、「[セ�
 
 ## <a name="see-also"></a>関連項目
 
-* [ユニバーサル Windows プラットフォーム: .NET Scripting Backend で不足している .NET 型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [UWP アプリ用の .NET の概要](https://msdn.microsoft.com/library/windows/apps/br230302)
-* [Unity UWP 移植ガイド](https://unity3d.com/partners/microsoft/porting-guides)
+* [ユニバーサル Windows プラットフォーム:.NET バックエンドをスクリプトに不足している .NET の種類](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
+* [.NET の UWP アプリの概要](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [Unity UWP への移植のガイド](https://unity3d.com/partners/microsoft/porting-guides)

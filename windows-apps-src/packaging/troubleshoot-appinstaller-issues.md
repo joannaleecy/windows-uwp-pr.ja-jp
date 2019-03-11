@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, アプリ インストーラー, AppInstaller, サイドローディング
 ms.localizationpriority: medium
 ms.openlocfilehash: f74a7bbfdfd5abe6a32c0ca3d81000e6f2d4758d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116144"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660147"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
 
@@ -37,7 +37,7 @@ Windows 10 の各リリースでは、サイドローディング エクスペ�
 | ビルド 17134 (2018 年 4 月の更新プログラム バージョン 1804)    | `.appinstaller` ファイルには、UNC/共有フォルダー経由でアクセスすることができます。 構成可能な更新プログラムのチェックも使用できます。 |
 | ビルド 16299 (Fall Creators Update バージョン 1709) | アプリを自動更新するため、`.appinstaller` ファイルが導入されました。 このバージョンでは、HTTP エンドポイントのみサポートされます。 更新プログラムのチェックは構成できません。24 時間おきに行われます。 |
 | ビルド 15063 (Creators Update バージョン 1703)      | アプリ インストーラー アプリは、Microsoft Store からアプリの依存関係をダウンロードできます (リリース モードでのみ)。 |
-| ビルド 14393 (Anniversary Update バージョン 1607)   | .appx ファイルと .appxbundle ファイルをインストールするため、アプリ インストーラー アプリが導入されました。.appinstaller ファイルはサポートされません。 |
+| ビルド 14393 (Anniversary Update バージョン 1607)   | .appx ファイルと .appxbundle ファイルをインストールするため、アプリ インストーラー アプリが導入されました.appinstaller ファイルはサポートされません。 |
 | ビルド 10586 (November Update バージョン 1511)      | サイドローディングは、PowerShell で [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) コマンドを使う場合のみ使用できます。 |
 | ビルド 10240 (Windows 10 バージョン 1507)           | サイドローディングは、PowerShell で [Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) コマンドを使う場合のみ使用できます。 |
 
@@ -63,8 +63,8 @@ UWP アプリケーションには、アプリの生成に使用されるアプ�
 
 HTTP エンドポイントからインストールする場合、すべてのファイルに正しい MIME タイプを使ってアクセスできることを確認することが重要です。 これらのファイルを確認する最も簡単な方法として、Visual Studio によって生成された HTML ページにあるリンクに移動できます。 以下のファイルを確認する必要があります。
 
-- `.appinstaller` ファイル。使用可能:  `application/xml`
-- `.appx` `.appxbundle` ファイル。使用可能:  `application/vns.ms-appx`
+- `.appinstaller` ファイルをとして使用します。 `application/xml`
+- `.appx` `.appxbundle`ファイルとして利用できます `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>アプリ インストーラー アプリの問題の切り分け
 
@@ -72,13 +72,13 @@ HTTP エンドポイントからインストールする場合、すべてのフ
 
 ### <a name="verify-app-package-file-installation"></a>アプリ パッケージ ファイルのインストールを確認します。
 
-- アプリのパッケージ ファイルをローカル フォルダーにダウンロードし、 [Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell コマンドを使用してインストールしようとしてください。
+- ローカル フォルダーに、アプリ パッケージ ファイルをダウンロードしてを使用してインストールしようとしています、 [Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell コマンド。
 
 - `.appinstaller` ファイルをローカル フォルダーにダウンロードし、`Add-AppxPackage -Appinstaller` PowerShell コマンドを使ってインストールしてみます。
 
 ## <a name="related-logs"></a>関連するログ
 
-アプリ展開インフラストラクチャには、Windows イベント ビューアーでデバッグするためのログが用意されています。 これらのログは以下の場所にあります。 `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
+アプリ展開インフラストラクチャには、Windows イベント ビューアーでデバッグするためのログが用意されています。 ここではこれらのログにあります。 `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
 
 
 

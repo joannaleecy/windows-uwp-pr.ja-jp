@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, ゲーム, キャプチャ, オーディオ, ビデオ, メタデータ
 ms.localizationpriority: medium
 ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921834"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57601937"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>ゲームのオーディオ、ビデオ、スクリーンショット、メタデータのキャプチャ
 この記事では、ゲームのビデオ、オーディオ、スクリーン ショットをキャプチャする方法や、キャプチャおよびブロードキャストされるメディアにシステムが埋め込むメタデータを送信して、アプリや他のユーザーがゲームプレイのイベントに同期する動的なエクスペリエンスを作成できるようにする方法について説明します。 
@@ -20,7 +20,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 
 メディアをキャプチャするもう 1 つの方法は、**[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** 名前空間の API を使用する方法です。 デバイスでキャプチャが有効になっている場合、アプリはゲームプレイのキャプチャを開始し、しばらく時間が経過した後、キャプチャを停止できます。その時点で、メディアはファイルに書き込まれます。 ユーザーが履歴のキャプチャを有効にしている場合、過去の開始時刻と記録の継続時間を指定することによって、既に発生したゲームプレイも記録できます。 これらのいずれの手法でも、アプリでアクセスできるビデオ ファイルが生成されます。また、ファイルを保存するために選択した場所によっては、ユーザーがアクセスできるビデオ ファイルが生成されます。 この記事の中ほどのセクションでは、これらのシナリオを実装する手順について説明します。
 
-**[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 名前空間は、キャプチャまたはブロードキャストされるゲームプレイを説明するメタデータを作成するための API を提供します。 これには、テキストや数値を、各データ項目を識別するテキスト ラベルと共に含めることができます。 メタデータは、1 つの時点で発生する "イベント" (ユーザーがレーシング ゲームでコースを走り終えたときなど) を表すことができます。また、一定期間保持される "状態" (ユーザーがプレイしている現在のゲーム マップなど) を表すこともできます。 メタデータは、システムによってアプリ用に割り当てられて管理されるキャッシュに書き込まれます。 メタデータは、組み込みのシステム キャプチャとカスタム アプリによるキャプチャのいずれの手法でも、ブロードキャスト ストリームやキャプチャしたビデオ ファイルに埋め込まれます。 この記事の最後のセクションでは、ゲームプレイのメタデータを書き込む方法について説明します。
+ **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.capture)** 名前空間は、キャプチャまたはブロードキャストされるゲームプレイを説明するメタデータを作成するための API を提供します。 これには、テキストや数値を、各データ項目を識別するテキスト ラベルと共に含めることができます。 メタデータは、1 つの時点で発生する "イベント" (ユーザーがレーシング ゲームでコースを走り終えたときなど) を表すことができます。また、一定期間保持される "状態" (ユーザーがプレイしている現在のゲーム マップなど) を表すこともできます。 メタデータは、システムによってアプリ用に割り当てられて管理されるキャッシュに書き込まれます。 メタデータは、組み込みのシステム キャプチャとカスタム アプリによるキャプチャのいずれの手法でも、ブロードキャスト ストリームやキャプチャしたビデオ ファイルに埋め込まれます。 この記事の最後のセクションでは、ゲームプレイのメタデータを書き込む方法について説明します。
 
 > [!NOTE] 
 > ゲームプレイのメタデータは、潜在的に、ネットワーク上でユーザーの制御の範囲外で共有できるメディア ファイルに埋め込まれる可能性があるため、個人を特定できる情報やその他の潜在的な機密データをメタデータに含めないでください。
@@ -52,12 +52,12 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 4. **[OK]** をクリックします。
 
 ## <a name="get-an-instance-of-apprecordingmanager"></a>AppRecordingManager のインスタンスを取得する
-**[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** クラスは、アプリの記録を管理するために使用する中心的な API です。 ファクトリ メソッド **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** を呼び出すことによって、このクラスのインスタンスを取得します。 **Windows.Media.AppRecording**名前空間の API のいずれかを使用する前に、現在のデバイスでこれらが存在することを確認する必要があります。 この API は、Windows 10 バージョン 1709 より前のバージョンの OS を実行しているデバイスでは利用できません。 特定の OS バージョンを確認するのではなく、**[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** メソッドで、*Windows.Media.AppBroadcasting.AppRecordingContract* バージョン 1.0 を照会します。 このコントラクトが存在する場合は、デバイスで記録 API を利用できます。 この記事のコード例では、API を 1 回確認し、それ以降の操作の前に、**AppRecordingManager** が null であるかどうかを確認します。
+ **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager)** クラスは、アプリの記録を管理するために使用する中心的な API です。 ファクトリ メソッド **[GetDefault](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetDefault)** を呼び出すことによって、このクラスのインスタンスを取得します。 **Windows.Media.AppRecording**名前空間の API のいずれかを使用する前に、現在のデバイスでこれらが存在することを確認する必要があります。 この API は、Windows 10 バージョン 1709 より前のバージョンの OS を実行しているデバイスでは利用できません。 特定の OS バージョンを確認するのではなく、**[ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** メソッドで、*Windows.Media.AppBroadcasting.AppRecordingContract* バージョン 1.0 を照会します。 このコントラクトが存在する場合は、デバイスで記録 API を利用できます。 この記事のコード例では、API を 1 回確認し、それ以降の操作の前に、**AppRecordingManager** が null であるかどうかを確認します。
 
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## <a name="determine-if-your-app-can-currently-record"></a>アプリが現在記録できるかどうかを確認する
-現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 **CanRecord**が**false**、つまり、アプリが現在記録できないことを返す場合は、理由を特定する**[詳細](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** プロパティを確認できます。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
+現在、アプリでオーディオやビデオをキャプチャできない場合は、いくつかの原因があります。たとえば、現在のデバイスが記録のハードウェア要件を満たしていない場合や、別のアプリが現在ブロードキャストしている場合です。 記録を開始する前に、アプリが現在記録できるかどうかを確認できます。 **AppRecordingManager** オブジェクトの **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** メソッドを呼び出して、返された **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** オブジェクトの **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** プロパティを確認します。 場合**CanRecord**返します**false**、アプリが現在記録できないことを意味を確認できます、 **[詳細](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** を決定するプロパティ理由です。 理由に応じて、ユーザーに対してステータスを表示したり、アプリの記録を有効にするための手順を示したりすることができます。
 
 
 
@@ -71,7 +71,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 
 [!code-cpp[StartRecordToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetStartRecordToFile)]
 
-記録操作が完了したら、返された **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** オブジェクトの **[Succeeded](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** プロパティを確認して、記録操作が成功したかどうかを判断します。 成功している場合、**[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** プロパティを確認して、記憶域上の理由から、システムがキャプチャされたファイルを強制的に切り詰めたかどうかを判断できます。 **[Duration](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** プロパティを確認して、記録されたファイルの実際の継続時間を検出できます。ファイルが切り詰められている場合、実際の継続時間は記録操作の継続時間よりも短い場合があります。
+記録操作が完了したら、返された **[AppRecordingResult](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult)** オブジェクトの **[Succeeded](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Succeeded)** プロパティを確認して、記録操作が成功したかどうかを判断します。 成功している場合、**[IsFileTruncated](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.IsFileTruncated)** プロパティを確認して、記憶域上の理由から、システムがキャプチャされたファイルを強制的に切り詰めたかどうかを判断できます。  **[Duration](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingresult.Duration)** プロパティを確認して、記録されたファイルの実際の継続時間を検出できます。ファイルが切り詰められている場合、実際の継続時間は記録操作の継続時間よりも短い場合があります。
 
 [!code-cpp[OnRecordingComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetOnRecordingComplete)]
 
@@ -97,7 +97,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[CallRecordTimeSpanToFile](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetCallRecordTimeSpanToFile)]
 
 ## <a name="save-screenshot-images-to-files"></a>スクリーンショットの画像をファイルに保存する
-アプリでスクリーンショットのキャプチャを開始できます。アプリのウィンドウの現在の内容を、1 つの画像ファイルに保存することも、異なる画像エンコードで複数の画像ファイルに保存することもできます。 使用する画像エンコードを指定するには、それぞれが画像の種類を表す文字列の一覧を作成します。 **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** のプロパティは、サポートされている画像の種類ごとに、適切な文字列 (**MediaEncodingSubtypes.Png**、**MediaEncodingSubtypes.JpegXr** など) を提供します。
+アプリでスクリーンショットのキャプチャを開始できます。アプリのウィンドウの現在の内容を、1 つの画像ファイルに保存することも、異なる画像エンコードで複数の画像ファイルに保存することもできます。 使用する画像エンコードを指定するには、それぞれが画像の種類を表す文字列の一覧を作成します。  **[ImageEncodingSubtypes](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingsubtypes)** のプロパティは、サポートされている画像の種類ごとに、適切な文字列 (**MediaEncodingSubtypes.Png**、**MediaEncodingSubtypes.JpegXr** など) を提供します。
 
 画面キャプチャを開始するには、**AppRecordingManager** オブジェクトの **[SaveScreenshotToFilesAsync](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.savescreenshottofilesasync)** メソッドを呼び出します。 このメソッドの最初のパラメーターは、画像ファイルの保存場所を示す **StorageFolder** です。 2 番目のパラメーターは、システムが、保存される各画像の種類の拡張子 (".png" など) を追加する、ファイル名のプレフィックスです。
 
@@ -138,12 +138,12 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 
 [!code-cpp[LevelUp](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetLevelUp)]
 
-**[StopAllStates](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.StopAllStates)** を呼び出すことによって、現在開いているすべての状態を終了できます。
+ **[StopAllStates](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.StopAllStates)** を呼び出すことによって、現在開いているすべての状態を終了できます。
 
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### <a name="manage-metadata-cache-storage-limit"></a>メタデータ キャッシュの記憶域の制限を管理する
-**AppCaptureMetadataWriter** を使用して書き込むメタデータは、関連付けられているメディア ストリームに書き込まれるまで、システムによってキャッシュされます。 システムでは、各アプリのメタデータ キャッシュのサイズ制限を定義しています。 キャッシュのサイズ制限に達すると、システムはキャッシュされたメタデータの削除を開始します。 システムが**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先度の値の優先順位の**[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** メタデータを削除する前に書き込まれたメタデータが削除されます。
+**AppCaptureMetadataWriter** を使用して書き込むメタデータは、関連付けられているメディア ストリームに書き込まれるまで、システムによってキャッシュされます。 システムでは、各アプリのメタデータ キャッシュのサイズ制限を定義しています。 キャッシュのサイズ制限に達すると、システムはキャッシュされたメタデータの削除を開始します。 記述されたメタデータが削除**[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先度の値を使用してメタデータを削除する前に、 **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** 優先順位。
 
 いつでも、**[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)** を呼び出すことによって、アプリのメタデータ キャッシュで利用可能なバイト数を確認できます。 独自のアプリで定義されたしきい値を設定することを選択し、その後でキャッシュに書き込むメタデータの量を減らすことを選択できます。 次の例は、このパターンの簡単な実装を示しています。
 
@@ -152,7 +152,7 @@ UWP アプリでゲームプレイをキャプチャするには、2 つの方�
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>システムがメタデータを削除するときに通知を受け取る
-**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベントのハンドラーを登録することにより、アプリのメタデータの削除が開始されると、システムに通知を受信登録することができます。
+ハンドラーを登録することによって、アプリのメタデータを削除、システムの開始時に通知を受信登録することができます、 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** イベント。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

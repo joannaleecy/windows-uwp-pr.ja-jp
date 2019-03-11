@@ -1,15 +1,15 @@
 ---
 title: ユニバーサル Windows プラットフォーム (UWP) アプリにおけるガイド付き最適化のプロファイル (PGO) の実行
-description: ユニバーサル Windows プラットフォーム (UWP) アプリにプロファイル ガイド付き最適化 (PGO) を適用するステップ バイ ステップ ガイド。
+description: ユニバーサル Windows プラットフォーム (UWP) アプリをプロファイル ガイド付き最適化 (PGO) を適用するステップ バイ ステップ ガイドです。
 ms.date: 02/08/2017
 ms.localizationpriority: medium
 ms.topic: article
 ms.openlocfilehash: 8c19ea1701c6b5e82e66a54223620dace57de4b6
-ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "9062484"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57632917"
 ---
 # <a name="running-profile-guided-optimization-on-universal-windows-platform-apps"></a>ユニバーサル Windows プラットフォーム アプリにおけるガイド付き最適化のプロファイルの実行 
  
@@ -17,7 +17,7 @@ ms.locfileid: "9062484"
 
 Visual Studio 2015 Update 3 を使用して既定の DirectX 11 アプリ (UWP) テンプレートに PGO を適用する方法の基本的なチュートリアルを次に示します。
  
-このガイド全体にわたって、スクリーンショットは次の新しいプロジェクトに基づきます。![[新しいプロジェクト] ダイアログ ボックス](images/pgo-001.png)
+このガイド全体でスクリーン ショットは、次の新しいプロジェクトに基づいています。![新しいプロジェクト ダイアログ ボックス](images/pgo-001.png)
 
 PGO を DirectX 11 アプリ テンプレートに適用するには、次の手順に従います。
 
@@ -67,9 +67,9 @@ PGO を DirectX 11 アプリ テンプレートに適用するには、次の手
   pgosweep.exe App1.exe “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!1.pgc”
   ```
  
-  さらに収集する場合は、`App1!CoreScenario.pgc`、`App1!UseCase5.pgc` などのようにもできます。.pgc の名前をこのように付け、ビルドの出力場所が .pgd の隣である場合、手順 9 でリンクするときに自動的にマージされます。
+  さらに収集可能性もあります`App1!CoreScenario.pgc`、`App1!UseCase5.pgc`など.Pgc ファイルの名前は、この方法でと、ビルド出力の場所、.pgd と共に、それらは自動的に統合されます手順 9. でリンクするときにします。
  
-8. 省略可能: 既定では、手順 7 で指定したように名前を付け、.pgd の隣に配置した .pgc ファイルはすべて、リンクするときにマージされ、平等に重み付けされますが、特定の実行に重みを付ける方法をより詳細に制御することもできます。 これを行うには、**pgomgr.exe** ツールを使用します。このツールも、最初に `pgort140.dll` のコピーを見つけたフォルダーと同じフォルダーにあります。 たとえば、`CoreScenario` の実行を他の実行の優先度の 3 倍でマージするには、次のコマンドを使用します。
+8. 省略可能。リンクと同様に、重み付け時に既定では、手順 7. で指定されていると、.pgd の横に配置されたという .pgc ファイルをすべてがマージする、大きくすることもできますが、特定の実行は重み付けを制御します。 これを行うには、**pgomgr.exe** ツールを使用します。このツールも、最初に `pgort140.dll` のコピーを見つけたフォルダーと同じフォルダーにあります。 たとえば、`CoreScenario` の実行を他の実行の優先度の 3 倍でマージするには、次のコマンドを使用します。
  
  ```
  pgomgr.exe -merge:3 “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1!CoreScenario.pgc” “C:\Users\<USER>\Documents\Visual Studio 2015\Projects\App1\Release\App1\App1.pgd”
@@ -81,7 +81,7 @@ PGO を DirectX 11 アプリ テンプレートに適用するには、次の手
  
 10. プロジェクトがビルドされたら、リンカーによって pgomgr.exe が呼び出され、すべての `<PGDName>!*.pgc` ファイルが既定の重み 1 が設定された .pgd にマージされます。作成されるアプリケーションは、プロファイリング データに基づいて最適化されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [パフォーマンス](performance-and-xaml-ui.md)
 
  

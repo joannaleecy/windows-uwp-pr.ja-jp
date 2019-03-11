@@ -7,14 +7,14 @@ ms.topic: article
 keywords: Windows 10, UWP, コーデック, エンコーダー, デコーダー, クエリ
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921576"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593867"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>デバイスにインストールされているコーデックの照会
-**[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** クラスによって、現在のデバイスにインストールされているコーデックを照会できます。 Windows 10 に含まれているさまざまなデバイス ファミリのコーデックの一覧については、「[サポートされるコーデック](supported-codecs.md)」の記事に示されています。ただし、ユーザーやアプリはデバイスに追加のコーデックをインストールできるため、現在のデバイスでどのようなコーデックが利用可能かを特定するために、実行時にコーデックのサポートを照会することができます。
+ **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** クラスによって、現在のデバイスにインストールされているコーデックを照会できます。 Windows 10 に含まれているさまざまなデバイス ファミリのコーデックの一覧については、「[サポートされるコーデック](supported-codecs.md)」の記事に示されています。ただし、ユーザーやアプリはデバイスに追加のコーデックをインストールできるため、現在のデバイスでどのようなコーデックが利用可能かを特定するために、実行時にコーデックのサポートを照会することができます。
 
 CodecQuery API は、**[Windows.Media.Core](https://docs.microsoft.com/uwp/api/windows.media.core)** 名前空間のメンバーであるため、この名前空間をアプリに含める必要があります。
 
@@ -26,7 +26,7 @@ CodecQuery API は、**[Windows.Media.Core](https://docs.microsoft.com/uwp/api/w
 
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-**[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** メソッドは、指定されたパラメーターに一致するインストール済みのすべてのコーデックを返します。 これらのパラメーターには、オーディオ、ビデオ、またはその両方のどれを照会するかを指定する **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 値、エンコーダーとデコーダーのどちらを照会するかを指定する **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 値、照会するメディア エンコード サブタイプを表す文字列 (H.264 ビデオや MP3 オーディオなど) が含まれます。
+ **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery.findallasync)** メソッドは、指定されたパラメーターに一致するインストール済みのすべてのコーデックを返します。 これらのパラメーターには、オーディオ、ビデオ、またはその両方のどれを照会するかを指定する **[CodecKind](https://docs.microsoft.com/uwp/api/windows.media.core.codeckind)** 値、エンコーダーとデコーダーのどちらを照会するかを指定する **[CodecCategory](https://docs.microsoft.com/uwp/api/windows.media.core.codeccategory)** 値、照会するメディア エンコード サブタイプを表す文字列 (H.264 ビデオや MP3 オーディオなど) が含まれます。
 
 すべてサブタイプのコーデックを返すには、サブタイプ値として空の文字列または null を指定します。 次の例では、デバイスにインストールされているすべてのビデオ エンコーダーの一覧が取得されます。
 
@@ -45,8 +45,8 @@ CodecQuery API は、**[Windows.Media.Core](https://docs.microsoft.com/uwp/api/w
 ## <a name="related-topics"></a>関連トピック
 
 * [メディア再生](media-playback.md)
-* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [メディア ファイルのトランスコード](transcode-media-files.md)
+* [MediaCapture で基本的な写真、ビデオ、およびオーディオのキャプチャします。](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [メディア ファイルをトランス コード](transcode-media-files.md)
 * [サポートされているコーデック](supported-codecs.md)
  
 

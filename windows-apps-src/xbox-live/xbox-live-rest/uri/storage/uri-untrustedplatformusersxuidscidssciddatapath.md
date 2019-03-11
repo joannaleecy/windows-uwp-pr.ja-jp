@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, UWP, Windows 10, Xbox One
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d722656412e0864b338c5444407572a13f5fbd0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926633"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650427"
 ---
 # <a name="untrustedplatformusersxuidxuidscidssciddatapath"></a>/untrustedplatform/users/xuid({xuid})/scids/{scid}/data/{path}
-指定されたパスのファイル情報の一覧を示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
+指定されたパスにファイル情報を一覧表示します。 これらの Uri のドメインが`titlestorage.xboxlive.com`します。
  
   * [URI パラメーター](#ID4EV)
  
@@ -24,20 +24,20 @@ ms.locfileid: "8926633"
  
 ## <a name="uri-parameters"></a>URI パラメーター
  
-| パラメーター| 型| 説明| 
+| パラメーター| 種類| 説明| 
 | --- | --- | --- | 
-| xuid| 64 ビットの符号なし整数| Xbox ユーザー ID を (XUID) プレイヤーの要求を行っているユーザー。| 
-| scid| guid| ルックアップ サービス構成の ID です。| 
-| path| string| 返されるデータ項目へのパス。 一致するすべてのディレクトリとサブディレクトリを取得する返されます。 有効な文字には、(A ~ Z) の大文字、小文字の英字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_)、およびスラッシュ (/) が含まれます。 空にすることがあります。 256 の最大の長さ。| 
+| xuid| 64 ビット符号なし整数| Xbox のユーザー ID を (XUID)、プレーヤーの要求を行う。| 
+| scid| guid| 検索するサービス構成の ID。| 
+| パス| string| 返されるデータのアイテムへのパス。 一致するすべてのディレクトリとサブディレクトリが返されるを取得します。 有効な文字には、大文字 (A ~ Z)、英小文字 (a ~ z)、数字 (0 ~ 9)、アンダー スコア (_) およびスラッシュ (/) が含まれます。 空にすることがあります。 最大長は 256 です。| 
   
 <a id="ID4EFC"></a>
 
  
 ## <a name="valid-methods"></a>有効なメソッド
 
-[GET](uri-untrustedplatformusersxuidscidssciddatapath-get.md)
+[取得](uri-untrustedplatformusersxuidscidssciddatapath-get.md)
 
-&nbsp;&nbsp;指定されたパスのファイル情報の一覧を示します。
+&nbsp;&nbsp;指定されたパスにファイル情報を一覧表示します。
  
 <a id="ID4EPC"></a>
 
@@ -49,6 +49,6 @@ ms.locfileid: "8926633"
  
 ##### <a name="parent"></a>Parent 
 
-[タイトル ストレージ URI](atoc-reference-storagev2.md)
+[ストレージ Uri のタイトル](atoc-reference-storagev2.md)
 
    

@@ -4,14 +4,14 @@ title: 印刷プレビュー UI のカスタマイズ
 description: このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 印刷
+keywords: windows 10、uwp、印刷
 ms.localizationpriority: medium
 ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046385"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643977"
 ---
 # <a name="customize-the-print-preview-ui"></a>印刷プレビュー UI のカスタマイズ
 
@@ -25,7 +25,7 @@ ms.locfileid: "9046385"
 
 このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 印刷機能の詳細については、「[アプリからの印刷](print-from-your-app.md)」を参照してください。
 
-**ヒント:** このトピックの例のほとんどは、サンプルに基づいて印刷します。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
+**ヒント:**  ほとんどの例では、このトピックでは、印刷のサンプルに基づいています。 完全なコードを確認するには、GitHub の [Windows-universal-samples リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619984)から[ユニバーサル Windows プラットフォーム (UWP) 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619979)をダウンロードしてください。
 
  
 
@@ -33,22 +33,22 @@ ms.locfileid: "9046385"
 
 既定では、印刷プレビュー UI には [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478)、[**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479)、および [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) の印刷オプションが表示されます。 これらに加え、印刷プレビュー UI に追加できるその他の一般的なプリンター オプションがいくつか用意されています。
 
--   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
+-   [**バインド**](https://msdn.microsoft.com/library/windows/apps/BR226476)
+-   [**照合順序**](https://msdn.microsoft.com/library/windows/apps/BR226477)
 -   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
--   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
--   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+-   [**メディアの種類**](https://msdn.microsoft.com/library/windows/apps/BR226484)
+-   [**後処理**](https://msdn.microsoft.com/library/windows/apps/BR226485)
+-   [**印刷品質**](https://msdn.microsoft.com/library/windows/apps/BR226487)
+-   [**ホチキス止め**](https://msdn.microsoft.com/library/windows/apps/BR226488)
 
 これらのオプションは、[**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) クラスで定義されます。 印刷プレビュー UI に表示されるオプションの一覧へのオプションの追加や、この一覧からのオプションの削除ができます。 また、オプションが表示される順序の変更や、ユーザーに表示される既定の設定の構成もできます。
 
 ただし、この方法を使って加えた変更は、印刷プレビュー UI にのみ影響します。 ユーザーは印刷プレビュー UI で **[その他の設定]** をタップすることで、プリンターでサポートされているすべてのオプションにいつでもアクセスできます。
 
-**注:**、選んだプリンターでサポートされているのみが印刷プレビュー UI に表示されるアプリは、表示される印刷オプションを指定しますが、します。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
+**注**  アプリは、表示される印刷オプションを指定しますが、印刷プレビュー UI、選択したプリンターでサポートされているものだけに表示されます。 印刷 UI には、選んだプリンターでサポートされないオプションは表示されません。
 
  
 
@@ -56,7 +56,7 @@ ms.locfileid: "9046385"
 
 アプリの画面が読み込まれると、印刷コントラクトに登録されます。 その登録には、[**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) イベント ハンドラーの定義が含まれています。 印刷プレビュー UI に表示されるオプションをカスタマイズするコードは、**PrintTaskRequested** イベント ハンドラーに追加します。
 
-[**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) イベント ハンドラーを変更して、印刷プレビュー UI に表示する印刷設定を構成する [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) 命令を含めます。印刷オプションのカスタマイズ リストを表示するアプリの画面の場合は、ヘルパー クラスの **PrintTaskRequested** イベント ハンドラーを上書きし、この画面が印刷されるときに表示するオプションを指定するコードを含めます。
+[  **PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) イベント ハンドラーを変更して、印刷プレビュー UI に表示する印刷設定を構成する [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) 命令を含めます。印刷オプションのカスタマイズ リストを表示するアプリの画面の場合は、ヘルパー クラスの **PrintTaskRequested** イベント ハンドラーを上書きし、この画面が印刷されるときに表示するオプションを指定するコードを含めます。
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要な**、印刷プレビュー UI に**他の設定**のリンクを含むからすべての印刷オプションの削除[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() を呼び出すことです。 印刷プレビュー UI に表示するオプションを必ず追加してください。
+**重要な**  呼び出す[ **displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() の印刷プレビュー UI からすべての印刷オプションが削除を含む、 **より多くの設定**リンク。 印刷プレビュー UI に表示するオプションを必ず追加してください。
 
 ### <a name="specify-default-options"></a>既定のオプションの指定
 
@@ -185,6 +185,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 ## <a name="related-topics"></a>関連トピック
 
-* [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [印刷のデザイン ガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [Build 2015 ビデオ:Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 印刷サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619984)

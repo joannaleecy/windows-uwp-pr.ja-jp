@@ -3,14 +3,14 @@ title: 条件付き XAML
 description: 以前のバージョンとの互換性を保ちながら、XAML マークアップで新しい API を使います
 ms.date: 10/10/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a3133508a0cb8919994543845412ef71a8d463fe
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050845"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57611767"
 ---
 # <a name="conditional-xaml"></a>条件付き XAML
 
@@ -183,7 +183,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 </Rectangle>
 ```
 
-あるプロパティを、条件付き名前空間に依存する別のプロパティにバインドする場合は、両方のプロパティで同じ条件を使う必要があります。 次の例では、`colorPicker.Color` は "contract5Present" 条件付き名前空間に依存するため、SolidColorBrush.Color プロパティにも "contract5Present" プレフィックスを付ける必要があります  (または、Color プロパティの代わりに SolidColorBrush に "contract5Present" プレフィックスを付けることもできます)。そうしないと、コンパイル時エラーが発生します。
+あるプロパティを、条件付き名前空間に依存する別のプロパティにバインドする場合は、両方のプロパティで同じ条件を使う必要があります。 次の例では、`colorPicker.Color` は "contract5Present" 条件付き名前空間に依存するため、SolidColorBrush.Color プロパティにも "contract5Present" プレフィックスを付ける必要があります  (または、カラー プロパティの代わりに、SolidColorBrush に 'contract5Present' プレフィックスを配置することができます)。ない場合は、コンパイル時エラーが表示されます。
 
 ```xaml
 <SolidColorBrush contract5Present:Color="{x:Bind colorPicker.Color, Mode=OneWay}"/>
@@ -245,5 +245,5 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 ## <a name="related-articles"></a>関連記事
 
 - [UWP アプリ ガイド](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [API コントラクトを使った機能の動的な検出](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [API コントラクトの機能を動的に検出します。](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API コントラクト](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 のビデオ)

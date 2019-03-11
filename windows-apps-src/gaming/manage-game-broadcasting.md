@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, ゲーム, ブロードキャスト
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930493"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57607587"
 ---
 # <a name="manage-game-broadcasting"></a>ゲームのブロードキャストを管理する
 この記事では、UWP アプリのゲームのブロードキャストを管理する方法を示します。 ユーザーは、Windows に組み込まれているシステム UI を使用してゲームのブロードキャストを開始する必要がありますが、Windows 10 バージョン 1709 以降、アプリでシステムのブロードキャスト UI を起動でき、ブロードキャストが開始および停止されたときには通知を受信できます。
@@ -33,7 +33,7 @@ ms.locfileid: "8930493"
 
 [!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
 
-**[ShowBroadcastUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** を呼び出すことによって、アプリのブロードキャスト UI をシステムで表示することを要求します。
+ **[ShowBroadcastUI](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** を呼び出すことによって、アプリのブロードキャスト UI をシステムで表示することを要求します。
 
 > [!NOTE] 
 > **ShowBroadcastUI** メソッドは、システムの現在の状態に応じて、成功しない可能性がある要求を示します。 アプリでは、このメソッドを呼び出した後、ブロードキャストが開始済みであることを想定しないでください。 ブロードキャストが開始または停止するときに通知される **[IsCurrentAppBroadcastingChanged](https://docs.microsoft.com/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** イベントを使用します。
