@@ -6,13 +6,13 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923109"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640817"
 ---
-# <a name="tutorial-create-a-user-interface"></a>チュートリアル: ユーザー インターフェイスの作成
+# <a name="tutorial-create-a-user-interface"></a>チュートリアル:ユーザー インターフェイスの作成
 
 このチュートリアルでは、イメージ編集プログラムの基本的な UI を作成する方法について説明します。 
 
@@ -32,33 +32,33 @@ ms.locfileid: "8923109"
 
 ## <a name="prerequisites"></a>前提条件
 
-* Visual Studio 2017: [Visual Studio 2017 Community (無料) のダウンロード](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10 SDK (10.0.15063.468 以降): [最新の Windows SDK (無料) のダウンロード](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Visual Studio 2017 の場合:[Visual Studio 2017 Community (無料) のダウンロードします。](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 またはそれ以降)。[(無料) の最新の Windows SDK をダウンロードします。](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
-## <a name="part-0-get-the-starter-code-from-github"></a>パート 0: github からスタート コードを入手する
+## <a name="part-0-get-the-starter-code-from-github"></a>Part 0:Github からスタート コードを取得します。
 
 このチュートリアルでは、PhotoLab サンプルの簡易バージョンから開始します。 
 
-1. 移動[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)します。 これで、サンプルの GitHub ページが表示されます。 
+1. 移動して[ https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)します。 これで、サンプルの GitHub ページが表示されます。 
 2. 次に、サンプルを複製またはダウンロードする必要があります。 **[Clone or download]** (複製またはダウンロード) ボタンをクリックします。 サブメニューが表示されます。
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
         <figcaption>PhotoLab サンプルの GitHub ページの <b>[Clone or download]</b> (複製またはダウンロード) メニュー。</figcaption>
     </figure>
 
-    **GitHub に慣れていない場合:**
+    **GitHub に精通していない場合は。**
     
     a.  **[Download ZIP]** (ZIP をダウンロード) をクリックし、ファイルをローカルに保存します。 これで、必要なすべてのプロジェクト ファイルを含む .zip ファイルがダウンロードされます。
-    b.  ファイルを展開します。 エクスプローラーを使用して、ダウンロードした .zip ファイルに移動し、ファイルを右クリックして **[すべて展開]** を選択します。c. サンプルのローカル コピーに移動し、`Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` ディレクトリに移動します。    
+    b.  ファイルを展開します。 エクスプローラーを使用して、ダウンロードした .zip ファイルに移動し、ファイルを右クリックして **[すべて展開]** を選択します.c  サンプルのローカル コピーに移動し、`Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` ディレクトリに移動します。    
 
-    **GitHub に慣れている場合:**
+    **GitHub に精通してする場合。**
 
     a.  リポジトリのマスター ブランチをローカルに複製します。
     b.  `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` ディレクトリに移動します。
 
 3. `Photolab.sln` をクリックしてプロジェクトを開きます。
 
-## <a name="part-1-add-a-textblock-using-xaml-designer"></a>パート 1: XAML デザイナーを使用して TextBlock を追加する
+## <a name="part-1-add-a-textblock-using-xaml-designer"></a>第 1 部:XAML デザイナーを使用して、TextBlock を追加します。
 
 Visual Studio には、XAML UI を簡単に作成するためのツールがいくつか用意されています。 XAML デザイナーでは、コントロールをデザイン サーフェイスにドラッグして、アプリを実行する前に外観を確認できます。 [プロパティ] パネルでは、デザイナーでアクティブになっているコントロールのすべてのプロパティを表示および設定できます。 ドキュメント アウトラインには、UI の XAML ビジュアル ツリーの親子構造が表示されます。 XAML エディターでは、XAML マークアップを直接入力および変更できます。
 
@@ -68,7 +68,7 @@ Visual Studio には、XAML UI を簡単に作成するためのツールがい�
 
 各ツールを使用すると UI の作成が容易になるため、このチュートリアルではこれらをすべて使います。 最初に、XAML デザイナーを使用してコントロールを追加しましょう。 
 
-**XAML デザイナーを使用してコントロールを追加するには:**
+**XAML デザイナーを使用してコントロールを追加します。**
 
 1. ソリューション エクスプローラーで、**MainPage.xaml** をダブルクリックして開きます。 これにより、UI 要素が追加されていない状態で、アプリのメイン ページが表示されます。
 
@@ -137,7 +137,7 @@ Visual Studio には、XAML UI を簡単に作成するためのツールがい�
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. [プロパティ] パネルの検索ボックスに「**textwrapping**」と入力して、**TextWrapping** プロパティを見つけます。 **TextWrapping** プロパティの_プロパティ マーカー_をクリックして、メニューを開きます  (_プロパティ マーカー_は、各プロパティ値の右側に表示される小さな四角形のシンボルです。 _プロパティ マーカー_は、プロパティが既定値以外に設定されていることを示す黒色になっています)。**[プロパティ]** メニューの **[リセット]** を選択して TextWrapping プロパティをリセットします。
+9. [プロパティ] パネルの検索ボックスに「**textwrapping**」と入力して、**TextWrapping** プロパティを見つけます。 **TextWrapping** プロパティのプロパティ マーカー_をクリックして、メニューを開きます_。 (_プロパティ マーカー_は、各プロパティ値の右側に表示される小さな四角形のシンボルです。 _プロパティ マーカー_は黒をプロパティが既定以外の値に設定されていることを示します)。**プロパティ**メニューの **リセット**TextWrapping プロパティをリセットします。
 
     Visual Studio によってこのプロパティが追加されますが、適用したスタイルに既に設定されているため、ここでは必要ありません。
 
@@ -148,7 +148,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 > [!NOTE]
 > チュートリアルのこの部分では、ドラッグ アンド ドロップでコントロールを追加しました。 コントロールは、[ツールボックス] でそのコントロールをダブルクリックして追加することもできます。 この方法を試し、Visual Studio によって生成される XAML で違いを確認してください。
 
-## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>パート 2: XAML エディターを使用して GridView コントロールを追加する
+## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>パート 2:XAML エディターを使用して、GridView コントロールを追加します。
 
 パート 1 では XAML の基本を紹介し、Visual Studio から提供される他のツールをいくつか見ていただきました。 ここでは、XAML エディターを使用して、XAML マークアップを直接操作します。 XAML に慣れると、この方法の方が効率的であると感じられるかもしれません。
 
@@ -156,11 +156,11 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 次に、データを表示するための [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) コントロールを追加します。
 
-**XAML エディターを使用してコントロールを追加する**
+**XAML エディターを使用してコントロールを追加します。**
 
 1. XAML エディターで、ルートの **Grid** を **RelativePanel** に変更します。
 
-    **変更前**
+    **以前は**
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
           <TextBlock x:Name="TitleTextBlock"
@@ -170,7 +170,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
     </Grid>
     ```
 
-    **変更後**
+    **後**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -182,9 +182,9 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
     **RelativePanel** を使用したレイアウトについて詳しくは、「[レイアウト パネル](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)」をご覧ください。
 
-2. **TextBlock** 要素の下に、ImageGridView という名前の **GridView コントロール**を追加します。 **RelativePanel** の添付プロパティ__ を設定して、コントロールをタイトル テキストの下に配置し、画面の横幅一杯に表示します。
+2. **TextBlock** 要素の下に、ImageGridView という名前の **GridView コントロール**を追加します。 設定、 **RelativePanel** _添付プロパティ_コントロールのタイトル テキストの下に配置され、画面の幅全体にまたがって伸縮します。
 
-    **追加する XAML**
+    **この XAML を追加します。**
 
     ```xaml
     <GridView x:Name="ImageGridView"
@@ -194,7 +194,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
               RelativePanel.Below="TitleTextBlock"/>
     ```
 
-    **追加先: TextBlock の後**
+    **TextBlock の後**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -228,25 +228,25 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 > [!NOTE]
 > **RelativePanel** を使用したレイアウトについて詳しくは、「[レイアウト パネル](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)」をご覧ください。 その後で、**TextBlock** と **GridView** の RelativePanel 添付プロパティを設定することで、さまざまなレイアウトを試してください。
 
-## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>パート 3: データに DataTemplate を追加する
+## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>パート 3:データを表示するデータ テンプレートを追加します。
 
 ここでは、データの表示方法を GridView に伝える [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) を作成します。 データ テンプレートについて詳しくは、「[項目コンテナーやテンプレート](../controls-and-patterns/item-containers-templates.md)」をご覧ください。
 
 ここでは、希望のレイアウトを作成するためのプレースホルダーのみを追加します。 [XAML データ バインディング](../../data-binding/xaml-basics-data-binding.md)に関するチュートリアルでは、これらのプレースホルダーを **ImageFileInfo** クラスの実際のデータに置き換えます。 データ オブジェクトがどのようになっているか確認するには、ここで ImageFileInfo.cs ファイルを開くこともできます。
 
-**データ テンプレートをグリッド ビューに追加する**
+**データ テンプレートをグリッド ビューに追加します。**
 
 1. MainPage.xaml を開きます。
 
 2. 評価を表示するには、[Telerik UI for UWP](https://github.com/telerik/UI-For-UWP) という NuGet パッケージの **RadRating** コントロールを使用します。 Telerik コントロールの名前空間を指定する XAML 名前空間の参照を追加します。 これを **Page** の開始タグ内 (他の一連の xmlns: エントリの直後) に配置します。
 
-    **追加する XAML**
+    **この XAML を追加します。**
 
     ```xaml
     xmlns:telerikInput="using:Telerik.UI.Xaml.Controls.Input"
     ```
 
-    **追加先: 最後の xmlns: エントリの後**
+    **最後の後に ' xmlns:' エントリ**
 
     ```xaml
     <Page x:Name="page"
@@ -263,7 +263,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
     XAML 名前空間について詳しくは、「[XAML 名前空間と名前空間マッピング](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)」をご覧ください。
 
-3. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで、**[追加テンプレートの編集] > [生成されたアイテムの編集 (ItemTemplate)] > [空アイテムの作成]** を選択します。**[リソースの作成]** ダイアログが開きます。
+3. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで選択**追加テンプレートの編集 > 生成した項目の編集 (ItemTemplate) > 空を作成しています.**.**リソースの作成**ダイアログ ボックスが開きます。
 
 4. ダイアログで、[名前 (キー)] の値を **ImageGridView_DefaultItemTemplate** に変更し、**[OK]** をクリックします。
 
@@ -296,12 +296,12 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 5. **ImageGridView_DefaultItemTemplate** リソースで、ルートの **Grid** の Height と Width に **300**、Margin に **8** を割り当てます。 次に、2 つの行を追加し、2 番目の行の Height を **Auto** に設定します。
 
-    **変更前**
+    **以前は**
     ```xaml
     <Grid/>
     ```
 
-    **変更後**
+    **後**
     ```xaml
     <Grid Height="300"
           Width="300"
@@ -323,9 +323,9 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
     **StackPanel** レイアウトについて詳しくは、「[レイアウト パネル](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel)」をご覧ください。
 
-    c.  外側 (垂直方向) の **StackPanel** に **RadRating** コントロールを追加します。 これは内側 (水平方向) の **StackPanel** の後に配置します。
+    c. 外側 (垂直方向) の **StackPanel** に **RadRating** コントロールを追加します。 これは内側 (水平方向) の **StackPanel** の後に配置します。
 
-    **最終的なテンプレート**
+    **完成したテンプレート**
 
     ```xaml
     <Grid Height="300"
@@ -380,13 +380,13 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 ![アプリの UI チェックポイント 2](images/xaml-basics/layout-1.png)
 
-## <a name="part-4-modify-the-item-container-style"></a>パート 4: 項目コンテナーのスタイルを変更する
+## <a name="part-4-modify-the-item-container-style"></a>パート 4:項目のコンテナーのスタイルを変更します。
 
 項目のコントロール テンプレートには、選択、ホバー、フォーカスなどの状態を表示する視覚効果が含まれています。 これらの視覚効果は、データ テンプレートの上または下にレンダリングされます。 ここでは、コントロール テンプレートの **Background** プロパティおよび **Margin** プロパティを変更して、**GridView** 項目の背景色を灰色にします。
 
-**項目コンテナーを変更する**
+**項目コンテナーを変更します。**
 
-1. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで、**[追加テンプレートの編集] > [生成されたアイテム コンテナーの編集 (ItemContainerStyle)] > [コピーして編集]** を選択します。**[リソースの作成]** ダイアログが開きます。
+1. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで、次のように選択します**追加テンプレートの編集 > 生成されたアイテム コンテナーを編集 (ItemContainerStyle) > コピーして編集。**.**リソースの作成**ダイアログ ボックスが開きます。
 
 2. ダイアログで、[名前 (キー)] の値を **ImageGridView_DefaultItemContainerStyle** に変更し、**[OK]** をクリックします。
 
@@ -440,24 +440,24 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 3. **Background** プロパティの値を **Gray** に変更します。
 
-    **変更前**
+    **以前は**
     ```xaml
         <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
     ```
 
-    **変更後**
+    **後**
     ```xaml
         <Setter Property="Background" Value="Gray"/>
     ```
 
 4. **Margin** プロパティの値を **8** に変更します。
 
-    **変更前**
+    **以前は**
     ```xaml
         <Setter Property="Margin" Value="0,0,4,4"/>
     ```
 
-    **変更後**
+    **後**
     ```xaml
         <Setter Property="Margin" Value="8"/>
     ```
@@ -469,7 +469,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 > [!Note]
 > 時間に余裕があれば、Background プロパティと Margin プロパティをさまざまな値に設定して、その結果がどうなるか試してみてください。
 
-## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>パート 5: レイアウトに最終調整を適用する
+## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>パート 5:レイアウトにいくつかの最終的な調整を適用します。
 
 イメージをページの中央に配置するには、ページ内で Grid の配置を調整する必要があります。 それとも、**GridView** 内でイメージの配置を調整した方がよいでしょうか。 どちらでも同じでしょうか?  見てみましょう。
 
@@ -477,11 +477,11 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 (この手順で、**GridView** の **Background** を好きな色に設定することもできます。 その方が、レイアウトの変化がわかりやすくなります。)
 
-**イメージの配置を変更する**
+**イメージの配置を変更します。**
 
 1. **Gridview** で、**HorizontalAlignment** プロパティを **Center** に設定します。
 
-    **変更前**
+    **以前は**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -492,7 +492,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
     ```
 
-    **変更後**
+    **後**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -510,7 +510,7 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 3. 前の手順で使用した **HorizontalAlignment** 設定を削除します。
 
-4. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで、**[追加テンプレートの編集] > [アイテムのレイアウトの編集 (ItemsPanel)] > [コピーして編集]** を選択します。**[リソースの作成]** ダイアログが開きます。
+4. ドキュメント アウトラインで、**ImageGridView** を右クリックします。 コンテキスト メニューで、次のように選択します**追加テンプレートの編集 > 編集の項目のレイアウト (ItemsPanel) > コピーして編集。**.**リソースの作成**ダイアログ ボックスが開きます。
 
 5. ダイアログで、[名前 (キー)] の値を **ImageGridView_ItemsPanelTemplate** に変更し、**[OK]** をクリックします。
 
@@ -526,14 +526,14 @@ XAML デザイナーでは黒色の背景に白色のテキストが表示され
 
 6. **ItemsWrapGrid** で、**HorizontalAlignment** プロパティを **Center** に設定します。
 
-    **変更前**
+    **以前は**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" />
     </ItemsPanelTemplate>
     ```
 
-    **変更後**
+    **後**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal"
