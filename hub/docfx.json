@@ -29,7 +29,13 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "bilingual_type": "hover over"
+      "bilingual_type": "hover over",
+      "_op_documentIdPathDepotMapping": {
+        "./": {
+          "depot_name": "MSDN.hub",
+          "folder_relative_path_in_docset": "./"
+        }
+      }
     },
     "fileMetadata": {},
     "template": [],
