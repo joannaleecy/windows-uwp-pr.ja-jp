@@ -146,7 +146,7 @@ items:
       href: controls-and-patterns/app-bars.md
     - name: コマンド バーのポップアップ
       href: controls-and-patterns/command-bar-flyout.md
-    - name: メニューとコンテキスト メニュー
+    - name: メニューとショートカット メニュー
       href: controls-and-patterns/menus.md
   - name: ナビゲーション
     items:
@@ -154,7 +154,7 @@ items:
       href: controls-and-patterns/master-details.md
     - name: ナビゲーション ビュー
       href: controls-and-patterns/navigationview.md
-    - name: ピボット
+    - name: Pivot
       href: controls-and-patterns/pivot.md
   - name: People
     items:
@@ -174,7 +174,7 @@ items:
       href: controls-and-patterns/calendar-view.md
     - name: 日付の選択コントロール
       href: controls-and-patterns/date-picker.md
-    - name: 時刻の選択
+    - name: 時刻の選択コントロール
       href: controls-and-patterns/time-picker.md
   - name: スクロール
     items:
@@ -190,7 +190,7 @@ items:
       href: controls-and-patterns/progress-controls.md
     - name: ヒント
       href: controls-and-patterns/tooltips.md
-  - name: テキスト
+  - name: Text
     items:
     - name: 概要
       href: controls-and-patterns/text-controls.md
@@ -212,7 +212,7 @@ items:
       href: controls-and-patterns/content-links.md
     - name: 手書きビュー
       href: controls-and-patterns/text-handwriting-view.md
-- name: 形式
+- name: スタイル
   items:
   - name: 概要
     href: style/index.md
@@ -359,7 +359,7 @@ items:
         href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
       - name: 定期的な通知
         href: shell/tiles-and-notifications/periodic-notification-overview.md
-    - name: Windows プッシュ通知サービス
+    - name: Windows プッシュ通知サービス (WNS)
       href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
       items:
       - name: WNS の優先順位
@@ -408,9 +408,9 @@ items:
       href: input/keyboard-events.md
     - name: タッチ キーボードの表示への応答
       href: input/respond-to-the-presence-of-the-touch-keyboard.md
-    - name: 入力スコープを使用してタッチ キーボードを変更する
+    - name: 入力値の種類を使ったタッチ キーボードの変更
       href: input/use-input-scope-to-change-the-touch-keyboard.md
-  - name: ゲームパッドとリモコン
+  - name: ゲームパッドとリモート制御
     href: input/gamepad-and-remote-interactions.md
   - name: タッチパッド
     href: input/touchpad-interactions.md
@@ -441,7 +441,7 @@ items:
       href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
     - name: フォアグラウンド アプリのアクティブ化
       href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
-    - name: 音声コマンド定義 (VCD) の語句一覧の変更
+    - name: 音声コマンド定義 (VCD) の語句一覧の動的変更
       href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
     - name: バックグラウンド アプリの起動
       href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
@@ -565,8 +565,8 @@ items:
 - name: 設計ツールキット
   href: downloads/index.md
 ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117451"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583589"

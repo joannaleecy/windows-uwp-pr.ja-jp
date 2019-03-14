@@ -1,25 +1,19 @@
 ---
-description: Windows Template Studio は、UWP アプリをすばやく作成するための Visual Studio 拡張機能です。
+description: Windows Template Studio は、UWP アプリをすばやく作成するための Visual Studio の拡張機能です。
 title: Windows Template Studio
 template: detail.hbs
 ms.date: 05/10/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'windows 10, uwp'
 pm-contact: clint.rutkas
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfb593508ef6e366e133b04e7c47344e09d33dd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919341"
 ---
-# <a name="windows-template-studio"></a><span data-ttu-id="331a7-104">Windows Template Studio</span><span class="sxs-lookup"><span data-stu-id="331a7-104">Windows Template Studio</span></span>
+# <a name="windows-template-studio"></a><span data-ttu-id="8a423-104">Windows Template Studio</span><span class="sxs-lookup"><span data-stu-id="8a423-104">Windows Template Studio</span></span>
 
 ![ヒーロー イメージ](images/wts1.png)
 
-<span data-ttu-id="331a7-106">Windows テンプレート Studio (WTS) は、Visual Studio 2017 拡張ウィザード ベースのエクスペリエンスを使用して、新しいユニバーサル Windows プラットフォーム (UWP) アプリの作成を加速します。</span><span class="sxs-lookup"><span data-stu-id="331a7-106">Windows Template Studio (WTS) is a Visual Studio 2017 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience.</span></span> <span data-ttu-id="331a7-107">結果として得られる UWP プロジェクトでは、実証済みのパターンとベスト プラクティスを実装するときに最新の Windows 10 の機能が組み込まれた適切な形式で読みやすいコードを示します。</span><span class="sxs-lookup"><span data-stu-id="331a7-107">The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.</span></span> <span data-ttu-id="331a7-108">生成されたコード全体でのさまざまな箇所便利な情報を提供するドキュメント、Stack Overflow とブログへのリンクがあります。</span><span class="sxs-lookup"><span data-stu-id="331a7-108">Sprinkled throughout the generated code we have links Docs, Stack Overflow and blogs to provide useful insights.</span></span> <span data-ttu-id="331a7-109">WTS では、c# または Visual Basic で作成するアプリをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="331a7-109">WTS supports creating apps in C# or Visual Basic.</span></span>
+<span data-ttu-id="8a423-106">Windows Template Studio (WTS) は Visual Studio 2017 の拡張機能であり、ウィザード ベースのエクスペリエンスを使用して、新しいユニバーサル Windows プラットフォーム (UWP) アプリをより迅速に作成できます。</span><span class="sxs-lookup"><span data-stu-id="8a423-106">Windows Template Studio (WTS) is a Visual Studio 2017 Extension that accelerates the creation of new Universal Windows Platform (UWP) apps using a wizard-based experience.</span></span> <span data-ttu-id="8a423-107">結果として得られる UWP プロジェクトは、実証済みのパターンとベスト プラクティスを実装するときに、最新の Windows 10 機能を組み込む適切な形式の読み取り可能なコードです。</span><span class="sxs-lookup"><span data-stu-id="8a423-107">The resulting UWP project is well-formed, readable code that incorporates the latest Windows 10 features while implementing proven patterns and best practices.</span></span> <span data-ttu-id="8a423-108">生成されるコード全体に、有益な情報を提供する Docs、Stack Overflow、およびブログへのリンクが点在しています。</span><span class="sxs-lookup"><span data-stu-id="8a423-108">Sprinkled throughout the generated code we have links Docs, Stack Overflow and blogs to provide useful insights.</span></span> <span data-ttu-id="8a423-109">WTS は、C# または Visual Basic でのアプリの作成に対応しています。</span><span class="sxs-lookup"><span data-stu-id="8a423-109">WTS supports creating apps in C# or Visual Basic.</span></span>
 
-<span data-ttu-id="331a7-110">詳細については、 [github プロジェクト リポジトリ](https://github.com/microsoft/windowsTemplateStudio)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="331a7-110">For more information, please visit the [project repo on GitHub](https://github.com/microsoft/windowsTemplateStudio).</span></span>
+<span data-ttu-id="8a423-110">詳細については、[GitHub のプロジェクト リポジトリ](https://github.com/microsoft/windowsTemplateStudio)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a423-110">For more information, please visit the [project repo on GitHub](https://github.com/microsoft/windowsTemplateStudio).</span></span>
 

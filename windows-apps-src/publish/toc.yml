@@ -59,7 +59,7 @@ items:
       href: ../publish/supported-languages.md
     - name: アプリ パッケージ管理のガイダンス
       href: ../publish/guidance-for-app-package-management.md
-  - name: アプリの Microsoft Store 登録情報の作成
+  - name: アプリのストア登録情報の作成
     href: ../publish/create-app-store-listings.md
     items:
     - name: 人の心をつかむアプリの説明を書く
@@ -68,7 +68,7 @@ items:
       href: ../publish/app-screenshots-and-images.md
     - name: ストア登録情報のインポートとエクスポート
       href: ../publish/import-and-export-store-listings.md
-    - name: プラットフォーム固有の Store 登録情報の作成
+    - name: プラットフォーム固有のストア登録情報の作成
       href: ../publish/create-platform-specific-store-listings.md
   - name: 申請オプションの管理
     href: ../publish/manage-submission-options.md
@@ -99,7 +99,7 @@ items:
     href: ../publish/enter-add-on-properties.md
   - name: アドオンの価格と使用可能状況の設定
     href: ../publish/set-add-on-pricing-and-availability.md
-  - name: アドオンの Store 登録情報の作成
+  - name: アドオンのストア登録情報の作成
     href: ../publish/create-add-on-store-listings.md
 - name: アプリ内広告
   href: ../publish/in-app-ads.md
@@ -159,15 +159,15 @@ items:
 - name: アプリのパフォーマンスの分析
   href: ../publish/analytics.md
   items:
-  - name: 取得レポート
+  - name: '[取得] レポート'
     href: ../publish/acquisitions-report.md
-  - name: '[アドオン取得] レポート'
+  - name: アドオン取得レポート
     href: ../publish/add-on-acquisitions-report.md
-  - name: '[使用状況] レポート'
+  - name: 利用状況レポート
     href: ../publish/usage-report.md
   - name: 状態レポート
     href: ../publish/health-report.md
-  - name: 評価レポート
+  - name: レーティング レポート
     href: ../publish/ratings-report.md
   - name: レビュー レポート
     href: ../publish/reviews-report.md
@@ -196,7 +196,7 @@ items:
     href: ../publish/tax-details-for-paid-apps.md
   - name: IRS の税関連の書類について
     href: ../publish/understand-irs-tax-forms.md
-  - name: 通信事業者の請求
+  - name: 携帯電話会社による課金
     href: ../publish/mobile-operator-billing.md
   - name: 付加価値税情報
     href: ../publish/vat-info.md
@@ -213,8 +213,8 @@ items:
   - name: 開発者倫理規定
     href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
 ms.openlocfilehash: d44affff4838b8799bfd2e82e4f57058d60e657b
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042472"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57582986"

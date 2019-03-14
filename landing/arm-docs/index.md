@@ -1,56 +1,51 @@
 ---
 layout: LandingPage
-description: このページは、ARM64 win32 および UWP アプリの開発を開始するための情報を提供します。
+description: このページでは、ARM64 win32 および UWP アプリの開発を開始するための情報を提供します。
 title: ARM 版 Windows 10
 author: msatranjr
 ms.author: misatran
 ms.date: 05/08/2018
 ms.localizationpriority: medium
 ms.topic: article
-keywords: ARM、ARM、ARM64 の win32 アプリの構築、ARM64 ドライバーのビルドで Windows 10
-ms.openlocfilehash: 83f2a0d03040a682e6965558174294fe27e21bfb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929472"
+keywords: 'ARM 版 Windows 10, ARM, win32 ARM64 アプリの構築, ARM64 ドライバーの構築'
 ---
-# <a name="windows-10-on-arm"></a>ARM 版 Windows 10
-Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 このページは、プラットフォームについて詳しくは、アプリの開発を開始するための情報を提供します。 また、ページの下部にあるリンクを使用して、フィードバックをお勧めします。
 
-## <a name="introductory-videos"></a>別の入門ビデオ
-観察し、Windows 10 が ARM で実行する方法について説明します。
+# <a name="windows-10-on-arm"></a>ARM 版 Windows 10
+Windows 10 は、ARM プロセッサ搭載の PC で実行されます。 このページでは、プラットフォームについてさらに学習し、アプリの開発を開始するための情報を提供します。 ページの下部にあるリンクを使用して、フィードバックを提供することもお勧めします。
+
+## <a name="introductory-videos"></a>入門ビデオ
+ARM での Windows 10 の実行方法を視聴して学習します。
 
 <ul class="cols cols3">
     <li>
         <a href="https://youtu.be/OZtVBDeVqCE"><img alt="Building ARM64 Win32 C++ apps video" src="./images/Arm64Scaled.png" /></a>
-        <h3>ARM64 Win32 C++ アプリの構築</h3><p>Visual Studio の ARM64 ツールをインストールする方法について説明します。 について説明しますするを作成して、新しい ARM 64 プロジェクトのコンパイルの手順を実行します。</p>
+        <h3>ARM64 Win32 C++ アプリの構築</h3><p>Visual Studio 用の ARM64 ツールのインストール方法について学習します。 その後、新しい ARM 64 プロジェクトの作成およびコンパイル手順を確認します。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Build/2018/BRK2438"><img alt="Build 2018 Windows 10 on ARM for developers" src="./images/buildVideoStillScaled.png" /></a>
-        <h3>開発者向けの ARM でビルド 2018 Windows 10</h3><p>については、Windows 10 on ARM デバイス、方法、魔法のような x86 エミュレーションのしくみと、最後に提出し、ARM での Windows 10 のアプリを構築する方法。 デスクトップと UWP の ARM64 アプリを構築する方法表示されます。</p>
+        <h3>開発者向け ARM 版 2018 Windows 10 を構築する</h3><p>ARM 版 Windows 10 デバイス、x86 エミュレーション機能のしくみ、最後に ARM 版 Windows 10 向けアプリの提出と構築方法について学習します。 デスクトップと UWP 向け ARM64 アプリの構築方法をご覧いただけます。</p>
     </li>
     <li>
         <a href="https://channel9.msdn.com/Events/Ch9Live/Windows-Community-Standup/Kevin-Gallo-January-2018"><img alt="Community standup video featuring Kevin Gallo" src="./images/communityStandupStillScaled.png" /></a>
-        <h3>Kevin Gallo とスタンド Windows コミュニティ</h3><p>ARM64 での Windows 10 を実行する方法の詳細についての理解を取得し、アプリとこのプラットフォームでのエクスペリエンスの感覚を取得します。</p>
+        <h3>Windows Community Standup と Kevin Gallo 氏</h3><p>ARM64 で Windows 10 を実行する方法についてよく理解し、このプラットフォームでのアプリとエクスペリエンスがどのようなものであるかを確認します。</p>
     </li>
 </ul>
 
-## <a name="understanding-windows-10-on-arm"></a>ARM での Windows 10 の概要
-これらのリソースを見て、プラットフォームを理解して取得します。
+## <a name="understanding-windows-10-on-arm"></a>ARM 版 Windows 10 について
+これらのリソースを確認することで、プラットフォームを理解します。
 
 <ul class="cardsF panelContent cols cols2">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm" title="概要" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm" title="作業の開始" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Get started icon" src="/media/common/i_get-started.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>Arm 版 Windows 10 を概要します。</h3>
-                    <p class="x-hidden-focus">基本を理解するドキュメントを確認します。</p>
+                    <h3>ARM 版 Windows 10 での作業を開始する</h3>
+                    <p class="x-hidden-focus">基本を理解するためのドキュメントを確認します。</p>
                 </div>
             </div>
         </div>
@@ -58,14 +53,14 @@ Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-x86-emulation" title="トピックの x86 エミュレーション" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-x86-emulation" title="x86 エミュレーションに関するトピック" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="x86 emulation icon" src="/media/common/i_advanced.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>学習方法 x86 エミュレーションのしくみ</h3>
-                    <p class="x-hidden-focus">この arm 版 Windows 10 の主な機能についてすべてをについて説明します。</p>
+                    <h3>x86 エミュレーションのしくみを学習する</h3>
+                    <p class="x-hidden-focus">ARM 版 Windows 10 のこの主要な機能の全容を確認します。</p>
                 </div>
             </div>
         </div>
@@ -88,21 +83,21 @@ Windows 10 は、ARM プロセッサを搭載する Pc で実行されます。 
     </li>-->
 </ul>
 
-## <a name="developing-for-windows-10-on-arm"></a>Arm 版 Windows 10 用の開発
-ARM での Windows 10 にアプリの調整を起動し、活用利用可能な機能があります。  
+## <a name="developing-for-windows-10-on-arm"></a>ARM 版 Windows 10 の開発
+まず、ARM 版 Windows 10 に合わせてアプリを調整し、そこで利用可能な機能を活用します。  
 
 <ul class="cardsF panelContent cols cols3">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="ARM64 アプリの開発" data-linktype="absolute-path">
+                <a class="card" href="https://blogs.windows.com/buildingapps/?p=52087" title="ARM64 アプリの構築" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Build ARM64 Win32 apps blog icon" src="/media/common/i_build.svg" data-linktype="external" />
                     </div>
                     </a>
                 <div class="cardText">
-                    <h3>SDK で ARM64 アプリの構築</h3>
-                    <p class="x-hidden-focus">この場所を説明します ARM64 arm 版 Windows 10 でネイティブに実行すると、アプリをコンパイルするブログの投稿を確認します。</p>
+                    <h3>SDK での ARM64 アプリの構築</h3>
+                    <p class="x-hidden-focus">ARM 版 Windows 10 でネイティブに実行するために ARM64 としてアプリをコンパイルする手順について説明する、このブログ投稿を確認します。</p>
                 </div>
             </div>
         </div>
@@ -110,14 +105,14 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-arm32" title="Arm32 アプリのトラブルシューティング" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-arm32" title="arm32 アプリのトラブルシューティング" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="UWP apps on ARM icon" src="/media/common/i_code-edit.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>ARM での UWP アプリ</h3>
-                    <p class="x-hidden-focus">成功した場合に、ユニバーサル Windows プラットフォーム (UWP) アプリを設定するには、このガイダンスに従ってください。</p>                    
+                    <h3>ARM の UWP アプリ</h3>
+                    <p class="x-hidden-focus">ユニバーサル Windows プラットフォーム (UWP) アプリを正しくに設定できるように、このガイダンスに従ってください。</p>                    
                 </div>
             </div>
         </div>
@@ -125,14 +120,14 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="アプリを ARM64 のデバッグ" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/debugger/debugging-arm64" title="ARM64 アプリのデバッグ" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                              <img class="cardImage" role="presentation" alt="Debugging on ARM icon" src="/media/common/i_debug.svg" data-linktype="external" />
                     </div>
                 </a>
                 <div class="cardText">
                     <h3>ARM でのデバッグ</h3>
-                    <p class="x-hidden-focus">Arm 版 Windows 10 でスムーズに実行されているコードを取得します。</p>
+                    <p class="x-hidden-focus">ARM 版 Windows 10 でコードがスムーズに実行されるようにします。</p>
                 </div>
             </div>
         </div>
@@ -140,7 +135,7 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows-hardware/drivers/develop/building-arm64-drivers" title="ARM64 ドライバーのビルド" data-linktype="absolute-path">
+                <a class="card" href="/windows-hardware/drivers/develop/building-arm64-drivers" title="ARM64 ドライバーの構築" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="Building ARM64 drivers icon" src="/media/common/i_drivers.svg" data-linktype="external" />
                             </a>
@@ -156,15 +151,15 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     <li>
         <div class="cardSize">
             <div class="cardPadding">
-                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-x86" title="トラブルシューティングの x86 アプリ" data-linktype="absolute-path">
+                <a class="card" href="/windows/uwp/porting/apps-on-arm-troubleshooting-x86" title="x86 アプリのトラブルシューティング" data-linktype="absolute-path">
                     <div class="cardImageOuter">
                             <img class="cardImage" role="presentation" alt="x86 apps on ARM icon" src="/media/common/i_code-blocks.svg" data-linktype="external" />
                             </a>
                     </div>
                 </a>
                 <div class="cardText">
-                    <h3>x86 ARM でのアプリ</h3>
-                    <p class="x-hidden-focus">開発 x86 アプリが ARM での Windows 10 での最高を実行します。</p>
+                    <h3>ARM の x86 アプリ</h3>
+                    <p class="x-hidden-focus">ARM 版 Windows 10 で最適に実行されるように x86 アプリを開発します。</p>
                 </div>
             </div>
         </div>
@@ -191,16 +186,16 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
     </li>
 </ul>-->
 
-## <a name="let-us-know-if-you-have-feedback"></a>知らせフィードバックがあるかどうか
-継続的にして、既存のお客様からのフィードバックを活用することにより、製品を向上しますがします。 把握している、問題に保持されているか、単に適切ではどのように共有する場合、エクスペリエンスは、これらのリンクに役立ちます。
+## <a name="let-us-know-if-you-have-feedback"></a>フィードバックがある場合はお知らせください
+お客様自身および既存のお客様からのフィードバックを活かし、製品を継続的に改善しています。 アイデアがある場合や、問題が発生してお困りの場合、あるいは単にご自身のエクスペリエンスがいかにすばらしいかを共有したい場合は、これらのリンクが役立ちます。
 
 <ul class="cardsM cols cols3">
 <li>
         <a class="card" href="feedback-hub://?tabid=2&contextid=803" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Feedback hub icon" src="/media/common/i_feedback.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>フィードバック hub を使用します。</h3>
-                <p>でしたられなかったものかどうか。 優れたアイデアはありますか。 フィードバック Hub で知らせします。</p>
+                <h3>フィードバック Hub を使用する</h3>
+                <p>何か足りないものがありますか。 すばらしいアイデアがありますか。 フィードバック Hub でお知らせください。</p>
             </div>
         </a>
     </li>
@@ -208,8 +203,8 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
         <a class="card" href="mailto:woafeedback@microsoft.com" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Report a bug icon" src="/media/common/i_mail.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>バグを報告します。</h3>
-                <p>このプラットフォームでバグを発見するかどうか。 詳細をマイクロソフトにメールを送信します。</p>
+                <h3>バグを報告する</h3>
+                <p>プラットフォームでバグが見つかりましたか。 詳細を含むメールを送信してください。</p>
             </div>
         </a>
     </li>
@@ -217,8 +212,8 @@ ARM での Windows 10 にアプリの調整を起動し、活用利用可能な�
         <a class="card" href="https://github.com/MicrosoftDocs/windows-uwp/tree/docs/landing/arm-docs" data-linktype="absolute-path">
             <img class="cardImage" role="presentation" alt="Give doc feedback icon" src="/media/common/i_form.svg" data-linktype="external" />
             <div class="cardText">
-                <h3>フィードバックのドキュメント</h3>
-                <p>ドキュメントで問題が見つかったかどうか。 ものより明確にしますか。 ドキュメントの GitHub リポジトリで懸案事項を作成します。</p>
+                <h3>ドキュメントについてフィードバックする</h3>
+                <p>ドキュメントに問題がありましたか。 もっとわかりやすくしてほしい内容がありますか。 ドキュメント GitHub リポジトリで問題を作成してください。</p>
             </div>
         </a>
     </li>
