@@ -1,17 +1,11 @@
 ---
-title: 起動、再開、バックグラウンド タスク
+title: 起動、再開、およびバックグラウンド タスク
 description: このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.date: 10/04/2017
 ms.topic: article
-keywords: windows 10, uwp, バック グラウンド タスクでは、アプリのサービスに接続されているデバイス、リモート システム
+keywords: 'windows 10, uwp, バックグラウンド タスク, アプリ サービス, 接続済みのデバイス, リモート システム'
 ms.localizationpriority: medium
-ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923951"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>起動、再開、およびバックグラウンド タスク
 
@@ -33,12 +27,12 @@ ms.locfileid: "8923951"
 
 | トピック | 説明 |
 |-------|-------------|
-| [アプリのライフ サイクル](app-lifecycle.md)               | UWP アプリのライフ サイクルと、Windows がアプリを起動、中断、再開したときの動作について説明します。 |
+| [アプリのライフサイクル](app-lifecycle.md)               | UWP アプリのライフ サイクルと、Windows がアプリを起動、中断、再開したときの動作について説明します。 |
 | [アプリの事前起動の処理](handle-app-prelaunch.md) | アプリの事前起動を処理する方法について説明します。                                                                              |
 | [アプリのアクティブ化の処理](activate-an-app.md)     | アプリのアクティブ化を処理する方法について説明します。                                                                             |
-| [アプリの中断の処理](suspend-an-app.md)         | システムがアプリを一時停止するときに重要なアプリケーション データを保存する方法を説明します。                                 |
+| [アプリの中断の処理](suspend-an-app.md)         | システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。                                 |
 | [アプリの再開の処理](resume-an-app.md)           | システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。                                        |
-| [アプリがバックグラウンドに移動したときの空きメモリ](reduce-memory-usage.md) | バックグラウンド状態になっているときにアプリで使用するメモリ量を減らして、アプリが終了しないようにする方法を説明します。|
+| [アプリがバックグラウンドに移動したときのメモリの解放](reduce-memory-usage.md) | バックグラウンド状態になっているときにアプリで使用するメモリ量を減らして、アプリが終了しないようにする方法を説明します。|
 | [延長実行を使ってアプリの中断を延期する](run-minimized-with-extended-execution.md) | 延長実行を使用して、アプリが最小化されているときにアプリの実行を保持する方法について説明します。 |
 
 ## <a name="launch-apps"></a>アプリの起動
@@ -59,7 +53,7 @@ ms.locfileid: "8923951"
 | [Windows 設定アプリの起動](launch-settings-app.md) | アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。 |
 | [Microsoft Store アプリの起動](launch-store-app.md) | このトピックでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、UWP アプリを起動し、Store 内の特定のページを表示できます。 |
 | [Windows マップ アプリの起動](launch-maps-app.md) | アプリから Windows マップ アプリを起動する方法について説明します。 |
-| [People アプリの起動](launch-people-apps.md) | ここでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
+| [People アプリの起動](launch-people-apps.md) | このトピックでは、ms-people URI スキームについて説明します。 アプリでこの URI スキームを使って People アプリを起動し、特定のアクションを実行できます。 |
 | [アプリの URI ハンドラーを使用して Web とアプリのリンクをサポートする](web-to-app-linking.md) | アプリの URI ハンドラーを使用して、ユーザーがアプリを利用するように促します。 |
 
 「[ファイルのアクティブ化によるアプリの起動](launch-app-from-file.md)」セクションでは、特定の種類のファイルを開くと、アプリが起動するように設定する方法について説明します。
@@ -83,7 +77,7 @@ ms.locfileid: "8923951"
 
 | トピック | 説明 |
 |-------|-------------|
-| [アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md) | 他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。 |
+| [App Service の作成と利用](how-to-create-and-consume-an-app-service.md) | 他のユニバーサル Windows プラットフォーム (UWP) アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。 |
 | [ホスト アプリと同じプロセスで実行するようにアプリ サービスを変換する](convert-app-service-in-process.md) | 別のバックグラウンド プロセスで実行されたアプリ サービスのコードを、アプリ サービスのプロバイダーと同じプロセス内で実行されるコードに変換します。 |
 | [アプリ サービス、拡張機能、パッケージでアプリを拡張する](extend-your-app-with-services-extensions-packages.md) | アプリを拡張してコンポーネント化するために使用する技術を判断し、それぞれの概要を確認します。 |
 | [アプリ拡張機能の作成と利用](how-to-create-an-extension.md) | ユニバーサル Windows プラットフォーム (UWP) アプリの拡張機能を作成してホストすると、Microsoft Store からユーザーがインストールできるパッケージを介してアプリを拡張できます。 |
@@ -98,7 +92,7 @@ ms.locfileid: "8923951"
 | [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
 | [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)       | フォアグラウンド アプリと同じプロセスで実行されるバックグラウンド タスクを作成して登録します。 |
 | [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)           | アプリとは別のプロセスで実行されるバックグラウンド タスクを作成して登録し、アプリがフォアグラウンドにないときに実行するように登録します。 |
-| [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する](convert-out-of-process-background-task.md) | フォア グラウンド アプリと同じプロセスで実行されるインプロセス バック グラウンド タスクをアウト プロセス バック グラウンド タスクを移植する方法について説明します。|
+| [アウトプロセスのバックグラウンド タスクをインプロセスのバックグラウンド タスクに移植する](convert-out-of-process-background-task.md) | アウトプロセスのバックグラウンド タスクを、フォアグラウンド アプリと同じプロセスで実行されるインプロセスのバックグラウンド タスクに移植する方法を説明します。|
 | [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                       | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。 |
 | [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。 |
 | [バックグラウンド タスクの登録のグループ化](group-background-tasks.md)                                             | グループによってバックグラウンド タスクの登録を分離します。 |
@@ -106,13 +100,13 @@ ms.locfileid: "8923951"
 | [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)       | バックグラウンド タスクの進行状況と完了をアプリから認識する方法について説明します。 |
 | [バックグラウンド アクティビティの最適化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |バックグラウンドで消費されるエネルギーを低減する方法や、バックグラウンド アクティビティの設定を操作する方法を説明します。 |
 | [バックグラウンド タスクの登録](register-a-background-task.md)                                                 | ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。 |
-| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)         | [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。 |
+| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)         | [  **SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。 |
 | [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)                                    | 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。 |
 | [バックグラウンドで無期限に実行する](run-in-the-background-indefinetly.md)                                    | 機能を使用すると、バックグラウンドで無期限にバックグラウンド タスクまたは延長実行セッションを実行できます。 |
 | [アプリ内からのバックグラウンド タスクのトリガー](trigger-background-task-from-app.md) | [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) を使ってアプリ内からバックグラウンド タスクをアクティブ化する方法について説明します。|
 | [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)             | バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。 |
 | [バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | バックグラウンド転送 API を使って、バックグラウンドでファイルをコピーします。 |
-| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                   | アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。 |
+| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                   | アプリのライブ タイルを新しいコンテンツで更新するには、バックグラウンド タスクを使います。 |
 | [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)                                                   | デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。 |
 
 ## <a name="remote-systems"></a>リモート システム
@@ -133,4 +127,4 @@ ms.locfileid: "8923951"
 | トピック | 説明 |
 |-------|-------------|
 | [スプラッシュ画面の追加](add-a-splash-screen.md) | アプリのスプラッシュ画面の画像と背景色を設定します。 |
-| [スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |
+| [スプラッシュ スクリーンの表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |

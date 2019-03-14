@@ -4,14 +4,8 @@ description: ネットワークと Web サービスにアクセスするため�
 title: ネットワークと Web サービス
 ms.date: 11/26/2017
 ms.topic: article
-keywords: windows 10, UWP
+keywords: 'windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 26324637fdf54b48fa441d28065bf437fbf74b26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939526"
 ---
 # <a name="networking-and-web-services"></a>ネットワークと Web サービス
 

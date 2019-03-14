@@ -135,11 +135,11 @@ ms.localizationpriority: medium
                 <div style="display:block"  class="card">
                     <div style="display:block"  class="cardText">
                         <h3>データとファイル</h3>
-                        <p style="display:block"><a href="/windows/uwp/audio-video-camera/">オーディオ、ビデオ、カメラ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/audio-video-camera/">オーディオ、ビデオ、およびカメラ</a></p>
                         <p><a href="/windows/uwp/data-access/" style="display:block" >データ アクセス</a></p>
                         <p><a href="/windows/uwp/data-binding/"style="display:block" >データ バインディング</a></p>
                         <p><a href="/windows/uwp/files/" style="display:block" >ファイル、フォルダー、およびライブラリ</a></p>
-                        <p style="display:block"><a href="/windows/uwp/machine-learning/">機械学習</a></p>
+                        <p style="display:block"><a href="/windows/uwp/machine-learning/">Machine Learning</a></p>
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@ ms.localizationpriority: medium
                     <div style="display:block" class="cardText">
                         <h3>プラットフォーム</h3>
                         <p style="display:block"><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></p>
-                        <p style="display:block"><a href="/windows/uwp/launch-resume/">起動、再開、およびバックグラウンド タスク</a></p>
+                        <p style="display:block"><a href="/windows/uwp/launch-resume/">起動、再開、バックグラウンド タスク</a></p>
                         <p style="display:block"><a href="/windows/uwp/security/">セキュリティ</a></p>
                         <p style="display:block"><a href="/windows/uwp/threading-async/">スレッド化と非同期プログラミング</a></p>
                         <p style="display:block"><a href="/windows/uwp/composition/visual-layer">ビジュアル レイヤー</a></p>
@@ -201,7 +201,7 @@ ms.localizationpriority: medium
                         <p style="display:block"><a href="/windows/uwp/contacts-and-calendar/">概要</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/enable-device-capabilities">デバイス機能を有効にする</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/pair-devices">デバイスのペアリング</a></p>
-                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">POS (店舗販売時点管理)</a></p>
+                        <p style="display:block"><a href="/windows/uwp/devices-sensors/point-of-service">店舗販売時点管理</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/sensors">センサー</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/printing-and-scanning">印刷</a></p>
                         <p style="display:block"><a href="/windows/uwp/devices-sensors/3d-printing">3-D 印刷</a></p>
@@ -219,9 +219,9 @@ ms.localizationpriority: medium
                     <div style="display:block" class="cardText">
                         <h3>移植</h3>
                         <p style="display:block"><a href="/windows/uwp/porting/">概要</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">WindowsPhone Silverlight UWP から</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight から UWP へ</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/w8x-to-uwp-root">Windows ランタイム 8.x から UWP へ</a></p>
-                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">デスクトップ ブリッジ</a></p>
+                        <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-root">Desktop Bridge</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/desktop-to-uwp-migrate">デスクトップと UWP でコードを共有する</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/android-ios-uwp-map">Android と iOS 開発者向けの概念マッピング</a></p>
                         <p style="display:block"><a href="/windows/uwp/porting/ios-to-uwp-root">iOS から UWP への移行</a></p>

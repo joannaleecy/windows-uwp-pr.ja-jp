@@ -41,14 +41,14 @@ UWP アプリのナビゲーションは、ナビゲーション構造、ナビ�
 XAML と C# で基本的な写真編集アプリケーションを作成する方法について説明します。
 <!-- <img src="images/landing-page/photolab-50.png" style="{height: 339px}" alt=" " /> -->
 
-[**1. 基本的な UI を作成する**](xaml-basics-ui.md)
+[**1.基本的な UI を作成する**](xaml-basics-ui.md)
 
 XAML を使用して基本的なユーザー インターフェイスを作成します。
 
-[**2. アダプティブ レイアウトを作成する**](xaml-basics-adaptive-layout.md)
+[**2.アダプティブ レイアウトを作成する**](xaml-basics-adaptive-layout.md)
 
 写真編集アプリケーションにアダプティブ レイアウトを提供します。
 
-[**3. カスタム スタイルを作成する**](xaml-basics-style.md)
+[**3.カスタム スタイルを作成する**](xaml-basics-style.md)
 
 カスタム スタイルを作成することで、UWP コントロールに独自の外観を提供します。

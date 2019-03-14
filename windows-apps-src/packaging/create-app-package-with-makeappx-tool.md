@@ -8,28 +8,28 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991608"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57634657"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>MakeAppx.exe ツールを使ったアプリ パッケージの作成
 
 
-**MakeAppx.exe**は、パッケージ バンドル (.msixbundle または .appxbundle) .msix (.appx)、アプリ パッケージとアプリの両方を作成します。 **MakeAppx.exe**はまた、アプリ パッケージまたはバンドルからのファイルの抽出や、アプリ パッケージとバンドルの暗号化または暗号化解除を行うこともできます。 このツールは、Windows 10 SDK に含まれており、コマンド プロンプトまたはスクリプト ファイルから使用できます。
+**MakeAppx.exe**アプリ パッケージ (.msix または .appx) とアプリの両方 (.msixbundle または .appxbundle) パッケージのバンドルを作成します。 **MakeAppx.exe**はまた、アプリ パッケージまたはバンドルからのファイルの抽出や、アプリ パッケージとバンドルの暗号化または暗号化解除を行うこともできます。 このツールは、Windows 10 SDK に含まれており、コマンド プロンプトまたはスクリプト ファイルから使用できます。
 
 > [!IMPORTANT]
 > Visual Studio を使用してアプリを開発する場合は、Visual Studio のウィザードを使ってアプリ パッケージを作成することをお勧めします。 詳しくは、「[Visual Studio での UWP アプリのパッケージ化](packaging-uwp-apps.md)」をご覧ください。
 
 > [!IMPORTANT]
-> **MakeAppx.exe**は作成すること、[アプリ パッケージ アップロード ファイル (.appxupload または .msixupload)](packaging-uwp-apps.md#types-of-app-packages)、[パートナー センターへの申請](../publish/upload-app-packages.md)の有効なアプリ パッケージの推奨される型では注意してください。 アプリ パッケージ アップロード ファイルは、手動で作成もできますが、 [Visual Studio のパッケージ化プロセスの一部として作成](packaging-uwp-apps.md#create-an-app-package-upload-file)、通常です。
+> なお**MakeAppx.exe**は作成されません、[アプリ パッケージのアップロード ファイル (.appxupload または .msixupload)](packaging-uwp-apps.md#types-of-app-packages)、有効なアプリ パッケージの推奨される型である[パートナー センターに送信します。](../publish/upload-app-packages.md). アプリ パッケージのアップロード ファイルは、通常[Visual Studio のパッケージ化プロセスの一環として作成](packaging-uwp-apps.md#create-an-app-package-upload-file)が手動で作成することもできますが、します。
 
 ## <a name="using-makeappxexe"></a>MakeAppx.exe の使用
 
 SDK のインストール パスに基づき、**MakeAppx.exe** は Windows 10 PC の以下の場所にあります。
-- x86: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;ビルド番号&gt;\x86\makeappx.exe
-- x64: C:\Program Files (x86) \Windows Kits\10\bin\\&lt;ビルド番号&gt;\x64\makeappx.exe
+- x86:C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x86\makeappx.exe
+- x64。C:\Program Files (x86) \Windows Kits\10\bin\\&lt;ビルド番号&gt;\x64\makeappx.exe
 
 このツールの ARM バージョンはありません。
 
@@ -85,19 +85,19 @@ MakeAppx <command> [options]
 | &lt;マッピング ファイル&gt;                  | パッケージのソースとターゲットを指定するファイル名。 |
 | &lt;出力ディレクトリ&gt;              | 出力パッケージとバンドルのディレクトリへのパス。 |
 | &lt;キー ファイル&gt;                      | 暗号化キーまたは暗号化解除キーが含まれているファイルの名前です。 |
-| &lt;アルゴリズム ID&gt;                  | ブロック マップの作成時に使用されるアルゴリズム。 有効なアルゴリズムには、SHA256 (既定)、SHA384、SHA512 があります。 |
+| &lt;アルゴリズム ID&gt;                  | ブロック マップの作成時に使用されるアルゴリズム。 有効なアルゴリズムは次のとおりです。SHA256 (既定)、SHA384、SHA512 します。 |
 
 
 ### <a name="create-an-app-package"></a>アプリ パッケージを作成する
 
-アプリ パッケージは、.msix または .appx パッケージ ファイルにパッケージ化されたアプリのファイルの完全なセットです。 **pack** コマンドを使ってアプリ パッケージを作成するには、パッケージの保存場所としてコンテンツ ディレクトリまたはマッピング ファイルを指定する必要があります。 また作成時にパッケージを暗号化することもできます。 パッケージを暗号化する場合は、/ep を使って、キー ファイル (/kf) とグローバル テスト キー (/kt) のいずれを使うかを指定する必要があります。 暗号化されたパッケージを作成する方法について詳しくは、「[パッケージまたはバンドルを暗号化または暗号化解除する](#encrypt-or-decrypt-a-package-or-bundle)」をご覧ください。
+アプリ パッケージは、.msix または .appx パッケージ ファイルにパッケージ化、アプリのファイルの完全なセットです。 **pack** コマンドを使ってアプリ パッケージを作成するには、パッケージの保存場所としてコンテンツ ディレクトリまたはマッピング ファイルを指定する必要があります。 また作成時にパッケージを暗号化することもできます。 パッケージを暗号化する場合は、/ep を使って、キー ファイル (/kf) とグローバル テスト キー (/kt) のいずれを使うかを指定する必要があります。 暗号化されたパッケージを作成する方法について詳しくは、「[パッケージまたはバンドルを暗号化または暗号化解除する](#encrypt-or-decrypt-a-package-or-bundle)」をご覧ください。
 
 **pack** コマンドに固有のオプション:
 
 | **オプション**    | **説明**                       |
 |---------------|---------------------------------------|
 | /f            | マッピング ファイルを指定します。           |
-| /h            | ブロック マップを作成するときに使うハッシュ アルゴリズムを指定します。 これは、pack コマンドでのみ使うことができます。 有効なアルゴリズムには、SHA256 (既定)、SHA384、SHA512 があります。 |
+| /h            | ブロック マップを作成するときに使うハッシュ アルゴリズムを指定します。 これは、pack コマンドでのみ使うことができます。 有効なアルゴリズムは次のとおりです。SHA256 (既定)、SHA384、SHA512 します。 |
 | /m            | 入力アプリ マニフェストへのパスを指定します。出力アプリ パッケージまたはリソース パッケージのマニフェストは、このパスに基づいて生成されます。  このオプションを使用するときには、/f を一緒に使用すると共にマッピング ファイルに [ResourceMetadata] セクションを追加し、生成されるマニフェストに含まれるリソースの次元を指定する必要があります。|
 | /nc           | パッケージ ファイルを圧縮しないことを指定します。 既定では、検出されたファイルの種類に基づいてファイルが圧縮されます。 |
 | /r            | リソース パッケージを作成します。 これは /m と共に使う必要があり、/l オプションを使用することを意味します。 |  
@@ -133,7 +133,7 @@ MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 
 | **オプション**    | **説明**                       |
 |---------------|---------------------------------------|
-| /bv           | バンドルのバージョン番号を指定します。 バージョン番号は、4 つの部分をピリオドで区切って、&lt;メジャー番号&gt;.&lt;マイナー番号&gt;.&lt;ビルド&gt;.&lt;リビジョン&gt; の形式で指定します。 |
+| /bv           | バンドルのバージョン番号を指定します。 バージョン番号は、フォームのピリオドで区切られた 4 つの部分である必要があります。&lt;主要な&gt;.&lt;マイナー&gt;.&lt;ビルド&gt;.&lt;リビジョン&gt;します。 |
 | /f            | マッピング ファイルを指定します。           |
 
 バンドルのバージョンが指定されていないか、"0.0.0.0" に設定されている場合は、現在の日付と時刻を使用してバンドルが作成されることに注意してください。
@@ -196,7 +196,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 暗号化と暗号化解除は、Visual Studio パッケージ ウィザードでは実行できません。
 
- **encrypt** コマンドと **decrypt** コマンド固有のオプション:
+**encrypt** コマンドと **decrypt** コマンド固有のオプション:
 
 | **オプション**    | **説明**                       |
 |---------------|---------------------------------------|
@@ -268,6 +268,6 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 この検証では、次の点を確認します。
 - パッケージ マニフェストで参照されているすべてのファイルがアプリ パッケージに含まれていること。
 - アプリケーションに、同一の 2 つのキーが存在しないこと。
-- アプリケーションが、SMB、FILE、MS-WWA-WEB、MS-WWA のリストに記載された禁止プロトコルを登録していないこと。
+- アプリケーションは、この一覧から禁止されているプロトコルは登録されません。SMB、ファイル、MS-WWA WEB、MS WWA できます。
 
 これは一般的なエラーのみをチェックするように設計された機能であり、完全なセマンティックの検証ではありません。 **MakeAppx.exe** によって作成されたパッケージのインストール可能性については保証されていません。

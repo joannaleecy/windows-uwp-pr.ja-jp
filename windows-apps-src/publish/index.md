@@ -1,22 +1,16 @@
 ---
 layout: LandingPage
-Description: See how to publish your Windows apps to the Microsoft Store.
+Description: Windows アプリを Microsoft Store に公開する方法を確認します。
 title: Windows アプリを公開する
 ms.date: 10/31/2018
 ms.topic: article
-keywords: windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード
+keywords: 'windows 10, uwp, 公開する, 公開, 販売, 販売する, 配布, 配布する, store, ダッシュボード'
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980310"
 ---
 # <a name="publish-windows-apps-and-games"></a>Windows アプリとゲームを公開する  
  
-[パートナー センター](https://partner.microsoft.com/dashboard)を使用して、アプリやゲームを Microsoft Store に公開することができます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
+[パートナー センター](https://partner.microsoft.com/dashboard)を使用することで、アプリとゲームを Microsoft Store に公開できます。 <a href="//developer.microsoft.com/store/register">今すぐサインアップしましょう。</a>
 <br>
 <ul id="cardtypes-K" class="cardsK panelContent">
     <li>
@@ -32,7 +26,7 @@ ms.locfileid: "8980310"
                         <h3>アプリの申請</h3>
                         <p>申請に必要な項目を確認して、アプリの認定を受けましょう。</p>
                         <ul>
-                        <li><a href="app-submissions.md">アプリの申請用チェック リスト</a></li>
+                        <li><a href="app-submissions.md">アプリの提出用チェック リスト</a></li>
                         <li><a href="the-app-certification-process.md">認定プロセス</a></li>                      
                         <li><a href="//docs.microsoft.com/legal/windows/agreements/store-policies">Microsoft Store ポリシー</a></li>   
                     </ul>
@@ -121,7 +115,7 @@ ms.locfileid: "8980310"
                     <h3>アプリの販売促進</h3>   
                     <p><a href="create-an-ad-campaign-for-your-app.md">広告キャンペーンの作成</a></p>
                     <p><a href="generate-promotional-codes.md">プロモーション コードを生成する</a></p>
-                    <p><a href="put-apps-and-add-ons-on-sale.md">セール価格の提供</a></p>
+                    <p><a href="put-apps-and-add-ons-on-sale.md">セール価格を提供する</a></p>
                 </div>
             </div>
         </div>
@@ -139,8 +133,8 @@ ms.locfileid: "8980310"
                 <div class="cardText">
                     <h3>ユーザーとの関係を深める</h3>
                     <p><a href="create-customer-groups.md">ユーザー グループを作成する</a></p>
-                    <p><a href="send-push-notifications-to-your-apps-customers.md">プッシュ通知の送信</a></p>
-                    <p><a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象のプランの作成</a></p>
+                    <p><a href="send-push-notifications-to-your-apps-customers.md">プッシュ通知を送信する</a></p>
+                    <p><a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">対象のプランを作成する</a></p>
                 </div>
             </div>
         </div>
@@ -161,8 +155,8 @@ ms.locfileid: "8980310"
                 </div>
                 <div class="cardText">
                     <h3>アカウント ユーザーの管理</h3>                    
-                    <p><a href="associate-azure-ad-with-dev-center.md">Azure AD のセットアップ</a></p>
-                    <p><a href="add-users-groups-and-azure-ad-applications.md">アカウント ユーザーの追加</a></p>
+                    <p><a href="associate-azure-ad-with-dev-center.md">Azure AD を設定する</a></p>
+                    <p><a href="add-users-groups-and-azure-ad-applications.md">アカウント ユーザーを追加する</a></p>
                     <p><a href="set-custom-permissions-for-account-users.md">役割とアクセス許可</a></p>                   
                 </div>
             </div>
@@ -181,7 +175,7 @@ ms.locfileid: "8980310"
                 <div class="cardText">
                     <h3>アドオン (アプリ内製品)</h3>      
                     <p><a href="add-on-submissions.md">アドオンの申請</a></p>
-                    <p><a href="../monetize/in-app-purchases-and-trials.md">アプリのコードでのアドオンの有効化</a></p>
+                    <p><a href="../monetize/in-app-purchases-and-trials.md">アプリのコードでアドオンを有効にする</a></p>
                 </div>
             </div>
         </div>
@@ -259,7 +253,7 @@ ms.locfileid: "8980310"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>アプリ開発者契約をご覧ください。</h3>
+                                <h3>アプリ開発者契約</h3>
                             </div>
                         </div>
                     </div>

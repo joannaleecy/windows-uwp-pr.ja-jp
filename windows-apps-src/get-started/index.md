@@ -4,14 +4,8 @@ description: Windows 10 のユニバーサル Windows プラットフォーム (
 title: ユニバーサル Windows プラットフォーム (UWP) の概要
 ms.date: 03/23/2018
 ms.topic: article
-keywords: 概要, windows 10, uwp, xaml, c#
+keywords: '概要, windows 10, uwp, xaml, c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934727"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  
@@ -138,7 +132,7 @@ ms.locfileid: "8934727"
                     <p>視野を広げて、Windows 10 に追加された最新の機能について知ることができます。</p>
                     <br>
                     <p><a href="//developer.microsoft.com/windows/windows-10-for-developers">最新バージョンの Windows 10 の優れている点</a></p>
-                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">開発者向けの Windows 10 の最新情報</a></p>
+                    <p><a href="//docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest">Windows 10 の開発者向け新着情報</a></p>
                 </div>
             </div>
         </div>
@@ -214,8 +208,8 @@ ms.locfileid: "8934727"
                 <div class="card">
                     <div class="cardText">
                         <h3>開発者ツール</h3>
-                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows  コミュニティ ツールキット</a></p>
-                        <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">バーチャル マシン</a></p>
+                        <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows コミュニティ ツールキット</a></p>
+                        <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">仮想マシン</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>
                     </div>

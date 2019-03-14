@@ -16,16 +16,16 @@ ms.localizationpriority: medium
 |-------|--------------|
 | [ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md) | フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。 |
 | [ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。 |
-| [ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md) | [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio)と[PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio)クラスのメソッドを記述するさまざまなファイルを使用するためのベスト プラクティスについて説明します。 |
+| [ファイルへの書き込みに関するベスト プラクティス](best-practices-for-writing-to-files.md) | [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) および [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) クラスのさまざまなファイル書き込みメソッドの使用に関するベスト プラクティスについて学習します。 |
 | [ファイルのプロパティの取得](quickstart-getting-file-properties.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。 |
 | [ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md) | ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 フォルダーへのアクセスには [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。 |
-| [ピッカーによるファイルの保存](quickstart-save-a-file-with-a-picker.md) | [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、アプリで保存するファイルの名前とその保存場所をユーザーが指定できるようにします。 |
+| [ピッカーによるファイルの保存](quickstart-save-a-file-with-a-picker.md) | [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。 |
 | [ホームグループ コンテンツへのアクセス](quickstart-accessing-homegroup-content.md) | ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。 |
 | [Microsoft OneDrive ファイルが利用可能かどうかの確認](quickstart-determining-availability-of-microsoft-onedrive-files.md) | [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。 |
 | [ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。 |
 | [最近使ったファイルやフォルダーの追跡](how-to-track-recently-used-files-and-folders.md) | ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。 MRU はプラットフォームが管理し、最後にアクセスした日時に基づいて項目を並べ替えたり、一覧の上限である 25 項目に達したら最も古い項目を削除したりします。 すべてのアプリにはそれぞれに専用の MRU があります。 |
-| [ファイル システムの変更のバック グラウンドでの追跡](change-tracking-filesystem.md) | アプリが実行されていない場合でも、ファイル システムに変更を追跡します。|
-| [SD カードへのアクセス](access-the-sd-card.md) | オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。 |
+| [ファイル システムの変更のバックグラウンドでの追跡](change-tracking-filesystem.md) | アプリが実行されていない場合でも、ファイル システムの変更を追跡します。|
+| [SD カードへのアクセス](access-the-sd-card.md) | オプションの microSD カード上にある重要度の低いデータに保存およびアクセスできます (特に内部ストレージに制限がある低コストのモバイル デバイス)。 |
 | [ファイル アクセス許可](file-access-permissions.md) | アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーの使用や機能の宣言によって、その他の場所にアクセスすることもできます。 |
 | [UWP でファイルのプロパティにすばやくアクセスする](fast-file-properties.md) | UWP アプリで使用するために、ライブラリからファイルとそのプロパティの一覧を効率的に収集します。 |
 

@@ -3,20 +3,14 @@ title: Xbox Live 開発者向けガイド
 description: Xbox Live サービスを使用して、ゲームを Xbox Live ゲーミング ネットワークに接続する方法について説明します。
 ms.date: 08/22/2017
 ms.topic: article
-keywords: Windows 10, UWP, ゲーム, Xbox, Xbox Live
+keywords: 'windows 10, uwp, ゲーム, xbox, xbox live'
 ms.localizationpriority: medium
-ms.openlocfilehash: a08105d8ee4c78421d934f991fc4123299c38365
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044109"
 ---
 # <a name="what-is-xbox-live"></a>Xbox Live とは
 
 Xbox Live は、世界中の何百万ものゲーマーを結びつける最高のゲーミング ネットワークです。 Xbox Live を Windows 10 または Xbox One のゲームに追加すれば、Xbox Live の機能とサービスを活用することができます。
 
-Xbox Live クリエーターズ プログラム[パートナー センター](https://partner.microsoft.com/dashboard)アカウントを持つユーザーの Windows 10 Pc と Xbox One 本体で実行できる Xbox Live 対応のユニバーサル Windows プラットフォーム (UWP) ゲームを構築できます。
+Xbox Live クリエーターズ プログラムを利用すると、[パートナー センター](https://partner.microsoft.com/dashboard) アカウントを持つユーザーが、Windows 10 PC と Xbox One 本体で実行できる Xbox Live 対応のユニバーサル Windows プラットフォーム (UWP) ゲームを構築できます。
 
 マルチプレイヤー、実績、Xbox 本体のネイティブ開発など、完全な Xbox Live エクスペリエンスを利用するゲーム開発者向けに、追加の開発者プログラムがあります。詳しくは、「[開発者プログラムの概要](developer-program-overview.md)」をご覧ください。
 
@@ -45,7 +39,7 @@ REST API に加えて、REST 機能をラップするクライアント側 API �
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [開発者プログラムの概要](developer-program-overview.md) | Xbox Live の開発を可能にするさまざまな開発者プログラムについて説明します。 |
 | [Xbox Live クリエーターズ プログラムの概要](get-started-with-creators/get-started-with-xbox-live-creators.md) | Xbox Live クリエーターズ プログラムで Xbox Live を開始する方法。 |
-| [ID@Xbox 開発者または管理される開発者として Xbox Live を開始する](get-started-with-partner/get-started-with-xbox-live-partner.md) | ID@Xbox プログラムで開発者として Xbox Live を開始する方法。 |
+| [ID@Xbox または管理対象の開発者として Xbox Live を開始する](get-started-with-partner/get-started-with-xbox-live-partner.md) | ID@Xbox プログラムで開発者として Xbox Live を開始する方法。 |
 
 ### <a name="using-xbox-live"></a>Xbox Live を使用する
 
@@ -53,8 +47,8 @@ REST API に加えて、REST 機能をラップするクライアント側 API �
 
 | トピック                                                                                                                                             | 説明                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [Xbox Live を使用する](using-xbox-live/using-xbox-live.md) | タイトルをセットアップし、Xbox Live SDK を統合すると、サインインを実装し、Xbox Live のプログラミングについてさらに学習できる状態になります。
-| [Xbox Live の呼び出しのベスト プラクティス](using-xbox-live/best-practices/best-practices-for-calling-xbox-live.md) | Xbox Live の呼び出しパターンの基本、およびタイトルが適切に動作し、レートが制限されないようにするベスト プラクティスについて理解します。
+| [Xbox Live の使用](using-xbox-live/using-xbox-live.md) | タイトルをセットアップし、Xbox Live SDK を統合すると、サインインを実装し、Xbox Live のプログラミングについてさらに学習できる状態になります。
+| [Xbox Live の呼び出しに関するベスト プラクティス](using-xbox-live/best-practices/best-practices-for-calling-xbox-live.md) | Xbox Live の呼び出しパターンの基本、およびタイトルが適切に動作し、レートが制限されないようにするベスト プラクティスについて理解します。
 | [Xbox Live サービス API のトラブルシューティング](using-xbox-live/troubleshooting/troubleshooting-the-xbox-live-services-api.md) | 発生する可能性のある一般的な問題と、それらの修正方法に関するヒントです。
 
 ### <a name="xbox-live-social-platform"></a>Xbox Live ソーシャル プラットフォーム
@@ -72,8 +66,8 @@ Xbox Live データ プラットフォームでは、プレイヤーの統計情
 | トピック                                                                                                                                             | 説明                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
 | [Xbox Live データ プラットフォーム](data-platform/data-platform.md) | データ プラットフォームの簡単な概要と、タイトルに統計情報、ランキング、および実績を最適に組み込む方法についてのガイダンスです。
-| [プレイヤーの統計情報](leaderboards-and-stats-2017/player-stats.md) | 統計情報はランキングの基本です。  ここでは、それらを定義して使用する方法について説明します。
-| [ランキング](leaderboards-and-stats-2017/leaderboards.md) | ランキングをインテリジェントに組み込むことによってユーザーの競争心を盛り上げます。
+| [プレイヤーの統計](leaderboards-and-stats-2017/player-stats.md) | 統計情報はランキングの基本です。  ここでは、それらを定義して使用する方法について説明します。
+| [スコアボード](leaderboards-and-stats-2017/leaderboards.md) | ランキングをインテリジェントに組み込むことによってユーザーの競争心を盛り上げます。
 | [実績](achievements-2017/achievements.md) | 実績は、Xbox Live で最もよく知られた機能の 1 つであり、プレイヤーを引き付けるのに役立つ機能です。 タイトルでのその使用方法について説明します。
 
 ### <a name="xbox-live-multiplayer-platform"></a>Xbox Live マルチプレイヤー プラットフォーム

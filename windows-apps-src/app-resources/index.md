@@ -1,18 +1,12 @@
 ---
-Description: This section shows you how to author, package, and consume your app's string, image, and file resources.
+Description: このセクションでは、アプリの文字列、画像、ファイル リソースを作成、パッケージ化、利用する方法を示します。
 title: アプリ リソースとリソース管理システム
 label: Intro
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
-keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
+keywords: 'Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子'
 ms.localizationpriority: medium
-ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938812"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>アプリ リソースとリソース管理システム
 
@@ -32,11 +26,11 @@ ms.locfileid: "8938812"
 | [リソース管理システムでの言語タグの照合の仕組み](how-rms-matches-lang-tags.md) | 前のトピック (「[リソース管理システムでのリソースの照合と選択の仕組み](how-rms-matches-and-chooses-resources.md)」) では、一般的な修飾子の照合について説明しました。 このトピックでは、言語タグの照合についてさらに詳しく説明します。 |
 | [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](tailor-resources-lang-scale-contrast.md) | このトピックでは、リソース修飾子の一般概念、使用方法、各修飾子名の目的について説明します。 |
 | [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](localize-strings-ui-manifest.md) | アプリで複数の表示言語をサポートする必要があり、コード、XAML マークアップ、アプリ パッケージ マニフェスト内に文字列リテラルが含まれている場合は、その文字列をリソース ファイル (.resw) に移動します。 アプリでサポートする各言語用に、このリソース ファイルを翻訳したコピーを作成することができます。 |
-| [表示倍率、テーマ、ハイ コントラスト、その他の設定に合わせた画像とアセットの読み込み](images-tailored-for-scale-theme-contrast.md) | アプリで、表示倍率、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像を含む画像リソース ファイルを読み込むことができます。 |
+| [スケール、テーマ、ハイ コントラストなどに合わせた画像と資産の読み込み](images-tailored-for-scale-theme-contrast.md) | アプリで、表示倍率、テーマ、ハイ コントラスト、その他の実行時のコンテキストに合わせた画像を含む画像リソース ファイルを読み込むことができます。 |
 | [URI スキーム](uri-schemes.md) | アプリのパッケージ、アプリのデータ フォルダー、またはクラウドからのファイルを参照するために使用できる URI (Uniform Resource Identifier) スキームはいくつかあります。 また、URI スキームを使用して、アプリのリソース ファイル (.resw) から読み込まれた文字列を参照することもできます。 |
 | [アプリで使用する既定のリソースを指定する](specify-default-resources-installed.md) | アプリにユーザーのデバイスの特定の設定に一致するリソースがない場合、アプリの既定のリソースが使用されます。 このトピックでは、これらの既定のリソースの内容を指定する方法について説明します。 |
 | [リソースをリソース パックではなくアプリ パッケージに組み込む](build-resources-into-app-package.md) | 一部の種類のアプリ (多言語の辞書、翻訳ツールなど) は、アプリ バンドルの既定の動作をオーバーライドし、別のリソース パッケージではなくアプリ パッケージにリソースを組み込む必要があります。 このトピックでは、その方法について説明します。 |
-| [パッケージ リソース インデックス (PRI) API とカスタム ビルド システム](pri-apis-custom-build-systems.md) | [パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用すると、UWP アプリのリソース用にカスタム ビルド システムを開発することができます。 ビルド システムでは、UWP アプリが必要とする複雑さのレベルにかかわらず、パッケージ リソース インデックス (PRI) ファイルを (XMLとして) 作成、バージョン管理、ダンプすることができます。 |
+| [パッケージ リソース インデックス (PRI) API とカスタム ビルド システム](pri-apis-custom-build-systems.md) | [パッケージ リソース インデックス (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690) を使用すると、UWP アプリのリソース用にカスタム ビルド システムを開発することができます。 ビルド システムでは、UWP アプリが必要とする複雑さのレベルにかかわらず、パッケージ リソース インデックス (PRI) ファイルを (XML として) 作成、バージョン管理、ダンプすることができます。 |
 | [MakePri.exe を使用して手動でリソースをコンパイルする](compile-resources-manually-with-makepri.md) | MakePri.exe は、PRI ファイルを作成およびダンプするために使用できるコマンド ライン ツールです。 このツールは、Microsoft Visual Studio の MSBuild の一部として統合されていますが、パッケージを手動で作成したり、カスタム ビルド システムを使って作成する場合にも使うことができます。 |
 | [レガシ アプリやゲームで Windows 10 のリソース管理システムを使用する](using-mrt-for-converted-desktop-apps-and-games.md) | .NET または Win32 アプリやゲームを AppX パッケージとしてパッケージ化することにより、リソース管理システムを活用して実行時のコンテキストに合わせたアプリ リソースを読み込むことができます。 この詳細なトピックでは、この手法について説明します。 |
 

@@ -1,7 +1,7 @@
 ---
 description: ペン、Surface Dial、その他の種類の入力に合わせて、アプリを最適化します。
 title: 入力と操作
-keywords: アプリの入力, UWP アプリケーションのカスタマイズ
+keywords: 'アプリの入力, UWP アプリケーションのカスタマイズ'
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,12 +9,6 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918980"
 ---
 # <a name="input-and-interactions"></a>入力と操作
 
@@ -41,7 +35,7 @@ UWP アプリは、さまざまな入力を自動的に処理し、さまざま�
                     </div>  -->
                     <div class="cardText">
                         <h3><a href="input-primer.md">入力の基本情報</a></h3>
-                        <p>特定のフォーム ファクターと組み合わせて使うときの各入力デバイスの種類とその動作、機能、制限事項を把握しておきましょう。</p>
+                        <p>特定のフォームファクターと組み合わせて使うときの各入力デバイスの種類とその動作、機能、制限事項を把握しておきましょう。</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +53,7 @@ UWP アプリは、さまざまな入力を自動的に処理し、さまざま�
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="gaze-interactions.md">新機能 視線入力</a></h3>
+                        <h3><a href="gaze-interactions.md">新しい視線入力</a></h3>
                         <p>ユーザーの目と手の場所と動きに基づいてユーザーの視線を追跡します。</p>
                     </div>
                 </div>
@@ -87,7 +81,7 @@ See our <b>[Input primer](index.md)</b> to familiarize yourself with each input 
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">タッチ</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">マウス</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">キーボード</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">ゲームパッドとリモート制御</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">ゲームパッドとリモコン</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">タッチパッド</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">複数の入力</a></p>

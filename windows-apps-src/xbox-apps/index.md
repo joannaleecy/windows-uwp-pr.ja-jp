@@ -3,21 +3,15 @@ title: Xbox One の UWP
 description: Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: 'windows 10, uwp'
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: c2689218c8e3885815585424901453b9fc07f2d6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050965"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One の UWP
 
 Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
 
-Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 必要なすべては、[パートナー センター](https://partner.microsoft.com/dashboard)で[開発者アカウント](https://developer.microsoft.com/en-us/store/register)です。 ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](https://www.xbox.com/Developers/id) の開発者になる必要があります。 ID@Xbox の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。 詳細については、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」を参照してください。
+Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポートします。 Xbox でゲームやアプリを実験、作成、テストするために、開発者プログラムに参加する必要はありません。 必要となるのは、[パートナー センター](https://partner.microsoft.com/dashboard)の[開発者アカウント](https://developer.microsoft.com/en-us/store/register)だけです。 ただし、Xbox One でゲームを公開して販売する場合や、Windows 10 で Xbox Live を利用する場合は、[Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)に参加するか、[ID@Xbox](https://www.xbox.com/Developers/id) の開発者になる必要があります。 ID@Xbox の開発者になる場合は、開発者アカウントを登録する前に、プログラムへの参加申し込みを行うことをお勧めします。 詳細については、「[開発者プログラムの概要](../xbox-live/developer-program-overview.md)」を参照してください。
 
 このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールのインストールに関する情報と、簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
 
@@ -25,7 +19,7 @@ Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポート
 |------------|-------------|
 |[概要](getting-started.md)| Xbox One での UWP の開発の概要を説明します。 |
 |[新機能](whats-new.md)| Xbox One の UWP の新機能について説明します。 |
-|[Xbox One 開発者モードのアクティブ化](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
+|[Xbox One 開発者モードのライセンス認証](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
 |[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |
 |[Xbox の開発環境に UWP を設定する](development-environment-setup.md)| Xbox One の開発環境を設定してテストする手順について説明します。 |
 |[サンプル](samples.md)| GitHub の場所 (TVHelpers) へのポインターです。TVHelpers には Xbox の開発を始めるのに役立つ、XAML と JavaScript のサンプルが掲載されています。 サンプルには、XAML メディア アプリの完全なテンプレート、自動コントローラー ナビゲーション、リッチ メディアの再生、Web ベース テクノロジの検索などが含まれています。 |
@@ -37,7 +31,7 @@ Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポート
 |[Xbox ベスト プラクティス](tailoring-for-xbox.md)| マウス モードを無効にする方法、画面の端に描画する方法、スケーリングを無効にする方法について説明します。 |
 |[音声認識を使用した UI 要素の呼び出し](ves-on-xbox.md)| Xbox で UWP アプリの音声対応シェルをサポートするためのベスト プラクティスについて説明します。 |
 |[Xbox One 上の UWP アプリとゲームのシステム リソース](system-resource-allocation.md)| アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。 |
-|[マルチ ユーザー アプリケーションの概要](multi-user-applications.md)| Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。 |
+|[複数ユーザーのアプリケーションの概要](multi-user-applications.md)| Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。 |
 | [Xbox One の開発作業の自動化](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub の WindowsDevicePortalWrapper プロジェクトでは、アプリの開発や起動などの一般的な開発タスクを自動化できるライブラリが提供されます。 プロジェクトには、一般的なタスクの API を使用する方法を示すサンプルである XboxWdpDriver.exe が含まれています。 |
 |[既存のゲームの Xbox への移行](development-lanes-landing.md)|ゲームを構築する際の基礎となるテクノロジに基づいて、UWP を使用した Xbox へのゲームの移行プロセスを迅速に処理するための詳しい手順について説明します。|
 |[Xbox One でまだサポートされていない UWP 機能](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  Xbox One でまだ完全に機能していない UWP 機能について説明します。|
@@ -46,10 +40,10 @@ Xbox One の UWP は、アプリ開発とゲーム開発の両方をサポート
 
 Channel 9 の以下の講演は、Xbox でのすばらしいアプリの開発に関する優れたソースです。
 
-* [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの開発](https://channel9.msdn.com/Events/Build/2016/B883)
+* [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリのビルド](https://channel9.msdn.com/Events/Build/2016/B883)
 * [アプリを Xbox One とテレビに対応させる](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-* [UWP の開発 1: アダプティブ UI の作成](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-* [ブラウザーに留まらない Web アプリ: クロスプラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
+* [UWP 開発 1: アダプティブ UI のビルド](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+* [ブラウザーに留まらない Web アプリ: クロス プラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="see-also"></a>関連項目
 

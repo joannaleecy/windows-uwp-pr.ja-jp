@@ -3,14 +3,14 @@ title: Xbox ベスト プラクティス
 description: Xbox 用のアプリを最適化する方法を説明します。
 ms.date: 10/12/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059733"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657127"
 ---
 # <a name="xbox-best-practices"></a>Xbox ベスト プラクティス
 
@@ -20,32 +20,32 @@ ms.locfileid: "9059733"
 
 ## <a name="to-build-the-best-experiences-for-xbox-one"></a>Xbox One 向けの最適なエクスペリエンスを構築するには
 
-### <a name="do-turn-off-mouse-mode"></a>*行うこと:* マウス モードをオフにします
+### <a name="do-turn-off-mouse-mode"></a>*操作を行います。* マウス モードをオフにします。
 
-Xbox ユーザーは、それぞれのコント ローラーを好みます。 コント ローラー[のマウス モードを無効にする](how-to-disable-mouse-mode.md)、入力用に最適化し、方向ナビゲーション (別名[XY フォーカス ナビゲーションと対話式操作](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)) を有効にします。 フォーカスのトラップとアクセスできない UI に注意します。
+Xbox のユーザーには、そのコント ローラーが大好きです。 コント ローラーの入力を最適化する[マウス モードを無効にする](how-to-disable-mouse-mode.md)方向ナビゲーションを有効にして (とも呼ばれます[XY フォーカスのナビゲーションや操作](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction))。 フォーカスのトラップとアクセスできない UI ご覧ください。
 
-### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*行うこと:* 10 フィート エクスペリエンス向けの適切なフォーカス用の四角形を描画します
+### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*操作を行います。* ある 10 フィート エクスペリエンスに適したフォーカス四角形を描画します。
 
 ほとんどの Xbox ユーザーは室内でテレビに向かって座っているので、標準的なフォーカス用の四角形では 10 フィート離れた場所からでは見えにくいことに留意してください。 入力フォーカスのある UI 要素がユーザーに常にはっきり見えるようにするには、[フォーカス表示](../design/input/gamepad-and-remote-interactions.md#focus-visual)のガイドラインに従ってください。 XAML では、アプリが Xbox で動いているときは何もしなくてもそのように動作しますが、HTML アプリの場合はカスタム CSS スタイルを使用する必要があります。
 
-### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*行うこと:* SystemMediaTransportControls クラスと統合します
+### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*操作を行います。* SystemMediaTransportControls クラスとの統合します。
 
 Xbox のユーザーは、Xbox メディア リモコン Cortana (特に、"再生" と "一時停止" の音声コマンド) および Xbox SmartGlass を使用してメディア アプリを操作するのを好みます。 これらの機能を自作しないでアプリに組み込むには、[SystemMediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) クラスを使用する必要があります。このクラスは、Xbox メディア コントロールに自動的に含まれます。 アプリでカスタム メディア コントロールを使用する場合は、**SystemMediaTransportControls** クラスと統合してユーザーにこれらの機能を提供します。 バックグラウンド音楽アプリを作成している場合は、**SystemMediaTransportControls** クラスと統合して、バックグラウンド音楽コントロールが Xbox のマルチタスク タブで正しく動作するようにします。
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
 
-### <a name="consider-draw-to-the-edge-of-the-screen"></a>*考慮すること:* 画面の端に描画するようにします
+### <a name="consider-draw-to-the-edge-of-the-screen"></a>*検討してください。* 画面の端を描画します。
 
 多くのテレビでは画面の端が切れるので、アプリの重要なコンテンツはすべて、[テレビのセーフ エリア](../design/devices/designing-for-tv.md#tv-safe-area)の内側に表示する必要があります。 UWP は*オーバースキャン*を使用してコンテンツをテレビのセーフ エリアの内側に維持しますが、この既定の動作ではアプリの周囲に目立つ境界線が描画されることがあります。 最善のエクスペリエンスを提供するには、既定の動作を無効にして、「[画面の端に UI を描画する方法](turn-off-overscan.md)」の指示に従ってください。
 > [!IMPORTANT]
   > オーバースキャンを無効にした場合、対話要素とテキストをテレビのセーフ エリア内に収める処理はアプリで行う必要があります。 
 
-### <a name="consider-use-tv-safe-colors"></a>*考慮すること:* テレビ セーフ カラーを使用します
+### <a name="consider-use-tv-safe-colors"></a>*検討してください。* テレビの安全な色を使用します。
 
-テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。 不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。 また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります。** 読み取りに[色](../design/devices/designing-for-tv.md#colors)の全員に適切に表示する方法について説明しました。
+テレビでは、コンピューター モニターほど極端な色の輝度は処理されません。 不自然な縞模様や色あせた画像が表示されないように、アプリでは高輝度の色を使わないようにする必要があります。 また、テレビの間の違いに留意してください。テレビによって色の表現が大きく異なる場合があります *。* 読み取り[色](../design/devices/designing-for-tv.md#colors)美しく表示すべてのユーザーにアプリを作成する方法を理解します。
 
-### <a name="remember-you-can-disable-scaling"></a>*憶えておくこと:* スケーリングを無効にできます
+### <a name="remember-you-can-disable-scaling"></a>*注意してください。* スケーリングを無効にします。
 
 UWP アプリは、コントロールやフォントなどの UI 要素がすべてのデバイスで読みやすいように自動的にスケーリングされます。 XAML を使用するアプリは 200% に、HTML を使用するアプリは 150% にスケーリングされます。 Xbox でのアプリの表示をさらに細かく制御する場合は、既定の倍率を無効にして、HDTV (1920 x 1080) の実際のピクセル サイズを使用します。 Xbox で適切に表示されるようにアプリを調整する方法については、「[スケーリングを無効にする方法](disable-scaling.md)」および「[有効ピクセルとスケーリング](../design/basics/design-and-ui-intro.md#effective-pixels-and-scaling)」をご覧ください。
 
@@ -58,20 +58,20 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 
 [Channel 9](https://channel9.msdn.com/) の以下の講演は、Xbox でのすばらしいアプリの開発に関する優れたソースです。
 
-- [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの開発](https://channel9.msdn.com/Events/Build/2016/B883)
-- [アプリを Xbox One とテレビに対応させる](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP の開発 1: アダプティブ UI の作成](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [ブラウザーに留まらない Web アプリ: クロスプラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
+- [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの構築](https://channel9.msdn.com/Events/Build/2016/B883)
+- [Xbox One とテレビ アプリを調整します。](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP 開発 1:アダプティブ UI を構築](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [Web アプリの拡張、ブラウザー:クロス プラットフォーム対応クロス デバイス](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>App Dev on Xbox
+## <a name="app-dev-on-xbox"></a>Xbox アプリ開発
 
-**App Dev on Xbox**イベントは、Xbox でアプリを構築する新しい開発者向けの適切な開始点です。
+**Xbox アプリ開発**イベントは、新しい xbox アプリを構築する開発者向けの優れた出発点です。
 
-* [記録されたセッションを視聴します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [ブログの投稿を参照します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [記録されたセッションを見る](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [ブログを投稿します。](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>関連項目
 
 - [Xbox One の UWP](index.md)
 - [Xbox およびテレビ向け設計](../design/devices/designing-for-tv.md)
-- [Xbox One 用のプログレッシブ Web アプリ](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [プログレッシブ Web Apps for Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

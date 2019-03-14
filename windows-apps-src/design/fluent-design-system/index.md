@@ -1,48 +1,48 @@
 ---
 description: Fluent Design とアプリに組み込む方法について学習します。
-title: Windows 用の fluent Design System
+title: Windows 用の Fluent Design System
 keywords: 'UWP アプリのレイアウト, ユニバーサル Windows プラットフォーム, アプリの設計, インターフェイス, Fluent Design System'
 ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent Design System の Windows アプリの作成者
+# <a name="the-fluent-design-system-for-windows-app-creators"></a>Windows アプリ作成者用の Fluent Design System
 
-![Fluent Design ヘッダー](images/fluentdesign-app-header.jpg)
+![Fluent Design のヘッダー](images/fluentdesign-app-header.jpg)
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
-Fluent Design System では、アダプティブ、高く、親近感を作成し、優れた美しさを持つユーザー インターフェイスのシステムです。
+Fluent Design System は、順応性が高く、親近感があり、美しいユーザー インターフェイスを作成するためのシステムです。
 
 ## <a name="principles"></a>原則
 
-**順応性: 各デバイスで自然な Fluent エクスペリエンスを得られる**
+**順応性:各デバイスで自然な Fluent エクスペリエンスを得られる**
 
-Fluent エクスペリエンスは環境に適応します。 タブレット、デスクトップ PC、Xbox で快適な Fluent エクスペリエンスを得-その動作も優れています Mixed Reality ヘッドセットにします。 PC の追加モニターなど、多くのハードウェアを追加しても、Fluent エクスペリエンスでそれらを活用できます。
+Fluent エクスペリエンスは環境に適応します。 タブレット、デスクトップ PC、Xbox で軽快な Fluent エクスペリエンスを得られます。Mixed Reality ヘッドセットでの動作も優れています。 PC の追加モニターなど、多くのハードウェアを追加しても、Fluent エクスペリエンスでそれらを活用できます。
 
-**親近感: Fluent エクスペリエンスは直感的で、強力である**
+**親近感:Fluent エクスペリエンスは直感的で、強力である**
 
 Fluent エクスペリエンスは動作と意図を読み取ります。すなわち、必要なものを把握および予想します。 ユーザーとアイデアが物理的に離れているかどうかに関係なく、それらを統合します。
 
-**美しさ: Fluent エクスペリエンスは魅力的で、臨場感がある**
+**美しさ:Fluent エクスペリエンスは魅力的で、臨場感がある**
 
 現実世界の要素を組み込むことで、Fluent エクスペリエンスでは基本的な機能を活用できます。 直感的かつ本能的に情報を整理できるように、ライト、影、モーション、深度、テクスチャを使用します。
 
 
-## <a name="applying-fluent-design-to-your-app-with-uwp"></a>Uwp アプリに Fluent Design の適用
+## <a name="applying-fluent-design-to-your-app-with-uwp"></a>UWP によるアプリへの Fluent Design の適用
 
-![Fluent design のロゴ](images/fluentdesign_header.png)
+![Fluent Design のロゴ](images/fluentdesign_header.png)
 
-設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 アプリの種類ですか。 ガイドラインの多くは、任意のプラットフォームに適用できる、UWP (ユニバーサル Windows プラットフォーム) Fluent Design をサポートするためには作成します。
+設計ガイドラインでは、アプリに Fluent Design の原則を適用する方法について説明します。 どのような種類のアプリでしょうか。 ガイドラインの多くはあらゆるプラットフォームに適用できますが、Fluent Design をサポートするための UWP (ユニバーサル Windows プラットフォーム) を作成しました。
 
 Fluent Design 機能は UWP に組み込まれています。 これらの機能のいくつか (有効ピクセルやユニバーサル入力システムなど) は、自動的に取り込まれます。 これらの機能を利用するために追加のコードを記述する必要はありません。 他の機能 (アクリル効果など) はオプションであり、それらの機能をアプリに取り込むには、機能を追加するためのコードを記述します。
 
-> Fluent Design 機能を使用して既存の WPF または Windows アプリケーションの外観や機能を高めることができるように、UWP コントロールをデスクトップに追加しています。 詳細についてはを[WPF および Windows フォーム アプリケーションでホスト UWP コントロール](/windows/uwp/xaml-platform/xaml-host-controls)を参照してください。
+> Fluent Design 機能を使用して既存の WPF または Windows アプリケーションの外観や機能を高めることができるように、UWP コントロールをデスクトップに追加しています。 詳細については、[WPF および Windows フォーム アプリケーションでの UWP コントロールのホスト](/windows/uwp/xaml-platform/xaml-host-controls)に関するページを参照してください。
 
 <!-- To apply Fluent Design to your app, follow our guidelines and use UWP (Universal Windows Platform) you can use UWP UI features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices. -->
 
-だけでなく設計ガイダンスについては、Fluent Design の記事も示します発生する、デザインを行うコードを記述する方法。 UWP では、XAML では、ユーザー インターフェイスを作成しやすくマークアップ ベースの言語を使用します。 以下に例を示します。
+設計ガイダンスに加え、Fluent Design の記事では、設計を実現させるコードの記述方法も示されています。 UWP では、マークアップベースの言語である XAML が使用されます。これにより、ユーザー インターフェイスが作成しやすくなります。 次に例を示します。
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4">
@@ -53,7 +53,7 @@ Fluent Design 機能は UWP に組み込まれています。 これらの機能
 ![](images/xaml-example.png)
 
 
-> UWP 開発の初めての場合、 [UWP のページを使ってみる](https://developer.microsoft.com/windows/apps/getstarted)ご覧ください。
+> UWP を初めて開発する場合は、[UWP の概要に関するページ](https://developer.microsoft.com/windows/apps/getstarted)を参照してください。
 
 ## <a name="find-a-natural-fit"></a>最適なデザインを見つける
 
@@ -109,9 +109,9 @@ Fluent Design 機能は UWP に組み込まれています。 これらの機能
         [Learn about inputs and interactions](/windows/uwp/design/input/input-primer)
 :::row-end:::
 
-## <a name="make-it-intuitive"></a>直感的なように
+## <a name="make-it-intuitive"></a>直感的なものにする
 
-ユーザーの期待に動作するとき、エクスペリエンスは直感的な操作できます。 アクセシビリティとグローバリゼーションを実現するためにコントロールとパターンを確立し、プラットフォーム サポートを活用することで、操作の手間が省け、生産性が向上します。
+ユーザーの想像のとおりに動作するため、直観的に操作できます。 アクセシビリティとグローバリゼーションを実現するためにコントロールとパターンを確立し、プラットフォーム サポートを活用することで、操作の手間が省け、生産性が向上します。
 
 共感を得るには、適切なタイミングで適切な処理を行います。
 

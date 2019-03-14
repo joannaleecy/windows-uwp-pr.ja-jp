@@ -1,6 +1,6 @@
 ---
 description: 世界中のユーザーに対してアプリを包括的にしてアクセシビリティ対応にする方法について説明します。
-keywords: UWP アプリのアクセシビリティ, グローバリゼーション, インクルーシブ デザイン アプリ, アクセシビリティ アプリの要件
+keywords: 'UWP アプリのアクセシビリティ, グローバリゼーション, インクルーシブ デザイン アプリ, アクセシビリティ アプリの要件'
 title: UWP アプリの操作性 - Windows アプリ開発
 layout: LandingPage
 template: detail.hbs
@@ -8,12 +8,6 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937936"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP アプリの操作性
 
@@ -26,7 +20,7 @@ ms.locfileid: "8937936"
 
 ## <a name="accessiblity"></a>アクセシビリティ
 
-アクセシビリティの目的は、従来のユーザー インターフェイスを使用するのが難しいユーザーにとってアプリを使いやすいものにすることです。 状況によってはアクセシビリティの要件が法律で定められているものもありますが、 できるだけ多くの人にアプリを使ってもらえるように、法的要件に関係なくアクセシビリティの問題に対処することをお勧めします。
+アクセシビリティの目的は、従来のユーザー インターフェイスの使用に支障があるユーザーにとってアプリを使いやすいものにすることです。 状況によってはアクセシビリティの要件が法律で定められているものもありますが、 できるだけ多くの人にアプリを使ってもらえるように、法的要件に関係なくアクセシビリティの問題に対処することをお勧めします。
 
 <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>

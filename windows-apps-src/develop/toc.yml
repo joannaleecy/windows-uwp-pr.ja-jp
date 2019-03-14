@@ -26,7 +26,7 @@ items:
 - name: オーディオ、ビデオ、カメラ
   href: ../audio-video-camera/index.md
   items:
-  - name: カメラ
+  - name: Camera
     href: ../audio-video-camera/camera.md
     items:
     - name: Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ
@@ -78,7 +78,7 @@ items:
       items:
       - name: システム メディア トランスポート コントロールの手動制御
         href: ../audio-video-camera/system-media-transport-controls.md
-    - name: サポートされているタイミングが設定されたメタデータのキュー
+    - name: システムでサポートされているタイミングが設定されたメタデータのキュー
       href: ../audio-video-camera/system-supported-metadata-cues.md
     - name: メディアの中断の作成、スケジュール、管理
       href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
@@ -111,9 +111,9 @@ items:
     href: ../audio-video-camera/custom-video-effects.md
   - name: カスタムのオーディオ特殊効果
     href: ../audio-video-camera/custom-audio-effects.md
-  - name: メディアのコンポジションと編集
+  - name: メディア コンポジションと編集
     href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: オーディオ デバイス情報のプロパティ
+  - name: オーディオ デバイス情報プロパティ
     href: ../audio-video-camera/audio-device-information-properties.md
   - name: オーディオ状態の変化の検出と対応
     href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
@@ -128,7 +128,7 @@ items:
       href: ../audio-video-camera/bitmapencoder-options-reference.md
     - name: 画像のメタデータ
       href: ../audio-video-camera/image-metadata.md
-  - name: メディア ファイルのトランスコード
+  - name: メディア ファイルのコード変換
     href: ../audio-video-camera/transcode-media-files.md
   - name: バックグラウンドでのメディア ファイルの処理
     href: ../audio-video-camera/process-media-files-in-the-background.md
@@ -140,11 +140,11 @@ items:
     href: ../audio-video-camera/import-media-from-a-device.md
   - name: カメラに依存しない懐中電灯
     href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: サポートされているコーデック
+  - name: サポートされるコーデック
     href: ../audio-video-camera/supported-codecs.md
   - name: インストールされているコーデックの照会
     href: ../audio-video-camera/codec-query.md
-  - name: 画面キャプチャ
+  - name: 画面の取り込み
     href: ../audio-video-camera/screen-capture.md
 - name: 通信
   items:
@@ -245,7 +245,7 @@ items:
       href: ../files/quickstart-listing-files-and-folders.md
     - name: ファイルの作成、書き込み、および読み取り
       href: ../files/quickstart-reading-and-writing-files.md
-    - name: ファイルに書き込むためのベスト プラクティス
+    - name: ファイルへの書き込みに関するベスト プラクティス
       href: ../files/best-practices-for-writing-to-files.md
     - name: ファイルのプロパティの取得
       href: ../files/quickstart-getting-file-properties.md
@@ -259,7 +259,7 @@ items:
       href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
     - name: ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
       href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: サムネイル イメージ
+    - name: サムネイル画像
       href: ../files/thumbnails.md
     - name: 最近使ったファイルやフォルダーの追跡
       href: ../files/how-to-track-recently-used-files-and-folders.md
@@ -303,11 +303,11 @@ items:
         href: ../debug-test-perf/device-portal-xbox.md
       - name: HoloLens 用 Device Portal
         href: ../debug-test-perf/device-portal-hololens.md
-      - name: Device Portal のコア API
+      - name: デバイス ポータル コア API
         href: ../debug-test-perf/device-portal-api-core.md
       - name: Device Portal 用のカスタム プラグインの作成
         href: ../debug-test-perf/device-portal-plugin.md
-      - name: カスタムの SSL 証明書で Device Portal をプロビジョニングする
+      - name: カスタムの SSL 証明書で Device Portal のプロビジョニングを行う
         href: ../debug-test-perf/device-portal-ssl.md
     - name: Windows アプリ認定キット
       href: ../debug-test-perf/windows-app-certification-kit.md
@@ -432,7 +432,7 @@ items:
         items:
         - name: UI とユーザー エクスペリエンス ガイドライン
           href: ../monetize/ui-and-user-experience-guidelines.md
-        - name: 広告ユニットの見やすさを最適化する
+        - name: 広告ユニットの視認性の最適化
           href: ../monetize/optimize-ad-unit-viewability.md
         - name: 広告のエラー処理
           href: ../monetize/error-handling-with-advertising-libraries.md
@@ -486,7 +486,7 @@ items:
           items:
           - name: 取得データおよびインストール データの取得
             items:
-            - name: アプリの取得数の取得
+            - name: アプリの入手数の取得
               href: ../monetize/get-app-acquisitions.md
             - name: アプリのインストール数の取得
               href: ../monetize/get-app-installs.md
@@ -496,7 +496,7 @@ items:
               href: ../monetize/get-app-conversions-by-channel.md
             - name: アドオンの入手数の取得
               href: ../monetize/get-in-app-acquisitions.md
-            - name: サブスクリプション アドオンの入手数の取得
+            - name: サブスクリプション アドオンの取得数の取得
               href: ../monetize/get-subscription-acquisitions.md
             - name: チャネルごとのアドオンのコンバージョンの取得
               href: ../monetize/get-add-on-conversions-by-channel.md
@@ -586,23 +586,23 @@ items:
           href: ../monetize/manage-ad-campaigns.md
         - name: 配信ラインの管理
           href: ../monetize/manage-delivery-lines-for-ad-campaigns.md
-        - name: 対象プロファイルの管理
+        - name: ターゲット プロファイルの管理
           href: ../monetize/manage-targeting-profiles-for-ad-campaigns.md
         - name: クリエイティブの管理
           href: ../monetize/manage-creatives-for-ad-campaigns.md
       - name: 申請の作成と管理
         href: ../monetize/create-and-manage-submissions-using-windows-store-services.md
         items:
-        - name: アプリ データの取得
+        - name: アプリ データの入手
           href: ../monetize/get-app-data.md
           items:
-          - name: すべてのアプリの入手
+          - name: すべてのアプリの取得
             href: ../monetize/get-all-apps.md
           - name: アプリの入手
             href: ../monetize/get-an-app.md
-          - name: アプリのアドオンの入手
+          - name: アプリのアドオンの取得
             href: ../monetize/get-add-ons-for-an-app.md
-          - name: アプリのパッケージ フライトの入手
+          - name: アプリのパッケージ フライトの取得
             href: ../monetize/get-flights-for-an-app.md
         - name: アプリの申請の管理
           href: ../monetize/manage-app-submissions.md
@@ -625,7 +625,7 @@ items:
             href: ../monetize/update-the-package-rollout-percentage-for-an-app-submission.md
           - name: アプリの申請に関するロールアウトを停止する
             href: ../monetize/halt-the-package-rollout-for-an-app-submission.md
-          - name: アプリの申請に関するロールアウトを完了する
+          - name: アプリの申請に関するロールアウトの完了
             href: ../monetize/finalize-the-package-rollout-for-an-app-submission.md
         - name: アドオンの管理
           href: ../monetize/manage-add-ons.md
@@ -698,14 +698,14 @@ items:
             href: ../monetize/java-code-examples-for-submissions-game-options-and-trailers.md
           - name: 'Python のコード例: アプリ、アドオン、およびフライトの申請'
             href: ../monetize/python-code-examples-for-the-windows-store-submission-api.md
-          - name: 'Python のコード例: ゲーム オプションおよびトレーラーのアプリの申請'
+          - name: 'Python のコード例: ゲーム オプションおよびトレーラーを含むアプリの申請'
             href: ../monetize/python-code-examples-for-submissions-game-options-and-trailers.md
       - name: 対象のプランを管理する
         href: ../monetize/manage-targeted-offers-using-windows-store-services.md
         items:
         - name: 対象のプランを取得する
           href: ../monetize/get-targeted-offers.md
-      - name: サービスから製品の権利を管理する
+      - name: サービスによる製品の権利の管理
         href: ../monetize/view-and-grant-products-from-a-service.md
         items:
         - name: 製品の照会
@@ -714,7 +714,7 @@ items:
           href: ../monetize/report-consumable-products-as-fulfilled.md
         - name: 無料の製品の付与
           href: ../monetize/grant-free-products.md
-        - name: ユーザーのサブスクリプションを取得する
+        - name: ユーザーのサブスクリプションの取得
           href: ../monetize/get-subscriptions-for-a-user.md
         - name: ユーザーのサブスクリプションに関する請求の状態を変更する
           href: ../monetize/change-the-billing-state-of-a-subscription-for-a-user.md
@@ -773,11 +773,11 @@ items:
         href: ../packaging/install-related-set.md
       - name: アプリ インストーラー ファイルを使ったインストールに関する問題のトラブルシューティング
         href: ../packaging/troubleshoot-appinstaller-issues.md
-      - name: Azure Web アプリから UWP アプリをインストールする
+      - name: Azure Web アプリからの UWP アプリのインストール
         href: ../packaging/web-install-azure.md
-      - name: IIS サーバーから UWP アプリをインストールする
+      - name: IIS サーバーからの UWP アプリのインストール
         href: ../packaging/web-install-iis.md
-      - name: Web インストール用に AWS で UWP アプリ パッケージをホストする
+      - name: Web インストールのための UWP アプリ パッケージの AWS へのホスト
         href: ../packaging/web-install-aws.md
     - name: WinAppDeployCmd.exe ツールを使ったアプリのインストール
       href: ../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md
@@ -794,7 +794,7 @@ items:
     items:
     - name: 概要
       href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
-    - name: 使ってみる
+    - name: はじめに
       href: ../cpp-and-winrt-apis/get-started.md
     - name: 新着情報
       href: ../cpp-and-winrt-apis/news.md
@@ -961,7 +961,7 @@ items:
     items:
     - name: C++/CX での Windows ランタイム コンポーネントの作成
       href: ../winrt-components/creating-windows-runtime-components-in-cpp.md
-    - name: 'チュートリアル: C++/CX での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し'
+    - name: チュートリアル:C++/CX での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し
       href: ../winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md
     - name: C# と Visual Basic での Windows ランタイム コンポーネントの作成
       href: ../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md
@@ -976,7 +976,7 @@ items:
         href: ../winrt-components/distributing-a-managed-windows-runtime-component.md
       - name: .NET Framework での Windows ランタイム型の対応付け
         href: ../winrt-components/net-framework-mappings-of-windows-runtime-types.md
-    - name: 'チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し'
+    - name: チュートリアル:単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し
       href: ../winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md
     - name: Windows ランタイム コンポーネントでイベントを生成する
       href: ../winrt-components/raising-events-in-windows-runtime-components.md
@@ -1123,7 +1123,7 @@ items:
       href: ../devices-sensors/aep-service-class-ids.md
   - name: デバイスのペアリング
     href: ../devices-sensors/pair-devices.md
-  - name: Point of Service
+  - name: POS (店舗販売時点管理)
     href: ../devices-sensors/point-of-service.md
     items:
     - name: 基本
@@ -1139,7 +1139,7 @@ items:
         href: ../devices-sensors/pos-basics-claim.md
       - name: 周辺機器の共有
         href: ../devices-sensors/pos-basics-sharing.md
-      - name: 開始するには
+      - name: 概要
         href: ../devices-sensors/pos-get-started.md
     - name: ハードウェア サポート
       href: ../devices-sensors/pos-device-support.md
@@ -1159,7 +1159,7 @@ items:
         items:
         - name: システム要件
           href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: 開始するには
+        - name: 概要
           href: ../devices-sensors/pos-camerabarcode-get-started.md
         - name: カメラ プレビューのホスティング
           href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
@@ -1175,7 +1175,7 @@ items:
     - name: POS プリンター
       href: ../devices-sensors/pos-printer.md
       items:
-      - name: Epson ESC/POS と書式設定
+      - name: 書式設定における Epson ESC/POS
         href: ../devices-sensors/epson-esc-pos-with-formatting.md
   - name: センサー
     href: ../devices-sensors/sensors.md
@@ -1295,7 +1295,7 @@ items:
     - name: Windows 10 のための拡張
       href: ../porting/desktop-to-uwp-enhance.md
       items:
-      - name: 利用可能な UWP API
+      - name: 利用可能なUWP API
         href: ../porting/desktop-to-uwp-supported-api.md
       - name: ネイティブ イメージを使ったアプリのバイナリの最適化
         href: ../porting/desktop-to-uwp-r2r.md
@@ -1326,19 +1326,19 @@ items:
     - name: iOS 開発者のための UWP の概要
       href: ../porting/getting-started-with-uwp-for-ios-developers.md
       items:
-      - name: 'はじめに: プロジェクトの作成'
+      - name: '概要: プロジェクトの作成'
         href: ../porting/getting-started-creating-a-project.md
-      - name: 'はじめに: プログラミング言語の選択'
+      - name: '概要: プログラミング言語の選択'
         href: ../porting/getting-started-choosing-a-programming-language.md
-      - name: 'はじめに: Visual Studio の操作方法'
+      - name: '概要: Visual Studio の操作方法'
         href: ../porting/getting-started-getting-around-in-visual-studio.md
-      - name: 'はじめに: コモン コントロール'
+      - name: '概要: コモン コントロール'
         href: ../porting/getting-started-common-controls.md
-      - name: 'はじめに: ナビゲーション'
+      - name: '概要: ナビゲーション'
         href: ../porting/getting-started-navigation.md
-      - name: 'はじめに: アニメーション'
+      - name: '概要: アニメーション'
         href: ../porting/getting-started-animation.md
-      - name: 'はじめに: 次の手順'
+      - name: '概要: 次にすること'
         href: ../porting/getting-started-what-next.md
     - name: Windows 10 を使用するための Mac のセットアップ
       href: ../porting/setting-up-your-mac-with-windows-10.md
@@ -1356,7 +1356,7 @@ items:
   - name: ARM 版 Windows 10
     href: ../porting/apps-on-arm.md
     items:
-    - name: ARM での x86 エミュレーション
+    - name: ARM での x86 エミュレーションのしくみ
       href: ../porting/apps-on-arm-x86-emulation.md
     - name: デスクトップ x86 アプリのトラブルシューティング
       href: ../porting/apps-on-arm-troubleshooting-x86.md
@@ -1373,7 +1373,7 @@ items:
       href: ../launch-resume/console-uwp.md
     - name: マルチインスタンスの UWP アプリを作成する
       href: ../launch-resume/multi-instance-uwp.md
-    - name: アプリのライフ サイクル
+    - name: アプリのライフサイクル
       href: ../launch-resume/app-lifecycle.md
       items:
       - name: アプリの事前起動の処理
@@ -1470,7 +1470,7 @@ items:
         href: ../launch-resume/set-conditions-for-running-a-background-task.md
       - name: アプリ内からのバックグラウンド タスクのトリガー
         href: ../launch-resume/trigger-background-task-from-app.md
-      - name: バックグラウンド タスクによるライブ タイルの更新
+      - name: バックグラウンド タスクのライブ タイルの更新
         href: ../launch-resume/update-a-live-tile-from-a-background-task.md
       - name: メンテナンス トリガーの使用
         href: ../launch-resume/use-a-maintenance-trigger.md
@@ -1516,8 +1516,8 @@ items:
     - name: マルチスレッド環境での Windows ランタイム オブジェクトの使用
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
 ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
-ms.translationtype: MT
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115939"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583699"

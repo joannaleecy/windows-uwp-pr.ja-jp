@@ -1,44 +1,38 @@
 ---
-title: 教育機関向けのアプリを開発します。
-description: このセクションでは、ウィンドウのユニバーサル アプリなリソースを利用できるように、Windows 10 プラットフォームの教育機関向けのアプリの作成について説明します。
+title: 教育用アプリを開発します。
+description: このセクションでは、Windows 10 プラットフォームの教育アプリを記述するときに利用できるユニバーサル Windows アプリのリソースについて説明します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp, 教育
+keywords: 'windows 10, uwp, 教育'
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943988"
 ---
-# <a name="develop-universal-windows-apps-for-education"></a>教育機関向けのユニバーサル Windows アプリを開発します。
-![テスト アプリのスクリーン ショット](images/take-a-test-screen-small.png)
+# <a name="develop-universal-windows-apps-for-education"></a>教育用のユニバーサル Windows アプリの開発
+![テスト アプリのスクリーンショット](images/take-a-test-screen-small.png)
 
-次のリソースを使用すると、教育機関向けのユニバーサル Windows アプリを作成できます。
+以下のリソースは、教育用のユニバーサル Windows アプリの作成に役立ちます。
 
 ### <a name="accessibility"></a>アクセシビリティ
-教育機関向けのアプリがアクセスできるようにする必要があります。 詳細については、[アクセシビリティ用アプリの開発](https://developer.microsoft.com/windows/accessible-apps)を参照してください。
+教育アプリでは、アクセシビリティ対応が必要です。 詳しくは、「[アクセシビリティのためのアプリ開発](https://developer.microsoft.com/windows/accessible-apps)」をご覧ください。
 
 
 ### <a name="secure-assessments"></a>安全な評価
-アプリの評価/テストでは、受講者がテスト中に他のコンピューターやインターネット リソースを使用するを防ぐためには、*ロック ダウン*環境を作成する必要があります。 この機能は、[テスト Api](take-a-test-api.md)で利用できます。 ロック ダウン厳正なテスト用オンラインへのアクセスとテスト環境の例については、Windows IT センターでの[テストでは、](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) web アプリを参照してください。
+評価/テストのアプリでは、多くの場合、学生がテスト中に他のコンピューターやインターネットのリソースを使用できないようにするための*ロックダウン*環境を作成する必要があります。 この機能は[テスト API](take-a-test-api.md) により利用できます。 安全なテストを行うためのオンライン アクセスのロックダウンを使ったテスト環境の例については、Windows IT センターの「[テスト](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)」Web アプリをご覧ください。
 
 ### <a name="user-input"></a>ユーザー入力
-ユーザー入力が教育機関向けのアプリの重要な部分UI コントロールは、応答性と、ユーザーのフォーカスを中断にならないように直感的である必要があります。 ユニバーサル Windows アプリで利用できる入力オプションの一般的な概要については、[入力の基本情報](https://docs.microsoft.com/windows/uwp/design/input/input-primer)と設計および UI のセクションの下にあるトピックを参照してください。 さらに、次のサンプル アプリは、ユニバーサル Windows プラットフォームで処理する基本的な UI を紹介します。
-- [基本的な入力のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)は、ユニバーサル Windows アプリで入力を処理する方法を示しています。
-- [ユーザー操作モードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)では、検出し、そのユーザーの対話式操作モードに対応する方法を示します。
-- [フォーカスの視覚効果のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)は、新しいシステム描画フォーカスの視覚効果を利用したり場合は、独自のカスタム フォーカスの視覚効果を作成する方法を示しています。 システムが描画、ニーズに合わせてものはありません。
+ユーザー入力は教育アプリにとって重要です。UI コントロールは、ユーザーの集中を妨げないように、応答性に優れ、直感的である必要があります。 ユニバーサル Windows アプリで利用可能な入力オプションの一般的な概要については、「[操作の基本情報](https://docs.microsoft.com/windows/uwp/design/input/input-primer)」およびその中のデザインと UI に関するセクションのトピックをご覧ください。 また、次のサンプル アプリでは、ユニバーサル Windows プラットフォームの基本的な UI 処理を利用しています。
+- 「[基本的な入力のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)」では、ユニバーサル Windows アプリで入力を処理する方法を示します。
+- 「[ユーザー操作モードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)」では、ユーザー操作モードを検出して応答する方法を示します。
+- [フォーカスの視覚効果のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)」では、システムによって描画される新しいフォーカスの視覚効果を利用する方法や、システムによって描画される視覚効果がニーズに合わない場合に、独自のカスタム フォーカスの視覚効果を作成する方法を示します。
 
-Windows Ink プラットフォームでは、学生に慣れている入力モードと適合させることによって引き立た教育アプリを作成できます。 [ペン操作と Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)と Windows Ink をアプリに実装する包括的なガイドの下にあるトピックを参照してください。 次のサンプル アプリは、この API の動作の例を示します。
-- [インクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink)では、JavaScript を使ってユニバーサル Windows アプリでインク機能 (など、キャプチャ、操作、およびインク ストロークを解釈する) を使用する方法を示します。
-- [単純なインクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)では、c# を使用してユニバーサル Windows アプリで (ユーザー入力からのインクのキャプチャ、インク ストロークを手書き認識の実行) などのインク機能を使用する方法を示します。
-- [複雑なインクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)では、他のオブジェクト、インクの選択、コピー、貼り付け、イベントの処理とインクをインターリーブする InkPresenter の高度な機能を使用する方法を示します。 C++ では、ユニバーサル Windows プラットフォームを使って構築し、デスクトップとモバイルの Windows 10 の Sku で実行できます。
+Windows Ink プラットフォームの利用によって、学生が慣れ親しんだ入力モードを活用でき、教育用アプリを魅力的なものにすることができます。 Windows Ink をアプリに実装するための包括的なガイドは、「[ペン操作と Windows Ink](https://docs.microsoft.com/windows/uwp/design/input/pen-and-stylus-interactions)」およびその中のトピックをご覧ください。 次のサンプル アプリは、この API の動作の例を示します。
+- [インクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink)」では、JavaScript を使ってユニバーサル Windows アプリでインク機能 (キャプチャ、操作、インク ストロークの解釈など) を使う方法を示します。
+- 「[単純なインクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)」では、C# を使ってユニバーサル Windows アプリでインク機能 (ユーザー入力からのインクのキャプチャやインク ストロークでの手書き認識の実行など) を使う方法を示します。
+- 「[複雑なインクのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)」では、高度な InkPresenter の機能を使ってインクを他のオブジェクトにインターリブしたり、インクを選択したり、コピー/貼り付けしたり、イベントを処理する方法を示します。 このサンプルは、C++ でユニバーサル Windows プラットフォームに基づいて構築され、デスクトップ SKU とモバイル Windows 10 SKU で実行できます。
 
 
 ### <a name="microsoft-store"></a>Microsoft Store
-教育機関向けのアプリは多くの場合、特定の組織の特殊な状況でリリースされます。 詳細については、[基幹業務アプリの企業への配布](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)を参照してください。
+教育用アプリは、多くの場合、特定の状況下の特定の組織にリリースされます。 これについて詳しくは、「[LOB アプリの企業への配布](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)」をご覧ください。
 
 ## <a name="related-topics"></a>関連トピック
-- [Windows 10 for Education](https://technet.microsoft.com/edu/windows/index)では、Windows IT センター
+- Windows IT センターの「[Windows 10 for Education](https://technet.microsoft.com/edu/windows/index)」

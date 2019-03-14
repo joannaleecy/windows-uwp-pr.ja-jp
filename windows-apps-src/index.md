@@ -6,15 +6,9 @@ title: UWP ドキュメンテーション - UWP アプリ開発者 |Microsoft Do
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-keywords: Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開
+keywords: 'Windows UWP, ユニバーサル Windows プラットフォーム, Windows ランタイム API、Windows API、Windows API リファレンス、WinRT API, Windows API リファレンス, UWP API、UWP API リファレンス, UWP の開発, UWP の設計, UWP の公開'
 ms.localizationpriority: medium
 ms.technology: uwp-conceptual-docs
-ms.openlocfilehash: ce1923fa071344a848b4b0c4fab1ed6da6da48f7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047151"
 ---
 # <a name="universal-windows-platform-documentation"></a>ユニバーサル Windows プラットフォームのドキュメント
 ユニバーサル Windows プラットフォーム (UWP) では、どのような Windows デバイス (PC、電話、Xbox One、HoloLens など) 向けのアプリでも構築して、Microsoft Store に公開できます。
@@ -119,7 +113,7 @@ ms.locfileid: "9047151"
                             <a href="packaging/index.md">アプリのパッケージ化</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows  コミュニティ ツールキット</a>
+                            <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows コミュニティ ツールキット</a>
                         </p>
                         <p>
                             <a href="porting/index.md">Windows 10 へのアプリの移植</a>
@@ -210,7 +204,7 @@ ms.locfileid: "9047151"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>API reference (API リファレンス)</h3>
+                        <h3>API リファレンス</h3>
                         <p>
                             <a href="//docs.microsoft.com/uwp/">ユニバーサル Windows プラットフォーム API</a>
                         </p>
@@ -271,10 +265,10 @@ ms.locfileid: "9047151"
                     <div class="cardText">
                         <h3>コミュニティとサポート</h3>
                         <p>
-                            <a href="https://twitter.com/WindowsDocs">@WindowsDocstwitter</a>
+                            <a href="https://twitter.com/WindowsDocs">Twitter の @WindowsDocs</a>
                         </p>
                         <p>
-                            <a href="https://aka.ms/OneDevMinute">YouTube で OneDevMinute</a>
+                            <a href="https://aka.ms/OneDevMinute">YouTube の OneDevMinute</a>
                         </p>
                         <p>
                             <a href="https://developer.microsoft.com/windows/support">Windows 開発者向けサポート</a>

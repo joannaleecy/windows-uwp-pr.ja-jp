@@ -3,21 +3,15 @@ title: Direct3D グラフィックスの用語集
 description: Microsoft Direct3D で使用されるグラフィックス用語を定義します。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
-- Direct3D グラフィックスの用語集
+  - Direct3D グラフィックスの用語集
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926437"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D グラフィックスの用語集
 
 
-Microsoft Direct3D グラフィックスの用語を定義します。 Direct3D ゲームとアプリの開発で使用される高レベル、一般的な 3D コンピューター グラフィックスの条件で、この用語集定義します。
+Microsoft Direct3D グラフィックスの用語を定義します。 この用語集では、Direct3D のゲームおよびアプリの開発で使用されている一般的な 3D コンピューター グラフィックス用語の概要を定義します。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>このセクションの内容
 
@@ -40,23 +34,23 @@ Microsoft Direct3D グラフィックスの用語を定義します。 Direct3D 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="vertex-and-index-buffers.md">頂点バッファーとインデックス バッファー</a></p></td>
-<td align="left"><p>"頂点バッファー"<em></em> は、頂点データを格納するメモリ バッファーです。頂点バッファー内の頂点は、変換、照明の適用、クリッピングを実行するために処理されます。 <em>インデックス バッファー</em>は、インデックス データを格納するメモリ バッファーです。インデックス データは頂点バッファーへの整数オフセットで、プリミティブのレンダリングに使われます。</p></td>
+<td align="left"><p><em>"頂点バッファー"</em> は、頂点データを格納するメモリ バッファーです。頂点バッファー内の頂点は、変換、照明の適用、クリッピングを実行するために処理されます。 <em>インデックス バッファー</em>は、インデックス データを含むメモリ バッファーであり、プリミティブのレンダリングに使用される、頂点バッファーへの整数オフセットです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="devices.md">デバイス</a></p></td>
 <td align="left"><p>Direct3D デバイスは、Direct3D のレンダリング コンポーネントです。 デバイスは、レンダリングの状態をカプセル化して格納します。また、変換や照明の操作、サーフェスへのイメージのラスタライズを実行します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="lights-and-materials.md">光源</a></p></td>
+<td align="left"><p><a href="lights-and-materials.md">照明</a></p></td>
 <td align="left"><p>光源は、シーン内のオブジェクトを照射するのに使われます。 各オブジェクト頂点の色は、現在のテクスチャ マップ、頂点の色、光源に基づきます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="depth-and-stencil-buffers.md">深度バッファーとステンシル バッファー</a></p></td>
-<td align="left"><p><em>深度バッファー</em>は、ビューから隠される多角形の領域ではなく、レンダリングされるポリゴンの領域を制御する深度情報を格納します。 <em>ステンシル バッファー</em>は、画像内のピクセルをマスクするために使用されます。これにより、合成、デカール、ディゾルブ、フェード、スワイプ、輪郭とシルエット、両面ステンシルなどの特殊効果を作成できます。</p></td>
+<td align="left"><p><em>深度バッファー</em>には、ビューから隠すのではなくレンダリングする多角形の領域を制御するための深度情報が格納されます。 <em>ステンシル バッファー</em>は、画像内のピクセルをマスクし、合成、デカール、ディゾルブ、フェード、スワイプ、輪郭とシルエット、両面ステンシルなどの特殊効果を生成するために使われます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="textures.md">テクスチャ</a></p></td>
-<td align="left"><p>テクスチャは、コンピュータで作成した 3D 画像にリアルさを加えるための強力なツールです。 Direct3D では、開発者が高度なテクスチャ手法に簡単にアクセスできれば、広範なテクスチャ機能セットがサポートされます。</p></td>
+<td align="left"><p>テクスチャは、コンピューターにより生成された 3D 画像でリアルさを出すための強力なツールです。 Direct3D は広範囲のテクスチャリング機能セットをサポートし、高度なテクスチャリング手法に簡単にアクセスできる方法を開発者に提供します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="graphics-pipeline.md">グラフィックス パイプライン</a></p></td>
@@ -64,7 +58,7 @@ Microsoft Direct3D グラフィックスの用語を定義します。 Direct3D 
 </tr>
 <tr class="even">
 <td align="left"><p><a href="views.md">ビュー</a></p></td>
-<td align="left"><p>&quot;ビュー&quot; という語は、&quot;必要な形式のデータ&quot;を意味します。 たとえば、定数バッファー ビュー (CBV) は、適切な形式の定数バッファー データです。 ここでは、最も一般的で役に立つビューについて説明します。</p></td>
+<td align="left"><p>&quot;ビュー&quot; という語は、&quot;必要な形式のデータ&quot;を意味します。 たとえば、定数バッファー ビュー (CBV) は、適切な形式の定数バッファー データを表します。 このセクションでは、最もよく使われる便利なビューについて説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="compute-pipeline.md">計算パイプライン</a></p></td>

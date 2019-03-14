@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Xbox Live, Xbox, ゲーム, Xbox One, Xbox Integrated Multiplayer
 ms.localizationpriority: medium
 ms.openlocfilehash: 798d1a1bc738cbdc7bb2b3fb34076f0897fc76ff
-ms.sourcegitcommit: 2a81d71e799eb167c7a26bf33c9ac847b8e6bc66
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8992081"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644057"
 ---
 # <a name="using-xim-c"></a>XIM (C++) の使用
 
@@ -20,27 +20,27 @@ ms.locfileid: "8992081"
 
 ここでは、XIM の C++ API の使用方法について概要を紹介します。 ゲーム開発者が C# 経由で XIM にアクセスする場合は、「[XIM (C#) の使用](using-xim-cs.md)」をご覧ください。
 
-- [XIM (C++) の使用](#using-xim-c)
+- [XIM (C++) を使用します。](#using-xim-c)
     - [前提条件](#prerequisites)
-    - [初期化および起動](#initialization-and-startup)
+    - [初期化と起動](#initialization-and-startup)
     - [非同期操作および状態変更の処理](#asynchronous-operations-and-processing-state-changes)
-    - [XIM プレイヤー オブジェクトの処理](#handling-xim-player-objects)
-    - [フレンド参加の有効化とフレンドの招待](#enabling-friends-to-join-and-inviting-them)
-    - [マッチメイキングの概要および別の XIM ネットワークへの移動](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
-    - [デバッグ目的でのマッチメイキング NAT 規則の無効化](#disabling-matchmaking-nat-rule-for-debugging-purposes)
-    - [XIM ネットワークの退出およびクリーンアップ](#leaving-a-xim-network-and-cleaning-up)
-    - [メッセージの送信と受信](#sending-and-receiving-messages)
-    - [データ経路の品質の評価](#assessing-data-pathway-quality)
-    - [プレイヤーのカスタム プロパティを使ったデータの共有](#sharing-data-using-player-custom-properties)
-    - [ネットワークのカスタム プロパティを使ったデータの共有](#sharing-data-using-network-custom-properties)
-    - [プレイヤーごとのスキルによるマッチメイキング](#matchmaking-using-per-player-skill)
-    - [プレイヤーごとのロールによるマッチメイキング](#matchmaking-using-per-player-role)
-    - [XIM とプレイヤー チームの連携について](#how-xim-works-with-player-teams)
+    - [XIM プレイヤーのオブジェクトの処理](#handling-xim-player-objects)
+    - [友人を有効にして、ように招待](#enabling-friends-to-join-and-inviting-them)
+    - [基本のマッチメイ キングと他のユーザーと別の XIM ネットワークへの移行](#basic-matchmaking-and-moving-to-another-xim-network-with-others)
+    - [デバッグのための NAT 規則をマッチメイ キングを無効にします。](#disabling-matchmaking-nat-rule-for-debugging-purposes)
+    - [XIM ネットワークをクリーンアップします。](#leaving-a-xim-network-and-cleaning-up)
+    - [メッセージの送受信](#sending-and-receiving-messages)
+    - [データの経路の品質を評価します。](#assessing-data-pathway-quality)
+    - [プレーヤーのカスタム プロパティを使用してデータを共有します。](#sharing-data-using-player-custom-properties)
+    - [ネットワークのカスタム プロパティを使用してデータを共有します。](#sharing-data-using-network-custom-properties)
+    - [プレイヤーのスキルを使用してのマッチメイ キング](#matchmaking-using-per-player-skill)
+    - [プレイヤーのロールを使用してのマッチメイ キング](#matchmaking-using-per-player-role)
+    - [プレーヤーのチームと XIM のしくみ](#how-xim-works-with-player-teams)
     - [チャットの操作](#working-with-chat)
-    - [プレイヤーを消音する](#muting-players)
-    - [プレイヤーのチームを使ったチャット ターゲットの構成](#configuring-chat-targets-using-player-teams)
-    - [プレイヤー スロットの自動バックグラウンド設定 ("バックフィル" マッチメイキング)](#automatic-background-filling-of-player-slots-backfill-matchmaking)
-    - [参加可能なネットワークの照会](#querying-joinable-networks)
+    - [プレーヤーのミュート](#muting-players)
+    - [チームのプレーヤーを使用してチャット ターゲットを構成します。](#configuring-chat-targets-using-player-teams)
+    - [Player スロット (「バックフィル」マッチメイ キング) の自動バック グラウンドの塗りつぶし](#automatic-background-filling-of-player-slots-backfill-matchmaking)
+    - [クエリの結合可能なネットワーク](#querying-joinable-networks)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -91,7 +91,7 @@ xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_only
 
 XIM の中核的な動作は、アプリによる `xim::start_processing_state_changes()` メソッドと `xim::finish_processing_state_changes()` メソッドの定期的かつ頻繁な呼び出しです。 これらのメソッドを使用して、XIM はアプリがマルチプレイヤーの状態の更新を処理する準備ができた通知を受け取り、更新を提供します。 これらのメソッドは、UI レンダリング ループのすべてのグラフィックス フレームで呼び出すことができるよう、素早く動作するように設計されています。 これを利用することで、ネットワークのタイミングの予測不可能性やマルチスレッド コールバックの複雑さを気にすることなく、キュー内のすべての変更を取得できます。 XIM API は、このシングル スレッド パターン用に実際に最適化されています。 これら 2 つの関数の外部では状態が変化しないことが保証されているため、直接的かつ効率的に使用できます。
 
-同じ理由から、XIM API によって返されるオブジェクトがすべてスレッドセーフであるとは見なさないでください**。 ライブラリには内部的なマルチスレッド保護機能がありますが、任意のスレッドで XIM のいずれかの値にアクセスする必要がある場合は、独自のロック処理を実装する必要があります。 たとえば、あるスレッドが `xim::players()` リストを処理すると同時に、別のスレッドが `xim::start_processing_state_changes()` または `xim::finish_processing_state_changes()` を呼び出して、プレイヤー リストに関連付けられたメモリを変更する場合などです。
+同じ理由から、XIM API によって返されるオブジェクトがすべてスレッドセーフであるとは見なさないでください *。* ライブラリには内部的なマルチスレッド保護機能がありますが、任意のスレッドで XIM のいずれかの値にアクセスする必要がある場合は、独自のロック処理を実装する必要があります。 たとえば、あるスレッドが `xim::players()` リストを処理すると同時に、別のスレッドが `xim::start_processing_state_changes()` または `xim::finish_processing_state_changes()` を呼び出して、プレイヤー リストに関連付けられたメモリを変更する場合などです。
 
 `xim::start_processing_state_changes()` を呼び出すと、キューに入っているすべての更新が `xim_state_change` 構造体ポインターの配列で報告されます。
 
@@ -143,7 +143,7 @@ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; stateCh
 
 `xim_player` オブジェクトには、多くの役に立つメソッドがあります。たとえば、`xim_player::gamertag()` は、プレイヤーに関連付けられている現在の Xbox Live ゲーマータグ文字列を表示用に取得します。 `xim_player` がデバイスに対してローカルである場合は、ローカル プレイヤーだけが使用できるメソッドである `xim_player::local()` から null ではない `xim_player::xim_local` オブジェクトのポインターも報告します。
 
-もちろん、プレイヤーにとって最も重要な状態は XIM が知っている共通の情報ではなく、特定のアプリで追跡する必要のある情報です。その追跡情報に対しては独自のコンストラクトがある可能性があるため、`xim_player` オブジェクトを独自のプレイヤー コンストラクト オブジェクトにリンクして、XIM が `xim_player` を報告するときはいつでも、カスタム プレイヤー コンテキスト ポインターを事前設定して検索を実行することなく状態をすばやく取得できます。 次の例では、プライベート状態に対するポインターは変数 "myPlayerStateObject" 内にあり、新しく追加される `xim_player` オブジェクトは変数 "newXimPlayer" 内にあるものとします。
+もちろん、プレイヤーの最も重要な状態はなく XIM が認識している一般的な情報が追跡する、特定のアプリです。追跡情報を独自のコンス トラクターがある可能性があります、ためにリンクします、 `xim_player` XIM レポートをいつ player コンストラクト オブジェクトにオブジェクトを`xim_player`、設定することがなく、状態をすばやく取得できるとカスタム プレーヤー コンテキスト ポインターを検索します。 次の例では、プライベート状態に対するポインターは変数 "myPlayerStateObject" 内にあり、新しく追加される `xim_player` オブジェクトは変数 "newXimPlayer" 内にあるものとします。
 
 ```cpp
 newXimPlayer->set_custom_player_context(myPlayerStateObject);
@@ -167,7 +167,7 @@ networkConfiguration.allowed_player_joins = xim_allowed_player_joins::local | xi
 xim::singleton_instance().set_network_configuration(&networkConfiguration);
 ```
 
-`xim::set_network_configuration()` が非同期で実行されます。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `xim_allowed_player_joins::none` から変更されたことを通知する `xim_network_configuration_changed_state_change` が生成されます。 その後、新しい値は、`xim::network_configuration()` が返す `xim_network_configuration` の `allowed_player_joins` プロパティをチェックすることで照会できます。 
+`xim::set_network_configuration()` asynchronoulsy を実行します。 前のコード サンプルの呼び出しが完了すると、参加可能性の値がその既定値 `xim_allowed_player_joins::none` から変更されたことを通知する `xim_network_configuration_changed_state_change` が生成されます。 その後、新しい値は、`xim::network_configuration()` が返す `xim_network_configuration` の `allowed_player_joins` プロパティをチェックすることで照会できます。 
 
 デバイスが XIM ネットワーク内にあるときに、`allowed_player_joins` をチェックすることで、ネットワークの参加可能性を確認できます。
 
@@ -459,7 +459,7 @@ XIM ネットワーク内のプレイヤー間の音声およびテキスト チ
 
 `xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` および `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` を呼び出すと、ローカル プレーヤーがこれらの設定を検出できます。必要に応じて、テキストのメカニズムを有効にすることもできます。 ただし、テキスト入力および表示オプションを常に有効にすることを検討することをお勧めします。
 
- `Windows::Xbox::UI::Accessability` は、音声テキスト変換支援技術を搭載したゲーム内のテキストチャットを単純にレンダリングできるように特別に設計された Xbox One のクラスです。
+ `Windows::Xbox::UI::Accessability` Xbox One クラス専用に作られた音声からテキストへの支援技術に重点を置いて、ゲーム内のテキストのチャットの単純なレンダリングを提供します。
 
 現実のキーボードまたは仮想キーボードで入力されたテキストを取得したら、その文字列を `xim_player::xim_local::send_chat_text()` メソッドに渡します。 以下のコードは、'localPlayer' 変数によって指定されたローカルの `xim_player` オブジェクトからハード コードされたサンプル文字列の送信を示します。
 
@@ -500,11 +500,11 @@ switch (ximPlayer->chat_indicator())
 `xim_player::chat_indicator()` によって報告される値は、プレイヤーの発声開始から終了までを頻繁に変更することを想定しています。 そのため、すべての UI フレームをポーリングできるように設計されています。
 
 > [!NOTE]
-> デバイス設定のためにローカル ユーザーが十分な通信権限を持っていない場合、`xim_player::chat_indicator()` は `xim_player_chat_indicator::platform_restricted` を返します。 プラットフォームに期待される要件は、音声チャットやメッセージのプラットフォーム制限を示すアイコンや問題をユーザーに示すメッセージをアプリに表示することです。 推奨されるメッセージの例は、"申し訳ございません。現在チャットは許可されていません" です。
+> デバイス設定のためにローカル ユーザーが十分な通信権限を持っていない場合、`xim_player::chat_indicator()` は `xim_player_chat_indicator::platform_restricted` を返します。 プラットフォームに期待される要件は、音声チャットやメッセージのプラットフォーム制限を示すアイコンや問題をユーザーに示すメッセージをアプリに表示することです。 お勧め、1 つのメッセージの例に示します。「申し訳ありませんが、いないできます今すぐチャットを。」
 
 ## <a name="muting-players"></a>プレイヤーを消音する
 
-もう 1 つのベスト プラクティスは、プレイヤーのミュートをサポートすることです。 XIM では、ユーザーはプレイヤー カードを使用してシステムを自動的にミュートできますが、`xim_player::set_chat_muted()` メソッドを経由してゲーム UI 内で実行されるゲーム固有の一時的なミュートをアプリでもサポートしている必要があります。 以下の例では、'remotePlayer 変数でリモートの `xim_player` オブジェクトを指定し、ミュートを開始します。これにより、ボイス チャットが聞こえず、テキスト チャットを受け取らない状態になります。
+もう 1 つのベスト プラクティスは、プレイヤーをミュートできるようにすることです。 XIM では、ユーザーはプレイヤー カードを使用してシステムを自動的にミュートできますが、`xim_player::set_chat_muted()` メソッドを経由してゲーム UI 内で実行されるゲーム固有の一時的なミュートをアプリでもサポートしている必要があります。 以下の例では、'remotePlayer 変数でリモートの `xim_player` オブジェクトを指定し、ミュートを開始します。これにより、ボイス チャットが聞こえず、テキスト チャットを受け取らない状態になります。
 
 ```cpp
 remotePlayer->set_chat_muted(true);
@@ -634,4 +634,4 @@ xim::move_to_network_using_joinable_network_information(selectedNetwork, nullptr
 2 つ以上のチームを宣言する xim_team_configuration を使用してネットワークのクエリを有効にすると、`xim::move_to_network_using_joinable_network_information()` を呼び出すことによって参加したプレイヤーの既定のチーム インデックス値は 0 になります。
 
 > [!NOTE]
-> 場合は、アプリは、複数のローカル ユーザーが指定されているし、ローカル ユーザーの数より少なくを持つネットワークに参加させる、参加が成功まだことができます。 ただし、ローカル ユーザーの最大数のみ network に参加することがあります。
+> アプリでは、複数のローカル ユーザーが指定し、ローカル ユーザーの数より少なくてすみを持つネットワークへの参加が場合、結合はまだ成功することができます。 ローカル ユーザーの許可された数だけ、ネットワークに参加することがあります。

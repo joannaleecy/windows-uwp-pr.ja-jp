@@ -1,22 +1,16 @@
 ---
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
+Description: ダイアログとポップアップは、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。
 title: ダイアログとポップアップ
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10、UWP
+keywords: 'windows 10, uwp'
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036864"
 ---
 # <a name="dialogs-and-flyouts"></a>ダイアログとポップアップ
 
@@ -24,7 +18,7 @@ ms.locfileid: "9036864"
 
 ダイアログ ボックスとポップアップは、通知、許可、またはユーザーからの追加の情報を必要とする状況が発生したときに表示される一時的な UI 要素です。
 
-> **重要な API**: [ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要な API**:[ContentDialog クラス](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)、[Flyout クラス](/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 
 :::row:::
@@ -57,9 +51,9 @@ ms.locfileid: "9036864"
 
 :::row:::
     :::column:::
-   <p><b>ダイアログの用途:</b> <br/>
+   <p><b>ダイアログの用途</b> <br/>
 <ul>
-<li>続行前にユーザーが読んだり確認したりする<b>必要のある重要な</b>情報を表示する場合。 次のようなシナリオが考えられます。
+<li>続行前にユーザーが読んだり確認したりする<b>必要のある重要な</b>情報を表示する場合。 たとえば、次のものがあります。
 <ul>
   <li>ユーザーのセキュリティが侵害される可能性がある場合</li>
   <li>ユーザーが重要な資産に永続的な変更を加えようとしている場合</li>
@@ -74,7 +68,7 @@ ms.locfileid: "9036864"
 </p>
     :::column-end:::
     :::column:::
-   <p><b>ポップアップの用途:</b> <br/>
+   <p><b>ポップアップの用途</b> <br/>
 <ul>
 <li>操作を完了する前に、必要な追加情報を収集する場合。</li>
 <li>一部の場合のみに意味がある情報を表示する場合。 たとえばフォト ギャラリー アプリで、ユーザーが画像のサムネイルをクリックした場合に、大きな画像を表示するためにポップアップを使用できます。</li>
@@ -90,13 +84,13 @@ ms.locfileid: "9036864"
 
 ダイアログは、アクション (ファイルの削除など) を実行する前に確認するために、よく使用されます。 ユーザーが特定の操作を頻繁に実行することが想定される場合には、ユーザーがアクションを毎回確認する必要があるようにするよりも、誤って操作した場合に、ユーザーが元に戻せる方法を提供することを検討します。
 
-## <a name="how-to-create-a-dialog"></a>ダイアログを作成する方法
+## <a name="how-to-create-a-dialog"></a>ダイアログの作成方法
 
-[ダイアログ ボックスの記事](dialogs.md)を参照してください。 
+[ダイアログに関する記事](dialogs.md)を参照してください。 
 
-## <a name="how-to-create-a-flyout"></a>ポップアップを作成する方法
+## <a name="how-to-create-a-flyout"></a>ポップアップの作成方法
 
-[ポップアップの記事](flyouts.md)をご覧ください。 
+[ポップアップに関する記事](flyouts.md)を参照してください。 
 
 ## <a name="examples"></a>例
 

@@ -4,20 +4,20 @@ description: 自動再生を使って、コンピューターにデバイスが�
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047437"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57620897"
 ---
-# <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
+# <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生と自動起動
 
 **自動再生**を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。 また**自動再生**では、近接通信 (タップ) を使って 2 台の PC 間でユーザーがファイルを共有するときにアプリをオプションとして提供することもできます。
 
-> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして、 [Microsoft Store デバイス アプリ](https://go.microsoft.com/fwlink/p/?LinkID=301381)を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Microsoft Store デバイス アプリの自動再生](https://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
+> **注**  デバイスの製造元があり、かどうかに関連付ける、[デバイス アプリを Microsoft Store](https://go.microsoft.com/fwlink/p/?LinkID=301381)として、**自動再生**デバイスのハンドラーでは、そのアプリを識別できます、デバイスのメタデータ。 詳しくは、「[Microsoft Store デバイス アプリの自動再生](https://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
 
 ## <a name="register-for-autoplay-content"></a>自動再生コンテンツに登録する
 
@@ -35,19 +35,19 @@ ms.locfileid: "9047437"
  
 ファイルが近接通信を使って共有されている場合、**FileActivatedEventArgs** オブジェクトの **Files** プロパティには、すべての共有ファイルを含むルート フォルダーへの参照が含まれます。
 
-### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
+### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1:新しいプロジェクトを作成し、自動再生の宣言を追加
 
 1.  Microsoft Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayDisplayOrCopyImages** という名前を付け、**[OK]** をクリックします。
-2.  [Package.appxmanifest] ファイルを開き、**[機能] ** タブを選択します。**[リムーバブル記憶域]** と **[ピクチャ ライブラリ]** 機能を選択します。 これで、アプリはカメラ メモリのリムーバブル ストレージ デバイスと、ローカルの画像にアクセスできるようになります。
-3.  マニフェスト ファイルで **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[自動再生コンテンツ]** を選んで **[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
-4.  **[自動再生コンテンツ]** 宣言は、自動再生でコンテンツ イベントが発生したときに該当のアプリがオプションとして識別されます。 イベントは DVD やサム ドライブなどのボリューム デバイスのコンテンツに基づきます。 自動再生ではボリューム デバイスのコンテンツを調べて、発生させるコンテンツ イベントを決定します。 ボリュームのルートに DCIM、AVCHD、または PRIVATE\\ACHD フォルダーが含まれる場合、または自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしていてボリュームのルートで画像が見つかった場合、自動再生で **ShowPicturesOnArrival** イベントが発生します。 **[起動アクション]** セクションで、最初の起動アクションに対して下記の表 1 の値を入力します。
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。**[リムーバブル記憶域]** 機能と **[画像ライブラリ]** 機能を選びます。 これで、アプリはカメラ メモリのリムーバブル ストレージ デバイスと、ローカルの画像にアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。**[使用可能な宣言]** ドロップダウン リストで、**[自動再生コンテンツ]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
+4.  **[自動再生コンテンツ]** 宣言は、自動再生でコンテンツ イベントが発生したときに該当のアプリがオプションとして識別されます。 イベントは DVD やサム ドライブなどのボリューム デバイスのコンテンツに基づきます。 自動再生ではボリューム デバイスのコンテンツを調べて、発生させるコンテンツ イベントを決定します。 DCIM、AVCHD、またはプライベート ボリュームのルートが含まれている場合\\ACHD フォルダー、ユーザーが有効にした場合または **、各メディアの種類の処理方法を選択**コントロール パネルの 自動再生と画像が存在、ボリュームのルートにし、自動再生を発生させます、 **ShowPicturesOnArrival**イベント。 **[起動アクション]** セクションで、最初の起動アクションに対して下記の表 1 の値を入力します。
 5.  **[自動再生コンテンツ]** 項目の **[起動アクション]** セクションで、**[新規追加]** をクリックし、2 つ目の起動アクションを追加します。 2 つ目の起動アクションについて、下記の表 2 の値を入力します。
-6.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **"自動再生コピー" または "画像を表示する"**、**[名前]** フィールドを **image\_association1** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+6.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 プロパティの新しい**ファイルの種類の関連付け**宣言、設定、**表示名**フィールドを**自動再生のコピーまたは表示するイメージ**と**名**フィールドを**イメージ\_association1**します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
 7.  マニフェスト ファイルを保存して閉じます。
 
 **表 1**
 
-| 設定             | 値                 |
+| 設定             | Value                 |
 |---------------------|-----------------------|
 | 動詞                | show                  |
 | アクションの表示名 | 画像を表示する         |
@@ -57,13 +57,13 @@ ms.locfileid: "9047437"
 
 **表 2**  
 
-| 設定             | 値                      |
+| 設定             | Value                      |
 |--------------------:|----------------------------|
 | 動詞                | copy                       |
 | アクションの表示名 | ライブラリに画像をコピーする |
 | コンテンツ イベント       | ShowPicturesOnArrival      |
 
-### <a name="step-2-add-xaml-ui"></a>手順 2: XAML UI を追加する
+### <a name="step-2-add-xaml-ui"></a>手順 2:XAML UI を追加します。
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
@@ -75,7 +75,7 @@ MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セ�
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
-### <a name="step-3-add-initialization-code"></a>手順 3: 初期化コードを追加する
+### <a name="step-3-add-initialization-code"></a>手順 3:初期化コードを追加します。
 
 この手順のコードでは、**Verb** プロパティの verb 値をチェックします。これは、**OnFileActivated** イベントの間にアプリに渡される起動引数の 1 つです。 次に、ユーザーが選んだオプションに関連するメソッドが呼び出されます。 カメラのメモリ イベントの場合、自動再生により、カメラ ストレージのルート フォルダーがアプリに渡されます。 このフォルダーは **Files** プロパティの最初の要素から取得できます。
 
@@ -106,9 +106,9 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注:**、`DisplayImages`と`CopyImages`メソッドは、次の手順で追加されます。
+> **注**  、`DisplayImages`と`CopyImages`メソッドは、次の手順で追加されます。
 
-### <a name="step-4-add-code-to-display-images"></a>手順 4: 画像を表示するコードを追加する
+### <a name="step-4-add-code-to-display-images"></a>手順 4:イメージを表示するコードを追加します。
 
 MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
@@ -168,7 +168,7 @@ private async void WriteMessageText(string message, bool overwrite = false)
 }
 ```
 
-### <a name="step-5-add-code-to-copy-images"></a>手順 5: 画像をコピーするコードを追加する
+### <a name="step-5-add-code-to-copy-images"></a>手順 5:イメージをコピーするコードを追加します。
 
 MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
@@ -214,33 +214,33 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 }
 ```
 
-### <a name="step-6-build-and-run-the-app"></a>手順 6: アプリをビルドして実行する
+### <a name="step-6-build-and-run-the-app"></a>手順 6:アプリをビルドして実行する
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
-2.  アプリを実行するには、カメラのメモリ カードまたはカメラの他のストレージ デバイスを PC に挿入します。 次に、自動再生のオプションの一覧から package.appxmanifest ファイルで指定したコンテンツ イベント オプションのいずれかを選びます。 このサンプル コードは、カメラのメモリ カードの DCIM フォルダーにある画像の表示またはコピーのみを行います。 カメラのメモリ カードの AVCHD または PRIVATE\\ACHD フォルダーに画像が格納される場合は、適宜コードを更新する必要があります。
-    **注:** 場合は、ルートに**DCIM**という名前のフォルダーがあり、画像が含まれている DCIM フォルダーのサブフォルダーがある場合に、フラッシュ ドライブを使用するカメラのメモリ カードをお持ちでない場合。
+2.  アプリを実行するには、カメラのメモリ カードまたはカメラの他のストレージ デバイスを PC に挿入します。 次に、自動再生のオプションの一覧から package.appxmanifest ファイルで指定したコンテンツ イベント オプションのいずれかを選びます。 このサンプル コードは、カメラのメモリ カードの DCIM フォルダーにある画像の表示またはコピーのみを行います。 カメラのメモリ カードが AVCHD またはプライベートの画像を保存する場合は\\ACHD フォルダーでは、それに応じてコードを更新する必要があります。
+    **注**  という名前のフォルダーがある場合に、フラッシュ ドライブを使用するカメラのメモリ カードを持っていない場合**DCIM**ルート DCIM フォルダーにイメージを含むサブフォルダーがある場合とします。
 
 ## <a name="register-for-an-autoplay-device"></a>自動再生デバイスに登録する
 
 
 アプリを**自動再生**デバイス イベントのオプションとして登録できます。 **自動再生**デバイス イベントは、デバイスがコンピューターに接続されると発生します。
 
-ここでは、PC にカメラが接続されたときに**自動再生**オプションとしてアプリを識別する方法を示します。 アプリは、**WPD\\ImageSourceAutoPlay** イベントのハンドラーとして登録されます。 これは、カメラなどのイメージング デバイスが MTP を使う ImageSource であることを通知するときに Windows ポータブル デバイス (WPD) システムによって生成される一般的なイベントです。 詳しくは、「[Windows ポータブル デバイス](https://msdn.microsoft.com/library/windows/hardware/ff597729)」をご覧ください。
+ここでは、PC にカメラが接続されたときに**自動再生**オプションとしてアプリを識別する方法を示します。 ハンドラーとしてアプリを登録、 **WPD\\ImageSourceAutoPlay**イベント。 これは、カメラなどのイメージング デバイスが MTP を使う ImageSource であることを通知するときに Windows ポータブル デバイス (WPD) システムによって生成される一般的なイベントです。 詳しくは、「[Windows ポータブル デバイス](https://msdn.microsoft.com/library/windows/hardware/ff597729)」をご覧ください。
 
-**重要な** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api は、[デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)の一部です。 アプリでは、Pc など、デスクトップ デバイス ファミリで windows 10 デバイスでのみこれらの Api を使用できます。
+**重要な**  、 [ **Windows.Devices.Portable.StorageDevice** ](https://msdn.microsoft.com/library/windows/apps/br225654) Api の一部である、[デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)します。 アプリでは、Pc など、デスクトップ デバイス ファミリでの Windows 10 デバイスでのみこれらの Api を使用できます。
 
  
 
-### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
+### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>手順 1:新しいプロジェクトを作成し、自動再生の宣言を追加
 
-1.  Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayDevice\_Camera** という名前を付け、**[OK]** をクリックします。
-2.  [Package.appxmanifest] ファイルを開き、**[機能]** タブを選択します。**[リムーバブル記憶域]** 機能を選択します。 これで、アプリはリムーバブル記憶域ボリューム デバイスとしてカメラ上のデータにアクセスできるようになります。
-3.  マニフェスト ファイルで **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[自動再生デバイス]** を選んで **[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生デバイス]** 項目を選びます。
+1.  Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリの名前を付けます**AutoPlayDevice\_カメラ** をクリック**ok をクリックします。**
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。**[リムーバブル記憶域]** 機能をクリックします。 これで、アプリはリムーバブル記憶域ボリューム デバイスとしてカメラ上のデータにアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。**[使用可能な宣言]** ドロップダウン リストで、**[自動再生デバイス]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生デバイス]** 項目を選びます。
 4.  **[自動再生デバイス]** 宣言では、自動再生で既知のイベントのデバイス イベントが発生したときに該当のアプリがオプションとして識別されます。 **[起動アクション]** セクションで、最初の起動アクションに対して下記の表の値を入力します。
-5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **"カメラの画像を表示する"**、**[名前]** フィールドを **camera\_association1** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします (必要な場合)。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をもう一度クリックします。 新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 プロパティの新しい**ファイルの種類の関連付け**宣言、設定、**表示名**フィールドを**カメラから画像を表示する**と**名前**フィールドを**カメラ\_association1**します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします (必要な場合)。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をもう一度クリックします。 新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
 6.  マニフェスト ファイルを保存して閉じます。
 
-| 設定             | 値            |
+| 設定             | Value            |
 |---------------------|------------------|
 | 動詞                | show             |
 | アクションの表示名 | 画像を表示する    |
@@ -248,7 +248,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 **[アクションの表示名]** 設定では、アプリの自動再生で表示される文字列を指定します。 **[動詞]** 設定では、選んだオプションでアプリに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、**[動詞]** 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の **verb** プロパティを調べることでユーザーが選んだオプションを確認できます。 **[動詞]** 設定には任意の値を使うことができます。ただし、予約されている **open** を除きます。 1 つのアプリで複数の動詞を使う例については、「[自動再生コンテンツに登録する](#register-for-autoplay-content)」をご覧ください。
 
-### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>手順 2: デスクトップ拡張機能に対するアセンブリ参照を追加する
+### <a name="step-2-add-assembly-reference-for-the-desktop-extensions"></a>手順 2:デスクトップの拡張機能のアセンブリ参照を追加します。
 
 Windows ポータブル デバイス上の記憶域にアクセスするために必要な API である [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) は、デスクトップ [デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) の一部です。 つまり、この API を使うには特別なアセンブリが必要であり、その呼び出しはデスクトップ デバイス ファミリ (PC など) でのみ機能します。
 
@@ -256,7 +256,7 @@ Windows ポータブル デバイス上の記憶域にアクセスするため�
 2.  **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
 3.  **[Windows Desktop Extensions for the UWP]** を選び、**[OK]** をクリックします。
 
-### <a name="step-3-add-xaml-ui"></a>手順 3: XAML UI を追加する
+### <a name="step-3-add-xaml-ui"></a>手順 3:XAML UI を追加します。
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
@@ -284,7 +284,7 @@ MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セ�
 </StackPanel>
 ```
 
-### <a name="step-4-add-activation-code"></a>手順 4: アクティブ化コードを追加する
+### <a name="step-4-add-activation-code"></a>手順 4:アクティブ化コードを追加します。
 
 この手順のコードは、カメラのデバイス情報 ID を [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) メソッドに渡すことによって、カメラを [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) として参照します。 カメラのデバイス情報 ID を取得するには、まずイベント引数を [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710) としてキャストし、次に [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) プロパティから値を取得します。
 
@@ -336,9 +336,9 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **注:**、`ShowImages`メソッドは、次の手順で追加されます。
+> **注**  、`ShowImages`メソッドは、次の手順で追加されます。
 
-### <a name="step-5-add-code-to-display-device-information"></a>手順 5: デバイス情報を表示するコードを追加する
+### <a name="step-5-add-code-to-display-device-information"></a>手順 5:デバイス情報を表示するコードを追加します。
 
 カメラに関する情報は、[**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) クラスのプロパティから取得できます。 この手順のコードは、アプリの実行時にデバイス名などの情報をユーザーに表示します。 続いて、GetImageList メソッドと GetThumbnail メソッドを呼び出します。これらのメソッドは、カメラに格納されている画像のサムネイルを表示するために、次の手順で追加します。
 
@@ -364,9 +364,9 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注:**、`GetImageList`と`GetThumbnail`メソッドは、次の手順で追加されます。
+> **注**  、`GetImageList`と`GetThumbnail`メソッドは、次の手順で追加されます。
 
-### <a name="step-6-add-code-to-display-images"></a>手順 6: 画像を表示するコードを追加する
+### <a name="step-6-add-code-to-display-images"></a>手順 6:イメージを表示するコードを追加します。
 
 この手順のコードは、カメラに格納されている画像のサムネイルを表示します。 このコードは、カメラの非同期呼び出しを行ってサムネイル イメージを取得します。 ただし、次の非同期呼び出しは、前の非同期呼び出しが完了するまで行われません。 これにより、カメラに対する要求が一度に 1 つだけ実行されるようになります。
 
@@ -403,11 +403,11 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 }
 ```
 
-### <a name="step-7-build-and-run-the-app"></a>手順 7: アプリをビルドして実行する
+### <a name="step-7-build-and-run-the-app"></a>手順 7:アプリをビルドして実行する
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
 2.  アプリを実行するには、コンピューターにカメラを接続します。 次に、自動再生オプションの一覧からアプリを選びます。
-    **注:** **\\imagesource**自動再生デバイス イベントのすべてのカメラをアドバタイズします。
+    **注**  のすべてのカメラをアドバタイズ、 **WPD\\ImageSource**自動再生デバイス イベント。
 
 ## <a name="configure-removable-storage"></a>リムーバブル記憶域を構成する
 
@@ -417,7 +417,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 ボリューム デバイスを**自動再生**デバイスとして識別するには、デバイスのルート ドライブに autorun.inf ファイルを追加します。 そして、autorun.inf ファイルの **AutoRun** セクションに **CustomEvent** キーを追加します。 PC にボリューム デバイスが接続されると、**自動再生**が autorun.inf ファイルを検索し、ボリュームをデバイスとして扱います。 **自動再生**は、**CustomEvent** キーに指定された名前を使って**自動再生**イベントを作成します。 それからアプリを作成し、その**自動再生**イベントのハンドラーとしてアプリを登録できます。 PC にデバイスが接続されると、**自動再生**が、ボリューム デバイスのハンドラーとしてアプリを表示します。 autorun.inf ファイルについて詳しくは、「[Autorun.inf エントリ](https://msdn.microsoft.com/library/windows/desktop/cc144200)」をご覧ください。
 
-### <a name="step-1-create-an-autoruninf-file"></a>手順 1: autorun.inf ファイルを作成する
+### <a name="step-1-create-an-autoruninf-file"></a>手順 1:Autorun.inf ファイルを作成します。
 
 ボリューム デバイスのルート ドライブに autorun.inf という名前のファイルを追加します。 autorun.inf ファイルを開き、次のテキストを追加します。
 
@@ -426,18 +426,18 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 CustomEvent=AutoPlayCustomEventQuickstart
 ```
 
-### <a name="step-2-create-a-new-project-and-add-autoplay-declarations"></a>手順 2: 新しいプロジェクトを作成し、自動再生宣言を追加する
+### <a name="step-2-create-a-new-project-and-add-autoplay-declarations"></a>手順 2:新しいプロジェクトを作成し、自動再生の宣言を追加
 
 1.  Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayCustomEvent** という名前を付け、**[OK]** をクリックします。
-2.  [Package.appxmanifest] ファイルを開き、**[機能]** タブを選択します。**[リムーバブル記憶域]** 機能を選択します。 これで、アプリはリムーバブル記憶域デバイス上のファイルとフォルダーにアクセスできるようになります。
-3.  マニフェスト ファイルで **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[自動再生コンテンツ]** を選んで **[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。**[リムーバブル記憶域]** 機能をクリックします。 これで、アプリはリムーバブル記憶域デバイス上のファイルとフォルダーにアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。**[使用可能な宣言]** ドロップダウン リストで、**[自動再生コンテンツ]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
 
-    **注:** または、こともできますカスタム自動再生イベントに対して**自動再生デバイス**宣言を追加します。  
+    **注**  代わりに、選択することできますも追加する、**自動再生デバイス**カスタムの自動再生イベントの宣言。  
 4.  **[自動再生コンテンツ]** イベント宣言の **[起動アクション]** セクションで、最初の起動アクションについて下記の表の値を入力します。
-5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **".ms ファイルを表示する"**、**[名前]** フィールドを **ms\_association** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.ms** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 プロパティの新しい**ファイルの種類の関連付け**宣言、設定、**表示名**フィールドを**ファイルを表示.ms**と**名前**フィールドを**ms\_アソシエーション**します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.ms** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
 6.  マニフェスト ファイルを保存して閉じます。
 
-| 設定             | 値                         |
+| 設定             | Value                         |
 |---------------------|-------------------------------|
 | 動詞                | show                          |
 | アクションの表示名 | ファイルを表示する                    |
@@ -445,7 +445,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 **[コンテンツ イベント]** の値は、autorun.inf ファイルの **CustomEvent** キーに指定したテキストです。 **[アクションの表示名]** 設定では、アプリの自動再生で表示される文字列を指定します。 **[動詞]** 設定では、選んだオプションでアプリに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、**[動詞]** 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の **verb** プロパティを調べることでユーザーが選んだオプションを確認できます。 **[動詞]** 設定には任意の値を使うことができます。ただし、予約されている **open** を除きます。
 
-### <a name="step-3-add-xaml-ui"></a>手順 3: XAML UI を追加する
+### <a name="step-3-add-xaml-ui"></a>手順 3:XAML UI を追加します。
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
@@ -456,7 +456,7 @@ MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セ�
 </StackPanel>
 ```
 
-### <a name="step-4-add-activation-code"></a>手順 4: アクティブ化コードを追加する
+### <a name="step-4-add-activation-code"></a>手順 4:アクティブ化コードを追加します。
 
 この手順のコードは、ボリューム デバイスのルート ドライブにあるフォルダーを表示するメソッドを呼び出します。 自動再生コンテンツ イベントの場合、自動再生により、**OnFileActivated** イベント中にアプリに渡された起動引数でストレージ デバイスのルート フォルダーが渡されます。 このフォルダーは **Files** プロパティの最初の要素から取得できます。
 
@@ -475,11 +475,11 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注:**、`DisplayFiles`メソッドは、次の手順で追加されます。
+> **注**  、`DisplayFiles`メソッドは、次の手順で追加されます。
 
  
 
-### <a name="step-5-add-code-to-display-folders"></a>手順 5: フォルダーを表示するコードを追加する
+### <a name="step-5-add-code-to-display-folders"></a>手順 5:フォルダーを表示するコードを追加します。
 
 MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
@@ -504,7 +504,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 }
 ```
 
-### <a name="step-6-build-and-run-the-qpp"></a>手順 6: アプリをビルドして実行する
+### <a name="step-6-build-and-run-the-qpp"></a>手順 6:ビルドし、実行、qpp
 
 1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
 2.  アプリを実行するには、メモリ カードまたは他のストレージ デバイスを PC に挿入します。 そして、自動再生ハンドラー オプションの一覧からアプリを選びます。
@@ -536,7 +536,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 ボリュームの autorun.inf ファイルの **CustomEvent** エントリを使って、自動再生でカスタムの自動再生コンテンツ イベントが発生することを指定できます。 詳しくは、「[Autorun.inf エントリ](https://msdn.microsoft.com/library/windows/desktop/cc144200)」をご覧ください。
 
-自動再生コンテンツまたは自動再生デバイスのイベント ハンドラーとしてアプリを登録するには、アプリの package.appxmanifest ファイルに拡張機能を追加します。 Visual Studio を使う場合は、**[宣言]** タブで **[自動再生コンテンツ]** または **[自動再生デバイス]** の宣言を追加します。アプリの package.appxmanifest ファイルを直接編集する場合は、パッケージ マニフェストに[**拡張機能**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素を追加し、**カテゴリ** として **windows.autoPlayContent** または **windows.autoPlayDevice** を指定します。 たとえば、次のパッケージ マニフェストのエントリでは、**自動再生コンテンツ**拡張機能を追加して、アプリを **ShowPicturesOnArrival** イベントのハンドラーとして登録しています。
+自動再生コンテンツまたは自動再生デバイスのイベント ハンドラーとしてアプリを登録するには、アプリの package.appxmanifest ファイルに拡張機能を追加します。 Visual Studio を使う場合は、**[宣言]** タブで **[自動再生コンテンツ]** または **[自動再生デバイス]** の宣言を追加します。アプリの package.appxmanifest ファイルを直接編集する場合は、パッケージ マニフェストに [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素を追加し、**Category** として **windows.autoPlayContent** または **windows.autoPlayDevice** を指定します。 たとえば、次のパッケージ マニフェストのエントリでは、**自動再生コンテンツ**拡張機能を追加して、アプリを **ShowPicturesOnArrival** イベントのハンドラーとして登録しています。
 
 ```xml
   <Applications>
