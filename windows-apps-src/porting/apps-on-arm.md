@@ -20,7 +20,7 @@ ms.locfileid: "57640997"
 ## <a name="apps-and-experiences-on-arm"></a>ARM でのアプリとエクスペリエンス
 
 ### <a name="built-in-windows-10-experiences-apps-and-drivers"></a>組み込みの Windows 10 エクスペリエンス, アプリとドライバー
-Edge、Cortana、スタート メニュー、エクスプローラーなどの組み込みの Windows 10 エクスペリエンスは、すべてネイティブであり、ARM64 (または ARM32) として実行されます。 これには、グラフィックス、ネットワーク、ハード ディスクなどのすべてのデバイス ドライバーも含まれます。 これにより、Qualcomm Snapdragon プロセッサのフル ネイティブ速度で実行されるデバイスにおけるユーザー エクスペリエンスとバッテリー寿命が最適化されます。
+Microsoft Edge、Cortana、スタート メニュー、エクスプローラーなどの組み込みの Windows 10 エクスペリエンスは、すべてネイティブであり、ARM64 (または ARM32) として実行されます。 これには、グラフィックス、ネットワーク、ハード ディスクなどのすべてのデバイス ドライバーも含まれます。 これにより、Qualcomm Snapdragon プロセッサのフル ネイティブ速度で実行されるデバイスにおけるユーザー エクスペリエンスとバッテリー寿命が最適化されます。
 
 ### <a name="universal-windows-platform-uwp-apps"></a>ユニバーサル Windows プラットフォーム (UWP) アプリ
 ARM 上の Windows 10 の実行、ARM32、および ARM64 のすべての x86 [UWP アプリ](../get-started/universal-application-platform-guide.md)Microsoft Store から。 任意のエミュレーションではなくネイティブ実行 ARM32 および ARM64 のアプリでは、x86 エミュレーションでアプリが実行中にします。 UWP 開発者の場合、デバイスの最適なユーザー エクスペリエンスを提供するため、必ずアプリの ARM パッケージを提出してください。 詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。
