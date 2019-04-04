@@ -6,6 +6,12 @@ title: Windows に関するドキュメント
 description: Windows ソリューションの構築とメンテナンスに役立つ、開発者、ハードウェア、および IT 技術者向けのドキュメントを検索します。
 ms.technology: hub
 localizationpriority: medium
+ms.openlocfilehash: 1926f38d4b7772488e086395d4e28545b1f85a81
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583489"
 ---
 <div id="main" class="v2">
   <div class="container">

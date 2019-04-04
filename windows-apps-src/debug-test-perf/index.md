@@ -4,8 +4,14 @@ title: デバッグ、テスト、パフォーマンス
 description: Microsoft Visual Studio およびその他のツールを使用して、アプリのデバッグとテストを行い、Microsoft Store 認定プロセス用に準備します。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 757de9201d1cb7f753419024271f2be5c1aa67f4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583323"
 ---
 # <a name="debugging-testing-and-performance"></a><span data-ttu-id="a8f3e-104">デバッグ、テスト、パフォーマンス</span><span class="sxs-lookup"><span data-stu-id="a8f3e-104">Debugging, testing, and performance</span></span>
 

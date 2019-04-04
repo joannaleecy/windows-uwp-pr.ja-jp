@@ -1,7 +1,7 @@
 ---
 description: ペン、Surface Dial、その他の種類の入力に合わせて、アプリを最適化します。
 title: 入力と操作
-keywords: 'アプリの入力, UWP アプリケーションのカスタマイズ'
+keywords: アプリの入力, UWP アプリケーションのカスタマイズ
 label: Input and interactions
 layout: LandingPage
 template: detail.hbs
@@ -9,6 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
+ms.openlocfilehash: 4f66d808cafcc6fba89cebde352d191335068925
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583106"
 ---
 # <a name="input-and-interactions"></a>入力と操作
 

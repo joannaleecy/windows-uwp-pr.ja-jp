@@ -4,8 +4,14 @@ description: このセクションでは、アプリで地図の表示、マッ�
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, 地図, 位置情報, マップ サービス'
+keywords: Windows 10, UWP, 地図, 位置情報, マップ サービス
 ms.localizationpriority: medium
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583235"
 ---
 # <a name="maps-and-location-overview"></a><span data-ttu-id="02a88-105">地図と位置情報の概要</span><span class="sxs-lookup"><span data-stu-id="02a88-105">Maps and location overview</span></span>
 

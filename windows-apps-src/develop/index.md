@@ -6,6 +6,12 @@ keywords: uwp アプリ 開発 スレッディング 非同期 プラットフ�
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8390ddafdb20032ea7a96d52534e4dcfaa6bf0
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583338"
 ---
 <div> 
 <h1>UWP アプリの開発</h1>

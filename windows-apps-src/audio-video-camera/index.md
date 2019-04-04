@@ -4,8 +4,14 @@ description: このセクションでは、写真、ビデオ、オーディオ�
 title: オーディオ、ビデオ、カメラ
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 6aecc5b9a43d6cb00b42b1535a196afd8a138af9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583051"
 ---
 # <a name="audio-video-and-camera"></a><span data-ttu-id="04ec7-104">オーディオ、ビデオ、カメラ</span><span class="sxs-lookup"><span data-stu-id="04ec7-104">Audio, video, and camera</span></span>
 

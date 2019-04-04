@@ -5,8 +5,14 @@ label: Intro
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子'
+keywords: Windows 10, UWP, リソース, 画像, アセット, MRT, 修飾子
 ms.localizationpriority: medium
+ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583010"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a><span data-ttu-id="d8484-104">アプリ リソースとリソース管理システム</span><span class="sxs-lookup"><span data-stu-id="d8484-104">App resources and the Resource Management System</span></span>
 

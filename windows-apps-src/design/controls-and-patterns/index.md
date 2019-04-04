@@ -1,13 +1,19 @@
 ---
 description: UWP アプリにコントロールとパターンを追加する方法についての設計ガイダンスとコーディングの手順を説明します。 アプリで使用できる 45 種類以上の強力なコントロールを紹介します。
 title: UWP のコントロールとパターン - Windows アプリ開発
-keywords: 'UWP コントロール, ユーザー インターフェイス, アプリ コントロール'
+keywords: UWP コントロール, ユーザー インターフェイス, アプリ コントロール
 label: Controls & patterns
 template: detail.hbs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
+ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583171"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a><span data-ttu-id="134a0-105">UWP アプリのコントロールとパターン</span><span class="sxs-lookup"><span data-stu-id="134a0-105">Controls and patterns for UWP apps</span></span>
  

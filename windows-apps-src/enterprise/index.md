@@ -1,11 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "このロードマップでは、Windows\_10 およびユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能の概要について説明します。"
+description: このロードマップでは、Windows 10 およびユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能の概要について説明します。
 title: エンタープライズ
 ms.date: 08/30/2018
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: fae4d5b57ac5cfb5c47fca1a2f3476cd16a56534
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583202"
 ---
 # <a name="enterprise"></a><span data-ttu-id="924f2-104">エンタープライズ</span><span class="sxs-lookup"><span data-stu-id="924f2-104">Enterprise</span></span>
 

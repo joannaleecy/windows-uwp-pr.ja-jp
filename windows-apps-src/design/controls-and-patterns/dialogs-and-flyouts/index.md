@@ -4,13 +4,19 @@ title: ダイアログとポップアップ
 template: detail.hbs
 ms.date: 07/06/2018
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
+ms.openlocfilehash: d542c9809eb939553a851508886e34265f269263
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583315"
 ---
 # <a name="dialogs-and-flyouts"></a><span data-ttu-id="97996-104">ダイアログとポップアップ</span><span class="sxs-lookup"><span data-stu-id="97996-104">Dialogs and flyouts</span></span>
 

@@ -1,6 +1,6 @@
 ---
 description: 世界中のユーザーに対してアプリを包括的にしてアクセシビリティ対応にする方法について説明します。
-keywords: 'UWP アプリのアクセシビリティ, グローバリゼーション, インクルーシブ デザイン アプリ, アクセシビリティ アプリの要件'
+keywords: UWP アプリのアクセシビリティ, グローバリゼーション, インクルーシブ デザイン アプリ, アクセシビリティ アプリの要件
 title: UWP アプリの操作性 - Windows アプリ開発
 layout: LandingPage
 template: detail.hbs
@@ -8,6 +8,12 @@ ms.date: 10/18/2017
 ms.topic: landing-page
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
+ms.openlocfilehash: f218df3b4118508049023218b64e6c7321fbbda9
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583259"
 ---
 # <a name="usability-for-uwp-apps"></a>UWP アプリの操作性
 

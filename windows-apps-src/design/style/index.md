@@ -1,12 +1,18 @@
 ---
 description: UWP スタイル ガイドに従い、色、文字体裁、アイコンを使って UWP アプリの特徴を定義する方法について説明します。
-keywords: 'UWP スタイル ガイド, 設計ガイダンス, 文字体裁, モーション, サウンド, モーション, アプリ開発'
+keywords: UWP スタイル ガイド, 設計ガイダンス, 文字体裁, モーション, サウンド, モーション, アプリ開発
 title: UWP アプリのスタイル
 ms.date: 08/10/2017
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: 1d313e35b7d1ab3ebe72bd3a073323fe8782098a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583778"
 ---
 # <a name="style-for-uwp-apps"></a><span data-ttu-id="f7044-104">UWP アプリのスタイル</span><span class="sxs-lookup"><span data-stu-id="f7044-104">Style for UWP apps</span></span>
 

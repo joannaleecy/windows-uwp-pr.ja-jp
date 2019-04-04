@@ -1,11 +1,17 @@
 ---
 title: セキュリティ
-description: "このセクションには、Windows\_10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとしてビルドする方法に関する記事が含まれています。"
+description: このセクションには、Windows 10 のユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとしてビルドする方法に関する記事が含まれています。
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp, セキュリティ'
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
+ms.openlocfilehash: 88e45740f457086a925674b37baacc8fc7b4e9b6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583609"
 ---
 # <a name="security"></a><span data-ttu-id="50bc9-104">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="50bc9-104">Security</span></span>
 

@@ -4,8 +4,14 @@ description: Windows SDK、Microsoft Advertising SDK、Microsoft Store Services 
 title: 収益化、エンゲージメント、Microsoft Store サービス
 ms.date: 11/29/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス'
+keywords: Windows 10, UWP, 収益化, エンゲージメント, プロモーション, ストア サービス
 ms.localizationpriority: medium
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583399"
 ---
 # <a name="monetization-engagement-and-store-services"></a><span data-ttu-id="946ee-104">収益化、エンゲージメント、Microsoft Store サービス</span><span class="sxs-lookup"><span data-stu-id="946ee-104">Monetization, engagement, and Store services</span></span>
 
