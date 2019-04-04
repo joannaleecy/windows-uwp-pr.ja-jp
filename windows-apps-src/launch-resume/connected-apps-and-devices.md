@@ -15,7 +15,7 @@ ms.locfileid: "57601177"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>接続されるアプリやデバイス ("Rome" プロジェクト)
 
-このセクションでは、デバイスとプラットフォームを使用してアプリを接続する方法を説明します[プロジェクト ローマ](https://developer.microsoft.com/en-us/windows/project-rome)します。 クロス プラットフォームのシナリオではプロジェクト ローマを実装する方法については、次を参照してください。、[プロジェクト ローマのメイン docs ページ](https://docs.microsoft.com/en-us/windows/project-rome/)します。
+このセクションでは、デバイスとプラットフォームを使用してアプリを接続する方法を説明します[プロジェクト ローマ](https://developer.microsoft.com/en-us/windows/project-rome)します。 クロス プラットフォームのシナリオではプロジェクト ローマを実装する方法については、、[プロジェクト ローマのメイン docs ページ](https://docs.microsoft.com/en-us/windows/project-rome/)を参照してください。
 
 ほとんどのユーザーは複数のデバイスを持っており、あるデバイスでアクティビティを始めてデバイスで終えることがよくあります。 これに対応するため、アプリはデバイスとプラットフォームにまたがる必要があります。 プロジェクトのローマ リモート デバイスを検出、リモート デバイスでアプリを起動し、リモート デバイスでアプリ サービスと通信することができます。
 

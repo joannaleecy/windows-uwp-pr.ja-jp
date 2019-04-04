@@ -708,7 +708,7 @@ auto async_op_with_progress{ CalcPiTo5DPs() };
 double pi{ co_await async_op_with_progress };
 ```
 
-完了ハンドラーの詳細については、次を参照してください。[非同期アクションおよび操作の種類をデリゲート](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)します。
+完了ハンドラーの詳細については、[非同期アクションおよび操作の種類をデリゲート](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)を参照してください。
 
 ## <a name="fire-and-forget"></a>ファイア アンド フォーゲット
 

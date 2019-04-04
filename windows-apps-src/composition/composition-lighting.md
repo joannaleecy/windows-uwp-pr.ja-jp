@@ -17,7 +17,7 @@ ms.locfileid: "57602207"
 Windows.UI.Composition Api を使用すると、リアルタイムのアニメーションや効果を作成できます。 コンポジション照明は、2 D のアプリケーションで 3D ライティングを使用できます。 この概要では、コンポジションのライトのセットアップ、各ライトを受信するビジュアルを識別し、効果を使用して、コンテンツの素材を定義する方法の機能を使用して実行します。
 
 > [!NOTE]
-> 読み取り方法を[XamlLight](/uwp/api/windows.ui.xaml.media.xamllight)オブジェクトを適用[CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) XAML Uielement を明らかに、次を参照してください。 [XAML 照明](xaml-lighting.md)します。
+> 読み取り方法を[XamlLight](/uwp/api/windows.ui.xaml.media.xamllight)オブジェクトを適用[CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) XAML Uielement を明らかに、[XAML 照明](xaml-lighting.md)を参照してください。
 
 コンポジション照明を使用して、UI を許可することで興味深いを作成できます。
 

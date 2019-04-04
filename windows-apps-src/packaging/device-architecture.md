@@ -44,8 +44,8 @@ x86 はほぼすべてのデバイスで実行されるため、一般的に、�
 ARM 版 Windows 10 構成には、デスクトップ PC、モバイル デバイス、および一部の IoT Core デバイス (Rasperry Pi 2、Raspberry Pi 3、および DragonBoard) が含まれます。 ARM 版 Windows 10 デスクトップ PC が Windows ファミリに新たに加わりました。そのため、UWP アプリ開発者がこれらの PC で最適なエクスペリエンスを実現するには ARM パッケージをストアに提出する必要があります。
 
 >[!NOTE]
-> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、次を参照してください。[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)します。
+> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)を参照してください。
 
-詳細については、次を参照してください。 [ARM 上の Windows 10](../porting/apps-on-arm.md)します。 [ARM 版 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171) のデモを確認し、そのしくみを詳しく知るには、この //Build トークをご覧ください。
+詳細については、[ARM 上の Windows 10](../porting/apps-on-arm.md)を参照してください。 [ARM 版 Windows 10](https://channel9.msdn.com/Events/Build/2017/P4171) のデモを確認し、そのしくみを詳しく知るには、この //Build トークをご覧ください。
 
-IoT の特定のトピックについての詳細については、次を参照してください。 [Visual Studio を使用してアプリを展開する](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)します。
+IoT の特定のトピックについての詳細については、[Visual Studio を使用してアプリを展開する](https://developer.microsoft.com/windows/iot/Docs/AppDeployment)を参照してください。

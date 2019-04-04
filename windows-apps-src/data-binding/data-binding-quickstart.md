@@ -721,7 +721,7 @@ public:
 ![カスタム形式での日付の表示](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 以降では、Windows 10 version 1607 では、XAML フレームワークは、組み込みのブール値の表示コンバーターを提供します。 コンバーター マップ**true**を**Visibility.Visible**列挙値と**false**に**Visibility.Collapsed**をバインドできるように、ブール値コンバーターを作成せずに可視性プロパティ。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンの詳細については、次を参照してください。[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)します。
+> 以降では、Windows 10 version 1607 では、XAML フレームワークは、組み込みのブール値の表示コンバーターを提供します。 コンバーター マップ**true**を**Visibility.Visible**列挙値と**false**に**Visibility.Collapsed**をバインドできるように、ブール値コンバーターを作成せずに可視性プロパティ。 組み込みのコンバーターを使用するには、アプリの最小のターゲット SDK バージョンが 14393 以降である必要があります。 アプリがそれよりも前のバージョンの Windows 10 をターゲットとしている場合は使うことができません。 ターゲット バージョンの詳細については、[バージョン アダプティブ コード](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 * [データ バインディング](index.md)

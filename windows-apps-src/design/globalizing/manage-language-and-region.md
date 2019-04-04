@@ -193,7 +193,7 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](https://go.microsoft.co
 </table>
 
 >[!NOTE]
-> Microsoft で使用される標準の国/地域コードの一覧は、次を参照してください。、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)します。
+> Microsoft で使用される標準の国/地域コードの一覧は、、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)

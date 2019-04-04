@@ -53,13 +53,13 @@ ms.locfileid: "57618197"
 ## <a name="configure-connected-animation"></a>アニメーションの結び付けを構成します。
 
 > [!IMPORTANT]
-> この機能では、アプリのターゲット バージョンの Windows 10、バージョンは 1809 である必要があります ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。 構成プロパティは、以前の Sdk でご利用いただけません。 SDK 17763 より前の最小バージョンを対象にするアダプティブ コードまたは条件付き XAML を使用します。 詳細については、次を参照してください。[バージョン アダプティブ アプリ](/windows/uwp/debug-test-perf/version-adaptive-apps)します。
+> この機能では、アプリのターゲット バージョンの Windows 10、バージョンは 1809 である必要があります ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) またはそれ以降。 構成プロパティは、以前の Sdk でご利用いただけません。 SDK 17763 より前の最小バージョンを対象にするアダプティブ コードまたは条件付き XAML を使用します。 詳細については、[バージョン アダプティブ アプリ](/windows/uwp/debug-test-perf/version-adaptive-apps)を参照してください。
 
 以降では、Windows 10、バージョンは 1809、アニメーションの結び付けさらに具体化 Fluent デザインのアニメーションを提供することで構成調整と旧バージョンと順方向専用のページ ナビゲーション。
 
 アニメーションは、の構成を指定するには、構成プロパティ、ConnectedAnimation を設定します。 (紹介の例として、次のセクションでします。)
 
-このテーブルには、使用可能な構成について説明します。 これらのアニメーションに適用されるモーション原則の詳細については、次を参照してください。[の方向や重力](index.md)します。
+このテーブルには、使用可能な構成について説明します。 これらのアニメーションに適用されるモーション原則の詳細については、[の方向や重力](index.md)を参照してください。
 
 | [GravityConnectedAnimationConfiguration](/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store プロモーション API, 広告キ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57619147"
@@ -23,7 +23,7 @@ ms.locfileid: "57619147"
 2.  Microsoft Store プロモーション API のメソッドを呼び出す前に、[Azure AD アクセス トークンを取得](#obtain-an-azure-ad-access-token)する必要があります。 トークンを取得した後、Microsoft Store プロモーション API の呼び出しでこのトークンを使用できるのは、その有効期限が切れるまでの 60 分間です。 トークンの有効期限が切れた後は、新しいトークンを生成できます。
 3.  [Microsoft Store プロモーション API を呼び出します](#call-the-windows-store-promotions-api)。
 
-または、作成し、パートナー センターを使用して広告キャンペーンと API は、パートナー センターにアクセスすることも、Microsoft Store の上位変換を使用してプログラムで作成した任意の広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理に関する詳細については、次を参照してください。[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)です。
+または、作成し、パートナー センターを使用して広告キャンペーンと API は、パートナー センターにアクセスすることも、Microsoft Store の上位変換を使用してプログラムで作成した任意の広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理に関する詳細については、[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)を参照してください。
 
 > [!NOTE]
 > あらゆる開発者、パートナー センター アカウントでは、それぞれのアプリの広告キャンペーンを管理するのに Microsoft Store の上位変換 API を使用できます。 メディア エージェンシーもこの API へのアクセスを要求して、広告主の代わりに広告キャンペーンを実行できます。 お客様がメディア エージェンシーで、この API について詳しい情報を希望される場合、またはこの API へのアクセスを要求される場合は、storepromotionsapi@microsoft.com までリクエストをお送りください。

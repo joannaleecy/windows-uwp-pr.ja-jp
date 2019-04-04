@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 2089f9fcd54989234b52f95eb3ee9535f9b3ede3
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603117"
+---
 # <a name="contributing-to-uwp-conceptual-documentation"></a>UWP の概念に関するドキュメントへの投稿
 
 ユニバーサル Windows プラットフォーム (UWP) に関するドキュメントに関心をお寄せいただき、ありがとうございます。 ドキュメントへのフィードバック、編集、追加に感謝いたします。
@@ -30,7 +38,7 @@
 
 ### <a name="editing-a-file"></a>ファイルを編集します。
 
-パブリック リポジトリのように行うことができます小さな変更をプライベート リポジトリにブラウザーでローカル クローンを作成する必要はありません。 **する必要があります**適切なブランチを投稿することを確認します。 個人用ブランチの作成の詳細については、次を参照してください。 [Windows オーサリング ガイドの指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)します。
+パブリック リポジトリのように行うことができます小さな変更をプライベート リポジトリにブラウザーでローカル クローンを作成する必要はありません。 **する必要があります**適切なブランチを投稿することを確認します。 個人用ブランチの作成の詳細については、[Windows オーサリング ガイドの指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)を参照してください。
 
 ### <a name="making-substantial-changes"></a>大幅な変更を加える
 

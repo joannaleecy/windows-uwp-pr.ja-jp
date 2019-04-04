@@ -11,7 +11,7 @@ f1_keywords:
 ms.localizationpriority: medium
 ms.openlocfilehash: f2e89490a76c9174c1e938466bf1fbcc9cc13455
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57599137"
@@ -44,7 +44,7 @@ ms.locfileid: "57599137"
 
 ## <a name="before-packaging-your-app"></a>アプリ パッケージを作成する前に
 
-1.  **アプリをテストします。** パートナー センター送信するアプリをパッケージ化する前に、サポートを計画しているすべてのデバイス ファミリで期待どおりに動作を確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、Xbox、IoT デバイスなどが含まれる場合があります。 展開して、Visual Studio を使用して、アプリのテストの詳細については、次を参照してください。[の展開と UWP アプリのデバッグ](../debug-test-perf/deploying-and-debugging-uwp-apps.md)します。
+1.  **アプリをテストします。** パートナー センター送信するアプリをパッケージ化する前に、サポートを計画しているすべてのデバイス ファミリで期待どおりに動作を確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、Xbox、IoT デバイスなどが含まれる場合があります。 展開して、Visual Studio を使用して、アプリのテストの詳細については、[の展開と UWP アプリのデバッグ](../debug-test-perf/deploying-and-debugging-uwp-apps.md)を参照してください。
 2.  **アプリを最適化します。** Visual Studio のプロファイリングおよびデバッグ ツールを使って、UWP アプリのパフォーマンスを最適化できます。 たとえば、UI 応答のタイムライン ツール、メモリ使用率のツール、CPU 使用率のツールを使えます。 これらのコマンド ライン ツールについて詳しくは、[プロファイリング機能ツアーに関するページ](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)をご覧ください。
 3.  **.NET ネイティブの互換性を確認する (vb とC#アプリ)。** ユニバーサル Windows プラットフォームには、アプリの実行時のパフォーマンスを向上させるネイティブ コンパイラがあります。 この変更により、新しいコンパイル環境でアプリをテストする必要があります。 既定では、**リリース** ビルド構成により、.NET ネイティブ ツール チェーンが可能であるため、重要なのは、この**リリース**構成でアプリをテストし、想定どおりにアプリが動作することを確認することです。 .NET ネイティブで発生する可能性のあるいくつかの一般的なデバッグの問題について詳しくは、[.NET Native Windows ユニバーサル アプリのデバッグ](https://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)に関するブログをご覧ください。
 
@@ -113,7 +113,7 @@ Microsoft Store からのアプリを配布するアプリ パッケージ (.app
 
 ### <a name="validate-your-app-package"></a>アプリ パッケージを検証します。
 
-ローカルまたはリモート コンピューター上の認定資格のパートナー センターに送信する前に、アプリを検証します。 アプリ パッケージのデバッグ ビルドではなくリリース ビルドのみを検証できます。 パートナー センターへのアプリの送信についての詳細については、次を参照してください。[アプリを送信する](https://docs.microsoft.com/windows/uwp/publish/app-submissions)します。
+ローカルまたはリモート コンピューター上の認定資格のパートナー センターに送信する前に、アプリを検証します。 アプリ パッケージのデバッグ ビルドではなくリリース ビルドのみを検証できます。 パートナー センターへのアプリの送信についての詳細については、[アプリを送信する](https://docs.microsoft.com/windows/uwp/publish/app-submissions)を参照してください。
 
 **ローカルでアプリケーション パッケージを検証するには**
 

@@ -38,7 +38,7 @@ Windows 10 バージョン 1809 のサポート強化[MSIX 変更パッケージ
 
 ### <a name="open-source-of-wpf-windows-forms-and-winui"></a>WPF、Windows フォーム、および WinUI のオープン ソース
 
-GitHub のオープン ソース コントリビューションの WPF、Windows フォーム、および WinUI UX のフレームワークがあるようになりました。 詳細な情報とリンクについては、次を参照してください。、 [building Windows アプリのブログ](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)します。
+GitHub のオープン ソース コントリビューションの WPF、Windows フォーム、および WinUI UX のフレームワークがあるようになりました。 詳細な情報とリンクについては、、 [building Windows アプリのブログ](https://blogs.windows.com/buildingapps/2018/12/04/announcing-open-source-of-wpf-windows-forms-and-winui-at-microsoft-connect-2018/#OKZjJs1VVTrMMtkL.97)を参照してください。
 
 ### <a name="progressive-web-apps-for-xbox"></a>プログレッシブ Web Apps for Xbox
 

@@ -18,7 +18,7 @@ ms.locfileid: "57646247"
 
 Microsoft Store は、世界中の 200 以上の国と地域のお客様が利用できます。 アプリを提供する市場を選択して、市場ごとまたは市場のグループごとに、[価格と使用可能状況](set-app-pricing-and-availability.md)の多くの機能をカスタマイズできます。
 
-については、世界各地のお客様に適したアプリをするために、次を参照してください。[のグローバリゼーション用ガイドライン](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)と[して、アプリをローカライズ可能な](../design/globalizing/prepare-your-app-for-localization.md)します。
+については、世界各地のお客様に適したアプリをするために、[のグローバリゼーション用ガイドライン](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)と[して、アプリをローカライズ可能な](../design/globalizing/prepare-your-app-for-localization.md)を参照してください。
 
 > [!NOTE]
 > このトピックはアプリについて説明していますが、アドオンの市場の選択にも同じプロセスを使います。
@@ -738,4 +738,4 @@ Windows 8.x 向けの "その他の国と地域" に含まれている市場は�
 </table>
 
 > [!NOTE]
-> 一連の国と地域の開発者アカウントを登録することができます、次を参照してください。[アカウントの種類、場所、料金](account-types-locations-and-fees.md)します。
+> 一連の国と地域の開発者アカウントを登録することができます、[アカウントの種類、場所、料金](account-types-locations-and-fees.md)を参照してください。

@@ -109,7 +109,7 @@ ms.locfileid: "57653217"
 ### <a name="to-measure-notification-performance"></a>通知のパフォーマンスを測定するには
 
 1.  通知を作成するときに、**[通知のコンテンツ]** セクションで **[アプリの起動率の追跡]** チェック ボックスを選択します。
-2.  アプリでは、呼び出し、 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)にアプリが対象となる通知に対する応答で起動されたことをパートナー センターに通知するメソッド。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法の詳細については、次を参照してください。[パートナー センターの通知を受信するアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)します。
+2.  アプリでは、呼び出し、 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)にアプリが対象となる通知に対する応答で起動されたことをパートナー センターに通知するメソッド。 このメソッドは Microsoft Store Services SDK によって提供されます。 このメソッドを呼び出す方法の詳細については、[パートナー センターの通知を受信するアプリの構成](../monetize/configure-your-app-to-receive-dev-center-notifications.md)を参照してください。
 
 
 ### <a name="to-view-notification-performance"></a>通知のパフォーマンスを表示するには

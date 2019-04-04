@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: cb624a93a010dfe9784cf8c26beed12c6cf2f77d
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639957"
@@ -24,8 +24,8 @@ ms.locfileid: "57639957"
 | **互換性に影響する変更**します。 コンパイル、C +/cli WinRT は、Windows SDK からのヘッダーに依存しません。 | 参照してください[Windows SDK ヘッダー ファイルから分離](#isolation-from-windows-sdk-header-files)、後述します。 |
 | Visual Studio プロジェクト システムの形式が変更されました。 | 参照してください[、C + の再ターゲットする方法/cli WinRT プロジェクトは、以降のバージョンの Windows SDK を](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)、後述します。 |
 | 新しい機能と Windows ランタイム関数の場合にコレクション オブジェクトを渡すため、または独自のコレクションのプロパティとコレクション型を実装する基底クラスがあります。 | 参照してください[コレクション c++/cli WinRT](collections.md)します。 |
-| 使用することができます、 [{binding}](/windows/uwp/xaml-platform/binding-markup-extension)マークアップ拡張では、C +/cli WinRT ランタイム クラスです。 | 詳細については、およびコード例は、次を参照してください。[データ バインディングの概要](/windows/uwp/data-binding/data-binding-quickstart)します。 |
-| コルーチンのキャンセルのサポートを使用すると、取り消しのコールバックを登録できます。 | 詳細については、およびコード例は、次を参照してください。[非同期操作、および取り消しのコールバックをキャンセル](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks)します。 |
+| 使用することができます、 [{binding}](/windows/uwp/xaml-platform/binding-markup-extension)マークアップ拡張では、C +/cli WinRT ランタイム クラスです。 | 詳細については、およびコード例は、[データ バインディングの概要](/windows/uwp/data-binding/data-binding-quickstart)を参照してください。 |
+| コルーチンのキャンセルのサポートを使用すると、取り消しのコールバックを登録できます。 | 詳細については、およびコード例は、[非同期操作、および取り消しのコールバックをキャンセル](concurrency.md#canceling-an-asychronous-operation-and-cancellation-callbacks)を参照してください。 |
 | メンバー関数を指すデリゲートを作成するときに、強力なまたは現在のオブジェクトへの弱い参照を確立することができます (未加工ではなく*この*ポインター)、ハンドラーが登録されている時点。 | 詳細については、およびコード例は、次を参照してください、**デリゲートとしてメンバー関数を使用する場合**サブセクションに記載[安全にアクセスする、*これ*イベント処理デリゲートとポインター](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | C++ 標準に Visual Studio の適合性を向上によって発見されたバグが修正されます。 LLVM と Clang ツール チェーンを活用すると、C + 検証よりも/cli WinRT の標準への準拠。 | 説明されている問題が発生するが不要になった[自分の新しいプロジェクトがコンパイルされない理由でしょうか。Visual Studio 2017 を使用している (15.8.0 バージョンまたはそれ以降)、および SDK version 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) |
 
@@ -58,7 +58,7 @@ C++ 以前ままの場合/cli WinRT を今すぐそれらを含める必要が�
 
 現時点では、Windows SDK ヘッダー ファイルの分離の唯一の例外は組み込み関数、および数値です。 この最後の残りの依存関係に関する既知の問題はありません。
 
-必要がある場合は、プロジェクトの Windows SDK のヘッダーとの相互運用を有効にできます再。 COM インターフェイスを実装する可能性があります、たとえば、(ルートと[ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509))。 例では、含める`unknwn.h`すべて C + インクルードする前に/cli WinRT ヘッダー。 そのため、C +/cli WinRT ベースのライブラリにクラシック COM インターフェイスをサポートするためにさまざまなフックを有効にします。 コード例では、次を参照してください。 [C + での作成者の COM コンポーネント/cli WinRT](author-coclasses.md)します。 同様に、宣言型や関数を呼び出そうとするその他の Windows SDK ヘッダーに明示的に含まれます。
+必要がある場合は、プロジェクトの Windows SDK のヘッダーとの相互運用を有効にできます再。 COM インターフェイスを実装する可能性があります、たとえば、(ルートと[ **IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509))。 例では、含める`unknwn.h`すべて C + インクルードする前に/cli WinRT ヘッダー。 そのため、C +/cli WinRT ベースのライブラリにクラシック COM インターフェイスをサポートするためにさまざまなフックを有効にします。 コード例では、[C + での作成者の COM コンポーネント/cli WinRT](author-coclasses.md)を参照してください。 同様に、宣言型や関数を呼び出そうとするその他の Windows SDK ヘッダーに明示的に含まれます。
 
 ## <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>C++ の再ターゲットする方法/cli 以降のバージョンの Windows SDK に WinRT プロジェクト
 

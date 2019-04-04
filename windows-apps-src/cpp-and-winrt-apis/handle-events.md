@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602427"
@@ -230,7 +230,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全にアクセスする、*この*イベント処理デリゲートを使用してポインター
 
-オブジェクトのメンバー関数をイベントを処理するかから、オブジェクトのメンバー関数内のラムダ関数内でする必要があるイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考えるイベントの発生)。 詳細については、およびコード例は、次を参照してください。[強力と脆弱の参照を c++/cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
+オブジェクトのメンバー関数をイベントを処理するかから、オブジェクトのメンバー関数内のラムダ関数内でする必要があるイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考えるイベントの発生)。 詳細については、およびコード例は、[強力と脆弱の参照を c++/cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::auto_revoke_t マーカー構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)

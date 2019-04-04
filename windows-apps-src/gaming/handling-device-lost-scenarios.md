@@ -160,7 +160,7 @@ DXGI デバイス削除エラーが繰り返し発生する場合は、アプリ
 #endif
 ```
 
-詳細については、次を参照してください。 [ **GetDeviceRemovedReason** ](https://msdn.microsoft.com/library/windows/desktop/ff476526)と[ **DXGI\_エラー**](https://msdn.microsoft.com/library/windows/desktop/bb509553)します。
+詳細については、[ **GetDeviceRemovedReason** ](https://msdn.microsoft.com/library/windows/desktop/ff476526)と[ **DXGI\_エラー**](https://msdn.microsoft.com/library/windows/desktop/bb509553)を参照してください。
 
 ### <a name="testing-device-removed-handling"></a>デバイスの削除完了処理のテスト
 

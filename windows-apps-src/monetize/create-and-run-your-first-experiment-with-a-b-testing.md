@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, A/B テスト, 実験
 ms.localizationpriority: medium
 ms.openlocfilehash: 8dba9095326c01029e14742c98c1c368b896dfb8
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57660217"
@@ -92,7 +92,7 @@ A の概要についてはパートナー センターでのテストを B を�
 
 1. パートナー センターでに戻り、**実験**アプリのページ。
 2. **[アクティブな実験]** セクションで、**[Optimize Button Clicks]** (ボタンのクリックを最適化) をクリックしてこの実験のページに移動します。
-3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションの詳細については、次を参照してください。[パートナー センターで実験を管理](manage-your-experiment.md#review-the-results-of-your-experiment)します。
+3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションの詳細については、[パートナー センターで実験を管理](manage-your-experiment.md#review-the-results-of-your-experiment)を参照してください。
     > [!NOTE]
     > パートナー センターでは、24 時間の期間に各ユーザーの最初の変換イベントのみを報告します。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの実験の実行結果が歪曲されないようにすることを目的としています。
 

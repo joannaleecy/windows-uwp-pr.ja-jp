@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639667"
@@ -19,7 +19,7 @@ ms.locfileid: "57639667"
 ただし、オプトアウトできます。配置、たとえば、シングル スレッド アパートメントで、型のオブジェクトを必要とする特別な理由があります。 これは通常、再入の要件で行う必要があります。 それでもますます、ユーザー インターフェイス (UI) API ではアジャイル オブジェクトを提供するようになっています。 一般に、アジリティは最も単純で最もパフォーマンスの高いオプションです。 また、アクティベーション ファクトリを実装する際は、対応するランタイム クラスがアジャイルではない場合でもアジャイルにする必要があります。
 
 > [!NOTE]
-> Windows ランタイムは COM に基づいています。 COM の用語では、アジャイル クラスは `ThreadingModel` = *両方*に登録されています。 COM スレッド モデル、およびアパートメントの詳細については、次を参照してください。 [COM スレッド モデルを使用すると理解](https://msdn.microsoft.com/library/ms809971)します。
+> Windows ランタイムは COM に基づいています。 COM の用語では、アジャイル クラスは `ThreadingModel` = *両方*に登録されています。 COM スレッド モデル、およびアパートメントの詳細については、[COM スレッド モデルを使用すると理解](https://msdn.microsoft.com/library/ms809971)を参照してください。
 
 ## <a name="code-examples"></a>コード例
 

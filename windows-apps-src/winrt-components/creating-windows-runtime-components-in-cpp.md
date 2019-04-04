@@ -542,7 +542,7 @@ C# と Visual Basic のどちらの言語でも列挙型がサポートされま
 ## <a name="asynchronous-methods"></a>非同期メソッド
 他の Windows ランタイム オブジェクトによって公開される非同期メソッドを利用するには、[task クラス (同時実行ランタイム)](https://msdn.microsoft.com/library/hh750113.aspx) を使います。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)](https://msdn.microsoft.com/library/dd492427.aspx)」をご覧ください。
 
-C + での非同期メソッドを実装する/cli CX、使用、[作成\_async](https://msdn.microsoft.com/library/hh750102.aspx) ppltasks.h で定義されている関数。 詳細については、次を参照してください。 [c++ 非同期操作の作成/cli UWP アプリの CX](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)します。 例については、次を参照してください。[チュートリアル。基本的な Windows ランタイム コンポーネントを作成する c++/cli CX および JavaScript による呼び出しまたはC#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)します。 .NET 言語が消費する C +/cli CX の非同期メソッドが存在している場合、.NET Framework で定義されている任意の非同期メソッドと同様です。
+C + での非同期メソッドを実装する/cli CX、使用、[作成\_async](https://msdn.microsoft.com/library/hh750102.aspx) ppltasks.h で定義されている関数。 詳細については、[c++ 非同期操作の作成/cli UWP アプリの CX](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)を参照してください。 例については、次を参照してください。[チュートリアル。基本的な Windows ランタイム コンポーネントを作成する c++/cli CX および JavaScript による呼び出しまたはC#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)します。 .NET 言語が消費する C +/cli CX の非同期メソッドが存在している場合、.NET Framework で定義されている任意の非同期メソッドと同様です。
 
 ## <a name="exceptions"></a>例外
 Windows ランタイムによって定義された任意の例外の型をスローできます。 Windows ランタイムのどの例外の型からもカスタム型は取得できません。 ただし、COMException をスローし、例外をキャッチするコードがアクセスできるカスタム HRESULT を提供できます。 COMException でカスタム メッセージを指定する方法はありません。

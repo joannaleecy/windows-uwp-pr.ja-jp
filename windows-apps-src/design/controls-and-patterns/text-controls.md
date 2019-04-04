@@ -123,7 +123,7 @@ Windows 10 バージョン 1803 以降では、XAML テキスト入力ボック�
 
 ![ペンでタップするとテキスト ボックスが展開する](images/handwritingview/handwritingview2.gif)
 
-詳細については、次を参照してください。[ビューを手書きのテキスト入力](text-handwriting-view.md)します。
+詳細については、[ビューを手書きのテキスト入力](text-handwriting-view.md)を参照してください。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>テキスト コントロールに適切なキーボードの選択
 

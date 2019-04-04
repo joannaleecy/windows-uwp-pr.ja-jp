@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, �
 ms.localizationpriority: medium
 ms.openlocfilehash: c0d11a8718f61666d6285d8a1c91b48992044b22
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57602237"
@@ -120,7 +120,7 @@ HRESULT リターン コードを処理する必要もありません。 C++/Win
 
 このセクションで説明する追加方法 C +/cli WinRT サポートを所持している Windows デスクトップ アプリケーション プロジェクト。 場合は、既存の Windows デスクトップ アプリケーション プロジェクトは、最初の作成のいずれかでと共に次の手順に従うことができますし、必要はありません。 たとえば、Visual Studio を開き、作成、 **Visual C** \> **Windows デスクトップ** \> **Windows デスクトップ アプリケーション**プロジェクト。
 
-必要に応じてインストールすることができます、 [C +/cli WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、次を参照してください。 [Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
+必要に応じてインストールすることができます、 [C +/cli WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix)します。 詳細については、[Visual Studio のサポートを c++/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)を参照してください。
 
 ### <a name="set-project-properties"></a>プロジェクト プロパティの設定
 

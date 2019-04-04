@@ -51,7 +51,7 @@ UWP コントロールが優れている点は、実行されているデバイ�
 
 その他のコントロールについては、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-**注**  JavaScript と HTML を使った UWP アプリのコントロールの一覧は、次を参照してください。[コントロール リスト](https://msdn.microsoft.com/library/windows/apps/hh465453)します。
+**注**  JavaScript と HTML を使った UWP アプリのコントロールの一覧は、[コントロール リスト](https://msdn.microsoft.com/library/windows/apps/hh465453)を参照してください。
 
 ### <a name="next-step"></a>次の手順
 

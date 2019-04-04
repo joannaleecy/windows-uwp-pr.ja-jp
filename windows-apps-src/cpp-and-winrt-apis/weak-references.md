@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630817"
@@ -131,7 +131,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 
 ### <a name="the-scenario"></a>シナリオ
 
-イベント処理に関する一般的な情報は、次を参照してください。 [C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)します。
+イベント処理に関する一般的な情報は、[C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)を参照してください。
 
 前のセクションには、コルーチンと同時実行性の面での潜在的な有効期間に関する問題が強調表示されます。 オブジェクトのメンバー関数、または内からイベントを処理する場合してオブジェクトのメンバー関数は、内側のラムダ関数がイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考慮する必要がありますが、イベントの発生)。 コード例をいくつか見てみましょう。
 

@@ -80,7 +80,7 @@ ms.locfileid: "57627617"
 - 項目レベルのデータを表示する拡大表示ビュー。
 - グループ レベルのデータを表示する縮小表示ビュー。
 
-セマンティック ズームを使用する前に、グループ化されたデータに対してリスト ビューを使用する方法を理解する必要があります。 詳細については、次を参照してください。[ビューとグリッド ビューを一覧表示](listview-and-gridview.md)します。 
+セマンティック ズームを使用する前に、グループ化されたデータに対してリスト ビューを使用する方法を理解する必要があります。 詳細については、[ビューとグリッド ビューを一覧表示](listview-and-gridview.md)を参照してください。 
 
 > **注**&nbsp;&nbsp; SemanticZoom コントロールの拡大表示ビューと縮小表示ビューを定義するには、[ISemanticZoomInformation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.isemanticzoominformation.aspx) インターフェイスを実装する任意のコントロールを 2 つ使用できます。 XAML フレームワークでは、このインターフェイスを実装する 3 つのコントロールを提供します。ListView、GridView、およびハブ。
  

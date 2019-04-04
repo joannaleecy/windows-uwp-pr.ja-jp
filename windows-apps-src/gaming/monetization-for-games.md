@@ -27,7 +27,7 @@ UWP ゲームの販売促進や収益化には、次の方法があります。
 
 ## <a name="worldwide-distribution-channel"></a>世界規模の販売チャネル
 
-Microsoft Store が利用できるゲーム ダウンロード 200 台を超える国や地域で支払い Visa、Mastercard、PayPal などのさまざまなフォームを使用して課金のサポートにより、世界中。 国とリージョンの一覧については、次を参照してください。[を定義する市場選択](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)します。
+Microsoft Store が利用できるゲーム ダウンロード 200 台を超える国や地域で支払い Visa、Mastercard、PayPal などのさまざまなフォームを使用して課金のサポートにより、世界中。 国とリージョンの一覧については、[を定義する市場選択](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)を参照してください。
 
 ## <a name="set-a-price-for-your-game"></a>ゲームの価格設定
 
@@ -138,7 +138,7 @@ Microsoft Store が利用できるゲーム ダウンロード 200 台を超え�
 * [価格と可用性](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [ストアの一覧](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-ゲームに多くのアドオンがある場合は、することができます、プログラムで作成を使用して、 __Microsoft Store 送信 API__します。 詳細については、次を参照してください。[作成し、Microsoft Store サービスを使用して送信を管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)します。
+ゲームに多くのアドオンがある場合は、することができます、プログラムで作成を使用して、 __Microsoft Store 送信 API__します。 詳細については、[作成し、Microsoft Store サービスを使用して送信を管理](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)を参照してください。
 
 ## <a name="display-ads-in-your-game"></a>ゲーム内での広告の表示
 

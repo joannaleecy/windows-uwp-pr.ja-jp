@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 72e0941bb42a2a507af652758432ce51212c1042
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592657"
@@ -119,7 +119,7 @@ Azure AD アクセス トークンを取得したら、Microsoft Store 分析 AP
 
 ### <a name="methods-for-hardware-and-drivers"></a>ハードウェアとドライバー向けのメソッド
 
-開発者アカウントに属している、 [Windows ハードウェア ダッシュ ボード プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)追加ハードウェアとドライバーの分析データを取得するためのメソッドのセットにアクセスします。 詳細については、次を参照してください。[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)します。
+開発者アカウントに属している、 [Windows ハードウェア ダッシュ ボード プログラム](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)追加ハードウェアとドライバーの分析データを取得するためのメソッドのセットにアクセスします。 詳細については、[ハードウェア ダッシュ ボード API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)を参照してください。
 
 ## <a name="code-example"></a>コードの例
 

@@ -73,7 +73,7 @@ Windows Phone 8.1 を対象とする .appx パッケージでは、新しい申�
 さらに、Windows 8.1 のパッケージのバージョンの数は、同じアプリの Windows 8 パッケージのいずれかのバージョン番号より大きいは常にする必要があります。 つまり、送信する任意の Windows 8 パッケージのバージョン番号は、同じアプリを登録した Windows 8.1 のパッケージのバージョン番号より低くする必要があります。
 
 > [!NOTE]
-> アプリでは、Windows 10 のパッケージもに、Windows 10 のパッケージのバージョン番号、Windows 8、Windows 8.1、および Windows Phone 8.1 のパッケージのいずれかの場合よりも高い場合があります。 詳細については、次を参照してください。[以前発行されたアプリを Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)します。
+> アプリでは、Windows 10 のパッケージもに、Windows 10 のパッケージのバージョン番号、Windows 8、Windows 8.1、および Windows Phone 8.1 のパッケージのいずれかの場合よりも高い場合があります。 詳細については、[以前発行されたアプリを Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)を参照してください。
 
 Windows 8 および Windows 8.1 を対象とするパッケージを別のバージョン番号の更新シナリオでの動作のいくつかの例を示します。
 

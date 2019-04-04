@@ -258,7 +258,7 @@ _ナビゲーション ビューのコンテンツ_
 - A アイコン専用のままにした中規模のウィンドウの幅でのナビゲーション ウィンドウ (LeftCompact) (641px 1007px に)。
 - メニュー ボタンしか (LeftMinimal) 小さいウィンドウの幅で (640 ピクセル以下)。
 
-アダプティブの動作のウィンドウ サイズの詳細については、次を参照してください。[画面サイズやブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)します。
+アダプティブの動作のウィンドウ サイズの詳細については、[画面サイズやブレークポイント](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)を参照してください。
 
 ![左側のナビゲーション アダプティブの既定の動作](images/displaymode-auto.png)<br/>
 _ナビゲーション ビューの既定のアダプティブ動作_
@@ -368,7 +368,7 @@ _ナビゲーション ビュー PaneDisplayMode LeftMinimal に設定_
 
 ### <a name="backwards-navigation"></a>逆方向のナビゲーション
 
-NavigationView は組み込みの戻るボタン。ただし、"進む"ナビゲーションと同様には下位ナビゲーションを自動的に実行します。 ユーザーが、[戻る] ボタンをタップすると、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。 旧バージョンとナビゲーションを実行するには、このイベントを処理します。 詳細情報とコード例については、次を参照してください。[ナビゲーション履歴内を後方に向かってとナビゲーション](../basics/navigation-history-and-backwards-navigation.md)します。
+NavigationView は組み込みの戻るボタン。ただし、"進む"ナビゲーションと同様には下位ナビゲーションを自動的に実行します。 ユーザーが、[戻る] ボタンをタップすると、 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested)イベントが発生します。 旧バージョンとナビゲーションを実行するには、このイベントを処理します。 詳細情報とコード例については、[ナビゲーション履歴内を後方に向かってとナビゲーション](../basics/navigation-history-and-backwards-navigation.md)を参照してください。
 
 最小限またはコンパクト モードでナビゲーション ビュー ウィンドウがフライアウトとして開きます。 ここでは、[戻る] ボタンをクリックするとはウィンドウを閉じるし、発生させる、 **PaneClosing**イベント代わりにします。
 
@@ -662,7 +662,7 @@ void MainPage::NavView_ItemInvoked(Windows::Foundation::IInspectable const & /* 
 | LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
 | Top | NavigationViewTopPaneBackground |
 
-この例では、App.xaml でテーマのリソースを上書きする方法を示します。 テーマのリソースを上書きするときにする必要があります常に少なくとも、"Default"、「ハイコントラスト」のリソース ディクショナリとディクショナリ「淡色」または「濃色」のリソースに応じて提供します。 詳細については、次を参照してください。 [ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)します。
+この例では、App.xaml でテーマのリソースを上書きする方法を示します。 テーマのリソースを上書きするときにする必要があります常に少なくとも、"Default"、「ハイコントラスト」のリソース ディクショナリとディクショナリ「淡色」または「濃色」のリソースに応じて提供します。 詳細については、[ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)を参照してください。
 
 > [!IMPORTANT]
 > このコードは、使用する方法を示します、 [Windows UI ライブラリ](https://docs.microsoft.com/uwp/toolkits/winui/)AcrylicBrush のバージョン。 AcrylicBrush のプラットフォームのバージョンを代わりに使用する場合、アプリ プロジェクトの最小バージョンは 16299 以上の SDK である必要があります。 プラットフォームのバージョンを使用するすべての参照を削除`muxm:`します。

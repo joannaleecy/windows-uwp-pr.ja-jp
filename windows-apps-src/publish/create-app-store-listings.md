@@ -8,7 +8,7 @@ keywords: windows 10, uwp, 登録情報, 説明, Microsoft Store ページ, リ�
 ms.localizationpriority: medium
 ms.openlocfilehash: a913c522450a8d28c03066c922df2e3e2972f92f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57601857"
@@ -40,7 +40,7 @@ ms.locfileid: "57601857"
 
 ## <a name="add-and-edit-store-listing-info"></a>追加および編集ストア情報を一覧表示します。
 
-一覧表示するストアを編集するには、送信の概要ページから言語の名前を選択します。 しない場合、ストアの一覧をエクスポートし、オフラインで作業して一度にすべての一覧のデータをインポートするとは別に、各言語を編集する必要があります。 そのしくみについては、次を参照してください。[インポートおよびストアの一覧をエクスポート](import-and-export-store-listings.md)します。
+一覧表示するストアを編集するには、送信の概要ページから言語の名前を選択します。 しない場合、ストアの一覧をエクスポートし、オフラインで作業して一度にすべての一覧のデータをインポートするとは別に、各言語を編集する必要があります。 そのしくみについては、[インポートおよびストアの一覧をエクスポート](import-and-export-store-listings.md)を参照してください。
 
 使用可能なフィールドを以下に示します。
 
@@ -95,7 +95,7 @@ ms.locfileid: "57601857"
 
 ビデオ トレーラーと、キャンペーンのイメージを含む、製品の他のアセットを送信できます。 これらはいずれも省略可能ですが、できるだけ多くの資産のアップロードを検討することをお勧めします。 これらの画像は、より魅力的な登録情報を作成し、製品がどのようなものかをユーザーに知ってもらうために役立ちます。
 
-詳細については、次を参照してください。[トレーラーとその他の資産](app-screenshots-and-images.md#trailers-and-additional-assets)します。
+詳細については、[トレーラーとその他の資産](app-screenshots-and-images.md#trailers-and-additional-assets)を参照してください。
 
 <a id="supplemental-information" />
 

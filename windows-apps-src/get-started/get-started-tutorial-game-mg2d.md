@@ -698,4 +698,4 @@ Windows 開発者として[登録](https://developer.microsoft.com/en-us/store/r
 
 [認定](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
 
-詳細については、次を参照してください。 [UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)します。
+詳細については、[UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)を参照してください。

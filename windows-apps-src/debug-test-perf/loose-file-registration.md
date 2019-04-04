@@ -55,7 +55,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 ### <a name="windows-device-portal"></a>Windows Device Portal
 
-Windows Device Portal では、すべての Windows 10 デバイスで利用し、テストおよび検証作業する開発者によって使用されます。 すべての対象ユーザーとそのブラウザー UX 開発者コミュニティのおよび REST エンドポイントに対応します。 デバイスのポータルの詳細については、次を参照してください。、 [Windows Device Portal 概要](device-portal.md)します。
+Windows Device Portal では、すべての Windows 10 デバイスで利用し、テストおよび検証作業する開発者によって使用されます。 すべての対象ユーザーとそのブラウザー UX 開発者コミュニティのおよび REST エンドポイントに対応します。 デバイスのポータルの詳細については、、 [Windows Device Portal 概要](device-portal.md)を参照してください。
 
 デバイスのポータルで、圧縮しないファイルのレイアウトを登録するに次の手順に従います。
 

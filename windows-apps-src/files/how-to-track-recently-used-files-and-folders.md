@@ -25,7 +25,7 @@ ms.locfileid: "57601627"
 お使いのアプリの MRU は、静的な [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) プロパティから取得する [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) クラスによって表されます。 MRU の項目は [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) オブジェクトとして格納されます。つまり、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクト (ファイルを表すオブジェクト) と [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト (フォルダーを表すオブジェクト) は、どちらも MRU に追加できます。
 
 > [!NOTE]
-> 完全なサンプルは、次を参照してください。、[ファイル ピッカー サンプル](https://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセス サンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)します。
+> 完全なサンプルは、、[ファイル ピッカー サンプル](https://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセス サンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

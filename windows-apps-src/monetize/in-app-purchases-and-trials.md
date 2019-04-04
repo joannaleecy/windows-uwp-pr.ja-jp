@@ -175,7 +175,7 @@ UWP アプリでは、次の種類のアドオンを提供できます。
     > [!NOTE]
     > 上記の手順を実行すると、ストアに新しいアプリ パッケージを提出しなくても、引き続きアプリのコードを更新し、更新されたプロジェクトを開発用コンピューターでデバッグできます。 テストで使用するローカル ライセンスを取得するため、開発用コンピューターにストア バージョンのアプリを 1 度だけダウンロードする必要があります。 テストが完了し、ユーザーがアプリのアプリ内購入や試用版に関連する機能を利用できるようにするには、ストアに新しいアプリ パッケージを申請するだけで済みます。
 
-アプリで **Windows.ApplicationModel.Store** 名前空間を使用している場合は、アプリで [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) クラスを使用することで、アプリをストアに提出する前に、ライセンス情報をテスト中にシミュレートできます。 詳細については、次を参照してください。 [CurrentApp と CurrentAppSimulator クラスの概要](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)します。  
+アプリで **Windows.ApplicationModel.Store** 名前空間を使用している場合は、アプリで [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) クラスを使用することで、アプリをストアに提出する前に、ライセンス情報をテスト中にシミュレートできます。 詳細については、[CurrentApp と CurrentAppSimulator クラスの概要](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)を参照してください。  
 
 > [!NOTE]
 > **Windows.Services.Store** 名前空間には、テスト中にライセンス情報をシミュレートするために使用できるクラスが用意されていません。 **Windows.Services.Store** 名前空間を使用してアプリ内購入または試用版を実装する場合は、上記のように、アプリをストアに公開してからそのアプリを開発デバイスにダウンロードし、そのライセンスを使用してテストを行う必要があります。

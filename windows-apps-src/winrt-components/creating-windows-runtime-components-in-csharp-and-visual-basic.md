@@ -23,7 +23,7 @@ Visual Basic で記述された UWP アプリでのみ使用するコンポー�
 
 ## <a name="declaring-types-in-windows-runtime-components"></a>Windows ランタイム コンポーネントでの型の宣言
 
-内部的には、コンポーネントでは Windows ランタイム型では、UWP アプリで許可されている .NET Framework の機能を使用できます。 詳細については、次を参照してください。 [UWP アプリ用 .NET](https://msdn.microsoft.com/library/windows/apps/mt185501)します。
+内部的には、コンポーネントでは Windows ランタイム型では、UWP アプリで許可されている .NET Framework の機能を使用できます。 詳細については、[UWP アプリ用 .NET](https://msdn.microsoft.com/library/windows/apps/mt185501)を参照してください。
 
 外部で、型のメンバーは、そのパラメーターの Windows ランタイム型のみを公開および戻り値。 次の一覧では、Windows ランタイム コンポーネントから公開されている .NET Framework 型の制限事項について説明します。
 

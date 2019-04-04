@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f8bed97e060015f92ff95c9f7d797bbcb83db431
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605837"
@@ -133,7 +133,7 @@ A [ **StorageFile** ](https://docs.microsoft.com/uwp/api/windows.storage.storage
 
 ## <a name="io-during-app-suspension"></a>アプリの中断中に I/O
 
-アプリは、状態情報の保持またはメタデータを以降のセッションで使用する場合は、中断を処理するために設計する必要があります。 アプリの中断に関する背景情報は、次を参照してください。[アプリのライフ サイクル](../launch-resume/app-lifecycle.md)と[このブログの投稿](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)します。
+アプリは、状態情報の保持またはメタデータを以降のセッションで使用する場合は、中断を処理するために設計する必要があります。 アプリの中断に関する背景情報は、[アプリのライフ サイクル](../launch-resume/app-lifecycle.md)と[このブログの投稿](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97)を参照してください。
 
 OS がアプリに延長実行を許可しない限り、すべてのリソースを解放し、そのデータを保存するには、5 秒間、アプリが中断されている場合があります。 最高の信頼性とユーザー エクスペリエンス、常に中断タスクを処理する必要がある時間は限られて前提としています。 5 秒間中断タスクを処理するための期間中に、次のガイドラインを考慮してください。
 

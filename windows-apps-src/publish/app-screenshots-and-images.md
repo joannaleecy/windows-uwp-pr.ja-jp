@@ -8,7 +8,7 @@ keywords: Windows 10, uwp, 予告編, ビデオ, スクリーン ショット, �
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ae5b68d73a3776adf6250dbb96de827a106a6c5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610187"
@@ -21,7 +21,7 @@ ms.locfileid: "57610187"
 
 [アプリの申請プロセス](app-submissions.md)では、[ストア登録情報](create-app-store-listings.md)を設定する手順でこのようなアート資産を指定します。 ストアで使用される画像やその表示状態は、ユーザーのオペレーティング システムやその他の要因によって異なる場合があります。
 
-ストアには、アプリのアイコンと、アプリのパッケージに含めることが他のイメージも使用可能性があります。 アプリを申請する前に、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行して、必須の画像が不足していないかどうかを確認してください。 ガイダンスと推奨事項については、これらのイメージでは、次を参照してください。[アプリ アイコンとロゴ](../design/style/app-icons-and-logos.md)します。
+ストアには、アプリのアイコンと、アプリのパッケージに含めることが他のイメージも使用可能性があります。 アプリを申請する前に、[Windows アプリ認定キット](../debug-test-perf/windows-app-certification-kit.md)を実行して、必須の画像が不足していないかどうかを確認してください。 ガイダンスと推奨事項については、これらのイメージでは、[アプリ アイコンとロゴ](../design/style/app-icons-and-logos.md)を参照してください。
 
 ## <a name="screenshots"></a>スクリーンショット
 

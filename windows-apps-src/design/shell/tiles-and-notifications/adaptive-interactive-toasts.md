@@ -22,7 +22,7 @@ ms.locfileid: "57596827"
 > **重要な Api**:[UWP Community Toolkit の通知の nuget パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Windows 8.1 および Windows Phone 8.1 から従来のテンプレートを表示するには、次を参照してください。、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)します。
+> Windows 8.1 および Windows Phone 8.1 から従来のテンプレートを表示するには、、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)を参照してください。
 
 
 ## <a name="getting-started"></a>概要

@@ -288,7 +288,7 @@ Visual Studio を使用して、ランタイム修正プログラムをデバッ
 
 ![パッケージ プロジェクト テンプレート](images/desktop-to-uwp/package-project-template.png)
 
-Windows アプリケーション パッケージ プロジェクトの詳細については、次を参照してください。 [Visual Studio を使用して、アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)します。
+Windows アプリケーション パッケージ プロジェクトの詳細については、[Visual Studio を使用して、アプリケーションをパッケージ化](desktop-to-uwp-packaging-dot-net.md)を参照してください。
 
 **ソリューション エクスプ ローラー**をパッケージ プロジェクトを右クリックして選択**編集**、し、これをプロジェクト ファイルの末尾に追加します。
 

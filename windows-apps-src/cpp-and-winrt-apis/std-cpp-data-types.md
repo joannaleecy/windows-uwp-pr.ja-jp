@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b0b529bbf397b76acb1eb589095a84f5c85745c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57654287"
@@ -150,7 +150,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 ```
 
 ## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>非同期 Windows ランタイム Api を使用した C++ のコルーチン
-引き続き使用できます、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)非同期 Windows ランタイム Api を呼び出すときにします。 ただし、多くの場合、C++ コルーチン提供、効率的でより簡単にコーディングされた表現する形式の非同期オブジェクトを操作します。 詳細については、およびコード例は、次を参照してください。[同時実行と非同期操作を C +/cli WinRT](concurrency.md)します。
+引き続き使用できます、[並列パターン ライブラリ (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)非同期 Windows ランタイム Api を呼び出すときにします。 ただし、多くの場合、C++ コルーチン提供、効率的でより簡単にコーディングされた表現する形式の非同期オブジェクトを操作します。 詳細については、およびコード例は、[同時実行と非同期操作を C +/cli WinRT](concurrency.md)を参照してください。
 
 ## <a name="important-apis"></a>重要な API
 * [IVector&lt;T&gt;インターフェイス](/uwp/api/windows.foundation.collections.ivector_t_)

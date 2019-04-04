@@ -26,7 +26,7 @@ Microsoft Edge、Cortana、スタート メニュー、エクスプローラー�
 ARM 上の Windows 10 の実行、ARM32、および ARM64 のすべての x86 [UWP アプリ](../get-started/universal-application-platform-guide.md)Microsoft Store から。 任意のエミュレーションではなくネイティブ実行 ARM32 および ARM64 のアプリでは、x86 エミュレーションでアプリが実行中にします。 UWP 開発者の場合、デバイスの最適なユーザー エクスペリエンスを提供するため、必ずアプリの ARM パッケージを提出してください。 詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。
 
 >[!NOTE]
-> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、次を参照してください。[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)します。
+> ネイティブ ARM64 プラットフォームを対象とする UWP アプリケーションを構築するには、Visual Studio 2017 バージョン 15.9 以降が必要です。 詳細については、[このブログの投稿](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development)を参照してください。
 
 >[!IMPORTANT]
 > ユーザーが Microsoft Store から UWP アプリをダウンロードすると、x86 バージョンしか利用できない場合を除き、ARM32 バージョンが ARM64 デバイスにダウンロードされます。 アーキテクチャについて詳しくは、「[アプリ パッケージのアーキテクチャ](../packaging/device-architecture.md)」をご覧ください。

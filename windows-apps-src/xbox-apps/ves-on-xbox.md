@@ -85,7 +85,7 @@ VE は、次のオートメーション コントロール パターンのいず
 
 ![](images/ves_narrator.jpg)
 
-詳細については、次を参照してください。 [UI でのユーザー補助のサポートのオートメーション プロパティ](https://msdn.microsoft.com/en-us/library/ff400332(vs.95).aspx "UI でのユーザー補助のサポートのオートメーション プロパティ")します。
+詳細については、[UI でのユーザー補助のサポートのオートメーション プロパティ](https://msdn.microsoft.com/en-us/library/ff400332(vs.95).aspx "UI でのユーザー補助のサポートのオートメーション プロパティ")を参照してください。
 
 ## <a name="active-listening-mode-alm"></a>アクティブなリッスン モード (ALM) ##
 ### <a name="entering-alm"></a>ALM を入力します。 ###

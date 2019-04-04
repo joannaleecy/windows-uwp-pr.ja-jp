@@ -331,7 +331,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **ファイルに書き込むためのベスト プラクティス**
 
-追加の詳細とベスト プラクティス ガイダンスでは、次を参照してください。[ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)します。
+追加の詳細とベスト プラクティス ガイダンスでは、[ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)を参照してください。
     
 ## <a name="reading-from-a-file"></a>ファイルからの読み取り
 

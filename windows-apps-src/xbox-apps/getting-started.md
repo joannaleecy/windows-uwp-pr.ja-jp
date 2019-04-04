@@ -35,7 +35,7 @@ ms.locfileid: "57590977"
 
     Visual Studio 2017 をインストールする場合、必ず**ユニバーサル Windows プラットフォーム開発**ワークロードを選択してください。 C++ の開発者の場合、**概要**、右側のペインで**ユニバーサル Windows プラットフォーム開発**を選択することを確認、 **C++ ユニバーサル Windows プラットフォーム ツール**チェック ボックスをオンします。 既定のインストールの一部ではありません。
 
-    詳細については、次を参照してください。 [Xbox 開発環境で、UWP 設定](development-environment-setup.md)します。
+    詳細については、[Xbox 開発環境で、UWP 設定](development-environment-setup.md)を参照してください。
 
 2.  最新のインストール[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)します。
 

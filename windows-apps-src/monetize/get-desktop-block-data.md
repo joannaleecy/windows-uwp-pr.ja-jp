@@ -17,7 +17,7 @@ ms.locfileid: "57641107"
 
 この REST URI を使用して、お客様のデスクトップ アプリケーションが、Windows 10 アップグレードの実行をブロックは、Windows 10 デバイスに関する情報を取得します。 この URI を使用して、デスクトップ アプリケーションに追加するだけで、 [Windows デスクトップ アプリケーション プログラム](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)します。 この情報も記載されて、[アプリケーション ブロック レポート](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#application-blocks-report)パートナー センターでのデスクトップ アプリケーションです。
 
-デバイスのブロックに関する詳細、デスクトップ アプリケーションで特定された実行可能ファイルを取得する、次を参照してください。 [Get アップグレードはブロックのデスクトップ アプリケーションの詳細を](get-desktop-block-data-details.md)します。
+デバイスのブロックに関する詳細、デスクトップ アプリケーションで特定された実行可能ファイルを取得する、[Get アップグレードはブロックのデスクトップ アプリケーションの詳細を](get-desktop-block-data-details.md)を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 
