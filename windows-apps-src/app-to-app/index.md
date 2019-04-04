@@ -4,8 +4,14 @@ description: ここでは、共有コントラクトの使用、コピーと貼�
 title: アプリ間通信
 ms.date: 02/08/2017
 ms.topic: article
-keywords: 'windows 10, uwp'
+keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583098"
 ---
 # <a name="app-to-app-communication"></a>アプリ間通信
 

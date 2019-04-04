@@ -1,11 +1,17 @@
 ---
 description: さまざまなデバイスや画面サイズで、ナビゲーションがわかりやすく見た目にも優れた UWP アプリを設計およびコーディングする方法について説明します。
 title: UWP アプリ用のレイアウトの概要
-keywords: 'UWP アプリのレイアウト, ユニバーサル Windows プラットフォーム, アプリの設計, インターフェイス'
+keywords: UWP アプリのレイアウト, ユニバーサル Windows プラットフォーム, アプリの設計, インターフェイス
 ms.date: 03/07/2018
 ms.topic: article
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 ms.localizationpriority: medium
+ms.openlocfilehash: 60ababd5282d227107620d5a344b29d488a2f83a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583027"
 ---
 # <a name="layout"></a>レイアウト
 

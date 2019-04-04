@@ -21,7 +21,7 @@ ms.locfileid: "57618837"
 
 Windows 10 Insider Preview SDK ビルド 17709 以降、非 UWP のデスクトップ アプリケーション (WPF、Windows フォーム、および C++ の Win32 アプリケーションを含む) を使用できます、 *API をホストしている UWP XAML*関連付けられている任意の UI 要素に UWP コントロールをホストするで、ウィンドウ ハンドル (HWND)。 この API は、のみ UWP コントロールを使用して利用できる最新の Windows 10 の UI 機能を使用するデスクトップ アプリケーションを UWP 以外を使用できます。 デスクトップ アプリケーションを UWP 以外が使用する UWP コントロールをホストするには、この API を使用するなど、 [Fluent Design System](../design/fluent-design-system/index.md)サポートと[Windows インク](../design/input/pen-and-stylus-interactions.md)します。
 
-API をホストしている UWP XAML では、開発者がデスクトップ アプリケーションを UWP 以外に Fluent UI を表示できるようにするコントロールの広範なセットの基盤を提供します。 このシナリオとも呼ばれます*XAML 諸島*します。 この開発者向けシナリオの詳細については、次を参照してください。[デスクトップ アプリケーションでの UWP コントロール](xaml-host-controls.md)します。
+API をホストしている UWP XAML では、開発者がデスクトップ アプリケーションを UWP 以外に Fluent UI を表示できるようにするコントロールの広範なセットの基盤を提供します。 このシナリオとも呼ばれます*XAML 諸島*します。 この開発者向けシナリオの詳細については、[デスクトップ アプリケーションでの UWP コントロール](xaml-host-controls.md)を参照してください。
 
 ## <a name="is-the-uwp-xaml-hosting-api-right-for-your-desktop-application"></a>お客様のデスクトップ アプリケーションに適した API をホスト UWP XAML でしょうか。
 
@@ -57,7 +57,7 @@ API をホストしている UWP XAML では、これらの前提条件があり
 
 * お客様のデスクトップ アプリケーションで API をホストしている UWP XAML を使用するには、UWP Api を呼び出せるようにプロジェクトを構成する必要があります。
 
-    * **C++ Win32:** 使用するプロジェクトを構成することをお勧めします。 [C +/cli WinRT](../cpp-and-winrt-apis/index.md)します。 手順については、次を参照してください。 [C + を追加する Windows デスクトップ アプリケーション プロジェクトを変更する/cli WinRT サポート](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)します。
+    * **C++ Win32:** 使用するプロジェクトを構成することをお勧めします。 [C +/cli WinRT](../cpp-and-winrt-apis/index.md)します。 手順については、[C + を追加する Windows デスクトップ アプリケーション プロジェクトを変更する/cli WinRT サポート](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)を参照してください。
 
     * **Windows フォームと WPF:** 次の[手順](../porting/desktop-to-uwp-enhance.md)します。
 

@@ -4,8 +4,14 @@ description: ユニバーサル Windows プラットフォーム (UWP) は、ゲ
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ms.date: 06/13/2017
 ms.topic: article
-keywords: 'Windows 10, UWP, ゲーム, DirectX'
+keywords: Windows 10, UWP, ゲーム, DirectX
 ms.localizationpriority: medium
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583299"
 ---
 # <a name="game-programming"></a>ゲーム プログラミング
 

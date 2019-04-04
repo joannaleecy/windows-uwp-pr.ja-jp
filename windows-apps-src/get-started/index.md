@@ -4,8 +4,14 @@ description: Windows 10 のユニバーサル Windows プラットフォーム (
 title: ユニバーサル Windows プラットフォーム (UWP) の概要
 ms.date: 03/23/2018
 ms.topic: article
-keywords: '概要, windows 10, uwp, xaml, c#'
+keywords: 概要, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583759"
 ---
 # <a name="get-started-with-windows-10-apps"></a>Windows 10 アプリの概要 
  

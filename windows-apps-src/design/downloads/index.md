@@ -1,12 +1,18 @@
 ---
 description: UWP アプリのユーザー インターフェイスのレイアウトやコントロールの設計について、最新のダウンロードとツールを入手します。
-keywords: 'UWP アプリのレイアウト, UI, ユーザー インターフェイスの設計, ダウンロード, UWP ツール'
+keywords: UWP アプリのレイアウト, UI, ユーザー インターフェイスの設計, ダウンロード, UWP ツール
 title: UWP アプリ用の設計ツールキットとサンプル
 ms.date: 10/11/2018
 ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
+ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57583608"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>UWP アプリ用の設計ツールキットとサンプル
  
