@@ -18,32 +18,32 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610997"
 ---
-# <a name="create-write-and-read-a-file"></a><span data-ttu-id="d6810-104">ファイルの作成、書き込み、および読み取り</span><span class="sxs-lookup"><span data-stu-id="d6810-104">Create, write, and read a file</span></span>
+# <a name="create-write-and-read-a-file"></a><span data-ttu-id="9e1e4-104">ファイルの作成、書き込み、および読み取り</span><span class="sxs-lookup"><span data-stu-id="9e1e4-104">Create, write, and read a file</span></span>
 
-<span data-ttu-id="d6810-105">**重要な API**</span><span class="sxs-lookup"><span data-stu-id="d6810-105">**Important APIs**</span></span>
+<span data-ttu-id="9e1e4-105">**重要な API**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-105">**Important APIs**</span></span>
 
--   [<span data-ttu-id="d6810-106">**StorageFolder クラス**</span><span class="sxs-lookup"><span data-stu-id="d6810-106">**StorageFolder class**</span></span>](/uwp/api/windows.storage.storagefolder)
--   [<span data-ttu-id="d6810-107">**StorageFile クラス**</span><span class="sxs-lookup"><span data-stu-id="d6810-107">**StorageFile class**</span></span>](/uwp/api/windows.storage.storagefile)
--   [<span data-ttu-id="d6810-108">**FileIO クラス**</span><span class="sxs-lookup"><span data-stu-id="d6810-108">**FileIO class**</span></span>](/uwp/api/windows.storage.fileio)
+-   [<span data-ttu-id="9e1e4-106">**StorageFolder クラス**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-106">**StorageFolder class**</span></span>](/uwp/api/windows.storage.storagefolder)
+-   [<span data-ttu-id="9e1e4-107">**StorageFile クラス**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-107">**StorageFile class**</span></span>](/uwp/api/windows.storage.storagefile)
+-   [<span data-ttu-id="9e1e4-108">**FileIO クラス**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-108">**FileIO class**</span></span>](/uwp/api/windows.storage.fileio)
 
-<span data-ttu-id="d6810-109">[  **StorageFile**](/uwp/api/windows.storage.storagefile) オブジェクトを使ってファイルの読み取りと書き込みを行います。</span><span class="sxs-lookup"><span data-stu-id="d6810-109">Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storagefile) object.</span></span>
+<span data-ttu-id="9e1e4-109">[  **StorageFile**](/uwp/api/windows.storage.storagefile) オブジェクトを使ってファイルの読み取りと書き込みを行います。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-109">Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storagefile) object.</span></span>
 
 > [!NOTE]
-><span data-ttu-id="d6810-110"> 完全なサンプルを参照してください、[ファイル アクセス サンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)します。</span><span class="sxs-lookup"><span data-stu-id="d6810-110"> For a complete sample, see the [File access sample](https://go.microsoft.com/fwlink/p/?linkid=619995).</span></span>
+><span data-ttu-id="9e1e4-110"> 完全なサンプルを参照してください、[ファイル アクセス サンプル](https://go.microsoft.com/fwlink/p/?linkid=619995)します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-110"> For a complete sample, see the [File access sample](https://go.microsoft.com/fwlink/p/?linkid=619995).</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="d6810-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="d6810-111">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="9e1e4-111">前提条件</span><span class="sxs-lookup"><span data-stu-id="9e1e4-111">Prerequisites</span></span>
 
--   <span data-ttu-id="d6810-112">**ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**</span><span class="sxs-lookup"><span data-stu-id="d6810-112">**Understand async programming for Universal Windows Platform (UWP) apps**</span></span>
+-   <span data-ttu-id="9e1e4-112">**ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングを理解します。**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-112">**Understand async programming for Universal Windows Platform (UWP) apps**</span></span>
 
-    <span data-ttu-id="d6810-113">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d6810-113">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).</span></span> <span data-ttu-id="d6810-114">C + で非同期アプリを作成する方法について/cli WinRT を参照してください[同時実行と非同期操作を C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。</span><span class="sxs-lookup"><span data-stu-id="d6810-114">To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).</span></span> <span data-ttu-id="d6810-115">C + で非同期アプリを作成する方法について/cli CX を参照してください[非同期プログラミングの C +/cli CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。</span><span class="sxs-lookup"><span data-stu-id="d6810-115">To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).</span></span>
+    <span data-ttu-id="9e1e4-113">C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-113">You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).</span></span> <span data-ttu-id="9e1e4-114">C + で非同期アプリを作成する方法について/cli WinRT を参照してください[同時実行と非同期操作を C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-114">To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).</span></span> <span data-ttu-id="9e1e4-115">C + で非同期アプリを作成する方法について/cli CX を参照してください[非同期プログラミングの C +/cli CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-115">To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).</span></span>
 
--   <span data-ttu-id="d6810-116">**読み取り、書き込み、ファイルを取得する方法、またはその両方を知っています。**</span><span class="sxs-lookup"><span data-stu-id="d6810-116">**Know how to get the file that you want to read from, write to, or both**</span></span>
+-   <span data-ttu-id="9e1e4-116">**読み取り、書き込み、ファイルを取得する方法、またはその両方を知っています。**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-116">**Know how to get the file that you want to read from, write to, or both**</span></span>
 
-    <span data-ttu-id="d6810-117">ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d6810-117">You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).</span></span>
+    <span data-ttu-id="9e1e4-117">ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-117">You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).</span></span>
 
-## <a name="creating-a-file"></a><span data-ttu-id="d6810-118">ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="d6810-118">Creating a file</span></span>
+## <a name="creating-a-file"></a><span data-ttu-id="9e1e4-118">ファイルの作成</span><span class="sxs-lookup"><span data-stu-id="9e1e4-118">Creating a file</span></span>
 
-<span data-ttu-id="d6810-119">アプリのローカル フォルダーにファイルを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6810-119">Here's how to create a file in the app's local folder.</span></span> <span data-ttu-id="d6810-120">既に存在する場合は置き換えます。</span><span class="sxs-lookup"><span data-stu-id="d6810-120">If it already exists, we replace it.</span></span>
+<span data-ttu-id="9e1e4-119">アプリのローカル フォルダーにファイルを作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-119">Here's how to create a file in the app's local folder.</span></span> <span data-ttu-id="9e1e4-120">既に存在する場合は置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-120">If it already exists, we replace it.</span></span>
 
 ```csharp
 // Create sample file; replace if exists.
@@ -78,9 +78,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## <a name="writing-to-a-file"></a><span data-ttu-id="d6810-121">ファイルへの書き込み</span><span class="sxs-lookup"><span data-stu-id="d6810-121">Writing to a file</span></span>
+## <a name="writing-to-a-file"></a><span data-ttu-id="9e1e4-121">ファイルへの書き込み</span><span class="sxs-lookup"><span data-stu-id="9e1e4-121">Writing to a file</span></span>
 
-<span data-ttu-id="d6810-122">[  **StorageFile**](/uwp/api/windows.storage.storagefile) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6810-122">Here's how to write to a writable file on disk using the [**StorageFile**](/uwp/api/windows.storage.storagefile) class.</span></span> <span data-ttu-id="d6810-123">いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync) でファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="d6810-123">The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).</span></span>
+<span data-ttu-id="9e1e4-122">[  **StorageFile**](/uwp/api/windows.storage.storagefile) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-122">Here's how to write to a writable file on disk using the [**StorageFile**](/uwp/api/windows.storage.storagefile) class.</span></span> <span data-ttu-id="9e1e4-123">いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync) でファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-123">The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).</span></span>
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -114,9 +114,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-<span data-ttu-id="d6810-124">**テキスト ファイルへの書き込み**</span><span class="sxs-lookup"><span data-stu-id="d6810-124">**Writing text to a file**</span></span>
+<span data-ttu-id="9e1e4-124">**テキスト ファイルへの書き込み**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-124">**Writing text to a file**</span></span>
 
-<span data-ttu-id="d6810-125">テキストを呼び出すことによって、ファイルを書き込む、 [ **FileIO.WriteTextAsync** ](/uwp/api/windows.storage.fileio.writetextasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-125">Write text to your file by calling the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.</span></span>
+<span data-ttu-id="9e1e4-125">テキストを呼び出すことによって、ファイルを書き込む、 [ **FileIO.WriteTextAsync** ](/uwp/api/windows.storage.fileio.writetextasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-125">Write text to your file by calling the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.</span></span>
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -148,9 +148,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-<span data-ttu-id="d6810-126">**バッファー (2 つの手順) を使用して、ファイルにバイトを書き込む**</span><span class="sxs-lookup"><span data-stu-id="d6810-126">**Writing bytes to a file by using a buffer (2 steps)**</span></span>
+<span data-ttu-id="9e1e4-126">**バッファー (2 つの手順) を使用して、ファイルにバイトを書き込む**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-126">**Writing bytes to a file by using a buffer (2 steps)**</span></span>
 
-1.  <span data-ttu-id="d6810-127">最初に、呼び出す[ **CryptographicBuffer.ConvertStringToBinary** ](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) (文字列に基づく) バイトのバッファーを取得する、ファイルへの書き込みにします。</span><span class="sxs-lookup"><span data-stu-id="d6810-127">First, call [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) to get a buffer of the bytes (based on a string) that you want to write to your file.</span></span>
+1.  <span data-ttu-id="9e1e4-127">最初に、呼び出す[ **CryptographicBuffer.ConvertStringToBinary** ](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) (文字列に基づく) バイトのバッファーを取得する、ファイルへの書き込みにします。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-127">First, call [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) to get a buffer of the bytes (based on a string) that you want to write to your file.</span></span>
 
     ```csharp
     var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -191,7 +191,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  <span data-ttu-id="d6810-128">呼び出すことによっては、バッファーから、ファイルのバイト数を記述し、 [ **FileIO.WriteBufferAsync** ](/uwp/api/windows.storage.fileio.writebufferasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-128">Then write the bytes from your buffer to your file by calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.</span></span>
+2.  <span data-ttu-id="9e1e4-128">呼び出すことによっては、バッファーから、ファイルのバイト数を記述し、 [ **FileIO.WriteBufferAsync** ](/uwp/api/windows.storage.fileio.writebufferasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-128">Then write the bytes from your buffer to your file by calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.</span></span>
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -217,9 +217,9 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
     ```
 
-<span data-ttu-id="d6810-129">**ストリーム (4 つの手順) を使用してテキスト ファイルへの書き込み**</span><span class="sxs-lookup"><span data-stu-id="d6810-129">**Writing text to a file by using a stream (4 steps)**</span></span>
+<span data-ttu-id="9e1e4-129">**ストリーム (4 つの手順) を使用してテキスト ファイルへの書き込み**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-129">**Writing text to a file by using a stream (4 steps)**</span></span>
 
-1.  <span data-ttu-id="d6810-130">まず、[**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) メソッドを呼び出してファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="d6810-130">First, open the file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method.</span></span> <span data-ttu-id="d6810-131">このメソッドは、オープン操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="d6810-131">It returns a stream of the file's content when the open operation completes.</span></span>
+1.  <span data-ttu-id="9e1e4-130">まず、[**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) メソッドを呼び出してファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-130">First, open the file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method.</span></span> <span data-ttu-id="9e1e4-131">このメソッドは、オープン操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-131">It returns a stream of the file's content when the open operation completes.</span></span>
 
     ```csharp
     var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  <span data-ttu-id="d6810-132">次に、呼び出すことによって、出力ストリームを取得、 [ **IRandomAccessStream.GetOutputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)からメソッド、`stream`します。</span><span class="sxs-lookup"><span data-stu-id="d6810-132">Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`.</span></span> <span data-ttu-id="d6810-133">使用している場合C#でこれを囲む、**を使用して**ステートメントを出力ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="d6810-133">If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime.</span></span> <span data-ttu-id="d6810-134">使用している場合[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、ブロックでそれを囲むまたはに設定すると、その有効期間を制御できるよう`nullptr`を終了するとき。</span><span class="sxs-lookup"><span data-stu-id="d6810-134">If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.</span></span>
+2.  <span data-ttu-id="9e1e4-132">次に、呼び出すことによって、出力ストリームを取得、 [ **IRandomAccessStream.GetOutputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)からメソッド、`stream`します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-132">Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`.</span></span> <span data-ttu-id="9e1e4-133">使用している場合C#でこれを囲む、**を使用して**ステートメントを出力ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-133">If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime.</span></span> <span data-ttu-id="9e1e4-134">使用している場合[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、ブロックでそれを囲むまたはに設定すると、その有効期間を制御できるよう`nullptr`を終了するとき。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-134">If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.</span></span>
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  <span data-ttu-id="d6810-135">このコードを追加するようになりました (を使用する場合C#、既存**を使用して**ステートメント) を出力ストリームに書き込む新しい[ **datawriter の各**](/uwp/api/windows.storage.streams.datawriter)オブジェクトと呼び出し、[ **DataWriter.WriteString** ](/uwp/api/windows.storage.streams.datawriter.writestring)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-135">Now add this code (if you're using C#, within the existing **using** statement) to write to the output stream by creating a new [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) object and calling the [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) method.</span></span>
+3.  <span data-ttu-id="9e1e4-135">このコードを追加するようになりました (を使用する場合C#、既存**を使用して**ステートメント) を出力ストリームに書き込む新しい[ **datawriter の各**](/uwp/api/windows.storage.streams.datawriter)オブジェクトと呼び出し、[ **DataWriter.WriteString** ](/uwp/api/windows.storage.streams.datawriter.writestring)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-135">Now add this code (if you're using C#, within the existing **using** statement) to write to the output stream by creating a new [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) object and calling the [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) method.</span></span>
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  <span data-ttu-id="d6810-136">最後に、次のコードを追加 (を使用する場合C#、内部内**を使用して**ステートメント) を使用して、ファイルのテキストを保存する[ **DataWriter.StoreAsync** ](/uwp/api/windows.storage.streams.datawriter.storeasync) 、ストリームを閉じると[ **IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)します。</span><span class="sxs-lookup"><span data-stu-id="d6810-136">Lastly, add this code (if you're using C#, within the inner **using** statement) to save the text to your file with [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).</span></span>
+4.  <span data-ttu-id="9e1e4-136">最後に、次のコードを追加 (を使用する場合C#、内部内**を使用して**ステートメント) を使用して、ファイルのテキストを保存する[ **DataWriter.StoreAsync** ](/uwp/api/windows.storage.streams.datawriter.storeasync) 、ストリームを閉じると[ **IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-136">Lastly, add this code (if you're using C#, within the inner **using** statement) to save the text to your file with [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).</span></span>
 
     ```csharp
     await dataWriter.StoreAsync();
@@ -329,13 +329,13 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Await outputStream.FlushAsync()
     ```
 
-<span data-ttu-id="d6810-137">**ファイルに書き込むためのベスト プラクティス**</span><span class="sxs-lookup"><span data-stu-id="d6810-137">**Best practices for writing to a file**</span></span>
+<span data-ttu-id="9e1e4-137">**ファイルに書き込むためのベスト プラクティス**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-137">**Best practices for writing to a file**</span></span>
 
-<span data-ttu-id="d6810-138">追加の詳細とベスト プラクティス ガイダンスでは、次を参照してください。[ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)します。</span><span class="sxs-lookup"><span data-stu-id="d6810-138">For additional details and best practice guidance, see [Best practices for writing to files](best-practices-for-writing-to-files.md).</span></span>
+<span data-ttu-id="9e1e4-138">追加の詳細とベスト プラクティス ガイダンスでは、[ファイルに書き込むためのベスト プラクティス](best-practices-for-writing-to-files.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-138">For additional details and best practice guidance, see [Best practices for writing to files](best-practices-for-writing-to-files.md).</span></span>
     
-## <a name="reading-from-a-file"></a><span data-ttu-id="d6810-139">ファイルからの読み取り</span><span class="sxs-lookup"><span data-stu-id="d6810-139">Reading from a file</span></span>
+## <a name="reading-from-a-file"></a><span data-ttu-id="9e1e4-139">ファイルからの読み取り</span><span class="sxs-lookup"><span data-stu-id="9e1e4-139">Reading from a file</span></span>
 
-<span data-ttu-id="d6810-140">[  **StorageFile**](/uwp/api/Windows.Storage.StorageFile) クラスを使ってディスク上のファイルから読み取る方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d6810-140">Here's how to read from a file on disk using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) class.</span></span> <span data-ttu-id="d6810-141">いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync) を使ってファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="d6810-141">The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).</span></span>
+<span data-ttu-id="9e1e4-140">[  **StorageFile**](/uwp/api/Windows.Storage.StorageFile) クラスを使ってディスク上のファイルから読み取る方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-140">Here's how to read from a file on disk using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) class.</span></span> <span data-ttu-id="9e1e4-141">いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync) を使ってファイルを取得します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-141">The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).</span></span>
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -363,9 +363,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-<span data-ttu-id="d6810-142">**ファイルからテキストを読み取る**</span><span class="sxs-lookup"><span data-stu-id="d6810-142">**Reading text from a file**</span></span>
+<span data-ttu-id="9e1e4-142">**ファイルからテキストを読み取る**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-142">**Reading text from a file**</span></span>
 
-<span data-ttu-id="d6810-143">呼び出すことによって、ファイルからテキストを読み取る、 [ **FileIO.ReadTextAsync** ](/uwp/api/windows.storage.fileio.readtextasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-143">Read text from your file by calling the [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) method.</span></span>
+<span data-ttu-id="9e1e4-143">呼び出すことによって、ファイルからテキストを読み取る、 [ **FileIO.ReadTextAsync** ](/uwp/api/windows.storage.fileio.readtextasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-143">Read text from your file by calling the [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) method.</span></span>
 
 ```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -392,9 +392,9 @@ create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ samp
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-<span data-ttu-id="d6810-144">**バッファー (2 つの手順) を使用して、ファイルからテキストを読み取る**</span><span class="sxs-lookup"><span data-stu-id="d6810-144">**Reading text from a file by using a buffer (2 steps)**</span></span>
+<span data-ttu-id="9e1e4-144">**バッファー (2 つの手順) を使用して、ファイルからテキストを読み取る**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-144">**Reading text from a file by using a buffer (2 steps)**</span></span>
 
-1.  <span data-ttu-id="d6810-145">最初に、呼び出し、 [ **FileIO.ReadBufferAsync** ](/uwp/api/windows.storage.fileio.readbufferasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-145">First, call the [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) method.</span></span>
+1.  <span data-ttu-id="9e1e4-145">最初に、呼び出し、 [ **FileIO.ReadBufferAsync** ](/uwp/api/windows.storage.fileio.readbufferasync)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-145">First, call the [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) method.</span></span>
 
     ```csharp
     var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -423,7 +423,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
     ```
 
-2.  <span data-ttu-id="d6810-146">次に、[**DataReader**](/uwp/api/windows.storage.streams.datareader) オブジェクトを使ってバッファーの長さを読み取り、次にバッファーのコンテンツを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="d6810-146">Then use a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object to read first the length of the buffer and then its contents.</span></span>
+2.  <span data-ttu-id="9e1e4-146">次に、[**DataReader**](/uwp/api/windows.storage.streams.datareader) オブジェクトを使ってバッファーの長さを読み取り、次にバッファーのコンテンツを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-146">Then use a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object to read first the length of the buffer and then its contents.</span></span>
 
     ```csharp
     using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
@@ -448,9 +448,9 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(buffer.Length)
     ```
 
-<span data-ttu-id="d6810-147">**テキスト ストリーム (4 つの手順) を使用してファイルからの読み取り**</span><span class="sxs-lookup"><span data-stu-id="d6810-147">**Reading text from a file by using a stream (4 steps)**</span></span>
+<span data-ttu-id="9e1e4-147">**テキスト ストリーム (4 つの手順) を使用してファイルからの読み取り**</span><span class="sxs-lookup"><span data-stu-id="9e1e4-147">**Reading text from a file by using a stream (4 steps)**</span></span>
 
-1.  <span data-ttu-id="d6810-148">[  **StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) メソッドを呼び出してファイルに対するストリームを開きます。</span><span class="sxs-lookup"><span data-stu-id="d6810-148">Open a stream for your file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method.</span></span> <span data-ttu-id="d6810-149">このメソッドは、操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="d6810-149">It returns a stream of the file's content when the operation completes.</span></span>
+1.  <span data-ttu-id="9e1e4-148">[  **StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) メソッドを呼び出してファイルに対するストリームを開きます。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-148">Open a stream for your file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method.</span></span> <span data-ttu-id="9e1e4-149">このメソッドは、操作が完了したときにファイルのコンテンツのストリームを返します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-149">It returns a stream of the file's content when the operation completes.</span></span>
 
     ```csharp
     var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
@@ -478,7 +478,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read)
     ```
 
-2.  <span data-ttu-id="d6810-150">後で使うためにストリームのサイズを取得します。</span><span class="sxs-lookup"><span data-stu-id="d6810-150">Get the size of the stream to use later.</span></span>
+2.  <span data-ttu-id="9e1e4-150">後で使うためにストリームのサイズを取得します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-150">Get the size of the stream to use later.</span></span>
 
     ```csharp
     ulong size = stream.Size;
@@ -498,7 +498,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim size = stream.Size
     ```
 
-3.  <span data-ttu-id="d6810-151">呼び出すことで、入力ストリームを取得、 [ **IRandomAccessStream.GetInputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat)メソッド。</span><span class="sxs-lookup"><span data-stu-id="d6810-151">Get an input stream by calling the [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) method.</span></span> <span data-ttu-id="d6810-152">これを **using** ステートメントに入れて、ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="d6810-152">Put this in a **using** statement to manage the stream's lifetime.</span></span> <span data-ttu-id="d6810-153">**GetInputStreamAt** を呼び出すときに 0 を指定して、位置をストリームの先頭に設定します。</span><span class="sxs-lookup"><span data-stu-id="d6810-153">Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.</span></span>
+3.  <span data-ttu-id="9e1e4-151">呼び出すことで、入力ストリームを取得、 [ **IRandomAccessStream.GetInputStreamAt** ](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat)メソッド。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-151">Get an input stream by calling the [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) method.</span></span> <span data-ttu-id="9e1e4-152">これを **using** ステートメントに入れて、ストリームの有効期間を管理します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-152">Put this in a **using** statement to manage the stream's lifetime.</span></span> <span data-ttu-id="9e1e4-153">**GetInputStreamAt** を呼び出すときに 0 を指定して、位置をストリームの先頭に設定します。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-153">Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.</span></span>
 
     ```csharp
     using (var inputStream = stream.GetInputStreamAt(0))
@@ -525,7 +525,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     End Using
     ```
 
-4.  <span data-ttu-id="d6810-154">最後に、このコードを既存の **using** ステートメントに追加してストリーム上の [**DataReader**](/uwp/api/windows.storage.streams.datareader) オブジェクトを取得し、[**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) と [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring) を呼び出してテキストを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="d6810-154">Lastly, add this code within the existing **using** statement to get a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object on the stream then read the text by calling [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) and [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring).</span></span>
+4.  <span data-ttu-id="9e1e4-154">最後に、このコードを既存の **using** ステートメントに追加してストリーム上の [**DataReader**](/uwp/api/windows.storage.streams.datareader) オブジェクトを取得し、[**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) と [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring) を呼び出してテキストを読み取ります。</span><span class="sxs-lookup"><span data-stu-id="9e1e4-154">Lastly, add this code within the existing **using** statement to get a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object on the stream then read the text by calling [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) and [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring).</span></span>
 
     ```csharp
     using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
@@ -554,6 +554,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
 
-## <a name="see-also"></a><span data-ttu-id="d6810-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6810-155">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9e1e4-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="9e1e4-155">See also</span></span>
 
-- [<span data-ttu-id="d6810-156">ファイルに書き込むためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="d6810-156">Best practices for writing to files</span></span>](best-practices-for-writing-to-files.md)
+- [<span data-ttu-id="9e1e4-156">ファイルに書き込むためのベスト プラクティス</span><span class="sxs-lookup"><span data-stu-id="9e1e4-156">Best practices for writing to files</span></span>](best-practices-for-writing-to-files.md)
