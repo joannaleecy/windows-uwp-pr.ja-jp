@@ -22,7 +22,7 @@ ms.locfileid: "57626657"
 
 スワイプによるコマンド実行は、ユーザーがタッチ操作によってアプリ内の状態を変更することなく、一般的なメニュー アクションに簡単にアクセスできるようにするコンテキスト メニューのアクセラレータです。
 
-> **重要な Api**:[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、 [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、 [ListView クラス](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+> **重要な API**:[SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol)、 [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem)、 [ListView クラス](/uwp/api/Windows.UI.Xaml.Controls.ListView)
 
 ![実行と表示の淡色テーマ](images/LightThemeSwipe.png)
 
@@ -46,8 +46,8 @@ ms.locfileid: "57626657"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/SwipeControl">アプリを開き、SwipeControl の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -212,7 +212,7 @@ SwipeControl がその項目の DataTemplate で適用されている ListView �
   - 表示モードでは、開いたスワイプ項目は呼び出されると折りたたまれます。
 - **閉じる**
   - 項目が呼び出されると、スワイプ コントロールは常に折りたたまれ、モードに関係なく通常に戻ります。
-- **RemainOpen**
+- **流れない**
   - 項目が呼び出されると、スワイプ コントロールはモードに関係なく常に開いたままになります。
 
 ここでは、_返信_スワイプ項目は呼び出された後に閉じるように設定されます。

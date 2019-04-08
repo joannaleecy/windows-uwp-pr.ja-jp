@@ -151,7 +151,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-無効な PE 証明書が含まれているファイルに関する情報が表示されます、**コンソール ウィンドウ**します。 次に、例を示します。
+無効な PE 証明書が含まれているファイルに関する情報が表示されます、**コンソール ウィンドウ**します。 例:
 
 ```
 ...
@@ -160,7 +160,7 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 
 ...   
 ```
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 **質問の回答を検索**
 

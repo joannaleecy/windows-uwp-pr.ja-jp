@@ -76,5 +76,5 @@ Windows 10 Version 1607 以降で実行される UWP アプリは、同じく Wi
 
 [リモート システムの API のリファレンス](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [接続されているアプリとデバイス (プロジェクト ローマ) の概要](connected-apps-and-devices.md)  
-[リモート デバイスを検出します。](discover-remote-devices.md)  
+[リモート デバイスの検出](discover-remote-devices.md)  
 [リモート システムのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)では、リモート システムを検出する方法、リモート システムでアプリを起動する方法、アプリ サービスを使って 2 つのシステム上で実行しているアプリ間でメッセージを送信する方法が説明されています。

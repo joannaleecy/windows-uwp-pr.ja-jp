@@ -1,5 +1,5 @@
 ---
-description: このトピックでは、Direct2D の完全なコード例を使用して、C + を使用する方法について説明/cli WinRT の COM クラスとインターフェイスを使用します。
+description: このトピックでは、完全な Direct2D コードの例を使用し、C++/WinRT を使って COM クラスとインターフェイスを利用する方法を示します。
 title: C++/WinRT での COM コンポーネントの使用
 ms.date: 07/23/2018
 ms.topic: article
@@ -7,7 +7,7 @@ keywords: windows 10、uwp、standard、c++、cpp、winrt、COM、コンポー�
 ms.localizationpriority: medium
 ms.openlocfilehash: 129477689e12de2634b422a0fc4487b283e3bf03
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57644807"

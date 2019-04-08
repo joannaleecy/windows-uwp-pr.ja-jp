@@ -16,7 +16,7 @@ ms.locfileid: "57633917"
 
 アプリを Microsoft Store にできるだけ多くの顧客の前に取得する時間になります。 [パートナー センター](https://partner.microsoft.com/dashboard)する際に役立つ多くの機能、製品を昇格させるし、顧客が広告キャンペーン、プロモーション コード、販売価格などを含め、基本拡張を提供します。
 
--   [プロモーション コードを生成します。](generate-promotional-codes.md)
+-   [プロモーション コードを生成する](generate-promotional-codes.md)
 -   [アプリの広告キャンペーンを作成します。](create-an-ad-campaign-for-your-app.md)
 -   [カスタム アプリのプロモーション キャンペーンを作成します。](create-a-custom-app-promotion-campaign.md)
 -   [アプリとアドオンを販売する](put-apps-and-add-ons-on-sale.md)

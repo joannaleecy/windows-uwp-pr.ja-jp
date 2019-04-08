@@ -1,5 +1,5 @@
 ---
-description: C +/cli WinRT 関数および多くの時間と労力を実装したり、コレクションを渡す場合を保存する基本クラスを提供します。
+description: C++/WinRT では、コレクションを実装したり、渡すときの時間と手間を大幅に減らすことができる、関数と基本クラスが提供されます。
 title: C++/WinRT でのコレクション
 ms.date: 10/03/2018
 ms.topic: article
@@ -342,5 +342,5 @@ private:
 * [winrt::vector_view_base 構造体のテンプレート](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>関連トピック
-* [値のカテゴリ、およびそれらへの参照](cpp-value-categories.md)
-* [XAML コントロールを項目します。バインド c++/cli WinRT コレクション](binding-collection.md)
+* [値のカテゴリと、その参照](cpp-value-categories.md)
+* [XAML アイテム コントロール: C++/WinRT コレクションへのバインド](binding-collection.md)

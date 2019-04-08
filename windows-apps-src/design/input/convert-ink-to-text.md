@@ -10,7 +10,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57633747"
@@ -19,7 +19,7 @@ ms.locfileid: "57633747"
 
 Windows Ink に組み込まれている認識機能により、インク ストロークをテキストと図形に変換します。
 
-> **重要な Api**:[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、 [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+> **重要な API**:[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、 [ **Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="free-form-recognition-with-ink-analysis"></a>インクの分析による自由形式の認識

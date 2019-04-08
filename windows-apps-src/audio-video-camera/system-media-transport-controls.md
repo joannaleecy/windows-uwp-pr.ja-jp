@@ -84,7 +84,7 @@ SMTC の手動コントロールの実装が必要になるシナリオがいく
 
 再生中のメディア項目の状態ではなく、メディア プレーヤー自体の現在の状態に関連した、一連のシステム トランスポート コントロール プロパティがあります。 これらの各プロパティは、ユーザーが関連するコントロールを調整したときに発生するイベントと対応しています。 これらのプロパティとイベントを次に示します。
 
-| プロパティ                                                                  | イベント                                                                                                   |
+| プロパティ                                                                  | event                                                                                                   |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [**AutoRepeatMode**](https://msdn.microsoft.com/library/windows/apps/mt218753) | [**AutoRepeatModeChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218754) |
 | [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756)     | [**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757)     |

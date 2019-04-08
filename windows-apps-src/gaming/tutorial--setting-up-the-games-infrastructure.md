@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, ゲーム, セットアップ, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608707"
@@ -38,7 +38,7 @@ Visual Studio テンプレートは、優先する言語および技術に基づ
 このチュートリアルで使用するテンプレートは、**DirectX 11 アプリ (ユニバーサル Windows)** です。 
 
 Visual Studio で DirectX 11 ゲーム プロジェクトを作成する手順を以下に示します。
-1.  選択**ファイル.**&gt; **新しい**&gt; **プロジェクト.** 
+1.  選択**ファイル.**&gt; **新しい**&gt; **プロジェクト.**
 2.  左側のウィンドウで次のように選択します**インストール済み** &gt; **テンプレート** &gt; **Visual c** &gt; **Windows ユニバーサル。**
 3.  中央のウィンドウで、**[DirectX 11 アプリ (ユニバーサル Windows)]** テンプレートを選びます。
 4.  ゲーム プロジェクトに名前を付けて、**[OK]** をクリックします。
@@ -146,11 +146,11 @@ void App::Run()
 | DeviceResources.h/.cpp       | 共通                 | すべての DirectX [デバイス リソース](tutorial--assembling-the-rendering-pipeline.md#resource)を制御するクラス オブジェクトを定義します。 デバイスが消失または作成されたときに通知される DeviceResources を所有しているアプリケーションのインターフェイスも含まれています。                                                |
 | DirectXHelper.h              | 共通                 | **DX::ThrowIfFailed**、**ReadDataAsync**、**ConvertDipsToPixels などのメソッドを実装します。 **DX::ThrowIfFailed** は、DirectX Win32 API によって返されたエラー HRESULT 値を Windows ランタイム例外に変換します。 このメソッドを使って、DirectX エラーをデバッグするためのブレーク ポイントを配置します。 詳しくは、[ThrowIfFailed](https://github.com/Microsoft/DirectXTK/wiki/ThrowIfFailed) をご覧ください。 **ReadDataAsync** は、バイナリ ファイルから非同期的に読み取ります。 **ConvertDipsToPixels** は、デバイスに依存しないピクセル (DIP) 単位の長さを物理ピクセル単位の長さに変換します。 |
 | StepTimer.h                  | 共通                 | ゲーム アプリまたは対話型レンダリング アプリで役に立つ、高分解能タイマーを定義します。   |
-| Sample3DSceneRenderer.h/.cpp | コンテンツ                | 基本的なレンダリング パイプラインのインスタンスを作成するクラス オブジェクトを定義します。 DirectX を使った UWP に Direct3D スワップ チェーンとグラフィックス アダプターを接続する基本的なレンダラー実装を作成します。   |
-| SampleFPSTextRenderer.h/.cpp | コンテンツ                | Direct2D と DirectWrite を使って画面の右下隅に現在の FPS (1 秒あたりのフレーム数) 値をレンダリングするクラス オブジェクトを定義します。  |
-| SamplePixelShader.hlsl       | コンテンツ                | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                            |
-| SampleVertexShader.hlsl      | コンテンツ                | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                           |
-| ShaderStructures.h           | コンテンツ                | MVP 行列と頂点単位のデータを頂点シェーダーに送信するために使用できるシェーダー構造体が含まれています。  |
+| Sample3DSceneRenderer.h/.cpp | Content                | 基本的なレンダリング パイプラインのインスタンスを作成するクラス オブジェクトを定義します。 DirectX を使った UWP に Direct3D スワップ チェーンとグラフィックス アダプターを接続する基本的なレンダラー実装を作成します。   |
+| SampleFPSTextRenderer.h/.cpp | Content                | Direct2D と DirectWrite を使って画面の右下隅に現在の FPS (1 秒あたりのフレーム数) 値をレンダリングするクラス オブジェクトを定義します。  |
+| SamplePixelShader.hlsl       | Content                | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                            |
+| SampleVertexShader.hlsl      | Content                | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                           |
+| ShaderStructures.h           | Content                | MVP 行列と頂点単位のデータを頂点シェーダーに送信するために使用できるシェーダー構造体が含まれています。  |
 | pch.h/.cpp                   | メイン                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。| 
 
 ### <a name="next-steps"></a>次のステップ

@@ -4,7 +4,7 @@ description: この記事では、ユニバーサル Windows プラットフォ�
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f

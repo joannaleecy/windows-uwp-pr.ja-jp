@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: afda713e4a3d0ae30a4ee1ad9e9308d835062108
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57640027"
@@ -24,7 +24,7 @@ ms.locfileid: "57640027"
 
 ![トランスポート コントロールを含むメディア プレーヤー要素](images/controls/mtc_double_video_inprod.png)
 
-> **重要な Api**:[MediaPlayerElement クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)、 [MediaTransportControls クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
+> **重要な API**:[MediaPlayerElement クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)、 [MediaTransportControls クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
 
 
 > [!NOTE]
@@ -43,8 +43,8 @@ ms.locfileid: "57640027"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/MediaPlayerElement">MediaPlayerElement</a> または <a href="xamlcontrolsgallery:/item/MediaPlayer">MediaPlayer</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

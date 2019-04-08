@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646337"
 ---
-# <a name="getting-started-getting-around-in-visual-studio"></a>はじめに。Visual Studio の操作方法
+# <a name="getting-started-getting-around-in-visual-studio"></a>概要: Visual Studio の操作方法
 
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>Microsoft Visual Studio の操作方法

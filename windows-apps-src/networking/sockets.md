@@ -24,7 +24,7 @@ ms.locfileid: "57648827"
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>基本的な TCP ソケット クライアントおよびサーバーを構築する
 TCP (伝送制御プロトコル) ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。 基本的な TCP 操作の方法を示すため、以下のコード例では、TCP 経由でデータを送受信してエコー クライアントおよびサーバーを形成する [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) と [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) を示しています。
 
-できる限り少ない可変要素から始めるため (さらに、今のところはネットワーク分離の問題を回避するため)、新しいプロジェクトを作成し、以下のクライアント コードとサーバー コードの両方を同じプロジェクトを配置します。
+できるだけ少ない可動部分で始まる&mdash;と現在のネットワーク分離の問題を回避する&mdash;、新しいプロジェクトを作成し、クライアントと次のサーバー コードの両方を同じプロジェクトに配置します。
 
 プロジェクトで[アプリの機能を宣言](../packaging/app-capability-declarations.md)する必要があります。 アプリ パッケージ マニフェストのソース ファイル (`Package.appxmanifest` ファイル) を開き、[機能] タブで **[プライベート ネットワーク (クライアントとサーバー)]** をオンにします。 `Package.appxmanifest` マークアップはこのようになります。
 
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。 したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。 [StreamSocket のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。 上記の「[基本的な TCP ソケット クライアントおよびサーバーを構築する](#build-a-basic-tcp-socket-client-and-server)」の C++/CX コードでは、2 番目の手法を使っています。要求を応答としてエコーし、最も内側にあるいずれかの継続内から `args->Socket` にアクセスします。
+**StreamSocket** の観点では、完了ハンドラーは継続本文が実行される前に実行を完了します (およびソケットは破棄の対象となります)。 したがって、ソケットをその継続内で使用する場合はソケットが破棄されないようにするには、ソケットを直接参照 (ラムダ キャプチャを使用) して使うか、間接的に参照 (継続内の `args->Socket` にアクセスし続けることにより) するか、継続タスクを強制的にインラインにする必要があります。 [StreamSocket のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620609)では、最初の手法 (ラムダ キャプチャ) が実行される様子を確認できます。 C +/cli/CX コードで、[基本的な TCP ソケット クライアントおよびサーバーを作成](#build-a-basic-tcp-socket-client-and-server)前のセクションは、2 番目の手法を使用して&mdash;、要求、応答として返信をエコーしにアクセスする`args->Socket`から最も内側のいずれかの内側継続します。
 
 3 番目の手法は、応答をエコーしない場合に適しています。 PPL が継続本文をインラインで実行すること強制するには、`task_continuation_context::use_synchronous_execution()` オプションを使います。 この方法を示すコード例を次に示します。
 
@@ -1353,7 +1353,7 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 ## <a name="important-apis"></a>重要な API
 * [CertificateQuery](/uwp/api/windows.security.cryptography.certificates.certificatequery)
 * [CertificateStores.FindAllAsync](/uwp/api/windows.security.cryptography.certificates.certificatestores.findallasync)
-* [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket)
+* [マッピングされています](/uwp/api/Windows.Networking.Sockets.DatagramSocket)
 * [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket.bindservicenameasync)
 * [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control)
 * [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket.getoutputstreamasync)

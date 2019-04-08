@@ -15,7 +15,7 @@ ms.locfileid: "57601477"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>言語、スケール、ハイ コントラストに合わせたタイルとトースト通知のサポート
 
-タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 背景、リソース ファイルの名前に修飾子を使用する方法については、[言語、スケール、およびその他の修飾子のためのリソースを調整](../../../app-resources/tailor-resources-lang-scale-contrast.md)と[アプリ アイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)を参照してください。
+タイルやトーストで、表示言語、[表示倍率](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、ハイ コントラスト、その他の実行時のコンテキストに合わせた文字列や画像を読み込むことができます。 背景、リソース ファイルの名前に修飾子を使用する方法については、次を参照してください。[言語、スケール、およびその他の修飾子のためのリソースを調整](../../../app-resources/tailor-resources-lang-scale-contrast.md)と[アプリ アイコンとロゴ](/windows/uwp/design/style/app-icons-and-logos)します。
 
 アプリのローカライズの価値提案の詳細については、「[グローバリゼーションとローカライズ](../../globalizing/globalizing-portal.md)」をご覧ください。
 
@@ -88,8 +88,8 @@ URI スキーム `ms-resource` および `ms-appx` が自動で修飾子の照�
 * [言語、スケール、およびその他の修飾子のためのリソースを調整します。](../../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [タイルとアイコン アセットのガイドライン](app-assets.md).
 * [グローバリゼーションとローカライズ](../../globalizing/globalizing-portal.md)
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../../app-resources/localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../../app-resources/localize-strings-ui-manifest.md)
 * [XAML マークアップとコードから、イメージやその他の資産を参照します。](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
-* [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
+* [AddImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [タイルのスキーマ](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [トースト スキーマ](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

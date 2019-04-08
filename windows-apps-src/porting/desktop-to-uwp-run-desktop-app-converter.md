@@ -265,7 +265,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-Destination &lt;String&gt; |必須 |コンバーターの appx を出力する場所。この場所がまだ存在しない場合は、DesktopAppConverter によって作成されます。|
 |-Installer &lt;String&gt; |必須 |アプリケーションのインストーラーのパス。無人/サイレント モードで実行できるようにする必要があります。 No インストーラー変換では、これは、アプリケーション ファイルのルート ディレクトリのパスです。 |
 |-InstallerArguments &lt;String&gt; |省略可能 |インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス &lt;log_folder&gt; (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注**:サイレント/無人のフラグとログ引数インストーラー テクノロジによって異なります。 <br><br>このパラメーターの使用例: - InstallerArguments"/silent/log &lt;log_folder&gt;\install.log"ログ ファイルを生成しない別の例のようになります。```-InstallerArguments "/quiet", "/norestart"``` ここでも、する指示する必要が文字どおりトークンのパスにログがあれば&lt;log_folder&gt;する場合はそれをキャプチャし、最後のログ フォルダーに配置するコンバーター。|
-|-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーを示す終了コードのコンマ区切りの一覧が正常に実行 (例。0, 1234, 5678).  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
+|-InstallerValidExitCodes &lt;Int32&gt; |省略可能 |インストーラーを示す終了コードのコンマ区切りの一覧が正常に実行 (例。0、1234、5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |省略可能 |このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |省略可能 |存在する場合、MSIX パッケージとして出力をパッケージ化するには、このスクリプトに指示するスイッチ。 |
 |<a id="identity-params" /><strong>パッケージの id パラメーター</strong>||

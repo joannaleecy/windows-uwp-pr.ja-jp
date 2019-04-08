@@ -1,6 +1,6 @@
 ---
 title: ルーズ ファイルの登録によるアプリの展開
-description: このガイドでは、圧縮しないファイルのレイアウトを使用して検証し、パッケージ化することがなく、Windows 10 アプリを共有する方法を示します。
+description: このガイドでは、ルーズ ファイル レイアウトを使用して、Windows 10 アプリをパッケージ化することなく、検証および共有する方法を示します。
 ms.date: 6/1/2018
 ms.topic: article
 keywords: windows 10、uwp、デバイスのポータル、apps manager、デプロイ、sdk
@@ -14,7 +14,7 @@ ms.locfileid: "57635427"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>ルーズ ファイルの登録によるアプリの展開 
 
-このガイドでは、圧縮しないファイルのレイアウトを使用して検証し、パッケージ化することがなく、Windows 10 アプリを共有する方法を示します。 圧縮しないファイルのレイアウトを登録すると、開発者をパッケージ化し、アプリをインストールする必要はありませんがアプリをすばやく検証ができます。 
+このガイドでは、ルーズ ファイル レイアウトを使用して、Windows 10 アプリをパッケージ化することなく、検証および共有する方法を示します。 圧縮しないファイルのレイアウトを登録すると、開発者をパッケージ化し、アプリをインストールする必要はありませんがアプリをすばやく検証ができます。 
 
 ## <a name="what-is-a-loose-file-layout"></a>圧縮しないファイルのレイアウトとは何ですか。
 
@@ -55,7 +55,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 ### <a name="windows-device-portal"></a>Windows Device Portal
 
-Windows Device Portal では、すべての Windows 10 デバイスで利用し、テストおよび検証作業する開発者によって使用されます。 すべての対象ユーザーとそのブラウザー UX 開発者コミュニティのおよび REST エンドポイントに対応します。 デバイスのポータルの詳細については、、 [Windows Device Portal 概要](device-portal.md)を参照してください。
+Windows Device Portal では、すべての Windows 10 デバイスで利用し、テストおよび検証作業する開発者によって使用されます。 すべての対象ユーザーとそのブラウザー UX 開発者コミュニティのおよび REST エンドポイントに対応します。 デバイスのポータルの詳細については、次を参照してください。、 [Windows Device Portal 概要](device-portal.md)します。
 
 デバイスのポータルで、圧縮しないファイルのレイアウトを登録するに次の手順に従います。
 

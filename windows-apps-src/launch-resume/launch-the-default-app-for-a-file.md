@@ -33,11 +33,11 @@ ms.locfileid: "57594527"
 
 Windows には、ファイルの既定のハンドラーを起動するためのいくつかの異なるオプションが用意されています。 これらのオプションについて、次の表とセクションで説明します。
 
-| 構成方法 | メソッド | 説明 |
+| オプション | メソッド | 説明 |
 |--------|--------|-------------|
 | 既定の起動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 指定されたファイルを既定のハンドラーで起動します。 |
-| [プログラムから開く] を使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを [プログラムから開く] ダイアログでユーザーによって選択されたハンドラーを使って起動します。 |
-| 推奨されるアプリ フォールバックを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを既定のハンドラーで起動します。 ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。 |
+| [プログラムから開く] を使った起動 | [**LaunchFileAsync (IStorageFile、LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを [プログラムから開く] ダイアログでユーザーによって選択されたハンドラーを使って起動します。 |
+| 推奨されるアプリ フォールバックを使った起動 | [**LaunchFileAsync (IStorageFile、LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを既定のハンドラーで起動します。 ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。 |
 | 画面上に留まった適切なビューを使った起動 | [**(IStorageFile、LauncherOptions) LaunchFileAsync** ](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows のみ) | 指定されたファイルを既定のハンドラーで起動します。 起動後も画面上に留まるように指定し、特定のウィンドウ サイズを要求します。 [**LauncherOptions.DesiredRemainingView** ](https://msdn.microsoft.com/library/windows/apps/dn298314)はモバイル デバイス ファミリでサポートされていません。 |
 
 ### <a name="default-launch"></a>既定の起動

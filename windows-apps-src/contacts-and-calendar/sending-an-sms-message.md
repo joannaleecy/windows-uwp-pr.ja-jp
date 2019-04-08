@@ -67,4 +67,4 @@ if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Applicatio
 
 ## <a name="related-topics"></a>関連トピック
 
-* [連絡先を選択します。](selecting-contacts.md)
+* [連絡先の選択](selecting-contacts.md)

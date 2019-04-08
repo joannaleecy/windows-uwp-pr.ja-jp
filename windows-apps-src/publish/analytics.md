@@ -29,7 +29,7 @@ ms.locfileid: "57625447"
 
 -   [取得レポート](acquisitions-report.md)
 -   [アドオン取得レポート](add-on-acquisitions-report.md)
--   [使用状況レポート](usage-report.md)
+-   [利用状況レポート](usage-report.md)
 -   [正常性レポート](health-report.md)
 -   [評価レポート](ratings-report.md)
 -   [レビュー レポート](reviews-report.md)
@@ -64,4 +64,4 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使用して、分析データに接続する方法について説明します](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する場合、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](https://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 アソシエーションの設定に関する詳細については、[関連付ける Azure Active Directory と、パートナー センター アカウント](associate-azure-ad-with-dev-center.md)を参照してください。
+> Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する場合、パートナー センター アカウントに関連付けられている Azure AD ディレクトリからの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にサインインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](https://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 アソシエーションの設定に関する詳細については、次を参照してください。[関連付ける Azure Active Directory と、パートナー センター アカウント](associate-azure-ad-with-dev-center.md)します。

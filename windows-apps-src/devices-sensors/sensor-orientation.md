@@ -107,12 +107,12 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
 表示の向きに合わせた加速度計とジャイロメーターのデータの変換を、次の表に示します。
 
-| 基準軸        |  X |  Y | Z |
+| 基準軸        |  x |  Y | Z |
 |-----------------------|----|----|---|
-| **横**         |  X |  Y | Z |
+| **横**         |  x |  Y | Z |
 | **縦向き**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
-| **PortraitFlipped**   | -Y |  X | Z |
+| **PortraitFlipped**   | -Y |  x | Z |
 
 ジャイロメーターにこれらの変換を適用するコード例を次に示します。
 
@@ -175,5 +175,5 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 | **横**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
 | **縦向き**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
-| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[-1 0 0<br/> 1  0 0<br/> 0  0 1]             |
 

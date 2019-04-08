@@ -58,10 +58,10 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 
 [Channel 9](https://channel9.msdn.com/) の以下の講演は、Xbox でのすばらしいアプリの開発に関する優れたソースです。
 
-- [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリの構築](https://channel9.msdn.com/Events/Build/2016/B883)
-- [Xbox One とテレビ アプリを調整します。](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP 開発 1:アダプティブ UI を構築](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [Web アプリの拡張、ブラウザー:クロス プラットフォーム対応クロス デバイス](https://channel9.msdn.com/Events/Build/2016/B888)
+- [Xbox 向けの優れたユニバーサル Windows プラットフォーム (UWP) アプリのビルド](https://channel9.msdn.com/Events/Build/2016/B883)
+- [アプリを Xbox One とテレビに対応させる](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP 開発 1: アダプティブ UI のビルド](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [ブラウザーに留まらない Web アプリ: クロス プラットフォームとクロス デバイスの遭遇](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>Xbox アプリ開発
 
@@ -74,4 +74,4 @@ UWP アプリは、コントロールやフォントなどの UI 要素がすべ
 
 - [Xbox One の UWP](index.md)
 - [Xbox およびテレビ向け設計](../design/devices/designing-for-tv.md)
-- [プログレッシブ Web Apps for Xbox One](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [Xbox One 用のプログレッシブ Web アプリ](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/xbox-considerations)

@@ -28,7 +28,7 @@ ms.locfileid: "57634657"
 ## <a name="using-makeappxexe"></a>MakeAppx.exe の使用
 
 SDK のインストール パスに基づき、**MakeAppx.exe** は Windows 10 PC の以下の場所にあります。
-- x86:C:\Program Files (x86)\Windows Kits\10\bin\\&lt;build number&gt;\x86\makeappx.exe
+- x86:C:\Program Files (x86) \Windows Kits\10\bin\\&lt;ビルド番号&gt;\x86\makeappx.exe
 - x64。C:\Program Files (x86) \Windows Kits\10\bin\\&lt;ビルド番号&gt;\x64\makeappx.exe
 
 このツールの ARM バージョンはありません。

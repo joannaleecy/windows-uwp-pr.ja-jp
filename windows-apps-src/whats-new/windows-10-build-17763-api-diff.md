@@ -259,7 +259,7 @@ LimitedAccessFeatures <br> LimitedAccessFeatures.TryUnlockFeature
 
 LimitedAccessFeatureStatus
 
-#### <a name="packagehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpackage"></a>[パッケージ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
+#### <a name="packagehttpsdocsmicrosoftcomuwpapiwindowsapplicationmodelpackage"></a>[[パッケージ]](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package)
 
 Package.CheckUpdateAvailabilityAsync <br> Package.GetAppInstallerInfo
 
@@ -1473,7 +1473,7 @@ IScrollAnchorProvider <br> IScrollAnchorProvider.CurrentAnchor <br> IScrollAncho
 
 #### <a name="menubarhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmenubar"></a>[メニュー バー](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubar)
 
-メニュー バー <br> MenuBar.Items <br> MenuBar.ItemsProperty <br> メニュー バー。 #ctor
+MenuBar <br> MenuBar.Items <br> MenuBar.ItemsProperty <br> メニュー バー。 #ctor
 
 #### <a name="menubaritemhttpsdocsmicrosoftcomuwpapiwindowsuixamlcontrolsmenubaritem"></a>[MenuBarItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.menubaritem)
 

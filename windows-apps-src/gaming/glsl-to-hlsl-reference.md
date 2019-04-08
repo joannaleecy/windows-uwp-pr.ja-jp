@@ -133,7 +133,7 @@ GLSL では、グローバル シェーダーの変数の宣言に修飾子を�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>uniform</strong></p>
+<td align="left"><p><strong>Uniform</strong></p>
 <p>アプリ コードから uniform 変数を頂点シェーダーとフラグメント シェーダーのどちらか一方または両方に渡します。 これらのシェーダーを使って三角形を描画する前にすべての uniform の値を設定する必要があります。三角形のメッシュの描画中に値が変わらないようにするためです。 これらの値は変化しません。 フレーム全体に対して設定される uniform もあれば、特定の頂点ピクセル シェーダーのペアに対してのみ設定される uniform もあります。</p>
 <p>uniform 変数はポリゴン単位の変数です。</p></td>
 <td align="left"><p>定数バッファーを使います。</p>
@@ -145,7 +145,7 @@ GLSL では、グローバル シェーダーの変数の宣言に修飾子を�
 <td align="left">頂点シェーダーから取得した構造をピクセル シェーダーへの入力として使います。 セマンティック値が一致することを確かめてください。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>attribute</strong></p>
+<td align="left"><p><strong>属性</strong></p>
 <p>属性は、アプリ コードから頂点シェーダーだけに渡す頂点の記述の一部です。 uniform とは異なり、頂点ごとに各属性の値を設定します。それにより、各頂点が異なる値を持つことができるようになります。 属性変数は頂点単位の変数です。</p></td>
 <td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 参照してください<a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">方法。頂点バッファーを作成</a>と<a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">方法。インデックス バッファーを作成</a>です。</p>
 <p>Direct3D アプリ コードで入力レイアウトを作成し、セマンティック値を頂点の入力の値と一致させます。 「<a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">入力レイアウトの作成</a>」をご覧ください。</p></td>
@@ -324,7 +324,7 @@ GLSL の定義済みグローバル変数を HLSL に移植する場合は、次
 <p>例 - float4 色 [4]。SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<td align="left"><p><strong>gl_FragData [n]</strong></p>
 <p>この変数は <strong>vec4</strong> 型です。</p>
 <p>カラー アタッチメント n のフラグメント色</p></td>
 <td align="left"><p>SV_Target[n]</p>

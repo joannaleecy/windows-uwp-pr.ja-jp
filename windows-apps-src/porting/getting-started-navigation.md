@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57636597"
 ---
-# <a name="getting-started-navigation"></a>はじめに。ナビゲーション
+# <a name="getting-started-navigation"></a>概要: ナビゲーション
 
 
 ## <a name="adding-navigation"></a>ナビゲーションの追加

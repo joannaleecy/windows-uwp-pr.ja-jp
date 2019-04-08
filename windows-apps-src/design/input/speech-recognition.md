@@ -20,7 +20,7 @@ ms.locfileid: "57608077"
 
 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 
-> **重要な Api**:[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
+> **重要な API**:[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 音声認識機能は、音声認識ランタイム、ランタイムをプログラミングするための認識 API、ディクテーションと Web 検索のための定義済みの文法、ユーザーが音声認識機能を見つけて使うときに役立つ既定のシステム UI で構成されています。
 
@@ -28,7 +28,7 @@ ms.locfileid: "57608077"
 
 ユーザーが接続する必要があります、アプリと音声認識をサポートするには、自分のデバイスのマイクを有効にするし、それを使用するには、Microsoft プライバシー ポリシーがアプリのアクセス許可を付与に同意します。
 
-自動的にユーザーにアクセスして、マイクのオーディオ フィードを使用するためのアクセス許可を要求するシステム ダイアログを確認する (例から、[音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)次に示す) に設定した、 **マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)で、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)します。 詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)を参照してください。
+自動的にユーザーにアクセスして、マイクのオーディオ フィードを使用するためのアクセス許可を要求するシステム ダイアログを確認する (例から、[音声認識と音声合成のサンプル](https://go.microsoft.com/fwlink/p/?LinkID=619897)次に示す) に設定した、 **マイク**[デバイス機能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)で、[アプリ パッケージのマニフェスト](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)します。 詳細については、次を参照してください。[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)します。
 
 ![マイクへのアクセスのプライバシー ポリシー](images/speech/privacy.png)
 

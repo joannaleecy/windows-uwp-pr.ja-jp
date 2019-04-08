@@ -3,7 +3,7 @@ title: Windows Hello コンパニオン (IoT) デバイスを使った Windows �
 description: Windows Hello コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 Windows Hello コンパニオン デバイス フレームワークを使用すると、コンパニオン デバイスは、生体認証を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Windows Hello のための優れたエクスペリエンスを提供できます。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48

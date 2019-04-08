@@ -7,7 +7,7 @@ keywords: Windows 10, UWP, Store サービス, Microsoft Store 分析 API, Xbox 
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57650907"
@@ -71,7 +71,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>応答
 
-| Value      | 種類   | 説明                  |
+| 値      | 種類   | 説明                  |
 |------------|--------|-------------------------------------------------------|
 | Value      | array  | 正常性データを含むオブジェクトの配列です。 各オブジェクトのデータの詳細については、以下の表を参照してください。                                                                                                                      |
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されていたとき、クエリに対して 10000 行を超えるデータが一致すると、この値が返されます。 |

@@ -14,7 +14,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4efbdaef0fbcbe076133be1c491f7ed173c01257
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57653577"
@@ -23,7 +23,7 @@ ms.locfileid: "57653577"
 
 ほとんどのアプリでは、イメージ ギャラリー、メール メッセージなどのデータのセットを操作および表示します。 XAML UI フレームワークでは、アプリ内でデータを簡単に表示、操作するための ListView コントロールと GridView コントロールが用意されています。  
 
-> **重要な Api**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)、 [ItemsSource プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)、[項目のプロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
+> **重要な API**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)、 [ItemsSource プロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)、[項目のプロパティ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx)
 
 ListView と GridView はどちらも ListViewBase クラスから派生しているため、同じ機能を持ちますが、データの表示方法が異なります。 この記事では、特に指定がない限り、ListView についての説明は ListView コントロールにも GridView コントロールにも適用されます。 ListView や ListViewItem などのクラスの説明については、プレフィックスの "List" を "Grid" に置き換えることで、対応するグリッド クラス (GridView または GridViewItem) に適用できます。 
 
@@ -48,8 +48,8 @@ GridView は、縦方向にスクロールできる複数行と複数列で項�
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ListView">ListView</a> または <a href="xamlcontrolsgallery:/item/GridView">GridView</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -82,7 +82,7 @@ XAML で項目をインラインで定義したリスト ビューを次に示�
 
 作成したリスト ビューのコードを次に示します。 生成されるリストは、XAML で作ったものと同じです。
 
-**C#**
+**(C#)**
 ```csharp
 // Create a new ListView and add content. 
 ListView listView1 = new ListView(); 
@@ -106,7 +106,7 @@ ListView は次のようになります。
 
 以下の例では、コードでコレクションのインスタンスに直接リスト ビューの ItemsSource を設定しています。
 
-**C#**
+**(C#)**
 ```csharp 
 // Instead of hard coded items, the data could be pulled 
 // asynchronously from a database or the internet.
@@ -134,7 +134,7 @@ ItemsSource プロパティを、XAML でコレクションにバインドする
 <ListView x:Name="itemListView" ItemsSource="{x:Bind Items}"/>
 ```
 
-**C#**
+**(C#)**
 ```csharp
 private ObservableCollection<string> _items = new ObservableCollection<string>();
 
@@ -307,7 +307,7 @@ Click | SelectionMode = **None**、IsItemClickEnabled = **True** | [ItemClick](h
 <GridView x:Name="myGridView" SelectionMode="None" IsItemClickEnabled="True"/> 
 ```
 
-**C#**
+**(C#)**
 ```csharp
 myListView.SelectionMode = ListViewSelectionMode.Multiple; 
 
@@ -382,7 +382,7 @@ SelectionMode が **Multiple** または **Extended** の場合、選択した�
 </StackPanel> 
 ```
 
-**C#**
+**(C#)**
 ```csharp
 private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
 {
@@ -429,7 +429,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 </ListView>
 ```
 
-**C#**
+**(C#)**
 ```csharp
 private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 {
@@ -490,7 +490,7 @@ SelectAll メソッドを呼び出すと、コレクション内のすべての�
 </StackPanel>
 ```
 
-**C#**
+**(C#)**
 ```csharp
 private void SelectAllButton_Click(object sender, RoutedEventArgs e)
 {

@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: c3551ebcc59ebfe426b0be8d5bd20f7578517a25
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649207"
@@ -125,5 +125,5 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 * [winrt::make 関数テンプレート](/uwp/cpp-ref-for-winrt/make)
 
 ## <a name="related-topics"></a>関連トピック
-* [C + での Api 使用/cli WinRT](consume-apis.md)
-* [C + を使用して Api を作成/cli WinRT](author-apis.md)
+* [C++/WinRT で API を使用する](consume-apis.md)
+* [C++/WinRT で API を作成する](author-apis.md)

@@ -209,7 +209,7 @@ MainPage::MainPage()
 
 それでは、アプリにコンテンツを追加しましょう。
 
-**手順 1: スタート ページを変更します。**
+**ステップ 1: スタート ページを変更します。**
 
 1.  **ソリューション エクスプローラー**で、MainPage.xaml を開きます。
 2.  ルート [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) の終了タグの直前に次の XAML を追加して、UI に使うコントロールを作成します。 この XAML には、ユーザーの名前をたずねる [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、ユーザーの名前を受け取る [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 要素、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)、別の **TextBlock** 要素を持つ [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) が含まれます。

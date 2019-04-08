@@ -106,7 +106,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | アクセス許可と履歴 | ms-settings:cortana-permissions |
 | 詳細 | ms-settings:cortana-moredetails |
 | [デバイス間での Cortana] | ms-settings:cortana-notifications |
-| Cortana に話す | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-設定: cortana-talktocortana |
+| Cortana に話す | ms-settings:cortana-language<br/>ms-cortana 設定。<br/>ms-設定: cortana-talktocortana |
 
 > [!NOTE] 
 > このデスクトップで [設定] セクションが、PC が、Cortana は現在利用できませんまたは Cortana が無効になっているリージョンに設定されているときに検索呼び出されます。 この場合、Cortana に固有のページ (自分のデバイス間での Cortana) と Cortana にお問い合わせは表示されません。 
@@ -135,7 +135,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |-------------|-----|
 | オーディオ | ms-settings:easeofaccess-audio |
 | クローズド キャプション | ms-settings:easeofaccess-closedcaptioning |
-| カラー フィルター | ms-settings:easeofaccess-colorfilter |
+| カラー フィルター | ms-設定: easeofaccess-colorfilter |
 | カーソル & ポインターのサイズ | ms-設定: easeofaccess-cursorandpointersize |
 | ディスプレイ | ms-settings:easeofaccess-display |
 | 視線制御 | ms-settings:easeofaccess-eyecontrol |
@@ -188,7 +188,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | モバイルホットスポット | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | プロキシ | ms-settings:network-proxy |
-| 状況 | ms-settings:network-status<br/>ms-settings:network |
+| 状況 | ms-settings:network-status<br/>ms-ネットワークの設定。 |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (デバイスに wifi アダプターがある場合にのみ利用可能) |
 | Wi-Fi 通話 | ms-settings:network-wificalling (Wi-Fi 通話が有効な場合のみ利用可能) |
@@ -288,7 +288,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | リモート デスクトップ | ms-settings:remotedesktop |
 | Phone | ms-設定: 電話 (**1809 およびそれ以降のバージョンの Windows 10 で非推奨とされます**) |
 | 電源とスリープ | ms-settings:powersleep |
-| サウンド | ms-settings:sound |
+| サウンド | ms のサウンド設定。 |
 | ストレージ | ms-settings:storagesense |
 | ストレージ センサー | ms-settings:storagepolicies |
 
@@ -298,7 +298,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |-------------|-----|
 | 日付と時刻 | ms-settings:dateandtime |
 | 日本 IME の設定 | ms-settings:regionlanguage-jpnime (Microsoft 日本語入力方式エディターがインストールされている場合に利用可能) |
-| 言語 | ms-キーボード設定。<br/>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime |
+| 言語 | ms-キーボード設定。<br/>ms-settings:regionlanguage<br/>ms-設定: regionlanguage-bpmfime<br/>ms-設定: regionlanguage-cangjieime<br/>ms-設定: regionlanguage-chsime-pinyin-domainlexicon<br/>ms-設定: regionlanguage-chsime-pinyin-keyconfig<br/>ms-設定: regionlanguage-chsime-pinyin-udp<br/>ms-設定: regionlanguage-chsime-wubi-udp<br/>ms-設定: regionlanguage-quickime |
 | Pinyin IME の設定 | ms-settings:regionlanguage-chsime-pinyin (Microsoft Pinyin 入力方式エディターがインストールされている場合に利用可能) |
 | 音声認識 | ms-settings:speech |
 | Wubi IME の設定  | ms-settings:regionlanguage-chsime-wubi (Microsoft Wubi 入力方式エディターがインストールされている場合に利用可能) |
@@ -315,7 +315,7 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 | 回復 | ms-settings:recovery |
 | トラブルシューティング | ms-settings:troubleshoot |
 | [Windows セキュリティ] | ms-settings:windowsdefender |
-| Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在)<br/>ms-settings:windowsinsider-optin |
+| Windows Insider Program | ms-settings:windowsinsider(ユーザーが WIP に登録されている場合にのみ存在)<br/>ms-設定: windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update - 詳細オプション | ms-settings:windowsupdate-options |
 | Windows Update - 再起動オプション | ms-settings:windowsupdate-restartoptions |

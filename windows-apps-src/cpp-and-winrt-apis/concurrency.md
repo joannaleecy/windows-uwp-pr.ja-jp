@@ -20,7 +20,7 @@ ms.locfileid: "57611297"
 
 完了までの時間が 50 ミリ秒を超える可能性がある Windows ランタイム API は、非同期の関数 (末尾が "Async") として実装されます。 非同期関数を実装すると、別のスレッドの作業が開始され、非同期操作を表すオブジェクトがすぐに返されます。 非同期操作が完了すると、作業結果が含まれるオブジェクトが返されます。 **Windows::Foundation** Windows ランタイムの名前空間には 4 種類の非同期操作オブジェクトが含まれます。
 
-- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction),
+- [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)、
 - [**IAsyncActionWithProgress&lt;TProgress&gt;**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)、
 - [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_)と
 - [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)します。
@@ -708,7 +708,7 @@ auto async_op_with_progress{ CalcPiTo5DPs() };
 double pi{ co_await async_op_with_progress };
 ```
 
-完了ハンドラーの詳細については、[非同期アクションおよび操作の種類をデリゲート](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)を参照してください。
+完了ハンドラーの詳細については、次を参照してください。[非同期アクションおよび操作の種類をデリゲート](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)します。
 
 ## <a name="fire-and-forget"></a>ファイア アンド フォーゲット
 
@@ -751,4 +751,4 @@ int main()
 
 ## <a name="related-topics"></a>関連トピック
 * [C + でデリゲートを使用してイベントを処理/cli WinRT](handle-events.md)
-* [標準の C++ のデータ型および C++/cli WinRT](std-cpp-data-types.md)
+* [標準的な C++ のデータ型と C++/WinRT](std-cpp-data-types.md)

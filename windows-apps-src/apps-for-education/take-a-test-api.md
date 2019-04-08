@@ -4,7 +4,7 @@ title: テスト JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 08/08/2018
 ms.topic: article
-keywords: windows 10、uwp、教育機関
+keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
 ms.openlocfilehash: bee8a04e3b4d57caf7da3e21f2be3c789d83be90
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -32,9 +32,9 @@ ms.locfileid: "57627597"
 
 | メソッド | 説明   |
 |--------|---------------|
-|[lockDown](#lockDown) | テストのためにデバイスをロックダウンします。 |
+|[ロックダウン](#lockDown) | テストのためにデバイスをロックダウンします。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | ロックダウン コンテキストがデバイスにまだ適用されるかどうかを確認します。 |
-|[getDeviceInfo](#getDeviceInfo) | テスト アプリケーションが実行されているプラットフォームの詳細を取得します。 |
+|[GetDeviceInfo](#getDeviceInfo) | テスト アプリケーションが実行されているプラットフォームの詳細を取得します。 |
 |[examineProcessList](#examineProcessList)|実行中のユーザーとシステム プロセスの一覧を取得します。|
 |[閉じる](#close) | ブラウザーを閉じて、デバイスのロックを解除します。 |
 |[getPermissiveMode](#getPermissiveMode)|制限解除モードがオンまたはオフかどうかを確認します。|
@@ -42,7 +42,7 @@ ms.locfileid: "57627597"
 |[emptyClipBoard](#emptyClipBoard)|システム クリップボードがクリアされます。|
 |[getMACAddress](#getMACAddress)|デバイスの MAC アドレスの一覧を取得します。|
 |[getStartTime](#getStartTime) | テスト アプリが開始された時刻を取得します。 |
-|[getCapability](#getCapability) | 機能が有効であるか、無効であるかを照会します。 |
+|[GetCapability](#getCapability) | 機能が有効であるか、無効であるかを照会します。 |
 |[setCapability](#setCapability)|指定された機能を有効または無効にします。| 
 |[isRemoteSession](#isRemoteSession) | 現在のセッションがリモートからログインされているかどうかを確認します。 |
 |[isVMSession](#isVMSession) | 現在のセッションが、仮想マシンで実行されているかどうかを確認します。 |
@@ -57,12 +57,12 @@ ms.locfileid: "57627597"
 **構文**  
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
-**パラメーター**  
+**Parameters**  
 * `enable` - **true**ロック画面、テスト アプリを実行し、これで説明したポリシーを適用する[ドキュメント](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)します。 **false** は、アプリがロックダウンされていない場合は、ロック画面上で実行しているテスト アプリを停止して閉じます。アプリがロックダウンされている場合は、何も行われません。  
 * `onSuccess` -[オプション]、ロックダウンが正常に有効または無効にした後に呼び出される関数。 `Function(Boolean currentlockdownstate)` という形式にする必要があります。  
 * `onError` -[省略可能] にロックダウン操作が失敗した場合に呼び出される関数。 `Function(Boolean currentlockdownstate)` という形式にする必要があります。  
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -75,7 +75,7 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.isEnvironmentSecure(Function callback);`
 
-**パラメーター**  
+**Parameters**  
 * `callback` -この関数が完了したときに呼び出す関数。 `Function(String state)` という形式にする必要があります。ここでは、`state` は 2 つのフィールドを含む JSON 文字列です。 1 つ目は `secure` フィールドで、必要なすべてのロックが有効化 (または機能が無効化) され、テスト環境をセキュリティ保護できるようにする場合にのみ `true` を表示します。アプリがロックダウン モードに入ってから、いずれのロックも侵害されていません。 もう 1 つのフィールド `messageKey` には、その他の詳細またはベンダー固有の情報が含まれます。 ここでの意図は、ベンダーがブール値 `secure` フラグを強化する追加の情報を含めることができるようにすることです。
 
 ```JSON
@@ -85,7 +85,7 @@ Windows 10 バージョン 1709
 }
 ```
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -98,7 +98,7 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.getDeviceInfo(Function callback);`
 
-**パラメーター**  
+**Parameters**  
 * `callback` -この関数が完了したときに呼び出す関数。 `Function(String infoObj)` という形式にする必要があります。ここでは、`infoObj` は複数のフィールドを含む JSON 文字列です。 次のフィールドがサポートされる必要があります。
     * `os` OS の種類を表します (例。Windows、macOS、Linux、iOS、Android など)。
     * `name` 存在する場合に、OS リリース名を表します (例。Sierra、Ubuntu)。
@@ -106,7 +106,7 @@ Windows 10 バージョン 1709
     * `brand` セキュリティで保護されたブラウザーのブランド化を表します (例。OAKS、CA、SmarterApp など)
     * `model` モバイル デバイスのみで、デバイス モデルを表しますnull/未使用デスクトップ ブラウザーの場合。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -119,13 +119,13 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
-**パラメーター**  
+**Parameters**  
 * `blacklistedProcessList` -テスト アプリケーションがブラック リストに登録プロセスの一覧。  
 `callback` アクティブなプロセスが見つかった後に呼び出す関数。 `Function(String foundBlacklistedProcesses)` という形式にする必要があります。ここでは、`foundBlacklistedProcesses` は `"['process1.exe','process2.exe','processEtc.exe']"` という形式になります。 ブラック リストに追加されたプロセスが見つからなかった場合は、空になります。 Null の場合、元の関数呼び出しでエラーが発生したことを示します。
 
 **解説** 一覧にはシステム プロセスは含まれません。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -138,12 +138,12 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.close(restart);`
 
-**パラメーター**  
+**Parameters**  
 * `restart` -このパラメーターは無視されますが、指定する必要があります。
 
 **解説** Windows 10 バージョン 1607 では、最初にデバイスをロックダウンする必要があります。 以降のバージョンでは、このメソッドは、デバイスがロックダウンされているかどうかに関係なく、ブラウザーを閉じます。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -156,10 +156,10 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.getPermissiveMode(Function callback)`
 
-**パラメーター**  
+**Parameters**  
 * `callback` -この呼び出しが完了したときに呼び出される関数。 `Function(Boolean permissiveMode)` という形式にする必要があります。ここでは、`permissiveMode` はブラウザーが現在、制限解除モードであるかどうかを示します。 定義されていないか null の場合は、Get 操作でエラーが発生しました。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -172,11 +172,11 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.setPermissiveMode(Boolean enable, Function callback)`
 
-**パラメーター**  
+**Parameters**  
 * `enable` 目的の制限の緩やかなモードの状態を示すブール値-にします。  
 * `callback` -この呼び出しが完了したときに呼び出される関数。 `Function(Boolean permissiveMode)` という形式にする必要があります。ここでは、`permissiveMode` はブラウザーが現在、制限解除モードであるかどうかを示します。 定義されていないか null の場合は、Set 操作でエラーが発生しました。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -189,7 +189,7 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.emptyClipBoard();`
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -202,13 +202,13 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.getMACAddress(Function callback);`
 
-**パラメーター**  
+**Parameters**  
 * `callback` -この呼び出しが完了したときに呼び出される関数。 `Function(String addressArray)` という形式にする必要があります。ここでは、`addressArray` は `"['00:11:22:33:44:55','etc']"` という形式になります。
 
 **注釈**  
 ファイアウォール/NAT/プロキシは通常、学校で使用されるため、テスト サーバー内でエンド ユーザーのコンピューターを区別するために、ソース IP アドレスに依存するのは困難です。 MAC アドレスは、診断のために、一般的なファイアウォールの背後にあるエンド クライアント コンピューターをアプリが区別できるようにします。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -224,7 +224,7 @@ Windows 10 バージョン 1709
 **戻り値**  
 テスト アプリが開始された日時を示す DateTime オブジェクト。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -237,7 +237,7 @@ Windows 10 バージョン 1709
 **構文**  
 `Object SecureBrowser.security.getCapability(String feature)`
 
-**パラメーター**  
+**Parameters**  
 `feature` -クエリするには、どの機能を決定する文字列。 有効な機能の文字列は、"screenMonitoring"、"printing"、"textSuggestions" (大文字と小文字を区別しない) です。
 
 **戻り値**  
@@ -255,7 +255,7 @@ Windows 10 バージョン 1709
 **構文**  
 `void SecureBrowser.security.setCapability(String feature, String value, Function onSuccess, Function onError)`
 
-**パラメーター**  
+**Parameters**  
 * `feature` -を設定するには、どの機能を決定する文字列。 有効な機能の文字列は、`"screenMonitoring"`、`"printing"`、`"textSuggestions"` (大文字と小文字を区別しない) です。  
 * `value` で機能、目的の設定。 `"true"` または `"false"` にする必要があります。  
 * `onSuccess` -[省略可能] 設定の操作が正常に完了した後に呼び出される関数。 `Function(String jsonValue)` という形式にする必要があります。ここでは、*jsonValue* は `{<feature>:true|false|undefined}` という形式です。  
@@ -279,7 +279,7 @@ Windows 10 バージョン 1709
 **戻り値**  
 現在のセッションがリモートの場合は **true**、それ以外の場合は **false** です。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---
@@ -298,7 +298,7 @@ Windows 10 バージョン 1709
 **注釈**  
 この API のチェックは、適切な API を実装している特定のハイパーバイザーで実行されている VM セッションのみを検出できます。
 
-**要件**  
+**必要条件**  
 Windows 10 バージョン 1709
 
 ---

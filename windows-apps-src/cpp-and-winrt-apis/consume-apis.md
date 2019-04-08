@@ -7,7 +7,7 @@ keywords: windows 10、uwp、標準、c++、cpp、winrt、投影、プロジェ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57645147"
@@ -143,7 +143,7 @@ lookup.insert_or_assign(2, value);
 > [!NOTE]
 > 詳細については、インストールと使用すると、C +/cli WinRT Visual Studio Extension (VSIX) (プロジェクト テンプレートのサポートを提供します) を参照してください[Visual Studio のサポートの C +/cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)します。
 
-アプリケーション プロジェクトで、Windows ランタイム コンポーネントの Windows ランタイム メタデータ (`.winmd`) ファイルを参照してビルドします。 作成中、`cppwinrt.exe` ツールで、コンポーネントの API サーフェイスをすべて定義する (*投影する*) 標準的な C++ ライブラリを生成します。 つまり、生成されたライブラリにはコンポーネントに投影された型が含まれます。
+アプリケーション プロジェクトで、Windows ランタイム コンポーネントの Windows ランタイム メタデータ (`.winmd`) ファイルを参照してビルドします。 ビルド中、`cppwinrt.exe`ツールが完全に記述する標準 C++ ライブラリを生成します&mdash;または*プロジェクト*&mdash;コンポーネントの API サーフェス。 つまり、生成されたライブラリにはコンポーネントに投影された型が含まれます。
 
 次に、Windows 名前空間の型と同じように、いずれかのコンストラクターを介してヘッダーを追加し、投影された型を作成します。 アプリケーション プロジェクトのスタートアップ コードにより、ランタイム クラスが登録され、投影された型のコンストラクターは [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) を呼び出し、参照するコンポーネントからランタイム クラスをアクティブ化します。
 
@@ -265,6 +265,6 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 
 ## <a name="related-topics"></a>関連トピック
 * [C + でのイベントを作成/cli WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [C + 間相互運用機能/cli WinRT と ABI](interop-winrt-abi.md)
-* [概要 C +/cli WinRT](intro-to-using-cpp-with-winrt.md)
-* [XAML コントロールバインド c++/cli WinRT プロパティ](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [C++/WinRT と ABI 間の相互運用](interop-winrt-abi.md)
+* [C++/WinRT の概要](intro-to-using-cpp-with-winrt.md)
+* [XAML コントロール: C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

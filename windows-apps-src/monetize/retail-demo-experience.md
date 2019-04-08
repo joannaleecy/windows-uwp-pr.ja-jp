@@ -8,14 +8,14 @@ keywords: windows 10, UWP, 市販デモ アプリ
 ms.localizationpriority: medium
 ms.openlocfilehash: b66435dd7c94762874461b48e19e9a60224f287b
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57596757"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>小売デモ (RDX) 機能をアプリに追加します。
 
-Pc や販売フロアにデバイスを試しているお客様はすぐに開始できるように、Windows アプリで、小売デモ モードが含まれます。
+販売フロアで PC やデバイスを試しているユーザーがすぐに開始できるように、Windows アプリに小売デモ モードを含めます。
 
 お客様は、小売店が、Pc とデバイスのデモを試すことができるものと考えます。 利用してアプリでいろいろ試して、時間のかなりのチャンクを割くこと多くの場合、[デモ エクスペリエンス (RDX) の小売](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)します。
 

@@ -30,7 +30,7 @@ ms.locfileid: "57636367"
 
 ここでは、各リスト パターンについて、設計のガイドライン、特徴、例を示します。
 
-> **重要な Api**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/br242878)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/br242705)、 [ComboBox クラス](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **重要な API**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/br242878)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/br242705)、 [ComboBox クラス](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 > <div id="main">

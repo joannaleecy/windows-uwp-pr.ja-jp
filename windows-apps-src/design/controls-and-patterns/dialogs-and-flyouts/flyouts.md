@@ -24,7 +24,7 @@ ms.locfileid: "57625017"
 
 ![ポップアップ内で入れ子になったコンテキスト メニュー](../images/flyout-nested.png)
 
-> **重要な Api**:[フライアウト クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
+> **重要な API**:[フライアウト クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -41,14 +41,14 @@ ms.locfileid: "57625017"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックしてアプリを開き、<a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> または <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> の動作を確認してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
 </table>
 
-##  <a name="how-to-create-a-flyout"></a>フライアウトを作成する方法
+##  <a name="how-to-create-a-flyout"></a>ポップアップの作成方法
 
 
 ポップアップは、特定のコントロールにアタッチされます。 使用することができます、[配置](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.Placement)フライアウトが表示される場所を指定するプロパティ。上、左、下、右、または完全な。 [完全配置モード](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode)を選択した場合、アプリはポップアップを拡大し、アプリ ウィンドウ内の中央に配置します。 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)などの一部のコントロールは、ポップアップや[コンテキスト メニュー](../menus.md)を関連付けるために使用できる [Flyout](/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout) プロパティを提供します。

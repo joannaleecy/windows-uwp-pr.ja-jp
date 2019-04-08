@@ -94,13 +94,13 @@ Direct3D は圧縮スキームをいくつか実装しています。それぞ�
 | 成分が 3 つの色およびアルファ | カラー (5:6:5)、アルファ (1) またはアルファなし  | [BC1](#bc1)                    |
 | 成分が 3 つの色およびアルファ | カラー (5:6:5)、アルファ (4)              | [BC2](#bc2)                    |
 | 成分が 3 つの色およびアルファ | カラー (5:6:5)、アルファ (8)              | [BC3](#bc3)                    |
-| 成分が 1 つの色             | 1 つの成分 (8)                     | [BC4](#bc4)                    |
+| 成分が 1 つの色             | 1 つの成分 (8)                     | [に対する BC4](#bc4)                    |
 | 成分が 2 つの色             | 2 つの成分 (8:8)                  | [BC5](#bc5)                    |
 
 - [BC1](#bc1)
 - [BC2](#bc2)
 - [BC3](#bc3)
-- [BC4](#bc4)
+- [に対する BC4](#bc4)
 - [BC5](#bc5)
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
@@ -193,10 +193,10 @@ else
 
 このアルゴリズムでは、2 つの参照値を調べることで、補間されるカラー値の数を決定します。 赤\_0 が red よりも大きい\_1、しに対する BC4、6 つの色値を補間します。 4 がそれ以外の場合、補間します。 BC4 でカラー値を 4 つのみ補間するときは、追加のカラー値 (0.0f は完全に透明、1.0f は完全に不透明) を 2 つ設定します。 BC4 では、指定されたテクセルの元のアルファに最も近い補間アルファ値に対応するビット コードを保存することにより、4 x 4 のテクセル領域にアルファ値を圧縮します。
 
-- [BC4\_UNORM](#bc4-unorm)
-- [BC4\_SNORM](#bc4-snorm)
+- [に対する BC4\_UNORM](#bc4-unorm)
+- [に対する BC4\_SNORM](#bc4-snorm)
 
-### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
+### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>に対する BC4\_UNORM
 
 単一成分データの補間は、以下のコード サンプルのように行われます。
 
@@ -227,7 +227,7 @@ else
 
 参照カラーは 3 ビットのインデックス (8 つの値があるので 000 ～ 111) を割り当てられます。このインデックスは、圧縮時に red a ～ red p のブロックに保存されます。
 
-### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>BC4\_SNORM
+### <a name="span-idbc4snormspanspan-idbc4snormspanspan-idbc4-snormspanbc4snorm"></a><span id="BC4_SNORM"></span><span id="bc4_snorm"></span><span id="bc4-snorm"></span>に対する BC4\_SNORM
 
 DXGI\_形式\_に対する BC4\_SNORM がまったく同じで、色の値が補間 SNORM 範囲内でデータをエンコードする点を除いて、および 4 にするとします。 単一成分データの補間は、以下のコード サンプルのように行われます。
 

@@ -27,7 +27,7 @@ ms.locfileid: "57610007"
 
 有効にできますが、ゲームを公開する場合、 [Xbox Live クリエーターズ プログラム](https://xbox.com/developers/creators-program)このページでします。 これにより、構成とテスト、Xbox Live 機能を起動し、最終的に、Xbox Live クリエーターズ プログラム ゲームを発行することができます。
 
-詳細については、[Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と[新しい Xbox Live クリエーターズ プログラムのタイトルを作成し、テスト環境に公開](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)を参照してください。
+詳細については、次を参照してください。 [Xbox Live クリエーターズ プログラムの概要](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)と[新しい Xbox Live クリエーターズ プログラムのタイトルを作成し、テスト環境に公開](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)します。
 
 ## <a name="experimentation"></a>Experimentation
 
@@ -51,7 +51,7 @@ Microsoft Store コレクション API と Microsoft Store 購入 API を使用�
 
 お使いの製品が Azure AD と連携し、いずれかを要求する Api を呼び出すかどうか[アプリケーションのアクセス許可または委任されたアクセス許可](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)を管理者の同意が必要です、ここで、Azure AD のクライアント ID を入力します。 これにより、管理者がテナント内のすべてのユーザーの代理として機能するのには、製品の組織 grant 同意用アプリを取得します。
 
-詳細については、[テナント全体の同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)を参照してください。
+詳細については、次を参照してください。[テナント全体の同意を要求する](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)します。
 
 ## <a name="app-management"></a>アプリ管理
 

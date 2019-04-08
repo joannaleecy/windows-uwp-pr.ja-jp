@@ -230,7 +230,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全にアクセスする、*この*イベント処理デリゲートを使用してポインター
 
-オブジェクトのメンバー関数をイベントを処理するかから、オブジェクトのメンバー関数内のラムダ関数内でする必要があるイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考えるイベントの発生)。 詳細については、およびコード例は、[強力と脆弱の参照を c++/cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)を参照してください。
+オブジェクトのメンバー関数をイベントを処理するかから、オブジェクトのメンバー関数内のラムダ関数内でする必要があるイベント受信者 (イベントを処理するオブジェクト) とイベント ソース (オブジェクトの相対的な有効期間について考えるイベントの発生)。 詳細については、およびコード例は、次を参照してください。[強力と脆弱の参照を c++/cli WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)します。
 
 ## <a name="important-apis"></a>重要な API
 * [winrt::auto_revoke_t マーカー構造体](/uwp/cpp-ref-for-winrt/auto-revoke-t)
@@ -240,4 +240,4 @@ winrt::hstring f(ListView listview)
 ## <a name="related-topics"></a>関連トピック
 * [C + でのイベントを作成/cli WinRT](author-events.md)
 * [同時実行と非同期操作を C +/cli WinRT](concurrency.md)
-* [強力と脆弱の参照を c++/cli WinRT](weak-references.md)
+* [C++/WinRT の強参照と弱参照](weak-references.md)

@@ -25,7 +25,7 @@ ms.locfileid: "57606477"
 
 ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。 XAML アプリにハイパーリンクを追加するには 2 つの方法、**ハイパーリンク** テキスト要素と **HyperlinkButton** コントロールがあります。
 
-> **重要な Api**:[ハイパーリンクのテキスト要素](https://msdn.microsoft.com/library/windows/apps/dn279356)、 [HyperlinkButton コントロール](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **重要な API**:[ハイパーリンクのテキスト要素](https://msdn.microsoft.com/library/windows/apps/dn279356)、 [HyperlinkButton コントロール](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
@@ -49,8 +49,8 @@ ms.locfileid: "57606477"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/HyperlinkButton">アプリを開き、HyperlinkButton の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

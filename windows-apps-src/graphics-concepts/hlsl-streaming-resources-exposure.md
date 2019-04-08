@@ -33,7 +33,7 @@ feedback パラメーターは **uint** 変数で、メモリ アクセス照会
 
 [  **CheckAccessFullyMapped**](https://msdn.microsoft.com/library/windows/desktop/dn292083) の構文は次のとおりです。
 
-**bool CheckAccessFullyMapped(in uint FeedbackVar);**
+**(で uint FeedbackVar); bool CheckAccessFullyMapped**
 
 [**CheckAccessFullyMapped** ](https://msdn.microsoft.com/library/windows/desktop/dn292083)の値を解釈*FeedbackVar*アクセスされているすべてのデータがリソースにマップされているそれ以外の場合は true を返します**CheckAccessFullyMapped**。false を返します。
 

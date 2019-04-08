@@ -287,7 +287,7 @@ var notification = new TileNotification(doc);
 ## <a name="related-topics"></a>関連トピック
 
 * [アダプティブ タイルの作成](create-adaptive-tiles.md)
-* [タイルのコンテンツ スキーマ](../tiles-and-notifications/tile-schema.md)
+* [タイルのコンテンツのスキーマ](../tiles-and-notifications/tile-schema.md)
 * [通知ライブラリ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [GitHub の完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications 名前空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)

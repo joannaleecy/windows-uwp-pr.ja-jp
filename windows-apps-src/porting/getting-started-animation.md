@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57608627"
 ---
-# <a name="getting-started-animation"></a>はじめに。アニメーション
+# <a name="getting-started-animation"></a>概要: アニメーション
 
 
 ## <a name="adding-animations"></a>アニメーションの追加

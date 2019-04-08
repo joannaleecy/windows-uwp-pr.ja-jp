@@ -21,7 +21,7 @@ ms.locfileid: "57620417"
 
 フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 
-> **重要な Api**:[**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)、 [ **FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
+> **重要な API**:[**FadeInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210298)、 [ **FadeOutThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨

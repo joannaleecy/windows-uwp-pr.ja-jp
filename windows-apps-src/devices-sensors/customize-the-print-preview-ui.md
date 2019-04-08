@@ -35,7 +35,7 @@ ms.locfileid: "57643977"
 
 -   [**バインド**](https://msdn.microsoft.com/library/windows/apps/BR226476)
 -   [**照合順序**](https://msdn.microsoft.com/library/windows/apps/BR226477)
--   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
+-   [**双方向**](https://msdn.microsoft.com/library/windows/apps/BR226480)
 -   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
 -   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
 -   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)

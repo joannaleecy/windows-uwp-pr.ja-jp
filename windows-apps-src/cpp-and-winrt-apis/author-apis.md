@@ -7,7 +7,7 @@ keywords: windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57626667"
@@ -177,7 +177,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 ## <a name="if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui"></a>XAML UI で参照されるランタイム クラスを作成する場合
 型が XAML UI によって参照される場合、XAML と同じプロジェクトになっていても、ランタイム クラスである必要があります。 通常は実行可能な境界を越えてアクティブ化されますが、ランタイム クラスでは、代わりにそれを実装するコンパイル ユニット内で使用できます。
 
-このシナリオでは、API を使用する *および* のどちらも作成します。 ランタイム クラスを実装するための手順は、Windows ランタイム コンポーネントと基本的に同じです。 このため、前のセクション [Windows ランタイム コンポーネントでランタイム クラスを作成する場合](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)を参照してください。 これと唯一異なる詳細な点は、IDL から、C++/WinRT ツールチェーンが、実装型だけでなく投影型も生成することです。 このシナリオでは "**MyRuntimeClass**" というだけではあいまいなことを理解することは重要です。これは、その名前を持つさまざまな種類の複数のエンティティがあるためです。
+このシナリオでは、API を使用する *および* のどちらも作成します。 ランタイム クラスを実装するための手順は、Windows ランタイム コンポーネントと基本的に同じです。 そのため、前のセクションを参照してください&mdash;[Windows ランタイム コンポーネントのランタイム クラスを作成するかどうかは](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)します。 これと唯一異なる詳細な点は、IDL から、C++/WinRT ツールチェーンが、実装型だけでなく投影型も生成することです。 このシナリオでは "**MyRuntimeClass**" というだけではあいまいなことを理解することは重要です。これは、その名前を持つさまざまな種類の複数のエンティティがあるためです。
 
 - **MyRuntimeClass** はランタイム クラスの名前です。 ただし、これは実際には IDL で宣言され、一部のプログラミング言語で実装されたアブストラクションです。
 - **MyRuntimeClass** は、C++ 構造体 **winrt::MyProject::implementation::MyRuntimeClass** の名前です。これはランタイム クラスの C++/WinRT の実装です。 すでに見たように、プロジェクトを別に実装および使用している場合、この構造体は実装しているプロジェクトにのみ存在します。 これは*実装型*、または*実装*です。 この型は、(`cppwinrt.exe` ツールによって) ファイル `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` と `MyRuntimeClass.cpp` で生成されます。
@@ -403,5 +403,5 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 * [winrt::Windows::Foundation::IUnknown:: 関数として](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## <a name="related-topics"></a>関連トピック
-* [C + での Api 使用/cli WinRT](consume-apis.md)
-* [XAML コントロールバインド c++/cli WinRT プロパティ](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [C++/WinRT で API を使用する](consume-apis.md)
+* [XAML コントロール: C++/WinRT プロパティへのバインド](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

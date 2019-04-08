@@ -53,25 +53,25 @@ ms.locfileid: "57650987"
 | endDate | date | 取得するアドオン入手データの日付範囲終了日です。 既定値は現在の日付です。 |  X  |
 | top | int | 要求で返すデータの行数です。 最大値および指定しない場合の既定値は 10000 です。 クエリにこれを上回る行がある場合は、応答本文に次リンクが含まれ、そのリンクを使ってデータの次のページを要求できます。 |  X  |
 | skip | int | クエリでスキップする行数です。 大きなデータ セットを操作するには、このパラメーターを使用します。 たとえば、top=10000 と skip=0 を指定すると、データの最初の 10,000 行が取得され、top=10000 と skip=10000 を指定すると、データの次の 10,000 行が取得されます。 |  X  |
-| filter |string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | X   |
+| filter |string  | 応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。 | いいえ   |
 | aggregationLevel | string | 集計データを取得する時間範囲を指定します。 次のいずれかの文字列を指定できます。<strong>day</strong>、<strong>week</strong>、または <strong>month</strong>。 指定しない場合、既定値は <strong>day</strong> です。 | X |
-| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。<em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  X  |
-| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  X  |
+| orderby | string | それぞれのアドオン入手数について結果データ値の順序を指定するステートメントです。 構文は <em>orderby=field [order],field [order],...</em> です。<em>field</em> パラメーターには、次のいずれかの文字列を指定できます。<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>ストア クライアント</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> パラメーターは省略可能であり、<strong>asc</strong> または <strong>desc</strong> を指定して、各フィールドを昇順または降順にすることができます。 既定値は <strong>asc</strong> です。</p><p><em>orderby</em> 文字列の例: <em>orderby=date,market</em></p> |  X  |
+| groupby | string | 指定したフィールドのみにデータ集計を適用するステートメントです。 次のフィールドを指定できます。<ul><li><strong>date</strong></li><li><strong>ApplicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>ストア クライアント</strong></li><li><strong>性別</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>返されるデータ行には、<em>groupby</em> パラメーターに指定したフィールドと次の値が含まれます。</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>取得数</strong></li></ul><p><em>groupby</em> パラメーターは、<em>aggregationLevel</em> パラメーターと同時に使用できます。 例: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  X  |
 
 
 ### <a name="filter-fields"></a>フィルター フィールド
 
 要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
 
--   *filter=market eq 'US' and gender eq 'm'*
+-   *フィルター = 市場 eq '米国'] と [性別の eq います '*
 -   *フィルター (米国' 市場 ne) = し、(性別 ne '不明') と (性別 ne います ') と (市場 ne 'NO') と (ageGroup ne '55 より大きい' または ageGroup ne 'より小さい 13')*
 
 サポートされているフィールドの一覧については、次の表をご覧ください。 *filter* パラメーターでは、文字列値を単一引用符で囲む必要があります。
 
 | フィールド        |  説明        |
 |---------------|-----------------|
-| acquisitionType | 次のいずれかの文字列です。<ul><li><strong>free</strong></li><li><strong>試用版</strong></li><li><strong>有料</strong></li><li><strong>プロモーション コード</strong></li><li><strong>Iap</strong></li></ul> |
-| ageGroup | 次のいずれかの文字列です。<ul><li><strong>小さい 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>55 より大きい</strong></li><li><strong>Unknown</strong></li></ul> |
+| acquisitionType | 次のいずれかの文字列です。<ul><li><strong>無料</strong></li><li><strong>試用版</strong></li><li><strong>有料</strong></li><li><strong>プロモーション コード</strong></li><li><strong>Iap</strong></li></ul> |
+| ageGroup | 次のいずれかの文字列です。<ul><li><strong>小さい 13</strong></li><li><strong>13 ~ 17 日</strong></li><li><strong>18 ~ 24</strong></li><li><strong>25 34</strong></li><li><strong>35 44</strong></li><li><strong>44 55</strong></li><li><strong>55 より大きい</strong></li><li><strong>Unknown</strong></li></ul> |
 | storeClient | 次のいずれかの文字列です。<ul><li><strong>Windows Phone ストア (クライアント)</strong></li><li><strong>Microsoft Store (クライアント)</strong></li><li><strong>Microsoft Store (web)</strong></li><li><strong>組織でボリューム購入</strong></li><li><strong>その他</strong></li></ul> |
 | gender | 次のいずれかの文字列です。<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | 入手が発生した市場の ISO 3166 国コードを含む文字列です。 |

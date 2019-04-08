@@ -23,7 +23,7 @@ ms.locfileid: "57648537"
 
 RichEditBox でユーザーがアンパサンド (@) 記号を使用してエントリにプレフィックスを付けると、そのエントリに一致する人々および/または場所の候補のリストが表示されます。 次に、たとえば、ユーザーが場所を選択すると、その場所の ContentLink がテキストに挿入されます。 ユーザーが RichEditBox からコンテンツ リンクを呼び出すと、その場所に関する地図と追加情報を示したポップアップが表示されます。
 
-> **重要な Api**:[ContentLink クラス](/uwp/api/windows.ui.xaml.documents.contentlink)、 [ContentLinkInfo クラス](/uwp/api/windows.ui.text.contentlinkinfo)、 [RichEditTextRange クラス](/uwp/api/windows.ui.text.richedittextrange)
+> **重要な API**:[ContentLink クラス](/uwp/api/windows.ui.xaml.documents.contentlink)、 [ContentLinkInfo クラス](/uwp/api/windows.ui.text.contentlinkinfo)、 [RichEditTextRange クラス](/uwp/api/windows.ui.text.richedittextrange)
 
 > [!NOTE]
 > コンテンツ リンクの Api は、次の名前空間に分散されます。Windows.UI.Xaml.Controls、Windows.UI.Xaml.Documents、および Windows.UI.Text です。

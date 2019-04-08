@@ -113,20 +113,20 @@ API リファレンス、バックグラウンド タスクの概念的ガイダ
 **詳細なバック グラウンド タスクの説明のトピック**
 
 * [プロセス内のバック グラウンド タスクに、プロセス外のバック グラウンド タスクを変換します。](convert-out-of-process-background-task.md)
-* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [バック グラウンドでメディアを再生します。](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [バック グラウンド タスクでシステム イベントに応答します。](respond-to-system-events-with-background-tasks.md)
-* [バック グラウンド タスクを登録します。](register-a-background-task.md)
-* [バック グラウンド タスクを実行するための条件を設定します。](set-conditions-for-running-a-background-task.md)
-* [メンテナンス トリガーを使用します。](use-a-maintenance-trigger.md)
-* [取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)
-* [バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
-* [タイマーでバック グラウンド タスクを実行します。](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
 
 **バック グラウンド タスクのガイダンス**
 
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
 * [トリガーする方法を中断、再開、および (デバッグ) 場合は、UWP アプリでイベントをバック グラウンド](https://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **バック グラウンド タスクの API リファレンス**

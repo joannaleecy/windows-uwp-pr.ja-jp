@@ -63,6 +63,6 @@ Windows 10 Version 1607 以降を実行するデスクトップ デバイスや�
 
 ## <a name="related-topics"></a>関連トピック
 
-* [作成して、プロセス外のバック グラウンド タスクの登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
+* [アウトプロセス バックグラウンド タスクの作成と登録](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [パフォーマンスの計画](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 

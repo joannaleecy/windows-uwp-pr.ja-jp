@@ -7,7 +7,7 @@ keywords: windows 10、uwp、WinRT API では、WNS
 localizationpriority: medium
 ms.openlocfilehash: ba8630a2e877345adeac7eb443dd3e418d3ed277
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639527"

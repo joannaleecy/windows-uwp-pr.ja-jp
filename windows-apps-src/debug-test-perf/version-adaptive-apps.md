@@ -60,7 +60,7 @@ Visual Studio で既に作成済みのプロジェクトの最小バージョン
 
 SDK のすべてのリリース版は、「[Windows SDK とエミュレーターのアーカイブ](https://developer.microsoft.com/downloads/sdk-archive)」からダウンロードできます。 最新の Windows Insider Preview SDK は、[Windows Insider](https://insider.windows.com/Home/BuildWithWindows) サイトの「開発者向け」セクションからダウンロードできます。
 
- Windows 10 更新プログラムの詳細については、[Windows 10 のリリース情報](https://technet.microsoft.com/windows/release-info)を参照してください。 Windows 10 のサポート ライフ サイクルに関する重要な情報は、、 [Windows ライフ サイクル ファクト シート](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)を参照してください。
+ Windows 10 更新プログラムの詳細については、次を参照してください。 [Windows 10 のリリース情報](https://technet.microsoft.com/windows/release-info)します。 Windows 10 のサポート ライフ サイクルに関する重要な情報は、次を参照してください。、 [Windows ライフ サイクル ファクト シート](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)します。
 
 ## <a name="perform-api-checks"></a>API チェックの実行
 

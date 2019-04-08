@@ -1,5 +1,5 @@
 ---
-description: このトピックでは、C++ に存在する値のさまざまなカテゴリについて説明します。 Lvalues と rvalues の音が既にご承知されますが、その他の種類をすぎますがあります。
+description: このトピックでは、C++ に存在する値のさまざまなカテゴリについて説明します。 lvalues と rvalues については聞いたことがあると思いますが、それ以外の種類もあります。
 title: 値のカテゴリ、およびそれらへの参照
 ms.date: 08/11/2018
 ms.topic: article
@@ -189,4 +189,4 @@ template <typename _Ty> void bar(_Ty&& ty) { ... }
 - 参照を転送する理由 (など`_Ty&&`) 存在が*いない*最適化が何を渡すを実行して透過的かつ効率的に転送するようにします。 書き込み、または密接に調査) ライブラリのコードの場合にのみ転送の参照が発生する可能性が高いしたら&mdash;コンス トラクター引数では転送、factory 関数などです。
 
 ## <a name="sources"></a>Sources
-* \[Stroustrup、2013\] B. Stroustrup:C++ プログラミング言語で、Fourth Edition。 Addison-Wesley. 2013.
+* \[Stroustrup、2013\] B. Stroustrup:C++ プログラミング言語で、Fourth Edition。 Addison-Wesley. 2013。

@@ -22,7 +22,7 @@ ms.locfileid: "57637257"
 このトピックは次のセクションで構成されます。
 
 -   [テクノロジ](#technologies)
--   [要件](#requirements)
+-   [必要条件](#requirements)
 -   [コードを表示する (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
@@ -37,7 +37,7 @@ ms.locfileid: "57637257"
 **プログラミング言語** - C++  
 **プログラミング モデル** - Windows ランタイム
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **サポートされている最小のクライアント** - Windows 10                              
 **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 

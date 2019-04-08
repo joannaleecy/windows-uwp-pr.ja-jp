@@ -237,7 +237,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 アプリで使うコントロールを XAML によってレイアウトする方法については、[グリッドに関するチュートリアル](../design/layout/grid-tutorial.md)で学習するか、直接[次のステップ](learn-more.md)に進んでください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [最初のアプリ](your-first-app.md)
 * [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)

@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, アドオンの申請, �
 ms.localizationpriority: medium
 ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57647217"
@@ -66,7 +66,7 @@ Microsoft Store 申請 API には、アプリのアドオン (アプリ内製品
 <td align="left"><a href="commit-an-add-on-submission.md">コミットを新規または更新済みのアドオンの送信</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Del</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-an-add-on-submission.md">削除するアドオンの送信</a></td>
 </tr>
@@ -228,7 +228,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value      | 種類   | 説明        |
+| 値      | 種類   | 説明        |
 |------------|--------|----------------------|
 | id            | string  | 申請 ID。 この ID は、[アドオンの申請の作成](create-an-add-on-submission.md)要求、[すべてのアドオンの取得](get-all-add-ons.md)要求、[アドオンの取得](get-an-add-on.md)要求に対する応答データで確認できます。 パートナー センターで作成された送信、この ID はパートナー センターでの送信 ページの URL で使用できるも。  |
 | contentType           | string  |  アドオンで提供されている[コンテンツの種類](../publish/enter-add-on-properties.md#content-type)です。 次のいずれかの値を使用できます。 <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
@@ -251,7 +251,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには[アドオンの登録情報](../publish/create-add-on-store-listings.md)が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明       |
+| 値           | 種類    | 説明       |
 |-----------------|---------|------|
 |  説明               |    string     |   アドオンの登録情報についての説明です。   |     
 |  icon               |   オブジェクト      |アドオンの登録情報に使用されるアイコンのデータが保持される[アイコン リソース](#icon-object)です。    |
@@ -263,7 +263,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースにはアドオンの登録情報のアイコン データが保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明     |
+| 値           | 種類    | 説明     |
 |-----------------|---------|------|
 |  fileName               |    string     |   申請用にアップロードした ZIP アーカイブに含まれているアイコン ファイルの名前です。 このアイコンには、300 x 300 ピクセルの .png ファイルを使用する必要があります。   |     
 |  fileStatus               |   string      |  アイコン ファイルの状態です。 次のいずれかの値を使用できます。 <ul><li>なし</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
@@ -274,7 +274,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースにはアドオンの価格設定情報が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明    |
+| 値           | 種類    | 説明    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    オブジェクト     |  キーと値のペアのディクショナリです。各キーは 2 文字の ISO 3166-1 alpha-2 の国コードで、各値は[価格帯](#price-tiers)です。 これらの項目は、[特定の市場でのアドオンのカスタム価格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)を表します。 このディクショナリに含まれる項目は、指定された市場の *priceId* の値によって指定されている基本価格を上書きします。     |     
 |  sales               |   array      |  **推奨されなくなった値**です。 アドオンの販売情報が保持される[セール リソース](#sale-object)の配列です。     |     
@@ -295,7 +295,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明           |
+| 値           | 種類    | 説明           |
 |-----------------|---------|------|
 |  name               |    string     |   セールの名前です。    |     
 |  basePriceId               |   string      |  セールの基本価格として使用する[価格帯](#price-tiers)です。    |     
@@ -309,7 +309,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、申請の状態についての追加情報が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明       |
+| 値           | 種類    | 説明       |
 |-----------------|---------|------|
 |  errors               |    オブジェクト     |   申請のエラーの詳細が保持される[ステータスの詳細リソース](#status-detail-object)の配列です。   |     
 |  warnings               |   オブジェクト      | 申請の警告の詳細が保持される[ステータスの詳細リソース](#status-detail-object)の配列です。     |
@@ -360,7 +360,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 次の値は、申請の状態コードを表します。
 
-| Value           |  説明      |
+| 値           |  説明      |
 |-----------------|---------------|
 |  なし            |     コードが指定されていません。         |     
 |      InvalidArchive        |     パッケージが含まれる ZIP アーカイブは無効であるか、認識できないアーカイブ形式です。  |

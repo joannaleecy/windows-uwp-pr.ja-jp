@@ -128,7 +128,7 @@ Windows で使用される既存の SSH サーバーはまだプロトコルに�
  デスクトップ デバイス ファミリの場合、**[開発者向け]** 設定ページには、開発タスク用 PC を最適化するために使用できる設定へのショートカットが備わっています。 それぞれの設定で、チェック ボックスを選択して **[適用]** をクリックするか、**[設定の表示]** リンクをクリックして対象オプションの設定ページを開くことができます。
 
 
-## <a name="notes"></a>説明
+## <a name="notes"></a>メモ
 以前のバージョンの Windows 10 Mobile では、クラッシュ ダンプ オプションが [開発者向け設定] メニューに存在していました。  これは、USB 経由だけではなくリモートでも使うことができるように[デバイス ポータル](../debug-test-perf/device-portal.md)に移動しました。  
 
 Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用できるツールはいくつかあります。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。 どちらの方法を使用しても、アプリ パッケージ (.appx/.appxbundle) のみがインストールされます。証明書はインストールされません。
@@ -154,7 +154,7 @@ Windows 10 PC から Windows 10 デバイスへのアプリの展開に使用で
 
 1. お使いのコンピューターがインターネットに接続されていることを確認します。
 2. ドメインに参加しているコンピューターの場合は、ネットワーク管理者に問い合わせます。 開発者モード パッケージは、すべてのオンデマンド機能と同様に、既定では WSUS でブロックされています。
-2.1. 開発者モード パッケージが現在と以前のリリースでのブロックを解除するには WSUS で次のサポート技術情報を許可する必要があります。4016509, 3180030, 3197985  
+2.1. 開発者モード パッケージが現在と以前のリリースでのブロックを解除するには WSUS で次のサポート技術情報を許可する必要があります。4016509、3180030、3197985  
 3. [設定] > [更新とセキュリティ] > [Windows Update] で Windows の更新プログラムをチェックします。
 4. [設定] > [システム] > [アプリと機能] > [オプション機能を管理する] に、Windows 開発者モード パッケージが存在することを確認します。 ない場合は、Windows はコンピューターの適切なパッケージを検出できません。
 
@@ -201,13 +201,13 @@ Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グ�
 1.  **regedit** を実行します。
 2.  サイドローディングを有効にするには、この DWORD の値を 1 に設定します。
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
+    -   **HKLM\\ソフトウェア\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
     - または -
 
     開発者モードを有効にするには、この DWORD の値を 1 に設定します。
 
-    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
+    -   **HKLM\\ソフトウェア\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
 **PowerShell を使用して、デバイスを有効にするには**
 
@@ -235,7 +235,7 @@ Windows 8.1 デバイスでアプリを作成またはサイドローディン�
 
 エラー:DEP0700:アプリの登録に失敗しました。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [最初のアプリ](your-first-app.md)
 * [UWP アプリを公開する](https://developer.microsoft.com/store/publish-apps)

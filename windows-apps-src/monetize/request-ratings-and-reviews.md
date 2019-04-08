@@ -132,9 +132,9 @@ private async Task PromptUserToRateApp()
 
 | フィールド          | 説明                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | ユーザーから評価またはレビューが正しく提出されたかどうかを示す文字列です。 サポートされる値は **success** と **aborted** です。 |
-| *data*         | *updated* という名前の単一のブール値を含むオブジェクトです。 この値は、ユーザーが既存の評価またはレビューを更新したかどうかを示します。 *data* オブジェクトは、成功の応答にのみ含まれます。 |
-| *errorDetails* | 要求のエラーの詳細を含む文字列です。                                                                                     |
+| *状態*       | ユーザーから評価またはレビューが正しく提出されたかどうかを示す文字列です。 サポートされる値は **success** と **aborted** です。 |
+| *データ*         | *updated* という名前の単一のブール値を含むオブジェクトです。 この値は、ユーザーが既存の評価またはレビューを更新したかどうかを示します。 *data* オブジェクトは、成功の応答にのみ含まれます。 |
+| *ErrorDetails* | 要求のエラーの詳細を含む文字列です。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>Store でのアプリの評価とレビュー ページの起動
 
@@ -155,5 +155,5 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="related-topics"></a>関連トピック
 
 * [ストアに要求を送信します。](send-requests-to-the-store.md)
-* [Microsoft Store アプリを起動します。](../launch-resume/launch-store-app.md)
+* [Microsoft Store アプリの起動](../launch-resume/launch-store-app.md)
 * [レビュー レポート](../publish/reviews-report.md)

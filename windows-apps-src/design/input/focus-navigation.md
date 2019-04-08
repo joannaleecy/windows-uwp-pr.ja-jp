@@ -125,7 +125,7 @@ Auto に設定すると、方向ナビゲーションの動作は要素の先祖
 </Grid>
 ```
 
-### <a name="enabledhttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode"></a>[有効になっています。](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabledhttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode"></a>[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 **XYFocusKeyboardNavigation** を **Enabled** に設定すると、コントロールとその [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 子オブジェクトそれぞれへの 2D 方向ナビゲーションがサポートされます。
 

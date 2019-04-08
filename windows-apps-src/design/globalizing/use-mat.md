@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, グローバリゼーション, ローカライズの
 ms.localizationpriority: medium
 ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57610117"
@@ -30,7 +30,7 @@ Microsoft Visual Studio 2017 には多言語アプリ ツールキット (MAT) 4
 
 多言語アプリ ツールキットを効果的に使用する前に、まずアプリをローカライズする必要があります。 具体的には、プロジェクトには、既定の言語でのアプリの文字列を含む 1 つまたは複数のリソース ファイル (.resw) を含める必要があります。 詳細については、「[UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)」を参照してください。 処理が完了したら、ツールキットにより、言語を迅速かつ簡単に追加できます。
 
-グローバリゼーションとローカライズの価値提案のほか、**グローバリゼーション**、**ローカライズの可否**、**ローカライズ** という用語の定義については、「[グローバリゼーションとローカライズ](globalizing-portal.md)」を参照してください。
+グローバリゼーションとローカリゼーションの価値提案の&mdash;、用語の定義と**グローバリゼーション**、**ローカライズ**、および**ローカリゼーション**&mdash;を参照してください[グローバリゼーションとローカリゼーション](globalizing-portal.md)します。
 
 「[グローバリゼーションのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)」と「[アプリをローカライズ可能にする](prepare-your-app-for-localization.md)」も参照してください。
 
@@ -69,7 +69,7 @@ Visual Studio 2017 を使用している場合は、両方のインストーラ�
 
 既定の言語のリソース ファイル (.resw) を追加または削除するたびに、または既定の言語のリソース ファイル (.resw) 内の文字列を追加または削除するたびに、.xlf ファイルを再同期するようにプロジェクトをリビルドします。 これにより、.xlf ファイルに既定の言語の統合した文字列が含まれるようになります。
 
-[Microsoft Language Portal](https://go.microsoft.com/fwlink/p/?LinkId=330295) や [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) などのインストール済みの翻訳プロバイダーを使って、アプリのリソースを翻訳できます。 プロバイダーが特定の言語をサポートしている場合、プロバイダーのアイコンが [Translation Languages] (翻訳言語) ダイアログの言語名の横に表示されます。
+翻訳サービスがインストールされている&mdash;など、 [Microsoft ランゲージ ポータル](https://go.microsoft.com/fwlink/p/?LinkId=330295)と[Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)&mdash;アプリのリソースを翻訳するために使用できます。 プロバイダーが特定の言語をサポートしている場合、プロバイダーのアイコンが [Translation Languages] (翻訳言語) ダイアログの言語名の横に表示されます。
 
 [Translation Languages] (翻訳言語) ダイアログでは、ツールキットで検出可能な .xlf ベースの言語は、選択ボックスがあらかじめオンになり、その言語がプロジェクトに既に含まれていることを示しています。
 
@@ -162,7 +162,7 @@ Microsoft Store の認定プロセスを開始する前に、`<project-name>.qps
 
 ## <a name="related-topics"></a>関連トピック
 
-* [UI とアプリ パッケージ マニフェストで文字列をローカライズします。](../../app-resources/localize-strings-ui-manifest.md)
+* [UI とアプリ パッケージ マニフェスト内の文字列をローカライズする](../../app-resources/localize-strings-ui-manifest.md)
 * [グローバリゼーションとローカライズ](globalizing-portal.md)
 * [グローバル化するためのガイドライン](guidelines-and-checklist-for-globalizing-your-app.md)
 * [ローカライズ可能なアプリを作成します。](prepare-your-app-for-localization.md)

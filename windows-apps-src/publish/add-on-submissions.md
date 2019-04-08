@@ -32,7 +32,7 @@ ms.locfileid: "57620367"
 
 ### <a name="create-a-new-add-on-page"></a>新しいアドオン ページを作成する
 
-| フィールド名                    | 説明                            |
+| フィールド名                    | メモ                            |
 |-------------------------------|----------------------------------|
 | [**製品の種類**](set-your-add-on-product-id.md#product-type)      | 必須 |  
 | [**製品 ID**](set-your-add-on-product-id.md#product-id)          | 必須 |        
@@ -40,7 +40,7 @@ ms.locfileid: "57620367"
 
 ### <a name="properties-page"></a>[プロパティ] ページ
 
-| フィールド名                    | 説明                              |   
+| フィールド名                    | メモ                              |   
 |-------------------------------|------------------------------------|
 | [**製品の有効期間**](enter-add-on-properties.md#product-lifetime)  | 製品の種類が **[永続的]** である場合は必須です。 他の種類の製品には適用されません。 |
 | [**数量**](enter-add-on-properties.md#quantity)  | 製品の種類が **[ストアで管理されるコンシューマブル]** の場合は必須です。 他の種類の製品には適用されません。 |
@@ -53,7 +53,7 @@ ms.locfileid: "57620367"
 
 ### <a name="pricing-and-availability-page"></a>[価格と使用可能状況] ページ
 
-| フィールド名                    | 説明                                       |
+| フィールド名                    | メモ                                       |
 |-------------------------------|---------------------------------------------|
 | [**市場**](set-add-on-pricing-and-availability.md#markets)  | 既定:すべての可能な市場 |
 | [**可視性**](set-add-on-pricing-and-availability.md#visibility)   | 既定:ご購入いただけます。 アプリのリストに表示されます |
@@ -66,7 +66,7 @@ ms.locfileid: "57620367"
 
 1 つのストア登録情報が必要です。 アプリがサポートする各[言語](create-add-on-store-listings.md#store-listing-languages)でストア登録情報を提供することをお勧めします。
 
-| フィールド名                    | 説明                                       |
+| フィールド名                    | メモ                                       |
 |-------------------------------|---------------------------------------------|
 | [**タイトル**](create-add-on-store-listings.md#title)                    | 必須 (100 文字以内)           |
 | [**説明**](create-add-on-store-listings.md#description)       | 省略可能 (200 文字以内)            |

@@ -175,7 +175,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 詳しくは、次のリソースとプロファイリング ツールをご覧ください。
 
--   [Windows パフォーマンス アナライザー](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
+-   [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx)
 -   [Windows パフォーマンス ツールキット](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx)
 -   [Visual Studio 診断ツールを使用してパフォーマンスを分析します。](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx)
 -   //build/ セッション「[XAML Performance (XAML のパフォーマンス)](https://channel9.msdn.com/Events/Build/2015/3-698)」

@@ -20,7 +20,7 @@ ms.locfileid: "57627167"
 
 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
 
-> **重要な Api**:[**タイムアウト**](https://msdn.microsoft.com/library/windows/apps/dn653253)、 [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+> **重要な API**:[**タイムアウト**](https://msdn.microsoft.com/library/windows/apps/dn653253)、 [ **SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## <a name="set-a-timeout"></a>タイムアウトの設定
 

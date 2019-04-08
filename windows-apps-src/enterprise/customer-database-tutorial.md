@@ -1,5 +1,5 @@
 ---
-title: 顧客のデータベース アプリケーションを作成します。
+title: 顧客データベース アプリケーションの作成
 description: 顧客のデータベース アプリケーションを作成し、基本的なエンタープライズ アプリの機能を実装する方法について説明します。
 keywords: enterprise、チュートリアル、顧客データを読み取り、更新の削除、REST、認証を作成します。
 ms.date: 05/07/2018
@@ -7,12 +7,12 @@ ms.topic: article
 ms.localizationpriority: med
 ms.openlocfilehash: 9c09e0fb73e42fd8a3d0c70bbb5396be32624387
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57623247"
 ---
-# <a name="tutorial-create-a-customer-database-application"></a>チュートリアル:顧客のデータベース アプリケーションを作成します。
+# <a name="tutorial-create-a-customer-database-application"></a>チュートリアル: 顧客データベース アプリケーションの作成
 
 このチュートリアルでは、顧客の一覧を管理するための簡単なアプリを作成します。 これを行うには、UWP でエンタープライズ アプリケーションの基本的な概念の選択範囲が導入されています。 次の方法について説明します。
 

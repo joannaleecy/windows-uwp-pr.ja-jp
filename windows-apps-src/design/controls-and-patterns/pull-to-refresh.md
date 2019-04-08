@@ -23,7 +23,7 @@ ms.locfileid: "57659257"
 
 引っ張って更新を使うと、タッチ操作でデータの一覧を引き下げることで、より多くのデータを取得できます。 引っ張って更新は、タッチ スクリーンを備えたデバイスで広く使用されます。 ここに表示されている API を使用して、アプリに引っ張って更新を実装できます。
 
-> **重要な Api**:[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)、 [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
+> **重要な API**:[RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer)、 [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
 ![引っ張って更新 gif](images/Pull-To-Refresh.gif)
 

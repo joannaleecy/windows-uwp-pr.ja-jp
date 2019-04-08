@@ -17,7 +17,7 @@ ms.locfileid: "57630237"
 ライブラリからファイルとそのプロパティの一覧をすばやく収集し、アプリでそれらのプロパティを使用する方法について説明します。  
 
 前提条件 
-- **非同期プログラミングのユニバーサル Windows プラットフォーム (UWP) アプリ** で非同期アプリを記述する方法を学習できますC#または Visual Basic では、「[で非同期 Api を呼び出すC#または Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)します。     C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
+- **非同期プログラミングのユニバーサル Windows プラットフォーム (UWP) アプリ** で非同期アプリを記述する方法を学習できますC#または Visual Basic では、「[で非同期 Api を呼び出すC#または Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)します。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)」をご覧ください。 
 - **ライブラリへのアクセス許可** これらの例でコードが必要です、 **picturesLibrary**機能が、ファイルの場所があります別の機能または機能がないすべての。 詳しくは、「[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)」をご覧ください。 
 - **単純なファイルの列挙体**  この例では[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)をいくつかの高度な列挙型プロパティを設定します。 小さいディレクトリを対象としてファイルの簡単な一覧を取得する方法について詳しくは、「[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)」をご覧ください。 
 
@@ -116,7 +116,7 @@ while (images.Count != 0 || index < 10000) 
  
 ## <a name="see-also"></a>関連項目
 [QueryOptions API リファレンス](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
-[列挙し、ファイルとフォルダーのクエリ](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[ファイルのアクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+[ファイルとフォルダーの列挙と照会](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
+[ファイル アクセス許可](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
  
  

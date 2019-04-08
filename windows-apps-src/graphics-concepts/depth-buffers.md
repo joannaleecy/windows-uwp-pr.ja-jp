@@ -50,7 +50,7 @@ z バッファーを使うと、レンダリング中にオーバーヘッドが
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[深度、ステンシル バッファー](depth-and-stencil-buffers.md)
+[深度バッファーとステンシル バッファー](depth-and-stencil-buffers.md)
 
  
 

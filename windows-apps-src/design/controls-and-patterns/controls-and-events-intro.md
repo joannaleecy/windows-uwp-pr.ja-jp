@@ -19,7 +19,7 @@ ms.locfileid: "57630797"
 
 UWP アプリ開発では、*コントロール*は、コンテンツを表示したり、操作を有効にしたりする UI 要素です。 ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。
 
-> **重要な Api**:[Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+> **重要な API**:[Windows.UI.Xaml.Controls 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
 *パターン*とは、コントロールを変更するか、いくつかのコントロールを組み合わせて、新しいものを作成するためのレシピです。 たとえば、[マスター/詳細](master-details.md)パターンが使用できる方法を[SplitView](split-view.md)のアプリのナビゲーション コントロール。 同様のテンプレートをカスタマイズすることができます、 [NavigationView](navigationview.md)タブ パターンを実装するコントロール。
 

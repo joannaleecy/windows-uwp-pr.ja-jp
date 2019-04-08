@@ -42,7 +42,7 @@ UWP プロジェクトとランタイム コンポーネントを 1 つ以上ソ
 
 デスクトップ アプリケーションの Windows ランタイム Api を呼び出すために必要なファイルへの参照を確認します。
 
-これを行うには、、[プロジェクトを最初に、セットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)」の「 [Windows 10 のデスクトップ アプリケーションの拡張](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)を参照してください。
+これを行うには、次を参照してください。、[プロジェクトを最初に、セットアップ](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)」の「 [Windows 10 のデスクトップ アプリケーションの拡張](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)します。
 
 ### <a name="add-a-uwp-project"></a>UWP プロジェクトを追加する
 

@@ -7,14 +7,14 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: 9572d9ba8b96d245b783535e159acbae9043ea3e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57649637"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT での文字列の処理
 
-[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、ワイド文字列型の C++ 標準ライブラリを使用して Windows ランタイム Api を呼び出すことができます**std::wstring** (注: 文字列型など、ナローではなく**std::string**). C++/WinRT には [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) というカスタム文字列型があります (C++/WinRT 基本ライブラリ、`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` で定義)。 これは、Windows ランタイムのコンストラクター、関数、およびプロパティで実際に受け取られ、返される文字列型です。 ただし、多くの場合、**hstring** の変換コンストラクターと変換演算子のおかげで、クライアント コードで **hstring** を認識するかどうかを選択できます。 API を*作成している*場合は、**hstring** を理解しておく必要性が高くなると思われます。
+[C +/cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)、ワイド文字列型の C++ 標準ライブラリを使用して Windows ランタイム Api を呼び出すことができます**std::wstring** (注: 文字列型など、ナローではなく**std::string**). C++/WinRT には [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) というカスタム文字列型があります (C++/WinRT 基本ライブラリ、`%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h` で定義)。 これは、Windows ランタイムのコンストラクター、関数、およびプロパティで実際に受け取られ、返される文字列型です。 多くの場合&mdash;の方々 に感謝**hstring**の変換コンス トラクターおよび変換演算子&mdash;注意すべきかどうかを選択することができます**hstring**クライアント コードにします。 API を*作成している*場合は、**hstring** を理解しておく必要性が高くなると思われます。
 
 C++ には多くの文字列型があります。 C++ 標準ライブラリの **std::basic_string** に加えて、多くのライブラリにバリアントが存在します。 C++17 には、すべての文字列型間のギャップの橋渡しをする文字列変換ユーティリティと **std::basic_string_view** があります。  [**winrt::hstring** ](/uwp/cpp-ref-for-winrt/hstring)ででも提供**std::wstring_view**相互運用性を提供するを**std::basic_string_view**用に設計されました。
 

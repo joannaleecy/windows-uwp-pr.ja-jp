@@ -160,7 +160,7 @@ End Sub
 
 UI スレッドで実行され、UI スレッド以外のスレッドから呼び出された場合に例外をスローするオブジェクトでは、UI スレッドの [CoreDispatcher](https://go.microsoft.com/fwlink/p/?LinkId=256029) オブジェクトを使用して呼び出しをディスパッチできます。
 
-## <a name="see-also"></a>参照
-[C#ガイド](/dotnet/csharp/)
+## <a name="see-also"></a>関連項目
+[C# ガイド](/dotnet/csharp/)
 
 [Visual Basic のガイド](/dotnet/visual-basic/)

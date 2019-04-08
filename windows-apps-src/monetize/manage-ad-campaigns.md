@@ -17,7 +17,7 @@ ms.locfileid: "57633227"
 
 アプリのプロモーション用の広告キャンペーンを作成、編集、取得するには、[Microsoft Store プロモーション API](run-ad-campaigns-using-windows-store-services.md) の以下のメソッドを使います。 このメソッドを使って作成した各キャンペーンに関連付けることができるのは、1 つのアプリのみです。
 
->**注**&nbsp;&nbsp;プログラムで作成したキャンペーンは、パートナー センターでアクセスできるとも作成し、パートナー センターを使用して広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理に関する詳細については、[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)を参照してください。
+>**注**&nbsp;&nbsp;プログラムで作成したキャンペーンは、パートナー センターでアクセスできるとも作成し、パートナー センターを使用して広告キャンペーンを管理できます。 パートナー センターでの広告キャンペーンの管理に関する詳細については、次を参照してください。[アプリの広告キャンペーンの作成](../publish/create-an-ad-campaign-for-your-app.md)です。
 
 これらのメソッドを使ってキャンペーンを作成または更新する場合、通常は以下のメソッドも 1 つ以上呼び出し、キャンペーンに関連付けられた*配信ライン*、*ターゲット プロファイル*、*クリエイティブ*を管理します。 キャンペーン、配信ライン、ターゲット プロファイル、クリエイティブ間の関係について詳しくは、「[Microsoft Store サービスを使用した広告キャンペーンの実行](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)」をご覧ください。
 
@@ -149,8 +149,8 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整数   |  広告キャンペーンの ID です。     |   〇    |      |  X     |       
 |  name   |  string   |   広告キャンペーンの名前です。    |    X   |      |  〇     |       
-|  configuredStatus   |  string   |  開発者により指定された広告キャンペーンのステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li></ul>     |  X     |  Active    |   〇    |       
-|  effectiveStatus   |  string   |   システム検証に基づいて広告キャンペーンの有効ステータスを指定する次のいずれかの値です。 <ul><li>**アクティブ**</li><li>**非アクティブ**</li><li>**処理**</li></ul>    |    〇   |      |   X      |       
+|  configuredStatus   |  string   |  開発者により指定された広告キャンペーンのステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**非アクティブ**</li></ul>     |  X     |  Active    |   〇    |       
+|  effectiveStatus   |  string   |   システム検証に基づいて広告キャンペーンの有効ステータスを指定する次のいずれかの値です。 <ul><li>**Active**</li><li>**非アクティブ**</li><li>**処理**</li></ul>    |    〇   |      |   X      |       
 |  effectiveStatusReasons   |  array   |  広告キャンペーンの有効ステータスの理由を指定する次のうち 1 つ以上の値です。 <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**失敗しました**</li></ul>      |  〇     |     |    X     |       
 |  storeProductId   |  string   |  この広告キャンペーンが関連付けられているアプリの[ストア ID](in-app-purchases-and-trials.md#store-ids) です。 製品のストア ID の例は、9nblggh42cfd です。     |   〇    |      |  〇     |       
 |  labels   |  array   |   キャンペーンのカスタム ラベルを表す 1 つ以上の文字列です。 これらのラベルは、キャンペーンの検索とタグ付けに使われます。    |   X    |  null    |    X     |       

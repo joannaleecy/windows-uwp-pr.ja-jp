@@ -128,7 +128,7 @@ GPS を使うと最も正確な位置情報が得られますが、ジオフェ�
 
 
 * [ジオフェンスのセットアップ](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [現在の場所を取得します。](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [現在の場所を取得します](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [UWP の場所のサンプル (地理的位置情報)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 

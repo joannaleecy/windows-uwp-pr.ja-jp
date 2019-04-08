@@ -24,7 +24,7 @@ UWP アプリの支払い要求 API がに基づいて、 [W3C 支払い要求�
 支払いの要求の API は、米国の州のトランザクションの処理に米国の企業でのみ使用できます。
 
 ## <a name="using-the-payment-request-api-in-your-app-step-by-step"></a>アプリで、支払いの要求の API の使用: ステップ バイ ステップ
-このセクションで使用する方法を示す、 [UWP 支払い要求 API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)アプリ。 わかりやすくする最も単純な形式でここで API を使用しています。 これらの Api のより高度な用途の例は、、 [github アプリのサンプルを UWP ショッピング](https://github.com/Microsoft/Windows-appsample-shopping)を参照してください。
+このセクションで使用する方法を示す、 [UWP 支払い要求 API](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.payments)アプリ。 わかりやすくする最も単純な形式でここで API を使用しています。 これらの Api のより高度な用途の例は、次を参照してください。、 [github アプリのサンプルを UWP ショッピング](https://github.com/Microsoft/Windows-appsample-shopping)します。
 
 ### <a name="1-create-a-set-of-all-the-payment-options-that-you-accept"></a>1. そのまま使用するすべてのお支払い方法のセットを作成します。
 > [!Note]

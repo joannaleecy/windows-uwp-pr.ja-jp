@@ -25,7 +25,7 @@ ms.locfileid: "57613667"
 
 ![ヒント](images/controls/tool-tip.png)
 
-> **重要な Api**:[ツールヒント クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、 [ToolTipService クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **重要な API**:[ツールヒント クラス](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、 [ToolTipService クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>適切なコントロールの選択
 
@@ -63,8 +63,8 @@ ms.locfileid: "57613667"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ToolTip">アプリを開き、ToolTip の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -96,7 +96,7 @@ toolTip.Content = "Click to submit";
 ToolTipService.SetToolTip(submitButton, toolTip);
 ```
 
-### <a name="content"></a>コンテンツ
+### <a name="content"></a>Content
 
 任意のオブジェクトを ToolTip の[コンテンツ](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)として使用できます。 ToolTip で[イメージ](/uwp/api/windows.ui.xaml.controls.image)を使用する例を次に示します。
 

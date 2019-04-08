@@ -296,7 +296,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> パネルの動作方法の詳細については、[XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)を参照してください。
+> パネルの動作方法の詳細については、次を参照してください。 [XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)します。
 
 ## <a name="related-topics"></a>関連トピック
 

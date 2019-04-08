@@ -7,7 +7,7 @@ keywords: Windows 10、uwp、標準、c++、cpp、winrt、プロジェクショ�
 ms.localizationpriority: medium
 ms.openlocfilehash: a33a52cd8c18b312dc9e020a4c4ba518c33b0dd9
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57639947"
@@ -39,7 +39,7 @@ namespace ABI::Windows::Foundation
 }
 ```
 
-**IUriRuntimeClass** は COM インターフェイスです。 ただしそれ以上に、ベースは **IInspectable** のため、**IUriRuntimeClass** は Windows ランタイム インターフェイスです。 **HRESULT** は例外よりも型を返します。 **HSTRING** ハンドルなどのアーティファクトを使用します (完了したら、このハンドルを `nullptr` に戻すように設定することをお勧めします)。 これにより、アプリケーション バイナリ レベル、つまり、COM プログラミング レベルで Windows ランタイムの内容を把握できます。
+**IUriRuntimeClass** は COM インターフェイスです。 超える&mdash;ベースなので**IInspectable**&mdash;**IUriRuntimeClass**は Windows ランタイム インターフェイスです。 **HRESULT** は例外よりも型を返します。 **HSTRING** ハンドルなどのアーティファクトを使用します (完了したら、このハンドルを `nullptr` に戻すように設定することをお勧めします)。 これにより、アプリケーション バイナリ レベル、つまり、COM プログラミング レベルで Windows ランタイムの内容を把握できます。
 
 Windows ランタイムはコンポーネント オブジェクト モデル (COM) API に基づいています。 この方法で Windows ランタイムにアクセスするか、*言語プロジェクション*を介してアクセスすることができます。 プロジェクションは、COM の詳細を隠し、特定の言語により自然なプログラミング エクスペリエンスを提供します。
 

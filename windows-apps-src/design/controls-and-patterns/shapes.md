@@ -17,7 +17,7 @@ ms.locfileid: "57610677"
 
 楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 [  **Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。
 
-> **重要な Api**:[Path クラス](/uwp/api/Windows.UI.Xaml.Shapes.Path)、 [Windows.UI.Xaml.Shapes 名前空間](/uwp/api/Windows.UI.Xaml.Shapes)、 [Windows.UI.Xaml.Media 名前空間](/uwp/api/Windows.UI.Xaml.Media)
+> **重要な API**:[Path クラス](/uwp/api/Windows.UI.Xaml.Shapes.Path)、 [Windows.UI.Xaml.Shapes 名前空間](/uwp/api/Windows.UI.Xaml.Shapes)、 [Windows.UI.Xaml.Media 名前空間](/uwp/api/Windows.UI.Xaml.Media)
 
 
 2 つのクラスは、XAML UI の領域の領域を定義します。[**図形**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)クラスと[ **Geometry** ](/uwp/api/Windows.UI.Xaml.Media.Geometry)クラス。 これらのクラス間の主な違いは、**Shape** にはブラシが関連付けられ、画面にレンダリングできますが、**Geometry** は単に空間領域を定義するだけで、レンダリングはされない (ただし、別の UI プロパティに情報を提供する働きはある) という点です。 **Shape** は、**Geometry** で境界線が定義される [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) と考えることができます。 このトピックでは、主に **Shape** クラスについて説明します。

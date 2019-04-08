@@ -36,7 +36,7 @@ ms.locfileid: "57636067"
 -   一方向のモードを使用してバインドすることが、 [ **ListView** ](https://msdn.microsoft.com/library/windows/apps/BR242878)新聞のセクションでグループ化されたリアルタイムのニュース記事のコレクションにします。
 -   双方向のモードを使用してバインドすることが、 [ **TextBox** ](https://msdn.microsoft.com/library/windows/apps/BR209683)フォームで顧客の名前にします。
 
-モードに依存しない、バインディングの 2 種類がありますし、どちらも通常宣言される UI のマークアップでします。 [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選択できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {X:bind} の Windows 10 の新機能があり、パフォーマンスが向上します。 このトピックで説明されているすべての詳細は、特に明記していない限り、両方の種類のバインディングに適用されます。
+モードに依存しない、バインディングの 2 種類がありますし、どちらも通常宣言される UI のマークアップでします。 [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)と [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)のいずれを使うかを選択できます。 また、同じアプリや同じ UI 要素で、この 2 つを組み合わせて使うこともできます。 {x:Bind} は Windows 10 の新機能で、パフォーマンスが向上しています。 このトピックで説明されているすべての詳細は、特に明記していない限り、両方の種類のバインディングに適用されます。
 
 **{X:bind} を示すサンプル アプリ**
 
@@ -786,7 +786,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 ## <a name="xbind-and-binding-feature-comparison"></a>{x:Bind} と {Binding} の機能の比較
 
-| 機能 | {x:Bind} | {Binding} | 説明 |
+| 機能 | {x:Bind} | {Binding} | メモ |
 |---------|----------|-----------|-------|
 | Path が既定のプロパティである | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
 | Path プロパティ | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | x:Bind では、Path は既定で DataContext ではなく、Page をルートにします。 | 

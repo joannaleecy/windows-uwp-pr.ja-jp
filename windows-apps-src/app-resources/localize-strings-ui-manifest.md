@@ -44,7 +44,7 @@ ms.locfileid: "57630137"
 
     この例では、"Farewell" という名前の単純な文字列リソース識別子エントリがあるため、同じ識別子に基づくプロパティ識別子*も*指定することはできません。 そのため、"Farewell.Text" を追加すると、`Resources.resw` をビルドするときに、重複したエントリのエラーが出力されます。
 
-    リソース識別子は大文字と小文字が区別されません。リソース識別子は、リソース ファイルごとに一意でなければなりません。 翻訳者に付加的なコンテキストを提供するために、必ず意味のあるリソース識別子を使ってください。 また、文字列リソースが翻訳に回された後は、リソース識別子を変更しないでください。 ローカライズ チームは、リソース識別子を使ってリソース内の追加、削除、更新を追跡します。 リソース識別子の変更 ("リソース識別子のシフト" とも呼ばれる) を行うと、文字列が削除されて他の文字列が追加されたような表示状態になります。このため、リソース識別子を変更した場合は、文字列を翻訳し直す必要があります。
+    リソース識別子は大文字と小文字が区別されません。リソース識別子は、リソース ファイルごとに一意でなければなりません。 翻訳者に付加的なコンテキストを提供するために、必ず意味のあるリソース識別子を使ってください。 また、文字列リソースが翻訳に回された後は、リソース識別子を変更しないでください。 ローカライズ チームは、リソース識別子を使ってリソース内の追加、削除、更新を追跡します。 リソース識別子で変更&mdash;「リソース識別子シフト」であるとも呼ばれます&mdash;文字列が削除されたものとして表示されるため、数値を文字列とその他のユーザーを追加が必要です。
 
 ## <a name="refer-to-a-string-resource-identifier-from-xaml-markup"></a>XAML マークアップから文字列リソース識別子を参照する
 [x:Uid ディレクティブ](../xaml-platform/x-uid-directive.md)を使用して、マークアップ内のコントロールやその他の要素を文字列リソース識別子に関連付けます。
@@ -132,7 +132,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
 
 ## <a name="test-your-app"></a>アプリのテスト
-既定の表示言語に対してアプリをテストします。 **[設定]** > **[時刻と言語]** > **[地域と言語]** > **[言語]** で表示言語を変更し、アプリを再テストできます。 UI やシェルの文字列 (タイトル バー (表示名) やタイルの短い名前など) を確認します。
+既定の表示言語に対してアプリをテストします。 **[設定]** > **[時刻と言語]** > **[地域と言語]** > **[言語]** で表示言語を変更し、アプリを再テストできます。 文字列、UI とシェルを見て (、タイトル バーなど&mdash;表示名である&mdash;とタイルの短い名前)。
 
 **注** 表示言語の設定に一致するフォルダー名が見つかった場合、そのフォルダー内のリソース ファイルが読み込まれます。 それ以外の場合、フォールバックが行われ、最終的にはアプリの既定の言語用のリソースになります。
 
@@ -184,7 +184,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="load-a-string-for-a-specific-language-or-other-context"></a>特定の言語または他のコンテキスト用の文字列を読み込む
-既定の [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) ([**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) から取得された) には、既定の実行時コンテキスト (つまり、現在のユーザーとコンピューターの設定) を表す、各修飾子名の修飾子の値が含まれています。 リソース ファイル (.resw) は、(その名前に含まれる修飾子に基づいて) 実行時コンテキストでの修飾子の値と比較されます。
+既定の [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) ([**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.GetForCurrentView) から取得された) には、既定の実行時コンテキスト (つまり、現在のユーザーとコンピューターの設定) を表す、各修飾子名の修飾子の値が含まれています。 リソース ファイル (.resw) が一致する&mdash;、名前に修飾子に基づいて&mdash;ランタイム コンテキストでの修飾子の値と比較します。
 
 ただし、アプリでシステム設定を上書きし、読み込むリソース ファイルを検索するときに使用する言語、スケール、その他の修飾子の値を明示的に指定することが必要になる場合があります。 たとえば、ユーザーがヒントやエラー メッセージに別の言語を選ぶことができるように設定できます。
 

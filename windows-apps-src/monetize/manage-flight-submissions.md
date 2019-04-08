@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, フライトの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57662727"
@@ -66,7 +66,7 @@ Microsoft Store 申請 API には、段階的なパッケージのロールア�
 <td align="left"><a href="commit-a-flight-submission.md">新しいまたは更新されたパッケージのフライト送信をコミットします。</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">Del</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}</td>
 <td align="left"><a href="delete-a-flight-submission.md">パッケージのフライトの送信を削除します。</a></td>
 </tr>
@@ -255,7 +255,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value      | 種類   | 説明              |
+| 値      | 種類   | 説明              |
 |------------|--------|------------------------------|
 | id            | string  | 申請の ID です。  |
 | flightId           | string  |  申請が関連付けられているパッケージ フライトの ID です。  |  
@@ -287,7 +287,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、申請に関連するエラーや警告についての追加情報が保持されます。 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明       |
+| 値           | 種類    | 説明       |
 |-----------------|---------|------|
 |  code               |    string     |   エラーや警告の種類を説明する[申請ステータス コード](#submission-status-code)です。 |  
 |  details               |     string    |  問題についての詳細が含まれるメッセージです。     |
@@ -369,7 +369,7 @@ Microsoft Store 申請 API を直接呼び出す代わりに、API の上にコ�
 
 このリソースには、次の値があります。
 
-| Value           | 種類    | 説明        |
+| 値           | 種類    | 説明        |
 |-----------------|---------|------|
 | packageRollout   |   オブジェクト      |   申請の段階的なパッケージのロールアウトの設定が含まれた[パッケージのロールアウトのリソース](#package-rollout-object)です。    |  
 | isMandatoryUpdate    | boolean    |  この申請のパッケージを自己インストールのアプリの更新のために必須として扱うかどうかを指定します。 自己インストールのアプリの更新のために必須なパッケージについて詳しくは、「[アプリのパッケージの更新をダウンロードしてインストールする](../packaging/self-install-package-updates.md)」をご覧ください。    |  

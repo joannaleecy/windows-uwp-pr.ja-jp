@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57634647"
@@ -155,7 +155,7 @@ XAML フレームワークによって提供されるリソースのセットの
 |-------------------------------|--------------------------------|--------------------------|-----------------|
 | SystemColorButtonFaceColor    | **ボタン テキスト** (背景)   | 背景               | \#FFF0F0F0      |
 | SystemColorButtonTextColor    | **ボタン テキスト** (前景)   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **無効なテキスト**              | 無効                 | \#FF6D6D6D      |
+| SystemColorGrayTextColor      | **無効なテキスト**              | Disabled                 | \#FF6D6D6D      |
 | SystemColorHighlightColor     | **選択されたテキスト** (背景) | Highlight                | \#FF3399FF      |
 | SystemColorHighlightTextColor | **選択されたテキスト** (前景) | HighlightAlt             | \#FFFFFFFF      |
 | SystemColorHotlightColor      | **ハイパーリンク**                 | ハイパーリンク                | \#FF0066CC      |

@@ -31,15 +31,15 @@ ms.locfileid: "57653557"
 
 最新を Windows 10 のデバイスにインストールして確認します。 更新プログラムをインストールします。
 
-Visual Studio などの適切な IDE をインストールします。 Visual Studio Community 2017 では無償でダウンロードします。 詳細については、[Visual Studio のダウンロード](https://www.visualstudio.com/downloads/)を参照してください。
+Visual Studio などの適切な IDE をインストールします。 Visual Studio Community 2017 では無償でダウンロードします。 詳細については、次を参照してください。 [Visual Studio のダウンロード](https://www.visualstudio.com/downloads/)します。
 
 ゲーム エンジンとその他のミドルウェアを使用する場合は「[ブリッジ、ゲーム エンジン、およびミドルウェア](e2e.md#bridges-game-engines-and-middleware)セクション、 [Windows 10 ゲームの開発ガイド](e2e.md)します。 特定のゲーム エンジンを使用して Windows と Xbox のゲームの開発については、ゲーム エンジンのドキュメントに移動する必要があります。
 
 ### <a name="step-2-prepare-your-hardware-for-development"></a>手順 2:開発用にハードウェアを準備します。
 
-初めて開発を実行している場合は、デバイスで開発者モードを有効にする必要があります。 詳細については、[開発用にデバイスを有効にする](../get-started/enable-your-device-for-development.md)を参照してください。
+初めて開発を実行している場合は、デバイスで開発者モードを有効にする必要があります。 詳細については、次を参照してください。[開発用にデバイスを有効にする](../get-started/enable-your-device-for-development.md)します。
 
-ユーザーにとって、製品版の Xbox コンソールを使用して、Xbox ゲームを開発しようとしている、する必要もありますをアクティブ化し、これで開発者モードを有効にします。 詳細については、[Xbox 開発者モードは 1 つのアクティブ化](../xbox-apps/devkit-activation.md)と[Xbox で UWP アプリ開発入門](../xbox-apps/getting-started.md)を参照してください。 
+ユーザーにとって、製品版の Xbox コンソールを使用して、Xbox ゲームを開発しようとしている、する必要もありますをアクティブ化し、これで開発者モードを有効にします。 詳細については、次を参照してください。 [Xbox 開発者モードは 1 つのアクティブ化](../xbox-apps/devkit-activation.md)と[Xbox で UWP アプリ開発入門](../xbox-apps/getting-started.md)します。 
 
 > [!Note]
 > サインアップする必要があります、[パートナー センター](https://partner.microsoft.com/dashboard)アカウントを Xbox コンソールで開発者モードを有効にすることができます。 パートナー センター アカウントにサインアップする詳細については、次を参照してください。[手順 5](#step-5-sign-up-for-a-partner-center-account)以下。
@@ -54,7 +54,7 @@ UWP の DirectX の開発を開始するを参照してください。 [UWP の�
 
 Xbox ゲームを開発またはゲームの Xbox Live の機能を使用する場合は、いずれかの参加、 [Xbox Live クリエーターズ プログラム](https://developer.microsoft.com/games/xbox/xboxlive/creator)または[ ID@Xbox ](https://www.xbox.com/Developers/id)プログラム。 
 
-各プログラムに使用できる Xbox Live の機能の詳細については、[機能テーブル](../xbox-live/developer-program-overview.md#feature-table)を参照してください。 詳細については、[開発者プログラム](e2e.md#developer-programs)を参照してください。
+各プログラムに使用できる Xbox Live の機能の詳細については、次を参照してください。[機能テーブル](../xbox-live/developer-program-overview.md#feature-table)します。 詳細については、次を参照してください。[開発者プログラム](e2e.md#developer-programs)します。
 
 > [!Note]
 > Xbox Live クリエーターズ プログラムは、すべての開発者が利用できます。 **すべてのユーザー** Xbox ゲームを公開することができます。 Xbox Live クリエーターズ プログラムのタイトル部分をするためは、単に、パートナー センターからこのオプションを有効にする必要があります。 パートナー センター アカウントにサインアップする詳細については、次を参照してください。[手順 5](#step-5-sign-up-for-a-partner-center-account)以下。
@@ -67,7 +67,7 @@ Windows のゲーム開発のゲームに Xbox Live の機能を使用する場�
 
 Xbox のゲーム開発の必要がありますへのサインアップ、パートナー センター アカウントの開発、retail Xbox を設定する必要があるよう。 参照してください[手順 2.](#step-2-prepare-your-hardware-for-development)詳細についてはします。
 
-詳細については、[発行の Windows アプリやゲーム](../publish/index.md)を参照してください。
+詳細については、次を参照してください。[発行の Windows アプリやゲーム](../publish/index.md)します。
 
 ## <a name="useful-links"></a>役に立つリンク
 

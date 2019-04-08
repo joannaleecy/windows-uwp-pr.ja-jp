@@ -19,14 +19,14 @@ ms.locfileid: "57606257"
 
 長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
 
-> **重要な Api**:[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)、 [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
+> **重要な API**:[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)、 [ **ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 「[音声認識](speech-recognition.md)」では、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトの [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドまたは [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドを使って、比較的短い音声入力をキャプチャし、認識する方法について説明しました。たとえば、ショート メッセージ サービス (SMS) のメッセージを作成したり、質問したりする場合です。
 
 ディクテーションまたはメールなど、より長い継続的な音声認識セッションの場合は、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
 
 > [!NOTE]
-> 音声入力言語のサポートによって異なります、[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)アプリが実行されています。 Pc とラップトップの場合は、EN-US のみは認識、音声認識でサポートされているすべての言語を認識できる Xbox や携帯電話中に。 詳細については、[音声認識エンジンの言語を指定](specify-the-speech-recognizer-language.md)を参照してください。
+> 音声入力言語のサポートによって異なります、[デバイス](https://docs.microsoft.com/windows/uwp/design/devices/)アプリが実行されています。 Pc とラップトップの場合は、EN-US のみは認識、音声認識でサポートされているすべての言語を認識できる Xbox や携帯電話中に。 詳細については、次を参照してください。[音声認識エンジンの言語を指定](specify-the-speech-recognizer-language.md)します。
 
 ## <a name="set-up"></a>設定
 

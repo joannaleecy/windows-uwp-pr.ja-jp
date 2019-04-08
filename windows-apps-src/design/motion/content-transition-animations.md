@@ -23,7 +23,7 @@ ms.locfileid: "57649807"
 
 コンテンツ切り替えアニメーションを使うと、コンテナーや背景はそのままに、画面のある領域のコンテンツを変更できます。 新しいコンテンツはフェード インします。 既にあるコンテンツを差し替える場合、そのコンテンツはフェード アウトします。
 
-> **重要な Api**:[**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+> **重要な API**:[**ContentThemeTransition クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
 ## <a name="dos-and-donts"></a>推奨と非推奨
 

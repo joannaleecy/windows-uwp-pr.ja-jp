@@ -22,7 +22,7 @@ ms.locfileid: "57606127"
 
 **ヒント** アプリで位置情報にアクセスする方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](https://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
--   [ユニバーサル Windows プラットフォーム (UWP) のマップ サンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図のサンプル](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>位置情報機能を有効にする
 
@@ -481,6 +481,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>関連トピック
 
-* [UWP の地理的位置情報サンプル](https://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP の位置情報のサンプル](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Geofencing 機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [位置対応アプリのデザイン ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [位置認識アプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)

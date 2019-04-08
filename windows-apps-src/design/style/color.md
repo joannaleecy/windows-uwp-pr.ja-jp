@@ -54,7 +54,7 @@ UWP アプリでは、淡色または濃色のアプリケーション テーマ
 
 ![淡色テーマ](images/color/light-theme.svg)
 
-### <a name="dark-theme"></a>濃色テーマ
+### <a name="dark-theme"></a>ダーク テーマ
 
 ![濃色テーマ](images/color/dark-theme.svg)
 

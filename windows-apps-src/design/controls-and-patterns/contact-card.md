@@ -11,7 +11,7 @@ doc-status: not-published
 ms.localizationpriority: medium
 ms.openlocfilehash: 71a3108e21455086e2742987db1d7125c733f6e2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57638827"
@@ -20,7 +20,7 @@ ms.locfileid: "57638827"
 
 連絡先カードには、[Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) の名前、電話番号、住所などの連絡先情報が表示されます (個人や企業を表すためにメカニズム UWP によって使用される)。  連絡先カードを使用して、ユーザーは連絡先情報を編集することもできます。 コンパクトな連絡先カードを表示するか、追加の情報を含む完全な連絡先カードを表示することができます。
 
-> **重要な Api**:[ShowContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、 [ShowFullContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、 [IsShowContactCardSupported メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[クラスにお問い合わせください](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
+> **重要な API**:[ShowContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard)、 [ShowFullContactCard メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_)、 [IsShowContactCardSupported メソッド](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported)、[クラスにお問い合わせください](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)  
 
 連絡先カードを表示する方法は 2 つあります。  
 * 簡易非表示に対応したポップアップに表示される標準的な連絡先カード -- ユーザーが連作先カードの外部をクリックすると、連絡先カードは消えます。 

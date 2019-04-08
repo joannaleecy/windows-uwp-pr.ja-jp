@@ -26,7 +26,7 @@ ms.locfileid: "57661307"
 
 入れ子になった UI を使用することで、重要な操作をスムーズに行うことができるようになる追加のオプションをユーザーに提供できます。 ただし、公開する操作の数が増えるにつれて、UI は複雑になります。 この UI パターンの使用を決めた場合は十分に注意することが必要です。 この記事では、特定の UI に最適な一連の操作の判断に役立つガイドラインを提供します。
 
-> **重要な Api**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+> **重要な API**:[ListView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、 [GridView クラス](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 この記事では、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 項目および [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目の入れ子になった UI の作成について説明します。 このセクションでは、入れ子になった UI の他の例については取り上げませんが、これらの概念は他でも利用できます。 始める前に、UI における ListView コントロールまたは GridView コントロールの使用について、一般的なガイダンスを理解している必要があります。この一般的なガイダンスについては、「[リスト](lists.md)」と「[リスト ビューとグリッド ビュー](listview-and-gridview.md)」の記事をご覧ください。
 
@@ -123,7 +123,7 @@ UWP でサポートされているすべての入力にアプリが対応して�
 - リスト項目の左側の UI 要素では、右方向キーでフォーカスを **A** に設定します。
 - リスト項目の右側の UI 要素では、左方向キーでフォーカスを **A** に設定します。
 
-**キーボード**
+**[キーボード]**
 
 キーボードで入力された場合、ユーザー エクスペリエンスは次のようにします。
 
@@ -176,7 +176,7 @@ UWP でサポートされているすべての入力にアプリが対応して�
 - リスト項目では、A ボタンで、上/左下/右の優先順位で、入れ子になった UI にフォーカスを設定します。
 - 入れ子になた UI 内部では、XY フォーカス ナビゲーション モデルに従います。  ユーザーが B ボタンを押すまで、フォーカスが移動できる対象を現在のリスト項目内にある入れ子になった UI に限定します。B ボタンを押したら、リスト項目にフォーカスを戻します。
 
-**キーボード**
+**[キーボード]**
 
 キーボードで入力された場合、ユーザー エクスペリエンスは次のようにします。
 

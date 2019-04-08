@@ -278,7 +278,7 @@ DX::ThrowIfFailed(
 
 > [!NOTE]
 > 用語*ビュー* Direct3D の数よりも、Windows ランタイムで異なる意味を持ちます。 Windows ランタイムでは、ビューは、アプリのユーザー インターフェイス設定のコレクション (表示領域、入力動作、処理に使うスレッドなどを含む) を指します。 ビューを作成するときは、必要な構成と設定を指定します。 アプリのビューを設定するプロセスについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で説明します。
-> Direct3D では、ビューという用語には複数の意味があります。 リソース ビューでは、リソースにアクセスできるサブリソースを定義します。 たとえば、テクスチャ オブジェクトがシェーダー リソース ビューに関連付けられている場合、そのシェーダーは後でテクスチャにアクセスできます。 リソース ビューの 1 つの長所は、レンダリング パイプラインの段階ごとに異なる方法でデータを解釈できることです。 リソース ビューの詳細については、[リソース ビュー](https://msdn.microsoft.com/library/windows/desktop/ff476900#Views)を参照してください。
+> Direct3D では、ビューという用語には複数の意味があります。 リソース ビューでは、リソースにアクセスできるサブリソースを定義します。 たとえば、テクスチャ オブジェクトがシェーダー リソース ビューに関連付けられている場合、そのシェーダーは後でテクスチャにアクセスできます。 リソース ビューの 1 つの長所は、レンダリング パイプラインの段階ごとに異なる方法でデータを解釈できることです。 リソース ビューの詳細については、次を参照してください。[リソース ビュー](https://msdn.microsoft.com/library/windows/desktop/ff476900#Views)します。
 > ビュー変換またはビュー変換マトリックスのコンテキストで使われた場合、ビューは、カメラの位置と向きを表します。 ビュー変換は、カメラの位置と向きを基準として、ワールド内でオブジェクトを再配置します。 ビュー変換について詳しくは、「[ビュー変換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)」をご覧ください。 Marble Maze でリソース ビューやマトリックス ビューをどのように使っているかについて、このトピックで詳しく説明しています。
 
  
@@ -337,7 +337,7 @@ protected:
 UI 要素の共通基底クラスを提供することで、ユーザー インターフェイスを管理する **UserInterface** クラスが行う必要があるのは、**ElementBase** オブジェクトのコレクションの保持のみになります。これにより、UI の管理が簡略化され、再利用可能なユーザー インターフェイス マネージャーが提供されます。 Marble Maze では、ゲーム固有の動作を実装する型を **ElementBase** から派生させて定義します。 たとえば、**HighScoreTable** は、ハイ スコア表の動作を定義します。 これらの型について詳しくは、ソース コードをご覧ください。
 
 > [!NOTE]
-> XAML では、シミュレーションと戦略ゲームなどに見られるよう、複雑なユーザー インターフェイスをより簡単に作成することができますので、次の XAML を使用して、UI を定義するかどうかを検討してください。 XAML での DirectX の UWP ゲームでのユーザー インターフェイスを開発する方法については、[ゲームのサンプルを拡張](tutorial-resources.md)、これは DirectX 3D のゲームのサンプルの撮影を指を参照してください。
+> XAML では、シミュレーションと戦略ゲームなどに見られるよう、複雑なユーザー インターフェイスをより簡単に作成することができますので、次の XAML を使用して、UI を定義するかどうかを検討してください。 XAML での DirectX の UWP ゲームでのユーザー インターフェイスを開発する方法については、次を参照してください。[ゲームのサンプルを拡張](tutorial-resources.md)、これは DirectX 3D のゲームのサンプルの撮影を指します。
 
  
 
@@ -484,7 +484,7 @@ sPSInput main(sVSInput input)
 
  
 
-入力アセンブリ ステージの詳細については、[入力アセンブラー ステージ](https://msdn.microsoft.com/library/windows/desktop/bb205116)と[入力アセンブラー ステージの概要](https://msdn.microsoft.com/library/windows/desktop/bb205117)を参照してください。
+入力アセンブリ ステージの詳細については、次を参照してください。[入力アセンブラー ステージ](https://msdn.microsoft.com/library/windows/desktop/bb205116)と[入力アセンブラー ステージの概要](https://msdn.microsoft.com/library/windows/desktop/bb205117)します。
 
 頂点シェーダーとピクセル シェーダーを使ってシーンをレンダリングするプロセスについては、このドキュメントの「[シーンのレンダリング](#rendering-the-scene)」で説明しています。
 
@@ -550,7 +550,7 @@ cbuffer ConstantBuffer : register(b0)
 
 **ConstantBuffer** 構造体のレイアウトは、**cbuffer** オブジェクトと一致します。 **cbuffer** 変数は、レジスタ b0 を指定します。つまり、定数バッファー データがレジスタ 0 に格納されます。 **MarbleMazeMain::Render**メソッドは、定数バッファーを起動したときのレジスタ 0 を指定します。 このプロセスについては、このドキュメントの後の方で詳しく説明します。
 
-定数バッファーについて詳しくは、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」をご覧ください。 Register キーワードの詳細については、[登録](https://msdn.microsoft.com/library/windows/desktop/dd607359)を参照してください。
+定数バッファーについて詳しくは、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」をご覧ください。 Register キーワードの詳細については、次を参照してください。[登録](https://msdn.microsoft.com/library/windows/desktop/dd607359)します。
 
 ###  <a name="loading-meshes"></a>メッシュの読み込み
 

@@ -163,8 +163,8 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 
 バックグラウンド タスクは、イベントとローカル ストレージを使って進行状況、完了、キャンセルをアプリに報告できます。 アプリは、バックグラウンド タスクがスローした例外をキャッチしたり、アプリの更新中にバックグラウンド タスクの登録を行うこともできます。 詳しくは、次のトピックをご覧ください。
 
-[取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)  
-[バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
+[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)  
+[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 
 アプリの起動中に、バックグラウンド タスクの登録を確認します。 アプリのグループ化されていないバックグラウンド タスクが BackgroundTaskBuilder.AllTasks に存在することを確認します。 存在しないものを再登録します。 不要になったタスクの登録を解除します。 これにより、アプリを起動するたびに、すべてのバックグラウンド タスクの登録が最新の状態になります。
 
@@ -177,23 +177,23 @@ Windows 10 バージョン 1607 では、バックグラウンド タスクを�
 **関連するバック グラウンド タスクのガイダンス**
 
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [アクセスのセンサーやバック グラウンド タスクからのデバイス](access-sensors-and-devices-from-a-background-task.md)
-* [作成して、プロセス内のバック グラウンド タスクの登録](create-and-register-an-inproc-background-task.md)
-* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
+* [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
 * [プロセス内のバック グラウンド タスクに、プロセス外のバック グラウンド タスクを変換します。](convert-out-of-process-background-task.md)
-* [バック グラウンド タスクをデバッグします。](debug-a-background-task.md)
-* [アプリケーション マニフェストでバック グラウンド タスクを宣言します。](declare-background-tasks-in-the-application-manifest.md)
-* [グループのバック グラウンド タスクの登録](group-background-tasks.md)
-* [取り消されたバック グラウンド タスクを処理します。](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [バックグラウンド タスクの登録のグループ化](group-background-tasks.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
 * [トリガーする方法を中断、再開、および (デバッグ) 場合は、UWP アプリでイベントをバック グラウンド](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
-* [バック グラウンド タスクの進行状況と完了を監視します。](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 * [バック グラウンドでメディアを再生します。](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
-* [バック グラウンド タスクを登録します。](register-a-background-task.md)
-* [バック グラウンド タスクでシステム イベントに応答します。](respond-to-system-events-with-background-tasks.md)
-* [タイマーでバック グラウンド タスクを実行します。](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
 * [UWP アプリが更新されたときに、バック グラウンド タスクを実行します。](run-a-background-task-during-updatetask.md)
-* [バック グラウンドで無期限に実行します。](run-in-the-background-indefinetly.md)
-* [バック グラウンド タスクを実行するための条件を設定します。](set-conditions-for-running-a-background-task.md)
+* [バックグラウンドで無期限に実行する](run-in-the-background-indefinetly.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
 * [アプリからバック グラウンド タスクをトリガーします。](trigger-background-task-from-app.md)
-* [バック グラウンド タスクからのライブ タイルを更新します。](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーを使用します。](use-a-maintenance-trigger.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)

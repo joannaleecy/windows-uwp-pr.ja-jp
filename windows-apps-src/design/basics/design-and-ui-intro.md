@@ -162,7 +162,7 @@ UWP コントロールとコントロールに基づいて作成できるパタ�
 
 - [設計ツールキットのページ](../downloads/index.md)をご覧ください。XD、Illustrator、Photoshop、Framer、Sketch の各ツールキット、および追加の設計ツールやフォントのダウンロードが提供されています。
 
-- コンピューターを設定して UWP アプリのコードを記述できるようにするには、「[作業の開始と準備](../../get-started/get-set-up.md)」の記事をご覧ください。
+- UWP アプリのコードを記述するように設定するコンピューターを取得するを参照してください。、[開始&gt;設定](../../get-started/get-set-up.md)記事。
 
 - UWP の UI を実装する方法については、エンド ツー エンドの「[サンプル UWP アプリ](https://developer.microsoft.com/windows/samples)」をご覧ください。
 

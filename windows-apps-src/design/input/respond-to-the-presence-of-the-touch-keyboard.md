@@ -46,7 +46,7 @@ ms.locfileid: "57658297"
 
 **ユーザー エクスペリエンス ガイドライン:**
 
-キーボード入力用に最適化された、便利で魅力的なアプリの設計に関する役立つヒントを[の相互作用をキーボード](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)を参照してください。
+キーボード入力用に最適化された、便利で魅力的なアプリの設計に関する役立つヒントを次を参照してください。[の相互作用をキーボード](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)します。
 
 ## <a name="touch-keyboard-and-a-custom-ui"></a>タッチ キーボードとカスタム UI
 

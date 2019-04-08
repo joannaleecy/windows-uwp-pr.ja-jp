@@ -55,13 +55,13 @@ Windows 10 の[ツールと SDK をインストール](https://go.microsoft.com/
 
 ### <a name="app-installer-files-in-visual-studio"></a>Visual Studio でアプリのインストーラー ファイル
 
-アプリのインストーラー ファイルは、Visual Studio 2017 を更新 15.7 で今すぐ作成できます。 [Visual Studio を使用して、アプリのインストーラー ファイルを作成する方法について説明します](../packaging/create-appinstallerfile-vs.md)アプリへの自動更新を有効にします。 問題に実行する場合は、[アプリのインストーラー ファイルのインストールの問題のトラブルシューティング](../packaging/troubleshoot-appinstaller-issues.md)一般的な問題とソリューションを表示を参照してください。
+アプリのインストーラー ファイルは、Visual Studio 2017 を更新 15.7 で今すぐ作成できます。 [Visual Studio を使用して、アプリのインストーラー ファイルを作成する方法について説明します](../packaging/create-appinstallerfile-vs.md)アプリへの自動更新を有効にします。 問題に実行する場合は、次を参照してください。[アプリのインストーラー ファイルのインストールの問題のトラブルシューティング](../packaging/troubleshoot-appinstaller-issues.md)一般的な問題とソリューションを表示します。
 
 ### <a name="edge-webview-control-for-windows-forms-and-wpf-applications"></a>Windows フォームおよび WPF アプリケーションの WebView コントロールをエッジします。
 
 以前は UWP アプリケーションにのみ使用、WebView コントロールを使用して、デスクトップ アプリケーションで web コンテンツを表示します。 このコントロールは、リモート web サーバー、動的に生成されたコード、またはコンテンツ ファイルからコンテンツを埋め込むレンダリングは、HTML を表現力豊かな書式設定されたビュー エンジンをレンダリングする Microsoft Edge を使用します。 最新のリリースでは、WebView コントロールを検索、 [Windows コミュニティ ツールキット。](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)
 
-Web ビューは、Windows の Community Toolkit の今後のリリースと同様に、その他のコントロールを探します。 詳細については、[WPF と Windows フォーム アプリケーションでホスト UWP を制御を参照してください。](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+Web ビューは、Windows の Community Toolkit の今後のリリースと同様に、その他のコントロールを探します。 詳細については、次を参照してください。 [WPF と Windows フォーム アプリケーションでホスト UWP を制御します。](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="gaze-input-and-interactions"></a>視線入力との相互作用
 
@@ -77,7 +77,7 @@ Microsoft Build 2018 conference で発表された、MSIX は、Win32、Windows 
 
 これらのパッケージを作成するツールは、Visual Studio と Windows SDK の将来のリリースで使用できるになります。
 
-MSIX パッケージの形式は、簡単で、ツールやソリューション MSIX エコシステムをサポートするために、パートナーのオープン ソース形式です。 MSIX のパッケージ形式の詳細については、[MSIX SDK](https://github.com/Microsoft/msix-packaging)を参照してください。 
+MSIX パッケージの形式は、簡単で、ツールやソリューション MSIX エコシステムをサポートするために、パートナーのオープン ソース形式です。 MSIX のパッケージ形式の詳細については、次を参照してください。 [MSIX SDK](https://github.com/Microsoft/msix-packaging)します。 
 
 ![MSIX パッケージのイメージ](images/msix.png)
 

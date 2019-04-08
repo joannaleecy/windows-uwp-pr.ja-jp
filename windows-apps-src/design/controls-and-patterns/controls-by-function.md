@@ -28,8 +28,8 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 <td>
     <p>ある場合、 <strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong>アプリをインストールするには、ここをクリックして<a href="xamlcontrolsgallery:/item/NavigationView">アプリを開き、NavigationView の動作を参照してください。</a> </p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>
@@ -286,7 +286,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 参照 :[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、 [MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、 [MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、 [ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-設計と操作方法:[メニューおよびコンテキスト メニュー](menus.md) 
+設計と操作方法:[メニューとショートカット メニュー](menus.md) 
 
 サンプル コード:[XAML のコンテキスト メニューのサンプル](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -313,14 +313,14 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ## <a name="images"></a>イメージ
 
-### <a name="image"></a>Image
+### <a name="image"></a>イメージ
 画像を表示するコントロール。
 
 ```xaml
 <Image Source="Assets/Logo.png" />
 ```
 
-参照 :[画像](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
+参照 :[イメージ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
 
 設計と操作方法:[イメージと ImageBrush](images-imagebrushes.md) 
 
@@ -785,7 +785,7 @@ Web コンテンツをホストするコンテナー コントロール。
 </ListBox>
 ```
 
-参照 :[ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+参照 :[リスト ボックス](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
 設計と操作方法:[リスト](lists.md) 
 

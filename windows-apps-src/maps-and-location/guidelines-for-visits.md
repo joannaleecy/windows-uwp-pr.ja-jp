@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 これで、アプリはビジット処理のバックグラウンド タスクを登録できるようになります。また、このタスクはビジット関連の状態変化がデバイスによってログ記録されるたびにアクティブ化されます。 この状態変化情報に対する処理を決定するには、バックグラウンド タスク クラスにロジックを指定する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
-* [作成して、プロセス外のバック グラウンド タスクの登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [アウトプロセス バックグラウンド タスクの作成と登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [ユーザーの位置情報の取得](get-location.md)
 * [Windows.Devices.Geolocation 名前空間](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

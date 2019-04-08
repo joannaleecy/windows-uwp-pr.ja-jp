@@ -71,10 +71,10 @@ PlayReady DRM に、次の新しいインターフェイス、クラス、列挙
 
 -   [**IPlayReadyLicenseAcquisitionServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986077)インターフェイス
 -   [**IPlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986080)インターフェイス
--   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
+-   [**IPlayReadySecureStopServiceRequest** ](https://msdn.microsoft.com/library/windows/apps/dn986090)インターフェイス
 -   [**PlayReadyLicenseSession** ](https://msdn.microsoft.com/library/windows/apps/dn986309)クラス
--   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) class
--   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
+-   [**PlayReadySecureStopIterable** ](https://msdn.microsoft.com/library/windows/apps/dn986371)クラス
+-   [**PlayReadySecureStopIterator** ](https://msdn.microsoft.com/library/windows/apps/dn986375)クラス
 -   [**PlayReadyHardwareDRMFeatures** ](https://msdn.microsoft.com/library/windows/apps/dn986265)列挙子
 
 PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 サンプルは、[https://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](https://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
@@ -87,7 +87,7 @@ PlayReady DRM の新機能を利用する方法を示すために、新しいサ
 -   新しい PlayReady 3.0 機能 (ハードウェア ベースのクライアント用の SL3000、1 つのライセンス取得メッセージでの永続的でない複数のライセンスの取得、永続的でないライセンスでの時間ベースの制限を含みますが、これらに限定されません) を活用するには、PlayReady サーバーが、Microsoft PlayReady サーバー ソフトウェア開発キット v3.0.2769 リリース バージョン以降である必要があります。
 -   コンテンツ ライセンスで指定された、出力保護ポリシーによっては、接続されている出力がこれらの要件をサポートしていない場合、メディアの再生はエンド ユーザーに対して失敗する可能性があります。 次の表は、結果として発生する一般的なエラーを示しています。 詳しくは、「[PlayReady の適合性と信頼性規則](https://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
 
-| エラー                                                   | Value      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| エラー                                                   | 値      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | エラー\_グラフィックス\_OPM\_出力\_は\_いない\_サポート\_HDCP  | 0xC0262513 | ライセンスの出力保護ポリシーでは、モニターが HDCP をエンゲージする必要がありますが、HDCP をエンゲージできませんでした。                                                                                                                                                                                                                                                                                                                                                                                              |
 | MF\_E\_ポリシー\_サポートされていません                              | 0xC00D7159 | ライセンスの出力保護ポリシーでは、モニターが HDCP Type 1 をエンゲージする必要がありますが、HDCP Type 1 をエンゲージできませんでした。                                                                                                                                                                                                                                                                                                                                                                                |
@@ -447,7 +447,7 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  その再生セッションをライセンス取得クラスに結び付けます。 次に、例を示します。
+2.  その再生セッションをライセンス取得クラスに結び付けます。 例:
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();

@@ -108,8 +108,8 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
 | [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | 0   |
-| [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
-| [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**offsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
+| [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22...**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
+| [**offsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**offsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
  
 

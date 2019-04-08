@@ -62,7 +62,7 @@ Direct3D は、機能の 3 階層でストリーミング リソースをサポ�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>関連トピック
 
 
-[リソースのストリーミング](streaming-resources.md)
+[ストリーミング リソース](streaming-resources.md)
 
  
 

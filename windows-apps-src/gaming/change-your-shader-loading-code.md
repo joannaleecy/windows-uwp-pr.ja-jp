@@ -131,7 +131,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722), [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_ビューポート**](https://msdn.microsoft.com/library/windows/desktop/jj151722)、 [ **ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
@@ -157,7 +157,7 @@ Direct3D 11 のピクセル シェーダーの構成は、シェーダーの読�
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
+| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645)します。 |
 
  
 
@@ -190,7 +190,7 @@ GLSL と HLSL は、複合型のサポートと全体的な構文以外はそれ
 ## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>HLSL セマンティクスへの OpenGL 組み込みメソッドの移植
 
 
-Direct3D 11 HLSL セマンティクスは、uniform や属性名と同様に、アプリとシェーダー プログラムの間で渡される値を識別するために使われる文字列です。 使用できる文字列はさまざまですが、用途を示す文字列 (POSITION、COLOR など) を使うことをお勧めします。 これらのセマンティクスは、定数バッファーまたはバッファー入力レイアウトを構成する際に割り当てます。 類似する値に別のレジスタを使うために、セマンティクスに 0 ～ 7 の範囲の数値を追加できます。 次に、例を示します。COLOR0、COLOR1、COLOR2.
+Direct3D 11 HLSL セマンティクスは、uniform や属性名と同様に、アプリとシェーダー プログラムの間で渡される値を識別するために使われる文字列です。 使用できる文字列はさまざまですが、用途を示す文字列 (POSITION、COLOR など) を使うことをお勧めします。 これらのセマンティクスは、定数バッファーまたはバッファー入力レイアウトを構成する際に割り当てます。 類似する値に別のレジスタを使うために、セマンティクスに 0 ～ 7 の範囲の数値を追加できます。 例:COLOR0、COLOR1、COLOR2.
 
 セマンティクスが付いている"SV\_"システム値セマンティクスには、シェーダー プログラムでに書き込まれるは、アプリ自体 (CPU で実行されている) を変更ことはできません。 通常、これらには、グラフィックス パイプラインの別のシェーダー ステージからの入出力値のほか、GPU のみによって生成された値が含まれます。
 

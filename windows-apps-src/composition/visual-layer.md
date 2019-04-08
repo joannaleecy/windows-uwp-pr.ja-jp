@@ -36,7 +36,7 @@ Windows UWP アプリは、いずれかの UI フレームワークを介して�
 1. **効果**:リアルタイム UI 効果システムが効果をアニメーション化、連鎖してカスタマイズできます。
 1. **アニメーション**:UI スレッドから独立して実行されているアニメーションの表現力豊かな、フレームワークに依存しません。
 
-### <a name="content"></a>コンテンツ
+### <a name="content"></a>Content
 
 コンテンツは、ビジュアルを使用するアニメーションおよび効果システムで使用できるように、ホスト、変換、提供されます。 クラス階層の基底クラスは [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) クラスで、コンポジターでビジュアル状態を処理するアプリ プロセスにおける、軽量でスレッド アジャイルなプロキシです。 ビジュアルのサブ クラスが含まれます  [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)子のビジュアル ツリーを作成するために、 [ **SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433)ですコンテンツを含み、いずれかの純色、カスタムの描画コンテンツまたは視覚的効果を描画することができます。 また、これらの種類のビジュアルは 2D UI 用のビジュアル ツリー構造を構成し、多くの表示される XAML FrameworkElements を強化します。
 

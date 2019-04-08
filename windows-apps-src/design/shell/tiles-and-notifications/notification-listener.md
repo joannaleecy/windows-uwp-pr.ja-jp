@@ -23,7 +23,7 @@ ms.locfileid: "57649617"
 > **Anniversary Update が必要です**:SDK 14393 を対象にして、14393 以上通知リスナーを使用するビルドを実行します。
 
 
-> **重要な Api**:[UserNotificationListener クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、 [UserNotificationChangedTrigger クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要な API**:[UserNotificationListener クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、 [UserNotificationChangedTrigger クラス](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>ユーザー通知機能を追加して、リスナーを有効にする 

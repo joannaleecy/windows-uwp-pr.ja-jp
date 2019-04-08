@@ -24,7 +24,7 @@ ms.locfileid: "57654147"
 
 ラベルは、コントロールまたは関連するコントロールのグループの名前やタイトルです。
 
-> **重要な Api**:ヘッダーのプロパティ、 [TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **重要な API**:ヘッダーのプロパティ、 [TextBlock クラス](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 XAML では、多くのコントロールに組み込みの Header プロパティがあり、これを使ってラベルを表示します。 Header プロパティがないコントロールの場合、またはコントロールのグループにラベルを付ける場合は、代わりに [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) を使います。
 

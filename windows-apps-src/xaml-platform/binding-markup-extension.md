@@ -42,7 +42,7 @@ ms.locfileid: "57618507"
 |------|-------------|
 | *propertyPath* | バインドのプロパティ パスを指定する文字列。 詳しくは、以下の「[プロパティ パス](#property-path)」をご覧ください。 |
 | *bindingProperties* | *propname パラメーター*=*値*\[、 *propname パラメーター*=*値*\]*<br/>名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
-| *propName* | [  **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
+| *propname パラメーター* | [  **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 |
 | *値* | プロパティに設定する値。 引数の構文は、下記の「[{Binding} で設定できる Binding クラスのプロパティ](#properties-of-the-binding-class-that-can-be-set-with-binding)」セクションで示しているプロパティによって異なります。 |
 
 ## <a name="property-path"></a>プロパティ パス
@@ -71,9 +71,9 @@ ms.locfileid: "57618507"
 | [**パス**](https://msdn.microsoft.com/library/windows/apps/br209830) | 上記の「[プロパティ パス](#property-path)」をご覧ください。 |
 | [**コンバーター**](https://msdn.microsoft.com/library/windows/apps/br209826) | バインド エンジンによって呼び出されるコンバーター オブジェクトを指定します。 コンバーターは、[{StaticResource} マークアップ拡張](staticresource-markup-extension.md)を使ってリソース ディクショナリのそのオブジェクトを参照するマークアップで設定できます。 |
 | [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | コンバーターで使うカルチャを指定します  (設定している場合は、 [**コンバーター**](https://msdn.microsoft.com/library/windows/apps/br209826))。カルチャは、標準ベースの識別子として設定されます。 詳しくは、「[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)」をご覧ください。 |
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | コンバーター ロジックで使うことができるコンバーター パラメーターを指定します  (設定している場合は、 [**コンバーター**](https://msdn.microsoft.com/library/windows/apps/br209826))。ほとんどのコンバーターが変換すると、渡された値から必要なすべての情報を取得する単純なロジックを使用し、必要はありません、 **ConverterParameter**値。 **ConverterParameter** パラメーターは、**ConverterParameter** で渡された値を利用する条件付きロジックを持つ、より複雑なコンバーターを実装するために存在します。 また、文字列以外の値を使うコンバーターも作成できますが、一般的ではありません。詳しくは、「**ConverterParameter**」の「注釈」をご覧ください。 |
-| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | **Name** プロパティまたは [x:Name 属性](x-name-attribute.md) がある別の要素を同じ XAML コンストラクトで参照して、データ ソースを指定します。 通常は、関連する値を共有するか、1 つの UI 要素のサブプロパティを使って別の要素の特定の値を指定するために使われます (XAML コントロール テンプレートなどで)。 |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | ソースまたはパスを解決できない場合に表示する値を指定します。 |
+| [**converterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | コンバーター ロジックで使うことができるコンバーター パラメーターを指定します  (設定している場合は、 [**コンバーター**](https://msdn.microsoft.com/library/windows/apps/br209826))。ほとんどのコンバーターが変換すると、渡された値から必要なすべての情報を取得する単純なロジックを使用し、必要はありません、 **ConverterParameter**値。 **ConverterParameter** パラメーターは、**ConverterParameter** で渡された値を利用する条件付きロジックを持つ、より複雑なコンバーターを実装するために存在します。 また、文字列以外の値を使うコンバーターも作成できますが、一般的ではありません。詳しくは、「**ConverterParameter**」の「注釈」をご覧ください。 |
+| [**elementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | **Name** プロパティまたは [x:Name 属性](x-name-attribute.md) がある別の要素を同じ XAML コンストラクトで参照して、データ ソースを指定します。 通常は、関連する値を共有するか、1 つの UI 要素のサブプロパティを使って別の要素の特定の値を指定するために使われます (XAML コントロール テンプレートなどで)。 |
+| [**fallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | ソースまたはパスを解決できない場合に表示する値を指定します。 |
 | [**モード**](https://msdn.microsoft.com/library/windows/apps/br209829) | これらの値の 1 つとして、バインディング モードを指定します。"OneTime"、"OneWay"または"TwoWay"。 これらは、[**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列挙体の定数名に対応します。 既定は "OneWay" です。 これは、**{x:Bind}** の既定値 (OneTime) とは異なる点に注意してください。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | バインディング ターゲットの位置に対するバインド ソースの位置を記述することで、データ ソースを指定します。 これは、XAML コントロール テンプレート内のバインドで最もよく使われます。 [{RelativeSource} マークアップ拡張](relativesource-markup-extension.md) を設定します。 |
 | [**ソース**](https://msdn.microsoft.com/library/windows/apps/br209832) | オブジェクトのデータ ソースを指定します。 **Binding** マークアップ拡張では、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) プロパティに [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)参照などのオブジェクト参照を指定する必要があります。 このプロパティを指定しない場合、実行中のデータ コンテキストによりソースが指定されます。 個々のバインドで Source 値を指定する代わりに、複数のバインドで共有 **DataContext** を利用する方が一般的です。 詳しくは、「[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)」または「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」を参照してください。 |

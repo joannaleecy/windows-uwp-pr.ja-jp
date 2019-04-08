@@ -23,7 +23,7 @@ ms.locfileid: "57590687"
 
 視差は、アプリの閲覧者の近くにある項目を背景にある項目よりも速く動かすという視覚効果です。 視差によって、奥行き、遠近感、および動きといった感覚が引き起こされます。 UWP アプリでは、ParallaxView コントロールを使用して、視差効果を作成できます。  
 
-> **重要な Api**:[ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、 [VerticalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [HorizontalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
+> **重要な API**:[ParallaxView クラス](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview)、 [VerticalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift)、 [HorizontalShift プロパティ](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 
 ## <a name="examples"></a>例
 
@@ -34,8 +34,8 @@ ms.locfileid: "57590687"
 <td>
     <p><strong style="font-weight: semi-bold">XAML コントロール ギャラリー</strong> アプリがインストールされている場合、こちらをクリックして<a href="xamlcontrolsgallery:/item/ParallaxView">アプリを開き、ParallaxView の動作を確認</a>してください。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリ (Microsoft Store) を入手します。</a></li>
-    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を取得します。</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">XAML コントロール ギャラリー アプリを入手する (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">ソース コード (GitHub) を入手する</a></li>
     </ul>
 </td>
 </tr>

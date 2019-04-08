@@ -7,7 +7,7 @@ keywords: windows 10, uwp, 標準, c++, cpp, winrt, プロジェクション, �
 ms.localizationpriority: medium
 ms.openlocfilehash: e81f82fe823ee0fdf81741c89576adf268940d91
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57630747"
@@ -214,6 +214,6 @@ HRESULT __stdcall DllCanUnloadNow(void)
 * [winrt::Windows::Foundation::IUnknown 構造体](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>関連トピック
-* [概要 C +/cli WinRT](intro-to-using-cpp-with-winrt.md)
-* [移動する C +/cli WinRT C +/cli CX](move-to-winrt-from-cx.md)
+* [C++/WinRT の概要](intro-to-using-cpp-with-winrt.md)
+* [C++/CX から C++/WinRT への移行](move-to-winrt-from-cx.md)
 * [Windows ランタイム C++ テンプレート ライブラリ (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

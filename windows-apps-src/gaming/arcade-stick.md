@@ -166,7 +166,7 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 }
 ```
 
-場合によっては、ボタンが押された状態から離された状態への移行またはその逆方向への移行のタイミング、複数のボタンが押されているか離されているかの状態、または一連のボタンが特定のパターンの状態になっているかどうか (一部が押されていて、一部が押されていない) を特定する必要があります。 これらの状態を検出する方法について詳しくは、「[Detecting button transitions (ボタンの移行の検出)](input-practices-for-games.md#detecting-button-transitions)」および「[Detecting complex button arrangements (複雑なボタンのパターンの検出)](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
+たいことがありますから、ボタンが遷移するときに決定するリリースに押された状態または、複数のボタンが押された状態またはリリースされるかどうか、または特定の方法で一連のボタンが配置されている場合に押されたリリース&mdash;いくつか押すと、失敗します。 これらの状態を検出する方法について詳しくは、「[Detecting button transitions (ボタンの移行の検出)](input-practices-for-games.md#detecting-button-transitions)」および「[Detecting complex button arrangements (複雑なボタンのパターンの検出)](input-practices-for-games.md#detecting-complex-button-arrangements)」をご覧ください。
 
 ## <a name="run-the-inputinterfacing-sample"></a>InputInterfacing サンプルの実行
 

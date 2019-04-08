@@ -21,7 +21,7 @@ ms.locfileid: "57635177"
 
 ポップアップ アニメーションを使って、ポップアップ UI やカスタム ポップアップ UI 要素の表示と非表示を切り替えます。 ポップアップ要素とは、アプリのコンテンツの上に表示されるコンテナーのことで、ユーザーがポップアップ要素の外部をタップまたはクリックすると消えます。
 
-> **重要な Api**:[**PopInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210383)、 [ **PopupThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh969172)
+> **重要な API**:[**PopInThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210383)、 [ **PopupThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## <a name="dos-and-donts"></a>推奨と非推奨

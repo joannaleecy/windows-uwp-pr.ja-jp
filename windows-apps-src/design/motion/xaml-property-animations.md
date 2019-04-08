@@ -29,7 +29,7 @@ Windows 10、バージョンは 1809、以前は、UWP アプリでのアニメ�
 Windows 10、バージョンは 1809、以降のプロパティを基になる合成ビジュアルを取得する必要がなく、合成アニメーションを使用して直接 UIElement をアニメーション化できます。
 
 > [!NOTE]
-> UIElement にこれらのプロパティを使用するには、UWP プロジェクトのターゲット バージョンは 1809 以降にする必要があります。 プロジェクトのバージョンを構成する方法の詳細については、[バージョン アダプティブ アプリ](../../debug-test-perf/version-adaptive-apps.md)を参照してください。
+> UIElement にこれらのプロパティを使用するには、UWP プロジェクトのターゲット バージョンは 1809 以降にする必要があります。 プロジェクトのバージョンを構成する方法の詳細については、次を参照してください。[バージョン アダプティブ アプリ](../../debug-test-perf/version-adaptive-apps.md)します。
 
 ## <a name="new-rendering-properties-replace-old-rendering-properties"></a>新しいレンダリング プロパティは、古いレンダリング プロパティを置き換えます
 
@@ -39,11 +39,11 @@ Windows 10、バージョンは 1809、以降のプロパティを基になる�
 | -- | -- | -- |
 | [不透明度](/uwp/api/windows.ui.xaml.uielement.opacity) | Double | オブジェクトの不透明度 |
 | [翻訳](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 要素の X、Y、/Z 位置をシフトします。 |
-| [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 要素に適用する変換行列 |
+| [平行移動](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 要素に適用する変換行列 |
 | [スケール](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | スケール、要素中心点の中央に配置 |
 | [回転](/uwp/api/windows.ui.xaml.uielement.rotation) | Float | RotationAxis および中心点を中心、要素を回転させる |
 | [RotationAxis](/uwp/api/windows.ui.xaml.uielement.rotationaxis) | Vector3 | 回転の軸 |
-| [CenterPoint](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 拡大縮小や回転の中心点 |
+| [中心点](/uwp/api/windows.ui.xaml.uielement.centerpoint) | Vector3 | 拡大縮小や回転の中心点 |
 
 TransformMatrix プロパティの値は、次の順序でスケール、回転、および変換のプロパティと組み合わせます。Scale、Rotation、Translation と平行移動します。
 

@@ -16,9 +16,9 @@ ms.locfileid: "57649937"
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>Windows Phone Silverlight から UWP への移行します。
 
 
-場合は、開発者、Windows Phone Silverlight アプリである Windows 10 への移行で、スキル セットと、ソース コードの優れた使用を行うことができます。 Windows 10 で、ユニバーサル Windows プラットフォーム (UWP) アプリは、これは、顧客がすべての種類のデバイスにインストールできる 1 つのアプリ パッケージを作成できます。 Windows 10、UWP アプリ、およびアダプティブ コードとこの移植のガイドで説明アダプティブ UI の概念の詳細については、、[ユニバーサル Windows プラットフォーム (UWP) アプリに関するガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)を参照してください。
+場合は、開発者、Windows Phone Silverlight アプリである Windows 10 への移行で、スキル セットと、ソース コードの優れた使用を行うことができます。 Windows 10 で、ユニバーサル Windows プラットフォーム (UWP) アプリは、これは、顧客がすべての種類のデバイスにインストールできる 1 つのアプリ パッケージを作成できます。 Windows 10、UWP アプリ、およびアダプティブ コードとこの移植のガイドで説明アダプティブ UI の概念の詳細については、次を参照してください。、[ユニバーサル Windows プラットフォーム (UWP) アプリに関するガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)します。
 
-Windows 10 アプリを Windows Phone Silverlight アプリを移植するときに、遅れされてモバイル機能ができます[Windows Phone 8.1 で導入された](https://msdn.microsoft.com/library/windows/apps/dn632424)を画していますユニバーサル Windows プラットフォーム (UWP) を使用するようにアプリが、モデルと UI フレームワークは、すべての Windows 10 デバイスでユニバーサル。 これにより、1 つのコード ベースから、1 つのアプリ パッケージで、PC、タブレット、電話、その他の多くの種類のデバイスをサポートできます。 また、これによりアプリの潜在顧客が増加し、共有データ、購入コンシューマブルなどの可能性が高まります。 新機能に関する詳細については、[Windows 10 の開発者向け新機能については](https://dev.windows.com/getstarted/whats-new-windows-10)を参照してください。
+Windows 10 アプリを Windows Phone Silverlight アプリを移植するときに、遅れされてモバイル機能ができます[Windows Phone 8.1 で導入された](https://msdn.microsoft.com/library/windows/apps/dn632424)を画していますユニバーサル Windows プラットフォーム (UWP) を使用するようにアプリが、モデルと UI フレームワークは、すべての Windows 10 デバイスでユニバーサル。 これにより、1 つのコード ベースから、1 つのアプリ パッケージで、PC、タブレット、電話、その他の多くの種類のデバイスをサポートできます。 また、これによりアプリの潜在顧客が増加し、共有データ、購入コンシューマブルなどの可能性が高まります。 新機能に関する詳細については、次を参照してください。 [Windows 10 の開発者向け新機能については](https://dev.windows.com/getstarted/whats-new-windows-10)します。
 
 場合は、Windows Phone の Silverlight バージョンのアプリと Windows 10 バージョンの両方が使用可能顧客と同時にします。
 

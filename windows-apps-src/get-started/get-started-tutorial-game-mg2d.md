@@ -689,7 +689,7 @@ if (gameOver)
 
 ![ゲーム オーバー](images/monogame-tutorial-4.png)
 
-## <a name="publish-to-the-microsoft-store"></a>Microsoft Store への公開します。
+## <a name="publish-to-the-microsoft-store"></a>Microsoft Store への発行
 UWP アプリとしてこのゲームを構築したため、このプロジェクトを Microsoft Store に発行することができます。 このプロセスにはいくつかの手順が必要になります。
 
 Windows 開発者として[登録](https://developer.microsoft.com/en-us/store/register)する必要があります。
@@ -698,4 +698,4 @@ Windows 開発者として[登録](https://developer.microsoft.com/en-us/store/r
 
 [認定](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
 
-詳細については、[UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)を参照してください。
+詳細については、次を参照してください。 [UWP アプリの発行](https://developer.microsoft.com/en-us/store/publish-apps)します。

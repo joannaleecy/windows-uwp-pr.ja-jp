@@ -22,7 +22,7 @@ ms.locfileid: "57649057"
 
 この記事では、Segoe MDL2 アセット フォントによって提供されるアイコンの一覧を示します。 
 
-> **重要な Api**:[**列挙型のシンボル**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)、 [ **FontIcon クラス**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **重要な API**:[**列挙型のシンボル**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)、 [ **FontIcon クラス**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>Segoe MDL2 アセットについて
 
@@ -72,7 +72,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
 <table style="background-color: white; color: black">
 
  <tr>
-  <td>記号</td>
+  <td>シンボル</td>
   <td>Unicode ポイント</td>
   <td>説明</td>
  </tr>
@@ -370,7 +370,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
  </tr>
 <tr><td><img src="images/segoe-mdl/E74D.png" width="32" height="32" alt="Delete" /></td>
   <td>E74D</td>
-  <td>削除</td>
+  <td>DELETE</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74E.png" width="32" height="32" alt="Save" /></td>
   <td>E74E</td>
@@ -662,7 +662,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BA.png" width="32" height="32" alt="Warning" /></td>
   <td>E7BA</td>
-  <td>Warning</td>
+  <td>警告</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BC.png" width="32" height="32" alt="ReadingList" /></td>
   <td>E7BC</td>
@@ -5014,7 +5014,7 @@ Symbol 列挙値に含まれていない **Segoe MDL2 アセット** フォン�
  </tr>
 <tr><td><img src="images/segoe-mdl/F5ED.png" width="32" height="32" alt="Set" /></td>
   <td>F5ED</td>
-  <td>設定</td>
+  <td>Set</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/F5EE.png" width="32" height="32" alt="SetSolid" /></td>
   <td>F5EE</td>

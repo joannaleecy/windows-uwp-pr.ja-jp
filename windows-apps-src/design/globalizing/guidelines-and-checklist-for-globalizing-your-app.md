@@ -48,7 +48,7 @@ ms.locfileid: "57648247"
 * [ユーザー プロファイルの言語とアプリ マニフェストの言語を理解します。](manage-language-and-region.md)
 * [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [アプリのリソースとリソース管理システム](../../app-resources/index.md)
-* [リソース管理システムと言語タグがどのように一致しているか](../../app-resources/how-rms-matches-lang-tags.md)
+* [リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)
 * [レイアウトやフォントの調整と RTL のサポート](adjust-layout-and-fonts--and-support-rtl.md)
 * [国際対応フォント](loc-international-fonts.md)
 * [ローカライズ可能なアプリを作成します。](prepare-your-app-for-localization.md)

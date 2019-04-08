@@ -36,8 +36,8 @@ ms.locfileid: "57603187"
 
 ## <a name="related-topics"></a>関連トピック
 
-* [作成、編集、およびビットマップ イメージの保存](imaging.md)
-* [サポートされているコーデック](supported-codecs.md)
+* [ビットマップ画像の作成、編集、保存](imaging.md)
+* [サポートされるコーデック](supported-codecs.md)
 
  
 

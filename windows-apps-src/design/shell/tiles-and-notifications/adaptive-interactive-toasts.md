@@ -19,10 +19,10 @@ ms.locfileid: "57596827"
 
 アダプティブ トースト通知と対話型トースト通知を使うと、テキスト、画像、ボタンと入力を含む柔軟性のある通知を作成できます。
 
-> **重要な Api**:[UWP Community Toolkit の通知の nuget パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要な API**:[UWP Community Toolkit Notifications NuGet パッケージ](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> Windows 8.1 および Windows Phone 8.1 から従来のテンプレートを表示するには、、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)を参照してください。
+> Windows 8.1 および Windows Phone 8.1 から従来のテンプレートを表示するには、次を参照してください。、[レガシ トースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)します。
 
 
 ## <a name="getting-started"></a>概要
