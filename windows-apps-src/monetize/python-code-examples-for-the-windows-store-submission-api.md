@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, コード例, Python
 ms.localizationpriority: medium
 ms.openlocfilehash: 157c11484de150d363157e5b6e5de00a35bafd5f
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57634407"

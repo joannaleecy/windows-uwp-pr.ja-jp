@@ -14,19 +14,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57651067"
 ---
-# <a name="constant-buffer-view-cbv"></a><span data-ttu-id="29d9b-105">定数バッファー ビュー (CBV)</span><span class="sxs-lookup"><span data-stu-id="29d9b-105">Constant buffer view (CBV)</span></span>
+# <a name="constant-buffer-view-cbv"></a><span data-ttu-id="bd4e9-105">定数バッファー ビュー (CBV)</span><span class="sxs-lookup"><span data-stu-id="bd4e9-105">Constant buffer view (CBV)</span></span>
 
 
-<span data-ttu-id="29d9b-106">定数バッファーには、シェーダーの定数データが含まれます。</span><span class="sxs-lookup"><span data-stu-id="29d9b-106">Constant buffers contain shader constant data.</span></span> <span data-ttu-id="29d9b-107">それらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることです。</span><span class="sxs-lookup"><span data-stu-id="29d9b-107">The value of them is that the data persists, and can be accessed by any GPU shader, until it is necessary to change the data.</span></span>
+<span data-ttu-id="bd4e9-106">定数バッファーには、シェーダーの定数データが含まれます。</span><span class="sxs-lookup"><span data-stu-id="bd4e9-106">Constant buffers contain shader constant data.</span></span> <span data-ttu-id="bd4e9-107">それらの価値は、データを変更する必要があるまでデータが存続し、任意の GPU シェーダーからアクセスできることです。</span><span class="sxs-lookup"><span data-stu-id="bd4e9-107">The value of them is that the data persists, and can be accessed by any GPU shader, until it is necessary to change the data.</span></span>
 
-<span data-ttu-id="29d9b-108">定数バッファーの一般的なデータは、ワールド、プロジェクション、およびビュー マトリックスです。これらは、1 つのフレームの描画全体を通して一定のままです。</span><span class="sxs-lookup"><span data-stu-id="29d9b-108">Typical data for a constant buffer would be world, projection and view matrices, which remain constant throughout the drawing of one frame.</span></span>
+<span data-ttu-id="bd4e9-108">定数バッファーの一般的なデータは、ワールド、プロジェクション、およびビュー マトリックスです。これらは、1 つのフレームの描画全体を通して一定のままです。</span><span class="sxs-lookup"><span data-stu-id="bd4e9-108">Typical data for a constant buffer would be world, projection and view matrices, which remain constant throughout the drawing of one frame.</span></span>
 
-<span data-ttu-id="29d9b-109">定数バッファーのレイアウトは、HLSL レイアウトと一致する必要があります ([定数変数のパッキング規則](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="29d9b-109">Constant buffer layout should match the HLSL layout (refer to [Packing Rules for Constant Variables](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx)).</span></span>
+<span data-ttu-id="bd4e9-109">定数バッファーのレイアウトは、HLSL レイアウトと一致する必要があります ([定数変数のパッキング規則](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx)をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="bd4e9-109">Constant buffer layout should match the HLSL layout (refer to [Packing Rules for Constant Variables](https://msdn.microsoft.com/library/windows/desktop/bb509632.aspx)).</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="29d9b-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="29d9b-110"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="bd4e9-110"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="bd4e9-110"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="29d9b-111">表示モード</span><span class="sxs-lookup"><span data-stu-id="29d9b-111">Views</span></span>](views.md)
+[<span data-ttu-id="bd4e9-111">ビュー</span><span class="sxs-lookup"><span data-stu-id="bd4e9-111">Views</span></span>](views.md)
 
  
 

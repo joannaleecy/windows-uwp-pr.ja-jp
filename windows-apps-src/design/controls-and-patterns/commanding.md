@@ -8,7 +8,7 @@ ms.date: 11/01/2018
 ms.author: kbridge
 ms.openlocfilehash: 32d5005f9965b14d5080344832eb185f0e711689
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57646527"

@@ -7,7 +7,7 @@ keywords: windows 10, uwp
 ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
 ms.openlocfilehash: c934a88dd1825fb0111083d71eb25e477956d79c
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57627367"
