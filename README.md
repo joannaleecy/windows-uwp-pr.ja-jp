@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f36ab1f90c36d87f710ddb02dd078363bdb896dd
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603087"
+---
 ## <a name="legal-notices"></a><span data-ttu-id="38d42-101">法的通知</span><span class="sxs-lookup"><span data-stu-id="38d42-101">Legal Notices</span></span>
 <span data-ttu-id="38d42-102">Microsoft およびすべての投稿者は、[Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode) (クリエイティブ コモンズ ライセンス 4.0 インターナショナル パブリック ライセンス) に基づいて、このリポジトリにある Microsoft のドキュメントおよび他の内容に関するライセンスをユーザーに付与します ([LICENSE](LICENSE) ファイルをご覧ください)。また、[MIT ライセンス](https://opensource.org/licenses/MIT)に基づいて、リポジトリにあるすべてのコードに関するライセンスを付与します ([LICENSE-CODE](LICENSE-CODE) ファイルをご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="38d42-102">Microsoft and any contributors grant you a license to the Microsoft documentation and other content in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode), see the [LICENSE](LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the [LICENSE-CODE](LICENSE-CODE) file.</span></span>
 
