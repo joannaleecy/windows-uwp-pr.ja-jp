@@ -94,7 +94,7 @@ typedef struct
 
 ### <a name="prerequisites"></a>前提条件
 
--   (省略可能)。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
+-   任意。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
 
 ## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>手順
 

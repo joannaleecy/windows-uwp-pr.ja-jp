@@ -74,7 +74,7 @@ Xbox One にアプリを展開する前に、ユーザーが本体にサイン�
 
     d. **[リモート コンピューター]** で、システムの IP アドレスまたは Xbox One コンソールのホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
-    e.  **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
+    e. **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
     ![C# BlankApp プロパティ ページ](images/vs_remote.jpg)
 
@@ -94,7 +94,7 @@ Xbox One にアプリを展開する前に、ユーザーが本体にサイン�
 
    d. **[認証の種類]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
-   e.  **[プラットフォーム]** ドロップダウンで、**[x64]** を選びます。
+   e. **[プラットフォーム]** ドロップダウンで、**[x64]** を選びます。
 
     ![C++ BlankApp プロパティ ページ](images/development-environment-setup-4.png)
 
@@ -121,7 +121,7 @@ Xbox One にアプリを展開する前に、ユーザーが本体にサイン�
 これで、Xbox に初めての UWP アプリが正しく作成および展開されました。
 
 ## <a name="see-also"></a>関連項目
-- [Xbox 開発者モードは 1 つのアクティブ化](devkit-activation.md)  
+- [Xbox One 開発者モードのライセンス認証](devkit-activation.md)  
 - [ダウンロードと Windows 10 用ツール](https://dev.windows.com/downloads)  
 - [Windows Insider Program](https://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Xbox One のツールの概要](introduction-to-xbox-tools.md) 

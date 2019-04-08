@@ -22,7 +22,7 @@ ms.locfileid: "57596197"
 > [!IMPORTANT]
 > **Creators Update が必要です**:SDK 15063 を対象にして、15063 以降、プライマリ タイル Api を使用するビルドを実行します。
 
-> **重要な Api**:[**StartScreenManager クラス**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)、 [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)、 [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **重要な API**:[**StartScreenManager クラス**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)、 [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)、 [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>プライマリ タイル API を使う状況

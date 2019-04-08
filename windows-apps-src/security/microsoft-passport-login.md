@@ -4,7 +4,7 @@ description: これは、従来のユーザー名とパスワードの認証シ�
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -21,7 +21,7 @@ ms.locfileid: "57593977"
 
 開始する前に、「[Windows Hello](microsoft-passport.md)」の概要を読んで、Windows Hello の全般的なしくみを理解してください。
 
-## <a name="get-started"></a>はじめに
+## <a name="get-started"></a>作業開始
 
 
 このプロジェクトを作成するには、C# と XAML の経験がいくらか必要です。 Visual Studio 2015 を使用する必要もあります (Community Edition 以上)、または Windows 10 コンピューターで、Visual Studio の今後のリリース。 Visual Studio 2015 には、必要な最小のバージョンが、最新の開発者とセキュリティ更新プログラムの最新バージョンの Visual Studio を使用することをお勧めします。

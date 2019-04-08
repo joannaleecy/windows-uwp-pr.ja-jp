@@ -34,6 +34,6 @@ PRI ファイルのサイズ制限は、64 キロバイトです。
 * [パッケージのリソース インデックス (PRI) の参照](https://msdn.microsoft.com/library/windows/desktop/mt845690)
 
 ## <a name="related-topics"></a>関連トピック
-* [MakePri.exe で手動でのリソースをコンパイルします。](makepri-exe-command-options.md)
+* [MakePri.exe を使用して手動でリソースをコンパイルする](makepri-exe-command-options.md)
 * [アンマネージ DLL 関数の処理](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)
 * [リソース管理システム](resource-management-system.md)

@@ -95,4 +95,4 @@ Visual Studio のソリューション エクスプローラーで、**Package.a
 
 ## <a name="see-also"></a>関連項目
 
-[作成して、プロセス外のバック グラウンド タスクの登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[アウトプロセス バックグラウンド タスクの作成と登録](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

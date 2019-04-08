@@ -21,7 +21,7 @@ ms.locfileid: "57594967"
 
 この記事では、Windows のズームとサイズ変更の要素について説明し、アプリでこのような対話式操作のメカニズムを使うためのユーザー エクスペリエンスのガイドラインを示します。
 
-> **重要な Api**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、 [**入力 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+> **重要な API**:[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、 [**入力 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 光学式ズームを使うと、ユーザーはコンテンツの表示を拡大できます (コンテンツ領域自体に対して実行されます)。一方、サイズ変更を使うと、コンテンツ領域の表示は変更せずに、1 つまたは複数のオブジェクトの相対的なサイズをユーザーが変更できます (コンテンツ領域内のオブジェクトに対して実行されます)。
 

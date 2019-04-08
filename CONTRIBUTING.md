@@ -38,7 +38,7 @@ ms.locfileid: "57603117"
 
 ### <a name="editing-a-file"></a>ファイルを編集します。
 
-パブリック リポジトリのように行うことができます小さな変更をプライベート リポジトリにブラウザーでローカル クローンを作成する必要はありません。 **する必要があります**適切なブランチを投稿することを確認します。 個人用ブランチの作成の詳細については、[Windows オーサリング ガイドの指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)を参照してください。
+パブリック リポジトリのように行うことができます小さな変更をプライベート リポジトリにブラウザーでローカル クローンを作成する必要はありません。 **する必要があります**適切なブランチを投稿することを確認します。 個人用ブランチの作成の詳細については、次を参照してください。 [Windows オーサリング ガイドの指示](https://review.docs.microsoft.com/windows-authoring-guide/uwp/conceptual/branches?branch=master)します。
 
 ### <a name="making-substantial-changes"></a>大幅な変更を加える
 

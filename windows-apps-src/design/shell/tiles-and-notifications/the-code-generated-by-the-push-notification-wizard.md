@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 関数は、1 つの通知をトースト通知として送信します。 他の種類のプッシュ通知を使うこともできます。
 
-**ヒント:**  スクリプトの編集中にヘルプを取得する方法については、[サーバー側の JavaScript 用 IntelliSense を有効にする](https://go.microsoft.com/fwlink/p/?LinkId=309275)を参照してください。
+**ヒント:**  スクリプトの編集中にヘルプを取得する方法については、次を参照してください。[サーバー側の JavaScript 用 IntelliSense を有効にする](https://go.microsoft.com/fwlink/p/?LinkId=309275)します。
 
  
 

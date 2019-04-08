@@ -30,7 +30,7 @@ A/B テストを作成および実行するには、次の手順に従います�
 
 エンド ツー エンドのプロセスを示すチュートリアルについては、「[A/B テストを使用して最初の実験を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 A パートナー センターで B のテストは UWP アプリに対してのみサポートされています。
 

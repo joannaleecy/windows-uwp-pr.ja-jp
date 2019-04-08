@@ -22,5 +22,5 @@ Bluetooth LE 以前は、デバイスが Bluetooth を使って通信する場�
 ## <a name="bluetooth-low-energy-le"></a>Bluetooth 低エネルギー (LE)
 Bluetooth 低エネルギー (LE) は、効率的な電力使用量の要件のあるデバイス間の検出と通信用のプロトコルを定義する仕様です。 コード サンプルなどの詳細については、「[Bluetooth 低エネルギー](bluetooth-low-energy-overview.md)」のトピックをご覧ください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [Bluetooth の開発者向け FAQ](bluetooth-dev-faq.md)

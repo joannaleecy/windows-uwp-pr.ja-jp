@@ -85,5 +85,5 @@ ms.locfileid: "57651777"
 事前に Xbox One 本体をリテール モードに戻していない場合は、「[リテール モードに切り替える](#switch-to-retail-mode)」の説明に従ってここで戻してください。
 
 ## <a name="see-also"></a>関連項目
-- [Xbox 開発者モードは 1 つのアクティブ化](devkit-activation.md)
+- [Xbox One 開発者モードのライセンス認証](devkit-activation.md)
 - [Xbox One の UWP](index.md)

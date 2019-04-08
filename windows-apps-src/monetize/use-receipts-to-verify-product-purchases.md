@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, アプリ内購入, IAP, 受領通知, Windows.Applic
 ms.localizationpriority: medium
 ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57605727"
@@ -106,7 +106,7 @@ ms.locfileid: "57605727"
 
 |  要素  |  必須  |  数量  |  説明   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    X        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
+|  [AppReceipt](#appreceipt)  |    いいえ        |  0 または 1  |  現在のアプリの購入情報が含まれています。            |
 |  [ProductReceipt](#productreceipt)  |     X       |  0 以上    |   現在のアプリのアプリ内での購入に関する情報が含まれています。     |
 |  署名  |      〇      |  1   |   この要素は、標準の [XML-DSIG コンストラクト](https://go.microsoft.com/fwlink/p/?linkid=251093)です。 これには、受領通知の検証に使用する **SignatureValue** 要素に加え、**SignedInfo** 要素が含まれています。      |
 

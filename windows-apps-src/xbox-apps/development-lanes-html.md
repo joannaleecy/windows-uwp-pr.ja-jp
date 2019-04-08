@@ -32,5 +32,5 @@ Xbox One はユニバーサル Windows プラットフォームで実行され�
 最初に、好みのエンジンをダウンロードし、Windows 10 アプリの手順を確認します。 また、コンソールを開発キットとして使用する方法と Visual Studio から展開する方法については、「[ファースト ステップ ガイド](getting-started.md)」をご覧ください。
 
 ## <a name="see-also"></a>関連項目
-- [既存のゲームを Xbox に取り込む](development-lanes-landing.md)
+- [既存のゲームの Xbox への移行](development-lanes-landing.md)
 - [Xbox One の UWP](index.md)

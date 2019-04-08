@@ -8,7 +8,7 @@ ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603337"
@@ -103,7 +103,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-DELETE | /ext/fiddler
+Del | /ext/fiddler
 <br />
 **URI パラメーター**
 

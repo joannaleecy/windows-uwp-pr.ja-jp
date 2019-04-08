@@ -77,7 +77,7 @@ Windows によって、アプリの起動時に、アプリのスプラッシュ
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -215,10 +215,10 @@ Windows 10 バージョン 1607 以降では、アプリは、アプリ自体と
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [アプリに関するガイドラインの中断し、再開](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [アプリ事前起動の処理します。](handle-app-prelaunch.md)
-* [アプリのアクティブ化を処理します。](activate-an-app.md)
-* [ハンドルのアプリを中断します。](suspend-an-app.md)
-* [アプリケーションの再開を処理します。](resume-an-app.md)
+* [アプリの事前起動の処理](handle-app-prelaunch.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの中断の処理](suspend-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
 * [バック グラウンド アクティビティが、1 つのプロセス モデル](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [バック グラウンドでメディアを再生します。](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 

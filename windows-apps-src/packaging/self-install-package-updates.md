@@ -463,4 +463,4 @@ private void StoreItem_StatusChanged(StoreQueueItem sender, object args)
 
 ## <a name="related-topics"></a>関連トピック
 
-* [省略可能なパッケージと関連する一連の作成](optional-packages.md)
+* [オプション パッケージと関連セットの作成](optional-packages.md)

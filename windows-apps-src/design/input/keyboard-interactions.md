@@ -293,7 +293,7 @@ UWP でアクセス キーをサポートする方法について詳しくは、
 | タブを閉じる                            | Ctrl + 4 または Ctrl + W                                |
 | セマンティック ズーム                        | Ctrl + 正符号 (+) または Ctrl + マイナス記号 (-)                                 |
 
-Windows システムのショートカットの包括的な一覧は、[Windows 用のキーボード ショートカット](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)を参照してください。 一般的なアプリケーション ショートカットでは、[Microsoft アプリケーション用のキーボード ショートカット](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps)を参照してください。
+Windows システムのショートカットの包括的な一覧は、次を参照してください。 [Windows 用のキーボード ショートカット](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)します。 一般的なアプリケーション ショートカットでは、次を参照してください。 [Microsoft アプリケーション用のキーボード ショートカット](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps)します。
 
 ## <a name="advanced-experiences"></a>高度なエクスペリエンス
 

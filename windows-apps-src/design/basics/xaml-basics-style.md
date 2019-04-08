@@ -12,7 +12,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57592957"
 ---
-# <a name="tutorial-create-custom-styles"></a>チュートリアル:カスタム スタイルを作成する
+# <a name="tutorial-create-custom-styles"></a>チュートリアル: カスタム スタイルを作成する
 
 このチュートリアルでは、XAML アプリの UI をカスタマイズする方法を示します。 警告: このチュートリアルにユニコーンが登場するかどうかは保証できません。 (後で登場します!)  
 

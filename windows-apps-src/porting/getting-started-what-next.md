@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57603277"
 ---
-# <a name="getting-started-what-next"></a>はじめに。次にすること
+# <a name="getting-started-what-next"></a>概要: 次にすること
 
 
 ## <a name="next-steps"></a>次のステップ

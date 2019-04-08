@@ -105,10 +105,10 @@ VS を使用したバック グラウンド タスクのデバッグの詳細に
 
 ## <a name="related-topics"></a>関連トピック
 
-* [作成して、プロセス外のバック グラウンド タスクの登録](create-and-register-a-background-task.md)
-* [作成して、プロセス内のバック グラウンド タスクの登録](create-and-register-an-inproc-background-task.md)
-* [バック グラウンド タスクを登録します。](register-a-background-task.md)
-* [アプリケーション マニフェストでバック グラウンド タスクを宣言します。](declare-background-tasks-in-the-application-manifest.md)
+* [アウトプロセス バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [インプロセス バックグラウンド タスクの作成と登録](create-and-register-an-inproc-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 * [トリガーする方法を中断、再開、およびバック グラウンド イベントを UWP アプリ](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [Visual Studio code 分析による UWP アプリのコード品質の分析](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)

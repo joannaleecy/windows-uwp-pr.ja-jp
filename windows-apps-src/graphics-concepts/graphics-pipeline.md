@@ -70,4 +70,4 @@ Direct3D グラフィックス パイプラインは、リアルタイム ゲー
 
 - [Direct3D グラフィックス学習ガイド](index.md)
 
-- [パイプラインを計算します。](compute-pipeline.md)
+- [計算パイプライン](compute-pipeline.md)

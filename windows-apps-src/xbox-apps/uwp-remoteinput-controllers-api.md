@@ -59,7 +59,7 @@ HTTP 状態コード      | 説明
 
 メソッド      | 要求 URI
 :------     | :-----
-DELETE | /ext/remoteinput/controllers
+Del | /ext/remoteinput/controllers
 <br />
 **URI パラメーター**
 

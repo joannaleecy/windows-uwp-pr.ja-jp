@@ -49,15 +49,15 @@ ms.locfileid: "57589937"
 __Simple3DGame::Initialize__ここで、 __m\_コント ローラー__と__m\_レンダラー__は初期化も、オーディオ エンジンを設定し、取得サウンドを再生する準備ができました。
 
  * 作成__m\_audioController__のインスタンスである、[オーディオ](#audioh)クラス。
- * 使用して必要なオーディオ リソースを作成、 [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)メソッド。 ここでは、2 つ__XAudio2__オブジェクト&mdash;音楽のエンジン オブジェクトと、サウンド エンジン オブジェクトとそれぞれのマスターの音声が作成されました。 ゲームのバック グラウンド音楽を再生する音楽のエンジン オブジェクトを使用できます。 ゲームでサウンドを再生するサウンド エンジンを使用できます。 詳細については、[作成オーディオのリソースの初期化と](#create-and-initialize-the-audio-resources)を参照してください。
+ * 使用して必要なオーディオ リソースを作成、 [Audio::CreateDeviceIndependentResources](#audiocreatedeviceindependentresources-method)メソッド。 ここでは、2 つ__XAudio2__オブジェクト&mdash;音楽のエンジン オブジェクトと、サウンド エンジン オブジェクトとそれぞれのマスターの音声が作成されました。 ゲームのバック グラウンド音楽を再生する音楽のエンジン オブジェクトを使用できます。 ゲームでサウンドを再生するサウンド エンジンを使用できます。 詳細については、次を参照してください。[作成オーディオのリソースの初期化と](#create-and-initialize-the-audio-resources)します。
  * 作成__mediaReader__のインスタンスである[MediaReader](#mediareaderh)クラス。 [MediaReader](#mediareaderh)、用のヘルパー クラスは、 [SoundEffect](#soundeffecth)クラス、読み取り小規模なオーディオ ファイルの場所からファイルを同期的に、サウンドのデータをバイト配列として返します。
- * 使用[MediaReader::LoadMedia](#mediareaderloadmedia-method)をその場所からサウンド ファイルを読み込み、作成、 __targetHitSound__読み込む .wav サウンド データを保持する変数。 詳細については、[オーディオ ファイルの読み込み](#load-audio-file)を参照してください。 
+ * 使用[MediaReader::LoadMedia](#mediareaderloadmedia-method)をその場所からサウンド ファイルを読み込み、作成、 __targetHitSound__読み込む .wav サウンド データを保持する変数。 詳細については、次を参照してください。[オーディオ ファイルの読み込み](#load-audio-file)します。 
 
 サウンド効果は、ゲーム オブジェクトに関連付けられます。 したがってそのゲーム オブジェクトと、競合が発生したときに、再生するサウンド効果をトリガーします。 このゲームのサンプルでは、(使用して問題を持つターゲットを作り出してしまう) 弾薬とターゲットのサウンド効果があります。 
     
 * __GameObject__クラスを__HitSound__オブジェクトへのサウンド効果を関連付けるために使用するプロパティ。
 * 新しいインスタンスを作成、 [SoundEffect](#soundeffecth)クラスを初期化します。 初期化中に、サウンド効果のソースの音声が作成されます。 
-* このクラスから提供されるマスタリング音声を使用してサウンドの再生、[オーディオ](#audioh)クラス。 使用してファイルの場所からサウンドのデータを読み取る、 [MediaReader](#mediareaderh)クラス。 詳細については、[オブジェクトにサウンドを関連付ける](#associate-sound-to-object)を参照してください。
+* このクラスから提供されるマスタリング音声を使用してサウンドの再生、[オーディオ](#audioh)クラス。 使用してファイルの場所からサウンドのデータを読み取る、 [MediaReader](#mediareaderh)クラス。 詳細については、次を参照してください。[オブジェクトにサウンドを関連付ける](#associate-sound-to-object)します。
 
 >[!Note]
 >サウンドを再生する実際のトリガーは、移動やこれらのゲーム オブジェクトの競合によって決定されます。 そのため、実際にこれらのサウンドを再生する呼び出しで定義されて、 [Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)メソッド。 詳細についてを参照してください[サウンドを再生](#play-the-sound)します。
@@ -459,7 +459,7 @@ UWP のフレームワーク、グラフィックス、コントロール、ユ�
 
 Windows 10 ゲームの開発、XAudio2 バージョン 2.9 を使用します。 このバージョンには、Windows 10 が同梱されています。 詳細についてを参照してください[XAudio2 バージョン](https://msdn.microsoft.com/library/windows/desktop/ee415802.aspx)します。
 
-__AudioX2__は信号処理や基盤を提供する低レベルの API です。 詳細については、[XAudio2 Key Concepts](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx)を参照してください。
+__AudioX2__は信号処理や基盤を提供する低レベルの API です。 詳細については、次を参照してください。 [XAudio2 Key Concepts](https://msdn.microsoft.com/library/windows/desktop/ee415764.aspx)します。
 
 ### <a name="xaudio2-voices"></a>XAudio2 音声
 

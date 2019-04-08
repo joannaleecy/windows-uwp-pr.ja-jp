@@ -17,7 +17,7 @@ ms.locfileid: "57602207"
 Windows.UI.Composition Api を使用すると、リアルタイムのアニメーションや効果を作成できます。 コンポジション照明は、2 D のアプリケーションで 3D ライティングを使用できます。 この概要では、コンポジションのライトのセットアップ、各ライトを受信するビジュアルを識別し、効果を使用して、コンテンツの素材を定義する方法の機能を使用して実行します。
 
 > [!NOTE]
-> 読み取り方法を[XamlLight](/uwp/api/windows.ui.xaml.media.xamllight)オブジェクトを適用[CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) XAML Uielement を明らかに、[XAML 照明](xaml-lighting.md)を参照してください。
+> 読み取り方法を[XamlLight](/uwp/api/windows.ui.xaml.media.xamllight)オブジェクトを適用[CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) XAML Uielement を明らかに、次を参照してください。 [XAML 照明](xaml-lighting.md)します。
 
 コンポジション照明を使用して、UI を許可することで興味深いを作成できます。
 
@@ -35,10 +35,10 @@ Windows.UI.Composition Api を使用すると、リアルタイムのアニメ�
 
 | 種類 | 説明 |
 | --- | --- |
-| [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | シーン内のすべてが表示される方向性のない光を放射光源が反映されます。 |
+| [Ambientlight を組み合わせます](/uwp/api/windows.ui.composition.ambientlight) | シーン内のすべてが表示される方向性のない光を放射光源が反映されます。 |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 無限に大規模な光源を 1 つの方向に光を出力します。 太陽の。 |
 | [PointLight](/uwp/api/windows.ui.composition.pointlight) | すべての方向に光が放射される光のポイントのソース。 電球など。 |
-| [SpotLight](/uwp/api/windows.ui.composition.spotlight) | 光の内側と外側の円錐を出力する光源を使用します。 懐中電灯など。 |
+| [スポット ライト](/uwp/api/windows.ui.composition.spotlight) | 光の内側と外側の円錐を出力する光源を使用します。 懐中電灯など。 |
 
 ## <a name="targets"></a>ターゲット
 

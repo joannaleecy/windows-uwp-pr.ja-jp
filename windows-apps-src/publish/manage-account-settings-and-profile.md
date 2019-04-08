@@ -48,7 +48,7 @@ ms.locfileid: "57655097"
 - **支払いアカウント**と**税プロファイル**:次の表はする[設定、支払いアカウントと税フォーム](setting-up-your-payout-account-and-tax-forms.md)します。 これらの準備は、アプリやアドオンの代金を請求する前に行う必要があります。
 - **エンタープライズの関連付け**:自分専用のアプリを発行することを希望する企業から招待を受信します。 詳しくは、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 - **Users**:自分のアカウントにユーザーを追加し、ロールとアクセス許可を割り当てます。 詳しくは、「[アカウント ユーザーの管理](manage-account-users.md)」をご覧ください。
-- **テナント**:Azure AD テナントの関連付けを管理します。 詳細については、[Azure AD に関連付けられた、パートナー センター アカウント](associate-azure-ad-with-dev-center.md)を参照してください。
+- **テナント**:Azure AD テナントの関連付けを管理します。 詳細については、次を参照してください。 [Azure AD に関連付けられた、パートナー センター アカウント](associate-azure-ad-with-dev-center.md)します。
 - **Programs**:参加している、プログラムを関心のある可能性のある他のプログラムについての詳細を表示します。
 - **契約**:自分のアカウントが承諾契約を表示します。
 - **開発用デバイス**:表示および管理[テストのロックを解除した Windows Phone 8.x デバイス](https://go.microsoft.com/fwlink/p/?LinkId=533897)と[開発を有効になっている Xbox One コンソール](../xbox-apps/devkit-activation.md)します。 

@@ -98,14 +98,14 @@ Windows アプリのサービスは、別のユニバーサル Windows アプリ
 
 ストリーミング インストールは、ユーザーにアプリを配信する方法を最適化する手段です。 アプリ全体がダウンロードされるのを待ってからユーザーが使用できるようになるのではなく、必要な部分がダウンロードされた時点で、そのアプリを利用できます。 基本的なライセンス認証と起動に必要なセクションと、アプリの他の部分の追加コンテンツにアプリを分割するかどうかは、開発者の任意です。 詳しい情報と実装の詳細については、「[UWP アプリ ストリーミング インストール](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [App Service の作成と利用](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [アセット パッケージの概要](../packaging/asset-packages.md)  
 [パッケージ レイアウトでパッケージの作成](../packaging/packaging-layout.md)  
-[省略可能なパッケージと関連する一連の作成](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
+[オプション パッケージと関連セットの作成](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
 [アセット パッケージとパッケージの圧縮を使用した開発](../packaging/package-folding.md)  
-[UWP アプリのストリーミング インストール](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
+[UWP アプリ ストリーミング インストール](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
 [フラットなバンドルのアプリ パッケージ](../packaging/flat-bundles.md)  
 [Windows.ApplicationModel.AppService 名前空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)  
 [Windows.ApplicationModel.Extensions 名前空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  

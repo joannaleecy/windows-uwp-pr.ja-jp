@@ -20,7 +20,7 @@ ms.locfileid: "57593837"
 
 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。
 
-> **重要な Api**:[**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)、 [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)、 [**言語**](https://msdn.microsoft.com/library/windows/apps/br206804)
+> **重要な API**:[**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)、 [ **SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)、 [**言語**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 ここでは、システムにインストールされている言語を列挙し、どの言語が既定の言語であるかを指定します。また、音声認識用に別の言語を選びます。

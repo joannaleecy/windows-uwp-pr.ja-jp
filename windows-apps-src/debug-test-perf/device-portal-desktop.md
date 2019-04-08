@@ -81,9 +81,9 @@ Windows デスクトップの Device Portal では、標準のページのセッ
 デバイス ポータルのポート番号 (80、443 など) を選択する場合は、次のレジストリ キーを設定することができます。
 
 -  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service`
-    - `UseDynamicPorts`:必要な DWORD です。 選択したポート番号を保持するには、これを 0 に設定します。
-    - `HttpPort`:必要な DWORD です。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
-    - `HttpsPort`:必要な DWORD です。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
+    - `UseDynamicPorts` :必要な DWORD です。 選択したポート番号を保持するには、これを 0 に設定します。
+    - `HttpPort` :必要な DWORD です。 Device Portal が HTTP 接続をリッスンするポート番号を指定します。    
+    - `HttpsPort` :必要な DWORD です。 Device Portal が HTTPS 接続をリッスンするポート番号を指定します。
     
 同じレジストリ キー パスの下で、認証要件をオフにすることもできます。
 - `UseDefaultAuthorizer` - `0` 無効の場合、`1`有効になっています。  

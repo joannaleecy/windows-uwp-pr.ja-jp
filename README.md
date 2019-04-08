@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: f36ab1f90c36d87f710ddb02dd078363bdb896dd
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603087"
+---
 ## <a name="legal-notices"></a>法的通知
 Microsoft およびすべての投稿者は、[Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode) (クリエイティブ コモンズ ライセンス 4.0 インターナショナル パブリック ライセンス) に基づいて、このリポジトリにある Microsoft のドキュメントおよび他の内容に関するライセンスをユーザーに付与します ([LICENSE](LICENSE) ファイルをご覧ください)。また、[MIT ライセンス](https://opensource.org/licenses/MIT)に基づいて、リポジトリにあるすべてのコードに関するライセンスを付与します ([LICENSE-CODE](LICENSE-CODE) ファイルをご覧ください)。
 

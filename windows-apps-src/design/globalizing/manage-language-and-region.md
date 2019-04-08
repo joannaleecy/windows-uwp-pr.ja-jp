@@ -193,7 +193,7 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](https://go.microsoft.co
 </table>
 
 >[!NOTE]
-> Microsoft で使用される標準の国/地域コードの一覧は、、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)を参照してください。
+> Microsoft で使用される標準の国/地域コードの一覧は、次を参照してください。、[公式の国/地域一覧](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)します。
 
 ## <a name="important-apis"></a>重要な API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
@@ -210,10 +210,10 @@ UWP アプリの場合、言語は [BCP-47 言語タグ](https://go.microsoft.co
 ## <a name="related-topics"></a>関連トピック
 * [Bcp-47 言語タグ](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [IANA 言語サブタグ レジストリ](https://go.microsoft.com/fwlink/p/?linkid=227303)
-* [言語、スケール、ハイ コントラスト、およびその他の修飾子のためのリソースを調整します。](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [言語、スケール、ハイ コントラスト、その他の修飾子用にリソースを調整する](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [サポートされている言語](../../publish/supported-languages.md)
 * [日付/時間/数字形式をグローバル化します。](use-global-ready-formats.md)
-* [リソース管理システムと言語タグがどのように一致しているか](../../app-resources/how-rms-matches-lang-tags.md)
+* [リソース管理システムでの言語タグの照合の仕組み](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>サンプル
 * [アプリケーション リソースとローカリゼーション サンプル](https://go.microsoft.com/fwlink/p/?linkid=231501)

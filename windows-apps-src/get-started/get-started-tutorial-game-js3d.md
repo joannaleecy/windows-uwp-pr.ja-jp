@@ -1086,5 +1086,5 @@ function lockChange() {
 1.  Windows 開発者として[登録](https://developer.microsoft.com/store/register)する必要があります。
 2.  アプリの申請[チェックリスト](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)を使用する必要があります。
 3.  [認定](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)を受けるために、アプリを提出する必要があります。
-詳細については、[UWP アプリの発行](https://developer.microsoft.com/store/publish-apps)を参照してください。
+詳細については、次を参照してください。 [UWP アプリの発行](https://developer.microsoft.com/store/publish-apps)します。
 
