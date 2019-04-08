@@ -13,39 +13,39 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57594997"
 ---
-# <a name="complete-code-for-basicreaderwriter"></a><span data-ttu-id="e1b34-104">BasicReaderWriter のコード一式</span><span class="sxs-lookup"><span data-stu-id="e1b34-104">Complete code for BasicReaderWriter</span></span>
+# <a name="complete-code-for-basicreaderwriter"></a><span data-ttu-id="efb5a-104">BasicReaderWriter のコード一式</span><span class="sxs-lookup"><span data-stu-id="efb5a-104">Complete code for BasicReaderWriter</span></span>
 
 
 
-<span data-ttu-id="e1b34-105">バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="e1b34-105">Complete code for a class and methods for reading and writing binary data files in general.</span></span> <span data-ttu-id="e1b34-106">[BasicLoader](complete-code-for-basicloader.md) クラスで使われます。</span><span class="sxs-lookup"><span data-stu-id="e1b34-106">Used by the [BasicLoader](complete-code-for-basicloader.md) class.</span></span>
+<span data-ttu-id="efb5a-105">バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。</span><span class="sxs-lookup"><span data-stu-id="efb5a-105">Complete code for a class and methods for reading and writing binary data files in general.</span></span> <span data-ttu-id="efb5a-106">[BasicLoader](complete-code-for-basicloader.md) クラスで使われます。</span><span class="sxs-lookup"><span data-stu-id="efb5a-106">Used by the [BasicLoader](complete-code-for-basicloader.md) class.</span></span>
 
-<span data-ttu-id="e1b34-107">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="e1b34-107">This topic contains these sections:</span></span>
+<span data-ttu-id="efb5a-107">このトピックは次のセクションで構成されます。</span><span class="sxs-lookup"><span data-stu-id="efb5a-107">This topic contains these sections:</span></span>
 
--   [<span data-ttu-id="e1b34-108">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="e1b34-108">Technologies</span></span>](#technologies)
--   [<span data-ttu-id="e1b34-109">要件</span><span class="sxs-lookup"><span data-stu-id="e1b34-109">Requirements</span></span>](#requirements)
--   [<span data-ttu-id="e1b34-110">コードを表示する (C++)</span><span class="sxs-lookup"><span data-stu-id="e1b34-110">View the code (C++)</span></span>](#view-the-code-c)
-
-
-## <a name="download-location"></a><span data-ttu-id="e1b34-111">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="e1b34-111">Download location</span></span>
-
-<span data-ttu-id="e1b34-112">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="e1b34-112">This sample is not available for download.</span></span>
+-   [<span data-ttu-id="efb5a-108">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="efb5a-108">Technologies</span></span>](#technologies)
+-   [<span data-ttu-id="efb5a-109">必要条件</span><span class="sxs-lookup"><span data-stu-id="efb5a-109">Requirements</span></span>](#requirements)
+-   [<span data-ttu-id="efb5a-110">コードを表示する (C++)</span><span class="sxs-lookup"><span data-stu-id="efb5a-110">View the code (C++)</span></span>](#view-the-code-c)
 
 
-## <a name="technologies"></a><span data-ttu-id="e1b34-113">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="e1b34-113">Technologies</span></span>
+## <a name="download-location"></a><span data-ttu-id="efb5a-111">ダウンロード場所</span><span class="sxs-lookup"><span data-stu-id="efb5a-111">Download location</span></span>
 
-<span data-ttu-id="e1b34-114">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="e1b34-114">**Programming languages** -  C++</span></span>  
-<span data-ttu-id="e1b34-115">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="e1b34-115">**Programming models** - Windows Runtime</span></span>
-
-
-## <a name="requirements"></a><span data-ttu-id="e1b34-116">要件</span><span class="sxs-lookup"><span data-stu-id="e1b34-116">Requirements</span></span>
-
- <span data-ttu-id="e1b34-117">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="e1b34-117">**Minimum supported client** - Windows 10</span></span>       
- <span data-ttu-id="e1b34-118">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="e1b34-118">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span> 
-
-## <a name="view-the-code-c"></a><span data-ttu-id="e1b34-119">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="e1b34-119">View the code (C++)</span></span>
+<span data-ttu-id="efb5a-112">このサンプルはダウンロードできません。</span><span class="sxs-lookup"><span data-stu-id="efb5a-112">This sample is not available for download.</span></span>
 
 
-## <a name="basicreaderwriterh"></a><span data-ttu-id="e1b34-120">BasicReaderWriter.h</span><span class="sxs-lookup"><span data-stu-id="e1b34-120">BasicReaderWriter.h</span></span>
+## <a name="technologies"></a><span data-ttu-id="efb5a-113">テクノロジ</span><span class="sxs-lookup"><span data-stu-id="efb5a-113">Technologies</span></span>
+
+<span data-ttu-id="efb5a-114">**プログラミング言語** - C++</span><span class="sxs-lookup"><span data-stu-id="efb5a-114">**Programming languages** -  C++</span></span>  
+<span data-ttu-id="efb5a-115">**プログラミング モデル** - Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="efb5a-115">**Programming models** - Windows Runtime</span></span>
+
+
+## <a name="requirements"></a><span data-ttu-id="efb5a-116">必要条件</span><span class="sxs-lookup"><span data-stu-id="efb5a-116">Requirements</span></span>
+
+ <span data-ttu-id="efb5a-117">**サポートされている最小のクライアント** - Windows 10</span><span class="sxs-lookup"><span data-stu-id="efb5a-117">**Minimum supported client** - Windows 10</span></span>       
+ <span data-ttu-id="efb5a-118">**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview</span><span class="sxs-lookup"><span data-stu-id="efb5a-118">**Minimum supported server** - Windows Server 2016 Technical Preview</span></span> 
+
+## <a name="view-the-code-c"></a><span data-ttu-id="efb5a-119">コードの表示 (C++)</span><span class="sxs-lookup"><span data-stu-id="efb5a-119">View the code (C++)</span></span>
+
+
+## <a name="basicreaderwriterh"></a><span data-ttu-id="efb5a-120">BasicReaderWriter.h</span><span class="sxs-lookup"><span data-stu-id="efb5a-120">BasicReaderWriter.h</span></span>
 
 
 ```cpp
@@ -94,7 +94,7 @@ internal:
 };
 ```
 
-## <a name="basicreaderwritercpp"></a><span data-ttu-id="e1b34-121">BasicReaderWriter.cpp</span><span class="sxs-lookup"><span data-stu-id="e1b34-121">BasicReaderWriter.cpp</span></span>
+## <a name="basicreaderwritercpp"></a><span data-ttu-id="efb5a-121">BasicReaderWriter.cpp</span><span class="sxs-lookup"><span data-stu-id="efb5a-121">BasicReaderWriter.cpp</span></span>
 
 
 ```cpp

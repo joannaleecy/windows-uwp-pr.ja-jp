@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, Microsoft Store 申請 API, アプリの申請
 ms.localizationpriority: medium
 ms.openlocfilehash: ca13ff36db823bfea44fa9e31c20a621c5b8aa2e
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57655527"

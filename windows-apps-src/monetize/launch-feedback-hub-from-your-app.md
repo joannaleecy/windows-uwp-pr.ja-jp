@@ -8,7 +8,7 @@ keywords: Windows 10, UWP, フィードバック Hub, 起動
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57631837"

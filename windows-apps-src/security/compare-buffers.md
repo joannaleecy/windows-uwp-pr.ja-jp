@@ -4,7 +4,7 @@ description: 次のコード例は、ユニバーサル Windows プラットフ�
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10、uwp、セキュリティ
+keywords: windows 10, uwp, セキュリティ
 ms.localizationpriority: medium
 ms.openlocfilehash: 828f3a081aa3dcd095f036fb47385fc261335a7a
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
@@ -13,11 +13,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57589777"
 ---
-# <a name="compare-buffers"></a><span data-ttu-id="2b212-104">バッファーの比較</span><span class="sxs-lookup"><span data-stu-id="2b212-104">Compare buffers</span></span>
+# <a name="compare-buffers"></a><span data-ttu-id="f9d89-104">バッファーの比較</span><span class="sxs-lookup"><span data-stu-id="f9d89-104">Compare buffers</span></span>
 
 
 
-<span data-ttu-id="2b212-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="2b212-105">This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.</span></span>
+<span data-ttu-id="f9d89-105">次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="f9d89-105">This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.</span></span>
 
 ```cs
 public void CompareBuffers()

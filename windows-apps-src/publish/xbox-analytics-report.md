@@ -7,7 +7,7 @@ keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計情報
 ms.localizationpriority: medium
 ms.openlocfilehash: ae9bacd88f957954c5cd1d3f6ccd6d3c04a568a2
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607447"

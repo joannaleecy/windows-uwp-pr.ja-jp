@@ -14,15 +14,15 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57607767"
 ---
-# <a name="render-target-view-rtv"></a><span data-ttu-id="258e6-104">レンダー ターゲット ビュー (RTV)</span><span class="sxs-lookup"><span data-stu-id="258e6-104">Render target view (RTV)</span></span>
+# <a name="render-target-view-rtv"></a><span data-ttu-id="6d50c-104">レンダー ターゲット ビュー (RTV)</span><span class="sxs-lookup"><span data-stu-id="6d50c-104">Render target view (RTV)</span></span>
 
 
-<span data-ttu-id="258e6-105">レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="258e6-105">Render targets enable a scene to be rendered to a temporary intermediate buffer, rather than to the back buffer to be rendered to the screen.</span></span> <span data-ttu-id="258e6-106">この機能を使うと複雑なシーンを実現できます。たとえば、グラフィックス パイプライン内で反射テクスチャなどの用途に使われるシーンをレンダリングしたり、レンダリング前にシーンにピクセル シェーダー効果を追加したりできます。</span><span class="sxs-lookup"><span data-stu-id="258e6-106">This feature enables use of the complex scene that might be rendered, perhaps as a reflection texture or other purpose within the graphics pipeline, or perhaps to add additional pixel shader effects to the scene before rendering.</span></span>
+<span data-ttu-id="6d50c-105">レンダー ターゲットは、画面にレンダリングされるバック バッファーではなく、一時的な中間バッファーにシーンがレンダリングできるようにします。</span><span class="sxs-lookup"><span data-stu-id="6d50c-105">Render targets enable a scene to be rendered to a temporary intermediate buffer, rather than to the back buffer to be rendered to the screen.</span></span> <span data-ttu-id="6d50c-106">この機能を使うと複雑なシーンを実現できます。たとえば、グラフィックス パイプライン内で反射テクスチャなどの用途に使われるシーンをレンダリングしたり、レンダリング前にシーンにピクセル シェーダー効果を追加したりできます。</span><span class="sxs-lookup"><span data-stu-id="6d50c-106">This feature enables use of the complex scene that might be rendered, perhaps as a reflection texture or other purpose within the graphics pipeline, or perhaps to add additional pixel shader effects to the scene before rendering.</span></span>
 
-## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="258e6-107"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="258e6-107"><span id="related-topics"></span>Related topics</span></span>
+## <a name="span-idrelated-topicsspanrelated-topics"></a><span data-ttu-id="6d50c-107"><span id="related-topics"></span>関連トピック</span><span class="sxs-lookup"><span data-stu-id="6d50c-107"><span id="related-topics"></span>Related topics</span></span>
 
 
-[<span data-ttu-id="258e6-108">表示モード</span><span class="sxs-lookup"><span data-stu-id="258e6-108">Views</span></span>](views.md)
+[<span data-ttu-id="6d50c-108">ビュー</span><span class="sxs-lookup"><span data-stu-id="6d50c-108">Views</span></span>](views.md)
 
  
 

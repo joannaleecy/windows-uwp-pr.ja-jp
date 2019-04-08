@@ -8,153 +8,153 @@ ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
 ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/06/2019
 ms.locfileid: "57598647"
 ---
-# <a name="developer-settings-api-reference"></a><span data-ttu-id="423f2-104">開発者向け設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="423f2-104">Developer settings API reference</span></span>   
-<span data-ttu-id="423f2-105">この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="423f2-105">You can access Xbox One settings that are useful for development using this API.</span></span>
+# <a name="developer-settings-api-reference"></a><span data-ttu-id="dd306-104">開発者向け設定 API のリファレンス</span><span class="sxs-lookup"><span data-stu-id="dd306-104">Developer settings API reference</span></span>   
+<span data-ttu-id="dd306-105">この API を使用して、開発に役立つ Xbox One 設定にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="dd306-105">You can access Xbox One settings that are useful for development using this API.</span></span>
 
-## <a name="get-all-developer-settings-at-once"></a><span data-ttu-id="423f2-106">すべての開発者向け設定を一度に取得する</span><span class="sxs-lookup"><span data-stu-id="423f2-106">Get all developer settings at once</span></span>
+## <a name="get-all-developer-settings-at-once"></a><span data-ttu-id="dd306-106">すべての開発者向け設定を一度に取得する</span><span class="sxs-lookup"><span data-stu-id="dd306-106">Get all developer settings at once</span></span>
 
-<span data-ttu-id="423f2-107">**要求**</span><span class="sxs-lookup"><span data-stu-id="423f2-107">**Request**</span></span>
+<span data-ttu-id="dd306-107">**要求**</span><span class="sxs-lookup"><span data-stu-id="dd306-107">**Request**</span></span>
 
-<span data-ttu-id="423f2-108">次の要求を使用して、すべての開発者向け設定を 1 つの要求で取得できます。</span><span class="sxs-lookup"><span data-stu-id="423f2-108">You can use the following request to get all developer settings in a single request.</span></span>
+<span data-ttu-id="dd306-108">次の要求を使用して、すべての開発者向け設定を 1 つの要求で取得できます。</span><span class="sxs-lookup"><span data-stu-id="dd306-108">You can use the following request to get all developer settings in a single request.</span></span>
 
-<span data-ttu-id="423f2-109">メソッド</span><span class="sxs-lookup"><span data-stu-id="423f2-109">Method</span></span>      | <span data-ttu-id="423f2-110">要求 URI</span><span class="sxs-lookup"><span data-stu-id="423f2-110">Request URI</span></span>
+<span data-ttu-id="dd306-109">メソッド</span><span class="sxs-lookup"><span data-stu-id="dd306-109">Method</span></span>      | <span data-ttu-id="dd306-110">要求 URI</span><span class="sxs-lookup"><span data-stu-id="dd306-110">Request URI</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-111">GET</span><span class="sxs-lookup"><span data-stu-id="423f2-111">GET</span></span> | <span data-ttu-id="423f2-112">/ext/settings</span><span class="sxs-lookup"><span data-stu-id="423f2-112">/ext/settings</span></span>
+<span data-ttu-id="dd306-111">GET</span><span class="sxs-lookup"><span data-stu-id="dd306-111">GET</span></span> | <span data-ttu-id="dd306-112">/ext/settings</span><span class="sxs-lookup"><span data-stu-id="dd306-112">/ext/settings</span></span>
 <br />
-<span data-ttu-id="423f2-113">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="423f2-113">**URI parameters**</span></span>
+<span data-ttu-id="dd306-113">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="dd306-113">**URI parameters**</span></span>
 
-- <span data-ttu-id="423f2-114">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-114">None</span></span>
+- <span data-ttu-id="dd306-114">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-114">None</span></span>
 
-<span data-ttu-id="423f2-115">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="423f2-115">**Request headers**</span></span>
+<span data-ttu-id="dd306-115">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="dd306-115">**Request headers**</span></span>
 
-- <span data-ttu-id="423f2-116">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-116">None</span></span>
+- <span data-ttu-id="dd306-116">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-116">None</span></span>
 
-<span data-ttu-id="423f2-117">**要求本文**</span><span class="sxs-lookup"><span data-stu-id="423f2-117">**Request body**</span></span>
+<span data-ttu-id="dd306-117">**要求本文**</span><span class="sxs-lookup"><span data-stu-id="dd306-117">**Request body**</span></span>
 
-- <span data-ttu-id="423f2-118">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-118">None</span></span>
+- <span data-ttu-id="dd306-118">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-118">None</span></span>
 
-<span data-ttu-id="423f2-119">**応答** </span><span class="sxs-lookup"><span data-stu-id="423f2-119">**Response** </span></span>  
-<span data-ttu-id="423f2-120">応答は、すべての設定を含む設定の JSON 配列です。</span><span class="sxs-lookup"><span data-stu-id="423f2-120">The response is a Settings JSON array containing all the settings.</span></span> <span data-ttu-id="423f2-121">設定オブジェクトには、それぞれ次のフィールドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="423f2-121">Each settings object contains the following fields:</span></span>
+<span data-ttu-id="dd306-119">**応答** </span><span class="sxs-lookup"><span data-stu-id="dd306-119">**Response** </span></span>  
+<span data-ttu-id="dd306-120">応答は、すべての設定を含む設定の JSON 配列です。</span><span class="sxs-lookup"><span data-stu-id="dd306-120">The response is a Settings JSON array containing all the settings.</span></span> <span data-ttu-id="dd306-121">設定オブジェクトには、それぞれ次のフィールドが含まれています。</span><span class="sxs-lookup"><span data-stu-id="dd306-121">Each settings object contains the following fields:</span></span>
 
-* <span data-ttu-id="423f2-122">Name: (文字列) 設定の名前。</span><span class="sxs-lookup"><span data-stu-id="423f2-122">Name - (String) The name of the setting.</span></span>
-* <span data-ttu-id="423f2-123">Value: (文字列) 設定の値。</span><span class="sxs-lookup"><span data-stu-id="423f2-123">Value - (String) The value of the setting.</span></span>
-* <span data-ttu-id="423f2-124">RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-124">RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.</span></span>
-* <span data-ttu-id="423f2-125">Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-125">Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.</span></span>
-* <span data-ttu-id="423f2-126">Category: (文字列) 設定のカテゴリ。</span><span class="sxs-lookup"><span data-stu-id="423f2-126">Category - (String) The category of the setting.</span></span>
-* <span data-ttu-id="423f2-127">Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="423f2-127">Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.</span></span>
+* <span data-ttu-id="dd306-122">Name: (文字列) 設定の名前。</span><span class="sxs-lookup"><span data-stu-id="dd306-122">Name - (String) The name of the setting.</span></span>
+* <span data-ttu-id="dd306-123">Value: (文字列) 設定の値。</span><span class="sxs-lookup"><span data-stu-id="dd306-123">Value - (String) The value of the setting.</span></span>
+* <span data-ttu-id="dd306-124">RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-124">RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.</span></span>
+* <span data-ttu-id="dd306-125">Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-125">Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.</span></span>
+* <span data-ttu-id="dd306-126">Category: (文字列) 設定のカテゴリ。</span><span class="sxs-lookup"><span data-stu-id="dd306-126">Category - (String) The category of the setting.</span></span>
+* <span data-ttu-id="dd306-127">Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="dd306-127">Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.</span></span>
 
-<span data-ttu-id="423f2-128">設定が数値の場合。</span><span class="sxs-lookup"><span data-stu-id="423f2-128">If the setting is a number:</span></span>
-* <span data-ttu-id="423f2-129">Min (Number) このフィールドでは、設定の最小の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-129">Min - (Number) This field indicates the minimal numerical value of the setting.</span></span>
-* <span data-ttu-id="423f2-130">最大の (数) このフィールドが設定の最大の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-130">Max - (Number) This field indicates the maximum numerical value of the setting.</span></span>
+<span data-ttu-id="dd306-128">設定が数値の場合。</span><span class="sxs-lookup"><span data-stu-id="dd306-128">If the setting is a number:</span></span>
+* <span data-ttu-id="dd306-129">Min (Number) このフィールドでは、設定の最小の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-129">Min - (Number) This field indicates the minimal numerical value of the setting.</span></span>
+* <span data-ttu-id="dd306-130">最大の (数) このフィールドが設定の最大の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-130">Max - (Number) This field indicates the maximum numerical value of the setting.</span></span>
 
-<span data-ttu-id="423f2-131">場合は、設定を選択します。</span><span class="sxs-lookup"><span data-stu-id="423f2-131">If the setting is select:</span></span>
-* <span data-ttu-id="423f2-132">OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-132">OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.</span></span>
-* <span data-ttu-id="423f2-133">Options - 有効な選択オプションを文字列として含む JSON 配列。</span><span class="sxs-lookup"><span data-stu-id="423f2-133">Options - JSON array containing the valid select options as strings.</span></span>
+<span data-ttu-id="dd306-131">場合は、設定を選択します。</span><span class="sxs-lookup"><span data-stu-id="dd306-131">If the setting is select:</span></span>
+* <span data-ttu-id="dd306-132">OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-132">OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.</span></span>
+* <span data-ttu-id="dd306-133">Options - 有効な選択オプションを文字列として含む JSON 配列。</span><span class="sxs-lookup"><span data-stu-id="dd306-133">Options - JSON array containing the valid select options as strings.</span></span>
 
-<span data-ttu-id="423f2-134">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="423f2-134">**Status code**</span></span>
+<span data-ttu-id="dd306-134">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="dd306-134">**Status code**</span></span>
 
-<span data-ttu-id="423f2-135">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="423f2-135">This API has the following expected status codes.</span></span>
+<span data-ttu-id="dd306-135">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="dd306-135">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="423f2-136">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="423f2-136">HTTP status code</span></span>      | <span data-ttu-id="423f2-137">説明</span><span class="sxs-lookup"><span data-stu-id="423f2-137">Description</span></span>
+<span data-ttu-id="dd306-136">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="dd306-136">HTTP status code</span></span>      | <span data-ttu-id="dd306-137">説明</span><span class="sxs-lookup"><span data-stu-id="dd306-137">Description</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-138">200</span><span class="sxs-lookup"><span data-stu-id="423f2-138">200</span></span> | <span data-ttu-id="423f2-139">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="423f2-139">Request was successful</span></span>
-<span data-ttu-id="423f2-140">4XX</span><span class="sxs-lookup"><span data-stu-id="423f2-140">4XX</span></span> | <span data-ttu-id="423f2-141">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-141">Error codes</span></span>
-<span data-ttu-id="423f2-142">5XX</span><span class="sxs-lookup"><span data-stu-id="423f2-142">5XX</span></span> | <span data-ttu-id="423f2-143">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-143">Error codes</span></span>
+<span data-ttu-id="dd306-138">200</span><span class="sxs-lookup"><span data-stu-id="dd306-138">200</span></span> | <span data-ttu-id="dd306-139">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="dd306-139">Request was successful</span></span>
+<span data-ttu-id="dd306-140">4XX</span><span class="sxs-lookup"><span data-stu-id="dd306-140">4XX</span></span> | <span data-ttu-id="dd306-141">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-141">Error codes</span></span>
+<span data-ttu-id="dd306-142">5XX</span><span class="sxs-lookup"><span data-stu-id="dd306-142">5XX</span></span> | <span data-ttu-id="dd306-143">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-143">Error codes</span></span>
 
-## <a name="get-settings-one-at-a-time"></a><span data-ttu-id="423f2-144">設定を一度に 1 つ取得する</span><span class="sxs-lookup"><span data-stu-id="423f2-144">Get settings one at a time</span></span>
-<span data-ttu-id="423f2-145">設定は個別に取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="423f2-145">Settings can also be retrieved individually.</span></span>
+## <a name="get-settings-one-at-a-time"></a><span data-ttu-id="dd306-144">設定を一度に 1 つ取得する</span><span class="sxs-lookup"><span data-stu-id="dd306-144">Get settings one at a time</span></span>
+<span data-ttu-id="dd306-145">設定は個別に取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="dd306-145">Settings can also be retrieved individually.</span></span>
 
-<span data-ttu-id="423f2-146">**要求**</span><span class="sxs-lookup"><span data-stu-id="423f2-146">**Request**</span></span>
+<span data-ttu-id="dd306-146">**要求**</span><span class="sxs-lookup"><span data-stu-id="dd306-146">**Request**</span></span>
 
-<span data-ttu-id="423f2-147">次の要求を使って、個別の設定に関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="423f2-147">You can use the following request to get information about an individual setting.</span></span>
+<span data-ttu-id="dd306-147">次の要求を使って、個別の設定に関する情報を取得できます。</span><span class="sxs-lookup"><span data-stu-id="dd306-147">You can use the following request to get information about an individual setting.</span></span>
 
-<span data-ttu-id="423f2-148">メソッド</span><span class="sxs-lookup"><span data-stu-id="423f2-148">Method</span></span>      | <span data-ttu-id="423f2-149">要求 URI</span><span class="sxs-lookup"><span data-stu-id="423f2-149">Request URI</span></span>
+<span data-ttu-id="dd306-148">メソッド</span><span class="sxs-lookup"><span data-stu-id="dd306-148">Method</span></span>      | <span data-ttu-id="dd306-149">要求 URI</span><span class="sxs-lookup"><span data-stu-id="dd306-149">Request URI</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-150">GET</span><span class="sxs-lookup"><span data-stu-id="423f2-150">GET</span></span> | <span data-ttu-id="423f2-151">/ext/settings/\<setting name\></span><span class="sxs-lookup"><span data-stu-id="423f2-151">/ext/settings/\<setting name\></span></span>
+<span data-ttu-id="dd306-150">GET</span><span class="sxs-lookup"><span data-stu-id="dd306-150">GET</span></span> | <span data-ttu-id="dd306-151">/ext/settings/\<設定名\></span><span class="sxs-lookup"><span data-stu-id="dd306-151">/ext/settings/\<setting name\></span></span>
 <br />
-<span data-ttu-id="423f2-152">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="423f2-152">**URI parameters**</span></span>
+<span data-ttu-id="dd306-152">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="dd306-152">**URI parameters**</span></span>
 
-- <span data-ttu-id="423f2-153">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-153">None</span></span>
+- <span data-ttu-id="dd306-153">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-153">None</span></span>
 
-<span data-ttu-id="423f2-154">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="423f2-154">**Request headers**</span></span>
+<span data-ttu-id="dd306-154">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="dd306-154">**Request headers**</span></span>
 
-- <span data-ttu-id="423f2-155">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-155">None</span></span>
+- <span data-ttu-id="dd306-155">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-155">None</span></span>
 
-<span data-ttu-id="423f2-156">**要求本文**</span><span class="sxs-lookup"><span data-stu-id="423f2-156">**Request body**</span></span>
+<span data-ttu-id="dd306-156">**要求本文**</span><span class="sxs-lookup"><span data-stu-id="dd306-156">**Request body**</span></span>
 
-- <span data-ttu-id="423f2-157">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-157">None</span></span>
+- <span data-ttu-id="dd306-157">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-157">None</span></span>
 
-<span data-ttu-id="423f2-158">**応答** </span><span class="sxs-lookup"><span data-stu-id="423f2-158">**Response** </span></span>  
-<span data-ttu-id="423f2-159">応答は、次のフィールドを含む JSON オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="423f2-159">The response is a JSON object with following fields:</span></span>
+<span data-ttu-id="dd306-158">**応答** </span><span class="sxs-lookup"><span data-stu-id="dd306-158">**Response** </span></span>  
+<span data-ttu-id="dd306-159">応答は、次のフィールドを含む JSON オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="dd306-159">The response is a JSON object with following fields:</span></span>
 
-* <span data-ttu-id="423f2-160">Name: (文字列) 設定の名前。</span><span class="sxs-lookup"><span data-stu-id="423f2-160">Name - (String) The name of the setting.</span></span>
-* <span data-ttu-id="423f2-161">Value: (文字列) 設定の値。</span><span class="sxs-lookup"><span data-stu-id="423f2-161">Value - (String) The value of the setting.</span></span>
-* <span data-ttu-id="423f2-162">RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-162">RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.</span></span>
-* <span data-ttu-id="423f2-163">Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-163">Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.</span></span>
-* <span data-ttu-id="423f2-164">Category: (文字列) 設定のカテゴリ。</span><span class="sxs-lookup"><span data-stu-id="423f2-164">Category - (String) The category of the setting.</span></span>
-* <span data-ttu-id="423f2-165">Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="423f2-165">Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.</span></span>
+* <span data-ttu-id="dd306-160">Name: (文字列) 設定の名前。</span><span class="sxs-lookup"><span data-stu-id="dd306-160">Name - (String) The name of the setting.</span></span>
+* <span data-ttu-id="dd306-161">Value: (文字列) 設定の値。</span><span class="sxs-lookup"><span data-stu-id="dd306-161">Value - (String) The value of the setting.</span></span>
+* <span data-ttu-id="dd306-162">RequiresReboot: ("Yes" | "No") このフィールドは、設定を有効にするために再起動する必要があるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-162">RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.</span></span>
+* <span data-ttu-id="dd306-163">Disabled - ("Yes" | "No") このフィールドは、設定が無効であるかどうかと編集不可であるかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-163">Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.</span></span>
+* <span data-ttu-id="dd306-164">Category: (文字列) 設定のカテゴリ。</span><span class="sxs-lookup"><span data-stu-id="dd306-164">Category - (String) The category of the setting.</span></span>
+* <span data-ttu-id="dd306-165">Type - ("Text" | "Number" | "Bool" | "Select") このフィールドは、設定の型を示します。テキスト入力、ブール値 ("true" または "false")、最小値と最大値を持つ数値、値の特定のリストを持つ選択のいずれかです。</span><span class="sxs-lookup"><span data-stu-id="dd306-165">Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.</span></span>
 
-<span data-ttu-id="423f2-166">設定が数値の場合。</span><span class="sxs-lookup"><span data-stu-id="423f2-166">If the setting is a number:</span></span>
-* <span data-ttu-id="423f2-167">Min (Number) このフィールドでは、設定の最小の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-167">Min - (Number) This field indicates the minimal numerical value of the setting.</span></span>
-* <span data-ttu-id="423f2-168">最大の (数) このフィールドが設定の最大の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-168">Max - (Number) This field indicates the maximum numerical value of the setting.</span></span>
+<span data-ttu-id="dd306-166">設定が数値の場合。</span><span class="sxs-lookup"><span data-stu-id="dd306-166">If the setting is a number:</span></span>
+* <span data-ttu-id="dd306-167">Min (Number) このフィールドでは、設定の最小の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-167">Min - (Number) This field indicates the minimal numerical value of the setting.</span></span>
+* <span data-ttu-id="dd306-168">最大の (数) このフィールドが設定の最大の数値を示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-168">Max - (Number) This field indicates the maximum numerical value of the setting.</span></span>
 
-<span data-ttu-id="423f2-169">場合は、設定を選択します。</span><span class="sxs-lookup"><span data-stu-id="423f2-169">If the setting is select:</span></span>
-* <span data-ttu-id="423f2-170">OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="423f2-170">OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.</span></span>
-* <span data-ttu-id="423f2-171">Options - 有効な選択オプションを文字列として含む JSON 配列。</span><span class="sxs-lookup"><span data-stu-id="423f2-171">Options - JSON array containing the valid select options as strings.</span></span>
+<span data-ttu-id="dd306-169">場合は、設定を選択します。</span><span class="sxs-lookup"><span data-stu-id="dd306-169">If the setting is select:</span></span>
+* <span data-ttu-id="dd306-170">OptionsVariable - ([はい] |"No") このフィールドが再起動せず、有効なオプションを変更できる場合、変数は、設定オプションをかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="dd306-170">OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.</span></span>
+* <span data-ttu-id="dd306-171">Options - 有効な選択オプションを文字列として含む JSON 配列。</span><span class="sxs-lookup"><span data-stu-id="dd306-171">Options - JSON array containing the valid select options as strings.</span></span>
 
-<span data-ttu-id="423f2-172">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="423f2-172">**Status code**</span></span>
+<span data-ttu-id="dd306-172">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="dd306-172">**Status code**</span></span>
 
-<span data-ttu-id="423f2-173">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="423f2-173">This API has the following expected status codes.</span></span>
+<span data-ttu-id="dd306-173">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="dd306-173">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="423f2-174">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="423f2-174">HTTP status code</span></span>      | <span data-ttu-id="423f2-175">説明</span><span class="sxs-lookup"><span data-stu-id="423f2-175">Description</span></span>
+<span data-ttu-id="dd306-174">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="dd306-174">HTTP status code</span></span>      | <span data-ttu-id="dd306-175">説明</span><span class="sxs-lookup"><span data-stu-id="dd306-175">Description</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-176">200</span><span class="sxs-lookup"><span data-stu-id="423f2-176">200</span></span> | <span data-ttu-id="423f2-177">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="423f2-177">Request was successful</span></span>
-<span data-ttu-id="423f2-178">4XX</span><span class="sxs-lookup"><span data-stu-id="423f2-178">4XX</span></span> | <span data-ttu-id="423f2-179">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-179">Error codes</span></span>
-<span data-ttu-id="423f2-180">5XX</span><span class="sxs-lookup"><span data-stu-id="423f2-180">5XX</span></span> | <span data-ttu-id="423f2-181">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-181">Error codes</span></span>
+<span data-ttu-id="dd306-176">200</span><span class="sxs-lookup"><span data-stu-id="dd306-176">200</span></span> | <span data-ttu-id="dd306-177">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="dd306-177">Request was successful</span></span>
+<span data-ttu-id="dd306-178">4XX</span><span class="sxs-lookup"><span data-stu-id="dd306-178">4XX</span></span> | <span data-ttu-id="dd306-179">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-179">Error codes</span></span>
+<span data-ttu-id="dd306-180">5XX</span><span class="sxs-lookup"><span data-stu-id="dd306-180">5XX</span></span> | <span data-ttu-id="dd306-181">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-181">Error codes</span></span>
 
-## <a name="set-the-value-of-a-setting"></a><span data-ttu-id="423f2-182">設定の値を設定する</span><span class="sxs-lookup"><span data-stu-id="423f2-182">Set the value of a setting</span></span>
-<span data-ttu-id="423f2-183">設定の値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="423f2-183">You can set the value of a setting.</span></span>
+## <a name="set-the-value-of-a-setting"></a><span data-ttu-id="dd306-182">設定の値を設定する</span><span class="sxs-lookup"><span data-stu-id="dd306-182">Set the value of a setting</span></span>
+<span data-ttu-id="dd306-183">設定の値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="dd306-183">You can set the value of a setting.</span></span>
 
-<span data-ttu-id="423f2-184">**要求**</span><span class="sxs-lookup"><span data-stu-id="423f2-184">**Request**</span></span>
+<span data-ttu-id="dd306-184">**要求**</span><span class="sxs-lookup"><span data-stu-id="dd306-184">**Request**</span></span>
 
-<span data-ttu-id="423f2-185">次の要求を使って、設定の値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="423f2-185">You can use the following request to set the value for a setting.</span></span>
+<span data-ttu-id="dd306-185">次の要求を使って、設定の値を設定できます。</span><span class="sxs-lookup"><span data-stu-id="dd306-185">You can use the following request to set the value for a setting.</span></span>
 
-<span data-ttu-id="423f2-186">メソッド</span><span class="sxs-lookup"><span data-stu-id="423f2-186">Method</span></span>      | <span data-ttu-id="423f2-187">要求 URI</span><span class="sxs-lookup"><span data-stu-id="423f2-187">Request URI</span></span>
+<span data-ttu-id="dd306-186">メソッド</span><span class="sxs-lookup"><span data-stu-id="dd306-186">Method</span></span>      | <span data-ttu-id="dd306-187">要求 URI</span><span class="sxs-lookup"><span data-stu-id="dd306-187">Request URI</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-188">PUT</span><span class="sxs-lookup"><span data-stu-id="423f2-188">PUT</span></span> | <span data-ttu-id="423f2-189">/ext/settings/\<setting name\></span><span class="sxs-lookup"><span data-stu-id="423f2-189">/ext/settings/\<setting name\></span></span>
+<span data-ttu-id="dd306-188">PUT</span><span class="sxs-lookup"><span data-stu-id="dd306-188">PUT</span></span> | <span data-ttu-id="dd306-189">/ext/settings/\<設定名\></span><span class="sxs-lookup"><span data-stu-id="dd306-189">/ext/settings/\<setting name\></span></span>
 <br />
-<span data-ttu-id="423f2-190">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="423f2-190">**URI parameters**</span></span>
+<span data-ttu-id="dd306-190">**URI パラメーター**</span><span class="sxs-lookup"><span data-stu-id="dd306-190">**URI parameters**</span></span>
 
-- <span data-ttu-id="423f2-191">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-191">None</span></span>
+- <span data-ttu-id="dd306-191">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-191">None</span></span>
 
-<span data-ttu-id="423f2-192">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="423f2-192">**Request headers**</span></span>
+<span data-ttu-id="dd306-192">**要求ヘッダー**</span><span class="sxs-lookup"><span data-stu-id="dd306-192">**Request headers**</span></span>
 
-- <span data-ttu-id="423f2-193">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-193">None</span></span>
+- <span data-ttu-id="dd306-193">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-193">None</span></span>
 
-<span data-ttu-id="423f2-194">**要求本文** </span><span class="sxs-lookup"><span data-stu-id="423f2-194">**Request body** </span></span>  
-<span data-ttu-id="423f2-195">要求本文は、次のフィールドを含む JSON オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="423f2-195">The request body is JSON object containing the following field:</span></span>   
-<span data-ttu-id="423f2-196">Value: (文字列) 設定の新しい値。</span><span class="sxs-lookup"><span data-stu-id="423f2-196">Value - (String) The new value for the setting.</span></span>
+<span data-ttu-id="dd306-194">**要求本文** </span><span class="sxs-lookup"><span data-stu-id="dd306-194">**Request body** </span></span>  
+<span data-ttu-id="dd306-195">要求本文は、次のフィールドを含む JSON オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="dd306-195">The request body is JSON object containing the following field:</span></span>   
+<span data-ttu-id="dd306-196">Value: (文字列) 設定の新しい値。</span><span class="sxs-lookup"><span data-stu-id="dd306-196">Value - (String) The new value for the setting.</span></span>
 
-<span data-ttu-id="423f2-197">**応答**</span><span class="sxs-lookup"><span data-stu-id="423f2-197">**Response**</span></span>   
+<span data-ttu-id="dd306-197">**応答**</span><span class="sxs-lookup"><span data-stu-id="dd306-197">**Response**</span></span>   
 
-- <span data-ttu-id="423f2-198">なし</span><span class="sxs-lookup"><span data-stu-id="423f2-198">None</span></span>
+- <span data-ttu-id="dd306-198">なし</span><span class="sxs-lookup"><span data-stu-id="dd306-198">None</span></span>
 
-<span data-ttu-id="423f2-199">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="423f2-199">**Status code**</span></span>
+<span data-ttu-id="dd306-199">**状態コード**</span><span class="sxs-lookup"><span data-stu-id="dd306-199">**Status code**</span></span>
 
-<span data-ttu-id="423f2-200">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="423f2-200">This API has the following expected status codes.</span></span>
+<span data-ttu-id="dd306-200">この API では次の状態コードが返される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="dd306-200">This API has the following expected status codes.</span></span>
 
-<span data-ttu-id="423f2-201">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="423f2-201">HTTP status code</span></span>      | <span data-ttu-id="423f2-202">説明</span><span class="sxs-lookup"><span data-stu-id="423f2-202">Description</span></span>
+<span data-ttu-id="dd306-201">HTTP 状態コード</span><span class="sxs-lookup"><span data-stu-id="dd306-201">HTTP status code</span></span>      | <span data-ttu-id="dd306-202">説明</span><span class="sxs-lookup"><span data-stu-id="dd306-202">Description</span></span>
 :------     | :-----
-<span data-ttu-id="423f2-203">200</span><span class="sxs-lookup"><span data-stu-id="423f2-203">200</span></span> | <span data-ttu-id="423f2-204">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="423f2-204">Request was successful</span></span>
-<span data-ttu-id="423f2-205">4XX</span><span class="sxs-lookup"><span data-stu-id="423f2-205">4XX</span></span> | <span data-ttu-id="423f2-206">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-206">Error codes</span></span>
-<span data-ttu-id="423f2-207">5XX</span><span class="sxs-lookup"><span data-stu-id="423f2-207">5XX</span></span> | <span data-ttu-id="423f2-208">エラー コード</span><span class="sxs-lookup"><span data-stu-id="423f2-208">Error codes</span></span>
+<span data-ttu-id="dd306-203">200</span><span class="sxs-lookup"><span data-stu-id="dd306-203">200</span></span> | <span data-ttu-id="dd306-204">要求は成功しました</span><span class="sxs-lookup"><span data-stu-id="dd306-204">Request was successful</span></span>
+<span data-ttu-id="dd306-205">4XX</span><span class="sxs-lookup"><span data-stu-id="dd306-205">4XX</span></span> | <span data-ttu-id="dd306-206">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-206">Error codes</span></span>
+<span data-ttu-id="dd306-207">5XX</span><span class="sxs-lookup"><span data-stu-id="dd306-207">5XX</span></span> | <span data-ttu-id="dd306-208">エラー コード</span><span class="sxs-lookup"><span data-stu-id="dd306-208">Error codes</span></span>
 
 <br />
-<span data-ttu-id="423f2-209">**使用可能なデバイス ファミリ**</span><span class="sxs-lookup"><span data-stu-id="423f2-209">**Available device families**</span></span>
+<span data-ttu-id="dd306-209">**使用可能なデバイス ファミリ**</span><span class="sxs-lookup"><span data-stu-id="dd306-209">**Available device families**</span></span>
 
-* <span data-ttu-id="423f2-210">Windows Xbox</span><span class="sxs-lookup"><span data-stu-id="423f2-210">Windows Xbox</span></span>
+* <span data-ttu-id="dd306-210">Windows Xbox</span><span class="sxs-lookup"><span data-stu-id="dd306-210">Windows Xbox</span></span>
